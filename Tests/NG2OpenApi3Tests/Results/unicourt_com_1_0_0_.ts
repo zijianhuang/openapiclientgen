@@ -16,8 +16,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		object: string;
 	}
@@ -26,8 +26,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -43,32 +43,32 @@ export namespace MyNS {
 		/**
 		 * Ip address.
 		 * Required
-		 * Max length: 15
 		 * Min length: 7
+		 * Max length: 15
 		 */
 		issueAddress: string;
 
 		/**
 		 * Date when access token was created.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		issuedDate: Date;
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: string;
 
 		/**
 		 * Unique Id for the access token.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		tokenId: string;
 	}
@@ -77,32 +77,32 @@ export namespace MyNS {
 		/**
 		 * Ip address.
 		 * Required
-		 * Max length: 15
 		 * Min length: 7
+		 * Max length: 15
 		 */
 		issueAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when access token was created.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		issuedDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique Id for the access token.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		tokenId: FormControl<string | null | undefined>,
 	}
@@ -121,16 +121,16 @@ export namespace MyNS {
 		/**
 		 * Your Client ID obtainable by logging into your UniCourt account.
 		 * Required
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		clientId: string;
 
 		/**
 		 * Your Client Secret ID obtainable by logging into your UniCourt account.
 		 * Required
-		 * Max length: 64
 		 * Min length: 64
+		 * Max length: 64
 		 */
 		clientSecret: string;
 	}
@@ -139,16 +139,16 @@ export namespace MyNS {
 		/**
 		 * Your Client ID obtainable by logging into your UniCourt account.
 		 * Required
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		clientId: FormControl<string | null | undefined>,
 
 		/**
 		 * Your Client Secret ID obtainable by logging into your UniCourt account.
 		 * Required
-		 * Max length: 64
 		 * Min length: 64
+		 * Max length: 64
 		 */
 		clientSecret: FormControl<string | null | undefined>,
 	}
@@ -165,32 +165,32 @@ export namespace MyNS {
 		/**
 		 * Access token for API.
 		 * Required
-		 * Max length: 2000
 		 * Min length: 700
+		 * Max length: 2000
 		 */
 		accessToken: string;
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: string;
 
 		/**
 		 * Unique Id for the access token.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		tokenId: string;
 
 		/**
 		 * Token type.
 		 * Required
-		 * Max length: 6
 		 * Min length: 6
+		 * Max length: 6
 		 */
 		tokenType: string;
 	}
@@ -199,32 +199,32 @@ export namespace MyNS {
 		/**
 		 * Access token for API.
 		 * Required
-		 * Max length: 2000
 		 * Min length: 700
+		 * Max length: 2000
 		 */
 		accessToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique Id for the access token.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		tokenId: FormControl<string | null | undefined>,
 
 		/**
 		 * Token type.
 		 * Required
-		 * Max length: 6
 		 * Min length: 6
+		 * Max length: 6
 		 */
 		tokenType: FormControl<string | null | undefined>,
 	}
@@ -242,36 +242,36 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		level1: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		level2: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		level3: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		level4: string;
 
 		/**
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		object: string;
 	}
@@ -279,36 +279,36 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		level1: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		level2: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		level3: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		level4: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -330,56 +330,56 @@ export namespace MyNS {
 		/**
 		 * City
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		city: string;
 
 		/**
 		 * ISO 3166-1 alpha-3 (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Officially_assigned_code_elements). Code of the country if country name is present.
 		 * Required
-		 * Max length: 3
 		 * Min length: 2
+		 * Max length: 3
 		 */
 		countryCode: string;
 
 		/**
 		 * Country Name if present else default value.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		countryName: string;
 
 		/**
 		 * Date at which this record is created in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		firstFetchDate: Date;
 
 		/**
 		 * Boolean indicating if the address is visible or not.
 		 * Required
-		 * Max length: 5
 		 * Min length: 4
+		 * Max length: 5
 		 */
 		isVisible: boolean;
 
 		/**
 		 * Date at which this record was updated in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		lastFetchDate: Date;
 
 		/**
 		 * Coordinates at geographic coordinate system.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 * Minimum: -90
 		 * Maximum: 90
 		 */
@@ -388,8 +388,8 @@ export namespace MyNS {
 		/**
 		 * Coordinates at geographic coordinate system.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 * Minimum: -180
 		 * Maximum: 180
 		 */
@@ -397,56 +397,56 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: string;
 
 		/**
 		 * State Code if the state is a US state else contains null.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		stateCode: string;
 
 		/**
 		 * State Name if present else default value.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		stateName: string;
 
 		/**
 		 * 1st part of the street address.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		streetAddress1: string;
 
 		/**
 		 * 2nd part of the street address.
 		 * Required
-		 * Max length: 150
 		 * Min length: 1
+		 * Max length: 150
 		 */
 		streetAddress2: string;
 
 		/**
 		 * Zip code of the address.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		zip: string;
 
 		/**
 		 * 4 digit extension of the zip code if the address is a US address.
 		 * Required
-		 * Max length: 4
 		 * Min length: 4
+		 * Max length: 4
 		 */
 		zip4: string;
 	}
@@ -457,56 +457,56 @@ export namespace MyNS {
 		/**
 		 * City
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * ISO 3166-1 alpha-3 (https://en.wikipedia.org/wiki/ISO_3166-1_alpha-3#Officially_assigned_code_elements). Code of the country if country name is present.
 		 * Required
-		 * Max length: 3
 		 * Min length: 2
+		 * Max length: 3
 		 */
 		countryCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Country Name if present else default value.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		countryName: FormControl<string | null | undefined>,
 
 		/**
 		 * Date at which this record is created in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Boolean indicating if the address is visible or not.
 		 * Required
-		 * Max length: 5
 		 * Min length: 4
+		 * Max length: 5
 		 */
 		isVisible: FormControl<boolean | null | undefined>,
 
 		/**
 		 * Date at which this record was updated in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Coordinates at geographic coordinate system.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 * Minimum: -90
 		 * Maximum: 90
 		 */
@@ -515,8 +515,8 @@ export namespace MyNS {
 		/**
 		 * Coordinates at geographic coordinate system.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 * Minimum: -180
 		 * Maximum: 180
 		 */
@@ -524,56 +524,56 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * State Code if the state is a US state else contains null.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		stateCode: FormControl<string | null | undefined>,
 
 		/**
 		 * State Name if present else default value.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		stateName: FormControl<string | null | undefined>,
 
 		/**
 		 * 1st part of the street address.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		streetAddress1: FormControl<string | null | undefined>,
 
 		/**
 		 * 2nd part of the street address.
 		 * Required
-		 * Max length: 150
 		 * Min length: 1
+		 * Max length: 150
 		 */
 		streetAddress2: FormControl<string | null | undefined>,
 
 		/**
 		 * Zip code of the address.
 		 * Required
-		 * Max length: 10
 		 * Min length: 1
+		 * Max length: 10
 		 */
 		zip: FormControl<string | null | undefined>,
 
 		/**
 		 * 4 digit extension of the zip code if the address is a US address.
 		 * Required
-		 * Max length: 4
 		 * Min length: 4
+		 * Max length: 4
 		 */
 		zip4: FormControl<string | null | undefined>,
 	}
@@ -602,44 +602,44 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		areaOfLawId: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseClass: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseClassId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: string;
 	}
@@ -647,44 +647,44 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		areaOfLawId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseClass: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseClassId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -711,47 +711,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2140
 		 * Min length: 1
+		 * Max length: 2140
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2139
 		 * Min length: 1
+		 * Max length: 2139
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -760,47 +760,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2140
 		 * Min length: 1
+		 * Max length: 2140
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2139
 		 * Min length: 1
+		 * Max length: 2139
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -818,7 +818,10 @@ export namespace MyNS {
 
 	export interface AssociatedNormAttorney {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -864,8 +867,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneyId: string;
 
@@ -880,7 +883,10 @@ export namespace MyNS {
 	}
 	export interface AssociatedNormAttorneyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -923,8 +929,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneyId: FormControl<string | null | undefined>,
 
@@ -1086,12 +1092,14 @@ export namespace MyNS {
 		/**
 		 * Total no. of results for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -1114,12 +1122,14 @@ export namespace MyNS {
 		/**
 		 * Total no. of results for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -1137,7 +1147,10 @@ export namespace MyNS {
 	/** Associated Judge */
 	export interface AssociatedNormJudge {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -1183,8 +1196,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normJudgeId: string;
 
@@ -1204,7 +1217,10 @@ export namespace MyNS {
 	/** Associated Judge */
 	export interface AssociatedNormJudgeFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -1247,8 +1263,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normJudgeId: FormControl<string | null | undefined>,
 
@@ -1302,12 +1318,14 @@ export namespace MyNS {
 		/**
 		 * Total no. of results for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -1330,12 +1348,14 @@ export namespace MyNS {
 		/**
 		 * Total no. of results for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -1351,7 +1371,10 @@ export namespace MyNS {
 
 	export interface AssociatedNormLawFirm {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -1379,8 +1402,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normLawFirmId: string;
 
@@ -1395,7 +1418,10 @@ export namespace MyNS {
 	}
 	export interface AssociatedNormLawFirmFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -1420,8 +1446,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normLawFirmId: FormControl<string | null | undefined>,
 
@@ -1514,12 +1540,14 @@ export namespace MyNS {
 		/**
 		 * Total no. of results for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -1542,12 +1570,14 @@ export namespace MyNS {
 		/**
 		 * Total no. of results for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -1563,7 +1593,10 @@ export namespace MyNS {
 
 	export interface AssociatedNormParty {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -1591,8 +1624,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartyId: string;
 
@@ -1607,7 +1640,10 @@ export namespace MyNS {
 	}
 	export interface AssociatedNormPartyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -1632,8 +1668,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartyId: FormControl<string | null | undefined>,
 
@@ -1677,12 +1713,14 @@ export namespace MyNS {
 		/**
 		 * Total no. of results for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -1705,12 +1743,14 @@ export namespace MyNS {
 		/**
 		 * Total no. of results for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -1797,8 +1837,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: string;
 
@@ -1814,8 +1854,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -1833,39 +1873,39 @@ export namespace MyNS {
 		/**
 		 * email id
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		emailId: string;
 
 		/**
 		 * Date at which this record is created in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		firstFetchDate: Date;
 
 		/**
 		 * Boolean indicating if the email is visible or not.
 		 * Required
-		 * Max length: 5
 		 * Min length: 4
+		 * Max length: 5
 		 */
 		isVisible: boolean;
 
 		/**
 		 * Date at which this record was updated in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		lastFetchDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		object: string;
 	}
@@ -1876,39 +1916,39 @@ export namespace MyNS {
 		/**
 		 * email id
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		emailId: FormControl<string | null | undefined>,
 
 		/**
 		 * Date at which this record is created in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Boolean indicating if the email is visible or not.
 		 * Required
-		 * Max length: 5
 		 * Min length: 4
+		 * Max length: 5
 		 */
 		isVisible: FormControl<boolean | null | undefined>,
 
 		/**
 		 * Date at which this record was updated in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -1930,47 +1970,47 @@ export namespace MyNS {
 		/**
 		 * Date at which this record is created in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		firstFetchDate: Date;
 
 		/**
 		 * Boolean indicating if the phone is visible or not.
 		 * Required
-		 * Max length: 5
 		 * Min length: 4
+		 * Max length: 5
 		 */
 		isVisible: boolean;
 
 		/**
 		 * Date at which this record was updated in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		lastFetchDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		object: string;
 
 		/**
 		 * Phone Number
 		 * Required
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		phoneNumber: string;
 
 		/**
 		 * Resolved phone type (ideally from master data).
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		phoneType: PhonePhoneType;
 	}
@@ -1981,47 +2021,47 @@ export namespace MyNS {
 		/**
 		 * Date at which this record is created in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Boolean indicating if the phone is visible or not.
 		 * Required
-		 * Max length: 5
 		 * Min length: 4
+		 * Max length: 5
 		 */
 		isVisible: FormControl<boolean | null | undefined>,
 
 		/**
 		 * Date at which this record was updated in UniCourt.
 		 * Required
-		 * Max length: 35
 		 * Min length: 25
+		 * Max length: 35
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Phone Number
 		 * Required
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		phoneNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * Resolved phone type (ideally from master data).
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		phoneType: FormControl<PhonePhoneType | null | undefined>,
 	}
@@ -2046,8 +2086,8 @@ export namespace MyNS {
 		/**
 		 * ID for the attorney in this case. This ID is unique within a case and NOT across cases. If the same attorney were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		attorneyId: string;
 
@@ -2076,8 +2116,8 @@ export namespace MyNS {
 		/**
 		 * When was the attorney first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: Date;
 
@@ -2097,8 +2137,8 @@ export namespace MyNS {
 		/**
 		 * When was the attorney last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: Date;
 
@@ -2119,8 +2159,8 @@ export namespace MyNS {
 		/**
 		 * Name of the attorney as provided by Court.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		name: string;
 
@@ -2139,8 +2179,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		object: string;
 
@@ -2180,8 +2220,8 @@ export namespace MyNS {
 		/**
 		 * ID for the attorney in this case. This ID is unique within a case and NOT across cases. If the same attorney were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		attorneyId: FormControl<string | null | undefined>,
 
@@ -2195,8 +2235,8 @@ export namespace MyNS {
 		/**
 		 * When was the attorney first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
@@ -2216,8 +2256,8 @@ export namespace MyNS {
 		/**
 		 * When was the attorney last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
@@ -2238,8 +2278,8 @@ export namespace MyNS {
 		/**
 		 * Name of the attorney as provided by Court.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2258,8 +2298,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -2296,16 +2336,16 @@ export namespace MyNS {
 		/**
 		 * ID for the law firm of an attorney in this case. This ID is unique within a case and NOT across cases. If the same attorney were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		attorneyLawFirmId: string;
 
 		/**
 		 * Is the date when the document was first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: string;
 
@@ -2318,24 +2358,24 @@ export namespace MyNS {
 		/**
 		 * Is the date when the document was last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: string;
 
 		/**
 		 * Name of the law firm as provided by Court.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		name: string;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: string;
 	}
@@ -2346,16 +2386,16 @@ export namespace MyNS {
 		/**
 		 * ID for the law firm of an attorney in this case. This ID is unique within a case and NOT across cases. If the same attorney were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		attorneyLawFirmId: FormControl<string | null | undefined>,
 
 		/**
 		 * Is the date when the document was first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<string | null | undefined>,
 
@@ -2368,24 +2408,24 @@ export namespace MyNS {
 		/**
 		 * Is the date when the document was last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the law firm as provided by Court.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -2405,30 +2445,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		attorneyTypeId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: string;
 	}
@@ -2436,30 +2476,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		attorneyTypeId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -2485,14 +2525,15 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
@@ -2505,12 +2546,14 @@ export namespace MyNS {
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -2526,26 +2569,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -2565,8 +2611,8 @@ export namespace MyNS {
 		/**
 		 * ID for the attorney in this case. This ID is unique within a case and NOT across cases. If the same attorney were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		attorneyId: string;
 
@@ -2579,24 +2625,24 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		object: string;
 
 		/**
 		 * ID of the association
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyAttorneyAssociationId: string;
 
 		/**
 		 * ID for the party in this case. This ID is unique within a case and NOT across cases. If the same attorney were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyId: string;
 	}
@@ -2605,8 +2651,8 @@ export namespace MyNS {
 		/**
 		 * ID for the attorney in this case. This ID is unique within a case and NOT across cases. If the same attorney were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		attorneyId: FormControl<string | null | undefined>,
 
@@ -2619,24 +2665,24 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * ID of the association
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyAttorneyAssociationId: FormControl<string | null | undefined>,
 
 		/**
 		 * ID for the party in this case. This ID is unique within a case and NOT across cases. If the same attorney were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyId: FormControl<string | null | undefined>,
 	}
@@ -2686,7 +2732,10 @@ export namespace MyNS {
 		 */
 		caseCountAnalyticsByOpposingNormAttorneyAPI: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		confidenceScore: number;
 
 		/**
@@ -2697,8 +2746,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneyId: string;
 
@@ -2711,8 +2760,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: string;
 
@@ -2754,7 +2803,10 @@ export namespace MyNS {
 		 */
 		caseCountAnalyticsByOpposingNormAttorneyAPI: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/**
@@ -2765,8 +2817,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneyId: FormControl<string | null | undefined>,
 
@@ -2779,8 +2831,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -2827,10 +2879,16 @@ export namespace MyNS {
 		 */
 		lawFirm: PossibleNormAttorneyScoreConstituentsAddress;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		nameSimilarityScore: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherPotentialNormAttorneys: number;
 
 		/**
@@ -2865,10 +2923,16 @@ export namespace MyNS {
 		 */
 		lawFirm: FormControl<PossibleNormAttorneyScoreConstituentsAddress | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		nameSimilarityScore: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherPotentialNormAttorneys: FormControl<number | null | undefined>,
 
 		/**
@@ -2927,7 +2991,10 @@ export namespace MyNS {
 		 */
 		caseCountAnalyticsByOpposingNormLawFirmAPI: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		confidenceScore: number;
 
 		/**
@@ -2938,8 +3005,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normLawFirmId: string;
 
@@ -2952,8 +3019,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: string;
 
@@ -2998,7 +3065,10 @@ export namespace MyNS {
 		 */
 		caseCountAnalyticsByOpposingNormLawFirmAPI: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/**
@@ -3009,8 +3079,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normLawFirmId: FormControl<string | null | undefined>,
 
@@ -3023,8 +3093,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -3059,10 +3129,16 @@ export namespace MyNS {
 		 */
 		email: PossibleNormAttorneyScoreConstituentsAddress;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		nameSimilarityScore: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherPotentialNormLawFirms: number;
 
 		/**
@@ -3091,10 +3167,16 @@ export namespace MyNS {
 		 */
 		email: FormControl<PossibleNormAttorneyScoreConstituentsAddress | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		nameSimilarityScore: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherPotentialNormLawFirms: FormControl<number | null | undefined>,
 
 		/**
@@ -3269,30 +3351,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		attorneyRepresentationTypeId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		object: string;
 	}
@@ -3300,30 +3382,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		attorneyRepresentationTypeId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -3348,47 +3430,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2159
 		 * Min length: 1
+		 * Max length: 2159
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2158
 		 * Min length: 1
+		 * Max length: 2158
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -3397,47 +3479,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2159
 		 * Min length: 1
+		 * Max length: 2159
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2158
 		 * Min length: 1
+		 * Max length: 2158
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -3464,47 +3546,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2145
 		 * Min length: 1
+		 * Max length: 2145
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2144
 		 * Min length: 1
+		 * Max length: 2144
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -3513,47 +3595,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2145
 		 * Min length: 1
+		 * Max length: 2145
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2144
 		 * Min length: 1
+		 * Max length: 2144
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -3587,26 +3669,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -3622,26 +3707,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -3957,7 +4045,10 @@ export namespace MyNS {
 		 */
 		firstAdmittedDate: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstAdmittedYear: number;
 
 		/**
@@ -4239,7 +4330,10 @@ export namespace MyNS {
 		 */
 		firstAdmittedDate: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		firstAdmittedYear: FormControl<number | null | undefined>,
 
 		/**
@@ -4734,8 +4828,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		contactId: string;
 
@@ -4863,8 +4957,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		contactId: FormControl<string | null | undefined>,
 
@@ -5536,8 +5630,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		caseId: string;
 	}
@@ -5551,8 +5645,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		caseId: FormControl<string | null | undefined>,
 	}
@@ -5777,14 +5871,15 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		object: string;
 
 		/**
 		 * Total number of successful case tracks.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCasesTracked: number;
 	}
@@ -5805,14 +5900,15 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of successful case tracks.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCasesTracked: FormControl<number | null | undefined>,
 	}
@@ -5831,14 +5927,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls billed  for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
 		/**
 		 * Last Updated date and time for the field apiCallsBillable
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: Date;
 	}
@@ -5847,14 +5944,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls billed  for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * Last Updated date and time for the field apiCallsBillable
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: FormControl<Date | null | undefined>,
 	}
@@ -5871,14 +5969,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls credited back for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
 		/**
 		 * Last Updated date and time for the field apiCallsCredited
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: Date;
 	}
@@ -5887,14 +5986,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls credited back for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * Last Updated date and time for the field apiCallsCredited
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: FormControl<Date | null | undefined>,
 	}
@@ -5911,14 +6011,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls made for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
 		/**
 		 * Last Updated date and time for the field apiCallsMade
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: Date;
 	}
@@ -5927,14 +6028,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls made for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * Last Updated date and time for the field apiCallsMade
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: FormControl<Date | null | undefined>,
 	}
@@ -5951,16 +6053,16 @@ export namespace MyNS {
 		/**
 		 * End date of the billing cycle.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		endDate: Date;
 
 		/**
 		 * Start date of the billing cycle.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		startDate: Date;
 	}
@@ -5969,16 +6071,16 @@ export namespace MyNS {
 		/**
 		 * End date of the billing cycle.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		endDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Start date of the billing cycle.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		startDate: FormControl<Date | null | undefined>,
 	}
@@ -6003,8 +6105,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: string;
 	}
@@ -6013,8 +6115,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -6036,8 +6138,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: string;
 	}
@@ -6046,8 +6148,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -6060,25 +6162,31 @@ export namespace MyNS {
 
 	export interface CallbackListResponseCaseDocumentOrderCallbacks {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 
 		/**
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		link: string;
 	}
 	export interface CallbackListResponseCaseDocumentOrderCallbacksFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		link: FormControl<string | null | undefined>,
 	}
@@ -6092,25 +6200,31 @@ export namespace MyNS {
 
 	export interface CallbackListResponseCaseExportCallbacks {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: number;
 
 		/**
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		link: string;
 	}
 	export interface CallbackListResponseCaseExportCallbacksFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		link: FormControl<string | null | undefined>,
 	}
@@ -6133,8 +6247,8 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of Case.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: string;
 
@@ -6148,8 +6262,8 @@ export namespace MyNS {
 		/**
 		 * Case number as provided by Court.
 		 * Required
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		caseNumber: string;
 
@@ -6193,8 +6307,8 @@ export namespace MyNS {
 		/**
 		 * Court Service Status ID of the requested case where we can use it to get the service status
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtServiceStatusId: string;
 
@@ -6211,16 +6325,16 @@ export namespace MyNS {
 		/**
 		 * Filing date for the case provided by the Court. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		filedDate: Date;
 
 		/**
 		 * The date and time when the case was first fetched from the Court. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz,.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: Date;
 
@@ -6245,32 +6359,32 @@ export namespace MyNS {
 		/**
 		 * The date and time when the case was last fetched from the Court. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz, Note: It is not necessary that every time the case is fetched from Court we find changes in the case information. It could be that we already have the latest information from the Court and no changes exist.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: Date;
 
 		/**
 		 * The date and time when the case was last fetched from the Court where we found changes in the case information. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz,
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDateWithUpdates: Date;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 4
 		 * Min length: 4
+		 * Max length: 4
 		 */
 		object: string;
 
 		/**
 		 * The date and time when parties/attorneys were last updated from the Court. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz, Note: This is currently applicable for Federal PACER cases since we have an option to exclude parties and fetch only latest docket entries when updating cases to save PACER fees.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		participantsLastFetchDate: Date;
 
@@ -6304,8 +6418,8 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of Case.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: FormControl<string | null | undefined>,
 
@@ -6319,8 +6433,8 @@ export namespace MyNS {
 		/**
 		 * Case number as provided by Court.
 		 * Required
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		caseNumber: FormControl<string | null | undefined>,
 
@@ -6334,8 +6448,8 @@ export namespace MyNS {
 		/**
 		 * Court Service Status ID of the requested case where we can use it to get the service status
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtServiceStatusId: FormControl<string | null | undefined>,
 
@@ -6349,16 +6463,16 @@ export namespace MyNS {
 		/**
 		 * Filing date for the case provided by the Court. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		filedDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * The date and time when the case was first fetched from the Court. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz,.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
@@ -6377,32 +6491,32 @@ export namespace MyNS {
 		/**
 		 * The date and time when the case was last fetched from the Court. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz, Note: It is not necessary that every time the case is fetched from Court we find changes in the case information. It could be that we already have the latest information from the Court and no changes exist.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * The date and time when the case was last fetched from the Court where we found changes in the case information. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz,
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDateWithUpdates: FormControl<Date | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 4
 		 * Min length: 4
+		 * Max length: 4
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when parties/attorneys were last updated from the Court. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz, Note: This is currently applicable for Federal PACER cases since we have an option to exclude parties and fetch only latest docket entries when updating cases to save PACER fees.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		participantsLastFetchDate: FormControl<Date | null | undefined>,
 
@@ -6459,26 +6573,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -6494,26 +6611,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -6533,16 +6653,16 @@ export namespace MyNS {
 		/**
 		 * Date and time when the document was downloaded and added to the UniCourt Crowd Source Library.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		addedToLibraryDate: string;
 
 		/**
 		 * UniCourt's Case Document ID.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseDocumentId: string;
 
@@ -6562,8 +6682,8 @@ export namespace MyNS {
 		/**
 		 * Document Date when it was filed. The document date will be either explicitly provided byt the court or if the document is associatated to a docket entry then the document date will be of docket entry date.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		documentFiledDate: string;
 
@@ -6577,16 +6697,16 @@ export namespace MyNS {
 		/**
 		 * Estimated duration of a Order.
 		 * Required
-		 * Max length: 25
 		 * Min length: 10
+		 * Max length: 25
 		 */
 		estimatedOrderDuration: CaseDocumentEstimatedOrderDuration;
 
 		/**
 		 * Is the date when the document was first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: string;
 
@@ -6612,22 +6732,23 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: string;
 
 		/**
 		 * Total number of pages in the document.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages: number;
 
 		/**
 		 * Document ID which is the parent document for the current document. This will be null if the current document is a parent document.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		parentDocumentId: string;
 
@@ -6637,12 +6758,14 @@ export namespace MyNS {
 		/**
 		 * Price of the document.
 		 * Required
+		 * Type: double
 		 */
 		price: number;
 
 		/**
 		 * Order of documents how it is being stored in UniCourt.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sortOrder: number;
 
@@ -6657,16 +6780,16 @@ export namespace MyNS {
 		/**
 		 * Date and time when the document was downloaded and added to the UniCourt Crowd Source Library.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		addedToLibraryDate: FormControl<string | null | undefined>,
 
 		/**
 		 * UniCourt's Case Document ID.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseDocumentId: FormControl<string | null | undefined>,
 
@@ -6680,8 +6803,8 @@ export namespace MyNS {
 		/**
 		 * Document Date when it was filed. The document date will be either explicitly provided byt the court or if the document is associatated to a docket entry then the document date will be of docket entry date.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		documentFiledDate: FormControl<string | null | undefined>,
 
@@ -6695,16 +6818,16 @@ export namespace MyNS {
 		/**
 		 * Estimated duration of a Order.
 		 * Required
-		 * Max length: 25
 		 * Min length: 10
+		 * Max length: 25
 		 */
 		estimatedOrderDuration: FormControl<CaseDocumentEstimatedOrderDuration | null | undefined>,
 
 		/**
 		 * Is the date when the document was first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<string | null | undefined>,
 
@@ -6730,34 +6853,37 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of pages in the document.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages: FormControl<number | null | undefined>,
 
 		/**
 		 * Document ID which is the parent document for the current document. This will be null if the current document is a parent document.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		parentDocumentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Price of the document.
 		 * Required
+		 * Type: double
 		 */
 		price: FormControl<number | null | undefined>,
 
 		/**
 		 * Order of documents how it is being stored in UniCourt.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sortOrder: FormControl<number | null | undefined>,
 
@@ -6796,8 +6922,8 @@ export namespace MyNS {
 		/**
 		 * Date and time when the preview document was downloaded and added to the UniCourt CrowdSourced Library.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		addedToLibraryDate: string;
 
@@ -6817,8 +6943,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: string;
 	}
@@ -6827,8 +6953,8 @@ export namespace MyNS {
 		/**
 		 * Date and time when the preview document was downloaded and added to the UniCourt CrowdSourced Library.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		addedToLibraryDate: FormControl<string | null | undefined>,
 
@@ -6848,8 +6974,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -6872,68 +6998,78 @@ export namespace MyNS {
 		/**
 		 * Count which includes the freeCaseDocumentCount and paidCaseDocumentCount.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		allCaseDocumentCount: number;
 
 		/**
 		 * Count of number of attornies available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		attorneyCount: number;
 
 		/**
 		 * Count of number of documents that are available in the UniCourt CrowdSourced Library for the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		caseDocumentInLibraryCount: number;
 
 		/**
 		 * Count of number of docket entries available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		docketEntryCount: number;
 
 		/**
 		 * Count of number of free documents available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		freeCaseDocumentCount: number;
 
 		/**
 		 * Count of number of hearings available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		hearingCount: number;
 
 		/**
 		 * Count of number of judges available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		judgeCount: number;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: string;
 
 		/**
 		 * Count of number of paid documents available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		paidCaseDocumentCount: number;
 
 		/**
 		 * Count of number of parties available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		partyCount: number;
 
 		/**
 		 * Count of related cases that are available in the case being requested.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		relatedCaseCount: number;
 	}
@@ -6944,68 +7080,78 @@ export namespace MyNS {
 		/**
 		 * Count which includes the freeCaseDocumentCount and paidCaseDocumentCount.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		allCaseDocumentCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Count of number of attornies available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		attorneyCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Count of number of documents that are available in the UniCourt CrowdSourced Library for the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		caseDocumentInLibraryCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Count of number of docket entries available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		docketEntryCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Count of number of free documents available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		freeCaseDocumentCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Count of number of hearings available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		hearingCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Count of number of judges available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		judgeCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Count of number of paid documents available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		paidCaseDocumentCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Count of number of parties available in the case being requested for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		partyCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Count of related cases that are available in the case being requested.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		relatedCaseCount: FormControl<number | null | undefined>,
 	}
@@ -7033,44 +7179,44 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseStatusGroup: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseStatusGroupId: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseStatusId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		object: string;
 	}
@@ -7078,44 +7224,44 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseStatusGroup: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseStatusGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseStatusId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -7135,86 +7281,86 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		areaOfLaw: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		areaOfLawId: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseClass: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseClassId: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseTypeGroup: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseTypeGroupId: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseTypeId: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseTypeTag: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		saliCode: string;
 	}
@@ -7222,86 +7368,86 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		areaOfLaw: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		areaOfLawId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseClass: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseClassId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseTypeGroup: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseTypeGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseTypeId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseTypeTag: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		saliCode: FormControl<string | null | undefined>,
 	}
@@ -7334,8 +7480,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: string;
 	}
@@ -7344,8 +7490,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -7360,44 +7506,44 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		causeOfActionGroup: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		causeOfActionGroupId: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		causeOfActionId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: string;
 	}
@@ -7405,44 +7551,44 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		causeOfActionGroup: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		causeOfActionGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		causeOfActionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -7462,37 +7608,37 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		causeOfActionAdditionalDataId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 27
 		 * Min length: 27
+		 * Max length: 27
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		type: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		value: string;
 	}
@@ -7500,37 +7646,37 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		causeOfActionAdditionalDataId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 27
 		 * Min length: 27
+		 * Max length: 27
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		type: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -7562,8 +7708,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		object: string;
 	}
@@ -7572,8 +7718,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -7588,44 +7734,44 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		chargeGroup: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeGroupId: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 6
 		 * Min length: 6
+		 * Max length: 6
 		 */
 		object: string;
 	}
@@ -7633,44 +7779,44 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		chargeGroup: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 6
 		 * Min length: 6
+		 * Max length: 6
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -7690,37 +7836,37 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeAdditionalDataId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		type: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		value: string;
 	}
@@ -7728,37 +7874,37 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeAdditionalDataId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		type: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -7777,30 +7923,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeDegreeId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: string;
 	}
@@ -7808,30 +7954,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeDegreeId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -7849,30 +7995,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeSeverityId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		object: string;
 	}
@@ -7880,30 +8026,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeSeverityId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -7924,107 +8070,107 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		appealCourtsForCourtAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		container: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		containerType: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtId: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		courtLocationsForCourtAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		courtServiceStatusAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtSystemId: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtTypeId: string;
 
 		/**
 		 * The date and time when the Court was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		jurisdictionGeoForCourtAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		nameAka: string;
 
 		/**
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		system: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		type: string;
 	}
@@ -8032,107 +8178,107 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		appealCourtsForCourtAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		container: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		containerType: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		courtLocationsForCourtAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		courtServiceStatusAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtSystemId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtTypeId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when the Court was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		jurisdictionGeoForCourtAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		nameAka: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		system: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		type: FormControl<string | null | undefined>,
 	}
@@ -8168,60 +8314,60 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtLocationId: string;
 
 		/**
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		courtServiceStatusAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		courtsForCourtLocationAPI: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: string;
 
 		/**
 		 * State Name if present else default value.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		stateName: string;
 
 		/**
 		 * 1st part of the street address.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		streetAddress1: string;
 
@@ -8243,60 +8389,60 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtLocationId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		courtServiceStatusAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		courtsForCourtLocationAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * State Name if present else default value.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		stateName: FormControl<string | null | undefined>,
 
 		/**
 		 * 1st part of the street address.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		streetAddress1: FormControl<string | null | undefined>,
 
@@ -8341,26 +8487,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -8376,26 +8525,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -8427,8 +8579,8 @@ export namespace MyNS {
 		/**
 		 * Docket Action Date
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		docketEntryDate: Date;
 
@@ -8447,22 +8599,23 @@ export namespace MyNS {
 		/**
 		 * The respective docket entry number which is defined in the court website.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		docketNumber: number;
 
 		/**
 		 * When this docket entry was last fetched from the source.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: string;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 11
 		 * Min length: 11
+		 * Max length: 11
 		 */
 		object: string;
 
@@ -8475,6 +8628,7 @@ export namespace MyNS {
 		/**
 		 * Order number how the dockets have stored in UniCourt.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sortOrder: number;
 
@@ -8505,36 +8659,38 @@ export namespace MyNS {
 		/**
 		 * Docket Action Date
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		docketEntryDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * The respective docket entry number which is defined in the court website.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		docketNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * When this docket entry was last fetched from the source.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 11
 		 * Min length: 11
+		 * Max length: 11
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Order number how the dockets have stored in UniCourt.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sortOrder: FormControl<number | null | undefined>,
 
@@ -8583,26 +8739,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 27
 		 * Min length: 27
+		 * Max length: 27
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Total number of parties of the Case. entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -8620,26 +8779,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 27
 		 * Min length: 27
+		 * Max length: 27
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of parties of the Case. entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -8674,26 +8836,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 29
 		 * Min length: 29
+		 * Max length: 29
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Total number of parties of the Case. entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -8711,26 +8876,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 29
 		 * Min length: 29
+		 * Max length: 29
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of parties of the Case. entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -8759,14 +8927,15 @@ export namespace MyNS {
 		/**
 		 * Each referenced docket number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		docketNumber: number;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: string;
 	}
@@ -8784,14 +8953,15 @@ export namespace MyNS {
 		/**
 		 * Each referenced docket number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		docketNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -8855,6 +9025,7 @@ export namespace MyNS {
 		/**
 		 * Structure order
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ord: number;
 
@@ -8877,6 +9048,7 @@ export namespace MyNS {
 		/**
 		 * Structure order
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ord: FormControl<number | null | undefined>,
 
@@ -8914,6 +9086,7 @@ export namespace MyNS {
 		/**
 		 * Structure order.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ord: number;
 
@@ -8936,6 +9109,7 @@ export namespace MyNS {
 		/**
 		 * Structure order.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ord: FormControl<number | null | undefined>,
 
@@ -8970,6 +9144,7 @@ export namespace MyNS {
 		/**
 		 * Structure order.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ord: number;
 
@@ -8992,6 +9167,7 @@ export namespace MyNS {
 		/**
 		 * Structure order.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ord: FormControl<number | null | undefined>,
 
@@ -9026,26 +9202,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -9061,26 +9240,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -9100,16 +9282,16 @@ export namespace MyNS {
 		/**
 		 * When this hearing was first fetched from the source.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: string;
 
 		/**
 		 * Hearing Date
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		hearingDate: Date;
 
@@ -9126,8 +9308,8 @@ export namespace MyNS {
 		/**
 		 * When this hearing was last fetched from the source.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: string;
 
@@ -9141,8 +9323,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: string;
 	}
@@ -9151,16 +9333,16 @@ export namespace MyNS {
 		/**
 		 * When this hearing was first fetched from the source.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<string | null | undefined>,
 
 		/**
 		 * Hearing Date
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		hearingDate: FormControl<Date | null | undefined>,
 
@@ -9174,8 +9356,8 @@ export namespace MyNS {
 		/**
 		 * When this hearing was last fetched from the source.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<string | null | undefined>,
 
@@ -9189,8 +9371,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -9224,26 +9406,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 6
 		 * Min length: 6
+		 * Max length: 6
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -9259,26 +9444,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 6
 		 * Min length: 6
+		 * Max length: 6
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -9304,8 +9492,8 @@ export namespace MyNS {
 		/**
 		 * When was the judge first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: Date;
 
@@ -9325,8 +9513,8 @@ export namespace MyNS {
 		/**
 		 * ID for the judge in this case. This ID is unique within a case and NOT across cases. If the same Judge were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		judgeId: string;
 
@@ -9336,8 +9524,8 @@ export namespace MyNS {
 		/**
 		 * When was the judge last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: Date;
 
@@ -9358,8 +9546,8 @@ export namespace MyNS {
 		/**
 		 * Name of the judge as provided by Court.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		name: string;
 
@@ -9378,8 +9566,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		object: string;
 
@@ -9397,8 +9585,8 @@ export namespace MyNS {
 		/**
 		 * When was the judge first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
@@ -9418,16 +9606,16 @@ export namespace MyNS {
 		/**
 		 * ID for the judge in this case. This ID is unique within a case and NOT across cases. If the same Judge were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		judgeId: FormControl<string | null | undefined>,
 
 		/**
 		 * When was the judge last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
@@ -9448,8 +9636,8 @@ export namespace MyNS {
 		/**
 		 * Name of the judge as provided by Court.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -9468,8 +9656,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -9502,29 +9690,29 @@ export namespace MyNS {
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		judgeTypeId: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: string;
 	}
@@ -9533,29 +9721,29 @@ export namespace MyNS {
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		judgeTypeId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -9598,7 +9786,10 @@ export namespace MyNS {
 		 */
 		caseCountAnalyticsByNormJudgeAPI: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		confidenceScore: number;
 
 		/**
@@ -9610,8 +9801,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normJudgeId: string;
 
@@ -9624,8 +9815,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: string;
 
@@ -9661,7 +9852,10 @@ export namespace MyNS {
 		 */
 		caseCountAnalyticsByNormJudgeAPI: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/**
@@ -9673,8 +9867,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normJudgeId: FormControl<string | null | undefined>,
 
@@ -9687,8 +9881,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -9722,10 +9916,16 @@ export namespace MyNS {
 		 */
 		email: PossibleNormAttorneyScoreConstituentsAddress;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		nameSimilarityScore: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherPotentialNormJudges: number;
 
 		/**
@@ -9748,10 +9948,16 @@ export namespace MyNS {
 		 */
 		email: FormControl<PossibleNormAttorneyScoreConstituentsAddress | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		nameSimilarityScore: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherPotentialNormJudges: FormControl<number | null | undefined>,
 
 		/**
@@ -9783,14 +9989,15 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
@@ -9803,12 +10010,14 @@ export namespace MyNS {
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -9824,26 +10033,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -9872,8 +10084,8 @@ export namespace MyNS {
 		/**
 		 * When was the party first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: Date;
 
@@ -9893,8 +10105,8 @@ export namespace MyNS {
 		/**
 		 * When was the party last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: Date;
 
@@ -9915,8 +10127,8 @@ export namespace MyNS {
 		/**
 		 * Name of the party as provided by Court.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		name: string;
 
@@ -9935,8 +10147,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		object: string;
 
@@ -9953,8 +10165,8 @@ export namespace MyNS {
 		/**
 		 * ID for the party in this case. This ID is unique within a case and NOT across cases. If the same party were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyId: string;
 
@@ -9976,8 +10188,8 @@ export namespace MyNS {
 		/**
 		 * When was the party first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
@@ -9997,8 +10209,8 @@ export namespace MyNS {
 		/**
 		 * When was the party last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
@@ -10019,8 +10231,8 @@ export namespace MyNS {
 		/**
 		 * Name of the party as provided by Court.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -10039,8 +10251,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 5
 		 * Min length: 5
+		 * Max length: 5
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -10054,8 +10266,8 @@ export namespace MyNS {
 		/**
 		 * ID for the party in this case. This ID is unique within a case and NOT across cases. If the same party were to appear in another case this ID would be different.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyId: FormControl<string | null | undefined>,
 
@@ -10092,50 +10304,50 @@ export namespace MyNS {
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		partyRoleGroup: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyRoleGroupId: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyRoleId: string;
 	}
@@ -10144,50 +10356,50 @@ export namespace MyNS {
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		partyRoleGroup: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyRoleGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyRoleId: FormControl<string | null | undefined>,
 	}
@@ -10239,7 +10451,10 @@ export namespace MyNS {
 		 */
 		caseCountAnalyticsByOpposingNormPartyAPI: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		confidenceScore: number;
 
 		/**
@@ -10251,8 +10466,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartyId: string;
 
@@ -10265,8 +10480,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: string;
 
@@ -10308,7 +10523,10 @@ export namespace MyNS {
 		 */
 		caseCountAnalyticsByOpposingNormPartyAPI: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		confidenceScore: FormControl<number | null | undefined>,
 
 		/**
@@ -10320,8 +10538,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartyId: FormControl<string | null | undefined>,
 
@@ -10334,8 +10552,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -10370,10 +10588,16 @@ export namespace MyNS {
 		 */
 		email: PossibleNormAttorneyScoreConstituentsAddress;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		nameSimilarityScore: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherPotentialNormParties: number;
 
 		/**
@@ -10402,10 +10626,16 @@ export namespace MyNS {
 		 */
 		email: FormControl<PossibleNormAttorneyScoreConstituentsAddress | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		nameSimilarityScore: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otherPotentialNormParties: FormControl<number | null | undefined>,
 
 		/**
@@ -10444,14 +10674,15 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
@@ -10464,12 +10695,14 @@ export namespace MyNS {
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -10485,26 +10718,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of parties of the Case entity in a Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects of a party in the Case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -10534,8 +10770,8 @@ export namespace MyNS {
 		/**
 		 * Case ID of the related Case. This can be null if this case in not found in our database. However the meta information of the related case will be present.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: string;
 
@@ -10549,8 +10785,8 @@ export namespace MyNS {
 		/**
 		 * Case Number of the related Case.
 		 * Required
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		caseNumber: string;
 
@@ -10566,16 +10802,16 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 11
 		 * Min length: 11
+		 * Max length: 11
 		 */
 		object: string;
 
 		/**
 		 * Case Relationship Type provided by court.
 		 * Required
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		sourceCaseRelationshipType: string;
 	}
@@ -10591,8 +10827,8 @@ export namespace MyNS {
 		/**
 		 * Case ID of the related Case. This can be null if this case in not found in our database. However the meta information of the related case will be present.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: FormControl<string | null | undefined>,
 
@@ -10606,8 +10842,8 @@ export namespace MyNS {
 		/**
 		 * Case Number of the related Case.
 		 * Required
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		caseNumber: FormControl<string | null | undefined>,
 
@@ -10620,16 +10856,16 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 11
 		 * Min length: 11
+		 * Max length: 11
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Case Relationship Type provided by court.
 		 * Required
-		 * Max length: 250
 		 * Min length: 3
+		 * Max length: 250
 		 */
 		sourceCaseRelationshipType: FormControl<string | null | undefined>,
 	}
@@ -10650,30 +10886,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseRelationshipTypeId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: string;
 	}
@@ -10681,30 +10917,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseRelationshipTypeId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -10731,8 +10967,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		object: string;
 
@@ -10779,8 +11015,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -10822,6 +11058,7 @@ export namespace MyNS {
 		/**
 		 * Nos Code from the source site which is extracted from the sourceText.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: number;
 
@@ -10835,8 +11072,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: string;
 
@@ -10861,6 +11098,7 @@ export namespace MyNS {
 		/**
 		 * Nos Code from the source site which is extracted from the sourceText.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: FormControl<number | null | undefined>,
 
@@ -10874,8 +11112,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -10911,8 +11149,8 @@ export namespace MyNS {
 		/**
 		 * When this Cause of Action was first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: string;
 
@@ -10925,16 +11163,16 @@ export namespace MyNS {
 		/**
 		 * When this Cause of Action was last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: string;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: string;
 
@@ -10966,8 +11204,8 @@ export namespace MyNS {
 		/**
 		 * When this Cause of Action was first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<string | null | undefined>,
 
@@ -10980,16 +11218,16 @@ export namespace MyNS {
 		/**
 		 * When this Cause of Action was last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -11034,8 +11272,8 @@ export namespace MyNS {
 		/**
 		 * When this charge was first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: string;
 
@@ -11048,16 +11286,16 @@ export namespace MyNS {
 		/**
 		 * When this charge was last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: string;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: string;
 
@@ -11109,8 +11347,8 @@ export namespace MyNS {
 		/**
 		 * When this charge was first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<string | null | undefined>,
 
@@ -11123,16 +11361,16 @@ export namespace MyNS {
 		/**
 		 * When this charge was last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -11193,8 +11431,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		object: string;
 
@@ -11219,8 +11457,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -11257,24 +11495,24 @@ export namespace MyNS {
 		/**
 		 * When was the page first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: string;
 
 		/**
 		 * When was the page last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: string;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		object: string;
 
@@ -11292,24 +11530,24 @@ export namespace MyNS {
 		/**
 		 * When was the page first fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<string | null | undefined>,
 
 		/**
 		 * When was the page last fetched from the court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -11408,7 +11646,10 @@ export namespace MyNS {
 		 */
 		object: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCases: number;
 	}
 
@@ -11487,7 +11728,10 @@ export namespace MyNS {
 		 */
 		object: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCases: FormControl<number | null | undefined>,
 	}
 	export function CreateCaseAnalyticsAPIFormGroup() {
@@ -11513,30 +11757,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseClassId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: string;
 	}
@@ -11544,30 +11788,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseClassId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -11589,64 +11833,72 @@ export namespace MyNS {
 		/**
 		 * Total Cases for a specific CourtLocation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		caseCount: number;
 
 		/**
 		 * Case Documents that were added to UniCourt Crowd Source Library for a specific CourtLocationy.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		caseDocumentInLibraryCount: number;
 
 		/**
 		 * Case Documents that were added to UniCourt Crowd Source Library for a specific CourtLocation in last 30 days.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		caseDocumentInLibraryInLastThirtyDaysCount: number;
 
 		/**
 		 * Cases in last 30 days that were added to UniCourt for a specific CourtLocation
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		casesInLastThirtyDaysCount: number;
 
 		/**
 		 * API Link to the Court Service status with filters of court and case class
 		 * Required
-		 * Max length: 250
 		 * Min length: 50
+		 * Max length: 250
 		 */
 		courtServiceStatusAPI: string;
 
 		/**
 		 * Free Case Documents for a specific CourtLocation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		freeCaseDocumentCount: number;
 
 		/**
 		 * Free Case Documents in last 30 days that were added to UniCourt for a specific CourtLocation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		freeCaseDocumentsInLastThirtyDaysCount: number;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: string;
 
 		/**
 		 * Paid Case Documents for a specific CourtLocation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		paidCaseDocumentCount: number;
 
 		/**
 		 * Paid Case Documents in last 30 days that were added to UniCourt for a specific CourtLocation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		paidCaseDocumentsInLastThirtyDaysCount: number;
 	}
@@ -11655,64 +11907,72 @@ export namespace MyNS {
 		/**
 		 * Total Cases for a specific CourtLocation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Case Documents that were added to UniCourt Crowd Source Library for a specific CourtLocationy.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		caseDocumentInLibraryCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Case Documents that were added to UniCourt Crowd Source Library for a specific CourtLocation in last 30 days.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		caseDocumentInLibraryInLastThirtyDaysCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Cases in last 30 days that were added to UniCourt for a specific CourtLocation
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		casesInLastThirtyDaysCount: FormControl<number | null | undefined>,
 
 		/**
 		 * API Link to the Court Service status with filters of court and case class
 		 * Required
-		 * Max length: 250
 		 * Min length: 50
+		 * Max length: 250
 		 */
 		courtServiceStatusAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Free Case Documents for a specific CourtLocation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		freeCaseDocumentCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Free Case Documents in last 30 days that were added to UniCourt for a specific CourtLocation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		freeCaseDocumentsInLastThirtyDaysCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Paid Case Documents for a specific CourtLocation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		paidCaseDocumentCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Paid Case Documents in last 30 days that were added to UniCourt for a specific CourtLocation.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		paidCaseDocumentsInLastThirtyDaysCount: FormControl<number | null | undefined>,
 	}
@@ -11743,47 +12003,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2140
 		 * Min length: 1
+		 * Max length: 2140
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2140
 		 * Min length: 1
+		 * Max length: 2140
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -11792,47 +12052,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2140
 		 * Min length: 1
+		 * Max length: 2140
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2140
 		 * Min length: 1
+		 * Max length: 2140
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -11853,7 +12113,10 @@ export namespace MyNS {
 		/** Required */
 		areaOfLaw: AreaOfLaw;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -11871,7 +12134,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByAreaOfLawFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -11926,18 +12192,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Area Of Law for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalAreaOfLawCount: number;
 
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -11968,18 +12237,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Area Of Law for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalAreaOfLawCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -12000,7 +12272,10 @@ export namespace MyNS {
 		/** Required */
 		caseClass: CaseClass;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -12018,7 +12293,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByCaseClassFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -12073,18 +12351,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Case Class for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseClassCount: number;
 
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -12115,18 +12396,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Case Class for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseClassCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -12144,7 +12428,10 @@ export namespace MyNS {
 
 	export interface CaseCountAnalyticsByCaseFiledDate {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -12160,7 +12447,10 @@ export namespace MyNS {
 		 */
 		groupedBy: CaseCountAnalyticsByCaseFiledDateGroupedBy;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		monthInt: number;
 
 		/**
@@ -12181,18 +12471,30 @@ export namespace MyNS {
 		 */
 		quarter: CaseCountAnalyticsByCaseFiledDateQuarter;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weekOfMonth: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weekOfYear: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: number;
 	}
 	export interface CaseCountAnalyticsByCaseFiledDateFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -12208,7 +12510,10 @@ export namespace MyNS {
 		 */
 		groupedBy: FormControl<CaseCountAnalyticsByCaseFiledDateGroupedBy | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		monthInt: FormControl<number | null | undefined>,
 
 		/**
@@ -12229,13 +12534,22 @@ export namespace MyNS {
 		 */
 		quarter: FormControl<CaseCountAnalyticsByCaseFiledDateQuarter | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weekOfMonth: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weekOfYear: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateCaseCountAnalyticsByCaseFiledDateFormGroup() {
@@ -12290,18 +12604,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of Case File Date for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseFiledDateCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -12332,18 +12649,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of Case File Date for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseFiledDateCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -12361,7 +12681,10 @@ export namespace MyNS {
 
 	export interface CaseCountAnalyticsByCaseType {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -12382,7 +12705,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByCaseTypeFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -12409,7 +12735,10 @@ export namespace MyNS {
 
 	export interface CaseCountAnalyticsByCaseTypeGroup {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -12430,7 +12759,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByCaseTypeGroupFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -12459,58 +12791,58 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		areaOfLaw: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		areaOfLawId: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseClass: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseClassId: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseTypeGroupId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: string;
 	}
@@ -12518,58 +12850,58 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		areaOfLaw: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		areaOfLawId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseClass: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseClassId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseTypeGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -12617,18 +12949,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of Case Type Group for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseTypeGroupCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -12659,18 +12994,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of Case Type Group for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseTypeGroupCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -12716,18 +13054,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of CaseType for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseTypeCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -12758,18 +13099,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of CaseType for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseTypeCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -12790,7 +13134,10 @@ export namespace MyNS {
 		/** Required */
 		Geo: CaseCountAnalyticsByCourtGeo;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -12811,7 +13158,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByCourtFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -12877,7 +13227,10 @@ export namespace MyNS {
 		/** Required */
 		Geo: CaseCountAnalyticsByCourtLocationGeo;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -12901,7 +13254,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByCourtLocationFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -12992,18 +13348,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of Court Location for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCourtLocationCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -13034,18 +13393,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of Court Location for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCourtLocationCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -13091,18 +13453,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of Court for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCourtCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -13133,18 +13498,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of Court for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCourtCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -13165,7 +13533,10 @@ export namespace MyNS {
 		/** Required */
 		Geo: CaseCountAnalyticsByCourtSystemGeo;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -13186,7 +13557,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByCourtSystemFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -13251,44 +13625,44 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtSystemId: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		courtType: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtTypeId: string;
 
 		/**
 		 * The date and time when the Court was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 11
 		 * Min length: 11
+		 * Max length: 11
 		 */
 		object: string;
 	}
@@ -13296,44 +13670,44 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtSystemId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		courtType: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtTypeId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when the Court was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 11
 		 * Min length: 11
+		 * Max length: 11
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -13379,18 +13753,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of Court System for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCourtSystemCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -13421,18 +13798,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of Court System for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCourtSystemCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -13453,7 +13833,10 @@ export namespace MyNS {
 		/** Required */
 		Geo: CaseCountAnalyticsByCourtTypeGeo;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -13474,7 +13857,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByCourtTypeFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -13539,30 +13925,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtTypeId: string;
 
 		/**
 		 * The date and time when the Court was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: string;
 	}
@@ -13570,30 +13956,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtTypeId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when the Court was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -13637,18 +14023,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of Court Type for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCourtTypeCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -13679,18 +14068,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of Court Type for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCourtTypeCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -13711,7 +14103,10 @@ export namespace MyNS {
 		/** Required */
 		Geo: CaseCountAnalyticsByJurisdictionGeoGeo;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -13732,7 +14127,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByJurisdictionGeoFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -13797,65 +14195,65 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		city: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		country: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		county: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		courtsForJurisdictionGeoAPI: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		fipsCode: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		jurisdictionGeoId: string;
 
 		/**
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		state: string;
 
@@ -13866,65 +14264,65 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		county: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		courtsForJurisdictionGeoAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		fipsCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		jurisdictionGeoId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		state: FormControl<string | null | undefined>,
 	}
@@ -13973,18 +14371,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of Jurisdiction for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalJurisdictionGeoCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -14015,18 +14416,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of Jurisdiction for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalJurisdictionGeoCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -14044,7 +14448,10 @@ export namespace MyNS {
 
 	export interface CaseCountAnalyticsByNormAttorney {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -14056,8 +14463,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneyId: string;
 
@@ -14075,7 +14482,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByNormAttorneyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -14087,8 +14497,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneyId: FormControl<string | null | undefined>,
 
@@ -14143,18 +14553,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of NormAttorney for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalNormAttorneyCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -14183,18 +14596,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of NormAttorney for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalNormAttorneyCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -14212,7 +14628,10 @@ export namespace MyNS {
 
 	export interface CaseCountAnalyticsByNormJudge {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -14224,8 +14643,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normJudgeId: string;
 
@@ -14243,7 +14662,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByNormJudgeFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -14255,8 +14677,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normJudgeId: FormControl<string | null | undefined>,
 
@@ -14311,18 +14733,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of NormJudge for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalNormJudgeCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -14351,18 +14776,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of NormJudge for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalNormJudgeCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -14380,7 +14808,10 @@ export namespace MyNS {
 
 	export interface CaseCountAnalyticsByNormLawFirm {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -14392,8 +14823,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normLawFirmId: string;
 
@@ -14411,7 +14842,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByNormLawFirmFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -14423,8 +14857,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normLawFirmId: FormControl<string | null | undefined>,
 
@@ -14479,18 +14913,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of NormLawFirm for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalNormLawFirmCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -14519,18 +14956,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of NormLawFirm for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalNormLawFirmCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -14548,7 +14988,10 @@ export namespace MyNS {
 
 	export interface CaseCountAnalyticsByNormParty {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -14560,8 +15003,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartyId: string;
 
@@ -14579,7 +15022,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByNormPartyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -14591,8 +15037,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartyId: FormControl<string | null | undefined>,
 
@@ -14647,18 +15093,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of NormParty for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalNormPartyCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -14687,18 +15136,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of NormParty for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalNormPartyCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -14716,7 +15168,10 @@ export namespace MyNS {
 
 	export interface CaseCountAnalyticsByPartyRole {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -14737,7 +15192,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByPartyRoleFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -14764,7 +15222,10 @@ export namespace MyNS {
 
 	export interface CaseCountAnalyticsByPartyRoleGroup {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: number;
 
 		/**
@@ -14785,7 +15246,10 @@ export namespace MyNS {
 	}
 	export interface CaseCountAnalyticsByPartyRoleGroupFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		caseCount: FormControl<number | null | undefined>,
 
 		/**
@@ -14815,36 +15279,36 @@ export namespace MyNS {
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyRoleGroupId: string;
 	}
@@ -14853,36 +15317,36 @@ export namespace MyNS {
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		partyRoleGroupId: FormControl<string | null | undefined>,
 	}
@@ -14927,18 +15391,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 
 		/**
 		 * Total no. of Party Role Group for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPartyRoleGroupCount: number;
 	}
@@ -14969,18 +15436,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of Party Role Group for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPartyRoleGroupCount: FormControl<number | null | undefined>,
 	}
@@ -15026,18 +15496,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 
 		/**
 		 * Total no. of Party Role for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPartyRoleCount: number;
 	}
@@ -15068,18 +15541,21 @@ export namespace MyNS {
 		/**
 		 * Total no. of Cases for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 
 		/**
 		 * Total no. of Party Role for this criteria.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPartyRoleCount: FormControl<number | null | undefined>,
 	}
@@ -15100,8 +15576,8 @@ export namespace MyNS {
 		/**
 		 * Date when the job is run.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		callbackGeneratedDate: Date;
 
@@ -15111,23 +15587,23 @@ export namespace MyNS {
 		/**
 		 * UniCourt's Case Document ID.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseDocumentId: string;
 
 		/**
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		caseDocumentOrderCallbackAPI: string;
 
 		/**
 		 * Unique Id for the Case Document Order Callback.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseDocumentOrderCallbackId: string;
 
@@ -15143,16 +15619,16 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		object: string;
 
 		/**
 		 * Status of the request.
 		 * Required
-		 * Max length: 11
 		 * Min length: 7
+		 * Max length: 11
 		 */
 		status: CaseDocumentOrderCallbackStatus;
 	}
@@ -15161,47 +15637,47 @@ export namespace MyNS {
 		/**
 		 * Date when the job is run.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		callbackGeneratedDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * UniCourt's Case Document ID.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseDocumentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		caseDocumentOrderCallbackAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique Id for the Case Document Order Callback.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseDocumentOrderCallbackId: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Status of the request.
 		 * Required
-		 * Max length: 11
 		 * Min length: 7
+		 * Max length: 11
 		 */
 		status: FormControl<CaseDocumentOrderCallbackStatus | null | undefined>,
 	}
@@ -15224,31 +15700,31 @@ export namespace MyNS {
 		/**
 		 * Indicates the type of error occured.
 		 * Required
-		 * Max length: 75
 		 * Min length: 1
+		 * Max length: 75
 		 */
 		code: string;
 
 		/**
 		 * Describes what went wrong.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		details: string;
 
 		/**
 		 * Indicates the error message that describes the error code.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		message: string;
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: string;
 	}
@@ -15259,31 +15735,31 @@ export namespace MyNS {
 		/**
 		 * Indicates the type of error occured.
 		 * Required
-		 * Max length: 75
 		 * Min length: 1
+		 * Max length: 75
 		 */
 		code: FormControl<string | null | undefined>,
 
 		/**
 		 * Describes what went wrong.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		details: FormControl<string | null | undefined>,
 
 		/**
 		 * Indicates the error message that describes the error code.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		message: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -15302,31 +15778,31 @@ export namespace MyNS {
 		/**
 		 * Expiry date-time for the fileUrl provided in this object.
 		 * Required
-		 * Max length: 40
 		 * Min length: 10
+		 * Max length: 40
 		 */
 		expiryDate: Date;
 
 		/**
 		 * Link to download the file.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		fileUrl: string;
 
 		/**
 		 * Name of the file.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		object: string;
 	}
@@ -15335,31 +15811,31 @@ export namespace MyNS {
 		/**
 		 * Expiry date-time for the fileUrl provided in this object.
 		 * Required
-		 * Max length: 40
 		 * Min length: 10
+		 * Max length: 40
 		 */
 		expiryDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Link to download the file.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		fileUrl: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the file.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -15388,42 +15864,45 @@ export namespace MyNS {
 		/**
 		 * Link for the next page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 37
 		 * Min length: 37
+		 * Max length: 37
 		 */
 		object: string;
 
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link for the previous page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of case document order callback objects available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -15432,42 +15911,45 @@ export namespace MyNS {
 		/**
 		 * Link for the next page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 37
 		 * Min length: 37
+		 * Max length: 37
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link for the previous page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of case document order callback objects available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -15489,16 +15971,16 @@ export namespace MyNS {
 
 		/**
 		 * PACER Client Code. This is mandatory if your setting in PACER website is set to True for required client code.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		pacerClientCode?: string | null;
 
 		/**
 		 * Your PACER credentials username. This is mandatory when a PACER Case is being requested in the API. For Non PACER cases this is not mandatory. Suppose your request consists of Non PACER and PACER Cases then this needs to be passed becuase you are requesting a PACER case too.
 		 * Required
-		 * Max length: 40
 		 * Min length: 6
+		 * Max length: 40
 		 */
 		pacerUserId: string;
 	}
@@ -15508,16 +15990,16 @@ export namespace MyNS {
 
 		/**
 		 * PACER Client Code. This is mandatory if your setting in PACER website is set to True for required client code.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		pacerClientCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Your PACER credentials username. This is mandatory when a PACER Case is being requested in the API. For Non PACER cases this is not mandatory. Suppose your request consists of Non PACER and PACER Cases then this needs to be passed becuase you are requesting a PACER case too.
 		 * Required
-		 * Max length: 40
 		 * Min length: 6
+		 * Max length: 40
 		 */
 		pacerUserId: FormControl<string | null | undefined>,
 	}
@@ -15534,8 +16016,8 @@ export namespace MyNS {
 		/**
 		 * Document ID which you want to order.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseDocumentId: string;
 
@@ -15553,8 +16035,8 @@ export namespace MyNS {
 		/**
 		 * Document ID which you want to order.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseDocumentId: FormControl<string | null | undefined>,
 
@@ -15577,31 +16059,31 @@ export namespace MyNS {
 		/**
 		 * Date when the job is run.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		callbackGeneratedDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		caseExportCallbackAPI: string;
 
 		/**
 		 * Unique Id for the Case Export Callback.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseExportCallbackId: string;
 
 		/**
 		 * Unique Id for a Case in UniCourt.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: string;
 
@@ -15617,16 +16099,16 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: string;
 
 		/**
 		 * Status of the request.
 		 * Required
-		 * Max length: 11
 		 * Min length: 7
+		 * Max length: 11
 		 */
 		status: CaseDocumentOrderCallbackStatus;
 	}
@@ -15635,47 +16117,47 @@ export namespace MyNS {
 		/**
 		 * Date when the job is run.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		callbackGeneratedDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		caseExportCallbackAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique Id for the Case Export Callback.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseExportCallbackId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique Id for a Case in UniCourt.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Status of the request.
 		 * Required
-		 * Max length: 11
 		 * Min length: 7
+		 * Max length: 11
 		 */
 		status: FormControl<CaseDocumentOrderCallbackStatus | null | undefined>,
 	}
@@ -15704,42 +16186,45 @@ export namespace MyNS {
 		/**
 		 * Link for the next page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 30
 		 * Min length: 30
+		 * Max length: 30
 		 */
 		object: string;
 
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link for the previous page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of case export callback objects available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -15748,42 +16233,45 @@ export namespace MyNS {
 		/**
 		 * Link for the next page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 30
 		 * Min length: 30
+		 * Max length: 30
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link for the previous page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of case export callback objects available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -15810,47 +16298,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2153
 		 * Min length: 1
+		 * Max length: 2153
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 28
 		 * Min length: 28
+		 * Max length: 28
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2152
 		 * Min length: 1
+		 * Max length: 2152
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -15859,47 +16347,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2153
 		 * Min length: 1
+		 * Max length: 2153
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 28
 		 * Min length: 28
+		 * Max length: 28
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2152
 		 * Min length: 1
+		 * Max length: 2152
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -15920,8 +16408,8 @@ export namespace MyNS {
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseSearchId: string;
 
@@ -15934,54 +16422,54 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2138
 		 * Min length: 1
+		 * Max length: 2138
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2138
 		 * Min length: 1
+		 * Max length: 2138
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		q: string;
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 11
 		 * Min length: 1
+		 * Max length: 11
 		 */
 		totalCount: number;
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		totalPages: number;
 	}
@@ -15990,62 +16478,62 @@ export namespace MyNS {
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseSearchId: FormControl<string | null | undefined>,
 
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2138
 		 * Min length: 1
+		 * Max length: 2138
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2138
 		 * Min length: 1
+		 * Max length: 2138
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		q: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 11
 		 * Min length: 1
+		 * Max length: 11
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -16067,15 +16555,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: string;
 
@@ -16087,8 +16575,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseNumber: string;
 
@@ -16106,29 +16594,29 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		filedDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDateWithUpdates: Date;
 
@@ -16137,15 +16625,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		participantsLastFetchDate: Date;
 	}
@@ -16153,15 +16641,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: FormControl<string | null | undefined>,
 
@@ -16173,50 +16661,50 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		filedDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDateWithUpdates: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		participantsLastFetchDate: FormControl<Date | null | undefined>,
 	}
@@ -16240,43 +16728,43 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		highlightSnippet: string;
 
 		/**
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		matchedObjectAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		matchedObjectAttribute: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		matchedObjectId: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		matchedObjectName: string;
 
 		/**
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: string;
 	}
@@ -16284,43 +16772,43 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		highlightSnippet: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		matchedObjectAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		matchedObjectAttribute: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		matchedObjectId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		matchedObjectName: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -16340,30 +16828,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseStatusGroupId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: string;
 	}
@@ -16371,30 +16859,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseStatusGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -16419,47 +16907,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2148
 		 * Min length: 1
+		 * Max length: 2148
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2147
 		 * Min length: 1
+		 * Max length: 2147
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -16468,47 +16956,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2148
 		 * Min length: 1
+		 * Max length: 2148
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2147
 		 * Min length: 1
+		 * Max length: 2147
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -16535,47 +17023,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2143
 		 * Min length: 18
+		 * Max length: 2143
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2142
 		 * Min length: 18
+		 * Max length: 2142
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -16584,47 +17072,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2143
 		 * Min length: 18
+		 * Max length: 2143
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2142
 		 * Min length: 18
+		 * Max length: 2142
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -16647,32 +17135,32 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseAPI: string;
 
 		/**
 		 * Unique Id for a Case in UniCourt.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: string;
 
 		/**
 		 * The date and time when the case was last fetched from the Court. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz, Note: It is not necessary that every time the case is fetched from Court we find changes in the case information. It could be that we already have the latest information from the Court and no changes exist.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: Date;
 
 		/**
 		 * The date and time when the case was last fetched from the Court where we found changes in the case information. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz,
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDateWithUpdates: Date;
 
@@ -16682,8 +17170,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: string;
 
@@ -16700,40 +17188,40 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique Id for a Case in UniCourt.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when the case was last fetched from the Court. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz, Note: It is not necessary that every time the case is fetched from Court we find changes in the case information. It could be that we already have the latest information from the Court and no changes exist.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * The date and time when the case was last fetched from the Court where we found changes in the case information. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz,
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDateWithUpdates: FormControl<Date | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 9
 		 * Min length: 9
+		 * Max length: 9
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -16753,8 +17241,8 @@ export namespace MyNS {
 		/**
 		 * The date and time when the case was tracked for this account.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastTrackDate: Date;
 
@@ -16767,8 +17255,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: string;
 
@@ -16783,16 +17271,16 @@ export namespace MyNS {
 		/**
 		 * The date and time when the case was tracked for this account.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastTrackDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -16839,24 +17327,24 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 30
 		 * Min length: 30
+		 * Max length: 30
 		 */
 		object: string;
 
 		/**
 		 * PACER Client Code. This is mandatory if your setting in PACER website is set to True for required client code.
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		pacerClientCode: string;
 
 		/**
 		 * **Your PACER credentials username. This is mandatory when a PACER Case is being requested in the API. For Non PACER cases this is not mandatory. Suppose your request consists of Non PACER and PACER Cases then this needs to be passed becuase you are requesting a PACER case too.**
 		 * Required
-		 * Max length: 40
 		 * Min length: 6
+		 * Max length: 40
 		 */
 		pacerUserId: string;
 
@@ -16868,8 +17356,8 @@ export namespace MyNS {
 		 * -   fetchAllDocketEntries:
 		 * >   Updates the PACER case by re-parsing all dockets from #1 till latest docket entry available.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		refreshType: CaseUpdatePacerOptionsResponseRefreshType;
 	}
@@ -16895,24 +17383,24 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 30
 		 * Min length: 30
+		 * Max length: 30
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * PACER Client Code. This is mandatory if your setting in PACER website is set to True for required client code.
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		pacerClientCode: FormControl<string | null | undefined>,
 
 		/**
 		 * **Your PACER credentials username. This is mandatory when a PACER Case is being requested in the API. For Non PACER cases this is not mandatory. Suppose your request consists of Non PACER and PACER Cases then this needs to be passed becuase you are requesting a PACER case too.**
 		 * Required
-		 * Max length: 40
 		 * Min length: 6
+		 * Max length: 40
 		 */
 		pacerUserId: FormControl<string | null | undefined>,
 
@@ -16924,8 +17412,8 @@ export namespace MyNS {
 		 * -   fetchAllDocketEntries:
 		 * >   Updates the PACER case by re-parsing all dockets from #1 till latest docket entry available.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		refreshType: FormControl<CaseUpdatePacerOptionsResponseRefreshType | null | undefined>,
 	}
@@ -16954,8 +17442,8 @@ export namespace MyNS {
 		fetchIfOlderThanDays?: number | null;
 
 		/**
-		 * Max length: 15
 		 * Min length: 11
+		 * Max length: 15
 		 */
 		page?: CaseUpdatePacerOptionsResponseAdditionalPageArrayPage | null;
 	}
@@ -16973,8 +17461,8 @@ export namespace MyNS {
 		fetchIfOlderThanDays: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 15
 		 * Min length: 11
+		 * Max length: 15
 		 */
 		page: FormControl<CaseUpdatePacerOptionsResponseAdditionalPageArrayPage | null | undefined>,
 	}
@@ -17003,15 +17491,15 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 7
 		 * Min length: 5
+		 * Max length: 7
 		 */
 		type: ScheduleType;
 	}
@@ -17020,15 +17508,15 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 7
 		 * Min length: 5
+		 * Max length: 7
 		 */
 		type: FormControl<ScheduleType | null | undefined>,
 	}
@@ -17055,42 +17543,45 @@ export namespace MyNS {
 		/**
 		 * Link for the next page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: string;
 
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link for the previous page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of case track available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -17099,42 +17590,45 @@ export namespace MyNS {
 		/**
 		 * Link for the next page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link for the previous page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of case track available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -17154,32 +17648,32 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseAPI: string;
 
 		/**
 		 * Unique Id for a Case in UniCourt.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: string;
 
 		/**
 		 * The date and time when the case was last fetched from the Court. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz, Note: It is not necessary that every time the case is fetched from Court we find changes in the case information. It could be that we already have the latest information from the Court and no changes exist.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: Date;
 
 		/**
 		 * The date and time when the case was last fetched from the Court where we found changes in the case information. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz,
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDateWithUpdates: Date;
 
@@ -17189,8 +17683,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		object: string;
 
@@ -17207,40 +17701,40 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique Id for a Case in UniCourt.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when the case was last fetched from the Court. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz, Note: It is not necessary that every time the case is fetched from Court we find changes in the case information. It could be that we already have the latest information from the Court and no changes exist.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * The date and time when the case was last fetched from the Court where we found changes in the case information. This date and time is in UTC. Formatted as YYYY-MM-DDTHH:MM:SS+ZZ:zz,
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDateWithUpdates: FormControl<Date | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -17276,8 +17770,8 @@ export namespace MyNS {
 		/**
 		 * UniCourt's Case Id for update.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: string;
 
@@ -17289,8 +17783,8 @@ export namespace MyNS {
 		/**
 		 * UniCourt's Case Id for update.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: FormControl<string | null | undefined>,
 	}
@@ -17333,16 +17827,16 @@ export namespace MyNS {
 
 		/**
 		 * PACER Client Code. This is mandatory if your setting in PACER website is set to True for required client code.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		pacerClientCode?: string | null;
 
 		/**
 		 * **Your PACER credentials username. This is mandatory when a PACER Case is being requested in the API. For Non PACER cases this is not mandatory. Suppose your request consists of Non PACER and PACER Cases then this needs to be passed becuase you are requesting a PACER case too.**
 		 * Required
-		 * Max length: 40
 		 * Min length: 6
+		 * Max length: 40
 		 */
 		pacerUserId: string;
 
@@ -17353,8 +17847,8 @@ export namespace MyNS {
 		 * >   Updates the PACER case with only new docket entries that have been added after the previous update of the case being requested.
 		 * -   fetchAllDocketEntries:
 		 * >   Updates the PACER case by re-parsing all dockets from #1 till latest docket entry available.
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		refreshType?: CaseUpdatePacerOptionsResponseRefreshType | null;
 	}
@@ -17378,16 +17872,16 @@ export namespace MyNS {
 
 		/**
 		 * PACER Client Code. This is mandatory if your setting in PACER website is set to True for required client code.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		pacerClientCode: FormControl<string | null | undefined>,
 
 		/**
 		 * **Your PACER credentials username. This is mandatory when a PACER Case is being requested in the API. For Non PACER cases this is not mandatory. Suppose your request consists of Non PACER and PACER Cases then this needs to be passed becuase you are requesting a PACER case too.**
 		 * Required
-		 * Max length: 40
 		 * Min length: 6
+		 * Max length: 40
 		 */
 		pacerUserId: FormControl<string | null | undefined>,
 
@@ -17398,8 +17892,8 @@ export namespace MyNS {
 		 * >   Updates the PACER case with only new docket entries that have been added after the previous update of the case being requested.
 		 * -   fetchAllDocketEntries:
 		 * >   Updates the PACER case by re-parsing all dockets from #1 till latest docket entry available.
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		refreshType: FormControl<CaseUpdatePacerOptionsResponseRefreshType | null | undefined>,
 	}
@@ -17427,8 +17921,8 @@ export namespace MyNS {
 		fetchIfOlderThanDays?: number | null;
 
 		/**
-		 * Max length: 15
 		 * Min length: 11
+		 * Max length: 15
 		 */
 		page?: CaseUpdatePacerOptionsResponseAdditionalPageArrayPage | null;
 	}
@@ -17446,8 +17940,8 @@ export namespace MyNS {
 		fetchIfOlderThanDays: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 15
 		 * Min length: 11
+		 * Max length: 15
 		 */
 		page: FormControl<CaseUpdatePacerOptionsResponseAdditionalPageArrayPage | null | undefined>,
 	}
@@ -17471,8 +17965,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 7
 		 * Min length: 5
+		 * Max length: 7
 		 */
 		type: ScheduleType;
 	}
@@ -17480,8 +17974,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 7
 		 * Min length: 5
+		 * Max length: 7
 		 */
 		type: FormControl<ScheduleType | null | undefined>,
 	}
@@ -17503,47 +17997,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2144
 		 * Min length: 1
+		 * Max length: 2144
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2143
 		 * Min length: 1
+		 * Max length: 2143
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -17552,47 +18046,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2144
 		 * Min length: 1
+		 * Max length: 2144
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2143
 		 * Min length: 1
+		 * Max length: 2143
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -17619,47 +18113,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2139
 		 * Min length: 1
+		 * Max length: 2139
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2138
 		 * Min length: 1
+		 * Max length: 2138
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -17668,47 +18162,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2139
 		 * Min length: 1
+		 * Max length: 2139
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2138
 		 * Min length: 1
+		 * Max length: 2138
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -17731,16 +18225,16 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseAPI: string;
 
 		/**
 		 * Unique Id for a Case in UniCourt.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: string;
 
@@ -17753,8 +18247,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		object: string;
 
@@ -17767,16 +18261,16 @@ export namespace MyNS {
 		/**
 		 * The date and time when the case was last requested for update
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		requestedDate: Date;
 
 		/**
 		 * Status of the request.
 		 * Required
-		 * Max length: 11
 		 * Min length: 7
+		 * Max length: 11
 		 */
 		status: CaseDocumentOrderCallbackStatus;
 	}
@@ -17784,40 +18278,40 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique Id for a Case in UniCourt.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 10
 		 * Min length: 10
+		 * Max length: 10
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when the case was last requested for update
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		requestedDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Status of the request.
 		 * Required
-		 * Max length: 11
 		 * Min length: 7
+		 * Max length: 11
 		 */
 		status: FormControl<CaseDocumentOrderCallbackStatus | null | undefined>,
 	}
@@ -17845,42 +18339,45 @@ export namespace MyNS {
 		/**
 		 * Link for the next page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: string;
 
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link for the previous page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of case update objects available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -17889,42 +18386,45 @@ export namespace MyNS {
 		/**
 		 * Link for the next page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link for the previous page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of case update objects available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -17944,16 +18444,16 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseAPI: string;
 
 		/**
 		 * Unique Id for a Case in UniCourt.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: string;
 
@@ -17966,8 +18466,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: string;
 
@@ -17980,16 +18480,16 @@ export namespace MyNS {
 		/**
 		 * The date and time when the case was last requested for update
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		requestedDate: Date;
 
 		/**
 		 * Status of the request.
 		 * Required
-		 * Max length: 11
 		 * Min length: 7
+		 * Max length: 11
 		 */
 		status: CaseDocumentOrderCallbackStatus;
 	}
@@ -17997,40 +18497,40 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		caseAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique Id for a Case in UniCourt.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseId: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when the case was last requested for update
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		requestedDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Status of the request.
 		 * Required
-		 * Max length: 11
 		 * Min length: 7
+		 * Max length: 11
 		 */
 		status: FormControl<CaseDocumentOrderCallbackStatus | null | undefined>,
 	}
@@ -18056,47 +18556,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2160
 		 * Min length: 1
+		 * Max length: 2160
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 35
 		 * Min length: 35
+		 * Max length: 35
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2159
 		 * Min length: 1
+		 * Max length: 2159
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -18105,47 +18605,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2160
 		 * Min length: 1
+		 * Max length: 2160
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 35
 		 * Min length: 35
+		 * Max length: 35
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2159
 		 * Min length: 1
+		 * Max length: 2159
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -18165,30 +18665,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		causeOfActionGroupId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: string;
 	}
@@ -18196,30 +18696,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		causeOfActionGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -18244,47 +18744,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2151
 		 * Min length: 1
+		 * Max length: 2151
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2150
 		 * Min length: 1
+		 * Max length: 2150
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -18293,47 +18793,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2151
 		 * Min length: 1
+		 * Max length: 2151
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2150
 		 * Min length: 1
+		 * Max length: 2150
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -18360,47 +18860,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2146
 		 * Min length: 1
+		 * Max length: 2146
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2145
 		 * Min length: 1
+		 * Max length: 2145
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -18409,47 +18909,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2146
 		 * Min length: 1
+		 * Max length: 2146
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2145
 		 * Min length: 1
+		 * Max length: 2145
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -18476,47 +18976,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2153
 		 * Min length: 1
+		 * Max length: 2153
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 28
 		 * Min length: 28
+		 * Max length: 28
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2152
 		 * Min length: 1
+		 * Max length: 2152
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -18525,47 +19025,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2153
 		 * Min length: 1
+		 * Max length: 2153
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 28
 		 * Min length: 28
+		 * Max length: 28
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2152
 		 * Min length: 1
+		 * Max length: 2152
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -18592,47 +19092,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2160
 		 * Min length: 1
+		 * Max length: 2160
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2159
 		 * Min length: 1
+		 * Max length: 2159
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -18641,47 +19141,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2160
 		 * Min length: 1
+		 * Max length: 2160
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 20
 		 * Min length: 20
+		 * Max length: 20
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2159
 		 * Min length: 1
+		 * Max length: 2159
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -18701,30 +19201,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeGroupId: string;
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 11
 		 * Min length: 11
+		 * Max length: 11
 		 */
 		object: string;
 	}
@@ -18732,30 +19232,30 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		chargeGroupId: FormControl<string | null | undefined>,
 
 		/**
 		 * The date and time when it was first created. This date and time is in UTC. Formatted as YYYY-MM-DD HH:MM:SS.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		createdDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 11
 		 * Min length: 11
+		 * Max length: 11
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -18780,47 +19280,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2142
 		 * Min length: 1
+		 * Max length: 2142
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2141
 		 * Min length: 1
+		 * Max length: 2141
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -18829,47 +19329,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2142
 		 * Min length: 1
+		 * Max length: 2142
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2141
 		 * Min length: 1
+		 * Max length: 2141
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -18896,47 +19396,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2137
 		 * Min length: 1
+		 * Max length: 2137
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2136
 		 * Min length: 1
+		 * Max length: 2136
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -18945,47 +19445,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2137
 		 * Min length: 1
+		 * Max length: 2137
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2136
 		 * Min length: 1
+		 * Max length: 2136
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -19012,47 +19512,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2160
 		 * Min length: 1
+		 * Max length: 2160
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2159
 		 * Min length: 1
+		 * Max length: 2159
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -19061,47 +19561,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2160
 		 * Min length: 1
+		 * Max length: 2160
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2159
 		 * Min length: 1
+		 * Max length: 2159
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -19128,64 +19628,72 @@ export namespace MyNS {
 		/**
 		 * Date when it was last updated.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdateCountDate: string;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: string;
 
 		/**
 		 * Total Cases for a specific court.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: number;
 
 		/**
 		 * Count of total Case Documents added in UniCourt Library.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseDocumentInLibraryCount: number;
 
 		/**
 		 * Count of total Case Documents added in UniCourt Library in last 30 days
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseDocumentInLibraryInLastThirtyDaysCount: number;
 
 		/**
 		 * Total Cases in last 30 days that were added to UniCourt
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCasesInLastThirtyDaysCount: number;
 
 		/**
 		 * Total Free Case Documents for a specific court.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalFreeCaseDocumentCount: number;
 
 		/**
 		 * Total Free Case Documents in last 30 days that were added to UniCourt
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalFreeCaseDocumentsInLastThirtyDaysCount: number;
 
 		/**
 		 * Total Paid Case Documents for a specific court.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPaidCaseDocumentCount: number;
 
 		/**
 		 * Total Paid Case Documents in last 30 days that were added to UniCourt
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPaidCaseDocumentsInLastThirtyDaysCount: number;
 	}
@@ -19194,64 +19702,72 @@ export namespace MyNS {
 		/**
 		 * Date when it was last updated.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdateCountDate: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Total Cases for a specific court.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Count of total Case Documents added in UniCourt Library.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseDocumentInLibraryCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Count of total Case Documents added in UniCourt Library in last 30 days
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCaseDocumentInLibraryInLastThirtyDaysCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total Cases in last 30 days that were added to UniCourt
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCasesInLastThirtyDaysCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total Free Case Documents for a specific court.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalFreeCaseDocumentCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total Free Case Documents in last 30 days that were added to UniCourt
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalFreeCaseDocumentsInLastThirtyDaysCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total Paid Case Documents for a specific court.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPaidCaseDocumentCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total Paid Case Documents in last 30 days that were added to UniCourt
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPaidCaseDocumentsInLastThirtyDaysCount: FormControl<number | null | undefined>,
 	}
@@ -19282,47 +19798,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2144
 		 * Min length: 1
+		 * Max length: 2144
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2143
 		 * Min length: 1
+		 * Max length: 2143
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -19331,47 +19847,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2144
 		 * Min length: 1
+		 * Max length: 2144
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2143
 		 * Min length: 1
+		 * Max length: 2143
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -19398,46 +19914,46 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2136
 		 * Min length: 1
+		 * Max length: 2136
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2135
 		 * Min length: 1
+		 * Max length: 2135
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -19446,46 +19962,46 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2136
 		 * Min length: 1
+		 * Max length: 2136
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2135
 		 * Min length: 1
+		 * Max length: 2135
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -19533,24 +20049,24 @@ export namespace MyNS {
 		/**
 		 * Court Service Status Object ID
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtServiceStatusId: string;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: string;
 
 		/**
 		 * Date when the service status was last fetched.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		serviceStatusAsOn: string;
 	}
@@ -19559,24 +20075,24 @@ export namespace MyNS {
 		/**
 		 * Court Service Status Object ID
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		courtServiceStatusId: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when the service status was last fetched.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		serviceStatusAsOn: FormControl<string | null | undefined>,
 	}
@@ -19594,8 +20110,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: string;
 
@@ -19619,8 +20135,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 13
 		 * Min length: 13
+		 * Max length: 13
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -19659,16 +20175,16 @@ export namespace MyNS {
 		/**
 		 * Estimated Time this Service could be Up again for the use.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		eta: string;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		object: string;
 
@@ -19694,16 +20210,16 @@ export namespace MyNS {
 		/**
 		 * Estimated Time this Service could be Up again for the use.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		eta: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -19740,47 +20256,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2153
 		 * Min length: 1
+		 * Max length: 2153
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2152
 		 * Min length: 1
+		 * Max length: 2152
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -19789,47 +20305,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2153
 		 * Min length: 1
+		 * Max length: 2153
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2152
 		 * Min length: 1
+		 * Max length: 2152
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -19856,47 +20372,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2142
 		 * Min length: 1
+		 * Max length: 2142
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2141
 		 * Min length: 1
+		 * Max length: 2141
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -19905,47 +20421,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2142
 		 * Min length: 1
+		 * Max length: 2142
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2141
 		 * Min length: 1
+		 * Max length: 2141
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -19972,47 +20488,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2140
 		 * Min length: 1
+		 * Max length: 2140
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2139
 		 * Min length: 1
+		 * Max length: 2139
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -20021,47 +20537,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2140
 		 * Min length: 1
+		 * Max length: 2140
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2139
 		 * Min length: 1
+		 * Max length: 2139
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -20106,24 +20622,24 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: string;
 
 		/**
 		 * End time of the usage.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		usageEndTime: Date;
 
 		/**
 		 * Start time of the usage.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		usageStartTime: Date;
 	}
@@ -20138,24 +20654,24 @@ export namespace MyNS {
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * End time of the usage.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		usageEndTime: FormControl<Date | null | undefined>,
 
 		/**
 		 * Start time of the usage.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		usageStartTime: FormControl<Date | null | undefined>,
 	}
@@ -20174,14 +20690,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls billed  for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
 		/**
 		 * Last Updated date and time for the field apiCallsBillable
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: Date;
 	}
@@ -20190,14 +20707,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls billed  for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * Last Updated date and time for the field apiCallsBillable
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: FormControl<Date | null | undefined>,
 	}
@@ -20214,14 +20732,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls credited back for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
 		/**
 		 * Last Updated date and time for the field apiCallsCredited
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: Date;
 	}
@@ -20230,14 +20749,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls credited back for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * Last Updated date and time for the field apiCallsCredited
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: FormControl<Date | null | undefined>,
 	}
@@ -20254,14 +20774,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls made for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
 		/**
 		 * Last Updated date and time for the field apiCallsMade
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: Date;
 	}
@@ -20270,14 +20791,15 @@ export namespace MyNS {
 		/**
 		 * Total API calls made for the billing cycle
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * Last Updated date and time for the field apiCallsMade
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastUpdated: FormControl<Date | null | undefined>,
 	}
@@ -20294,40 +20816,40 @@ export namespace MyNS {
 		/**
 		 * API call to download the document again if the above fileUrl is expired.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		caseDocumentDownloadAPI: string;
 
 		/**
 		 * Requested Document ID.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseDocumentId: string;
 
 		/**
 		 * Expiry date-time for the fileUrl provided in this object.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		expiryDate: string;
 
 		/**
 		 * Link to download the file.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		fileUrl: string;
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		object: string;
 	}
@@ -20336,40 +20858,40 @@ export namespace MyNS {
 		/**
 		 * API call to download the document again if the above fileUrl is expired.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		caseDocumentDownloadAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Requested Document ID.
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		caseDocumentId: FormControl<string | null | undefined>,
 
 		/**
 		 * Expiry date-time for the fileUrl provided in this object.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		expiryDate: FormControl<string | null | undefined>,
 
 		/**
 		 * Link to download the file.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		fileUrl: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -20389,24 +20911,24 @@ export namespace MyNS {
 		/**
 		 * Your Client ID obtainable by logging into your UniCourt account.
 		 * Required
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		clientId: string;
 
 		/**
 		 * Your Client Secret ID obtainable by logging into your UniCourt account.
 		 * Required
-		 * Max length: 64
 		 * Min length: 64
+		 * Max length: 64
 		 */
 		clientSecret: string;
 
 		/**
 		 * The Token ID of token being invalidated
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		tokenId: string;
 	}
@@ -20415,24 +20937,24 @@ export namespace MyNS {
 		/**
 		 * Your Client ID obtainable by logging into your UniCourt account.
 		 * Required
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		clientId: FormControl<string | null | undefined>,
 
 		/**
 		 * Your Client Secret ID obtainable by logging into your UniCourt account.
 		 * Required
-		 * Max length: 64
 		 * Min length: 64
+		 * Max length: 64
 		 */
 		clientSecret: FormControl<string | null | undefined>,
 
 		/**
 		 * The Token ID of token being invalidated
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		tokenId: FormControl<string | null | undefined>,
 	}
@@ -20533,47 +21055,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2142
 		 * Min length: 1
+		 * Max length: 2142
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2141
 		 * Min length: 1
+		 * Max length: 2141
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -20582,47 +21104,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2142
 		 * Min length: 1
+		 * Max length: 2142
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2141
 		 * Min length: 1
+		 * Max length: 2141
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -20649,47 +21171,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2147
 		 * Min length: 1
+		 * Max length: 2147
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2146
 		 * Min length: 1
+		 * Max length: 2146
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -20698,47 +21220,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2147
 		 * Min length: 1
+		 * Max length: 2147
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2146
 		 * Min length: 1
+		 * Max length: 2146
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -20921,8 +21443,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneyId: string;
 
@@ -20974,8 +21496,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneyId: FormControl<string | null | undefined>,
 
@@ -21006,8 +21528,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		name: string;
 
@@ -21019,18 +21541,21 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneyId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		normAttorneySimilarityScore: number;
 
 		/**
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: string;
 	}
@@ -21038,8 +21563,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -21051,18 +21576,21 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneyId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		normAttorneySimilarityScore: FormControl<number | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -21082,16 +21610,16 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2120
 		 * Min length: 1
+		 * Max length: 2120
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneySearchId: string;
 
@@ -21103,47 +21631,47 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2119
 		 * Min length: 1
+		 * Max length: 2119
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		q: string;
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 11
 		 * Min length: 1
+		 * Max length: 11
 		 */
 		totalCount: number;
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		totalPages: number;
 	}
@@ -21152,62 +21680,62 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2120
 		 * Min length: 1
+		 * Max length: 2120
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normAttorneySearchId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 26
 		 * Min length: 26
+		 * Max length: 26
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2119
 		 * Min length: 1
+		 * Max length: 2119
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		q: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 11
 		 * Min length: 1
+		 * Max length: 11
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -21229,22 +21757,22 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 5
 		 * Min length: 4
+		 * Max length: 5
 		 */
 		hasAssociatedPublicData: boolean;
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: Date;
 
@@ -21253,29 +21781,29 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		normAttorneyDetailsAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		normAttorneyId: string;
 
 		/**
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		object: string;
 	}
@@ -21283,50 +21811,50 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 5
 		 * Min length: 4
+		 * Max length: 5
 		 */
 		hasAssociatedPublicData: FormControl<boolean | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		normAttorneyDetailsAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		normAttorneyId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -21347,8 +21875,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normCorporateGroupId: string;
 
@@ -21368,8 +21896,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normCorporateGroupId: FormControl<string | null | undefined>,
 
@@ -21445,8 +21973,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normJudgeId: string;
 
@@ -21495,8 +22023,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normJudgeId: FormControl<string | null | undefined>,
 
@@ -21667,6 +22195,7 @@ export namespace MyNS {
 		/**
 		 * Year when Rating was recieved.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: number;
 	}
@@ -21682,6 +22211,7 @@ export namespace MyNS {
 		/**
 		 * Year when Rating was recieved.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: FormControl<number | null | undefined>,
 	}
@@ -21842,6 +22372,7 @@ export namespace MyNS {
 		/**
 		 * The year when the degree was awarded.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: number;
 	}
@@ -21864,6 +22395,7 @@ export namespace MyNS {
 		/**
 		 * The year when the degree was awarded.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: FormControl<number | null | undefined>,
 	}
@@ -22036,6 +22568,7 @@ export namespace MyNS {
 		/**
 		 * The year in which the Judge began practicing in his current service.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		fromYear: number;
 
@@ -22082,6 +22615,7 @@ export namespace MyNS {
 		/**
 		 * The year in which the Judge stoped practicing in his current service.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		toYear: number;
 	}
@@ -22106,6 +22640,7 @@ export namespace MyNS {
 		/**
 		 * The year in which the Judge began practicing in his current service.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		fromYear: FormControl<number | null | undefined>,
 
@@ -22152,6 +22687,7 @@ export namespace MyNS {
 		/**
 		 * The year in which the Judge stoped practicing in his current service.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		toYear: FormControl<number | null | undefined>,
 	}
@@ -22176,16 +22712,16 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2117
 		 * Min length: 1
+		 * Max length: 2117
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normJudgeSearchId: string;
 
@@ -22197,47 +22733,47 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2116
 		 * Min length: 1
+		 * Max length: 2116
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		q: string;
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 11
 		 * Min length: 1
+		 * Max length: 11
 		 */
 		totalCount: number;
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		totalPages: number;
 	}
@@ -22246,62 +22782,62 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2117
 		 * Min length: 1
+		 * Max length: 2117
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normJudgeSearchId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2116
 		 * Min length: 1
+		 * Max length: 2116
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		q: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 11
 		 * Min length: 1
+		 * Max length: 11
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -22323,15 +22859,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: Date;
 
@@ -22340,29 +22876,29 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		normJudgeDetailsAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		normJudgeId: string;
 
 		/**
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: string;
 	}
@@ -22370,43 +22906,43 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		normJudgeDetailsAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		normJudgeId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -22449,8 +22985,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normLawFirmId: string;
 
@@ -22481,8 +23017,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normLawFirmId: FormControl<string | null | undefined>,
 
@@ -22542,8 +23078,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normOrganizationId: string;
 
@@ -22623,8 +23159,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normOrganizationId: FormControl<string | null | undefined>,
 
@@ -22933,8 +23469,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normOrganizationId: string;
 
@@ -22978,8 +23514,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normOrganizationId: FormControl<string | null | undefined>,
 
@@ -23049,16 +23585,16 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2119
 		 * Min length: 1
+		 * Max length: 2119
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normLawFirmSearchId: string;
 
@@ -23070,47 +23606,47 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2118
 		 * Min length: 1
+		 * Max length: 2118
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		q: string;
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 11
 		 * Min length: 1
+		 * Max length: 11
 		 */
 		totalCount: number;
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		totalPages: number;
 	}
@@ -23119,62 +23655,62 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2119
 		 * Min length: 1
+		 * Max length: 2119
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normLawFirmSearchId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2118
 		 * Min length: 1
+		 * Max length: 2118
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		q: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 11
 		 * Min length: 1
+		 * Max length: 11
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -23196,15 +23732,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: Date;
 
@@ -23213,29 +23749,29 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		normLawFirmDetailsAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		normLawFirmId: string;
 
 		/**
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: string;
 	}
@@ -23243,43 +23779,43 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		normLawFirmDetailsAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		normLawFirmId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -23328,8 +23864,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartyId: string;
 
@@ -23369,8 +23905,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartyId: FormControl<string | null | undefined>,
 
@@ -23581,8 +24117,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartyId: string;
 
@@ -23602,8 +24138,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartyId: FormControl<string | null | undefined>,
 
@@ -23635,16 +24171,16 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2117
 		 * Min length: 1
+		 * Max length: 2117
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartySearchId: string;
 
@@ -23656,47 +24192,47 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2116
 		 * Min length: 1
+		 * Max length: 2116
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		q: string;
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 11
 		 * Min length: 1
+		 * Max length: 11
 		 */
 		totalCount: number;
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		totalPages: number;
 	}
@@ -23705,62 +24241,62 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2117
 		 * Min length: 1
+		 * Max length: 2117
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		normPartySearchId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2116
 		 * Min length: 1
+		 * Max length: 2116
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Query been sent by client
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		q: FormControl<string | null | undefined>,
 
 		/**
 		 * The number of matches that were found in the index.
 		 * Required
-		 * Max length: 11
 		 * Min length: 1
+		 * Max length: 11
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total pages for matches that were found in the index.
 		 * Required
-		 * Max length: 4
 		 * Min length: 1
+		 * Max length: 4
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -23782,15 +24318,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: Date;
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: Date;
 
@@ -23799,36 +24335,36 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		normPartyDetailsAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		normPartyId: string;
 
 		/**
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: string;
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		partyClassificationType: string;
 	}
@@ -23836,50 +24372,50 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		firstFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		lastFetchDate: FormControl<Date | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		normPartyDetailsAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 18
 		 * Min length: 17
+		 * Max length: 18
 		 */
 		normPartyId: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		partyClassificationType: FormControl<string | null | undefined>,
 	}
@@ -23901,8 +24437,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: string;
 
@@ -23916,6 +24452,7 @@ export namespace MyNS {
 		/**
 		 * Sequentially generated number that identifies the case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseId: number;
 
@@ -23929,6 +24466,7 @@ export namespace MyNS {
 		/**
 		 * The sequence number of the case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseNumber: number;
 
@@ -23963,6 +24501,7 @@ export namespace MyNS {
 		/**
 		 * The year in which the case falls. Could be two or four digit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseYear: number;
 
@@ -24109,6 +24648,7 @@ export namespace MyNS {
 		/**
 		 * JPML Case Seed number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclJpmlNumber: number;
 
@@ -24193,8 +24733,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -24208,6 +24748,7 @@ export namespace MyNS {
 		/**
 		 * Sequentially generated number that identifies the case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseId: FormControl<number | null | undefined>,
 
@@ -24221,6 +24762,7 @@ export namespace MyNS {
 		/**
 		 * The sequence number of the case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseNumber: FormControl<number | null | undefined>,
 
@@ -24255,6 +24797,7 @@ export namespace MyNS {
 		/**
 		 * The year in which the case falls. Could be two or four digit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseYear: FormControl<number | null | undefined>,
 
@@ -24401,6 +24944,7 @@ export namespace MyNS {
 		/**
 		 * JPML Case Seed number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclJpmlNumber: FormControl<number | null | undefined>,
 
@@ -24541,8 +25085,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: string;
 
@@ -24563,8 +25107,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -24581,14 +25125,15 @@ export namespace MyNS {
 		/**
 		 * Court Fee charged for the Find Case request. This is only applicable for Appeal Cases.
 		 * Required
+		 * Type: double
 		 */
 		courtFee: number;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: string;
 
@@ -24600,14 +25145,15 @@ export namespace MyNS {
 		/**
 		 * Court Fee charged for the Find Case request. This is only applicable for Appeal Cases.
 		 * Required
+		 * Type: double
 		 */
 		courtFee: FormControl<number | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -24630,8 +25176,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: string;
 
@@ -24649,8 +25195,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -24667,20 +25213,22 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: string;
 
 		/**
 		 * Sequentially generated number that identifies the case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseId: number;
 
 		/**
 		 * The sequence number of the case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseNumber: number;
 
@@ -24715,6 +25263,7 @@ export namespace MyNS {
 		/**
 		 * The year in which the case falls. Could be two or four digit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseYear: number;
 
@@ -24788,20 +25337,22 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Sequentially generated number that identifies the case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseId: FormControl<number | null | undefined>,
 
 		/**
 		 * The sequence number of the case.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseNumber: FormControl<number | null | undefined>,
 
@@ -24836,6 +25387,7 @@ export namespace MyNS {
 		/**
 		 * The year in which the case falls. Could be two or four digit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pclCaseYear: FormControl<number | null | undefined>,
 
@@ -24935,8 +25487,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: string;
 
@@ -24957,8 +25509,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 23
 		 * Min length: 23
+		 * Max length: 23
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -24987,38 +25539,43 @@ export namespace MyNS {
 		/**
 		 * Current Page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 
 		/**
 		 * Number of records returned.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfElements: number;
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: string;
 
 		/**
 		 * Number of results obtained in a page..
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: number;
 
 		/**
 		 * Total number of records available
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalElements: number;
 
 		/**
 		 * Total pages of data available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -25039,38 +25596,43 @@ export namespace MyNS {
 		/**
 		 * Current Page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of records returned.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfElements: FormControl<number | null | undefined>,
 
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Number of results obtained in a page..
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of records available
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalElements: FormControl<number | null | undefined>,
 
 		/**
 		 * Total pages of data available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -25093,6 +25655,7 @@ export namespace MyNS {
 		/**
 		 * No of pages that was billed for the given PACER search.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		billablePages: number;
 
@@ -25134,8 +25697,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: string;
 
@@ -25156,16 +25719,16 @@ export namespace MyNS {
 		/**
 		 * PACER Search Fee.
 		 * Required
-		 * Max length: 5
 		 * Min length: 3
+		 * Max length: 5
 		 */
 		searchFee: string;
 
 		/**
 		 * Date when the transaction was made at the pacer court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		transactionDate: Date;
 	}
@@ -25174,6 +25737,7 @@ export namespace MyNS {
 		/**
 		 * No of pages that was billed for the given PACER search.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		billablePages: FormControl<number | null | undefined>,
 
@@ -25215,8 +25779,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 18
 		 * Min length: 18
+		 * Max length: 18
 		 */
 		object: FormControl<string | null | undefined>,
 
@@ -25237,16 +25801,16 @@ export namespace MyNS {
 		/**
 		 * PACER Search Fee.
 		 * Required
-		 * Max length: 5
 		 * Min length: 3
+		 * Max length: 5
 		 */
 		searchFee: FormControl<string | null | undefined>,
 
 		/**
 		 * Date when the transaction was made at the pacer court site.
 		 * Required
-		 * Max length: 25
 		 * Min length: 25
+		 * Max length: 25
 		 */
 		transactionDate: FormControl<Date | null | undefined>,
 	}
@@ -25279,8 +25843,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: string;
 
@@ -25296,18 +25860,21 @@ export namespace MyNS {
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Total number of records available for this Search.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects the current PCL Search.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -25323,26 +25890,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of records available for this Search.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects the current PCL Search.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -25369,8 +25939,8 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		object: string;
 
@@ -25386,18 +25956,21 @@ export namespace MyNS {
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Total number of records available for this Search.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects the current PCL Search.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -25413,26 +25986,29 @@ export namespace MyNS {
 		/**
 		 * Name of the object
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of records available for this Search.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects the current PCL Search.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -25452,24 +26028,24 @@ export namespace MyNS {
 		/**
 		 * Pacer Client Code.
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		defaultPacerClientCode: string;
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: string;
 
 		/**
 		 * Pacer User Id.
 		 * Required
-		 * Max length: 40
 		 * Min length: 6
+		 * Max length: 40
 		 */
 		pacerUserId: string;
 	}
@@ -25478,24 +26054,24 @@ export namespace MyNS {
 		/**
 		 * Pacer Client Code.
 		 * Required
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		defaultPacerClientCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 15
 		 * Min length: 15
+		 * Max length: 15
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Pacer User Id.
 		 * Required
-		 * Max length: 40
 		 * Min length: 6
+		 * Max length: 40
 		 */
 		pacerUserId: FormControl<string | null | undefined>,
 	}
@@ -25513,16 +26089,16 @@ export namespace MyNS {
 		/**
 		 * Link for the next page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 27
 		 * Min length: 27
+		 * Max length: 27
 		 */
 		object: string;
 
@@ -25537,26 +26113,29 @@ export namespace MyNS {
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * Link for the previous page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of pacer credentials available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: number;
 	}
@@ -25565,42 +26144,45 @@ export namespace MyNS {
 		/**
 		 * Link for the next page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the object.
 		 * Required
-		 * Max length: 27
 		 * Min length: 27
+		 * Max length: 27
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Current page number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link for the previous page.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of pacer credentials available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -25620,24 +26202,24 @@ export namespace MyNS {
 
 		/**
 		 * Pacer Client Code.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		defaultPacerClientCode?: string | null;
 
 		/**
 		 * Pacer User Id.
 		 * Required
-		 * Max length: 40
 		 * Min length: 6
+		 * Max length: 40
 		 */
 		pacerUserId: string;
 
 		/**
 		 * Password.
 		 * Required
-		 * Max length: 45
 		 * Min length: 8
+		 * Max length: 45
 		 */
 		password: string;
 	}
@@ -25645,24 +26227,24 @@ export namespace MyNS {
 
 		/**
 		 * Pacer Client Code.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		defaultPacerClientCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Pacer User Id.
 		 * Required
-		 * Max length: 40
 		 * Min length: 6
+		 * Max length: 40
 		 */
 		pacerUserId: FormControl<string | null | undefined>,
 
 		/**
 		 * Password.
 		 * Required
-		 * Max length: 45
 		 * Min length: 8
+		 * Max length: 45
 		 */
 		password: FormControl<string | null | undefined>,
 	}
@@ -25680,23 +26262,23 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2147
 		 * Min length: 1
+		 * Max length: 2147
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
@@ -25709,24 +26291,24 @@ export namespace MyNS {
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2146
 		 * Min length: 1
+		 * Max length: 2146
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -25735,47 +26317,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2147
 		 * Min length: 1
+		 * Max length: 2147
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2146
 		 * Min length: 1
+		 * Max length: 2146
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -25796,23 +26378,23 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2142
 		 * Min length: 1
+		 * Max length: 2142
 		 */
 		nextPageAPI: string;
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: string;
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: number;
 
@@ -25825,24 +26407,24 @@ export namespace MyNS {
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2141
 		 * Min length: 1
+		 * Max length: 2141
 		 */
 		previousPageAPI: string;
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: number;
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: number;
 	}
@@ -25851,47 +26433,47 @@ export namespace MyNS {
 		/**
 		 * Link to next page.
 		 * Required
-		 * Max length: 2142
 		 * Min length: 1
+		 * Max length: 2142
 		 */
 		nextPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 17
+		 * Max length: 17
 		 */
 		object: FormControl<string | null | undefined>,
 
 		/**
 		 * Page number for which results where obtained.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Link to previous page.
 		 * Required
-		 * Max length: 2141
 		 * Min length: 1
+		 * Max length: 2141
 		 */
 		previousPageAPI: FormControl<string | null | undefined>,
 
 		/**
 		 * Total number of matches found.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * Total number of pages to obtain all the objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
@@ -25914,15 +26496,15 @@ export namespace MyNS {
 		/**
 		 * A message indicating that the request was successful.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		message: string;
 
 		/**
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: string;
 	}
@@ -25933,15 +26515,15 @@ export namespace MyNS {
 		/**
 		 * A message indicating that the request was successful.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		message: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 7
 		 * Min length: 7
+		 * Max length: 7
 		 */
 		object: FormControl<string | null | undefined>,
 	}
@@ -25973,6 +26555,7 @@ export namespace MyNS {
 		 * Retrieve the parties represented by the attorney with the specified attorneyId value.
 		 * Get attorney/{attorneyId}/associatedParties
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PartyAttorneyAssociations} The request is recieved.
 		 */
 		GetAttorneyAssociatedParties(pageNumber: number | null | undefined): Observable<PartyAttorneyAssociations> {
@@ -26004,7 +26587,9 @@ export namespace MyNS {
 		 * Get list of callback types with count for a requested Date.
 		 * Get callbacks
 		 * @param {Date} date Date for which fetch the callback type list. By default, the date will be set to current date.
+		 *     Min length: 25    Max length: 25
 		 * @param {GetCallbacksStatus} status Status of the callbacks. Default status will fetch all callbacks.
+		 *     Min length: 7    Max length: 11
 		 * @return {CallbackListResponse} OK
 		 */
 		GetCallbacks(date: Date | null | undefined, status: GetCallbacksStatus | null | undefined): Observable<CallbackListResponse> {
@@ -26027,6 +26612,7 @@ export namespace MyNS {
 		 * Get case/{caseId}/attorneys
 		 * @param {boolean} isVisible Retrieve attorneys in the case with the specified caseId value whose isVisible flag is set to the specified value.
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Attorneys} The request is recieved.
 		 */
 		GetCaseAttorneys(isVisible: boolean | null | undefined, pageNumber: number | null | undefined): Observable<Attorneys> {
@@ -26038,8 +26624,11 @@ export namespace MyNS {
 		 * Retrieve the docket entries in the case with the specified caseId value.
 		 * Get case/{caseId}/docketEntries
 		 * @param {number} docketNumber Retrieve the docket entry witih the specified docket number in the case with the specified caseId value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetCaseDocketEntriesSortBy} sortBy Sort the retrieved docket entries in ascending order or descending order of date.
+		 *     Min length: 10    Max length: 20
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DocketEntries} The request is recieved.
 		 */
 		GetCaseDocketEntries(docketNumber: number | null | undefined, sortBy: GetCaseDocketEntriesSortBy | null | undefined, pageNumber: number | null | undefined): Observable<DocketEntries> {
@@ -26051,10 +26640,14 @@ export namespace MyNS {
 		 * Retrieve the primary documents in the case with the specified caseId value.
 		 * Get case/{caseId}/docketEntries/primaryDocuments
 		 * @param {number} docketNumber Retrieve the primary documents associated with the specified docket number in the case with the specified caseId value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} inLibrary Retrieve the primary documents in the with the specified inLibrary flag in the case with the specified caseId value.
 		 * @param {Date} afterFirstFetchDate Retrieve all primary documents in the case with the specified caseId value that were first fetched by UniCourt on the specified date or within the specified date.
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} libraryDate Retrieve all primary documents in the case with the specified caseId value that were added to the Crowdsourced Library on the specified date or within the specified date.
+		 *     Min length: 25    Max length: 25
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DocketEntryPrimaryDocuments} The request is recieved.
 		 */
 		GetPrimaryDocumentsForDocketEntries(docketNumber: number, inLibrary: boolean | null | undefined, afterFirstFetchDate: Date | null | undefined, libraryDate: Date | null | undefined, pageNumber: number | null | undefined): Observable<DocketEntryPrimaryDocuments> {
@@ -26066,10 +26659,14 @@ export namespace MyNS {
 		 * Retrieve the secondary documents in the case with the specified caseId value.
 		 * Get case/{caseId}/docketEntries/secondaryDocuments
 		 * @param {number} docketNumber Retrieve the secondary documents associated with the specified docket number in the case with the specified caseId value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} inLibrary Retrieve the secondary documents in the with the specified inLibrary flag in the case with the specified caseId value.
 		 * @param {Date} afterFirstFetchDate Retrieve all secondary documents in the case with the specified caseId value that were first fetched by UniCourt on the specified date or within the specified date.
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} libraryDate Retrieve all secondary documents in the case with the specified caseId value that were added to the Crowdsourced Library on the specified date or within the specified date.
+		 *     Min length: 25    Max length: 25
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DocketEntrySecondaryDocuments} The request is recieved.
 		 */
 		GetSecondaryDocumentsForDocketEntries(docketNumber: number, inLibrary: boolean | null | undefined, afterFirstFetchDate: Date | null | undefined, libraryDate: Date | null | undefined, pageNumber: number | null | undefined): Observable<DocketEntrySecondaryDocuments> {
@@ -26082,10 +26679,15 @@ export namespace MyNS {
 		 * Get case/{caseId}/documents
 		 * @param {boolean} inLibrary Filter all the documents those are added to the UniCourt library.
 		 * @param {Date} afterFirstFetchDate Get all the documents which were added to the case on or after a specific date.
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} libraryDate Sort all the documents based on the date when the document was added to the UniCourt Library.
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} firstFetchDate Sort all the documents based on the date it was fetched from the source site.
+		 *     Min length: 25    Max length: 25
 		 * @param {GetCaseDocketEntriesSortBy} sortBy Sort documents with document order.
+		 *     Min length: 10    Max length: 20
 		 * @param {number} pageNumber The page for which the result should be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CaseDocuments} The request is recieved.
 		 */
 		GetCaseDocuments(inLibrary: boolean | null | undefined, afterFirstFetchDate: Date | null | undefined, libraryDate: Date | null | undefined, firstFetchDate: Date | null | undefined, sortBy: GetCaseDocketEntriesSortBy | null | undefined, pageNumber: number | null | undefined): Observable<CaseDocuments> {
@@ -26098,6 +26700,7 @@ export namespace MyNS {
 		 * Get case/{caseId}/hearings
 		 * @param {GetCaseDocketEntriesSortBy} sortBy Specify the sort order of hearings in the case with the specified caseId.
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Hearings} The request is recieved.
 		 */
 		GetCaseHearings(sortBy: GetCaseDocketEntriesSortBy | null | undefined, pageNumber: number | null | undefined): Observable<Hearings> {
@@ -26110,6 +26713,7 @@ export namespace MyNS {
 		 * Get case/{caseId}/judges
 		 * @param {boolean} isVisible Retrieve attorneys judges in the case with the specified caseId value whose isVisible flag is set to the specified value.
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Judges} The request is recieved.
 		 */
 		GetCaseJudges(isVisible: boolean | null | undefined, pageNumber: number | null | undefined): Observable<Judges> {
@@ -26122,10 +26726,15 @@ export namespace MyNS {
 		 * Get case/{caseId}/parties
 		 * @param {boolean} isVisible Retrieve parties in the case with the specified caseId value whose isVisible flag is set to the specified value.
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} partyRoleId Retrieve all parties with the specified partyRoleId value in the case with the specified caseId value.
+		 *     Min length: 18    Max length: 18
 		 * @param {string} partyRoleGroupId Retrieve all parties with the specified partyRoleGroupId value in the case with the specified caseId value.
+		 *     Min length: 18    Max length: 18
 		 * @param {string} attorneyRepresentationTypeId Retrieve all parties with the specified attorneyRepresentationTypeId value in the case with the specified caseId value.
+		 *     Min length: 18    Max length: 18
 		 * @param {PartyPartyClassificationType} partyClassificationType Retrieve all parties with the specified partyClassificationType value in the case with the specified caseId value.
+		 *     Min length: 5    Max length: 10
 		 * @return {Parties} The request is recieved.
 		 */
 		GetCaseParties(isVisible: boolean | null | undefined, pageNumber: number | null | undefined, partyRoleId: string | null | undefined, partyRoleGroupId: string | null | undefined, attorneyRepresentationTypeId: string | null | undefined, partyClassificationType: PartyPartyClassificationType | null | undefined): Observable<Parties> {
@@ -26137,6 +26746,7 @@ export namespace MyNS {
 		 * Retrieve cases that UniCourt has identified as related to the case with the specified caseId value.
 		 * Get case/{caseId}/relatedCases
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RelatedCases} The request is recieved.
 		 */
 		GetCaseRelatedCases(pageNumber: number | null | undefined): Observable<RelatedCases> {
@@ -26177,8 +26787,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByAreaOfLaw
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByAreaOfLawResponse} OK
 		 */
 		GetCaseCountAnalyticsByAreaOfLaw(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByAreaOfLawResponse> {
@@ -26219,8 +26831,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByCaseClass
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByCaseClassResponse} OK
 		 */
 		GetCaseCountAnalyticsByCaseClass(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByCaseClassResponse> {
@@ -26261,8 +26875,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByCaseFiledDate
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @param {CaseCountAnalyticsByCaseFiledDateGroupedBy} groupBy GroupBy
 		 * @return {CaseCountAnalyticsByCaseFiledDateResponse} OK
 		 */
@@ -26304,8 +26920,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByCaseType
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByCaseTypeResponse} OK
 		 */
 		GetCaseCountAnalyticsByCaseType(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByCaseTypeResponse> {
@@ -26346,8 +26964,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByCaseTypeGroup
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByCaseTypeGroupResponse} OK
 		 */
 		GetCaseCountAnalyticsByCaseTypeGroup(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByCaseTypeGroupResponse> {
@@ -26388,8 +27008,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByCourt
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByCourtResponse} OK
 		 */
 		GetCaseCountAnalyticsByCourt(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByCourtResponse> {
@@ -26430,8 +27052,10 @@ export namespace MyNS {
 		 * q=courtId:"CORTV4vCEaKrhystBz" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByCourtLocation
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByCourtLocationResponse} OK
 		 */
 		GetCaseCountAnalyticsByCourtLocation(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByCourtLocationResponse> {
@@ -26472,8 +27096,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByCourtSystem
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByCourtSystemResponse} OK
 		 */
 		GetCaseCountAnalyticsByCourtSystem(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByCourtSystemResponse> {
@@ -26514,8 +27140,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByCourtType
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByCourtTypeResponse} OK
 		 */
 		GetCaseCountAnalyticsByCourtType(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByCourtTypeResponse> {
@@ -26556,8 +27184,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByJurisdictionGeo
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByJurisdictionGeoResponse} OK
 		 */
 		GetCaseCountAnalyticsByJurisdictionGeo(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByJurisdictionGeoResponse> {
@@ -26598,8 +27228,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByNormAttorney
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByNormAttorneyResponse} OK
 		 */
 		GetCaseCountAnalyticsByNormAttorney(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByNormAttorneyResponse> {
@@ -26636,8 +27268,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByNormJudge
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByNormJudgeResponse} OK
 		 */
 		GetCaseCountAnalyticsByNormJudge(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByNormJudgeResponse> {
@@ -26678,8 +27312,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByNormLawFirm
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByNormLawFirmResponse} OK
 		 */
 		GetCaseCountAnalyticsByNormLawFirm(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByNormLawFirmResponse> {
@@ -26720,8 +27356,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByNormParty
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByNormPartyResponse} OK
 		 */
 		GetCaseCountAnalyticsByNormParty(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByNormPartyResponse> {
@@ -26759,8 +27397,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByPartyRole
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByPartyRoleResponse} OK
 		 */
 		GetCaseCountAnalyticsByPartyRole(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByPartyRoleResponse> {
@@ -26798,8 +27438,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get caseCountAnalyticsByPartyRoleGroup
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByPartyRoleGroupResponse} OK
 		 */
 		GetCaseCountAnalyticsByPartyRoleGroup(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByPartyRoleGroupResponse> {
@@ -26843,9 +27485,12 @@ export namespace MyNS {
 		 * Get Case Document Order Callback list for a requested Date.
 		 * Get caseDocumentOrder/callbacks
 		 * @param {Date} date Date for which fetch the Case Document Order Callback list. By default, the date will be set to current date.
+		 *     Min length: 25    Max length: 25
 		 * @param {GetCallbacksStatus} status Status of Document Order callbacks. Default status will fetch all callbacks.
+		 *     Min length: 7    Max length: 11
 		 * @param {number} pageNumber Page to fetch the Case Document Order Callback list.<br>
 		 *   - Minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseDocumentOrderCallbackListResponse} OK
 		 */
 		GetCaseDocumentOrderCallbacks(date: Date | null | undefined, status: GetCallbacksStatus | null | undefined, pageNumber: number | null | undefined): Observable<CaseDocumentOrderCallbackListResponse> {
@@ -26867,9 +27512,12 @@ export namespace MyNS {
 		 * Retrieve callbacks according to the specified criteria.
 		 * Get caseExport/callbacks
 		 * @param {Date} date The date for which callbacks are to be retrieved.
+		 *     Min length: 25    Max length: 25
 		 * @param {GetCallbacksStatus} status The status code of the callbacks to be retrieved.
+		 *     Min length: 7    Max length: 11
 		 * @param {number} pageNumber The page number of the callbacks to be retrieved.<br>
 		 *   - Minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseExportCallbackListResponse} OK
 		 */
 		GetCaseExportCallbacks(date: Date | null | undefined, status: GetCallbacksStatus | null | undefined, pageNumber: number | null | undefined): Observable<CaseExportCallbackListResponse> {
@@ -26957,11 +27605,15 @@ export namespace MyNS {
 		 * ### All query parameters supported for this API can be found in below schema section. Schema -->  CaseSearchQueryObject
 		 * Get caseSearch
 		 * @param {string} q Query parameter for keyword expressions.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {SearchCasesSort} sort Query parameter specifying how results are to be sorted. Results can be sorted according to filedDate or relevancy.
+		 *     Min length: 9    Max length: 9
 		 * @param {SearchCasesOrder} order Query parameter specifying whether search result are sorted in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
 		 * - Minimum: 1
 		 * - Maximum: 1000
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 1000
 		 * @return {CaseSearchResponse} Success
 		 */
 		SearchCases(q: string, sort: SearchCasesSort | null | undefined, order: SearchCasesOrder | null | undefined, pageNumber: number | null | undefined): Observable<CaseSearchResponse> {
@@ -26975,6 +27627,7 @@ export namespace MyNS {
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
 		 * - Minimum: 1
 		 * - Maximum: 1000
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 1000
 		 * @return {CaseSearchResponse} Success
 		 */
 		SearchCasesById(pageNumber: number | null | undefined): Observable<CaseSearchResponse> {
@@ -27016,9 +27669,12 @@ export namespace MyNS {
 		 * Retrieve a list of all tracked cases.
 		 * Get caseTracks
 		 * @param {Date} lastFetchDate The lastFetchDate value of the tracked case. The date value should be entered in the format YYYY-MM-DDTHH:MM:SS+ZZ:zz.
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} lastFetchDateWithUpdates The date on which changes were last found in the case information.
+		 *     Min length: 25    Max length: 25
 		 * @param {number} pageNumber The page number of the results to be retrieved.<br>
 		 *   - Minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseTrackListResponse} OK
 		 */
 		GetCaseTracks(lastFetchDate: Date | null | undefined, lastFetchDateWithUpdates: Date | null | undefined, pageNumber: number | null | undefined): Observable<CaseTrackListResponse> {
@@ -27050,10 +27706,14 @@ export namespace MyNS {
 		 * Retrieve case updates for the specified date.
 		 * Get caseUpdates
 		 * @param {string} caseId The caseId value of the case for which updates should be retrieved.
+		 *     Min length: 18    Max length: 18
 		 * @param {Date} requestedDate The date for which case updates are to be retrieved.
+		 *     Min length: 25    Max length: 25
 		 * @param {GetCallbacksStatus} status Status of the case updates to be retrieved.
+		 *     Min length: 7    Max length: 11
 		 * @param {number} pageNumber The page number of the callbacks to be retrieved.<br>
 		 *   - Minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseUpdateListResponse} OK
 		 */
 		GetCaseUpdates(caseId: string | null | undefined, requestedDate: Date | null | undefined, status: GetCallbacksStatus | null | undefined, pageNumber: number | null | undefined): Observable<CaseUpdateListResponse> {
@@ -27148,11 +27808,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> AreaOfLawQueryObject
 		 * Get masterData/areaOfLaw
 		 * @param {string} q Retrieve one or more areas of law using a keyword expression. Keyword expressions should be constructed according to the rules given above.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {AreaOfLawResponse} Success
 		 */
 		GetAreasOfLaw(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<AreaOfLawResponse> {
@@ -27183,11 +27847,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below Schema section. Schema --> AttorneyRepresentationTypeQueryObject
 		 * Get masterData/attorneyRepresentationType
 		 * @param {string} q The keyword expression targeting the attorney representation type.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {AttorneyRepresentationTypeResponse} Success
 		 */
 		GetAttorneyRepresentationTypes(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<AttorneyRepresentationTypeResponse> {
@@ -27218,11 +27886,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below Schema section. Schema --> AttorneyTypeQueryObject
 		 * Get masterData/attorneyType
 		 * @param {string} q The keyword expression targeting the attorney type.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {AttorneyTypeResponse} Success
 		 */
 		GetAttorneyTypes(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<AttorneyTypeResponse> {
@@ -27253,11 +27925,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CaseClassQueryObject
 		 * Get masterData/caseClass
 		 * @param {string} q The keyword expression targeting the desired case class.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CaseClassResponse} Success
 		 */
 		GetCasesClass(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CaseClassResponse> {
@@ -27288,11 +27964,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CaseRelationshipTypeQueryObject
 		 * Get masterData/caseRelationshipType
 		 * @param {string} q The keyword expression targeting the case relationship type.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CaseRelationshipTypeResponse} Success
 		 */
 		GetCaseRelationshipTypes(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CaseRelationshipTypeResponse> {
@@ -27323,11 +28003,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below Schema section. Schema --> CaseStatusQueryObject
 		 * Get masterData/caseStatus
 		 * @param {string} q The keyword expression targeting the desired case status.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CaseStatusResponse} Success
 		 */
 		GetCasesStatus(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CaseStatusResponse> {
@@ -27358,11 +28042,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CaseStatusGroupQueryObject
 		 * Get masterData/caseStatusGroup
 		 * @param {string} q The keyword expression targeting the desired case status group.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CaseStatusGroupResponse} Success
 		 */
 		GetCaseStatusGroups(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CaseStatusGroupResponse> {
@@ -27393,11 +28081,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CaseTypeQueryObject
 		 * Get masterData/caseType
 		 * @param {string} q Retrieve one or more case types using a keyword expression. Keyword expressions should be constructed according to the rules given above.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CaseTypeResponse} Success
 		 */
 		GetCaseTypes(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CaseTypeResponse> {
@@ -27428,11 +28120,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CaseTypeGroupQueryObject
 		 * Get masterData/caseTypeGroup
 		 * @param {string} q Retrieve one or more case type groups using a keyword expression. Keyword expressions should be constructed according to the rules given above.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CaseTypeGroupResponse} Success
 		 */
 		GetCaseTypeGroups(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CaseTypeGroupResponse> {
@@ -27463,11 +28159,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CauseOfActionQueryObject
 		 * Get masterData/causeOfAction
 		 * @param {string} q The keyword expression targeting the desired cause of action.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CauseOfActionResponse} Success
 		 */
 		GetCausesOfAction(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CauseOfActionResponse> {
@@ -27498,11 +28198,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CauseOfActionAdditionalDataQueryObject
 		 * Get masterData/causeOfActionAdditionalData
 		 * @param {string} q The keyword expression targeting the desired cause of action additional data.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CauseOfActionAdditionalDataResponse} Success
 		 */
 		GetCausesOfActionAdditionalData(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CauseOfActionAdditionalDataResponse> {
@@ -27533,11 +28237,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CauseOfActionGroupQueryObject
 		 * Get masterData/causeOfActionGroup
 		 * @param {string} q The keyword expression targeting the desired cause of action group.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CauseOfActionGroupResponse} Success
 		 */
 		GetCausesOfActionGroup(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CauseOfActionGroupResponse> {
@@ -27568,11 +28276,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> ChargeQueryObject
 		 * Get masterData/charge
 		 * @param {string} q The keyword expression targeting the desired charge.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {ChargeResponse} Success
 		 */
 		GetCharges(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<ChargeResponse> {
@@ -27603,11 +28315,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> ChargeAdditionalDataQueryObject
 		 * Get masterData/chargeAdditionalData
 		 * @param {string} q The keyword expression targeting the desired charge additional data.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {ChargeAdditionalDataResponse} Success
 		 */
 		GetChargesAdditionalData(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<ChargeAdditionalDataResponse> {
@@ -27638,11 +28354,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> ChargeDegreeQueryObject
 		 * Get masterData/chargeDegree
 		 * @param {string} q The keyword expression targeting the desired charge degree.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {ChargeDegreeResponse} Success
 		 */
 		GetChargesDegree(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<ChargeDegreeResponse> {
@@ -27673,11 +28393,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> ChargeGroupQueryObject
 		 * Get masterData/chargeGroup
 		 * @param {string} q The keyword expression targeting the desired charge group.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {ChargeGroupResponse} Success
 		 */
 		GetChargeGroups(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<ChargeGroupResponse> {
@@ -27708,11 +28432,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> ChargeSeverityQueryObject
 		 * Get masterData/chargeSeverity
 		 * @param {string} q The keyword expression targeting the desired charge severity.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {ChargeSeverityResponse} Success
 		 */
 		GetChargesSeverity(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<ChargeSeverityResponse> {
@@ -27743,11 +28471,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CourtQueryObject
 		 * Get masterData/court
 		 * @param {string} q The keyword expression that sets forth the criteria concerning the court or courts to be retrieved. Keyword expressions should be constructed according to the rules shown above.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CourtResponse} Success
 		 */
 		GetCourts(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CourtResponse> {
@@ -27771,6 +28503,7 @@ export namespace MyNS {
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
 		 * @return {CourtResponse} Success
@@ -27786,6 +28519,7 @@ export namespace MyNS {
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
 		 * @return {CourtLocationResponse} Success
@@ -27801,6 +28535,7 @@ export namespace MyNS {
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Minimum: 1    Maximum: 100
 		 * @param {GetJurisdictionGeoForCourtSort} sort The field according to which search results are to be sorted.
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
 		 * @return {JurisdictionGeoResponse} Success
@@ -27823,11 +28558,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CourtLocationQueryObject
 		 * Get masterData/courtLocation
 		 * @param {string} q The keyword expression that sets forth the criteria concerning the court location or court locations to target. Keyword expressions should be constructed according to the rules shown above.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CourtLocationResponse} Success
 		 */
 		GetCourtLocations(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CourtLocationResponse> {
@@ -27851,6 +28590,7 @@ export namespace MyNS {
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
 		 * @return {CourtResponse} Success
@@ -27873,11 +28613,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CourtServiceStatusQueryObject
 		 * Get masterData/courtServiceStatus
 		 * @param {string} q The keyword expression targeting the desired court. Keyword expressions should be constructed according to the rules given above.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CourtServiceStatusResponse} Success
 		 */
 		GetCourtsServiceStatus(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CourtServiceStatusResponse> {
@@ -27908,11 +28652,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CourtSystemQueryObject
 		 * Get masterData/courtSystem
 		 * @param {string} q The keyword expression that sets forth the criteria concerning the court system or court systems. Keyword expressions should be constructed according to the rules shown above.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CourtSystemResponse} Success
 		 */
 		GetCourtSystems(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CourtSystemResponse> {
@@ -27943,11 +28691,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> CourtTypeQueryObject
 		 * Get masterData/courtType
 		 * @param {string} q The keyword expression that sets forth the criteria concerning the court type or court types. Keyword expressions should be constructed according to the rules shown above.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {CourtTypeResponse} Success
 		 */
 		GetCourtTypes(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<CourtTypeResponse> {
@@ -27978,11 +28730,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> JudgeTypeQueryObject
 		 * Get masterData/judgeType
 		 * @param {string} q The keyword expression targeting the judge type.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {JudgeTypeResponse} Success
 		 */
 		GetJudgeTypes(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<JudgeTypeResponse> {
@@ -28013,11 +28769,14 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> JurisdictionGeoQueryObject
 		 * Get masterData/jurisdictionGeo
 		 * @param {string} q The keyword expression targeting the desired jurisdiction geography. Keyword expressions should be constructed according to the rules given above.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetJurisdictionGeoForCourtSort} sort The field according to which search results are to be sorted.
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {JurisdictionGeoResponse} Success
 		 */
 		GetJurisdictionsGeo(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetJurisdictionGeoForCourtSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<JurisdictionGeoResponse> {
@@ -28041,6 +28800,7 @@ export namespace MyNS {
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort Sort field.
 		 * @param {SearchCasesOrder} order Sort order.
 		 * @return {CourtResponse} Success
@@ -28063,11 +28823,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> PartyRoleQueryObject
 		 * Get masterData/partyRole
 		 * @param {string} q The keyword expression targeting the desired party role.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {PartyRoleResponse} Success
 		 */
 		GetPartyRoles(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<PartyRoleResponse> {
@@ -28098,11 +28862,15 @@ export namespace MyNS {
 		 * ### All Filter Query parameters supported for this API can be found in below schema section. Schema --> PartyRoleGroupQueryObject
 		 * Get masterData/partyRoleGroup
 		 * @param {string} q The keyword expression targeting the desired party role group.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber The page number of the results to be retrieved.
 		 * - minimum: 1
 		 * - maximum: 100
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 100
 		 * @param {GetAreasOfLawSort} sort The field according to which search results are to be sorted.
+		 *     Min length: 4    Max length: 4
 		 * @param {SearchCasesOrder} order Whether search results are to be shown in ascending or descending order.
+		 *     Min length: 3    Max length: 4
 		 * @return {PartyRoleGroupResponse} Success
 		 */
 		GetPartyRoleGroups(q: string | null | undefined, pageNumber: number | null | undefined, sort: GetAreasOfLawSort | null | undefined, order: SearchCasesOrder | null | undefined): Observable<PartyRoleGroupResponse> {
@@ -28156,8 +28924,10 @@ export namespace MyNS {
 		 * <br><br>
 		 * Get normAttorney/{normAttorneyId}/associatedNormJudges
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormJudgeResponse} OK
 		 */
 		GetNormJudgesAssociatedWithNormAttorney(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormJudgeResponse> {
@@ -28195,8 +28965,10 @@ export namespace MyNS {
 		 * <br><br>
 		 * Get normAttorney/{normAttorneyId}/associatedNormLawFirms
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormLawFirmResponse} OK
 		 */
 		GetNormLawFirmsAssociatedWithNormAttorney(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormLawFirmResponse> {
@@ -28235,8 +29007,10 @@ export namespace MyNS {
 		 * <br><br>
 		 * Get normAttorney/{normAttorneyId}/associatedNormParties
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormPartyResponse} OK
 		 */
 		GetNormPartiesAssociatedWithNormAttorney(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormPartyResponse> {
@@ -28276,8 +29050,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get normAttorney/{normAttorneyId}/caseCountAnalyticsByOpposingNormAttorney
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByNormAttorneyResponse} OK
 		 */
 		GetCaseCountAnalyticsByOpposingNormAttorneyForANormAttorney(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByNormAttorneyResponse> {
@@ -28290,9 +29066,11 @@ export namespace MyNS {
 		 * Get normAttorneySearch
 		 * @param {string} q The URL encoded query you are searching for.
 		 * The query can be as simple as a keyword, but supports many additional options and filters.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
 		 * - Minimum: 1
 		 * - Maximum: 1000
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 1000
 		 * @return {NormAttorneySearchResponse} Success
 		 */
 		SearchNormalizedAttorneys(q: string | null | undefined, pageNumber: number | null | undefined): Observable<NormAttorneySearchResponse> {
@@ -28306,6 +29084,7 @@ export namespace MyNS {
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
 		 * - Minimum: 1
 		 * - Maximum: 1000
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 1000
 		 * @return {NormAttorneySearchResponse} Success
 		 */
 		SearchNormalizedAttorneysById(pageNumber: number | null | undefined): Observable<NormAttorneySearchResponse> {
@@ -28349,8 +29128,10 @@ export namespace MyNS {
 		 * <br><br>
 		 * Get normJudge/{normJudgeId}/associatedNormAttorneys
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormAttorneyResponse} OK
 		 */
 		GetNormAttorneysAssociatedWithNormJudge(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormAttorneyResponse> {
@@ -28384,8 +29165,10 @@ export namespace MyNS {
 		 * <br><br>
 		 * Get normJudge/{normJudgeId}/associatedNormLawFirms
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormLawFirmResponse} OK
 		 */
 		GetNormLawFirmsAssociatedWithNormJudge(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormLawFirmResponse> {
@@ -28419,8 +29202,10 @@ export namespace MyNS {
 		 * <br><br>
 		 * Get normJudge/{normJudgeId}/associatedNormParties
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormPartyResponse} OK
 		 */
 		GetNormPartiesAssociatedWithNormJudge(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormPartyResponse> {
@@ -28433,9 +29218,11 @@ export namespace MyNS {
 		 * Get normJudgeSearch
 		 * @param {string} q The URL encoded query you are searching for.
 		 * The query can be as simple as a keyword, but supports many additional options and filters.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
 		 * - Minimum: 1
 		 * - Maximum: 1000
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 1000
 		 * @return {NormJudgeSearchResponse} Success
 		 */
 		SearchNormalizedJudges(q: string | null | undefined, pageNumber: number | null | undefined): Observable<NormJudgeSearchResponse> {
@@ -28449,6 +29236,7 @@ export namespace MyNS {
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
 		 * - Minimum: 1
 		 * - Maximum: 1000
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 1000
 		 * @return {NormJudgeSearchResponse} Success
 		 */
 		SearchNormalizedJudgesById(pageNumber: number | null | undefined): Observable<NormJudgeSearchResponse> {
@@ -28496,8 +29284,10 @@ export namespace MyNS {
 		 * <br><br>
 		 * Get normLawFirm/{normLawFirmId}/associatedNormAttorneys
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormAttorneyResponse} OK
 		 */
 		GetNormAttorneysAssociatedWithNormLawFirm(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormAttorneyResponse> {
@@ -28532,8 +29322,10 @@ export namespace MyNS {
 		 * <br><br>
 		 * Get normLawFirm/{normLawFirmId}/associatedNormJudges
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormJudgeResponse} OK
 		 */
 		GetNormJudgesAssociatedWithNormLawFirm(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormJudgeResponse> {
@@ -28571,8 +29363,10 @@ export namespace MyNS {
 		 * <br><br>
 		 * Get normLawFirm/{normLawFirmId}/associatedNormParties
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormPartyResponse} OK
 		 */
 		GetNormPartiesAssociatedWithNormLawFirm(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormPartyResponse> {
@@ -28612,8 +29406,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get normLawFirm/{normLawFirmId}/caseCountAnalyticsByOpposingNormLawFirm
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByNormLawFirmResponse} OK
 		 */
 		GetCaseCountAnalyticsByOpposingNormLawFirmForANormLawFirm(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByNormLawFirmResponse> {
@@ -28626,9 +29422,11 @@ export namespace MyNS {
 		 * Get normLawFirmSearch
 		 * @param {string} q The URL encoded query you are searching for.
 		 * The query can be as simple as a keyword, but supports many additional options and filters.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
 		 * - Minimum: 1
 		 * - Maximum: 1000
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 1000
 		 * @return {NormLawFirmSearchResponse} Success
 		 */
 		SearchNormalizedLawFirms(q: string | null | undefined, pageNumber: number | null | undefined): Observable<NormLawFirmSearchResponse> {
@@ -28642,6 +29440,7 @@ export namespace MyNS {
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
 		 * - Minimum: 1
 		 * - Maximum: 1000
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 1000
 		 * @return {NormLawFirmSearchResponse} Success
 		 */
 		SearchNormalizedLawFirmsById(pageNumber: number | null | undefined): Observable<NormLawFirmSearchResponse> {
@@ -28689,8 +29488,10 @@ export namespace MyNS {
 		 * <br><br>
 		 * Get normParty/{normPartyId}/associatedNormAttorneys
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormAttorneyResponse} OK
 		 */
 		GetNormAttorneysAssociatedWithNormParty(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormAttorneyResponse> {
@@ -28725,8 +29526,10 @@ export namespace MyNS {
 		 * <br><br>
 		 * Get normParty/{normPartyId}/associatedNormJudges
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormJudgeResponse} OK
 		 */
 		GetNormJudgesAssociatedWithNormParty(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormJudgeResponse> {
@@ -28763,8 +29566,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get normParty/{normPartyId}/associatedNormLawFirms
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {AssociatedNormLawFirmResponse} OK
 		 */
 		GetNormLawFirmsAssociatedWithNormParty(q: string | null | undefined, pageNumber: number): Observable<AssociatedNormLawFirmResponse> {
@@ -28804,8 +29609,10 @@ export namespace MyNS {
 		 * q=caseTypeId:"CTYPATMYyaJekdgj2c" AND caseFiledDate:[2017-01-01T00:00:00+00:00TO2021-11-30T00:00:00+00:00]
 		 * Get normParty/{normPartyId}/caseCountAnalyticsByOpposingNormParty
 		 * @param {string} q The URL encoded query you are searching for. The query can be as simple as a keyword, but supports many additional options and filters. All options are documented above.
+		 *     Max length: 2048
 		 * @param {number} pageNumber Page number.
 		 * - minimum: 1
+		 *     Minimum: 1
 		 * @return {CaseCountAnalyticsByNormPartyResponse} OK
 		 */
 		GetCaseCountAnalyticsByOpposingNormPartyForANormParty(q: string | null | undefined, pageNumber: number): Observable<CaseCountAnalyticsByNormPartyResponse> {
@@ -28818,9 +29625,11 @@ export namespace MyNS {
 		 * Get normPartySearch
 		 * @param {string} q The URL encoded query you are searching for.
 		 * The query can be as simple as a keyword, but supports many additional options and filters.</a>
+		 *     Min length: 3    Max length: 2000
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
 		 * - Minimum: 1
 		 * - Maximum: 1000
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 1000
 		 * @return {NormPartySearchResponse} Success
 		 */
 		SearchNormalizedParties(q: string | null | undefined, pageNumber: number | null | undefined): Observable<NormPartySearchResponse> {
@@ -28834,6 +29643,7 @@ export namespace MyNS {
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
 		 * - Minimum: 1
 		 * - Maximum: 1000
+		 *     Min length: 1    Max length: 255    Minimum: 1    Maximum: 1000
 		 * @return {NormPartySearchResponse} Success
 		 */
 		SearchNormalizedPartiesById(pageNumber: number | null | undefined): Observable<NormPartySearchResponse> {
@@ -28851,9 +29661,13 @@ export namespace MyNS {
 		 * 2.The results of the search has less Meta information in case objects compared to the Meta information of cases found using the PCL search APIs.
 		 * Get pacer/importCaseByCourtUsingCaseNumber
 		 * @param {string} pacerUserId The PACER username of the PACER account under which the case should be imported.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the case should be imported.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the case to be imported.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} courtId The courtId value of the court from which the case is to be imported.
+		 *     Min length: 18    Max length: 18
 		 * @return {PACERImportCase} The request is recieved.
 		 */
 		ImportPacerCaseByCourtUsingCaseNumber(pacerUserId: string, pacerClientCode: string, caseNumber: string, courtId: string): Observable<PACERImportCase> {
@@ -28865,7 +29679,9 @@ export namespace MyNS {
 		 * Search all courts within the PACER system for a particular case.
 		 * Get pacerCaseLocator/caseSearch/allCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn 
 		 * 	yy-tp-nnnnn 
@@ -28880,14 +29696,20 @@ export namespace MyNS {
 		 * nnnnn  case number (up to 5 digits) 
 		 * tp  case type (up to 2 characters) 
 		 * o  office where the case was filed (1 digit).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case. Ex 12345
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -28897,15 +29719,22 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLCase} The request is recieved.
 		 */
 		AllCourtsPacerCaseLocatorCaseSearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, pacerCaseId: number | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLCase> {
@@ -28917,20 +29746,28 @@ export namespace MyNS {
 		 * Search for PACER cases filed in U.S. Courts of Appeals.
 		 * Get pacerCaseLocator/caseSearch/appealCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn  
 		 * where: 
 		 * yy  case year (may be 2 or 4 digits) 
 		 * nnnnn  case number (up to 5 digits).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case. Ex 12345
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -28944,15 +29781,22 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLCase} The request is recieved.
 		 */
 		AppealCourtsPacerCaseLocatorCaseSearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, pacerCaseId: number | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, natureOfSuitsArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLCase> {
@@ -28964,7 +29808,9 @@ export namespace MyNS {
 		 * Search for PACER cases filed in U.S. Bankruptcy Courts.
 		 * Get pacerCaseLocator/caseSearch/bankruptcyCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn 
 		 * 	yy-tp-nnnnn 
@@ -28979,14 +29825,20 @@ export namespace MyNS {
 		 * nnnnn  case number (up to 5 digits) 
 		 * tp  case type (up to 2 characters) 
 		 * o  office where the case was filed (1 digit).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case. Ex 12345
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -29000,22 +29852,33 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseDischargedStartDate The date on which or after which the target case was marked as discharged within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		 * 	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseDischargedEndDate The date on which or before which the target case was marked as discharged within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		 * 	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseDismissedStartDate The date on which or after which the target case was marked as dismissed within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		 * 	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseDismissedEndDate The date on which or before which the target case was marked as dismissed within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLCase} The request is recieved.
 		 */
 		BankruptcyCourtsPacerCaseLocatorCaseSearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, pacerCaseId: number | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, federalBankruptcyChapterArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, caseDischargedStartDate: Date | null | undefined, caseDischargedEndDate: Date | null | undefined, caseDismissedStartDate: Date | null | undefined, caseDismissedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLCase> {
@@ -29027,7 +29890,9 @@ export namespace MyNS {
 		 * Search for civil cases filed in PACER.
 		 * Get pacerCaseLocator/caseSearch/civilCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn 
 		 * 	yy-tp-nnnnn 
@@ -29042,14 +29907,20 @@ export namespace MyNS {
 		 * nnnnn  case number (up to 5 digits) 
 		 * tp  case type (up to 2 characters) 
 		 * o  office where the case was filed (1 digit).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case.
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -29063,15 +29934,22 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLCase} The request is recieved.
 		 */
 		CivilCourtsPacerCaseLocatorCaseSearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, pacerCaseId: number | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, natureOfSuitsArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLCase> {
@@ -29083,7 +29961,9 @@ export namespace MyNS {
 		 * Search for criminal cases in PACER.
 		 * Get pacerCaseLocator/caseSearch/criminalCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn 
 		 * 	yy-tp-nnnnn 
@@ -29098,14 +29978,20 @@ export namespace MyNS {
 		 * nnnnn  case number (up to 5 digits) 
 		 * tp  case type (up to 2 characters) 
 		 * o  office where the case was filed (1 digit).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case. Ex 12345
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -29115,15 +30001,22 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLCase} The request is recieved.
 		 */
 		CriminalCourtsPacerCaseLocatorCaseSearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, pacerCaseId: number | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLCase> {
@@ -29135,7 +30028,9 @@ export namespace MyNS {
 		 * Search for multidistrict litigation in PACER.
 		 * Get pacerCaseLocator/caseSearch/multiDistrictCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn 
 		 * 	yy-tp-nnnnn 
@@ -29150,15 +30045,22 @@ export namespace MyNS {
 		 * nnnnn  case number (up to 5 digits) 
 		 * tp  case type (up to 2 characters) 
 		 * o  office where the case was filed (1 digit).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} jpmlNumber Master JPML Case Number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case. Ex 12345
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -29168,15 +30070,22 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtId,ASC&caseId,ASC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLCase} The request is recieved.
 		 */
 		MultiDistrictCourtsPacerCaseLocatorCaseSearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, jpmlNumber: number | null | undefined, pacerCaseId: number | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLCase> {
@@ -29188,7 +30097,9 @@ export namespace MyNS {
 		 * Search for the specified party across all PACER case filings.
 		 * Get pacerCaseLocator/partySearch/allCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn 
 		 * 	yy-tp-nnnnn 
@@ -29203,21 +30114,32 @@ export namespace MyNS {
 		 * nnnnn  case number (up to 5 digits) 
 		 * tp  case type (up to 2 characters) 
 		 * o  office where the case was filed (1 digit).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} lastName The last name (for an individual) or the entity name (for a business entity) of the target party.
+		 *     Max length: 50
 		 * @param {string} firstName The first name of the target party.
+		 *     Max length: 100
 		 * @param {string} middleName The middle name of the target party.
+		 *     Max length: 100
 		 * @param {string} generation The suffix (e.g., Jr., III) of the target party's name.
+		 *     Max length: 5
 		 * @param {string} partyType The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		 *     Max length: 50
 		 * @param {boolean} partyExactNameMatch Specify whether the search string must match the name of the target party exactly.
 		 * @param {Array<string>} partyRoleArray The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case.
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -29227,11 +30149,17 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {number} caseYearFrom Limit the results of the search to those cases from the year specified or later
+		 *     Max length: 4
 		 * @param {number} caseYearTo Limit the results of the search to those cases from the year specified or earlier
+		 *     Max length: 4
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario 1: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
@@ -29239,8 +30167,11 @@ export namespace MyNS {
 		 * 	Scenario 2: When you want to sort the response using the case parameters in the party search. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLParty} The request is recieved.
 		 */
 		AllCourtsPacerCaseLocatorPartySearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, pacerCaseId: number | null | undefined, lastName: string | null | undefined, firstName: string | null | undefined, middleName: string | null | undefined, generation: string | null | undefined, partyType: string | null | undefined, partyExactNameMatch: boolean | null | undefined, partyRoleArray: Array<string> | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseYearFrom: number | null | undefined, caseYearTo: number | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLParty> {
@@ -29252,7 +30183,9 @@ export namespace MyNS {
 		 * Search for the specified party across all PACER appeals cases.
 		 * Get pacerCaseLocator/partySearch/appealCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn 
 		 * 	yy-tp-nnnnn 
@@ -29267,21 +30200,32 @@ export namespace MyNS {
 		 * nnnnn  case number (up to 5 digits) 
 		 * tp  case type (up to 2 characters) 
 		 * o  office where the case was filed (1 digit).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} lastName The last name (for an individual) or the entity name (for a business entity) of the target party.
+		 *     Max length: 50
 		 * @param {string} firstName The first name of the target party.
+		 *     Max length: 100
 		 * @param {string} middleName The middle name of the target party.
+		 *     Max length: 100
 		 * @param {string} generation The suffix (e.g., Jr., III) of the target party's name.
+		 *     Max length: 5
 		 * @param {string} partyType The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		 *     Max length: 50
 		 * @param {boolean} partyExactNameMatch Specify whether the search string must match the name of the target party exactly.
 		 * @param {Array<string>} partyRoleArray The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case. Ex 12345
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -29291,11 +30235,17 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {number} caseYearFrom Limit the results of the search to those cases from the year specified or later
+		 *     Max length: 4
 		 * @param {number} caseYearTo Limit the results of the search to those cases from the year specified or earlier
+		 *     Max length: 4
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario 1: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
@@ -29303,8 +30253,11 @@ export namespace MyNS {
 		 * 	Scenario 2: When you want to sort the response using the case parameters in the party search. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLParty} The request is recieved.
 		 */
 		AppealCourtsPacerCaseLocatorPartySearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, pacerCaseId: number | null | undefined, lastName: string | null | undefined, firstName: string | null | undefined, middleName: string | null | undefined, generation: string | null | undefined, partyType: string | null | undefined, partyExactNameMatch: boolean | null | undefined, partyRoleArray: Array<string> | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseYearFrom: number | null | undefined, caseYearTo: number | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLParty> {
@@ -29316,7 +30269,9 @@ export namespace MyNS {
 		 * Search for the specified party in PACER bankruptcy filings.
 		 * Get pacerCaseLocator/partySearch/bankruptcyCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn 
 		 * 	yy-tp-nnnnn 
@@ -29331,21 +30286,32 @@ export namespace MyNS {
 		 * nnnnn  case number (up to 5 digits) 
 		 * tp  case type (up to 2 characters) 
 		 * o  office where the case was filed (1 digit).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} lastName The last name (for an individual) or the entity name (for a business entity) of the target party.
+		 *     Max length: 50
 		 * @param {string} firstName The first name of the target party.
+		 *     Max length: 100
 		 * @param {string} middleName The middle name of the target party.
+		 *     Max length: 100
 		 * @param {string} generation The suffix (e.g., Jr., III) of the target party's name.
+		 *     Max length: 5
 		 * @param {string} partyType The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		 *     Max length: 50
 		 * @param {boolean} partyExactNameMatch Specify whether the search string must match the name of the target party exactly.
 		 * @param {Array<string>} partyRoleArray The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case. Ex 12345
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -29355,21 +30321,33 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {number} caseYearFrom Limit the results of the search to those cases from the year specified or later
+		 *     Max length: 4
 		 * @param {number} caseYearTo Limit the results of the search to those cases from the year specified or earlier
+		 *     Max length: 4
 		 * @param {string} ssnOrEin The Social Security number or the federal Employer Identification Number of the target party. Either number can be entered with or without dashes.
+		 *     Max length: 9
 		 * @param {string} fourDigitSsn The last four digits of the Social Security number of the target party.
 		 * 	Note: When specified, a last name/entity name must also be specified.
+		 *     Max length: 4
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseDischargedStartDate The date on which or after which the target case was marked as discharged within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		 * 	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseDischargedEndDate The date on which or before which the target case was marked as discharged within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		 * 	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseDismissedStartDate The date on which or after which the target case was marked as dismissed within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00). 
 		 * 	Note: This parameter is applicable since we only perform this search for Bankruptcy Court type.
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseDismissedEndDate The date on which or before which the target case was marked as dismissed within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario 1: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
@@ -29377,8 +30355,11 @@ export namespace MyNS {
 		 * 	Scenario 2: When you want to sort the response using the case parameters in the party search. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLParty} The request is recieved.
 		 */
 		BankruptcyCourtsPacerCaseLocatorPartySearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, pacerCaseId: number | null | undefined, lastName: string | null | undefined, firstName: string | null | undefined, middleName: string | null | undefined, generation: string | null | undefined, partyType: string | null | undefined, partyExactNameMatch: boolean | null | undefined, partyRoleArray: Array<string> | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseYearFrom: number | null | undefined, caseYearTo: number | null | undefined, ssnOrEin: string | null | undefined, fourDigitSsn: string | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, caseDischargedStartDate: Date | null | undefined, caseDischargedEndDate: Date | null | undefined, caseDismissedStartDate: Date | null | undefined, caseDismissedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLParty> {
@@ -29390,7 +30371,9 @@ export namespace MyNS {
 		 * Search for the specified party in civil cases filed in PACER.
 		 * Get pacerCaseLocator/partySearch/civilCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn 
 		 * 	yy-tp-nnnnn 
@@ -29405,21 +30388,32 @@ export namespace MyNS {
 		 * nnnnn  case number (up to 5 digits) 
 		 * tp  case type (up to 2 characters) 
 		 * o  office where the case was filed (1 digit).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} lastName The last name (for an individual) or the entity name (for a business entity) of the target party.
+		 *     Max length: 50
 		 * @param {string} firstName The first name of the target party.
+		 *     Max length: 100
 		 * @param {string} middleName The middle name of the target party.
+		 *     Max length: 100
 		 * @param {string} generation The name suffix (e.g., III, MD).
+		 *     Max length: 5
 		 * @param {string} partyType The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		 *     Max length: 50
 		 * @param {boolean} partyExactNameMatch Specify whether the search string must match the name of the target party exactly.
 		 * @param {Array<string>} partyRoleArray The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case. Ex 12345
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -29429,11 +30423,17 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {number} caseYearFrom Limit the results of the search to those cases from the year specified or later
+		 *     Max length: 4
 		 * @param {number} caseYearTo Limit the results of the search to those cases from the year specified or earlier
+		 *     Max length: 4
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario 1: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
@@ -29441,8 +30441,11 @@ export namespace MyNS {
 		 * 	Scenario 2: When you want to sort the response using the case parameters in the party search. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLParty} The request is recieved.
 		 */
 		CivilCourtsPacerCaseLocatorPartySearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, pacerCaseId: number | null | undefined, lastName: string | null | undefined, firstName: string | null | undefined, middleName: string | null | undefined, generation: string | null | undefined, partyType: string | null | undefined, partyExactNameMatch: boolean | null | undefined, partyRoleArray: Array<string> | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseYearFrom: number | null | undefined, caseYearTo: number | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLParty> {
@@ -29454,7 +30457,9 @@ export namespace MyNS {
 		 * Search for the specified party in PACER criminal cases.
 		 * Get pacerCaseLocator/partySearch/criminalCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn 
 		 * 	yy-tp-nnnnn 
@@ -29469,21 +30474,32 @@ export namespace MyNS {
 		 * nnnnn  case number (up to 5 digits) 
 		 * tp  case type (up to 2 characters) 
 		 * o  office where the case was filed (1 digit).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} lastName The last name (for an individual) or the entity name (for a business entity) of the target party.
+		 *     Max length: 50
 		 * @param {string} firstName The first name of the target party.
+		 *     Max length: 100
 		 * @param {string} middleName The middle name of the target party.
+		 *     Max length: 100
 		 * @param {string} generation The suffix (e.g., Jr., III) of the target party's name.
+		 *     Max length: 5
 		 * @param {string} partyType The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		 *     Max length: 50
 		 * @param {boolean} partyExactNameMatch Specify whether the search string must match the name of the target party exactly.
 		 * @param {Array<string>} partyRoleArray The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case. Ex 12345
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -29493,11 +30509,17 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {number} caseYearFrom Limit the results of the search to those cases from the year specified or later
+		 *     Max length: 4
 		 * @param {number} caseYearTo Limit the results of the search to those cases from the year specified or earlier
+		 *     Max length: 4
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario 1: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
@@ -29505,8 +30527,11 @@ export namespace MyNS {
 		 * 	Scenario 2: When you want to sort the response using the case parameters in the party search. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLParty} The request is recieved.
 		 */
 		CriminalCourtsPacerCaseLocatorPartySearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, pacerCaseId: number | null | undefined, lastName: string | null | undefined, firstName: string | null | undefined, middleName: string | null | undefined, generation: string | null | undefined, partyType: string | null | undefined, partyExactNameMatch: boolean | null | undefined, partyRoleArray: Array<string> | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseYearFrom: number | null | undefined, caseYearTo: number | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLParty> {
@@ -29518,7 +30543,9 @@ export namespace MyNS {
 		 * Search for the specified party in multidistrict litigation in PACER.
 		 * Get pacerCaseLocator/partySearch/multiDistrictCourts
 		 * @param {string} pacerUserId The username of the PACER account under which the search is to be performed.
+		 *     Min length: 6    Max length: 20
 		 * @param {string} pacerClientCode The PACER client code under which the search is to be performed.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} caseNumber The case number of the target case. You may use the following case-number formats: 
 		 * 	yy-nnnnn 
 		 * 	yy-tp-nnnnn 
@@ -29533,22 +30560,34 @@ export namespace MyNS {
 		 * nnnnn  case number (up to 5 digits) 
 		 * tp  case type (up to 2 characters) 
 		 * o  office where the case was filed (1 digit).
+		 *     Min length: 3    Max length: 50
 		 * @param {number} jpmlNumber Master JPML Case Number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pacerCaseId The PACER-assigned identifier of the target case.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} lastName The last name (for an individual) or the entity name (for a business entity) of the target party.
+		 *     Max length: 50
 		 * @param {string} firstName The first name of the target party.
+		 *     Max length: 100
 		 * @param {string} middleName The middle name of the target party.
+		 *     Max length: 100
 		 * @param {string} generation The suffix (e.g., Jr., III) of the target party's name.
+		 *     Max length: 5
 		 * @param {string} partyType The court-assigned party type for a party involved in a case. Party type codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
+		 *     Max length: 50
 		 * @param {boolean} partyExactNameMatch Specify whether the search string must match the name of the target party exactly.
 		 * @param {Array<string>} partyRoleArray The court-assigned role for a party to a case. Party role codes are created and assigned by individual courts, and as such, their meanings can vary from court to court.
 		 * @param {string} caseTitle The title of the target case. 
 		 * 	Examples: 
 		 * 	A search for case title john doe v will result in all cases with the case title John Doe v. 
 		 * 	A search for case title Acme, Inc. will result in all case titles starting with Acme, Inc.
+		 *     Max length: 255
 		 * @param {number} caseOffice The divisional office in which the case was filed.
+		 *     Max length: 1
 		 * @param {number} caseSequenceNumber The PACER-assigned sequence number of the target case. Ex 12345
+		 *     Max length: 6
 		 * @param {number} caseYear The two- or four-digit year in which the target case was filed.
+		 *     Max length: 4
 		 * @param {Array<string>} caseTypeArray The PACER-assigned case type of the target case. Please see Appendix A for valid case-type values. 
 		 * 	Scenario: When mulitple case types needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to search only with the case type civil(cv) and criminal(cr), My query in the request will look like the example mentioned below. 
@@ -29558,11 +30597,17 @@ export namespace MyNS {
 		 * 	Imagine for a given case number 12-1234 I would like to search in the court regions California Central (cac) and California Eastern (cae), My query in the request will look like the example mentioned below. 
 		 * 	Example: courtRegionIdArray=cac&courtRegionIdArray=cae
 		 * @param {number} caseYearFrom Limit the results of the search to those cases from the year specified or later
+		 *     Max length: 4
 		 * @param {number} caseYearTo Limit the results of the search to those cases from the year specified or earlier
+		 *     Max length: 4
 		 * @param {Date} caseFiledStartDate The date on which or after which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseFiledEndDate The date on which or before which the target case was filed. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedStartDate The date on which or after which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {Date} caseTerminatedEndDate The date on which or before which the target case was marked as terminated within PACER. The date format must be YYYY-MM-DDTHH:MM:SS+ZZ:zz, (e.g., 2017-12-20T12:54:24+00:00).
+		 *     Min length: 25    Max length: 25
 		 * @param {string} sortParameterQuery How search results from PACER are to be sorted. Please see Appendix C for valid sort-related settings. 
 		 * 	Scenario 1: When mulitple sort paramters needs to be requested. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of courtId and caseId, My query in the request will look like the example mentioned below. 
@@ -29570,8 +30615,11 @@ export namespace MyNS {
 		 * 	Scenario 2: When you want to sort the response using the case parameters in the party search. 
 		 * 	Imagine for a given case number 12-1234 I would like to sort the results in the Ascending order of caseOffice and descending order of caseId, My query in the request will look like the example mentioned below. 
 		 * 	Example: sortParameterQuery=courtCase.caseOffice,ASC&caseid,DESC
+		 *     Min length: 5    Max length: 100
 		 * @param {AllCourtsPacerCaseLocatorCaseSearchCaseStatus} caseStatus Whether the target case is marked as 'open' or 'closed' within PACER.
+		 *     Min length: 3    Max length: 100
 		 * @param {number} pageNumber The page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PCLParty} The request is recieved.
 		 */
 		MultiDistrictCourtsPacerCaseLocatorPartySearch(pacerUserId: string, pacerClientCode: string, caseNumber: string | null | undefined, jpmlNumber: number | null | undefined, pacerCaseId: number | null | undefined, lastName: string | null | undefined, firstName: string | null | undefined, middleName: string | null | undefined, generation: string | null | undefined, partyType: string | null | undefined, partyExactNameMatch: boolean | null | undefined, partyRoleArray: Array<string> | null | undefined, caseTitle: string | null | undefined, caseOffice: number | null | undefined, caseSequenceNumber: number | null | undefined, caseYear: number | null | undefined, caseTypeArray: Array<string> | null | undefined, courtRegionIdArray: Array<string> | null | undefined, caseYearFrom: number | null | undefined, caseYearTo: number | null | undefined, caseFiledStartDate: Date | null | undefined, caseFiledEndDate: Date | null | undefined, caseTerminatedStartDate: Date | null | undefined, caseTerminatedEndDate: Date | null | undefined, sortParameterQuery: string | null | undefined, caseStatus: AllCourtsPacerCaseLocatorCaseSearchCaseStatus | null | undefined, pageNumber: number | null | undefined): Observable<PCLParty> {
@@ -29584,6 +30632,7 @@ export namespace MyNS {
 		 * Get pacerCredential
 		 * @param {number} pageNumber The page number of the PACER credentials to be retrieved.<br>
 		 *   - Minimum: 1
+		 *     Minimum: 1
 		 * @return {PacerCredentialListResponse} OK
 		 */
 		GetPacerCredential(pageNumber: number | null | undefined): Observable<PacerCredentialListResponse> {
@@ -29635,6 +30684,7 @@ export namespace MyNS {
 		 * Retrieve the attorneys in the case with the specified partyId value.
 		 * Get party/{partyId}/associatedAttorneys
 		 * @param {number} pageNumber Query parameter specifying the page number of the search results to be retrieved.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PartyAttorneyAssociations} The request is recieved.
 		 */
 		GetPartyAssociatedAttorneys(pageNumber: number | null | undefined): Observable<PartyAttorneyAssociations> {

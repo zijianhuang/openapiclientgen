@@ -184,6 +184,7 @@ export namespace MyNS {
 		 * Retrieve a list of sync job streams identified by sync job id.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}/sourceControlSyncJobs/{sourceControlSyncJobId}/streams
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} sourceControlName The source control name.
 		 * @param {string} sourceControlSyncJobId The source control sync job id.
@@ -200,6 +201,7 @@ export namespace MyNS {
 		 * Retrieve a sync job stream identified by stream id.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Automation/automationAccounts/{automationAccountName}/sourceControls/{sourceControlName}/sourceControlSyncJobs/{sourceControlSyncJobId}/streams/{streamId}
 		 * @param {string} resourceGroupName Name of an Azure Resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} automationAccountName The name of the automation account.
 		 * @param {string} sourceControlName The source control name.
 		 * @param {string} sourceControlSyncJobId The source control sync job id.

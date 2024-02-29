@@ -2339,6 +2339,9 @@ namespace MyNS
 		/// 
 		/// GetLibrary organizations/{organizationUuid}/library
 		/// </summary>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <returns>List of library items</returns>
 		public async Task<LibraryResponse> GetLibraryAsync(string organizationUuid, string eventLogUuid, int limit, string offset, bool all, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

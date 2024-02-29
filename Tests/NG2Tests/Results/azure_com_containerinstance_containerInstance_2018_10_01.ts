@@ -2090,6 +2090,7 @@ export namespace MyNS {
 		 * @param {string} containerGroupName The name of the container group.
 		 * @param {string} containerName The name of the container instance.
 		 * @param {number} tail The number of lines to show from the tail of the container instance log. If not provided, all available logs are shown up to 4mb.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Logs} OK
 		 */
 		Container_ListLogs(subscriptionId: string, api_version: string, resourceGroupName: string, containerGroupName: string, containerName: string, tail: number | null | undefined): Observable<Logs> {

@@ -57,7 +57,10 @@ export namespace MyNS {
 	/** An application-specific password (ASP) is used with applications that do not accept a verification code when logging into the application on certain devices. The ASP access code is used instead of the login and password you commonly use when accessing an application through a browser. For more information about ASPs and how to create one, see the [help center](https://support.google.com/a/answer/2537800#asp). */
 	export interface Asp {
 
-		/** The unique ID of the ASP. */
+		/**
+		 * The unique ID of the ASP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		codeId?: number | null;
 
 		/** The time when the ASP was created. Expressed in [Unix time](https://en.wikipedia.org/wiki/Epoch_time) format. */
@@ -82,7 +85,10 @@ export namespace MyNS {
 	/** An application-specific password (ASP) is used with applications that do not accept a verification code when logging into the application on certain devices. The ASP access code is used instead of the login and password you commonly use when accessing an application through a browser. For more information about ASPs and how to create one, see the [help center](https://support.google.com/a/answer/2537800#asp). */
 	export interface AspFormProperties {
 
-		/** The unique ID of the ASP. */
+		/**
+		 * The unique ID of the ASP.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		codeId: FormControl<number | null | undefined>,
 
 		/** The time when the ASP was created. Expressed in [Unix time](https://en.wikipedia.org/wiki/Epoch_time) format. */
@@ -263,7 +269,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -276,7 +285,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -834,20 +846,32 @@ export namespace MyNS {
 	/** Public API: Resources.buildings */
 	export interface BuildingCoordinates {
 
-		/** Latitude in decimal degrees. */
+		/**
+		 * Latitude in decimal degrees.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Longitude in decimal degrees. */
+		/**
+		 * Longitude in decimal degrees.
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** Public API: Resources.buildings */
 	export interface BuildingCoordinatesFormProperties {
 
-		/** Latitude in decimal degrees. */
+		/**
+		 * Latitude in decimal degrees.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Longitude in decimal degrees. */
+		/**
+		 * Longitude in decimal degrees.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateBuildingCoordinatesFormGroup() {
@@ -903,7 +927,10 @@ export namespace MyNS {
 		/** Unique ID for the building a resource is located in. */
 		buildingId?: string | null;
 
-		/** Capacity of a resource, number of seats in a room. */
+		/**
+		 * Capacity of a resource, number of seats in a room.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** ETag of the resource. */
@@ -952,7 +979,10 @@ export namespace MyNS {
 		/** Unique ID for the building a resource is located in. */
 		buildingId: FormControl<string | null | undefined>,
 
-		/** Capacity of a resource, number of seats in a room. */
+		/**
+		 * Capacity of a resource, number of seats in a room.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** ETag of the resource. */
@@ -1417,18 +1447,30 @@ export namespace MyNS {
 
 	export interface ChromeOsDeviceActiveTimeRanges {
 
-		/** Duration of usage in milliseconds. */
+		/**
+		 * Duration of usage in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeTime?: number | null;
 
-		/** Date of usage */
+		/**
+		 * Date of usage
+		 * Type: DateOnly
+		 */
 		date?: Date | null;
 	}
 	export interface ChromeOsDeviceActiveTimeRangesFormProperties {
 
-		/** Duration of usage in milliseconds. */
+		/**
+		 * Duration of usage in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeTime: FormControl<number | null | undefined>,
 
-		/** Date of usage */
+		/**
+		 * Date of usage
+		 * Type: DateOnly
+		 */
 		date: FormControl<Date | null | undefined>,
 	}
 	export function CreateChromeOsDeviceActiveTimeRangesFormGroup() {
@@ -1447,7 +1489,10 @@ export namespace MyNS {
 		/** Information for the Logical CPUs */
 		ChromeOsDeviceCpuInfoLogicalCpus?: Array<ChromeOsDeviceCpuInfoLogicalCpus>;
 
-		/** The max CPU clock speed in kHz. */
+		/**
+		 * The max CPU clock speed in kHz.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxClockSpeedKhz?: number | null;
 
 		/** The CPU model name. */
@@ -1458,7 +1503,10 @@ export namespace MyNS {
 		/** The CPU architecture. */
 		architecture: FormControl<string | null | undefined>,
 
-		/** The max CPU clock speed in kHz. */
+		/**
+		 * The max CPU clock speed in kHz.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxClockSpeedKhz: FormControl<number | null | undefined>,
 
 		/** The CPU model name. */
@@ -1478,24 +1526,36 @@ export namespace MyNS {
 		/** C-States indicate the power consumption state of the CPU. For more information look at documentation published by the CPU maker. */
 		ChromeOsDeviceCpuInfoLogicalCpusCStates?: Array<ChromeOsDeviceCpuInfoLogicalCpusCStates>;
 
-		/** Current frequency the CPU is running at. */
+		/**
+		 * Current frequency the CPU is running at.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentScalingFrequencyKhz?: number | null;
 
 		/** Idle time since last boot. */
 		idleDuration?: string | null;
 
-		/** Maximum frequency the CPU is allowed to run at, by policy. */
+		/**
+		 * Maximum frequency the CPU is allowed to run at, by policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxScalingFrequencyKhz?: number | null;
 	}
 	export interface ChromeOsDeviceCpuInfoLogicalCpusFormProperties {
 
-		/** Current frequency the CPU is running at. */
+		/**
+		 * Current frequency the CPU is running at.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentScalingFrequencyKhz: FormControl<number | null | undefined>,
 
 		/** Idle time since last boot. */
 		idleDuration: FormControl<string | null | undefined>,
 
-		/** Maximum frequency the CPU is allowed to run at, by policy. */
+		/**
+		 * Maximum frequency the CPU is allowed to run at, by policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxScalingFrequencyKhz: FormControl<number | null | undefined>,
 	}
 	export function CreateChromeOsDeviceCpuInfoLogicalCpusFormGroup() {
@@ -1557,7 +1617,10 @@ export namespace MyNS {
 		/** CPU label */
 		label?: string | null;
 
-		/** Temperature in Celsius degrees. */
+		/**
+		 * Temperature in Celsius degrees.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		temperature?: number | null;
 	}
 	export interface ChromeOsDeviceCpuStatusReportsCpuTemperatureInfoFormProperties {
@@ -1565,7 +1628,10 @@ export namespace MyNS {
 		/** CPU label */
 		label: FormControl<string | null | undefined>,
 
-		/** Temperature in Celsius degrees. */
+		/**
+		 * Temperature in Celsius degrees.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		temperature: FormControl<number | null | undefined>,
 	}
 	export function CreateChromeOsDeviceCpuStatusReportsCpuTemperatureInfoFormGroup() {
@@ -3203,7 +3269,10 @@ export namespace MyNS {
 		/** The list of permissions of this application. These can be either a standard Android permission or one defined by the application, and are found in an application's [Android manifest](https://developer.android.com/guide/topics/manifest/uses-permission-element.html). Examples of a Calendar application's permissions are `READ_CALENDAR`, or `MANAGE_ACCOUNTS`. */
 		permission?: Array<string>;
 
-		/** The application's version code. An example is `13`. */
+		/**
+		 * The application's version code. An example is `13`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode?: number | null;
 
 		/** The application's version name. An example is `3.2-140714`. */
@@ -3217,7 +3286,10 @@ export namespace MyNS {
 		/** The application's package name. An example is `com.android.browser`. */
 		packageName: FormControl<string | null | undefined>,
 
-		/** The application's version code. An example is `13`. */
+		/**
+		 * The application's version code. An example is `13`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode: FormControl<number | null | undefined>,
 
 		/** The application's version name. An example is `3.2-140714`. */
@@ -3822,18 +3894,30 @@ export namespace MyNS {
 
 	export interface SchemaFieldSpecNumericIndexingSpec {
 
-		/** Maximum value of this field. This is meant to be indicative rather than enforced. Values outside this range will still be indexed, but search may not be as performant. */
+		/**
+		 * Maximum value of this field. This is meant to be indicative rather than enforced. Values outside this range will still be indexed, but search may not be as performant.
+		 * Type: double
+		 */
 		maxValue?: number | null;
 
-		/** Minimum value of this field. This is meant to be indicative rather than enforced. Values outside this range will still be indexed, but search may not be as performant. */
+		/**
+		 * Minimum value of this field. This is meant to be indicative rather than enforced. Values outside this range will still be indexed, but search may not be as performant.
+		 * Type: double
+		 */
 		minValue?: number | null;
 	}
 	export interface SchemaFieldSpecNumericIndexingSpecFormProperties {
 
-		/** Maximum value of this field. This is meant to be indicative rather than enforced. Values outside this range will still be indexed, but search may not be as performant. */
+		/**
+		 * Maximum value of this field. This is meant to be indicative rather than enforced. Values outside this range will still be indexed, but search may not be as performant.
+		 * Type: double
+		 */
 		maxValue: FormControl<number | null | undefined>,
 
-		/** Minimum value of this field. This is meant to be indicative rather than enforced. Values outside this range will still be indexed, but search may not be as performant. */
+		/**
+		 * Minimum value of this field. This is meant to be indicative rather than enforced. Values outside this range will still be indexed, but search may not be as performant.
+		 * Type: double
+		 */
 		minValue: FormControl<number | null | undefined>,
 	}
 	export function CreateSchemaFieldSpecNumericIndexingSpecFormGroup() {
@@ -4891,7 +4975,10 @@ export namespace MyNS {
 		/** The domain to which the organization belongs to. */
 		domain?: string | null;
 
-		/** The full-time equivalent millipercent within the organization (100000 = 100%). */
+		/**
+		 * The full-time equivalent millipercent within the organization (100000 = 100%).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fullTimeEquivalent?: number | null;
 
 		/** Location of the organization. This need not be fully qualified address. */
@@ -4931,7 +5018,10 @@ export namespace MyNS {
 		/** The domain to which the organization belongs to. */
 		domain: FormControl<string | null | undefined>,
 
-		/** The full-time equivalent millipercent within the organization (100000 = 100%). */
+		/**
+		 * The full-time equivalent millipercent within the organization (100000 = 100%).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fullTimeEquivalent: FormControl<number | null | undefined>,
 
 		/** Location of the organization. This need not be fully qualified address. */
@@ -5017,7 +5107,10 @@ export namespace MyNS {
 		/** ETag of the resource. */
 		etag?: string | null;
 
-		/** Height of the photo in pixels. */
+		/**
+		 * Height of the photo in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The ID the API uses to uniquely identify the user. */
@@ -5035,7 +5128,10 @@ export namespace MyNS {
 		/** The user's primary email address. */
 		primaryEmail?: string | null;
 
-		/** Width of the photo in pixels. */
+		/**
+		 * Width of the photo in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface UserPhotoFormProperties {
@@ -5043,7 +5139,10 @@ export namespace MyNS {
 		/** ETag of the resource. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Height of the photo in pixels. */
+		/**
+		 * Height of the photo in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The ID the API uses to uniquely identify the user. */
@@ -5061,7 +5160,10 @@ export namespace MyNS {
 		/** The user's primary email address. */
 		primaryEmail: FormControl<string | null | undefined>,
 
-		/** Width of the photo in pixels. */
+		/**
+		 * Width of the photo in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateUserPhotoFormGroup() {
@@ -5416,6 +5518,7 @@ export namespace MyNS {
 		 * @param {string} customerId The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
 		 * @param {boolean} includeChildOrgunits Return devices from all child orgunits, as well as the specified org unit. If this is set to true, 'orgUnitPath' must be provided.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 1
 		 * @param {Directory_chromeosdevices_listOrderBy} orderBy Device property to use for sorting results.
 		 * @param {string} orgUnitPath The full path of the organizational unit (minus the leading `/`) or its unique ID.
 		 * @param {string} pageToken The `pageToken` query parameter is used to request the next page of query results. The follow-on request's `pageToken` query parameter is the `nextPageToken` from your previous response.
@@ -5524,6 +5627,7 @@ export namespace MyNS {
 		 * Get admin/directory/v1/customer/{customerId}/devices/mobile
 		 * @param {string} customerId The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users resource](/admin-sdk/directory/v1/reference/users).
 		 * @param {number} maxResults Maximum number of results to return. Max allowed value is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {Directory_mobiledevices_listOrderBy} orderBy Device property to use for sorting results.
 		 * @param {string} pageToken Token to specify next page in the list
 		 * @param {Directory_chromeosdevices_listProjection} projection Restrict information returned to a set of selected fields.
@@ -5789,6 +5893,7 @@ export namespace MyNS {
 		 * Get admin/directory/v1/customer/{customer}/resources/buildings
 		 * @param {string} customer The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} pageToken Token to specify the next page in the list.
 		 * @return {Buildings} Successful response
 		 */
@@ -5858,6 +5963,7 @@ export namespace MyNS {
 		 * Get admin/directory/v1/customer/{customer}/resources/calendars
 		 * @param {string} customer The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} orderBy Field(s) to sort results by in either ascending or descending order. Supported fields include `resourceId`, `resourceName`, `capacity`, `buildingId`, and `floorName`. If no order is specified, defaults to ascending. Should be of the form "field [asc|desc], field [asc|desc], ...". For example `buildingId, capacity desc` would return results sorted first by `buildingId` in ascending order then by `capacity` in descending order.
 		 * @param {string} pageToken Token to specify the next page in the list.
 		 * @param {string} query String query used to filter results. Should be of the form "field operator value" where field can be any of supported fields and operators can be any of supported operations. Operators include '=' for exact match, '!=' for mismatch and ':' for prefix match or HAS match where applicable. For prefix match, the value should always be followed by a *. Logical operators NOT and AND are supported (in this order of precedence). Supported fields include `generatedResourceName`, `name`, `buildingId`, `floor_name`, `capacity`, `featureInstances.feature.name`, `resourceEmail`, `resourceCategory`. For example `buildingId=US-NYC-9TH AND featureInstances.feature.name:Phone`.
@@ -5926,6 +6032,7 @@ export namespace MyNS {
 		 * Get admin/directory/v1/customer/{customer}/resources/features
 		 * @param {string} customer The unique ID for the customer's Google Workspace account. As an account administrator, you can also use the `my_customer` alias to represent your account's customer ID.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} pageToken Token to specify the next page in the list.
 		 * @return {Features} Successful response
 		 */
@@ -6004,6 +6111,7 @@ export namespace MyNS {
 		 * @param {string} customer The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.
 		 * @param {boolean} includeIndirectRoleAssignments When set to `true`, fetches indirect role assignments (i.e. role assignment via a group) as well as direct ones. Defaults to `false`. You must specify `user_key` or the indirect role assignments will not be included.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} pageToken Token to specify the next page in the list.
 		 * @param {string} roleId Immutable ID of a role. If included in the request, returns only role assignments containing this role ID.
 		 * @param {string} userKey The primary email address, alias email address, or unique user or group ID. If included in the request, returns role assignments only for this user or group.
@@ -6050,6 +6158,7 @@ export namespace MyNS {
 		 * Get admin/directory/v1/customer/{customer}/roles
 		 * @param {string} customer The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pageToken Token to specify the next page in the list.
 		 * @return {Roles} Successful response
 		 */
@@ -6157,6 +6266,7 @@ export namespace MyNS {
 		 * @param {string} customer The unique ID for the customer's Google Workspace account. In case of a multi-domain account, to fetch all groups for a customer, use this field instead of `domain`. You can also use the `my_customer` alias to represent your account's `customerId`. The `customerId` is also returned as part of the [Users](/admin-sdk/directory/v1/reference/users) resource. You must provide either the `customer` or the `domain` parameter.
 		 * @param {string} domain The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead.
 		 * @param {number} maxResults Maximum number of results to return. Max allowed value is 200.
+		 *     Minimum: 1
 		 * @param {Directory_groups_listOrderBy} orderBy Column to use for sorting results
 		 * @param {string} pageToken Token to specify next page in the list
 		 * @param {string} query Query string search. Should be of the form "". Complete documentation is at https: //developers.google.com/admin-sdk/directory/v1/guides/search-groups
@@ -6265,6 +6375,7 @@ export namespace MyNS {
 		 * @param {string} groupKey Identifies the group in the API request. The value can be the group's email address, group alias, or the unique group ID.
 		 * @param {boolean} includeDerivedMembership Whether to list indirect memberships. Default: false.
 		 * @param {number} maxResults Maximum number of results to return. Max allowed value is 200.
+		 *     Minimum: 1
 		 * @param {string} pageToken Token to specify next page in the list.
 		 * @param {string} roles The `roles` query parameter allows you to retrieve group members by role. Allowed values are `OWNER`, `MANAGER`, and `MEMBER`.
 		 * @return {Members} Successful response
@@ -6335,6 +6446,7 @@ export namespace MyNS {
 		 * @param {string} domain The domain name. Use this field to get groups from only one domain. To return all domains for a customer account, use the `customer` query parameter instead. Either the `customer` or the `domain` parameter must be provided.
 		 * @param {Directory_users_listEvent} event Event on which subscription is intended (if subscribing)
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {Directory_users_listOrderBy} orderBy Property to use for sorting results.
 		 * @param {string} pageToken Token to specify next page in the list
 		 * @param {Directory_users_listProjection} projection What subset of fields to fetch for this user.
@@ -6366,6 +6478,7 @@ export namespace MyNS {
 		 * @param {string} domain Name of the domain. Fill this field to get users from only this domain. To return all users in a multi-domain fill customer field instead."
 		 * @param {Directory_users_listEvent} event Events to watch for.
 		 * @param {number} maxResults Maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {Directory_users_listOrderBy} orderBy Column to use for sorting results
 		 * @param {string} pageToken Token to specify next page in the list
 		 * @param {Directory_users_listProjection} projection What subset of fields to fetch for this user.
@@ -6480,6 +6593,7 @@ export namespace MyNS {
 		 * Delete admin/directory/v1/users/{userKey}/asps/{codeId}
 		 * @param {string} userKey Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
 		 * @param {number} codeId The unique ID of the ASP to be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Directory_asps_delete(userKey: string, codeId: number): Observable<HttpResponse<string>> {
@@ -6491,6 +6605,7 @@ export namespace MyNS {
 		 * Get admin/directory/v1/users/{userKey}/asps/{codeId}
 		 * @param {string} userKey Identifies the user in the API request. The value can be the user's primary email address, alias email address, or unique user ID.
 		 * @param {number} codeId The unique ID of the ASP.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Asp} Successful response
 		 */
 		Directory_asps_get(userKey: string, codeId: number): Observable<Asp> {
@@ -6678,6 +6793,7 @@ export namespace MyNS {
 		 * @param {string} orderBy Sort order for results. Supported values are `display_name`, `description`, or `create_time`. Default order is ascending, but descending order can be returned by appending "desc" to the `order_by` field. For instance, `orderBy=='description desc'` returns the print servers sorted by description in descending order.
 		 * @param {string} orgUnitId If `org_unit_id` is present in the request, only print servers owned or inherited by the organizational unit (OU) are returned. If the `PrintServer` resource's `org_unit_id` matches the one in the request, the OU owns the server. If `org_unit_id` is not specified in the request, all print servers are returned or filtered against.
 		 * @param {number} pageSize The maximum number of objects to return (default `100`, max `100`). The service might return fewer than this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A generated token to paginate results (the `next_page_token` from a previous call).
 		 * @return {ListPrintServersResponse} Successful response
 		 */
@@ -6723,6 +6839,7 @@ export namespace MyNS {
 		 * @param {string} orderBy The order to sort results by. Must be one of display_name, description, make_and_model, or create_time. Default order is ascending, but descending order can be returned by appending "desc" to the order_by field. For instance, "description desc" will return the printers sorted by description in descending order.
 		 * @param {string} orgUnitId Organization Unit that we want to list the printers for. When org_unit is not present in the request then all printers of the customer are returned (or filtered). When org_unit is present in the request then only printers available to this OU will be returned (owned or inherited). You may see if printer is owned or inherited for this OU by looking at Printer.org_unit_id.
 		 * @param {number} pageSize The maximum number of objects to return. The service may return fewer than this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous call.
 		 * @return {ListPrintersResponse} Successful response
 		 */
@@ -6766,6 +6883,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the customer who owns this collection of printers. Format: customers/{customer_id}
 		 * @param {string} filter Filer to list only models by a given manufacturer in format: "manufacturer:Brother". Search syntax is shared between this api and Admin Console printers pages.
 		 * @param {number} pageSize The maximum number of objects to return. The service may return fewer than this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous call.
 		 * @return {ListPrinterModelsResponse} Successful response
 		 */

@@ -3791,7 +3791,10 @@ namespace MyNS
 		/// This operation returns only applications and versions that are available for use on compute nodes; that is, that can be used in an application package reference. For administrator information about applications and versions that are not yet available to compute nodes, use the Azure portal or the Azure Resource Manager API.
 		/// Application_List applications
 		/// </summary>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 applications can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 applications can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of applications.</returns>
@@ -3855,7 +3858,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="filter">An OData $filter clause.</param>
 		/// <param name="select">An OData $select clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 certificates can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 certificates can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of certificates.</returns>
@@ -3974,7 +3980,10 @@ namespace MyNS
 		/// <param name="filter">An OData $filter clause.</param>
 		/// <param name="select">An OData $select clause.</param>
 		/// <param name="expand">An OData $expand clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 jobs can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 jobs can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of jobs.</returns>
@@ -4092,7 +4101,10 @@ namespace MyNS
 		/// <param name="jobId">The ID of the job.</param>
 		/// <param name="filter">An OData $filter clause.</param>
 		/// <param name="select">An OData $select clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 tasks can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 tasks can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing a list of job preparation and job release task statuses.</returns>
@@ -4128,7 +4140,10 @@ namespace MyNS
 		/// <param name="filter">An OData $filter clause.</param>
 		/// <param name="select">An OData $select clause.</param>
 		/// <param name="expand">An OData $expand clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 tasks can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 tasks can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of tasks.</returns>
@@ -4225,7 +4240,10 @@ namespace MyNS
 		/// <param name="taskId">The ID of the task whose files you want to list.</param>
 		/// <param name="filter">An OData $filter clause.</param>
 		/// <param name="recursive">Whether to list children of a directory. This parameter can be used in combination with the filter parameter to list specific type of files.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of files.</returns>
@@ -4405,7 +4423,10 @@ namespace MyNS
 		/// <param name="filter">An OData $filter clause.</param>
 		/// <param name="select">An OData $select clause.</param>
 		/// <param name="expand">An OData $expand clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 job schedules can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 job schedules can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of job schedules.</returns>
@@ -4547,7 +4568,10 @@ namespace MyNS
 		/// <param name="filter">An OData $filter clause.</param>
 		/// <param name="select">An OData $select clause.</param>
 		/// <param name="expand">An OData $expand clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 jobs can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 jobs can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of jobs.</returns>
@@ -4665,7 +4689,10 @@ namespace MyNS
 		/// Account_ListNodeAgentSkus nodeagentskus
 		/// </summary>
 		/// <param name="filter">An OData $filter clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 results will be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 results will be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of node agent SKUs.</returns>
@@ -4699,7 +4726,10 @@ namespace MyNS
 		/// <param name="filter">An OData $filter clause.</param>
 		/// <param name="select">An OData $select clause.</param>
 		/// <param name="expand">An OData $expand clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 pools can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 pools can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of pools.</returns>
@@ -4816,7 +4846,10 @@ namespace MyNS
 		/// <param name="poolId">The ID of the pool from which you want to list nodes.</param>
 		/// <param name="filter">An OData $filter clause..</param>
 		/// <param name="select">An OData $select clause.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 nodes can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 nodes can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of nodes.</returns>
@@ -4910,7 +4943,10 @@ namespace MyNS
 		/// <param name="nodeId">The ID of the compute node whose files you want to list.</param>
 		/// <param name="filter">An OData $filter clause.</param>
 		/// <param name="recursive">Whether to list children of a directory.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 files can be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of files.</returns>
@@ -5123,7 +5159,10 @@ namespace MyNS
 		/// <param name="starttime">The earliest time from which to include metrics. This must be at least two and a half hours before the current time. If not specified this defaults to the start time of the last aggregation interval currently available.</param>
 		/// <param name="endtime">The latest time from which to include metrics. This must be at least two hours before the current time. If not specified this defaults to the end time of the last aggregation interval currently available.</param>
 		/// <param name="filter">An OData $filter clause. If this is not specified the response includes all pools that existed in the account in the time range of the returned aggregation intervals.</param>
-		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 results will be returned.</param>
+		/// <param name="maxresults">The maximum number of items to return in the response. A maximum of 1000 results will be returned.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="timeout">The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.</param>
 		/// <param name="api_version">Client API Version.</param>
 		/// <returns>A response containing the list of pool usage details.</returns>

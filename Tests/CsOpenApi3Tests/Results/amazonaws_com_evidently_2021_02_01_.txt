@@ -2635,7 +2635,10 @@ namespace MyNS
 		/// <p>This operation assigns feature variation to user sessions. For each user session, you pass in an <code>entityID</code> that represents the user. Evidently then checks the evaluation rules and assigns the variation.</p> <p>The first rules that are evaluated are the override rules. If the user's <code>entityID</code> matches an override rule, the user is served the variation specified by that rule.</p> <p>Next, if there is a launch of the feature, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.</p> <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment. If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. </p> <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
 		/// BatchEvaluateFeature projects/{project}/evaluations
 		/// </summary>
-		/// <param name="project">The name or ARN of the project that contains the feature being evaluated.</param>
+		/// <param name="project">The name or ARN of the project that contains the feature being evaluated.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchEvaluateFeatureResponse> BatchEvaluateFeatureAsync(string project, BatchEvaluateFeaturePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2676,7 +2679,10 @@ namespace MyNS
 		/// <p>Creates an Evidently <i>experiment</i>. Before you create an experiment, you must create the feature to use for the experiment.</p> <p>An experiment helps you make feature design decisions based on evidence and data. An experiment can test as many as five variations at once. Evidently collects experiment data and analyzes it by statistical methods, and provides clear recommendations about which variations perform better.</p> <p>You can optionally specify a <code>segment</code> to have the experiment consider only certain audience types in the experiment, such as using only user sessions from a certain location or who use a certain internet browser.</p> <p>Don't use this operation to update an existing experiment. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateExperiment.html">UpdateExperiment</a>. </p>
 		/// CreateExperiment projects/{project}/experiments
 		/// </summary>
-		/// <param name="project">The name or ARN of the project that you want to create the new experiment in.</param>
+		/// <param name="project">The name or ARN of the project that you want to create the new experiment in.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateExperimentResponse> CreateExperimentAsync(string project, CreateExperimentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2717,9 +2723,18 @@ namespace MyNS
 		/// Returns configuration details about all the experiments in the specified project.
 		/// ListExperiments projects/{project}/experiments
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to include in the response.</param>
-		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.</param>
-		/// <param name="project">The name or ARN of the project to return the experiment list from.</param>
+		/// <param name="maxResults">The maximum number of results to include in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListExperiments</code> operation.
+		/// Max length: 8192
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project to return the experiment list from.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="status">Use this optional parameter to limit the returned results to only the experiments with the status that you specify here.</param>
 		/// <returns>Success</returns>
 		public async Task<ListExperimentsResponse> ListExperimentsAsync(int maxResults, string nextToken, string project, ExperimentStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2754,7 +2769,10 @@ namespace MyNS
 		/// <p>Creates an Evidently <i>feature</i> that you want to launch or test. You can define up to five variations of a feature, and use these variations in your launches and experiments. A feature must be created in a project. For information about creating a project, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p> <p>Don't use this operation to update an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateFeature.html">UpdateFeature</a>. </p>
 		/// CreateFeature projects/{project}/features
 		/// </summary>
-		/// <param name="project">The name or ARN of the project that is to contain the new feature.</param>
+		/// <param name="project">The name or ARN of the project that is to contain the new feature.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateFeatureResponse> CreateFeatureAsync(string project, CreateFeaturePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2795,9 +2813,18 @@ namespace MyNS
 		/// Returns configuration details about all the features in the specified project.
 		/// ListFeatures projects/{project}/features
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to include in the response.</param>
-		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.</param>
-		/// <param name="project">The name or ARN of the project to return the feature list from.</param>
+		/// <param name="maxResults">The maximum number of results to include in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListFeatures</code> operation.
+		/// Max length: 8192
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project to return the feature list from.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListFeaturesResponse> ListFeaturesAsync(int maxResults, string nextToken, string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2831,7 +2858,10 @@ namespace MyNS
 		/// <p>Creates a <i>launch</i> of a given feature. Before you create a launch, you must create the feature to use for the launch.</p> <p>You can use a launch to safely validate new features by serving them to a specified percentage of your users while you roll out the feature. You can monitor the performance of the new feature to help you decide when to ramp up traffic to more users. This helps you reduce risk and identify unintended consequences before you fully launch the feature.</p> <p>Don't use this operation to update an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateLaunch.html">UpdateLaunch</a>. </p>
 		/// CreateLaunch projects/{project}/launches
 		/// </summary>
-		/// <param name="project">The name or ARN of the project that you want to create the launch in.</param>
+		/// <param name="project">The name or ARN of the project that you want to create the launch in.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateLaunchResponse> CreateLaunchAsync(string project, CreateLaunchPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2872,9 +2902,18 @@ namespace MyNS
 		/// Returns configuration details about all the launches in the specified project.
 		/// ListLaunches projects/{project}/launches
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to include in the response.</param>
-		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.</param>
-		/// <param name="project">The name or ARN of the project to return the launch list from.</param>
+		/// <param name="maxResults">The maximum number of results to include in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListLaunches</code> operation.
+		/// Max length: 8192
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project to return the launch list from.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="status">Use this optional parameter to limit the returned results to only the launches with the status that you specify here.</param>
 		/// <returns>Success</returns>
 		public async Task<ListLaunchesResponse> ListLaunchesAsync(int maxResults, string nextToken, string project, ExperimentStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2949,8 +2988,14 @@ namespace MyNS
 		/// Returns configuration details about all the projects in the current Region in your account.
 		/// ListProjects projects
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to include in the response.</param>
-		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.</param>
+		/// <param name="maxResults">The maximum number of results to include in the response.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListProjects</code> operation.
+		/// Max length: 8192
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListProjectsResponse> ListProjectsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3024,8 +3069,14 @@ namespace MyNS
 		/// Returns a list of audience segments that you have created in your account in this Region.
 		/// ListSegments segments
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to include in the response. If you omit this, the default of 50 is used.</param>
-		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.</param>
+		/// <param name="maxResults">The maximum number of results to include in the response. If you omit this, the default of 50 is used.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListSegments</code> operation.
+		/// Max length: 8192
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSegmentsResponse> ListSegmentsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3059,8 +3110,14 @@ namespace MyNS
 		/// <p>Deletes an Evidently experiment. The feature used for the experiment is not deleted.</p> <p>To stop an experiment without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopExperiment.html">StopExperiment</a>. </p>
 		/// DeleteExperiment projects/{project}/experiments/{experiment}
 		/// </summary>
-		/// <param name="experiment">The name of the experiment to delete.</param>
-		/// <param name="project">The name or ARN of the project that contains the experiment to delete.</param>
+		/// <param name="experiment">The name of the experiment to delete.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the experiment to delete.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteExperimentResponse> DeleteExperimentAsync(string experiment, string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3094,8 +3151,14 @@ namespace MyNS
 		/// Returns the details about one experiment. You must already know the experiment name. To retrieve a list of experiments in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListExperiments.html">ListExperiments</a>.
 		/// GetExperiment projects/{project}/experiments/{experiment}
 		/// </summary>
-		/// <param name="experiment">The name of the experiment that you want to see the details of.</param>
-		/// <param name="project">The name or ARN of the project that contains the experiment.</param>
+		/// <param name="experiment">The name of the experiment that you want to see the details of.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the experiment.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetExperimentResponse> GetExperimentAsync(string experiment, string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3129,8 +3192,14 @@ namespace MyNS
 		/// <p>Updates an Evidently experiment. </p> <p>Don't use this operation to update an experiment's tag. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 		/// UpdateExperiment projects/{project}/experiments/{experiment}
 		/// </summary>
-		/// <param name="experiment">The name of the experiment to update.</param>
-		/// <param name="project">The name or ARN of the project that contains the experiment that you want to update.</param>
+		/// <param name="experiment">The name of the experiment to update.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the experiment that you want to update.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateExperimentResponse> UpdateExperimentAsync(string experiment, string project, UpdateExperimentPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3171,8 +3240,14 @@ namespace MyNS
 		/// Deletes an Evidently feature.
 		/// DeleteFeature projects/{project}/features/{feature}
 		/// </summary>
-		/// <param name="feature">The name of the feature to delete.</param>
-		/// <param name="project">The name or ARN of the project that contains the feature to delete.</param>
+		/// <param name="feature">The name of the feature to delete.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the feature to delete.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteFeatureResponse> DeleteFeatureAsync(string feature, string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3206,8 +3281,14 @@ namespace MyNS
 		/// Returns the details about one feature. You must already know the feature name. To retrieve a list of features in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListFeatures.html">ListFeatures</a>.
 		/// GetFeature projects/{project}/features/{feature}
 		/// </summary>
-		/// <param name="feature">The name of the feature that you want to retrieve information for.</param>
-		/// <param name="project">The name or ARN of the project that contains the feature.</param>
+		/// <param name="feature">The name of the feature that you want to retrieve information for.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the feature.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFeatureResponse> GetFeatureAsync(string feature, string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3241,8 +3322,14 @@ namespace MyNS
 		/// <p>Updates an existing feature.</p> <p>You can't use this operation to update the tags of an existing feature. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 		/// UpdateFeature projects/{project}/features/{feature}
 		/// </summary>
-		/// <param name="feature">The name of the feature to be updated.</param>
-		/// <param name="project">The name or ARN of the project that contains the feature to be updated.</param>
+		/// <param name="feature">The name of the feature to be updated.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the feature to be updated.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFeatureResponse> UpdateFeatureAsync(string feature, string project, UpdateFeaturePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3283,8 +3370,14 @@ namespace MyNS
 		/// <p>Deletes an Evidently launch. The feature used for the launch is not deleted.</p> <p>To stop a launch without deleting it, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_StopLaunch.html">StopLaunch</a>. </p>
 		/// DeleteLaunch projects/{project}/launches/{launch}
 		/// </summary>
-		/// <param name="launch">The name of the launch to delete.</param>
-		/// <param name="project">The name or ARN of the project that contains the launch to delete.</param>
+		/// <param name="launch">The name of the launch to delete.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the launch to delete.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteLaunchResponse> DeleteLaunchAsync(string launch, string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3318,8 +3411,14 @@ namespace MyNS
 		/// Returns the details about one launch. You must already know the launch name. To retrieve a list of launches in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListLaunches.html">ListLaunches</a>.
 		/// GetLaunch projects/{project}/launches/{launch}
 		/// </summary>
-		/// <param name="launch">The name of the launch that you want to see the details of.</param>
-		/// <param name="project">The name or ARN of the project that contains the launch.</param>
+		/// <param name="launch">The name of the launch that you want to see the details of.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the launch.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLaunchResponse> GetLaunchAsync(string launch, string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3353,8 +3452,14 @@ namespace MyNS
 		/// <p>Updates a launch of a given feature. </p> <p>Don't use this operation to update the tags of an existing launch. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 		/// UpdateLaunch projects/{project}/launches/{launch}
 		/// </summary>
-		/// <param name="launch">The name of the launch that is to be updated.</param>
-		/// <param name="project">The name or ARN of the project that contains the launch that you want to update.</param>
+		/// <param name="launch">The name of the launch that is to be updated.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the launch that you want to update.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLaunchResponse> UpdateLaunchAsync(string launch, string project, UpdateLaunchPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3395,7 +3500,10 @@ namespace MyNS
 		/// Deletes an Evidently project. Before you can delete a project, you must delete all the features that the project contains. To delete a feature, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_DeleteFeature.html">DeleteFeature</a>.
 		/// DeleteProject projects/{project}
 		/// </summary>
-		/// <param name="project">The name or ARN of the project to delete.</param>
+		/// <param name="project">The name or ARN of the project to delete.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteProjectResponse> DeleteProjectAsync(string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3429,7 +3537,10 @@ namespace MyNS
 		/// Returns the details about one launch. You must already know the project name. To retrieve a list of projects in your account, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_ListProjects.html">ListProjects</a>.
 		/// GetProject projects/{project}
 		/// </summary>
-		/// <param name="project">The name or ARN of the project that you want to see the details of.</param>
+		/// <param name="project">The name or ARN of the project that you want to see the details of.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProjectResponse> GetProjectAsync(string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3463,7 +3574,10 @@ namespace MyNS
 		/// <p>Updates the description of an existing project.</p> <p>To create a new project, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateProject.html">CreateProject</a>.</p> <p>Don't use this operation to update the data storage options of a project. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_UpdateProjectDataDelivery.html">UpdateProjectDataDelivery</a>. </p> <p>Don't use this operation to update the tags of a project. Instead, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_TagResource.html">TagResource</a>. </p>
 		/// UpdateProject projects/{project}
 		/// </summary>
-		/// <param name="project">The name or ARN of the project to update.</param>
+		/// <param name="project">The name or ARN of the project to update.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProjectResponse> UpdateProjectAsync(string project, UpdateProjectPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3504,7 +3618,10 @@ namespace MyNS
 		/// Deletes a segment. You can't delete a segment that is being used in a launch or experiment, even if that launch or experiment is not currently running.
 		/// DeleteSegment segments/{segment}
 		/// </summary>
-		/// <param name="segment">Specifies the segment to delete.</param>
+		/// <param name="segment">Specifies the segment to delete.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSegmentResponse> DeleteSegmentAsync(string segment, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3538,7 +3655,10 @@ namespace MyNS
 		/// Returns information about the specified segment. Specify the segment you want to view by specifying its ARN.
 		/// GetSegment segments/{segment}
 		/// </summary>
-		/// <param name="segment">The ARN of the segment to return information for.</param>
+		/// <param name="segment">The ARN of the segment to return information for.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSegmentResponse> GetSegmentAsync(string segment, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3572,8 +3692,14 @@ namespace MyNS
 		/// <p>This operation assigns a feature variation to one given user session. You pass in an <code>entityID</code> that represents the user. Evidently then checks the evaluation rules and assigns the variation.</p> <p>The first rules that are evaluated are the override rules. If the user's <code>entityID</code> matches an override rule, the user is served the variation specified by that rule.</p> <p>If there is a current launch with this feature that uses segment overrides, and if the user session's <code>evaluationContext</code> matches a segment rule defined in a segment override, the configuration in the segment overrides is used. For more information about segments, see <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateSegment.html">CreateSegment</a> and <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-Evidently-segments.html">Use segments to focus your audience</a>.</p> <p>If there is a launch with no segment overrides, the user might be assigned to a variation in the launch. The chance of this depends on the percentage of users that are allocated to that launch. If the user is enrolled in the launch, the variation they are served depends on the allocation of the various feature variations used for the launch.</p> <p>If the user is not assigned to a launch, and there is an ongoing experiment for this feature, the user might be assigned to a variation in the experiment. The chance of this depends on the percentage of users that are allocated to that experiment.</p> <p>If the experiment uses a segment, then only user sessions with <code>evaluationContext</code> values that match the segment rule are used in the experiment.</p> <p>If the user is enrolled in the experiment, the variation they are served depends on the allocation of the various feature variations used for the experiment. </p> <p>If the user is not assigned to a launch or experiment, they are served the default variation.</p>
 		/// EvaluateFeature projects/{project}/evaluations/{feature}
 		/// </summary>
-		/// <param name="feature">The name of the feature being evaluated.</param>
-		/// <param name="project">The name or ARN of the project that contains this feature.</param>
+		/// <param name="feature">The name of the feature being evaluated.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains this feature.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<EvaluateFeatureResponse> EvaluateFeatureAsync(string feature, string project, EvaluateFeaturePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3614,8 +3740,14 @@ namespace MyNS
 		/// <p>Retrieves the results of a running or completed experiment. No results are available until there have been 100 events for each variation and at least 10 minutes have passed since the start of the experiment. To increase the statistical power, Evidently performs an additional offline p-value analysis at the end of the experiment. Offline p-value analysis can detect statistical significance in some cases where the anytime p-values used during the experiment do not find statistical significance.</p> <p>Experiment results are available up to 63 days after the start of the experiment. They are not available after that because of CloudWatch data retention policies.</p>
 		/// GetExperimentResults projects/{project}/experiments/{experiment}/results
 		/// </summary>
-		/// <param name="experiment">The name of the experiment to retrieve the results of.</param>
-		/// <param name="project">The name or ARN of the project that contains the experiment that you want to see the results of.</param>
+		/// <param name="experiment">The name of the experiment to retrieve the results of.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the experiment that you want to see the results of.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetExperimentResultsResponse> GetExperimentResultsAsync(string experiment, string project, GetExperimentResultsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3656,9 +3788,18 @@ namespace MyNS
 		/// Use this operation to find which experiments or launches are using a specified segment.
 		/// ListSegmentReferences segments/{segment}/references#type
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to include in the response. If you omit this, the default of 50 is used.</param>
-		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.</param>
-		/// <param name="segment">The ARN of the segment that you want to view information for.</param>
+		/// <param name="maxResults">The maximum number of results to include in the response. If you omit this, the default of 50 is used.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token to use when requesting the next set of results. You received this token from a previous <code>ListSegmentReferences</code> operation.
+		/// Max length: 8192
+		/// Min length: 1
+		// </param>
+		/// <param name="segment">The ARN of the segment that you want to view information for.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="type">Specifies whether to return information about launches or experiments that use this segment.</param>
 		/// <returns>Success</returns>
 		public async Task<ListSegmentReferencesResponse> ListSegmentReferencesAsync(int maxResults, string nextToken, string segment, SegmentReferenceResourceType type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3693,7 +3834,10 @@ namespace MyNS
 		/// Displays the tags associated with an Evidently resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource that you want to see the tags of.</param>
+		/// <param name="resourceArn">The ARN of the resource that you want to see the tags of.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3727,7 +3871,10 @@ namespace MyNS
 		/// <p>Assigns one or more tags (key-value pairs) to the specified CloudWatch Evidently resource. Projects, features, launches, and experiments can be tagged.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values.</p> <p>Tags don't have any semantic meaning to Amazon Web Services and are interpreted strictly as strings of characters.</p> <p>You can use the <code>TagResource</code> action with a resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the list of tags associated with the alarm. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p> <p>You can associate as many as 50 tags with a resource.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging Amazon Web Services resources</a>.</p>
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the CloudWatch Evidently resource that you're adding tags to.</param>
+		/// <param name="resourceArn">The ARN of the CloudWatch Evidently resource that you're adding tags to.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3768,7 +3915,10 @@ namespace MyNS
 		/// Sends performance events to Evidently. These events can be used to evaluate a launch or an experiment.
 		/// PutProjectEvents events/projects/{project}
 		/// </summary>
-		/// <param name="project">The name or ARN of the project to write the events to.</param>
+		/// <param name="project">The name or ARN of the project to write the events to.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutProjectEventsResponse> PutProjectEventsAsync(string project, PutProjectEventsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3809,8 +3959,14 @@ namespace MyNS
 		/// Starts an existing experiment. To create an experiment, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateExperiment.html">CreateExperiment</a>.
 		/// StartExperiment projects/{project}/experiments/{experiment}/start
 		/// </summary>
-		/// <param name="experiment">The name of the experiment to start.</param>
-		/// <param name="project">The name or ARN of the project that contains the experiment to start.</param>
+		/// <param name="experiment">The name of the experiment to start.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the experiment to start.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartExperimentResponse> StartExperimentAsync(string experiment, string project, StartExperimentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3851,8 +4007,14 @@ namespace MyNS
 		/// Starts an existing launch. To create a launch, use <a href="https://docs.aws.amazon.com/cloudwatchevidently/latest/APIReference/API_CreateLaunch.html">CreateLaunch</a>.
 		/// StartLaunch projects/{project}/launches/{launch}/start
 		/// </summary>
-		/// <param name="launch">The name of the launch to start.</param>
-		/// <param name="project">The name or ARN of the project that contains the launch to start.</param>
+		/// <param name="launch">The name of the launch to start.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the launch to start.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartLaunchResponse> StartLaunchAsync(string launch, string project, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3881,8 +4043,14 @@ namespace MyNS
 		/// Stops an experiment that is currently running. If you stop an experiment, you can't resume it or restart it.
 		/// StopExperiment projects/{project}/experiments/{experiment}/cancel
 		/// </summary>
-		/// <param name="experiment">The name of the experiment to stop.</param>
-		/// <param name="project">The name or ARN of the project that contains the experiment to stop.</param>
+		/// <param name="experiment">The name of the experiment to stop.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the experiment to stop.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopExperimentResponse> StopExperimentAsync(string experiment, string project, StopExperimentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3923,8 +4091,14 @@ namespace MyNS
 		/// Stops a launch that is currently running. After you stop a launch, you will not be able to resume it or restart it. Also, it will not be evaluated as a rule for traffic allocation, and the traffic that was allocated to the launch will instead be available to the feature's experiment, if there is one. Otherwise, all traffic will be served the default variation after the launch is stopped.
 		/// StopLaunch projects/{project}/launches/{launch}/cancel
 		/// </summary>
-		/// <param name="launch">The name of the launch to stop.</param>
-		/// <param name="project">The name or ARN of the project that contains the launch that you want to stop.</param>
+		/// <param name="launch">The name of the launch to stop.
+		/// Max length: 127
+		/// Min length: 1
+		// </param>
+		/// <param name="project">The name or ARN of the project that contains the launch that you want to stop.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopLaunchResponse> StopLaunchAsync(string launch, string project, StopLaunchPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4005,8 +4179,14 @@ namespace MyNS
 		/// Removes one or more tags from the specified resource.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the CloudWatch Evidently resource that you're removing tags from.</param>
-		/// <param name="tagKeys">The list of tag keys to remove from the resource.</param>
+		/// <param name="resourceArn">The ARN of the CloudWatch Evidently resource that you're removing tags from.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="tagKeys">The list of tag keys to remove from the resource.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4040,7 +4220,10 @@ namespace MyNS
 		/// <p>Updates the data storage options for this project. If you store evaluation events, you an keep them and analyze them on your own. If you choose not to store evaluation events, Evidently deletes them after using them to produce metrics and other experiment results that you can view.</p> <p>You can't specify both <code>cloudWatchLogs</code> and <code>s3Destination</code> in the same operation.</p>
 		/// UpdateProjectDataDelivery projects/{project}/data-delivery
 		/// </summary>
-		/// <param name="project">The name or ARN of the project that you want to modify the data storage options for.</param>
+		/// <param name="project">The name or ARN of the project that you want to modify the data storage options for.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProjectDataDeliveryResponse> UpdateProjectDataDeliveryAsync(string project, UpdateProjectDataDeliveryPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

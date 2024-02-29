@@ -2323,7 +2323,10 @@ namespace MyNS
 		/// <p>Lists information about function packages.</p> <p>A function package is a .zip file in CSAR (Cloud Service Archive) format that contains a network function (an ETSI standard telecommunication application) and function package descriptor that uses the TOSCA standard to describe how the network functions should run on your network.</p>
 		/// ListSolFunctionPackages sol/vnfpkgm/v1/vnf_packages
 		/// </summary>
-		/// <param name="max_results">The maximum number of results to include in the response.</param>
+		/// <param name="max_results">The maximum number of results to include in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextpage_opaque_marker">The token for the next page of results.</param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -2393,7 +2396,10 @@ namespace MyNS
 		/// <p>Lists your network instances.</p> <p>A network instance is a single network created in Amazon Web Services TNB that can be deployed and on which life-cycle operations (like terminate, update, and delete) can be performed.</p>
 		/// ListSolNetworkInstances sol/nslcm/v1/ns_instances
 		/// </summary>
-		/// <param name="max_results">The maximum number of results to include in the response.</param>
+		/// <param name="max_results">The maximum number of results to include in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextpage_opaque_marker">The token for the next page of results.</param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -2463,7 +2469,10 @@ namespace MyNS
 		/// <p>Lists network packages.</p> <p>A network package is a .zip file in CSAR (Cloud Service Archive) format defines the function packages you want to deploy and the Amazon Web Services infrastructure you want to deploy them on.</p>
 		/// ListSolNetworkPackages sol/nsd/v1/ns_descriptors
 		/// </summary>
-		/// <param name="max_results">The maximum number of results to include in the response.</param>
+		/// <param name="max_results">The maximum number of results to include in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextpage_opaque_marker">The token for the next page of results.</param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -3004,7 +3013,10 @@ namespace MyNS
 		/// <p>Lists network function instances.</p> <p>A network function instance is a function in a function package .</p>
 		/// ListSolFunctionInstances sol/vnflcm/v1/vnf_instances
 		/// </summary>
-		/// <param name="max_results">The maximum number of results to include in the response.</param>
+		/// <param name="max_results">The maximum number of results to include in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextpage_opaque_marker">The token for the next page of results.</param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -3041,7 +3053,10 @@ namespace MyNS
 		/// <p>Lists details for a network operation, including when the operation started and the status of the operation.</p> <p>A network operation is any operation that is done to your network, such as network instance instantiation or termination.</p>
 		/// ListSolNetworkOperations sol/nslcm/v1/ns_lcm_op_occs
 		/// </summary>
-		/// <param name="max_results">The maximum number of results to include in the response.</param>
+		/// <param name="max_results">The maximum number of results to include in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextpage_opaque_marker">The token for the next page of results.</param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -3263,7 +3278,10 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">Resource ARN.</param>
-		/// <param name="tagKeys">Tag keys.</param>
+		/// <param name="tagKeys">Tag keys.
+		/// Minimum items: 0
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceOutput> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

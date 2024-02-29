@@ -2924,8 +2924,13 @@ namespace MyNS
 		/// GetTile tile/{z}/{x}/{y}#Arn&ImageAssets&Target
 		/// </summary>
 		/// <param name="Arn">The Amazon Resource Name (ARN) of the tile operation.</param>
-		/// <param name="ExecutionRoleArn">The Amazon Resource Name (ARN) of the IAM role that you specify.</param>
-		/// <param name="ImageAssets">The particular assets or bands to tile.</param>
+		/// <param name="ExecutionRoleArn">The Amazon Resource Name (ARN) of the IAM role that you specify.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="ImageAssets">The particular assets or bands to tile.
+		/// Minimum items: 1
+		// </param>
 		/// <param name="ImageMask">Determines whether or not to return a valid data mask.</param>
 		/// <param name="OutputDataType">The output data type of the tile operation.</param>
 		/// <param name="OutputFormat">The data format of the output tile. The formats include .npy, .png and .jpg.</param>
@@ -3010,8 +3015,14 @@ namespace MyNS
 		/// Use this operation to get raster data collections.
 		/// ListRasterDataCollections raster-data-collections
 		/// </summary>
-		/// <param name="MaxResults">The total number of items to return.</param>
-		/// <param name="NextToken">If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.</param>
+		/// <param name="MaxResults">The total number of items to return.
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
+		/// <param name="NextToken">If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
+		/// Max length: 8192
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRasterDataCollectionsOutput> ListRasterDataCollectionsAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3045,7 +3056,10 @@ namespace MyNS
 		/// Lists the tags attached to the resource.
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource you want to tag.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource you want to tag.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3079,7 +3093,10 @@ namespace MyNS
 		/// The resource you want to tag.
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource you want to tag.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource you want to tag.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string ResourceArn, TagResourcePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3363,8 +3380,14 @@ namespace MyNS
 		/// The resource you want to untag.
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
-		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource you want to untag.</param>
-		/// <param name="tagKeys">Keys of the tags you want to remove.</param>
+		/// <param name="ResourceArn">The Amazon Resource Name (ARN) of the resource you want to untag.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">Keys of the tags you want to remove.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string ResourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

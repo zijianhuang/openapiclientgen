@@ -183,6 +183,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Security/locations/{ascLocation}/topologies/{topologyResourceName}
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} ascLocation The location where ASC stores the data of the subscription. can be retrieved from Get locations
 		 * @param {string} topologyResourceName Name of a topology resources collection.
 		 * @param {string} api_version API version for the operation

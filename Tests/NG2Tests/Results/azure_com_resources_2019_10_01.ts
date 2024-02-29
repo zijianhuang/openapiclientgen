@@ -2126,6 +2126,7 @@ export namespace MyNS {
 		 * Gets all resource providers for the tenant.
 		 * Get providers
 		 * @param {number} top The number of results to return. If null is passed returns all providers.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} expand The properties to include in the results. For example, use &$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {ProviderListResult} OK - Returns an array of resource providers.
@@ -2138,8 +2139,10 @@ export namespace MyNS {
 		 * Get all the deployments for a management group.
 		 * Get providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/
 		 * @param {string} groupId The management group ID.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.
 		 * @param {number} top The number of results to get. If null is passed, returns all deployments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentListResult} OK - Returns an array of deployments.
 		 */
@@ -2151,7 +2154,9 @@ export namespace MyNS {
 		 * Gets a deployment.
 		 * Get providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} groupId The management group ID.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentExtended} OK - Returns information about the deployment, including provisioning status.
 		 */
@@ -2164,7 +2169,9 @@ export namespace MyNS {
 		 * You can provide the template and parameters directly in the request or link to JSON files.
 		 * Put providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} groupId The management group ID.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {ScopedDeployment} requestBody Additional parameters supplied to the operation.
 		 * @return {DeploymentExtended} OK - Returns information about the deployment, including provisioning status.
@@ -2178,7 +2185,9 @@ export namespace MyNS {
 		 * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
 		 * Delete providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} groupId The management group ID.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {void} 
 		 */
@@ -2191,7 +2200,9 @@ export namespace MyNS {
 		 * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resources partially deployed.
 		 * Post providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}/cancel
 		 * @param {string} groupId The management group ID.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {void} 
 		 */
@@ -2203,7 +2214,9 @@ export namespace MyNS {
 		 * Exports the template used for specified deployment.
 		 * Post providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}/exportTemplate
 		 * @param {string} groupId The management group ID.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentExportResult} OK - Returns the template.
 		 */
@@ -2215,8 +2228,11 @@ export namespace MyNS {
 		 * Gets all deployments operations for a deployment.
 		 * Get providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}/operations
 		 * @param {string} groupId The management group ID.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} top The number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentOperationsListResult} OK - Return an array of deployment operations.
 		 */
@@ -2228,7 +2244,9 @@ export namespace MyNS {
 		 * Gets a deployments operation.
 		 * Get providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}/operations/{operationId}
 		 * @param {string} groupId The management group ID.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} operationId The ID of the operation to get.
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentOperation} OK - Returns information about the deployment operation.
@@ -2241,7 +2259,9 @@ export namespace MyNS {
 		 * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
 		 * Post providers/Microsoft.Management/managementGroups/{groupId}/providers/Microsoft.Resources/deployments/{deploymentName}/validate
 		 * @param {string} groupId The management group ID.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {ScopedDeployment} requestBody Parameters to validate.
 		 * @return {DeploymentValidateResult} OK - Returns the validation result.
@@ -2266,6 +2286,7 @@ export namespace MyNS {
 		 * Get providers/Microsoft.Resources/deployments/
 		 * @param {string} filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.
 		 * @param {number} top The number of results to get. If null is passed, returns all deployments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentListResult} OK - Returns an array of deployments.
 		 */
@@ -2277,6 +2298,7 @@ export namespace MyNS {
 		 * Gets a deployment.
 		 * Get providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentExtended} OK - Returns information about the deployment, including provisioning status.
 		 */
@@ -2289,6 +2311,7 @@ export namespace MyNS {
 		 * You can provide the template and parameters directly in the request or link to JSON files.
 		 * Put providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {ScopedDeployment} requestBody Additional parameters supplied to the operation.
 		 * @return {DeploymentExtended} OK - Returns information about the deployment, including provisioning status.
@@ -2302,6 +2325,7 @@ export namespace MyNS {
 		 * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
 		 * Delete providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {void} 
 		 */
@@ -2314,6 +2338,7 @@ export namespace MyNS {
 		 * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resources partially deployed.
 		 * Post providers/Microsoft.Resources/deployments/{deploymentName}/cancel
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {void} 
 		 */
@@ -2325,6 +2350,7 @@ export namespace MyNS {
 		 * Exports the template used for specified deployment.
 		 * Post providers/Microsoft.Resources/deployments/{deploymentName}/exportTemplate
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentExportResult} OK - Returns the template.
 		 */
@@ -2336,7 +2362,9 @@ export namespace MyNS {
 		 * Gets all deployments operations for a deployment.
 		 * Get providers/Microsoft.Resources/deployments/{deploymentName}/operations
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} top The number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentOperationsListResult} OK - Return an array of deployment operations.
 		 */
@@ -2348,6 +2376,7 @@ export namespace MyNS {
 		 * Gets a deployments operation.
 		 * Get providers/Microsoft.Resources/deployments/{deploymentName}/operations/{operationId}
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} operationId The ID of the operation to get.
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentOperation} OK - Returns information about the deployment operation.
@@ -2360,6 +2389,7 @@ export namespace MyNS {
 		 * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
 		 * Post providers/Microsoft.Resources/deployments/{deploymentName}/validate
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {ScopedDeployment} requestBody Parameters to validate.
 		 * @return {DeploymentValidateResult} OK - Returns the validation result.
@@ -2394,6 +2424,7 @@ export namespace MyNS {
 		 * Gets all resource providers for a subscription.
 		 * Get subscriptions/{subscriptionId}/providers
 		 * @param {number} top The number of results to return. If null is passed returns all deployments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} expand The properties to include in the results. For example, use &$expand=metadata in the query string to retrieve resource provider metadata. To include property aliases in response, use $expand=resourceTypes/aliases.
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
@@ -2408,6 +2439,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/
 		 * @param {string} filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.
 		 * @param {number} top The number of results to get. If null is passed, returns all deployments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {DeploymentListResult} OK - Returns an array of deployments.
@@ -2420,6 +2452,7 @@ export namespace MyNS {
 		 * Gets a deployment.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {DeploymentExtended} OK - Returns information about the deployment, including provisioning status.
@@ -2433,6 +2466,7 @@ export namespace MyNS {
 		 * You can provide the template and parameters directly in the request or link to JSON files.
 		 * Put subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {Deployment} requestBody Additional parameters supplied to the operation.
@@ -2447,6 +2481,7 @@ export namespace MyNS {
 		 * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
 		 * Delete subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {void} 
@@ -2460,6 +2495,7 @@ export namespace MyNS {
 		 * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resources partially deployed.
 		 * Post subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/cancel
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {void} 
@@ -2472,6 +2508,7 @@ export namespace MyNS {
 		 * Exports the template used for specified deployment.
 		 * Post subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/exportTemplate
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {DeploymentExportResult} OK - Returns the template.
@@ -2484,7 +2521,9 @@ export namespace MyNS {
 		 * Gets all deployments operations for a deployment.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/operations
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} top The number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {DeploymentOperationsListResult} OK - Return an array of deployment operations.
@@ -2497,6 +2536,7 @@ export namespace MyNS {
 		 * Gets a deployments operation.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/operations/{operationId}
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} operationId The ID of the operation to get.
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
@@ -2510,6 +2550,7 @@ export namespace MyNS {
 		 * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
 		 * Post subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/validate
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {Deployment} requestBody Parameters to validate.
@@ -2523,6 +2564,7 @@ export namespace MyNS {
 		 * Returns changes that will be made by the deployment if executed at the scope of the subscription.
 		 * Post subscriptions/{subscriptionId}/providers/Microsoft.Resources/deployments/{deploymentName}/whatIf
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {DeploymentWhatIf} requestBody Parameters to What If.
@@ -2573,9 +2615,11 @@ export namespace MyNS {
 		 * Get all the resources for a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/resources
 		 * @param {string} resourceGroupName The resource group with the resources to get.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} filter The filter to apply on the operation.<br><br>The properties you can use for eq (equals) or ne (not equals) are: location, resourceType, name, resourceGroup, identity, identity/principalId, plan, plan/publisher, plan/product, plan/name, plan/version, and plan/promotionCode.<br><br>For example, to filter by a resource type, use: $filter=resourceType eq 'Microsoft.Network/virtualNetworks'<br><br>You can use substringof(value, property) in the filter. The properties you can use for substring are: name and resourceGroup.<br><br>For example, to get all resources with 'demo' anywhere in the name, use: $filter=substringof('demo', name)<br><br>You can link more than one substringof together by adding and/or operators.<br><br>You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'. When you filter by a tag name and value, the tags for each resource are not returned in the results.<br><br>You can use some properties together when filtering. The combinations you can use are: substringof and/or resourceType, plan and plan/publisher and plan/name, identity and identity/principalId.
 		 * @param {string} expand The $expand query parameter. You can expand createdTime and changedTime. For example, to expand both properties, use $expand=changedTime,createdTime
 		 * @param {number} top The number of results to return. If null is passed, returns all resources.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {ResourceListResult} OK - Returns an array of resources
@@ -2589,6 +2633,7 @@ export namespace MyNS {
 		 * The resources to move must be in the same source resource group. The target resource group may be in a different subscription. When moving resources, both the source group and the target group are locked for the duration of the operation. Write and delete operations are blocked on the groups until the move completes.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{sourceResourceGroupName}/moveResources
 		 * @param {string} sourceResourceGroupName The name of the resource group containing the resources to move.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {ResourcesMoveInfo} requestBody Parameters for moving resources.
@@ -2603,6 +2648,7 @@ export namespace MyNS {
 		 * This operation checks whether the specified resources can be moved to the target. The resources to move must be in the same source resource group. The target resource group may be in a different subscription. If validation succeeds, it returns HTTP response code 204 (no content). If validation fails, it returns HTTP response code 409 (Conflict) with an error message. Retrieve the URL in the Location header value to check the result of the long-running operation.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{sourceResourceGroupName}/validateMoveResources
 		 * @param {string} sourceResourceGroupName The name of the resource group containing the resources to validate for move.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {ResourcesMoveInfo} requestBody Parameters for moving resources.
@@ -2617,6 +2663,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourcegroups
 		 * @param {string} filter The filter to apply on the operation.<br><br>You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'
 		 * @param {number} top The number of results to return. If null is passed, returns all resource groups.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {ResourceGroupListResult} OK - Returns an array of resource groups.
@@ -2629,6 +2676,7 @@ export namespace MyNS {
 		 * Gets a resource group.
 		 * Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}
 		 * @param {string} resourceGroupName The name of the resource group to get. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {ResourceGroup} OK - Returns information about the resource group.
@@ -2641,6 +2689,7 @@ export namespace MyNS {
 		 * Creates or updates a resource group.
 		 * Put subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}
 		 * @param {string} resourceGroupName The name of the resource group to create or update. Can include alphanumeric, underscore, parentheses, hyphen, period (except at end), and Unicode characters that match the allowed characters.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {ResourceGroup} requestBody Parameters supplied to the create or update a resource group.
@@ -2655,6 +2704,7 @@ export namespace MyNS {
 		 * When you delete a resource group, all of its resources are also deleted. Deleting a resource group deletes all of its template deployments and currently stored operations.
 		 * Delete subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}
 		 * @param {string} resourceGroupName The name of the resource group to delete. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {void} OK
@@ -2668,6 +2718,7 @@ export namespace MyNS {
 		 * Resource groups can be updated through a simple PATCH operation to a group address. The format of the request is the same as that for creating a resource group. If a field is unspecified, the current value is retained.
 		 * Patch subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}
 		 * @param {string} resourceGroupName The name of the resource group to update. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {ResourceGroupPatchable} requestBody Parameters supplied to update a resource group.
@@ -2681,8 +2732,11 @@ export namespace MyNS {
 		 * Gets all deployments operations for a deployment.
 		 * Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/deployments/{deploymentName}/operations
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} top The number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {DeploymentOperationsListResult} OK - Return an array of deployment operations.
@@ -2695,7 +2749,9 @@ export namespace MyNS {
 		 * Gets a deployments operation.
 		 * Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/deployments/{deploymentName}/operations/{operationId}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} operationId The ID of the operation to get.
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
@@ -2709,8 +2765,11 @@ export namespace MyNS {
 		 * Captures the specified resource group as a template.
 		 * Post subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/exportTemplate
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {ExportTemplateRequest} requestBody Parameters for exporting the template.
 		 * @return {ResourceGroupExportResult} OK - Returns the result of the export.
 		 */
@@ -2722,8 +2781,10 @@ export namespace MyNS {
 		 * Get all the deployments for a resource group.
 		 * Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/
 		 * @param {string} resourceGroupName The name of the resource group with the deployments to get. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.
 		 * @param {number} top The number of results to get. If null is passed, returns all deployments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {DeploymentListResult} OK - Returns an array of deployments.
@@ -2736,7 +2797,9 @@ export namespace MyNS {
 		 * Gets a deployment.
 		 * Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {DeploymentExtended} OK - Returns information about the deployment, including provisioning status.
@@ -2750,7 +2813,9 @@ export namespace MyNS {
 		 * You can provide the template and parameters directly in the request or link to JSON files.
 		 * Put subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} resourceGroupName The name of the resource group to deploy the resources to. The name is case insensitive. The resource group must already exist.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {Deployment} requestBody Additional parameters supplied to the operation.
@@ -2765,7 +2830,9 @@ export namespace MyNS {
 		 * A template deployment that is currently running cannot be deleted. Deleting a template deployment removes the associated deployment operations. Deleting a template deployment does not affect the state of the resource group. This is an asynchronous operation that returns a status of 202 until the template deployment is successfully deleted. The Location response header contains the URI that is used to obtain the status of the process. While the process is running, a call to the URI in the Location header returns a status of 202. When the process finishes, the URI in the Location header returns a status of 204 on success. If the asynchronous request failed, the URI in the Location header returns an error-level status code.
 		 * Delete subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} resourceGroupName The name of the resource group with the deployment to delete. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {void} 
@@ -2779,7 +2846,9 @@ export namespace MyNS {
 		 * You can cancel a deployment only if the provisioningState is Accepted or Running. After the deployment is canceled, the provisioningState is set to Canceled. Canceling a template deployment stops the currently running template deployment and leaves the resource group partially deployed.
 		 * Post subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}/cancel
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {void} 
@@ -2792,7 +2861,9 @@ export namespace MyNS {
 		 * Exports the template used for specified deployment.
 		 * Post subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}/exportTemplate
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {DeploymentExportResult} OK - Returns the template.
@@ -2805,7 +2876,9 @@ export namespace MyNS {
 		 * Validates whether the specified template is syntactically correct and will be accepted by Azure Resource Manager..
 		 * Post subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}/validate
 		 * @param {string} resourceGroupName The name of the resource group the template will be deployed to. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {Deployment} requestBody Parameters to validate.
@@ -2819,7 +2892,9 @@ export namespace MyNS {
 		 * Returns changes that will be made by the deployment if executed at the scope of the resource group.
 		 * Post subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deployments/{deploymentName}/whatIf
 		 * @param {string} resourceGroupName The name of the resource group the template will be deployed to. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @param {DeploymentWhatIf} requestBody Parameters to validate.
@@ -2833,6 +2908,7 @@ export namespace MyNS {
 		 * Gets a resource.
 		 * Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}
 		 * @param {string} resourceGroupName The name of the resource group containing the resource to get. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceProviderNamespace The namespace of the resource provider.
 		 * @param {string} parentResourcePath The parent resource identity.
 		 * @param {string} resourceType The resource type of the resource.
@@ -2849,6 +2925,7 @@ export namespace MyNS {
 		 * Creates a resource.
 		 * Put subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}
 		 * @param {string} resourceGroupName The name of the resource group for the resource. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceProviderNamespace The namespace of the resource provider.
 		 * @param {string} parentResourcePath The parent resource identity.
 		 * @param {string} resourceType The resource type of the resource to create.
@@ -2866,6 +2943,7 @@ export namespace MyNS {
 		 * Deletes a resource.
 		 * Delete subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the resource to delete. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceProviderNamespace The namespace of the resource provider.
 		 * @param {string} parentResourcePath The parent resource identity.
 		 * @param {string} resourceType The resource type.
@@ -2882,6 +2960,7 @@ export namespace MyNS {
 		 * Updates a resource.
 		 * Patch subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}
 		 * @param {string} resourceGroupName The name of the resource group for the resource. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} resourceProviderNamespace The namespace of the resource provider.
 		 * @param {string} parentResourcePath The parent resource identity.
 		 * @param {string} resourceType The resource type of the resource to update.
@@ -2901,6 +2980,7 @@ export namespace MyNS {
 		 * @param {string} filter The filter to apply on the operation.<br><br>The properties you can use for eq (equals) or ne (not equals) are: location, resourceType, name, resourceGroup, identity, identity/principalId, plan, plan/publisher, plan/product, plan/name, plan/version, and plan/promotionCode.<br><br>For example, to filter by a resource type, use: $filter=resourceType eq 'Microsoft.Network/virtualNetworks'<br><br>You can use substringof(value, property) in the filter. The properties you can use for substring are: name and resourceGroup.<br><br>For example, to get all resources with 'demo' anywhere in the name, use: $filter=substringof('demo', name)<br><br>You can link more than one substringof together by adding and/or operators.<br><br>You can filter by tag names and values. For example, to filter for a tag name and value, use $filter=tagName eq 'tag1' and tagValue eq 'Value1'. When you filter by a tag name and value, the tags for each resource are not returned in the results.<br><br>You can use some properties together when filtering. The combinations you can use are: substringof and/or resourceType, plan and plan/publisher and plan/name, identity and identity/principalId.
 		 * @param {string} expand The $expand query parameter. You can expand createdTime and changedTime. For example, to expand both properties, use $expand=changedTime,createdTime
 		 * @param {number} top The number of results to return. If null is passed, returns all resource groups.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {string} subscriptionId The ID of the target subscription.
 		 * @return {ResourceListResult} OK - Returns an array of resources.
@@ -3027,6 +3107,7 @@ export namespace MyNS {
 		 * @param {string} scope The resource scope.
 		 * @param {string} filter The filter to apply on the operation. For example, you can use $filter=provisioningState eq '{state}'.
 		 * @param {number} top The number of results to get. If null is passed, returns all deployments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentListResult} OK - Returns an array of deployments.
 		 */
@@ -3039,6 +3120,7 @@ export namespace MyNS {
 		 * Get {scope}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} scope The resource scope.
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentExtended} OK - Returns information about the deployment, including provisioning status.
 		 */
@@ -3052,6 +3134,7 @@ export namespace MyNS {
 		 * Put {scope}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} scope The resource scope.
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {Deployment} requestBody Additional parameters supplied to the operation.
 		 * @return {DeploymentExtended} OK - Returns information about the deployment, including provisioning status.
@@ -3066,6 +3149,7 @@ export namespace MyNS {
 		 * Delete {scope}/providers/Microsoft.Resources/deployments/{deploymentName}
 		 * @param {string} scope The resource scope.
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {void} 
 		 */
@@ -3079,6 +3163,7 @@ export namespace MyNS {
 		 * Post {scope}/providers/Microsoft.Resources/deployments/{deploymentName}/cancel
 		 * @param {string} scope The resource scope.
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {void} 
 		 */
@@ -3091,6 +3176,7 @@ export namespace MyNS {
 		 * Post {scope}/providers/Microsoft.Resources/deployments/{deploymentName}/exportTemplate
 		 * @param {string} scope The resource scope.
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentExportResult} OK - Returns the template.
 		 */
@@ -3103,7 +3189,9 @@ export namespace MyNS {
 		 * Get {scope}/providers/Microsoft.Resources/deployments/{deploymentName}/operations
 		 * @param {string} scope The resource scope.
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} top The number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentOperationsListResult} OK - Return an array of deployment operations.
 		 */
@@ -3116,6 +3204,7 @@ export namespace MyNS {
 		 * Get {scope}/providers/Microsoft.Resources/deployments/{deploymentName}/operations/{operationId}
 		 * @param {string} scope The resource scope.
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} operationId The ID of the operation to get.
 		 * @param {string} api_version The API version to use for this operation.
 		 * @return {DeploymentOperation} OK - Returns information about the deployment operation.
@@ -3129,6 +3218,7 @@ export namespace MyNS {
 		 * Post {scope}/providers/Microsoft.Resources/deployments/{deploymentName}/validate
 		 * @param {string} scope The resource scope.
 		 * @param {string} deploymentName The name of the deployment.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to use for this operation.
 		 * @param {Deployment} requestBody Parameters to validate.
 		 * @return {DeploymentValidateResult} OK - Returns the validation result.

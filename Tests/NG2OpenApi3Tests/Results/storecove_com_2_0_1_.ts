@@ -313,35 +313,38 @@ export namespace MyNS {
 
 		/**
 		 * The ISO3166 country code to use this identifier for in case of consumerTaxMode.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country?: string | null;
 
 		/**
 		 * The county/state inside the country code to use this identifier for in case of consumerTaxMode.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		county?: string | null;
 
-		/** The Storecove assigned id for the AdditionalTaxIdentifier. */
-		id?: number | null;
+		/**
+		 * The Storecove assigned id for the AdditionalTaxIdentifier.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The identifier. */
 		identifier?: string | null;
 
 		/**
 		 * The scheme of the identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		scheme?: string | null;
 
 		/**
 		 * The superscheme of the identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		superscheme?: string | null;
 	}
@@ -349,35 +352,38 @@ export namespace MyNS {
 
 		/**
 		 * The ISO3166 country code to use this identifier for in case of consumerTaxMode.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * The county/state inside the country code to use this identifier for in case of consumerTaxMode.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		county: FormControl<string | null | undefined>,
 
-		/** The Storecove assigned id for the AdditionalTaxIdentifier. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The Storecove assigned id for the AdditionalTaxIdentifier.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The identifier. */
 		identifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The scheme of the identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		scheme: FormControl<string | null | undefined>,
 
 		/**
 		 * The superscheme of the identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		superscheme: FormControl<string | null | undefined>,
 	}
@@ -385,7 +391,7 @@ export namespace MyNS {
 		return new FormGroup<AdditionalTaxIdentifierFormProperties>({
 			country: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(2)]),
 			county: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(2)]),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			identifier: new FormControl<string | null | undefined>(undefined),
 			scheme: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
 			superscheme: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
@@ -398,15 +404,15 @@ export namespace MyNS {
 		/**
 		 * The ISO3166 country code to use this identifier for in case of consumerTaxMode.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: string;
 
 		/**
 		 * The county/state inside the country code to use this identifier for in case of consumerTaxMode. Leave empty to create an additional tax identifier for the entire country. For India, use the two last characters of ISO 3166-2:IN (https://en.wikipedia.org/wiki/States_and_union_territories_of_India).
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		county?: string | null;
 
@@ -419,30 +425,30 @@ export namespace MyNS {
 		/**
 		 * The scheme of the identifier.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		scheme: string;
 
 		/**
 		 * The superscheme of the identifier. Should always be "iso6523-actorid-upis".
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		superscheme: string;
 
 		/**
 		 * The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_password?: string | null;
 
 		/**
 		 * The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_username?: string | null;
 	}
@@ -451,15 +457,15 @@ export namespace MyNS {
 		/**
 		 * The ISO3166 country code to use this identifier for in case of consumerTaxMode.
 		 * Required
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * The county/state inside the country code to use this identifier for in case of consumerTaxMode. Leave empty to create an additional tax identifier for the entire country. For India, use the two last characters of ISO 3166-2:IN (https://en.wikipedia.org/wiki/States_and_union_territories_of_India).
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		county: FormControl<string | null | undefined>,
 
@@ -472,30 +478,30 @@ export namespace MyNS {
 		/**
 		 * The scheme of the identifier.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		scheme: FormControl<string | null | undefined>,
 
 		/**
 		 * The superscheme of the identifier. Should always be "iso6523-actorid-upis".
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		superscheme: FormControl<string | null | undefined>,
 
 		/**
 		 * The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_password: FormControl<string | null | undefined>,
 
 		/**
 		 * The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_username: FormControl<string | null | undefined>,
 	}
@@ -522,15 +528,15 @@ export namespace MyNS {
 
 		/**
 		 * The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_password?: string | null;
 
 		/**
 		 * The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_username?: string | null;
 	}
@@ -544,15 +550,15 @@ export namespace MyNS {
 
 		/**
 		 * The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_password: FormControl<string | null | undefined>,
 
 		/**
 		 * The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN tax identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_username: FormControl<string | null | undefined>,
 	}
@@ -569,16 +575,22 @@ export namespace MyNS {
 
 		/**
 		 * The email address to send the received document to
-		 * Max length: 128
 		 * Min length: 5
+		 * Max length: 128
 		 */
 		email?: string | null;
 
-		/** The Storecove assigned id for the Administration. */
-		id?: number | null;
+		/**
+		 * The Storecove assigned id for the Administration.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
-		/** The LegalEntity the Administration belongs to. */
-		legal_entity_id?: number | null;
+		/**
+		 * The LegalEntity the Administration belongs to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		legal_entity_id?: string | null;
 
 		/** The version of the package. */
 		package_version?: AdministrationPackage_version | null;
@@ -586,23 +598,32 @@ export namespace MyNS {
 		/** How to package the purchase invoice. */
 		packaging?: AdministrationPackaging | null;
 
-		/** The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used */
-		sender_email_identity_id?: number | null;
+		/**
+		 * The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sender_email_identity_id?: string | null;
 	}
 	export interface AdministrationFormProperties {
 
 		/**
 		 * The email address to send the received document to
-		 * Max length: 128
 		 * Min length: 5
+		 * Max length: 128
 		 */
 		email: FormControl<string | null | undefined>,
 
-		/** The Storecove assigned id for the Administration. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The Storecove assigned id for the Administration.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
-		/** The LegalEntity the Administration belongs to. */
-		legal_entity_id: FormControl<number | null | undefined>,
+		/**
+		 * The LegalEntity the Administration belongs to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		legal_entity_id: FormControl<string | null | undefined>,
 
 		/** The version of the package. */
 		package_version: FormControl<AdministrationPackage_version | null | undefined>,
@@ -610,17 +631,20 @@ export namespace MyNS {
 		/** How to package the purchase invoice. */
 		packaging: FormControl<AdministrationPackaging | null | undefined>,
 
-		/** The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used */
-		sender_email_identity_id: FormControl<number | null | undefined>,
+		/**
+		 * The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sender_email_identity_id: FormControl<string | null | undefined>,
 	}
 	export function CreateAdministrationFormGroup() {
 		return new FormGroup<AdministrationFormProperties>({
 			email: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(128)]),
-			id: new FormControl<number | null | undefined>(undefined),
-			legal_entity_id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			legal_entity_id: new FormControl<string | null | undefined>(undefined),
 			package_version: new FormControl<AdministrationPackage_version | null | undefined>(undefined),
 			packaging: new FormControl<AdministrationPackaging | null | undefined>(undefined),
-			sender_email_identity_id: new FormControl<number | null | undefined>(undefined),
+			sender_email_identity_id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -633,13 +657,16 @@ export namespace MyNS {
 
 		/**
 		 * The email address to send the received document to
-		 * Max length: 128
 		 * Min length: 5
+		 * Max length: 128
 		 */
 		email?: string | null;
 
-		/** The LegalEntity the Administration belongs to. */
-		legal_entity_id?: number | null;
+		/**
+		 * The LegalEntity the Administration belongs to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		legal_entity_id?: string | null;
 
 		/** The version of the package. */
 		package_version?: AdministrationPackage_version | null;
@@ -647,20 +674,26 @@ export namespace MyNS {
 		/** How to package the purchase invoice. */
 		packaging?: AdministrationPackaging | null;
 
-		/** The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used */
-		sender_email_identity_id?: number | null;
+		/**
+		 * The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sender_email_identity_id?: string | null;
 	}
 	export interface AdministrationCreateFormProperties {
 
 		/**
 		 * The email address to send the received document to
-		 * Max length: 128
 		 * Min length: 5
+		 * Max length: 128
 		 */
 		email: FormControl<string | null | undefined>,
 
-		/** The LegalEntity the Administration belongs to. */
-		legal_entity_id: FormControl<number | null | undefined>,
+		/**
+		 * The LegalEntity the Administration belongs to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		legal_entity_id: FormControl<string | null | undefined>,
 
 		/** The version of the package. */
 		package_version: FormControl<AdministrationPackage_version | null | undefined>,
@@ -668,16 +701,19 @@ export namespace MyNS {
 		/** How to package the purchase invoice. */
 		packaging: FormControl<AdministrationPackaging | null | undefined>,
 
-		/** The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used */
-		sender_email_identity_id: FormControl<number | null | undefined>,
+		/**
+		 * The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sender_email_identity_id: FormControl<string | null | undefined>,
 	}
 	export function CreateAdministrationCreateFormGroup() {
 		return new FormGroup<AdministrationCreateFormProperties>({
 			email: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(128)]),
-			legal_entity_id: new FormControl<number | null | undefined>(undefined),
+			legal_entity_id: new FormControl<string | null | undefined>(undefined),
 			package_version: new FormControl<AdministrationPackage_version | null | undefined>(undefined),
 			packaging: new FormControl<AdministrationPackaging | null | undefined>(undefined),
-			sender_email_identity_id: new FormControl<number | null | undefined>(undefined),
+			sender_email_identity_id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -686,8 +722,8 @@ export namespace MyNS {
 
 		/**
 		 * The email address to send the received document to
-		 * Max length: 128
 		 * Min length: 5
+		 * Max length: 128
 		 */
 		email?: string | null;
 
@@ -697,15 +733,18 @@ export namespace MyNS {
 		/** How to package the purchase invoice. */
 		packaging?: AdministrationPackaging | null;
 
-		/** The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used */
-		sender_email_identity_id?: number | null;
+		/**
+		 * The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sender_email_identity_id?: string | null;
 	}
 	export interface AdministrationUpdateFormProperties {
 
 		/**
 		 * The email address to send the received document to
-		 * Max length: 128
 		 * Min length: 5
+		 * Max length: 128
 		 */
 		email: FormControl<string | null | undefined>,
 
@@ -715,34 +754,52 @@ export namespace MyNS {
 		/** How to package the purchase invoice. */
 		packaging: FormControl<AdministrationPackaging | null | undefined>,
 
-		/** The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used */
-		sender_email_identity_id: FormControl<number | null | undefined>,
+		/**
+		 * The id of the SenderEmailIdentity. If not provided, the Storecove default sender will be used
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sender_email_identity_id: FormControl<string | null | undefined>,
 	}
 	export function CreateAdministrationUpdateFormGroup() {
 		return new FormGroup<AdministrationUpdateFormProperties>({
 			email: new FormControl<string | null | undefined>(undefined, [Validators.minLength(5), Validators.maxLength(128)]),
 			package_version: new FormControl<AdministrationPackage_version | null | undefined>(undefined),
 			packaging: new FormControl<AdministrationPackaging | null | undefined>(undefined),
-			sender_email_identity_id: new FormControl<number | null | undefined>(undefined),
+			sender_email_identity_id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface AllowanceCharge {
 
-		/** The amount for the allowance or charge, excluding tax. */
+		/**
+		 * The amount for the allowance or charge, excluding tax.
+		 * Type: double
+		 */
 		amountExcludingTax?: number | null;
 
-		/** DEPRECATED. Use amountExcludingTax. The amount for the allowance or charge, excluding VAT. */
+		/**
+		 * DEPRECATED. Use amountExcludingTax. The amount for the allowance or charge, excluding VAT.
+		 * Type: double
+		 */
 		amountExcludingVat?: number | null;
 
-		/** The amount for the allowance or charge, including tax. */
+		/**
+		 * The amount for the allowance or charge, including tax.
+		 * Type: double
+		 */
 		amountIncludingTax?: number | null;
 
-		/** The base amount for the allowance or charge, excluding tax. */
+		/**
+		 * The base amount for the allowance or charge, excluding tax.
+		 * Type: double
+		 */
 		baseAmountExcludingTax?: number | null;
 
-		/** The base amount for the allowance or charge, including tax. */
+		/**
+		 * The base amount for the allowance or charge, including tax.
+		 * Type: double
+		 */
 		baseAmountIncludingTax?: number | null;
 
 		/** The reason for the allowance or charge, free text */
@@ -760,19 +817,34 @@ export namespace MyNS {
 	}
 	export interface AllowanceChargeFormProperties {
 
-		/** The amount for the allowance or charge, excluding tax. */
+		/**
+		 * The amount for the allowance or charge, excluding tax.
+		 * Type: double
+		 */
 		amountExcludingTax: FormControl<number | null | undefined>,
 
-		/** DEPRECATED. Use amountExcludingTax. The amount for the allowance or charge, excluding VAT. */
+		/**
+		 * DEPRECATED. Use amountExcludingTax. The amount for the allowance or charge, excluding VAT.
+		 * Type: double
+		 */
 		amountExcludingVat: FormControl<number | null | undefined>,
 
-		/** The amount for the allowance or charge, including tax. */
+		/**
+		 * The amount for the allowance or charge, including tax.
+		 * Type: double
+		 */
 		amountIncludingTax: FormControl<number | null | undefined>,
 
-		/** The base amount for the allowance or charge, excluding tax. */
+		/**
+		 * The base amount for the allowance or charge, excluding tax.
+		 * Type: double
+		 */
 		baseAmountExcludingTax: FormControl<number | null | undefined>,
 
-		/** The base amount for the allowance or charge, including tax. */
+		/**
+		 * The base amount for the allowance or charge, including tax.
+		 * Type: double
+		 */
 		baseAmountIncludingTax: FormControl<number | null | undefined>,
 
 		/** The reason for the allowance or charge, free text */
@@ -796,7 +868,10 @@ export namespace MyNS {
 
 	export interface Tax {
 
-		/** The amount of tax. Mandatory if taxSystem == 'tax_line_amounts'. However, it is best to use taxSystem tax_line_percentages and provide only the percentage, not the actual amount. The amount is then provided at the invoice level, in the taxSubtotals element. */
+		/**
+		 * The amount of tax. Mandatory if taxSystem == 'tax_line_amounts'. However, it is best to use taxSystem tax_line_percentages and provide only the percentage, not the actual amount. The amount is then provided at the invoice level, in the taxSubtotals element.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/**
@@ -813,12 +888,18 @@ export namespace MyNS {
 		 */
 		country: AddressCountry;
 
-		/** The percentage Tax. This should be a valid Tax percentage in the country at the time of the issueDate of this invoice. Mandatory if taxSystem == 'tax_line_percentages' */
+		/**
+		 * The percentage Tax. This should be a valid Tax percentage in the country at the time of the issueDate of this invoice. Mandatory if taxSystem == 'tax_line_percentages'
+		 * Type: double
+		 */
 		percentage?: number | null;
 	}
 	export interface TaxFormProperties {
 
-		/** The amount of tax. Mandatory if taxSystem == 'tax_line_amounts'. However, it is best to use taxSystem tax_line_percentages and provide only the percentage, not the actual amount. The amount is then provided at the invoice level, in the taxSubtotals element. */
+		/**
+		 * The amount of tax. Mandatory if taxSystem == 'tax_line_amounts'. However, it is best to use taxSystem tax_line_percentages and provide only the percentage, not the actual amount. The amount is then provided at the invoice level, in the taxSubtotals element.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
@@ -835,7 +916,10 @@ export namespace MyNS {
 		 */
 		country: FormControl<AddressCountry | null | undefined>,
 
-		/** The percentage Tax. This should be a valid Tax percentage in the country at the time of the issueDate of this invoice. Mandatory if taxSystem == 'tax_line_percentages' */
+		/**
+		 * The percentage Tax. This should be a valid Tax percentage in the country at the time of the issueDate of this invoice. Mandatory if taxSystem == 'tax_line_percentages'
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateTaxFormGroup() {
@@ -938,22 +1022,22 @@ export namespace MyNS {
 
 		/**
 		 * The URL the CorpPass system will redirect to in case of a failure to perform identity verfication.
-		 * Max length: 255
 		 * Min length: 11
+		 * Max length: 255
 		 */
 		client_redirect_fail_url?: string | null;
 
 		/**
 		 * The URL the CorpPass system will redirect to in case of successful identity verfication.
-		 * Max length: 255
 		 * Min length: 11
+		 * Max length: 255
 		 */
 		client_redirect_success_url?: string | null;
 
 		/**
 		 * The CorpPass redirect URL.
-		 * Max length: 255
 		 * Min length: 11
+		 * Max length: 255
 		 */
 		corppass_url?: string | null;
 
@@ -965,15 +1049,15 @@ export namespace MyNS {
 
 		/**
 		 * The email of the person who is going to perform the CorpPass process.
-		 * Max length: 128
 		 * Min length: 2
+		 * Max length: 128
 		 */
 		signer_email?: string | null;
 
 		/**
 		 * The name of the person who is going to perform the CorpPass process.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		signer_name?: string | null;
 
@@ -987,22 +1071,22 @@ export namespace MyNS {
 
 		/**
 		 * The URL the CorpPass system will redirect to in case of a failure to perform identity verfication.
-		 * Max length: 255
 		 * Min length: 11
+		 * Max length: 255
 		 */
 		client_redirect_fail_url: FormControl<string | null | undefined>,
 
 		/**
 		 * The URL the CorpPass system will redirect to in case of successful identity verfication.
-		 * Max length: 255
 		 * Min length: 11
+		 * Max length: 255
 		 */
 		client_redirect_success_url: FormControl<string | null | undefined>,
 
 		/**
 		 * The CorpPass redirect URL.
-		 * Max length: 255
 		 * Min length: 11
+		 * Max length: 255
 		 */
 		corppass_url: FormControl<string | null | undefined>,
 
@@ -1014,15 +1098,15 @@ export namespace MyNS {
 
 		/**
 		 * The email of the person who is going to perform the CorpPass process.
-		 * Max length: 128
 		 * Min length: 2
+		 * Max length: 128
 		 */
 		signer_email: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the person who is going to perform the CorpPass process.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		signer_name: FormControl<string | null | undefined>,
 
@@ -1055,15 +1139,15 @@ export namespace MyNS {
 
 		/**
 		 * The URL the CorpPass system will redirect to in case of a failure to perform identity verfication. Mandatory for flow_type="corppass_flow_redirect"
-		 * Max length: 255
 		 * Min length: 11
+		 * Max length: 255
 		 */
 		client_redirect_fail_url?: string | null;
 
 		/**
 		 * The URL the CorpPass system will redirect to in case of successful identity verfication. Mandatory for flow_type="corppass_flow_redirect"
-		 * Max length: 255
 		 * Min length: 11
+		 * Max length: 255
 		 */
 		client_redirect_success_url?: string | null;
 
@@ -1078,15 +1162,15 @@ export namespace MyNS {
 
 		/**
 		 * The email of the person who is going to perform the CorpPass process. Mandatory for flow_type="corppass_flow_email"
-		 * Max length: 128
 		 * Min length: 2
+		 * Max length: 128
 		 */
 		signer_email?: string | null;
 
 		/**
 		 * The name of the person who is going to perform the CorpPass process. Mandatory for flow_type="corppass_flow_email"
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		signer_name?: string | null;
 
@@ -1097,15 +1181,15 @@ export namespace MyNS {
 
 		/**
 		 * The URL the CorpPass system will redirect to in case of a failure to perform identity verfication. Mandatory for flow_type="corppass_flow_redirect"
-		 * Max length: 255
 		 * Min length: 11
+		 * Max length: 255
 		 */
 		client_redirect_fail_url: FormControl<string | null | undefined>,
 
 		/**
 		 * The URL the CorpPass system will redirect to in case of successful identity verfication. Mandatory for flow_type="corppass_flow_redirect"
-		 * Max length: 255
 		 * Min length: 11
+		 * Max length: 255
 		 */
 		client_redirect_success_url: FormControl<string | null | undefined>,
 
@@ -1120,15 +1204,15 @@ export namespace MyNS {
 
 		/**
 		 * The email of the person who is going to perform the CorpPass process. Mandatory for flow_type="corppass_flow_email"
-		 * Max length: 128
 		 * Min length: 2
+		 * Max length: 128
 		 */
 		signer_email: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the person who is going to perform the CorpPass process. Mandatory for flow_type="corppass_flow_email"
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		signer_name: FormControl<string | null | undefined>,
 
@@ -1280,7 +1364,10 @@ export namespace MyNS {
 		/** Use deliveryParty. The name of the party that took delivery. Used only for Invoice */
 		deliveryPartyName?: string | null;
 
-		/** The quantity of the delivery. Used only for Invoice */
+		/**
+		 * The quantity of the delivery. Used only for Invoice
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** The requested delivery period. Used only for DocumentOrder. */
@@ -1300,7 +1387,10 @@ export namespace MyNS {
 		/** Use deliveryParty. The name of the party that took delivery. Used only for Invoice */
 		deliveryPartyName: FormControl<string | null | undefined>,
 
-		/** The quantity of the delivery. Used only for Invoice */
+		/**
+		 * The quantity of the delivery. Used only for Invoice
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The requested delivery period. Used only for DocumentOrder. */
@@ -1707,6 +1797,7 @@ export namespace MyNS {
 		/**
 		 * Total amount including Tax.
 		 * Required
+		 * Type: double
 		 */
 		amountIncludingTax: number;
 
@@ -1790,6 +1881,7 @@ export namespace MyNS {
 		/**
 		 * Total amount including Tax.
 		 * Required
+		 * Type: double
 		 */
 		amountIncludingTax: FormControl<number | null | undefined>,
 
@@ -1873,21 +1965,28 @@ export namespace MyNS {
 		/**
 		 * The amount excluding tax. Should equal quantity x itemPrice + allowanceCharge.
 		 * Required
+		 * Type: double
 		 */
 		amountExcludingTax: number;
 
-		/** The number of items the price is for. */
+		/**
+		 * The number of items the price is for.
+		 * Type: double
+		 */
 		baseQuantity?: number | null;
 		delivery?: LineDelivery;
 
 		/**
 		 * The description for this line.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description?: string | null;
 
-		/** The price per item (may be fractional) */
+		/**
+		 * The price per item (may be fractional)
+		 * Type: double
+		 */
 		itemPrice?: number | null;
 
 		/**
@@ -1905,8 +2004,8 @@ export namespace MyNS {
 
 		/**
 		 * A short name for this line.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
@@ -1919,6 +2018,7 @@ export namespace MyNS {
 		/**
 		 * The number of items (may be fractional).
 		 * Required
+		 * Type: double
 		 */
 		quantity: number;
 
@@ -1954,20 +2054,27 @@ export namespace MyNS {
 		/**
 		 * The amount excluding tax. Should equal quantity x itemPrice + allowanceCharge.
 		 * Required
+		 * Type: double
 		 */
 		amountExcludingTax: FormControl<number | null | undefined>,
 
-		/** The number of items the price is for. */
+		/**
+		 * The number of items the price is for.
+		 * Type: double
+		 */
 		baseQuantity: FormControl<number | null | undefined>,
 
 		/**
 		 * The description for this line.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/** The price per item (may be fractional) */
+		/**
+		 * The price per item (may be fractional)
+		 * Type: double
+		 */
 		itemPrice: FormControl<number | null | undefined>,
 
 		/**
@@ -1979,8 +2086,8 @@ export namespace MyNS {
 
 		/**
 		 * A short name for this line.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1993,6 +2100,7 @@ export namespace MyNS {
 		/**
 		 * The number of items (may be fractional).
 		 * Required
+		 * Type: double
 		 */
 		quantity: FormControl<number | null | undefined>,
 
@@ -2024,10 +2132,14 @@ export namespace MyNS {
 		/**
 		 * The amount for the allowance or charge, excluding tax.
 		 * Required
+		 * Type: double
 		 */
 		amountExcludingTax: number;
 
-		/** The base amount for the allowance or charge, excluding tax. */
+		/**
+		 * The base amount for the allowance or charge, excluding tax.
+		 * Type: double
+		 */
 		baseAmountExcludingTax?: number | null;
 
 		/** The reason for the allowance or charge, free text */
@@ -2041,10 +2153,14 @@ export namespace MyNS {
 		/**
 		 * The amount for the allowance or charge, excluding tax.
 		 * Required
+		 * Type: double
 		 */
 		amountExcludingTax: FormControl<number | null | undefined>,
 
-		/** The base amount for the allowance or charge, excluding tax. */
+		/**
+		 * The base amount for the allowance or charge, excluding tax.
+		 * Type: double
+		 */
 		baseAmountExcludingTax: FormControl<number | null | undefined>,
 
 		/** The reason for the allowance or charge, free text */
@@ -2228,12 +2344,15 @@ export namespace MyNS {
 
 		/**
 		 * A guid that you generated for this DocumentSubmission to achieve idempotency. If you submit multiple documents with the same idempotencyGuid, only the first one will be processed and any subsequent ones will trigger an HTTP 422 Unprocessable Entity response.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		idempotencyGuid?: string | null;
 
-		/** The id of the LegalEntity this document should be sent on behalf of. Either legalEntityId or receiveGuid is mandatory. */
+		/**
+		 * The id of the LegalEntity this document should be sent on behalf of. Either legalEntityId or receiveGuid is mandatory.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		legalEntityId?: number | null;
 
 		/** The GUID that was in the received_document webhook. Either legalEntityId or receiveGuid is mandatory. This field is used for sending response documents, such as InvoiceReponse and OrderResponse. */
@@ -2251,12 +2370,15 @@ export namespace MyNS {
 
 		/**
 		 * A guid that you generated for this DocumentSubmission to achieve idempotency. If you submit multiple documents with the same idempotencyGuid, only the first one will be processed and any subsequent ones will trigger an HTTP 422 Unprocessable Entity response.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		idempotencyGuid: FormControl<string | null | undefined>,
 
-		/** The id of the LegalEntity this document should be sent on behalf of. Either legalEntityId or receiveGuid is mandatory. */
+		/**
+		 * The id of the LegalEntity this document should be sent on behalf of. Either legalEntityId or receiveGuid is mandatory.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		legalEntityId: FormControl<number | null | undefined>,
 
 		/** The GUID that was in the received_document webhook. Either legalEntityId or receiveGuid is mandatory. This field is used for sending response documents, such as InvoiceReponse and OrderResponse. */
@@ -2323,7 +2445,10 @@ export namespace MyNS {
 		 */
 		accountingCost?: string | null;
 
-		/** The total amount of tax in the accounting currency. If included, must be non-zero. */
+		/**
+		 * The total amount of tax in the accounting currency. If included, must be non-zero.
+		 * Type: double
+		 */
 		accountingCurrencyTaxAmount?: number | null;
 
 		/** The ISO 4217 currency code. */
@@ -2347,6 +2472,7 @@ export namespace MyNS {
 		/**
 		 * amountIncludingVat is important because of rounding differences. In many invoices, the sum of the line item amounts excluding VAT and the VAT amounts is not equal to first summing the line items without VAT, and then applying VAT. The difference is automatically calculated and included in the electronic invoice, so the receiving accounting package can process the electronic invoice without problems.
 		 * Required
+		 * Type: double
 		 */
 		amountIncludingVat: number;
 
@@ -2431,7 +2557,10 @@ export namespace MyNS {
 		/** In auto mode, the choice between invoice or creditnote is made by Storecove based on what is appropriate for the receiver and the receiver country, in combination with the invoice amount sign. If you wish to state a preference, use this field. It is not guaranteed that the preference will be used, since it depends also on the receiver's document capabilities. */
 		preferredInvoiceType?: InvoicePreferredInvoiceType | null;
 
-		/** The amount already paid. */
+		/**
+		 * The amount already paid.
+		 * Type: double
+		 */
 		prepaidAmount?: number | null;
 
 		/** The price mode. This is used to determine whether the prices are net or gross. Price Mode 'price_mode_gross' can only be used for "x2y": "b2c", sender countries ES, IT and PT, "clearWithoutSending": true and "taxSystem": "tax_line_percentages" */
@@ -2496,7 +2625,10 @@ export namespace MyNS {
 		 */
 		accountingCost: FormControl<string | null | undefined>,
 
-		/** The total amount of tax in the accounting currency. If included, must be non-zero. */
+		/**
+		 * The total amount of tax in the accounting currency. If included, must be non-zero.
+		 * Type: double
+		 */
 		accountingCurrencyTaxAmount: FormControl<number | null | undefined>,
 
 		/** The ISO 4217 currency code. */
@@ -2505,6 +2637,7 @@ export namespace MyNS {
 		/**
 		 * amountIncludingVat is important because of rounding differences. In many invoices, the sum of the line item amounts excluding VAT and the VAT amounts is not equal to first summing the line items without VAT, and then applying VAT. The difference is automatically calculated and included in the electronic invoice, so the receiving accounting package can process the electronic invoice without problems.
 		 * Required
+		 * Type: double
 		 */
 		amountIncludingVat: FormControl<number | null | undefined>,
 
@@ -2566,7 +2699,10 @@ export namespace MyNS {
 		/** In auto mode, the choice between invoice or creditnote is made by Storecove based on what is appropriate for the receiver and the receiver country, in combination with the invoice amount sign. If you wish to state a preference, use this field. It is not guaranteed that the preference will be used, since it depends also on the receiver's document capabilities. */
 		preferredInvoiceType: FormControl<InvoicePreferredInvoiceType | null | undefined>,
 
-		/** The amount already paid. */
+		/**
+		 * The amount already paid.
+		 * Type: double
+		 */
 		prepaidAmount: FormControl<number | null | undefined>,
 
 		/** The price mode. This is used to determine whether the prices are net or gross. Price Mode 'price_mode_gross' can only be used for "x2y": "b2c", sender countries ES, IT and PT, "clearWithoutSending": true and "taxSystem": "tax_line_percentages" */
@@ -2651,7 +2787,10 @@ export namespace MyNS {
 		 */
 		additionalItemProperties?: Array<AdditionalItemProperty>;
 
-		/** The discount or surcharge on this item. Should be negative for discounts */
+		/**
+		 * The discount or surcharge on this item. Should be negative for discounts
+		 * Type: double
+		 */
 		allowanceCharge?: number | null;
 
 		/**
@@ -2660,13 +2799,22 @@ export namespace MyNS {
 		 */
 		allowanceCharges?: Array<LineAllowanceCharge>;
 
-		/** The amount excluding tax. EXPERIMENTAL. Use amountExcludingVat. */
+		/**
+		 * The amount excluding tax. EXPERIMENTAL. Use amountExcludingVat.
+		 * Type: double
+		 */
 		amountExcludingTax?: number | null;
 
-		/** The amount excluding VAT. Should equal quantity x itemPrice + allowanceCharge. */
+		/**
+		 * The amount excluding VAT. Should equal quantity x itemPrice + allowanceCharge.
+		 * Type: double
+		 */
 		amountExcludingVat?: number | null;
 
-		/** The amount including tax. Can only be used for "priceMode": "price_mode_gross". Use either this property or amountExcludingTax (amountExcludingVat). */
+		/**
+		 * The amount including tax. Can only be used for "priceMode": "price_mode_gross". Use either this property or amountExcludingTax (amountExcludingVat).
+		 * Type: double
+		 */
 		amountIncludingTax?: number | null;
 
 		/**
@@ -2684,7 +2832,10 @@ export namespace MyNS {
 		/** The period (or specific date) to which the invoice line applies. Format: yyyy-mm-dd - yyyy-mm-dd. */
 		invoicePeriod?: string | null;
 
-		/** The price per item (may be fractional) */
+		/**
+		 * The price per item (may be fractional)
+		 * Type: double
+		 */
 		itemPrice?: number | null;
 
 		/**
@@ -2708,7 +2859,10 @@ export namespace MyNS {
 		 */
 		orderLineReferenceLineId?: string | null;
 
-		/** The number of items (may be fractional). */
+		/**
+		 * The number of items (may be fractional).
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** The unit of measure that applies to the invoiced quantity. Codes for unit of packaging from UNECE Recommendation No. 21 can be used in accordance with the descriptions in the "Intro" section of UN/ECE Recommendation 20, Revision 11 (2015): The 2 character alphanumeric code values in UNECE Recommendation 21 shall be used. To avoid duplication with existing code values in UNECE Recommendation No. 20, each code value from UNECE Recommendation 21 shall be prefixed with an “X”, resulting in a 3 alphanumeric code when used as a unit of measure. Note that the following additionally allowed codes are deprecated and will be converted to C62: 04, 05, 08, 16, 17, 18, 19, 26, 29, 30, 31, 32, 36, 43, 44, 45, 46, 47, 48, 53, 54, 62, 63, 64, 66, 69, 71, 72, 73, 76, 78, 84, 90, 92, 93, 94, 95, 96, 97, 98, 1A, 1B, 1C, 1D, 1E, 1F, 1G, 1H, 1J, 1K, 1L, 1M, 1X, 2V, 2W, 3E, 3G, 3H, 3I, 4A, 4B, 4E, 5C, 5F, 5G, 5H, 5I, 5K, 5P, 5Q, A1, A25, A50, A51, A52, A57, A58, A60, A61, A62, A63, A64, A65, A66, A67, A77, A78, A79, A80, A81, A82, A83, AJ, AM, AP, AR, ARE, ATT, AV, AW, B0, B2, B36, B37, B38, B39, B40, B5, B51, B6, B65, B9, BD, BE, BG, BH, BJ, BK, BL, BO, BR, BT, BW, BX, BZ, C1, C2, C4, C5, C6, C77, C98, CA, CH, CJ, CK, CL, CO, CQ, CR, CS, CT, CU, CV, CY, CZ, D14, D28, D35, D37, D38, D39, D40, D64, D66, D67, D7, D70, D71, D72, D75, D76, D79, D8, D9, D90, D92, D96, D97, D98, D99, DC, DE, DI, DQ, DR, DRM, DS, DU, DX, DY, E2, E3, E5, EC, EP, EV, F1, F9, FB, FD, FE, FG, FM, G7, GC, GD, GH, GK, GN, GRT, GT, GW, GY, GZ, H1, H2, HAR, HD, HE, HF, HI, HJ, HK, HL, HN, HO, HP, HS, HT, HY, IC, IF, II, IL, IM, IP, IT, JB, JG, JO, JR, K5, KD, KF, KG, KS, KTM, LC, LE, LI, LJ, LX, M0, MA, MF, MK, MQ, MT, MV, N2, NB, NBB, NC, ND, NE, NG, NH, NI, NJ, NN, NPL, NPR, NQ, NR, NRL, NTT, NV, NY, OP, OZ, P0, P3, P4, P6, P7, P8, P9, PA, PB, PE, PF, PG, PK, PL, PM, PN, PT, PU, PV, PW, PY, PZ, QD, QH, QK, QT, R4, RA, RD, RG, RK, RL, RN, RO, RS, RU, S5, S6, S7, S8, SA, SD, SE, SHT, SK, SL, SN, SO, SP, SS, SST, ST, SV, T1, T4, T5, T6, T7, T8, TA, TC, TD, TE, TF, TJ, TK, TL, TN, TQ, TR, TS, TSD, TSH, TT, TU, TV, TW, TY, UA, UD, UE, UF, UH, UM, VI, VQ, VS, W4, WH, WI, WR, WW, YL, YT, Z1, Z2, Z3, Z4, Z5, Z6, Z8 */
@@ -2759,16 +2913,28 @@ export namespace MyNS {
 		 */
 		accountingCost: FormControl<string | null | undefined>,
 
-		/** The discount or surcharge on this item. Should be negative for discounts */
+		/**
+		 * The discount or surcharge on this item. Should be negative for discounts
+		 * Type: double
+		 */
 		allowanceCharge: FormControl<number | null | undefined>,
 
-		/** The amount excluding tax. EXPERIMENTAL. Use amountExcludingVat. */
+		/**
+		 * The amount excluding tax. EXPERIMENTAL. Use amountExcludingVat.
+		 * Type: double
+		 */
 		amountExcludingTax: FormControl<number | null | undefined>,
 
-		/** The amount excluding VAT. Should equal quantity x itemPrice + allowanceCharge. */
+		/**
+		 * The amount excluding VAT. Should equal quantity x itemPrice + allowanceCharge.
+		 * Type: double
+		 */
 		amountExcludingVat: FormControl<number | null | undefined>,
 
-		/** The amount including tax. Can only be used for "priceMode": "price_mode_gross". Use either this property or amountExcludingTax (amountExcludingVat). */
+		/**
+		 * The amount including tax. Can only be used for "priceMode": "price_mode_gross". Use either this property or amountExcludingTax (amountExcludingVat).
+		 * Type: double
+		 */
 		amountIncludingTax: FormControl<number | null | undefined>,
 
 		/**
@@ -2786,7 +2952,10 @@ export namespace MyNS {
 		/** The period (or specific date) to which the invoice line applies. Format: yyyy-mm-dd - yyyy-mm-dd. */
 		invoicePeriod: FormControl<string | null | undefined>,
 
-		/** The price per item (may be fractional) */
+		/**
+		 * The price per item (may be fractional)
+		 * Type: double
+		 */
 		itemPrice: FormControl<number | null | undefined>,
 
 		/**
@@ -2810,7 +2979,10 @@ export namespace MyNS {
 		 */
 		orderLineReferenceLineId: FormControl<string | null | undefined>,
 
-		/** The number of items (may be fractional). */
+		/**
+		 * The number of items (may be fractional).
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The unit of measure that applies to the invoiced quantity. Codes for unit of packaging from UNECE Recommendation No. 21 can be used in accordance with the descriptions in the "Intro" section of UN/ECE Recommendation 20, Revision 11 (2015): The 2 character alphanumeric code values in UNECE Recommendation 21 shall be used. To avoid duplication with existing code values in UNECE Recommendation No. 20, each code value from UNECE Recommendation 21 shall be prefixed with an “X”, resulting in a 3 alphanumeric code when used as a unit of measure. Note that the following additionally allowed codes are deprecated and will be converted to C62: 04, 05, 08, 16, 17, 18, 19, 26, 29, 30, 31, 32, 36, 43, 44, 45, 46, 47, 48, 53, 54, 62, 63, 64, 66, 69, 71, 72, 73, 76, 78, 84, 90, 92, 93, 94, 95, 96, 97, 98, 1A, 1B, 1C, 1D, 1E, 1F, 1G, 1H, 1J, 1K, 1L, 1M, 1X, 2V, 2W, 3E, 3G, 3H, 3I, 4A, 4B, 4E, 5C, 5F, 5G, 5H, 5I, 5K, 5P, 5Q, A1, A25, A50, A51, A52, A57, A58, A60, A61, A62, A63, A64, A65, A66, A67, A77, A78, A79, A80, A81, A82, A83, AJ, AM, AP, AR, ARE, ATT, AV, AW, B0, B2, B36, B37, B38, B39, B40, B5, B51, B6, B65, B9, BD, BE, BG, BH, BJ, BK, BL, BO, BR, BT, BW, BX, BZ, C1, C2, C4, C5, C6, C77, C98, CA, CH, CJ, CK, CL, CO, CQ, CR, CS, CT, CU, CV, CY, CZ, D14, D28, D35, D37, D38, D39, D40, D64, D66, D67, D7, D70, D71, D72, D75, D76, D79, D8, D9, D90, D92, D96, D97, D98, D99, DC, DE, DI, DQ, DR, DRM, DS, DU, DX, DY, E2, E3, E5, EC, EP, EV, F1, F9, FB, FD, FE, FG, FM, G7, GC, GD, GH, GK, GN, GRT, GT, GW, GY, GZ, H1, H2, HAR, HD, HE, HF, HI, HJ, HK, HL, HN, HO, HP, HS, HT, HY, IC, IF, II, IL, IM, IP, IT, JB, JG, JO, JR, K5, KD, KF, KG, KS, KTM, LC, LE, LI, LJ, LX, M0, MA, MF, MK, MQ, MT, MV, N2, NB, NBB, NC, ND, NE, NG, NH, NI, NJ, NN, NPL, NPR, NQ, NR, NRL, NTT, NV, NY, OP, OZ, P0, P3, P4, P6, P7, P8, P9, PA, PB, PE, PF, PG, PK, PL, PM, PN, PT, PU, PV, PW, PY, PZ, QD, QH, QK, QT, R4, RA, RD, RG, RK, RL, RN, RO, RS, RU, S5, S6, S7, S8, SA, SD, SE, SHT, SK, SL, SN, SO, SP, SS, SST, ST, SV, T1, T4, T5, T6, T7, T8, TA, TC, TD, TE, TF, TJ, TK, TL, TN, TQ, TR, TS, TSD, TSH, TT, TU, TV, TW, TY, UA, UD, UE, UF, UH, UM, VI, VQ, VS, W4, WH, WI, WR, WW, YL, YT, Z1, Z2, Z3, Z4, Z5, Z6, Z8 */
@@ -2874,7 +3046,10 @@ export namespace MyNS {
 		/** The account number. */
 		account?: string | null;
 
-		/** The amount to be paid for this category. Only used for Dutch G-Account invoices. The amount nl_ga_beneficiary + amount nl_ga_gaccount must add up to the amountExcludingVat */
+		/**
+		 * The amount to be paid for this category. Only used for Dutch G-Account invoices. The amount nl_ga_beneficiary + amount nl_ga_gaccount must add up to the amountExcludingVat
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** The bank branch code. Not required for IBAN numbers. Often referred to as Swift or Bic code. */
@@ -2908,7 +3083,10 @@ export namespace MyNS {
 		/** The account number. */
 		account: FormControl<string | null | undefined>,
 
-		/** The amount to be paid for this category. Only used for Dutch G-Account invoices. The amount nl_ga_beneficiary + amount nl_ga_gaccount must add up to the amountExcludingVat */
+		/**
+		 * The amount to be paid for this category. Only used for Dutch G-Account invoices. The amount nl_ga_beneficiary + amount nl_ga_gaccount must add up to the amountExcludingVat
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The bank branch code. Not required for IBAN numbers. Often referred to as Swift or Bic code. */
@@ -2975,18 +3153,21 @@ export namespace MyNS {
 		/**
 		 * The tax percentage. This should be a valid tax percentage in the country at the time of the taxpointDate of this invoice.
 		 * Required
+		 * Type: double
 		 */
 		percentage: number;
 
 		/**
 		 * The amount of tax.
 		 * Required
+		 * Type: double
 		 */
 		taxAmount: number;
 
 		/**
 		 * The amount on which the tax is levied.
 		 * Required
+		 * Type: double
 		 */
 		taxableAmount: number;
 	}
@@ -3006,18 +3187,21 @@ export namespace MyNS {
 		/**
 		 * The tax percentage. This should be a valid tax percentage in the country at the time of the taxpointDate of this invoice.
 		 * Required
+		 * Type: double
 		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount of tax.
 		 * Required
+		 * Type: double
 		 */
 		taxAmount: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount on which the tax is levied.
 		 * Required
+		 * Type: double
 		 */
 		taxableAmount: FormControl<number | null | undefined>,
 	}
@@ -3429,8 +3613,8 @@ export namespace MyNS {
 
 		/**
 		 * A guid that you generated for this InvoiceSubmission to achieve idempotency. If you submit multiple documents with the same idempotencyGuid, only the first one will be processed.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		idempotencyGuid?: string | null;
 
@@ -3443,10 +3627,16 @@ export namespace MyNS {
 		/** The different ways to send the invoice to the recipient. The publicIdentifiers are used to send via the Peppol network, if the recipient is not registered on the Peppol network, the invoice will be sent to the email addresses in the emails property. This property is only mandatory when sending the invoice data using the <<_openapi_invoice>> property, not when sending using the <<_openapi_invoicedata>> property, in which case this information will be extracted from the <<_openapi_invoicedata>> object. If you do specify an <<_openapi_invoicerecipient>> object and an <<_openapi_invoicedata>> object, the data from the two will be merged. */
 		invoiceRecipient?: InvoiceRecipient;
 
-		/** The id of the LegalEntity this invoice should be sent for. */
+		/**
+		 * The id of the LegalEntity this invoice should be sent for.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		legalEntityId?: number | null;
 
-		/** DEPRECATED. Use legalEntityId */
+		/**
+		 * DEPRECATED. Use legalEntityId
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		legalSupplierId?: number | null;
 
 		/** DEPRECATED. */
@@ -3455,7 +3645,10 @@ export namespace MyNS {
 		/** The different ways to send the invoice to the recipient. The publicIdentifiers are used to send via the Peppol network, if the recipient is not registered on the Peppol network, the invoice will be sent to the email addresses in the emails property. This property is only mandatory when sending the invoice data using the <<_openapi_invoice>> property, not when sending using the <<_openapi_invoicedata>> property, in which case this information will be extracted from the <<_openapi_invoicedata>> object. If you do specify an <<_openapi_invoicerecipient>> object and an <<_openapi_invoicedata>> object, the data from the two will be merged. */
 		routing?: Routing;
 
-		/** DEPRECATED. */
+		/**
+		 * DEPRECATED.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		supplierId?: number | null;
 	}
 
@@ -3473,21 +3666,30 @@ export namespace MyNS {
 
 		/**
 		 * A guid that you generated for this InvoiceSubmission to achieve idempotency. If you submit multiple documents with the same idempotencyGuid, only the first one will be processed.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		idempotencyGuid: FormControl<string | null | undefined>,
 
-		/** The id of the LegalEntity this invoice should be sent for. */
+		/**
+		 * The id of the LegalEntity this invoice should be sent for.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		legalEntityId: FormControl<number | null | undefined>,
 
-		/** DEPRECATED. Use legalEntityId */
+		/**
+		 * DEPRECATED. Use legalEntityId
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		legalSupplierId: FormControl<number | null | undefined>,
 
 		/** DEPRECATED. */
 		mode: FormControl<InvoiceSubmissionMode | null | undefined>,
 
-		/** DEPRECATED. */
+		/**
+		 * DEPRECATED.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		supplierId: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceSubmissionFormGroup() {
@@ -3613,7 +3815,7 @@ export namespace MyNS {
 			city: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
 			country: new FormControl<AddressCountry | null | undefined>(undefined),
 			county: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			line1: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(192)]),
 			line2: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(192)]),
 			party_name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
@@ -3632,22 +3834,22 @@ export namespace MyNS {
 
 		/**
 		 * The identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		identifier?: string | null;
 
 		/**
 		 * The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		scheme?: string | null;
 
 		/**
 		 * The superscheme of the identifier. Should always be "iso6523-actorid-upis".
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		superscheme?: string | null;
 	}
@@ -3655,22 +3857,22 @@ export namespace MyNS {
 
 		/**
 		 * The identifier.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		identifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		scheme: FormControl<string | null | undefined>,
 
 		/**
 		 * The superscheme of the identifier. Should always be "iso6523-actorid-upis".
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		superscheme: FormControl<string | null | undefined>,
 	}
@@ -3691,8 +3893,8 @@ export namespace MyNS {
 		/**
 		 * The city.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		city: string;
 
@@ -3711,8 +3913,8 @@ export namespace MyNS {
 		/**
 		 * The first address line.
 		 * Required
-		 * Max length: 192
 		 * Min length: 2
+		 * Max length: 192
 		 */
 		line1: string;
 
@@ -3725,8 +3927,8 @@ export namespace MyNS {
 		/**
 		 * The name of the company.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		party_name: string;
 
@@ -3742,23 +3944,23 @@ export namespace MyNS {
 
 		/**
 		 * The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_password?: string | null;
 
 		/**
 		 * The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_username?: string | null;
 
 		/**
 		 * The zipcode.
 		 * Required
-		 * Max length: 32
 		 * Min length: 2
+		 * Max length: 32
 		 */
 		zip: string;
 	}
@@ -3767,8 +3969,8 @@ export namespace MyNS {
 		/**
 		 * The city.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		city: FormControl<string | null | undefined>,
 
@@ -3787,8 +3989,8 @@ export namespace MyNS {
 		/**
 		 * The first address line.
 		 * Required
-		 * Max length: 192
 		 * Min length: 2
+		 * Max length: 192
 		 */
 		line1: FormControl<string | null | undefined>,
 
@@ -3801,8 +4003,8 @@ export namespace MyNS {
 		/**
 		 * The name of the company.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		party_name: FormControl<string | null | undefined>,
 
@@ -3817,23 +4019,23 @@ export namespace MyNS {
 
 		/**
 		 * The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_password: FormControl<string | null | undefined>,
 
 		/**
 		 * The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_username: FormControl<string | null | undefined>,
 
 		/**
 		 * The zipcode.
 		 * Required
-		 * Max length: 32
 		 * Min length: 2
+		 * Max length: 32
 		 */
 		zip: FormControl<string | null | undefined>,
 	}
@@ -3861,8 +4063,8 @@ export namespace MyNS {
 
 		/**
 		 * The city.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		city?: string | null;
 
@@ -3875,13 +4077,16 @@ export namespace MyNS {
 		 */
 		county?: string | null;
 
-		/** The Storecove assigned id for the LegalEntity. */
-		id?: number | null;
+		/**
+		 * The Storecove assigned id for the LegalEntity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/**
 		 * The first address line.
-		 * Max length: 192
 		 * Min length: 2
+		 * Max length: 192
 		 */
 		line1?: string | null;
 
@@ -3893,8 +4098,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the company.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		party_name?: string | null;
 
@@ -3913,22 +4118,22 @@ export namespace MyNS {
 
 		/**
 		 * The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_password?: string | null;
 
 		/**
 		 * The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_username?: string | null;
 
 		/**
 		 * The zipcode.
-		 * Max length: 32
 		 * Min length: 2
+		 * Max length: 32
 		 */
 		zip?: string | null;
 	}
@@ -3936,8 +4141,8 @@ export namespace MyNS {
 
 		/**
 		 * The city.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		city: FormControl<string | null | undefined>,
 
@@ -3950,13 +4155,16 @@ export namespace MyNS {
 		 */
 		county: FormControl<string | null | undefined>,
 
-		/** The Storecove assigned id for the LegalEntity. */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The Storecove assigned id for the LegalEntity.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * The first address line.
-		 * Max length: 192
 		 * Min length: 2
+		 * Max length: 192
 		 */
 		line1: FormControl<string | null | undefined>,
 
@@ -3968,8 +4176,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the company.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		party_name: FormControl<string | null | undefined>,
 
@@ -3987,22 +4195,22 @@ export namespace MyNS {
 
 		/**
 		 * The password to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_password: FormControl<string | null | undefined>,
 
 		/**
 		 * The username to use to authenticate to a system through which to send the document, or to obtain tax authority approval to send it. This field is currently relevant only for India and mandatory when creating an IN LegalEntity.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		third_party_username: FormControl<string | null | undefined>,
 
 		/**
 		 * The zipcode.
-		 * Max length: 32
 		 * Min length: 2
+		 * Max length: 32
 		 */
 		zip: FormControl<string | null | undefined>,
 	}
@@ -4011,7 +4219,7 @@ export namespace MyNS {
 			city: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
 			country: new FormControl<AddressCountry | null | undefined>(undefined),
 			county: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(64)]),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			line1: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(192)]),
 			line2: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(192)]),
 			party_name: new FormControl<string | null | undefined>(undefined, [Validators.minLength(2), Validators.maxLength(64)]),
@@ -4072,24 +4280,24 @@ export namespace MyNS {
 		/**
 		 * The identifier.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		identifier: string;
 
 		/**
 		 * The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		scheme: string;
 
 		/**
 		 * The superscheme of the identifier. Should always be "iso6523-actorid-upis".
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		superscheme: string;
 	}
@@ -4098,24 +4306,24 @@ export namespace MyNS {
 		/**
 		 * The identifier.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		identifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The scheme of the identifier. See <<_receiver_identifiers_list>> for a list.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		scheme: FormControl<string | null | undefined>,
 
 		/**
 		 * The superscheme of the identifier. Should always be "iso6523-actorid-upis".
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		superscheme: FormControl<string | null | undefined>,
 	}
@@ -4157,11 +4365,17 @@ export namespace MyNS {
 		/** The accounting cost code. */
 		accounting_cost?: string | null;
 
-		/** DEPRECATED - Use the allowance_charges array. */
+		/**
+		 * DEPRECATED - Use the allowance_charges array.
+		 * Type: double
+		 */
 		allowance_charge?: number | null;
 		allowance_charges?: Array<PurchaseInvoiceAllowanceCharge>;
 
-		/** DEPRECATED - Use amount_including_tax. */
+		/**
+		 * DEPRECATED - Use amount_including_tax.
+		 * Type: double
+		 */
 		amount_including_vat?: number | null;
 		attachments?: Array<PurchaseInvoiceAttachment>;
 
@@ -4209,8 +4423,11 @@ export namespace MyNS {
 		/** The date the invoice was issued. Format "YYYY-MM-DD". */
 		issue_date?: string | null;
 
-		/** The id of the LegalEntity the invoice was received for. */
-		legal_entity_id?: number | null;
+		/**
+		 * The id of the LegalEntity the invoice was received for.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		legal_entity_id?: string | null;
 
 		/** The invoice level note. */
 		note?: string | null;
@@ -4264,10 +4481,16 @@ export namespace MyNS {
 		/** The accounting cost code. */
 		accounting_cost: FormControl<string | null | undefined>,
 
-		/** DEPRECATED - Use the allowance_charges array. */
+		/**
+		 * DEPRECATED - Use the allowance_charges array.
+		 * Type: double
+		 */
 		allowance_charge: FormControl<number | null | undefined>,
 
-		/** DEPRECATED - Use amount_including_tax. */
+		/**
+		 * DEPRECATED - Use amount_including_tax.
+		 * Type: double
+		 */
 		amount_including_vat: FormControl<number | null | undefined>,
 
 		/** Reference to the previous invoice this invoice relates to. */
@@ -4309,8 +4532,11 @@ export namespace MyNS {
 		/** The date the invoice was issued. Format "YYYY-MM-DD". */
 		issue_date: FormControl<string | null | undefined>,
 
-		/** The id of the LegalEntity the invoice was received for. */
-		legal_entity_id: FormControl<number | null | undefined>,
+		/**
+		 * The id of the LegalEntity the invoice was received for.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		legal_entity_id: FormControl<string | null | undefined>,
 
 		/** The invoice level note. */
 		note: FormControl<string | null | undefined>,
@@ -4369,7 +4595,7 @@ export namespace MyNS {
 			invoice_number: new FormControl<string | null | undefined>(undefined),
 			invoice_type: new FormControl<PurchaseInvoiceInvoice_type | null | undefined>(undefined),
 			issue_date: new FormControl<string | null | undefined>(undefined),
-			legal_entity_id: new FormControl<number | null | undefined>(undefined),
+			legal_entity_id: new FormControl<string | null | undefined>(undefined),
 			note: new FormControl<string | null | undefined>(undefined),
 			order_reference: new FormControl<string | null | undefined>(undefined),
 			payment_means_payment_id: new FormControl<string | null | undefined>(undefined),
@@ -4389,7 +4615,10 @@ export namespace MyNS {
 
 	export interface PurchaseInvoiceAllowanceCharge {
 
-		/** The amount excluding tax. */
+		/**
+		 * The amount excluding tax.
+		 * Type: double
+		 */
 		amount_excluding_tax?: number | null;
 
 		/** DEPRECATED - use amount_excluding_tax. */
@@ -4404,7 +4633,10 @@ export namespace MyNS {
 	}
 	export interface PurchaseInvoiceAllowanceChargeFormProperties {
 
-		/** The amount excluding tax. */
+		/**
+		 * The amount excluding tax.
+		 * Type: double
+		 */
 		amount_excluding_tax: FormControl<number | null | undefined>,
 
 		/** DEPRECATED - use amount_excluding_tax. */
@@ -4613,17 +4845,26 @@ export namespace MyNS {
 	export interface PurchaseInvoiceInvoiceLine {
 		accounting?: PurchaseInvoiceAccountingDetails;
 
-		/** DEPRECATED - use allowance_charges. */
+		/**
+		 * DEPRECATED - use allowance_charges.
+		 * Type: double
+		 */
 		allowance_charge?: number | null;
 		allowance_charge_array?: Array<PurchaseInvoiceInvoiceLineAllowanceCharge>;
 
 		/** Deprecated. */
 		allowance_charges?: Array<number>;
 
-		/** The amount excluding Tax. This is equal to quantity x price_amount + ∑ allowance_charges. */
+		/**
+		 * The amount excluding Tax. This is equal to quantity x price_amount + ∑ allowance_charges.
+		 * Type: double
+		 */
 		amount_excluding_tax?: number | null;
 
-		/** DEPRECATED - use amount_excluding_tax. The amount excluding VAT. */
+		/**
+		 * DEPRECATED - use amount_excluding_tax. The amount excluding VAT.
+		 * Type: double
+		 */
 		amount_excluding_vat?: number | null;
 
 		/** The description for the invoice line. */
@@ -4646,13 +4887,22 @@ export namespace MyNS {
 	}
 	export interface PurchaseInvoiceInvoiceLineFormProperties {
 
-		/** DEPRECATED - use allowance_charges. */
+		/**
+		 * DEPRECATED - use allowance_charges.
+		 * Type: double
+		 */
 		allowance_charge: FormControl<number | null | undefined>,
 
-		/** The amount excluding Tax. This is equal to quantity x price_amount + ∑ allowance_charges. */
+		/**
+		 * The amount excluding Tax. This is equal to quantity x price_amount + ∑ allowance_charges.
+		 * Type: double
+		 */
 		amount_excluding_tax: FormControl<number | null | undefined>,
 
-		/** DEPRECATED - use amount_excluding_tax. The amount excluding VAT. */
+		/**
+		 * DEPRECATED - use amount_excluding_tax. The amount excluding VAT.
+		 * Type: double
+		 */
 		amount_excluding_vat: FormControl<number | null | undefined>,
 
 		/** The description for the invoice line. */
@@ -4682,7 +4932,10 @@ export namespace MyNS {
 
 	export interface PurchaseInvoiceInvoiceLineAllowanceCharge {
 
-		/** The amount of the allowance or charge. */
+		/**
+		 * The amount of the allowance or charge.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** The reason for the allowance or charge. */
@@ -4690,7 +4943,10 @@ export namespace MyNS {
 	}
 	export interface PurchaseInvoiceInvoiceLineAllowanceChargeFormProperties {
 
-		/** The amount of the allowance or charge. */
+		/**
+		 * The amount of the allowance or charge.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The reason for the allowance or charge. */
@@ -4706,24 +4962,36 @@ export namespace MyNS {
 
 	export interface PurchaseInvoiceInvoiceLineVat {
 
-		/** The amount of VAT for the invoice line. */
+		/**
+		 * The amount of VAT for the invoice line.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** The ISO 3166 country of the VAT for the invoice line. */
 		country?: string | null;
 
-		/** The percentage of VAT for the invoice line. */
+		/**
+		 * The percentage of VAT for the invoice line.
+		 * Type: double
+		 */
 		percentage?: number | null;
 	}
 	export interface PurchaseInvoiceInvoiceLineVatFormProperties {
 
-		/** The amount of VAT for the invoice line. */
+		/**
+		 * The amount of VAT for the invoice line.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The ISO 3166 country of the VAT for the invoice line. */
 		country: FormControl<string | null | undefined>,
 
-		/** The percentage of VAT for the invoice line. */
+		/**
+		 * The percentage of VAT for the invoice line.
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreatePurchaseInvoiceInvoiceLineVatFormGroup() {
@@ -4826,7 +5094,10 @@ export namespace MyNS {
 
 	export interface PurchaseInvoiceTaxSubtotal {
 
-		/** The amount excluding tax. */
+		/**
+		 * The amount excluding tax.
+		 * Type: double
+		 */
 		amount_excluding_tax?: number | null;
 
 		/** DEPRECATED - use amount_excluding_tax. */
@@ -4838,7 +5109,10 @@ export namespace MyNS {
 	}
 	export interface PurchaseInvoiceTaxSubtotalFormProperties {
 
-		/** The amount excluding tax. */
+		/**
+		 * The amount excluding tax.
+		 * Type: double
+		 */
 		amount_excluding_tax: FormControl<number | null | undefined>,
 
 		/** DEPRECATED - use amount_excluding_tax. */
@@ -4892,30 +5166,54 @@ export namespace MyNS {
 
 	export interface PurchaseInvoiceDocumentTotals {
 
-		/** The total invoice amount payable including tax. */
+		/**
+		 * The total invoice amount payable including tax.
+		 * Type: double
+		 */
 		payable?: number | null;
 
-		/** The amount already paid. */
+		/**
+		 * The amount already paid.
+		 * Type: double
+		 */
 		prepaid?: number | null;
 
-		/** The difference between the payable amount and the total invoice amount including tax. */
+		/**
+		 * The difference between the payable amount and the total invoice amount including tax.
+		 * Type: double
+		 */
 		rounding?: number | null;
 
-		/** The total invoice amount, including tax. This is equal to the sum of the invoice_lines (amount_excluding_tax + tax.amount) and the allowances and charges. */
+		/**
+		 * The total invoice amount, including tax. This is equal to the sum of the invoice_lines (amount_excluding_tax + tax.amount) and the allowances and charges.
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 	export interface PurchaseInvoiceDocumentTotalsFormProperties {
 
-		/** The total invoice amount payable including tax. */
+		/**
+		 * The total invoice amount payable including tax.
+		 * Type: double
+		 */
 		payable: FormControl<number | null | undefined>,
 
-		/** The amount already paid. */
+		/**
+		 * The amount already paid.
+		 * Type: double
+		 */
 		prepaid: FormControl<number | null | undefined>,
 
-		/** The difference between the payable amount and the total invoice amount including tax. */
+		/**
+		 * The difference between the payable amount and the total invoice amount including tax.
+		 * Type: double
+		 */
 		rounding: FormControl<number | null | undefined>,
 
-		/** The total invoice amount, including tax. This is equal to the sum of the invoice_lines (amount_excluding_tax + tax.amount) and the allowances and charges. */
+		/**
+		 * The total invoice amount, including tax. This is equal to the sum of the invoice_lines (amount_excluding_tax + tax.amount) and the allowances and charges.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePurchaseInvoiceDocumentTotalsFormGroup() {
@@ -4930,7 +5228,10 @@ export namespace MyNS {
 
 	export interface PurchaseInvoiceInvoiceLineItem {
 
-		/** The quantity of the item. Can have up to digits. */
+		/**
+		 * The quantity of the item. Can have up to digits.
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** The unit code of the quantity. */
@@ -4938,7 +5239,10 @@ export namespace MyNS {
 	}
 	export interface PurchaseInvoiceInvoiceLineItemFormProperties {
 
-		/** The quantity of the item. Can have up to digits. */
+		/**
+		 * The quantity of the item. Can have up to digits.
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** The unit code of the quantity. */
@@ -4954,18 +5258,30 @@ export namespace MyNS {
 
 	export interface PurchaseInvoiceInvoiceLinePrice {
 
-		/** The number of items the price is for. Can have up to digits. */
+		/**
+		 * The number of items the price is for. Can have up to digits.
+		 * Type: double
+		 */
 		base_quantity?: number | null;
 
-		/** The price for one item, excluding VAT. Can have up to digits. */
+		/**
+		 * The price for one item, excluding VAT. Can have up to digits.
+		 * Type: double
+		 */
 		price_amount?: number | null;
 	}
 	export interface PurchaseInvoiceInvoiceLinePriceFormProperties {
 
-		/** The number of items the price is for. Can have up to digits. */
+		/**
+		 * The number of items the price is for. Can have up to digits.
+		 * Type: double
+		 */
 		base_quantity: FormControl<number | null | undefined>,
 
-		/** The price for one item, excluding VAT. Can have up to digits. */
+		/**
+		 * The price for one item, excluding VAT. Can have up to digits.
+		 * Type: double
+		 */
 		price_amount: FormControl<number | null | undefined>,
 	}
 	export function CreatePurchaseInvoiceInvoiceLinePriceFormGroup() {
@@ -5121,7 +5437,10 @@ export namespace MyNS {
 
 	export interface PurchaseInvoiceTaxTax {
 
-		/** The tax amount. */
+		/**
+		 * The tax amount.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** The tax category. */
@@ -5133,7 +5452,10 @@ export namespace MyNS {
 		/** The tax country. */
 		country?: string | null;
 
-		/** The tax percentage. */
+		/**
+		 * The tax percentage.
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** The tax type. */
@@ -5141,7 +5463,10 @@ export namespace MyNS {
 	}
 	export interface PurchaseInvoiceTaxTaxFormProperties {
 
-		/** The tax amount. */
+		/**
+		 * The tax amount.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The tax category. */
@@ -5153,7 +5478,10 @@ export namespace MyNS {
 		/** The tax country. */
 		country: FormControl<string | null | undefined>,
 
-		/** The tax percentage. */
+		/**
+		 * The tax percentage.
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** The tax type. */
@@ -5184,8 +5512,11 @@ export namespace MyNS {
 		/** The GUID of the invoice */
 		guid?: string | null;
 
-		/** The id of the LegalEntity the invoice was received for. */
-		legal_entity_id?: number | null;
+		/**
+		 * The id of the LegalEntity the invoice was received for.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		legal_entity_id?: string | null;
 
 		/** Whether or not the document image (PDF) was generated by Storecove. If true, it means the invoice was received without any attachments and Storecove generated one for you. If false, the invoice will contain at least one attachment, which was received from the invoice sender. */
 		system_generated_primary_image?: boolean | null;
@@ -5207,8 +5538,11 @@ export namespace MyNS {
 		/** The GUID of the invoice */
 		guid: FormControl<string | null | undefined>,
 
-		/** The id of the LegalEntity the invoice was received for. */
-		legal_entity_id: FormControl<number | null | undefined>,
+		/**
+		 * The id of the LegalEntity the invoice was received for.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		legal_entity_id: FormControl<string | null | undefined>,
 
 		/** Whether or not the document image (PDF) was generated by Storecove. If true, it means the invoice was received without any attachments and Storecove generated one for you. If false, the invoice will contain at least one attachment, which was received from the invoice sender. */
 		system_generated_primary_image: FormControl<boolean | null | undefined>,
@@ -5224,7 +5558,7 @@ export namespace MyNS {
 			external_key: new FormControl<string | null | undefined>(undefined),
 			external_user_id: new FormControl<string | null | undefined>(undefined),
 			guid: new FormControl<string | null | undefined>(undefined),
-			legal_entity_id: new FormControl<number | null | undefined>(undefined),
+			legal_entity_id: new FormControl<string | null | undefined>(undefined),
 			system_generated_primary_image: new FormControl<boolean | null | undefined>(undefined),
 			tax_system: new FormControl<string | null | undefined>(undefined),
 			ubl: new FormControl<string | null | undefined>(undefined),
@@ -5234,13 +5568,16 @@ export namespace MyNS {
 
 	export interface Rea {
 
-		/** The captial for the company. */
+		/**
+		 * The captial for the company.
+		 * Type: double
+		 */
 		capital?: number | null;
 
 		/**
 		 * The identifier.
-		 * Max length: 20
 		 * Min length: 2
+		 * Max length: 20
 		 */
 		identifier?: string | null;
 
@@ -5255,13 +5592,16 @@ export namespace MyNS {
 	}
 	export interface ReaFormProperties {
 
-		/** The captial for the company. */
+		/**
+		 * The captial for the company.
+		 * Type: double
+		 */
 		capital: FormControl<number | null | undefined>,
 
 		/**
 		 * The identifier.
-		 * Max length: 20
 		 * Min length: 2
+		 * Max length: 20
 		 */
 		identifier: FormControl<string | null | undefined>,
 
@@ -5516,10 +5856,11 @@ export namespace MyNS {
 		 * Delete LegalEntity
 		 * Delete a specific LegalEntity.
 		 * Delete legal_entities/{id}
-		 * @param {number} id legal_entity id
+		 * @param {string} id legal_entity id
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		Delete_legal_entity(id: number): Observable<HttpResponse<string>> {
+		Delete_legal_entity(id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'legal_entities/' + id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5527,10 +5868,11 @@ export namespace MyNS {
 		 * Get LegalEntity
 		 * Get a specific LegalEntity.
 		 * Get legal_entities/{id}
-		 * @param {number} id legal_entity id
+		 * @param {string} id legal_entity id
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {LegalEntity} Success
 		 */
-		Get_legal_entity(id: number): Observable<LegalEntity> {
+		Get_legal_entity(id: string): Observable<LegalEntity> {
 			return this.http.get<LegalEntity>(this.baseUri + 'legal_entities/' + id, {});
 		}
 
@@ -5538,11 +5880,12 @@ export namespace MyNS {
 		 * Update LegalEntity
 		 * Update a specific LegalEntity.
 		 * Patch legal_entities/{id}
-		 * @param {number} id legal_entity id
+		 * @param {string} id legal_entity id
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {LegalEntityUpdate} requestBody LegalEntity updates
 		 * @return {LegalEntity} Success
 		 */
-		Update_legal_entity(id: number, requestBody: LegalEntityUpdate): Observable<LegalEntity> {
+		Update_legal_entity(id: string, requestBody: LegalEntityUpdate): Observable<LegalEntity> {
 			return this.http.patch<LegalEntity>(this.baseUri + 'legal_entities/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5550,11 +5893,12 @@ export namespace MyNS {
 		 * Create a new AdditionalTaxIdentifier
 		 * Create a new AdditionalTaxIdentifier. An AdditionalTaxIdentifier is a seconday tax identifier that is used inside the EU when sending invoices to consumers. In that case, the VAT of the receiving country is used and if the sender has a local VAT identifier, that is used to identifiy the sender, instead of the sender's origin country VAT number. To use these identifiers, use the invoice.consumerTaxMode = true property.
 		 * Post legal_entities/{legal_entity_id}/additional_tax_identifiers
-		 * @param {number} legal_entity_id The id of the LegalEntity for which to create the AdditionalTaxIdentifier
+		 * @param {string} legal_entity_id The id of the LegalEntity for which to create the AdditionalTaxIdentifier
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {AdditionalTaxIdentifierCreate} requestBody AdditionalTaxIdentifier to create
 		 * @return {AdditionalTaxIdentifier} Success
 		 */
-		Create_additional_tax_identifier(legal_entity_id: number, requestBody: AdditionalTaxIdentifierCreate): Observable<AdditionalTaxIdentifier> {
+		Create_additional_tax_identifier(legal_entity_id: string, requestBody: AdditionalTaxIdentifierCreate): Observable<AdditionalTaxIdentifier> {
 			return this.http.post<AdditionalTaxIdentifier>(this.baseUri + 'legal_entities/' + legal_entity_id + '/additional_tax_identifiers', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5562,11 +5906,13 @@ export namespace MyNS {
 		 * Delete AdditionalTaxIdentifier
 		 * Delete an AdditionalTaxIdentifier
 		 * Delete legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}
-		 * @param {number} legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to
-		 * @param {number} id The id of the AdditionalTaxIdentifier
+		 * @param {string} legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} id The id of the AdditionalTaxIdentifier
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		Delete_additional_tax_identifier(legal_entity_id: number, id: number): Observable<HttpResponse<string>> {
+		Delete_additional_tax_identifier(legal_entity_id: string, id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'legal_entities/' + legal_entity_id + '/additional_tax_identifiers/' + id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5574,11 +5920,13 @@ export namespace MyNS {
 		 * Get AdditionalTaxIdentifier
 		 * Get an AdditionalTaxIdentifier
 		 * Get legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}
-		 * @param {number} legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to
-		 * @param {number} id The id of the AdditionalTaxIdentifier
+		 * @param {string} legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} id The id of the AdditionalTaxIdentifier
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {AdditionalTaxIdentifier} Success
 		 */
-		Get_additional_tax_identifier(legal_entity_id: number, id: number): Observable<AdditionalTaxIdentifier> {
+		Get_additional_tax_identifier(legal_entity_id: string, id: string): Observable<AdditionalTaxIdentifier> {
 			return this.http.get<AdditionalTaxIdentifier>(this.baseUri + 'legal_entities/' + legal_entity_id + '/additional_tax_identifiers/' + id, {});
 		}
 
@@ -5586,12 +5934,14 @@ export namespace MyNS {
 		 * Update AdditionalTaxIdentifier
 		 * Update an AdditionalTaxIdentifier
 		 * Patch legal_entities/{legal_entity_id}/additional_tax_identifiers/{id}
-		 * @param {number} legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to
-		 * @param {number} id The id of the AdditionalTaxIdentifier to be updated
+		 * @param {string} legal_entity_id The id of the LegalEntity the AdditionalTaxIdentifier belongs to
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} id The id of the AdditionalTaxIdentifier to be updated
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {AdditionalTaxIdentifierUpdate} requestBody AdditionalTaxIdentifier to update
 		 * @return {AdditionalTaxIdentifier} Success
 		 */
-		Update_additional_tax_identifier(legal_entity_id: number, id: number, requestBody: AdditionalTaxIdentifierUpdate): Observable<AdditionalTaxIdentifier> {
+		Update_additional_tax_identifier(legal_entity_id: string, id: string, requestBody: AdditionalTaxIdentifierUpdate): Observable<AdditionalTaxIdentifier> {
 			return this.http.patch<AdditionalTaxIdentifier>(this.baseUri + 'legal_entities/' + legal_entity_id + '/additional_tax_identifiers/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5599,11 +5949,12 @@ export namespace MyNS {
 		 * Create a new Administration
 		 * Deprecated. Create a new Administration. An Administration is an email destination for purchase invoices.
 		 * Post legal_entities/{legal_entity_id}/administrations
-		 * @param {number} legal_entity_id The id of the LegalEntity for which to create the Administration
+		 * @param {string} legal_entity_id The id of the LegalEntity for which to create the Administration
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {AdministrationCreate} requestBody Administration to create
 		 * @return {Administration} Success
 		 */
-		Create_administration(legal_entity_id: number, requestBody: AdministrationCreate): Observable<Administration> {
+		Create_administration(legal_entity_id: string, requestBody: AdministrationCreate): Observable<Administration> {
 			return this.http.post<Administration>(this.baseUri + 'legal_entities/' + legal_entity_id + '/administrations', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5611,11 +5962,13 @@ export namespace MyNS {
 		 * Delete Administration
 		 * Deprecated. Delete an Administration
 		 * Delete legal_entities/{legal_entity_id}/administrations/{id}
-		 * @param {number} legal_entity_id The id of the LegalEntity the Administration belongs to
-		 * @param {number} id The id of the Administration
+		 * @param {string} legal_entity_id The id of the LegalEntity the Administration belongs to
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} id The id of the Administration
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		Delete_administration(legal_entity_id: number, id: number): Observable<HttpResponse<string>> {
+		Delete_administration(legal_entity_id: string, id: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'legal_entities/' + legal_entity_id + '/administrations/' + id, { observe: 'response', responseType: 'text' });
 		}
 
@@ -5623,11 +5976,13 @@ export namespace MyNS {
 		 * Get Administration
 		 * Deprecated. Get an Administration
 		 * Get legal_entities/{legal_entity_id}/administrations/{id}
-		 * @param {number} legal_entity_id The id of the LegalEntity the Administration belongs to
-		 * @param {number} id The id of the Administration
+		 * @param {string} legal_entity_id The id of the LegalEntity the Administration belongs to
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} id The id of the Administration
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Administration} Success
 		 */
-		Get_administration(legal_entity_id: number, id: number): Observable<Administration> {
+		Get_administration(legal_entity_id: string, id: string): Observable<Administration> {
 			return this.http.get<Administration>(this.baseUri + 'legal_entities/' + legal_entity_id + '/administrations/' + id, {});
 		}
 
@@ -5635,12 +5990,14 @@ export namespace MyNS {
 		 * Update Administration
 		 * Deprecated. Update an Administration
 		 * Patch legal_entities/{legal_entity_id}/administrations/{id}
-		 * @param {number} legal_entity_id The id of the LegalEntity the Administration belongs to
-		 * @param {number} id The id of the Administration to be updated
+		 * @param {string} legal_entity_id The id of the LegalEntity the Administration belongs to
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} id The id of the Administration to be updated
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {AdministrationUpdate} requestBody Administration to update
 		 * @return {Administration} Success
 		 */
-		Update_administration(legal_entity_id: number, id: number, requestBody: AdministrationUpdate): Observable<Administration> {
+		Update_administration(legal_entity_id: string, id: string, requestBody: AdministrationUpdate): Observable<Administration> {
 			return this.http.patch<Administration>(this.baseUri + 'legal_entities/' + legal_entity_id + '/administrations/' + id, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5648,11 +6005,12 @@ export namespace MyNS {
 		 * Create a new PeppolIdentifier
 		 * Create a brand new new PeppolIdentifier. For <<_sg_singapore>>, special rules apply.
 		 * Post legal_entities/{legal_entity_id}/peppol_identifiers
-		 * @param {number} legal_entity_id The id of the LegalEntity for which to create the PeppolIdentifier
+		 * @param {string} legal_entity_id The id of the LegalEntity for which to create the PeppolIdentifier
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {PeppolIdentifierCreate} requestBody PeppolIdentifier to create
 		 * @return {PeppolIdentifier} Success
 		 */
-		Create_peppol_identifier(legal_entity_id: number, requestBody: PeppolIdentifierCreate): Observable<PeppolIdentifier> {
+		Create_peppol_identifier(legal_entity_id: string, requestBody: PeppolIdentifierCreate): Observable<PeppolIdentifier> {
 			return this.http.post<PeppolIdentifier>(this.baseUri + 'legal_entities/' + legal_entity_id + '/peppol_identifiers', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -5660,13 +6018,14 @@ export namespace MyNS {
 		 * Delete PeppolIdentifier
 		 * Delete a PeppolIdentifier.
 		 * Delete legal_entities/{legal_entity_id}/peppol_identifiers/{superscheme}/{scheme}/{identifier}
-		 * @param {number} legal_entity_id The id of the LegalEntity this PeppolIdentifier belongs to
+		 * @param {string} legal_entity_id The id of the LegalEntity this PeppolIdentifier belongs to
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} superscheme The superscheme of the identifier. Should always be "iso6523-actorid-upis".
 		 * @param {string} scheme PEPPOL identifier scheme id, e.g. "DE:VAT". For a full list see <<_receiver_identifiers_list>>.
 		 * @param {string} identifier PEPPOL identifier
 		 * @return {void} 
 		 */
-		Delete_peppol_identifier(legal_entity_id: number, superscheme: string, scheme: string, identifier: string): Observable<HttpResponse<string>> {
+		Delete_peppol_identifier(legal_entity_id: string, superscheme: string, scheme: string, identifier: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'legal_entities/' + legal_entity_id + '/peppol_identifiers/' + (superscheme == null ? '' : encodeURIComponent(superscheme)) + '/' + (scheme == null ? '' : encodeURIComponent(scheme)) + '/' + (identifier == null ? '' : encodeURIComponent(identifier)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -5674,11 +6033,12 @@ export namespace MyNS {
 		 * Receive a new Document
 		 * Receive a new Document.
 		 * Post legal_entities/{legal_entity_id}/received_documents
-		 * @param {number} legal_entity_id The id of the LegalEntity for which the document was received.
+		 * @param {string} legal_entity_id The id of the LegalEntity for which the document was received.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ReceivedDocumentCreate} requestBody Received document to process.
 		 * @return {ReceivedDocument} Success
 		 */
-		Receive_document(legal_entity_id: number, requestBody: ReceivedDocumentCreate): Observable<ReceivedDocument> {
+		Receive_document(legal_entity_id: string, requestBody: ReceivedDocumentCreate): Observable<ReceivedDocument> {
 			return this.http.post<ReceivedDocument>(this.baseUri + 'legal_entities/' + legal_entity_id + '/received_documents', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 

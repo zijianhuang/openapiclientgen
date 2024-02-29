@@ -5,11 +5,17 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AlertSearchMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitEntryWithReferencesTransitSearch;
@@ -20,16 +26,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface AlertSearchMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -37,13 +52,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateAlertSearchMethodResponseFormGroup() {
 		return new FormGroup<AlertSearchMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -134,21 +152,33 @@ export namespace MyNS {
 
 	/** A tervezés metaadatai. Tartalmazza a következő és az előző tervezési időablakot a lapozás megvalósításához ezred másodpercben. */
 	export interface ApiTripSearchMetadata {
-		nextDateTime?: number | null;
-		prevDateTime?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		nextDateTime?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		prevDateTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		searchWindowUsed?: number | null;
 	}
 
 	/** A tervezés metaadatai. Tartalmazza a következő és az előző tervezési időablakot a lapozás megvalósításához ezred másodpercben. */
 	export interface ApiTripSearchMetadataFormProperties {
-		nextDateTime: FormControl<number | null | undefined>,
-		prevDateTime: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		nextDateTime: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		prevDateTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		searchWindowUsed: FormControl<number | null | undefined>,
 	}
 	export function CreateApiTripSearchMetadataFormGroup() {
 		return new FormGroup<ApiTripSearchMetadataFormProperties>({
-			nextDateTime: new FormControl<number | null | undefined>(undefined),
-			prevDateTime: new FormControl<number | null | undefined>(undefined),
+			nextDateTime: new FormControl<string | null | undefined>(undefined),
+			prevDateTime: new FormControl<string | null | undefined>(undefined),
 			searchWindowUsed: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -158,11 +188,17 @@ export namespace MyNS {
 
 	export interface ArrivalsAndDeparturesForLocationOTPMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitListEntryWithReferencesTransitDepartureGroup;
@@ -173,16 +209,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface ArrivalsAndDeparturesForLocationOTPMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -190,13 +235,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateArrivalsAndDeparturesForLocationOTPMethodResponseFormGroup() {
 		return new FormGroup<ArrivalsAndDeparturesForLocationOTPMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -283,11 +331,17 @@ export namespace MyNS {
 		/** A megállóhoz tartozó aktív zavarok azonosítóinak listája. */
 		alertIds?: Array<string>;
 
-		/** A megállóba érkezés tervezett ideje epoch másodbercben. Az első megállónál hiányzik. */
-		arrivalTime?: number | null;
+		/**
+		 * A megállóba érkezés tervezett ideje epoch másodbercben. Az első megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		arrivalTime?: string | null;
 
-		/** A megállóból való indulás tervezett ideje epoch másodbercben. Az utolsó megállónál hiányzik. */
-		departureTime?: number | null;
+		/**
+		 * A megállóból való indulás tervezett ideje epoch másodbercben. Az utolsó megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		departureTime?: string | null;
 
 		/** A megálló csoportjának azonosítója. */
 		groupIds?: Array<string>;
@@ -295,11 +349,17 @@ export namespace MyNS {
 		/** Igaz, ha a menet legalább egy rákövetkező megállója foglalást igényel. */
 		mayRequireBooking?: boolean | null;
 
-		/** A megállóba érkezés becsült ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az első megállónál hiányzik. */
-		predictedArrivalTime?: number | null;
+		/**
+		 * A megállóba érkezés becsült ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az első megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predictedArrivalTime?: string | null;
 
-		/** A megállóból való becsült indulás ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az utolsó megállónál hiányzik. */
-		predictedDepartureTime?: number | null;
+		/**
+		 * A megállóból való becsült indulás ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az utolsó megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predictedDepartureTime?: string | null;
 
 		/** A bejegyzéshez tartozó menet menetrendi napja. */
 		serviceDate?: string | null;
@@ -323,20 +383,32 @@ export namespace MyNS {
 	/** Az irányhoz tartozó menetrendi bejegyzések. */
 	export interface TransitScheduleStopTimeFormProperties {
 
-		/** A megállóba érkezés tervezett ideje epoch másodbercben. Az első megállónál hiányzik. */
-		arrivalTime: FormControl<number | null | undefined>,
+		/**
+		 * A megállóba érkezés tervezett ideje epoch másodbercben. Az első megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		arrivalTime: FormControl<string | null | undefined>,
 
-		/** A megállóból való indulás tervezett ideje epoch másodbercben. Az utolsó megállónál hiányzik. */
-		departureTime: FormControl<number | null | undefined>,
+		/**
+		 * A megállóból való indulás tervezett ideje epoch másodbercben. Az utolsó megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		departureTime: FormControl<string | null | undefined>,
 
 		/** Igaz, ha a menet legalább egy rákövetkező megállója foglalást igényel. */
 		mayRequireBooking: FormControl<boolean | null | undefined>,
 
-		/** A megállóba érkezés becsült ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az első megállónál hiányzik. */
-		predictedArrivalTime: FormControl<number | null | undefined>,
+		/**
+		 * A megállóba érkezés becsült ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az első megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predictedArrivalTime: FormControl<string | null | undefined>,
 
-		/** A megállóból való becsült indulás ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az utolsó megállónál hiányzik. */
-		predictedDepartureTime: FormControl<number | null | undefined>,
+		/**
+		 * A megállóból való becsült indulás ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az utolsó megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predictedDepartureTime: FormControl<string | null | undefined>,
 
 		/** A bejegyzéshez tartozó menet menetrendi napja. */
 		serviceDate: FormControl<string | null | undefined>,
@@ -358,11 +430,11 @@ export namespace MyNS {
 	}
 	export function CreateTransitScheduleStopTimeFormGroup() {
 		return new FormGroup<TransitScheduleStopTimeFormProperties>({
-			arrivalTime: new FormControl<number | null | undefined>(undefined),
-			departureTime: new FormControl<number | null | undefined>(undefined),
+			arrivalTime: new FormControl<string | null | undefined>(undefined),
+			departureTime: new FormControl<string | null | undefined>(undefined),
 			mayRequireBooking: new FormControl<boolean | null | undefined>(undefined),
-			predictedArrivalTime: new FormControl<number | null | undefined>(undefined),
-			predictedDepartureTime: new FormControl<number | null | undefined>(undefined),
+			predictedArrivalTime: new FormControl<string | null | undefined>(undefined),
+			predictedDepartureTime: new FormControl<string | null | undefined>(undefined),
 			serviceDate: new FormControl<string | null | undefined>(undefined),
 			stopHeadsign: new FormControl<string | null | undefined>(undefined),
 			stopId: new FormControl<string | null | undefined>(undefined),
@@ -375,11 +447,17 @@ export namespace MyNS {
 
 	export interface ArrivalsAndDeparturesForStopOTPMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitEntryWithReferencesTransitArrivalsAndDepartures;
@@ -390,16 +468,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface ArrivalsAndDeparturesForStopOTPMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -407,13 +494,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateArrivalsAndDeparturesForStopOTPMethodResponseFormGroup() {
 		return new FormGroup<ArrivalsAndDeparturesForStopOTPMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -490,11 +580,17 @@ export namespace MyNS {
 
 	export interface BicycleRentalMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitListEntryWithReferencesTransitBikeRentalStation;
@@ -505,16 +601,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface BicycleRentalMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -522,13 +627,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateBicycleRentalMethodResponseFormGroup() {
 		return new FormGroup<BicycleRentalMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -581,7 +689,10 @@ export namespace MyNS {
 	/** A lekért adatok listája. */
 	export interface TransitBikeRentalStation {
 
-		/** Az állomáson elérhető kerékpárok száma. */
+		/**
+		 * Az állomáson elérhető kerékpárok száma.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bikes?: number | null;
 
 		/** Az állomás kódja. */
@@ -590,16 +701,25 @@ export namespace MyNS {
 		/** Az állomás azonosítója. */
 		id?: string | null;
 
-		/** Az állomás szélességi koordinátája. */
+		/**
+		 * Az állomás szélességi koordinátája.
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** Az állomás hosszúsági koordinátája. */
+		/**
+		 * Az állomás hosszúsági koordinátája.
+		 * Type: double
+		 */
 		lon?: number | null;
 
 		/** Az állomás neve. */
 		name?: string | null;
 
-		/** Az állomás összes helyének száma. Ez mindig fix 999. */
+		/**
+		 * Az állomás összes helyének száma. Ez mindig fix 999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		spaces?: number | null;
 
 		/** Az állomás típusa. */
@@ -609,7 +729,10 @@ export namespace MyNS {
 	/** A lekért adatok listája. */
 	export interface TransitBikeRentalStationFormProperties {
 
-		/** Az állomáson elérhető kerékpárok száma. */
+		/**
+		 * Az állomáson elérhető kerékpárok száma.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bikes: FormControl<number | null | undefined>,
 
 		/** Az állomás kódja. */
@@ -618,16 +741,25 @@ export namespace MyNS {
 		/** Az állomás azonosítója. */
 		id: FormControl<string | null | undefined>,
 
-		/** Az állomás szélességi koordinátája. */
+		/**
+		 * Az állomás szélességi koordinátája.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Az állomás hosszúsági koordinátája. */
+		/**
+		 * Az állomás hosszúsági koordinátája.
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 
 		/** Az állomás neve. */
 		name: FormControl<string | null | undefined>,
 
-		/** Az állomás összes helyének száma. Ez mindig fix 999. */
+		/**
+		 * Az állomás összes helyének száma. Ez mindig fix 999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		spaces: FormControl<number | null | undefined>,
 
 		/** Az állomás típusa. */
@@ -666,8 +798,11 @@ export namespace MyNS {
 		/** Az indulási hely neve, kivéve az utolsón, ahol a érkezési helyé. */
 		name?: string | null;
 
-		/** Az utolsó lábon az érkezési idő, az összes többin az indulási. */
-		time?: number | null;
+		/**
+		 * Az utolsó lábon az érkezési idő, az összes többin az indulási.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		time?: string | null;
 
 		/** Jelzi, hogy a láb nem tranzit típusú. */
 		walkTo?: boolean | null;
@@ -685,8 +820,11 @@ export namespace MyNS {
 		/** Az indulási hely neve, kivéve az utolsón, ahol a érkezési helyé. */
 		name: FormControl<string | null | undefined>,
 
-		/** Az utolsó lábon az érkezési idő, az összes többin az indulási. */
-		time: FormControl<number | null | undefined>,
+		/**
+		 * Az utolsó lábon az érkezési idő, az összes többin az indulási.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		time: FormControl<string | null | undefined>,
 
 		/** Jelzi, hogy a láb nem tranzit típusú. */
 		walkTo: FormControl<boolean | null | undefined>,
@@ -696,7 +834,7 @@ export namespace MyNS {
 			first: new FormControl<boolean | null | undefined>(undefined),
 			last: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			time: new FormControl<number | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
 			walkTo: new FormControl<boolean | null | undefined>(undefined),
 		});
 
@@ -710,20 +848,32 @@ export namespace MyNS {
 	/** A lábhoz tartozó magassági adatok. */
 	export interface ElevationPoint {
 
-		/** A magassági pont távolsága a láb kezdetéhez képest méterben. */
+		/**
+		 * A magassági pont távolsága a láb kezdetéhez képest méterben.
+		 * Type: double
+		 */
 		distance?: number | null;
 
-		/** A pont magassága. */
+		/**
+		 * A pont magassága.
+		 * Type: double
+		 */
 		elevation?: number | null;
 	}
 
 	/** A lábhoz tartozó magassági adatok. */
 	export interface ElevationPointFormProperties {
 
-		/** A magassági pont távolsága a láb kezdetéhez képest méterben. */
+		/**
+		 * A magassági pont távolsága a láb kezdetéhez képest méterben.
+		 * Type: double
+		 */
 		distance: FormControl<number | null | undefined>,
 
-		/** A pont magassága. */
+		/**
+		 * A pont magassága.
+		 * Type: double
+		 */
 		elevation: FormControl<number | null | undefined>,
 	}
 	export function CreateElevationPointFormGroup() {
@@ -738,7 +888,10 @@ export namespace MyNS {
 	/** A láb geometriája. */
 	export interface EncodedPolylineBean {
 
-		/** A geometria (polyline) pontjainak száma. */
+		/**
+		 * A geometria (polyline) pontjainak száma.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
 		/** A geometria (polyline) pontjai kódolva. */
@@ -748,7 +901,10 @@ export namespace MyNS {
 	/** A láb geometriája. */
 	export interface EncodedPolylineBeanFormProperties {
 
-		/** A geometria (polyline) pontjainak száma. */
+		/**
+		 * A geometria (polyline) pontjainak száma.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
 		/** A geometria (polyline) pontjai kódolva. */
@@ -769,11 +925,17 @@ export namespace MyNS {
 		/** Az útiterv során hány méter kerékpározást tartalmaztak az egyes kategóriák. Az objektum kulcsai a kategóriák (`BikeStreetCategory`). */
 		bikeCategoryDistances?: {[id: string]: number };
 
-		/** Kerékpározási távolság az útvonalon méterben. */
+		/**
+		 * Kerékpározási távolság az útvonalon méterben.
+		 * Type: double
+		 */
 		bikeDistance?: number | null;
 
-		/** Kerékpározási idő az útvonalon másodpercben. */
-		bikeTime?: number | null;
+		/**
+		 * Kerékpározási idő az útvonalon másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bikeTime?: string | null;
 
 		/** Jelzi, ha az útvonalhoz kell termékajánlást mutatni. */
 		displayProductRecommendation?: boolean | null;
@@ -781,19 +943,31 @@ export namespace MyNS {
 		/** Az útiterv kivonatos megjelenítéséhez használható  lábak és adatok. */
 		displayedLegs?: Array<DisplayedLeg>;
 
-		/** Az útvonal hossza másodpercben. */
-		duration?: number | null;
+		/**
+		 * Az útvonal hossza másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration?: string | null;
 
-		/** Az útiterv során hány métert emelkedik az útvonal. */
+		/**
+		 * Az útiterv során hány métert emelkedik az útvonal.
+		 * Type: double
+		 */
 		elevationGained?: number | null;
 
-		/** Az útiterv során hány métert süllyed az útvonal. */
+		/**
+		 * Az útiterv során hány métert süllyed az útvonal.
+		 * Type: double
+		 */
 		elevationLost?: number | null;
 
 		/** Az érkezési időpont ezredmásodpercben. */
 		endTime?: Date | null;
 
-		/** Az utazástervező algoritmus által használt súly. */
+		/**
+		 * Az utazástervező algoritmus által használt súly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		generalizedCost?: number | null;
 
 		/** Az útiterv lábai (részei). */
@@ -817,26 +991,44 @@ export namespace MyNS {
 		/** Jelzi, ha az útvonal meredekebb, mint a paraméterekben kért. */
 		tooSloped?: boolean | null;
 
-		/** Átszállások száma az útitervben. */
+		/**
+		 * Átszállások száma az útitervben.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transfers?: number | null;
 
-		/** Járművön töltött idő az útvonalon másodpercben. */
-		transitTime?: number | null;
+		/**
+		 * Járművön töltött idő az útvonalon másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transitTime?: string | null;
 
-		/** A várakozási idővel igazított súly. */
+		/**
+		 * A várakozási idővel igazított súly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		waitTimeAdjustedGeneralizedCost?: number | null;
 
-		/** Várakozási idő járműre az útvonalon másodpercben. */
-		waitingTime?: number | null;
+		/**
+		 * Várakozási idő járműre az útvonalon másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		waitingTime?: string | null;
 
-		/** Sétálási távolság az útvonalon méterben. */
+		/**
+		 * Sétálási távolság az útvonalon méterben.
+		 * Type: double
+		 */
 		walkDistance?: number | null;
 
 		/** Jelzi, hogy a sétálási limit túl lett lépve az útitervben. */
 		walkLimitExceeded?: boolean | null;
 
-		/** Sétálási idő az útvonalon másodpercben. */
-		walkTime?: number | null;
+		/**
+		 * Sétálási idő az útvonalon másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		walkTime?: string | null;
 	}
 
 	/** A talált útvonalak listája. */
@@ -845,28 +1037,46 @@ export namespace MyNS {
 		/** Az útiterv során hány méter kerékpározást tartalmaztak az egyes kategóriák. Az objektum kulcsai a kategóriák (`BikeStreetCategory`). */
 		bikeCategoryDistances: FormControl<{[id: string]: number } | null | undefined>,
 
-		/** Kerékpározási távolság az útvonalon méterben. */
+		/**
+		 * Kerékpározási távolság az útvonalon méterben.
+		 * Type: double
+		 */
 		bikeDistance: FormControl<number | null | undefined>,
 
-		/** Kerékpározási idő az útvonalon másodpercben. */
-		bikeTime: FormControl<number | null | undefined>,
+		/**
+		 * Kerékpározási idő az útvonalon másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		bikeTime: FormControl<string | null | undefined>,
 
 		/** Jelzi, ha az útvonalhoz kell termékajánlást mutatni. */
 		displayProductRecommendation: FormControl<boolean | null | undefined>,
 
-		/** Az útvonal hossza másodpercben. */
-		duration: FormControl<number | null | undefined>,
+		/**
+		 * Az útvonal hossza másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration: FormControl<string | null | undefined>,
 
-		/** Az útiterv során hány métert emelkedik az útvonal. */
+		/**
+		 * Az útiterv során hány métert emelkedik az útvonal.
+		 * Type: double
+		 */
 		elevationGained: FormControl<number | null | undefined>,
 
-		/** Az útiterv során hány métert süllyed az útvonal. */
+		/**
+		 * Az útiterv során hány métert süllyed az útvonal.
+		 * Type: double
+		 */
 		elevationLost: FormControl<number | null | undefined>,
 
 		/** Az érkezési időpont ezredmásodpercben. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Az utazástervező algoritmus által használt súly. */
+		/**
+		 * Az utazástervező algoritmus által használt súly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		generalizedCost: FormControl<number | null | undefined>,
 
 		/** Jelzi, hogy a visszaadott útvonalak tartalmazhatnak olyan járatokat (pl.: vonatok), amire a terv során érintett jegyértékesítési helyen nem lehet jegyet váltani. */
@@ -878,34 +1088,52 @@ export namespace MyNS {
 		/** Jelzi, ha az útvonal meredekebb, mint a paraméterekben kért. */
 		tooSloped: FormControl<boolean | null | undefined>,
 
-		/** Átszállások száma az útitervben. */
+		/**
+		 * Átszállások száma az útitervben.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transfers: FormControl<number | null | undefined>,
 
-		/** Járművön töltött idő az útvonalon másodpercben. */
-		transitTime: FormControl<number | null | undefined>,
+		/**
+		 * Járművön töltött idő az útvonalon másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transitTime: FormControl<string | null | undefined>,
 
-		/** A várakozási idővel igazított súly. */
+		/**
+		 * A várakozási idővel igazított súly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		waitTimeAdjustedGeneralizedCost: FormControl<number | null | undefined>,
 
-		/** Várakozási idő járműre az útvonalon másodpercben. */
-		waitingTime: FormControl<number | null | undefined>,
+		/**
+		 * Várakozási idő járműre az útvonalon másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		waitingTime: FormControl<string | null | undefined>,
 
-		/** Sétálási távolság az útvonalon méterben. */
+		/**
+		 * Sétálási távolság az útvonalon méterben.
+		 * Type: double
+		 */
 		walkDistance: FormControl<number | null | undefined>,
 
 		/** Jelzi, hogy a sétálási limit túl lett lépve az útitervben. */
 		walkLimitExceeded: FormControl<boolean | null | undefined>,
 
-		/** Sétálási idő az útvonalon másodpercben. */
-		walkTime: FormControl<number | null | undefined>,
+		/**
+		 * Sétálási idő az útvonalon másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		walkTime: FormControl<string | null | undefined>,
 	}
 	export function CreateItineraryFormGroup() {
 		return new FormGroup<ItineraryFormProperties>({
 			bikeCategoryDistances: new FormControl<{[id: string]: number } | null | undefined>(undefined),
 			bikeDistance: new FormControl<number | null | undefined>(undefined),
-			bikeTime: new FormControl<number | null | undefined>(undefined),
+			bikeTime: new FormControl<string | null | undefined>(undefined),
 			displayProductRecommendation: new FormControl<boolean | null | undefined>(undefined),
-			duration: new FormControl<number | null | undefined>(undefined),
+			duration: new FormControl<string | null | undefined>(undefined),
 			elevationGained: new FormControl<number | null | undefined>(undefined),
 			elevationLost: new FormControl<number | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
@@ -914,12 +1142,12 @@ export namespace MyNS {
 			startTime: new FormControl<Date | null | undefined>(undefined),
 			tooSloped: new FormControl<boolean | null | undefined>(undefined),
 			transfers: new FormControl<number | null | undefined>(undefined),
-			transitTime: new FormControl<number | null | undefined>(undefined),
+			transitTime: new FormControl<string | null | undefined>(undefined),
 			waitTimeAdjustedGeneralizedCost: new FormControl<number | null | undefined>(undefined),
-			waitingTime: new FormControl<number | null | undefined>(undefined),
+			waitingTime: new FormControl<string | null | undefined>(undefined),
 			walkDistance: new FormControl<number | null | undefined>(undefined),
 			walkLimitExceeded: new FormControl<boolean | null | undefined>(undefined),
-			walkTime: new FormControl<number | null | undefined>(undefined),
+			walkTime: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -934,7 +1162,10 @@ export namespace MyNS {
 		/** Tranzit láb esetén a járatot biztosító szolgáltató neve. */
 		agencyName?: string | null;
 
-		/** Tranzit láb esetén a járatot biztosító szolgáltató időzónájának eltolódása. */
+		/**
+		 * Tranzit láb esetén a járatot biztosító szolgáltató időzónájának eltolódása.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agencyTimeZoneOffset?: number | null;
 
 		/** Tranzit láb esetén a járatot biztosító szolgáltató linkje. */
@@ -946,18 +1177,29 @@ export namespace MyNS {
 		/** Igényvezérelt menet esetén a leszállási szabály. */
 		alightRule?: string | null;
 
-		/** Tranzit láb esetén a láb vége és a tényleges leszállás közötti késleltetés. */
+		/**
+		 * Tranzit láb esetén a láb vége és a tényleges leszállás közötti késleltetés.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		arrivalDelay?: number | null;
 
 		/** Igényvezérelt menet esetén a felszállási szabály. */
 		boardRule?: string | null;
 
-		/** Tranzit láb esetén a láb indulása és a tényleges felszállás közötti késleltetés. */
+		/**
+		 * Tranzit láb esetén a láb indulása és a tényleges felszállás közötti késleltetés.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		departureDelay?: number | null;
 
-		/** A láb bejárása alatt megtett táv méterben. */
+		/**
+		 * A láb bejárása alatt megtett táv méterben.
+		 * Type: double
+		 */
 		distance?: number | null;
-		duration?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		duration?: string | null;
 
 		/** A láb vége ezredmásodpercben. */
 		endTime?: Date | null;
@@ -965,7 +1207,10 @@ export namespace MyNS {
 		/** Tranzit láb esetén a köztes megállók a láb kezdete és végződése között. */
 		from?: Place;
 
-		/** Az utazástervező algoritmus által használt súly. */
+		/**
+		 * Az utazástervező algoritmus által használt súly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		generalizedCost?: number | null;
 
 		/** Útiterv minták esetén jelzi, hogy a mintában a megfelelő lábak valamelyikén szerepel aktív riasztás. Nincs kitöltve, ha az útiterv minták ki vannak kapcsolva. */
@@ -1061,7 +1306,10 @@ export namespace MyNS {
 		/** Tranzit láb esetén a járatot biztosító szolgáltató neve. */
 		agencyName: FormControl<string | null | undefined>,
 
-		/** Tranzit láb esetén a járatot biztosító szolgáltató időzónájának eltolódása. */
+		/**
+		 * Tranzit láb esetén a járatot biztosító szolgáltató időzónájának eltolódása.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		agencyTimeZoneOffset: FormControl<number | null | undefined>,
 
 		/** Tranzit láb esetén a járatot biztosító szolgáltató linkje. */
@@ -1070,23 +1318,37 @@ export namespace MyNS {
 		/** Igényvezérelt menet esetén a leszállási szabály. */
 		alightRule: FormControl<string | null | undefined>,
 
-		/** Tranzit láb esetén a láb vége és a tényleges leszállás közötti késleltetés. */
+		/**
+		 * Tranzit láb esetén a láb vége és a tényleges leszállás közötti késleltetés.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		arrivalDelay: FormControl<number | null | undefined>,
 
 		/** Igényvezérelt menet esetén a felszállási szabály. */
 		boardRule: FormControl<string | null | undefined>,
 
-		/** Tranzit láb esetén a láb indulása és a tényleges felszállás közötti késleltetés. */
+		/**
+		 * Tranzit láb esetén a láb indulása és a tényleges felszállás közötti késleltetés.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		departureDelay: FormControl<number | null | undefined>,
 
-		/** A láb bejárása alatt megtett táv méterben. */
+		/**
+		 * A láb bejárása alatt megtett táv méterben.
+		 * Type: double
+		 */
 		distance: FormControl<number | null | undefined>,
-		duration: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		duration: FormControl<string | null | undefined>,
 
 		/** A láb vége ezredmásodpercben. */
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Az utazástervező algoritmus által használt súly. */
+		/**
+		 * Az utazástervező algoritmus által használt súly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		generalizedCost: FormControl<number | null | undefined>,
 
 		/** Útiterv minták esetén jelzi, hogy a mintában a megfelelő lábak valamelyikén szerepel aktív riasztás. Nincs kitöltve, ha az útiterv minták ki vannak kapcsolva. */
@@ -1161,7 +1423,7 @@ export namespace MyNS {
 			boardRule: new FormControl<string | null | undefined>(undefined),
 			departureDelay: new FormControl<number | null | undefined>(undefined),
 			distance: new FormControl<number | null | undefined>(undefined),
-			duration: new FormControl<number | null | undefined>(undefined),
+			duration: new FormControl<string | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
 			generalizedCost: new FormControl<number | null | undefined>(undefined),
 			hasAlertInPattern: new FormControl<boolean | null | undefined>(undefined),
@@ -1199,10 +1461,16 @@ export namespace MyNS {
 		/** A helyről való indulás időpontja ezredmásodpercben. */
 		departure?: Date | null;
 
-		/** A hely szélességi koordinátája. */
+		/**
+		 * A hely szélességi koordinátája.
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** A hely hosszúsági koordinátája. */
+		/**
+		 * A hely hosszúsági koordinátája.
+		 * Type: double
+		 */
 		lon?: number | null;
 
 		/** Megálló esetén a megálló neve, POI-nál a POI neve. */
@@ -1220,10 +1488,16 @@ export namespace MyNS {
 		/** A megálló azonosítója, ha a hely egy megálló. */
 		stopId?: string | null;
 
-		/** A megálló indexe, ha a hely egy megálló. */
+		/**
+		 * A megálló indexe, ha a hely egy megálló.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stopIndex?: number | null;
 
-		/** A megálló sorszáma a meneten, ha a hely egy megálló. */
+		/**
+		 * A megálló sorszáma a meneten, ha a hely egy megálló.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stopSequence?: number | null;
 
 		/** A jegyértékesítési pontok listája. */
@@ -1239,10 +1513,16 @@ export namespace MyNS {
 		/** A helyről való indulás időpontja ezredmásodpercben. */
 		departure: FormControl<Date | null | undefined>,
 
-		/** A hely szélességi koordinátája. */
+		/**
+		 * A hely szélességi koordinátája.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** A hely hosszúsági koordinátája. */
+		/**
+		 * A hely hosszúsági koordinátája.
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 
 		/** Megálló esetén a megálló neve, POI-nál a POI neve. */
@@ -1260,10 +1540,16 @@ export namespace MyNS {
 		/** A megálló azonosítója, ha a hely egy megálló. */
 		stopId: FormControl<string | null | undefined>,
 
-		/** A megálló indexe, ha a hely egy megálló. */
+		/**
+		 * A megálló indexe, ha a hely egy megálló.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stopIndex: FormControl<number | null | undefined>,
 
-		/** A megálló sorszáma a meneten, ha a hely egy megálló. */
+		/**
+		 * A megálló sorszáma a meneten, ha a hely egy megálló.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stopSequence: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaceFormGroup() {
@@ -1305,10 +1591,16 @@ export namespace MyNS {
 		/** A jegyértékesítési hely utolsó frissítésének időpontja ezredmásodpercben. */
 		lastModified?: Date | null;
 
-		/** A jegyértékesítési hely szélességi koordinátája. */
+		/**
+		 * A jegyértékesítési hely szélességi koordinátája.
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** A jegyértékesítési hely hosszúsági koordinátája. */
+		/**
+		 * A jegyértékesítési hely hosszúsági koordinátája.
+		 * Type: double
+		 */
 		lon?: number | null;
 
 		/** A jegyértékesítési hely nyitvatartása. */
@@ -1360,10 +1652,16 @@ export namespace MyNS {
 		/** A jegyértékesítési hely utolsó frissítésének időpontja ezredmásodpercben. */
 		lastModified: FormControl<Date | null | undefined>,
 
-		/** A jegyértékesítési hely szélességi koordinátája. */
+		/**
+		 * A jegyértékesítési hely szélességi koordinátája.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** A jegyértékesítési hely hosszúsági koordinátája. */
+		/**
+		 * A jegyértékesítési hely hosszúsági koordinátája.
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 
 		/** A jegyértékesítési hely üzemeltetője. */
@@ -1415,7 +1713,10 @@ export namespace MyNS {
 		/** Zárási idő HH:mm formátumban. */
 		closes?: string | null;
 
-		/** Zárási idő másodpercben. */
+		/**
+		 * Zárási idő másodpercben.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closesSeconds?: number | null;
 
 		/** A nyitvatartási idő napja. Lehet HOL (ünnepnap) és 0247 (éjjel-nappali). */
@@ -1424,7 +1725,10 @@ export namespace MyNS {
 		/** Nyitási idő HH:mm formátumban. */
 		opens?: string | null;
 
-		/** Nyitási idő másodpercben. */
+		/**
+		 * Nyitási idő másodpercben.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		opensSeconds?: number | null;
 	}
 
@@ -1434,7 +1738,10 @@ export namespace MyNS {
 		/** Zárási idő HH:mm formátumban. */
 		closes: FormControl<string | null | undefined>,
 
-		/** Zárási idő másodpercben. */
+		/**
+		 * Zárási idő másodpercben.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		closesSeconds: FormControl<number | null | undefined>,
 
 		/** A nyitvatartási idő napja. Lehet HOL (ünnepnap) és 0247 (éjjel-nappali). */
@@ -1443,7 +1750,10 @@ export namespace MyNS {
 		/** Nyitási idő HH:mm formátumban. */
 		opens: FormControl<string | null | undefined>,
 
-		/** Nyitási idő másodpercben. */
+		/**
+		 * Nyitási idő másodpercben.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		opensSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTicketingPeriodFormGroup() {
@@ -1482,16 +1792,25 @@ export namespace MyNS {
 		/** Jelzi, hogy az utca nevét a rendszer generálta. */
 		bogusName?: boolean | null;
 
-		/** A lépés hossza méterben. */
+		/**
+		 * A lépés hossza méterben.
+		 * Type: double
+		 */
 		distance?: number | null;
 
 		/** A láb geometriája. */
 		geometry?: EncodedPolylineBean;
 
-		/** A lépés kezdetének szélességi koordinátája. */
+		/**
+		 * A lépés kezdetének szélességi koordinátája.
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** A lépés kezdetének hosszúsági koordinátája. */
+		/**
+		 * A lépés kezdetének hosszúsági koordinátája.
+		 * Type: double
+		 */
 		lon?: number | null;
 
 		/** A lépés iránya. */
@@ -1525,13 +1844,22 @@ export namespace MyNS {
 		/** Jelzi, hogy az utca nevét a rendszer generálta. */
 		bogusName: FormControl<boolean | null | undefined>,
 
-		/** A lépés hossza méterben. */
+		/**
+		 * A lépés hossza méterben.
+		 * Type: double
+		 */
 		distance: FormControl<number | null | undefined>,
 
-		/** A lépés kezdetének szélességi koordinátája. */
+		/**
+		 * A lépés kezdetének szélességi koordinátája.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** A lépés kezdetének hosszúsági koordinátája. */
+		/**
+		 * A lépés kezdetének hosszúsági koordinátája.
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 
 		/** A lépés iránya. */
@@ -1572,14 +1900,22 @@ export namespace MyNS {
 
 	export interface LegTimeZone {
 		displayName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dstsavings?: number | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rawOffset?: number | null;
 	}
 	export interface LegTimeZoneFormProperties {
 		displayName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dstsavings: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rawOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateLegTimeZoneFormGroup() {
@@ -1598,14 +1934,23 @@ export namespace MyNS {
 	/** Útitervminták engedélyezése esetén a minták időtartam-adatai. */
 	export interface PatternStatistics {
 
-		/** Átlag érték. Akkor van kitöltve, ha az adatok megegyeznek. */
-		avg?: number | null;
+		/**
+		 * Átlag érték. Akkor van kitöltve, ha az adatok megegyeznek.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		avg?: string | null;
 
-		/** Maximum érték. Akkor van kitöltve, ha az adatok különbözőek. */
-		max?: number | null;
+		/**
+		 * Maximum érték. Akkor van kitöltve, ha az adatok különbözőek.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		max?: string | null;
 
-		/** Minimum érték. Akkor van kitöltve, ha az adatok különbözőek. */
-		min?: number | null;
+		/**
+		 * Minimum érték. Akkor van kitöltve, ha az adatok különbözőek.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		min?: string | null;
 
 		/** A klienseken megjelenített szöveg. */
 		text?: string | null;
@@ -1614,23 +1959,32 @@ export namespace MyNS {
 	/** Útitervminták engedélyezése esetén a minták időtartam-adatai. */
 	export interface PatternStatisticsFormProperties {
 
-		/** Átlag érték. Akkor van kitöltve, ha az adatok megegyeznek. */
-		avg: FormControl<number | null | undefined>,
+		/**
+		 * Átlag érték. Akkor van kitöltve, ha az adatok megegyeznek.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		avg: FormControl<string | null | undefined>,
 
-		/** Maximum érték. Akkor van kitöltve, ha az adatok különbözőek. */
-		max: FormControl<number | null | undefined>,
+		/**
+		 * Maximum érték. Akkor van kitöltve, ha az adatok különbözőek.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		max: FormControl<string | null | undefined>,
 
-		/** Minimum érték. Akkor van kitöltve, ha az adatok különbözőek. */
-		min: FormControl<number | null | undefined>,
+		/**
+		 * Minimum érték. Akkor van kitöltve, ha az adatok különbözőek.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		min: FormControl<string | null | undefined>,
 
 		/** A klienseken megjelenített szöveg. */
 		text: FormControl<string | null | undefined>,
 	}
 	export function CreatePatternStatisticsFormGroup() {
 		return new FormGroup<PatternStatisticsFormProperties>({
-			avg: new FormControl<number | null | undefined>(undefined),
-			max: new FormControl<number | null | undefined>(undefined),
-			min: new FormControl<number | null | undefined>(undefined),
+			avg: new FormControl<string | null | undefined>(undefined),
+			max: new FormControl<string | null | undefined>(undefined),
+			min: new FormControl<string | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1638,11 +1992,17 @@ export namespace MyNS {
 
 	export interface MetadataResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitEntryWithReferencesTransitMetadata;
@@ -1653,16 +2013,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface MetadataResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -1670,13 +2039,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateMetadataResponseFormGroup() {
 		return new FormGroup<MetadataResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -1740,25 +2112,40 @@ export namespace MyNS {
 		/** Az aktív adatforrások azonosítói. */
 		feedIds?: Array<string>;
 
-		/** A betöltött adatok területének befoglaló téglalapjának két sarokpontja. */
+		/**
+		 * A betöltött adatok területének befoglaló téglalapjának két sarokpontja.
+		 * Type: double
+		 */
 		lowerLeftLatitude?: number | null;
 
-		/** A betöltött adatok területének befoglaló téglalapjának két sarokpontja. */
+		/**
+		 * A betöltött adatok területének befoglaló téglalapjának két sarokpontja.
+		 * Type: double
+		 */
 		lowerLeftLongitude?: number | null;
 
 		/** A szerver ideje ISO8601 formátumban. */
 		readableTime?: string | null;
 
-		/** Aktuális szerveridő ezredmásodpercben. */
-		time?: number | null;
+		/**
+		 * Aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		time?: string | null;
 
 		/** A szerver tranzit adatainak időzónája. */
 		timeZone?: string | null;
 
-		/** A betöltött adatok területének befoglaló téglalapjának két sarokpontja. */
+		/**
+		 * A betöltött adatok területének befoglaló téglalapjának két sarokpontja.
+		 * Type: double
+		 */
 		upperRightLatitude?: number | null;
 
-		/** A betöltött adatok területének befoglaló téglalapjának két sarokpontja. */
+		/**
+		 * A betöltött adatok területének befoglaló téglalapjának két sarokpontja.
+		 * Type: double
+		 */
 		upperRightLongitude?: number | null;
 
 		/** A szerveren található adatok érvényességének vége. */
@@ -1783,25 +2170,40 @@ export namespace MyNS {
 		/** A menetrendi napok, és a hozzá tartozó napok típusát tartalmazó összerendelés egy hétre (az aktuális nap, és a következő 6). */
 		dayTypes: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** A betöltött adatok területének befoglaló téglalapjának két sarokpontja. */
+		/**
+		 * A betöltött adatok területének befoglaló téglalapjának két sarokpontja.
+		 * Type: double
+		 */
 		lowerLeftLatitude: FormControl<number | null | undefined>,
 
-		/** A betöltött adatok területének befoglaló téglalapjának két sarokpontja. */
+		/**
+		 * A betöltött adatok területének befoglaló téglalapjának két sarokpontja.
+		 * Type: double
+		 */
 		lowerLeftLongitude: FormControl<number | null | undefined>,
 
 		/** A szerver ideje ISO8601 formátumban. */
 		readableTime: FormControl<string | null | undefined>,
 
-		/** Aktuális szerveridő ezredmásodpercben. */
-		time: FormControl<number | null | undefined>,
+		/**
+		 * Aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		time: FormControl<string | null | undefined>,
 
 		/** A szerver tranzit adatainak időzónája. */
 		timeZone: FormControl<string | null | undefined>,
 
-		/** A betöltött adatok területének befoglaló téglalapjának két sarokpontja. */
+		/**
+		 * A betöltött adatok területének befoglaló téglalapjának két sarokpontja.
+		 * Type: double
+		 */
 		upperRightLatitude: FormControl<number | null | undefined>,
 
-		/** A betöltött adatok területének befoglaló téglalapjának két sarokpontja. */
+		/**
+		 * A betöltött adatok területének befoglaló téglalapjának két sarokpontja.
+		 * Type: double
+		 */
 		upperRightLongitude: FormControl<number | null | undefined>,
 
 		/** A szerveren található adatok érvényességének vége. */
@@ -1819,7 +2221,7 @@ export namespace MyNS {
 			lowerLeftLatitude: new FormControl<number | null | undefined>(undefined),
 			lowerLeftLongitude: new FormControl<number | null | undefined>(undefined),
 			readableTime: new FormControl<string | null | undefined>(undefined),
-			time: new FormControl<number | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
 			timeZone: new FormControl<string | null | undefined>(undefined),
 			upperRightLatitude: new FormControl<number | null | undefined>(undefined),
 			upperRightLongitude: new FormControl<number | null | undefined>(undefined),
@@ -1920,8 +2322,11 @@ export namespace MyNS {
 		/** A zavar hatására használhatatlan lesz-e az alkalmazás. */
 		disableApp?: boolean | null;
 
-		/** A zavar végének időpontja másodpercben. */
-		end?: number | null;
+		/**
+		 * A zavar végének időpontja másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		end?: string | null;
 
 		/** A zavar végének időpontjához tartozó szöveg. */
 		endText?: TranslatedString;
@@ -1932,8 +2337,11 @@ export namespace MyNS {
 		/** A zavar azonosítója. */
 		id?: string | null;
 
-		/** A zavar utolsó módosításának időpontja másodpercben. */
-		modifiedTime?: number | null;
+		/**
+		 * A zavar utolsó módosításának időpontja másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		modifiedTime?: string | null;
 
 		/** A zavar által érintett járatok azonosítóinak listája. */
 		routeIds?: Array<string>;
@@ -1941,8 +2349,11 @@ export namespace MyNS {
 		/** A zavar által érintett járatok listája. */
 		routes?: Array<TransitAlertRoute>;
 
-		/** A zavar kezdő időpontja másodpercben. */
-		start?: number | null;
+		/**
+		 * A zavar kezdő időpontja másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		start?: string | null;
 
 		/** A zavar végének időpontjához tartozó szöveg. */
 		startText?: TranslatedString;
@@ -1950,8 +2361,11 @@ export namespace MyNS {
 		/** A zavar által érintett megállók azonosítóinak listája. */
 		stopIds?: Array<string>;
 
-		/** A zavar időbélyege másodpercben. */
-		timestamp?: number | null;
+		/**
+		 * A zavar időbélyege másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timestamp?: string | null;
 
 		/** A zavar végének időpontjához tartozó szöveg. */
 		url?: TranslatedString;
@@ -1963,29 +2377,41 @@ export namespace MyNS {
 		/** A zavar hatására használhatatlan lesz-e az alkalmazás. */
 		disableApp: FormControl<boolean | null | undefined>,
 
-		/** A zavar végének időpontja másodpercben. */
-		end: FormControl<number | null | undefined>,
+		/**
+		 * A zavar végének időpontja másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		end: FormControl<string | null | undefined>,
 
 		/** A zavar azonosítója. */
 		id: FormControl<string | null | undefined>,
 
-		/** A zavar utolsó módosításának időpontja másodpercben. */
-		modifiedTime: FormControl<number | null | undefined>,
+		/**
+		 * A zavar utolsó módosításának időpontja másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		modifiedTime: FormControl<string | null | undefined>,
 
-		/** A zavar kezdő időpontja másodpercben. */
-		start: FormControl<number | null | undefined>,
+		/**
+		 * A zavar kezdő időpontja másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		start: FormControl<string | null | undefined>,
 
-		/** A zavar időbélyege másodpercben. */
-		timestamp: FormControl<number | null | undefined>,
+		/**
+		 * A zavar időbélyege másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateTransitAlertFormGroup() {
 		return new FormGroup<TransitAlertFormProperties>({
 			disableApp: new FormControl<boolean | null | undefined>(undefined),
-			end: new FormControl<number | null | undefined>(undefined),
+			end: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
-			modifiedTime: new FormControl<number | null | undefined>(undefined),
-			start: new FormControl<number | null | undefined>(undefined),
-			timestamp: new FormControl<number | null | undefined>(undefined),
+			modifiedTime: new FormControl<string | null | undefined>(undefined),
+			start: new FormControl<string | null | undefined>(undefined),
+			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2083,7 +2509,10 @@ export namespace MyNS {
 		/** A járat rövid neve. */
 		shortName?: string | null;
 
-		/** A járat rendezési sorszáma a többi járathoz viszonyítva. */
+		/**
+		 * A járat rendezési sorszáma a többi járathoz viszonyítva.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 
 		/** A járat megjelenítési stílusa. */
@@ -2129,7 +2558,10 @@ export namespace MyNS {
 		/** A járat rövid neve. */
 		shortName: FormControl<string | null | undefined>,
 
-		/** A járat rendezési sorszáma a többi járathoz viszonyítva. */
+		/**
+		 * A járat rendezési sorszáma a többi járathoz viszonyítva.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 
 		/** A járat szövegének színe. Deprecated: használjuk a `style` attribútumot helyette. */
@@ -2302,16 +2734,25 @@ export namespace MyNS {
 		/** A megálló azonosítója. */
 		id?: string | null;
 
-		/** A megálló szélességi koordinátája. */
+		/**
+		 * A megálló szélességi koordinátája.
+		 * Type: double
+		 */
 		lat?: number | null;
 
 		/** A megálló hely-altípusa. */
 		locationSubType?: string | null;
 
-		/** A megálló hely-típusa. */
+		/**
+		 * A megálló hely-típusa.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locationType?: number | null;
 
-		/** A megálló hosszúsági koordinátája. */
+		/**
+		 * A megálló hosszúsági koordinátája.
+		 * Type: double
+		 */
 		lon?: number | null;
 
 		/** A megálló neve. */
@@ -2357,16 +2798,25 @@ export namespace MyNS {
 		/** A megálló azonosítója. */
 		id: FormControl<string | null | undefined>,
 
-		/** A megálló szélességi koordinátája. */
+		/**
+		 * A megálló szélességi koordinátája.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
 		/** A megálló hely-altípusa. */
 		locationSubType: FormControl<string | null | undefined>,
 
-		/** A megálló hely-típusa. */
+		/**
+		 * A megálló hely-típusa.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		locationType: FormControl<number | null | undefined>,
 
-		/** A megálló hosszúsági koordinátája. */
+		/**
+		 * A megálló hosszúsági koordinátája.
+		 * Type: double
+		 */
 		lon: FormControl<number | null | undefined>,
 
 		/** A megálló neve. */
@@ -2497,11 +2947,17 @@ export namespace MyNS {
 
 	export interface MultiRouteDetailsMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitListEntryWithReferencesTransitRouteDetails;
@@ -2512,16 +2968,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface MultiRouteDetailsMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -2529,13 +2994,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateMultiRouteDetailsMethodResponseFormGroup() {
 		return new FormGroup<MultiRouteDetailsMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -2618,7 +3086,10 @@ export namespace MyNS {
 		/** A járat rövid neve. */
 		shortName?: string | null;
 
-		/** A járat rendezési sorszáma a többi járathoz viszonyítva. */
+		/**
+		 * A járat rendezési sorszáma a többi járathoz viszonyítva.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 
 		/** A járat megjelenítési stílusa. */
@@ -2667,7 +3138,10 @@ export namespace MyNS {
 		/** A járat rövid neve. */
 		shortName: FormControl<string | null | undefined>,
 
-		/** A járat rendezési sorszáma a többi járathoz viszonyítva. */
+		/**
+		 * A járat rendezési sorszáma a többi járathoz viszonyítva.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 
 		/** A járat szövegének színe. Deprecated: használjuk a `style` attribútumot helyette. */
@@ -2767,7 +3241,10 @@ export namespace MyNS {
 	/** A menethez tartozó kódolt minta (polyline). */
 	export interface TransitPolyline {
 
-		/** A minta pontjainak száma. */
+		/**
+		 * A minta pontjainak száma.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
 		/** A minta magassági adatai (mindig üres). */
@@ -2780,7 +3257,10 @@ export namespace MyNS {
 	/** A menethez tartozó kódolt minta (polyline). */
 	export interface TransitPolylineFormProperties {
 
-		/** A minta pontjainak száma. */
+		/**
+		 * A minta pontjainak száma.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
 		/** A minta magassági adatai (mindig üres). */
@@ -2845,55 +3325,73 @@ export namespace MyNS {
 
 	export interface OnboardDepartPosition {
 
-		/** A pontossága egy pozició pontnak méterben. */
+		/**
+		 * A pontossága egy pozició pontnak méterben.
+		 * Type: double
+		 */
 		accuracy?: number | null;
 
 		/**
 		 * A szélességi koordinátája egy pozició pontnak.
 		 * Required
+		 * Type: double
 		 */
 		lat: number;
 
 		/**
 		 * A hosszúsági koordinátája egy pozició pontnak.
 		 * Required
+		 * Type: double
 		 */
 		lon: number;
 
-		/** A sebesség egy pozició pontban m/s-ban. */
+		/**
+		 * A sebesség egy pozició pontban m/s-ban.
+		 * Type: double
+		 */
 		speed?: number | null;
 
 		/**
 		 * Az időpontja egy pozició pontnak epoch másodpercben.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		timestamp: number;
+		timestamp: string;
 	}
 	export interface OnboardDepartPositionFormProperties {
 
-		/** A pontossága egy pozició pontnak méterben. */
+		/**
+		 * A pontossága egy pozició pontnak méterben.
+		 * Type: double
+		 */
 		accuracy: FormControl<number | null | undefined>,
 
 		/**
 		 * A szélességi koordinátája egy pozició pontnak.
 		 * Required
+		 * Type: double
 		 */
 		lat: FormControl<number | null | undefined>,
 
 		/**
 		 * A hosszúsági koordinátája egy pozició pontnak.
 		 * Required
+		 * Type: double
 		 */
 		lon: FormControl<number | null | undefined>,
 
-		/** A sebesség egy pozició pontban m/s-ban. */
+		/**
+		 * A sebesség egy pozició pontban m/s-ban.
+		 * Type: double
+		 */
 		speed: FormControl<number | null | undefined>,
 
 		/**
 		 * Az időpontja egy pozició pontnak epoch másodpercben.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		timestamp: FormControl<number | null | undefined>,
+		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateOnboardDepartPositionFormGroup() {
 		return new FormGroup<OnboardDepartPositionFormProperties>({
@@ -2901,18 +3399,24 @@ export namespace MyNS {
 			lat: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			lon: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			speed: new FormControl<number | null | undefined>(undefined),
-			timestamp: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			timestamp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface OnboardDepartSearchMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitListEntryWithReferencesTransitVehicle;
@@ -2923,16 +3427,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface OnboardDepartSearchMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -2940,13 +3453,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateOnboardDepartSearchMethodResponseFormGroup() {
 		return new FormGroup<OnboardDepartSearchMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -2999,7 +3515,10 @@ export namespace MyNS {
 	/** A lekért adatok listája. */
 	export interface TransitVehicle {
 
-		/** A jármű irányszöge. */
+		/**
+		 * A jármű irányszöge.
+		 * Type: float
+		 */
 		bearing?: number | null;
 
 		/** A jármű kapacitása. */
@@ -3014,8 +3533,11 @@ export namespace MyNS {
 		/** A jármű kijelzőjén megjelenő célállomáskép. */
 		label?: string | null;
 
-		/** A járműhöz tartozó utolsó valós idejű adat időbélyege másodpercben. */
-		lastUpdateTime?: number | null;
+		/**
+		 * A járműhöz tartozó utolsó valós idejű adat időbélyege másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastUpdateTime?: string | null;
 
 		/** A jármű rendszáma. */
 		licensePlate?: string | null;
@@ -3041,13 +3563,19 @@ export namespace MyNS {
 		/** A jármű állapota. */
 		status?: TransitVehicleStatus | null;
 
-		/** Hol tart a jármű a két megálló közti szakaszon, százalékban. */
+		/**
+		 * Hol tart a jármű a két megálló közti szakaszon, százalékban.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stopDistancePercent?: number | null;
 
 		/** A járműhöz tartozó megálló azonosítója. */
 		stopId?: string | null;
 
-		/** A jármű által érintett aktuális megálló sorszáma a meneten. */
+		/**
+		 * A jármű által érintett aktuális megálló sorszáma a meneten.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stopSequence?: number | null;
 
 		/** A járműhöz tartozó stílus. */
@@ -3072,7 +3600,10 @@ export namespace MyNS {
 	/** A lekért adatok listája. */
 	export interface TransitVehicleFormProperties {
 
-		/** A jármű irányszöge. */
+		/**
+		 * A jármű irányszöge.
+		 * Type: float
+		 */
 		bearing: FormControl<number | null | undefined>,
 
 		/** A járműhöz tartozó torlódási állapot. */
@@ -3084,8 +3615,11 @@ export namespace MyNS {
 		/** A jármű kijelzőjén megjelenő célállomáskép. */
 		label: FormControl<string | null | undefined>,
 
-		/** A járműhöz tartozó utolsó valós idejű adat időbélyege másodpercben. */
-		lastUpdateTime: FormControl<number | null | undefined>,
+		/**
+		 * A járműhöz tartozó utolsó valós idejű adat időbélyege másodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastUpdateTime: FormControl<string | null | undefined>,
 
 		/** A jármű rendszáma. */
 		licensePlate: FormControl<string | null | undefined>,
@@ -3105,13 +3639,19 @@ export namespace MyNS {
 		/** A jármű állapota. */
 		status: FormControl<TransitVehicleStatus | null | undefined>,
 
-		/** Hol tart a jármű a két megálló közti szakaszon, százalékban. */
+		/**
+		 * Hol tart a jármű a két megálló közti szakaszon, százalékban.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stopDistancePercent: FormControl<number | null | undefined>,
 
 		/** A járműhöz tartozó megálló azonosítója. */
 		stopId: FormControl<string | null | undefined>,
 
-		/** A jármű által érintett aktuális megálló sorszáma a meneten. */
+		/**
+		 * A jármű által érintett aktuális megálló sorszáma a meneten.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stopSequence: FormControl<number | null | undefined>,
 
 		/** A járműhöz tartozó menet azonosítója. */
@@ -3135,7 +3675,7 @@ export namespace MyNS {
 			congestionLevel: new FormControl<TransitVehicleCongestionLevel | null | undefined>(undefined),
 			deviated: new FormControl<boolean | null | undefined>(undefined),
 			label: new FormControl<string | null | undefined>(undefined),
-			lastUpdateTime: new FormControl<number | null | undefined>(undefined),
+			lastUpdateTime: new FormControl<string | null | undefined>(undefined),
 			licensePlate: new FormControl<string | null | undefined>(undefined),
 			model: new FormControl<string | null | undefined>(undefined),
 			routeId: new FormControl<string | null | undefined>(undefined),
@@ -3158,38 +3698,68 @@ export namespace MyNS {
 	/** A jármű kapacitása. */
 	export interface TransitVehicleOccupancy {
 
-		/** Hány felnőtt van a járművön. */
+		/**
+		 * Hány felnőtt van a járművön.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adults?: number | null;
 
-		/** Hány gyermek van a járművön. */
+		/**
+		 * Hány gyermek van a járművön.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		children?: number | null;
 
-		/** Hány be nem kategorizált entitás van a járművön. */
+		/**
+		 * Hány be nem kategorizált entitás van a járművön.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		other?: number | null;
 
-		/** Hány babakocsi van a járművön */
+		/**
+		 * Hány babakocsi van a járművön
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		strollers?: number | null;
 
-		/** Hány kerekesszék van a járművön. */
+		/**
+		 * Hány kerekesszék van a járművön.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wheelchairs?: number | null;
 	}
 
 	/** A jármű kapacitása. */
 	export interface TransitVehicleOccupancyFormProperties {
 
-		/** Hány felnőtt van a járművön. */
+		/**
+		 * Hány felnőtt van a járművön.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		adults: FormControl<number | null | undefined>,
 
-		/** Hány gyermek van a járművön. */
+		/**
+		 * Hány gyermek van a járművön.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		children: FormControl<number | null | undefined>,
 
-		/** Hány be nem kategorizált entitás van a járművön. */
+		/**
+		 * Hány be nem kategorizált entitás van a járművön.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		other: FormControl<number | null | undefined>,
 
-		/** Hány babakocsi van a járművön */
+		/**
+		 * Hány babakocsi van a járművön
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		strollers: FormControl<number | null | undefined>,
 
-		/** Hány kerekesszék van a járművön. */
+		/**
+		 * Hány kerekesszék van a járművön.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		wheelchairs: FormControl<number | null | undefined>,
 	}
 	export function CreateTransitVehicleOccupancyFormGroup() {
@@ -3209,20 +3779,32 @@ export namespace MyNS {
 	/** A jármű pozíciója. */
 	export interface TransitCoordinatePoint {
 
-		/** Szélességi koordináta. */
+		/**
+		 * Szélességi koordináta.
+		 * Type: float
+		 */
 		lat?: number | null;
 
-		/** Hosszúsági koordináta. */
+		/**
+		 * Hosszúsági koordináta.
+		 * Type: float
+		 */
 		lon?: number | null;
 	}
 
 	/** A jármű pozíciója. */
 	export interface TransitCoordinatePointFormProperties {
 
-		/** Szélességi koordináta. */
+		/**
+		 * Szélességi koordináta.
+		 * Type: float
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Hosszúsági koordináta. */
+		/**
+		 * Hosszúsági koordináta.
+		 * Type: float
+		 */
 		lon: FormControl<number | null | undefined>,
 	}
 	export function CreateTransitCoordinatePointFormGroup() {
@@ -3254,11 +3836,17 @@ export namespace MyNS {
 
 	export interface PlanTripResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitEntryWithReferencesResponse;
@@ -3269,16 +3857,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface PlanTripResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -3286,13 +3883,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePlanTripResponseFormGroup() {
 		return new FormGroup<PlanTripResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -3368,7 +3968,10 @@ export namespace MyNS {
 	/** A hibát tartalmazza, ha nem sikerült a tervezés. */
 	export interface PlannerError {
 
-		/** A hibaüzenet azonosítója. */
+		/**
+		 * A hibaüzenet azonosítója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** A hibaüzenet kódja. */
@@ -3385,7 +3988,10 @@ export namespace MyNS {
 	/** A hibát tartalmazza, ha nem sikerült a tervezés. */
 	export interface PlannerErrorFormProperties {
 
-		/** A hibaüzenet azonosítója. */
+		/**
+		 * A hibaüzenet azonosítója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** A hibaüzenet kódja. */
@@ -3508,11 +4114,17 @@ export namespace MyNS {
 
 	export interface RouteDetailsForStopMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitListEntryWithReferencesTransitRoute;
@@ -3523,16 +4135,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface RouteDetailsForStopMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -3540,13 +4161,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateRouteDetailsForStopMethodResponseFormGroup() {
 		return new FormGroup<RouteDetailsForStopMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -3597,11 +4221,17 @@ export namespace MyNS {
 
 	export interface RouteDetailsMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitEntryWithReferencesTransitRouteDetails;
@@ -3612,16 +4242,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface RouteDetailsMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -3629,13 +4268,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateRouteDetailsMethodResponseFormGroup() {
 		return new FormGroup<RouteDetailsMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -3679,11 +4321,17 @@ export namespace MyNS {
 
 	export interface ScheduleForStopOTPMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitEntryWithReferencesTransitSchedule;
@@ -3694,16 +4342,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface ScheduleForStopOTPMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -3711,13 +4368,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleForStopOTPMethodResponseFormGroup() {
 		return new FormGroup<ScheduleForStopOTPMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -3766,7 +4426,10 @@ export namespace MyNS {
 		/** A megállóhoz tartozó aktív zavarok azonosítói. */
 		alertIds?: Array<string>;
 
-		/** A menetrendhez tartozó dátum. */
+		/**
+		 * A menetrendhez tartozó dátum.
+		 * Type: DateOnly
+		 */
 		date?: Date | null;
 
 		/** A közeli megállók azonosítói. */
@@ -3788,7 +4451,10 @@ export namespace MyNS {
 	/** A lekért adat. */
 	export interface TransitScheduleFormProperties {
 
-		/** A menetrendhez tartozó dátum. */
+		/**
+		 * A menetrendhez tartozó dátum.
+		 * Type: DateOnly
+		 */
 		date: FormControl<Date | null | undefined>,
 
 		/** A menetrendhez tartozó dátum. */
@@ -3901,11 +4567,17 @@ export namespace MyNS {
 
 	export interface SearchMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitEntryWithReferencesTransitSearch;
@@ -3916,16 +4588,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface SearchMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -3933,13 +4614,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchMethodResponseFormGroup() {
 		return new FormGroup<SearchMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -3970,11 +4654,17 @@ export namespace MyNS {
 
 	export interface StopsForLocationResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitListEntryWithReferencesTransitStop;
@@ -3985,16 +4675,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface StopsForLocationResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -4002,13 +4701,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateStopsForLocationResponseFormGroup() {
 		return new FormGroup<StopsForLocationResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -4059,11 +4761,17 @@ export namespace MyNS {
 
 	export interface TicketingMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitEntryWithReferencesTransitTicketing;
@@ -4074,16 +4782,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface TicketingMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -4091,13 +4808,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateTicketingMethodResponseFormGroup() {
 		return new FormGroup<TicketingMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -4143,14 +4863,20 @@ export namespace MyNS {
 	/** A lekért adat. */
 	export interface TransitTicketing {
 
-		/** A jegyértékesítési adatok legutóbbi módosulásának időpontja. */
-		lastModifiedTime?: number | null;
+		/**
+		 * A jegyértékesítési adatok legutóbbi módosulásának időpontja.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastModifiedTime?: string | null;
 
 		/** A jegyértékesítési pontok listája. */
 		locations?: Array<TicketingLocation>;
 
-		/** A legrégebb óta módosított értékesítési hely vagy termék módosításának időpontja. */
-		oldestModifiedTime?: number | null;
+		/**
+		 * A legrégebb óta módosított értékesítési hely vagy termék módosításának időpontja.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		oldestModifiedTime?: string | null;
 
 		/** A termékek listája. */
 		products?: Array<TicketingProduct>;
@@ -4159,16 +4885,22 @@ export namespace MyNS {
 	/** A lekért adat. */
 	export interface TransitTicketingFormProperties {
 
-		/** A jegyértékesítési adatok legutóbbi módosulásának időpontja. */
-		lastModifiedTime: FormControl<number | null | undefined>,
+		/**
+		 * A jegyértékesítési adatok legutóbbi módosulásának időpontja.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		lastModifiedTime: FormControl<string | null | undefined>,
 
-		/** A legrégebb óta módosított értékesítési hely vagy termék módosításának időpontja. */
-		oldestModifiedTime: FormControl<number | null | undefined>,
+		/**
+		 * A legrégebb óta módosított értékesítési hely vagy termék módosításának időpontja.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		oldestModifiedTime: FormControl<string | null | undefined>,
 	}
 	export function CreateTransitTicketingFormGroup() {
 		return new FormGroup<TransitTicketingFormProperties>({
-			lastModifiedTime: new FormControl<number | null | undefined>(undefined),
-			oldestModifiedTime: new FormControl<number | null | undefined>(undefined),
+			lastModifiedTime: new FormControl<string | null | undefined>(undefined),
+			oldestModifiedTime: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4342,22 +5074,37 @@ export namespace MyNS {
 	/** Menet megállóinak listája. */
 	export interface TransitTripStopTime {
 
-		/** A megállóba érkezés tervezett ideje epoch másodbercben. Az első megállónál hiányzik. */
-		arrivalTime?: number | null;
+		/**
+		 * A megállóba érkezés tervezett ideje epoch másodbercben. Az első megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		arrivalTime?: string | null;
 
-		/** A megállóból való indulás tervezett ideje epoch másodbercben. Az utolsó megállónál hiányzik. */
-		departureTime?: number | null;
+		/**
+		 * A megállóból való indulás tervezett ideje epoch másodbercben. Az utolsó megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		departureTime?: string | null;
 
-		/** A megállóba érkezés becsült ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az első megállónál hiányzik. */
-		predictedArrivalTime?: number | null;
+		/**
+		 * A megállóba érkezés becsült ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az első megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predictedArrivalTime?: string | null;
 
-		/** A megállóból való becsült indulás ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az utolsó megállónál hiányzik. */
-		predictedDepartureTime?: number | null;
+		/**
+		 * A megállóból való becsült indulás ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az utolsó megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predictedDepartureTime?: string | null;
 
 		/** Igaz, ha ez a megálló foglalást igényel. */
 		requiresBooking?: boolean | null;
 
-		/** Milyen messze található a megálló az elsőtől a minta mentén méterben. */
+		/**
+		 * Milyen messze található a megálló az elsőtől a minta mentén méterben.
+		 * Type: double
+		 */
 		shapeDistTraveled?: number | null;
 
 		/** A megállóban kijelzett célállomás. */
@@ -4366,7 +5113,10 @@ export namespace MyNS {
 		/** A megálló azonosítója */
 		stopId?: string | null;
 
-		/** A megálló sorrendje a járaton. */
+		/**
+		 * A megálló sorrendje a járaton.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stopSequence?: number | null;
 
 		/** Igaz, ha a menethez tartozó valós idejű adatok bizonytalanok. */
@@ -4376,22 +5126,37 @@ export namespace MyNS {
 	/** Menet megállóinak listája. */
 	export interface TransitTripStopTimeFormProperties {
 
-		/** A megállóba érkezés tervezett ideje epoch másodbercben. Az első megállónál hiányzik. */
-		arrivalTime: FormControl<number | null | undefined>,
+		/**
+		 * A megállóba érkezés tervezett ideje epoch másodbercben. Az első megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		arrivalTime: FormControl<string | null | undefined>,
 
-		/** A megállóból való indulás tervezett ideje epoch másodbercben. Az utolsó megállónál hiányzik. */
-		departureTime: FormControl<number | null | undefined>,
+		/**
+		 * A megállóból való indulás tervezett ideje epoch másodbercben. Az utolsó megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		departureTime: FormControl<string | null | undefined>,
 
-		/** A megállóba érkezés becsült ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az első megállónál hiányzik. */
-		predictedArrivalTime: FormControl<number | null | undefined>,
+		/**
+		 * A megállóba érkezés becsült ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az első megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predictedArrivalTime: FormControl<string | null | undefined>,
 
-		/** A megállóból való becsült indulás ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az utolsó megállónál hiányzik. */
-		predictedDepartureTime: FormControl<number | null | undefined>,
+		/**
+		 * A megállóból való becsült indulás ideje epoch másodbercben, ha a járathoz van valós idejű adat. Az utolsó megállónál hiányzik.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predictedDepartureTime: FormControl<string | null | undefined>,
 
 		/** Igaz, ha ez a megálló foglalást igényel. */
 		requiresBooking: FormControl<boolean | null | undefined>,
 
-		/** Milyen messze található a megálló az elsőtől a minta mentén méterben. */
+		/**
+		 * Milyen messze található a megálló az elsőtől a minta mentén méterben.
+		 * Type: double
+		 */
 		shapeDistTraveled: FormControl<number | null | undefined>,
 
 		/** A megállóban kijelzett célállomás. */
@@ -4400,7 +5165,10 @@ export namespace MyNS {
 		/** A megálló azonosítója */
 		stopId: FormControl<string | null | undefined>,
 
-		/** A megálló sorrendje a járaton. */
+		/**
+		 * A megálló sorrendje a járaton.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stopSequence: FormControl<number | null | undefined>,
 
 		/** Igaz, ha a menethez tartozó valós idejű adatok bizonytalanok. */
@@ -4408,10 +5176,10 @@ export namespace MyNS {
 	}
 	export function CreateTransitTripStopTimeFormGroup() {
 		return new FormGroup<TransitTripStopTimeFormProperties>({
-			arrivalTime: new FormControl<number | null | undefined>(undefined),
-			departureTime: new FormControl<number | null | undefined>(undefined),
-			predictedArrivalTime: new FormControl<number | null | undefined>(undefined),
-			predictedDepartureTime: new FormControl<number | null | undefined>(undefined),
+			arrivalTime: new FormControl<string | null | undefined>(undefined),
+			departureTime: new FormControl<string | null | undefined>(undefined),
+			predictedArrivalTime: new FormControl<string | null | undefined>(undefined),
+			predictedDepartureTime: new FormControl<string | null | undefined>(undefined),
 			requiresBooking: new FormControl<boolean | null | undefined>(undefined),
 			shapeDistTraveled: new FormControl<number | null | undefined>(undefined),
 			stopHeadsign: new FormControl<string | null | undefined>(undefined),
@@ -4426,11 +5194,17 @@ export namespace MyNS {
 
 	export interface TripDetailsOTPMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitEntryWithReferencesTransitTripDetailsOTP;
@@ -4441,16 +5215,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface TripDetailsOTPMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -4458,13 +5241,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateTripDetailsOTPMethodResponseFormGroup() {
 		return new FormGroup<TripDetailsOTPMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -4474,11 +5260,17 @@ export namespace MyNS {
 
 	export interface VehicleForTripMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitListEntryWithReferencesTransitVehicle;
@@ -4489,16 +5281,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface VehicleForTripMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -4506,13 +5307,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateVehicleForTripMethodResponseFormGroup() {
 		return new FormGroup<VehicleForTripMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -4522,11 +5326,17 @@ export namespace MyNS {
 
 	export interface VehiclesForLocationMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitListEntryWithReferencesTransitVehicle;
@@ -4537,16 +5347,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface VehiclesForLocationMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -4554,13 +5373,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateVehiclesForLocationMethodResponseFormGroup() {
 		return new FormGroup<VehiclesForLocationMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -4570,11 +5392,17 @@ export namespace MyNS {
 
 	export interface VehiclesForRouteMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitListEntryWithReferencesTransitVehicle;
@@ -4585,16 +5413,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface VehiclesForRouteMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -4602,13 +5439,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateVehiclesForRouteMethodResponseFormGroup() {
 		return new FormGroup<VehiclesForRouteMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -4618,11 +5458,17 @@ export namespace MyNS {
 
 	export interface VehiclesForStopMethodResponse {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime?: number | null;
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime?: string | null;
 
 		/** A válasz adat. */
 		data?: TransitListEntryWithReferencesTransitVehicle;
@@ -4633,16 +5479,25 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text?: string | null;
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 	export interface VehiclesForStopMethodResponseFormProperties {
 
-		/** A válasz státusz kódja. */
+		/**
+		 * A válasz státusz kódja.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
-		/** Az aktuális szerveridő ezredmásodpercben. */
-		currentTime: FormControl<number | null | undefined>,
+		/**
+		 * Az aktuális szerveridő ezredmásodpercben.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		currentTime: FormControl<string | null | undefined>,
 
 		/** A válasz státusza. */
 		status: FormControl<AlertSearchMethodResponseStatus | null | undefined>,
@@ -4650,13 +5505,16 @@ export namespace MyNS {
 		/** A válasz szövege. */
 		text: FormControl<string | null | undefined>,
 
-		/** A válasz API verziója. */
+		/**
+		 * A válasz API verziója.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateVehiclesForStopMethodResponseFormGroup() {
 		return new FormGroup<VehiclesForStopMethodResponseFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined),
-			currentTime: new FormControl<number | null | undefined>(undefined),
+			currentTime: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<AlertSearchMethodResponseStatus | null | undefined>(undefined),
 			text: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined),
@@ -4674,71 +5532,97 @@ export namespace MyNS {
 		/**
 		 * Get {dialect}/api/where/alert-search
 		 * @param {string} query A keresési feltétel, amit a zavar fejlécével, leírásával, vagy azonosítójával illesztünk.
-		 * @param {number} start A keresés időintervallumának eleje epoch másodpercben.
-		 * @param {number} end A keresési időintervallum vége epoch másodpercben.
+		 * @param {string} start A keresés időintervallumának eleje epoch másodpercben.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} end A keresési időintervallum vége epoch másodpercben.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} minResult A visszaadott elemek minimális száma.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
 		 * @param {Dialect} dialect Az API referenciáinak dialektusa.
 		 * @param {Array<ReferencesSchema>} includeReferences A referenciák típusát határozza meg. `true` vagy `COMPACT` esetén minden referencia szerepel, `false` esetén üres. `COMPACT` módban a route referenciák `description` mezője kihagyásra kerül.
 		 * @return {AlertSearchMethodResponse} Visszatér a `query` paraméterben megadott keresési feltételnek megfelelő zavarokkal, amik aktívak a megadott időintervallumnban.
 		 */
-		SearchAlerts(query: string | null | undefined, start: number | null | undefined, end: number | null | undefined, minResult: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<AlertSearchMethodResponse> {
+		SearchAlerts(query: string | null | undefined, start: string | null | undefined, end: string | null | undefined, minResult: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<AlertSearchMethodResponse> {
 			return this.http.get<AlertSearchMethodResponse>(this.baseUri + dialect + '/api/where/alert-search?query=' + (query == null ? '' : encodeURIComponent(query)) + '&start=' + start + '&end=' + end + '&minResult=' + minResult + '&appVersion=' + (appVersion == null ? '' : encodeURIComponent(appVersion)) + '&version=' + version + '&' + includeReferences?.map(z => `includeReferences=${z}`).join('&') + '', {});
 		}
 
 		/**
 		 * Get {dialect}/api/where/arrivals-and-departures-for-location
 		 * @param {number} groupLimit Menetrendi adatok maximális száma egy csoportban.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} clientLon A kliens hosszúsági koordinátája.
+		 *     Type: double
 		 * @param {number} clientLat A kliens szélességi koordinátája.
+		 *     Type: double
 		 * @param {number} minutesBefore A lekérdezési időablak a `time` paraméter előtt ennyi perccel indul.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minutesAfter A lekérdezési időablak a `time` paraméter után ennyi perccel ér véget.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} stopId A megállók azonosítóinak listája, amelyekhez a lekérést végezzük.
 		 * @param {Array<string>} includeRouteId A válasz szűrésére használt járatok azonosítóinak listája.
-		 * @param {number} time A lekérdezés kiértékeléséhez használt időpont. Alapértelmezetten az aktuális szerveridő.
+		 * @param {string} time A lekérdezés kiértékeléséhez használt időpont. Alapértelmezetten az aktuális szerveridő.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} onlyDepartures Ha igaz akkor csak az érkezési (és előrejelzett érkezési) idők nem szerepelnek a válaszban.
 		 * @param {number} limit A visszaadott indulási és érkezési idők listájának maximális hossza.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} lat A helyszín középpontjának szélessgéi koordinátája.
+		 *     Type: float
 		 * @param {number} lon A helyszín középpontjának hosszúsági koordinátája.
+		 *     Type: float
 		 * @param {number} latSpan A lekérési terület szélességi íve. (Terület szélessége: `lat +/- latspan`).
+		 *     Type: float
 		 * @param {number} lonSpan A lekérési terület hosszúsági íve. (Terület hosszúsága: `lon +/- lonSpan`).
+		 *     Type: float
 		 * @param {number} radius Ha a `latSpan` vagy a `longSpan` nincs kitöltve, a keresési terület a középpontól számított `radius` méter távolság mind a négy irányban.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query A válasz szűrésére használt keresési kifejezés.
 		 * @param {number} minResult A visszaadott elemek minimális száma.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
 		 * @param {Dialect} dialect Az API referenciáinak dialektusa.
 		 * @param {Array<ReferencesSchema>} includeReferences A referenciák típusát határozza meg. `true` vagy `COMPACT` esetén minden referencia szerepel, `false` esetén üres. `COMPACT` módban a route referenciák `description` mezője kihagyásra kerül.
 		 * @return {ArrivalsAndDeparturesForLocationOTPMethodResponse} Visszaadja egy területhez tartozó érkezési és indulási időket járatazonosítók és célállomások szerint csoportosítva.
 		 */
-		GetArrivalsAndDeparturesForLocation(groupLimit: number | null | undefined, clientLon: number | null | undefined, clientLat: number | null | undefined, minutesBefore: number | null | undefined, minutesAfter: number | null | undefined, stopId: Array<string> | null | undefined, includeRouteId: Array<string> | null | undefined, time: number | null | undefined, onlyDepartures: boolean | null | undefined, limit: number | null | undefined, lat: number | null | undefined, lon: number | null | undefined, latSpan: number | null | undefined, lonSpan: number | null | undefined, radius: number | null | undefined, query: string | null | undefined, minResult: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<ArrivalsAndDeparturesForLocationOTPMethodResponse> {
+		GetArrivalsAndDeparturesForLocation(groupLimit: number | null | undefined, clientLon: number | null | undefined, clientLat: number | null | undefined, minutesBefore: number | null | undefined, minutesAfter: number | null | undefined, stopId: Array<string> | null | undefined, includeRouteId: Array<string> | null | undefined, time: string | null | undefined, onlyDepartures: boolean | null | undefined, limit: number | null | undefined, lat: number | null | undefined, lon: number | null | undefined, latSpan: number | null | undefined, lonSpan: number | null | undefined, radius: number | null | undefined, query: string | null | undefined, minResult: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<ArrivalsAndDeparturesForLocationOTPMethodResponse> {
 			return this.http.get<ArrivalsAndDeparturesForLocationOTPMethodResponse>(this.baseUri + dialect + '/api/where/arrivals-and-departures-for-location?groupLimit=' + groupLimit + '&clientLon=' + clientLon + '&clientLat=' + clientLat + '&minutesBefore=' + minutesBefore + '&minutesAfter=' + minutesAfter + '&' + stopId?.map(z => `stopId=${encodeURIComponent(z)}`).join('&') + '&' + includeRouteId?.map(z => `includeRouteId=${encodeURIComponent(z)}`).join('&') + '&time=' + time + '&onlyDepartures=' + onlyDepartures + '&limit=' + limit + '&lat=' + lat + '&lon=' + lon + '&latSpan=' + latSpan + '&lonSpan=' + lonSpan + '&radius=' + radius + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&minResult=' + minResult + '&appVersion=' + (appVersion == null ? '' : encodeURIComponent(appVersion)) + '&version=' + version + '&' + includeReferences?.map(z => `includeReferences=${z}`).join('&') + '', {});
 		}
 
 		/**
 		 * Get {dialect}/api/where/arrivals-and-departures-for-stop
 		 * @param {number} minutesBefore A lekérdezési időablak a `time` paraméter előtt ennyi perccel indul.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minutesAfter A lekérdezési időablak a `time` paraméter után ennyi perccel ér véget.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} stopId A megállók azonosítóinak listája, amelyekhez a lekérést végezzük.
 		 * @param {Array<string>} includeRouteId A válasz szűrésére használt járatok azonosítóinak listája.
-		 * @param {number} time A lekérdezés kiértékeléséhez használt időpont. Alapértelmezetten az aktuális szerveridő.
+		 * @param {string} time A lekérdezés kiértékeléséhez használt időpont. Alapértelmezetten az aktuális szerveridő.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} onlyDepartures Ha igaz akkor csak az érkezési (és előrejelzett érkezési) idők nem szerepelnek a válaszban.
 		 * @param {number} limit A visszaadott indulási és érkezési idők listájának maximális hossza.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} lat A helyszín középpontjának szélessgéi koordinátája.
+		 *     Type: float
 		 * @param {number} lon A helyszín középpontjának hosszúsági koordinátája.
+		 *     Type: float
 		 * @param {number} latSpan A lekérési terület szélességi íve. (Terület szélessége: `lat +/- latspan`).
+		 *     Type: float
 		 * @param {number} lonSpan A lekérési terület hosszúsági íve. (Terület hosszúsága: `lon +/- lonSpan`).
+		 *     Type: float
 		 * @param {number} radius Ha a `latSpan` vagy a `longSpan` nincs kitöltve, a keresési terület a középpontól számított `radius` méter távolság mind a négy irányban.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query A válasz szűrésére használt keresési kifejezés.
 		 * @param {number} minResult A visszaadott elemek minimális száma.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
 		 * @param {Dialect} dialect Az API referenciáinak dialektusa.
 		 * @param {Array<ReferencesSchema>} includeReferences A referenciák típusát határozza meg. `true` vagy `COMPACT` esetén minden referencia szerepel, `false` esetén üres. `COMPACT` módban a route referenciák `description` mezője kihagyásra kerül.
 		 * @return {ArrivalsAndDeparturesForStopOTPMethodResponse} Lekéri a megállóhoz tartozó érkezési és indulási időket.
 		 */
-		GetArrivalsAndDeparturesForStop(minutesBefore: number | null | undefined, minutesAfter: number | null | undefined, stopId: Array<string> | null | undefined, includeRouteId: Array<string> | null | undefined, time: number | null | undefined, onlyDepartures: boolean | null | undefined, limit: number | null | undefined, lat: number | null | undefined, lon: number | null | undefined, latSpan: number | null | undefined, lonSpan: number | null | undefined, radius: number | null | undefined, query: string | null | undefined, minResult: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<ArrivalsAndDeparturesForStopOTPMethodResponse> {
+		GetArrivalsAndDeparturesForStop(minutesBefore: number | null | undefined, minutesAfter: number | null | undefined, stopId: Array<string> | null | undefined, includeRouteId: Array<string> | null | undefined, time: string | null | undefined, onlyDepartures: boolean | null | undefined, limit: number | null | undefined, lat: number | null | undefined, lon: number | null | undefined, latSpan: number | null | undefined, lonSpan: number | null | undefined, radius: number | null | undefined, query: string | null | undefined, minResult: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<ArrivalsAndDeparturesForStopOTPMethodResponse> {
 			return this.http.get<ArrivalsAndDeparturesForStopOTPMethodResponse>(this.baseUri + dialect + '/api/where/arrivals-and-departures-for-stop?minutesBefore=' + minutesBefore + '&minutesAfter=' + minutesAfter + '&' + stopId?.map(z => `stopId=${encodeURIComponent(z)}`).join('&') + '&' + includeRouteId?.map(z => `includeRouteId=${encodeURIComponent(z)}`).join('&') + '&time=' + time + '&onlyDepartures=' + onlyDepartures + '&limit=' + limit + '&lat=' + lat + '&lon=' + lon + '&latSpan=' + latSpan + '&lonSpan=' + lonSpan + '&radius=' + radius + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&minResult=' + minResult + '&appVersion=' + (appVersion == null ? '' : encodeURIComponent(appVersion)) + '&version=' + version + '&' + includeReferences?.map(z => `includeReferences=${z}`).join('&') + '', {});
 		}
 
@@ -4773,14 +5657,15 @@ export namespace MyNS {
 
 		/**
 		 * Get {dialect}/api/where/metadata
-		 * @param {number} time A lekérés kiértékelésének időpontja epoch másodpercben (az aktív zavarok lekéréséhez szükséges).A szerver ideje az alapértelmezett értéke.
+		 * @param {string} time A lekérés kiértékelésének időpontja epoch másodpercben (az aktív zavarok lekéréséhez szükséges).A szerver ideje az alapértelmezett értéke.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
 		 * @param {Dialect} dialect Az API referenciáinak dialektusa.
 		 * @param {Array<ReferencesSchema>} includeReferences A referenciák típusát határozza meg. `true` vagy `COMPACT` esetén minden referencia szerepel, `false` esetén üres. `COMPACT` módban a route referenciák `description` mezője kihagyásra kerül.
 		 * @return {MetadataResponse} A szerver metaadataival tér vissza.
 		 */
-		GetMetadata(time: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<MetadataResponse> {
+		GetMetadata(time: string | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<MetadataResponse> {
 			return this.http.get<MetadataResponse>(this.baseUri + dialect + '/api/where/metadata?time=' + time + '&appVersion=' + (appVersion == null ? '' : encodeURIComponent(appVersion)) + '&version=' + version + '&' + includeReferences?.map(z => `includeReferences=${z}`).join('&') + '', {});
 		}
 
@@ -4827,11 +5712,15 @@ export namespace MyNS {
 		 * @param {boolean} arriveBy Érkezési időre tervezzünk-e a megadott `date` és `time` paraméterrel.
 		 * @param {boolean} wheelchair Az összes járat alacsonypadlós legyen-e.
 		 * @param {number} triangleSafetyFactor Kerékpáros háromszög módú tervezés esetén mennyire számít a biztonság. 0 és 1 közötti szám, és 1-et kell kiadnia a másik két faktor összegével.
+		 *     Type: double
 		 * @param {number} triangleSlopeFactor Kerékpáros háromszög módú tervezés esetén mennyire számít az útvonal síksága. 0 és 1 közötti szám, és 1-et kell kiadnia a másik két faktor összegével.
+		 *     Type: double
 		 * @param {number} triangleTimeFactor Kerékpáros háromszög módú tervezés esetén mennyire számít a gyorsaság. 0 és 1 közötti szám, és 1-et kell kiadnia a másik két faktor összegével.
+		 *     Type: double
 		 * @param {PlanAccessOptimize} optimize A kereső mire optimalizálja az útvonalakat.
 		 * @param {WalkProfile} walkProfile A séta sebességét meghatározó profil.
 		 * @param {number} numItineraries Legfeljebb hány útvonal szerepeljen a válaszban.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PlanTripResponse} A megadott paraméterekkel tervez megállóba útvonalat.
 		 */
 		PlanAccess(version: ApiVersion | null | undefined, appVersion: string | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined, date: string | null | undefined, time: string | null | undefined, fromPlace: string, toPlace: string, mode: Array<TraverseMode>, shouldBuyTickets: boolean | null | undefined, showIntermediateStops: boolean | null | undefined, arriveBy: boolean | null | undefined, wheelchair: boolean | null | undefined, triangleSafetyFactor: number | null | undefined, triangleSlopeFactor: number | null | undefined, triangleTimeFactor: number | null | undefined, optimize: PlanAccessOptimize | null | undefined, walkProfile: WalkProfile | null | undefined, numItineraries: number | null | undefined): Observable<PlanTripResponse> {
@@ -4854,11 +5743,15 @@ export namespace MyNS {
 		 * @param {boolean} arriveBy Érkezési időre tervezzünk-e a megadott `date` és `time` paraméterrel.
 		 * @param {boolean} wheelchair Az összes járat alacsonypadlós legyen-e.
 		 * @param {number} triangleSafetyFactor Kerékpáros háromszög módú tervezés esetén mennyire számít a biztonság. 0 és 1 közötti szám, és 1-et kell kiadnia a másik két faktor összegével.
+		 *     Type: double
 		 * @param {number} triangleSlopeFactor Kerékpáros háromszög módú tervezés esetén mennyire számít az útvonal síksága. 0 és 1 közötti szám, és 1-et kell kiadnia a másik két faktor összegével.
+		 *     Type: double
 		 * @param {number} triangleTimeFactor Kerékpáros háromszög módú tervezés esetén mennyire számít a gyorsaság. 0 és 1 közötti szám, és 1-et kell kiadnia a másik két faktor összegével.
+		 *     Type: double
 		 * @param {PlanAccessOptimize} optimize A kereső mire optimalizálja az útvonalakat.
 		 * @param {WalkProfile} walkProfile A séta sebességét meghatározó profil.
 		 * @param {number} numItineraries Legfeljebb hány útvonal szerepeljen a válaszban.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PlanTripResponse} A megadott paraméterekkel tervez útvonalat.
 		 */
 		PlanTrip(version: ApiVersion | null | undefined, appVersion: string | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined, date: string | null | undefined, time: string | null | undefined, fromPlace: string, toPlace: string, mode: Array<TraverseMode>, shouldBuyTickets: boolean | null | undefined, showIntermediateStops: boolean | null | undefined, arriveBy: boolean | null | undefined, wheelchair: boolean | null | undefined, triangleSafetyFactor: number | null | undefined, triangleSlopeFactor: number | null | undefined, triangleTimeFactor: number | null | undefined, optimize: PlanAccessOptimize | null | undefined, walkProfile: WalkProfile | null | undefined, numItineraries: number | null | undefined): Observable<PlanTripResponse> {
@@ -4928,8 +5821,11 @@ export namespace MyNS {
 		 * Get {dialect}/api/where/search
 		 * @param {string} query Szűrőfeltétel, amire illesztve vannak a zavarok, járatok és megállók.
 		 * @param {number} lat A látható térkép középpontjának szélessgéi koordinátája.
+		 *     Type: float
 		 * @param {number} lon A látható térkép középpontjának hosszúsági koordinátája.
+		 *     Type: float
 		 * @param {number} minResult A visszaadott elemek minimális száma.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
 		 * @param {Dialect} dialect Az API referenciáinak dialektusa.
@@ -4952,12 +5848,18 @@ export namespace MyNS {
 		/**
 		 * Get {dialect}/api/where/stops-for-location
 		 * @param {number} lat A helyszín középpontjának szélessgéi koordinátája.
+		 *     Type: float
 		 * @param {number} lon A helyszín középpontjának hosszúsági koordinátája.
+		 *     Type: float
 		 * @param {number} latSpan A lekérési terület szélességi íve. (Terület szélessége: `lat +/- latspan`).
+		 *     Type: float
 		 * @param {number} lonSpan A lekérési terület hosszúsági íve. (Terület hosszúsága: `lon +/- lonSpan`).
+		 *     Type: float
 		 * @param {number} radius Ha a `latSpan` vagy a `longSpan` nincs kitöltve, a keresési terület a középpontól számított `radius` méter távolság mind a négy irányban.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query A válasz szűrésére használt keresési kifejezés.
 		 * @param {number} minResult A visszaadott elemek minimális száma.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
 		 * @param {Dialect} dialect Az API referenciáinak dialektusa.
@@ -4970,7 +5872,8 @@ export namespace MyNS {
 
 		/**
 		 * Get {dialect}/api/where/ticketing-locations
-		 * @param {number} ifModifiedSince Csak azokat az elemeket adjuk vissza, amik módosultak az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ha nincs változás üres listákkal tér vissza. Elsőbbsége van a header paraméterrel szemben.
+		 * @param {string} ifModifiedSince Csak azokat az elemeket adjuk vissza, amik módosultak az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ha nincs változás üres listákkal tér vissza. Elsőbbsége van a header paraméterrel szemben.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} full Ha igaz, és az adat változott az `ifModifiedSince` query paraméterben megadott időpont óta, akkor az összes adat visszaadásra kerül. Ha nincs megadva csak a módosult elemek szerepelnek a válaszban. Csak az `ifModifiedSince` query paraméterrel együtt szerepelhet, mivel az `If-Modified-Since` fejléc minden esetben a teljes választ tartalmazza.
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
@@ -4978,7 +5881,7 @@ export namespace MyNS {
 		 * @param {Array<ReferencesSchema>} includeReferences A referenciák típusát határozza meg. `true` vagy `COMPACT` esetén minden referencia szerepel, `false` esetén üres. `COMPACT` módban a route referenciák `description` mezője kihagyásra kerül.
 		 * @return {TicketingMethodResponse} Visszaadja a jegyértékesítő helyeket és jegytípusokat.
 		 */
-		GetTicketingData(ifModifiedSince: number | null | undefined, full: boolean | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<TicketingMethodResponse> {
+		GetTicketingData(ifModifiedSince: string | null | undefined, full: boolean | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<TicketingMethodResponse> {
 			return this.http.get<TicketingMethodResponse>(this.baseUri + dialect + '/api/where/ticketing-locations?ifModifiedSince=' + ifModifiedSince + '&full=' + full + '&appVersion=' + (appVersion == null ? '' : encodeURIComponent(appVersion)) + '&version=' + version + '&' + includeReferences?.map(z => `includeReferences=${z}`).join('&') + '', {});
 		}
 
@@ -4987,14 +5890,15 @@ export namespace MyNS {
 		 * @param {string} vehicleId Amennyiben meg van adva, azon menet érkezik a válaszban, amit az adott jármű teljesít.
 		 * @param {string} tripId Ha nincs kitöltve a járműazonosító, az itt megadott azonosítóval rendelkező menet lesz a válaszban.
 		 * @param {string} date Ha nincs kitöltve a járműazonosító, ezen a dátumon lesz keresve az adott azonosítójú menet.
-		 * @param {number} ifModifiedSince Akkor adunk vissza adatot, ha az módosult az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ellenkező esetben HTTP 304 a válasz, ha nincs változás. Elsőbbsége van a header paraméterrel szemben.
+		 * @param {string} ifModifiedSince Akkor adunk vissza adatot, ha az módosult az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ellenkező esetben HTTP 304 a válasz, ha nincs változás. Elsőbbsége van a header paraméterrel szemben.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
 		 * @param {Dialect} dialect Az API referenciáinak dialektusa.
 		 * @param {Array<ReferencesSchema>} includeReferences A referenciák típusát határozza meg. `true` vagy `COMPACT` esetén minden referencia szerepel, `false` esetén üres. `COMPACT` módban a route referenciák `description` mezője kihagyásra kerül.
 		 * @return {TripDetailsOTPMethodResponse} Visszaadja a részletes információit egy menetnek, ami az azonosítója és a dátum alapján, vagy az azt teljesítő jármű azonosítója alapján lett lekérve.
 		 */
-		GetTripDetails(vehicleId: string | null | undefined, tripId: string | null | undefined, date: string | null | undefined, ifModifiedSince: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<TripDetailsOTPMethodResponse> {
+		GetTripDetails(vehicleId: string | null | undefined, tripId: string | null | undefined, date: string | null | undefined, ifModifiedSince: string | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<TripDetailsOTPMethodResponse> {
 			return this.http.get<TripDetailsOTPMethodResponse>(this.baseUri + dialect + '/api/where/trip-details?vehicleId=' + (vehicleId == null ? '' : encodeURIComponent(vehicleId)) + '&tripId=' + (tripId == null ? '' : encodeURIComponent(tripId)) + '&date=' + (date == null ? '' : encodeURIComponent(date)) + '&ifModifiedSince=' + ifModifiedSince + '&appVersion=' + (appVersion == null ? '' : encodeURIComponent(appVersion)) + '&version=' + version + '&' + includeReferences?.map(z => `includeReferences=${z}`).join('&') + '', {});
 		}
 
@@ -5002,14 +5906,15 @@ export namespace MyNS {
 		 * Get {dialect}/api/where/vehicle-for-trip
 		 * @param {Array<string>} tripId A lekért menetek azonosítói.
 		 * @param {Array<string>} date A lekért menetrendi napok. Alapértelmezetten az aktuális nap.
-		 * @param {number} ifModifiedSince Akkor adunk vissza adatot, ha az módosult az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ellenkező esetben HTTP 304 a válasz, ha nincs változás. Elsőbbsége van a header paraméterrel szemben.
+		 * @param {string} ifModifiedSince Akkor adunk vissza adatot, ha az módosult az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ellenkező esetben HTTP 304 a válasz, ha nincs változás. Elsőbbsége van a header paraméterrel szemben.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
 		 * @param {Dialect} dialect Az API referenciáinak dialektusa.
 		 * @param {Array<ReferencesSchema>} includeReferences A referenciák típusát határozza meg. `true` vagy `COMPACT` esetén minden referencia szerepel, `false` esetén üres. `COMPACT` módban a route referenciák `description` mezője kihagyásra kerül.
 		 * @return {VehicleForTripMethodResponse} Visszatér a megadott menetekhez és menetrendi napokhoz tartozó járművekkel.
 		 */
-		GetVehicleForTrip(tripId: Array<string>, date: Array<string> | null | undefined, ifModifiedSince: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<VehicleForTripMethodResponse> {
+		GetVehicleForTrip(tripId: Array<string>, date: Array<string> | null | undefined, ifModifiedSince: string | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<VehicleForTripMethodResponse> {
 			return this.http.get<VehicleForTripMethodResponse>(this.baseUri + dialect + '/api/where/vehicle-for-trip?' + tripId.map(z => `tripId=${encodeURIComponent(z)}`).join('&') + '&' + date?.map(z => `date=${encodeURIComponent(z)}`).join('&') + '&ifModifiedSince=' + ifModifiedSince + '&appVersion=' + (appVersion == null ? '' : encodeURIComponent(appVersion)) + '&version=' + version + '&' + includeReferences?.map(z => `includeReferences=${z}`).join('&') + '', {});
 		}
 
@@ -5017,18 +5922,24 @@ export namespace MyNS {
 		 * Get {dialect}/api/where/vehicles-for-location
 		 * @param {string} query A válasz listát szűrő feltétel, amit tartalmaznia kell a jármű azonosítójának, rendszámának vagy a típusának.
 		 * @param {number} lat A terület középpontjának szélességi koordinátája.
+		 *     Type: float
 		 * @param {number} lon A terület középpontjának hosszúsági koordinátája.
+		 *     Type: float
 		 * @param {number} latSpan A lekérési terület szélességi íve. (Terület szélessége: `lat +/- latspan`).
+		 *     Type: float
 		 * @param {number} lonSpan A lekérési terület hosszúsági íve. (Terület hosszúsága: `lon +/- lonSpan`).
+		 *     Type: float
 		 * @param {number} radius Ha a `latSpan` vagy a `longSpan` nincs kitöltve, a keresési terület a középpontól számított `radius` méter távolság mind a négy irányban.
-		 * @param {number} ifModifiedSince Akkor adunk vissza adatot, ha az módosult az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ellenkező esetben HTTP 304 a válasz, ha nincs változás. Elsőbbsége van a header paraméterrel szemben.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} ifModifiedSince Akkor adunk vissza adatot, ha az módosult az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ellenkező esetben HTTP 304 a válasz, ha nincs változás. Elsőbbsége van a header paraméterrel szemben.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
 		 * @param {Dialect} dialect Az API referenciáinak dialektusa.
 		 * @param {Array<ReferencesSchema>} includeReferences A referenciák típusát határozza meg. `true` vagy `COMPACT` esetén minden referencia szerepel, `false` esetén üres. `COMPACT` módban a route referenciák `description` mezője kihagyásra kerül.
 		 * @return {VehiclesForLocationMethodResponse} Visszatér az adott területen található összes járművel. Ha a `lat` vagy a `lon` null, az összes jármű benne lesz a válaszban.
 		 */
-		GetVehiclesForLocation(query: string | null | undefined, lat: number | null | undefined, lon: number | null | undefined, latSpan: number | null | undefined, lonSpan: number | null | undefined, radius: number | null | undefined, ifModifiedSince: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<VehiclesForLocationMethodResponse> {
+		GetVehiclesForLocation(query: string | null | undefined, lat: number | null | undefined, lon: number | null | undefined, latSpan: number | null | undefined, lonSpan: number | null | undefined, radius: number | null | undefined, ifModifiedSince: string | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<VehiclesForLocationMethodResponse> {
 			return this.http.get<VehiclesForLocationMethodResponse>(this.baseUri + dialect + '/api/where/vehicles-for-location?query=' + (query == null ? '' : encodeURIComponent(query)) + '&lat=' + lat + '&lon=' + lon + '&latSpan=' + latSpan + '&lonSpan=' + lonSpan + '&radius=' + radius + '&ifModifiedSince=' + ifModifiedSince + '&appVersion=' + (appVersion == null ? '' : encodeURIComponent(appVersion)) + '&version=' + version + '&' + includeReferences?.map(z => `includeReferences=${z}`).join('&') + '', {});
 		}
 
@@ -5036,28 +5947,30 @@ export namespace MyNS {
 		 * Get {dialect}/api/where/vehicles-for-route
 		 * @param {Array<string>} routeId A lekért járatok azonosítói.
 		 * @param {boolean} related Tartalmazza-e a válasz a kapcsolódó járatokat is a referenciákban.
-		 * @param {number} ifModifiedSince Akkor adunk vissza adatot, ha az módosult az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ellenkező esetben HTTP 304 a válasz, ha nincs változás. Elsőbbsége van a header paraméterrel szemben.
+		 * @param {string} ifModifiedSince Akkor adunk vissza adatot, ha az módosult az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ellenkező esetben HTTP 304 a válasz, ha nincs változás. Elsőbbsége van a header paraméterrel szemben.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
 		 * @param {Dialect} dialect Az API referenciáinak dialektusa.
 		 * @param {Array<ReferencesSchema>} includeReferences A referenciák típusát határozza meg. `true` vagy `COMPACT` esetén minden referencia szerepel, `false` esetén üres. `COMPACT` módban a route referenciák `description` mezője kihagyásra kerül.
 		 * @return {VehiclesForRouteMethodResponse} A megadott járat azonosítókhoz tartozó járművekkel tér vissza.
 		 */
-		GetVehiclesForRoute(routeId: Array<string>, related: boolean | null | undefined, ifModifiedSince: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<VehiclesForRouteMethodResponse> {
+		GetVehiclesForRoute(routeId: Array<string>, related: boolean | null | undefined, ifModifiedSince: string | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<VehiclesForRouteMethodResponse> {
 			return this.http.get<VehiclesForRouteMethodResponse>(this.baseUri + dialect + '/api/where/vehicles-for-route?' + routeId.map(z => `routeId=${encodeURIComponent(z)}`).join('&') + '&related=' + related + '&ifModifiedSince=' + ifModifiedSince + '&appVersion=' + (appVersion == null ? '' : encodeURIComponent(appVersion)) + '&version=' + version + '&' + includeReferences?.map(z => `includeReferences=${z}`).join('&') + '', {});
 		}
 
 		/**
 		 * Get {dialect}/api/where/vehicles-for-stop
 		 * @param {string} stopId A lekért megálló azonosítója.
-		 * @param {number} ifModifiedSince Akkor adunk vissza adatot, ha az módosult az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ellenkező esetben HTTP 304 a válasz, ha nincs változás. Elsőbbsége van a header paraméterrel szemben.
+		 * @param {string} ifModifiedSince Akkor adunk vissza adatot, ha az módosult az itt megadott időbélyeg (UNIX időbélyeg másodpercben) után. Ellenkező esetben HTTP 304 a válasz, ha nincs változás. Elsőbbsége van a header paraméterrel szemben.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} appVersion A kliensalkalmazás verziója.
 		 * @param {ApiVersion} version Az API verziója.
 		 * @param {Dialect} dialect Az API referenciáinak dialektusa.
 		 * @param {Array<ReferencesSchema>} includeReferences A referenciák típusát határozza meg. `true` vagy `COMPACT` esetén minden referencia szerepel, `false` esetén üres. `COMPACT` módban a route referenciák `description` mezője kihagyásra kerül.
 		 * @return {VehiclesForStopMethodResponse} Visszaadja az összes járművet, ami olyan menetet teljesít, ami tartalmazza a megadott megállót.
 		 */
-		GetVehiclesForStop(stopId: string, ifModifiedSince: number | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<VehiclesForStopMethodResponse> {
+		GetVehiclesForStop(stopId: string, ifModifiedSince: string | null | undefined, appVersion: string | null | undefined, version: ApiVersion | null | undefined, dialect: Dialect, includeReferences: Array<ReferencesSchema> | null | undefined): Observable<VehiclesForStopMethodResponse> {
 			return this.http.get<VehiclesForStopMethodResponse>(this.baseUri + dialect + '/api/where/vehicles-for-stop?stopId=' + (stopId == null ? '' : encodeURIComponent(stopId)) + '&ifModifiedSince=' + ifModifiedSince + '&appVersion=' + (appVersion == null ? '' : encodeURIComponent(appVersion)) + '&version=' + version + '&' + includeReferences?.map(z => `includeReferences=${z}`).join('&') + '', {});
 		}
 	}

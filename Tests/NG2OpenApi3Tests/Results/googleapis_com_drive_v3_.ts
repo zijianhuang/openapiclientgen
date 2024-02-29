@@ -414,13 +414,22 @@ export namespace MyNS {
 		/** The ID of an image file in Google Drive to use for the background image. */
 		id?: string | null;
 
-		/** The width of the cropped image in the closed range of 0 to 1. This value represents the width of the cropped image divided by the width of the entire image. The height is computed by applying a width to height aspect ratio of 80 to 9. The resulting image must be at least 1280 pixels wide and 144 pixels high. */
+		/**
+		 * The width of the cropped image in the closed range of 0 to 1. This value represents the width of the cropped image divided by the width of the entire image. The height is computed by applying a width to height aspect ratio of 80 to 9. The resulting image must be at least 1280 pixels wide and 144 pixels high.
+		 * Type: float
+		 */
 		width?: number | null;
 
-		/** The X coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the horizontal distance from the left side of the entire image to the left side of the cropping area divided by the width of the entire image. */
+		/**
+		 * The X coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the horizontal distance from the left side of the entire image to the left side of the cropping area divided by the width of the entire image.
+		 * Type: float
+		 */
 		xCoordinate?: number | null;
 
-		/** The Y coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the vertical distance from the top side of the entire image to the top side of the cropping area divided by the height of the entire image. */
+		/**
+		 * The Y coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the vertical distance from the top side of the entire image to the top side of the cropping area divided by the height of the entire image.
+		 * Type: float
+		 */
 		yCoordinate?: number | null;
 	}
 	export interface DriveBackgroundImageFileFormProperties {
@@ -428,13 +437,22 @@ export namespace MyNS {
 		/** The ID of an image file in Google Drive to use for the background image. */
 		id: FormControl<string | null | undefined>,
 
-		/** The width of the cropped image in the closed range of 0 to 1. This value represents the width of the cropped image divided by the width of the entire image. The height is computed by applying a width to height aspect ratio of 80 to 9. The resulting image must be at least 1280 pixels wide and 144 pixels high. */
+		/**
+		 * The width of the cropped image in the closed range of 0 to 1. This value represents the width of the cropped image divided by the width of the entire image. The height is computed by applying a width to height aspect ratio of 80 to 9. The resulting image must be at least 1280 pixels wide and 144 pixels high.
+		 * Type: float
+		 */
 		width: FormControl<number | null | undefined>,
 
-		/** The X coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the horizontal distance from the left side of the entire image to the left side of the cropping area divided by the width of the entire image. */
+		/**
+		 * The X coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the horizontal distance from the left side of the entire image to the left side of the cropping area divided by the width of the entire image.
+		 * Type: float
+		 */
 		xCoordinate: FormControl<number | null | undefined>,
 
-		/** The Y coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the vertical distance from the top side of the entire image to the top side of the cropping area divided by the height of the entire image. */
+		/**
+		 * The Y coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the vertical distance from the top side of the entire image to the top side of the cropping area divided by the height of the entire image.
+		 * Type: float
+		 */
 		yCoordinate: FormControl<number | null | undefined>,
 	}
 	export function CreateDriveBackgroundImageFileFormGroup() {
@@ -1440,7 +1458,10 @@ export namespace MyNS {
 
 	export interface FileImageMediaMetadata {
 
-		/** Output only. The aperture used to create the photo (f-number). */
+		/**
+		 * Output only. The aperture used to create the photo (f-number).
+		 * Type: float
+		 */
 		aperture?: number | null;
 
 		/** Output only. The make of the camera used to create the photo. */
@@ -1452,25 +1473,40 @@ export namespace MyNS {
 		/** Output only. The color space of the photo. */
 		colorSpace?: string | null;
 
-		/** Output only. The exposure bias of the photo (APEX value). */
+		/**
+		 * Output only. The exposure bias of the photo (APEX value).
+		 * Type: float
+		 */
 		exposureBias?: number | null;
 
 		/** Output only. The exposure mode used to create the photo. */
 		exposureMode?: string | null;
 
-		/** Output only. The length of the exposure, in seconds. */
+		/**
+		 * Output only. The length of the exposure, in seconds.
+		 * Type: float
+		 */
 		exposureTime?: number | null;
 
 		/** Output only. Whether a flash was used to create the photo. */
 		flashUsed?: boolean | null;
 
-		/** Output only. The focal length used to create the photo, in millimeters. */
+		/**
+		 * Output only. The focal length used to create the photo, in millimeters.
+		 * Type: float
+		 */
 		focalLength?: number | null;
 
-		/** Output only. The height of the image in pixels. */
+		/**
+		 * Output only. The height of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** Output only. The ISO speed used to create the photo. */
+		/**
+		 * Output only. The ISO speed used to create the photo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		isoSpeed?: number | null;
 
 		/** Output only. The lens used to create the photo. */
@@ -1479,19 +1515,28 @@ export namespace MyNS {
 		/** Output only. Geographic location information stored in the image. */
 		location?: FileImageMediaMetadataLocation;
 
-		/** Output only. The smallest f-number of the lens at the focal length used to create the photo (APEX value). */
+		/**
+		 * Output only. The smallest f-number of the lens at the focal length used to create the photo (APEX value).
+		 * Type: float
+		 */
 		maxApertureValue?: number | null;
 
 		/** Output only. The metering mode used to create the photo. */
 		meteringMode?: string | null;
 
-		/** Output only. The number of clockwise 90 degree rotations applied from the image's original orientation. */
+		/**
+		 * Output only. The number of clockwise 90 degree rotations applied from the image's original orientation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rotation?: number | null;
 
 		/** Output only. The type of sensor used to create the photo. */
 		sensor?: string | null;
 
-		/** Output only. The distance to the subject of the photo, in meters. */
+		/**
+		 * Output only. The distance to the subject of the photo, in meters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subjectDistance?: number | null;
 
 		/** Output only. The date and time the photo was taken (EXIF DateTime). */
@@ -1500,12 +1545,18 @@ export namespace MyNS {
 		/** Output only. The white balance mode used to create the photo. */
 		whiteBalance?: string | null;
 
-		/** Output only. The width of the image in pixels. */
+		/**
+		 * Output only. The width of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface FileImageMediaMetadataFormProperties {
 
-		/** Output only. The aperture used to create the photo (f-number). */
+		/**
+		 * Output only. The aperture used to create the photo (f-number).
+		 * Type: float
+		 */
 		aperture: FormControl<number | null | undefined>,
 
 		/** Output only. The make of the camera used to create the photo. */
@@ -1517,43 +1568,67 @@ export namespace MyNS {
 		/** Output only. The color space of the photo. */
 		colorSpace: FormControl<string | null | undefined>,
 
-		/** Output only. The exposure bias of the photo (APEX value). */
+		/**
+		 * Output only. The exposure bias of the photo (APEX value).
+		 * Type: float
+		 */
 		exposureBias: FormControl<number | null | undefined>,
 
 		/** Output only. The exposure mode used to create the photo. */
 		exposureMode: FormControl<string | null | undefined>,
 
-		/** Output only. The length of the exposure, in seconds. */
+		/**
+		 * Output only. The length of the exposure, in seconds.
+		 * Type: float
+		 */
 		exposureTime: FormControl<number | null | undefined>,
 
 		/** Output only. Whether a flash was used to create the photo. */
 		flashUsed: FormControl<boolean | null | undefined>,
 
-		/** Output only. The focal length used to create the photo, in millimeters. */
+		/**
+		 * Output only. The focal length used to create the photo, in millimeters.
+		 * Type: float
+		 */
 		focalLength: FormControl<number | null | undefined>,
 
-		/** Output only. The height of the image in pixels. */
+		/**
+		 * Output only. The height of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Output only. The ISO speed used to create the photo. */
+		/**
+		 * Output only. The ISO speed used to create the photo.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		isoSpeed: FormControl<number | null | undefined>,
 
 		/** Output only. The lens used to create the photo. */
 		lens: FormControl<string | null | undefined>,
 
-		/** Output only. The smallest f-number of the lens at the focal length used to create the photo (APEX value). */
+		/**
+		 * Output only. The smallest f-number of the lens at the focal length used to create the photo (APEX value).
+		 * Type: float
+		 */
 		maxApertureValue: FormControl<number | null | undefined>,
 
 		/** Output only. The metering mode used to create the photo. */
 		meteringMode: FormControl<string | null | undefined>,
 
-		/** Output only. The number of clockwise 90 degree rotations applied from the image's original orientation. */
+		/**
+		 * Output only. The number of clockwise 90 degree rotations applied from the image's original orientation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rotation: FormControl<number | null | undefined>,
 
 		/** Output only. The type of sensor used to create the photo. */
 		sensor: FormControl<string | null | undefined>,
 
-		/** Output only. The distance to the subject of the photo, in meters. */
+		/**
+		 * Output only. The distance to the subject of the photo, in meters.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subjectDistance: FormControl<number | null | undefined>,
 
 		/** Output only. The date and time the photo was taken (EXIF DateTime). */
@@ -1562,7 +1637,10 @@ export namespace MyNS {
 		/** Output only. The white balance mode used to create the photo. */
 		whiteBalance: FormControl<string | null | undefined>,
 
-		/** Output only. The width of the image in pixels. */
+		/**
+		 * Output only. The width of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateFileImageMediaMetadataFormGroup() {
@@ -1593,24 +1671,42 @@ export namespace MyNS {
 
 	export interface FileImageMediaMetadataLocation {
 
-		/** Output only. The altitude stored in the image. */
+		/**
+		 * Output only. The altitude stored in the image.
+		 * Type: double
+		 */
 		altitude?: number | null;
 
-		/** Output only. The latitude stored in the image. */
+		/**
+		 * Output only. The latitude stored in the image.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Output only. The longitude stored in the image. */
+		/**
+		 * Output only. The longitude stored in the image.
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 	export interface FileImageMediaMetadataLocationFormProperties {
 
-		/** Output only. The altitude stored in the image. */
+		/**
+		 * Output only. The altitude stored in the image.
+		 * Type: double
+		 */
 		altitude: FormControl<number | null | undefined>,
 
-		/** Output only. The latitude stored in the image. */
+		/**
+		 * Output only. The latitude stored in the image.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Output only. The longitude stored in the image. */
+		/**
+		 * Output only. The longitude stored in the image.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateFileImageMediaMetadataLocationFormGroup() {
@@ -1974,10 +2070,16 @@ export namespace MyNS {
 		/** Output only. The duration of the video in milliseconds. */
 		durationMillis?: string | null;
 
-		/** Output only. The height of the video in pixels. */
+		/**
+		 * Output only. The height of the video in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** Output only. The width of the video in pixels. */
+		/**
+		 * Output only. The width of the video in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface FileVideoMediaMetadataFormProperties {
@@ -1985,10 +2087,16 @@ export namespace MyNS {
 		/** Output only. The duration of the video in milliseconds. */
 		durationMillis: FormControl<string | null | undefined>,
 
-		/** Output only. The height of the video in pixels. */
+		/**
+		 * Output only. The height of the video in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Output only. The width of the video in pixels. */
+		/**
+		 * Output only. The width of the video in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateFileVideoMediaMetadataFormGroup() {
@@ -2084,13 +2192,22 @@ export namespace MyNS {
 		/** The ID of an image file in Drive to use for the background image. */
 		id?: string | null;
 
-		/** The width of the cropped image in the closed range of 0 to 1. This value represents the width of the cropped image divided by the width of the entire image. The height is computed by applying a width to height aspect ratio of 80 to 9. The resulting image must be at least 1280 pixels wide and 144 pixels high. */
+		/**
+		 * The width of the cropped image in the closed range of 0 to 1. This value represents the width of the cropped image divided by the width of the entire image. The height is computed by applying a width to height aspect ratio of 80 to 9. The resulting image must be at least 1280 pixels wide and 144 pixels high.
+		 * Type: float
+		 */
 		width?: number | null;
 
-		/** The X coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the horizontal distance from the left side of the entire image to the left side of the cropping area divided by the width of the entire image. */
+		/**
+		 * The X coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the horizontal distance from the left side of the entire image to the left side of the cropping area divided by the width of the entire image.
+		 * Type: float
+		 */
 		xCoordinate?: number | null;
 
-		/** The Y coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the vertical distance from the top side of the entire image to the top side of the cropping area divided by the height of the entire image. */
+		/**
+		 * The Y coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the vertical distance from the top side of the entire image to the top side of the cropping area divided by the height of the entire image.
+		 * Type: float
+		 */
 		yCoordinate?: number | null;
 	}
 	export interface TeamDriveBackgroundImageFileFormProperties {
@@ -2098,13 +2215,22 @@ export namespace MyNS {
 		/** The ID of an image file in Drive to use for the background image. */
 		id: FormControl<string | null | undefined>,
 
-		/** The width of the cropped image in the closed range of 0 to 1. This value represents the width of the cropped image divided by the width of the entire image. The height is computed by applying a width to height aspect ratio of 80 to 9. The resulting image must be at least 1280 pixels wide and 144 pixels high. */
+		/**
+		 * The width of the cropped image in the closed range of 0 to 1. This value represents the width of the cropped image divided by the width of the entire image. The height is computed by applying a width to height aspect ratio of 80 to 9. The resulting image must be at least 1280 pixels wide and 144 pixels high.
+		 * Type: float
+		 */
 		width: FormControl<number | null | undefined>,
 
-		/** The X coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the horizontal distance from the left side of the entire image to the left side of the cropping area divided by the width of the entire image. */
+		/**
+		 * The X coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the horizontal distance from the left side of the entire image to the left side of the cropping area divided by the width of the entire image.
+		 * Type: float
+		 */
 		xCoordinate: FormControl<number | null | undefined>,
 
-		/** The Y coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the vertical distance from the top side of the entire image to the top side of the cropping area divided by the height of the entire image. */
+		/**
+		 * The Y coordinate of the upper left corner of the cropping area in the background image. This is a value in the closed range of 0 to 1. This value represents the vertical distance from the top side of the entire image to the top side of the cropping area divided by the height of the entire image.
+		 * Type: float
+		 */
 		yCoordinate: FormControl<number | null | undefined>,
 	}
 	export function CreateTeamDriveBackgroundImageFileFormGroup() {
@@ -3204,6 +3330,7 @@ export namespace MyNS {
 		 * @param {boolean} includeRemoved Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
 		 * @param {boolean} includeTeamDriveItems Deprecated: Use `includeItemsFromAllDrives` instead.
 		 * @param {number} pageSize The maximum number of changes to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {boolean} restrictToMyDrive Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.
 		 * @param {string} spaces A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.
 		 * @param {boolean} supportsAllDrives Whether the requesting application supports both My Drives and shared drives.
@@ -3240,6 +3367,7 @@ export namespace MyNS {
 		 * @param {boolean} includeRemoved Whether to include changes indicating that items have been removed from the list of changes, for example by deletion or loss of access.
 		 * @param {boolean} includeTeamDriveItems Deprecated: Use `includeItemsFromAllDrives` instead.
 		 * @param {number} pageSize The maximum number of changes to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {boolean} restrictToMyDrive Whether to restrict the results to changes inside the My Drive hierarchy. This omits changes to files such as those in the Application Data folder or shared files which have not been added to My Drive.
 		 * @param {string} spaces A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.
 		 * @param {boolean} supportsAllDrives Whether the requesting application supports both My Drives and shared drives.
@@ -3264,6 +3392,7 @@ export namespace MyNS {
 		 * Lists the user's shared drives. This method accepts the `q` parameter, which is a search query combining one or more search terms. For more information, see the [Search for shared drives](/drive/api/guides/search-shareddrives) guide.
 		 * Get drives
 		 * @param {number} pageSize Maximum number of shared drives to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pageToken Page token for shared drives.
 		 * @param {string} q Query string for searching shared drives.
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then all shared drives of the domain in which the requester is an administrator are returned.
@@ -3349,6 +3478,7 @@ export namespace MyNS {
 		 * @param {boolean} includeTeamDriveItems Deprecated: Use `includeItemsFromAllDrives` instead.
 		 * @param {string} orderBy A comma-separated list of sort keys. Valid keys are 'createdTime', 'folder', 'modifiedByMeTime', 'modifiedTime', 'name', 'name_natural', 'quotaBytesUsed', 'recency', 'sharedWithMeTime', 'starred', and 'viewedByMeTime'. Each key sorts ascending by default, but can be reversed with the 'desc' modifier. Example usage: ?orderBy=folder,modifiedTime desc,name.
 		 * @param {number} pageSize The maximum number of files to return per page. Partial or empty result pages are possible even before the end of the files list has been reached.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.
 		 * @param {string} q A query for filtering the file results. See the "Search for files & folders" guide for supported syntax.
 		 * @param {string} spaces A comma-separated list of spaces to query within the corpora. Supported values are 'drive' and 'appDataFolder'.
@@ -3365,6 +3495,7 @@ export namespace MyNS {
 		 * Generates a set of file IDs which can be provided in create or copy requests.
 		 * Get files/generateIds
 		 * @param {number} count The number of IDs to return.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} space The space in which the IDs can be used to create new files. Supported values are 'drive' and 'appDataFolder'. (Default: 'drive')
 		 * @param {string} type The type of items which the IDs can be used for. Supported values are 'files' and 'shortcuts'. Note that 'shortcuts' are only supported in the `drive` 'space'. (Default: 'files')
 		 * @return {GeneratedIds} Successful response
@@ -3418,6 +3549,7 @@ export namespace MyNS {
 		 * @param {string} fileId The ID of the file.
 		 * @param {boolean} includeDeleted Whether to include deleted comments. Deleted comments will not include their original content.
 		 * @param {number} pageSize The maximum number of comments to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.
 		 * @param {string} startModifiedTime The minimum value of 'modifiedTime' for the result comments (RFC 3339 date-time).
 		 * @return {CommentList} Successful response
@@ -3477,6 +3609,7 @@ export namespace MyNS {
 		 * @param {string} commentId The ID of the comment.
 		 * @param {boolean} includeDeleted Whether to include deleted replies. Deleted replies will not include their original content.
 		 * @param {number} pageSize The maximum number of replies to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.
 		 * @return {ReplyList} Successful response
 		 */
@@ -3566,6 +3699,7 @@ export namespace MyNS {
 		 * Get files/{fileId}/listLabels
 		 * @param {string} fileId The ID for the file.
 		 * @param {number} maxResults The maximum number of labels to return per page. When not set, defaults to 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.
 		 * @return {LabelList} Successful response
 		 */
@@ -3589,6 +3723,7 @@ export namespace MyNS {
 		 * @param {string} fileId The ID of the file or shared drive.
 		 * @param {string} includePermissionsForView Specifies which additional view's permissions to include in the response. Only 'published' is supported.
 		 * @param {number} pageSize The maximum number of permissions to return per page. When not set for files in a shared drive, at most 100 results will be returned. When not set for files that are not in a shared drive, the entire list will be returned.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.
 		 * @param {boolean} supportsAllDrives Whether the requesting application supports both My Drives and shared drives.
 		 * @param {boolean} supportsTeamDrives Deprecated: Use `supportsAllDrives` instead.
@@ -3666,6 +3801,7 @@ export namespace MyNS {
 		 * Get files/{fileId}/revisions
 		 * @param {string} fileId The ID of the file.
 		 * @param {number} pageSize The maximum number of revisions to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pageToken The token for continuing a previous list request on the next page. This should be set to the value of 'nextPageToken' from the previous response.
 		 * @return {RevisionList} Successful response
 		 */
@@ -3726,6 +3862,7 @@ export namespace MyNS {
 		 * Deprecated: Use `drives.list` instead.
 		 * Get teamdrives
 		 * @param {number} pageSize Maximum number of Team Drives to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pageToken Page token for Team Drives.
 		 * @param {string} q Query string for searching Team Drives.
 		 * @param {boolean} useDomainAdminAccess Issue the request as a domain administrator; if set to true, then all Team Drives of the domain in which the requester is an administrator are returned.

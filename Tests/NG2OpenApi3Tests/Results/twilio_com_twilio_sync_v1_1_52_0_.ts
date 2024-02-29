@@ -7,8 +7,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -30,7 +30,10 @@ export namespace MyNS {
 		/** Whether every `endpoint_disconnected` event should occur after a configurable delay. The default is `false`, where the `endpoint_disconnected` event occurs immediately after disconnection. When `true`, intervening reconnections can prevent the `endpoint_disconnected` event. */
 		reachability_debouncing_enabled?: boolean | null;
 
-		/** The reachability event delay in milliseconds if `reachability_debouncing_enabled` = `true`.  Must be between 1,000 and 30,000 and defaults to 5,000. This is the number of milliseconds after the last running client disconnects, and a Sync identity is declared offline, before `webhook_url` is called, if all endpoints remain offline. A reconnection from the same identity by any endpoint during this interval prevents the reachability event from occurring. */
+		/**
+		 * The reachability event delay in milliseconds if `reachability_debouncing_enabled` = `true`.  Must be between 1,000 and 30,000 and defaults to 5,000. This is the number of milliseconds after the last running client disconnects, and a Sync identity is declared offline, before `webhook_url` is called, if all endpoints remain offline. A reconnection from the same identity by any endpoint during this interval prevents the reachability event from occurring.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reachability_debouncing_window?: number | null;
 
 		/** Whether the service instance calls `webhook_url` when client endpoints connect to Sync. The default is `false`. */
@@ -38,8 +41,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -59,8 +62,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -82,7 +85,10 @@ export namespace MyNS {
 		/** Whether every `endpoint_disconnected` event should occur after a configurable delay. The default is `false`, where the `endpoint_disconnected` event occurs immediately after disconnection. When `true`, intervening reconnections can prevent the `endpoint_disconnected` event. */
 		reachability_debouncing_enabled: FormControl<boolean | null | undefined>,
 
-		/** The reachability event delay in milliseconds if `reachability_debouncing_enabled` = `true`.  Must be between 1,000 and 30,000 and defaults to 5,000. This is the number of milliseconds after the last running client disconnects, and a Sync identity is declared offline, before `webhook_url` is called, if all endpoints remain offline. A reconnection from the same identity by any endpoint during this interval prevents the reachability event from occurring. */
+		/**
+		 * The reachability event delay in milliseconds if `reachability_debouncing_enabled` = `true`.  Must be between 1,000 and 30,000 and defaults to 5,000. This is the number of milliseconds after the last running client disconnects, and a Sync identity is declared offline, before `webhook_url` is called, if all endpoints remain offline. A reconnection from the same identity by any endpoint during this interval prevents the reachability event from occurring.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reachability_debouncing_window: FormControl<number | null | undefined>,
 
 		/** Whether the service instance calls `webhook_url` when client endpoints connect to Sync. The default is `false`. */
@@ -90,8 +96,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -131,8 +137,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Document resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -159,15 +165,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Document resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -181,8 +187,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Document resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -209,15 +215,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Document resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -249,15 +255,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Document Permission resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the Sync Document to which the Document Permission applies.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		document_sid?: string | null;
 
@@ -272,8 +278,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
@@ -287,15 +293,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Document Permission resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Sync Document to which the Document Permission applies.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		document_sid: FormControl<string | null | undefined>,
 
@@ -310,8 +316,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
@@ -339,8 +345,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync List resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -364,15 +370,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Sync List resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -386,8 +392,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync List resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -411,15 +417,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Sync List resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -450,8 +456,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the List Item resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -470,13 +476,16 @@ export namespace MyNS {
 		/** The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. */
 		date_updated?: Date | null;
 
-		/** The automatically generated index of the List Item. The `index` values of the List Items in a Sync List can have gaps in their sequence. */
+		/**
+		 * The automatically generated index of the List Item. The `index` values of the List Items in a Sync List can have gaps in their sequence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/**
 		 * The SID of the Sync List that contains the List Item.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		list_sid?: string | null;
 
@@ -485,8 +494,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
@@ -497,8 +506,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the List Item resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -517,13 +526,16 @@ export namespace MyNS {
 		/** The date and time in GMT when the resource was last updated specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format. */
 		date_updated: FormControl<Date | null | undefined>,
 
-		/** The automatically generated index of the List Item. The `index` values of the List Items in a Sync List can have gaps in their sequence. */
+		/**
+		 * The automatically generated index of the List Item. The `index` values of the List Items in a Sync List can have gaps in their sequence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/**
 		 * The SID of the Sync List that contains the List Item.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		list_sid: FormControl<string | null | undefined>,
 
@@ -532,8 +544,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
@@ -561,8 +573,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync List Permission resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -571,8 +583,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Sync List to which the Permission applies.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		list_sid?: string | null;
 
@@ -584,8 +596,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
@@ -599,8 +611,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync List Permission resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -609,8 +621,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Sync List to which the Permission applies.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		list_sid: FormControl<string | null | undefined>,
 
@@ -622,8 +634,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
@@ -651,8 +663,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync Map resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -676,15 +688,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Sync Map resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -698,8 +710,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync Map resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -723,15 +735,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Sync Map resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -762,8 +774,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Map Item resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -787,8 +799,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Sync Map that contains the Map Item.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		map_sid?: string | null;
 
@@ -797,8 +809,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
@@ -809,8 +821,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Map Item resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -834,8 +846,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Sync Map that contains the Map Item.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		map_sid: FormControl<string | null | undefined>,
 
@@ -844,8 +856,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
@@ -873,8 +885,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync Map Permission resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -886,8 +898,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Sync Map to which the Permission applies.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		map_sid?: string | null;
 
@@ -896,8 +908,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
@@ -911,8 +923,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync Map Permission resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -924,8 +936,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Sync Map to which the Permission applies.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		map_sid: FormControl<string | null | undefined>,
 
@@ -934,8 +946,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
@@ -963,8 +975,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync Stream resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -985,15 +997,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Sync Stream resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -1007,8 +1019,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sync Stream resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -1029,15 +1041,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Sync Stream resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -1070,8 +1082,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Stream Message resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 	}
@@ -1082,8 +1094,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Stream Message resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 	}
@@ -1111,7 +1123,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListServiceReturn} OK
 		 */
@@ -1123,7 +1137,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Documents
 		 * @param {string} ServiceSid The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Document resources to read.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListDocumentReturn} OK
 		 */
@@ -1137,7 +1153,9 @@ export namespace MyNS {
 		 * @param {string} ServiceSid The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Document Permission resources to read.
 		 * @param {string} DocumentSid The SID of the Sync Document with the Document Permission resources to read. Can be the Document resource's `sid` or its `unique_name`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListDocumentPermissionReturn} OK
 		 */
@@ -1193,7 +1211,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Lists
 		 * @param {string} ServiceSid The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Sync List resources to read.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSyncListReturn} OK
 		 */
@@ -1209,7 +1229,9 @@ export namespace MyNS {
 		 * @param {string} From The `index` of the first Sync List Item resource to read. See also `bounds`.
 		 * @param {Sync_list_item_enum_query_from_bound_type} Bounds Whether to include the List Item referenced by the `from` parameter. Can be: `inclusive` to include the List Item referenced by the `from` parameter or `exclusive` to start with the next List Item. The default value is `inclusive`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSyncListItemReturn} OK
 		 */
@@ -1222,6 +1244,7 @@ export namespace MyNS {
 		 * @param {string} ServiceSid The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Sync List Item resource to delete.
 		 * @param {string} ListSid The SID of the Sync List with the Sync List Item resource to delete. Can be the Sync List resource's `sid` or its `unique_name`.
 		 * @param {number} Index The index of the Sync List Item resource to delete.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteSyncListItem(ServiceSid: string, ListSid: string, Index: number): Observable<HttpResponse<string>> {
@@ -1233,6 +1256,7 @@ export namespace MyNS {
 		 * @param {string} ServiceSid The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Sync List Item resource to fetch.
 		 * @param {string} ListSid The SID of the Sync List with the Sync List Item resource to fetch. Can be the Sync List resource's `sid` or its `unique_name`.
 		 * @param {number} Index The index of the Sync List Item resource to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Syncv1servicesync_listsync_list_item} OK
 		 */
 		FetchSyncListItem(ServiceSid: string, ListSid: string, Index: number): Observable<Syncv1servicesync_listsync_list_item> {
@@ -1245,7 +1269,9 @@ export namespace MyNS {
 		 * @param {string} ServiceSid The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Sync List Permission resources to read.
 		 * @param {string} ListSid The SID of the Sync List with the Sync List Permission resources to read. Can be the Sync List resource's `sid` or its `unique_name`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSyncListPermissionReturn} OK
 		 */
@@ -1301,7 +1327,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Maps
 		 * @param {string} ServiceSid The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Sync Map resources to read.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSyncMapReturn} OK
 		 */
@@ -1317,7 +1345,9 @@ export namespace MyNS {
 		 * @param {string} From The `key` of the first Sync Map Item resource to read. See also `bounds`.
 		 * @param {Sync_list_item_enum_query_from_bound_type} Bounds Whether to include the Map Item referenced by the `from` parameter. Can be: `inclusive` to include the Map Item referenced by the `from` parameter or `exclusive` to start with the next Map Item. The default value is `inclusive`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSyncMapItemReturn} OK
 		 */
@@ -1353,7 +1383,9 @@ export namespace MyNS {
 		 * @param {string} ServiceSid The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Sync Map Permission resources to read. Can be the Service's `sid` value or `default`.
 		 * @param {string} MapSid The SID of the Sync Map with the Permission resources to read. Can be the Sync Map resource's `sid` or its `unique_name`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSyncMapPermissionReturn} OK
 		 */
@@ -1410,7 +1442,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Streams
 		 * @param {string} ServiceSid The SID of the [Sync Service](https://www.twilio.com/docs/sync/api/service) with the Stream resources to read.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSyncStreamReturn} OK
 		 */
@@ -1475,7 +1509,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1484,7 +1522,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1518,7 +1560,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1527,7 +1573,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1561,7 +1611,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1570,7 +1624,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1604,7 +1662,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1613,7 +1675,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1647,7 +1713,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1656,7 +1726,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1690,7 +1764,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1699,7 +1777,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1733,7 +1815,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1742,7 +1828,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1776,7 +1866,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1785,7 +1879,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1819,7 +1917,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1828,7 +1930,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1862,7 +1968,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1871,7 +1981,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

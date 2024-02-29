@@ -616,7 +616,10 @@ export namespace MyNS {
 
 	export interface IFrameActionBody {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: number;
 		label?: string | null;
 
@@ -629,12 +632,18 @@ export namespace MyNS {
 		/** Required */
 		url: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: number;
 	}
 	export interface IFrameActionBodyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 		label: FormControl<string | null | undefined>,
 
@@ -644,7 +653,10 @@ export namespace MyNS {
 		/** Required */
 		url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateIFrameActionBodyFormGroup() {
@@ -678,6 +690,7 @@ export namespace MyNS {
 		/**
 		 * The total number of card properties that will be sent in this response.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: number;
 	}
@@ -695,6 +708,7 @@ export namespace MyNS {
 		/**
 		 * The total number of card properties that will be sent in this response.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
@@ -804,6 +818,7 @@ export namespace MyNS {
 		 * Returns a list of cards for a given app.
 		 * Get crm/v3/extensions/cards/{appId}
 		 * @param {number} appId The ID of the target app.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CardListResponse} successful operation
 		 */
 		Get_SlashcrmSlashv3SlashextensionsSlashcardsSlashappId_getAll(appId: number): Observable<CardListResponse> {
@@ -815,6 +830,7 @@ export namespace MyNS {
 		 * Defines a new card that will become active on an account when this app is installed.
 		 * Post crm/v3/extensions/cards/{appId}
 		 * @param {number} appId The ID of the target app.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CardCreateRequest} requestBody The new card definition.
 		 * @return {void} 
 		 */
@@ -827,6 +843,7 @@ export namespace MyNS {
 		 * Permanently deletes a card definition with the given ID. Once deleted, data fetch requests for this card will no longer be sent to your service. This can't be undone.
 		 * Delete crm/v3/extensions/cards/{appId}/{cardId}
 		 * @param {number} appId The ID of the target app.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} cardId The ID of the card to delete.
 		 * @return {void} 
 		 */
@@ -839,6 +856,7 @@ export namespace MyNS {
 		 * Returns the definition for a card with the given ID.
 		 * Get crm/v3/extensions/cards/{appId}/{cardId}
 		 * @param {number} appId The ID of the target app.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} cardId The ID of the target card.
 		 * @return {CardResponse} successful operation
 		 */
@@ -851,6 +869,7 @@ export namespace MyNS {
 		 * Update a card definition with new details.
 		 * Patch crm/v3/extensions/cards/{appId}/{cardId}
 		 * @param {number} appId The ID of the target app.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} cardId The ID of the card to update.
 		 * @param {CardPatchRequest} requestBody Card definition fields to be updated.
 		 * @return {CardResponse} successful operation

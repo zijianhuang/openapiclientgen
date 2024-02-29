@@ -2191,6 +2191,7 @@ export namespace MyNS {
 		 * @param {string} runId The run Id associated with the Assets.
 		 * @param {string} name The object name.
 		 * @param {number} count The number of items to retrieve in a page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} skipToken The continuation token to retrieve the next page.
 		 * @param {string} tags A set of tags with which to filter the returned models.
 		 *             It is a comma separated string of tags key or tags key=value
@@ -2264,6 +2265,7 @@ export namespace MyNS {
 		 *             It is a comma separated string of properties key and/or properties key=value
 		 *             Example: propKey1,propKey2,propKey3=value3
 		 * @param {number} count The number of items to retrieve in a page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} skipToken The continuation token to retrieve the next page.
 		 * @param {Assets_ListQueryOrderby} orderBy The option to order the response.
 		 * @return {PaginatedProfileResponseList} Success
@@ -2313,6 +2315,7 @@ export namespace MyNS {
 		 * @param {string} framework The framework.
 		 * @param {string} description The object description.
 		 * @param {number} count The number of items to retrieve in a page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} skipToken The continuation token to retrieve the next page.
 		 * @param {string} tags A set of tags with which to filter the returned models.
 		 *             It is a comma separated string of tags key or tags key=value
@@ -2413,6 +2416,7 @@ export namespace MyNS {
 		 * @param {string} modelName The Model name.
 		 * @param {string} name The object name.
 		 * @param {number} count The number of items to retrieve in a page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} computeType The compute environment type.
 		 * @param {string} skipToken The continuation token to retrieve the next page.
 		 * @param {string} tags A set of tags with which to filter the returned models.

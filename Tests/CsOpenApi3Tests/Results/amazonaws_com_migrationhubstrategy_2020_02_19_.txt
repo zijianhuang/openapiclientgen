@@ -2630,7 +2630,10 @@ namespace MyNS
 		/// Retrieves details about an application component.
 		/// GetApplicationComponentDetails get-applicationcomponent-details/{applicationComponentId}
 		/// </summary>
-		/// <param name="applicationComponentId"> The ID of the application component. The ID is unique within an AWS account.</param>
+		/// <param name="applicationComponentId"> The ID of the application component. The ID is unique within an AWS account.
+		/// Max length: 44
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetApplicationComponentDetailsResponse> GetApplicationComponentDetailsAsync(string applicationComponentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2664,7 +2667,10 @@ namespace MyNS
 		/// Retrieves a list of all the recommended strategies and tools for an application component running on a server.
 		/// GetApplicationComponentStrategies get-applicationcomponent-strategies/{applicationComponentId}
 		/// </summary>
-		/// <param name="applicationComponentId"> The ID of the application component. The ID is unique within an AWS account.</param>
+		/// <param name="applicationComponentId"> The ID of the application component. The ID is unique within an AWS account.
+		/// Max length: 44
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetApplicationComponentStrategiesResponse> GetApplicationComponentStrategiesAsync(string applicationComponentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2698,7 +2704,10 @@ namespace MyNS
 		/// Retrieves the status of an on-going assessment.
 		/// GetAssessment get-assessment/{id}
 		/// </summary>
-		/// <param name="id"> The <code>assessmentid</code> returned by <a>StartAssessment</a>.</param>
+		/// <param name="id"> The <code>assessmentid</code> returned by <a>StartAssessment</a>.
+		/// Max length: 52
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAssessmentResponse> GetAssessmentAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2732,7 +2741,10 @@ namespace MyNS
 		/// Retrieves the details about a specific import task.
 		/// GetImportFileTask get-import-file-task/{id}
 		/// </summary>
-		/// <param name="id"> The ID of the import file task. This ID is returned in the response of <a>StartImportFileTask</a>. </param>
+		/// <param name="id"> The ID of the import file task. This ID is returned in the response of <a>StartImportFileTask</a>. 
+		/// Max length: 1024
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetImportFileTaskResponse> GetImportFileTaskAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2865,7 +2877,10 @@ namespace MyNS
 		/// Retrieves detailed information about the specified recommendation report.
 		/// GetRecommendationReportDetails get-recommendation-report-details/{id}
 		/// </summary>
-		/// <param name="id"> The recommendation report generation task <code>id</code> returned by <a>StartRecommendationReportGeneration</a>. </param>
+		/// <param name="id"> The recommendation report generation task <code>id</code> returned by <a>StartRecommendationReportGeneration</a>. 
+		/// Max length: 52
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRecommendationReportDetailsResponse> GetRecommendationReportDetailsAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2900,8 +2915,14 @@ namespace MyNS
 		/// GetServerDetails get-server-details/{serverId}
 		/// </summary>
 		/// <param name="maxResults"> The maximum number of items to include in the response. The maximum value is 100. </param>
-		/// <param name="nextToken"> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </param>
-		/// <param name="serverId"> The ID of the server. </param>
+		/// <param name="nextToken"> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. 
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="serverId"> The ID of the server. 
+		/// Max length: 27
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServerDetailsResponse> GetServerDetailsAsync(int maxResults, string nextToken, string serverId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2935,7 +2956,10 @@ namespace MyNS
 		/// Retrieves recommended strategies and tools for the specified server.
 		/// GetServerStrategies get-server-strategies/{serverId}
 		/// </summary>
-		/// <param name="serverId"> The ID of the server. </param>
+		/// <param name="serverId"> The ID of the server. 
+		/// Max length: 27
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetServerStrategiesResponse> GetServerStrategiesAsync(string serverId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3012,7 +3036,10 @@ namespace MyNS
 		/// ListCollectors list-collectors
 		/// </summary>
 		/// <param name="maxResults"> The maximum number of items to include in the response. The maximum value is 100. </param>
-		/// <param name="nextToken"> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </param>
+		/// <param name="nextToken"> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. 
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListCollectorsResponse> ListCollectorsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3047,7 +3074,10 @@ namespace MyNS
 		/// ListImportFileTask list-import-file-task
 		/// </summary>
 		/// <param name="maxResults"> The total number of items to return. The maximum value is 100. </param>
-		/// <param name="nextToken"> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. </param>
+		/// <param name="nextToken"> The token from a previous call that you use to retrieve the next set of results. For example, if a previous call to this action returned 100 items, but you set <code>maxResults</code> to 10. You'll receive a set of 10 results along with a token. You then use the returned token to retrieve the next set of 10. 
+		/// Max length: 1024
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListImportFileTaskResponse> ListImportFileTaskAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

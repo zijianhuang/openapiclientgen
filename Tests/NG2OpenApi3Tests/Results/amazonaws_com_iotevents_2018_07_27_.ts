@@ -2389,6 +2389,7 @@ export namespace MyNS {
 		 * Get alarm-models
 		 * @param {string} nextToken The token that you can use to return the next set of results.
 		 * @param {number} maxResults The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListAlarmModelsResponse} Success
 		 */
 		ListAlarmModels(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAlarmModelsResponse> {
@@ -2409,6 +2410,7 @@ export namespace MyNS {
 		 * Get detector-models
 		 * @param {string} nextToken The token that you can use to return the next set of results.
 		 * @param {number} maxResults The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListDetectorModelsResponse} Success
 		 */
 		ListDetectorModels(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDetectorModelsResponse> {
@@ -2429,6 +2431,7 @@ export namespace MyNS {
 		 * Get inputs
 		 * @param {string} nextToken The token that you can use to return the next set of results.
 		 * @param {number} maxResults The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListInputsResponse} Success
 		 */
 		ListInputs(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListInputsResponse> {
@@ -2439,6 +2442,7 @@ export namespace MyNS {
 		 * Deletes an alarm model. Any alarm instances that were created based on this alarm model are also deleted. This action can't be undone.
 		 * Delete alarm-models/{alarmModelName}
 		 * @param {string} alarmModelName The name of the alarm model.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteAlarmModel(alarmModelName: string): Observable<HttpResponse<string>> {
@@ -2449,7 +2453,9 @@ export namespace MyNS {
 		 * Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code> parameter, the latest version is returned.
 		 * Get alarm-models/{alarmModelName}
 		 * @param {string} alarmModelName The name of the alarm model.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} version The version of the alarm model.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeAlarmModelResponse} Success
 		 */
 		DescribeAlarmModel(alarmModelName: string, version: string | null | undefined): Observable<DescribeAlarmModelResponse> {
@@ -2460,6 +2466,7 @@ export namespace MyNS {
 		 * Updates an alarm model. Any alarms that were created based on the previous version are deleted and then created again as new data arrives.
 		 * Post alarm-models/{alarmModelName}
 		 * @param {string} alarmModelName The name of the alarm model.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateAlarmModelResponse} Success
 		 */
 		UpdateAlarmModel(alarmModelName: string, requestBody: UpdateAlarmModelPostBody): Observable<UpdateAlarmModelResponse> {
@@ -2470,6 +2477,7 @@ export namespace MyNS {
 		 * Deletes a detector model. Any active instances of the detector model are also deleted.
 		 * Delete detector-models/{detectorModelName}
 		 * @param {string} detectorModelName The name of the detector model to be deleted.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteDetectorModel(detectorModelName: string): Observable<HttpResponse<string>> {
@@ -2480,7 +2488,9 @@ export namespace MyNS {
 		 * Describes a detector model. If the <code>version</code> parameter is not specified, information about the latest version is returned.
 		 * Get detector-models/{detectorModelName}
 		 * @param {string} detectorModelName The name of the detector model.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} version The version of the detector model.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeDetectorModelResponse} Success
 		 */
 		DescribeDetectorModel(detectorModelName: string, version: string | null | undefined): Observable<DescribeDetectorModelResponse> {
@@ -2491,6 +2501,7 @@ export namespace MyNS {
 		 * Updates a detector model. Detectors (instances) spawned by the previous version are deleted and then re-created as new inputs arrive.
 		 * Post detector-models/{detectorModelName}
 		 * @param {string} detectorModelName The name of the detector model that is updated.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateDetectorModelResponse} Success
 		 */
 		UpdateDetectorModel(detectorModelName: string, requestBody: UpdateDetectorModelPostBody): Observable<UpdateDetectorModelResponse> {
@@ -2501,6 +2512,7 @@ export namespace MyNS {
 		 * Deletes an input.
 		 * Delete inputs/{inputName}
 		 * @param {string} inputName The name of the input to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteInputResponse} Success
 		 */
 		DeleteInput(inputName: string): Observable<DeleteInputResponse> {
@@ -2511,6 +2523,7 @@ export namespace MyNS {
 		 * Describes an input.
 		 * Get inputs/{inputName}
 		 * @param {string} inputName The name of the input.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeInputResponse} Success
 		 */
 		DescribeInput(inputName: string): Observable<DescribeInputResponse> {
@@ -2521,6 +2534,7 @@ export namespace MyNS {
 		 * Updates an input.
 		 * Put inputs/{inputName}
 		 * @param {string} inputName The name of the input you want to update.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateInputResponse} Success
 		 */
 		UpdateInput(inputName: string, requestBody: UpdateInputPutBody): Observable<UpdateInputResponse> {
@@ -2561,6 +2575,7 @@ export namespace MyNS {
 		 * @param {string} analysisId The ID of the analysis result that you want to retrieve.
 		 * @param {string} nextToken The token that you can use to return the next set of results.
 		 * @param {number} maxResults The maximum number of results to be returned per request.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetDetectorModelAnalysisResultsResponse} Success
 		 */
 		GetDetectorModelAnalysisResults(analysisId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetDetectorModelAnalysisResultsResponse> {
@@ -2571,8 +2586,10 @@ export namespace MyNS {
 		 * Lists all the versions of an alarm model. The operation returns only the metadata associated with each alarm model version.
 		 * Get alarm-models/{alarmModelName}/versions
 		 * @param {string} alarmModelName The name of the alarm model.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} nextToken The token that you can use to return the next set of results.
 		 * @param {number} maxResults The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListAlarmModelVersionsResponse} Success
 		 */
 		ListAlarmModelVersions(alarmModelName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAlarmModelVersionsResponse> {
@@ -2583,8 +2600,10 @@ export namespace MyNS {
 		 * Lists all the versions of a detector model. Only the metadata associated with each detector model version is returned.
 		 * Get detector-models/{detectorModelName}/versions
 		 * @param {string} detectorModelName The name of the detector model whose versions are returned.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} nextToken The token that you can use to return the next set of results.
 		 * @param {number} maxResults The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListDetectorModelVersionsResponse} Success
 		 */
 		ListDetectorModelVersions(detectorModelName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDetectorModelVersionsResponse> {
@@ -2604,6 +2623,7 @@ export namespace MyNS {
 		 * Lists the tags (metadata) you have assigned to the resource.
 		 * Get tags#resourceArn
 		 * @param {string} resourceArn The ARN of the resource.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -2614,6 +2634,7 @@ export namespace MyNS {
 		 * Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
 		 * Post tags#resourceArn
 		 * @param {string} resourceArn The ARN of the resource.
+		 *     Min length: 1    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -2633,6 +2654,7 @@ export namespace MyNS {
 		 * Removes the given tags (metadata) from the resource.
 		 * Delete tags#resourceArn&tagKeys
 		 * @param {string} resourceArn The ARN of the resource.
+		 *     Min length: 1    Max length: 2048
 		 * @param {Array<string>} tagKeys A list of the keys of the tags to be removed from the resource.
 		 * @return {UntagResourceResponse} Success
 		 */
@@ -2646,8 +2668,8 @@ export namespace MyNS {
 		/**
 		 * A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		alarmModelName: string;
 
@@ -2660,8 +2682,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -2670,8 +2692,8 @@ export namespace MyNS {
 
 		/**
 		 * An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		key?: string | null;
 
@@ -2702,8 +2724,8 @@ export namespace MyNS {
 		/**
 		 * A unique name that helps you identify the alarm model. You can't change this name after you create the alarm model.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		alarmModelName: FormControl<string | null | undefined>,
 
@@ -2716,15 +2738,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * An input attribute used as a key to create an alarm. AWS IoT Events routes <a href="https://docs.aws.amazon.com/iotevents/latest/apireference/API_Input.html">inputs</a> associated with this key to the alarm.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		key: FormControl<string | null | undefined>,
 
@@ -2796,8 +2818,8 @@ export namespace MyNS {
 		/**
 		 * The name of the detector model.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		detectorModelName: string;
 
@@ -2815,16 +2837,16 @@ export namespace MyNS {
 
 		/**
 		 * The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		key?: string | null;
 
 		/**
 		 * The ARN of the role that grants permission to AWS IoT Events to perform its operations.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -2839,8 +2861,8 @@ export namespace MyNS {
 		/**
 		 * The name of the detector model.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		detectorModelName: FormControl<string | null | undefined>,
 
@@ -2852,16 +2874,16 @@ export namespace MyNS {
 
 		/**
 		 * The input attribute key used to identify a device or system to create a detector (an instance of the detector model) and then to route each input received to the appropriate detector (instance). This parameter uses a JSON-path expression in the message payload of each input to specify the attribute-value pair that is used to identify the device associated with the input.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		key: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the role that grants permission to AWS IoT Events to perform its operations.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -2898,8 +2920,8 @@ export namespace MyNS {
 		/**
 		 * The name you want to give to the input.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		inputName: string;
 
@@ -2923,8 +2945,8 @@ export namespace MyNS {
 		/**
 		 * The name you want to give to the input.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		inputName: FormControl<string | null | undefined>,
 
@@ -2964,8 +2986,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -3002,8 +3024,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the IAM role that allows the alarm to perform actions and access AWS resources. For more information, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i>.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -3085,8 +3107,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the role that grants permission to AWS IoT Events to perform its operations.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -3104,8 +3126,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the role that grants permission to AWS IoT Events to perform its operations.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 

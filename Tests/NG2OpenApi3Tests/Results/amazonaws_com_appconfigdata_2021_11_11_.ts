@@ -143,24 +143,24 @@ export namespace MyNS {
 		/**
 		 * The application ID or the application name.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ApplicationIdentifier: string;
 
 		/**
 		 * The environment ID or the environment name.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		EnvironmentIdentifier: string;
 
 		/**
 		 * The configuration profile ID or the configuration profile name.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConfigurationProfileIdentifier: string;
 
@@ -176,24 +176,24 @@ export namespace MyNS {
 		/**
 		 * The application ID or the application name.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ApplicationIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The environment ID or the environment name.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		EnvironmentIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The configuration profile ID or the configuration profile name.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConfigurationProfileIdentifier: FormControl<string | null | undefined>,
 

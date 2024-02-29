@@ -310,7 +310,10 @@ export namespace MyNS {
 	/** Not supported by Cloud Run. Adapts a ConfigMap into a volume. The contents of the target ConfigMap's Data field will be presented in a volume as files using the keys in the Data field as the file names, unless the items element is populated with specific mappings of keys to paths. */
 	export interface ConfigMapVolumeSource {
 
-		/** (Optional) Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0644. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * (Optional) Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0644. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMode?: number | null;
 
 		/** (Optional) If unspecified, each key-value pair in the Data field of the referenced Secret will be projected into the volume as a file whose name is the key and content is the value. If specified, the listed keys will be projected into the specified paths, and unlisted keys will not be present. If a key is specified that is not present in the Secret, the volume setup will error unless it is marked optional. */
@@ -326,7 +329,10 @@ export namespace MyNS {
 	/** Not supported by Cloud Run. Adapts a ConfigMap into a volume. The contents of the target ConfigMap's Data field will be presented in a volume as files using the keys in the Data field as the file names, unless the items element is populated with specific mappings of keys to paths. */
 	export interface ConfigMapVolumeSourceFormProperties {
 
-		/** (Optional) Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0644. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * (Optional) Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0644. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMode: FormControl<number | null | undefined>,
 
 		/** Name of the config. */
@@ -351,7 +357,10 @@ export namespace MyNS {
 		/** The Cloud Secret Manager secret version. Can be 'latest' for the latest value, or an integer or a secret alias for a specific version. The key to project. */
 		key?: string | null;
 
-		/** (Optional) Mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * (Optional) Mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mode?: number | null;
 
 		/** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
@@ -364,7 +373,10 @@ export namespace MyNS {
 		/** The Cloud Secret Manager secret version. Can be 'latest' for the latest value, or an integer or a secret alias for a specific version. The key to project. */
 		key: FormControl<string | null | undefined>,
 
-		/** (Optional) Mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * (Optional) Mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mode: FormControl<number | null | undefined>,
 
 		/** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
@@ -429,7 +441,10 @@ export namespace MyNS {
 		/** UTC timestamp representing the server time when this object was created. */
 		creationTimestamp?: string | null;
 
-		/** Not supported by Cloud Run */
+		/**
+		 * Not supported by Cloud Run
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deletionGracePeriodSeconds?: number | null;
 
 		/** The read-only soft deletion timestamp for this resource. In Cloud Run, users are not able to set this field. Instead, they must call the corresponding Delete API. */
@@ -441,7 +456,10 @@ export namespace MyNS {
 		/** Not supported by Cloud Run */
 		generateName?: string | null;
 
-		/** A system-provided sequence number representing a specific generation of the desired state. */
+		/**
+		 * A system-provided sequence number representing a specific generation of the desired state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		generation?: number | null;
 
 		/** Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and routes. */
@@ -478,7 +496,10 @@ export namespace MyNS {
 		/** UTC timestamp representing the server time when this object was created. */
 		creationTimestamp: FormControl<string | null | undefined>,
 
-		/** Not supported by Cloud Run */
+		/**
+		 * Not supported by Cloud Run
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deletionGracePeriodSeconds: FormControl<number | null | undefined>,
 
 		/** The read-only soft deletion timestamp for this resource. In Cloud Run, users are not able to set this field. Instead, they must call the corresponding Delete API. */
@@ -487,7 +508,10 @@ export namespace MyNS {
 		/** Not supported by Cloud Run */
 		generateName: FormControl<string | null | undefined>,
 
-		/** A system-provided sequence number representing a specific generation of the desired state. */
+		/**
+		 * A system-provided sequence number representing a specific generation of the desired state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		generation: FormControl<number | null | undefined>,
 
 		/** Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and routes. */
@@ -624,7 +648,10 @@ export namespace MyNS {
 	/** RevisionSpec holds the desired state of the Revision (from the client). */
 	export interface RevisionSpec {
 
-		/** ContainerConcurrency specifies the maximum allowed in-flight (concurrent) requests per container instance of the Revision. If not specified, defaults to 80. */
+		/**
+		 * ContainerConcurrency specifies the maximum allowed in-flight (concurrent) requests per container instance of the Revision. If not specified, defaults to 80.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containerConcurrency?: number | null;
 
 		/** Containers holds the single container that defines the unit of execution for this Revision. In the context of a Revision, we disallow a number of fields on this Container, including: name and lifecycle. In Cloud Run, only a single container may be provided. */
@@ -639,7 +666,10 @@ export namespace MyNS {
 		/** Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has. If not provided, the revision will use the project's default service account. */
 		serviceAccountName?: string | null;
 
-		/** TimeoutSeconds holds the max duration the instance is allowed for responding to a request. Cloud Run: defaults to 300 seconds (5 minutes). Maximum allowed value is 3600 seconds (1 hour). */
+		/**
+		 * TimeoutSeconds holds the max duration the instance is allowed for responding to a request. Cloud Run: defaults to 300 seconds (5 minutes). Maximum allowed value is 3600 seconds (1 hour).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds?: number | null;
 		volumes?: Array<Volume>;
 	}
@@ -647,7 +677,10 @@ export namespace MyNS {
 	/** RevisionSpec holds the desired state of the Revision (from the client). */
 	export interface RevisionSpecFormProperties {
 
-		/** ContainerConcurrency specifies the maximum allowed in-flight (concurrent) requests per container instance of the Revision. If not specified, defaults to 80. */
+		/**
+		 * ContainerConcurrency specifies the maximum allowed in-flight (concurrent) requests per container instance of the Revision. If not specified, defaults to 80.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containerConcurrency: FormControl<number | null | undefined>,
 
 		/** Not supported by Cloud Run. */
@@ -656,7 +689,10 @@ export namespace MyNS {
 		/** Email address of the IAM service account associated with the revision of the service. The service account represents the identity of the running revision, and determines what permissions the revision has. If not provided, the revision will use the project's default service account. */
 		serviceAccountName: FormControl<string | null | undefined>,
 
-		/** TimeoutSeconds holds the max duration the instance is allowed for responding to a request. Cloud Run: defaults to 300 seconds (5 minutes). Maximum allowed value is 3600 seconds (1 hour). */
+		/**
+		 * TimeoutSeconds holds the max duration the instance is allowed for responding to a request. Cloud Run: defaults to 300 seconds (5 minutes). Maximum allowed value is 3600 seconds (1 hour).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateRevisionSpecFormGroup() {
@@ -912,7 +948,10 @@ export namespace MyNS {
 		/** Not supported by Cloud Run. ExecAction describes a "run in container" action. */
 		exec?: ExecAction;
 
-		/** Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1. */
+		/**
+		 * Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureThreshold?: number | null;
 
 		/** GRPCAction describes an action involving a GRPC port. */
@@ -921,38 +960,65 @@ export namespace MyNS {
 		/** HTTPGetAction describes an action based on HTTP Get requests. */
 		httpGet?: HTTPGetAction;
 
-		/** Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. */
+		/**
+		 * Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialDelaySeconds?: number | null;
 
-		/** How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds. */
+		/**
+		 * How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSeconds?: number | null;
 
-		/** Minimum consecutive successes for the probe to be considered successful after having failed. Must be 1 if set. */
+		/**
+		 * Minimum consecutive successes for the probe to be considered successful after having failed. Must be 1 if set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successThreshold?: number | null;
 
 		/** TCPSocketAction describes an action based on opening a socket */
 		tcpSocket?: TCPSocketAction;
 
-		/** Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds; if period_seconds is not set, must be less or equal than 10. */
+		/**
+		 * Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds; if period_seconds is not set, must be less or equal than 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds?: number | null;
 	}
 
 	/** Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic. */
 	export interface ProbeFormProperties {
 
-		/** Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1. */
+		/**
+		 * Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureThreshold: FormControl<number | null | undefined>,
 
-		/** Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. */
+		/**
+		 * Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialDelaySeconds: FormControl<number | null | undefined>,
 
-		/** How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds. */
+		/**
+		 * How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSeconds: FormControl<number | null | undefined>,
 
-		/** Minimum consecutive successes for the probe to be considered successful after having failed. Must be 1 if set. */
+		/**
+		 * Minimum consecutive successes for the probe to be considered successful after having failed. Must be 1 if set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successThreshold: FormControl<number | null | undefined>,
 
-		/** Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds; if period_seconds is not set, must be less or equal than 10. */
+		/**
+		 * Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds; if period_seconds is not set, must be less or equal than 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateProbeFormGroup() {
@@ -987,7 +1053,10 @@ export namespace MyNS {
 	/** GRPCAction describes an action involving a GRPC port. */
 	export interface GRPCAction {
 
-		/** Port number of the gRPC service. Number must be in the range 1 to 65535. */
+		/**
+		 * Port number of the gRPC service. Number must be in the range 1 to 65535.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Service is the name of the service to place in the gRPC HealthCheckRequest. If this is not specified, the default behavior is defined by gRPC. */
@@ -997,7 +1066,10 @@ export namespace MyNS {
 	/** GRPCAction describes an action involving a GRPC port. */
 	export interface GRPCActionFormProperties {
 
-		/** Port number of the gRPC service. Number must be in the range 1 to 65535. */
+		/**
+		 * Port number of the gRPC service. Number must be in the range 1 to 65535.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Service is the name of the service to place in the gRPC HealthCheckRequest. If this is not specified, the default behavior is defined by gRPC. */
@@ -1024,7 +1096,10 @@ export namespace MyNS {
 		/** Path to access on the HTTP server. */
 		path?: string | null;
 
-		/** Port number to access on the container. Number must be in the range 1 to 65535. */
+		/**
+		 * Port number to access on the container. Number must be in the range 1 to 65535.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Not supported by Cloud Run. */
@@ -1040,7 +1115,10 @@ export namespace MyNS {
 		/** Path to access on the HTTP server. */
 		path: FormControl<string | null | undefined>,
 
-		/** Port number to access on the container. Number must be in the range 1 to 65535. */
+		/**
+		 * Port number to access on the container. Number must be in the range 1 to 65535.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Not supported by Cloud Run. */
@@ -1091,7 +1169,10 @@ export namespace MyNS {
 		/** Not supported by Cloud Run. */
 		host?: string | null;
 
-		/** Port number to access on the container. Number must be in the range 1 to 65535. */
+		/**
+		 * Port number to access on the container. Number must be in the range 1 to 65535.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 
@@ -1101,7 +1182,10 @@ export namespace MyNS {
 		/** Not supported by Cloud Run. */
 		host: FormControl<string | null | undefined>,
 
-		/** Port number to access on the container. Number must be in the range 1 to 65535. */
+		/**
+		 * Port number to access on the container. Number must be in the range 1 to 65535.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateTCPSocketActionFormGroup() {
@@ -1116,7 +1200,10 @@ export namespace MyNS {
 	/** ContainerPort represents a network port in a single container. */
 	export interface ContainerPort {
 
-		/** Port number the container listens on. If present, this must be a valid port number, 0 < x < 65536. If not present, it will default to port 8080. For more information, see https://cloud.google.com/run/docs/container-contract#port */
+		/**
+		 * Port number the container listens on. If present, this must be a valid port number, 0 < x < 65536. If not present, it will default to port 8080. For more information, see https://cloud.google.com/run/docs/container-contract#port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containerPort?: number | null;
 
 		/** If specified, used to specify which protocol to use. Allowed values are "http1" and "h2c". */
@@ -1129,7 +1216,10 @@ export namespace MyNS {
 	/** ContainerPort represents a network port in a single container. */
 	export interface ContainerPortFormProperties {
 
-		/** Port number the container listens on. If present, this must be a valid port number, 0 < x < 65536. If not present, it will default to port 8080. For more information, see https://cloud.google.com/run/docs/container-contract#port */
+		/**
+		 * Port number the container listens on. If present, this must be a valid port number, 0 < x < 65536. If not present, it will default to port 8080. For more information, see https://cloud.google.com/run/docs/container-contract#port
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containerPort: FormControl<number | null | undefined>,
 
 		/** If specified, used to specify which protocol to use. Allowed values are "http1" and "h2c". */
@@ -1179,14 +1269,20 @@ export namespace MyNS {
 	/** Not supported by Cloud Run. SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext. When both are set, the values in SecurityContext take precedence. */
 	export interface SecurityContext {
 
-		/** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+		/**
+		 * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runAsUser?: number | null;
 	}
 
 	/** Not supported by Cloud Run. SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext. When both are set, the values in SecurityContext take precedence. */
 	export interface SecurityContextFormProperties {
 
-		/** The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+		/**
+		 * The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runAsUser: FormControl<number | null | undefined>,
 	}
 	export function CreateSecurityContextFormGroup() {
@@ -1341,7 +1437,10 @@ export namespace MyNS {
 	/** A volume representing a secret stored in Google Secret Manager. The secret's value will be presented as the content of a file whose name is defined in the item path. If no items are defined, the name of the file is the secret_name. The contents of the target Secret's Data field will be presented in a volume as files using the keys in the Data field as the file names. */
 	export interface SecretVolumeSource {
 
-		/** Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0444. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0444. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMode?: number | null;
 
 		/** A list of secret versions to mount in the volume. If no items are specified, the volume will expose a file with the same name as the secret name. The contents of the file will be the data in the latest version of the secret. If items are specified, the key will be used as the version to fetch from Cloud Secret Manager and the path will be the name of the file exposed in the volume. When items are defined, they must specify both a key and a path. */
@@ -1357,7 +1456,10 @@ export namespace MyNS {
 	/** A volume representing a secret stored in Google Secret Manager. The secret's value will be presented as the content of a file whose name is defined in the item path. If no items are defined, the name of the file is the secret_name. The contents of the target Secret's Data field will be presented in a volume as files using the keys in the Data field as the file names. */
 	export interface SecretVolumeSourceFormProperties {
 
-		/** Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0444. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0444. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMode: FormControl<number | null | undefined>,
 
 		/** Not supported by Cloud Run. */
@@ -1388,7 +1490,10 @@ export namespace MyNS {
 		/** LatestReadyRevisionName holds the name of the latest Revision stamped out from this Configuration that has had its "Ready" condition become "True". */
 		latestReadyRevisionName?: string | null;
 
-		/** ObservedGeneration is the 'Generation' of the Configuration that was last processed by the controller. The observed generation is updated even if the controller failed to process the spec and create the Revision. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False. */
+		/**
+		 * ObservedGeneration is the 'Generation' of the Configuration that was last processed by the controller. The observed generation is updated even if the controller failed to process the spec and create the Revision. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration?: number | null;
 	}
 
@@ -1401,7 +1506,10 @@ export namespace MyNS {
 		/** LatestReadyRevisionName holds the name of the latest Revision stamped out from this Configuration that has had its "Ready" condition become "True". */
 		latestReadyRevisionName: FormControl<string | null | undefined>,
 
-		/** ObservedGeneration is the 'Generation' of the Configuration that was last processed by the controller. The observed generation is updated even if the controller failed to process the spec and create the Revision. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False. */
+		/**
+		 * ObservedGeneration is the 'Generation' of the Configuration that was last processed by the controller. The observed generation is updated even if the controller failed to process the spec and create the Revision. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration: FormControl<number | null | undefined>,
 	}
 	export function CreateConfigurationStatusFormGroup() {
@@ -1587,7 +1695,10 @@ export namespace MyNS {
 		/** The name of the route that the mapping currently points to. */
 		mappedRouteName?: string | null;
 
-		/** ObservedGeneration is the 'Generation' of the DomainMapping that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False. */
+		/**
+		 * ObservedGeneration is the 'Generation' of the DomainMapping that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration?: number | null;
 
 		/** The resource records required to configure this domain mapping. These records must be added to the domain's DNS configuration in order to serve the application via this domain mapping. */
@@ -1603,7 +1714,10 @@ export namespace MyNS {
 		/** The name of the route that the mapping currently points to. */
 		mappedRouteName: FormControl<string | null | undefined>,
 
-		/** ObservedGeneration is the 'Generation' of the DomainMapping that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False. */
+		/**
+		 * ObservedGeneration is the 'Generation' of the DomainMapping that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration: FormControl<number | null | undefined>,
 
 		/** Optional. Not supported by Cloud Run. */
@@ -1710,10 +1824,16 @@ export namespace MyNS {
 	/** ExecutionSpec describes how the execution will look. */
 	export interface ExecutionSpec {
 
-		/** Optional. Specifies the maximum desired number of tasks the execution should run at given time. Must be <= task_count. When the job is run, if this field is 0 or unset, the maximum possible value will be used for that execution. The actual number of tasks running in steady state will be less than this number when there are fewer tasks waiting to be completed, i.e. when the work left to do is less than max parallelism. */
+		/**
+		 * Optional. Specifies the maximum desired number of tasks the execution should run at given time. Must be <= task_count. When the job is run, if this field is 0 or unset, the maximum possible value will be used for that execution. The actual number of tasks running in steady state will be less than this number when there are fewer tasks waiting to be completed, i.e. when the work left to do is less than max parallelism.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parallelism?: number | null;
 
-		/** Optional. Specifies the desired number of tasks the execution should run. Setting to 1 means that parallelism is limited to 1 and the success of that task signals the success of the execution. Defaults to 1. */
+		/**
+		 * Optional. Specifies the desired number of tasks the execution should run. Setting to 1 means that parallelism is limited to 1 and the success of that task signals the success of the execution. Defaults to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taskCount?: number | null;
 
 		/** TaskTemplateSpec describes the data a task should have when created from a template. */
@@ -1723,10 +1843,16 @@ export namespace MyNS {
 	/** ExecutionSpec describes how the execution will look. */
 	export interface ExecutionSpecFormProperties {
 
-		/** Optional. Specifies the maximum desired number of tasks the execution should run at given time. Must be <= task_count. When the job is run, if this field is 0 or unset, the maximum possible value will be used for that execution. The actual number of tasks running in steady state will be less than this number when there are fewer tasks waiting to be completed, i.e. when the work left to do is less than max parallelism. */
+		/**
+		 * Optional. Specifies the maximum desired number of tasks the execution should run at given time. Must be <= task_count. When the job is run, if this field is 0 or unset, the maximum possible value will be used for that execution. The actual number of tasks running in steady state will be less than this number when there are fewer tasks waiting to be completed, i.e. when the work left to do is less than max parallelism.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parallelism: FormControl<number | null | undefined>,
 
-		/** Optional. Specifies the desired number of tasks the execution should run. Setting to 1 means that parallelism is limited to 1 and the success of that task signals the success of the execution. Defaults to 1. */
+		/**
+		 * Optional. Specifies the desired number of tasks the execution should run. Setting to 1 means that parallelism is limited to 1 and the success of that task signals the success of the execution. Defaults to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taskCount: FormControl<number | null | undefined>,
 	}
 	export function CreateExecutionSpecFormGroup() {
@@ -1761,7 +1887,10 @@ export namespace MyNS {
 		/** Optional. List of containers belonging to the task. We disallow a number of fields on this Container. */
 		containers?: Array<Container>;
 
-		/** Optional. Number of retries allowed per task, before marking this job failed. Defaults to 3. */
+		/**
+		 * Optional. Number of retries allowed per task, before marking this job failed. Defaults to 3.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries?: number | null;
 
 		/** Optional. Email address of the IAM service account associated with the task of a job execution. The service account represents the identity of the running task, and determines what permissions the task has. If not provided, the task will use the project's default service account. */
@@ -1777,7 +1906,10 @@ export namespace MyNS {
 	/** TaskSpec is a description of a task. */
 	export interface TaskSpecFormProperties {
 
-		/** Optional. Number of retries allowed per task, before marking this job failed. Defaults to 3. */
+		/**
+		 * Optional. Number of retries allowed per task, before marking this job failed. Defaults to 3.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries: FormControl<number | null | undefined>,
 
 		/** Optional. Email address of the IAM service account associated with the task of a job execution. The service account represents the identity of the running task, and determines what permissions the task has. If not provided, the task will use the project's default service account. */
@@ -1799,7 +1931,10 @@ export namespace MyNS {
 	/** ExecutionStatus represents the current state of an Execution. */
 	export interface ExecutionStatus {
 
-		/** Optional. The number of tasks which reached phase Cancelled. */
+		/**
+		 * Optional. The number of tasks which reached phase Cancelled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cancelledCount?: number | null;
 
 		/** Optional. Represents the time that the execution was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional */
@@ -1808,56 +1943,89 @@ export namespace MyNS {
 		/** Optional. Conditions communicate information about ongoing/complete reconciliation processes that bring the "spec" inline with the observed state of the world. Execution-specific conditions include: * `ResourcesAvailable`: `True` when underlying resources have been provisioned. * `Started`: `True` when the execution has started to execute. * `Completed`: `True` when the execution has succeeded. `False` when the execution has failed. */
 		conditions?: Array<GoogleCloudRunV1Condition>;
 
-		/** Optional. The number of tasks which reached phase Failed. */
+		/**
+		 * Optional. The number of tasks which reached phase Failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedCount?: number | null;
 
 		/** Optional. URI where logs for this execution can be found in Cloud Console. */
 		logUri?: string | null;
 
-		/** Optional. The 'generation' of the execution that was last processed by the controller. */
+		/**
+		 * Optional. The 'generation' of the execution that was last processed by the controller.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration?: number | null;
 
-		/** Optional. The number of tasks which have retried at least once. */
+		/**
+		 * Optional. The number of tasks which have retried at least once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retriedCount?: number | null;
 
-		/** Optional. The number of actively running tasks. */
+		/**
+		 * Optional. The number of actively running tasks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runningCount?: number | null;
 
 		/** Optional. Represents the time that the execution started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. */
 		startTime?: string | null;
 
-		/** Optional. The number of tasks which reached phase Succeeded. */
+		/**
+		 * Optional. The number of tasks which reached phase Succeeded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		succeededCount?: number | null;
 	}
 
 	/** ExecutionStatus represents the current state of an Execution. */
 	export interface ExecutionStatusFormProperties {
 
-		/** Optional. The number of tasks which reached phase Cancelled. */
+		/**
+		 * Optional. The number of tasks which reached phase Cancelled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cancelledCount: FormControl<number | null | undefined>,
 
 		/** Optional. Represents the time that the execution was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional */
 		completionTime: FormControl<string | null | undefined>,
 
-		/** Optional. The number of tasks which reached phase Failed. */
+		/**
+		 * Optional. The number of tasks which reached phase Failed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedCount: FormControl<number | null | undefined>,
 
 		/** Optional. URI where logs for this execution can be found in Cloud Console. */
 		logUri: FormControl<string | null | undefined>,
 
-		/** Optional. The 'generation' of the execution that was last processed by the controller. */
+		/**
+		 * Optional. The 'generation' of the execution that was last processed by the controller.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration: FormControl<number | null | undefined>,
 
-		/** Optional. The number of tasks which have retried at least once. */
+		/**
+		 * Optional. The number of tasks which have retried at least once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retriedCount: FormControl<number | null | undefined>,
 
-		/** Optional. The number of actively running tasks. */
+		/**
+		 * Optional. The number of actively running tasks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runningCount: FormControl<number | null | undefined>,
 
 		/** Optional. Represents the time that the execution started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. */
 		startTime: FormControl<string | null | undefined>,
 
-		/** Optional. The number of tasks which reached phase Succeeded. */
+		/**
+		 * Optional. The number of tasks which reached phase Succeeded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		succeededCount: FormControl<number | null | undefined>,
 	}
 	export function CreateExecutionStatusFormGroup() {
@@ -2003,7 +2171,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -2016,7 +2187,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2112,23 +2286,35 @@ export namespace MyNS {
 		/** Conditions communicate information about ongoing/complete reconciliation processes that bring the "spec" inline with the observed state of the world. Job-specific conditions include: * `Ready`: `True` when the job is ready to be executed. */
 		conditions?: Array<GoogleCloudRunV1Condition>;
 
-		/** Number of executions created for this job. */
+		/**
+		 * Number of executions created for this job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executionCount?: number | null;
 
 		/** Reference to an Execution. Use /Executions.GetExecution with the given name to get full execution including the latest status. */
 		latestCreatedExecution?: ExecutionReference;
 
-		/** The 'generation' of the job that was last processed by the controller. */
+		/**
+		 * The 'generation' of the job that was last processed by the controller.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration?: number | null;
 	}
 
 	/** JobStatus represents the current state of a Job. */
 	export interface JobStatusFormProperties {
 
-		/** Number of executions created for this job. */
+		/**
+		 * Number of executions created for this job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executionCount: FormControl<number | null | undefined>,
 
-		/** The 'generation' of the job that was last processed by the controller. */
+		/**
+		 * The 'generation' of the job that was last processed by the controller.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration: FormControl<number | null | undefined>,
 	}
 	export function CreateJobStatusFormGroup() {
@@ -2500,7 +2686,10 @@ export namespace MyNS {
 		/** Conditions communicate information about ongoing/complete reconciliation processes that bring the "spec" inline with the observed state of the world. As a Revision is being prepared, it will incrementally update conditions. Revision-specific conditions include: * `ResourcesAvailable`: `True` when underlying resources have been provisioned. * `ContainerHealthy`: `True` when the Revision readiness check completes. * `Active`: `True` when the Revision may receive traffic. */
 		conditions?: Array<GoogleCloudRunV1Condition>;
 
-		/** Output only. The configured number of instances running this revision. For Cloud Run, this only includes instances provisioned using the minScale annotation. It does not include instances created by autoscaling. */
+		/**
+		 * Output only. The configured number of instances running this revision. For Cloud Run, this only includes instances provisioned using the minScale annotation. It does not include instances created by autoscaling.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		desiredReplicas?: number | null;
 
 		/** ImageDigest holds the resolved digest for the image specified within .Spec.Container.Image. The digest is resolved during the creation of Revision. This field holds the digest value regardless of whether a tag or digest was originally specified in the Container object. */
@@ -2509,7 +2698,10 @@ export namespace MyNS {
 		/** Optional. Specifies the generated logging url for this particular revision based on the revision url template specified in the controller's config. */
 		logUrl?: string | null;
 
-		/** ObservedGeneration is the 'Generation' of the Revision that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False. */
+		/**
+		 * ObservedGeneration is the 'Generation' of the Revision that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration?: number | null;
 
 		/** Not currently used by Cloud Run. */
@@ -2519,7 +2711,10 @@ export namespace MyNS {
 	/** RevisionStatus communicates the observed state of the Revision (from the controller). */
 	export interface RevisionStatusFormProperties {
 
-		/** Output only. The configured number of instances running this revision. For Cloud Run, this only includes instances provisioned using the minScale annotation. It does not include instances created by autoscaling. */
+		/**
+		 * Output only. The configured number of instances running this revision. For Cloud Run, this only includes instances provisioned using the minScale annotation. It does not include instances created by autoscaling.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		desiredReplicas: FormControl<number | null | undefined>,
 
 		/** ImageDigest holds the resolved digest for the image specified within .Spec.Container.Image. The digest is resolved during the creation of Revision. This field holds the digest value regardless of whether a tag or digest was originally specified in the Container object. */
@@ -2528,7 +2723,10 @@ export namespace MyNS {
 		/** Optional. Specifies the generated logging url for this particular revision based on the revision url template specified in the controller's config. */
 		logUrl: FormControl<string | null | undefined>,
 
-		/** ObservedGeneration is the 'Generation' of the Revision that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False. */
+		/**
+		 * ObservedGeneration is the 'Generation' of the Revision that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation, and the Ready condition's status is True or False.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration: FormControl<number | null | undefined>,
 
 		/** Not currently used by Cloud Run. */
@@ -2646,7 +2844,10 @@ export namespace MyNS {
 		/** Uses the "status.latestReadyRevisionName" of the Service to determine the traffic target. When it changes, traffic will automatically migrate from the prior "latest ready" revision to the new one. This field must be false if RevisionName is set. This field defaults to true otherwise. If the field is set to true on Status, this means that the Revision was resolved from the Service's latest ready revision. */
 		latestRevision?: boolean | null;
 
-		/** Percent specifies percent of the traffic to this Revision or Configuration. This defaults to zero if unspecified. */
+		/**
+		 * Percent specifies percent of the traffic to this Revision or Configuration. This defaults to zero if unspecified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percent?: number | null;
 
 		/** Points this traffic target to a specific Revision. This field is mutually exclusive with latest_revision. */
@@ -2668,7 +2869,10 @@ export namespace MyNS {
 		/** Uses the "status.latestReadyRevisionName" of the Service to determine the traffic target. When it changes, traffic will automatically migrate from the prior "latest ready" revision to the new one. This field must be false if RevisionName is set. This field defaults to true otherwise. If the field is set to true on Status, this means that the Revision was resolved from the Service's latest ready revision. */
 		latestRevision: FormControl<boolean | null | undefined>,
 
-		/** Percent specifies percent of the traffic to this Revision or Configuration. This defaults to zero if unspecified. */
+		/**
+		 * Percent specifies percent of the traffic to this Revision or Configuration. This defaults to zero if unspecified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percent: FormControl<number | null | undefined>,
 
 		/** Points this traffic target to a specific Revision. This field is mutually exclusive with latest_revision. */
@@ -2702,7 +2906,10 @@ export namespace MyNS {
 		/** Conditions communicates information about ongoing/complete reconciliation processes that bring the "spec" inline with the observed state of the world. */
 		conditions?: Array<GoogleCloudRunV1Condition>;
 
-		/** ObservedGeneration is the 'Generation' of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False. Note that providing a TrafficTarget that has latest_revision=True will result in a Route that does not increment either its metadata.generation or its observedGeneration, as new "latest ready" revisions from the Configuration are processed without an update to the Route's spec. */
+		/**
+		 * ObservedGeneration is the 'Generation' of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False. Note that providing a TrafficTarget that has latest_revision=True will result in a Route that does not increment either its metadata.generation or its observedGeneration, as new "latest ready" revisions from the Configuration are processed without an update to the Route's spec.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration?: number | null;
 
 		/** Traffic holds the configured traffic distribution. These entries will always contain RevisionName references. When ConfigurationName appears in the spec, this will hold the LatestReadyRevisionName that was last observed. */
@@ -2715,7 +2922,10 @@ export namespace MyNS {
 	/** RouteStatus communicates the observed state of the Route (from the controller). */
 	export interface RouteStatusFormProperties {
 
-		/** ObservedGeneration is the 'Generation' of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False. Note that providing a TrafficTarget that has latest_revision=True will result in a Route that does not increment either its metadata.generation or its observedGeneration, as new "latest ready" revisions from the Configuration are processed without an update to the Route's spec. */
+		/**
+		 * ObservedGeneration is the 'Generation' of the Route that was last processed by the controller. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False. Note that providing a TrafficTarget that has latest_revision=True will result in a Route that does not increment either its metadata.generation or its observedGeneration, as new "latest ready" revisions from the Configuration are processed without an update to the Route's spec.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration: FormControl<number | null | undefined>,
 
 		/** URL holds the url that will distribute traffic over the provided traffic targets. It generally has the form: `https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app` */
@@ -2839,7 +3049,10 @@ export namespace MyNS {
 		/** Name of the latest Revision from this Service's Configuration that has had its `Ready` condition become `True`. */
 		latestReadyRevisionName?: string | null;
 
-		/** Returns the generation last seen by the system. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False. */
+		/**
+		 * Returns the generation last seen by the system. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration?: number | null;
 
 		/** Holds the configured traffic distribution. These entries will always contain RevisionName references. When ConfigurationName appears in the spec, this will hold the LatestReadyRevisionName that we last observed. */
@@ -2858,7 +3071,10 @@ export namespace MyNS {
 		/** Name of the latest Revision from this Service's Configuration that has had its `Ready` condition become `True`. */
 		latestReadyRevisionName: FormControl<string | null | undefined>,
 
-		/** Returns the generation last seen by the system. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False. */
+		/**
+		 * Returns the generation last seen by the system. Clients polling for completed reconciliation should poll until observedGeneration = metadata.generation and the Ready condition's status is True or False.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration: FormControl<number | null | undefined>,
 
 		/** URL that will distribute traffic over the provided traffic targets. It generally has the form `https://{route-hash}-{project-hash}-{cluster-level-suffix}.a.run.app` */
@@ -2958,7 +3174,10 @@ export namespace MyNS {
 		/** Optional. Conditions communicate information about ongoing/complete reconciliation processes that bring the "spec" inline with the observed state of the world. Task-specific conditions include: * `Started`: `True` when the task has started to execute. * `Completed`: `True` when the task has succeeded. `False` when the task has failed. */
 		conditions?: Array<GoogleCloudRunV1Condition>;
 
-		/** Required. Index of the task, unique per execution, and beginning at 0. */
+		/**
+		 * Required. Index of the task, unique per execution, and beginning at 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Result of a task attempt. */
@@ -2967,10 +3186,16 @@ export namespace MyNS {
 		/** Optional. URI where logs for this task can be found in Cloud Console. */
 		logUri?: string | null;
 
-		/** Optional. The 'generation' of the task that was last processed by the controller. */
+		/**
+		 * Optional. The 'generation' of the task that was last processed by the controller.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration?: number | null;
 
-		/** Optional. The number of times this task was retried. Instances are retried when they fail up to the maxRetries limit. */
+		/**
+		 * Optional. The number of times this task was retried. Instances are retried when they fail up to the maxRetries limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retried?: number | null;
 
 		/** Optional. Represents time when the task started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. */
@@ -2983,16 +3208,25 @@ export namespace MyNS {
 		/** Optional. Represents time when the task was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. */
 		completionTime: FormControl<string | null | undefined>,
 
-		/** Required. Index of the task, unique per execution, and beginning at 0. */
+		/**
+		 * Required. Index of the task, unique per execution, and beginning at 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** Optional. URI where logs for this task can be found in Cloud Console. */
 		logUri: FormControl<string | null | undefined>,
 
-		/** Optional. The 'generation' of the task that was last processed by the controller. */
+		/**
+		 * Optional. The 'generation' of the task that was last processed by the controller.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration: FormControl<number | null | undefined>,
 
-		/** Optional. The number of times this task was retried. Instances are retried when they fail up to the maxRetries limit. */
+		/**
+		 * Optional. The number of times this task was retried. Instances are retried when they fail up to the maxRetries limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retried: FormControl<number | null | undefined>,
 
 		/** Optional. Represents time when the task started to run. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. */
@@ -3014,7 +3248,10 @@ export namespace MyNS {
 	/** Result of a task attempt. */
 	export interface TaskAttemptResult {
 
-		/** Optional. The exit code of this attempt. This may be unset if the container was unable to exit cleanly with a code due to some other failure. See status field for possible failure details. */
+		/**
+		 * Optional. The exit code of this attempt. This may be unset if the container was unable to exit cleanly with a code due to some other failure. See status field for possible failure details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -3024,7 +3261,10 @@ export namespace MyNS {
 	/** Result of a task attempt. */
 	export interface TaskAttemptResultFormProperties {
 
-		/** Optional. The exit code of this attempt. This may be unset if the container was unable to exit cleanly with a code due to some other failure. See status field for possible failure details. */
+		/**
+		 * Optional. The exit code of this attempt. This may be unset if the container was unable to exit cleanly with a code due to some other failure. See status field for possible failure details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 	}
 	export function CreateTaskAttemptResultFormGroup() {
@@ -3041,20 +3281,32 @@ export namespace MyNS {
 		/** Per container override specification. */
 		containerOverrides?: Array<ContainerOverride>;
 
-		/** The desired number of tasks the execution should run. Will replace existing task_count value. */
+		/**
+		 * The desired number of tasks the execution should run. Will replace existing task_count value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taskCount?: number | null;
 
-		/** Duration in seconds the task may be active before the system will actively try to mark it failed and kill associated containers. Will replace existing timeout_seconds value. */
+		/**
+		 * Duration in seconds the task may be active before the system will actively try to mark it failed and kill associated containers. Will replace existing timeout_seconds value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds?: number | null;
 	}
 
 	/** RunJob Overrides that contains Execution fields to be overridden on the go. */
 	export interface OverridesFormProperties {
 
-		/** The desired number of tasks the execution should run. Will replace existing task_count value. */
+		/**
+		 * The desired number of tasks the execution should run. Will replace existing task_count value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		taskCount: FormControl<number | null | undefined>,
 
-		/** Duration in seconds the task may be active before the system will actively try to mark it failed and kill associated containers. Will replace existing timeout_seconds value. */
+		/**
+		 * Duration in seconds the task may be active before the system will actively try to mark it failed and kill associated containers. Will replace existing timeout_seconds value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateOverridesFormGroup() {
@@ -3078,7 +3330,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -3088,7 +3343,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -3144,7 +3402,10 @@ export namespace MyNS {
 	/** Status is a return value for calls that don't return other objects. */
 	export interface Status {
 
-		/** Suggested HTTP return code for this status, 0 if not set. */
+		/**
+		 * Suggested HTTP return code for this status, 0 if not set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** StatusDetails is a set of additional properties that MAY be set by the server to provide additional information about a response. The Reason field of a Status object defines what attributes will be set. Clients must ignore fields that do not match the defined type of each attribute, and should assume that any attribute may be empty, invalid, or under defined. */
@@ -3166,7 +3427,10 @@ export namespace MyNS {
 	/** Status is a return value for calls that don't return other objects. */
 	export interface StatusFormProperties {
 
-		/** Suggested HTTP return code for this status, 0 if not set. */
+		/**
+		 * Suggested HTTP return code for this status, 0 if not set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A human-readable description of the status of this operation. */
@@ -3204,7 +3468,10 @@ export namespace MyNS {
 		/** The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described). */
 		name?: string | null;
 
-		/** If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action. */
+		/**
+		 * If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retryAfterSeconds?: number | null;
 
 		/** UID of the resource. (when there is a single resource which can be described). */
@@ -3223,7 +3490,10 @@ export namespace MyNS {
 		/** The name attribute of the resource associated with the status StatusReason (when there is a single name which can be described). */
 		name: FormControl<string | null | undefined>,
 
-		/** If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action. */
+		/**
+		 * If specified, the time in seconds before the operation should be retried. Some errors may indicate the client must take an alternate action - for those errors this field may indicate how long to wait before taking the alternate action.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retryAfterSeconds: FormControl<number | null | undefined>,
 
 		/** UID of the resource. (when there is a single resource which can be described). */
@@ -3343,6 +3613,7 @@ export namespace MyNS {
 		 * Get apis/domains.cloudrun.com/v1/{parent}/authorizeddomains
 		 * @param {string} parent Name of the parent Project resource. Example: `projects/myproject`.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {ListAuthorizedDomainsResponse} Successful response
 		 */
@@ -3359,6 +3630,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Not currently used by Cloud Run.
 		 * @param {string} labelSelector Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit Optional. The maximum number of records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
 		 * @param {boolean} watch Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 		 * @return {ListDomainMappingsResponse} Successful response
@@ -3440,6 +3712,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Optional. Not supported by Cloud Run.
 		 * @param {string} labelSelector Optional. Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit Optional. The maximum number of the records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion Optional. Not supported by Cloud Run.
 		 * @param {boolean} watch Optional. Not supported by Cloud Run.
 		 * @return {ListExecutionsResponse} Successful response
@@ -3457,6 +3730,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Optional. Not supported by Cloud Run.
 		 * @param {string} labelSelector Optional. Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit Optional. The maximum number of records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion Optional. Not supported by Cloud Run.
 		 * @param {boolean} watch Optional. Not supported by Cloud Run.
 		 * @return {ListJobsResponse} Successful response
@@ -3484,6 +3758,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Optional. Not supported by Cloud Run.
 		 * @param {string} labelSelector Optional. Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn. For example, to list all tasks of execution "foo" in succeeded state: `run.googleapis.com/execution=foo,run.googleapis.com/runningState=Succeeded`. Supported states are: * `Pending`: Initial state of all tasks. The task has not yet started but eventually will. * `Running`: Container instances for this task are running or will be running shortly. * `Succeeded`: No more container instances to run for the task, and the last attempt succeeded. * `Failed`: No more container instances to run for the task, and the last attempt failed. This task has run out of retry attempts. * `Cancelled`: Task was running but got stopped because its parent execution has been aborted. * `Abandoned`: The task has not yet started and never will because its parent execution has been aborted.
 		 * @param {number} limit Optional. The maximum number of records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion Optional. Not supported by Cloud Run.
 		 * @param {boolean} watch Optional. Not supported by Cloud Run.
 		 * @return {ListTasksResponse} Successful response
@@ -3536,6 +3811,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Not supported by Cloud Run.
 		 * @param {string} labelSelector Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit Optional. The maximum number of the records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion Not supported by Cloud Run.
 		 * @param {boolean} watch Not supported by Cloud Run.
 		 * @return {ListConfigurationsResponse} Successful response
@@ -3553,6 +3829,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Not currently used by Cloud Run.
 		 * @param {string} labelSelector Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit Optional. The maximum number of records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
 		 * @param {boolean} watch Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 		 * @return {ListRevisionsResponse} Successful response
@@ -3570,6 +3847,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Not currently used by Cloud Run.
 		 * @param {string} labelSelector Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit Optional. The maximum number of records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
 		 * @param {boolean} watch Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 		 * @return {ListRoutesResponse} Successful response
@@ -3587,6 +3865,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Not supported, and ignored by Cloud Run.
 		 * @param {string} labelSelector Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit The maximum number of records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion Not supported, and ignored by Cloud Run.
 		 * @param {boolean} watch Not supported, and ignored by Cloud Run.
 		 * @return {ListServicesResponse} Successful response
@@ -3647,6 +3926,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -3660,6 +3940,7 @@ export namespace MyNS {
 		 * @param {string} name Required. To query for all of the operations for a project.
 		 * @param {string} filter Optional. A filter for matching the completed or in-progress operations. The supported formats of *filter* are: To query for only completed operations: done:true To query for only ongoing operations: done:false Must be empty to query for all of the latest operations for the given parent project.
 		 * @param {number} pageSize The maximum number of records that should be returned. Requested page size cannot exceed 100. If not set or set to less than or equal to 0, the default page size is 100. .
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token identifying which result to start with, which is returned by a previous list call.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -3682,6 +3963,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/authorizeddomains
 		 * @param {string} parent Name of the parent Project resource. Example: `projects/myproject`.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {ListAuthorizedDomainsResponse} Successful response
 		 */
@@ -3698,6 +3980,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Not supported by Cloud Run.
 		 * @param {string} labelSelector Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit Optional. The maximum number of the records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion Not supported by Cloud Run.
 		 * @param {boolean} watch Not supported by Cloud Run.
 		 * @return {ListConfigurationsResponse} Successful response
@@ -3715,6 +3998,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Not currently used by Cloud Run.
 		 * @param {string} labelSelector Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit Optional. The maximum number of records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
 		 * @param {boolean} watch Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 		 * @return {ListDomainMappingsResponse} Successful response
@@ -3743,6 +4027,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Not currently used by Cloud Run.
 		 * @param {string} labelSelector Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit Optional. The maximum number of records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
 		 * @param {boolean} watch Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 		 * @return {ListRevisionsResponse} Successful response
@@ -3760,6 +4045,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Not currently used by Cloud Run.
 		 * @param {string} labelSelector Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit Optional. The maximum number of records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
 		 * @param {boolean} watch Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 		 * @return {ListRoutesResponse} Successful response
@@ -3777,6 +4063,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Not supported, and ignored by Cloud Run.
 		 * @param {string} labelSelector Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit The maximum number of records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion Not supported, and ignored by Cloud Run.
 		 * @param {boolean} watch Not supported, and ignored by Cloud Run.
 		 * @return {ListServicesResponse} Successful response
@@ -3801,6 +4088,7 @@ export namespace MyNS {
 		 * Get v1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Run_projects_locations_services_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {

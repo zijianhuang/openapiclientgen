@@ -2573,6 +2573,7 @@ namespace MyNS
 		/// List of all the organization's applications.
 		/// List_applications_api_v1_app__get api/v1/app/
 		/// </summary>
+		/// <param name="limit">Maximum: 250</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_ApplicationOut_> List_applications_api_v1_app__getAsync(string iterator, int limit, Ordering order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2649,6 +2650,9 @@ namespace MyNS
 		/// Delete an application.
 		/// Delete_application_api_v1_app__app_id___delete api/v1/app/{app_id}/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Delete_application_api_v1_app__app_id___deleteAsync(string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/";
@@ -2676,6 +2680,9 @@ namespace MyNS
 		/// Get an application.
 		/// Get_application_api_v1_app__app_id___get api/v1/app/{app_id}/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ApplicationOut> Get_application_api_v1_app__app_id___getAsync(string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2710,6 +2717,9 @@ namespace MyNS
 		/// Update an application.
 		/// Update_application_api_v1_app__app_id___put api/v1/app/{app_id}/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ApplicationOut> Update_application_api_v1_app__app_id___putAsync(string app_id, ApplicationIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2751,6 +2761,14 @@ namespace MyNS
 		/// List attempts by endpoint id
 		/// List_attempts_by_endpoint_api_v1_app__app_id__attempt_endpoint__endpoint_id___get api/v1/app/{app_id}/attempt/endpoint/{endpoint_id}/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="limit">Maximum: 250</param>
+		/// <param name="channel">Max length: 128</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_MessageAttemptOut_> List_attempts_by_endpoint_api_v1_app__app_id__attempt_endpoint__endpoint_id___getAsync(string app_id, string endpoint_id, string iterator, int limit, MessageStatus status, StatusCodeClass status_code_class, string[] event_types, string channel, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2785,6 +2803,17 @@ namespace MyNS
 		/// List attempts by message id
 		/// List_attempts_by_msg_api_v1_app__app_id__attempt_msg__msg_id___get api/v1/app/{app_id}/attempt/msg/{msg_id}/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="msg_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="limit">Maximum: 250</param>
+		/// <param name="channel">Max length: 128</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_MessageAttemptOut_> List_attempts_by_msg_api_v1_app__app_id__attempt_msg__msg_id___getAsync(string app_id, string msg_id, string endpoint_id, string iterator, int limit, MessageStatus status, StatusCodeClass status_code_class, string[] event_types, string channel, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2819,6 +2848,10 @@ namespace MyNS
 		/// List the application's endpoints.
 		/// List_endpoints_api_v1_app__app_id__endpoint__get api/v1/app/{app_id}/endpoint/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="limit">Maximum: 250</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_EndpointOut_> List_endpoints_api_v1_app__app_id__endpoint__getAsync(string app_id, string iterator, int limit, Ordering order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2855,6 +2888,9 @@ namespace MyNS
 		/// When `secret` is `null` the secret is automatically generated (recommended)
 		/// Create_endpoint_api_v1_app__app_id__endpoint__post api/v1/app/{app_id}/endpoint/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Create_endpoint_api_v1_app__app_id__endpoint__postAsync(string app_id, EndpointIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/";
@@ -2889,6 +2925,12 @@ namespace MyNS
 		/// Delete an endpoint.
 		/// Delete_endpoint_api_v1_app__app_id__endpoint__endpoint_id___delete api/v1/app/{app_id}/endpoint/{endpoint_id}/
 		/// </summary>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Delete_endpoint_api_v1_app__app_id__endpoint__endpoint_id___deleteAsync(string endpoint_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/";
@@ -2916,6 +2958,12 @@ namespace MyNS
 		/// Get an application.
 		/// Get_endpoint_api_v1_app__app_id__endpoint__endpoint_id___get api/v1/app/{app_id}/endpoint/{endpoint_id}/
 		/// </summary>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<EndpointOut> Get_endpoint_api_v1_app__app_id__endpoint__endpoint_id___getAsync(string endpoint_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2950,6 +2998,12 @@ namespace MyNS
 		/// Update an endpoint.
 		/// Update_endpoint_api_v1_app__app_id__endpoint__endpoint_id___put api/v1/app/{app_id}/endpoint/{endpoint_id}/
 		/// </summary>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<EndpointOut> Update_endpoint_api_v1_app__app_id__endpoint__endpoint_id___putAsync(string endpoint_id, string app_id, EndpointUpdate requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2991,6 +3045,12 @@ namespace MyNS
 		/// Get the additional headers to be sent with the webhook
 		/// Get_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__get api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/
 		/// </summary>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<EndpointHeadersOut> Get_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__getAsync(string endpoint_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3025,6 +3085,12 @@ namespace MyNS
 		/// Partially set the additional headers to be sent with the webhook
 		/// Patch_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__patch api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Patch_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__patchAsync(string app_id, string endpoint_id, EndpointHeadersPatchIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/headers/";
@@ -3059,6 +3125,12 @@ namespace MyNS
 		/// Set the additional headers to be sent with the webhook
 		/// Update_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__put api/v1/app/{app_id}/endpoint/{endpoint_id}/headers/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Update_endpoint_headers_api_v1_app__app_id__endpoint__endpoint_id__headers__putAsync(string app_id, string endpoint_id, EndpointHeadersIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/headers/";
@@ -3095,6 +3167,14 @@ namespace MyNS
 		/// The `before` parameter lets you filter all items created before a certain date and is ignored if an iterator is passed.
 		/// List_attempted_messages_api_v1_app__app_id__endpoint__endpoint_id__msg__get api/v1/app/{app_id}/endpoint/{endpoint_id}/msg/
 		/// </summary>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="limit">Maximum: 250</param>
+		/// <param name="channel">Max length: 128</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_EndpointMessageOut_> List_attempted_messages_api_v1_app__app_id__endpoint__endpoint_id__msg__getAsync(string endpoint_id, string app_id, string iterator, int limit, string channel, MessageStatus status, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3129,6 +3209,12 @@ namespace MyNS
 		/// Resend all failed messages since a given time.
 		/// Recover_failed_webhooks_api_v1_app__app_id__endpoint__endpoint_id__recover__post api/v1/app/{app_id}/endpoint/{endpoint_id}/recover/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Recover_failed_webhooks_api_v1_app__app_id__endpoint__endpoint_id__recover__postAsync(string app_id, string endpoint_id, RecoverIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/recover/";
@@ -3163,6 +3249,12 @@ namespace MyNS
 		/// Replays messages to the endpoint. Only messages that were created after `since` will be sent. Messages that were previously sent to the endpoint are not resent.
 		/// Replay_missing_webhooks_api_v1_app__app_id__endpoint__endpoint_id__replay_missing__post api/v1/app/{app_id}/endpoint/{endpoint_id}/replay-missing/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Replay_missing_webhooks_api_v1_app__app_id__endpoint__endpoint_id__replay_missing__postAsync(string app_id, string endpoint_id, ReplayIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/replay-missing/";
@@ -3200,6 +3292,12 @@ namespace MyNS
 		/// For more information please refer to [the consuming webhooks docs](https://docs.svix.com/consuming-webhooks/).
 		/// Get_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret__get api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/
 		/// </summary>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<EndpointSecretOut> Get_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret__getAsync(string endpoint_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3234,6 +3332,12 @@ namespace MyNS
 		/// Rotates the endpoint's signing secret.  The previous secret will be valid for the next 24 hours.
 		/// Rotate_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret_rotate__post api/v1/app/{app_id}/endpoint/{endpoint_id}/secret/rotate/
 		/// </summary>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Rotate_endpoint_secret_api_v1_app__app_id__endpoint__endpoint_id__secret_rotate__postAsync(string endpoint_id, string app_id, EndpointSecretRotateIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/secret/rotate/";
@@ -3268,6 +3372,12 @@ namespace MyNS
 		/// Send an example message for event
 		/// Send_event_type_example_message_api_v1_app__app_id__endpoint__endpoint_id__send_example__post api/v1/app/{app_id}/endpoint/{endpoint_id}/send-example/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Send_event_type_example_message_api_v1_app__app_id__endpoint__endpoint_id__send_example__postAsync(string app_id, string endpoint_id, EventExampleIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/send-example/";
@@ -3302,6 +3412,12 @@ namespace MyNS
 		/// Get basic statistics for the endpoint.
 		/// Get_endpoint_stats_api_v1_app__app_id__endpoint__endpoint_id__stats__get api/v1/app/{app_id}/endpoint/{endpoint_id}/stats/
 		/// </summary>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<EndpointStats> Get_endpoint_stats_api_v1_app__app_id__endpoint__endpoint_id__stats__getAsync(string endpoint_id, string app_id, System.DateTimeOffset since, System.DateTimeOffset until, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3336,6 +3452,12 @@ namespace MyNS
 		/// Get the transformation code associated with this endpoint
 		/// Get_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__get api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/
 		/// </summary>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<EndpointTransformationOut> Get_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__getAsync(string endpoint_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3370,6 +3492,12 @@ namespace MyNS
 		/// Set or unset the transformation code associated with this endpoint
 		/// Set_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__patch api/v1/app/{app_id}/endpoint/{endpoint_id}/transformation/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Set_endpoint_transformation_api_v1_app__app_id__endpoint__endpoint_id__transformation__patchAsync(string app_id, string endpoint_id, EndpointTransformationIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/transformation/";
@@ -3404,6 +3532,9 @@ namespace MyNS
 		/// List the application's integrations.
 		/// List_integrations_api_v1_app__app_id__integration__get api/v1/app/{app_id}/integration/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_IntegrationOut_> List_integrations_api_v1_app__app_id__integration__getAsync(string app_id, string iterator, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3438,6 +3569,9 @@ namespace MyNS
 		/// Create an integration.
 		/// Create_integration_api_v1_app__app_id__integration__post api/v1/app/{app_id}/integration/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Create_integration_api_v1_app__app_id__integration__postAsync(string app_id, IntegrationIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/integration/";
@@ -3472,6 +3606,9 @@ namespace MyNS
 		/// Delete an integration and revoke it's key.
 		/// Delete_integration_api_v1_app__app_id__integration__integ_id___delete api/v1/app/{app_id}/integration/{integ_id}/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Delete_integration_api_v1_app__app_id__integration__integ_id___deleteAsync(string integ_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/integration/"+ (integ_id==null? "" : System.Uri.EscapeDataString(integ_id))+"/";
@@ -3499,6 +3636,9 @@ namespace MyNS
 		/// Get an integration.
 		/// Get_integration_api_v1_app__app_id__integration__integ_id___get api/v1/app/{app_id}/integration/{integ_id}/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<IntegrationOut> Get_integration_api_v1_app__app_id__integration__integ_id___getAsync(string integ_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3533,6 +3673,9 @@ namespace MyNS
 		/// Update an integration.
 		/// Update_integration_api_v1_app__app_id__integration__integ_id___put api/v1/app/{app_id}/integration/{integ_id}/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<IntegrationOut> Update_integration_api_v1_app__app_id__integration__integ_id___putAsync(string integ_id, string app_id, IntegrationUpdate requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3574,6 +3717,9 @@ namespace MyNS
 		/// Get an integration's key.
 		/// Get_integration_key_api_v1_app__app_id__integration__integ_id__key__get api/v1/app/{app_id}/integration/{integ_id}/key/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<IntegrationKeyOut> Get_integration_key_api_v1_app__app_id__integration__integ_id__key__getAsync(string integ_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3608,6 +3754,9 @@ namespace MyNS
 		/// Rotate the integration's key. The previous key will be immediately revoked.
 		/// Rotate_integration_key_api_v1_app__app_id__integration__integ_id__key_rotate__post api/v1/app/{app_id}/integration/{integ_id}/key/rotate/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<IntegrationKeyOut> Rotate_integration_key_api_v1_app__app_id__integration__integ_id__key_rotate__postAsync(string integ_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3641,6 +3790,11 @@ namespace MyNS
 		/// `before` and `after` cannot be used simultaneously.
 		/// List_messages_api_v1_app__app_id__msg__get api/v1/app/{app_id}/msg/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="limit">Maximum: 250</param>
+		/// <param name="channel">Max length: 128</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_MessageOut_> List_messages_api_v1_app__app_id__msg__getAsync(string app_id, string iterator, int limit, string[] event_types, string channel, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3685,6 +3839,9 @@ namespace MyNS
 		/// The optional `application` property will be used to create an application if the application referenced in the path does not exist. If it does then this property is ignored.
 		/// Create_message_api_v1_app__app_id__msg__post api/v1/app/{app_id}/msg/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Create_message_api_v1_app__app_id__msg__postAsync(string app_id, bool with_content, MessageIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/&with_content="+with_content;
@@ -3719,6 +3876,12 @@ namespace MyNS
 		/// Get a message by its ID or eventID.
 		/// Get_message_api_v1_app__app_id__msg__msg_id___get api/v1/app/{app_id}/msg/{msg_id}/
 		/// </summary>
+		/// <param name="msg_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<MessageOut> Get_message_api_v1_app__app_id__msg__msg_id___getAsync(string msg_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3755,6 +3918,17 @@ namespace MyNS
 		/// `msg_id`: Use a message id or a message `eventId`
 		/// List_attempts_api_v1_app__app_id__msg__msg_id__attempt__get api/v1/app/{app_id}/msg/{msg_id}/attempt/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="msg_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="limit">Maximum: 250</param>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="channel">Max length: 128</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_MessageAttemptOut_> List_attempts_api_v1_app__app_id__msg__msg_id__attempt__getAsync(string app_id, string msg_id, string iterator, int limit, string endpoint_id, string[] event_types, string channel, MessageStatus status, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3789,6 +3963,12 @@ namespace MyNS
 		/// `msg_id`: Use a message id or a message `eventId`
 		/// Get_attempt_api_v1_app__app_id__msg__msg_id__attempt__attempt_id___get api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/
 		/// </summary>
+		/// <param name="msg_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<MessageAttemptOut> Get_attempt_api_v1_app__app_id__msg__msg_id__attempt__attempt_id___getAsync(string attempt_id, string msg_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3823,6 +4003,12 @@ namespace MyNS
 		/// Deletes the given attempt's response body. Useful when an endpoint accidentally returned sensitive content.
 		/// Expunge_attempt_content_api_v1_app__app_id__msg__msg_id__attempt__attempt_id__content__delete api/v1/app/{app_id}/msg/{msg_id}/attempt/{attempt_id}/content/
 		/// </summary>
+		/// <param name="msg_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Expunge_attempt_content_api_v1_app__app_id__msg__msg_id__attempt__attempt_id__content__deleteAsync(string attempt_id, string msg_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/attempt/"+ (attempt_id==null? "" : System.Uri.EscapeDataString(attempt_id))+"/content/";
@@ -3852,6 +4038,12 @@ namespace MyNS
 		/// The message can't be replayed or resent once its payload has been deleted or expired.
 		/// Expunge_message_payload_api_v1_app__app_id__msg__msg_id__content__delete api/v1/app/{app_id}/msg/{msg_id}/content/
 		/// </summary>
+		/// <param name="msg_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Expunge_message_payload_api_v1_app__app_id__msg__msg_id__content__deleteAsync(string msg_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/content/";
@@ -3879,6 +4071,13 @@ namespace MyNS
 		/// `msg_id`: Use a message id or a message `eventId`
 		/// List_attempted_destinations_api_v1_app__app_id__msg__msg_id__endpoint__get api/v1/app/{app_id}/msg/{msg_id}/endpoint/
 		/// </summary>
+		/// <param name="msg_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="limit">Maximum: 250</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_MessageEndpointOut_> List_attempted_destinations_api_v1_app__app_id__msg__msg_id__endpoint__getAsync(string msg_id, string app_id, string iterator, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3919,6 +4118,17 @@ namespace MyNS
 		/// The `before` parameter lets you filter all items created before a certain date and is ignored if an iterator is passed.
 		/// List_attempts_for_endpoint_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__attempt__get api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/attempt/
 		/// </summary>
+		/// <param name="msg_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="limit">Maximum: 250</param>
+		/// <param name="channel">Max length: 128</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_MessageAttemptEndpointOut_> List_attempts_for_endpoint_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__attempt__getAsync(string msg_id, string app_id, string endpoint_id, string iterator, int limit, string[] event_types, string channel, MessageStatus status, System.DateTimeOffset before, System.DateTimeOffset after, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3953,6 +4163,15 @@ namespace MyNS
 		/// Resend a message to the specified endpoint.
 		/// Resend_webhook_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__resend__post api/v1/app/{app_id}/msg/{msg_id}/endpoint/{endpoint_id}/resend/
 		/// </summary>
+		/// <param name="endpoint_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="msg_id">Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Resend_webhook_api_v1_app__app_id__msg__msg_id__endpoint__endpoint_id__resend__postAsync(string endpoint_id, string msg_id, string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/msg/"+ (msg_id==null? "" : System.Uri.EscapeDataString(msg_id))+"/endpoint/"+ (endpoint_id==null? "" : System.Uri.EscapeDataString(endpoint_id))+"/resend/";
@@ -3975,6 +4194,9 @@ namespace MyNS
 		/// Use this function to get magic links (and authentication codes) for connecting your users to the Consumer Application Portal.
 		/// Get_app_portal_access_api_v1_auth_app_portal_access__app_id___post api/v1/auth/app-portal-access/{app_id}/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<AppPortalAccessOut> Get_app_portal_access_api_v1_auth_app_portal_access__app_id___postAsync(string app_id, AppPortalAccessIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4016,6 +4238,9 @@ namespace MyNS
 		/// Expire all of the tokens associated with a specific Application
 		/// Expire_all_api_v1_auth_app__app_id__expire_all__post api/v1/auth/app/{app_id}/expire-all/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		public async Task Expire_all_api_v1_auth_app__app_id__expire_all__postAsync(string app_id, ApplicationTokenExpireIn requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/auth/app/"+ (app_id==null? "" : System.Uri.EscapeDataString(app_id))+"/expire-all/";
@@ -4052,6 +4277,9 @@ namespace MyNS
 		/// Use this function to get magic links (and authentication codes) for connecting your users to the Consumer Application Portal.
 		/// Get_dashboard_access_api_v1_auth_dashboard_access__app_id___post api/v1/auth/dashboard-access/{app_id}/
 		/// </summary>
+		/// <param name="app_id">Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<DashboardAccessOut> Get_dashboard_access_api_v1_auth_dashboard_access__app_id___postAsync(string app_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4105,6 +4333,7 @@ namespace MyNS
 		/// List background tasks executed in the past 90 days.
 		/// List_background_tasks_api_v1_background_task__get api/v1/background-task/
 		/// </summary>
+		/// <param name="limit">Maximum: 250</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_BackgroundTaskOut_> List_background_tasks_api_v1_background_task__getAsync(string iterator, int limit, Ordering order, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4173,6 +4402,8 @@ namespace MyNS
 		/// Return the list of event types.
 		/// List_event_types_api_v1_event_type__get api/v1/event-type/
 		/// </summary>
+		/// <param name="iterator">Max length: 256</param>
+		/// <param name="limit">Maximum: 250</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ListResponse_EventTypeOut_> List_event_types_api_v1_event_type__getAsync(string iterator, int limit, bool with_content, bool include_archived, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4253,6 +4484,7 @@ namespace MyNS
 		/// This can only be used in development environments.
 		/// Delete_event_type_api_v1_event_type__event_type_name___delete api/v1/event-type/{event_type_name}/
 		/// </summary>
+		/// <param name="event_type_name">Max length: 256</param>
 		public async Task Delete_event_type_api_v1_event_type__event_type_name___deleteAsync(string event_type_name, bool expunge, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v1/event-type/"+ (event_type_name==null? "" : System.Uri.EscapeDataString(event_type_name))+"/&expunge="+expunge;
@@ -4280,6 +4512,7 @@ namespace MyNS
 		/// Get an event type.
 		/// Get_event_type_api_v1_event_type__event_type_name___get api/v1/event-type/{event_type_name}/
 		/// </summary>
+		/// <param name="event_type_name">Max length: 256</param>
 		/// <returns>Successful Response</returns>
 		public async Task<EventTypeOut> Get_event_type_api_v1_event_type__event_type_name___getAsync(string event_type_name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4314,6 +4547,7 @@ namespace MyNS
 		/// Update an event type.
 		/// Update_event_type_api_v1_event_type__event_type_name___put api/v1/event-type/{event_type_name}/
 		/// </summary>
+		/// <param name="event_type_name">Max length: 256</param>
 		/// <returns>Successful Response</returns>
 		public async Task<EventTypeOut> Update_event_type_api_v1_event_type__event_type_name___putAsync(string event_type_name, EventTypeUpdate requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

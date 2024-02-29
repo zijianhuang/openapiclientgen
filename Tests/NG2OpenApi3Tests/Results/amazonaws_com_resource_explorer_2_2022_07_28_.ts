@@ -1048,8 +1048,8 @@ export namespace MyNS {
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ViewArn: string;
 	}
@@ -1058,8 +1058,8 @@ export namespace MyNS {
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to set as the default for the Amazon Web Services Region and Amazon Web Services account in which you call this operation. The specified view must already exist in the called Region.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ViewArn: FormControl<string | null | undefined>,
 	}
@@ -1115,8 +1115,8 @@ export namespace MyNS {
 
 		/**
 		 * This value helps ensure idempotency. Resource Explorer uses this value to prevent the accidental creation of duplicate versions. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type value</a> to ensure the uniqueness of your views.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientToken?: string | null;
 
@@ -1139,8 +1139,8 @@ export namespace MyNS {
 
 		/**
 		 * This value helps ensure idempotency. Resource Explorer uses this value to prevent the accidental creation of duplicate versions. We recommend that you generate a <a href="https://wikipedia.org/wiki/Universally_unique_identifier">UUID-type value</a> to ensure the uniqueness of your views.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
@@ -1203,8 +1203,8 @@ export namespace MyNS {
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to delete.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ViewArn: string;
 	}
@@ -1213,8 +1213,8 @@ export namespace MyNS {
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to delete.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ViewArn: FormControl<string | null | undefined>,
 	}
@@ -1230,8 +1230,8 @@ export namespace MyNS {
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want information about.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ViewArn: string;
 	}
@@ -1240,8 +1240,8 @@ export namespace MyNS {
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want information about.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ViewArn: FormControl<string | null | undefined>,
 	}
@@ -1263,8 +1263,8 @@ export namespace MyNS {
 
 		/**
 		 * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken?: string | null;
 
@@ -1289,8 +1289,8 @@ export namespace MyNS {
 
 		/**
 		 * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1398,23 +1398,23 @@ export namespace MyNS {
 
 		/**
 		 * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken?: string | null;
 
 		/**
 		 * <p>A string that includes keywords and filters that specify the resources that you want to include in the results.</p> <p>For the complete syntax supported by the <code>QueryString</code> parameter, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search query syntax reference for Resource Explorer</a>.</p> <p>The search is completely case insensitive. You can specify an empty string to return all results up to the limit of 1,000 total results.</p> <note> <p>The operation can return only the first 1,000 results. If the resource you want is not included, then use a different value for <code>QueryString</code> to refine the results.</p> </note>
 		 * Required
-		 * Max length: 1011
 		 * Min length: 0
+		 * Max length: 1011
 		 */
 		QueryString: string;
 
 		/**
 		 * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to use for the query. If you don't specify a value for this parameter, then the operation automatically uses the default view for the Amazon Web Services Region in which you called this operation. If the Region either doesn't have a default view or if you don't have permission to use the default view, then the operation fails with a <code>401 Unauthorized</code> exception.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		ViewArn?: string | null;
 	}
@@ -1429,23 +1429,23 @@ export namespace MyNS {
 
 		/**
 		 * The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value of the previous call's <code>NextToken</code> response to indicate where the output should continue from.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A string that includes keywords and filters that specify the resources that you want to include in the results.</p> <p>For the complete syntax supported by the <code>QueryString</code> parameter, see <a href="https://docs.aws.amazon.com/resource-explorer/latest/userguide/using-search-query-syntax.html">Search query syntax reference for Resource Explorer</a>.</p> <p>The search is completely case insensitive. You can specify an empty string to return all results up to the limit of 1,000 total results.</p> <note> <p>The operation can return only the first 1,000 results. If the resource you want is not included, then use a different value for <code>QueryString</code> to refine the results.</p> </note>
 		 * Required
-		 * Max length: 1011
 		 * Min length: 0
+		 * Max length: 1011
 		 */
 		QueryString: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies the <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view to use for the query. If you don't specify a value for this parameter, then the operation automatically uses the default view for the Amazon Web Services Region in which you called this operation. If the Region either doesn't have a default view or if you don't have permission to use the default view, then the operation fails with a <code>401 Unauthorized</code> exception.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		ViewArn: FormControl<string | null | undefined>,
 	}
@@ -1506,8 +1506,8 @@ export namespace MyNS {
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to modify.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ViewArn: string;
 	}
@@ -1516,8 +1516,8 @@ export namespace MyNS {
 		/**
 		 * The <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon resource name (ARN)</a> of the view that you want to modify.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ViewArn: FormControl<string | null | undefined>,
 	}

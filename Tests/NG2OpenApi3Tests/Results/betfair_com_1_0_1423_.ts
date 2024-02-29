@@ -102,17 +102,25 @@ export namespace MyNS {
 	}
 
 	export interface KeyLineSelection {
+
+		/** Type: double */
 		hc?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface KeyLineSelectionFormProperties {
+
+		/** Type: double */
 		hc: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateKeyLineSelectionFormGroup() {
 		return new FormGroup<KeyLineSelectionFormProperties>({
 			hc: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -132,7 +140,10 @@ export namespace MyNS {
 		/** Runner Changes - a list of changes to runners (or null if un-changed) */
 		rc?: Array<RunnerChange>;
 
-		/** The total amount matched across the market. This value is truncated at 2dp (or null if un-changed) */
+		/**
+		 * The total amount matched across the market. This value is truncated at 2dp (or null if un-changed)
+		 * Type: double
+		 */
 		tv?: number | null;
 	}
 	export interface MarketChangeFormProperties {
@@ -146,7 +157,10 @@ export namespace MyNS {
 		/** Image - replace existing prices / data with the data supplied: it is not a delta (or null if delta) */
 		img: FormControl<boolean | null | undefined>,
 
-		/** The total amount matched across the market. This value is truncated at 2dp (or null if un-changed) */
+		/**
+		 * The total amount matched across the market. This value is truncated at 2dp (or null if un-changed)
+		 * Type: double
+		 */
 		tv: FormControl<number | null | undefined>,
 	}
 	export function CreateMarketChangeFormGroup() {
@@ -179,57 +193,93 @@ export namespace MyNS {
 		/** Best Display Available To Lay (includes virtual prices)- LevelPriceVol triple delta of price changes, keyed by level (0 vol is remove) */
 		bdatl?: Array<string>;
 
-		/** Handicap - the handicap of the runner (selection) (null if not applicable) */
+		/**
+		 * Handicap - the handicap of the runner (selection) (null if not applicable)
+		 * Type: double
+		 */
 		hc?: number | null;
 
-		/** Selection Id - the id of the runner (selection) */
-		id?: number | null;
+		/**
+		 * Selection Id - the id of the runner (selection)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
-		/** Last Traded Price - The last traded price (or null if un-changed) */
+		/**
+		 * Last Traded Price - The last traded price (or null if un-changed)
+		 * Type: double
+		 */
 		ltp?: number | null;
 
 		/** Starting Price Back - PriceVol tuple delta of price changes (0 vol is remove) */
 		spb?: Array<string>;
 
-		/** Starting Price Far - The far starting price (or null if un-changed) */
+		/**
+		 * Starting Price Far - The far starting price (or null if un-changed)
+		 * Type: double
+		 */
 		spf?: number | null;
 
 		/** Starting Price Lay - PriceVol tuple delta of price changes (0 vol is remove) */
 		spl?: Array<string>;
 
-		/** Starting Price Near - The far starting price (or null if un-changed) */
+		/**
+		 * Starting Price Near - The far starting price (or null if un-changed)
+		 * Type: double
+		 */
 		spn?: number | null;
 
 		/** Traded - PriceVol tuple delta of price changes (0 vol is remove) */
 		trd?: Array<string>;
 
-		/** The total amount matched. This value is truncated at 2dp. */
+		/**
+		 * The total amount matched. This value is truncated at 2dp.
+		 * Type: double
+		 */
 		tv?: number | null;
 	}
 	export interface RunnerChangeFormProperties {
 
-		/** Handicap - the handicap of the runner (selection) (null if not applicable) */
+		/**
+		 * Handicap - the handicap of the runner (selection) (null if not applicable)
+		 * Type: double
+		 */
 		hc: FormControl<number | null | undefined>,
 
-		/** Selection Id - the id of the runner (selection) */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Selection Id - the id of the runner (selection)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
-		/** Last Traded Price - The last traded price (or null if un-changed) */
+		/**
+		 * Last Traded Price - The last traded price (or null if un-changed)
+		 * Type: double
+		 */
 		ltp: FormControl<number | null | undefined>,
 
-		/** Starting Price Far - The far starting price (or null if un-changed) */
+		/**
+		 * Starting Price Far - The far starting price (or null if un-changed)
+		 * Type: double
+		 */
 		spf: FormControl<number | null | undefined>,
 
-		/** Starting Price Near - The far starting price (or null if un-changed) */
+		/**
+		 * Starting Price Near - The far starting price (or null if un-changed)
+		 * Type: double
+		 */
 		spn: FormControl<number | null | undefined>,
 
-		/** The total amount matched. This value is truncated at 2dp. */
+		/**
+		 * The total amount matched. This value is truncated at 2dp.
+		 * Type: double
+		 */
 		tv: FormControl<number | null | undefined>,
 	}
 	export function CreateRunnerChangeFormGroup() {
 		return new FormGroup<RunnerChangeFormProperties>({
 			hc: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			ltp: new FormControl<number | null | undefined>(undefined),
 			spf: new FormControl<number | null | undefined>(undefined),
 			spn: new FormControl<number | null | undefined>(undefined),
@@ -243,14 +293,20 @@ export namespace MyNS {
 		/** Token value (non-null) should be stored and passed in a MarketSubscriptionMessage to resume subscription (in case of disconnect) */
 		clk?: string | null;
 
-		/** Conflate Milliseconds - the conflation rate (may differ from that requested if subscription is delayed) */
-		conflateMs?: number | null;
+		/**
+		 * Conflate Milliseconds - the conflation rate (may differ from that requested if subscription is delayed)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		conflateMs?: string | null;
 
 		/** Change Type - set to indicate the type of change - if null this is a delta) */
 		ct?: MarketChangeMessageCt | null;
 
-		/** Heartbeat Milliseconds - the heartbeat rate (may differ from requested: bounds are 500 to 30000) */
-		heartbeatMs?: number | null;
+		/**
+		 * Heartbeat Milliseconds - the heartbeat rate (may differ from requested: bounds are 500 to 30000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		heartbeatMs?: string | null;
 
 		/** Token value (non-null) should be stored and passed in a MarketSubscriptionMessage to resume subscription (in case of disconnect) */
 		initialClk?: string | null;
@@ -258,13 +314,19 @@ export namespace MyNS {
 		/** MarketChanges - the modifications to markets (will be null on a heartbeat */
 		mc?: Array<MarketChange>;
 
-		/** Publish Time (in millis since epoch) that the changes were generated */
-		pt?: number | null;
+		/**
+		 * Publish Time (in millis since epoch) that the changes were generated
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pt?: string | null;
 
 		/** Segment Type - if the change is split into multiple segments, this denotes the beginning and end of a change, and segments in between. Will be null if data is not segmented */
 		segmentType?: MarketChangeMessageSegmentType | null;
 
-		/** Stream status: set to null if the exchange stream data is up to date and 503 if the downstream services are experiencing latencies */
+		/**
+		 * Stream status: set to null if the exchange stream data is up to date and 503 if the downstream services are experiencing latencies
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 	export interface MarketChangeMessageFormProperties extends ResponseMessageFormProperties {
@@ -272,25 +334,37 @@ export namespace MyNS {
 		/** Token value (non-null) should be stored and passed in a MarketSubscriptionMessage to resume subscription (in case of disconnect) */
 		clk: FormControl<string | null | undefined>,
 
-		/** Conflate Milliseconds - the conflation rate (may differ from that requested if subscription is delayed) */
-		conflateMs: FormControl<number | null | undefined>,
+		/**
+		 * Conflate Milliseconds - the conflation rate (may differ from that requested if subscription is delayed)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		conflateMs: FormControl<string | null | undefined>,
 
 		/** Change Type - set to indicate the type of change - if null this is a delta) */
 		ct: FormControl<MarketChangeMessageCt | null | undefined>,
 
-		/** Heartbeat Milliseconds - the heartbeat rate (may differ from requested: bounds are 500 to 30000) */
-		heartbeatMs: FormControl<number | null | undefined>,
+		/**
+		 * Heartbeat Milliseconds - the heartbeat rate (may differ from requested: bounds are 500 to 30000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		heartbeatMs: FormControl<string | null | undefined>,
 
 		/** Token value (non-null) should be stored and passed in a MarketSubscriptionMessage to resume subscription (in case of disconnect) */
 		initialClk: FormControl<string | null | undefined>,
 
-		/** Publish Time (in millis since epoch) that the changes were generated */
-		pt: FormControl<number | null | undefined>,
+		/**
+		 * Publish Time (in millis since epoch) that the changes were generated
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pt: FormControl<string | null | undefined>,
 
 		/** Segment Type - if the change is split into multiple segments, this denotes the beginning and end of a change, and segments in between. Will be null if data is not segmented */
 		segmentType: FormControl<MarketChangeMessageSegmentType | null | undefined>,
 
-		/** Stream status: set to null if the exchange stream data is up to date and 503 if the downstream services are experiencing latencies */
+		/**
+		 * Stream status: set to null if the exchange stream data is up to date and 503 if the downstream services are experiencing latencies
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateMarketChangeMessageFormGroup() {
@@ -298,11 +372,11 @@ export namespace MyNS {
 			id: new FormControl<number | null | undefined>(undefined),
 			op: new FormControl<string | null | undefined>(undefined),
 			clk: new FormControl<string | null | undefined>(undefined),
-			conflateMs: new FormControl<number | null | undefined>(undefined),
+			conflateMs: new FormControl<string | null | undefined>(undefined),
 			ct: new FormControl<MarketChangeMessageCt | null | undefined>(undefined),
-			heartbeatMs: new FormControl<number | null | undefined>(undefined),
+			heartbeatMs: new FormControl<string | null | undefined>(undefined),
 			initialClk: new FormControl<string | null | undefined>(undefined),
-			pt: new FormControl<number | null | undefined>(undefined),
+			pt: new FormControl<string | null | undefined>(undefined),
 			segmentType: new FormControl<MarketChangeMessageSegmentType | null | undefined>(undefined),
 			status: new FormControl<number | null | undefined>(undefined),
 		});
@@ -315,9 +389,13 @@ export namespace MyNS {
 
 	export interface MarketDataFilter {
 		fields?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ladderLevels?: number | null;
 	}
 	export interface MarketDataFilterFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ladderLevels: FormControl<number | null | undefined>,
 	}
 	export function CreateMarketDataFilterFormGroup() {
@@ -328,6 +406,8 @@ export namespace MyNS {
 	}
 
 	export interface MarketDefinition {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		betDelay?: number | null;
 		bettingType?: MarketDefinitionBettingType | null;
 		bspMarket?: boolean | null;
@@ -336,6 +416,8 @@ export namespace MyNS {
 		countryCode?: string | null;
 		crossMatching?: boolean | null;
 		discountAllowed?: boolean | null;
+
+		/** Type: double */
 		eachWayDivisor?: number | null;
 		eventId?: string | null;
 
@@ -344,18 +426,33 @@ export namespace MyNS {
 		inPlay?: boolean | null;
 		keyLineDefinition?: KeyLineDefinition;
 
-		/** For Handicap and Line markets, the lines available on this market will be between the range of lineMinUnit and lineMaxUnit, in increments of the lineInterval value. e.g. If unit is runs, lineMinUnit=10, lineMaxUnit=20 and lineInterval=0.5, then valid lines include 10, 10.5, 11, 11.5 up to 20 runs. */
+		/**
+		 * For Handicap and Line markets, the lines available on this market will be between the range of lineMinUnit and lineMaxUnit, in increments of the lineInterval value. e.g. If unit is runs, lineMinUnit=10, lineMaxUnit=20 and lineInterval=0.5, then valid lines include 10, 10.5, 11, 11.5 up to 20 runs.
+		 * Type: double
+		 */
 		lineInterval?: number | null;
 
-		/** For Handicap and Line markets, the maximum value for the outcome, in market units for this market (eg 100 runs). */
+		/**
+		 * For Handicap and Line markets, the maximum value for the outcome, in market units for this market (eg 100 runs).
+		 * Type: double
+		 */
 		lineMaxUnit?: number | null;
 
-		/** For Handicap and Line markets, the minimum value for the outcome, in market units for this market (eg 0 runs). */
+		/**
+		 * For Handicap and Line markets, the minimum value for the outcome, in market units for this market (eg 0 runs).
+		 * Type: double
+		 */
 		lineMinUnit?: number | null;
+
+		/** Type: double */
 		marketBaseRate?: number | null;
 		marketTime?: Date | null;
 		marketType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfActiveRunners?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfWinners?: number | null;
 		openDate?: Date | null;
 		persistenceEnabled?: boolean | null;
@@ -372,9 +469,13 @@ export namespace MyNS {
 		timezone?: string | null;
 		turnInPlayEnabled?: boolean | null;
 		venue?: string | null;
-		version?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		version?: string | null;
 	}
 	export interface MarketDefinitionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		betDelay: FormControl<number | null | undefined>,
 		bettingType: FormControl<MarketDefinitionBettingType | null | undefined>,
 		bspMarket: FormControl<boolean | null | undefined>,
@@ -383,6 +484,8 @@ export namespace MyNS {
 		countryCode: FormControl<string | null | undefined>,
 		crossMatching: FormControl<boolean | null | undefined>,
 		discountAllowed: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		eachWayDivisor: FormControl<number | null | undefined>,
 		eventId: FormControl<string | null | undefined>,
 
@@ -390,18 +493,33 @@ export namespace MyNS {
 		eventTypeId: FormControl<string | null | undefined>,
 		inPlay: FormControl<boolean | null | undefined>,
 
-		/** For Handicap and Line markets, the lines available on this market will be between the range of lineMinUnit and lineMaxUnit, in increments of the lineInterval value. e.g. If unit is runs, lineMinUnit=10, lineMaxUnit=20 and lineInterval=0.5, then valid lines include 10, 10.5, 11, 11.5 up to 20 runs. */
+		/**
+		 * For Handicap and Line markets, the lines available on this market will be between the range of lineMinUnit and lineMaxUnit, in increments of the lineInterval value. e.g. If unit is runs, lineMinUnit=10, lineMaxUnit=20 and lineInterval=0.5, then valid lines include 10, 10.5, 11, 11.5 up to 20 runs.
+		 * Type: double
+		 */
 		lineInterval: FormControl<number | null | undefined>,
 
-		/** For Handicap and Line markets, the maximum value for the outcome, in market units for this market (eg 100 runs). */
+		/**
+		 * For Handicap and Line markets, the maximum value for the outcome, in market units for this market (eg 100 runs).
+		 * Type: double
+		 */
 		lineMaxUnit: FormControl<number | null | undefined>,
 
-		/** For Handicap and Line markets, the minimum value for the outcome, in market units for this market (eg 0 runs). */
+		/**
+		 * For Handicap and Line markets, the minimum value for the outcome, in market units for this market (eg 0 runs).
+		 * Type: double
+		 */
 		lineMinUnit: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		marketBaseRate: FormControl<number | null | undefined>,
 		marketTime: FormControl<Date | null | undefined>,
 		marketType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfActiveRunners: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfWinners: FormControl<number | null | undefined>,
 		openDate: FormControl<Date | null | undefined>,
 		persistenceEnabled: FormControl<boolean | null | undefined>,
@@ -413,7 +531,9 @@ export namespace MyNS {
 		timezone: FormControl<string | null | undefined>,
 		turnInPlayEnabled: FormControl<boolean | null | undefined>,
 		venue: FormControl<string | null | undefined>,
-		version: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateMarketDefinitionFormGroup() {
 		return new FormGroup<MarketDefinitionFormProperties>({
@@ -447,7 +567,7 @@ export namespace MyNS {
 			timezone: new FormControl<string | null | undefined>(undefined),
 			turnInPlayEnabled: new FormControl<boolean | null | undefined>(undefined),
 			venue: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -455,28 +575,52 @@ export namespace MyNS {
 	export enum MarketDefinitionBettingType { ODDS = 'ODDS', LINE = 'LINE', RANGE = 'RANGE', ASIAN_HANDICAP_DOUBLE_LINE = 'ASIAN_HANDICAP_DOUBLE_LINE', ASIAN_HANDICAP_SINGLE_LINE = 'ASIAN_HANDICAP_SINGLE_LINE' }
 
 	export interface RunnerDefinition {
+
+		/** Type: double */
 		adjustmentFactor?: number | null;
+
+		/** Type: double */
 		bsp?: number | null;
 
-		/** Handicap - the handicap of the runner (selection) (null if not applicable) */
+		/**
+		 * Handicap - the handicap of the runner (selection) (null if not applicable)
+		 * Type: double
+		 */
 		hc?: number | null;
 
-		/** Selection Id - the id of the runner (selection) */
-		id?: number | null;
+		/**
+		 * Selection Id - the id of the runner (selection)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 		removalDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortPriority?: number | null;
 		status?: RunnerDefinitionStatus | null;
 	}
 	export interface RunnerDefinitionFormProperties {
+
+		/** Type: double */
 		adjustmentFactor: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		bsp: FormControl<number | null | undefined>,
 
-		/** Handicap - the handicap of the runner (selection) (null if not applicable) */
+		/**
+		 * Handicap - the handicap of the runner (selection) (null if not applicable)
+		 * Type: double
+		 */
 		hc: FormControl<number | null | undefined>,
 
-		/** Selection Id - the id of the runner (selection) */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Selection Id - the id of the runner (selection)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 		removalDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortPriority: FormControl<number | null | undefined>,
 		status: FormControl<RunnerDefinitionStatus | null | undefined>,
 	}
@@ -485,7 +629,7 @@ export namespace MyNS {
 			adjustmentFactor: new FormControl<number | null | undefined>(undefined),
 			bsp: new FormControl<number | null | undefined>(undefined),
 			hc: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			removalDate: new FormControl<Date | null | undefined>(undefined),
 			sortPriority: new FormControl<number | null | undefined>(undefined),
 			status: new FormControl<RunnerDefinitionStatus | null | undefined>(undefined),
@@ -526,11 +670,17 @@ export namespace MyNS {
 		/** Token value delta (received in MarketChangeMessage) that should be passed to resume a subscription */
 		clk?: string | null;
 
-		/** Conflate Milliseconds - the conflation rate (looped back on initial image after validation: bounds are 0 to 120000) */
-		conflateMs?: number | null;
+		/**
+		 * Conflate Milliseconds - the conflation rate (looped back on initial image after validation: bounds are 0 to 120000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		conflateMs?: string | null;
 
-		/** Heartbeat Milliseconds - the heartbeat rate (looped back on initial image after validation: bounds are 500 to 5000) */
-		heartbeatMs?: number | null;
+		/**
+		 * Heartbeat Milliseconds - the heartbeat rate (looped back on initial image after validation: bounds are 500 to 5000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		heartbeatMs?: string | null;
 
 		/** Token value (received in initial MarketChangeMessage) that should be passed to resume a subscription */
 		initialClk?: string | null;
@@ -545,11 +695,17 @@ export namespace MyNS {
 		/** Token value delta (received in MarketChangeMessage) that should be passed to resume a subscription */
 		clk: FormControl<string | null | undefined>,
 
-		/** Conflate Milliseconds - the conflation rate (looped back on initial image after validation: bounds are 0 to 120000) */
-		conflateMs: FormControl<number | null | undefined>,
+		/**
+		 * Conflate Milliseconds - the conflation rate (looped back on initial image after validation: bounds are 0 to 120000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		conflateMs: FormControl<string | null | undefined>,
 
-		/** Heartbeat Milliseconds - the heartbeat rate (looped back on initial image after validation: bounds are 500 to 5000) */
-		heartbeatMs: FormControl<number | null | undefined>,
+		/**
+		 * Heartbeat Milliseconds - the heartbeat rate (looped back on initial image after validation: bounds are 500 to 5000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		heartbeatMs: FormControl<string | null | undefined>,
 
 		/** Token value (received in initial MarketChangeMessage) that should be passed to resume a subscription */
 		initialClk: FormControl<string | null | undefined>,
@@ -562,8 +718,8 @@ export namespace MyNS {
 			id: new FormControl<number | null | undefined>(undefined),
 			op: new FormControl<string | null | undefined>(undefined),
 			clk: new FormControl<string | null | undefined>(undefined),
-			conflateMs: new FormControl<number | null | undefined>(undefined),
-			heartbeatMs: new FormControl<number | null | undefined>(undefined),
+			conflateMs: new FormControl<string | null | undefined>(undefined),
+			heartbeatMs: new FormControl<string | null | undefined>(undefined),
 			initialClk: new FormControl<string | null | undefined>(undefined),
 			segmentationEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -572,35 +728,56 @@ export namespace MyNS {
 
 	export interface Order {
 
-		/** Average Price Matched - the average price the order was matched at (null if the order is not matched). This value is not meaningful for activity on Line markets and is not guaranteed to be returned or maintained for these markets. */
+		/**
+		 * Average Price Matched - the average price the order was matched at (null if the order is not matched). This value is not meaningful for activity on Line markets and is not guaranteed to be returned or maintained for these markets.
+		 * Type: double
+		 */
 		avp?: number | null;
 
-		/** BSP Liability - the BSP liability of the order (null if the order is not a BSP order) */
+		/**
+		 * BSP Liability - the BSP liability of the order (null if the order is not a BSP order)
+		 * Type: double
+		 */
 		bsp?: number | null;
 
-		/** Cancelled Date - the date the order was cancelled (null if the order is not cancelled) */
-		cd?: number | null;
+		/**
+		 * Cancelled Date - the date the order was cancelled (null if the order is not cancelled)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cd?: string | null;
 
 		/** Bet Id - the id of the order */
 		id?: string | null;
 
-		/** Lapsed Date - the date the order was lapsed (null if the order is not lapsed) */
-		ld?: number | null;
+		/**
+		 * Lapsed Date - the date the order was lapsed (null if the order is not lapsed)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ld?: string | null;
 
 		/** Lapse Status Reason Code - the reason that some or all of this order has been lapsed (null if no portion of the order is lapsed */
 		lsrc?: string | null;
 
-		/** Matched Date - the date the order was matched (null if the order is not matched) */
-		md?: number | null;
+		/**
+		 * Matched Date - the date the order was matched (null if the order is not matched)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		md?: string | null;
 
 		/** Order Type - the type of the order (L = LIMIT, MOC = MARKET_ON_CLOSE, LOC = LIMIT_ON_CLOSE) */
 		ot?: OrderOt | null;
 
-		/** Price - the original placed price of the order. Line markets operate at even-money odds of 2.0. However, price for these markets refers to the line positions available as defined by the markets min-max range and interval steps */
+		/**
+		 * Price - the original placed price of the order. Line markets operate at even-money odds of 2.0. However, price for these markets refers to the line positions available as defined by the markets min-max range and interval steps
+		 * Type: double
+		 */
 		p?: number | null;
 
-		/** Placed Date - the date the order was placed */
-		pd?: number | null;
+		/**
+		 * Placed Date - the date the order was placed
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pd?: string | null;
 
 		/** Persistence Type - whether the order will persist at in play or not (L = LAPSE, P = PERSIST, MOC = Market On Close) */
 		pt?: OrderPt | null;
@@ -617,61 +794,100 @@ export namespace MyNS {
 		/** Strategy Reference - the customer's strategy reference for this order (empty string if one was not set) */
 		rfs?: string | null;
 
-		/** Size - the original placed size of the order */
+		/**
+		 * Size - the original placed size of the order
+		 * Type: double
+		 */
 		s?: number | null;
 
-		/** Size Cancelled - the amount of the order that has been cancelled */
+		/**
+		 * Size Cancelled - the amount of the order that has been cancelled
+		 * Type: double
+		 */
 		sc?: number | null;
 
 		/** Side - the side of the order. For Line markets a 'B' bet refers to a SELL line and an 'L' bet refers to a BUY line. */
 		side?: OrderSide | null;
 
-		/** Size Lapsed - the amount of the order that has been lapsed */
+		/**
+		 * Size Lapsed - the amount of the order that has been lapsed
+		 * Type: double
+		 */
 		sl?: number | null;
 
-		/** Size Matched - the amount of the order that has been matched */
+		/**
+		 * Size Matched - the amount of the order that has been matched
+		 * Type: double
+		 */
 		sm?: number | null;
 
-		/** Size Remaining - the amount of the order that is remaining unmatched */
+		/**
+		 * Size Remaining - the amount of the order that is remaining unmatched
+		 * Type: double
+		 */
 		sr?: number | null;
 
 		/** Status - the status of the order (E = EXECUTABLE, EC = EXECUTION_COMPLETE) */
 		status?: OrderStatus | null;
 
-		/** Size Voided - the amount of the order that has been voided */
+		/**
+		 * Size Voided - the amount of the order that has been voided
+		 * Type: double
+		 */
 		sv?: number | null;
 	}
 	export interface OrderFormProperties {
 
-		/** Average Price Matched - the average price the order was matched at (null if the order is not matched). This value is not meaningful for activity on Line markets and is not guaranteed to be returned or maintained for these markets. */
+		/**
+		 * Average Price Matched - the average price the order was matched at (null if the order is not matched). This value is not meaningful for activity on Line markets and is not guaranteed to be returned or maintained for these markets.
+		 * Type: double
+		 */
 		avp: FormControl<number | null | undefined>,
 
-		/** BSP Liability - the BSP liability of the order (null if the order is not a BSP order) */
+		/**
+		 * BSP Liability - the BSP liability of the order (null if the order is not a BSP order)
+		 * Type: double
+		 */
 		bsp: FormControl<number | null | undefined>,
 
-		/** Cancelled Date - the date the order was cancelled (null if the order is not cancelled) */
-		cd: FormControl<number | null | undefined>,
+		/**
+		 * Cancelled Date - the date the order was cancelled (null if the order is not cancelled)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cd: FormControl<string | null | undefined>,
 
 		/** Bet Id - the id of the order */
 		id: FormControl<string | null | undefined>,
 
-		/** Lapsed Date - the date the order was lapsed (null if the order is not lapsed) */
-		ld: FormControl<number | null | undefined>,
+		/**
+		 * Lapsed Date - the date the order was lapsed (null if the order is not lapsed)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ld: FormControl<string | null | undefined>,
 
 		/** Lapse Status Reason Code - the reason that some or all of this order has been lapsed (null if no portion of the order is lapsed */
 		lsrc: FormControl<string | null | undefined>,
 
-		/** Matched Date - the date the order was matched (null if the order is not matched) */
-		md: FormControl<number | null | undefined>,
+		/**
+		 * Matched Date - the date the order was matched (null if the order is not matched)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		md: FormControl<string | null | undefined>,
 
 		/** Order Type - the type of the order (L = LIMIT, MOC = MARKET_ON_CLOSE, LOC = LIMIT_ON_CLOSE) */
 		ot: FormControl<OrderOt | null | undefined>,
 
-		/** Price - the original placed price of the order. Line markets operate at even-money odds of 2.0. However, price for these markets refers to the line positions available as defined by the markets min-max range and interval steps */
+		/**
+		 * Price - the original placed price of the order. Line markets operate at even-money odds of 2.0. However, price for these markets refers to the line positions available as defined by the markets min-max range and interval steps
+		 * Type: double
+		 */
 		p: FormControl<number | null | undefined>,
 
-		/** Placed Date - the date the order was placed */
-		pd: FormControl<number | null | undefined>,
+		/**
+		 * Placed Date - the date the order was placed
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pd: FormControl<string | null | undefined>,
 
 		/** Persistence Type - whether the order will persist at in play or not (L = LAPSE, P = PERSIST, MOC = Market On Close) */
 		pt: FormControl<OrderPt | null | undefined>,
@@ -688,42 +904,60 @@ export namespace MyNS {
 		/** Strategy Reference - the customer's strategy reference for this order (empty string if one was not set) */
 		rfs: FormControl<string | null | undefined>,
 
-		/** Size - the original placed size of the order */
+		/**
+		 * Size - the original placed size of the order
+		 * Type: double
+		 */
 		s: FormControl<number | null | undefined>,
 
-		/** Size Cancelled - the amount of the order that has been cancelled */
+		/**
+		 * Size Cancelled - the amount of the order that has been cancelled
+		 * Type: double
+		 */
 		sc: FormControl<number | null | undefined>,
 
 		/** Side - the side of the order. For Line markets a 'B' bet refers to a SELL line and an 'L' bet refers to a BUY line. */
 		side: FormControl<OrderSide | null | undefined>,
 
-		/** Size Lapsed - the amount of the order that has been lapsed */
+		/**
+		 * Size Lapsed - the amount of the order that has been lapsed
+		 * Type: double
+		 */
 		sl: FormControl<number | null | undefined>,
 
-		/** Size Matched - the amount of the order that has been matched */
+		/**
+		 * Size Matched - the amount of the order that has been matched
+		 * Type: double
+		 */
 		sm: FormControl<number | null | undefined>,
 
-		/** Size Remaining - the amount of the order that is remaining unmatched */
+		/**
+		 * Size Remaining - the amount of the order that is remaining unmatched
+		 * Type: double
+		 */
 		sr: FormControl<number | null | undefined>,
 
 		/** Status - the status of the order (E = EXECUTABLE, EC = EXECUTION_COMPLETE) */
 		status: FormControl<OrderStatus | null | undefined>,
 
-		/** Size Voided - the amount of the order that has been voided */
+		/**
+		 * Size Voided - the amount of the order that has been voided
+		 * Type: double
+		 */
 		sv: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderFormGroup() {
 		return new FormGroup<OrderFormProperties>({
 			avp: new FormControl<number | null | undefined>(undefined),
 			bsp: new FormControl<number | null | undefined>(undefined),
-			cd: new FormControl<number | null | undefined>(undefined),
+			cd: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
-			ld: new FormControl<number | null | undefined>(undefined),
+			ld: new FormControl<string | null | undefined>(undefined),
 			lsrc: new FormControl<string | null | undefined>(undefined),
-			md: new FormControl<number | null | undefined>(undefined),
+			md: new FormControl<string | null | undefined>(undefined),
 			ot: new FormControl<OrderOt | null | undefined>(undefined),
 			p: new FormControl<number | null | undefined>(undefined),
-			pd: new FormControl<number | null | undefined>(undefined),
+			pd: new FormControl<string | null | undefined>(undefined),
 			pt: new FormControl<OrderPt | null | undefined>(undefined),
 			rac: new FormControl<string | null | undefined>(undefined),
 			rc: new FormControl<string | null | undefined>(undefined),
@@ -754,14 +988,20 @@ export namespace MyNS {
 		/** Token value (non-null) should be stored and passed in a MarketSubscriptionMessage to resume subscription (in case of disconnect) */
 		clk?: string | null;
 
-		/** Conflate Milliseconds - the conflation rate (may differ from that requested if subscription is delayed) */
-		conflateMs?: number | null;
+		/**
+		 * Conflate Milliseconds - the conflation rate (may differ from that requested if subscription is delayed)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		conflateMs?: string | null;
 
 		/** Change Type - set to indicate the type of change - if null this is a delta) */
 		ct?: MarketChangeMessageCt | null;
 
-		/** Heartbeat Milliseconds - the heartbeat rate (may differ from requested: bounds are 500 to 30000) */
-		heartbeatMs?: number | null;
+		/**
+		 * Heartbeat Milliseconds - the heartbeat rate (may differ from requested: bounds are 500 to 30000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		heartbeatMs?: string | null;
 
 		/** Token value (non-null) should be stored and passed in a MarketSubscriptionMessage to resume subscription (in case of disconnect) */
 		initialClk?: string | null;
@@ -769,13 +1009,19 @@ export namespace MyNS {
 		/** OrderMarketChanges - the modifications to account's orders (will be null on a heartbeat */
 		oc?: Array<OrderMarketChange>;
 
-		/** Publish Time (in millis since epoch) that the changes were generated */
-		pt?: number | null;
+		/**
+		 * Publish Time (in millis since epoch) that the changes were generated
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pt?: string | null;
 
 		/** Segment Type - if the change is split into multiple segments, this denotes the beginning and end of a change, and segments in between. Will be null if data is not segmented */
 		segmentType?: MarketChangeMessageSegmentType | null;
 
-		/** Stream status: set to null if the exchange stream data is up to date and 503 if the downstream services are experiencing latencies */
+		/**
+		 * Stream status: set to null if the exchange stream data is up to date and 503 if the downstream services are experiencing latencies
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 	export interface OrderChangeMessageFormProperties extends ResponseMessageFormProperties {
@@ -783,25 +1029,37 @@ export namespace MyNS {
 		/** Token value (non-null) should be stored and passed in a MarketSubscriptionMessage to resume subscription (in case of disconnect) */
 		clk: FormControl<string | null | undefined>,
 
-		/** Conflate Milliseconds - the conflation rate (may differ from that requested if subscription is delayed) */
-		conflateMs: FormControl<number | null | undefined>,
+		/**
+		 * Conflate Milliseconds - the conflation rate (may differ from that requested if subscription is delayed)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		conflateMs: FormControl<string | null | undefined>,
 
 		/** Change Type - set to indicate the type of change - if null this is a delta) */
 		ct: FormControl<MarketChangeMessageCt | null | undefined>,
 
-		/** Heartbeat Milliseconds - the heartbeat rate (may differ from requested: bounds are 500 to 30000) */
-		heartbeatMs: FormControl<number | null | undefined>,
+		/**
+		 * Heartbeat Milliseconds - the heartbeat rate (may differ from requested: bounds are 500 to 30000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		heartbeatMs: FormControl<string | null | undefined>,
 
 		/** Token value (non-null) should be stored and passed in a MarketSubscriptionMessage to resume subscription (in case of disconnect) */
 		initialClk: FormControl<string | null | undefined>,
 
-		/** Publish Time (in millis since epoch) that the changes were generated */
-		pt: FormControl<number | null | undefined>,
+		/**
+		 * Publish Time (in millis since epoch) that the changes were generated
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pt: FormControl<string | null | undefined>,
 
 		/** Segment Type - if the change is split into multiple segments, this denotes the beginning and end of a change, and segments in between. Will be null if data is not segmented */
 		segmentType: FormControl<MarketChangeMessageSegmentType | null | undefined>,
 
-		/** Stream status: set to null if the exchange stream data is up to date and 503 if the downstream services are experiencing latencies */
+		/**
+		 * Stream status: set to null if the exchange stream data is up to date and 503 if the downstream services are experiencing latencies
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderChangeMessageFormGroup() {
@@ -809,11 +1067,11 @@ export namespace MyNS {
 			id: new FormControl<number | null | undefined>(undefined),
 			op: new FormControl<string | null | undefined>(undefined),
 			clk: new FormControl<string | null | undefined>(undefined),
-			conflateMs: new FormControl<number | null | undefined>(undefined),
+			conflateMs: new FormControl<string | null | undefined>(undefined),
 			ct: new FormControl<MarketChangeMessageCt | null | undefined>(undefined),
-			heartbeatMs: new FormControl<number | null | undefined>(undefined),
+			heartbeatMs: new FormControl<string | null | undefined>(undefined),
 			initialClk: new FormControl<string | null | undefined>(undefined),
-			pt: new FormControl<number | null | undefined>(undefined),
+			pt: new FormControl<string | null | undefined>(undefined),
 			segmentType: new FormControl<MarketChangeMessageSegmentType | null | undefined>(undefined),
 			status: new FormControl<number | null | undefined>(undefined),
 		});
@@ -821,7 +1079,9 @@ export namespace MyNS {
 	}
 
 	export interface OrderMarketChange {
-		accountId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		accountId?: string | null;
 		closed?: boolean | null;
 		fullImage?: boolean | null;
 
@@ -832,7 +1092,9 @@ export namespace MyNS {
 		orc?: Array<OrderRunnerChange>;
 	}
 	export interface OrderMarketChangeFormProperties {
-		accountId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		accountId: FormControl<string | null | undefined>,
 		closed: FormControl<boolean | null | undefined>,
 		fullImage: FormControl<boolean | null | undefined>,
 
@@ -841,7 +1103,7 @@ export namespace MyNS {
 	}
 	export function CreateOrderMarketChangeFormGroup() {
 		return new FormGroup<OrderMarketChangeFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
 			closed: new FormControl<boolean | null | undefined>(undefined),
 			fullImage: new FormControl<boolean | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
@@ -852,11 +1114,17 @@ export namespace MyNS {
 	export interface OrderRunnerChange {
 		fullImage?: boolean | null;
 
-		/** Handicap - the handicap of the runner (selection) (null if not applicable) */
+		/**
+		 * Handicap - the handicap of the runner (selection) (null if not applicable)
+		 * Type: double
+		 */
 		hc?: number | null;
 
-		/** Selection Id - the id of the runner (selection) */
-		id?: number | null;
+		/**
+		 * Selection Id - the id of the runner (selection)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Matched Backs - matched amounts by distinct matched price on the Back side for this runner (selection) */
 		mb?: Array<string>;
@@ -873,11 +1141,17 @@ export namespace MyNS {
 	export interface OrderRunnerChangeFormProperties {
 		fullImage: FormControl<boolean | null | undefined>,
 
-		/** Handicap - the handicap of the runner (selection) (null if not applicable) */
+		/**
+		 * Handicap - the handicap of the runner (selection) (null if not applicable)
+		 * Type: double
+		 */
 		hc: FormControl<number | null | undefined>,
 
-		/** Selection Id - the id of the runner (selection) */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Selection Id - the id of the runner (selection)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Strategy Matches - Matched Backs and Matched Lays grouped by strategy reference */
 		smc: FormControl<{[id: string]: StrategyMatchChange } | null | undefined>,
@@ -886,7 +1160,7 @@ export namespace MyNS {
 		return new FormGroup<OrderRunnerChangeFormProperties>({
 			fullImage: new FormControl<boolean | null | undefined>(undefined),
 			hc: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			smc: new FormControl<{[id: string]: StrategyMatchChange } | null | undefined>(undefined),
 		});
 
@@ -927,11 +1201,17 @@ export namespace MyNS {
 		/** Token value delta (received in MarketChangeMessage) that should be passed to resume a subscription */
 		clk?: string | null;
 
-		/** Conflate Milliseconds - the conflation rate (looped back on initial image after validation: bounds are 0 to 120000) */
-		conflateMs?: number | null;
+		/**
+		 * Conflate Milliseconds - the conflation rate (looped back on initial image after validation: bounds are 0 to 120000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		conflateMs?: string | null;
 
-		/** Heartbeat Milliseconds - the heartbeat rate (looped back on initial image after validation: bounds are 500 to 5000) */
-		heartbeatMs?: number | null;
+		/**
+		 * Heartbeat Milliseconds - the heartbeat rate (looped back on initial image after validation: bounds are 500 to 5000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		heartbeatMs?: string | null;
 
 		/** Token value (received in initial MarketChangeMessage) that should be passed to resume a subscription */
 		initialClk?: string | null;
@@ -945,11 +1225,17 @@ export namespace MyNS {
 		/** Token value delta (received in MarketChangeMessage) that should be passed to resume a subscription */
 		clk: FormControl<string | null | undefined>,
 
-		/** Conflate Milliseconds - the conflation rate (looped back on initial image after validation: bounds are 0 to 120000) */
-		conflateMs: FormControl<number | null | undefined>,
+		/**
+		 * Conflate Milliseconds - the conflation rate (looped back on initial image after validation: bounds are 0 to 120000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		conflateMs: FormControl<string | null | undefined>,
 
-		/** Heartbeat Milliseconds - the heartbeat rate (looped back on initial image after validation: bounds are 500 to 5000) */
-		heartbeatMs: FormControl<number | null | undefined>,
+		/**
+		 * Heartbeat Milliseconds - the heartbeat rate (looped back on initial image after validation: bounds are 500 to 5000)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		heartbeatMs: FormControl<string | null | undefined>,
 
 		/** Token value (received in initial MarketChangeMessage) that should be passed to resume a subscription */
 		initialClk: FormControl<string | null | undefined>,
@@ -962,8 +1248,8 @@ export namespace MyNS {
 			id: new FormControl<number | null | undefined>(undefined),
 			op: new FormControl<string | null | undefined>(undefined),
 			clk: new FormControl<string | null | undefined>(undefined),
-			conflateMs: new FormControl<number | null | undefined>(undefined),
-			heartbeatMs: new FormControl<number | null | undefined>(undefined),
+			conflateMs: new FormControl<string | null | undefined>(undefined),
+			heartbeatMs: new FormControl<string | null | undefined>(undefined),
 			initialClk: new FormControl<string | null | undefined>(undefined),
 			segmentationEnabled: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -987,7 +1273,10 @@ export namespace MyNS {
 
 	export interface RequestMessage {
 
-		/** Client generated unique id to link request with response (like json rpc) */
+		/**
+		 * Client generated unique id to link request with response (like json rpc)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The operation type */
@@ -995,7 +1284,10 @@ export namespace MyNS {
 	}
 	export interface RequestMessageFormProperties {
 
-		/** Client generated unique id to link request with response (like json rpc) */
+		/**
+		 * Client generated unique id to link request with response (like json rpc)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The operation type */
@@ -1011,7 +1303,10 @@ export namespace MyNS {
 
 	export interface ResponseMessage {
 
-		/** Client generated unique id to link request with response (like json rpc) */
+		/**
+		 * Client generated unique id to link request with response (like json rpc)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The operation type */
@@ -1019,7 +1314,10 @@ export namespace MyNS {
 	}
 	export interface ResponseMessageFormProperties {
 
-		/** Client generated unique id to link request with response (like json rpc) */
+		/**
+		 * Client generated unique id to link request with response (like json rpc)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The operation type */
@@ -1041,7 +1339,10 @@ export namespace MyNS {
 		/** The connection id */
 		connectionId?: string | null;
 
-		/** The number of connections available for this account at this moment in time. Present on responses to Authentication messages only. */
+		/**
+		 * The number of connections available for this account at this moment in time. Present on responses to Authentication messages only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectionsAvailable?: number | null;
 
 		/** The type of error in case of a failure */
@@ -1061,7 +1362,10 @@ export namespace MyNS {
 		/** The connection id */
 		connectionId: FormControl<string | null | undefined>,
 
-		/** The number of connections available for this account at this moment in time. Present on responses to Authentication messages only. */
+		/**
+		 * The number of connections available for this account at this moment in time. Present on responses to Authentication messages only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectionsAvailable: FormControl<number | null | undefined>,
 
 		/** The type of error in case of a failure */

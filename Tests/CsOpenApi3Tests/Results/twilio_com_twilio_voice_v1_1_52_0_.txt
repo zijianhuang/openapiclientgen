@@ -666,7 +666,10 @@ namespace MyNS
 		/// DeleteArchivedCall v1/Archives/{Date}/Calls/{Sid}
 		/// </summary>
 		/// <param name="Date">The date of the Call in UTC.</param>
-		/// <param name="Sid">The Twilio-provided Call SID that uniquely identifies the Call resource to delete</param>
+		/// <param name="Sid">The Twilio-provided Call SID that uniquely identifies the Call resource to delete
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteArchivedCallAsync(System.DateOnly Date, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Archives/"+Date+"/Calls/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -692,8 +695,13 @@ namespace MyNS
 		/// <summary>
 		/// ListByocTrunk v1/ByocTrunks
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListByocTrunkReturn> ListByocTrunkAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -727,7 +735,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteByocTrunk v1/ByocTrunks/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the BYOC Trunk resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the BYOC Trunk resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteByocTrunkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/ByocTrunks/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -753,7 +764,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchByocTrunk v1/ByocTrunks/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the BYOC Trunk resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the BYOC Trunk resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Voicev1byoc_trunk> FetchByocTrunkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -786,8 +800,13 @@ namespace MyNS
 		/// <summary>
 		/// ListConnectionPolicy v1/ConnectionPolicies
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListConnectionPolicyReturn> ListConnectionPolicyAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -821,9 +840,17 @@ namespace MyNS
 		/// <summary>
 		/// ListConnectionPolicyTarget v1/ConnectionPolicies/{ConnectionPolicySid}/Targets
 		/// </summary>
-		/// <param name="ConnectionPolicySid">The SID of the Connection Policy from which to read the Targets.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ConnectionPolicySid">The SID of the Connection Policy from which to read the Targets.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListConnectionPolicyTargetReturn> ListConnectionPolicyTargetAsync(string ConnectionPolicySid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -857,8 +884,14 @@ namespace MyNS
 		/// <summary>
 		/// DeleteConnectionPolicyTarget v1/ConnectionPolicies/{ConnectionPolicySid}/Targets/{Sid}
 		/// </summary>
-		/// <param name="ConnectionPolicySid">The SID of the Connection Policy that owns the Target.</param>
-		/// <param name="Sid">The unique string that we created to identify the Target resource to delete.</param>
+		/// <param name="ConnectionPolicySid">The SID of the Connection Policy that owns the Target.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The unique string that we created to identify the Target resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteConnectionPolicyTargetAsync(string ConnectionPolicySid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/ConnectionPolicies/"+ (ConnectionPolicySid==null? "" : System.Uri.EscapeDataString(ConnectionPolicySid))+"/Targets/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -884,8 +917,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchConnectionPolicyTarget v1/ConnectionPolicies/{ConnectionPolicySid}/Targets/{Sid}
 		/// </summary>
-		/// <param name="ConnectionPolicySid">The SID of the Connection Policy that owns the Target.</param>
-		/// <param name="Sid">The unique string that we created to identify the Target resource to fetch.</param>
+		/// <param name="ConnectionPolicySid">The SID of the Connection Policy that owns the Target.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The unique string that we created to identify the Target resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Voicev1connection_policyconnection_policy_target> FetchConnectionPolicyTargetAsync(string ConnectionPolicySid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -918,7 +957,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteConnectionPolicy v1/ConnectionPolicies/{Sid}
 		/// </summary>
-		/// <param name="Sid">The unique string that we created to identify the Connection Policy resource to delete.</param>
+		/// <param name="Sid">The unique string that we created to identify the Connection Policy resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteConnectionPolicyAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/ConnectionPolicies/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -944,7 +986,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchConnectionPolicy v1/ConnectionPolicies/{Sid}
 		/// </summary>
-		/// <param name="Sid">The unique string that we created to identify the Connection Policy resource to fetch.</param>
+		/// <param name="Sid">The unique string that we created to identify the Connection Policy resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Voicev1connection_policy> FetchConnectionPolicyAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -984,8 +1029,13 @@ namespace MyNS
 		/// <param name="LowRiskNumbersEnabled">Filter to retrieve the country permissions with dialing to low-risk numbers enabled. Can be: `true` or `false`.</param>
 		/// <param name="HighRiskSpecialNumbersEnabled">Filter to retrieve the country permissions with dialing to high-risk special service numbers enabled. Can be: `true` or `false`</param>
 		/// <param name="HighRiskTollfraudNumbersEnabled">Filter to retrieve the country permissions with dialing to high-risk [toll fraud](https://www.twilio.com/blog/how-to-protect-your-account-from-toll-fraud-with-voice-dialing-geo-permissions-html) numbers enabled. Can be: `true` or `false`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListDialingPermissionsCountryReturn> ListDialingPermissionsCountryAsync(string IsoCode, string Continent, string CountryCode, bool LowRiskNumbersEnabled, bool HighRiskSpecialNumbersEnabled, bool HighRiskTollfraudNumbersEnabled, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1055,8 +1105,13 @@ namespace MyNS
 		/// ListDialingPermissionsHrsPrefixes v1/DialingPermissions/Countries/{IsoCode}/HighRiskSpecialPrefixes
 		/// </summary>
 		/// <param name="IsoCode">The [ISO 3166-1 country code](https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) to identify the country permissions from which high-risk special service number prefixes are fetched</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListDialingPermissionsHrsPrefixesReturn> ListDialingPermissionsHrsPrefixesAsync(string IsoCode, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1090,8 +1145,13 @@ namespace MyNS
 		/// <summary>
 		/// ListIpRecord v1/IpRecords
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListIpRecordReturn> ListIpRecordAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1125,7 +1185,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteIpRecord v1/IpRecords/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteIpRecordAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/IpRecords/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1151,7 +1214,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchIpRecord v1/IpRecords/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Voicev1ip_record> FetchIpRecordAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1217,8 +1283,13 @@ namespace MyNS
 		/// <summary>
 		/// ListSourceIpMapping v1/SourceIpMappings
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSourceIpMappingReturn> ListSourceIpMappingAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1252,7 +1323,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteSourceIpMapping v1/SourceIpMappings/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteSourceIpMappingAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/SourceIpMappings/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1278,7 +1352,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchSourceIpMapping v1/SourceIpMappings/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the IP Record resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Voicev1source_ip_mapping> FetchSourceIpMappingAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

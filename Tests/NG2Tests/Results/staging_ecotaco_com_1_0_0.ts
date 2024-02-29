@@ -364,6 +364,7 @@ export namespace MyNS {
 		 * Get a Catchement Area
 		 * Get catchement_areas/{id}
 		 * @param {number} id Numeric `id` of the Catchement Area
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Catchement_areas_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -383,6 +384,7 @@ export namespace MyNS {
 		 * Get a CreditCard
 		 * Get credit_cards/{id}
 		 * @param {number} id Numeric `id` of the Credit Card
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Credit_cards_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -402,6 +404,7 @@ export namespace MyNS {
 		 * Get a Product
 		 * Get products/{id}
 		 * @param {number} id Numeric `id` of the Product
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Products_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -430,6 +433,7 @@ export namespace MyNS {
 		 * Get a ride
 		 * Get rides/{id}
 		 * @param {number} id Numeric `id` of Ride
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Rides_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -441,6 +445,7 @@ export namespace MyNS {
 		 * **Must be authenticate**
 		 * Get rides/{id}/cancel
 		 * @param {number} id Numeric `id` of Ride
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Rides_idCancelGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -452,6 +457,7 @@ export namespace MyNS {
 		 * **Must be authenticate**
 		 * Get rides/{id}/cancel_fees
 		 * @param {number} id Numeric `id` of Ride
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Rides_idCancel_feesGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -462,6 +468,7 @@ export namespace MyNS {
 		 * Estimate a ride
 		 * Get rides/{id}/estimate
 		 * @param {number} id Numeric `id` of Ride
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Rides_idEstimateGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -474,6 +481,7 @@ export namespace MyNS {
 		 * **Must be authenticate**
 		 * Post rides/{id}/reserve
 		 * @param {number} id Numeric `id` of Ride
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		Rides_idReservePost(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -484,7 +492,9 @@ export namespace MyNS {
 		 * Get all user rides
 		 * Get rides?page={page}&per_page={per_page}
 		 * @param {number} page Number of the page to load
+		 *     Type: double
 		 * @param {number} per_page Number of items per page to load
+		 *     Type: double
 		 * @return {void} OK
 		 */
 		RidesGet(page: number, per_page: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

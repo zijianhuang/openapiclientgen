@@ -29,6 +29,8 @@ export namespace MyNS {
 		contentAdditionalJson?: string | null;
 		contentType?: ContentType | null;
 		contentUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder?: number | null;
 		forceCapitalisation?: boolean | null;
 		horizontalAlignment?: HorizontalAlignment | null;
@@ -41,6 +43,8 @@ export namespace MyNS {
 		contentAdditionalJson: FormControl<string | null | undefined>,
 		contentType: FormControl<ContentType | null | undefined>,
 		contentUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder: FormControl<number | null | undefined>,
 		forceCapitalisation: FormControl<boolean | null | undefined>,
 		horizontalAlignment: FormControl<HorizontalAlignment | null | undefined>,
@@ -63,6 +67,8 @@ export namespace MyNS {
 	}
 
 	export interface MemberViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		latestHouseMembership?: HouseMembershipViewModel;
 		latestParty?: PartyViewModel;
@@ -73,6 +79,8 @@ export namespace MyNS {
 		thumbnailUrl?: string | null;
 	}
 	export interface MemberViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		nameAddressAs: FormControl<string | null | undefined>,
 		nameDisplayAs: FormControl<string | null | undefined>,
@@ -94,11 +102,15 @@ export namespace MyNS {
 
 	export interface PartyViewModel {
 		backgroundColour?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface PartyViewModelFormProperties {
 		backgroundColour: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -116,6 +128,8 @@ export namespace MyNS {
 	export interface MessageViewModel {
 		annunciatorDisabled?: boolean | null;
 		annunciatorType?: AnnunciatorMessageType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isSecurityOverride?: boolean | null;
 		publishTime?: Date | null;
@@ -127,6 +141,8 @@ export namespace MyNS {
 	export interface MessageViewModelFormProperties {
 		annunciatorDisabled: FormControl<boolean | null | undefined>,
 		annunciatorType: FormControl<AnnunciatorMessageType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isSecurityOverride: FormControl<boolean | null | undefined>,
 		publishTime: FormControl<Date | null | undefined>,
@@ -151,6 +167,8 @@ export namespace MyNS {
 		content?: string | null;
 		displayFrom?: Date | null;
 		displayTo?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		verticalAlignment?: LineViewModelVerticalAlignment | null;
 	}
@@ -159,6 +177,8 @@ export namespace MyNS {
 		content: FormControl<string | null | undefined>,
 		displayFrom: FormControl<Date | null | undefined>,
 		displayTo: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		verticalAlignment: FormControl<LineViewModelVerticalAlignment | null | undefined>,
 	}
@@ -177,8 +197,14 @@ export namespace MyNS {
 	export enum ScrollingMessageViewModelAlertType { Standard = 'Standard', SecondaryChamber = 'SecondaryChamber', Alert = 'Alert', SecurityNormal = 'SecurityNormal', SecurityHigh = 'SecurityHigh' }
 
 	export interface SlideViewModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		carouselDisplaySeconds?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		carouselOrder?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		lines?: Array<LineViewModel>;
 		slideTime?: Date | null;
@@ -187,8 +213,14 @@ export namespace MyNS {
 		type?: SlideViewModelType | null;
 	}
 	export interface SlideViewModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		carouselDisplaySeconds: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		carouselOrder: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		slideTime: FormControl<Date | null | undefined>,
 		soundToPlay: FormControl<SlideViewModelSoundToPlay | null | undefined>,

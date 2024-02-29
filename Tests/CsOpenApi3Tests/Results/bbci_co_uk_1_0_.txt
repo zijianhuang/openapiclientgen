@@ -2692,7 +2692,10 @@ namespace MyNS
 		/// <param name="rights">The rights group to limit results to.</param>
 		/// <param name="page">The page index.</param>
 		/// <param name="per_page">The number of results to return.</param>
-		/// <param name="initial_child_count">The depth to return child entities.</param>
+		/// <param name="initial_child_count">The depth to return child entities.
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
 		/// <param name="sort">The sort order of the results.</param>
 		/// <param name="sort_direction">Whether to sort ascending or descending</param>
 		/// <param name="availability">Whether to return all, or available programmes</param>
@@ -3117,7 +3120,9 @@ namespace MyNS
 		/// Get Clips
 		/// Get_Clips_ clips/{pid}
 		/// </summary>
-		/// <param name="pid">The programme identifier.</param>
+		/// <param name="pid">The programme identifier.
+		/// Min length: 8
+		// </param>
 		/// <param name="rights">The rights group to limit results to.</param>
 		/// <param name="availability">Whether to return all, or available programmes</param>
 		/// <returns>Default response</returns>
@@ -3154,7 +3159,9 @@ namespace MyNS
 		/// Get the episode for a given episode identifier.
 		/// Get_Programme_by_PID_ episodes/{pid}
 		/// </summary>
-		/// <param name="pid">The programme identifier.</param>
+		/// <param name="pid">The programme identifier.
+		/// Min length: 8
+		// </param>
 		/// <param name="rights">The rights group to limit results to.</param>
 		/// <param name="availability">Whether to return all, or available programmes</param>
 		/// <param name="mixin">Request additional data in the output</param>
@@ -3192,7 +3199,9 @@ namespace MyNS
 		/// Get Onward Journey (next programme)
 		/// Get_Onward_Journey episodes/{pid}/next
 		/// </summary>
-		/// <param name="pid">The programme identifier.</param>
+		/// <param name="pid">The programme identifier.
+		/// Min length: 8
+		// </param>
 		/// <param name="rights">The rights group to limit results to.</param>
 		/// <param name="availability">Whether to return all, or available programmes</param>
 		/// <returns>Default response</returns>
@@ -3229,7 +3238,9 @@ namespace MyNS
 		/// Get Follow-ups (post-rolls)
 		/// GetPostRolls episodes/{pid}/postrolls
 		/// </summary>
-		/// <param name="pid">The programme identifier.</param>
+		/// <param name="pid">The programme identifier.
+		/// Min length: 8
+		// </param>
 		/// <param name="rights">The rights group to limit results to.</param>
 		/// <param name="availability">Whether to return all, or available programmes</param>
 		/// <returns>Default response</returns>
@@ -3266,7 +3277,9 @@ namespace MyNS
 		/// Get Trailers (pre-rolls)
 		/// Get_Trailers_pre_rolls_ episodes/{pid}/prerolls
 		/// </summary>
-		/// <param name="pid">The programme identifier.</param>
+		/// <param name="pid">The programme identifier.
+		/// Min length: 8
+		// </param>
 		/// <param name="rights">The rights group to limit results to.</param>
 		/// <param name="availability">Whether to return all, or available programmes</param>
 		/// <returns>Default response</returns>
@@ -3303,7 +3316,9 @@ namespace MyNS
 		/// Get programme recommendations
 		/// Get_Programme_recommendations_ episodes/{pid}/recommendations
 		/// </summary>
-		/// <param name="pid">The programme identifier.</param>
+		/// <param name="pid">The programme identifier.
+		/// Min length: 8
+		// </param>
 		/// <param name="rights">The rights group to limit results to.</param>
 		/// <param name="availability">Whether to return all, or available programmes</param>
 		/// <param name="page">The page index.</param>
@@ -3345,7 +3360,10 @@ namespace MyNS
 		/// <param name="rights">The rights group to limit results to.</param>
 		/// <param name="page">The page index.</param>
 		/// <param name="per_page">The number of results to return.</param>
-		/// <param name="initial_child_count">The depth to return child entities.</param>
+		/// <param name="initial_child_count">The depth to return child entities.
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
 		/// <param name="sort">The sort order of the results.</param>
 		/// <param name="sort_direction">Whether to sort ascending or descending</param>
 		/// <param name="availability">Whether to return all, or available programmes</param>
@@ -3384,11 +3402,16 @@ namespace MyNS
 		/// Get episodes by group, brand or series
 		/// Get_Episodes_by_group_ groups/{pid}/episodes
 		/// </summary>
-		/// <param name="pid">The programme identifier.</param>
+		/// <param name="pid">The programme identifier.
+		/// Min length: 8
+		// </param>
 		/// <param name="rights">The rights group to limit results to.</param>
 		/// <param name="page">The page index.</param>
 		/// <param name="per_page">The number of results to return.</param>
-		/// <param name="initial_child_count">The depth to return child entities.</param>
+		/// <param name="initial_child_count">The depth to return child entities.
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
 		/// <param name="sort">The sort order of the results.</param>
 		/// <param name="sort_direction">Whether to sort ascending or descending</param>
 		/// <param name="availability">Whether to return all, or available programmes</param>
@@ -3465,10 +3488,15 @@ namespace MyNS
 		/// Get the programme for a given programme identifier.
 		/// Get_Programmes_by_parent_PID_ programmes/{pid}
 		/// </summary>
-		/// <param name="pid">The programme identifier.</param>
+		/// <param name="pid">The programme identifier.
+		/// Min length: 8
+		// </param>
 		/// <param name="rights">The rights group to limit results to.</param>
 		/// <param name="availability">Whether to return all, or available programmes</param>
-		/// <param name="initial_child_count">The depth to return child entities.</param>
+		/// <param name="initial_child_count">The depth to return child entities.
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
 		/// <returns>Default response</returns>
 		public async Task<Ibl> Get_Programmes_by_parent_PID_Async(string pid, Get_Programmes_AtoZ_search_Rights rights, Get_Programmes_AtoZ_search_Availability availability, int initial_child_count, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3503,10 +3531,15 @@ namespace MyNS
 		/// Get the child episodes belonging to a given programme identifier.
 		/// Get_Episodes_by_parent_PID_ programmes/{pid}/episodes
 		/// </summary>
-		/// <param name="pid">The programme identifier.</param>
+		/// <param name="pid">The programme identifier.
+		/// Min length: 8
+		// </param>
 		/// <param name="rights">The rights group to limit results to.</param>
 		/// <param name="availability">Whether to return all, or available programmes</param>
-		/// <param name="initial_child_count">The depth to return child entities.</param>
+		/// <param name="initial_child_count">The depth to return child entities.
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
 		/// <returns>Default response</returns>
 		public async Task<Ibl> Get_Episodes_by_parent_PID_Async(string pid, Get_Programmes_AtoZ_search_Rights rights, Get_Programmes_AtoZ_search_Availability availability, int initial_child_count, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

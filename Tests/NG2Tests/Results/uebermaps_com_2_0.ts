@@ -949,6 +949,7 @@ export namespace MyNS {
 		 * Delete attachment.
 		 * Delete attachments/{id}
 		 * @param {number} id Attachment id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Attachment} Contains deleted attachment.
 		 */
 		Attachments_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<Attachment> {
@@ -992,6 +993,7 @@ export namespace MyNS {
 		 * Show collaborator invitation
 		 * Get collaborator_invitations/{id}
 		 * @param {number} id Collaborator invitation id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CollaboratorInvitation} Contains collaborator invitation data.
 		 */
 		Collaborator_invitations_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<CollaboratorInvitation> {
@@ -1003,6 +1005,7 @@ export namespace MyNS {
 		 * Delete collaborator invitation.
 		 * Delete collaborator_invitations/{id}
 		 * @param {number} id Collaborator invitation id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CollaboratorInvitation} Contains deleted collaborator invitation.
 		 */
 		Collaborator_invitations_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<CollaboratorInvitation> {
@@ -1014,6 +1017,7 @@ export namespace MyNS {
 		 * Accept collaborator invitation.
 		 * Patch collaborator_invitations/{id}
 		 * @param {number} id Collaborator invitation id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CollaboratorInvitation} Contains collaborator invitation data.
 		 */
 		Collaborator_invitations_idPatch(id: number, headersHandler?: () => HttpHeaders): Observable<CollaboratorInvitation> {
@@ -1025,6 +1029,7 @@ export namespace MyNS {
 		 * Delete comment.
 		 * Delete comments/{id}
 		 * @param {number} id Comment id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Comment} Contains deleted comment.
 		 */
 		Comments_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<Comment> {
@@ -1036,6 +1041,7 @@ export namespace MyNS {
 		 * Update comment. Wrap comment parameters in [comment].
 		 * Patch comments/{id}
 		 * @param {number} id Comment id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentEditable} requestBody Comment attributes
 		 * @return {Comment} Contains comment data
 		 */
@@ -1061,6 +1067,7 @@ export namespace MyNS {
 		 * Get basic information about an event
 		 * Get events/{id}
 		 * @param {number} id Id of event
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Event} Contains event data.
 		 */
 		Events_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Event> {
@@ -1072,6 +1079,7 @@ export namespace MyNS {
 		 * Delete event.
 		 * Delete events/{id}
 		 * @param {number} id Event id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Event} Contains deleted event.
 		 */
 		Events_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<Event> {
@@ -1083,6 +1091,7 @@ export namespace MyNS {
 		 * Update event. Wrap event parameters in [event].
 		 * Patch events/{id}
 		 * @param {number} id Event id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {EventEditable} requestBody Event attributes
 		 * @return {Map} Contains map data, map settings and your relation to this map
 		 */
@@ -1117,8 +1126,11 @@ export namespace MyNS {
 		 * Get maps/search
 		 * @param {string} q Query
 		 * @param {number} d Distance. Diameter of search radius in meter (default: 2000 meter)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} lat Latitude for search radius (default distance: 2000 meter)
+		 *     Type: double
 		 * @param {number} lon Longitude for search radius (default distance: 2000 meter)
+		 *     Type: double
 		 * @return {Map} Contains map data.
 		 */
 		MapsSearchGetByQAndDAndLatAndLon(q: string | null | undefined, d: number | null | undefined, lat: number | null | undefined, lon: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Map> {
@@ -1130,6 +1142,7 @@ export namespace MyNS {
 		 * Get basic information about a map
 		 * Get maps/{id}
 		 * @param {number} id Id of map
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MapWithRelation} Contains map data, map settings and your relation to this map
 		 */
 		Maps_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<MapWithRelation> {
@@ -1141,6 +1154,7 @@ export namespace MyNS {
 		 * Delete map.
 		 * Delete maps/{id}
 		 * @param {number} id map id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Map} Contains deleted map.
 		 */
 		Maps_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<Map> {
@@ -1152,6 +1166,7 @@ export namespace MyNS {
 		 * Update map. Wrap map parameters in [map]. To update the map header picture pass a base64 encoded string to [map][picture].
 		 * Patch maps/{id}
 		 * @param {number} id map id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MapEditable} requestBody map settings attributes
 		 * @return {Map} Contains map data, map settings and your relation to this map
 		 */
@@ -1164,6 +1179,7 @@ export namespace MyNS {
 		 * List attachments for a given map.
 		 * Get maps/{id}/attachments
 		 * @param {number} id Map id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Attachment>} Contains list of attachments.
 		 */
 		Maps_idAttachmentsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Attachment>> {
@@ -1175,6 +1191,7 @@ export namespace MyNS {
 		 * Upload map attachment. Wrap attachment parameters in [attachment]
 		 * Post maps/{id}/attachments
 		 * @param {number} id Map id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestBody Base64 encoded image
 		 * @return {Attachment} Contains attachment data
 		 */
@@ -1187,6 +1204,7 @@ export namespace MyNS {
 		 * List collaborators of a map.
 		 * Get maps/{id}/collaborators/
 		 * @param {number} id Map id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Collaborator>} Contains list of collaborators.
 		 */
 		Maps_idCollaboratorsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Collaborator>> {
@@ -1198,7 +1216,9 @@ export namespace MyNS {
 		 * Delete collaboration.
 		 * Delete maps/{id}/collaborators/{user_id}
 		 * @param {number} id map id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} user_id user id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Collaborator} Contains deleted collaborator.
 		 */
 		Maps_idCollaborators_user_idDelete(id: number, user_id: number, headersHandler?: () => HttpHeaders): Observable<Collaborator> {
@@ -1210,7 +1230,9 @@ export namespace MyNS {
 		 * Update collaborator. Wrap collaborator parameters in [collaborator]
 		 * Patch maps/{id}/collaborators/{user_id}
 		 * @param {number} id map id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} user_id user id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CollaboratorEditable} requestBody collaborator attributes
 		 * @return {Collaborator} Contains collaborator data
 		 */
@@ -1223,6 +1245,7 @@ export namespace MyNS {
 		 * List comments for a given map.
 		 * Get maps/{id}/comments
 		 * @param {number} id Id of map
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Comment>} Contains list of comments.
 		 */
 		Maps_idCommentsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Comment>> {
@@ -1234,6 +1257,7 @@ export namespace MyNS {
 		 * Create map comment. Wrap comment parameters in [comment].
 		 * Post maps/{id}/comments
 		 * @param {number} id map id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentEditable} requestBody comment attributes
 		 * @return {Comment} Contains comment data
 		 */
@@ -1246,6 +1270,7 @@ export namespace MyNS {
 		 * List respots of a map.
 		 * Get maps/{id}/respots
 		 * @param {number} id Map Id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Respot>} Contains list of respots.
 		 */
 		Maps_idRespotsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Respot>> {
@@ -1257,6 +1282,7 @@ export namespace MyNS {
 		 * List spots for a given map.
 		 * Get maps/{id}/spots
 		 * @param {number} id Id of map
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Maps_idSpotsGetByOrderOrder} order Order of spots
 		 * @return {Array<Spot>} Contains list of spots.
 		 */
@@ -1269,6 +1295,7 @@ export namespace MyNS {
 		 * Create spot. Wrap parameters in [spot]. To add a spot picture pass a base64 encoded string to [spot][picture].
 		 * Post maps/{id}/spots
 		 * @param {number} id Id of map
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SpotEditable} requestBody spot attributes
 		 * @return {Spot} Contains spot data
 		 */
@@ -1281,6 +1308,7 @@ export namespace MyNS {
 		 * List subscriptions for a given map.
 		 * Get maps/{id}/subscriptions
 		 * @param {number} id Id of map
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Subscription>} Contains list of subscriptions.
 		 */
 		Maps_idSubscriptionsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Subscription>> {
@@ -1292,6 +1320,7 @@ export namespace MyNS {
 		 * Unsubscribe from map.
 		 * Delete maps/{id}/subscriptions
 		 * @param {number} id map id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Subscription} Contains deleted subscription.
 		 */
 		Maps_idSubscriptionsDelete(id: number, headersHandler?: () => HttpHeaders): Observable<Subscription> {
@@ -1303,7 +1332,9 @@ export namespace MyNS {
 		 * Get basic information about a spot
 		 * Get maps/{map_id}/spots/{id}
 		 * @param {number} id Id of spot
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} map_id Id of map
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Spot} Contains spot data
 		 */
 		Maps_map_idSpots_idGet(id: number, map_id: number, headersHandler?: () => HttpHeaders): Observable<Spot> {
@@ -1315,7 +1346,9 @@ export namespace MyNS {
 		 * Delete respot from map by spot id.
 		 * Delete maps/{map_id}/spots/{spot_id}/respot
 		 * @param {number} map_id Map Id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} spot_id Spot Id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Respot} Contains deleted respot.
 		 */
 		Maps_map_idSpots_spot_idRespotDelete(map_id: number, spot_id: number, headersHandler?: () => HttpHeaders): Observable<Respot> {
@@ -1337,6 +1370,7 @@ export namespace MyNS {
 		 * Get basic information about a respot
 		 * Get respots/{id}
 		 * @param {number} id Id of respot
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Respot} Contains respot data.
 		 */
 		Respots_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Respot> {
@@ -1348,6 +1382,7 @@ export namespace MyNS {
 		 * Delete respot.
 		 * Delete respots/{id}
 		 * @param {number} id Respot Id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Respot} Contains deleted respot.
 		 */
 		Respots_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<Respot> {
@@ -1359,6 +1394,7 @@ export namespace MyNS {
 		 * Get secret access token of an uebermap with access set to 'Secret link'. Pass the 'token' on every request you make to access this uebermap and its resources. F.e. token=1-x_gqu7eLBe3uKoAGAGXy
 		 * Get share/map/{id}
 		 * @param {number} id Id of map
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MapWithAuthToken} Contains map data and a secret token to access this map.
 		 */
 		ShareMap_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<MapWithAuthToken> {
@@ -1382,8 +1418,11 @@ export namespace MyNS {
 		 * Get spots/search
 		 * @param {string} q Query
 		 * @param {number} d Distance. Diameter of search radius in meter (default: 2000 meter)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} lat Latitude for search radius (2 km)
+		 *     Type: double
 		 * @param {number} lon Longitude for search radius (2 km)
+		 *     Type: double
 		 * @return {Spot} Contains spot data.
 		 */
 		SpotsSearchGetByQAndDAndLatAndLon(q: string | null | undefined, d: number | null | undefined, lat: number | null | undefined, lon: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Spot> {
@@ -1395,6 +1434,7 @@ export namespace MyNS {
 		 * Delete spot.
 		 * Delete spots/{id}
 		 * @param {number} id spot id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Spot} Contains deleted spot.
 		 */
 		Spots_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<Spot> {
@@ -1406,6 +1446,7 @@ export namespace MyNS {
 		 * Update spot. Wrap parameters in [spot]. To update the spot picture pass a base64 encoded string to [spot][picture].
 		 * Patch spots/{id}
 		 * @param {number} id spot id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SpotEditable} requestBody spot attributes
 		 * @return {Spot} Contains spot data
 		 */
@@ -1418,6 +1459,7 @@ export namespace MyNS {
 		 * List attachments for a given spot.
 		 * Get spots/{id}/attachments
 		 * @param {number} id Spot id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Attachment>} Contains list of attachments.
 		 */
 		Spots_idAttachmentsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Attachment>> {
@@ -1429,6 +1471,7 @@ export namespace MyNS {
 		 * Upload spot attachment. Wrap attachment parameters in [attachment]
 		 * Post spots/{id}/attachments
 		 * @param {number} id Spot id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestBody Base64 encoded image
 		 * @return {Attachment} Contains attachment data
 		 */
@@ -1441,6 +1484,7 @@ export namespace MyNS {
 		 * List comments for a given spot.
 		 * Get spots/{id}/comments
 		 * @param {number} id Id of spot
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Comment>} Contains list of comments.
 		 */
 		Spots_idCommentsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Comment>> {
@@ -1452,6 +1496,7 @@ export namespace MyNS {
 		 * Create spot comment. Wrap comment parameters in [comment].
 		 * Post spots/{id}/comments
 		 * @param {number} id spot id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CommentEditable} requestBody comment attributes
 		 * @return {Comment} Contains comment data
 		 */
@@ -1464,6 +1509,7 @@ export namespace MyNS {
 		 * List maps for a given spot.
 		 * Get spots/{id}/events
 		 * @param {number} id Id of spot
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} timeframe_start Begin of time range of event (ISO 8601 date format).
 		 * @param {string} timeframe_end End of time range of event (ISO 8601 date format).
 		 * @param {string} bounds To refine your event index request to contain only events within                                                             a geographical box pass the followng bounds parameters.                                                             F. e. to get events within 'Hamburg, St. Pauli':                                                             bounds[sw_lat]=53.54831449741324                                                             bounds[sw_lon]=9.943227767944336                                                             bounds[ne_lat]=53.5571103674878                                                             bounds[ne_lon]=9.9776029586792
@@ -1478,6 +1524,7 @@ export namespace MyNS {
 		 * Create event. Wrap map parameters in [event].
 		 * Post spots/{id}/events
 		 * @param {number} id Spot id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {EventEditable} requestBody Event attributes
 		 * @return {Event} Contains event data
 		 */
@@ -1490,6 +1537,7 @@ export namespace MyNS {
 		 * Respot a spot onto a map.
 		 * Post spots/{id}/respots
 		 * @param {number} id Spot Id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestBody Map Id
 		 * @return {Respot} Contains respot data.
 		 */
@@ -1502,7 +1550,9 @@ export namespace MyNS {
 		 * List subscriptions.
 		 * Get subscriptions
 		 * @param {number} user_id Id of user
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} map_id Id of map
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Subscription>} Contains list of subscriptions.
 		 */
 		SubscriptionsGetByUser_idAndMap_id(user_id: number | null | undefined, map_id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Subscription>> {
@@ -1556,6 +1606,7 @@ export namespace MyNS {
 		 * Get profile a user
 		 * Get users/{id}
 		 * @param {number} id Id of user
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {User} Contains user data
 		 */
 		Users_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<User> {
@@ -1567,6 +1618,7 @@ export namespace MyNS {
 		 * List maps for a given user.
 		 * Get users/{user_id}/maps
 		 * @param {number} user_id Id of user
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Map>} Contains list of maps.
 		 */
 		Users_user_idMapsGet(user_id: number, headersHandler?: () => HttpHeaders): Observable<Array<Map>> {

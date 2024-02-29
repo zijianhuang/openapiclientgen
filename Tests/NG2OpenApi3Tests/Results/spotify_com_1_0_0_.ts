@@ -69,6 +69,7 @@ export namespace MyNS {
 
 		/**
 		 * The popularity of the album. The value will be between 0 and 100, with 100 being the most popular.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		popularity?: number | null;
 
@@ -92,6 +93,7 @@ export namespace MyNS {
 		/**
 		 * The number of tracks in the album.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_tracks: number;
 
@@ -140,6 +142,7 @@ export namespace MyNS {
 
 		/**
 		 * The popularity of the album. The value will be between 0 and 100, with 100 being the most popular.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		popularity: FormControl<number | null | undefined>,
 
@@ -158,6 +161,7 @@ export namespace MyNS {
 		/**
 		 * The number of tracks in the album.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_tracks: FormControl<number | null | undefined>,
 
@@ -293,6 +297,7 @@ export namespace MyNS {
 		/**
 		 * The image height in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: number;
 
@@ -305,6 +310,7 @@ export namespace MyNS {
 		/**
 		 * The image width in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: number;
 	}
@@ -313,6 +319,7 @@ export namespace MyNS {
 		/**
 		 * The image height in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: FormControl<number | null | undefined>,
 
@@ -325,6 +332,7 @@ export namespace MyNS {
 		/**
 		 * The image width in pixels.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -432,6 +440,7 @@ export namespace MyNS {
 
 		/**
 		 * The popularity of the artist. The value will be between 0 and 100, with 100 being the most popular. The artist's popularity is calculated from the popularity of all the artist's tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		popularity?: number | null;
 
@@ -464,6 +473,7 @@ export namespace MyNS {
 
 		/**
 		 * The popularity of the artist. The value will be between 0 and 100, with 100 being the most popular. The artist's popularity is calculated from the popularity of all the artist's tracks.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		popularity: FormControl<number | null | undefined>,
 
@@ -498,6 +508,7 @@ export namespace MyNS {
 
 		/**
 		 * The total number of followers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total?: number | null;
 	}
@@ -510,6 +521,7 @@ export namespace MyNS {
 
 		/**
 		 * The total number of followers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -569,10 +581,16 @@ export namespace MyNS {
 		 */
 		confidence?: number | null;
 
-		/** The duration (in seconds) of the time interval. */
+		/**
+		 * The duration (in seconds) of the time interval.
+		 * Type: double
+		 */
 		duration?: number | null;
 
-		/** The starting point (in seconds) of the time interval. */
+		/**
+		 * The starting point (in seconds) of the time interval.
+		 * Type: double
+		 */
 		start?: number | null;
 	}
 	export interface TimeIntervalObjectFormProperties {
@@ -584,10 +602,16 @@ export namespace MyNS {
 		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** The duration (in seconds) of the time interval. */
+		/**
+		 * The duration (in seconds) of the time interval.
+		 * Type: double
+		 */
 		duration: FormControl<number | null | undefined>,
 
-		/** The starting point (in seconds) of the time interval. */
+		/**
+		 * The starting point (in seconds) of the time interval.
+		 * Type: double
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeIntervalObjectFormGroup() {
@@ -601,7 +625,10 @@ export namespace MyNS {
 
 	export interface AudioAnalysisObjectMeta {
 
-		/** The amount of time taken to analyze this track. */
+		/**
+		 * The amount of time taken to analyze this track.
+		 * Type: double
+		 */
 		analysis_time?: number | null;
 
 		/** The version of the Analyzer used to analyze this track. */
@@ -616,15 +643,24 @@ export namespace MyNS {
 		/** The platform used to read the track's audio data. */
 		platform?: string | null;
 
-		/** The return code of the analyzer process. 0 if successful, 1 if any errors occurred. */
+		/**
+		 * The return code of the analyzer process. 0 if successful, 1 if any errors occurred.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status_code?: number | null;
 
-		/** The Unix timestamp (in seconds) at which this track was analyzed. */
+		/**
+		 * The Unix timestamp (in seconds) at which this track was analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp?: number | null;
 	}
 	export interface AudioAnalysisObjectMetaFormProperties {
 
-		/** The amount of time taken to analyze this track. */
+		/**
+		 * The amount of time taken to analyze this track.
+		 * Type: double
+		 */
 		analysis_time: FormControl<number | null | undefined>,
 
 		/** The version of the Analyzer used to analyze this track. */
@@ -639,10 +675,16 @@ export namespace MyNS {
 		/** The platform used to read the track's audio data. */
 		platform: FormControl<string | null | undefined>,
 
-		/** The return code of the analyzer process. 0 if successful, 1 if any errors occurred. */
+		/**
+		 * The return code of the analyzer process. 0 if successful, 1 if any errors occurred.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status_code: FormControl<number | null | undefined>,
 
-		/** The Unix timestamp (in seconds) at which this track was analyzed. */
+		/**
+		 * The Unix timestamp (in seconds) at which this track was analyzed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateAudioAnalysisObjectMetaFormGroup() {
@@ -667,10 +709,16 @@ export namespace MyNS {
 		 */
 		confidence?: number | null;
 
-		/** The duration (in seconds) of the section. */
+		/**
+		 * The duration (in seconds) of the section.
+		 * Type: double
+		 */
 		duration?: number | null;
 
-		/** The estimated overall key of the section. The values in this field ranging from 0 to 11 mapping to pitches using standard Pitch Class notation (E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on). If no key was detected, the value is -1. */
+		/**
+		 * The estimated overall key of the section. The values in this field ranging from 0 to 11 mapping to pitches using standard Pitch Class notation (E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on). If no key was detected, the value is -1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		key?: number | null;
 
 		/**
@@ -680,7 +728,10 @@ export namespace MyNS {
 		 */
 		key_confidence?: number | null;
 
-		/** The overall loudness of the section in decibels (dB). Loudness values are useful for comparing relative loudness of sections within tracks. */
+		/**
+		 * The overall loudness of the section in decibels (dB). Loudness values are useful for comparing relative loudness of sections within tracks.
+		 * Type: double
+		 */
 		loudness?: number | null;
 
 		/** Indicates the modality (major or minor) of a section, the type of scale from which its melodic content is derived. This field will contain a 0 for "minor", a 1 for "major", or a -1 for no result. Note that the major key (e.g. C major) could more likely be confused with the minor key at 3 semitones lower (e.g. A minor) as both keys carry the same pitches. */
@@ -693,10 +744,16 @@ export namespace MyNS {
 		 */
 		mode_confidence?: number | null;
 
-		/** The starting point (in seconds) of the section. */
+		/**
+		 * The starting point (in seconds) of the section.
+		 * Type: double
+		 */
 		start?: number | null;
 
-		/** The overall estimated tempo of the section in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration. */
+		/**
+		 * The overall estimated tempo of the section in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+		 * Type: double
+		 */
 		tempo?: number | null;
 
 		/**
@@ -729,10 +786,16 @@ export namespace MyNS {
 		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** The duration (in seconds) of the section. */
+		/**
+		 * The duration (in seconds) of the section.
+		 * Type: double
+		 */
 		duration: FormControl<number | null | undefined>,
 
-		/** The estimated overall key of the section. The values in this field ranging from 0 to 11 mapping to pitches using standard Pitch Class notation (E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on). If no key was detected, the value is -1. */
+		/**
+		 * The estimated overall key of the section. The values in this field ranging from 0 to 11 mapping to pitches using standard Pitch Class notation (E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on). If no key was detected, the value is -1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		key: FormControl<number | null | undefined>,
 
 		/**
@@ -742,7 +805,10 @@ export namespace MyNS {
 		 */
 		key_confidence: FormControl<number | null | undefined>,
 
-		/** The overall loudness of the section in decibels (dB). Loudness values are useful for comparing relative loudness of sections within tracks. */
+		/**
+		 * The overall loudness of the section in decibels (dB). Loudness values are useful for comparing relative loudness of sections within tracks.
+		 * Type: double
+		 */
 		loudness: FormControl<number | null | undefined>,
 
 		/** Indicates the modality (major or minor) of a section, the type of scale from which its melodic content is derived. This field will contain a 0 for "minor", a 1 for "major", or a -1 for no result. Note that the major key (e.g. C major) could more likely be confused with the minor key at 3 semitones lower (e.g. A minor) as both keys carry the same pitches. */
@@ -755,10 +821,16 @@ export namespace MyNS {
 		 */
 		mode_confidence: FormControl<number | null | undefined>,
 
-		/** The starting point (in seconds) of the section. */
+		/**
+		 * The starting point (in seconds) of the section.
+		 * Type: double
+		 */
 		start: FormControl<number | null | undefined>,
 
-		/** The overall estimated tempo of the section in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration. */
+		/**
+		 * The overall estimated tempo of the section in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+		 * Type: double
+		 */
 		tempo: FormControl<number | null | undefined>,
 
 		/**
@@ -811,19 +883,34 @@ export namespace MyNS {
 		 */
 		confidence?: number | null;
 
-		/** The duration (in seconds) of the segment. */
+		/**
+		 * The duration (in seconds) of the segment.
+		 * Type: double
+		 */
 		duration?: number | null;
 
-		/** The offset loudness of the segment in decibels (dB). This value should be equivalent to the loudness_start of the following segment. */
+		/**
+		 * The offset loudness of the segment in decibels (dB). This value should be equivalent to the loudness_start of the following segment.
+		 * Type: double
+		 */
 		loudness_end?: number | null;
 
-		/** The peak loudness of the segment in decibels (dB). Combined with `loudness_start` and `loudness_max_time`, these components can be used to describe the "attack" of the segment. */
+		/**
+		 * The peak loudness of the segment in decibels (dB). Combined with `loudness_start` and `loudness_max_time`, these components can be used to describe the "attack" of the segment.
+		 * Type: double
+		 */
 		loudness_max?: number | null;
 
-		/** The segment-relative offset of the segment peak loudness in seconds. Combined with `loudness_start` and `loudness_max`, these components can be used to desctibe the "attack" of the segment. */
+		/**
+		 * The segment-relative offset of the segment peak loudness in seconds. Combined with `loudness_start` and `loudness_max`, these components can be used to desctibe the "attack" of the segment.
+		 * Type: double
+		 */
 		loudness_max_time?: number | null;
 
-		/** The onset loudness of the segment in decibels (dB). Combined with `loudness_max` and `loudness_max_time`, these components can be used to describe the "attack" of the segment. */
+		/**
+		 * The onset loudness of the segment in decibels (dB). Combined with `loudness_max` and `loudness_max_time`, these components can be used to describe the "attack" of the segment.
+		 * Type: double
+		 */
 		loudness_start?: number | null;
 
 		/**
@@ -834,7 +921,10 @@ export namespace MyNS {
 		 */
 		pitches?: Array<number>;
 
-		/** The starting point (in seconds) of the segment. */
+		/**
+		 * The starting point (in seconds) of the segment.
+		 * Type: double
+		 */
 		start?: number | null;
 
 		/**
@@ -854,22 +944,40 @@ export namespace MyNS {
 		 */
 		confidence: FormControl<number | null | undefined>,
 
-		/** The duration (in seconds) of the segment. */
+		/**
+		 * The duration (in seconds) of the segment.
+		 * Type: double
+		 */
 		duration: FormControl<number | null | undefined>,
 
-		/** The offset loudness of the segment in decibels (dB). This value should be equivalent to the loudness_start of the following segment. */
+		/**
+		 * The offset loudness of the segment in decibels (dB). This value should be equivalent to the loudness_start of the following segment.
+		 * Type: double
+		 */
 		loudness_end: FormControl<number | null | undefined>,
 
-		/** The peak loudness of the segment in decibels (dB). Combined with `loudness_start` and `loudness_max_time`, these components can be used to describe the "attack" of the segment. */
+		/**
+		 * The peak loudness of the segment in decibels (dB). Combined with `loudness_start` and `loudness_max_time`, these components can be used to describe the "attack" of the segment.
+		 * Type: double
+		 */
 		loudness_max: FormControl<number | null | undefined>,
 
-		/** The segment-relative offset of the segment peak loudness in seconds. Combined with `loudness_start` and `loudness_max`, these components can be used to desctibe the "attack" of the segment. */
+		/**
+		 * The segment-relative offset of the segment peak loudness in seconds. Combined with `loudness_start` and `loudness_max`, these components can be used to desctibe the "attack" of the segment.
+		 * Type: double
+		 */
 		loudness_max_time: FormControl<number | null | undefined>,
 
-		/** The onset loudness of the segment in decibels (dB). Combined with `loudness_max` and `loudness_max_time`, these components can be used to describe the "attack" of the segment. */
+		/**
+		 * The onset loudness of the segment in decibels (dB). Combined with `loudness_max` and `loudness_max_time`, these components can be used to describe the "attack" of the segment.
+		 * Type: double
+		 */
 		loudness_start: FormControl<number | null | undefined>,
 
-		/** The starting point (in seconds) of the segment. */
+		/**
+		 * The starting point (in seconds) of the segment.
+		 * Type: double
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateSegmentObjectFormGroup() {
@@ -887,28 +995,46 @@ export namespace MyNS {
 
 	export interface AudioAnalysisObjectTrack {
 
-		/** The number of channels used for analysis. If 1, all channels are summed together to mono before analysis. */
+		/**
+		 * The number of channels used for analysis. If 1, all channels are summed together to mono before analysis.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		analysis_channels?: number | null;
 
-		/** The sample rate used to decode and analyze this track. May differ from the actual sample rate of this track available on Spotify. */
+		/**
+		 * The sample rate used to decode and analyze this track. May differ from the actual sample rate of this track available on Spotify.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		analysis_sample_rate?: number | null;
 
-		/** A version number for the Echo Nest Musical Fingerprint format used in the codestring field. */
+		/**
+		 * A version number for the Echo Nest Musical Fingerprint format used in the codestring field.
+		 * Type: double
+		 */
 		code_version?: number | null;
 
 		/** An [Echo Nest Musical Fingerprint (ENMFP)](https://academiccommons.columbia.edu/doi/10.7916/D8Q248M4) codestring for this track. */
 		codestring?: string | null;
 
-		/** Length of the track in seconds. */
+		/**
+		 * Length of the track in seconds.
+		 * Type: double
+		 */
 		duration?: number | null;
 
-		/** A version number for the EchoPrint format used in the echoprintstring field. */
+		/**
+		 * A version number for the EchoPrint format used in the echoprintstring field.
+		 * Type: double
+		 */
 		echoprint_version?: number | null;
 
 		/** An [EchoPrint](https://github.com/spotify/echoprint-codegen) codestring for this track. */
 		echoprintstring?: string | null;
 
-		/** The time, in seconds, at which the track's fade-in period ends. If the track has no fade-in, this will be 0.0. */
+		/**
+		 * The time, in seconds, at which the track's fade-in period ends. If the track has no fade-in, this will be 0.0.
+		 * Type: double
+		 */
 		end_of_fade_in?: number | null;
 
 		/**
@@ -927,11 +1053,13 @@ export namespace MyNS {
 
 		/**
 		 * The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.
+		 * Type: float
 		 */
 		loudness?: number | null;
 
 		/**
 		 * Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mode?: number | null;
 
@@ -942,13 +1070,22 @@ export namespace MyNS {
 		 */
 		mode_confidence?: number | null;
 
-		/** The exact number of audio samples analyzed from this track. See also `analysis_sample_rate`. */
+		/**
+		 * The exact number of audio samples analyzed from this track. See also `analysis_sample_rate`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_samples?: number | null;
 
-		/** An offset to the start of the region of the track that was analyzed. (As the entire track is analyzed, this should always be 0.) */
+		/**
+		 * An offset to the start of the region of the track that was analyzed. (As the entire track is analyzed, this should always be 0.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset_seconds?: number | null;
 
-		/** A version number for the Rhythmstring used in the rhythmstring field. */
+		/**
+		 * A version number for the Rhythmstring used in the rhythmstring field.
+		 * Type: double
+		 */
 		rhythm_version?: number | null;
 
 		/** A Rhythmstring for this track. The format of this string is similar to the Synchstring. */
@@ -957,10 +1094,16 @@ export namespace MyNS {
 		/** This field will always contain the empty string. */
 		sample_md5?: string | null;
 
-		/** The time, in seconds, at which the track's fade-out period starts. If the track has no fade-out, this should match the track's length. */
+		/**
+		 * The time, in seconds, at which the track's fade-out period starts. If the track has no fade-out, this should match the track's length.
+		 * Type: double
+		 */
 		start_of_fade_out?: number | null;
 
-		/** A version number for the Synchstring used in the synchstring field. */
+		/**
+		 * A version number for the Synchstring used in the synchstring field.
+		 * Type: double
+		 */
 		synch_version?: number | null;
 
 		/** A [Synchstring](https://github.com/echonest/synchdata) for this track. */
@@ -968,6 +1111,7 @@ export namespace MyNS {
 
 		/**
 		 * The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+		 * Type: float
 		 */
 		tempo?: number | null;
 
@@ -992,33 +1136,54 @@ export namespace MyNS {
 		 */
 		time_signature_confidence?: number | null;
 
-		/** The length of the region of the track was analyzed, if a subset of the track was analyzed. (As the entire track is analyzed, this should always be 0.) */
+		/**
+		 * The length of the region of the track was analyzed, if a subset of the track was analyzed. (As the entire track is analyzed, this should always be 0.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		window_seconds?: number | null;
 	}
 	export interface AudioAnalysisObjectTrackFormProperties {
 
-		/** The number of channels used for analysis. If 1, all channels are summed together to mono before analysis. */
+		/**
+		 * The number of channels used for analysis. If 1, all channels are summed together to mono before analysis.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		analysis_channels: FormControl<number | null | undefined>,
 
-		/** The sample rate used to decode and analyze this track. May differ from the actual sample rate of this track available on Spotify. */
+		/**
+		 * The sample rate used to decode and analyze this track. May differ from the actual sample rate of this track available on Spotify.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		analysis_sample_rate: FormControl<number | null | undefined>,
 
-		/** A version number for the Echo Nest Musical Fingerprint format used in the codestring field. */
+		/**
+		 * A version number for the Echo Nest Musical Fingerprint format used in the codestring field.
+		 * Type: double
+		 */
 		code_version: FormControl<number | null | undefined>,
 
 		/** An [Echo Nest Musical Fingerprint (ENMFP)](https://academiccommons.columbia.edu/doi/10.7916/D8Q248M4) codestring for this track. */
 		codestring: FormControl<string | null | undefined>,
 
-		/** Length of the track in seconds. */
+		/**
+		 * Length of the track in seconds.
+		 * Type: double
+		 */
 		duration: FormControl<number | null | undefined>,
 
-		/** A version number for the EchoPrint format used in the echoprintstring field. */
+		/**
+		 * A version number for the EchoPrint format used in the echoprintstring field.
+		 * Type: double
+		 */
 		echoprint_version: FormControl<number | null | undefined>,
 
 		/** An [EchoPrint](https://github.com/spotify/echoprint-codegen) codestring for this track. */
 		echoprintstring: FormControl<string | null | undefined>,
 
-		/** The time, in seconds, at which the track's fade-in period ends. If the track has no fade-in, this will be 0.0. */
+		/**
+		 * The time, in seconds, at which the track's fade-in period ends. If the track has no fade-in, this will be 0.0.
+		 * Type: double
+		 */
 		end_of_fade_in: FormControl<number | null | undefined>,
 
 		/**
@@ -1037,11 +1202,13 @@ export namespace MyNS {
 
 		/**
 		 * The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.
+		 * Type: float
 		 */
 		loudness: FormControl<number | null | undefined>,
 
 		/**
 		 * Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mode: FormControl<number | null | undefined>,
 
@@ -1052,13 +1219,22 @@ export namespace MyNS {
 		 */
 		mode_confidence: FormControl<number | null | undefined>,
 
-		/** The exact number of audio samples analyzed from this track. See also `analysis_sample_rate`. */
+		/**
+		 * The exact number of audio samples analyzed from this track. See also `analysis_sample_rate`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_samples: FormControl<number | null | undefined>,
 
-		/** An offset to the start of the region of the track that was analyzed. (As the entire track is analyzed, this should always be 0.) */
+		/**
+		 * An offset to the start of the region of the track that was analyzed. (As the entire track is analyzed, this should always be 0.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset_seconds: FormControl<number | null | undefined>,
 
-		/** A version number for the Rhythmstring used in the rhythmstring field. */
+		/**
+		 * A version number for the Rhythmstring used in the rhythmstring field.
+		 * Type: double
+		 */
 		rhythm_version: FormControl<number | null | undefined>,
 
 		/** A Rhythmstring for this track. The format of this string is similar to the Synchstring. */
@@ -1067,10 +1243,16 @@ export namespace MyNS {
 		/** This field will always contain the empty string. */
 		sample_md5: FormControl<string | null | undefined>,
 
-		/** The time, in seconds, at which the track's fade-out period starts. If the track has no fade-out, this should match the track's length. */
+		/**
+		 * The time, in seconds, at which the track's fade-out period starts. If the track has no fade-out, this should match the track's length.
+		 * Type: double
+		 */
 		start_of_fade_out: FormControl<number | null | undefined>,
 
-		/** A version number for the Synchstring used in the synchstring field. */
+		/**
+		 * A version number for the Synchstring used in the synchstring field.
+		 * Type: double
+		 */
 		synch_version: FormControl<number | null | undefined>,
 
 		/** A [Synchstring](https://github.com/echonest/synchdata) for this track. */
@@ -1078,6 +1260,7 @@ export namespace MyNS {
 
 		/**
 		 * The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+		 * Type: float
 		 */
 		tempo: FormControl<number | null | undefined>,
 
@@ -1102,7 +1285,10 @@ export namespace MyNS {
 		 */
 		time_signature_confidence: FormControl<number | null | undefined>,
 
-		/** The length of the region of the track was analyzed, if a subset of the track was analyzed. (As the entire track is analyzed, this should always be 0.) */
+		/**
+		 * The length of the region of the track was analyzed, if a subset of the track was analyzed. (As the entire track is analyzed, this should always be 0.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		window_seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateAudioAnalysisObjectTrackFormGroup() {
@@ -1153,16 +1339,19 @@ export namespace MyNS {
 
 		/**
 		 * Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.
+		 * Type: float
 		 */
 		danceability?: number | null;
 
 		/**
 		 * The duration of the track in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration_ms?: number | null;
 
 		/**
 		 * Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
+		 * Type: float
 		 */
 		energy?: number | null;
 
@@ -1173,6 +1362,7 @@ export namespace MyNS {
 
 		/**
 		 * Predicts whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal". The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.
+		 * Type: float
 		 */
 		instrumentalness?: number | null;
 
@@ -1185,26 +1375,31 @@ export namespace MyNS {
 
 		/**
 		 * Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.
+		 * Type: float
 		 */
 		liveness?: number | null;
 
 		/**
 		 * The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.
+		 * Type: float
 		 */
 		loudness?: number | null;
 
 		/**
 		 * Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mode?: number | null;
 
 		/**
 		 * Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.
+		 * Type: float
 		 */
 		speechiness?: number | null;
 
 		/**
 		 * The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+		 * Type: float
 		 */
 		tempo?: number | null;
 
@@ -1253,16 +1448,19 @@ export namespace MyNS {
 
 		/**
 		 * Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.
+		 * Type: float
 		 */
 		danceability: FormControl<number | null | undefined>,
 
 		/**
 		 * The duration of the track in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration_ms: FormControl<number | null | undefined>,
 
 		/**
 		 * Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
+		 * Type: float
 		 */
 		energy: FormControl<number | null | undefined>,
 
@@ -1273,6 +1471,7 @@ export namespace MyNS {
 
 		/**
 		 * Predicts whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal". The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.
+		 * Type: float
 		 */
 		instrumentalness: FormControl<number | null | undefined>,
 
@@ -1285,26 +1484,31 @@ export namespace MyNS {
 
 		/**
 		 * Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.
+		 * Type: float
 		 */
 		liveness: FormControl<number | null | undefined>,
 
 		/**
 		 * The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.
+		 * Type: float
 		 */
 		loudness: FormControl<number | null | undefined>,
 
 		/**
 		 * Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mode: FormControl<number | null | undefined>,
 
 		/**
 		 * Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.
+		 * Type: float
 		 */
 		speechiness: FormControl<number | null | undefined>,
 
 		/**
 		 * The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+		 * Type: float
 		 */
 		tempo: FormControl<number | null | undefined>,
 
@@ -1463,6 +1667,7 @@ export namespace MyNS {
 		/**
 		 * The number of chapters in this audiobook.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_chapters: number;
 
@@ -1536,6 +1741,7 @@ export namespace MyNS {
 		/**
 		 * The number of chapters in this audiobook.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_chapters: FormControl<number | null | undefined>,
 
@@ -1719,6 +1925,7 @@ export namespace MyNS {
 		/**
 		 * The number of the chapter
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		chapter_number: number;
 
@@ -1731,6 +1938,7 @@ export namespace MyNS {
 		/**
 		 * The episode length in milliseconds.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration_ms: number;
 
@@ -1834,6 +2042,7 @@ export namespace MyNS {
 		/**
 		 * The number of the chapter
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		chapter_number: FormControl<number | null | undefined>,
 
@@ -1846,6 +2055,7 @@ export namespace MyNS {
 		/**
 		 * The episode length in milliseconds.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration_ms: FormControl<number | null | undefined>,
 
@@ -1971,6 +2181,7 @@ export namespace MyNS {
 
 		/**
 		 * The user's most recent position in the episode in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resume_position_ms?: number | null;
 	}
@@ -1983,6 +2194,7 @@ export namespace MyNS {
 
 		/**
 		 * The user's most recent position in the episode in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		resume_position_ms: FormControl<number | null | undefined>,
 	}
@@ -2074,7 +2286,10 @@ export namespace MyNS {
 		/** The currently playing track or episode. Can be `null`. */
 		item?: TrackObject;
 
-		/** Progress into the currently playing track or episode. Can be `null`. */
+		/**
+		 * Progress into the currently playing track or episode. Can be `null`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress_ms?: number | null;
 
 		/** off, track, context */
@@ -2083,7 +2298,10 @@ export namespace MyNS {
 		/** If shuffle is on or off. */
 		shuffle_state?: boolean | null;
 
-		/** Unix Millisecond Timestamp when data was fetched. */
+		/**
+		 * Unix Millisecond Timestamp when data was fetched.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp?: number | null;
 	}
 	export interface CurrentlyPlayingContextObjectFormProperties {
@@ -2096,7 +2314,10 @@ export namespace MyNS {
 		/** If something is currently playing, return `true`. */
 		is_playing: FormControl<boolean | null | undefined>,
 
-		/** Progress into the currently playing track or episode. Can be `null`. */
+		/**
+		 * Progress into the currently playing track or episode. Can be `null`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress_ms: FormControl<number | null | undefined>,
 
 		/** off, track, context */
@@ -2105,7 +2326,10 @@ export namespace MyNS {
 		/** If shuffle is on or off. */
 		shuffle_state: FormControl<boolean | null | undefined>,
 
-		/** Unix Millisecond Timestamp when data was fetched. */
+		/**
+		 * Unix Millisecond Timestamp when data was fetched.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateCurrentlyPlayingContextObjectFormGroup() {
@@ -2286,11 +2510,13 @@ export namespace MyNS {
 
 		/**
 		 * The disc number (usually `1` unless the album consists of more than one disc).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		disc_number?: number | null;
 
 		/**
 		 * The track length in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration_ms?: number | null;
 
@@ -2341,6 +2567,7 @@ export namespace MyNS {
 
 		/**
 		 * The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.<br/>The popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are.<br/>Generally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. _**Note**: the popularity value may lag actual popularity by a few days: the value is not updated in real time._
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		popularity?: number | null;
 
@@ -2356,6 +2583,7 @@ export namespace MyNS {
 
 		/**
 		 * The number of the track. If an album has several discs, the track number is the number on the specified disc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		track_number?: number | null;
 
@@ -2373,11 +2601,13 @@ export namespace MyNS {
 
 		/**
 		 * The disc number (usually `1` unless the album consists of more than one disc).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		disc_number: FormControl<number | null | undefined>,
 
 		/**
 		 * The track length in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration_ms: FormControl<number | null | undefined>,
 
@@ -2418,6 +2648,7 @@ export namespace MyNS {
 
 		/**
 		 * The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.<br/>The popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are.<br/>Generally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. _**Note**: the popularity value may lag actual popularity by a few days: the value is not updated in real time._
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		popularity: FormControl<number | null | undefined>,
 
@@ -2428,6 +2659,7 @@ export namespace MyNS {
 
 		/**
 		 * The number of the track. If an album has several discs, the track number is the number on the specified disc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		track_number: FormControl<number | null | undefined>,
 
@@ -2510,10 +2742,16 @@ export namespace MyNS {
 		/** The currently playing track or episode. Can be `null`. */
 		item?: TrackObject;
 
-		/** Progress into the currently playing track or episode. Can be `null`. */
+		/**
+		 * Progress into the currently playing track or episode. Can be `null`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress_ms?: number | null;
 
-		/** Unix Millisecond Timestamp when data was fetched */
+		/**
+		 * Unix Millisecond Timestamp when data was fetched
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp?: number | null;
 	}
 	export interface CurrentlyPlayingObjectFormProperties {
@@ -2526,10 +2764,16 @@ export namespace MyNS {
 		/** If something is currently playing, return `true`. */
 		is_playing: FormControl<boolean | null | undefined>,
 
-		/** Progress into the currently playing track or episode. Can be `null`. */
+		/**
+		 * Progress into the currently playing track or episode. Can be `null`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress_ms: FormControl<number | null | undefined>,
 
-		/** Unix Millisecond Timestamp when data was fetched */
+		/**
+		 * Unix Millisecond Timestamp when data was fetched
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateCurrentlyPlayingObjectFormGroup() {
@@ -2574,13 +2818,19 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href?: string | null;
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** URL to the next page of items. ( `null` if none) */
 		next?: string | null;
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface CursorPagingObjectFormProperties {
@@ -2588,13 +2838,19 @@ export namespace MyNS {
 		/** A link to the Web API endpoint returning the full result of the request. */
 		href: FormControl<string | null | undefined>,
 
-		/** The maximum number of items in the response (as set in the query or by default). */
+		/**
+		 * The maximum number of items in the response (as set in the query or by default).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** URL to the next page of items. ( `null` if none) */
 		next: FormControl<string | null | undefined>,
 
-		/** The total number of items available to return. */
+		/**
+		 * The total number of items available to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCursorPagingObjectFormGroup() {
@@ -2657,6 +2913,7 @@ export namespace MyNS {
 		/**
 		 * The episode length in milliseconds.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration_ms: number;
 
@@ -2777,6 +3034,7 @@ export namespace MyNS {
 		/**
 		 * The episode length in milliseconds.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration_ms: FormControl<number | null | undefined>,
 
@@ -3089,6 +3347,7 @@ export namespace MyNS {
 		/**
 		 * The maximum number of items in the response (as set in the query or by default).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: number;
 
@@ -3101,6 +3360,7 @@ export namespace MyNS {
 		/**
 		 * The offset of the items returned (as set in the query or by default)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		offset: number;
 
@@ -3113,6 +3373,7 @@ export namespace MyNS {
 		/**
 		 * The total number of items available to return.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 	}
@@ -3127,6 +3388,7 @@ export namespace MyNS {
 		/**
 		 * The maximum number of items in the response (as set in the query or by default).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		limit: FormControl<number | null | undefined>,
 
@@ -3139,6 +3401,7 @@ export namespace MyNS {
 		/**
 		 * The offset of the items returned (as set in the query or by default)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		offset: FormControl<number | null | undefined>,
 
@@ -3151,6 +3414,7 @@ export namespace MyNS {
 		/**
 		 * The total number of items available to return.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -3319,6 +3583,7 @@ export namespace MyNS {
 
 		/**
 		 * The HTTP status code. Either `404 NOT FOUND` or `403 FORBIDDEN`.  Also returned in the response header.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status?: number | null;
 	}
@@ -3332,6 +3597,7 @@ export namespace MyNS {
 
 		/**
 		 * The HTTP status code. Either `404 NOT FOUND` or `403 FORBIDDEN`.  Also returned in the response header.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 	}
@@ -3645,6 +3911,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of tracks in the playlist.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total?: number | null;
 	}
@@ -3657,6 +3924,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of tracks in the playlist.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -3880,11 +4148,13 @@ export namespace MyNS {
 
 		/**
 		 * The number of tracks available after min\_\* and max\_\* filters have been applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		afterFilteringSize?: number | null;
 
 		/**
 		 * The number of tracks available after relinking for regional availability.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		afterRelinkingSize?: number | null;
 
@@ -3900,6 +4170,7 @@ export namespace MyNS {
 
 		/**
 		 * The number of recommended tracks available for this seed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		initialPoolSize?: number | null;
 
@@ -3912,11 +4183,13 @@ export namespace MyNS {
 
 		/**
 		 * The number of tracks available after min\_\* and max\_\* filters have been applied.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		afterFilteringSize: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of tracks available after relinking for regional availability.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		afterRelinkingSize: FormControl<number | null | undefined>,
 
@@ -3932,6 +4205,7 @@ export namespace MyNS {
 
 		/**
 		 * The number of recommended tracks available for this seed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		initialPoolSize: FormControl<number | null | undefined>,
 
@@ -4173,6 +4447,7 @@ export namespace MyNS {
 		/**
 		 * The total number of episodes in the show.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_episodes: number;
 
@@ -4247,6 +4522,7 @@ export namespace MyNS {
 		/**
 		 * The total number of episodes in the show.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_episodes: FormControl<number | null | undefined>,
 
@@ -4630,10 +4906,16 @@ export namespace MyNS {
 		 */
 		available_markets?: Array<string>;
 
-		/** The disc number (usually `1` unless the album consists of more than one disc). */
+		/**
+		 * The disc number (usually `1` unless the album consists of more than one disc).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disc_number?: number | null;
 
-		/** The track length in milliseconds. */
+		/**
+		 * The track length in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_ms?: number | null;
 
 		/** Whether or not the track has explicit lyrics ( `true` = yes it does; `false` = no it does not OR unknown). */
@@ -4680,6 +4962,7 @@ export namespace MyNS {
 
 		/**
 		 * The number of the track. If an album has several discs, the track number is the number on the specified disc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		track_number?: number | null;
 
@@ -4695,10 +4978,16 @@ export namespace MyNS {
 	}
 	export interface SimplifiedTrackObjectFormProperties {
 
-		/** The disc number (usually `1` unless the album consists of more than one disc). */
+		/**
+		 * The disc number (usually `1` unless the album consists of more than one disc).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disc_number: FormControl<number | null | undefined>,
 
-		/** The track length in milliseconds. */
+		/**
+		 * The track length in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_ms: FormControl<number | null | undefined>,
 
 		/** Whether or not the track has explicit lyrics ( `true` = yes it does; `false` = no it does not OR unknown). */
@@ -4732,6 +5021,7 @@ export namespace MyNS {
 
 		/**
 		 * The number of the track. If an album has several discs, the track number is the number on the specified disc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		track_number: FormControl<number | null | undefined>,
 
@@ -4767,26 +5057,31 @@ export namespace MyNS {
 
 		/**
 		 * A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.
+		 * Type: float
 		 */
 		acousticness?: number | null;
 
 		/**
 		 * Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.
+		 * Type: float
 		 */
 		danceability?: number | null;
 
 		/**
 		 * The duration of the track in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration_ms?: number | null;
 
 		/**
 		 * Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
+		 * Type: float
 		 */
 		energy?: number | null;
 
 		/**
 		 * Predicts whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal". The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.
+		 * Type: float
 		 */
 		instrumentalness?: number | null;
 
@@ -4799,31 +5094,37 @@ export namespace MyNS {
 
 		/**
 		 * Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.
+		 * Type: float
 		 */
 		liveness?: number | null;
 
 		/**
 		 * The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.
+		 * Type: float
 		 */
 		loudness?: number | null;
 
 		/**
 		 * Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mode?: number | null;
 
 		/**
 		 * The popularity of the track. The value will be between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are. _**Note**: When applying track relinking via the `market` parameter, it is expected to find relinked tracks with popularities that do not match `min_*`, `max_*`and `target_*` popularities. These relinked tracks are accurate replacements for unplayable tracks with the expected popularity scores. Original, non-relinked tracks are available via the `linked_from` attribute of the [relinked track response](/documentation/web-api/concepts/track-relinking)._
+		 * Type: float
 		 */
 		popularity?: number | null;
 
 		/**
 		 * Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.
+		 * Type: float
 		 */
 		speechiness?: number | null;
 
 		/**
 		 * The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+		 * Type: float
 		 */
 		tempo?: number | null;
 
@@ -4836,6 +5137,7 @@ export namespace MyNS {
 
 		/**
 		 * A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
+		 * Type: float
 		 */
 		valence?: number | null;
 	}
@@ -4843,26 +5145,31 @@ export namespace MyNS {
 
 		/**
 		 * A confidence measure from 0.0 to 1.0 of whether the track is acoustic. 1.0 represents high confidence the track is acoustic.
+		 * Type: float
 		 */
 		acousticness: FormControl<number | null | undefined>,
 
 		/**
 		 * Danceability describes how suitable a track is for dancing based on a combination of musical elements including tempo, rhythm stability, beat strength, and overall regularity. A value of 0.0 is least danceable and 1.0 is most danceable.
+		 * Type: float
 		 */
 		danceability: FormControl<number | null | undefined>,
 
 		/**
 		 * The duration of the track in milliseconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		duration_ms: FormControl<number | null | undefined>,
 
 		/**
 		 * Energy is a measure from 0.0 to 1.0 and represents a perceptual measure of intensity and activity. Typically, energetic tracks feel fast, loud, and noisy. For example, death metal has high energy, while a Bach prelude scores low on the scale. Perceptual features contributing to this attribute include dynamic range, perceived loudness, timbre, onset rate, and general entropy.
+		 * Type: float
 		 */
 		energy: FormControl<number | null | undefined>,
 
 		/**
 		 * Predicts whether a track contains no vocals. "Ooh" and "aah" sounds are treated as instrumental in this context. Rap or spoken word tracks are clearly "vocal". The closer the instrumentalness value is to 1.0, the greater likelihood the track contains no vocal content. Values above 0.5 are intended to represent instrumental tracks, but confidence is higher as the value approaches 1.0.
+		 * Type: float
 		 */
 		instrumentalness: FormControl<number | null | undefined>,
 
@@ -4875,31 +5182,37 @@ export namespace MyNS {
 
 		/**
 		 * Detects the presence of an audience in the recording. Higher liveness values represent an increased probability that the track was performed live. A value above 0.8 provides strong likelihood that the track is live.
+		 * Type: float
 		 */
 		liveness: FormControl<number | null | undefined>,
 
 		/**
 		 * The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.
+		 * Type: float
 		 */
 		loudness: FormControl<number | null | undefined>,
 
 		/**
 		 * Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mode: FormControl<number | null | undefined>,
 
 		/**
 		 * The popularity of the track. The value will be between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are. _**Note**: When applying track relinking via the `market` parameter, it is expected to find relinked tracks with popularities that do not match `min_*`, `max_*`and `target_*` popularities. These relinked tracks are accurate replacements for unplayable tracks with the expected popularity scores. Original, non-relinked tracks are available via the `linked_from` attribute of the [relinked track response](/documentation/web-api/concepts/track-relinking)._
+		 * Type: float
 		 */
 		popularity: FormControl<number | null | undefined>,
 
 		/**
 		 * Speechiness detects the presence of spoken words in a track. The more exclusively speech-like the recording (e.g. talk show, audio book, poetry), the closer to 1.0 the attribute value. Values above 0.66 describe tracks that are probably made entirely of spoken words. Values between 0.33 and 0.66 describe tracks that may contain both music and speech, either in sections or layered, including such cases as rap music. Values below 0.33 most likely represent music and other non-speech-like tracks.
+		 * Type: float
 		 */
 		speechiness: FormControl<number | null | undefined>,
 
 		/**
 		 * The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.
+		 * Type: float
 		 */
 		tempo: FormControl<number | null | undefined>,
 
@@ -4912,6 +5225,7 @@ export namespace MyNS {
 
 		/**
 		 * A measure from 0.0 to 1.0 describing the musical positiveness conveyed by a track. Tracks with high valence sound more positive (e.g. happy, cheerful, euphoric), while tracks with low valence sound more negative (e.g. sad, depressed, angry).
+		 * Type: float
 		 */
 		valence: FormControl<number | null | undefined>,
 	}
@@ -4965,6 +5279,9 @@ export namespace MyNS {
 		 * Get Spotify catalog information about an album’s tracks.
 		 * Optional parameters can be used to limit the number of tracks returned.
 		 * Get albums/{id}/tracks
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingSimplifiedTrackObject} Pages of tracks
 		 */
 		Get_an_albums_tracks(id: string, market: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<PagingSimplifiedTrackObject> {
@@ -4995,6 +5312,9 @@ export namespace MyNS {
 		 * Get Artist's Albums
 		 * Get Spotify catalog information about an artist's albums.
 		 * Get artists/{id}/albums
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingSimplifiedAlbumObject} Pages of albums
 		 */
 		Get_an_artists_albums(id: string, include_groups: string | null | undefined, market: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<PagingSimplifiedAlbumObject> {
@@ -5079,6 +5399,9 @@ export namespace MyNS {
 		 * Get Spotify catalog information about an audiobook's chapters.<br />
 		 * **Note: Audiobooks are only available for the US, UK, Ireland, New Zealand and Australia markets.**
 		 * Get audiobooks/{id}/chapters
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingSimplifiedChapterObject} Pages of chapters
 		 */
 		Get_audiobook_chapters(id: string, market: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<PagingSimplifiedChapterObject> {
@@ -5089,6 +5412,9 @@ export namespace MyNS {
 		 * Get Several Browse Categories
 		 * Get a list of categories used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).
 		 * Get browse/categories
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Get_categoriesReturn} A paged set of categories
 		 */
 		Get_categories(country: string | null | undefined, locale: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<Get_categoriesReturn> {
@@ -5109,6 +5435,9 @@ export namespace MyNS {
 		 * Get Category's Playlists
 		 * Get a list of Spotify playlists tagged with a particular category.
 		 * Get browse/categories/{category_id}/playlists
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingFeaturedPlaylistObject} A paged set of playlists
 		 */
 		Get_a_categories_playlists(category_id: string, country: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<PagingFeaturedPlaylistObject> {
@@ -5119,6 +5448,9 @@ export namespace MyNS {
 		 * Get Featured Playlists
 		 * Get a list of Spotify featured playlists (shown, for example, on a Spotify player's 'Browse' tab).
 		 * Get browse/featured-playlists
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingFeaturedPlaylistObject} A paged set of playlists
 		 */
 		Get_featured_playlists(country: string | null | undefined, locale: string | null | undefined, timestamp: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<PagingFeaturedPlaylistObject> {
@@ -5129,6 +5461,9 @@ export namespace MyNS {
 		 * Get New Releases
 		 * Get a list of new album releases featured in Spotify (shown, for example, on a Spotify player’s “Browse” tab).
 		 * Get browse/new-releases
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Get_new_releasesReturn} A paged set of albums
 		 */
 		Get_new_releases(country: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<Get_new_releasesReturn> {
@@ -5213,6 +5548,9 @@ export namespace MyNS {
 		 * Get User's Saved Albums
 		 * Get a list of the albums saved in the current Spotify user's 'Your Music' library.
 		 * Get me/albums
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingSavedAlbumObject} Pages of albums
 		 */
 		Get_users_saved_albums(limit: number | null | undefined, offset: number | null | undefined, market: string | null | undefined): Observable<PagingSavedAlbumObject> {
@@ -5253,6 +5591,9 @@ export namespace MyNS {
 		 * Get User's Saved Audiobooks
 		 * Get a list of the audiobooks saved in the current Spotify user's 'Your Music' library.
 		 * Get me/audiobooks
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingSimplifiedAudiobookObject} Pages of audiobooks
 		 */
 		Get_users_saved_audiobooks(limit: number | null | undefined, offset: number | null | undefined): Observable<PagingSimplifiedAudiobookObject> {
@@ -5295,6 +5636,9 @@ export namespace MyNS {
 		 * Get a list of the episodes saved in the current Spotify user's library.<br/>
 		 * This API endpoint is in __beta__ and could change without warning. Please share any feedback that you have, or issues that you discover, in our [developer community forum](https://community.spotify.com/t5/Spotify-for-Developers/bd-p/Spotify_Developer).
 		 * Get me/episodes
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingSavedEpisodeObject} Pages of episodes
 		 */
 		Get_users_saved_episodes(market: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<PagingSavedEpisodeObject> {
@@ -5337,6 +5681,8 @@ export namespace MyNS {
 		 * Get Followed Artists
 		 * Get the current user's followed artists.
 		 * Get me/following
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
 		 * @return {Get_followedReturn} A paged set of artists
 		 */
 		Get_followed(type: ArtistObjectType, after: string | null | undefined, limit: number | null | undefined): Observable<Get_followedReturn> {
@@ -5468,6 +5814,10 @@ export namespace MyNS {
 		 * Get tracks from the current user's recently played tracks.
 		 * _**Note**: Currently doesn't support podcast episodes._
 		 * Get me/player/recently-played
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} after Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} before Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CursorPagingPlayHistoryObject} A paged set of tracks
 		 */
 		Get_recently_played(limit: number | null | undefined, after: number | null | undefined, before: number | null | undefined): Observable<CursorPagingPlayHistoryObject> {
@@ -5489,6 +5839,7 @@ export namespace MyNS {
 		 * Seek To Position
 		 * Seeks to the given position in the user’s currently playing track.
 		 * Put me/player/seek
+		 * @param {number} position_ms Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Seek_to_position_in_currently_playing_track(position_ms: number, device_id: string | null | undefined): Observable<HttpResponse<string>> {
@@ -5509,6 +5860,7 @@ export namespace MyNS {
 		 * Set Playback Volume
 		 * Set the volume for the user’s current playback device.
 		 * Put me/player/volume
+		 * @param {number} volume_percent Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Set_volume_for_users_playback(volume_percent: number, device_id: string | null | undefined): Observable<HttpResponse<string>> {
@@ -5520,6 +5872,9 @@ export namespace MyNS {
 		 * Get a list of the playlists owned or followed by the current Spotify
 		 * user.
 		 * Get me/playlists
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingPlaylistObject} A paged set of playlists
 		 */
 		Get_a_list_of_current_users_playlists(limit: number | null | undefined, offset: number | null | undefined): Observable<PagingPlaylistObject> {
@@ -5540,6 +5895,9 @@ export namespace MyNS {
 		 * Get User's Saved Shows
 		 * Get a list of shows saved in the current Spotify user's library. Optional parameters can be used to limit the number of shows returned.
 		 * Get me/shows
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingSavedShowObject} Pages of shows
 		 */
 		Get_users_saved_shows(limit: number | null | undefined, offset: number | null | undefined): Observable<PagingSavedShowObject> {
@@ -5570,6 +5928,9 @@ export namespace MyNS {
 		 * Get User's Top Items
 		 * Get the current user's top artists or tracks based on calculated affinity.
 		 * Get me/top/{type}
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} Pages of artists or tracks
 		 */
 		Get_users_top_artists_and_tracks(type: Get_users_top_artists_and_tracksType, time_range: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<string> {
@@ -5590,6 +5951,9 @@ export namespace MyNS {
 		 * Get User's Saved Tracks
 		 * Get a list of the songs saved in the current Spotify user's 'Your Music' library.
 		 * Get me/tracks
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingSavedTrackObject} Pages of tracks
 		 */
 		Get_users_saved_tracks(market: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<PagingSavedTrackObject> {
@@ -5691,6 +6055,9 @@ export namespace MyNS {
 		 * Get Playlist Items
 		 * Get full details of the items of a playlist owned by a Spotify user.
 		 * Get playlists/{playlist_id}/tracks
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingPlaylistTrackObject} Pages of tracks
 		 */
 		Get_playlists_tracks(playlist_id: string, market: string | null | undefined, fields: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined, additional_types: string | null | undefined): Observable<PagingPlaylistTrackObject> {
@@ -5701,6 +6068,7 @@ export namespace MyNS {
 		 * Add Items to Playlist
 		 * Add one or more items to a user's playlist.
 		 * Post playlists/{playlist_id}/tracks
+		 * @param {number} position Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Add_tracks_to_playlist(playlist_id: string, position: number | null | undefined, uris: string | null | undefined, requestBody: Add_tracks_to_playlistPostBody): Observable<HttpResponse<string>> {
@@ -5728,6 +6096,80 @@ export namespace MyNS {
 		 * Recommendations are generated based on the available information for a given seed entity and matched against similar artists and tracks. If there is sufficient information about the provided seeds, a list of tracks will be returned together with pool size details.
 		 * For artists and tracks that are very new or obscure there might not be enough data to generate a list of tracks.
 		 * Get recommendations
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 100
+		 * @param {number} min_acousticness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} max_acousticness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} target_acousticness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} min_danceability Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} max_danceability Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} target_danceability Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} min_duration_ms Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} max_duration_ms Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} target_duration_ms Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} min_energy Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} max_energy Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} target_energy Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} min_instrumentalness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} max_instrumentalness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} target_instrumentalness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} min_key Minimum: 0
+		 *     Maximum: 11
+		 * @param {number} max_key Minimum: 0
+		 *     Maximum: 11
+		 * @param {number} target_key Minimum: 0
+		 *     Maximum: 11
+		 * @param {number} min_liveness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} max_liveness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} target_liveness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} min_loudness Type: double
+		 * @param {number} max_loudness Type: double
+		 * @param {number} target_loudness Type: double
+		 * @param {number} min_mode Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} max_mode Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} target_mode Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} min_popularity Minimum: 0
+		 *     Maximum: 100
+		 * @param {number} max_popularity Minimum: 0
+		 *     Maximum: 100
+		 * @param {number} target_popularity Minimum: 0
+		 *     Maximum: 100
+		 * @param {number} min_speechiness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} max_speechiness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} target_speechiness Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} min_tempo Type: double
+		 * @param {number} max_tempo Type: double
+		 * @param {number} target_tempo Type: double
+		 * @param {number} min_time_signature Maximum: 11
+		 * @param {number} max_time_signature Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} target_time_signature Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} min_valence Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} max_valence Minimum: 0
+		 *     Maximum: 1
+		 * @param {number} target_valence Minimum: 0
+		 *     Maximum: 1
 		 * @return {RecommendationsObject} A set of recommendations
 		 */
 		Get_recommendations(limit: number | null | undefined, market: string | null | undefined, seed_artists: string, seed_genres: string, seed_tracks: string, min_acousticness: number | null | undefined, max_acousticness: number | null | undefined, target_acousticness: number | null | undefined, min_danceability: number | null | undefined, max_danceability: number | null | undefined, target_danceability: number | null | undefined, min_duration_ms: number | null | undefined, max_duration_ms: number | null | undefined, target_duration_ms: number | null | undefined, min_energy: number | null | undefined, max_energy: number | null | undefined, target_energy: number | null | undefined, min_instrumentalness: number | null | undefined, max_instrumentalness: number | null | undefined, target_instrumentalness: number | null | undefined, min_key: number | null | undefined, max_key: number | null | undefined, target_key: number | null | undefined, min_liveness: number | null | undefined, max_liveness: number | null | undefined, target_liveness: number | null | undefined, min_loudness: number | null | undefined, max_loudness: number | null | undefined, target_loudness: number | null | undefined, min_mode: number | null | undefined, max_mode: number | null | undefined, target_mode: number | null | undefined, min_popularity: number | null | undefined, max_popularity: number | null | undefined, target_popularity: number | null | undefined, min_speechiness: number | null | undefined, max_speechiness: number | null | undefined, target_speechiness: number | null | undefined, min_tempo: number | null | undefined, max_tempo: number | null | undefined, target_tempo: number | null | undefined, min_time_signature: number | null | undefined, max_time_signature: number | null | undefined, target_time_signature: number | null | undefined, min_valence: number | null | undefined, max_valence: number | null | undefined, target_valence: number | null | undefined): Observable<RecommendationsObject> {
@@ -5750,6 +6192,10 @@ export namespace MyNS {
 		 * that match a keyword string.<br />
 		 * **Note: Audiobooks are only available for the US, UK, Ireland, New Zealand and Australia markets.**
 		 * Get search
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Minimum: 0
+		 *     Maximum: 1000
 		 * @return {SearchReturn} Search response
 		 */
 		Search(q: string, type: Array<string>, market: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined, include_external: SearchInclude_external | null | undefined): Observable<SearchReturn> {
@@ -5781,6 +6227,9 @@ export namespace MyNS {
 		 * Get Show Episodes
 		 * Get Spotify catalog information about an show’s episodes. Optional parameters can be used to limit the number of episodes returned.
 		 * Get shows/{id}/episodes
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingSimplifiedEpisodeObject} Pages of episodes
 		 */
 		Get_a_shows_episodes(id: string, market: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<PagingSimplifiedEpisodeObject> {
@@ -5822,6 +6271,9 @@ export namespace MyNS {
 		 * Get User's Playlists
 		 * Get a list of the playlists owned or followed by a Spotify user.
 		 * Get users/{user_id}/playlists
+		 * @param {number} limit Minimum: 0
+		 *     Maximum: 50
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PagingPlaylistObject} A paged set of playlists
 		 */
 		Get_list_users_playlists(user_id: string, limit: number | null | undefined, offset: number | null | undefined): Observable<PagingPlaylistObject> {
@@ -6099,7 +6551,10 @@ export namespace MyNS {
 		 */
 		offset?: string | null;
 
-		/** integer */
+		/**
+		 * integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position_ms?: number | null;
 
 		/**
@@ -6124,7 +6579,10 @@ export namespace MyNS {
 		 */
 		offset: FormControl<string | null | undefined>,
 
-		/** integer */
+		/**
+		 * integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position_ms: FormControl<number | null | undefined>,
 	}
 	export function CreateStart_a_users_playbackPutBodyFormGroup() {
@@ -6247,6 +6705,7 @@ export namespace MyNS {
 
 		/**
 		 * The position to insert the items, a zero-based index. For example, to insert the items in the first position: `position=0` ; to insert the items in the third position: `position=2`. If omitted, the items will be appended to the playlist. Items are added in the order they appear in the uris array. For example: `{"uris": ["spotify:track:4iV5W9uYEdYUVa79Axb7Rh","spotify:track:1301WleyT98MSxVHPZCA6M"], "position": 3}`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		position?: number | null;
 
@@ -6259,6 +6718,7 @@ export namespace MyNS {
 
 		/**
 		 * The position to insert the items, a zero-based index. For example, to insert the items in the first position: `position=0` ; to insert the items in the third position: `position=2`. If omitted, the items will be appended to the playlist. Items are added in the order they appear in the uris array. For example: `{"uris": ["spotify:track:4iV5W9uYEdYUVa79Axb7Rh","spotify:track:1301WleyT98MSxVHPZCA6M"], "position": 3}`
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		position: FormControl<number | null | undefined>,
 	}
@@ -6273,16 +6733,19 @@ export namespace MyNS {
 
 		/**
 		 * The position where the items should be inserted.<br/>To reorder the items to the end of the playlist, simply set _insert_before_ to the position after the last item.<br/>Examples:<br/>To reorder the first item to the last position in a playlist with 10 items, set _range_start_ to 0, and _insert_before_ to 10.<br/>To reorder the last item in a playlist with 10 items to the start of the playlist, set _range_start_ to 9, and _insert_before_ to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		insert_before?: number | null;
 
 		/**
 		 * The amount of items to be reordered. Defaults to 1 if not set.<br/>The range of items to be reordered begins from the _range_start_ position, and includes the _range_length_ subsequent items.<br/>Example:<br/>To move the items at index 9-10 to the start of the playlist, _range_start_ is set to 9, and _range_length_ is set to 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		range_length?: number | null;
 
 		/**
 		 * The position of the first item to be reordered.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		range_start?: number | null;
 
@@ -6296,16 +6759,19 @@ export namespace MyNS {
 
 		/**
 		 * The position where the items should be inserted.<br/>To reorder the items to the end of the playlist, simply set _insert_before_ to the position after the last item.<br/>Examples:<br/>To reorder the first item to the last position in a playlist with 10 items, set _range_start_ to 0, and _insert_before_ to 10.<br/>To reorder the last item in a playlist with 10 items to the start of the playlist, set _range_start_ to 9, and _insert_before_ to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		insert_before: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount of items to be reordered. Defaults to 1 if not set.<br/>The range of items to be reordered begins from the _range_start_ position, and includes the _range_length_ subsequent items.<br/>Example:<br/>To move the items at index 9-10 to the start of the playlist, _range_start_ is set to 9, and _range_length_ is set to 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		range_length: FormControl<number | null | undefined>,
 
 		/**
 		 * The position of the first item to be reordered.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		range_start: FormControl<number | null | undefined>,
 

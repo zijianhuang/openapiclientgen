@@ -48,6 +48,7 @@ export namespace MyNS {
 		 * Returns all predictions available for a match id.
 		 * Get api/v2/predictions/{id}
 		 * @param {number} id ID of match
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ApiV2Predictions_idGetReturn} Good request, returns object that contains all the predictions for a certain event.
 		 */
 		ApiV2Predictions_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<ApiV2Predictions_idGetReturn> {
@@ -116,15 +117,31 @@ export namespace MyNS {
 	}
 
 	export interface ApiV2Performance_statsGetReturnDataAccuracy {
+
+		/** Type: double */
 		last_14_days?: number | null;
+
+		/** Type: double */
 		last_30_days?: number | null;
+
+		/** Type: double */
 		last_7_days?: number | null;
+
+		/** Type: double */
 		yesterday?: number | null;
 	}
 	export interface ApiV2Performance_statsGetReturnDataAccuracyFormProperties {
+
+		/** Type: double */
 		last_14_days: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_30_days: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_7_days: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		yesterday: FormControl<number | null | undefined>,
 	}
 	export function CreateApiV2Performance_statsGetReturnDataAccuracyFormGroup() {
@@ -152,17 +169,37 @@ export namespace MyNS {
 	}
 
 	export interface ApiV2Performance_statsGetReturnDataDetailsLast_14_days {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lost?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pending?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postponed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		won?: number | null;
 	}
 	export interface ApiV2Performance_statsGetReturnDataDetailsLast_14_daysFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lost: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pending: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postponed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		won: FormControl<number | null | undefined>,
 	}
 	export function CreateApiV2Performance_statsGetReturnDataDetailsLast_14_daysFormGroup() {
@@ -177,17 +214,37 @@ export namespace MyNS {
 	}
 
 	export interface ApiV2Performance_statsGetReturnDataDetailsLast_30_days {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lost?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pending?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postponed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		won?: number | null;
 	}
 	export interface ApiV2Performance_statsGetReturnDataDetailsLast_30_daysFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lost: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pending: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postponed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		won: FormControl<number | null | undefined>,
 	}
 	export function CreateApiV2Performance_statsGetReturnDataDetailsLast_30_daysFormGroup() {
@@ -202,17 +259,37 @@ export namespace MyNS {
 	}
 
 	export interface ApiV2Performance_statsGetReturnDataDetailsLast_7_days {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lost?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pending?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postponed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		won?: number | null;
 	}
 	export interface ApiV2Performance_statsGetReturnDataDetailsLast_7_daysFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lost: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pending: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postponed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		won: FormControl<number | null | undefined>,
 	}
 	export function CreateApiV2Performance_statsGetReturnDataDetailsLast_7_daysFormGroup() {
@@ -227,17 +304,37 @@ export namespace MyNS {
 	}
 
 	export interface ApiV2Performance_statsGetReturnDataDetailsYesterday {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lost?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pending?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postponed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		won?: number | null;
 	}
 	export interface ApiV2Performance_statsGetReturnDataDetailsYesterdayFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lost: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pending: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		postponed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		won: FormControl<number | null | undefined>,
 	}
 	export function CreateApiV2Performance_statsGetReturnDataDetailsYesterdayFormGroup() {

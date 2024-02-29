@@ -161,6 +161,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Security/locations/{ascLocation}/allowedConnections/{connectionType}
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} ascLocation The location where ASC stores the data of the subscription. can be retrieved from Get locations
 		 * @param {AllowedConnections_GetConnectionType} connectionType The type of allowed connections (Internal, External)
 		 * @param {string} api_version API version for the operation

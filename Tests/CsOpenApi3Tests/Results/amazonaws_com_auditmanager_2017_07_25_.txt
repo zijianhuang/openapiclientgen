@@ -3268,7 +3268,10 @@ namespace MyNS
 		/// Associates an evidence folder to an assessment report in an Audit Manager assessment.
 		/// AssociateAssessmentReportEvidenceFolder assessments/{assessmentId}/associateToAssessmentReport
 		/// </summary>
-		/// <param name="assessmentId"> The identifier for the assessment. </param>
+		/// <param name="assessmentId"> The identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateAssessmentReportEvidenceFolderResponse> AssociateAssessmentReportEvidenceFolderAsync(string assessmentId, AssociateAssessmentReportEvidenceFolderPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3309,7 +3312,10 @@ namespace MyNS
 		/// Associates a list of evidence to an assessment report in an Audit Manager assessment.
 		/// BatchAssociateAssessmentReportEvidence assessments/{assessmentId}/batchAssociateToAssessmentReport
 		/// </summary>
-		/// <param name="assessmentId"> The identifier for the assessment. </param>
+		/// <param name="assessmentId"> The identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchAssociateAssessmentReportEvidenceResponse> BatchAssociateAssessmentReportEvidenceAsync(string assessmentId, BatchAssociateAssessmentReportEvidencePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3350,7 +3356,10 @@ namespace MyNS
 		/// Creates a batch of delegations for an assessment in Audit Manager.
 		/// BatchCreateDelegationByAssessment assessments/{assessmentId}/delegations
 		/// </summary>
-		/// <param name="assessmentId"> The identifier for the assessment. </param>
+		/// <param name="assessmentId"> The identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchCreateDelegationByAssessmentResponse> BatchCreateDelegationByAssessmentAsync(string assessmentId, BatchCreateDelegationByAssessmentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3391,7 +3400,10 @@ namespace MyNS
 		/// Deletes a batch of delegations for an assessment in Audit Manager.
 		/// BatchDeleteDelegationByAssessment assessments/{assessmentId}/delegations
 		/// </summary>
-		/// <param name="assessmentId"> The identifier for the assessment. </param>
+		/// <param name="assessmentId"> The identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteDelegationByAssessmentResponse> BatchDeleteDelegationByAssessmentAsync(string assessmentId, BatchDeleteDelegationByAssessmentPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3432,7 +3444,10 @@ namespace MyNS
 		/// Disassociates a list of evidence from an assessment report in Audit Manager.
 		/// BatchDisassociateAssessmentReportEvidence assessments/{assessmentId}/batchDisassociateFromAssessmentReport
 		/// </summary>
-		/// <param name="assessmentId"> The identifier for the assessment. </param>
+		/// <param name="assessmentId"> The identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDisassociateAssessmentReportEvidenceResponse> BatchDisassociateAssessmentReportEvidenceAsync(string assessmentId, BatchDisassociateAssessmentReportEvidencePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3473,9 +3488,18 @@ namespace MyNS
 		/// <p>Adds one or more pieces of evidence to a control in an Audit Manager assessment. </p> <p>You can import manual evidence from any S3 bucket by specifying the S3 URI of the object. You can also upload a file from your browser, or enter plain text in response to a risk assessment question. </p> <p>The following restrictions apply to this action:</p> <ul> <li> <p> <code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>, <code>s3ResourcePath</code>, or <code>textResponse</code> </p> </li> <li> <p>Maximum size of an individual evidence file: 100 MB</p> </li> <li> <p>Number of daily manual evidence uploads per control: 100</p> </li> <li> <p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i> </p> </li> </ul> <p>For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
 		/// BatchImportEvidenceToAssessmentControl assessments/{assessmentId}/controlSets/{controlSetId}/controls/{controlId}/evidence
 		/// </summary>
-		/// <param name="assessmentId"> The identifier for the assessment. </param>
-		/// <param name="controlSetId"> The identifier for the control set. </param>
-		/// <param name="controlId"> The identifier for the control. </param>
+		/// <param name="assessmentId"> The identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="controlSetId"> The identifier for the control set. 
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="controlId"> The identifier for the control. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchImportEvidenceToAssessmentControlResponse> BatchImportEvidenceToAssessmentControlAsync(string assessmentId, string controlSetId, string controlId, BatchImportEvidenceToAssessmentControlPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3557,8 +3581,14 @@ namespace MyNS
 		/// ListAssessments assessments
 		/// </summary>
 		/// <param name="status"> The current status of the assessment.</param>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAssessmentsResponse> ListAssessmentsAsync(AssessmentStatus status, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3632,7 +3662,10 @@ namespace MyNS
 		/// Creates an assessment report for the specified assessment.
 		/// CreateAssessmentReport assessments/{assessmentId}/reports
 		/// </summary>
-		/// <param name="assessmentId"> The identifier for the assessment. </param>
+		/// <param name="assessmentId"> The identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateAssessmentReportResponse> CreateAssessmentReportAsync(string assessmentId, CreateAssessmentReportPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3713,7 +3746,10 @@ namespace MyNS
 		/// Deletes an assessment in Audit Manager.
 		/// DeleteAssessment assessments/{assessmentId}
 		/// </summary>
-		/// <param name="assessmentId"> The identifier for the assessment. </param>
+		/// <param name="assessmentId"> The identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAssessmentResponse> DeleteAssessmentAsync(string assessmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3747,7 +3783,10 @@ namespace MyNS
 		/// Gets information about a specified assessment.
 		/// GetAssessment assessments/{assessmentId}
 		/// </summary>
-		/// <param name="assessmentId">The unique identifier for the assessment. </param>
+		/// <param name="assessmentId">The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAssessmentResponse> GetAssessmentAsync(string assessmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3781,7 +3820,10 @@ namespace MyNS
 		/// Edits an Audit Manager assessment.
 		/// UpdateAssessment assessments/{assessmentId}
 		/// </summary>
-		/// <param name="assessmentId"> The unique identifier for the assessment. </param>
+		/// <param name="assessmentId"> The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentResponse> UpdateAssessmentAsync(string assessmentId, UpdateAssessmentPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3822,7 +3864,10 @@ namespace MyNS
 		/// Deletes a custom framework in Audit Manager.
 		/// DeleteAssessmentFramework assessmentFrameworks/{frameworkId}
 		/// </summary>
-		/// <param name="frameworkId"> The identifier for the custom framework. </param>
+		/// <param name="frameworkId"> The identifier for the custom framework. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAssessmentFrameworkResponse> DeleteAssessmentFrameworkAsync(string frameworkId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3856,7 +3901,10 @@ namespace MyNS
 		/// Gets information about a specified framework.
 		/// GetAssessmentFramework assessmentFrameworks/{frameworkId}
 		/// </summary>
-		/// <param name="frameworkId"> The identifier for the framework. </param>
+		/// <param name="frameworkId"> The identifier for the framework. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAssessmentFrameworkResponse> GetAssessmentFrameworkAsync(string frameworkId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3890,7 +3938,10 @@ namespace MyNS
 		/// Updates a custom framework in Audit Manager.
 		/// UpdateAssessmentFramework assessmentFrameworks/{frameworkId}
 		/// </summary>
-		/// <param name="frameworkId"> The unique identifier for the framework. </param>
+		/// <param name="frameworkId"> The unique identifier for the framework. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentFrameworkResponse> UpdateAssessmentFrameworkAsync(string frameworkId, UpdateAssessmentFrameworkPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3931,7 +3982,10 @@ namespace MyNS
 		/// Deletes a share request for a custom framework in Audit Manager.
 		/// DeleteAssessmentFrameworkShare assessmentFrameworkShareRequests/{requestId}#requestType
 		/// </summary>
-		/// <param name="requestId">The unique identifier for the share request to be deleted.</param>
+		/// <param name="requestId">The unique identifier for the share request to be deleted.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <param name="requestType">Specifies whether the share request is a sent request or a received request.</param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAssessmentFrameworkShareResponse> DeleteAssessmentFrameworkShareAsync(string requestId, ShareRequestType requestType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3966,8 +4020,14 @@ namespace MyNS
 		/// <p>Deletes an assessment report in Audit Manager. </p> <p>When you run the <code>DeleteAssessmentReport</code> operation, Audit Manager attempts to delete the following data:</p> <ol> <li> <p>The specified assessment report that’s stored in your S3 bucket</p> </li> <li> <p>The associated metadata that’s stored in Audit Manager</p> </li> </ol> <p>If Audit Manager can’t access the assessment report in your S3 bucket, the report isn’t deleted. In this event, the <code>DeleteAssessmentReport</code> operation doesn’t fail. Instead, it proceeds to delete the associated metadata only. You must then delete the assessment report from the S3 bucket yourself. </p> <p>This scenario happens when Audit Manager receives a <code>403 (Forbidden)</code> or <code>404 (Not Found)</code> error from Amazon S3. To avoid this, make sure that your S3 bucket is available, and that you configured the correct permissions for Audit Manager to delete resources in your S3 bucket. For an example permissions policy that you can use, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination">Assessment report destination permissions</a> in the <i>Audit Manager User Guide</i>. For information about the issues that could cause a <code>403 (Forbidden)</code> or <code>404 (Not Found</code>) error from Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a> in the <i>Amazon Simple Storage Service API Reference</i>. </p>
 		/// DeleteAssessmentReport assessments/{assessmentId}/reports/{assessmentReportId}
 		/// </summary>
-		/// <param name="assessmentId"> The unique identifier for the assessment. </param>
-		/// <param name="assessmentReportId"> The unique identifier for the assessment report. </param>
+		/// <param name="assessmentId"> The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="assessmentReportId"> The unique identifier for the assessment report. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAssessmentReportResponse> DeleteAssessmentReportAsync(string assessmentId, string assessmentReportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4001,7 +4061,10 @@ namespace MyNS
 		/// <p> Deletes a custom control in Audit Manager. </p> <important> <p>When you invoke this operation, the custom control is deleted from any frameworks or assessments that it’s currently part of. As a result, Audit Manager will stop collecting evidence for that custom control in all of your assessments. This includes assessments that you previously created before you deleted the custom control.</p> </important>
 		/// DeleteControl controls/{controlId}
 		/// </summary>
-		/// <param name="controlId"> The unique identifier for the control. </param>
+		/// <param name="controlId"> The unique identifier for the control. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteControlResponse> DeleteControlAsync(string controlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4035,7 +4098,10 @@ namespace MyNS
 		/// Gets information about a specified control.
 		/// GetControl controls/{controlId}
 		/// </summary>
-		/// <param name="controlId"> The identifier for the control. </param>
+		/// <param name="controlId"> The identifier for the control. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetControlResponse> GetControlAsync(string controlId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4069,7 +4135,10 @@ namespace MyNS
 		/// Updates a custom control in Audit Manager.
 		/// UpdateControl controls/{controlId}
 		/// </summary>
-		/// <param name="controlId"> The identifier for the control. </param>
+		/// <param name="controlId"> The identifier for the control. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateControlResponse> UpdateControlAsync(string controlId, UpdateControlPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4178,7 +4247,10 @@ namespace MyNS
 		/// Disassociates an evidence folder from the specified assessment report in Audit Manager.
 		/// DisassociateAssessmentReportEvidenceFolder assessments/{assessmentId}/disassociateFromAssessmentReport
 		/// </summary>
-		/// <param name="assessmentId"> The unique identifier for the assessment. </param>
+		/// <param name="assessmentId"> The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateAssessmentReportEvidenceFolderResponse> DisassociateAssessmentReportEvidenceFolderAsync(string assessmentId, DisassociateAssessmentReportEvidenceFolderPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4252,8 +4324,14 @@ namespace MyNS
 		/// Gets the URL of an assessment report in Audit Manager.
 		/// GetAssessmentReportUrl assessments/{assessmentId}/reports/{assessmentReportId}/url
 		/// </summary>
-		/// <param name="assessmentReportId"> The unique identifier for the assessment report. </param>
-		/// <param name="assessmentId"> The unique identifier for the assessment. </param>
+		/// <param name="assessmentReportId"> The unique identifier for the assessment report. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="assessmentId"> The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAssessmentReportUrlResponse> GetAssessmentReportUrlAsync(string assessmentReportId, string assessmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4287,11 +4365,26 @@ namespace MyNS
 		/// Gets a list of changelogs from Audit Manager.
 		/// GetChangeLogs assessments/{assessmentId}/changelogs
 		/// </summary>
-		/// <param name="assessmentId">The unique identifier for the assessment. </param>
-		/// <param name="controlSetId"> The unique identifier for the control set. </param>
-		/// <param name="controlId"> The unique identifier for the control. </param>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="assessmentId">The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="controlSetId"> The unique identifier for the control set. 
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="controlId"> The unique identifier for the control. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetChangeLogsResponse> GetChangeLogsAsync(string assessmentId, string controlSetId, string controlId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4325,8 +4418,14 @@ namespace MyNS
 		/// Gets a list of delegations from an audit owner to a delegate.
 		/// GetDelegations delegations
 		/// </summary>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDelegationsResponse> GetDelegationsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4360,10 +4459,22 @@ namespace MyNS
 		/// Gets information about a specified evidence item.
 		/// GetEvidence assessments/{assessmentId}/controlSets/{controlSetId}/evidenceFolders/{evidenceFolderId}/evidence/{evidenceId}
 		/// </summary>
-		/// <param name="assessmentId"> The unique identifier for the assessment. </param>
-		/// <param name="controlSetId"> The unique identifier for the control set. </param>
-		/// <param name="evidenceFolderId"> The unique identifier for the folder that the evidence is stored in. </param>
-		/// <param name="evidenceId"> The unique identifier for the evidence. </param>
+		/// <param name="assessmentId"> The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="controlSetId"> The unique identifier for the control set. 
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="evidenceFolderId"> The unique identifier for the folder that the evidence is stored in. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="evidenceId"> The unique identifier for the evidence. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEvidenceResponse> GetEvidenceAsync(string assessmentId, string controlSetId, string evidenceFolderId, string evidenceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4397,11 +4508,26 @@ namespace MyNS
 		/// Gets all evidence from a specified evidence folder in Audit Manager.
 		/// GetEvidenceByEvidenceFolder assessments/{assessmentId}/controlSets/{controlSetId}/evidenceFolders/{evidenceFolderId}/evidence
 		/// </summary>
-		/// <param name="assessmentId"> The identifier for the assessment. </param>
-		/// <param name="controlSetId"> The identifier for the control set. </param>
-		/// <param name="evidenceFolderId"> The unique identifier for the folder that the evidence is stored in. </param>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="assessmentId"> The identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="controlSetId"> The identifier for the control set. 
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="evidenceFolderId"> The unique identifier for the folder that the evidence is stored in. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEvidenceByEvidenceFolderResponse> GetEvidenceByEvidenceFolderAsync(string assessmentId, string controlSetId, string evidenceFolderId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4435,7 +4561,10 @@ namespace MyNS
 		/// <p>Creates a presigned Amazon S3 URL that can be used to upload a file as manual evidence. For instructions on how to use this operation, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files">Upload a file from your browser </a> in the <i>Audit Manager User Guide</i>.</p> <p>The following restrictions apply to this operation:</p> <ul> <li> <p>Maximum size of an individual evidence file: 100 MB</p> </li> <li> <p>Number of daily manual evidence uploads per control: 100</p> </li> <li> <p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i> </p> </li> </ul> <p>For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
 		/// GetEvidenceFileUploadUrl evidenceFileUploadUrl#fileName
 		/// </summary>
-		/// <param name="fileName">The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.</param>
+		/// <param name="fileName">The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEvidenceFileUploadUrlResponse> GetEvidenceFileUploadUrlAsync(string fileName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4469,9 +4598,18 @@ namespace MyNS
 		/// Gets an evidence folder from a specified assessment in Audit Manager.
 		/// GetEvidenceFolder assessments/{assessmentId}/controlSets/{controlSetId}/evidenceFolders/{evidenceFolderId}
 		/// </summary>
-		/// <param name="assessmentId"> The unique identifier for the assessment. </param>
-		/// <param name="controlSetId"> The unique identifier for the control set. </param>
-		/// <param name="evidenceFolderId"> The unique identifier for the folder that the evidence is stored in. </param>
+		/// <param name="assessmentId"> The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="controlSetId"> The unique identifier for the control set. 
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="evidenceFolderId"> The unique identifier for the folder that the evidence is stored in. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEvidenceFolderResponse> GetEvidenceFolderAsync(string assessmentId, string controlSetId, string evidenceFolderId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4505,9 +4643,18 @@ namespace MyNS
 		/// Gets the evidence folders from a specified assessment in Audit Manager.
 		/// GetEvidenceFoldersByAssessment assessments/{assessmentId}/evidenceFolders
 		/// </summary>
-		/// <param name="assessmentId"> The unique identifier for the assessment. </param>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="assessmentId"> The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEvidenceFoldersByAssessmentResponse> GetEvidenceFoldersByAssessmentAsync(string assessmentId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4541,11 +4688,26 @@ namespace MyNS
 		/// Gets a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
 		/// GetEvidenceFoldersByAssessmentControl assessments/{assessmentId}/evidenceFolders-by-assessment-control/{controlSetId}/{controlId}
 		/// </summary>
-		/// <param name="assessmentId"> The identifier for the assessment. </param>
-		/// <param name="controlSetId"> The identifier for the control set. </param>
-		/// <param name="controlId"> The identifier for the control. </param>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="assessmentId"> The identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="controlSetId"> The identifier for the control set. 
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="controlId"> The identifier for the control. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEvidenceFoldersByAssessmentControlResponse> GetEvidenceFoldersByAssessmentControlAsync(string assessmentId, string controlSetId, string controlId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4612,7 +4774,10 @@ namespace MyNS
 		/// Gets the latest analytics data for a specific active assessment.
 		/// GetInsightsByAssessment insights/assessments/{assessmentId}
 		/// </summary>
-		/// <param name="assessmentId">The unique identifier for the assessment. </param>
+		/// <param name="assessmentId">The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetInsightsByAssessmentResponse> GetInsightsByAssessmentAsync(string assessmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4746,10 +4911,22 @@ namespace MyNS
 		/// <p>Lists the latest analytics data for controls within a specific control domain and a specific active assessment.</p> <note> <p>Control insights are listed only if the control belongs to the control domain and assessment that was specified. Moreover, the control must have collected evidence on the <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If neither of these conditions are met, no data is listed for that control. </p> </note>
 		/// ListAssessmentControlInsightsByControlDomain insights/controls-by-assessment#controlDomainId&assessmentId
 		/// </summary>
-		/// <param name="controlDomainId">The unique identifier for the control domain. </param>
-		/// <param name="assessmentId">The unique identifier for the active assessment. </param>
-		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="controlDomainId">The unique identifier for the control domain. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="assessmentId">The unique identifier for the active assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAssessmentControlInsightsByControlDomainResponse> ListAssessmentControlInsightsByControlDomainAsync(string controlDomainId, string assessmentId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4784,8 +4961,14 @@ namespace MyNS
 		/// ListAssessmentFrameworkShareRequests assessmentFrameworkShareRequests#requestType
 		/// </summary>
 		/// <param name="requestType"> Specifies whether the share request is a sent request or a received request.</param>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAssessmentFrameworkShareRequestsResponse> ListAssessmentFrameworkShareRequestsAsync(ShareRequestType requestType, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4820,8 +5003,14 @@ namespace MyNS
 		/// ListAssessmentFrameworks assessmentFrameworks#frameworkType
 		/// </summary>
 		/// <param name="frameworkType"> The type of framework, such as a standard framework or a custom framework. </param>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAssessmentFrameworksResponse> ListAssessmentFrameworksAsync(FrameworkType frameworkType, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4855,8 +5044,14 @@ namespace MyNS
 		/// Returns a list of assessment reports created in Audit Manager.
 		/// ListAssessmentReports assessmentReports
 		/// </summary>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAssessmentReportsResponse> ListAssessmentReportsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4890,8 +5085,14 @@ namespace MyNS
 		/// <p>Lists the latest analytics data for control domains across all of your active assessments. </p> <note> <p>A control domain is listed only if at least one of the controls within that domain collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this condition isn’t met, no data is listed for that control domain.</p> </note>
 		/// ListControlDomainInsights insights/control-domains
 		/// </summary>
-		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListControlDomainInsightsResponse> ListControlDomainInsightsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4925,9 +5126,18 @@ namespace MyNS
 		/// <p>Lists analytics data for control domains within a specified active assessment.</p> <note> <p>A control domain is listed only if at least one of the controls within that domain collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this condition isn’t met, no data is listed for that domain.</p> </note>
 		/// ListControlDomainInsightsByAssessment insights/control-domains-by-assessment#assessmentId
 		/// </summary>
-		/// <param name="assessmentId">The unique identifier for the active assessment. </param>
-		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="assessmentId">The unique identifier for the active assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListControlDomainInsightsByAssessmentResponse> ListControlDomainInsightsByAssessmentAsync(string assessmentId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4961,9 +5171,18 @@ namespace MyNS
 		/// <p>Lists the latest analytics data for controls within a specific control domain across all active assessments.</p> <note> <p>Control insights are listed only if the control belongs to the control domain that was specified and the control collected evidence on the <code>lastUpdated</code> date of <code>controlInsightsMetadata</code>. If neither of these conditions are met, no data is listed for that control. </p> </note>
 		/// ListControlInsightsByControlDomain insights/controls#controlDomainId
 		/// </summary>
-		/// <param name="controlDomainId">The unique identifier for the control domain. </param>
-		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="controlDomainId">The unique identifier for the control domain. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="nextToken">The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListControlInsightsByControlDomainResponse> ListControlInsightsByControlDomainAsync(string controlDomainId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4998,8 +5217,14 @@ namespace MyNS
 		/// ListControls controls#controlType
 		/// </summary>
 		/// <param name="controlType"> The type of control, such as a standard control or a custom control. </param>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListControlsResponse> ListControlsAsync(FrameworkType controlType, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5034,8 +5259,14 @@ namespace MyNS
 		/// ListKeywordsForDataSource dataSourceKeywords#source
 		/// </summary>
 		/// <param name="source"> The control mapping data source that the keywords apply to. </param>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListKeywordsForDataSourceResponse> ListKeywordsForDataSourceAsync(SourceType source, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5069,8 +5300,14 @@ namespace MyNS
 		/// Returns a list of all Audit Manager notifications.
 		/// ListNotifications notifications
 		/// </summary>
-		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. </param>
-		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. </param>
+		/// <param name="nextToken"> The pagination token that's used to fetch the next set of results. 
+		/// Max length: 1000
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> Represents the maximum number of results on a page or for an API request call. 
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListNotificationsResponse> ListNotificationsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5104,7 +5341,10 @@ namespace MyNS
 		/// Returns a list of tags for the specified resource in Audit Manager.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the resource. </param>
+		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the resource. 
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5138,7 +5378,10 @@ namespace MyNS
 		/// Tags the specified resource in Audit Manager.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the resource. </param>
+		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the resource. 
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5259,7 +5502,10 @@ namespace MyNS
 		/// <p> Creates a share request for a custom framework in Audit Manager. </p> <p>The share request specifies a recipient and notifies them that a custom framework is available. Recipients have 120 days to accept or decline the request. If no action is taken, the share request expires.</p> <p>When you create a share request, Audit Manager stores a snapshot of your custom framework in the US East (N. Virginia) Amazon Web Services Region. Audit Manager also stores a backup of the same snapshot in the US West (Oregon) Amazon Web Services Region.</p> <p>Audit Manager deletes the snapshot and the backup snapshot when one of the following events occurs:</p> <ul> <li> <p>The sender revokes the share request.</p> </li> <li> <p>The recipient declines the share request.</p> </li> <li> <p>The recipient encounters an error and doesn't successfully accept the share request.</p> </li> <li> <p>The share request expires before the recipient responds to the request.</p> </li> </ul> <p>When a sender <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/framework-sharing.html#framework-sharing-resend">resends a share request</a>, the snapshot is replaced with an updated version that corresponds with the latest version of the custom framework. </p> <p>When a recipient accepts a share request, the snapshot is replicated into their Amazon Web Services account under the Amazon Web Services Region that was specified in the share request. </p> <important> <p>When you invoke the <code>StartAssessmentFrameworkShare</code> API, you are about to share a custom framework with another Amazon Web Services account. You may not share a custom framework that is derived from a standard framework if the standard framework is designated as not eligible for sharing by Amazon Web Services, unless you have obtained permission to do so from the owner of the standard framework. To learn more about which standard frameworks are eligible for sharing, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework sharing eligibility</a> in the <i>Audit Manager User Guide</i>.</p> </important>
 		/// StartAssessmentFrameworkShare assessmentFrameworks/{frameworkId}/shareRequests
 		/// </summary>
-		/// <param name="frameworkId"> The unique identifier for the custom framework to be shared. </param>
+		/// <param name="frameworkId"> The unique identifier for the custom framework to be shared. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartAssessmentFrameworkShareResponse> StartAssessmentFrameworkShareAsync(string frameworkId, StartAssessmentFrameworkSharePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5300,8 +5546,14 @@ namespace MyNS
 		/// Removes a tag from a resource in Audit Manager.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the specified resource. </param>
-		/// <param name="tagKeys"> The name or key of the tag. </param>
+		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the specified resource. 
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="tagKeys"> The name or key of the tag. 
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5335,9 +5587,18 @@ namespace MyNS
 		/// Updates a control within an assessment in Audit Manager.
 		/// UpdateAssessmentControl assessments/{assessmentId}/controlSets/{controlSetId}/controls/{controlId}
 		/// </summary>
-		/// <param name="assessmentId"> The unique identifier for the assessment. </param>
-		/// <param name="controlSetId"> The unique identifier for the control set. </param>
-		/// <param name="controlId"> The unique identifier for the control. </param>
+		/// <param name="assessmentId"> The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="controlSetId"> The unique identifier for the control set. 
+		/// Max length: 300
+		/// Min length: 1
+		// </param>
+		/// <param name="controlId"> The unique identifier for the control. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentControlResponse> UpdateAssessmentControlAsync(string assessmentId, string controlSetId, string controlId, UpdateAssessmentControlPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5378,8 +5639,14 @@ namespace MyNS
 		/// Updates the status of a control set in an Audit Manager assessment.
 		/// UpdateAssessmentControlSetStatus assessments/{assessmentId}/controlSets/{controlSetId}/status
 		/// </summary>
-		/// <param name="assessmentId"> The unique identifier for the assessment. </param>
-		/// <param name="controlSetId"> The unique identifier for the control set. </param>
+		/// <param name="assessmentId"> The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
+		/// <param name="controlSetId"> The unique identifier for the control set. 
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentControlSetStatusResponse> UpdateAssessmentControlSetStatusAsync(string assessmentId, string controlSetId, UpdateAssessmentControlSetStatusPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5420,7 +5687,10 @@ namespace MyNS
 		/// Updates a share request for a custom framework in Audit Manager.
 		/// UpdateAssessmentFrameworkShare assessmentFrameworkShareRequests/{requestId}
 		/// </summary>
-		/// <param name="requestId"> The unique identifier for the share request. </param>
+		/// <param name="requestId"> The unique identifier for the share request. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentFrameworkShareResponse> UpdateAssessmentFrameworkShareAsync(string requestId, UpdateAssessmentFrameworkSharePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5461,7 +5731,10 @@ namespace MyNS
 		/// Updates the status of an assessment in Audit Manager.
 		/// UpdateAssessmentStatus assessments/{assessmentId}/status
 		/// </summary>
-		/// <param name="assessmentId"> The unique identifier for the assessment. </param>
+		/// <param name="assessmentId"> The unique identifier for the assessment. 
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAssessmentStatusResponse> UpdateAssessmentStatusAsync(string assessmentId, UpdateAssessmentStatusPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

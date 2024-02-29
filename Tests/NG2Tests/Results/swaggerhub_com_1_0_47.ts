@@ -363,7 +363,9 @@ export namespace MyNS {
 		 * * ANY - either PUBLISHED or UNPUBLISHED
 		 * @param {Array<string>} tag Matches against tags associated with an API
 		 * @param {number} page Page to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SearchApisSort} sort Sort criteria or result set:
 		 * * NAME
 		 * * UPATED
@@ -381,7 +383,9 @@ export namespace MyNS {
 		 * Get apis/{owner}
 		 * @param {string} owner API owner (user or organization, case-sensitive)
 		 * @param {number} page Page to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SearchApisSort} sort Sort criteria or result set:
 		 * * NAME
 		 * * UPATED
@@ -540,7 +544,9 @@ export namespace MyNS {
 		 * * ANY - either PUBLISHED or UNPUBLISHED
 		 * @param {Array<string>} tag Matches against tags associated with a domain
 		 * @param {number} page Page to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SearchApisSort} sort Sort criteria or result set:
 		 * * NAME
 		 * * UPATED
@@ -558,7 +564,9 @@ export namespace MyNS {
 		 * Get domains/{owner}
 		 * @param {string} owner Domain owner (user or organization, case-sensitive)
 		 * @param {number} page Page to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SearchApisSort} sort Sort criteria or result set:
 		 * * NAME
 		 * * UPATED
@@ -689,7 +697,9 @@ export namespace MyNS {
 		 * @param {string} owner API or Domain owner identifier. Can be username or organization name
 		 * @param {string} query Free text query to match
 		 * @param {number} page Page to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Number of results per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SearchApisSort} sort Sort criteria or result set:
 		 * * NAME
 		 * * UPATED

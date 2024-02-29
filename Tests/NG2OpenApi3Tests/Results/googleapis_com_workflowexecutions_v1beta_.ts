@@ -311,6 +311,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/executions
 		 * @param {string} parent Required. Name of the workflow for which the executions should be listed. Format: projects/{project}/locations/{location}/workflows/{workflow}
 		 * @param {number} pageSize Maximum number of executions to return per call. Max supported value depends on the selected Execution view: it's 10000 for BASIC and 100 for FULL. The default value used if the field is not specified is 100, regardless of the selected view. Values greater than the max value will be coerced down to it.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListExecutions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListExecutions` must match the call that provided the page token.
 		 * @param {Workflowexecutions_projects_locations_workflows_executions_getView} view Optional. A view defining which fields should be filled in the returned executions. The API will default to the BASIC view.
 		 * @return {ListExecutionsResponse} Successful response

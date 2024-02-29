@@ -2340,7 +2340,9 @@ export namespace MyNS {
 		 * Associates a browser settings resource with a web portal.
 		 * Put portals/{portalArn}/browserSettings#browserSettingsArn
 		 * @param {string} browserSettingsArn The ARN of the browser settings.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {AssociateBrowserSettingsResponse} Success
 		 */
 		AssociateBrowserSettings(browserSettingsArn: string, portalArn: string): Observable<AssociateBrowserSettingsResponse> {
@@ -2351,7 +2353,9 @@ export namespace MyNS {
 		 * Associates an IP access settings resource with a web portal.
 		 * Put portals/{portalArn}/ipAccessSettings#ipAccessSettingsArn
 		 * @param {string} ipAccessSettingsArn The ARN of the IP access settings.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {AssociateIpAccessSettingsResponse} Success
 		 */
 		AssociateIpAccessSettings(ipAccessSettingsArn: string, portalArn: string): Observable<AssociateIpAccessSettingsResponse> {
@@ -2362,7 +2366,9 @@ export namespace MyNS {
 		 * Associates a network settings resource with a web portal.
 		 * Put portals/{portalArn}/networkSettings#networkSettingsArn
 		 * @param {string} networkSettingsArn The ARN of the network settings.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {AssociateNetworkSettingsResponse} Success
 		 */
 		AssociateNetworkSettings(networkSettingsArn: string, portalArn: string): Observable<AssociateNetworkSettingsResponse> {
@@ -2373,7 +2379,9 @@ export namespace MyNS {
 		 * Associates a trust store with a web portal.
 		 * Put portals/{portalArn}/trustStores#trustStoreArn
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} trustStoreArn The ARN of the trust store.
+		 *     Min length: 20    Max length: 2048
 		 * @return {AssociateTrustStoreResponse} Success
 		 */
 		AssociateTrustStore(portalArn: string, trustStoreArn: string): Observable<AssociateTrustStoreResponse> {
@@ -2384,7 +2392,9 @@ export namespace MyNS {
 		 * Associates a user access logging settings resource with a web portal.
 		 * Put portals/{portalArn}/userAccessLoggingSettings#userAccessLoggingSettingsArn
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} userAccessLoggingSettingsArn The ARN of the user access logging settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {AssociateUserAccessLoggingSettingsResponse} Success
 		 */
 		AssociateUserAccessLoggingSettings(portalArn: string, userAccessLoggingSettingsArn: string): Observable<AssociateUserAccessLoggingSettingsResponse> {
@@ -2395,7 +2405,9 @@ export namespace MyNS {
 		 * Associates a user settings resource with a web portal.
 		 * Put portals/{portalArn}/userSettings#userSettingsArn
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} userSettingsArn The ARN of the user settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {AssociateUserSettingsResponse} Success
 		 */
 		AssociateUserSettings(portalArn: string, userSettingsArn: string): Observable<AssociateUserSettingsResponse> {
@@ -2415,7 +2427,9 @@ export namespace MyNS {
 		 * Retrieves a list of browser settings.
 		 * Get browserSettings
 		 * @param {number} maxResults The maximum number of results to be included in the next page.
+		 *     Minimum: 1
 		 * @param {string} nextToken The pagination token used to retrieve the next page of results for this operation.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListBrowserSettingsResponse} Success
 		 */
 		ListBrowserSettings(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListBrowserSettingsResponse> {
@@ -2444,7 +2458,9 @@ export namespace MyNS {
 		 * Retrieves a list of IP access settings.
 		 * Get ipAccessSettings
 		 * @param {number} maxResults The maximum number of results to be included in the next page.
+		 *     Minimum: 1
 		 * @param {string} nextToken The pagination token used to retrieve the next page of results for this operation.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListIpAccessSettingsResponse} Success
 		 */
 		ListIpAccessSettings(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListIpAccessSettingsResponse> {
@@ -2464,7 +2480,9 @@ export namespace MyNS {
 		 * Retrieves a list of network settings.
 		 * Get networkSettings
 		 * @param {number} maxResults The maximum number of results to be included in the next page.
+		 *     Minimum: 1
 		 * @param {string} nextToken The pagination token used to retrieve the next page of results for this operation.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListNetworkSettingsResponse} Success
 		 */
 		ListNetworkSettings(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListNetworkSettingsResponse> {
@@ -2484,7 +2502,9 @@ export namespace MyNS {
 		 * Retrieves a list or web portals.
 		 * Get portals
 		 * @param {number} maxResults The maximum number of results to be included in the next page.
+		 *     Minimum: 1
 		 * @param {string} nextToken The pagination token used to retrieve the next page of results for this operation. 
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListPortalsResponse} Success
 		 */
 		ListPortals(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListPortalsResponse> {
@@ -2504,7 +2524,9 @@ export namespace MyNS {
 		 * Retrieves a list of trust stores.
 		 * Get trustStores
 		 * @param {number} maxResults The maximum number of results to be included in the next page.
+		 *     Minimum: 1
 		 * @param {string} nextToken The pagination token used to retrieve the next page of results for this operation.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListTrustStoresResponse} Success
 		 */
 		ListTrustStores(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListTrustStoresResponse> {
@@ -2524,7 +2546,9 @@ export namespace MyNS {
 		 * Retrieves a list of user access logging settings.
 		 * Get userAccessLoggingSettings
 		 * @param {number} maxResults The maximum number of results to be included in the next page.
+		 *     Minimum: 1
 		 * @param {string} nextToken The pagination token used to retrieve the next page of results for this operation.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListUserAccessLoggingSettingsResponse} Success
 		 */
 		ListUserAccessLoggingSettings(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListUserAccessLoggingSettingsResponse> {
@@ -2544,7 +2568,9 @@ export namespace MyNS {
 		 * Retrieves a list of user settings.
 		 * Get userSettings
 		 * @param {number} maxResults The maximum number of results to be included in the next page.
+		 *     Minimum: 1
 		 * @param {string} nextToken The pagination token used to retrieve the next page of results for this operation. 
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListUserSettingsResponse} Success
 		 */
 		ListUserSettings(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListUserSettingsResponse> {
@@ -2555,6 +2581,7 @@ export namespace MyNS {
 		 * Deletes browser settings.
 		 * Delete browserSettings/{browserSettingsArn}
 		 * @param {string} browserSettingsArn The ARN of the browser settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DeleteBrowserSettingsResponse} Success
 		 */
 		DeleteBrowserSettings(browserSettingsArn: string): Observable<DeleteBrowserSettingsResponse> {
@@ -2565,6 +2592,7 @@ export namespace MyNS {
 		 * Gets browser settings.
 		 * Get browserSettings/{browserSettingsArn}
 		 * @param {string} browserSettingsArn The ARN of the browser settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {GetBrowserSettingsResponse} Success
 		 */
 		GetBrowserSettings(browserSettingsArn: string): Observable<GetBrowserSettingsResponse> {
@@ -2575,6 +2603,7 @@ export namespace MyNS {
 		 * Updates browser settings.
 		 * Patch browserSettings/{browserSettingsArn}
 		 * @param {string} browserSettingsArn The ARN of the browser settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {UpdateBrowserSettingsResponse} Success
 		 */
 		UpdateBrowserSettings(browserSettingsArn: string, requestBody: UpdateBrowserSettingsPatchBody): Observable<UpdateBrowserSettingsResponse> {
@@ -2585,6 +2614,7 @@ export namespace MyNS {
 		 * Deletes the identity provider.
 		 * Delete identityProviders/{identityProviderArn}
 		 * @param {string} identityProviderArn The ARN of the identity provider.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DeleteIdentityProviderResponse} Success
 		 */
 		DeleteIdentityProvider(identityProviderArn: string): Observable<DeleteIdentityProviderResponse> {
@@ -2595,6 +2625,7 @@ export namespace MyNS {
 		 * Gets the identity provider.
 		 * Get identityProviders/{identityProviderArn}
 		 * @param {string} identityProviderArn The ARN of the identity provider.
+		 *     Min length: 20    Max length: 2048
 		 * @return {GetIdentityProviderResponse} Success
 		 */
 		GetIdentityProvider(identityProviderArn: string): Observable<GetIdentityProviderResponse> {
@@ -2605,6 +2636,7 @@ export namespace MyNS {
 		 * Updates the identity provider.
 		 * Patch identityProviders/{identityProviderArn}
 		 * @param {string} identityProviderArn The ARN of the identity provider.
+		 *     Min length: 20    Max length: 2048
 		 * @return {UpdateIdentityProviderResponse} Success
 		 */
 		UpdateIdentityProvider(identityProviderArn: string, requestBody: UpdateIdentityProviderPatchBody): Observable<UpdateIdentityProviderResponse> {
@@ -2615,6 +2647,7 @@ export namespace MyNS {
 		 * Deletes IP access settings.
 		 * Delete ipAccessSettings/{ipAccessSettingsArn}
 		 * @param {string} ipAccessSettingsArn The ARN of the IP access settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DeleteIpAccessSettingsResponse} Success
 		 */
 		DeleteIpAccessSettings(ipAccessSettingsArn: string): Observable<DeleteIpAccessSettingsResponse> {
@@ -2625,6 +2658,7 @@ export namespace MyNS {
 		 * Gets the IP access settings.
 		 * Get ipAccessSettings/{ipAccessSettingsArn}
 		 * @param {string} ipAccessSettingsArn The ARN of the IP access settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {GetIpAccessSettingsResponse} Success
 		 */
 		GetIpAccessSettings(ipAccessSettingsArn: string): Observable<GetIpAccessSettingsResponse> {
@@ -2635,6 +2669,7 @@ export namespace MyNS {
 		 * Updates IP access settings.
 		 * Patch ipAccessSettings/{ipAccessSettingsArn}
 		 * @param {string} ipAccessSettingsArn The ARN of the IP access settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {UpdateIpAccessSettingsResponse} Success
 		 */
 		UpdateIpAccessSettings(ipAccessSettingsArn: string, requestBody: UpdateIpAccessSettingsPatchBody): Observable<UpdateIpAccessSettingsResponse> {
@@ -2645,6 +2680,7 @@ export namespace MyNS {
 		 * Deletes network settings.
 		 * Delete networkSettings/{networkSettingsArn}
 		 * @param {string} networkSettingsArn The ARN of the network settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DeleteNetworkSettingsResponse} Success
 		 */
 		DeleteNetworkSettings(networkSettingsArn: string): Observable<DeleteNetworkSettingsResponse> {
@@ -2655,6 +2691,7 @@ export namespace MyNS {
 		 * Gets the network settings.
 		 * Get networkSettings/{networkSettingsArn}
 		 * @param {string} networkSettingsArn The ARN of the network settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {GetNetworkSettingsResponse} Success
 		 */
 		GetNetworkSettings(networkSettingsArn: string): Observable<GetNetworkSettingsResponse> {
@@ -2665,6 +2702,7 @@ export namespace MyNS {
 		 * Updates network settings.
 		 * Patch networkSettings/{networkSettingsArn}
 		 * @param {string} networkSettingsArn The ARN of the network settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {UpdateNetworkSettingsResponse} Success
 		 */
 		UpdateNetworkSettings(networkSettingsArn: string, requestBody: UpdateNetworkSettingsPatchBody): Observable<UpdateNetworkSettingsResponse> {
@@ -2675,6 +2713,7 @@ export namespace MyNS {
 		 * Deletes a web portal.
 		 * Delete portals/{portalArn}
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DeletePortalResponse} Success
 		 */
 		DeletePortal(portalArn: string): Observable<DeletePortalResponse> {
@@ -2685,6 +2724,7 @@ export namespace MyNS {
 		 * Gets the web portal.
 		 * Get portals/{portalArn}
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {GetPortalResponse} Success
 		 */
 		GetPortal(portalArn: string): Observable<GetPortalResponse> {
@@ -2695,6 +2735,7 @@ export namespace MyNS {
 		 * Updates a web portal.
 		 * Put portals/{portalArn}
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {UpdatePortalResponse} Success
 		 */
 		UpdatePortal(portalArn: string, requestBody: UpdatePortalPutBody): Observable<UpdatePortalResponse> {
@@ -2705,6 +2746,7 @@ export namespace MyNS {
 		 * Deletes the trust store.
 		 * Delete trustStores/{trustStoreArn}
 		 * @param {string} trustStoreArn The ARN of the trust store.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DeleteTrustStoreResponse} Success
 		 */
 		DeleteTrustStore(trustStoreArn: string): Observable<DeleteTrustStoreResponse> {
@@ -2715,6 +2757,7 @@ export namespace MyNS {
 		 * Gets the trust store.
 		 * Get trustStores/{trustStoreArn}
 		 * @param {string} trustStoreArn The ARN of the trust store.
+		 *     Min length: 20    Max length: 2048
 		 * @return {GetTrustStoreResponse} Success
 		 */
 		GetTrustStore(trustStoreArn: string): Observable<GetTrustStoreResponse> {
@@ -2725,6 +2768,7 @@ export namespace MyNS {
 		 * Updates the trust store.
 		 * Patch trustStores/{trustStoreArn}
 		 * @param {string} trustStoreArn The ARN of the trust store.
+		 *     Min length: 20    Max length: 2048
 		 * @return {UpdateTrustStoreResponse} Success
 		 */
 		UpdateTrustStore(trustStoreArn: string, requestBody: UpdateTrustStorePatchBody): Observable<UpdateTrustStoreResponse> {
@@ -2735,6 +2779,7 @@ export namespace MyNS {
 		 * Deletes user access logging settings.
 		 * Delete userAccessLoggingSettings/{userAccessLoggingSettingsArn}
 		 * @param {string} userAccessLoggingSettingsArn The ARN of the user access logging settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DeleteUserAccessLoggingSettingsResponse} Success
 		 */
 		DeleteUserAccessLoggingSettings(userAccessLoggingSettingsArn: string): Observable<DeleteUserAccessLoggingSettingsResponse> {
@@ -2745,6 +2790,7 @@ export namespace MyNS {
 		 * Gets user access logging settings.
 		 * Get userAccessLoggingSettings/{userAccessLoggingSettingsArn}
 		 * @param {string} userAccessLoggingSettingsArn The ARN of the user access logging settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {GetUserAccessLoggingSettingsResponse} Success
 		 */
 		GetUserAccessLoggingSettings(userAccessLoggingSettingsArn: string): Observable<GetUserAccessLoggingSettingsResponse> {
@@ -2755,6 +2801,7 @@ export namespace MyNS {
 		 * Updates the user access logging settings.
 		 * Patch userAccessLoggingSettings/{userAccessLoggingSettingsArn}
 		 * @param {string} userAccessLoggingSettingsArn The ARN of the user access logging settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {UpdateUserAccessLoggingSettingsResponse} Success
 		 */
 		UpdateUserAccessLoggingSettings(userAccessLoggingSettingsArn: string, requestBody: UpdateUserAccessLoggingSettingsPatchBody): Observable<UpdateUserAccessLoggingSettingsResponse> {
@@ -2765,6 +2812,7 @@ export namespace MyNS {
 		 * Deletes user settings.
 		 * Delete userSettings/{userSettingsArn}
 		 * @param {string} userSettingsArn The ARN of the user settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DeleteUserSettingsResponse} Success
 		 */
 		DeleteUserSettings(userSettingsArn: string): Observable<DeleteUserSettingsResponse> {
@@ -2775,6 +2823,7 @@ export namespace MyNS {
 		 * Gets user settings.
 		 * Get userSettings/{userSettingsArn}
 		 * @param {string} userSettingsArn The ARN of the user settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {GetUserSettingsResponse} Success
 		 */
 		GetUserSettings(userSettingsArn: string): Observable<GetUserSettingsResponse> {
@@ -2785,6 +2834,7 @@ export namespace MyNS {
 		 * Updates the user settings.
 		 * Patch userSettings/{userSettingsArn}
 		 * @param {string} userSettingsArn The ARN of the user settings.
+		 *     Min length: 20    Max length: 2048
 		 * @return {UpdateUserSettingsResponse} Success
 		 */
 		UpdateUserSettings(userSettingsArn: string, requestBody: UpdateUserSettingsPatchBody): Observable<UpdateUserSettingsResponse> {
@@ -2795,6 +2845,7 @@ export namespace MyNS {
 		 * Disassociates browser settings from a web portal.
 		 * Delete portals/{portalArn}/browserSettings
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DisassociateBrowserSettingsResponse} Success
 		 */
 		DisassociateBrowserSettings(portalArn: string): Observable<DisassociateBrowserSettingsResponse> {
@@ -2805,6 +2856,7 @@ export namespace MyNS {
 		 * Disassociates IP access settings from a web portal.
 		 * Delete portals/{portalArn}/ipAccessSettings
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DisassociateIpAccessSettingsResponse} Success
 		 */
 		DisassociateIpAccessSettings(portalArn: string): Observable<DisassociateIpAccessSettingsResponse> {
@@ -2815,6 +2867,7 @@ export namespace MyNS {
 		 * Disassociates network settings from a web portal.
 		 * Delete portals/{portalArn}/networkSettings
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DisassociateNetworkSettingsResponse} Success
 		 */
 		DisassociateNetworkSettings(portalArn: string): Observable<DisassociateNetworkSettingsResponse> {
@@ -2825,6 +2878,7 @@ export namespace MyNS {
 		 * Disassociates a trust store from a web portal.
 		 * Delete portals/{portalArn}/trustStores
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DisassociateTrustStoreResponse} Success
 		 */
 		DisassociateTrustStore(portalArn: string): Observable<DisassociateTrustStoreResponse> {
@@ -2835,6 +2889,7 @@ export namespace MyNS {
 		 * Disassociates user access logging settings from a web portal.
 		 * Delete portals/{portalArn}/userAccessLoggingSettings
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DisassociateUserAccessLoggingSettingsResponse} Success
 		 */
 		DisassociateUserAccessLoggingSettings(portalArn: string): Observable<DisassociateUserAccessLoggingSettingsResponse> {
@@ -2845,6 +2900,7 @@ export namespace MyNS {
 		 * Disassociates user settings from a web portal.
 		 * Delete portals/{portalArn}/userSettings
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {DisassociateUserSettingsResponse} Success
 		 */
 		DisassociateUserSettings(portalArn: string): Observable<DisassociateUserSettingsResponse> {
@@ -2855,6 +2911,7 @@ export namespace MyNS {
 		 * Gets the service provider metadata.
 		 * Get portalIdp/{portalArn}
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {GetPortalServiceProviderMetadataResponse} Success
 		 */
 		GetPortalServiceProviderMetadata(portalArn: string): Observable<GetPortalServiceProviderMetadataResponse> {
@@ -2865,7 +2922,9 @@ export namespace MyNS {
 		 * Gets the trust store certificate.
 		 * Get trustStores/{trustStoreArn}/certificate#thumbprint
 		 * @param {string} thumbprint The thumbprint of the trust store certificate.
+		 *     Min length: 64    Max length: 64
 		 * @param {string} trustStoreArn The ARN of the trust store certificate.
+		 *     Min length: 20    Max length: 2048
 		 * @return {GetTrustStoreCertificateResponse} Success
 		 */
 		GetTrustStoreCertificate(thumbprint: string, trustStoreArn: string): Observable<GetTrustStoreCertificateResponse> {
@@ -2876,8 +2935,11 @@ export namespace MyNS {
 		 * Retrieves a list of identity providers for a specific web portal.
 		 * Get portals/{portalArn}/identityProviders
 		 * @param {number} maxResults The maximum number of results to be included in the next page.
+		 *     Minimum: 1
 		 * @param {string} nextToken The pagination token used to retrieve the next page of results for this operation.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} portalArn The ARN of the web portal.
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListIdentityProvidersResponse} Success
 		 */
 		ListIdentityProviders(maxResults: number | null | undefined, nextToken: string | null | undefined, portalArn: string): Observable<ListIdentityProvidersResponse> {
@@ -2888,6 +2950,7 @@ export namespace MyNS {
 		 * Retrieves a list of tags for a resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource.
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -2898,6 +2961,7 @@ export namespace MyNS {
 		 * Adds or overwrites one or more tags for the specified resource.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource.
+		 *     Min length: 20    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -2908,8 +2972,11 @@ export namespace MyNS {
 		 * Retrieves a list of trust store certificates.
 		 * Get trustStores/{trustStoreArn}/certificates
 		 * @param {number} maxResults The maximum number of results to be included in the next page.
+		 *     Minimum: 1
 		 * @param {string} nextToken The pagination token used to retrieve the next page of results for this operation.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} trustStoreArn The ARN of the trust store
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListTrustStoreCertificatesResponse} Success
 		 */
 		ListTrustStoreCertificates(maxResults: number | null | undefined, nextToken: string | null | undefined, trustStoreArn: string): Observable<ListTrustStoreCertificatesResponse> {
@@ -2920,7 +2987,9 @@ export namespace MyNS {
 		 * Removes one or more tags from the specified resource.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The ARN of the resource.
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} tagKeys The list of tag keys to remove from the resource.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2936,22 +3005,22 @@ export namespace MyNS {
 		/**
 		 * A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.
 		 * Required
-		 * Max length: 131072
 		 * Min length: 2
+		 * Max length: 131072
 		 */
 		browserPolicy: string;
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK. </p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The custom managed key of the browser settings.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		customerManagedKey?: string | null;
 
@@ -2970,22 +3039,22 @@ export namespace MyNS {
 		/**
 		 * A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.
 		 * Required
-		 * Max length: 131072
 		 * Min length: 2
+		 * Max length: 131072
 		 */
 		browserPolicy: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK. </p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The custom managed key of the browser settings.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		customerManagedKey: FormControl<string | null | undefined>,
 	}
@@ -3003,8 +3072,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
@@ -3017,8 +3086,8 @@ export namespace MyNS {
 		/**
 		 * The identity provider name.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		identityProviderName: string;
 
@@ -3031,8 +3100,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the web portal.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		portalArn: string;
 	}
@@ -3040,8 +3109,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request.</p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -3054,8 +3123,8 @@ export namespace MyNS {
 		/**
 		 * The identity provider name.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		identityProviderName: FormControl<string | null | undefined>,
 
@@ -3068,8 +3137,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the web portal.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		portalArn: FormControl<string | null | undefined>,
 	}
@@ -3091,29 +3160,29 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The custom managed key of the IP access settings.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		customerManagedKey?: string | null;
 
 		/**
 		 * The description of the IP access settings.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		description?: string | null;
 
 		/**
 		 * The display name of the IP access settings.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		displayName?: string | null;
 
@@ -3139,29 +3208,29 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The custom managed key of the IP access settings.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		customerManagedKey: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the IP access settings.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The display name of the IP access settings.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		displayName: FormControl<string | null | undefined>,
 	}
@@ -3180,8 +3249,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
@@ -3211,8 +3280,8 @@ export namespace MyNS {
 		/**
 		 * The VPC that streaming instances will connect to.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		vpcId: string;
 	}
@@ -3220,16 +3289,16 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The VPC that streaming instances will connect to.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		vpcId: FormControl<string | null | undefined>,
 	}
@@ -3251,22 +3320,22 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The customer managed key of the web portal.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		customerManagedKey?: string | null;
 
 		/**
 		 * The name of the web portal. This is not visible to users who log into the web portal.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		displayName?: string | null;
 
@@ -3287,22 +3356,22 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer managed key of the web portal.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		customerManagedKey: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the web portal. This is not visible to users who log into the web portal.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		displayName: FormControl<string | null | undefined>,
 	}
@@ -3327,8 +3396,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
@@ -3343,8 +3412,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -3359,16 +3428,16 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Kinesis stream ARN to which log events are published.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		kinesisStreamArn: string;
 
@@ -3383,16 +3452,16 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Kinesis stream ARN to which log events are published.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		kinesisStreamArn: FormControl<string | null | undefined>,
 	}
@@ -3408,8 +3477,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
@@ -3468,8 +3537,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -3535,15 +3604,15 @@ export namespace MyNS {
 
 		/**
 		 * A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.
-		 * Max length: 131072
 		 * Min length: 2
+		 * Max length: 131072
 		 */
 		browserPolicy?: string | null;
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 	}
@@ -3551,15 +3620,15 @@ export namespace MyNS {
 
 		/**
 		 * A JSON string containing Chrome Enterprise policies that will be applied to all streaming sessions.
-		 * Max length: 131072
 		 * Min length: 2
+		 * Max length: 131072
 		 */
 		browserPolicy: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -3575,8 +3644,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
@@ -3585,8 +3654,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the identity provider.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		identityProviderName?: string | null;
 
@@ -3597,8 +3666,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -3607,8 +3676,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the identity provider.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		identityProviderName: FormControl<string | null | undefined>,
 
@@ -3629,22 +3698,22 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The description of the IP access settings.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		description?: string | null;
 
 		/**
 		 * The display name of the IP access settings.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		displayName?: string | null;
 
@@ -3659,22 +3728,22 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the IP access settings.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The display name of the IP access settings.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		displayName: FormControl<string | null | undefined>,
 	}
@@ -3691,8 +3760,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
@@ -3712,8 +3781,8 @@ export namespace MyNS {
 
 		/**
 		 * The VPC that streaming instances will connect to.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		vpcId?: string | null;
 	}
@@ -3721,15 +3790,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The VPC that streaming instances will connect to.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		vpcId: FormControl<string | null | undefined>,
 	}
@@ -3748,8 +3817,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the web portal. This is not visible to users who log into the web portal.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		displayName?: string | null;
 	}
@@ -3760,8 +3829,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the web portal. This is not visible to users who log into the web portal.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		displayName: FormControl<string | null | undefined>,
 	}
@@ -3783,8 +3852,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 	}
@@ -3792,8 +3861,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -3808,15 +3877,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Kinesis stream ARN to which log events are published.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		kinesisStreamArn?: string | null;
 	}
@@ -3824,15 +3893,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Kinesis stream ARN to which log events are published.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		kinesisStreamArn: FormControl<string | null | undefined>,
 	}
@@ -3848,8 +3917,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
@@ -3886,8 +3955,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token return the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -3938,8 +4007,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken?: string | null;
 
@@ -3955,8 +4024,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. Idempotency ensures that an API request completes only once. With an idempotent request, if the original request completes successfully, subsequent retries with the same client token returns the result from the original successful request. </p> <p>If you do not specify a client token, one is automatically generated by the AWS SDK.</p>
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}

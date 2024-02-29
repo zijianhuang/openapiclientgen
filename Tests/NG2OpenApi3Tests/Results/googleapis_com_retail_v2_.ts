@@ -58,14 +58,20 @@ export namespace MyNS {
 	/** HTTP request data that is related to a reported error. */
 	export interface GoogleCloudRetailLoggingHttpRequestContext {
 
-		/** The HTTP response status code for the request. */
+		/**
+		 * The HTTP response status code for the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode?: number | null;
 	}
 
 	/** HTTP request data that is related to a reported error. */
 	export interface GoogleCloudRetailLoggingHttpRequestContextFormProperties {
 
-		/** The HTTP response status code for the request. */
+		/**
+		 * The HTTP response status code for the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRetailLoggingHttpRequestContextFormGroup() {
@@ -224,7 +230,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -237,7 +246,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -375,32 +387,56 @@ export namespace MyNS {
 	/** A floating point interval. */
 	export interface GoogleCloudRetailV2Interval {
 
-		/** Exclusive upper bound. */
+		/**
+		 * Exclusive upper bound.
+		 * Type: double
+		 */
 		exclusiveMaximum?: number | null;
 
-		/** Exclusive lower bound. */
+		/**
+		 * Exclusive lower bound.
+		 * Type: double
+		 */
 		exclusiveMinimum?: number | null;
 
-		/** Inclusive upper bound. */
+		/**
+		 * Inclusive upper bound.
+		 * Type: double
+		 */
 		maximum?: number | null;
 
-		/** Inclusive lower bound. */
+		/**
+		 * Inclusive lower bound.
+		 * Type: double
+		 */
 		minimum?: number | null;
 	}
 
 	/** A floating point interval. */
 	export interface GoogleCloudRetailV2IntervalFormProperties {
 
-		/** Exclusive upper bound. */
+		/**
+		 * Exclusive upper bound.
+		 * Type: double
+		 */
 		exclusiveMaximum: FormControl<number | null | undefined>,
 
-		/** Exclusive lower bound. */
+		/**
+		 * Exclusive lower bound.
+		 * Type: double
+		 */
 		exclusiveMinimum: FormControl<number | null | undefined>,
 
-		/** Inclusive upper bound. */
+		/**
+		 * Inclusive upper bound.
+		 * Type: double
+		 */
 		maximum: FormControl<number | null | undefined>,
 
-		/** Inclusive lower bound. */
+		/**
+		 * Inclusive lower bound.
+		 * Type: double
+		 */
 		minimum: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRetailV2IntervalFormGroup() {
@@ -711,16 +747,25 @@ export namespace MyNS {
 	/** The price information of a Product. */
 	export interface GoogleCloudRetailV2PriceInfo {
 
-		/** The costs associated with the sale of a particular product. Used for gross profit reporting. * Profit = price - cost Google Merchant Center property [cost_of_goods_sold](https://support.google.com/merchants/answer/9017895). */
+		/**
+		 * The costs associated with the sale of a particular product. Used for gross profit reporting. * Profit = price - cost Google Merchant Center property [cost_of_goods_sold](https://support.google.com/merchants/answer/9017895).
+		 * Type: float
+		 */
 		cost?: number | null;
 
 		/** The 3-letter currency code defined in [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html). If this field is an unrecognizable currency code, an INVALID_ARGUMENT error is returned. The Product.Type.VARIANT Products with the same Product.primary_product_id must share the same currency_code. Otherwise, a FAILED_PRECONDITION error is returned. */
 		currencyCode?: string | null;
 
-		/** Price of the product without any discount. If zero, by default set to be the price. If set, original_price should be greater than or equal to price, otherwise an INVALID_ARGUMENT error is thrown. */
+		/**
+		 * Price of the product without any discount. If zero, by default set to be the price. If set, original_price should be greater than or equal to price, otherwise an INVALID_ARGUMENT error is thrown.
+		 * Type: float
+		 */
 		originalPrice?: number | null;
 
-		/** Price of the product. Google Merchant Center property [price](https://support.google.com/merchants/answer/6324371). Schema.org property [Offer.price](https://schema.org/price). */
+		/**
+		 * Price of the product. Google Merchant Center property [price](https://support.google.com/merchants/answer/6324371). Schema.org property [Offer.price](https://schema.org/price).
+		 * Type: float
+		 */
 		price?: number | null;
 
 		/** The timestamp when the price starts to be effective. This can be set as a future timestamp, and the price is only used for search after price_effective_time. If so, the original_price must be set and original_price is used before price_effective_time. Do not set if price is always effective because it will cause additional latency during search. */
@@ -736,16 +781,25 @@ export namespace MyNS {
 	/** The price information of a Product. */
 	export interface GoogleCloudRetailV2PriceInfoFormProperties {
 
-		/** The costs associated with the sale of a particular product. Used for gross profit reporting. * Profit = price - cost Google Merchant Center property [cost_of_goods_sold](https://support.google.com/merchants/answer/9017895). */
+		/**
+		 * The costs associated with the sale of a particular product. Used for gross profit reporting. * Profit = price - cost Google Merchant Center property [cost_of_goods_sold](https://support.google.com/merchants/answer/9017895).
+		 * Type: float
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** The 3-letter currency code defined in [ISO 4217](https://www.iso.org/iso-4217-currency-codes.html). If this field is an unrecognizable currency code, an INVALID_ARGUMENT error is returned. The Product.Type.VARIANT Products with the same Product.primary_product_id must share the same currency_code. Otherwise, a FAILED_PRECONDITION error is returned. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Price of the product without any discount. If zero, by default set to be the price. If set, original_price should be greater than or equal to price, otherwise an INVALID_ARGUMENT error is thrown. */
+		/**
+		 * Price of the product without any discount. If zero, by default set to be the price. If set, original_price should be greater than or equal to price, otherwise an INVALID_ARGUMENT error is thrown.
+		 * Type: float
+		 */
 		originalPrice: FormControl<number | null | undefined>,
 
-		/** Price of the product. Google Merchant Center property [price](https://support.google.com/merchants/answer/6324371). Schema.org property [Offer.price](https://schema.org/price). */
+		/**
+		 * Price of the product. Google Merchant Center property [price](https://support.google.com/merchants/answer/6324371). Schema.org property [Offer.price](https://schema.org/price).
+		 * Type: float
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** The timestamp when the price starts to be effective. This can be set as a future timestamp, and the price is only used for search after price_effective_time. If so, the original_price must be set and original_price is used before price_effective_time. Do not set if price is always effective because it will cause additional latency during search. */
@@ -913,26 +967,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDate {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateFormGroup() {
@@ -1124,10 +1196,16 @@ export namespace MyNS {
 		/** Specifies the matching order for autocomplete suggestions, e.g., a query consisting of 'sh' with 'out-of-order' specified would suggest "women's shoes", whereas a query of 'red s' with 'exact-prefix' specified would suggest "red shoes". Currently supported values: * 'out-of-order' * 'exact-prefix' Default value: 'exact-prefix'. */
 		matchingOrder?: string | null;
 
-		/** The maximum number of autocomplete suggestions returned per term. Default value is 20. If left unset or set to 0, then will fallback to default value. Value range is 1 to 20. */
+		/**
+		 * The maximum number of autocomplete suggestions returned per term. Default value is 20. If left unset or set to 0, then will fallback to default value. Value range is 1 to 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSuggestions?: number | null;
 
-		/** The minimum number of characters needed to be typed in order to get suggestions. Default value is 2. If left unset or set to 0, then will fallback to default value. Value range is 1 to 20. */
+		/**
+		 * The minimum number of characters needed to be typed in order to get suggestions. Default value is 2. If left unset or set to 0, then will fallback to default value. Value range is 1 to 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPrefixLength?: number | null;
 
 		/** Required. Immutable. Fully qualified name `projects/locations/catalogs/completionConfig` */
@@ -1155,10 +1233,16 @@ export namespace MyNS {
 		/** Specifies the matching order for autocomplete suggestions, e.g., a query consisting of 'sh' with 'out-of-order' specified would suggest "women's shoes", whereas a query of 'red s' with 'exact-prefix' specified would suggest "red shoes". Currently supported values: * 'out-of-order' * 'exact-prefix' Default value: 'exact-prefix'. */
 		matchingOrder: FormControl<string | null | undefined>,
 
-		/** The maximum number of autocomplete suggestions returned per term. Default value is 20. If left unset or set to 0, then will fallback to default value. Value range is 1 to 20. */
+		/**
+		 * The maximum number of autocomplete suggestions returned per term. Default value is 20. If left unset or set to 0, then will fallback to default value. Value range is 1 to 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSuggestions: FormControl<number | null | undefined>,
 
-		/** The minimum number of characters needed to be typed in order to get suggestions. Default value is 2. If left unset or set to 0, then will fallback to default value. Value range is 1 to 20. */
+		/**
+		 * The minimum number of characters needed to be typed in order to get suggestions. Default value is 2. If left unset or set to 0, then will fallback to default value. Value range is 1 to 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minPrefixLength: FormControl<number | null | undefined>,
 
 		/** Required. Immutable. Fully qualified name `projects/locations/catalogs/completionConfig` */
@@ -1202,7 +1286,10 @@ export namespace MyNS {
 		/** Completion attribution token in CompleteQueryResponse.attribution_token. */
 		completionAttributionToken?: string | null;
 
-		/** End user selected CompleteQueryResponse.CompletionResult.suggestion position, starting from 0. */
+		/**
+		 * End user selected CompleteQueryResponse.CompletionResult.suggestion position, starting from 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		selectedPosition?: number | null;
 
 		/** End user selected CompleteQueryResponse.CompletionResult.suggestion. */
@@ -1215,7 +1302,10 @@ export namespace MyNS {
 		/** Completion attribution token in CompleteQueryResponse.attribution_token. */
 		completionAttributionToken: FormControl<string | null | undefined>,
 
-		/** End user selected CompleteQueryResponse.CompletionResult.suggestion position, starting from 0. */
+		/**
+		 * End user selected CompleteQueryResponse.CompletionResult.suggestion position, starting from 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		selectedPosition: FormControl<number | null | undefined>,
 
 		/** End user selected CompleteQueryResponse.CompletionResult.suggestion. */
@@ -1400,7 +1490,10 @@ export namespace MyNS {
 	/** A boost action to apply to results matching condition specified above. */
 	export interface GoogleCloudRetailV2RuleBoostAction {
 
-		/** Strength of the condition boost, which must be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored. */
+		/**
+		 * Strength of the condition boost, which must be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored.
+		 * Type: float
+		 */
 		boost?: number | null;
 
 		/** The filter can have a max size of 5000 characters. An expression which specifies which products to apply an action to. The syntax and supported fields are the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Examples: * To boost products with product ID "product_1" or "product_2", and color "Red" or "Blue": *(id: ANY("product_1", "product_2")) * *AND * *(colorFamilies: ANY("Red", "Blue")) * */
@@ -1410,7 +1503,10 @@ export namespace MyNS {
 	/** A boost action to apply to results matching condition specified above. */
 	export interface GoogleCloudRetailV2RuleBoostActionFormProperties {
 
-		/** Strength of the condition boost, which must be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored. */
+		/**
+		 * Strength of the condition boost, which must be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored.
+		 * Type: float
+		 */
 		boost: FormControl<number | null | undefined>,
 
 		/** The filter can have a max size of 5000 characters. An expression which specifies which products to apply an action to. The syntax and supported fields are the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Examples: * To boost products with product ID "product_1" or "product_2", and color "Red" or "Blue": *(id: ANY("product_1", "product_2")) * *AND * *(colorFamilies: ANY("Red", "Blue")) * */
@@ -1492,7 +1588,10 @@ export namespace MyNS {
 		/** The attribute name to force return as a facet. Each attribute name should be a valid attribute name, be non-empty and contain at most 80 characters long. */
 		attributeName?: string | null;
 
-		/** This is the position in the request as explained above. It should be strictly positive be at most 100. */
+		/**
+		 * This is the position in the request as explained above. It should be strictly positive be at most 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 	}
 
@@ -1502,7 +1601,10 @@ export namespace MyNS {
 		/** The attribute name to force return as a facet. Each attribute name should be a valid attribute name, be non-empty and contain at most 80 characters long. */
 		attributeName: FormControl<string | null | undefined>,
 
-		/** This is the position in the request as explained above. It should be strictly positive be at most 100. */
+		/**
+		 * This is the position in the request as explained above. It should be strictly positive be at most 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRetailV2RuleForceReturnFacetActionFacetPositionAdjustmentFormGroup() {
@@ -1799,26 +1901,38 @@ export namespace MyNS {
 	/** Product image. Recommendations AI and Retail Search do not use product images to improve prediction and search results. However, product images can be returned in results, and are shown in prediction or search previews in the console. */
 	export interface GoogleCloudRetailV2Image {
 
-		/** Height of the image in number of pixels. This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * Height of the image in number of pixels. This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Required. URI of the image. This field must be a valid UTF-8 encoded URI with a length limit of 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [image_link](https://support.google.com/merchants/answer/6324350). Schema.org property [Product.image](https://schema.org/image). */
 		uri?: string | null;
 
-		/** Width of the image in number of pixels. This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * Width of the image in number of pixels. This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Product image. Recommendations AI and Retail Search do not use product images to improve prediction and search results. However, product images can be returned in results, and are shown in prediction or search previews in the console. */
 	export interface GoogleCloudRetailV2ImageFormProperties {
 
-		/** Height of the image in number of pixels. This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * Height of the image in number of pixels. This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Required. URI of the image. This field must be a valid UTF-8 encoded URI with a length limit of 5,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. Google Merchant Center property [image_link](https://support.google.com/merchants/answer/6324350). Schema.org property [Product.image](https://schema.org/image). */
 		uri: FormControl<string | null | undefined>,
 
-		/** Width of the image in number of pixels. This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * Width of the image in number of pixels. This field must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRetailV2ImageFormGroup() {
@@ -2049,7 +2163,10 @@ export namespace MyNS {
 		/** The online availability of the Product. Default to Availability.IN_STOCK. Corresponding properties: Google Merchant Center property [availability](https://support.google.com/merchants/answer/6324448). Schema.org property [Offer.availability](https://schema.org/availability). */
 		availability?: GoogleCloudRetailV2ProductAvailability | null;
 
-		/** The available quantity of the item. */
+		/**
+		 * The available quantity of the item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity?: number | null;
 
 		/** The timestamp when this Product becomes available for SearchService.Search. Note that this is only applicable to Type.PRIMARY and Type.COLLECTION, and ignored for Type.VARIANT. */
@@ -2152,7 +2269,10 @@ export namespace MyNS {
 		/** The online availability of the Product. Default to Availability.IN_STOCK. Corresponding properties: Google Merchant Center property [availability](https://support.google.com/merchants/answer/6324448). Schema.org property [Offer.availability](https://schema.org/availability). */
 		availability: FormControl<GoogleCloudRetailV2ProductAvailability | null | undefined>,
 
-		/** The available quantity of the item. */
+		/**
+		 * The available quantity of the item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableQuantity: FormControl<number | null | undefined>,
 
 		/** The timestamp when this Product becomes available for SearchService.Search. Note that this is only applicable to Type.PRIMARY and Type.COLLECTION, and ignored for Type.VARIANT. */
@@ -2247,10 +2367,16 @@ export namespace MyNS {
 	/** The rating of a Product. */
 	export interface GoogleCloudRetailV2Rating {
 
-		/** The average rating of the Product. The rating is scaled at 1-5. Otherwise, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * The average rating of the Product. The rating is scaled at 1-5. Otherwise, an INVALID_ARGUMENT error is returned.
+		 * Type: float
+		 */
 		averageRating?: number | null;
 
-		/** The total number of ratings. This value is independent of the value of rating_histogram. This value must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * The total number of ratings. This value is independent of the value of rating_histogram. This value must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ratingCount?: number | null;
 
 		/** List of rating counts per rating value (index = rating - 1). The list is empty if there is no rating. If the list is non-empty, its size is always 5. Otherwise, an INVALID_ARGUMENT error is returned. For example, [41, 14, 13, 47, 303]. It means that the Product got 41 ratings with 1 star, 14 ratings with 2 star, and so on. */
@@ -2260,10 +2386,16 @@ export namespace MyNS {
 	/** The rating of a Product. */
 	export interface GoogleCloudRetailV2RatingFormProperties {
 
-		/** The average rating of the Product. The rating is scaled at 1-5. Otherwise, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * The average rating of the Product. The rating is scaled at 1-5. Otherwise, an INVALID_ARGUMENT error is returned.
+		 * Type: float
+		 */
 		averageRating: FormControl<number | null | undefined>,
 
-		/** The total number of ratings. This value is independent of the value of rating_histogram. This value must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * The total number of ratings. This value is independent of the value of rating_histogram. This value must be nonnegative. Otherwise, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ratingCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRetailV2RatingFormGroup() {
@@ -2389,7 +2521,10 @@ export namespace MyNS {
 		/** The filter syntax consists of an expression language for constructing a predicate from one or more fields of the products being filtered. See SearchRequest.filter for definition and syntax. The value must be a UTF-8 encoded string with a length limit of 1,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. */
 		filter?: string | null;
 
-		/** An integer that specifies the current offset for pagination (the 0-indexed starting location, amongst the products deemed by the API as relevant). See SearchRequest.offset for definition. If this field is negative, an INVALID_ARGUMENT is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * An integer that specifies the current offset for pagination (the 0-indexed starting location, amongst the products deemed by the API as relevant). See SearchRequest.offset for definition. If this field is negative, an INVALID_ARGUMENT is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The order in which products are returned. See SearchRequest.order_by for definition and syntax. The value must be a UTF-8 encoded string with a length limit of 1,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned. */
@@ -2450,7 +2585,10 @@ export namespace MyNS {
 		/** The filter syntax consists of an expression language for constructing a predicate from one or more fields of the products being filtered. See SearchRequest.filter for definition and syntax. The value must be a UTF-8 encoded string with a length limit of 1,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. */
 		filter: FormControl<string | null | undefined>,
 
-		/** An integer that specifies the current offset for pagination (the 0-indexed starting location, amongst the products deemed by the API as relevant). See SearchRequest.offset for definition. If this field is negative, an INVALID_ARGUMENT is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * An integer that specifies the current offset for pagination (the 0-indexed starting location, amongst the products deemed by the API as relevant). See SearchRequest.offset for definition. If this field is negative, an INVALID_ARGUMENT is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The order in which products are returned. See SearchRequest.order_by for definition and syntax. The value must be a UTF-8 encoded string with a length limit of 1,000 characters. Otherwise, an INVALID_ARGUMENT error is returned. This can only be set for `search` events. Other event types should not set this field. Otherwise, an INVALID_ARGUMENT error is returned. */
@@ -2502,14 +2640,20 @@ export namespace MyNS {
 		/** Product captures all metadata information of items to be recommended or searched. */
 		product?: GoogleCloudRetailV2Product;
 
-		/** Quantity of the product associated with the user event. For example, this field will be 2 if two products are added to the shopping cart for `purchase-complete` event. Required for `add-to-cart` and `purchase-complete` event types. */
+		/**
+		 * Quantity of the product associated with the user event. For example, this field will be 2 if two products are added to the shopping cart for `purchase-complete` event. Required for `add-to-cart` and `purchase-complete` event types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 	}
 
 	/** Detailed product information associated with a user event. */
 	export interface GoogleCloudRetailV2ProductDetailFormProperties {
 
-		/** Quantity of the product associated with the user event. For example, this field will be 2 if two products are added to the shopping cart for `purchase-complete` event. Required for `add-to-cart` and `purchase-complete` event types. */
+		/**
+		 * Quantity of the product associated with the user event. For example, this field will be 2 if two products are added to the shopping cart for `purchase-complete` event. Required for `add-to-cart` and `purchase-complete` event types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRetailV2ProductDetailFormGroup() {
@@ -2523,7 +2667,10 @@ export namespace MyNS {
 	/** A transaction represents the entire purchase transaction. */
 	export interface GoogleCloudRetailV2PurchaseTransaction {
 
-		/** All the costs associated with the products. These can be manufacturing costs, shipping expenses not borne by the end user, or any other costs, such that: * Profit = revenue - tax - cost */
+		/**
+		 * All the costs associated with the products. These can be manufacturing costs, shipping expenses not borne by the end user, or any other costs, such that: * Profit = revenue - tax - cost
+		 * Type: float
+		 */
 		cost?: number | null;
 
 		/** Required. Currency code. Use three-character ISO-4217 code. */
@@ -2532,17 +2679,26 @@ export namespace MyNS {
 		/** The transaction ID with a length limit of 128 characters. */
 		id?: string | null;
 
-		/** Required. Total non-zero revenue or grand total associated with the transaction. This value include shipping, tax, or other adjustments to total revenue that you want to include as part of your revenue calculations. */
+		/**
+		 * Required. Total non-zero revenue or grand total associated with the transaction. This value include shipping, tax, or other adjustments to total revenue that you want to include as part of your revenue calculations.
+		 * Type: float
+		 */
 		revenue?: number | null;
 
-		/** All the taxes associated with the transaction. */
+		/**
+		 * All the taxes associated with the transaction.
+		 * Type: float
+		 */
 		tax?: number | null;
 	}
 
 	/** A transaction represents the entire purchase transaction. */
 	export interface GoogleCloudRetailV2PurchaseTransactionFormProperties {
 
-		/** All the costs associated with the products. These can be manufacturing costs, shipping expenses not borne by the end user, or any other costs, such that: * Profit = revenue - tax - cost */
+		/**
+		 * All the costs associated with the products. These can be manufacturing costs, shipping expenses not borne by the end user, or any other costs, such that: * Profit = revenue - tax - cost
+		 * Type: float
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Required. Currency code. Use three-character ISO-4217 code. */
@@ -2551,10 +2707,16 @@ export namespace MyNS {
 		/** The transaction ID with a length limit of 128 characters. */
 		id: FormControl<string | null | undefined>,
 
-		/** Required. Total non-zero revenue or grand total associated with the transaction. This value include shipping, tax, or other adjustments to total revenue that you want to include as part of your revenue calculations. */
+		/**
+		 * Required. Total non-zero revenue or grand total associated with the transaction. This value include shipping, tax, or other adjustments to total revenue that you want to include as part of your revenue calculations.
+		 * Type: float
+		 */
 		revenue: FormControl<number | null | undefined>,
 
-		/** All the taxes associated with the transaction. */
+		/**
+		 * All the taxes associated with the transaction.
+		 * Type: float
+		 */
 		tax: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRetailV2PurchaseTransactionFormGroup() {
@@ -3130,7 +3292,10 @@ export namespace MyNS {
 		/** The labels applied to a resource must meet the following requirements: * Each resource can have multiple labels, up to a maximum of 64. * Each label must be a key-value pair. * Keys have a minimum length of 1 character and a maximum length of 63 characters and cannot be empty. Values can be empty and have a maximum length of 63 characters. * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. All characters must use UTF-8 encoding, and international characters are allowed. * The key portion of a label must be unique. However, you can use the same key with multiple resources. * Keys must start with a lowercase letter or international character. See [Google Cloud Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements) for more details. */
 		labels?: {[id: string]: string };
 
-		/** Maximum number of results to return. Set this property to the number of prediction results needed. If zero, the service will choose a reasonable default. The maximum allowed value is 100. Values above 100 will be coerced to 100. */
+		/**
+		 * Maximum number of results to return. Set this property to the number of prediction results needed. If zero, the service will choose a reasonable default. The maximum allowed value is 100. Values above 100 will be coerced to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** This field is not used; leave it unset. */
@@ -3155,7 +3320,10 @@ export namespace MyNS {
 		/** The labels applied to a resource must meet the following requirements: * Each resource can have multiple labels, up to a maximum of 64. * Each label must be a key-value pair. * Keys have a minimum length of 1 character and a maximum length of 63 characters and cannot be empty. Values can be empty and have a maximum length of 63 characters. * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. All characters must use UTF-8 encoding, and international characters are allowed. * The key portion of a label must be unique. However, you can use the same key with multiple resources. * Keys must start with a lowercase letter or international character. See [Google Cloud Document](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements) for more details. */
 		labels: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Maximum number of results to return. Set this property to the number of prediction results needed. If zero, the service will choose a reasonable default. The maximum allowed value is 100. Values above 100 will be coerced to 100. */
+		/**
+		 * Maximum number of results to return. Set this property to the number of prediction results needed. If zero, the service will choose a reasonable default. The maximum allowed value is 100. Values above 100 will be coerced to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** This field is not used; leave it unset. */
@@ -3689,7 +3857,10 @@ export namespace MyNS {
 		/** The labels applied to a resource must meet the following requirements: * Each resource can have multiple labels, up to a maximum of 64. * Each label must be a key-value pair. * Keys have a minimum length of 1 character and a maximum length of 63 characters and cannot be empty. Values can be empty and have a maximum length of 63 characters. * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. All characters must use UTF-8 encoding, and international characters are allowed. * The key portion of a label must be unique. However, you can use the same key with multiple resources. * Keys must start with a lowercase letter or international character. For more information, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements) in the Resource Manager documentation. */
 		labels?: {[id: string]: string };
 
-		/** A 0-indexed integer that specifies the current offset (that is, starting result location, amongst the Products deemed by the API as relevant) in search results. This field is only considered if page_token is unset. If this field is negative, an INVALID_ARGUMENT is returned. */
+		/**
+		 * A 0-indexed integer that specifies the current offset (that is, starting result location, amongst the Products deemed by the API as relevant) in search results. This field is only considered if page_token is unset. If this field is negative, an INVALID_ARGUMENT is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The order in which products are returned. Products can be ordered by a field in an Product object. Leave it unset if ordered by relevance. OrderBy expression is case-sensitive. For more information, see [Order](https://cloud.google.com/retail/docs/filter-and-order#order). If this field is unrecognizable, an INVALID_ARGUMENT is returned. */
@@ -3698,7 +3869,10 @@ export namespace MyNS {
 		/** The categories associated with a category page. Must be set for category navigation queries to achieve good search quality. The format should be the same as UserEvent.page_categories; To represent full path of category, use '>' sign to separate different hierarchies. If '>' is part of the category name, replace it with other character(s). Category pages include special pages such as sales or promotions. For instance, a special sale page may have the category hierarchy: "pageCategories" : ["Sales > 2017 Black Friday Deals"]. */
 		pageCategories?: Array<string>;
 
-		/** Maximum number of Products to return. If unspecified, defaults to a reasonable value. The maximum allowed value is 120. Values above 120 will be coerced to 120. If this field is negative, an INVALID_ARGUMENT is returned. */
+		/**
+		 * Maximum number of Products to return. If unspecified, defaults to a reasonable value. The maximum allowed value is 120. Values above 120 will be coerced to 120. If this field is negative, an INVALID_ARGUMENT is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** A page token SearchResponse.next_page_token, received from a previous SearchService.Search call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to SearchService.Search must match the call that provided the page token. Otherwise, an INVALID_ARGUMENT error is returned. */
@@ -3747,13 +3921,19 @@ export namespace MyNS {
 		/** The labels applied to a resource must meet the following requirements: * Each resource can have multiple labels, up to a maximum of 64. * Each label must be a key-value pair. * Keys have a minimum length of 1 character and a maximum length of 63 characters and cannot be empty. Values can be empty and have a maximum length of 63 characters. * Keys and values can contain only lowercase letters, numeric characters, underscores, and dashes. All characters must use UTF-8 encoding, and international characters are allowed. * The key portion of a label must be unique. However, you can use the same key with multiple resources. * Keys must start with a lowercase letter or international character. For more information, see [Requirements for labels](https://cloud.google.com/resource-manager/docs/creating-managing-labels#requirements) in the Resource Manager documentation. */
 		labels: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** A 0-indexed integer that specifies the current offset (that is, starting result location, amongst the Products deemed by the API as relevant) in search results. This field is only considered if page_token is unset. If this field is negative, an INVALID_ARGUMENT is returned. */
+		/**
+		 * A 0-indexed integer that specifies the current offset (that is, starting result location, amongst the Products deemed by the API as relevant) in search results. This field is only considered if page_token is unset. If this field is negative, an INVALID_ARGUMENT is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The order in which products are returned. Products can be ordered by a field in an Product object. Leave it unset if ordered by relevance. OrderBy expression is case-sensitive. For more information, see [Order](https://cloud.google.com/retail/docs/filter-and-order#order). If this field is unrecognizable, an INVALID_ARGUMENT is returned. */
 		orderBy: FormControl<string | null | undefined>,
 
-		/** Maximum number of Products to return. If unspecified, defaults to a reasonable value. The maximum allowed value is 120. Values above 120 will be coerced to 120. If this field is negative, an INVALID_ARGUMENT is returned. */
+		/**
+		 * Maximum number of Products to return. If unspecified, defaults to a reasonable value. The maximum allowed value is 120. Values above 120 will be coerced to 120. If this field is negative, an INVALID_ARGUMENT is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** A page token SearchResponse.next_page_token, received from a previous SearchService.Search call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to SearchService.Search must match the call that provided the page token. Otherwise, an INVALID_ARGUMENT error is returned. */
@@ -3814,7 +3994,10 @@ export namespace MyNS {
 	/** Boost applies to products which match a condition. */
 	export interface GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpec {
 
-		/** Strength of the condition boost, which should be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored. */
+		/**
+		 * Strength of the condition boost, which should be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored.
+		 * Type: float
+		 */
 		boost?: number | null;
 
 		/** An expression which specifies a boost condition. The syntax and supported fields are the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Examples: * To boost products with product ID "product_1" or "product_2", and color "Red" or "Blue": * (id: ANY("product_1", "product_2")) AND (colorFamilies: ANY("Red","Blue")) */
@@ -3824,7 +4007,10 @@ export namespace MyNS {
 	/** Boost applies to products which match a condition. */
 	export interface GoogleCloudRetailV2SearchRequestBoostSpecConditionBoostSpecFormProperties {
 
-		/** Strength of the condition boost, which should be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored. */
+		/**
+		 * Strength of the condition boost, which should be in [-1, 1]. Negative boost means demotion. Default is 0.0. Setting to 1.0 gives the item a big promotion. However, it does not necessarily mean that the boosted item will be the top result at all times, nor that other items will be excluded. Results could still be shown even when none of them matches the condition. And results that are significantly more relevant to the search query can still trump your heavily favored but irrelevant items. Setting to -1.0 gives the item a big demotion. However, results that are deeply relevant might still be shown. The item will have an upstream battle to get a fairly high ranking, but it is not blocked out completely. Setting to 0.0 means no boost applied. The boosting condition is ignored.
+		 * Type: float
+		 */
 		boost: FormControl<number | null | undefined>,
 
 		/** An expression which specifies a boost condition. The syntax and supported fields are the same as a filter expression. See SearchRequest.filter for detail syntax and limitations. Examples: * To boost products with product ID "product_1" or "product_2", and color "Red" or "Blue": * (id: ANY("product_1", "product_2")) AND (colorFamilies: ANY("Red","Blue")) */
@@ -3851,7 +4037,10 @@ export namespace MyNS {
 		/** Specifies how a facet is computed. */
 		facetKey?: GoogleCloudRetailV2SearchRequestFacetSpecFacetKey;
 
-		/** Maximum of facet values that should be returned for this facet. If unspecified, defaults to 50. The maximum allowed value is 300. Values above 300 will be coerced to 300. If this field is negative, an INVALID_ARGUMENT is returned. */
+		/**
+		 * Maximum of facet values that should be returned for this facet. If unspecified, defaults to 50. The maximum allowed value is 300. Values above 300 will be coerced to 300. If this field is negative, an INVALID_ARGUMENT is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 	}
 
@@ -3861,7 +4050,10 @@ export namespace MyNS {
 		/** Enables dynamic position for this facet. If set to true, the position of this facet among all facets in the response is determined by Google Retail Search. It is ordered together with dynamic facets if dynamic facets is enabled. If set to false, the position of this facet in the response is the same as in the request, and it is ranked before the facets with dynamic position enable and all dynamic facets. For example, you may always want to have rating facet returned in the response, but it's not necessarily to always display the rating facet at the top. In that case, you can set enable_dynamic_position to true so that the position of rating facet in response is determined by Google Retail Search. Another example, assuming you have the following facets in the request: * "rating", enable_dynamic_position = true * "price", enable_dynamic_position = false * "brands", enable_dynamic_position = false And also you have a dynamic facets enable, which generates a facet "gender". Then, the final order of the facets in the response can be ("price", "brands", "rating", "gender") or ("price", "brands", "gender", "rating") depends on how Google Retail Search orders "gender" and "rating" facets. However, notice that "price" and "brands" are always ranked at first and second position because their enable_dynamic_position values are false. */
 		enableDynamicPosition: FormControl<boolean | null | undefined>,
 
-		/** Maximum of facet values that should be returned for this facet. If unspecified, defaults to 50. The maximum allowed value is 300. Values above 300 will be coerced to 300. If this field is negative, an INVALID_ARGUMENT is returned. */
+		/**
+		 * Maximum of facet values that should be returned for this facet. If unspecified, defaults to 50. The maximum allowed value is 300. Values above 300 will be coerced to 300. If this field is negative, an INVALID_ARGUMENT is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRetailV2SearchRequestFacetSpecFormGroup() {
@@ -4022,7 +4214,10 @@ export namespace MyNS {
 		/** A list of matched items. The order represents the ranking. */
 		results?: Array<GoogleCloudRetailV2SearchResponseSearchResult>;
 
-		/** The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches. */
+		/**
+		 * The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -4041,7 +4236,10 @@ export namespace MyNS {
 		/** The URI of a customer-defined redirect page. If redirect action is triggered, no search is performed, and only redirect_uri and attribution_token are set in the response. */
 		redirectUri: FormControl<string | null | undefined>,
 
-		/** The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches. */
+		/**
+		 * The estimated total count of matched items irrespective of pagination. The count of results returned by pagination may be less than the total_size that matches.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudRetailV2SearchResponseFormGroup() {
@@ -4096,10 +4294,16 @@ export namespace MyNS {
 		/** A floating point interval. */
 		interval?: GoogleCloudRetailV2Interval;
 
-		/** The maximum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true. */
+		/**
+		 * The maximum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true.
+		 * Type: double
+		 */
 		maxValue?: number | null;
 
-		/** The minimum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true. */
+		/**
+		 * The minimum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true.
+		 * Type: double
+		 */
 		minValue?: number | null;
 
 		/** Text value of a facet, such as "Black" for facet "colorFamilies". */
@@ -4112,10 +4316,16 @@ export namespace MyNS {
 		/** Number of items that have this facet value. */
 		count: FormControl<string | null | undefined>,
 
-		/** The maximum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true. */
+		/**
+		 * The maximum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true.
+		 * Type: double
+		 */
 		maxValue: FormControl<number | null | undefined>,
 
-		/** The minimum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true. */
+		/**
+		 * The minimum value in the FacetValue.interval. Only supported on numerical facets and returned if SearchRequest.FacetSpec.FacetKey.return_min_max is true.
+		 * Type: double
+		 */
 		minValue: FormControl<number | null | undefined>,
 
 		/** Text value of a facet, such as "Black" for facet "colorFamilies". */
@@ -4166,7 +4376,10 @@ export namespace MyNS {
 		/** Product.id of the searched Product. */
 		id?: string | null;
 
-		/** The count of matched variant Products. */
+		/**
+		 * The count of matched variant Products.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		matchingVariantCount?: number | null;
 
 		/** If a variant Product matches the search query, this map indicates which Product fields are matched. The key is the Product.name, the value is a field mask of the matched Product fields. If matched attributes cannot be determined, this map will be empty. For example, a key "sku1" with field mask "products.color_info" indicates there is a match between "sku1" ColorInfo and the query. */
@@ -4188,7 +4401,10 @@ export namespace MyNS {
 		/** Product.id of the searched Product. */
 		id: FormControl<string | null | undefined>,
 
-		/** The count of matched variant Products. */
+		/**
+		 * The count of matched variant Products.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		matchingVariantCount: FormControl<number | null | undefined>,
 
 		/** If a variant Product matches the search query, this map indicates which Product fields are matched. The key is the Product.name, the value is a field mask of the matched Product fields. If matched attributes cannot be determined, this map will be empty. For example, a key "sku1" with field mask "products.color_info" indicates there is a match between "sku1" ColorInfo and the query. */
@@ -6587,6 +6803,7 @@ export namespace MyNS {
 		 * @param {string} entity The entity for customers who run multiple entities, domains, sites, or regions, for example, `Google US`, `Google Ads`, `Waymo`, `google.com`, `youtube.com`, etc. If this is set, it must be an exact match with UserEvent.entity to get per-entity autocomplete results.
 		 * @param {Array<string>} languageCodes Note that this field applies for `user-data` dataset only. For requests with `cloud-retail` dataset, setting this field has no effect. The language filters applied to the output suggestions. If set, it should contain the language of the query. If not set, suggestions are returned without considering language restrictions. This is the BCP-47 language code, such as "en-US" or "sr-Latn". For more information, see [Tags for Identifying Languages](https://tools.ietf.org/html/bcp47). The maximum number of language codes is 3.
 		 * @param {number} maxSuggestions Completion max suggestions. If left unset or set to 0, then will fallback to the configured value CompletionConfig.max_suggestions. The maximum allowed max suggestions is 20. If it is set higher, it will be capped by 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query Required. The query used to generate suggestions. The maximum number of allowed characters is 255.
 		 * @param {string} visitorId Required field. A unique identifier for tracking visitors. For example, this could be implemented with an HTTP cookie, which should be able to uniquely identify a visitor on a single device. This unique identifier should not change if the visitor logs in or out of the website. The field must be a UTF-8 encoded string with a length limit of 128 characters. Otherwise, an INVALID_ARGUMENT error is returned.
 		 * @return {GoogleCloudRetailV2CompleteQueryResponse} Successful response
@@ -6652,6 +6869,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -6704,6 +6922,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/catalogs
 		 * @param {string} parent Required. The account resource name with an associated location. If the caller does not have permission to list Catalogs under this location, regardless of whether or not this location exists, a PERMISSION_DENIED error is returned.
 		 * @param {number} pageSize Maximum number of Catalogs to return. If unspecified, defaults to 50. The maximum allowed value is 1000. Values above 1000 will be coerced to 1000. If this field is negative, an INVALID_ARGUMENT is returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token ListCatalogsResponse.next_page_token, received from a previous CatalogService.ListCatalogs call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to CatalogService.ListCatalogs must match the call that provided the page token. Otherwise, an INVALID_ARGUMENT error is returned.
 		 * @return {GoogleCloudRetailV2ListCatalogsResponse} Successful response
 		 */
@@ -6727,6 +6946,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The catalog resource name. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
 		 * @param {string} filter Optional. A filter to apply on the list results. Supported features: * List all the products under the parent branch if filter is unset. * List controls that are used in a single ServingConfig: 'serving_config = "boosted_home_page_cvr"'
 		 * @param {number} pageSize Optional. Maximum number of results to return. If unspecified, defaults to 50. Max allowed value is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListControls` call. Provide this to retrieve the subsequent page.
 		 * @return {GoogleCloudRetailV2ListControlsResponse} Successful response
 		 */
@@ -6750,6 +6970,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/models
 		 * @param {string} parent Required. The parent for which to list models. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
 		 * @param {number} pageSize Optional. Maximum number of results to return. If unspecified, defaults to 50. Max allowed value is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListModels` call. Provide this to retrieve the subsequent page.
 		 * @return {GoogleCloudRetailV2ListModelsResponse} Successful response
 		 */
@@ -6774,6 +6995,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent branch resource name, such as `projects/locations/global/catalogs/default_catalog/branches/0`. Use `default_branch` as the branch ID, to list products under the default branch. If the caller does not have permission to list Products under this branch, regardless of whether or not this branch exists, a PERMISSION_DENIED error is returned.
 		 * @param {string} filter A filter to apply on the list results. Supported features: * List all the products under the parent branch if filter is unset. * List Product.Type.VARIANT Products sharing the same Product.Type.PRIMARY Product. For example: `primary_product_id = "some_product_id"` * List Products bundled in a Product.Type.COLLECTION Product. For example: `collection_product_id = "some_product_id"` * List Products with a partibular type. For example: `type = "PRIMARY"` `type = "VARIANT"` `type = "COLLECTION"` If the field is unrecognizable, an INVALID_ARGUMENT error is returned. If the specified Product.Type.PRIMARY Product or Product.Type.COLLECTION Product does not exist, a NOT_FOUND error is returned.
 		 * @param {number} pageSize Maximum number of Products to return. If unspecified, defaults to 100. The maximum allowed value is 1000. Values above 1000 will be coerced to 1000. If this field is negative, an INVALID_ARGUMENT error is returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token ListProductsResponse.next_page_token, received from a previous ProductService.ListProducts call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ProductService.ListProducts must match the call that provided the page token. Otherwise, an INVALID_ARGUMENT error is returned.
 		 * @param {string} readMask The fields of Product to return in the responses. If not set or empty, the following fields are returned: * Product.name * Product.id * Product.title * Product.uri * Product.images * Product.price_info * Product.brands If "*" is provided, all fields are returned. Product.name is always returned no matter what mask is set. If an unsupported or unknown field is provided, an INVALID_ARGUMENT error is returned.
 		 * @return {GoogleCloudRetailV2ListProductsResponse} Successful response
@@ -6818,6 +7040,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/servingConfigs
 		 * @param {string} parent Required. The catalog resource name. Format: `projects/{project_number}/locations/{location_id}/catalogs/{catalog_id}`
 		 * @param {number} pageSize Optional. Maximum number of results to return. If unspecified, defaults to 100. If a value greater than 100 is provided, at most 100 results are returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListServingConfigs` call. Provide this to retrieve the subsequent page.
 		 * @return {GoogleCloudRetailV2ListServingConfigsResponse} Successful response
 		 */

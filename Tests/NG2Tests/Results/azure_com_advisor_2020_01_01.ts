@@ -742,6 +742,7 @@ export namespace MyNS {
 		 * @param {string} api_version The version of the API to be used with the client request.
 		 * @param {string} filter The filter to apply to the recommendations.
 		 * @param {number} top The number of recommendations per page if a paged version of this API is being used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} skipToken The page-continuation token to use with a paged version of this API.
 		 * @return {ResourceRecommendationBaseListResult} OK. Successfully obtained cached recommendations.
 		 */
@@ -755,6 +756,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Azure subscription ID.
 		 * @param {string} api_version The version of the API to be used with the client request.
 		 * @param {number} top The number of suppressions per page if a paged version of this API is being used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} skipToken The page-continuation token to use with a paged version of this API.
 		 * @return {SuppressionContractListResult} OK. Successfully got all suppressions in a subscription.
 		 */

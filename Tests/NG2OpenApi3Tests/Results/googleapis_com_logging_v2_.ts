@@ -155,7 +155,10 @@ export namespace MyNS {
 		/** Optional. Log entry field paths that are denied access in this bucket.The following fields and their children are eligible: textPayload, jsonPayload, protoPayload, httpRequest, labels, sourceLocation.Restricting a repeated field will restrict all values. Adding a parent will block all child fields. (e.g. foo.bar will block foo.bar.baz) */
 		restrictedFields?: Array<string>;
 
-		/** Optional. Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. */
+		/**
+		 * Optional. Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays?: number | null;
 
 		/** Output only. The last update timestamp of the bucket. */
@@ -183,7 +186,10 @@ export namespace MyNS {
 		/** Output only. The resource name of the bucket.For example:projects/my-project/locations/global/buckets/my-bucketFor a list of supported locations, see Supported Regions (https://cloud.google.com/logging/docs/region-support)For the location of global it is unspecified where log entries are actually stored.After a bucket has been created, the location cannot be changed. */
 		name: FormControl<string | null | undefined>,
 
-		/** Optional. Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used. */
+		/**
+		 * Optional. Logs will be retained by default for this amount of time, after which they will automatically be deleted. The minimum retention period is 1 day. If this value is set to zero at bucket creation time, the default time of 30 days will be used.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionDays: FormControl<number | null | undefined>,
 
 		/** Output only. The last update timestamp of the bucket. */
@@ -361,26 +367,44 @@ export namespace MyNS {
 	/** Specifies an exponential sequence of buckets that have a width that is proportional to the value of the lower bound. Each bucket represents a constant relative uncertainty on a specific value in the bucket.There are num_finite_buckets + 2 (= N) buckets. Bucket i has the following boundaries:Upper bound (0 <= i < N-1): scale * (growth_factor ^ i).Lower bound (1 <= i < N): scale * (growth_factor ^ (i - 1)). */
 	export interface Exponential {
 
-		/** Must be greater than 1. */
+		/**
+		 * Must be greater than 1.
+		 * Type: double
+		 */
 		growthFactor?: number | null;
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets?: number | null;
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: double
+		 */
 		scale?: number | null;
 	}
 
 	/** Specifies an exponential sequence of buckets that have a width that is proportional to the value of the lower bound. Each bucket represents a constant relative uncertainty on a specific value in the bucket.There are num_finite_buckets + 2 (= N) buckets. Bucket i has the following boundaries:Upper bound (0 <= i < N-1): scale * (growth_factor ^ i).Lower bound (1 <= i < N): scale * (growth_factor ^ (i - 1)). */
 	export interface ExponentialFormProperties {
 
-		/** Must be greater than 1. */
+		/**
+		 * Must be greater than 1.
+		 * Type: double
+		 */
 		growthFactor: FormControl<number | null | undefined>,
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets: FormControl<number | null | undefined>,
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: double
+		 */
 		scale: FormControl<number | null | undefined>,
 	}
 	export function CreateExponentialFormGroup() {
@@ -396,26 +420,44 @@ export namespace MyNS {
 	/** Specifies a linear sequence of buckets that all have the same width (except overflow and underflow). Each bucket represents a constant absolute uncertainty on the specific value in the bucket.There are num_finite_buckets + 2 (= N) buckets. Bucket i has the following boundaries:Upper bound (0 <= i < N-1): offset + (width * i).Lower bound (1 <= i < N): offset + (width * (i - 1)). */
 	export interface Linear {
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets?: number | null;
 
-		/** Lower bound of the first bucket. */
+		/**
+		 * Lower bound of the first bucket.
+		 * Type: double
+		 */
 		offset?: number | null;
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 
 	/** Specifies a linear sequence of buckets that all have the same width (except overflow and underflow). Each bucket represents a constant absolute uncertainty on the specific value in the bucket.There are num_finite_buckets + 2 (= N) buckets. Bucket i has the following boundaries:Upper bound (0 <= i < N-1): offset + (width * i).Lower bound (1 <= i < N): offset + (width * (i - 1)). */
 	export interface LinearFormProperties {
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets: FormControl<number | null | undefined>,
 
-		/** Lower bound of the first bucket. */
+		/**
+		 * Lower bound of the first bucket.
+		 * Type: double
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateLinearFormGroup() {
@@ -451,7 +493,10 @@ export namespace MyNS {
 		/** The end time of an operation. */
 		endTime?: string | null;
 
-		/** Estimated progress of the operation (0 - 100%). */
+		/**
+		 * Estimated progress of the operation (0 - 100%).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress?: number | null;
 
 		/** The parameters to CopyLogEntries. */
@@ -476,7 +521,10 @@ export namespace MyNS {
 		/** The end time of an operation. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Estimated progress of the operation (0 - 100%). */
+		/**
+		 * Estimated progress of the operation (0 - 100%).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress: FormControl<number | null | undefined>,
 
 		/** The create time of an operation. */
@@ -799,7 +847,10 @@ export namespace MyNS {
 		/** The IP address (IPv4 or IPv6) of the origin server that the request was sent to. This field can include port information. Examples: "192.168.1.1", "10.0.0.1:80", "FE80::0202:B3FF:FE1E:8329". */
 		serverIp?: string | null;
 
-		/** The response code indicating the status of response. Examples: 200, 404. */
+		/**
+		 * The response code indicating the status of response. Examples: 200, 404.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** The user agent sent by the client. Example: "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)". */
@@ -848,7 +899,10 @@ export namespace MyNS {
 		/** The IP address (IPv4 or IPv6) of the origin server that the request was sent to. This field can include port information. Examples: "192.168.1.1", "10.0.0.1:80", "FE80::0202:B3FF:FE1E:8329". */
 		serverIp: FormControl<string | null | undefined>,
 
-		/** The response code indicating the status of response. Examples: 200, 404. */
+		/**
+		 * The response code indicating the status of response. Examples: 200, 404.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** The user agent sent by the client. Example: "Mozilla/4.0 (compatible; MSIE 6.0; Windows 98; Q312461; .NET CLR 1.0.3705)". */
@@ -1108,7 +1162,10 @@ export namespace MyNS {
 		/** Optional. How the results should be sorted. Presently, the only permitted values are "timestamp asc" (default) and "timestamp desc". The first option returns entries in order of increasing values of LogEntry.timestamp (oldest first), and the second option returns entries in order of decreasing timestamps (newest first). Entries with equal timestamps are returned in order of their insert_id values. */
 		orderBy?: string | null;
 
-		/** Optional. The maximum number of results to return from this request. Default is 50. If the value is negative, the request is rejected.The presence of next_page_token in the response indicates that more results might be available. */
+		/**
+		 * Optional. The maximum number of results to return from this request. Default is 50. If the value is negative, the request is rejected.The presence of next_page_token in the response indicates that more results might be available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Optional. If present, then retrieve the next batch of results from the preceding call to this method. page_token must be the value of next_page_token from the previous response. The values of other method parameters should be identical to those in the previous call. */
@@ -1130,7 +1187,10 @@ export namespace MyNS {
 		/** Optional. How the results should be sorted. Presently, the only permitted values are "timestamp asc" (default) and "timestamp desc". The first option returns entries in order of increasing values of LogEntry.timestamp (oldest first), and the second option returns entries in order of decreasing timestamps (newest first). Entries with equal timestamps are returned in order of their insert_id values. */
 		orderBy: FormControl<string | null | undefined>,
 
-		/** Optional. The maximum number of results to return from this request. Default is 50. If the value is negative, the request is rejected.The presence of next_page_token in the response indicates that more results might be available. */
+		/**
+		 * Optional. The maximum number of results to return from this request. Default is 50. If the value is negative, the request is rejected.The presence of next_page_token in the response indicates that more results might be available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Optional. If present, then retrieve the next batch of results from the preceding call to this method. page_token must be the value of next_page_token from the previous response. The values of other method parameters should be identical to those in the previous call. */
@@ -1449,10 +1509,16 @@ export namespace MyNS {
 	/** Additional information used to correlate multiple log entries. Used when a single LogEntry would exceed the Google Cloud Logging size limit and is split across multiple log entries. */
 	export interface LogSplit {
 
-		/** The index of this LogEntry in the sequence of split log entries. Log entries are given |index| values 0, 1, ..., n-1 for a sequence of n log entries. */
+		/**
+		 * The index of this LogEntry in the sequence of split log entries. Log entries are given |index| values 0, 1, ..., n-1 for a sequence of n log entries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
-		/** The total number of log entries that the original LogEntry was split into. */
+		/**
+		 * The total number of log entries that the original LogEntry was split into.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSplits?: number | null;
 
 		/** A globally unique identifier for all log entries in a sequence of split log entries. All log entries with the same |LogSplit.uid| are assumed to be part of the same sequence of split log entries. */
@@ -1462,10 +1528,16 @@ export namespace MyNS {
 	/** Additional information used to correlate multiple log entries. Used when a single LogEntry would exceed the Google Cloud Logging size limit and is split across multiple log entries. */
 	export interface LogSplitFormProperties {
 
-		/** The index of this LogEntry in the sequence of split log entries. Log entries are given |index| values 0, 1, ..., n-1 for a sequence of n log entries. */
+		/**
+		 * The index of this LogEntry in the sequence of split log entries. Log entries are given |index| values 0, 1, ..., n-1 for a sequence of n log entries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
-		/** The total number of log entries that the original LogEntry was split into. */
+		/**
+		 * The total number of log entries that the original LogEntry was split into.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSplits: FormControl<number | null | undefined>,
 
 		/** A globally unique identifier for all log entries in a sequence of split log entries. All log entries with the same |LogSplit.uid| are assumed to be part of the same sequence of split log entries. */
@@ -1889,7 +1961,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1902,7 +1977,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1984,10 +2062,16 @@ export namespace MyNS {
 		/** Required. An advanced query using the Logging Query Language (https://cloud.google.com/logging/docs/view/logging-query-language). The maximum length of the filter is 20000 characters. */
 		filter?: string | null;
 
-		/** Characters will be counted from the end of the string. */
+		/**
+		 * Characters will be counted from the end of the string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		summaryFieldEnd?: number | null;
 
-		/** Characters will be counted from the start of the string. */
+		/**
+		 * Characters will be counted from the start of the string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		summaryFieldStart?: number | null;
 
 		/** Optional. The set of summary fields to display for this saved query. */
@@ -2000,10 +2084,16 @@ export namespace MyNS {
 		/** Required. An advanced query using the Logging Query Language (https://cloud.google.com/logging/docs/view/logging-query-language). The maximum length of the filter is 20000 characters. */
 		filter: FormControl<string | null | undefined>,
 
-		/** Characters will be counted from the end of the string. */
+		/**
+		 * Characters will be counted from the end of the string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		summaryFieldEnd: FormControl<number | null | undefined>,
 
-		/** Characters will be counted from the start of the string. */
+		/**
+		 * Characters will be counted from the start of the string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		summaryFieldStart: FormControl<number | null | undefined>,
 	}
 	export function CreateLoggingQueryFormGroup() {
@@ -2432,7 +2522,10 @@ export namespace MyNS {
 		/** Application that handled this request. */
 		appId?: string | null;
 
-		/** An indication of the relative cost of serving this request. */
+		/**
+		 * An indication of the relative cost of serving this request.
+		 * Type: double
+		 */
 		cost?: number | null;
 
 		/** Time when the request finished. */
@@ -2453,7 +2546,10 @@ export namespace MyNS {
 		/** An identifier for the instance that handled the request. */
 		instanceId?: string | null;
 
-		/** If the instance processing this request belongs to a manually scaled module, then this is the 0-based index of the instance. Otherwise, this value is -1. */
+		/**
+		 * If the instance processing this request belongs to a manually scaled module, then this is the 0-based index of the instance. Otherwise, this value is -1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instanceIndex?: number | null;
 
 		/** Origin IP address. */
@@ -2501,7 +2597,10 @@ export namespace MyNS {
 		/** Time when the request started. */
 		startTime?: string | null;
 
-		/** HTTP response status code. Example: 200, 404. */
+		/**
+		 * HTTP response status code. Example: 200, 404.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** Task name of the request, in the case of an offline request. */
@@ -2538,7 +2637,10 @@ export namespace MyNS {
 		/** Application that handled this request. */
 		appId: FormControl<string | null | undefined>,
 
-		/** An indication of the relative cost of serving this request. */
+		/**
+		 * An indication of the relative cost of serving this request.
+		 * Type: double
+		 */
 		cost: FormControl<number | null | undefined>,
 
 		/** Time when the request finished. */
@@ -2559,7 +2661,10 @@ export namespace MyNS {
 		/** An identifier for the instance that handled the request. */
 		instanceId: FormControl<string | null | undefined>,
 
-		/** If the instance processing this request belongs to a manually scaled module, then this is the 0-based index of the instance. Otherwise, this value is -1. */
+		/**
+		 * If the instance processing this request belongs to a manually scaled module, then this is the 0-based index of the instance. Otherwise, this value is -1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		instanceIndex: FormControl<number | null | undefined>,
 
 		/** Origin IP address. */
@@ -2601,7 +2706,10 @@ export namespace MyNS {
 		/** Time when the request started. */
 		startTime: FormControl<string | null | undefined>,
 
-		/** HTTP response status code. Example: 200, 404. */
+		/**
+		 * HTTP response status code. Example: 200, 404.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** Task name of the request, in the case of an offline request. */
@@ -2760,7 +2868,10 @@ export namespace MyNS {
 		/** The reason that entries were omitted from the session. */
 		reason?: SuppressionInfoReason | null;
 
-		/** A lower bound on the count of entries omitted due to reason. */
+		/**
+		 * A lower bound on the count of entries omitted due to reason.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suppressedCount?: number | null;
 	}
 
@@ -2770,7 +2881,10 @@ export namespace MyNS {
 		/** The reason that entries were omitted from the session. */
 		reason: FormControl<SuppressionInfoReason | null | undefined>,
 
-		/** A lower bound on the count of entries omitted due to reason. */
+		/**
+		 * A lower bound on the count of entries omitted due to reason.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suppressedCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSuppressionInfoFormGroup() {
@@ -2955,6 +3069,7 @@ export namespace MyNS {
 		 * Lists the descriptors for monitored resource types used by Logging.
 		 * Get v2/monitoredResourceDescriptors
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {ListMonitoredResourceDescriptorsResponse} Successful response
 		 */
@@ -3060,6 +3175,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like "displayName=tokyo", and is documented in more detail in AIP-160 (https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the next_page_token field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -3073,6 +3189,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -3137,6 +3254,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/buckets
 		 * @param {string} parent Required. The parent resource whose buckets are to be listed: "projects/[PROJECT_ID]/locations/[LOCATION_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]" Note: The locations portion of the resource must be specified, but supplying the character - in place of LOCATION_ID will return all buckets.
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {ListBucketsResponse} Successful response
 		 */
@@ -3171,6 +3289,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/exclusions
 		 * @param {string} parent Required. The parent resource whose exclusions are to be listed. "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" 
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {ListExclusionsResponse} Successful response
 		 */
@@ -3193,6 +3312,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/links
 		 * @param {string} parent Required. The parent resource whose links are to be listed: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" 
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response.
 		 * @return {ListLinksResponse} Successful response
 		 */
@@ -3216,6 +3336,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/logs
 		 * @param {string} parent Required. The resource name to list logs for: projects/[PROJECT_ID] organizations/[ORGANIZATION_ID] billingAccounts/[BILLING_ACCOUNT_ID] folders/[FOLDER_ID]
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @param {Array<string>} resourceNames Optional. List of resource names to list logs for: projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID] organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID] billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID] folders/[FOLDER_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]/views/[VIEW_ID]To support legacy queries, it could also be: projects/[PROJECT_ID] organizations/[ORGANIZATION_ID] billingAccounts/[BILLING_ACCOUNT_ID] folders/[FOLDER_ID]The resource name in the parent field is added to this list.
 		 * @return {ListLogsResponse} Successful response
@@ -3229,6 +3350,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/metrics
 		 * @param {string} parent Required. The name of the project containing the metrics: "projects/[PROJECT_ID]" 
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {ListLogMetricsResponse} Successful response
 		 */
@@ -3251,6 +3373,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/recentQueries
 		 * @param {string} parent Required. The resource to which the listed queries belong. "projects/[PROJECT_ID]/locations/[LOCATION_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]" For example:projects/my-project/locations/us-central1Note: The location portion of the resource must be specified, but supplying the character - in place of LOCATION_ID will return all recent queries.
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {ListRecentQueriesResponse} Successful response
 		 */
@@ -3263,6 +3386,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/savedQueries
 		 * @param {string} parent Required. The resource to which the listed queries belong. "projects/[PROJECT_ID]/locations/[LOCATION_ID]" "organizations/[ORGANIZATION_ID]/locations/[LOCATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]/locations/[LOCATION_ID]" "folders/[FOLDER_ID]/locations/[LOCATION_ID]" For example: "projects/my-project/locations/us-central1" Note: The locations portion of the resource must be specified. To get a list of all saved queries, a wildcard character - can be used for LOCATION_ID, for example: "projects/my-project/locations/-" 
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request.Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {ListSavedQueriesResponse} Successful response
 		 */
@@ -3286,6 +3410,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/sinks
 		 * @param {string} parent Required. The parent resource whose sinks are to be listed: "projects/[PROJECT_ID]" "organizations/[ORGANIZATION_ID]" "billingAccounts/[BILLING_ACCOUNT_ID]" "folders/[FOLDER_ID]" 
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {ListSinksResponse} Successful response
 		 */
@@ -3310,6 +3435,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/views
 		 * @param {string} parent Required. The bucket whose views are to be listed: "projects/[PROJECT_ID]/locations/[LOCATION_ID]/buckets/[BUCKET_ID]" 
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request.Non-positive values are ignored. The presence of nextPageToken in the response indicates that more results might be available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. pageToken must be the value of nextPageToken from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {ListViewsResponse} Successful response
 		 */

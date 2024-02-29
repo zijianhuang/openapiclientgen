@@ -146,14 +146,20 @@ export namespace MyNS {
 	/** A simple Counter type. */
 	export interface Counter {
 
-		/** Number of items in a resource collection */
+		/**
+		 * Number of items in a resource collection
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		counter?: number | null;
 	}
 
 	/** A simple Counter type. */
 	export interface CounterFormProperties {
 
-		/** Number of items in a resource collection */
+		/**
+		 * Number of items in a resource collection
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		counter: FormControl<number | null | undefined>,
 	}
 	export function CreateCounterFormGroup() {
@@ -184,6 +190,7 @@ export namespace MyNS {
 		/**
 		 * The number of service mock invocations on this day
 		 * Required
+		 * Type: double
 		 */
 		dailyCount: number;
 
@@ -224,6 +231,7 @@ export namespace MyNS {
 		/**
 		 * The number of service mock invocations on this day
 		 * Required
+		 * Type: double
 		 */
 		dailyCount: FormControl<number | null | undefined>,
 
@@ -666,6 +674,7 @@ export namespace MyNS {
 		/**
 		 * Creation date of attached object
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		createdOn: number;
 
@@ -675,6 +684,7 @@ export namespace MyNS {
 		/**
 		 * Last update of attached object
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lastUpdate: number;
 	}
@@ -688,6 +698,7 @@ export namespace MyNS {
 		/**
 		 * Creation date of attached object
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		createdOn: FormControl<number | null | undefined>,
 
@@ -697,6 +708,7 @@ export namespace MyNS {
 		/**
 		 * Last update of attached object
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lastUpdate: FormControl<number | null | undefined>,
 	}
@@ -878,7 +890,10 @@ export namespace MyNS {
 		/** Map of protocol binding details for this operation */
 		bindings?: {[id: string]: Binding };
 
-		/** Default response time delay for mocks */
+		/**
+		 * Default response time delay for mocks
+		 * Type: double
+		 */
 		defaultDelay?: number | null;
 
 		/** Dispatcher strategy used for mocks */
@@ -918,7 +933,10 @@ export namespace MyNS {
 		/** Map of protocol binding details for this operation */
 		bindings: FormControl<{[id: string]: Binding } | null | undefined>,
 
-		/** Default response time delay for mocks */
+		/**
+		 * Default response time delay for mocks
+		 * Type: double
+		 */
 		defaultDelay: FormControl<number | null | undefined>,
 
 		/** Dispatcher strategy used for mocks */
@@ -1034,7 +1052,10 @@ export namespace MyNS {
 	/** Data Transfer object for grouping the mutable properties of an Operation */
 	export interface OperationOverrideDTO {
 
-		/** Default delay in milliseconds to apply to mock responses on this operation */
+		/**
+		 * Default delay in milliseconds to apply to mock responses on this operation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultDelay?: number | null;
 
 		/** Type of dispatcher to apply for this operation */
@@ -1050,7 +1071,10 @@ export namespace MyNS {
 	/** Data Transfer object for grouping the mutable properties of an Operation */
 	export interface OperationOverrideDTOFormProperties {
 
-		/** Default delay in milliseconds to apply to mock responses on this operation */
+		/**
+		 * Default delay in milliseconds to apply to mock responses on this operation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultDelay: FormControl<number | null | undefined>,
 
 		/** Type of dispatcher to apply for this operation */
@@ -1549,6 +1573,7 @@ export namespace MyNS {
 		/**
 		 * Elapsed time in milliseconds since the test case beginning
 		 * Required
+		 * Type: double
 		 */
 		elapsedTime: number;
 
@@ -1574,6 +1599,7 @@ export namespace MyNS {
 		/**
 		 * Elapsed time in milliseconds since the test case beginning
 		 * Required
+		 * Type: double
 		 */
 		elapsedTime: FormControl<number | null | undefined>,
 
@@ -1602,7 +1628,10 @@ export namespace MyNS {
 	/** TestStepResult is an entity embedded within TestCaseResult. They are created for each request associated with an operation / action of a microservice. */
 	export interface TestStepResult {
 
-		/** Elapsed time in milliseconds since the test step beginning */
+		/**
+		 * Elapsed time in milliseconds since the test step beginning
+		 * Type: double
+		 */
 		elapsedTime?: number | null;
 
 		/** Name of event this test step is bound to */
@@ -1624,7 +1653,10 @@ export namespace MyNS {
 	/** TestStepResult is an entity embedded within TestCaseResult. They are created for each request associated with an operation / action of a microservice. */
 	export interface TestStepResultFormProperties {
 
-		/** Elapsed time in milliseconds since the test step beginning */
+		/**
+		 * Elapsed time in milliseconds since the test step beginning
+		 * Type: double
+		 */
 		elapsedTime: FormControl<number | null | undefined>,
 
 		/** Name of event this test step is bound to */
@@ -1686,6 +1718,7 @@ export namespace MyNS {
 		/**
 		 * Current test conformance score for the related Service
 		 * Required
+		 * Type: double
 		 */
 		currentScore: number;
 
@@ -1707,6 +1740,7 @@ export namespace MyNS {
 		/**
 		 * Maximum conformance score that can be reached (depends on samples expresiveness)
 		 * Required
+		 * Type: double
 		 */
 		maxPossibleScore: number;
 
@@ -1726,6 +1760,7 @@ export namespace MyNS {
 		/**
 		 * Current test conformance score for the related Service
 		 * Required
+		 * Type: double
 		 */
 		currentScore: FormControl<number | null | undefined>,
 
@@ -1747,6 +1782,7 @@ export namespace MyNS {
 		/**
 		 * Maximum conformance score that can be reached (depends on samples expresiveness)
 		 * Required
+		 * Type: double
 		 */
 		maxPossibleScore: FormControl<number | null | undefined>,
 
@@ -1806,6 +1842,7 @@ export namespace MyNS {
 		/**
 		 * The maximum time (in milliseconds) to wait for this test ends
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: number;
 	}
@@ -1837,6 +1874,7 @@ export namespace MyNS {
 		/**
 		 * The maximum time (in milliseconds) to wait for this test ends
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timeout: FormControl<number | null | undefined>,
 	}
@@ -1857,7 +1895,10 @@ export namespace MyNS {
 	/** Represents the result of a Service or API test run by Microcks. Tests are related to a service and made of multiple test cases corresponding to each operations / actions composing service. Tests are run against a specific endpoint named testedEndpoint. It holds global markers telling if test still ran, is a success, how many times is has taken and so on ... */
 	export interface TestResult {
 
-		/** Elapsed time in milliseconds since test beginning */
+		/**
+		 * Elapsed time in milliseconds since test beginning
+		 * Type: double
+		 */
 		elapsedTime?: number | null;
 
 		/**
@@ -1902,12 +1943,14 @@ export namespace MyNS {
 		/**
 		 * Timestamp of creation date of this service
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		testDate: number;
+		testDate: string;
 
 		/**
 		 * Incremental number for tracking number of tests of a service
 		 * Required
+		 * Type: double
 		 */
 		testNumber: number;
 
@@ -1917,12 +1960,16 @@ export namespace MyNS {
 		 */
 		testedEndpoint: string;
 
-		/** The maximum time (in milliseconds) to wait for this test ends */
+		/**
+		 * The maximum time (in milliseconds) to wait for this test ends
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout?: number | null;
 
 		/**
 		 * Revision number of this test
 		 * Required
+		 * Type: double
 		 */
 		version: number;
 	}
@@ -1930,7 +1977,10 @@ export namespace MyNS {
 	/** Represents the result of a Service or API test run by Microcks. Tests are related to a service and made of multiple test cases corresponding to each operations / actions composing service. Tests are run against a specific endpoint named testedEndpoint. It holds global markers telling if test still ran, is a success, how many times is has taken and so on ... */
 	export interface TestResultFormProperties {
 
-		/** Elapsed time in milliseconds since test beginning */
+		/**
+		 * Elapsed time in milliseconds since test beginning
+		 * Type: double
+		 */
 		elapsedTime: FormControl<number | null | undefined>,
 
 		/**
@@ -1966,12 +2016,14 @@ export namespace MyNS {
 		/**
 		 * Timestamp of creation date of this service
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		testDate: FormControl<number | null | undefined>,
+		testDate: FormControl<string | null | undefined>,
 
 		/**
 		 * Incremental number for tracking number of tests of a service
 		 * Required
+		 * Type: double
 		 */
 		testNumber: FormControl<number | null | undefined>,
 
@@ -1981,12 +2033,16 @@ export namespace MyNS {
 		 */
 		testedEndpoint: FormControl<string | null | undefined>,
 
-		/** The maximum time (in milliseconds) to wait for this test ends */
+		/**
+		 * The maximum time (in milliseconds) to wait for this test ends
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeout: FormControl<number | null | undefined>,
 
 		/**
 		 * Revision number of this test
 		 * Required
+		 * Type: double
 		 */
 		version: FormControl<number | null | undefined>,
 	}
@@ -1998,7 +2054,7 @@ export namespace MyNS {
 			runnerType: new FormControl<TestRequestRunnerType | null | undefined>(undefined, [Validators.required]),
 			serviceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			success: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			testDate: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			testDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			testNumber: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			testedEndpoint: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			timeout: new FormControl<number | null | undefined>(undefined),
@@ -2032,8 +2088,9 @@ export namespace MyNS {
 		/**
 		 * Timestamp of creation date of this service
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		testDate: number;
+		testDate: string;
 	}
 
 	/** Represents the summary result of a Service or API test run by Microcks.  */
@@ -2060,15 +2117,16 @@ export namespace MyNS {
 		/**
 		 * Timestamp of creation date of this service
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		testDate: FormControl<number | null | undefined>,
+		testDate: FormControl<string | null | undefined>,
 	}
 	export function CreateTestResultSummaryFormGroup() {
 		return new FormGroup<TestResultSummaryFormProperties>({
 			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			serviceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			success: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			testDate: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			testDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2080,14 +2138,16 @@ export namespace MyNS {
 		/**
 		 * Return code for test (0 means Success, 1 means Failure)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: number;
 
 		/**
 		 * Elapsed time in milliseconds
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		elapsedTime: number;
+		elapsedTime: string;
 		eventMessage?: EventMessage;
 
 		/** Error message if any */
@@ -2106,14 +2166,16 @@ export namespace MyNS {
 		/**
 		 * Return code for test (0 means Success, 1 means Failure)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: FormControl<number | null | undefined>,
 
 		/**
 		 * Elapsed time in milliseconds
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		elapsedTime: FormControl<number | null | undefined>,
+		elapsedTime: FormControl<string | null | undefined>,
 
 		/** Error message if any */
 		message: FormControl<string | null | undefined>,
@@ -2121,7 +2183,7 @@ export namespace MyNS {
 	export function CreateTestReturnFormGroup() {
 		return new FormGroup<TestReturnFormProperties>({
 			code: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			elapsedTime: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			elapsedTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			message: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2162,12 +2224,14 @@ export namespace MyNS {
 		/**
 		 * The value of this metric
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 
 		/**
 		 * Weight of this metric value (typically a percentage)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: number;
 	}
@@ -2184,12 +2248,14 @@ export namespace MyNS {
 		/**
 		 * The value of this metric
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 
 		/**
 		 * Weight of this metric value (typically a percentage)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: FormControl<number | null | undefined>,
 	}
@@ -2232,7 +2298,9 @@ export namespace MyNS {
 		 * Retrieve a list of ImportJobs
 		 * Get jobs
 		 * @param {number} page Page of ImportJobs to retrieve (starts at and defaults to 0)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Size of a page. Maximum number of ImportJobs to include in a response (defaults to 20)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Name like criterion for query
 		 * @return {Array<ImportJob>} List of found ImportJobs
 		 */
@@ -2360,6 +2428,7 @@ export namespace MyNS {
 		 * Get aggregated invocations statistics for latest days
 		 * Get metrics/invocations/global/latest
 		 * @param {number} limit Number of days to get back in time. Default is 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CounterMap} A map where keys are day (formatted using yyyyMMdd pattern) and values are counter of invocations on this day
 		 */
 		GetLatestAggregatedInvocationsStats(limit: number | null | undefined): Observable<CounterMap> {
@@ -2371,6 +2440,7 @@ export namespace MyNS {
 		 * Get metrics/invocations/top
 		 * @param {string} day The day to get statistics for (formatted with yyyyMMdd pattern). Default to today if not provided.
 		 * @param {number} limit The number of top invoked mocks to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<DailyInvocationStatistic>} Top invocations for a defined day
 		 */
 		GetTopIvnocationsStatsByDay(day: string | null | undefined, limit: number | null | undefined): Observable<Array<DailyInvocationStatistic>> {
@@ -2391,6 +2461,7 @@ export namespace MyNS {
 		 * Get latest tests results
 		 * Get metrics/tests/latest
 		 * @param {number} limit Number of days to consider for test results to return. Default is 7 (one week)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TestResultSummary>} Test results summary for specified <limit> last days.
 		 */
 		GetLatestTestResults(limit: number | null | undefined): Observable<Array<TestResultSummary>> {
@@ -2419,7 +2490,9 @@ export namespace MyNS {
 		 * Get Secrets
 		 * Get secrets
 		 * @param {number} page Page of Secrets to retrieve (starts at and defaults to 0)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Size of a page. Maximum number of Secrets to include in a response (defaults to 20)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Secret>} List of found Secrets
 		 */
 		GetSecrets(page: number | null | undefined, size: number | null | undefined): Observable<Array<Secret>> {
@@ -2478,7 +2551,9 @@ export namespace MyNS {
 		 * Get Services and APIs
 		 * Get services
 		 * @param {number} page Page of Services to retrieve (starts at and defaults to 0)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Size of a page. Maximum number of Services to include in a response (defaults to 20)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Service} List of found Services
 		 */
 		GetServices(page: number | null | undefined, size: number | null | undefined): Observable<Service> {
@@ -2527,7 +2602,6 @@ export namespace MyNS {
 		 * Get Service
 		 * Get services/{id}
 		 * @param {boolean} messages Whether to include details on services messages into result. Default is false
-		 * @return {Service} 
 		 */
 		GetService(messages: boolean | null | undefined): Observable<Service> {
 			return this.http.get<Service>(this.baseUri + 'services/{id}?messages=' + messages, {});

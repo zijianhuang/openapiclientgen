@@ -108,9 +108,12 @@ export namespace MyNS {
 		 * Gets the private link resources for MariaDB server.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/privateLinkResources
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {PrivateLinkResourceListResult} Successfully retrieved private link resources.
 		 */
 		PrivateLinkResources_ListByServer(resourceGroupName: string, serverName: string, subscriptionId: string, api_version: string): Observable<PrivateLinkResourceListResult> {
@@ -121,10 +124,13 @@ export namespace MyNS {
 		 * Gets a private link resource for MariaDB server.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/privateLinkResources/{groupName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} groupName The name of the private link resource.
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {PrivateLinkResource} Successfully retrieved private link resources.
 		 */
 		PrivateLinkResources_Get(resourceGroupName: string, serverName: string, groupName: string, subscriptionId: string, api_version: string): Observable<PrivateLinkResource> {

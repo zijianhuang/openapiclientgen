@@ -851,6 +851,7 @@ export namespace MyNS {
 		 * Get data from a previously submitted document identified by ***docId***
 		 * Get documents/{docId}
 		 * @param {string} docId Id of document to fetch
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {DocumentResponseDetailed} document response contained readability details for the document
 		 */
 		Documents_docIdGet(docId: string, headersHandler?: () => HttpHeaders): Observable<DocumentResponseDetailed> {
@@ -883,7 +884,9 @@ export namespace MyNS {
 		 * Get detailed results for a scan/url (readability, long sentence and passive language instances), identified by **scanId** & **urlId**
 		 * Get searches/{docId}/{dictionaryId}
 		 * @param {string} docId Id of document
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} dictionaryId Id of dictionary
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} matchingOnly Only returning paragraphs containing a match
 		 * @return {void} scan response
 		 */
@@ -919,6 +922,7 @@ export namespace MyNS {
 		 * Get data from a previously run scan, identified by **scanId**
 		 * Get webscans/{scanId}
 		 * @param {string} scanId Id of scan to fetch
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {ScanResponseDetailed} scan response
 		 */
 		Webscans_scanIdGet(scanId: string, headersHandler?: () => HttpHeaders): Observable<ScanResponseDetailed> {
@@ -930,7 +934,9 @@ export namespace MyNS {
 		 * Get detailed results for a scan/url (readability, long sentence and passive language instances), identified by **scanId** & **urlId**
 		 * Get webscans/{scanId}/webUrls/{urlId}
 		 * @param {string} scanId Id of scan
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} urlId Id of url to fetch
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {WebUrlDetail} scan response
 		 */
 		Webscans_scanIdWebUrls_urlIdGet(scanId: string, urlId: string, headersHandler?: () => HttpHeaders): Observable<WebUrlDetail> {

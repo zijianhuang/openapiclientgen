@@ -399,6 +399,8 @@ export namespace MyNS {
 		AllowedMethods?: AllowedMethods;
 		SmoothStreaming?: boolean | null;
 		DefaultTTL?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxTTL?: number | null;
 		Compress?: boolean | null;
 		LambdaFunctionAssociations?: LambdaFunctionAssociations;
@@ -418,6 +420,8 @@ export namespace MyNS {
 		MinTTL: FormControl<number | null | undefined>,
 		SmoothStreaming: FormControl<boolean | null | undefined>,
 		DefaultTTL: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxTTL: FormControl<number | null | undefined>,
 		Compress: FormControl<boolean | null | undefined>,
 		FieldLevelEncryptionId: FormControl<string | null | undefined>,

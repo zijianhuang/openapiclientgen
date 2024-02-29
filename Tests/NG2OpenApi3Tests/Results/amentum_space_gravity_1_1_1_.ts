@@ -28,10 +28,14 @@ export namespace MyNS {
 
 	export interface AnomalyEta {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface AnomalyEtaFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateAnomalyEtaFormGroup() {
@@ -44,10 +48,14 @@ export namespace MyNS {
 
 	export interface AnomalyGravity_anomaly {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface AnomalyGravity_anomalyFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateAnomalyGravity_anomalyFormGroup() {
@@ -60,10 +68,14 @@ export namespace MyNS {
 
 	export interface AnomalyXi {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface AnomalyXiFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateAnomalyXiFormGroup() {
@@ -91,10 +103,14 @@ export namespace MyNS {
 
 	export interface HeightHeight {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface HeightHeightFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateHeightHeightFormGroup() {
@@ -115,7 +131,9 @@ export namespace MyNS {
 		 * for a given latitude / longitude.
 		 * Get egm2008/geoid_height
 		 * @param {number} latitude Geographic latitude (-90 to 90 deg).
+		 *     Type: double
 		 * @param {number} longitude Geographic longitude (-180 to 180 deg).
+		 *     Type: double
 		 * @return {Height} Successful geoid height calculation
 		 */
 		App_api_egm2008_endpoints_EGM2008_calculate_height(latitude: number, longitude: number): Observable<Height> {
@@ -127,7 +145,9 @@ export namespace MyNS {
 		 * for a given latitude / longitude.
 		 * Get egm2008/gravity_anomaly
 		 * @param {number} latitude Geographic latitude (-90 to 90 deg).
+		 *     Type: double
 		 * @param {number} longitude Geographic longitude (-180 to 180 deg).
+		 *     Type: double
 		 * @return {Anomaly} Successful anomaly calculation
 		 */
 		App_api_egm2008_endpoints_EGM2008_calculate_anomaly(latitude: number, longitude: number): Observable<Anomaly> {

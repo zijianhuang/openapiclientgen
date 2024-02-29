@@ -13,14 +13,20 @@ export namespace MyNS {
 		/** The list of individual auto-labeling statuses of the dataset documents. */
 		individualAutoLabelStatuses?: Array<GoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsMetadataIndividualAutoLabelStatus>;
 
-		/** Total number of the auto-labeling documents. */
+		/**
+		 * Total number of the auto-labeling documents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount?: number | null;
 	}
 
 	/** Metadata of the auto-labeling documents operation. */
 	export interface GoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsMetadataFormProperties {
 
-		/** Total number of the auto-labeling documents. */
+		/**
+		 * Total number of the auto-labeling documents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiUiv1beta3AutoLabelDocumentsMetadataFormGroup() {
@@ -214,7 +220,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -227,7 +236,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -260,21 +272,33 @@ export namespace MyNS {
 		/** The common metadata for long running operations. */
 		commonMetadata?: GoogleCloudDocumentaiUiv1beta3CommonOperationMetadata;
 
-		/** Total number of documents that failed to be deleted in storage. */
+		/**
+		 * Total number of documents that failed to be deleted in storage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorDocumentCount?: number | null;
 
 		/** The list of response details of each document. */
 		individualBatchDeleteStatuses?: Array<GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus>;
 
-		/** Total number of documents deleting from dataset. */
+		/**
+		 * Total number of documents deleting from dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount?: number | null;
 	}
 	export interface GoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataFormProperties {
 
-		/** Total number of documents that failed to be deleted in storage. */
+		/**
+		 * Total number of documents that failed to be deleted in storage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorDocumentCount: FormControl<number | null | undefined>,
 
-		/** Total number of documents deleting from dataset. */
+		/**
+		 * Total number of documents deleting from dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiUiv1beta3BatchDeleteDocumentsMetadataFormGroup() {
@@ -691,7 +715,10 @@ export namespace MyNS {
 		/** The dataset split type. */
 		splitType?: GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataDestDatasetType | null;
 
-		/** Total number of documents with the given dataset split type to be exported. */
+		/**
+		 * Total number of documents with the given dataset split type to be exported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount?: number | null;
 	}
 
@@ -701,7 +728,10 @@ export namespace MyNS {
 		/** The dataset split type. */
 		splitType: FormControl<GoogleCloudDocumentaiUiv1beta3BatchMoveDocumentsMetadataDestDatasetType | null | undefined>,
 
-		/** Total number of documents with the given dataset split type to be exported. */
+		/**
+		 * Total number of documents with the given dataset split type to be exported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiUiv1beta3ExportDocumentsMetadataSplitExportStatFormGroup() {
@@ -777,14 +807,20 @@ export namespace MyNS {
 		/** The list of response details of each document. */
 		individualImportStatuses?: Array<GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataIndividualImportStatus>;
 
-		/** Total number of the documents that are qualified for importing. */
+		/**
+		 * Total number of the documents that are qualified for importing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount?: number | null;
 	}
 
 	/** Metadata of the import document operation. */
 	export interface GoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataFormProperties {
 
-		/** Total number of the documents that are qualified for importing. */
+		/**
+		 * Total number of the documents that are qualified for importing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiUiv1beta3ImportDocumentsMetadataFormGroup() {
@@ -1111,13 +1147,19 @@ export namespace MyNS {
 	/** The dataset validation information. This includes any and all errors with documents and the dataset. */
 	export interface GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidation {
 
-		/** The total number of dataset errors. */
+		/**
+		 * The total number of dataset errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		datasetErrorCount?: number | null;
 
 		/** Error information for the dataset as a whole. A maximum of 10 dataset errors will be returned. A single dataset error is terminal for training. */
 		datasetErrors?: Array<GoogleRpcStatus>;
 
-		/** The total number of document errors. */
+		/**
+		 * The total number of document errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		documentErrorCount?: number | null;
 
 		/** Error information pertaining to specific documents. A maximum of 10 document errors will be returned. Any document with errors will not be used throughout training. */
@@ -1127,10 +1169,16 @@ export namespace MyNS {
 	/** The dataset validation information. This includes any and all errors with documents and the dataset. */
 	export interface GoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidationFormProperties {
 
-		/** The total number of dataset errors. */
+		/**
+		 * The total number of dataset errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		datasetErrorCount: FormControl<number | null | undefined>,
 
-		/** The total number of document errors. */
+		/**
+		 * The total number of document errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		documentErrorCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiUiv1beta3TrainProcessorVersionMetadataDatasetValidationFormGroup() {
@@ -1561,20 +1609,32 @@ export namespace MyNS {
 	/** The sharding config for the output document. */
 	export interface GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfigShardingConfig {
 
-		/** The number of overlapping pages between consecutive shards. */
+		/**
+		 * The number of overlapping pages between consecutive shards.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagesOverlap?: number | null;
 
-		/** The number of pages per shard. */
+		/**
+		 * The number of pages per shard.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagesPerShard?: number | null;
 	}
 
 	/** The sharding config for the output document. */
 	export interface GoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfigShardingConfigFormProperties {
 
-		/** The number of overlapping pages between consecutive shards. */
+		/**
+		 * The number of overlapping pages between consecutive shards.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagesOverlap: FormControl<number | null | undefined>,
 
-		/** The number of pages per shard. */
+		/**
+		 * The number of pages per shard.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagesPerShard: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1DocumentOutputConfigGcsOutputConfigShardingConfigFormGroup() {
@@ -1589,10 +1649,16 @@ export namespace MyNS {
 	/** Options for Process API */
 	export interface GoogleCloudDocumentaiV1ProcessOptions {
 
-		/** Only process certain pages from the end, same as above. */
+		/**
+		 * Only process certain pages from the end, same as above.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fromEnd?: number | null;
 
-		/** Only process certain pages from the start. Process all if the document has fewer pages. */
+		/**
+		 * Only process certain pages from the start. Process all if the document has fewer pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fromStart?: number | null;
 
 		/** A list of individual page numbers. */
@@ -1605,10 +1671,16 @@ export namespace MyNS {
 	/** Options for Process API */
 	export interface GoogleCloudDocumentaiV1ProcessOptionsFormProperties {
 
-		/** Only process certain pages from the end, same as above. */
+		/**
+		 * Only process certain pages from the end, same as above.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fromEnd: FormControl<number | null | undefined>,
 
-		/** Only process certain pages from the start. Process all if the document has fewer pages. */
+		/**
+		 * Only process certain pages from the start. Process all if the document has fewer pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fromStart: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1ProcessOptionsFormGroup() {
@@ -1784,20 +1856,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudDocumentaiV1NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudDocumentaiV1NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1NormalizedVertexFormGroup() {
@@ -1812,20 +1896,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudDocumentaiV1Vertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudDocumentaiV1VertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1VertexFormGroup() {
@@ -2079,7 +2175,10 @@ export namespace MyNS {
 	/** An entity that could be a phrase in the text or a property that belongs to the document. It is a known entity type, such as a person, an organization, or location. */
 	export interface GoogleCloudDocumentaiV1DocumentEntity {
 
-		/** Optional. Confidence of detected Schema entity. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Optional. Canonical id. This will be a unique value in the entity list for this document. */
@@ -2116,7 +2215,10 @@ export namespace MyNS {
 	/** An entity that could be a phrase in the text or a property that belongs to the document. It is a known entity type, such as a person, an organization, or location. */
 	export interface GoogleCloudDocumentaiV1DocumentEntityFormProperties {
 
-		/** Optional. Confidence of detected Schema entity. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Optional. Canonical id. This will be a unique value in the entity list for this document. */
@@ -2162,10 +2264,16 @@ export namespace MyNS {
 		/** Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations. */
 		datetimeValue?: GoogleTypeDateTime;
 
-		/** Float value. */
+		/**
+		 * Float value.
+		 * Type: float
+		 */
 		floatValue?: number | null;
 
-		/** Integer value. */
+		/**
+		 * Integer value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		integerValue?: number | null;
 
 		/** Represents an amount of money with its currency type. */
@@ -2181,10 +2289,16 @@ export namespace MyNS {
 		/** Boolean value. Can be used for entities with binary values, or for checkboxes. */
 		booleanValue: FormControl<boolean | null | undefined>,
 
-		/** Float value. */
+		/**
+		 * Float value.
+		 * Type: float
+		 */
 		floatValue: FormControl<number | null | undefined>,
 
-		/** Integer value. */
+		/**
+		 * Integer value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		integerValue: FormControl<number | null | undefined>,
 
 		/** Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate `float` or `integer` normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format. */
@@ -2228,7 +2342,10 @@ export namespace MyNS {
 		/** Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: "CH" for Switzerland. */
 		regionCode?: string | null;
 
-		/** The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions. */
+		/**
+		 * The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 
 		/** Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like "CEDEX", optionally followed by a number (e.g. "CEDEX 7"), or just a number alone, representing the "sector code" (Jamaica), "delivery area indicator" (Malawi) or "post office indicator" (e.g. Côte d'Ivoire). */
@@ -2259,7 +2376,10 @@ export namespace MyNS {
 		/** Required. CLDR region code of the country/region of the address. This is never inferred and it is up to the user to ensure the value is correct. See https://cldr.unicode.org/ and https://www.unicode.org/cldr/charts/30/supplemental/territory_information.html for details. Example: "CH" for Switzerland. */
 		regionCode: FormControl<string | null | undefined>,
 
-		/** The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions. */
+		/**
+		 * The schema revision of the `PostalAddress`. This must be set to 0, which is the latest revision. All new revisions **must** be backward compatible with old revisions.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 
 		/** Optional. Additional, country-specific, sorting code. This is not used in most regions. Where it is used, the value is either a string like "CEDEX", optionally followed by a number (e.g. "CEDEX 7"), or just a number alone, representing the "sector code" (Jamaica), "delivery area indicator" (Malawi) or "post office indicator" (e.g. Côte d'Ivoire). */
@@ -2287,26 +2407,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDate {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateFormGroup() {
@@ -2322,22 +2460,40 @@ export namespace MyNS {
 	/** Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations. */
 	export interface GoogleTypeDateTime {
 
-		/** Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day. */
+		/**
+		 * Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0. */
+		/**
+		 * Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month. */
+		/**
+		 * Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0. */
+		/**
+		 * Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 
 		/** Represents a time zone from the [IANA Time Zone Database](https://www.iana.org/time-zones). */
@@ -2346,35 +2502,59 @@ export namespace MyNS {
 		/** UTC offset. Must be whole seconds, between -18 hours and +18 hours. For example, a UTC offset of -4:00 would be represented as { seconds: -14400 }. */
 		utcOffset?: string | null;
 
-		/** Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year. */
+		/**
+		 * Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations. */
 	export interface GoogleTypeDateTimeFormProperties {
 
-		/** Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day. */
+		/**
+		 * Optional. Day of month. Must be from 1 to 31 and valid for the year and month, or 0 if specifying a datetime without a day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Optional. Hours of day in 24 hour format. Should be from 0 to 23, defaults to 0 (midnight). An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0. */
+		/**
+		 * Optional. Minutes of hour of day. Must be from 0 to 59, defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month. */
+		/**
+		 * Optional. Month of year. Must be from 1 to 12, or 0 if specifying a datetime without a month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0. */
+		/**
+		 * Optional. Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999, defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Optional. Seconds of minutes of the time. Must normally be from 0 to 59, defaults to 0. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 
 		/** UTC offset. Must be whole seconds, between -18 hours and +18 hours. For example, a UTC offset of -4:00 would be represented as { seconds: -14400 }. */
 		utcOffset: FormControl<string | null | undefined>,
 
-		/** Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year. */
+		/**
+		 * Optional. Year of date. Must be from 1 to 9999, or 0 if specifying a datetime without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateTimeFormGroup() {
@@ -2426,7 +2606,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -2439,7 +2622,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -2478,7 +2664,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudDocumentaiV1BoundingPoly;
 
-		/** Optional. Confidence of detected page element, if applicable. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Optional. Deprecated. Use PageRef.bounding_poly instead. */
@@ -2494,7 +2683,10 @@ export namespace MyNS {
 	/** Represents a weak reference to a page element within a document. */
 	export interface GoogleCloudDocumentaiV1DocumentPageAnchorPageRefFormProperties {
 
-		/** Optional. Confidence of detected page element, if applicable. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Optional. Deprecated. Use PageRef.bounding_poly instead. */
@@ -2522,13 +2714,19 @@ export namespace MyNS {
 	/** Structure to identify provenance relationships between annotations in different revisions. */
 	export interface GoogleCloudDocumentaiV1DocumentProvenance {
 
-		/** The Id of this operation. Needs to be unique within the scope of the revision. */
+		/**
+		 * The Id of this operation. Needs to be unique within the scope of the revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** References to the original elements that are replaced. */
 		parents?: Array<GoogleCloudDocumentaiV1DocumentProvenanceParent>;
 
-		/** The index of the revision that produced this element. */
+		/**
+		 * The index of the revision that produced this element.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 
 		/** The type of provenance operation. */
@@ -2538,10 +2736,16 @@ export namespace MyNS {
 	/** Structure to identify provenance relationships between annotations in different revisions. */
 	export interface GoogleCloudDocumentaiV1DocumentProvenanceFormProperties {
 
-		/** The Id of this operation. Needs to be unique within the scope of the revision. */
+		/**
+		 * The Id of this operation. Needs to be unique within the scope of the revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** The index of the revision that produced this element. */
+		/**
+		 * The index of the revision that produced this element.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 
 		/** The type of provenance operation. */
@@ -2560,26 +2764,44 @@ export namespace MyNS {
 	/** The parent element the current element is based on. Used for referencing/aligning, removal and replacement operations. */
 	export interface GoogleCloudDocumentaiV1DocumentProvenanceParent {
 
-		/** The id of the parent provenance. */
+		/**
+		 * The id of the parent provenance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision. */
+		/**
+		 * The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
-		/** The index of the index into current revision's parent_ids list. */
+		/**
+		 * The index of the index into current revision's parent_ids list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 	}
 
 	/** The parent element the current element is based on. Used for referencing/aligning, removal and replacement operations. */
 	export interface GoogleCloudDocumentaiV1DocumentProvenanceParentFormProperties {
 
-		/** The id of the parent provenance. */
+		/**
+		 * The id of the parent provenance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision. */
+		/**
+		 * The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
-		/** The index of the index into current revision's parent_ids list. */
+		/**
+		 * The index of the index into current revision's parent_ids list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1DocumentProvenanceParentFormGroup() {
@@ -2711,7 +2933,10 @@ export namespace MyNS {
 		/** A list of visually detected text lines on the page. A collection of tokens that a human would perceive as a line. */
 		lines?: Array<GoogleCloudDocumentaiV1DocumentPageLine>;
 
-		/** 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing. */
+		/**
+		 * 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
 		/** A list of visually detected text paragraphs on the page. A collection of lines that a human would perceive as a paragraph. */
@@ -2739,7 +2964,10 @@ export namespace MyNS {
 	/** A page in a Document. */
 	export interface GoogleCloudDocumentaiV1DocumentPageFormProperties {
 
-		/** 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing. */
+		/**
+		 * 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1DocumentPageFormGroup() {
@@ -2776,7 +3004,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudDocumentaiV1DocumentPageDetectedLanguage {
 
-		/** Confidence of detected language. Range `[0, 1]`. */
+		/**
+		 * Confidence of detected language. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The [BCP-47 language code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier), such as `en-US` or `sr-Latn`. */
@@ -2786,7 +3017,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudDocumentaiV1DocumentPageDetectedLanguageFormProperties {
 
-		/** Confidence of detected language. Range `[0, 1]`. */
+		/**
+		 * Confidence of detected language. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The [BCP-47 language code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier), such as `en-US` or `sr-Latn`. */
@@ -2807,7 +3041,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudDocumentaiV1BoundingPoly;
 
-		/** Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`. */
+		/**
+		 * Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Detected orientation for the Layout. */
@@ -2820,7 +3057,10 @@ export namespace MyNS {
 	/** Visual element describing a layout unit on a page. */
 	export interface GoogleCloudDocumentaiV1DocumentPageLayoutFormProperties {
 
-		/** Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`. */
+		/**
+		 * Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Detected orientation for the Layout. */
@@ -2860,26 +3100,38 @@ export namespace MyNS {
 	/** Dimension for the page. */
 	export interface GoogleCloudDocumentaiV1DocumentPageDimension {
 
-		/** Page height. */
+		/**
+		 * Page height.
+		 * Type: float
+		 */
 		height?: number | null;
 
 		/** Dimension unit. */
 		unit?: string | null;
 
-		/** Page width. */
+		/**
+		 * Page width.
+		 * Type: float
+		 */
 		width?: number | null;
 	}
 
 	/** Dimension for the page. */
 	export interface GoogleCloudDocumentaiV1DocumentPageDimensionFormProperties {
 
-		/** Page height. */
+		/**
+		 * Page height.
+		 * Type: float
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Dimension unit. */
 		unit: FormControl<string | null | undefined>,
 
-		/** Page width. */
+		/**
+		 * Page width.
+		 * Type: float
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1DocumentPageDimensionFormGroup() {
@@ -2948,13 +3200,19 @@ export namespace MyNS {
 		/** Raw byte content of the image. */
 		content?: string | null;
 
-		/** Height of the image in pixels. */
+		/**
+		 * Height of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Encoding [media type (MIME type)](https://www.iana.org/assignments/media-types/media-types.xhtml) for the image. */
 		mimeType?: string | null;
 
-		/** Width of the image in pixels. */
+		/**
+		 * Width of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -2964,13 +3222,19 @@ export namespace MyNS {
 		/** Raw byte content of the image. */
 		content: FormControl<string | null | undefined>,
 
-		/** Height of the image in pixels. */
+		/**
+		 * Height of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Encoding [media type (MIME type)](https://www.iana.org/assignments/media-types/media-types.xhtml) for the image. */
 		mimeType: FormControl<string | null | undefined>,
 
-		/** Width of the image in pixels. */
+		/**
+		 * Width of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1DocumentPageImageFormGroup() {
@@ -2990,14 +3254,20 @@ export namespace MyNS {
 		/** A list of detected defects. */
 		detectedDefects?: Array<GoogleCloudDocumentaiV1DocumentPageImageQualityScoresDetectedDefect>;
 
-		/** The overall quality score. Range `[0, 1]` where `1` is perfect quality. */
+		/**
+		 * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
+		 * Type: float
+		 */
 		qualityScore?: number | null;
 	}
 
 	/** Image quality scores for the page image. */
 	export interface GoogleCloudDocumentaiV1DocumentPageImageQualityScoresFormProperties {
 
-		/** The overall quality score. Range `[0, 1]` where `1` is perfect quality. */
+		/**
+		 * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
+		 * Type: float
+		 */
 		qualityScore: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1DocumentPageImageQualityScoresFormGroup() {
@@ -3011,7 +3281,10 @@ export namespace MyNS {
 	/** Image Quality Defects */
 	export interface GoogleCloudDocumentaiV1DocumentPageImageQualityScoresDetectedDefect {
 
-		/** Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists. */
+		/**
+		 * Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare` */
@@ -3021,7 +3294,10 @@ export namespace MyNS {
 	/** Image Quality Defects */
 	export interface GoogleCloudDocumentaiV1DocumentPageImageQualityScoresDetectedDefectFormProperties {
 
-		/** Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists. */
+		/**
+		 * Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare` */
@@ -3151,7 +3427,10 @@ export namespace MyNS {
 	/** A cell representation inside the table. */
 	export interface GoogleCloudDocumentaiV1DocumentPageTableTableCell {
 
-		/** How many columns this cell spans. */
+		/**
+		 * How many columns this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		colSpan?: number | null;
 
 		/** A list of detected languages together with confidence. */
@@ -3160,17 +3439,26 @@ export namespace MyNS {
 		/** Visual element describing a layout unit on a page. */
 		layout?: GoogleCloudDocumentaiV1DocumentPageLayout;
 
-		/** How many rows this cell spans. */
+		/**
+		 * How many rows this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan?: number | null;
 	}
 
 	/** A cell representation inside the table. */
 	export interface GoogleCloudDocumentaiV1DocumentPageTableTableCellFormProperties {
 
-		/** How many columns this cell spans. */
+		/**
+		 * How many columns this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		colSpan: FormControl<number | null | undefined>,
 
-		/** How many rows this cell spans. */
+		/**
+		 * How many rows this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1DocumentPageTableTableCellFormGroup() {
@@ -3243,13 +3531,19 @@ export namespace MyNS {
 		/** Whether the text is bold (equivalent to font_weight is at least `700`). */
 		bold?: boolean | null;
 
-		/** Font size in points (`1` point is `¹⁄₇₂` inches). */
+		/**
+		 * Font size in points (`1` point is `¹⁄₇₂` inches).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontSize?: number | null;
 
 		/** Name or style of the font. */
 		fontType?: string | null;
 
-		/** TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`. */
+		/**
+		 * TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontWeight?: number | null;
 
 		/** Whether the text is handwritten. */
@@ -3258,10 +3552,16 @@ export namespace MyNS {
 		/** Whether the text is italic. */
 		italic?: boolean | null;
 
-		/** Letter spacing in points. */
+		/**
+		 * Letter spacing in points.
+		 * Type: double
+		 */
 		letterSpacing?: number | null;
 
-		/** Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`. */
+		/**
+		 * Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`.
+		 * Type: double
+		 */
 		pixelFontSize?: number | null;
 
 		/** Whether the text is in small caps. */
@@ -3289,13 +3589,19 @@ export namespace MyNS {
 		/** Whether the text is bold (equivalent to font_weight is at least `700`). */
 		bold: FormControl<boolean | null | undefined>,
 
-		/** Font size in points (`1` point is `¹⁄₇₂` inches). */
+		/**
+		 * Font size in points (`1` point is `¹⁄₇₂` inches).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontSize: FormControl<number | null | undefined>,
 
 		/** Name or style of the font. */
 		fontType: FormControl<string | null | undefined>,
 
-		/** TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`. */
+		/**
+		 * TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontWeight: FormControl<number | null | undefined>,
 
 		/** Whether the text is handwritten. */
@@ -3304,10 +3610,16 @@ export namespace MyNS {
 		/** Whether the text is italic. */
 		italic: FormControl<boolean | null | undefined>,
 
-		/** Letter spacing in points. */
+		/**
+		 * Letter spacing in points.
+		 * Type: double
+		 */
 		letterSpacing: FormControl<number | null | undefined>,
 
-		/** Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`. */
+		/**
+		 * Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`.
+		 * Type: double
+		 */
 		pixelFontSize: FormControl<number | null | undefined>,
 
 		/** Whether the text is in small caps. */
@@ -3348,32 +3660,56 @@ export namespace MyNS {
 	/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 	export interface GoogleTypeColor {
 
-		/** The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0). */
+		/**
+		 * The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).
+		 * Type: float
+		 */
 		alpha?: number | null;
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue?: number | null;
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green?: number | null;
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red?: number | null;
 	}
 
 	/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 	export interface GoogleTypeColorFormProperties {
 
-		/** The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0). */
+		/**
+		 * The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).
+		 * Type: float
+		 */
 		alpha: FormControl<number | null | undefined>,
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue: FormControl<number | null | undefined>,
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green: FormControl<number | null | undefined>,
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeColorFormGroup() {
@@ -3390,32 +3726,50 @@ export namespace MyNS {
 	/** Representation for transformation matrix, intended to be compatible and used with OpenCV format for image manipulation. */
 	export interface GoogleCloudDocumentaiV1DocumentPageMatrix {
 
-		/** Number of columns in the matrix. */
+		/**
+		 * Number of columns in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cols?: number | null;
 
 		/** The matrix data. */
 		data?: string | null;
 
-		/** Number of rows in the matrix. */
+		/**
+		 * Number of rows in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows?: number | null;
 
-		/** This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html */
+		/**
+		 * This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		type?: number | null;
 	}
 
 	/** Representation for transformation matrix, intended to be compatible and used with OpenCV format for image manipulation. */
 	export interface GoogleCloudDocumentaiV1DocumentPageMatrixFormProperties {
 
-		/** Number of columns in the matrix. */
+		/**
+		 * Number of columns in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cols: FormControl<number | null | undefined>,
 
 		/** The matrix data. */
 		data: FormControl<string | null | undefined>,
 
-		/** Number of rows in the matrix. */
+		/**
+		 * Number of rows in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows: FormControl<number | null | undefined>,
 
-		/** This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html */
+		/**
+		 * This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		type: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1DocumentPageMatrixFormGroup() {
@@ -3654,7 +4008,10 @@ export namespace MyNS {
 	/** Font size with unit. */
 	export interface GoogleCloudDocumentaiV1DocumentStyleFontSize {
 
-		/** Font size for the text. */
+		/**
+		 * Font size for the text.
+		 * Type: float
+		 */
 		size?: number | null;
 
 		/** Unit for the font size. Follows CSS naming (such as `in`, `px`, and `pt`). */
@@ -3664,7 +4021,10 @@ export namespace MyNS {
 	/** Font size with unit. */
 	export interface GoogleCloudDocumentaiV1DocumentStyleFontSizeFormProperties {
 
-		/** Font size for the text. */
+		/**
+		 * Font size for the text.
+		 * Type: float
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Unit for the font size. Follows CSS naming (such as `in`, `px`, and `pt`). */
@@ -4004,10 +4364,16 @@ export namespace MyNS {
 	/** Metrics across multiple confidence levels. */
 	export interface GoogleCloudDocumentaiV1EvaluationMultiConfidenceMetrics {
 
-		/** The calculated area under the precision recall curve (AUPRC), computed by integrating over all confidence thresholds. */
+		/**
+		 * The calculated area under the precision recall curve (AUPRC), computed by integrating over all confidence thresholds.
+		 * Type: float
+		 */
 		auprc?: number | null;
 
-		/** The AUPRC for metrics with fuzzy matching disabled, i.e., exact matching only. */
+		/**
+		 * The AUPRC for metrics with fuzzy matching disabled, i.e., exact matching only.
+		 * Type: float
+		 */
 		auprcExact?: number | null;
 
 		/** Metrics across confidence levels with fuzzy matching enabled. */
@@ -4016,10 +4382,16 @@ export namespace MyNS {
 		/** Metrics across confidence levels with only exact matching. */
 		confidenceLevelMetricsExact?: Array<GoogleCloudDocumentaiV1EvaluationConfidenceLevelMetrics>;
 
-		/** The Estimated Calibration Error (ECE) of the confidence of the predicted entities. */
+		/**
+		 * The Estimated Calibration Error (ECE) of the confidence of the predicted entities.
+		 * Type: float
+		 */
 		estimatedCalibrationError?: number | null;
 
-		/** The ECE for the predicted entities with fuzzy matching disabled, i.e., exact matching only. */
+		/**
+		 * The ECE for the predicted entities with fuzzy matching disabled, i.e., exact matching only.
+		 * Type: float
+		 */
 		estimatedCalibrationErrorExact?: number | null;
 
 		/** The metrics type for the label. */
@@ -4029,16 +4401,28 @@ export namespace MyNS {
 	/** Metrics across multiple confidence levels. */
 	export interface GoogleCloudDocumentaiV1EvaluationMultiConfidenceMetricsFormProperties {
 
-		/** The calculated area under the precision recall curve (AUPRC), computed by integrating over all confidence thresholds. */
+		/**
+		 * The calculated area under the precision recall curve (AUPRC), computed by integrating over all confidence thresholds.
+		 * Type: float
+		 */
 		auprc: FormControl<number | null | undefined>,
 
-		/** The AUPRC for metrics with fuzzy matching disabled, i.e., exact matching only. */
+		/**
+		 * The AUPRC for metrics with fuzzy matching disabled, i.e., exact matching only.
+		 * Type: float
+		 */
 		auprcExact: FormControl<number | null | undefined>,
 
-		/** The Estimated Calibration Error (ECE) of the confidence of the predicted entities. */
+		/**
+		 * The Estimated Calibration Error (ECE) of the confidence of the predicted entities.
+		 * Type: float
+		 */
 		estimatedCalibrationError: FormControl<number | null | undefined>,
 
-		/** The ECE for the predicted entities with fuzzy matching disabled, i.e., exact matching only. */
+		/**
+		 * The ECE for the predicted entities with fuzzy matching disabled, i.e., exact matching only.
+		 * Type: float
+		 */
 		estimatedCalibrationErrorExact: FormControl<number | null | undefined>,
 
 		/** The metrics type for the label. */
@@ -4059,7 +4443,10 @@ export namespace MyNS {
 	/** Evaluations metrics, at a specific confidence level. */
 	export interface GoogleCloudDocumentaiV1EvaluationConfidenceLevelMetrics {
 
-		/** The confidence level. */
+		/**
+		 * The confidence level.
+		 * Type: float
+		 */
 		confidenceLevel?: number | null;
 
 		/** Evaluation metrics, either in aggregate or about a specific entity. */
@@ -4069,7 +4456,10 @@ export namespace MyNS {
 	/** Evaluations metrics, at a specific confidence level. */
 	export interface GoogleCloudDocumentaiV1EvaluationConfidenceLevelMetricsFormProperties {
 
-		/** The confidence level. */
+		/**
+		 * The confidence level.
+		 * Type: float
+		 */
 		confidenceLevel: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1EvaluationConfidenceLevelMetricsFormGroup() {
@@ -4083,74 +4473,140 @@ export namespace MyNS {
 	/** Evaluation metrics, either in aggregate or about a specific entity. */
 	export interface GoogleCloudDocumentaiV1EvaluationMetrics {
 
-		/** The calculated f1 score. */
+		/**
+		 * The calculated f1 score.
+		 * Type: float
+		 */
 		f1Score?: number | null;
 
-		/** The amount of false negatives. */
+		/**
+		 * The amount of false negatives.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		falseNegativesCount?: number | null;
 
-		/** The amount of false positives. */
+		/**
+		 * The amount of false positives.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		falsePositivesCount?: number | null;
 
-		/** The amount of documents with a ground truth occurrence. */
+		/**
+		 * The amount of documents with a ground truth occurrence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groundTruthDocumentCount?: number | null;
 
-		/** The amount of occurrences in ground truth documents. */
+		/**
+		 * The amount of occurrences in ground truth documents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groundTruthOccurrencesCount?: number | null;
 
-		/** The calculated precision. */
+		/**
+		 * The calculated precision.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** The amount of documents with a predicted occurrence. */
+		/**
+		 * The amount of documents with a predicted occurrence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		predictedDocumentCount?: number | null;
 
-		/** The amount of occurrences in predicted documents. */
+		/**
+		 * The amount of occurrences in predicted documents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		predictedOccurrencesCount?: number | null;
 
-		/** The calculated recall. */
+		/**
+		 * The calculated recall.
+		 * Type: float
+		 */
 		recall?: number | null;
 
-		/** The amount of documents that had an occurrence of this label. */
+		/**
+		 * The amount of documents that had an occurrence of this label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentsCount?: number | null;
 
-		/** The amount of true positives. */
+		/**
+		 * The amount of true positives.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		truePositivesCount?: number | null;
 	}
 
 	/** Evaluation metrics, either in aggregate or about a specific entity. */
 	export interface GoogleCloudDocumentaiV1EvaluationMetricsFormProperties {
 
-		/** The calculated f1 score. */
+		/**
+		 * The calculated f1 score.
+		 * Type: float
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** The amount of false negatives. */
+		/**
+		 * The amount of false negatives.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		falseNegativesCount: FormControl<number | null | undefined>,
 
-		/** The amount of false positives. */
+		/**
+		 * The amount of false positives.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		falsePositivesCount: FormControl<number | null | undefined>,
 
-		/** The amount of documents with a ground truth occurrence. */
+		/**
+		 * The amount of documents with a ground truth occurrence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groundTruthDocumentCount: FormControl<number | null | undefined>,
 
-		/** The amount of occurrences in ground truth documents. */
+		/**
+		 * The amount of occurrences in ground truth documents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groundTruthOccurrencesCount: FormControl<number | null | undefined>,
 
-		/** The calculated precision. */
+		/**
+		 * The calculated precision.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** The amount of documents with a predicted occurrence. */
+		/**
+		 * The amount of documents with a predicted occurrence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		predictedDocumentCount: FormControl<number | null | undefined>,
 
-		/** The amount of occurrences in predicted documents. */
+		/**
+		 * The amount of occurrences in predicted documents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		predictedOccurrencesCount: FormControl<number | null | undefined>,
 
-		/** The calculated recall. */
+		/**
+		 * The calculated recall.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 
-		/** The amount of documents that had an occurrence of this label. */
+		/**
+		 * The amount of documents that had an occurrence of this label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentsCount: FormControl<number | null | undefined>,
 
-		/** The amount of true positives. */
+		/**
+		 * The amount of true positives.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		truePositivesCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1EvaluationMetricsFormGroup() {
@@ -4176,32 +4632,56 @@ export namespace MyNS {
 	/** Evaluation counters for the documents that were used. */
 	export interface GoogleCloudDocumentaiV1EvaluationCounters {
 
-		/** How many documents were used in the evaluation. */
+		/**
+		 * How many documents were used in the evaluation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedDocumentsCount?: number | null;
 
-		/** How many documents were not included in the evaluation as Document AI failed to process them. */
+		/**
+		 * How many documents were not included in the evaluation as Document AI failed to process them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedDocumentsCount?: number | null;
 
-		/** How many documents were sent for evaluation. */
+		/**
+		 * How many documents were sent for evaluation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputDocumentsCount?: number | null;
 
-		/** How many documents were not included in the evaluation as they didn't pass validation. */
+		/**
+		 * How many documents were not included in the evaluation as they didn't pass validation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		invalidDocumentsCount?: number | null;
 	}
 
 	/** Evaluation counters for the documents that were used. */
 	export interface GoogleCloudDocumentaiV1EvaluationCountersFormProperties {
 
-		/** How many documents were used in the evaluation. */
+		/**
+		 * How many documents were used in the evaluation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedDocumentsCount: FormControl<number | null | undefined>,
 
-		/** How many documents were not included in the evaluation as Document AI failed to process them. */
+		/**
+		 * How many documents were not included in the evaluation as Document AI failed to process them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failedDocumentsCount: FormControl<number | null | undefined>,
 
-		/** How many documents were sent for evaluation. */
+		/**
+		 * How many documents were sent for evaluation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputDocumentsCount: FormControl<number | null | undefined>,
 
-		/** How many documents were not included in the evaluation as they didn't pass validation. */
+		/**
+		 * How many documents were not included in the evaluation as they didn't pass validation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		invalidDocumentsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1EvaluationCountersFormGroup() {
@@ -4915,13 +5395,19 @@ export namespace MyNS {
 	/** The dataset validation information. This includes any and all errors with documents and the dataset. */
 	export interface GoogleCloudDocumentaiV1TrainProcessorVersionMetadataDatasetValidation {
 
-		/** The total number of dataset errors. */
+		/**
+		 * The total number of dataset errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		datasetErrorCount?: number | null;
 
 		/** Error information for the dataset as a whole. A maximum of 10 dataset errors will be returned. A single dataset error is terminal for training. */
 		datasetErrors?: Array<GoogleRpcStatus>;
 
-		/** The total number of document errors. */
+		/**
+		 * The total number of document errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		documentErrorCount?: number | null;
 
 		/** Error information pertaining to specific documents. A maximum of 10 document errors will be returned. Any document with errors will not be used throughout training. */
@@ -4931,10 +5417,16 @@ export namespace MyNS {
 	/** The dataset validation information. This includes any and all errors with documents and the dataset. */
 	export interface GoogleCloudDocumentaiV1TrainProcessorVersionMetadataDatasetValidationFormProperties {
 
-		/** The total number of dataset errors. */
+		/**
+		 * The total number of dataset errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		datasetErrorCount: FormControl<number | null | undefined>,
 
-		/** The total number of document errors. */
+		/**
+		 * The total number of document errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		documentErrorCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1TrainProcessorVersionMetadataDatasetValidationFormGroup() {
@@ -5207,14 +5699,20 @@ export namespace MyNS {
 		/** The Google Cloud Storage location where the output file will be written to. */
 		gcsDestination?: GoogleCloudDocumentaiV1beta1GcsDestination;
 
-		/** The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json */
+		/**
+		 * The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagesPerShard?: number | null;
 	}
 
 	/** The desired output location and metadata. */
 	export interface GoogleCloudDocumentaiV1beta1OutputConfigFormProperties {
 
-		/** The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json */
+		/**
+		 * The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagesPerShard: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta1OutputConfigFormGroup() {
@@ -5265,20 +5763,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudDocumentaiV1beta1NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudDocumentaiV1beta1NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta1NormalizedVertexFormGroup() {
@@ -5293,20 +5803,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudDocumentaiV1beta1Vertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudDocumentaiV1beta1VertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta1VertexFormGroup() {
@@ -5387,7 +5909,10 @@ export namespace MyNS {
 	/** An entity that could be a phrase in the text or a property that belongs to the document. It is a known entity type, such as a person, an organization, or location. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentEntity {
 
-		/** Optional. Confidence of detected Schema entity. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Optional. Canonical id. This will be a unique value in the entity list for this document. */
@@ -5424,7 +5949,10 @@ export namespace MyNS {
 	/** An entity that could be a phrase in the text or a property that belongs to the document. It is a known entity type, such as a person, an organization, or location. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentEntityFormProperties {
 
-		/** Optional. Confidence of detected Schema entity. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Optional. Canonical id. This will be a unique value in the entity list for this document. */
@@ -5470,10 +5998,16 @@ export namespace MyNS {
 		/** Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations. */
 		datetimeValue?: GoogleTypeDateTime;
 
-		/** Float value. */
+		/**
+		 * Float value.
+		 * Type: float
+		 */
 		floatValue?: number | null;
 
-		/** Integer value. */
+		/**
+		 * Integer value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		integerValue?: number | null;
 
 		/** Represents an amount of money with its currency type. */
@@ -5489,10 +6023,16 @@ export namespace MyNS {
 		/** Boolean value. Can be used for entities with binary values, or for checkboxes. */
 		booleanValue: FormControl<boolean | null | undefined>,
 
-		/** Float value. */
+		/**
+		 * Float value.
+		 * Type: float
+		 */
 		floatValue: FormControl<number | null | undefined>,
 
-		/** Integer value. */
+		/**
+		 * Integer value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		integerValue: FormControl<number | null | undefined>,
 
 		/** Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate `float` or `integer` normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format. */
@@ -5532,7 +6072,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudDocumentaiV1beta1BoundingPoly;
 
-		/** Optional. Confidence of detected page element, if applicable. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Optional. Deprecated. Use PageRef.bounding_poly instead. */
@@ -5548,7 +6091,10 @@ export namespace MyNS {
 	/** Represents a weak reference to a page element within a document. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageAnchorPageRefFormProperties {
 
-		/** Optional. Confidence of detected page element, if applicable. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Optional. Deprecated. Use PageRef.bounding_poly instead. */
@@ -5574,13 +6120,19 @@ export namespace MyNS {
 	/** Structure to identify provenance relationships between annotations in different revisions. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentProvenance {
 
-		/** The Id of this operation. Needs to be unique within the scope of the revision. */
+		/**
+		 * The Id of this operation. Needs to be unique within the scope of the revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** References to the original elements that are replaced. */
 		parents?: Array<GoogleCloudDocumentaiV1beta1DocumentProvenanceParent>;
 
-		/** The index of the revision that produced this element. */
+		/**
+		 * The index of the revision that produced this element.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 
 		/** The type of provenance operation. */
@@ -5590,10 +6142,16 @@ export namespace MyNS {
 	/** Structure to identify provenance relationships between annotations in different revisions. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentProvenanceFormProperties {
 
-		/** The Id of this operation. Needs to be unique within the scope of the revision. */
+		/**
+		 * The Id of this operation. Needs to be unique within the scope of the revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** The index of the revision that produced this element. */
+		/**
+		 * The index of the revision that produced this element.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 
 		/** The type of provenance operation. */
@@ -5612,26 +6170,44 @@ export namespace MyNS {
 	/** The parent element the current element is based on. Used for referencing/aligning, removal and replacement operations. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentProvenanceParent {
 
-		/** The id of the parent provenance. */
+		/**
+		 * The id of the parent provenance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision. */
+		/**
+		 * The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
-		/** The index of the index into current revision's parent_ids list. */
+		/**
+		 * The index of the index into current revision's parent_ids list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 	}
 
 	/** The parent element the current element is based on. Used for referencing/aligning, removal and replacement operations. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentProvenanceParentFormProperties {
 
-		/** The id of the parent provenance. */
+		/**
+		 * The id of the parent provenance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision. */
+		/**
+		 * The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
-		/** The index of the index into current revision's parent_ids list. */
+		/**
+		 * The index of the index into current revision's parent_ids list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta1DocumentProvenanceParentFormGroup() {
@@ -5761,7 +6337,10 @@ export namespace MyNS {
 		/** A list of visually detected text lines on the page. A collection of tokens that a human would perceive as a line. */
 		lines?: Array<GoogleCloudDocumentaiV1beta1DocumentPageLine>;
 
-		/** 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing. */
+		/**
+		 * 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
 		/** A list of visually detected text paragraphs on the page. A collection of lines that a human would perceive as a paragraph. */
@@ -5789,7 +6368,10 @@ export namespace MyNS {
 	/** A page in a Document. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageFormProperties {
 
-		/** 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing. */
+		/**
+		 * 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta1DocumentPageFormGroup() {
@@ -5826,7 +6408,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageDetectedLanguage {
 
-		/** Confidence of detected language. Range `[0, 1]`. */
+		/**
+		 * Confidence of detected language. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The [BCP-47 language code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier), such as `en-US` or `sr-Latn`. */
@@ -5836,7 +6421,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageDetectedLanguageFormProperties {
 
-		/** Confidence of detected language. Range `[0, 1]`. */
+		/**
+		 * Confidence of detected language. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The [BCP-47 language code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier), such as `en-US` or `sr-Latn`. */
@@ -5857,7 +6445,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudDocumentaiV1beta1BoundingPoly;
 
-		/** Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`. */
+		/**
+		 * Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Detected orientation for the Layout. */
@@ -5870,7 +6461,10 @@ export namespace MyNS {
 	/** Visual element describing a layout unit on a page. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageLayoutFormProperties {
 
-		/** Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`. */
+		/**
+		 * Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Detected orientation for the Layout. */
@@ -5908,26 +6502,38 @@ export namespace MyNS {
 	/** Dimension for the page. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageDimension {
 
-		/** Page height. */
+		/**
+		 * Page height.
+		 * Type: float
+		 */
 		height?: number | null;
 
 		/** Dimension unit. */
 		unit?: string | null;
 
-		/** Page width. */
+		/**
+		 * Page width.
+		 * Type: float
+		 */
 		width?: number | null;
 	}
 
 	/** Dimension for the page. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageDimensionFormProperties {
 
-		/** Page height. */
+		/**
+		 * Page height.
+		 * Type: float
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Dimension unit. */
 		unit: FormControl<string | null | undefined>,
 
-		/** Page width. */
+		/**
+		 * Page width.
+		 * Type: float
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta1DocumentPageDimensionFormGroup() {
@@ -5996,13 +6602,19 @@ export namespace MyNS {
 		/** Raw byte content of the image. */
 		content?: string | null;
 
-		/** Height of the image in pixels. */
+		/**
+		 * Height of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Encoding [media type (MIME type)](https://www.iana.org/assignments/media-types/media-types.xhtml) for the image. */
 		mimeType?: string | null;
 
-		/** Width of the image in pixels. */
+		/**
+		 * Width of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -6012,13 +6624,19 @@ export namespace MyNS {
 		/** Raw byte content of the image. */
 		content: FormControl<string | null | undefined>,
 
-		/** Height of the image in pixels. */
+		/**
+		 * Height of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Encoding [media type (MIME type)](https://www.iana.org/assignments/media-types/media-types.xhtml) for the image. */
 		mimeType: FormControl<string | null | undefined>,
 
-		/** Width of the image in pixels. */
+		/**
+		 * Width of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta1DocumentPageImageFormGroup() {
@@ -6038,14 +6656,20 @@ export namespace MyNS {
 		/** A list of detected defects. */
 		detectedDefects?: Array<GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScoresDetectedDefect>;
 
-		/** The overall quality score. Range `[0, 1]` where `1` is perfect quality. */
+		/**
+		 * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
+		 * Type: float
+		 */
 		qualityScore?: number | null;
 	}
 
 	/** Image quality scores for the page image. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScoresFormProperties {
 
-		/** The overall quality score. Range `[0, 1]` where `1` is perfect quality. */
+		/**
+		 * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
+		 * Type: float
+		 */
 		qualityScore: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta1DocumentPageImageQualityScoresFormGroup() {
@@ -6059,7 +6683,10 @@ export namespace MyNS {
 	/** Image Quality Defects */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScoresDetectedDefect {
 
-		/** Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists. */
+		/**
+		 * Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare` */
@@ -6069,7 +6696,10 @@ export namespace MyNS {
 	/** Image Quality Defects */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageImageQualityScoresDetectedDefectFormProperties {
 
-		/** Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists. */
+		/**
+		 * Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare` */
@@ -6199,7 +6829,10 @@ export namespace MyNS {
 	/** A cell representation inside the table. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageTableTableCell {
 
-		/** How many columns this cell spans. */
+		/**
+		 * How many columns this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		colSpan?: number | null;
 
 		/** A list of detected languages together with confidence. */
@@ -6208,17 +6841,26 @@ export namespace MyNS {
 		/** Visual element describing a layout unit on a page. */
 		layout?: GoogleCloudDocumentaiV1beta1DocumentPageLayout;
 
-		/** How many rows this cell spans. */
+		/**
+		 * How many rows this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan?: number | null;
 	}
 
 	/** A cell representation inside the table. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageTableTableCellFormProperties {
 
-		/** How many columns this cell spans. */
+		/**
+		 * How many columns this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		colSpan: FormControl<number | null | undefined>,
 
-		/** How many rows this cell spans. */
+		/**
+		 * How many rows this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta1DocumentPageTableTableCellFormGroup() {
@@ -6289,13 +6931,19 @@ export namespace MyNS {
 		/** Whether the text is bold (equivalent to font_weight is at least `700`). */
 		bold?: boolean | null;
 
-		/** Font size in points (`1` point is `¹⁄₇₂` inches). */
+		/**
+		 * Font size in points (`1` point is `¹⁄₇₂` inches).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontSize?: number | null;
 
 		/** Name or style of the font. */
 		fontType?: string | null;
 
-		/** TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`. */
+		/**
+		 * TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontWeight?: number | null;
 
 		/** Whether the text is handwritten. */
@@ -6304,10 +6952,16 @@ export namespace MyNS {
 		/** Whether the text is italic. */
 		italic?: boolean | null;
 
-		/** Letter spacing in points. */
+		/**
+		 * Letter spacing in points.
+		 * Type: double
+		 */
 		letterSpacing?: number | null;
 
-		/** Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`. */
+		/**
+		 * Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`.
+		 * Type: double
+		 */
 		pixelFontSize?: number | null;
 
 		/** Whether the text is in small caps. */
@@ -6335,13 +6989,19 @@ export namespace MyNS {
 		/** Whether the text is bold (equivalent to font_weight is at least `700`). */
 		bold: FormControl<boolean | null | undefined>,
 
-		/** Font size in points (`1` point is `¹⁄₇₂` inches). */
+		/**
+		 * Font size in points (`1` point is `¹⁄₇₂` inches).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontSize: FormControl<number | null | undefined>,
 
 		/** Name or style of the font. */
 		fontType: FormControl<string | null | undefined>,
 
-		/** TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`. */
+		/**
+		 * TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontWeight: FormControl<number | null | undefined>,
 
 		/** Whether the text is handwritten. */
@@ -6350,10 +7010,16 @@ export namespace MyNS {
 		/** Whether the text is italic. */
 		italic: FormControl<boolean | null | undefined>,
 
-		/** Letter spacing in points. */
+		/**
+		 * Letter spacing in points.
+		 * Type: double
+		 */
 		letterSpacing: FormControl<number | null | undefined>,
 
-		/** Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`. */
+		/**
+		 * Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`.
+		 * Type: double
+		 */
 		pixelFontSize: FormControl<number | null | undefined>,
 
 		/** Whether the text is in small caps. */
@@ -6394,32 +7060,50 @@ export namespace MyNS {
 	/** Representation for transformation matrix, intended to be compatible and used with OpenCV format for image manipulation. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageMatrix {
 
-		/** Number of columns in the matrix. */
+		/**
+		 * Number of columns in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cols?: number | null;
 
 		/** The matrix data. */
 		data?: string | null;
 
-		/** Number of rows in the matrix. */
+		/**
+		 * Number of rows in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows?: number | null;
 
-		/** This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html */
+		/**
+		 * This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		type?: number | null;
 	}
 
 	/** Representation for transformation matrix, intended to be compatible and used with OpenCV format for image manipulation. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentPageMatrixFormProperties {
 
-		/** Number of columns in the matrix. */
+		/**
+		 * Number of columns in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cols: FormControl<number | null | undefined>,
 
 		/** The matrix data. */
 		data: FormControl<string | null | undefined>,
 
-		/** Number of rows in the matrix. */
+		/**
+		 * Number of rows in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows: FormControl<number | null | undefined>,
 
-		/** This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html */
+		/**
+		 * This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		type: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta1DocumentPageMatrixFormGroup() {
@@ -6658,7 +7342,10 @@ export namespace MyNS {
 	/** Font size with unit. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentStyleFontSize {
 
-		/** Font size for the text. */
+		/**
+		 * Font size for the text.
+		 * Type: float
+		 */
 		size?: number | null;
 
 		/** Unit for the font size. Follows CSS naming (such as `in`, `px`, and `pt`). */
@@ -6668,7 +7355,10 @@ export namespace MyNS {
 	/** Font size with unit. */
 	export interface GoogleCloudDocumentaiV1beta1DocumentStyleFontSizeFormProperties {
 
-		/** Font size for the text. */
+		/**
+		 * Font size for the text.
+		 * Type: float
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Unit for the font size. Follows CSS naming (such as `in`, `px`, and `pt`). */
@@ -6853,14 +7543,20 @@ export namespace MyNS {
 		/** The Google Cloud Storage location where the output file will be written to. */
 		gcsDestination?: GoogleCloudDocumentaiV1beta2GcsDestination;
 
-		/** The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json */
+		/**
+		 * The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagesPerShard?: number | null;
 	}
 
 	/** The desired output location and metadata. */
 	export interface GoogleCloudDocumentaiV1beta2OutputConfigFormProperties {
 
-		/** The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json */
+		/**
+		 * The max number of pages to include into each output Document shard JSON on Google Cloud Storage. The valid range is [1, 100]. If not specified, the default value is 20. For example, for one pdf file with 100 pages, 100 parsed pages will be produced. If `pages_per_shard` = 20, then 5 Document shard JSON files each containing 20 parsed pages will be written under the prefix OutputConfig.gcs_destination.uri and suffix pages-x-to-y.json where x and y are 1-indexed page numbers. Example GCS outputs with 157 pages and pages_per_shard = 50: pages-001-to-050.json pages-051-to-100.json pages-101-to-150.json pages-151-to-157.json
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagesPerShard: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta2OutputConfigFormGroup() {
@@ -6911,20 +7607,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudDocumentaiV1beta2NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudDocumentaiV1beta2NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta2NormalizedVertexFormGroup() {
@@ -6939,20 +7647,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudDocumentaiV1beta2Vertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudDocumentaiV1beta2VertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate (starts from the top of the image). */
+		/**
+		 * Y coordinate (starts from the top of the image).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta2VertexFormGroup() {
@@ -7036,7 +7756,10 @@ export namespace MyNS {
 	/** An entity that could be a phrase in the text or a property that belongs to the document. It is a known entity type, such as a person, an organization, or location. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentEntity {
 
-		/** Optional. Confidence of detected Schema entity. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Optional. Canonical id. This will be a unique value in the entity list for this document. */
@@ -7073,7 +7796,10 @@ export namespace MyNS {
 	/** An entity that could be a phrase in the text or a property that belongs to the document. It is a known entity type, such as a person, an organization, or location. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentEntityFormProperties {
 
-		/** Optional. Confidence of detected Schema entity. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected Schema entity. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Optional. Canonical id. This will be a unique value in the entity list for this document. */
@@ -7119,10 +7845,16 @@ export namespace MyNS {
 		/** Represents civil time (or occasionally physical time). This type can represent a civil time in one of a few possible ways: * When utc_offset is set and time_zone is unset: a civil time on a calendar day with a particular offset from UTC. * When time_zone is set and utc_offset is unset: a civil time on a calendar day in a particular time zone. * When neither time_zone nor utc_offset is set: a civil time on a calendar day in local time. The date is relative to the Proleptic Gregorian Calendar. If year, month, or day are 0, the DateTime is considered not to have a specific year, month, or day respectively. This type may also be used to represent a physical time if all the date and time fields are set and either case of the `time_offset` oneof is set. Consider using `Timestamp` message for physical time instead. If your use case also would like to store the user's timezone, that can be done in another field. This type is more flexible than some applications may want. Make sure to document and validate your application's limitations. */
 		datetimeValue?: GoogleTypeDateTime;
 
-		/** Float value. */
+		/**
+		 * Float value.
+		 * Type: float
+		 */
 		floatValue?: number | null;
 
-		/** Integer value. */
+		/**
+		 * Integer value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		integerValue?: number | null;
 
 		/** Represents an amount of money with its currency type. */
@@ -7138,10 +7870,16 @@ export namespace MyNS {
 		/** Boolean value. Can be used for entities with binary values, or for checkboxes. */
 		booleanValue: FormControl<boolean | null | undefined>,
 
-		/** Float value. */
+		/**
+		 * Float value.
+		 * Type: float
+		 */
 		floatValue: FormControl<number | null | undefined>,
 
-		/** Integer value. */
+		/**
+		 * Integer value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		integerValue: FormControl<number | null | undefined>,
 
 		/** Optional. An optional field to store a normalized string. For some entity types, one of respective `structured_value` fields may also be populated. Also not all the types of `structured_value` will be normalized. For example, some processors may not generate `float` or `integer` normalized text by default. Below are sample formats mapped to structured values. - Money/Currency type (`money_value`) is in the ISO 4217 text format. - Date type (`date_value`) is in the ISO 8601 text format. - Datetime type (`datetime_value`) is in the ISO 8601 text format. */
@@ -7181,7 +7919,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudDocumentaiV1beta2BoundingPoly;
 
-		/** Optional. Confidence of detected page element, if applicable. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Optional. Deprecated. Use PageRef.bounding_poly instead. */
@@ -7197,7 +7938,10 @@ export namespace MyNS {
 	/** Represents a weak reference to a page element within a document. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageAnchorPageRefFormProperties {
 
-		/** Optional. Confidence of detected page element, if applicable. Range `[0, 1]`. */
+		/**
+		 * Optional. Confidence of detected page element, if applicable. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Optional. Deprecated. Use PageRef.bounding_poly instead. */
@@ -7223,13 +7967,19 @@ export namespace MyNS {
 	/** Structure to identify provenance relationships between annotations in different revisions. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentProvenance {
 
-		/** The Id of this operation. Needs to be unique within the scope of the revision. */
+		/**
+		 * The Id of this operation. Needs to be unique within the scope of the revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** References to the original elements that are replaced. */
 		parents?: Array<GoogleCloudDocumentaiV1beta2DocumentProvenanceParent>;
 
-		/** The index of the revision that produced this element. */
+		/**
+		 * The index of the revision that produced this element.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 
 		/** The type of provenance operation. */
@@ -7239,10 +7989,16 @@ export namespace MyNS {
 	/** Structure to identify provenance relationships between annotations in different revisions. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentProvenanceFormProperties {
 
-		/** The Id of this operation. Needs to be unique within the scope of the revision. */
+		/**
+		 * The Id of this operation. Needs to be unique within the scope of the revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** The index of the revision that produced this element. */
+		/**
+		 * The index of the revision that produced this element.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 
 		/** The type of provenance operation. */
@@ -7261,26 +8017,44 @@ export namespace MyNS {
 	/** The parent element the current element is based on. Used for referencing/aligning, removal and replacement operations. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentProvenanceParent {
 
-		/** The id of the parent provenance. */
+		/**
+		 * The id of the parent provenance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision. */
+		/**
+		 * The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
-		/** The index of the index into current revision's parent_ids list. */
+		/**
+		 * The index of the index into current revision's parent_ids list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision?: number | null;
 	}
 
 	/** The parent element the current element is based on. Used for referencing/aligning, removal and replacement operations. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentProvenanceParentFormProperties {
 
-		/** The id of the parent provenance. */
+		/**
+		 * The id of the parent provenance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision. */
+		/**
+		 * The index of the parent item in the corresponding item list (eg. list of entities, properties within entities, etc.) in the parent revision.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
-		/** The index of the index into current revision's parent_ids list. */
+		/**
+		 * The index of the index into current revision's parent_ids list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revision: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta2DocumentProvenanceParentFormGroup() {
@@ -7386,7 +8160,10 @@ export namespace MyNS {
 		/** Label is generated AutoML model. This field stores the full resource name of the AutoML model. Format: `projects/{project-id}/locations/{location-id}/models/{model-id}` */
 		automlModel?: string | null;
 
-		/** Confidence score between 0 and 1 for label assignment. */
+		/**
+		 * Confidence score between 0 and 1 for label assignment.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Name of the label. When the label is generated from AutoML Text Classification model, this field represents the name of the category. */
@@ -7399,7 +8176,10 @@ export namespace MyNS {
 		/** Label is generated AutoML model. This field stores the full resource name of the AutoML model. Format: `projects/{project-id}/locations/{location-id}/models/{model-id}` */
 		automlModel: FormControl<string | null | undefined>,
 
-		/** Confidence score between 0 and 1 for label assignment. */
+		/**
+		 * Confidence score between 0 and 1 for label assignment.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Name of the label. When the label is generated from AutoML Text Classification model, this field represents the name of the category. */
@@ -7445,7 +8225,10 @@ export namespace MyNS {
 		/** A list of visually detected text lines on the page. A collection of tokens that a human would perceive as a line. */
 		lines?: Array<GoogleCloudDocumentaiV1beta2DocumentPageLine>;
 
-		/** 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing. */
+		/**
+		 * 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
 		/** A list of visually detected text paragraphs on the page. A collection of lines that a human would perceive as a paragraph. */
@@ -7473,7 +8256,10 @@ export namespace MyNS {
 	/** A page in a Document. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageFormProperties {
 
-		/** 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing. */
+		/**
+		 * 1-based index for current Page in a parent Document. Useful when a page is taken out of a Document for individual processing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta2DocumentPageFormGroup() {
@@ -7510,7 +8296,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguage {
 
-		/** Confidence of detected language. Range `[0, 1]`. */
+		/**
+		 * Confidence of detected language. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The [BCP-47 language code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier), such as `en-US` or `sr-Latn`. */
@@ -7520,7 +8309,10 @@ export namespace MyNS {
 	/** Detected language for a structural component. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageDetectedLanguageFormProperties {
 
-		/** Confidence of detected language. Range `[0, 1]`. */
+		/**
+		 * Confidence of detected language. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The [BCP-47 language code](https://www.unicode.org/reports/tr35/#Unicode_locale_identifier), such as `en-US` or `sr-Latn`. */
@@ -7541,7 +8333,10 @@ export namespace MyNS {
 		/** A bounding polygon for the detected image annotation. */
 		boundingPoly?: GoogleCloudDocumentaiV1beta2BoundingPoly;
 
-		/** Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`. */
+		/**
+		 * Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Detected orientation for the Layout. */
@@ -7554,7 +8349,10 @@ export namespace MyNS {
 	/** Visual element describing a layout unit on a page. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageLayoutFormProperties {
 
-		/** Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`. */
+		/**
+		 * Confidence of the current Layout within context of the object this layout is for. e.g. confidence can be for a single token, a table, a visual element, etc. depending on context. Range `[0, 1]`.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Detected orientation for the Layout. */
@@ -7592,26 +8390,38 @@ export namespace MyNS {
 	/** Dimension for the page. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageDimension {
 
-		/** Page height. */
+		/**
+		 * Page height.
+		 * Type: float
+		 */
 		height?: number | null;
 
 		/** Dimension unit. */
 		unit?: string | null;
 
-		/** Page width. */
+		/**
+		 * Page width.
+		 * Type: float
+		 */
 		width?: number | null;
 	}
 
 	/** Dimension for the page. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageDimensionFormProperties {
 
-		/** Page height. */
+		/**
+		 * Page height.
+		 * Type: float
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Dimension unit. */
 		unit: FormControl<string | null | undefined>,
 
-		/** Page width. */
+		/**
+		 * Page width.
+		 * Type: float
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta2DocumentPageDimensionFormGroup() {
@@ -7680,13 +8490,19 @@ export namespace MyNS {
 		/** Raw byte content of the image. */
 		content?: string | null;
 
-		/** Height of the image in pixels. */
+		/**
+		 * Height of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Encoding [media type (MIME type)](https://www.iana.org/assignments/media-types/media-types.xhtml) for the image. */
 		mimeType?: string | null;
 
-		/** Width of the image in pixels. */
+		/**
+		 * Width of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -7696,13 +8512,19 @@ export namespace MyNS {
 		/** Raw byte content of the image. */
 		content: FormControl<string | null | undefined>,
 
-		/** Height of the image in pixels. */
+		/**
+		 * Height of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Encoding [media type (MIME type)](https://www.iana.org/assignments/media-types/media-types.xhtml) for the image. */
 		mimeType: FormControl<string | null | undefined>,
 
-		/** Width of the image in pixels. */
+		/**
+		 * Width of the image in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta2DocumentPageImageFormGroup() {
@@ -7722,14 +8544,20 @@ export namespace MyNS {
 		/** A list of detected defects. */
 		detectedDefects?: Array<GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScoresDetectedDefect>;
 
-		/** The overall quality score. Range `[0, 1]` where `1` is perfect quality. */
+		/**
+		 * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
+		 * Type: float
+		 */
 		qualityScore?: number | null;
 	}
 
 	/** Image quality scores for the page image. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScoresFormProperties {
 
-		/** The overall quality score. Range `[0, 1]` where `1` is perfect quality. */
+		/**
+		 * The overall quality score. Range `[0, 1]` where `1` is perfect quality.
+		 * Type: float
+		 */
 		qualityScore: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta2DocumentPageImageQualityScoresFormGroup() {
@@ -7743,7 +8571,10 @@ export namespace MyNS {
 	/** Image Quality Defects */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScoresDetectedDefect {
 
-		/** Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists. */
+		/**
+		 * Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare` */
@@ -7753,7 +8584,10 @@ export namespace MyNS {
 	/** Image Quality Defects */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageImageQualityScoresDetectedDefectFormProperties {
 
-		/** Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists. */
+		/**
+		 * Confidence of detected defect. Range `[0, 1]` where `1` indicates strong confidence that the defect exists.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Name of the defect type. Supported values are: - `quality/defect_blurry` - `quality/defect_noisy` - `quality/defect_dark` - `quality/defect_faint` - `quality/defect_text_too_small` - `quality/defect_document_cutoff` - `quality/defect_text_cutoff` - `quality/defect_glare` */
@@ -7883,7 +8717,10 @@ export namespace MyNS {
 	/** A cell representation inside the table. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageTableTableCell {
 
-		/** How many columns this cell spans. */
+		/**
+		 * How many columns this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		colSpan?: number | null;
 
 		/** A list of detected languages together with confidence. */
@@ -7892,17 +8729,26 @@ export namespace MyNS {
 		/** Visual element describing a layout unit on a page. */
 		layout?: GoogleCloudDocumentaiV1beta2DocumentPageLayout;
 
-		/** How many rows this cell spans. */
+		/**
+		 * How many rows this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan?: number | null;
 	}
 
 	/** A cell representation inside the table. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageTableTableCellFormProperties {
 
-		/** How many columns this cell spans. */
+		/**
+		 * How many columns this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		colSpan: FormControl<number | null | undefined>,
 
-		/** How many rows this cell spans. */
+		/**
+		 * How many rows this cell spans.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta2DocumentPageTableTableCellFormGroup() {
@@ -7973,13 +8819,19 @@ export namespace MyNS {
 		/** Whether the text is bold (equivalent to font_weight is at least `700`). */
 		bold?: boolean | null;
 
-		/** Font size in points (`1` point is `¹⁄₇₂` inches). */
+		/**
+		 * Font size in points (`1` point is `¹⁄₇₂` inches).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontSize?: number | null;
 
 		/** Name or style of the font. */
 		fontType?: string | null;
 
-		/** TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`. */
+		/**
+		 * TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontWeight?: number | null;
 
 		/** Whether the text is handwritten. */
@@ -7988,10 +8840,16 @@ export namespace MyNS {
 		/** Whether the text is italic. */
 		italic?: boolean | null;
 
-		/** Letter spacing in points. */
+		/**
+		 * Letter spacing in points.
+		 * Type: double
+		 */
 		letterSpacing?: number | null;
 
-		/** Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`. */
+		/**
+		 * Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`.
+		 * Type: double
+		 */
 		pixelFontSize?: number | null;
 
 		/** Whether the text is in small caps. */
@@ -8019,13 +8877,19 @@ export namespace MyNS {
 		/** Whether the text is bold (equivalent to font_weight is at least `700`). */
 		bold: FormControl<boolean | null | undefined>,
 
-		/** Font size in points (`1` point is `¹⁄₇₂` inches). */
+		/**
+		 * Font size in points (`1` point is `¹⁄₇₂` inches).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontSize: FormControl<number | null | undefined>,
 
 		/** Name or style of the font. */
 		fontType: FormControl<string | null | undefined>,
 
-		/** TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`. */
+		/**
+		 * TrueType weight on a scale `100` (thin) to `1000` (ultra-heavy). Normal is `400`, bold is `700`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontWeight: FormControl<number | null | undefined>,
 
 		/** Whether the text is handwritten. */
@@ -8034,10 +8898,16 @@ export namespace MyNS {
 		/** Whether the text is italic. */
 		italic: FormControl<boolean | null | undefined>,
 
-		/** Letter spacing in points. */
+		/**
+		 * Letter spacing in points.
+		 * Type: double
+		 */
 		letterSpacing: FormControl<number | null | undefined>,
 
-		/** Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`. */
+		/**
+		 * Font size in pixels, equal to _unrounded font_size_ * _resolution_ ÷ `72.0`.
+		 * Type: double
+		 */
 		pixelFontSize: FormControl<number | null | undefined>,
 
 		/** Whether the text is in small caps. */
@@ -8078,32 +8948,50 @@ export namespace MyNS {
 	/** Representation for transformation matrix, intended to be compatible and used with OpenCV format for image manipulation. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageMatrix {
 
-		/** Number of columns in the matrix. */
+		/**
+		 * Number of columns in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cols?: number | null;
 
 		/** The matrix data. */
 		data?: string | null;
 
-		/** Number of rows in the matrix. */
+		/**
+		 * Number of rows in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows?: number | null;
 
-		/** This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html */
+		/**
+		 * This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		type?: number | null;
 	}
 
 	/** Representation for transformation matrix, intended to be compatible and used with OpenCV format for image manipulation. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentPageMatrixFormProperties {
 
-		/** Number of columns in the matrix. */
+		/**
+		 * Number of columns in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cols: FormControl<number | null | undefined>,
 
 		/** The matrix data. */
 		data: FormControl<string | null | undefined>,
 
-		/** Number of rows in the matrix. */
+		/**
+		 * Number of rows in the matrix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows: FormControl<number | null | undefined>,
 
-		/** This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html */
+		/**
+		 * This encodes information about what data type the matrix uses. For example, 0 (CV_8U) is an unsigned 8-bit image. For the full list of OpenCV primitive data types, please refer to https://docs.opencv.org/4.3.0/d1/d1b/group__core__hal__interface.html
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		type: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta2DocumentPageMatrixFormGroup() {
@@ -8342,7 +9230,10 @@ export namespace MyNS {
 	/** Font size with unit. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentStyleFontSize {
 
-		/** Font size for the text. */
+		/**
+		 * Font size for the text.
+		 * Type: float
+		 */
 		size?: number | null;
 
 		/** Unit for the font size. Follows CSS naming (such as `in`, `px`, and `pt`). */
@@ -8352,7 +9243,10 @@ export namespace MyNS {
 	/** Font size with unit. */
 	export interface GoogleCloudDocumentaiV1beta2DocumentStyleFontSizeFormProperties {
 
-		/** Font size for the text. */
+		/**
+		 * Font size for the text.
+		 * Type: float
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Unit for the font size. Follows CSS naming (such as `in`, `px`, and `pt`). */
@@ -8413,21 +9307,33 @@ export namespace MyNS {
 		/** The common metadata for long running operations. */
 		commonMetadata?: GoogleCloudDocumentaiV1beta3CommonOperationMetadata;
 
-		/** Total number of documents that failed to be deleted in storage. */
+		/**
+		 * Total number of documents that failed to be deleted in storage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorDocumentCount?: number | null;
 
 		/** The list of response details of each document. */
 		individualBatchDeleteStatuses?: Array<GoogleCloudDocumentaiV1beta3BatchDeleteDocumentsMetadataIndividualBatchDeleteStatus>;
 
-		/** Total number of documents deleting from dataset. */
+		/**
+		 * Total number of documents deleting from dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount?: number | null;
 	}
 	export interface GoogleCloudDocumentaiV1beta3BatchDeleteDocumentsMetadataFormProperties {
 
-		/** Total number of documents that failed to be deleted in storage. */
+		/**
+		 * Total number of documents that failed to be deleted in storage.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorDocumentCount: FormControl<number | null | undefined>,
 
-		/** Total number of documents deleting from dataset. */
+		/**
+		 * Total number of documents deleting from dataset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta3BatchDeleteDocumentsMetadataFormGroup() {
@@ -9077,14 +9983,20 @@ export namespace MyNS {
 		/** The list of response details of each document. */
 		individualImportStatuses?: Array<GoogleCloudDocumentaiV1beta3ImportDocumentsMetadataIndividualImportStatus>;
 
-		/** Total number of the documents that are qualified for importing. */
+		/**
+		 * Total number of the documents that are qualified for importing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount?: number | null;
 	}
 
 	/** Metadata of the import document operation. */
 	export interface GoogleCloudDocumentaiV1beta3ImportDocumentsMetadataFormProperties {
 
-		/** Total number of the documents that are qualified for importing. */
+		/**
+		 * Total number of the documents that are qualified for importing.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDocumentCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta3ImportDocumentsMetadataFormGroup() {
@@ -9342,13 +10254,19 @@ export namespace MyNS {
 	/** The dataset validation information. This includes any and all errors with documents and the dataset. */
 	export interface GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidation {
 
-		/** The total number of dataset errors. */
+		/**
+		 * The total number of dataset errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		datasetErrorCount?: number | null;
 
 		/** Error information for the dataset as a whole. A maximum of 10 dataset errors will be returned. A single dataset error is terminal for training. */
 		datasetErrors?: Array<GoogleRpcStatus>;
 
-		/** The total number of document errors. */
+		/**
+		 * The total number of document errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		documentErrorCount?: number | null;
 
 		/** Error information pertaining to specific documents. A maximum of 10 document errors will be returned. Any document with errors will not be used throughout training. */
@@ -9358,10 +10276,16 @@ export namespace MyNS {
 	/** The dataset validation information. This includes any and all errors with documents and the dataset. */
 	export interface GoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidationFormProperties {
 
-		/** The total number of dataset errors. */
+		/**
+		 * The total number of dataset errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		datasetErrorCount: FormControl<number | null | undefined>,
 
-		/** The total number of document errors. */
+		/**
+		 * The total number of document errors.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		documentErrorCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDocumentaiV1beta3TrainProcessorVersionMetadataDatasetValidationFormGroup() {
@@ -9624,6 +10548,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningOperation} Successful response
 		 */
@@ -9637,6 +10562,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {GoogleCloudLocationListLocationsResponse} Successful response
 		 */
@@ -9719,6 +10645,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/evaluations
 		 * @param {string} parent Required. The resource name of the ProcessorVersion to list evaluations for. `projects/{project}/locations/{location}/processors/{processor}/processorVersions/{processorVersion}`
 		 * @param {number} pageSize The standard list page size. If unspecified, at most `5` evaluations are returned. The maximum value is `100`. Values above `100` are coerced to `100`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListEvaluations` call. Provide this to retrieve the subsequent page.
 		 * @return {GoogleCloudDocumentaiV1ListEvaluationsResponse} Successful response
 		 */
@@ -9731,6 +10658,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/processorTypes
 		 * @param {string} parent Required. The location of processor types to list. Format: `projects/{project}/locations/{location}`.
 		 * @param {number} pageSize The maximum number of processor types to return. If unspecified, at most `100` processor types will be returned. The maximum value is `500`. Values above `500` will be coerced to `500`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Used to retrieve the next page of results, empty if at the end of the list.
 		 * @return {GoogleCloudDocumentaiV1ListProcessorTypesResponse} Successful response
 		 */
@@ -9743,6 +10671,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/processorVersions
 		 * @param {string} parent Required. The parent (project, location and processor) to list all versions. Format: `projects/{project}/locations/{location}/processors/{processor}`
 		 * @param {number} pageSize The maximum number of processor versions to return. If unspecified, at most `10` processor versions will be returned. The maximum value is `20`. Values above `20` will be coerced to `20`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken We will return the processor versions sorted by creation time. The page token will point to the next processor version.
 		 * @return {GoogleCloudDocumentaiV1ListProcessorVersionsResponse} Successful response
 		 */
@@ -9765,6 +10694,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/processors
 		 * @param {string} parent Required. The parent (project and location) which owns this collection of Processors. Format: `projects/{project}/locations/{location}`
 		 * @param {number} pageSize The maximum number of processors to return. If unspecified, at most `50` processors will be returned. The maximum value is `100`. Values above `100` will be coerced to `100`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken We will return the processors sorted by creation time. The page token will point to the next processor.
 		 * @return {GoogleCloudDocumentaiV1ListProcessorsResponse} Successful response
 		 */

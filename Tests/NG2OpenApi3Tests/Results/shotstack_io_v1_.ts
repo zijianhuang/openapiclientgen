@@ -173,7 +173,10 @@ export namespace MyNS {
 		 */
 		src: string;
 
-		/** The start trim point of the audio clip, in seconds (defaults to 0). Audio will start from the in trim point. The audio will play until the file ends or the Clip length is reached. */
+		/**
+		 * The start trim point of the audio clip, in seconds (defaults to 0). Audio will start from the in trim point. The audio will play until the file ends or the Clip length is reached.
+		 * Type: double
+		 */
 		trim?: number | null;
 
 		/**
@@ -182,7 +185,10 @@ export namespace MyNS {
 		 */
 		type: string;
 
-		/** Set the volume for the audio clip between 0 and 1 where 0 is muted and 1 is full volume (defaults to 1). */
+		/**
+		 * Set the volume for the audio clip between 0 and 1 where 0 is muted and 1 is full volume (defaults to 1).
+		 * Type: double
+		 */
 		volume?: number | null;
 	}
 
@@ -204,7 +210,10 @@ export namespace MyNS {
 		 */
 		src: FormControl<string | null | undefined>,
 
-		/** The start trim point of the audio clip, in seconds (defaults to 0). Audio will start from the in trim point. The audio will play until the file ends or the Clip length is reached. */
+		/**
+		 * The start trim point of the audio clip, in seconds (defaults to 0). Audio will start from the in trim point. The audio will play until the file ends or the Clip length is reached.
+		 * Type: double
+		 */
 		trim: FormControl<number | null | undefined>,
 
 		/**
@@ -213,7 +222,10 @@ export namespace MyNS {
 		 */
 		type: FormControl<string | null | undefined>,
 
-		/** Set the volume for the audio clip between 0 and 1 where 0 is muted and 1 is full volume (defaults to 1). */
+		/**
+		 * Set the volume for the audio clip between 0 and 1 where 0 is muted and 1 is full volume (defaults to 1).
+		 * Type: double
+		 */
 		volume: FormControl<number | null | undefined>,
 	}
 	export function CreateAudioAssetFormGroup() {
@@ -278,13 +290,17 @@ export namespace MyNS {
 		/**
 		 * The length, in seconds, the Clip should play for.
 		 * Required
+		 * Type: double
 		 */
 		length: number;
 
 		/** Offsets the position of an asset horizontally or vertically by a relative distance. */
 		offset?: Offset;
 
-		/** Sets the opacity of the Clip where 1 is opaque and 0 is transparent. */
+		/**
+		 * Sets the opacity of the Clip where 1 is opaque and 0 is transparent.
+		 * Type: double
+		 */
 		opacity?: number | null;
 
 		/**
@@ -302,12 +318,16 @@ export namespace MyNS {
 		 */
 		position?: ClipPosition | null;
 
-		/** Scale the asset to a fraction of the viewport size - i.e. setting the scale to 0.5 will scale asset to half the size of the viewport. This is useful for picture-in-picture video and  scaling images such as logos and watermarks. */
+		/**
+		 * Scale the asset to a fraction of the viewport size - i.e. setting the scale to 0.5 will scale asset to half the size of the viewport. This is useful for picture-in-picture video and  scaling images such as logos and watermarks.
+		 * Type: double
+		 */
 		scale?: number | null;
 
 		/**
 		 * The start position of the Clip on the timeline, in seconds.
 		 * Required
+		 * Type: double
 		 */
 		start: number;
 
@@ -357,10 +377,14 @@ export namespace MyNS {
 		/**
 		 * The length, in seconds, the Clip should play for.
 		 * Required
+		 * Type: double
 		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Sets the opacity of the Clip where 1 is opaque and 0 is transparent. */
+		/**
+		 * Sets the opacity of the Clip where 1 is opaque and 0 is transparent.
+		 * Type: double
+		 */
 		opacity: FormControl<number | null | undefined>,
 
 		/**
@@ -378,12 +402,16 @@ export namespace MyNS {
 		 */
 		position: FormControl<ClipPosition | null | undefined>,
 
-		/** Scale the asset to a fraction of the viewport size - i.e. setting the scale to 0.5 will scale asset to half the size of the viewport. This is useful for picture-in-picture video and  scaling images such as logos and watermarks. */
+		/**
+		 * Scale the asset to a fraction of the viewport size - i.e. setting the scale to 0.5 will scale asset to half the size of the viewport. This is useful for picture-in-picture video and  scaling images such as logos and watermarks.
+		 * Type: double
+		 */
 		scale: FormControl<number | null | undefined>,
 
 		/**
 		 * The start position of the Clip on the timeline, in seconds.
 		 * Required
+		 * Type: double
 		 */
 		start: FormControl<number | null | undefined>,
 	}
@@ -414,7 +442,10 @@ export namespace MyNS {
 		 */
 		src: string;
 
-		/** The start trim point of the video clip, in seconds (defaults to 0). Videos will start from the in trim point. The video will play until the file ends or the Clip length is reached. */
+		/**
+		 * The start trim point of the video clip, in seconds (defaults to 0). Videos will start from the in trim point. The video will play until the file ends or the Clip length is reached.
+		 * Type: double
+		 */
 		trim?: number | null;
 
 		/**
@@ -423,7 +454,10 @@ export namespace MyNS {
 		 */
 		type: string;
 
-		/** Set the volume for the video clip between 0 and 1 where 0 is muted and 1 is full volume (defaults to 0). */
+		/**
+		 * Set the volume for the video clip between 0 and 1 where 0 is muted and 1 is full volume (defaults to 0).
+		 * Type: double
+		 */
 		volume?: number | null;
 	}
 
@@ -436,7 +470,10 @@ export namespace MyNS {
 		 */
 		src: FormControl<string | null | undefined>,
 
-		/** The start trim point of the video clip, in seconds (defaults to 0). Videos will start from the in trim point. The video will play until the file ends or the Clip length is reached. */
+		/**
+		 * The start trim point of the video clip, in seconds (defaults to 0). Videos will start from the in trim point. The video will play until the file ends or the Clip length is reached.
+		 * Type: double
+		 */
 		trim: FormControl<number | null | undefined>,
 
 		/**
@@ -445,7 +482,10 @@ export namespace MyNS {
 		 */
 		type: FormControl<string | null | undefined>,
 
-		/** Set the volume for the video clip between 0 and 1 where 0 is muted and 1 is full volume (defaults to 0). */
+		/**
+		 * Set the volume for the video clip between 0 and 1 where 0 is muted and 1 is full volume (defaults to 0).
+		 * Type: double
+		 */
 		volume: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoAssetFormGroup() {
@@ -950,6 +990,7 @@ export namespace MyNS {
 		/**
 		 * The point on the timeline in seconds to capture a single frame to use as the poster image.
 		 * Required
+		 * Type: double
 		 */
 		capture: number;
 	}
@@ -960,6 +1001,7 @@ export namespace MyNS {
 		/**
 		 * The point on the timeline in seconds to capture a single frame to use as the poster image.
 		 * Required
+		 * Type: double
 		 */
 		capture: FormControl<number | null | undefined>,
 	}
@@ -1065,12 +1107,14 @@ export namespace MyNS {
 		/**
 		 * The point on the timeline in seconds to capture a single frame to use as the thumbnail image.
 		 * Required
+		 * Type: double
 		 */
 		capture: number;
 
 		/**
 		 * Scale the thumbnail size to a fraction of the viewport size - i.e. setting the scale to 0.5 will scale  the thumbnail to half the size of the viewport.
 		 * Required
+		 * Type: double
 		 */
 		scale: number;
 	}
@@ -1081,12 +1125,14 @@ export namespace MyNS {
 		/**
 		 * The point on the timeline in seconds to capture a single frame to use as the thumbnail image.
 		 * Required
+		 * Type: double
 		 */
 		capture: FormControl<number | null | undefined>,
 
 		/**
 		 * Scale the thumbnail size to a fraction of the viewport size - i.e. setting the scale to 0.5 will scale  the thumbnail to half the size of the viewport.
 		 * Required
+		 * Type: double
 		 */
 		scale: FormControl<number | null | undefined>,
 	}
@@ -1184,7 +1230,10 @@ export namespace MyNS {
 		 */
 		src: string;
 
-		/** Set the volume for the soundtrack between 0 and 1 where 0 is muted and 1 is full volume (defaults to 1). */
+		/**
+		 * Set the volume for the soundtrack between 0 and 1 where 0 is muted and 1 is full volume (defaults to 1).
+		 * Type: double
+		 */
 		volume?: number | null;
 	}
 
@@ -1206,7 +1255,10 @@ export namespace MyNS {
 		 */
 		src: FormControl<string | null | undefined>,
 
-		/** Set the volume for the soundtrack between 0 and 1 where 0 is muted and 1 is full volume (defaults to 1). */
+		/**
+		 * Set the volume for the soundtrack between 0 and 1 where 0 is muted and 1 is full volume (defaults to 1).
+		 * Type: double
+		 */
 		volume: FormControl<number | null | undefined>,
 	}
 	export function CreateSoundtrackFormGroup() {
@@ -1248,7 +1300,10 @@ export namespace MyNS {
 		/** The CSS text string to apply styling to the HTML. See list of  [support CSS properties](https://shotstack.gitbook.io/docs/guides/architecting-an-application/html-support#supported-html-tags). */
 		css?: string | null;
 
-		/** Set the width of the HTML asset bounding box in pixels. Text and elements will be masked if they exceed the  height of the bounding box. */
+		/**
+		 * Set the width of the HTML asset bounding box in pixels. Text and elements will be masked if they exceed the  height of the bounding box.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/**
@@ -1278,7 +1333,10 @@ export namespace MyNS {
 		 */
 		type: string;
 
-		/** Set the width of the HTML asset bounding box in pixels. Text will wrap to fill the bounding box. */
+		/**
+		 * Set the width of the HTML asset bounding box in pixels. Text will wrap to fill the bounding box.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -1291,7 +1349,10 @@ export namespace MyNS {
 		/** The CSS text string to apply styling to the HTML. See list of  [support CSS properties](https://shotstack.gitbook.io/docs/guides/architecting-an-application/html-support#supported-html-tags). */
 		css: FormControl<string | null | undefined>,
 
-		/** Set the width of the HTML asset bounding box in pixels. Text and elements will be masked if they exceed the  height of the bounding box. */
+		/**
+		 * Set the width of the HTML asset bounding box in pixels. Text and elements will be masked if they exceed the  height of the bounding box.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/**
@@ -1321,7 +1382,10 @@ export namespace MyNS {
 		 */
 		type: FormControl<string | null | undefined>,
 
-		/** Set the width of the HTML asset bounding box in pixels. Text will wrap to fill the bounding box. */
+		/**
+		 * Set the width of the HTML asset bounding box in pixels. Text will wrap to fill the bounding box.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateHtmlAssetFormGroup() {
@@ -1390,7 +1454,10 @@ export namespace MyNS {
 		 */
 		src: string;
 
-		/** The start trim point of the luma matte clip, in seconds (defaults to 0). Videos will start from the in trim point. A luma matte video will play until the file ends or the Clip length is reached. */
+		/**
+		 * The start trim point of the luma matte clip, in seconds (defaults to 0). Videos will start from the in trim point. A luma matte video will play until the file ends or the Clip length is reached.
+		 * Type: double
+		 */
 		trim?: number | null;
 
 		/**
@@ -1409,7 +1476,10 @@ export namespace MyNS {
 		 */
 		src: FormControl<string | null | undefined>,
 
-		/** The start trim point of the luma matte clip, in seconds (defaults to 0). Videos will start from the in trim point. A luma matte video will play until the file ends or the Clip length is reached. */
+		/**
+		 * The start trim point of the luma matte clip, in seconds (defaults to 0). Videos will start from the in trim point. A luma matte video will play until the file ends or the Clip length is reached.
+		 * Type: double
+		 */
 		trim: FormControl<number | null | undefined>,
 
 		/**
@@ -1575,7 +1645,10 @@ export namespace MyNS {
 		 */
 		data: Edit;
 
-		/** The output video or audio length in seconds. */
+		/**
+		 * The output video or audio length in seconds.
+		 * Type: double
+		 */
 		duration?: number | null;
 
 		/** An error message, only displayed if an error occurred. */
@@ -1599,7 +1672,10 @@ export namespace MyNS {
 		/** The URL of the poster image if requested. This will only be available if status is done. */
 		poster?: string | null;
 
-		/** The time taken to render the asset in milliseconds. */
+		/**
+		 * The time taken to render the asset in milliseconds.
+		 * Type: double
+		 */
 		renderTime?: number | null;
 
 		/**
@@ -1637,7 +1713,10 @@ export namespace MyNS {
 		 */
 		created: FormControl<string | null | undefined>,
 
-		/** The output video or audio length in seconds. */
+		/**
+		 * The output video or audio length in seconds.
+		 * Type: double
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** An error message, only displayed if an error occurred. */
@@ -1661,7 +1740,10 @@ export namespace MyNS {
 		/** The URL of the poster image if requested. This will only be available if status is done. */
 		poster: FormControl<string | null | undefined>,
 
-		/** The time taken to render the asset in milliseconds. */
+		/**
+		 * The time taken to render the asset in milliseconds.
+		 * Type: double
+		 */
 		renderTime: FormControl<number | null | undefined>,
 
 		/**

@@ -344,10 +344,16 @@ export namespace MyNS {
 	/** KubeletConfig defines the modifiable kubelet configurations for bare metal machines. Note: this list includes fields supported in GKE (see https://cloud.google.com/kubernetes-engine/docs/how-to/node-system-config#kubelet-options). */
 	export interface BareMetalKubeletConfig {
 
-		/** The maximum size of bursty pulls, temporarily allows pulls to burst to this number, while still not exceeding registry_pull_qps. The value must not be a negative number. Updating this field may impact scalability by changing the amount of traffic produced by image pulls. Defaults to 10. */
+		/**
+		 * The maximum size of bursty pulls, temporarily allows pulls to burst to this number, while still not exceeding registry_pull_qps. The value must not be a negative number. Updating this field may impact scalability by changing the amount of traffic produced by image pulls. Defaults to 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		registryBurst?: number | null;
 
-		/** The limit of registry pulls per second. Setting this value to 0 means no limit. Updating this field may impact scalability by changing the amount of traffic produced by image pulls. Defaults to 5. */
+		/**
+		 * The limit of registry pulls per second. Setting this value to 0 means no limit. Updating this field may impact scalability by changing the amount of traffic produced by image pulls. Defaults to 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		registryPullQps?: number | null;
 
 		/** Prevents the Kubelet from pulling multiple images at a time. We recommend *not* changing the default value on nodes that run docker daemon with version < 1.9 or an Another Union File System (Aufs) storage backend. Issue https://github.com/kubernetes/kubernetes/issues/10959 has more details. */
@@ -357,10 +363,16 @@ export namespace MyNS {
 	/** KubeletConfig defines the modifiable kubelet configurations for bare metal machines. Note: this list includes fields supported in GKE (see https://cloud.google.com/kubernetes-engine/docs/how-to/node-system-config#kubelet-options). */
 	export interface BareMetalKubeletConfigFormProperties {
 
-		/** The maximum size of bursty pulls, temporarily allows pulls to burst to this number, while still not exceeding registry_pull_qps. The value must not be a negative number. Updating this field may impact scalability by changing the amount of traffic produced by image pulls. Defaults to 10. */
+		/**
+		 * The maximum size of bursty pulls, temporarily allows pulls to burst to this number, while still not exceeding registry_pull_qps. The value must not be a negative number. Updating this field may impact scalability by changing the amount of traffic produced by image pulls. Defaults to 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		registryBurst: FormControl<number | null | undefined>,
 
-		/** The limit of registry pulls per second. Setting this value to 0 means no limit. Updating this field may impact scalability by changing the amount of traffic produced by image pulls. Defaults to 5. */
+		/**
+		 * The limit of registry pulls per second. Setting this value to 0 means no limit. Updating this field may impact scalability by changing the amount of traffic produced by image pulls. Defaults to 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		registryPullQps: FormControl<number | null | undefined>,
 
 		/** Prevents the Kubelet from pulling multiple images at a time. We recommend *not* changing the default value on nodes that run docker daemon with version < 1.9 or an Another Union File System (Aufs) storage backend. Issue https://github.com/kubernetes/kubernetes/issues/10959 has more details. */
@@ -511,14 +523,20 @@ export namespace MyNS {
 	/** BareMetalAdminPortConfig is the specification of load balancer ports. */
 	export interface BareMetalAdminPortConfig {
 
-		/** The port that control plane hosted load balancers will listen on. */
+		/**
+		 * The port that control plane hosted load balancers will listen on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		controlPlaneLoadBalancerPort?: number | null;
 	}
 
 	/** BareMetalAdminPortConfig is the specification of load balancer ports. */
 	export interface BareMetalAdminPortConfigFormProperties {
 
-		/** The port that control plane hosted load balancers will listen on. */
+		/**
+		 * The port that control plane hosted load balancers will listen on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		controlPlaneLoadBalancerPort: FormControl<number | null | undefined>,
 	}
 	export function CreateBareMetalAdminPortConfigFormGroup() {
@@ -631,7 +649,10 @@ export namespace MyNS {
 		/** Draining machine IP address. */
 		nodeIp?: string | null;
 
-		/** The count of pods yet to drain. */
+		/**
+		 * The count of pods yet to drain.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		podCount?: number | null;
 	}
 
@@ -641,7 +662,10 @@ export namespace MyNS {
 		/** Draining machine IP address. */
 		nodeIp: FormControl<string | null | undefined>,
 
-		/** The count of pods yet to drain. */
+		/**
+		 * The count of pods yet to drain.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		podCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBareMetalAdminDrainingMachineFormGroup() {
@@ -925,14 +949,20 @@ export namespace MyNS {
 		/** Specifies the configs for local persistent volumes (PVs). */
 		lvpConfig?: BareMetalLvpConfig;
 
-		/** The number of subdirectories to create under path. */
+		/**
+		 * The number of subdirectories to create under path.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sharedPathPvCount?: number | null;
 	}
 
 	/** Specifies the configs for local persistent volumes under a shared file system. */
 	export interface BareMetalLvpShareConfigFormProperties {
 
-		/** The number of subdirectories to create under path. */
+		/**
+		 * The number of subdirectories to create under path.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sharedPathPvCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBareMetalLvpShareConfigFormGroup() {
@@ -1491,14 +1521,20 @@ export namespace MyNS {
 	/** Specifies load balancer ports for the bare metal user cluster. */
 	export interface BareMetalPortConfig {
 
-		/** The port that control plane hosted load balancers will listen on. */
+		/**
+		 * The port that control plane hosted load balancers will listen on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		controlPlaneLoadBalancerPort?: number | null;
 	}
 
 	/** Specifies load balancer ports for the bare metal user cluster. */
 	export interface BareMetalPortConfigFormProperties {
 
-		/** The port that control plane hosted load balancers will listen on. */
+		/**
+		 * The port that control plane hosted load balancers will listen on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		controlPlaneLoadBalancerPort: FormControl<number | null | undefined>,
 	}
 	export function CreateBareMetalPortConfigFormGroup() {
@@ -1618,7 +1654,10 @@ export namespace MyNS {
 		/** Draining machine IP address. */
 		nodeIp?: string | null;
 
-		/** The count of pods yet to drain. */
+		/**
+		 * The count of pods yet to drain.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		podCount?: number | null;
 	}
 
@@ -1628,7 +1667,10 @@ export namespace MyNS {
 		/** Draining machine IP address. */
 		nodeIp: FormControl<string | null | undefined>,
 
-		/** The count of pods yet to drain. */
+		/**
+		 * The count of pods yet to drain.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		podCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBareMetalDrainingMachineFormGroup() {
@@ -2001,20 +2043,32 @@ export namespace MyNS {
 	/** BareMetalParallelUpgradeConfig defines the parallel upgrade settings for worker node pools. */
 	export interface BareMetalParallelUpgradeConfig {
 
-		/** The maximum number of nodes that can be upgraded at once. */
+		/**
+		 * The maximum number of nodes that can be upgraded at once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentNodes?: number | null;
 
-		/** The minimum number of nodes that should be healthy and available during an upgrade. If set to the default value of 0, it is possible that none of the nodes will be available during an upgrade. */
+		/**
+		 * The minimum number of nodes that should be healthy and available during an upgrade. If set to the default value of 0, it is possible that none of the nodes will be available during an upgrade.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumAvailableNodes?: number | null;
 	}
 
 	/** BareMetalParallelUpgradeConfig defines the parallel upgrade settings for worker node pools. */
 	export interface BareMetalParallelUpgradeConfigFormProperties {
 
-		/** The maximum number of nodes that can be upgraded at once. */
+		/**
+		 * The maximum number of nodes that can be upgraded at once.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrentNodes: FormControl<number | null | undefined>,
 
-		/** The minimum number of nodes that should be healthy and available during an upgrade. If set to the default value of 0, it is possible that none of the nodes will be available during an upgrade. */
+		/**
+		 * The minimum number of nodes that should be healthy and available during an upgrade. If set to the default value of 0, it is possible that none of the nodes will be available during an upgrade.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumAvailableNodes: FormControl<number | null | undefined>,
 	}
 	export function CreateBareMetalParallelUpgradeConfigFormGroup() {
@@ -2604,7 +2658,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -2617,7 +2674,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -3002,36 +3062,66 @@ export namespace MyNS {
 
 	export interface VmwareAdminManualLbConfig {
 
-		/** NodePort for add-ons server in the admin cluster. */
+		/**
+		 * NodePort for add-ons server in the admin cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		addonsNodePort?: number | null;
 
-		/** NodePort for control plane service. The Kubernetes API server in the admin cluster is implemented as a Service of type NodePort (ex. 30968). */
+		/**
+		 * NodePort for control plane service. The Kubernetes API server in the admin cluster is implemented as a Service of type NodePort (ex. 30968).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		controlPlaneNodePort?: number | null;
 
-		/** NodePort for ingress service's http. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 32527). */
+		/**
+		 * NodePort for ingress service's http. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 32527).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ingressHttpNodePort?: number | null;
 
-		/** NodePort for ingress service's https. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 30139). */
+		/**
+		 * NodePort for ingress service's https. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 30139).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ingressHttpsNodePort?: number | null;
 
-		/** NodePort for konnectivity server service running as a sidecar in each kube-apiserver pod (ex. 30564). */
+		/**
+		 * NodePort for konnectivity server service running as a sidecar in each kube-apiserver pod (ex. 30564).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		konnectivityServerNodePort?: number | null;
 	}
 	export interface VmwareAdminManualLbConfigFormProperties {
 
-		/** NodePort for add-ons server in the admin cluster. */
+		/**
+		 * NodePort for add-ons server in the admin cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		addonsNodePort: FormControl<number | null | undefined>,
 
-		/** NodePort for control plane service. The Kubernetes API server in the admin cluster is implemented as a Service of type NodePort (ex. 30968). */
+		/**
+		 * NodePort for control plane service. The Kubernetes API server in the admin cluster is implemented as a Service of type NodePort (ex. 30968).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		controlPlaneNodePort: FormControl<number | null | undefined>,
 
-		/** NodePort for ingress service's http. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 32527). */
+		/**
+		 * NodePort for ingress service's http. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 32527).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ingressHttpNodePort: FormControl<number | null | undefined>,
 
-		/** NodePort for ingress service's https. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 30139). */
+		/**
+		 * NodePort for ingress service's https. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 30139).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ingressHttpsNodePort: FormControl<number | null | undefined>,
 
-		/** NodePort for konnectivity server service running as a sidecar in each kube-apiserver pod (ex. 30564). */
+		/**
+		 * NodePort for konnectivity server service running as a sidecar in each kube-apiserver pod (ex. 30564).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		konnectivityServerNodePort: FormControl<number | null | undefined>,
 	}
 	export function CreateVmwareAdminManualLbConfigFormGroup() {
@@ -3845,32 +3935,56 @@ export namespace MyNS {
 	/** Represents configuration parameters for an already existing manual load balancer. Given the nature of manual load balancers it is expected that said load balancer will be fully managed by users. IMPORTANT: Please note that the Anthos On-Prem API will not generate or update ManualLB configurations it can only bind a pre-existing configuration to a new VMware user cluster. */
 	export interface VmwareManualLbConfig {
 
-		/** NodePort for control plane service. The Kubernetes API server in the admin cluster is implemented as a Service of type NodePort (ex. 30968). */
+		/**
+		 * NodePort for control plane service. The Kubernetes API server in the admin cluster is implemented as a Service of type NodePort (ex. 30968).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		controlPlaneNodePort?: number | null;
 
-		/** NodePort for ingress service's http. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 32527). */
+		/**
+		 * NodePort for ingress service's http. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 32527).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ingressHttpNodePort?: number | null;
 
-		/** NodePort for ingress service's https. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 30139). */
+		/**
+		 * NodePort for ingress service's https. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 30139).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ingressHttpsNodePort?: number | null;
 
-		/** NodePort for konnectivity server service running as a sidecar in each kube-apiserver pod (ex. 30564). */
+		/**
+		 * NodePort for konnectivity server service running as a sidecar in each kube-apiserver pod (ex. 30564).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		konnectivityServerNodePort?: number | null;
 	}
 
 	/** Represents configuration parameters for an already existing manual load balancer. Given the nature of manual load balancers it is expected that said load balancer will be fully managed by users. IMPORTANT: Please note that the Anthos On-Prem API will not generate or update ManualLB configurations it can only bind a pre-existing configuration to a new VMware user cluster. */
 	export interface VmwareManualLbConfigFormProperties {
 
-		/** NodePort for control plane service. The Kubernetes API server in the admin cluster is implemented as a Service of type NodePort (ex. 30968). */
+		/**
+		 * NodePort for control plane service. The Kubernetes API server in the admin cluster is implemented as a Service of type NodePort (ex. 30968).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		controlPlaneNodePort: FormControl<number | null | undefined>,
 
-		/** NodePort for ingress service's http. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 32527). */
+		/**
+		 * NodePort for ingress service's http. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 32527).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ingressHttpNodePort: FormControl<number | null | undefined>,
 
-		/** NodePort for ingress service's https. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 30139). */
+		/**
+		 * NodePort for ingress service's https. The ingress service in the admin cluster is implemented as a Service of type NodePort (ex. 30139).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ingressHttpsNodePort: FormControl<number | null | undefined>,
 
-		/** NodePort for konnectivity server service running as a sidecar in each kube-apiserver pod (ex. 30564). */
+		/**
+		 * NodePort for konnectivity server service running as a sidecar in each kube-apiserver pod (ex. 30564).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		konnectivityServerNodePort: FormControl<number | null | undefined>,
 	}
 	export function CreateVmwareManualLbConfigFormGroup() {
@@ -4444,20 +4558,32 @@ export namespace MyNS {
 	/** NodePoolAutoscaling config for the NodePool to allow for the kubernetes to scale NodePool. */
 	export interface VmwareNodePoolAutoscalingConfig {
 
-		/** Maximum number of replicas in the NodePool. */
+		/**
+		 * Maximum number of replicas in the NodePool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxReplicas?: number | null;
 
-		/** Minimum number of replicas in the NodePool. */
+		/**
+		 * Minimum number of replicas in the NodePool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minReplicas?: number | null;
 	}
 
 	/** NodePoolAutoscaling config for the NodePool to allow for the kubernetes to scale NodePool. */
 	export interface VmwareNodePoolAutoscalingConfigFormProperties {
 
-		/** Maximum number of replicas in the NodePool. */
+		/**
+		 * Maximum number of replicas in the NodePool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxReplicas: FormControl<number | null | undefined>,
 
-		/** Minimum number of replicas in the NodePool. */
+		/**
+		 * Minimum number of replicas in the NodePool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minReplicas: FormControl<number | null | undefined>,
 	}
 	export function CreateVmwareNodePoolAutoscalingConfigFormGroup() {
@@ -4472,7 +4598,10 @@ export namespace MyNS {
 	/** Progress metric is (string, int|float|string) pair. */
 	export interface Metric {
 
-		/** For metrics with floating point value. */
+		/**
+		 * For metrics with floating point value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** For metrics with integer value. */
@@ -4488,7 +4617,10 @@ export namespace MyNS {
 	/** Progress metric is (string, int|float|string) pair. */
 	export interface MetricFormProperties {
 
-		/** For metrics with floating point value. */
+		/**
+		 * For metrics with floating point value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** For metrics with integer value. */
@@ -4670,7 +4802,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -4680,7 +4815,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -4879,6 +5017,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -4892,6 +5031,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -4927,6 +5067,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/bareMetalAdminClusters
 		 * @param {string} parent Required. The parent of the project and location where the clusters are listed in. Format: "projects/{project}/locations/{location}"
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, at most 50 clusters will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @param {Gkeonprem_projects_locations_bareMetalAdminClusters_listView} view View for bare metal admin clusters. When `BASIC` is specified, only the admin cluster resource name and membership are returned. The default/unset value `CLUSTER_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete admin cluster configuration details.
 		 * @return {ListBareMetalAdminClustersResponse} Successful response
@@ -4974,6 +5115,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent of the project and location where the clusters are listed in. Format: "projects/{project}/locations/{location}"
 		 * @param {string} filter A resource filtering expression following https://google.aip.dev/160. When non-empty, only resource's whose attributes field matches the filter are returned.
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, at most 50 clusters will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @param {Gkeonprem_projects_locations_bareMetalAdminClusters_listView} view View for bare metal Clusters. When `BASIC` is specified, only the cluster resource name and admin cluster membership are returned. The default/unset value `CLUSTER_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete cluster configuration details.
 		 * @return {ListBareMetalClustersResponse} Successful response
@@ -5022,6 +5164,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/bareMetalNodePools
 		 * @param {string} parent Required. The parent, which owns this collection of node pools. Format: projects/{project}/locations/{location}/bareMetalClusters/{bareMetalCluster}
 		 * @param {number} pageSize The maximum number of node pools to return. The service may return fewer than this value. If unspecified, at most 50 node pools will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListBareMetalNodePools` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBareMetalNodePools` must match the call that provided the page token.
 		 * @param {Gkeonprem_projects_locations_vmwareClusters_vmwareNodePools_operations_getView} view View for bare metal node pools. When `BASIC` is specified, only the node pool resource name is returned. The default/unset value `NODE_POOL_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete node pool configuration details.
 		 * @return {ListBareMetalNodePoolsResponse} Successful response
@@ -5057,6 +5200,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/vmwareAdminClusters
 		 * @param {string} parent Required. The parent of the project and location where the clusters are listed in. Format: "projects/{project}/locations/{location}"
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, at most 50 clusters will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @param {Gkeonprem_projects_locations_bareMetalAdminClusters_listView} view View for VMware admin clusters. When `BASIC` is specified, only the admin cluster resource name and membership are returned. The default/unset value `CLUSTER_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete admin cluster configuration details.
 		 * @return {ListVmwareAdminClustersResponse} Successful response
@@ -5081,6 +5225,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent of the project and location where the clusters are listed in. Format: "projects/{project}/locations/{location}"
 		 * @param {string} filter A resource filtering expression following https://google.aip.dev/160. When non-empty, only resource's whose attributes field matches the filter are returned.
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, at most 50 clusters will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @param {Gkeonprem_projects_locations_bareMetalAdminClusters_listView} view View for VMware clusters. When `BASIC` is specified, only the cluster resource name and admin cluster membership are returned. The default/unset value `CLUSTER_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete cluster configuration details.
 		 * @return {ListVmwareClustersResponse} Successful response
@@ -5129,6 +5274,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/vmwareNodePools
 		 * @param {string} parent Required. The parent, which owns this collection of node pools. Format: projects/{project}/locations/{location}/vmwareClusters/{vmwareCluster}
 		 * @param {number} pageSize The maximum number of node pools to return. The service may return fewer than this value. If unspecified, at most 50 node pools will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListVmwareNodePools` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListVmwareNodePools` must match the call that provided the page token.
 		 * @param {Gkeonprem_projects_locations_vmwareClusters_vmwareNodePools_operations_getView} view View for VMware node pools. When `BASIC` is specified, only the node pool resource name is returned. The default/unset value `NODE_POOL_VIEW_UNSPECIFIED` is the same as `FULL', which returns the complete node pool configuration details.
 		 * @return {ListVmwareNodePoolsResponse} Successful response
@@ -5164,6 +5310,7 @@ export namespace MyNS {
 		 * Get v1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Gkeonprem_projects_locations_vmwareClusters_vmwareNodePools_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {

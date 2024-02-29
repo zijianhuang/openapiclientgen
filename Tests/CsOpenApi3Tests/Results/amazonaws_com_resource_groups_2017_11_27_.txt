@@ -1182,7 +1182,10 @@ namespace MyNS
 		/// <p>Returns a list of tags that are associated with a resource group, specified by an ARN.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:GetTags</code> </p> </li> </ul>
 		/// GetTags resources/{Arn}/tags
 		/// </summary>
-		/// <param name="Arn">The ARN of the resource group whose tags you want to retrieve.</param>
+		/// <param name="Arn">The ARN of the resource group whose tags you want to retrieve.
+		/// Max length: 1600
+		/// Min length: 12
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTagsOutput> GetTagsAsync(string Arn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1216,7 +1219,10 @@ namespace MyNS
 		/// <p>Adds tags to a resource group with the specified ARN. Existing tags on a resource group are not changed if they are not specified in the request parameters.</p> <important> <p>Do not store personally identifiable information (PII) or other confidential or sensitive information in tags. We use tags to provide you with billing and administration services. Tags are not intended to be used for private or sensitive data.</p> </important> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:Tag</code> </p> </li> </ul>
 		/// Tag resources/{Arn}/tags
 		/// </summary>
-		/// <param name="Arn">The ARN of the resource group to which to add tags.</param>
+		/// <param name="Arn">The ARN of the resource group to which to add tags.
+		/// Max length: 1600
+		/// Min length: 12
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagOutput> TagAsync(string Arn, TagPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1257,7 +1263,10 @@ namespace MyNS
 		/// <p>Deletes tags from a specified resource group.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:Untag</code> </p> </li> </ul>
 		/// Untag resources/{Arn}/tags
 		/// </summary>
-		/// <param name="Arn">The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.</param>
+		/// <param name="Arn">The ARN of the resource group from which to remove tags. The command removed both the specified keys and any values associated with those keys.
+		/// Max length: 1600
+		/// Min length: 12
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagOutput> UntagAsync(string Arn, UntagPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1380,8 +1389,14 @@ namespace MyNS
 		/// <p>Returns a list of existing Resource Groups in your account.</p> <p> <b>Minimum permissions</b> </p> <p>To run this command, you must have the following permissions:</p> <ul> <li> <p> <code>resource-groups:ListGroups</code> </p> </li> </ul>
 		/// ListGroups groups-list
 		/// </summary>
-		/// <param name="maxResults">The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.</param>
-		/// <param name="nextToken">The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.</param>
+		/// <param name="maxResults">The total number of results that you want included on each page of the response. If you do not include this parameter, it defaults to a value that is specific to the operation. If additional items exist beyond the maximum you specify, the <code>NextToken</code> response element is present and has a value (is not null). Include that value as the <code>NextToken</code> request parameter in the next call to the operation to get the next part of the results. Note that the service might return fewer results than the maximum even when there are more results available. You should check <code>NextToken</code> after every operation to ensure that you receive all of the results.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="nextToken">The parameter for receiving additional results if you receive a <code>NextToken</code> response in a previous request. A <code>NextToken</code> response indicates that more output is available. Set this parameter to the value provided by a previous call's <code>NextToken</code> response to indicate where the output should continue from.
+		/// Max length: 8192
+		/// Min length: 0
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>

@@ -1740,8 +1740,13 @@ namespace MyNS
 		/// Returns an array of ServiceCredentialType objects
 		/// ListServiceCredentialTypes service_credential_types
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <returns>ServiceCredentialTypes collection</returns>
@@ -1813,8 +1818,13 @@ namespace MyNS
 		/// Returns an array of ServiceCredential objects
 		/// ListServiceCredentials service_credentials
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <returns>ServiceCredentials collection</returns>
@@ -1886,8 +1896,13 @@ namespace MyNS
 		/// Returns an array of ServiceInstance objects
 		/// ListServiceInstances service_instances
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <returns>ServiceInstances collection</returns>
@@ -1959,8 +1974,13 @@ namespace MyNS
 		/// Returns an array of ServiceInventory objects
 		/// ListServiceInventories service_inventories
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <returns>ServiceInventories collection</returns>
@@ -2068,8 +2088,13 @@ namespace MyNS
 		/// Returns an array of Tag objects
 		/// ListServiceInventoryTags service_inventories/{id}/tags
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <param name="id">ID of the resource</param>
@@ -2143,8 +2168,13 @@ namespace MyNS
 		/// Returns an array of ServiceOfferingNode objects
 		/// ListServiceOfferingNodes service_offering_nodes
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <returns>ServiceOfferingNodes collection</returns>
@@ -2216,8 +2246,13 @@ namespace MyNS
 		/// Returns an array of ServiceOffering objects
 		/// ListServiceOfferings service_offerings
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <returns>ServiceOfferings collection</returns>
@@ -2375,8 +2410,13 @@ namespace MyNS
 		/// Returns an array of ServiceInstance objects
 		/// ListServiceOfferingServiceInstances service_offerings/{id}/service_instances
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <param name="id">ID of the resource</param>
@@ -2414,8 +2454,13 @@ namespace MyNS
 		/// Returns an array of ServiceOfferingNode objects
 		/// ListServiceOfferingServiceOfferingNodes service_offerings/{id}/service_offering_nodes
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <param name="id">ID of the resource</param>
@@ -2453,8 +2498,13 @@ namespace MyNS
 		/// Returns an array of ServicePlan objects
 		/// ListServiceOfferingServicePlans service_offerings/{id}/service_plans
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <param name="id">ID of the resource</param>
@@ -2492,8 +2542,13 @@ namespace MyNS
 		/// Returns an array of ServicePlan objects
 		/// ListServicePlans service_plans
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <returns>ServicePlans collection</returns>
@@ -2565,8 +2620,13 @@ namespace MyNS
 		/// Returns an array of Source objects
 		/// ListSources sources
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <returns>Sources collection</returns>
@@ -2684,8 +2744,13 @@ namespace MyNS
 		/// Returns an array of ServiceInstance objects
 		/// ListSourceServiceInstances sources/{id}/service_instances
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <param name="id">ID of the resource</param>
@@ -2723,8 +2788,13 @@ namespace MyNS
 		/// Returns an array of ServiceInventory objects
 		/// ListSourceServiceInventories sources/{id}/service_inventories
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <param name="id">ID of the resource</param>
@@ -2762,8 +2832,13 @@ namespace MyNS
 		/// Returns an array of ServiceOfferingNode objects
 		/// ListSourceServiceOfferingNodes sources/{id}/service_offering_nodes
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <param name="id">ID of the resource</param>
@@ -2801,8 +2876,13 @@ namespace MyNS
 		/// Returns an array of ServiceOffering objects
 		/// ListSourceServiceOfferings sources/{id}/service_offerings
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <param name="id">ID of the resource</param>
@@ -2840,8 +2920,13 @@ namespace MyNS
 		/// Returns an array of ServicePlan objects
 		/// ListSourceServicePlans sources/{id}/service_plans
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <param name="id">ID of the resource</param>
@@ -2879,8 +2964,13 @@ namespace MyNS
 		/// Returns an array of Task objects
 		/// ListSourceTasks sources/{id}/tasks
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <param name="id">ID of the resource</param>
@@ -2918,8 +3008,13 @@ namespace MyNS
 		/// Returns an array of Tag objects
 		/// ListTags tags
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <returns>Tags collection</returns>
@@ -2956,8 +3051,13 @@ namespace MyNS
 		/// Returns an array of Task objects
 		/// ListTasks tasks
 		/// </summary>
-		/// <param name="limit">The numbers of items to return per page.</param>
-		/// <param name="offset">The number of items to skip before starting to collect the result set.</param>
+		/// <param name="limit">The numbers of items to return per page.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">The number of items to skip before starting to collect the result set.
+		/// Minimum: 0
+		// </param>
 		/// <param name="filter">Filter for querying collections.</param>
 		/// <param name="sort_by">The list of attribute and order to sort the result set by.</param>
 		/// <returns>Tasks collection</returns>

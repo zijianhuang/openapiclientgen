@@ -76,20 +76,28 @@ export namespace MyNS {
 		caption?: string | null;
 		copyright?: string | null;
 		format?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		subtype?: string | null;
 		type?: string | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface ArticleMultimediaFormProperties {
 		caption: FormControl<string | null | undefined>,
 		copyright: FormControl<string | null | undefined>,
 		format: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		subtype: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateArticleMultimediaFormGroup() {
@@ -147,7 +155,9 @@ export namespace MyNS {
 		 *  To get all sections, specify all. To get a particular section or sections, use the section names returned by this request:
 		 *  http://api.nytimes.com/svc/news/v3/content/section-list.json
 		 * @param {number} limit Limits the number of results, between 1 and 20
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Sets the starting point of the result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Content_source_section_jsonGetByLimitAndOffsetReturn} An array of Articles
 		 */
 		Content_source_section_jsonGetByLimitAndOffset(source: Content_source_section_jsonGetByLimitAndOffsetSource, section: string, limit: number | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Content_source_section_jsonGetByLimitAndOffsetReturn> {
@@ -165,8 +175,11 @@ export namespace MyNS {
 		 *  To get all sections, specify all. To get a particular section or sections, use the section names returned by this request:
 		 *  http://api.nytimes.com/svc/news/v3/content/section-list.json
 		 * @param {number} time_period Limits the set of items by time published, integer in number of hours
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Limits the number of results, between 1 and 20
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Sets the starting point of the result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Content_source_section_time_period_jsonGetByLimitAndOffsetReturn} An array of Articles
 		 */
 		Content_source_section_time_period_jsonGetByLimitAndOffset(source: Content_source_section_jsonGetByLimitAndOffsetSource, section: string, time_period: number, limit: number | null | undefined, offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Content_source_section_time_period_jsonGetByLimitAndOffsetReturn> {
@@ -176,12 +189,16 @@ export namespace MyNS {
 
 	export interface Content_jsonGetByUrlReturn {
 		copyright?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results?: number | null;
 		results?: Array<Article>;
 		status?: string | null;
 	}
 	export interface Content_jsonGetByUrlReturnFormProperties {
 		copyright: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}
@@ -198,12 +215,16 @@ export namespace MyNS {
 
 	export interface Content_source_section_jsonGetByLimitAndOffsetReturn {
 		copyright?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results?: number | null;
 		results?: Array<Article>;
 		status?: string | null;
 	}
 	export interface Content_source_section_jsonGetByLimitAndOffsetReturnFormProperties {
 		copyright: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}
@@ -218,12 +239,16 @@ export namespace MyNS {
 
 	export interface Content_source_section_time_period_jsonGetByLimitAndOffsetReturn {
 		copyright?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results?: number | null;
 		results?: Array<Article>;
 		status?: string | null;
 	}
 	export interface Content_source_section_time_period_jsonGetByLimitAndOffsetReturnFormProperties {
 		copyright: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}

@@ -110,6 +110,7 @@ export namespace MyNS {
 		 * In version 0, if the "repeated xxx" representations contain only one
 		 * element, that element is repeated to fill the shape.  This makes it easy
 		 * to represent a constant Tensor with a single value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version_number?: number | null;
 	}
@@ -141,6 +142,7 @@ export namespace MyNS {
 		 * In version 0, if the "repeated xxx" representations contain only one
 		 * element, that element is repeated to fill the shape.  This makes it easy
 		 * to represent a constant Tensor with a single value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version_number: FormControl<number | null | undefined>,
 	}
@@ -339,10 +341,14 @@ export namespace MyNS {
 	export interface Feedback {
 		request?: SeldonMessage;
 		response?: SeldonMessage;
+
+		/** Type: float */
 		reward?: number | null;
 		truth?: SeldonMessage;
 	}
 	export interface FeedbackFormProperties {
+
+		/** Type: float */
 		reward: FormControl<number | null | undefined>,
 	}
 	export function CreateFeedbackFormGroup() {
@@ -397,11 +403,15 @@ export namespace MyNS {
 	export interface Metric {
 		key?: string | null;
 		type?: MetricType | null;
+
+		/** Type: float */
 		value?: number | null;
 	}
 	export interface MetricFormProperties {
 		key: FormControl<string | null | undefined>,
 		type: FormControl<MetricType | null | undefined>,
+
+		/** Type: float */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricFormGroup() {
@@ -416,12 +426,16 @@ export namespace MyNS {
 	export enum MetricType { COUNTER = 'COUNTER', GAUGE = 'GAUGE', TIMER = 'TIMER' }
 
 	export interface Status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 		info?: string | null;
 		reason?: string | null;
 		status?: StatusStatus | null;
 	}
 	export interface StatusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 		info: FormControl<string | null | undefined>,
 		reason: FormControl<string | null | undefined>,

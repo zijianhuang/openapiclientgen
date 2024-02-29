@@ -2471,6 +2471,7 @@ export namespace MyNS {
 		 * A list the tags for a resource.
 		 * Get tags/{ResourceArn}
 		 * @param {string} ResourceArn  The Amazon Resource Name (ARN) that identifies the resource to list the tags. 
+		 *     Min length: 0    Max length: 100
 		 * @return {void} 
 		 */
 		ListTagsForResource(ResourceArn: string): Observable<HttpResponse<string>> {
@@ -2481,6 +2482,7 @@ export namespace MyNS {
 		 * Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a resource are not specified in the request parameters, they are not changed.
 		 * Post tags/{ResourceArn}
 		 * @param {string} ResourceArn  The Amazon Resource Name (ARN) of the resource to which to add tags. 
+		 *     Min length: 0    Max length: 100
 		 * @return {void} 
 		 */
 		TagResource(ResourceArn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -2491,7 +2493,9 @@ export namespace MyNS {
 		 * Deletes specified tags from a resource.
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn  The Amazon Resource Name (ARN) of the resource to which to delete tags. 
+		 *     Min length: 0    Max length: 100
 		 * @param {Array<string>} tagKeys  The tags to delete from the resource as a list of key-value pairs. 
+		 *     Minimum items: 1    Maximum items: 200
 		 * @return {void} 
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -2702,8 +2706,8 @@ export namespace MyNS {
 		/**
 		 * The billing group name. The names must be unique.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: string;
 
@@ -2724,8 +2728,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the billing group.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -2737,8 +2741,8 @@ export namespace MyNS {
 		/**
 		 * The billing group name. The names must be unique.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2747,8 +2751,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the billing group.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2797,16 +2801,16 @@ export namespace MyNS {
 		/**
 		 * The name of the custom line item.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: string;
 
 		/**
 		 * The description of the custom line item. This is shown on the Bills page in association with the charge value.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Description: string;
 
@@ -2833,16 +2837,16 @@ export namespace MyNS {
 		/**
 		 * The name of the custom line item.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the custom line item. This is shown on the Bills page in association with the charge value.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2901,15 +2905,15 @@ export namespace MyNS {
 		/**
 		 * The name of the pricing plan. The names must be unique to each pricing plan.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: string;
 
 		/**
 		 * The description of the pricing plan.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -2928,15 +2932,15 @@ export namespace MyNS {
 		/**
 		 * The name of the pricing plan. The names must be unique to each pricing plan.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the pricing plan.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2957,15 +2961,15 @@ export namespace MyNS {
 		/**
 		 * The pricing rule name. The names must be unique to each pricing rule.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: string;
 
 		/**
 		 * The pricing rule description.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -2989,8 +2993,8 @@ export namespace MyNS {
 
 		/**
 		 * If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Service?: string | null;
 
@@ -3005,15 +3009,15 @@ export namespace MyNS {
 
 		/**
 		 * <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. <pre><code>&lt;/p&gt; </code></pre>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		UsageType?: string | null;
 
 		/**
 		 * <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Operation?: string | null;
 	}
@@ -3022,15 +3026,15 @@ export namespace MyNS {
 		/**
 		 * The pricing rule name. The names must be unique to each pricing rule.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The pricing rule description.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -3054,8 +3058,8 @@ export namespace MyNS {
 
 		/**
 		 * If the <code>Scope</code> attribute is set to <code>SERVICE</code> or <code>SKU</code>, the attribute indicates which service the <code>PricingRule</code> is applicable for.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Service: FormControl<string | null | undefined>,
 
@@ -3067,15 +3071,15 @@ export namespace MyNS {
 
 		/**
 		 * <p> Usage type is the unit that each service uses to measure the usage of a specific type of resource.</p> <p>If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which usage type the <code>PricingRule</code> is modifying. For example, <code>USW2-BoxUsage:m2.2xlarge</code> describes an<code> M2 High Memory Double Extra Large</code> instance in the US West (Oregon) Region. <pre><code>&lt;/p&gt; </code></pre>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		UsageType: FormControl<string | null | undefined>,
 
 		/**
 		 * <p> Operation is the specific Amazon Web Services action covered by this line item. This describes the specific usage of the line item.</p> <p> If the <code>Scope</code> attribute is set to <code>SKU</code>, this attribute indicates which operation the <code>PricingRule</code> is modifying. For example, a value of <code>RunInstances:0202</code> indicates the operation of running an Amazon EC2 instance.</p>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Operation: FormControl<string | null | undefined>,
 	}
@@ -3861,8 +3865,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the billing group. The names must be unique to each billing group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name?: string | null;
 
@@ -3874,8 +3878,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the billing group.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -3892,8 +3896,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the billing group. The names must be unique to each billing group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3902,8 +3906,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the billing group.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -3953,15 +3957,15 @@ export namespace MyNS {
 
 		/**
 		 * The new name for the custom line item.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name?: string | null;
 
 		/**
 		 * The new line item description of the custom line item.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Description?: string | null;
 
@@ -3981,15 +3985,15 @@ export namespace MyNS {
 
 		/**
 		 * The new name for the custom line item.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The new line item description of the custom line item.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -4040,15 +4044,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the pricing plan. The name must be unique to each pricing plan.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the pricing plan.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 	}
@@ -4062,15 +4066,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the pricing plan. The name must be unique to each pricing plan.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the pricing plan.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -4093,15 +4097,15 @@ export namespace MyNS {
 
 		/**
 		 * The new name of the pricing rule. The name must be unique to each pricing rule.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name?: string | null;
 
 		/**
 		 * The new description for the pricing rule.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -4127,15 +4131,15 @@ export namespace MyNS {
 
 		/**
 		 * The new name of the pricing rule. The name must be unique to each pricing rule.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The new description for the pricing rule.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 

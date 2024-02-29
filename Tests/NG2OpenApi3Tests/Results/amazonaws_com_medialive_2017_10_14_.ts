@@ -9888,6 +9888,8 @@ export namespace MyNS {
 		 * Get a channel schedule
 		 * Get prod/channels/{channelId}/schedule
 		 * @param {string} channelId Id of the channel whose schedule is being updated.
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeScheduleResponse} Success
@@ -9927,6 +9929,8 @@ export namespace MyNS {
 		/**
 		 * Produces list of channels that have been created
 		 * Get prod/channels
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelsResponse} Success
@@ -9947,6 +9951,8 @@ export namespace MyNS {
 		/**
 		 * Produces list of inputs that have been created
 		 * Get prod/inputs
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInputsResponse} Success
@@ -9967,6 +9973,8 @@ export namespace MyNS {
 		/**
 		 * Produces a list of Input Security Groups for an account
 		 * Get prod/inputSecurityGroups
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInputSecurityGroupsResponse} Success
@@ -9988,6 +9996,7 @@ export namespace MyNS {
 		 * Retrieve a list of the existing multiplexes.
 		 * Get prod/multiplexes
 		 * @param {number} maxResults The maximum number of items to return.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token to retrieve the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -10011,6 +10020,7 @@ export namespace MyNS {
 		 * List the programs that currently exist for a specific multiplex.
 		 * Get prod/multiplexes/{multiplexId}/programs
 		 * @param {number} maxResults The maximum number of items to return.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} multiplexId The ID of the multiplex that the programs belong to.
 		 * @param {string} nextToken The token to retrieve the next page of results.
 		 * @param {string} MaxResults Pagination limit
@@ -10315,6 +10325,8 @@ export namespace MyNS {
 		/**
 		 * List input devices that are currently being transferred. List input devices that you are transferring from your AWS account or input devices that another AWS account is transferring to you.
 		 * Get prod/inputDeviceTransfers#transferType
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInputDeviceTransfersResponse} Success
@@ -10326,6 +10338,8 @@ export namespace MyNS {
 		/**
 		 * List input devices
 		 * Get prod/inputDevices
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInputDevicesResponse} Success
@@ -10341,6 +10355,8 @@ export namespace MyNS {
 		 * @param {string} channelConfiguration Filter to offerings that match the configuration of an existing channel, e.g. '2345678' (a channel ID)
 		 * @param {string} codec Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
 		 * @param {string} duration Filter by offering duration, e.g. '12'
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @param {string} maximumBitrate Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
 		 * @param {string} maximumFramerate Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
 		 * @param {string} resolution Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'
@@ -10360,6 +10376,8 @@ export namespace MyNS {
 		 * Get prod/reservations
 		 * @param {string} channelClass Filter by channel class, 'STANDARD' or 'SINGLE_PIPELINE'
 		 * @param {string} codec Filter by codec, 'AVC', 'HEVC', 'MPEG2', 'AUDIO', or 'LINK'
+		 * @param {number} maxResults Minimum: 1
+		 *     Maximum: 1000
 		 * @param {string} maximumBitrate Filter by bitrate, 'MAX_10_MBPS', 'MAX_20_MBPS', or 'MAX_50_MBPS'
 		 * @param {string} maximumFramerate Filter by framerate, 'MAX_30_FPS' or 'MAX_60_FPS'
 		 * @param {string} resolution Filter by resolution, 'SD', 'HD', 'FHD', or 'UHD'

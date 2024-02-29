@@ -5531,7 +5531,9 @@ export namespace MyNS {
 		 * Lists all of the applications available in the specified account.
 		 * Get applications
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Application_List(maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<ApplicationListResult> {
@@ -5543,6 +5545,7 @@ export namespace MyNS {
 		 * Get applications/{applicationId}
 		 * @param {string} applicationId The id of the application.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Application_Get(applicationId: string, timeout: number | null | undefined, api_version: string): Observable<ApplicationSummary> {
@@ -5555,7 +5558,9 @@ export namespace MyNS {
 		 * @param {string} filter An OData $filter clause.
 		 * @param {string} select An OData $select clause.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {CertificateListResult} Gets the list of certificates.
 		 */
@@ -5570,6 +5575,7 @@ export namespace MyNS {
 		 * @param {string} thumbprint The thumbprint of the certificate to get.
 		 * @param {string} select An OData $select clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Certificate_Get(thumbprintAlgorithm: string, thumbprint: string, select: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<Certificate> {
@@ -5582,6 +5588,7 @@ export namespace MyNS {
 		 * @param {string} thumbprintAlgorithm The algorithm used to derive the thumbprint parameter. This must be sha1.
 		 * @param {string} thumbprint The thumbprint of the certificate to be deleted.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5595,6 +5602,7 @@ export namespace MyNS {
 		 * @param {string} thumbprintAlgorithm The algorithm used to derive the thumbprint parameter. This must be sha1.
 		 * @param {string} thumbprint The thumbprint of the certificate being deleted.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5609,7 +5617,9 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Job_List(filter: string | null | undefined, select: string | null | undefined, expand: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJobListResult> {
@@ -5623,6 +5633,7 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Job_Get(jobId: string, select: string | null | undefined, expand: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJob> {
@@ -5634,6 +5645,7 @@ export namespace MyNS {
 		 * Delete jobs/{jobId}
 		 * @param {string} jobId The id of the job to delete.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5646,6 +5658,7 @@ export namespace MyNS {
 		 * Post jobs/{jobId}/enable
 		 * @param {string} jobId The id of the job to enable.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5660,7 +5673,9 @@ export namespace MyNS {
 		 * @param {string} filter An OData $filter clause.
 		 * @param {string} select An OData $select clause.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Job_ListPreparationAndReleaseTaskStatus(jobId: string, filter: string | null | undefined, select: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJobListPreparationAndReleaseTaskStatusResult> {
@@ -5675,7 +5690,9 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Task_List(jobId: string, filter: string | null | undefined, select: string | null | undefined, expand: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudTaskListResult> {
@@ -5690,6 +5707,7 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Task_Get(jobId: string, taskId: string, select: string | null | undefined, expand: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudTask> {
@@ -5702,6 +5720,7 @@ export namespace MyNS {
 		 * @param {string} jobId The id of the job from which to delete the task.
 		 * @param {string} taskId The id of the task to delete.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5717,7 +5736,9 @@ export namespace MyNS {
 		 * @param {string} filter An OData $filter clause.
 		 * @param {boolean} recursive Whether to list children of a directory.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		File_ListFromTask(jobId: string, taskId: string, filter: string | null | undefined, recursive: boolean | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<NodeFileListResult> {
@@ -5731,6 +5752,7 @@ export namespace MyNS {
 		 * @param {string} taskId The id of the task whose file you want to retrieve.
 		 * @param {string} fileName The path to the task file that you want to get the content of.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		File_GetFromTask(jobId: string, taskId: string, fileName: string, timeout: number | null | undefined, api_version: string): Observable<string> {
@@ -5745,6 +5767,7 @@ export namespace MyNS {
 		 * @param {string} fileName The path to the task file that you want to delete.
 		 * @param {boolean} recursive Whether to delete children of a directory. If the fileName parameter represents a directory instead of a file, you can set Recursive to true to delete the directory and all of the files and subdirectories in it. If Recursive is false then the directory must be empty or deletion will fail.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5759,6 +5782,7 @@ export namespace MyNS {
 		 * @param {string} taskId The id of the task.
 		 * @param {string} select An OData $select clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Task_ListSubtasks(jobId: string, taskId: string, select: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudTaskListSubtasksResult> {
@@ -5771,6 +5795,7 @@ export namespace MyNS {
 		 * @param {string} jobId The id of the job containing the task.
 		 * @param {string} taskId The id of the task to terminate.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5785,7 +5810,9 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		JobSchedule_List(filter: string | null | undefined, select: string | null | undefined, expand: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJobScheduleListResult> {
@@ -5799,6 +5826,7 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		JobSchedule_Get(jobScheduleId: string, select: string | null | undefined, expand: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJobSchedule> {
@@ -5810,6 +5838,7 @@ export namespace MyNS {
 		 * Delete jobschedules/{jobScheduleId}
 		 * @param {string} jobScheduleId The id of the job schedule to delete.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5822,6 +5851,7 @@ export namespace MyNS {
 		 * Post jobschedules/{jobScheduleId}/disable
 		 * @param {string} jobScheduleId The id of the job schedule to disable.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5834,6 +5864,7 @@ export namespace MyNS {
 		 * Post jobschedules/{jobScheduleId}/enable
 		 * @param {string} jobScheduleId The id of the job schedule to enable.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5849,7 +5880,9 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Job_ListFromJobSchedule(jobScheduleId: string, filter: string | null | undefined, select: string | null | undefined, expand: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudJobListResult> {
@@ -5861,6 +5894,7 @@ export namespace MyNS {
 		 * Post jobschedules/{jobScheduleId}/terminate
 		 * @param {string} jobScheduleId The id of the job schedule to terminates.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5872,6 +5906,7 @@ export namespace MyNS {
 		 * Gets lifetime summary statistics for all of the jobs in the specified account. Statistics are aggregated across all jobs that have ever existed in the account, from account creation to the last update time of the statistics.
 		 * Get lifetimejobstats
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Job_GetAllJobsLifetimeStatistics(timeout: number | null | undefined, api_version: string): Observable<JobStatistics> {
@@ -5882,6 +5917,7 @@ export namespace MyNS {
 		 * Gets lifetime summary statistics for all of the pools in the specified account. Statistics are aggregated across all pools that have ever existed in the account, from account creation to the last update time of the statistics.
 		 * Get lifetimepoolstats
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Pool_GetAllPoolsLifetimeStatistics(timeout: number | null | undefined, api_version: string): Observable<PoolStatistics> {
@@ -5893,7 +5929,9 @@ export namespace MyNS {
 		 * Get nodeagentskus
 		 * @param {string} filter An OData $filter clause.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Account_ListNodeAgentSkus(filter: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<AccountListNodeAgentSkusResult> {
@@ -5907,7 +5945,9 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Pool_List(filter: string | null | undefined, select: string | null | undefined, expand: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudPoolListResult> {
@@ -5921,6 +5961,7 @@ export namespace MyNS {
 		 * @param {string} select An OData $select clause.
 		 * @param {string} expand An OData $expand clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Pool_Get(poolId: string, select: string | null | undefined, expand: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<CloudPool> {
@@ -5932,6 +5973,7 @@ export namespace MyNS {
 		 * Delete pools/{poolId}
 		 * @param {string} poolId The id of the pool to delete.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5944,6 +5986,7 @@ export namespace MyNS {
 		 * Post pools/{poolId}/disableautoscale
 		 * @param {string} poolId The id of the pool on which to disable automatic scaling.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5958,7 +6001,9 @@ export namespace MyNS {
 		 * @param {string} filter An OData $filter clause.
 		 * @param {string} select An OData $select clause.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		ComputeNode_List(poolId: string, filter: string | null | undefined, select: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<ComputeNodeListResult> {
@@ -5972,6 +6017,7 @@ export namespace MyNS {
 		 * @param {string} nodeId The id of the compute node that you want to get information about.
 		 * @param {string} select An OData $select clause.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		ComputeNode_Get(poolId: string, nodeId: string, select: string | null | undefined, timeout: number | null | undefined, api_version: string): Observable<ComputeNode> {
@@ -5984,6 +6030,7 @@ export namespace MyNS {
 		 * @param {string} poolId The id of the pool that contains the compute node.
 		 * @param {string} nodeId The id of the compute node that you want to enable task scheduling.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -5999,7 +6046,9 @@ export namespace MyNS {
 		 * @param {string} filter An OData $filter clause.
 		 * @param {boolean} recursive Whether to list children of a directory.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		File_ListFromComputeNode(poolId: string, nodeId: string, filter: string | null | undefined, recursive: boolean | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<NodeFileListResult> {
@@ -6013,6 +6062,7 @@ export namespace MyNS {
 		 * @param {string} nodeId The id of the compute node that contains the file.
 		 * @param {string} fileName The path to the task file that you want to get the content of.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		File_GetFromComputeNode(poolId: string, nodeId: string, fileName: string, timeout: number | null | undefined, api_version: string): Observable<string> {
@@ -6027,6 +6077,7 @@ export namespace MyNS {
 		 * @param {string} fileName The path to the file that you want to delete.
 		 * @param {boolean} recursive Whether to delete children of a directory. If the fileName parameter represents a directory instead of a file, you can set Recursive to true to delete the directory and all of the files and subdirectories in it. If Recursive is false then the directory must be empty or deletion will fail.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -6040,6 +6091,7 @@ export namespace MyNS {
 		 * @param {string} poolId The id of the pool that contains the compute node.
 		 * @param {string} nodeId The id of the compute node for which you want to get the Remote Desktop Protocol file.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		ComputeNode_GetRemoteDesktop(poolId: string, nodeId: string, timeout: number | null | undefined, api_version: string): Observable<string> {
@@ -6052,6 +6104,7 @@ export namespace MyNS {
 		 * @param {string} poolId The id of the pool that contains the compute node.
 		 * @param {string} nodeId The id of the compute node for which to obtain the remote login settings.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		ComputeNode_GetRemoteLoginSettings(poolId: string, nodeId: string, timeout: number | null | undefined, api_version: string): Observable<ComputeNodeGetRemoteLoginSettingsResult> {
@@ -6065,6 +6118,7 @@ export namespace MyNS {
 		 * @param {string} nodeId The id of the machine on which you want to delete a user account.
 		 * @param {string} userName The name of the user account to delete.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -6077,6 +6131,7 @@ export namespace MyNS {
 		 * Post pools/{poolId}/stopresize
 		 * @param {string} poolId The id of the pool whose resizing you want to stop.
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 * @return {void} 
 		 */
@@ -6091,7 +6146,9 @@ export namespace MyNS {
 		 * @param {Date} endtime The latest time from which to include metrics. This must be at least two hours before the current time.
 		 * @param {string} filter An OData $filter clause.
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timeout The maximum time that the server can spend processing the request, in seconds. The default is 30 seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client API Version.
 		 */
 		Pool_ListPoolUsageMetrics(starttime: Date | null | undefined, endtime: Date | null | undefined, filter: string | null | undefined, maxresults: number | null | undefined, timeout: number | null | undefined, api_version: string): Observable<PoolListPoolUsageMetricsResult> {

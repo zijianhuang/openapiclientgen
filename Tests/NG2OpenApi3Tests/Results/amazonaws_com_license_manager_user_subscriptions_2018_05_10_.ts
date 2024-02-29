@@ -1050,7 +1050,10 @@ export namespace MyNS {
 
 	export interface ListIdentityProvidersPostBody {
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults?: number | null;
 
 		/** Token for the next set of results. */
@@ -1058,7 +1061,10 @@ export namespace MyNS {
 	}
 	export interface ListIdentityProvidersPostBodyFormProperties {
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 
 		/** Token for the next set of results. */
@@ -1077,7 +1083,10 @@ export namespace MyNS {
 		/** An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. */
 		Filters?: Array<Filter>;
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults?: number | null;
 
 		/** Token for the next set of results. */
@@ -1085,7 +1094,10 @@ export namespace MyNS {
 	}
 	export interface ListInstancesPostBodyFormProperties {
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 
 		/** Token for the next set of results. */
@@ -1110,7 +1122,10 @@ export namespace MyNS {
 		 */
 		IdentityProvider: ListProductSubscriptionsPostBodyIdentityProvider;
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults?: number | null;
 
 		/** Token for the next set of results. */
@@ -1124,7 +1139,10 @@ export namespace MyNS {
 	}
 	export interface ListProductSubscriptionsPostBodyFormProperties {
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 
 		/** Token for the next set of results. */
@@ -1173,7 +1191,10 @@ export namespace MyNS {
 		 */
 		InstanceId: string;
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults?: number | null;
 
 		/** Token for the next set of results. */
@@ -1187,7 +1208,10 @@ export namespace MyNS {
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 
 		/** Token for the next set of results. */

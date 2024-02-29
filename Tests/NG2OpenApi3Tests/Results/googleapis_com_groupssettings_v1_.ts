@@ -108,7 +108,10 @@ export namespace MyNS {
 		/** The type of the resource. It is always groupsSettings#groups. */
 		kind?: string | null;
 
-		/** Deprecated. The maximum size of a message is 25Mb. */
+		/**
+		 * Deprecated. The maximum size of a message is 25Mb.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxMessageBytes?: number | null;
 
 		/**
@@ -601,7 +604,10 @@ export namespace MyNS {
 		/** The type of the resource. It is always groupsSettings#groups. */
 		kind: FormControl<string | null | undefined>,
 
-		/** Deprecated. The maximum size of a message is 25Mb. */
+		/**
+		 * Deprecated. The maximum size of a message is 25Mb.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxMessageBytes: FormControl<number | null | undefined>,
 
 		/**

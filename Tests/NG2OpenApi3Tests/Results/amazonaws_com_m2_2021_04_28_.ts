@@ -2601,7 +2601,9 @@ export namespace MyNS {
 		 * Get applications
 		 * @param {string} environmentId The unique identifier of the runtime environment where the applications are deployed.
 		 * @param {number} maxResults The maximum number of applications to return.
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {Array<string>} names The names of the applications.
+		 *     Minimum items: 1    Maximum items: 10
 		 * @param {string} nextToken A pagination token to control the number of applications displayed in the list.
 		 * @return {ListApplicationsResponse} Success
 		 */
@@ -2634,6 +2636,7 @@ export namespace MyNS {
 		 * Get applications/{applicationId}/deployments
 		 * @param {string} applicationId The application identifier.
 		 * @param {number} maxResults The maximum number of objects to return.
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {string} nextToken A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.
 		 * @return {ListDeploymentsResponse} Success
 		 */
@@ -2655,7 +2658,9 @@ export namespace MyNS {
 		 * Get environments
 		 * @param {EngineType} engineType The engine type for the runtime environment.
 		 * @param {number} maxResults The maximum number of runtime environments to return.
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {Array<string>} names The names of the runtime environments. Must be unique within the account.
+		 *     Minimum items: 1    Maximum items: 10
 		 * @param {string} nextToken A pagination token to control the number of runtime environments displayed in the list.
 		 * @return {ListEnvironmentsResponse} Success
 		 */
@@ -2739,6 +2744,7 @@ export namespace MyNS {
 		 * Get applications/{applicationId}/versions/{applicationVersion}
 		 * @param {string} applicationId The unique identifier of the application.
 		 * @param {number} applicationVersion The specific version of the application.
+		 *     Minimum: 1
 		 * @return {GetApplicationVersionResponse} Success
 		 */
 		GetApplicationVersion(applicationId: string, applicationVersion: number): Observable<GetApplicationVersionResponse> {
@@ -2803,6 +2809,7 @@ export namespace MyNS {
 		 * Get applications/{applicationId}/versions
 		 * @param {string} applicationId The unique identifier of the application.
 		 * @param {number} maxResults The maximum number of application versions to return.
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {string} nextToken A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.
 		 * @return {ListApplicationVersionsResponse} Success
 		 */
@@ -2815,6 +2822,7 @@ export namespace MyNS {
 		 * Get applications/{applicationId}/batch-job-definitions
 		 * @param {string} applicationId The identifier of the application.
 		 * @param {number} maxResults The maximum number of batch job definitions to return.
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {string} nextToken A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.
 		 * @param {string} prefix If the batch job definition is a FileBatchJobDefinition, the prefix allows you to search on the file names of FileBatchJobDefinitions.
 		 * @return {ListBatchJobDefinitionsResponse} Success
@@ -2828,8 +2836,10 @@ export namespace MyNS {
 		 * Get applications/{applicationId}/batch-job-executions
 		 * @param {string} applicationId The unique identifier of the application.
 		 * @param {Array<string>} executionIds The unique identifier of each batch job execution.
+		 *     Minimum items: 1    Maximum items: 10
 		 * @param {string} jobName The name of each batch job execution.
 		 * @param {number} maxResults The maximum number of batch job executions to return.
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {string} nextToken A pagination token to control the number of batch job executions displayed in the list.
 		 * @param {Date} startedAfter The time after which the batch job executions started.
 		 * @param {Date} startedBefore The time before the batch job executions started.
@@ -2845,6 +2855,7 @@ export namespace MyNS {
 		 * Get applications/{applicationId}/dataset-import-tasks
 		 * @param {string} applicationId The unique identifier of the application.
 		 * @param {number} maxResults The maximum number of objects to return.
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {string} nextToken A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.
 		 * @return {ListDataSetImportHistoryResponse} Success
 		 */
@@ -2857,6 +2868,7 @@ export namespace MyNS {
 		 * Get applications/{applicationId}/datasets
 		 * @param {string} applicationId The unique identifier of the application for which you want to list the associated data sets.
 		 * @param {number} maxResults The maximum number of objects to return.
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {string} nextToken A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.
 		 * @param {string} prefix The prefix of the data set name, which you can use to filter the list of data sets.
 		 * @return {ListDataSetsResponse} Success
@@ -2870,6 +2882,7 @@ export namespace MyNS {
 		 * Get engine-versions
 		 * @param {EngineType} engineType The type of target platform.
 		 * @param {number} maxResults The maximum number of objects to return.
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {string} nextToken A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.
 		 * @return {ListEngineVersionsResponse} Success
 		 */
@@ -2952,8 +2965,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the application.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -2985,8 +2998,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the application.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3129,8 +3142,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the runtime environment.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -3186,8 +3199,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the runtime environment.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3267,8 +3280,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the application to update.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 	}
@@ -3283,8 +3296,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the application to update.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 	}
@@ -3317,7 +3330,10 @@ export namespace MyNS {
 		/** Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true. */
 		applyDuringMaintenanceWindow?: boolean | null;
 
-		/** The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100. */
+		/**
+		 * The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		desiredCapacity?: number | null;
 
 		/** The version of the runtime engine for the runtime environment. */
@@ -3334,7 +3350,10 @@ export namespace MyNS {
 		/** Indicates whether to update the runtime environment during the maintenance window. The default is false. Currently, Amazon Web Services Mainframe Modernization accepts the <code>engineVersion</code> parameter only if <code>applyDuringMaintenanceWindow</code> is true. If any parameter other than <code>engineVersion</code> is provided in <code>UpdateEnvironmentRequest</code>, it will fail if <code>applyDuringMaintenanceWindow</code> is set to true. */
 		applyDuringMaintenanceWindow: FormControl<boolean | null | undefined>,
 
-		/** The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100. */
+		/**
+		 * The desired capacity for the runtime environment to update. The minimum possible value is 0 and the maximum is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		desiredCapacity: FormControl<number | null | undefined>,
 
 		/** The version of the runtime engine for the runtime environment. */

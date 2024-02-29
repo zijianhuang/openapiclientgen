@@ -9,15 +9,15 @@ export namespace MyNS {
 
 		/**
 		 * The resource name of an Amazon Connect campaign.
-		 * Max length: 500
 		 * Min length: 20
+		 * Max length: 500
 		 */
 		arn?: string | null;
 
 		/**
 		 * Identifier representing a Campaign
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		id?: string | null;
 
@@ -30,15 +30,15 @@ export namespace MyNS {
 
 		/**
 		 * The resource name of an Amazon Connect campaign.
-		 * Max length: 500
 		 * Min length: 20
+		 * Max length: 500
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier representing a Campaign
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		id: FormControl<string | null | undefined>,
 	}
@@ -251,16 +251,16 @@ export namespace MyNS {
 		/**
 		 * The resource name of an Amazon Connect campaign.
 		 * Required
-		 * Max length: 500
 		 * Min length: 20
+		 * Max length: 500
 		 */
 		arn: string;
 
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: string;
 
@@ -273,16 +273,16 @@ export namespace MyNS {
 		/**
 		 * Identifier representing a Campaign
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		id: string;
 
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 
@@ -302,32 +302,32 @@ export namespace MyNS {
 		/**
 		 * The resource name of an Amazon Connect campaign.
 		 * Required
-		 * Max length: 500
 		 * Min length: 20
+		 * Max length: 500
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier representing a Campaign
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -371,23 +371,23 @@ export namespace MyNS {
 		/**
 		 * The identifier of the contact flow for the outbound call.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectContactFlowId: string;
 
 		/**
 		 * The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectQueueId: string;
 
 		/**
 		 * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		connectSourcePhoneNumber?: string | null;
 	}
@@ -398,23 +398,23 @@ export namespace MyNS {
 		/**
 		 * The identifier of the contact flow for the outbound call.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectContactFlowId: FormControl<string | null | undefined>,
 
 		/**
 		 * The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectQueueId: FormControl<string | null | undefined>,
 
 		/**
 		 * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		connectSourcePhoneNumber: FormControl<string | null | undefined>,
 	}
@@ -484,8 +484,8 @@ export namespace MyNS {
 
 		/**
 		 * Identifier representing a Campaign
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		campaignId?: string | null;
 
@@ -498,8 +498,8 @@ export namespace MyNS {
 
 		/**
 		 * Identifier representing a Campaign
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		campaignId: FormControl<string | null | undefined>,
 
@@ -522,8 +522,8 @@ export namespace MyNS {
 
 		/**
 		 * Identifier representing a Campaign
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		campaignId?: string | null;
 
@@ -536,8 +536,8 @@ export namespace MyNS {
 
 		/**
 		 * Identifier representing a Campaign
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		campaignId: FormControl<string | null | undefined>,
 
@@ -576,8 +576,8 @@ export namespace MyNS {
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: string;
 
@@ -590,8 +590,8 @@ export namespace MyNS {
 		/**
 		 * Service linked role arn
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		serviceLinkedRoleArn: string;
 	}
@@ -602,16 +602,16 @@ export namespace MyNS {
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * Service linked role arn
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		serviceLinkedRoleArn: FormControl<string | null | undefined>,
 	}
@@ -638,8 +638,8 @@ export namespace MyNS {
 
 		/**
 		 * KMS key id/arn for encryption config.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		keyArn?: string | null;
 	}
@@ -658,8 +658,8 @@ export namespace MyNS {
 
 		/**
 		 * KMS key id/arn for encryption config.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		keyArn: FormControl<string | null | undefined>,
 	}
@@ -698,8 +698,8 @@ export namespace MyNS {
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: string;
 
@@ -719,8 +719,8 @@ export namespace MyNS {
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: FormControl<string | null | undefined>,
 
@@ -755,8 +755,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		nextToken?: string | null;
 	}
@@ -766,8 +766,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -785,32 +785,32 @@ export namespace MyNS {
 		/**
 		 * The resource name of an Amazon Connect campaign.
 		 * Required
-		 * Max length: 500
 		 * Min length: 20
+		 * Max length: 500
 		 */
 		arn: string;
 
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: string;
 
 		/**
 		 * Identifier representing a Campaign
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		id: string;
 
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 	}
@@ -821,32 +821,32 @@ export namespace MyNS {
 		/**
 		 * The resource name of an Amazon Connect campaign.
 		 * Required
-		 * Max length: 500
 		 * Min length: 20
+		 * Max length: 500
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier representing a Campaign
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -873,8 +873,8 @@ export namespace MyNS {
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		value: string;
 	}
@@ -891,8 +891,8 @@ export namespace MyNS {
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -967,8 +967,8 @@ export namespace MyNS {
 
 		/**
 		 * Client provided parameter used for idempotency. Its value must be unique for each request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -984,8 +984,8 @@ export namespace MyNS {
 
 		/**
 		 * Client provided parameter used for idempotency. Its value must be unique for each request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1012,8 +1012,8 @@ export namespace MyNS {
 
 		/**
 		 * Client provided parameter used for idempotency. Its value must be unique for each request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -1026,8 +1026,8 @@ export namespace MyNS {
 
 		/**
 		 * Client provided parameter used for idempotency. Its value must be unique for each request.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1055,8 +1055,8 @@ export namespace MyNS {
 		/**
 		 * Client provided parameter used for idempotency. Its value must be unique for each request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken: string;
 
@@ -1069,8 +1069,8 @@ export namespace MyNS {
 		/**
 		 * The phone number of the customer, in E.164 format.
 		 * Required
-		 * Max length: 20
 		 * Min length: 0
+		 * Max length: 20
 		 */
 		phoneNumber: string;
 	}
@@ -1081,8 +1081,8 @@ export namespace MyNS {
 		/**
 		 * Client provided parameter used for idempotency. Its value must be unique for each request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1095,8 +1095,8 @@ export namespace MyNS {
 		/**
 		 * The phone number of the customer, in E.164 format.
 		 * Required
-		 * Max length: 20
 		 * Min length: 0
+		 * Max length: 20
 		 */
 		phoneNumber: FormControl<string | null | undefined>,
 	}
@@ -1172,8 +1172,8 @@ export namespace MyNS {
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: string;
 
@@ -1186,8 +1186,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 
@@ -1207,16 +1207,16 @@ export namespace MyNS {
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1380,8 +1380,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		nextToken?: string | null;
 	}
@@ -1398,8 +1398,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -1584,8 +1584,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 	}
@@ -1596,8 +1596,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1617,15 +1617,15 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the contact flow for the outbound call.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectContactFlowId?: string | null;
 
 		/**
 		 * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		connectSourcePhoneNumber?: string | null;
 	}
@@ -1635,15 +1635,15 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the contact flow for the outbound call.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectContactFlowId: FormControl<string | null | undefined>,
 
 		/**
 		 * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		connectSourcePhoneNumber: FormControl<string | null | undefined>,
 	}
@@ -1672,6 +1672,8 @@ export namespace MyNS {
 		/**
 		 * Deletes a campaign from the specified Amazon Connect account.
 		 * Delete campaigns/{id}
+		 * @param {string} id Min length: 0
+		 *     Max length: 256
 		 * @return {void} Success
 		 */
 		DeleteCampaign(id: string): Observable<HttpResponse<string>> {
@@ -1681,6 +1683,8 @@ export namespace MyNS {
 		/**
 		 * Describes the specific campaign.
 		 * Get campaigns/{id}
+		 * @param {string} id Min length: 0
+		 *     Max length: 256
 		 * @return {DescribeCampaignResponse} Success
 		 */
 		DescribeCampaign(id: string): Observable<DescribeCampaignResponse> {
@@ -1690,6 +1694,8 @@ export namespace MyNS {
 		/**
 		 * Deletes a connect instance config from the specified AWS account.
 		 * Delete connect-instance/{connectInstanceId}/config
+		 * @param {string} connectInstanceId Min length: 0
+		 *     Max length: 256
 		 * @return {void} Success
 		 */
 		DeleteConnectInstanceConfig(connectInstanceId: string): Observable<HttpResponse<string>> {
@@ -1699,6 +1705,8 @@ export namespace MyNS {
 		/**
 		 * Get the specific Connect instance config.
 		 * Get connect-instance/{connectInstanceId}/config
+		 * @param {string} connectInstanceId Min length: 0
+		 *     Max length: 256
 		 * @return {GetConnectInstanceConfigResponse} Success
 		 */
 		GetConnectInstanceConfig(connectInstanceId: string): Observable<GetConnectInstanceConfigResponse> {
@@ -1708,6 +1716,8 @@ export namespace MyNS {
 		/**
 		 * Delete the Connect Campaigns onboarding job for the specified Amazon Connect instance.
 		 * Delete connect-instance/{connectInstanceId}/onboarding
+		 * @param {string} connectInstanceId Min length: 0
+		 *     Max length: 256
 		 * @return {void} Success
 		 */
 		DeleteInstanceOnboardingJob(connectInstanceId: string): Observable<HttpResponse<string>> {
@@ -1717,6 +1727,8 @@ export namespace MyNS {
 		/**
 		 * Get the specific instance onboarding job status.
 		 * Get connect-instance/{connectInstanceId}/onboarding
+		 * @param {string} connectInstanceId Min length: 0
+		 *     Max length: 256
 		 * @return {GetInstanceOnboardingJobStatusResponse} Success
 		 */
 		GetInstanceOnboardingJobStatus(connectInstanceId: string): Observable<GetInstanceOnboardingJobStatusResponse> {
@@ -1726,6 +1738,8 @@ export namespace MyNS {
 		/**
 		 * Onboard the specific Amazon Connect instance to Connect Campaigns.
 		 * Put connect-instance/{connectInstanceId}/onboarding
+		 * @param {string} connectInstanceId Min length: 0
+		 *     Max length: 256
 		 * @return {StartInstanceOnboardingJobResponse} Success
 		 */
 		StartInstanceOnboardingJob(connectInstanceId: string, requestBody: StartInstanceOnboardingJobPutBody): Observable<StartInstanceOnboardingJobResponse> {
@@ -1735,6 +1749,8 @@ export namespace MyNS {
 		/**
 		 * Get state of a campaign for the specified Amazon Connect account.
 		 * Get campaigns/{id}/state
+		 * @param {string} id Min length: 0
+		 *     Max length: 256
 		 * @return {GetCampaignStateResponse} Success
 		 */
 		GetCampaignState(id: string): Observable<GetCampaignStateResponse> {
@@ -1764,6 +1780,8 @@ export namespace MyNS {
 		/**
 		 * List tags for a resource.
 		 * Get tags/{arn}
+		 * @param {string} arn Min length: 20
+		 *     Max length: 500
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(arn: string): Observable<ListTagsForResourceResponse> {
@@ -1773,6 +1791,8 @@ export namespace MyNS {
 		/**
 		 * Tag a resource.
 		 * Post tags/{arn}
+		 * @param {string} arn Min length: 20
+		 *     Max length: 500
 		 * @return {void} Success
 		 */
 		TagResource(arn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -1782,6 +1802,8 @@ export namespace MyNS {
 		/**
 		 * Pauses a campaign for the specified Amazon Connect account.
 		 * Post campaigns/{id}/pause
+		 * @param {string} id Min length: 0
+		 *     Max length: 256
 		 * @return {void} Success
 		 */
 		PauseCampaign(id: string): Observable<HttpResponse<string>> {
@@ -1791,6 +1813,8 @@ export namespace MyNS {
 		/**
 		 * Creates dials requests for the specified campaign Amazon Connect account. This API is idempotent.
 		 * Put campaigns/{id}/dial-requests
+		 * @param {string} id Min length: 0
+		 *     Max length: 256
 		 * @return {PutDialRequestBatchResponse} Success
 		 */
 		PutDialRequestBatch(id: string, requestBody: PutDialRequestBatchPutBody): Observable<PutDialRequestBatchResponse> {
@@ -1800,6 +1824,8 @@ export namespace MyNS {
 		/**
 		 * Stops a campaign for the specified Amazon Connect account.
 		 * Post campaigns/{id}/resume
+		 * @param {string} id Min length: 0
+		 *     Max length: 256
 		 * @return {void} Success
 		 */
 		ResumeCampaign(id: string): Observable<HttpResponse<string>> {
@@ -1809,6 +1835,8 @@ export namespace MyNS {
 		/**
 		 * Starts a campaign for the specified Amazon Connect account.
 		 * Post campaigns/{id}/start
+		 * @param {string} id Min length: 0
+		 *     Max length: 256
 		 * @return {void} Success
 		 */
 		StartCampaign(id: string): Observable<HttpResponse<string>> {
@@ -1818,6 +1846,8 @@ export namespace MyNS {
 		/**
 		 * Stops a campaign for the specified Amazon Connect account.
 		 * Post campaigns/{id}/stop
+		 * @param {string} id Min length: 0
+		 *     Max length: 256
 		 * @return {void} Success
 		 */
 		StopCampaign(id: string): Observable<HttpResponse<string>> {
@@ -1827,6 +1857,10 @@ export namespace MyNS {
 		/**
 		 * Untag a resource.
 		 * Delete tags/{arn}#tagKeys
+		 * @param {string} arn Min length: 20
+		 *     Max length: 500
+		 * @param {Array<string>} tagKeys Minimum items: 0
+		 *     Maximum items: 50
 		 * @return {void} Success
 		 */
 		UntagResource(arn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -1836,6 +1870,8 @@ export namespace MyNS {
 		/**
 		 * Updates the dialer config of a campaign. This API is idempotent.
 		 * Post campaigns/{id}/dialer-config
+		 * @param {string} id Min length: 0
+		 *     Max length: 256
 		 * @return {void} Success
 		 */
 		UpdateCampaignDialerConfig(id: string, requestBody: UpdateCampaignDialerConfigPostBody): Observable<HttpResponse<string>> {
@@ -1845,6 +1881,8 @@ export namespace MyNS {
 		/**
 		 * Updates the name of a campaign. This API is idempotent.
 		 * Post campaigns/{id}/name
+		 * @param {string} id Min length: 0
+		 *     Max length: 256
 		 * @return {void} Success
 		 */
 		UpdateCampaignName(id: string, requestBody: UpdateCampaignNamePostBody): Observable<HttpResponse<string>> {
@@ -1854,6 +1892,8 @@ export namespace MyNS {
 		/**
 		 * Updates the outbound call config of a campaign. This API is idempotent.
 		 * Post campaigns/{id}/outbound-call-config
+		 * @param {string} id Min length: 0
+		 *     Max length: 256
 		 * @return {void} Success
 		 */
 		UpdateCampaignOutboundCallConfig(id: string, requestBody: UpdateCampaignOutboundCallConfigPostBody): Observable<HttpResponse<string>> {
@@ -1866,8 +1906,8 @@ export namespace MyNS {
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: string;
 
@@ -1880,8 +1920,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 
@@ -1899,16 +1939,16 @@ export namespace MyNS {
 		/**
 		 * Amazon Connect Instance Id
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		connectInstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1947,22 +1987,22 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the contact flow for the outbound call.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectContactFlowId?: string | null;
 
 		/**
 		 * The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectQueueId?: string | null;
 
 		/**
 		 * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		connectSourcePhoneNumber?: string | null;
 	}
@@ -1970,22 +2010,22 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the contact flow for the outbound call.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectContactFlowId: FormControl<string | null | undefined>,
 
 		/**
 		 * The queue for the call. If you specify a queue, the phone displayed for caller ID is the phone number specified in the queue. If you do not specify a queue, the queue defined in the contact flow is used. If you do not specify a queue, you must specify a source phone number.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectQueueId: FormControl<string | null | undefined>,
 
 		/**
 		 * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		connectSourcePhoneNumber: FormControl<string | null | undefined>,
 	}
@@ -2024,8 +2064,8 @@ export namespace MyNS {
 
 		/**
 		 * KMS key id/arn for encryption config.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		keyArn?: string | null;
 	}
@@ -2039,8 +2079,8 @@ export namespace MyNS {
 
 		/**
 		 * KMS key id/arn for encryption config.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		keyArn: FormControl<string | null | undefined>,
 	}
@@ -2085,8 +2125,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		nextToken?: string | null;
 	}
@@ -2101,8 +2141,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -2205,8 +2245,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: string;
 	}
@@ -2215,8 +2255,8 @@ export namespace MyNS {
 		/**
 		 * The name of an Amazon Connect Campaign name.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -2234,15 +2274,15 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the contact flow for the outbound call.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectContactFlowId?: string | null;
 
 		/**
 		 * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		connectSourcePhoneNumber?: string | null;
 	}
@@ -2250,15 +2290,15 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the contact flow for the outbound call.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		connectContactFlowId: FormControl<string | null | undefined>,
 
 		/**
 		 * The phone number associated with the Amazon Connect instance, in E.164 format. If you do not specify a source phone number, you must specify a queue.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		connectSourcePhoneNumber: FormControl<string | null | undefined>,
 	}

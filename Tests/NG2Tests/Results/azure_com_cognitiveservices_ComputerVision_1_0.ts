@@ -971,7 +971,9 @@ export namespace MyNS {
 		 * This operation generates a thumbnail image with the user-specified width and height. By default, the service analyzes the image, identifies the region of interest (ROI), and generates smart cropping coordinates based on the ROI. Smart cropping helps when you specify an aspect ratio that differs from that of the input image. A successful response contains the thumbnail image binary. If the request failed, the response contains an error code and a message to help determine what went wrong.
 		 * Post generateThumbnail
 		 * @param {number} width Width of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
+		 *     Minimum: 1    Maximum: 1023
 		 * @param {number} height Height of the thumbnail. It must be between 1 and 1024. Recommended minimum of 50.
+		 *     Minimum: 1    Maximum: 1023
 		 * @param {boolean} smartCropping Boolean flag for enabling smart cropping.
 		 * @param {GenerateThumbnailPostBody} requestBody A JSON document with a URL pointing to the image that is to be analyzed.
 		 * @return {void} The generated thumbnail in binary format.

@@ -15,8 +15,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -25,8 +25,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Chat Service Instance managed by Proxy Service. The Chat Service enables Proxy to forward SMS and channel messages to this chat instance. This is a one-to-one relationship.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		chat_instance_sid?: string | null;
 
@@ -36,7 +36,10 @@ export namespace MyNS {
 		/** The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time in GMT when the resource was last updated. */
 		date_updated?: Date | null;
 
-		/** The default `ttl` value for Sessions created in the Service. The TTL (time to live) is measured in seconds after the Session's last create or last Interaction. The default value of `0` indicates an unlimited Session length. You can override a Session's default TTL value by setting its `ttl` value. */
+		/**
+		 * The default `ttl` value for Sessions created in the Service. The TTL (time to live) is measured in seconds after the Session's last create or last Interaction. The default value of `0` indicates an unlimited Session length. You can override a Session's default TTL value by setting its `ttl` value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default_ttl?: number | null;
 		geo_match_level?: Proxyv1serviceGeo_match_level | null;
 
@@ -52,8 +55,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -67,8 +70,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -77,8 +80,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Chat Service Instance managed by Proxy Service. The Chat Service enables Proxy to forward SMS and channel messages to this chat instance. This is a one-to-one relationship.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		chat_instance_sid: FormControl<string | null | undefined>,
 
@@ -88,7 +91,10 @@ export namespace MyNS {
 		/** The [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date and time in GMT when the resource was last updated. */
 		date_updated: FormControl<Date | null | undefined>,
 
-		/** The default `ttl` value for Sessions created in the Service. The TTL (time to live) is measured in seconds after the Session's last create or last Interaction. The default value of `0` indicates an unlimited Session length. You can override a Session's default TTL value by setting its `ttl` value. */
+		/**
+		 * The default `ttl` value for Sessions created in the Service. The TTL (time to live) is measured in seconds after the Session's last create or last Interaction. The default value of `0` indicates an unlimited Session length. You can override a Session's default TTL value by setting its `ttl` value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		default_ttl: FormControl<number | null | undefined>,
 		geo_match_level: FormControl<Proxyv1serviceGeo_match_level | null | undefined>,
 
@@ -104,8 +110,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -143,8 +149,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the PhoneNumber resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -160,7 +166,10 @@ export namespace MyNS {
 		/** The string that you assigned to describe the resource. */
 		friendly_name?: string | null;
 
-		/** The number of open session assigned to the number. See the [How many Phone Numbers do I need?](https://www.twilio.com/docs/proxy/phone-numbers-needed) guide for more information. */
+		/**
+		 * The number of open session assigned to the number. See the [How many Phone Numbers do I need?](https://www.twilio.com/docs/proxy/phone-numbers-needed) guide for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		in_use?: number | null;
 
 		/** Whether the phone number should be reserved and not be assigned to a participant using proxy pool logic. See [Reserved Phone Numbers](https://www.twilio.com/docs/proxy/reserved-phone-numbers) for more information. */
@@ -174,15 +183,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the PhoneNumber resource's parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the PhoneNumber resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -193,8 +202,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the PhoneNumber resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -207,7 +216,10 @@ export namespace MyNS {
 		/** The string that you assigned to describe the resource. */
 		friendly_name: FormControl<string | null | undefined>,
 
-		/** The number of open session assigned to the number. See the [How many Phone Numbers do I need?](https://www.twilio.com/docs/proxy/phone-numbers-needed) guide for more information. */
+		/**
+		 * The number of open session assigned to the number. See the [How many Phone Numbers do I need?](https://www.twilio.com/docs/proxy/phone-numbers-needed) guide for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		in_use: FormControl<number | null | undefined>,
 
 		/** Whether the phone number should be reserved and not be assigned to a participant using proxy pool logic. See [Reserved Phone Numbers](https://www.twilio.com/docs/proxy/reserved-phone-numbers) for more information. */
@@ -221,15 +233,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the PhoneNumber resource's parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the PhoneNumber resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -279,8 +291,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Session resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -311,20 +323,23 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/proxy/api/service) the session is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Session resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Proxyv1servicesessionStatus | null;
 
-		/** The time, in seconds, when the session will expire. The time is measured from the last Session create or the Session's last Interaction. */
+		/**
+		 * The time, in seconds, when the session will expire. The time is measured from the last Session create or the Session's last Interaction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 
 		/** An application-defined string that uniquely identifies the resource. This value must be 191 characters or fewer in length and be unique. Supports UTF-8 characters. **This value should not have PII.** */
@@ -337,8 +352,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Session resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -369,20 +384,23 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/proxy/api/service) the session is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Session resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Proxyv1servicesessionStatus | null | undefined>,
 
-		/** The time, in seconds, when the session will expire. The time is measured from the last Session create or the Session's last Interaction. */
+		/**
+		 * The time, in seconds, when the session will expire. The time is measured from the last Session create or the Session's last Interaction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 
 		/** An application-defined string that uniquely identifies the resource. This value must be 191 characters or fewer in length and be unique. Supports UTF-8 characters. **This value should not have PII.** */
@@ -421,8 +439,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Interaction resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -437,15 +455,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the inbound [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		inbound_participant_sid?: string | null;
 
 		/**
 		 * The SID of the inbound resource; either the [Call](https://www.twilio.com/docs/voice/api/call-resource) or [Message](https://www.twilio.com/docs/sms/api/message-resource).
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		inbound_resource_sid?: string | null;
 		inbound_resource_status?: Interaction_enum_resource_status | null;
@@ -458,15 +476,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the outbound [Participant](https://www.twilio.com/docs/proxy/api/participant)).
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		outbound_participant_sid?: string | null;
 
 		/**
 		 * The SID of the outbound resource; either the [Call](https://www.twilio.com/docs/voice/api/call-resource) or [Message](https://www.twilio.com/docs/sms/api/message-resource).
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		outbound_resource_sid?: string | null;
 		outbound_resource_status?: Interaction_enum_resource_status | null;
@@ -479,22 +497,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		session_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Interaction resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		type?: Interaction_enum_type | null;
@@ -506,8 +524,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Interaction resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -522,15 +540,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the inbound [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		inbound_participant_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the inbound resource; either the [Call](https://www.twilio.com/docs/voice/api/call-resource) or [Message](https://www.twilio.com/docs/sms/api/message-resource).
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		inbound_resource_sid: FormControl<string | null | undefined>,
 		inbound_resource_status: FormControl<Interaction_enum_resource_status | null | undefined>,
@@ -543,15 +561,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the outbound [Participant](https://www.twilio.com/docs/proxy/api/participant)).
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		outbound_participant_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the outbound resource; either the [Call](https://www.twilio.com/docs/voice/api/call-resource) or [Message](https://www.twilio.com/docs/sms/api/message-resource).
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		outbound_resource_sid: FormControl<string | null | undefined>,
 		outbound_resource_status: FormControl<Interaction_enum_resource_status | null | undefined>,
@@ -564,22 +582,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		session_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Interaction resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		type: FormControl<Interaction_enum_type | null | undefined>,
@@ -616,8 +634,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Participant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -644,29 +662,29 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Proxy Identifier assigned to the Participant.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		proxy_identifier_sid?: string | null;
 
 		/**
 		 * The SID of the resource's parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		session_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Participant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -677,8 +695,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Participant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -705,29 +723,29 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Proxy Identifier assigned to the Participant.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		proxy_identifier_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the resource's parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		session_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Participant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -757,8 +775,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the MessageInteraction resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -773,15 +791,15 @@ export namespace MyNS {
 
 		/**
 		 * Always empty for created Message Interactions.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		inbound_participant_sid?: string | null;
 
 		/**
 		 * Always empty for created Message Interactions.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		inbound_resource_sid?: string | null;
 		inbound_resource_status?: Interaction_enum_resource_status | null;
@@ -794,15 +812,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the outbound [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		outbound_participant_sid?: string | null;
 
 		/**
 		 * The SID of the outbound [Message](https://www.twilio.com/docs/sms/api/message-resource) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		outbound_resource_sid?: string | null;
 		outbound_resource_status?: Interaction_enum_resource_status | null;
@@ -815,29 +833,29 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		participant_sid?: string | null;
 
 		/**
 		 * The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		session_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the MessageInteraction resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		type?: Interaction_enum_type | null;
@@ -849,8 +867,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the MessageInteraction resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -865,15 +883,15 @@ export namespace MyNS {
 
 		/**
 		 * Always empty for created Message Interactions.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		inbound_participant_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * Always empty for created Message Interactions.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		inbound_resource_sid: FormControl<string | null | undefined>,
 		inbound_resource_status: FormControl<Interaction_enum_resource_status | null | undefined>,
@@ -886,15 +904,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the outbound [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		outbound_participant_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the outbound [Message](https://www.twilio.com/docs/sms/api/message-resource) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		outbound_resource_sid: FormControl<string | null | undefined>,
 		outbound_resource_status: FormControl<Interaction_enum_resource_status | null | undefined>,
@@ -907,29 +925,29 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		participant_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		session_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the MessageInteraction resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		type: FormControl<Interaction_enum_type | null | undefined>,
@@ -967,8 +985,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ShortCode resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -989,8 +1007,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the ShortCode resource's parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
@@ -999,8 +1017,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the ShortCode resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -1011,8 +1029,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ShortCode resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -1030,8 +1048,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the ShortCode resource's parent [Service](https://www.twilio.com/docs/proxy/api/service) resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
@@ -1040,8 +1058,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the ShortCode resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -1102,7 +1120,9 @@ export namespace MyNS {
 		 * Retrieve a list of all Services for Twilio Proxy. A maximum of 100 records will be returned per page.
 		 * Get v1/Services
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListServiceReturn} OK
 		 */
@@ -1114,8 +1134,11 @@ export namespace MyNS {
 		 * Retrieve a list of all Phone Numbers in the Proxy Number Pool for a Service. A maximum of 100 records will be returned per page.
 		 * Get v1/Services/{ServiceSid}/PhoneNumbers
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resources to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListPhoneNumberReturn} OK
 		 */
@@ -1127,7 +1150,9 @@ export namespace MyNS {
 		 * Delete a specific Phone Number from a Service.
 		 * Delete v1/Services/{ServiceSid}/PhoneNumbers/{Sid}
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the PhoneNumber resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeletePhoneNumber(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1138,7 +1163,9 @@ export namespace MyNS {
 		 * Fetch a specific Phone Number.
 		 * Get v1/Services/{ServiceSid}/PhoneNumbers/{Sid}
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the PhoneNumber resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the PhoneNumber resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Proxyv1servicephone_number} OK
 		 */
 		FetchPhoneNumber(ServiceSid: string, Sid: string): Observable<Proxyv1servicephone_number> {
@@ -1149,8 +1176,11 @@ export namespace MyNS {
 		 * Retrieve a list of all Sessions for the Service. A maximum of 100 records will be returned per page.
 		 * Get v1/Services/{ServiceSid}/Sessions
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSessionReturn} OK
 		 */
@@ -1162,9 +1192,13 @@ export namespace MyNS {
 		 * Retrieve a list of all Interactions for a Session. A maximum of 100 records will be returned per page.
 		 * Get v1/Services/{ServiceSid}/Sessions/{SessionSid}/Interactions
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} SessionSid The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInteractionReturn} OK
 		 */
@@ -1176,8 +1210,11 @@ export namespace MyNS {
 		 * Delete a specific Interaction.
 		 * Delete v1/Services/{ServiceSid}/Sessions/{SessionSid}/Interactions/{Sid}
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} SessionSid The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Interaction resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteInteraction(ServiceSid: string, SessionSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1188,8 +1225,11 @@ export namespace MyNS {
 		 * Retrieve a list of Interactions for a given [Session](https://www.twilio.com/docs/proxy/api/session).
 		 * Get v1/Services/{ServiceSid}/Sessions/{SessionSid}/Interactions/{Sid}
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} SessionSid The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Interaction resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Proxyv1servicesessioninteraction} OK
 		 */
 		FetchInteraction(ServiceSid: string, SessionSid: string, Sid: string): Observable<Proxyv1servicesessioninteraction> {
@@ -1200,9 +1240,13 @@ export namespace MyNS {
 		 * Retrieve a list of all Participants in a Session.
 		 * Get v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resources to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} SessionSid The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resources to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListParticipantReturn} OK
 		 */
@@ -1213,10 +1257,15 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{ParticipantSid}/MessageInteractions
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} SessionSid The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ParticipantSid The SID of the [Participant](https://www.twilio.com/docs/proxy/api/participant) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListMessageInteractionReturn} OK
 		 */
@@ -1227,9 +1276,13 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{ParticipantSid}/MessageInteractions/{Sid}
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} SessionSid The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ParticipantSid The SID of the [Participant](https://www.twilio.com/docs/proxy/api/participant) resource.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the MessageInteraction resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Proxyv1servicesessionparticipantmessage_interaction} OK
 		 */
 		FetchMessageInteraction(ServiceSid: string, SessionSid: string, ParticipantSid: string, Sid: string): Observable<Proxyv1servicesessionparticipantmessage_interaction> {
@@ -1240,8 +1293,11 @@ export namespace MyNS {
 		 * Delete a specific Participant. This is a soft-delete. The participant remains associated with the session and cannot be re-added. Participants are only permanently deleted when the [Session](https://www.twilio.com/docs/proxy/api/session) is deleted.
 		 * Delete v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{Sid}
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} SessionSid The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Participant resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteParticipant(ServiceSid: string, SessionSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1252,8 +1308,11 @@ export namespace MyNS {
 		 * Fetch a specific Participant.
 		 * Get v1/Services/{ServiceSid}/Sessions/{SessionSid}/Participants/{Sid}
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} SessionSid The SID of the parent [Session](https://www.twilio.com/docs/proxy/api/session) of the resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Participant resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Proxyv1servicesessionparticipant} OK
 		 */
 		FetchParticipant(ServiceSid: string, SessionSid: string, Sid: string): Observable<Proxyv1servicesessionparticipant> {
@@ -1264,7 +1323,9 @@ export namespace MyNS {
 		 * Delete a specific Session.
 		 * Delete v1/Services/{ServiceSid}/Sessions/{Sid}
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Session resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteSession(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1275,6 +1336,7 @@ export namespace MyNS {
 		 * Fetch a specific Session.
 		 * Get v1/Services/{ServiceSid}/Sessions/{Sid}
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) of the resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Session resource to fetch.
 		 * @return {Proxyv1servicesession} OK
 		 */
@@ -1286,8 +1348,11 @@ export namespace MyNS {
 		 * Retrieve a list of all Short Codes in the Proxy Number Pool for the Service. A maximum of 100 records will be returned per page.
 		 * Get v1/Services/{ServiceSid}/ShortCodes
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListShortCodeReturn} OK
 		 */
@@ -1299,7 +1364,9 @@ export namespace MyNS {
 		 * Delete a specific Short Code from a Service.
 		 * Delete v1/Services/{ServiceSid}/ShortCodes/{Sid}
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) resource to delete the ShortCode resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the ShortCode resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteShortCode(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1310,7 +1377,9 @@ export namespace MyNS {
 		 * Fetch a specific Short Code.
 		 * Get v1/Services/{ServiceSid}/ShortCodes/{Sid}
 		 * @param {string} ServiceSid The SID of the parent [Service](https://www.twilio.com/docs/proxy/api/service) to fetch the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the ShortCode resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Proxyv1serviceshort_code} OK
 		 */
 		FetchShortCode(ServiceSid: string, Sid: string): Observable<Proxyv1serviceshort_code> {
@@ -1321,6 +1390,7 @@ export namespace MyNS {
 		 * Delete a specific Service.
 		 * Delete v1/Services/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Service resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteService(Sid: string): Observable<HttpResponse<string>> {
@@ -1354,7 +1424,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1363,7 +1437,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1397,7 +1475,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1406,7 +1488,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1440,7 +1526,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1449,7 +1539,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1483,7 +1577,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1492,7 +1590,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1526,7 +1628,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1535,7 +1641,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1569,7 +1679,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1578,7 +1692,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1612,7 +1730,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1621,7 +1743,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

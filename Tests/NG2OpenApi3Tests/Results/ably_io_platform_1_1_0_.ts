@@ -77,38 +77,68 @@ export namespace MyNS {
 	/** An Occupancy instance indicating the occupancy of a channel. For events indicating regional activity of a channel this indicates activity in that region, not global activity. */
 	export interface Occupancy {
 
-		/** The number of connections that are authorised to enter members into the presence channel. */
+		/**
+		 * The number of connections that are authorised to enter members into the presence channel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		presenceConnections?: number | null;
 
-		/** The number of members currently entered into the presence channel. */
+		/**
+		 * The number of members currently entered into the presence channel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		presenceMembers?: number | null;
 
-		/** The number of connections that are authorised to subscribe to presence messages. */
+		/**
+		 * The number of connections that are authorised to subscribe to presence messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		presenceSubscribers?: number | null;
 
-		/** The number of connections attached to the channel that are authorised to publish. */
+		/**
+		 * The number of connections attached to the channel that are authorised to publish.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		publishers?: number | null;
 
-		/** The number of connections attached that are authorised to subscribe to messages. */
+		/**
+		 * The number of connections attached that are authorised to subscribe to messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscribers?: number | null;
 	}
 
 	/** An Occupancy instance indicating the occupancy of a channel. For events indicating regional activity of a channel this indicates activity in that region, not global activity. */
 	export interface OccupancyFormProperties {
 
-		/** The number of connections that are authorised to enter members into the presence channel. */
+		/**
+		 * The number of connections that are authorised to enter members into the presence channel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		presenceConnections: FormControl<number | null | undefined>,
 
-		/** The number of members currently entered into the presence channel. */
+		/**
+		 * The number of members currently entered into the presence channel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		presenceMembers: FormControl<number | null | undefined>,
 
-		/** The number of connections that are authorised to subscribe to presence messages. */
+		/**
+		 * The number of connections that are authorised to subscribe to presence messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		presenceSubscribers: FormControl<number | null | undefined>,
 
-		/** The number of connections attached to the channel that are authorised to publish. */
+		/**
+		 * The number of connections attached to the channel that are authorised to publish.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		publishers: FormControl<number | null | undefined>,
 
-		/** The number of connections attached that are authorised to subscribe to messages. */
+		/**
+		 * The number of connections attached that are authorised to subscribe to messages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscribers: FormControl<number | null | undefined>,
 	}
 	export function CreateOccupancyFormGroup() {
@@ -245,7 +275,10 @@ export namespace MyNS {
 	/** Returned error from failed REST. */
 	export interface Error {
 
-		/** Error code. */
+		/**
+		 * Error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** Link to help with error. */
@@ -257,14 +290,20 @@ export namespace MyNS {
 		/** Server ID with which error was encountered. */
 		serverId?: string | null;
 
-		/** Status error code. */
+		/**
+		 * Status error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
 	/** Returned error from failed REST. */
 	export interface ErrorFormProperties {
 
-		/** Error code. */
+		/**
+		 * Error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Link to help with error. */
@@ -276,7 +315,10 @@ export namespace MyNS {
 		/** Server ID with which error was encountered. */
 		serverId: FormControl<string | null | undefined>,
 
-		/** Status error code. */
+		/**
+		 * Status error code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorFormGroup() {
@@ -435,8 +477,11 @@ export namespace MyNS {
 		/** The event name, if provided. */
 		name?: string | null;
 
-		/** Timestamp when the message was received by the Ably, as milliseconds since the epoch. */
-		timestamp?: number | null;
+		/**
+		 * Timestamp when the message was received by the Ably, as milliseconds since the epoch.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timestamp?: string | null;
 	}
 
 	/** Message object. */
@@ -460,8 +505,11 @@ export namespace MyNS {
 		/** The event name, if provided. */
 		name: FormControl<string | null | undefined>,
 
-		/** Timestamp when the message was received by the Ably, as milliseconds since the epoch. */
-		timestamp: FormControl<number | null | undefined>,
+		/**
+		 * Timestamp when the message was received by the Ably, as milliseconds since the epoch.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreateMessageFormGroup() {
 		return new FormGroup<MessageFormProperties>({
@@ -471,7 +519,7 @@ export namespace MyNS {
 			encoding: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			timestamp: new FormControl<number | null | undefined>(undefined),
+			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -499,8 +547,11 @@ export namespace MyNS {
 		/** Unique ID assigned by Ably to this presence update. */
 		id?: string | null;
 
-		/** Timestamp when the presence update was received by Ably, as milliseconds since the epoch. */
-		timestamp?: number | null;
+		/**
+		 * Timestamp when the presence update was received by Ably, as milliseconds since the epoch.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timestamp?: string | null;
 	}
 	export interface PresenceMessageFormProperties {
 
@@ -522,8 +573,11 @@ export namespace MyNS {
 		/** Unique ID assigned by Ably to this presence update. */
 		id: FormControl<string | null | undefined>,
 
-		/** Timestamp when the presence update was received by Ably, as milliseconds since the epoch. */
-		timestamp: FormControl<number | null | undefined>,
+		/**
+		 * Timestamp when the presence update was received by Ably, as milliseconds since the epoch.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timestamp: FormControl<string | null | undefined>,
 	}
 	export function CreatePresenceMessageFormGroup() {
 		return new FormGroup<PresenceMessageFormProperties>({
@@ -533,7 +587,7 @@ export namespace MyNS {
 			data: new FormControl<string | null | undefined>(undefined),
 			encoding: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
-			timestamp: new FormControl<number | null | undefined>(undefined),
+			timestamp: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -573,10 +627,16 @@ export namespace MyNS {
 		/** Regular expression representation of the capabilities of the token. */
 		capability?: string | null;
 
-		/** Timestamp of token expiration. */
+		/**
+		 * Timestamp of token expiration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires?: number | null;
 
-		/** Timestamp of token creation. */
+		/**
+		 * Timestamp of token creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		issued?: number | null;
 
 		/** Name of the key used to create the token */
@@ -590,10 +650,16 @@ export namespace MyNS {
 		/** Regular expression representation of the capabilities of the token. */
 		capability: FormControl<string | null | undefined>,
 
-		/** Timestamp of token expiration. */
+		/**
+		 * Timestamp of token expiration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires: FormControl<number | null | undefined>,
 
-		/** Timestamp of token creation. */
+		/**
+		 * Timestamp of token creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		issued: FormControl<number | null | undefined>,
 
 		/** Name of the key used to create the token */
@@ -639,6 +705,7 @@ export namespace MyNS {
 		/**
 		 * Time of creation of the Ably TokenRequest.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timestamp: number;
 	}
@@ -668,6 +735,7 @@ export namespace MyNS {
 		/**
 		 * Time of creation of the Ably TokenRequest.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		timestamp: FormControl<number | null | undefined>,
 	}
@@ -691,6 +759,7 @@ export namespace MyNS {
 		 * Enumerate all active channels of the application
 		 * Enumerate all active channels of the application
 		 * Get channels
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} prefix Optionally limits the query to only those channels whose name starts with the given prefix
 		 * @param {GetMetadataOfAllChannelsBy} by optionally specifies whether to return just channel names (by=id) or ChannelDetails (by=value)
 		 * @return {void} 
@@ -715,6 +784,7 @@ export namespace MyNS {
 		 * Get message history for a channel
 		 * Get channels/{channel_id}/messages
 		 * @param {string} channel_id The [Channel's ID](https://www.ably.io/documentation/rest/channels).
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		GetMessagesByChannel(channel_id: string, start: string | null | undefined, limit: number | null | undefined, end: string | null | undefined, direction: GetMessagesByChannelDirection | null | undefined): Observable<HttpResponse<string>> {
@@ -737,6 +807,7 @@ export namespace MyNS {
 		 * Get presence on a channel
 		 * Get channels/{channel_id}/presence
 		 * @param {string} channel_id The [Channel's ID](https://www.ably.io/documentation/rest/channels).
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<PresenceMessage>} OK
 		 */
 		GetPresenceOfChannel(channel_id: string, clientId: string | null | undefined, connectionId: string | null | undefined, limit: number | null | undefined): Observable<Array<PresenceMessage>> {
@@ -748,6 +819,7 @@ export namespace MyNS {
 		 * Get presence on a channel
 		 * Get channels/{channel_id}/presence/history
 		 * @param {string} channel_id The [Channel's ID](https://www.ably.io/documentation/rest/channels).
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		GetPresenceHistoryOfChannel(channel_id: string, start: string | null | undefined, limit: number | null | undefined, end: string | null | undefined, direction: GetMessagesByChannelDirection | null | undefined): Observable<HttpResponse<string>> {
@@ -786,6 +858,7 @@ export namespace MyNS {
 		 * @param {string} deviceId Optional filter to restrict to devices associated with that deviceId. Cannot be used with clientId.
 		 * @param {string} clientId Optional filter to restrict to devices associated with that clientId. Cannot be used with deviceId.
 		 * @param {number} limit The maximum number of records to return.
+		 *     Maximum: 1000
 		 * @return {void} 
 		 */
 		GetPushSubscriptionsOnChannels(channel: string | null | undefined, deviceId: string | null | undefined, clientId: string | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -831,6 +904,7 @@ export namespace MyNS {
 		 * @param {string} deviceId Optional filter to restrict to devices associated with that deviceId.
 		 * @param {string} clientId Optional filter to restrict to devices associated with that clientId.
 		 * @param {number} limit The maximum number of records to return.
+		 *     Maximum: 1000
 		 * @return {void} 
 		 */
 		GetRegisteredPushDevices(deviceId: string | null | undefined, clientId: string | null | undefined, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -916,6 +990,7 @@ export namespace MyNS {
 		 * Retrieve usage statistics for an application
 		 * The Ably system can be queried to obtain usage statistics for a given application, and results are provided aggregated across all channels in use in the application in the specified period. Stats may be used to track usage against account quotas.
 		 * Get stats
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetStatsUnit} unit Specifies the unit of aggregation in the returned results.
 		 * @return {void} 
 		 */

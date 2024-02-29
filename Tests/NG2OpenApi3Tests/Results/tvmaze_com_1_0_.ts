@@ -5,7 +5,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface BulkResponseElement {
 
-		/** The HTTP code that corresponds to this item */
+		/**
+		 * The HTTP code that corresponds to this item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of validation errors for this item (in case of error) */
@@ -22,7 +25,10 @@ export namespace MyNS {
 	}
 	export interface BulkResponseElementFormProperties {
 
-		/** The HTTP code that corresponds to this item */
+		/**
+		 * The HTTP code that corresponds to this item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A list of validation errors for this item (in case of error) */
@@ -59,6 +65,8 @@ export namespace MyNS {
 	}
 
 	export interface EpisodeVote {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		episode_id?: number | null;
 
 		/**
@@ -68,10 +76,15 @@ export namespace MyNS {
 		 */
 		vote?: number | null;
 
-		/** Epoch timestamp for when the user voted for the episode */
+		/**
+		 * Epoch timestamp for when the user voted for the episode
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voted_at?: number | null;
 	}
 	export interface EpisodeVoteFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		episode_id: FormControl<number | null | undefined>,
 
 		/**
@@ -81,7 +94,10 @@ export namespace MyNS {
 		 */
 		vote: FormControl<number | null | undefined>,
 
-		/** Epoch timestamp for when the user voted for the episode */
+		/**
+		 * Epoch timestamp for when the user voted for the episode
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voted_at: FormControl<number | null | undefined>,
 	}
 	export function CreateEpisodeVoteFormGroup() {
@@ -109,18 +125,28 @@ export namespace MyNS {
 
 	export interface MarkedEpisode {
 		_embedded?: MarkedEpisode_embedded;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		episode_id?: number | null;
 
-		/** Epoch timestamp for when the user watched the episode, or 0 for unknown. */
+		/**
+		 * Epoch timestamp for when the user watched the episode, or 0 for unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marked_at?: number | null;
 
 		/** 0 for watched, 1 for acquired, 2 for skipped */
 		type?: MarkType;
 	}
 	export interface MarkedEpisodeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		episode_id: FormControl<number | null | undefined>,
 
-		/** Epoch timestamp for when the user watched the episode, or 0 for unknown. */
+		/**
+		 * Epoch timestamp for when the user watched the episode, or 0 for unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marked_at: FormControl<number | null | undefined>,
 	}
 	export function CreateMarkedEpisodeFormGroup() {
@@ -154,9 +180,13 @@ export namespace MyNS {
 
 	export interface NetworkFollow {
 		_embedded?: NetworkFollow_embedded;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_id?: number | null;
 	}
 	export interface NetworkFollowFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		network_id: FormControl<number | null | undefined>,
 	}
 	export function CreateNetworkFollowFormGroup() {
@@ -189,9 +219,13 @@ export namespace MyNS {
 
 	export interface PersonFollow {
 		_embedded?: PersonFollow_embedded;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		person_id?: number | null;
 	}
 	export interface PersonFollowFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		person_id: FormControl<number | null | undefined>,
 	}
 	export function CreatePersonFollowFormGroup() {
@@ -224,9 +258,13 @@ export namespace MyNS {
 
 	export interface ShowFollow {
 		_embedded?: ShowFollow_embedded;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id?: number | null;
 	}
 	export interface ShowFollowFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id: FormControl<number | null | undefined>,
 	}
 	export function CreateShowFollowFormGroup() {
@@ -248,6 +286,8 @@ export namespace MyNS {
 	}
 
 	export interface ShowVote {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id?: number | null;
 
 		/**
@@ -257,10 +297,15 @@ export namespace MyNS {
 		 */
 		vote?: number | null;
 
-		/** Epoch timestamp for when the user voted for the episode */
+		/**
+		 * Epoch timestamp for when the user voted for the episode
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voted_at?: number | null;
 	}
 	export interface ShowVoteFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id: FormControl<number | null | undefined>,
 
 		/**
@@ -270,7 +315,10 @@ export namespace MyNS {
 		 */
 		vote: FormControl<number | null | undefined>,
 
-		/** Epoch timestamp for when the user voted for the episode */
+		/**
+		 * Epoch timestamp for when the user voted for the episode
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voted_at: FormControl<number | null | undefined>,
 	}
 	export function CreateShowVoteFormGroup() {
@@ -283,10 +331,14 @@ export namespace MyNS {
 	}
 
 	export interface Tag {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface TagFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -300,9 +352,13 @@ export namespace MyNS {
 
 	export interface TagInstance {
 		_embedded?: TagInstance_embedded;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id?: number | null;
 	}
 	export interface TagInstanceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_id: FormControl<number | null | undefined>,
 	}
 	export function CreateTagInstanceFormGroup() {
@@ -335,9 +391,13 @@ export namespace MyNS {
 
 	export interface WebchannelFollow {
 		_embedded?: WebchannelFollow_embedded;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		webchannel_id?: number | null;
 	}
 	export interface WebchannelFollowFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		webchannel_id: FormControl<number | null | undefined>,
 	}
 	export function CreateWebchannelFollowFormGroup() {
@@ -423,8 +483,11 @@ export namespace MyNS {
 		 * This endpoint can be used by all users, even without premium.
 		 * Post scrobble/shows
 		 * @param {number} tvmaze_id The show's TVmaze ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} thetvdb_id The show's TheTVDB ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} imdb_id The show's IMDB ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ScrobbleShowsPostByTvmaze_idAndThetvdb_idAndImdb_idReturn>} All episodes were succesfully marked
 		 */
 		ScrobbleShowsPostByTvmaze_idAndThetvdb_idAndImdb_id(tvmaze_id: number | null | undefined, thetvdb_id: number | null | undefined, imdb_id: number | null | undefined, requestBody: Array<ScrobbleShowsPostByTvmaze_idAndThetvdb_idAndImdb_idPostBody>, headersHandler?: () => HttpHeaders): Observable<Array<ScrobbleShowsPostByTvmaze_idAndThetvdb_idAndImdb_idReturn>> {
@@ -445,6 +508,7 @@ export namespace MyNS {
 		 * List the marked episodes
 		 * Get user/episodes
 		 * @param {number} show_id Only return episodes from this specific show
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<MarkedEpisode>} An array of marked episodes
 		 */
 		UserEpisodesGetByShow_id(show_id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<MarkedEpisode>> {
@@ -648,6 +712,7 @@ export namespace MyNS {
 		/**
 		 * Delete a specific tag
 		 * Delete user/tags/{tag_id}
+		 * @param {number} tag_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} The tag was deleted
 		 */
 		UserTags_tag_idDelete(tag_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -657,6 +722,7 @@ export namespace MyNS {
 		/**
 		 * Update a specific tag
 		 * Patch user/tags/{tag_id}
+		 * @param {number} tag_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Tag} The tag was updated
 		 */
 		UserTags_tag_idPatch(tag_id: number, requestBody: Tag, headersHandler?: () => HttpHeaders): Observable<Tag> {
@@ -666,6 +732,7 @@ export namespace MyNS {
 		/**
 		 * List all shows under this tag
 		 * Get user/tags/{tag_id}/shows
+		 * @param {number} tag_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {UserFollowsShowsGetByEmbedEmbed} embed Embed full show info
 		 * @return {Array<TagInstance>} A list of tagged shows
 		 */
@@ -676,6 +743,8 @@ export namespace MyNS {
 		/**
 		 * Untag a show
 		 * Delete user/tags/{tag_id}/shows/{show_id}
+		 * @param {number} tag_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} show_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} The show was untagged
 		 */
 		UserTags_tag_idShows_show_idDelete(tag_id: number, show_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -685,6 +754,8 @@ export namespace MyNS {
 		/**
 		 * Tag a show
 		 * Put user/tags/{tag_id}/shows/{show_id}
+		 * @param {number} tag_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} show_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TagInstance} The show was tagged
 		 */
 		UserTags_tag_idShows_show_idPut(tag_id: number, show_id: number, headersHandler?: () => HttpHeaders): Observable<TagInstance> {
@@ -853,12 +924,18 @@ export namespace MyNS {
 
 	export interface AuthValidateGetReturn {
 
-		/** The user's premium level; 1 for Bronze, 2 for Silver, 3 for Gold; or 0 for none */
+		/**
+		 * The user's premium level; 1 for Bronze, 2 for Silver, 3 for Gold; or 0 for none
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		premium?: number | null;
 	}
 	export interface AuthValidateGetReturnFormProperties {
 
-		/** The user's premium level; 1 for Bronze, 2 for Silver, 3 for Gold; or 0 for none */
+		/**
+		 * The user's premium level; 1 for Bronze, 2 for Silver, 3 for Gold; or 0 for none
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		premium: FormControl<number | null | undefined>,
 	}
 	export function CreateAuthValidateGetReturnFormGroup() {
@@ -870,10 +947,16 @@ export namespace MyNS {
 
 	export interface ScrobbleEpisodesPostPostBody {
 
-		/** The TVmaze episode ID */
+		/**
+		 * The TVmaze episode ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		episode_id?: number | null;
 
-		/** Epoch timestamp for when the user watched the episode, or 0 for unknown. */
+		/**
+		 * Epoch timestamp for when the user watched the episode, or 0 for unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marked_at?: number | null;
 
 		/** 0 for watched, 1 for acquired, 2 for skipped */
@@ -881,10 +964,16 @@ export namespace MyNS {
 	}
 	export interface ScrobbleEpisodesPostPostBodyFormProperties {
 
-		/** The TVmaze episode ID */
+		/**
+		 * The TVmaze episode ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		episode_id: FormControl<number | null | undefined>,
 
-		/** Epoch timestamp for when the user watched the episode, or 0 for unknown. */
+		/**
+		 * Epoch timestamp for when the user watched the episode, or 0 for unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marked_at: FormControl<number | null | undefined>,
 	}
 	export function CreateScrobbleEpisodesPostPostBodyFormGroup() {
@@ -897,7 +986,10 @@ export namespace MyNS {
 
 	export interface ScrobbleEpisodesPostReturn {
 
-		/** The HTTP code that corresponds to this item */
+		/**
+		 * The HTTP code that corresponds to this item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of validation errors for this item (in case of error) */
@@ -914,7 +1006,10 @@ export namespace MyNS {
 	}
 	export interface ScrobbleEpisodesPostReturnFormProperties {
 
-		/** The HTTP code that corresponds to this item */
+		/**
+		 * The HTTP code that corresponds to this item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A list of validation errors for this item (in case of error) */
@@ -942,16 +1037,28 @@ export namespace MyNS {
 
 	export interface ScrobbleShowsPostByTvmaze_idAndThetvdb_idAndImdb_idPostBody {
 
-		/** The episode airdate */
+		/**
+		 * The episode airdate
+		 * Type: DateOnly
+		 */
 		airdate?: Date | null;
 
-		/** The episode number */
+		/**
+		 * The episode number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		episode?: number | null;
 
-		/** Epoch timestamp for when the user watched the episode, or 0 for unknown. */
+		/**
+		 * Epoch timestamp for when the user watched the episode, or 0 for unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marked_at?: number | null;
 
-		/** The season number */
+		/**
+		 * The season number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		season?: number | null;
 
 		/** 0 for watched, 1 for acquired, 2 for skipped */
@@ -959,16 +1066,28 @@ export namespace MyNS {
 	}
 	export interface ScrobbleShowsPostByTvmaze_idAndThetvdb_idAndImdb_idPostBodyFormProperties {
 
-		/** The episode airdate */
+		/**
+		 * The episode airdate
+		 * Type: DateOnly
+		 */
 		airdate: FormControl<Date | null | undefined>,
 
-		/** The episode number */
+		/**
+		 * The episode number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		episode: FormControl<number | null | undefined>,
 
-		/** Epoch timestamp for when the user watched the episode, or 0 for unknown. */
+		/**
+		 * Epoch timestamp for when the user watched the episode, or 0 for unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marked_at: FormControl<number | null | undefined>,
 
-		/** The season number */
+		/**
+		 * The season number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		season: FormControl<number | null | undefined>,
 	}
 	export function CreateScrobbleShowsPostByTvmaze_idAndThetvdb_idAndImdb_idPostBodyFormGroup() {
@@ -983,7 +1102,10 @@ export namespace MyNS {
 
 	export interface ScrobbleShowsPostByTvmaze_idAndThetvdb_idAndImdb_idReturn {
 
-		/** The HTTP code that corresponds to this item */
+		/**
+		 * The HTTP code that corresponds to this item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of validation errors for this item (in case of error) */
@@ -1000,7 +1122,10 @@ export namespace MyNS {
 	}
 	export interface ScrobbleShowsPostByTvmaze_idAndThetvdb_idAndImdb_idReturnFormProperties {
 
-		/** The HTTP code that corresponds to this item */
+		/**
+		 * The HTTP code that corresponds to this item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A list of validation errors for this item (in case of error) */

@@ -3516,7 +3516,10 @@ namespace MyNS
 		/// ConsumersAll vault/consumers
 		/// </summary>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20</param>
+		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Consumers</returns>
 		public async Task<GetConsumersResponse> ConsumersAllAsync(string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3903,7 +3906,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="filter">Filter results</param>
 		/// <param name="cursor">Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.</param>
-		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20</param>
+		/// <param name="limit">Number of results to return. Minimum 1, Maximum 200, Default 20
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Logs</returns>
 		public async Task<GetLogsResponse> LogsAllAsync(LogsFilter filter, string cursor, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

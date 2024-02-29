@@ -41,8 +41,13 @@ namespace MyNS
 		/// List all discovered factions in the game.
 		/// Get_factions factions
 		/// </summary>
-		/// <param name="page">What entry offset to request</param>
-		/// <param name="limit">How many entries to return per page</param>
+		/// <param name="page">What entry offset to request
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">How many entries to return per page
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
 		public async Task<string> Get_factionsAsync(int page, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "factions?page="+page+"&limit="+limit;
@@ -141,8 +146,13 @@ namespace MyNS
 		/// List all of your contracts.
 		/// Get_contracts my/contracts
 		/// </summary>
-		/// <param name="page">What entry offset to request</param>
-		/// <param name="limit">How many entries to return per page</param>
+		/// <param name="page">What entry offset to request
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">How many entries to return per page
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<string> Get_contractsAsync(int page, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -308,8 +318,13 @@ namespace MyNS
 		/// Retrieve all of your ships.
 		/// Get_my_ships my/ships
 		/// </summary>
-		/// <param name="page">What entry offset to request</param>
-		/// <param name="limit">How many entries to return per page</param>
+		/// <param name="page">What entry offset to request
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">How many entries to return per page
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<string> Get_my_shipsAsync(int page, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1162,8 +1177,13 @@ namespace MyNS
 		/// Return a list of all systems.
 		/// Get_systems systems
 		/// </summary>
-		/// <param name="page">What entry offset to request</param>
-		/// <param name="limit">How many entries to return per page</param>
+		/// <param name="page">What entry offset to request
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">How many entries to return per page
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Get_systemsReturn> Get_systemsAsync(int page, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1231,8 +1251,13 @@ namespace MyNS
 		/// Fetch all of the waypoints for a given system. System must be charted or a ship must be present to return waypoint details.
 		/// Get_system_waypoints systems/{systemSymbol}/waypoints
 		/// </summary>
-		/// <param name="page">What entry offset to request</param>
-		/// <param name="limit">How many entries to return per page</param>
+		/// <param name="page">What entry offset to request
+		/// Minimum: 1
+		// </param>
+		/// <param name="limit">How many entries to return per page
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<string> Get_system_waypointsAsync(int page, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

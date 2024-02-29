@@ -1447,6 +1447,7 @@ export namespace MyNS {
 		 * Add up to 2 anomaly notifications channels for a profiling group.
 		 * Post profilingGroups/{profilingGroupName}/notificationConfiguration
 		 * @param {string} profilingGroupName The name of the profiling group that we are setting up notifications for.
+		 *     Min length: 1    Max length: 255
 		 * @return {AddNotificationChannelsResponse} Success
 		 */
 		AddNotificationChannels(profilingGroupName: string, requestBody: AddNotificationChannelsPostBody): Observable<AddNotificationChannelsResponse> {
@@ -1457,6 +1458,7 @@ export namespace MyNS {
 		 * Get the current configuration for anomaly notifications for a profiling group.
 		 * Get profilingGroups/{profilingGroupName}/notificationConfiguration
 		 * @param {string} profilingGroupName The name of the profiling group we want to get the notification configuration for.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetNotificationConfigurationResponse} Success
 		 */
 		GetNotificationConfiguration(profilingGroupName: string): Observable<GetNotificationConfigurationResponse> {
@@ -1468,7 +1470,9 @@ export namespace MyNS {
 		 * Post profilingGroups/{profilingGroupName}/frames/-/metrics
 		 * @param {Date} endTime  The end time of the time period for the returned time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
 		 * @param {string} period  The duration of the frame metrics used to return the time series values. Specify using the ISO 8601 format. The maximum period duration is one day (<code>PT24H</code> or <code>P1D</code>). 
+		 *     Min length: 1    Max length: 64
 		 * @param {string} profilingGroupName  The name of the profiling group associated with the the frame metrics used to return the time series values. 
+		 *     Min length: 1    Max length: 255
 		 * @param {Date} startTime  The start time of the time period for the frame metrics used to return the time series values. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
 		 * @param {AggregationPeriod} targetResolution <p>The requested resolution of time steps for the returned time series of values. If the requested target resolution is not available due to data not being retained we provide a best effort result by falling back to the most granular available resolution after the target resolution. There are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li> <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes </p> </li> </ul>
 		 * @return {BatchGetFrameMetricDataResponse} Success
@@ -1481,6 +1485,7 @@ export namespace MyNS {
 		 * Used by profiler agents to report their current state and to receive remote configuration updates. For example, <code>ConfigureAgent</code> can be used to tell an agent whether to profile or not and for how long to return profiling data.
 		 * Post profilingGroups/{profilingGroupName}/configureAgent
 		 * @param {string} profilingGroupName  The name of the profiling group for which the configured agent is collecting profiling data. 
+		 *     Min length: 1    Max length: 255
 		 * @return {ConfigureAgentResponse} Success
 		 */
 		ConfigureAgent(profilingGroupName: string, requestBody: ConfigureAgentPostBody): Observable<ConfigureAgentResponse> {
@@ -1491,6 +1496,7 @@ export namespace MyNS {
 		 * Creates a profiling group.
 		 * Post profilingGroups#clientToken
 		 * @param {string} clientToken  Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental creation of duplicate profiling groups if there are failures and retries. 
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		CreateProfilingGroup(clientToken: string, requestBody: CreateProfilingGroupPostBody): Observable<HttpResponse<string>> {
@@ -1501,6 +1507,7 @@ export namespace MyNS {
 		 * Deletes a profiling group.
 		 * Delete profilingGroups/{profilingGroupName}
 		 * @param {string} profilingGroupName The name of the profiling group to delete.
+		 *     Min length: 1    Max length: 255
 		 * @return {void} 
 		 */
 		DeleteProfilingGroup(profilingGroupName: string): Observable<HttpResponse<string>> {
@@ -1511,6 +1518,7 @@ export namespace MyNS {
 		 * Returns a <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> object that contains information about the requested profiling group.
 		 * Get profilingGroups/{profilingGroupName}
 		 * @param {string} profilingGroupName  The name of the profiling group to get information about. 
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeProfilingGroupResponse} Success
 		 */
 		DescribeProfilingGroup(profilingGroupName: string): Observable<DescribeProfilingGroupResponse> {
@@ -1521,6 +1529,7 @@ export namespace MyNS {
 		 * Updates a profiling group.
 		 * Put profilingGroups/{profilingGroupName}
 		 * @param {string} profilingGroupName The name of the profiling group to update.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateProfilingGroupResponse} Success
 		 */
 		UpdateProfilingGroup(profilingGroupName: string, requestBody: UpdateProfilingGroupPutBody): Observable<UpdateProfilingGroupResponse> {
@@ -1532,7 +1541,9 @@ export namespace MyNS {
 		 * Get internal/findingsReports
 		 * @param {boolean} dailyReportsOnly A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).
 		 * @param {number} maxResults The maximum number of results returned by <code> GetFindingsReportAccountSummary</code> in paginated output. When this parameter is used, <code>GetFindingsReportAccountSummary</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>GetFindingsReportAccountSummary</code> request with the returned <code>nextToken</code> value.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>GetFindingsReportAccountSummary</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
+		 *     Min length: 1    Max length: 64
 		 * @return {GetFindingsReportAccountSummaryResponse} Success
 		 */
 		GetFindingsReportAccountSummary(dailyReportsOnly: boolean | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<GetFindingsReportAccountSummaryResponse> {
@@ -1543,6 +1554,7 @@ export namespace MyNS {
 		 * Returns the JSON-formatted resource-based policy on a profiling group.
 		 * Get profilingGroups/{profilingGroupName}/policy
 		 * @param {string} profilingGroupName The name of the profiling group.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetPolicyResponse} Success
 		 */
 		GetPolicy(profilingGroupName: string): Observable<GetPolicyResponse> {
@@ -1554,8 +1566,11 @@ export namespace MyNS {
 		 * Get profilingGroups/{profilingGroupName}/profile
 		 * @param {Date} endTime <p> The end time of the requested profile. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. </p> <p> If you specify <code>endTime</code>, then you must also specify <code>period</code> or <code>startTime</code>, but not both. </p>
 		 * @param {number} maxDepth  The maximum depth of the stacks in the code that is represented in the aggregated profile. For example, if CodeGuru Profiler finds a method <code>A</code>, which calls method <code>B</code>, which calls method <code>C</code>, which calls method <code>D</code>, then the depth is 4. If the <code>maxDepth</code> is set to 2, then the aggregated profile contains representations of methods <code>A</code> and <code>B</code>. 
+		 *     Minimum: 1    Maximum: 10000
 		 * @param {string} period <p> Used with <code>startTime</code> or <code>endTime</code> to specify the time range for the returned aggregated profile. Specify using the ISO 8601 format. For example, <code>P1DT1H1M1S</code>. </p> <pre><code> &lt;p&gt; To get the latest aggregated profile, specify only &lt;code&gt;period&lt;/code&gt;. &lt;/p&gt; </code></pre>
+		 *     Min length: 1    Max length: 64
 		 * @param {string} profilingGroupName The name of the profiling group to get.
+		 *     Min length: 1    Max length: 255
 		 * @param {Date} startTime <p>The start time of the profile to get. Specify using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC.</p> <pre><code> &lt;p&gt; If you specify &lt;code&gt;startTime&lt;/code&gt;, then you must also specify &lt;code&gt;period&lt;/code&gt; or &lt;code&gt;endTime&lt;/code&gt;, but not both. &lt;/p&gt; </code></pre>
 		 * @return {GetProfileResponse} Success
 		 */
@@ -1569,6 +1584,7 @@ export namespace MyNS {
 		 * @param {Date} endTime  The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
 		 * @param {string} locale <p> The language used to provide analysis. Specify using a string that is one of the following <code>BCP 47</code> language codes. </p> <ul> <li> <p> <code>de-DE</code> - German, Germany </p> </li> <li> <p> <code>en-GB</code> - English, United Kingdom </p> </li> <li> <p> <code>en-US</code> - English, United States </p> </li> <li> <p> <code>es-ES</code> - Spanish, Spain </p> </li> <li> <p> <code>fr-FR</code> - French, France </p> </li> <li> <p> <code>it-IT</code> - Italian, Italy </p> </li> <li> <p> <code>ja-JP</code> - Japanese, Japan </p> </li> <li> <p> <code>ko-KR</code> - Korean, Republic of Korea </p> </li> <li> <p> <code>pt-BR</code> - Portugese, Brazil </p> </li> <li> <p> <code>zh-CN</code> - Chinese, China </p> </li> <li> <p> <code>zh-TW</code> - Chinese, Taiwan </p> </li> </ul>
 		 * @param {string} profilingGroupName  The name of the profiling group to get analysis data about. 
+		 *     Min length: 1    Max length: 255
 		 * @param {Date} startTime  The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
 		 * @return {GetRecommendationsResponse} Success
 		 */
@@ -1582,8 +1598,11 @@ export namespace MyNS {
 		 * @param {boolean} dailyReportsOnly A <code>Boolean</code> value indicating whether to only return reports from daily profiles. If set to <code>True</code>, only analysis data from daily profiles is returned. If set to <code>False</code>, analysis data is returned from smaller time windows (for example, one hour).
 		 * @param {Date} endTime  The end time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
 		 * @param {number} maxResults The maximum number of report results returned by <code>ListFindingsReports</code> in paginated output. When this parameter is used, <code>ListFindingsReports</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFindingsReports</code> request with the returned <code>nextToken</code> value.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListFindingsReportsRequest</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
+		 *     Min length: 1    Max length: 64
 		 * @param {string} profilingGroupName The name of the profiling group from which to search for analysis data.
+		 *     Min length: 1    Max length: 255
 		 * @param {Date} startTime  The start time of the profile to get analysis data about. You must specify <code>startTime</code> and <code>endTime</code>. This is specified using the ISO 8601 format. For example, 2020-06-01T13:15:02.001Z represents 1 millisecond past June 1, 2020 1:15:02 PM UTC. 
 		 * @return {ListFindingsReportsResponse} Success
 		 */
@@ -1596,10 +1615,13 @@ export namespace MyNS {
 		 * Get profilingGroups/{profilingGroupName}/profileTimes#endTime&period&startTime
 		 * @param {Date} endTime The end time of the time range from which to list the profiles.
 		 * @param {number} maxResults The maximum number of profile time results returned by <code>ListProfileTimes</code> in paginated output. When this parameter is used, <code>ListProfileTimes</code> only returns <code>maxResults</code> results in a single page with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfileTimes</code> request with the returned <code>nextToken</code> value. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfileTimes</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
+		 *     Min length: 1    Max length: 64
 		 * @param {OrderBy} orderBy The order (ascending or descending by start time of the profile) to use when listing profiles. Defaults to <code>TIMESTAMP_DESCENDING</code>. 
 		 * @param {AggregationPeriod} period <p> The aggregation period. This specifies the period during which an aggregation profile collects posted agent profiles for a profiling group. There are 3 valid values. </p> <ul> <li> <p> <code>P1D</code> — 1 day </p> </li> <li> <p> <code>PT1H</code> — 1 hour </p> </li> <li> <p> <code>PT5M</code> — 5 minutes </p> </li> </ul>
 		 * @param {string} profilingGroupName The name of the profiling group.
+		 *     Min length: 1    Max length: 255
 		 * @param {Date} startTime The start time of the time range from which to list the profiles.
 		 * @return {ListProfileTimesResponse} Success
 		 */
@@ -1612,7 +1634,9 @@ export namespace MyNS {
 		 * Get profilingGroups
 		 * @param {boolean} includeDescription A <code>Boolean</code> value indicating whether to include a description. If <code>true</code>, then a list of <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_ProfilingGroupDescription.html"> <code>ProfilingGroupDescription</code> </a> objects that contain detailed information about profiling groups is returned. If <code>false</code>, then a list of profiling group names is returned.
 		 * @param {number} maxResults The maximum number of profiling groups results returned by <code>ListProfilingGroups</code> in paginated output. When this parameter is used, <code>ListProfilingGroups</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListProfilingGroups</code> request with the returned <code>nextToken</code> value. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListProfilingGroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
+		 *     Min length: 1    Max length: 64
 		 * @return {ListProfilingGroupsResponse} Success
 		 */
 		ListProfilingGroups(includeDescription: boolean | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListProfilingGroupsResponse> {
@@ -1643,7 +1667,9 @@ export namespace MyNS {
 		 * Submits profiling data to an aggregated profile of a profiling group. To get an aggregated profile that is created with this profiling data, use <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_GetProfile.html"> <code>GetProfile</code> </a>.
 		 * Post profilingGroups/{profilingGroupName}/agentProfile#Content-Type
 		 * @param {string} profileToken  Amazon CodeGuru Profiler uses this universally unique identifier (UUID) to prevent the accidental submission of duplicate profiling data if there are failures and retries. 
+		 *     Min length: 1    Max length: 64
 		 * @param {string} profilingGroupName  The name of the profiling group with the aggregated profile that receives the submitted profiling data. 
+		 *     Min length: 1    Max length: 255
 		 * @return {void} 
 		 */
 		PostAgentProfile(profileToken: string | null | undefined, profilingGroupName: string, requestBody: PostAgentProfilePostBody): Observable<HttpResponse<string>> {
@@ -1655,6 +1681,7 @@ export namespace MyNS {
 		 * Put profilingGroups/{profilingGroupName}/policy/{actionGroup}
 		 * @param {ActionGroup} actionGroup  Specifies an action group that contains permissions to add to a profiling group resource. One action group is supported, <code>agentPermissions</code>, which grants permission to perform actions required by the profiling agent, <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. 
 		 * @param {string} profilingGroupName The name of the profiling group to grant access to.
+		 *     Min length: 1    Max length: 255
 		 * @return {PutPermissionResponse} Success
 		 */
 		PutPermission(actionGroup: ActionGroup, profilingGroupName: string, requestBody: PutPermissionPutBody): Observable<PutPermissionResponse> {
@@ -1666,6 +1693,7 @@ export namespace MyNS {
 		 * Delete profilingGroups/{profilingGroupName}/notificationConfiguration/{channelId}
 		 * @param {string} channelId The id of the channel that we want to stop receiving notifications.
 		 * @param {string} profilingGroupName The name of the profiling group we want to change notification configuration for.
+		 *     Min length: 1    Max length: 255
 		 * @return {RemoveNotificationChannelResponse} Success
 		 */
 		RemoveNotificationChannel(channelId: string, profilingGroupName: string): Observable<RemoveNotificationChannelResponse> {
@@ -1677,6 +1705,7 @@ export namespace MyNS {
 		 * Delete profilingGroups/{profilingGroupName}/policy/{actionGroup}#revisionId
 		 * @param {ActionGroup} actionGroup  Specifies an action group that contains the permissions to remove from a profiling group's resource-based policy. One action group is supported, <code>agentPermissions</code>, which grants <code>ConfigureAgent</code> and <code>PostAgentProfile</code> permissions. 
 		 * @param {string} profilingGroupName The name of the profiling group.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} revisionId  A universally unique identifier (UUID) for the revision of the resource-based policy from which you want to remove permissions. 
 		 * @return {RemovePermissionResponse} Success
 		 */
@@ -1689,6 +1718,7 @@ export namespace MyNS {
 		 * Post internal/profilingGroups/{profilingGroupName}/anomalies/{anomalyInstanceId}/feedback
 		 * @param {string} anomalyInstanceId The universally unique identifier (UUID) of the <a href="https://docs.aws.amazon.com/codeguru/latest/profiler-api/API_AnomalyInstance.html"> <code>AnomalyInstance</code> </a> object that is included in the analysis data.
 		 * @param {string} profilingGroupName The name of the profiling group that is associated with the analysis data.
+		 *     Min length: 1    Max length: 255
 		 * @return {void} 
 		 */
 		SubmitFeedback(anomalyInstanceId: string, profilingGroupName: string, requestBody: SubmitFeedbackPostBody): Observable<HttpResponse<string>> {
@@ -1742,8 +1772,8 @@ export namespace MyNS {
 
 		/**
 		 * A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		fleetInstanceId?: string | null;
 
@@ -1754,8 +1784,8 @@ export namespace MyNS {
 
 		/**
 		 * A universally unique identifier (UUID) for a profiling instance. For example, if the profiling instance is an Amazon EC2 instance, it is the instance ID. If it is an AWS Fargate container, it is the container's task ID.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		fleetInstanceId: FormControl<string | null | undefined>,
 
@@ -1781,8 +1811,8 @@ export namespace MyNS {
 		/**
 		 * The name of the profiling group to create.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		profilingGroupName: string;
 
@@ -1797,8 +1827,8 @@ export namespace MyNS {
 		/**
 		 * The name of the profiling group to create.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		profilingGroupName: FormControl<string | null | undefined>,
 

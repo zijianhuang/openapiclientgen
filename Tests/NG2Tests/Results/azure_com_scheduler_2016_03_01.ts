@@ -1240,7 +1240,9 @@ export namespace MyNS {
 		 * @param {string} jobCollectionName The job collection name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top The number of jobs to request, in the of range of [1..100].
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} skip The (0-based) index of the job history list from which to begin requesting entries.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the job state.
 		 * @return {JobListResult} The job has been successfully returned.
 		 */
@@ -1315,7 +1317,9 @@ export namespace MyNS {
 		 * @param {string} jobName The job name.
 		 * @param {string} api_version The API version.
 		 * @param {number} top the number of job history to request, in the of range of [1..100].
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} skip The (0-based) index of the job history list from which to begin requesting entries.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the job state.
 		 * @return {JobHistoryListResult} The job histories have been successfully returned.
 		 */

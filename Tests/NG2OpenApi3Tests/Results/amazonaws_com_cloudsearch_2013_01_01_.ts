@@ -84,16 +84,16 @@ export namespace MyNS {
 		/**
 		 * An internally generated unique identifier for a domain.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		DomainId: string;
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -119,16 +119,16 @@ export namespace MyNS {
 		/**
 		 * An internally generated unique identifier for a domain.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		DomainId: FormControl<string | null | undefined>,
 
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -290,8 +290,8 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AnalysisSchemeName: string;
 
@@ -311,8 +311,8 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AnalysisSchemeName: FormControl<string | null | undefined>,
 
@@ -472,16 +472,16 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ExpressionName: string;
 
 		/**
 		 * The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 1
+		 * Max length: 10240
 		 */
 		ExpressionValue: string;
 	}
@@ -492,16 +492,16 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ExpressionName: FormControl<string | null | undefined>,
 
 		/**
 		 * The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 1
+		 * Max length: 10240
 		 */
 		ExpressionValue: FormControl<string | null | undefined>,
 	}
@@ -699,8 +699,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SourceField?: string | null;
 		FacetEnabled?: boolean | null;
@@ -715,8 +715,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SourceField: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
@@ -743,8 +743,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SourceField?: string | null;
 		ReturnEnabled?: boolean | null;
@@ -759,8 +759,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SourceField: FormControl<string | null | undefined>,
 		ReturnEnabled: FormControl<boolean | null | undefined>,
@@ -787,8 +787,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SourceField?: string | null;
 		FacetEnabled?: boolean | null;
@@ -803,8 +803,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SourceField: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
@@ -831,8 +831,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SourceField?: string | null;
 		FacetEnabled?: boolean | null;
@@ -847,8 +847,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A string that represents the name of an index field. CloudSearch supports regular index fields as well as dynamic fields. A dynamic field's name defines a pattern that begins or ends with a wildcard. Any document fields that don't map to a regular index field but do match a dynamic field's pattern are configured with the dynamic field's indexing options. </p> <p>Regular field names begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore). Dynamic field names must begin or end with a wildcard (*). The wildcard can also be the only character in a dynamic field name. Multiple wildcards, and wildcards embedded within a string are not supported. </p> <p>The name <code>score</code> is reserved and cannot be used as a field name. To reference a document's ID, you can use the name <code>_id</code>. </p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SourceField: FormControl<string | null | undefined>,
 		FacetEnabled: FormControl<boolean | null | undefined>,
@@ -1070,8 +1070,8 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SuggesterName: string;
 
@@ -1088,8 +1088,8 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SuggesterName: FormControl<string | null | undefined>,
 	}
@@ -1654,8 +1654,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -1666,8 +1666,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1706,8 +1706,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1724,8 +1724,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1743,8 +1743,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1761,8 +1761,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1780,8 +1780,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1795,8 +1795,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1814,8 +1814,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1832,8 +1832,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1851,8 +1851,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1866,8 +1866,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -1910,8 +1910,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1925,8 +1925,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -1948,8 +1948,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -1963,8 +1963,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -1986,8 +1986,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -2001,8 +2001,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2162,8 +2162,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -2174,8 +2174,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -2242,8 +2242,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -2254,8 +2254,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -2273,8 +2273,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -2288,8 +2288,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2335,8 +2335,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -2353,8 +2353,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -2372,8 +2372,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
@@ -2387,8 +2387,8 @@ export namespace MyNS {
 		/**
 		 * A string that represents the name of a domain. Domain names are unique across the domains owned by an account within an AWS region. Domain names start with a letter or number and can contain the following characters: a-z (lowercase), 0-9, and - (hyphen).
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2411,6 +2411,8 @@ export namespace MyNS {
 		/**
 		 * Indexes the search suggestions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html#configuring-suggesters">Configuring Suggesters</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=BuildSuggesters
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_BuildSuggesters(DomainName: string, Action: GET_BuildSuggestersAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2421,6 +2423,7 @@ export namespace MyNS {
 		 * Creates a new search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/creating-domains.html" target="_blank">Creating a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=CreateDomain
 		 * @param {string} DomainName A name for the domain you are creating. Allowed characters are a-z (lower-case letters), 0-9, and hyphen (-). Domain names must start with a letter or number and be at least 3 and no more than 28 characters long.
+		 *     Min length: 3    Max length: 28
 		 * @return {void} Success
 		 */
 		GET_CreateDomain(DomainName: string, Action: GET_CreateDomainAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2430,6 +2433,8 @@ export namespace MyNS {
 		/**
 		 * Configures an analysis scheme that can be applied to a <code>text</code> or <code>text-array</code> field to define language-specific text processing options. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DefineAnalysisScheme
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DefineAnalysisScheme(DomainName: string, AnalysisScheme: GET_DefineAnalysisSchemeAnalysisScheme, Action: GET_DefineAnalysisSchemeAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2439,6 +2444,8 @@ export namespace MyNS {
 		/**
 		 * Configures an <code><a>Expression</a></code> for the search domain. Used to create new expressions and modify existing ones. If the expression exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DefineExpression
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DefineExpression(DomainName: string, Expression: GET_DefineExpressionExpression, Action: GET_DefineExpressionAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2448,6 +2455,8 @@ export namespace MyNS {
 		/**
 		 * Configures an <code><a>IndexField</a></code> for the search domain. Used to create new fields and modify existing ones. You must specify the name of the domain you are configuring and an index field configuration. The index field configuration specifies a unique name, the index field type, and the options you want to configure for the field. The options you can specify depend on the <code><a>IndexFieldType</a></code>. If the field exists, the new configuration replaces the old one. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DefineIndexField
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {GET_DefineIndexFieldIndexField} IndexField The index field and field options you want to configure. 
 		 * @return {void} Success
 		 */
@@ -2458,6 +2467,8 @@ export namespace MyNS {
 		/**
 		 * Configures a suggester for a domain. A suggester enables you to display possible matches before users finish typing their queries. When you configure a suggester, you must specify the name of the text field you want to search for possible matches and a unique name for the suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DefineSuggester
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DefineSuggester(DomainName: string, Suggester: GET_DefineSuggesterSuggester, Action: GET_DefineSuggesterAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2467,7 +2478,10 @@ export namespace MyNS {
 		/**
 		 * Deletes an analysis scheme. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DeleteAnalysisScheme
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {string} AnalysisSchemeName The name of the analysis scheme you want to delete.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} Success
 		 */
 		GET_DeleteAnalysisScheme(DomainName: string, AnalysisSchemeName: string, Action: GET_DeleteAnalysisSchemeAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2478,6 +2492,7 @@ export namespace MyNS {
 		 * Permanently deletes a search domain and all of its data. Once a domain has been deleted, it cannot be recovered. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/deleting-domains.html" target="_blank">Deleting a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DeleteDomain
 		 * @param {string} DomainName The name of the domain you want to permanently delete.
+		 *     Min length: 3    Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DeleteDomain(DomainName: string, Action: GET_DeleteDomainAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2487,7 +2502,10 @@ export namespace MyNS {
 		/**
 		 * Removes an <code><a>Expression</a></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DeleteExpression
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {string} ExpressionName The name of the <code><a>Expression</a></code> to delete.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} Success
 		 */
 		GET_DeleteExpression(DomainName: string, ExpressionName: string, Action: GET_DeleteExpressionAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2497,7 +2515,10 @@ export namespace MyNS {
 		/**
 		 * Removes an <code><a>IndexField</a></code> from the search domain. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-index-fields.html" target="_blank">Configuring Index Fields</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DeleteIndexField
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {string} IndexFieldName The name of the index field your want to remove from the domain's indexing options.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} Success
 		 */
 		GET_DeleteIndexField(DomainName: string, IndexFieldName: string, Action: GET_DeleteIndexFieldAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2507,7 +2528,10 @@ export namespace MyNS {
 		/**
 		 * Deletes a suggester. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DeleteSuggester
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {string} SuggesterName Specifies the name of the suggester you want to delete.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} Success
 		 */
 		GET_DeleteSuggester(DomainName: string, SuggesterName: string, Action: GET_DeleteSuggesterAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2518,6 +2542,7 @@ export namespace MyNS {
 		 * Gets the analysis schemes configured for a domain. An analysis scheme defines language-specific text processing options for a <code>text</code> field. Can be limited to specific analysis schemes by name. By default, shows all analysis schemes and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-analysis-schemes.html" target="_blank">Configuring Analysis Schemes</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DescribeAnalysisSchemes
 		 * @param {string} DomainName The name of the domain you want to describe.
+		 *     Min length: 3    Max length: 28
 		 * @param {Array<string>} AnalysisSchemeNames The analysis schemes you want to describe.
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
@@ -2530,6 +2555,7 @@ export namespace MyNS {
 		 * Gets the availability options configured for a domain. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DescribeAvailabilityOptions
 		 * @param {string} DomainName The name of the domain you want to describe.
+		 *     Min length: 3    Max length: 28
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
@@ -2541,6 +2567,7 @@ export namespace MyNS {
 		 * Returns the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html" target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DescribeDomainEndpointOptions
 		 * @param {string} DomainName A string that represents the name of a domain.
+		 *     Min length: 3    Max length: 28
 		 * @param {boolean} Deployed Whether to retrieve the latest configuration (which might be in a Processing state) or the current, active configuration. Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
@@ -2562,6 +2589,7 @@ export namespace MyNS {
 		 * Gets the expressions configured for the search domain. Can be limited to specific expressions by name. By default, shows all expressions and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DescribeExpressions
 		 * @param {string} DomainName The name of the domain you want to describe.
+		 *     Min length: 3    Max length: 28
 		 * @param {Array<string>} ExpressionNames Limits the <code><a>DescribeExpressions</a></code> response to the specified expressions. If not specified, all expressions are shown.
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
@@ -2574,6 +2602,7 @@ export namespace MyNS {
 		 * Gets information about the index fields configured for the search domain. Can be limited to specific fields by name. By default, shows all fields and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-domain-info.html" target="_blank">Getting Domain Information</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DescribeIndexFields
 		 * @param {string} DomainName The name of the domain you want to describe.
+		 *     Min length: 3    Max length: 28
 		 * @param {Array<string>} FieldNames A list of the index fields you want to describe. If not specified, information is returned for all configured index fields.
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
@@ -2585,6 +2614,8 @@ export namespace MyNS {
 		/**
 		 * Gets the scaling parameters configured for a domain. A domain's scaling parameters specify the desired search instance type and replication count. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DescribeScalingParameters
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_DescribeScalingParameters(DomainName: string, Action: GET_DescribeScalingParametersAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2595,6 +2626,7 @@ export namespace MyNS {
 		 * Gets information about the access policies that control access to the domain's document and search endpoints. By default, shows the configuration with any pending changes. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank">Configuring Access for a Search Domain</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DescribeServiceAccessPolicies
 		 * @param {string} DomainName The name of the domain you want to describe.
+		 *     Min length: 3    Max length: 28
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
 		 */
@@ -2606,6 +2638,7 @@ export namespace MyNS {
 		 * Gets the suggesters configured for a domain. A suggester enables you to display possible matches before users finish typing their queries. Can be limited to specific suggesters by name. By default, shows all suggesters and includes any pending changes to the configuration. Set the <code>Deployed</code> option to <code>true</code> to show the active configuration and exclude pending changes. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/getting-suggestions.html" target="_blank">Getting Search Suggestions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=DescribeSuggesters
 		 * @param {string} DomainName The name of the domain you want to describe.
+		 *     Min length: 3    Max length: 28
 		 * @param {Array<string>} SuggesterNames The suggesters you want to describe.
 		 * @param {boolean} Deployed Whether to display the deployed configuration (<code>true</code>) or include any pending changes (<code>false</code>). Defaults to <code>false</code>.
 		 * @return {void} Success
@@ -2617,6 +2650,8 @@ export namespace MyNS {
 		/**
 		 * Tells the search domain to start indexing its documents using the latest indexing options. This operation must be invoked to activate options whose <a>OptionStatus</a> is <code>RequiresIndexDocuments</code>.
 		 * Get #Action=IndexDocuments
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_IndexDocuments(DomainName: string, Action: GET_IndexDocumentsAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2644,6 +2679,8 @@ export namespace MyNS {
 		/**
 		 * Configures the availability options for a domain. Enabling the Multi-AZ option expands an Amazon CloudSearch domain to an additional Availability Zone in the same Region to increase fault tolerance in the event of a service disruption. Changes to the Multi-AZ option can take about half an hour to become active. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-availability-options.html" target="_blank">Configuring Availability Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=UpdateAvailabilityOptions
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {boolean} MultiAZ You expand an existing search domain to a second Availability Zone by setting the Multi-AZ option to true. Similarly, you can turn off the Multi-AZ option to downgrade the domain to a single Availability Zone by setting the Multi-AZ option to <code>false</code>. 
 		 * @return {void} Success
 		 */
@@ -2655,6 +2692,7 @@ export namespace MyNS {
 		 * Updates the domain's endpoint options, specifically whether all requests to the domain must arrive over HTTPS. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-domain-endpoint-options.html" target="_blank">Configuring Domain Endpoint Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=UpdateDomainEndpointOptions
 		 * @param {string} DomainName A string that represents the name of a domain.
+		 *     Min length: 3    Max length: 28
 		 * @param {GET_UpdateDomainEndpointOptionsDomainEndpointOptions} DomainEndpointOptions Whether to require that all requests to the domain arrive over HTTPS. We recommend Policy-Min-TLS-1-2-2019-07 for TLSSecurityPolicy. For compatibility with older clients, the default is Policy-Min-TLS-1-0-2019-07. 
 		 * @return {void} Success
 		 */
@@ -2665,6 +2703,8 @@ export namespace MyNS {
 		/**
 		 * Configures scaling parameters for a domain. A domain's scaling parameters specify the desired search instance type and replication count. Amazon CloudSearch will still automatically scale your domain based on the volume of data and traffic, but not below the desired instance type and replication count. If the Multi-AZ option is enabled, these values control the resources used per Availability Zone. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-scaling-options.html" target="_blank">Configuring Scaling Options</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Get #Action=UpdateScalingParameters
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @return {void} Success
 		 */
 		GET_UpdateScalingParameters(DomainName: string, ScalingParameters: GET_UpdateScalingParametersScalingParameters, Action: GET_UpdateScalingParametersAction, Version: GET_BuildSuggestersVersion): Observable<HttpResponse<string>> {
@@ -2674,6 +2714,8 @@ export namespace MyNS {
 		/**
 		 * Configures the access rules that control access to the domain's document and search endpoints. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-access.html" target="_blank"> Configuring Access for an Amazon CloudSearch Domain</a>.
 		 * Get #Action=UpdateServiceAccessPolicies
+		 * @param {string} DomainName Min length: 3
+		 *     Max length: 28
 		 * @param {string} AccessPolicies The access rules you want to configure. These rules replace any existing rules. 
 		 * @return {void} Success
 		 */
@@ -2693,8 +2735,8 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AnalysisSchemeName: string;
 
@@ -2712,8 +2754,8 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AnalysisSchemeName: FormControl<string | null | undefined>,
 
@@ -2738,16 +2780,16 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ExpressionName: string;
 
 		/**
 		 * The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 1
+		 * Max length: 10240
 		 */
 		ExpressionValue: string;
 	}
@@ -2756,16 +2798,16 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ExpressionName: FormControl<string | null | undefined>,
 
 		/**
 		 * The expression to evaluate for sorting while processing a search request. The <code>Expression</code> syntax is based on JavaScript expressions. For more information, see <a href="http://docs.aws.amazon.com/cloudsearch/latest/developerguide/configuring-expressions.html" target="_blank">Configuring Expressions</a> in the <i>Amazon CloudSearch Developer Guide</i>.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 1
+		 * Max length: 10240
 		 */
 		ExpressionValue: FormControl<string | null | undefined>,
 	}
@@ -2849,8 +2891,8 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SuggesterName: string;
 
@@ -2865,8 +2907,8 @@ export namespace MyNS {
 		/**
 		 * Names must begin with a letter and can contain the following characters: a-z (lowercase), 0-9, and _ (underscore).
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		SuggesterName: FormControl<string | null | undefined>,
 	}

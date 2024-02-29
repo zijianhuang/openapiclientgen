@@ -118,18 +118,30 @@ export namespace MyNS {
 
 	export interface GeoDistanceResponse {
 
-		/** Bearing direction between the two coordinates in degrees. */
+		/**
+		 * Bearing direction between the two coordinates in degrees.
+		 * Type: double
+		 */
 		bearing?: number | null;
 
-		/** Distance between the two coordinates in meters. */
+		/**
+		 * Distance between the two coordinates in meters.
+		 * Type: double
+		 */
 		meters?: number | null;
 	}
 	export interface GeoDistanceResponseFormProperties {
 
-		/** Bearing direction between the two coordinates in degrees. */
+		/**
+		 * Bearing direction between the two coordinates in degrees.
+		 * Type: double
+		 */
 		bearing: FormControl<number | null | undefined>,
 
-		/** Distance between the two coordinates in meters. */
+		/**
+		 * Distance between the two coordinates in meters.
+		 * Type: double
+		 */
 		meters: FormControl<number | null | undefined>,
 	}
 	export function CreateGeoDistanceResponseFormGroup() {
@@ -222,16 +234,28 @@ export namespace MyNS {
 
 	/** Lunar information. */
 	export interface GeoMoonDto {
+
+		/** Type: double */
 		altitude?: number | null;
+
+		/** Type: double */
 		azimuth?: number | null;
+
+		/** Type: double */
 		bearing?: number | null;
+
+		/** Type: double */
 		declination?: number | null;
+
+		/** Type: double */
 		distance?: number | null;
 		illumination?: MoonIllum;
 		isUp?: boolean | null;
 		lastEclipse?: LunarEclipseDetails;
 		name?: string | null;
 		nextEclipse?: LunarEclipseDetails;
+
+		/** Type: double */
 		rightAscension?: number | null;
 		rise?: Date | null;
 		set?: Date | null;
@@ -240,13 +264,25 @@ export namespace MyNS {
 
 	/** Lunar information. */
 	export interface GeoMoonDtoFormProperties {
+
+		/** Type: double */
 		altitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		azimuth: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		bearing: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		declination: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		distance: FormControl<number | null | undefined>,
 		isUp: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		rightAscension: FormControl<number | null | undefined>,
 		rise: FormControl<Date | null | undefined>,
 		set: FormControl<Date | null | undefined>,
@@ -270,15 +306,27 @@ export namespace MyNS {
 	}
 
 	export interface MoonIllum {
+
+		/** Type: double */
 		angle?: number | null;
+
+		/** Type: double */
 		fraction?: number | null;
+
+		/** Type: double */
 		phase?: number | null;
 		phaseName?: string | null;
 		phaseNameEnum?: MoonIllumPhaseNameEnum;
 	}
 	export interface MoonIllumFormProperties {
+
+		/** Type: double */
 		angle: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fraction: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		phase: FormControl<number | null | undefined>,
 		phaseName: FormControl<string | null | undefined>,
 		phaseNameEnum: FormControl<MoonIllumPhaseNameEnum | null | undefined>,
@@ -384,15 +432,23 @@ export namespace MyNS {
 
 	/** Solar information. */
 	export interface GeoSunDto {
+
+		/** Type: double */
 		altitude?: number | null;
+
+		/** Type: double */
 		azimuth?: number | null;
 		dawn?: Date | null;
+
+		/** Type: double */
 		declination?: number | null;
 		dusk?: Date | null;
 		isUp?: boolean | null;
 		lastEclipse?: SolarEclipseDetails;
 		nextEclipse?: SolarEclipseDetails;
 		noon?: Date | null;
+
+		/** Type: double */
 		rightAscension?: number | null;
 		rise?: Date | null;
 		set?: Date | null;
@@ -400,13 +456,21 @@ export namespace MyNS {
 
 	/** Solar information. */
 	export interface GeoSunDtoFormProperties {
+
+		/** Type: double */
 		altitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		azimuth: FormControl<number | null | undefined>,
 		dawn: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		declination: FormControl<number | null | undefined>,
 		dusk: FormControl<Date | null | undefined>,
 		isUp: FormControl<boolean | null | undefined>,
 		noon: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		rightAscension: FormControl<number | null | undefined>,
 		rise: FormControl<Date | null | undefined>,
 		set: FormControl<Date | null | undefined>,

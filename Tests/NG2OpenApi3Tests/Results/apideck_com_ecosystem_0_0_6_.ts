@@ -46,10 +46,16 @@ export namespace MyNS {
 		border_radius?: string | null;
 		border_size?: string | null;
 		color?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		columns?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		description_lines?: number | null;
 		icon_border_radius?: string | null;
 		icon_shadow_enabled?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		icon_size?: number | null;
 		shadow_enabled?: boolean | null;
 		show_action?: boolean | null;
@@ -64,10 +70,16 @@ export namespace MyNS {
 		border_radius: FormControl<string | null | undefined>,
 		border_size: FormControl<string | null | undefined>,
 		color: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		columns: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		description_lines: FormControl<number | null | undefined>,
 		icon_border_radius: FormControl<string | null | undefined>,
 		icon_shadow_enabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		icon_size: FormControl<number | null | undefined>,
 		shadow_enabled: FormControl<boolean | null | undefined>,
 		show_action: FormControl<boolean | null | undefined>,
@@ -99,6 +111,8 @@ export namespace MyNS {
 	}
 
 	export interface Category {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		created_at?: Date | null;
 		description?: string | null;
@@ -117,6 +131,8 @@ export namespace MyNS {
 		updated_at?: Date | null;
 	}
 	export interface CategoryFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		created_at: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
@@ -206,8 +222,12 @@ export namespace MyNS {
 	export interface Collection {
 		card_background_color?: string | null;
 		card_background_image?: File;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		card_columns?: number | null;
 		card_style?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		description?: string | null;
 		hidden_from_homepage?: boolean | null;
@@ -216,7 +236,11 @@ export namespace MyNS {
 
 		/** Required */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_max_items_homepage?: number | null;
 
 		/** Required */
@@ -228,8 +252,12 @@ export namespace MyNS {
 	}
 	export interface CollectionFormProperties {
 		card_background_color: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		card_columns: FormControl<number | null | undefined>,
 		card_style: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		hidden_from_homepage: FormControl<boolean | null | undefined>,
@@ -237,7 +265,11 @@ export namespace MyNS {
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		show_max_items_homepage: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -374,6 +406,8 @@ export namespace MyNS {
 		body_link_color?: string | null;
 		card_settings?: CardSettings;
 		categories_count_badge?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		categories_show_max_items?: number | null;
 		collections_count_badge?: boolean | null;
 		collections_title?: string | null;
@@ -420,6 +454,8 @@ export namespace MyNS {
 		/** Required */
 		slug: string;
 		terms_link?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_published_listings?: number | null;
 		unify_application_id?: string | null;
 		updated_at?: Date | null;
@@ -439,6 +475,8 @@ export namespace MyNS {
 		body_color: FormControl<string | null | undefined>,
 		body_link_color: FormControl<string | null | undefined>,
 		categories_count_badge: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		categories_show_max_items: FormControl<number | null | undefined>,
 		collections_count_badge: FormControl<boolean | null | undefined>,
 		collections_title: FormControl<string | null | undefined>,
@@ -478,6 +516,8 @@ export namespace MyNS {
 		/** Required */
 		slug: FormControl<string | null | undefined>,
 		terms_link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_published_listings: FormControl<number | null | undefined>,
 		unify_application_id: FormControl<string | null | undefined>,
 		updated_at: FormControl<Date | null | undefined>,
@@ -727,6 +767,8 @@ export namespace MyNS {
 		background?: string | null;
 		background_color?: string | null;
 		color?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		columns?: number | null;
 		description?: string | null;
 		title?: string | null;
@@ -735,6 +777,8 @@ export namespace MyNS {
 		background: FormControl<string | null | undefined>,
 		background_color: FormControl<string | null | undefined>,
 		color: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		columns: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
@@ -806,6 +850,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -820,6 +865,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -879,14 +925,20 @@ export namespace MyNS {
 		/** Cursors to navigate to previous or next pages through the API */
 		cursors?: MetaCursors;
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page?: number | null;
 	}
 
 	/** Response metadata */
 	export interface MetaFormProperties {
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -941,6 +993,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -955,6 +1008,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -980,6 +1034,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -994,6 +1049,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1019,6 +1075,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1033,6 +1090,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1058,6 +1116,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1072,6 +1131,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1097,6 +1157,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1111,6 +1172,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1254,6 +1316,8 @@ export namespace MyNS {
 	export interface Media {
 		caption?: string | null;
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence?: number | null;
 		translations?: Array<Translation>;
 		type?: MediaType | null;
@@ -1264,6 +1328,8 @@ export namespace MyNS {
 	export interface MediaFormProperties {
 		caption: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence: FormControl<number | null | undefined>,
 		type: FormControl<MediaType | null | undefined>,
 
@@ -1321,6 +1387,8 @@ export namespace MyNS {
 	}
 
 	export interface Product {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		description?: string | null;
 		id?: string | null;
@@ -1328,6 +1396,8 @@ export namespace MyNS {
 
 		/** Required */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence?: number | null;
 
 		/** Required */
@@ -1338,12 +1408,16 @@ export namespace MyNS {
 		visible: boolean;
 	}
 	export interface ProductFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1403,6 +1477,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1417,6 +1492,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1442,6 +1518,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1456,6 +1533,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1487,6 +1565,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1501,6 +1580,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1533,6 +1613,7 @@ export namespace MyNS {
 		 * Get ecosystems/{ecosystem_id}/categories
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of records to return
+		 *     Minimum: 1    Maximum: 200
 		 * @return {GetCategoriesResponse} Categories
 		 */
 		CategoriesAll(ecosystem_id: string, cursor: string | null | undefined, limit: number | null | undefined): Observable<GetCategoriesResponse> {
@@ -1557,6 +1638,7 @@ export namespace MyNS {
 		 * @param {string} id ID of the record you are acting upon.
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of records to return
+		 *     Minimum: 1    Maximum: 200
 		 * @return {GetListingsResponse} Listings
 		 */
 		CategoryListingsAll(ecosystem_id: string, id: string, cursor: string | null | undefined, limit: number | null | undefined): Observable<GetListingsResponse> {
@@ -1569,6 +1651,7 @@ export namespace MyNS {
 		 * Get ecosystems/{ecosystem_id}/collections
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of records to return
+		 *     Minimum: 1    Maximum: 200
 		 * @return {GetCollectionsResponse} Collections
 		 */
 		CollectionsAll(ecosystem_id: string, cursor: string | null | undefined, limit: number | null | undefined): Observable<GetCollectionsResponse> {
@@ -1593,6 +1676,7 @@ export namespace MyNS {
 		 * @param {string} id ID of the record you are acting upon.
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of records to return
+		 *     Minimum: 1    Maximum: 200
 		 * @return {GetListingsResponse} Listings
 		 */
 		CollectionListingsAll(ecosystem_id: string, id: string, cursor: string | null | undefined, limit: number | null | undefined): Observable<GetListingsResponse> {
@@ -1605,6 +1689,7 @@ export namespace MyNS {
 		 * Get ecosystems/{ecosystem_id}/listings
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of records to return
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} external_id Filter on external_id
 		 * @return {GetListingsResponse} Listings
 		 */
@@ -1651,6 +1736,7 @@ export namespace MyNS {
 		 * @param {string} id ID of the record you are acting upon.
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of records to return
+		 *     Minimum: 1    Maximum: 200
 		 * @return {GetListingsResponse} Listings
 		 */
 		ProductListingsAll(ecosystem_id: string, id: string, cursor: string | null | undefined, limit: number | null | undefined): Observable<GetListingsResponse> {

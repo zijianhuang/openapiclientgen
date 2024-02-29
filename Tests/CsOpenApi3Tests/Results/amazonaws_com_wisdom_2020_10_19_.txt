@@ -2023,8 +2023,14 @@ namespace MyNS
 		/// Lists information about assistants.
 		/// ListAssistants assistants
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
-		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAssistantsResponse> ListAssistantsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2100,8 +2106,14 @@ namespace MyNS
 		/// ListAssistantAssociations assistants/{assistantId}/associations
 		/// </summary>
 		/// <param name="assistantId">The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</param>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
-		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAssistantAssociationsResponse> ListAssistantAssociationsAsync(string assistantId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2177,8 +2189,14 @@ namespace MyNS
 		/// ListContents knowledgeBases/{knowledgeBaseId}/contents
 		/// </summary>
 		/// <param name="knowledgeBaseId">The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</param>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
-		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListContentsResponse> ListContentsAsync(string knowledgeBaseId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2252,8 +2270,14 @@ namespace MyNS
 		/// Lists the knowledge bases.
 		/// ListKnowledgeBases knowledgeBases
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
-		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListKnowledgeBasesResponse> ListKnowledgeBasesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2654,9 +2678,15 @@ namespace MyNS
 		/// GetRecommendations assistants/{assistantId}/sessions/{sessionId}/recommendations
 		/// </summary>
 		/// <param name="assistantId">The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</param>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="sessionId">The identifier of the session. Can be either the ID or the ARN. URLs cannot contain the ARN.</param>
-		/// <param name="waitTimeSeconds">The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.</param>
+		/// <param name="waitTimeSeconds">The duration (in seconds) for which the call waits for a recommendation to be made available before returning. If a recommendation is available, the call returns sooner than <code>WaitTimeSeconds</code>. If no messages are available and the wait time expires, the call returns successfully with an empty list.
+		/// Minimum: 0
+		/// Maximum: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRecommendationsResponse> GetRecommendationsAsync(string assistantId, int maxResults, string sessionId, int waitTimeSeconds, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2954,8 +2984,14 @@ namespace MyNS
 		/// SearchContent knowledgeBases/{knowledgeBaseId}/search
 		/// </summary>
 		/// <param name="knowledgeBaseId">The identifier of the knowledge base. Can be either the ID or the ARN. URLs cannot contain the ARN.</param>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
-		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchContentResponse> SearchContentAsync(string knowledgeBaseId, int maxResults, string nextToken, SearchContentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2997,8 +3033,14 @@ namespace MyNS
 		/// SearchSessions assistants/{assistantId}/searchSessions
 		/// </summary>
 		/// <param name="assistantId">The identifier of the Wisdom assistant. Can be either the ID or the ARN. URLs cannot contain the ARN.</param>
-		/// <param name="maxResults">The maximum number of results to return per page.</param>
-		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</param>
+		/// <param name="maxResults">The maximum number of results to return per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchSessionsResponse> SearchSessionsAsync(string assistantId, int maxResults, string nextToken, SearchSessionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3081,7 +3123,10 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource.</param>
-		/// <param name="tagKeys">The tag keys.</param>
+		/// <param name="tagKeys">The tag keys.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

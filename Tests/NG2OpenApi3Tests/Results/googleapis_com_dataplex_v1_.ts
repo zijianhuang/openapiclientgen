@@ -425,7 +425,10 @@ export namespace MyNS {
 		/** Optional. The character encoding of the data. The default is UTF-8. */
 		encoding?: string | null;
 
-		/** Optional. The number of rows to interpret as header rows that should be skipped when reading data rows. */
+		/**
+		 * Optional. The number of rows to interpret as header rows that should be skipped when reading data rows.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headerRows?: number | null;
 	}
 
@@ -441,7 +444,10 @@ export namespace MyNS {
 		/** Optional. The character encoding of the data. The default is UTF-8. */
 		encoding: FormControl<string | null | undefined>,
 
-		/** Optional. The number of rows to interpret as header rows that should be skipped when reading data rows. */
+		/**
+		 * Optional. The number of rows to interpret as header rows that should be skipped when reading data rows.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headerRows: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1AssetDiscoverySpecCsvOptionsFormGroup() {
@@ -704,10 +710,16 @@ export namespace MyNS {
 	/** Aggregated status of the underlying assets of a lake or zone. */
 	export interface GoogleCloudDataplexV1AssetStatus {
 
-		/** Number of active assets. */
+		/**
+		 * Number of active assets.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeAssets?: number | null;
 
-		/** Number of assets that are in process of updating the security policy on attached resources. */
+		/**
+		 * Number of assets that are in process of updating the security policy on attached resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		securityPolicyApplyingAssets?: number | null;
 
 		/** Last update time of the status. */
@@ -717,10 +729,16 @@ export namespace MyNS {
 	/** Aggregated status of the underlying assets of a lake or zone. */
 	export interface GoogleCloudDataplexV1AssetStatusFormProperties {
 
-		/** Number of active assets. */
+		/**
+		 * Number of active assets.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		activeAssets: FormControl<number | null | undefined>,
 
-		/** Number of assets that are in process of updating the security policy on attached resources. */
+		/**
+		 * Number of assets that are in process of updating the security policy on attached resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		securityPolicyApplyingAssets: FormControl<number | null | undefined>,
 
 		/** Last update time of the status. */
@@ -892,7 +910,10 @@ export namespace MyNS {
 	/** Denotes one dataAttribute in a dataTaxonomy, for example, PII. DataAttribute resources can be defined in a hierarchy. A single dataAttribute resource can contain specs of multiple types PII - ResourceAccessSpec : - readers :foo@bar.com - DataAccessSpec : - readers :bar@foo.com  */
 	export interface GoogleCloudDataplexV1DataAttribute {
 
-		/** Output only. The number of child attributes present for this attribute. */
+		/**
+		 * Output only. The number of child attributes present for this attribute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attributeCount?: number | null;
 
 		/** Output only. The time when the DataAttribute was created. */
@@ -932,7 +953,10 @@ export namespace MyNS {
 	/** Denotes one dataAttribute in a dataTaxonomy, for example, PII. DataAttribute resources can be defined in a hierarchy. A single dataAttribute resource can contain specs of multiple types PII - ResourceAccessSpec : - readers :foo@bar.com - DataAccessSpec : - readers :bar@foo.com  */
 	export interface GoogleCloudDataplexV1DataAttributeFormProperties {
 
-		/** Output only. The number of child attributes present for this attribute. */
+		/**
+		 * Output only. The number of child attributes present for this attribute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attributeCount: FormControl<number | null | undefined>,
 
 		/** Output only. The time when the DataAttribute was created. */
@@ -1244,7 +1268,10 @@ export namespace MyNS {
 	/** The profile information for each field type. */
 	export interface GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfo {
 
-		/** Ratio of rows with distinct values against total scanned rows. Not available for complex non-groupable field type RECORD and fields with REPEATABLE mode. */
+		/**
+		 * Ratio of rows with distinct values against total scanned rows. Not available for complex non-groupable field type RECORD and fields with REPEATABLE mode.
+		 * Type: double
+		 */
 		distinctRatio?: number | null;
 
 		/** The profile information for a double type field. */
@@ -1253,7 +1280,10 @@ export namespace MyNS {
 		/** The profile information for an integer type field. */
 		integerProfile?: GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoIntegerFieldInfo;
 
-		/** Ratio of rows with null value against total scanned rows. */
+		/**
+		 * Ratio of rows with null value against total scanned rows.
+		 * Type: double
+		 */
 		nullRatio?: number | null;
 
 		/** The profile information for a string type field. */
@@ -1266,10 +1296,16 @@ export namespace MyNS {
 	/** The profile information for each field type. */
 	export interface GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoFormProperties {
 
-		/** Ratio of rows with distinct values against total scanned rows. Not available for complex non-groupable field type RECORD and fields with REPEATABLE mode. */
+		/**
+		 * Ratio of rows with distinct values against total scanned rows. Not available for complex non-groupable field type RECORD and fields with REPEATABLE mode.
+		 * Type: double
+		 */
 		distinctRatio: FormControl<number | null | undefined>,
 
-		/** Ratio of rows with null value against total scanned rows. */
+		/**
+		 * Ratio of rows with null value against total scanned rows.
+		 * Type: double
+		 */
 		nullRatio: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoFormGroup() {
@@ -1284,35 +1320,59 @@ export namespace MyNS {
 	/** The profile information for a double type field. */
 	export interface GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoDoubleFieldInfo {
 
-		/** Average of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Average of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		average?: number | null;
 
-		/** Maximum of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Maximum of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		max?: number | null;
 
-		/** Minimum of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Minimum of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		min?: number | null;
 
 		/** A quartile divides the number of data points into four parts, or quarters, of more-or-less equal size. Three main quartiles used are: The first quartile (Q1) splits off the lowest 25% of data from the highest 75%. It is also known as the lower or 25th empirical quartile, as 25% of the data is below this point. The second quartile (Q2) is the median of a data set. So, 50% of the data lies below this point. The third quartile (Q3) splits off the highest 25% of data from the lowest 75%. It is known as the upper or 75th empirical quartile, as 75% of the data lies below this point. Here, the quartiles is provided as an ordered list of quartile values for the scanned data, occurring in order Q1, median, Q3. */
 		quartiles?: Array<number>;
 
-		/** Standard deviation of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Standard deviation of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		standardDeviation?: number | null;
 	}
 
 	/** The profile information for a double type field. */
 	export interface GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoDoubleFieldInfoFormProperties {
 
-		/** Average of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Average of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		average: FormControl<number | null | undefined>,
 
-		/** Maximum of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Maximum of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** Minimum of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Minimum of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		min: FormControl<number | null | undefined>,
 
-		/** Standard deviation of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Standard deviation of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		standardDeviation: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoDoubleFieldInfoFormGroup() {
@@ -1329,7 +1389,10 @@ export namespace MyNS {
 	/** The profile information for an integer type field. */
 	export interface GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoIntegerFieldInfo {
 
-		/** Average of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Average of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		average?: number | null;
 
 		/** Maximum of non-null values in the scanned data. NaN, if the field has a NaN. */
@@ -1341,14 +1404,20 @@ export namespace MyNS {
 		/** A quartile divides the number of data points into four parts, or quarters, of more-or-less equal size. Three main quartiles used are: The first quartile (Q1) splits off the lowest 25% of data from the highest 75%. It is also known as the lower or 25th empirical quartile, as 25% of the data is below this point. The second quartile (Q2) is the median of a data set. So, 50% of the data lies below this point. The third quartile (Q3) splits off the highest 25% of data from the lowest 75%. It is known as the upper or 75th empirical quartile, as 75% of the data lies below this point. Here, the quartiles is provided as an ordered list of approximate quartile values for the scanned data, occurring in order Q1, median, Q3. */
 		quartiles?: Array<string>;
 
-		/** Standard deviation of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Standard deviation of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		standardDeviation?: number | null;
 	}
 
 	/** The profile information for an integer type field. */
 	export interface GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoIntegerFieldInfoFormProperties {
 
-		/** Average of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Average of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		average: FormControl<number | null | undefined>,
 
 		/** Maximum of non-null values in the scanned data. NaN, if the field has a NaN. */
@@ -1357,7 +1426,10 @@ export namespace MyNS {
 		/** Minimum of non-null values in the scanned data. NaN, if the field has a NaN. */
 		min: FormControl<string | null | undefined>,
 
-		/** Standard deviation of non-null values in the scanned data. NaN, if the field has a NaN. */
+		/**
+		 * Standard deviation of non-null values in the scanned data. NaN, if the field has a NaN.
+		 * Type: double
+		 */
 		standardDeviation: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoIntegerFieldInfoFormGroup() {
@@ -1374,7 +1446,10 @@ export namespace MyNS {
 	/** The profile information for a string type field. */
 	export interface GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldInfo {
 
-		/** Average length of non-null values in the scanned data. */
+		/**
+		 * Average length of non-null values in the scanned data.
+		 * Type: double
+		 */
 		averageLength?: number | null;
 
 		/** Maximum length of non-null values in the scanned data. */
@@ -1387,7 +1462,10 @@ export namespace MyNS {
 	/** The profile information for a string type field. */
 	export interface GoogleCloudDataplexV1DataProfileResultProfileFieldProfileInfoStringFieldInfoFormProperties {
 
-		/** Average length of non-null values in the scanned data. */
+		/**
+		 * Average length of non-null values in the scanned data.
+		 * Type: double
+		 */
 		averageLength: FormControl<number | null | undefined>,
 
 		/** Maximum length of non-null values in the scanned data. */
@@ -1412,7 +1490,10 @@ export namespace MyNS {
 		/** Count of the corresponding value in the scanned data. */
 		count?: string | null;
 
-		/** Ratio of the corresponding value in the field against the total number of rows in the scanned data. */
+		/**
+		 * Ratio of the corresponding value in the field against the total number of rows in the scanned data.
+		 * Type: double
+		 */
 		ratio?: number | null;
 
 		/** String value of a top N non-null value. */
@@ -1425,7 +1506,10 @@ export namespace MyNS {
 		/** Count of the corresponding value in the scanned data. */
 		count: FormControl<string | null | undefined>,
 
-		/** Ratio of the corresponding value in the field against the total number of rows in the scanned data. */
+		/**
+		 * Ratio of the corresponding value in the field against the total number of rows in the scanned data.
+		 * Type: double
+		 */
 		ratio: FormControl<number | null | undefined>,
 
 		/** String value of a top N non-null value. */
@@ -1508,7 +1592,10 @@ export namespace MyNS {
 		/** Optional. A filter applied to all rows in a single DataScan job. The filter needs to be a valid SQL expression for a WHERE clause in BigQuery standard SQL syntax. Example: col1 >= 0 AND col2 < 10 */
 		rowFilter?: string | null;
 
-		/** Optional. The percentage of the records to be selected from the dataset for DataScan. Value can range between 0.0 and 100.0 with up to 3 significant decimal digits. Sampling is not applied if sampling_percent is not specified, 0 or 100. */
+		/**
+		 * Optional. The percentage of the records to be selected from the dataset for DataScan. Value can range between 0.0 and 100.0 with up to 3 significant decimal digits. Sampling is not applied if sampling_percent is not specified, 0 or 100.
+		 * Type: float
+		 */
 		samplingPercent?: number | null;
 	}
 
@@ -1518,7 +1605,10 @@ export namespace MyNS {
 		/** Optional. A filter applied to all rows in a single DataScan job. The filter needs to be a valid SQL expression for a WHERE clause in BigQuery standard SQL syntax. Example: col1 >= 0 AND col2 < 10 */
 		rowFilter: FormControl<string | null | undefined>,
 
-		/** Optional. The percentage of the records to be selected from the dataset for DataScan. Value can range between 0.0 and 100.0 with up to 3 significant decimal digits. Sampling is not applied if sampling_percent is not specified, 0 or 100. */
+		/**
+		 * Optional. The percentage of the records to be selected from the dataset for DataScan. Value can range between 0.0 and 100.0 with up to 3 significant decimal digits. Sampling is not applied if sampling_percent is not specified, 0 or 100.
+		 * Type: float
+		 */
 		samplingPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataProfileSpecFormGroup() {
@@ -1591,7 +1681,10 @@ export namespace MyNS {
 		/** Output only. The column specified in the DataQualityRule. */
 		column?: string | null;
 
-		/** Output only. The column-level data quality score for this data scan job if and only if the 'column' field is set.The score ranges between between 0, 100 (up to two decimal points). */
+		/**
+		 * Output only. The column-level data quality score for this data scan job if and only if the 'column' field is set.The score ranges between between 0, 100 (up to two decimal points).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -1601,7 +1694,10 @@ export namespace MyNS {
 		/** Output only. The column specified in the DataQualityRule. */
 		column: FormControl<string | null | undefined>,
 
-		/** Output only. The column-level data quality score for this data scan job if and only if the 'column' field is set.The score ranges between between 0, 100 (up to two decimal points). */
+		/**
+		 * Output only. The column-level data quality score for this data scan job if and only if the 'column' field is set.The score ranges between between 0, 100 (up to two decimal points).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataQualityColumnResultFormGroup() {
@@ -1643,7 +1739,10 @@ export namespace MyNS {
 		/** Whether the dimension passed or failed. */
 		passed?: boolean | null;
 
-		/** Output only. The dimension-level data quality score for this data scan job if and only if the 'dimension' field is set.The score ranges between 0, 100 (up to two decimal points). */
+		/**
+		 * Output only. The dimension-level data quality score for this data scan job if and only if the 'dimension' field is set.The score ranges between 0, 100 (up to two decimal points).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -1653,7 +1752,10 @@ export namespace MyNS {
 		/** Whether the dimension passed or failed. */
 		passed: FormControl<boolean | null | undefined>,
 
-		/** Output only. The dimension-level data quality score for this data scan job if and only if the 'dimension' field is set.The score ranges between 0, 100 (up to two decimal points). */
+		/**
+		 * Output only. The dimension-level data quality score for this data scan job if and only if the 'dimension' field is set.The score ranges between 0, 100 (up to two decimal points).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataQualityDimensionResultFormGroup() {
@@ -1689,7 +1791,10 @@ export namespace MyNS {
 		/** The data scanned during processing (e.g. in incremental DataScan) */
 		scannedData?: GoogleCloudDataplexV1ScannedData;
 
-		/** Output only. The overall data quality score.The score ranges between 0, 100 (up to two decimal points). */
+		/**
+		 * Output only. The overall data quality score.The score ranges between 0, 100 (up to two decimal points).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -1702,7 +1807,10 @@ export namespace MyNS {
 		/** The count of rows processed. */
 		rowCount: FormControl<string | null | undefined>,
 
-		/** Output only. The overall data quality score.The score ranges between 0, 100 (up to two decimal points). */
+		/**
+		 * Output only. The overall data quality score.The score ranges between 0, 100 (up to two decimal points).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataQualityResultFormGroup() {
@@ -1772,7 +1880,10 @@ export namespace MyNS {
 		/** The number of rows with null values in the specified column. */
 		nullCount?: string | null;
 
-		/** The ratio of passed_count / evaluated_count.This field is only valid for row-level type rules. */
+		/**
+		 * The ratio of passed_count / evaluated_count.This field is only valid for row-level type rules.
+		 * Type: double
+		 */
 		passRatio?: number | null;
 
 		/** Whether the rule passed or failed. */
@@ -1797,7 +1908,10 @@ export namespace MyNS {
 		/** The number of rows with null values in the specified column. */
 		nullCount: FormControl<string | null | undefined>,
 
-		/** The ratio of passed_count / evaluated_count.This field is only valid for row-level type rules. */
+		/**
+		 * The ratio of passed_count / evaluated_count.This field is only valid for row-level type rules.
+		 * Type: double
+		 */
 		passRatio: FormControl<number | null | undefined>,
 
 		/** Whether the rule passed or failed. */
@@ -1858,7 +1972,10 @@ export namespace MyNS {
 		/** Evaluates whether the provided expression is true.The SQL expression needs to use BigQuery standard SQL syntax and should produce a scalar boolean result.Example: MIN(col1) >= 0 */
 		tableConditionExpectation?: GoogleCloudDataplexV1DataQualityRuleTableConditionExpectation;
 
-		/** Optional. The minimum ratio of passing_rows / total_rows required to pass this rule, with a range of 0.0, 1.0.0 indicates default value (i.e. 1.0).This field is only valid for row-level type rules. */
+		/**
+		 * Optional. The minimum ratio of passing_rows / total_rows required to pass this rule, with a range of 0.0, 1.0.0 indicates default value (i.e. 1.0).This field is only valid for row-level type rules.
+		 * Type: double
+		 */
 		threshold?: number | null;
 
 		/** Evaluates whether the column has duplicates. */
@@ -1883,7 +2000,10 @@ export namespace MyNS {
 		/** Optional. A mutable name for the rule. The name must contain only letters (a-z, A-Z), numbers (0-9), or hyphens (-). The maximum length is 63 characters. Must start with a letter. Must end with a number or a letter. */
 		name: FormControl<string | null | undefined>,
 
-		/** Optional. The minimum ratio of passing_rows / total_rows required to pass this rule, with a range of 0.0, 1.0.0 indicates default value (i.e. 1.0).This field is only valid for row-level type rules. */
+		/**
+		 * Optional. The minimum ratio of passing_rows / total_rows required to pass this rule, with a range of 0.0, 1.0.0 indicates default value (i.e. 1.0).This field is only valid for row-level type rules.
+		 * Type: double
+		 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataQualityRuleFormGroup() {
@@ -2136,7 +2256,10 @@ export namespace MyNS {
 		/** The type of the data quality rule. */
 		ruleType?: GoogleCloudDataplexV1DataQualityScanRuleResultRuleType | null;
 
-		/** The passing threshold (0.0, 100.0) of the data quality rule. */
+		/**
+		 * The passing threshold (0.0, 100.0) of the data quality rule.
+		 * Type: double
+		 */
 		thresholdPercent?: number | null;
 	}
 
@@ -2176,7 +2299,10 @@ export namespace MyNS {
 		/** The type of the data quality rule. */
 		ruleType: FormControl<GoogleCloudDataplexV1DataQualityScanRuleResultRuleType | null | undefined>,
 
-		/** The passing threshold (0.0, 100.0) of the data quality rule. */
+		/**
+		 * The passing threshold (0.0, 100.0) of the data quality rule.
+		 * Type: double
+		 */
 		thresholdPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataQualityScanRuleResultFormGroup() {
@@ -2216,7 +2342,10 @@ export namespace MyNS {
 		/** Required. The list of rules to evaluate against a data source. At least one rule is required. */
 		rules?: Array<GoogleCloudDataplexV1DataQualityRule>;
 
-		/** Optional. The percentage of the records to be selected from the dataset for DataScan. Value can range between 0.0 and 100.0 with up to 3 significant decimal digits. Sampling is not applied if sampling_percent is not specified, 0 or 100. */
+		/**
+		 * Optional. The percentage of the records to be selected from the dataset for DataScan. Value can range between 0.0 and 100.0 with up to 3 significant decimal digits. Sampling is not applied if sampling_percent is not specified, 0 or 100.
+		 * Type: float
+		 */
 		samplingPercent?: number | null;
 	}
 
@@ -2226,7 +2355,10 @@ export namespace MyNS {
 		/** Optional. A filter applied to all rows in a single DataScan job. The filter needs to be a valid SQL expression for a WHERE clause in BigQuery standard SQL syntax. Example: col1 >= 0 AND col2 < 10 */
 		rowFilter: FormControl<string | null | undefined>,
 
-		/** Optional. The percentage of the records to be selected from the dataset for DataScan. Value can range between 0.0 and 100.0 with up to 3 significant decimal digits. Sampling is not applied if sampling_percent is not specified, 0 or 100. */
+		/**
+		 * Optional. The percentage of the records to be selected from the dataset for DataScan. Value can range between 0.0 and 100.0 with up to 3 significant decimal digits. Sampling is not applied if sampling_percent is not specified, 0 or 100.
+		 * Type: float
+		 */
 		samplingPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataQualitySpecFormGroup() {
@@ -2647,7 +2779,10 @@ export namespace MyNS {
 		/** Boolean indicating whether a row filter was applied in the DataScan job. */
 		rowFilterApplied?: boolean | null;
 
-		/** The percentage of the records selected from the dataset for DataScan. Value ranges between 0.0 and 100.0. Value 0.0 or 100.0 imply that sampling was not applied. */
+		/**
+		 * The percentage of the records selected from the dataset for DataScan. Value ranges between 0.0 and 100.0. Value 0.0 or 100.0 imply that sampling was not applied.
+		 * Type: float
+		 */
 		samplingPercent?: number | null;
 	}
 
@@ -2660,7 +2795,10 @@ export namespace MyNS {
 		/** Boolean indicating whether a row filter was applied in the DataScan job. */
 		rowFilterApplied: FormControl<boolean | null | undefined>,
 
-		/** The percentage of the records selected from the dataset for DataScan. Value ranges between 0.0 and 100.0. Value 0.0 or 100.0 imply that sampling was not applied. */
+		/**
+		 * The percentage of the records selected from the dataset for DataScan. Value ranges between 0.0 and 100.0. Value 0.0 or 100.0 imply that sampling was not applied.
+		 * Type: float
+		 */
 		samplingPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataScanEventDataProfileAppliedConfigsFormGroup() {
@@ -2691,7 +2829,10 @@ export namespace MyNS {
 		/** The count of rows processed in the data scan job. */
 		rowCount?: string | null;
 
-		/** The table-level data quality score for the data scan job.The data quality score ranges between 0, 100 (up to two decimal points). */
+		/**
+		 * The table-level data quality score for the data scan job.The data quality score ranges between 0, 100 (up to two decimal points).
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -2713,7 +2854,10 @@ export namespace MyNS {
 		/** The count of rows processed in the data scan job. */
 		rowCount: FormControl<string | null | undefined>,
 
-		/** The table-level data quality score for the data scan job.The data quality score ranges between 0, 100 (up to two decimal points). */
+		/**
+		 * The table-level data quality score for the data scan job.The data quality score ranges between 0, 100 (up to two decimal points).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataScanEventDataQualityResultFormGroup() {
@@ -2735,7 +2879,10 @@ export namespace MyNS {
 		/** Boolean indicating whether a row filter was applied in the DataScan job. */
 		rowFilterApplied?: boolean | null;
 
-		/** The percentage of the records selected from the dataset for DataScan. Value ranges between 0.0 and 100.0. Value 0.0 or 100.0 imply that sampling was not applied. */
+		/**
+		 * The percentage of the records selected from the dataset for DataScan. Value ranges between 0.0 and 100.0. Value 0.0 or 100.0 imply that sampling was not applied.
+		 * Type: float
+		 */
 		samplingPercent?: number | null;
 	}
 
@@ -2745,7 +2892,10 @@ export namespace MyNS {
 		/** Boolean indicating whether a row filter was applied in the DataScan job. */
 		rowFilterApplied: FormControl<boolean | null | undefined>,
 
-		/** The percentage of the records selected from the dataset for DataScan. Value ranges between 0.0 and 100.0. Value 0.0 or 100.0 imply that sampling was not applied. */
+		/**
+		 * The percentage of the records selected from the dataset for DataScan. Value ranges between 0.0 and 100.0. Value 0.0 or 100.0 imply that sampling was not applied.
+		 * Type: float
+		 */
 		samplingPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1DataScanEventDataQualityAppliedConfigsFormGroup() {
@@ -2890,10 +3040,16 @@ export namespace MyNS {
 	/** DataTaxonomy represents a set of hierarchical DataAttributes resources, grouped with a common theme Eg: 'SensitiveDataTaxonomy' can have attributes to manage PII data. It is defined at project level. */
 	export interface GoogleCloudDataplexV1DataTaxonomy {
 
-		/** Output only. The number of attributes in the DataTaxonomy. */
+		/**
+		 * Output only. The number of attributes in the DataTaxonomy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attributeCount?: number | null;
 
-		/** Output only. The number of classes in the DataTaxonomy. */
+		/**
+		 * Output only. The number of classes in the DataTaxonomy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		classCount?: number | null;
 
 		/** Output only. The time when the DataTaxonomy was created. */
@@ -2924,10 +3080,16 @@ export namespace MyNS {
 	/** DataTaxonomy represents a set of hierarchical DataAttributes resources, grouped with a common theme Eg: 'SensitiveDataTaxonomy' can have attributes to manage PII data. It is defined at project level. */
 	export interface GoogleCloudDataplexV1DataTaxonomyFormProperties {
 
-		/** Output only. The number of attributes in the DataTaxonomy. */
+		/**
+		 * Output only. The number of attributes in the DataTaxonomy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attributeCount: FormControl<number | null | undefined>,
 
-		/** Output only. The number of classes in the DataTaxonomy. */
+		/**
+		 * Output only. The number of classes in the DataTaxonomy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		classCount: FormControl<number | null | undefined>,
 
 		/** Output only. The time when the DataTaxonomy was created. */
@@ -3399,7 +3561,10 @@ export namespace MyNS {
 		/** Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and "ISO-8859-1". Defaults to UTF-8 if unspecified. */
 		encoding?: string | null;
 
-		/** Optional. The number of rows to interpret as header rows that should be skipped when reading data rows. Defaults to 0. */
+		/**
+		 * Optional. The number of rows to interpret as header rows that should be skipped when reading data rows. Defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headerRows?: number | null;
 
 		/** Optional. The character used to quote column values. Accepts '"' (double quotation mark) or ''' (single quotation mark). Defaults to '"' (double quotation mark) if unspecified. */
@@ -3415,7 +3580,10 @@ export namespace MyNS {
 		/** Optional. The character encoding of the data. Accepts "US-ASCII", "UTF-8", and "ISO-8859-1". Defaults to UTF-8 if unspecified. */
 		encoding: FormControl<string | null | undefined>,
 
-		/** Optional. The number of rows to interpret as header rows that should be skipped when reading data rows. Defaults to 0. */
+		/**
+		 * Optional. The number of rows to interpret as header rows that should be skipped when reading data rows. Defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headerRows: FormControl<number | null | undefined>,
 
 		/** Optional. The character used to quote column values. Accepts '"' (double quotation mark) or ''' (single quotation mark). Defaults to '"' (double quotation mark) if unspecified. */
@@ -3726,26 +3894,44 @@ export namespace MyNS {
 	/** Compute resources associated with the analyze interactive workloads. */
 	export interface GoogleCloudDataplexV1EnvironmentInfrastructureSpecComputeResources {
 
-		/** Optional. Size in GB of the disk. Default is 100 GB. */
+		/**
+		 * Optional. Size in GB of the disk. Default is 100 GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb?: number | null;
 
-		/** Optional. Max configurable nodes. If max_node_count > node_count, then auto-scaling is enabled. */
+		/**
+		 * Optional. Max configurable nodes. If max_node_count > node_count, then auto-scaling is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodeCount?: number | null;
 
-		/** Optional. Total number of nodes in the sessions created for this environment. */
+		/**
+		 * Optional. Total number of nodes in the sessions created for this environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount?: number | null;
 	}
 
 	/** Compute resources associated with the analyze interactive workloads. */
 	export interface GoogleCloudDataplexV1EnvironmentInfrastructureSpecComputeResourcesFormProperties {
 
-		/** Optional. Size in GB of the disk. Default is 100 GB. */
+		/**
+		 * Optional. Size in GB of the disk. Default is 100 GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb: FormControl<number | null | undefined>,
 
-		/** Optional. Max configurable nodes. If max_node_count > node_count, then auto-scaling is enabled. */
+		/**
+		 * Optional. Max configurable nodes. If max_node_count > node_count, then auto-scaling is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodeCount: FormControl<number | null | undefined>,
 
-		/** Optional. Total number of nodes in the sessions created for this environment. */
+		/**
+		 * Optional. Total number of nodes in the sessions created for this environment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1EnvironmentInfrastructureSpecComputeResourcesFormGroup() {
@@ -3920,7 +4106,10 @@ export namespace MyNS {
 		/** Output only. The relative resource name of the job, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{task_id}/jobs/{job_id}. */
 		name?: string | null;
 
-		/** Output only. The number of times the job has been retried (excluding the initial attempt). */
+		/**
+		 * Output only. The number of times the job has been retried (excluding the initial attempt).
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		retryCount?: number | null;
 
 		/** Output only. The underlying service running a job. */
@@ -3957,7 +4146,10 @@ export namespace MyNS {
 		/** Output only. The relative resource name of the job, of the form: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{task_id}/jobs/{job_id}. */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. The number of times the job has been retried (excluding the initial attempt). */
+		/**
+		 * Output only. The number of times the job has been retried (excluding the initial attempt).
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		retryCount: FormControl<number | null | undefined>,
 
 		/** Output only. The underlying service running a job. */
@@ -4066,7 +4258,10 @@ export namespace MyNS {
 		/** The log message. */
 		message?: string | null;
 
-		/** The number of retries. */
+		/**
+		 * The number of retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries?: number | null;
 
 		/** The service used to execute the job. */
@@ -4100,7 +4295,10 @@ export namespace MyNS {
 		/** The log message. */
 		message: FormControl<string | null | undefined>,
 
-		/** The number of retries. */
+		/**
+		 * The number of retries.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retries: FormControl<number | null | undefined>,
 
 		/** The service used to execute the job. */
@@ -4915,20 +5113,32 @@ export namespace MyNS {
 	/** Batch compute resources associated with the task. */
 	export interface GoogleCloudDataplexV1TaskInfrastructureSpecBatchComputeResources {
 
-		/** Optional. Total number of job executors. Executor Count should be between 2 and 100. Default=2 */
+		/**
+		 * Optional. Total number of job executors. Executor Count should be between 2 and 100. Default=2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executorsCount?: number | null;
 
-		/** Optional. Max configurable executors. If max_executors_count > executors_count, then auto-scaling is enabled. Max Executor Count should be between 2 and 1000. Default=1000 */
+		/**
+		 * Optional. Max configurable executors. If max_executors_count > executors_count, then auto-scaling is enabled. Max Executor Count should be between 2 and 1000. Default=1000
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxExecutorsCount?: number | null;
 	}
 
 	/** Batch compute resources associated with the task. */
 	export interface GoogleCloudDataplexV1TaskInfrastructureSpecBatchComputeResourcesFormProperties {
 
-		/** Optional. Total number of job executors. Executor Count should be between 2 and 100. Default=2 */
+		/**
+		 * Optional. Total number of job executors. Executor Count should be between 2 and 100. Default=2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executorsCount: FormControl<number | null | undefined>,
 
-		/** Optional. Max configurable executors. If max_executors_count > executors_count, then auto-scaling is enabled. Max Executor Count should be between 2 and 1000. Default=1000 */
+		/**
+		 * Optional. Max configurable executors. If max_executors_count > executors_count, then auto-scaling is enabled. Max Executor Count should be between 2 and 1000. Default=1000
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxExecutorsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1TaskInfrastructureSpecBatchComputeResourcesFormGroup() {
@@ -5069,7 +5279,10 @@ export namespace MyNS {
 		/** Optional. Prevent the task from executing. This does not cancel already running tasks. It is intended to temporarily disable RECURRING tasks. */
 		disabled?: boolean | null;
 
-		/** Optional. Number of retry attempts before aborting. Set to zero to never attempt to retry a failed task. */
+		/**
+		 * Optional. Number of retry attempts before aborting. Set to zero to never attempt to retry a failed task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries?: number | null;
 
 		/** Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running tasks periodically. To explicitly set a timezone to the cron tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database. For example, CRON_TZ=America/New_York 1 * * * *, or TZ=America/New_York 1 * * * *. This field is required for RECURRING tasks. */
@@ -5088,7 +5301,10 @@ export namespace MyNS {
 		/** Optional. Prevent the task from executing. This does not cancel already running tasks. It is intended to temporarily disable RECURRING tasks. */
 		disabled: FormControl<boolean | null | undefined>,
 
-		/** Optional. Number of retry attempts before aborting. Set to zero to never attempt to retry a failed task. */
+		/**
+		 * Optional. Number of retry attempts before aborting. Set to zero to never attempt to retry a failed task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetries: FormControl<number | null | undefined>,
 
 		/** Optional. Cron schedule (https://en.wikipedia.org/wiki/Cron) for running tasks periodically. To explicitly set a timezone to the cron tab, apply a prefix in the cron tab: "CRON_TZ=${IANA_TIME_ZONE}" or "TZ=${IANA_TIME_ZONE}". The ${IANA_TIME_ZONE} may only be a valid string from IANA time zone database. For example, CRON_TZ=America/New_York 1 * * * *, or TZ=America/New_York 1 * * * *. This field is required for RECURRING tasks. */
@@ -5276,7 +5492,10 @@ export namespace MyNS {
 		/** Optional. The character encoding of the data. The default is UTF-8. */
 		encoding?: string | null;
 
-		/** Optional. The number of rows to interpret as header rows that should be skipped when reading data rows. */
+		/**
+		 * Optional. The number of rows to interpret as header rows that should be skipped when reading data rows.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headerRows?: number | null;
 	}
 
@@ -5292,7 +5511,10 @@ export namespace MyNS {
 		/** Optional. The character encoding of the data. The default is UTF-8. */
 		encoding: FormControl<string | null | undefined>,
 
-		/** Optional. The number of rows to interpret as header rows that should be skipped when reading data rows. */
+		/**
+		 * Optional. The number of rows to interpret as header rows that should be skipped when reading data rows.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headerRows: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDataplexV1ZoneDiscoverySpecCsvOptionsFormGroup() {
@@ -5820,7 +6042,10 @@ export namespace MyNS {
 		/** etag is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the etag in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An etag is returned in the response to getIamPolicy, and systems are expected to put that etag in the request to setIamPolicy to ensure that their change will be applied to the same version of the policy.Important: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy.Valid values are 0, 1, and 3. Requests that specify an invalid value are rejected.Any operation that affects conditional role bindings must specify version 3. This requirement applies to the following operations: Getting a policy that includes a conditional role binding Adding a conditional role binding to a policy Changing a conditional role binding in a policy Removing any role binding, with or without a condition, from a policy that includes conditionsImportant: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost.If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.To learn which resources support conditions in their IAM policies, see the IAM documentation (https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy.Valid values are 0, 1, and 3. Requests that specify an invalid value are rejected.Any operation that affects conditional role bindings must specify version 3. This requirement applies to the following operations: Getting a policy that includes a conditional role binding Adding a conditional role binding to a policy Changing a conditional role binding in a policy Removing any role binding, with or without a condition, from a policy that includes conditionsImportant: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost.If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.To learn which resources support conditions in their IAM policies, see the IAM documentation (https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -5830,7 +6055,10 @@ export namespace MyNS {
 		/** etag is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the etag in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An etag is returned in the response to getIamPolicy, and systems are expected to put that etag in the request to setIamPolicy to ensure that their change will be applied to the same version of the policy.Important: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy.Valid values are 0, 1, and 3. Requests that specify an invalid value are rejected.Any operation that affects conditional role bindings must specify version 3. This requirement applies to the following operations: Getting a policy that includes a conditional role binding Adding a conditional role binding to a policy Changing a conditional role binding in a policy Removing any role binding, with or without a condition, from a policy that includes conditionsImportant: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost.If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.To learn which resources support conditions in their IAM policies, see the IAM documentation (https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy.Valid values are 0, 1, and 3. Requests that specify an invalid value are rejected.Any operation that affects conditional role bindings must specify version 3. This requirement applies to the following operations: Getting a policy that includes a conditional role binding Adding a conditional role binding to a policy Changing a conditional role binding in a policy Removing any role binding, with or without a condition, from a policy that includes conditionsImportant: If you use IAM Conditions, you must include the etag field whenever you call setIamPolicy. If you omit this field, then IAM allows you to overwrite a version 3 policy with a version 1 policy, and all of the conditions in the version 3 policy are lost.If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset.To learn which resources support conditions in their IAM policies, see the IAM documentation (https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleIamV1PolicyFormGroup() {
@@ -5986,7 +6214,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -5999,7 +6230,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -6069,6 +6303,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like "displayName=tokyo", and is documented in more detail in AIP-160 (https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the next_page_token field in the response. Send that page token to receive the subsequent page.
 		 * @return {GoogleCloudLocationListLocationsResponse} Successful response
 		 */
@@ -6082,6 +6317,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -6114,6 +6350,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/actions
 		 * @param {string} parent Required. The resource name of the parent asset: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/assets/{asset_id}.
 		 * @param {number} pageSize Optional. Maximum number of actions to return. The service may return fewer than this value. If unspecified, at most 10 actions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListAssetActions call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListAssetActions must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListActionsResponse} Successful response
 		 */
@@ -6128,6 +6365,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter request.
 		 * @param {string} orderBy Optional. Order by fields for the result.
 		 * @param {number} pageSize Optional. Maximum number of asset to return. The service may return fewer than this value. If unspecified, at most 10 assets will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListAssets call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListAssets must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListAssetsResponse} Successful response
 		 */
@@ -6154,6 +6392,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter request.
 		 * @param {string} orderBy Optional. Order by fields for the result.
 		 * @param {number} pageSize Optional. Maximum number of DataAttributes to return. The service may return fewer than this value. If unspecified, at most 10 dataAttributes will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListDataAttributes call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListDataAttributes must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListDataAttributesResponse} Successful response
 		 */
@@ -6179,6 +6418,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the parent lake: projects/{project_id}/locations/{location_id}/lakes/{lake_id}
 		 * @param {string} filter Optional. Filter request. Filters are case-sensitive. The following formats are supported:labels.key1 = "value1" labels:key1 type = "NOTEBOOK" type = "SQL_SCRIPT"These restrictions can be coinjoined with AND, OR and NOT conjunctions.
 		 * @param {number} pageSize Optional. Maximum number of content to return. The service may return fewer than this value. If unspecified, at most 10 content will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListContent call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListContent must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListContentResponse} Successful response
 		 */
@@ -6203,6 +6443,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the parent lake: projects/{project_id}/locations/{location_id}/lakes/{lake_id}
 		 * @param {string} filter Optional. Filter request. Filters are case-sensitive. The following formats are supported:labels.key1 = "value1" labels:key1 type = "NOTEBOOK" type = "SQL_SCRIPT"These restrictions can be coinjoined with AND, OR and NOT conjunctions.
 		 * @param {number} pageSize Optional. Maximum number of content to return. The service may return fewer than this value. If unspecified, at most 10 content will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListContent call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListContent must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListContentResponse} Successful response
 		 */
@@ -6228,6 +6469,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter request. Filter using resource: filter=resource:"resource-name" Filter using attribute: filter=attributes:"attribute-name" Filter using attribute in paths list: filter=paths.attributes:"attribute-name"
 		 * @param {string} orderBy Optional. Order by fields for the result.
 		 * @param {number} pageSize Optional. Maximum number of DataAttributeBindings to return. The service may return fewer than this value. If unspecified, at most 10 DataAttributeBindings will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListDataAttributeBindings call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListDataAttributeBindings must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListDataAttributeBindingsResponse} Successful response
 		 */
@@ -6254,6 +6496,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter request.
 		 * @param {string} orderBy Optional. Order by fields (name or create_time) for the result. If not specified, the ordering is undefined.
 		 * @param {number} pageSize Optional. Maximum number of dataScans to return. The service may return fewer than this value. If unspecified, at most 500 scans will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListDataScans call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListDataScans must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListDataScansResponse} Successful response
 		 */
@@ -6280,6 +6523,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter request.
 		 * @param {string} orderBy Optional. Order by fields for the result.
 		 * @param {number} pageSize Optional. Maximum number of DataTaxonomies to return. The service may return fewer than this value. If unspecified, at most 10 DataTaxonomies will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListDataTaxonomies call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListDataTaxonomies must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListDataTaxonomiesResponse} Successful response
 		 */
@@ -6305,6 +6549,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the parent zone: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}.
 		 * @param {string} filter Optional. The following filter parameters can be added to the URL to limit the entities returned by the API: Entity ID: ?filter="id=entityID" Asset ID: ?filter="asset=assetID" Data path ?filter="data_path=gs://my-bucket" Is HIVE compatible: ?filter="hive_compatible=true" Is BigQuery compatible: ?filter="bigquery_compatible=true"
 		 * @param {number} pageSize Optional. Maximum number of entities to return. The service may return fewer than this value. If unspecified, 100 entities will be returned by default. The maximum value is 500; larger values will will be truncated to 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListEntities call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListEntities must match the call that provided the page token.
 		 * @param {Dataplex_projects_locations_lakes_zones_entities_listView} view Required. Specify the entity view to make a partial list request.
 		 * @return {GoogleCloudDataplexV1ListEntitiesResponse} Successful response
@@ -6331,6 +6576,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter request.
 		 * @param {string} orderBy Optional. Order by fields for the result.
 		 * @param {number} pageSize Optional. Maximum number of environments to return. The service may return fewer than this value. If unspecified, at most 10 environments will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListEnvironments call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListEnvironments must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListEnvironmentsResponse} Successful response
 		 */
@@ -6355,6 +6601,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/jobs
 		 * @param {string} parent Required. The resource name of the parent environment: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/tasks/{task_id}.
 		 * @param {number} pageSize Optional. Maximum number of jobs to return. The service may return fewer than this value. If unspecified, at most 10 jobs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListJobs call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListJobs must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListJobsResponse} Successful response
 		 */
@@ -6369,6 +6616,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter request.
 		 * @param {string} orderBy Optional. Order by fields for the result.
 		 * @param {number} pageSize Optional. Maximum number of Lakes to return. The service may return fewer than this value. If unspecified, at most 10 lakes will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListLakes call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListLakes must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListLakesResponse} Successful response
 		 */
@@ -6394,6 +6642,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the parent entity: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/zones/{zone_id}/entities/{entity_id}.
 		 * @param {string} filter Optional. Filter the partitions returned to the caller using a key value pair expression. Supported operators and syntax: logic operators: AND, OR comparison operators: <, >, >=, <= ,=, != LIKE operators: The right hand of a LIKE operator supports "." and "*" for wildcard searches, for example "value1 LIKE ".*oo.*" parenthetical grouping: ( )Sample filter expression: `?filter="key1 < value1 OR key2 > value2"Notes: Keys to the left of operators are case insensitive. Partition results are sorted first by creation time, then by lexicographic order. Up to 20 key value filter pairs are allowed, but due to performance considerations, only the first 10 will be used as a filter.
 		 * @param {number} pageSize Optional. Maximum number of partitions to return. The service may return fewer than this value. If unspecified, 100 partitions will be returned by default. The maximum page size is 500; larger values will will be truncated to 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListPartitions call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListPartitions must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListPartitionsResponse} Successful response
 		 */
@@ -6418,6 +6667,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the parent environment: projects/{project_number}/locations/{location_id}/lakes/{lake_id}/environment/{environment_id}.
 		 * @param {string} filter Optional. Filter request. The following mode filter is supported to return only the sessions belonging to the requester when the mode is USER and return sessions of all the users when the mode is ADMIN. When no filter is sent default to USER mode. NOTE: When the mode is ADMIN, the requester should have dataplex.environments.listAllSessions permission to list all sessions, in absence of the permission, the request fails.mode = ADMIN | USER
 		 * @param {number} pageSize Optional. Maximum number of sessions to return. The service may return fewer than this value. If unspecified, at most 10 sessions will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListSessions call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListSessions must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListSessionsResponse} Successful response
 		 */
@@ -6432,6 +6682,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter request.
 		 * @param {string} orderBy Optional. Order by fields for the result.
 		 * @param {number} pageSize Optional. Maximum number of tasks to return. The service may return fewer than this value. If unspecified, at most 10 tasks will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListZones call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListZones must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListTasksResponse} Successful response
 		 */
@@ -6458,6 +6709,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filter request.
 		 * @param {string} orderBy Optional. Order by fields for the result.
 		 * @param {number} pageSize Optional. Maximum number of zones to return. The service may return fewer than this value. If unspecified, at most 10 zones will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListZones call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ListZones must match the call that provided the page token.
 		 * @return {GoogleCloudDataplexV1ListZonesResponse} Successful response
 		 */
@@ -6482,6 +6734,7 @@ export namespace MyNS {
 		 * Get v1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See Resource names (https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy.Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected.Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset.The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1.To learn which resources support conditions in their IAM policies, see the IAM documentation (https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GoogleIamV1Policy} Successful response
 		 */
 		Dataplex_projects_locations_lakes_zones_assets_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<GoogleIamV1Policy> {

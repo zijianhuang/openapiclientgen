@@ -19,7 +19,10 @@ export namespace MyNS {
 		/** Any audit IDs closely relevant to this one. */
 		relevantAudits?: Array<string>;
 
-		/** The weight this audit's score has on the overall category score. */
+		/**
+		 * The weight this audit's score has on the overall category score.
+		 * Type: double
+		 */
 		weight?: number | null;
 	}
 
@@ -35,7 +38,10 @@ export namespace MyNS {
 		/** The audit ref id. */
 		id: FormControl<string | null | undefined>,
 
-		/** The weight this audit's score has on the overall category score. */
+		/**
+		 * The weight this audit's score has on the overall category score.
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateAuditRefsFormGroup() {
@@ -52,26 +58,44 @@ export namespace MyNS {
 	/** A proportion of data in the total distribution, bucketed by a min/max percentage. Each bucket's range is bounded by min <= x < max, In millisecond. */
 	export interface Bucket {
 
-		/** Upper bound for a bucket's range. */
+		/**
+		 * Upper bound for a bucket's range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max?: number | null;
 
-		/** Lower bound for a bucket's range. */
+		/**
+		 * Lower bound for a bucket's range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min?: number | null;
 
-		/** The proportion of data in this bucket. */
+		/**
+		 * The proportion of data in this bucket.
+		 * Type: double
+		 */
 		proportion?: number | null;
 	}
 
 	/** A proportion of data in the total distribution, bucketed by a min/max percentage. Each bucket's range is bounded by min <= x < max, In millisecond. */
 	export interface BucketFormProperties {
 
-		/** Upper bound for a bucket's range. */
+		/**
+		 * Upper bound for a bucket's range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** Lower bound for a bucket's range. */
+		/**
+		 * Lower bound for a bucket's range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min: FormControl<number | null | undefined>,
 
-		/** The proportion of data in this bucket. */
+		/**
+		 * The proportion of data in this bucket.
+		 * Type: double
+		 */
 		proportion: FormControl<number | null | undefined>,
 	}
 	export function CreateBucketFormGroup() {
@@ -245,7 +269,10 @@ export namespace MyNS {
 	/** Message containing environment configuration for a Lighthouse run. */
 	export interface Environment {
 
-		/** The benchmark index number that indicates rough device class. */
+		/**
+		 * The benchmark index number that indicates rough device class.
+		 * Type: double
+		 */
 		benchmarkIndex?: number | null;
 
 		/** The version of libraries with which these results were generated. Ex: axe-core. */
@@ -261,7 +288,10 @@ export namespace MyNS {
 	/** Message containing environment configuration for a Lighthouse run. */
 	export interface EnvironmentFormProperties {
 
-		/** The benchmark index number that indicates rough device class. */
+		/**
+		 * The benchmark index number that indicates rough device class.
+		 * Type: double
+		 */
 		benchmarkIndex: FormControl<number | null | undefined>,
 
 		/** The version of libraries with which these results were generated. Ex: axe-core. */
@@ -727,7 +757,10 @@ export namespace MyNS {
 		/** The unit of the numeric_value field. Used to format the numeric value for display. */
 		numericUnit?: string | null;
 
-		/** A numeric value that has a meaning specific to the audit, e.g. the number of nodes in the DOM or the timestamp of a specific load event. More information can be found in the audit details, if present. */
+		/**
+		 * A numeric value that has a meaning specific to the audit, e.g. the number of nodes in the DOM or the timestamp of a specific load event. More information can be found in the audit details, if present.
+		 * Type: double
+		 */
 		numericValue?: number | null;
 
 		/** The score of the audit, can be null. */
@@ -767,7 +800,10 @@ export namespace MyNS {
 		/** The unit of the numeric_value field. Used to format the numeric value for display. */
 		numericUnit: FormControl<string | null | undefined>,
 
-		/** A numeric value that has a meaning specific to the audit, e.g. the number of nodes in the DOM or the timestamp of a specific load event. More information can be found in the audit details, if present. */
+		/**
+		 * A numeric value that has a meaning specific to the audit, e.g. the number of nodes in the DOM or the timestamp of a specific load event. More information can be found in the audit details, if present.
+		 * Type: double
+		 */
 		numericValue: FormControl<number | null | undefined>,
 
 		/** The score of the audit, can be null. */
@@ -985,14 +1021,20 @@ export namespace MyNS {
 	/** Message containing the performance timing data for the Lighthouse run. */
 	export interface Timing {
 
-		/** The total duration of Lighthouse's run. */
+		/**
+		 * The total duration of Lighthouse's run.
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 
 	/** Message containing the performance timing data for the Lighthouse run. */
 	export interface TimingFormProperties {
 
-		/** The total duration of Lighthouse's run. */
+		/**
+		 * The total duration of Lighthouse's run.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateTimingFormGroup() {
@@ -1064,13 +1106,19 @@ export namespace MyNS {
 		/** Identifies the form factor of the metric being collected. */
 		formFactor?: string | null;
 
-		/** The median number of the metric, in millisecond. */
+		/**
+		 * The median number of the metric, in millisecond.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		median?: number | null;
 
 		/** Identifies the type of the metric. */
 		metricId?: string | null;
 
-		/** We use this field to store certain percentile value for this metric. For v4, this field contains pc50. For v5, this field contains pc90. */
+		/**
+		 * We use this field to store certain percentile value for this metric. For v4, this field contains pc50. For v5, this field contains pc90.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentile?: number | null;
 	}
 
@@ -1083,13 +1131,19 @@ export namespace MyNS {
 		/** Identifies the form factor of the metric being collected. */
 		formFactor: FormControl<string | null | undefined>,
 
-		/** The median number of the metric, in millisecond. */
+		/**
+		 * The median number of the metric, in millisecond.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		median: FormControl<number | null | undefined>,
 
 		/** Identifies the type of the metric. */
 		metricId: FormControl<string | null | undefined>,
 
-		/** We use this field to store certain percentile value for this metric. For v4, this field contains pc50. For v5, this field contains pc90. */
+		/**
+		 * We use this field to store certain percentile value for this metric. For v4, this field contains pc50. For v5, this field contains pc90.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentile: FormControl<number | null | undefined>,
 	}
 	export function CreateUserPageLoadMetricV5FormGroup() {

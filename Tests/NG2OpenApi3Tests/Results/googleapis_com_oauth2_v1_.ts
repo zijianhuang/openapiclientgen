@@ -14,10 +14,16 @@ export namespace MyNS {
 		/** Boolean flag which is true if the email address is verified. Present only if the email scope is present in the request. */
 		email_verified?: boolean | null;
 
-		/** The expiry time of the token, as number of seconds left until expiry. */
+		/**
+		 * The expiry time of the token, as number of seconds left until expiry.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in?: number | null;
 
-		/** The issue time of the token, as number of seconds. */
+		/**
+		 * The issue time of the token, as number of seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		issued_at?: number | null;
 
 		/** To whom was the token issued to. In general the same as audience. */
@@ -49,10 +55,16 @@ export namespace MyNS {
 		/** Boolean flag which is true if the email address is verified. Present only if the email scope is present in the request. */
 		email_verified: FormControl<boolean | null | undefined>,
 
-		/** The expiry time of the token, as number of seconds left until expiry. */
+		/**
+		 * The expiry time of the token, as number of seconds left until expiry.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in: FormControl<number | null | undefined>,
 
-		/** The issue time of the token, as number of seconds. */
+		/**
+		 * The issue time of the token, as number of seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		issued_at: FormControl<number | null | undefined>,
 
 		/** To whom was the token issued to. In general the same as audience. */

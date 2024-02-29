@@ -38,6 +38,12 @@ namespace SwagTests
 		}
 
 		[Fact]
+		public void TestPetReturnNumber()
+		{
+			GenerateAndAssertAndBuild("SwagMock\\petReturnNumber.yaml", "Results\\PetReturnNumber.txt");
+		}
+
+		[Fact]
 		public void TestPetDicInt64()
 		{
 			GenerateAndAssertAndBuild("SwagMock\\petDicInt64.yaml", "Results\\PetDicInt64.txt");

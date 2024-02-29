@@ -14,12 +14,19 @@ export namespace MyNS {
 		 * Use this endpoint if you are comparing model predictions to measurements.
 		 * Get cari7/ambient_dose
 		 * @param {number} altitude Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).
+		 *     Type: double
 		 * @param {number} latitude Latitude. -90 (S) to 90 (N).
+		 *     Type: double
 		 * @param {number} longitude Longitude. -180 (W) to 180 (E).
+		 *     Type: double
 		 * @param {number} year Year in YYYY.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} month Month in MM.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} day Day in DD.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} utc Hour in 24 hour time.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {App_api_cari7_endpoints_CARI7_ambient_doseParticle} particle The particle type as a string. Specifying 'total' returns the dose for all particle types.
 		 * @return {App_api_cari7_endpoints_CARI7_ambient_doseReturn} Successful dose calculation
 		 */
@@ -36,12 +43,19 @@ export namespace MyNS {
 		 * Use this endpoint if you need to estimate radiation exposures of personnel.
 		 * Get cari7/effective_dose
 		 * @param {number} altitude Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).
+		 *     Type: double
 		 * @param {number} latitude Latitude. -90 (S) to 90 (N).
+		 *     Type: double
 		 * @param {number} longitude Longitude. -180 (W) to 180 (E).
+		 *     Type: double
 		 * @param {number} year Year in YYYY.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} month Month in MM.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} day Day in DD.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} utc Hour in 24 hour time.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {App_api_cari7_endpoints_CARI7_ambient_doseParticle} particle The particle type as a string. Specifying 'total' returns the dose for all particle types.
 		 * @return {App_api_cari7_endpoints_CARI7_effective_doseReturn} Successful dose calculation
 		 */
@@ -55,12 +69,19 @@ export namespace MyNS {
 		 * Use this endpoint if you are comparing model predictions to measurements.
 		 * Get parma/ambient_dose
 		 * @param {number} altitude Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).
+		 *     Type: double
 		 * @param {number} atmospheric_depth Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.
+		 *     Type: double
 		 * @param {number} latitude Latitude. -90 (S) to 90 (N).
+		 *     Type: double
 		 * @param {number} longitude Longitude. -180 (W) to 180 (E).
+		 *     Type: double
 		 * @param {number} year Year in YYYY.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} month Month in MM.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} day Day in DD.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {App_api_parma_endpoints_PARMA_ambient_doseParticle} particle The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.
 		 * @return {App_api_parma_endpoints_PARMA_ambient_doseReturn} Successful dose read operation
 		 */
@@ -73,14 +94,22 @@ export namespace MyNS {
 		 * The differential intensity of a particle is a directional quantity that describes the number of particles per unit area, per unit solid angle, per unit energy, and per unit time. The API leverages the functionality of PARMA to calculate differential intensity distributions with energies in units of MeV and Intensity in units of /cm2/sr/MeV/s.
 		 * Get parma/differential_intensity
 		 * @param {number} altitude Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).
+		 *     Type: double
 		 * @param {number} atmospheric_depth Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.
+		 *     Type: double
 		 * @param {number} latitude Latitude. -90 (S) to 90 (N).
+		 *     Type: double
 		 * @param {number} longitude Longitude. -180 (W) to 180 (E).
+		 *     Type: double
 		 * @param {number} year Year in YYYY.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} month Month in MM.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} day Day in DD.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {App_api_parma_endpoints_PARMA_ambient_doseParticle} particle The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.
 		 * @param {number} angle Direction cosine. 1.0 is in the downward direction.
+		 *     Type: double
 		 * @return {App_api_parma_endpoints_PARMA_differential_intensityReturn} Successful read of intensity operation
 		 */
 		App_api_parma_endpoints_PARMA_differential_intensity(altitude: number | null | undefined, atmospheric_depth: number | null | undefined, latitude: number, longitude: number, year: number, month: number, day: number, particle: App_api_parma_endpoints_PARMA_ambient_doseParticle, angle: number): Observable<App_api_parma_endpoints_PARMA_differential_intensityReturn> {
@@ -93,12 +122,19 @@ export namespace MyNS {
 		 * Use this endpoint if you need to estimate radiation exposures of personnel.
 		 * Get parma/effective_dose
 		 * @param {number} altitude Altitude (in km). The minimum is 0 m, the maximum is 47 km (the upper limit of the stratosphere).
+		 *     Type: double
 		 * @param {number} atmospheric_depth Atmospheric depth from the top of the atmosphere (in units of g/cm2). The minimum is 0.913 g/cm2, the maximum is 1032.66 g/cm2. WARNING: you can specify either altitude OR atmospheric depth, not both.
+		 *     Type: double
 		 * @param {number} latitude Latitude. -90 (S) to 90 (N).
+		 *     Type: double
 		 * @param {number} longitude Longitude. -180 (W) to 180 (E).
+		 *     Type: double
 		 * @param {number} year Year in YYYY.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} month Month in MM.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} day Day in DD.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {App_api_parma_endpoints_PARMA_ambient_doseParticle} particle The particle type as a string. Specifying 'total', only used for the dose calculation, returns the dose for all particle types.
 		 * @return {App_api_parma_endpoints_PARMA_effective_doseReturn} Successful dose read operation
 		 */
@@ -113,16 +149,24 @@ export namespace MyNS {
 		 * @param {string} origin The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the origin airport.
 		 * @param {string} destination The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the destination airport.
 		 * @param {number} altitude Altitude (in km). The minimum is 0 m, the maximum is 20 km.
+		 *     Type: double
 		 * @param {number} duration The flight duration in hours. The minimum is 0, the maximum is 20 hrs.
+		 *     Type: double
 		 * @param {number} initial_altitude Initial altitude (in km). The minimum is 0 m, the maximum is 20 km.
+		 *     Type: double
 		 * @param {Array<number>} cruising_altitudes Cruising altitudes (in km). The minimum is 0 m, the maximum is 20 km.
 		 * @param {Array<number>} climb_times Climb times for each cruising altitude (hours).
 		 * @param {Array<number>} cruising_times Cruising times at each cruising altitude (hours).
 		 * @param {number} descent_time Descent time from last cruising altitude to final altitude (hours).
+		 *     Type: double
 		 * @param {number} final_altitude Final altitude (in km).
+		 *     Type: double
 		 * @param {number} year Year in YYYY.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} month Month in MM.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} day Day in DD.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {App_api_icaro_endpoints_ICARO_ambient_doseReturn} Successful dose calculation
 		 */
 		App_api_icaro_endpoints_ICARO_ambient_dose(origin: string, destination: string, altitude: number | null | undefined, duration: number | null | undefined, initial_altitude: number | null | undefined, cruising_altitudes: Array<number> | null | undefined, climb_times: Array<number> | null | undefined, cruising_times: Array<number> | null | undefined, descent_time: number | null | undefined, final_altitude: number | null | undefined, year: number, month: number, day: number): Observable<App_api_icaro_endpoints_ICARO_ambient_doseReturn> {
@@ -139,16 +183,24 @@ export namespace MyNS {
 		 * @param {string} origin The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the origin airport.
 		 * @param {string} destination The ICAO code or IATA code or latitude,longitude pair (in decimal degrees) of the destination airport.
 		 * @param {number} altitude Altitude (in km). The minimum is 0 m, the maximum is 20 km.
+		 *     Type: double
 		 * @param {number} duration The flight duration in hours. The minimum is 0, the maximum is 20 hrs.
+		 *     Type: double
 		 * @param {number} initial_altitude Initial altitude (in km). The minimum is 0 m, the maximum is 20 km.
+		 *     Type: double
 		 * @param {Array<number>} cruising_altitudes Cruising altitudes (in km). The minimum is 0 m, the maximum is 20 km.
 		 * @param {Array<number>} climb_times Climb times for each cruising altitude (hours).
 		 * @param {Array<number>} cruising_times Cruising times at each cruising altitude (hours).
 		 * @param {number} descent_time Descent time from last cruising altitude to final altitude (hours).
+		 *     Type: double
 		 * @param {number} final_altitude Final altitude (in km).
+		 *     Type: double
 		 * @param {number} year Year in YYYY.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} month Month in MM.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} day Day in DD.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {App_api_icaro_endpoints_ICARO_effective_doseReturn} Successful dose calculation
 		 */
 		App_api_icaro_endpoints_ICARO_effective_dose(origin: string, destination: string, altitude: number | null | undefined, duration: number | null | undefined, initial_altitude: number | null | undefined, cruising_altitudes: Array<number> | null | undefined, climb_times: Array<number> | null | undefined, cruising_times: Array<number> | null | undefined, descent_time: number | null | undefined, final_altitude: number | null | undefined, year: number, month: number, day: number): Observable<App_api_icaro_endpoints_ICARO_effective_doseReturn> {
@@ -171,10 +223,14 @@ export namespace MyNS {
 
 	export interface App_api_cari7_endpoints_CARI7_ambient_doseReturn_dose_rate_ {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_cari7_endpoints_CARI7_ambient_doseReturn_dose_rate_FormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_cari7_endpoints_CARI7_ambient_doseReturn_dose_rate_FormGroup() {
@@ -198,10 +254,14 @@ export namespace MyNS {
 
 	export interface App_api_cari7_endpoints_CARI7_effective_doseReturn_dose_rate_ {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_cari7_endpoints_CARI7_effective_doseReturn_dose_rate_FormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_cari7_endpoints_CARI7_effective_doseReturn_dose_rate_FormGroup() {
@@ -227,10 +287,14 @@ export namespace MyNS {
 
 	export interface App_api_parma_endpoints_PARMA_ambient_doseReturn_dose_rate_ {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_parma_endpoints_PARMA_ambient_doseReturn_dose_rate_FormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_parma_endpoints_PARMA_ambient_doseReturn_dose_rate_FormGroup() {
@@ -294,10 +358,14 @@ export namespace MyNS {
 
 	export interface App_api_parma_endpoints_PARMA_effective_doseReturn_dose_rate_ {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_parma_endpoints_PARMA_effective_doseReturn_dose_rate_FormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_parma_endpoints_PARMA_effective_doseReturn_dose_rate_FormGroup() {
@@ -324,6 +392,8 @@ export namespace MyNS {
 		destination?: string | null;
 		origin?: string | null;
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_icaro_endpoints_ICARO_ambient_doseReturnDoseFormProperties {
@@ -331,6 +401,8 @@ export namespace MyNS {
 		destination: FormControl<string | null | undefined>,
 		origin: FormControl<string | null | undefined>,
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_icaro_endpoints_ICARO_ambient_doseReturnDoseFormGroup() {
@@ -360,6 +432,8 @@ export namespace MyNS {
 		destination?: string | null;
 		origin?: string | null;
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_icaro_endpoints_ICARO_effective_doseReturnDoseFormProperties {
@@ -367,6 +441,8 @@ export namespace MyNS {
 		destination: FormControl<string | null | undefined>,
 		origin: FormControl<string | null | undefined>,
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_icaro_endpoints_ICARO_effective_doseReturnDoseFormGroup() {

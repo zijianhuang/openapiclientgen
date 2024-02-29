@@ -702,8 +702,11 @@ export namespace MyNS {
 		 * Associates a physical device with a placement.
 		 * Put projects/{projectName}/placements/{placementName}/devices/{deviceTemplateName}
 		 * @param {string} projectName The name of the project containing the placement in which to associate the device.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} placementName The name of the placement in which to associate the device.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} deviceTemplateName The device template name to associate with the device ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {AssociateDeviceWithPlacementResponse} Success
 		 */
 		AssociateDeviceWithPlacement(projectName: string, placementName: string, deviceTemplateName: string, requestBody: AssociateDeviceWithPlacementPutBody): Observable<AssociateDeviceWithPlacementResponse> {
@@ -714,8 +717,11 @@ export namespace MyNS {
 		 * Removes a physical device from a placement.
 		 * Delete projects/{projectName}/placements/{placementName}/devices/{deviceTemplateName}
 		 * @param {string} projectName The name of the project that contains the placement.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} placementName The name of the placement that the device should be removed from.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} deviceTemplateName The device ID that should be removed from the placement.
+		 *     Min length: 1    Max length: 128
 		 * @return {DisassociateDeviceFromPlacementResponse} Success
 		 */
 		DisassociateDeviceFromPlacement(projectName: string, placementName: string, deviceTemplateName: string): Observable<DisassociateDeviceFromPlacementResponse> {
@@ -726,6 +732,7 @@ export namespace MyNS {
 		 * Creates an empty placement.
 		 * Post projects/{projectName}/placements
 		 * @param {string} projectName The name of the project in which to create the placement.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreatePlacementResponse} Success
 		 */
 		CreatePlacement(projectName: string, requestBody: CreatePlacementPostBody): Observable<CreatePlacementResponse> {
@@ -736,8 +743,11 @@ export namespace MyNS {
 		 * Lists the placement(s) of a project.
 		 * Get projects/{projectName}/placements
 		 * @param {string} projectName The project containing the placements to be listed.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} nextToken The token to retrieve the next set of results.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListPlacementsResponse} Success
 		 */
 		ListPlacements(projectName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListPlacementsResponse> {
@@ -757,7 +767,9 @@ export namespace MyNS {
 		 * Lists the AWS IoT 1-Click project(s) associated with your AWS account and region.
 		 * Get projects
 		 * @param {string} nextToken The token to retrieve the next set of results.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} maxResults The maximum number of results to return per request. If not set, a default value of 100 is used.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListProjectsResponse} Success
 		 */
 		ListProjects(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListProjectsResponse> {
@@ -768,7 +780,9 @@ export namespace MyNS {
 		 * <p>Deletes a placement. To delete a placement, it must not have any devices associated with it.</p> <note> <p>When you delete a placement, all associated data becomes irretrievable.</p> </note>
 		 * Delete projects/{projectName}/placements/{placementName}
 		 * @param {string} placementName The name of the empty placement to delete.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} projectName The project containing the empty placement to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeletePlacementResponse} Success
 		 */
 		DeletePlacement(placementName: string, projectName: string): Observable<DeletePlacementResponse> {
@@ -779,7 +793,9 @@ export namespace MyNS {
 		 * Describes a placement in a project.
 		 * Get projects/{projectName}/placements/{placementName}
 		 * @param {string} placementName The name of the placement within a project.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} projectName The project containing the placement to be described.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribePlacementResponse} Success
 		 */
 		DescribePlacement(placementName: string, projectName: string): Observable<DescribePlacementResponse> {
@@ -790,7 +806,9 @@ export namespace MyNS {
 		 * Updates a placement with the given attributes. To clear an attribute, pass an empty value (i.e., "").
 		 * Put projects/{projectName}/placements/{placementName}
 		 * @param {string} placementName The name of the placement to update.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} projectName The name of the project containing the placement to be updated.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdatePlacementResponse} Success
 		 */
 		UpdatePlacement(placementName: string, projectName: string, requestBody: UpdatePlacementPutBody): Observable<UpdatePlacementResponse> {
@@ -801,6 +819,7 @@ export namespace MyNS {
 		 * <p>Deletes a project. To delete a project, it must not have any placements associated with it.</p> <note> <p>When you delete a project, all associated data becomes irretrievable.</p> </note>
 		 * Delete projects/{projectName}
 		 * @param {string} projectName The name of the empty project to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteProjectResponse} Success
 		 */
 		DeleteProject(projectName: string): Observable<DeleteProjectResponse> {
@@ -811,6 +830,7 @@ export namespace MyNS {
 		 * Returns an object describing a project.
 		 * Get projects/{projectName}
 		 * @param {string} projectName The name of the project to be described.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeProjectResponse} Success
 		 */
 		DescribeProject(projectName: string): Observable<DescribeProjectResponse> {
@@ -821,6 +841,7 @@ export namespace MyNS {
 		 * Updates a project associated with your AWS account and region. With the exception of device template names, you can pass just the values that need to be updated because the update request will change only the values that are provided. To clear a value, pass the empty string (i.e., <code>""</code>).
 		 * Put projects/{projectName}
 		 * @param {string} projectName The name of the project to be updated.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateProjectResponse} Success
 		 */
 		UpdateProject(projectName: string, requestBody: UpdateProjectPutBody): Observable<UpdateProjectResponse> {
@@ -831,7 +852,9 @@ export namespace MyNS {
 		 * Returns an object enumerating the devices in a placement.
 		 * Get projects/{projectName}/placements/{placementName}/devices
 		 * @param {string} projectName The name of the project containing the placement.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} placementName The name of the placement to get the devices from.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetDevicesInPlacementResponse} Success
 		 */
 		GetDevicesInPlacement(projectName: string, placementName: string): Observable<GetDevicesInPlacementResponse> {
@@ -863,6 +886,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The ARN of the resource whose tag you want to remove.
 		 * @param {Array<string>} tagKeys The keys of those tags which you want to remove.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -875,8 +899,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		deviceId: string;
 	}
@@ -885,8 +909,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the physical device to be associated with the given placement in the project. Note that a mandatory 4 character prefix is required for all <code>deviceId</code> values.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		deviceId: FormControl<string | null | undefined>,
 	}
@@ -902,8 +926,8 @@ export namespace MyNS {
 		/**
 		 * The name of the placement to be created.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		placementName: string;
 
@@ -915,8 +939,8 @@ export namespace MyNS {
 		/**
 		 * The name of the placement to be created.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		placementName: FormControl<string | null | undefined>,
 
@@ -936,15 +960,15 @@ export namespace MyNS {
 		/**
 		 * The name of the project to create.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		projectName: string;
 
 		/**
 		 * An optional description for the project.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -959,15 +983,15 @@ export namespace MyNS {
 		/**
 		 * The name of the project to create.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		projectName: FormControl<string | null | undefined>,
 
 		/**
 		 * An optional description for the project.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -1016,8 +1040,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional user-defined description for the project.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
@@ -1028,8 +1052,8 @@ export namespace MyNS {
 
 		/**
 		 * An optional user-defined description for the project.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 	}

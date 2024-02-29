@@ -183,7 +183,10 @@ namespace MyNS
 		/// AdaptiveNetworkHardenings_ListByExtendedResource subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/adaptiveNetworkHardenings
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>
@@ -217,7 +220,10 @@ namespace MyNS
 		/// AdaptiveNetworkHardenings_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/adaptiveNetworkHardenings/{adaptiveNetworkHardeningResourceName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>
@@ -252,7 +258,10 @@ namespace MyNS
 		/// AdaptiveNetworkHardenings_Enforce subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.Security/adaptiveNetworkHardenings/{adaptiveNetworkHardeningResourceName}/{adaptiveNetworkHardeningEnforceAction}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>

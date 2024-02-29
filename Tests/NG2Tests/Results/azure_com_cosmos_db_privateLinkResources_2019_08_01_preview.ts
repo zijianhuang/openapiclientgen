@@ -71,8 +71,10 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/privateLinkResources
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @return {PrivateLinkResourceListResult} Successfully retrieved private link resources.
 		 */
 		PrivateLinkResources_ListByDatabaseAccount(subscriptionId: string, resourceGroupName: string, api_version: string, accountName: string): Observable<PrivateLinkResourceListResult> {
@@ -84,8 +86,10 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/privateLinkResources/{groupName}
 		 * @param {string} subscriptionId Azure subscription ID.
 		 * @param {string} resourceGroupName Name of an Azure resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Version of the API to be used with the client request. The current version is 2019-08-01.
 		 * @param {string} accountName Cosmos DB database account name.
+		 *     Min length: 3    Max length: 50
 		 * @param {string} groupName The name of the private link resource.
 		 * @return {PrivateLinkResource} Successfully retrieved a specified private link resource.
 		 */

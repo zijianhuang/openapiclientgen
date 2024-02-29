@@ -16,12 +16,17 @@ export namespace MyNS {
 		 * - <code>proximity_square</code> sets the length of the sides of the square to find matches inside of. The square is centered on the location specified by <code>proximity</code>. It defaults to 100.</p>
 		 * Get v2/incidents
 		 * @param {number} page <p>Page of results to fetch.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page <p>Number of results to return per page.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} occurred_before <p>End of period</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} occurred_after <p>Start of period</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GET__version_incidents___format_Incident_type} incident_type <p>Only incidents of specific type</p>
 		 * @param {string} proximity <p>Center of location for proximity search</p>
 		 * @param {number} proximity_square <p>Size of the proximity search</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query <p>Full text search of incidents</p>
 		 * @return {void} No response was specified
 		 */
@@ -32,6 +37,7 @@ export namespace MyNS {
 		/**
 		 * Get v2/incidents/{id}
 		 * @param {number} id <p>Incident ID</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GET__version_incidents__id___format_(id: number): Observable<HttpResponse<string>> {
@@ -62,12 +68,16 @@ export namespace MyNS {
 		 * <p><strong>Go forth and make maps!</strong></p>
 		 * Get v2/locations
 		 * @param {number} occurred_before <p>End of period</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} occurred_after <p>Start of period</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GET__version_incidents___format_Incident_type} incident_type <p>Only incidents of specific type</p>
 		 * @param {string} proximity <p>Center of location for proximity search</p>
 		 * @param {number} proximity_square <p>Size of the proximity search</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query <p>Full text search of incidents</p>
 		 * @param {number} limit <p>Max number of results to return. Defaults to 100</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} all <p>Give ‘em all to me. Will ignore limit</p>
 		 * @return {void} No response was specified
 		 */
@@ -81,12 +91,16 @@ export namespace MyNS {
 		 * <p><strong>Go forth and make maps!</strong></p>
 		 * Get v2/locations/markers
 		 * @param {number} occurred_before <p>End of period</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} occurred_after <p>Start of period</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GET__version_incidents___format_Incident_type} incident_type <p>Only incidents of specific type</p>
 		 * @param {string} proximity <p>Center of location for proximity search</p>
 		 * @param {number} proximity_square <p>Size of the proximity search</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query <p>Full text search of incidents</p>
 		 * @param {number} limit <p>Max number of results to return. Defaults to 100</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} all <p>Give ‘em all to me. Will ignore limit</p>
 		 * @return {void} No response was specified
 		 */

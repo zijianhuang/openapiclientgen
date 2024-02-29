@@ -19,8 +19,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the User resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		state?: Frontlinev1userState | null;
@@ -44,8 +44,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the User resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		state: FormControl<Frontlinev1userState | null | undefined>,

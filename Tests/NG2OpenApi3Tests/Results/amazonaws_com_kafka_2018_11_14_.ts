@@ -3592,6 +3592,7 @@ export namespace MyNS {
 		 * @param {number} maxResults 
 		 *             <p>The maxResults of the query.</p>
 		 *          
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken 
 		 *             <p>The nextToken of the query.</p>
 		 *          
@@ -3621,6 +3622,7 @@ export namespace MyNS {
 		 * @param {number} maxResults 
 		 *             <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
 		 *          
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken 
 		 *             <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		 *             To get the next batch, provide this token in your next request.</p>
@@ -3654,6 +3656,7 @@ export namespace MyNS {
 		 * @param {number} maxResults 
 		 *             <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
 		 *          
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken 
 		 *             <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		 *             To get the next batch, provide this token in your next request.</p>
@@ -3681,6 +3684,7 @@ export namespace MyNS {
 		 * @param {number} maxResults 
 		 *             <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
 		 *          
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken 
 		 *             <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		 *             To get the next batch, provide this token in your next request.</p>
@@ -3868,6 +3872,7 @@ export namespace MyNS {
 		 * @param {number} revision 
 		 *             <p>A string that uniquely identifies a revision of an MSK configuration.</p>
 		 *          
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DescribeConfigurationRevisionResponse} Success
 		 */
 		DescribeConfigurationRevision(arn: string, revision: number): Observable<DescribeConfigurationRevisionResponse> {
@@ -3907,6 +3912,7 @@ export namespace MyNS {
 		 * @param {number} maxResults 
 		 *             <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
 		 *          
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken 
 		 *             <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		 *             To get the next batch, provide this token in your next request.</p>
@@ -3924,6 +3930,7 @@ export namespace MyNS {
 		 * Get api/v2/clusters/{clusterArn}/operations
 		 * @param {string} clusterArn The arn of the cluster whose operations are being requested.
 		 * @param {number} maxResults The maxResults of the query.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The nextToken of the query.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -3942,6 +3949,7 @@ export namespace MyNS {
 		 * @param {number} maxResults 
 		 *             <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
 		 *          
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken 
 		 *             <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		 *             To get the next batch, provide this token in your next request.</p>
@@ -3959,6 +3967,7 @@ export namespace MyNS {
 		 * Get v1/kafka-versions
 		 * @param {number} maxResults 
 		 *             <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken 
 		 *             <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. To get the next batch, provide this token in your next request.</p>
 		 * @param {string} MaxResults Pagination limit
@@ -3978,6 +3987,7 @@ export namespace MyNS {
 		 * @param {number} maxResults 
 		 *             <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
 		 *          
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken 
 		 *             <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		 *             To get the next batch, provide this token in your next request.</p>
@@ -4023,6 +4033,7 @@ export namespace MyNS {
 		 * @param {number} maxResults 
 		 *             <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
 		 *          
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken 
 		 *             <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		 *             To get the next batch, provide this token in your next request.</p>
@@ -4041,6 +4052,7 @@ export namespace MyNS {
 		 * @param {number} maxResults 
 		 *             <p>The maximum number of results to return in the response. If there are more results, the response includes a NextToken parameter.</p>
 		 *          
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken 
 		 *             <p>The paginated results marker. When the result of the operation is truncated, the call returns NextToken in the response. 
 		 *             To get the next batch, provide this token in your next request.</p>
@@ -4268,8 +4280,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the cluster.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clusterName: string;
 
@@ -4296,8 +4308,8 @@ export namespace MyNS {
 		/**
 		 * <p>The version of Apache Kafka.</p>
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		kafkaVersion: string;
 		loggingInfo?: CreateClusterPostBodyLoggingInfo;
@@ -4323,8 +4335,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the cluster.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clusterName: FormControl<string | null | undefined>,
 
@@ -4336,8 +4348,8 @@ export namespace MyNS {
 		/**
 		 * <p>The version of Apache Kafka.</p>
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		kafkaVersion: FormControl<string | null | undefined>,
 
@@ -4458,8 +4470,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the cluster.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clusterName: string;
 
@@ -4483,8 +4495,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the cluster.</p>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clusterName: FormControl<string | null | undefined>,
 
@@ -5185,6 +5197,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>size of the EBS volume to update.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		volumeSizeGB?: number | null;
 	}
@@ -5201,6 +5214,7 @@ export namespace MyNS {
 
 		/**
 		 * <p>size of the EBS volume to update.</p>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		volumeSizeGB: FormControl<number | null | undefined>,
 	}

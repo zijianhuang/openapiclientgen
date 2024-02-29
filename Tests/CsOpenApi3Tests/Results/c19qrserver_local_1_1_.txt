@@ -693,7 +693,10 @@ namespace MyNS
 		/// SigninsGetByLess_thanAndReturn_count signins
 		/// </summary>
 		/// <param name="less_than">Return signins with IDs less than this value.</param>
-		/// <param name="return_count">Return this many objects</param>
+		/// <param name="return_count">Return this many objects
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Signin[]> SigninsGetByLess_thanAndReturn_countAsync(int less_than, int return_count, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

@@ -673,7 +673,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<ProfileList> NetworkExperimentProfiles_ListByResourceGroupAsync(string subscriptionId, string api_version, string resourceGroupName)
 		{
@@ -704,7 +707,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <returns>successful operation</returns>
 		public async Task<Profile> NetworkExperimentProfiles_GetAsync(string subscriptionId, string api_version, string resourceGroupName, string profileName)
@@ -737,7 +743,10 @@ namespace MyNS
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="requestBody">An Network Experiment Profile</param>
 		/// <returns>OK. The request has succeeded.</returns>
 		public async Task<Profile> NetworkExperimentProfiles_CreateOrUpdateAsync(string profileName, string subscriptionId, string api_version, string resourceGroupName, Profile requestBody)
@@ -776,7 +785,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <returns>Delete successful.</returns>
 		public async Task NetworkExperimentProfiles_DeleteAsync(string subscriptionId, string api_version, string resourceGroupName, string profileName)
@@ -803,7 +815,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <param name="requestBody">The Profile Update Model</param>
 		/// <returns>OK. successful operation</returns>
@@ -843,7 +858,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <returns>successful operation</returns>
 		public async Task<ExperimentList> Experiments_ListByProfileAsync(string subscriptionId, string api_version, string resourceGroupName, string profileName)
@@ -875,7 +893,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <param name="experimentName">The Experiment identifier associated with the Experiment</param>
 		/// <returns>successful operation</returns>
@@ -908,7 +929,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <param name="experimentName">The Experiment identifier associated with the Experiment</param>
 		/// <param name="requestBody">The Experiment resource</param>
@@ -949,7 +973,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <param name="experimentName">The Experiment identifier associated with the Experiment</param>
 		/// <returns>Delete successful.</returns>
@@ -977,7 +1004,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <param name="experimentName">The Experiment identifier associated with the Experiment</param>
 		/// <param name="requestBody">The Experiment Update Model</param>
@@ -1018,7 +1048,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <param name="experimentName">The Experiment identifier associated with the Experiment</param>
 		/// <param name="endDateTimeUTC">The end DateTime of the Latency Scorecard in UTC</param>
@@ -1054,7 +1087,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <param name="experimentName">The Experiment identifier associated with the Experiment</param>
 		/// <param name="startDateTimeUTC">The start DateTime of the Timeseries in UTC</param>
@@ -1093,7 +1129,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="subscriptionId">The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="api_version">Client API version.</param>
-		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.</param>
+		/// <param name="resourceGroupName">Name of the Resource group within the Azure subscription.
+		/// Max length: 80
+		/// Min length: 1
+		// </param>
 		/// <param name="profileName">The Profile identifier associated with the Tenant and Partner</param>
 		/// <returns>OK. The request has succeeded.</returns>
 		public async Task<PreconfiguredEndpointList> PreconfiguredEndpoints_ListAsync(string subscriptionId, string api_version, string resourceGroupName, string profileName)

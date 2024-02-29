@@ -530,6 +530,7 @@ export namespace MyNS {
 		 * @param {string} jobId Storage job id
 		 * @param {string} objectToken Object token
 		 * @param {number} max_results Maximum number of chunks
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} next_token Pagination token
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -546,6 +547,7 @@ export namespace MyNS {
 		 * @param {string} starting_object_name Optional, specifies the starting Object name to list from. Ignored if NextToken is not NULL
 		 * @param {string} starting_object_prefix Optional, specifies the starting Object prefix to list from. Ignored if NextToken is not NULL
 		 * @param {number} max_results Maximum objects count
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} next_token Pagination token
 		 * @param {Date} created_before (Optional) Created before filter
 		 * @param {Date} created_after (Optional) Created after filter
@@ -566,6 +568,7 @@ export namespace MyNS {
 		 * @param {SummaryChecksumAlgorithm} checksum_algorithm Checksum algorithm
 		 * @param {string} metadata_string Optional metadata associated with an Object. Maximum string length is 256 bytes.
 		 * @param {number} metadata_blob_length The size of MetadataBlob.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} metadata_checksum Checksum of MetadataBlob.
 		 * @param {DataChecksumAlgorithm} metadata_checksum_algorithm Checksum algorithm.
 		 * @return {NotifyObjectCompleteOutput} Success
@@ -580,7 +583,9 @@ export namespace MyNS {
 		 * @param {string} jobId Backup job Id for the in-progress backup.
 		 * @param {string} uploadId Upload Id for the in-progress upload.
 		 * @param {number} chunkIndex Describes this chunk's position relative to the other chunks
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Data length
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} checksum Data checksum
 		 * @param {DataChecksumAlgorithm} checksum_algorithm Checksum algorithm
 		 * @return {PutChunkOutput} Success
@@ -596,6 +601,7 @@ export namespace MyNS {
 		 * @param {string} objectName The name of the Object to be uploaded.
 		 * @param {string} metadata_string Store user defined metadata like backup checksum, disk ids, restore metadata etc.
 		 * @param {number} length Length of the inline chunk data.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} checksum Inline chunk checksum
 		 * @param {string} checksum_algorithm Inline chunk checksum algorithm
 		 * @param {string} object_checksum object checksum

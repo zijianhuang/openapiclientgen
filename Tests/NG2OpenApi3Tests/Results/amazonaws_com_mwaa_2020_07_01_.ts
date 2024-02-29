@@ -802,6 +802,7 @@ export namespace MyNS {
 		 * Creates a CLI token for the Airflow CLI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-cli.html">Creating an Apache Airflow CLI token</a>.
 		 * Post clitoken/{Name}
 		 * @param {string} Name The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		 *     Min length: 1    Max length: 80
 		 * @return {CreateCliTokenResponse} Success
 		 */
 		CreateCliToken(Name: string): Observable<CreateCliTokenResponse> {
@@ -812,6 +813,7 @@ export namespace MyNS {
 		 * Creates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 		 * Put environments/{Name}
 		 * @param {string} Name The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		 *     Min length: 1    Max length: 80
 		 * @return {CreateEnvironmentOutput} Success
 		 */
 		CreateEnvironment(Name: string, requestBody: CreateEnvironmentPutBody): Observable<CreateEnvironmentOutput> {
@@ -822,6 +824,7 @@ export namespace MyNS {
 		 * Deletes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 		 * Delete environments/{Name}
 		 * @param {string} Name The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		 *     Min length: 1    Max length: 80
 		 * @return {DeleteEnvironmentOutput} Success
 		 */
 		DeleteEnvironment(Name: string): Observable<DeleteEnvironmentOutput> {
@@ -832,6 +835,7 @@ export namespace MyNS {
 		 * Describes an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 		 * Get environments/{Name}
 		 * @param {string} Name The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		 *     Min length: 1    Max length: 80
 		 * @return {GetEnvironmentOutput} Success
 		 */
 		GetEnvironment(Name: string): Observable<GetEnvironmentOutput> {
@@ -842,6 +846,7 @@ export namespace MyNS {
 		 * Updates an Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 		 * Patch environments/{Name}
 		 * @param {string} Name The name of your Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		 *     Min length: 1    Max length: 80
 		 * @return {UpdateEnvironmentOutput} Success
 		 */
 		UpdateEnvironment(Name: string, requestBody: UpdateEnvironmentPatchBody): Observable<UpdateEnvironmentOutput> {
@@ -852,6 +857,7 @@ export namespace MyNS {
 		 * Creates a web login token for the Airflow Web UI. To learn more, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/call-mwaa-apis-web.html">Creating an Apache Airflow web login token</a>.
 		 * Post webtoken/{Name}
 		 * @param {string} Name The name of the Amazon MWAA environment. For example, <code>MyMWAAEnvironment</code>.
+		 *     Min length: 1    Max length: 80
 		 * @return {CreateWebLoginTokenResponse} Success
 		 */
 		CreateWebLoginToken(Name: string): Observable<CreateWebLoginTokenResponse> {
@@ -862,7 +868,9 @@ export namespace MyNS {
 		 * Lists the Amazon Managed Workflows for Apache Airflow (MWAA) environments.
 		 * Get environments
 		 * @param {number} MaxResults The maximum number of results to retrieve per page. For example, <code>5</code> environments per page.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} NextToken Retrieves the next page of the results.
+		 *     Min length: 0    Max length: 2048
 		 * @return {ListEnvironmentsOutput} Success
 		 */
 		ListEnvironments(MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListEnvironmentsOutput> {
@@ -873,6 +881,7 @@ export namespace MyNS {
 		 * Lists the key-value tag pairs associated to the Amazon Managed Workflows for Apache Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
 		 * Get tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
+		 *     Min length: 1    Max length: 1224
 		 * @return {ListTagsForResourceOutput} Success
 		 */
 		ListTagsForResource(ResourceArn: string): Observable<ListTagsForResourceOutput> {
@@ -883,6 +892,7 @@ export namespace MyNS {
 		 * Associates key-value tag pairs to your Amazon Managed Workflows for Apache Airflow (MWAA) environment.
 		 * Post tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
+		 *     Min length: 1    Max length: 1224
 		 * @return {TagResourceOutput} Success
 		 */
 		TagResource(ResourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceOutput> {
@@ -893,6 +903,7 @@ export namespace MyNS {
 		 * <b>Internal only</b>. Publishes environment health metrics to Amazon CloudWatch.
 		 * Post metrics/environments/{EnvironmentName}
 		 * @param {string} EnvironmentName  <b>Internal only</b>. The name of the environment.
+		 *     Min length: 1    Max length: 80
 		 * @return {PublishMetricsOutput} Success
 		 */
 		PublishMetrics(EnvironmentName: string, requestBody: PublishMetricsPostBody): Observable<PublishMetricsOutput> {
@@ -903,7 +914,9 @@ export namespace MyNS {
 		 * Removes key-value tag pairs associated to your Amazon Managed Workflows for Apache Airflow (MWAA) environment. For example, <code>"Environment": "Staging"</code>.
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the Amazon MWAA environment. For example, <code>arn:aws:airflow:us-east-1:123456789012:environment/MyMWAAEnvironment</code>.
+		 *     Min length: 1    Max length: 1224
 		 * @param {Array<string>} tagKeys The key-value tag pair you want to remove. For example, <code>"Environment": "Staging"</code>. 
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceOutput} Success
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<UntagResourceOutput> {
@@ -918,38 +931,38 @@ export namespace MyNS {
 
 		/**
 		 * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		AirflowVersion?: string | null;
 
 		/**
 		 * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		DagS3Path: string;
 
 		/**
 		 * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		EnvironmentClass?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		ExecutionRoleArn: string;
 
 		/**
 		 * The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA environment</a>.
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		KmsKey?: string | null;
 
@@ -976,29 +989,29 @@ export namespace MyNS {
 
 		/**
 		 * The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a plugins.zip file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		PluginsS3ObjectVersion?: string | null;
 
 		/**
 		 * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the <code>plugins.zip</code> version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		PluginsS3Path?: string | null;
 
 		/**
 		 * The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a version each time a requirements.txt file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RequirementsS3ObjectVersion?: string | null;
 
 		/**
 		 * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RequirementsS3Path?: string | null;
 
@@ -1011,22 +1024,22 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		SourceBucketArn: string;
 
 		/**
 		 * <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p> <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p> <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p> <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StartupScriptS3ObjectVersion?: string | null;
 
 		/**
 		 * <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StartupScriptS3Path?: string | null;
 
@@ -1038,8 +1051,8 @@ export namespace MyNS {
 
 		/**
 		 * The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.
-		 * Max length: 9
 		 * Min length: 1
+		 * Max length: 9
 		 */
 		WeeklyMaintenanceWindowStart?: string | null;
 	}
@@ -1050,38 +1063,38 @@ export namespace MyNS {
 
 		/**
 		 * The Apache Airflow version for your environment. If no value is specified, it defaults to the latest version. Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/airflow-versions.html">Apache Airflow versions on Amazon Managed Workflows for Apache Airflow (MWAA)</a>.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		AirflowVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		DagS3Path: FormControl<string | null | undefined>,
 
 		/**
 		 * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		EnvironmentClass: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the execution role for your environment. An execution role is an Amazon Web Services Identity and Access Management (IAM) role that grants MWAA permission to access Amazon Web Services services and resources used by your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Web Services Key Management Service (KMS) key to encrypt the data in your environment. You can use an Amazon Web Services owned CMK, or a Customer managed CMK (advanced). For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/create-environment.html">Create an Amazon MWAA environment</a>.
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		KmsKey: FormControl<string | null | undefined>,
 
@@ -1099,29 +1112,29 @@ export namespace MyNS {
 
 		/**
 		 * The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a plugins.zip file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		PluginsS3ObjectVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the <code>plugins.zip</code> version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		PluginsS3Path: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the <code>requirements.txt</code> file on your Amazon S3 bucket. You must specify a version each time a requirements.txt file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RequirementsS3ObjectVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RequirementsS3Path: FormControl<string | null | undefined>,
 
@@ -1134,22 +1147,22 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		SourceBucketArn: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p> <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p> <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p> <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StartupScriptS3ObjectVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StartupScriptS3Path: FormControl<string | null | undefined>,
 
@@ -1161,8 +1174,8 @@ export namespace MyNS {
 
 		/**
 		 * The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.
-		 * Max length: 9
 		 * Min length: 1
+		 * Max length: 9
 		 */
 		WeeklyMaintenanceWindowStart: FormControl<string | null | undefined>,
 	}
@@ -1225,29 +1238,29 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Apache Airflow version for your environment. To upgrade your environment, specify a newer version of Apache Airflow supported by Amazon MWAA.</p> <p>Before you upgrade an environment, make sure your requirements, DAGs, plugins, and other resources used in your workflows are compatible with the new Apache Airflow version. For more information about updating your resources, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading an Amazon MWAA environment</a>.</p> <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.</p>
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		AirflowVersion?: string | null;
 
 		/**
 		 * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		DagS3Path?: string | null;
 
 		/**
 		 * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		EnvironmentClass?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		ExecutionRoleArn?: string | null;
 
@@ -1271,29 +1284,29 @@ export namespace MyNS {
 
 		/**
 		 * The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a <code>plugins.zip</code> file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		PluginsS3ObjectVersion?: string | null;
 
 		/**
 		 * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		PluginsS3Path?: string | null;
 
 		/**
 		 * The version of the requirements.txt file on your Amazon S3 bucket. You must specify a version each time a <code>requirements.txt</code> file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RequirementsS3ObjectVersion?: string | null;
 
 		/**
 		 * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RequirementsS3Path?: string | null;
 
@@ -1305,22 +1318,22 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		SourceBucketArn?: string | null;
 
 		/**
 		 * <p> The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p> <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p> <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p> <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StartupScriptS3ObjectVersion?: string | null;
 
 		/**
 		 * <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StartupScriptS3Path?: string | null;
 
@@ -1329,8 +1342,8 @@ export namespace MyNS {
 
 		/**
 		 * The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.
-		 * Max length: 9
 		 * Min length: 1
+		 * Max length: 9
 		 */
 		WeeklyMaintenanceWindowStart?: string | null;
 	}
@@ -1341,29 +1354,29 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Apache Airflow version for your environment. To upgrade your environment, specify a newer version of Apache Airflow supported by Amazon MWAA.</p> <p>Before you upgrade an environment, make sure your requirements, DAGs, plugins, and other resources used in your workflows are compatible with the new Apache Airflow version. For more information about updating your resources, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/upgrading-environment.html">Upgrading an Amazon MWAA environment</a>.</p> <p>Valid values: <code>1.10.12</code>, <code>2.0.2</code>, <code>2.2.2</code>, <code>2.4.3</code>, and <code>2.5.1</code>.</p>
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		AirflowVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * The relative path to the DAGs folder on your Amazon S3 bucket. For example, <code>dags</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-folder.html">Adding or updating DAGs</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		DagS3Path: FormControl<string | null | undefined>,
 
 		/**
 		 * The environment class type. Valid values: <code>mw1.small</code>, <code>mw1.medium</code>, <code>mw1.large</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/environment-class.html">Amazon MWAA environment class</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		EnvironmentClass: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the execution role in IAM that allows MWAA to access Amazon Web Services resources in your environment. For example, <code>arn:aws:iam::123456789:role/my-execution-role</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-create-role.html">Amazon MWAA Execution role</a>.
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
@@ -1381,29 +1394,29 @@ export namespace MyNS {
 
 		/**
 		 * The version of the plugins.zip file on your Amazon S3 bucket. You must specify a version each time a <code>plugins.zip</code> file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		PluginsS3ObjectVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * The relative path to the <code>plugins.zip</code> file on your Amazon S3 bucket. For example, <code>plugins.zip</code>. If specified, then the plugins.zip version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/configuring-dag-import-plugins.html">Installing custom plugins</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		PluginsS3Path: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the requirements.txt file on your Amazon S3 bucket. You must specify a version each time a <code>requirements.txt</code> file is updated. For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">How S3 Versioning works</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RequirementsS3ObjectVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * The relative path to the <code>requirements.txt</code> file on your Amazon S3 bucket. For example, <code>requirements.txt</code>. If specified, then a file version is required. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/working-dags-dependencies.html">Installing Python dependencies</a>.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		RequirementsS3Path: FormControl<string | null | undefined>,
 
@@ -1415,22 +1428,22 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the Amazon S3 bucket where your DAG code and supporting files are stored. For example, <code>arn:aws:s3:::my-airflow-bucket-unique-name</code>. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/mwaa-s3-bucket.html">Create an Amazon S3 bucket for Amazon MWAA</a>.
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		SourceBucketArn: FormControl<string | null | undefined>,
 
 		/**
 		 * <p> The version of the startup shell script in your Amazon S3 bucket. You must specify the <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/versioning-workflows.html">version ID</a> that Amazon S3 assigns to the file every time you update the script. </p> <p> Version IDs are Unicode, UTF-8 encoded, URL-ready, opaque strings that are no more than 1,024 bytes long. The following is an example: </p> <p> <code>3sL4kqtJlcpXroDTDmJ+rmSpXd3dIbrHY+MTRCxf3vjVBH40Nr8X8gdRQBpUMLUo</code> </p> <p> For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StartupScriptS3ObjectVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The relative path to the startup shell script in your Amazon S3 bucket. For example, <code>s3://mwaa-environment/startup.sh</code>.</p> <p> Amazon MWAA runs the script as your environment starts, and before running the Apache Airflow process. You can use this script to install dependencies, modify Apache Airflow configuration options, and set environment variables. For more information, see <a href="https://docs.aws.amazon.com/mwaa/latest/userguide/using-startup-script.html">Using a startup script</a>. </p>
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		StartupScriptS3Path: FormControl<string | null | undefined>,
 
@@ -1439,8 +1452,8 @@ export namespace MyNS {
 
 		/**
 		 * The day and time of the week in Coordinated Universal Time (UTC) 24-hour standard time to start weekly maintenance updates of your environment in the following format: <code>DAY:HH:MM</code>. For example: <code>TUE:03:30</code>. You can specify a start time in 30 minute increments only.
-		 * Max length: 9
 		 * Min length: 1
+		 * Max length: 9
 		 */
 		WeeklyMaintenanceWindowStart: FormControl<string | null | undefined>,
 	}

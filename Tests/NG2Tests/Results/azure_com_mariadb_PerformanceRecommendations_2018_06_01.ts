@@ -205,7 +205,9 @@ export namespace MyNS {
 		 * Recommendation action session operation status.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.DBforMariaDB/locations/{locationName}/recommendedActionSessionsAzureAsyncOperation/{operationId}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} locationName The name of the location.
 		 * @param {string} operationId The operation identifier.
 		 * @return {RecommendedActionSessionsOperationStatus} OK.
@@ -218,7 +220,9 @@ export namespace MyNS {
 		 * Recommendation action session operation result.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.DBforMariaDB/locations/{locationName}/recommendedActionSessionsOperationResults/{operationId}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} locationName The name of the location.
 		 * @param {string} operationId The operation identifier.
 		 * @return {RecommendationActionsResultList} Created
@@ -231,8 +235,11 @@ export namespace MyNS {
 		 * List recommendation action advisors.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/advisors
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @return {AdvisorsResultList} OK
 		 */
@@ -244,8 +251,11 @@ export namespace MyNS {
 		 * Get a recommendation action advisor.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/advisors/{advisorName}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} advisorName The advisor name for recommendation action.
 		 * @return {Advisor} OK
@@ -258,8 +268,11 @@ export namespace MyNS {
 		 * Create recommendation action session for the advisor.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/advisors/{advisorName}/createRecommendedActionSession
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} advisorName The advisor name for recommendation action.
 		 * @param {string} databaseName The name of the database.
@@ -273,8 +286,11 @@ export namespace MyNS {
 		 * Retrieve recommended actions from the advisor.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/advisors/{advisorName}/recommendedActions
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} advisorName The advisor name for recommendation action.
 		 * @param {string} sessionId The recommendation action session identifier.
@@ -288,8 +304,11 @@ export namespace MyNS {
 		 * Retrieve recommended actions from the advisor.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DBforMariaDB/servers/{serverName}/advisors/{advisorName}/recommendedActions/{recommendedActionName}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the server.
 		 * @param {string} advisorName The advisor name for recommendation action.
 		 * @param {string} recommendedActionName The recommended action name.

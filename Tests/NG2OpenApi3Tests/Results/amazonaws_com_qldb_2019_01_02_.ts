@@ -1001,7 +1001,9 @@ export namespace MyNS {
 		 * <p>Ends a given Amazon QLDB journal stream. Before a stream can be canceled, its current status must be <code>ACTIVE</code>.</p> <p>You can't restart a stream after you cancel it. Canceled QLDB stream resources are subject to a 7-day retention period, so they are automatically deleted after this limit expires.</p>
 		 * Delete ledgers/{name}/journal-kinesis-streams/{streamId}
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} streamId The UUID (represented in Base62-encoded text) of the QLDB journal stream to be canceled.
+		 *     Min length: 22    Max length: 22
 		 * @return {CancelJournalKinesisStreamResponse} Success
 		 */
 		CancelJournalKinesisStream(name: string, streamId: string): Observable<CancelJournalKinesisStreamResponse> {
@@ -1012,7 +1014,9 @@ export namespace MyNS {
 		 * <p>Returns detailed information about a given Amazon QLDB journal stream. The output includes the Amazon Resource Name (ARN), stream name, current status, creation time, and the parameters of the original stream creation request.</p> <p>This action does not return any expired journal streams. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		 * Get ledgers/{name}/journal-kinesis-streams/{streamId}
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} streamId The UUID (represented in Base62-encoded text) of the QLDB journal stream to describe.
+		 *     Min length: 22    Max length: 22
 		 * @return {DescribeJournalKinesisStreamResponse} Success
 		 */
 		DescribeJournalKinesisStream(name: string, streamId: string): Observable<DescribeJournalKinesisStreamResponse> {
@@ -1032,7 +1036,9 @@ export namespace MyNS {
 		 * <p>Returns all ledgers that are associated with the current Amazon Web Services account and Region.</p> <p>This action returns a maximum of <code>MaxResults</code> items and is paginated so that you can retrieve all the items by calling <code>ListLedgers</code> multiple times.</p>
 		 * Get ledgers
 		 * @param {number} max_results The maximum number of results to return in a single <code>ListLedgers</code> request. (The actual number of results returned might be fewer.)
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} next_token A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListLedgers</code> call, then you should use that value as input here.
+		 *     Min length: 4    Max length: 1024
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLedgersResponse} Success
@@ -1045,6 +1051,7 @@ export namespace MyNS {
 		 * <p>Deletes a ledger and all of its contents. This action is irreversible.</p> <p>If deletion protection is enabled, you must first disable it before you can delete the ledger. You can disable it by calling the <code>UpdateLedger</code> operation to set this parameter to <code>false</code>.</p>
 		 * Delete ledgers/{name}
 		 * @param {string} name The name of the ledger that you want to delete.
+		 *     Min length: 1    Max length: 32
 		 * @return {void} Success
 		 */
 		DeleteLedger(name: string): Observable<HttpResponse<string>> {
@@ -1055,6 +1062,7 @@ export namespace MyNS {
 		 * Returns information about a ledger, including its state, permissions mode, encryption at rest settings, and when it was created.
 		 * Get ledgers/{name}
 		 * @param {string} name The name of the ledger that you want to describe.
+		 *     Min length: 1    Max length: 32
 		 * @return {DescribeLedgerResponse} Success
 		 */
 		DescribeLedger(name: string): Observable<DescribeLedgerResponse> {
@@ -1065,6 +1073,7 @@ export namespace MyNS {
 		 * Updates properties on a ledger.
 		 * Patch ledgers/{name}
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @return {UpdateLedgerResponse} Success
 		 */
 		UpdateLedger(name: string, requestBody: UpdateLedgerPatchBody): Observable<UpdateLedgerResponse> {
@@ -1075,7 +1084,9 @@ export namespace MyNS {
 		 * <p>Returns information about a journal export job, including the ledger name, export ID, creation time, current status, and the parameters of the original export creation request.</p> <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the export job with the given <code>ExportId</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.</p>
 		 * Get ledgers/{name}/journal-s3-exports/{exportId}
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @param {string} exportId The UUID (represented in Base62-encoded text) of the journal export job to describe.
+		 *     Min length: 22    Max length: 22
 		 * @return {DescribeJournalS3ExportResponse} Success
 		 */
 		DescribeJournalS3Export(name: string, exportId: string): Observable<DescribeJournalS3ExportResponse> {
@@ -1086,6 +1097,7 @@ export namespace MyNS {
 		 * <p>Exports journal contents within a date and time range from a ledger into a specified Amazon Simple Storage Service (Amazon S3) bucket. A journal export job can write the data objects in either the text or binary representation of Amazon Ion format, or in <i>JSON Lines</i> text format.</p> <p>If the ledger with the given <code>Name</code> doesn't exist, then throws <code>ResourceNotFoundException</code>.</p> <p>If the ledger with the given <code>Name</code> is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.</p> <p>You can initiate up to two concurrent journal export requests for each ledger. Beyond this limit, journal export requests throw <code>LimitExceededException</code>.</p>
 		 * Post ledgers/{name}/journal-s3-exports
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @return {ExportJournalToS3Response} Success
 		 */
 		ExportJournalToS3(name: string, requestBody: ExportJournalToS3PostBody): Observable<ExportJournalToS3Response> {
@@ -1096,8 +1108,11 @@ export namespace MyNS {
 		 * <p>Returns all journal export jobs for a specified ledger.</p> <p>This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the items by calling <code>ListJournalS3ExportsForLedger</code> multiple times.</p> <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		 * Get ledgers/{name}/journal-s3-exports
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @param {number} max_results The maximum number of results to return in a single <code>ListJournalS3ExportsForLedger</code> request. (The actual number of results returned might be fewer.)
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} next_token A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3ExportsForLedger</code> call, then you should use that value as input here.
+		 *     Min length: 4    Max length: 1024
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJournalS3ExportsForLedgerResponse} Success
@@ -1110,6 +1125,7 @@ export namespace MyNS {
 		 * <p>Returns a block object at a specified address in a journal. Also returns a proof of the specified block for verification if <code>DigestTipAddress</code> is provided.</p> <p>For information about the data contents in a block, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/journal-contents.html">Journal contents</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>If the specified ledger doesn't exist or is in <code>DELETING</code> status, then throws <code>ResourceNotFoundException</code>.</p> <p>If the specified ledger is in <code>CREATING</code> status, then throws <code>ResourcePreconditionNotMetException</code>.</p> <p>If no block exists with the specified address, then throws <code>InvalidParameterException</code>.</p>
 		 * Post ledgers/{name}/block
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetBlockResponse} Success
 		 */
 		GetBlock(name: string, requestBody: GetBlockPostBody): Observable<GetBlockResponse> {
@@ -1120,6 +1136,7 @@ export namespace MyNS {
 		 * Returns the digest of a ledger at the latest committed block in the journal. The response includes a 256-bit hash value and a block address.
 		 * Post ledgers/{name}/digest
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetDigestResponse} Success
 		 */
 		GetDigest(name: string): Observable<GetDigestResponse> {
@@ -1130,6 +1147,7 @@ export namespace MyNS {
 		 * Returns a revision data object for a specified document ID and block address. Also returns a proof of the specified revision for verification if <code>DigestTipAddress</code> is provided.
 		 * Post ledgers/{name}/revision
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @return {GetRevisionResponse} Success
 		 */
 		GetRevision(name: string, requestBody: GetRevisionPostBody): Observable<GetRevisionResponse> {
@@ -1140,8 +1158,11 @@ export namespace MyNS {
 		 * <p>Returns all Amazon QLDB journal streams for a given ledger.</p> <p>This action does not return any expired journal streams. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/streams.create.html#streams.create.states.expiration">Expiration for terminal streams</a> in the <i>Amazon QLDB Developer Guide</i>.</p> <p>This action returns a maximum of <code>MaxResults</code> items. It is paginated so that you can retrieve all the items by calling <code>ListJournalKinesisStreamsForLedger</code> multiple times.</p>
 		 * Get ledgers/{name}/journal-kinesis-streams
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @param {number} max_results The maximum number of results to return in a single <code>ListJournalKinesisStreamsForLedger</code> request. (The actual number of results returned might be fewer.)
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} next_token A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalKinesisStreamsForLedger</code> call, you should use that value as input here.
+		 *     Min length: 4    Max length: 1024
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJournalKinesisStreamsForLedgerResponse} Success
@@ -1154,6 +1175,7 @@ export namespace MyNS {
 		 * Creates a journal stream for a given Amazon QLDB ledger. The stream captures every document revision that is committed to the ledger's journal and delivers the data to a specified Amazon Kinesis Data Streams resource.
 		 * Post ledgers/{name}/journal-kinesis-streams
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @return {StreamJournalToKinesisResponse} Success
 		 */
 		StreamJournalToKinesis(name: string, requestBody: StreamJournalToKinesisPostBody): Observable<StreamJournalToKinesisResponse> {
@@ -1164,7 +1186,9 @@ export namespace MyNS {
 		 * <p>Returns all journal export jobs for all ledgers that are associated with the current Amazon Web Services account and Region.</p> <p>This action returns a maximum of <code>MaxResults</code> items, and is paginated so that you can retrieve all the items by calling <code>ListJournalS3Exports</code> multiple times.</p> <p>This action does not return any expired export jobs. For more information, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/export-journal.request.html#export-journal.request.expiration">Export job expiration</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		 * Get journal-s3-exports
 		 * @param {number} max_results The maximum number of results to return in a single <code>ListJournalS3Exports</code> request. (The actual number of results returned might be fewer.)
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} next_token A pagination token, indicating that you want to retrieve the next page of results. If you received a value for <code>NextToken</code> in the response from a previous <code>ListJournalS3Exports</code> call, then you should use that value as input here.
+		 *     Min length: 4    Max length: 1024
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListJournalS3ExportsResponse} Success
@@ -1177,6 +1201,7 @@ export namespace MyNS {
 		 * Returns all tags for a specified Amazon QLDB resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn <p>The Amazon Resource Name (ARN) for which to list the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+		 *     Min length: 20    Max length: 1600
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1187,6 +1212,7 @@ export namespace MyNS {
 		 * <p>Adds one or more tags to a specified Amazon QLDB resource.</p> <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, your request fails and returns an error.</p>
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn <p>The Amazon Resource Name (ARN) to which you want to add the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+		 *     Min length: 20    Max length: 1600
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1197,7 +1223,9 @@ export namespace MyNS {
 		 * Removes one or more tags from a specified Amazon QLDB resource. You can specify up to 50 tag keys to remove.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn <p>The Amazon Resource Name (ARN) from which to remove the tags. For example:</p> <p> <code>arn:aws:qldb:us-east-1:123456789012:ledger/exampleLedger</code> </p>
+		 *     Min length: 20    Max length: 1600
 		 * @param {Array<string>} tagKeys The list of tag keys to remove.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1208,6 +1236,7 @@ export namespace MyNS {
 		 * <p>Updates the permissions mode of a ledger.</p> <important> <p>Before you switch to the <code>STANDARD</code> permissions mode, you must first create all required IAM policies and table tags to avoid disruption to your users. To learn more, see <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/ledger-management.basics.html#ledger-mgmt.basics.update-permissions.migrating">Migrating to the standard permissions mode</a> in the <i>Amazon QLDB Developer Guide</i>.</p> </important>
 		 * Patch ledgers/{name}/permissions-mode
 		 * @param {string} name The name of the ledger.
+		 *     Min length: 1    Max length: 32
 		 * @return {UpdateLedgerPermissionsModeResponse} Success
 		 */
 		UpdateLedgerPermissionsMode(name: string, requestBody: UpdateLedgerPermissionsModePatchBody): Observable<UpdateLedgerPermissionsModeResponse> {
@@ -1220,8 +1249,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p> <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		Name: string;
 
@@ -1248,8 +1277,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the ledger that you want to create. The name must be unique among all of the ledgers in your Amazon Web Services account in the current Region.</p> <p>Naming constraints for ledger names are defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1335,8 +1364,8 @@ export namespace MyNS {
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p> <ul> <li> <p>Write objects into your Amazon S3 bucket.</p> </li> <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
 		 * Required
-		 * Max length: 1600
 		 * Min length: 20
+		 * Max length: 1600
 		 */
 		RoleArn: string;
 
@@ -1360,8 +1389,8 @@ export namespace MyNS {
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal export job to do the following:</p> <ul> <li> <p>Write objects into your Amazon S3 bucket.</p> </li> <li> <p>(Optional) Use your customer managed key in Key Management Service (KMS) for server-side encryption of your exported data.</p> </li> </ul> <p>To pass a role to QLDB when requesting a journal export, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal export requests.</p>
 		 * Required
-		 * Max length: 1600
 		 * Min length: 20
+		 * Max length: 1600
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 
@@ -1451,8 +1480,8 @@ export namespace MyNS {
 		/**
 		 * The UUID (represented in Base62-encoded text) of the document to be verified.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		DocumentId: string;
 
@@ -1464,8 +1493,8 @@ export namespace MyNS {
 		/**
 		 * The UUID (represented in Base62-encoded text) of the document to be verified.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		DocumentId: FormControl<string | null | undefined>,
 	}
@@ -1507,8 +1536,8 @@ export namespace MyNS {
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal stream requests.</p>
 		 * Required
-		 * Max length: 1600
 		 * Min length: 20
+		 * Max length: 1600
 		 */
 		RoleArn: string;
 
@@ -1533,8 +1562,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p> <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		StreamName: string;
 	}
@@ -1543,8 +1572,8 @@ export namespace MyNS {
 		/**
 		 * <p>The Amazon Resource Name (ARN) of the IAM role that grants QLDB permissions for a journal stream to write data records to a Kinesis Data Streams resource.</p> <p>To pass a role to QLDB when requesting a journal stream, you must have permissions to perform the <code>iam:PassRole</code> action on the IAM role resource. This is required for all journal stream requests.</p>
 		 * Required
-		 * Max length: 1600
 		 * Min length: 20
+		 * Max length: 1600
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 
@@ -1563,8 +1592,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name that you want to assign to the QLDB journal stream. User-defined names can help identify and indicate the purpose of a stream.</p> <p>Your stream name must be unique among other <i>active</i> streams for a given ledger. Stream names have the same naming constraints as ledger names, as defined in <a href="https://docs.aws.amazon.com/qldb/latest/developerguide/limits.html#limits.naming">Quotas in Amazon QLDB</a> in the <i>Amazon QLDB Developer Guide</i>.</p>
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		StreamName: FormControl<string | null | undefined>,
 	}

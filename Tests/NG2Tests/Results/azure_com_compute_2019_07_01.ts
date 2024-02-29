@@ -7321,6 +7321,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {number} platformUpdateDomain The platform update domain for which a manual recovery walk is requested
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RecoveryWalkResponse} OK
 		 */
 		VirtualMachineScaleSets_ForceRecoveryServiceFabricPlatformUpdateDomainWalk(resourceGroupName: string, vmScaleSetName: string, api_version: string, subscriptionId: string, platformUpdateDomain: number): Observable<RecoveryWalkResponse> {

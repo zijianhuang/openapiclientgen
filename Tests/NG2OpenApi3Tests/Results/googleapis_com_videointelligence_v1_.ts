@@ -30,7 +30,10 @@ export namespace MyNS {
 		/** Video file location in [Cloud Storage](https://cloud.google.com/storage/). */
 		inputUri?: string | null;
 
-		/** Approximate percentage processed thus far. Guaranteed to be 100 when fully processed. */
+		/**
+		 * Approximate percentage processed thus far. Guaranteed to be 100 when fully processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Video segment. */
@@ -52,7 +55,10 @@ export namespace MyNS {
 		/** Video file location in [Cloud Storage](https://cloud.google.com/storage/). */
 		inputUri: FormControl<string | null | undefined>,
 
-		/** Approximate percentage processed thus far. Guaranteed to be 100 when fully processed. */
+		/**
+		 * Approximate percentage processed thus far. Guaranteed to be 100 when fully processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 
 		/** Time when the request was received. */
@@ -251,7 +257,10 @@ export namespace MyNS {
 	/** Config for LABEL_DETECTION. */
 	export interface GoogleCloudVideointelligenceV1_LabelDetectionConfig {
 
-		/** The confidence threshold we perform filtering on the labels from frame-level detection. If not set, it is set to 0.4 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model. */
+		/**
+		 * The confidence threshold we perform filtering on the labels from frame-level detection. If not set, it is set to 0.4 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model.
+		 * Type: float
+		 */
 		frameConfidenceThreshold?: number | null;
 
 		/** What labels should be detected with LABEL_DETECTION, in addition to video-level labels or segment-level labels. If unspecified, defaults to `SHOT_MODE`. */
@@ -263,14 +272,20 @@ export namespace MyNS {
 		/** Whether the video has been shot from a stationary (i.e., non-moving) camera. When set to true, might improve detection accuracy for moving objects. Should be used with `SHOT_AND_FRAME_MODE` enabled. */
 		stationaryCamera?: boolean | null;
 
-		/** The confidence threshold we perform filtering on the labels from video-level and shot-level detections. If not set, it's set to 0.3 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model. */
+		/**
+		 * The confidence threshold we perform filtering on the labels from video-level and shot-level detections. If not set, it's set to 0.3 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model.
+		 * Type: float
+		 */
 		videoConfidenceThreshold?: number | null;
 	}
 
 	/** Config for LABEL_DETECTION. */
 	export interface GoogleCloudVideointelligenceV1_LabelDetectionConfigFormProperties {
 
-		/** The confidence threshold we perform filtering on the labels from frame-level detection. If not set, it is set to 0.4 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model. */
+		/**
+		 * The confidence threshold we perform filtering on the labels from frame-level detection. If not set, it is set to 0.4 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model.
+		 * Type: float
+		 */
 		frameConfidenceThreshold: FormControl<number | null | undefined>,
 
 		/** What labels should be detected with LABEL_DETECTION, in addition to video-level labels or segment-level labels. If unspecified, defaults to `SHOT_MODE`. */
@@ -282,7 +297,10 @@ export namespace MyNS {
 		/** Whether the video has been shot from a stationary (i.e., non-moving) camera. When set to true, might improve detection accuracy for moving objects. Should be used with `SHOT_AND_FRAME_MODE` enabled. */
 		stationaryCamera: FormControl<boolean | null | undefined>,
 
-		/** The confidence threshold we perform filtering on the labels from video-level and shot-level detections. If not set, it's set to 0.3 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model. */
+		/**
+		 * The confidence threshold we perform filtering on the labels from video-level and shot-level detections. If not set, it's set to 0.3 by default. The valid range for this threshold is [0.1, 0.9]. Any value set outside of this range will be clipped. Note: For best results, follow the default threshold. We will update the default threshold everytime when we release a new model.
+		 * Type: float
+		 */
 		videoConfidenceThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1_LabelDetectionConfigFormGroup() {
@@ -382,7 +400,10 @@ export namespace MyNS {
 		/** Optional. For file formats, such as MXF or MKV, supporting multiple audio tracks, specify up to two tracks. Default: track 0. */
 		audioTracks?: Array<number>;
 
-		/** Optional. If set, specifies the estimated number of speakers in the conversation. If not set, defaults to '2'. Ignored unless enable_speaker_diarization is set to true. */
+		/**
+		 * Optional. If set, specifies the estimated number of speakers in the conversation. If not set, defaults to '2'. Ignored unless enable_speaker_diarization is set to true.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diarizationSpeakerCount?: number | null;
 
 		/** Optional. If 'true', adds punctuation to recognition result hypotheses. This feature is only available in select languages. Setting this for requests in other languages has no effect at all. The default 'false' value does not add punctuation to result hypotheses. NOTE: "This is currently offered as an experimental service, complimentary to all users. In the future this may be exclusively available as a premium feature." */
@@ -400,7 +421,10 @@ export namespace MyNS {
 		/** Required. *Required* The language of the supplied audio as a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. Example: "en-US". See [Language Support](https://cloud.google.com/speech/docs/languages) for a list of the currently supported language codes. */
 		languageCode?: string | null;
 
-		/** Optional. Maximum number of recognition hypotheses to be returned. Specifically, the maximum number of `SpeechRecognitionAlternative` messages within each `SpeechTranscription`. The server may return fewer than `max_alternatives`. Valid values are `0`-`30`. A value of `0` or `1` will return a maximum of one. If omitted, will return a maximum of one. */
+		/**
+		 * Optional. Maximum number of recognition hypotheses to be returned. Specifically, the maximum number of `SpeechRecognitionAlternative` messages within each `SpeechTranscription`. The server may return fewer than `max_alternatives`. Valid values are `0`-`30`. A value of `0` or `1` will return a maximum of one. If omitted, will return a maximum of one.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAlternatives?: number | null;
 
 		/** Optional. A means to provide context to assist the speech recognition. */
@@ -410,7 +434,10 @@ export namespace MyNS {
 	/** Config for SPEECH_TRANSCRIPTION. */
 	export interface GoogleCloudVideointelligenceV1_SpeechTranscriptionConfigFormProperties {
 
-		/** Optional. If set, specifies the estimated number of speakers in the conversation. If not set, defaults to '2'. Ignored unless enable_speaker_diarization is set to true. */
+		/**
+		 * Optional. If set, specifies the estimated number of speakers in the conversation. If not set, defaults to '2'. Ignored unless enable_speaker_diarization is set to true.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diarizationSpeakerCount: FormControl<number | null | undefined>,
 
 		/** Optional. If 'true', adds punctuation to recognition result hypotheses. This feature is only available in select languages. Setting this for requests in other languages has no effect at all. The default 'false' value does not add punctuation to result hypotheses. NOTE: "This is currently offered as an experimental service, complimentary to all users. In the future this may be exclusively available as a premium feature." */
@@ -428,7 +455,10 @@ export namespace MyNS {
 		/** Required. *Required* The language of the supplied audio as a [BCP-47](https://www.rfc-editor.org/rfc/bcp/bcp47.txt) language tag. Example: "en-US". See [Language Support](https://cloud.google.com/speech/docs/languages) for a list of the currently supported language codes. */
 		languageCode: FormControl<string | null | undefined>,
 
-		/** Optional. Maximum number of recognition hypotheses to be returned. Specifically, the maximum number of `SpeechRecognitionAlternative` messages within each `SpeechTranscription`. The server may return fewer than `max_alternatives`. Valid values are `0`-`30`. A value of `0` or `1` will return a maximum of one. If omitted, will return a maximum of one. */
+		/**
+		 * Optional. Maximum number of recognition hypotheses to be returned. Specifically, the maximum number of `SpeechRecognitionAlternative` messages within each `SpeechTranscription`. The server may return fewer than `max_alternatives`. Valid values are `0`-`30`. A value of `0` or `1` will return a maximum of one. If omitted, will return a maximum of one.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAlternatives: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1_SpeechTranscriptionConfigFormGroup() {
@@ -575,7 +605,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpc_Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -588,7 +621,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpc_StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -711,32 +747,56 @@ export namespace MyNS {
 	/** Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1]. */
 	export interface GoogleCloudVideointelligenceV1_NormalizedBoundingBox {
 
-		/** Bottom Y coordinate. */
+		/**
+		 * Bottom Y coordinate.
+		 * Type: float
+		 */
 		bottom?: number | null;
 
-		/** Left X coordinate. */
+		/**
+		 * Left X coordinate.
+		 * Type: float
+		 */
 		left?: number | null;
 
-		/** Right X coordinate. */
+		/**
+		 * Right X coordinate.
+		 * Type: float
+		 */
 		right?: number | null;
 
-		/** Top Y coordinate. */
+		/**
+		 * Top Y coordinate.
+		 * Type: float
+		 */
 		top?: number | null;
 	}
 
 	/** Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1]. */
 	export interface GoogleCloudVideointelligenceV1_NormalizedBoundingBoxFormProperties {
 
-		/** Bottom Y coordinate. */
+		/**
+		 * Bottom Y coordinate.
+		 * Type: float
+		 */
 		bottom: FormControl<number | null | undefined>,
 
-		/** Left X coordinate. */
+		/**
+		 * Left X coordinate.
+		 * Type: float
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** Right X coordinate. */
+		/**
+		 * Right X coordinate.
+		 * Type: float
+		 */
 		right: FormControl<number | null | undefined>,
 
-		/** Top Y coordinate. */
+		/**
+		 * Top Y coordinate.
+		 * Type: float
+		 */
 		top: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1_NormalizedBoundingBoxFormGroup() {
@@ -804,7 +864,10 @@ export namespace MyNS {
 		/** Optional. Attributes in the track level. */
 		attributes?: Array<GoogleCloudVideointelligenceV1_DetectedAttribute>;
 
-		/** Optional. The confidence score of the tracked object. */
+		/**
+		 * Optional. The confidence score of the tracked object.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Video segment. */
@@ -817,7 +880,10 @@ export namespace MyNS {
 	/** A track of an object instance. */
 	export interface GoogleCloudVideointelligenceV1_TrackFormProperties {
 
-		/** Optional. The confidence score of the tracked object. */
+		/**
+		 * Optional. The confidence score of the tracked object.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1_TrackFormGroup() {
@@ -831,7 +897,10 @@ export namespace MyNS {
 	/** A generic detected attribute represented by name in string format. */
 	export interface GoogleCloudVideointelligenceV1_DetectedAttribute {
 
-		/** Detected attribute confidence. Range [0, 1]. */
+		/**
+		 * Detected attribute confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of the attribute, for example, glasses, dark_glasses, mouth_open. A full list of supported type names will be provided in the document. */
@@ -844,7 +913,10 @@ export namespace MyNS {
 	/** A generic detected attribute represented by name in string format. */
 	export interface GoogleCloudVideointelligenceV1_DetectedAttributeFormProperties {
 
-		/** Detected attribute confidence. Range [0, 1]. */
+		/**
+		 * Detected attribute confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of the attribute, for example, glasses, dark_glasses, mouth_open. A full list of supported type names will be provided in the document. */
@@ -896,7 +968,10 @@ export namespace MyNS {
 	/** A generic detected landmark represented by name in string format and a 2D location. */
 	export interface GoogleCloudVideointelligenceV1_DetectedLandmark {
 
-		/** The confidence score of the detected landmark. Range [0, 1]. */
+		/**
+		 * The confidence score of the detected landmark. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of this landmark, for example, left_hand, right_shoulder. */
@@ -909,7 +984,10 @@ export namespace MyNS {
 	/** A generic detected landmark represented by name in string format and a 2D location. */
 	export interface GoogleCloudVideointelligenceV1_DetectedLandmarkFormProperties {
 
-		/** The confidence score of the detected landmark. Range [0, 1]. */
+		/**
+		 * The confidence score of the detected landmark. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of this landmark, for example, left_hand, right_shoulder. */
@@ -927,20 +1005,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVideointelligenceV1_NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVideointelligenceV1_NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1_NormalizedVertexFormGroup() {
@@ -1023,7 +1113,10 @@ export namespace MyNS {
 	/** Video frame level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1_LabelFrame {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time-offset, relative to the beginning of the video, corresponding to the video frame for this location. */
@@ -1033,7 +1126,10 @@ export namespace MyNS {
 	/** Video frame level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1_LabelFrameFormProperties {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time-offset, relative to the beginning of the video, corresponding to the video frame for this location. */
@@ -1051,7 +1147,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1_LabelSegment {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Video segment. */
@@ -1061,7 +1160,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1_LabelSegmentFormProperties {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1_LabelSegmentFormGroup() {
@@ -1098,7 +1200,10 @@ export namespace MyNS {
 	/** Annotations corresponding to one tracked object. */
 	export interface GoogleCloudVideointelligenceV1_ObjectTrackingAnnotation {
 
-		/** Object category's labeling confidence of this track. */
+		/**
+		 * Object category's labeling confidence of this track.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Detected entity from video analysis. */
@@ -1120,7 +1225,10 @@ export namespace MyNS {
 	/** Annotations corresponding to one tracked object. */
 	export interface GoogleCloudVideointelligenceV1_ObjectTrackingAnnotationFormProperties {
 
-		/** Object category's labeling confidence of this track. */
+		/**
+		 * Object category's labeling confidence of this track.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Streaming mode ONLY. In streaming mode, we do not know the end time of a tracked object before it is completed. Hence, there is no VideoSegment info returned. Instead, we provide a unique identifiable integer track_id so that the customers can correlate the results of the ongoing ObjectTrackAnnotation of the same track_id over time. */
@@ -1214,7 +1322,10 @@ export namespace MyNS {
 	/** Alternative hypotheses (a.k.a. n-best list). */
 	export interface GoogleCloudVideointelligenceV1_SpeechRecognitionAlternative {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Transcript text representing the words that the user spoke. */
@@ -1227,7 +1338,10 @@ export namespace MyNS {
 	/** Alternative hypotheses (a.k.a. n-best list). */
 	export interface GoogleCloudVideointelligenceV1_SpeechRecognitionAlternativeFormProperties {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Transcript text representing the words that the user spoke. */
@@ -1245,13 +1359,19 @@ export namespace MyNS {
 	/** Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`. */
 	export interface GoogleCloudVideointelligenceV1_WordInfo {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the end of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
 		endTime?: string | null;
 
-		/** Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled. */
+		/**
+		 * Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speakerTag?: number | null;
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the start of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
@@ -1264,13 +1384,19 @@ export namespace MyNS {
 	/** Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`. */
 	export interface GoogleCloudVideointelligenceV1_WordInfoFormProperties {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the end of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled. */
+		/**
+		 * Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speakerTag: FormControl<number | null | undefined>,
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the start of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
@@ -1325,7 +1451,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for text detection. */
 	export interface GoogleCloudVideointelligenceV1_TextSegment {
 
-		/** Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears. */
+		/**
+		 * Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Information related to the frames where OCR detected text appears. */
@@ -1338,7 +1467,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for text detection. */
 	export interface GoogleCloudVideointelligenceV1_TextSegmentFormProperties {
 
-		/** Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears. */
+		/**
+		 * Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1_TextSegmentFormGroup() {
@@ -1416,7 +1548,10 @@ export namespace MyNS {
 		/** Video file location in [Cloud Storage](https://cloud.google.com/storage/). */
 		inputUri?: string | null;
 
-		/** Approximate percentage processed thus far. Guaranteed to be 100 when fully processed. */
+		/**
+		 * Approximate percentage processed thus far. Guaranteed to be 100 when fully processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Video segment. */
@@ -1438,7 +1573,10 @@ export namespace MyNS {
 		/** Video file location in [Cloud Storage](https://cloud.google.com/storage/). */
 		inputUri: FormControl<string | null | undefined>,
 
-		/** Approximate percentage processed thus far. Guaranteed to be 100 when fully processed. */
+		/**
+		 * Approximate percentage processed thus far. Guaranteed to be 100 when fully processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 
 		/** Time when the request was received. */
@@ -1679,32 +1817,56 @@ export namespace MyNS {
 	/** Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1]. */
 	export interface GoogleCloudVideointelligenceV1beta2_NormalizedBoundingBox {
 
-		/** Bottom Y coordinate. */
+		/**
+		 * Bottom Y coordinate.
+		 * Type: float
+		 */
 		bottom?: number | null;
 
-		/** Left X coordinate. */
+		/**
+		 * Left X coordinate.
+		 * Type: float
+		 */
 		left?: number | null;
 
-		/** Right X coordinate. */
+		/**
+		 * Right X coordinate.
+		 * Type: float
+		 */
 		right?: number | null;
 
-		/** Top Y coordinate. */
+		/**
+		 * Top Y coordinate.
+		 * Type: float
+		 */
 		top?: number | null;
 	}
 
 	/** Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1]. */
 	export interface GoogleCloudVideointelligenceV1beta2_NormalizedBoundingBoxFormProperties {
 
-		/** Bottom Y coordinate. */
+		/**
+		 * Bottom Y coordinate.
+		 * Type: float
+		 */
 		bottom: FormControl<number | null | undefined>,
 
-		/** Left X coordinate. */
+		/**
+		 * Left X coordinate.
+		 * Type: float
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** Right X coordinate. */
+		/**
+		 * Right X coordinate.
+		 * Type: float
+		 */
 		right: FormControl<number | null | undefined>,
 
-		/** Top Y coordinate. */
+		/**
+		 * Top Y coordinate.
+		 * Type: float
+		 */
 		top: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1beta2_NormalizedBoundingBoxFormGroup() {
@@ -1772,7 +1934,10 @@ export namespace MyNS {
 		/** Optional. Attributes in the track level. */
 		attributes?: Array<GoogleCloudVideointelligenceV1beta2_DetectedAttribute>;
 
-		/** Optional. The confidence score of the tracked object. */
+		/**
+		 * Optional. The confidence score of the tracked object.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Video segment. */
@@ -1785,7 +1950,10 @@ export namespace MyNS {
 	/** A track of an object instance. */
 	export interface GoogleCloudVideointelligenceV1beta2_TrackFormProperties {
 
-		/** Optional. The confidence score of the tracked object. */
+		/**
+		 * Optional. The confidence score of the tracked object.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1beta2_TrackFormGroup() {
@@ -1799,7 +1967,10 @@ export namespace MyNS {
 	/** A generic detected attribute represented by name in string format. */
 	export interface GoogleCloudVideointelligenceV1beta2_DetectedAttribute {
 
-		/** Detected attribute confidence. Range [0, 1]. */
+		/**
+		 * Detected attribute confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of the attribute, for example, glasses, dark_glasses, mouth_open. A full list of supported type names will be provided in the document. */
@@ -1812,7 +1983,10 @@ export namespace MyNS {
 	/** A generic detected attribute represented by name in string format. */
 	export interface GoogleCloudVideointelligenceV1beta2_DetectedAttributeFormProperties {
 
-		/** Detected attribute confidence. Range [0, 1]. */
+		/**
+		 * Detected attribute confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of the attribute, for example, glasses, dark_glasses, mouth_open. A full list of supported type names will be provided in the document. */
@@ -1864,7 +2038,10 @@ export namespace MyNS {
 	/** A generic detected landmark represented by name in string format and a 2D location. */
 	export interface GoogleCloudVideointelligenceV1beta2_DetectedLandmark {
 
-		/** The confidence score of the detected landmark. Range [0, 1]. */
+		/**
+		 * The confidence score of the detected landmark. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of this landmark, for example, left_hand, right_shoulder. */
@@ -1877,7 +2054,10 @@ export namespace MyNS {
 	/** A generic detected landmark represented by name in string format and a 2D location. */
 	export interface GoogleCloudVideointelligenceV1beta2_DetectedLandmarkFormProperties {
 
-		/** The confidence score of the detected landmark. Range [0, 1]. */
+		/**
+		 * The confidence score of the detected landmark. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of this landmark, for example, left_hand, right_shoulder. */
@@ -1895,20 +2075,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVideointelligenceV1beta2_NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVideointelligenceV1beta2_NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1beta2_NormalizedVertexFormGroup() {
@@ -1991,7 +2183,10 @@ export namespace MyNS {
 	/** Video frame level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1beta2_LabelFrame {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time-offset, relative to the beginning of the video, corresponding to the video frame for this location. */
@@ -2001,7 +2196,10 @@ export namespace MyNS {
 	/** Video frame level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1beta2_LabelFrameFormProperties {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time-offset, relative to the beginning of the video, corresponding to the video frame for this location. */
@@ -2019,7 +2217,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1beta2_LabelSegment {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Video segment. */
@@ -2029,7 +2230,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1beta2_LabelSegmentFormProperties {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1beta2_LabelSegmentFormGroup() {
@@ -2066,7 +2270,10 @@ export namespace MyNS {
 	/** Annotations corresponding to one tracked object. */
 	export interface GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotation {
 
-		/** Object category's labeling confidence of this track. */
+		/**
+		 * Object category's labeling confidence of this track.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Detected entity from video analysis. */
@@ -2088,7 +2295,10 @@ export namespace MyNS {
 	/** Annotations corresponding to one tracked object. */
 	export interface GoogleCloudVideointelligenceV1beta2_ObjectTrackingAnnotationFormProperties {
 
-		/** Object category's labeling confidence of this track. */
+		/**
+		 * Object category's labeling confidence of this track.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Streaming mode ONLY. In streaming mode, we do not know the end time of a tracked object before it is completed. Hence, there is no VideoSegment info returned. Instead, we provide a unique identifiable integer track_id so that the customers can correlate the results of the ongoing ObjectTrackAnnotation of the same track_id over time. */
@@ -2182,7 +2392,10 @@ export namespace MyNS {
 	/** Alternative hypotheses (a.k.a. n-best list). */
 	export interface GoogleCloudVideointelligenceV1beta2_SpeechRecognitionAlternative {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Transcript text representing the words that the user spoke. */
@@ -2195,7 +2408,10 @@ export namespace MyNS {
 	/** Alternative hypotheses (a.k.a. n-best list). */
 	export interface GoogleCloudVideointelligenceV1beta2_SpeechRecognitionAlternativeFormProperties {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Transcript text representing the words that the user spoke. */
@@ -2213,13 +2429,19 @@ export namespace MyNS {
 	/** Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`. */
 	export interface GoogleCloudVideointelligenceV1beta2_WordInfo {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the end of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
 		endTime?: string | null;
 
-		/** Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled. */
+		/**
+		 * Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speakerTag?: number | null;
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the start of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
@@ -2232,13 +2454,19 @@ export namespace MyNS {
 	/** Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`. */
 	export interface GoogleCloudVideointelligenceV1beta2_WordInfoFormProperties {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the end of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled. */
+		/**
+		 * Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speakerTag: FormControl<number | null | undefined>,
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the start of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
@@ -2293,7 +2521,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for text detection. */
 	export interface GoogleCloudVideointelligenceV1beta2_TextSegment {
 
-		/** Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears. */
+		/**
+		 * Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Information related to the frames where OCR detected text appears. */
@@ -2306,7 +2537,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for text detection. */
 	export interface GoogleCloudVideointelligenceV1beta2_TextSegmentFormProperties {
 
-		/** Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears. */
+		/**
+		 * Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1beta2_TextSegmentFormGroup() {
@@ -2384,7 +2618,10 @@ export namespace MyNS {
 		/** Video file location in [Cloud Storage](https://cloud.google.com/storage/). */
 		inputUri?: string | null;
 
-		/** Approximate percentage processed thus far. Guaranteed to be 100 when fully processed. */
+		/**
+		 * Approximate percentage processed thus far. Guaranteed to be 100 when fully processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Video segment. */
@@ -2406,7 +2643,10 @@ export namespace MyNS {
 		/** Video file location in [Cloud Storage](https://cloud.google.com/storage/). */
 		inputUri: FormControl<string | null | undefined>,
 
-		/** Approximate percentage processed thus far. Guaranteed to be 100 when fully processed. */
+		/**
+		 * Approximate percentage processed thus far. Guaranteed to be 100 when fully processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 
 		/** Time when the request was received. */
@@ -2647,32 +2887,56 @@ export namespace MyNS {
 	/** Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1]. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingBox {
 
-		/** Bottom Y coordinate. */
+		/**
+		 * Bottom Y coordinate.
+		 * Type: float
+		 */
 		bottom?: number | null;
 
-		/** Left X coordinate. */
+		/**
+		 * Left X coordinate.
+		 * Type: float
+		 */
 		left?: number | null;
 
-		/** Right X coordinate. */
+		/**
+		 * Right X coordinate.
+		 * Type: float
+		 */
 		right?: number | null;
 
-		/** Top Y coordinate. */
+		/**
+		 * Top Y coordinate.
+		 * Type: float
+		 */
 		top?: number | null;
 	}
 
 	/** Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1]. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingBoxFormProperties {
 
-		/** Bottom Y coordinate. */
+		/**
+		 * Bottom Y coordinate.
+		 * Type: float
+		 */
 		bottom: FormControl<number | null | undefined>,
 
-		/** Left X coordinate. */
+		/**
+		 * Left X coordinate.
+		 * Type: float
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** Right X coordinate. */
+		/**
+		 * Right X coordinate.
+		 * Type: float
+		 */
 		right: FormControl<number | null | undefined>,
 
-		/** Top Y coordinate. */
+		/**
+		 * Top Y coordinate.
+		 * Type: float
+		 */
 		top: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p1beta1_NormalizedBoundingBoxFormGroup() {
@@ -2740,7 +3004,10 @@ export namespace MyNS {
 		/** Optional. Attributes in the track level. */
 		attributes?: Array<GoogleCloudVideointelligenceV1p1beta1_DetectedAttribute>;
 
-		/** Optional. The confidence score of the tracked object. */
+		/**
+		 * Optional. The confidence score of the tracked object.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Video segment. */
@@ -2753,7 +3020,10 @@ export namespace MyNS {
 	/** A track of an object instance. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_TrackFormProperties {
 
-		/** Optional. The confidence score of the tracked object. */
+		/**
+		 * Optional. The confidence score of the tracked object.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p1beta1_TrackFormGroup() {
@@ -2767,7 +3037,10 @@ export namespace MyNS {
 	/** A generic detected attribute represented by name in string format. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_DetectedAttribute {
 
-		/** Detected attribute confidence. Range [0, 1]. */
+		/**
+		 * Detected attribute confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of the attribute, for example, glasses, dark_glasses, mouth_open. A full list of supported type names will be provided in the document. */
@@ -2780,7 +3053,10 @@ export namespace MyNS {
 	/** A generic detected attribute represented by name in string format. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_DetectedAttributeFormProperties {
 
-		/** Detected attribute confidence. Range [0, 1]. */
+		/**
+		 * Detected attribute confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of the attribute, for example, glasses, dark_glasses, mouth_open. A full list of supported type names will be provided in the document. */
@@ -2832,7 +3108,10 @@ export namespace MyNS {
 	/** A generic detected landmark represented by name in string format and a 2D location. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_DetectedLandmark {
 
-		/** The confidence score of the detected landmark. Range [0, 1]. */
+		/**
+		 * The confidence score of the detected landmark. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of this landmark, for example, left_hand, right_shoulder. */
@@ -2845,7 +3124,10 @@ export namespace MyNS {
 	/** A generic detected landmark represented by name in string format and a 2D location. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_DetectedLandmarkFormProperties {
 
-		/** The confidence score of the detected landmark. Range [0, 1]. */
+		/**
+		 * The confidence score of the detected landmark. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of this landmark, for example, left_hand, right_shoulder. */
@@ -2863,20 +3145,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p1beta1_NormalizedVertexFormGroup() {
@@ -2959,7 +3253,10 @@ export namespace MyNS {
 	/** Video frame level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_LabelFrame {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time-offset, relative to the beginning of the video, corresponding to the video frame for this location. */
@@ -2969,7 +3266,10 @@ export namespace MyNS {
 	/** Video frame level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_LabelFrameFormProperties {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time-offset, relative to the beginning of the video, corresponding to the video frame for this location. */
@@ -2987,7 +3287,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_LabelSegment {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Video segment. */
@@ -2997,7 +3300,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_LabelSegmentFormProperties {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p1beta1_LabelSegmentFormGroup() {
@@ -3034,7 +3340,10 @@ export namespace MyNS {
 	/** Annotations corresponding to one tracked object. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingAnnotation {
 
-		/** Object category's labeling confidence of this track. */
+		/**
+		 * Object category's labeling confidence of this track.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Detected entity from video analysis. */
@@ -3056,7 +3365,10 @@ export namespace MyNS {
 	/** Annotations corresponding to one tracked object. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_ObjectTrackingAnnotationFormProperties {
 
-		/** Object category's labeling confidence of this track. */
+		/**
+		 * Object category's labeling confidence of this track.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Streaming mode ONLY. In streaming mode, we do not know the end time of a tracked object before it is completed. Hence, there is no VideoSegment info returned. Instead, we provide a unique identifiable integer track_id so that the customers can correlate the results of the ongoing ObjectTrackAnnotation of the same track_id over time. */
@@ -3150,7 +3462,10 @@ export namespace MyNS {
 	/** Alternative hypotheses (a.k.a. n-best list). */
 	export interface GoogleCloudVideointelligenceV1p1beta1_SpeechRecognitionAlternative {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Transcript text representing the words that the user spoke. */
@@ -3163,7 +3478,10 @@ export namespace MyNS {
 	/** Alternative hypotheses (a.k.a. n-best list). */
 	export interface GoogleCloudVideointelligenceV1p1beta1_SpeechRecognitionAlternativeFormProperties {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Transcript text representing the words that the user spoke. */
@@ -3181,13 +3499,19 @@ export namespace MyNS {
 	/** Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_WordInfo {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the end of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
 		endTime?: string | null;
 
-		/** Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled. */
+		/**
+		 * Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speakerTag?: number | null;
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the start of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
@@ -3200,13 +3524,19 @@ export namespace MyNS {
 	/** Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_WordInfoFormProperties {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the end of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled. */
+		/**
+		 * Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speakerTag: FormControl<number | null | undefined>,
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the start of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
@@ -3261,7 +3591,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for text detection. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_TextSegment {
 
-		/** Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears. */
+		/**
+		 * Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Information related to the frames where OCR detected text appears. */
@@ -3274,7 +3607,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for text detection. */
 	export interface GoogleCloudVideointelligenceV1p1beta1_TextSegmentFormProperties {
 
-		/** Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears. */
+		/**
+		 * Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p1beta1_TextSegmentFormGroup() {
@@ -3352,7 +3688,10 @@ export namespace MyNS {
 		/** Video file location in [Cloud Storage](https://cloud.google.com/storage/). */
 		inputUri?: string | null;
 
-		/** Approximate percentage processed thus far. Guaranteed to be 100 when fully processed. */
+		/**
+		 * Approximate percentage processed thus far. Guaranteed to be 100 when fully processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Video segment. */
@@ -3374,7 +3713,10 @@ export namespace MyNS {
 		/** Video file location in [Cloud Storage](https://cloud.google.com/storage/). */
 		inputUri: FormControl<string | null | undefined>,
 
-		/** Approximate percentage processed thus far. Guaranteed to be 100 when fully processed. */
+		/**
+		 * Approximate percentage processed thus far. Guaranteed to be 100 when fully processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 
 		/** Time when the request was received. */
@@ -3615,32 +3957,56 @@ export namespace MyNS {
 	/** Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1]. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBox {
 
-		/** Bottom Y coordinate. */
+		/**
+		 * Bottom Y coordinate.
+		 * Type: float
+		 */
 		bottom?: number | null;
 
-		/** Left X coordinate. */
+		/**
+		 * Left X coordinate.
+		 * Type: float
+		 */
 		left?: number | null;
 
-		/** Right X coordinate. */
+		/**
+		 * Right X coordinate.
+		 * Type: float
+		 */
 		right?: number | null;
 
-		/** Top Y coordinate. */
+		/**
+		 * Top Y coordinate.
+		 * Type: float
+		 */
 		top?: number | null;
 	}
 
 	/** Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1]. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBoxFormProperties {
 
-		/** Bottom Y coordinate. */
+		/**
+		 * Bottom Y coordinate.
+		 * Type: float
+		 */
 		bottom: FormControl<number | null | undefined>,
 
-		/** Left X coordinate. */
+		/**
+		 * Left X coordinate.
+		 * Type: float
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** Right X coordinate. */
+		/**
+		 * Right X coordinate.
+		 * Type: float
+		 */
 		right: FormControl<number | null | undefined>,
 
-		/** Top Y coordinate. */
+		/**
+		 * Top Y coordinate.
+		 * Type: float
+		 */
 		top: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p2beta1_NormalizedBoundingBoxFormGroup() {
@@ -3708,7 +4074,10 @@ export namespace MyNS {
 		/** Optional. Attributes in the track level. */
 		attributes?: Array<GoogleCloudVideointelligenceV1p2beta1_DetectedAttribute>;
 
-		/** Optional. The confidence score of the tracked object. */
+		/**
+		 * Optional. The confidence score of the tracked object.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Video segment. */
@@ -3721,7 +4090,10 @@ export namespace MyNS {
 	/** A track of an object instance. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_TrackFormProperties {
 
-		/** Optional. The confidence score of the tracked object. */
+		/**
+		 * Optional. The confidence score of the tracked object.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p2beta1_TrackFormGroup() {
@@ -3735,7 +4107,10 @@ export namespace MyNS {
 	/** A generic detected attribute represented by name in string format. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_DetectedAttribute {
 
-		/** Detected attribute confidence. Range [0, 1]. */
+		/**
+		 * Detected attribute confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of the attribute, for example, glasses, dark_glasses, mouth_open. A full list of supported type names will be provided in the document. */
@@ -3748,7 +4123,10 @@ export namespace MyNS {
 	/** A generic detected attribute represented by name in string format. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_DetectedAttributeFormProperties {
 
-		/** Detected attribute confidence. Range [0, 1]. */
+		/**
+		 * Detected attribute confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of the attribute, for example, glasses, dark_glasses, mouth_open. A full list of supported type names will be provided in the document. */
@@ -3800,7 +4178,10 @@ export namespace MyNS {
 	/** A generic detected landmark represented by name in string format and a 2D location. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_DetectedLandmark {
 
-		/** The confidence score of the detected landmark. Range [0, 1]. */
+		/**
+		 * The confidence score of the detected landmark. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of this landmark, for example, left_hand, right_shoulder. */
@@ -3813,7 +4194,10 @@ export namespace MyNS {
 	/** A generic detected landmark represented by name in string format and a 2D location. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_DetectedLandmarkFormProperties {
 
-		/** The confidence score of the detected landmark. Range [0, 1]. */
+		/**
+		 * The confidence score of the detected landmark. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of this landmark, for example, left_hand, right_shoulder. */
@@ -3831,20 +4215,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p2beta1_NormalizedVertexFormGroup() {
@@ -3927,7 +4323,10 @@ export namespace MyNS {
 	/** Video frame level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_LabelFrame {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time-offset, relative to the beginning of the video, corresponding to the video frame for this location. */
@@ -3937,7 +4336,10 @@ export namespace MyNS {
 	/** Video frame level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_LabelFrameFormProperties {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time-offset, relative to the beginning of the video, corresponding to the video frame for this location. */
@@ -3955,7 +4357,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_LabelSegment {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Video segment. */
@@ -3965,7 +4370,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_LabelSegmentFormProperties {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p2beta1_LabelSegmentFormGroup() {
@@ -4002,7 +4410,10 @@ export namespace MyNS {
 	/** Annotations corresponding to one tracked object. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotation {
 
-		/** Object category's labeling confidence of this track. */
+		/**
+		 * Object category's labeling confidence of this track.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Detected entity from video analysis. */
@@ -4024,7 +4435,10 @@ export namespace MyNS {
 	/** Annotations corresponding to one tracked object. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_ObjectTrackingAnnotationFormProperties {
 
-		/** Object category's labeling confidence of this track. */
+		/**
+		 * Object category's labeling confidence of this track.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Streaming mode ONLY. In streaming mode, we do not know the end time of a tracked object before it is completed. Hence, there is no VideoSegment info returned. Instead, we provide a unique identifiable integer track_id so that the customers can correlate the results of the ongoing ObjectTrackAnnotation of the same track_id over time. */
@@ -4118,7 +4532,10 @@ export namespace MyNS {
 	/** Alternative hypotheses (a.k.a. n-best list). */
 	export interface GoogleCloudVideointelligenceV1p2beta1_SpeechRecognitionAlternative {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Transcript text representing the words that the user spoke. */
@@ -4131,7 +4548,10 @@ export namespace MyNS {
 	/** Alternative hypotheses (a.k.a. n-best list). */
 	export interface GoogleCloudVideointelligenceV1p2beta1_SpeechRecognitionAlternativeFormProperties {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Transcript text representing the words that the user spoke. */
@@ -4149,13 +4569,19 @@ export namespace MyNS {
 	/** Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_WordInfo {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the end of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
 		endTime?: string | null;
 
-		/** Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled. */
+		/**
+		 * Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speakerTag?: number | null;
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the start of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
@@ -4168,13 +4594,19 @@ export namespace MyNS {
 	/** Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_WordInfoFormProperties {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the end of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled. */
+		/**
+		 * Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speakerTag: FormControl<number | null | undefined>,
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the start of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
@@ -4229,7 +4661,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for text detection. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_TextSegment {
 
-		/** Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears. */
+		/**
+		 * Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Information related to the frames where OCR detected text appears. */
@@ -4242,7 +4677,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for text detection. */
 	export interface GoogleCloudVideointelligenceV1p2beta1_TextSegmentFormProperties {
 
-		/** Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears. */
+		/**
+		 * Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p2beta1_TextSegmentFormGroup() {
@@ -4320,7 +4758,10 @@ export namespace MyNS {
 		/** Video file location in [Cloud Storage](https://cloud.google.com/storage/). */
 		inputUri?: string | null;
 
-		/** Approximate percentage processed thus far. Guaranteed to be 100 when fully processed. */
+		/**
+		 * Approximate percentage processed thus far. Guaranteed to be 100 when fully processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Video segment. */
@@ -4342,7 +4783,10 @@ export namespace MyNS {
 		/** Video file location in [Cloud Storage](https://cloud.google.com/storage/). */
 		inputUri: FormControl<string | null | undefined>,
 
-		/** Approximate percentage processed thus far. Guaranteed to be 100 when fully processed. */
+		/**
+		 * Approximate percentage processed thus far. Guaranteed to be 100 when fully processed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 
 		/** Time when the request was received. */
@@ -4532,14 +4976,20 @@ export namespace MyNS {
 		/** Celebrity definition. */
 		celebrity?: GoogleCloudVideointelligenceV1p3beta1_Celebrity;
 
-		/** Recognition confidence. Range [0, 1]. */
+		/**
+		 * Recognition confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 	}
 
 	/** The recognized celebrity with confidence score. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_RecognizedCelebrityFormProperties {
 
-		/** Recognition confidence. Range [0, 1]. */
+		/**
+		 * Recognition confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p3beta1_RecognizedCelebrityFormGroup() {
@@ -4591,7 +5041,10 @@ export namespace MyNS {
 		/** Optional. Attributes in the track level. */
 		attributes?: Array<GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute>;
 
-		/** Optional. The confidence score of the tracked object. */
+		/**
+		 * Optional. The confidence score of the tracked object.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Video segment. */
@@ -4604,7 +5057,10 @@ export namespace MyNS {
 	/** A track of an object instance. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_TrackFormProperties {
 
-		/** Optional. The confidence score of the tracked object. */
+		/**
+		 * Optional. The confidence score of the tracked object.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p3beta1_TrackFormGroup() {
@@ -4618,7 +5074,10 @@ export namespace MyNS {
 	/** A generic detected attribute represented by name in string format. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_DetectedAttribute {
 
-		/** Detected attribute confidence. Range [0, 1]. */
+		/**
+		 * Detected attribute confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of the attribute, for example, glasses, dark_glasses, mouth_open. A full list of supported type names will be provided in the document. */
@@ -4631,7 +5090,10 @@ export namespace MyNS {
 	/** A generic detected attribute represented by name in string format. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_DetectedAttributeFormProperties {
 
-		/** Detected attribute confidence. Range [0, 1]. */
+		/**
+		 * Detected attribute confidence. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of the attribute, for example, glasses, dark_glasses, mouth_open. A full list of supported type names will be provided in the document. */
@@ -4683,7 +5145,10 @@ export namespace MyNS {
 	/** A generic detected landmark represented by name in string format and a 2D location. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_DetectedLandmark {
 
-		/** The confidence score of the detected landmark. Range [0, 1]. */
+		/**
+		 * The confidence score of the detected landmark. Range [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The name of this landmark, for example, left_hand, right_shoulder. */
@@ -4696,7 +5161,10 @@ export namespace MyNS {
 	/** A generic detected landmark represented by name in string format and a 2D location. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_DetectedLandmarkFormProperties {
 
-		/** The confidence score of the detected landmark. Range [0, 1]. */
+		/**
+		 * The confidence score of the detected landmark. Range [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The name of this landmark, for example, left_hand, right_shoulder. */
@@ -4714,20 +5182,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p3beta1_NormalizedVertexFormGroup() {
@@ -4742,32 +5222,56 @@ export namespace MyNS {
 	/** Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1]. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBox {
 
-		/** Bottom Y coordinate. */
+		/**
+		 * Bottom Y coordinate.
+		 * Type: float
+		 */
 		bottom?: number | null;
 
-		/** Left X coordinate. */
+		/**
+		 * Left X coordinate.
+		 * Type: float
+		 */
 		left?: number | null;
 
-		/** Right X coordinate. */
+		/**
+		 * Right X coordinate.
+		 * Type: float
+		 */
 		right?: number | null;
 
-		/** Top Y coordinate. */
+		/**
+		 * Top Y coordinate.
+		 * Type: float
+		 */
 		top?: number | null;
 	}
 
 	/** Normalized bounding box. The normalized vertex coordinates are relative to the original image. Range: [0, 1]. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBoxFormProperties {
 
-		/** Bottom Y coordinate. */
+		/**
+		 * Bottom Y coordinate.
+		 * Type: float
+		 */
 		bottom: FormControl<number | null | undefined>,
 
-		/** Left X coordinate. */
+		/**
+		 * Left X coordinate.
+		 * Type: float
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** Right X coordinate. */
+		/**
+		 * Right X coordinate.
+		 * Type: float
+		 */
 		right: FormControl<number | null | undefined>,
 
-		/** Top Y coordinate. */
+		/**
+		 * Top Y coordinate.
+		 * Type: float
+		 */
 		top: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p3beta1_NormalizedBoundingBoxFormGroup() {
@@ -5003,7 +5507,10 @@ export namespace MyNS {
 	/** Video frame level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_LabelFrame {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time-offset, relative to the beginning of the video, corresponding to the video frame for this location. */
@@ -5013,7 +5520,10 @@ export namespace MyNS {
 	/** Video frame level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_LabelFrameFormProperties {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time-offset, relative to the beginning of the video, corresponding to the video frame for this location. */
@@ -5031,7 +5541,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_LabelSegment {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Video segment. */
@@ -5041,7 +5554,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for label detection. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_LabelSegmentFormProperties {
 
-		/** Confidence that the label is accurate. Range: [0, 1]. */
+		/**
+		 * Confidence that the label is accurate. Range: [0, 1].
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p3beta1_LabelSegmentFormGroup() {
@@ -5078,7 +5594,10 @@ export namespace MyNS {
 	/** Annotations corresponding to one tracked object. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingAnnotation {
 
-		/** Object category's labeling confidence of this track. */
+		/**
+		 * Object category's labeling confidence of this track.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Detected entity from video analysis. */
@@ -5100,7 +5619,10 @@ export namespace MyNS {
 	/** Annotations corresponding to one tracked object. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_ObjectTrackingAnnotationFormProperties {
 
-		/** Object category's labeling confidence of this track. */
+		/**
+		 * Object category's labeling confidence of this track.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Streaming mode ONLY. In streaming mode, we do not know the end time of a tracked object before it is completed. Hence, there is no VideoSegment info returned. Instead, we provide a unique identifiable integer track_id so that the customers can correlate the results of the ongoing ObjectTrackAnnotation of the same track_id over time. */
@@ -5194,7 +5716,10 @@ export namespace MyNS {
 	/** Alternative hypotheses (a.k.a. n-best list). */
 	export interface GoogleCloudVideointelligenceV1p3beta1_SpeechRecognitionAlternative {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Transcript text representing the words that the user spoke. */
@@ -5207,7 +5732,10 @@ export namespace MyNS {
 	/** Alternative hypotheses (a.k.a. n-best list). */
 	export interface GoogleCloudVideointelligenceV1p3beta1_SpeechRecognitionAlternativeFormProperties {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Transcript text representing the words that the user spoke. */
@@ -5225,13 +5753,19 @@ export namespace MyNS {
 	/** Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_WordInfo {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the end of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
 		endTime?: string | null;
 
-		/** Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled. */
+		/**
+		 * Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speakerTag?: number | null;
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the start of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
@@ -5244,13 +5778,19 @@ export namespace MyNS {
 	/** Word-specific information for recognized words. Word information is only included in the response when certain request parameters are set, such as `enable_word_time_offsets`. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_WordInfoFormProperties {
 
-		/** Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set. */
+		/**
+		 * Output only. The confidence estimate between 0.0 and 1.0. A higher number indicates an estimated greater likelihood that the recognized words are correct. This field is set only for the top alternative. This field is not guaranteed to be accurate and users should not rely on it to be always provided. The default of 0.0 is a sentinel value indicating `confidence` was not set.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the end of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled. */
+		/**
+		 * Output only. A distinct integer value is assigned for every speaker within the audio. This field specifies which one of those speakers was detected to have spoken this word. Value ranges from 1 up to diarization_speaker_count, and is only set if speaker diarization is enabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		speakerTag: FormControl<number | null | undefined>,
 
 		/** Time offset relative to the beginning of the audio, and corresponding to the start of the spoken word. This field is only set if `enable_word_time_offsets=true` and only in the top hypothesis. This is an experimental feature and the accuracy of the time offset can vary. */
@@ -5305,7 +5845,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for text detection. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_TextSegment {
 
-		/** Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears. */
+		/**
+		 * Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** Information related to the frames where OCR detected text appears. */
@@ -5318,7 +5861,10 @@ export namespace MyNS {
 	/** Video segment level annotation results for text detection. */
 	export interface GoogleCloudVideointelligenceV1p3beta1_TextSegmentFormProperties {
 
-		/** Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears. */
+		/**
+		 * Confidence for the track of detected text. It is calculated as the highest over all frames where OCR detected text appears.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudVideointelligenceV1p3beta1_TextSegmentFormGroup() {
@@ -5596,6 +6142,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunning_ListOperationsResponse} Successful response
 		 */

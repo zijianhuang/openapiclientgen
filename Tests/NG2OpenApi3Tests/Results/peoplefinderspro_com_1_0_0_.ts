@@ -55,6 +55,8 @@ export namespace MyNS {
 
 	export interface SearchBody {
 		Address?: SearchBodyAddress;
+
+		/** Type: double */
 		Age?: number | null;
 		Dob?: string | null;
 		Email?: string | null;
@@ -64,6 +66,8 @@ export namespace MyNS {
 		PhoneNumber?: string | null;
 	}
 	export interface SearchBodyFormProperties {
+
+		/** Type: double */
 		Age: FormControl<number | null | undefined>,
 		Dob: FormControl<string | null | undefined>,
 		Email: FormControl<string | null | undefined>,

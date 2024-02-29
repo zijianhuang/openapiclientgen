@@ -135,7 +135,10 @@ export namespace MyNS {
 		/** The current status of the container. The status can either be a transient state, such as BUILDING, and NETWORKING or a non-transient state, such as RUNNING, SHUTDOWN, CRASHED, PAUSED, or SUSPENDED. */
 		ContainerState?: string | null;
 
-		/** The time when the container was created. */
+		/**
+		 * The time when the container was created.
+		 * Type: float
+		 */
 		Created?: number | null;
 
 		/** A list of all the environment variables of the container. */
@@ -154,7 +157,10 @@ export namespace MyNS {
 		/** List of custom metadata that was added to the container. Labels serve a wide range of uses, such as adding notes to a container. Every label is a key/ value pair. */
 		Labels?: string | null;
 
-		/** The amount of container memory in Megabyte that was assigned to your container. The memory is counted towards the quota that is allocated for the space. */
+		/**
+		 * The amount of container memory in Megabyte that was assigned to your container. The memory is counted towards the quota that is allocated for the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Memory?: number | null;
 
 		/** The name of the container. */
@@ -165,19 +171,31 @@ export namespace MyNS {
 		NetworkSettings?: NetworkSetting;
 		Ports?: Port;
 
-		/** Total size of all the files in the container, in bytes. */
+		/**
+		 * Total size of all the files in the container, in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SizeRootFs?: number | null;
 
-		/** The size of the files which have been created or changed, if you compare the container to its base image. Just after creation, this should be zero. Ass you modify (or create) files, this size will increase. */
+		/**
+		 * The size of the files which have been created or changed, if you compare the container to its base image. Just after creation, this should be zero. Ass you modify (or create) files, this size will increase.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SizeRw?: number | null;
 
-		/** Time when the container was started. */
+		/**
+		 * Time when the container was started.
+		 * Type: float
+		 */
 		Started?: number | null;
 
 		/** The current status of the container. The status can either be a transient state, such as BUILDING, and NETWORKING or a non-transient state, such as RUNNING, SHUTDOWN, CRASHED, PAUSED, or SUSPENDED */
 		Status?: string | null;
 
-		/** Number of virtual CPUs that are assigned to the container. */
+		/**
+		 * Number of virtual CPUs that are assigned to the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VCPU?: number | null;
 	}
 	export interface ContainerFormProperties {
@@ -188,7 +206,10 @@ export namespace MyNS {
 		/** The current status of the container. The status can either be a transient state, such as BUILDING, and NETWORKING or a non-transient state, such as RUNNING, SHUTDOWN, CRASHED, PAUSED, or SUSPENDED. */
 		ContainerState: FormControl<string | null | undefined>,
 
-		/** The time when the container was created. */
+		/**
+		 * The time when the container was created.
+		 * Type: float
+		 */
 		Created: FormControl<number | null | undefined>,
 
 		/** Unique identifier representing a container. */
@@ -203,25 +224,40 @@ export namespace MyNS {
 		/** List of custom metadata that was added to the container. Labels serve a wide range of uses, such as adding notes to a container. Every label is a key/ value pair. */
 		Labels: FormControl<string | null | undefined>,
 
-		/** The amount of container memory in Megabyte that was assigned to your container. The memory is counted towards the quota that is allocated for the space. */
+		/**
+		 * The amount of container memory in Megabyte that was assigned to your container. The memory is counted towards the quota that is allocated for the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Memory: FormControl<number | null | undefined>,
 
 		/** The name of the container. */
 		Name: FormControl<string | null | undefined>,
 
-		/** Total size of all the files in the container, in bytes. */
+		/**
+		 * Total size of all the files in the container, in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SizeRootFs: FormControl<number | null | undefined>,
 
-		/** The size of the files which have been created or changed, if you compare the container to its base image. Just after creation, this should be zero. Ass you modify (or create) files, this size will increase. */
+		/**
+		 * The size of the files which have been created or changed, if you compare the container to its base image. Just after creation, this should be zero. Ass you modify (or create) files, this size will increase.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SizeRw: FormControl<number | null | undefined>,
 
-		/** Time when the container was started. */
+		/**
+		 * Time when the container was started.
+		 * Type: float
+		 */
 		Started: FormControl<number | null | undefined>,
 
 		/** The current status of the container. The status can either be a transient state, such as BUILDING, and NETWORKING or a non-transient state, such as RUNNING, SHUTDOWN, CRASHED, PAUSED, or SUSPENDED */
 		Status: FormControl<string | null | undefined>,
 
-		/** Number of virtual CPUs that are assigned to the container. */
+		/**
+		 * Number of virtual CPUs that are assigned to the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VCPU: FormControl<number | null | undefined>,
 	}
 	export function CreateContainerFormGroup() {
@@ -282,7 +318,10 @@ export namespace MyNS {
 		/** List of custom metadata that was added to the container. Labels serve a wide range of uses, such as adding notes to a container. Every label is a key/ value pair. */
 		Labels?: Array<string>;
 
-		/** The amount of container memory that is assigned to the container in Megabyte. */
+		/**
+		 * The amount of container memory that is assigned to the container in Megabyte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Memory?: number | null;
 
 		/** The total container memory limit (memory + swap) */
@@ -303,7 +342,10 @@ export namespace MyNS {
 		/** User to be used inside the container. */
 		User?: string | null;
 
-		/** Number of virtual CPUs that are assigned to the container. */
+		/**
+		 * Number of virtual CPUs that are assigned to the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VCPU?: number | null;
 
 		/** List of volumes to inherit from another container. This feature is not supported in IBM Containers. */
@@ -336,7 +378,10 @@ export namespace MyNS {
 		/** The hardware architecture the image is based on. It can either be 'amd64' indicating an Intel-based architecture, or 'ppc64le' representing a Power-based architecture. */
 		ImageArchitecture: FormControl<string | null | undefined>,
 
-		/** The amount of container memory that is assigned to the container in Megabyte. */
+		/**
+		 * The amount of container memory that is assigned to the container in Megabyte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Memory: FormControl<number | null | undefined>,
 
 		/** The total container memory limit (memory + swap) */
@@ -357,7 +402,10 @@ export namespace MyNS {
 		/** User to be used inside the container. */
 		User: FormControl<string | null | undefined>,
 
-		/** Number of virtual CPUs that are assigned to the container. */
+		/**
+		 * Number of virtual CPUs that are assigned to the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VCPU: FormControl<number | null | undefined>,
 
 		/** List of volumes to inherit from another container. This feature is not supported in IBM Containers. */
@@ -395,13 +443,22 @@ export namespace MyNS {
 		/** Unique ID representing a container. */
 		Id?: string | null;
 
-		/** The ID of the container size. */
+		/**
+		 * The ID of the container size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flavor_id?: number | null;
 
-		/** The amount of container memory that has been assigned to the container. If the container memory was not specified in the API request, a container with 64 Megabyte container memory is created by default. */
+		/**
+		 * The amount of container memory that has been assigned to the container. If the container memory was not specified in the API request, a container with 64 Megabyte container memory is created by default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mem?: number | null;
 
-		/** Number of virtual CPUs that are assigned to the container. */
+		/**
+		 * Number of virtual CPUs that are assigned to the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vcpu?: number | null;
 	}
 	export interface ContainerIdFormProperties {
@@ -409,13 +466,22 @@ export namespace MyNS {
 		/** Unique ID representing a container. */
 		Id: FormControl<string | null | undefined>,
 
-		/** The ID of the container size. */
+		/**
+		 * The ID of the container size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		flavor_id: FormControl<number | null | undefined>,
 
-		/** The amount of container memory that has been assigned to the container. If the container memory was not specified in the API request, a container with 64 Megabyte container memory is created by default. */
+		/**
+		 * The amount of container memory that has been assigned to the container. If the container memory was not specified in the API request, a container with 64 Megabyte container memory is created by default.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mem: FormControl<number | null | undefined>,
 
-		/** Number of virtual CPUs that are assigned to the container. */
+		/**
+		 * Number of virtual CPUs that are assigned to the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vcpu: FormControl<number | null | undefined>,
 	}
 	export function CreateContainerIdFormGroup() {
@@ -564,7 +630,10 @@ export namespace MyNS {
 		/** Not supported by IBM Containers, empty string */
 		Ghost?: string | null;
 
-		/** The process ID on the compute host that runs the container process. */
+		/**
+		 * The process ID on the compute host that runs the container process.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Pid?: number | null;
 
 		/** If set to true, the container is in a RUNNING state. If set to false, the container has stopped or crashed. */
@@ -587,7 +656,10 @@ export namespace MyNS {
 		/** Not supported by IBM Containers, empty string */
 		Ghost: FormControl<string | null | undefined>,
 
-		/** The process ID on the compute host that runs the container process. */
+		/**
+		 * The process ID on the compute host that runs the container process.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Pid: FormControl<number | null | undefined>,
 
 		/** If set to true, the container is in a RUNNING state. If set to false, the container has stopped or crashed. */
@@ -623,7 +695,10 @@ export namespace MyNS {
 		/** Name of the container group. */
 		Name?: string | null;
 
-		/** The port number that is exposed to the public during container group creation. */
+		/**
+		 * The port number that is exposed to the public during container group creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Port?: number | null;
 
 		/** The public route that is mapped to the container group. You can use this route to access your container group from the Internet. */
@@ -646,7 +721,10 @@ export namespace MyNS {
 		/** Name of the container group. */
 		Name: FormControl<string | null | undefined>,
 
-		/** The port number that is exposed to the public during container group creation. */
+		/**
+		 * The port number that is exposed to the public during container group creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Port: FormControl<number | null | undefined>,
 
 		/** Current status of the container group. The container group status is a composite of ACTION and STATUS:<br><br> ACTIONS = (CREATE, DELETE, UPDATE, ROLLBACK, SUSPEND, RESUME, ADOPT, SNAPSHOT, CHECK, RESTORE)<br><br> STATUSES = (IN_PROGRESS, FAILED, COMPLETE) */
@@ -696,14 +774,20 @@ export namespace MyNS {
 		/** The full path to the container image in your private Bluemix repository. */
 		ImageName?: string | null;
 
-		/** The size of each container instance that runs in the container group in MegaByte. */
+		/**
+		 * The size of each container instance that runs in the container group in MegaByte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Memory?: number | null;
 
 		/** The name of the container group. */
 		Name?: string | null;
 		NumberInstances?: ContainersGroupsNameOrIdGetDetailsNumberInstances;
 
-		/** The public port that has been exposed. If you specified a route, your container group is accessible from the Internet. */
+		/**
+		 * The public port that has been exposed. If you specified a route, your container group is accessible from the Internet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Port?: number | null;
 		Route_Status?: ContainersGroupsNameOrIdGetDetailsRoute_Status;
 
@@ -742,13 +826,19 @@ export namespace MyNS {
 		/** The full path to the container image in your private Bluemix repository. */
 		ImageName: FormControl<string | null | undefined>,
 
-		/** The size of each container instance that runs in the container group in MegaByte. */
+		/**
+		 * The size of each container instance that runs in the container group in MegaByte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Memory: FormControl<number | null | undefined>,
 
 		/** The name of the container group. */
 		Name: FormControl<string | null | undefined>,
 
-		/** The public port that has been exposed. If you specified a route, your container group is accessible from the Internet. */
+		/**
+		 * The public port that has been exposed. If you specified a route, your container group is accessible from the Internet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Port: FormControl<number | null | undefined>,
 
 		/** The current status of the container group. The container group status is a composite of ACTION and STATUS:<br><br> ACTIONS = (CREATE, DELETE, UPDATE, ROLLBACK, SUSPEND, RESUME, ADOPT, SNAPSHOT, CHECK, RESTORE)<br><br> STATUSES = (IN_PROGRESS, FAILED, COMPLETE) */
@@ -777,30 +867,54 @@ export namespace MyNS {
 
 	export interface ContainersGroupsNameOrIdGetDetailsNumberInstances {
 
-		/** The current number of container instances that are running in your container group. */
+		/**
+		 * The current number of container instances that are running in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrentSize?: number | null;
 
-		/** The number of container instances that you require. */
+		/**
+		 * The number of container instances that you require.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Desired?: number | null;
 
-		/** The maximum number of container instance that you want to run in your container group. */
+		/**
+		 * The maximum number of container instance that you want to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Max?: number | null;
 
-		/** The minimum number of container instances that you want to run in your container group. */
+		/**
+		 * The minimum number of container instances that you want to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Min?: number | null;
 	}
 	export interface ContainersGroupsNameOrIdGetDetailsNumberInstancesFormProperties {
 
-		/** The current number of container instances that are running in your container group. */
+		/**
+		 * The current number of container instances that are running in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrentSize: FormControl<number | null | undefined>,
 
-		/** The number of container instances that you require. */
+		/**
+		 * The number of container instances that you require.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Desired: FormControl<number | null | undefined>,
 
-		/** The maximum number of container instance that you want to run in your container group. */
+		/**
+		 * The maximum number of container instance that you want to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Max: FormControl<number | null | undefined>,
 
-		/** The minimum number of container instances that you want to run in your container group. */
+		/**
+		 * The minimum number of container instances that you want to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Min: FormControl<number | null | undefined>,
 	}
 	export function CreateContainersGroupsNameOrIdGetDetailsNumberInstancesFormGroup() {
@@ -878,24 +992,42 @@ export namespace MyNS {
 
 	export interface ContainersGroupsNameOrIdPatchUpdatedInfoNumberInstances {
 
-		/** The number of container instances that you require. */
+		/**
+		 * The number of container instances that you require.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Desired?: number | null;
 
-		/** The maximum number of container instances that you want to run in your container group. */
+		/**
+		 * The maximum number of container instances that you want to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Max?: number | null;
 
-		/** The minimum number of container instances that you want to run in your container group. */
+		/**
+		 * The minimum number of container instances that you want to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Min?: number | null;
 	}
 	export interface ContainersGroupsNameOrIdPatchUpdatedInfoNumberInstancesFormProperties {
 
-		/** The number of container instances that you require. */
+		/**
+		 * The number of container instances that you require.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Desired: FormControl<number | null | undefined>,
 
-		/** The maximum number of container instances that you want to run in your container group. */
+		/**
+		 * The maximum number of container instances that you want to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Max: FormControl<number | null | undefined>,
 
-		/** The minimum number of container instances that you want to run in your container group. */
+		/**
+		 * The minimum number of container instances that you want to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Min: FormControl<number | null | undefined>,
 	}
 	export function CreateContainersGroupsNameOrIdPatchUpdatedInfoNumberInstancesFormGroup() {
@@ -947,7 +1079,10 @@ export namespace MyNS {
 		 */
 		Image: string;
 
-		/** (Optional) The size of each container instance in the container group. The size of each container instance in the group. Choose one of the following sizes and enter the size in MegaBytes: Pico 64 MB, Nano 128 MB, Micro 256 MB, Tiny 512 MB, Small 1 GB (1024 MB), Medium 2 GB (2048 MB), Large 4 GB (4096 MB) XLarge 8GB (8192 MB) and 2XLarge 16 GB (16384 MB). If you do not specify a size, all container instances in this group are created with 256 MB. */
+		/**
+		 * (Optional) The size of each container instance in the container group. The size of each container instance in the group. Choose one of the following sizes and enter the size in MegaBytes: Pico 64 MB, Nano 128 MB, Micro 256 MB, Tiny 512 MB, Small 1 GB (1024 MB), Medium 2 GB (2048 MB), Large 4 GB (4096 MB) XLarge 8GB (8192 MB) and 2XLarge 16 GB (16384 MB). If you do not specify a size, all container instances in this group are created with 256 MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Memory?: number | null;
 
 		/**
@@ -957,7 +1092,10 @@ export namespace MyNS {
 		Name: string;
 		NumberInstances?: ContainersGroupsPostRequiredAttributesNumberInstances;
 
-		/** (Optional) Expose a port for HTTP traffic to make your container group available from the Internet. Every container instance that is started for this group, listens on this port. Container groups cannot expose multiple ports. Note: You need to expose a port, when "Autorecovery" is set to true. */
+		/**
+		 * (Optional) Expose a port for HTTP traffic to make your container group available from the Internet. Every container instance that is started for this group, listens on this port. Container groups cannot expose multiple ports. Note: You need to expose a port, when "Autorecovery" is set to true.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Port?: number | null;
 		Route?: ContainersGroupsPostRequiredAttributesRoute;
 
@@ -978,7 +1116,10 @@ export namespace MyNS {
 		 */
 		Image: FormControl<string | null | undefined>,
 
-		/** (Optional) The size of each container instance in the container group. The size of each container instance in the group. Choose one of the following sizes and enter the size in MegaBytes: Pico 64 MB, Nano 128 MB, Micro 256 MB, Tiny 512 MB, Small 1 GB (1024 MB), Medium 2 GB (2048 MB), Large 4 GB (4096 MB) XLarge 8GB (8192 MB) and 2XLarge 16 GB (16384 MB). If you do not specify a size, all container instances in this group are created with 256 MB. */
+		/**
+		 * (Optional) The size of each container instance in the container group. The size of each container instance in the group. Choose one of the following sizes and enter the size in MegaBytes: Pico 64 MB, Nano 128 MB, Micro 256 MB, Tiny 512 MB, Small 1 GB (1024 MB), Medium 2 GB (2048 MB), Large 4 GB (4096 MB) XLarge 8GB (8192 MB) and 2XLarge 16 GB (16384 MB). If you do not specify a size, all container instances in this group are created with 256 MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Memory: FormControl<number | null | undefined>,
 
 		/**
@@ -987,7 +1128,10 @@ export namespace MyNS {
 		 */
 		Name: FormControl<string | null | undefined>,
 
-		/** (Optional) Expose a port for HTTP traffic to make your container group available from the Internet. Every container instance that is started for this group, listens on this port. Container groups cannot expose multiple ports. Note: You need to expose a port, when "Autorecovery" is set to true. */
+		/**
+		 * (Optional) Expose a port for HTTP traffic to make your container group available from the Internet. Every container instance that is started for this group, listens on this port. Container groups cannot expose multiple ports. Note: You need to expose a port, when "Autorecovery" is set to true.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Port: FormControl<number | null | undefined>,
 	}
 	export function CreateContainersGroupsPostRequiredAttributesFormGroup() {
@@ -1004,24 +1148,42 @@ export namespace MyNS {
 
 	export interface ContainersGroupsPostRequiredAttributesNumberInstances {
 
-		/** (Optional) The number of container instances that you require. */
+		/**
+		 * (Optional) The number of container instances that you require.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Desired?: number | null;
 
-		/** (Optional) The maximum number of container instances that you want to run in your container group. */
+		/**
+		 * (Optional) The maximum number of container instances that you want to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Max?: number | null;
 
-		/** (Optional) The minimum number of container instances that need to run in your container group. */
+		/**
+		 * (Optional) The minimum number of container instances that need to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Min?: number | null;
 	}
 	export interface ContainersGroupsPostRequiredAttributesNumberInstancesFormProperties {
 
-		/** (Optional) The number of container instances that you require. */
+		/**
+		 * (Optional) The number of container instances that you require.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Desired: FormControl<number | null | undefined>,
 
-		/** (Optional) The maximum number of container instances that you want to run in your container group. */
+		/**
+		 * (Optional) The maximum number of container instances that you want to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Max: FormControl<number | null | undefined>,
 
-		/** (Optional) The minimum number of container instances that need to run in your container group. */
+		/**
+		 * (Optional) The minimum number of container instances that need to run in your container group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Min: FormControl<number | null | undefined>,
 	}
 	export function CreateContainersGroupsPostRequiredAttributesNumberInstancesFormGroup() {
@@ -1091,25 +1253,46 @@ export namespace MyNS {
 		/** The number of public IP addresses that are required for one space. If the number of public IP addresses is not available, then a new space cannot be created to be used with IBM Containers. */
 		floating_ips_space_default?: string | null;
 
-		/** The number of public IP addresses that are currently assigned to the spaces of the organization. */
+		/**
+		 * The number of public IP addresses that are currently assigned to the spaces of the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floating_ips_usage?: number | null;
 
-		/** The maximum amount of container memory on the compute host that can be assigned across the spaces of the organization. */
+		/**
+		 * The maximum amount of container memory on the compute host that can be assigned across the spaces of the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ram_max?: number | null;
 
-		/** The amount of container memory that is required to be used for one space. If this amount is not available, then a new space cannot be created to be used with IBM Containers. */
+		/**
+		 * The amount of container memory that is required to be used for one space. If this amount is not available, then a new space cannot be created to be used with IBM Containers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ram_space_default?: number | null;
 
-		/** The amount of container memory that is currently used across all spaces of the organization. */
+		/**
+		 * The amount of container memory that is currently used across all spaces of the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ram_usage?: number | null;
 
-		/** The number of subnets that were created across all spaces of the organization. */
+		/**
+		 * The number of subnets that were created across all spaces of the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnet_usage?: number | null;
 
-		/** The number of subnets that is required to create a new space. If this number is not available, then a new space cannot be created to be used with IBM Containers. */
+		/**
+		 * The number of subnets that is required to create a new space. If this number is not available, then a new space cannot be created to be used with IBM Containers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnets_default?: number | null;
 
-		/** The maximum number of container private subnet that can be created across all spaces of the organization. */
+		/**
+		 * The maximum number of container private subnet that can be created across all spaces of the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnets_max?: number | null;
 	}
 	export interface ContainersQuotaInfoOrg_quotaFormProperties {
@@ -1120,25 +1303,46 @@ export namespace MyNS {
 		/** The number of public IP addresses that are required for one space. If the number of public IP addresses is not available, then a new space cannot be created to be used with IBM Containers. */
 		floating_ips_space_default: FormControl<string | null | undefined>,
 
-		/** The number of public IP addresses that are currently assigned to the spaces of the organization. */
+		/**
+		 * The number of public IP addresses that are currently assigned to the spaces of the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floating_ips_usage: FormControl<number | null | undefined>,
 
-		/** The maximum amount of container memory on the compute host that can be assigned across the spaces of the organization. */
+		/**
+		 * The maximum amount of container memory on the compute host that can be assigned across the spaces of the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ram_max: FormControl<number | null | undefined>,
 
-		/** The amount of container memory that is required to be used for one space. If this amount is not available, then a new space cannot be created to be used with IBM Containers. */
+		/**
+		 * The amount of container memory that is required to be used for one space. If this amount is not available, then a new space cannot be created to be used with IBM Containers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ram_space_default: FormControl<number | null | undefined>,
 
-		/** The amount of container memory that is currently used across all spaces of the organization. */
+		/**
+		 * The amount of container memory that is currently used across all spaces of the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ram_usage: FormControl<number | null | undefined>,
 
-		/** The number of subnets that were created across all spaces of the organization. */
+		/**
+		 * The number of subnets that were created across all spaces of the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnet_usage: FormControl<number | null | undefined>,
 
-		/** The number of subnets that is required to create a new space. If this number is not available, then a new space cannot be created to be used with IBM Containers. */
+		/**
+		 * The number of subnets that is required to create a new space. If this number is not available, then a new space cannot be created to be used with IBM Containers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnets_default: FormControl<number | null | undefined>,
 
-		/** The maximum number of container private subnet that can be created across all spaces of the organization. */
+		/**
+		 * The maximum number of container private subnet that can be created across all spaces of the organization.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnets_max: FormControl<number | null | undefined>,
 	}
 	export function CreateContainersQuotaInfoOrg_quotaFormGroup() {
@@ -1161,10 +1365,16 @@ export namespace MyNS {
 		/** The maximum number of public IP addresses that can be allocated to a space. */
 		floating_ips_max?: string | null;
 
-		/** The maximum amount of container memory that can be shared across all containers that are created in a space. */
+		/**
+		 * The maximum amount of container memory that can be shared across all containers that are created in a space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ram_max?: number | null;
 
-		/** The maximum number of private subnets that can be created in one space. */
+		/**
+		 * The maximum number of private subnets that can be created in one space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnets_max?: number | null;
 	}
 	export interface ContainersQuotaInfoSpace_quotaFormProperties {
@@ -1172,10 +1382,16 @@ export namespace MyNS {
 		/** The maximum number of public IP addresses that can be allocated to a space. */
 		floating_ips_max: FormControl<string | null | undefined>,
 
-		/** The maximum amount of container memory that can be shared across all containers that are created in a space. */
+		/**
+		 * The maximum amount of container memory that can be shared across all containers that are created in a space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ram_max: FormControl<number | null | undefined>,
 
-		/** The maximum number of private subnets that can be created in one space. */
+		/**
+		 * The maximum number of private subnets that can be created in one space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subnets_max: FormControl<number | null | undefined>,
 	}
 	export function CreateContainersQuotaInfoSpace_quotaFormGroup() {
@@ -1189,18 +1405,30 @@ export namespace MyNS {
 
 	export interface ContainersQuotaList {
 
-		/** The new number of public IP addresses that you want to assign to your space. */
+		/**
+		 * The new number of public IP addresses that you want to assign to your space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floating_ips?: number | null;
 
-		/** The amount of container memory that you want to assign to your space. */
+		/**
+		 * The amount of container memory that you want to assign to your space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ram?: number | null;
 	}
 	export interface ContainersQuotaListFormProperties {
 
-		/** The new number of public IP addresses that you want to assign to your space. */
+		/**
+		 * The new number of public IP addresses that you want to assign to your space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floating_ips: FormControl<number | null | undefined>,
 
-		/** The amount of container memory that you want to assign to your space. */
+		/**
+		 * The amount of container memory that you want to assign to your space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ram: FormControl<number | null | undefined>,
 	}
 	export function CreateContainersQuotaListFormGroup() {
@@ -1233,36 +1461,54 @@ export namespace MyNS {
 
 	export interface ContainersUsageInfoAvailableSizes {
 
-		/** The amount of disk space on the compute host that is assigned to the container in gigabyte */
+		/**
+		 * The amount of disk space on the compute host that is assigned to the container in gigabyte
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disk?: number | null;
 
 		/** The ID of the container size. */
 		id?: string | null;
 
-		/** The amount of container memory on the compute host that is assigned to the container in megabyte. */
+		/**
+		 * The amount of container memory on the compute host that is assigned to the container in megabyte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memory_MB?: number | null;
 
 		/** The IBM Containers name of the container size. */
 		name?: string | null;
 
-		/** The number of virtual CPUs that can be assigned to the container. */
+		/**
+		 * The number of virtual CPUs that can be assigned to the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vcpus?: number | null;
 	}
 	export interface ContainersUsageInfoAvailableSizesFormProperties {
 
-		/** The amount of disk space on the compute host that is assigned to the container in gigabyte */
+		/**
+		 * The amount of disk space on the compute host that is assigned to the container in gigabyte
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disk: FormControl<number | null | undefined>,
 
 		/** The ID of the container size. */
 		id: FormControl<string | null | undefined>,
 
-		/** The amount of container memory on the compute host that is assigned to the container in megabyte. */
+		/**
+		 * The amount of container memory on the compute host that is assigned to the container in megabyte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memory_MB: FormControl<number | null | undefined>,
 
 		/** The IBM Containers name of the container size. */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of virtual CPUs that can be assigned to the container. */
+		/**
+		 * The number of virtual CPUs that can be assigned to the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vcpus: FormControl<number | null | undefined>,
 	}
 	export function CreateContainersUsageInfoAvailableSizesFormGroup() {
@@ -1278,30 +1524,54 @@ export namespace MyNS {
 
 	export interface ContainersUsageInfoLimits {
 
-		/** The number of containers that can be created in the space. If -1 is returned, then an unlimited number of containers can be created. The number however is counted towards and limited by the container memory. */
+		/**
+		 * The number of containers that can be created in the space. If -1 is returned, then an unlimited number of containers can be created. The number however is counted towards and limited by the container memory.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containers?: number | null;
 
-		/** The number of public IP addresses that can be allocated to the space. */
+		/**
+		 * The number of public IP addresses that can be allocated to the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floating_ips?: number | null;
 
-		/** The amount of container memory that can be used in the space in megabyte. */
+		/**
+		 * The amount of container memory that can be used in the space in megabyte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memory_MB?: number | null;
 
-		/** The number of virtual CPUs that are assigned to the space. */
+		/**
+		 * The number of virtual CPUs that are assigned to the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vcpu?: number | null;
 	}
 	export interface ContainersUsageInfoLimitsFormProperties {
 
-		/** The number of containers that can be created in the space. If -1 is returned, then an unlimited number of containers can be created. The number however is counted towards and limited by the container memory. */
+		/**
+		 * The number of containers that can be created in the space. If -1 is returned, then an unlimited number of containers can be created. The number however is counted towards and limited by the container memory.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containers: FormControl<number | null | undefined>,
 
-		/** The number of public IP addresses that can be allocated to the space. */
+		/**
+		 * The number of public IP addresses that can be allocated to the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floating_ips: FormControl<number | null | undefined>,
 
-		/** The amount of container memory that can be used in the space in megabyte. */
+		/**
+		 * The amount of container memory that can be used in the space in megabyte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memory_MB: FormControl<number | null | undefined>,
 
-		/** The number of virtual CPUs that are assigned to the space. */
+		/**
+		 * The number of virtual CPUs that are assigned to the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vcpu: FormControl<number | null | undefined>,
 	}
 	export function CreateContainersUsageInfoLimitsFormGroup() {
@@ -1316,48 +1586,90 @@ export namespace MyNS {
 
 	export interface ContainersUsageInfoUsage {
 
-		/** The number of containers that were created in the space. All containers that count towards the quota limit are listed independent on their current state. */
+		/**
+		 * The number of containers that were created in the space. All containers that count towards the quota limit are listed independent on their current state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containers?: number | null;
 
-		/** The number of public IP addresses that are allocated to the space. */
+		/**
+		 * The number of public IP addresses that are allocated to the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floating_ips?: number | null;
 
-		/** The number of public IP addresses that are bound to a container in the space. */
+		/**
+		 * The number of public IP addresses that are bound to a container in the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floating_ips_bound?: number | null;
 
-		/** The number of private images that were added to the private Bluemix registry. */
+		/**
+		 * The number of private images that were added to the private Bluemix registry.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		images?: number | null;
 
-		/** The amount of container memory that is already used by the containers that were created in the space in megabyte. */
+		/**
+		 * The amount of container memory that is already used by the containers that were created in the space in megabyte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memory_MB?: number | null;
 
-		/** The number of containers that are currently in a running state. */
+		/**
+		 * The number of containers that are currently in a running state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		running?: number | null;
 
-		/** The number of virtual CPUs that are allocated to the space. */
+		/**
+		 * The number of virtual CPUs that are allocated to the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vcpu?: number | null;
 	}
 	export interface ContainersUsageInfoUsageFormProperties {
 
-		/** The number of containers that were created in the space. All containers that count towards the quota limit are listed independent on their current state. */
+		/**
+		 * The number of containers that were created in the space. All containers that count towards the quota limit are listed independent on their current state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containers: FormControl<number | null | undefined>,
 
-		/** The number of public IP addresses that are allocated to the space. */
+		/**
+		 * The number of public IP addresses that are allocated to the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floating_ips: FormControl<number | null | undefined>,
 
-		/** The number of public IP addresses that are bound to a container in the space. */
+		/**
+		 * The number of public IP addresses that are bound to a container in the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		floating_ips_bound: FormControl<number | null | undefined>,
 
-		/** The number of private images that were added to the private Bluemix registry. */
+		/**
+		 * The number of private images that were added to the private Bluemix registry.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		images: FormControl<number | null | undefined>,
 
-		/** The amount of container memory that is already used by the containers that were created in the space in megabyte. */
+		/**
+		 * The amount of container memory that is already used by the containers that were created in the space in megabyte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memory_MB: FormControl<number | null | undefined>,
 
-		/** The number of containers that are currently in a running state. */
+		/**
+		 * The number of containers that are currently in a running state.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		running: FormControl<number | null | undefined>,
 
-		/** The number of virtual CPUs that are allocated to the space. */
+		/**
+		 * The number of virtual CPUs that are allocated to the space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vcpu: FormControl<number | null | undefined>,
 	}
 	export function CreateContainersUsageInfoUsageFormGroup() {
@@ -1562,10 +1874,16 @@ export namespace MyNS {
 		 */
 		Image: string;
 
-		/** The container memory that is set for the container in Megabyte. Choose one of the following sizes: Pico 64 MB, Nano 128 MB, Micro 256 MB, Tiny 512 MB, Small 1 GB (1024 MB), Medium 2 GB (2048 MB), Large 4 GB (4096 MB) XLarge 8GB (8192 MB) and 2XLarge 16 GB (16384 MB). */
+		/**
+		 * The container memory that is set for the container in Megabyte. Choose one of the following sizes: Pico 64 MB, Nano 128 MB, Micro 256 MB, Tiny 512 MB, Small 1 GB (1024 MB), Medium 2 GB (2048 MB), Large 4 GB (4096 MB) XLarge 8GB (8192 MB) and 2XLarge 16 GB (16384 MB).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Memory?: number | null;
 
-		/** Number of virtual CPUs that are allocated to the container. */
+		/**
+		 * Number of virtual CPUs that are allocated to the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberCpus?: number | null;
 
 		/** Mount a volume to a container by specifying the details in the following format: `VOLUME_NAME:/DIRECTORY_PATH[:ro]`. Example: testvolume:/volumedata/temp:rw. By default, all volumes will be set up with read-write access inside the container (rw). If you wish to set up your volume with read-only access, enter `ro`.  Note: To mount a volume to a container, you must create the volume in your space first by using the `cf ic volume-create` command, or calling the `POST /volumes/create endpoint`. */
@@ -1585,10 +1903,16 @@ export namespace MyNS {
 		 */
 		Image: FormControl<string | null | undefined>,
 
-		/** The container memory that is set for the container in Megabyte. Choose one of the following sizes: Pico 64 MB, Nano 128 MB, Micro 256 MB, Tiny 512 MB, Small 1 GB (1024 MB), Medium 2 GB (2048 MB), Large 4 GB (4096 MB) XLarge 8GB (8192 MB) and 2XLarge 16 GB (16384 MB). */
+		/**
+		 * The container memory that is set for the container in Megabyte. Choose one of the following sizes: Pico 64 MB, Nano 128 MB, Micro 256 MB, Tiny 512 MB, Small 1 GB (1024 MB), Medium 2 GB (2048 MB), Large 4 GB (4096 MB) XLarge 8GB (8192 MB) and 2XLarge 16 GB (16384 MB).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Memory: FormControl<number | null | undefined>,
 
-		/** Number of virtual CPUs that are allocated to the container. */
+		/**
+		 * Number of virtual CPUs that are allocated to the container.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberCpus: FormControl<number | null | undefined>,
 
 		/** Mount a volume to a container by specifying the details in the following format: `VOLUME_NAME:/DIRECTORY_PATH[:ro]`. Example: testvolume:/volumedata/temp:rw. By default, all volumes will be set up with read-write access inside the container (rw). If you wish to set up your volume with read-only access, enter `ro`.  Note: To mount a volume to a container, you must create the volume in your space first by using the `cf ic volume-create` command, or calling the `POST /volumes/create endpoint`. */
@@ -1608,7 +1932,10 @@ export namespace MyNS {
 
 	export interface Fileshare {
 
-		/** The size of the file share in gigabyte. */
+		/**
+		 * The size of the file share in gigabyte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity?: number | null;
 
 		/** The timestamp when the file share was created. */
@@ -1620,10 +1947,16 @@ export namespace MyNS {
 		/** The path to the volume on the host node. */
 		hostPath?: string | null;
 
-		/** The number of Input/Output operations per second. */
+		/**
+		 * The number of Input/Output operations per second.
+		 * Type: double
+		 */
 		iops?: number | null;
 
-		/** The total number of IOPS considering the size of the file share. The size of your file share in gigabyte multiplied with the number of IOPS indicates the total number of IOPS. The higher the number of IOPS the faster you can read from and write to your volumes. */
+		/**
+		 * The total number of IOPS considering the size of the file share. The size of your file share in gigabyte multiplied with the number of IOPS indicates the total number of IOPS. The higher the number of IOPS the faster you can read from and write to your volumes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		iopsTotal?: number | null;
 
 		/** The ID received from softlayer when the file share was ordered to be set up in softlayer. */
@@ -1643,7 +1976,10 @@ export namespace MyNS {
 	}
 	export interface FileshareFormProperties {
 
-		/** The size of the file share in gigabyte. */
+		/**
+		 * The size of the file share in gigabyte.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		capacity: FormControl<number | null | undefined>,
 
 		/** The timestamp when the file share was created. */
@@ -1655,10 +1991,16 @@ export namespace MyNS {
 		/** The path to the volume on the host node. */
 		hostPath: FormControl<string | null | undefined>,
 
-		/** The number of Input/Output operations per second. */
+		/**
+		 * The number of Input/Output operations per second.
+		 * Type: double
+		 */
 		iops: FormControl<number | null | undefined>,
 
-		/** The total number of IOPS considering the size of the file share. The size of your file share in gigabyte multiplied with the number of IOPS indicates the total number of IOPS. The higher the number of IOPS the faster you can read from and write to your volumes. */
+		/**
+		 * The total number of IOPS considering the size of the file share. The size of your file share in gigabyte multiplied with the number of IOPS indicates the total number of IOPS. The higher the number of IOPS the faster you can read from and write to your volumes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		iopsTotal: FormControl<number | null | undefined>,
 
 		/** The ID received from softlayer when the file share was ordered to be set up in softlayer. */
@@ -1698,6 +2040,7 @@ export namespace MyNS {
 		/**
 		 * The number of input/output transactions per second. Available values are 0.25, 2 or 4.
 		 * Required
+		 * Type: double
 		 */
 		fsIOPS: number;
 
@@ -1710,6 +2053,7 @@ export namespace MyNS {
 		/**
 		 * The size of the file share in gigabyte. Run `cf ic volume fs-flavor-list` or call the GET /volumes/fs/flavors/json API endpoint to retrieve a list of available file share sizes.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		fsSize: number;
 	}
@@ -1718,6 +2062,7 @@ export namespace MyNS {
 		/**
 		 * The number of input/output transactions per second. Available values are 0.25, 2 or 4.
 		 * Required
+		 * Type: double
 		 */
 		fsIOPS: FormControl<number | null | undefined>,
 
@@ -1730,6 +2075,7 @@ export namespace MyNS {
 		/**
 		 * The size of the file share in gigabyte. Run `cf ic volume fs-flavor-list` or call the GET /volumes/fs/flavors/json API endpoint to retrieve a list of available file share sizes.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		fsSize: FormControl<number | null | undefined>,
 	}
@@ -1862,7 +2208,10 @@ export namespace MyNS {
 		/** The ID of the parent image that was used to build this image. */
 		Parent?: string | null;
 
-		/** The real size of the image. */
+		/**
+		 * The real size of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Size?: number | null;
 
 		/** The version of the image */
@@ -1871,7 +2220,10 @@ export namespace MyNS {
 		/** ??? */
 		Throwaway?: string | null;
 
-		/** The virtual size of the image. */
+		/**
+		 * The virtual size of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VirtualSize?: number | null;
 	}
 	export interface ImageDetailFormProperties {
@@ -1897,7 +2249,10 @@ export namespace MyNS {
 		/** The ID of the parent image that was used to build this image. */
 		Parent: FormControl<string | null | undefined>,
 
-		/** The real size of the image. */
+		/**
+		 * The real size of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Size: FormControl<number | null | undefined>,
 
 		/** The version of the image */
@@ -1906,7 +2261,10 @@ export namespace MyNS {
 		/** ??? */
 		Throwaway: FormControl<string | null | undefined>,
 
-		/** The virtual size of the image. */
+		/**
+		 * The virtual size of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VirtualSize: FormControl<number | null | undefined>,
 	}
 	export function CreateImageDetailFormGroup() {
@@ -2049,7 +2407,10 @@ export namespace MyNS {
 
 	export interface ImageInfo {
 
-		/** The time when your container image was created. */
+		/**
+		 * The time when your container image was created.
+		 * Type: float
+		 */
 		Created?: number | null;
 
 		/** The unique identifier representing a container image. */
@@ -2061,15 +2422,24 @@ export namespace MyNS {
 		/** The full path to the private Bluemix registry where the image is stored including the registry name, the organization namespace, and image tag. */
 		RepoTags?: Array<string>;
 
-		/** The real size of the container image. */
+		/**
+		 * The real size of the container image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Size?: number | null;
 
-		/** The virtual size of the container image. */
+		/**
+		 * The virtual size of the container image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VirtualSize?: number | null;
 	}
 	export interface ImageInfoFormProperties {
 
-		/** The time when your container image was created. */
+		/**
+		 * The time when your container image was created.
+		 * Type: float
+		 */
 		Created: FormControl<number | null | undefined>,
 
 		/** The unique identifier representing a container image. */
@@ -2078,10 +2448,16 @@ export namespace MyNS {
 		/** The name of your container image. */
 		Image: FormControl<string | null | undefined>,
 
-		/** The real size of the container image. */
+		/**
+		 * The real size of the container image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Size: FormControl<number | null | undefined>,
 
-		/** The virtual size of the container image. */
+		/**
+		 * The virtual size of the container image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VirtualSize: FormControl<number | null | undefined>,
 	}
 	export function CreateImageInfoFormGroup() {
@@ -2126,7 +2502,10 @@ export namespace MyNS {
 		/** Private IP address of the container in IPv6 format. IBM Containers only supports IPv4 format. This attribute is returned as empty. */
 		GlobalIPv6Address?: string | null;
 
-		/** Not supported by IBM Containers, empty string. */
+		/**
+		 * Not supported by IBM Containers, empty string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		GlobalIPv6PrefixLen?: number | null;
 
 		/** Specific configurations for the network driver. */
@@ -2161,7 +2540,10 @@ export namespace MyNS {
 		/** Private IP address of the container in IPv6 format. IBM Containers only supports IPv4 format. This attribute is returned as empty. */
 		GlobalIPv6Address: FormControl<string | null | undefined>,
 
-		/** Not supported by IBM Containers, empty string. */
+		/**
+		 * Not supported by IBM Containers, empty string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		GlobalIPv6PrefixLen: FormControl<number | null | undefined>,
 
 		/** Specific configurations for the network driver. */
@@ -2212,6 +2594,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		IpAddress: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IpPrefixLen?: number | null;
 
 		/** The MAC address that was assigned to the container. */
@@ -2243,6 +2627,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		IpAddress: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IpPrefixLen: FormControl<number | null | undefined>,
 
 		/** The MAC address that was assigned to the container. */
@@ -2724,6 +3110,7 @@ export namespace MyNS {
 		 * Post containers/{name_or_id}/restart
 		 * @param {string} name_or_id The unique identifier or name of the container that you want to restart. Run `cf ic ps` or call the `GET /containers/json` endpoint to review all containers in your space.
 		 * @param {number} t The number of seconds to wait before the container is restarted. For example, if you want a container to restart after 10 seconds, enter `t=10`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Containers_name_or_idRestartPostByT(name_or_id: string, t: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2747,6 +3134,7 @@ export namespace MyNS {
 		 * Post containers/{name_or_id}/stop
 		 * @param {string} name_or_id The unique identifier or name of the container that you want to stop. Run `cf ic ps` or call the `GET /containers/json` endpoint to review the containers in your space that are currently in a running state.
 		 * @param {number} t The number of seconds to wait before the container is stopped. For example, if you want a container to stop after 10 seconds, enter `t=10`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Containers_name_or_idStopPostByT(name_or_id: string, t: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

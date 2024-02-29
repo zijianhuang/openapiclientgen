@@ -130,9 +130,16 @@ namespace MyNS
 		/// Returns the current pricing plan setting for an Application Insights component.
 		/// ComponentCurrentPricingPlan_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components/{resourceName}/pricingPlans/current
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the Application Insights component resource.</param>
 		/// <returns>An Application Insights component pricing plan definition.</returns>
 		public async Task<ApplicationInsightsComponentPricingPlan> ComponentCurrentPricingPlan_GetAsync(string resourceGroupName, string api_version, string subscriptionId, string resourceName)
@@ -162,9 +169,16 @@ namespace MyNS
 		/// Replace current pricing plan for an Application Insights component.
 		/// ComponentCurrentPricingPlan_CreateAndUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components/{resourceName}/pricingPlans/current
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the Application Insights component resource.</param>
 		/// <param name="requestBody">Properties that need to be specified to update current pricing plan for an Application Insights component.</param>
 		/// <returns>Successful request when updating billing features for an Application Insights component. The updated current billing features are returned.</returns>
@@ -202,9 +216,16 @@ namespace MyNS
 		/// Update current pricing plan for an Application Insights component.
 		/// ComponentCurrentPricingPlan_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/components/{resourceName}/pricingPlans/current
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the Application Insights component resource.</param>
 		/// <param name="requestBody">Properties that need to be specified to update current pricing plan for an Application Insights component.</param>
 		/// <returns>Successful request when updating billing features for an Application Insights component. The updated current billing features are returned.</returns>

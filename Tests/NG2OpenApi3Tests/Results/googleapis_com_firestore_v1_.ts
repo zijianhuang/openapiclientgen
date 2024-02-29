@@ -143,7 +143,10 @@ export namespace MyNS {
 		/** A bytes value. Must not exceed 1 MiB - 89 bytes. Only the first 1,500 bytes are considered by queries. */
 		bytesValue?: string | null;
 
-		/** A double value. */
+		/**
+		 * A double value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
@@ -177,7 +180,10 @@ export namespace MyNS {
 		/** A bytes value. Must not exceed 1 MiB - 89 bytes. Only the first 1,500 bytes are considered by queries. */
 		bytesValue: FormControl<string | null | undefined>,
 
-		/** A double value. */
+		/**
+		 * A double value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** An integer value. */
@@ -230,20 +236,32 @@ export namespace MyNS {
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLng {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface LatLngFormProperties {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLatLngFormGroup() {
@@ -650,7 +668,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -663,7 +684,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -746,7 +770,10 @@ export namespace MyNS {
 		/** The bytes that encode the bit sequence. May have a length of zero. */
 		bitmap?: string | null;
 
-		/** The number of bits of the last byte in `bitmap` to ignore as "padding". If the length of `bitmap` is zero, then this value must be `0`. Otherwise, this value must be between 0 and 7, inclusive. */
+		/**
+		 * The number of bits of the last byte in `bitmap` to ignore as "padding". If the length of `bitmap` is zero, then this value must be `0`. Otherwise, this value must be between 0 and 7, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		padding?: number | null;
 	}
 
@@ -756,7 +783,10 @@ export namespace MyNS {
 		/** The bytes that encode the bit sequence. May have a length of zero. */
 		bitmap: FormControl<string | null | undefined>,
 
-		/** The number of bits of the last byte in `bitmap` to ignore as "padding". If the length of `bitmap` is zero, then this value must be `0`. Otherwise, this value must be between 0 and 7, inclusive. */
+		/**
+		 * The number of bits of the last byte in `bitmap` to ignore as "padding". If the length of `bitmap` is zero, then this value must be `0`. Otherwise, this value must be between 0 and 7, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		padding: FormControl<number | null | undefined>,
 	}
 	export function CreateBitSequenceFormGroup() {
@@ -774,14 +804,20 @@ export namespace MyNS {
 		/** A sequence of bits, encoded in a byte array. Each byte in the `bitmap` byte array stores 8 bits of the sequence. The only exception is the last byte, which may store 8 _or fewer_ bits. The `padding` defines the number of bits of the last byte to be ignored as "padding". The values of these "padding" bits are unspecified and must be ignored. To retrieve the first bit, bit 0, calculate: `(bitmap[0] & 0x01) != 0`. To retrieve the second bit, bit 1, calculate: `(bitmap[0] & 0x02) != 0`. To retrieve the third bit, bit 2, calculate: `(bitmap[0] & 0x04) != 0`. To retrieve the fourth bit, bit 3, calculate: `(bitmap[0] & 0x08) != 0`. To retrieve bit n, calculate: `(bitmap[n / 8] & (0x01 << (n % 8))) != 0`. The "size" of a `BitSequence` (the number of bits it contains) is calculated by this formula: `(bitmap.length * 8) - padding`. */
 		bits?: BitSequence;
 
-		/** The number of hashes used by the algorithm. */
+		/**
+		 * The number of hashes used by the algorithm.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hashCount?: number | null;
 	}
 
 	/** A bloom filter (https://en.wikipedia.org/wiki/Bloom_filter). The bloom filter hashes the entries with MD5 and treats the resulting 128-bit hash as 2 distinct 64-bit hash values, interpreted as unsigned integers using 2's complement encoding. These two hash values, named `h1` and `h2`, are then used to compute the `hash_count` hash values using the formula, starting at `i=0`: h(i) = h1 + (i * h2) These resulting values are then taken modulo the number of bits in the bloom filter to get the bits of the bloom filter to test for the given entry. */
 	export interface BloomFilterFormProperties {
 
-		/** The number of hashes used by the algorithm. */
+		/**
+		 * The number of hashes used by the algorithm.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hashCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBloomFilterFormGroup() {
@@ -1115,10 +1151,16 @@ export namespace MyNS {
 	/** A digest of all the documents that match a given target. */
 	export interface ExistenceFilter {
 
-		/** The total count of documents that match target_id. If different from the count of documents in the client that match, the client must manually determine which documents no longer match the target. The client can use the `unchanged_names` bloom filter to assist with this determination by testing ALL the document names against the filter; if the document name is NOT in the filter, it means the document no longer matches the target. */
+		/**
+		 * The total count of documents that match target_id. If different from the count of documents in the client that match, the client must manually determine which documents no longer match the target. The client can use the `unchanged_names` bloom filter to assist with this determination by testing ALL the document names against the filter; if the document name is NOT in the filter, it means the document no longer matches the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** The target ID to which this filter applies. */
+		/**
+		 * The target ID to which this filter applies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetId?: number | null;
 
 		/** A bloom filter (https://en.wikipedia.org/wiki/Bloom_filter). The bloom filter hashes the entries with MD5 and treats the resulting 128-bit hash as 2 distinct 64-bit hash values, interpreted as unsigned integers using 2's complement encoding. These two hash values, named `h1` and `h2`, are then used to compute the `hash_count` hash values using the formula, starting at `i=0`: h(i) = h1 + (i * h2) These resulting values are then taken modulo the number of bits in the bloom filter to get the bits of the bloom filter to test for the given entry. */
@@ -1128,10 +1170,16 @@ export namespace MyNS {
 	/** A digest of all the documents that match a given target. */
 	export interface ExistenceFilterFormProperties {
 
-		/** The total count of documents that match target_id. If different from the count of documents in the client that match, the client must manually determine which documents no longer match the target. The client can use the `unchanged_names` bloom filter to assist with this determination by testing ALL the document names against the filter; if the document name is NOT in the filter, it means the document no longer matches the target. */
+		/**
+		 * The total count of documents that match target_id. If different from the count of documents in the client that match, the client must manually determine which documents no longer match the target. The client can use the `unchanged_names` bloom filter to assist with this determination by testing ALL the document names against the filter; if the document name is NOT in the filter, it means the document no longer matches the target.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The target ID to which this filter applies. */
+		/**
+		 * The target ID to which this filter applies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetId: FormControl<number | null | undefined>,
 	}
 	export function CreateExistenceFilterFormGroup() {
@@ -1805,7 +1853,10 @@ export namespace MyNS {
 	/** The index configuration to support vector search operations */
 	export interface GoogleFirestoreAdminV1VectorConfig {
 
-		/** Required. The vector dimension this configuration applies to. The resulting index will only include vectors of this dimension, and can be used for vector search with the same dimension. */
+		/**
+		 * Required. The vector dimension this configuration applies to. The resulting index will only include vectors of this dimension, and can be used for vector search with the same dimension.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dimension?: number | null;
 
 		/** An index that stores vectors in a flat data structure, and supports exhaustive search. */
@@ -1815,7 +1866,10 @@ export namespace MyNS {
 	/** The index configuration to support vector search operations */
 	export interface GoogleFirestoreAdminV1VectorConfigFormProperties {
 
-		/** Required. The vector dimension this configuration applies to. The resulting index will only include vectors of this dimension, and can be used for vector search with the same dimension. */
+		/**
+		 * Required. The vector dimension this configuration applies to. The resulting index will only include vectors of this dimension, and can be used for vector search with the same dimension.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dimension: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleFirestoreAdminV1VectorConfigFormGroup() {
@@ -2399,7 +2453,10 @@ export namespace MyNS {
 	/** The request for Firestore.ListCollectionIds. */
 	export interface ListCollectionIdsRequest {
 
-		/** The maximum number of results to return. */
+		/**
+		 * The maximum number of results to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** A page token. Must be a value from ListCollectionIdsResponse. */
@@ -2412,7 +2469,10 @@ export namespace MyNS {
 	/** The request for Firestore.ListCollectionIds. */
 	export interface ListCollectionIdsRequestFormProperties {
 
-		/** The maximum number of results to return. */
+		/**
+		 * The maximum number of results to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** A page token. Must be a value from ListCollectionIdsResponse. */
@@ -2561,7 +2621,10 @@ export namespace MyNS {
 		/** Labels associated with this target change. */
 		labels?: {[id: string]: string };
 
-		/** The ID of a target to remove from this stream. */
+		/**
+		 * The ID of a target to remove from this stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		removeTarget?: number | null;
 	}
 
@@ -2571,7 +2634,10 @@ export namespace MyNS {
 		/** Labels associated with this target change. */
 		labels: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** The ID of a target to remove from this stream. */
+		/**
+		 * The ID of a target to remove from this stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		removeTarget: FormControl<number | null | undefined>,
 	}
 	export function CreateListenRequestFormGroup() {
@@ -2589,7 +2655,10 @@ export namespace MyNS {
 		/** A target specified by a set of documents names. */
 		documents?: DocumentsTarget;
 
-		/** The number of documents that last matched the query at the resume token or read time. This value is only relevant when a `resume_type` is provided. This value being present and greater than zero signals that the client wants `ExistenceFilter.unchanged_names` to be included in the response. */
+		/**
+		 * The number of documents that last matched the query at the resume token or read time. This value is only relevant when a `resume_type` is provided. This value being present and greater than zero signals that the client wants `ExistenceFilter.unchanged_names` to be included in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedCount?: number | null;
 
 		/** If the target should be removed once it is current and consistent. */
@@ -2604,14 +2673,20 @@ export namespace MyNS {
 		/** A resume token from a prior TargetChange for an identical target. Using a resume token with a different target is unsupported and may fail. */
 		resumeToken?: string | null;
 
-		/** The target ID that identifies the target on the stream. Must be a positive number and non-zero. If `target_id` is 0 (or unspecified), the server will assign an ID for this target and return that in a `TargetChange::ADD` event. Once a target with `target_id=0` is added, all subsequent targets must also have `target_id=0`. If an `AddTarget` request with `target_id != 0` is sent to the server after a target with `target_id=0` is added, the server will immediately send a response with a `TargetChange::Remove` event. Note that if the client sends multiple `AddTarget` requests without an ID, the order of IDs returned in `TargetChage.target_ids` are undefined. Therefore, clients should provide a target ID instead of relying on the server to assign one. If `target_id` is non-zero, there must not be an existing active target on this stream with the same ID. */
+		/**
+		 * The target ID that identifies the target on the stream. Must be a positive number and non-zero. If `target_id` is 0 (or unspecified), the server will assign an ID for this target and return that in a `TargetChange::ADD` event. Once a target with `target_id=0` is added, all subsequent targets must also have `target_id=0`. If an `AddTarget` request with `target_id != 0` is sent to the server after a target with `target_id=0` is added, the server will immediately send a response with a `TargetChange::Remove` event. Note that if the client sends multiple `AddTarget` requests without an ID, the order of IDs returned in `TargetChage.target_ids` are undefined. Therefore, clients should provide a target ID instead of relying on the server to assign one. If `target_id` is non-zero, there must not be an existing active target on this stream with the same ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetId?: number | null;
 	}
 
 	/** A specification of a set of documents to listen to. */
 	export interface TargetFormProperties {
 
-		/** The number of documents that last matched the query at the resume token or read time. This value is only relevant when a `resume_type` is provided. This value being present and greater than zero signals that the client wants `ExistenceFilter.unchanged_names` to be included in the response. */
+		/**
+		 * The number of documents that last matched the query at the resume token or read time. This value is only relevant when a `resume_type` is provided. This value being present and greater than zero signals that the client wants `ExistenceFilter.unchanged_names` to be included in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedCount: FormControl<number | null | undefined>,
 
 		/** If the target should be removed once it is current and consistent. */
@@ -2623,7 +2698,10 @@ export namespace MyNS {
 		/** A resume token from a prior TargetChange for an identical target. Using a resume token with a different target is unsupported and may fail. */
 		resumeToken: FormControl<string | null | undefined>,
 
-		/** The target ID that identifies the target on the stream. Must be a positive number and non-zero. If `target_id` is 0 (or unspecified), the server will assign an ID for this target and return that in a `TargetChange::ADD` event. Once a target with `target_id=0` is added, all subsequent targets must also have `target_id=0`. If an `AddTarget` request with `target_id != 0` is sent to the server after a target with `target_id=0` is added, the server will immediately send a response with a `TargetChange::Remove` event. Note that if the client sends multiple `AddTarget` requests without an ID, the order of IDs returned in `TargetChage.target_ids` are undefined. Therefore, clients should provide a target ID instead of relying on the server to assign one. If `target_id` is non-zero, there must not be an existing active target on this stream with the same ID. */
+		/**
+		 * The target ID that identifies the target on the stream. Must be a positive number and non-zero. If `target_id` is 0 (or unspecified), the server will assign an ID for this target and return that in a `TargetChange::ADD` event. Once a target with `target_id=0` is added, all subsequent targets must also have `target_id=0`. If an `AddTarget` request with `target_id != 0` is sent to the server after a target with `target_id=0` is added, the server will immediately send a response with a `TargetChange::Remove` event. Note that if the client sends multiple `AddTarget` requests without an ID, the order of IDs returned in `TargetChage.target_ids` are undefined. Therefore, clients should provide a target ID instead of relying on the server to assign one. If `target_id` is non-zero, there must not be an existing active target on this stream with the same ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetId: FormControl<number | null | undefined>,
 	}
 	export function CreateTargetFormGroup() {
@@ -2671,10 +2749,16 @@ export namespace MyNS {
 		/** The collections to query. */
 		from?: Array<CollectionSelector>;
 
-		/** The maximum number of results to return. Applies after all other constraints. Requires: * The value must be greater than or equal to zero if specified. */
+		/**
+		 * The maximum number of results to return. Applies after all other constraints. Requires: * The value must be greater than or equal to zero if specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
-		/** The number of documents to skip before returning the first result. This applies after the constraints specified by the `WHERE`, `START AT`, & `END AT` but before the `LIMIT` clause. Requires: * The value must be greater than or equal to zero if specified. */
+		/**
+		 * The number of documents to skip before returning the first result. This applies after the constraints specified by the `WHERE`, `START AT`, & `END AT` but before the `LIMIT` clause. Requires: * The value must be greater than or equal to zero if specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The order to apply to the query results. Firestore allows callers to provide a full ordering, a partial ordering, or no ordering at all. In all cases, Firestore guarantees a stable ordering through the following rules: * The `order_by` is required to reference all fields used with an inequality filter. * All fields that are required to be in the `order_by` but are not already present are appended in lexicographical ordering of the field name. * If an order on `__name__` is not specified, it is appended by default. Fields are appended with the same sort direction as the last order specified, or 'ASCENDING' if no order was specified. For example: * `ORDER BY a` becomes `ORDER BY a ASC, __name__ ASC` * `ORDER BY a DESC` becomes `ORDER BY a DESC, __name__ DESC` * `WHERE a > 1` becomes `WHERE a > 1 ORDER BY a ASC, __name__ ASC` * `WHERE __name__ > ... AND a > 1` becomes `WHERE __name__ > ... AND a > 1 ORDER BY a ASC, __name__ ASC` */
@@ -2693,10 +2777,16 @@ export namespace MyNS {
 	/** A Firestore query. */
 	export interface StructuredQueryFormProperties {
 
-		/** The maximum number of results to return. Applies after all other constraints. Requires: * The value must be greater than or equal to zero if specified. */
+		/**
+		 * The maximum number of results to return. Applies after all other constraints. Requires: * The value must be greater than or equal to zero if specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** The number of documents to skip before returning the first result. This applies after the constraints specified by the `WHERE`, `START AT`, & `END AT` but before the `LIMIT` clause. Requires: * The value must be greater than or equal to zero if specified. */
+		/**
+		 * The number of documents to skip before returning the first result. This applies after the constraints specified by the `WHERE`, `START AT`, & `END AT` but before the `LIMIT` clause. Requires: * The value must be greater than or equal to zero if specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 	}
 	export function CreateStructuredQueryFormGroup() {
@@ -2826,7 +2916,10 @@ export namespace MyNS {
 	/** The request for Firestore.PartitionQuery. */
 	export interface PartitionQueryRequest {
 
-		/** The maximum number of partitions to return in this call, subject to `partition_count`. For example, if `partition_count` = 10 and `page_size` = 8, the first call to PartitionQuery will return up to 8 partitions and a `next_page_token` if more results exist. A second call to PartitionQuery will return up to 2 partitions, to complete the total of 10 specified in `partition_count`. */
+		/**
+		 * The maximum number of partitions to return in this call, subject to `partition_count`. For example, if `partition_count` = 10 and `page_size` = 8, the first call to PartitionQuery will return up to 8 partitions and a `next_page_token` if more results exist. A second call to PartitionQuery will return up to 2 partitions, to complete the total of 10 specified in `partition_count`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** The `next_page_token` value returned from a previous call to PartitionQuery that may be used to get an additional set of results. There are no ordering guarantees between sets of results. Thus, using multiple sets of results will require merging the different result sets. For example, two subsequent calls using a page_token may return: * cursor B, cursor M, cursor Q * cursor A, cursor U, cursor W To obtain a complete result set ordered with respect to the results of the query supplied to PartitionQuery, the results sets should be merged: cursor A, cursor B, cursor M, cursor Q, cursor U, cursor W */
@@ -2845,7 +2938,10 @@ export namespace MyNS {
 	/** The request for Firestore.PartitionQuery. */
 	export interface PartitionQueryRequestFormProperties {
 
-		/** The maximum number of partitions to return in this call, subject to `partition_count`. For example, if `partition_count` = 10 and `page_size` = 8, the first call to PartitionQuery will return up to 8 partitions and a `next_page_token` if more results exist. A second call to PartitionQuery will return up to 2 partitions, to complete the total of 10 specified in `partition_count`. */
+		/**
+		 * The maximum number of partitions to return in this call, subject to `partition_count`. For example, if `partition_count` = 10 and `page_size` = 8, the first call to PartitionQuery will return up to 8 partitions and a `next_page_token` if more results exist. A second call to PartitionQuery will return up to 2 partitions, to complete the total of 10 specified in `partition_count`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** The `next_page_token` value returned from a previous call to PartitionQuery that may be used to get an additional set of results. There are no ordering guarantees between sets of results. Thus, using multiple sets of results will require merging the different result sets. For example, two subsequent calls using a page_token may return: * cursor B, cursor M, cursor Q * cursor A, cursor U, cursor W To obtain a complete result set ordered with respect to the results of the query supplied to PartitionQuery, the results sets should be merged: cursor A, cursor B, cursor M, cursor Q, cursor U, cursor W */
@@ -3044,7 +3140,10 @@ export namespace MyNS {
 		/** The time at which the document was read. This may be monotonically increasing; in this case, the previous documents in the result stream are guaranteed not to have changed between their `read_time` and this one. If the query returns no results, a response with `read_time` and no `document` will be sent, and this represents the time at which the query was run. */
 		readTime?: string | null;
 
-		/** The number of results that have been skipped due to an offset between the last response and the current response. */
+		/**
+		 * The number of results that have been skipped due to an offset between the last response and the current response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedResults?: number | null;
 
 		/** The transaction that was started as part of this request. Can only be set in the first response, and only if RunQueryRequest.new_transaction was set in the request. If set, no other fields will be set in this response. */
@@ -3060,7 +3159,10 @@ export namespace MyNS {
 		/** The time at which the document was read. This may be monotonically increasing; in this case, the previous documents in the result stream are guaranteed not to have changed between their `read_time` and this one. If the query returns no results, a response with `read_time` and no `document` will be sent, and this represents the time at which the query was run. */
 		readTime: FormControl<string | null | undefined>,
 
-		/** The number of results that have been skipped due to an offset between the last response and the current response. */
+		/**
+		 * The number of results that have been skipped due to an offset between the last response and the current response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedResults: FormControl<number | null | undefined>,
 
 		/** The transaction that was started as part of this request. Can only be set in the first response, and only if RunQueryRequest.new_transaction was set in the request. If set, no other fields will be set in this response. */
@@ -3272,6 +3374,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -3285,6 +3388,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -3389,6 +3493,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. A parent name of the form `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}`
 		 * @param {string} filter The filter to apply to list results. Currently, FirestoreAdmin.ListFields only supports listing fields that have been explicitly overridden. To issue this query, call FirestoreAdmin.ListFields with a filter that includes `indexConfig.usesAncestorConfig:false` .
 		 * @param {number} pageSize The number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, returned from a previous call to FirestoreAdmin.ListFields, that may be used to get the next page of results.
 		 * @return {GoogleFirestoreAdminV1ListFieldsResponse} Successful response
 		 */
@@ -3402,6 +3507,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. A parent name of the form `projects/{project_id}/databases/{database_id}/collectionGroups/{collection_id}`
 		 * @param {string} filter The filter to apply to list results.
 		 * @param {number} pageSize The number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, returned from a previous call to FirestoreAdmin.ListIndexes, that may be used to get the next page of results.
 		 * @return {GoogleFirestoreAdminV1ListIndexesResponse} Successful response
 		 */
@@ -3427,6 +3533,7 @@ export namespace MyNS {
 		 * @param {Array<string>} mask_fieldPaths The list of field paths in the mask. See Document.fields for a field path syntax reference.
 		 * @param {string} orderBy Optional. The optional ordering of the documents to return. For example: `priority desc, __name__ desc`. This mirrors the `ORDER BY` used in Firestore queries but in a string representation. When absent, documents are ordered based on `__name__ ASC`.
 		 * @param {number} pageSize Optional. The maximum number of documents to return in a single response. Firestore may return fewer than this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListDocuments` response. Provide this to retrieve the subsequent page. When paginating, all other parameters (with the exception of `page_size`) must match the values set in the request that generated the page token.
 		 * @param {string} readTime Perform the read at the provided time. This must be a microsecond precision timestamp within the past one hour, or if Point-in-Time Recovery is enabled, can additionally be a whole minute timestamp within the past 7 days.
 		 * @param {boolean} showMissing If the list should show missing documents. A document is missing if it does not exist, but there are sub-documents nested underneath it. When true, such missing documents will be returned with a key but will not have fields, `create_time`, or `update_time` set. Requests with `show_missing` may not specify `where` or `order_by`.

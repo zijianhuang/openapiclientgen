@@ -215,6 +215,8 @@ export namespace MyNS {
 
 		/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
 		dateValue?: Date;
+
+		/** Type: double */
 		doubleValue?: number | null;
 		integerValue?: string | null;
 		stringValue?: string | null;
@@ -224,6 +226,8 @@ export namespace MyNS {
 	/** Definition of a single value with generic type. */
 	export interface ValueFormProperties {
 		booleanValue: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		doubleValue: FormControl<number | null | undefined>,
 		integerValue: FormControl<string | null | undefined>,
 		stringValue: FormControl<string | null | undefined>,
@@ -244,26 +248,44 @@ export namespace MyNS {
 	/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
 	export interface Date {
 
-		/** Day of month. Must be from 1 to 31 and valid for the year and month. */
+		/**
+		 * Day of month. Must be from 1 to 31 and valid for the year and month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of date. Must be from 1 to 12. */
+		/**
+		 * Month of date. Must be from 1 to 12.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of date. Must be from 1 to 9999. */
+		/**
+		 * Year of date. Must be from 1 to 9999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole calendar date, for example a date of birth. The time of day and time zone are either specified elsewhere or are not significant. The date is relative to the [Proleptic Gregorian Calendar](https://en.wikipedia.org/wiki/Proleptic_Gregorian_calendar). The date must be a valid calendar date between the year 1 and 9999. */
 	export interface DateFormProperties {
 
-		/** Day of month. Must be from 1 to 31 and valid for the year and month. */
+		/**
+		 * Day of month. Must be from 1 to 31 and valid for the year and month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of date. Must be from 1 to 12. */
+		/**
+		 * Month of date. Must be from 1 to 12.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of date. Must be from 1 to 9999. */
+		/**
+		 * Year of date. Must be from 1 to 9999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -467,13 +489,19 @@ export namespace MyNS {
 	export interface QueryCountByStatus {
 		count?: string | null;
 
-		/** This represents the http status code. */
+		/**
+		 * This represents the http status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 	export interface QueryCountByStatusFormProperties {
 		count: FormControl<string | null | undefined>,
 
-		/** This represents the http status code. */
+		/**
+		 * This represents the http status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryCountByStatusFormGroup() {
@@ -2169,14 +2197,20 @@ export namespace MyNS {
 	/** Metadata about the NLP interpretation of the query. */
 	export interface EnterpriseTopazSidekickNlpMetadata {
 
-		/** Confidence of the interpretation that generated this card. */
+		/**
+		 * Confidence of the interpretation that generated this card.
+		 * Type: float
+		 */
 		confidence?: number | null;
 	}
 
 	/** Metadata about the NLP interpretation of the query. */
 	export interface EnterpriseTopazSidekickNlpMetadataFormProperties {
 
-		/** Confidence of the interpretation that generated this card. */
+		/**
+		 * Confidence of the interpretation that generated this card.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseTopazSidekickNlpMetadataFormGroup() {
@@ -2196,7 +2230,10 @@ export namespace MyNS {
 		/** The priority to determine between objects that have the same start_time_ms The lower-value of priority == ranked higher. Max-priority = 0. Expected to be set for all types. */
 		priority?: EnterpriseTopazSidekickRankingParamsPriority | null;
 
-		/** The score of the card to be used to break priority-ties */
+		/**
+		 * The score of the card to be used to break priority-ties
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/** The span that this card will take in the stream Expected to be set when type is set to FLEXIBLE. */
@@ -2218,7 +2255,10 @@ export namespace MyNS {
 		/** The priority to determine between objects that have the same start_time_ms The lower-value of priority == ranked higher. Max-priority = 0. Expected to be set for all types. */
 		priority: FormControl<EnterpriseTopazSidekickRankingParamsPriority | null | undefined>,
 
-		/** The score of the card to be used to break priority-ties */
+		/**
+		 * The score of the card to be used to break priority-ties
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The span that this card will take in the stream Expected to be set when type is set to FLEXIBLE. */
@@ -2705,10 +2745,16 @@ export namespace MyNS {
 		/** Postal address of office/building. */
 		postalAddress?: string | null;
 
-		/** Total count of the profile owner's direct reports. */
+		/**
+		 * Total count of the profile owner's direct reports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDirectReportsCount?: number | null;
 
-		/** Total count of the profile owner's dotted-line reports. */
+		/**
+		 * Total count of the profile owner's dotted-line reports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDlrCount?: number | null;
 
 		/** The sum of all profile owner's reports and their own full-time-equivalents in ‰ (e.g. 1800 if one report is working 80% and profile owner 100%). */
@@ -2766,10 +2812,16 @@ export namespace MyNS {
 		/** Postal address of office/building. */
 		postalAddress: FormControl<string | null | undefined>,
 
-		/** Total count of the profile owner's direct reports. */
+		/**
+		 * Total count of the profile owner's direct reports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDirectReportsCount: FormControl<number | null | undefined>,
 
-		/** Total count of the profile owner's dotted-line reports. */
+		/**
+		 * Total count of the profile owner's dotted-line reports.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDlrCount: FormControl<number | null | undefined>,
 
 		/** The sum of all profile owner's reports and their own full-time-equivalents in ‰ (e.g. 1800 if one report is working 80% and profile owner 100%). */
@@ -2812,32 +2864,50 @@ export namespace MyNS {
 	/** Geo information used for rendering a map that shows the user's work location. */
 	export interface MapInfo {
 
-		/** Latitude in degrees */
+		/**
+		 * Latitude in degrees
+		 * Type: double
+		 */
 		lat?: number | null;
 
 		/** Message containing a string that is safe to use in URL contexts in DOM APIs and HTML documents, where the URL context does not refer to a resource that loads code. */
 		locationUrl?: SafeUrlProto;
 
-		/** Longitude in degrees */
+		/**
+		 * Longitude in degrees
+		 * Type: double
+		 */
 		long?: number | null;
 
 		/** MapTiles for the area around a user's work location */
 		mapTile?: Array<MapTile>;
 
-		/** The zoom level of the map. A constant zoom value of 18 is used for now to match the zoom of the map shown on a Moma Teams Profile page */
+		/**
+		 * The zoom level of the map. A constant zoom value of 18 is used for now to match the zoom of the map shown on a Moma Teams Profile page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zoom?: number | null;
 	}
 
 	/** Geo information used for rendering a map that shows the user's work location. */
 	export interface MapInfoFormProperties {
 
-		/** Latitude in degrees */
+		/**
+		 * Latitude in degrees
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude in degrees */
+		/**
+		 * Longitude in degrees
+		 * Type: double
+		 */
 		long: FormControl<number | null | undefined>,
 
-		/** The zoom level of the map. A constant zoom value of 18 is used for now to match the zoom of the map shown on a Moma Teams Profile page */
+		/**
+		 * The zoom level of the map. A constant zoom value of 18 is used for now to match the zoom of the map shown on a Moma Teams Profile page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zoom: FormControl<number | null | undefined>,
 	}
 	export function CreateMapInfoFormGroup() {
@@ -2856,20 +2926,32 @@ export namespace MyNS {
 		/** Message containing a string that is safe to use in URL contexts in DOM APIs and HTML documents, where the URL context does not refer to a resource that loads code. */
 		imageUrl?: SafeUrlProto;
 
-		/** Map tile x coordinate */
+		/**
+		 * Map tile x coordinate
+		 * Type: double
+		 */
 		tileX?: number | null;
 
-		/** Map tile y coordinate */
+		/**
+		 * Map tile y coordinate
+		 * Type: double
+		 */
 		tileY?: number | null;
 	}
 
 	/** Information used to render a map tile image in the proper location on a map. */
 	export interface MapTileFormProperties {
 
-		/** Map tile x coordinate */
+		/**
+		 * Map tile x coordinate
+		 * Type: double
+		 */
 		tileX: FormControl<number | null | undefined>,
 
-		/** Map tile y coordinate */
+		/**
+		 * Map tile y coordinate
+		 * Type: double
+		 */
 		tileY: FormControl<number | null | undefined>,
 	}
 	export function CreateMapTileFormGroup() {
@@ -3155,7 +3237,10 @@ export namespace MyNS {
 		/** Whether the card can be dismissed. */
 		isDismissible?: boolean | null;
 
-		/** Priority of the card, where 0 is the highest priority. */
+		/**
+		 * Priority of the card, where 0 is the highest priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 	}
 	export interface ThirdPartyGenericCardFormProperties {
@@ -3169,7 +3254,10 @@ export namespace MyNS {
 		/** Whether the card can be dismissed. */
 		isDismissible: FormControl<boolean | null | undefined>,
 
-		/** Priority of the card, where 0 is the highest priority. */
+		/**
+		 * Priority of the card, where 0 is the highest priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateThirdPartyGenericCardFormGroup() {
@@ -3247,7 +3335,10 @@ export namespace MyNS {
 	/** The enumeration value pair defines two things: a required string value and an optional integer value. The string value defines the necessary query term required to retrieve that item, such as *p0* for a priority item. The integer value determines the ranking of that string value relative to other enumerated values for the same property. For example, you might associate *p0* with *0* and define another enum pair such as *p1* and *1*. You must use the integer value in combination with ordered ranking to set the ranking of a given value relative to other enumerated values for the same property name. Here, a ranking order of DESCENDING for *priority* properties results in a ranking boost for items indexed with a value of *p0* compared to items indexed with a value of *p1*. Without a specified ranking order, the integer value has no effect on item ranking. */
 	export interface EnumValuePair {
 
-		/** The integer value of the EnumValuePair which must be non-negative. Optional. */
+		/**
+		 * The integer value of the EnumValuePair which must be non-negative. Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		integerValue?: number | null;
 
 		/** The string value of the EnumValuePair. The maximum length is 32 characters. */
@@ -3257,7 +3348,10 @@ export namespace MyNS {
 	/** The enumeration value pair defines two things: a required string value and an optional integer value. The string value defines the necessary query term required to retrieve that item, such as *p0* for a priority item. The integer value determines the ranking of that string value relative to other enumerated values for the same property. For example, you might associate *p0* with *0* and define another enum pair such as *p1* and *1*. You must use the integer value in combination with ordered ranking to set the ranking of a given value relative to other enumerated values for the same property name. Here, a ranking order of DESCENDING for *priority* properties results in a ranking boost for items indexed with a value of *p0* compared to items indexed with a value of *p1*. Without a specified ranking order, the integer value has no effect on item ranking. */
 	export interface EnumValuePairFormProperties {
 
-		/** The integer value of the EnumValuePair which must be non-negative. Optional. */
+		/**
+		 * The integer value of the EnumValuePair which must be non-negative. Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		integerValue: FormControl<number | null | undefined>,
 
 		/** The string value of the EnumValuePair. The maximum length is 32 characters. */
@@ -3327,13 +3421,19 @@ export namespace MyNS {
 	/** A bucket in a facet is the basic unit of operation. A bucket can comprise either a single value OR a contiguous range of values, depending on the type of the field bucketed. FacetBucket is currently used only for returning the response object. */
 	export interface FacetBucket {
 
-		/** Number of results that match the bucket value. Counts are only returned for searches when count accuracy is ensured. Cloud Search does not guarantee facet counts for any query and facet counts might be present only intermittently, even for identical queries. Do not build dependencies on facet count existence; instead use facet ount percentages which are always returned. */
+		/**
+		 * Number of results that match the bucket value. Counts are only returned for searches when count accuracy is ensured. Cloud Search does not guarantee facet counts for any query and facet counts might be present only intermittently, even for identical queries. Do not build dependencies on facet count existence; instead use facet ount percentages which are always returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** A generic way of expressing filters in a query, which supports two approaches: **1. Setting a ValueFilter.** The name must match an operator_name defined in the schema for your data source. **2. Setting a CompositeFilter.** The filters are evaluated using the logical operator. The top-level operators can only be either an AND or a NOT. AND can appear only at the top-most level. OR can appear only under a top-level AND. */
 		filter?: Filter;
 
-		/** Percent of results that match the bucket value. The returned value is between (0-100], and is rounded down to an integer if fractional. If the value is not explicitly returned, it represents a percentage value that rounds to 0. Percentages are returned for all searches, but are an estimate. Because percentages are always returned, you should render percentages instead of counts. */
+		/**
+		 * Percent of results that match the bucket value. The returned value is between (0-100], and is rounded down to an integer if fractional. If the value is not explicitly returned, it represents a percentage value that rounds to 0. Percentages are returned for all searches, but are an estimate. Because percentages are always returned, you should render percentages instead of counts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage?: number | null;
 
 		/** Definition of a single value with generic type. */
@@ -3343,10 +3443,16 @@ export namespace MyNS {
 	/** A bucket in a facet is the basic unit of operation. A bucket can comprise either a single value OR a contiguous range of values, depending on the type of the field bucketed. FacetBucket is currently used only for returning the response object. */
 	export interface FacetBucketFormProperties {
 
-		/** Number of results that match the bucket value. Counts are only returned for searches when count accuracy is ensured. Cloud Search does not guarantee facet counts for any query and facet counts might be present only intermittently, even for identical queries. Do not build dependencies on facet count existence; instead use facet ount percentages which are always returned. */
+		/**
+		 * Number of results that match the bucket value. Counts are only returned for searches when count accuracy is ensured. Cloud Search does not guarantee facet counts for any query and facet counts might be present only intermittently, even for identical queries. Do not build dependencies on facet count existence; instead use facet ount percentages which are always returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Percent of results that match the bucket value. The returned value is between (0-100], and is rounded down to an integer if fractional. If the value is not explicitly returned, it represents a percentage value that rounds to 0. Percentages are returned for all searches, but are an estimate. Because percentages are always returned, you should render percentages instead of counts. */
+		/**
+		 * Percent of results that match the bucket value. The returned value is between (0-100], and is rounded down to an integer if fractional. If the value is not explicitly returned, it represents a percentage value that rounds to 0. Percentages are returned for all searches, but are an estimate. Because percentages are always returned, you should render percentages instead of counts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateFacetBucketFormGroup() {
@@ -3364,7 +3470,10 @@ export namespace MyNS {
 		/** Used to specify integer faceting options. */
 		integerFacetingOptions?: IntegerFacetingOptions;
 
-		/** Maximum number of facet buckets that should be returned for this facet. Defaults to 10. Maximum value is 100. */
+		/**
+		 * Maximum number of facet buckets that should be returned for this facet. Defaults to 10. Maximum value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFacetBuckets?: number | null;
 
 		/** If object_type is set, only those objects of that type will be used to compute facets. If empty, then all objects will be used to compute facets. */
@@ -3380,7 +3489,10 @@ export namespace MyNS {
 	/** Specifies operators to return facet results for. There will be one FacetResult for every source_name/object_type/operator_name combination. */
 	export interface FacetOptionsFormProperties {
 
-		/** Maximum number of facet buckets that should be returned for this facet. Defaults to 10. Maximum value is 100. */
+		/**
+		 * Maximum number of facet buckets that should be returned for this facet. Defaults to 10. Maximum value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFacetBuckets: FormControl<number | null | undefined>,
 
 		/** If object_type is set, only those objects of that type will be used to compute facets. If empty, then all objects will be used to compute facets. */
@@ -4167,14 +4279,20 @@ export namespace MyNS {
 	/** Additional search quality metadata of the item. */
 	export interface SearchQualityMetadata {
 
-		/** An indication of the quality of the item, used to influence search quality. Value should be between 0.0 (lowest quality) and 1.0 (highest quality). The default value is 0.0. */
+		/**
+		 * An indication of the quality of the item, used to influence search quality. Value should be between 0.0 (lowest quality) and 1.0 (highest quality). The default value is 0.0.
+		 * Type: double
+		 */
 		quality?: number | null;
 	}
 
 	/** Additional search quality metadata of the item. */
 	export interface SearchQualityMetadataFormProperties {
 
-		/** An indication of the quality of the item, used to influence search quality. Value should be between 0.0 (lowest quality) and 1.0 (highest quality). The default value is 0.0. */
+		/**
+		 * An indication of the quality of the item, used to influence search quality. Value should be between 0.0 (lowest quality) and 1.0 (highest quality). The default value is 0.0.
+		 * Type: double
+		 */
 		quality: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchQualityMetadataFormGroup() {
@@ -4247,7 +4365,10 @@ export namespace MyNS {
 		/** Message that describes the error. The maximum allowable length of the message is 8192 characters. */
 		errorMessage?: string | null;
 
-		/** Error codes. Matches the definition of HTTP status codes. */
+		/**
+		 * Error codes. Matches the definition of HTTP status codes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpStatusCode?: number | null;
 
 		/** The type of error. */
@@ -4260,7 +4381,10 @@ export namespace MyNS {
 		/** Message that describes the error. The maximum allowable length of the message is 8192 characters. */
 		errorMessage: FormControl<string | null | undefined>,
 
-		/** Error codes. Matches the definition of HTTP status codes. */
+		/**
+		 * Error codes. Matches the definition of HTTP status codes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		httpStatusCode: FormControl<number | null | undefined>,
 
 		/** The type of error. */
@@ -4647,7 +4771,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -4660,7 +4787,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -5010,20 +5140,32 @@ export namespace MyNS {
 	/** Set search results crowding limits. Crowding is a situation in which multiple results from the same source or host "crowd out" other results, diminishing the quality of search for users. To foster better search quality and source diversity in search results, you can set a condition to reduce repetitive results by source. */
 	export interface SourceCrowdingConfig {
 
-		/** Maximum number of results allowed from a datasource in a result page as long as results from other sources are not exhausted. Value specified must not be negative. A default value is used if this value is equal to 0. To disable crowding, set the value greater than 100. */
+		/**
+		 * Maximum number of results allowed from a datasource in a result page as long as results from other sources are not exhausted. Value specified must not be negative. A default value is used if this value is equal to 0. To disable crowding, set the value greater than 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numResults?: number | null;
 
-		/** Maximum number of suggestions allowed from a source. No limits will be set on results if this value is less than or equal to 0. */
+		/**
+		 * Maximum number of suggestions allowed from a source. No limits will be set on results if this value is less than or equal to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numSuggestions?: number | null;
 	}
 
 	/** Set search results crowding limits. Crowding is a situation in which multiple results from the same source or host "crowd out" other results, diminishing the quality of search for users. To foster better search quality and source diversity in search results, you can set a condition to reduce repetitive results by source. */
 	export interface SourceCrowdingConfigFormProperties {
 
-		/** Maximum number of results allowed from a datasource in a result page as long as results from other sources are not exhausted. Value specified must not be negative. A default value is used if this value is equal to 0. To disable crowding, set the value greater than 100. */
+		/**
+		 * Maximum number of results allowed from a datasource in a result page as long as results from other sources are not exhausted. Value specified must not be negative. A default value is used if this value is equal to 0. To disable crowding, set the value greater than 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numResults: FormControl<number | null | undefined>,
 
-		/** Maximum number of suggestions allowed from a source. No limits will be set on results if this value is less than or equal to 0. */
+		/**
+		 * Maximum number of suggestions allowed from a source. No limits will be set on results if this value is less than or equal to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numSuggestions: FormControl<number | null | undefined>,
 	}
 	export function CreateSourceCrowdingConfigFormGroup() {
@@ -5101,20 +5243,32 @@ export namespace MyNS {
 	/** Matched range of a snippet [start, end). */
 	export interface MatchRange {
 
-		/** End of the match in the snippet. */
+		/**
+		 * End of the match in the snippet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end?: number | null;
 
-		/** Starting position of the match in the snippet. */
+		/**
+		 * Starting position of the match in the snippet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start?: number | null;
 	}
 
 	/** Matched range of a snippet [start, end). */
 	export interface MatchRangeFormProperties {
 
-		/** End of the match in the snippet. */
+		/**
+		 * End of the match in the snippet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** Starting position of the match in the snippet. */
+		/**
+		 * Starting position of the match in the snippet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateMatchRangeFormGroup() {
@@ -5724,7 +5878,10 @@ export namespace MyNS {
 		/** Shared request debug options for all cloudsearch RPC methods. */
 		debugOptions?: DebugOptions;
 
-		/** Maximum number of items to return. The maximum value is 100 and the default value is 20. */
+		/**
+		 * Maximum number of items to return. The maximum value is 100 and the default value is 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** Queue name to fetch items from. If unspecified, PollItems will fetch from 'default' queue. The maximum length is 100 characters. */
@@ -5738,7 +5895,10 @@ export namespace MyNS {
 		/** The name of connector making this call. Format: datasources/{source_id}/connectors/{ID} */
 		connectorName: FormControl<string | null | undefined>,
 
-		/** Maximum number of items to return. The maximum value is 100 and the default value is 20. */
+		/**
+		 * Maximum number of items to return. The maximum value is 100 and the default value is 20.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Queue name to fetch items from. If unspecified, PollItems will fetch from 'default' queue. The maximum length is 100 characters. */
@@ -6280,7 +6440,10 @@ export namespace MyNS {
 		dataSourceRestrictions?: Array<DataSourceRestriction>;
 		facetOptions?: Array<FacetOptions>;
 
-		/** Maximum number of search results to return in one page. Valid values are between 1 and 100, inclusive. Default value is 10. Minimum value is 50 when results beyond 2000 are requested. */
+		/**
+		 * Maximum number of search results to return in one page. Valid values are between 1 and 100, inclusive. Default value is 10. Minimum value is 50 when results beyond 2000 are requested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** The raw query string. See supported search operators in the [Narrow your search with operators](https://support.google.com/cloudsearch/answer/6172299) */
@@ -6293,20 +6456,29 @@ export namespace MyNS {
 		requestOptions?: RequestOptions;
 		sortOptions?: SortOptions;
 
-		/** Starting index of the results. */
+		/**
+		 * Starting index of the results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start?: number | null;
 	}
 
 	/** The search API request. */
 	export interface SearchRequestFormProperties {
 
-		/** Maximum number of search results to return in one page. Valid values are between 1 and 100, inclusive. Default value is 10. Minimum value is 50 when results beyond 2000 are requested. */
+		/**
+		 * Maximum number of search results to return in one page. Valid values are between 1 and 100, inclusive. Default value is 10. Minimum value is 50 when results beyond 2000 are requested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** The raw query string. See supported search operators in the [Narrow your search with operators](https://support.google.com/cloudsearch/answer/6172299) */
 		query: FormControl<string | null | undefined>,
 
-		/** Starting index of the results. */
+		/**
+		 * Starting index of the results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchRequestFormGroup() {
@@ -6688,6 +6860,7 @@ export namespace MyNS {
 		 * @param {string} parent The name of the identity source, in the following format: identitysources/{source_id}}
 		 * @param {boolean} debugOptions_enableDebugging If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
 		 * @param {number} pageSize Maximum number of items to fetch in a request. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListItemNamesForUnmappedIdentityResponse} Successful response
 		 */
@@ -6701,6 +6874,7 @@ export namespace MyNS {
 		 * @param {string} parent The name of the identity source, in the following format: identitysources/{source_id}
 		 * @param {boolean} debugOptions_enableDebugging If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
 		 * @param {number} pageSize Maximum number of items to fetch in a request. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @param {UnmappedIdentityResolutionStatusCode} resolutionStatusCode Limit users selection to this status.
 		 * @return {ListUnmappedIdentitiesResponse} Successful response
@@ -6743,6 +6917,7 @@ export namespace MyNS {
 		 * @param {string} connectorName The name of connector making this call. Format: datasources/{source_id}/connectors/{ID}
 		 * @param {boolean} debugOptions_enableDebugging If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
 		 * @param {number} pageSize Maximum number of items to fetch in a request. The max value is 1000 when brief is true. The max value is 10 if brief is false. The default value is 10
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListItemsResponse} Successful response
 		 */
@@ -6907,6 +7082,7 @@ export namespace MyNS {
 		 * Get v1/settings/datasources
 		 * @param {boolean} debugOptions_enableDebugging If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
 		 * @param {number} pageSize Maximum number of datasources to fetch in a request. The max value is 1000. The default value is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Starting index of the results.
 		 * @return {ListDataSourceResponse} Successful response
 		 */
@@ -6928,6 +7104,7 @@ export namespace MyNS {
 		 * Get v1/settings/searchapplications
 		 * @param {boolean} debugOptions_enableDebugging If you are asked by Google to help with debugging, set this field. Otherwise, ignore this field.
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any. The default value is 10
 		 * @return {ListSearchApplicationsResponse} Successful response
 		 */
@@ -7002,11 +7179,17 @@ export namespace MyNS {
 		 * Gets indexed item statistics aggreggated across all data sources. This API only returns statistics for previous dates; it doesn't return statistics for the current day. **Note:** This API requires a standard end user account to execute.
 		 * Get v1/stats/index
 		 * @param {number} fromDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetCustomerIndexStatsResponse} Successful response
 		 */
 		Cloudsearch_stats_getIndex(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<GetCustomerIndexStatsResponse> {
@@ -7018,11 +7201,17 @@ export namespace MyNS {
 		 * Get v1/stats/index/{name}
 		 * @param {string} name The resource id of the data source to retrieve statistics for, in the following format: "datasources/{source_id}"
 		 * @param {number} fromDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetDataSourceIndexStatsResponse} Successful response
 		 */
 		Cloudsearch_stats_index_datasources_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<GetDataSourceIndexStatsResponse> {
@@ -7033,11 +7222,17 @@ export namespace MyNS {
 		 * Get the query statistics for customer. **Note:** This API requires a standard end user account to execute.
 		 * Get v1/stats/query
 		 * @param {number} fromDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetCustomerQueryStatsResponse} Successful response
 		 */
 		Cloudsearch_stats_getQuery(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<GetCustomerQueryStatsResponse> {
@@ -7049,11 +7244,17 @@ export namespace MyNS {
 		 * Get v1/stats/query/{name}
 		 * @param {string} name The resource id of the search application query stats, in the following format: searchapplications/{application_id}
 		 * @param {number} fromDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetSearchApplicationQueryStatsResponse} Successful response
 		 */
 		Cloudsearch_stats_query_searchapplications_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<GetSearchApplicationQueryStatsResponse> {
@@ -7064,11 +7265,17 @@ export namespace MyNS {
 		 * Get search application stats for customer. **Note:** This API requires a standard end user account to execute.
 		 * Get v1/stats/searchapplication
 		 * @param {number} endDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} endDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetCustomerSearchApplicationStatsResponse} Successful response
 		 */
 		Cloudsearch_stats_getSearchapplication(endDate_day: number | null | undefined, endDate_month: number | null | undefined, endDate_year: number | null | undefined, startDate_day: number | null | undefined, startDate_month: number | null | undefined, startDate_year: number | null | undefined): Observable<GetCustomerSearchApplicationStatsResponse> {
@@ -7079,11 +7286,17 @@ export namespace MyNS {
 		 * Get the # of search sessions, % of successful sessions with a click query statistics for customer. **Note:** This API requires a standard end user account to execute.
 		 * Get v1/stats/session
 		 * @param {number} fromDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetCustomerSessionStatsResponse} Successful response
 		 */
 		Cloudsearch_stats_getSession(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<GetCustomerSessionStatsResponse> {
@@ -7095,11 +7308,17 @@ export namespace MyNS {
 		 * Get v1/stats/session/{name}
 		 * @param {string} name The resource id of the search application session stats, in the following format: searchapplications/{application_id}
 		 * @param {number} fromDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetSearchApplicationSessionStatsResponse} Successful response
 		 */
 		Cloudsearch_stats_session_searchapplications_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<GetSearchApplicationSessionStatsResponse> {
@@ -7110,11 +7329,17 @@ export namespace MyNS {
 		 * Get the users statistics for customer. **Note:** This API requires a standard end user account to execute.
 		 * Get v1/stats/user
 		 * @param {number} fromDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetCustomerUserStatsResponse} Successful response
 		 */
 		Cloudsearch_stats_getUser(fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<GetCustomerUserStatsResponse> {
@@ -7126,11 +7351,17 @@ export namespace MyNS {
 		 * Get v1/stats/user/{name}
 		 * @param {string} name The resource id of the search application session stats, in the following format: searchapplications/{application_id}
 		 * @param {number} fromDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fromDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_day Day of month. Must be from 1 to 31 and valid for the year and month.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_month Month of date. Must be from 1 to 12.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate_year Year of date. Must be from 1 to 9999.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetSearchApplicationUserStatsResponse} Successful response
 		 */
 		Cloudsearch_stats_user_searchapplications_get(name: string, fromDate_day: number | null | undefined, fromDate_month: number | null | undefined, fromDate_year: number | null | undefined, toDate_day: number | null | undefined, toDate_month: number | null | undefined, toDate_year: number | null | undefined): Observable<GetSearchApplicationUserStatsResponse> {
@@ -7153,6 +7384,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */

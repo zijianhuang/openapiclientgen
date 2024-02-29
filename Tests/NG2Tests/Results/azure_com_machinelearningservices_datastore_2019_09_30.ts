@@ -713,6 +713,7 @@ export namespace MyNS {
 		 * @param {Array<string>} dataStoreNames List of Datastore names.
 		 * @param {string} continuationToken The Continuation Token.
 		 * @param {number} count Count of Datastores to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeSecret Whether to include the datastore secret in the response.
 		 * @return {PaginatedDataStoreList} The list of Datastores are returned successfully.
 		 */

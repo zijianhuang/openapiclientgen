@@ -470,8 +470,8 @@ export namespace MyNS {
 
 		/**
 		 * UUID v4 used to identify the Pool
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		poolId?: string | null;
 
@@ -498,8 +498,8 @@ export namespace MyNS {
 
 		/**
 		 * UUID v4 used to identify the Pool
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		poolId: FormControl<string | null | undefined>,
 
@@ -780,8 +780,8 @@ export namespace MyNS {
 		/**
 		 * UUID v4 used to identify the MountTarget
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		fileSystemId: string;
 
@@ -790,8 +790,8 @@ export namespace MyNS {
 
 		/**
 		 * UUID v4 used to identify the MountTarget
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		mountTargetId?: string | null;
 
@@ -805,8 +805,8 @@ export namespace MyNS {
 		/**
 		 * UUID v4 used to identify the MountTarget
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		fileSystemId: FormControl<string | null | undefined>,
 
@@ -815,8 +815,8 @@ export namespace MyNS {
 
 		/**
 		 * UUID v4 used to identify the MountTarget
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		mountTargetId: FormControl<string | null | undefined>,
 
@@ -1147,8 +1147,8 @@ export namespace MyNS {
 
 		/**
 		 * UUID v4 used to identify the FileSystem
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		fileSystemId?: string | null;
 
@@ -1157,8 +1157,8 @@ export namespace MyNS {
 
 		/**
 		 * UUID v4 used to identify the Snapshot
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		snapshotId?: string | null;
 	}
@@ -1171,8 +1171,8 @@ export namespace MyNS {
 
 		/**
 		 * UUID v4 used to identify the FileSystem
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		fileSystemId: FormControl<string | null | undefined>,
 
@@ -1181,8 +1181,8 @@ export namespace MyNS {
 
 		/**
 		 * UUID v4 used to identify the Snapshot
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		snapshotId: FormControl<string | null | undefined>,
 	}
@@ -1290,16 +1290,16 @@ export namespace MyNS {
 
 		/**
 		 * Unique Baremetal Tenant Identifier.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		baremetalTenantId?: string | null;
 
 		/**
 		 * A unique file path for the volume. Used when creating mount targets
 		 * Required
-		 * Max length: 80
 		 * Min length: 1
+		 * Max length: 80
 		 */
 		creationToken: string;
 
@@ -1311,8 +1311,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique FileSystem Identifier.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		fileSystemId?: string | null;
 
@@ -1333,8 +1333,8 @@ export namespace MyNS {
 
 		/**
 		 * UUID v4 or resource identifier used to identify the Snapshot.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		snapshotId?: string | null;
 
@@ -1361,16 +1361,16 @@ export namespace MyNS {
 
 		/**
 		 * Unique Baremetal Tenant Identifier.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		baremetalTenantId: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique file path for the volume. Used when creating mount targets
 		 * Required
-		 * Max length: 80
 		 * Min length: 1
+		 * Max length: 80
 		 */
 		creationToken: FormControl<string | null | undefined>,
 
@@ -1382,8 +1382,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique FileSystem Identifier.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		fileSystemId: FormControl<string | null | undefined>,
 
@@ -1401,8 +1401,8 @@ export namespace MyNS {
 
 		/**
 		 * UUID v4 or resource identifier used to identify the Snapshot.
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		snapshotId: FormControl<string | null | undefined>,
 
@@ -1621,6 +1621,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {NetAppAccountList} OK
 		 */
@@ -1634,6 +1635,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {NetAppAccount} OK
@@ -1648,6 +1650,7 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {NetAppAccount} requestBody NetApp Account object supplied in the body of the operation.
@@ -1663,6 +1666,7 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {void} 
@@ -1677,6 +1681,7 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {NetAppAccountPatch} requestBody NetApp Account object supplied in the body of the operation.
@@ -1692,6 +1697,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {CapacityPoolList} OK
@@ -1706,8 +1712,10 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {CapacityPool} OK
 		 */
@@ -1721,8 +1729,10 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {CapacityPool} requestBody Capacity pool object supplied in the body of the operation.
 		 * @return {CapacityPool} OK - pool updated
@@ -1737,8 +1747,10 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {void} 
 		 */
@@ -1752,8 +1764,10 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {CapacityPoolPatch} requestBody Capacity pool object supplied in the body of the operation.
 		 * @return {CapacityPool} OK
@@ -1768,8 +1782,10 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {VolumeList} OK
 		 */
@@ -1783,9 +1799,12 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {Volume} OK
 		 */
@@ -1799,9 +1818,12 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {Volume} requestBody Volume object supplied in the body of the operation.
 		 * @return {Volume} Ok - volume updated
@@ -1816,9 +1838,12 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {void} 
 		 */
@@ -1832,9 +1857,12 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {VolumePatch} requestBody Volume object supplied in the body of the operation.
 		 * @return {Volume} OK
@@ -1849,9 +1877,12 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/authorizeReplication
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {AuthorizeRequest} requestBody Authorize request object supplied in the body of the operation.
 		 * @return {void} OK - terminal state
@@ -1866,9 +1897,12 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/breakReplication
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {void} OK - terminal state
 		 */
@@ -1882,9 +1916,12 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/deleteReplication
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {void} OK - terminal state
 		 */
@@ -1898,9 +1935,12 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/replicationStatus
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {ReplicationStatus} OK
 		 */
@@ -1914,9 +1954,12 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/resyncReplication
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {void} OK - terminal state
 		 */
@@ -1930,9 +1973,12 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/revert
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {VolumeRevert} requestBody Object for snapshot to revert supplied in the body of the operation.
 		 * @return {void} OK - terminal state
@@ -1947,9 +1993,12 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/snapshots
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {SnapshotsList} OK
 		 */
@@ -1963,9 +2012,12 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/snapshots/{snapshotName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} snapshotName The name of the mount target
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {Snapshot} OK
@@ -1980,9 +2032,12 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/snapshots/{snapshotName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} snapshotName The name of the mount target
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {Snapshot} requestBody Snapshot object supplied in the body of the operation.
@@ -1998,9 +2053,12 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/snapshots/{snapshotName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} snapshotName The name of the mount target
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @return {void} OK
@@ -2015,9 +2073,12 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.NetApp/netAppAccounts/{accountName}/capacityPools/{poolName}/volumes/{volumeName}/snapshots/{snapshotName}
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the NetApp account
 		 * @param {string} poolName The name of the capacity pool
+		 *     Min length: 1    Max length: 64
 		 * @param {string} volumeName The name of the volume
+		 *     Min length: 1    Max length: 64
 		 * @param {string} snapshotName The name of the mount target
 		 * @param {string} api_version Version of the API to be used with the client request.
 		 * @param {SnapshotPatch} requestBody Snapshot object supplied in the body of the operation.

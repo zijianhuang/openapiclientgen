@@ -7,8 +7,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Assistant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -32,8 +32,8 @@ export namespace MyNS {
 
 		/**
 		 * Reserved.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		latest_model_build_sid?: string | null;
 
@@ -48,8 +48,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Assistant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -63,8 +63,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Assistant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -88,8 +88,8 @@ export namespace MyNS {
 
 		/**
 		 * Reserved.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		latest_model_build_sid: FormControl<string | null | undefined>,
 
@@ -104,8 +104,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Assistant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -139,15 +139,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Defaults resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
@@ -161,15 +161,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Defaults resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
@@ -193,15 +193,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Dialogue resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
@@ -210,8 +210,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Dialogue resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -222,15 +222,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Dialogue resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
@@ -239,8 +239,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Dialogue resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -262,15 +262,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the FieldType resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
@@ -288,8 +288,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the FieldType resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -303,15 +303,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the FieldType resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
@@ -329,8 +329,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the FieldType resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -359,15 +359,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the FieldValue resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the FieldType associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
@@ -379,8 +379,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Field Type associated with the Field Value.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		field_type_sid?: string | null;
 
@@ -389,15 +389,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the FieldValue resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
 		/**
 		 * The word for which the field value is a synonym of.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		synonym_of?: string | null;
 
@@ -411,15 +411,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the FieldValue resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the FieldType associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
@@ -431,8 +431,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Field Type associated with the Field Value.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		field_type_sid: FormControl<string | null | undefined>,
 
@@ -441,15 +441,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the FieldValue resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The word for which the field value is a synonym of.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		synonym_of: FormControl<string | null | undefined>,
 
@@ -479,19 +479,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ModelBuild resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
-		/** The time in seconds it took to build the model. */
+		/**
+		 * The time in seconds it took to build the model.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		build_duration?: number | null;
 
 		/** The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format. */
@@ -500,13 +503,16 @@ export namespace MyNS {
 		/** The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format. */
 		date_updated?: Date | null;
 
-		/** If the `status` for the model build is `failed`, this value is a code to more information about the failure. This value will be null for all other statuses. See [error code dictionary](https://www.twilio.com/docs/api/errors) for a description of the error. */
+		/**
+		 * If the `status` for the model build is `failed`, this value is a code to more information about the failure. This value will be null for all other statuses. See [error code dictionary](https://www.twilio.com/docs/api/errors) for a description of the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code?: number | null;
 
 		/**
 		 * The unique string that we created to identify the ModelBuild resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Autopilotv1assistantmodel_buildStatus | null;
@@ -521,19 +527,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the ModelBuild resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
-		/** The time in seconds it took to build the model. */
+		/**
+		 * The time in seconds it took to build the model.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		build_duration: FormControl<number | null | undefined>,
 
 		/** The date and time in GMT when the resource was created specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format. */
@@ -542,13 +551,16 @@ export namespace MyNS {
 		/** The date and time in GMT when the resource was last updated specified in [RFC 2822](https://www.ietf.org/rfc/rfc2822.txt) format. */
 		date_updated: FormControl<Date | null | undefined>,
 
-		/** If the `status` for the model build is `failed`, this value is a code to more information about the failure. This value will be null for all other statuses. See [error code dictionary](https://www.twilio.com/docs/api/errors) for a description of the error. */
+		/**
+		 * If the `status` for the model build is `failed`, this value is a code to more information about the failure. This value will be null for all other statuses. See [error code dictionary](https://www.twilio.com/docs/api/errors) for a description of the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code: FormControl<number | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the ModelBuild resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Autopilotv1assistantmodel_buildStatus | null | undefined>,
@@ -581,15 +593,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Query resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
@@ -601,8 +613,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Dialogue](https://www.twilio.com/docs/autopilot/api/dialogue).
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		dialogue_sid?: string | null;
 
@@ -611,8 +623,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Model Build](https://www.twilio.com/docs/autopilot/api/model-build) queried.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		model_build_sid?: string | null;
 
@@ -624,15 +636,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of an optional reference to the [Sample](https://www.twilio.com/docs/autopilot/api/task-sample) created from the query.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sample_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Query resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -649,15 +661,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Query resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
@@ -669,8 +681,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Dialogue](https://www.twilio.com/docs/autopilot/api/dialogue).
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		dialogue_sid: FormControl<string | null | undefined>,
 
@@ -679,8 +691,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Model Build](https://www.twilio.com/docs/autopilot/api/model-build) queried.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		model_build_sid: FormControl<string | null | undefined>,
 
@@ -692,15 +704,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of an optional reference to the [Sample](https://www.twilio.com/docs/autopilot/api/task-sample) created from the query.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sample_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Query resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -737,15 +749,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the StyleSheet resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
@@ -759,15 +771,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the StyleSheet resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
@@ -791,8 +803,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Task resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -801,8 +813,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
@@ -820,8 +832,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Task resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -835,8 +847,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Task resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -845,8 +857,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
@@ -864,8 +876,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Task resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -895,15 +907,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Field resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
@@ -918,15 +930,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Field resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
 		/**
 		 * The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) resource associated with this Field.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		task_sid?: string | null;
 
@@ -940,15 +952,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Field resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
@@ -963,15 +975,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Field resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) resource associated with this Field.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		task_sid: FormControl<string | null | undefined>,
 
@@ -1000,15 +1012,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sample resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
@@ -1023,8 +1035,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Sample resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -1036,8 +1048,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		task_sid?: string | null;
 
@@ -1048,15 +1060,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Sample resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
@@ -1071,8 +1083,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Sample resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -1084,8 +1096,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		task_sid: FormControl<string | null | undefined>,
 
@@ -1112,15 +1124,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskActions resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
@@ -1129,8 +1141,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		task_sid?: string | null;
 
@@ -1141,15 +1153,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskActions resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
@@ -1158,8 +1170,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		task_sid: FormControl<string | null | undefined>,
 
@@ -1181,28 +1193,34 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskStatistics resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
-		/** The total number of [Fields](https://www.twilio.com/docs/autopilot/api/task-field) associated with the Task. */
+		/**
+		 * The total number of [Fields](https://www.twilio.com/docs/autopilot/api/task-field) associated with the Task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fields_count?: number | null;
 
-		/** The total number of [Samples](https://www.twilio.com/docs/autopilot/api/task-sample) associated with the Task. */
+		/**
+		 * The total number of [Samples](https://www.twilio.com/docs/autopilot/api/task-sample) associated with the Task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		samples_count?: number | null;
 
 		/**
 		 * The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) for which the statistics were collected.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		task_sid?: string | null;
 
@@ -1213,28 +1231,34 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the TaskStatistics resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
-		/** The total number of [Fields](https://www.twilio.com/docs/autopilot/api/task-field) associated with the Task. */
+		/**
+		 * The total number of [Fields](https://www.twilio.com/docs/autopilot/api/task-field) associated with the Task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fields_count: FormControl<number | null | undefined>,
 
-		/** The total number of [Samples](https://www.twilio.com/docs/autopilot/api/task-sample) associated with the Task. */
+		/**
+		 * The total number of [Samples](https://www.twilio.com/docs/autopilot/api/task-sample) associated with the Task.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		samples_count: FormControl<number | null | undefined>,
 
 		/**
 		 * The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) for which the statistics were collected.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		task_sid: FormControl<string | null | undefined>,
 
@@ -1257,15 +1281,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Webhook resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid?: string | null;
 
@@ -1280,8 +1304,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Webhook resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -1301,15 +1325,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Webhook resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		assistant_sid: FormControl<string | null | undefined>,
 
@@ -1324,8 +1348,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Webhook resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -1361,8 +1385,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Assistant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -1386,8 +1410,8 @@ export namespace MyNS {
 
 		/**
 		 * Reserved.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		latest_model_build_sid?: string | null;
 
@@ -1399,8 +1423,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Assistant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -1411,8 +1435,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Assistant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -1436,8 +1460,8 @@ export namespace MyNS {
 
 		/**
 		 * Reserved.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		latest_model_build_sid: FormControl<string | null | undefined>,
 
@@ -1449,8 +1473,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Assistant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -1485,7 +1509,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Assistants
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListAssistantReturn} OK
 		 */
@@ -1516,7 +1542,9 @@ export namespace MyNS {
 		 * Get v1/Assistants/{AssistantSid}/FieldTypes
 		 * @param {string} AssistantSid The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resources to read.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListFieldTypeReturn} OK
 		 */
@@ -1530,7 +1558,9 @@ export namespace MyNS {
 		 * @param {string} FieldTypeSid The SID of the Field Type associated with the Field Value to read.
 		 * @param {string} Language The [ISO language-country](https://docs.oracle.com/cd/E13214_01/wli/docs92/xref/xqisocodes.html) tag that specifies the language of the value. Currently supported tags: `en-US`
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListFieldValueReturn} OK
 		 */
@@ -1584,7 +1614,9 @@ export namespace MyNS {
 		 * Get v1/Assistants/{AssistantSid}/ModelBuilds
 		 * @param {string} AssistantSid The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resources to read.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListModelBuildReturn} OK
 		 */
@@ -1619,8 +1651,11 @@ export namespace MyNS {
 		 * @param {string} ModelBuild The SID or unique name of the [Model Build](https://www.twilio.com/docs/autopilot/api/model-build) to be queried.
 		 * @param {string} Status The status of the resources to read. Can be: `pending-review`, `reviewed`, or `discarded`
 		 * @param {string} DialogueSid The SID of the [Dialogue](https://www.twilio.com/docs/autopilot/api/dialogue).
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListQueryReturn} OK
 		 */
@@ -1662,7 +1697,9 @@ export namespace MyNS {
 		 * Get v1/Assistants/{AssistantSid}/Tasks
 		 * @param {string} AssistantSid The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resources to read.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListTaskReturn} OK
 		 */
@@ -1706,7 +1743,9 @@ export namespace MyNS {
 		 * @param {string} AssistantSid The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resources to read.
 		 * @param {string} TaskSid The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) resource associated with the Field resources to read.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListFieldReturn} OK
 		 */
@@ -1742,7 +1781,9 @@ export namespace MyNS {
 		 * @param {string} TaskSid The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) associated with the Sample resources to read.
 		 * @param {string} Language The [ISO language-country](https://docs.oracle.com/cd/E13214_01/wli/docs92/xref/xqisocodes.html) string that specifies the language used for the sample. For example: `en-US`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSampleReturn} OK
 		 */
@@ -1755,6 +1796,7 @@ export namespace MyNS {
 		 * @param {string} AssistantSid The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resources to delete.
 		 * @param {string} TaskSid The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) associated with the Sample resource to delete.
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Sample resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteSample(AssistantSid: string, TaskSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1766,6 +1808,7 @@ export namespace MyNS {
 		 * @param {string} AssistantSid The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resource to fetch.
 		 * @param {string} TaskSid The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) associated with the Sample resource to create.
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Sample resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Autopilotv1assistanttasksample} OK
 		 */
 		FetchSample(AssistantSid: string, TaskSid: string, Sid: string): Observable<Autopilotv1assistanttasksample> {
@@ -1786,7 +1829,9 @@ export namespace MyNS {
 		 * Get v1/Assistants/{AssistantSid}/Webhooks
 		 * @param {string} AssistantSid The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resources to read.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListWebhookReturn} OK
 		 */
@@ -1849,7 +1894,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1858,7 +1907,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1892,7 +1945,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1901,7 +1958,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1935,7 +1996,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1944,7 +2009,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1978,7 +2047,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1987,7 +2060,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2021,7 +2098,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2030,7 +2111,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2064,7 +2149,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2073,7 +2162,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2107,7 +2200,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2116,7 +2213,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2150,7 +2251,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2159,7 +2264,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -2193,7 +2302,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -2202,7 +2315,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

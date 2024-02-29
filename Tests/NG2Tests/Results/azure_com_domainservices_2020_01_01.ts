@@ -674,6 +674,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @return {DomainServiceListResult} HTTP 200 (OK) if the operation was successful.
 		 */
 		DomainServices_ListByResourceGroup(api_version: string, subscriptionId: string, resourceGroupName: string): Observable<DomainServiceListResult> {
@@ -687,6 +688,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainServiceName The name of the domain service.
 		 * @return {DomainService} HTTP 200 (OK) if the operation was successful.
 		 */
@@ -701,6 +703,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainServiceName The name of the domain service.
 		 * @param {DomainService} requestBody Properties supplied to the Create or Update a Domain Service operation.
 		 * @return {DomainService} HTTP 200 (OK) if the operation was successful.
@@ -716,6 +719,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainServiceName The name of the domain service.
 		 * @return {void} 
 		 */
@@ -730,6 +734,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} domainServiceName The name of the domain service.
 		 * @param {DomainService} requestBody Properties supplied to the Update a Domain Service operation.
 		 * @return {DomainService} HTTP 200 (OK) if the operation was successful.

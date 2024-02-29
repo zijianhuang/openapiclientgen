@@ -971,9 +971,13 @@ export namespace MyNS {
 		 * @param {string} feed If you only want to retrieve feed versions for a particular feed, include its ID here. You can use the `/getFeeds` call to discover feed IDs.
 		 * @param {number} page The page number of results to return. For example, if you specify a `page` of `2` with a `limit` of 10, then results 11-20 are returned.
 		 * The number of pages available is included in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return..
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetFeedVersionsErr} err To include any errors detected when importing this feed in the response, specify a valud of `1`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetFeedVersionsWarn} warn To include any warnings detected when importing this feed in the response, specify a valud of `1`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetFeedVersionsResponse} The response for a valid `/getFeedVersions` API call.
 		 */
 		GetFeedVersions(key: string, feed: string | null | undefined, page: number | null | undefined, limit: number | null | undefined, err: GetFeedVersionsErr | null | undefined, warn: GetFeedVersionsWarn | null | undefined): Observable<GetFeedVersionsResponse> {
@@ -989,10 +993,14 @@ export namespace MyNS {
 		 * @param {number} location This is the unique ID of a location. If specified, feeds will only be returned that belong to this location
 		 * (and perhaps sub-locations too, depending on the `descendants` value). You can use the `/getLocations` API
 		 * endpoint to determine location IDs.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetFeedsDescendants} descendants If a location is specified in `location`, this flag can be used to control if returned feeds must be assigned directly to the location, or if feeds belonging to sub-locations can also be returned. If `0`, then feeds must be assigned directly to the specified location.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page The page number of results to return. For example, if you specify a `page` of `2` with a `limit` of 10, then results 11-20 are returned.
 		 * The number of pages available is included in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return..
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {FeedTy} type The type of feeds to return. If unspecified, feeds of all types are returned.
 		 * @return {GetFeedsResponse} The response for a valid `/getFeeds` API call.
 		 */

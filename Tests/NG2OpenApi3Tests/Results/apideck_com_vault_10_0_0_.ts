@@ -21,7 +21,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -41,7 +44,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -68,6 +74,8 @@ export namespace MyNS {
 		authorize_url?: string | null;
 		configurable_resources?: Array<string>;
 		ConnectionConfiguration?: Array<ConnectionConfiguration>;
+
+		/** Type: double */
 		created_at?: number | null;
 
 		/** List of custom mappings configured for this connection */
@@ -128,6 +136,8 @@ export namespace MyNS {
 
 		/** The unified API category where the connection belongs to. */
 		unified_api?: string | null;
+
+		/** Type: double */
 		updated_at?: number | null;
 		validation_support?: boolean | null;
 
@@ -141,6 +151,8 @@ export namespace MyNS {
 
 		/** The OAuth redirect URI. Redirect your users to this URI to let them authorize your app in the connector's UI. Before you can use this URI, you must add `redirect_uri` as a query parameter to the `authorize_url`. Be sure to URL encode the `redirect_uri` part. Your users will be redirected to this `redirect_uri` after they granted access to your app in the connector's UI. */
 		authorize_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		created_at: FormControl<number | null | undefined>,
 
 		/** Whether the connection is enabled or not. You can enable or disable a connection using the Update Connection API. */
@@ -189,6 +201,8 @@ export namespace MyNS {
 
 		/** The unified API category where the connection belongs to. */
 		unified_api: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		updated_at: FormControl<number | null | undefined>,
 		validation_support: FormControl<boolean | null | undefined>,
 
@@ -490,7 +504,10 @@ export namespace MyNS {
 		event_id?: string | null;
 		event_type?: ConnectionEventEvent_type | null;
 
-		/** The current count this request event has been attempted */
+		/**
+		 * The current count this request event has been attempted
+		 * Type: double
+		 */
 		execution_attempt?: number | null;
 
 		/** ISO Datetime for when the original event occurred */
@@ -511,7 +528,10 @@ export namespace MyNS {
 		event_id: FormControl<string | null | undefined>,
 		event_type: FormControl<ConnectionEventEvent_type | null | undefined>,
 
-		/** The current count this request event has been attempted */
+		/**
+		 * The current count this request event has been attempted
+		 * Type: double
+		 */
 		execution_attempt: FormControl<number | null | undefined>,
 
 		/** ISO Datetime for when the original event occurred */
@@ -637,7 +657,10 @@ export namespace MyNS {
 		/** Access token */
 		access_token?: string | null;
 
-		/** The number of seconds until the token expires. If omitted the token will be queued for refresh. */
+		/**
+		 * The number of seconds until the token expires. If omitted the token will be queued for refresh.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in?: number | null;
 
 		/** The datetime at which the token was issued. If omitted the token will be queued for refresh. */
@@ -654,7 +677,10 @@ export namespace MyNS {
 		/** Access token */
 		access_token: FormControl<string | null | undefined>,
 
-		/** The number of seconds until the token expires. If omitted the token will be queued for refresh. */
+		/**
+		 * The number of seconds until the token expires. If omitted the token will be queued for refresh.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in: FormControl<number | null | undefined>,
 
 		/** The datetime at which the token was issued. If omitted the token will be queued for refresh. */
@@ -798,6 +824,8 @@ export namespace MyNS {
 	export enum ConnectionWebhookUnified_api { accounting = 'accounting', ats = 'ats', calendar = 'calendar', crm = 'crm', csp = 'csp', 'customer-support' = 'customer-support', ecommerce = 'ecommerce', email = 'email', 'email-marketing' = 'email-marketing', 'expense-management' = 'expense-management', 'file-storage' = 'file-storage', form = 'form', hris = 'hris', lead = 'lead', payroll = 'payroll', pos = 'pos', procurement = 'procurement', 'project-management' = 'project-management', script = 'script', sms = 'sms', spreadsheet = 'spreadsheet', 'team-messaging' = 'team-messaging', 'issue-tracking' = 'issue-tracking', 'time-registration' = 'time-registration', 'transactional-email' = 'transactional-email', vault = 'vault', 'data-warehouse' = 'data-warehouse' }
 
 	export interface Consumer {
+
+		/** Type: double */
 		aggregated_request_count?: number | null;
 
 		/** ID of your Apideck Application */
@@ -819,6 +847,8 @@ export namespace MyNS {
 		services?: Array<string>;
 	}
 	export interface ConsumerFormProperties {
+
+		/** Type: double */
 		aggregated_request_count: FormControl<number | null | undefined>,
 
 		/** ID of your Apideck Application */
@@ -888,13 +918,25 @@ export namespace MyNS {
 	}
 
 	export interface RequestCountAllocation {
+
+		/** Type: double */
 		proxy?: number | null;
+
+		/** Type: double */
 		unify?: number | null;
+
+		/** Type: double */
 		vault?: number | null;
 	}
 	export interface RequestCountAllocationFormProperties {
+
+		/** Type: double */
 		proxy: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unify: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vault: FormControl<number | null | undefined>,
 	}
 	export function CreateRequestCountAllocationFormGroup() {
@@ -920,6 +962,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -934,6 +977,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -946,6 +990,8 @@ export namespace MyNS {
 	}
 
 	export interface ConsumerRequestCountsInDateRangeResponseData {
+
+		/** Type: double */
 		aggregated_request_count?: number | null;
 		application_id?: string | null;
 		consumer_id?: string | null;
@@ -954,6 +1000,8 @@ export namespace MyNS {
 		start_datetime?: string | null;
 	}
 	export interface ConsumerRequestCountsInDateRangeResponseDataFormProperties {
+
+		/** Type: double */
 		aggregated_request_count: FormControl<number | null | undefined>,
 		application_id: FormControl<string | null | undefined>,
 		consumer_id: FormControl<string | null | undefined>,
@@ -985,6 +1033,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -999,6 +1048,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1024,6 +1074,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1038,6 +1089,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1086,6 +1138,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1100,6 +1153,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1125,6 +1179,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1139,6 +1194,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1233,6 +1289,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1250,6 +1307,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1309,6 +1367,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1323,6 +1382,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1348,6 +1408,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1362,6 +1423,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1387,6 +1449,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1401,6 +1464,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1432,6 +1496,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1446,6 +1511,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1458,6 +1524,8 @@ export namespace MyNS {
 	}
 
 	export interface GetConsumersResponseData {
+
+		/** Type: double */
 		aggregated_request_count?: number | null;
 		application_id?: string | null;
 		consumer_id?: string | null;
@@ -1471,6 +1539,8 @@ export namespace MyNS {
 		services?: Array<string>;
 	}
 	export interface GetConsumersResponseDataFormProperties {
+
+		/** Type: double */
 		aggregated_request_count: FormControl<number | null | undefined>,
 		application_id: FormControl<string | null | undefined>,
 		consumer_id: FormControl<string | null | undefined>,
@@ -1532,14 +1602,20 @@ export namespace MyNS {
 		/** Cursors to navigate to previous or next pages through the API */
 		cursors?: MetaCursors;
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page?: number | null;
 	}
 
 	/** Response metadata */
 	export interface MetaFormProperties {
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -1594,6 +1670,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1608,6 +1685,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1633,6 +1711,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1647,6 +1726,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1678,6 +1758,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1692,6 +1773,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1732,6 +1814,7 @@ export namespace MyNS {
 		/**
 		 * The entire execution time in milliseconds it took to call the Apideck service provider.
 		 * Required
+		 * Type: double
 		 */
 		duration: number;
 
@@ -1741,6 +1824,7 @@ export namespace MyNS {
 		/**
 		 * The entire execution time in milliseconds it took to make the request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		execution: number;
 
@@ -1765,6 +1849,7 @@ export namespace MyNS {
 		/**
 		 * Latency added by making this request via Unified Api.
 		 * Required
+		 * Type: double
 		 */
 		latency: number;
 
@@ -1804,6 +1889,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Status code that was returned.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 
@@ -1854,6 +1940,7 @@ export namespace MyNS {
 		/**
 		 * The entire execution time in milliseconds it took to call the Apideck service provider.
 		 * Required
+		 * Type: double
 		 */
 		duration: FormControl<number | null | undefined>,
 
@@ -1863,6 +1950,7 @@ export namespace MyNS {
 		/**
 		 * The entire execution time in milliseconds it took to make the request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		execution: FormControl<number | null | undefined>,
 
@@ -1887,6 +1975,7 @@ export namespace MyNS {
 		/**
 		 * Latency added by making this request via Unified Api.
 		 * Required
+		 * Type: double
 		 */
 		latency: FormControl<number | null | undefined>,
 
@@ -1914,6 +2003,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Status code that was returned.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 
@@ -2048,6 +2138,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2062,6 +2153,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2166,6 +2258,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2180,6 +2273,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2208,11 +2302,15 @@ export namespace MyNS {
 	export interface LogsFilter {
 		connector_id?: string | null;
 		exclude_unified_apis?: string | null;
+
+		/** Type: double */
 		status_code?: number | null;
 	}
 	export interface LogsFilterFormProperties {
 		connector_id: FormControl<string | null | undefined>,
 		exclude_unified_apis: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		status_code: FormControl<number | null | undefined>,
 	}
 	export function CreateLogsFilterFormGroup() {
@@ -2238,7 +2336,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2258,7 +2359,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2290,7 +2394,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2310,7 +2417,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2346,7 +2456,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2366,7 +2479,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2598,7 +2714,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2618,7 +2737,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2650,7 +2772,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2670,7 +2795,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2702,7 +2830,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2722,7 +2853,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2754,6 +2888,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2768,6 +2903,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2806,6 +2942,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2820,6 +2957,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2868,6 +3006,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2882,6 +3021,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3093,6 +3233,7 @@ export namespace MyNS {
 		 * Get vault/consumers
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @return {GetConsumersResponse} Consumers
 		 */
 		ConsumersAll(cursor: string | null | undefined, limit: number | null | undefined): Observable<GetConsumersResponse> {
@@ -3216,6 +3357,7 @@ export namespace MyNS {
 		 * @param {LogsFilter} filter Filter results
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @return {GetLogsResponse} Logs
 		 */
 		LogsAll(filter: LogsFilter | null | undefined, cursor: string | null | undefined, limit: number | null | undefined): Observable<GetLogsResponse> {

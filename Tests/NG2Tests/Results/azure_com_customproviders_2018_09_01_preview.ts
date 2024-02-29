@@ -509,6 +509,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} resourceProviderName The name of the resource provider.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @return {CustomRPManifest} OK response definition with the existing resource.
 		 */
@@ -522,6 +523,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} resourceProviderName The name of the resource provider.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {CustomRPManifest} requestBody The parameters required to create or update a custom resource provider definition.
 		 * @return {CustomRPManifest} OK response definition. Resource already exists and the changes have been accepted
@@ -536,6 +538,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} resourceProviderName The name of the resource provider.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @return {void} OK resource deleted
 		 */
@@ -549,6 +552,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} resourceProviderName The name of the resource provider.
+		 *     Min length: 3    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {ResourceProvidersUpdate} requestBody The updatable fields of a custom resource provider.
 		 * @return {CustomRPManifest} OK response. The resource has been updated.

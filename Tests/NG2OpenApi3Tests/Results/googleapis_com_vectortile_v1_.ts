@@ -28,7 +28,10 @@ export namespace MyNS {
 		/** 2D vertex list used for lines and areas. Each entry represents an offset from the previous one in local tile coordinates. The first entry is offset from (0, 0). For example, the list of vertices [(1,1), (2, 2), (1, 2)] would be encoded in vertex offsets as [(1, 1), (1, 1), (-1, 0)]. */
 		vertexOffsets?: Vertex2DList;
 
-		/** The z-ordering of this area. Areas with a lower z-order should be rendered beneath areas with a higher z-order. This z-ordering does not imply anything about the altitude of the line relative to the ground, but it can be used to prevent z-fighting during rendering on the client. This z-ordering can only be used to compare areas, and cannot be compared with the z_order field in the Line message. The z-order may be negative or zero. Prefer Area.basemap_z_order. */
+		/**
+		 * The z-ordering of this area. Areas with a lower z-order should be rendered beneath areas with a higher z-order. This z-ordering does not imply anything about the altitude of the line relative to the ground, but it can be used to prevent z-fighting during rendering on the client. This z-ordering can only be used to compare areas, and cannot be compared with the z_order field in the Line message. The z-order may be negative or zero. Prefer Area.basemap_z_order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zOrder?: number | null;
 	}
 
@@ -41,7 +44,10 @@ export namespace MyNS {
 		/** The polygon encoding type used for this area. */
 		type: FormControl<AreaType | null | undefined>,
 
-		/** The z-ordering of this area. Areas with a lower z-order should be rendered beneath areas with a higher z-order. This z-ordering does not imply anything about the altitude of the line relative to the ground, but it can be used to prevent z-fighting during rendering on the client. This z-ordering can only be used to compare areas, and cannot be compared with the z_order field in the Line message. The z-order may be negative or zero. Prefer Area.basemap_z_order. */
+		/**
+		 * The z-ordering of this area. Areas with a lower z-order should be rendered beneath areas with a higher z-order. This z-ordering does not imply anything about the altitude of the line relative to the ground, but it can be used to prevent z-fighting during rendering on the client. This z-ordering can only be used to compare areas, and cannot be compared with the z_order field in the Line message. The z-order may be negative or zero. Prefer Area.basemap_z_order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateAreaFormGroup() {
@@ -57,26 +63,44 @@ export namespace MyNS {
 	/** Metadata necessary to determine the ordering of a particular basemap element relative to others. To render the basemap correctly, sort by z-plane, then z-grade, then z-within-grade. */
 	export interface BasemapZOrder {
 
-		/** The second most significant component of the ordering of a component to be rendered onto the basemap. */
+		/**
+		 * The second most significant component of the ordering of a component to be rendered onto the basemap.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zGrade?: number | null;
 
-		/** The most significant component of the ordering of a component to be rendered onto the basemap. */
+		/**
+		 * The most significant component of the ordering of a component to be rendered onto the basemap.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zPlane?: number | null;
 
-		/** The least significant component of the ordering of a component to be rendered onto the basemap. */
+		/**
+		 * The least significant component of the ordering of a component to be rendered onto the basemap.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zWithinGrade?: number | null;
 	}
 
 	/** Metadata necessary to determine the ordering of a particular basemap element relative to others. To render the basemap correctly, sort by z-plane, then z-grade, then z-within-grade. */
 	export interface BasemapZOrderFormProperties {
 
-		/** The second most significant component of the ordering of a component to be rendered onto the basemap. */
+		/**
+		 * The second most significant component of the ordering of a component to be rendered onto the basemap.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zGrade: FormControl<number | null | undefined>,
 
-		/** The most significant component of the ordering of a component to be rendered onto the basemap. */
+		/**
+		 * The most significant component of the ordering of a component to be rendered onto the basemap.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zPlane: FormControl<number | null | undefined>,
 
-		/** The least significant component of the ordering of a component to be rendered onto the basemap. */
+		/**
+		 * The least significant component of the ordering of a component to be rendered onto the basemap.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zWithinGrade: FormControl<number | null | undefined>,
 	}
 	export function CreateBasemapZOrderFormGroup() {
@@ -117,20 +141,32 @@ export namespace MyNS {
 		/** Represents an area. Used to represent regions such as water, parks, etc. Next ID: 10 */
 		area?: Area;
 
-		/** The z-value in local tile coordinates where the extruded area ends. */
+		/**
+		 * The z-value in local tile coordinates where the extruded area ends.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxZ?: number | null;
 
-		/** The z-value in local tile coordinates where the extruded area begins. This is non-zero for extruded areas that begin off the ground. For example, a building with a skybridge may have an extruded area component with a non-zero min_z. */
+		/**
+		 * The z-value in local tile coordinates where the extruded area begins. This is non-zero for extruded areas that begin off the ground. For example, a building with a skybridge may have an extruded area component with a non-zero min_z.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minZ?: number | null;
 	}
 
 	/** Represents a height-extruded area: a 3D prism with a constant X-Y plane cross section. Used to represent extruded buildings. A single building may consist of several extruded areas. The min_z and max_z fields are scaled to the size of the tile. An extruded area with a max_z value of 4096 has the same height as the width of the tile that it is on. */
 	export interface ExtrudedAreaFormProperties {
 
-		/** The z-value in local tile coordinates where the extruded area ends. */
+		/**
+		 * The z-value in local tile coordinates where the extruded area ends.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxZ: FormControl<number | null | undefined>,
 
-		/** The z-value in local tile coordinates where the extruded area begins. This is non-zero for extruded areas that begin off the ground. For example, a building with a skybridge may have an extruded area component with a non-zero min_z. */
+		/**
+		 * The z-value in local tile coordinates where the extruded area begins. This is non-zero for extruded areas that begin off the ground. For example, a building with a skybridge may have an extruded area component with a non-zero min_z.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minZ: FormControl<number | null | undefined>,
 	}
 	export function CreateExtrudedAreaFormGroup() {
@@ -221,14 +257,20 @@ export namespace MyNS {
 		/** 2D vertex list used for lines and areas. Each entry represents an offset from the previous one in local tile coordinates. The first entry is offset from (0, 0). For example, the list of vertices [(1,1), (2, 2), (1, 2)] would be encoded in vertex offsets as [(1, 1), (1, 1), (-1, 0)]. */
 		vertexOffsets?: Vertex2DList;
 
-		/** The z-order of the line. Lines with a lower z-order should be rendered beneath lines with a higher z-order. This z-ordering does not imply anything about the altitude of the area relative to the ground, but it can be used to prevent z-fighting during rendering on the client. In general, larger and more important road features will have a higher z-order line associated with them. This z-ordering can only be used to compare lines, and cannot be compared with the z_order field in the Area message. The z-order may be negative or zero. Prefer Line.basemap_z_order. */
+		/**
+		 * The z-order of the line. Lines with a lower z-order should be rendered beneath lines with a higher z-order. This z-ordering does not imply anything about the altitude of the area relative to the ground, but it can be used to prevent z-fighting during rendering on the client. In general, larger and more important road features will have a higher z-order line associated with them. This z-ordering can only be used to compare lines, and cannot be compared with the z_order field in the Area message. The z-order may be negative or zero. Prefer Line.basemap_z_order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zOrder?: number | null;
 	}
 
 	/** Represents a 2D polyline. Used to represent segments such as roads, train tracks, etc. */
 	export interface LineFormProperties {
 
-		/** The z-order of the line. Lines with a lower z-order should be rendered beneath lines with a higher z-order. This z-ordering does not imply anything about the altitude of the area relative to the ground, but it can be used to prevent z-fighting during rendering on the client. In general, larger and more important road features will have a higher z-order line associated with them. This z-ordering can only be used to compare lines, and cannot be compared with the z_order field in the Area message. The z-order may be negative or zero. Prefer Line.basemap_z_order. */
+		/**
+		 * The z-order of the line. Lines with a lower z-order should be rendered beneath lines with a higher z-order. This z-ordering does not imply anything about the altitude of the area relative to the ground, but it can be used to prevent z-fighting during rendering on the client. In general, larger and more important road features will have a higher z-order line associated with them. This z-ordering can only be used to compare lines, and cannot be compared with the z_order field in the Area message. The z-order may be negative or zero. Prefer Line.basemap_z_order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateLineFormGroup() {
@@ -302,7 +344,10 @@ export namespace MyNS {
 	/** Represents a relation to another feature in the tile. For example, a building might be occupied by a given POI. The related feature can be retrieved using the related feature index. */
 	export interface Relation {
 
-		/** Zero-based index to look up the related feature from the list of features in the tile. */
+		/**
+		 * Zero-based index to look up the related feature from the list of features in the tile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relatedFeatureIndex?: number | null;
 
 		/** Relation type between the origin feature to the related feature. */
@@ -312,7 +357,10 @@ export namespace MyNS {
 	/** Represents a relation to another feature in the tile. For example, a building might be occupied by a given POI. The related feature can be retrieved using the related feature index. */
 	export interface RelationFormProperties {
 
-		/** Zero-based index to look up the related feature from the list of features in the tile. */
+		/**
+		 * Zero-based index to look up the related feature from the list of features in the tile.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relatedFeatureIndex: FormControl<number | null | undefined>,
 
 		/** Relation type between the origin feature to the related feature. */
@@ -416,26 +464,44 @@ export namespace MyNS {
 	/** Global tile coordinates. Global tile coordinates reference a specific tile on the map at a specific zoom level. The origin of this coordinate system is always at the northwest corner of the map, with x values increasing from west to east and y values increasing from north to south. Tiles are indexed using x, y coordinates from that origin. The zoom level containing the entire world in a tile is 0, and it increases as you zoom in. Zoom level n + 1 will contain 4 times as many tiles as zoom level n. The zoom level controls the level of detail of the data that is returned. In particular, this affects the set of feature types returned, their density, and geometry simplification. The exact tile contents may change over time, but care will be taken to keep supporting the most important use cases. For example, zoom level 15 shows roads for orientation and planning in the local neighborhood and zoom level 17 shows buildings to give users on foot a sense of situational awareness. */
 	export interface TileCoordinates {
 
-		/** Required. The x coordinate. */
+		/**
+		 * Required. The x coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Required. The y coordinate. */
+		/**
+		 * Required. The y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 
-		/** Required. The Google Maps API zoom level. */
+		/**
+		 * Required. The Google Maps API zoom level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zoom?: number | null;
 	}
 
 	/** Global tile coordinates. Global tile coordinates reference a specific tile on the map at a specific zoom level. The origin of this coordinate system is always at the northwest corner of the map, with x values increasing from west to east and y values increasing from north to south. Tiles are indexed using x, y coordinates from that origin. The zoom level containing the entire world in a tile is 0, and it increases as you zoom in. Zoom level n + 1 will contain 4 times as many tiles as zoom level n. The zoom level controls the level of detail of the data that is returned. In particular, this affects the set of feature types returned, their density, and geometry simplification. The exact tile contents may change over time, but care will be taken to keep supporting the most important use cases. For example, zoom level 15 shows roads for orientation and planning in the local neighborhood and zoom level 17 shows buildings to give users on foot a sense of situational awareness. */
 	export interface TileCoordinatesFormProperties {
 
-		/** Required. The x coordinate. */
+		/**
+		 * Required. The x coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Required. The y coordinate. */
+		/**
+		 * Required. The y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 
-		/** Required. The Google Maps API zoom level. */
+		/**
+		 * Required. The Google Maps API zoom level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zoom: FormControl<number | null | undefined>,
 	}
 	export function CreateTileCoordinatesFormGroup() {
@@ -474,7 +540,10 @@ export namespace MyNS {
 	/** A packed representation of a 2D grid of uniformly spaced points containing elevation data. Each point within the grid represents the altitude in meters above average sea level at that location within the tile. Elevations provided are (generally) relative to the EGM96 geoid, however some areas will be relative to NAVD88. EGM96 and NAVD88 are off by no more than 2 meters. The grid is oriented north-west to south-east, as illustrated: rows[0].a[0] rows[0].a[m] +-----------------+ | | | N | | ^ | | | | | W <-----> E | | | | | v | | S | | | +-----------------+ rows[n].a[0] rows[n].a[m] Rather than storing the altitudes directly, we store the diffs between them as integers at some requested level of precision to take advantage of integer packing. The actual altitude values a[] can be reconstructed using the scale and each row's first_altitude and altitude_diff fields. More details in go/elevation-encoding-options-for-enduro under "Recommended implementation". */
 	export interface FirstDerivativeElevationGrid {
 
-		/** A multiplier applied to the altitude fields below to extract the actual altitudes in meters from the elevation grid. */
+		/**
+		 * A multiplier applied to the altitude fields below to extract the actual altitudes in meters from the elevation grid.
+		 * Type: float
+		 */
 		altitudeMultiplier?: number | null;
 
 		/** Rows of points containing altitude data making up the elevation grid. Each row is the same length. Rows are ordered from north to south. E.g: rows[0] is the north-most row, and rows[n] is the south-most row. */
@@ -484,7 +553,10 @@ export namespace MyNS {
 	/** A packed representation of a 2D grid of uniformly spaced points containing elevation data. Each point within the grid represents the altitude in meters above average sea level at that location within the tile. Elevations provided are (generally) relative to the EGM96 geoid, however some areas will be relative to NAVD88. EGM96 and NAVD88 are off by no more than 2 meters. The grid is oriented north-west to south-east, as illustrated: rows[0].a[0] rows[0].a[m] +-----------------+ | | | N | | ^ | | | | | W <-----> E | | | | | v | | S | | | +-----------------+ rows[n].a[0] rows[n].a[m] Rather than storing the altitudes directly, we store the diffs between them as integers at some requested level of precision to take advantage of integer packing. The actual altitude values a[] can be reconstructed using the scale and each row's first_altitude and altitude_diff fields. More details in go/elevation-encoding-options-for-enduro under "Recommended implementation". */
 	export interface FirstDerivativeElevationGridFormProperties {
 
-		/** A multiplier applied to the altitude fields below to extract the actual altitudes in meters from the elevation grid. */
+		/**
+		 * A multiplier applied to the altitude fields below to extract the actual altitudes in meters from the elevation grid.
+		 * Type: float
+		 */
 		altitudeMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreateFirstDerivativeElevationGridFormGroup() {
@@ -515,32 +587,50 @@ export namespace MyNS {
 	/** A packed representation of a 2D grid of uniformly spaced points containing elevation data. Each point within the grid represents the altitude in meters above average sea level at that location within the tile. Elevations provided are (generally) relative to the EGM96 geoid, however some areas will be relative to NAVD88. EGM96 and NAVD88 are off by no more than 2 meters. The grid is oriented north-west to south-east, as illustrated: rows[0].a[0] rows[0].a[m] +-----------------+ | | | N | | ^ | | | | | W <-----> E | | | | | v | | S | | | +-----------------+ rows[n].a[0] rows[n].a[m] Rather than storing the altitudes directly, we store the diffs of the diffs between them as integers at some requested level of precision to take advantage of integer packing. Note that the data is packed in such a way that is fast to decode in Unity and that further optimizes wire size. */
 	export interface SecondDerivativeElevationGrid {
 
-		/** A multiplier applied to the elements in the encoded data to extract the actual altitudes in meters. */
+		/**
+		 * A multiplier applied to the elements in the encoded data to extract the actual altitudes in meters.
+		 * Type: float
+		 */
 		altitudeMultiplier?: number | null;
 
-		/** The number of columns included in the encoded elevation data (i.e. the horizontal resolution of the grid). */
+		/**
+		 * The number of columns included in the encoded elevation data (i.e. the horizontal resolution of the grid).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnCount?: number | null;
 
 		/** A stream of elements each representing a point on the tile running across each row from left to right, top to bottom. There will be precisely horizontal_resolution * vertical_resolution elements in the stream. The elements are not the heights, rather the second order derivative of the values one would expect in a stream of height data. Each element is a varint with the following encoding: ------------------------------------------------------------------------| | Head Nibble | ------------------------------------------------------------------------| | Bit 0 | Bit 1 | Bits 2-3 | | Terminator| Sign (1=neg) | Least significant 2 bits of absolute error | ------------------------------------------------------------------------| | Tail Nibble #1 | ------------------------------------------------------------------------| | Bit 0 | Bit 1-3 | | Terminator| Least significant 3 bits of absolute error | ------------------------------------------------------------------------| | ... | Tail Nibble #n | ------------------------------------------------------------------------| | Bit 0 | Bit 1-3 | | Terminator| Least significant 3 bits of absolute error | ------------------------------------------------------------------------| */
 		encodedData?: string | null;
 
-		/** The number of rows included in the encoded elevation data (i.e. the vertical resolution of the grid). */
+		/**
+		 * The number of rows included in the encoded elevation data (i.e. the vertical resolution of the grid).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount?: number | null;
 	}
 
 	/** A packed representation of a 2D grid of uniformly spaced points containing elevation data. Each point within the grid represents the altitude in meters above average sea level at that location within the tile. Elevations provided are (generally) relative to the EGM96 geoid, however some areas will be relative to NAVD88. EGM96 and NAVD88 are off by no more than 2 meters. The grid is oriented north-west to south-east, as illustrated: rows[0].a[0] rows[0].a[m] +-----------------+ | | | N | | ^ | | | | | W <-----> E | | | | | v | | S | | | +-----------------+ rows[n].a[0] rows[n].a[m] Rather than storing the altitudes directly, we store the diffs of the diffs between them as integers at some requested level of precision to take advantage of integer packing. Note that the data is packed in such a way that is fast to decode in Unity and that further optimizes wire size. */
 	export interface SecondDerivativeElevationGridFormProperties {
 
-		/** A multiplier applied to the elements in the encoded data to extract the actual altitudes in meters. */
+		/**
+		 * A multiplier applied to the elements in the encoded data to extract the actual altitudes in meters.
+		 * Type: float
+		 */
 		altitudeMultiplier: FormControl<number | null | undefined>,
 
-		/** The number of columns included in the encoded elevation data (i.e. the horizontal resolution of the grid). */
+		/**
+		 * The number of columns included in the encoded elevation data (i.e. the horizontal resolution of the grid).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnCount: FormControl<number | null | undefined>,
 
 		/** A stream of elements each representing a point on the tile running across each row from left to right, top to bottom. There will be precisely horizontal_resolution * vertical_resolution elements in the stream. The elements are not the heights, rather the second order derivative of the values one would expect in a stream of height data. Each element is a varint with the following encoding: ------------------------------------------------------------------------| | Head Nibble | ------------------------------------------------------------------------| | Bit 0 | Bit 1 | Bits 2-3 | | Terminator| Sign (1=neg) | Least significant 2 bits of absolute error | ------------------------------------------------------------------------| | Tail Nibble #1 | ------------------------------------------------------------------------| | Bit 0 | Bit 1-3 | | Terminator| Least significant 3 bits of absolute error | ------------------------------------------------------------------------| | ... | Tail Nibble #n | ------------------------------------------------------------------------| | Bit 0 | Bit 1-3 | | Terminator| Least significant 3 bits of absolute error | ------------------------------------------------------------------------| */
 		encodedData: FormControl<string | null | undefined>,
 
-		/** The number of rows included in the encoded elevation data (i.e. the vertical resolution of the grid). */
+		/**
+		 * The number of rows included in the encoded elevation data (i.e. the vertical resolution of the grid).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSecondDerivativeElevationGridFormGroup() {
@@ -593,6 +683,7 @@ export namespace MyNS {
 		 * Get v1/{name}
 		 * @param {string} name Required. Resource name of the tile. The tile resource name is prefixed by its collection ID `terraintiles/` followed by the resource ID, which encodes the tile's global x and y coordinates and zoom level as `@,,z`. For example, `terraintiles/@1,2,3z`.
 		 * @param {number} altitudePrecisionCentimeters The precision of terrain altitudes in centimeters. Possible values: between 1 (cm level precision) and 1,000,000 (10-kilometer level precision).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} clientInfo_apiClient API client name and version. For example, the SDK calling the API. The exact format is up to the client.
 		 * @param {string} clientInfo_applicationId Application ID, such as the package name on Android and the bundle identifier on iOS platforms.
 		 * @param {string} clientInfo_applicationVersion Application version number, such as "1.2.3". The exact format is application-dependent.
@@ -601,7 +692,9 @@ export namespace MyNS {
 		 * @param {Vectortile_terraintiles_getClientInfo_platform} clientInfo_platform Platform where the application is running.
 		 * @param {string} clientInfo_userId Required. A client-generated user ID. The ID should be generated and persisted during the first user session or whenever a pre-existing ID is not found. The exact format is up to the client. This must be non-empty in a GetFeatureTileRequest (whether via the header or GetFeatureTileRequest.client_info).
 		 * @param {number} maxElevationResolutionCells The maximum allowed resolution for the returned elevation heightmap. Possible values: between 1 and 1024 (and not less than min_elevation_resolution_cells). Over-sized heightmaps will be non-uniformly down-sampled such that each edge is no longer than this value. Non-uniformity is chosen to maximise the amount of preserved data. For example: Original resolution: 100px (width) * 30px (height) max_elevation_resolution: 30 New resolution: 30px (width) * 30px (height)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minElevationResolutionCells  api-linter: core::0131::request-unknown-fields=disabled aip.dev/not-precedent: Maintaining existing request parameter pattern. The minimum allowed resolution for the returned elevation heightmap. Possible values: between 0 and 1024 (and not more than max_elevation_resolution_cells). Zero is supported for backward compatibility. Under-sized heightmaps will be non-uniformly up-sampled such that each edge is no shorter than this value. Non-uniformity is chosen to maximise the amount of preserved data. For example: Original resolution: 30px (width) * 10px (height) min_elevation_resolution: 30 New resolution: 30px (width) * 30px (height)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} terrainFormats Terrain formats that the client understands.
 		 * @param {boolean} enableModeledVolumes Flag indicating whether 3D building models should be enabled. If this is set structures will be returned as 3D modeled volumes rather than 2.5D extruded areas where possible.
 		 * @param {boolean} enablePoliticalFeatures Flag indicating whether political features should be returned.

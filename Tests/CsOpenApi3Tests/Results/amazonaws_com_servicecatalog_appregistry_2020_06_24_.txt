@@ -887,8 +887,14 @@ namespace MyNS
 		/// Associates an attribute group with an application to augment the application's metadata with the group's attributes. This feature enables applications to be described with user-defined details that are machine-readable, such as third-party integrations.
 		/// AssociateAttributeGroup applications/{application}/attribute-groups/{attributeGroup}
 		/// </summary>
-		/// <param name="application"> The name, ID, or ARN of the application. </param>
-		/// <param name="attributeGroup"> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </param>
+		/// <param name="application"> The name, ID, or ARN of the application. 
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="attributeGroup"> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. 
+		/// Max length: 512
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateAttributeGroupResponse> AssociateAttributeGroupAsync(string application, string attributeGroup, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -917,8 +923,14 @@ namespace MyNS
 		/// Disassociates an attribute group from an application to remove the extra attributes contained in the attribute group from the application's metadata. This operation reverts <code>AssociateAttributeGroup</code>.
 		/// DisassociateAttributeGroup applications/{application}/attribute-groups/{attributeGroup}
 		/// </summary>
-		/// <param name="application"> The name, ID, or ARN of the application. </param>
-		/// <param name="attributeGroup"> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </param>
+		/// <param name="application"> The name, ID, or ARN of the application. 
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="attributeGroup"> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. 
+		/// Max length: 512
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateAttributeGroupResponse> DisassociateAttributeGroupAsync(string application, string attributeGroup, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -952,9 +964,15 @@ namespace MyNS
 		/// Associates a resource with an application. The resource can be specified by its ARN or name. The application can be specified by ARN, ID, or name.
 		/// AssociateResource applications/{application}/resources/{resourceType}/{resource}
 		/// </summary>
-		/// <param name="application"> The name, ID, or ARN of the application. </param>
+		/// <param name="application"> The name, ID, or ARN of the application. 
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceType">The type of resource of which the application will be associated.</param>
-		/// <param name="resource">The name or ID of the resource of which the application will be associated.</param>
+		/// <param name="resource">The name or ID of the resource of which the application will be associated.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateResourceResponse> AssociateResourceAsync(string application, ResourceType resourceType, string resource, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -983,9 +1001,15 @@ namespace MyNS
 		/// Disassociates a resource from application. Both the resource and the application can be specified either by ID or name.
 		/// DisassociateResource applications/{application}/resources/{resourceType}/{resource}
 		/// </summary>
-		/// <param name="application">The name or ID of the application.</param>
+		/// <param name="application">The name or ID of the application.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceType">The type of the resource that is being disassociated.</param>
-		/// <param name="resource">The name or ID of the resource.</param>
+		/// <param name="resource">The name or ID of the resource.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateResourceResponse> DisassociateResourceAsync(string application, ResourceType resourceType, string resource, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1019,9 +1043,15 @@ namespace MyNS
 		/// Gets the resource associated with the application.
 		/// GetAssociatedResource applications/{application}/resources/{resourceType}/{resource}
 		/// </summary>
-		/// <param name="application"> The name, ID, or ARN of the application. </param>
+		/// <param name="application"> The name, ID, or ARN of the application. 
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceType">The type of resource associated with the application.</param>
-		/// <param name="resource">The name or ID of the resource associated with the application.</param>
+		/// <param name="resource">The name or ID of the resource associated with the application.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAssociatedResourceResponse> GetAssociatedResourceAsync(string application, ResourceType resourceType, string resource, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1088,8 +1118,14 @@ namespace MyNS
 		/// Retrieves a list of all of your applications. Results are paginated.
 		/// ListApplications applications
 		/// </summary>
-		/// <param name="nextToken">The token to use to get the next page of results after a previous API call. </param>
-		/// <param name="maxResults">The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</param>
+		/// <param name="nextToken">The token to use to get the next page of results after a previous API call. 
+		/// Max length: 2024
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListApplicationsResponse> ListApplicationsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1156,8 +1192,14 @@ namespace MyNS
 		/// Lists all attribute groups which you have access to. Results are paginated.
 		/// ListAttributeGroups attribute-groups
 		/// </summary>
-		/// <param name="nextToken">The token to use to get the next page of results after a previous API call. </param>
-		/// <param name="maxResults">The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</param>
+		/// <param name="nextToken">The token to use to get the next page of results after a previous API call. 
+		/// Max length: 2024
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAttributeGroupsResponse> ListAttributeGroupsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1191,7 +1233,10 @@ namespace MyNS
 		/// Deletes an application that is specified either by its application ID, name, or ARN. All associated attribute groups and resources must be disassociated from it before deleting an application.
 		/// DeleteApplication applications/{application}
 		/// </summary>
-		/// <param name="application"> The name, ID, or ARN of the application. </param>
+		/// <param name="application"> The name, ID, or ARN of the application. 
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteApplicationResponse> DeleteApplicationAsync(string application, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1225,7 +1270,10 @@ namespace MyNS
 		/// Retrieves metadata information about one of your applications. The application can be specified by its ARN, ID, or name (which is unique within one account in one region at a given point in time). Specify by ARN or ID in automated workflows if you want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem.
 		/// GetApplication applications/{application}
 		/// </summary>
-		/// <param name="application"> The name, ID, or ARN of the application. </param>
+		/// <param name="application"> The name, ID, or ARN of the application. 
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetApplicationResponse> GetApplicationAsync(string application, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1259,7 +1307,10 @@ namespace MyNS
 		/// Updates an existing application with new attributes.
 		/// UpdateApplication applications/{application}
 		/// </summary>
-		/// <param name="application"> The name, ID, or ARN of the application that will be updated. </param>
+		/// <param name="application"> The name, ID, or ARN of the application that will be updated. 
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateApplicationResponse> UpdateApplicationAsync(string application, UpdateApplicationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1300,7 +1351,10 @@ namespace MyNS
 		/// Deletes an attribute group, specified either by its attribute group ID, name, or ARN.
 		/// DeleteAttributeGroup attribute-groups/{attributeGroup}
 		/// </summary>
-		/// <param name="attributeGroup"> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </param>
+		/// <param name="attributeGroup"> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. 
+		/// Max length: 512
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAttributeGroupResponse> DeleteAttributeGroupAsync(string attributeGroup, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1334,7 +1388,10 @@ namespace MyNS
 		/// Retrieves an attribute group by its ARN, ID, or name. The attribute group can be specified by its ARN, ID, or name.
 		/// GetAttributeGroup attribute-groups/{attributeGroup}
 		/// </summary>
-		/// <param name="attributeGroup"> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </param>
+		/// <param name="attributeGroup"> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. 
+		/// Max length: 512
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAttributeGroupResponse> GetAttributeGroupAsync(string attributeGroup, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1368,7 +1425,10 @@ namespace MyNS
 		/// Updates an existing attribute group with new details.
 		/// UpdateAttributeGroup attribute-groups/{attributeGroup}
 		/// </summary>
-		/// <param name="attributeGroup"> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. </param>
+		/// <param name="attributeGroup"> The name, ID, or ARN of the attribute group that holds the attributes to describe the application. 
+		/// Max length: 512
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAttributeGroupResponse> UpdateAttributeGroupAsync(string attributeGroup, UpdateAttributeGroupPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1476,9 +1536,18 @@ namespace MyNS
 		/// Lists all attribute groups that are associated with specified application. Results are paginated.
 		/// ListAssociatedAttributeGroups applications/{application}/attribute-groups
 		/// </summary>
-		/// <param name="application">The name or ID of the application.</param>
-		/// <param name="nextToken">The token to use to get the next page of results after a previous API call. </param>
-		/// <param name="maxResults">The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</param>
+		/// <param name="application">The name or ID of the application.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="nextToken">The token to use to get the next page of results after a previous API call. 
+		/// Max length: 2024
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAssociatedAttributeGroupsResponse> ListAssociatedAttributeGroupsAsync(string application, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1512,9 +1581,18 @@ namespace MyNS
 		/// <p> Lists all of the resources that are associated with the specified application. Results are paginated. </p> <note> <p> If you share an application, and a consumer account associates a tag query to the application, all of the users who can access the application can also view the tag values in all accounts that are associated with it using this API. </p> </note>
 		/// ListAssociatedResources applications/{application}/resources
 		/// </summary>
-		/// <param name="application"> The name, ID, or ARN of the application. </param>
-		/// <param name="nextToken">The token to use to get the next page of results after a previous API call. </param>
-		/// <param name="maxResults">The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.</param>
+		/// <param name="application"> The name, ID, or ARN of the application. 
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="nextToken">The token to use to get the next page of results after a previous API call. 
+		/// Max length: 2024
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAssociatedResourcesResponse> ListAssociatedResourcesAsync(string application, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1548,9 +1626,18 @@ namespace MyNS
 		/// Lists the details of all attribute groups associated with a specific application. The results display in pages.
 		/// ListAttributeGroupsForApplication applications/{application}/attribute-group-details
 		/// </summary>
-		/// <param name="application">The name or ID of the application.</param>
-		/// <param name="nextToken">This token retrieves the next page of results after a previous API call.</param>
-		/// <param name="maxResults">The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.</param>
+		/// <param name="application">The name or ID of the application.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
+		/// <param name="nextToken">This token retrieves the next page of results after a previous API call.
+		/// Max length: 2024
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAttributeGroupsForApplicationResponse> ListAttributeGroupsForApplicationAsync(string application, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1584,7 +1671,10 @@ namespace MyNS
 		/// Lists all of the tags on the resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon resource name (ARN) that specifies the resource.</param>
+		/// <param name="resourceArn">The Amazon resource name (ARN) that specifies the resource.
+		/// Max length: 1600
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1618,7 +1708,10 @@ namespace MyNS
 		/// <p>Assigns one or more tags (key-value pairs) to the specified resource.</p> <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the resource, this action updates its value.</p> <p>This operation returns an empty response if the call was successful.</p>
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon resource name (ARN) that specifies the resource.</param>
+		/// <param name="resourceArn">The Amazon resource name (ARN) that specifies the resource.
+		/// Max length: 1600
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1660,7 +1753,10 @@ namespace MyNS
 		/// SyncResource sync/{resourceType}/{resource}
 		/// </summary>
 		/// <param name="resourceType">The type of resource of which the application will be associated.</param>
-		/// <param name="resource">An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.</param>
+		/// <param name="resource">An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SyncResourceResponse> SyncResourceAsync(ResourceType resourceType, string resource, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1689,8 +1785,14 @@ namespace MyNS
 		/// <p>Removes tags from a resource.</p> <p>This operation returns an empty response if the call was successful.</p>
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon resource name (ARN) that specifies the resource.</param>
-		/// <param name="tagKeys">A list of the tag keys to remove from the specified resource.</param>
+		/// <param name="resourceArn">The Amazon resource name (ARN) that specifies the resource.
+		/// Max length: 1600
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">A list of the tag keys to remove from the specified resource.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

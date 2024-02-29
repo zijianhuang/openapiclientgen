@@ -13,7 +13,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain?: string | null;
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
@@ -44,7 +47,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** A more detailed explanation of the error. */
@@ -96,32 +102,50 @@ export namespace MyNS {
 	/** This complex type defines a "rate" as the quota of calls that can be made to a resource per time window, the remaining number of calls before the threshold is met, the amount of time until the time window resets, and the length of the time window (in seconds). */
 	export interface Rate {
 
-		/** The maximum number of requests that can be made to this resource during a set time period. The length of time to which the limit is applied is defined by the associated <b>timeWindow</b> value.  <br><br>This value is often referred to as the "call quota" for the resource. */
+		/**
+		 * The maximum number of requests that can be made to this resource during a set time period. The length of time to which the limit is applied is defined by the associated <b>timeWindow</b> value.  <br><br>This value is often referred to as the "call quota" for the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
-		/** The remaining number of requests that can be made to this resource before the associated time window resets. */
+		/**
+		 * The remaining number of requests that can be made to this resource before the associated time window resets.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remaining?: number | null;
 
 		/** The data and time the time window and accumulated calls for this resource reset.  <br><br>When the <b>reset</b> time is reached, the <b>remaining</b> value is reset to the value of <b>limit</b>, and this <b>reset</b> value is reset to the current time plus the number of seconds defined by the <b>timeWindow</b> value. <br><br>The time stamp is formatted as an <a href="http://www.iso.org/iso/home/standards/iso8601.htm " target="_blank">ISO 8601</a> string, which is based on the 24-hour Universal Coordinated Time (UTC) clock. <br><br><b>Format:</b> <code>[YYYY]-[MM]-[DD]T[hh]:[mm]:[ss].[sss]Z</code> <br><b>Example:</b> <code>2018-08-04T07:09:00.000Z</code> */
 		reset?: string | null;
 
-		/** A period of time, expressed in seconds. The call quota for a resource is applied to the period of time defined by the value of this field. */
+		/**
+		 * A period of time, expressed in seconds. The call quota for a resource is applied to the period of time defined by the value of this field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeWindow?: number | null;
 	}
 
 	/** This complex type defines a "rate" as the quota of calls that can be made to a resource per time window, the remaining number of calls before the threshold is met, the amount of time until the time window resets, and the length of the time window (in seconds). */
 	export interface RateFormProperties {
 
-		/** The maximum number of requests that can be made to this resource during a set time period. The length of time to which the limit is applied is defined by the associated <b>timeWindow</b> value.  <br><br>This value is often referred to as the "call quota" for the resource. */
+		/**
+		 * The maximum number of requests that can be made to this resource during a set time period. The length of time to which the limit is applied is defined by the associated <b>timeWindow</b> value.  <br><br>This value is often referred to as the "call quota" for the resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
-		/** The remaining number of requests that can be made to this resource before the associated time window resets. */
+		/**
+		 * The remaining number of requests that can be made to this resource before the associated time window resets.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		remaining: FormControl<number | null | undefined>,
 
 		/** The data and time the time window and accumulated calls for this resource reset.  <br><br>When the <b>reset</b> time is reached, the <b>remaining</b> value is reset to the value of <b>limit</b>, and this <b>reset</b> value is reset to the current time plus the number of seconds defined by the <b>timeWindow</b> value. <br><br>The time stamp is formatted as an <a href="http://www.iso.org/iso/home/standards/iso8601.htm " target="_blank">ISO 8601</a> string, which is based on the 24-hour Universal Coordinated Time (UTC) clock. <br><br><b>Format:</b> <code>[YYYY]-[MM]-[DD]T[hh]:[mm]:[ss].[sss]Z</code> <br><b>Example:</b> <code>2018-08-04T07:09:00.000Z</code> */
 		reset: FormControl<string | null | undefined>,
 
-		/** A period of time, expressed in seconds. The call quota for a resource is applied to the period of time defined by the value of this field. */
+		/**
+		 * A period of time, expressed in seconds. The call quota for a resource is applied to the period of time defined by the value of this field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeWindow: FormControl<number | null | undefined>,
 	}
 	export function CreateRateFormGroup() {

@@ -5,13 +5,19 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CallLog {
 
-		/** Amount charged for the call */
+		/**
+		 * Amount charged for the call
+		 * Type: double
+		 */
 		charge?: number | null;
 
 		/** Name of the destination device of the call */
 		destination_device_name?: string | null;
 
-		/** Destination extension of the call */
+		/**
+		 * Destination extension of the call
+		 * Type: double
+		 */
 		destination_extension?: number | null;
 
 		/** SIP ID of the destination device of the call */
@@ -41,10 +47,16 @@ export namespace MyNS {
 		/** Indicates if call was international */
 		international?: boolean | null;
 
-		/** Duration of the call in seconds */
+		/**
+		 * Duration of the call in seconds
+		 * Type: double
+		 */
 		length?: number | null;
 
-		/** Rate charged for the call */
+		/**
+		 * Rate charged for the call
+		 * Type: double
+		 */
 		rate?: number | null;
 
 		/** Indicates if call was recorded */
@@ -56,7 +68,10 @@ export namespace MyNS {
 		/** Name of the source device of the call */
 		source_device_name?: string | null;
 
-		/** Source extension of the call */
+		/**
+		 * Source extension of the call
+		 * Type: double
+		 */
 		source_extension?: number | null;
 
 		/** SIP ID of the source device of the call */
@@ -76,13 +91,19 @@ export namespace MyNS {
 	}
 	export interface CallLogFormProperties {
 
-		/** Amount charged for the call */
+		/**
+		 * Amount charged for the call
+		 * Type: double
+		 */
 		charge: FormControl<number | null | undefined>,
 
 		/** Name of the destination device of the call */
 		destination_device_name: FormControl<string | null | undefined>,
 
-		/** Destination extension of the call */
+		/**
+		 * Destination extension of the call
+		 * Type: double
+		 */
 		destination_extension: FormControl<number | null | undefined>,
 
 		/** SIP ID of the destination device of the call */
@@ -112,10 +133,16 @@ export namespace MyNS {
 		/** Indicates if call was international */
 		international: FormControl<boolean | null | undefined>,
 
-		/** Duration of the call in seconds */
+		/**
+		 * Duration of the call in seconds
+		 * Type: double
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Rate charged for the call */
+		/**
+		 * Rate charged for the call
+		 * Type: double
+		 */
 		rate: FormControl<number | null | undefined>,
 
 		/** Indicates if call was recorded */
@@ -127,7 +154,10 @@ export namespace MyNS {
 		/** Name of the source device of the call */
 		source_device_name: FormControl<string | null | undefined>,
 
-		/** Source extension of the call */
+		/**
+		 * Source extension of the call
+		 * Type: double
+		 */
 		source_extension: FormControl<number | null | undefined>,
 
 		/** SIP ID of the source device of the call */
@@ -189,30 +219,54 @@ export namespace MyNS {
 		_embedded?: CallLogsEmbeddedObject;
 		_links?: Links;
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page?: number | null;
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size?: number | null;
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items?: number | null;
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_page?: number | null;
 	}
 	export interface CallLogsHalResponseFormProperties {
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size: FormControl<number | null | undefined>,
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items: FormControl<number | null | undefined>,
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_page: FormControl<number | null | undefined>,
 	}
 	export function CreateCallLogsHalResponseFormGroup() {
@@ -344,7 +398,10 @@ export namespace MyNS {
 		/** Error message */
 		msg?: string | null;
 
-		/** Http Response Code */
+		/**
+		 * Http Response Code
+		 * Type: double
+		 */
 		status?: number | null;
 	}
 	export interface ErrorResponseFormProperties {
@@ -352,7 +409,10 @@ export namespace MyNS {
 		/** Error message */
 		msg: FormControl<string | null | undefined>,
 
-		/** Http Response Code */
+		/**
+		 * Http Response Code
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorResponseFormGroup() {
@@ -388,7 +448,10 @@ export namespace MyNS {
 		/** Invalid parameters and their reason for failing */
 		invalid_parameters?: Array<DetailedInvalidParam>;
 
-		/** Error status code */
+		/**
+		 * Error status code
+		 * Type: double
+		 */
 		status?: number | null;
 
 		/** Error title */
@@ -399,7 +462,10 @@ export namespace MyNS {
 		/** Error Track ID */
 		instance: FormControl<string | null | undefined>,
 
-		/** Error status code */
+		/**
+		 * Error status code
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** Error title */
@@ -429,7 +495,9 @@ export namespace MyNS {
 		 * @param {string} end_gte Filter records by end date (greater equal or equal to)
 		 * @param {string} end_lte Filter records by end date (less equal or equal to)
 		 * @param {number} page_size Number of records per page
+		 *     Type: double
 		 * @param {number} page Current page number
+		 *     Type: double
 		 * @param {string} to Filter by called number
 		 * @param {string} from Filter by source number
 		 * @param {string} source_user Filter by source user

@@ -646,6 +646,7 @@ export namespace MyNS {
 		 * @param {string} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} solutionName The name of the IoT Security solution.
 		 * @return {IoTSecuritySolutionAnalyticsModelList} OK
 		 */
@@ -659,6 +660,7 @@ export namespace MyNS {
 		 * @param {string} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} solutionName The name of the IoT Security solution.
 		 * @return {IoTSecuritySolutionAnalyticsModel} OK
 		 */
@@ -672,8 +674,10 @@ export namespace MyNS {
 		 * @param {string} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} solutionName The name of the IoT Security solution.
 		 * @param {number} top Number of results to retrieve.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {IoTSecurityAggregatedAlertList} OK
 		 */
 		IotSecuritySolutionsAnalyticsAggregatedAlert_List(api_version: string, subscriptionId: string, resourceGroupName: string, solutionName: string, top: number | null | undefined): Observable<IoTSecurityAggregatedAlertList> {
@@ -686,6 +690,7 @@ export namespace MyNS {
 		 * @param {string} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} solutionName The name of the IoT Security solution.
 		 * @param {string} aggregatedAlertName Identifier of the aggregated alert.
 		 * @return {IoTSecurityAggregatedAlert} OK
@@ -700,6 +705,7 @@ export namespace MyNS {
 		 * @param {string} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} solutionName The name of the IoT Security solution.
 		 * @param {string} aggregatedAlertName Identifier of the aggregated alert.
 		 * @return {void} This aggregate alert is permanently dismissed.
@@ -714,8 +720,10 @@ export namespace MyNS {
 		 * @param {string} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} solutionName The name of the IoT Security solution.
 		 * @param {number} top Number of results to retrieve.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {IoTSecurityAggregatedRecommendationList} OK
 		 */
 		IotSecuritySolutionsAnalyticsRecommendation_List(api_version: string, subscriptionId: string, resourceGroupName: string, solutionName: string, top: number | null | undefined): Observable<IoTSecurityAggregatedRecommendationList> {
@@ -728,6 +736,7 @@ export namespace MyNS {
 		 * @param {string} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} solutionName The name of the IoT Security solution.
 		 * @param {string} aggregatedRecommendationName Name of the recommendation aggregated for this query.
 		 * @return {IoTSecurityAggregatedRecommendation} OK

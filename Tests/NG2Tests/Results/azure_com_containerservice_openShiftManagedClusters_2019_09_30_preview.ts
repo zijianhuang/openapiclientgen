@@ -682,6 +682,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1
 		 * @return {OpenShiftManagedClusterListResult} OK
 		 */
 		OpenShiftManagedClusters_ListByResourceGroup(api_version: string, subscriptionId: string, resourceGroupName: string): Observable<OpenShiftManagedClusterListResult> {
@@ -695,6 +696,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the OpenShift managed cluster resource.
 		 * @return {OpenShiftManagedCluster} OK
 		 */
@@ -709,6 +711,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the OpenShift managed cluster resource.
 		 * @param {OpenShiftManagedCluster} requestBody Parameters supplied to the Create or Update an OpenShift Managed Cluster operation.
 		 * @return {OpenShiftManagedCluster} OK
@@ -724,6 +727,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the OpenShift managed cluster resource.
 		 * @return {void} 
 		 */
@@ -738,6 +742,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} resourceGroupName The name of the resource group.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the OpenShift managed cluster resource.
 		 * @param {TagsObject} requestBody Parameters supplied to the Update OpenShift Managed Cluster Tags operation.
 		 * @return {OpenShiftManagedCluster} OK

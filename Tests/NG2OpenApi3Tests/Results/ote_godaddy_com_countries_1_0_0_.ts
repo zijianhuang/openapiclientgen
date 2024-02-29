@@ -239,6 +239,7 @@ export namespace MyNS {
 		 * Get v1/countries
 		 * @param {string} marketId MarketId in which the request is being made, and for which responses should be localized
 		 * @param {number} regionTypeId Restrict countries to this region type; required if regionName is supplied
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} regionName Restrict countries to this region name; required if regionTypeId is supplied
 		 * @param {GetCountriesSort} sort The term to sort the result countries by.
 		 * @param {GetCountriesOrder} order The direction to sort the result countries by.

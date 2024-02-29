@@ -1051,6 +1051,7 @@ export namespace MyNS {
 		 * Gets information about AWS tags for the specified ARN.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource to be retrieved. The ARN must be URL-encoded.
+		 *     Min length: 1    Max length: 128
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1061,6 +1062,7 @@ export namespace MyNS {
 		 * Adds or updates tags for the AWS resource with the specified ARN.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource to be tagged. The ARN must be URL-encoded.
+		 *     Min length: 1    Max length: 128
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1080,7 +1082,9 @@ export namespace MyNS {
 		 * Removes tags from the resource with the specified ARN.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The ARN of the resource to be untagged. The ARN must be URL-encoded.
+		 *     Min length: 1    Max length: 128
 		 * @param {Array<string>} tagKeys Array of tags to be removed. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS Chat has no constraints beyond what is documented there.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1117,8 +1121,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the room that the client is trying to access. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		roomIdentifier: string;
 
@@ -1132,8 +1136,8 @@ export namespace MyNS {
 		/**
 		 * Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		userId: string;
 	}
@@ -1145,8 +1149,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the room that the client is trying to access. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		roomIdentifier: FormControl<string | null | undefined>,
 
@@ -1160,8 +1164,8 @@ export namespace MyNS {
 		/**
 		 * Application-provided ID that uniquely identifies the user associated with this token. This can be any UTF-8 encoded text.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		userId: FormControl<string | null | undefined>,
 	}
@@ -1185,8 +1189,8 @@ export namespace MyNS {
 
 		/**
 		 * Logging-configuration name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -1197,8 +1201,8 @@ export namespace MyNS {
 
 		/**
 		 * Logging-configuration name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1254,8 +1258,8 @@ export namespace MyNS {
 
 		/**
 		 * Room name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -1280,8 +1284,8 @@ export namespace MyNS {
 
 		/**
 		 * Room name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1319,8 +1323,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the logging configuration to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: string;
 	}
@@ -1329,8 +1333,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the logging configuration to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: FormControl<string | null | undefined>,
 	}
@@ -1346,23 +1350,23 @@ export namespace MyNS {
 		/**
 		 * ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		id: string;
 
 		/**
 		 * Reason for deleting the message.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		reason?: string | null;
 
 		/**
 		 * Identifier of the room where the message should be deleted. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		roomIdentifier: string;
 	}
@@ -1371,23 +1375,23 @@ export namespace MyNS {
 		/**
 		 * ID of the message to be deleted. This is the <code>Id</code> field in the received message (see <a href="https://docs.aws.amazon.com/ivs/latest/chatmsgapireference/actions-message-subscribe.html"> Message (Subscribe)</a> in the Chat Messaging API).
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Reason for deleting the message.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		reason: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier of the room where the message should be deleted. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		roomIdentifier: FormControl<string | null | undefined>,
 	}
@@ -1405,8 +1409,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the room to be deleted. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: string;
 	}
@@ -1415,8 +1419,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the room to be deleted. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: FormControl<string | null | undefined>,
 	}
@@ -1431,24 +1435,24 @@ export namespace MyNS {
 
 		/**
 		 * Reason for disconnecting the user.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		reason?: string | null;
 
 		/**
 		 * Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		roomIdentifier: string;
 
 		/**
 		 * ID of the user (connection) to disconnect from the room.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		userId: string;
 	}
@@ -1456,24 +1460,24 @@ export namespace MyNS {
 
 		/**
 		 * Reason for disconnecting the user.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		reason: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier of the room from which the user's clients should be disconnected. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		roomIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * ID of the user (connection) to disconnect from the room.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		userId: FormControl<string | null | undefined>,
 	}
@@ -1491,8 +1495,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the logging configuration to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: string;
 	}
@@ -1501,8 +1505,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the logging configuration to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: FormControl<string | null | undefined>,
 	}
@@ -1518,8 +1522,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: string;
 	}
@@ -1528,8 +1532,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the room for which the configuration is to be retrieved. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: FormControl<string | null | undefined>,
 	}
@@ -1551,8 +1555,8 @@ export namespace MyNS {
 
 		/**
 		 * The first logging configurations to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -1567,8 +1571,8 @@ export namespace MyNS {
 
 		/**
 		 * The first logging configurations to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -1584,8 +1588,8 @@ export namespace MyNS {
 
 		/**
 		 * Logging-configuration identifier.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		loggingConfigurationIdentifier?: string | null;
 
@@ -1598,22 +1602,22 @@ export namespace MyNS {
 
 		/**
 		 * Filters the list to match the specified message review handler URI.
-		 * Max length: 170
 		 * Min length: 0
+		 * Max length: 170
 		 */
 		messageReviewHandlerUri?: string | null;
 
 		/**
 		 * Filters the list to match the specified room name.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
 		/**
 		 * The first room to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -1621,8 +1625,8 @@ export namespace MyNS {
 
 		/**
 		 * Logging-configuration identifier.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		loggingConfigurationIdentifier: FormControl<string | null | undefined>,
 
@@ -1635,22 +1639,22 @@ export namespace MyNS {
 
 		/**
 		 * Filters the list to match the specified message review handler URI.
-		 * Max length: 170
 		 * Min length: 0
+		 * Max length: 170
 		 */
 		messageReviewHandlerUri: FormControl<string | null | undefined>,
 
 		/**
 		 * Filters the list to match the specified room name.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The first room to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -1696,16 +1700,16 @@ export namespace MyNS {
 		/**
 		 * Application-defined name of the event to send to clients.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		eventName: string;
 
 		/**
 		 * Identifier of the room to which the event will be sent. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		roomIdentifier: string;
 	}
@@ -1717,16 +1721,16 @@ export namespace MyNS {
 		/**
 		 * Application-defined name of the event to send to clients.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		eventName: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier of the room to which the event will be sent. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		roomIdentifier: FormControl<string | null | undefined>,
 	}
@@ -1747,15 +1751,15 @@ export namespace MyNS {
 		/**
 		 * Identifier of the logging configuration to be updated.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: string;
 
 		/**
 		 * Logging-configuration name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 	}
@@ -1764,15 +1768,15 @@ export namespace MyNS {
 		/**
 		 * Identifier of the logging configuration to be updated.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: FormControl<string | null | undefined>,
 
 		/**
 		 * Logging-configuration name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1802,8 +1806,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the room to be updated. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: string;
 
@@ -1833,8 +1837,8 @@ export namespace MyNS {
 
 		/**
 		 * Room name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 	}
@@ -1843,8 +1847,8 @@ export namespace MyNS {
 		/**
 		 * Identifier of the room to be updated. Currently this must be an ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		identifier: FormControl<string | null | undefined>,
 
@@ -1864,8 +1868,8 @@ export namespace MyNS {
 
 		/**
 		 * Room name. The value does not need to be unique.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 	}

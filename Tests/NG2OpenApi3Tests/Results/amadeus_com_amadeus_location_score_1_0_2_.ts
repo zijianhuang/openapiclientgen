@@ -20,14 +20,20 @@ export namespace MyNS {
 
 	export interface Error_400Errors {
 
-		/** A machine-readable error code from the Amadeus Canned Messages table, that will enable the API Consumers code to handle this type of error */
+		/**
+		 * A machine-readable error code from the Amadeus Canned Messages table, that will enable the API Consumers code to handle this type of error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** An easy-to-read explanation specific to this occurrence of the problem. It should give the API consumer an idea of what went wrong and how to recover from it. Like the title, this field’s value can be localized. */
 		detail?: string | null;
 		source?: Error_400ErrorsSource;
 
-		/** The [HTTP status code](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) of this response. This is present only in terminal errors which cause an unsuccessful response. In the case of multiple errors, they must all have the same status. */
+		/**
+		 * The [HTTP status code](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) of this response. This is present only in terminal errors which cause an unsuccessful response. In the case of multiple errors, they must all have the same status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** An error title from the Canned Messages table with a 1:1 correspondence to the error code. This may be localized */
@@ -35,13 +41,19 @@ export namespace MyNS {
 	}
 	export interface Error_400ErrorsFormProperties {
 
-		/** A machine-readable error code from the Amadeus Canned Messages table, that will enable the API Consumers code to handle this type of error */
+		/**
+		 * A machine-readable error code from the Amadeus Canned Messages table, that will enable the API Consumers code to handle this type of error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** An easy-to-read explanation specific to this occurrence of the problem. It should give the API consumer an idea of what went wrong and how to recover from it. Like the title, this field’s value can be localized. */
 		detail: FormControl<string | null | undefined>,
 
-		/** The [HTTP status code](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) of this response. This is present only in terminal errors which cause an unsuccessful response. In the case of multiple errors, they must all have the same status. */
+		/**
+		 * The [HTTP status code](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) of this response. This is present only in terminal errors which cause an unsuccessful response. In the case of multiple errors, they must all have the same status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** An error title from the Canned Messages table with a 1:1 correspondence to the error code. This may be localized */
@@ -105,14 +117,20 @@ export namespace MyNS {
 
 	export interface Error_500Errors {
 
-		/** A machine-readable error code from the Amadeus Canned Messages table, that will enable the API Consumers code to handle this type of error */
+		/**
+		 * A machine-readable error code from the Amadeus Canned Messages table, that will enable the API Consumers code to handle this type of error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** An easy-to-read explanation specific to this occurrence of the problem. It should give the API consumer an idea of what went wrong and how to recover from it. Like the title, this field’s value can be localized. */
 		detail?: string | null;
 		source?: Error_500ErrorsSource;
 
-		/** The [HTTP status code](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) of this response. This is present only in terminal errors which cause an unsuccessful response. In the case of multiple errors, they must all have the same status. */
+		/**
+		 * The [HTTP status code](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) of this response. This is present only in terminal errors which cause an unsuccessful response. In the case of multiple errors, they must all have the same status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/** An error title from the Canned Messages table with a 1:1 correspondence to the error code. This may be localized */
@@ -120,13 +138,19 @@ export namespace MyNS {
 	}
 	export interface Error_500ErrorsFormProperties {
 
-		/** A machine-readable error code from the Amadeus Canned Messages table, that will enable the API Consumers code to handle this type of error */
+		/**
+		 * A machine-readable error code from the Amadeus Canned Messages table, that will enable the API Consumers code to handle this type of error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** An easy-to-read explanation specific to this occurrence of the problem. It should give the API consumer an idea of what went wrong and how to recover from it. Like the title, this field’s value can be localized. */
 		detail: FormControl<string | null | undefined>,
 
-		/** The [HTTP status code](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) of this response. This is present only in terminal errors which cause an unsuccessful response. In the case of multiple errors, they must all have the same status. */
+		/**
+		 * The [HTTP status code](https://www.iana.org/assignments/http-status-codes/http-status-codes.xhtml) of this response. This is present only in terminal errors which cause an unsuccessful response. In the case of multiple errors, they must all have the same status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** An error title from the Canned Messages table with a 1:1 correspondence to the error code. This may be localized */
@@ -181,7 +205,7 @@ export namespace MyNS {
 		 * Total number of object(s) retrieved
 		 * Minimum: 0
 		 */
-		count?: number | null;
+		count?: string | null;
 
 		/** Links related to the returned object(s) */
 		links?: MetaLinks;
@@ -194,11 +218,11 @@ export namespace MyNS {
 		 * Total number of object(s) retrieved
 		 * Minimum: 0
 		 */
-		count: FormControl<number | null | undefined>,
+		count: FormControl<string | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
 		return new FormGroup<MetaFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			count: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 		});
 
 	}
@@ -227,6 +251,7 @@ export namespace MyNS {
 		/**
 		 * A machine-readable error code from the Canned Messages table, that will enable the API Consumers code to handle this type of error
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: number;
 
@@ -249,6 +274,7 @@ export namespace MyNS {
 		/**
 		 * A machine-readable error code from the Canned Messages table, that will enable the API Consumers code to handle this type of error
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		code: FormControl<number | null | undefined>,
 
@@ -320,7 +346,9 @@ export namespace MyNS {
 		 * GET category rated areas
 		 * Get location/analytics/category-rated-areas
 		 * @param {number} latitude Latitude in decimal coordinates
+		 *     Type: double
 		 * @param {number} longitude Longitude in decimal coordinates
+		 *     Type: double
 		 * @return {void} Successful Reply
 		 */
 		Get_category_rated_areas(latitude: number, longitude: number): Observable<HttpResponse<string>> {

@@ -36,6 +36,7 @@ export namespace MyNS {
 		 * Get action/organization_autocomplete
 		 * @param {string} q The string to search for
 		 * @param {number} limit The maximum number of organizations to return (optional)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} List of organizations
 		 */
 		ActionOrganization_autocompleteGetByQAndLimit(q: string | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -69,7 +70,9 @@ export namespace MyNS {
 		 * Returns the names of all indexed organizations
 		 * Get action/organization_list
 		 * @param {number} offset The offset (index) of the first organizations to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The number of organizations to be returned per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} List of organizations
 		 */
 		ActionOrganization_listGetByOffsetAndLimit(offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -116,7 +119,9 @@ export namespace MyNS {
 		 * Get action/package_activity_list
 		 * @param {string} id The id or name of the package
 		 * @param {number} offset Where to start getting activity items from
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of activities to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} List of activities
 		 */
 		ActionPackage_activity_listGetByIdAndOffsetAndLimit(id: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -129,7 +134,9 @@ export namespace MyNS {
 		 * Get action/package_activity_list_html
 		 * @param {string} id The id or name of the package
 		 * @param {number} offset Where to start getting activity items from
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of activities to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} List of activities rendered as HTML snippet
 		 */
 		ActionPackage_activity_list_htmlGetByIdAndOffsetAndLimit(id: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -142,6 +149,7 @@ export namespace MyNS {
 		 * Get action/package_autocomplete
 		 * @param {string} q The string to query
 		 * @param {number} limit The maximum number of resource formats to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} List of datasets that match a string
 		 */
 		ActionPackage_autocompleteGetByQAndLimit(q: string | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -153,7 +161,9 @@ export namespace MyNS {
 		 * Returns the names of all indexed packages (datasets)
 		 * Get action/package_list
 		 * @param {number} offset The offset (index) of the first package to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The number of packages to be returned per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} List of packages
 		 */
 		ActionPackage_listGetByOffsetAndLimit(offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -229,7 +239,9 @@ export namespace MyNS {
 		 * @param {string} fields Depreciated
 		 * @param {string} order_by A field on the resource model that orders the results
 		 * @param {number} offset Apply an offset to the query
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Apply a limit to the query
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Search for resources
 		 */
 		ActionResource_searchGetByQueryAndFieldsAndOrder_byAndOffsetAndLimit(query: string | null | undefined, fields: string | null | undefined, order_by: string | null | undefined, offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -263,7 +275,9 @@ export namespace MyNS {
 		 * Returns the names of all indexed tags
 		 * Get action/tag_list
 		 * @param {number} offset The offset (index) of the first tag to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The number of tags to be returned per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} List of tags
 		 */
 		ActionTag_listGetByOffsetAndLimit(offset: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

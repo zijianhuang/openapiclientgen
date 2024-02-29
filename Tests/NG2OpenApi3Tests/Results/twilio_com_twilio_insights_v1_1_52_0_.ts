@@ -53,8 +53,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -71,8 +71,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -99,8 +99,8 @@ export namespace MyNS {
 		links?: string | null;
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		url?: string | null;
@@ -109,8 +109,8 @@ export namespace MyNS {
 		links: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -128,19 +128,22 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		answered_by?: Annotation_enum_answered_by | null;
 
-		/** Specifies the Call Score, if available. This is of type integer. Use a range of 1-5 to indicate the call experience score, with the following mapping as a reference for rating the call [5: Excellent, 4: Good, 3 : Fair, 2 : Poor, 1: Bad]. */
+		/**
+		 * Specifies the Call Score, if available. This is of type integer. Use a range of 1-5 to indicate the call experience score, with the following mapping as a reference for rating the call [5: Excellent, 4: Good, 3 : Fair, 2 : Poor, 1: Bad].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		call_score?: number | null;
 
 		/**
 		 * The unique SID identifier of the Call.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid?: string | null;
 
@@ -162,19 +165,22 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		answered_by: FormControl<Annotation_enum_answered_by | null | undefined>,
 
-		/** Specifies the Call Score, if available. This is of type integer. Use a range of 1-5 to indicate the call experience score, with the following mapping as a reference for rating the call [5: Excellent, 4: Good, 3 : Fair, 2 : Poor, 1: Bad]. */
+		/**
+		 * Specifies the Call Score, if available. This is of type integer. Use a range of 1-5 to indicate the call experience score, with the following mapping as a reference for rating the call [5: Excellent, 4: Good, 3 : Fair, 2 : Poor, 1: Bad].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		call_score: FormControl<number | null | undefined>,
 
 		/**
 		 * The unique SID identifier of the Call.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid: FormControl<string | null | undefined>,
 
@@ -208,15 +214,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The unique SID identifier of the Call.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid?: string | null;
 
@@ -247,15 +253,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique SID identifier of the Call.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid: FormControl<string | null | undefined>,
 
@@ -303,15 +309,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The unique SID identifier of the Call.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid?: string | null;
 
@@ -336,15 +342,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique SID identifier of the Call.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid: FormControl<string | null | undefined>,
 
@@ -386,8 +392,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -400,8 +406,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Call.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid?: string | null;
 		call_state?: Call_summaries_enum_call_state | null;
@@ -413,13 +419,19 @@ export namespace MyNS {
 		/** Contains metrics and properties for the Twilio media gateway of a Client call. */
 		client_edge?: any;
 
-		/** Duration between when the call was answered and when it ended */
+		/**
+		 * Duration between when the call was answered and when it ended
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connect_duration?: number | null;
 
 		/** The time at which the Call was created, given in ISO 8601 format. Can be different from `start_time` in the event of queueing due to CPS */
 		created_time?: Date | null;
 
-		/** Duration between when the call was initiated and the call was ended */
+		/**
+		 * Duration between when the call was initiated and the call was ended
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** The time at which the Call was ended, given in ISO 8601 format. */
@@ -457,8 +469,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -471,8 +483,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Call.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid: FormControl<string | null | undefined>,
 		call_state: FormControl<Call_summaries_enum_call_state | null | undefined>,
@@ -484,13 +496,19 @@ export namespace MyNS {
 		/** Contains metrics and properties for the Twilio media gateway of a Client call. */
 		client_edge: FormControl<any | null | undefined>,
 
-		/** Duration between when the call was answered and when it ended */
+		/**
+		 * Duration between when the call was answered and when it ended
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connect_duration: FormControl<number | null | undefined>,
 
 		/** The time at which the Call was created, given in ISO 8601 format. Can be different from `start_time` in the event of queueing due to CPS */
 		created_time: FormControl<Date | null | undefined>,
 
-		/** Duration between when the call was initiated and the call was ended */
+		/**
+		 * Duration between when the call was initiated and the call was ended
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** The time at which the Call was ended, given in ISO 8601 format. */
@@ -553,8 +571,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		annotation?: any;
@@ -565,8 +583,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Call.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid?: string | null;
 		call_state?: Call_summaries_enum_call_state | null;
@@ -578,13 +596,19 @@ export namespace MyNS {
 		/** Contains metrics and properties for the Twilio media gateway of a Client call. */
 		client_edge?: any;
 
-		/** Duration between when the call was answered and when it ended */
+		/**
+		 * Duration between when the call was answered and when it ended
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connect_duration?: number | null;
 
 		/** The time at which the Call was created, given in ISO 8601 format. Can be different from `start_time` in the event of queueing due to CPS */
 		created_time?: Date | null;
 
-		/** Duration between when the call was initiated and the call was ended */
+		/**
+		 * Duration between when the call was initiated and the call was ended
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** The time at which the Call was ended, given in ISO 8601 format. */
@@ -622,8 +646,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		annotation: FormControl<any | null | undefined>,
@@ -634,8 +658,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Call.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid: FormControl<string | null | undefined>,
 		call_state: FormControl<Call_summaries_enum_call_state | null | undefined>,
@@ -647,13 +671,19 @@ export namespace MyNS {
 		/** Contains metrics and properties for the Twilio media gateway of a Client call. */
 		client_edge: FormControl<any | null | undefined>,
 
-		/** Duration between when the call was answered and when it ended */
+		/**
+		 * Duration between when the call was answered and when it ended
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connect_duration: FormControl<number | null | undefined>,
 
 		/** The time at which the Call was created, given in ISO 8601 format. Can be different from `start_time` in the event of queueing due to CPS */
 		created_time: FormControl<Date | null | undefined>,
 
-		/** Duration between when the call was initiated and the call was ended */
+		/**
+		 * Duration between when the call was initiated and the call was ended
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** The time at which the Call was ended, given in ISO 8601 format. */
@@ -716,19 +746,22 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The unique SID identifier of the Conference.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		conference_sid?: string | null;
 
-		/** Duration of the between conference start event and conference end event in seconds. */
+		/**
+		 * Duration of the between conference start event and conference end event in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connect_duration_seconds?: number | null;
 
 		/** Conference creation date and time in ISO 8601 format. */
@@ -737,7 +770,10 @@ export namespace MyNS {
 		/** Potential issues detected by Twilio during the conference. */
 		detected_issues?: any;
 
-		/** Conference duration in seconds. */
+		/**
+		 * Conference duration in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_seconds?: number | null;
 		end_reason?: Conference_enum_conference_end_reason | null;
 
@@ -746,8 +782,8 @@ export namespace MyNS {
 
 		/**
 		 * Call SID of the participant whose actions ended the conference.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		ended_by?: string | null;
 
@@ -757,10 +793,16 @@ export namespace MyNS {
 		/** Contains a dictionary of URL links to nested resources of this Conference. */
 		links?: string | null;
 
-		/** Actual maximum number of concurrent participants in the conference. */
+		/**
+		 * Actual maximum number of concurrent participants in the conference.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_concurrent_participants?: number | null;
 
-		/** Maximum number of concurrent participants as specified by the configuration. */
+		/**
+		 * Maximum number of concurrent participants as specified by the configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_participants?: number | null;
 		mixer_region?: Conference_enum_region | null;
 		mixer_region_requested?: Conference_enum_region | null;
@@ -779,7 +821,10 @@ export namespace MyNS {
 		/** Tags for detected conference conditions and participant behaviors which may be of interest. */
 		tags?: Array<Conference_enum_tag>;
 
-		/** Unique conference participants based on caller ID. */
+		/**
+		 * Unique conference participants based on caller ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unique_participants?: number | null;
 
 		/** The URL of this resource. */
@@ -789,19 +834,22 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique SID identifier of the Conference.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		conference_sid: FormControl<string | null | undefined>,
 
-		/** Duration of the between conference start event and conference end event in seconds. */
+		/**
+		 * Duration of the between conference start event and conference end event in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connect_duration_seconds: FormControl<number | null | undefined>,
 
 		/** Conference creation date and time in ISO 8601 format. */
@@ -810,7 +858,10 @@ export namespace MyNS {
 		/** Potential issues detected by Twilio during the conference. */
 		detected_issues: FormControl<any | null | undefined>,
 
-		/** Conference duration in seconds. */
+		/**
+		 * Conference duration in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_seconds: FormControl<number | null | undefined>,
 		end_reason: FormControl<Conference_enum_conference_end_reason | null | undefined>,
 
@@ -819,8 +870,8 @@ export namespace MyNS {
 
 		/**
 		 * Call SID of the participant whose actions ended the conference.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		ended_by: FormControl<string | null | undefined>,
 
@@ -830,10 +881,16 @@ export namespace MyNS {
 		/** Contains a dictionary of URL links to nested resources of this Conference. */
 		links: FormControl<string | null | undefined>,
 
-		/** Actual maximum number of concurrent participants in the conference. */
+		/**
+		 * Actual maximum number of concurrent participants in the conference.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_concurrent_participants: FormControl<number | null | undefined>,
 
-		/** Maximum number of concurrent participants as specified by the configuration. */
+		/**
+		 * Maximum number of concurrent participants as specified by the configuration.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_participants: FormControl<number | null | undefined>,
 		mixer_region: FormControl<Conference_enum_region | null | undefined>,
 		mixer_region_requested: FormControl<Conference_enum_region | null | undefined>,
@@ -849,7 +906,10 @@ export namespace MyNS {
 		/** Object. Contains details about conference tags including severity. */
 		tag_info: FormControl<any | null | undefined>,
 
-		/** Unique conference participants based on caller ID. */
+		/**
+		 * Unique conference participants based on caller ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unique_participants: FormControl<number | null | undefined>,
 
 		/** The URL of this resource. */
@@ -887,16 +947,16 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 		call_direction?: Conference_participant_enum_call_direction | null;
 
 		/**
 		 * Unique SID identifier of the call that generated the Participant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid?: string | null;
 		call_status?: Conference_participant_enum_call_status | null;
@@ -908,15 +968,18 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Conference.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		conference_sid?: string | null;
 
 		/** ISO alpha-2 country code of the participant based on caller ID or called number. */
 		country_code?: string | null;
 
-		/** Participant durations in seconds. */
+		/**
+		 * Participant durations in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_seconds?: number | null;
 
 		/** Object containing information of actions taken by participants. Contains a dictionary of URL links to nested resources of this Conference Participant. */
@@ -944,17 +1007,23 @@ export namespace MyNS {
 		/** Object. Contains participant call quality metrics. */
 		metrics?: any;
 
-		/** Add Participant API only. Estimated time in queue at call creation. */
+		/**
+		 * Add Participant API only. Estimated time in queue at call creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outbound_queue_length?: number | null;
 
-		/** Add Participant API only. Actual time in queue in seconds. */
+		/**
+		 * Add Participant API only. Actual time in queue in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outbound_time_in_queue?: number | null;
 		participant_region?: Conference_participant_enum_region | null;
 
 		/**
 		 * SID for this participant.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		participant_sid?: string | null;
 		processing_state?: Conference_enum_processing_state | null;
@@ -972,16 +1041,16 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 		call_direction: FormControl<Conference_participant_enum_call_direction | null | undefined>,
 
 		/**
 		 * Unique SID identifier of the call that generated the Participant resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		call_sid: FormControl<string | null | undefined>,
 		call_status: FormControl<Conference_participant_enum_call_status | null | undefined>,
@@ -990,15 +1059,18 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Conference.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		conference_sid: FormControl<string | null | undefined>,
 
 		/** ISO alpha-2 country code of the participant based on caller ID or called number. */
 		country_code: FormControl<string | null | undefined>,
 
-		/** Participant durations in seconds. */
+		/**
+		 * Participant durations in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration_seconds: FormControl<number | null | undefined>,
 
 		/** Object containing information of actions taken by participants. Contains a dictionary of URL links to nested resources of this Conference Participant. */
@@ -1026,17 +1098,23 @@ export namespace MyNS {
 		/** Object. Contains participant call quality metrics. */
 		metrics: FormControl<any | null | undefined>,
 
-		/** Add Participant API only. Estimated time in queue at call creation. */
+		/**
+		 * Add Participant API only. Estimated time in queue at call creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outbound_queue_length: FormControl<number | null | undefined>,
 
-		/** Add Participant API only. Actual time in queue in seconds. */
+		/**
+		 * Add Participant API only. Actual time in queue in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outbound_time_in_queue: FormControl<number | null | undefined>,
 		participant_region: FormControl<Conference_participant_enum_region | null | undefined>,
 
 		/**
 		 * SID for this participant.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		participant_sid: FormControl<string | null | undefined>,
 		processing_state: FormControl<Conference_enum_processing_state | null | undefined>,
@@ -1086,23 +1164,29 @@ export namespace MyNS {
 
 		/**
 		 * Account SID associated with this room.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/** Codecs used by participants in the room. Can be `VP8`, `H264`, or `VP9`. */
 		codecs?: Array<Video_room_summary_enum_codec>;
 
-		/** Actual number of concurrent participants. */
+		/**
+		 * Actual number of concurrent participants.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrent_participants?: number | null;
 
 		/** Creation time of the room. */
 		create_time?: Date | null;
 		created_method?: Insightsv1video_room_summaryCreated_method | null;
 
-		/** Total room duration from create time to end time. */
-		duration_sec?: number | null;
+		/**
+		 * Total room duration from create time to end time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration_sec?: string | null;
 		edge_location?: Insightsv1video_room_summaryEdge_location | null;
 		end_reason?: Insightsv1video_room_summaryEnd_reason | null;
 
@@ -1112,10 +1196,16 @@ export namespace MyNS {
 		/** Room subresources. */
 		links?: string | null;
 
-		/** Maximum number of participants allowed in the room at the same time allowed by the application settings. */
+		/**
+		 * Maximum number of participants allowed in the room at the same time allowed by the application settings.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_concurrent_participants?: number | null;
 
-		/** Max number of total participants allowed by the application settings. */
+		/**
+		 * Max number of total participants allowed by the application settings.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_participants?: number | null;
 		media_region?: Insightsv1video_room_summaryMedia_region | null;
 		processing_state?: Insightsv1video_room_summaryProcessing_state | null;
@@ -1128,8 +1218,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the room.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		room_sid?: string | null;
 		room_status?: Insightsv1video_room_summaryRoom_status | null;
@@ -1141,16 +1231,28 @@ export namespace MyNS {
 		/** HTTP method provided for status callback URL. */
 		status_callback_method?: Insightsv1video_room_summaryStatus_callback_method | null;
 
-		/** Combined amount of participant time in the room. */
-		total_participant_duration_sec?: number | null;
+		/**
+		 * Combined amount of participant time in the room.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total_participant_duration_sec?: string | null;
 
-		/** Combined amount of recorded seconds for participants in the room. */
-		total_recording_duration_sec?: number | null;
+		/**
+		 * Combined amount of recorded seconds for participants in the room.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total_recording_duration_sec?: string | null;
 
-		/** Unique number of participant identities. */
+		/**
+		 * Unique number of participant identities.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unique_participant_identities?: number | null;
 
-		/** Number of participants. May include duplicate identities for participants who left and rejoined. */
+		/**
+		 * Number of participants. May include duplicate identities for participants who left and rejoined.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unique_participants?: number | null;
 
 		/** URL for the room resource. */
@@ -1160,20 +1262,26 @@ export namespace MyNS {
 
 		/**
 		 * Account SID associated with this room.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
-		/** Actual number of concurrent participants. */
+		/**
+		 * Actual number of concurrent participants.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		concurrent_participants: FormControl<number | null | undefined>,
 
 		/** Creation time of the room. */
 		create_time: FormControl<Date | null | undefined>,
 		created_method: FormControl<Insightsv1video_room_summaryCreated_method | null | undefined>,
 
-		/** Total room duration from create time to end time. */
-		duration_sec: FormControl<number | null | undefined>,
+		/**
+		 * Total room duration from create time to end time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration_sec: FormControl<string | null | undefined>,
 		edge_location: FormControl<Insightsv1video_room_summaryEdge_location | null | undefined>,
 		end_reason: FormControl<Insightsv1video_room_summaryEnd_reason | null | undefined>,
 
@@ -1183,10 +1291,16 @@ export namespace MyNS {
 		/** Room subresources. */
 		links: FormControl<string | null | undefined>,
 
-		/** Maximum number of participants allowed in the room at the same time allowed by the application settings. */
+		/**
+		 * Maximum number of participants allowed in the room at the same time allowed by the application settings.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_concurrent_participants: FormControl<number | null | undefined>,
 
-		/** Max number of total participants allowed by the application settings. */
+		/**
+		 * Max number of total participants allowed by the application settings.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_participants: FormControl<number | null | undefined>,
 		media_region: FormControl<Insightsv1video_room_summaryMedia_region | null | undefined>,
 		processing_state: FormControl<Insightsv1video_room_summaryProcessing_state | null | undefined>,
@@ -1199,8 +1313,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the room.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		room_sid: FormControl<string | null | undefined>,
 		room_status: FormControl<Insightsv1video_room_summaryRoom_status | null | undefined>,
@@ -1212,16 +1326,28 @@ export namespace MyNS {
 		/** HTTP method provided for status callback URL. */
 		status_callback_method: FormControl<Insightsv1video_room_summaryStatus_callback_method | null | undefined>,
 
-		/** Combined amount of participant time in the room. */
-		total_participant_duration_sec: FormControl<number | null | undefined>,
+		/**
+		 * Combined amount of participant time in the room.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total_participant_duration_sec: FormControl<string | null | undefined>,
 
-		/** Combined amount of recorded seconds for participants in the room. */
-		total_recording_duration_sec: FormControl<number | null | undefined>,
+		/**
+		 * Combined amount of recorded seconds for participants in the room.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total_recording_duration_sec: FormControl<string | null | undefined>,
 
-		/** Unique number of participant identities. */
+		/**
+		 * Unique number of participant identities.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unique_participant_identities: FormControl<number | null | undefined>,
 
-		/** Number of participants. May include duplicate identities for participants who left and rejoined. */
+		/**
+		 * Number of participants. May include duplicate identities for participants who left and rejoined.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unique_participants: FormControl<number | null | undefined>,
 
 		/** URL for the room resource. */
@@ -1233,7 +1359,7 @@ export namespace MyNS {
 			concurrent_participants: new FormControl<number | null | undefined>(undefined),
 			create_time: new FormControl<Date | null | undefined>(undefined),
 			created_method: new FormControl<Insightsv1video_room_summaryCreated_method | null | undefined>(undefined),
-			duration_sec: new FormControl<number | null | undefined>(undefined),
+			duration_sec: new FormControl<string | null | undefined>(undefined),
 			edge_location: new FormControl<Insightsv1video_room_summaryEdge_location | null | undefined>(undefined),
 			end_reason: new FormControl<Insightsv1video_room_summaryEnd_reason | null | undefined>(undefined),
 			end_time: new FormControl<Date | null | undefined>(undefined),
@@ -1249,8 +1375,8 @@ export namespace MyNS {
 			room_type: new FormControl<Insightsv1video_room_summaryRoom_type | null | undefined>(undefined),
 			status_callback: new FormControl<string | null | undefined>(undefined),
 			status_callback_method: new FormControl<Insightsv1video_room_summaryStatus_callback_method | null | undefined>(undefined),
-			total_participant_duration_sec: new FormControl<number | null | undefined>(undefined),
-			total_recording_duration_sec: new FormControl<number | null | undefined>(undefined),
+			total_participant_duration_sec: new FormControl<string | null | undefined>(undefined),
+			total_recording_duration_sec: new FormControl<string | null | undefined>(undefined),
 			unique_participant_identities: new FormControl<number | null | undefined>(undefined),
 			unique_participants: new FormControl<number | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
@@ -1280,22 +1406,28 @@ export namespace MyNS {
 
 		/**
 		 * Account SID associated with the room.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/** Codecs detected from the participant. Can be `VP8`, `H264`, or `VP9`. */
 		codecs?: Array<Video_participant_summary_enum_codec>;
 
-		/** Amount of time in seconds the participant was in the room. */
-		duration_sec?: number | null;
+		/**
+		 * Amount of time in seconds the participant was in the room.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration_sec?: string | null;
 		edge_location?: Insightsv1video_room_summaryEdge_location | null;
 
 		/** Reason the participant left the room. See [the list of possible values here](https://www.twilio.com/docs/video/troubleshooting/video-log-analyzer-api#end_reason). */
 		end_reason?: string | null;
 
-		/** Errors encountered by the participant. */
+		/**
+		 * Errors encountered by the participant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code?: number | null;
 
 		/** Twilio error code dictionary link. */
@@ -1313,8 +1445,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the participant.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		participant_sid?: string | null;
 
@@ -1326,8 +1458,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the room.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		room_sid?: string | null;
 		status?: Insightsv1video_room_summaryRoom_status | null;
@@ -1339,19 +1471,25 @@ export namespace MyNS {
 
 		/**
 		 * Account SID associated with the room.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
-		/** Amount of time in seconds the participant was in the room. */
-		duration_sec: FormControl<number | null | undefined>,
+		/**
+		 * Amount of time in seconds the participant was in the room.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration_sec: FormControl<string | null | undefined>,
 		edge_location: FormControl<Insightsv1video_room_summaryEdge_location | null | undefined>,
 
 		/** Reason the participant left the room. See [the list of possible values here](https://www.twilio.com/docs/video/troubleshooting/video-log-analyzer-api#end_reason). */
 		end_reason: FormControl<string | null | undefined>,
 
-		/** Errors encountered by the participant. */
+		/**
+		 * Errors encountered by the participant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		error_code: FormControl<number | null | undefined>,
 
 		/** Twilio error code dictionary link. */
@@ -1369,8 +1507,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the participant.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		participant_sid: FormControl<string | null | undefined>,
 
@@ -1382,8 +1520,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the room.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		room_sid: FormControl<string | null | undefined>,
 		status: FormControl<Insightsv1video_room_summaryRoom_status | null | undefined>,
@@ -1394,7 +1532,7 @@ export namespace MyNS {
 	export function CreateInsightsv1video_room_summaryvideo_participant_summaryFormGroup() {
 		return new FormGroup<Insightsv1video_room_summaryvideo_participant_summaryFormProperties>({
 			account_sid: new FormControl<string | null | undefined>(undefined, [Validators.minLength(34), Validators.maxLength(34), Validators.pattern('^AC[0-9a-fA-F]{32}$')]),
-			duration_sec: new FormControl<number | null | undefined>(undefined),
+			duration_sec: new FormControl<string | null | undefined>(undefined),
 			edge_location: new FormControl<Insightsv1video_room_summaryEdge_location | null | undefined>(undefined),
 			end_reason: new FormControl<string | null | undefined>(undefined),
 			error_code: new FormControl<number | null | undefined>(undefined),
@@ -1463,10 +1601,13 @@ export namespace MyNS {
 		 * @param {string} MixerRegion Twilio region where the conference media was mixed.
 		 * @param {string} Tags Tags applied by Twilio for common potential configuration, quality, or performance issues.
 		 * @param {string} Subaccount Account SID for the subaccount whose resources you wish to retrieve.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} DetectedIssues Potential configuration, behavior, or performance issues detected during the conference.
 		 * @param {string} EndReason Conference end reason; e.g. last participant left, modified by API, etc.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListConferenceReturn} OK
 		 */
@@ -1478,6 +1619,7 @@ export namespace MyNS {
 		 * Get a specific Conference Summary.
 		 * Get v1/Conferences/{ConferenceSid}
 		 * @param {string} ConferenceSid The unique SID identifier of the Conference.
+		 *     Min length: 34    Max length: 34
 		 * @return {Insightsv1conference} OK
 		 */
 		FetchConference(ConferenceSid: string): Observable<Insightsv1conference> {
@@ -1488,11 +1630,14 @@ export namespace MyNS {
 		 * Get a list of Conference Participants Summaries for a Conference.
 		 * Get v1/Conferences/{ConferenceSid}/Participants
 		 * @param {string} ConferenceSid The unique SID identifier of the Conference.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ParticipantSid The unique SID identifier of the Participant.
 		 * @param {string} Label User-specified label for a participant.
 		 * @param {string} Events Conference events generated by application or participant activity; e.g. `hold`, `mute`, etc.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListConferenceParticipantReturn} OK
 		 */
@@ -1504,7 +1649,9 @@ export namespace MyNS {
 		 * Get a specific Conference Participant Summary for a Conference.
 		 * Get v1/Conferences/{ConferenceSid}/Participants/{ParticipantSid}
 		 * @param {string} ConferenceSid The unique SID identifier of the Conference.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ParticipantSid The unique SID identifier of the Participant.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Events Conference events generated by application or participant activity; e.g. `hold`, `mute`, etc.
 		 * @param {string} Metrics Object. Contains participant call quality metrics.
 		 * @return {Insightsv1conferenceconference_participant} OK
@@ -1522,7 +1669,9 @@ export namespace MyNS {
 		 * @param {Date} CreatedAfter Only read rooms that started on or after this ISO 8601 timestamp.
 		 * @param {Date} CreatedBefore Only read rooms that started before this ISO 8601 timestamp.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListVideoRoomSummaryReturn} OK
 		 */
@@ -1545,7 +1694,9 @@ export namespace MyNS {
 		 * Get v1/Video/Rooms/{RoomSid}/Participants
 		 * @param {string} RoomSid The SID of the Room resource.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListVideoParticipantSummaryReturn} OK
 		 */
@@ -1568,6 +1719,7 @@ export namespace MyNS {
 		 * Get the Voice Insights Settings.
 		 * Get v1/Voice/Settings
 		 * @param {string} SubaccountSid The unique SID identifier of the Subaccount.
+		 *     Min length: 34    Max length: 34
 		 * @return {Insightsv1account_settings} OK
 		 */
 		FetchAccountSettings(SubaccountSid: string | null | undefined): Observable<Insightsv1account_settings> {
@@ -1594,6 +1746,7 @@ export namespace MyNS {
 		 * @param {Call_summaries_enum_processing_state_request} ProcessingState A Processing State of the Call Summaries. One of `completed`, `partial` or `all`.
 		 * @param {Call_summaries_enum_sort_by} SortBy A Sort By criterion for the returned list of Call Summaries. One of `start_time` or `end_time`.
 		 * @param {string} Subaccount A unique SID identifier of a Subaccount.
+		 *     Min length: 34    Max length: 34
 		 * @param {boolean} AbnormalSession A boolean flag indicating an abnormal session where the last SIP response was not 200 OK.
 		 * @param {Call_summaries_enum_answered_by} AnsweredBy An Answered By value for the calls based on `Answering Machine Detection (AMD)`. One of `unknown`, `machine_start`, `machine_end_beep`, `machine_end_silence`, `machine_end_other`, `human` or `fax`.
 		 * @param {string} AnsweredByAnnotation Either machine or human.
@@ -1602,7 +1755,9 @@ export namespace MyNS {
 		 * @param {boolean} SpamAnnotation A boolean flag indicating spam calls.
 		 * @param {string} CallScoreAnnotation A Call Score of the calls. Use a range of 1-5 to indicate the call experience score, with the following mapping as a reference for the rated call [5: Excellent, 4: Good, 3 : Fair, 2 : Poor, 1: Bad].
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListCallSummariesReturn} OK
 		 */
@@ -1614,6 +1769,7 @@ export namespace MyNS {
 		 * Get the Annotation for a specific Call.
 		 * Get v1/Voice/{CallSid}/Annotation
 		 * @param {string} CallSid The unique SID identifier of the Call.
+		 *     Min length: 34    Max length: 34
 		 * @return {Insightsv1callannotation} OK
 		 */
 		FetchAnnotation(CallSid: string): Observable<Insightsv1callannotation> {
@@ -1624,9 +1780,12 @@ export namespace MyNS {
 		 * Get a list of Call Insight Events for a Call.
 		 * Get v1/Voice/{CallSid}/Events
 		 * @param {string} CallSid The unique SID identifier of the Call.
+		 *     Min length: 34    Max length: 34
 		 * @param {Event_enum_twilio_edge} Edge The Edge of this Event. One of `unknown_edge`, `carrier_edge`, `sip_edge`, `sdk_edge` or `client_edge`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListEventReturn} OK
 		 */
@@ -1638,10 +1797,13 @@ export namespace MyNS {
 		 * Get a list of Call Metrics for a Call.
 		 * Get v1/Voice/{CallSid}/Metrics
 		 * @param {string} CallSid The unique SID identifier of the Call.
+		 *     Min length: 34    Max length: 34
 		 * @param {Event_enum_twilio_edge} Edge The Edge of this Metric. One of `unknown_edge`, `carrier_edge`, `sip_edge`, `sdk_edge` or `client_edge`.
 		 * @param {Insightsv1callmetricDirection} Direction The Direction of this Metric. One of `unknown`, `inbound`, `outbound` or `both`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListMetricReturn} OK
 		 */
@@ -1653,6 +1815,7 @@ export namespace MyNS {
 		 * Get a specific Call Summary.
 		 * Get v1/Voice/{CallSid}/Summary
 		 * @param {string} CallSid The unique SID identifier of the Call.
+		 *     Min length: 34    Max length: 34
 		 * @param {Call_summaries_enum_processing_state} ProcessingState The Processing State of this Call Summary. One of `complete`, `partial` or `all`.
 		 * @return {Insightsv1callsummary} OK
 		 */
@@ -1662,6 +1825,8 @@ export namespace MyNS {
 
 		/**
 		 * Get v1/Voice/{Sid}
+		 * @param {string} Sid Min length: 34
+		 *     Max length: 34
 		 * @return {Insightsv1call} OK
 		 */
 		FetchCall(Sid: string): Observable<Insightsv1call> {
@@ -1685,7 +1850,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1694,7 +1863,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1728,7 +1901,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1737,7 +1914,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1771,7 +1952,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1780,7 +1965,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1814,7 +2003,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1823,7 +2016,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1857,7 +2054,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1866,7 +2067,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1900,7 +2105,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1909,7 +2118,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1943,7 +2156,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1952,7 +2169,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

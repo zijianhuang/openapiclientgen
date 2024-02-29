@@ -165,7 +165,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -178,7 +181,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -354,7 +360,10 @@ export namespace MyNS {
 		/** A `Release` is a particular [collection of configurations and files](sites.versions) that is set to be public at a particular time. */
 		release?: Release;
 
-		/** The number of previous releases to retain on the channel for rollback or other purposes. Must be a number between 1-100. Defaults to 10 for new channels. */
+		/**
+		 * The number of previous releases to retain on the channel for rollback or other purposes. Must be a number between 1-100. Defaults to 10 for new channels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retainedReleaseCount?: number | null;
 
 		/** Input only. A time-to-live for this channel. Sets `expire_time` to the provided duration past the time of the request. */
@@ -382,7 +391,10 @@ export namespace MyNS {
 		/** The fully-qualified resource name for the channel, in the format: sites/ SITE_ID/channels/CHANNEL_ID */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of previous releases to retain on the channel for rollback or other purposes. Must be a number between 1-100. Defaults to 10 for new channels. */
+		/**
+		 * The number of previous releases to retain on the channel for rollback or other purposes. Must be a number between 1-100. Defaults to 10 for new channels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retainedReleaseCount: FormControl<number | null | undefined>,
 
 		/** Input only. A time-to-live for this channel. Sets `expire_time` to the provided duration past the time of the request. */
@@ -658,7 +670,10 @@ export namespace MyNS {
 		/** The user-supplied RE2 regular expression to match against the request URL path. */
 		regex?: string | null;
 
-		/** Required. The status HTTP code to return in the response. It must be a valid 3xx status code. */
+		/**
+		 * Required. The status HTTP code to return in the response. It must be a valid 3xx status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode?: number | null;
 	}
 
@@ -674,7 +689,10 @@ export namespace MyNS {
 		/** The user-supplied RE2 regular expression to match against the request URL path. */
 		regex: FormControl<string | null | undefined>,
 
-		/** Required. The status HTTP code to return in the response. It must be a valid 3xx status code. */
+		/**
+		 * Required. The status HTTP code to return in the response. It must be a valid 3xx status code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateRedirectFormGroup() {
@@ -1628,6 +1646,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -1650,6 +1669,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/channels
 		 * @param {string} parent Required. The site for which to list channels, in the format: sites/SITE_ID
 		 * @param {number} pageSize The maximum number of channels to return. The service may return a lower number if fewer channels exist than this maximum number. If unspecified, defaults to 10. The maximum value is 100; values above 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token from a previous call to `ListChannels` that tells the server where to resume listing.
 		 * @return {ListChannelsResponse} Successful response
 		 */
@@ -1673,6 +1693,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/customDomains
 		 * @param {string} parent Required. The Firebase Hosting `Site` with `CustomDomain` entities you'd like to list.
 		 * @param {number} pageSize The max number of `CustomDomain` entities to return in a request. Defaults to 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token from a previous call to `ListCustomDomains` that tells the server where to resume listing.
 		 * @param {boolean} showDeleted If true, the request returns soft-deleted `CustomDomain`s that haven't been fully-deleted yet. To restore deleted `CustomDomain`s, make an `UndeleteCustomDomain` request.
 		 * @return {ListCustomDomainsResponse} Successful response
@@ -1698,6 +1719,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/domains
 		 * @param {string} parent Required. The parent for which to list domains, in the format: sites/ site-name
 		 * @param {number} pageSize The page size to return. Defaults to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token from a previous request, if provided.
 		 * @return {ListDomainsResponse} Successful response
 		 */
@@ -1720,6 +1742,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/files
 		 * @param {string} parent Required. The version for which to list files, in the format: sites/SITE_ID /versions/VERSION_ID
 		 * @param {number} pageSize The maximum number of version files to return. The service may return a lower number if fewer version files exist than this maximum number. If unspecified, defaults to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token from a previous call to `ListVersionFiles` that tells the server where to resume listing.
 		 * @param {VersionFileStatus} status  The type of files that should be listed for the specified version.
 		 * @return {ListVersionFilesResponse} Successful response
@@ -1733,6 +1756,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/releases
 		 * @param {string} parent Required. The site or channel for which to list releases, in either of the following formats: - sites/SITE_ID - sites/SITE_ID/channels/CHANNEL_ID 
 		 * @param {number} pageSize The maximum number of releases to return. The service may return a lower number if fewer releases exist than this maximum number. If unspecified, defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token from a previous call to `releases.list` or `channels.releases.list` that tells the server where to resume listing.
 		 * @return {ListReleasesResponse} Successful response
 		 */
@@ -1756,6 +1780,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/sites
 		 * @param {string} parent Required. The Firebase project for which to list sites, in the format: projects/PROJECT_IDENTIFIER Refer to the `Site` [`name`](../projects#Site.FIELDS.name) field for details about PROJECT_IDENTIFIER values.
 		 * @param {number} pageSize Optional. The maximum number of sites to return. The service may return a lower number if fewer sites exist than this maximum number. If unspecified, defaults to 40.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token from a previous call to `ListSites` that tells the server where to resume listing.
 		 * @return {ListSitesResponse} Successful response
 		 */
@@ -1781,6 +1806,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The site or channel for which to list versions, in either of the following formats: - sites/SITE_ID - sites/SITE_ID/channels/CHANNEL_ID 
 		 * @param {string} filter A filter string used to return a subset of versions in the response. The currently supported fields for filtering are: `name`, `status`, and `create_time`. Learn more about filtering in Google's [AIP 160 standard](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of versions to return. The service may return a lower number if fewer versions exist than this maximum number. If unspecified, defaults to 25. The maximum value is 100; values above 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token from a previous call to `ListVersions` that tells the server where to resume listing.
 		 * @return {ListVersionsResponse} Successful response
 		 */

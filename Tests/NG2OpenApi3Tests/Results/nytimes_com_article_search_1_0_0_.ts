@@ -119,20 +119,28 @@ export namespace MyNS {
 		caption?: string | null;
 		copyright?: string | null;
 		format?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		subtype?: string | null;
 		type?: string | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface DocMultimediaFormProperties {
 		caption: FormControl<string | null | undefined>,
 		copyright: FormControl<string | null | undefined>,
 		format: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		subtype: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateDocMultimediaFormGroup() {
@@ -206,6 +214,7 @@ export namespace MyNS {
 		 * @param {boolean} hl Enables highlighting in search results. When set to true, the query term (q) is highlighted in the headline and lead_paragraph fields.
 		 * Note: If highlighting is enabled, snippet will be returned even if it is not specified in your fl list."
 		 * @param {number} page "The value of page corresponds to a set of 10 results (it does not indicate the starting number of the result set). For example, page=0 corresponds to records 0-9. To return records 10-19, set page to 1, not 10."
+		 *     Minimum: 0    Maximum: 10
 		 * @param {string} facet_field Comma-delimited list of facets
 		 * Specifies the sets of facet values to include in the facets array at the end of response, which collects the facet values from all the search results. By default no facet fields will be returned. Below is the list of valid facets:
 		 * section_name
@@ -248,13 +257,25 @@ export namespace MyNS {
 	}
 
 	export interface StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterReturnResponseMeta {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hits?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time?: number | null;
 	}
 	export interface StoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterReturnResponseMetaFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hits: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		time: FormControl<number | null | undefined>,
 	}
 	export function CreateStoriesGetByQAndFqAndBegin_dateAndEnd_dateAndSortAndFlAndHlAndPageAndFacet_fieldAndFacet_filterReturnResponseMetaFormGroup() {

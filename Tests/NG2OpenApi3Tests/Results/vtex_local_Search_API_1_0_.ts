@@ -11,7 +11,10 @@ export namespace MyNS {
 		/** Required */
 		Name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: number;
 	}
 	export interface AplicativosDeTVFormProperties {
@@ -22,7 +25,10 @@ export namespace MyNS {
 		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateAplicativosDeTVFormGroup() {
@@ -42,7 +48,10 @@ export namespace MyNS {
 		/** Required */
 		Name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: number;
 	}
 	export interface BrandFormProperties {
@@ -53,7 +62,10 @@ export namespace MyNS {
 		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateBrandFormGroup() {
@@ -76,7 +88,10 @@ export namespace MyNS {
 		/** Required */
 		Name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: number;
 	}
 	export interface CategoriesTreeFormProperties {
@@ -87,7 +102,10 @@ export namespace MyNS {
 		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateCategoriesTreeFormGroup() {
@@ -110,7 +128,10 @@ export namespace MyNS {
 		/** Required */
 		Name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: number;
 	}
 	export interface ChildFormProperties {
@@ -121,7 +142,10 @@ export namespace MyNS {
 		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateChildFormGroup() {
@@ -144,7 +168,10 @@ export namespace MyNS {
 		/** Required */
 		Name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: number;
 	}
 	export interface Child1FormProperties {
@@ -155,7 +182,10 @@ export namespace MyNS {
 		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateChild1FormGroup() {
@@ -169,7 +199,10 @@ export namespace MyNS {
 
 	export interface CommertialOffer {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AvailableQuantity: number;
 
 		/** Required */
@@ -196,16 +229,25 @@ export namespace MyNS {
 		/** Required */
 		Installments: Array<Installment>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		ListPrice: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Price: number;
 
 		/** Required */
 		PriceValidUntil: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Tax: number;
 
 		/** Required */
@@ -213,7 +255,10 @@ export namespace MyNS {
 	}
 	export interface CommertialOfferFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AvailableQuantity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -225,16 +270,25 @@ export namespace MyNS {
 		/** Required */
 		GetInfoErrorMessage: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		ListPrice: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Price: FormControl<number | null | undefined>,
 
 		/** Required */
 		PriceValidUntil: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Tax: FormControl<number | null | undefined>,
 	}
 	export function CreateCommertialOfferFormGroup() {
@@ -269,11 +323,15 @@ export namespace MyNS {
 
 	export interface DeliverySlaPerType2 {
 		EstimatedTimeSpanToDelivery?: string | null;
+
+		/** Type: double */
 		Price?: number | null;
 		TypeName?: string | null;
 	}
 	export interface DeliverySlaPerType2FormProperties {
 		EstimatedTimeSpanToDelivery: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Price: FormControl<number | null | undefined>,
 		TypeName: FormControl<string | null | undefined>,
 	}
@@ -289,6 +347,8 @@ export namespace MyNS {
 	export interface Region2 {
 		CountryCode?: string | null;
 		CultureInfoName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id?: number | null;
 		IsPersisted?: boolean | null;
 		IsRemoved?: boolean | null;
@@ -298,6 +358,8 @@ export namespace MyNS {
 	export interface Region2FormProperties {
 		CountryCode: FormControl<string | null | undefined>,
 		CultureInfoName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Id: FormControl<number | null | undefined>,
 		IsPersisted: FormControl<boolean | null | undefined>,
 		IsRemoved: FormControl<boolean | null | undefined>,
@@ -338,7 +400,10 @@ export namespace MyNS {
 		/** Required */
 		EstimatedTimeSpanToDelivery: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Price: number;
 
 		/** Required */
@@ -349,7 +414,10 @@ export namespace MyNS {
 		/** Required */
 		EstimatedTimeSpanToDelivery: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Price: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -372,7 +440,10 @@ export namespace MyNS {
 		/** Required */
 		CultureInfoName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: number;
 
 		/** Required */
@@ -395,7 +466,10 @@ export namespace MyNS {
 		/** Required */
 		CultureInfoName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -425,13 +499,19 @@ export namespace MyNS {
 
 	export interface Installment {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		InterestRate: number;
 
 		/** Required */
 		Name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberOfInstallments: number;
 
 		/** Required */
@@ -440,21 +520,33 @@ export namespace MyNS {
 		/** Required */
 		PaymentSystemName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		TotalValuePlusInterestRate: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Value: number;
 	}
 	export interface InstallmentFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		InterestRate: FormControl<number | null | undefined>,
 
 		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberOfInstallments: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -463,10 +555,16 @@ export namespace MyNS {
 		/** Required */
 		PaymentSystemName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		TotalValuePlusInterestRate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateInstallmentFormGroup() {
@@ -490,7 +588,10 @@ export namespace MyNS {
 		/** Required */
 		Name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: number;
 	}
 	export interface DepartmentFormProperties {
@@ -501,7 +602,10 @@ export namespace MyNS {
 		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateDepartmentFormGroup() {
@@ -607,7 +711,10 @@ export namespace MyNS {
 		/** Required */
 		sellers: Array<Seller>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		unitMultiplier: number;
 		variations?: Array<string>;
 	}
@@ -631,7 +738,10 @@ export namespace MyNS {
 		/** Required */
 		nameComplete: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreateItemFormGroup() {
@@ -806,7 +916,10 @@ export namespace MyNS {
 		/** Required */
 		Name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: number;
 	}
 	export interface ResoluOFormProperties {
@@ -817,7 +930,10 @@ export namespace MyNS {
 		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateResoluOFormGroup() {
@@ -837,7 +953,10 @@ export namespace MyNS {
 		/** Required */
 		Name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: number;
 	}
 	export interface TamanhoDaTelaFormProperties {
@@ -848,7 +967,10 @@ export namespace MyNS {
 		/** Required */
 		Name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateTamanhoDaTelaFormGroup() {
@@ -1306,6 +1428,7 @@ export namespace MyNS {
 		 * Retrieves general information about the product's accessories.
 		 * Get api/catalog_system/pub/products/crossselling/accessories/{productId}
 		 * @param {number} productId Product's unique identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		ProductSearchAccessories(productId: number): Observable<HttpResponse<string>> {
@@ -1317,6 +1440,7 @@ export namespace MyNS {
 		 * Retrieves general information about the products that are show together with the product in question.
 		 * Get api/catalog_system/pub/products/crossselling/showtogether/{productId}
 		 * @param {number} productId Product's unique identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		ProductSearchShowTogether(productId: number): Observable<HttpResponse<string>> {
@@ -1328,6 +1452,7 @@ export namespace MyNS {
 		 * Retrieves general information about related product searches.
 		 * Get api/catalog_system/pub/products/crossselling/similars/{productId}
 		 * @param {number} productId Product's unique identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		ProductSearchSimilars(productId: number): Observable<HttpResponse<string>> {
@@ -1339,6 +1464,7 @@ export namespace MyNS {
 		 * Retrieves general information about other product suggestions related to the product.
 		 * Get api/catalog_system/pub/products/crossselling/suggestions/{productId}
 		 * @param {number} productId Product's unique identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		ProductSearchSuggestions(productId: number): Observable<HttpResponse<string>> {
@@ -1372,6 +1498,7 @@ export namespace MyNS {
 		 * Retrieves general information about other related products that the users also saw.
 		 * Get api/catalog_system/pub/products/crossselling/whosawalsosaw/{productId}
 		 * @param {number} productId Product unique identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ProductSearchWhoSawAlsoSawReturn>} OK
 		 */
 		ProductSearchWhoSawAlsoSaw(productId: number): Observable<Array<ProductSearchWhoSawAlsoSawReturn>> {
@@ -1472,7 +1599,6 @@ export namespace MyNS {
 		 * Retrieves general information about the product of the URL you searched for.
 		 * Get api/catalog_system/pub/products/search/{product_text_link}/p
 		 * @param {string} product_text_link Product URL
-		 * @return {Array<SearchbyproducturlReturn>} 
 		 */
 		Searchbyproducturl(product_text_link: string): Observable<Array<SearchbyproducturlReturn>> {
 			return this.http.get<Array<SearchbyproducturlReturn>>(this.baseUri + 'api/catalog_system/pub/products/search/{product_text_link}/p', {});
@@ -1500,7 +1626,6 @@ export namespace MyNS {
 		 * E.g.: `ref` | `refrig` | `refrigerator`
 		 * Get buscaautocomplete
 		 * @param {string} productNameContains Part of the string that will be searched.
-		 * @return {AutoCompleteReturn} 
 		 */
 		AutoComplete(productNameContains: string): Observable<AutoCompleteReturn> {
 			return this.http.get<AutoCompleteReturn>(this.baseUri + 'buscaautocomplete?productNameContains=' + (productNameContains == null ? '' : encodeURIComponent(productNameContains)), {});
@@ -1512,6 +1637,7 @@ export namespace MyNS {
 		/**
 		 * Category's facet ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Id: number;
 
@@ -1526,6 +1652,7 @@ export namespace MyNS {
 		/**
 		 * Category's facet ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Id: FormControl<number | null | undefined>,
 
@@ -1625,12 +1752,14 @@ export namespace MyNS {
 		/**
 		 * Position of the facet.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Position: number;
 
 		/**
 		 * Quantity of facets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Quantity: number;
 
@@ -1669,12 +1798,14 @@ export namespace MyNS {
 		/**
 		 * Position of the facet.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Position: FormControl<number | null | undefined>,
 
 		/**
 		 * Quantity of facets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Quantity: FormControl<number | null | undefined>,
 
@@ -1708,6 +1839,7 @@ export namespace MyNS {
 		/**
 		 * Category ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Id: number;
 
@@ -1738,12 +1870,14 @@ export namespace MyNS {
 		/**
 		 * Position of the facet.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Position: number;
 
 		/**
 		 * Quantity of the facets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Quantity: number;
 
@@ -1758,6 +1892,7 @@ export namespace MyNS {
 		/**
 		 * Category ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Id: FormControl<number | null | undefined>,
 
@@ -1788,12 +1923,14 @@ export namespace MyNS {
 		/**
 		 * Position of the facet.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Position: FormControl<number | null | undefined>,
 
 		/**
 		 * Quantity of the facets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Quantity: FormControl<number | null | undefined>,
 
@@ -1828,6 +1965,7 @@ export namespace MyNS {
 		/**
 		 * Category ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Id: number;
 
@@ -1858,12 +1996,14 @@ export namespace MyNS {
 		/**
 		 * Position of the facet.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Position: number;
 
 		/**
 		 * Quantity of the facets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Quantity: number;
 
@@ -1878,6 +2018,7 @@ export namespace MyNS {
 		/**
 		 * Category ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Id: FormControl<number | null | undefined>,
 
@@ -1908,12 +2049,14 @@ export namespace MyNS {
 		/**
 		 * Position of the facet.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Position: FormControl<number | null | undefined>,
 
 		/**
 		 * Quantity of the facets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Quantity: FormControl<number | null | undefined>,
 
@@ -1966,12 +2109,14 @@ export namespace MyNS {
 		/**
 		 * Position of the facets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Position: number;
 
 		/**
 		 * Quantity of facets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Quantity: number;
 
@@ -2010,12 +2155,14 @@ export namespace MyNS {
 		/**
 		 * Position of the facets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Position: FormControl<number | null | undefined>,
 
 		/**
 		 * Quantity of facets.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Quantity: FormControl<number | null | undefined>,
 
@@ -2090,12 +2237,14 @@ export namespace MyNS {
 		/**
 		 * Quantity of displayed items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DisplayedItems: number;
 
 		/**
 		 * Quantity of total items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalItems: number;
 	}
@@ -2104,12 +2253,14 @@ export namespace MyNS {
 		/**
 		 * Quantity of displayed items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DisplayedItems: FormControl<number | null | undefined>,
 
 		/**
 		 * Quantity of total items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalItems: FormControl<number | null | undefined>,
 	}
@@ -2126,12 +2277,14 @@ export namespace MyNS {
 		/**
 		 * Quantity of displayed items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DisplayedItems: number;
 
 		/**
 		 * Quantity of total items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalItems: number;
 	}
@@ -2140,12 +2293,14 @@ export namespace MyNS {
 		/**
 		 * Quantity of displayed items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DisplayedItems: FormControl<number | null | undefined>,
 
 		/**
 		 * Quantity of total items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalItems: FormControl<number | null | undefined>,
 	}
@@ -2162,12 +2317,14 @@ export namespace MyNS {
 		/**
 		 * Quantity of displayed items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DisplayedItems: number;
 
 		/**
 		 * Quantity of total items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalItems: number;
 	}
@@ -2176,12 +2333,14 @@ export namespace MyNS {
 		/**
 		 * Quantity of displayed items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DisplayedItems: FormControl<number | null | undefined>,
 
 		/**
 		 * Quantity of total items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalItems: FormControl<number | null | undefined>,
 	}
@@ -2198,12 +2357,14 @@ export namespace MyNS {
 		/**
 		 * Quantity of displayed items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DisplayedItems: number;
 
 		/**
 		 * Quantity of total items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalItems: number;
 	}
@@ -2212,12 +2373,14 @@ export namespace MyNS {
 		/**
 		 * Quantity of displayed items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DisplayedItems: FormControl<number | null | undefined>,
 
 		/**
 		 * Quantity of total items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalItems: FormControl<number | null | undefined>,
 	}
@@ -2252,6 +2415,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: number;
 
@@ -2342,6 +2506,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: number;
 
@@ -2374,6 +2539,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: FormControl<number | null | undefined>,
 
@@ -2446,6 +2612,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: FormControl<number | null | undefined>,
 
@@ -2579,6 +2746,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: number;
 	}
@@ -2641,6 +2809,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
@@ -2753,6 +2922,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -2767,6 +2937,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2893,6 +3064,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: number;
 
@@ -2959,6 +3131,7 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: number;
 
@@ -2971,6 +3144,7 @@ export namespace MyNS {
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: number;
 
@@ -2983,24 +3157,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: number;
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: number;
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: number;
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: number;
 
@@ -3015,6 +3193,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: FormControl<number | null | undefined>,
 
@@ -3039,12 +3218,14 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: FormControl<number | null | undefined>,
 
@@ -3057,24 +3238,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: FormControl<number | null | undefined>,
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: FormControl<number | null | undefined>,
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: FormControl<number | null | undefined>,
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: FormControl<number | null | undefined>,
 	}
@@ -3171,6 +3356,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: number;
 
@@ -3183,6 +3369,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: number;
 
@@ -3201,12 +3388,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: number;
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: number;
 	}
@@ -3215,6 +3404,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: FormControl<number | null | undefined>,
 
@@ -3227,6 +3417,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: FormControl<number | null | undefined>,
 
@@ -3245,12 +3436,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: FormControl<number | null | undefined>,
 	}
@@ -3354,6 +3547,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -3386,6 +3580,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -3405,6 +3600,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -3417,6 +3613,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
@@ -3429,12 +3626,14 @@ export namespace MyNS {
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -3443,6 +3642,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -3455,18 +3655,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -3486,6 +3689,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -3504,18 +3708,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -3524,6 +3731,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -3542,18 +3750,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -3598,6 +3809,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -3672,6 +3884,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3758,6 +3971,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: number;
 
@@ -3848,6 +4062,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: number;
 
@@ -3880,6 +4095,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: FormControl<number | null | undefined>,
 
@@ -3952,6 +4168,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: FormControl<number | null | undefined>,
 
@@ -4085,6 +4302,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: number;
 	}
@@ -4147,6 +4365,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
@@ -4259,6 +4478,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -4273,6 +4493,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -4399,6 +4620,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: number;
 
@@ -4465,6 +4687,7 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: number;
 
@@ -4477,6 +4700,7 @@ export namespace MyNS {
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: number;
 
@@ -4489,24 +4713,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: number;
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: number;
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: number;
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: number;
 
@@ -4521,6 +4749,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: FormControl<number | null | undefined>,
 
@@ -4545,12 +4774,14 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: FormControl<number | null | undefined>,
 
@@ -4563,24 +4794,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: FormControl<number | null | undefined>,
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: FormControl<number | null | undefined>,
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: FormControl<number | null | undefined>,
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: FormControl<number | null | undefined>,
 	}
@@ -4677,6 +4912,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: number;
 
@@ -4689,6 +4925,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: number;
 
@@ -4707,12 +4944,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: number;
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: number;
 	}
@@ -4721,6 +4960,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: FormControl<number | null | undefined>,
 
@@ -4733,6 +4973,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: FormControl<number | null | undefined>,
 
@@ -4751,12 +4992,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: FormControl<number | null | undefined>,
 	}
@@ -4860,6 +5103,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -4892,6 +5136,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -4911,6 +5156,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -4923,6 +5169,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
@@ -4935,12 +5182,14 @@ export namespace MyNS {
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -4949,6 +5198,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -4961,18 +5211,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -4992,6 +5245,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -5010,18 +5264,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -5030,6 +5287,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -5048,18 +5306,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -5104,6 +5365,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -5178,6 +5440,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -5264,6 +5527,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: number;
 
@@ -5354,6 +5618,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: number;
 
@@ -5386,6 +5651,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: FormControl<number | null | undefined>,
 
@@ -5458,6 +5724,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: FormControl<number | null | undefined>,
 
@@ -5591,6 +5858,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: number;
 	}
@@ -5653,6 +5921,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
@@ -5765,6 +6034,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -5779,6 +6049,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -5905,6 +6176,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: number;
 
@@ -5971,6 +6243,7 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: number;
 
@@ -5983,6 +6256,7 @@ export namespace MyNS {
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: number;
 
@@ -5995,24 +6269,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: number;
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: number;
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: number;
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: number;
 
@@ -6027,6 +6305,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: FormControl<number | null | undefined>,
 
@@ -6051,12 +6330,14 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: FormControl<number | null | undefined>,
 
@@ -6069,24 +6350,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: FormControl<number | null | undefined>,
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: FormControl<number | null | undefined>,
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: FormControl<number | null | undefined>,
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: FormControl<number | null | undefined>,
 	}
@@ -6183,6 +6468,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: number;
 
@@ -6195,6 +6481,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: number;
 
@@ -6213,12 +6500,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: number;
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: number;
 	}
@@ -6227,6 +6516,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: FormControl<number | null | undefined>,
 
@@ -6239,6 +6529,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: FormControl<number | null | undefined>,
 
@@ -6257,12 +6548,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: FormControl<number | null | undefined>,
 	}
@@ -6366,6 +6659,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -6398,6 +6692,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -6417,6 +6712,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -6429,6 +6725,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
@@ -6441,12 +6738,14 @@ export namespace MyNS {
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -6455,6 +6754,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -6467,18 +6767,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -6498,6 +6801,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -6516,18 +6820,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -6536,6 +6843,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -6554,18 +6862,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -6610,6 +6921,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -6684,6 +6996,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -7047,6 +7360,7 @@ export namespace MyNS {
 		/**
 		 * SKU available quantity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: number;
 
@@ -7059,24 +7373,28 @@ export namespace MyNS {
 		/**
 		 * SKU list price.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: number;
 
 		/**
 		 * SKU price.
 		 * Required
+		 * Type: double
 		 */
 		Price: number;
 
 		/**
 		 * SKU precie without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: number;
 
 		/**
 		 * SKU trade policy.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: number;
 	}
@@ -7085,6 +7403,7 @@ export namespace MyNS {
 		/**
 		 * SKU available quantity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: FormControl<number | null | undefined>,
 
@@ -7097,24 +7416,28 @@ export namespace MyNS {
 		/**
 		 * SKU list price.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU price.
 		 * Required
+		 * Type: double
 		 */
 		Price: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU precie without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU trade policy.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: FormControl<number | null | undefined>,
 	}
@@ -7430,6 +7753,7 @@ export namespace MyNS {
 		/**
 		 * SKU available quantity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: number;
 
@@ -7442,24 +7766,28 @@ export namespace MyNS {
 		/**
 		 * SKU list price.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: number;
 
 		/**
 		 * SKU price.
 		 * Required
+		 * Type: double
 		 */
 		Price: number;
 
 		/**
 		 * SKU precie without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: number;
 
 		/**
 		 * SKU trade policy.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: number;
 	}
@@ -7468,6 +7796,7 @@ export namespace MyNS {
 		/**
 		 * SKU available quantity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: FormControl<number | null | undefined>,
 
@@ -7480,24 +7809,28 @@ export namespace MyNS {
 		/**
 		 * SKU list price.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU price.
 		 * Required
+		 * Type: double
 		 */
 		Price: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU precie without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU trade policy.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: FormControl<number | null | undefined>,
 	}
@@ -7536,6 +7869,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: number;
 
@@ -7626,6 +7960,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: number;
 
@@ -7658,6 +7993,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: FormControl<number | null | undefined>,
 
@@ -7730,6 +8066,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: FormControl<number | null | undefined>,
 
@@ -7863,6 +8200,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: number;
 	}
@@ -7925,6 +8263,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
@@ -8037,6 +8376,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -8051,6 +8391,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -8177,6 +8518,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: number;
 
@@ -8243,6 +8585,7 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: number;
 
@@ -8255,6 +8598,7 @@ export namespace MyNS {
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: number;
 
@@ -8267,24 +8611,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: number;
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: number;
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: number;
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: number;
 
@@ -8299,6 +8647,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: FormControl<number | null | undefined>,
 
@@ -8323,12 +8672,14 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: FormControl<number | null | undefined>,
 
@@ -8341,24 +8692,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: FormControl<number | null | undefined>,
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: FormControl<number | null | undefined>,
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: FormControl<number | null | undefined>,
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: FormControl<number | null | undefined>,
 	}
@@ -8455,6 +8810,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: number;
 
@@ -8467,6 +8823,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: number;
 
@@ -8485,12 +8842,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: number;
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: number;
 	}
@@ -8499,6 +8858,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: FormControl<number | null | undefined>,
 
@@ -8511,6 +8871,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: FormControl<number | null | undefined>,
 
@@ -8529,12 +8890,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: FormControl<number | null | undefined>,
 	}
@@ -8638,6 +9001,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -8670,6 +9034,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -8689,6 +9054,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -8701,6 +9067,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
@@ -8713,12 +9080,14 @@ export namespace MyNS {
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -8727,6 +9096,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -8739,18 +9109,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -8770,6 +9143,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -8788,18 +9162,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -8808,6 +9185,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -8826,18 +9204,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -8882,6 +9263,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -8956,6 +9338,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -9042,6 +9425,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: number;
 
@@ -9132,6 +9516,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: number;
 
@@ -9164,6 +9549,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: FormControl<number | null | undefined>,
 
@@ -9236,6 +9622,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: FormControl<number | null | undefined>,
 
@@ -9369,6 +9756,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: number;
 	}
@@ -9431,6 +9819,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
@@ -9543,6 +9932,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -9557,6 +9947,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -9683,6 +10074,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: number;
 
@@ -9749,6 +10141,7 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: number;
 
@@ -9761,6 +10154,7 @@ export namespace MyNS {
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: number;
 
@@ -9773,24 +10167,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: number;
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: number;
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: number;
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: number;
 
@@ -9805,6 +10203,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: FormControl<number | null | undefined>,
 
@@ -9829,12 +10228,14 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: FormControl<number | null | undefined>,
 
@@ -9847,24 +10248,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: FormControl<number | null | undefined>,
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: FormControl<number | null | undefined>,
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: FormControl<number | null | undefined>,
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: FormControl<number | null | undefined>,
 	}
@@ -9961,6 +10366,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: number;
 
@@ -9973,6 +10379,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: number;
 
@@ -9991,12 +10398,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: number;
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: number;
 	}
@@ -10005,6 +10414,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: FormControl<number | null | undefined>,
 
@@ -10017,6 +10427,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: FormControl<number | null | undefined>,
 
@@ -10035,12 +10446,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: FormControl<number | null | undefined>,
 	}
@@ -10144,6 +10557,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -10176,6 +10590,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -10195,6 +10610,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -10207,6 +10623,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
@@ -10219,12 +10636,14 @@ export namespace MyNS {
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -10233,6 +10652,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -10245,18 +10665,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -10276,6 +10699,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -10294,18 +10718,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -10314,6 +10741,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -10332,18 +10760,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -10388,6 +10819,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -10462,6 +10894,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -10548,6 +10981,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: number;
 
@@ -10638,6 +11072,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: number;
 
@@ -10670,6 +11105,7 @@ export namespace MyNS {
 		/**
 		 * Product brand ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		brandId: FormControl<number | null | undefined>,
 
@@ -10742,6 +11178,7 @@ export namespace MyNS {
 		/**
 		 * Product reference ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		productReferenceCode: FormControl<number | null | undefined>,
 
@@ -10875,6 +11312,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: number;
 	}
@@ -10937,6 +11375,7 @@ export namespace MyNS {
 		/**
 		 * numerical unit that multiplies the selected quantity of the product when it is inserted in the cart.
 		 * Required
+		 * Type: double
 		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
@@ -11049,6 +11488,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -11063,6 +11503,7 @@ export namespace MyNS {
 		/**
 		 * Amount of the SKU component in the kit.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -11189,6 +11630,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: number;
 
@@ -11255,6 +11697,7 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: number;
 
@@ -11267,6 +11710,7 @@ export namespace MyNS {
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: number;
 
@@ -11279,24 +11723,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: number;
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: number;
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: number;
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: number;
 
@@ -11311,6 +11759,7 @@ export namespace MyNS {
 		/**
 		 * Use the `IsAvailable` field instead.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: FormControl<number | null | undefined>,
 
@@ -11335,12 +11784,14 @@ export namespace MyNS {
 		/**
 		 * List price of the product.
 		 * Required
+		 * Type: double
 		 */
 		ListPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * Price of the product.
 		 * Required
+		 * Type: double
 		 */
 		Price: FormControl<number | null | undefined>,
 
@@ -11353,24 +11804,28 @@ export namespace MyNS {
 		/**
 		 * Price of the product without discount.
 		 * Required
+		 * Type: double
 		 */
 		PriceWithoutDiscount: FormControl<number | null | undefined>,
 
 		/**
 		 * Reward value of the product.
 		 * Required
+		 * Type: double
 		 */
 		RewardValue: FormControl<number | null | undefined>,
 
 		/**
 		 * Trade policy which the product is contained.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: FormControl<number | null | undefined>,
 
 		/**
 		 * Tax of the product.
 		 * Required
+		 * Type: double
 		 */
 		Tax: FormControl<number | null | undefined>,
 	}
@@ -11467,6 +11922,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: number;
 
@@ -11479,6 +11935,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: number;
 
@@ -11497,12 +11954,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: number;
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: number;
 	}
@@ -11511,6 +11970,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		InterestRate: FormControl<number | null | undefined>,
 
@@ -11523,6 +11983,7 @@ export namespace MyNS {
 		/**
 		 * Number of the installment.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NumberOfInstallments: FormControl<number | null | undefined>,
 
@@ -11541,12 +12002,14 @@ export namespace MyNS {
 		/**
 		 * Total value plus interest rate of the installment.
 		 * Required
+		 * Type: double
 		 */
 		TotalValuePlusInterestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Value of the installment.
 		 * Required
+		 * Type: double
 		 */
 		Value: FormControl<number | null | undefined>,
 	}
@@ -11650,6 +12113,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -11682,6 +12146,7 @@ export namespace MyNS {
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -11701,6 +12166,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -11713,6 +12179,7 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
@@ -11725,12 +12192,14 @@ export namespace MyNS {
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -11739,6 +12208,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -11751,18 +12221,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -11782,6 +12255,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -11800,18 +12274,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: number;
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -11820,6 +12297,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -11838,18 +12316,21 @@ export namespace MyNS {
 		/**
 		 * Interest rate.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/**
 		 * Total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
 		/**
 		 * Value.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -11894,6 +12375,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -11968,6 +12450,7 @@ export namespace MyNS {
 		/**
 		 * ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 

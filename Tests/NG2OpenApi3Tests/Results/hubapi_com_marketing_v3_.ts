@@ -131,7 +131,9 @@ export namespace MyNS {
 
 		/** Required */
 		name: string;
-		persistenceTimestamp?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		persistenceTimestamp?: string | null;
 
 		/** Required */
 		requestId: string;
@@ -139,8 +141,11 @@ export namespace MyNS {
 		/** Required */
 		selectedByUser: boolean;
 
-		/** Required */
-		selectedByUserTimestamp: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		selectedByUserTimestamp: string;
 
 		/** Required */
 		source: PropertyValueSource;
@@ -160,8 +165,13 @@ export namespace MyNS {
 		/** Required */
 		sourceVid: Array<number>;
 
-		/** Required */
-		timestamp: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timestamp: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		updatedByUserId?: number | null;
 		useTimestampAsPersistenceTimestamp?: boolean | null;
 
@@ -173,7 +183,9 @@ export namespace MyNS {
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
-		persistenceTimestamp: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		persistenceTimestamp: FormControl<string | null | undefined>,
 
 		/** Required */
 		requestId: FormControl<string | null | undefined>,
@@ -181,8 +193,11 @@ export namespace MyNS {
 		/** Required */
 		selectedByUser: FormControl<boolean | null | undefined>,
 
-		/** Required */
-		selectedByUserTimestamp: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		selectedByUserTimestamp: FormControl<string | null | undefined>,
 
 		/** Required */
 		source: FormControl<PropertyValueSource | null | undefined>,
@@ -199,8 +214,13 @@ export namespace MyNS {
 		 */
 		sourceMetadata: FormControl<string | null | undefined>,
 
-		/** Required */
-		timestamp: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		updatedByUserId: FormControl<number | null | undefined>,
 		useTimestampAsPersistenceTimestamp: FormControl<boolean | null | undefined>,
 
@@ -211,15 +231,15 @@ export namespace MyNS {
 		return new FormGroup<PropertyValueFormProperties>({
 			isLargeValue: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			persistenceTimestamp: new FormControl<number | null | undefined>(undefined),
+			persistenceTimestamp: new FormControl<string | null | undefined>(undefined),
 			requestId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			selectedByUser: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			selectedByUserTimestamp: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			selectedByUserTimestamp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			source: new FormControl<PropertyValueSource | null | undefined>(undefined, [Validators.required]),
 			sourceId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			sourceLabel: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			sourceMetadata: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			timestamp: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			timestamp: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			updatedByUserId: new FormControl<number | null | undefined>(undefined),
 			useTimestampAsPersistenceTimestamp: new FormControl<boolean | null | undefined>(undefined),
 			value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -261,8 +281,9 @@ export namespace MyNS {
 		/**
 		 * The date and time at which the contact subscribed to the event.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		interactionDateTime: number;
+		interactionDateTime: string;
 		properties?: {[id: string]: string };
 	}
 	export interface MarketingEventEmailSubscriberFormProperties {
@@ -277,15 +298,16 @@ export namespace MyNS {
 		/**
 		 * The date and time at which the contact subscribed to the event.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		interactionDateTime: FormControl<number | null | undefined>,
+		interactionDateTime: FormControl<string | null | undefined>,
 		properties: FormControl<{[id: string]: string } | null | undefined>,
 	}
 	export function CreateMarketingEventEmailSubscriberFormGroup() {
 		return new FormGroup<MarketingEventEmailSubscriberFormProperties>({
 			contactProperties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			interactionDateTime: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			interactionDateTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 		});
 
@@ -309,6 +331,7 @@ export namespace MyNS {
 		/**
 		 * The id of the application that created the marketing event in HubSpot.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		appId: number;
 
@@ -329,6 +352,7 @@ export namespace MyNS {
 		/**
 		 * The id of the application that created the marketing event in HubSpot.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		appId: FormControl<number | null | undefined>,
 
@@ -378,9 +402,12 @@ export namespace MyNS {
 		/**
 		 * The date and time at which the contact subscribed to the event.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		interactionDateTime: number;
+		interactionDateTime: string;
 		properties?: {[id: string]: string };
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vid?: number | null;
 	}
 	export interface MarketingEventSubscriberFormProperties {
@@ -388,14 +415,17 @@ export namespace MyNS {
 		/**
 		 * The date and time at which the contact subscribed to the event.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		interactionDateTime: FormControl<number | null | undefined>,
+		interactionDateTime: FormControl<string | null | undefined>,
 		properties: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vid: FormControl<number | null | undefined>,
 	}
 	export function CreateMarketingEventSubscriberFormGroup() {
 		return new FormGroup<MarketingEventSubscriberFormProperties>({
-			interactionDateTime: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			interactionDateTime: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			properties: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			vid: new FormControl<number | null | undefined>(undefined),
 		});
@@ -408,6 +438,8 @@ export namespace MyNS {
 		completedAt: Date;
 		errors?: Array<StandardError>;
 		links?: {[id: string]: string };
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numErrors?: number | null;
 		requestedAt?: Date | null;
 
@@ -425,6 +457,8 @@ export namespace MyNS {
 		/** Required */
 		completedAt: FormControl<Date | null | undefined>,
 		links: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numErrors: FormControl<number | null | undefined>,
 		requestedAt: FormControl<Date | null | undefined>,
 
@@ -664,6 +698,8 @@ export namespace MyNS {
 		completedAt: Date;
 		errors?: Array<StandardError>;
 		links?: {[id: string]: string };
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numErrors?: number | null;
 		requestedAt?: Date | null;
 
@@ -681,6 +717,8 @@ export namespace MyNS {
 		/** Required */
 		completedAt: FormControl<Date | null | undefined>,
 		links: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numErrors: FormControl<number | null | undefined>,
 		requestedAt: FormControl<Date | null | undefined>,
 
@@ -707,7 +745,10 @@ export namespace MyNS {
 		/** Required */
 		email: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vid: number;
 	}
 	export interface SubscriberEmailResponseFormProperties {
@@ -715,7 +756,10 @@ export namespace MyNS {
 		/** Required */
 		email: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vid: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriberEmailResponseFormGroup() {
@@ -732,6 +776,8 @@ export namespace MyNS {
 		completedAt: Date;
 		errors?: Array<StandardError>;
 		links?: {[id: string]: string };
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numErrors?: number | null;
 		requestedAt?: Date | null;
 
@@ -749,6 +795,8 @@ export namespace MyNS {
 		/** Required */
 		completedAt: FormControl<Date | null | undefined>,
 		links: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numErrors: FormControl<number | null | undefined>,
 		requestedAt: FormControl<Date | null | undefined>,
 
@@ -772,12 +820,18 @@ export namespace MyNS {
 
 	export interface SubscriberVidResponse {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vid: number;
 	}
 	export interface SubscriberVidResponseFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vid: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriberVidResponseFormGroup() {
@@ -878,6 +932,7 @@ export namespace MyNS {
 		/**
 		 * The id of the application the settings are for
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		appId: number;
 
@@ -892,6 +947,7 @@ export namespace MyNS {
 		/**
 		 * The id of the application the settings are for
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		appId: FormControl<number | null | undefined>,
 
@@ -1045,12 +1101,14 @@ export namespace MyNS {
 		/**
 		 * The number of HubSpot contacts that attended this marketing event.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		attendees: number;
 
 		/**
 		 * The number of HubSpot contacts that registered for this marketing event, but later cancelled their registration.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cancellations: number;
 
@@ -1102,12 +1160,14 @@ export namespace MyNS {
 		/**
 		 * The number of HubSpot contacts that registered for this marketing event, but did not attend. This field only had a value when the event is over.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		noShows: number;
 
 		/**
 		 * The number of HubSpot contacts that registered for this marketing event.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		registrants: number;
 
@@ -1122,12 +1182,14 @@ export namespace MyNS {
 		/**
 		 * The number of HubSpot contacts that attended this marketing event.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		attendees: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of HubSpot contacts that registered for this marketing event, but later cancelled their registration.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cancellations: FormControl<number | null | undefined>,
 
@@ -1173,12 +1235,14 @@ export namespace MyNS {
 		/**
 		 * The number of HubSpot contacts that registered for this marketing event, but did not attend. This field only had a value when the event is over.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		noShows: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of HubSpot contacts that registered for this marketing event.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		registrants: FormControl<number | null | undefined>,
 
@@ -1461,6 +1525,7 @@ export namespace MyNS {
 		 * Retrieve the current settings for the application.
 		 * Get marketing/v3/marketing-events/{appId}/settings
 		 * @param {number} appId The id of the application to retrieve the settings for.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EventDetailSettings} successful operation
 		 */
 		Get_SlashmarketingSlashv3Slashmarketing_eventsSlashappIdSlashsettings_getAll(appId: number): Observable<EventDetailSettings> {
@@ -1472,6 +1537,7 @@ export namespace MyNS {
 		 * Create or update the current settings for the application.
 		 * Post marketing/v3/marketing-events/{appId}/settings
 		 * @param {number} appId The id of the application to update the settings for.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {EventDetailSettingsUrl} requestBody The new application settings
 		 * @return {EventDetailSettings} successful operation
 		 */

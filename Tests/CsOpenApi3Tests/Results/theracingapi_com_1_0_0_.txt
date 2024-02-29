@@ -5598,6 +5598,9 @@ namespace MyNS
 		/// <param name="max_distance_y"><p>Query by maximum race distance (yards)</p></param>
 		/// <param name="age_band"><p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p></param>
 		/// <param name="sex_restriction"><p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p></param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResultsPage> Dam_results_v1_dams__dam_id__results_getAsync(string dam_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5767,6 +5770,9 @@ namespace MyNS
 		/// <param name="max_distance_y"><p>Query by maximum race distance (yards)</p></param>
 		/// <param name="age_band"><p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p></param>
 		/// <param name="sex_restriction"><p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p></param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResultsPage> Damsire_results_v1_damsires__damsire_id__results_getAsync(string damsire_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5891,6 +5897,9 @@ namespace MyNS
 		/// <param name="max_distance_y"><p>Query by maximum race distance (yards)</p></param>
 		/// <param name="age_band"><p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p></param>
 		/// <param name="sex_restriction"><p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p></param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResultsPage> Horse_results_v1_horses__horse_id__results_getAsync(string horse_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6150,6 +6159,9 @@ namespace MyNS
 		/// <param name="max_distance_y"><p>Query by maximum race distance (yards)</p></param>
 		/// <param name="age_band"><p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p></param>
 		/// <param name="sex_restriction"><p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p></param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResultsPage> Jockey_results_v1_jockeys__jockey_id__results_getAsync(string jockey_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6186,6 +6198,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="start_date"><p>Query from date with format YYYY-MM-DD (e.g. 2020-01-01)</p></param>
 		/// <param name="end_date"><p>Query to date with format YYYY-MM-DD (e.g. 2020-01-01)</p></param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<MeetsResponse> List_meets_v1_north_america_meets_getAsync(string start_date, string end_date, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6513,6 +6528,9 @@ namespace MyNS
 		/// <param name="max_distance_y"><p>Query by maximum race distance (yards)</p></param>
 		/// <param name="age_band"><p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p></param>
 		/// <param name="sex_restriction"><p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p></param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResultsPage> Owner_results_v1_owners__owner_id__results_getAsync(string owner_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6781,6 +6799,9 @@ namespace MyNS
 		/// <param name="max_distance_y"><p>Query by maximum race distance (yards)</p></param>
 		/// <param name="age_band"><p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p></param>
 		/// <param name="sex_restriction"><p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p></param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResultsPage> List_racecard_horse_results_v1_racecards__horse_id__results_getAsync(string horse_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6894,6 +6915,9 @@ namespace MyNS
 		/// <param name="max_distance_y"><p>Query by maximum race distance (yards)</p></param>
 		/// <param name="age_band"><p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p></param>
 		/// <param name="sex_restriction"><p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p></param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResultsPage> List_results_v1_results_getAsync(string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6929,6 +6953,9 @@ namespace MyNS
 		/// List_todays_results_v1_results_today_get v1/results/today
 		/// </summary>
 		/// <param name="region"><p>Query results by region codes. Get the full list <a href='https://api.theracingapi.com/documentation#tag/Courses/operation/list_regions_v1_courses_regions_get'>here</a>.</p></param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResultsPage> List_todays_results_v1_results_today_getAsync(string[] region, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7132,6 +7159,9 @@ namespace MyNS
 		/// <param name="max_distance_y"><p>Query by maximum race distance (yards)</p></param>
 		/// <param name="age_band"><p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p></param>
 		/// <param name="sex_restriction"><p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p></param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResultsPage> Sire_results_v1_sires__sire_id__results_getAsync(string sire_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7436,6 +7466,9 @@ namespace MyNS
 		/// <param name="max_distance_y"><p>Query by maximum race distance (yards)</p></param>
 		/// <param name="age_band"><p>Query by age band:</p><p>10yo+, 2-3yo, 2yo, 2yo+, 3-4yo, 3-5yo, 3-6yo, 3yo, 3yo+, 4-5yo, 4-6yo, 4-7yo, 4-8yo, 4yo, 4yo+, 5-6yo, 5-7yo, 5-8yo, 5yo, 5yo+, 6-7yo, 6yo, 6yo+, 7yo+, 8yo+, 9yo+</p></param>
 		/// <param name="sex_restriction"><p>Query by sex restriction:</p><p>c&f, c&g, f, f&m, m, m&g</p></param>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResultsPage> Trainer_results_v1_trainers__trainer_id__results_getAsync(string trainer_id, string start_date, string end_date, string[] region, string[] course, string[] type, string[] going, string[] race_class, int min_distance_y, int max_distance_y, string[] age_band, string[] sex_restriction, int limit, int skip, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

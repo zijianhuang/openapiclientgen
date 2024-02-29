@@ -18,6 +18,8 @@ export namespace MyNS {
 
 	/** The StartBalance plus all the Statement Line Amounts should be equal to the EndBalance Amount. */
 	export interface EndBalance {
+
+		/** Type: double */
 		amount?: number | null;
 
 		/** If the statement balances are credit or debit, the CreditDebitIndicator should be specified from the perspective of the Customer. */
@@ -26,6 +28,8 @@ export namespace MyNS {
 
 	/** The StartBalance plus all the Statement Line Amounts should be equal to the EndBalance Amount. */
 	export interface EndBalanceFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 
 		/** If the statement balances are credit or debit, the CreditDebitIndicator should be specified from the perspective of the Customer. */
@@ -49,7 +53,10 @@ export namespace MyNS {
 		 */
 		detail?: string | null;
 
-		/** The numeric HTTP Status Code, e.g. 404 */
+		/**
+		 * The numeric HTTP Status Code, e.g. 404
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 
 		/**
@@ -71,7 +78,10 @@ export namespace MyNS {
 		 */
 		detail: FormControl<string | null | undefined>,
 
-		/** The numeric HTTP Status Code, e.g. 404 */
+		/**
+		 * The numeric HTTP Status Code, e.g. 404
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/**
@@ -207,30 +217,54 @@ export namespace MyNS {
 
 	export interface Pagination {
 
-		/** Number of items returned */
+		/**
+		 * Number of items returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemCount?: number | null;
 
-		/** Page number which specifies the set of records to retrieve. Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?page=2 to get the second set of the records. When page value is not a number or a negative number, by default, the first set of records is returned. */
+		/**
+		 * Page number which specifies the set of records to retrieve. Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?page=2 to get the second set of the records. When page value is not a number or a negative number, by default, the first set of records is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages available */
+		/**
+		 * Number of pages available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageCount?: number | null;
 
-		/** Page size which specifies how many records per page will be returned (default 50). Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?pageSize=100 to specify page size of 100. */
+		/**
+		 * Page size which specifies how many records per page will be returned (default 50). Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?pageSize=100 to specify page size of 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 	}
 	export interface PaginationFormProperties {
 
-		/** Number of items returned */
+		/**
+		 * Number of items returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemCount: FormControl<number | null | undefined>,
 
-		/** Page number which specifies the set of records to retrieve. Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?page=2 to get the second set of the records. When page value is not a number or a negative number, by default, the first set of records is returned. */
+		/**
+		 * Page number which specifies the set of records to retrieve. Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?page=2 to get the second set of the records. When page value is not a number or a negative number, by default, the first set of records is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages available */
+		/**
+		 * Number of pages available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageCount: FormControl<number | null | undefined>,
 
-		/** Page size which specifies how many records per page will be returned (default 50). Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?pageSize=100 to specify page size of 100. */
+		/**
+		 * Page size which specifies how many records per page will be returned (default 50). Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?pageSize=100 to specify page size of 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {
@@ -247,7 +281,10 @@ export namespace MyNS {
 	/** The starting balance of the statement */
 	export interface StartBalance {
 
-		/** decimal(19,4) unsigned Opening/closing balance amount. */
+		/**
+		 * decimal(19,4) unsigned Opening/closing balance amount.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** If the statement balances are credit or debit, the CreditDebitIndicator should be specified from the perspective of the Customer. */
@@ -257,7 +294,10 @@ export namespace MyNS {
 	/** The starting balance of the statement */
 	export interface StartBalanceFormProperties {
 
-		/** decimal(19,4) unsigned Opening/closing balance amount. */
+		/**
+		 * decimal(19,4) unsigned Opening/closing balance amount.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** If the statement balances are credit or debit, the CreditDebitIndicator should be specified from the perspective of the Customer. */
@@ -276,7 +316,10 @@ export namespace MyNS {
 		/** The StartBalance plus all the Statement Line Amounts should be equal to the EndBalance Amount. */
 		endBalance?: EndBalance;
 
-		/** Closing balance date ISO-8601 YYYY-MM-DD */
+		/**
+		 * Closing balance date ISO-8601 YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		endDate?: Date | null;
 		errors?: Array<Error>;
 
@@ -289,8 +332,13 @@ export namespace MyNS {
 		/** The starting balance of the statement */
 		startBalance?: StartBalance;
 
-		/** Opening balance date (can be no older than one year from the current date) ISO-8601 YYYY-MM-DD */
+		/**
+		 * Opening balance date (can be no older than one year from the current date) ISO-8601 YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		startDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statementLineCount?: number | null;
 		statementLines?: Array<StatementLine>;
 
@@ -299,7 +347,10 @@ export namespace MyNS {
 	}
 	export interface StatementFormProperties {
 
-		/** Closing balance date ISO-8601 YYYY-MM-DD */
+		/**
+		 * Closing balance date ISO-8601 YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		endDate: FormControl<Date | null | undefined>,
 
 		/** The Xero generated feed connection Id that identifies the Xero Bank Account Container into which the statement should be delivered. This is obtained by calling GET FeedConnections. */
@@ -308,8 +359,13 @@ export namespace MyNS {
 		/** GUID used to identify the Statement. */
 		id: FormControl<string | null | undefined>,
 
-		/** Opening balance date (can be no older than one year from the current date) ISO-8601 YYYY-MM-DD */
+		/**
+		 * Opening balance date (can be no older than one year from the current date) ISO-8601 YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		startDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statementLineCount: FormControl<number | null | undefined>,
 
 		/** Current status of statements */
@@ -331,7 +387,10 @@ export namespace MyNS {
 	/** the lines details for a statement */
 	export interface StatementLine {
 
-		/** Transaction amount */
+		/**
+		 * Transaction amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/**
@@ -355,7 +414,10 @@ export namespace MyNS {
 		 */
 		payeeName?: string | null;
 
-		/** The date that the transaction was processed or cleared as seen in internet banking ISO-8601 YYYY-MM-DD */
+		/**
+		 * The date that the transaction was processed or cleared as seen in internet banking ISO-8601 YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		postedDate?: Date | null;
 
 		/**
@@ -371,7 +433,10 @@ export namespace MyNS {
 	/** the lines details for a statement */
 	export interface StatementLineFormProperties {
 
-		/** Transaction amount */
+		/**
+		 * Transaction amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
@@ -395,7 +460,10 @@ export namespace MyNS {
 		 */
 		payeeName: FormControl<string | null | undefined>,
 
-		/** The date that the transaction was processed or cleared as seen in internet banking ISO-8601 YYYY-MM-DD */
+		/**
+		 * The date that the transaction was processed or cleared as seen in internet banking ISO-8601 YYYY-MM-DD
+		 * Type: DateOnly
+		 */
 		postedDate: FormControl<Date | null | undefined>,
 
 		/**
@@ -445,7 +513,9 @@ export namespace MyNS {
 		 * By passing in the appropriate options, you can search for available feed connections in the system.
 		 * Get FeedConnections
 		 * @param {number} page Page number which specifies the set of records to retrieve. By default the number of the records per set is 10. Example - https://api.xero.com/bankfeeds.xro/1.0/FeedConnections?page=1 to get the second set of the records. When page value is not a number or a negative number, by default, the first set of records is returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Page size which specifies how many records per page will be returned (default 10). Example - https://api.xero.com/bankfeeds.xro/1.0/FeedConnections?pageSize=100 to specify page size of 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		GetFeedConnections(page: number | null | undefined, pageSize: number | null | undefined): Observable<HttpResponse<string>> {
@@ -490,7 +560,9 @@ export namespace MyNS {
 		 * By passing in parameters, you can search for matching statements
 		 * Get Statements
 		 * @param {number} page unique id for single object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Page size which specifies how many records per page will be returned (default 10). Example - https://api.xero.com/bankfeeds.xro/1.0/Statements?pageSize=100 to specify page size of 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Statements} success returns Statements array of objects response
 		 */
 		GetStatements(page: number | null | undefined, pageSize: number | null | undefined): Observable<Statements> {

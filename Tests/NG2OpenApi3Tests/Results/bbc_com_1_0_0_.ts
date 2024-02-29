@@ -613,6 +613,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 
 		/** Required */
@@ -623,6 +625,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1248,7 +1252,10 @@ export namespace MyNS {
 
 	export interface Available_simulcasts {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available: number;
 
 		/** Required */
@@ -1256,7 +1263,10 @@ export namespace MyNS {
 	}
 	export interface Available_simulcastsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available: FormControl<number | null | undefined>,
 	}
 	export function CreateAvailable_simulcastsFormGroup() {
@@ -1486,7 +1496,10 @@ export namespace MyNS {
 
 	export interface Available_versions {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available: number;
 
 		/** Required */
@@ -1494,7 +1507,10 @@ export namespace MyNS {
 	}
 	export interface Available_versionsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available: FormControl<number | null | undefined>,
 	}
 	export function CreateAvailable_versionsFormGroup() {
@@ -1506,7 +1522,10 @@ export namespace MyNS {
 
 	export interface Available_webcasts {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available: number;
 
 		/** Required */
@@ -1514,7 +1533,10 @@ export namespace MyNS {
 	}
 	export interface Available_webcastsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available: FormControl<number | null | undefined>,
 	}
 	export function CreateAvailable_webcastsFormGroup() {
@@ -1531,6 +1553,8 @@ export namespace MyNS {
 
 		/** Required */
 		embargoed: BrandEmbargoed;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expected_child_count?: number | null;
 		franchises?: Reference;
 		genre_groupings?: GenreGroupingsType;
@@ -1562,6 +1586,8 @@ export namespace MyNS {
 
 		/** Required */
 		embargoed: FormControl<BrandEmbargoed | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expected_child_count: FormControl<number | null | undefined>,
 		is_embeddable: FormControl<boolean | null | undefined>,
 
@@ -2238,6 +2264,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 		synopses?: Synopses;
 		title?: string | null;
@@ -2249,6 +2277,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -2446,6 +2476,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 
 		/** Required */
@@ -2456,6 +2488,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2505,11 +2539,13 @@ export namespace MyNS {
 	export interface Chapter {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number?: string | null;
 		contributions_mixin?: Contributions_mixin;
+
+		/** Type: float */
 		duration?: number | null;
 		identifiers?: Identifiers;
 		ids?: Ids;
@@ -2517,8 +2553,8 @@ export namespace MyNS {
 		item_of?: Reference;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code?: string | null;
 		offsets?: Offsets;
@@ -2531,47 +2567,47 @@ export namespace MyNS {
 		play_events?: Play_events;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label?: string | null;
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title?: string | null;
 		snippet_url?: string | null;
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media?: string | null;
 		synopses?: Synopses;
 		title?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side?: string | null;
 		type?: string | null;
@@ -2580,15 +2616,17 @@ export namespace MyNS {
 	export interface ChapterFormProperties {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		duration: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code: FormControl<string | null | undefined>,
 
@@ -2599,46 +2637,46 @@ export namespace MyNS {
 		pid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title: FormControl<string | null | undefined>,
 		snippet_url: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -2681,7 +2719,11 @@ export namespace MyNS {
 
 		/** Required */
 		href: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
+
+		/** Type: double */
 		position?: number | null;
 
 		/** Required */
@@ -2694,7 +2736,11 @@ export namespace MyNS {
 
 		/** Required */
 		href: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		position: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2726,20 +2772,28 @@ export namespace MyNS {
 	}
 
 	export interface Play_event {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset?: number | null;
 
 		/** Required */
 		pid: string;
 		played_in_links?: Array<Played_in_links>;
+
+		/** Type: double */
 		position?: number | null;
 		synopses?: Synopses;
 		title?: string | null;
 	}
 	export interface Play_eventFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		offset: FormControl<number | null | undefined>,
 
 		/** Required */
 		pid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		position: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -2962,7 +3016,10 @@ export namespace MyNS {
 
 	export interface Versions {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available: number;
 
 		/** Required */
@@ -2970,7 +3027,10 @@ export namespace MyNS {
 	}
 	export interface VersionsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available: FormControl<number | null | undefined>,
 	}
 	export function CreateVersionsFormGroup() {
@@ -3165,6 +3225,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 
 		/** Required */
@@ -3175,6 +3237,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3614,11 +3678,19 @@ export namespace MyNS {
 	}
 
 	export interface Dimensions {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface DimensionsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateDimensionsFormGroup() {
@@ -3724,6 +3796,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 
 		/** Required */
@@ -3734,6 +3808,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3893,7 +3969,11 @@ export namespace MyNS {
 		deprecated?: boolean | null;
 		deprecated_since?: string | null;
 		guaranteed_until?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_value?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		min_value?: number | null;
 		multiple_values?: boolean | null;
 
@@ -3918,7 +3998,11 @@ export namespace MyNS {
 		deprecated: FormControl<boolean | null | undefined>,
 		deprecated_since: FormControl<string | null | undefined>,
 		guaranteed_until: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_value: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		min_value: FormControl<number | null | undefined>,
 		multiple_values: FormControl<boolean | null | undefined>,
 
@@ -4272,11 +4356,19 @@ export namespace MyNS {
 	}
 
 	export interface Focus_point {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		x?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		y?: number | null;
 	}
 	export interface Focus_pointFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		x: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateFocus_pointFormGroup() {
@@ -4510,11 +4602,13 @@ export namespace MyNS {
 	export interface Highlight {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number?: string | null;
 		contributions_mixin?: Contributions_mixin;
+
+		/** Type: float */
 		duration?: number | null;
 		identifiers?: Identifiers;
 		ids?: Ids;
@@ -4522,8 +4616,8 @@ export namespace MyNS {
 		item_of?: Reference;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code?: string | null;
 		offsets?: Offsets;
@@ -4536,47 +4630,47 @@ export namespace MyNS {
 		play_events?: Play_events;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label?: string | null;
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title?: string | null;
 		snippet_url?: string | null;
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media?: string | null;
 		synopses?: Synopses;
 		title?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side?: string | null;
 		type?: string | null;
@@ -4585,15 +4679,17 @@ export namespace MyNS {
 	export interface HighlightFormProperties {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		duration: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code: FormControl<string | null | undefined>,
 
@@ -4604,46 +4700,46 @@ export namespace MyNS {
 		pid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title: FormControl<string | null | undefined>,
 		snippet_url: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -4755,11 +4851,13 @@ export namespace MyNS {
 	export interface Item {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number?: string | null;
 		contributions_mixin?: Contributions_mixin;
+
+		/** Type: float */
 		duration?: number | null;
 		identifiers?: Identifiers;
 		ids?: Ids;
@@ -4767,8 +4865,8 @@ export namespace MyNS {
 		item_of?: Reference;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code?: string | null;
 		offsets?: Offsets;
@@ -4781,47 +4879,47 @@ export namespace MyNS {
 		play_events?: Play_events;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label?: string | null;
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title?: string | null;
 		snippet_url?: string | null;
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media?: string | null;
 		synopses?: Synopses;
 		title?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side?: string | null;
 		type?: string | null;
@@ -4830,15 +4928,17 @@ export namespace MyNS {
 	export interface ItemFormProperties {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		duration: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code: FormControl<string | null | undefined>,
 
@@ -4849,46 +4949,46 @@ export namespace MyNS {
 		pid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title: FormControl<string | null | undefined>,
 		snippet_url: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -4967,6 +5067,8 @@ export namespace MyNS {
 
 		/** Required */
 		partner: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 		synopses?: Master_brandSynopses;
 		title?: string | null;
@@ -4982,6 +5084,8 @@ export namespace MyNS {
 
 		/** Required */
 		partner: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url_key: FormControl<string | null | undefined>,
@@ -5080,11 +5184,13 @@ export namespace MyNS {
 	export interface Music {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number?: string | null;
 		contributions_mixin?: Contributions_mixin;
+
+		/** Type: float */
 		duration?: number | null;
 		identifiers?: Identifiers;
 		ids?: Ids;
@@ -5092,8 +5198,8 @@ export namespace MyNS {
 		item_of?: Reference;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code?: string | null;
 		offsets?: Offsets;
@@ -5106,47 +5212,47 @@ export namespace MyNS {
 		play_events?: Play_events;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label?: string | null;
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title?: string | null;
 		snippet_url?: string | null;
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media?: string | null;
 		synopses?: Synopses;
 		title?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side?: string | null;
 		type?: string | null;
@@ -5155,15 +5261,17 @@ export namespace MyNS {
 	export interface MusicFormProperties {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		duration: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code: FormControl<string | null | undefined>,
 
@@ -5174,46 +5282,46 @@ export namespace MyNS {
 		pid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title: FormControl<string | null | undefined>,
 		snippet_url: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -5317,32 +5425,52 @@ export namespace MyNS {
 		highlight?: Item;
 		image?: Image;
 		master_brand?: Master_brand;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		more_than?: number | null;
 		music?: Item;
 		other?: Item;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size: number;
 		promotion?: Promotion;
 		season?: Group_body;
 		series?: Series;
 		service?: Service;
 		speech?: Item;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 		version_group?: Version_group;
 		window?: Window;
 	}
 	export interface ResultsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		more_than: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateResultsFormGroup() {
@@ -5365,6 +5493,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority?: number | null;
 		promoted_by?: string | null;
 		promoted_for?: string | null;
@@ -5388,6 +5518,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority: FormControl<number | null | undefined>,
 		promoted_by: FormControl<string | null | undefined>,
 		promoted_for: FormControl<string | null | undefined>,
@@ -5428,6 +5560,8 @@ export namespace MyNS {
 
 		/** Required */
 		embargoed: BrandEmbargoed;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expected_child_count?: number | null;
 		genre_groupings?: GenreGroupingsType;
 		identifiers?: Identifiers;
@@ -5459,6 +5593,8 @@ export namespace MyNS {
 
 		/** Required */
 		embargoed: FormControl<BrandEmbargoed | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expected_child_count: FormControl<number | null | undefined>,
 		is_embeddable: FormControl<boolean | null | undefined>,
 
@@ -5909,11 +6045,13 @@ export namespace MyNS {
 	export interface Other {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number?: string | null;
 		contributions_mixin?: Contributions_mixin;
+
+		/** Type: float */
 		duration?: number | null;
 		identifiers?: Identifiers;
 		ids?: Ids;
@@ -5921,8 +6059,8 @@ export namespace MyNS {
 		item_of?: Reference;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code?: string | null;
 		offsets?: Offsets;
@@ -5935,47 +6073,47 @@ export namespace MyNS {
 		play_events?: Play_events;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label?: string | null;
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title?: string | null;
 		snippet_url?: string | null;
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media?: string | null;
 		synopses?: Synopses;
 		title?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side?: string | null;
 		type?: string | null;
@@ -5984,15 +6122,17 @@ export namespace MyNS {
 	export interface OtherFormProperties {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		duration: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code: FormControl<string | null | undefined>,
 
@@ -6003,46 +6143,46 @@ export namespace MyNS {
 		pid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title: FormControl<string | null | undefined>,
 		snippet_url: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -6075,6 +6215,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 
 		/** Required */
@@ -6085,6 +6227,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6217,6 +6361,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 
 		/** Required */
@@ -6227,6 +6373,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6245,11 +6393,13 @@ export namespace MyNS {
 	export interface Speech {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number?: string | null;
 		contributions_mixin?: Contributions_mixin;
+
+		/** Type: float */
 		duration?: number | null;
 		identifiers?: Identifiers;
 		ids?: Ids;
@@ -6257,8 +6407,8 @@ export namespace MyNS {
 		item_of?: Reference;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code?: string | null;
 		offsets?: Offsets;
@@ -6271,47 +6421,47 @@ export namespace MyNS {
 		play_events?: Play_events;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label?: string | null;
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date?: string | null;
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title?: string | null;
 		snippet_url?: string | null;
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media?: string | null;
 		synopses?: Synopses;
 		title?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number?: string | null;
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side?: string | null;
 		type?: string | null;
@@ -6320,15 +6470,17 @@ export namespace MyNS {
 	export interface SpeechFormProperties {
 
 		/**
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		catalogue_number: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		duration: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		music_code: FormControl<string | null | undefined>,
 
@@ -6339,46 +6491,46 @@ export namespace MyNS {
 		pid: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		publisher: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		record_label: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 10
 		 * Min length: 4
+		 * Max length: 10
 		 */
 		recording_date: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		release_title: FormControl<string | null | undefined>,
 		snippet_url: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		source_media: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_number: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		track_side: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -6411,6 +6563,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 
 		/** Required */
@@ -6421,6 +6575,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6441,6 +6597,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 
 		/** Required */
@@ -6451,6 +6609,8 @@ export namespace MyNS {
 
 		/** Required */
 		pid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -6496,7 +6656,9 @@ export namespace MyNS {
 		 * @param {Array<string>} descendants_of filter for subset of availabilities that have PID as ancestor
 		 * @param {Array<string>} media_set filter for subset of availabilities with media set
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {Array<string>} territory filter for availabilities in given territory
 		 * @param {boolean} debug Turn on debug information (undocumented)
 		 * @return {Nitro} Nitro response
@@ -6523,13 +6685,18 @@ export namespace MyNS {
 		 * @param {Array<string>} id filter for subset of broadcasts that have given identifier
 		 * @param {Array<string>} item filter for subset of broadcasts with the given item performed on it
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {string} people filter for subset of broadcasts that have given contributor
 		 * @param {Array<string>} pid filter for subset of broadcasts having given PID
 		 * @param {string} q filter for subset of broadcasts matching supplied keyword/phrase (boolean operators permitted)
 		 * @param {Date} schedule_day filter for subset of broadcasts that start on the specified day (BBC time)
+		 *     Type: DateOnly
 		 * @param {Date} schedule_day_from filter for subset of broadcasts that start on or after the specified day (BBC time)
+		 *     Type: DateOnly
 		 * @param {Date} schedule_day_to filter for subset of broadcasts that start on or before the specified day (BBC time)
+		 *     Type: DateOnly
 		 * @param {Array<string>} service_master_brand filter for subset of broadcasts with given service master brand
 		 * @param {Array<string>} sid filter for subset of broadcasts that are on the specified linear service
 		 * @param {Date} start_from filter for subset of broadcasts that start on or later than the specified datetime
@@ -6554,12 +6721,18 @@ export namespace MyNS {
 		 * * images: mixin to add image information for a group
 		 * * related_links: mixin to return related links for the group
 		 * @param {string} for_descendants_of filter for groups related to given programme or its descendants
+		 *     Min length: 8
 		 * @param {string} for_programme filter for subset of groups directly related to a given programme
+		 *     Min length: 8
 		 * @param {string} group filter for subset of groups which belong to the given group pid
+		 *     Min length: 8
 		 * @param {Array<string>} group_type filter for subset of groups that have the given group type
 		 * @param {string} member filter for subset of groups which contain an entity with the given pid as a member
+		 *     Min length: 8
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {Array<string>} partner_id filter for groups by partner ID
 		 * @param {Array<string>} partner_pid filter for groups by partner PID
 		 * @param {Array<string>} pid filter for subset of seasons, collections, galleries or franchises having given PID
@@ -6580,11 +6753,16 @@ export namespace MyNS {
 		 * * pid: sort alphabetically by PID
 		 * @param {ListAvailabilitySort_direction} sort_direction Sort direction
 		 * @param {string} group filter for images belonging to the given group (i.e. Gallery)
+		 *     Min length: 8
 		 * @param {Array<string>} image_type filter for images by type
 		 * @param {string} is_alternate_image_for filter for alternate images by entity PID
+		 *     Min length: 8
 		 * @param {string} is_image_for filter for images by entity PID
+		 *     Min length: 8
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {Array<string>} partner_id filter for images by partner ID
 		 * @param {Array<string>} partner_pid filter for images by partner PID
 		 * @param {Array<string>} pid filter for subset of images having given PID
@@ -6613,12 +6791,15 @@ export namespace MyNS {
 		 * @param {string} id_type filter for subset of items that have given an ID of the given type
 		 * @param {Array<string>} item_type filter for specific type(s) of items
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {Array<string>} partner_id filter for items by partner ID
 		 * @param {Array<string>} partner_pid filter for items by partner PID
 		 * @param {string} people filter for subset of items that have specified person involved
 		 * @param {Array<string>} pid filter for subset of items matching one of the given PIDs
 		 * @param {string} programme filter for subset of items that are part of the given programme
+		 *     Min length: 8
 		 * @param {string} q filter for subset of items matching supplied keyword/phrase (boolean operators permitted)
 		 * @param {string} segment_event filter for item with the given segment_event
 		 * @return {Nitro} Nitro response
@@ -6638,7 +6819,9 @@ export namespace MyNS {
 		 * * images: mixin to add image information for a masterbrand
 		 * @param {Array<string>} mid filter for subset of masterbrands that have given identifier
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {Array<string>} partner_id filter for masterbrands by partner ID
 		 * @param {Array<string>} partner_pid filter for masterbrands by partner PID
 		 * @param {string} q filter for subset of masterbrands matching supplied keyword/phrase (boolean operators permitted)
@@ -6657,7 +6840,9 @@ export namespace MyNS {
 		 * @param {Array<string>} id filter for subset of people having given ID
 		 * @param {string} id_type filter for subset of people that have given an ID of the given type
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {Array<string>} partner_id filter for people by partner ID
 		 * @param {Array<string>} partner_pid filter for people by partner PID
 		 * @param {Array<string>} pid filter for subset of people having given PID
@@ -6674,7 +6859,9 @@ export namespace MyNS {
 		 * Look inside pips entities
 		 * Get pips
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {string} q filter for subset of programmes matching supplied keyword/phrase (boolean operators permitted)
 		 * @return {Nitro} Nitro response
 		 */
@@ -6687,9 +6874,13 @@ export namespace MyNS {
 		 * Exposes programme information for a single pid
 		 * Get programme_details
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {string} partner_pid Filter for programme information by partner PID
+		 *     Min length: 8
 		 * @param {string} pid Filter for programme information for the provided PID
+		 *     Min length: 8
 		 * @return {Nitro} Nitro response
 		 */
 		ListProgrammeDetails(page: number | null | undefined, page_size: number | null | undefined, partner_pid: string | null | undefined, pid: string | null | undefined): Observable<Nitro> {
@@ -6742,20 +6933,27 @@ export namespace MyNS {
 		 * @param {Array<string>} format filter for subset of programmes with format
 		 * @param {Array<string>} genre filter for subset of programmes with genre
 		 * @param {string} group filter for subset of programmes which belong to the given group pid
+		 *     Min length: 8
 		 * @param {string} initial_letter filter for subset of programmes with title beginning with initial letter librarian style (ignoring leading 'The', 'An' (Welsh), etc) 0-9 a-z
+		 *     Min length: 1    Max length: 1
 		 * @param {string} initial_letter_end Programmes with (librarian) titles whose initial letter is equal/before given letter. Use with initial_letter_start for a range
+		 *     Min length: 1    Max length: 1
 		 * @param {string} initial_letter_start Programmes with (librarian) titles whose initial letter is equal/after given letter. Use with initial_letter_end for range.
+		 *     Min length: 1    Max length: 1
 		 * @param {Array<string>} initial_letter_strict filter for subset of programmes with title beginning with initial letter
 		 * @param {Array<string>} item filter for subset of programmes with linked to versions which have the given item pids
 		 * @param {Array<string>} master_brand filter for subset of programmes with master_brand
 		 * @param {string} media_set filter for subset of programmes with media set
 		 * @param {Array<string>} media_type filter for subset of programmes with media type
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {Array<string>} partner_id filter for programmes by partner ID
 		 * @param {Array<string>} partner_pid filter for programmes by partner PID
 		 * @param {Array<string>} payment_type filter for a subset of programmes that are of the given payment_type
 		 * @param {string} people filter for subset of programmes with contributions by given people PID
+		 *     Min length: 8
 		 * @param {Array<string>} pid filter for subset of programmes having given PID
 		 * @param {string} promoted_for filter for subset of programmes which are promoted for given service
 		 * @param {string} q filter for subset of programmes matching supplied keyword/phrase (boolean operators permitted)
@@ -6778,8 +6976,11 @@ export namespace MyNS {
 		 * @param {Array<string>} mixin Mixins:
 		 * * related_links: mixin to return information about related links to a promotion
 		 * @param {string} context filter for subset of promotions belonging to a given context
+		 *     Min length: 8
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {Array<string>} partner_id filter for promotions by partner ID
 		 * @param {Array<string>} partner_pid filter for promotions by partner PID
 		 * @param {Array<string>} pid filter for subset of promotions having given PID
@@ -6811,11 +7012,14 @@ export namespace MyNS {
 		 * @param {Array<string>} format filter for subset of broadcasts and webcasts that are classified in the given format ID
 		 * @param {Array<string>} genre filter for subset of broadcasts and webcasts that are classified in the given genre ID
 		 * @param {string} group filter for subset of broadcasts and webcasts that have programmes in the given group
+		 *     Min length: 8
 		 * @param {Array<string>} id filter for subset of broadcasts and webcasts that have given identifier
 		 * @param {Array<string>} id_type filter for subset of broadcasts and webcasts that have given id type
 		 * @param {Array<string>} item filter for subset of broadcasts and webcasts with the given item performed on it
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {Array<string>} partner_id filter for broadcasts and webcasts by partner ID
 		 * @param {Array<string>} partner_pid filter for broadcasts and webcasts by partner PID
 		 * @param {string} people filter for subset of broadcasts and webcasts that have given contributor
@@ -6823,8 +7027,11 @@ export namespace MyNS {
 		 * @param {string} q filter for subset of broadcasts and webcasts matching supplied keyword/phrase (boolean operators permitted)
 		 * @param {boolean} repeat filter to show either only repeats or non-repeats
 		 * @param {Date} schedule_day filter for subset of broadcasts and webcasts that start on the specified day (BBC time)
+		 *     Type: DateOnly
 		 * @param {Date} schedule_day_from filter for subset of broadcasts and webcasts that start on or after the specified day (BBC time)
+		 *     Type: DateOnly
 		 * @param {Date} schedule_day_to filter for subset of broadcasts and webcasts that start on or before the specified day (BBC time)
+		 *     Type: DateOnly
 		 * @param {Array<string>} service_master_brand filter for subset of broadcasts and webcasts with given service master brand
 		 * @param {Array<string>} sid filter for subset of broadcasts and webcasts that are on the specified linear service
 		 * @param {Date} start_from filter for subset of broadcasts and webcasts that start on or later than the specified datetime
@@ -6854,7 +7061,9 @@ export namespace MyNS {
 		 * @param {Date} end_to filter for subset of broadcasts that end on or earlier than the specified datetime
 		 * @param {Array<string>} mid filter for services by masterbrand MID
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {Array<string>} partner_id filter for services by partner ID
 		 * @param {Array<string>} partner_pid filter for services by partner PID
 		 * @param {string} q filter for subset of services matching supplied keyword/phrase (boolean operators permitted)
@@ -6966,7 +7175,9 @@ export namespace MyNS {
 		 * @param {Array<string>} descendants_of filter for subset of versions having given programme PID
 		 * @param {Array<string>} media_set filter for subset of versions with availability in the given media set
 		 * @param {number} page which page of results to return
+		 *     Minimum: 1
 		 * @param {number} page_size number of results in each page
+		 *     Maximum: 300
 		 * @param {Array<string>} partner_id filter for versions by partner ID
 		 * @param {Array<string>} partner_pid filter for versions by partner PID
 		 * @param {Array<string>} payment_type filter for a subset of versions that are of the given payment_type

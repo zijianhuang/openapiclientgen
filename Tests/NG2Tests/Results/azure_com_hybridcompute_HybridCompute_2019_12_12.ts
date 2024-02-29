@@ -744,6 +744,7 @@ export namespace MyNS {
 		 * Gets a list of hybrid compute operations.
 		 * Get providers/Microsoft.HybridCompute/operations
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {OperationListResult} OK
 		 */
 		Operations_List(api_version: string): Observable<OperationListResult> {
@@ -754,7 +755,9 @@ export namespace MyNS {
 		 * Lists all the hybrid machines in the specified subscription. Use the nextLink property in the response to get the next page of hybrid machines.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.HybridCompute/machines
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {MachineListResult} OK
 		 */
 		Machines_ListBySubscription(api_version: string, subscriptionId: string): Observable<MachineListResult> {
@@ -765,7 +768,9 @@ export namespace MyNS {
 		 * Lists all the hybrid machines in the specified resource group. Use the nextLink property in the response to get the next page of hybrid machines.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @return {MachineListResult} OK
 		 */
@@ -777,7 +782,9 @@ export namespace MyNS {
 		 * Retrieves information about the model view or the instance view of a hybrid machine.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{name}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} name The name of the hybrid machine.
 		 * @param {Machines_GetExpand} expand The expand expression to apply on the operation.
@@ -791,7 +798,9 @@ export namespace MyNS {
 		 * The operation to create or update a hybrid machine resource identity in Azure.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{name}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} name The name of the hybrid machine.
 		 * @param {Machine} requestBody Parameters supplied to the Create hybrid machine operation.
@@ -805,7 +814,9 @@ export namespace MyNS {
 		 * The operation to remove a hybrid machine identity in Azure.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{name}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} name The name of the hybrid machine.
 		 * @return {void} OK
@@ -818,7 +829,9 @@ export namespace MyNS {
 		 * The operation to update a hybrid machine.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{name}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} name The name of the hybrid machine.
 		 * @param {MachineUpdate} requestBody Parameters supplied to the Update hybrid machine operation.
@@ -835,7 +848,9 @@ export namespace MyNS {
 		 * @param {string} name The name of the machine containing the extension.
 		 * @param {string} expand The expand expression to apply on the operation.
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {MachineExtensionsListResult} OK
 		 */
 		MachineExtensions_List(resourceGroupName: string, name: string, expand: string | null | undefined, api_version: string, subscriptionId: string): Observable<MachineExtensionsListResult> {
@@ -849,7 +864,9 @@ export namespace MyNS {
 		 * @param {string} name The name of the machine containing the extension.
 		 * @param {string} extensionName The name of the machine extension.
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {MachineExtension} OK
 		 */
 		MachineExtensions_Get(resourceGroupName: string, name: string, extensionName: string, api_version: string, subscriptionId: string): Observable<MachineExtension> {
@@ -863,7 +880,9 @@ export namespace MyNS {
 		 * @param {string} name The name of the machine where the extension should be created or updated.
 		 * @param {string} extensionName The name of the machine extension.
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {MachineExtension} requestBody Parameters supplied to the Create Machine Extension operation.
 		 * @return {MachineExtension} OK
 		 */
@@ -878,7 +897,9 @@ export namespace MyNS {
 		 * @param {string} name The name of the machine where the extension should be deleted.
 		 * @param {string} extensionName The name of the machine extension.
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {void} OK
 		 */
 		MachineExtensions_Delete(resourceGroupName: string, name: string, extensionName: string, api_version: string, subscriptionId: string): Observable<HttpResponse<string>> {
@@ -892,7 +913,9 @@ export namespace MyNS {
 		 * @param {string} name The name of the machine where the extension should be created or updated.
 		 * @param {string} extensionName The name of the machine extension.
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {MachineExtensionUpdate} requestBody Parameters supplied to the Create Machine Extension operation.
 		 * @return {MachineExtension} OK
 		 */
@@ -904,7 +927,9 @@ export namespace MyNS {
 		 * The operation to reconnect a hybrid machine resource to its identity in Azure.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.HybridCompute/machines/{name}/reconnect
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group.
 		 * @param {string} name The name of the hybrid machine.
 		 * @param {MachineReconnect} requestBody Parameters supplied to the Reconnect hybrid machine operation.

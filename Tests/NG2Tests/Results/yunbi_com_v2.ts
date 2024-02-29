@@ -22,6 +22,7 @@ export namespace MyNS {
 		 * Get v2/deposit.json
 		 * @param {string} access_key Access key.
 		 * @param {number} tonce Tonce is an integer represents the milliseconds elapsed since Unix epoch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} signature The signature of your request payload, generated using your secret key.
 		 * @return {void} No response was specified
 		 */
@@ -34,6 +35,7 @@ export namespace MyNS {
 		 * Get v2/deposit_address.json
 		 * @param {string} access_key Access key.
 		 * @param {number} tonce Tonce is an integer represents the milliseconds elapsed since Unix epoch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} signature The signature of your request payload, generated using your secret key.
 		 * @param {string} currency The account to which you want to deposit. Available values: cny, btc, eth, pls, note, bts, bitcny, bitusd, bitbtc, yun, nxt, ltc, doge, sc, dgd, dcs, dao, etc, amp, 1st, rep, ans, zec, zmc, gnt, gxs, qtum, eos, snt, bcc, omg, lun, pay, ven
 		 * @return {void} No response was specified
@@ -47,9 +49,11 @@ export namespace MyNS {
 		 * Get v2/deposits.json
 		 * @param {string} access_key Access key.
 		 * @param {number} tonce Tonce is an integer represents the milliseconds elapsed since Unix epoch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} signature The signature of your request payload, generated using your secret key.
 		 * @param {string} currency Currency value contains  cny, btc, eth, pls, note, bts, bitcny, bitusd, bitbtc, yun, nxt, ltc, doge, sc, dgd, dcs, dao, etc, amp, 1st, rep, ans, zec, zmc, gnt, gxs, qtum, eos, snt, bcc, omg, lun, pay, ven
 		 * @param {number} limit Set result limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} state State value contains  submitting, cancelled, submitted, rejected, accepted, checked, warning
 		 * @return {void} No response was specified
 		 */
@@ -62,6 +66,7 @@ export namespace MyNS {
 		 * Get v2/depth.json
 		 * @param {string} market Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btccny'. All available markets can be found at /api/v2/markets.
 		 * @param {number} limit Limit the number of returned price levels. Default to 300.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GET__version_depth___format_(market: string, limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -73,8 +78,11 @@ export namespace MyNS {
 		 * Get v2/k.json
 		 * @param {string} market Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btccny'. All available markets can be found at /api/v2/markets.
 		 * @param {number} limit Limit the number of returned data points, default to 30.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} period Time period of K line, default to 1. You can choose between 1, 5, 15, 30, 60, 120, 240, 360, 720, 1440, 4320, 10080
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timestamp An integer represents the seconds elapsed since Unix epoch. If set, only k-line data after that time will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GET__version_k___format_(market: string, limit: number | null | undefined, period: number | null | undefined, timestamp: number | null | undefined): Observable<HttpResponse<string>> {
@@ -86,9 +94,13 @@ export namespace MyNS {
 		 * Get v2/k_with_pending_trades.json
 		 * @param {string} market Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btccny'. All available markets can be found at /api/v2/markets.
 		 * @param {number} trade_id The trade id of the first trade you received.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Limit the number of returned data points, default to 30.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} period Time period of K line, default to 1. You can choose between 1, 5, 15, 30, 60, 120, 240, 360, 720, 1440, 4320, 10080
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timestamp An integer represents the seconds elapsed since Unix epoch. If set, only k-line data after that time will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GET__version_k_with_pending_trades___format_(market: string, trade_id: number, limit: number | null | undefined, period: number | null | undefined, timestamp: number | null | undefined): Observable<HttpResponse<string>> {
@@ -109,6 +121,7 @@ export namespace MyNS {
 		 * Get v2/members/me.json
 		 * @param {string} access_key Access key.
 		 * @param {number} tonce Tonce is an integer represents the milliseconds elapsed since Unix epoch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} signature The signature of your request payload, generated using your secret key.
 		 * @return {void} No response was specified
 		 */
@@ -121,8 +134,10 @@ export namespace MyNS {
 		 * Get v2/order.json
 		 * @param {string} access_key Access key.
 		 * @param {number} tonce Tonce is an integer represents the milliseconds elapsed since Unix epoch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} signature The signature of your request payload, generated using your secret key.
 		 * @param {number} id Unique order id.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GET__version_order___format_(access_key: string, tonce: number, signature: string, id: number): Observable<HttpResponse<string>> {
@@ -134,7 +149,9 @@ export namespace MyNS {
 		 * Get v2/order_book.json
 		 * @param {string} market Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btccny'. All available markets can be found at /api/v2/markets.
 		 * @param {number} asks_limit Limit the number of returned sell orders. Default to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} bids_limit Limit the number of returned buy orders. Default to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GET__version_order_book___format_(market: string, asks_limit: number | null | undefined, bids_limit: number | null | undefined): Observable<HttpResponse<string>> {
@@ -146,11 +163,14 @@ export namespace MyNS {
 		 * Get v2/orders.json
 		 * @param {string} access_key Access key.
 		 * @param {number} tonce Tonce is an integer represents the milliseconds elapsed since Unix epoch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} signature The signature of your request payload, generated using your secret key.
 		 * @param {string} market Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btccny'. All available markets can be found at /api/v2/markets.
 		 * @param {string} state Filter order by state. One of 'wait', 'done', or 'cancel'. An order in 'wait' is an active order, waiting fullfillment; a 'done' order is an order fullfilled; 'cancel' means the order has been cancelled. Default to 'wait'.
 		 * @param {number} limit Limit the number of returned orders, default to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Specify the page of paginated results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} order_by If set, returned orders will be sorted in specific order. One of 'asc' or 'desc', default to 'asc'.
 		 * @return {void} No response was specified
 		 */
@@ -199,9 +219,13 @@ export namespace MyNS {
 		 * Get v2/trades.json
 		 * @param {string} market Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btccny'. All available markets can be found at /api/v2/markets.
 		 * @param {number} limit Limit the number of returned trades. Default to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timestamp An integer represents the seconds elapsed since Unix epoch. If set, only trades executed before the time will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} from Trade id. If set, only trades created after the trade will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} to Trade id. If set, only trades created before the trade will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} order_by If set, returned trades will be sorted in specific order. One of 'asc' or 'desc', default to 'desc'.
 		 * @return {void} No response was specified
 		 */
@@ -214,12 +238,17 @@ export namespace MyNS {
 		 * Get v2/trades/my.json
 		 * @param {string} access_key Access key.
 		 * @param {number} tonce Tonce is an integer represents the milliseconds elapsed since Unix epoch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} signature The signature of your request payload, generated using your secret key.
 		 * @param {string} market Unique market id. It's always in the form of xxxyyy, where xxx is the base currency code, yyy is the quote currency code, e.g. 'btccny'. All available markets can be found at /api/v2/markets.
 		 * @param {number} limit Limit the number of returned trades. Default to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} timestamp An integer represents the seconds elapsed since Unix epoch. If set, only trades executed before the time will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} from Trade id. If set, only trades created after the trade will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} to Trade id. If set, only trades created before the trade will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} order_by If set, returned trades will be sorted in specific order. One of 'asc' or 'desc', default to 'desc'.
 		 * @return {void} No response was specified
 		 */

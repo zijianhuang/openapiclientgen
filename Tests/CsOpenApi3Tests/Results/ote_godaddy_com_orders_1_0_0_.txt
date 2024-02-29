@@ -1617,7 +1617,10 @@ namespace MyNS
 		/// <param name="paymentProfileId">Payment profile id to use as the filter of results</param>
 		/// <param name="parentOrderId">Parent order id to use as the filter of results</param>
 		/// <param name="offset">Number of results to skip for pagination</param>
-		/// <param name="limit">Maximum number of items to return</param>
+		/// <param name="limit">Maximum number of items to return
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Property name that will be used to sort results. '-' indicates descending</param>
 		/// <returns>Request was successful</returns>
 		public async Task<OrderList> ListAsync(string periodStart, string periodEnd, string domain, int productGroupId, int paymentProfileId, string parentOrderId, int offset, int limit, ListSort sort, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

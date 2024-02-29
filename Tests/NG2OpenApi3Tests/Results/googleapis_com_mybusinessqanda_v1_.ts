@@ -22,7 +22,10 @@ export namespace MyNS {
 		/** Output only. The timestamp for when the answer was last modified. */
 		updateTime?: string | null;
 
-		/** Output only. The number of upvotes for the answer. */
+		/**
+		 * Output only. The number of upvotes for the answer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upvoteCount?: number | null;
 	}
 
@@ -41,7 +44,10 @@ export namespace MyNS {
 		/** Output only. The timestamp for when the answer was last modified. */
 		updateTime: FormControl<string | null | undefined>,
 
-		/** Output only. The number of upvotes for the answer. */
+		/**
+		 * Output only. The number of upvotes for the answer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upvoteCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAnswerFormGroup() {
@@ -116,7 +122,10 @@ export namespace MyNS {
 		/** If the number of answers exceeds the requested max page size, this field is populated with a token to fetch the next page of answers on a subsequent call. If there are no more answers, this field is not present in the response. */
 		nextPageToken?: string | null;
 
-		/** The total number of answers posted for this question across all pages. */
+		/**
+		 * The total number of answers posted for this question across all pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -126,7 +135,10 @@ export namespace MyNS {
 		/** If the number of answers exceeds the requested max page size, this field is populated with a token to fetch the next page of answers on a subsequent call. If there are no more answers, this field is not present in the response. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of answers posted for this question across all pages. */
+		/**
+		 * The total number of answers posted for this question across all pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListAnswersResponseFormGroup() {
@@ -147,7 +159,10 @@ export namespace MyNS {
 		/** The requested questions, */
 		questions?: Array<Question>;
 
-		/** The total number of questions posted for this location across all pages. */
+		/**
+		 * The total number of questions posted for this location across all pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -157,7 +172,10 @@ export namespace MyNS {
 		/** If the number of questions exceeds the requested max page size, this field is populated with a token to fetch the next page of questions on a subsequent call. If there are no more questions, this field is not present in the response. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of questions posted for this location across all pages. */
+		/**
+		 * The total number of questions posted for this location across all pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListQuestionsResponseFormGroup() {
@@ -187,13 +205,19 @@ export namespace MyNS {
 		/** Output only. A list of answers to the question, sorted by upvotes. This may not be a complete list of answers depending on the request parameters (answers_per_question) */
 		topAnswers?: Array<Answer>;
 
-		/** Output only. The total number of answers posted for this question. */
+		/**
+		 * Output only. The total number of answers posted for this question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalAnswerCount?: number | null;
 
 		/** Output only. The timestamp for when the question was last modified. */
 		updateTime?: string | null;
 
-		/** Output only. The number of upvotes for the question. */
+		/**
+		 * Output only. The number of upvotes for the question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upvoteCount?: number | null;
 	}
 
@@ -209,13 +233,19 @@ export namespace MyNS {
 		/** Required. The text of the question. It should contain at least three words and the total length should be greater than or equal to 10 characters. The maximum length is 4096 characters. */
 		text: FormControl<string | null | undefined>,
 
-		/** Output only. The total number of answers posted for this question. */
+		/**
+		 * Output only. The total number of answers posted for this question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalAnswerCount: FormControl<number | null | undefined>,
 
 		/** Output only. The timestamp for when the question was last modified. */
 		updateTime: FormControl<string | null | undefined>,
 
-		/** Output only. The number of upvotes for the question. */
+		/**
+		 * Output only. The number of upvotes for the question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upvoteCount: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestionFormGroup() {
@@ -288,9 +318,11 @@ export namespace MyNS {
 		 * Get v1/{parent}
 		 * @param {string} parent Required. The name of the location to fetch questions for.
 		 * @param {number} answersPerQuestion Optional. How many answers to fetch per question. The default and maximum `answers_per_question` values are 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Optional. A filter constraining the questions to return. The only filter currently supported is "ignore_answered=true"
 		 * @param {string} orderBy Optional. The order to return the questions. Valid options include 'update_time desc' and 'upvote_count desc', which will return the questions sorted descendingly by the requested field. The default sort order is 'update_time desc'.
 		 * @param {number} pageSize Optional. How many questions to fetch per page. The default and maximum `page_size` values are 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If specified, the next page of questions is retrieved.
 		 * @return {ListQuestionsResponse} Successful response
 		 */
@@ -314,6 +346,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the question to fetch answers for.
 		 * @param {string} orderBy Optional. The order to return the answers. Valid options include 'update_time desc' and 'upvote_count desc', which will return the answers sorted descendingly by the requested field. The default sort order is 'update_time desc'.
 		 * @param {number} pageSize Optional. How many answers to fetch per page. The default and maximum `page_size` values are 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If specified, the next page of answers is retrieved.
 		 * @return {ListAnswersResponse} Successful response
 		 */

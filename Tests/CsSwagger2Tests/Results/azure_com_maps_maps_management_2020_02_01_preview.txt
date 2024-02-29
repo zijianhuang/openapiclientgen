@@ -360,7 +360,9 @@ namespace MyNS
 		/// List operations available for the Maps Resource Provider
 		/// Maps_ListOperations providers/Microsoft.Maps/operations
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
 		/// <returns>The request was successful.</returns>
 		public async Task<MapsOperations> Maps_ListOperationsAsync(string api_version)
 		{
@@ -389,8 +391,12 @@ namespace MyNS
 		/// Get all Maps Accounts in a Subscription
 		/// Accounts_ListBySubscription subscriptions/{subscriptionId}/providers/Microsoft.Maps/accounts
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <returns>The request was successful.</returns>
 		public async Task<MapsAccounts> Accounts_ListBySubscriptionAsync(string api_version, string subscriptionId)
 		{
@@ -419,9 +425,16 @@ namespace MyNS
 		/// Get all Maps Accounts in a Resource Group
 		/// Accounts_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <returns>The request was successful.</returns>
 		public async Task<MapsAccounts> Accounts_ListByResourceGroupAsync(string api_version, string subscriptionId, string resourceGroupName)
 		{
@@ -450,9 +463,16 @@ namespace MyNS
 		/// Get a Maps Account.
 		/// Accounts_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <returns>The request was successful.</returns>
 		public async Task<MapsAccount> Accounts_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string accountName)
@@ -482,9 +502,16 @@ namespace MyNS
 		/// Create or update a Maps Account. A Maps Account holds the keys which allow access to the Maps REST APIs.
 		/// Accounts_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="requestBody">The new or updated parameters for the Maps Account.</param>
 		/// <returns>The Account was successfully updated.</returns>
@@ -522,9 +549,16 @@ namespace MyNS
 		/// Delete a Maps Account.
 		/// Accounts_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <returns>The Account was deleted successfully.</returns>
 		public async Task Accounts_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string accountName)
@@ -548,9 +582,16 @@ namespace MyNS
 		/// Updates a Maps Account. Only a subset of the parameters may be updated after creation, such as Sku and Tags.
 		/// Accounts_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="requestBody">The updated parameters for the Maps Account.</param>
 		/// <returns>The Account was successfully updated.</returns>
@@ -588,9 +629,16 @@ namespace MyNS
 		/// Get the keys to use with the Maps APIs. A key is used to authenticate and authorize access to the Maps REST APIs. Only one key is needed at a time; two are given to provide seamless key regeneration.
 		/// Accounts_ListKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/listKeys
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <returns>The request was successful.</returns>
 		public async Task<MapsAccountKeys> Accounts_ListKeysAsync(string api_version, string subscriptionId, string resourceGroupName, string accountName)
@@ -620,9 +668,16 @@ namespace MyNS
 		/// Get all Private Atlas instances for an Azure Map Account
 		/// PrivateAtlases_ListByAccount subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateAtlases
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <returns>The request was successful.</returns>
 		public async Task<PrivateAtlasList> PrivateAtlases_ListByAccountAsync(string api_version, string subscriptionId, string resourceGroupName, string accountName)
@@ -652,9 +707,16 @@ namespace MyNS
 		/// Get a Private Atlas resource.
 		/// PrivateAtlases_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateAtlases/{privateAtlasName}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="privateAtlasName">The name of the Private Atlas instance.</param>
 		/// <returns>The request was successful.</returns>
@@ -685,9 +747,16 @@ namespace MyNS
 		/// Create or update a Private Atlas resource. Private Atlas resource will enable the usage of Azure resources to build a custom set of mapping data. It requires an account to exist before it can be created.
 		/// PrivateAtlases_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateAtlases/{privateAtlasName}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="privateAtlasName">The name of the Private Atlas instance.</param>
 		/// <param name="requestBody">The new or updated parameters for the Private Atlas resource.</param>
@@ -726,9 +795,16 @@ namespace MyNS
 		/// Delete a Private Atlas resource.
 		/// PrivateAtlases_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateAtlases/{privateAtlasName}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="privateAtlasName">The name of the Private Atlas instance.</param>
 		/// <returns>The Private Atlas was deleted successfully.</returns>
@@ -753,9 +829,16 @@ namespace MyNS
 		/// Updates the Private Atlas resource. Only a subset of the parameters may be updated after creation, such as Tags.
 		/// PrivateAtlases_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateAtlases/{privateAtlasName}
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="privateAtlasName">The name of the Private Atlas instance.</param>
 		/// <param name="requestBody">The updated parameters for the Private Atlas.</param>
@@ -794,9 +877,16 @@ namespace MyNS
 		/// Regenerate either the primary or secondary key for use with the Maps APIs. The old key will stop working immediately.
 		/// Accounts_RegenerateKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/regenerateKey
 		/// </summary>
-		/// <param name="api_version">The API version to use for this operation.</param>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="api_version">The API version to use for this operation.
+		/// Min length: 1
+		// </param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="accountName">The name of the Maps Account.</param>
 		/// <param name="requestBody">Which key to regenerate:  primary or secondary.</param>
 		/// <returns>The request was successful.</returns>

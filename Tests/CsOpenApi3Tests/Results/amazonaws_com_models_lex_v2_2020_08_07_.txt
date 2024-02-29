@@ -10887,8 +10887,14 @@ namespace MyNS
 		/// Create a batch of custom vocabulary items for a given bot locale's custom vocabulary.
 		/// BatchCreateCustomVocabularyItem bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary/DEFAULT/batchcreate
 		/// </summary>
-		/// <param name="botId">The identifier of the bot associated with this custom vocabulary.</param>
-		/// <param name="botVersion">The identifier of the version of the bot associated with this custom vocabulary.</param>
+		/// <param name="botId">The identifier of the bot associated with this custom vocabulary.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The identifier of the version of the bot associated with this custom vocabulary.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</param>
 		/// <returns>Success</returns>
 		public async Task<BatchCreateCustomVocabularyItemResponse> BatchCreateCustomVocabularyItemAsync(string botId, string botVersion, string localeId, BatchCreateCustomVocabularyItemPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10930,8 +10936,14 @@ namespace MyNS
 		/// Delete a batch of custom vocabulary items for a given bot locale's custom vocabulary.
 		/// BatchDeleteCustomVocabularyItem bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary/DEFAULT/batchdelete
 		/// </summary>
-		/// <param name="botId">The identifier of the bot associated with this custom vocabulary.</param>
-		/// <param name="botVersion">The identifier of the version of the bot associated with this custom vocabulary.</param>
+		/// <param name="botId">The identifier of the bot associated with this custom vocabulary.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The identifier of the version of the bot associated with this custom vocabulary.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteCustomVocabularyItemResponse> BatchDeleteCustomVocabularyItemAsync(string botId, string botVersion, string localeId, BatchDeleteCustomVocabularyItemPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10973,8 +10985,14 @@ namespace MyNS
 		/// Update a batch of custom vocabulary items for a given bot locale's custom vocabulary.
 		/// BatchUpdateCustomVocabularyItem bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary/DEFAULT/batchupdate
 		/// </summary>
-		/// <param name="botId">The identifier of the bot associated with this custom vocabulary</param>
-		/// <param name="botVersion">The identifier of the version of the bot associated with this custom vocabulary.</param>
+		/// <param name="botId">The identifier of the bot associated with this custom vocabulary
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The identifier of the version of the bot associated with this custom vocabulary.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html"> Supported Languages </a>.</param>
 		/// <returns>Success</returns>
 		public async Task<BatchUpdateCustomVocabularyItemResponse> BatchUpdateCustomVocabularyItemAsync(string botId, string botVersion, string localeId, BatchUpdateCustomVocabularyItemPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11016,8 +11034,14 @@ namespace MyNS
 		/// Builds a bot, its intents, and its slot types into a specific locale. A bot can be built into multiple locales. At runtime the locale is used to choose a specific build of the bot.
 		/// BuildBotLocale bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot to build. The identifier is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</param>
-		/// <param name="botVersion">The version of the bot to build. This can only be the draft version of the bot.</param>
+		/// <param name="botId">The identifier of the bot to build. The identifier is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot to build. This can only be the draft version of the bot.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale that the bot will be used in. The string must match one of the supported locales. All of the intents, slot types, and slots used in the bot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		public async Task BuildBotLocaleAsync(string botId, string botVersion, string localeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11040,8 +11064,14 @@ namespace MyNS
 		/// <p>Removes a locale from a bot.</p> <p>When you delete a locale, all intents, slots, and slot types defined for the locale are also deleted.</p>
 		/// DeleteBotLocale bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot that contains the locale.</param>
-		/// <param name="botVersion">The version of the bot that contains the locale. </param>
+		/// <param name="botId">The unique identifier of the bot that contains the locale.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot that contains the locale. 
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale that will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		public async Task DeleteBotLocaleAsync(string botId, string botVersion, string localeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11069,8 +11099,14 @@ namespace MyNS
 		/// Describes the settings that a bot has for a specific locale.
 		/// DescribeBotLocale bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot associated with the locale.</param>
-		/// <param name="botVersion">The version of the bot associated with the locale.</param>
+		/// <param name="botId">The identifier of the bot associated with the locale.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot associated with the locale.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The unique identifier of the locale to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>. </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeBotLocaleResponse> DescribeBotLocaleAsync(string botId, string botVersion, string localeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11105,8 +11141,14 @@ namespace MyNS
 		/// Updates the settings that a bot has for a specific locale.
 		/// UpdateBotLocale bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot that contains the locale.</param>
-		/// <param name="botVersion">The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.</param>
+		/// <param name="botId">The unique identifier of the bot that contains the locale.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot that contains the locale to be updated. The version can only be the <code>DRAFT</code> version.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		public async Task UpdateBotLocaleAsync(string botId, string botVersion, string localeId, UpdateBotLocalePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11216,7 +11258,10 @@ namespace MyNS
 		/// <p>Creates an alias for the specified version of a bot. Use an alias to enable you to change the version of a bot without updating applications that use the bot.</p> <p>For example, you can create an alias called "PROD" that your applications use to call the Amazon Lex bot. </p>
 		/// CreateBotAlias bots/{botId}/botaliases/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot that the alias applies to.</param>
+		/// <param name="botId">The unique identifier of the bot that the alias applies to.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task CreateBotAliasAsync(string botId, CreateBotAliasPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bots/"+ (botId==null? "" : System.Uri.EscapeDataString(botId))+"/botaliases/";
@@ -11250,7 +11295,10 @@ namespace MyNS
 		/// Gets a list of aliases for the specified bot.
 		/// ListBotAliases bots/{botId}/botaliases/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot to list aliases for.</param>
+		/// <param name="botId">The identifier of the bot to list aliases for.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -11293,8 +11341,14 @@ namespace MyNS
 		/// Creates a locale in the bot. The locale contains the intents and slot types that the bot uses in conversations with users in the specified language and locale. You must add a locale to a bot before you can add intents and slot types to the bot.
 		/// CreateBotLocale bots/{botId}/botversions/{botVersion}/botlocales/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot to create the locale for.</param>
-		/// <param name="botVersion">The version of the bot to create the locale for. This can only be the draft version of the bot.</param>
+		/// <param name="botId">The identifier of the bot to create the locale for.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot to create the locale for. This can only be the draft version of the bot.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		public async Task CreateBotLocaleAsync(string botId, string botVersion, CreateBotLocalePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bots/"+ (botId==null? "" : System.Uri.EscapeDataString(botId))+"/botversions/"+ (botVersion==null? "" : System.Uri.EscapeDataString(botVersion))+"/botlocales/";
@@ -11328,8 +11382,14 @@ namespace MyNS
 		/// Gets a list of locales for the specified bot.
 		/// ListBotLocales bots/{botId}/botversions/{botVersion}/botlocales/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot to list locales for.</param>
-		/// <param name="botVersion">The version of the bot to list locales for.</param>
+		/// <param name="botId">The identifier of the bot to list locales for.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot to list locales for.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -11372,7 +11432,10 @@ namespace MyNS
 		/// <p>Creates a new version of the bot based on the <code>DRAFT</code> version. If the <code>DRAFT</code> version of this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version, it returns the last created version.</p> <p>When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1.</p>
 		/// CreateBotVersion bots/{botId}/botversions/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot to create the version for.</param>
+		/// <param name="botId">The identifier of the bot to create the version for.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task CreateBotVersionAsync(string botId, CreateBotVersionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bots/"+ (botId==null? "" : System.Uri.EscapeDataString(botId))+"/botversions/";
@@ -11406,7 +11469,10 @@ namespace MyNS
 		/// <p>Gets information about all of the versions of a bot.</p> <p>The <code>ListBotVersions</code> operation returns a summary of each version of a bot. For example, if a bot has three numbered versions, the <code>ListBotVersions</code> operation returns for summaries, one for each numbered version and one for the <code>DRAFT</code> version.</p> <p>The <code>ListBotVersions</code> operation always returns at least one version, the <code>DRAFT</code> version.</p>
 		/// ListBotVersions bots/{botId}/botversions/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot to list versions for.</param>
+		/// <param name="botId">The identifier of the bot to list versions for.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -11524,8 +11590,14 @@ namespace MyNS
 		/// <p>Creates an intent.</p> <p>To define the interaction between the user and your bot, you define one or more intents. For example, for a pizza ordering bot you would create an <code>OrderPizza</code> intent.</p> <p>When you create an intent, you must provide a name. You can optionally provide the following:</p> <ul> <li> <p>Sample utterances. For example, "I want to order a pizza" and "Can I order a pizza." You can't provide utterances for built-in intents.</p> </li> <li> <p>Information to be gathered. You specify slots for the information that you bot requests from the user. You can specify standard slot types, such as date and time, or custom slot types for your application.</p> </li> <li> <p>How the intent is fulfilled. You can provide a Lambda function or configure the intent to return the intent information to your client application. If you use a Lambda function, Amazon Lex invokes the function when all of the intent information is available.</p> </li> <li> <p>A confirmation prompt to send to the user to confirm an intent. For example, "Shall I order your pizza?"</p> </li> <li> <p>A conclusion statement to send to the user after the intent is fulfilled. For example, "I ordered your pizza."</p> </li> <li> <p>A follow-up prompt that asks the user for additional activity. For example, "Do you want a drink with your pizza?"</p> </li> </ul>
 		/// CreateIntent bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot associated with this intent.</param>
-		/// <param name="botVersion">The version of the bot associated with this intent.</param>
+		/// <param name="botId">The identifier of the bot associated with this intent.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot associated with this intent.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale where this intent is used. All of the bots, slot types, and slots used by the intent must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		/// <returns>Success</returns>
 		public async Task<CreateIntentResponse> CreateIntentAsync(string botId, string botVersion, string localeId, CreateIntentPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11567,8 +11639,14 @@ namespace MyNS
 		/// Get a list of intents that meet the specified criteria.
 		/// ListIntents bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot that contains the intent.</param>
-		/// <param name="botVersion">The version of the bot that contains the intent.</param>
+		/// <param name="botId">The unique identifier of the bot that contains the intent.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot that contains the intent.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the intents to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -11612,7 +11690,10 @@ namespace MyNS
 		/// Creates a new resource policy with the specified policy statements.
 		/// CreateResourcePolicy policy/{resourceArn}/
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateResourcePolicyResponse> CreateResourcePolicyAsync(string resourceArn, CreateResourcePolicyPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11653,8 +11734,14 @@ namespace MyNS
 		/// Removes an existing policy from a bot or bot alias. If the resource doesn't have a policy attached, Amazon Lex returns an exception.
 		/// DeleteResourcePolicy policy/{resourceArn}/
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.</param>
-		/// <param name="expectedRevisionId"><p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p> <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p></param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that has the resource policy attached.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="expectedRevisionId"><p>The identifier of the revision to edit. If this ID doesn't match the current revision number, Amazon Lex returns an exception</p> <p>If you don't specify a revision ID, Amazon Lex will delete the current policy.</p>
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		public async Task DeleteResourcePolicyAsync(string resourceArn, string expectedRevisionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "policy/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"/&expectedRevisionId=" + (expectedRevisionId==null? "" : System.Uri.EscapeDataString(expectedRevisionId));
@@ -11681,7 +11768,10 @@ namespace MyNS
 		/// Gets the resource policy and policy revision for a bot or bot alias.
 		/// DescribeResourcePolicy policy/{resourceArn}/
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeResourcePolicyResponse> DescribeResourcePolicyAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11715,8 +11805,14 @@ namespace MyNS
 		/// Replaces the existing resource policy for a bot or bot alias with a new one. If the policy doesn't exist, Amazon Lex returns an exception.
 		/// UpdateResourcePolicy policy/{resourceArn}/
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</param>
-		/// <param name="expectedRevisionId"><p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p> <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p></param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="expectedRevisionId"><p>The identifier of the revision of the policy to update. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p> <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateResourcePolicyResponse> UpdateResourcePolicyAsync(string resourceArn, string expectedRevisionId, UpdateResourcePolicyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11757,8 +11853,14 @@ namespace MyNS
 		/// <p>Adds a new resource policy statement to a bot or bot alias. If a resource policy exists, the statement is added to the current resource policy. If a policy doesn't exist, a new policy is created.</p> <p>You can't create a resource policy statement that allows cross-account access.</p>
 		/// CreateResourcePolicyStatement policy/{resourceArn}/statements/
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</param>
-		/// <param name="expectedRevisionId"><p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p> <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p></param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="expectedRevisionId"><p>The identifier of the revision of the policy to edit. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p> <p>If you don't specify a revision, Amazon Lex overwrites the contents of the policy with the new values.</p>
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateResourcePolicyStatementResponse> CreateResourcePolicyStatementAsync(string resourceArn, string expectedRevisionId, CreateResourcePolicyStatementPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11799,10 +11901,19 @@ namespace MyNS
 		/// Creates a slot in an intent. A slot is a variable needed to fulfill an intent. For example, an <code>OrderPizza</code> intent might need slots for size, crust, and number of pizzas. For each slot, you define one or more utterances that Amazon Lex uses to elicit a response from the user.
 		/// CreateSlot bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot associated with the slot.</param>
-		/// <param name="botVersion">The version of the bot associated with the slot.</param>
+		/// <param name="botId">The identifier of the bot associated with the slot.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot associated with the slot.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale that the slot will be used in. The string must match one of the supported locales. All of the bots, intents, slot types used by the slot must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
-		/// <param name="intentId">The identifier of the intent that contains the slot.</param>
+		/// <param name="intentId">The identifier of the intent that contains the slot.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateSlotResponse> CreateSlotAsync(string botId, string botVersion, string localeId, string intentId, CreateSlotPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11843,10 +11954,19 @@ namespace MyNS
 		/// Gets a list of slots that match the specified criteria.
 		/// ListSlots bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot that contains the slot.</param>
-		/// <param name="botVersion">The version of the bot that contains the slot.</param>
+		/// <param name="botId">The identifier of the bot that contains the slot.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot that contains the slot.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the slots to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
-		/// <param name="intentId">The unique identifier of the intent that contains the slot.</param>
+		/// <param name="intentId">The unique identifier of the intent that contains the slot.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -11889,8 +12009,14 @@ namespace MyNS
 		/// <p>Creates a custom slot type</p> <p> To create a custom slot type, specify a name for the slot type and a set of enumeration values, the values that a slot of this type can assume. </p>
 		/// CreateSlotType bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot associated with this slot type.</param>
-		/// <param name="botVersion">The identifier of the bot version associated with this slot type.</param>
+		/// <param name="botId">The identifier of the bot associated with this slot type.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The identifier of the bot version associated with this slot type.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale that the slot type will be used in. The string must match one of the supported locales. All of the bots, intents, and slots used by the slot type must have the same locale. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		/// <returns>Success</returns>
 		public async Task<CreateSlotTypeResponse> CreateSlotTypeAsync(string botId, string botVersion, string localeId, CreateSlotTypePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11932,8 +12058,14 @@ namespace MyNS
 		/// Gets a list of slot types that match the specified criteria.
 		/// ListSlotTypes bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot that contains the slot types.</param>
-		/// <param name="botVersion">The version of the bot that contains the slot type.</param>
+		/// <param name="botId">The unique identifier of the bot that contains the slot types.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot that contains the slot type.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the slot types to list. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -11977,7 +12109,10 @@ namespace MyNS
 		/// Create a report that describes the differences between the bot and the test set.
 		/// CreateTestSetDiscrepancyReport testsets/{testSetId}/testsetdiscrepancy
 		/// </summary>
-		/// <param name="testSetId">The test set Id for the test set discrepancy report.</param>
+		/// <param name="testSetId">The test set Id for the test set discrepancy report.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task CreateTestSetDiscrepancyReportAsync(string testSetId, CreateTestSetDiscrepancyReportPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "testsets/"+ (testSetId==null? "" : System.Uri.EscapeDataString(testSetId))+"/testsetdiscrepancy";
@@ -12039,7 +12174,10 @@ namespace MyNS
 		/// <p>Deletes all versions of a bot, including the <code>Draft</code> version. To delete a specific version, use the <code>DeleteBotVersion</code> operation.</p> <p>When you delete a bot, all of the resources contained in the bot are also deleted. Deleting a bot removes all locales, intents, slot, and slot types defined for the bot.</p> <p>If a bot has an alias, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code> exception. If you want to delete the bot and the alias, set the <code>skipResourceInUseCheck</code> parameter to <code>true</code>.</p>
 		/// DeleteBot bots/{botId}/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot to delete. </param>
+		/// <param name="botId">The identifier of the bot to delete. 
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="skipResourceInUseCheck">By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the bot is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the bot even if it is being used by another resource.</param>
 		public async Task DeleteBotAsync(string botId, bool skipResourceInUseCheck, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12067,7 +12205,10 @@ namespace MyNS
 		/// Provides metadata information about a bot.
 		/// DescribeBot bots/{botId}/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot to describe.</param>
+		/// <param name="botId">The unique identifier of the bot to describe.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeBotResponse> DescribeBotAsync(string botId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12101,7 +12242,10 @@ namespace MyNS
 		/// Updates the configuration of an existing bot.
 		/// UpdateBot bots/{botId}/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.</param>
+		/// <param name="botId">The unique identifier of the bot to update. This identifier is returned by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_CreateBot.html">CreateBot</a> operation.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task UpdateBotAsync(string botId, UpdateBotPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bots/"+ (botId==null? "" : System.Uri.EscapeDataString(botId))+"/";
@@ -12135,8 +12279,14 @@ namespace MyNS
 		/// Deletes the specified bot alias.
 		/// DeleteBotAlias bots/{botId}/botaliases/{botAliasId}/
 		/// </summary>
-		/// <param name="botAliasId">The unique identifier of the bot alias to delete.</param>
-		/// <param name="botId">The unique identifier of the bot associated with the alias to delete.</param>
+		/// <param name="botAliasId">The unique identifier of the bot alias to delete.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The unique identifier of the bot associated with the alias to delete.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="skipResourceInUseCheck">By default, Amazon Lex checks if any other resource, such as a bot network, is using the bot alias before it is deleted and throws a <code>ResourceInUseException</code> exception if the alias is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the alias even if it is being used by another resource.</param>
 		public async Task DeleteBotAliasAsync(string botAliasId, string botId, bool skipResourceInUseCheck, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12164,8 +12314,14 @@ namespace MyNS
 		/// Get information about a specific bot alias.
 		/// DescribeBotAlias bots/{botId}/botaliases/{botAliasId}/
 		/// </summary>
-		/// <param name="botAliasId">The identifier of the bot alias to describe.</param>
-		/// <param name="botId">The identifier of the bot associated with the bot alias to describe.</param>
+		/// <param name="botAliasId">The identifier of the bot alias to describe.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The identifier of the bot associated with the bot alias to describe.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeBotAliasResponse> DescribeBotAliasAsync(string botAliasId, string botId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12199,8 +12355,14 @@ namespace MyNS
 		/// Updates the configuration of an existing bot alias.
 		/// UpdateBotAlias bots/{botId}/botaliases/{botAliasId}/
 		/// </summary>
-		/// <param name="botAliasId">The unique identifier of the bot alias.</param>
-		/// <param name="botId">The identifier of the bot with the updated alias.</param>
+		/// <param name="botAliasId">The unique identifier of the bot alias.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The identifier of the bot with the updated alias.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task UpdateBotAliasAsync(string botAliasId, string botId, UpdateBotAliasPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bots/"+ (botId==null? "" : System.Uri.EscapeDataString(botId))+"/botaliases/"+ (botAliasId==null? "" : System.Uri.EscapeDataString(botAliasId))+"/";
@@ -12234,8 +12396,14 @@ namespace MyNS
 		/// Deletes a specific version of a bot. To delete all versions of a bot, use the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DeleteBot.html">DeleteBot</a> operation.
 		/// DeleteBotVersion bots/{botId}/botversions/{botVersion}/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot that contains the version.</param>
-		/// <param name="botVersion">The version of the bot to delete.</param>
+		/// <param name="botId">The identifier of the bot that contains the version.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot to delete.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="skipResourceInUseCheck">By default, Amazon Lex checks if any other resource, such as an alias or bot network, is using the bot version before it is deleted and throws a <code>ResourceInUseException</code> exception if the version is being used by another resource. Set this parameter to <code>true</code> to skip this check and remove the version even if it is being used by another resource.</param>
 		public async Task DeleteBotVersionAsync(string botId, string botVersion, bool skipResourceInUseCheck, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12263,8 +12431,14 @@ namespace MyNS
 		/// Provides metadata about a version of a bot.
 		/// DescribeBotVersion bots/{botId}/botversions/{botVersion}/
 		/// </summary>
-		/// <param name="botId">The identifier of the bot containing the version to return metadata for.</param>
-		/// <param name="botVersion">The version of the bot to return metadata for.</param>
+		/// <param name="botId">The identifier of the bot containing the version to return metadata for.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot to return metadata for.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeBotVersionResponse> DescribeBotVersionAsync(string botId, string botVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12298,8 +12472,14 @@ namespace MyNS
 		/// Removes a custom vocabulary from the specified locale in the specified bot.
 		/// DeleteCustomVocabulary bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot to remove the custom vocabulary from.</param>
-		/// <param name="botVersion">The version of the bot to remove the custom vocabulary from.</param>
+		/// <param name="botId">The unique identifier of the bot to remove the custom vocabulary from.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot to remove the custom vocabulary from.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The locale identifier for the locale that contains the custom vocabulary to remove.</param>
 		public async Task DeleteCustomVocabularyAsync(string botId, string botVersion, string localeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12327,7 +12507,10 @@ namespace MyNS
 		/// Removes a previous export and the associated files stored in an S3 bucket.
 		/// DeleteExport exports/{exportId}/
 		/// </summary>
-		/// <param name="exportId">The unique identifier of the export to delete.</param>
+		/// <param name="exportId">The unique identifier of the export to delete.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task DeleteExportAsync(string exportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "exports/"+ (exportId==null? "" : System.Uri.EscapeDataString(exportId))+"/";
@@ -12354,7 +12537,10 @@ namespace MyNS
 		/// Gets information about a specific export.
 		/// DescribeExport exports/{exportId}/
 		/// </summary>
-		/// <param name="exportId">The unique identifier of the export to describe.</param>
+		/// <param name="exportId">The unique identifier of the export to describe.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeExportResponse> DescribeExportAsync(string exportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12388,7 +12574,10 @@ namespace MyNS
 		/// <p>Updates the password used to protect an export zip archive.</p> <p>The password is not required. If you don't supply a password, Amazon Lex generates a zip file that is not protected by a password. This is the archive that is available at the pre-signed S3 URL provided by the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_DescribeExport.html">DescribeExport</a> operation.</p>
 		/// UpdateExport exports/{exportId}/
 		/// </summary>
-		/// <param name="exportId">The unique identifier Amazon Lex assigned to the export.</param>
+		/// <param name="exportId">The unique identifier Amazon Lex assigned to the export.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task UpdateExportAsync(string exportId, UpdateExportPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "exports/"+ (exportId==null? "" : System.Uri.EscapeDataString(exportId))+"/";
@@ -12422,7 +12611,10 @@ namespace MyNS
 		/// Removes a previous import and the associated file stored in an S3 bucket.
 		/// DeleteImport imports/{importId}/
 		/// </summary>
-		/// <param name="importId">The unique identifier of the import to delete.</param>
+		/// <param name="importId">The unique identifier of the import to delete.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task DeleteImportAsync(string importId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "imports/"+ (importId==null? "" : System.Uri.EscapeDataString(importId))+"/";
@@ -12449,7 +12641,10 @@ namespace MyNS
 		/// Gets information about a specific import.
 		/// DescribeImport imports/{importId}/
 		/// </summary>
-		/// <param name="importId">The unique identifier of the import to describe.</param>
+		/// <param name="importId">The unique identifier of the import to describe.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeImportResponse> DescribeImportAsync(string importId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12483,9 +12678,18 @@ namespace MyNS
 		/// <p>Removes the specified intent.</p> <p>Deleting an intent also deletes the slots associated with the intent.</p>
 		/// DeleteIntent bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/
 		/// </summary>
-		/// <param name="intentId">The unique identifier of the intent to delete.</param>
-		/// <param name="botId">The identifier of the bot associated with the intent.</param>
-		/// <param name="botVersion">The version of the bot associated with the intent.</param>
+		/// <param name="intentId">The unique identifier of the intent to delete.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The identifier of the bot associated with the intent.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot associated with the intent.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale where the bot will be deleted. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		public async Task DeleteIntentAsync(string intentId, string botId, string botVersion, string localeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12513,9 +12717,18 @@ namespace MyNS
 		/// Returns metadata about an intent.
 		/// DescribeIntent bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/
 		/// </summary>
-		/// <param name="intentId">The identifier of the intent to describe.</param>
-		/// <param name="botId">The identifier of the bot associated with the intent.</param>
-		/// <param name="botVersion">The version of the bot associated with the intent.</param>
+		/// <param name="intentId">The identifier of the intent to describe.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The identifier of the bot associated with the intent.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot associated with the intent.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the intent to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		/// <returns>Success</returns>
 		public async Task<DescribeIntentResponse> DescribeIntentAsync(string intentId, string botId, string botVersion, string localeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12550,9 +12763,18 @@ namespace MyNS
 		/// Updates the settings for an intent.
 		/// UpdateIntent bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/
 		/// </summary>
-		/// <param name="intentId">The unique identifier of the intent to update.</param>
-		/// <param name="botId">The identifier of the bot that contains the intent.</param>
-		/// <param name="botVersion">The version of the bot that contains the intent. Must be <code>DRAFT</code>.</param>
+		/// <param name="intentId">The unique identifier of the intent to update.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The identifier of the bot that contains the intent.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot that contains the intent. Must be <code>DRAFT</code>.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale where this intent is used. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		/// <returns>Success</returns>
 		public async Task<UpdateIntentResponse> UpdateIntentAsync(string intentId, string botId, string botVersion, string localeId, UpdateIntentPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12594,9 +12816,18 @@ namespace MyNS
 		/// Deletes a policy statement from a resource policy. If you delete the last statement from a policy, the policy is deleted. If you specify a statement ID that doesn't exist in the policy, or if the bot or bot alias doesn't have a policy attached, Amazon Lex returns an exception.
 		/// DeleteResourcePolicyStatement policy/{resourceArn}/statements/{statementId}/
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.</param>
-		/// <param name="statementId">The name of the statement (SID) to delete from the policy.</param>
-		/// <param name="expectedRevisionId"><p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p> <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p></param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the bot or bot alias that the resource policy is attached to.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="statementId">The name of the statement (SID) to delete from the policy.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="expectedRevisionId"><p>The identifier of the revision of the policy to delete the statement from. If this revision ID doesn't match the current revision ID, Amazon Lex throws an exception.</p> <p>If you don't specify a revision, Amazon Lex removes the current contents of the statement. </p>
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		public async Task DeleteResourcePolicyStatementAsync(string resourceArn, string statementId, string expectedRevisionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "policy/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"/statements/"+ (statementId==null? "" : System.Uri.EscapeDataString(statementId))+"/&expectedRevisionId=" + (expectedRevisionId==null? "" : System.Uri.EscapeDataString(expectedRevisionId));
@@ -12623,11 +12854,23 @@ namespace MyNS
 		/// Deletes the specified slot from an intent.
 		/// DeleteSlot bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/{slotId}/
 		/// </summary>
-		/// <param name="slotId">The identifier of the slot to delete. </param>
-		/// <param name="botId">The identifier of the bot associated with the slot to delete.</param>
-		/// <param name="botVersion">The version of the bot associated with the slot to delete.</param>
+		/// <param name="slotId">The identifier of the slot to delete. 
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The identifier of the bot associated with the slot to delete.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot associated with the slot to delete.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale that the slot will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
-		/// <param name="intentId">The identifier of the intent associated with the slot.</param>
+		/// <param name="intentId">The identifier of the intent associated with the slot.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task DeleteSlotAsync(string slotId, string botId, string botVersion, string localeId, string intentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bots/"+ (botId==null? "" : System.Uri.EscapeDataString(botId))+"/botversions/"+ (botVersion==null? "" : System.Uri.EscapeDataString(botVersion))+"/botlocales/"+ (localeId==null? "" : System.Uri.EscapeDataString(localeId))+"/intents/"+ (intentId==null? "" : System.Uri.EscapeDataString(intentId))+"/slots/"+ (slotId==null? "" : System.Uri.EscapeDataString(slotId))+"/";
@@ -12654,11 +12897,23 @@ namespace MyNS
 		/// Gets metadata information about a slot.
 		/// DescribeSlot bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/{slotId}/
 		/// </summary>
-		/// <param name="slotId">The unique identifier for the slot.</param>
-		/// <param name="botId">The identifier of the bot associated with the slot.</param>
-		/// <param name="botVersion">The version of the bot associated with the slot.</param>
+		/// <param name="slotId">The unique identifier for the slot.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The identifier of the bot associated with the slot.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot associated with the slot.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the slot to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
-		/// <param name="intentId">The identifier of the intent that contains the slot.</param>
+		/// <param name="intentId">The identifier of the intent that contains the slot.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeSlotResponse> DescribeSlotAsync(string slotId, string botId, string botVersion, string localeId, string intentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12692,11 +12947,23 @@ namespace MyNS
 		/// Updates the settings for a slot.
 		/// UpdateSlot bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/intents/{intentId}/slots/{slotId}/
 		/// </summary>
-		/// <param name="slotId">The unique identifier for the slot to update.</param>
-		/// <param name="botId">The unique identifier of the bot that contains the slot.</param>
-		/// <param name="botVersion">The version of the bot that contains the slot. Must always be <code>DRAFT</code>.</param>
+		/// <param name="slotId">The unique identifier for the slot to update.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The unique identifier of the bot that contains the slot.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot that contains the slot. Must always be <code>DRAFT</code>.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale that contains the slot. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
-		/// <param name="intentId">The identifier of the intent that contains the slot.</param>
+		/// <param name="intentId">The identifier of the intent that contains the slot.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateSlotResponse> UpdateSlotAsync(string slotId, string botId, string botVersion, string localeId, string intentId, UpdateSlotPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12737,9 +13004,18 @@ namespace MyNS
 		/// <p>Deletes a slot type from a bot locale.</p> <p>If a slot is using the slot type, Amazon Lex throws a <code>ResourceInUseException</code> exception. To avoid the exception, set the <code>skipResourceInUseCheck</code> parameter to <code>true</code>.</p>
 		/// DeleteSlotType bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/{slotTypeId}/
 		/// </summary>
-		/// <param name="slotTypeId">The identifier of the slot type to delete.</param>
-		/// <param name="botId">The identifier of the bot associated with the slot type.</param>
-		/// <param name="botVersion">The version of the bot associated with the slot type.</param>
+		/// <param name="slotTypeId">The identifier of the slot type to delete.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The identifier of the bot associated with the slot type.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot associated with the slot type.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale that the slot type will be deleted from. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		/// <param name="skipResourceInUseCheck">By default, the <code>DeleteSlotType</code> operations throws a <code>ResourceInUseException</code> exception if you try to delete a slot type used by a slot. Set the <code>skipResourceInUseCheck</code> parameter to <code>true</code> to skip this check and remove the slot type even if a slot uses it.</param>
 		public async Task DeleteSlotTypeAsync(string slotTypeId, string botId, string botVersion, string localeId, bool skipResourceInUseCheck, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12768,9 +13044,18 @@ namespace MyNS
 		/// Gets metadata information about a slot type.
 		/// DescribeSlotType bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/{slotTypeId}/
 		/// </summary>
-		/// <param name="slotTypeId">The identifier of the slot type.</param>
-		/// <param name="botId">The identifier of the bot associated with the slot type.</param>
-		/// <param name="botVersion">The version of the bot associated with the slot type.</param>
+		/// <param name="slotTypeId">The identifier of the slot type.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The identifier of the bot associated with the slot type.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot associated with the slot type.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the slot type to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		/// <returns>Success</returns>
 		public async Task<DescribeSlotTypeResponse> DescribeSlotTypeAsync(string slotTypeId, string botId, string botVersion, string localeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -12805,9 +13090,18 @@ namespace MyNS
 		/// Updates the configuration of an existing slot type.
 		/// UpdateSlotType bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/slottypes/{slotTypeId}/
 		/// </summary>
-		/// <param name="slotTypeId">The unique identifier of the slot type to update.</param>
-		/// <param name="botId">The identifier of the bot that contains the slot type.</param>
-		/// <param name="botVersion">The version of the bot that contains the slot type. Must be <code>DRAFT</code>.</param>
+		/// <param name="slotTypeId">The unique identifier of the slot type to update.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botId">The identifier of the bot that contains the slot type.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot that contains the slot type. Must be <code>DRAFT</code>.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale that contains the slot type. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
 		public async Task UpdateSlotTypeAsync(string slotTypeId, string botId, string botVersion, string localeId, UpdateSlotTypePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12842,7 +13136,10 @@ namespace MyNS
 		/// The action to delete the selected test set.
 		/// DeleteTestSet testsets/{testSetId}
 		/// </summary>
-		/// <param name="testSetId">The test set Id of the test set to be deleted.</param>
+		/// <param name="testSetId">The test set Id of the test set to be deleted.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task DeleteTestSetAsync(string testSetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "testsets/"+ (testSetId==null? "" : System.Uri.EscapeDataString(testSetId));
@@ -12869,7 +13166,10 @@ namespace MyNS
 		/// Gets metadata information about the test set.
 		/// DescribeTestSet testsets/{testSetId}
 		/// </summary>
-		/// <param name="testSetId">The test set Id for the test set request.</param>
+		/// <param name="testSetId">The test set Id for the test set request.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTestSetResponse> DescribeTestSetAsync(string testSetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12903,7 +13203,10 @@ namespace MyNS
 		/// The action to update the test set.
 		/// UpdateTestSet testsets/{testSetId}
 		/// </summary>
-		/// <param name="testSetId">The test set Id for which update test operation to be performed.</param>
+		/// <param name="testSetId">The test set Id for which update test operation to be performed.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTestSetResponse> UpdateTestSetAsync(string testSetId, UpdateTestSetPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12944,9 +13247,15 @@ namespace MyNS
 		/// <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a> operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input..</p> <p>Use the <code>DeleteUtterances</code> operation to manually delete utterances for a specific session. When you use the <code>DeleteUtterances</code> operation, utterances stored for improving your bot's ability to respond to user input are deleted immediately. Utterances stored for use with the <code>ListAggregatedUtterances</code> operation are deleted after 15 days.</p>
 		/// DeleteUtterances bots/{botId}/utterances/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot that contains the utterances.</param>
+		/// <param name="botId">The unique identifier of the bot that contains the utterances.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale where the utterances were collected. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
-		/// <param name="sessionId">The unique identifier of the session with the user. The ID is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.</param>
+		/// <param name="sessionId">The unique identifier of the session with the user. The ID is returned in the response from the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeText.html">RecognizeText</a> and <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_runtime_RecognizeUtterance.html">RecognizeUtterance</a> operations.
+		/// Max length: 100
+		/// Min length: 2
+		// </param>
 		public async Task DeleteUtterancesAsync(string botId, string localeId, string sessionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bots/"+ (botId==null? "" : System.Uri.EscapeDataString(botId))+"/utterances/&localeId=" + (localeId==null? "" : System.Uri.EscapeDataString(localeId))+"&sessionId=" + (sessionId==null? "" : System.Uri.EscapeDataString(sessionId));
@@ -12973,10 +13282,19 @@ namespace MyNS
 		/// Provides metadata information about a bot recommendation. This information will enable you to get a description on the request inputs, to download associated transcripts after processing is complete, and to download intents and slot-types generated by the bot recommendation.
 		/// DescribeBotRecommendation bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot associated with the bot recommendation.</param>
-		/// <param name="botVersion">The version of the bot associated with the bot recommendation.</param>
+		/// <param name="botId">The unique identifier of the bot associated with the bot recommendation.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot associated with the bot recommendation.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the bot recommendation to describe. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a>.</param>
-		/// <param name="botRecommendationId">The identifier of the bot recommendation to describe.</param>
+		/// <param name="botRecommendationId">The identifier of the bot recommendation to describe.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeBotRecommendationResponse> DescribeBotRecommendationAsync(string botId, string botVersion, string localeId, string botRecommendationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13010,10 +13328,19 @@ namespace MyNS
 		/// Updates an existing bot recommendation request.
 		/// UpdateBotRecommendation bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot containing the bot recommendation to be updated.</param>
-		/// <param name="botVersion">The version of the bot containing the bot recommendation to be updated.</param>
+		/// <param name="botId">The unique identifier of the bot containing the bot recommendation to be updated.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot containing the bot recommendation to be updated.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the bot recommendation to update. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </param>
-		/// <param name="botRecommendationId">The unique identifier of the bot recommendation to be updated.</param>
+		/// <param name="botRecommendationId">The unique identifier of the bot recommendation to be updated.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task UpdateBotRecommendationAsync(string botId, string botVersion, string localeId, string botRecommendationId, UpdateBotRecommendationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bots/"+ (botId==null? "" : System.Uri.EscapeDataString(botId))+"/botversions/"+ (botVersion==null? "" : System.Uri.EscapeDataString(botVersion))+"/botlocales/"+ (localeId==null? "" : System.Uri.EscapeDataString(localeId))+"/botrecommendations/"+ (botRecommendationId==null? "" : System.Uri.EscapeDataString(botRecommendationId))+"/";
@@ -13047,8 +13374,14 @@ namespace MyNS
 		/// Provides metadata information about a custom vocabulary.
 		/// DescribeCustomVocabularyMetadata bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary/DEFAULT/metadata
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot that contains the custom vocabulary.</param>
-		/// <param name="botVersion">The bot version of the bot to return metadata for.</param>
+		/// <param name="botId">The unique identifier of the bot that contains the custom vocabulary.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The bot version of the bot to return metadata for.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The locale to return the custom vocabulary information for. The locale must be <code>en_GB</code>.</param>
 		/// <returns>Success</returns>
 		public async Task<DescribeCustomVocabularyMetadataResponse> DescribeCustomVocabularyMetadataAsync(string botId, string botVersion, string localeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -13083,7 +13416,10 @@ namespace MyNS
 		/// Gets metadata information about the test execution.
 		/// DescribeTestExecution testexecutions/{testExecutionId}
 		/// </summary>
-		/// <param name="testExecutionId">The execution Id of the test set execution.</param>
+		/// <param name="testExecutionId">The execution Id of the test set execution.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTestExecutionResponse> DescribeTestExecutionAsync(string testExecutionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13117,7 +13453,10 @@ namespace MyNS
 		/// Gets metadata information about the test set discrepancy report.
 		/// DescribeTestSetDiscrepancyReport testsetdiscrepancy/{testSetDiscrepancyReportId}
 		/// </summary>
-		/// <param name="testSetDiscrepancyReportId">The unique identifier of the test set discrepancy report.</param>
+		/// <param name="testSetDiscrepancyReportId">The unique identifier of the test set discrepancy report.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTestSetDiscrepancyReportResponse> DescribeTestSetDiscrepancyReportAsync(string testSetDiscrepancyReportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13151,7 +13490,10 @@ namespace MyNS
 		/// Gets metadata information about the test set generation.
 		/// DescribeTestSetGeneration testsetgenerations/{testSetGenerationId}
 		/// </summary>
-		/// <param name="testSetGenerationId">The unique identifier of the test set generation.</param>
+		/// <param name="testSetGenerationId">The unique identifier of the test set generation.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTestSetGenerationResponse> DescribeTestSetGenerationAsync(string testSetGenerationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13185,7 +13527,10 @@ namespace MyNS
 		/// The pre-signed Amazon S3 URL to download the test execution result artifacts.
 		/// GetTestExecutionArtifactsUrl testexecutions/{testExecutionId}/artifacturl
 		/// </summary>
-		/// <param name="testExecutionId">The unique identifier of the completed test execution.</param>
+		/// <param name="testExecutionId">The unique identifier of the completed test execution.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTestExecutionArtifactsUrlResponse> GetTestExecutionArtifactsUrlAsync(string testExecutionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13219,7 +13564,10 @@ namespace MyNS
 		/// <p>Provides a list of utterances that users have sent to the bot.</p> <p>Utterances are aggregated by the text of the utterance. For example, all instances where customers used the phrase "I want to order pizza" are aggregated into the same line in the response.</p> <p>You can see both detected utterances and missed utterances. A detected utterance is where the bot properly recognized the utterance and activated the associated intent. A missed utterance was not recognized by the bot and didn't activate an intent.</p> <p>Utterances can be aggregated for a bot alias or for a bot version, but not both at the same time.</p> <p>Utterances statistics are not generated under the following conditions:</p> <ul> <li> <p>The <code>childDirected</code> field was set to true when the bot was created.</p> </li> <li> <p>You are using slot obfuscation with one or more slots.</p> </li> <li> <p>You opted out of participating in improving Amazon Lex.</p> </li> </ul>
 		/// ListAggregatedUtterances bots/{botId}/aggregatedutterances/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot associated with this request.</param>
+		/// <param name="botId">The unique identifier of the bot associated with this request.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -13262,8 +13610,14 @@ namespace MyNS
 		/// Get a list of bot recommendations that meet the specified criteria.
 		/// ListBotRecommendations bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot that contains the bot recommendation list.</param>
-		/// <param name="botVersion">The version of the bot that contains the bot recommendation list.</param>
+		/// <param name="botId">The unique identifier of the bot that contains the bot recommendation list.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot that contains the bot recommendation list.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the bot recommendation list.</param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -13307,8 +13661,14 @@ namespace MyNS
 		/// Use this to provide your transcript data, and to start the bot recommendation process.
 		/// StartBotRecommendation bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot containing the bot recommendation.</param>
-		/// <param name="botVersion">The version of the bot containing the bot recommendation.</param>
+		/// <param name="botId">The unique identifier of the bot containing the bot recommendation.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot containing the bot recommendation.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the bot recommendation to start. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </param>
 		public async Task StartBotRecommendationAsync(string botId, string botVersion, string localeId, StartBotRecommendationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13429,8 +13789,14 @@ namespace MyNS
 		/// Paginated list of custom vocabulary items for a given bot locale's custom vocabulary.
 		/// ListCustomVocabularyItems bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/customvocabulary/DEFAULT/list
 		/// </summary>
-		/// <param name="botId">The identifier of the version of the bot associated with this custom vocabulary.</param>
-		/// <param name="botVersion">The bot version of the bot to the list custom vocabulary request.</param>
+		/// <param name="botId">The identifier of the version of the bot associated with this custom vocabulary.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The bot version of the bot to the list custom vocabulary request.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale where this custom vocabulary is used. The string must match one of the supported locales. For more information, see Supported languages (https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html).</param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -13549,7 +13915,10 @@ namespace MyNS
 		/// <p>Retrieves summary metrics for the intents in your bot. The following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentMetric.html">AnalyticsIntentMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> </ul> <p>Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can specify only one <code>order</code> in a given request.</p>
 		/// ListIntentMetrics bots/{botId}/analytics/intentmetrics
 		/// </summary>
-		/// <param name="botId">The identifier for the bot for which you want to retrieve intent metrics.</param>
+		/// <param name="botId">The identifier for the bot for which you want to retrieve intent metrics.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -13592,7 +13961,10 @@ namespace MyNS
 		/// <p>Retrieves summary statistics for a path of intents that users take over sessions with your bot. The following fields are required:</p> <ul> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> <li> <p> <code>intentPath</code> – Define an order of intents for which you want to retrieve metrics. Separate intents in the path with a forward slash. For example, populate the <code>intentPath</code> field with <code>/BookCar/BookHotel</code> to see details about how many times users invoked the <code>BookCar</code> and <code>BookHotel</code> intents in that order.</p> </li> </ul> <p>Use the optional <code>filters</code> field to filter the results.</p>
 		/// ListIntentPaths bots/{botId}/analytics/intentpaths
 		/// </summary>
-		/// <param name="botId">The identifier for the bot for which you want to retrieve intent path metrics.</param>
+		/// <param name="botId">The identifier for the bot for which you want to retrieve intent path metrics.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListIntentPathsResponse> ListIntentPathsAsync(string botId, ListIntentPathsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13633,7 +14005,10 @@ namespace MyNS
 		/// <p>Retrieves summary metrics for the stages within intents in your bot. The following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsIntentStageMetric.html">AnalyticsIntentStageMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> </ul> <p>Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. You can only specify one <code>order</code> in a given request.</p>
 		/// ListIntentStageMetrics bots/{botId}/analytics/intentstagemetrics
 		/// </summary>
-		/// <param name="botId">The identifier for the bot for which you want to retrieve intent stage metrics.</param>
+		/// <param name="botId">The identifier for the bot for which you want to retrieve intent stage metrics.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -13676,10 +14051,19 @@ namespace MyNS
 		/// Gets a list of recommended intents provided by the bot recommendation that you can use in your bot. Intents in the response are ordered by relevance.
 		/// ListRecommendedIntents bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/intents
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot associated with the recommended intents.</param>
-		/// <param name="botVersion">The version of the bot that contains the recommended intents.</param>
+		/// <param name="botId">The unique identifier of the bot associated with the recommended intents.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot that contains the recommended intents.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the recommended intents.</param>
-		/// <param name="botRecommendationId">The identifier of the bot recommendation that contains the recommended intents.</param>
+		/// <param name="botRecommendationId">The identifier of the bot recommendation that contains the recommended intents.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -13722,7 +14106,10 @@ namespace MyNS
 		/// <p>Retrieves a list of metadata for individual user sessions with your bot. The <code>startDateTime</code> and <code>endDateTime</code> fields are required. These fields define a time range for which you want to retrieve results. Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values by which to sort the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul>
 		/// ListSessionAnalyticsData bots/{botId}/analytics/sessions
 		/// </summary>
-		/// <param name="botId">The identifier for the bot for which you want to retrieve session analytics.</param>
+		/// <param name="botId">The identifier for the bot for which you want to retrieve session analytics.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -13765,7 +14152,10 @@ namespace MyNS
 		/// <p>Retrieves summary metrics for the user sessions with your bot. The following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsSessionMetric.html">AnalyticsSessionMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> </ul> <p>Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you can specify it in either field, but not in both.</p>
 		/// ListSessionMetrics bots/{botId}/analytics/sessionmetrics
 		/// </summary>
-		/// <param name="botId">The identifier for the bot for which you want to retrieve session metrics.</param>
+		/// <param name="botId">The identifier for the bot for which you want to retrieve session metrics.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -13808,7 +14198,10 @@ namespace MyNS
 		/// Gets a list of tags associated with a resource. Only bots, bot aliases, and bot channels can have tags associated with them.
 		/// ListTagsForResource tags/{resourceARN}
 		/// </summary>
-		/// <param name="resourceARN">The Amazon Resource Name (ARN) of the resource to get a list of tags for.</param>
+		/// <param name="resourceARN">The Amazon Resource Name (ARN) of the resource to get a list of tags for.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceARN, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13842,7 +14235,10 @@ namespace MyNS
 		/// Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced with the new value.
 		/// TagResource tags/{resourceARN}
 		/// </summary>
-		/// <param name="resourceARN">The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.</param>
+		/// <param name="resourceARN">The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceARN, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13883,7 +14279,10 @@ namespace MyNS
 		/// Gets a list of test execution result items.
 		/// ListTestExecutionResultItems testexecutions/{testExecutionId}/results
 		/// </summary>
-		/// <param name="testExecutionId">The unique identifier of the test execution to list the result items.</param>
+		/// <param name="testExecutionId">The unique identifier of the test execution to list the result items.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -13968,7 +14367,10 @@ namespace MyNS
 		/// The list of test set records.
 		/// ListTestSetRecords testsets/{testSetId}/records
 		/// </summary>
-		/// <param name="testSetId">The identifier of the test set to list its test set records.</param>
+		/// <param name="testSetId">The identifier of the test set to list its test set records.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -14053,7 +14455,10 @@ namespace MyNS
 		/// <note> <p>To use this API operation, your IAM role must have permissions to perform the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a> for the IAM policy to apply to the IAM role.</p> </note> <p>Retrieves a list of metadata for individual user utterances to your bot. The following fields are required:</p> <ul> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> </ul> <p>Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results and the <code>sortBy</code> field to specify the values by which to sort the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul>
 		/// ListUtteranceAnalyticsData bots/{botId}/analytics/utterances
 		/// </summary>
-		/// <param name="botId">The identifier for the bot for which you want to retrieve utterance analytics.</param>
+		/// <param name="botId">The identifier for the bot for which you want to retrieve utterance analytics.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -14096,7 +14501,10 @@ namespace MyNS
 		/// <note> <p>To use this API operation, your IAM role must have permissions to perform the <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_ListAggregatedUtterances.html">ListAggregatedUtterances</a> operation, which provides access to utterance-related analytics. See <a href="https://docs.aws.amazon.com/lexv2/latest/dg/monitoring-utterances.html">Viewing utterance statistics</a> for the IAM policy to apply to the IAM role.</p> </note> <p>Retrieves summary metrics for the utterances in your bot. The following fields are required:</p> <ul> <li> <p> <code>metrics</code> – A list of <a href="https://docs.aws.amazon.com/lexv2/latest/APIReference/API_AnalyticsUtteranceMetric.html">AnalyticsUtteranceMetric</a> objects. In each object, use the <code>name</code> field to specify the metric to calculate, the <code>statistic</code> field to specify whether to calculate the <code>Sum</code>, <code>Average</code>, or <code>Max</code> number, and the <code>order</code> field to specify whether to sort the results in <code>Ascending</code> or <code>Descending</code> order.</p> </li> <li> <p> <code>startDateTime</code> and <code>endDateTime</code> – Define a time range for which you want to retrieve results.</p> </li> </ul> <p>Of the optional fields, you can organize the results in the following ways:</p> <ul> <li> <p>Use the <code>filters</code> field to filter the results, the <code>groupBy</code> field to specify categories by which to group the results, and the <code>binBy</code> field to specify time intervals by which to group the results.</p> </li> <li> <p>Use the <code>maxResults</code> field to limit the number of results to return in a single response and the <code>nextToken</code> field to return the next batch of results if the response does not return the full set of results.</p> </li> </ul> <p>Note that an <code>order</code> field exists in both <code>binBy</code> and <code>metrics</code>. Currently, you can specify it in either field, but not in both.</p>
 		/// ListUtteranceMetrics bots/{botId}/analytics/utterancemetrics
 		/// </summary>
-		/// <param name="botId">The identifier for the bot for which you want to retrieve utterance metrics.</param>
+		/// <param name="botId">The identifier for the bot for which you want to retrieve utterance metrics.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -14139,10 +14547,19 @@ namespace MyNS
 		/// Search for associated transcripts that meet the specified criteria.
 		/// SearchAssociatedTranscripts bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/associatedtranscripts
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot associated with the transcripts that you are searching.</param>
-		/// <param name="botVersion">The version of the bot containing the transcripts that you are searching.</param>
+		/// <param name="botId">The unique identifier of the bot associated with the transcripts that you are searching.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot containing the transcripts that you are searching.
+		/// Max length: 5
+		/// Min length: 1
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the transcripts to search. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </param>
-		/// <param name="botRecommendationId">The unique identifier of the bot recommendation associated with the transcripts to search.</param>
+		/// <param name="botRecommendationId">The unique identifier of the bot recommendation associated with the transcripts to search.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchAssociatedTranscriptsResponse> SearchAssociatedTranscriptsAsync(string botId, string botVersion, string localeId, string botRecommendationId, SearchAssociatedTranscriptsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -14183,7 +14600,10 @@ namespace MyNS
 		/// The action to start test set execution.
 		/// StartTestExecution testsets/{testSetId}/testexecutions
 		/// </summary>
-		/// <param name="testSetId">The test set Id for the test set execution.</param>
+		/// <param name="testSetId">The test set Id for the test set execution.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task StartTestExecutionAsync(string testSetId, StartTestExecutionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "testsets/"+ (testSetId==null? "" : System.Uri.EscapeDataString(testSetId))+"/testexecutions";
@@ -14250,10 +14670,19 @@ namespace MyNS
 		/// Stop an already running Bot Recommendation request.
 		/// StopBotRecommendation bots/{botId}/botversions/{botVersion}/botlocales/{localeId}/botrecommendations/{botRecommendationId}/stopbotrecommendation
 		/// </summary>
-		/// <param name="botId">The unique identifier of the bot containing the bot recommendation to be stopped.</param>
-		/// <param name="botVersion">The version of the bot containing the bot recommendation.</param>
+		/// <param name="botId">The unique identifier of the bot containing the bot recommendation to be stopped.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
+		/// <param name="botVersion">The version of the bot containing the bot recommendation.
+		/// Max length: 5
+		/// Min length: 5
+		// </param>
 		/// <param name="localeId">The identifier of the language and locale of the bot recommendation to stop. The string must match one of the supported locales. For more information, see <a href="https://docs.aws.amazon.com/lexv2/latest/dg/how-languages.html">Supported languages</a> </param>
-		/// <param name="botRecommendationId">The unique identifier of the bot recommendation to be stopped.</param>
+		/// <param name="botRecommendationId">The unique identifier of the bot recommendation to be stopped.
+		/// Max length: 10
+		/// Min length: 10
+		// </param>
 		public async Task StopBotRecommendationAsync(string botId, string botVersion, string localeId, string botRecommendationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "bots/"+ (botId==null? "" : System.Uri.EscapeDataString(botId))+"/botversions/"+ (botVersion==null? "" : System.Uri.EscapeDataString(botVersion))+"/botlocales/"+ (localeId==null? "" : System.Uri.EscapeDataString(localeId))+"/botrecommendations/"+ (botRecommendationId==null? "" : System.Uri.EscapeDataString(botRecommendationId))+"/stopbotrecommendation";
@@ -14275,8 +14704,14 @@ namespace MyNS
 		/// Removes tags from a bot, bot alias, or bot channel.
 		/// UntagResource tags/{resourceARN}#tagKeys
 		/// </summary>
-		/// <param name="resourceARN">The Amazon Resource Name (ARN) of the resource to remove the tags from.</param>
-		/// <param name="tagKeys">A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.</param>
+		/// <param name="resourceARN">The Amazon Resource Name (ARN) of the resource to remove the tags from.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.
+		/// Minimum items: 0
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceARN, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

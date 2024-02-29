@@ -7,7 +7,10 @@ export namespace MyNS {
 	/** An accelerator card attached to the instance. */
 	export interface Accelerator {
 
-		/** Optional. Number of accelerator cards exposed to the instance. */
+		/**
+		 * Optional. Number of accelerator cards exposed to the instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Optional. Type of accelerator resource to attach to the instance, for example, `"nvidia-tesla-p100"`. */
@@ -17,7 +20,10 @@ export namespace MyNS {
 	/** An accelerator card attached to the instance. */
 	export interface AcceleratorFormProperties {
 
-		/** Optional. Number of accelerator cards exposed to the instance. */
+		/**
+		 * Optional. Number of accelerator cards exposed to the instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Optional. Type of accelerator resource to attach to the instance, for example, `"nvidia-tesla-p100"`. */
@@ -180,7 +186,10 @@ export namespace MyNS {
 		/** Optional. A Docker container image that defines a custom environment. Cloud Workstations provides a number of [preconfigured images](https://cloud.google.com/workstations/docs/preconfigured-base-images), but you can create your own [custom container images](https://cloud.google.com/workstations/docs/custom-container-images). If using a private image, the `host.gceInstance.serviceAccount` field must be specified in the workstation configuration. If using a custom container image, the service account must have [Artifact Registry Reader](https://cloud.google.com/artifact-registry/docs/access-control#roles) permission to pull the specified image. Otherwise, the image must be publicly accessible. */
 		image?: string | null;
 
-		/** Optional. If set, overrides the USER specified in the image with the given uid. */
+		/**
+		 * Optional. If set, overrides the USER specified in the image with the given uid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runAsUser?: number | null;
 
 		/** Optional. If set, overrides the default DIR specified by the image. */
@@ -196,7 +205,10 @@ export namespace MyNS {
 		/** Optional. A Docker container image that defines a custom environment. Cloud Workstations provides a number of [preconfigured images](https://cloud.google.com/workstations/docs/preconfigured-base-images), but you can create your own [custom container images](https://cloud.google.com/workstations/docs/custom-container-images). If using a private image, the `host.gceInstance.serviceAccount` field must be specified in the workstation configuration. If using a custom container image, the service account must have [Artifact Registry Reader](https://cloud.google.com/artifact-registry/docs/access-control#roles) permission to pull the specified image. Otherwise, the image must be publicly accessible. */
 		image: FormControl<string | null | undefined>,
 
-		/** Optional. If set, overrides the USER specified in the image with the given uid. */
+		/**
+		 * Optional. If set, overrides the USER specified in the image with the given uid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runAsUser: FormControl<number | null | undefined>,
 
 		/** Optional. If set, overrides the default DIR specified by the image. */
@@ -355,7 +367,10 @@ export namespace MyNS {
 		/** Optional. A list of the type and count of accelerator cards attached to the instance. */
 		accelerators?: Array<Accelerator>;
 
-		/** Optional. The size of the boot disk for the VM in gigabytes (GB). The minimum boot disk size is `30` GB. Defaults to `50` GB. */
+		/**
+		 * Optional. The size of the boot disk for the VM in gigabytes (GB). The minimum boot disk size is `30` GB. Defaults to `50` GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bootDiskSizeGb?: number | null;
 
 		/** A set of Compute Engine Confidential VM instance options. */
@@ -370,10 +385,16 @@ export namespace MyNS {
 		/** Optional. The type of machine to use for VM instances—for example, `"e2-standard-4"`. For more information about machine types that Cloud Workstations supports, see the list of [available machine types](https://cloud.google.com/workstations/docs/available-machine-types). */
 		machineType?: string | null;
 
-		/** Optional. The number of VMs that the system should keep idle so that new workstations can be started quickly for new users. Defaults to `0` in the API. */
+		/**
+		 * Optional. The number of VMs that the system should keep idle so that new workstations can be started quickly for new users. Defaults to `0` in the API.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		poolSize?: number | null;
 
-		/** Output only. Number of instances currently available in the pool for faster workstation startup. */
+		/**
+		 * Output only. Number of instances currently available in the pool for faster workstation startup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pooledInstances?: number | null;
 
 		/** Optional. The email address of the service account for Cloud Workstations VMs created with this configuration. When specified, be sure that the service account has `logginglogEntries.create` permission on the project so it can write logs out to Cloud Logging. If using a custom container image, the service account must have [Artifact Registry Reader](https://cloud.google.com/artifact-registry/docs/access-control#roles) permission to pull the specified image. If you as the administrator want to be able to `ssh` into the underlying VM, you need to set this value to a service account for which you have the `iam.serviceAccounts.actAs` permission. Conversely, if you don't want anyone to be able to `ssh` into the underlying VM, use a service account where no one has that permission. If not set, VMs run with a service account provided by the Cloud Workstations service, and the image must be publicly accessible. */
@@ -392,7 +413,10 @@ export namespace MyNS {
 	/** A runtime using a Compute Engine instance. */
 	export interface GceInstanceFormProperties {
 
-		/** Optional. The size of the boot disk for the VM in gigabytes (GB). The minimum boot disk size is `30` GB. Defaults to `50` GB. */
+		/**
+		 * Optional. The size of the boot disk for the VM in gigabytes (GB). The minimum boot disk size is `30` GB. Defaults to `50` GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bootDiskSizeGb: FormControl<number | null | undefined>,
 
 		/** Optional. When set to true, disables public IP addresses for VMs. If you disable public IP addresses, you must set up Private Google Access or Cloud NAT on your network. If you use Private Google Access and you use `private.googleapis.com` or `restricted.googleapis.com` for Container Registry and Artifact Registry, make sure that you set up DNS records for domains `*.gcr.io` and `*.pkg.dev`. Defaults to false (VMs have public IP addresses). */
@@ -404,10 +428,16 @@ export namespace MyNS {
 		/** Optional. The type of machine to use for VM instances—for example, `"e2-standard-4"`. For more information about machine types that Cloud Workstations supports, see the list of [available machine types](https://cloud.google.com/workstations/docs/available-machine-types). */
 		machineType: FormControl<string | null | undefined>,
 
-		/** Optional. The number of VMs that the system should keep idle so that new workstations can be started quickly for new users. Defaults to `0` in the API. */
+		/**
+		 * Optional. The number of VMs that the system should keep idle so that new workstations can be started quickly for new users. Defaults to `0` in the API.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		poolSize: FormControl<number | null | undefined>,
 
-		/** Output only. Number of instances currently available in the pool for faster workstation startup. */
+		/**
+		 * Output only. Number of instances currently available in the pool for faster workstation startup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pooledInstances: FormControl<number | null | undefined>,
 
 		/** Optional. The email address of the service account for Cloud Workstations VMs created with this configuration. When specified, be sure that the service account has `logginglogEntries.create` permission on the project so it can write logs out to Cloud Logging. If using a custom container image, the service account must have [Artifact Registry Reader](https://cloud.google.com/artifact-registry/docs/access-control#roles) permission to pull the specified image. If you as the administrator want to be able to `ssh` into the underlying VM, you need to set this value to a service account for which you have the `iam.serviceAccounts.actAs` permission. Conversely, if you don't want anyone to be able to `ssh` into the underlying VM, use a service account where no one has that permission. If not set, VMs run with a service account provided by the Cloud Workstations service, and the image must be publicly accessible. */
@@ -474,7 +504,10 @@ export namespace MyNS {
 		/** Optional. Whether the persistent disk should be deleted when the workstation is deleted. Valid values are `DELETE` and `RETAIN`. Defaults to `DELETE`. */
 		reclaimPolicy?: GceRegionalPersistentDiskReclaimPolicy | null;
 
-		/** Optional. The GB capacity of a persistent home directory for each workstation created with this configuration. Must be empty if source_snapshot is set. Valid values are `10`, `50`, `100`, `200`, `500`, or `1000`. Defaults to `200`. If less than `200` GB, the disk_type must be `"pd-balanced"` or `"pd-ssd"`. */
+		/**
+		 * Optional. The GB capacity of a persistent home directory for each workstation created with this configuration. Must be empty if source_snapshot is set. Valid values are `10`, `50`, `100`, `200`, `500`, or `1000`. Defaults to `200`. If less than `200` GB, the disk_type must be `"pd-balanced"` or `"pd-ssd"`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 
 		/** Optional. Name of the snapshot to use as the source for the disk. If set, size_gb and fs_type must be empty. */
@@ -493,7 +526,10 @@ export namespace MyNS {
 		/** Optional. Whether the persistent disk should be deleted when the workstation is deleted. Valid values are `DELETE` and `RETAIN`. Defaults to `DELETE`. */
 		reclaimPolicy: FormControl<GceRegionalPersistentDiskReclaimPolicy | null | undefined>,
 
-		/** Optional. The GB capacity of a persistent home directory for each workstation created with this configuration. Must be empty if source_snapshot is set. Valid values are `10`, `50`, `100`, `200`, `500`, or `1000`. Defaults to `200`. If less than `200` GB, the disk_type must be `"pd-balanced"` or `"pd-ssd"`. */
+		/**
+		 * Optional. The GB capacity of a persistent home directory for each workstation created with this configuration. Must be empty if source_snapshot is set. Valid values are `10`, `50`, `100`, `200`, `500`, or `1000`. Defaults to `200`. If less than `200` GB, the disk_type must be `"pd-balanced"` or `"pd-ssd"`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 
 		/** Optional. Name of the snapshot to use as the source for the disk. If set, size_gb and fs_type must be empty. */
@@ -672,7 +708,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -685,7 +724,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -900,7 +942,10 @@ export namespace MyNS {
 		/** Optional. Path to which the request should be sent. */
 		path?: string | null;
 
-		/** Optional. Port to which the request should be sent. */
+		/**
+		 * Optional. Port to which the request should be sent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 
@@ -910,7 +955,10 @@ export namespace MyNS {
 		/** Optional. Path to which the request should be sent. */
 		path: FormControl<string | null | undefined>,
 
-		/** Optional. Port to which the request should be sent. */
+		/**
+		 * Optional. Port to which the request should be sent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateReadinessCheckFormGroup() {
@@ -1385,7 +1433,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -1395,7 +1446,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -1566,6 +1620,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -1608,6 +1663,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/workstationClusters
 		 * @param {string} parent Required. Parent resource name.
 		 * @param {number} pageSize Optional. Maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. next_page_token value returned from a previous List request, if any.
 		 * @return {ListWorkstationClustersResponse} Successful response
 		 */
@@ -1632,6 +1688,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/workstationConfigs
 		 * @param {string} parent Required. Parent resource name.
 		 * @param {number} pageSize Optional. Maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. next_page_token value returned from a previous List request, if any.
 		 * @return {ListWorkstationConfigsResponse} Successful response
 		 */
@@ -1656,6 +1713,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/workstationConfigs:listUsable
 		 * @param {string} parent Required. Parent resource name.
 		 * @param {number} pageSize Optional. Maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. next_page_token value returned from a previous List request, if any.
 		 * @return {ListUsableWorkstationConfigsResponse} Successful response
 		 */
@@ -1668,6 +1726,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/workstations
 		 * @param {string} parent Required. Parent resource name.
 		 * @param {number} pageSize Optional. Maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. next_page_token value returned from a previous List request, if any.
 		 * @return {ListWorkstationsResponse} Successful response
 		 */
@@ -1692,6 +1751,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/workstations:listUsable
 		 * @param {string} parent Required. Parent resource name.
 		 * @param {number} pageSize Optional. Maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. next_page_token value returned from a previous List request, if any.
 		 * @return {ListUsableWorkstationsResponse} Successful response
 		 */
@@ -1704,6 +1764,7 @@ export namespace MyNS {
 		 * Get v1beta/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Policy} Successful response
 		 */
 		Workstations_projects_locations_workstationClusters_workstationConfigs_workstations_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<Policy> {

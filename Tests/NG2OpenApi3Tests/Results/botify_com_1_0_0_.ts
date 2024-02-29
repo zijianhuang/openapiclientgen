@@ -12,7 +12,9 @@ export namespace MyNS {
 		date_last_modified?: Date | null;
 		date_launched?: Date | null;
 		features?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		slug?: string | null;
 		status?: string | null;
@@ -32,7 +34,9 @@ export namespace MyNS {
 		date_last_modified: FormControl<Date | null | undefined>,
 		date_launched: FormControl<Date | null | undefined>,
 		features: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
@@ -48,7 +52,7 @@ export namespace MyNS {
 			date_last_modified: new FormControl<Date | null | undefined>(undefined),
 			date_launched: new FormControl<Date | null | undefined>(undefined),
 			features: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			slug: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
@@ -105,7 +109,9 @@ export namespace MyNS {
 		date_launched?: Date | null;
 		failures?: string | null;
 		features?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 		red_button_domain?: string | null;
 		slug?: string | null;
@@ -125,7 +131,9 @@ export namespace MyNS {
 		date_launched: FormControl<Date | null | undefined>,
 		failures: FormControl<string | null | undefined>,
 		features: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		red_button_domain: FormControl<string | null | undefined>,
 		slug: FormControl<string | null | undefined>,
@@ -141,7 +149,7 @@ export namespace MyNS {
 			date_launched: new FormControl<Date | null | undefined>(undefined),
 			failures: new FormControl<string | null | undefined>(undefined),
 			features: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			red_button_domain: new FormControl<string | null | undefined>(undefined),
 			slug: new FormControl<string | null | undefined>(undefined),
@@ -252,101 +260,161 @@ export namespace MyNS {
 		/** Required */
 		url: string;
 
-		/** Required */
-		visits: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		visits: string;
 	}
 	export interface CrawlOrphanURLsFormProperties {
 
 		/** Required */
 		url: FormControl<string | null | undefined>,
 
-		/** Required */
-		visits: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		visits: FormControl<string | null | undefined>,
 	}
 	export function CreateCrawlOrphanURLsFormGroup() {
 		return new FormGroup<CrawlOrphanURLsFormProperties>({
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			visits: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			visits: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface CrawlStatistics {
 
-		/** Required */
-		depth_current: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		depth_current: string;
 
 		/** Required */
 		last_upd_dt: Date;
 
-		/** Required */
-		pages_dones: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones: string;
 
-		/** Required */
-		pages_dones_2xx: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_2xx: string;
 
-		/** Required */
-		pages_dones_3xx: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_3xx: string;
 
-		/** Required */
-		pages_dones_4xx: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_4xx: string;
 
-		/** Required */
-		pages_dones_5xx: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_5xx: string;
 
-		/** Required */
-		pages_dones_networkerror: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_networkerror: string;
 
-		/** Required */
-		pages_dones_xxx: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_xxx: string;
 
-		/** Required */
-		pages_known: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_known: string;
 	}
 	export interface CrawlStatisticsFormProperties {
 
-		/** Required */
-		depth_current: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		depth_current: FormControl<string | null | undefined>,
 
 		/** Required */
 		last_upd_dt: FormControl<Date | null | undefined>,
 
-		/** Required */
-		pages_dones: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones: FormControl<string | null | undefined>,
 
-		/** Required */
-		pages_dones_2xx: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_2xx: FormControl<string | null | undefined>,
 
-		/** Required */
-		pages_dones_3xx: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_3xx: FormControl<string | null | undefined>,
 
-		/** Required */
-		pages_dones_4xx: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_4xx: FormControl<string | null | undefined>,
 
-		/** Required */
-		pages_dones_5xx: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_5xx: FormControl<string | null | undefined>,
 
-		/** Required */
-		pages_dones_networkerror: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_networkerror: FormControl<string | null | undefined>,
 
-		/** Required */
-		pages_dones_xxx: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_dones_xxx: FormControl<string | null | undefined>,
 
-		/** Required */
-		pages_known: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pages_known: FormControl<string | null | undefined>,
 	}
 	export function CreateCrawlStatisticsFormGroup() {
 		return new FormGroup<CrawlStatisticsFormProperties>({
-			depth_current: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			depth_current: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			last_upd_dt: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			pages_dones: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			pages_dones_2xx: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			pages_dones_3xx: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			pages_dones_4xx: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			pages_dones_5xx: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			pages_dones_networkerror: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			pages_dones_xxx: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			pages_known: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			pages_dones: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			pages_dones_2xx: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			pages_dones_3xx: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			pages_dones_4xx: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			pages_dones_5xx: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			pages_dones_networkerror: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			pages_dones_xxx: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			pages_known: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -401,23 +469,29 @@ export namespace MyNS {
 
 	export interface CrawlStatisticsTimePoint {
 
-		/** Required */
-		count: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count: string;
 
 		/** Required */
 		datetime: Date;
 	}
 	export interface CrawlStatisticsTimePointFormProperties {
 
-		/** Required */
-		count: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count: FormControl<string | null | undefined>,
 
 		/** Required */
 		datetime: FormControl<Date | null | undefined>,
 	}
 	export function CreateCrawlStatisticsTimePointFormGroup() {
 		return new FormGroup<CrawlStatisticsTimePointFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			count: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			datetime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -431,20 +505,32 @@ export namespace MyNS {
 		/** Required */
 		date: string;
 
-		/** Required */
-		delay_first_byte: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		delay_first_byte: string;
 
-		/** Required */
-		delay_last_byte: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		delay_last_byte: string;
 
 		/** Required */
 		gzip: boolean;
 
-		/** Required */
-		http: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		http: string;
 
-		/** Required */
-		length: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		length: string;
 		redirects_to?: string | null;
 
 		/** Required */
@@ -458,20 +544,32 @@ export namespace MyNS {
 		/** Required */
 		date: FormControl<string | null | undefined>,
 
-		/** Required */
-		delay_first_byte: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		delay_first_byte: FormControl<string | null | undefined>,
 
-		/** Required */
-		delay_last_byte: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		delay_last_byte: FormControl<string | null | undefined>,
 
 		/** Required */
 		gzip: FormControl<boolean | null | undefined>,
 
-		/** Required */
-		http: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		http: FormControl<string | null | undefined>,
 
-		/** Required */
-		length: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		length: FormControl<string | null | undefined>,
 		redirects_to: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -481,11 +579,11 @@ export namespace MyNS {
 		return new FormGroup<CrawlStatisticsUrlsFormProperties>({
 			content_type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			delay_first_byte: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			delay_last_byte: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			delay_first_byte: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			delay_last_byte: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			gzip: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			http: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			length: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			http: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			length: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			redirects_to: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -493,7 +591,9 @@ export namespace MyNS {
 	}
 
 	export interface CsvExportStatus {
-		area?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		area?: string | null;
 		date_created?: Date | null;
 		job_id?: string | null;
 		job_status?: string | null;
@@ -503,14 +603,16 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 2147483647
 		 */
-		nb_results?: number | null;
+		nb_results?: string | null;
 
 		/** Required */
 		query: UrlsQuery;
 		results?: string | null;
 	}
 	export interface CsvExportStatusFormProperties {
-		area: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		area: FormControl<string | null | undefined>,
 		date_created: FormControl<Date | null | undefined>,
 		job_id: FormControl<string | null | undefined>,
 		job_status: FormControl<string | null | undefined>,
@@ -520,17 +622,17 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 2147483647
 		 */
-		nb_results: FormControl<number | null | undefined>,
+		nb_results: FormControl<string | null | undefined>,
 		results: FormControl<string | null | undefined>,
 	}
 	export function CreateCsvExportStatusFormGroup() {
 		return new FormGroup<CsvExportStatusFormProperties>({
-			area: new FormControl<number | null | undefined>(undefined),
+			area: new FormControl<string | null | undefined>(undefined),
 			date_created: new FormControl<Date | null | undefined>(undefined),
 			job_id: new FormControl<string | null | undefined>(undefined),
 			job_status: new FormControl<string | null | undefined>(undefined),
 			job_url: new FormControl<string | null | undefined>(undefined),
-			nb_results: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
+			nb_results: new FormControl<string | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 			results: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -609,43 +711,55 @@ export namespace MyNS {
 
 	export interface FieldValues {
 
-		/** Required */
-		count: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count: string;
 
 		/** Required */
 		results: Array<FieldValuesResult>;
 	}
 	export interface FieldValuesFormProperties {
 
-		/** Required */
-		count: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count: FormControl<string | null | undefined>,
 	}
 	export function CreateFieldValuesFormGroup() {
 		return new FormGroup<FieldValuesFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			count: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface FieldValuesResult {
 
-		/** Required */
-		nb_urls: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nb_urls: string;
 
 		/** Required */
 		value: string;
 	}
 	export interface FieldValuesResultFormProperties {
 
-		/** Required */
-		nb_urls: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nb_urls: FormControl<string | null | undefined>,
 
 		/** Required */
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateFieldValuesResultFormGroup() {
 		return new FormGroup<FieldValuesResultFormProperties>({
-			nb_urls: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			nb_urls: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -673,52 +787,88 @@ export namespace MyNS {
 
 	export interface LinksPercentilesItem {
 
-		/** Required */
-		avg: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		avg: string;
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 
-		/** Required */
-		max: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		max: string;
 
-		/** Required */
-		metric_total: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		metric_total: string;
 
-		/** Required */
-		min: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		min: string;
 
-		/** Required */
-		url_total: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		url_total: string;
 	}
 	export interface LinksPercentilesItemFormProperties {
 
-		/** Required */
-		avg: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		avg: FormControl<string | null | undefined>,
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
-		/** Required */
-		max: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		max: FormControl<string | null | undefined>,
 
-		/** Required */
-		metric_total: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		metric_total: FormControl<string | null | undefined>,
 
-		/** Required */
-		min: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		min: FormControl<string | null | undefined>,
 
-		/** Required */
-		url_total: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		url_total: FormControl<string | null | undefined>,
 	}
 	export function CreateLinksPercentilesItemFormGroup() {
 		return new FormGroup<LinksPercentilesItemFormProperties>({
-			avg: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			max: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			metric_total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			min: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			url_total: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			avg: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			max: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			metric_total: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			min: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			url_total: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -728,48 +878,72 @@ export namespace MyNS {
 		/** Required */
 		domain: string;
 
-		/** Required */
-		follow_links: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		follow_links: string;
 
 		/** Required */
 		follow_samples: Array<LinksTopDomainsSamples>;
 
-		/** Required */
-		nofollow_links: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nofollow_links: string;
 
 		/** Required */
 		nofollow_samples: Array<LinksTopDomainsSamples>;
 
-		/** Required */
-		unique_follow_links: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		unique_follow_links: string;
 
-		/** Required */
-		unique_nofollow_links: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		unique_nofollow_links: string;
 	}
 	export interface LinksTopDomainsFormProperties {
 
 		/** Required */
 		domain: FormControl<string | null | undefined>,
 
-		/** Required */
-		follow_links: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		follow_links: FormControl<string | null | undefined>,
 
-		/** Required */
-		nofollow_links: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nofollow_links: FormControl<string | null | undefined>,
 
-		/** Required */
-		unique_follow_links: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		unique_follow_links: FormControl<string | null | undefined>,
 
-		/** Required */
-		unique_nofollow_links: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		unique_nofollow_links: FormControl<string | null | undefined>,
 	}
 	export function CreateLinksTopDomainsFormGroup() {
 		return new FormGroup<LinksTopDomainsFormProperties>({
 			domain: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			follow_links: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			nofollow_links: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			unique_follow_links: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			unique_nofollow_links: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			follow_links: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			nofollow_links: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			unique_follow_links: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			unique_nofollow_links: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -779,23 +953,29 @@ export namespace MyNS {
 		/** Required */
 		sources: Array<string>;
 
-		/** Required */
-		unique_links: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		unique_links: string;
 
 		/** Required */
 		url: string;
 	}
 	export interface LinksTopDomainsSamplesFormProperties {
 
-		/** Required */
-		unique_links: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		unique_links: FormControl<string | null | undefined>,
 
 		/** Required */
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateLinksTopDomainsSamplesFormGroup() {
 		return new FormGroup<LinksTopDomainsSamplesFormProperties>({
-			unique_links: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			unique_links: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -803,24 +983,42 @@ export namespace MyNS {
 
 	export interface PageRankLost {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		external: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		non_crawled: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		robots_txt: number;
 	}
 	export interface PageRankLostFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		external: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		non_crawled: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		robots_txt: FormControl<number | null | undefined>,
 	}
 	export function CreatePageRankLostFormGroup() {
@@ -886,19 +1084,19 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 90
 		 */
-		google_analytics_nb_days?: number | null;
+		google_analytics_nb_days?: string | null;
 
 		/**
 		 * Minimum: -2147483648
 		 * Maximum: 2147483647
 		 */
-		google_analytics_site_id?: number | null;
+		google_analytics_site_id?: string | null;
 
 		/**
 		 * Minimum: -2147483648
 		 * Maximum: 2147483647
 		 */
-		google_social_auth_id?: number | null;
+		google_social_auth_id?: string | null;
 		has_robots_txt?: string | null;
 
 		/** Required */
@@ -908,20 +1106,20 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 2147483647
 		 */
-		max_depth?: number | null;
+		max_depth?: string | null;
 
 		/**
 		 * Required
 		 * Minimum: 1
 		 * Maximum: 2147483647
 		 */
-		max_nb_pages: number;
+		max_nb_pages: string;
 
 		/**
 		 * Minimum: 1
 		 * Maximum: 2147483647
 		 */
-		max_pages_per_sec?: number | null;
+		max_pages_per_sec?: string | null;
 		respect_nofollow?: boolean | null;
 
 		/** Required */
@@ -943,39 +1141,39 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 90
 		 */
-		google_analytics_nb_days: FormControl<number | null | undefined>,
+		google_analytics_nb_days: FormControl<string | null | undefined>,
 
 		/**
 		 * Minimum: -2147483648
 		 * Maximum: 2147483647
 		 */
-		google_analytics_site_id: FormControl<number | null | undefined>,
+		google_analytics_site_id: FormControl<string | null | undefined>,
 
 		/**
 		 * Minimum: -2147483648
 		 * Maximum: 2147483647
 		 */
-		google_social_auth_id: FormControl<number | null | undefined>,
+		google_social_auth_id: FormControl<string | null | undefined>,
 		has_robots_txt: FormControl<string | null | undefined>,
 
 		/**
 		 * Minimum: 0
 		 * Maximum: 2147483647
 		 */
-		max_depth: FormControl<number | null | undefined>,
+		max_depth: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
 		 * Minimum: 1
 		 * Maximum: 2147483647
 		 */
-		max_nb_pages: FormControl<number | null | undefined>,
+		max_nb_pages: FormControl<string | null | undefined>,
 
 		/**
 		 * Minimum: 1
 		 * Maximum: 2147483647
 		 */
-		max_pages_per_sec: FormControl<number | null | undefined>,
+		max_pages_per_sec: FormControl<string | null | undefined>,
 		respect_nofollow: FormControl<boolean | null | undefined>,
 		user_agent: FormControl<string | null | undefined>,
 	}
@@ -985,13 +1183,13 @@ export namespace MyNS {
 			crawl_gzip: new FormControl<boolean | null | undefined>(undefined),
 			extra_headers: new FormControl<string | null | undefined>(undefined),
 			google_analytics_account_email: new FormControl<string | null | undefined>(undefined),
-			google_analytics_nb_days: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(90)]),
-			google_analytics_site_id: new FormControl<number | null | undefined>(undefined, [Validators.min(-2147483648), Validators.max(2147483647)]),
-			google_social_auth_id: new FormControl<number | null | undefined>(undefined, [Validators.min(-2147483648), Validators.max(2147483647)]),
+			google_analytics_nb_days: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(90)]),
+			google_analytics_site_id: new FormControl<string | null | undefined>(undefined, [Validators.min(-2147483648), Validators.max(2147483647)]),
+			google_social_auth_id: new FormControl<string | null | undefined>(undefined, [Validators.min(-2147483648), Validators.max(2147483647)]),
 			has_robots_txt: new FormControl<string | null | undefined>(undefined),
-			max_depth: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
-			max_nb_pages: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(2147483647)]),
-			max_pages_per_sec: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
+			max_depth: new FormControl<string | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
+			max_nb_pages: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(2147483647)]),
+			max_pages_per_sec: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(2147483647)]),
 			respect_nofollow: new FormControl<boolean | null | undefined>(undefined),
 			user_agent: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1058,8 +1256,11 @@ export namespace MyNS {
 
 	export interface SitemapsReport {
 
-		/** Required */
-		count: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count: string;
 
 		/** Required */
 		errors: Array<SitemapsReportSitemap>;
@@ -1075,12 +1276,15 @@ export namespace MyNS {
 	}
 	export interface SitemapsReportFormProperties {
 
-		/** Required */
-		count: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count: FormControl<string | null | undefined>,
 	}
 	export function CreateSitemapsReportFormGroup() {
 		return new FormGroup<SitemapsReportFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			count: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1088,27 +1292,35 @@ export namespace MyNS {
 	export interface SitemapsReportSitemap {
 		error?: SitemapsReportSitemapError;
 		file_type?: string | null;
-		invalid_urls?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		invalid_urls?: string | null;
 		sitemap_indexes?: Array<string>;
 
 		/** Required */
 		url: string;
-		valid_urls?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		valid_urls?: string | null;
 	}
 	export interface SitemapsReportSitemapFormProperties {
 		file_type: FormControl<string | null | undefined>,
-		invalid_urls: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		invalid_urls: FormControl<string | null | undefined>,
 
 		/** Required */
 		url: FormControl<string | null | undefined>,
-		valid_urls: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		valid_urls: FormControl<string | null | undefined>,
 	}
 	export function CreateSitemapsReportSitemapFormGroup() {
 		return new FormGroup<SitemapsReportSitemapFormProperties>({
 			file_type: new FormControl<string | null | undefined>(undefined),
-			invalid_urls: new FormControl<number | null | undefined>(undefined),
+			invalid_urls: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			valid_urls: new FormControl<number | null | undefined>(undefined),
+			valid_urls: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1139,24 +1351,36 @@ export namespace MyNS {
 
 	export interface SitemapsReportOnly {
 
-		/** Required */
-		in_configuration: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		in_configuration: string;
 
-		/** Required */
-		out_of_configuration: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		out_of_configuration: string;
 	}
 	export interface SitemapsReportOnlyFormProperties {
 
-		/** Required */
-		in_configuration: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		in_configuration: FormControl<string | null | undefined>,
 
-		/** Required */
-		out_of_configuration: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		out_of_configuration: FormControl<string | null | undefined>,
 	}
 	export function CreateSitemapsReportOnlyFormGroup() {
 		return new FormGroup<SitemapsReportOnlyFormProperties>({
-			in_configuration: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			out_of_configuration: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			in_configuration: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			out_of_configuration: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1190,17 +1414,23 @@ export namespace MyNS {
 	export interface UrlsAgg {
 		aggs?: Array<string>;
 
-		/** Required */
-		count: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count: string;
 	}
 	export interface UrlsAggFormProperties {
 
-		/** Required */
-		count: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count: FormControl<string | null | undefined>,
 	}
 	export function CreateUrlsAggFormGroup() {
 		return new FormGroup<UrlsAggFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			count: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1209,17 +1439,23 @@ export namespace MyNS {
 		data?: UrlsAgg;
 		error?: UrlsErrorAgg;
 
-		/** Required */
-		status: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		status: string;
 	}
 	export interface UrlsAggsFormProperties {
 
-		/** Required */
-		status: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		status: FormControl<string | null | undefined>,
 	}
 	export function CreateUrlsAggsFormGroup() {
 		return new FormGroup<UrlsAggsFormProperties>({
-			status: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1282,7 +1518,9 @@ export namespace MyNS {
 		 * List all analyses for a project
 		 * Get analyses/{username}/{project_slug}
 		 * @param {number} page Page Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Page Size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetProjectAnalysesReturn} Successful operation
 		 */
 		GetProjectAnalyses(page: number | null | undefined, size: number | null | undefined): Observable<GetProjectAnalysesReturn> {
@@ -1314,6 +1552,7 @@ export namespace MyNS {
 		 * Return crawl statistics grouped by time frequency (1 min, 5 mins or 60 min) for an analysis
 		 * Get analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/time
 		 * @param {number} limit max number of elements to retrieve
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetCrawlStatisticsByFrequencyFrequency} frequency Aggregation frequency
 		 * @return {CrawlStatisticsTime} Successful operation
 		 */
@@ -1325,7 +1564,6 @@ export namespace MyNS {
 		 * Return a list of 1000 latest URLs crawled (all crawled URLs or only URLS with HTTP errors)
 		 * Return a list of 1000 latest URLs crawled (all crawled URLs or only URLS with HTTP errors)
 		 * Get analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/urls/{list_type}
-		 * @return {Array<string>} 
 		 */
 		GetCrawlStatisticsUrls(): Observable<Array<string>> {
 			return this.http.get<Array<string>>(this.baseUri + 'analyses/{username}/{project_slug}/{analysis_slug}/crawl_statistics/urls/{list_type}', {});
@@ -1336,7 +1574,9 @@ export namespace MyNS {
 		 * List of Orphan URLs. URLs which generated visits from the selected source according to Google Analytics data, but were not crawled with by the Botify crawler (either because no links to them were found on the website, or because the crawler was not allowed to follow these links according to the project settings).   For a search engine (medium: origanic; sources: all, aol, ask, baidu, bing, google, naver, yahoo, yandex) or a social network (medium: social; sources: all, facebook, google+, linkedin, pinterest, reddit, tumblr, twitter)
 		 * Get analyses/{username}/{project_slug}/{analysis_slug}/features/ganalytics/orphan_urls/{medium}/{source}
 		 * @param {number} page Page Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Page Size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetGanalyticsOrphanURLsReturn} Successful operation
 		 */
 		GetGanalyticsOrphanURLs(page: number | null | undefined, size: number | null | undefined): Observable<GetGanalyticsOrphanURLsReturn> {
@@ -1378,7 +1618,9 @@ export namespace MyNS {
 		 * Sample list of URLs which were found in your sitemaps but outside of the crawl perimeter defined for the project, for instance domain/subdomain or protocol (HTTP/HTTPS) not allowed in the crawl settings.
 		 * Get analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/out_of_config
 		 * @param {number} page Page Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Page Size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetSitemapsSamplesOutOfConfigReturn} Successful operation
 		 */
 		GetSitemapsSamplesOutOfConfig(page: number | null | undefined, size: number | null | undefined): Observable<GetSitemapsSamplesOutOfConfigReturn> {
@@ -1390,7 +1632,9 @@ export namespace MyNS {
 		 * Sample list of URLs which were found in your sitemaps, within the project allowed scope (allowed domains/subdomains/protocols), but not found by the Botify crawler.
 		 * Get analyses/{username}/{project_slug}/{analysis_slug}/features/sitemaps/samples/sitemap_only
 		 * @param {number} page Page Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Page Size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetSitemapsSamplesSitemapsOnlyReturn} Successful operation
 		 */
 		GetSitemapsSamplesSitemapsOnly(page: number | null | undefined, size: number | null | undefined): Observable<GetSitemapsSamplesSitemapsOnlyReturn> {
@@ -1402,7 +1646,9 @@ export namespace MyNS {
 		 * Top domains
 		 * Get analyses/{username}/{project_slug}/{analysis_slug}/features/top_domains/domains
 		 * @param {number} page Page Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Page Size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetLinksTopDomainsReturn} Successful operation
 		 */
 		GetLinksTopDomains(page: number | null | undefined, size: number | null | undefined): Observable<GetLinksTopDomainsReturn> {
@@ -1414,7 +1660,9 @@ export namespace MyNS {
 		 * Top subddomains
 		 * Get analyses/{username}/{project_slug}/{analysis_slug}/features/top_domains/subdomains
 		 * @param {number} page Page Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Page Size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetLinksTopSubdomainsReturn} Successful operation
 		 */
 		GetLinksTopSubdomains(page: number | null | undefined, size: number | null | undefined): Observable<GetLinksTopSubdomainsReturn> {
@@ -1427,7 +1675,9 @@ export namespace MyNS {
 		 * Post analyses/{username}/{project_slug}/{analysis_slug}/urls
 		 * @param {GetUrlsArea} area Analysis context to execute the query
 		 * @param {number} page Page Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Page Size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetUrlsReturn} Successful operation
 		 */
 		GetUrls(area: GetUrlsArea | null | undefined, page: number | null | undefined, size: number | null | undefined, requestBody: UrlsQuery): Observable<GetUrlsReturn> {
@@ -1438,7 +1688,6 @@ export namespace MyNS {
 		 * Query aggregator
 		 * Query aggregator. It accepts multiple queries
 		 * Post analyses/{username}/{project_slug}/{analysis_slug}/urls/aggs
-		 * @return {Array<string>} 
 		 */
 		GetUrlsAggs(area: GetUrlsArea | null | undefined, requestBody: Array<UrlsAggsQuery>): Observable<Array<string>> {
 			return this.http.post<Array<string>>(this.baseUri + 'analyses/{username}/{project_slug}/{analysis_slug}/urls/aggs?area=' + area, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -1459,7 +1708,9 @@ export namespace MyNS {
 		 * A list of the CSV Exports requests and their current status
 		 * Get analyses/{username}/{project_slug}/{analysis_slug}/urls/export
 		 * @param {number} page Page Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Page Size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetUrlsExportsReturn} Successful operation
 		 */
 		GetUrlsExports(page: number | null | undefined, size: number | null | undefined): Observable<GetUrlsExportsReturn> {
@@ -1512,7 +1763,9 @@ export namespace MyNS {
 		 * List all active projects for the user
 		 * Get projects/{username}
 		 * @param {number} page Page Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Page Size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetUserProjectsReturn} Successful operation
 		 */
 		GetUserProjects(page: number | null | undefined, size: number | null | undefined): Observable<GetUserProjectsReturn> {
@@ -1534,7 +1787,9 @@ export namespace MyNS {
 		 * List all the project's saved filters (each filter's name, ID and filter value)
 		 * Get projects/{username}/{project_slug}/filters
 		 * @param {number} page Page Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} size Page Size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetSavedFiltersReturn} Successful operation
 		 */
 		GetSavedFilters(page: number | null | undefined, size: number | null | undefined): Observable<GetSavedFiltersReturn> {
@@ -1558,6 +1813,7 @@ export namespace MyNS {
 		 * @param {GetProjectUrlsAggsArea} area Analysis context to execute the queries
 		 * @param {string} last_analysis_slug Last analysis on the trend
 		 * @param {number} nb_analyses Max number of analysis to return
+		 *     Minimum: 1    Maximum: 20
 		 * @return {void} 
 		 */
 		GetProjectUrlsAggs(area: GetProjectUrlsAggsArea | null | undefined, last_analysis_slug: string | null | undefined, nb_analyses: number | null | undefined, requestBody: Array<UrlsAggsQuery>): Observable<HttpResponse<string>> {
@@ -1566,18 +1822,30 @@ export namespace MyNS {
 	}
 
 	export interface GetProjectAnalysesReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		previous?: string | null;
 		results?: Array<Analysis>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface GetProjectAnalysesReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		previous: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetProjectAnalysesReturnFormGroup() {
@@ -1594,18 +1862,30 @@ export namespace MyNS {
 	export enum GetCrawlStatisticsByFrequencyFrequency { '1mn' = '1mn', '5mn' = '5mn', '60mn' = '60mn' }
 
 	export interface GetGanalyticsOrphanURLsReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		previous?: string | null;
 		results?: Array<CrawlOrphanURLs>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface GetGanalyticsOrphanURLsReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		previous: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetGanalyticsOrphanURLsReturnFormGroup() {
@@ -1620,18 +1900,30 @@ export namespace MyNS {
 	}
 
 	export interface GetSitemapsSamplesOutOfConfigReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		previous?: string | null;
 		results?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface GetSitemapsSamplesOutOfConfigReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		previous: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSitemapsSamplesOutOfConfigReturnFormGroup() {
@@ -1646,18 +1938,30 @@ export namespace MyNS {
 	}
 
 	export interface GetSitemapsSamplesSitemapsOnlyReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		previous?: string | null;
 		results?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface GetSitemapsSamplesSitemapsOnlyReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		previous: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSitemapsSamplesSitemapsOnlyReturnFormGroup() {
@@ -1672,18 +1976,30 @@ export namespace MyNS {
 	}
 
 	export interface GetLinksTopDomainsReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		previous?: string | null;
 		results?: Array<LinksTopDomains>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface GetLinksTopDomainsReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		previous: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetLinksTopDomainsReturnFormGroup() {
@@ -1698,18 +2014,30 @@ export namespace MyNS {
 	}
 
 	export interface GetLinksTopSubdomainsReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		previous?: string | null;
 		results?: Array<LinksTopDomains>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface GetLinksTopSubdomainsReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		previous: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetLinksTopSubdomainsReturnFormGroup() {
@@ -1726,18 +2054,30 @@ export namespace MyNS {
 	export enum GetUrlsArea { current = 'current', disappeared = 'disappeared', new = 'new', search_engines_orphans = 'search_engines_orphans' }
 
 	export interface GetUrlsReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		previous?: string | null;
 		results?: Array<UrlDetail>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface GetUrlsReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		previous: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetUrlsReturnFormGroup() {
@@ -1752,18 +2092,30 @@ export namespace MyNS {
 	}
 
 	export interface GetUrlsExportsReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		previous?: string | null;
 		results?: Array<CsvExportStatus>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface GetUrlsExportsReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		previous: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetUrlsExportsReturnFormGroup() {
@@ -1780,18 +2132,30 @@ export namespace MyNS {
 	export enum GetUrlsSuggestedFiltersArea { current = 'current', new = 'new' }
 
 	export interface GetUserProjectsReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		previous?: string | null;
 		results?: Array<Project>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface GetUserProjectsReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		previous: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetUserProjectsReturnFormGroup() {
@@ -1806,18 +2170,30 @@ export namespace MyNS {
 	}
 
 	export interface GetSavedFiltersReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
 		previous?: string | null;
 		results?: Array<ProjectSavedFilter>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface GetSavedFiltersReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
 		previous: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSavedFiltersReturnFormGroup() {

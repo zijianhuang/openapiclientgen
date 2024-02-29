@@ -44,7 +44,9 @@ export namespace MyNS {
 		/** Required */
 		client_uri: string;
 		contacts?: Array<string>;
-		default_max_age?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		default_max_age?: string | null;
 		default_scopes?: Array<string>;
 		grant_types?: Array<string>;
 		logo_uri?: string | null;
@@ -64,7 +66,9 @@ export namespace MyNS {
 
 		/** Required */
 		client_uri: FormControl<string | null | undefined>,
-		default_max_age: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		default_max_age: FormControl<string | null | undefined>,
 		logo_uri: FormControl<string | null | undefined>,
 		policy_uri: FormControl<string | null | undefined>,
 		tos_uri: FormControl<string | null | undefined>,
@@ -75,7 +79,7 @@ export namespace MyNS {
 			client_id: new FormControl<string | null | undefined>(undefined),
 			client_name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			client_uri: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			default_max_age: new FormControl<number | null | undefined>(undefined),
+			default_max_age: new FormControl<string | null | undefined>(undefined),
 			logo_uri: new FormControl<string | null | undefined>(undefined),
 			policy_uri: new FormControl<string | null | undefined>(undefined),
 			tos_uri: new FormControl<string | null | undefined>(undefined),
@@ -125,6 +129,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code for this occurrence of the problem.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: number;
 
@@ -150,6 +155,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code for this occurrence of the problem.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status: FormControl<number | null | undefined>,
 
@@ -200,6 +206,8 @@ export namespace MyNS {
 		sub?: string | null;
 		tokens_seen?: Array<string>;
 		tos_uri?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 
@@ -224,6 +232,8 @@ export namespace MyNS {
 		session_uri: FormControl<string | null | undefined>,
 		sub: FormControl<string | null | undefined>,
 		tos_uri: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateSessionFormGroup() {
@@ -261,10 +271,16 @@ export namespace MyNS {
 		/** The access token issued by the authorization server. */
 		access_token?: string | null;
 
-		/** The time the access token will expire in seconds since epoch. */
-		expires_at?: number | null;
+		/**
+		 * The time the access token will expire in seconds since epoch.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expires_at?: string | null;
 
-		/** The lifetime in seconds of the access token. */
+		/**
+		 * The lifetime in seconds of the access token.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in?: number | null;
 
 		/** ID Token value associated with the authenticated session. */
@@ -288,10 +304,16 @@ export namespace MyNS {
 		/** The access token issued by the authorization server. */
 		access_token: FormControl<string | null | undefined>,
 
-		/** The time the access token will expire in seconds since epoch. */
-		expires_at: FormControl<number | null | undefined>,
+		/**
+		 * The time the access token will expire in seconds since epoch.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expires_at: FormControl<string | null | undefined>,
 
-		/** The lifetime in seconds of the access token. */
+		/**
+		 * The lifetime in seconds of the access token.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in: FormControl<number | null | undefined>,
 
 		/** ID Token value associated with the authenticated session. */
@@ -309,7 +331,7 @@ export namespace MyNS {
 	export function CreateTokenFormGroup() {
 		return new FormGroup<TokenFormProperties>({
 			access_token: new FormControl<string | null | undefined>(undefined),
-			expires_at: new FormControl<number | null | undefined>(undefined),
+			expires_at: new FormControl<string | null | undefined>(undefined),
 			expires_in: new FormControl<number | null | undefined>(undefined),
 			id_token: new FormControl<string | null | undefined>(undefined),
 			refresh_token: new FormControl<string | null | undefined>(undefined),
@@ -394,6 +416,7 @@ export namespace MyNS {
 		 * @param {string} display The authentication display mode, which can be one of `page`, `popup` or `modal`. Defaults to `page`.
 		 * @param {string} prompt Space-delimited, case sensitive list of ASCII string values that specifies whether the Authorization Server prompts the End-User for reauthentication and consent. The supported values are: `none`, `login`, `consent`. If `consent` the end-user is asked to (re)confirm what claims they share. Use `none` to check for an active session.
 		 * @param {number} max_age Specifies the allowable elapsed time in seconds since the last time the end-user was actively authenticated.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ui_locales Specifies the preferred language to use on the authorization page, as a space-separated list of BCP47 language tags. Ignored at the moment.
 		 * @return {void} 
 		 */

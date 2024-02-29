@@ -27,20 +27,32 @@ export namespace MyNS {
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface GoogleTypeLatLng {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 	export interface GoogleTypeLatLngFormProperties {
 
-		/** The latitude in degrees. It must be in the range [-90.0, +90.0]. */
+		/**
+		 * The latitude in degrees. It must be in the range [-90.0, +90.0].
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude in degrees. It must be in the range [-180.0, +180.0]. */
+		/**
+		 * The longitude in degrees. It must be in the range [-180.0, +180.0].
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeLatLngFormGroup() {
@@ -93,14 +105,20 @@ export namespace MyNS {
 		/** An object that represents a latitude/longitude pair. This is expressed as a pair of doubles to represent degrees latitude and degrees longitude. Unless specified otherwise, this object must conform to the WGS84 standard. Values must be within normalized ranges. */
 		center?: GoogleTypeLatLng;
 
-		/** Required. Radius measured in meters. The radius must be within [0.0, 50000.0]. */
+		/**
+		 * Required. Radius measured in meters. The radius must be within [0.0, 50000.0].
+		 * Type: double
+		 */
 		radius?: number | null;
 	}
 
 	/** Circle with a LatLng as center and radius. */
 	export interface GoogleMapsPlacesV1CircleFormProperties {
 
-		/** Required. Radius measured in meters. The radius must be within [0.0, 50000.0]. */
+		/**
+		 * Required. Radius measured in meters. The radius must be within [0.0, 50000.0].
+		 * Type: double
+		 */
 		radius: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleMapsPlacesV1CircleFormGroup() {
@@ -117,14 +135,20 @@ export namespace MyNS {
 		/** A list of EV charging connector aggregations that contain connectors of the same type and same charge rate. */
 		connectorAggregation?: Array<GoogleMapsPlacesV1EVChargeOptionsConnectorAggregation>;
 
-		/** Number of connectors at this station. However, because some ports can have multiple connectors but only be able to charge one car at a time (e.g.) the number of connectors may be greater than the total number of cars which can charge simultaneously. */
+		/**
+		 * Number of connectors at this station. However, because some ports can have multiple connectors but only be able to charge one car at a time (e.g.) the number of connectors may be greater than the total number of cars which can charge simultaneously.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectorCount?: number | null;
 	}
 
 	/** Information about the EV Charge Station hosted in Place. Terminology follows https://afdc.energy.gov/fuels/electricity_infrastructure.html One port could charge one car at a time. One port has one or more connectors. One station has one or more ports. */
 	export interface GoogleMapsPlacesV1EVChargeOptionsFormProperties {
 
-		/** Number of connectors at this station. However, because some ports can have multiple connectors but only be able to charge one car at a time (e.g.) the number of connectors may be greater than the total number of cars which can charge simultaneously. */
+		/**
+		 * Number of connectors at this station. However, because some ports can have multiple connectors but only be able to charge one car at a time (e.g.) the number of connectors may be greater than the total number of cars which can charge simultaneously.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectorCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleMapsPlacesV1EVChargeOptionsFormGroup() {
@@ -141,16 +165,28 @@ export namespace MyNS {
 		/** The timestamp when the connector availability information in this aggregation was last updated. */
 		availabilityLastUpdateTime?: string | null;
 
-		/** Number of connectors in this aggregation that are currently available. */
+		/**
+		 * Number of connectors in this aggregation that are currently available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableCount?: number | null;
 
-		/** Number of connectors in this aggregation. */
+		/**
+		 * Number of connectors in this aggregation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** The static max charging rate in kw of each connector in the aggregation. */
+		/**
+		 * The static max charging rate in kw of each connector in the aggregation.
+		 * Type: double
+		 */
 		maxChargeRateKw?: number | null;
 
-		/** Number of connectors in this aggregation that are currently out of service. */
+		/**
+		 * Number of connectors in this aggregation that are currently out of service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outOfServiceCount?: number | null;
 
 		/** The connector type of this aggregation. */
@@ -163,16 +199,28 @@ export namespace MyNS {
 		/** The timestamp when the connector availability information in this aggregation was last updated. */
 		availabilityLastUpdateTime: FormControl<string | null | undefined>,
 
-		/** Number of connectors in this aggregation that are currently available. */
+		/**
+		 * Number of connectors in this aggregation that are currently available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableCount: FormControl<number | null | undefined>,
 
-		/** Number of connectors in this aggregation. */
+		/**
+		 * Number of connectors in this aggregation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The static max charging rate in kw of each connector in the aggregation. */
+		/**
+		 * The static max charging rate in kw of each connector in the aggregation.
+		 * Type: double
+		 */
 		maxChargeRateKw: FormControl<number | null | undefined>,
 
-		/** Number of connectors in this aggregation that are currently out of service. */
+		/**
+		 * Number of connectors in this aggregation that are currently out of service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outOfServiceCount: FormControl<number | null | undefined>,
 
 		/** The connector type of this aggregation. */
@@ -247,7 +295,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -260,7 +311,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -284,26 +338,38 @@ export namespace MyNS {
 		/** This photo's authors. */
 		authorAttributions?: Array<GoogleMapsPlacesV1AuthorAttribution>;
 
-		/** The maximum available height, in pixels. */
+		/**
+		 * The maximum available height, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPx?: number | null;
 
 		/** Identifier. A reference representing this place photo which may be used to look up this place photo again (also called the API "resource" name: `places/{place_id}/photos/{photo}`). */
 		name?: string | null;
 
-		/** The maximum available width, in pixels. */
+		/**
+		 * The maximum available width, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPx?: number | null;
 	}
 
 	/** Information about a photo of a place. */
 	export interface GoogleMapsPlacesV1PhotoFormProperties {
 
-		/** The maximum available height, in pixels. */
+		/**
+		 * The maximum available height, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPx: FormControl<number | null | undefined>,
 
 		/** Identifier. A reference representing this place photo which may be used to look up this place photo again (also called the API "resource" name: `places/{place_id}/photos/{photo}`). */
 		name: FormControl<string | null | undefined>,
 
-		/** The maximum available width, in pixels. */
+		/**
+		 * The maximum available width, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPx: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleMapsPlacesV1PhotoFormGroup() {
@@ -458,7 +524,10 @@ export namespace MyNS {
 		/** Localized variant of a text in a particular language. */
 		primaryTypeDisplayName?: GoogleTypeLocalizedText;
 
-		/** A rating between 1.0 and 5.0, based on user reviews of this place. */
+		/**
+		 * A rating between 1.0 and 5.0, based on user reviews of this place.
+		 * Type: double
+		 */
 		rating?: number | null;
 
 		/** Information about business hour of the place. */
@@ -518,10 +587,16 @@ export namespace MyNS {
 		/** A set of type tags for this result. For example, "political" and "locality". For the complete list of possible values, see Table A and Table B at https://developers.google.com/maps/documentation/places/web-service/place-types */
 		types?: Array<string>;
 
-		/** The total number of reviews (with or without text) for this place. */
+		/**
+		 * The total number of reviews (with or without text) for this place.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userRatingCount?: number | null;
 
-		/** Number of minutes this place's timezone is currently offset from UTC. This is expressed in minutes to support timezones that are offset by fractions of an hour, e.g. X hours and 15 minutes. */
+		/**
+		 * Number of minutes this place's timezone is currently offset from UTC. This is expressed in minutes to support timezones that are offset by fractions of an hour, e.g. X hours and 15 minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		utcOffsetMinutes?: number | null;
 
 		/** A latitude-longitude viewport, represented as two diagonally opposite `low` and `high` points. A viewport is considered a closed region, i.e. it includes its boundary. The latitude bounds must range between -90 to 90 degrees inclusive, and the longitude bounds must range between -180 to 180 degrees inclusive. Various cases include: - If `low` = `high`, the viewport consists of that single point. - If `low.longitude` > `high.longitude`, the longitude range is inverted (the viewport crosses the 180 degree longitude line). - If `low.longitude` = -180 degrees and `high.longitude` = 180 degrees, the viewport includes all longitudes. - If `low.longitude` = 180 degrees and `high.longitude` = -180 degrees, the longitude range is empty. - If `low.latitude` > `high.latitude`, the latitude range is empty. Both `low` and `high` must be populated, and the represented box cannot be empty (as specified by the definitions above). An empty viewport will result in an error. For example, this viewport fully encloses New York City: { "low": { "latitude": 40.477398, "longitude": -74.259087 }, "high": { "latitude": 40.91618, "longitude": -73.70018 } } */
@@ -600,7 +675,10 @@ export namespace MyNS {
 		/** The primary type of the given result. This type must one of the Places API supported types. For example, "restaurant", "cafe", "airport", etc. A place can only have a single primary type. For the complete list of possible values, see Table A and Table B at https://developers.google.com/maps/documentation/places/web-service/place-types */
 		primaryType: FormControl<string | null | undefined>,
 
-		/** A rating between 1.0 and 5.0, based on user reviews of this place. */
+		/**
+		 * A rating between 1.0 and 5.0, based on user reviews of this place.
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
 
 		/** Specifies if the place supports reservations. */
@@ -645,10 +723,16 @@ export namespace MyNS {
 		/** Specifies if the business supports takeout. */
 		takeout: FormControl<boolean | null | undefined>,
 
-		/** The total number of reviews (with or without text) for this place. */
+		/**
+		 * The total number of reviews (with or without text) for this place.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		userRatingCount: FormControl<number | null | undefined>,
 
-		/** Number of minutes this place's timezone is currently offset from UTC. This is expressed in minutes to support timezones that are offset by fractions of an hour, e.g. X hours and 15 minutes. */
+		/**
+		 * Number of minutes this place's timezone is currently offset from UTC. This is expressed in minutes to support timezones that are offset by fractions of an hour, e.g. X hours and 15 minutes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		utcOffsetMinutes: FormControl<number | null | undefined>,
 
 		/** The authoritative website for this place, e.g. a business' homepage. Note that for places that are part of a chain (e.g. an IKEA store), this will usually be the website for the individual store, not the overall chain. */
@@ -874,13 +958,22 @@ export namespace MyNS {
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 		date?: GoogleTypeDate;
 
-		/** A day of the week, as an integer in the range 0-6. 0 is Sunday, 1 is Monday, etc. */
+		/**
+		 * A day of the week, as an integer in the range 0-6. 0 is Sunday, 1 is Monday, etc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** The hour in 2 digits. Ranges from 00 to 23. */
+		/**
+		 * The hour in 2 digits. Ranges from 00 to 23.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour?: number | null;
 
-		/** The minute in 2 digits. Ranges from 00 to 59. */
+		/**
+		 * The minute in 2 digits. Ranges from 00 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute?: number | null;
 
 		/** Whether or not this endpoint was truncated. Truncation occurs when the real hours are outside the times we are willing to return hours between, so we truncate the hours back to these boundaries. This ensures that at most 24 * 7 hours from midnight of the day of the request are returned. */
@@ -890,13 +983,22 @@ export namespace MyNS {
 	/** Status changing points. */
 	export interface GoogleMapsPlacesV1PlaceOpeningHoursPeriodPointFormProperties {
 
-		/** A day of the week, as an integer in the range 0-6. 0 is Sunday, 1 is Monday, etc. */
+		/**
+		 * A day of the week, as an integer in the range 0-6. 0 is Sunday, 1 is Monday, etc.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** The hour in 2 digits. Ranges from 00 to 23. */
+		/**
+		 * The hour in 2 digits. Ranges from 00 to 23.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour: FormControl<number | null | undefined>,
 
-		/** The minute in 2 digits. Ranges from 00 to 59. */
+		/**
+		 * The minute in 2 digits. Ranges from 00 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minute: FormControl<number | null | undefined>,
 
 		/** Whether or not this endpoint was truncated. Truncation occurs when the real hours are outside the times we are willing to return hours between, so we truncate the hours back to these boundaries. This ensures that at most 24 * 7 hours from midnight of the day of the request are returned. */
@@ -916,26 +1018,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDate {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateFormGroup() {
@@ -1145,7 +1265,10 @@ export namespace MyNS {
 		/** Timestamp for the review. */
 		publishTime?: string | null;
 
-		/** A number between 1.0 and 5.0, also called the number of stars. */
+		/**
+		 * A number between 1.0 and 5.0, also called the number of stars.
+		 * Type: double
+		 */
 		rating?: number | null;
 
 		/** A string of formatted recent time, expressing the review time relative to the current time in a form appropriate for the language and country. */
@@ -1164,7 +1287,10 @@ export namespace MyNS {
 		/** Timestamp for the review. */
 		publishTime: FormControl<string | null | undefined>,
 
-		/** A number between 1.0 and 5.0, also called the number of stars. */
+		/**
+		 * A number between 1.0 and 5.0, also called the number of stars.
+		 * Type: double
+		 */
 		rating: FormControl<number | null | undefined>,
 
 		/** A string of formatted recent time, expressing the review time relative to the current time in a form appropriate for the language and country. */
@@ -1230,7 +1356,10 @@ export namespace MyNS {
 		/** The region to search. */
 		locationRestriction?: GoogleMapsPlacesV1SearchNearbyRequestLocationRestriction;
 
-		/** Maximum number of results to return. It must be between 1 and 20 (default), inclusively. If the number is unset, it falls back to the upper limit. If the number is set to negative or exceeds the upper limit, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * Maximum number of results to return. It must be between 1 and 20 (default), inclusively. If the number is unset, it falls back to the upper limit. If the number is set to negative or exceeds the upper limit, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResultCount?: number | null;
 
 		/** How results will be ranked in the response. */
@@ -1246,7 +1375,10 @@ export namespace MyNS {
 		/** Place details will be displayed with the preferred language if available. If the language code is unspecified or unrecognized, place details of any language may be returned, with a preference for English if such details exist. Current list of supported languages: https://developers.google.com/maps/faq#languagesupport. */
 		languageCode: FormControl<string | null | undefined>,
 
-		/** Maximum number of results to return. It must be between 1 and 20 (default), inclusively. If the number is unset, it falls back to the upper limit. If the number is set to negative or exceeds the upper limit, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * Maximum number of results to return. It must be between 1 and 20 (default), inclusively. If the number is unset, it falls back to the upper limit. If the number is set to negative or exceeds the upper limit, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResultCount: FormControl<number | null | undefined>,
 
 		/** How results will be ranked in the response. */
@@ -1317,10 +1449,16 @@ export namespace MyNS {
 		/** The region to search. This location serves as a restriction which means results outside given location will not be returned. */
 		locationRestriction?: GoogleMapsPlacesV1SearchTextRequestLocationRestriction;
 
-		/** Maximum number of results to return. It must be between 1 and 20, inclusively. The default is 20. If the number is unset, it falls back to the upper limit. If the number is set to negative or exceeds the upper limit, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * Maximum number of results to return. It must be between 1 and 20, inclusively. The default is 20. If the number is unset, it falls back to the upper limit. If the number is set to negative or exceeds the upper limit, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResultCount?: number | null;
 
-		/** Filter out results whose average user rating is strictly less than this limit. A valid value must be a float between 0 and 5 (inclusively) at a 0.5 cadence i.e. [0, 0.5, 1.0, ... , 5.0] inclusively. The input rating will round up to the nearest 0.5(ceiling). For instance, a rating of 0.6 will eliminate all results with a less than 1.0 rating. */
+		/**
+		 * Filter out results whose average user rating is strictly less than this limit. A valid value must be a float between 0 and 5 (inclusively) at a 0.5 cadence i.e. [0, 0.5, 1.0, ... , 5.0] inclusively. The input rating will round up to the nearest 0.5(ceiling). For instance, a rating of 0.6 will eliminate all results with a less than 1.0 rating.
+		 * Type: double
+		 */
 		minRating?: number | null;
 
 		/** Used to restrict the search to places that are currently open. The default is false. */
@@ -1351,10 +1489,16 @@ export namespace MyNS {
 		/** Place details will be displayed with the preferred language if available. If the language code is unspecified or unrecognized, place details of any language may be returned, with a preference for English if such details exist. Current list of supported languages: https://developers.google.com/maps/faq#languagesupport. */
 		languageCode: FormControl<string | null | undefined>,
 
-		/** Maximum number of results to return. It must be between 1 and 20, inclusively. The default is 20. If the number is unset, it falls back to the upper limit. If the number is set to negative or exceeds the upper limit, an INVALID_ARGUMENT error is returned. */
+		/**
+		 * Maximum number of results to return. It must be between 1 and 20, inclusively. The default is 20. If the number is unset, it falls back to the upper limit. If the number is set to negative or exceeds the upper limit, an INVALID_ARGUMENT error is returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResultCount: FormControl<number | null | undefined>,
 
-		/** Filter out results whose average user rating is strictly less than this limit. A valid value must be a float between 0 and 5 (inclusively) at a 0.5 cadence i.e. [0, 0.5, 1.0, ... , 5.0] inclusively. The input rating will round up to the nearest 0.5(ceiling). For instance, a rating of 0.6 will eliminate all results with a less than 1.0 rating. */
+		/**
+		 * Filter out results whose average user rating is strictly less than this limit. A valid value must be a float between 0 and 5 (inclusively) at a 0.5 cadence i.e. [0, 0.5, 1.0, ... , 5.0] inclusively. The input rating will round up to the nearest 0.5(ceiling). For instance, a rating of 0.6 will eliminate all results with a less than 1.0 rating.
+		 * Type: double
+		 */
 		minRating: FormControl<number | null | undefined>,
 
 		/** Used to restrict the search to places that are currently open. The default is false. */
@@ -1471,7 +1615,9 @@ export namespace MyNS {
 		 * Get v1/{name}
 		 * @param {string} name Required. The resource name of a photo media in the format: `places/{place_id}/photos/{photo_reference}/media`. The resource name of a photo as returned in a Place object's `photos.name` field comes with the format `places/{place_id}/photos/{photo_reference}`. You need to append `/media` at the end of the photo resource to get the photo media resource name.
 		 * @param {number} maxHeightPx Optional. Specifies the maximum desired height, in pixels, of the image. If the image is smaller than the values specified, the original image will be returned. If the image is larger in either dimension, it will be scaled to match the smaller of the two dimensions, restricted to its original aspect ratio. Both the max_height_px and max_width_px properties accept an integer between 1 and 4800, inclusively. If the value is not within the allowed range, an INVALID_ARGUMENT error will be returned. At least one of max_height_px or max_width_px needs to be specified. If neither max_height_px nor max_width_px is specified, an INVALID_ARGUMENT error will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxWidthPx Optional. Specifies the maximum desired width, in pixels, of the image. If the image is smaller than the values specified, the original image will be returned. If the image is larger in either dimension, it will be scaled to match the smaller of the two dimensions, restricted to its original aspect ratio. Both the max_height_px and max_width_px properties accept an integer between 1 and 4800, inclusively. If the value is not within the allowed range, an INVALID_ARGUMENT error will be returned. At least one of max_height_px or max_width_px needs to be specified. If neither max_height_px nor max_width_px is specified, an INVALID_ARGUMENT error will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} skipHttpRedirect Optional. If set, skip the default HTTP redirect behavior and render a text format (for example, in JSON format for HTTP use case) response. If not set, an HTTP redirect will be issued to redirect the call to the image media. This option is ignored for non-HTTP requests.
 		 * @return {GoogleMapsPlacesV1PhotoMedia} Successful response
 		 */

@@ -10996,7 +10996,9 @@ export namespace MyNS {
 		 * Activates an evaluation form in the specified Amazon Connect instance. After the evaluation form is activated, it is available to start new evaluations based on the form.
 		 * Post evaluation-forms/{InstanceId}/{EvaluationFormId}/activate
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EvaluationFormId The unique identifier for the evaluation form.
+		 *     Min length: 1    Max length: 500
 		 * @return {ActivateEvaluationFormResponse} Success
 		 */
 		ActivateEvaluationForm(InstanceId: string, EvaluationFormId: string, requestBody: ActivateEvaluationFormPostBody): Observable<ActivateEvaluationFormResponse> {
@@ -11007,6 +11009,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Associates an approved origin to an Amazon Connect instance.</p>
 		 * Put instance/{InstanceId}/approved-origin
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		AssociateApprovedOrigin(InstanceId: string, requestBody: AssociateApprovedOriginPutBody): Observable<HttpResponse<string>> {
@@ -11017,6 +11020,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Allows the specified Amazon Connect instance to access the specified Amazon Lex or Amazon Lex V2 bot.</p>
 		 * Put instance/{InstanceId}/bot
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		AssociateBot(InstanceId: string, requestBody: AssociateBotPutBody): Observable<HttpResponse<string>> {
@@ -11027,6 +11031,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Revokes authorization from the specified instance to access the specified Amazon Lex or Amazon Lex V2 bot. </p>
 		 * Post instance/{InstanceId}/bot
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		DisassociateBot(InstanceId: string, requestBody: DisassociateBotPostBody): Observable<HttpResponse<string>> {
@@ -11037,6 +11042,7 @@ export namespace MyNS {
 		 * Associates an existing vocabulary as the default. Contact Lens for Amazon Connect uses the vocabulary in post-call and real-time analysis sessions for the given language.
 		 * Put default-vocabulary/{InstanceId}/{LanguageCode}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {VocabularyLanguageCode} LanguageCode The language code of the vocabulary entries. For a list of languages and their corresponding language codes, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/transcribe-whatis.html">What is Amazon Transcribe?</a> 
 		 * @return {AssociateDefaultVocabularyResponse} Success
 		 */
@@ -11048,6 +11054,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Associates a storage resource type for the first time. You can only associate one type of storage configuration in a single call. This means, for example, that you can't define an instance with multiple S3 buckets for storing chat transcripts.</p> <p>This API does not create a resource that doesn't exist. It only associates it to the instance. Ensure that the resource being specified in the storage configuration, like an S3 bucket, exists when being used for association.</p>
 		 * Put instance/{InstanceId}/storage-config
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {AssociateInstanceStorageConfigResponse} Success
 		 */
 		AssociateInstanceStorageConfig(InstanceId: string, requestBody: AssociateInstanceStorageConfigPutBody): Observable<AssociateInstanceStorageConfigResponse> {
@@ -11058,6 +11065,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Allows the specified Amazon Connect instance to access the specified Lambda function.</p>
 		 * Put instance/{InstanceId}/lambda-function
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		AssociateLambdaFunction(InstanceId: string, requestBody: AssociateLambdaFunctionPutBody): Observable<HttpResponse<string>> {
@@ -11068,6 +11076,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Allows the specified Amazon Connect instance to access the specified Amazon Lex V1 bot. This API only supports the association of Amazon Lex V1 bots.</p>
 		 * Put instance/{InstanceId}/lex-bot
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		AssociateLexBot(InstanceId: string, requestBody: AssociateLexBotPutBody): Observable<HttpResponse<string>> {
@@ -11088,6 +11097,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Associates a set of quick connects with a queue.</p>
 		 * Post queues/{InstanceId}/{QueueId}/associate-quick-connects
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QueueId The identifier for the queue.
 		 * @return {void} Success
 		 */
@@ -11099,6 +11109,7 @@ export namespace MyNS {
 		 * Associates a set of queues with a routing profile.
 		 * Post routing-profiles/{InstanceId}/{RoutingProfileId}/associate-queues
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RoutingProfileId The identifier of the routing profile.
 		 * @return {void} Success
 		 */
@@ -11110,6 +11121,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Associates a security key to the instance.</p>
 		 * Put instance/{InstanceId}/security-key
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {AssociateSecurityKeyResponse} Success
 		 */
 		AssociateSecurityKey(InstanceId: string, requestBody: AssociateSecurityKeyPutBody): Observable<AssociateSecurityKeyResponse> {
@@ -11129,6 +11141,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Creates an agent status for the specified Amazon Connect instance.</p>
 		 * Put agent-status/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateAgentStatusResponse} Success
 		 */
 		CreateAgentStatus(InstanceId: string, requestBody: CreateAgentStatusPutBody): Observable<CreateAgentStatusResponse> {
@@ -11139,9 +11152,12 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Lists agent statuses.</p>
 		 * Get agent-status/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {Array<AgentStatusType>} AgentStatusTypes Available agent status types.
+		 *     Maximum items: 3
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAgentStatusResponse} Success
@@ -11154,6 +11170,7 @@ export namespace MyNS {
 		 * <p>Creates a flow for the specified Amazon Connect instance.</p> <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
 		 * Put contact-flows/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateContactFlowResponse} Success
 		 */
 		CreateContactFlow(InstanceId: string, requestBody: CreateContactFlowPutBody): Observable<CreateContactFlowResponse> {
@@ -11164,6 +11181,7 @@ export namespace MyNS {
 		 * Creates a flow module for the specified Amazon Connect instance.
 		 * Put contact-flow-modules/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateContactFlowModuleResponse} Success
 		 */
 		CreateContactFlowModule(InstanceId: string, requestBody: CreateContactFlowModulePutBody): Observable<CreateContactFlowModuleResponse> {
@@ -11174,6 +11192,7 @@ export namespace MyNS {
 		 * Creates an evaluation form in the specified Amazon Connect instance. The form can be used to define questions related to agent performance, and create sections to organize such questions. Question and section identifiers cannot be duplicated within the same evaluation form.
 		 * Put evaluation-forms/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateEvaluationFormResponse} Success
 		 */
 		CreateEvaluationForm(InstanceId: string, requestBody: CreateEvaluationFormPutBody): Observable<CreateEvaluationFormResponse> {
@@ -11184,7 +11203,9 @@ export namespace MyNS {
 		 * Lists evaluation forms in the specified Amazon Connect instance.
 		 * Get evaluation-forms/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -11198,6 +11219,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Creates hours of operation. </p>
 		 * Put hours-of-operations/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateHoursOfOperationResponse} Success
 		 */
 		CreateHoursOfOperation(InstanceId: string, requestBody: CreateHoursOfOperationPutBody): Observable<CreateHoursOfOperationResponse> {
@@ -11218,6 +11240,7 @@ export namespace MyNS {
 		 * Get instance
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 10
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInstancesResponse} Success
@@ -11230,6 +11253,7 @@ export namespace MyNS {
 		 * Creates an Amazon Web Services resource association with an Amazon Connect instance.
 		 * Put instance/{InstanceId}/integration-associations
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateIntegrationAssociationResponse} Success
 		 */
 		CreateIntegrationAssociation(InstanceId: string, requestBody: CreateIntegrationAssociationPutBody): Observable<CreateIntegrationAssociationResponse> {
@@ -11240,9 +11264,11 @@ export namespace MyNS {
 		 * Provides summary information about the Amazon Web Services resource associations for the specified Amazon Connect instance.
 		 * Get instance/{InstanceId}/integration-associations
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {IntegrationType} integrationType The integration type.
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListIntegrationAssociationsResponse} Success
@@ -11264,6 +11290,7 @@ export namespace MyNS {
 		 * Creates a prompt. For more information about prompts, such as supported file types and maximum length, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/prompts.html">Create prompts</a> in the <i>Amazon Connect Administrator's Guide</i>.
 		 * Put prompts/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreatePromptResponse} Success
 		 */
 		CreatePrompt(InstanceId: string, requestBody: CreatePromptPutBody): Observable<CreatePromptResponse> {
@@ -11274,6 +11301,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Creates a new queue for the specified Amazon Connect instance.</p> <important> <p>If the number being used in the input is claimed to a traffic distribution group, and you are calling this API using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a> request body parameter. However, if the number is claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.</p> <p>Only use the phone number ARN format that doesn't contain <code>instance</code> in the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>. This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> API.</p> </important>
 		 * Put queues/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateQueueResponse} Success
 		 */
 		CreateQueue(InstanceId: string, requestBody: CreateQueuePutBody): Observable<CreateQueueResponse> {
@@ -11284,6 +11312,7 @@ export namespace MyNS {
 		 * Creates a quick connect for the specified Amazon Connect instance.
 		 * Put quick-connects/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateQuickConnectResponse} Success
 		 */
 		CreateQuickConnect(InstanceId: string, requestBody: CreateQuickConnectPutBody): Observable<CreateQuickConnectResponse> {
@@ -11294,9 +11323,12 @@ export namespace MyNS {
 		 * Provides information about the quick connects for the specified Amazon Connect instance.
 		 * Get quick-connects/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {Array<QuickConnectType>} QuickConnectTypes The type of quick connect. In the Amazon Connect console, when you create a quick connect, you are prompted to assign one of the following types: Agent (USER), External (PHONE_NUMBER), or Queue (QUEUE).
+		 *     Maximum items: 3
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListQuickConnectsResponse} Success
@@ -11309,6 +11341,7 @@ export namespace MyNS {
 		 * Creates a new routing profile.
 		 * Put routing-profiles/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateRoutingProfileResponse} Success
 		 */
 		CreateRoutingProfile(InstanceId: string, requestBody: CreateRoutingProfilePutBody): Observable<CreateRoutingProfileResponse> {
@@ -11319,6 +11352,7 @@ export namespace MyNS {
 		 * <p>Creates a rule for the specified Amazon Connect instance.</p> <p>Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules Function language</a> to code conditions for the rule. </p>
 		 * Post rules/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateRuleResponse} Success
 		 */
 		CreateRule(InstanceId: string, requestBody: CreateRulePostBody): Observable<CreateRuleResponse> {
@@ -11329,9 +11363,11 @@ export namespace MyNS {
 		 * List all rules for the specified Amazon Connect instance.
 		 * Get rules/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {RulePublishStatus} publishStatus The publish status of the rule.
 		 * @param {EventSourceName} eventSourceName The name of the event source.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -11345,6 +11381,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Creates a security profile.</p>
 		 * Put security-profiles/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateSecurityProfileResponse} Success
 		 */
 		CreateSecurityProfile(InstanceId: string, requestBody: CreateSecurityProfilePutBody): Observable<CreateSecurityProfileResponse> {
@@ -11355,6 +11392,7 @@ export namespace MyNS {
 		 * Creates a new task template in the specified Amazon Connect instance.
 		 * Put instance/{InstanceId}/task/template
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateTaskTemplateResponse} Success
 		 */
 		CreateTaskTemplate(InstanceId: string, requestBody: CreateTaskTemplatePutBody): Observable<CreateTaskTemplateResponse> {
@@ -11365,10 +11403,13 @@ export namespace MyNS {
 		 * Lists task templates for the specified Amazon Connect instance.
 		 * Get instance/{InstanceId}/task/template
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important> <p>It is not expected that you set this because the value returned in the previous response is always null.</p> </important>
 		 * @param {number} maxResults <p>The maximum number of results to return per page.</p> <important> <p>It is not expected that you set this.</p> </important>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {TaskTemplateStatus} status Marks a template as <code>ACTIVE</code> or <code>INACTIVE</code> for a task to refer to it. Tasks can only be created from <code>ACTIVE</code> templates. If a template is marked as <code>INACTIVE</code>, then a task that refers to this template cannot be created.
 		 * @param {string} name The name of the task template.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTaskTemplatesResponse} Success
@@ -11390,7 +11431,9 @@ export namespace MyNS {
 		 * Creates a use case for an integration association.
 		 * Put instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} IntegrationAssociationId The identifier for the integration association.
+		 *     Min length: 1    Max length: 200
 		 * @return {CreateUseCaseResponse} Success
 		 */
 		CreateUseCase(InstanceId: string, IntegrationAssociationId: string, requestBody: CreateUseCasePutBody): Observable<CreateUseCaseResponse> {
@@ -11401,9 +11444,12 @@ export namespace MyNS {
 		 * Lists the use cases for the integration association.
 		 * Get instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} IntegrationAssociationId The identifier for the integration association.
+		 *     Min length: 1    Max length: 200
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUseCasesResponse} Success
@@ -11416,6 +11462,7 @@ export namespace MyNS {
 		 * <p>Creates a user account for the specified Amazon Connect instance.</p> <p>For information about how to create user accounts using the Amazon Connect console, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/user-management.html">Add Users</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 		 * Put users/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateUserResponse} Success
 		 */
 		CreateUser(InstanceId: string, requestBody: CreateUserPutBody): Observable<CreateUserResponse> {
@@ -11426,6 +11473,7 @@ export namespace MyNS {
 		 * Creates a new user hierarchy group.
 		 * Put user-hierarchy-groups/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateUserHierarchyGroupResponse} Success
 		 */
 		CreateUserHierarchyGroup(InstanceId: string, requestBody: CreateUserHierarchyGroupPutBody): Observable<CreateUserHierarchyGroupResponse> {
@@ -11436,6 +11484,7 @@ export namespace MyNS {
 		 * Creates a custom vocabulary associated with your Amazon Connect instance. You can set a custom vocabulary to be your default vocabulary for a given language. Contact Lens for Amazon Connect uses the default vocabulary in post-call and real-time contact analysis sessions for that language.
 		 * Post vocabulary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateVocabularyResponse} Success
 		 */
 		CreateVocabulary(InstanceId: string, requestBody: CreateVocabularyPostBody): Observable<CreateVocabularyResponse> {
@@ -11446,7 +11495,9 @@ export namespace MyNS {
 		 * Deactivates an evaluation form in the specified Amazon Connect instance. After a form is deactivated, it is no longer available for users to start new evaluations based on the form.
 		 * Post evaluation-forms/{InstanceId}/{EvaluationFormId}/deactivate
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EvaluationFormId The unique identifier for the evaluation form.
+		 *     Min length: 1    Max length: 500
 		 * @return {DeactivateEvaluationFormResponse} Success
 		 */
 		DeactivateEvaluationForm(InstanceId: string, EvaluationFormId: string, requestBody: DeactivateEvaluationFormPostBody): Observable<DeactivateEvaluationFormResponse> {
@@ -11457,7 +11508,9 @@ export namespace MyNS {
 		 * Deletes a contact evaluation in the specified Amazon Connect instance.
 		 * Delete contact-evaluations/{InstanceId}/{EvaluationId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EvaluationId A unique identifier for the contact evaluation.
+		 *     Min length: 1    Max length: 500
 		 * @return {void} Success
 		 */
 		DeleteContactEvaluation(InstanceId: string, EvaluationId: string): Observable<HttpResponse<string>> {
@@ -11468,7 +11521,9 @@ export namespace MyNS {
 		 * Describes a contact evaluation in the specified Amazon Connect instance.
 		 * Get contact-evaluations/{InstanceId}/{EvaluationId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EvaluationId A unique identifier for the contact evaluation.
+		 *     Min length: 1    Max length: 500
 		 * @return {DescribeContactEvaluationResponse} Success
 		 */
 		DescribeContactEvaluation(InstanceId: string, EvaluationId: string): Observable<DescribeContactEvaluationResponse> {
@@ -11479,7 +11534,9 @@ export namespace MyNS {
 		 * Updates details about a contact evaluation in the specified Amazon Connect instance. A contact evaluation must be in draft state. Answers included in the request are merged with existing answers for the given evaluation. An answer or note can be deleted by passing an empty object (<code>{}</code>) to the question identifier.
 		 * Post contact-evaluations/{InstanceId}/{EvaluationId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EvaluationId A unique identifier for the contact evaluation.
+		 *     Min length: 1    Max length: 500
 		 * @return {UpdateContactEvaluationResponse} Success
 		 */
 		UpdateContactEvaluation(InstanceId: string, EvaluationId: string, requestBody: UpdateContactEvaluationPostBody): Observable<UpdateContactEvaluationResponse> {
@@ -11490,7 +11547,9 @@ export namespace MyNS {
 		 * Deletes a flow for the specified Amazon Connect instance.
 		 * Delete contact-flows/{InstanceId}/{ContactFlowId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactFlowId The identifier of the flow.
+		 *     Max length: 500
 		 * @return {DeleteContactFlowResponse} Success
 		 */
 		DeleteContactFlow(InstanceId: string, ContactFlowId: string): Observable<DeleteContactFlowResponse> {
@@ -11501,7 +11560,9 @@ export namespace MyNS {
 		 * <p>Describes the specified flow.</p> <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
 		 * Get contact-flows/{InstanceId}/{ContactFlowId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactFlowId The identifier of the flow.
+		 *     Max length: 500
 		 * @return {DescribeContactFlowResponse} Success
 		 */
 		DescribeContactFlow(InstanceId: string, ContactFlowId: string): Observable<DescribeContactFlowResponse> {
@@ -11512,7 +11573,9 @@ export namespace MyNS {
 		 * Deletes the specified flow module.
 		 * Delete contact-flow-modules/{InstanceId}/{ContactFlowModuleId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactFlowModuleId The identifier of the flow module.
+		 *     Min length: 1    Max length: 256
 		 * @return {DeleteContactFlowModuleResponse} Success
 		 */
 		DeleteContactFlowModule(InstanceId: string, ContactFlowModuleId: string): Observable<DeleteContactFlowModuleResponse> {
@@ -11523,7 +11586,9 @@ export namespace MyNS {
 		 * Describes the specified flow module.
 		 * Get contact-flow-modules/{InstanceId}/{ContactFlowModuleId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactFlowModuleId The identifier of the flow module.
+		 *     Min length: 1    Max length: 256
 		 * @return {DescribeContactFlowModuleResponse} Success
 		 */
 		DescribeContactFlowModule(InstanceId: string, ContactFlowModuleId: string): Observable<DescribeContactFlowModuleResponse> {
@@ -11534,8 +11599,11 @@ export namespace MyNS {
 		 * <p>Deletes an evaluation form in the specified Amazon Connect instance. </p> <ul> <li> <p>If the version property is provided, only the specified version of the evaluation form is deleted.</p> </li> <li> <p>If no version is provided, then the full form (all versions) is deleted.</p> </li> </ul>
 		 * Delete evaluation-forms/{InstanceId}/{EvaluationFormId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EvaluationFormId The unique identifier for the evaluation form.
+		 *     Min length: 1    Max length: 500
 		 * @param {number} version The unique identifier for the evaluation form.
+		 *     Minimum: 1
 		 * @return {void} Success
 		 */
 		DeleteEvaluationForm(InstanceId: string, EvaluationFormId: string, version: number | null | undefined): Observable<HttpResponse<string>> {
@@ -11546,8 +11614,11 @@ export namespace MyNS {
 		 * Describes an evaluation form in the specified Amazon Connect instance. If the version property is not provided, the latest version of the evaluation form is described.
 		 * Get evaluation-forms/{InstanceId}/{EvaluationFormId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EvaluationFormId A unique identifier for the contact evaluation.
+		 *     Min length: 1    Max length: 500
 		 * @param {number} version A version of the evaluation form.
+		 *     Minimum: 1
 		 * @return {DescribeEvaluationFormResponse} Success
 		 */
 		DescribeEvaluationForm(InstanceId: string, EvaluationFormId: string, version: number | null | undefined): Observable<DescribeEvaluationFormResponse> {
@@ -11558,7 +11629,9 @@ export namespace MyNS {
 		 * <p>Updates details about a specific evaluation form version in the specified Amazon Connect instance. Question and section identifiers cannot be duplicated within the same evaluation form.</p> <p>This operation does not support partial updates. Instead it does a full update of evaluation form content.</p>
 		 * Put evaluation-forms/{InstanceId}/{EvaluationFormId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EvaluationFormId The unique identifier for the evaluation form.
+		 *     Min length: 1    Max length: 500
 		 * @return {UpdateEvaluationFormResponse} Success
 		 */
 		UpdateEvaluationForm(InstanceId: string, EvaluationFormId: string, requestBody: UpdateEvaluationFormPutBody): Observable<UpdateEvaluationFormResponse> {
@@ -11569,6 +11642,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Deletes an hours of operation.</p>
 		 * Delete hours-of-operations/{InstanceId}/{HoursOfOperationId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} HoursOfOperationId The identifier for the hours of operation.
 		 * @return {void} Success
 		 */
@@ -11580,6 +11654,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Describes the hours of operation.</p>
 		 * Get hours-of-operations/{InstanceId}/{HoursOfOperationId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} HoursOfOperationId The identifier for the hours of operation.
 		 * @return {DescribeHoursOfOperationResponse} Success
 		 */
@@ -11591,6 +11666,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Updates the hours of operation.</p>
 		 * Post hours-of-operations/{InstanceId}/{HoursOfOperationId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} HoursOfOperationId The identifier of the hours of operation.
 		 * @return {void} Success
 		 */
@@ -11602,6 +11678,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Deletes the Amazon Connect instance.</p> <p>Amazon Connect enforces a limit on the total number of instances that you can create or delete in 30 days. If you exceed this limit, you will get an error message indicating there has been an excessive number of attempts at creating or deleting instances. You must wait 30 days before you can restart creating and deleting instances in your account.</p>
 		 * Delete instance/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		DeleteInstance(InstanceId: string): Observable<HttpResponse<string>> {
@@ -11612,6 +11689,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Returns the current state of the specified instance identifier. It tracks the instance while it is being created and returns an error status, if applicable. </p> <p>If an instance is not created successfully, the instance status reason field returns details relevant to the reason. The instance in a failed state is returned only for 24 hours after the CreateInstance API was invoked.</p>
 		 * Get instance/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribeInstanceResponse} Success
 		 */
 		DescribeInstance(InstanceId: string): Observable<DescribeInstanceResponse> {
@@ -11622,7 +11700,9 @@ export namespace MyNS {
 		 * Deletes an Amazon Web Services resource association from an Amazon Connect instance. The association must not have any use cases associated with it.
 		 * Delete instance/{InstanceId}/integration-associations/{IntegrationAssociationId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} IntegrationAssociationId The identifier for the integration association.
+		 *     Min length: 1    Max length: 200
 		 * @return {void} Success
 		 */
 		DeleteIntegrationAssociation(InstanceId: string, IntegrationAssociationId: string): Observable<HttpResponse<string>> {
@@ -11633,7 +11713,9 @@ export namespace MyNS {
 		 * Deletes a prompt.
 		 * Delete prompts/{InstanceId}/{PromptId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} PromptId A unique identifier for the prompt.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} Success
 		 */
 		DeletePrompt(InstanceId: string, PromptId: string): Observable<HttpResponse<string>> {
@@ -11644,7 +11726,9 @@ export namespace MyNS {
 		 * Describes the prompt.
 		 * Get prompts/{InstanceId}/{PromptId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} PromptId A unique identifier for the prompt.
+		 *     Min length: 1    Max length: 256
 		 * @return {DescribePromptResponse} Success
 		 */
 		DescribePrompt(InstanceId: string, PromptId: string): Observable<DescribePromptResponse> {
@@ -11655,7 +11739,9 @@ export namespace MyNS {
 		 * Updates a prompt.
 		 * Post prompts/{InstanceId}/{PromptId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} PromptId A unique identifier for the prompt.
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdatePromptResponse} Success
 		 */
 		UpdatePrompt(InstanceId: string, PromptId: string, requestBody: UpdatePromptPostBody): Observable<UpdatePromptResponse> {
@@ -11666,6 +11752,7 @@ export namespace MyNS {
 		 * Deletes a queue.
 		 * Delete queues/{InstanceId}/{QueueId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QueueId The identifier for the queue.
 		 * @return {void} Success
 		 */
@@ -11677,6 +11764,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Describes the specified queue.</p>
 		 * Get queues/{InstanceId}/{QueueId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QueueId The identifier for the queue.
 		 * @return {DescribeQueueResponse} Success
 		 */
@@ -11688,6 +11776,7 @@ export namespace MyNS {
 		 * Deletes a quick connect.
 		 * Delete quick-connects/{InstanceId}/{QuickConnectId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QuickConnectId The identifier for the quick connect.
 		 * @return {void} Success
 		 */
@@ -11699,6 +11788,7 @@ export namespace MyNS {
 		 * Describes the quick connect.
 		 * Get quick-connects/{InstanceId}/{QuickConnectId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QuickConnectId The identifier for the quick connect.
 		 * @return {DescribeQuickConnectResponse} Success
 		 */
@@ -11710,6 +11800,7 @@ export namespace MyNS {
 		 * Deletes a routing profile.
 		 * Delete routing-profiles/{InstanceId}/{RoutingProfileId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RoutingProfileId The identifier of the routing profile.
 		 * @return {void} Success
 		 */
@@ -11721,6 +11812,7 @@ export namespace MyNS {
 		 * Describes the specified routing profile.
 		 * Get routing-profiles/{InstanceId}/{RoutingProfileId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RoutingProfileId The identifier of the routing profile.
 		 * @return {DescribeRoutingProfileResponse} Success
 		 */
@@ -11732,7 +11824,9 @@ export namespace MyNS {
 		 * Deletes a rule for the specified Amazon Connect instance.
 		 * Delete rules/{InstanceId}/{RuleId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RuleId A unique identifier for the rule.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} Success
 		 */
 		DeleteRule(InstanceId: string, RuleId: string): Observable<HttpResponse<string>> {
@@ -11743,7 +11837,9 @@ export namespace MyNS {
 		 * Describes a rule for the specified Amazon Connect instance.
 		 * Get rules/{InstanceId}/{RuleId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RuleId A unique identifier for the rule.
+		 *     Min length: 1    Max length: 256
 		 * @return {DescribeRuleResponse} Success
 		 */
 		DescribeRule(InstanceId: string, RuleId: string): Observable<DescribeRuleResponse> {
@@ -11754,7 +11850,9 @@ export namespace MyNS {
 		 * <p>Updates a rule for the specified Amazon Connect instance.</p> <p>Use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/connect-rules-language.html">Rules Function language</a> to code conditions for the rule. </p>
 		 * Put rules/{InstanceId}/{RuleId}
 		 * @param {string} RuleId A unique identifier for the rule.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		UpdateRule(RuleId: string, InstanceId: string, requestBody: UpdateRulePutBody): Observable<HttpResponse<string>> {
@@ -11765,6 +11863,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Deletes a security profile.</p>
 		 * Delete security-profiles/{InstanceId}/{SecurityProfileId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} SecurityProfileId The identifier for the security profle.
 		 * @return {void} Success
 		 */
@@ -11777,6 +11876,7 @@ export namespace MyNS {
 		 * Get security-profiles/{InstanceId}/{SecurityProfileId}
 		 * @param {string} SecurityProfileId The identifier for the security profle.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribeSecurityProfileResponse} Success
 		 */
 		DescribeSecurityProfile(SecurityProfileId: string, InstanceId: string): Observable<DescribeSecurityProfileResponse> {
@@ -11788,6 +11888,7 @@ export namespace MyNS {
 		 * Post security-profiles/{InstanceId}/{SecurityProfileId}
 		 * @param {string} SecurityProfileId The identifier for the security profle.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		UpdateSecurityProfile(SecurityProfileId: string, InstanceId: string, requestBody: UpdateSecurityProfilePostBody): Observable<HttpResponse<string>> {
@@ -11798,7 +11899,9 @@ export namespace MyNS {
 		 * Deletes the task template.
 		 * Delete instance/{InstanceId}/task/template/{TaskTemplateId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TaskTemplateId A unique identifier for the task template.
+		 *     Min length: 1    Max length: 500
 		 * @return {DeleteTaskTemplateResponse} Success
 		 */
 		DeleteTaskTemplate(InstanceId: string, TaskTemplateId: string): Observable<DeleteTaskTemplateResponse> {
@@ -11809,7 +11912,9 @@ export namespace MyNS {
 		 * Gets details about a specific task template in the specified Amazon Connect instance.
 		 * Get instance/{InstanceId}/task/template/{TaskTemplateId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TaskTemplateId A unique identifier for the task template.
+		 *     Min length: 1    Max length: 500
 		 * @param {string} snapshotVersion The system generated version of a task template that is associated with a task, when the task is created.
 		 * @return {GetTaskTemplateResponse} Success
 		 */
@@ -11821,7 +11926,9 @@ export namespace MyNS {
 		 * Updates details about a specific task template in the specified Amazon Connect instance. This operation does not support partial updates. Instead it does a full update of template content.
 		 * Post instance/{InstanceId}/task/template/{TaskTemplateId}
 		 * @param {string} TaskTemplateId A unique identifier for the task template.
+		 *     Min length: 1    Max length: 500
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {UpdateTaskTemplateResponse} Success
 		 */
 		UpdateTaskTemplate(TaskTemplateId: string, InstanceId: string, requestBody: UpdateTaskTemplatePostBody): Observable<UpdateTaskTemplateResponse> {
@@ -11852,8 +11959,11 @@ export namespace MyNS {
 		 * Deletes a use case from an integration association.
 		 * Delete instance/{InstanceId}/integration-associations/{IntegrationAssociationId}/use-cases/{UseCaseId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} IntegrationAssociationId The identifier for the integration association.
+		 *     Min length: 1    Max length: 200
 		 * @param {string} UseCaseId The identifier for the use case.
+		 *     Min length: 1    Max length: 200
 		 * @return {void} Success
 		 */
 		DeleteUseCase(InstanceId: string, IntegrationAssociationId: string, UseCaseId: string): Observable<HttpResponse<string>> {
@@ -11864,6 +11974,7 @@ export namespace MyNS {
 		 * <p>Deletes a user account from the specified Amazon Connect instance.</p> <p>For information about what happens to a user's data when their account is deleted, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/delete-users.html">Delete Users from Your Amazon Connect Instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 		 * Delete users/{InstanceId}/{UserId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} UserId The identifier of the user.
 		 * @return {void} Success
 		 */
@@ -11876,6 +11987,7 @@ export namespace MyNS {
 		 * Get users/{InstanceId}/{UserId}
 		 * @param {string} UserId The identifier of the user account.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribeUserResponse} Success
 		 */
 		DescribeUser(UserId: string, InstanceId: string): Observable<DescribeUserResponse> {
@@ -11887,6 +11999,7 @@ export namespace MyNS {
 		 * Delete user-hierarchy-groups/{InstanceId}/{HierarchyGroupId}
 		 * @param {string} HierarchyGroupId The identifier of the hierarchy group.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		DeleteUserHierarchyGroup(HierarchyGroupId: string, InstanceId: string): Observable<HttpResponse<string>> {
@@ -11898,6 +12011,7 @@ export namespace MyNS {
 		 * Get user-hierarchy-groups/{InstanceId}/{HierarchyGroupId}
 		 * @param {string} HierarchyGroupId The identifier of the hierarchy group.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribeUserHierarchyGroupResponse} Success
 		 */
 		DescribeUserHierarchyGroup(HierarchyGroupId: string, InstanceId: string): Observable<DescribeUserHierarchyGroupResponse> {
@@ -11908,7 +12022,9 @@ export namespace MyNS {
 		 * Deletes the vocabulary that has the given identifier.
 		 * Post vocabulary-remove/{InstanceId}/{VocabularyId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} VocabularyId The identifier of the custom vocabulary.
+		 *     Min length: 1    Max length: 500
 		 * @return {DeleteVocabularyResponse} Success
 		 */
 		DeleteVocabulary(InstanceId: string, VocabularyId: string): Observable<DeleteVocabularyResponse> {
@@ -11919,6 +12035,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Describes an agent status.</p>
 		 * Get agent-status/{InstanceId}/{AgentStatusId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} AgentStatusId The identifier for the agent status.
 		 * @return {DescribeAgentStatusResponse} Success
 		 */
@@ -11930,6 +12047,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Updates agent status.</p>
 		 * Post agent-status/{InstanceId}/{AgentStatusId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} AgentStatusId The identifier of the agent status.
 		 * @return {void} Success
 		 */
@@ -11941,7 +12059,9 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Describes the specified contact. </p> <important> <p>Contact information remains available in Amazon Connect for 24 months, and then it is deleted.</p> <p>Only data from November 12, 2021, and later is returned by this API.</p> </important>
 		 * Get contacts/{InstanceId}/{ContactId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactId The identifier of the contact.
+		 *     Min length: 1    Max length: 256
 		 * @return {DescribeContactResponse} Success
 		 */
 		DescribeContact(InstanceId: string, ContactId: string): Observable<DescribeContactResponse> {
@@ -11952,7 +12072,9 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Adds or updates user-defined contact information associated with the specified contact. At least one field to be updated must be present in the request.</p> <important> <p>You can add or update user-defined contact information for both ongoing and completed contacts.</p> </important>
 		 * Post contacts/{InstanceId}/{ContactId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactId The identifier of the contact. This is the identifier of the contact associated with the first interaction with your contact center.
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateContactResponse} Success
 		 */
 		UpdateContact(InstanceId: string, ContactId: string, requestBody: UpdateContactPostBody): Observable<UpdateContactResponse> {
@@ -11963,6 +12085,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Describes the specified instance attribute.</p>
 		 * Get instance/{InstanceId}/attribute/{AttributeType}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {InstanceAttributeType} AttributeType The type of attribute.
 		 * @return {DescribeInstanceAttributeResponse} Success
 		 */
@@ -11974,6 +12097,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Updates the value for the specified attribute type.</p>
 		 * Post instance/{InstanceId}/attribute/{AttributeType}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {InstanceAttributeType} AttributeType <p>The type of attribute.</p> <note> <p>Only allowlisted customers can consume USE_CUSTOM_TTS_VOICES. To access this feature, contact Amazon Web Services Support for allowlisting.</p> </note>
 		 * @return {void} Success
 		 */
@@ -11985,7 +12109,9 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Retrieves the current storage configurations for the specified resource type, association ID, and instance ID.</p>
 		 * Get instance/{InstanceId}/storage-config/{AssociationId}#resourceType
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} AssociationId The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.
+		 *     Min length: 1    Max length: 100
 		 * @param {InstanceStorageResourceType} resourceType A valid resource type.
 		 * @return {DescribeInstanceStorageConfigResponse} Success
 		 */
@@ -11997,7 +12123,9 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Removes the storage type configurations for the specified resource type and association ID.</p>
 		 * Delete instance/{InstanceId}/storage-config/{AssociationId}#resourceType
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} AssociationId The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.
+		 *     Min length: 1    Max length: 100
 		 * @param {InstanceStorageResourceType} resourceType A valid resource type.
 		 * @return {void} Success
 		 */
@@ -12009,7 +12137,9 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Updates an existing configuration for a resource type. This API is idempotent.</p>
 		 * Post instance/{InstanceId}/storage-config/{AssociationId}#resourceType
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} AssociationId The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.
+		 *     Min length: 1    Max length: 100
 		 * @param {InstanceStorageResourceType} resourceType A valid resource type.
 		 * @return {void} Success
 		 */
@@ -12032,6 +12162,7 @@ export namespace MyNS {
 		 * Delete phone-number/{PhoneNumberId}
 		 * @param {string} PhoneNumberId A unique identifier for the phone number.
 		 * @param {string} clientToken A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
+		 *     Max length: 500
 		 * @return {void} Success
 		 */
 		ReleasePhoneNumber(PhoneNumberId: string, clientToken: string | null | undefined): Observable<HttpResponse<string>> {
@@ -12052,6 +12183,7 @@ export namespace MyNS {
 		 * Describes the hierarchy structure of the specified Amazon Connect instance.
 		 * Get user-hierarchy-structure/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {DescribeUserHierarchyStructureResponse} Success
 		 */
 		DescribeUserHierarchyStructure(InstanceId: string): Observable<DescribeUserHierarchyStructureResponse> {
@@ -12062,6 +12194,7 @@ export namespace MyNS {
 		 * Updates the user hierarchy structure: add, remove, and rename user hierarchy levels.
 		 * Post user-hierarchy-structure/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		UpdateUserHierarchyStructure(InstanceId: string, requestBody: UpdateUserHierarchyStructurePostBody): Observable<HttpResponse<string>> {
@@ -12072,7 +12205,9 @@ export namespace MyNS {
 		 * Describes the specified vocabulary.
 		 * Get vocabulary/{InstanceId}/{VocabularyId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} VocabularyId The identifier of the custom vocabulary.
+		 *     Min length: 1    Max length: 500
 		 * @return {DescribeVocabularyResponse} Success
 		 */
 		DescribeVocabulary(InstanceId: string, VocabularyId: string): Observable<DescribeVocabularyResponse> {
@@ -12083,7 +12218,9 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Revokes access to integrated applications from Amazon Connect.</p>
 		 * Delete instance/{InstanceId}/approved-origin#origin
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} origin The domain URL of the integrated application.
+		 *     Max length: 267
 		 * @return {void} Success
 		 */
 		DisassociateApprovedOrigin(InstanceId: string, origin: string): Observable<HttpResponse<string>> {
@@ -12094,7 +12231,9 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Remove the Lambda function from the dropdown options available in the relevant flow blocks.</p>
 		 * Delete instance/{InstanceId}/lambda-function#functionArn
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance..
+		 *     Min length: 1    Max length: 100
 		 * @param {string} functionArn The Amazon Resource Name (ARN) of the Lambda function being disassociated.
+		 *     Min length: 1    Max length: 140
 		 * @return {void} Success
 		 */
 		DisassociateLambdaFunction(InstanceId: string, functionArn: string): Observable<HttpResponse<string>> {
@@ -12105,8 +12244,11 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Revokes authorization from the specified instance to access the specified Amazon Lex bot.</p>
 		 * Delete instance/{InstanceId}/lex-bot#botName&lexRegion
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} botName The name of the Amazon Lex bot. Maximum character limit of 50.
+		 *     Max length: 50
 		 * @param {string} lexRegion The Amazon Web Services Region in which the Amazon Lex bot has been created.
+		 *     Max length: 60
 		 * @return {void} Success
 		 */
 		DisassociateLexBot(InstanceId: string, botName: string, lexRegion: string): Observable<HttpResponse<string>> {
@@ -12118,6 +12260,7 @@ export namespace MyNS {
 		 * Delete phone-number/{PhoneNumberId}/contact-flow#instanceId
 		 * @param {string} PhoneNumberId A unique identifier for the phone number.
 		 * @param {string} instanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		DisassociatePhoneNumberContactFlow(PhoneNumberId: string, instanceId: string): Observable<HttpResponse<string>> {
@@ -12128,6 +12271,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Disassociates a set of quick connects from a queue.</p>
 		 * Post queues/{InstanceId}/{QueueId}/disassociate-quick-connects
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QueueId The identifier for the queue.
 		 * @return {void} Success
 		 */
@@ -12139,6 +12283,7 @@ export namespace MyNS {
 		 * Disassociates a set of queues from a routing profile.
 		 * Post routing-profiles/{InstanceId}/{RoutingProfileId}/disassociate-queues
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RoutingProfileId The identifier of the routing profile.
 		 * @return {void} Success
 		 */
@@ -12150,7 +12295,9 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Deletes the specified security key.</p>
 		 * Delete instance/{InstanceId}/security-key/{AssociationId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} AssociationId The existing association identifier that uniquely identifies the resource type and storage config for the given instance ID.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		DisassociateSecurityKey(InstanceId: string, AssociationId: string): Observable<HttpResponse<string>> {
@@ -12162,6 +12309,7 @@ export namespace MyNS {
 		 * Post users/{InstanceId}/{UserId}/contact
 		 * @param {string} UserId The identifier of the user account.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {DismissUserContactResponse} Success
 		 */
 		DismissUserContact(UserId: string, InstanceId: string, requestBody: DismissUserContactPostBody): Observable<DismissUserContactResponse> {
@@ -12172,7 +12320,9 @@ export namespace MyNS {
 		 * Retrieves the contact attributes for the specified contact.
 		 * Get contact/attributes/{InstanceId}/{InitialContactId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} InitialContactId The identifier of the initial contact.
+		 *     Min length: 1    Max length: 256
 		 * @return {GetContactAttributesResponse} Success
 		 */
 		GetContactAttributes(InstanceId: string, InitialContactId: string): Observable<GetContactAttributesResponse> {
@@ -12183,6 +12333,7 @@ export namespace MyNS {
 		 * <p>Gets the real-time metric data from the specified Amazon Connect instance.</p> <p>For a description of each metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/real-time-metrics-definitions.html">Real-time Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 		 * Post metrics/current/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCurrentMetricDataResponse} Success
@@ -12195,6 +12346,7 @@ export namespace MyNS {
 		 * Gets the real-time active user data from the specified Amazon Connect instance.
 		 * Post metrics/userdata/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCurrentUserDataResponse} Success
@@ -12207,6 +12359,7 @@ export namespace MyNS {
 		 * <p>Retrieves a token for federation.</p> <note> <p>This API doesn't support root users. If you try to invoke GetFederationToken with root credentials, an error message similar to the following one appears: </p> <p> <code>Provided identity: Principal: .... User: .... cannot be used for federation with Amazon Connect</code> </p> </note>
 		 * Get user/federate/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetFederationTokenResponse} Success
 		 */
 		GetFederationToken(InstanceId: string): Observable<GetFederationTokenResponse> {
@@ -12217,6 +12370,7 @@ export namespace MyNS {
 		 * <p>Gets historical metric data from the specified Amazon Connect instance.</p> <p>For a description of each historical metric, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/historical-metrics-definitions.html">Historical Metrics Definitions</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 		 * Post metrics/historical/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetMetricDataResponse} Success
@@ -12240,7 +12394,9 @@ export namespace MyNS {
 		 * Gets the prompt file.
 		 * Get prompts/{InstanceId}/{PromptId}/file
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} PromptId A unique identifier for the prompt.
+		 *     Min length: 1    Max length: 256
 		 * @return {GetPromptFileResponse} Success
 		 */
 		GetPromptFile(InstanceId: string, PromptId: string): Observable<GetPromptFileResponse> {
@@ -12271,8 +12427,10 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Returns a paginated list of all approved origins associated with the instance.</p>
 		 * Get instance/{InstanceId}/approved-origins
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApprovedOriginsResponse} Success
@@ -12285,8 +12443,10 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>For the specified version of Amazon Lex, returns a paginated list of all the Amazon Lex bots currently associated with the instance. Use this API to returns both Amazon Lex V1 and V2 bots.</p>
 		 * Get instance/{InstanceId}/bots#lexVersion
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {LexVersion} lexVersion The version of Amazon Lex or Amazon Lex V2.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -12300,7 +12460,9 @@ export namespace MyNS {
 		 * Lists contact evaluations in the specified Amazon Connect instance.
 		 * Get contact-evaluations/{InstanceId}#contactId
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} contactId The identifier of the contact in this instance of Amazon Connect. 
+		 *     Min length: 1    Max length: 256
 		 * @param {string} nextToken <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important> <p>This is not expected to be set because the value returned in the previous response is always null.</p> </important>
 		 * @param {string} NextToken Pagination token
 		 * @return {ListContactEvaluationsResponse} Success
@@ -12313,8 +12475,10 @@ export namespace MyNS {
 		 * Provides information about the flow modules for the specified Amazon Connect instance.
 		 * Get contact-flow-modules-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {ContactFlowState} state The state of the flow module.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -12328,9 +12492,12 @@ export namespace MyNS {
 		 * <p>Provides information about the flows for the specified Amazon Connect instance.</p> <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p> <p>For more information about flows, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-contact-flows.html">Flows</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 		 * Get contact-flows-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {Array<ContactFlowType>} contactFlowTypes The type of flow.
+		 *     Maximum items: 10
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListContactFlowsResponse} Success
@@ -12343,8 +12510,11 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>For the specified <code>referenceTypes</code>, returns a list of references associated with the contact. </p>
 		 * Get contact/references/{InstanceId}/{ContactId}#referenceTypes
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactId The identifier of the initial contact.
+		 *     Min length: 1    Max length: 256
 		 * @param {Array<ReferenceType>} referenceTypes The type of reference.
+		 *     Maximum items: 6
 		 * @param {string} nextToken <p>The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.</p> <important> <p>This is not expected to be set, because the value returned in the previous response is always null.</p> </important>
 		 * @param {string} NextToken Pagination token
 		 * @return {ListContactReferencesResponse} Success
@@ -12357,6 +12527,7 @@ export namespace MyNS {
 		 * Lists the default vocabularies for the specified Amazon Connect instance.
 		 * Post default-vocabulary-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDefaultVocabulariesResponse} Success
@@ -12369,8 +12540,11 @@ export namespace MyNS {
 		 * Lists versions of an evaluation form in the specified Amazon Connect instance.
 		 * Get evaluation-forms/{InstanceId}/{EvaluationFormId}/versions
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EvaluationFormId The unique identifier for the evaluation form.
+		 *     Min length: 1    Max length: 500
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -12384,8 +12558,10 @@ export namespace MyNS {
 		 * <p>Provides information about the hours of operation for the specified Amazon Connect instance.</p> <p>For more information about hours of operation, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/set-hours-operation.html">Set the Hours of Operation for a Queue</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 		 * Get hours-of-operations-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListHoursOfOperationsResponse} Success
@@ -12398,8 +12574,10 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Returns a paginated list of all attribute types for the given instance.</p>
 		 * Get instance/{InstanceId}/attributes
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 7
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInstanceAttributesResponse} Success
@@ -12412,9 +12590,11 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Returns a paginated list of storage configs for the identified instance and resource type.</p>
 		 * Get instance/{InstanceId}/storage-configs#resourceType
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {InstanceStorageResourceType} resourceType A valid resource type.
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 10
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInstanceStorageConfigsResponse} Success
@@ -12427,8 +12607,10 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Returns a paginated list of all Lambda functions that display in the dropdown options in the relevant flow blocks.</p>
 		 * Get instance/{InstanceId}/lambda-functions
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLambdaFunctionsResponse} Success
@@ -12441,8 +12623,10 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Returns a paginated list of all the Amazon Lex V1 bots currently associated with the instance. To return both Amazon Lex V1 and V2 bots, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListBots.html">ListBots</a> API. </p>
 		 * Get instance/{InstanceId}/lex-bots
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. If no value is specified, the default is 10. 
+		 *     Minimum: 1    Maximum: 25
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListLexBotsResponse} Success
@@ -12455,10 +12639,14 @@ export namespace MyNS {
 		 * <p>Provides information about the phone numbers for the specified Amazon Connect instance. </p> <p>For more information about phone numbers, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/contact-center-phone-number.html">Set Up Phone Numbers for Your Contact Center</a> in the <i>Amazon Connect Administrator Guide</i>.</p> <important> <p>The phone number <code>Arn</code> value that is returned from each of the items in the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbers.html#connect-ListPhoneNumbers-response-PhoneNumberSummaryList">PhoneNumberSummaryList</a> cannot be used to tag phone number resources. It will fail with a <code>ResourceNotFoundException</code>. Instead, use the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> API. It returns the new phone number ARN that can be used to tag phone number resources.</p> </important>
 		 * Get phone-numbers-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {Array<PhoneNumberType>} phoneNumberTypes The type of phone number.
+		 *     Maximum items: 6
 		 * @param {Array<PhoneNumberCountryCode>} phoneNumberCountryCodes The ISO country code.
+		 *     Maximum items: 10
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPhoneNumbersResponse} Success
@@ -12482,8 +12670,10 @@ export namespace MyNS {
 		 * Provides information about the prompts for the specified Amazon Connect instance.
 		 * Get prompts-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPromptsResponse} Success
@@ -12496,9 +12686,11 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Lists the quick connects associated with a queue.</p>
 		 * Get queues/{InstanceId}/{QueueId}/quick-connects
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QueueId The identifier for the queue.
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListQueueQuickConnectsResponse} Success
@@ -12511,9 +12703,12 @@ export namespace MyNS {
 		 * <p>Provides information about the queues for the specified Amazon Connect instance.</p> <p>If you do not specify a <code>QueueTypes</code> parameter, both standard and agent queues are returned. This might cause an unexpected truncation of results if you have more than 1000 agents and you limit the number of results of the API call in code.</p> <p>For more information about queues, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-queues-standard-and-agent.html">Queues: Standard and Agent</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 		 * Get queues-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {Array<QueueType>} queueTypes The type of queue.
+		 *     Maximum items: 2
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListQueuesResponse} Success
@@ -12526,9 +12721,11 @@ export namespace MyNS {
 		 * Lists the queues associated with a routing profile.
 		 * Get routing-profiles/{InstanceId}/{RoutingProfileId}/queues
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RoutingProfileId The identifier of the routing profile.
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRoutingProfileQueuesResponse} Success
@@ -12541,6 +12738,7 @@ export namespace MyNS {
 		 * Updates the properties associated with a set of queues for a routing profile.
 		 * Post routing-profiles/{InstanceId}/{RoutingProfileId}/queues
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RoutingProfileId The identifier of the routing profile.
 		 * @return {void} Success
 		 */
@@ -12552,8 +12750,10 @@ export namespace MyNS {
 		 * <p>Provides summary information about the routing profiles for the specified Amazon Connect instance.</p> <p>For more information about routing profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/concepts-routing.html">Routing Profiles</a> and <a href="https://docs.aws.amazon.com/connect/latest/adminguide/routing-profiles.html">Create a Routing Profile</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 		 * Get routing-profiles-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRoutingProfilesResponse} Success
@@ -12566,8 +12766,10 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Returns a paginated list of all security keys associated with the instance.</p>
 		 * Get instance/{InstanceId}/security-keys
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 2
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSecurityKeysResponse} Success
@@ -12581,8 +12783,10 @@ export namespace MyNS {
 		 * Get security-profiles-permissions/{InstanceId}/{SecurityProfileId}
 		 * @param {string} SecurityProfileId The identifier for the security profle.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSecurityProfilePermissionsResponse} Success
@@ -12595,8 +12799,10 @@ export namespace MyNS {
 		 * <p>Provides summary information about the security profiles for the specified Amazon Connect instance.</p> <p>For more information about security profiles, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/connect-security-profiles.html">Security Profiles</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 		 * Get security-profiles-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSecurityProfilesResponse} Success
@@ -12629,8 +12835,10 @@ export namespace MyNS {
 		 * Lists traffic distribution groups.
 		 * Get traffic-distribution-groups
 		 * @param {number} maxResults The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 10
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {string} instanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 250
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListTrafficDistributionGroupsResponse} Success
@@ -12643,8 +12851,10 @@ export namespace MyNS {
 		 * <p>Provides summary information about the hierarchy groups for the specified Amazon Connect instance.</p> <p>For more information about agent hierarchies, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/agent-hierarchy.html">Set Up Agent Hierarchies</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 		 * Get user-hierarchy-groups-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUserHierarchyGroupsResponse} Success
@@ -12657,8 +12867,10 @@ export namespace MyNS {
 		 * Provides summary information about the users for the specified Amazon Connect instance.
 		 * Get users-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
 		 * @param {number} maxResults The maximum number of results to return per page. The default MaxResult size is 100.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListUsersResponse} Success
@@ -12681,6 +12893,7 @@ export namespace MyNS {
 		 * Put users/{InstanceId}/{UserId}/status
 		 * @param {string} UserId The identifier of the user.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {PutUserStatusResponse} Success
 		 */
 		PutUserStatus(UserId: string, InstanceId: string, requestBody: PutUserStatusPutBody): Observable<PutUserStatusResponse> {
@@ -12691,6 +12904,7 @@ export namespace MyNS {
 		 * <p>Replicates an Amazon Connect instance in the specified Amazon Web Services Region.</p> <p>For more information about replicating an Amazon Connect instance, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/create-replica-connect-instance.html">Create a replica of your existing Amazon Connect instance</a> in the <i>Amazon Connect Administrator Guide</i>.</p>
 		 * Post instance/{InstanceId}/replicate
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance. You can provide the <code>InstanceId</code>, or the entire ARN.
+		 *     Min length: 1    Max length: 250
 		 * @return {ReplicateInstanceResponse} Success
 		 */
 		ReplicateInstance(InstanceId: string, requestBody: ReplicateInstancePostBody): Observable<ReplicateInstanceResponse> {
@@ -12809,6 +13023,7 @@ export namespace MyNS {
 		 * Searches for vocabularies within a specific Amazon Connect instance using <code>State</code>, <code>NameStartsWith</code>, and <code>LanguageCode</code>.
 		 * Post vocabulary-summary/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchVocabulariesResponse} Success
@@ -12830,6 +13045,7 @@ export namespace MyNS {
 		 * <p>Starts an empty evaluation in the specified Amazon Connect instance, using the given evaluation form for the particular contact. The evaluation form version used for the contact evaluation corresponds to the currently activated version. If no version is activated for the evaluation form, the contact evaluation cannot be started. </p> <note> <p>Evaluations created through the public API do not contain answer values suggested from automation.</p> </note>
 		 * Put contact-evaluations/{InstanceId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {StartContactEvaluationResponse} Success
 		 */
 		StartContactEvaluation(InstanceId: string, requestBody: StartContactEvaluationPutBody): Observable<StartContactEvaluationResponse> {
@@ -12903,7 +13119,9 @@ export namespace MyNS {
 		 * <p>Submits a contact evaluation in the specified Amazon Connect instance. Answers included in the request are merged with existing answers for the given evaluation. If no answers or notes are passed, the evaluation is submitted with the existing answers and notes. You can delete an answer or note by passing an empty object (<code>{}</code>) to the question identifier. </p> <p>If a contact evaluation is already in submitted state, this operation will trigger a resubmission.</p>
 		 * Post contact-evaluations/{InstanceId}/{EvaluationId}/submit
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EvaluationId A unique identifier for the contact evaluation.
+		 *     Min length: 1    Max length: 500
 		 * @return {SubmitContactEvaluationResponse} Success
 		 */
 		SubmitContactEvaluation(InstanceId: string, EvaluationId: string, requestBody: SubmitContactEvaluationPostBody): Observable<SubmitContactEvaluationResponse> {
@@ -12933,6 +13151,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
 		 * @param {Array<string>} tagKeys The tag keys.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {void} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -12952,7 +13171,9 @@ export namespace MyNS {
 		 * <p>Updates the specified flow.</p> <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
 		 * Post contact-flows/{InstanceId}/{ContactFlowId}/content
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactFlowId The identifier of the flow.
+		 *     Max length: 500
 		 * @return {UpdateContactFlowContentResponse} Success
 		 */
 		UpdateContactFlowContent(InstanceId: string, ContactFlowId: string, requestBody: UpdateContactFlowContentPostBody): Observable<UpdateContactFlowContentResponse> {
@@ -12963,7 +13184,9 @@ export namespace MyNS {
 		 * Updates metadata about specified flow.
 		 * Post contact-flows/{InstanceId}/{ContactFlowId}/metadata
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactFlowId The identifier of the flow.
+		 *     Max length: 500
 		 * @return {UpdateContactFlowMetadataResponse} Success
 		 */
 		UpdateContactFlowMetadata(InstanceId: string, ContactFlowId: string, requestBody: UpdateContactFlowMetadataPostBody): Observable<UpdateContactFlowMetadataResponse> {
@@ -12974,7 +13197,9 @@ export namespace MyNS {
 		 * Updates specified flow module for the specified Amazon Connect instance.
 		 * Post contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/content
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactFlowModuleId The identifier of the flow module.
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateContactFlowModuleContentResponse} Success
 		 */
 		UpdateContactFlowModuleContent(InstanceId: string, ContactFlowModuleId: string, requestBody: UpdateContactFlowModuleContentPostBody): Observable<UpdateContactFlowModuleContentResponse> {
@@ -12985,7 +13210,9 @@ export namespace MyNS {
 		 * Updates metadata about specified flow module.
 		 * Post contact-flow-modules/{InstanceId}/{ContactFlowModuleId}/metadata
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactFlowModuleId The identifier of the flow module.
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateContactFlowModuleMetadataResponse} Success
 		 */
 		UpdateContactFlowModuleMetadata(InstanceId: string, ContactFlowModuleId: string, requestBody: UpdateContactFlowModuleMetadataPostBody): Observable<UpdateContactFlowModuleMetadataResponse> {
@@ -12996,7 +13223,9 @@ export namespace MyNS {
 		 * <p>The name of the flow.</p> <p>You can also create and update flows using the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/flow-language.html">Amazon Connect Flow language</a>.</p>
 		 * Post contact-flows/{InstanceId}/{ContactFlowId}/name
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactFlowId The identifier of the flow.
+		 *     Max length: 500
 		 * @return {UpdateContactFlowNameResponse} Success
 		 */
 		UpdateContactFlowName(InstanceId: string, ContactFlowId: string, requestBody: UpdateContactFlowNamePostBody): Observable<UpdateContactFlowNameResponse> {
@@ -13016,7 +13245,9 @@ export namespace MyNS {
 		 * <p>Updates timeouts for when human chat participants are to be considered idle, and when agents are automatically disconnected from a chat due to idleness. You can set four timers:</p> <ul> <li> <p>Customer idle timeout</p> </li> <li> <p>Customer auto-disconnect timeout</p> </li> <li> <p>Agent idle timeout</p> </li> <li> <p>Agent auto-disconnect timeout</p> </li> </ul> <p>For more information about how chat timeouts work, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/setup-chat-timeouts.html">Set up chat timeouts for human participants</a>. </p>
 		 * Put contact/participant-role-config/{InstanceId}/{ContactId}
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} ContactId The identifier of the contact in this instance of Amazon Connect. 
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateParticipantRoleConfigResponse} Success
 		 */
 		UpdateParticipantRoleConfig(InstanceId: string, ContactId: string, requestBody: UpdateParticipantRoleConfigPutBody): Observable<UpdateParticipantRoleConfigResponse> {
@@ -13027,6 +13258,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Updates the hours of operation for the specified queue.</p>
 		 * Post queues/{InstanceId}/{QueueId}/hours-of-operation
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QueueId The identifier for the queue.
 		 * @return {void} Success
 		 */
@@ -13038,6 +13270,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Updates the maximum number of contacts allowed in a queue before it is considered full.</p>
 		 * Post queues/{InstanceId}/{QueueId}/max-contacts
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QueueId The identifier for the queue.
 		 * @return {void} Success
 		 */
@@ -13049,6 +13282,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Updates the name and description of a queue. At least <code>Name</code> or <code>Description</code> must be provided.</p>
 		 * Post queues/{InstanceId}/{QueueId}/name
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QueueId The identifier for the queue.
 		 * @return {void} Success
 		 */
@@ -13060,6 +13294,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Updates the outbound caller ID name, number, and outbound whisper flow for a specified queue.</p> <important> <p>If the number being used in the input is claimed to a traffic distribution group, and you are calling this API using an instance in the Amazon Web Services Region where the traffic distribution group was created, you can use either a full phone number ARN or UUID value for the <code>OutboundCallerIdNumberId</code> value of the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_OutboundCallerConfig">OutboundCallerConfig</a> request body parameter. However, if the number is claimed to a traffic distribution group and you are calling this API using an instance in the alternate Amazon Web Services Region associated with the traffic distribution group, you must provide a full phone number ARN. If a UUID is provided in this scenario, you will receive a <code>ResourceNotFoundException</code>.</p> <p>Only use the phone number ARN format that doesn't contain <code>instance</code> in the path, for example, <code>arn:aws:connect:us-east-1:1234567890:phone-number/uuid</code>. This is the same ARN format that is returned when you call the <a href="https://docs.aws.amazon.com/connect/latest/APIReference/API_ListPhoneNumbersV2.html">ListPhoneNumbersV2</a> API.</p> </important>
 		 * Post queues/{InstanceId}/{QueueId}/outbound-caller-config
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QueueId The identifier for the queue.
 		 * @return {void} Success
 		 */
@@ -13071,6 +13306,7 @@ export namespace MyNS {
 		 * <p>This API is in preview release for Amazon Connect and is subject to change.</p> <p>Updates the status of the queue.</p>
 		 * Post queues/{InstanceId}/{QueueId}/status
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QueueId The identifier for the queue.
 		 * @return {void} Success
 		 */
@@ -13082,6 +13318,7 @@ export namespace MyNS {
 		 * Updates the configuration settings for the specified quick connect.
 		 * Post quick-connects/{InstanceId}/{QuickConnectId}/config
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QuickConnectId The identifier for the quick connect.
 		 * @return {void} Success
 		 */
@@ -13093,6 +13330,7 @@ export namespace MyNS {
 		 * Updates the name and description of a quick connect. The request accepts the following data in JSON format. At least <code>Name</code> or <code>Description</code> must be provided.
 		 * Post quick-connects/{InstanceId}/{QuickConnectId}/name
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} QuickConnectId The identifier for the quick connect.
 		 * @return {void} Success
 		 */
@@ -13104,6 +13342,7 @@ export namespace MyNS {
 		 * Whether agents with this routing profile will have their routing order calculated based on <i>time since their last inbound contact</i> or <i>longest idle time</i>.
 		 * Post routing-profiles/{InstanceId}/{RoutingProfileId}/agent-availability-timer
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RoutingProfileId The identifier of the routing profile.
 		 * @return {void} Success
 		 */
@@ -13115,6 +13354,7 @@ export namespace MyNS {
 		 * Updates the channels that agents can handle in the Contact Control Panel (CCP) for a routing profile.
 		 * Post routing-profiles/{InstanceId}/{RoutingProfileId}/concurrency
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RoutingProfileId The identifier of the routing profile.
 		 * @return {void} Success
 		 */
@@ -13126,6 +13366,7 @@ export namespace MyNS {
 		 * Updates the default outbound queue of a routing profile.
 		 * Post routing-profiles/{InstanceId}/{RoutingProfileId}/default-outbound-queue
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RoutingProfileId The identifier of the routing profile.
 		 * @return {void} Success
 		 */
@@ -13137,6 +13378,7 @@ export namespace MyNS {
 		 * Updates the name and description of a routing profile. The request accepts the following data in JSON format. At least <code>Name</code> or <code>Description</code> must be provided.
 		 * Post routing-profiles/{InstanceId}/{RoutingProfileId}/name
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} RoutingProfileId The identifier of the routing profile.
 		 * @return {void} Success
 		 */
@@ -13149,6 +13391,7 @@ export namespace MyNS {
 		 * Post users/{InstanceId}/{UserId}/hierarchy
 		 * @param {string} UserId The identifier of the user account.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		UpdateUserHierarchy(UserId: string, InstanceId: string, requestBody: UpdateUserHierarchyPostBody): Observable<HttpResponse<string>> {
@@ -13160,6 +13403,7 @@ export namespace MyNS {
 		 * Post user-hierarchy-groups/{InstanceId}/{HierarchyGroupId}/name
 		 * @param {string} HierarchyGroupId The identifier of the hierarchy group.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		UpdateUserHierarchyGroupName(HierarchyGroupId: string, InstanceId: string, requestBody: UpdateUserHierarchyGroupNamePostBody): Observable<HttpResponse<string>> {
@@ -13171,6 +13415,7 @@ export namespace MyNS {
 		 * Post users/{InstanceId}/{UserId}/identity-info
 		 * @param {string} UserId The identifier of the user account.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		UpdateUserIdentityInfo(UserId: string, InstanceId: string, requestBody: UpdateUserIdentityInfoPostBody): Observable<HttpResponse<string>> {
@@ -13182,6 +13427,7 @@ export namespace MyNS {
 		 * Post users/{InstanceId}/{UserId}/phone-config
 		 * @param {string} UserId The identifier of the user account.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		UpdateUserPhoneConfig(UserId: string, InstanceId: string, requestBody: UpdateUserPhoneConfigPostBody): Observable<HttpResponse<string>> {
@@ -13193,6 +13439,7 @@ export namespace MyNS {
 		 * Post users/{InstanceId}/{UserId}/routing-profile
 		 * @param {string} UserId The identifier of the user account.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		UpdateUserRoutingProfile(UserId: string, InstanceId: string, requestBody: UpdateUserRoutingProfilePostBody): Observable<HttpResponse<string>> {
@@ -13204,6 +13451,7 @@ export namespace MyNS {
 		 * Post users/{InstanceId}/{UserId}/security-profiles
 		 * @param {string} UserId The identifier of the user account.
 		 * @param {string} InstanceId The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		UpdateUserSecurityProfiles(UserId: string, InstanceId: string, requestBody: UpdateUserSecurityProfilesPostBody): Observable<HttpResponse<string>> {
@@ -13355,8 +13603,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the custom vocabulary. If this is empty, the default is set to none.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		VocabularyId?: string | null;
 	}
@@ -13364,8 +13612,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the custom vocabulary. If this is empty, the default is set to none.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		VocabularyId: FormControl<string | null | undefined>,
 	}
@@ -13430,8 +13678,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		FunctionArn: string;
 	}
@@ -13440,8 +13688,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) for the Lambda function being associated. Maximum number of characters allowed is 140.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		FunctionArn: FormControl<string | null | undefined>,
 	}
@@ -13489,8 +13737,8 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
@@ -13506,8 +13754,8 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
@@ -13567,8 +13815,8 @@ export namespace MyNS {
 		/**
 		 * A valid security key in PEM format.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Key: string;
 	}
@@ -13577,8 +13825,8 @@ export namespace MyNS {
 		/**
 		 * A valid security key in PEM format.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Key: FormControl<string | null | undefined>,
 	}
@@ -13605,8 +13853,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the phone number.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		PhoneNumberDescription?: string | null;
 
@@ -13635,8 +13883,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the phone number.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		PhoneNumberDescription: FormControl<string | null | undefined>,
 
@@ -13665,15 +13913,15 @@ export namespace MyNS {
 		/**
 		 * The name of the status.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: string;
 
 		/**
 		 * The description of the status.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
@@ -13698,15 +13946,15 @@ export namespace MyNS {
 		/**
 		 * The name of the status.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the status.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -13807,23 +14055,23 @@ export namespace MyNS {
 		/**
 		 * The name of the flow module.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: string;
 
 		/**
 		 * The description of the flow module.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description?: string | null;
 
 		/**
 		 * The content of the flow module.
 		 * Required
-		 * Max length: 256000
 		 * Min length: 1
+		 * Max length: 256000
 		 */
 		Content: string;
 
@@ -13841,23 +14089,23 @@ export namespace MyNS {
 		/**
 		 * The name of the flow module.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the flow module.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The content of the flow module.
 		 * Required
-		 * Max length: 256000
 		 * Min length: 1
+		 * Max length: 256000
 		 */
 		Content: FormControl<string | null | undefined>,
 
@@ -13886,15 +14134,15 @@ export namespace MyNS {
 		/**
 		 * A title of the evaluation form.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Title: string;
 
 		/**
 		 * The description of the evaluation form.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -13920,15 +14168,15 @@ export namespace MyNS {
 		/**
 		 * A title of the evaluation form.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Title: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the evaluation form.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -13968,15 +14216,15 @@ export namespace MyNS {
 		/**
 		 * The name of the hours of operation.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: string;
 
 		/**
 		 * The description of the hours of operation.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
@@ -14002,15 +14250,15 @@ export namespace MyNS {
 		/**
 		 * The name of the hours of operation.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the hours of operation.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -14049,15 +14297,15 @@ export namespace MyNS {
 
 		/**
 		 * The name for your instance.
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		InstanceAlias?: string | null;
 
 		/**
 		 * The identifier for the directory.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		DirectoryId?: string | null;
 
@@ -14089,15 +14337,15 @@ export namespace MyNS {
 
 		/**
 		 * The name for your instance.
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		InstanceAlias: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier for the directory.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		DirectoryId: FormControl<string | null | undefined>,
 
@@ -14141,15 +14389,15 @@ export namespace MyNS {
 
 		/**
 		 * The URL for the external application. This field is only required for the EVENT integration type.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		SourceApplicationUrl?: string | null;
 
 		/**
 		 * The name of the external application. This field is only required for the EVENT integration type.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		SourceApplicationName?: string | null;
 
@@ -14175,15 +14423,15 @@ export namespace MyNS {
 
 		/**
 		 * The URL for the external application. This field is only required for the EVENT integration type.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		SourceApplicationUrl: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the external application. This field is only required for the EVENT integration type.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		SourceApplicationName: FormControl<string | null | undefined>,
 
@@ -14210,16 +14458,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
@@ -14240,16 +14488,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact in this instance of Amazon Connect. Only contacts in the CHAT channel are supported.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
@@ -14289,23 +14537,23 @@ export namespace MyNS {
 		/**
 		 * The name of the prompt.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: string;
 
 		/**
 		 * The description of the prompt.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
 		/**
 		 * The URI for the S3 bucket where the prompt is stored.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		S3Uri: string;
 
@@ -14317,23 +14565,23 @@ export namespace MyNS {
 		/**
 		 * The name of the prompt.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the prompt.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The URI for the S3 bucket where the prompt is stored.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		S3Uri: FormControl<string | null | undefined>,
 
@@ -14355,15 +14603,15 @@ export namespace MyNS {
 		/**
 		 * The name of the queue.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: string;
 
 		/**
 		 * The description of the queue.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
@@ -14397,15 +14645,15 @@ export namespace MyNS {
 		/**
 		 * The name of the queue.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the queue.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -14459,15 +14707,15 @@ export namespace MyNS {
 		/**
 		 * The name of the quick connect.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: string;
 
 		/**
 		 * The description of the quick connect.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
@@ -14485,15 +14733,15 @@ export namespace MyNS {
 		/**
 		 * The name of the quick connect.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the quick connect.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -14530,16 +14778,16 @@ export namespace MyNS {
 		/**
 		 * The name of the routing profile. Must not be more than 127 characters.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: string;
 
 		/**
 		 * Description of the routing profile. Must not be more than 250 characters.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description: string;
 
@@ -14573,16 +14821,16 @@ export namespace MyNS {
 		/**
 		 * The name of the routing profile. Must not be more than 127 characters.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Description of the routing profile. Must not be more than 250 characters.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -14614,8 +14862,8 @@ export namespace MyNS {
 		/**
 		 * A unique name for the rule.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Name: string;
 
@@ -14654,8 +14902,8 @@ export namespace MyNS {
 		/**
 		 * A unique name for the rule.
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -14708,8 +14956,8 @@ export namespace MyNS {
 		/**
 		 * The name of the security profile.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		SecurityProfileName: string;
 
@@ -14742,8 +14990,8 @@ export namespace MyNS {
 		/**
 		 * The name of the security profile.
 		 * Required
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		SecurityProfileName: FormControl<string | null | undefined>,
 
@@ -14774,15 +15022,15 @@ export namespace MyNS {
 		/**
 		 * The name of the task template.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: string;
 
 		/**
 		 * The description of the task template.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Description?: string | null;
 
@@ -14818,15 +15066,15 @@ export namespace MyNS {
 		/**
 		 * The name of the task template.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the task template.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -14885,23 +15133,23 @@ export namespace MyNS {
 		/**
 		 * The name for the traffic distribution group.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: string;
 
 		/**
 		 * A description for the traffic distribution group.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
 		/**
 		 * The identifier of the Amazon Connect instance that has been replicated. You can find the <code>instanceId</code> in the ARN of the instance.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		InstanceId: string;
 
@@ -14919,23 +15167,23 @@ export namespace MyNS {
 		/**
 		 * The name for the traffic distribution group.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the traffic distribution group.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the Amazon Connect instance that has been replicated. You can find the <code>instanceId</code> in the ARN of the instance.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
@@ -14994,8 +15242,8 @@ export namespace MyNS {
 		/**
 		 * The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Username: string;
 
@@ -15039,8 +15287,8 @@ export namespace MyNS {
 		/**
 		 * The user name for the account. For instances not using SAML for identity management, the user name can include up to 20 characters. If you are using SAML for identity management, the user name can include up to 64 characters from [a-zA-Z0-9_-.\@]+.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Username: FormControl<string | null | undefined>,
 
@@ -15169,8 +15417,8 @@ export namespace MyNS {
 		/**
 		 * A unique name of the custom vocabulary.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		VocabularyName: string;
 
@@ -15183,8 +15431,8 @@ export namespace MyNS {
 		/**
 		 * The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. The size limit is 50KB. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.
 		 * Required
-		 * Max length: 60000
 		 * Min length: 1
+		 * Max length: 60000
 		 */
 		Content: string;
 
@@ -15202,8 +15450,8 @@ export namespace MyNS {
 		/**
 		 * A unique name of the custom vocabulary.
 		 * Required
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		VocabularyName: FormControl<string | null | undefined>,
 
@@ -15216,8 +15464,8 @@ export namespace MyNS {
 		/**
 		 * The content of the custom vocabulary in plain-text format with a table of values. Each row in the table represents a word or a phrase, described with <code>Phrase</code>, <code>IPA</code>, <code>SoundsLike</code>, and <code>DisplayAs</code> fields. Separate the fields with TAB characters. The size limit is 50KB. For more information, see <a href="https://docs.aws.amazon.com/transcribe/latest/dg/custom-vocabulary.html#create-vocabulary-table">Create a custom vocabulary using a table</a>.
 		 * Required
-		 * Max length: 60000
 		 * Min length: 1
+		 * Max length: 60000
 		 */
 		Content: FormControl<string | null | undefined>,
 
@@ -15299,15 +15547,15 @@ export namespace MyNS {
 		/**
 		 * A title of the evaluation form.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Title: string;
 
 		/**
 		 * The description of the evaluation form.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -15343,15 +15591,15 @@ export namespace MyNS {
 		/**
 		 * A title of the evaluation form.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Title: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the evaluation form.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -15392,15 +15640,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the hours of operation.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the hours of operation.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
@@ -15418,15 +15666,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the hours of operation.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the hours of operation.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -15446,22 +15694,22 @@ export namespace MyNS {
 
 		/**
 		 * The name of the prompt.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name?: string | null;
 
 		/**
 		 * A description of the prompt.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
 		/**
 		 * The URI for the S3 bucket where the prompt is stored.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		S3Uri?: string | null;
 	}
@@ -15469,22 +15717,22 @@ export namespace MyNS {
 
 		/**
 		 * The name of the prompt.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the prompt.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The URI for the S3 bucket where the prompt is stored.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		S3Uri: FormControl<string | null | undefined>,
 	}
@@ -15502,8 +15750,8 @@ export namespace MyNS {
 		/**
 		 * The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Name: string;
 
@@ -15530,8 +15778,8 @@ export namespace MyNS {
 		/**
 		 * The name of the rule. You can change the name only if <code>TriggerEventSource</code> is one of the following values: <code>OnZendeskTicketCreate</code> | <code>OnZendeskTicketStatusUpdate</code> | <code>OnSalesforceCaseCreate</code>
 		 * Required
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -15602,15 +15850,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the task template.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the task template.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Description?: string | null;
 
@@ -15636,15 +15884,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the task template.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the task template.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -15695,15 +15943,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the agent status.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the agent status.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description?: string | null;
 
@@ -15724,15 +15972,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the agent status.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the agent status.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -15764,15 +16012,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the contact.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the contact.
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		Description?: string | null;
 
@@ -15783,15 +16031,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the contact.
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the contact.
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -15812,8 +16060,8 @@ export namespace MyNS {
 		/**
 		 * The value for the attribute. Maximum character limit is 100.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Value: string;
 	}
@@ -15822,8 +16070,8 @@ export namespace MyNS {
 		/**
 		 * The value for the attribute. Maximum character limit is 100.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
@@ -15976,8 +16224,8 @@ export namespace MyNS {
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 	}
@@ -15986,8 +16234,8 @@ export namespace MyNS {
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 	}
@@ -16252,8 +16500,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken?: string | null;
 
@@ -16286,8 +16534,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -16347,8 +16595,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 131070
 		 * Min length: 1
+		 * Max length: 131070
 		 */
 		NextToken?: string | null;
 	}
@@ -16366,8 +16614,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 131070
 		 * Min length: 1
+		 * Max length: 131070
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -16394,8 +16642,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		NextToken?: string | null;
 
@@ -16428,8 +16676,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -16492,24 +16740,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
 		/**
 		 * The identifier of the user account.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		UserId: string;
 
@@ -16530,24 +16778,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can find the instanceId in the ARN of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the user account.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		UserId: FormControl<string | null | undefined>,
 
@@ -16595,8 +16843,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services Region where to replicate the Amazon Connect instance.
 		 * Required
-		 * Max length: 31
 		 * Min length: 8
+		 * Max length: 31
 		 */
 		ReplicaRegion: string;
 
@@ -16609,8 +16857,8 @@ export namespace MyNS {
 		/**
 		 * The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.
 		 * Required
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		ReplicaAlias: string;
 	}
@@ -16619,8 +16867,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services Region where to replicate the Amazon Connect instance.
 		 * Required
-		 * Max length: 31
 		 * Min length: 8
+		 * Max length: 31
 		 */
 		ReplicaRegion: FormControl<string | null | undefined>,
 
@@ -16633,8 +16881,8 @@ export namespace MyNS {
 		/**
 		 * The alias for the replicated instance. The <code>ReplicaAlias</code> must be unique.
 		 * Required
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		ReplicaAlias: FormControl<string | null | undefined>,
 	}
@@ -16652,24 +16900,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InitialContactId: string;
 	}
@@ -16678,24 +16926,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InitialContactId: FormControl<string | null | undefined>,
 	}
@@ -16740,8 +16988,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		NextToken?: string | null;
 	}
@@ -16777,8 +17025,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -16799,15 +17047,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken?: string | null;
 
@@ -16829,15 +17077,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -16888,15 +17136,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken?: string | null;
 
@@ -16918,15 +17166,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -16977,15 +17225,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken?: string | null;
 
@@ -17007,15 +17255,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -17069,15 +17317,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken?: string | null;
 
@@ -17099,15 +17347,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -17158,8 +17406,8 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		InstanceId: string;
 
@@ -17168,8 +17416,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken?: string | null;
 
@@ -17188,15 +17436,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can find the instanceId in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -17232,15 +17480,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken?: string | null;
 
@@ -17262,15 +17510,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -17321,15 +17569,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken?: string | null;
 
@@ -17351,15 +17599,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -17411,15 +17659,15 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId?: string | null;
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken?: string | null;
 
@@ -17440,15 +17688,15 @@ export namespace MyNS {
 
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 2500
 		 * Min length: 1
+		 * Max length: 2500
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -17506,8 +17754,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 131070
 		 * Min length: 1
+		 * Max length: 131070
 		 */
 		NextToken?: string | null;
 
@@ -17516,8 +17764,8 @@ export namespace MyNS {
 
 		/**
 		 * The starting pattern of the name of the vocabulary.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		NameStartsWith?: string | null;
 
@@ -17535,8 +17783,8 @@ export namespace MyNS {
 
 		/**
 		 * The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
-		 * Max length: 131070
 		 * Min length: 1
+		 * Max length: 131070
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -17545,8 +17793,8 @@ export namespace MyNS {
 
 		/**
 		 * The starting pattern of the name of the vocabulary.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		NameStartsWith: FormControl<string | null | undefined>,
 
@@ -17569,8 +17817,8 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
@@ -17614,8 +17862,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note> <p>You cannot provide data for both RelatedContactId and PersistentChat. </p> </note>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		RelatedContactId?: string | null;
 	}
@@ -17624,8 +17872,8 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
@@ -17654,8 +17902,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The unique identifier for an Amazon Connect contact. This identifier is related to the chat starting.</p> <note> <p>You cannot provide data for both RelatedContactId and PersistentChat. </p> </note>
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		RelatedContactId: FormControl<string | null | undefined>,
 	}
@@ -17721,16 +17969,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the contact in this instance of Amazon Connect.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
 		/**
 		 * The unique identifier for the evaluation form.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		EvaluationFormId: string;
 
@@ -17745,16 +17993,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the contact in this instance of Amazon Connect.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique identifier for the evaluation form.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		EvaluationFormId: FormControl<string | null | undefined>,
 
@@ -17778,24 +18026,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InitialContactId: string;
 
@@ -17810,24 +18058,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InitialContactId: FormControl<string | null | undefined>,
 	}
@@ -17858,16 +18106,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
@@ -17889,16 +18137,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
@@ -17949,8 +18197,8 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
@@ -17974,8 +18222,8 @@ export namespace MyNS {
 
 		/**
 		 * The campaign identifier of the outbound communication.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		CampaignId?: string | null;
 
@@ -18000,8 +18248,8 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
@@ -18022,8 +18270,8 @@ export namespace MyNS {
 
 		/**
 		 * The campaign identifier of the outbound communication.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		CampaignId: FormControl<string | null | undefined>,
 
@@ -18066,15 +18314,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the previous chat, voice, or task contact.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		PreviousContactId?: string | null;
 
@@ -18090,8 +18338,8 @@ export namespace MyNS {
 		/**
 		 * The name of a task that is shown to an agent in the Contact Control Panel (CCP).
 		 * Required
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Name: string;
 
@@ -18100,8 +18348,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the task that is shown to an agent in the Contact Control Panel (CCP).
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		Description?: string | null;
 
@@ -18116,8 +18364,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique identifier for the task template.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		TaskTemplateId?: string | null;
 
@@ -18126,8 +18374,8 @@ export namespace MyNS {
 
 		/**
 		 * The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		RelatedContactId?: string | null;
 	}
@@ -18136,15 +18384,15 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the previous chat, voice, or task contact.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		PreviousContactId: FormControl<string | null | undefined>,
 
@@ -18160,8 +18408,8 @@ export namespace MyNS {
 		/**
 		 * The name of a task that is shown to an agent in the Contact Control Panel (CCP).
 		 * Required
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -18170,8 +18418,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the task that is shown to an agent in the Contact Control Panel (CCP).
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -18186,8 +18434,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique identifier for the task template.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		TaskTemplateId: FormControl<string | null | undefined>,
 
@@ -18196,8 +18444,8 @@ export namespace MyNS {
 
 		/**
 		 * The contactId that is <a href="https://docs.aws.amazon.com/connect/latest/adminguide/tasks.html#linked-tasks">related</a> to this contact.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		RelatedContactId: FormControl<string | null | undefined>,
 	}
@@ -18224,16 +18472,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 	}
@@ -18242,16 +18490,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 	}
@@ -18268,24 +18516,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InitialContactId: string;
 	}
@@ -18294,24 +18542,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InitialContactId: FormControl<string | null | undefined>,
 	}
@@ -18329,24 +18577,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
 		/**
 		 * The identifier of the streaming configuration enabled.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		StreamingId: string;
 	}
@@ -18355,24 +18603,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact that is associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the streaming configuration enabled.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		StreamingId: FormControl<string | null | undefined>,
 	}
@@ -18414,24 +18662,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InitialContactId: string;
 	}
@@ -18440,24 +18688,24 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InitialContactId: FormControl<string | null | undefined>,
 	}
@@ -18475,16 +18723,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the contact in this instance of Amazon Connect.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
@@ -18493,8 +18741,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the user.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		UserId?: string | null;
 
@@ -18516,16 +18764,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact in this instance of Amazon Connect.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
@@ -18534,8 +18782,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the user.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		UserId: FormControl<string | null | undefined>,
 
@@ -18569,16 +18817,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InitialContactId: string;
 
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
@@ -18593,16 +18841,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the contact. This is the identifier of the contact associated with the first interaction with the contact center.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		InitialContactId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
@@ -18686,8 +18934,8 @@ export namespace MyNS {
 		/**
 		 * The content of the flow module.
 		 * Required
-		 * Max length: 256000
 		 * Min length: 1
+		 * Max length: 256000
 		 */
 		Content: string;
 	}
@@ -18696,8 +18944,8 @@ export namespace MyNS {
 		/**
 		 * The content of the flow module.
 		 * Required
-		 * Max length: 256000
 		 * Min length: 1
+		 * Max length: 256000
 		 */
 		Content: FormControl<string | null | undefined>,
 	}
@@ -18712,15 +18960,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the flow module.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the flow module.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description?: string | null;
 
@@ -18731,15 +18979,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the flow module.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the flow module.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -18790,16 +19038,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: string;
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: string;
 
@@ -18814,16 +19062,16 @@ export namespace MyNS {
 		/**
 		 * The identifier of the Amazon Connect instance. You can <a href="https://docs.aws.amazon.com/connect/latest/adminguide/find-instance-arn.html">find the instance ID</a> in the Amazon Resource Name (ARN) of the instance.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		InstanceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier of the contact.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
@@ -18919,15 +19167,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the queue.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the queue.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description?: string | null;
 	}
@@ -18935,15 +19183,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the queue.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the queue.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -19049,15 +19297,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the quick connect.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the quick connect.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description?: string | null;
 	}
@@ -19065,15 +19313,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the quick connect.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the quick connect.
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -19151,15 +19399,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the routing profile. Must not be more than 127 characters.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the routing profile. Must not be more than 250 characters.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description?: string | null;
 	}
@@ -19167,15 +19415,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the routing profile. Must not be more than 127 characters.
-		 * Max length: 127
 		 * Min length: 1
+		 * Max length: 127
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the routing profile. Must not be more than 250 characters.
-		 * Max length: 250
 		 * Min length: 1
+		 * Max length: 250
 		 */
 		Description: FormControl<string | null | undefined>,
 	}

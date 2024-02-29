@@ -664,8 +664,8 @@ export namespace MyNS {
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		ClientToken: string;
 	}
@@ -674,8 +674,8 @@ export namespace MyNS {
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -737,8 +737,8 @@ export namespace MyNS {
 		/**
 		 * A unique identifier for the attachment.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		AttachmentId: string;
 	}
@@ -747,8 +747,8 @@ export namespace MyNS {
 		/**
 		 * A unique identifier for the attachment.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		AttachmentId: FormControl<string | null | undefined>,
 	}
@@ -763,8 +763,8 @@ export namespace MyNS {
 
 		/**
 		 * The contactId from the current contact chain for which transcript is needed.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId?: string | null;
 
@@ -777,8 +777,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		NextToken?: string | null;
 
@@ -795,8 +795,8 @@ export namespace MyNS {
 
 		/**
 		 * The contactId from the current contact chain for which transcript is needed.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ContactId: FormControl<string | null | undefined>,
 
@@ -809,8 +809,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token. Use the value returned previously in the next subsequent request to retrieve the next set of results.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -855,15 +855,15 @@ export namespace MyNS {
 		/**
 		 * <p>The content type of the request. Supported types are:</p> <ul> <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li> <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li> <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li> <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		ContentType: string;
 
 		/**
 		 * <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p> <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
-		 * Max length: 16384
 		 * Min length: 1
+		 * Max length: 16384
 		 */
 		Content?: string | null;
 
@@ -878,15 +878,15 @@ export namespace MyNS {
 		/**
 		 * <p>The content type of the request. Supported types are:</p> <ul> <li> <p>application/vnd.amazonaws.connect.event.typing</p> </li> <li> <p>application/vnd.amazonaws.connect.event.connection.acknowledged</p> </li> <li> <p>application/vnd.amazonaws.connect.event.message.delivered</p> </li> <li> <p>application/vnd.amazonaws.connect.event.message.read</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		ContentType: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The content of the event to be sent (for example, message text). For content related to message receipts, this is supported in the form of a JSON string.</p> <p>Sample Content: "{\"messageId\":\"11111111-aaaa-bbbb-cccc-EXAMPLE01234\"}"</p>
-		 * Max length: 16384
 		 * Min length: 1
+		 * Max length: 16384
 		 */
 		Content: FormControl<string | null | undefined>,
 
@@ -910,16 +910,16 @@ export namespace MyNS {
 		/**
 		 * The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		ContentType: string;
 
 		/**
 		 * <p>The content of the message. </p> <ul> <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li> <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li> <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li> </ul>
 		 * Required
-		 * Max length: 16384
 		 * Min length: 1
+		 * Max length: 16384
 		 */
 		Content: string;
 
@@ -934,16 +934,16 @@ export namespace MyNS {
 		/**
 		 * The type of the content. Supported types are <code>text/plain</code>, <code>text/markdown</code>, <code>application/json</code>, and <code>application/vnd.amazonaws.connect.message.interactive.response</code>.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		ContentType: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The content of the message. </p> <ul> <li> <p>For <code>text/plain</code> and <code>text/markdown</code>, the Length Constraints are Minimum of 1, Maximum of 1024. </p> </li> <li> <p>For <code>application/json</code>, the Length Constraints are Minimum of 1, Maximum of 12000. </p> </li> <li> <p>For <code>application/vnd.amazonaws.connect.message.interactive.response</code>, the Length Constraints are Minimum of 1, Maximum of 12288.</p> </li> </ul>
 		 * Required
-		 * Max length: 16384
 		 * Min length: 1
+		 * Max length: 16384
 		 */
 		Content: FormControl<string | null | undefined>,
 
@@ -967,8 +967,8 @@ export namespace MyNS {
 		/**
 		 * Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ContentType: string;
 
@@ -982,16 +982,16 @@ export namespace MyNS {
 		/**
 		 * A case-sensitive name of the attachment being uploaded.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		AttachmentName: string;
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		ClientToken: string;
 	}
@@ -1000,8 +1000,8 @@ export namespace MyNS {
 		/**
 		 * Describes the MIME file type of the attachment. For a list of supported file types, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/feature-limits.html">Feature specifications</a> in the <i>Amazon Connect Administrator Guide</i>.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ContentType: FormControl<string | null | undefined>,
 
@@ -1015,16 +1015,16 @@ export namespace MyNS {
 		/**
 		 * A case-sensitive name of the attachment being uploaded.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		AttachmentName: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If not provided, the Amazon Web Services SDK populates this field. For more information about idempotency, see <a href="https://aws.amazon.com/builders-library/making-retries-safe-with-idempotent-APIs/">Making retries safe with idempotent APIs</a>.
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}

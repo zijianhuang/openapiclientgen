@@ -171,6 +171,7 @@ export namespace MyNS {
 		 * @param {string} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} ascLocation The location where ASC stores the data of the subscription. can be retrieved from Get locations
 		 * @param {string} filter OData filter. Optional.
 		 * @return {SecurityTaskList} OK
@@ -185,6 +186,7 @@ export namespace MyNS {
 		 * @param {string} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} ascLocation The location where ASC stores the data of the subscription. can be retrieved from Get locations
 		 * @param {string} taskName Name of the task object, will be a GUID
 		 * @return {SecurityTask} OK
@@ -199,6 +201,7 @@ export namespace MyNS {
 		 * @param {string} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} ascLocation The location where ASC stores the data of the subscription. can be retrieved from Get locations
 		 * @param {string} taskName Name of the task object, will be a GUID
 		 * @param {Tasks_UpdateSubscriptionLevelTaskStateTaskUpdateActionType} taskUpdateActionType Type of the action to do on the task

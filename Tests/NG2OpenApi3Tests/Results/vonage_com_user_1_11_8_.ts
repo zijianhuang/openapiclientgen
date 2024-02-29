@@ -80,7 +80,10 @@ export namespace MyNS {
 		/** Error message */
 		msg?: string | null;
 
-		/** Http Response Code */
+		/**
+		 * Http Response Code
+		 * Type: double
+		 */
 		status?: number | null;
 	}
 	export interface ErrorResponseFormProperties {
@@ -88,7 +91,10 @@ export namespace MyNS {
 		/** Error message */
 		msg: FormControl<string | null | undefined>,
 
-		/** Http Response Code */
+		/**
+		 * Http Response Code
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorResponseFormGroup() {
@@ -220,7 +226,10 @@ export namespace MyNS {
 		/** First name of the user */
 		first_name?: string | null;
 
-		/** Unique identifier of the user */
+		/**
+		 * Unique identifier of the user
+		 * Type: double
+		 */
 		id?: number | null;
 
 		/** Last name of the user */
@@ -237,7 +246,10 @@ export namespace MyNS {
 		/** First name of the user */
 		first_name: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the user */
+		/**
+		 * Unique identifier of the user
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Last name of the user */
@@ -292,30 +304,54 @@ export namespace MyNS {
 		_embedded?: UserEmbeddedObject;
 		_links?: Links;
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page?: number | null;
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size?: number | null;
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items?: number | null;
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_pages?: number | null;
 	}
 	export interface UserHalResponseFormProperties {
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size: FormControl<number | null | undefined>,
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items: FormControl<number | null | undefined>,
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateUserHalResponseFormGroup() {
@@ -343,30 +379,54 @@ export namespace MyNS {
 		_embedded?: UsersEmbeddedObject;
 		_links?: Links;
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page?: number | null;
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size?: number | null;
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items?: number | null;
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_pages?: number | null;
 	}
 	export interface UsersHalResponseFormProperties {
 
-		/** Current page number */
+		/**
+		 * Current page number
+		 * Type: double
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of records per page */
+		/**
+		 * Number of records per page
+		 * Type: double
+		 */
 		page_size: FormControl<number | null | undefined>,
 
-		/** Total number of records */
+		/**
+		 * Total number of records
+		 * Type: double
+		 */
 		total_items: FormControl<number | null | undefined>,
 
-		/** Total number of pages */
+		/**
+		 * Total number of pages
+		 * Type: double
+		 */
 		total_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateUsersHalResponseFormGroup() {
@@ -387,7 +447,10 @@ export namespace MyNS {
 		/** Invalid parameters and their reason for failing */
 		invalid_parameters?: Array<DetailedInvalidParam>;
 
-		/** Error status code */
+		/**
+		 * Error status code
+		 * Type: double
+		 */
 		status?: number | null;
 
 		/** Error title */
@@ -398,7 +461,10 @@ export namespace MyNS {
 		/** Error Track ID */
 		instance: FormControl<string | null | undefined>,
 
-		/** Error status code */
+		/**
+		 * Error status code
+		 * Type: double
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** Error title */
@@ -423,7 +489,9 @@ export namespace MyNS {
 		 * Get api/accounts/{account_id}/users
 		 * @param {string} account_id The Vonage Business Cloud account ID
 		 * @param {number} page_size Number of records per page
+		 *     Type: double
 		 * @param {number} page Current page number
+		 *     Type: double
 		 * @param {string} first_name Filter by first name
 		 * @param {string} last_name Filter by last name
 		 * @param {string} login_name Filter by login name
@@ -439,6 +507,7 @@ export namespace MyNS {
 		 * Get api/accounts/{account_id}/users/{user_id}
 		 * @param {string} account_id The Vonage Business Cloud account ID
 		 * @param {number} user_id The Vonage Business Cloud user ID
+		 *     Type: double
 		 * @return {UserHalResponse} Success
 		 */
 		UserCtrl_getUserByID(account_id: string, user_id: number): Observable<UserHalResponse> {

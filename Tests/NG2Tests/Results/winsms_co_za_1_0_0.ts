@@ -1530,7 +1530,9 @@ export namespace MyNS {
 		 * Only the first 100 incoming short/long code messages will be returned if no ***offset*** and ***limit*** parameters are specified.
 		 * Get shortcode/incoming
 		 * @param {number} offset ***Optional*** - The number of items to skip before starting to return results. Default 0. Minimum 0.
+		 *     Minimum: 0
 		 * @param {number} limit ***Optional*** - The number of items to return. Default 100. Minimum 1. Maximum 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ShortcodeMessageResponse} OK
 		 */
 		GetShortCodeMessages(offset: number | null | undefined, limit: number | null | undefined): Observable<ShortcodeMessageResponse> {
@@ -1543,7 +1545,9 @@ export namespace MyNS {
 		 * Only the first 100 incoming messages will be returned if no ***offset*** and ***limit*** parameters are specified.
 		 * Get sms/incoming
 		 * @param {number} offset ***Optional*** - The number of items to skip before starting to return results. Default 0. Minimum 0.
+		 *     Minimum: 0
 		 * @param {number} limit ***Optional*** - The number of items to return. Default 100. Minimum 1. Maximum 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {IncomingMessageResponse} OK
 		 */
 		GetIncomingMessages(offset: number | null | undefined, limit: number | null | undefined): Observable<IncomingMessageResponse> {
@@ -1603,7 +1607,9 @@ export namespace MyNS {
 		 * Only the first 100 scheduled messages will be returned if no ***offset*** and ***limit*** parameters are specified.
 		 * Get sms/scheduled
 		 * @param {number} offset ***Optional*** - The number of items to skip before starting to return results. Default 0. Minimum 0.
+		 *     Minimum: 0
 		 * @param {number} limit ***Optional*** - The number of items to return. Default 100. Minimum 1. Maximum 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ScheduledMessageResponse} OK
 		 */
 		GetScheduledMessages(offset: number | null | undefined, limit: number | null | undefined): Observable<ScheduledMessageResponse> {

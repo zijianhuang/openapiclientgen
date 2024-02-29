@@ -11,8 +11,11 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Required */
-		size: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: string;
 
 		/**
 		 * The current status of a collection.
@@ -28,8 +31,11 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
-		size: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		size: FormControl<string | null | undefined>,
 
 		/**
 		 * The current status of a collection.
@@ -40,7 +46,7 @@ export namespace MyNS {
 	export function CreateCollectionFormGroup() {
 		return new FormGroup<CollectionFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			size: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -57,8 +63,8 @@ export namespace MyNS {
 		/**
 		 * The unique name of an index.
 		 * Required
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		source: string;
 	}
@@ -73,8 +79,8 @@ export namespace MyNS {
 		/**
 		 * The unique name of an index.
 		 * Required
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		source: FormControl<string | null | undefined>,
 	}
@@ -158,10 +164,15 @@ export namespace MyNS {
 		 */
 		dimension?: number | null;
 
-		/** The fullness of the index, regardless of whether a metadata filter expression was passed. The granularity of this metric is 10%. */
+		/**
+		 * The fullness of the index, regardless of whether a metadata filter expression was passed. The granularity of this metric is 10%.
+		 * Type: float
+		 */
 		indexFullness?: number | null;
 		namespaces?: {[id: string]: IndexNamespaceStats };
-		totalVectorCount?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalVectorCount?: string | null;
 	}
 	export interface DescribeIndexStatsResponseFormProperties {
 
@@ -172,30 +183,39 @@ export namespace MyNS {
 		 */
 		dimension: FormControl<number | null | undefined>,
 
-		/** The fullness of the index, regardless of whether a metadata filter expression was passed. The granularity of this metric is 10%. */
+		/**
+		 * The fullness of the index, regardless of whether a metadata filter expression was passed. The granularity of this metric is 10%.
+		 * Type: float
+		 */
 		indexFullness: FormControl<number | null | undefined>,
 		namespaces: FormControl<{[id: string]: IndexNamespaceStats } | null | undefined>,
-		totalVectorCount: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalVectorCount: FormControl<string | null | undefined>,
 	}
 	export function CreateDescribeIndexStatsResponseFormGroup() {
 		return new FormGroup<DescribeIndexStatsResponseFormProperties>({
 			dimension: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(20000)]),
 			indexFullness: new FormControl<number | null | undefined>(undefined),
 			namespaces: new FormControl<{[id: string]: IndexNamespaceStats } | null | undefined>(undefined),
-			totalVectorCount: new FormControl<number | null | undefined>(undefined),
+			totalVectorCount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface IndexNamespaceStats {
-		vectorCount?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vectorCount?: string | null;
 	}
 	export interface IndexNamespaceStatsFormProperties {
-		vectorCount: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		vectorCount: FormControl<string | null | undefined>,
 	}
 	export function CreateIndexNamespaceStatsFormGroup() {
 		return new FormGroup<IndexNamespaceStatsFormProperties>({
-			vectorCount: new FormControl<number | null | undefined>(undefined),
+			vectorCount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -271,8 +291,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of an index.
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		name?: string | null;
 
@@ -302,8 +322,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique name of an index.
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -338,6 +358,8 @@ export namespace MyNS {
 
 	export interface IndexStatus {
 		host?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 		ready?: boolean | null;
 
@@ -346,6 +368,8 @@ export namespace MyNS {
 	}
 	export interface IndexStatusFormProperties {
 		host: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 		ready: FormControl<boolean | null | undefined>,
 
@@ -413,8 +437,8 @@ export namespace MyNS {
 		/**
 		 * The unique name of an index.
 		 * Required
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		name: string;
 
@@ -452,8 +476,8 @@ export namespace MyNS {
 		/**
 		 * The unique name of an index.
 		 * Required
-		 * Max length: 45
 		 * Min length: 1
+		 * Max length: 45
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -525,6 +549,8 @@ export namespace MyNS {
 		 */
 		id: string;
 		metadata?: VectorMetadata;
+
+		/** Type: float */
 		score?: number | null;
 
 		/** Vector sparse data. Represented as a list of indices and a list of corresponded values, which must be the same length. */
@@ -540,6 +566,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		id: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryMatchFormGroup() {
@@ -608,7 +636,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 10000
 		 */
-		topK: number;
+		topK: string;
 
 		/** Vector dense data. This should be the same length as the dimension of the index being queried. */
 		vector?: Array<number>;
@@ -629,7 +657,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 10000
 		 */
-		topK: FormControl<number | null | undefined>,
+		topK: FormControl<string | null | undefined>,
 	}
 	export function CreateQueryRequestFormGroup() {
 		return new FormGroup<QueryRequestFormProperties>({
@@ -637,7 +665,7 @@ export namespace MyNS {
 			includeMetadata: new FormControl<boolean | null | undefined>(undefined),
 			includeValues: new FormControl<boolean | null | undefined>(undefined),
 			namespace: new FormControl<string | null | undefined>(undefined),
-			topK: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(10000)]),
+			topK: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(10000)]),
 		});
 
 	}
@@ -755,14 +783,18 @@ export namespace MyNS {
 	}
 
 	export interface UpsertResponse {
-		upsertedCount?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		upsertedCount?: string | null;
 	}
 	export interface UpsertResponseFormProperties {
-		upsertedCount: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		upsertedCount: FormControl<string | null | undefined>,
 	}
 	export function CreateUpsertResponseFormGroup() {
 		return new FormGroup<UpsertResponseFormProperties>({
-			upsertedCount: new FormControl<number | null | undefined>(undefined),
+			upsertedCount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

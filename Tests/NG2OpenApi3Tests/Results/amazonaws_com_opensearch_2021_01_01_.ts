@@ -4506,6 +4506,7 @@ export namespace MyNS {
 		 * Allows the destination Amazon OpenSearch Service domain owner to accept an inbound cross-cluster search connection request. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.
 		 * Put 2021-01-01/opensearch/cc/inboundConnection/{ConnectionId}/accept
 		 * @param {string} ConnectionId The ID of the inbound connection to accept.
+		 *     Min length: 10    Max length: 256
 		 * @return {AcceptInboundConnectionResponse} Success
 		 */
 		AcceptInboundConnection(ConnectionId: string): Observable<AcceptInboundConnectionResponse> {
@@ -4526,6 +4527,7 @@ export namespace MyNS {
 		 * Post 2021-01-01/packages/associate/{PackageID}/{DomainName}
 		 * @param {string} PackageID Internal ID of the package to associate with a domain. Use <code>DescribePackages</code> to find this value. 
 		 * @param {string} DomainName Name of the domain to associate the package with.
+		 *     Min length: 3    Max length: 28
 		 * @return {AssociatePackageResponse} Success
 		 */
 		AssociatePackage(PackageID: string, DomainName: string): Observable<AssociatePackageResponse> {
@@ -4536,6 +4538,7 @@ export namespace MyNS {
 		 * Provides access to an Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 		 * Post 2021-01-01/opensearch/domain/{DomainName}/authorizeVpcEndpointAccess
 		 * @param {string} DomainName The name of the OpenSearch Service domain to provide access to.
+		 *     Min length: 3    Max length: 28
 		 * @return {AuthorizeVpcEndpointAccessResponse} Success
 		 */
 		AuthorizeVpcEndpointAccess(DomainName: string, requestBody: AuthorizeVpcEndpointAccessPostBody): Observable<AuthorizeVpcEndpointAccessResponse> {
@@ -4601,6 +4604,7 @@ export namespace MyNS {
 		 * Deletes an Amazon OpenSearch Service domain and all of its data. You can't recover a domain after you delete it.
 		 * Delete 2021-01-01/opensearch/domain/{DomainName}
 		 * @param {string} DomainName The name of the domain you want to permanently delete.
+		 *     Min length: 3    Max length: 28
 		 * @return {DeleteDomainResponse} Success
 		 */
 		DeleteDomain(DomainName: string): Observable<DeleteDomainResponse> {
@@ -4611,6 +4615,7 @@ export namespace MyNS {
 		 * Describes the domain configuration for the specified Amazon OpenSearch Service domain, including the domain ID, domain service endpoint, and domain ARN.
 		 * Get 2021-01-01/opensearch/domain/{DomainName}
 		 * @param {string} DomainName The name of the domain that you want information about.
+		 *     Min length: 3    Max length: 28
 		 * @return {DescribeDomainResponse} Success
 		 */
 		DescribeDomain(DomainName: string): Observable<DescribeDomainResponse> {
@@ -4621,6 +4626,7 @@ export namespace MyNS {
 		 * Allows the destination Amazon OpenSearch Service domain owner to delete an existing inbound cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.
 		 * Delete 2021-01-01/opensearch/cc/inboundConnection/{ConnectionId}
 		 * @param {string} ConnectionId The ID of the inbound connection to permanently delete.
+		 *     Min length: 10    Max length: 256
 		 * @return {DeleteInboundConnectionResponse} Success
 		 */
 		DeleteInboundConnection(ConnectionId: string): Observable<DeleteInboundConnectionResponse> {
@@ -4631,6 +4637,7 @@ export namespace MyNS {
 		 * Allows the source Amazon OpenSearch Service domain owner to delete an existing outbound cross-cluster search connection. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/cross-cluster-search.html">Cross-cluster search for Amazon OpenSearch Service</a>.
 		 * Delete 2021-01-01/opensearch/cc/outboundConnection/{ConnectionId}
 		 * @param {string} ConnectionId The ID of the outbound connection you want to permanently delete.
+		 *     Min length: 10    Max length: 256
 		 * @return {DeleteOutboundConnectionResponse} Success
 		 */
 		DeleteOutboundConnection(ConnectionId: string): Observable<DeleteOutboundConnectionResponse> {
@@ -4651,6 +4658,7 @@ export namespace MyNS {
 		 * Deletes an Amazon OpenSearch Service-managed interface VPC endpoint.
 		 * Delete 2021-01-01/opensearch/vpcEndpoints/{VpcEndpointId}
 		 * @param {string} VpcEndpointId The unique identifier of the endpoint.
+		 *     Min length: 5    Max length: 256
 		 * @return {DeleteVpcEndpointResponse} Success
 		 */
 		DeleteVpcEndpoint(VpcEndpointId: string): Observable<DeleteVpcEndpointResponse> {
@@ -4661,6 +4669,7 @@ export namespace MyNS {
 		 * Returns the list of optimizations that Auto-Tune has made to an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html">Auto-Tune for Amazon OpenSearch Service</a>.
 		 * Get 2021-01-01/opensearch/domain/{DomainName}/autoTunes
 		 * @param {string} DomainName Name of the domain that you want Auto-Tune details about.
+		 *     Min length: 3    Max length: 28
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeDomainAutoTunesResponse} Success
@@ -4673,7 +4682,9 @@ export namespace MyNS {
 		 * Returns information about the current blue/green deployment happening on an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes.html">Making configuration changes in Amazon OpenSearch Service</a>.
 		 * Get 2021-01-01/opensearch/domain/{DomainName}/progress
 		 * @param {string} DomainName The name of the domain to get progress information for.
+		 *     Min length: 3    Max length: 28
 		 * @param {string} changeid The specific change ID for which you want to get progress information. If omitted, the request returns information about the most recent configuration change.
+		 *     Min length: 36    Max length: 36
 		 * @return {DescribeDomainChangeProgressResponse} Success
 		 */
 		DescribeDomainChangeProgress(DomainName: string, changeid: string | null | undefined): Observable<DescribeDomainChangeProgressResponse> {
@@ -4684,6 +4695,7 @@ export namespace MyNS {
 		 * Returns the configuration of an Amazon OpenSearch Service domain.
 		 * Get 2021-01-01/opensearch/domain/{DomainName}/config
 		 * @param {string} DomainName Name of the OpenSearch Service domain configuration that you want to describe.
+		 *     Min length: 3    Max length: 28
 		 * @return {DescribeDomainConfigResponse} Success
 		 */
 		DescribeDomainConfig(DomainName: string): Observable<DescribeDomainConfigResponse> {
@@ -4694,6 +4706,7 @@ export namespace MyNS {
 		 * Modifies the cluster configuration of the specified Amazon OpenSearch Service domain.sl
 		 * Post 2021-01-01/opensearch/domain/{DomainName}/config
 		 * @param {string} DomainName The name of the domain that you're updating.
+		 *     Min length: 3    Max length: 28
 		 * @return {UpdateDomainConfigResponse} Success
 		 */
 		UpdateDomainConfig(DomainName: string, requestBody: UpdateDomainConfigPostBody): Observable<UpdateDomainConfigResponse> {
@@ -4704,6 +4717,7 @@ export namespace MyNS {
 		 * Returns information about domain and node health, the standby Availability Zone, number of nodes per Availability Zone, and shard count per node.
 		 * Get 2021-01-01/opensearch/domain/{DomainName}/health
 		 * @param {string} DomainName The name of the domain.
+		 *     Min length: 3    Max length: 28
 		 * @return {DescribeDomainHealthResponse} Success
 		 */
 		DescribeDomainHealth(DomainName: string): Observable<DescribeDomainHealthResponse> {
@@ -4714,6 +4728,7 @@ export namespace MyNS {
 		 * Returns information about domain and nodes, including data nodes, master nodes, ultrawarm nodes, Availability Zone(s), standby nodes, node configurations, and node states.
 		 * Get 2021-01-01/opensearch/domain/{DomainName}/nodes
 		 * @param {string} DomainName The name of the domain.
+		 *     Min length: 3    Max length: 28
 		 * @return {DescribeDomainNodesResponse} Success
 		 */
 		DescribeDomainNodes(DomainName: string): Observable<DescribeDomainNodesResponse> {
@@ -4733,7 +4748,9 @@ export namespace MyNS {
 		 * Describes the progress of a pre-update dry run analysis on an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-configuration-changes#dryrun">Determining whether a change will cause a blue/green deployment</a>.
 		 * Get 2021-01-01/opensearch/domain/{DomainName}/dryRun
 		 * @param {string} DomainName The name of the domain.
+		 *     Min length: 3    Max length: 28
 		 * @param {string} dryRunId The unique identifier of the dry run.
+		 *     Min length: 36    Max length: 36
 		 * @param {boolean} loadDryRunConfig Whether to include the configuration of the dry run in the response. The configuration specifies the updates that you're planning to make on the domain.
 		 * @return {DescribeDryRunProgressResponse} Success
 		 */
@@ -4756,8 +4773,10 @@ export namespace MyNS {
 		 * Describes the instance count, storage, and master node limits for a given OpenSearch or Elasticsearch version and instance type.
 		 * Get 2021-01-01/opensearch/instanceTypeLimits/{EngineVersion}/{InstanceType}
 		 * @param {string} domainName The name of the domain. Only specify if you need the limits for an existing domain.
+		 *     Min length: 3    Max length: 28
 		 * @param {OpenSearchPartitionInstanceType} InstanceType The OpenSearch Service instance type for which you need limit information.
 		 * @param {string} EngineVersion Version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.
+		 *     Min length: 14    Max length: 18
 		 * @return {DescribeInstanceTypeLimitsResponse} Success
 		 */
 		DescribeInstanceTypeLimits(domainName: string | null | undefined, InstanceType: OpenSearchPartitionInstanceType, EngineVersion: string): Observable<DescribeInstanceTypeLimitsResponse> {
@@ -4790,7 +4809,9 @@ export namespace MyNS {
 		 * Describes the available Amazon OpenSearch Service Reserved Instance offerings for a given Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved Instances in Amazon OpenSearch Service</a>.
 		 * Get 2021-01-01/opensearch/reservedInstanceOfferings
 		 * @param {string} offeringId The Reserved Instance identifier filter value. Use this parameter to show only the available instance types that match the specified reservation identifier.
+		 *     Min length: 36    Max length: 36
 		 * @param {number} maxResults An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		 *     Maximum: 100
 		 * @param {string} nextToken If your initial <code>DescribeReservedInstanceOfferings</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstanceOfferings</code> operations, which returns results in the next page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4804,7 +4825,9 @@ export namespace MyNS {
 		 * Describes the Amazon OpenSearch Service instances that you have reserved in a given Region. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/ri.html">Reserved Instances in Amazon OpenSearch Service</a>.
 		 * Get 2021-01-01/opensearch/reservedInstances
 		 * @param {string} reservationId The reserved instance identifier filter value. Use this parameter to show only the reservation that matches the specified reserved OpenSearch instance ID.
+		 *     Min length: 36    Max length: 36
 		 * @param {number} maxResults An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		 *     Maximum: 100
 		 * @param {string} nextToken If your initial <code>DescribeReservedInstances</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>DescribeReservedInstances</code> operations, which returns results in the next page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4828,6 +4851,7 @@ export namespace MyNS {
 		 * Post 2021-01-01/packages/dissociate/{PackageID}/{DomainName}
 		 * @param {string} PackageID Internal ID of the package to dissociate from the domain. Use <code>ListPackagesForDomain</code> to find this value.
 		 * @param {string} DomainName Name of the domain to dissociate the package from.
+		 *     Min length: 3    Max length: 28
 		 * @return {DissociatePackageResponse} Success
 		 */
 		DissociatePackage(PackageID: string, DomainName: string): Observable<DissociatePackageResponse> {
@@ -4838,6 +4862,7 @@ export namespace MyNS {
 		 * Returns a map of OpenSearch or Elasticsearch versions and the versions you can upgrade them to.
 		 * Get 2021-01-01/opensearch/compatibleVersions
 		 * @param {string} domainName The name of an existing domain. Provide this parameter to limit the results to a single domain.
+		 *     Min length: 3    Max length: 28
 		 * @return {GetCompatibleVersionsResponse} Success
 		 */
 		GetCompatibleVersions(domainName: string | null | undefined): Observable<GetCompatibleVersionsResponse> {
@@ -4849,6 +4874,7 @@ export namespace MyNS {
 		 * Get 2021-01-01/packages/{PackageID}/history
 		 * @param {string} PackageID The unique identifier of the package.
 		 * @param {number} maxResults An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		 *     Maximum: 100
 		 * @param {string} nextToken If your initial <code>GetPackageVersionHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetPackageVersionHistory</code> operations, which returns results in the next page. 
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4862,7 +4888,9 @@ export namespace MyNS {
 		 * Retrieves the complete history of the last 10 upgrades performed on an Amazon OpenSearch Service domain.
 		 * Get 2021-01-01/opensearch/upgradeDomain/{DomainName}/history
 		 * @param {string} DomainName The name of an existing domain.
+		 *     Min length: 3    Max length: 28
 		 * @param {number} maxResults An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		 *     Maximum: 100
 		 * @param {string} nextToken If your initial <code>GetUpgradeHistory</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>GetUpgradeHistory</code> operations, which returns results in the next page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4876,6 +4904,7 @@ export namespace MyNS {
 		 * Returns the most recent status of the last upgrade or upgrade eligibility check performed on an Amazon OpenSearch Service domain.
 		 * Get 2021-01-01/opensearch/upgradeDomain/{DomainName}/status
 		 * @param {string} DomainName The domain of the domain to get upgrade status information for.
+		 *     Min length: 3    Max length: 28
 		 * @return {GetUpgradeStatusResponse} Success
 		 */
 		GetUpgradeStatus(DomainName: string): Observable<GetUpgradeStatusResponse> {
@@ -4897,6 +4926,7 @@ export namespace MyNS {
 		 * Get 2021-01-01/packages/{PackageID}/domains
 		 * @param {string} PackageID The unique identifier of the package for which to list associated domains.
 		 * @param {number} maxResults An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		 *     Maximum: 100
 		 * @param {string} nextToken If your initial <code>ListDomainsForPackage</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListDomainsForPackage</code> operations, which returns results in the next page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4910,11 +4940,15 @@ export namespace MyNS {
 		 * Lists all instance types and available features for a given OpenSearch or Elasticsearch version.
 		 * Get 2021-01-01/opensearch/instanceTypeDetails/{EngineVersion}
 		 * @param {string} EngineVersion The version of OpenSearch or Elasticsearch, in the format Elasticsearch_X.Y or OpenSearch_X.Y. Defaults to the latest version of OpenSearch.
+		 *     Min length: 14    Max length: 18
 		 * @param {string} domainName The name of the domain.
+		 *     Min length: 3    Max length: 28
 		 * @param {number} maxResults An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		 *     Maximum: 100
 		 * @param {string} nextToken If your initial <code>ListInstanceTypeDetails</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListInstanceTypeDetails</code> operations, which returns results in the next page.
 		 * @param {boolean} retrieveAZs An optional parameter that specifies the Availability Zones for the domain.
 		 * @param {string} instanceType An optional parameter that lists information for a given instance type.
+		 *     Min length: 10    Max length: 40
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListInstanceTypeDetailsResponse} Success
@@ -4927,7 +4961,9 @@ export namespace MyNS {
 		 * Lists all packages associated with an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/custom-packages.html">Custom packages for Amazon OpenSearch Service</a>.
 		 * Get 2021-01-01/domain/{DomainName}/packages
 		 * @param {string} DomainName The name of the domain for which you want to list associated packages.
+		 *     Min length: 3    Max length: 28
 		 * @param {number} maxResults An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		 *     Maximum: 100
 		 * @param {string} nextToken If your initial <code>ListPackagesForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListPackagesForDomain</code> operations, which returns results in the next page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4941,7 +4977,9 @@ export namespace MyNS {
 		 * Retrieves a list of configuration changes that are scheduled for a domain. These changes can be <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service software updates</a> or <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green Auto-Tune enhancements</a>.
 		 * Get 2021-01-01/opensearch/domain/{DomainName}/scheduledActions
 		 * @param {string} DomainName The name of the domain.
+		 *     Min length: 3    Max length: 28
 		 * @param {number} maxResults An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		 *     Maximum: 100
 		 * @param {string} nextToken If your initial <code>ListScheduledActions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListScheduledActions</code> operations, which returns results in the next page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4955,6 +4993,7 @@ export namespace MyNS {
 		 * Returns all resource tags for an Amazon OpenSearch Service domain. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/managedomains-awsresourcetagging.html">Tagging Amazon OpenSearch Service domains</a>.
 		 * Get 2021-01-01/tags/#arn
 		 * @param {string} arn Amazon Resource Name (ARN) for the domain to view tags for.
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListTagsResponse} Success
 		 */
 		ListTags(arn: string): Observable<ListTagsResponse> {
@@ -4965,6 +5004,7 @@ export namespace MyNS {
 		 * Lists all versions of OpenSearch and Elasticsearch that Amazon OpenSearch Service supports.
 		 * Get 2021-01-01/opensearch/versions
 		 * @param {number} maxResults An optional parameter that specifies the maximum number of results to return. You can use <code>nextToken</code> to get the next page of results.
+		 *     Maximum: 100
 		 * @param {string} nextToken If your initial <code>ListVersions</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVersions</code> operations, which returns results in the next page.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4978,6 +5018,7 @@ export namespace MyNS {
 		 * Retrieves information about each Amazon Web Services principal that is allowed to access a given Amazon OpenSearch Service domain through the use of an interface VPC endpoint.
 		 * Get 2021-01-01/opensearch/domain/{DomainName}/listVpcEndpointAccess
 		 * @param {string} DomainName The name of the OpenSearch Service domain to retrieve access information for.
+		 *     Min length: 3    Max length: 28
 		 * @param {string} nextToken If your initial <code>ListVpcEndpointAccess</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListVpcEndpointAccess</code> operations, which returns results in the next page.
 		 * @return {ListVpcEndpointAccessResponse} Success
 		 */
@@ -4989,6 +5030,7 @@ export namespace MyNS {
 		 * Retrieves all Amazon OpenSearch Service-managed VPC endpoints associated with a particular domain.
 		 * Get 2021-01-01/opensearch/domain/{DomainName}/vpcEndpoints
 		 * @param {string} DomainName The name of the domain to list associated VPC endpoints for.
+		 *     Min length: 3    Max length: 28
 		 * @param {string} nextToken If your initial <code>ListEndpointsForDomain</code> operation returns a <code>nextToken</code>, you can include the returned <code>nextToken</code> in subsequent <code>ListEndpointsForDomain</code> operations, which returns results in the next page.
 		 * @return {ListVpcEndpointsForDomainResponse} Success
 		 */
@@ -5009,6 +5051,7 @@ export namespace MyNS {
 		 * Allows the remote Amazon OpenSearch Service domain owner to reject an inbound cross-cluster connection request.
 		 * Put 2021-01-01/opensearch/cc/inboundConnection/{ConnectionId}/reject
 		 * @param {string} ConnectionId The unique identifier of the inbound connection to reject.
+		 *     Min length: 10    Max length: 256
 		 * @return {RejectInboundConnectionResponse} Success
 		 */
 		RejectInboundConnection(ConnectionId: string): Observable<RejectInboundConnectionResponse> {
@@ -5028,6 +5071,7 @@ export namespace MyNS {
 		 * Revokes access to an Amazon OpenSearch Service domain that was provided through an interface VPC endpoint.
 		 * Post 2021-01-01/opensearch/domain/{DomainName}/revokeVpcEndpointAccess
 		 * @param {string} DomainName The name of the OpenSearch Service domain.
+		 *     Min length: 3    Max length: 28
 		 * @return {RevokeVpcEndpointAccessResponse} Success
 		 */
 		RevokeVpcEndpointAccess(DomainName: string, requestBody: RevokeVpcEndpointAccessPostBody): Observable<RevokeVpcEndpointAccessResponse> {
@@ -5056,6 +5100,7 @@ export namespace MyNS {
 		 * Reschedules a planned domain configuration change for a later time. This change can be a scheduled <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/service-software.html">service software update</a> or a <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/auto-tune.html#auto-tune-types">blue/green Auto-Tune enhancement</a>.
 		 * Put 2021-01-01/opensearch/domain/{DomainName}/scheduledAction/update
 		 * @param {string} DomainName The name of the domain to reschedule an action for.
+		 *     Min length: 3    Max length: 28
 		 * @return {UpdateScheduledActionResponse} Success
 		 */
 		UpdateScheduledAction(DomainName: string, requestBody: UpdateScheduledActionPutBody): Observable<UpdateScheduledActionResponse> {
@@ -5086,8 +5131,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using AWS Identity and Access Management</i> for more information.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ARN: string;
 
@@ -5102,8 +5147,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using AWS Identity and Access Management</i> for more information.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ARN: FormControl<string | null | undefined>,
 	}
@@ -5142,8 +5187,8 @@ export namespace MyNS {
 		/**
 		 * The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 	}
@@ -5152,8 +5197,8 @@ export namespace MyNS {
 		/**
 		 * The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -5169,15 +5214,15 @@ export namespace MyNS {
 		/**
 		 * The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
 		/**
 		 * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating and managing Amazon OpenSearch Service domains</a>.
-		 * Max length: 18
 		 * Min length: 14
+		 * Max length: 18
 		 */
 		EngineVersion?: string | null;
 
@@ -5189,8 +5234,8 @@ export namespace MyNS {
 
 		/**
 		 * Access policy rules for an Amazon OpenSearch Service domain endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>. The maximum size of a policy document is 100 KB.
-		 * Max length: 102400
 		 * Min length: 0
+		 * Max length: 102400
 		 */
 		AccessPolicies?: string | null;
 
@@ -5238,22 +5283,22 @@ export namespace MyNS {
 		/**
 		 * The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
 		/**
 		 * String of format Elasticsearch_X.Y or OpenSearch_X.Y to specify the engine version for the OpenSearch Service domain. For example, <code>OpenSearch_1.0</code> or <code>Elasticsearch_7.9</code>. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomains">Creating and managing Amazon OpenSearch Service domains</a>.
-		 * Max length: 18
 		 * Min length: 14
+		 * Max length: 18
 		 */
 		EngineVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * Access policy rules for an Amazon OpenSearch Service domain endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>. The maximum size of a policy document is 100 KB.
-		 * Max length: 102400
 		 * Min length: 0
+		 * Max length: 102400
 		 */
 		AccessPolicies: FormControl<string | null | undefined>,
 
@@ -5524,8 +5569,8 @@ export namespace MyNS {
 		/**
 		 * Name of the connection.
 		 * Required
-		 * Max length: 100
 		 * Min length: 2
+		 * Max length: 100
 		 */
 		ConnectionAlias: string;
 
@@ -5540,8 +5585,8 @@ export namespace MyNS {
 		/**
 		 * Name of the connection.
 		 * Required
-		 * Max length: 100
 		 * Min length: 2
+		 * Max length: 100
 		 */
 		ConnectionAlias: FormControl<string | null | undefined>,
 
@@ -5597,8 +5642,8 @@ export namespace MyNS {
 		/**
 		 * Unique name for the package.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		PackageName: string;
 
@@ -5625,8 +5670,8 @@ export namespace MyNS {
 		/**
 		 * Unique name for the package.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		PackageName: FormControl<string | null | undefined>,
 
@@ -5672,8 +5717,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the domain to create the endpoint for.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		DomainArn: string;
 
@@ -5685,8 +5730,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier to ensure idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 	}
@@ -5695,15 +5740,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the domain to create the endpoint for.
 		 * Required
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		DomainArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique, case-sensitive identifier to ensure idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -5749,8 +5794,8 @@ export namespace MyNS {
 
 		/**
 		 * Access policy rules for an Amazon OpenSearch Service domain endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>. The maximum size of a policy document is 100 KB.
-		 * Max length: 102400
 		 * Min length: 0
+		 * Max length: 102400
 		 */
 		AccessPolicies?: string | null;
 
@@ -5791,8 +5836,8 @@ export namespace MyNS {
 
 		/**
 		 * Access policy rules for an Amazon OpenSearch Service domain endpoint. For more information, see <a href="https://docs.aws.amazon.com/opensearch-service/latest/developerguide/createupdatedomains.html#createdomain-configure-access-policies">Configuring access policies</a>. The maximum size of a policy document is 100 KB.
-		 * Max length: 102400
 		 * Min length: 0
+		 * Max length: 102400
 		 */
 		AccessPolicies: FormControl<string | null | undefined>,
 
@@ -6188,16 +6233,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the Reserved Instance offering to purchase.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		ReservedInstanceOfferingId: string;
 
 		/**
 		 * A customer-specified identifier to track this reservation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 5
+		 * Max length: 64
 		 */
 		ReservationName: string;
 
@@ -6212,16 +6257,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the Reserved Instance offering to purchase.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		ReservedInstanceOfferingId: FormControl<string | null | undefined>,
 
 		/**
 		 * A customer-specified identifier to track this reservation.
 		 * Required
-		 * Max length: 64
 		 * Min length: 5
+		 * Max length: 64
 		 */
 		ReservationName: FormControl<string | null | undefined>,
 
@@ -6245,8 +6290,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using AWS Identity and Access Management</i> for more information.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ARN: string;
 
@@ -6261,8 +6306,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the domain. See <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/index.html">Identifiers for IAM Entities </a> in <i>Using AWS Identity and Access Management</i> for more information.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ARN: FormControl<string | null | undefined>,
 	}
@@ -6301,15 +6346,18 @@ export namespace MyNS {
 		/**
 		 * The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
 		/** <p>When to start the service software update.</p> <ul> <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li> <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li> <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the update to be picked up during an upcoming off-peak window. There's no guarantee that the update will happen during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li> </ul> <p>Default: <code>NOW</code> if you don't specify a value for <code>DesiredStartTime</code>, and <code>TIMESTAMP</code> if you do.</p> */
 		ScheduleAt?: ScheduleAt | null;
 
-		/** The Epoch timestamp when you want the service software update to start. You only need to specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>. */
+		/**
+		 * The Epoch timestamp when you want the service software update to start. You only need to specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DesiredStartTime?: number | null;
 	}
 	export interface StartServiceSoftwareUpdatePostBodyFormProperties {
@@ -6317,15 +6365,18 @@ export namespace MyNS {
 		/**
 		 * The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
 		/** <p>When to start the service software update.</p> <ul> <li> <p> <code>NOW</code> - Immediately schedules the update to happen in the current hour if there's capacity available.</p> </li> <li> <p> <code>TIMESTAMP</code> - Lets you specify a custom date and time to apply the update. If you specify this value, you must also provide a value for <code>DesiredStartTime</code>.</p> </li> <li> <p> <code>OFF_PEAK_WINDOW</code> - Marks the update to be picked up during an upcoming off-peak window. There's no guarantee that the update will happen during the next immediate window. Depending on capacity, it might happen in subsequent days.</p> </li> </ul> <p>Default: <code>NOW</code> if you don't specify a value for <code>DesiredStartTime</code>, and <code>TIMESTAMP</code> if you do.</p> */
 		ScheduleAt: FormControl<ScheduleAt | null | undefined>,
 
-		/** The Epoch timestamp when you want the service software update to start. You only need to specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>. */
+		/**
+		 * The Epoch timestamp when you want the service software update to start. You only need to specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DesiredStartTime: FormControl<number | null | undefined>,
 	}
 	export function CreateStartServiceSoftwareUpdatePostBodyFormGroup() {
@@ -6428,7 +6479,10 @@ export namespace MyNS {
 		 */
 		ScheduleAt: ScheduleAt;
 
-		/** The time to implement the change, in Coordinated Universal Time (UTC). Only specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>. */
+		/**
+		 * The time to implement the change, in Coordinated Universal Time (UTC). Only specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DesiredStartTime?: number | null;
 	}
 	export interface UpdateScheduledActionPutBodyFormProperties {
@@ -6451,7 +6505,10 @@ export namespace MyNS {
 		 */
 		ScheduleAt: FormControl<ScheduleAt | null | undefined>,
 
-		/** The time to implement the change, in Coordinated Universal Time (UTC). Only specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>. */
+		/**
+		 * The time to implement the change, in Coordinated Universal Time (UTC). Only specify this parameter if you set <code>ScheduleAt</code> to <code>TIMESTAMP</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DesiredStartTime: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateScheduledActionPutBodyFormGroup() {
@@ -6469,8 +6526,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the endpoint.
 		 * Required
-		 * Max length: 256
 		 * Min length: 5
+		 * Max length: 256
 		 */
 		VpcEndpointId: string;
 
@@ -6485,8 +6542,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the endpoint.
 		 * Required
-		 * Max length: 256
 		 * Min length: 5
+		 * Max length: 256
 		 */
 		VpcEndpointId: FormControl<string | null | undefined>,
 	}
@@ -6514,16 +6571,16 @@ export namespace MyNS {
 		/**
 		 * The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: string;
 
 		/**
 		 * OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.
 		 * Required
-		 * Max length: 18
 		 * Min length: 14
+		 * Max length: 18
 		 */
 		TargetVersion: string;
 
@@ -6538,16 +6595,16 @@ export namespace MyNS {
 		/**
 		 * The name of an OpenSearch Service domain. Domain names are unique across the domains owned by an account within an Amazon Web Services Region.
 		 * Required
-		 * Max length: 28
 		 * Min length: 3
+		 * Max length: 28
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
 		/**
 		 * OpenSearch or Elasticsearch version to which you want to upgrade, in the format Opensearch_X.Y or Elasticsearch_X.Y.
 		 * Required
-		 * Max length: 18
 		 * Min length: 14
+		 * Max length: 18
 		 */
 		TargetVersion: FormControl<string | null | undefined>,
 

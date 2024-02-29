@@ -1031,6 +1031,7 @@ export namespace MyNS {
 		 * |---------------------|------------------------
 		 * |requestSubmitTime | ge, le, eq, gt, lt
 		 * @param {number} top Number of records to return.
+		 *     Minimum: 1
 		 * @param {string} skiptoken Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls
 		 * @return {QuotaRequestDetailsList} Ok. Sending Quota request status and details
 		 */

@@ -323,16 +323,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		controlIdentifier: string;
 
 		/**
 		 * The ARN of the organizational unit.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		targetIdentifier: string;
 	}
@@ -341,16 +341,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		controlIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the organizational unit.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		targetIdentifier: FormControl<string | null | undefined>,
 	}
@@ -367,16 +367,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		controlIdentifier: string;
 
 		/**
 		 * The ARN of the organizational unit.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		targetIdentifier: string;
 	}
@@ -385,16 +385,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the control. Only <b>Strongly recommended</b> and <b>Elective</b> controls are permitted, with the exception of the <b>Region deny</b> guardrail.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		controlIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the organizational unit.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		targetIdentifier: FormControl<string | null | undefined>,
 	}
@@ -411,8 +411,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		operationIdentifier: string;
 	}
@@ -421,8 +421,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the asynchronous operation, which is used to track status. The operation is available for 90 days.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		operationIdentifier: FormControl<string | null | undefined>,
 	}
@@ -448,8 +448,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the organizational unit.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		targetIdentifier: string;
 	}
@@ -468,8 +468,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the organizational unit.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		targetIdentifier: FormControl<string | null | undefined>,
 	}

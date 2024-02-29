@@ -32,6 +32,8 @@ export namespace MyNS {
 
 	export interface AuditCase {
 		audit_case_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		audit_id?: number | null;
 		candidate_id?: string | null;
 		candidate_name?: string | null;
@@ -40,7 +42,11 @@ export namespace MyNS {
 		committee_id?: string | null;
 		committee_name?: string | null;
 		committee_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
+
+		/** Type: DateOnly */
 		far_release_date?: Date | null;
 
 		/**
@@ -51,6 +57,8 @@ export namespace MyNS {
 	}
 	export interface AuditCaseFormProperties {
 		audit_case_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		audit_id: FormControl<number | null | undefined>,
 		candidate_id: FormControl<string | null | undefined>,
 		candidate_name: FormControl<string | null | undefined>,
@@ -59,7 +67,11 @@ export namespace MyNS {
 		committee_id: FormControl<string | null | undefined>,
 		committee_name: FormControl<string | null | undefined>,
 		committee_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		far_release_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -131,15 +143,31 @@ export namespace MyNS {
 	}
 
 	export interface OffsetInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page?: number | null;
 	}
 	export interface OffsetInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page: FormControl<number | null | undefined>,
 	}
 	export function CreateOffsetInfoFormGroup() {
@@ -290,6 +318,8 @@ export namespace MyNS {
 
 	export interface BaseF3Filing {
 		amended_address?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amended_by?: number | null;
 		amendment?: string | null;
 		amendment_chain?: Array<number>;
@@ -301,6 +331,8 @@ export namespace MyNS {
 		candidate_name?: string | null;
 		candidate_prefix?: string | null;
 		candidate_suffix?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cash_on_hand_beginning_period?: number | null;
 		city?: string | null;
 
@@ -311,27 +343,45 @@ export namespace MyNS {
 
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name?: string | null;
+
+		/** Type: DateOnly */
 		coverage_end_date?: Date | null;
+
+		/** Type: DateOnly */
 		coverage_start_date?: Date | null;
 		csv_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		district?: number | null;
 		document_description?: string | null;
+
+		/** Type: DateOnly */
 		election_date?: Date | null;
 		election_state?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		f3z1?: number | null;
 		fec_file_id?: string | null;
 		fec_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
 		general_election?: string | null;
 		is_amended?: boolean | null;
 		most_recent?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		most_recent_filing?: number | null;
 		pdf_url?: string | null;
 		prefix?: string | null;
 		primary_election?: string | null;
+
+		/** Type: DateOnly */
 		receipt_date?: Date | null;
 		report?: string | null;
 		report_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year?: number | null;
 
 		/**
@@ -342,6 +392,8 @@ export namespace MyNS {
 		 */
 		rpt_pgi?: string | null;
 		runoff_election?: string | null;
+
+		/** Type: DateOnly */
 		sign_date?: Date | null;
 		special_election?: string | null;
 		state?: string | null;
@@ -357,6 +409,8 @@ export namespace MyNS {
 	}
 	export interface BaseF3FilingFormProperties {
 		amended_address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amended_by: FormControl<number | null | undefined>,
 		amendment: FormControl<string | null | undefined>,
 		beginning_image_number: FormControl<string | null | undefined>,
@@ -367,6 +421,8 @@ export namespace MyNS {
 		candidate_name: FormControl<string | null | undefined>,
 		candidate_prefix: FormControl<string | null | undefined>,
 		candidate_suffix: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cash_on_hand_beginning_period: FormControl<number | null | undefined>,
 		city: FormControl<string | null | undefined>,
 
@@ -377,27 +433,45 @@ export namespace MyNS {
 
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		coverage_end_date: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		coverage_start_date: FormControl<Date | null | undefined>,
 		csv_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		district: FormControl<number | null | undefined>,
 		document_description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		election_date: FormControl<Date | null | undefined>,
 		election_state: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		f3z1: FormControl<number | null | undefined>,
 		fec_file_id: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
 		general_election: FormControl<string | null | undefined>,
 		is_amended: FormControl<boolean | null | undefined>,
 		most_recent: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		most_recent_filing: FormControl<number | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 		prefix: FormControl<string | null | undefined>,
 		primary_election: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		receipt_date: FormControl<Date | null | undefined>,
 		report: FormControl<string | null | undefined>,
 		report_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year: FormControl<number | null | undefined>,
 
 		/**
@@ -408,6 +482,8 @@ export namespace MyNS {
 		 */
 		rpt_pgi: FormControl<string | null | undefined>,
 		runoff_election: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		sign_date: FormControl<Date | null | undefined>,
 		special_election: FormControl<string | null | undefined>,
 		state: FormControl<string | null | undefined>,
@@ -491,11 +567,17 @@ export namespace MyNS {
 	}
 
 	export interface BaseF3PFiling {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amended_by?: number | null;
 		amendment?: string | null;
 		amendment_chain?: Array<number>;
 		beginning_image_number?: string | null;
+
+		/** Type: float */
 		cash_on_hand_beginning_period?: number | null;
+
+		/** Type: float */
 		cash_on_hand_end_period?: number | null;
 		city?: string | null;
 
@@ -506,30 +588,54 @@ export namespace MyNS {
 
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name?: string | null;
+
+		/** Type: DateOnly */
 		coverage_end_date?: Date | null;
+
+		/** Type: DateOnly */
 		coverage_start_date?: Date | null;
 		csv_url?: string | null;
+
+		/** Type: float */
 		debts_owed_by_committee?: number | null;
+
+		/** Type: float */
 		debts_owed_to_committee?: number | null;
 		document_description?: string | null;
+
+		/** Type: DateOnly */
 		election_date?: Date | null;
 		election_state?: string | null;
+
+		/** Type: float */
 		expenditure_subject_to_limits?: number | null;
 		fec_file_id?: string | null;
 		fec_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
 		general_election?: string | null;
 		is_amended?: boolean | null;
 		most_recent?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		most_recent_filing?: number | null;
+
+		/** Type: float */
 		net_contributions_cycle_to_date?: number | null;
+
+		/** Type: float */
 		net_operating_expenditures_cycle_to_date?: number | null;
 		pdf_url?: string | null;
 		prefix?: string | null;
 		primary_election?: string | null;
+
+		/** Type: DateOnly */
 		receipt_date?: Date | null;
 		report?: string | null;
 		report_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year?: number | null;
 
 		/**
@@ -539,6 +645,8 @@ export namespace MyNS {
 		 * Runoff etc.
 		 */
 		rpt_pgi?: string | null;
+
+		/** Type: DateOnly */
 		sign_date?: Date | null;
 		state?: string | null;
 		street_1?: string | null;
@@ -553,10 +661,16 @@ export namespace MyNS {
 		zip?: string | null;
 	}
 	export interface BaseF3PFilingFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amended_by: FormControl<number | null | undefined>,
 		amendment: FormControl<string | null | undefined>,
 		beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		cash_on_hand_beginning_period: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		cash_on_hand_end_period: FormControl<number | null | undefined>,
 		city: FormControl<string | null | undefined>,
 
@@ -567,30 +681,54 @@ export namespace MyNS {
 
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		coverage_end_date: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		coverage_start_date: FormControl<Date | null | undefined>,
 		csv_url: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		debts_owed_by_committee: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		debts_owed_to_committee: FormControl<number | null | undefined>,
 		document_description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		election_date: FormControl<Date | null | undefined>,
 		election_state: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		expenditure_subject_to_limits: FormControl<number | null | undefined>,
 		fec_file_id: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
 		general_election: FormControl<string | null | undefined>,
 		is_amended: FormControl<boolean | null | undefined>,
 		most_recent: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		most_recent_filing: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		net_contributions_cycle_to_date: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		net_operating_expenditures_cycle_to_date: FormControl<number | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 		prefix: FormControl<string | null | undefined>,
 		primary_election: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		receipt_date: FormControl<Date | null | undefined>,
 		report: FormControl<string | null | undefined>,
 		report_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year: FormControl<number | null | undefined>,
 
 		/**
@@ -600,6 +738,8 @@ export namespace MyNS {
 		 * Runoff etc.
 		 */
 		rpt_pgi: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		sign_date: FormControl<Date | null | undefined>,
 		state: FormControl<string | null | undefined>,
 		street_1: FormControl<string | null | undefined>,
@@ -679,6 +819,8 @@ export namespace MyNS {
 
 	export interface BaseF3XFiling {
 		amend_address?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amended_by?: number | null;
 		amendment?: string | null;
 		amendment_chain?: Array<number>;
@@ -692,23 +834,37 @@ export namespace MyNS {
 
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name?: string | null;
+
+		/** Type: DateOnly */
 		coverage_end_date?: Date | null;
+
+		/** Type: DateOnly */
 		coverage_start_date?: Date | null;
 		csv_url?: string | null;
 		document_description?: string | null;
+
+		/** Type: DateOnly */
 		election_date?: Date | null;
 		election_state?: string | null;
 		fec_file_id?: string | null;
 		fec_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
 		is_amended?: boolean | null;
 		most_recent?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		most_recent_filing?: number | null;
 		pdf_url?: string | null;
 		qualified_multicandidate_committee?: string | null;
+
+		/** Type: DateOnly */
 		receipt_date?: Date | null;
 		report?: string | null;
 		report_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year?: number | null;
 
 		/**
@@ -718,6 +874,8 @@ export namespace MyNS {
 		 * Runoff etc.
 		 */
 		rpt_pgi?: string | null;
+
+		/** Type: DateOnly */
 		sign_date?: Date | null;
 		state?: string | null;
 		street_1?: string | null;
@@ -727,6 +885,8 @@ export namespace MyNS {
 	}
 	export interface BaseF3XFilingFormProperties {
 		amend_address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amended_by: FormControl<number | null | undefined>,
 		amendment: FormControl<string | null | undefined>,
 		beginning_image_number: FormControl<string | null | undefined>,
@@ -739,23 +899,37 @@ export namespace MyNS {
 
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		coverage_end_date: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		coverage_start_date: FormControl<Date | null | undefined>,
 		csv_url: FormControl<string | null | undefined>,
 		document_description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		election_date: FormControl<Date | null | undefined>,
 		election_state: FormControl<string | null | undefined>,
 		fec_file_id: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
 		is_amended: FormControl<boolean | null | undefined>,
 		most_recent: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		most_recent_filing: FormControl<number | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 		qualified_multicandidate_committee: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		receipt_date: FormControl<Date | null | undefined>,
 		report: FormControl<string | null | undefined>,
 		report_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year: FormControl<number | null | undefined>,
 
 		/**
@@ -765,6 +939,8 @@ export namespace MyNS {
 		 * Runoff etc.
 		 */
 		rpt_pgi: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		sign_date: FormControl<Date | null | undefined>,
 		state: FormControl<string | null | undefined>,
 		street_1: FormControl<string | null | undefined>,
@@ -824,14 +1000,22 @@ export namespace MyNS {
 
 	export interface CCTotalsByCandidate {
 		candidate_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
 		support_oppose_indicator?: string | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface CCTotalsByCandidateFormProperties {
 		candidate_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
 		support_oppose_indicator: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCCTotalsByCandidateFormGroup() {
@@ -864,6 +1048,7 @@ export namespace MyNS {
 		 * Conferences: 33, Roundtables: 34, Election Dates: 36, Federal Holidays: 37, FEA Periods: 38, Commission Meetings: 20,
 		 * Reporting Deadlines: 21, Conferences and Outreach: 22, AOs and Rules: 23, Other: 24, Quarterly: 25, Monthly: 26,
 		 * Pre and Post-Elections: 27, EC Periods:28, and IE Periods: 29
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		calendar_category_id?: number | null;
 
@@ -877,7 +1062,10 @@ export namespace MyNS {
 		description?: string | null;
 		end_date?: string | null;
 
-		/** An unique ID for an event. Useful for downloading a single event to your calendar. This ID is not a permanent, persistent ID. */
+		/**
+		 * An unique ID for an event. Useful for downloading a single event to your calendar. This ID is not a permanent, persistent ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		event_id?: number | null;
 
 		/**
@@ -903,6 +1091,7 @@ export namespace MyNS {
 		 * Conferences: 33, Roundtables: 34, Election Dates: 36, Federal Holidays: 37, FEA Periods: 38, Commission Meetings: 20,
 		 * Reporting Deadlines: 21, Conferences and Outreach: 22, AOs and Rules: 23, Other: 24, Quarterly: 25, Monthly: 26,
 		 * Pre and Post-Elections: 27, EC Periods:28, and IE Periods: 29
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		calendar_category_id: FormControl<number | null | undefined>,
 
@@ -916,7 +1105,10 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		end_date: FormControl<string | null | undefined>,
 
-		/** An unique ID for an event. Useful for downloading a single event to your calendar. This ID is not a permanent, persistent ID. */
+		/**
+		 * An unique ID for an event. Useful for downloading a single event to your calendar. This ID is not a permanent, persistent ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		event_id: FormControl<number | null | undefined>,
 
 		/**
@@ -961,7 +1153,10 @@ export namespace MyNS {
 
 	export interface Candidate {
 
-		/** Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them. */
+		/**
+		 * Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active_through?: number | null;
 
 		/**
@@ -1016,6 +1211,7 @@ export namespace MyNS {
 		 * - F future candidate
 		 * - N not yet a candidate
 		 * - P prior candidate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		district_number?: number | null;
 
@@ -1026,7 +1222,10 @@ export namespace MyNS {
 		election_years?: Array<number>;
 		federal_funds_flag?: boolean | null;
 
-		/** The day the FEC received the candidate's first filing. This is a F2 candidate registration. */
+		/**
+		 * The day the FEC received the candidate's first filing. This is a F2 candidate registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
 		has_raised_funds?: boolean | null;
 
@@ -1045,10 +1244,16 @@ export namespace MyNS {
 		 */
 		incumbent_challenge_full?: string | null;
 
-		/** The day the FEC received the candidate's most recent Form 2 */
+		/**
+		 * The day the FEC received the candidate's most recent Form 2
+		 * Type: DateOnly
+		 */
 		last_f2_date?: Date | null;
 
-		/** The day the FEC received the candidate's most recent filing */
+		/**
+		 * The day the FEC received the candidate's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date?: Date | null;
 
 		/** Date the information was loaded into the FEC systems. This can be affected by reseting systems and other factors, refer to receipt_date for the day that the FEC received the paper or electronic document. Keep in mind that paper filings take more time to process and there can be a lag between load_date and receipt_date. This field can be helpful to identify paper records that have been processed recently. */
@@ -1093,7 +1298,10 @@ export namespace MyNS {
 	}
 	export interface CandidateFormProperties {
 
-		/** Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them. */
+		/**
+		 * Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active_through: FormControl<number | null | undefined>,
 
 		/**
@@ -1137,11 +1345,15 @@ export namespace MyNS {
 		 * - F future candidate
 		 * - N not yet a candidate
 		 * - P prior candidate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		district_number: FormControl<number | null | undefined>,
 		federal_funds_flag: FormControl<boolean | null | undefined>,
 
-		/** The day the FEC received the candidate's first filing. This is a F2 candidate registration. */
+		/**
+		 * The day the FEC received the candidate's first filing. This is a F2 candidate registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
 		has_raised_funds: FormControl<boolean | null | undefined>,
 
@@ -1157,10 +1369,16 @@ export namespace MyNS {
 		 */
 		incumbent_challenge_full: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the candidate's most recent Form 2 */
+		/**
+		 * The day the FEC received the candidate's most recent Form 2
+		 * Type: DateOnly
+		 */
 		last_f2_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the candidate's most recent filing */
+		/**
+		 * The day the FEC received the candidate's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date: FormControl<Date | null | undefined>,
 
 		/** Date the information was loaded into the FEC systems. This can be affected by reseting systems and other factors, refer to receipt_date for the day that the FEC received the paper or electronic document. Keep in mind that paper filings take more time to process and there can be a lag between load_date and receipt_date. This field can be helpful to identify paper records that have been processed recently. */
@@ -1342,16 +1560,28 @@ export namespace MyNS {
 		 */
 		filing_frequency?: string | null;
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date?: Date | null;
 
 		/**
@@ -1503,16 +1733,28 @@ export namespace MyNS {
 		 */
 		filing_frequency: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -1594,7 +1836,11 @@ export namespace MyNS {
 	}
 
 	export interface CandidateCommitteeTotalsHouseSenate {
+
+		/** Type: double */
 		all_other_loans?: number | null;
+
+		/** Type: double */
 		candidate_contribution?: number | null;
 
 		/**
@@ -1604,6 +1850,7 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		candidate_election_year: number;
 
@@ -1619,9 +1866,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		candidate_id: string;
+
+		/** Type: double */
 		contribution_refunds?: number | null;
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions?: number | null;
 		coverage_end_date?: Date | null;
 		coverage_start_date?: Date | null;
@@ -1633,58 +1885,136 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements?: number | null;
 
 		/** Required */
 		election_full: boolean;
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement?: number | null;
+
+		/** Type: double */
 		federal_funds?: number | null;
+
+		/** Type: double */
 		fundraising_disbursements?: number | null;
+
+		/** Type: double */
 		individual_contributions?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions?: number | null;
 		last_beginning_image_number?: string | null;
+
+		/** Type: double */
 		last_cash_on_hand_end_period?: number | null;
+
+		/** Type: double */
 		last_debts_owed_by_committee?: number | null;
+
+		/** Type: double */
 		last_debts_owed_to_committee?: number | null;
+
+		/** Type: double */
 		last_net_contributions?: number | null;
+
+		/** Type: double */
 		last_net_operating_expenditures?: number | null;
 		last_report_type_full?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year?: number | null;
+
+		/** Type: double */
 		loan_repayments?: number | null;
+
+		/** Type: double */
 		loan_repayments_candidate_loans?: number | null;
+
+		/** Type: double */
 		loan_repayments_other_loans?: number | null;
+
+		/** Type: double */
 		loans?: number | null;
+
+		/** Type: double */
 		loans_made_by_candidate?: number | null;
+
+		/** Type: double */
 		net_contributions?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures?: number | null;
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures?: number | null;
+
+		/** Type: double */
 		offsets_to_legal_accounting?: number | null;
+
+		/** Type: double */
 		offsets_to_operating_expenditures?: number | null;
+
+		/** Type: double */
 		operating_expenditures?: number | null;
+
+		/** Type: double */
 		other_disbursements?: number | null;
+
+		/** Type: double */
 		other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		other_receipts?: number | null;
+
+		/** Type: double */
 		political_party_committee_contributions?: number | null;
+
+		/** Type: double */
 		receipts?: number | null;
+
+		/** Type: double */
 		refunded_individual_contributions?: number | null;
+
+		/** Type: double */
 		refunded_other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		refunded_political_party_committee_contributions?: number | null;
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures?: number | null;
 		transaction_coverage_date?: Date | null;
+
+		/** Type: double */
 		transfers_from_other_authorized_committee?: number | null;
+
+		/** Type: double */
 		transfers_to_other_authorized_committee?: number | null;
 	}
 	export interface CandidateCommitteeTotalsHouseSenateFormProperties {
+
+		/** Type: double */
 		all_other_loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		candidate_contribution: FormControl<number | null | undefined>,
 
 		/**
@@ -1694,6 +2024,7 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		candidate_election_year: FormControl<number | null | undefined>,
 
@@ -1709,9 +2040,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		candidate_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		contribution_refunds: FormControl<number | null | undefined>,
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions: FormControl<number | null | undefined>,
 		coverage_end_date: FormControl<Date | null | undefined>,
 		coverage_start_date: FormControl<Date | null | undefined>,
@@ -1723,54 +2059,128 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements: FormControl<number | null | undefined>,
 
 		/** Required */
 		election_full: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		federal_funds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fundraising_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		individual_contributions: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions: FormControl<number | null | undefined>,
 		last_beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		last_cash_on_hand_end_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_by_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_to_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_net_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_net_operating_expenditures: FormControl<number | null | undefined>,
 		last_report_type_full: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_candidate_loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_other_loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made_by_candidate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_legal_accounting: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		political_party_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_individual_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_political_party_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures: FormControl<number | null | undefined>,
 		transaction_coverage_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		transfers_from_other_authorized_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_other_authorized_committee: FormControl<number | null | undefined>,
 	}
 	export function CreateCandidateCommitteeTotalsHouseSenateFormGroup() {
@@ -1840,6 +2250,8 @@ export namespace MyNS {
 	}
 
 	export interface CandidateCommitteeTotalsPresidential {
+
+		/** Type: double */
 		candidate_contribution?: number | null;
 
 		/**
@@ -1849,6 +2261,7 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		candidate_election_year: number;
 
@@ -1864,9 +2277,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		candidate_id: string;
+
+		/** Type: double */
 		contribution_refunds?: number | null;
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions?: number | null;
 		coverage_end_date?: Date | null;
 		coverage_start_date?: Date | null;
@@ -1878,56 +2296,130 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements?: number | null;
 
 		/** Required */
 		election_full: boolean;
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement?: number | null;
+
+		/** Type: double */
 		federal_funds?: number | null;
+
+		/** Type: double */
 		fundraising_disbursements?: number | null;
+
+		/** Type: double */
 		individual_contributions?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions?: number | null;
 		last_beginning_image_number?: string | null;
+
+		/** Type: double */
 		last_cash_on_hand_end_period?: number | null;
+
+		/** Type: double */
 		last_debts_owed_by_committee?: number | null;
+
+		/** Type: double */
 		last_debts_owed_to_committee?: number | null;
 		last_report_type_full?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year?: number | null;
+
+		/** Type: double */
 		loan_repayments_made?: number | null;
+
+		/** Type: double */
 		loans_received?: number | null;
+
+		/** Type: double */
 		loans_received_from_candidate?: number | null;
+
+		/** Type: double */
 		net_contributions?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures?: number | null;
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures?: number | null;
+
+		/** Type: double */
 		offsets_to_legal_accounting?: number | null;
+
+		/** Type: double */
 		offsets_to_operating_expenditures?: number | null;
+
+		/** Type: double */
 		operating_expenditures?: number | null;
+
+		/** Type: double */
 		other_disbursements?: number | null;
+
+		/** Type: double */
 		other_loans_received?: number | null;
+
+		/** Type: double */
 		other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		other_receipts?: number | null;
+
+		/** Type: double */
 		political_party_committee_contributions?: number | null;
+
+		/** Type: double */
 		receipts?: number | null;
+
+		/** Type: double */
 		refunded_individual_contributions?: number | null;
+
+		/** Type: double */
 		refunded_other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		refunded_political_party_committee_contributions?: number | null;
+
+		/** Type: double */
 		repayments_loans_made_by_candidate?: number | null;
+
+		/** Type: double */
 		repayments_other_loans?: number | null;
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures?: number | null;
 		transaction_coverage_date?: Date | null;
+
+		/** Type: double */
 		transfers_from_affiliated_committee?: number | null;
+
+		/** Type: double */
 		transfers_to_other_authorized_committee?: number | null;
 	}
 	export interface CandidateCommitteeTotalsPresidentialFormProperties {
+
+		/** Type: double */
 		candidate_contribution: FormControl<number | null | undefined>,
 
 		/**
@@ -1937,6 +2429,7 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		candidate_election_year: FormControl<number | null | undefined>,
 
@@ -1952,9 +2445,14 @@ export namespace MyNS {
 		 * Required
 		 */
 		candidate_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		contribution_refunds: FormControl<number | null | undefined>,
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions: FormControl<number | null | undefined>,
 		coverage_end_date: FormControl<Date | null | undefined>,
 		coverage_start_date: FormControl<Date | null | undefined>,
@@ -1966,53 +2464,125 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements: FormControl<number | null | undefined>,
 
 		/** Required */
 		election_full: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		federal_funds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fundraising_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		individual_contributions: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions: FormControl<number | null | undefined>,
 		last_beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		last_cash_on_hand_end_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_by_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_to_committee: FormControl<number | null | undefined>,
 		last_report_type_full: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_made: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_received_from_candidate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_legal_accounting: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_loans_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		political_party_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_individual_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_political_party_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_loans_made_by_candidate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_other_loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures: FormControl<number | null | undefined>,
 		transaction_coverage_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_other_authorized_committee: FormControl<number | null | undefined>,
 	}
 	export function CreateCandidateCommitteeTotalsPresidentialFormGroup() {
@@ -2081,7 +2651,10 @@ export namespace MyNS {
 
 	export interface CandidateDetail {
 
-		/** Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them. */
+		/**
+		 * Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active_through?: number | null;
 
 		/**
@@ -2162,6 +2735,7 @@ export namespace MyNS {
 		 * - F future candidate
 		 * - N not yet a candidate
 		 * - P prior candidate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		district_number?: number | null;
 
@@ -2172,7 +2746,10 @@ export namespace MyNS {
 		election_years?: Array<number>;
 		federal_funds_flag?: boolean | null;
 
-		/** The day the FEC received the candidate's first filing. This is a F2 candidate registration. */
+		/**
+		 * The day the FEC received the candidate's first filing. This is a F2 candidate registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
 		flags?: string | null;
 		has_raised_funds?: boolean | null;
@@ -2189,10 +2766,16 @@ export namespace MyNS {
 		 */
 		incumbent_challenge_full?: string | null;
 
-		/** The day the FEC received the candidate's most recent Form 2 */
+		/**
+		 * The day the FEC received the candidate's most recent Form 2
+		 * Type: DateOnly
+		 */
 		last_f2_date?: Date | null;
 
-		/** The day the FEC received the candidate's most recent filing */
+		/**
+		 * The day the FEC received the candidate's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date?: Date | null;
 
 		/** Date the information was loaded into the FEC systems. This can be affected by reseting systems and other factors, refer to receipt_date for the day that the FEC received the paper or electronic document. Keep in mind that paper filings take more time to process and there can be a lag between load_date and receipt_date. This field can be helpful to identify paper records that have been processed recently. */
@@ -2236,7 +2819,10 @@ export namespace MyNS {
 	}
 	export interface CandidateDetailFormProperties {
 
-		/** Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them. */
+		/**
+		 * Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active_through: FormControl<number | null | undefined>,
 
 		/**
@@ -2306,11 +2892,15 @@ export namespace MyNS {
 		 * - F future candidate
 		 * - N not yet a candidate
 		 * - P prior candidate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		district_number: FormControl<number | null | undefined>,
 		federal_funds_flag: FormControl<boolean | null | undefined>,
 
-		/** The day the FEC received the candidate's first filing. This is a F2 candidate registration. */
+		/**
+		 * The day the FEC received the candidate's first filing. This is a F2 candidate registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
 		flags: FormControl<string | null | undefined>,
 		has_raised_funds: FormControl<boolean | null | undefined>,
@@ -2327,10 +2917,16 @@ export namespace MyNS {
 		 */
 		incumbent_challenge_full: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the candidate's most recent Form 2 */
+		/**
+		 * The day the FEC received the candidate's most recent Form 2
+		 * Type: DateOnly
+		 */
 		last_f2_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the candidate's most recent filing */
+		/**
+		 * The day the FEC received the candidate's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date: FormControl<Date | null | undefined>,
 
 		/** Date the information was loaded into the FEC systems. This can be affected by reseting systems and other factors, refer to receipt_date for the day that the FEC received the paper or electronic document. Keep in mind that paper filings take more time to process and there can be a lag between load_date and receipt_date. This field can be helpful to identify paper records that have been processed recently. */
@@ -2481,7 +3077,10 @@ export namespace MyNS {
 
 	export interface CandidateHistory {
 
-		/** Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them. */
+		/**
+		 * Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active_through?: number | null;
 
 		/**
@@ -2514,7 +3113,10 @@ export namespace MyNS {
 		 */
 		address_zip?: string | null;
 
-		/** The last year of the cycle for this election. */
+		/**
+		 * The last year of the cycle for this election.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		candidate_election_year?: number | null;
 
 		/**
@@ -2568,6 +3170,7 @@ export namespace MyNS {
 		 * - F future candidate
 		 * - N not yet a candidate
 		 * - P prior candidate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		district_number?: number | null;
 
@@ -2580,7 +3183,10 @@ export namespace MyNS {
 		/** FEC cycles are included in candidate election years. */
 		fec_cycles_in_election?: Array<number>;
 
-		/** The day the FEC received the candidate's first filing. This is a F2 candidate registration. */
+		/**
+		 * The day the FEC received the candidate's first filing. This is a F2 candidate registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
 		flags?: string | null;
 
@@ -2596,10 +3202,16 @@ export namespace MyNS {
 		 */
 		incumbent_challenge_full?: string | null;
 
-		/** The day the FEC received the candidate's most recent Form 2 */
+		/**
+		 * The day the FEC received the candidate's most recent Form 2
+		 * Type: DateOnly
+		 */
 		last_f2_date?: Date | null;
 
-		/** The day the FEC received the candidate's most recent filing */
+		/**
+		 * The day the FEC received the candidate's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date?: Date | null;
 
 		/** Date the information was loaded into the FEC systems. This can be affected by reseting systems and other factors, refer to receipt_date for the day that the FEC received the paper or electronic document. Keep in mind that paper filings take more time to process and there can be a lag between load_date and receipt_date. This field can be helpful to identify paper records that have been processed recently. */
@@ -2653,12 +3265,16 @@ export namespace MyNS {
 		 * the entire four years of a presidential term or six years of a senatorial term,
 		 * you will need the `election_full` flag.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		two_year_period: number;
 	}
 	export interface CandidateHistoryFormProperties {
 
-		/** Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them. */
+		/**
+		 * Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active_through: FormControl<number | null | undefined>,
 
 		/**
@@ -2691,7 +3307,10 @@ export namespace MyNS {
 		 */
 		address_zip: FormControl<string | null | undefined>,
 
-		/** The last year of the cycle for this election. */
+		/**
+		 * The last year of the cycle for this election.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		candidate_election_year: FormControl<number | null | undefined>,
 
 		/**
@@ -2734,10 +3353,14 @@ export namespace MyNS {
 		 * - F future candidate
 		 * - N not yet a candidate
 		 * - P prior candidate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		district_number: FormControl<number | null | undefined>,
 
-		/** The day the FEC received the candidate's first filing. This is a F2 candidate registration. */
+		/**
+		 * The day the FEC received the candidate's first filing. This is a F2 candidate registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
 		flags: FormControl<string | null | undefined>,
 
@@ -2753,10 +3376,16 @@ export namespace MyNS {
 		 */
 		incumbent_challenge_full: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the candidate's most recent Form 2 */
+		/**
+		 * The day the FEC received the candidate's most recent Form 2
+		 * Type: DateOnly
+		 */
 		last_f2_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the candidate's most recent filing */
+		/**
+		 * The day the FEC received the candidate's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date: FormControl<Date | null | undefined>,
 
 		/** Date the information was loaded into the FEC systems. This can be affected by reseting systems and other factors, refer to receipt_date for the day that the FEC received the paper or electronic document. Keep in mind that paper filings take more time to process and there can be a lag between load_date and receipt_date. This field can be helpful to identify paper records that have been processed recently. */
@@ -2807,6 +3436,7 @@ export namespace MyNS {
 		 * the entire four years of a presidential term or six years of a senatorial term,
 		 * you will need the `election_full` flag.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		two_year_period: FormControl<number | null | undefined>,
 	}
@@ -2856,7 +3486,10 @@ export namespace MyNS {
 
 	export interface CandidateHistoryTotal {
 
-		/** Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them. */
+		/**
+		 * Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active_through?: number | null;
 
 		/**
@@ -2889,7 +3522,10 @@ export namespace MyNS {
 		 */
 		address_zip?: string | null;
 
-		/** The last year of the cycle for this election. */
+		/**
+		 * The last year of the cycle for this election.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		candidate_election_year?: number | null;
 
 		/**
@@ -2920,13 +3556,22 @@ export namespace MyNS {
 		 */
 		candidate_status?: string | null;
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period?: number | null;
 
-		/** Ending date of the reporting period */
+		/**
+		 * Ending date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_end_date?: Date | null;
 
-		/** Beginning date of the reporting period */
+		/**
+		 * Beginning date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_start_date?: Date | null;
 
 		/**
@@ -2936,6 +3581,7 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
@@ -2950,8 +3596,13 @@ export namespace MyNS {
 		 */
 		cycles?: Array<number>;
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee?: number | null;
+
+		/** Type: double */
 		disbursements?: number | null;
 
 		/**
@@ -2966,13 +3617,17 @@ export namespace MyNS {
 		 * - F future candidate
 		 * - N not yet a candidate
 		 * - P prior candidate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		district_number?: number | null;
 
 		/** Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00. */
 		election_districts?: Array<string>;
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year?: number | null;
 
 		/** Years in which a candidate ran for office. */
@@ -2984,7 +3639,10 @@ export namespace MyNS {
 		/** A boolean the describes if a presidential candidate has accepted federal funds. The flag will be false for House and Senate candidates. */
 		federal_funds_flag?: boolean | null;
 
-		/** The day the FEC received the candidate's first filing. This is a F2 candidate registration. */
+		/**
+		 * The day the FEC received the candidate's first filing. This is a F2 candidate registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
 		flags?: string | null;
 
@@ -3003,16 +3661,25 @@ export namespace MyNS {
 		 */
 		incumbent_challenge_full?: string | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions?: number | null;
 
 		/** Required */
 		is_election: boolean;
 
-		/** The day the FEC received the candidate's most recent Form 2 */
+		/**
+		 * The day the FEC received the candidate's most recent Form 2
+		 * Type: DateOnly
+		 */
 		last_f2_date?: Date | null;
 
-		/** The day the FEC received the candidate's most recent filing */
+		/**
+		 * The day the FEC received the candidate's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date?: Date | null;
 
 		/** Date the information was loaded into the FEC systems. This can be affected by reseting systems and other factors, refer to receipt_date for the day that the FEC received the paper or electronic document. Keep in mind that paper filings take more time to process and there can be a lag between load_date and receipt_date. This field can be helpful to identify paper records that have been processed recently. */
@@ -3036,7 +3703,10 @@ export namespace MyNS {
 		 */
 		office_full?: string | null;
 
-		/** Other committees contributions */
+		/**
+		 * Other committees contributions
+		 * Type: double
+		 */
 		other_political_committee_contributions?: number | null;
 
 		/**
@@ -3050,6 +3720,8 @@ export namespace MyNS {
 		 * Max length: 255
 		 */
 		party_full?: string | null;
+
+		/** Type: double */
 		receipts?: number | null;
 
 		/** Rounded election years in which a candidate ran for office */
@@ -3067,7 +3739,10 @@ export namespace MyNS {
 		 */
 		state_full?: string | null;
 
-		/** Transfers from authorized committees */
+		/**
+		 * Transfers from authorized committees
+		 * Type: double
+		 */
 		transfers_from_other_authorized_committee?: number | null;
 
 		/**
@@ -3079,12 +3754,16 @@ export namespace MyNS {
 		 * the entire four years of a presidential term or six years of a senatorial term,
 		 * you will need the `election_full` flag.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		two_year_period: number;
 	}
 	export interface CandidateHistoryTotalFormProperties {
 
-		/** Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them. */
+		/**
+		 * Last year a candidate was active. This field is specific to the candidate_id so if the same person runs for another office, there may be a different record for them.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active_through: FormControl<number | null | undefined>,
 
 		/**
@@ -3117,7 +3796,10 @@ export namespace MyNS {
 		 */
 		address_zip: FormControl<string | null | undefined>,
 
-		/** The last year of the cycle for this election. */
+		/**
+		 * The last year of the cycle for this election.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		candidate_election_year: FormControl<number | null | undefined>,
 
 		/**
@@ -3148,13 +3830,22 @@ export namespace MyNS {
 		 */
 		candidate_status: FormControl<string | null | undefined>,
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period: FormControl<number | null | undefined>,
 
-		/** Ending date of the reporting period */
+		/**
+		 * Ending date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_end_date: FormControl<Date | null | undefined>,
 
-		/** Beginning date of the reporting period */
+		/**
+		 * Beginning date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_start_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -3164,11 +3855,17 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		disbursements: FormControl<number | null | undefined>,
 
 		/**
@@ -3183,16 +3880,23 @@ export namespace MyNS {
 		 * - F future candidate
 		 * - N not yet a candidate
 		 * - P prior candidate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		district_number: FormControl<number | null | undefined>,
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year: FormControl<number | null | undefined>,
 
 		/** A boolean the describes if a presidential candidate has accepted federal funds. The flag will be false for House and Senate candidates. */
 		federal_funds_flag: FormControl<boolean | null | undefined>,
 
-		/** The day the FEC received the candidate's first filing. This is a F2 candidate registration. */
+		/**
+		 * The day the FEC received the candidate's first filing. This is a F2 candidate registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
 		flags: FormControl<string | null | undefined>,
 
@@ -3211,16 +3915,25 @@ export namespace MyNS {
 		 */
 		incumbent_challenge_full: FormControl<string | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions: FormControl<number | null | undefined>,
 
 		/** Required */
 		is_election: FormControl<boolean | null | undefined>,
 
-		/** The day the FEC received the candidate's most recent Form 2 */
+		/**
+		 * The day the FEC received the candidate's most recent Form 2
+		 * Type: DateOnly
+		 */
 		last_f2_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the candidate's most recent filing */
+		/**
+		 * The day the FEC received the candidate's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date: FormControl<Date | null | undefined>,
 
 		/** Date the information was loaded into the FEC systems. This can be affected by reseting systems and other factors, refer to receipt_date for the day that the FEC received the paper or electronic document. Keep in mind that paper filings take more time to process and there can be a lag between load_date and receipt_date. This field can be helpful to identify paper records that have been processed recently. */
@@ -3244,7 +3957,10 @@ export namespace MyNS {
 		 */
 		office_full: FormControl<string | null | undefined>,
 
-		/** Other committees contributions */
+		/**
+		 * Other committees contributions
+		 * Type: double
+		 */
 		other_political_committee_contributions: FormControl<number | null | undefined>,
 
 		/**
@@ -3258,6 +3974,8 @@ export namespace MyNS {
 		 * Max length: 255
 		 */
 		party_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		receipts: FormControl<number | null | undefined>,
 
 		/**
@@ -3272,7 +3990,10 @@ export namespace MyNS {
 		 */
 		state_full: FormControl<string | null | undefined>,
 
-		/** Transfers from authorized committees */
+		/**
+		 * Transfers from authorized committees
+		 * Type: double
+		 */
 		transfers_from_other_authorized_committee: FormControl<number | null | undefined>,
 
 		/**
@@ -3284,6 +4005,7 @@ export namespace MyNS {
 		 * the entire four years of a presidential term or six years of a senatorial term,
 		 * you will need the `election_full` flag.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		two_year_period: FormControl<number | null | undefined>,
 	}
@@ -3408,13 +4130,22 @@ export namespace MyNS {
 		 */
 		candidate_inactive?: boolean | null;
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period?: number | null;
 
-		/** Ending date of the reporting period */
+		/**
+		 * Ending date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_end_date?: Date | null;
 
-		/** Beginning date of the reporting period */
+		/**
+		 * Beginning date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_start_date?: Date | null;
 
 		/**
@@ -3424,11 +4155,17 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee?: number | null;
+
+		/** Type: double */
 		disbursements?: number | null;
 
 		/**
@@ -3437,10 +4174,16 @@ export namespace MyNS {
 		 */
 		district?: string | null;
 
-		/** Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00. */
+		/**
+		 * Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		district_number?: number | null;
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year?: number | null;
 
 		/** A boolean the describes if a presidential candidate has accepted federal funds. The flag will be false for House and Senate candidates. */
@@ -3449,7 +4192,10 @@ export namespace MyNS {
 		/** A boolean that describes if a candidate's committee has ever received any receipts for their campaign for this particular office. (Candidates have separate candidate IDs for each office.) */
 		has_raised_funds?: boolean | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions?: number | null;
 
 		/** Required */
@@ -3461,7 +4207,10 @@ export namespace MyNS {
 		 */
 		office?: string | null;
 
-		/** Other committees contributions */
+		/**
+		 * Other committees contributions
+		 * Type: double
+		 */
 		other_political_committee_contributions?: number | null;
 
 		/**
@@ -3469,6 +4218,8 @@ export namespace MyNS {
 		 * Max length: 3
 		 */
 		party?: string | null;
+
+		/** Type: double */
 		receipts?: number | null;
 
 		/**
@@ -3483,7 +4234,10 @@ export namespace MyNS {
 		 */
 		state_full?: string | null;
 
-		/** Transfers from authorized committees */
+		/**
+		 * Transfers from authorized committees
+		 * Type: double
+		 */
 		transfers_from_other_authorized_committee?: number | null;
 	}
 	export interface CandidateTotalFormProperties {
@@ -3506,13 +4260,22 @@ export namespace MyNS {
 		 */
 		candidate_inactive: FormControl<boolean | null | undefined>,
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period: FormControl<number | null | undefined>,
 
-		/** Ending date of the reporting period */
+		/**
+		 * Ending date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_end_date: FormControl<Date | null | undefined>,
 
-		/** Beginning date of the reporting period */
+		/**
+		 * Beginning date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_start_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -3522,11 +4285,17 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		disbursements: FormControl<number | null | undefined>,
 
 		/**
@@ -3535,10 +4304,16 @@ export namespace MyNS {
 		 */
 		district: FormControl<string | null | undefined>,
 
-		/** Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00. */
+		/**
+		 * Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		district_number: FormControl<number | null | undefined>,
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year: FormControl<number | null | undefined>,
 
 		/** A boolean the describes if a presidential candidate has accepted federal funds. The flag will be false for House and Senate candidates. */
@@ -3547,7 +4322,10 @@ export namespace MyNS {
 		/** A boolean that describes if a candidate's committee has ever received any receipts for their campaign for this particular office. (Candidates have separate candidate IDs for each office.) */
 		has_raised_funds: FormControl<boolean | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3559,7 +4337,10 @@ export namespace MyNS {
 		 */
 		office: FormControl<string | null | undefined>,
 
-		/** Other committees contributions */
+		/**
+		 * Other committees contributions
+		 * Type: double
+		 */
 		other_political_committee_contributions: FormControl<number | null | undefined>,
 
 		/**
@@ -3567,6 +4348,8 @@ export namespace MyNS {
 		 * Max length: 3
 		 */
 		party: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		receipts: FormControl<number | null | undefined>,
 
 		/**
@@ -3581,7 +4364,10 @@ export namespace MyNS {
 		 */
 		state_full: FormControl<string | null | undefined>,
 
-		/** Transfers from authorized committees */
+		/**
+		 * Transfers from authorized committees
+		 * Type: double
+		 */
 		transfers_from_other_authorized_committee: FormControl<number | null | undefined>,
 	}
 	export function CreateCandidateTotalFormGroup() {
@@ -3614,34 +4400,70 @@ export namespace MyNS {
 
 	export interface CandidateTotalAggregate {
 		district?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		district_number?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		election_year?: number | null;
 		office?: string | null;
 		party?: string | null;
 		state?: string | null;
 		state_full?: string | null;
+
+		/** Type: double */
 		total_cash_on_hand_end_period?: number | null;
+
+		/** Type: double */
 		total_debts_owed_by_committee?: number | null;
+
+		/** Type: double */
 		total_disbursements?: number | null;
+
+		/** Type: double */
 		total_individual_itemized_contributions?: number | null;
+
+		/** Type: double */
 		total_other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		total_receipts?: number | null;
+
+		/** Type: double */
 		total_transfers_from_other_authorized_committee?: number | null;
 	}
 	export interface CandidateTotalAggregateFormProperties {
 		district: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		district_number: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		election_year: FormControl<number | null | undefined>,
 		office: FormControl<string | null | undefined>,
 		party: FormControl<string | null | undefined>,
 		state: FormControl<string | null | undefined>,
 		state_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total_cash_on_hand_end_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_debts_owed_by_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_individual_itemized_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_transfers_from_other_authorized_committee: FormControl<number | null | undefined>,
 	}
 	export function CreateCandidateTotalAggregateFormGroup() {
@@ -3802,16 +4624,28 @@ export namespace MyNS {
 		 */
 		filing_frequency?: string | null;
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date?: Date | null;
 
 		/**
@@ -3969,16 +4803,28 @@ export namespace MyNS {
 		 */
 		filing_frequency: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -4317,10 +5163,16 @@ export namespace MyNS {
 		 */
 		filing_frequency?: string | null;
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
 
 		/**
@@ -4346,10 +5198,16 @@ export namespace MyNS {
 		form_type?: string | null;
 		CommitteeDetailJfc_committee?: Array<CommitteeDetailJfc_committee>;
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date?: Date | null;
 
 		/**
@@ -4728,10 +5586,16 @@ export namespace MyNS {
 		 */
 		filing_frequency: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -4756,10 +5620,16 @@ export namespace MyNS {
 		 */
 		form_type: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -5131,6 +6001,7 @@ export namespace MyNS {
 		 * date but before expiration date in Form 1s) The cycle begins with
 		 * an odd year and is named for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
@@ -5191,10 +6062,16 @@ export namespace MyNS {
 		 */
 		filing_frequency?: string | null;
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
 
 		/**
@@ -5205,19 +6082,27 @@ export namespace MyNS {
 
 		/**
 		 * The latest two year election cycle that the committee has filings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_activity?: number | null;
 
 		/**
 		 * The latest two year election cycle that the committee files the financial reports
 		 * ('F3', 'F3X', 'F3P', 'F3L', 'F4', 'F5', 'F7', 'F13').
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_financial?: number | null;
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date?: Date | null;
 
 		/**
@@ -5367,6 +6252,7 @@ export namespace MyNS {
 		 * date but before expiration date in Form 1s) The cycle begins with
 		 * an odd year and is named for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
@@ -5407,10 +6293,16 @@ export namespace MyNS {
 		 */
 		filing_frequency: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -5420,19 +6312,27 @@ export namespace MyNS {
 
 		/**
 		 * The latest two year election cycle that the committee has filings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_activity: FormControl<number | null | undefined>,
 
 		/**
 		 * The latest two year election cycle that the committee files the financial reports
 		 * ('F3', 'F3X', 'F3P', 'F3L', 'F4', 'F5', 'F7', 'F13').
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_financial: FormControl<number | null | undefined>,
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -5681,6 +6581,7 @@ export namespace MyNS {
 		 * date but before expiration date in Form 1s) The cycle begins with
 		 * an odd year and is named for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
@@ -5741,13 +6642,22 @@ export namespace MyNS {
 		 */
 		filing_frequency?: string | null;
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
 
-		/** Year a candidate runs for federal office. */
+		/**
+		 * Year a candidate runs for federal office.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		former_candidate_election_year?: number | null;
 
 		/**
@@ -5783,19 +6693,27 @@ export namespace MyNS {
 
 		/**
 		 * The latest two year election cycle that the committee has filings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_activity?: number | null;
 
 		/**
 		 * The latest two year election cycle that the committee files the financial reports
 		 * ('F3', 'F3X', 'F3P', 'F3L', 'F4', 'F5', 'F7', 'F13').
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_financial?: number | null;
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date?: Date | null;
 
 		/**
@@ -5958,6 +6876,7 @@ export namespace MyNS {
 		 * date but before expiration date in Form 1s) The cycle begins with
 		 * an odd year and is named for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
@@ -5998,13 +6917,22 @@ export namespace MyNS {
 		 */
 		filing_frequency: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
 
-		/** Year a candidate runs for federal office. */
+		/**
+		 * Year a candidate runs for federal office.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		former_candidate_election_year: FormControl<number | null | undefined>,
 
 		/**
@@ -6039,19 +6967,27 @@ export namespace MyNS {
 
 		/**
 		 * The latest two year election cycle that the committee has filings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_activity: FormControl<number | null | undefined>,
 
 		/**
 		 * The latest two year election cycle that the committee files the financial reports
 		 * ('F3', 'F3X', 'F3P', 'F3L', 'F4', 'F5', 'F7', 'F13').
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_financial: FormControl<number | null | undefined>,
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -6230,12 +7166,26 @@ export namespace MyNS {
 	}
 
 	export interface CommitteeReports {
+
+		/** Type: double */
 		aggregate_amount_personal_contributions_general?: number | null;
+
+		/** Type: double */
 		aggregate_contributions_personal_funds_primary?: number | null;
+
+		/** Type: double */
 		all_loans_received_period?: number | null;
+
+		/** Type: double */
 		all_loans_received_ytd?: number | null;
+
+		/** Type: double */
 		all_other_loans_period?: number | null;
+
+		/** Type: double */
 		all_other_loans_ytd?: number | null;
+
+		/** Type: double */
 		allocated_federal_election_levin_share_period?: number | null;
 
 		/**
@@ -6246,16 +7196,32 @@ export namespace MyNS {
 		amendment_indicator?: string | null;
 		amendment_indicator_full?: string | null;
 		beginning_image_number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calendar_ytd?: number | null;
+
+		/** Type: double */
 		candidate_contribution_period?: number | null;
+
+		/** Type: double */
 		candidate_contribution_ytd?: number | null;
+
+		/** Type: double */
 		cash_on_hand_beginning_calendar_ytd?: number | null;
 
-		/** Balance for the committee at the start of the two-year period */
+		/**
+		 * Balance for the committee at the start of the two-year period
+		 * Type: double
+		 */
 		cash_on_hand_beginning_period?: number | null;
+
+		/** Type: double */
 		cash_on_hand_close_ytd?: number | null;
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period?: number | null;
 
 		/**
@@ -6266,7 +7232,11 @@ export namespace MyNS {
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name?: string | null;
 		committee_type?: string | null;
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee_period?: number | null;
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee_ytd?: number | null;
 
 		/** Ending date of the reporting period */
@@ -6282,73 +7252,160 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle?: number | null;
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee?: number | null;
 
-		/** Debts owed to the committee */
+		/**
+		 * Debts owed to the committee
+		 * Type: double
+		 */
 		debts_owed_to_committee?: number | null;
 		document_description?: string | null;
 		end_image_number?: string | null;
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement_period?: number | null;
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement_ytd?: number | null;
+
+		/** Type: double */
 		expenditure_subject_to_limits?: number | null;
 		fec_file_id?: string | null;
 		fec_url?: string | null;
+
+		/** Type: double */
 		fed_candidate_committee_contribution_refunds_ytd?: number | null;
+
+		/** Type: double */
 		fed_candidate_committee_contributions_period?: number | null;
+
+		/** Type: double */
 		fed_candidate_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		fed_candidate_contribution_refunds_period?: number | null;
+
+		/** Type: double */
 		federal_funds_period?: number | null;
+
+		/** Type: double */
 		federal_funds_ytd?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
+
+		/** Type: double */
 		fundraising_disbursements_period?: number | null;
+
+		/** Type: double */
 		fundraising_disbursements_ytd?: number | null;
+
+		/** Type: double */
 		gross_receipt_authorized_committee_general?: number | null;
+
+		/** Type: double */
 		gross_receipt_authorized_committee_primary?: number | null;
+
+		/** Type: double */
 		gross_receipt_minus_personal_contribution_general?: number | null;
+
+		/** Type: double */
 		gross_receipt_minus_personal_contributions_primary?: number | null;
 
 		/**
 		 * HTML link to the filing.
 		 */
 		html_url?: string | null;
+
+		/** Type: double */
 		independent_contributions_period?: number | null;
+
+		/** Type: double */
 		independent_expenditures_period?: number | null;
+
+		/** Type: double */
 		independent_expenditures_ytd?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period
+		 * Type: double
+		 */
 		individual_itemized_contributions_period?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date
+		 * Type: double
+		 */
 		individual_itemized_contributions_ytd?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period
+		 * Type: double
+		 */
 		individual_unitemized_contributions_period?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date
+		 * Type: double
+		 */
 		individual_unitemized_contributions_ytd?: number | null;
 
 		/**
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 */
 		is_amended?: boolean | null;
+
+		/** Type: double */
 		items_on_hand_liquidated?: number | null;
+
+		/** Type: double */
 		loan_repayments_candidate_loans_period?: number | null;
+
+		/** Type: double */
 		loan_repayments_candidate_loans_ytd?: number | null;
+
+		/** Type: double */
 		loan_repayments_made_period?: number | null;
+
+		/** Type: double */
 		loan_repayments_made_ytd?: number | null;
+
+		/** Type: double */
 		loan_repayments_other_loans_period?: number | null;
+
+		/** Type: double */
 		loan_repayments_other_loans_ytd?: number | null;
+
+		/** Type: double */
 		loan_repayments_received_period?: number | null;
+
+		/** Type: double */
 		loan_repayments_received_ytd?: number | null;
+
+		/** Type: double */
 		loans_made_by_candidate_period?: number | null;
+
+		/** Type: double */
 		loans_made_by_candidate_ytd?: number | null;
+
+		/** Type: double */
 		loans_made_period?: number | null;
+
+		/** Type: double */
 		loans_made_ytd?: number | null;
+
+		/** Type: double */
 		loans_received_from_candidate_period?: number | null;
+
+		/** Type: double */
 		loans_received_from_candidate_ytd?: number | null;
 
 		/** The method used to file with the FEC, either electronic or on paper. */
@@ -6358,81 +7415,186 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent?: boolean | null;
+
+		/** Type: double */
 		most_recent_file_number?: number | null;
+
+		/** Type: double */
 		net_contributions_cycle_to_date?: number | null;
+
+		/** Type: double */
 		net_contributions_period?: number | null;
+
+		/** Type: double */
 		net_contributions_ytd?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures_cycle_to_date?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		non_allocated_fed_election_activity_period?: number | null;
+
+		/** Type: double */
 		non_allocated_fed_election_activity_ytd?: number | null;
+
+		/** Type: double */
 		nonfed_share_allocated_disbursements_period?: number | null;
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures_period?: number | null;
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		offsets_to_legal_accounting_period?: number | null;
+
+		/** Type: double */
 		offsets_to_legal_accounting_ytd?: number | null;
 
-		/** Offsets to operating expenditures total for the reporting period */
+		/**
+		 * Offsets to operating expenditures total for the reporting period
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_period?: number | null;
 
-		/** Offsets to operating expenditures total for the year to date */
+		/**
+		 * Offsets to operating expenditures total for the year to date
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		operating_expenditures_ytd?: number | null;
 
-		/** Other disbursements total for the reporting period */
+		/**
+		 * Other disbursements total for the reporting period
+		 * Type: double
+		 */
 		other_disbursements_period?: number | null;
 
-		/** Other disbursements total for the year to date */
+		/**
+		 * Other disbursements total for the year to date
+		 * Type: double
+		 */
 		other_disbursements_ytd?: number | null;
+
+		/** Type: double */
 		other_fed_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		other_fed_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		other_fed_receipts_period?: number | null;
+
+		/** Type: double */
 		other_fed_receipts_ytd?: number | null;
+
+		/** Type: double */
 		other_loans_received_period?: number | null;
+
+		/** Type: double */
 		other_loans_received_ytd?: number | null;
 
-		/** Other committees contributions total for the reporting period */
+		/**
+		 * Other committees contributions total for the reporting period
+		 * Type: double
+		 */
 		other_political_committee_contributions_period?: number | null;
 
-		/** Other committees contributions total for the year to date */
+		/**
+		 * Other committees contributions total for the year to date
+		 * Type: double
+		 */
 		other_political_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		other_receipts_period?: number | null;
+
+		/** Type: double */
 		other_receipts_ytd?: number | null;
 		pdf_url?: string | null;
 
-		/** Party committees contributions total for the reporting period */
+		/**
+		 * Party committees contributions total for the reporting period
+		 * Type: double
+		 */
 		political_party_committee_contributions_period?: number | null;
 
-		/** Party committees contributions total for the year to date */
+		/**
+		 * Party committees contributions total for the year to date
+		 * Type: double
+		 */
 		political_party_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		previous_file_number?: number | null;
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date?: Date | null;
 
-		/** Individual refunds total for the reporting period */
+		/**
+		 * Individual refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_individual_contributions_period?: number | null;
 
-		/** Individual refunds total for the year to date */
+		/**
+		 * Individual refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_individual_contributions_ytd?: number | null;
 
-		/** Other committee refunds total for the reporting period */
+		/**
+		 * Other committee refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_period?: number | null;
 
-		/** Other committee refunds total for the year to date */
+		/**
+		 * Other committee refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_ytd?: number | null;
 
-		/** Political party refunds total for the reporting period */
+		/**
+		 * Political party refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_period?: number | null;
 
-		/** Political party refunds total for the year to date */
+		/**
+		 * Political party refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		refunds_total_contributions_col_total_ytd?: number | null;
+
+		/** Type: double */
 		repayments_loans_made_by_candidate_period?: number | null;
+
+		/** Type: double */
 		repayments_loans_made_candidate_ytd?: number | null;
+
+		/** Type: double */
 		repayments_other_loans_period?: number | null;
+
+		/** Type: double */
 		repayments_other_loans_ytd?: number | null;
 		report_form?: string | null;
 
@@ -6549,107 +7711,262 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year?: number | null;
+
+		/** Type: double */
 		shared_fed_activity_nonfed_ytd?: number | null;
+
+		/** Type: double */
 		shared_fed_activity_period?: number | null;
+
+		/** Type: double */
 		shared_fed_activity_ytd?: number | null;
+
+		/** Type: double */
 		shared_fed_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		shared_fed_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		subtotal_period?: number | null;
+
+		/** Type: double */
 		subtotal_summary_page_period?: number | null;
+
+		/** Type: double */
 		subtotal_summary_period?: number | null;
+
+		/** Type: double */
 		subtotal_summary_ytd?: number | null;
+
+		/** Type: double */
 		total_contribution_refunds_col_total_period?: number | null;
 
-		/** Total contribution refunds total for the reporting period */
+		/**
+		 * Total contribution refunds total for the reporting period
+		 * Type: double
+		 */
 		total_contribution_refunds_period?: number | null;
 
-		/** Total contribution refunds total for the year to date */
+		/**
+		 * Total contribution refunds total for the year to date
+		 * Type: double
+		 */
 		total_contribution_refunds_ytd?: number | null;
+
+		/** Type: double */
 		total_contributions_column_total_period?: number | null;
 
-		/** Contribution total for the reporting period */
+		/**
+		 * Contribution total for the reporting period
+		 * Type: double
+		 */
 		total_contributions_period?: number | null;
 
-		/** Contribution total for the year to date */
+		/**
+		 * Contribution total for the year to date
+		 * Type: double
+		 */
 		total_contributions_ytd?: number | null;
 
-		/** Disbursements total for the reporting period */
+		/**
+		 * Disbursements total for the reporting period
+		 * Type: double
+		 */
 		total_disbursements_period?: number | null;
 
-		/** Disbursements total for the year to date */
+		/**
+		 * Disbursements total for the year to date
+		 * Type: double
+		 */
 		total_disbursements_ytd?: number | null;
+
+		/** Type: double */
 		total_fed_disbursements_period?: number | null;
+
+		/** Type: double */
 		total_fed_disbursements_ytd?: number | null;
+
+		/** Type: double */
 		total_fed_election_activity_period?: number | null;
+
+		/** Type: double */
 		total_fed_election_activity_ytd?: number | null;
+
+		/** Type: double */
 		total_fed_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		total_fed_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		total_fed_receipts_period?: number | null;
+
+		/** Type: double */
 		total_fed_receipts_ytd?: number | null;
 
-		/** Individual contributions total for the reporting period */
+		/**
+		 * Individual contributions total for the reporting period
+		 * Type: double
+		 */
 		total_individual_contributions_period?: number | null;
 
-		/** Individual contributions total for the year to date */
+		/**
+		 * Individual contributions total for the year to date
+		 * Type: double
+		 */
 		total_individual_contributions_ytd?: number | null;
+
+		/** Type: double */
 		total_loan_repayments_made_period?: number | null;
+
+		/** Type: double */
 		total_loan_repayments_made_ytd?: number | null;
+
+		/** Type: double */
 		total_loans_received_period?: number | null;
+
+		/** Type: double */
 		total_loans_received_ytd?: number | null;
+
+		/** Type: double */
 		total_nonfed_transfers_period?: number | null;
+
+		/** Type: double */
 		total_nonfed_transfers_ytd?: number | null;
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		total_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		total_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		total_period?: number | null;
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the reporting period */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the reporting period
+		 * Type: double
+		 */
 		total_receipts_period?: number | null;
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the year to date */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the year to date
+		 * Type: double
+		 */
 		total_receipts_ytd?: number | null;
+
+		/** Type: double */
 		total_ytd?: number | null;
+
+		/** Type: double */
 		transfers_from_affiliated_committee_period?: number | null;
+
+		/** Type: double */
 		transfers_from_affiliated_committee_ytd?: number | null;
+
+		/** Type: double */
 		transfers_from_affiliated_party_period?: number | null;
+
+		/** Type: double */
 		transfers_from_affiliated_party_ytd?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_account_period?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_account_ytd?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_levin_period?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_levin_ytd?: number | null;
+
+		/** Type: double */
 		transfers_from_other_authorized_committee_period?: number | null;
+
+		/** Type: double */
 		transfers_from_other_authorized_committee_ytd?: number | null;
+
+		/** Type: double */
 		transfers_to_affiliated_committee_period?: number | null;
+
+		/** Type: double */
 		transfers_to_affilitated_committees_ytd?: number | null;
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_period?: number | null;
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_ytd?: number | null;
 	}
 	export interface CommitteeReportsFormProperties {
+
+		/** Type: double */
 		aggregate_amount_personal_contributions_general: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		aggregate_contributions_personal_funds_primary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		all_loans_received_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		all_loans_received_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		all_other_loans_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		all_other_loans_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		allocated_federal_election_levin_share_period: FormControl<number | null | undefined>,
 		amendment_indicator: FormControl<string | null | undefined>,
 		amendment_indicator_full: FormControl<string | null | undefined>,
 		beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calendar_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		candidate_contribution_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		candidate_contribution_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		cash_on_hand_beginning_calendar_ytd: FormControl<number | null | undefined>,
 
-		/** Balance for the committee at the start of the two-year period */
+		/**
+		 * Balance for the committee at the start of the two-year period
+		 * Type: double
+		 */
 		cash_on_hand_beginning_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		cash_on_hand_close_ytd: FormControl<number | null | undefined>,
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period: FormControl<number | null | undefined>,
 
 		/**
@@ -6660,7 +7977,11 @@ export namespace MyNS {
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name: FormControl<string | null | undefined>,
 		committee_type: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee_ytd: FormControl<number | null | undefined>,
 
 		/** Ending date of the reporting period */
@@ -6676,73 +7997,160 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee: FormControl<number | null | undefined>,
 
-		/** Debts owed to the committee */
+		/**
+		 * Debts owed to the committee
+		 * Type: double
+		 */
 		debts_owed_to_committee: FormControl<number | null | undefined>,
 		document_description: FormControl<string | null | undefined>,
 		end_image_number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		expenditure_subject_to_limits: FormControl<number | null | undefined>,
 		fec_file_id: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_committee_contribution_refunds_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_committee_contributions_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_contribution_refunds_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		federal_funds_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		federal_funds_ytd: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fundraising_disbursements_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fundraising_disbursements_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gross_receipt_authorized_committee_general: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gross_receipt_authorized_committee_primary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gross_receipt_minus_personal_contribution_general: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gross_receipt_minus_personal_contributions_primary: FormControl<number | null | undefined>,
 
 		/**
 		 * HTML link to the filing.
 		 */
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		independent_contributions_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		independent_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		independent_expenditures_ytd: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period
+		 * Type: double
+		 */
 		individual_itemized_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date
+		 * Type: double
+		 */
 		individual_itemized_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period
+		 * Type: double
+		 */
 		individual_unitemized_contributions_period: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date
+		 * Type: double
+		 */
 		individual_unitemized_contributions_ytd: FormControl<number | null | undefined>,
 
 		/**
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 */
 		is_amended: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		items_on_hand_liquidated: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_candidate_loans_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_candidate_loans_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_made_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_made_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_other_loans_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_other_loans_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_received_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_received_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made_by_candidate_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made_by_candidate_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_received_from_candidate_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_received_from_candidate_ytd: FormControl<number | null | undefined>,
 
 		/** The method used to file with the FEC, either electronic or on paper. */
@@ -6752,81 +8160,186 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		most_recent_file_number: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions_cycle_to_date: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures_cycle_to_date: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		non_allocated_fed_election_activity_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		non_allocated_fed_election_activity_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		nonfed_share_allocated_disbursements_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_legal_accounting_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_legal_accounting_ytd: FormControl<number | null | undefined>,
 
-		/** Offsets to operating expenditures total for the reporting period */
+		/**
+		 * Offsets to operating expenditures total for the reporting period
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_period: FormControl<number | null | undefined>,
 
-		/** Offsets to operating expenditures total for the year to date */
+		/**
+		 * Offsets to operating expenditures total for the year to date
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures_ytd: FormControl<number | null | undefined>,
 
-		/** Other disbursements total for the reporting period */
+		/**
+		 * Other disbursements total for the reporting period
+		 * Type: double
+		 */
 		other_disbursements_period: FormControl<number | null | undefined>,
 
-		/** Other disbursements total for the year to date */
+		/**
+		 * Other disbursements total for the year to date
+		 * Type: double
+		 */
 		other_disbursements_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_receipts_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_receipts_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_loans_received_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_loans_received_ytd: FormControl<number | null | undefined>,
 
-		/** Other committees contributions total for the reporting period */
+		/**
+		 * Other committees contributions total for the reporting period
+		 * Type: double
+		 */
 		other_political_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Other committees contributions total for the year to date */
+		/**
+		 * Other committees contributions total for the year to date
+		 * Type: double
+		 */
 		other_political_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_receipts_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_receipts_ytd: FormControl<number | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 
-		/** Party committees contributions total for the reporting period */
+		/**
+		 * Party committees contributions total for the reporting period
+		 * Type: double
+		 */
 		political_party_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Party committees contributions total for the year to date */
+		/**
+		 * Party committees contributions total for the year to date
+		 * Type: double
+		 */
 		political_party_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		previous_file_number: FormControl<number | null | undefined>,
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date: FormControl<Date | null | undefined>,
 
-		/** Individual refunds total for the reporting period */
+		/**
+		 * Individual refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_individual_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual refunds total for the year to date */
+		/**
+		 * Individual refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_individual_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Other committee refunds total for the reporting period */
+		/**
+		 * Other committee refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Other committee refunds total for the year to date */
+		/**
+		 * Other committee refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Political party refunds total for the reporting period */
+		/**
+		 * Political party refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Political party refunds total for the year to date */
+		/**
+		 * Political party refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunds_total_contributions_col_total_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_loans_made_by_candidate_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_loans_made_candidate_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_other_loans_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_other_loans_ytd: FormControl<number | null | undefined>,
 		report_form: FormControl<string | null | undefined>,
 
@@ -6943,84 +8456,209 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_activity_nonfed_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_activity_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_activity_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		subtotal_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		subtotal_summary_page_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		subtotal_summary_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		subtotal_summary_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_contribution_refunds_col_total_period: FormControl<number | null | undefined>,
 
-		/** Total contribution refunds total for the reporting period */
+		/**
+		 * Total contribution refunds total for the reporting period
+		 * Type: double
+		 */
 		total_contribution_refunds_period: FormControl<number | null | undefined>,
 
-		/** Total contribution refunds total for the year to date */
+		/**
+		 * Total contribution refunds total for the year to date
+		 * Type: double
+		 */
 		total_contribution_refunds_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_contributions_column_total_period: FormControl<number | null | undefined>,
 
-		/** Contribution total for the reporting period */
+		/**
+		 * Contribution total for the reporting period
+		 * Type: double
+		 */
 		total_contributions_period: FormControl<number | null | undefined>,
 
-		/** Contribution total for the year to date */
+		/**
+		 * Contribution total for the year to date
+		 * Type: double
+		 */
 		total_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Disbursements total for the reporting period */
+		/**
+		 * Disbursements total for the reporting period
+		 * Type: double
+		 */
 		total_disbursements_period: FormControl<number | null | undefined>,
 
-		/** Disbursements total for the year to date */
+		/**
+		 * Disbursements total for the year to date
+		 * Type: double
+		 */
 		total_disbursements_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_disbursements_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_disbursements_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_election_activity_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_election_activity_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_receipts_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_receipts_ytd: FormControl<number | null | undefined>,
 
-		/** Individual contributions total for the reporting period */
+		/**
+		 * Individual contributions total for the reporting period
+		 * Type: double
+		 */
 		total_individual_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual contributions total for the year to date */
+		/**
+		 * Individual contributions total for the year to date
+		 * Type: double
+		 */
 		total_individual_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loan_repayments_made_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loan_repayments_made_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loans_received_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loans_received_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_nonfed_transfers_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_nonfed_transfers_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_period: FormControl<number | null | undefined>,
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the reporting period */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the reporting period
+		 * Type: double
+		 */
 		total_receipts_period: FormControl<number | null | undefined>,
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the year to date */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the year to date
+		 * Type: double
+		 */
 		total_receipts_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_committee_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_committee_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_party_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_party_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_account_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_account_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_levin_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_levin_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_other_authorized_committee_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_other_authorized_committee_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_affiliated_committee_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_affilitated_committees_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_ytd: FormControl<number | null | undefined>,
 	}
 	export function CreateCommitteeReportsFormGroup() {
@@ -7211,9 +8849,17 @@ export namespace MyNS {
 	}
 
 	export interface CommitteeReportsHouseSenate {
+
+		/** Type: double */
 		aggregate_amount_personal_contributions_general?: number | null;
+
+		/** Type: double */
 		aggregate_contributions_personal_funds_primary?: number | null;
+
+		/** Type: double */
 		all_other_loans_period?: number | null;
+
+		/** Type: double */
 		all_other_loans_ytd?: number | null;
 
 		/**
@@ -7224,13 +8870,23 @@ export namespace MyNS {
 		amendment_indicator?: string | null;
 		amendment_indicator_full?: string | null;
 		beginning_image_number?: string | null;
+
+		/** Type: double */
 		candidate_contribution_period?: number | null;
+
+		/** Type: double */
 		candidate_contribution_ytd?: number | null;
 
-		/** Balance for the committee at the start of the two-year period */
+		/**
+		 * Balance for the committee at the start of the two-year period
+		 * Type: double
+		 */
 		cash_on_hand_beginning_period?: number | null;
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period?: number | null;
 
 		/**
@@ -7255,22 +8911,39 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle?: number | null;
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee?: number | null;
 
-		/** Debts owed to the committee */
+		/**
+		 * Debts owed to the committee
+		 * Type: double
+		 */
 		debts_owed_to_committee?: number | null;
 		document_description?: string | null;
 		end_image_number?: string | null;
 		fec_file_id?: string | null;
 		fec_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
+
+		/** Type: double */
 		gross_receipt_authorized_committee_general?: number | null;
+
+		/** Type: double */
 		gross_receipt_authorized_committee_primary?: number | null;
+
+		/** Type: double */
 		gross_receipt_minus_personal_contribution_general?: number | null;
+
+		/** Type: double */
 		gross_receipt_minus_personal_contributions_primary?: number | null;
 
 		/**
@@ -7278,27 +8951,51 @@ export namespace MyNS {
 		 */
 		html_url?: string | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period
+		 * Type: double
+		 */
 		individual_itemized_contributions_period?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date
+		 * Type: double
+		 */
 		individual_itemized_contributions_ytd?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period
+		 * Type: double
+		 */
 		individual_unitemized_contributions_period?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date
+		 * Type: double
+		 */
 		individual_unitemized_contributions_ytd?: number | null;
 
 		/**
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 */
 		is_amended?: boolean | null;
+
+		/** Type: double */
 		loan_repayments_candidate_loans_period?: number | null;
+
+		/** Type: double */
 		loan_repayments_candidate_loans_ytd?: number | null;
+
+		/** Type: double */
 		loan_repayments_other_loans_period?: number | null;
+
+		/** Type: double */
 		loan_repayments_other_loans_ytd?: number | null;
+
+		/** Type: double */
 		loans_made_by_candidate_period?: number | null;
+
+		/** Type: double */
 		loans_made_by_candidate_ytd?: number | null;
 
 		/** The method used to file with the FEC, either electronic or on paper. */
@@ -7308,62 +9005,129 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent?: boolean | null;
+
+		/** Type: double */
 		most_recent_file_number?: number | null;
+
+		/** Type: double */
 		net_contributions_period?: number | null;
+
+		/** Type: double */
 		net_contributions_ytd?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures_ytd?: number | null;
 
-		/** Offsets to operating expenditures total for the reporting period */
+		/**
+		 * Offsets to operating expenditures total for the reporting period
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_period?: number | null;
 
-		/** Offsets to operating expenditures total for the year to date */
+		/**
+		 * Offsets to operating expenditures total for the year to date
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		operating_expenditures_ytd?: number | null;
 
-		/** Other disbursements total for the reporting period */
+		/**
+		 * Other disbursements total for the reporting period
+		 * Type: double
+		 */
 		other_disbursements_period?: number | null;
 
-		/** Other disbursements total for the year to date */
+		/**
+		 * Other disbursements total for the year to date
+		 * Type: double
+		 */
 		other_disbursements_ytd?: number | null;
 
-		/** Other committees contributions total for the reporting period */
+		/**
+		 * Other committees contributions total for the reporting period
+		 * Type: double
+		 */
 		other_political_committee_contributions_period?: number | null;
 
-		/** Other committees contributions total for the year to date */
+		/**
+		 * Other committees contributions total for the year to date
+		 * Type: double
+		 */
 		other_political_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		other_receipts_period?: number | null;
+
+		/** Type: double */
 		other_receipts_ytd?: number | null;
 		pdf_url?: string | null;
 
-		/** Party committees contributions total for the reporting period */
+		/**
+		 * Party committees contributions total for the reporting period
+		 * Type: double
+		 */
 		political_party_committee_contributions_period?: number | null;
 
-		/** Party committees contributions total for the year to date */
+		/**
+		 * Party committees contributions total for the year to date
+		 * Type: double
+		 */
 		political_party_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		previous_file_number?: number | null;
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date?: Date | null;
 
-		/** Individual refunds total for the reporting period */
+		/**
+		 * Individual refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_individual_contributions_period?: number | null;
 
-		/** Individual refunds total for the year to date */
+		/**
+		 * Individual refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_individual_contributions_ytd?: number | null;
 
-		/** Other committee refunds total for the reporting period */
+		/**
+		 * Other committee refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_period?: number | null;
 
-		/** Other committee refunds total for the year to date */
+		/**
+		 * Other committee refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_ytd?: number | null;
 
-		/** Political party refunds total for the reporting period */
+		/**
+		 * Political party refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_period?: number | null;
 
-		/** Political party refunds total for the year to date */
+		/**
+		 * Political party refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		refunds_total_contributions_col_total_ytd?: number | null;
 		report_form?: string | null;
 
@@ -7480,69 +9244,148 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year?: number | null;
+
+		/** Type: double */
 		subtotal_period?: number | null;
+
+		/** Type: double */
 		total_contribution_refunds_col_total_period?: number | null;
 
-		/** Total contribution refunds total for the reporting period */
+		/**
+		 * Total contribution refunds total for the reporting period
+		 * Type: double
+		 */
 		total_contribution_refunds_period?: number | null;
 
-		/** Total contribution refunds total for the year to date */
+		/**
+		 * Total contribution refunds total for the year to date
+		 * Type: double
+		 */
 		total_contribution_refunds_ytd?: number | null;
+
+		/** Type: double */
 		total_contributions_column_total_period?: number | null;
 
-		/** Contribution total for the reporting period */
+		/**
+		 * Contribution total for the reporting period
+		 * Type: double
+		 */
 		total_contributions_period?: number | null;
 
-		/** Contribution total for the year to date */
+		/**
+		 * Contribution total for the year to date
+		 * Type: double
+		 */
 		total_contributions_ytd?: number | null;
 
-		/** Disbursements total for the reporting period */
+		/**
+		 * Disbursements total for the reporting period
+		 * Type: double
+		 */
 		total_disbursements_period?: number | null;
 
-		/** Disbursements total for the year to date */
+		/**
+		 * Disbursements total for the year to date
+		 * Type: double
+		 */
 		total_disbursements_ytd?: number | null;
 
-		/** Individual contributions total for the reporting period */
+		/**
+		 * Individual contributions total for the reporting period
+		 * Type: double
+		 */
 		total_individual_contributions_period?: number | null;
 
-		/** Individual contributions total for the year to date */
+		/**
+		 * Individual contributions total for the year to date
+		 * Type: double
+		 */
 		total_individual_contributions_ytd?: number | null;
+
+		/** Type: double */
 		total_loan_repayments_made_period?: number | null;
+
+		/** Type: double */
 		total_loan_repayments_made_ytd?: number | null;
+
+		/** Type: double */
 		total_loans_received_period?: number | null;
+
+		/** Type: double */
 		total_loans_received_ytd?: number | null;
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		total_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		total_operating_expenditures_ytd?: number | null;
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the reporting period */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the reporting period
+		 * Type: double
+		 */
 		total_receipts_period?: number | null;
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the year to date */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the year to date
+		 * Type: double
+		 */
 		total_receipts_ytd?: number | null;
+
+		/** Type: double */
 		transfers_from_other_authorized_committee_period?: number | null;
+
+		/** Type: double */
 		transfers_from_other_authorized_committee_ytd?: number | null;
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_period?: number | null;
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_ytd?: number | null;
 	}
 	export interface CommitteeReportsHouseSenateFormProperties {
+
+		/** Type: double */
 		aggregate_amount_personal_contributions_general: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		aggregate_contributions_personal_funds_primary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		all_other_loans_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		all_other_loans_ytd: FormControl<number | null | undefined>,
 		amendment_indicator: FormControl<string | null | undefined>,
 		amendment_indicator_full: FormControl<string | null | undefined>,
 		beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		candidate_contribution_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		candidate_contribution_ytd: FormControl<number | null | undefined>,
 
-		/** Balance for the committee at the start of the two-year period */
+		/**
+		 * Balance for the committee at the start of the two-year period
+		 * Type: double
+		 */
 		cash_on_hand_beginning_period: FormControl<number | null | undefined>,
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period: FormControl<number | null | undefined>,
 
 		/**
@@ -7567,22 +9410,39 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee: FormControl<number | null | undefined>,
 
-		/** Debts owed to the committee */
+		/**
+		 * Debts owed to the committee
+		 * Type: double
+		 */
 		debts_owed_to_committee: FormControl<number | null | undefined>,
 		document_description: FormControl<string | null | undefined>,
 		end_image_number: FormControl<string | null | undefined>,
 		fec_file_id: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gross_receipt_authorized_committee_general: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gross_receipt_authorized_committee_primary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gross_receipt_minus_personal_contribution_general: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gross_receipt_minus_personal_contributions_primary: FormControl<number | null | undefined>,
 
 		/**
@@ -7590,27 +9450,51 @@ export namespace MyNS {
 		 */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period
+		 * Type: double
+		 */
 		individual_itemized_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date
+		 * Type: double
+		 */
 		individual_itemized_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period
+		 * Type: double
+		 */
 		individual_unitemized_contributions_period: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date
+		 * Type: double
+		 */
 		individual_unitemized_contributions_ytd: FormControl<number | null | undefined>,
 
 		/**
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 */
 		is_amended: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_candidate_loans_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_candidate_loans_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_other_loans_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_other_loans_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made_by_candidate_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made_by_candidate_ytd: FormControl<number | null | undefined>,
 
 		/** The method used to file with the FEC, either electronic or on paper. */
@@ -7620,62 +9504,129 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		most_recent_file_number: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures_ytd: FormControl<number | null | undefined>,
 
-		/** Offsets to operating expenditures total for the reporting period */
+		/**
+		 * Offsets to operating expenditures total for the reporting period
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_period: FormControl<number | null | undefined>,
 
-		/** Offsets to operating expenditures total for the year to date */
+		/**
+		 * Offsets to operating expenditures total for the year to date
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures_ytd: FormControl<number | null | undefined>,
 
-		/** Other disbursements total for the reporting period */
+		/**
+		 * Other disbursements total for the reporting period
+		 * Type: double
+		 */
 		other_disbursements_period: FormControl<number | null | undefined>,
 
-		/** Other disbursements total for the year to date */
+		/**
+		 * Other disbursements total for the year to date
+		 * Type: double
+		 */
 		other_disbursements_ytd: FormControl<number | null | undefined>,
 
-		/** Other committees contributions total for the reporting period */
+		/**
+		 * Other committees contributions total for the reporting period
+		 * Type: double
+		 */
 		other_political_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Other committees contributions total for the year to date */
+		/**
+		 * Other committees contributions total for the year to date
+		 * Type: double
+		 */
 		other_political_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_receipts_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_receipts_ytd: FormControl<number | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 
-		/** Party committees contributions total for the reporting period */
+		/**
+		 * Party committees contributions total for the reporting period
+		 * Type: double
+		 */
 		political_party_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Party committees contributions total for the year to date */
+		/**
+		 * Party committees contributions total for the year to date
+		 * Type: double
+		 */
 		political_party_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		previous_file_number: FormControl<number | null | undefined>,
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date: FormControl<Date | null | undefined>,
 
-		/** Individual refunds total for the reporting period */
+		/**
+		 * Individual refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_individual_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual refunds total for the year to date */
+		/**
+		 * Individual refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_individual_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Other committee refunds total for the reporting period */
+		/**
+		 * Other committee refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Other committee refunds total for the year to date */
+		/**
+		 * Other committee refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Political party refunds total for the reporting period */
+		/**
+		 * Political party refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Political party refunds total for the year to date */
+		/**
+		 * Political party refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunds_total_contributions_col_total_ytd: FormControl<number | null | undefined>,
 		report_form: FormControl<string | null | undefined>,
 
@@ -7792,52 +9743,113 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		subtotal_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_contribution_refunds_col_total_period: FormControl<number | null | undefined>,
 
-		/** Total contribution refunds total for the reporting period */
+		/**
+		 * Total contribution refunds total for the reporting period
+		 * Type: double
+		 */
 		total_contribution_refunds_period: FormControl<number | null | undefined>,
 
-		/** Total contribution refunds total for the year to date */
+		/**
+		 * Total contribution refunds total for the year to date
+		 * Type: double
+		 */
 		total_contribution_refunds_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_contributions_column_total_period: FormControl<number | null | undefined>,
 
-		/** Contribution total for the reporting period */
+		/**
+		 * Contribution total for the reporting period
+		 * Type: double
+		 */
 		total_contributions_period: FormControl<number | null | undefined>,
 
-		/** Contribution total for the year to date */
+		/**
+		 * Contribution total for the year to date
+		 * Type: double
+		 */
 		total_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Disbursements total for the reporting period */
+		/**
+		 * Disbursements total for the reporting period
+		 * Type: double
+		 */
 		total_disbursements_period: FormControl<number | null | undefined>,
 
-		/** Disbursements total for the year to date */
+		/**
+		 * Disbursements total for the year to date
+		 * Type: double
+		 */
 		total_disbursements_ytd: FormControl<number | null | undefined>,
 
-		/** Individual contributions total for the reporting period */
+		/**
+		 * Individual contributions total for the reporting period
+		 * Type: double
+		 */
 		total_individual_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual contributions total for the year to date */
+		/**
+		 * Individual contributions total for the year to date
+		 * Type: double
+		 */
 		total_individual_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loan_repayments_made_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loan_repayments_made_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loans_received_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loans_received_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_operating_expenditures_ytd: FormControl<number | null | undefined>,
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the reporting period */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the reporting period
+		 * Type: double
+		 */
 		total_receipts_period: FormControl<number | null | undefined>,
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the year to date */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the year to date
+		 * Type: double
+		 */
 		total_receipts_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_other_authorized_committee_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_other_authorized_committee_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_ytd: FormControl<number | null | undefined>,
 	}
 	export function CreateCommitteeReportsHouseSenateFormGroup() {
@@ -7965,12 +9977,18 @@ export namespace MyNS {
 		coverage_end_date?: Date | null;
 		coverage_start_date?: Date | null;
 		csv_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
 		document_description?: string | null;
 		end_image_number?: string | null;
 		fec_file_id?: string | null;
 		fec_url?: string | null;
+
+		/** Type: double */
 		independent_contributions_period?: number | null;
+
+		/** Type: double */
 		independent_expenditures_period?: number | null;
 
 		/**
@@ -7982,11 +10000,16 @@ export namespace MyNS {
 		means_filed?: string | null;
 		pdf_url?: string | null;
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date?: Date | null;
 		report_form?: string | null;
 		report_type?: string | null;
 		report_type_full?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year?: number | null;
 	}
 	export interface CommitteeReportsIEOnlyFormProperties {
@@ -7997,12 +10020,18 @@ export namespace MyNS {
 		coverage_end_date: FormControl<Date | null | undefined>,
 		coverage_start_date: FormControl<Date | null | undefined>,
 		csv_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
 		document_description: FormControl<string | null | undefined>,
 		end_image_number: FormControl<string | null | undefined>,
 		fec_file_id: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		independent_contributions_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		independent_expenditures_period: FormControl<number | null | undefined>,
 
 		/**
@@ -8014,11 +10043,16 @@ export namespace MyNS {
 		means_filed: FormControl<string | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date: FormControl<Date | null | undefined>,
 		report_form: FormControl<string | null | undefined>,
 		report_type: FormControl<string | null | undefined>,
 		report_type_full: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year: FormControl<number | null | undefined>,
 	}
 	export function CreateCommitteeReportsIEOnlyFormGroup() {
@@ -8062,8 +10096,14 @@ export namespace MyNS {
 	}
 
 	export interface CommitteeReportsPacParty {
+
+		/** Type: double */
 		all_loans_received_period?: number | null;
+
+		/** Type: double */
 		all_loans_received_ytd?: number | null;
+
+		/** Type: double */
 		allocated_federal_election_levin_share_period?: number | null;
 
 		/**
@@ -8074,14 +10114,26 @@ export namespace MyNS {
 		amendment_indicator?: string | null;
 		amendment_indicator_full?: string | null;
 		beginning_image_number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calendar_ytd?: number | null;
+
+		/** Type: double */
 		cash_on_hand_beginning_calendar_ytd?: number | null;
 
-		/** Balance for the committee at the start of the two-year period */
+		/**
+		 * Balance for the committee at the start of the two-year period
+		 * Type: double
+		 */
 		cash_on_hand_beginning_period?: number | null;
+
+		/** Type: double */
 		cash_on_hand_close_ytd?: number | null;
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period?: number | null;
 
 		/**
@@ -8092,7 +10144,11 @@ export namespace MyNS {
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name?: string | null;
 		committee_type?: string | null;
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee_period?: number | null;
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee_ytd?: number | null;
 
 		/** Ending date of the reporting period */
@@ -8108,52 +10164,97 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle?: number | null;
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee?: number | null;
 
-		/** Debts owed to the committee */
+		/**
+		 * Debts owed to the committee
+		 * Type: double
+		 */
 		debts_owed_to_committee?: number | null;
 		document_description?: string | null;
 		end_image_number?: string | null;
 		fec_file_id?: string | null;
 		fec_url?: string | null;
+
+		/** Type: double */
 		fed_candidate_committee_contribution_refunds_ytd?: number | null;
+
+		/** Type: double */
 		fed_candidate_committee_contributions_period?: number | null;
+
+		/** Type: double */
 		fed_candidate_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		fed_candidate_contribution_refunds_period?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
 
 		/**
 		 * HTML link to the filing.
 		 */
 		html_url?: string | null;
+
+		/** Type: double */
 		independent_expenditures_period?: number | null;
+
+		/** Type: double */
 		independent_expenditures_ytd?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period
+		 * Type: double
+		 */
 		individual_itemized_contributions_period?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date
+		 * Type: double
+		 */
 		individual_itemized_contributions_ytd?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period
+		 * Type: double
+		 */
 		individual_unitemized_contributions_period?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date
+		 * Type: double
+		 */
 		individual_unitemized_contributions_ytd?: number | null;
 
 		/**
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 */
 		is_amended?: boolean | null;
+
+		/** Type: double */
 		loan_repayments_made_period?: number | null;
+
+		/** Type: double */
 		loan_repayments_made_ytd?: number | null;
+
+		/** Type: double */
 		loan_repayments_received_period?: number | null;
+
+		/** Type: double */
 		loan_repayments_received_ytd?: number | null;
+
+		/** Type: double */
 		loans_made_period?: number | null;
+
+		/** Type: double */
 		loans_made_ytd?: number | null;
 
 		/** The method used to file with the FEC, either electronic or on paper. */
@@ -8163,64 +10264,135 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent?: boolean | null;
+
+		/** Type: double */
 		most_recent_file_number?: number | null;
+
+		/** Type: double */
 		net_contributions_period?: number | null;
+
+		/** Type: double */
 		net_contributions_ytd?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		non_allocated_fed_election_activity_period?: number | null;
+
+		/** Type: double */
 		non_allocated_fed_election_activity_ytd?: number | null;
+
+		/** Type: double */
 		nonfed_share_allocated_disbursements_period?: number | null;
 
-		/** Offsets to operating expenditures total for the reporting period */
+		/**
+		 * Offsets to operating expenditures total for the reporting period
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_period?: number | null;
 
-		/** Offsets to operating expenditures total for the year to date */
+		/**
+		 * Offsets to operating expenditures total for the year to date
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_ytd?: number | null;
 
-		/** Other disbursements total for the reporting period */
+		/**
+		 * Other disbursements total for the reporting period
+		 * Type: double
+		 */
 		other_disbursements_period?: number | null;
 
-		/** Other disbursements total for the year to date */
+		/**
+		 * Other disbursements total for the year to date
+		 * Type: double
+		 */
 		other_disbursements_ytd?: number | null;
+
+		/** Type: double */
 		other_fed_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		other_fed_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		other_fed_receipts_period?: number | null;
+
+		/** Type: double */
 		other_fed_receipts_ytd?: number | null;
 
-		/** Other committees contributions total for the reporting period */
+		/**
+		 * Other committees contributions total for the reporting period
+		 * Type: double
+		 */
 		other_political_committee_contributions_period?: number | null;
 
-		/** Other committees contributions total for the year to date */
+		/**
+		 * Other committees contributions total for the year to date
+		 * Type: double
+		 */
 		other_political_committee_contributions_ytd?: number | null;
 		pdf_url?: string | null;
 
-		/** Party committees contributions total for the reporting period */
+		/**
+		 * Party committees contributions total for the reporting period
+		 * Type: double
+		 */
 		political_party_committee_contributions_period?: number | null;
 
-		/** Party committees contributions total for the year to date */
+		/**
+		 * Party committees contributions total for the year to date
+		 * Type: double
+		 */
 		political_party_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		previous_file_number?: number | null;
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date?: Date | null;
 
-		/** Individual refunds total for the reporting period */
+		/**
+		 * Individual refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_individual_contributions_period?: number | null;
 
-		/** Individual refunds total for the year to date */
+		/**
+		 * Individual refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_individual_contributions_ytd?: number | null;
 
-		/** Other committee refunds total for the reporting period */
+		/**
+		 * Other committee refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_period?: number | null;
 
-		/** Other committee refunds total for the year to date */
+		/**
+		 * Other committee refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_ytd?: number | null;
 
-		/** Political party refunds total for the reporting period */
+		/**
+		 * Political party refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_period?: number | null;
 
-		/** Political party refunds total for the year to date */
+		/**
+		 * Political party refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_ytd?: number | null;
 		report_form?: string | null;
 
@@ -8337,83 +10509,190 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year?: number | null;
+
+		/** Type: double */
 		shared_fed_activity_nonfed_ytd?: number | null;
+
+		/** Type: double */
 		shared_fed_activity_period?: number | null;
+
+		/** Type: double */
 		shared_fed_activity_ytd?: number | null;
+
+		/** Type: double */
 		shared_fed_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		shared_fed_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		subtotal_summary_page_period?: number | null;
+
+		/** Type: double */
 		subtotal_summary_ytd?: number | null;
 
-		/** Total contribution refunds total for the reporting period */
+		/**
+		 * Total contribution refunds total for the reporting period
+		 * Type: double
+		 */
 		total_contribution_refunds_period?: number | null;
 
-		/** Total contribution refunds total for the year to date */
+		/**
+		 * Total contribution refunds total for the year to date
+		 * Type: double
+		 */
 		total_contribution_refunds_ytd?: number | null;
 
-		/** Contribution total for the reporting period */
+		/**
+		 * Contribution total for the reporting period
+		 * Type: double
+		 */
 		total_contributions_period?: number | null;
 
-		/** Contribution total for the year to date */
+		/**
+		 * Contribution total for the year to date
+		 * Type: double
+		 */
 		total_contributions_ytd?: number | null;
 
-		/** Disbursements total for the reporting period */
+		/**
+		 * Disbursements total for the reporting period
+		 * Type: double
+		 */
 		total_disbursements_period?: number | null;
 
-		/** Disbursements total for the year to date */
+		/**
+		 * Disbursements total for the year to date
+		 * Type: double
+		 */
 		total_disbursements_ytd?: number | null;
+
+		/** Type: double */
 		total_fed_disbursements_period?: number | null;
+
+		/** Type: double */
 		total_fed_disbursements_ytd?: number | null;
+
+		/** Type: double */
 		total_fed_election_activity_period?: number | null;
+
+		/** Type: double */
 		total_fed_election_activity_ytd?: number | null;
+
+		/** Type: double */
 		total_fed_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		total_fed_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		total_fed_receipts_period?: number | null;
+
+		/** Type: double */
 		total_fed_receipts_ytd?: number | null;
 
-		/** Individual contributions total for the reporting period */
+		/**
+		 * Individual contributions total for the reporting period
+		 * Type: double
+		 */
 		total_individual_contributions_period?: number | null;
 
-		/** Individual contributions total for the year to date */
+		/**
+		 * Individual contributions total for the year to date
+		 * Type: double
+		 */
 		total_individual_contributions_ytd?: number | null;
+
+		/** Type: double */
 		total_nonfed_transfers_period?: number | null;
+
+		/** Type: double */
 		total_nonfed_transfers_ytd?: number | null;
+
+		/** Type: double */
 		total_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		total_operating_expenditures_ytd?: number | null;
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the reporting period */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the reporting period
+		 * Type: double
+		 */
 		total_receipts_period?: number | null;
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the year to date */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the year to date
+		 * Type: double
+		 */
 		total_receipts_ytd?: number | null;
+
+		/** Type: double */
 		transfers_from_affiliated_party_period?: number | null;
+
+		/** Type: double */
 		transfers_from_affiliated_party_ytd?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_account_period?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_account_ytd?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_levin_period?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_levin_ytd?: number | null;
+
+		/** Type: double */
 		transfers_to_affiliated_committee_period?: number | null;
+
+		/** Type: double */
 		transfers_to_affilitated_committees_ytd?: number | null;
 	}
 	export interface CommitteeReportsPacPartyFormProperties {
+
+		/** Type: double */
 		all_loans_received_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		all_loans_received_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		allocated_federal_election_levin_share_period: FormControl<number | null | undefined>,
 		amendment_indicator: FormControl<string | null | undefined>,
 		amendment_indicator_full: FormControl<string | null | undefined>,
 		beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calendar_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		cash_on_hand_beginning_calendar_ytd: FormControl<number | null | undefined>,
 
-		/** Balance for the committee at the start of the two-year period */
+		/**
+		 * Balance for the committee at the start of the two-year period
+		 * Type: double
+		 */
 		cash_on_hand_beginning_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		cash_on_hand_close_ytd: FormControl<number | null | undefined>,
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period: FormControl<number | null | undefined>,
 
 		/**
@@ -8424,7 +10703,11 @@ export namespace MyNS {
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name: FormControl<string | null | undefined>,
 		committee_type: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee_ytd: FormControl<number | null | undefined>,
 
 		/** Ending date of the reporting period */
@@ -8440,52 +10723,97 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee: FormControl<number | null | undefined>,
 
-		/** Debts owed to the committee */
+		/**
+		 * Debts owed to the committee
+		 * Type: double
+		 */
 		debts_owed_to_committee: FormControl<number | null | undefined>,
 		document_description: FormControl<string | null | undefined>,
 		end_image_number: FormControl<string | null | undefined>,
 		fec_file_id: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_committee_contribution_refunds_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_committee_contributions_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_contribution_refunds_period: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
 
 		/**
 		 * HTML link to the filing.
 		 */
 		html_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		independent_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		independent_expenditures_ytd: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period
+		 * Type: double
+		 */
 		individual_itemized_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date
+		 * Type: double
+		 */
 		individual_itemized_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period
+		 * Type: double
+		 */
 		individual_unitemized_contributions_period: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date
+		 * Type: double
+		 */
 		individual_unitemized_contributions_ytd: FormControl<number | null | undefined>,
 
 		/**
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 */
 		is_amended: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_made_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_made_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_received_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_received_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made_ytd: FormControl<number | null | undefined>,
 
 		/** The method used to file with the FEC, either electronic or on paper. */
@@ -8495,64 +10823,135 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		most_recent_file_number: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		non_allocated_fed_election_activity_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		non_allocated_fed_election_activity_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		nonfed_share_allocated_disbursements_period: FormControl<number | null | undefined>,
 
-		/** Offsets to operating expenditures total for the reporting period */
+		/**
+		 * Offsets to operating expenditures total for the reporting period
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_period: FormControl<number | null | undefined>,
 
-		/** Offsets to operating expenditures total for the year to date */
+		/**
+		 * Offsets to operating expenditures total for the year to date
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_ytd: FormControl<number | null | undefined>,
 
-		/** Other disbursements total for the reporting period */
+		/**
+		 * Other disbursements total for the reporting period
+		 * Type: double
+		 */
 		other_disbursements_period: FormControl<number | null | undefined>,
 
-		/** Other disbursements total for the year to date */
+		/**
+		 * Other disbursements total for the year to date
+		 * Type: double
+		 */
 		other_disbursements_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_receipts_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_receipts_ytd: FormControl<number | null | undefined>,
 
-		/** Other committees contributions total for the reporting period */
+		/**
+		 * Other committees contributions total for the reporting period
+		 * Type: double
+		 */
 		other_political_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Other committees contributions total for the year to date */
+		/**
+		 * Other committees contributions total for the year to date
+		 * Type: double
+		 */
 		other_political_committee_contributions_ytd: FormControl<number | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 
-		/** Party committees contributions total for the reporting period */
+		/**
+		 * Party committees contributions total for the reporting period
+		 * Type: double
+		 */
 		political_party_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Party committees contributions total for the year to date */
+		/**
+		 * Party committees contributions total for the year to date
+		 * Type: double
+		 */
 		political_party_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		previous_file_number: FormControl<number | null | undefined>,
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date: FormControl<Date | null | undefined>,
 
-		/** Individual refunds total for the reporting period */
+		/**
+		 * Individual refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_individual_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual refunds total for the year to date */
+		/**
+		 * Individual refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_individual_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Other committee refunds total for the reporting period */
+		/**
+		 * Other committee refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Other committee refunds total for the year to date */
+		/**
+		 * Other committee refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Political party refunds total for the reporting period */
+		/**
+		 * Political party refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Political party refunds total for the year to date */
+		/**
+		 * Political party refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_ytd: FormControl<number | null | undefined>,
 		report_form: FormControl<string | null | undefined>,
 
@@ -8669,66 +11068,155 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_activity_nonfed_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_activity_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_activity_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		subtotal_summary_page_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		subtotal_summary_ytd: FormControl<number | null | undefined>,
 
-		/** Total contribution refunds total for the reporting period */
+		/**
+		 * Total contribution refunds total for the reporting period
+		 * Type: double
+		 */
 		total_contribution_refunds_period: FormControl<number | null | undefined>,
 
-		/** Total contribution refunds total for the year to date */
+		/**
+		 * Total contribution refunds total for the year to date
+		 * Type: double
+		 */
 		total_contribution_refunds_ytd: FormControl<number | null | undefined>,
 
-		/** Contribution total for the reporting period */
+		/**
+		 * Contribution total for the reporting period
+		 * Type: double
+		 */
 		total_contributions_period: FormControl<number | null | undefined>,
 
-		/** Contribution total for the year to date */
+		/**
+		 * Contribution total for the year to date
+		 * Type: double
+		 */
 		total_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Disbursements total for the reporting period */
+		/**
+		 * Disbursements total for the reporting period
+		 * Type: double
+		 */
 		total_disbursements_period: FormControl<number | null | undefined>,
 
-		/** Disbursements total for the year to date */
+		/**
+		 * Disbursements total for the year to date
+		 * Type: double
+		 */
 		total_disbursements_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_disbursements_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_disbursements_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_election_activity_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_election_activity_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_receipts_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_fed_receipts_ytd: FormControl<number | null | undefined>,
 
-		/** Individual contributions total for the reporting period */
+		/**
+		 * Individual contributions total for the reporting period
+		 * Type: double
+		 */
 		total_individual_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual contributions total for the year to date */
+		/**
+		 * Individual contributions total for the year to date
+		 * Type: double
+		 */
 		total_individual_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_nonfed_transfers_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_nonfed_transfers_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_operating_expenditures_ytd: FormControl<number | null | undefined>,
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the reporting period */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the reporting period
+		 * Type: double
+		 */
 		total_receipts_period: FormControl<number | null | undefined>,
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the year to date */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the year to date
+		 * Type: double
+		 */
 		total_receipts_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_party_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_party_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_account_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_account_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_levin_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_levin_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_affiliated_committee_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_affilitated_committees_ytd: FormControl<number | null | undefined>,
 	}
 	export function CreateCommitteeReportsPacPartyFormGroup() {
@@ -8890,13 +11378,23 @@ export namespace MyNS {
 		amendment_indicator?: string | null;
 		amendment_indicator_full?: string | null;
 		beginning_image_number?: string | null;
+
+		/** Type: double */
 		candidate_contribution_period?: number | null;
+
+		/** Type: double */
 		candidate_contribution_ytd?: number | null;
 
-		/** Balance for the committee at the start of the two-year period */
+		/**
+		 * Balance for the committee at the start of the two-year period
+		 * Type: double
+		 */
 		cash_on_hand_beginning_period?: number | null;
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period?: number | null;
 
 		/**
@@ -8921,25 +11419,48 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle?: number | null;
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee?: number | null;
 
-		/** Debts owed to the committee */
+		/**
+		 * Debts owed to the committee
+		 * Type: double
+		 */
 		debts_owed_to_committee?: number | null;
 		document_description?: string | null;
 		end_image_number?: string | null;
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement_period?: number | null;
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement_ytd?: number | null;
+
+		/** Type: double */
 		expenditure_subject_to_limits?: number | null;
 		fec_file_id?: string | null;
 		fec_url?: string | null;
+
+		/** Type: double */
 		federal_funds_period?: number | null;
+
+		/** Type: double */
 		federal_funds_ytd?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
+
+		/** Type: double */
 		fundraising_disbursements_period?: number | null;
+
+		/** Type: double */
 		fundraising_disbursements_ytd?: number | null;
 
 		/**
@@ -8947,24 +11468,42 @@ export namespace MyNS {
 		 */
 		html_url?: string | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period
+		 * Type: double
+		 */
 		individual_itemized_contributions_period?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date
+		 * Type: double
+		 */
 		individual_itemized_contributions_ytd?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period
+		 * Type: double
+		 */
 		individual_unitemized_contributions_period?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date
+		 * Type: double
+		 */
 		individual_unitemized_contributions_ytd?: number | null;
 
 		/**
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 */
 		is_amended?: boolean | null;
+
+		/** Type: double */
 		items_on_hand_liquidated?: number | null;
+
+		/** Type: double */
 		loans_received_from_candidate_period?: number | null;
+
+		/** Type: double */
 		loans_received_from_candidate_ytd?: number | null;
 
 		/** The method used to file with the FEC, either electronic or on paper. */
@@ -8974,69 +11513,150 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent?: boolean | null;
+
+		/** Type: double */
 		most_recent_file_number?: number | null;
+
+		/** Type: double */
 		net_contributions_cycle_to_date?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures_cycle_to_date?: number | null;
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures_period?: number | null;
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		offsets_to_legal_accounting_period?: number | null;
+
+		/** Type: double */
 		offsets_to_legal_accounting_ytd?: number | null;
 
-		/** Offsets to operating expenditures total for the reporting period */
+		/**
+		 * Offsets to operating expenditures total for the reporting period
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_period?: number | null;
 
-		/** Offsets to operating expenditures total for the year to date */
+		/**
+		 * Offsets to operating expenditures total for the year to date
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		operating_expenditures_ytd?: number | null;
 
-		/** Other disbursements total for the reporting period */
+		/**
+		 * Other disbursements total for the reporting period
+		 * Type: double
+		 */
 		other_disbursements_period?: number | null;
 
-		/** Other disbursements total for the year to date */
+		/**
+		 * Other disbursements total for the year to date
+		 * Type: double
+		 */
 		other_disbursements_ytd?: number | null;
+
+		/** Type: double */
 		other_loans_received_period?: number | null;
+
+		/** Type: double */
 		other_loans_received_ytd?: number | null;
 
-		/** Other committees contributions total for the reporting period */
+		/**
+		 * Other committees contributions total for the reporting period
+		 * Type: double
+		 */
 		other_political_committee_contributions_period?: number | null;
 
-		/** Other committees contributions total for the year to date */
+		/**
+		 * Other committees contributions total for the year to date
+		 * Type: double
+		 */
 		other_political_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		other_receipts_period?: number | null;
+
+		/** Type: double */
 		other_receipts_ytd?: number | null;
 		pdf_url?: string | null;
 
-		/** Party committees contributions total for the reporting period */
+		/**
+		 * Party committees contributions total for the reporting period
+		 * Type: double
+		 */
 		political_party_committee_contributions_period?: number | null;
 
-		/** Party committees contributions total for the year to date */
+		/**
+		 * Party committees contributions total for the year to date
+		 * Type: double
+		 */
 		political_party_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		previous_file_number?: number | null;
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date?: Date | null;
 
-		/** Individual refunds total for the reporting period */
+		/**
+		 * Individual refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_individual_contributions_period?: number | null;
 
-		/** Individual refunds total for the year to date */
+		/**
+		 * Individual refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_individual_contributions_ytd?: number | null;
 
-		/** Other committee refunds total for the reporting period */
+		/**
+		 * Other committee refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_period?: number | null;
 
-		/** Other committee refunds total for the year to date */
+		/**
+		 * Other committee refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_ytd?: number | null;
 
-		/** Political party refunds total for the reporting period */
+		/**
+		 * Political party refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_period?: number | null;
 
-		/** Political party refunds total for the year to date */
+		/**
+		 * Political party refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_ytd?: number | null;
+
+		/** Type: double */
 		repayments_loans_made_by_candidate_period?: number | null;
+
+		/** Type: double */
 		repayments_loans_made_candidate_ytd?: number | null;
+
+		/** Type: double */
 		repayments_other_loans_period?: number | null;
+
+		/** Type: double */
 		repayments_other_loans_ytd?: number | null;
 		report_form?: string | null;
 
@@ -9153,63 +11773,130 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year?: number | null;
+
+		/** Type: double */
 		subtotal_summary_period?: number | null;
 
-		/** Total contribution refunds total for the reporting period */
+		/**
+		 * Total contribution refunds total for the reporting period
+		 * Type: double
+		 */
 		total_contribution_refunds_period?: number | null;
 
-		/** Total contribution refunds total for the year to date */
+		/**
+		 * Total contribution refunds total for the year to date
+		 * Type: double
+		 */
 		total_contribution_refunds_ytd?: number | null;
 
-		/** Contribution total for the reporting period */
+		/**
+		 * Contribution total for the reporting period
+		 * Type: double
+		 */
 		total_contributions_period?: number | null;
 
-		/** Contribution total for the year to date */
+		/**
+		 * Contribution total for the year to date
+		 * Type: double
+		 */
 		total_contributions_ytd?: number | null;
 
-		/** Disbursements total for the reporting period */
+		/**
+		 * Disbursements total for the reporting period
+		 * Type: double
+		 */
 		total_disbursements_period?: number | null;
 
-		/** Disbursements total for the year to date */
+		/**
+		 * Disbursements total for the year to date
+		 * Type: double
+		 */
 		total_disbursements_ytd?: number | null;
 
-		/** Individual contributions total for the reporting period */
+		/**
+		 * Individual contributions total for the reporting period
+		 * Type: double
+		 */
 		total_individual_contributions_period?: number | null;
 
-		/** Individual contributions total for the year to date */
+		/**
+		 * Individual contributions total for the year to date
+		 * Type: double
+		 */
 		total_individual_contributions_ytd?: number | null;
+
+		/** Type: double */
 		total_loan_repayments_made_period?: number | null;
+
+		/** Type: double */
 		total_loan_repayments_made_ytd?: number | null;
+
+		/** Type: double */
 		total_loans_received_period?: number | null;
+
+		/** Type: double */
 		total_loans_received_ytd?: number | null;
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_period?: number | null;
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_ytd?: number | null;
+
+		/** Type: double */
 		total_period?: number | null;
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the reporting period */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the reporting period
+		 * Type: double
+		 */
 		total_receipts_period?: number | null;
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the year to date */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the year to date
+		 * Type: double
+		 */
 		total_receipts_ytd?: number | null;
+
+		/** Type: double */
 		total_ytd?: number | null;
+
+		/** Type: double */
 		transfers_from_affiliated_committee_period?: number | null;
+
+		/** Type: double */
 		transfers_from_affiliated_committee_ytd?: number | null;
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_period?: number | null;
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_ytd?: number | null;
 	}
 	export interface CommitteeReportsPresidentialFormProperties {
 		amendment_indicator: FormControl<string | null | undefined>,
 		amendment_indicator_full: FormControl<string | null | undefined>,
 		beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		candidate_contribution_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		candidate_contribution_ytd: FormControl<number | null | undefined>,
 
-		/** Balance for the committee at the start of the two-year period */
+		/**
+		 * Balance for the committee at the start of the two-year period
+		 * Type: double
+		 */
 		cash_on_hand_beginning_period: FormControl<number | null | undefined>,
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period: FormControl<number | null | undefined>,
 
 		/**
@@ -9234,25 +11921,48 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee: FormControl<number | null | undefined>,
 
-		/** Debts owed to the committee */
+		/**
+		 * Debts owed to the committee
+		 * Type: double
+		 */
 		debts_owed_to_committee: FormControl<number | null | undefined>,
 		document_description: FormControl<string | null | undefined>,
 		end_image_number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		expenditure_subject_to_limits: FormControl<number | null | undefined>,
 		fec_file_id: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		federal_funds_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		federal_funds_ytd: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fundraising_disbursements_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fundraising_disbursements_ytd: FormControl<number | null | undefined>,
 
 		/**
@@ -9260,24 +11970,42 @@ export namespace MyNS {
 		 */
 		html_url: FormControl<string | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the reporting period
+		 * Type: double
+		 */
 		individual_itemized_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. total for the year to date
+		 * Type: double
+		 */
 		individual_itemized_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the reporting period
+		 * Type: double
+		 */
 		individual_unitemized_contributions_period: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. total for the year to date
+		 * Type: double
+		 */
 		individual_unitemized_contributions_ytd: FormControl<number | null | undefined>,
 
 		/**
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 */
 		is_amended: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		items_on_hand_liquidated: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_received_from_candidate_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_received_from_candidate_ytd: FormControl<number | null | undefined>,
 
 		/** The method used to file with the FEC, either electronic or on paper. */
@@ -9287,69 +12015,150 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		most_recent_file_number: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions_cycle_to_date: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures_cycle_to_date: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_legal_accounting_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_legal_accounting_ytd: FormControl<number | null | undefined>,
 
-		/** Offsets to operating expenditures total for the reporting period */
+		/**
+		 * Offsets to operating expenditures total for the reporting period
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_period: FormControl<number | null | undefined>,
 
-		/** Offsets to operating expenditures total for the year to date */
+		/**
+		 * Offsets to operating expenditures total for the year to date
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures_ytd: FormControl<number | null | undefined>,
 
-		/** Other disbursements total for the reporting period */
+		/**
+		 * Other disbursements total for the reporting period
+		 * Type: double
+		 */
 		other_disbursements_period: FormControl<number | null | undefined>,
 
-		/** Other disbursements total for the year to date */
+		/**
+		 * Other disbursements total for the year to date
+		 * Type: double
+		 */
 		other_disbursements_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_loans_received_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_loans_received_ytd: FormControl<number | null | undefined>,
 
-		/** Other committees contributions total for the reporting period */
+		/**
+		 * Other committees contributions total for the reporting period
+		 * Type: double
+		 */
 		other_political_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Other committees contributions total for the year to date */
+		/**
+		 * Other committees contributions total for the year to date
+		 * Type: double
+		 */
 		other_political_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_receipts_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_receipts_ytd: FormControl<number | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 
-		/** Party committees contributions total for the reporting period */
+		/**
+		 * Party committees contributions total for the reporting period
+		 * Type: double
+		 */
 		political_party_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Party committees contributions total for the year to date */
+		/**
+		 * Party committees contributions total for the year to date
+		 * Type: double
+		 */
 		political_party_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		previous_file_number: FormControl<number | null | undefined>,
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date: FormControl<Date | null | undefined>,
 
-		/** Individual refunds total for the reporting period */
+		/**
+		 * Individual refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_individual_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual refunds total for the year to date */
+		/**
+		 * Individual refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_individual_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Other committee refunds total for the reporting period */
+		/**
+		 * Other committee refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Other committee refunds total for the year to date */
+		/**
+		 * Other committee refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_other_political_committee_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Political party refunds total for the reporting period */
+		/**
+		 * Political party refunds total for the reporting period
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_period: FormControl<number | null | undefined>,
 
-		/** Political party refunds total for the year to date */
+		/**
+		 * Political party refunds total for the year to date
+		 * Type: double
+		 */
 		refunded_political_party_committee_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_loans_made_by_candidate_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_loans_made_candidate_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_other_loans_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_other_loans_ytd: FormControl<number | null | undefined>,
 		report_form: FormControl<string | null | undefined>,
 
@@ -9466,50 +12275,107 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		subtotal_summary_period: FormControl<number | null | undefined>,
 
-		/** Total contribution refunds total for the reporting period */
+		/**
+		 * Total contribution refunds total for the reporting period
+		 * Type: double
+		 */
 		total_contribution_refunds_period: FormControl<number | null | undefined>,
 
-		/** Total contribution refunds total for the year to date */
+		/**
+		 * Total contribution refunds total for the year to date
+		 * Type: double
+		 */
 		total_contribution_refunds_ytd: FormControl<number | null | undefined>,
 
-		/** Contribution total for the reporting period */
+		/**
+		 * Contribution total for the reporting period
+		 * Type: double
+		 */
 		total_contributions_period: FormControl<number | null | undefined>,
 
-		/** Contribution total for the year to date */
+		/**
+		 * Contribution total for the year to date
+		 * Type: double
+		 */
 		total_contributions_ytd: FormControl<number | null | undefined>,
 
-		/** Disbursements total for the reporting period */
+		/**
+		 * Disbursements total for the reporting period
+		 * Type: double
+		 */
 		total_disbursements_period: FormControl<number | null | undefined>,
 
-		/** Disbursements total for the year to date */
+		/**
+		 * Disbursements total for the year to date
+		 * Type: double
+		 */
 		total_disbursements_ytd: FormControl<number | null | undefined>,
 
-		/** Individual contributions total for the reporting period */
+		/**
+		 * Individual contributions total for the reporting period
+		 * Type: double
+		 */
 		total_individual_contributions_period: FormControl<number | null | undefined>,
 
-		/** Individual contributions total for the year to date */
+		/**
+		 * Individual contributions total for the year to date
+		 * Type: double
+		 */
 		total_individual_contributions_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loan_repayments_made_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loan_repayments_made_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loans_received_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_loans_received_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_period: FormControl<number | null | undefined>,
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the reporting period */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the reporting period
+		 * Type: double
+		 */
 		total_receipts_period: FormControl<number | null | undefined>,
 
-		/** Anything of value (money, goods, services or property) received by a political committee total for the year to date */
+		/**
+		 * Anything of value (money, goods, services or property) received by a political committee total for the year to date
+		 * Type: double
+		 */
 		total_receipts_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_committee_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_committee_ytd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_other_authorized_committee_ytd: FormControl<number | null | undefined>,
 	}
 	export function CreateCommitteeReportsPresidentialFormGroup() {
@@ -9661,10 +12527,20 @@ export namespace MyNS {
 	}
 
 	export interface CommitteeTotals {
+
+		/** Type: double */
 		all_loans_received?: number | null;
+
+		/** Type: double */
 		all_other_loans?: number | null;
+
+		/** Type: double */
 		allocated_federal_election_levin_share?: number | null;
+
+		/** Type: double */
 		candidate_contribution?: number | null;
+
+		/** Type: double */
 		cash_on_hand_beginning_period?: number | null;
 
 		/**
@@ -9744,12 +12620,23 @@ export namespace MyNS {
 		 * - Z national party non-federal account
 		 */
 		committee_type_full?: string | null;
+
+		/** Type: double */
 		contribution_refunds?: number | null;
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions?: number | null;
+
+		/** Type: double */
 		contributions_ie_and_party_expenditures_made_percent?: number | null;
+
+		/** Type: double */
 		convention_exp?: number | null;
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee?: number | null;
 		coverage_end_date?: Date | null;
 		coverage_start_date?: Date | null;
@@ -9761,20 +12648,44 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements?: number | null;
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement?: number | null;
+
+		/** Type: double */
 		exp_prior_years_subject_limits?: number | null;
+
+		/** Type: double */
 		exp_subject_limits?: number | null;
+
+		/** Type: double */
 		fed_candidate_committee_contributions?: number | null;
+
+		/** Type: double */
 		fed_candidate_contribution_refunds?: number | null;
+
+		/** Type: double */
 		fed_disbursements?: number | null;
+
+		/** Type: double */
 		fed_election_activity?: number | null;
+
+		/** Type: double */
 		fed_operating_expenditures?: number | null;
+
+		/** Type: double */
 		fed_receipts?: number | null;
+
+		/** Type: double */
 		federal_funds?: number | null;
 
 		/**
@@ -9802,51 +12713,129 @@ export namespace MyNS {
 		 */
 		filing_frequency_full?: string | null;
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
+
+		/** Type: double */
 		fundraising_disbursements?: number | null;
+
+		/** Type: double */
 		independent_expenditures?: number | null;
+
+		/** Type: double */
 		individual_contributions?: number | null;
+
+		/** Type: double */
 		individual_contributions_percent?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions?: number | null;
+
+		/** Type: double */
 		itemized_convention_exp?: number | null;
+
+		/** Type: double */
 		itemized_other_disb?: number | null;
+
+		/** Type: double */
 		itemized_other_income?: number | null;
+
+		/** Type: double */
 		itemized_other_refunds?: number | null;
+
+		/** Type: double */
 		itemized_refunds_relating_convention_exp?: number | null;
 		last_beginning_image_number?: string | null;
+
+		/** Type: double */
 		last_cash_on_hand_end_period?: number | null;
+
+		/** Type: double */
 		last_debts_owed_by_committee?: number | null;
+
+		/** Type: double */
 		last_debts_owed_to_committee?: number | null;
 		last_report_type_full?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year?: number | null;
+
+		/** Type: double */
 		loan_repayments?: number | null;
+
+		/** Type: double */
 		loan_repayments_candidate_loans?: number | null;
+
+		/** Type: double */
 		loan_repayments_made?: number | null;
+
+		/** Type: double */
 		loan_repayments_other_loans?: number | null;
+
+		/** Type: double */
 		loan_repayments_received?: number | null;
+
+		/** Type: double */
 		loans?: number | null;
+
+		/** Type: double */
 		loans_and_loan_repayments_made?: number | null;
+
+		/** Type: double */
 		loans_and_loan_repayments_received?: number | null;
+
+		/** Type: double */
 		loans_made?: number | null;
+
+		/** Type: double */
 		loans_made_by_candidate?: number | null;
+
+		/** Type: double */
 		loans_received?: number | null;
+
+		/** Type: double */
 		loans_received_from_candidate?: number | null;
+
+		/** Type: double */
 		net_contributions?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures?: number | null;
+
+		/** Type: double */
 		non_allocated_fed_election_activity?: number | null;
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures?: number | null;
+
+		/** Type: double */
 		offsets_to_legal_accounting?: number | null;
+
+		/** Type: double */
 		offsets_to_operating_expenditures?: number | null;
+
+		/** Type: double */
 		operating_expenditures?: number | null;
+
+		/** Type: double */
 		operating_expenditures_percent?: number | null;
 
 		/**
@@ -9872,43 +12861,109 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		organization_type_full?: string | null;
+
+		/** Type: double */
 		other_disbursements?: number | null;
+
+		/** Type: double */
 		other_fed_operating_expenditures?: number | null;
+
+		/** Type: double */
 		other_fed_receipts?: number | null;
+
+		/** Type: double */
 		other_loans_received?: number | null;
+
+		/** Type: double */
 		other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		other_receipts?: number | null;
+
+		/** Type: double */
 		other_refunds?: number | null;
+
+		/** Type: double */
 		party_and_other_committee_contributions_percent?: number | null;
 
 		/** Party affiliated with a candidate or committee */
 		party_full?: string | null;
 		pdf_url?: string | null;
+
+		/** Type: double */
 		political_party_committee_contributions?: number | null;
+
+		/** Type: double */
 		receipts?: number | null;
+
+		/** Type: double */
 		refunded_individual_contributions?: number | null;
+
+		/** Type: double */
 		refunded_other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		refunded_political_party_committee_contributions?: number | null;
+
+		/** Type: double */
 		refunds_relating_convention_exp?: number | null;
+
+		/** Type: double */
 		repayments_loans_made_by_candidate?: number | null;
+
+		/** Type: double */
 		repayments_other_loans?: number | null;
 		report_form?: string | null;
+
+		/** Type: double */
 		shared_fed_activity?: number | null;
+
+		/** Type: double */
 		shared_fed_activity_nonfed?: number | null;
+
+		/** Type: double */
 		shared_fed_operating_expenditures?: number | null;
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures?: number | null;
+
+		/** Type: double */
 		total_exp_subject_limits?: number | null;
+
+		/** Type: double */
 		total_independent_contributions?: number | null;
+
+		/** Type: double */
 		total_independent_expenditures?: number | null;
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures?: number | null;
+
+		/** Type: double */
 		total_transfers?: number | null;
+
+		/** Type: DateOnly */
 		transaction_coverage_date?: Date | null;
+
+		/** Type: double */
 		transfers_from_affiliated_committee?: number | null;
+
+		/** Type: double */
 		transfers_from_affiliated_party?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_account?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_levin?: number | null;
+
+		/** Type: double */
 		transfers_from_other_authorized_committee?: number | null;
+
+		/** Type: double */
 		transfers_to_affiliated_committee?: number | null;
+
+		/** Type: double */
 		transfers_to_other_authorized_committee?: number | null;
 
 		/**
@@ -9916,17 +12971,37 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		treasurer_name?: string | null;
+
+		/** Type: double */
 		unitemized_convention_exp?: number | null;
+
+		/** Type: double */
 		unitemized_other_disb?: number | null;
+
+		/** Type: double */
 		unitemized_other_income?: number | null;
+
+		/** Type: double */
 		unitemized_other_refunds?: number | null;
+
+		/** Type: double */
 		unitemized_refunds_relating_convention_exp?: number | null;
 	}
 	export interface CommitteeTotalsFormProperties {
+
+		/** Type: double */
 		all_loans_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		all_other_loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		allocated_federal_election_levin_share: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		candidate_contribution: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		cash_on_hand_beginning_period: FormControl<number | null | undefined>,
 
 		/**
@@ -10006,12 +13081,23 @@ export namespace MyNS {
 		 * - Z national party non-federal account
 		 */
 		committee_type_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		contribution_refunds: FormControl<number | null | undefined>,
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		contributions_ie_and_party_expenditures_made_percent: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		convention_exp: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee: FormControl<number | null | undefined>,
 		coverage_end_date: FormControl<Date | null | undefined>,
 		coverage_start_date: FormControl<Date | null | undefined>,
@@ -10023,20 +13109,44 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		exp_prior_years_subject_limits: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		exp_subject_limits: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_contribution_refunds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_election_activity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		federal_funds: FormControl<number | null | undefined>,
 
 		/**
@@ -10064,51 +13174,129 @@ export namespace MyNS {
 		 */
 		filing_frequency_full: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		fundraising_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		independent_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		individual_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		individual_contributions_percent: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		itemized_convention_exp: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		itemized_other_disb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		itemized_other_income: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		itemized_other_refunds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		itemized_refunds_relating_convention_exp: FormControl<number | null | undefined>,
 		last_beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		last_cash_on_hand_end_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_by_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_to_committee: FormControl<number | null | undefined>,
 		last_report_type_full: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_candidate_loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_made: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_other_loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_and_loan_repayments_made: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_and_loan_repayments_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made_by_candidate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_received_from_candidate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		non_allocated_fed_election_activity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_legal_accounting: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures_percent: FormControl<number | null | undefined>,
 
 		/**
@@ -10134,43 +13322,109 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		organization_type_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		other_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_loans_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_refunds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		party_and_other_committee_contributions_percent: FormControl<number | null | undefined>,
 
 		/** Party affiliated with a candidate or committee */
 		party_full: FormControl<string | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		political_party_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_individual_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_political_party_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunds_relating_convention_exp: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_loans_made_by_candidate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_other_loans: FormControl<number | null | undefined>,
 		report_form: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		shared_fed_activity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_activity_nonfed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_exp_subject_limits: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_independent_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_independent_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_transfers: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		transaction_coverage_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_party: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_account: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_levin: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_other_authorized_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_affiliated_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_other_authorized_committee: FormControl<number | null | undefined>,
 
 		/**
@@ -10178,10 +13432,20 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		treasurer_name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		unitemized_convention_exp: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unitemized_other_disb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unitemized_other_income: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unitemized_other_refunds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unitemized_refunds_relating_convention_exp: FormControl<number | null | undefined>,
 	}
 	export function CreateCommitteeTotalsFormGroup() {
@@ -10307,8 +13571,14 @@ export namespace MyNS {
 	}
 
 	export interface CommitteeTotalsHouseSenate {
+
+		/** Type: double */
 		all_other_loans?: number | null;
+
+		/** Type: double */
 		candidate_contribution?: number | null;
+
+		/** Type: double */
 		cash_on_hand_beginning_period?: number | null;
 
 		/**
@@ -10388,10 +13658,17 @@ export namespace MyNS {
 		 * - Z national party non-federal account
 		 */
 		committee_type_full?: string | null;
+
+		/** Type: double */
 		contribution_refunds?: number | null;
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions?: number | null;
+
+		/** Type: double */
 		contributions_ie_and_party_expenditures_made_percent?: number | null;
 		coverage_end_date?: Date | null;
 		coverage_start_date?: Date | null;
@@ -10403,10 +13680,14 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements?: number | null;
 
 		/**
@@ -10434,34 +13715,78 @@ export namespace MyNS {
 		 */
 		filing_frequency_full?: string | null;
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
+
+		/** Type: double */
 		individual_contributions?: number | null;
+
+		/** Type: double */
 		individual_contributions_percent?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions?: number | null;
 		last_beginning_image_number?: string | null;
+
+		/** Type: double */
 		last_cash_on_hand_end_period?: number | null;
+
+		/** Type: double */
 		last_debts_owed_by_committee?: number | null;
+
+		/** Type: double */
 		last_debts_owed_to_committee?: number | null;
 		last_report_type_full?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year?: number | null;
+
+		/** Type: double */
 		loan_repayments?: number | null;
+
+		/** Type: double */
 		loan_repayments_candidate_loans?: number | null;
+
+		/** Type: double */
 		loan_repayments_other_loans?: number | null;
+
+		/** Type: double */
 		loans?: number | null;
+
+		/** Type: double */
 		loans_made_by_candidate?: number | null;
+
+		/** Type: double */
 		net_contributions?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures?: number | null;
+
+		/** Type: double */
 		offsets_to_operating_expenditures?: number | null;
+
+		/** Type: double */
 		operating_expenditures?: number | null;
+
+		/** Type: double */
 		operating_expenditures_percent?: number | null;
 
 		/**
@@ -10487,22 +13812,46 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		organization_type_full?: string | null;
+
+		/** Type: double */
 		other_disbursements?: number | null;
+
+		/** Type: double */
 		other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		other_receipts?: number | null;
+
+		/** Type: double */
 		party_and_other_committee_contributions_percent?: number | null;
 
 		/** Party affiliated with a candidate or committee */
 		party_full?: string | null;
 		pdf_url?: string | null;
+
+		/** Type: double */
 		political_party_committee_contributions?: number | null;
+
+		/** Type: double */
 		receipts?: number | null;
+
+		/** Type: double */
 		refunded_individual_contributions?: number | null;
+
+		/** Type: double */
 		refunded_other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		refunded_political_party_committee_contributions?: number | null;
 		report_form?: string | null;
+
+		/** Type: DateOnly */
 		transaction_coverage_date?: Date | null;
+
+		/** Type: double */
 		transfers_from_other_authorized_committee?: number | null;
+
+		/** Type: double */
 		transfers_to_other_authorized_committee?: number | null;
 
 		/**
@@ -10512,8 +13861,14 @@ export namespace MyNS {
 		treasurer_name?: string | null;
 	}
 	export interface CommitteeTotalsHouseSenateFormProperties {
+
+		/** Type: double */
 		all_other_loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		candidate_contribution: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		cash_on_hand_beginning_period: FormControl<number | null | undefined>,
 
 		/**
@@ -10593,10 +13948,17 @@ export namespace MyNS {
 		 * - Z national party non-federal account
 		 */
 		committee_type_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		contribution_refunds: FormControl<number | null | undefined>,
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		contributions_ie_and_party_expenditures_made_percent: FormControl<number | null | undefined>,
 		coverage_end_date: FormControl<Date | null | undefined>,
 		coverage_start_date: FormControl<Date | null | undefined>,
@@ -10608,10 +13970,14 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements: FormControl<number | null | undefined>,
 
 		/**
@@ -10639,34 +14005,78 @@ export namespace MyNS {
 		 */
 		filing_frequency_full: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		individual_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		individual_contributions_percent: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions: FormControl<number | null | undefined>,
 		last_beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		last_cash_on_hand_end_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_by_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_to_committee: FormControl<number | null | undefined>,
 		last_report_type_full: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_candidate_loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_other_loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made_by_candidate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures_percent: FormControl<number | null | undefined>,
 
 		/**
@@ -10692,22 +14102,46 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		organization_type_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		other_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		party_and_other_committee_contributions_percent: FormControl<number | null | undefined>,
 
 		/** Party affiliated with a candidate or committee */
 		party_full: FormControl<string | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		political_party_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_individual_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_political_party_committee_contributions: FormControl<number | null | undefined>,
 		report_form: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		transaction_coverage_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		transfers_from_other_authorized_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_other_authorized_committee: FormControl<number | null | undefined>,
 
 		/**
@@ -10805,6 +14239,8 @@ export namespace MyNS {
 		 * Max length: 2
 		 */
 		committee_state?: string | null;
+
+		/** Type: double */
 		contributions_ie_and_party_expenditures_made_percent?: number | null;
 
 		/** Ending date of the reporting period */
@@ -10819,6 +14255,7 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle?: number | null;
 
@@ -10847,17 +14284,34 @@ export namespace MyNS {
 		 */
 		filing_frequency_full?: string | null;
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
+
+		/** Type: double */
 		individual_contributions_percent?: number | null;
 		last_beginning_image_number?: string | null;
+
+		/** Type: double */
 		last_cash_on_hand_end_period?: number | null;
+
+		/** Type: double */
 		operating_expenditures_percent?: number | null;
+
+		/** Type: double */
 		party_and_other_committee_contributions_percent?: number | null;
 		pdf_url?: string | null;
 		report_form?: string | null;
+
+		/** Type: double */
 		total_independent_contributions?: number | null;
+
+		/** Type: double */
 		total_independent_expenditures?: number | null;
+
+		/** Type: DateOnly */
 		transaction_coverage_date?: Date | null;
 	}
 	export interface CommitteeTotalsIEOnlyFormProperties {
@@ -10872,6 +14326,8 @@ export namespace MyNS {
 		 * Max length: 2
 		 */
 		committee_state: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		contributions_ie_and_party_expenditures_made_percent: FormControl<number | null | undefined>,
 
 		/** Ending date of the reporting period */
@@ -10886,6 +14342,7 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
@@ -10914,17 +14371,34 @@ export namespace MyNS {
 		 */
 		filing_frequency_full: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		individual_contributions_percent: FormControl<number | null | undefined>,
 		last_beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		last_cash_on_hand_end_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures_percent: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		party_and_other_committee_contributions_percent: FormControl<number | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 		report_form: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total_independent_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_independent_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		transaction_coverage_date: FormControl<Date | null | undefined>,
 	}
 	export function CreateCommitteeTotalsIEOnlyFormGroup() {
@@ -10965,8 +14439,14 @@ export namespace MyNS {
 	}
 
 	export interface CommitteeTotalsPacParty {
+
+		/** Type: double */
 		all_loans_received?: number | null;
+
+		/** Type: double */
 		allocated_federal_election_levin_share?: number | null;
+
+		/** Type: double */
 		cash_on_hand_beginning_period?: number | null;
 
 		/**
@@ -11046,12 +14526,23 @@ export namespace MyNS {
 		 * - Z national party non-federal account
 		 */
 		committee_type_full?: string | null;
+
+		/** Type: double */
 		contribution_refunds?: number | null;
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions?: number | null;
+
+		/** Type: double */
 		contributions_ie_and_party_expenditures_made_percent?: number | null;
+
+		/** Type: double */
 		convention_exp?: number | null;
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee?: number | null;
 		coverage_end_date?: Date | null;
 		coverage_start_date?: Date | null;
@@ -11063,19 +14554,41 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements?: number | null;
+
+		/** Type: double */
 		exp_prior_years_subject_limits?: number | null;
+
+		/** Type: double */
 		exp_subject_limits?: number | null;
+
+		/** Type: double */
 		fed_candidate_committee_contributions?: number | null;
+
+		/** Type: double */
 		fed_candidate_contribution_refunds?: number | null;
+
+		/** Type: double */
 		fed_disbursements?: number | null;
+
+		/** Type: double */
 		fed_election_activity?: number | null;
+
+		/** Type: double */
 		fed_operating_expenditures?: number | null;
+
+		/** Type: double */
 		fed_receipts?: number | null;
+
+		/** Type: double */
 		federal_funds?: number | null;
 
 		/**
@@ -11103,41 +14616,99 @@ export namespace MyNS {
 		 */
 		filing_frequency_full?: string | null;
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
+
+		/** Type: double */
 		independent_expenditures?: number | null;
+
+		/** Type: double */
 		individual_contributions?: number | null;
+
+		/** Type: double */
 		individual_contributions_percent?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions?: number | null;
+
+		/** Type: double */
 		itemized_convention_exp?: number | null;
+
+		/** Type: double */
 		itemized_other_disb?: number | null;
+
+		/** Type: double */
 		itemized_other_income?: number | null;
+
+		/** Type: double */
 		itemized_other_refunds?: number | null;
+
+		/** Type: double */
 		itemized_refunds_relating_convention_exp?: number | null;
 		last_beginning_image_number?: string | null;
+
+		/** Type: double */
 		last_cash_on_hand_end_period?: number | null;
+
+		/** Type: double */
 		last_debts_owed_by_committee?: number | null;
+
+		/** Type: double */
 		last_debts_owed_to_committee?: number | null;
 		last_report_type_full?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year?: number | null;
+
+		/** Type: double */
 		loan_repayments_made?: number | null;
+
+		/** Type: double */
 		loan_repayments_received?: number | null;
+
+		/** Type: double */
 		loans_and_loan_repayments_made?: number | null;
+
+		/** Type: double */
 		loans_and_loan_repayments_received?: number | null;
+
+		/** Type: double */
 		loans_made?: number | null;
+
+		/** Type: double */
 		net_contributions?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures?: number | null;
+
+		/** Type: double */
 		non_allocated_fed_election_activity?: number | null;
+
+		/** Type: double */
 		offsets_to_operating_expenditures?: number | null;
+
+		/** Type: double */
 		operating_expenditures?: number | null;
+
+		/** Type: double */
 		operating_expenditures_percent?: number | null;
 
 		/**
@@ -11163,26 +14734,58 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		organization_type_full?: string | null;
+
+		/** Type: double */
 		other_disbursements?: number | null;
+
+		/** Type: double */
 		other_fed_operating_expenditures?: number | null;
+
+		/** Type: double */
 		other_fed_receipts?: number | null;
+
+		/** Type: double */
 		other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		other_refunds?: number | null;
+
+		/** Type: double */
 		party_and_other_committee_contributions_percent?: number | null;
 
 		/** Party affiliated with a candidate or committee */
 		party_full?: string | null;
 		pdf_url?: string | null;
+
+		/** Type: double */
 		political_party_committee_contributions?: number | null;
+
+		/** Type: double */
 		receipts?: number | null;
+
+		/** Type: double */
 		refunded_individual_contributions?: number | null;
+
+		/** Type: double */
 		refunded_other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		refunded_political_party_committee_contributions?: number | null;
+
+		/** Type: double */
 		refunds_relating_convention_exp?: number | null;
 		report_form?: string | null;
+
+		/** Type: double */
 		shared_fed_activity?: number | null;
+
+		/** Type: double */
 		shared_fed_activity_nonfed?: number | null;
+
+		/** Type: double */
 		shared_fed_operating_expenditures?: number | null;
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures?: number | null;
 
 		/**
@@ -11190,12 +14793,26 @@ export namespace MyNS {
 		 */
 		sponsor_candidate_ids?: Array<string>;
 		CommitteeTotalsPacPartySponsor_candidate_list?: Array<CommitteeTotalsPacPartySponsor_candidate_list>;
+
+		/** Type: double */
 		total_exp_subject_limits?: number | null;
+
+		/** Type: double */
 		total_transfers?: number | null;
+
+		/** Type: DateOnly */
 		transaction_coverage_date?: Date | null;
+
+		/** Type: double */
 		transfers_from_affiliated_party?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_account?: number | null;
+
+		/** Type: double */
 		transfers_from_nonfed_levin?: number | null;
+
+		/** Type: double */
 		transfers_to_affiliated_committee?: number | null;
 
 		/**
@@ -11203,15 +14820,31 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		treasurer_name?: string | null;
+
+		/** Type: double */
 		unitemized_convention_exp?: number | null;
+
+		/** Type: double */
 		unitemized_other_disb?: number | null;
+
+		/** Type: double */
 		unitemized_other_income?: number | null;
+
+		/** Type: double */
 		unitemized_other_refunds?: number | null;
+
+		/** Type: double */
 		unitemized_refunds_relating_convention_exp?: number | null;
 	}
 	export interface CommitteeTotalsPacPartyFormProperties {
+
+		/** Type: double */
 		all_loans_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		allocated_federal_election_levin_share: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		cash_on_hand_beginning_period: FormControl<number | null | undefined>,
 
 		/**
@@ -11291,12 +14924,23 @@ export namespace MyNS {
 		 * - Z national party non-federal account
 		 */
 		committee_type_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		contribution_refunds: FormControl<number | null | undefined>,
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		contributions_ie_and_party_expenditures_made_percent: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		convention_exp: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		coordinated_expenditures_by_party_committee: FormControl<number | null | undefined>,
 		coverage_end_date: FormControl<Date | null | undefined>,
 		coverage_start_date: FormControl<Date | null | undefined>,
@@ -11308,19 +14952,41 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		exp_prior_years_subject_limits: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		exp_subject_limits: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_candidate_contribution_refunds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_election_activity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		fed_receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		federal_funds: FormControl<number | null | undefined>,
 
 		/**
@@ -11348,41 +15014,99 @@ export namespace MyNS {
 		 */
 		filing_frequency_full: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		independent_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		individual_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		individual_contributions_percent: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		itemized_convention_exp: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		itemized_other_disb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		itemized_other_income: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		itemized_other_refunds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		itemized_refunds_relating_convention_exp: FormControl<number | null | undefined>,
 		last_beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		last_cash_on_hand_end_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_by_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_to_committee: FormControl<number | null | undefined>,
 		last_report_type_full: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_made: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_and_loan_repayments_made: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_and_loan_repayments_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_made: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		non_allocated_fed_election_activity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures_percent: FormControl<number | null | undefined>,
 
 		/**
@@ -11408,33 +15132,79 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		organization_type_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		other_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_fed_receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_refunds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		party_and_other_committee_contributions_percent: FormControl<number | null | undefined>,
 
 		/** Party affiliated with a candidate or committee */
 		party_full: FormControl<string | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		political_party_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_individual_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_political_party_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunds_relating_convention_exp: FormControl<number | null | undefined>,
 		report_form: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		shared_fed_activity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_activity_nonfed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_fed_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		shared_nonfed_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_exp_subject_limits: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_transfers: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		transaction_coverage_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_party: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_account: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_from_nonfed_levin: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_affiliated_committee: FormControl<number | null | undefined>,
 
 		/**
@@ -11442,10 +15212,20 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		treasurer_name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		unitemized_convention_exp: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unitemized_other_disb: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unitemized_other_income: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unitemized_other_refunds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unitemized_refunds_relating_convention_exp: FormControl<number | null | undefined>,
 	}
 	export function CreateCommitteeTotalsPacPartyFormGroup() {
@@ -11620,7 +15400,11 @@ export namespace MyNS {
 	}
 
 	export interface CommitteeTotalsPerCycle {
+
+		/** Type: double */
 		candidate_contribution?: number | null;
+
+		/** Type: double */
 		cash_on_hand_beginning_period?: number | null;
 
 		/**
@@ -11700,10 +15484,17 @@ export namespace MyNS {
 		 * - Z national party non-federal account
 		 */
 		committee_type_full?: string | null;
+
+		/** Type: double */
 		contribution_refunds?: number | null;
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions?: number | null;
+
+		/** Type: double */
 		contributions_ie_and_party_expenditures_made_percent?: number | null;
 		coverage_end_date?: Date | null;
 		coverage_start_date?: Date | null;
@@ -11715,12 +15506,20 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements?: number | null;
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement?: number | null;
+
+		/** Type: double */
 		federal_funds?: number | null;
 
 		/**
@@ -11748,35 +15547,81 @@ export namespace MyNS {
 		 */
 		filing_frequency_full?: string | null;
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
+
+		/** Type: double */
 		fundraising_disbursements?: number | null;
+
+		/** Type: double */
 		individual_contributions?: number | null;
+
+		/** Type: double */
 		individual_contributions_percent?: number | null;
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions?: number | null;
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions?: number | null;
 		last_beginning_image_number?: string | null;
+
+		/** Type: double */
 		last_cash_on_hand_end_period?: number | null;
+
+		/** Type: double */
 		last_debts_owed_by_committee?: number | null;
+
+		/** Type: double */
 		last_debts_owed_to_committee?: number | null;
 		last_report_type_full?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year?: number | null;
+
+		/** Type: double */
 		loan_repayments_made?: number | null;
+
+		/** Type: double */
 		loans_received?: number | null;
+
+		/** Type: double */
 		loans_received_from_candidate?: number | null;
+
+		/** Type: double */
 		net_contributions?: number | null;
+
+		/** Type: double */
 		net_operating_expenditures?: number | null;
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures?: number | null;
+
+		/** Type: double */
 		offsets_to_legal_accounting?: number | null;
+
+		/** Type: double */
 		offsets_to_operating_expenditures?: number | null;
+
+		/** Type: double */
 		operating_expenditures?: number | null;
+
+		/** Type: double */
 		operating_expenditures_percent?: number | null;
 
 		/**
@@ -11802,26 +15647,58 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		organization_type_full?: string | null;
+
+		/** Type: double */
 		other_disbursements?: number | null;
+
+		/** Type: double */
 		other_loans_received?: number | null;
+
+		/** Type: double */
 		other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		other_receipts?: number | null;
+
+		/** Type: double */
 		party_and_other_committee_contributions_percent?: number | null;
 
 		/** Party affiliated with a candidate or committee */
 		party_full?: string | null;
 		pdf_url?: string | null;
+
+		/** Type: double */
 		political_party_committee_contributions?: number | null;
+
+		/** Type: double */
 		receipts?: number | null;
+
+		/** Type: double */
 		refunded_individual_contributions?: number | null;
+
+		/** Type: double */
 		refunded_other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		refunded_political_party_committee_contributions?: number | null;
+
+		/** Type: double */
 		repayments_loans_made_by_candidate?: number | null;
+
+		/** Type: double */
 		repayments_other_loans?: number | null;
 		report_form?: string | null;
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures?: number | null;
+
+		/** Type: DateOnly */
 		transaction_coverage_date?: Date | null;
+
+		/** Type: double */
 		transfers_from_affiliated_committee?: number | null;
+
+		/** Type: double */
 		transfers_to_other_authorized_committee?: number | null;
 
 		/**
@@ -11831,7 +15708,11 @@ export namespace MyNS {
 		treasurer_name?: string | null;
 	}
 	export interface CommitteeTotalsPerCycleFormProperties {
+
+		/** Type: double */
 		candidate_contribution: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		cash_on_hand_beginning_period: FormControl<number | null | undefined>,
 
 		/**
@@ -11911,10 +15792,17 @@ export namespace MyNS {
 		 * - Z national party non-federal account
 		 */
 		committee_type_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		contribution_refunds: FormControl<number | null | undefined>,
 
-		/** Contribution */
+		/**
+		 * Contribution
+		 * Type: double
+		 */
 		contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		contributions_ie_and_party_expenditures_made_percent: FormControl<number | null | undefined>,
 		coverage_end_date: FormControl<Date | null | undefined>,
 		coverage_start_date: FormControl<Date | null | undefined>,
@@ -11926,12 +15814,20 @@ export namespace MyNS {
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		exempt_legal_accounting_disbursement: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		federal_funds: FormControl<number | null | undefined>,
 
 		/**
@@ -11959,35 +15855,81 @@ export namespace MyNS {
 		 */
 		filing_frequency_full: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		fundraising_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		individual_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		individual_contributions_percent: FormControl<number | null | undefined>,
 
-		/** Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less. */
+		/**
+		 * Individual itemized contributions are from individuals whose aggregate contributions total over $200 per individual per year. Be aware, some filers choose to itemize donations $200 or less.
+		 * Type: double
+		 */
 		individual_itemized_contributions: FormControl<number | null | undefined>,
 
-		/** Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total. */
+		/**
+		 * Unitemized contributions are made individuals whose aggregate contributions total $200 or less per individual per year. Be aware, some filers choose to itemize donations $200 or less and in that case those donations will appear in the itemized total.
+		 * Type: double
+		 */
 		individual_unitemized_contributions: FormControl<number | null | undefined>,
 		last_beginning_image_number: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		last_cash_on_hand_end_period: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_by_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last_debts_owed_to_committee: FormControl<number | null | undefined>,
 		last_report_type_full: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_report_year: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loan_repayments_made: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		loans_received_from_candidate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		net_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_fundraising_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_legal_accounting: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		offsets_to_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		operating_expenditures_percent: FormControl<number | null | undefined>,
 
 		/**
@@ -12013,26 +15955,58 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		organization_type_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		other_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_loans_received: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		other_receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		party_and_other_committee_contributions_percent: FormControl<number | null | undefined>,
 
 		/** Party affiliated with a candidate or committee */
 		party_full: FormControl<string | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		political_party_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_individual_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		refunded_political_party_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_loans_made_by_candidate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		repayments_other_loans: FormControl<number | null | undefined>,
 		report_form: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total_offsets_to_operating_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		transaction_coverage_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		transfers_from_affiliated_committee: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		transfers_to_other_authorized_committee: FormControl<number | null | undefined>,
 
 		/**
@@ -12141,24 +16115,38 @@ export namespace MyNS {
 		communication_class?: string | null;
 		communication_type?: string | null;
 		communication_type_full?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
 		form_type_code?: string | null;
 		image_number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		original_sub_id?: number | null;
 		pdf_url?: string | null;
 		primary_general_indicator?: string | null;
 		primary_general_indicator_description?: string | null;
 		purpose?: string | null;
 		report_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year?: number | null;
 		schedule_type?: string | null;
 		schedule_type_full?: string | null;
 		state_full?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sub_id?: number | null;
 		support_oppose_indicator?: string | null;
 		tran_id?: string | null;
+
+		/** Type: double */
 		transaction_amount?: number | null;
+
+		/** Type: DateOnly */
 		transaction_date?: Date | null;
 		transaction_type?: string | null;
 	}
@@ -12179,24 +16167,38 @@ export namespace MyNS {
 		communication_class: FormControl<string | null | undefined>,
 		communication_type: FormControl<string | null | undefined>,
 		communication_type_full: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
 		form_type_code: FormControl<string | null | undefined>,
 		image_number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		original_sub_id: FormControl<number | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 		primary_general_indicator: FormControl<string | null | undefined>,
 		primary_general_indicator_description: FormControl<string | null | undefined>,
 		purpose: FormControl<string | null | undefined>,
 		report_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year: FormControl<number | null | undefined>,
 		schedule_type: FormControl<string | null | undefined>,
 		schedule_type_full: FormControl<string | null | undefined>,
 		state_full: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sub_id: FormControl<number | null | undefined>,
 		support_oppose_indicator: FormControl<string | null | undefined>,
 		tran_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		transaction_amount: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		transaction_date: FormControl<Date | null | undefined>,
 		transaction_type: FormControl<string | null | undefined>,
 	}
@@ -12249,7 +16251,11 @@ export namespace MyNS {
 		committee?: string | null;
 		committee_id?: string | null;
 		committee_name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
 
 		/**
@@ -12257,6 +16263,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		support_oppose_indicator: string;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface CommunicationCostByCandidateFormProperties {
@@ -12266,7 +16274,11 @@ export namespace MyNS {
 		committee: FormControl<string | null | undefined>,
 		committee_id: FormControl<string | null | undefined>,
 		committee_name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
 
 		/**
@@ -12274,6 +16286,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		support_oppose_indicator: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCommunicationCostByCandidateFormGroup() {
@@ -12318,12 +16332,20 @@ export namespace MyNS {
 
 	export interface ECTotalsByCandidate {
 		candidate_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface ECTotalsByCandidateFormProperties {
 		candidate_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateECTotalsByCandidateFormGroup() {
@@ -12348,16 +16370,20 @@ export namespace MyNS {
 	}
 
 	export interface EFilings {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amended_by?: number | null;
 		amendment_chain?: Array<number>;
 
 		/**
 		 * Number of times the report has been amended.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amendment_number?: number | null;
 
 		/**
 		 * For amendments, this file_number is the file_number of the previous report that is being amended. Refer to the amended_by for the most recent version of the report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amends_file?: number | null;
 		beginning_image_number?: string | null;
@@ -12370,10 +16396,16 @@ export namespace MyNS {
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name?: string | null;
 
-		/** Ending date of the reporting period */
+		/**
+		 * Ending date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_end_date?: Date | null;
 
-		/** Beginning date of the reporting period */
+		/**
+		 * Beginning date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_start_date?: Date | null;
 		csv_url?: string | null;
 		document_description?: string | null;
@@ -12381,10 +16413,16 @@ export namespace MyNS {
 		fec_file_id?: string | null;
 		fec_url?: string | null;
 
-		/** Filing ID number */
+		/**
+		 * Filing ID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number?: number | null;
 
-		/** Timestamp of electronic or paper record that FEC received */
+		/**
+		 * Timestamp of electronic or paper record that FEC received
+		 * Type: DateOnly
+		 */
 		filed_date?: Date | null;
 
 		/**
@@ -12413,6 +16451,8 @@ export namespace MyNS {
 		/** Date the information was loaded into the FEC systems. This can be affected by reseting systems and other factors, refer to receipt_date for the day that the FEC received the paper or electronic document. Keep in mind that paper filings take more time to process and there can be a lag between load_date and receipt_date. This field can be helpful to identify paper records that have been processed recently. */
 		load_timestamp?: Date | null;
 		most_recent?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		most_recent_filing?: number | null;
 		pdf_url?: string | null;
 
@@ -12420,15 +16460,19 @@ export namespace MyNS {
 		receipt_date?: Date | null;
 	}
 	export interface EFilingsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		amended_by: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of times the report has been amended.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amendment_number: FormControl<number | null | undefined>,
 
 		/**
 		 * For amendments, this file_number is the file_number of the previous report that is being amended. Refer to the amended_by for the most recent version of the report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amends_file: FormControl<number | null | undefined>,
 		beginning_image_number: FormControl<string | null | undefined>,
@@ -12441,10 +16485,16 @@ export namespace MyNS {
 		/** The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records. */
 		committee_name: FormControl<string | null | undefined>,
 
-		/** Ending date of the reporting period */
+		/**
+		 * Ending date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_end_date: FormControl<Date | null | undefined>,
 
-		/** Beginning date of the reporting period */
+		/**
+		 * Beginning date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_start_date: FormControl<Date | null | undefined>,
 		csv_url: FormControl<string | null | undefined>,
 		document_description: FormControl<string | null | undefined>,
@@ -12452,10 +16502,16 @@ export namespace MyNS {
 		fec_file_id: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
 
-		/** Filing ID number */
+		/**
+		 * Filing ID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number: FormControl<number | null | undefined>,
 
-		/** Timestamp of electronic or paper record that FEC received */
+		/**
+		 * Timestamp of electronic or paper record that FEC received
+		 * Type: DateOnly
+		 */
 		filed_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -12484,6 +16540,8 @@ export namespace MyNS {
 		/** Date the information was loaded into the FEC systems. This can be affected by reseting systems and other factors, refer to receipt_date for the day that the FEC received the paper or electronic document. Keep in mind that paper filings take more time to process and there can be a lag between load_date and receipt_date. This field can be helpful to identify paper records that have been processed recently. */
 		load_timestamp: FormControl<Date | null | undefined>,
 		most_recent: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		most_recent_filing: FormControl<number | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 
@@ -12538,29 +16596,49 @@ export namespace MyNS {
 		 * amendments were filed up to the amendment being inspected.
 		 */
 		amendment_chain?: Array<number>;
+
+		/** Type: double */
 		depth?: number | null;
 
-		/** Filing ID number */
+		/**
+		 * Filing ID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number?: number | null;
+
+		/** Type: double */
 		last?: number | null;
 		longest_chain?: Array<number>;
+
+		/** Type: double */
 		most_recent_filing?: number | null;
 
 		/**
 		 * Previous filing ID number
+		 * Type: double
 		 */
 		previous_file_number?: number | null;
 	}
 	export interface EfilingsAmendmentsFormProperties {
+
+		/** Type: double */
 		depth: FormControl<number | null | undefined>,
 
-		/** Filing ID number */
+		/**
+		 * Filing ID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		last: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		most_recent_filing: FormControl<number | null | undefined>,
 
 		/**
 		 * Previous filing ID number
+		 * Type: double
 		 */
 		previous_file_number: FormControl<number | null | undefined>,
 	}
@@ -12588,30 +16666,50 @@ export namespace MyNS {
 	}
 
 	export interface Election {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		candidate_election_year?: number | null;
 		candidate_id?: string | null;
 		candidate_name?: string | null;
 		candidate_pcc_id?: string | null;
 		candidate_pcc_name?: string | null;
+
+		/** Type: double */
 		cash_on_hand_end_period?: number | null;
 		committee_ids?: Array<string>;
+
+		/** Type: DateOnly */
 		coverage_end_date?: Date | null;
 		incumbent_challenge_full?: string | null;
 		party_full?: string | null;
+
+		/** Type: double */
 		total_disbursements?: number | null;
+
+		/** Type: double */
 		total_receipts?: number | null;
 	}
 	export interface ElectionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		candidate_election_year: FormControl<number | null | undefined>,
 		candidate_id: FormControl<string | null | undefined>,
 		candidate_name: FormControl<string | null | undefined>,
 		candidate_pcc_id: FormControl<string | null | undefined>,
 		candidate_pcc_name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		cash_on_hand_end_period: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		coverage_end_date: FormControl<Date | null | undefined>,
 		incumbent_challenge_full: FormControl<string | null | undefined>,
 		party_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_receipts: FormControl<number | null | undefined>,
 	}
 	export function CreateElectionFormGroup() {
@@ -12637,10 +16735,16 @@ export namespace MyNS {
 		/** Date the record was created */
 		create_date?: Date | null;
 
-		/** Date of election */
+		/**
+		 * Date of election
+		 * Type: DateOnly
+		 */
 		election_date?: Date | null;
 
-		/** Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00. */
+		/**
+		 * Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_district?: number | null;
 		election_notes?: string | null;
 
@@ -12659,11 +16763,16 @@ export namespace MyNS {
 		 */
 		election_type_id?: string | null;
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year?: number | null;
 
 		/** Federal office candidate runs for: H, S or P */
 		office_sought?: string | null;
+
+		/** Type: DateOnly */
 		primary_general_date?: Date | null;
 
 		/** Date the record was updated */
@@ -12675,10 +16784,16 @@ export namespace MyNS {
 		/** Date the record was created */
 		create_date: FormControl<Date | null | undefined>,
 
-		/** Date of election */
+		/**
+		 * Date of election
+		 * Type: DateOnly
+		 */
 		election_date: FormControl<Date | null | undefined>,
 
-		/** Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00. */
+		/**
+		 * Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_district: FormControl<number | null | undefined>,
 		election_notes: FormControl<string | null | undefined>,
 
@@ -12697,11 +16812,16 @@ export namespace MyNS {
 		 */
 		election_type_id: FormControl<string | null | undefined>,
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year: FormControl<number | null | undefined>,
 
 		/** Federal office candidate runs for: H, S or P */
 		office_sought: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		primary_general_date: FormControl<Date | null | undefined>,
 
 		/** Date the record was updated */
@@ -12752,6 +16872,8 @@ export namespace MyNS {
 
 	export interface ElectionSearch {
 		candidate_status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
 		district?: string | null;
 		incumbent_id?: string | null;
@@ -12761,6 +16883,8 @@ export namespace MyNS {
 	}
 	export interface ElectionSearchFormProperties {
 		candidate_status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
 		district: FormControl<string | null | undefined>,
 		incumbent_id: FormControl<string | null | undefined>,
@@ -12794,15 +16918,31 @@ export namespace MyNS {
 	}
 
 	export interface ElectionSummary {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
+
+		/** Type: double */
 		disbursements?: number | null;
+
+		/** Type: double */
 		independent_expenditures?: number | null;
+
+		/** Type: double */
 		receipts?: number | null;
 	}
 	export interface ElectionSummaryFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		independent_expenditures: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		receipts: FormControl<number | null | undefined>,
 	}
 	export function CreateElectionSummaryFormGroup() {
@@ -12823,6 +16963,7 @@ export namespace MyNS {
 		 * "If an electioneering cost targets several candidates, the total cost is
 		 * divided by the number of candidates. If it only mentions one candidate
 		 * the full cost of the communication is listed."
+		 * Type: double
 		 */
 		calculated_candidate_share?: number | null;
 		candidate_district?: string | null;
@@ -12835,18 +16976,28 @@ export namespace MyNS {
 
 		/**
 		 * It is the airing, broadcast, cablecast or other dissemination of the communication.
+		 * Type: DateOnly
 		 */
 		communication_date?: Date | null;
+
+		/** Type: double */
 		disbursement_amount?: number | null;
 
 		/**
 		 * Disbursement date includes actual disbursements and execution of contracts creating
 		 * an obligation to make disbursements (SB date of disbursement).
+		 * Type: DateOnly
 		 */
 		disbursement_date?: Date | null;
 		election_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id?: number | null;
+
+		/** Type: double */
 		number_of_candidates?: number | null;
 
 		/**
@@ -12859,16 +17010,22 @@ export namespace MyNS {
 		/**
 		 * The pubic distribution date is the date that triggers disclosure of the
 		 * electioneering communication (date reported on page 1 of Form 9).
+		 * Type: DateOnly
 		 */
 		public_distribution_date?: Date | null;
 		purpose_description?: string | null;
+
+		/** Type: DateOnly */
 		receipt_date?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year?: number | null;
 		sb_image_num?: string | null;
 		sb_link_id?: string | null;
 
 		/**
 		 * The identifier for each electioneering record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sub_id?: number | null;
 	}
@@ -12880,6 +17037,7 @@ export namespace MyNS {
 		 * "If an electioneering cost targets several candidates, the total cost is
 		 * divided by the number of candidates. If it only mentions one candidate
 		 * the full cost of the communication is listed."
+		 * Type: double
 		 */
 		calculated_candidate_share: FormControl<number | null | undefined>,
 		candidate_district: FormControl<string | null | undefined>,
@@ -12892,18 +17050,28 @@ export namespace MyNS {
 
 		/**
 		 * It is the airing, broadcast, cablecast or other dissemination of the communication.
+		 * Type: DateOnly
 		 */
 		communication_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		disbursement_amount: FormControl<number | null | undefined>,
 
 		/**
 		 * Disbursement date includes actual disbursements and execution of contracts creating
 		 * an obligation to make disbursements (SB date of disbursement).
+		 * Type: DateOnly
 		 */
 		disbursement_date: FormControl<Date | null | undefined>,
 		election_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		number_of_candidates: FormControl<number | null | undefined>,
 
 		/**
@@ -12916,16 +17084,22 @@ export namespace MyNS {
 		/**
 		 * The pubic distribution date is the date that triggers disclosure of the
 		 * electioneering communication (date reported on page 1 of Form 9).
+		 * Type: DateOnly
 		 */
 		public_distribution_date: FormControl<Date | null | undefined>,
 		purpose_description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		receipt_date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		report_year: FormControl<number | null | undefined>,
 		sb_image_num: FormControl<string | null | undefined>,
 		sb_link_id: FormControl<string | null | undefined>,
 
 		/**
 		 * The identifier for each electioneering record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sub_id: FormControl<number | null | undefined>,
 	}
@@ -12969,8 +17143,14 @@ export namespace MyNS {
 		committee?: string | null;
 		committee_id?: string | null;
 		committee_name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface ElectioneeringByCandidateFormProperties {
@@ -12980,8 +17160,14 @@ export namespace MyNS {
 		committee: FormControl<string | null | undefined>,
 		committee_id: FormControl<string | null | undefined>,
 		committee_name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateElectioneeringByCandidateFormGroup() {
@@ -13024,15 +17210,27 @@ export namespace MyNS {
 	}
 
 	export interface SeekInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		last_indexes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pages?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page?: number | null;
 	}
 	export interface SeekInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		last_indexes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pages: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		per_page: FormControl<number | null | undefined>,
 	}
 	export function CreateSeekInfoFormGroup() {
@@ -13046,6 +17244,8 @@ export namespace MyNS {
 	}
 
 	export interface ElectionsList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
 
 		/** Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00. */
@@ -13058,6 +17258,8 @@ export namespace MyNS {
 		state?: string | null;
 	}
 	export interface ElectionsListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
 
 		/** Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00. */
@@ -13093,58 +17295,100 @@ export namespace MyNS {
 
 	export interface EntityReceiptDisbursementTotals {
 
-		/** Cumulative candidate disbursements in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative candidate disbursements in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_candidate_disbursements?: number | null;
 
-		/** Cumulative candidate receipts in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative candidate receipts in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_candidate_receipts?: number | null;
 
-		/** Cumulative PAC disbursements in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative PAC disbursements in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_pac_disbursements?: number | null;
 
-		/** Cumulative PAC recipts in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative PAC recipts in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_pac_receipts?: number | null;
 
-		/** Cumulative party disbursements in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative party disbursements in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_party_disbursements?: number | null;
 
-		/** Cumulative party receipts in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative party receipts in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_party_receipts?: number | null;
 
 		/**
 		 * Filter records to only those that were applicable to a given
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle?: number | null;
+
+		/** Type: DateOnly */
 		end_date?: Date | null;
 	}
 	export interface EntityReceiptDisbursementTotalsFormProperties {
 
-		/** Cumulative candidate disbursements in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative candidate disbursements in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_candidate_disbursements: FormControl<number | null | undefined>,
 
-		/** Cumulative candidate receipts in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative candidate receipts in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_candidate_receipts: FormControl<number | null | undefined>,
 
-		/** Cumulative PAC disbursements in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative PAC disbursements in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_pac_disbursements: FormControl<number | null | undefined>,
 
-		/** Cumulative PAC recipts in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative PAC recipts in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_pac_receipts: FormControl<number | null | undefined>,
 
-		/** Cumulative party disbursements in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative party disbursements in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_party_disbursements: FormControl<number | null | undefined>,
 
-		/** Cumulative party receipts in a two year period, adjusted to avoid double counting. */
+		/**
+		 * Cumulative party receipts in a two year period, adjusted to avoid double counting.
+		 * Type: float
+		 */
 		cumulative_party_receipts: FormControl<number | null | undefined>,
 
 		/**
 		 * Filter records to only those that were applicable to a given
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		end_date: FormControl<Date | null | undefined>,
 	}
 	export function CreateEntityReceiptDisbursementTotalsFormGroup() {
@@ -13194,6 +17438,7 @@ export namespace MyNS {
 
 		/**
 		 * Amendment version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amendment_version?: number | null;
 
@@ -13243,10 +17488,16 @@ export namespace MyNS {
 		/** Name of candidate running for office */
 		candidate_name?: string | null;
 
-		/** Balance for the committee at the start of the two-year period */
+		/**
+		 * Balance for the committee at the start of the two-year period
+		 * Type: double
+		 */
 		cash_on_hand_beginning_period?: number | null;
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period?: number | null;
 
 		/**
@@ -13278,10 +17529,16 @@ export namespace MyNS {
 		 */
 		committee_type?: string | null;
 
-		/** Ending date of the reporting period */
+		/**
+		 * Ending date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_end_date?: Date | null;
 
-		/** Beginning date of the reporting period */
+		/**
+		 * Beginning date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_start_date?: Date | null;
 		csv_url?: string | null;
 
@@ -13289,13 +17546,20 @@ export namespace MyNS {
 		 * Filter records to only those that were applicable to a given
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle?: number | null;
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee?: number | null;
 
-		/** Debts owed to the committee */
+		/**
+		 * Debts owed to the committee
+		 * Type: double
+		 */
 		debts_owed_to_committee?: number | null;
 		document_description?: string | null;
 
@@ -13357,13 +17621,19 @@ export namespace MyNS {
 		 */
 		document_type_full?: string | null;
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year?: number | null;
 		ending_image_number?: string | null;
 		fec_file_id?: string | null;
 		fec_url?: string | null;
 
-		/** Filing ID number */
+		/**
+		 * Filing ID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number?: number | null;
 
 		/**
@@ -13396,7 +17666,10 @@ export namespace MyNS {
 		 */
 		form_type?: string | null;
 
-		/** House personal funds */
+		/**
+		 * House personal funds
+		 * Type: double
+		 */
 		house_personal_funds?: number | null;
 
 		/**
@@ -13416,19 +17689,28 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		most_recent_file_number?: number | null;
 
-		/** Net donations */
+		/**
+		 * Net donations
+		 * Type: double
+		 */
 		net_donations?: number | null;
 
 		/** Federal office candidate runs for: H, S or P */
 		office?: string | null;
 
-		/** Opposition personal funds */
+		/**
+		 * Opposition personal funds
+		 * Type: double
+		 */
 		opposition_personal_funds?: number | null;
 
 		/**
 		 * Number of pages in the document
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages?: number | null;
 
@@ -13442,6 +17724,7 @@ export namespace MyNS {
 
 		/**
 		 * Previous filing ID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		previous_file_number?: number | null;
 
@@ -13450,7 +17733,10 @@ export namespace MyNS {
 		 */
 		primary_general_indicator?: string | null;
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date?: Date | null;
 
 		/**
@@ -13513,6 +17799,7 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year?: number | null;
 
@@ -13530,32 +17817,53 @@ export namespace MyNS {
 		 */
 		request_type?: string | null;
 
-		/** Senate personal funds */
+		/**
+		 * Senate personal funds
+		 * Type: double
+		 */
 		senate_personal_funds?: number | null;
 
 		/** US state or territory where a candidate runs for office */
 		state?: string | null;
 		sub_id?: string | null;
 
-		/** Total communications cost */
+		/**
+		 * Total communications cost
+		 * Type: double
+		 */
 		total_communication_cost?: number | null;
 
-		/** Total disbursements */
+		/**
+		 * Total disbursements
+		 * Type: double
+		 */
 		total_disbursements?: number | null;
 
-		/** Total independent expenditures */
+		/**
+		 * Total independent expenditures
+		 * Type: double
+		 */
 		total_independent_expenditures?: number | null;
 
-		/** Total individual contributions */
+		/**
+		 * Total individual contributions
+		 * Type: double
+		 */
 		total_individual_contributions?: number | null;
 
-		/** Total receipts */
+		/**
+		 * Total receipts
+		 * Type: double
+		 */
 		total_receipts?: number | null;
 
 		/** Name of the Committee's treasurer. If multiple treasurers for the committee, the most recent treasurer will be shown. */
 		treasurer_name?: string | null;
 
-		/** Date the record was updated */
+		/**
+		 * Date the record was updated
+		 * Type: DateOnly
+		 */
 		update_date?: Date | null;
 	}
 	export interface FilingsFormProperties {
@@ -13568,6 +17876,7 @@ export namespace MyNS {
 
 		/**
 		 * Amendment version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amendment_version: FormControl<number | null | undefined>,
 
@@ -13617,10 +17926,16 @@ export namespace MyNS {
 		/** Name of candidate running for office */
 		candidate_name: FormControl<string | null | undefined>,
 
-		/** Balance for the committee at the start of the two-year period */
+		/**
+		 * Balance for the committee at the start of the two-year period
+		 * Type: double
+		 */
 		cash_on_hand_beginning_period: FormControl<number | null | undefined>,
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end_period: FormControl<number | null | undefined>,
 
 		/**
@@ -13652,10 +17967,16 @@ export namespace MyNS {
 		 */
 		committee_type: FormControl<string | null | undefined>,
 
-		/** Ending date of the reporting period */
+		/**
+		 * Ending date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_end_date: FormControl<Date | null | undefined>,
 
-		/** Beginning date of the reporting period */
+		/**
+		 * Beginning date of the reporting period
+		 * Type: DateOnly
+		 */
 		coverage_start_date: FormControl<Date | null | undefined>,
 		csv_url: FormControl<string | null | undefined>,
 
@@ -13663,13 +17984,20 @@ export namespace MyNS {
 		 * Filter records to only those that were applicable to a given
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee: FormControl<number | null | undefined>,
 
-		/** Debts owed to the committee */
+		/**
+		 * Debts owed to the committee
+		 * Type: double
+		 */
 		debts_owed_to_committee: FormControl<number | null | undefined>,
 		document_description: FormControl<string | null | undefined>,
 
@@ -13731,13 +18059,19 @@ export namespace MyNS {
 		 */
 		document_type_full: FormControl<string | null | undefined>,
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year: FormControl<number | null | undefined>,
 		ending_image_number: FormControl<string | null | undefined>,
 		fec_file_id: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
 
-		/** Filing ID number */
+		/**
+		 * Filing ID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number: FormControl<number | null | undefined>,
 
 		/**
@@ -13770,7 +18104,10 @@ export namespace MyNS {
 		 */
 		form_type: FormControl<string | null | undefined>,
 
-		/** House personal funds */
+		/**
+		 * House personal funds
+		 * Type: double
+		 */
 		house_personal_funds: FormControl<number | null | undefined>,
 
 		/**
@@ -13790,19 +18127,28 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		most_recent_file_number: FormControl<number | null | undefined>,
 
-		/** Net donations */
+		/**
+		 * Net donations
+		 * Type: double
+		 */
 		net_donations: FormControl<number | null | undefined>,
 
 		/** Federal office candidate runs for: H, S or P */
 		office: FormControl<string | null | undefined>,
 
-		/** Opposition personal funds */
+		/**
+		 * Opposition personal funds
+		 * Type: double
+		 */
 		opposition_personal_funds: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of pages in the document
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages: FormControl<number | null | undefined>,
 
@@ -13816,6 +18162,7 @@ export namespace MyNS {
 
 		/**
 		 * Previous filing ID number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		previous_file_number: FormControl<number | null | undefined>,
 
@@ -13824,7 +18171,10 @@ export namespace MyNS {
 		 */
 		primary_general_indicator: FormControl<string | null | undefined>,
 
-		/** Date the FEC received the electronic or paper record */
+		/**
+		 * Date the FEC received the electronic or paper record
+		 * Type: DateOnly
+		 */
 		receipt_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -13887,6 +18237,7 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year: FormControl<number | null | undefined>,
 
@@ -13904,32 +18255,53 @@ export namespace MyNS {
 		 */
 		request_type: FormControl<string | null | undefined>,
 
-		/** Senate personal funds */
+		/**
+		 * Senate personal funds
+		 * Type: double
+		 */
 		senate_personal_funds: FormControl<number | null | undefined>,
 
 		/** US state or territory where a candidate runs for office */
 		state: FormControl<string | null | undefined>,
 		sub_id: FormControl<string | null | undefined>,
 
-		/** Total communications cost */
+		/**
+		 * Total communications cost
+		 * Type: double
+		 */
 		total_communication_cost: FormControl<number | null | undefined>,
 
-		/** Total disbursements */
+		/**
+		 * Total disbursements
+		 * Type: double
+		 */
 		total_disbursements: FormControl<number | null | undefined>,
 
-		/** Total independent expenditures */
+		/**
+		 * Total independent expenditures
+		 * Type: double
+		 */
 		total_independent_expenditures: FormControl<number | null | undefined>,
 
-		/** Total individual contributions */
+		/**
+		 * Total individual contributions
+		 * Type: double
+		 */
 		total_individual_contributions: FormControl<number | null | undefined>,
 
-		/** Total receipts */
+		/**
+		 * Total receipts
+		 * Type: double
+		 */
 		total_receipts: FormControl<number | null | undefined>,
 
 		/** Name of the Committee's treasurer. If multiple treasurers for the committee, the most recent treasurer will be shown. */
 		treasurer_name: FormControl<string | null | undefined>,
 
-		/** Date the record was updated */
+		/**
+		 * Date the record was updated
+		 * Type: DateOnly
+		 */
 		update_date: FormControl<Date | null | undefined>,
 	}
 	export function CreateFilingsFormGroup() {
@@ -14013,14 +18385,22 @@ export namespace MyNS {
 
 	export interface IETotalsByCandidate {
 		candidate_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
 		support_oppose_indicator?: string | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface IETotalsByCandidateFormProperties {
 		candidate_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
 		support_oppose_indicator: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateIETotalsByCandidateFormGroup() {
@@ -14065,8 +18445,11 @@ export namespace MyNS {
 		 * date but before expiration date in Form 1s) The cycle begins with
 		 * an odd year and is named for its ending, even year.
 		 * Required
+		 * Type: double
 		 */
 		cycle: number;
+
+		/** Type: double */
 		total_donation?: number | null;
 	}
 	export interface InauguralDonationsFormProperties {
@@ -14089,8 +18472,11 @@ export namespace MyNS {
 		 * date but before expiration date in Form 1s) The cycle begins with
 		 * an odd year and is named for its ending, even year.
 		 * Required
+		 * Type: double
 		 */
 		cycle: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_donation: FormControl<number | null | undefined>,
 	}
 	export function CreateInauguralDonationsFormGroup() {
@@ -14232,6 +18618,7 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year?: number | null;
 
@@ -14241,11 +18628,13 @@ export namespace MyNS {
 		 * into the system.
 		 * But not verified.
 		 * -1- Transaction is verified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_num?: number | null;
 
 		/**
 		 * A unique identifier of the transactional report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sub_id?: number | null;
 
@@ -14261,6 +18650,7 @@ export namespace MyNS {
 
 		/**
 		 * Date when the report is processed completely
+		 * Type: DateOnly
 		 */
 		transaction_data_complete_date?: Date | null;
 	}
@@ -14381,6 +18771,7 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year: FormControl<number | null | undefined>,
 
@@ -14390,11 +18781,13 @@ export namespace MyNS {
 		 * into the system.
 		 * But not verified.
 		 * -1- Transaction is verified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_num: FormControl<number | null | undefined>,
 
 		/**
 		 * A unique identifier of the transactional report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sub_id: FormControl<number | null | undefined>,
 
@@ -14410,6 +18803,7 @@ export namespace MyNS {
 
 		/**
 		 * Date when the report is processed completely
+		 * Type: DateOnly
 		 */
 		transaction_data_complete_date: FormControl<Date | null | undefined>,
 	}
@@ -14477,14 +18871,21 @@ export namespace MyNS {
 		 */
 		contributor_state?: string | null;
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year?: number | null;
 
-		/** Net contributions */
+		/**
+		 * Net contributions
+		 * Type: double
+		 */
 		net_receipts?: number | null;
 
 		/**
 		 * Net receipts, in millions
+		 * Type: double
 		 */
 		rounded_net_receipts?: number | null;
 	}
@@ -14519,14 +18920,21 @@ export namespace MyNS {
 		 */
 		contributor_state: FormControl<string | null | undefined>,
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year: FormControl<number | null | undefined>,
 
-		/** Net contributions */
+		/**
+		 * Net contributions
+		 * Type: double
+		 */
 		net_receipts: FormControl<number | null | undefined>,
 
 		/**
 		 * Net receipts, in millions
+		 * Type: double
 		 */
 		rounded_net_receipts: FormControl<number | null | undefined>,
 	}
@@ -14575,10 +18983,14 @@ export namespace MyNS {
 
 		/**
 		 * Contributions received
+		 * Type: double
 		 */
 		contribution_receipt_amount?: number | null;
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year?: number | null;
 
 		/**
@@ -14591,11 +19003,13 @@ export namespace MyNS {
 		 * -2000 $2000 +
 		 * ```
 		 * Unitemized contributions are included in the `0` category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size?: number | null;
 
 		/**
 		 * The total all contributions range id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size_range_id?: number | null;
 	}
@@ -14619,10 +19033,14 @@ export namespace MyNS {
 
 		/**
 		 * Contributions received
+		 * Type: double
 		 */
 		contribution_receipt_amount: FormControl<number | null | undefined>,
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year: FormControl<number | null | undefined>,
 
 		/**
@@ -14635,11 +19053,13 @@ export namespace MyNS {
 		 * -2000 $2000 +
 		 * ```
 		 * Unitemized contributions are included in the `0` category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
 		/**
 		 * The total all contributions range id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size_range_id: FormControl<number | null | undefined>,
 	}
@@ -14686,6 +19106,7 @@ export namespace MyNS {
 
 		/**
 		 * Contributions received
+		 * Type: double
 		 */
 		contribution_receipt_amount?: number | null;
 
@@ -14695,7 +19116,10 @@ export namespace MyNS {
 		 */
 		contribution_state?: string | null;
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year?: number | null;
 	}
 	export interface PresidentialByStateFormProperties {
@@ -14718,6 +19142,7 @@ export namespace MyNS {
 
 		/**
 		 * Contributions received
+		 * Type: double
 		 */
 		contribution_receipt_amount: FormControl<number | null | undefined>,
 
@@ -14727,7 +19152,10 @@ export namespace MyNS {
 		 */
 		contribution_state: FormControl<string | null | undefined>,
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year: FormControl<number | null | undefined>,
 	}
 	export function CreatePresidentialByStateFormGroup() {
@@ -14772,7 +19200,10 @@ export namespace MyNS {
 		/** Ending date of the reporting period */
 		coverage_end_date?: Date | null;
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year?: number | null;
 	}
 	export interface PresidentialCoverageFormProperties {
@@ -14795,7 +19226,10 @@ export namespace MyNS {
 		/** Ending date of the reporting period */
 		coverage_end_date: FormControl<Date | null | undefined>,
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year: FormControl<number | null | undefined>,
 	}
 	export function CreatePresidentialCoverageFormGroup() {
@@ -14823,6 +19257,7 @@ export namespace MyNS {
 
 		/**
 		 * candidate contributions less repayments
+		 * Type: double
 		 */
 		candidate_contributions_less_repayments?: number | null;
 
@@ -14852,7 +19287,10 @@ export namespace MyNS {
 		/** Three-letter code for the party affiliated with a candidate or committee. For example, DEM for Democratic Party and REP for Republican Party. */
 		candidate_party_affiliation?: string | null;
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end?: number | null;
 
 		/**
@@ -14902,91 +19340,123 @@ export namespace MyNS {
 		 */
 		committee_type?: string | null;
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee?: number | null;
 
 		/**
 		 * disbursements less offsets
+		 * Type: double
 		 */
 		disbursements_less_offsets?: number | null;
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year?: number | null;
 
 		/**
 		 * exempt legal accounting disbursement
+		 * Type: double
 		 */
 		exempt_legal_accounting_disbursement?: number | null;
 
-		/** Federal funds: Public funding of presidential elections means that qualified presidential candidates                 receive federal government funds to pay for the valid expenses of their political campaigns                 in both the primary and general elections. */
+		/**
+		 * Federal funds: Public funding of presidential elections means that qualified presidential candidates                 receive federal government funds to pay for the valid expenses of their political campaigns                 in both the primary and general elections.
+		 * Type: double
+		 */
 		federal_funds?: number | null;
 
 		/**
 		 * fundraising disbursements
+		 * Type: double
 		 */
 		fundraising_disbursements?: number | null;
 
 		/**
 		 * individual contributions less refunds
+		 * Type: double
 		 */
 		individual_contributions_less_refunds?: number | null;
 
 		/**
 		 * Contributions received
+		 * Type: double
 		 */
 		net_receipts?: number | null;
 
-		/** Offsets to operating expenditures */
+		/**
+		 * Offsets to operating expenditures
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures?: number | null;
 
-		/** Total operating expenditures */
+		/**
+		 * Total operating expenditures
+		 * Type: double
+		 */
 		operating_expenditures?: number | null;
 
-		/** Other disbursements */
+		/**
+		 * Other disbursements
+		 * Type: double
+		 */
 		other_disbursements?: number | null;
 
 		/**
 		 * pac contributions less refunds
+		 * Type: double
 		 */
 		pac_contributions_less_refunds?: number | null;
 
 		/**
 		 * party contributions less refunds
+		 * Type: double
 		 */
 		party_contributions_less_refunds?: number | null;
 
 		/**
 		 * repayments loans made by candidate
+		 * Type: double
 		 */
 		repayments_loans_made_by_candidate?: number | null;
 
 		/**
 		 * repayments other loans
+		 * Type: double
 		 */
 		repayments_other_loans?: number | null;
 
 		/**
 		 * Net receipts, in millions
+		 * Type: double
 		 */
 		rounded_net_receipts?: number | null;
 
 		/**
 		 * total contribution refunds
+		 * Type: double
 		 */
 		total_contribution_refunds?: number | null;
 
 		/**
 		 * total loan repayments made
+		 * Type: double
 		 */
 		total_loan_repayments_made?: number | null;
 
 		/**
 		 * transfers from affiliated committees
+		 * Type: double
 		 */
 		transfers_from_affiliated_committees?: number | null;
 
 		/**
 		 * transfers to other authorized committees
+		 * Type: double
 		 */
 		transfers_to_other_authorized_committees?: number | null;
 	}
@@ -14994,6 +19464,7 @@ export namespace MyNS {
 
 		/**
 		 * candidate contributions less repayments
+		 * Type: double
 		 */
 		candidate_contributions_less_repayments: FormControl<number | null | undefined>,
 
@@ -15023,7 +19494,10 @@ export namespace MyNS {
 		/** Three-letter code for the party affiliated with a candidate or committee. For example, DEM for Democratic Party and REP for Republican Party. */
 		candidate_party_affiliation: FormControl<string | null | undefined>,
 
-		/** Ending cash balance on the most recent filing */
+		/**
+		 * Ending cash balance on the most recent filing
+		 * Type: double
+		 */
 		cash_on_hand_end: FormControl<number | null | undefined>,
 
 		/**
@@ -15073,91 +19547,123 @@ export namespace MyNS {
 		 */
 		committee_type: FormControl<string | null | undefined>,
 
-		/** Debts owed by the committee */
+		/**
+		 * Debts owed by the committee
+		 * Type: double
+		 */
 		debts_owed_by_committee: FormControl<number | null | undefined>,
 
 		/**
 		 * disbursements less offsets
+		 * Type: double
 		 */
 		disbursements_less_offsets: FormControl<number | null | undefined>,
 
-		/** Year of election */
+		/**
+		 * Year of election
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		election_year: FormControl<number | null | undefined>,
 
 		/**
 		 * exempt legal accounting disbursement
+		 * Type: double
 		 */
 		exempt_legal_accounting_disbursement: FormControl<number | null | undefined>,
 
-		/** Federal funds: Public funding of presidential elections means that qualified presidential candidates                 receive federal government funds to pay for the valid expenses of their political campaigns                 in both the primary and general elections. */
+		/**
+		 * Federal funds: Public funding of presidential elections means that qualified presidential candidates                 receive federal government funds to pay for the valid expenses of their political campaigns                 in both the primary and general elections.
+		 * Type: double
+		 */
 		federal_funds: FormControl<number | null | undefined>,
 
 		/**
 		 * fundraising disbursements
+		 * Type: double
 		 */
 		fundraising_disbursements: FormControl<number | null | undefined>,
 
 		/**
 		 * individual contributions less refunds
+		 * Type: double
 		 */
 		individual_contributions_less_refunds: FormControl<number | null | undefined>,
 
 		/**
 		 * Contributions received
+		 * Type: double
 		 */
 		net_receipts: FormControl<number | null | undefined>,
 
-		/** Offsets to operating expenditures */
+		/**
+		 * Offsets to operating expenditures
+		 * Type: double
+		 */
 		offsets_to_operating_expenditures: FormControl<number | null | undefined>,
 
-		/** Total operating expenditures */
+		/**
+		 * Total operating expenditures
+		 * Type: double
+		 */
 		operating_expenditures: FormControl<number | null | undefined>,
 
-		/** Other disbursements */
+		/**
+		 * Other disbursements
+		 * Type: double
+		 */
 		other_disbursements: FormControl<number | null | undefined>,
 
 		/**
 		 * pac contributions less refunds
+		 * Type: double
 		 */
 		pac_contributions_less_refunds: FormControl<number | null | undefined>,
 
 		/**
 		 * party contributions less refunds
+		 * Type: double
 		 */
 		party_contributions_less_refunds: FormControl<number | null | undefined>,
 
 		/**
 		 * repayments loans made by candidate
+		 * Type: double
 		 */
 		repayments_loans_made_by_candidate: FormControl<number | null | undefined>,
 
 		/**
 		 * repayments other loans
+		 * Type: double
 		 */
 		repayments_other_loans: FormControl<number | null | undefined>,
 
 		/**
 		 * Net receipts, in millions
+		 * Type: double
 		 */
 		rounded_net_receipts: FormControl<number | null | undefined>,
 
 		/**
 		 * total contribution refunds
+		 * Type: double
 		 */
 		total_contribution_refunds: FormControl<number | null | undefined>,
 
 		/**
 		 * total loan repayments made
+		 * Type: double
 		 */
 		total_loan_repayments_made: FormControl<number | null | undefined>,
 
 		/**
 		 * transfers from affiliated committees
+		 * Type: double
 		 */
 		transfers_from_affiliated_committees: FormControl<number | null | undefined>,
 
 		/**
 		 * transfers to other authorized committees
+		 * Type: double
 		 */
 		transfers_to_other_authorized_committees: FormControl<number | null | undefined>,
 	}
@@ -15211,13 +19717,22 @@ export namespace MyNS {
 
 	export interface RadAnalyst {
 
-		/** ID of RAD analyst. */
+		/**
+		 * ID of RAD analyst.
+		 * Type: double
+		 */
 		analyst_id?: number | null;
 
-		/** Short ID of RAD analyst. */
+		/**
+		 * Short ID of RAD analyst.
+		 * Type: double
+		 */
 		analyst_short_id?: number | null;
 
-		/** Date of most recent RAD analyst assignment change */
+		/**
+		 * Date of most recent RAD analyst assignment change
+		 * Type: DateOnly
+		 */
 		assignment_update_date?: Date | null;
 
 		/**
@@ -15256,7 +19771,10 @@ export namespace MyNS {
 		 */
 		rad_branch?: string | null;
 
-		/** Telephone extension of RAD analyst */
+		/**
+		 * Telephone extension of RAD analyst
+		 * Type: double
+		 */
 		telephone_ext?: number | null;
 
 		/**
@@ -15267,13 +19785,22 @@ export namespace MyNS {
 	}
 	export interface RadAnalystFormProperties {
 
-		/** ID of RAD analyst. */
+		/**
+		 * ID of RAD analyst.
+		 * Type: double
+		 */
 		analyst_id: FormControl<number | null | undefined>,
 
-		/** Short ID of RAD analyst. */
+		/**
+		 * Short ID of RAD analyst.
+		 * Type: double
+		 */
 		analyst_short_id: FormControl<number | null | undefined>,
 
-		/** Date of most recent RAD analyst assignment change */
+		/**
+		 * Date of most recent RAD analyst assignment change
+		 * Type: DateOnly
+		 */
 		assignment_update_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -15312,7 +19839,10 @@ export namespace MyNS {
 		 */
 		rad_branch: FormControl<string | null | undefined>,
 
-		/** Telephone extension of RAD analyst */
+		/**
+		 * Telephone extension of RAD analyst
+		 * Type: double
+		 */
 		telephone_ext: FormControl<number | null | undefined>,
 
 		/**
@@ -15352,10 +19882,16 @@ export namespace MyNS {
 
 	export interface ReportDate {
 
-		/** Date the record was created */
+		/**
+		 * Date the record was created
+		 * Type: DateOnly
+		 */
 		create_date?: Date | null;
 
-		/** Date the report is due */
+		/**
+		 * Date the report is due
+		 * Type: DateOnly
+		 */
 		due_date?: Date | null;
 		report_type?: string | null;
 		report_type_full?: string | null;
@@ -15365,18 +19901,28 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year?: number | null;
 
-		/** Date the record was updated */
+		/**
+		 * Date the record was updated
+		 * Type: DateOnly
+		 */
 		update_date?: Date | null;
 	}
 	export interface ReportDateFormProperties {
 
-		/** Date the record was created */
+		/**
+		 * Date the record was created
+		 * Type: DateOnly
+		 */
 		create_date: FormControl<Date | null | undefined>,
 
-		/** Date the report is due */
+		/**
+		 * Date the report is due
+		 * Type: DateOnly
+		 */
 		due_date: FormControl<Date | null | undefined>,
 		report_type: FormControl<string | null | undefined>,
 		report_type_full: FormControl<string | null | undefined>,
@@ -15386,10 +19932,14 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year: FormControl<number | null | undefined>,
 
-		/** Date the record was updated */
+		/**
+		 * Date the record was updated
+		 * Type: DateOnly
+		 */
 		update_date: FormControl<Date | null | undefined>,
 	}
 	export function CreateReportDateFormGroup() {
@@ -15693,10 +20243,18 @@ export namespace MyNS {
 		conduit_committee_state?: string | null;
 		conduit_committee_street1?: string | null;
 		conduit_committee_street2?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		conduit_committee_zip?: number | null;
+
+		/** Type: double */
 		contribution_receipt_amount?: number | null;
+
+		/** Type: DateOnly */
 		contribution_receipt_date?: Date | null;
 		contributor?: CommitteeHistory;
+
+		/** Type: double */
 		contributor_aggregate_ytd?: number | null;
 
 		/** City of contributor */
@@ -15733,6 +20291,8 @@ export namespace MyNS {
 		entity_type_desc?: string | null;
 		fec_election_type_desc?: string | null;
 		fec_election_year?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
 		filing_form?: string | null;
 		image_number?: string | null;
@@ -15740,6 +20300,8 @@ export namespace MyNS {
 		is_individual?: boolean | null;
 		line_number?: string | null;
 		line_number_label?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id?: number | null;
 		load_date?: Date | null;
 		memo_code?: string | null;
@@ -15821,6 +20383,7 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year?: number | null;
 		schedule_type?: string | null;
@@ -15836,6 +20399,7 @@ export namespace MyNS {
 		 * have the date  of the transaction, we fall back to using the report year (report_year in both
 		 * tables) instead,  making the same cycle adjustment as necessary. If no transaction year is
 		 * specified, the results default to the most current cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		two_year_transaction_period?: number | null;
 		unused_contbr_id?: string | null;
@@ -15886,9 +20450,17 @@ export namespace MyNS {
 		conduit_committee_state: FormControl<string | null | undefined>,
 		conduit_committee_street1: FormControl<string | null | undefined>,
 		conduit_committee_street2: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		conduit_committee_zip: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		contribution_receipt_amount: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		contribution_receipt_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		contributor_aggregate_ytd: FormControl<number | null | undefined>,
 
 		/** City of contributor */
@@ -15925,6 +20497,8 @@ export namespace MyNS {
 		entity_type_desc: FormControl<string | null | undefined>,
 		fec_election_type_desc: FormControl<string | null | undefined>,
 		fec_election_year: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
 		filing_form: FormControl<string | null | undefined>,
 		image_number: FormControl<string | null | undefined>,
@@ -15932,6 +20506,8 @@ export namespace MyNS {
 		is_individual: FormControl<boolean | null | undefined>,
 		line_number: FormControl<string | null | undefined>,
 		line_number_label: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id: FormControl<number | null | undefined>,
 		load_date: FormControl<Date | null | undefined>,
 		memo_code: FormControl<string | null | undefined>,
@@ -16013,6 +20589,7 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year: FormControl<number | null | undefined>,
 		schedule_type: FormControl<string | null | undefined>,
@@ -16028,6 +20605,7 @@ export namespace MyNS {
 		 * have the date  of the transaction, we fall back to using the report year (report_year in both
 		 * tables) instead,  making the same cycle adjustment as necessary. If no transaction year is
 		 * specified, the results default to the most current cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		two_year_transaction_period: FormControl<number | null | undefined>,
 		unused_contbr_id: FormControl<string | null | undefined>,
@@ -16127,6 +20705,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count?: number | null;
 
@@ -16135,6 +20714,7 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
@@ -16144,7 +20724,10 @@ export namespace MyNS {
 		 */
 		employer: string;
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 	export interface ScheduleAByEmployerFormProperties {
@@ -16157,6 +20740,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -16165,6 +20749,7 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
@@ -16174,7 +20759,10 @@ export namespace MyNS {
 		 */
 		employer: FormControl<string | null | undefined>,
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleAByEmployerFormGroup() {
@@ -16210,6 +20798,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count?: number | null;
 
@@ -16218,6 +20807,7 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
@@ -16227,7 +20817,10 @@ export namespace MyNS {
 		 */
 		occupation: string;
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 	export interface ScheduleAByOccupationFormProperties {
@@ -16240,6 +20833,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -16248,6 +20842,7 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
@@ -16257,7 +20852,10 @@ export namespace MyNS {
 		 */
 		occupation: FormControl<string | null | undefined>,
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleAByOccupationFormGroup() {
@@ -16293,6 +20891,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count?: number | null;
 
@@ -16301,13 +20900,20 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: number;
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 	export interface ScheduleABySizeFormProperties {
@@ -16320,6 +20926,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -16328,13 +20935,20 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleABySizeFormGroup() {
@@ -16350,16 +20964,32 @@ export namespace MyNS {
 
 	export interface ScheduleABySizeCandidate {
 		candidate_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface ScheduleABySizeCandidateFormProperties {
 		candidate_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleABySizeCandidateFormGroup() {
@@ -16407,6 +21037,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count?: number | null;
 
@@ -16415,6 +21046,7 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
@@ -16430,7 +21062,10 @@ export namespace MyNS {
 		 */
 		state_full: string;
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 	export interface ScheduleAByStateFormProperties {
@@ -16443,6 +21078,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -16451,6 +21087,7 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
@@ -16466,7 +21103,10 @@ export namespace MyNS {
 		 */
 		state_full: FormControl<string | null | undefined>,
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleAByStateFormGroup() {
@@ -16483,18 +21123,30 @@ export namespace MyNS {
 
 	export interface ScheduleAByStateCandidate {
 		candidate_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
 		state?: string | null;
 		state_full?: string | null;
+
+		/** Type: double */
 		total?: number | null;
 	}
 	export interface ScheduleAByStateCandidateFormProperties {
 		candidate_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
 		state: FormControl<string | null | undefined>,
 		state_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleAByStateCandidateFormGroup() {
@@ -16577,7 +21229,10 @@ export namespace MyNS {
 		 */
 		committee_type_full?: string | null;
 
-		/** Number of records making up the total. */
+		/**
+		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/**
@@ -16586,6 +21241,7 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle?: number | null;
 
@@ -16595,7 +21251,10 @@ export namespace MyNS {
 		/** US state or territory */
 		state_full?: string | null;
 
-		/** The calculated total. */
+		/**
+		 * The calculated total.
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 	export interface ScheduleAByStateRecipientTotalsFormProperties {
@@ -16642,7 +21301,10 @@ export namespace MyNS {
 		 */
 		committee_type_full: FormControl<string | null | undefined>,
 
-		/** Number of records making up the total. */
+		/**
+		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
@@ -16651,6 +21313,7 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
@@ -16660,7 +21323,10 @@ export namespace MyNS {
 		/** US state or territory */
 		state_full: FormControl<string | null | undefined>,
 
-		/** The calculated total. */
+		/**
+		 * The calculated total.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleAByStateRecipientTotalsFormGroup() {
@@ -16698,6 +21364,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count?: number | null;
 
@@ -16706,6 +21373,7 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
@@ -16715,7 +21383,10 @@ export namespace MyNS {
 		/** US state or territory */
 		state_full?: string | null;
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total?: number | null;
 
 		/** Required */
@@ -16731,6 +21402,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -16739,6 +21411,7 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
@@ -16748,7 +21421,10 @@ export namespace MyNS {
 		/** US state or territory */
 		state_full: FormControl<string | null | undefined>,
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -16796,9 +21472,17 @@ export namespace MyNS {
 		conduit_committee_state?: string | null;
 		conduit_committee_street1?: string | null;
 		conduit_committee_street2?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		conduit_committee_zip?: number | null;
+
+		/** Type: double */
 		contribution_receipt_amount?: number | null;
+
+		/** Type: DateOnly */
 		contribution_receipt_date?: Date | null;
+
+		/** Type: double */
 		contributor_aggregate_ytd?: number | null;
 
 		/** City of contributor */
@@ -16822,12 +21506,17 @@ export namespace MyNS {
 		/** Zip code of contributor */
 		contributor_zip?: string | null;
 		csv_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle?: number | null;
 		entity_type?: string | null;
 		fec_election_type_desc?: string | null;
 		fec_url?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number: number;
 		filing?: EFilings;
 
@@ -16842,7 +21531,10 @@ export namespace MyNS {
 		pdf_url?: string | null;
 		pgo?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		related_line_number: number;
 		report_type?: string | null;
 		transaction_id?: string | null;
@@ -16863,9 +21555,17 @@ export namespace MyNS {
 		conduit_committee_state: FormControl<string | null | undefined>,
 		conduit_committee_street1: FormControl<string | null | undefined>,
 		conduit_committee_street2: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		conduit_committee_zip: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		contribution_receipt_amount: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		contribution_receipt_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		contributor_aggregate_ytd: FormControl<number | null | undefined>,
 
 		/** City of contributor */
@@ -16889,12 +21589,17 @@ export namespace MyNS {
 		/** Zip code of contributor */
 		contributor_zip: FormControl<string | null | undefined>,
 		csv_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cycle: FormControl<number | null | undefined>,
 		entity_type: FormControl<string | null | undefined>,
 		fec_election_type_desc: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number: FormControl<number | null | undefined>,
 
 		/**
@@ -16908,7 +21613,10 @@ export namespace MyNS {
 		pdf_url: FormControl<string | null | undefined>,
 		pgo: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		related_line_number: FormControl<number | null | undefined>,
 		report_type: FormControl<string | null | undefined>,
 		transaction_id: FormControl<string | null | undefined>,
@@ -17018,6 +21726,8 @@ export namespace MyNS {
 		candidate_suffix?: string | null;
 		category_code?: string | null;
 		category_code_full?: string | null;
+
+		/** Type: DateOnly */
 		comm_dt?: Date | null;
 		committee?: CommitteeHistory;
 
@@ -17030,8 +21740,14 @@ export namespace MyNS {
 		conduit_committee_state?: string | null;
 		conduit_committee_street1?: string | null;
 		conduit_committee_street2?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		conduit_committee_zip?: number | null;
+
+		/** Type: double */
 		disbursement_amount?: number | null;
+
+		/** Type: DateOnly */
 		disbursement_date?: Date | null;
 		disbursement_description?: string | null;
 		disbursement_purpose_category?: string | null;
@@ -17043,11 +21759,15 @@ export namespace MyNS {
 		entity_type_desc?: string | null;
 		fec_election_type_desc?: string | null;
 		fec_election_year?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
 		filing_form?: string | null;
 		image_number?: string | null;
 		line_number?: string | null;
 		line_number_label?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id?: number | null;
 		load_date?: Date | null;
 		memo_code?: string | null;
@@ -17131,10 +21851,13 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year?: number | null;
 		schedule_type?: string | null;
 		schedule_type_full?: string | null;
+
+		/** Type: double */
 		semi_annual_bundled_refund?: number | null;
 
 		/** Max length: 1 */
@@ -17156,6 +21879,7 @@ export namespace MyNS {
 		 * have the date  of the transaction, we fall back to using the report year (report_year in both
 		 * tables) instead,  making the same cycle adjustment as necessary. If no transaction year is
 		 * specified, the results default to the most current cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		two_year_transaction_period?: number | null;
 		unused_recipient_committee_id?: string | null;
@@ -17193,6 +21917,8 @@ export namespace MyNS {
 		candidate_suffix: FormControl<string | null | undefined>,
 		category_code: FormControl<string | null | undefined>,
 		category_code_full: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		comm_dt: FormControl<Date | null | undefined>,
 
 		/**
@@ -17204,8 +21930,14 @@ export namespace MyNS {
 		conduit_committee_state: FormControl<string | null | undefined>,
 		conduit_committee_street1: FormControl<string | null | undefined>,
 		conduit_committee_street2: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		conduit_committee_zip: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		disbursement_amount: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		disbursement_date: FormControl<Date | null | undefined>,
 		disbursement_description: FormControl<string | null | undefined>,
 		disbursement_purpose_category: FormControl<string | null | undefined>,
@@ -17217,11 +21949,15 @@ export namespace MyNS {
 		entity_type_desc: FormControl<string | null | undefined>,
 		fec_election_type_desc: FormControl<string | null | undefined>,
 		fec_election_year: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
 		filing_form: FormControl<string | null | undefined>,
 		image_number: FormControl<string | null | undefined>,
 		line_number: FormControl<string | null | undefined>,
 		line_number_label: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id: FormControl<number | null | undefined>,
 		load_date: FormControl<Date | null | undefined>,
 		memo_code: FormControl<string | null | undefined>,
@@ -17304,10 +22040,13 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year: FormControl<number | null | undefined>,
 		schedule_type: FormControl<string | null | undefined>,
 		schedule_type_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		semi_annual_bundled_refund: FormControl<number | null | undefined>,
 
 		/** Max length: 1 */
@@ -17329,6 +22068,7 @@ export namespace MyNS {
 		 * have the date  of the transaction, we fall back to using the report year (report_year in both
 		 * tables) instead,  making the same cycle adjustment as necessary. If no transaction year is
 		 * specified, the results default to the most current cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		two_year_transaction_period: FormControl<number | null | undefined>,
 		unused_recipient_committee_id: FormControl<string | null | undefined>,
@@ -17427,6 +22167,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count?: number | null;
 
@@ -17435,16 +22176,19 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memo_count?: number | null;
 
 		/**
 		 * Schedule B disbursements aggregated by memoed items only
+		 * Type: double
 		 */
 		memo_total?: number | null;
 
@@ -17456,6 +22200,7 @@ export namespace MyNS {
 
 		/**
 		 * Schedule B disbursements aggregated by non-memoed items only
+		 * Type: double
 		 */
 		total?: number | null;
 	}
@@ -17469,6 +22214,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -17477,16 +22223,19 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memo_count: FormControl<number | null | undefined>,
 
 		/**
 		 * Schedule B disbursements aggregated by memoed items only
+		 * Type: double
 		 */
 		memo_total: FormControl<number | null | undefined>,
 
@@ -17498,6 +22247,7 @@ export namespace MyNS {
 
 		/**
 		 * Schedule B disbursements aggregated by non-memoed items only
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -17534,11 +22284,15 @@ export namespace MyNS {
 		 */
 		committee_id: string;
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		committee_total_disbursements?: number | null;
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count?: number | null;
 
@@ -17547,18 +22301,23 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memo_count?: number | null;
 
 		/**
 		 * Schedule B disbursements aggregated by memoed items only
+		 * Type: double
 		 */
 		memo_total?: number | null;
+
+		/** Type: double */
 		recipient_disbursement_percent?: number | null;
 
 		/**
@@ -17569,6 +22328,7 @@ export namespace MyNS {
 
 		/**
 		 * Schedule B disbursements aggregated by non-memoed items only
+		 * Type: double
 		 */
 		total?: number | null;
 	}
@@ -17580,11 +22340,15 @@ export namespace MyNS {
 		 */
 		committee_id: FormControl<string | null | undefined>,
 
-		/** Disbursements */
+		/**
+		 * Disbursements
+		 * Type: double
+		 */
 		committee_total_disbursements: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -17593,18 +22357,23 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memo_count: FormControl<number | null | undefined>,
 
 		/**
 		 * Schedule B disbursements aggregated by memoed items only
+		 * Type: double
 		 */
 		memo_total: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		recipient_disbursement_percent: FormControl<number | null | undefined>,
 
 		/**
@@ -17615,6 +22384,7 @@ export namespace MyNS {
 
 		/**
 		 * Schedule B disbursements aggregated by non-memoed items only
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -17644,6 +22414,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count?: number | null;
 
@@ -17652,16 +22423,19 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memo_count?: number | null;
 
 		/**
 		 * Schedule B disbursements aggregated by memoed items only
+		 * Type: double
 		 */
 		memo_total?: number | null;
 
@@ -17674,6 +22448,7 @@ export namespace MyNS {
 
 		/**
 		 * Schedule B disbursements aggregated by non-memoed items only
+		 * Type: double
 		 */
 		total?: number | null;
 	}
@@ -17688,6 +22463,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -17696,16 +22472,19 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memo_count: FormControl<number | null | undefined>,
 
 		/**
 		 * Schedule B disbursements aggregated by memoed items only
+		 * Type: double
 		 */
 		memo_total: FormControl<number | null | undefined>,
 
@@ -17718,6 +22497,7 @@ export namespace MyNS {
 
 		/**
 		 * Schedule B disbursements aggregated by non-memoed items only
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -17775,14 +22555,21 @@ export namespace MyNS {
 		 */
 		committee_id?: string | null;
 		csv_url?: string | null;
+
+		/** Type: double */
 		disbursement_amount?: number | null;
+
+		/** Type: DateOnly */
 		disbursement_date?: Date | null;
 		disbursement_description?: string | null;
 		disbursement_type?: string | null;
 		entity_type?: string | null;
 		fec_url?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number: number;
 		filing?: EFilings;
 
@@ -17804,9 +22591,14 @@ export namespace MyNS {
 		recipient_suffix?: string | null;
 		recipient_zip?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		related_line_number: number;
 		report_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		semi_annual_bundled_refund?: number | null;
 		transaction_id?: string | null;
 	}
@@ -17824,14 +22616,21 @@ export namespace MyNS {
 		 */
 		committee_id: FormControl<string | null | undefined>,
 		csv_url: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		disbursement_amount: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		disbursement_date: FormControl<Date | null | undefined>,
 		disbursement_description: FormControl<string | null | undefined>,
 		disbursement_type: FormControl<string | null | undefined>,
 		entity_type: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number: FormControl<number | null | undefined>,
 
 		/**
@@ -17852,9 +22651,14 @@ export namespace MyNS {
 		recipient_suffix: FormControl<string | null | undefined>,
 		recipient_zip: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		related_line_number: FormControl<number | null | undefined>,
 		report_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		semi_annual_bundled_refund: FormControl<number | null | undefined>,
 		transaction_id: FormControl<string | null | undefined>,
 	}
@@ -17940,6 +22744,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of times the report has been amended.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amendment_number?: number | null;
 		back_reference_schedule_name?: string | null;
@@ -17980,7 +22785,11 @@ export namespace MyNS {
 		conduit_committee_state?: string | null;
 		conduit_committee_street1?: string | null;
 		conduit_committee_street2?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		conduit_committee_zip?: number | null;
+
+		/** Type: DateOnly */
 		dissemination_date?: Date | null;
 
 		/**
@@ -17998,22 +22807,34 @@ export namespace MyNS {
 		 * Runoff etc.
 		 */
 		election_type_full?: string | null;
+
+		/** Type: double */
 		expenditure_amount?: number | null;
+
+		/** Type: DateOnly */
 		expenditure_date?: Date | null;
 		expenditure_description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
 		filer_first_name?: string | null;
 		filer_last_name?: string | null;
 		filer_middle_name?: string | null;
 		filer_prefix?: string | null;
 		filer_suffix?: string | null;
+
+		/** Type: DateOnly */
 		filing_date?: Date | null;
 		filing_form?: string | null;
 		image_number?: string | null;
+
+		/** Type: DateOnly */
 		independent_sign_date?: Date | null;
 		independent_sign_name?: string | null;
 		is_notice?: boolean | null;
 		line_number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id?: number | null;
 		memo_code?: string | null;
 		memo_code_full?: string | null;
@@ -18024,9 +22845,15 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent?: boolean | null;
+
+		/** Type: DateOnly */
 		notary_commission_expiration_date?: Date | null;
+
+		/** Type: DateOnly */
 		notary_sign_date?: Date | null;
 		notary_sign_name?: string | null;
+
+		/** Type: double */
 		office_total_ytd?: number | null;
 		original_sub_id?: string | null;
 		payee_city?: string | null;
@@ -18041,6 +22868,8 @@ export namespace MyNS {
 		payee_suffix?: string | null;
 		payee_zip?: string | null;
 		pdf_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		previous_file_number?: number | null;
 
 		/**
@@ -18102,6 +22931,7 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year?: number | null;
 		schedule_type?: string | null;
@@ -18128,6 +22958,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of times the report has been amended.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amendment_number: FormControl<number | null | undefined>,
 		back_reference_schedule_name: FormControl<string | null | undefined>,
@@ -18167,7 +22998,11 @@ export namespace MyNS {
 		conduit_committee_state: FormControl<string | null | undefined>,
 		conduit_committee_street1: FormControl<string | null | undefined>,
 		conduit_committee_street2: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		conduit_committee_zip: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		dissemination_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -18185,22 +23020,34 @@ export namespace MyNS {
 		 * Runoff etc.
 		 */
 		election_type_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		expenditure_amount: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		expenditure_date: FormControl<Date | null | undefined>,
 		expenditure_description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
 		filer_first_name: FormControl<string | null | undefined>,
 		filer_last_name: FormControl<string | null | undefined>,
 		filer_middle_name: FormControl<string | null | undefined>,
 		filer_prefix: FormControl<string | null | undefined>,
 		filer_suffix: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		filing_date: FormControl<Date | null | undefined>,
 		filing_form: FormControl<string | null | undefined>,
 		image_number: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		independent_sign_date: FormControl<Date | null | undefined>,
 		independent_sign_name: FormControl<string | null | undefined>,
 		is_notice: FormControl<boolean | null | undefined>,
 		line_number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id: FormControl<number | null | undefined>,
 		memo_code: FormControl<string | null | undefined>,
 		memo_code_full: FormControl<string | null | undefined>,
@@ -18211,9 +23058,15 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent: FormControl<boolean | null | undefined>,
+
+		/** Type: DateOnly */
 		notary_commission_expiration_date: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		notary_sign_date: FormControl<Date | null | undefined>,
 		notary_sign_name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		office_total_ytd: FormControl<number | null | undefined>,
 		original_sub_id: FormControl<string | null | undefined>,
 		payee_city: FormControl<string | null | undefined>,
@@ -18228,6 +23081,8 @@ export namespace MyNS {
 		payee_suffix: FormControl<string | null | undefined>,
 		payee_zip: FormControl<string | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		previous_file_number: FormControl<number | null | undefined>,
 
 		/**
@@ -18289,6 +23144,7 @@ export namespace MyNS {
 		 * year from the coverage ending date.
 		 * Forms without coverage date -
 		 * year from the receipt date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		report_year: FormControl<number | null | undefined>,
 		schedule_type: FormControl<string | null | undefined>,
@@ -18389,6 +23245,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count?: number | null;
 
@@ -18397,6 +23254,7 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
@@ -18406,7 +23264,10 @@ export namespace MyNS {
 		 */
 		support_oppose_indicator: string;
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 	export interface ScheduleEByCandidateFormProperties {
@@ -18417,6 +23278,7 @@ export namespace MyNS {
 
 		/**
 		 * Number of records making up the total.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
@@ -18425,6 +23287,7 @@ export namespace MyNS {
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
 
@@ -18434,7 +23297,10 @@ export namespace MyNS {
 		 */
 		support_oppose_indicator: FormControl<string | null | undefined>,
 
-		/** Sum of transactions */
+		/**
+		 * Sum of transactions
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateScheduleEByCandidateFormGroup() {
@@ -18500,15 +23366,23 @@ export namespace MyNS {
 		/**
 		 * Date when a PAC distrubutes or disseminates an independent expenditure
 		 * and pays for it in the same reporting period
+		 * Type: DateOnly
 		 */
 		dissemination_date?: Date | null;
 		entity_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expenditure_amount?: number | null;
+
+		/** Type: DateOnly */
 		expenditure_date?: Date | null;
 		expenditure_description?: string | null;
 		fec_url?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number: number;
 		filer_first_name?: string | null;
 		filer_last_name?: string | null;
@@ -18532,7 +23406,11 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent?: boolean | null;
+
+		/** Type: DateOnly */
 		notary_sign_date?: Date | null;
+
+		/** Type: float */
 		office_total_ytd?: number | null;
 		payee_city?: string | null;
 		payee_first_name?: string | null;
@@ -18547,7 +23425,10 @@ export namespace MyNS {
 		payee_zip?: string | null;
 		pdf_url?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		related_line_number: number;
 		report_type?: string | null;
 
@@ -18591,15 +23472,23 @@ export namespace MyNS {
 		/**
 		 * Date when a PAC distrubutes or disseminates an independent expenditure
 		 * and pays for it in the same reporting period
+		 * Type: DateOnly
 		 */
 		dissemination_date: FormControl<Date | null | undefined>,
 		entity_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expenditure_amount: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		expenditure_date: FormControl<Date | null | undefined>,
 		expenditure_description: FormControl<string | null | undefined>,
 		fec_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_number: FormControl<number | null | undefined>,
 		filer_first_name: FormControl<string | null | undefined>,
 		filer_last_name: FormControl<string | null | undefined>,
@@ -18622,7 +23511,11 @@ export namespace MyNS {
 		 * Report is either new or is the most-recently filed amendment
 		 */
 		most_recent: FormControl<boolean | null | undefined>,
+
+		/** Type: DateOnly */
 		notary_sign_date: FormControl<Date | null | undefined>,
+
+		/** Type: float */
 		office_total_ytd: FormControl<number | null | undefined>,
 		payee_city: FormControl<string | null | undefined>,
 		payee_first_name: FormControl<string | null | undefined>,
@@ -18637,7 +23530,10 @@ export namespace MyNS {
 		payee_zip: FormControl<string | null | undefined>,
 		pdf_url: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		related_line_number: FormControl<number | null | undefined>,
 		report_type: FormControl<string | null | undefined>,
 
@@ -18770,22 +23666,36 @@ export namespace MyNS {
 		conduit_committee_state?: string | null;
 		conduit_committee_street1?: string | null;
 		conduit_committee_street2?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		conduit_committee_zip?: number | null;
+
+		/** Type: double */
 		cycle?: number | null;
 		direct_candidate_support_activity_indicator?: string | null;
+
+		/** Type: double */
 		disbursement_amount?: number | null;
 		disbursement_type?: string | null;
 		disbursement_type_full?: string | null;
 		entity_type?: string | null;
 		entity_type_desc?: string | null;
+
+		/** Type: double */
 		event_amount_year_to_date?: number | null;
 		event_purpose_category_type?: string | null;
 		event_purpose_category_type_full?: string | null;
+
+		/** Type: DateOnly */
 		event_purpose_date?: Date | null;
 		event_purpose_description?: string | null;
 		event_purpose_name?: string | null;
 		exempt_activity_indicator?: string | null;
+
+		/** Type: double */
 		federal_share?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number?: number | null;
 		filer_committee_name?: string | null;
 		filing_form?: string | null;
@@ -18793,11 +23703,15 @@ export namespace MyNS {
 		general_voter_drive_activity_indicator?: string | null;
 		image_number?: string | null;
 		line_number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id?: number | null;
 		load_date?: Date | null;
 		memo_code?: string | null;
 		memo_code_description?: string | null;
 		memo_text?: string | null;
+
+		/** Type: double */
 		nonfederal_share?: number | null;
 		original_sub_id?: string | null;
 		payee_city?: string | null;
@@ -18811,6 +23725,8 @@ export namespace MyNS {
 		payee_zip?: string | null;
 		published_committee_reference_parity_check?: string | null;
 		report_type?: string | null;
+
+		/** Type: double */
 		report_year?: number | null;
 		schedule_type?: string | null;
 		schedule_type_full?: string | null;
@@ -18856,22 +23772,36 @@ export namespace MyNS {
 		conduit_committee_state: FormControl<string | null | undefined>,
 		conduit_committee_street1: FormControl<string | null | undefined>,
 		conduit_committee_street2: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		conduit_committee_zip: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		cycle: FormControl<number | null | undefined>,
 		direct_candidate_support_activity_indicator: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		disbursement_amount: FormControl<number | null | undefined>,
 		disbursement_type: FormControl<string | null | undefined>,
 		disbursement_type_full: FormControl<string | null | undefined>,
 		entity_type: FormControl<string | null | undefined>,
 		entity_type_desc: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		event_amount_year_to_date: FormControl<number | null | undefined>,
 		event_purpose_category_type: FormControl<string | null | undefined>,
 		event_purpose_category_type_full: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		event_purpose_date: FormControl<Date | null | undefined>,
 		event_purpose_description: FormControl<string | null | undefined>,
 		event_purpose_name: FormControl<string | null | undefined>,
 		exempt_activity_indicator: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		federal_share: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		file_number: FormControl<number | null | undefined>,
 		filer_committee_name: FormControl<string | null | undefined>,
 		filing_form: FormControl<string | null | undefined>,
@@ -18879,11 +23809,15 @@ export namespace MyNS {
 		general_voter_drive_activity_indicator: FormControl<string | null | undefined>,
 		image_number: FormControl<string | null | undefined>,
 		line_number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id: FormControl<number | null | undefined>,
 		load_date: FormControl<Date | null | undefined>,
 		memo_code: FormControl<string | null | undefined>,
 		memo_code_description: FormControl<string | null | undefined>,
 		memo_text: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		nonfederal_share: FormControl<number | null | undefined>,
 		original_sub_id: FormControl<string | null | undefined>,
 		payee_city: FormControl<string | null | undefined>,
@@ -18897,6 +23831,8 @@ export namespace MyNS {
 		payee_zip: FormControl<string | null | undefined>,
 		published_committee_reference_parity_check: FormControl<string | null | undefined>,
 		report_type: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		report_year: FormControl<number | null | undefined>,
 		schedule_type: FormControl<string | null | undefined>,
 		schedule_type_full: FormControl<string | null | undefined>,
@@ -19080,21 +24016,45 @@ export namespace MyNS {
 	}
 
 	export interface TotalByOffice {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		election_year?: number | null;
 		office?: string | null;
+
+		/** Type: double */
 		total_disbursements?: number | null;
+
+		/** Type: double */
 		total_individual_itemized_contributions?: number | null;
+
+		/** Type: double */
 		total_other_political_committee_contributions?: number | null;
+
+		/** Type: double */
 		total_receipts?: number | null;
+
+		/** Type: double */
 		total_transfers_from_other_authorized_committee?: number | null;
 	}
 	export interface TotalByOfficeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		election_year: FormControl<number | null | undefined>,
 		office: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_individual_itemized_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_other_political_committee_contributions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_receipts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_transfers_from_other_authorized_committee: FormControl<number | null | undefined>,
 	}
 	export function CreateTotalByOfficeFormGroup() {
@@ -19111,17 +24071,29 @@ export namespace MyNS {
 	}
 
 	export interface TotalByOfficeByParty {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		election_year?: number | null;
 		office?: string | null;
 		party?: string | null;
+
+		/** Type: double */
 		total_disbursements?: number | null;
+
+		/** Type: double */
 		total_receipts?: number | null;
 	}
 	export interface TotalByOfficeByPartyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		election_year: FormControl<number | null | undefined>,
 		office: FormControl<string | null | undefined>,
 		party: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		total_disbursements: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		total_receipts: FormControl<number | null | undefined>,
 	}
 	export function CreateTotalByOfficeByPartyFormGroup() {
@@ -19178,6 +24150,8 @@ export namespace MyNS {
 		 * The rest is sequence.
 		 */
 		candidate_ids?: Array<string>;
+
+		/** Type: double */
 		cash_on_hand_end_period?: number | null;
 
 		/**
@@ -19241,6 +24215,7 @@ export namespace MyNS {
 		 * date but before expiration date in Form 1s) The cycle begins with
 		 * an odd year and is named for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: number;
 
@@ -19263,6 +24238,8 @@ export namespace MyNS {
 		 * ('F3', 'F3X', 'F3P', 'F3L', 'F4', 'F5', 'F7', 'F13') during this cycle.
 		 */
 		cycles_has_financial?: Array<number>;
+
+		/** Type: double */
 		debts_owed_by_committee?: number | null;
 
 		/**
@@ -19288,6 +24265,8 @@ export namespace MyNS {
 		 * Max length: 25
 		 */
 		designation_full?: string | null;
+
+		/** Type: double */
 		disbursements?: number | null;
 
 		/**
@@ -19303,11 +24282,19 @@ export namespace MyNS {
 		 */
 		filing_frequency?: string | null;
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date?: Date | null;
+
+		/** Type: double */
 		independent_expenditures?: number | null;
 
 		/**
@@ -19318,19 +24305,27 @@ export namespace MyNS {
 
 		/**
 		 * The latest two year election cycle that the committee has filings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_activity?: number | null;
 
 		/**
 		 * The latest two year election cycle that the committee files the financial reports
 		 * ('F3', 'F3X', 'F3P', 'F3L', 'F4', 'F5', 'F7', 'F13').
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_financial?: number | null;
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date?: Date | null;
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date?: Date | null;
 
 		/**
@@ -19374,6 +24369,8 @@ export namespace MyNS {
 		 * Max length: 50
 		 */
 		party_full?: string | null;
+
+		/** Type: double */
 		receipts?: number | null;
 
 		/**
@@ -19419,6 +24416,8 @@ export namespace MyNS {
 		 * Max length: 100
 		 */
 		affiliated_committee_name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		cash_on_hand_end_period: FormControl<number | null | undefined>,
 
 		/**
@@ -19482,8 +24481,11 @@ export namespace MyNS {
 		 * date but before expiration date in Form 1s) The cycle begins with
 		 * an odd year and is named for its ending, even year.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cycle: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		debts_owed_by_committee: FormControl<number | null | undefined>,
 
 		/**
@@ -19509,6 +24511,8 @@ export namespace MyNS {
 		 * Max length: 25
 		 */
 		designation_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		disbursements: FormControl<number | null | undefined>,
 
 		/**
@@ -19524,11 +24528,19 @@ export namespace MyNS {
 		 */
 		filing_frequency: FormControl<string | null | undefined>,
 
-		/** The day the FEC received the committee's first Form 1 */
+		/**
+		 * The day the FEC received the committee's first Form 1
+		 * Type: DateOnly
+		 */
 		first_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's first filing. This is usually a Form 1 committee registration. */
+		/**
+		 * The day the FEC received the committee's first filing. This is usually a Form 1 committee registration.
+		 * Type: DateOnly
+		 */
 		first_file_date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		independent_expenditures: FormControl<number | null | undefined>,
 
 		/**
@@ -19538,19 +24550,27 @@ export namespace MyNS {
 
 		/**
 		 * The latest two year election cycle that the committee has filings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_activity: FormControl<number | null | undefined>,
 
 		/**
 		 * The latest two year election cycle that the committee files the financial reports
 		 * ('F3', 'F3X', 'F3P', 'F3L', 'F4', 'F5', 'F7', 'F13').
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		last_cycle_has_financial: FormControl<number | null | undefined>,
 
-		/** The day the FEC received the committee's most recent Form 1 */
+		/**
+		 * The day the FEC received the committee's most recent Form 1
+		 * Type: DateOnly
+		 */
 		last_f1_date: FormControl<Date | null | undefined>,
 
-		/** The day the FEC received the committee's most recent filing */
+		/**
+		 * The day the FEC received the committee's most recent filing
+		 * Type: DateOnly
+		 */
 		last_file_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -19594,6 +24614,8 @@ export namespace MyNS {
 		 * Max length: 50
 		 */
 		party_full: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		receipts: FormControl<number | null | undefined>,
 
 		/**
@@ -19732,6 +24754,7 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} q The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records.
 		 * @param {string} sub_category_id 
 		 * The finding id of an audit. Finding are a category of broader issues. Each category has an unique ID.
@@ -19756,6 +24779,7 @@ export namespace MyNS {
 		 * The rest is sequence.
 		 * @param {Array<string>} qq Name of candidate running for office
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} sort 
 		 * Provide a field to sort by. Use `-` for descending order. ex: `-case_no`
 		 * @param {number} min_election_cycle 
@@ -19764,6 +24788,7 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} audit_id 
 		 * The audit issue. Each subcategory has an unique ID
 		 * @param {string} committee_designation Type of committee:
@@ -19794,6 +24819,7 @@ export namespace MyNS {
 		 *         - Z national party non-federal account
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {string} primary_category_id 
@@ -19811,9 +24837,11 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} primary_category_id 
 		 * Audit category ID (table PK)
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
@@ -19845,9 +24873,11 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} primary_category_id 
 		 * Audit category ID (table PK)
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
@@ -19888,19 +24918,26 @@ export namespace MyNS {
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} max_end_date 
 		 * The maximum end date.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Array<string>} summary Longer description of event
 		 * @param {Date} min_end_date 
 		 * The minimum end date.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Date} min_start_date 
 		 * The minimum start date.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Date} max_start_date 
 		 * The maximum start date.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {number} event_id An unique ID for an event. Useful for downloading a single event to your calendar. This ID is not a permanent, persistent ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Calendar_datesGetByCalendar_category_idAndApi_keyAndDescriptionAndSort_nulls_lastAndSort_null_onlyAndPageAndMax_end_dateAndSummaryAndMin_end_dateAndSort_hide_nullAndMin_start_dateAndMax_start_dateAndPer_pageAndSortAndEvent_id(calendar_category_id: Array<number> | null | undefined, api_key: string, description: Array<string> | null | undefined, sort_nulls_last: boolean | null | undefined, sort_null_only: boolean | null | undefined, page: number | null | undefined, max_end_date: Date | null | undefined, summary: Array<string> | null | undefined, min_end_date: Date | null | undefined, sort_hide_null: boolean | null | undefined, min_start_date: Date | null | undefined, max_start_date: Date | null | undefined, per_page: number | null | undefined, sort: string | null | undefined, event_id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -19929,19 +24966,26 @@ export namespace MyNS {
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} max_end_date 
 		 * The maximum end date.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Array<string>} summary Longer description of event
 		 * @param {Date} min_end_date 
 		 * The minimum end date.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Date} min_start_date 
 		 * The minimum start date.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} max_start_date 
 		 * The maximum start date.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {number} event_id An unique ID for an event. Useful for downloading a single event to your calendar. This ID is not a permanent, persistent ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Calendar_datesExportGetByCalendar_category_idAndApi_keyAndDescriptionAndSort_nulls_lastAndSort_null_onlyAndPageAndMax_end_dateAndSummaryAndMin_end_dateAndSort_hide_nullAndMin_start_dateAndPer_pageAndMax_start_dateAndRendererAndSortAndEvent_id(calendar_category_id: Array<number> | null | undefined, api_key: string, description: Array<string> | null | undefined, sort_nulls_last: boolean | null | undefined, sort_null_only: boolean | null | undefined, page: number | null | undefined, max_end_date: Date | null | undefined, summary: Array<string> | null | undefined, min_end_date: Date | null | undefined, sort_hide_null: boolean | null | undefined, min_start_date: Date | null | undefined, per_page: number | null | undefined, max_start_date: Date | null | undefined, renderer: Calendar_datesExportGetByCalendar_category_idAndApi_keyAndDescriptionAndSort_nulls_lastAndSort_null_onlyAndPageAndMax_end_dateAndSummaryAndMin_end_dateAndSort_hide_nullAndMin_start_dateAndPer_pageAndMax_start_dateAndRendererAndSortAndEvent_idRenderer | null | undefined, sort: string | null | undefined, event_id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -19966,6 +25010,7 @@ export namespace MyNS {
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} name Name (candidate or committee) to search for. Alias for 'q'.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} election_year Year of election
 		 * @param {Array<string>} office Federal office candidate runs for: H, S or P
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
@@ -19981,6 +25026,7 @@ export namespace MyNS {
 		 * @param {Array<string>} party Three-letter code for the party affiliated with a candidate or committee. For example, DEM for Democratic Party and REP for Republican Party.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state US state or territory where a candidate runs for office
 		 * @param {string} year Retrieve records pertaining to a particular election year. The list of election years is based on a candidate filing a statement of candidacy (F2) for that year.
 		 * @param {string} candidate_id 
@@ -20027,10 +25073,12 @@ export namespace MyNS {
 		 * an odd year and is named for its ending, even year.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} year A year that the committee was active— (after original registration date     or filing but before expiration date)
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} filing_frequency The one-letter 
 		 *     code of the filing frequency:
 		 *          - A Administratively terminated
@@ -20078,9 +25126,11 @@ export namespace MyNS {
 		 * `False` indicates that two year election cycle.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} designation The one-letter designation code of the organization:
 		 *          - A authorized by a candidate
 		 *          - J joint fundraising committee
@@ -20113,9 +25163,11 @@ export namespace MyNS {
 		 * `False` indicates that two year election cycle.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} designation The one-letter designation code of the organization:
 		 *          - A authorized by a candidate
 		 *          - J joint fundraising committee
@@ -20128,6 +25180,7 @@ export namespace MyNS {
 		 * A two year election cycle that the committee was active- (after original registration
 		 * date but before expiration date in Form 1s) The cycle begins with
 		 * an odd year and is named for its ending, even year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} candidate_id 
 		 * A unique identifier assigned to each candidate registered with the FEC.
 		 * If a person runs for several offices, that person will have separate candidate IDs for each office.
@@ -20152,6 +25205,7 @@ export namespace MyNS {
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 * @param {Date} min_receipt_date 
 		 * Selects all filings received after this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Array<string>} form_category 
 		 * The forms filed are categorized based on the nature of the filing:
 		 *     - REPORT F3, F3X, F3P, F3L, F4, F5, F7, F13
@@ -20178,9 +25232,11 @@ export namespace MyNS {
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Date} max_receipt_date 
 		 * Selects all filings received before this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<number>} file_number Filing ID number
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} office Federal office candidate runs for: H, S or P
 		 * @param {Array<string>} sort 
 		 * Provide a field to sort by. Use `-` for descending order. ex: `-case_no`
@@ -20279,6 +25335,7 @@ export namespace MyNS {
 		 *     - FRQ  Request for Additional Information
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state US state or territory where a candidate runs for office
 		 * @param {Array<number>} report_year 
 		 * Forms with coverage date - 
@@ -20345,12 +25402,14 @@ export namespace MyNS {
 		 * who ran for different offices over time; candidates get a new ID for each office.
 		 * Get candidate/{candidate_id}/history/
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {boolean} election_full `True` indicates that full election period of a candidate.
 		 * `False` indicates that two year election cycle.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
@@ -20377,12 +25436,14 @@ export namespace MyNS {
 		 * who ran for different offices over time; candidates get a new ID for each office.
 		 * Get candidate/{candidate_id}/history/{cycle}/
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {boolean} election_full `True` indicates that full election period of a candidate.
 		 * `False` indicates that two year election cycle.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
@@ -20394,6 +25455,7 @@ export namespace MyNS {
 		 * and Senate elections into comparable two-year blocks. To retrieve data for
 		 * the entire four years of a presidential term or six years of a senatorial term,
 		 * you will need the `election_full` flag.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} candidate_id 
 		 * A unique identifier assigned to each candidate registered with the FEC.
 		 * If a person runs for several offices, that person will have separate candidate IDs for each office.
@@ -20427,9 +25489,11 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {string} candidate_id 
 		 * A unique identifier assigned to each candidate registered with the FEC.
@@ -20456,6 +25520,7 @@ export namespace MyNS {
 		 * Get candidates/
 		 * @param {Array<string>} incumbent_challenge One-letter code ('I', 'C', 'O') explaining if the candidate is an incumbent, a challenger, or if the seat is open.
 		 * @param {Date} min_first_file_date Selects all candidates whose first filing was received by the FEC after this date.
+		 *     Type: DateOnly
 		 * @param {Array<string>} q Name of candidate running for office
 		 * @param {Array<number>} cycle 
 		 * Two-year election cycle in which a candidate runs for office.
@@ -20479,6 +25544,7 @@ export namespace MyNS {
 		 * The rest is sequence.
 		 * @param {Array<string>} name Name (candidate or committee) to search for. Alias for 'q'.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} election_year Year of election
 		 * @param {Array<string>} office Federal office candidate runs for: H, S or P
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
@@ -20488,6 +25554,7 @@ export namespace MyNS {
 		 *         - N not yet a candidate
 		 *         - P prior candidate
 		 * @param {Date} max_first_file_date Selects all candidates whose first filing was received by the FEC before this date.
+		 *     Type: DateOnly
 		 * @param {Array<string>} district Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00.
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
@@ -20498,6 +25565,7 @@ export namespace MyNS {
 		 * are returned. When True is specified, only active candidates are returned. When False is
 		 * specified, only inactive candidates are returned.
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state US state or territory where a candidate runs for office
 		 * @param {string} year Retrieve records pertaining to a particular election year. The list of election years is based on a candidate filing a statement of candidacy (F2) for that year.
 		 * @return {void} 
@@ -20518,6 +25586,7 @@ export namespace MyNS {
 		 * Get candidates/search/
 		 * @param {Array<string>} incumbent_challenge One-letter code ('I', 'C', 'O') explaining if the candidate is an incumbent, a challenger, or if the seat is open.
 		 * @param {Date} min_first_file_date Selects all candidates whose first filing was received by the FEC after this date.
+		 *     Type: DateOnly
 		 * @param {Array<string>} q Name of candidate running for office
 		 * @param {Array<number>} cycle 
 		 * Two-year election cycle in which a candidate runs for office.
@@ -20541,6 +25610,7 @@ export namespace MyNS {
 		 * The rest is sequence.
 		 * @param {Array<string>} name Name (candidate or committee) to search for. Alias for 'q'.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} election_year Year of election
 		 * @param {Array<string>} office Federal office candidate runs for: H, S or P
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
@@ -20550,6 +25620,7 @@ export namespace MyNS {
 		 *         - N not yet a candidate
 		 *         - P prior candidate
 		 * @param {Date} max_first_file_date Selects all candidates whose first filing was received by the FEC before this date.
+		 *     Type: DateOnly
 		 * @param {Array<string>} district Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00.
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
@@ -20560,6 +25631,7 @@ export namespace MyNS {
 		 * are returned. When True is specified, only active candidates are returned. When False is
 		 * specified, only inactive candidates are returned.
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state US state or territory where a candidate runs for office
 		 * @param {string} year Retrieve records pertaining to a particular election year. The list of election years is based on a candidate filing a statement of candidacy (F2) for that year.
 		 * @return {void} 
@@ -20593,6 +25665,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} election_year 
 		 * Filter records to only those that were applicable to a given
 		 * two-year period.The cycle begins with an odd year and is named
@@ -20613,6 +25686,7 @@ export namespace MyNS {
 		 * are returned. When True is specified, only active candidates are returned. When False is
 		 * specified, only inactive candidates are returned.
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state State of candidate
 		 * @param {string} min_cash_on_hand_end_period Minimum cash on hand
 		 * @param {string} min_receipts Minimum aggregated receipts
@@ -20631,9 +25705,11 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} election_year 
 		 * Filter records to only those that were applicable to a given
 		 * two-year period.The cycle begins with an odd year and is named
@@ -20647,6 +25723,7 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} district Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00.
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
@@ -20657,6 +25734,7 @@ export namespace MyNS {
 		 * are returned. When True is specified, only active candidates are returned. When False is
 		 * specified, only inactive candidates are returned.
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state US state or territory where a candidate runs for office
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {CandidatesTotalsAggregatesGetByMax_election_cycleAndSort_null_onlyAndSort_hide_nullAndPer_pageAndElection_yearAndOfficeAndSortAndMin_election_cycleAndDistrictAndApi_keyAndElection_fullAndPartyAndIs_active_candidateAndPageAndStateAndSort_nulls_lastAndAggregate_byAggregate_by} aggregate_by Candidate totals aggregate_by (Chose one of dropdown options):
@@ -20682,12 +25760,14 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} election_full `True` indicates that full election period of a candidate.
 		 * `False` indicates that two year election cycle.
 		 * @param {boolean} is_active_candidate  Candidates who are actively seeking office. If no value is specified, all candidates
 		 * are returned. When True is specified, only active candidates are returned. When False is
 		 * specified, only inactive candidates are returned.
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {Array<number>} election_year 
@@ -20696,6 +25776,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CandidatesTotalsAggregatesGetByMax_election_cycleAndSort_null_onlyAndSort_hide_nullAndPer_pageAndElection_yearAndOfficeAndSortAndMin_election_cycleAndDistrictAndApi_keyAndElection_fullAndPartyAndIs_active_candidateAndPageAndStateAndSort_nulls_lastAndAggregate_byOffice} office Federal office candidate runs for: H, S or P
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {number} min_election_cycle 
@@ -20704,6 +25785,7 @@ export namespace MyNS {
 		 * subdivides the presidential and Senate elections into comparable
 		 * two-year blocks. The cycle begins with an odd year and is named for its
 		 * ending, even year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		CandidatesTotalsBy_officeGetByApi_keyAndMax_election_cycleAndElection_fullAndIs_active_candidateAndPageAndSort_null_onlyAndSort_nulls_lastAndElection_yearAndSort_hide_nullAndPer_pageAndOfficeAndSortAndMin_election_cycle(api_key: string, max_election_cycle: number | null | undefined, election_full: boolean | null | undefined, is_active_candidate: boolean | null | undefined, page: number | null | undefined, sort_null_only: boolean | null | undefined, sort_nulls_last: boolean | null | undefined, election_year: Array<number> | null | undefined, sort_hide_null: boolean | null | undefined, per_page: number | null | undefined, office: CandidatesTotalsAggregatesGetByMax_election_cycleAndSort_null_onlyAndSort_hide_nullAndPer_pageAndElection_yearAndOfficeAndSortAndMin_election_cycleAndDistrictAndApi_keyAndElection_fullAndPartyAndIs_active_candidateAndPageAndStateAndSort_nulls_lastAndAggregate_byOffice | null | undefined, sort: string | null | undefined, min_election_cycle: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -20719,6 +25801,7 @@ export namespace MyNS {
 		 * `False` indicates that two year election cycle.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} is_active_candidate  Candidates who are actively seeking office. If no value is specified, all candidates
 		 * are returned. When True is specified, only active candidates are returned. When False is
 		 * specified, only inactive candidates are returned.
@@ -20729,6 +25812,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CandidatesTotalsAggregatesGetByMax_election_cycleAndSort_null_onlyAndSort_hide_nullAndPer_pageAndElection_yearAndOfficeAndSortAndMin_election_cycleAndDistrictAndApi_keyAndElection_fullAndPartyAndIs_active_candidateAndPageAndStateAndSort_nulls_lastAndAggregate_byOffice} office Federal office candidate runs for: H, S or P
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
@@ -20766,10 +25850,12 @@ export namespace MyNS {
 		 * an odd year and is named for its ending, even year.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} year A year that the committee was active— (after original registration date     or filing but before expiration date)
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} filing_frequency The one-letter 
 		 *     code of the filing frequency:
 		 *          - A Administratively terminated
@@ -20819,6 +25905,7 @@ export namespace MyNS {
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} name Name (candidate or committee) to search for. Alias for 'q'.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} election_year Year of election
 		 * @param {Array<CandidatesTotalsAggregatesGetByMax_election_cycleAndSort_null_onlyAndSort_hide_nullAndPer_pageAndElection_yearAndOfficeAndSortAndMin_election_cycleAndDistrictAndApi_keyAndElection_fullAndPartyAndIs_active_candidateAndPageAndStateAndSort_nulls_lastAndAggregate_byOffice>} office Federal office candidate runs for: H, S or P
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
@@ -20834,6 +25921,7 @@ export namespace MyNS {
 		 * @param {Array<string>} party Three-letter code for the party affiliated with a candidate or committee. For example, DEM for Democratic Party and REP for Republican Party.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state US state or territory where a candidate runs for office
 		 * @param {string} year Retrieve records pertaining to a particular election year. The list of election years is based on a candidate filing a statement of candidacy (F2) for that year.
 		 * @param {string} committee_id 
@@ -20852,12 +25940,14 @@ export namespace MyNS {
 		 * who ran for different offices over time; candidates get a new ID for each office.
 		 * Get committee/{committee_id}/candidates/history/
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {boolean} election_full `True` indicates that full election period of a candidate.
 		 * `False` indicates that two year election cycle.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
@@ -20877,12 +25967,14 @@ export namespace MyNS {
 		 * who ran for different offices over time; candidates get a new ID for each office.
 		 * Get committee/{committee_id}/candidates/history/{cycle}/
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {boolean} election_full `True` indicates that full election period of a candidate.
 		 * `False` indicates that two year election cycle.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
@@ -20896,6 +25988,7 @@ export namespace MyNS {
 		 * and Senate elections into comparable two-year blocks. To retrieve data for
 		 * the entire four years of a presidential term or six years of a senatorial term,
 		 * you will need the `election_full` flag.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Committee_committee_idCandidatesHistory_cycleGetByPageAndApi_keyAndSort_hide_nullAndElection_fullAndPer_pageAndSort_null_onlyAndSortAndSort_nulls_last(page: number | null | undefined, api_key: string, sort_hide_null: boolean | null | undefined, election_full: boolean | null | undefined, per_page: number | null | undefined, sort_null_only: boolean | null | undefined, sort: string | null | undefined, sort_nulls_last: boolean | null | undefined, committee_id: string, cycle: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -20911,6 +26004,7 @@ export namespace MyNS {
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 * @param {Date} min_receipt_date 
 		 * Selects all filings received after this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Array<string>} form_category 
 		 * The forms filed are categorized based on the nature of the filing:
 		 *     - REPORT F3, F3X, F3P, F3L, F4, F5, F7, F13
@@ -20937,9 +26031,11 @@ export namespace MyNS {
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Date} max_receipt_date 
 		 * Selects all filings received before this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<number>} file_number Filing ID number
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<CandidatesTotalsAggregatesGetByMax_election_cycleAndSort_null_onlyAndSort_hide_nullAndPer_pageAndElection_yearAndOfficeAndSortAndMin_election_cycleAndDistrictAndApi_keyAndElection_fullAndPartyAndIs_active_candidateAndPageAndStateAndSort_nulls_lastAndAggregate_byOffice>} office Federal office candidate runs for: H, S or P
 		 * @param {Array<string>} sort 
 		 * Provide a field to sort by. Use `-` for descending order. ex: `-case_no`
@@ -21038,6 +26134,7 @@ export namespace MyNS {
 		 *     - FRQ  Request for Additional Information
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state US state or territory where a candidate runs for office
 		 * @param {Array<number>} report_year 
 		 * Forms with coverage date - 
@@ -21098,9 +26195,11 @@ export namespace MyNS {
 		 * `False` indicates that two year election cycle.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} designation The one-letter designation code of the organization:
 		 *          - A authorized by a candidate
 		 *          - J joint fundraising committee
@@ -21126,9 +26225,11 @@ export namespace MyNS {
 		 * `False` indicates that two year election cycle.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} designation The one-letter designation code of the organization:
 		 *          - A authorized by a candidate
 		 *          - J joint fundraising committee
@@ -21143,6 +26244,7 @@ export namespace MyNS {
 		 * A two year election cycle that the committee was active- (after original registration
 		 * date but before expiration date in Form 1s) The cycle begins with
 		 * an odd year and is named for its ending, even year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Committee_committee_idHistory_cycleGetByApi_keyAndElection_fullAndSort_nulls_lastAndPageAndSort_null_onlyAndSort_hide_nullAndPer_pageAndDesignationAndSort(api_key: string, election_full: boolean | null | undefined, sort_nulls_last: boolean | null | undefined, page: number | null | undefined, sort_null_only: boolean | null | undefined, sort_hide_null: boolean | null | undefined, per_page: number | null | undefined, designation: Array<string> | null | undefined, sort: string | null | undefined, committee_id: string, cycle: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -21197,6 +26299,7 @@ export namespace MyNS {
 		 * @param {string} min_independent_expenditures 
 		 * Filter for all amounts greater than a value.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} sort 
 		 * Provide a field to sort by. Use `-` for descending order. ex: `-case_no`
 		 * @param {string} api_key 
@@ -21244,6 +26347,7 @@ export namespace MyNS {
 		 * Filter for all amounts less than a value.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} year 
 		 * Forms with coverage date - 
 		 *     year from the coverage ending date.
@@ -21294,10 +26398,12 @@ export namespace MyNS {
 		 * For presidential and Senate candidates, multiple two-year cycles exist between elections.
 		 * Get committee/{committee_id}/totals/
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Array<number>} cycle 
@@ -21320,6 +26426,7 @@ export namespace MyNS {
 		 * @param {Array<string>} treasurer_name Name of the Committee's treasurer. If multiple treasurers for the committee, the most recent treasurer will be shown.
 		 * @param {Array<string>} q The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records.
 		 * @param {Date} min_first_file_date Filter for committees whose first filing was received on or after this date.
+		 *     Type: DateOnly
 		 * @param {Array<number>} cycle 
 		 * A two year election cycle that the committee was active- (after original registration
 		 * date but before expiration date in Form 1s) The cycle begins with
@@ -21338,6 +26445,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} filing_frequency The one-letter 
 		 *     code of the filing frequency:
 		 *          - A Administratively terminated
@@ -21348,10 +26456,13 @@ export namespace MyNS {
 		 *          - W Waived
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Date} max_first_file_date Filter for committees whose first filing was received on or before this date.
+		 *     Type: DateOnly
 		 * @param {Date} min_first_f1_date Filter for committees whose first Form 1 was received on or after this date.
+		 *     Type: DateOnly
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Date} min_last_f1_date Filter for committees whose latest Form 1 was received on or after this date.
+		 *     Type: DateOnly
 		 * @param {Array<string>} committee_type The one-letter type code of the organization:
 		 *         - C communication cost
 		 *         - D delegate
@@ -21372,12 +26483,15 @@ export namespace MyNS {
 		 * @param {Array<string>} party Three-letter code for the party affiliated with a candidate or committee. For example, DEM for Democratic Party and REP for Republican Party.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} year A year that the committee was active— (after original registration date     or filing but before expiration date)
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {Array<string>} state US state or territory
 		 * @param {Date} max_last_f1_date Filter for committees whose latest Form 1 was received on or before this date.
+		 *     Type: DateOnly
 		 * @param {Date} max_first_f1_date Filter for committees whose first Form 1 was received on or before this date.
+		 *     Type: DateOnly
 		 * @param {Array<string>} designation The one-letter designation code of the organization:
 		 *          - A authorized by a candidate
 		 *          - J joint fundraising committee
@@ -21402,6 +26516,7 @@ export namespace MyNS {
 		 * 52 U.S.C. 30118 allows "communications by a corporation to its stockholders and executive or administrative personnel and their families or by a labor organization to its members and their families on any subject," including the express advocacy of the election or defeat of any Federal candidate.  The costs of such communications must be reported to the Federal Election Commission under certain circumstances.
 		 * Get communication_costs/
 		 * @param {Date} min_date Minimum date
+		 *     Type: DateOnly
 		 * @param {Array<string>} support_oppose_indicator Support or opposition
 		 * @param {string} max_image_number Maxium image number of the page where the schedule item is reported
 		 * @param {string} min_image_number Minium image number of the page where the schedule item is reported
@@ -21409,6 +26524,7 @@ export namespace MyNS {
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {string} min_amount Filter for all amounts greater than a value.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} candidate_id 
 		 * A unique identifier assigned to each candidate registered with the FEC.
 		 * If a person runs for several offices, that person will have separate candidate IDs for each office.
@@ -21424,11 +26540,13 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {Array<string>} image_number 
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {Date} max_date Maximum date
+		 *     Type: DateOnly
 		 * @param {string} max_amount Filter for all amounts less than a value.
 		 * @return {void} 
 		 */
@@ -21448,6 +26566,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
@@ -21462,6 +26581,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -21484,6 +26604,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} state US state or territory where a candidate runs for office
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
@@ -21497,6 +26618,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortOffice} office Federal office candidate runs for: H, S or P
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
@@ -21518,6 +26640,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
@@ -21530,6 +26653,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -21544,16 +26668,20 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Date} min_receipt_date 
 		 * Selects all filings received after this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Date} max_receipt_date 
 		 * Selects all filings received before this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<number>} file_number Filing ID number
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Array<string>} q_filer 
 		 * Keyword search for filer name or ID
@@ -21578,16 +26706,20 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Date} min_receipt_date 
 		 * Selects all filings received after this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Date} max_receipt_date 
 		 * Selects all filings received before this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<number>} file_number Filing ID number
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Array<string>} q_filer 
 		 * Keyword search for filer name or ID
@@ -21612,16 +26744,20 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Date} min_receipt_date 
 		 * Selects all filings received after this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Date} max_receipt_date 
 		 * Selects all filings received before this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<number>} file_number Filing ID number
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Array<string>} q_filer 
 		 * Keyword search for filer name or ID
@@ -21646,16 +26782,20 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Date} min_receipt_date 
 		 * Selects all filings received after this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Date} max_receipt_date 
 		 * Selects all filings received before this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<number>} file_number Filing ID number
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Array<string>} q_filer 
 		 * Keyword search for filer name or ID
@@ -21672,19 +26812,24 @@ export namespace MyNS {
 		 * State or territory of the office sought.
 		 * @param {Date} max_election_date 
 		 * The maximum date of election.
+		 *     Type: DateOnly
 		 * @param {Array<string>} election_district 
 		 * House district of the office sought, if applicable.
 		 * @param {Date} min_update_date 
 		 * The minimum date this record was last updated.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Date} max_create_date 
 		 * The maximum date this record was added to the system.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} election_year Year of election
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Date} min_create_date 
 		 * The minimum date this record was added to the system.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Array<string>} election_party 
@@ -21693,16 +26838,21 @@ export namespace MyNS {
 		 * House, Senate or presidential office.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} max_update_date 
 		 * The maximum date this record was last updated.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Array<string>} election_type_id 
 		 * Election type id
 		 * @param {Date} max_primary_general_date 
 		 * The maximum date of primary or general election.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Date} min_election_date 
 		 * The minimum date of election.
+		 *     Type: DateOnly
 		 * @param {Date} min_primary_general_date 
 		 * The minimum date of primary or general election.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @return {void} 
 		 */
 		Election_datesGetByElection_stateAndMax_election_dateAndElection_districtAndMin_update_dateAndSort_null_onlyAndSort_hide_nullAndMax_create_dateAndPer_pageAndElection_yearAndSortAndMin_create_dateAndApi_keyAndElection_partyAndOffice_soughtAndSort_nulls_lastAndPageAndMax_update_dateAndElection_type_idAndMax_primary_general_dateAndMin_election_dateAndMin_primary_general_date(election_state: Array<string> | null | undefined, max_election_date: Date | null | undefined, election_district: Array<string> | null | undefined, min_update_date: Date | null | undefined, sort_null_only: boolean | null | undefined, sort_hide_null: boolean | null | undefined, max_create_date: Date | null | undefined, per_page: number | null | undefined, election_year: Array<string> | null | undefined, sort: string | null | undefined, min_create_date: Date | null | undefined, api_key: string, election_party: Array<string> | null | undefined, office_sought: Array<string> | null | undefined, sort_nulls_last: boolean | null | undefined, page: number | null | undefined, max_update_date: Date | null | undefined, election_type_id: Array<string> | null | undefined, max_primary_general_date: Date | null | undefined, min_election_date: Date | null | undefined, min_primary_general_date: Date | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -21716,10 +26866,12 @@ export namespace MyNS {
 		 * _The communication is distributed within 60 days prior to a general election or 30 days prior to a primary election to federal office._
 		 * Get electioneering/
 		 * @param {Date} min_date Minimum disbursement date
+		 *     Type: DateOnly
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {Array<number>} report_year 
@@ -21728,6 +26880,7 @@ export namespace MyNS {
 		 * Forms without coverage date - 
 		 *     year from the receipt date.
 		 * @param {number} last_index Index of last result from previous page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
@@ -21740,8 +26893,10 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} min_amount Filter for all amounts greater than a value.
 		 * @param {Date} max_date Maximum disbursement date
+		 *     Type: DateOnly
 		 * @param {string} max_amount Filter for all amounts less than a value.
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
@@ -21761,6 +26916,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
@@ -21775,6 +26931,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -21796,6 +26953,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} state US state or territory where a candidate runs for office
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
@@ -21809,6 +26967,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortOffice} office Federal office candidate runs for: H, S or P
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
@@ -21831,6 +26990,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
@@ -21843,6 +27003,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -21874,12 +27035,15 @@ export namespace MyNS {
 		 * and Senate elections into comparable two-year blocks. To retrieve data for
 		 * the entire four years of a presidential term or six years of a senatorial term,
 		 * you will need the `election_full` flag.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} state US state or territory where a candidate runs for office
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortOffice} office Federal office candidate runs for: H, S or P
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
@@ -21906,9 +27070,11 @@ export namespace MyNS {
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state US state or territory where a candidate runs for office
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} sort 
 		 * Provide a field to sort by. Use `-` for descending order. ex: `-case_no`
 		 * @return {void} 
@@ -21935,6 +27101,7 @@ export namespace MyNS {
 		 * and Senate elections into comparable two-year blocks. To retrieve data for
 		 * the entire four years of a presidential term or six years of a senatorial term,
 		 * you will need the `election_full` flag.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ElectionsSummaryGetByStateAndDistrictAndApi_keyAndElection_fullAndOfficeAndCycle(state: string | null | undefined, district: string | null | undefined, api_key: string, election_full: boolean | null | undefined, office: Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortOffice, cycle: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -21950,6 +27117,7 @@ export namespace MyNS {
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 * @param {Date} min_receipt_date 
 		 * Selects all filings received after this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Array<string>} form_category 
 		 * The forms filed are categorized based on the nature of the filing:
 		 *     - REPORT F3, F3X, F3P, F3L, F4, F5, F7, F13
@@ -21976,6 +27144,7 @@ export namespace MyNS {
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Date} max_receipt_date 
 		 * Selects all filings received before this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
 		 * A unique identifier assigned to each candidate registered with the FEC.
@@ -21988,6 +27157,7 @@ export namespace MyNS {
 		 * The rest is sequence.
 		 * @param {Array<number>} file_number Filing ID number
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<CandidatesTotalsAggregatesGetByMax_election_cycleAndSort_null_onlyAndSort_hide_nullAndPer_pageAndElection_yearAndOfficeAndSortAndMin_election_cycleAndDistrictAndApi_keyAndElection_fullAndPartyAndIs_active_candidateAndPageAndStateAndSort_nulls_lastAndAggregate_byOffice>} office Federal office candidate runs for: H, S or P
 		 * @param {Array<string>} sort 
 		 * Provide a field to sort by. Use `-` for descending order. ex: `-case_no`
@@ -22086,6 +27256,7 @@ export namespace MyNS {
 		 *     - FRQ  Request for Additional Information
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state US state or territory where a candidate runs for office
 		 * @param {Array<number>} report_year 
 		 * Forms with coverage date - 
@@ -22144,24 +27315,30 @@ export namespace MyNS {
 		 * Statutory citations
 		 * @param {Date} af_min_rtb_date 
 		 * The earliest Reason to Believe date
+		 *     Type: DateOnly
 		 * @param {string} af_report_year 
 		 * Admin fine report year
 		 * @param {string} q 
 		 * Text to search legal documents for
 		 * @param {number} from_hit 
 		 * Get results starting from this index
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} ao_requestor_type 
 		 * Code of the advisory opinion requestor type.
 		 * @param {Date} case_max_close_date 
 		 * The latest date closed of case
+		 *     Type: DateOnly
 		 * @param {boolean} ao_is_pending 
 		 * AO is pending
 		 * @param {number} af_fd_fine_amount 
 		 * Final Determination fine amount
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} case_min_open_date 
 		 * The earliest date opened of case
+		 *     Type: DateOnly
 		 * @param {Date} ao_min_issue_date 
 		 * Earliest issue date of advisory opinion
+		 *     Type: DateOnly
 		 * @param {string} sort 
 		 * Provide a field to sort by. Use `-` for descending order. ex: `-case_no`
 		 * @param {boolean} ao_citation_require_all 
@@ -22185,8 +27362,10 @@ export namespace MyNS {
 		 * Status of AO (pending, withdrawn, or final)
 		 * @param {Date} af_max_rtb_date 
 		 * The latest Reason to Believe date
+		 *     Type: DateOnly
 		 * @param {number} af_rtb_fine_amount 
 		 * Reason to Believe fine amount
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} case_respondents 
 		 * Cases respondents
 		 * @param {Array<string>} ao_entity_name 
@@ -22207,28 +27386,37 @@ export namespace MyNS {
 		 * Force advisory opinion name
 		 * @param {Date} af_max_fd_date 
 		 * The latest Final Determination date
+		 *     Type: DateOnly
 		 * @param {Date} ao_max_request_date 
 		 * Latest request date of advisory opinion
+		 *     Type: DateOnly
 		 * @param {LegalSearchGetByCase_statutory_citationAndAf_min_rtb_dateAndAf_report_yearAndQAndFrom_hitAndAo_requestor_typeAndCase_max_close_dateAndAo_is_pendingAndAf_fd_fine_amountAndCase_min_open_dateAndAo_min_issue_dateAndSortAndAo_citation_require_allAndCase_doc_category_idAndAo_statusAndAf_max_rtb_dateAndAf_rtb_fine_amountAndCase_respondentsAndAo_entity_nameAndAo_requestorAndAo_categoryAndAo_regulatory_citationAndCase_regulatory_citationAndCase_citation_require_allAndCase_dispositionsAndAo_nameAndAf_max_fd_dateAndAo_max_request_dateAndMur_typeAndHits_returnedAndCase_election_cyclesAndCase_min_close_dateAndAo_max_issue_dateAndAf_committee_idAndAf_min_fd_dateAndCase_max_open_dateAndApi_keyAndAo_min_request_dateAndAo_noAndTypeAndCase_noAndAo_statutory_citationAndAf_nameMur_type} mur_type 
 		 * Type of MUR : current or archived
 		 * @param {number} hits_returned 
 		 * Number of results to return (max 10)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} case_election_cycles 
 		 * Cases election cycles
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} case_min_close_date 
 		 * The earliest date closed of case
+		 *     Type: DateOnly
 		 * @param {Date} ao_max_issue_date 
 		 * Latest issue date of advisory opinion
+		 *     Type: DateOnly
 		 * @param {string} af_committee_id 
 		 * Admin fine committee ID
 		 * @param {Date} af_min_fd_date 
 		 * The earliest Final Determination date
+		 *     Type: DateOnly
 		 * @param {Date} case_max_open_date 
 		 * The latest date opened of case
+		 *     Type: DateOnly
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Date} ao_min_request_date 
 		 * Earliest request date of advisory opinion
+		 *     Type: DateOnly
 		 * @param {Array<string>} ao_no 
 		 * Force advisory opinion number
 		 * @param {LegalSearchGetByCase_statutory_citationAndAf_min_rtb_dateAndAf_report_yearAndQAndFrom_hitAndAo_requestor_typeAndCase_max_close_dateAndAo_is_pendingAndAf_fd_fine_amountAndCase_min_open_dateAndAo_min_issue_dateAndSortAndAo_citation_require_allAndCase_doc_category_idAndAo_statusAndAf_max_rtb_dateAndAf_rtb_fine_amountAndCase_respondentsAndAo_entity_nameAndAo_requestorAndAo_categoryAndAo_regulatory_citationAndCase_regulatory_citationAndCase_citation_require_allAndCase_dispositionsAndAo_nameAndAf_max_fd_dateAndAo_max_request_dateAndMur_typeAndHits_returnedAndCase_election_cyclesAndCase_min_close_dateAndAo_max_issue_dateAndAf_committee_idAndAf_min_fd_dateAndCase_max_open_dateAndApi_keyAndAo_min_request_dateAndAo_noAndTypeAndCase_noAndAo_statutory_citationAndAf_nameType} type 
@@ -22308,15 +27496,19 @@ export namespace MyNS {
 		 * Get operations-log/
 		 * @param {Date} min_receipt_date 
 		 * Selects all filings received after this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Array<string>} candidate_committee_id 
 		 * A unique identifier of the registered filer.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Date} max_receipt_date 
 		 * Selects all filings received before this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Date} max_transaction_data_complete_date 
 		 * Select all filings processed completely before this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} sort 
 		 * Provide a field to sort by. Use `-` for descending order. ex: `-case_no`
 		 * @param {string} api_key 
@@ -22373,6 +27565,7 @@ export namespace MyNS {
 		 *     - MSY Monthly Semi-Annual (YE)
 		 * @param {Date} min_transaction_data_complete_date 
 		 * Select all filings processed completely after this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Array<string>} form_type The form where the underlying data comes from, for example, Form 1 would appear as F1:
 		 *     - F1   Statement of Organization
 		 *     - F1M  Notification of Multicandidate Status
@@ -22393,7 +27586,9 @@ export namespace MyNS {
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {Date} max_coverage_end_date 
 		 * Ending date of the reporting period before this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} report_year 
 		 * Forms with coverage date - 
 		 *     year from the coverage ending date.
@@ -22418,6 +27613,7 @@ export namespace MyNS {
 		 * PDF URLs to the original document.
 		 * @param {Date} min_coverage_end_date 
 		 * Ending date of the reporting period after this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @return {void} 
 		 */
 		Operations_logGetByMin_receipt_dateAndCandidate_committee_idAndSort_null_onlyAndMax_receipt_dateAndSort_hide_nullAndMax_transaction_data_complete_dateAndPer_pageAndSortAndApi_keyAndReport_typeAndMin_transaction_data_complete_dateAndForm_typeAndSort_nulls_lastAndMax_coverage_end_dateAndPageAndReport_yearAndStatus_numAndAmendment_indicatorAndBeginning_image_numberAndMin_coverage_end_date(min_receipt_date: Date | null | undefined, candidate_committee_id: Array<string> | null | undefined, sort_null_only: boolean | null | undefined, max_receipt_date: Date | null | undefined, sort_hide_null: boolean | null | undefined, max_transaction_data_complete_date: Date | null | undefined, per_page: number | null | undefined, sort: Array<string> | null | undefined, api_key: string, report_type: Array<string> | null | undefined, min_transaction_data_complete_date: Date | null | undefined, form_type: Array<string> | null | undefined, sort_nulls_last: boolean | null | undefined, max_coverage_end_date: Date | null | undefined, page: number | null | undefined, report_year: Array<number> | null | undefined, status_num: Array<string> | null | undefined, amendment_indicator: Array<string> | null | undefined, beginning_image_number: Array<string> | null | undefined, min_coverage_end_date: Date | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -22432,9 +27628,11 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} election_year Year of election
 		 * @param {Array<string>} contributor_state State of contributor
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
@@ -22452,6 +27650,7 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Array<number>} size 
 		 * The total all contributions in the following ranges:
@@ -22477,6 +27676,7 @@ export namespace MyNS {
 		 *   -P00000002    Democrasts
 		 *   -P00000003    Republicans
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} election_year Year of election
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
@@ -22493,6 +27693,7 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
@@ -22508,6 +27709,7 @@ export namespace MyNS {
 		 *   -P00000002    Democrasts
 		 *   -P00000003    Republicans
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} election_year Year of election
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
@@ -22524,6 +27726,7 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
@@ -22539,6 +27742,7 @@ export namespace MyNS {
 		 *   -P00000002    Democrasts
 		 *   -P00000003    Republicans
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} election_year Year of election
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
@@ -22555,6 +27759,7 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
@@ -22570,6 +27775,7 @@ export namespace MyNS {
 		 *   -P00000002    Democrasts
 		 *   -P00000003    Republicans
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} election_year Year of election
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
@@ -22590,20 +27796,24 @@ export namespace MyNS {
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Date} min_assignment_update_date Filter results for assignment updates made after this date
+		 *     Type: DateOnly
 		 * @param {Array<number>} telephone_ext Telephone extension of RAD analyst
 		 * @param {Array<number>} analyst_id ID of RAD analyst
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} name Name of RAD analyst
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} email Email of RAD analyst
 		 * @param {Array<string>} title Title of RAD analyst
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Date} max_assignment_update_date Filter results for assignment updates made before this date
+		 *     Type: DateOnly
 		 * @param {Array<number>} analyst_short_id Short ID of RAD analyst
 		 * @return {void} 
 		 */
@@ -22618,6 +27828,7 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Date} min_update_date 
 		 * The minimum date this record was last updated.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Array<string>} report_type Name of report where the underlying data comes from:
 		 *     - 10D Pre-Election
 		 *     - 10G Pre-General
@@ -22670,10 +27881,13 @@ export namespace MyNS {
 		 *     - MSY Monthly Semi-Annual (YE)
 		 * @param {Date} min_due_date 
 		 * The minimum date the report is due.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} max_due_date 
 		 * The maximum date the report is due.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Array<number>} report_year 
 		 * Forms with coverage date - 
 		 *     year from the coverage ending date.
@@ -22682,13 +27896,17 @@ export namespace MyNS {
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {Date} max_create_date 
 		 * The maximum date this record was added to the system.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {Date} max_update_date 
 		 * The maximum date this record was last updated.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Date} min_create_date 
 		 * The minimum date this record was added to the system.(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @return {void} 
 		 */
 		Reporting_datesGetByApi_keyAndMin_update_dateAndReport_typeAndMin_due_dateAndSort_null_onlyAndPageAndMax_due_dateAndReport_yearAndSort_nulls_lastAndMax_create_dateAndMax_update_dateAndPer_pageAndSort_hide_nullAndSortAndMin_create_date(api_key: string, min_update_date: Date | null | undefined, report_type: Array<string> | null | undefined, min_due_date: Date | null | undefined, sort_null_only: boolean | null | undefined, page: number | null | undefined, max_due_date: Date | null | undefined, report_year: Array<number> | null | undefined, sort_nulls_last: boolean | null | undefined, max_create_date: Date | null | undefined, max_update_date: Date | null | undefined, per_page: number | null | undefined, sort_hide_null: boolean | null | undefined, sort: string | null | undefined, min_create_date: Date | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -22719,6 +27937,7 @@ export namespace MyNS {
 		 * Filter for all amounts greater than a value.
 		 * @param {Date} max_receipt_date 
 		 * Selects all items received by FEC before this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {string} candidate_id 
 		 * A unique identifier assigned to each candidate registered with the FEC.
@@ -22787,6 +28006,7 @@ export namespace MyNS {
 		 * PDF URLs to the original document.
 		 * @param {Date} min_receipt_date 
 		 * Selects all items received by FEC after this date(MM/DD/YYYY or YYYY-MM-DD)
+		 *     Type: DateOnly
 		 * @param {boolean} is_amended 
 		 * False indicates that a report is the most recent. True indicates that the report has been superseded by an amendment.
 		 * @param {string} max_disbursements_amount 
@@ -22809,6 +28029,7 @@ export namespace MyNS {
 		 * @param {string} min_independent_expenditures 
 		 * Filter for all amounts greater than a value.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} q_filer 
 		 * Keyword search for filer name or ID
 		 * @param {string} api_key 
@@ -22831,6 +28052,7 @@ export namespace MyNS {
 		 *         - Y party, qualified
 		 *         - Z national party non-federal account
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} year 
 		 * Forms with coverage date - 
 		 *     year from the coverage ending date.
@@ -22888,6 +28110,7 @@ export namespace MyNS {
 		 * Get schedules/schedule_a/
 		 * @param {boolean} is_individual Restrict to non-earmarked individual contributions where memo code is true. Filtering individuals is useful to make sure contributions are not double reported and in creating breakdowns of the amount of money coming from individuals.
 		 * @param {Date} min_date Minimum date
+		 *     Type: DateOnly
 		 * @param {string} max_image_number Maxium image number of the page where the schedule item is reported
 		 * @param {string} min_image_number Minium image number of the page where the schedule item is reported
 		 * @param {Array<string>} contributor_type Filters individual or committee contributions based on line number
@@ -22902,6 +28125,7 @@ export namespace MyNS {
 		 * @param {Array<string>} contributor_employer Employer of contributor, filers need to make an effort to gather this information
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} last_index Index of last result from previous page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} contributor_name Name of contributor
 		 * @param {string} min_amount Filter for all amounts greater than a value.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
@@ -22913,6 +28137,7 @@ export namespace MyNS {
 		 *          - B lobbyist/registrant PAC
 		 *          - D leadership PAC
 		 * @param {Date} max_load_date Maximum load date
+		 *     Type: DateOnly
 		 * @param {Array<string>} recipient_committee_type The one-letter type code of the organization:
 		 *         - C communication cost
 		 *         - D delegate
@@ -22932,10 +28157,13 @@ export namespace MyNS {
 		 *         - Z national party non-federal account
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Date} last_contribution_receipt_date When sorting by `contribution_receipt_date`, this is populated with the         `contribution_receipt_date` of the last result. However, you will need to pass the index         of that last result to `last_index` to get the next page.
+		 *     Type: DateOnly
 		 * @param {number} last_contribution_receipt_amount When sorting by `contribution_receipt_amount`, this is populated with the         `contribution_receipt_amount` of the last result. However, you will need to pass the index         of that last result to `last_index` to get the next page.
+		 *     Type: float
 		 * @param {string} line_number Filter for form and line number using the following format: `FORM-LINENUMBER`.  For example an argument such as `F3X-16` would filter down to all entries from form `F3X` line number `16`.
 		 * @param {Array<string>} contributor_state State of contributor
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Array<number>} two_year_transaction_period 
@@ -22948,6 +28176,7 @@ export namespace MyNS {
 		 * specified, the results default to the most current cycle.
 		 * @param {Array<string>} contributor_zip Zip code of contributor
 		 * @param {Date} min_load_date Minimum load date
+		 *     Type: DateOnly
 		 * @param {Array<string>} contributor_occupation Occupation of contributor, filers need to make an effort to gather this information
 		 * @param {Array<string>} contributor_city City of contributor
 		 * @param {Array<string>} committee_id 
@@ -22955,6 +28184,7 @@ export namespace MyNS {
 		 * @param {Array<string>} image_number 
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {Date} max_date Maximum date
+		 *     Type: DateOnly
 		 * @param {string} max_amount Filter for all amounts less than a value.
 		 * @return {void} 
 		 */
@@ -22973,12 +28203,14 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} employer Employer of contributor as reported on the committee's filing
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -22997,12 +28229,14 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Array<string>} occupation Occupation of contributor as reported on the committee's filing
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -23029,6 +28263,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
@@ -23044,6 +28279,7 @@ export namespace MyNS {
 		 * Unitemized contributions are included in the `0` category.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -23065,6 +28301,7 @@ export namespace MyNS {
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
 		 * A unique identifier assigned to each candidate registered with the FEC.
@@ -23076,6 +28313,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -23095,12 +28333,14 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state State of contributor
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -23122,6 +28362,7 @@ export namespace MyNS {
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
 		 * A unique identifier assigned to each candidate registered with the FEC.
@@ -23133,6 +28374,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -23154,6 +28396,7 @@ export namespace MyNS {
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
 		 * A unique identifier assigned to each candidate registered with the FEC.
@@ -23165,6 +28408,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -23203,10 +28447,12 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state US state or territory
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -23226,12 +28472,14 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} state State of contributor
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -23243,6 +28491,7 @@ export namespace MyNS {
 		 * Efiling endpoints provide real-time campaign finance data received from electronic filers. Efiling endpoints only contain the most recent four months of data and don't contain the processed and coded data that you can find on other endpoints.
 		 * Get schedules/schedule_a/efile/
 		 * @param {Date} min_date Minimum date
+		 *     Type: DateOnly
 		 * @param {string} max_image_number Maxium image number of the page where the schedule item is reported
 		 * @param {Array<string>} contributor_employer Employer of contributor, filers need to make an effort to gather this information
 		 * @param {string} min_image_number Minium image number of the page where the schedule item is reported
@@ -23251,6 +28500,7 @@ export namespace MyNS {
 		 * @param {Array<string>} contributor_name Name of contributor
 		 * @param {string} min_amount Filter for all amounts greater than a value.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} contributor_state State of contributor
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {string} line_number Filter for form and line number using the following format: `FORM-LINENUMBER`.  For example an argument such as `F3X-16` would filter down to all entries from form `F3X` line number `16`.
@@ -23260,11 +28510,13 @@ export namespace MyNS {
 		 * @param {Array<string>} contributor_city City of contributor
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {Array<string>} image_number 
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {Date} max_date Maximum date
+		 *     Type: DateOnly
 		 * @param {string} max_amount Filter for all amounts less than a value.
 		 * @return {void} 
 		 */
@@ -23309,6 +28561,7 @@ export namespace MyNS {
 		 * Get schedules/schedule_a/{sub_id}/
 		 * @param {boolean} is_individual Restrict to non-earmarked individual contributions where memo code is true. Filtering individuals is useful to make sure contributions are not double reported and in creating breakdowns of the amount of money coming from individuals.
 		 * @param {Date} min_date Minimum date
+		 *     Type: DateOnly
 		 * @param {string} max_image_number Maxium image number of the page where the schedule item is reported
 		 * @param {string} min_image_number Minium image number of the page where the schedule item is reported
 		 * @param {Array<string>} contributor_type Filters individual or committee contributions based on line number
@@ -23323,6 +28576,7 @@ export namespace MyNS {
 		 * @param {Array<string>} contributor_employer Employer of contributor, filers need to make an effort to gather this information
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} last_index Index of last result from previous page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} contributor_name Name of contributor
 		 * @param {string} min_amount Filter for all amounts greater than a value.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
@@ -23334,6 +28588,7 @@ export namespace MyNS {
 		 *          - B lobbyist/registrant PAC
 		 *          - D leadership PAC
 		 * @param {Date} max_load_date Maximum load date
+		 *     Type: DateOnly
 		 * @param {Array<string>} recipient_committee_type The one-letter type code of the organization:
 		 *         - C communication cost
 		 *         - D delegate
@@ -23353,10 +28608,13 @@ export namespace MyNS {
 		 *         - Z national party non-federal account
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Date} last_contribution_receipt_date When sorting by `contribution_receipt_date`, this is populated with the         `contribution_receipt_date` of the last result. However, you will need to pass the index         of that last result to `last_index` to get the next page.
+		 *     Type: DateOnly
 		 * @param {number} last_contribution_receipt_amount When sorting by `contribution_receipt_amount`, this is populated with the         `contribution_receipt_amount` of the last result. However, you will need to pass the index         of that last result to `last_index` to get the next page.
+		 *     Type: float
 		 * @param {string} line_number Filter for form and line number using the following format: `FORM-LINENUMBER`.  For example an argument such as `F3X-16` would filter down to all entries from form `F3X` line number `16`.
 		 * @param {Array<string>} contributor_state State of contributor
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Array<number>} two_year_transaction_period 
@@ -23369,6 +28627,7 @@ export namespace MyNS {
 		 * specified, the results default to the most current cycle.
 		 * @param {Array<string>} contributor_zip Zip code of contributor
 		 * @param {Date} min_load_date Minimum load date
+		 *     Type: DateOnly
 		 * @param {Array<string>} contributor_occupation Occupation of contributor, filers need to make an effort to gather this information
 		 * @param {Array<string>} contributor_city City of contributor
 		 * @param {Array<string>} committee_id 
@@ -23376,6 +28635,7 @@ export namespace MyNS {
 		 * @param {Array<string>} image_number 
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {Date} max_date Maximum date
+		 *     Type: DateOnly
 		 * @param {string} max_amount Filter for all amounts less than a value.
 		 * @return {void} 
 		 */
@@ -23417,6 +28677,7 @@ export namespace MyNS {
 		 * large result sets are approximate; you will want to page through the records until no records are returned.
 		 * Get schedules/schedule_b/
 		 * @param {Date} min_date Minimum date
+		 *     Type: DateOnly
 		 * @param {Array<string>} spender_committee_designation The one-letter designation code of the organization:
 		 *          - A authorized by a candidate
 		 *          - J joint fundraising committee
@@ -23426,15 +28687,18 @@ export namespace MyNS {
 		 *          - D leadership PAC
 		 * @param {Array<string>} recipient_committee_id The FEC identifier should be represented here if the contributor is registered with the FEC.
 		 * @param {Date} last_disbursement_date When sorting by `disbursement_date`, this is populated with the `disbursement_date` of the last result. However, you will need to pass the index of that last result to `last_index` to get the next page.
+		 *     Type: DateOnly
 		 * @param {string} max_image_number Maxium image number of the page where the schedule item is reported
 		 * @param {Array<string>} disbursement_description Description of disbursement
 		 * @param {Array<string>} disbursement_purpose_category Disbursement purpose category
 		 * @param {string} min_image_number Minium image number of the page where the schedule item is reported
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} last_index Index of last result from previous page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {string} min_amount Filter for all amounts greater than a value.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} line_number Filter for form and line number using the following format: `FORM-LINENUMBER`.  For example an argument such as `F3X-16` would filter down to all entries from form `F3X` line number `16`.
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Array<string>} recipient_city City of recipient
@@ -23456,6 +28720,7 @@ export namespace MyNS {
 		 *         - Y party, qualified
 		 *         - Z national party non-federal account
 		 * @param {number} last_disbursement_amount When sorting by `disbursement_amount`, this is populated with the `disbursement_amount` of the last result.  However, you will need to pass the index of that last result to `last_index` to get the next page.
+		 *     Type: float
 		 * @param {Array<string>} spender_committee_org_type The one-letter code for the kind for organization:
 		 *         - C corporation
 		 *         - L labor organization
@@ -23478,6 +28743,7 @@ export namespace MyNS {
 		 * @param {Array<string>} image_number 
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {Date} max_date Maximum date
+		 *     Type: DateOnly
 		 * @param {Array<string>} recipient_name Name of the entity receiving the disbursement
 		 * @param {string} max_amount Filter for all amounts less than a value.
 		 * @param {Array<string>} recipient_state State of recipient
@@ -23502,11 +28768,13 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -23527,11 +28795,13 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -23551,12 +28821,14 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Array<string>} recipient_id The FEC identifier should be represented here if the entity receiving the disbursement is registered with the FEC.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -23568,11 +28840,13 @@ export namespace MyNS {
 		 * Efiling endpoints provide real-time campaign finance data received from electronic filers. Efiling endpoints only contain the most recent four months of data and don't contain the processed and coded data that you can find on other endpoints.
 		 * Get schedules/schedule_b/efile/
 		 * @param {Date} min_date When sorting by `disbursement_date`, this is populated with the         `disbursement_date` of the last result. However, you will need to pass the index         of that last result to `last_index` to get the next page.
+		 *     Type: DateOnly
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {Array<string>} disbursement_description Description of disbursement
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
@@ -23580,7 +28854,9 @@ export namespace MyNS {
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Date} max_date When sorting by `disbursement_date`, this is populated with the         `disbursement_date` of the last result. However, you will need to pass the index         of that last result to `last_index` to get the next page.
+		 *     Type: DateOnly
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} min_amount Filter for all amounts less than a value.
 		 * @param {string} max_amount Filter for all amounts less than a value.
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
@@ -23626,6 +28902,7 @@ export namespace MyNS {
 		 * large result sets are approximate; you will want to page through the records until no records are returned.
 		 * Get schedules/schedule_b/{sub_id}/
 		 * @param {Date} min_date Minimum date
+		 *     Type: DateOnly
 		 * @param {Array<string>} spender_committee_designation The one-letter designation code of the organization:
 		 *          - A authorized by a candidate
 		 *          - J joint fundraising committee
@@ -23635,15 +28912,18 @@ export namespace MyNS {
 		 *          - D leadership PAC
 		 * @param {Array<string>} recipient_committee_id The FEC identifier should be represented here if the contributor is registered with the FEC.
 		 * @param {Date} last_disbursement_date When sorting by `disbursement_date`, this is populated with the `disbursement_date` of the last result. However, you will need to pass the index of that last result to `last_index` to get the next page.
+		 *     Type: DateOnly
 		 * @param {string} max_image_number Maxium image number of the page where the schedule item is reported
 		 * @param {Array<string>} disbursement_description Description of disbursement
 		 * @param {Array<string>} disbursement_purpose_category Disbursement purpose category
 		 * @param {string} min_image_number Minium image number of the page where the schedule item is reported
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} last_index Index of last result from previous page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {string} min_amount Filter for all amounts greater than a value.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} line_number Filter for form and line number using the following format: `FORM-LINENUMBER`.  For example an argument such as `F3X-16` would filter down to all entries from form `F3X` line number `16`.
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Array<string>} recipient_city City of recipient
@@ -23665,6 +28945,7 @@ export namespace MyNS {
 		 *         - Y party, qualified
 		 *         - Z national party non-federal account
 		 * @param {number} last_disbursement_amount When sorting by `disbursement_amount`, this is populated with the `disbursement_amount` of the last result.  However, you will need to pass the index of that last result to `last_index` to get the next page.
+		 *     Type: float
 		 * @param {Array<string>} spender_committee_org_type The one-letter code for the kind for organization:
 		 *         - C corporation
 		 *         - L labor organization
@@ -23687,6 +28968,7 @@ export namespace MyNS {
 		 * @param {Array<string>} image_number 
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {Date} max_date Maximum date
+		 *     Type: DateOnly
 		 * @param {Array<string>} recipient_name Name of the entity receiving the disbursement
 		 * @param {string} max_amount Filter for all amounts less than a value.
 		 * @param {Array<string>} recipient_state State of recipient
@@ -23703,16 +28985,20 @@ export namespace MyNS {
 		 * Get schedules/schedule_c/
 		 * @param {number} min_payment_to_date 
 		 * Minimum payment to date
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max_image_number Maxium image number of the page where the schedule item is reported
 		 * @param {string} min_image_number Minium image number of the page where the schedule item is reported
 		 * @param {Date} max_incurred_date 
 		 * Maximum incurred date
+		 *     Type: DateOnly
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} last_index Index of last result from previous page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {string} min_amount 
 		 * Filter for all amounts greater than a value.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} loan_source_name Source of the loan (i.e., bank loan, brokerage account, credit card, home equity line of credit,               other line of credit, or personal funds of the candidate
 		 * @param {string} line_number 
 		 * Filter for form and line number using the following format:
@@ -23721,17 +29007,20 @@ export namespace MyNS {
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {number} max_payment_to_date 
 		 * Maximum payment to date
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} candidate_name Name of candidate running for office
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {Array<string>} image_number 
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {Date} min_incurred_date 
 		 * Minimum incurred date
+		 *     Type: DateOnly
 		 * @param {string} max_amount 
 		 * Filter for all amounts less than a value.
 		 * @return {void} 
@@ -23746,10 +29035,12 @@ export namespace MyNS {
 		 * The committee continues to report the loan until it is repaid.
 		 * Get schedules/schedule_c/{sub_id}/
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
@@ -23763,10 +29054,15 @@ export namespace MyNS {
 		 * Schedule D, it shows debts and obligations owed to or by the committee that are
 		 * required to be disclosed.
 		 * Get schedules/schedule_d/
+		 * @param {number} max_payment_period Type: float
 		 * @param {Date} min_date Minimum load date
+		 *     Type: DateOnly
 		 * @param {string} max_image_number Maxium image number of the page where the schedule item is reported
+		 * @param {number} max_amount_outstanding_close Type: float
 		 * @param {string} min_image_number Minium image number of the page where the schedule item is reported
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
+		 * @param {number} min_payment_period Type: float
+		 * @param {number} min_amount_incurred Type: float
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
 		 * A unique identifier assigned to each candidate registered with the FEC.
@@ -23778,16 +29074,23 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} min_amount_outstanding_beginning Type: float
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
+		 * @param {number} min_amount_outstanding_close Type: float
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
+		 * @param {number} max_amount_incurred Type: float
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {Array<string>} image_number 
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {Date} max_date Maximum load date
+		 *     Type: DateOnly
+		 * @param {number} max_amount_outstanding_beginning Type: float
 		 * @return {void} 
 		 */
 		SchedulesSchedule_dGetByMax_payment_periodAndMin_dateAndMax_image_numberAndMax_amount_outstanding_closeAndMin_image_numberAndSort_null_onlyAndMin_payment_periodAndMin_amount_incurredAndCreditor_debtor_nameAndSort_hide_nullAndCandidate_idAndPer_pageAndMin_amount_outstanding_beginningAndSortAndMin_amount_outstanding_closeAndApi_keyAndNature_of_debtAndMax_amount_incurredAndSort_nulls_lastAndPageAndCommittee_idAndImage_numberAndMax_dateAndMax_amount_outstanding_beginning(max_payment_period: number | null | undefined, min_date: Date | null | undefined, max_image_number: string | null | undefined, max_amount_outstanding_close: number | null | undefined, min_image_number: string | null | undefined, sort_null_only: boolean | null | undefined, min_payment_period: number | null | undefined, min_amount_incurred: number | null | undefined, creditor_debtor_name: Array<string> | null | undefined, sort_hide_null: boolean | null | undefined, candidate_id: Array<string> | null | undefined, per_page: number | null | undefined, min_amount_outstanding_beginning: number | null | undefined, sort: string | null | undefined, min_amount_outstanding_close: number | null | undefined, api_key: string, nature_of_debt: string | null | undefined, max_amount_incurred: number | null | undefined, sort_nulls_last: boolean | null | undefined, page: number | null | undefined, committee_id: Array<string> | null | undefined, image_number: Array<string> | null | undefined, max_date: Date | null | undefined, max_amount_outstanding_beginning: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -23799,10 +29102,12 @@ export namespace MyNS {
 		 * required to be disclosed.
 		 * Get schedules/schedule_d/{sub_id}/
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
@@ -23854,6 +29159,7 @@ export namespace MyNS {
 		 * this is populated with the `expenditure_date` of the last result.
 		 * However, you will need to pass the index of that last result to
 		 * `last_index` to get the next page.
+		 *     Type: DateOnly
 		 * @param {string} max_image_number Maxium image number of the page where the schedule item is reported
 		 * @param {Array<boolean>} is_notice 
 		 * Record filed as 24- or 48-hour notice.
@@ -23875,12 +29181,15 @@ export namespace MyNS {
 		 * this is populated with the `office_total_ytd` of the last result.
 		 * However, you will need to pass the index of that last result to
 		 * `last_index` to get the next page.'
+		 *     Type: float
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {Date} min_filing_date 
 		 * Selects all filings received after this date
+		 *     Type: DateOnly
 		 * @param {Array<string>} q_spender 
 		 * Keyword search for spender name or ID
 		 * @param {Date} min_dissemination_date Selects all items distributed by this committee after this date
+		 *     Type: DateOnly
 		 * @param {Array<string>} candidate_office_state US state or territory
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} last_expenditure_amount 
@@ -23888,11 +29197,15 @@ export namespace MyNS {
 		 * this is populated with the `expenditure_amount` of the last result.
 		 * However, you will need to pass the index of that last result to
 		 * `last_index` to get the next page.
+		 *     Type: float
 		 * @param {Array<string>} image_number 
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {Date} max_date Maximum date
+		 *     Type: DateOnly
 		 * @param {Date} max_dissemination_date Selects all items distributed by this committee before this date
+		 *     Type: DateOnly
 		 * @param {Date} min_date Minimum date
+		 *     Type: DateOnly
 		 * @param {Array<string>} filing_form The form where the underlying data comes from, for example, Form 1 would appear as F1:
 		 *     - F1   Statement of Organization
 		 *     - F1M  Notification of Multicandidate Status
@@ -23918,6 +29231,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {Date} max_filing_date 
 		 * Selects all filings received before this date
+		 *     Type: DateOnly
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {string} last_support_oppose_indicator 
 		 * When sorting by `support_oppose_indicator`,
@@ -23925,7 +29239,9 @@ export namespace MyNS {
 		 * However, you will need to pass the index of that last result to `last_index`
 		 * to get the next page.'
 		 * @param {number} last_index Index of last result from previous page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} candidate_office_district Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00.
 		 * @param {string} line_number Filter for form and line number using the following format: `FORM-LINENUMBER`.  For example an argument such as `F3X-16` would filter down to all entries from form `F3X` line number `16`.
 		 * @param {string} api_key 
@@ -23959,6 +29275,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} state US state or territory where a candidate runs for office
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
@@ -23974,6 +29291,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Communication_costsBy_candidateGetByDistrictAndApi_keyAndSupport_opposeAndElection_fullAndCycleAndSort_null_onlyAndPageAndStateAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndOfficeAndSortOffice} office Federal office candidate runs for: H, S or P
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
@@ -23986,8 +29304,10 @@ export namespace MyNS {
 		 * Efiling endpoints provide real-time campaign finance data received from electronic filers. Efiling endpoints only contain the most recent four months of data and don't contain the processed and coded data that you can find on other endpoints.
 		 * Get schedules/schedule_e/efile/
 		 * @param {number} max_expenditure_amount Selects all items expended by this committee less than this amount
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<Communication_costsAggregatesGetByApi_keyAndSupport_oppose_indicatorAndCycleAndSort_null_onlyAndPageAndCommittee_idAndSort_nulls_lastAndSort_hide_nullAndCandidate_idAndPer_pageAndSortSupport_oppose_indicator>} support_oppose_indicator Explains if the money was spent in order to support or oppose a candidate or candidates. (Coded S or O for support or oppose.) This indicator applies to independent expenditures and communication costs.
 		 * @param {Date} min_expenditure_date Selects all items expended by this committee after this date
+		 *     Type: DateOnly
 		 * @param {Array<string>} filing_form The form where the underlying data comes from, for example, Form 1 would appear as F1:
 		 *     - F1   Statement of Organization
 		 *     - F1M  Notification of Multicandidate Status
@@ -24006,7 +29326,9 @@ export namespace MyNS {
 		 *     - F99  Miscellaneous Text
 		 *     - FRQ  Request for Additional Information
 		 * @param {Date} max_expenditure_date Selects all items expended by this committee before this date
+		 *     Type: DateOnly
 		 * @param {Date} max_filed_date Timestamp of electronic or paper record that FEC received
+		 *     Type: DateOnly
 		 * @param {boolean} is_notice 
 		 * Record filed as 24- or 48-hour notice.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
@@ -24023,16 +29345,20 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} candidate_office_district Two-digit US House distirict of the office the candidate is running for. Presidential, Senate and House at-large candidates will have District 00.
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {number} min_expenditure_amount Selects all items expended by this committee greater than this amount
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} spender_name The name of the committee. If a committee changes its name,     the most recent name will be shown. Committee names are not unique. Use committee_id     for looking up records.
 		 * @param {Date} min_dissemination_date Selects all items distributed by this committee after this date
+		 *     Type: DateOnly
 		 * @param {Array<string>} candidate_office_state US state or territory where a candidate runs for office
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {Array<string>} candidate_search 
@@ -24041,7 +29367,9 @@ export namespace MyNS {
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {Array<string>} candidate_party Three-letter code for the party affiliated with a candidate or committee. For example, DEM for Democratic Party and REP for Republican Party.
 		 * @param {Date} min_filed_date Timestamp of electronic or paper record that FEC received
+		 *     Type: DateOnly
 		 * @param {Date} max_dissemination_date Selects all items distributed by this committee before this date
+		 *     Type: DateOnly
 		 * @param {boolean} most_recent 
 		 * The report associated with the transaction is either new or is the most-recently filed amendment. Undetermined version (`null`) is always included.
 		 * @param {CandidatesTotalsAggregatesGetByMax_election_cycleAndSort_null_onlyAndSort_hide_nullAndPer_pageAndElection_yearAndOfficeAndSortAndMin_election_cycleAndDistrictAndApi_keyAndElection_fullAndPartyAndIs_active_candidateAndPageAndStateAndSort_nulls_lastAndAggregate_byOffice} candidate_office Federal office candidate runs for: H, S or P
@@ -24064,6 +29392,7 @@ export namespace MyNS {
 		 * for its ending, even year.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {Array<string>} candidate_id 
@@ -24076,6 +29405,7 @@ export namespace MyNS {
 		 * candidate/member's district changes during re-districting. Presidential IDs don't have districts.
 		 * The rest is sequence.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @return {void} 
 		 */
@@ -24090,6 +29420,7 @@ export namespace MyNS {
 		 * these limits are detailed in Chapter 7 of the FEC Campaign Guide for Political Party Committees.
 		 * Get schedules/schedule_f/
 		 * @param {Date} min_date Minimum date
+		 *     Type: DateOnly
 		 * @param {string} max_image_number Maxium image number of the page where the schedule item is reported
 		 * @param {Array<number>} cycle 
 		 * Filter records to only those that were applicable to a given
@@ -24099,6 +29430,7 @@ export namespace MyNS {
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {string} min_amount Filter for all amounts greater than a value.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} candidate_id 
 		 * A unique identifier assigned to each candidate registered with the FEC.
 		 * If a person runs for several offices, that person will have separate candidate IDs for each office.
@@ -24115,11 +29447,13 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {Array<string>} image_number 
 		 * An unique identifier for each page where the electronic or paper filing is reported.
 		 * @param {Date} max_date Maximum date
+		 *     Type: DateOnly
 		 * @param {string} max_amount Filter for all amounts less than a value.
 		 * @return {void} 
 		 */
@@ -24134,9 +29468,11 @@ export namespace MyNS {
 		 * these limits are detailed in Chapter 7 of the FEC Campaign Guide for Political Party Committees.
 		 * Get schedules/schedule_f/{sub_id}/
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		SchedulesSchedule_f_sub_idGetByPageAndApi_keyAndPer_page(page: number | null | undefined, api_key: string, per_page: number | null | undefined, sub_id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -24149,6 +29485,7 @@ export namespace MyNS {
 		 * Contact the appropriate state election office for more information.
 		 * Get state-election-office/
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} state 
 		 * Enter a state (Ex: AK, TX, VA etc..) to find the local election offices contact
 		 * information.
@@ -24156,6 +29493,7 @@ export namespace MyNS {
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
@@ -24170,16 +29508,19 @@ export namespace MyNS {
 		 * This is [the sql](https://github.com/fecgov/openFEC/blob/develop/data/migrations/V41__large_aggregates.sql) that creates these calculations.
 		 * Get totals/by_entity/
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_key 
 		 * API key for https://api.data.gov. Get one at https://api.data.gov/signup.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {string} sort Provide a field to sort by. Use `-` for descending order.
 		 * @param {number} cycle 
 		 * Filter records to only those that were applicable to a given
 		 * two-year period.The cycle begins with an odd year and is named
 		 * for its ending, even year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @return {void} 
 		 */
@@ -24199,12 +29540,14 @@ export namespace MyNS {
 		 * an odd year and is named for its ending, even year.
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {boolean} sort_null_only Toggle that filters out all rows having sort column that is non-null
 		 * @param {Array<string>} contributor_name Name of contributor
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} sort 
 		 * Provide a field to sort by. Use `-` for descending order. ex: `-case_no`
 		 * @return {void} 
@@ -24240,6 +29583,7 @@ export namespace MyNS {
 		 * Filter for all amounts less than a value.
 		 * @param {boolean} sort_hide_null Hide null values on sorted column(s).
 		 * @param {number} per_page The number of results returned per page. Defaults to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} filing_frequency The one-letter 
 		 *     code of the filing frequency:
 		 *          - A Administratively terminated
@@ -24252,6 +29596,7 @@ export namespace MyNS {
 		 * @param {string} max_last_debts_owed_by_committee 
 		 * Filter for all amounts less than a value.
 		 * @param {Date} min_first_f1_date Filter for committees whose first Form 1 was received on or after this date.
+		 *     Type: DateOnly
 		 * @param {Array<string>} committee_designation The one-letter designation code of the organization:
 		 *          - A authorized by a candidate
 		 *          - J joint fundraising committee
@@ -24282,11 +29627,13 @@ export namespace MyNS {
 		 *         - Z national party non-federal account
 		 * @param {boolean} sort_nulls_last Toggle that sorts null values last
 		 * @param {number} page For paginating through results, starting at page 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} committee_id 
 		 * A unique identifier assigned to each committee or filer registered with the FEC. In general committee id's begin with the letter C which is followed by eight digits.
 		 * @param {string} min_last_debts_owed_by_committee 
 		 * Filter for all amounts greater than a value.
 		 * @param {Date} max_first_f1_date Filter for committees whose first Form 1 was received on or before this date.
+		 *     Type: DateOnly
 		 * @param {Array<string>} organization_type The one-letter code for the kind for organization:
 		 *         - C corporation
 		 *         - L labor organization

@@ -4,7 +4,9 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AliasModel {
-		createdAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdAt?: string | null;
 		destinations?: Array<DestinationModel>;
 		domainName?: string | null;
 		metatags?: Array<MetaTagModel>;
@@ -12,22 +14,28 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 		snippets?: Array<SnippetModel>;
-		updatedAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updatedAt?: string | null;
 	}
 	export interface AliasModelFormProperties {
-		createdAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdAt: FormControl<string | null | undefined>,
 		domainName: FormControl<string | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
-		updatedAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updatedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateAliasModelFormGroup() {
 		return new FormGroup<AliasModelFormProperties>({
-			createdAt: new FormControl<number | null | undefined>(undefined),
+			createdAt: new FormControl<string | null | undefined>(undefined),
 			domainName: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			updatedAt: new FormControl<number | null | undefined>(undefined),
+			updatedAt: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -118,7 +126,9 @@ export namespace MyNS {
 		aliasId?: string | null;
 		browser?: string | null;
 		country?: string | null;
-		createdAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdAt?: string | null;
 		destination?: string | null;
 		domain?: string | null;
 		os?: string | null;
@@ -130,7 +140,9 @@ export namespace MyNS {
 		aliasId: FormControl<string | null | undefined>,
 		browser: FormControl<string | null | undefined>,
 		country: FormControl<string | null | undefined>,
-		createdAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdAt: FormControl<string | null | undefined>,
 		destination: FormControl<string | null | undefined>,
 		domain: FormControl<string | null | undefined>,
 		os: FormControl<string | null | undefined>,
@@ -143,7 +155,7 @@ export namespace MyNS {
 			aliasId: new FormControl<string | null | undefined>(undefined),
 			browser: new FormControl<string | null | undefined>(undefined),
 			country: new FormControl<string | null | undefined>(undefined),
-			createdAt: new FormControl<number | null | undefined>(undefined),
+			createdAt: new FormControl<string | null | undefined>(undefined),
 			destination: new FormControl<string | null | undefined>(undefined),
 			domain: new FormControl<string | null | undefined>(undefined),
 			os: new FormControl<string | null | undefined>(undefined),
@@ -159,9 +171,13 @@ export namespace MyNS {
 		aliasId?: string | null;
 		browser?: string | null;
 		country?: string | null;
-		createdAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdAt?: string | null;
 		destination?: string | null;
 		domain?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		os?: string | null;
 		referrer?: string | null;
@@ -173,9 +189,13 @@ export namespace MyNS {
 		aliasId: FormControl<string | null | undefined>,
 		browser: FormControl<string | null | undefined>,
 		country: FormControl<string | null | undefined>,
-		createdAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdAt: FormControl<string | null | undefined>,
 		destination: FormControl<string | null | undefined>,
 		domain: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		os: FormControl<string | null | undefined>,
 		referrer: FormControl<string | null | undefined>,
@@ -188,7 +208,7 @@ export namespace MyNS {
 			aliasId: new FormControl<string | null | undefined>(undefined),
 			browser: new FormControl<string | null | undefined>(undefined),
 			country: new FormControl<string | null | undefined>(undefined),
-			createdAt: new FormControl<number | null | undefined>(undefined),
+			createdAt: new FormControl<string | null | undefined>(undefined),
 			destination: new FormControl<string | null | undefined>(undefined),
 			domain: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<number | null | undefined>(undefined),
@@ -213,7 +233,10 @@ export namespace MyNS {
 		/** Domain name */
 		domain?: string | null;
 
-		/** last Id */
+		/**
+		 * last Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastId?: number | null;
 	}
 	export interface ClicksFilterModelFormProperties {
@@ -230,7 +253,10 @@ export namespace MyNS {
 		/** Domain name */
 		domain: FormControl<string | null | undefined>,
 
-		/** last Id */
+		/**
+		 * last Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastId: FormControl<number | null | undefined>,
 	}
 	export function CreateClicksFilterModelFormGroup() {
@@ -277,23 +303,31 @@ export namespace MyNS {
 	}
 
 	export interface GetAliasModel {
-		createdAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdAt?: string | null;
 		domainName?: string | null;
 		name?: string | null;
-		updatedAt?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updatedAt?: string | null;
 	}
 	export interface GetAliasModelFormProperties {
-		createdAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		createdAt: FormControl<string | null | undefined>,
 		domainName: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		updatedAt: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		updatedAt: FormControl<string | null | undefined>,
 	}
 	export function CreateGetAliasModelFormGroup() {
 		return new FormGroup<GetAliasModelFormProperties>({
-			createdAt: new FormControl<number | null | undefined>(undefined),
+			createdAt: new FormControl<string | null | undefined>(undefined),
 			domainName: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			updatedAt: new FormControl<number | null | undefined>(undefined),
+			updatedAt: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -395,6 +429,7 @@ export namespace MyNS {
 		 * @param {string} domainName The domain name to get the aliases for (string without `http/https` or `/`)
 		 * @param {string} continueFrom An ID returned by a previous query to continue aliases retrieval (see lastId in response)
 		 * @param {number} limit Number of results to return per request
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {GetAliasesModel} returns Array of aliases with lastId
 		 */
 		GetAliases(domainName: string | null | undefined, continueFrom: string | null | undefined, limit: number | null | undefined): Observable<GetAliasesModel> {
@@ -408,6 +443,7 @@ export namespace MyNS {
 		 * Get clicks
 		 * @param {string} continueFrom An ID returned by a previous query to continue clicks retrieval (see lastId in response)
 		 * @param {number} limit Number of results to return per request
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {GetClicksModel} returns Array of Click models, also returns lastId
 		 */
 		GetClicks(continueFrom: string | null | undefined, limit: number | null | undefined): Observable<GetClicksModel> {

@@ -775,7 +775,10 @@ namespace MyNS
 		/// Lists the tags assigned to a retention rule.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the retention rule.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the retention rule.
+		/// Max length: 1011
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -809,7 +812,10 @@ namespace MyNS
 		/// Assigns tags to the specified retention rule.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the retention rule.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the retention rule.
+		/// Max length: 1011
+		/// Min length: 0
+		// </param>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn));
@@ -913,8 +919,14 @@ namespace MyNS
 		/// Unassigns a tag from a retention rule.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the retention rule.</param>
-		/// <param name="tagKeys">The tag keys of the tags to unassign. All tags that have the specified tag key are unassigned.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the retention rule.
+		/// Max length: 1011
+		/// Min length: 0
+		// </param>
+		/// <param name="tagKeys">The tag keys of the tags to unassign. All tags that have the specified tag key are unassigned.
+		/// Minimum items: 0
+		/// Maximum items: 200
+		// </param>
 		public async Task UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"#tagKeys&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));

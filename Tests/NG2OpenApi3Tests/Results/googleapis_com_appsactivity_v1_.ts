@@ -374,6 +374,7 @@ export namespace MyNS {
 		 * @param {string} drive_fileId Identifies the Drive item to return activities for.
 		 * @param {Appsactivity_activities_listGroupingStrategy} groupingStrategy Indicates the strategy to use when grouping singleEvents items in the associated combinedEvent object.
 		 * @param {number} pageSize The maximum number of events to return on a page. The response includes a continuation token if there are more events.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token to retrieve a specific page of results.
 		 * @param {string} source The Google service from which to return activities. Possible values of source are: 
 		 * - drive.google.com

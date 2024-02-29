@@ -10139,8 +10139,13 @@ namespace MyNS
 		/// 
 		/// GetEntityTransfers account/entity-transfers
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of Entity Transfer objects containing the details of all transfers that have been created and accepted by this account.
 		///</returns>
 		public async Task<PaginationEnvelope> GetEntityTransfersAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10322,8 +10327,13 @@ namespace MyNS
 		/// 
 		/// GetEvents account/events
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated lists of Event objects from the last 90 days.
 		///</returns>
 		public async Task<GetEventsReturn> GetEventsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -10452,8 +10462,13 @@ namespace MyNS
 		/// 
 		/// GetInvoices account/invoices
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of Invoice objects.</returns>
 		public async Task<GetInvoicesReturn> GetInvoicesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10522,8 +10537,13 @@ namespace MyNS
 		/// Returns a paginated list of Invoice items.
 		/// GetInvoiceItems account/invoices/{invoiceId}/items
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of InvoiceItem objects</returns>
 		public async Task<GetInvoiceItemsReturn> GetInvoiceItemsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10703,8 +10723,13 @@ namespace MyNS
 		/// 
 		/// GetClients account/oauth-clients
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of OAuth Clients.</returns>
 		public async Task<GetClientsReturn> GetClientsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -10954,8 +10979,13 @@ namespace MyNS
 		/// 
 		/// GetPaymentMethods account/payment-methods
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of Payment Method objects.</returns>
 		public async Task<GetPaymentMethodsReturn> GetPaymentMethodsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11150,8 +11180,13 @@ namespace MyNS
 		/// 
 		/// GetPayments account/payments
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of Payment objects.</returns>
 		public async Task<GetPaymentsReturn> GetPaymentsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -11410,8 +11445,13 @@ namespace MyNS
 		/// 
 		/// GetServiceTransfers account/service-transfers
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of Service Transfer objects containing the details of all transfers that have been created and accepted by this account.
 		///</returns>
 		public async Task<GetServiceTransfersReturn> GetServiceTransfersAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -11821,8 +11861,13 @@ namespace MyNS
 		/// 
 		/// GetUsers account/users
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of Users.</returns>
 		public async Task<GetUsersReturn> GetUsersAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12121,8 +12166,13 @@ namespace MyNS
 		/// 
 		/// GetDatabasesEngines databases/engines
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of all available Managed Database engines and versions.</returns>
 		public async Task<PaginationEnvelope> GetDatabasesEnginesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12158,8 +12208,13 @@ namespace MyNS
 		/// 
 		/// GetDatabasesEngine databases/engines/{engineId}
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns information for a single Managed Database engine type and version.</returns>
 		public async Task<DatabaseEngine> GetDatabasesEngineAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12197,8 +12252,13 @@ namespace MyNS
 		/// 
 		/// GetDatabasesInstances databases/instances
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of all accessible Managed Databases on your Account.</returns>
 		public async Task<PaginationEnvelope> GetDatabasesInstancesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12236,8 +12296,13 @@ namespace MyNS
 		/// 
 		/// GetDatabasesMongoDBInstances databases/mongodb/instances
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of all accessible Managed MongoDB Databases on your Account.</returns>
 		public async Task<PaginationEnvelope> GetDatabasesMongoDBInstancesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12425,8 +12490,13 @@ namespace MyNS
 		/// 
 		/// GetDatabasesMongoDBInstanceBackups databases/mongodb/instances/{instanceId}/backups
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of backups for the Managed MongoDB Database.</returns>
 		public async Task<PaginationEnvelope> GetDatabasesMongoDBInstanceBackupsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -12789,8 +12859,13 @@ namespace MyNS
 		/// 
 		/// GetDatabasesMySQLInstances databases/mysql/instances
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of all accessible Managed MySQL Databases on your Account.</returns>
 		public async Task<PaginationEnvelope> GetDatabasesMySQLInstancesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13035,8 +13110,13 @@ namespace MyNS
 		/// 
 		/// GetDatabasesMySQLInstanceBackups databases/mysql/instances/{instanceId}/backups
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of backups for the Managed MySQL Database.</returns>
 		public async Task<PaginationEnvelope> GetDatabasesMySQLInstanceBackupsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13384,8 +13464,13 @@ namespace MyNS
 		/// 
 		/// GetDatabasesPostgreSQLInstances databases/postgresql/instances
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of all accessible Managed PostgreSQL Databases on your Account.</returns>
 		public async Task<PaginationEnvelope> GetDatabasesPostgreSQLInstancesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13630,8 +13715,13 @@ namespace MyNS
 		/// 
 		/// GetDatabasesPostgreSQLInstanceBackups databases/postgresql/instances/{instanceId}/backups
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of backups for the Managed PostgreSQL Database.</returns>
 		public async Task<PaginationEnvelope> GetDatabasesPostgreSQLInstanceBackupsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -13981,8 +14071,13 @@ namespace MyNS
 		/// 
 		/// GetDatabasesTypes databases/types
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of all Managed Database types.</returns>
 		public async Task<PaginationEnvelope> GetDatabasesTypesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -14018,8 +14113,13 @@ namespace MyNS
 		/// 
 		/// GetDatabasesType databases/types/{typeId}
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a single Managed Database type.</returns>
 		public async Task<DatabaseType> GetDatabasesTypeAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -14055,8 +14155,13 @@ namespace MyNS
 		/// 
 		/// GetDomains domains
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of Domains you have registered.</returns>
 		public async Task<GetDomainsReturn> GetDomainsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -14344,8 +14449,13 @@ namespace MyNS
 		/// 
 		/// GetDomainRecords domains/{domainId}/records
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A list of Domain Records.</returns>
 		public async Task<GetDomainRecordsReturn> GetDomainRecordsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -14583,8 +14693,13 @@ namespace MyNS
 		/// 
 		/// GetImages images
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of Images.</returns>
 		public async Task<GetImagesReturn> GetImagesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -14852,8 +14967,13 @@ namespace MyNS
 		/// 
 		/// GetLinodeInstances linode/instances
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns an array of all Linodes on your Account.</returns>
 		public async Task<GetLinodeInstancesReturn> GetLinodeInstancesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -15431,8 +15551,13 @@ namespace MyNS
 		/// 
 		/// GetLinodeConfigs linode/instances/{linodeId}/configs
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns an array of Configuration profiles associated with this Linode.
 		///</returns>
 		public async Task<GetLinodeConfigsReturn> GetLinodeConfigsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -15628,8 +15753,13 @@ namespace MyNS
 		/// 
 		/// GetLinodeDisks linode/instances/{linodeId}/disks
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of disks associated with this Linode.</returns>
 		public async Task<GetLinodeDisksReturn> GetLinodeDisksAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -15966,8 +16096,13 @@ namespace MyNS
 		/// 
 		/// GetLinodeFirewalls linode/instances/{linodeId}/firewalls
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of Firewalls associated with this Linode.</returns>
 		public async Task<GetLinodeFirewallsReturn> GetLinodeFirewallsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -16718,8 +16853,13 @@ namespace MyNS
 		/// 
 		/// GetLinodeVolumes linode/instances/{linodeId}/volumes
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns an array of Block Storage Volumes attached to this Linode.
 		///</returns>
 		public async Task<GetLinodeVolumesReturn> GetLinodeVolumesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -16756,8 +16896,13 @@ namespace MyNS
 		/// 
 		/// GetKernels linode/kernels
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns an array of Kernels.</returns>
 		public async Task<GetKernelsReturn> GetKernelsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -16830,8 +16975,13 @@ namespace MyNS
 		/// 
 		/// GetStackScripts linode/stackscripts
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A list of StackScripts available to the User, including private StackScripts owned by the User if the request is authenticated.
 		///</returns>
 		public async Task<GetStackScriptsReturn> GetStackScriptsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -17972,8 +18122,13 @@ namespace MyNS
 		/// 
 		/// GetLongviewClients longview/clients
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of Longview Clients.</returns>
 		public async Task<GetLongviewClientsReturn> GetLongviewClientsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -18260,8 +18415,13 @@ namespace MyNS
 		/// 
 		/// GetLongviewSubscriptions longview/subscriptions
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of Longview Subscriptions.</returns>
 		public async Task<GetLongviewSubscriptionsReturn> GetLongviewSubscriptionsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -18334,8 +18494,13 @@ namespace MyNS
 		/// 
 		/// GetManagedContacts managed/contacts
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of ManagedContacts</returns>
 		public async Task<GetManagedContactsReturn> GetManagedContactsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -18537,8 +18702,13 @@ namespace MyNS
 		/// 
 		/// GetManagedCredentials managed/credentials
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of ManagedCredentials</returns>
 		public async Task<GetManagedCredentialsReturn> GetManagedCredentialsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -18822,8 +18992,13 @@ namespace MyNS
 		/// 
 		/// GetManagedIssues managed/issues
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of open or ongoing Managed Issues.
 		///</returns>
 		public async Task<GetManagedIssuesReturn> GetManagedIssuesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -18901,8 +19076,13 @@ namespace MyNS
 		/// 
 		/// GetManagedLinodeSettings managed/linode-settings
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of Managed settings for your Linodes.
 		///</returns>
 		public async Task<GetManagedLinodeSettingsReturn> GetManagedLinodeSettingsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19335,8 +19515,13 @@ namespace MyNS
 		/// 
 		/// GetFirewalls networking/firewalls
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns an array of Firewalls.</returns>
 		public async Task<GetFirewallsReturn> GetFirewallsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -19565,8 +19750,13 @@ namespace MyNS
 		/// 
 		/// GetFirewallDevices networking/firewalls/{firewallId}/devices
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of Firewall Devices</returns>
 		public async Task<GetFirewallDevicesReturn> GetFirewallDevicesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20170,8 +20360,13 @@ namespace MyNS
 		/// 
 		/// GetIPv6Pools networking/ipv6/pools
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>The IPv6 pools on your Account.</returns>
 		public async Task<GetIPv6PoolsReturn> GetIPv6PoolsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20214,8 +20409,13 @@ namespace MyNS
 		/// 
 		/// GetIPv6Ranges networking/ipv6/ranges
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>The IPv6 ranges on your Account.</returns>
 		public async Task<GetIPv6RangesReturn> GetIPv6RangesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20397,8 +20597,13 @@ namespace MyNS
 		/// 
 		/// GetVLANs networking/vlans
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>The VLANs available on this Account.</returns>
 		public async Task<GetVLANsReturn> GetVLANsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20434,8 +20639,13 @@ namespace MyNS
 		/// 
 		/// GetNodeBalancers nodebalancers
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of NodeBalancers.</returns>
 		public async Task<GetNodeBalancersReturn> GetNodeBalancersAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20636,8 +20846,13 @@ namespace MyNS
 		/// 
 		/// GetNodeBalancerConfigs nodebalancers/{nodeBalancerId}/configs
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginted list of NodeBalancer Configs</returns>
 		public async Task<GetNodeBalancerConfigsReturn> GetNodeBalancerConfigsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -20832,8 +21047,13 @@ namespace MyNS
 		/// 
 		/// GetNodeBalancerConfigNodes nodebalancers/{nodeBalancerId}/configs/{configId}/nodes
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of NodeBalancer nodes.</returns>
 		public async Task<GetNodeBalancerConfigNodesReturn> GetNodeBalancerConfigNodesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -21514,7 +21734,10 @@ namespace MyNS
 		///</param>
 		/// <param name="prefix">Filters objects returned to only those whose name start with the given prefix. Commonly used in conjunction with `delimiter` to allow transversal of bucket contents in a manner similar to a filesystem.
 		///</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>One page of the requested bucket's contents.</returns>
 		public async Task<object> GetObjectStorageBucketContentAsync(string marker, string delimiter, string prefix, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -22141,8 +22364,13 @@ namespace MyNS
 		/// 
 		/// GetProfileApps profile/apps
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of apps you've authorized.
 		///</returns>
 		public async Task<GetProfileAppsReturn> GetProfileAppsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -22765,8 +22993,13 @@ namespace MyNS
 		/// 
 		/// GetSSHKeys profile/sshkeys
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of SSH Key objects.</returns>
 		public async Task<GetSSHKeysReturn> GetSSHKeysAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23330,8 +23563,13 @@ namespace MyNS
 		/// 
 		/// GetTickets support/tickets
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of SupportTicket objects.</returns>
 		public async Task<GetTicketsReturn> GetTicketsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23475,8 +23713,13 @@ namespace MyNS
 		/// 
 		/// GetTicketReplies support/tickets/{ticketId}/replies
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a paginated list of SupportTicketReply objects.</returns>
 		public async Task<GetTicketRepliesReturn> GetTicketRepliesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23557,8 +23800,13 @@ namespace MyNS
 		/// 
 		/// GetTags tags
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of Tags</returns>
 		public async Task<GetTagsReturn> GetTagsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23676,8 +23924,13 @@ namespace MyNS
 		/// 
 		/// GetTaggedObjects tags/{label}
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>A paginated list of objects, organized by type, that have been tagged with the requested Tag.
 		///</returns>
 		public async Task<object> GetTaggedObjectsAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -23714,8 +23967,13 @@ namespace MyNS
 		/// 
 		/// GetVolumes volumes
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns an array of all Volumes on your Account.</returns>
 		public async Task<GetVolumesReturn> GetVolumesAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -23836,8 +24094,13 @@ namespace MyNS
 		/// 
 		/// GetVolume volumes/{volumeId}
 		/// </summary>
-		/// <param name="page">The page of a collection to return.</param>
-		/// <param name="page_size">The number of items to return per page.</param>
+		/// <param name="page">The page of a collection to return.
+		/// Minimum: 1
+		// </param>
+		/// <param name="page_size">The number of items to return per page.
+		/// Minimum: 25
+		/// Maximum: 500
+		// </param>
 		/// <returns>Returns a single Volume object.</returns>
 		public async Task<Volume> GetVolumeAsync(int page, int page_size, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

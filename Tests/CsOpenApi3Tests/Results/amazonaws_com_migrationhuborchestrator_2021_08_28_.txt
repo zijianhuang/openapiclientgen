@@ -1835,7 +1835,10 @@ namespace MyNS
 		/// Delete a migration workflow. You must pause a running workflow in Migration Hub Orchestrator console to delete it.
 		/// DeleteWorkflow migrationworkflow/{id}
 		/// </summary>
-		/// <param name="id">The ID of the migration workflow you want to delete.</param>
+		/// <param name="id">The ID of the migration workflow you want to delete.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		public async Task DeleteWorkflowAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "migrationworkflow/"+ (id==null? "" : System.Uri.EscapeDataString(id));
@@ -1862,7 +1865,10 @@ namespace MyNS
 		/// Get migration workflow.
 		/// GetWorkflow migrationworkflow/{id}
 		/// </summary>
-		/// <param name="id">The ID of the migration workflow.</param>
+		/// <param name="id">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMigrationWorkflowResponse> GetWorkflowAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1896,7 +1902,10 @@ namespace MyNS
 		/// Update a migration workflow.
 		/// UpdateWorkflow migrationworkflow/{id}
 		/// </summary>
-		/// <param name="id">The ID of the migration workflow.</param>
+		/// <param name="id">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMigrationWorkflowResponse> UpdateWorkflowAsync(string id, UpdateWorkflowPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1937,9 +1946,18 @@ namespace MyNS
 		/// Delete a step in a migration workflow. Pause the workflow to delete a running step.
 		/// DeleteWorkflowStep workflowstep/{id}#stepGroupId&workflowId
 		/// </summary>
-		/// <param name="id">The ID of the step you want to delete.</param>
-		/// <param name="stepGroupId">The ID of the step group that contains the step you want to delete.</param>
-		/// <param name="workflowId">The ID of the migration workflow.</param>
+		/// <param name="id">The ID of the step you want to delete.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="stepGroupId">The ID of the step group that contains the step you want to delete.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="workflowId">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteWorkflowStepResponse> DeleteWorkflowStepAsync(string id, string stepGroupId, string workflowId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1973,8 +1991,14 @@ namespace MyNS
 		/// Delete a step group in a migration workflow.
 		/// DeleteWorkflowStepGroup workflowstepgroup/{id}#workflowId
 		/// </summary>
-		/// <param name="workflowId">The ID of the migration workflow.</param>
-		/// <param name="id">The ID of the step group you want to delete.</param>
+		/// <param name="workflowId">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="id">The ID of the step group you want to delete.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		public async Task DeleteWorkflowStepGroupAsync(string workflowId, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workflowstepgroup/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"#workflowId?workflowId=" + (workflowId==null? "" : System.Uri.EscapeDataString(workflowId));
@@ -2001,8 +2025,14 @@ namespace MyNS
 		/// Get the step group of a migration workflow.
 		/// GetWorkflowStepGroup workflowstepgroup/{id}#workflowId
 		/// </summary>
-		/// <param name="id">The ID of the step group.</param>
-		/// <param name="workflowId">The ID of the migration workflow.</param>
+		/// <param name="id">The ID of the step group.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="workflowId">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkflowStepGroupResponse> GetWorkflowStepGroupAsync(string id, string workflowId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2036,8 +2066,14 @@ namespace MyNS
 		/// Update the step group in a migration workflow.
 		/// UpdateWorkflowStepGroup workflowstepgroup/{id}#workflowId
 		/// </summary>
-		/// <param name="workflowId">The ID of the migration workflow.</param>
-		/// <param name="id">The ID of the step group.</param>
+		/// <param name="workflowId">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="id">The ID of the step group.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		public async Task UpdateWorkflowStepGroupAsync(string workflowId, string id, UpdateWorkflowStepGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workflowstepgroup/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"#workflowId?workflowId=" + (workflowId==null? "" : System.Uri.EscapeDataString(workflowId));
@@ -2071,7 +2107,10 @@ namespace MyNS
 		/// Get the template you want to use for creating a migration workflow.
 		/// GetTemplate migrationworkflowtemplate/{id}
 		/// </summary>
-		/// <param name="id">The ID of the template.</param>
+		/// <param name="id">The ID of the template.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMigrationWorkflowTemplateResponse> GetTemplateAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2105,9 +2144,18 @@ namespace MyNS
 		/// Get a specific step in a template.
 		/// GetTemplateStep templatestep/{id}#templateId&stepGroupId
 		/// </summary>
-		/// <param name="id">The ID of the step.</param>
-		/// <param name="templateId">The ID of the template.</param>
-		/// <param name="stepGroupId">The ID of the step group.</param>
+		/// <param name="id">The ID of the step.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="templateId">The ID of the template.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="stepGroupId">The ID of the step group.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTemplateStepResponse> GetTemplateStepAsync(string id, string templateId, string stepGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2141,8 +2189,14 @@ namespace MyNS
 		/// Get a step group in a template.
 		/// GetTemplateStepGroup templates/{templateId}/stepgroups/{id}
 		/// </summary>
-		/// <param name="templateId">The ID of the template.</param>
-		/// <param name="id">The ID of the step group.</param>
+		/// <param name="templateId">The ID of the template.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="id">The ID of the step group.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetTemplateStepGroupResponse> GetTemplateStepGroupAsync(string templateId, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2176,9 +2230,18 @@ namespace MyNS
 		/// Get a step in the migration workflow.
 		/// GetWorkflowStep workflowstep/{id}#workflowId&stepGroupId
 		/// </summary>
-		/// <param name="workflowId">The ID of the migration workflow.</param>
-		/// <param name="stepGroupId">desThe ID of the step group.</param>
-		/// <param name="id">The ID of the step.</param>
+		/// <param name="workflowId">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="stepGroupId">desThe ID of the step group.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="id">The ID of the step.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkflowStepResponse> GetWorkflowStepAsync(string workflowId, string stepGroupId, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2212,8 +2275,14 @@ namespace MyNS
 		/// List AWS Migration Hub Orchestrator plugins.
 		/// ListPlugins plugins
 		/// </summary>
-		/// <param name="maxResults">The maximum number of plugins that can be returned.</param>
-		/// <param name="nextToken">The pagination token.</param>
+		/// <param name="maxResults">The maximum number of plugins that can be returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The pagination token.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPluginsResponse> ListPluginsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2322,9 +2391,18 @@ namespace MyNS
 		/// List the step groups in a template.
 		/// ListTemplateStepGroups templatestepgroups/{templateId}
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results that can be returned.</param>
-		/// <param name="nextToken">The pagination token.</param>
-		/// <param name="templateId">The ID of the template.</param>
+		/// <param name="maxResults">The maximum number of results that can be returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The pagination token.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="templateId">The ID of the template.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTemplateStepGroupsResponse> ListTemplateStepGroupsAsync(int maxResults, string nextToken, string templateId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2358,10 +2436,22 @@ namespace MyNS
 		/// List the steps in a template.
 		/// ListTemplateSteps templatesteps#templateId&stepGroupId
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results that can be returned.</param>
-		/// <param name="nextToken">The pagination token.</param>
-		/// <param name="templateId">The ID of the template.</param>
-		/// <param name="stepGroupId">The ID of the step group.</param>
+		/// <param name="maxResults">The maximum number of results that can be returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The pagination token.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="templateId">The ID of the template.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="stepGroupId">The ID of the step group.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTemplateStepsResponse> ListTemplateStepsAsync(int maxResults, string nextToken, string templateId, string stepGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2395,9 +2485,18 @@ namespace MyNS
 		/// List the templates available in Migration Hub Orchestrator to create a migration workflow.
 		/// ListTemplates migrationworkflowtemplates
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results that can be returned.</param>
-		/// <param name="nextToken">The pagination token.</param>
-		/// <param name="name">The name of the template.</param>
+		/// <param name="maxResults">The maximum number of results that can be returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The pagination token.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="name">The name of the template.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListMigrationWorkflowTemplatesResponse> ListTemplatesAsync(int maxResults, string nextToken, string name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2431,9 +2530,18 @@ namespace MyNS
 		/// List the step groups in a migration workflow.
 		/// ListWorkflowStepGroups workflowstepgroups#workflowId
 		/// </summary>
-		/// <param name="nextToken">The pagination token.</param>
-		/// <param name="maxResults">The maximum number of results that can be returned.</param>
-		/// <param name="workflowId">The ID of the migration workflow.</param>
+		/// <param name="nextToken">The pagination token.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results that can be returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="workflowId">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkflowStepGroupsResponse> ListWorkflowStepGroupsAsync(string nextToken, int maxResults, string workflowId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2467,10 +2575,22 @@ namespace MyNS
 		/// List the steps in a workflow.
 		/// ListWorkflowSteps workflow/{workflowId}/workflowstepgroups/{stepGroupId}/workflowsteps
 		/// </summary>
-		/// <param name="nextToken">The pagination token.</param>
-		/// <param name="maxResults">The maximum number of results that can be returned.</param>
-		/// <param name="workflowId">The ID of the migration workflow.</param>
-		/// <param name="stepGroupId">The ID of the step group.</param>
+		/// <param name="nextToken">The pagination token.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults">The maximum number of results that can be returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="workflowId">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="stepGroupId">The ID of the step group.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkflowStepsResponse> ListWorkflowStepsAsync(string nextToken, int maxResults, string workflowId, string stepGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2504,10 +2624,22 @@ namespace MyNS
 		/// List the migration workflows.
 		/// ListWorkflows migrationworkflows
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results that can be returned.</param>
-		/// <param name="nextToken">The pagination token.</param>
-		/// <param name="templateId">The ID of the template.</param>
-		/// <param name="adsApplicationConfigurationName">The name of the application configured in Application Discovery Service.</param>
+		/// <param name="maxResults">The maximum number of results that can be returned.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The pagination token.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="templateId">The ID of the template.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="adsApplicationConfigurationName">The name of the application configured in Application Discovery Service.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <param name="status">The status of the migration workflow.</param>
 		/// <param name="name">The name of the migration workflow.</param>
 		/// <returns>Success</returns>
@@ -2543,9 +2675,18 @@ namespace MyNS
 		/// Retry a failed step in a migration workflow.
 		/// RetryWorkflowStep retryworkflowstep/{id}#workflowId&stepGroupId
 		/// </summary>
-		/// <param name="workflowId">The ID of the migration workflow.</param>
-		/// <param name="stepGroupId">The ID of the step group.</param>
-		/// <param name="id">The ID of the step.</param>
+		/// <param name="workflowId">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="stepGroupId">The ID of the step group.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="id">The ID of the step.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RetryWorkflowStepResponse> RetryWorkflowStepAsync(string workflowId, string stepGroupId, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2574,7 +2715,10 @@ namespace MyNS
 		/// Start a migration workflow.
 		/// StartWorkflow migrationworkflow/{id}/start
 		/// </summary>
-		/// <param name="id">The ID of the migration workflow.</param>
+		/// <param name="id">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartMigrationWorkflowResponse> StartWorkflowAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2603,7 +2747,10 @@ namespace MyNS
 		/// Stop an ongoing migration workflow.
 		/// StopWorkflow migrationworkflow/{id}/stop
 		/// </summary>
-		/// <param name="id">The ID of the migration workflow.</param>
+		/// <param name="id">The ID of the migration workflow.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopMigrationWorkflowResponse> StopWorkflowAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2633,7 +2780,10 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</param>
-		/// <param name="tagKeys">One or more tag keys. Specify only the tag keys, not the tag values.</param>
+		/// <param name="tagKeys">One or more tag keys. Specify only the tag keys, not the tag values.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2667,7 +2817,10 @@ namespace MyNS
 		/// Update a step in a migration workflow.
 		/// UpdateWorkflowStep workflowstep/{id}
 		/// </summary>
-		/// <param name="id">The ID of the step.</param>
+		/// <param name="id">The ID of the step.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateWorkflowStepResponse> UpdateWorkflowStepAsync(string id, UpdateWorkflowStepPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

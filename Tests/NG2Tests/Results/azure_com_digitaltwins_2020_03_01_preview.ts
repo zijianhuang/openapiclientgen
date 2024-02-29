@@ -777,6 +777,7 @@ export namespace MyNS {
 		 * Lists all of the available DigitalTwins service REST API operations.
 		 * Get providers/Microsoft.DigitalTwins/operations
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @return {OperationListResult} OK. The request has succeeded.
 		 */
 		Operations_List(api_version: Operations_ListApi_version): Observable<OperationListResult> {
@@ -787,6 +788,7 @@ export namespace MyNS {
 		 * Get all the DigitalTwinsInstances in a subscription.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.DigitalTwins/digitalTwinsInstances
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @return {DigitalTwinsDescriptionListResult} This is a synchronous operation. The body contains a JSON-serialized array of the metadata from all the DigitalTwinsInstances in the subscription.
 		 */
@@ -798,8 +800,10 @@ export namespace MyNS {
 		 * Check if a DigitalTwinsInstance name is available.
 		 * Post subscriptions/{subscriptionId}/providers/Microsoft.DigitalTwins/locations/{location}/checkNameAvailability
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} location Location of DigitalTwinsInstance.
+		 *     Min length: 3
 		 * @param {CheckNameRequest} requestBody Set the name parameter in the DigitalTwinsInstanceCheckName structure to the name of the DigitalTwinsInstance to check.
 		 * @return {CheckNameResult} This is a synchronous operation. The body contains a JSON-serialized response that specifies whether the DigitalTwins service name is available. If the name is not available, the body contains the reason.
 		 */
@@ -811,8 +815,10 @@ export namespace MyNS {
 		 * Get all the DigitalTwinsInstances in a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @return {DigitalTwinsDescriptionListResult} This is a synchronous operation. The body contains a JSON-serialized array of the metadata from all the DigitalTwinsInstances in the resource group.
 		 */
 		DigitalTwins_ListByResourceGroup(api_version: Operations_ListApi_version, subscriptionId: string, resourceGroupName: string): Observable<DigitalTwinsDescriptionListResult> {
@@ -823,9 +829,12 @@ export namespace MyNS {
 		 * Get DigitalTwinsInstances resource.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @return {DigitalTwinsDescription} The body contains all the non-security properties of the DigitalTwinsInstance. Security-related properties are set to null.
 		 */
 		DigitalTwins_Get(api_version: Operations_ListApi_version, subscriptionId: string, resourceGroupName: string, resourceName: string): Observable<DigitalTwinsDescription> {
@@ -836,9 +845,12 @@ export namespace MyNS {
 		 * Create or update the metadata of a DigitalTwinsInstance. The usual pattern to modify a property is to retrieve the DigitalTwinsInstance and security metadata, and then combine them with the modified values in a new body to update the DigitalTwinsInstance.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {DigitalTwinsDescription} requestBody The DigitalTwinsInstance and security metadata.
 		 * @return {DigitalTwinsDescription} This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.
 		 */
@@ -850,9 +862,12 @@ export namespace MyNS {
 		 * Delete a DigitalTwinsInstance.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} This is returned as a response to the status polling request for the delete operation. The body contains the resource representation that indicates a transitional provisioning state.
 		 */
 		DigitalTwins_Delete(api_version: Operations_ListApi_version, subscriptionId: string, resourceGroupName: string, resourceName: string): Observable<HttpResponse<string>> {
@@ -863,9 +878,12 @@ export namespace MyNS {
 		 * Update metadata of DigitalTwinsInstance.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {DigitalTwinsPatchDescription} requestBody The DigitalTwinsInstance and security metadata.
 		 * @return {DigitalTwinsDescription} This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.
 		 */
@@ -877,9 +895,12 @@ export namespace MyNS {
 		 * Get DigitalTwinsInstance Endpoints.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}/endpoints
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @return {DigitalTwinsEndpointResourceListResult} The body contains all the non-security properties of the DigitalTwinsInstance. Security-related properties are set to null.
 		 */
 		DigitalTwinsEndpoint_List(api_version: Operations_ListApi_version, subscriptionId: string, resourceGroupName: string, resourceName: string): Observable<DigitalTwinsEndpointResourceListResult> {
@@ -890,10 +911,14 @@ export namespace MyNS {
 		 * Get DigitalTwinsInstances Endpoint.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}/endpoints/{endpointName}
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} endpointName Name of Endpoint Resource.
+		 *     Min length: 1    Max length: 64
 		 * @return {DigitalTwinsEndpointResource} The body contains all the non-security properties of the DigitalTwinsInstance. Security-related properties are set to null.
 		 */
 		DigitalTwinsEndpoint_Get(api_version: Operations_ListApi_version, subscriptionId: string, resourceGroupName: string, resourceName: string, endpointName: string): Observable<DigitalTwinsEndpointResource> {
@@ -904,10 +929,14 @@ export namespace MyNS {
 		 * Create or update DigitalTwinsInstance endpoint.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}/endpoints/{endpointName}
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} endpointName Name of Endpoint Resource.
+		 *     Min length: 1    Max length: 64
 		 * @param {DigitalTwinsEndpointResource} requestBody The DigitalTwinsInstance endpoint metadata and security metadata.
 		 * @return {DigitalTwinsEndpointResource} This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.
 		 */
@@ -919,10 +948,14 @@ export namespace MyNS {
 		 * Delete a DigitalTwinsInstance endpoint.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}/endpoints/{endpointName}
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} endpointName Name of Endpoint Resource.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} This is returned as a response to the status polling request for the delete operation. The body contains the resource representation that indicates a transitional provisioning state.
 		 */
 		DigitalTwinsEndpoint_Delete(api_version: Operations_ListApi_version, subscriptionId: string, resourceGroupName: string, resourceName: string, endpointName: string): Observable<HttpResponse<string>> {
@@ -933,9 +966,12 @@ export namespace MyNS {
 		 * Get DigitalTwinsInstance IoTHubs.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DigitalTwins/digitalTwinsInstances/{resourceName}/integrationResources
 		 * @param {Operations_ListApi_version} api_version Version of the DigitalTwinsInstance Management API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the DigitalTwinsInstance.
+		 *     Min length: 1    Max length: 64
 		 * @return {DigitalTwinsIntegrationResourceListResult} The body contains all the non-security properties of the DigitalTwinsInstance. Security-related properties are set to null.
 		 */
 		DigitalTwinsIoTHubs_List(api_version: Operations_ListApi_version, subscriptionId: string, resourceGroupName: string, resourceName: string): Observable<DigitalTwinsIntegrationResourceListResult> {
@@ -947,6 +983,7 @@ export namespace MyNS {
 		 * Get {scope}/providers/Microsoft.DigitalTwins/integrationResources/{integrationResourceName}
 		 * @param {string} scope The scope of the Digital Twins Integration. The scope has to be an IoTHub resource. For example, /{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IoTHubs/{resourceName}.
 		 * @param {string} integrationResourceName Name of IoTHub and DigitalTwinsInstance integration instance.
+		 *     Min length: 1    Max length: 64
 		 * @return {IntegrationResource} This is a synchronous operation. The body contains metadata about IoTHub and DigitalTwinsInstance Integration.
 		 */
 		IoTHub_Get(scope: string, integrationResourceName: string): Observable<IntegrationResource> {
@@ -958,6 +995,7 @@ export namespace MyNS {
 		 * Put {scope}/providers/Microsoft.DigitalTwins/integrationResources/{integrationResourceName}
 		 * @param {string} scope The scope of the Digital Twins Integration. The scope has to be an IoTHub resource. For example, /{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IoTHubs/{resourceName}.
 		 * @param {string} integrationResourceName Name of IoTHub and DigitalTwinsInstance integration instance.
+		 *     Min length: 1    Max length: 64
 		 * @param {IntegrationResource} requestBody The IoTHub metadata.
 		 * @return {void} 
 		 */
@@ -970,6 +1008,7 @@ export namespace MyNS {
 		 * Delete {scope}/providers/Microsoft.DigitalTwins/integrationResources/{integrationResourceName}
 		 * @param {string} scope The scope of the Digital Twins Integration. The scope has to be an IoTHub resource. For example, /{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Devices/IoTHubs/{resourceName}.
 		 * @param {string} integrationResourceName Name of IoTHub and DigitalTwinsInstance integration instance.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} OK. DigitalTwinsInstance IoTHub link has been Deleted.
 		 */
 		IoTHub_Delete(scope: string, integrationResourceName: string): Observable<HttpResponse<string>> {

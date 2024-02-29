@@ -911,13 +911,25 @@ namespace MyNS
 		/// Provides a simple listing of cities within the platform
 		/// Cities_getv1_v1_cities_get v1/cities
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -960,12 +972,21 @@ namespace MyNS
 		/// Countries Getv1
 		/// Countries_getv1_v1_countries_get v1/countries
 		/// </summary>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -1003,7 +1024,16 @@ namespace MyNS
 		/// Countries Get
 		/// Countries_get_v1_countries__country_id__get v1/countries/{country_id}
 		/// </summary>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="country_id">Max length: 2
+		/// Min length: 2
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1042,13 +1072,28 @@ namespace MyNS
 		/// Latest V1 Get
 		/// Latest_v1_get_v1_latest_get v1/latest
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Sort Direction</param>
+		/// <param name="radius">Minimum: 0
+		/// Maximum: 100000
+		// </param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -1123,13 +1168,28 @@ namespace MyNS
 		/// Latest V1 Get
 		/// Latest_v1_get_v1_latest__location_id__get v1/latest/{location_id}
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Sort Direction</param>
+		/// <param name="radius">Minimum: 0
+		/// Maximum: 100000
+		// </param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -1204,13 +1264,28 @@ namespace MyNS
 		/// Locationsv1 Get
 		/// Locationsv1_get_v1_locations_get v1/locations
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Sort Direction</param>
+		/// <param name="radius">Minimum: 0
+		/// Maximum: 100000
+		// </param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -1285,13 +1360,28 @@ namespace MyNS
 		/// Locationsv1 Get
 		/// Locationsv1_get_v1_locations__location_id__get v1/locations/{location_id}
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Sort Direction</param>
+		/// <param name="radius">Minimum: 0
+		/// Maximum: 100000
+		// </param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -1366,12 +1456,27 @@ namespace MyNS
 		/// Measurements Get V1
 		/// Measurements_get_v1_v1_measurements_get v1/measurements
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
+		/// <param name="radius">Minimum: 0
+		/// Maximum: 100000
+		// </param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -1441,8 +1546,17 @@ namespace MyNS
 		/// Parameters Getv1
 		/// Parameters_getv1_v1_parameters_get v1/parameters
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <returns>Successful Response</returns>
 		public async Task<OpenAQParametersResult> Parameters_getv1_v1_parameters_getAsync(int limit, int page, int offset, Sort sort, string[] sourceName, int[] sourceId, string[] sourceSlug, string order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1477,8 +1591,17 @@ namespace MyNS
 		/// Sources V1 Get
 		/// Sources_v1_get_v1_sources_get v1/sources
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <returns>Successful Response</returns>
 		public async Task<OpenAQResult> Sources_v1_get_v1_sources_getAsync(int limit, int page, int offset, Sort sort, string name, SourcesV1Order order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1516,13 +1639,25 @@ namespace MyNS
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
 		///        </param>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <returns>Successful Response</returns>
 		public async Task<OpenAQResult> Averages_v2_get_v2_averages_getAsync(
@@ -1575,13 +1710,25 @@ namespace MyNS
 		/// Provides a simple listing of cities within the platform
 		/// Cities_get_v2_cities_get v2/cities
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -1624,12 +1771,21 @@ namespace MyNS
 		/// Countries Get
 		/// Countries_get_v2_countries_get v2/countries
 		/// </summary>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -1667,7 +1823,16 @@ namespace MyNS
 		/// Countries Get
 		/// Countries_get_v2_countries__country_id__get v2/countries/{country_id}
 		/// </summary>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="country_id">Max length: 2
+		/// Min length: 2
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
@@ -1706,13 +1871,28 @@ namespace MyNS
 		/// Latest Get
 		/// Latest_get_v2_latest_get v2/latest
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Sort Direction</param>
+		/// <param name="radius">Minimum: 0
+		/// Maximum: 100000
+		// </param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -1787,13 +1967,28 @@ namespace MyNS
 		/// Latest Get
 		/// Latest_get_v2_latest__location_id__get v2/latest/{location_id}
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Sort Direction</param>
+		/// <param name="radius">Minimum: 0
+		/// Maximum: 100000
+		// </param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -1868,13 +2063,28 @@ namespace MyNS
 		/// Locations Get
 		/// Locations_get_v2_locations_get v2/locations
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Sort Direction</param>
+		/// <param name="radius">Minimum: 0
+		/// Maximum: 100000
+		// </param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -2159,13 +2369,28 @@ namespace MyNS
 		/// Locations Get
 		/// Locations_get_v2_locations__location_id__get v2/locations/{location_id}
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Sort Direction</param>
+		/// <param name="radius">Minimum: 0
+		/// Maximum: 100000
+		// </param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -2273,12 +2498,27 @@ namespace MyNS
 		/// Measurements Get
 		/// Measurements_get_v2_measurements_get v2/measurements
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
+		/// <param name="radius">Minimum: 0
+		/// Maximum: 100000
+		// </param>
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
@@ -2381,8 +2621,17 @@ namespace MyNS
 		/// Parameters Get
 		/// Parameters_get_v2_parameters_get v2/parameters
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <returns>Successful Response</returns>
 		public async Task<OpenAQParametersResult> Parameters_get_v2_parameters_getAsync(int limit, int page, int offset, Sort sort, string[] sourceName, int[] sourceId, string[] sourceSlug, string order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2420,13 +2669,25 @@ namespace MyNS
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
 		///        </param>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <returns>Successful Response</returns>
 		public async Task<OpenAQProjectsResult> Projects_get_v2_projects_getAsync(
@@ -2482,13 +2743,25 @@ namespace MyNS
 		/// <param name="country_id">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. /US)
-		///        </param>
+		///        
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="country">
 		///        Limit results by a certain country using two letter country code.
 		///        (ex. ?country=US or ?country=US&country=MX)
 		///        </param>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <returns>Successful Response</returns>
 		public async Task<OpenAQProjectsResult> Projects_get_v2_projects__project_id__getAsync(
@@ -2541,8 +2814,17 @@ namespace MyNS
 		/// Sources Get
 		/// Sources_get_v2_sources_get v2/sources
 		/// </summary>
-		/// <param name="limit">Change the number of results returned.</param>
-		/// <param name="page">Paginate through results.</param>
+		/// <param name="limit">Change the number of results returned.
+		/// Minimum: 0
+		/// Maximum: 100000
+		// </param>
+		/// <param name="page">Paginate through results.
+		/// Minimum: 0
+		/// Maximum: 6000
+		// </param>
+		/// <param name="offset">Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="sort">Define sort order.</param>
 		/// <returns>Successful Response</returns>
 		public async Task<OpenAQResult> Sources_get_v2_sources_getAsync(int limit, int page, int offset, Sort sort, string[] sourceName, int[] sourceId, string[] sourceSlug, SourcesOrder order_by, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

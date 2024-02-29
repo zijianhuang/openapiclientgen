@@ -60,7 +60,10 @@ export namespace MyNS {
 		/** Required */
 		metadata: DocumentChunkMetadata;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: number;
 
 		/** Required */
@@ -69,7 +72,10 @@ export namespace MyNS {
 	export interface DocumentChunkWithScoreFormProperties {
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -172,12 +178,16 @@ export namespace MyNS {
 
 		/** Required */
 		query: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		top_k?: number | null;
 	}
 	export interface QueryFormProperties {
 
 		/** Required */
 		query: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		top_k: FormControl<number | null | undefined>,
 	}
 	export function CreateQueryFormGroup() {

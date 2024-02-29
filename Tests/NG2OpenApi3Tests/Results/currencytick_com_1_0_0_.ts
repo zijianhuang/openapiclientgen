@@ -13,7 +13,6 @@ export namespace MyNS {
 		 * Check that the service is up. If everything is okay, you'll get a 200 OK response.
 		 * Otherwise, the request will fail with a 400 error, and a response listing the failed services.
 		 * Get healthcheck
-		 * @return {HealthcheckReturn} 
 		 */
 		Healthcheck(): Observable<HealthcheckReturn> {
 			return this.http.get<HealthcheckReturn>(this.baseUri + 'healthcheck', {});
@@ -41,6 +40,7 @@ export namespace MyNS {
 		 * @param {string} base The source currency.
 		 * @param {string} target The target currency.
 		 * @param {number} amount optional The amount to convert.
+		 *     Type: double
 		 * @return {LiveCurrencyExchangeRateReturn} Success
 		 */
 		LiveCurrencyExchangeRate(apikey: string, base: string, target: string, amount: number | null | undefined): Observable<LiveCurrencyExchangeRateReturn> {
@@ -80,6 +80,8 @@ export namespace MyNS {
 		amount?: string | null;
 		date?: string | null;
 		from?: string | null;
+
+		/** Type: double */
 		rate?: number | null;
 		to?: string | null;
 	}
@@ -87,6 +89,8 @@ export namespace MyNS {
 		amount: FormControl<string | null | undefined>,
 		date: FormControl<string | null | undefined>,
 		from: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		rate: FormControl<number | null | undefined>,
 		to: FormControl<string | null | undefined>,
 	}
@@ -105,6 +109,8 @@ export namespace MyNS {
 		amount?: string | null;
 		date?: string | null;
 		from?: string | null;
+
+		/** Type: double */
 		rate?: number | null;
 		to?: string | null;
 	}
@@ -112,6 +118,8 @@ export namespace MyNS {
 		amount: FormControl<string | null | undefined>,
 		date: FormControl<string | null | undefined>,
 		from: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		rate: FormControl<number | null | undefined>,
 		to: FormControl<string | null | undefined>,
 	}

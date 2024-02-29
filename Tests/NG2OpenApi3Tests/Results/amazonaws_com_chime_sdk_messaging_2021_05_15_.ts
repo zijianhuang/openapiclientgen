@@ -2354,6 +2354,7 @@ export namespace MyNS {
 		 * <p>Associates a channel flow with a channel. Once associated, all messages to that channel go through channel flow processors. To stop processing, use the <code>DisassociateChannelFlow</code> API.</p> <note> <p>Only administrators or channel moderators can associate a channel flow. The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Put channels/{channelArn}/channel-flow#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} Success
 		 */
 		AssociateChannelFlow(channelArn: string, requestBody: AssociateChannelFlowPutBody): Observable<HttpResponse<string>> {
@@ -2364,6 +2365,7 @@ export namespace MyNS {
 		 * Adds a specified number of users and bots to a channel.
 		 * Post channels/{channelArn}/memberships#operation=batch-create&x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel to which you're adding users or bots.
+		 *     Min length: 5    Max length: 1600
 		 * @return {BatchCreateChannelMembershipResponse} Success
 		 */
 		BatchCreateChannelMembership(channelArn: string, operation: BatchCreateChannelMembershipOperation, requestBody: BatchCreateChannelMembershipPostBody): Observable<BatchCreateChannelMembershipResponse> {
@@ -2374,6 +2376,7 @@ export namespace MyNS {
 		 * <p>Calls back Amazon Chime SDK messaging with a processing response message. This should be invoked from the processor Lambda. This is a developer API.</p> <p>You can return one of the following processing responses:</p> <ul> <li> <p>Update message content or metadata</p> </li> <li> <p>Deny a message</p> </li> <li> <p>Make no changes to the message</p> </li> </ul>
 		 * Post channels/{channelArn}#operation=channel-flow-callback
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {ChannelFlowCallbackResponse} Success
 		 */
 		ChannelFlowCallback(channelArn: string, operation: ChannelFlowCallbackOperation, requestBody: ChannelFlowCallbackPostBody): Observable<ChannelFlowCallbackResponse> {
@@ -2393,6 +2396,7 @@ export namespace MyNS {
 		 * <p>Permanently bans a member from a channel. Moderators can't add banned members to a channel. To undo a ban, you first have to <code>DeleteChannelBan</code>, and then <code>CreateChannelMembership</code>. Bans are cleaned up when you delete users or channels.</p> <p>If you ban a user who is already part of a channel, that user is automatically kicked from the channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Post channels/{channelArn}/bans#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the ban request.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		CreateChannelBan(channelArn: string, requestBody: CreateChannelBanPostBody): Observable<HttpResponse<string>> {
@@ -2403,8 +2407,11 @@ export namespace MyNS {
 		 * <p>Lists all the users and bots banned from a particular channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels/{channelArn}/bans#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of bans that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested bans are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelBansResponse} Success
@@ -2426,6 +2433,7 @@ export namespace MyNS {
 		 * <p>Adds a member to a channel. The <code>InvitedBy</code> field in <code>ChannelMembership</code> is derived from the request header. A channel member can:</p> <ul> <li> <p>List messages</p> </li> <li> <p>Send messages</p> </li> <li> <p>Receive messages</p> </li> <li> <p>Edit their own messages</p> </li> <li> <p>Leave the channel</p> </li> </ul> <p>Privacy settings impact this action as follows:</p> <ul> <li> <p>Public Channels: You do not need to be a member to list messages, but you must be a member to send messages.</p> </li> <li> <p>Private Channels: You must be a member to list or send messages.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Post channels/{channelArn}/memberships#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel to which you're adding users.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		CreateChannelMembership(channelArn: string, requestBody: CreateChannelMembershipPostBody): Observable<HttpResponse<string>> {
@@ -2436,10 +2444,14 @@ export namespace MyNS {
 		 * <p>Lists all channel memberships in a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note> <p>If you want to list the channels to which a specific app instance user belongs, see the <a href="https://docs.aws.amazon.com/chime/latest/APIReference/API_messaging-chime_ListChannelMembershipsForAppInstanceUser.html">ListChannelMembershipsForAppInstanceUser</a> API.</p>
 		 * Get channels/{channelArn}/memberships#x-amz-chime-bearer
 		 * @param {string} channelArn The maximum number of channel memberships that you want returned.
+		 *     Min length: 5    Max length: 1600
 		 * @param {ChannelMembershipType} type The membership type of a user, <code>DEFAULT</code> or <code>HIDDEN</code>. Default members are returned as part of <code>ListChannelMemberships</code> if no type is specified. Hidden members are only returned if the type filter in <code>ListChannelMemberships</code> equals <code>HIDDEN</code>.
 		 * @param {number} max_results The maximum number of channel memberships that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested channel memberships are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} sub_channel_id <p>The ID of the SubChannel in the request.</p> <note> <p>Only required when listing a user's memberships in a particular sub-channel of an elastic channel.</p> </note>
+		 *     Min length: 1    Max length: 128
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelMembershipsResponse} Success
@@ -2452,6 +2464,7 @@ export namespace MyNS {
 		 * <p>Creates a new <code>ChannelModerator</code>. A channel moderator can:</p> <ul> <li> <p>Add and remove other members of the channel.</p> </li> <li> <p>Add and remove other moderators of the channel.</p> </li> <li> <p>Add and remove user bans for the channel.</p> </li> <li> <p>Redact messages in the channel.</p> </li> <li> <p>List messages in the channel.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code>of the user that makes the API call as the value in the header.</p> </note>
 		 * Post channels/{channelArn}/moderators#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		CreateChannelModerator(channelArn: string, requestBody: CreateChannelModeratorPostBody): Observable<HttpResponse<string>> {
@@ -2462,8 +2475,11 @@ export namespace MyNS {
 		 * <p>Lists all the moderators for a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels/{channelArn}/moderators#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of moderators that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested moderators are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelModeratorsResponse} Success
@@ -2476,6 +2492,7 @@ export namespace MyNS {
 		 * <p>Immediately makes a channel and its memberships inaccessible and marks them for deletion. This is an irreversible process.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUserArn</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Delete channels/{channelArn}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel being deleted.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteChannel(channelArn: string): Observable<HttpResponse<string>> {
@@ -2486,6 +2503,7 @@ export namespace MyNS {
 		 * <p>Returns the full details of a channel in an Amazon Chime <code>AppInstance</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels/{channelArn}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelResponse} Success
 		 */
 		DescribeChannel(channelArn: string): Observable<DescribeChannelResponse> {
@@ -2496,6 +2514,7 @@ export namespace MyNS {
 		 * <p>Update a channel's attributes.</p> <p> <b>Restriction</b>: You can't change a channel's privacy. </p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Put channels/{channelArn}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {UpdateChannelResponse} Success
 		 */
 		UpdateChannel(channelArn: string, requestBody: UpdateChannelPutBody): Observable<UpdateChannelResponse> {
@@ -2506,7 +2525,9 @@ export namespace MyNS {
 		 * <p>Removes a member from a channel's ban list.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Delete channels/{channelArn}/bans/{memberArn}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel from which the <code>AppInstanceUser</code> was banned.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} memberArn The ARN of the <code>AppInstanceUser</code> that you want to reinstate.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteChannelBan(channelArn: string, memberArn: string): Observable<HttpResponse<string>> {
@@ -2517,7 +2538,9 @@ export namespace MyNS {
 		 * <p>Returns the full details of a channel ban.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels/{channelArn}/bans/{memberArn}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel from which the user is banned.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} memberArn The <code>AppInstanceUserArn</code> of the member being banned.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelBanResponse} Success
 		 */
 		DescribeChannelBan(channelArn: string, memberArn: string): Observable<DescribeChannelBanResponse> {
@@ -2528,6 +2551,7 @@ export namespace MyNS {
 		 * <p>Deletes a channel flow, an irreversible process. This is a developer API.</p> <note> <p> This API works only when the channel flow is not associated with any channel. To get a list of all channels that a channel flow is associated with, use the <code>ListChannelsAssociatedWithChannelFlow</code> API. Use the <code>DisassociateChannelFlow</code> API to disassociate a channel flow from all channels. </p> </note>
 		 * Delete channel-flows/{channelFlowArn}
 		 * @param {string} channelFlowArn The ARN of the channel flow.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteChannelFlow(channelFlowArn: string): Observable<HttpResponse<string>> {
@@ -2538,6 +2562,7 @@ export namespace MyNS {
 		 * Returns the full details of a channel flow in an Amazon Chime <code>AppInstance</code>. This is a developer API.
 		 * Get channel-flows/{channelFlowArn}
 		 * @param {string} channelFlowArn The ARN of the channel flow.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelFlowResponse} Success
 		 */
 		DescribeChannelFlow(channelFlowArn: string): Observable<DescribeChannelFlowResponse> {
@@ -2548,6 +2573,7 @@ export namespace MyNS {
 		 * Updates channel flow attributes. This is a developer API.
 		 * Put channel-flows/{channelFlowArn}
 		 * @param {string} channelFlowArn The ARN of the channel flow.
+		 *     Min length: 5    Max length: 1600
 		 * @return {UpdateChannelFlowResponse} Success
 		 */
 		UpdateChannelFlow(channelFlowArn: string, requestBody: UpdateChannelFlowPutBody): Observable<UpdateChannelFlowResponse> {
@@ -2558,8 +2584,11 @@ export namespace MyNS {
 		 * <p>Removes a member from a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>
 		 * Delete channels/{channelArn}/memberships/{memberArn}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel from which you want to remove the user.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} memberArn The <code>AppInstanceUserArn</code> of the member that you're removing from the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} sub_channel_id <p>The ID of the SubChannel in the request.</p> <note> <p>Only for use by moderators.</p> </note>
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteChannelMembership(channelArn: string, memberArn: string, sub_channel_id: string | null | undefined): Observable<HttpResponse<string>> {
@@ -2570,8 +2599,11 @@ export namespace MyNS {
 		 * <p>Returns the full details of a user's channel membership.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels/{channelArn}/memberships/{memberArn}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} memberArn The <code>AppInstanceUserArn</code> of the member.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} sub_channel_id <p>The ID of the SubChannel in the request. The response contains an <code>ElasticChannelConfiguration</code> object.</p> <note> <p>Only required to get a user’s SubChannel membership details.</p> </note>
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeChannelMembershipResponse} Success
 		 */
 		DescribeChannelMembership(channelArn: string, memberArn: string, sub_channel_id: string | null | undefined): Observable<DescribeChannelMembershipResponse> {
@@ -2582,8 +2614,11 @@ export namespace MyNS {
 		 * <p>Deletes a channel message. Only admins can perform this action. Deletion makes messages inaccessible immediately. A background process deletes any revisions created by <code>UpdateChannelMessage</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Delete channels/{channelArn}/messages/{messageId}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} messageId The ID of the message being deleted.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} sub_channel_id <p>The ID of the SubChannel in the request.</p> <note> <p>Only required when deleting messages in a SubChannel that the user belongs to.</p> </note>
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteChannelMessage(channelArn: string, messageId: string, sub_channel_id: string | null | undefined): Observable<HttpResponse<string>> {
@@ -2594,8 +2629,11 @@ export namespace MyNS {
 		 * <p>Gets the full details of a channel message.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels/{channelArn}/messages/{messageId}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} messageId The ID of the message.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} sub_channel_id <p>The ID of the SubChannel in the request.</p> <note> <p>Only required when getting messages in a SubChannel that the user belongs to.</p> </note>
+		 *     Min length: 1    Max length: 128
 		 * @return {GetChannelMessageResponse} Success
 		 */
 		GetChannelMessage(channelArn: string, messageId: string, sub_channel_id: string | null | undefined): Observable<GetChannelMessageResponse> {
@@ -2606,7 +2644,9 @@ export namespace MyNS {
 		 * <p>Updates the content of a message.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Put channels/{channelArn}/messages/{messageId}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} messageId The ID string of the message being updated.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateChannelMessageResponse} Success
 		 */
 		UpdateChannelMessage(channelArn: string, messageId: string, requestBody: UpdateChannelMessagePutBody): Observable<UpdateChannelMessageResponse> {
@@ -2617,7 +2657,9 @@ export namespace MyNS {
 		 * <p>Deletes a channel moderator.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Delete channels/{channelArn}/moderators/{channelModeratorArn}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} channelModeratorArn The <code>AppInstanceUserArn</code> of the moderator being deleted.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteChannelModerator(channelArn: string, channelModeratorArn: string): Observable<HttpResponse<string>> {
@@ -2628,7 +2670,9 @@ export namespace MyNS {
 		 * <p>Returns the full details of a single ChannelModerator.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the <code>AppInstanceUserArn</code> of the user that makes the API call as the value in the header.</p> </note>
 		 * Get channels/{channelArn}/moderators/{channelModeratorArn}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} channelModeratorArn The <code>AppInstanceUserArn</code> of the channel moderator.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelModeratorResponse} Success
 		 */
 		DescribeChannelModerator(channelArn: string, channelModeratorArn: string): Observable<DescribeChannelModeratorResponse> {
@@ -2639,6 +2683,7 @@ export namespace MyNS {
 		 * Deletes the streaming configurations for an <code>AppInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
 		 * Delete app-instances/{appInstanceArn}/streaming-configurations
 		 * @param {string} appInstanceArn The ARN of the streaming configurations being deleted.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteMessagingStreamingConfigurations(appInstanceArn: string): Observable<HttpResponse<string>> {
@@ -2649,6 +2694,7 @@ export namespace MyNS {
 		 * Retrieves the data streaming configuration for an <code>AppInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
 		 * Get app-instances/{appInstanceArn}/streaming-configurations
 		 * @param {string} appInstanceArn The ARN of the streaming configurations.
+		 *     Min length: 5    Max length: 1600
 		 * @return {GetMessagingStreamingConfigurationsResponse} Success
 		 */
 		GetMessagingStreamingConfigurations(appInstanceArn: string): Observable<GetMessagingStreamingConfigurationsResponse> {
@@ -2659,6 +2705,7 @@ export namespace MyNS {
 		 * Sets the data streaming configuration for an <code>AppInstance</code>. For more information, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/streaming-export.html">Streaming messaging data</a> in the <i>Amazon Chime SDK Developer Guide</i>.
 		 * Put app-instances/{appInstanceArn}/streaming-configurations
 		 * @param {string} appInstanceArn The ARN of the streaming configuration.
+		 *     Min length: 5    Max length: 1600
 		 * @return {PutMessagingStreamingConfigurationsResponse} Success
 		 */
 		PutMessagingStreamingConfigurations(appInstanceArn: string, requestBody: PutMessagingStreamingConfigurationsPutBody): Observable<PutMessagingStreamingConfigurationsResponse> {
@@ -2669,7 +2716,9 @@ export namespace MyNS {
 		 * <p> Returns the details of a channel based on the membership of the specified <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels/{channelArn}#scope=app-instance-user-membership&app-instance-user-arn&x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel to which the user belongs.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} app_instance_user_arn The ARN of the user or bot in a channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelMembershipForAppInstanceUserResponse} Success
 		 */
 		DescribeChannelMembershipForAppInstanceUser(channelArn: string, app_instance_user_arn: string, scope: DescribeChannelMembershipForAppInstanceUserScope): Observable<DescribeChannelMembershipForAppInstanceUserResponse> {
@@ -2680,7 +2729,9 @@ export namespace MyNS {
 		 * <p>Returns the full details of a channel moderated by the specified <code>AppInstanceUser</code> or <code>AppInstanceBot</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels/{channelArn}#scope=app-instance-user-moderated-channel&app-instance-user-arn&x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the moderated channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} app_instance_user_arn The ARN of the user or bot in the moderated channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeChannelModeratedByAppInstanceUserResponse} Success
 		 */
 		DescribeChannelModeratedByAppInstanceUser(channelArn: string, app_instance_user_arn: string, scope: DescribeChannelModeratedByAppInstanceUserScope): Observable<DescribeChannelModeratedByAppInstanceUserResponse> {
@@ -2691,7 +2742,9 @@ export namespace MyNS {
 		 * <p>Disassociates a channel flow from all its channels. Once disassociated, all messages to that channel stop going through the channel flow processor.</p> <note> <p>Only administrators or channel moderators can disassociate a channel flow.</p> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Delete channels/{channelArn}/channel-flow/{channelFlowArn}#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} channelFlowArn The ARN of the channel flow.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DisassociateChannelFlow(channelArn: string, channelFlowArn: string): Observable<HttpResponse<string>> {
@@ -2702,7 +2755,9 @@ export namespace MyNS {
 		 * <p>Gets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> for the specified channel. A user or a bot must be a member of the channel and own the membership in order to retrieve membership preferences. Users or bots in the <code>AppInstanceAdmin</code> and channel moderator roles can't retrieve preferences for other users or bots. Banned users or bots can't retrieve membership preferences for the channel from which they are banned.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels/{channelArn}/memberships/{memberArn}/preferences#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} memberArn The <code>AppInstanceUserArn</code> of the member retrieving the preferences.
+		 *     Min length: 5    Max length: 1600
 		 * @return {GetChannelMembershipPreferencesResponse} Success
 		 */
 		GetChannelMembershipPreferences(channelArn: string, memberArn: string): Observable<GetChannelMembershipPreferencesResponse> {
@@ -2713,7 +2768,9 @@ export namespace MyNS {
 		 * <p>Sets the membership preferences of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> for the specified channel. The user or bot must be a member of the channel. Only the user or bot who owns the membership can set preferences. Users or bots in the <code>AppInstanceAdmin</code> and channel moderator roles can't set preferences for other users. Banned users or bots can't set membership preferences for the channel from which they are banned.</p> <note> <p>The x-amz-chime-bearer request header is mandatory. Use the ARN of an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Put channels/{channelArn}/memberships/{memberArn}/preferences#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} memberArn The ARN of the member setting the preferences.
+		 *     Min length: 5    Max length: 1600
 		 * @return {PutChannelMembershipPreferencesResponse} Success
 		 */
 		PutChannelMembershipPreferences(channelArn: string, memberArn: string, requestBody: PutChannelMembershipPreferencesPutBody): Observable<PutChannelMembershipPreferencesResponse> {
@@ -2724,8 +2781,11 @@ export namespace MyNS {
 		 * <p>Gets message status for a specified <code>messageId</code>. Use this API to determine the intermediate status of messages going through channel flow processing. The API provides an alternative to retrieving message status if the event was not received because a client wasn't connected to a websocket. </p> <p>Messages can have any one of these statuses.</p> <dl> <dt>SENT</dt> <dd> <p>Message processed successfully</p> </dd> <dt>PENDING</dt> <dd> <p>Ongoing processing</p> </dd> <dt>FAILED</dt> <dd> <p>Processing failed</p> </dd> <dt>DENIED</dt> <dd> <p>Message denied by the processor</p> </dd> </dl> <note> <ul> <li> <p>This API does not return statuses for denied messages, because we don't store them once the processor denies them. </p> </li> <li> <p>Only the message sender can invoke this API.</p> </li> <li> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </li> </ul> </note>
 		 * Get channels/{channelArn}/messages/{messageId}#scope=message-status&x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} messageId The ID of the message.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} sub_channel_id <p>The ID of the SubChannel in the request.</p> <note> <p>Only required when getting message status in a SubChannel that the user belongs to.</p> </note>
+		 *     Min length: 1    Max length: 128
 		 * @return {GetChannelMessageStatusResponse} Success
 		 */
 		GetChannelMessageStatus(channelArn: string, messageId: string, sub_channel_id: string | null | undefined, scope: GetChannelMessageStatusScope): Observable<GetChannelMessageStatusResponse> {
@@ -2745,8 +2805,11 @@ export namespace MyNS {
 		 * Returns a paginated lists of all the channel flows created under a single Chime. This is a developer API.
 		 * Get channel-flows#app-instance-arn
 		 * @param {string} app_instance_arn The ARN of the app instance.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of channel flows that you want to return.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested channel flows are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelFlowsResponse} Success
@@ -2759,8 +2822,11 @@ export namespace MyNS {
 		 * <p> Lists all channels that an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> is a part of. Only an <code>AppInstanceAdmin</code> can call the API with a user ARN that is not their own. </p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels#scope=app-instance-user-memberships&x-amz-chime-bearer
 		 * @param {string} app_instance_user_arn The ARN of the user or bot.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of users that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token returned from previous API requests until the number of channel memberships is reached.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelMembershipsForAppInstanceUserResponse} Success
@@ -2773,12 +2839,16 @@ export namespace MyNS {
 		 * <p>List all the messages in a channel. Returns a paginated list of <code>ChannelMessages</code>. By default, sorted by creation timestamp in descending order.</p> <note> <p>Redacted messages appear in the results as empty, since they are only redacted, not deleted. Deleted messages do not appear in the results. This action always returns the latest version of an edited message.</p> <p>Also, the <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels/{channelArn}/messages#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {SortOrder} sort_order The order in which you want messages sorted. Default is Descending, based on time created.
 		 * @param {Date} not_before The initial or starting time stamp for your requested messages.
 		 * @param {Date} not_after The final or ending time stamp for your requested messages.
 		 * @param {number} max_results The maximum number of messages that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested messages are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} sub_channel_id <p>The ID of the SubChannel in the request.</p> <note> <p>Only required when listing the messages in a SubChannel that the user belongs to.</p> </note>
+		 *     Min length: 1    Max length: 128
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelMessagesResponse} Success
@@ -2791,6 +2861,7 @@ export namespace MyNS {
 		 * <p>Sends a message to a particular channel that the member is a part of.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> <p>Also, <code>STANDARD</code> messages can be up to 4KB in size and contain metadata. Metadata is arbitrary, and you can use it in a variety of ways, such as containing a link to an attachment.</p> <p> <code>CONTROL</code> messages are limited to 30 bytes and do not contain metadata.</p> </note>
 		 * Post channels/{channelArn}/messages#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		SendChannelMessage(channelArn: string, requestBody: SendChannelMessagePostBody): Observable<HttpResponse<string>> {
@@ -2801,9 +2872,12 @@ export namespace MyNS {
 		 * <p>Lists all Channels created under a single Chime App as a paginated list. You can specify filters to narrow results.</p> <p class="title"> <b>Functionality &amp; restrictions</b> </p> <ul> <li> <p>Use privacy = <code>PUBLIC</code> to retrieve all public channels in the account.</p> </li> <li> <p>Only an <code>AppInstanceAdmin</code> can set privacy = <code>PRIVATE</code> to list the private channels in an account.</p> </li> </ul> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels#app-instance-arn&x-amz-chime-bearer
 		 * @param {string} app_instance_arn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {ChannelPrivacy} privacy The privacy setting. <code>PUBLIC</code> retrieves all the public channels. <code>PRIVATE</code> retrieves private channels. Only an <code>AppInstanceAdmin</code> can retrieve private channels. 
 		 * @param {number} max_results The maximum number of channels that you want to return.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested channels are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelsResponse} Success
@@ -2816,8 +2890,11 @@ export namespace MyNS {
 		 * Lists all channels associated with a specified channel flow. You can associate a channel flow with multiple channels, but you can only associate a channel with one channel flow. This is a developer API.
 		 * Get channels#scope=channel-flow-associations&channel-flow-arn
 		 * @param {string} channel_flow_arn The ARN of the channel flow.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of channels that you want to return.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested channels are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelsAssociatedWithChannelFlowResponse} Success
@@ -2830,8 +2907,11 @@ export namespace MyNS {
 		 * <p>A list of the channels moderated by an <code>AppInstanceUser</code>.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Get channels#scope=app-instance-user-moderated-channels&x-amz-chime-bearer
 		 * @param {string} app_instance_user_arn The ARN of the user or bot in the moderated channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of channels in the request.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token returned from previous API requests until the number of channels moderated by the user is reached.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListChannelsModeratedByAppInstanceUserResponse} Success
@@ -2844,8 +2924,11 @@ export namespace MyNS {
 		 * Lists all the SubChannels in an elastic channel when given a channel ID. Available only to the app instance admins and channel moderators of elastic channels.
 		 * Get channels/{channelArn}/subchannels#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of elastic channel.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of sub-channels that you want to return.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested sub-channels are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSubChannelsResponse} Success
@@ -2858,6 +2941,7 @@ export namespace MyNS {
 		 * Lists the tags applied to an Amazon Chime SDK messaging resource.
 		 * Get tags#arn
 		 * @param {string} arn The ARN of the resource.
+		 *     Min length: 5    Max length: 1600
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(arn: string): Observable<ListTagsForResourceResponse> {
@@ -2868,6 +2952,7 @@ export namespace MyNS {
 		 * <p>Sets the number of days before the channel is automatically deleted.</p> <note> <ul> <li> <p>A background process deletes expired channels within 6 hours of expiration. Actual deletion times may vary.</p> </li> <li> <p>Expired channels that have not yet been deleted appear as active, and you can update their expiration settings. The system honors the new settings.</p> </li> <li> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </li> </ul> </note>
 		 * Put channels/{channelArn}/expiration-settings
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {PutChannelExpirationSettingsResponse} Success
 		 */
 		PutChannelExpirationSettings(channelArn: string, requestBody: PutChannelExpirationSettingsPutBody): Observable<PutChannelExpirationSettingsResponse> {
@@ -2878,7 +2963,9 @@ export namespace MyNS {
 		 * <p>Redacts message content, but not metadata. The message exists in the back end, but the action returns null content, and the state shows as redacted.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Post channels/{channelArn}/messages/{messageId}#operation=redact&x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel containing the messages that you want to redact.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} messageId The ID of the message being redacted.
+		 *     Min length: 1    Max length: 128
 		 * @return {RedactChannelMessageResponse} Success
 		 */
 		RedactChannelMessage(channelArn: string, messageId: string, operation: RedactChannelMessageOperation, requestBody: RedactChannelMessagePostBody): Observable<RedactChannelMessageResponse> {
@@ -2889,7 +2976,9 @@ export namespace MyNS {
 		 * <p>Allows the <code>ChimeBearer</code> to search channels by channel members. Users or bots can search across the channels that they belong to. Users in the <code>AppInstanceAdmin</code> role can search across all channels.</p> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p>
 		 * Post channels#operation=search
 		 * @param {number} max_results The maximum number of channels that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token returned from previous API requests until the number of channels is reached.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {SearchChannelsResponse} Success
@@ -2920,6 +3009,7 @@ export namespace MyNS {
 		 * <p>The details of the time when a user last read messages in a channel.</p> <note> <p>The <code>x-amz-chime-bearer</code> request header is mandatory. Use the ARN of the <code>AppInstanceUser</code> or <code>AppInstanceBot</code> that makes the API call as the value in the header.</p> </note>
 		 * Put channels/{channelArn}/readMarker#x-amz-chime-bearer
 		 * @param {string} channelArn The ARN of the channel.
+		 *     Min length: 5    Max length: 1600
 		 * @return {UpdateChannelReadMarkerResponse} Success
 		 */
 		UpdateChannelReadMarker(channelArn: string): Observable<UpdateChannelReadMarkerResponse> {
@@ -2932,8 +3022,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the channel flow.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ChannelFlowArn: string;
 	}
@@ -2942,8 +3032,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the channel flow.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ChannelFlowArn: FormControl<string | null | undefined>,
 	}
@@ -2971,8 +3061,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID of the SubChannel in the request. </p> <note> <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		SubChannelId?: string | null;
 	}
@@ -2983,8 +3073,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID of the SubChannel in the request. </p> <note> <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		SubChannelId: FormControl<string | null | undefined>,
 	}
@@ -3003,8 +3093,8 @@ export namespace MyNS {
 		/**
 		 * The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.
 		 * Required
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		CallbackId: string;
 
@@ -3022,8 +3112,8 @@ export namespace MyNS {
 		/**
 		 * The identifier passed to the processor by the service when invoked. Use the identifier to call back the service.
 		 * Required
-		 * Max length: 64
 		 * Min length: 32
+		 * Max length: 64
 		 */
 		CallbackId: FormControl<string | null | undefined>,
 
@@ -3070,16 +3160,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the channel request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: string;
 
 		/**
 		 * The name of the channel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -3091,16 +3181,16 @@ export namespace MyNS {
 
 		/**
 		 * The metadata of the creation request. Limited to 1KB and UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 
 		/**
 		 * The client token for the request. An <code>Idempotency</code> token.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
@@ -3113,8 +3203,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the channel in the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChannelId?: string | null;
 
@@ -3143,16 +3233,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the channel request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the channel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3164,23 +3254,23 @@ export namespace MyNS {
 
 		/**
 		 * The metadata of the creation request. Limited to 1KB and UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token for the request. An <code>Idempotency</code> token.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the channel in the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ChannelId: FormControl<string | null | undefined>,
 	}
@@ -3237,8 +3327,8 @@ export namespace MyNS {
 		/**
 		 * The <code>AppInstanceUserArn</code> of the member being banned.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		MemberArn: string;
 	}
@@ -3247,8 +3337,8 @@ export namespace MyNS {
 		/**
 		 * The <code>AppInstanceUserArn</code> of the member being banned.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		MemberArn: FormControl<string | null | undefined>,
 	}
@@ -3264,8 +3354,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the channel flow request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: string;
 
@@ -3280,8 +3370,8 @@ export namespace MyNS {
 		/**
 		 * The name of the channel flow.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -3295,8 +3385,8 @@ export namespace MyNS {
 		/**
 		 * The client token for the request. An Idempotency token.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 	}
@@ -3305,24 +3395,24 @@ export namespace MyNS {
 		/**
 		 * The ARN of the channel flow request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the channel flow.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token for the request. An Idempotency token.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -3340,8 +3430,8 @@ export namespace MyNS {
 		/**
 		 * The <code>AppInstanceUserArn</code> of the member you want to add to the channel.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		MemberArn: string;
 
@@ -3353,8 +3443,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID of the SubChannel in the request.</p> <note> <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		SubChannelId?: string | null;
 	}
@@ -3363,8 +3453,8 @@ export namespace MyNS {
 		/**
 		 * The <code>AppInstanceUserArn</code> of the member you want to add to the channel.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		MemberArn: FormControl<string | null | undefined>,
 
@@ -3376,8 +3466,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The ID of the SubChannel in the request.</p> <note> <p>Only required when creating membership in a SubChannel for a moderator in an elastic channel.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		SubChannelId: FormControl<string | null | undefined>,
 	}
@@ -3395,8 +3485,8 @@ export namespace MyNS {
 		/**
 		 * The <code>AppInstanceUserArn</code> of the moderator.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ChannelModeratorArn: string;
 	}
@@ -3405,8 +3495,8 @@ export namespace MyNS {
 		/**
 		 * The <code>AppInstanceUserArn</code> of the moderator.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ChannelModeratorArn: FormControl<string | null | undefined>,
 	}
@@ -3421,8 +3511,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the channel.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name?: string | null;
 
@@ -3431,8 +3521,8 @@ export namespace MyNS {
 
 		/**
 		 * The metadata for the update request.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 	}
@@ -3440,8 +3530,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the channel.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3450,8 +3540,8 @@ export namespace MyNS {
 
 		/**
 		 * The metadata for the update request.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 	}
@@ -3477,8 +3567,8 @@ export namespace MyNS {
 		/**
 		 * The name of the channel flow.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 	}
@@ -3487,8 +3577,8 @@ export namespace MyNS {
 		/**
 		 * The name of the channel flow.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -3510,22 +3600,22 @@ export namespace MyNS {
 
 		/**
 		 * The metadata of the message being updated.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 
 		/**
 		 * <p>The ID of the SubChannel in the request.</p> <note> <p>Only required when updating messages in a SubChannel that the user belongs to.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		SubChannelId?: string | null;
 
 		/**
 		 * The content type of the channel message.
-		 * Max length: 45
 		 * Min length: 0
+		 * Max length: 45
 		 */
 		ContentType?: string | null;
 	}
@@ -3540,22 +3630,22 @@ export namespace MyNS {
 
 		/**
 		 * The metadata of the message being updated.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The ID of the SubChannel in the request.</p> <note> <p>Only required when updating messages in a SubChannel that the user belongs to.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		SubChannelId: FormControl<string | null | undefined>,
 
 		/**
 		 * The content type of the channel message.
-		 * Max length: 45
 		 * Min length: 0
+		 * Max length: 45
 		 */
 		ContentType: FormControl<string | null | undefined>,
 	}
@@ -3645,16 +3735,16 @@ export namespace MyNS {
 
 		/**
 		 * The optional metadata for each message.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 
 		/**
 		 * The <code>Idempotency</code> token for each client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
@@ -3666,15 +3756,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the SubChannel in the request.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		SubChannelId?: string | null;
 
 		/**
 		 * The content type of the channel message.
-		 * Max length: 45
 		 * Min length: 0
+		 * Max length: 45
 		 */
 		ContentType?: string | null;
 
@@ -3708,16 +3798,16 @@ export namespace MyNS {
 
 		/**
 		 * The optional metadata for each message.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 
 		/**
 		 * The <code>Idempotency</code> token for each client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -3726,15 +3816,15 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the SubChannel in the request.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		SubChannelId: FormControl<string | null | undefined>,
 
 		/**
 		 * The content type of the channel message.
-		 * Max length: 45
 		 * Min length: 0
+		 * Max length: 45
 		 */
 		ContentType: FormControl<string | null | undefined>,
 	}
@@ -3810,8 +3900,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the SubChannel in the request.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		SubChannelId?: string | null;
 	}
@@ -3819,8 +3909,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the SubChannel in the request.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		SubChannelId: FormControl<string | null | undefined>,
 	}
@@ -3858,8 +3948,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ResourceARN: string;
 
@@ -3876,8 +3966,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -3895,8 +3985,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ResourceARN: string;
 
@@ -3913,8 +4003,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}

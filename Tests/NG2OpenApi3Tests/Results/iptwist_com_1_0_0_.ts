@@ -21,7 +21,11 @@ export namespace MyNS {
 		country?: string | null;
 		country_code?: string | null;
 		ip?: string | null;
+
+		/** Type: float */
 		latitude?: number | null;
+
+		/** Type: float */
 		longitude?: number | null;
 		state?: string | null;
 		timezone?: string | null;
@@ -32,7 +36,11 @@ export namespace MyNS {
 		country: FormControl<string | null | undefined>,
 		country_code: FormControl<string | null | undefined>,
 		ip: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		longitude: FormControl<number | null | undefined>,
 		state: FormControl<string | null | undefined>,
 		timezone: FormControl<string | null | undefined>,

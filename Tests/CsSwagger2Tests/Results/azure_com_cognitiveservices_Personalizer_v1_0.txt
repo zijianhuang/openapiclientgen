@@ -857,7 +857,9 @@ namespace MyNS
 		/// Get the evaluation associated with the Id.
 		/// Evaluations_Get evaluations/{evaluationId}
 		/// </summary>
-		/// <param name="evaluationId">Id of the evaluation.</param>
+		/// <param name="evaluationId">Id of the evaluation.
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<Evaluation> Evaluations_GetAsync(string evaluationId)
 		{
@@ -887,7 +889,9 @@ namespace MyNS
 		/// Delete the evaluation associated with the Id.
 		/// Evaluations_Delete evaluations/{evaluationId}
 		/// </summary>
-		/// <param name="evaluationId">Id of the evaluation to delete.</param>
+		/// <param name="evaluationId">Id of the evaluation to delete.
+		/// Max length: 256
+		// </param>
 		public async Task Evaluations_DeleteAsync(string evaluationId)
 		{
 			var requestUri = "evaluations/"+ (evaluationId==null? "" : System.Uri.EscapeDataString(evaluationId));
@@ -910,7 +914,9 @@ namespace MyNS
 		/// Report that the specified event was actually displayed to the user and a reward should be expected for it
 		/// Events_Activate events/{eventId}/activate
 		/// </summary>
-		/// <param name="eventId">The event ID this activation applies to.</param>
+		/// <param name="eventId">The event ID this activation applies to.
+		/// Max length: 256
+		// </param>
 		public async Task Events_ActivateAsync(string eventId)
 		{
 			var requestUri = "events/"+ (eventId==null? "" : System.Uri.EscapeDataString(eventId))+"/activate";
@@ -933,7 +939,9 @@ namespace MyNS
 		/// Report reward that resulted from using the action specified in rewardActionId for the specified event.
 		/// Events_Reward events/{eventId}/reward
 		/// </summary>
-		/// <param name="eventId">The event id this reward applies to.</param>
+		/// <param name="eventId">The event id this reward applies to.
+		/// Max length: 256
+		// </param>
 		/// <param name="requestBody">The reward should be a floating point number, typically between 0 and 1.</param>
 		public async Task Events_RewardAsync(string eventId, RewardRequest requestBody)
 		{

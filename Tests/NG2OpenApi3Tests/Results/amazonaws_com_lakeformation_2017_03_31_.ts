@@ -3370,8 +3370,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -3393,8 +3393,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 	}
@@ -3428,8 +3428,8 @@ export namespace MyNS {
 		/**
 		 * A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.
 		 * Required
-		 * Max length: 100000
 		 * Min length: 4
+		 * Max length: 100000
 		 */
 		SAMLAssertion: string;
 
@@ -3457,8 +3457,8 @@ export namespace MyNS {
 		/**
 		 * A SAML assertion consisting of an assertion statement for the user who needs temporary credentials. This must match the SAML assertion that was issued to IAM. This must be Base64 encoded.
 		 * Required
-		 * Max length: 100000
 		 * Min length: 4
+		 * Max length: 100000
 		 */
 		SAMLAssertion: FormControl<string | null | undefined>,
 
@@ -3495,8 +3495,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -3510,8 +3510,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 	}
@@ -3526,8 +3526,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -3541,8 +3541,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 	}
@@ -3558,8 +3558,8 @@ export namespace MyNS {
 		/**
 		 * The transaction to cancel.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId: string;
 	}
@@ -3568,8 +3568,8 @@ export namespace MyNS {
 		/**
 		 * The transaction to cancel.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 	}
@@ -3585,8 +3585,8 @@ export namespace MyNS {
 		/**
 		 * The transaction to commit.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId: string;
 	}
@@ -3595,8 +3595,8 @@ export namespace MyNS {
 		/**
 		 * The transaction to commit.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 	}
@@ -3655,16 +3655,16 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
 		/**
 		 * The key-name for the LF-tag.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		TagKey: string;
 
@@ -3680,16 +3680,16 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
 		/**
 		 * The key-name for the LF-tag.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		TagKey: FormControl<string | null | undefined>,
 	}
@@ -3705,29 +3705,29 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the catalog to which the table belongs.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableCatalogId?: string | null;
 
 		/**
 		 * A database in the Glue Data Catalog.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName?: string | null;
 
 		/**
 		 * A table in the database.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName?: string | null;
 
 		/**
 		 * The name given by the user to the data filter cell.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name?: string | null;
 	}
@@ -3735,29 +3735,29 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the catalog to which the table belongs.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableCatalogId: FormControl<string | null | undefined>,
 
 		/**
 		 * A database in the Glue Data Catalog.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: FormControl<string | null | undefined>,
 
 		/**
 		 * A table in the database.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name given by the user to the data filter cell.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -3775,16 +3775,16 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
 		/**
 		 * The key-name for the LF-tag to delete.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		TagKey: string;
 	}
@@ -3792,16 +3792,16 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
 		/**
 		 * The key-name for the LF-tag to delete.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		TagKey: FormControl<string | null | undefined>,
 	}
@@ -3817,32 +3817,32 @@ export namespace MyNS {
 
 		/**
 		 * The Glue data catalog that contains the governed table. Defaults to the current account ID.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
 		/**
 		 * The database that contains the governed table.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: string;
 
 		/**
 		 * The name of the governed table.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: string;
 
 		/**
 		 * ID of the transaction that the writes occur in.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId: string;
 
@@ -3858,32 +3858,32 @@ export namespace MyNS {
 
 		/**
 		 * The Glue data catalog that contains the governed table. Defaults to the current account ID.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
 		/**
 		 * The database that contains the governed table.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the governed table.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * ID of the transaction that the writes occur in.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 	}
@@ -3948,8 +3948,8 @@ export namespace MyNS {
 		/**
 		 * The transaction for which to return status.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId: string;
 	}
@@ -3958,8 +3958,8 @@ export namespace MyNS {
 		/**
 		 * The transaction for which to return status.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 	}
@@ -3974,8 +3974,8 @@ export namespace MyNS {
 
 		/**
 		 * The transaction to extend.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId?: string | null;
 	}
@@ -3983,8 +3983,8 @@ export namespace MyNS {
 
 		/**
 		 * The transaction to extend.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 	}
@@ -4000,32 +4000,32 @@ export namespace MyNS {
 		/**
 		 * The ID of the catalog to which the table belongs.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableCatalogId: string;
 
 		/**
 		 * A database in the Glue Data Catalog.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: string;
 
 		/**
 		 * A table in the database.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: string;
 
 		/**
 		 * The name given by the user to the data filter cell.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: string;
 	}
@@ -4034,32 +4034,32 @@ export namespace MyNS {
 		/**
 		 * The ID of the catalog to which the table belongs.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableCatalogId: FormControl<string | null | undefined>,
 
 		/**
 		 * A database in the Glue Data Catalog.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: FormControl<string | null | undefined>,
 
 		/**
 		 * A table in the database.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name given by the user to the data filter cell.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -4077,8 +4077,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 	}
@@ -4086,8 +4086,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 	}
@@ -4102,8 +4102,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -4127,8 +4127,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
@@ -4162,16 +4162,16 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
 		/**
 		 * The key-name for the LF-tag.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		TagKey: string;
 	}
@@ -4179,16 +4179,16 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
 		/**
 		 * The key-name for the LF-tag.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		TagKey: FormControl<string | null | undefined>,
 	}
@@ -4205,8 +4205,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the plan query operation.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		QueryId: string;
 	}
@@ -4215,8 +4215,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the plan query operation.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		QueryId: FormControl<string | null | undefined>,
 	}
@@ -4232,8 +4232,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the plan query operation.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		QueryId: string;
 	}
@@ -4242,8 +4242,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the plan query operation.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		QueryId: FormControl<string | null | undefined>,
 	}
@@ -4258,8 +4258,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -4276,8 +4276,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
@@ -4314,31 +4314,31 @@ export namespace MyNS {
 
 		/**
 		 * The catalog containing the governed table. Defaults to the caller’s account.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
 		/**
 		 * The database containing the governed table.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: string;
 
 		/**
 		 * The governed table for which to retrieve objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: string;
 
 		/**
 		 * The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId?: string | null;
 
@@ -4347,8 +4347,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p> <ul> <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li> <li> <p>The logical operators supported are: AND</p> </li> <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li> </ul>
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		PartitionPredicate?: string | null;
 
@@ -4369,31 +4369,31 @@ export namespace MyNS {
 
 		/**
 		 * The catalog containing the governed table. Defaults to the caller’s account.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
 		/**
 		 * The database containing the governed table.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: FormControl<string | null | undefined>,
 
 		/**
 		 * The governed table for which to retrieve objects.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * The transaction ID at which to read the governed table contents. If this transaction has aborted, an error is returned. If not set, defaults to the most recent committed transaction. Cannot be specified along with <code>QueryAsOfTime</code>.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 
@@ -4402,8 +4402,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A predicate to filter the objects returned based on the partition keys defined in the governed table.</p> <ul> <li> <p>The comparison operators supported are: =, &gt;, &lt;, &gt;=, &lt;=</p> </li> <li> <p>The logical operators supported are: AND</p> </li> <li> <p>The data types supported are integer, long, date(yyyy-MM-dd), timestamp(yyyy-MM-dd HH:mm:ssXXX or yyyy-MM-dd HH:mm:ss"), string and decimal.</p> </li> </ul>
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		PartitionPredicate: FormControl<string | null | undefined>,
 
@@ -4584,8 +4584,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the plan query operation for which to get results.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		QueryId: string;
 
@@ -4608,8 +4608,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the plan query operation for which to get results.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		QueryId: FormControl<string | null | undefined>,
 
@@ -4641,14 +4641,17 @@ export namespace MyNS {
 		/** A continuation token, if this is a continuation call. */
 		NextToken?: string | null;
 
-		/** The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out. */
+		/**
+		 * The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PageSize?: number | null;
 
 		/**
 		 * The ID of the plan query operation.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		QueryId: string;
 	}
@@ -4657,14 +4660,17 @@ export namespace MyNS {
 		/** A continuation token, if this is a continuation call. */
 		NextToken: FormControl<string | null | undefined>,
 
-		/** The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out. */
+		/**
+		 * The size of each page to get in the Amazon Web Services service call. This does not affect the number of items returned in the command's output. Setting a smaller page size results in more calls to the Amazon Web Services service, retrieving fewer items in each call. This can help prevent the Amazon Web Services service calls from timing out.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PageSize: FormControl<number | null | undefined>,
 
 		/**
 		 * The ID of the plan query operation.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		QueryId: FormControl<string | null | undefined>,
 	}
@@ -4681,8 +4687,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -4711,8 +4717,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 	}
@@ -4813,8 +4819,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -4835,8 +4841,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
@@ -4867,8 +4873,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -4893,8 +4899,8 @@ export namespace MyNS {
 
 		/**
 		 * Indicates that related permissions should be included in the results.
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		IncludeRelated?: string | null;
 	}
@@ -4902,8 +4908,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
@@ -4922,8 +4928,8 @@ export namespace MyNS {
 
 		/**
 		 * Indicates that related permissions should be included in the results.
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		IncludeRelated: FormControl<string | null | undefined>,
 	}
@@ -5012,24 +5018,24 @@ export namespace MyNS {
 
 		/**
 		 * The Catalog ID of the table.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
 		/**
 		 * Name of the database where the table is present.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: string;
 
 		/**
 		 * Name of the table.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: string;
 
@@ -5050,24 +5056,24 @@ export namespace MyNS {
 
 		/**
 		 * The Catalog ID of the table.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the database where the table is present.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the table.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: FormControl<string | null | undefined>,
 
@@ -5100,8 +5106,8 @@ export namespace MyNS {
 
 		/**
 		 * The catalog for which to list transactions. Defaults to the account ID of the caller.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -5125,8 +5131,8 @@ export namespace MyNS {
 
 		/**
 		 * The catalog for which to list transactions. Defaults to the account ID of the caller.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
@@ -5160,8 +5166,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -5175,8 +5181,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 	}
@@ -5259,8 +5265,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -5282,8 +5288,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 	}
@@ -5316,8 +5322,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -5346,8 +5352,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 	}
@@ -5403,8 +5409,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -5428,8 +5434,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 	}
@@ -5456,8 +5462,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
@@ -5481,8 +5487,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 	}
@@ -5614,16 +5620,16 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
 		/**
 		 * The key-name for the LF-tag for which to add or delete values.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		TagKey: string;
 
@@ -5645,16 +5651,16 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the Data Catalog. By default, the account ID. The Data Catalog is the persistent metadata store. It contains database definitions, table definitions, and other control information to manage your Lake Formation environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
 		/**
 		 * The key-name for the LF-tag for which to add or delete values.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		TagKey: FormControl<string | null | undefined>,
 	}
@@ -5713,31 +5719,31 @@ export namespace MyNS {
 
 		/**
 		 * The catalog containing the governed table to update. Defaults to the caller’s account ID.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
 		/**
 		 * The database containing the governed table to update.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: string;
 
 		/**
 		 * The governed table to update.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: string;
 
 		/**
 		 * The transaction at which to do the write.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId?: string | null;
 
@@ -5753,31 +5759,31 @@ export namespace MyNS {
 
 		/**
 		 * The catalog containing the governed table to update. Defaults to the caller’s account ID.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
 		/**
 		 * The database containing the governed table to update.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: FormControl<string | null | undefined>,
 
 		/**
 		 * The governed table to update.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: FormControl<string | null | undefined>,
 
 		/**
 		 * The transaction at which to do the write.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 	}
@@ -5795,24 +5801,24 @@ export namespace MyNS {
 
 		/**
 		 * The Catalog ID of the table.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId?: string | null;
 
 		/**
 		 * Name of the database where the table is present.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: string;
 
 		/**
 		 * Name of the table for which to enable the storage optimizer.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: string;
 
@@ -5826,24 +5832,24 @@ export namespace MyNS {
 
 		/**
 		 * The Catalog ID of the table.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		CatalogId: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the database where the table is present.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DatabaseName: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the table for which to enable the storage optimizer.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		TableName: FormControl<string | null | undefined>,
 

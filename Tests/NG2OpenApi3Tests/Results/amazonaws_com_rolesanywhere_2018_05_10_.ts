@@ -939,7 +939,9 @@ export namespace MyNS {
 		 * <p>Lists all profiles in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListProfiles</code>. </p>
 		 * Get profiles
 		 * @param {string} nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
+		 *     Min length: 1    Max length: 10000
 		 * @param {number} pageSize The number of resources in the paginated list. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListProfilesResponse} Success
 		 */
 		ListProfiles(nextToken: string | null | undefined, pageSize: number | null | undefined): Observable<ListProfilesResponse> {
@@ -959,7 +961,9 @@ export namespace MyNS {
 		 * <p>Lists the trust anchors in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListTrustAnchors</code>. </p>
 		 * Get trustanchors
 		 * @param {string} nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
+		 *     Min length: 1    Max length: 10000
 		 * @param {number} pageSize The number of resources in the paginated list. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListTrustAnchorsResponse} Success
 		 */
 		ListTrustAnchors(nextToken: string | null | undefined, pageSize: number | null | undefined): Observable<ListTrustAnchorsResponse> {
@@ -970,6 +974,7 @@ export namespace MyNS {
 		 * <p>Deletes a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteCrl</code>. </p>
 		 * Delete crl/{crlId}
 		 * @param {string} crlId The unique identifier of the certificate revocation list (CRL).
+		 *     Min length: 36    Max length: 36
 		 * @return {CrlDetailResponse} Success
 		 */
 		DeleteCrl(crlId: string): Observable<CrlDetailResponse> {
@@ -980,6 +985,7 @@ export namespace MyNS {
 		 * <p>Gets a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetCrl</code>. </p>
 		 * Get crl/{crlId}
 		 * @param {string} crlId The unique identifier of the certificate revocation list (CRL).
+		 *     Min length: 36    Max length: 36
 		 * @return {CrlDetailResponse} Success
 		 */
 		GetCrl(crlId: string): Observable<CrlDetailResponse> {
@@ -990,6 +996,7 @@ export namespace MyNS {
 		 * <p>Updates the certificate revocation list (CRL). A CRL is a list of certificates that have been revoked by the issuing certificate authority (CA). IAM Roles Anywhere validates against the CRL before issuing credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateCrl</code>. </p>
 		 * Patch crl/{crlId}
 		 * @param {string} crlId The unique identifier of the certificate revocation list (CRL).
+		 *     Min length: 36    Max length: 36
 		 * @return {CrlDetailResponse} Success
 		 */
 		UpdateCrl(crlId: string, requestBody: UpdateCrlPatchBody): Observable<CrlDetailResponse> {
@@ -1000,6 +1007,7 @@ export namespace MyNS {
 		 * <p>Deletes a profile.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteProfile</code>. </p>
 		 * Delete profile/{profileId}
 		 * @param {string} profileId The unique identifier of the profile.
+		 *     Min length: 36    Max length: 36
 		 * @return {ProfileDetailResponse} Success
 		 */
 		DeleteProfile(profileId: string): Observable<ProfileDetailResponse> {
@@ -1010,6 +1018,7 @@ export namespace MyNS {
 		 * <p>Gets a profile.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetProfile</code>. </p>
 		 * Get profile/{profileId}
 		 * @param {string} profileId The unique identifier of the profile.
+		 *     Min length: 36    Max length: 36
 		 * @return {ProfileDetailResponse} Success
 		 */
 		GetProfile(profileId: string): Observable<ProfileDetailResponse> {
@@ -1020,6 +1029,7 @@ export namespace MyNS {
 		 * <p>Updates a <i>profile</i>, a list of the roles that IAM Roles Anywhere service is trusted to assume. You use profiles to intersect permissions with IAM managed policies.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateProfile</code>. </p>
 		 * Patch profile/{profileId}
 		 * @param {string} profileId The unique identifier of the profile.
+		 *     Min length: 36    Max length: 36
 		 * @return {ProfileDetailResponse} Success
 		 */
 		UpdateProfile(profileId: string, requestBody: UpdateProfilePatchBody): Observable<ProfileDetailResponse> {
@@ -1030,6 +1040,7 @@ export namespace MyNS {
 		 * <p>Deletes a trust anchor.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DeleteTrustAnchor</code>. </p>
 		 * Delete trustanchor/{trustAnchorId}
 		 * @param {string} trustAnchorId The unique identifier of the trust anchor.
+		 *     Min length: 36    Max length: 36
 		 * @return {TrustAnchorDetailResponse} Success
 		 */
 		DeleteTrustAnchor(trustAnchorId: string): Observable<TrustAnchorDetailResponse> {
@@ -1040,6 +1051,7 @@ export namespace MyNS {
 		 * <p>Gets a trust anchor.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetTrustAnchor</code>. </p>
 		 * Get trustanchor/{trustAnchorId}
 		 * @param {string} trustAnchorId The unique identifier of the trust anchor.
+		 *     Min length: 36    Max length: 36
 		 * @return {TrustAnchorDetailResponse} Success
 		 */
 		GetTrustAnchor(trustAnchorId: string): Observable<TrustAnchorDetailResponse> {
@@ -1050,6 +1062,7 @@ export namespace MyNS {
 		 * <p>Updates a trust anchor. You establish trust between IAM Roles Anywhere and your certificate authority (CA) by configuring a trust anchor. You can define a trust anchor as a reference to an Private Certificate Authority (Private CA) or by uploading a CA certificate. Your Amazon Web Services workloads can authenticate with the trust anchor using certificates issued by the CA in exchange for temporary Amazon Web Services credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:UpdateTrustAnchor</code>. </p>
 		 * Patch trustanchor/{trustAnchorId}
 		 * @param {string} trustAnchorId The unique identifier of the trust anchor.
+		 *     Min length: 36    Max length: 36
 		 * @return {TrustAnchorDetailResponse} Success
 		 */
 		UpdateTrustAnchor(trustAnchorId: string, requestBody: UpdateTrustAnchorPatchBody): Observable<TrustAnchorDetailResponse> {
@@ -1060,6 +1073,7 @@ export namespace MyNS {
 		 * <p>Disables a certificate revocation list (CRL).</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableCrl</code>. </p>
 		 * Post crl/{crlId}/disable
 		 * @param {string} crlId The unique identifier of the certificate revocation list (CRL).
+		 *     Min length: 36    Max length: 36
 		 * @return {CrlDetailResponse} Success
 		 */
 		DisableCrl(crlId: string): Observable<CrlDetailResponse> {
@@ -1070,6 +1084,7 @@ export namespace MyNS {
 		 * <p>Disables a profile. When disabled, temporary credential requests with this profile fail.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableProfile</code>. </p>
 		 * Post profile/{profileId}/disable
 		 * @param {string} profileId The unique identifier of the profile.
+		 *     Min length: 36    Max length: 36
 		 * @return {ProfileDetailResponse} Success
 		 */
 		DisableProfile(profileId: string): Observable<ProfileDetailResponse> {
@@ -1080,6 +1095,7 @@ export namespace MyNS {
 		 * <p>Disables a trust anchor. When disabled, temporary credential requests specifying this trust anchor are unauthorized.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:DisableTrustAnchor</code>. </p>
 		 * Post trustanchor/{trustAnchorId}/disable
 		 * @param {string} trustAnchorId The unique identifier of the trust anchor.
+		 *     Min length: 36    Max length: 36
 		 * @return {TrustAnchorDetailResponse} Success
 		 */
 		DisableTrustAnchor(trustAnchorId: string): Observable<TrustAnchorDetailResponse> {
@@ -1090,6 +1106,7 @@ export namespace MyNS {
 		 * <p>Enables a certificate revocation list (CRL). When enabled, certificates stored in the CRL are unauthorized to receive session credentials.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableCrl</code>. </p>
 		 * Post crl/{crlId}/enable
 		 * @param {string} crlId The unique identifier of the certificate revocation list (CRL).
+		 *     Min length: 36    Max length: 36
 		 * @return {CrlDetailResponse} Success
 		 */
 		EnableCrl(crlId: string): Observable<CrlDetailResponse> {
@@ -1100,6 +1117,7 @@ export namespace MyNS {
 		 * <p>Enables temporary credential requests for a profile. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableProfile</code>. </p>
 		 * Post profile/{profileId}/enable
 		 * @param {string} profileId The unique identifier of the profile.
+		 *     Min length: 36    Max length: 36
 		 * @return {ProfileDetailResponse} Success
 		 */
 		EnableProfile(profileId: string): Observable<ProfileDetailResponse> {
@@ -1110,6 +1128,7 @@ export namespace MyNS {
 		 * <p>Enables a trust anchor. When enabled, certificates in the trust anchor chain are authorized for trust validation. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:EnableTrustAnchor</code>. </p>
 		 * Post trustanchor/{trustAnchorId}/enable
 		 * @param {string} trustAnchorId The unique identifier of the trust anchor.
+		 *     Min length: 36    Max length: 36
 		 * @return {TrustAnchorDetailResponse} Success
 		 */
 		EnableTrustAnchor(trustAnchorId: string): Observable<TrustAnchorDetailResponse> {
@@ -1120,6 +1139,7 @@ export namespace MyNS {
 		 * <p>Gets a <i>subject</i>, which associates a certificate identity with authentication attempts. The subject stores auditing information such as the status of the last authentication attempt, the certificate data used in the attempt, and the last time the associated identity attempted authentication. </p> <p> <b>Required permissions: </b> <code>rolesanywhere:GetSubject</code>. </p>
 		 * Get subject/{subjectId}
 		 * @param {string} subjectId The unique identifier of the subject. 
+		 *     Min length: 36    Max length: 36
 		 * @return {SubjectDetailResponse} Success
 		 */
 		GetSubject(subjectId: string): Observable<SubjectDetailResponse> {
@@ -1139,7 +1159,9 @@ export namespace MyNS {
 		 * <p>Lists all certificate revocation lists (CRL) in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListCrls</code>. </p>
 		 * Get crls
 		 * @param {string} nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
+		 *     Min length: 1    Max length: 10000
 		 * @param {number} pageSize The number of resources in the paginated list. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListCrlsResponse} Success
 		 */
 		ListCrls(nextToken: string | null | undefined, pageSize: number | null | undefined): Observable<ListCrlsResponse> {
@@ -1150,7 +1172,9 @@ export namespace MyNS {
 		 * <p>Lists the subjects in the authenticated account and Amazon Web Services Region.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListSubjects</code>. </p>
 		 * Get subjects
 		 * @param {string} nextToken A token that indicates where the output should continue from, if a previous request did not show all results. To get the next results, make the request again with this value.
+		 *     Min length: 1    Max length: 10000
 		 * @param {number} pageSize The number of resources in the paginated list. 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListSubjectsResponse} Success
 		 */
 		ListSubjects(nextToken: string | null | undefined, pageSize: number | null | undefined): Observable<ListSubjectsResponse> {
@@ -1161,6 +1185,7 @@ export namespace MyNS {
 		 * <p>Lists the tags attached to the resource.</p> <p> <b>Required permissions: </b> <code>rolesanywhere:ListTagsForResource</code>. </p>
 		 * Get ListTagsForResource#resourceArn
 		 * @param {string} resourceArn The ARN of the resource.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1226,8 +1251,8 @@ export namespace MyNS {
 		/**
 		 * The name of the profile.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -1267,8 +1292,8 @@ export namespace MyNS {
 		/**
 		 * The name of the profile.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1297,8 +1322,8 @@ export namespace MyNS {
 		/**
 		 * The name of the trust anchor.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -1330,8 +1355,8 @@ export namespace MyNS {
 		/**
 		 * The name of the trust anchor.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1361,15 +1386,15 @@ export namespace MyNS {
 
 		/**
 		 * The x509 v3 specified certificate revocation list (CRL).
-		 * Max length: 300000
 		 * Min length: 1
+		 * Max length: 300000
 		 */
 		crlData?: string | null;
 
 		/**
 		 * The name of the Crl.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 	}
@@ -1377,15 +1402,15 @@ export namespace MyNS {
 
 		/**
 		 * The x509 v3 specified certificate revocation list (CRL).
-		 * Max length: 300000
 		 * Min length: 1
+		 * Max length: 300000
 		 */
 		crlData: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the Crl.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1415,8 +1440,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the profile.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
@@ -1429,8 +1454,8 @@ export namespace MyNS {
 
 		/**
 		 * A session policy that applies to the trust boundary of the vended session credentials.
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		sessionPolicy?: string | null;
 	}
@@ -1445,15 +1470,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the profile.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A session policy that applies to the trust boundary of the vended session credentials.
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		sessionPolicy: FormControl<string | null | undefined>,
 	}
@@ -1470,8 +1495,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the trust anchor.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
@@ -1482,8 +1507,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the trust anchor.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1513,8 +1538,8 @@ export namespace MyNS {
 		/**
 		 * The x509 v3 specified certificate revocation list (CRL).
 		 * Required
-		 * Max length: 300000
 		 * Min length: 1
+		 * Max length: 300000
 		 */
 		crlData: string;
 
@@ -1524,8 +1549,8 @@ export namespace MyNS {
 		/**
 		 * The name of the certificate revocation list (CRL).
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -1539,8 +1564,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		trustAnchorArn: string;
 	}
@@ -1549,8 +1574,8 @@ export namespace MyNS {
 		/**
 		 * The x509 v3 specified certificate revocation list (CRL).
 		 * Required
-		 * Max length: 300000
 		 * Min length: 1
+		 * Max length: 300000
 		 */
 		crlData: FormControl<string | null | undefined>,
 
@@ -1560,16 +1585,16 @@ export namespace MyNS {
 		/**
 		 * The name of the certificate revocation list (CRL).
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the TrustAnchor the certificate revocation list (CRL) will provide revocation for.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		trustAnchorArn: FormControl<string | null | undefined>,
 	}
@@ -1596,8 +1621,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the trust anchor.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		trustAnchorId: string;
 	}
@@ -1606,8 +1631,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the trust anchor.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		trustAnchorId: FormControl<string | null | undefined>,
 	}
@@ -1631,8 +1656,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the trust anchor.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		trustAnchorId: string;
 	}
@@ -1641,8 +1666,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the trust anchor.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		trustAnchorId: FormControl<string | null | undefined>,
 	}
@@ -1658,8 +1683,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		resourceArn: string;
 
@@ -1676,8 +1701,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}
@@ -1693,8 +1718,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		resourceArn: string;
 
@@ -1711,8 +1736,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		resourceArn: FormControl<string | null | undefined>,
 	}

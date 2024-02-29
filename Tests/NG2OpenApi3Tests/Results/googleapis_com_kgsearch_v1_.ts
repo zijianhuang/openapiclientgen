@@ -46,6 +46,7 @@ export namespace MyNS {
 		 * @param {boolean} indent Enables indenting of json results.
 		 * @param {Array<string>} languages The list of language codes (defined in ISO 693) to run the query with, e.g. 'en'.
 		 * @param {number} limit Limits the number of entities to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} prefix Enables prefix match against names and aliases of entities
 		 * @param {string} query The literal query string for search.
 		 * @param {Array<string>} types Restricts returned entities with these types, e.g. Person (as defined in http://schema.org/Person). If multiple types are specified, returned entities will contain one or more of these types.

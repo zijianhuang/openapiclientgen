@@ -6447,7 +6447,9 @@ namespace MyNS
 		/// Retrieves the tags that are associated with a specified flow.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the specified flow. </param>
+		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the specified flow. 
+		/// Max length: 512
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6481,7 +6483,9 @@ namespace MyNS
 		/// Applies a tag to the specified flow.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the flow that you want to tag. </param>
+		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the flow that you want to tag. 
+		/// Max length: 512
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6722,8 +6726,13 @@ namespace MyNS
 		/// Removes a tag from the specified flow.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the flow that you want to untag. </param>
-		/// <param name="tagKeys"> The tag keys associated with the tag that you want to remove from your flow. </param>
+		/// <param name="resourceArn"> The Amazon Resource Name (ARN) of the flow that you want to untag. 
+		/// Max length: 512
+		// </param>
+		/// <param name="tagKeys"> The tag keys associated with the tag that you want to remove from your flow. 
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

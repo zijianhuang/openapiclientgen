@@ -5430,8 +5430,14 @@ namespace MyNS
 		/// Stops a multipart upload.
 		/// AbortMultipartReadSetUpload sequencestore/{sequenceStoreId}/upload/{uploadId}/abort
 		/// </summary>
-		/// <param name="sequenceStoreId"> The sequence store ID for the store involved in the multipart upload. </param>
-		/// <param name="uploadId"> The ID for the multipart upload. </param>
+		/// <param name="sequenceStoreId"> The sequence store ID for the store involved in the multipart upload. 
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="uploadId"> The ID for the multipart upload. 
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AbortMultipartReadSetUploadResponse> AbortMultipartReadSetUploadAsync(string sequenceStoreId, string uploadId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5465,7 +5471,10 @@ namespace MyNS
 		/// Deletes one or more read sets.
 		/// BatchDeleteReadSet sequencestore/{sequenceStoreId}/readset/batch/delete
 		/// </summary>
-		/// <param name="sequenceStoreId">The read sets' sequence store ID.</param>
+		/// <param name="sequenceStoreId">The read sets' sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteReadSetResponse> BatchDeleteReadSetAsync(string sequenceStoreId, BatchDeleteReadSetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5574,7 +5583,10 @@ namespace MyNS
 		/// Cancels a run.
 		/// CancelRun run/{id}/cancel
 		/// </summary>
-		/// <param name="id">The run's ID.</param>
+		/// <param name="id">The run's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
 		public async Task CancelRunAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "run/"+ (id==null? "" : System.Uri.EscapeDataString(id))+"/cancel";
@@ -5664,8 +5676,14 @@ namespace MyNS
 		/// Concludes a multipart upload once you have uploaded all the components.
 		/// CompleteMultipartReadSetUpload sequencestore/{sequenceStoreId}/upload/{uploadId}/complete
 		/// </summary>
-		/// <param name="sequenceStoreId"> The sequence store ID for the store involved in the multipart upload. </param>
-		/// <param name="uploadId"> The ID for the multipart upload. </param>
+		/// <param name="sequenceStoreId"> The sequence store ID for the store involved in the multipart upload. 
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="uploadId"> The ID for the multipart upload. 
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CompleteMultipartReadSetUploadResponse> CompleteMultipartReadSetUploadAsync(string sequenceStoreId, string uploadId, CompleteMultipartReadSetUploadPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5746,7 +5764,10 @@ namespace MyNS
 		/// Begins a multipart read set upload.
 		/// CreateMultipartReadSetUpload sequencestore/{sequenceStoreId}/upload
 		/// </summary>
-		/// <param name="sequenceStoreId"> The sequence store ID for the store that is the destination of the multipart uploads. </param>
+		/// <param name="sequenceStoreId"> The sequence store ID for the store that is the destination of the multipart uploads. 
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateMultipartReadSetUploadResponse> CreateMultipartReadSetUploadAsync(string sequenceStoreId, CreateMultipartReadSetUploadPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5860,9 +5881,18 @@ namespace MyNS
 		/// Retrieves a list of run groups.
 		/// ListRunGroups runGroup
 		/// </summary>
-		/// <param name="name">The run groups' name.</param>
-		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
-		/// <param name="maxResults">The maximum number of run groups to return in one page of results.</param>
+		/// <param name="name">The run groups' name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of run groups to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRunGroupsResponse> ListRunGroupsAsync(string name, string startingToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6009,10 +6039,22 @@ namespace MyNS
 		/// Retrieves a list of workflows.
 		/// ListWorkflows workflow
 		/// </summary>
-		/// <param name="type">The workflows' type.</param>
-		/// <param name="name">The workflows' name.</param>
-		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
-		/// <param name="maxResults">The maximum number of workflows to return in one page of results.</param>
+		/// <param name="type">The workflows' type.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="name">The workflows' name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of workflows to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkflowsResponse> ListWorkflowsAsync(WorkflowType type, string name, string startingToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6156,8 +6198,14 @@ namespace MyNS
 		/// Deletes a genome reference.
 		/// DeleteReference referencestore/{referenceStoreId}/reference/{id}
 		/// </summary>
-		/// <param name="id">The reference's ID.</param>
-		/// <param name="referenceStoreId">The reference's store ID.</param>
+		/// <param name="id">The reference's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="referenceStoreId">The reference's store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteReferenceResponse> DeleteReferenceAsync(string id, string referenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6191,7 +6239,10 @@ namespace MyNS
 		/// Deletes a genome reference store.
 		/// DeleteReferenceStore referencestore/{id}
 		/// </summary>
-		/// <param name="id">The store's ID.</param>
+		/// <param name="id">The store's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteReferenceStoreResponse> DeleteReferenceStoreAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6225,7 +6276,10 @@ namespace MyNS
 		/// Gets information about a reference store.
 		/// GetReferenceStore referencestore/{id}
 		/// </summary>
-		/// <param name="id">The store's ID.</param>
+		/// <param name="id">The store's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReferenceStoreResponse> GetReferenceStoreAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6259,7 +6313,10 @@ namespace MyNS
 		/// Deletes a workflow run.
 		/// DeleteRun run/{id}
 		/// </summary>
-		/// <param name="id">The run's ID.</param>
+		/// <param name="id">The run's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
 		public async Task DeleteRunAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "run/"+ (id==null? "" : System.Uri.EscapeDataString(id));
@@ -6286,8 +6343,14 @@ namespace MyNS
 		/// Gets information about a workflow run.
 		/// GetRun run/{id}
 		/// </summary>
-		/// <param name="id">The run's ID.</param>
-		/// <param name="export">The run's export format.</param>
+		/// <param name="id">The run's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
+		/// <param name="export">The run's export format.
+		/// Minimum items: 0
+		/// Maximum items: 32
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRunResponse> GetRunAsync(string id, RunExport[] export, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6321,7 +6384,10 @@ namespace MyNS
 		/// Deletes a workflow run group.
 		/// DeleteRunGroup runGroup/{id}
 		/// </summary>
-		/// <param name="id">The run group's ID.</param>
+		/// <param name="id">The run group's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
 		public async Task DeleteRunGroupAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "runGroup/"+ (id==null? "" : System.Uri.EscapeDataString(id));
@@ -6348,7 +6414,10 @@ namespace MyNS
 		/// Gets information about a workflow run group.
 		/// GetRunGroup runGroup/{id}
 		/// </summary>
-		/// <param name="id">The group's ID.</param>
+		/// <param name="id">The group's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRunGroupResponse> GetRunGroupAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6382,7 +6451,10 @@ namespace MyNS
 		/// Updates a run group.
 		/// UpdateRunGroup runGroup/{id}
 		/// </summary>
-		/// <param name="id">The group's ID.</param>
+		/// <param name="id">The group's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
 		public async Task UpdateRunGroupAsync(string id, UpdateRunGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "runGroup/"+ (id==null? "" : System.Uri.EscapeDataString(id));
@@ -6416,7 +6488,10 @@ namespace MyNS
 		/// Deletes a sequence store.
 		/// DeleteSequenceStore sequencestore/{id}
 		/// </summary>
-		/// <param name="id">The sequence store's ID.</param>
+		/// <param name="id">The sequence store's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSequenceStoreResponse> DeleteSequenceStoreAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6450,7 +6525,10 @@ namespace MyNS
 		/// Gets information about a sequence store.
 		/// GetSequenceStore sequencestore/{id}
 		/// </summary>
-		/// <param name="id">The store's ID.</param>
+		/// <param name="id">The store's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSequenceStoreResponse> GetSequenceStoreAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6594,7 +6672,10 @@ namespace MyNS
 		/// Deletes a workflow.
 		/// DeleteWorkflow workflow/{id}
 		/// </summary>
-		/// <param name="id">The workflow's ID.</param>
+		/// <param name="id">The workflow's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
 		public async Task DeleteWorkflowAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workflow/"+ (id==null? "" : System.Uri.EscapeDataString(id));
@@ -6621,9 +6702,18 @@ namespace MyNS
 		/// Gets information about a workflow.
 		/// GetWorkflow workflow/{id}
 		/// </summary>
-		/// <param name="id">The workflow's ID.</param>
-		/// <param name="type">The workflow's type.</param>
-		/// <param name="export">The export format for the workflow.</param>
+		/// <param name="id">The workflow's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
+		/// <param name="type">The workflow's type.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="export">The export format for the workflow.
+		/// Minimum items: 0
+		/// Maximum items: 32
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkflowResponse> GetWorkflowAsync(string id, WorkflowType type, WorkflowExport[] export, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6657,7 +6747,10 @@ namespace MyNS
 		/// Updates a workflow.
 		/// UpdateWorkflow workflow/{id}
 		/// </summary>
-		/// <param name="id">The workflow's ID.</param>
+		/// <param name="id">The workflow's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
 		public async Task UpdateWorkflowAsync(string id, UpdateWorkflowPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "workflow/"+ (id==null? "" : System.Uri.EscapeDataString(id));
@@ -6691,10 +6784,19 @@ namespace MyNS
 		/// Gets a file from a read set.
 		/// GetReadSet sequencestore/{sequenceStoreId}/readset/{id}#partNumber
 		/// </summary>
-		/// <param name="id">The read set's ID.</param>
-		/// <param name="sequenceStoreId">The read set's sequence store ID.</param>
+		/// <param name="id">The read set's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="sequenceStoreId">The read set's sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <param name="file">The file to retrieve.</param>
-		/// <param name="partNumber">The part number to retrieve.</param>
+		/// <param name="partNumber">The part number to retrieve.
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReadSetResponse> GetReadSetAsync(string id, string sequenceStoreId, ReadSetFile file, int partNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6728,8 +6830,14 @@ namespace MyNS
 		/// Gets information about a read set activation job.
 		/// GetReadSetActivationJob sequencestore/{sequenceStoreId}/activationjob/{id}
 		/// </summary>
-		/// <param name="id">The job's ID.</param>
-		/// <param name="sequenceStoreId">The job's sequence store ID.</param>
+		/// <param name="id">The job's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="sequenceStoreId">The job's sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReadSetActivationJobResponse> GetReadSetActivationJobAsync(string id, string sequenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6763,8 +6871,14 @@ namespace MyNS
 		/// Gets information about a read set export job.
 		/// GetReadSetExportJob sequencestore/{sequenceStoreId}/exportjob/{id}
 		/// </summary>
-		/// <param name="sequenceStoreId">The job's sequence store ID.</param>
-		/// <param name="id">The job's ID.</param>
+		/// <param name="sequenceStoreId">The job's sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="id">The job's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReadSetExportJobResponse> GetReadSetExportJobAsync(string sequenceStoreId, string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6798,8 +6912,14 @@ namespace MyNS
 		/// Gets information about a read set import job.
 		/// GetReadSetImportJob sequencestore/{sequenceStoreId}/importjob/{id}
 		/// </summary>
-		/// <param name="id">The job's ID.</param>
-		/// <param name="sequenceStoreId">The job's sequence store ID.</param>
+		/// <param name="id">The job's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="sequenceStoreId">The job's sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReadSetImportJobResponse> GetReadSetImportJobAsync(string id, string sequenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6833,8 +6953,14 @@ namespace MyNS
 		/// Gets details about a read set.
 		/// GetReadSetMetadata sequencestore/{sequenceStoreId}/readset/{id}/metadata
 		/// </summary>
-		/// <param name="id">The read set's ID.</param>
-		/// <param name="sequenceStoreId">The read set's sequence store ID.</param>
+		/// <param name="id">The read set's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="sequenceStoreId">The read set's sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReadSetMetadataResponse> GetReadSetMetadataAsync(string id, string sequenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6868,9 +6994,18 @@ namespace MyNS
 		/// Gets a reference file.
 		/// GetReference referencestore/{referenceStoreId}/reference/{id}#partNumber
 		/// </summary>
-		/// <param name="id">The reference's ID.</param>
-		/// <param name="referenceStoreId">The reference's store ID.</param>
-		/// <param name="partNumber">The part number to retrieve.</param>
+		/// <param name="id">The reference's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="referenceStoreId">The reference's store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="partNumber">The part number to retrieve.
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <param name="file">The file to retrieve.</param>
 		/// <returns>Success</returns>
 		public async Task<GetReferenceResponse> GetReferenceAsync(string id, string referenceStoreId, int partNumber, ReferenceFile file, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6905,8 +7040,14 @@ namespace MyNS
 		/// Gets information about a reference import job.
 		/// GetReferenceImportJob referencestore/{referenceStoreId}/importjob/{id}
 		/// </summary>
-		/// <param name="id">The job's ID.</param>
-		/// <param name="referenceStoreId">The job's reference store ID.</param>
+		/// <param name="id">The job's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="referenceStoreId">The job's reference store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReferenceImportJobResponse> GetReferenceImportJobAsync(string id, string referenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6940,8 +7081,14 @@ namespace MyNS
 		/// Gets information about a genome reference's metadata.
 		/// GetReferenceMetadata referencestore/{referenceStoreId}/reference/{id}/metadata
 		/// </summary>
-		/// <param name="id">The reference's ID.</param>
-		/// <param name="referenceStoreId">The reference's reference store ID.</param>
+		/// <param name="id">The reference's ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="referenceStoreId">The reference's reference store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReferenceMetadataResponse> GetReferenceMetadataAsync(string id, string referenceStoreId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6975,8 +7122,14 @@ namespace MyNS
 		/// Gets information about a workflow run task.
 		/// GetRunTask run/{id}/task/{taskId}
 		/// </summary>
-		/// <param name="id">The task's ID.</param>
-		/// <param name="taskId">The task's ID.</param>
+		/// <param name="id">The task's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
+		/// <param name="taskId">The task's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRunTaskResponse> GetRunTaskAsync(string id, string taskId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7010,8 +7163,14 @@ namespace MyNS
 		/// Retrieves a list of annotation import jobs.
 		/// ListAnnotationImportJobs import/annotations
 		/// </summary>
-		/// <param name="maxResults">The maximum number of jobs to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="maxResults">The maximum number of jobs to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 10000
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAnnotationImportJobsResponse> ListAnnotationImportJobsAsync(int maxResults, string nextToken, ListAnnotationImportJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7052,8 +7211,14 @@ namespace MyNS
 		/// Retrieves a list of annotation stores.
 		/// ListAnnotationStores annotationStores
 		/// </summary>
-		/// <param name="maxResults">The maximum number of stores to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="maxResults">The maximum number of stores to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 10000
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAnnotationStoresResponse> ListAnnotationStoresAsync(int maxResults, string nextToken, ListAnnotationStoresPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7094,9 +7259,18 @@ namespace MyNS
 		/// Lists all multipart read set uploads and their statuses.
 		/// ListMultipartReadSetUploads sequencestore/{sequenceStoreId}/uploads
 		/// </summary>
-		/// <param name="sequenceStoreId"> The Sequence Store ID used for the multipart uploads. </param>
-		/// <param name="maxResults"> The maximum number of multipart uploads returned in a page. </param>
-		/// <param name="nextToken"> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. </param>
+		/// <param name="sequenceStoreId"> The Sequence Store ID used for the multipart uploads. 
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="maxResults"> The maximum number of multipart uploads returned in a page. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken"> Next token returned in the response of a previous ListMultipartReadSetUploads call. Used to get the next page of results. 
+		/// Max length: 6144
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListMultipartReadSetUploadsResponse> ListMultipartReadSetUploadsAsync(string sequenceStoreId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7125,9 +7299,18 @@ namespace MyNS
 		/// Retrieves a list of read set activation jobs.
 		/// ListReadSetActivationJobs sequencestore/{sequenceStoreId}/activationjobs
 		/// </summary>
-		/// <param name="sequenceStoreId">The read set's sequence store ID.</param>
-		/// <param name="maxResults">The maximum number of read set activation jobs to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="sequenceStoreId">The read set's sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="maxResults">The maximum number of read set activation jobs to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 6144
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReadSetActivationJobsResponse> ListReadSetActivationJobsAsync(string sequenceStoreId, int maxResults, string nextToken, ListReadSetActivationJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7168,9 +7351,18 @@ namespace MyNS
 		/// Retrieves a list of read set export jobs.
 		/// ListReadSetExportJobs sequencestore/{sequenceStoreId}/exportjobs
 		/// </summary>
-		/// <param name="sequenceStoreId">The jobs' sequence store ID.</param>
-		/// <param name="maxResults">The maximum number of jobs to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="sequenceStoreId">The jobs' sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="maxResults">The maximum number of jobs to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 6144
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReadSetExportJobsResponse> ListReadSetExportJobsAsync(string sequenceStoreId, int maxResults, string nextToken, ListReadSetExportJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7211,9 +7403,18 @@ namespace MyNS
 		/// Retrieves a list of read set import jobs.
 		/// ListReadSetImportJobs sequencestore/{sequenceStoreId}/importjobs
 		/// </summary>
-		/// <param name="maxResults">The maximum number of jobs to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
-		/// <param name="sequenceStoreId">The jobs' sequence store ID.</param>
+		/// <param name="maxResults">The maximum number of jobs to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 6144
+		/// Min length: 1
+		// </param>
+		/// <param name="sequenceStoreId">The jobs' sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReadSetImportJobsResponse> ListReadSetImportJobsAsync(int maxResults, string nextToken, string sequenceStoreId, ListReadSetImportJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7254,10 +7455,22 @@ namespace MyNS
 		/// This operation will list all parts in a requested multipart upload for a sequence store.
 		/// ListReadSetUploadParts sequencestore/{sequenceStoreId}/upload/{uploadId}/parts
 		/// </summary>
-		/// <param name="sequenceStoreId"> The Sequence Store ID used for the multipart uploads. </param>
-		/// <param name="uploadId"> The ID for the initiated multipart upload. </param>
-		/// <param name="maxResults"> The maximum number of read set upload parts returned in a page. </param>
-		/// <param name="nextToken"> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. </param>
+		/// <param name="sequenceStoreId"> The Sequence Store ID used for the multipart uploads. 
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="uploadId"> The ID for the initiated multipart upload. 
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="maxResults"> The maximum number of read set upload parts returned in a page. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken"> Next token returned in the response of a previous ListReadSetUploadPartsRequest call. Used to get the next page of results. 
+		/// Max length: 6144
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReadSetUploadPartsResponse> ListReadSetUploadPartsAsync(string sequenceStoreId, string uploadId, int maxResults, string nextToken, ListReadSetUploadPartsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7298,9 +7511,18 @@ namespace MyNS
 		/// Retrieves a list of read sets.
 		/// ListReadSets sequencestore/{sequenceStoreId}/readsets
 		/// </summary>
-		/// <param name="sequenceStoreId">The jobs' sequence store ID.</param>
-		/// <param name="maxResults">The maximum number of read sets to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="sequenceStoreId">The jobs' sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="maxResults">The maximum number of read sets to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 6144
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReadSetsResponse> ListReadSetsAsync(string sequenceStoreId, int maxResults, string nextToken, ListReadSetsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7341,9 +7563,18 @@ namespace MyNS
 		/// Retrieves a list of reference import jobs.
 		/// ListReferenceImportJobs referencestore/{referenceStoreId}/importjobs
 		/// </summary>
-		/// <param name="maxResults">The maximum number of jobs to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
-		/// <param name="referenceStoreId">The job's reference store ID.</param>
+		/// <param name="maxResults">The maximum number of jobs to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 6144
+		/// Min length: 1
+		// </param>
+		/// <param name="referenceStoreId">The job's reference store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReferenceImportJobsResponse> ListReferenceImportJobsAsync(int maxResults, string nextToken, string referenceStoreId, ListReferenceImportJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7384,8 +7615,14 @@ namespace MyNS
 		/// Retrieves a list of reference stores.
 		/// ListReferenceStores referencestores
 		/// </summary>
-		/// <param name="maxResults">The maximum number of stores to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="maxResults">The maximum number of stores to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 6144
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReferenceStoresResponse> ListReferenceStoresAsync(int maxResults, string nextToken, ListReferenceStoresPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7426,9 +7663,18 @@ namespace MyNS
 		/// Retrieves a list of references.
 		/// ListReferences referencestore/{referenceStoreId}/references
 		/// </summary>
-		/// <param name="referenceStoreId">The references' reference store ID.</param>
-		/// <param name="maxResults">The maximum number of references to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="referenceStoreId">The references' reference store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="maxResults">The maximum number of references to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 6144
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReferencesResponse> ListReferencesAsync(string referenceStoreId, int maxResults, string nextToken, ListReferencesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7469,10 +7715,22 @@ namespace MyNS
 		/// Retrieves a list of tasks for a run.
 		/// ListRunTasks run/{id}/task
 		/// </summary>
-		/// <param name="id">The run's ID.</param>
-		/// <param name="status">Filter the list by status.</param>
-		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
-		/// <param name="maxResults">The maximum number of run tasks to return in one page of results.</param>
+		/// <param name="id">The run's ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
+		/// <param name="status">Filter the list by status.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of run tasks to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRunTasksResponse> ListRunTasksAsync(string id, TaskStatus status, string startingToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7506,11 +7764,26 @@ namespace MyNS
 		/// Retrieves a list of runs.
 		/// ListRuns run
 		/// </summary>
-		/// <param name="name">Filter the list by run name.</param>
-		/// <param name="runGroupId">Filter the list by run group ID.</param>
-		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
-		/// <param name="maxResults">The maximum number of runs to return in one page of results.</param>
-		/// <param name="status"> The status of a run. </param>
+		/// <param name="name">Filter the list by run name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="runGroupId">Filter the list by run group ID.
+		/// Max length: 18
+		/// Min length: 1
+		// </param>
+		/// <param name="startingToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of runs to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="status"> The status of a run. 
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRunsResponse> ListRunsAsync(string name, string runGroupId, string startingToken, int maxResults, RunStatus status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7577,8 +7850,14 @@ namespace MyNS
 		/// Retrieves a list of sequence stores.
 		/// ListSequenceStores sequencestores
 		/// </summary>
-		/// <param name="maxResults">The maximum number of stores to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="maxResults">The maximum number of stores to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 6144
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSequenceStoresResponse> ListSequenceStoresAsync(int maxResults, string nextToken, ListSequenceStoresPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7619,7 +7898,10 @@ namespace MyNS
 		/// Retrieves a list of tags for a resource.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The resource's ARN.</param>
+		/// <param name="resourceArn">The resource's ARN.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7653,7 +7935,10 @@ namespace MyNS
 		/// Tags a resource.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The resource's ARN.</param>
+		/// <param name="resourceArn">The resource's ARN.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn));
@@ -7687,8 +7972,14 @@ namespace MyNS
 		/// Retrieves a list of variant import jobs.
 		/// ListVariantImportJobs import/variants
 		/// </summary>
-		/// <param name="maxResults">The maximum number of import jobs to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="maxResults">The maximum number of import jobs to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 10000
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListVariantImportJobsResponse> ListVariantImportJobsAsync(int maxResults, string nextToken, ListVariantImportJobsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7729,8 +8020,14 @@ namespace MyNS
 		/// Retrieves a list of variant stores.
 		/// ListVariantStores variantStores
 		/// </summary>
-		/// <param name="maxResults">The maximum number of stores to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="maxResults">The maximum number of stores to return in one page of results.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 10000
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListVariantStoresResponse> ListVariantStoresAsync(int maxResults, string nextToken, ListVariantStoresPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7811,7 +8108,10 @@ namespace MyNS
 		/// Activates an archived read set. To reduce storage charges, Amazon Omics archives unused read sets after 30 days.
 		/// StartReadSetActivationJob sequencestore/{sequenceStoreId}/activationjob
 		/// </summary>
-		/// <param name="sequenceStoreId">The read set's sequence store ID.</param>
+		/// <param name="sequenceStoreId">The read set's sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartReadSetActivationJobResponse> StartReadSetActivationJobAsync(string sequenceStoreId, StartReadSetActivationJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7852,7 +8152,10 @@ namespace MyNS
 		/// Exports a read set to Amazon S3.
 		/// StartReadSetExportJob sequencestore/{sequenceStoreId}/exportjob
 		/// </summary>
-		/// <param name="sequenceStoreId">The read set's sequence store ID.</param>
+		/// <param name="sequenceStoreId">The read set's sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartReadSetExportJobResponse> StartReadSetExportJobAsync(string sequenceStoreId, StartReadSetExportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7893,7 +8196,10 @@ namespace MyNS
 		/// Starts a read set import job.
 		/// StartReadSetImportJob sequencestore/{sequenceStoreId}/importjob
 		/// </summary>
-		/// <param name="sequenceStoreId">The read set's sequence store ID.</param>
+		/// <param name="sequenceStoreId">The read set's sequence store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartReadSetImportJobResponse> StartReadSetImportJobAsync(string sequenceStoreId, StartReadSetImportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7934,7 +8240,10 @@ namespace MyNS
 		/// Starts a reference import job.
 		/// StartReferenceImportJob referencestore/{referenceStoreId}/importjob
 		/// </summary>
-		/// <param name="referenceStoreId">The job's reference store ID.</param>
+		/// <param name="referenceStoreId">The job's reference store ID.
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartReferenceImportJobResponse> StartReferenceImportJobAsync(string referenceStoreId, StartReferenceImportJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8015,8 +8324,14 @@ namespace MyNS
 		/// Removes tags from a resource.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The resource's ARN.</param>
-		/// <param name="tagKeys">Keys of tags to remove.</param>
+		/// <param name="resourceArn">The resource's ARN.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">Keys of tags to remove.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		public async Task UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"#tagKeys&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));
@@ -8043,10 +8358,19 @@ namespace MyNS
 		/// This operation uploads a specific part of a read set. If you upload a new part using a previously used part number, the previously uploaded part will be overwritten.
 		/// UploadReadSetPart sequencestore/{sequenceStoreId}/upload/{uploadId}/part#partSource&partNumber
 		/// </summary>
-		/// <param name="sequenceStoreId"> The Sequence Store ID used for the multipart upload. </param>
-		/// <param name="uploadId"> The ID for the initiated multipart upload. </param>
+		/// <param name="sequenceStoreId"> The Sequence Store ID used for the multipart upload. 
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
+		/// <param name="uploadId"> The ID for the initiated multipart upload. 
+		/// Max length: 36
+		/// Min length: 10
+		// </param>
 		/// <param name="partSource"> The source file for an upload part. </param>
-		/// <param name="partNumber"> The number of the part being uploaded. </param>
+		/// <param name="partNumber"> The number of the part being uploaded. 
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UploadReadSetPartResponse> UploadReadSetPartAsync(string sequenceStoreId, string uploadId, ReadSetPartSource partSource, int partNumber, UploadReadSetPartPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

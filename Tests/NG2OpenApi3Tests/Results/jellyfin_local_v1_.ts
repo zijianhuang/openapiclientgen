@@ -16,18 +16,21 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the end hour.
 		 * Required
+		 * Type: double
 		 */
 		EndHour: number;
 
 		/**
 		 * Gets or sets the id of this instance.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Id: number;
 
 		/**
 		 * Gets or sets the start hour.
 		 * Required
+		 * Type: double
 		 */
 		StartHour: number;
 
@@ -50,18 +53,21 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the end hour.
 		 * Required
+		 * Type: double
 		 */
 		EndHour: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the id of this instance.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Id: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the start hour.
 		 * Required
+		 * Type: double
 		 */
 		StartHour: FormControl<number | null | undefined>,
 
@@ -89,8 +95,11 @@ export namespace MyNS {
 		/** Gets or sets the date. */
 		Date?: Date | null;
 
-		/** Gets or sets the identifier. */
-		Id?: number | null;
+		/**
+		 * Gets or sets the identifier.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Id?: string | null;
 
 		/** Gets or sets the item identifier. */
 		ItemId?: string | null;
@@ -119,8 +128,11 @@ export namespace MyNS {
 		/** Gets or sets the date. */
 		Date: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the identifier. */
-		Id: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the identifier.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Id: FormControl<string | null | undefined>,
 
 		/** Gets or sets the item identifier. */
 		ItemId: FormControl<string | null | undefined>,
@@ -147,7 +159,7 @@ export namespace MyNS {
 	export function CreateActivityLogEntryFormGroup() {
 		return new FormGroup<ActivityLogEntryFormProperties>({
 			Date: new FormControl<Date | null | undefined>(undefined),
-			Id: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
 			ItemId: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			Overview: new FormControl<string | null | undefined>(undefined),
@@ -167,18 +179,30 @@ export namespace MyNS {
 		/** Gets or sets the items. */
 		Items?: Array<ActivityLogEntry>;
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex?: number | null;
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount?: number | null;
 	}
 	export interface ActivityLogEntryQueryResultFormProperties {
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex: FormControl<number | null | undefined>,
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityLogEntryQueryResultFormGroup() {
@@ -205,6 +229,8 @@ export namespace MyNS {
 	}
 
 	export interface LibraryOptions {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AutomaticRefreshIntervalDays?: number | null;
 		DisabledLocalMetadataReaders?: Array<string>;
 		DisabledSubtitleFetchers?: Array<string>;
@@ -236,6 +262,8 @@ export namespace MyNS {
 		TypeOptions?: Array<TypeOptions>;
 	}
 	export interface LibraryOptionsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AutomaticRefreshIntervalDays: FormControl<number | null | undefined>,
 		EnableAutomaticSeriesGrouping: FormControl<boolean | null | undefined>,
 		EnableChapterImageExtraction: FormControl<boolean | null | undefined>,
@@ -317,10 +345,16 @@ export namespace MyNS {
 
 	export interface ImageOption {
 
-		/** Gets or sets the limit. */
+		/**
+		 * Gets or sets the limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Limit?: number | null;
 
-		/** Gets or sets the minimum width. */
+		/**
+		 * Gets or sets the minimum width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinWidth?: number | null;
 
 		/** Enum ImageType. */
@@ -328,10 +362,16 @@ export namespace MyNS {
 	}
 	export interface ImageOptionFormProperties {
 
-		/** Gets or sets the limit. */
+		/**
+		 * Gets or sets the limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Limit: FormControl<number | null | undefined>,
 
-		/** Gets or sets the minimum width. */
+		/**
+		 * Gets or sets the minimum width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinWidth: FormControl<number | null | undefined>,
 
 		/** Enum ImageType. */
@@ -355,6 +395,8 @@ export namespace MyNS {
 
 		/** Gets or sets the artist provider ids. */
 		ArtistProviderIds?: {[id: string]: string };
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber?: number | null;
 		IsAutomated?: boolean | null;
 
@@ -366,6 +408,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber?: number | null;
 
 		/** Gets or sets the path. */
@@ -376,13 +420,18 @@ export namespace MyNS {
 		ProviderIds?: {[id: string]: string };
 		SongInfos?: Array<SongInfo>;
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year?: number | null;
 	}
 	export interface AlbumInfoFormProperties {
 
 		/** Gets or sets the artist provider ids. */
 		ArtistProviderIds: FormControl<{[id: string]: string } | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber: FormControl<number | null | undefined>,
 		IsAutomated: FormControl<boolean | null | undefined>,
 
@@ -394,6 +443,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the path. */
@@ -403,7 +454,10 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbumInfoFormGroup() {
@@ -427,6 +481,8 @@ export namespace MyNS {
 		Album?: string | null;
 		AlbumArtists?: Array<string>;
 		Artists?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber?: number | null;
 		IsAutomated?: boolean | null;
 
@@ -438,6 +494,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber?: number | null;
 
 		/** Gets or sets the path. */
@@ -447,11 +505,16 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds?: {[id: string]: string };
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year?: number | null;
 	}
 	export interface SongInfoFormProperties {
 		Album: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber: FormControl<number | null | undefined>,
 		IsAutomated: FormControl<boolean | null | undefined>,
 
@@ -463,6 +526,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the path. */
@@ -472,7 +537,10 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year: FormControl<number | null | undefined>,
 	}
 	export function CreateSongInfoFormGroup() {
@@ -549,10 +617,16 @@ export namespace MyNS {
 		/** Gets or sets the owner id. */
 		OwnerId?: string | null;
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex?: number | null;
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount?: number | null;
 	}
 
@@ -562,10 +636,16 @@ export namespace MyNS {
 		/** Gets or sets the owner id. */
 		OwnerId: FormControl<string | null | undefined>,
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex: FormControl<number | null | undefined>,
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateThemeMediaResultFormGroup() {
@@ -589,8 +669,14 @@ export namespace MyNS {
 
 		/** Gets or sets the air time. */
 		AirTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AirsAfterSeasonNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AirsBeforeEpisodeNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AirsBeforeSeasonNumber?: number | null;
 
 		/** Gets or sets the album. */
@@ -602,7 +688,10 @@ export namespace MyNS {
 		/** Gets or sets the album artists. */
 		AlbumArtists?: Array<NameGuidPair>;
 
-		/** Gets or sets the album count. */
+		/**
+		 * Gets or sets the album count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AlbumCount?: number | null;
 
 		/** Gets or sets the album id. */
@@ -610,8 +699,14 @@ export namespace MyNS {
 
 		/** Gets or sets the album image tag. */
 		AlbumPrimaryImageTag?: string | null;
+
+		/** Type: double */
 		Altitude?: number | null;
+
+		/** Type: double */
 		Aperture?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ArtistCount?: number | null;
 
 		/** Gets or sets the artist items. */
@@ -645,24 +740,39 @@ export namespace MyNS {
 		/** Gets or sets the chapters. */
 		Chapters?: Array<ChapterInfo>;
 
-		/** Gets or sets the child count. */
+		/**
+		 * Gets or sets the child count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ChildCount?: number | null;
 
 		/** Gets or sets the type of the collection. */
 		CollectionType?: string | null;
 
-		/** Gets or sets the community rating. */
+		/**
+		 * Gets or sets the community rating.
+		 * Type: float
+		 */
 		CommunityRating?: number | null;
 
-		/** Gets or sets the completion percentage. */
+		/**
+		 * Gets or sets the completion percentage.
+		 * Type: double
+		 */
 		CompletionPercentage?: number | null;
 		Container?: string | null;
 
-		/** Gets or sets the critic rating. */
+		/**
+		 * Gets or sets the critic rating.
+		 * Type: float
+		 */
 		CriticRating?: number | null;
 
-		/** Gets or sets the cumulative run time ticks. */
-		CumulativeRunTimeTicks?: number | null;
+		/**
+		 * Gets or sets the cumulative run time ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		CumulativeRunTimeTicks?: string | null;
 
 		/**
 		 * This is strictly used as a data transfer object from the api layer.
@@ -687,7 +797,10 @@ export namespace MyNS {
 		/** Gets or sets the end date. */
 		EndDate?: Date | null;
 
-		/** Gets or sets the episode count. */
+		/**
+		 * Gets or sets the episode count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		EpisodeCount?: number | null;
 
 		/** Gets or sets the episode title. */
@@ -695,11 +808,15 @@ export namespace MyNS {
 
 		/** Gets or sets the etag. */
 		Etag?: string | null;
+
+		/** Type: double */
 		ExposureTime?: number | null;
 
 		/** Gets or sets the external urls. */
 		ExternalUrls?: Array<ExternalUrl>;
 		ExtraType?: string | null;
+
+		/** Type: double */
 		FocalLength?: number | null;
 		ForcedSortName?: string | null;
 		GenreItems?: Array<NameGuidPair>;
@@ -707,6 +824,8 @@ export namespace MyNS {
 		/** Gets or sets the genres. */
 		Genres?: Array<string>;
 		HasSubtitles?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Height?: number | null;
 
 		/** Gets or sets the id. */
@@ -722,10 +841,16 @@ export namespace MyNS {
 		/** Gets or sets the image tags. */
 		ImageTags?: {[id: string]: string };
 
-		/** Gets or sets the index number. */
+		/**
+		 * Gets or sets the index number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		IndexNumber?: number | null;
 
-		/** Gets or sets the index number end. */
+		/**
+		 * Gets or sets the index number end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		IndexNumberEnd?: number | null;
 
 		/** Gets or sets a value indicating whether this instance is folder. */
@@ -760,13 +885,20 @@ export namespace MyNS {
 
 		/** Gets or sets a value indicating whether this instance is sports. */
 		IsSports?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IsoSpeedRating?: number | null;
 
 		/** Enum IsoType. */
 		IsoType?: BaseItemDtoIsoType | null;
+
+		/** Type: double */
 		Latitude?: number | null;
 
-		/** Gets or sets the local trailer count. */
+		/**
+		 * Gets or sets the local trailer count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LocalTrailerCount?: number | null;
 
 		/** Enum LocationType. */
@@ -777,7 +909,11 @@ export namespace MyNS {
 
 		/** Gets or sets the locked fields. */
 		LockedFields?: Array<MetadataField>;
+
+		/** Type: double */
 		Longitude?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MediaSourceCount?: number | null;
 
 		/** Gets or sets the media versions. */
@@ -789,10 +925,16 @@ export namespace MyNS {
 		/** Gets or sets the type of the media. */
 		MediaType?: string | null;
 
-		/** Gets or sets the movie count. */
+		/**
+		 * Gets or sets the movie count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MovieCount?: number | null;
 
-		/** Gets or sets the music video count. */
+		/**
+		 * Gets or sets the music video count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MusicVideoCount?: number | null;
 
 		/** Gets or sets the name. */
@@ -823,7 +965,10 @@ export namespace MyNS {
 		/** Gets or sets the parent id. */
 		ParentId?: string | null;
 
-		/** Gets or sets the parent index number. */
+		/**
+		 * Gets or sets the parent index number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ParentIndexNumber?: number | null;
 
 		/** Gets or sets the parent logo image tag. */
@@ -844,7 +989,10 @@ export namespace MyNS {
 		/** Gets or sets the parent thumb item id. */
 		ParentThumbItemId?: string | null;
 
-		/** Gets or sets the part count. */
+		/**
+		 * Gets or sets the part count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PartCount?: number | null;
 
 		/** Gets or sets the path. */
@@ -862,12 +1010,20 @@ export namespace MyNS {
 		/** Gets or sets the premiere date. */
 		PremiereDate?: Date | null;
 
-		/** Gets or sets the primary image aspect ratio, after image enhancements. */
+		/**
+		 * Gets or sets the primary image aspect ratio, after image enhancements.
+		 * Type: double
+		 */
 		PrimaryImageAspectRatio?: number | null;
 		ProductionLocations?: Array<string>;
 
-		/** Gets or sets the production year. */
+		/**
+		 * Gets or sets the production year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductionYear?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ProgramCount?: number | null;
 
 		/** Gets or sets the program identifier. */
@@ -876,14 +1032,20 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds?: {[id: string]: string };
 
-		/** Gets or sets the recursive item count. */
+		/**
+		 * Gets or sets the recursive item count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecursiveItemCount?: number | null;
 
 		/** Gets or sets the trailer urls. */
 		RemoteTrailers?: Array<MediaUrl>;
 
-		/** Gets or sets the run time ticks. */
-		RunTimeTicks?: number | null;
+		/**
+		 * Gets or sets the run time ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		RunTimeTicks?: string | null;
 
 		/** Gets or sets the screenshot image tags. */
 		ScreenshotImageTags?: Array<string>;
@@ -894,7 +1056,10 @@ export namespace MyNS {
 		/** Gets or sets the name of the season. */
 		SeasonName?: string | null;
 
-		/** Gets or sets the series count. */
+		/**
+		 * Gets or sets the series count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SeriesCount?: number | null;
 
 		/** Gets or sets the series id. */
@@ -917,10 +1082,15 @@ export namespace MyNS {
 
 		/** Gets or sets the server identifier. */
 		ServerId?: string | null;
+
+		/** Type: double */
 		ShutterSpeed?: number | null;
 		Software?: string | null;
 
-		/** Gets or sets the song count. */
+		/**
+		 * Gets or sets the song count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SongCount?: number | null;
 
 		/** Gets or sets the name of the sort. */
@@ -929,7 +1099,10 @@ export namespace MyNS {
 		/** Gets or sets the type of the source. */
 		SourceType?: string | null;
 
-		/** Gets or sets the special feature count. */
+		/**
+		 * Gets or sets the special feature count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SpecialFeatureCount?: number | null;
 
 		/** The start date of the recording, in UTC. */
@@ -953,7 +1126,10 @@ export namespace MyNS {
 		/** Gets or sets the timer identifier. */
 		TimerId?: string | null;
 
-		/** Gets or sets the trailer count. */
+		/**
+		 * Gets or sets the trailer count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TrailerCount?: number | null;
 
 		/** Gets or sets the type. */
@@ -965,6 +1141,8 @@ export namespace MyNS {
 
 		/** Enum VideoType. */
 		VideoType?: MediaSourceInfoVideoType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Width?: number | null;
 	}
 
@@ -976,8 +1154,14 @@ export namespace MyNS {
 
 		/** Gets or sets the air time. */
 		AirTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AirsAfterSeasonNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AirsBeforeEpisodeNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AirsBeforeSeasonNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the album. */
@@ -986,7 +1170,10 @@ export namespace MyNS {
 		/** Gets or sets the album artist. */
 		AlbumArtist: FormControl<string | null | undefined>,
 
-		/** Gets or sets the album count. */
+		/**
+		 * Gets or sets the album count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AlbumCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the album id. */
@@ -994,8 +1181,14 @@ export namespace MyNS {
 
 		/** Gets or sets the album image tag. */
 		AlbumPrimaryImageTag: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Altitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Aperture: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ArtistCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the aspect ratio. */
@@ -1017,24 +1210,39 @@ export namespace MyNS {
 		/** Enum ChannelType. */
 		ChannelType: FormControl<BaseItemDtoChannelType | null | undefined>,
 
-		/** Gets or sets the child count. */
+		/**
+		 * Gets or sets the child count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ChildCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the type of the collection. */
 		CollectionType: FormControl<string | null | undefined>,
 
-		/** Gets or sets the community rating. */
+		/**
+		 * Gets or sets the community rating.
+		 * Type: float
+		 */
 		CommunityRating: FormControl<number | null | undefined>,
 
-		/** Gets or sets the completion percentage. */
+		/**
+		 * Gets or sets the completion percentage.
+		 * Type: double
+		 */
 		CompletionPercentage: FormControl<number | null | undefined>,
 		Container: FormControl<string | null | undefined>,
 
-		/** Gets or sets the critic rating. */
+		/**
+		 * Gets or sets the critic rating.
+		 * Type: float
+		 */
 		CriticRating: FormControl<number | null | undefined>,
 
-		/** Gets or sets the cumulative run time ticks. */
-		CumulativeRunTimeTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the cumulative run time ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		CumulativeRunTimeTicks: FormControl<string | null | undefined>,
 
 		/** Gets or sets the custom rating. */
 		CustomRating: FormControl<string | null | undefined>,
@@ -1053,7 +1261,10 @@ export namespace MyNS {
 		/** Gets or sets the end date. */
 		EndDate: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the episode count. */
+		/**
+		 * Gets or sets the episode count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		EpisodeCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the episode title. */
@@ -1061,11 +1272,17 @@ export namespace MyNS {
 
 		/** Gets or sets the etag. */
 		Etag: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ExposureTime: FormControl<number | null | undefined>,
 		ExtraType: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		FocalLength: FormControl<number | null | undefined>,
 		ForcedSortName: FormControl<string | null | undefined>,
 		HasSubtitles: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Height: FormControl<number | null | undefined>,
 
 		/** Gets or sets the id. */
@@ -1075,10 +1292,16 @@ export namespace MyNS {
 		/** Gets or sets the image tags. */
 		ImageTags: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Gets or sets the index number. */
+		/**
+		 * Gets or sets the index number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		IndexNumber: FormControl<number | null | undefined>,
 
-		/** Gets or sets the index number end. */
+		/**
+		 * Gets or sets the index number end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		IndexNumberEnd: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether this instance is folder. */
@@ -1113,13 +1336,20 @@ export namespace MyNS {
 
 		/** Gets or sets a value indicating whether this instance is sports. */
 		IsSports: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IsoSpeedRating: FormControl<number | null | undefined>,
 
 		/** Enum IsoType. */
 		IsoType: FormControl<BaseItemDtoIsoType | null | undefined>,
+
+		/** Type: double */
 		Latitude: FormControl<number | null | undefined>,
 
-		/** Gets or sets the local trailer count. */
+		/**
+		 * Gets or sets the local trailer count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LocalTrailerCount: FormControl<number | null | undefined>,
 
 		/** Enum LocationType. */
@@ -1127,16 +1357,26 @@ export namespace MyNS {
 
 		/** Gets or sets a value indicating whether [enable internet providers]. */
 		LockData: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		Longitude: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MediaSourceCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the type of the media. */
 		MediaType: FormControl<string | null | undefined>,
 
-		/** Gets or sets the movie count. */
+		/**
+		 * Gets or sets the movie count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MovieCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the music video count. */
+		/**
+		 * Gets or sets the music video count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MusicVideoCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the name. */
@@ -1164,7 +1404,10 @@ export namespace MyNS {
 		/** Gets or sets the parent id. */
 		ParentId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the parent index number. */
+		/**
+		 * Gets or sets the parent index number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the parent logo image tag. */
@@ -1185,7 +1428,10 @@ export namespace MyNS {
 		/** Gets or sets the parent thumb item id. */
 		ParentThumbItemId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the part count. */
+		/**
+		 * Gets or sets the part count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PartCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the path. */
@@ -1200,11 +1446,19 @@ export namespace MyNS {
 		/** Gets or sets the premiere date. */
 		PremiereDate: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the primary image aspect ratio, after image enhancements. */
+		/**
+		 * Gets or sets the primary image aspect ratio, after image enhancements.
+		 * Type: double
+		 */
 		PrimaryImageAspectRatio: FormControl<number | null | undefined>,
 
-		/** Gets or sets the production year. */
+		/**
+		 * Gets or sets the production year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductionYear: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ProgramCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the program identifier. */
@@ -1213,11 +1467,17 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Gets or sets the recursive item count. */
+		/**
+		 * Gets or sets the recursive item count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RecursiveItemCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the run time ticks. */
-		RunTimeTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the run time ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		RunTimeTicks: FormControl<string | null | undefined>,
 
 		/** Gets or sets the season identifier. */
 		SeasonId: FormControl<string | null | undefined>,
@@ -1225,7 +1485,10 @@ export namespace MyNS {
 		/** Gets or sets the name of the season. */
 		SeasonName: FormControl<string | null | undefined>,
 
-		/** Gets or sets the series count. */
+		/**
+		 * Gets or sets the series count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SeriesCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the series id. */
@@ -1248,10 +1511,15 @@ export namespace MyNS {
 
 		/** Gets or sets the server identifier. */
 		ServerId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ShutterSpeed: FormControl<number | null | undefined>,
 		Software: FormControl<string | null | undefined>,
 
-		/** Gets or sets the song count. */
+		/**
+		 * Gets or sets the song count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SongCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the name of the sort. */
@@ -1260,7 +1528,10 @@ export namespace MyNS {
 		/** Gets or sets the type of the source. */
 		SourceType: FormControl<string | null | undefined>,
 
-		/** Gets or sets the special feature count. */
+		/**
+		 * Gets or sets the special feature count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SpecialFeatureCount: FormControl<number | null | undefined>,
 
 		/** The start date of the recording, in UTC. */
@@ -1275,7 +1546,10 @@ export namespace MyNS {
 		/** Gets or sets the timer identifier. */
 		TimerId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the trailer count. */
+		/**
+		 * Gets or sets the trailer count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TrailerCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets the type. */
@@ -1284,6 +1558,8 @@ export namespace MyNS {
 
 		/** Enum VideoType. */
 		VideoType: FormControl<MediaSourceInfoVideoType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Width: FormControl<number | null | undefined>,
 	}
 	export function CreateBaseItemDtoFormGroup() {
@@ -1317,7 +1593,7 @@ export namespace MyNS {
 			CompletionPercentage: new FormControl<number | null | undefined>(undefined),
 			Container: new FormControl<string | null | undefined>(undefined),
 			CriticRating: new FormControl<number | null | undefined>(undefined),
-			CumulativeRunTimeTicks: new FormControl<number | null | undefined>(undefined),
+			CumulativeRunTimeTicks: new FormControl<string | null | undefined>(undefined),
 			CustomRating: new FormControl<string | null | undefined>(undefined),
 			DateCreated: new FormControl<Date | null | undefined>(undefined),
 			DateLastMediaAdded: new FormControl<Date | null | undefined>(undefined),
@@ -1390,7 +1666,7 @@ export namespace MyNS {
 			ProgramId: new FormControl<string | null | undefined>(undefined),
 			ProviderIds: new FormControl<{[id: string]: string } | null | undefined>(undefined),
 			RecursiveItemCount: new FormControl<number | null | undefined>(undefined),
-			RunTimeTicks: new FormControl<number | null | undefined>(undefined),
+			RunTimeTicks: new FormControl<string | null | undefined>(undefined),
 			SeasonId: new FormControl<string | null | undefined>(undefined),
 			SeasonName: new FormControl<string | null | undefined>(undefined),
 			SeriesCount: new FormControl<number | null | undefined>(undefined),
@@ -1454,8 +1730,11 @@ export namespace MyNS {
 		/** Gets or sets the name. */
 		Name?: string | null;
 
-		/** Gets or sets the start position ticks. */
-		StartPositionTicks?: number | null;
+		/**
+		 * Gets or sets the start position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		StartPositionTicks?: string | null;
 	}
 
 	/** Class ChapterInfo. */
@@ -1469,8 +1748,11 @@ export namespace MyNS {
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
 
-		/** Gets or sets the start position ticks. */
-		StartPositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the start position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		StartPositionTicks: FormControl<string | null | undefined>,
 	}
 	export function CreateChapterInfoFormGroup() {
 		return new FormGroup<ChapterInfoFormProperties>({
@@ -1478,7 +1760,7 @@ export namespace MyNS {
 			ImagePath: new FormControl<string | null | undefined>(undefined),
 			ImageTag: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			StartPositionTicks: new FormControl<number | null | undefined>(undefined),
+			StartPositionTicks: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1567,11 +1849,21 @@ export namespace MyNS {
 	export enum MetadataField { Cast = 'Cast', Genres = 'Genres', ProductionLocations = 'ProductionLocations', Studios = 'Studios', Tags = 'Tags', Name = 'Name', Overview = 'Overview', Runtime = 'Runtime', OfficialRating = 'OfficialRating' }
 
 	export interface MediaSourceInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AnalyzeDurationMs?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Bitrate?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BufferMs?: number | null;
 		Container?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultAudioStreamIndex?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultSubtitleStreamIndex?: number | null;
 		ETag?: string | null;
 		EncoderPath?: string | null;
@@ -1600,8 +1892,12 @@ export namespace MyNS {
 		RequiresClosing?: boolean | null;
 		RequiresLooping?: boolean | null;
 		RequiresOpening?: boolean | null;
-		RunTimeTicks?: number | null;
-		Size?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		RunTimeTicks?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Size?: string | null;
 		SupportsDirectPlay?: boolean | null;
 		SupportsDirectStream?: boolean | null;
 		SupportsProbing?: boolean | null;
@@ -1617,11 +1913,21 @@ export namespace MyNS {
 		VideoType?: MediaSourceInfoVideoType | null;
 	}
 	export interface MediaSourceInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AnalyzeDurationMs: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Bitrate: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BufferMs: FormControl<number | null | undefined>,
 		Container: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultAudioStreamIndex: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultSubtitleStreamIndex: FormControl<number | null | undefined>,
 		ETag: FormControl<string | null | undefined>,
 		EncoderPath: FormControl<string | null | undefined>,
@@ -1647,8 +1953,12 @@ export namespace MyNS {
 		RequiresClosing: FormControl<boolean | null | undefined>,
 		RequiresLooping: FormControl<boolean | null | undefined>,
 		RequiresOpening: FormControl<boolean | null | undefined>,
-		RunTimeTicks: FormControl<number | null | undefined>,
-		Size: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		RunTimeTicks: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Size: FormControl<string | null | undefined>,
 		SupportsDirectPlay: FormControl<boolean | null | undefined>,
 		SupportsDirectStream: FormControl<boolean | null | undefined>,
 		SupportsProbing: FormControl<boolean | null | undefined>,
@@ -1691,8 +2001,8 @@ export namespace MyNS {
 			RequiresClosing: new FormControl<boolean | null | undefined>(undefined),
 			RequiresLooping: new FormControl<boolean | null | undefined>(undefined),
 			RequiresOpening: new FormControl<boolean | null | undefined>(undefined),
-			RunTimeTicks: new FormControl<number | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			RunTimeTicks: new FormControl<string | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			SupportsDirectPlay: new FormControl<boolean | null | undefined>(undefined),
 			SupportsDirectStream: new FormControl<boolean | null | undefined>(undefined),
 			SupportsProbing: new FormControl<boolean | null | undefined>(undefined),
@@ -1729,7 +2039,10 @@ export namespace MyNS {
 		/** Gets or sets the filename. */
 		FileName?: string | null;
 
-		/** Gets or sets the index. */
+		/**
+		 * Gets or sets the index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Index?: number | null;
 
 		/** Gets or sets the MIME type. */
@@ -1754,7 +2067,10 @@ export namespace MyNS {
 		/** Gets or sets the filename. */
 		FileName: FormControl<string | null | undefined>,
 
-		/** Gets or sets the index. */
+		/**
+		 * Gets or sets the index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Index: FormControl<number | null | undefined>,
 
 		/** Gets or sets the MIME type. */
@@ -1780,19 +2096,31 @@ export namespace MyNS {
 		/** Gets or sets the aspect ratio. */
 		AspectRatio?: string | null;
 
-		/** Gets or sets the average frame rate. */
+		/**
+		 * Gets or sets the average frame rate.
+		 * Type: float
+		 */
 		AverageFrameRate?: number | null;
 
-		/** Gets or sets the bit depth. */
+		/**
+		 * Gets or sets the bit depth.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BitDepth?: number | null;
 
-		/** Gets or sets the bit rate. */
+		/**
+		 * Gets or sets the bit rate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BitRate?: number | null;
 
 		/** Gets or sets the channel layout. */
 		ChannelLayout?: string | null;
 
-		/** Gets or sets the channels. */
+		/**
+		 * Gets or sets the channels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Channels?: number | null;
 
 		/** Gets or sets the codec. */
@@ -1824,10 +2152,16 @@ export namespace MyNS {
 		DeliveryUrl?: string | null;
 		DisplayTitle?: string | null;
 
-		/** Gets or sets the height. */
+		/**
+		 * Gets or sets the height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Height?: number | null;
 
-		/** Gets or sets the index. */
+		/**
+		 * Gets or sets the index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Index?: number | null;
 		IsAVC?: boolean | null;
 
@@ -1853,11 +2187,17 @@ export namespace MyNS {
 		/** Gets or sets the language. */
 		Language?: string | null;
 
-		/** Gets or sets the level. */
+		/**
+		 * Gets or sets the level.
+		 * Type: double
+		 */
 		Level?: number | null;
 		NalLengthSize?: string | null;
 
-		/** Gets or sets the length of the packet. */
+		/**
+		 * Gets or sets the length of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PacketLength?: number | null;
 
 		/** Gets or sets the filename. */
@@ -1869,16 +2209,28 @@ export namespace MyNS {
 		/** Gets or sets the profile. */
 		Profile?: string | null;
 
-		/** Gets or sets the real frame rate. */
+		/**
+		 * Gets or sets the real frame rate.
+		 * Type: float
+		 */
 		RealFrameRate?: number | null;
 
-		/** Gets or sets the reference frames. */
+		/**
+		 * Gets or sets the reference frames.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RefFrames?: number | null;
 
-		/** Gets or sets the sample rate. */
+		/**
+		 * Gets or sets the sample rate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SampleRate?: number | null;
 
-		/** Gets or sets the score. */
+		/**
+		 * Gets or sets the score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Score?: number | null;
 
 		/** Gets or sets a value indicating whether [supports external stream]. */
@@ -1896,7 +2248,10 @@ export namespace MyNS {
 		/** Gets or sets the video range. */
 		VideoRange?: string | null;
 
-		/** Gets or sets the width. */
+		/**
+		 * Gets or sets the width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Width?: number | null;
 		localizedDefault?: string | null;
 		localizedForced?: string | null;
@@ -1909,19 +2264,31 @@ export namespace MyNS {
 		/** Gets or sets the aspect ratio. */
 		AspectRatio: FormControl<string | null | undefined>,
 
-		/** Gets or sets the average frame rate. */
+		/**
+		 * Gets or sets the average frame rate.
+		 * Type: float
+		 */
 		AverageFrameRate: FormControl<number | null | undefined>,
 
-		/** Gets or sets the bit depth. */
+		/**
+		 * Gets or sets the bit depth.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BitDepth: FormControl<number | null | undefined>,
 
-		/** Gets or sets the bit rate. */
+		/**
+		 * Gets or sets the bit rate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BitRate: FormControl<number | null | undefined>,
 
 		/** Gets or sets the channel layout. */
 		ChannelLayout: FormControl<string | null | undefined>,
 
-		/** Gets or sets the channels. */
+		/**
+		 * Gets or sets the channels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Channels: FormControl<number | null | undefined>,
 
 		/** Gets or sets the codec. */
@@ -1953,10 +2320,16 @@ export namespace MyNS {
 		DeliveryUrl: FormControl<string | null | undefined>,
 		DisplayTitle: FormControl<string | null | undefined>,
 
-		/** Gets or sets the height. */
+		/**
+		 * Gets or sets the height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Height: FormControl<number | null | undefined>,
 
-		/** Gets or sets the index. */
+		/**
+		 * Gets or sets the index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Index: FormControl<number | null | undefined>,
 		IsAVC: FormControl<boolean | null | undefined>,
 
@@ -1982,11 +2355,17 @@ export namespace MyNS {
 		/** Gets or sets the language. */
 		Language: FormControl<string | null | undefined>,
 
-		/** Gets or sets the level. */
+		/**
+		 * Gets or sets the level.
+		 * Type: double
+		 */
 		Level: FormControl<number | null | undefined>,
 		NalLengthSize: FormControl<string | null | undefined>,
 
-		/** Gets or sets the length of the packet. */
+		/**
+		 * Gets or sets the length of the packet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PacketLength: FormControl<number | null | undefined>,
 
 		/** Gets or sets the filename. */
@@ -1998,16 +2377,28 @@ export namespace MyNS {
 		/** Gets or sets the profile. */
 		Profile: FormControl<string | null | undefined>,
 
-		/** Gets or sets the real frame rate. */
+		/**
+		 * Gets or sets the real frame rate.
+		 * Type: float
+		 */
 		RealFrameRate: FormControl<number | null | undefined>,
 
-		/** Gets or sets the reference frames. */
+		/**
+		 * Gets or sets the reference frames.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RefFrames: FormControl<number | null | undefined>,
 
-		/** Gets or sets the sample rate. */
+		/**
+		 * Gets or sets the sample rate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SampleRate: FormControl<number | null | undefined>,
 
-		/** Gets or sets the score. */
+		/**
+		 * Gets or sets the score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Score: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether [supports external stream]. */
@@ -2025,7 +2416,10 @@ export namespace MyNS {
 		/** Gets or sets the video range. */
 		VideoRange: FormControl<string | null | undefined>,
 
-		/** Gets or sets the width. */
+		/**
+		 * Gets or sets the width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Width: FormControl<number | null | undefined>,
 		localizedDefault: FormControl<string | null | undefined>,
 		localizedForced: FormControl<string | null | undefined>,
@@ -2234,22 +2628,37 @@ export namespace MyNS {
 		/** Gets or sets a value indicating whether this MediaBrowser.Model.Dto.UserItemDataDto is likes. */
 		Likes?: boolean | null;
 
-		/** Gets or sets the play count. */
+		/**
+		 * Gets or sets the play count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PlayCount?: number | null;
 
-		/** Gets or sets the playback position ticks. */
-		PlaybackPositionTicks?: number | null;
+		/**
+		 * Gets or sets the playback position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PlaybackPositionTicks?: string | null;
 
 		/** Gets or sets a value indicating whether this MediaBrowser.Model.Dto.UserItemDataDto is played. */
 		Played?: boolean | null;
 
-		/** Gets or sets the played percentage. */
+		/**
+		 * Gets or sets the played percentage.
+		 * Type: double
+		 */
 		PlayedPercentage?: number | null;
 
-		/** Gets or sets the rating. */
+		/**
+		 * Gets or sets the rating.
+		 * Type: double
+		 */
 		Rating?: number | null;
 
-		/** Gets or sets the unplayed item count. */
+		/**
+		 * Gets or sets the unplayed item count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UnplayedItemCount?: number | null;
 	}
 
@@ -2271,22 +2680,37 @@ export namespace MyNS {
 		/** Gets or sets a value indicating whether this MediaBrowser.Model.Dto.UserItemDataDto is likes. */
 		Likes: FormControl<boolean | null | undefined>,
 
-		/** Gets or sets the play count. */
+		/**
+		 * Gets or sets the play count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PlayCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the playback position ticks. */
-		PlaybackPositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the playback position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PlaybackPositionTicks: FormControl<string | null | undefined>,
 
 		/** Gets or sets a value indicating whether this MediaBrowser.Model.Dto.UserItemDataDto is played. */
 		Played: FormControl<boolean | null | undefined>,
 
-		/** Gets or sets the played percentage. */
+		/**
+		 * Gets or sets the played percentage.
+		 * Type: double
+		 */
 		PlayedPercentage: FormControl<number | null | undefined>,
 
-		/** Gets or sets the rating. */
+		/**
+		 * Gets or sets the rating.
+		 * Type: double
+		 */
 		Rating: FormControl<number | null | undefined>,
 
-		/** Gets or sets the unplayed item count. */
+		/**
+		 * Gets or sets the unplayed item count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UnplayedItemCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUserItemDataDtoFormGroup() {
@@ -2297,7 +2721,7 @@ export namespace MyNS {
 			LastPlayedDate: new FormControl<Date | null | undefined>(undefined),
 			Likes: new FormControl<boolean | null | undefined>(undefined),
 			PlayCount: new FormControl<number | null | undefined>(undefined),
-			PlaybackPositionTicks: new FormControl<number | null | undefined>(undefined),
+			PlaybackPositionTicks: new FormControl<string | null | undefined>(undefined),
 			Played: new FormControl<boolean | null | undefined>(undefined),
 			PlayedPercentage: new FormControl<number | null | undefined>(undefined),
 			Rating: new FormControl<number | null | undefined>(undefined),
@@ -2309,6 +2733,8 @@ export namespace MyNS {
 	export enum Architecture { X86 = 'X86', X64 = 'X64', Arm = 'Arm', Arm64 = 'Arm64', Wasm = 'Wasm' }
 
 	export interface ArtistInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber?: number | null;
 		IsAutomated?: boolean | null;
 
@@ -2320,6 +2746,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber?: number | null;
 
 		/** Gets or sets the path. */
@@ -2330,10 +2758,15 @@ export namespace MyNS {
 		ProviderIds?: {[id: string]: string };
 		SongInfos?: Array<SongInfo>;
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year?: number | null;
 	}
 	export interface ArtistInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber: FormControl<number | null | undefined>,
 		IsAutomated: FormControl<boolean | null | undefined>,
 
@@ -2345,6 +2778,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the path. */
@@ -2354,7 +2789,10 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year: FormControl<number | null | undefined>,
 	}
 	export function CreateArtistInfoFormGroup() {
@@ -2460,8 +2898,11 @@ export namespace MyNS {
 		/** Gets or sets the name of the device. */
 		DeviceName?: string | null;
 
-		/** Gets or sets the identifier. */
-		Id?: number | null;
+		/**
+		 * Gets or sets the identifier.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Id?: string | null;
 
 		/** Gets or sets a value indicating whether this instance is active. */
 		IsActive?: boolean | null;
@@ -2494,8 +2935,11 @@ export namespace MyNS {
 		/** Gets or sets the name of the device. */
 		DeviceName: FormControl<string | null | undefined>,
 
-		/** Gets or sets the identifier. */
-		Id: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the identifier.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Id: FormControl<string | null | undefined>,
 
 		/** Gets or sets a value indicating whether this instance is active. */
 		IsActive: FormControl<boolean | null | undefined>,
@@ -2514,7 +2958,7 @@ export namespace MyNS {
 			DateRevoked: new FormControl<Date | null | undefined>(undefined),
 			DeviceId: new FormControl<string | null | undefined>(undefined),
 			DeviceName: new FormControl<string | null | undefined>(undefined),
-			Id: new FormControl<number | null | undefined>(undefined),
+			Id: new FormControl<string | null | undefined>(undefined),
 			IsActive: new FormControl<boolean | null | undefined>(undefined),
 			UserId: new FormControl<string | null | undefined>(undefined),
 			UserName: new FormControl<string | null | undefined>(undefined),
@@ -2527,18 +2971,30 @@ export namespace MyNS {
 		/** Gets or sets the items. */
 		Items?: Array<AuthenticationInfo>;
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex?: number | null;
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount?: number | null;
 	}
 	export interface AuthenticationInfoQueryResultFormProperties {
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex: FormControl<number | null | undefined>,
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAuthenticationInfoQueryResultFormGroup() {
@@ -2821,25 +3277,46 @@ export namespace MyNS {
 		/** Gets or sets the ManufacturerUrl. */
 		ManufacturerUrl?: string | null;
 
-		/** Gets or sets the MaxAlbumArtHeight. */
+		/**
+		 * Gets or sets the MaxAlbumArtHeight.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAlbumArtHeight?: number | null;
 
-		/** Gets or sets the MaxAlbumArtWidth. */
+		/**
+		 * Gets or sets the MaxAlbumArtWidth.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAlbumArtWidth?: number | null;
 
-		/** Gets or sets the MaxIconHeight. */
+		/**
+		 * Gets or sets the MaxIconHeight.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxIconHeight?: number | null;
 
-		/** Gets or sets the MaxIconWidth. */
+		/**
+		 * Gets or sets the MaxIconWidth.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxIconWidth?: number | null;
 
-		/** Gets or sets the MaxStaticBitrate. */
+		/**
+		 * Gets or sets the MaxStaticBitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStaticBitrate?: number | null;
 
-		/** Gets or sets the MaxStaticMusicBitrate. */
+		/**
+		 * Gets or sets the MaxStaticMusicBitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStaticMusicBitrate?: number | null;
 
-		/** Gets or sets the MaxStreamingBitrate. */
+		/**
+		 * Gets or sets the MaxStreamingBitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStreamingBitrate?: number | null;
 
 		/** Gets or sets the ModelDescription. */
@@ -2854,7 +3331,10 @@ export namespace MyNS {
 		/** Gets or sets the ModelUrl. */
 		ModelUrl?: string | null;
 
-		/** Gets or sets the MusicStreamingTranscodingBitrate. */
+		/**
+		 * Gets or sets the MusicStreamingTranscodingBitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MusicStreamingTranscodingBitrate?: number | null;
 
 		/** Gets or sets the Name. */
@@ -2884,7 +3364,10 @@ export namespace MyNS {
 		/** Gets or sets the SupportedMediaTypes. */
 		SupportedMediaTypes?: string | null;
 
-		/** Gets or sets the TimelineOffsetSeconds. */
+		/**
+		 * Gets or sets the TimelineOffsetSeconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TimelineOffsetSeconds?: number | null;
 
 		/** Gets or sets the transcoding profiles. */
@@ -2930,25 +3413,46 @@ export namespace MyNS {
 		/** Gets or sets the ManufacturerUrl. */
 		ManufacturerUrl: FormControl<string | null | undefined>,
 
-		/** Gets or sets the MaxAlbumArtHeight. */
+		/**
+		 * Gets or sets the MaxAlbumArtHeight.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAlbumArtHeight: FormControl<number | null | undefined>,
 
-		/** Gets or sets the MaxAlbumArtWidth. */
+		/**
+		 * Gets or sets the MaxAlbumArtWidth.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAlbumArtWidth: FormControl<number | null | undefined>,
 
-		/** Gets or sets the MaxIconHeight. */
+		/**
+		 * Gets or sets the MaxIconHeight.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxIconHeight: FormControl<number | null | undefined>,
 
-		/** Gets or sets the MaxIconWidth. */
+		/**
+		 * Gets or sets the MaxIconWidth.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxIconWidth: FormControl<number | null | undefined>,
 
-		/** Gets or sets the MaxStaticBitrate. */
+		/**
+		 * Gets or sets the MaxStaticBitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStaticBitrate: FormControl<number | null | undefined>,
 
-		/** Gets or sets the MaxStaticMusicBitrate. */
+		/**
+		 * Gets or sets the MaxStaticMusicBitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStaticMusicBitrate: FormControl<number | null | undefined>,
 
-		/** Gets or sets the MaxStreamingBitrate. */
+		/**
+		 * Gets or sets the MaxStreamingBitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStreamingBitrate: FormControl<number | null | undefined>,
 
 		/** Gets or sets the ModelDescription. */
@@ -2963,7 +3467,10 @@ export namespace MyNS {
 		/** Gets or sets the ModelUrl. */
 		ModelUrl: FormControl<string | null | undefined>,
 
-		/** Gets or sets the MusicStreamingTranscodingBitrate. */
+		/**
+		 * Gets or sets the MusicStreamingTranscodingBitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MusicStreamingTranscodingBitrate: FormControl<number | null | undefined>,
 
 		/** Gets or sets the Name. */
@@ -2987,7 +3494,10 @@ export namespace MyNS {
 		/** Gets or sets the SupportedMediaTypes. */
 		SupportedMediaTypes: FormControl<string | null | undefined>,
 
-		/** Gets or sets the TimelineOffsetSeconds. */
+		/**
+		 * Gets or sets the TimelineOffsetSeconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TimelineOffsetSeconds: FormControl<number | null | undefined>,
 
 		/** Gets or sets the UserId. */
@@ -3274,8 +3784,12 @@ export namespace MyNS {
 		EnableSubtitlesInManifest?: boolean | null;
 		EstimateContentLength?: boolean | null;
 		MaxAudioChannels?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MinSegments?: number | null;
 		Protocol?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SegmentLength?: number | null;
 		TranscodeSeekInfo?: TranscodingProfileTranscodeSeekInfo | null;
 		Type?: ContainerProfileType | null;
@@ -3291,8 +3805,12 @@ export namespace MyNS {
 		EnableSubtitlesInManifest: FormControl<boolean | null | undefined>,
 		EstimateContentLength: FormControl<boolean | null | undefined>,
 		MaxAudioChannels: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MinSegments: FormControl<number | null | undefined>,
 		Protocol: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SegmentLength: FormControl<number | null | undefined>,
 		TranscodeSeekInfo: FormControl<TranscodingProfileTranscodeSeekInfo | null | undefined>,
 		Type: FormControl<ContainerProfileType | null | undefined>,
@@ -3361,6 +3879,8 @@ export namespace MyNS {
 		Container?: string | null;
 		DateLastSaved?: Date | null;
 		ExtraIds?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Height?: number | null;
 		IsHD?: boolean | null;
 		IsShortcut?: boolean | null;
@@ -3368,8 +3888,12 @@ export namespace MyNS {
 		/** Gets or sets the remote trailers. */
 		RemoteTrailers?: Array<MediaUrl>;
 		ShortcutPath?: string | null;
-		Size?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Size?: string | null;
 		SupportsExternalTransfer?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Width?: number | null;
 	}
 
@@ -3377,12 +3901,18 @@ export namespace MyNS {
 	export interface BaseItemFormProperties {
 		Container: FormControl<string | null | undefined>,
 		DateLastSaved: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Height: FormControl<number | null | undefined>,
 		IsHD: FormControl<boolean | null | undefined>,
 		IsShortcut: FormControl<boolean | null | undefined>,
 		ShortcutPath: FormControl<string | null | undefined>,
-		Size: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		Size: FormControl<string | null | undefined>,
 		SupportsExternalTransfer: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Width: FormControl<number | null | undefined>,
 	}
 	export function CreateBaseItemFormGroup() {
@@ -3393,7 +3923,7 @@ export namespace MyNS {
 			IsHD: new FormControl<boolean | null | undefined>(undefined),
 			IsShortcut: new FormControl<boolean | null | undefined>(undefined),
 			ShortcutPath: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			SupportsExternalTransfer: new FormControl<boolean | null | undefined>(undefined),
 			Width: new FormControl<number | null | undefined>(undefined),
 		});
@@ -3418,7 +3948,10 @@ export namespace MyNS {
 
 	export interface PlayerStateInfo {
 
-		/** Gets or sets the index of the now playing audio stream. */
+		/**
+		 * Gets or sets the index of the now playing audio stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AudioStreamIndex?: number | null;
 
 		/** Gets or sets a value indicating whether this instance can seek. */
@@ -3434,19 +3967,31 @@ export namespace MyNS {
 		MediaSourceId?: string | null;
 		PlayMethod?: PlayerStateInfoPlayMethod | null;
 
-		/** Gets or sets the now playing position ticks. */
-		PositionTicks?: number | null;
+		/**
+		 * Gets or sets the now playing position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks?: string | null;
 		RepeatMode?: PlayerStateInfoRepeatMode | null;
 
-		/** Gets or sets the index of the now playing subtitle stream. */
+		/**
+		 * Gets or sets the index of the now playing subtitle stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubtitleStreamIndex?: number | null;
 
-		/** Gets or sets the volume level. */
+		/**
+		 * Gets or sets the volume level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VolumeLevel?: number | null;
 	}
 	export interface PlayerStateInfoFormProperties {
 
-		/** Gets or sets the index of the now playing audio stream. */
+		/**
+		 * Gets or sets the index of the now playing audio stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AudioStreamIndex: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether this instance can seek. */
@@ -3462,14 +4007,23 @@ export namespace MyNS {
 		MediaSourceId: FormControl<string | null | undefined>,
 		PlayMethod: FormControl<PlayerStateInfoPlayMethod | null | undefined>,
 
-		/** Gets or sets the now playing position ticks. */
-		PositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the now playing position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks: FormControl<string | null | undefined>,
 		RepeatMode: FormControl<PlayerStateInfoRepeatMode | null | undefined>,
 
-		/** Gets or sets the index of the now playing subtitle stream. */
+		/**
+		 * Gets or sets the index of the now playing subtitle stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubtitleStreamIndex: FormControl<number | null | undefined>,
 
-		/** Gets or sets the volume level. */
+		/**
+		 * Gets or sets the volume level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VolumeLevel: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayerStateInfoFormGroup() {
@@ -3480,7 +4034,7 @@ export namespace MyNS {
 			IsPaused: new FormControl<boolean | null | undefined>(undefined),
 			MediaSourceId: new FormControl<string | null | undefined>(undefined),
 			PlayMethod: new FormControl<PlayerStateInfoPlayMethod | null | undefined>(undefined),
-			PositionTicks: new FormControl<number | null | undefined>(undefined),
+			PositionTicks: new FormControl<string | null | undefined>(undefined),
 			RepeatMode: new FormControl<PlayerStateInfoRepeatMode | null | undefined>(undefined),
 			SubtitleStreamIndex: new FormControl<number | null | undefined>(undefined),
 			VolumeLevel: new FormControl<number | null | undefined>(undefined),
@@ -3493,30 +4047,54 @@ export namespace MyNS {
 	export enum PlayerStateInfoRepeatMode { RepeatNone = 'RepeatNone', RepeatAll = 'RepeatAll', RepeatOne = 'RepeatOne' }
 
 	export interface TranscodingInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AudioChannels?: number | null;
 		AudioCodec?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Bitrate?: number | null;
+
+		/** Type: double */
 		CompletionPercentage?: number | null;
 		Container?: string | null;
+
+		/** Type: float */
 		Framerate?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Height?: number | null;
 		IsAudioDirect?: boolean | null;
 		IsVideoDirect?: boolean | null;
 		TranscodeReasons?: Array<TranscodeReason>;
 		VideoCodec?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Width?: number | null;
 	}
 	export interface TranscodingInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AudioChannels: FormControl<number | null | undefined>,
 		AudioCodec: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Bitrate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		CompletionPercentage: FormControl<number | null | undefined>,
 		Container: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		Framerate: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Height: FormControl<number | null | undefined>,
 		IsAudioDirect: FormControl<boolean | null | undefined>,
 		IsVideoDirect: FormControl<boolean | null | undefined>,
 		VideoCodec: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Width: FormControl<number | null | undefined>,
 	}
 	export function CreateTranscodingInfoFormGroup() {
@@ -3570,7 +4148,10 @@ export namespace MyNS {
 		Name?: string | null;
 		Policy?: UserPolicy;
 
-		/** Gets or sets the primary image aspect ratio. */
+		/**
+		 * Gets or sets the primary image aspect ratio.
+		 * Type: double
+		 */
 		PrimaryImageAspectRatio?: number | null;
 
 		/** Gets or sets the primary image tag. */
@@ -3613,7 +4194,10 @@ export namespace MyNS {
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
 
-		/** Gets or sets the primary image aspect ratio. */
+		/**
+		 * Gets or sets the primary image aspect ratio.
+		 * Type: double
+		 */
 		PrimaryImageAspectRatio: FormControl<number | null | undefined>,
 
 		/** Gets or sets the primary image tag. */
@@ -3747,6 +4331,8 @@ export namespace MyNS {
 		EnabledDevices?: Array<string>;
 		EnabledFolders?: Array<string>;
 		ForceRemoteSourceTranscoding?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvalidLoginAttemptCount?: number | null;
 
 		/** Gets or sets a value indicating whether this instance is administrator. */
@@ -3757,12 +4343,21 @@ export namespace MyNS {
 
 		/** Gets or sets a value indicating whether this instance is hidden. */
 		IsHidden?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		LoginAttemptsBeforeLockout?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxActiveSessions?: number | null;
 
-		/** Gets or sets the max parental rating. */
+		/**
+		 * Gets or sets the max parental rating.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxParentalRating?: number | null;
 		PasswordResetProviderId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RemoteClientBitrateLimit?: number | null;
 
 		/** Enum SyncPlayUserAccessType. */
@@ -3791,6 +4386,8 @@ export namespace MyNS {
 		EnableUserPreferenceAccess: FormControl<boolean | null | undefined>,
 		EnableVideoPlaybackTranscoding: FormControl<boolean | null | undefined>,
 		ForceRemoteSourceTranscoding: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InvalidLoginAttemptCount: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether this instance is administrator. */
@@ -3801,12 +4398,21 @@ export namespace MyNS {
 
 		/** Gets or sets a value indicating whether this instance is hidden. */
 		IsHidden: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		LoginAttemptsBeforeLockout: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxActiveSessions: FormControl<number | null | undefined>,
 
-		/** Gets or sets the max parental rating. */
+		/**
+		 * Gets or sets the max parental rating.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxParentalRating: FormControl<number | null | undefined>,
 		PasswordResetProviderId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RemoteClientBitrateLimit: FormControl<number | null | undefined>,
 
 		/** Enum SyncPlayUserAccessType. */
@@ -3859,18 +4465,30 @@ export namespace MyNS {
 		/** Gets or sets the items. */
 		Items?: Array<BaseItemDto>;
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex?: number | null;
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount?: number | null;
 	}
 	export interface BaseItemDtoQueryResultFormProperties {
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex: FormControl<number | null | undefined>,
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateBaseItemDtoQueryResultFormGroup() {
@@ -3896,6 +4514,8 @@ export namespace MyNS {
 	}
 
 	export interface BookInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber?: number | null;
 		IsAutomated?: boolean | null;
 
@@ -3907,6 +4527,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber?: number | null;
 
 		/** Gets or sets the path. */
@@ -3917,10 +4539,15 @@ export namespace MyNS {
 		ProviderIds?: {[id: string]: string };
 		SeriesName?: string | null;
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year?: number | null;
 	}
 	export interface BookInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber: FormControl<number | null | undefined>,
 		IsAutomated: FormControl<boolean | null | undefined>,
 
@@ -3932,6 +4559,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the path. */
@@ -3942,7 +4571,10 @@ export namespace MyNS {
 		ProviderIds: FormControl<{[id: string]: string } | null | undefined>,
 		SeriesName: FormControl<string | null | undefined>,
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year: FormControl<number | null | undefined>,
 	}
 	export function CreateBookInfoFormGroup() {
@@ -3991,6 +4623,8 @@ export namespace MyNS {
 	}
 
 	export interface BoxSetInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber?: number | null;
 		IsAutomated?: boolean | null;
 
@@ -4002,6 +4636,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber?: number | null;
 
 		/** Gets or sets the path. */
@@ -4011,10 +4647,15 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds?: {[id: string]: string };
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year?: number | null;
 	}
 	export interface BoxSetInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber: FormControl<number | null | undefined>,
 		IsAutomated: FormControl<boolean | null | undefined>,
 
@@ -4026,6 +4667,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the path. */
@@ -4035,7 +4678,10 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year: FormControl<number | null | undefined>,
 	}
 	export function CreateBoxSetInfoFormGroup() {
@@ -4116,8 +4762,11 @@ export namespace MyNS {
 		/** Gets or sets the playlist item identifier of the playing item. */
 		PlaylistItemId?: string | null;
 
-		/** Gets or sets the position ticks. */
-		PositionTicks?: number | null;
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks?: string | null;
 
 		/** Gets or sets when the request has been made by the client. */
 		When?: Date | null;
@@ -4132,8 +4781,11 @@ export namespace MyNS {
 		/** Gets or sets the playlist item identifier of the playing item. */
 		PlaylistItemId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the position ticks. */
-		PositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks: FormControl<string | null | undefined>,
 
 		/** Gets or sets when the request has been made by the client. */
 		When: FormControl<Date | null | undefined>,
@@ -4142,7 +4794,7 @@ export namespace MyNS {
 		return new FormGroup<BufferRequestDtoFormProperties>({
 			IsPlaying: new FormControl<boolean | null | undefined>(undefined),
 			PlaylistItemId: new FormControl<string | null | undefined>(undefined),
-			PositionTicks: new FormControl<number | null | undefined>(undefined),
+			PositionTicks: new FormControl<string | null | undefined>(undefined),
 			When: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -4150,7 +4802,10 @@ export namespace MyNS {
 
 	export interface ChannelFeatures {
 
-		/** Gets or sets the automatic refresh levels. */
+		/**
+		 * Gets or sets the automatic refresh levels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AutoRefreshLevels?: number | null;
 
 		/** Gets or sets a value indicating whether this instance can filter. */
@@ -4168,7 +4823,10 @@ export namespace MyNS {
 		/** Gets or sets the identifier. */
 		Id?: string | null;
 
-		/** Represents the maximum number of records the channel allows retrieving at a time. */
+		/**
+		 * Represents the maximum number of records the channel allows retrieving at a time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxPageSize?: number | null;
 
 		/** Gets or sets the media types. */
@@ -4188,7 +4846,10 @@ export namespace MyNS {
 	}
 	export interface ChannelFeaturesFormProperties {
 
-		/** Gets or sets the automatic refresh levels. */
+		/**
+		 * Gets or sets the automatic refresh levels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AutoRefreshLevels: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether this instance can filter. */
@@ -4200,7 +4861,10 @@ export namespace MyNS {
 		/** Gets or sets the identifier. */
 		Id: FormControl<string | null | undefined>,
 
-		/** Represents the maximum number of records the channel allows retrieving at a time. */
+		/**
+		 * Represents the maximum number of records the channel allows retrieving at a time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxPageSize: FormControl<number | null | undefined>,
 
 		/** Gets or sets the name. */
@@ -4753,18 +5417,30 @@ export namespace MyNS {
 		/** Gets or sets the items. */
 		Items?: Array<DeviceInfo>;
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex?: number | null;
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount?: number | null;
 	}
 	export interface DeviceInfoQueryResultFormProperties {
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex: FormControl<number | null | undefined>,
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceInfoQueryResultFormGroup() {
@@ -4835,10 +5511,16 @@ export namespace MyNS {
 		/** Gets or sets the index by. */
 		IndexBy?: string | null;
 
-		/** Gets or sets the height of the primary image. */
+		/**
+		 * Gets or sets the height of the primary image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PrimaryImageHeight?: number | null;
 
-		/** Gets or sets the width of the primary image. */
+		/**
+		 * Gets or sets the width of the primary image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PrimaryImageWidth?: number | null;
 
 		/** Gets or sets a value indicating whether [remember indexing]. */
@@ -4881,10 +5563,16 @@ export namespace MyNS {
 		/** Gets or sets the index by. */
 		IndexBy: FormControl<string | null | undefined>,
 
-		/** Gets or sets the height of the primary image. */
+		/**
+		 * Gets or sets the height of the primary image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PrimaryImageHeight: FormControl<number | null | undefined>,
 
-		/** Gets or sets the width of the primary image. */
+		/**
+		 * Gets or sets the width of the primary image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PrimaryImageWidth: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether [remember indexing]. */
@@ -5065,8 +5753,11 @@ export namespace MyNS {
 		/** Gets or sets the name. */
 		Name?: string | null;
 
-		/** Gets or sets the size. */
-		Size?: number | null;
+		/**
+		 * Gets or sets the size.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 	}
 
 	/** Class FontFile. */
@@ -5081,15 +5772,18 @@ export namespace MyNS {
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
 
-		/** Gets or sets the size. */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the size.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 	}
 	export function CreateFontFileFormGroup() {
 		return new FormGroup<FontFileFormProperties>({
 			DateCreated: new FormControl<Date | null | undefined>(undefined),
 			DateModified: new FormControl<Date | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -5222,6 +5916,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the max number of images to return, per image type.
 		 * Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ImageTypeLimit?: number | null;
 
@@ -5270,6 +5965,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the maximum number of records to return.
 		 * Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Limit?: number | null;
 
@@ -5315,6 +6011,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the record index to start at. All items with a lower index will be dropped from the results.
 		 * Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		StartIndex?: number | null;
 
@@ -5349,6 +6046,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the max number of images to return, per image type.
 		 * Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ImageTypeLimit: FormControl<number | null | undefined>,
 
@@ -5397,6 +6095,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the maximum number of records to return.
 		 * Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Limit: FormControl<number | null | undefined>,
 
@@ -5442,6 +6141,7 @@ export namespace MyNS {
 		/**
 		 * Gets or sets the record index to start at. All items with a lower index will be dropped from the results.
 		 * Optional.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		StartIndex: FormControl<number | null | undefined>,
 
@@ -5635,19 +6335,43 @@ export namespace MyNS {
 	}
 
 	export interface Version {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Build?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Major?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MajorRevision?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Minor?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MinorRevision?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Revision?: number | null;
 	}
 	export interface VersionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Build: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Major: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MajorRevision: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Minor: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MinorRevision: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Revision: FormControl<number | null | undefined>,
 	}
 	export function CreateVersionFormGroup() {
@@ -5688,8 +6412,11 @@ export namespace MyNS {
 		/** Gets or sets the context. */
 		Context?: string | null;
 
-		/** Gets or sets the length of the file. */
-		FileLength?: number | null;
+		/**
+		 * Gets or sets the length of the file.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		FileLength?: string | null;
 
 		/** Gets or sets the format. */
 		Format?: string | null;
@@ -5705,8 +6432,11 @@ export namespace MyNS {
 		/** Gets or sets the context. */
 		Context: FormControl<string | null | undefined>,
 
-		/** Gets or sets the length of the file. */
-		FileLength: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the length of the file.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		FileLength: FormControl<string | null | undefined>,
 
 		/** Gets or sets the format. */
 		Format: FormControl<string | null | undefined>,
@@ -5720,7 +6450,7 @@ export namespace MyNS {
 	export function CreateImageByNameInfoFormGroup() {
 		return new FormGroup<ImageByNameInfoFormProperties>({
 			Context: new FormControl<string | null | undefined>(undefined),
-			FileLength: new FormControl<number | null | undefined>(undefined),
+			FileLength: new FormControl<string | null | undefined>(undefined),
 			Format: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
 			Theme: new FormControl<string | null | undefined>(undefined),
@@ -5739,10 +6469,16 @@ export namespace MyNS {
 		/** Gets or sets the blurhash. */
 		BlurHash?: string | null;
 
-		/** Gets or sets the height. */
+		/**
+		 * Gets or sets the height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Height?: number | null;
 
-		/** Gets or sets the index of the image. */
+		/**
+		 * Gets or sets the index of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ImageIndex?: number | null;
 
 		/** Gets or sets the image tag. */
@@ -5754,10 +6490,16 @@ export namespace MyNS {
 		/** Gets or sets the path. */
 		Path?: string | null;
 
-		/** Gets or sets the size. */
-		Size?: number | null;
+		/**
+		 * Gets or sets the size.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
-		/** Gets or sets the width. */
+		/**
+		 * Gets or sets the width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Width?: number | null;
 	}
 
@@ -5767,10 +6509,16 @@ export namespace MyNS {
 		/** Gets or sets the blurhash. */
 		BlurHash: FormControl<string | null | undefined>,
 
-		/** Gets or sets the height. */
+		/**
+		 * Gets or sets the height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Height: FormControl<number | null | undefined>,
 
-		/** Gets or sets the index of the image. */
+		/**
+		 * Gets or sets the index of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ImageIndex: FormControl<number | null | undefined>,
 
 		/** Gets or sets the image tag. */
@@ -5782,10 +6530,16 @@ export namespace MyNS {
 		/** Gets or sets the path. */
 		Path: FormControl<string | null | undefined>,
 
-		/** Gets or sets the size. */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the size.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
-		/** Gets or sets the width. */
+		/**
+		 * Gets or sets the width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageInfoFormGroup() {
@@ -5796,7 +6550,7 @@ export namespace MyNS {
 			ImageTag: new FormControl<string | null | undefined>(undefined),
 			ImageType: new FormControl<ImageOptionType | null | undefined>(undefined),
 			Path: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Width: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -5888,80 +6642,152 @@ export namespace MyNS {
 	/** Class LibrarySummary. */
 	export interface ItemCounts {
 
-		/** Gets or sets the album count. */
+		/**
+		 * Gets or sets the album count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AlbumCount?: number | null;
 
-		/** Gets or sets the artist count. */
+		/**
+		 * Gets or sets the artist count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ArtistCount?: number | null;
 
-		/** Gets or sets the book count. */
+		/**
+		 * Gets or sets the book count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BookCount?: number | null;
 
-		/** Gets or sets the box set count. */
+		/**
+		 * Gets or sets the box set count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BoxSetCount?: number | null;
 
-		/** Gets or sets the episode count. */
+		/**
+		 * Gets or sets the episode count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		EpisodeCount?: number | null;
 
-		/** Gets or sets the item count. */
+		/**
+		 * Gets or sets the item count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ItemCount?: number | null;
 
-		/** Gets or sets the movie count. */
+		/**
+		 * Gets or sets the movie count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MovieCount?: number | null;
 
-		/** Gets or sets the music video count. */
+		/**
+		 * Gets or sets the music video count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MusicVideoCount?: number | null;
 
-		/** Gets or sets the program count. */
+		/**
+		 * Gets or sets the program count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProgramCount?: number | null;
 
-		/** Gets or sets the series count. */
+		/**
+		 * Gets or sets the series count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SeriesCount?: number | null;
 
-		/** Gets or sets the song count. */
+		/**
+		 * Gets or sets the song count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SongCount?: number | null;
 
-		/** Gets or sets the trailer count. */
+		/**
+		 * Gets or sets the trailer count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TrailerCount?: number | null;
 	}
 
 	/** Class LibrarySummary. */
 	export interface ItemCountsFormProperties {
 
-		/** Gets or sets the album count. */
+		/**
+		 * Gets or sets the album count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AlbumCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the artist count. */
+		/**
+		 * Gets or sets the artist count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ArtistCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the book count. */
+		/**
+		 * Gets or sets the book count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BookCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the box set count. */
+		/**
+		 * Gets or sets the box set count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BoxSetCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the episode count. */
+		/**
+		 * Gets or sets the episode count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		EpisodeCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the item count. */
+		/**
+		 * Gets or sets the item count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ItemCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the movie count. */
+		/**
+		 * Gets or sets the movie count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MovieCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the music video count. */
+		/**
+		 * Gets or sets the music video count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MusicVideoCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the program count. */
+		/**
+		 * Gets or sets the program count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProgramCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the series count. */
+		/**
+		 * Gets or sets the series count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SeriesCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the song count. */
+		/**
+		 * Gets or sets the song count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SongCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the trailer count. */
+		/**
+		 * Gets or sets the trailer count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TrailerCount: FormControl<number | null | undefined>,
 	}
 	export function CreateItemCountsFormGroup() {
@@ -6310,8 +7136,11 @@ export namespace MyNS {
 		/** Gets or sets the name. */
 		Name?: string | null;
 
-		/** Gets or sets the size. */
-		Size?: number | null;
+		/**
+		 * Gets or sets the size.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 	}
 	export interface LogFileFormProperties {
 
@@ -6324,15 +7153,18 @@ export namespace MyNS {
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
 
-		/** Gets or sets the size. */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the size.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 	}
 	export function CreateLogFileFormGroup() {
 		return new FormGroup<LogFileFormProperties>({
 			DateCreated: new FormControl<Date | null | undefined>(undefined),
 			DateModified: new FormControl<Date | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -6465,7 +7297,10 @@ export namespace MyNS {
 		/** Gets or sets the name. */
 		Name?: string | null;
 
-		/** Gets or sets the value. */
+		/**
+		 * Gets or sets the value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Value?: number | null;
 	}
 
@@ -6475,7 +7310,10 @@ export namespace MyNS {
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
 
-		/** Gets or sets the value. */
+		/**
+		 * Gets or sets the value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateParentalRatingFormGroup() {
@@ -6515,7 +7353,10 @@ export namespace MyNS {
 	/** Class MovePlaylistItemRequestDto. */
 	export interface MovePlaylistItemRequestDto {
 
-		/** Gets or sets the new position. */
+		/**
+		 * Gets or sets the new position.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NewIndex?: number | null;
 
 		/** Gets or sets the playlist identifier of the item. */
@@ -6525,7 +7366,10 @@ export namespace MyNS {
 	/** Class MovePlaylistItemRequestDto. */
 	export interface MovePlaylistItemRequestDtoFormProperties {
 
-		/** Gets or sets the new position. */
+		/**
+		 * Gets or sets the new position.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NewIndex: FormControl<number | null | undefined>,
 
 		/** Gets or sets the playlist identifier of the item. */
@@ -6540,6 +7384,8 @@ export namespace MyNS {
 	}
 
 	export interface MovieInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber?: number | null;
 		IsAutomated?: boolean | null;
 
@@ -6551,6 +7397,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber?: number | null;
 
 		/** Gets or sets the path. */
@@ -6560,10 +7408,15 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds?: {[id: string]: string };
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year?: number | null;
 	}
 	export interface MovieInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber: FormControl<number | null | undefined>,
 		IsAutomated: FormControl<boolean | null | undefined>,
 
@@ -6575,6 +7428,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the path. */
@@ -6584,7 +7439,10 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year: FormControl<number | null | undefined>,
 	}
 	export function CreateMovieInfoFormGroup() {
@@ -6633,6 +7491,8 @@ export namespace MyNS {
 
 	export interface MusicVideoInfo {
 		Artists?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber?: number | null;
 		IsAutomated?: boolean | null;
 
@@ -6644,6 +7504,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber?: number | null;
 
 		/** Gets or sets the path. */
@@ -6653,10 +7515,15 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds?: {[id: string]: string };
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year?: number | null;
 	}
 	export interface MusicVideoInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber: FormControl<number | null | undefined>,
 		IsAutomated: FormControl<boolean | null | undefined>,
 
@@ -6668,6 +7535,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the path. */
@@ -6677,7 +7546,10 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year: FormControl<number | null | undefined>,
 	}
 	export function CreateMusicVideoInfoFormGroup() {
@@ -6843,14 +7715,20 @@ export namespace MyNS {
 		/** Gets or sets the current page of notifications. */
 		Notifications?: Array<NotificationDto>;
 
-		/** Gets or sets the total number of notifications. */
+		/**
+		 * Gets or sets the total number of notifications.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount?: number | null;
 	}
 
 	/** A list of notifications with the total record count for pagination. */
 	export interface NotificationResultDtoFormProperties {
 
-		/** Gets or sets the total number of notifications. */
+		/**
+		 * Gets or sets the total number of notifications.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateNotificationResultDtoFormGroup() {
@@ -6890,7 +7768,10 @@ export namespace MyNS {
 	export interface NotificationsSummaryDto {
 		MaxUnreadNotificationLevel?: NotificationDtoLevel | null;
 
-		/** Gets or sets the number of unread notifications. */
+		/**
+		 * Gets or sets the number of unread notifications.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UnreadCount?: number | null;
 	}
 
@@ -6898,7 +7779,10 @@ export namespace MyNS {
 	export interface NotificationsSummaryDtoFormProperties {
 		MaxUnreadNotificationLevel: FormControl<NotificationDtoLevel | null | undefined>,
 
-		/** Gets or sets the number of unread notifications. */
+		/**
+		 * Gets or sets the number of unread notifications.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UnreadCount: FormControl<number | null | undefined>,
 	}
 	export function CreateNotificationsSummaryDtoFormGroup() {
@@ -6948,7 +7832,10 @@ export namespace MyNS {
 	/** Open live stream dto. */
 	export interface OpenLiveStreamDto {
 
-		/** Gets or sets the audio stream index. */
+		/**
+		 * Gets or sets the audio stream index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AudioStreamIndex?: number | null;
 
 		/** Defines the MediaBrowser.Model.Dlna.DeviceProfile. */
@@ -6966,10 +7853,16 @@ export namespace MyNS {
 		/** Gets or sets the item id. */
 		ItemId?: string | null;
 
-		/** Gets or sets the max audio channels. */
+		/**
+		 * Gets or sets the max audio channels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAudioChannels?: number | null;
 
-		/** Gets or sets the max streaming bitrate. */
+		/**
+		 * Gets or sets the max streaming bitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStreamingBitrate?: number | null;
 
 		/** Gets or sets the open token. */
@@ -6978,10 +7871,16 @@ export namespace MyNS {
 		/** Gets or sets the play session id. */
 		PlaySessionId?: string | null;
 
-		/** Gets or sets the start time in ticks. */
-		StartTimeTicks?: number | null;
+		/**
+		 * Gets or sets the start time in ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		StartTimeTicks?: string | null;
 
-		/** Gets or sets the subtitle stream index. */
+		/**
+		 * Gets or sets the subtitle stream index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubtitleStreamIndex?: number | null;
 
 		/** Gets or sets the user id. */
@@ -6991,7 +7890,10 @@ export namespace MyNS {
 	/** Open live stream dto. */
 	export interface OpenLiveStreamDtoFormProperties {
 
-		/** Gets or sets the audio stream index. */
+		/**
+		 * Gets or sets the audio stream index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AudioStreamIndex: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether to enable direct play. */
@@ -7003,10 +7905,16 @@ export namespace MyNS {
 		/** Gets or sets the item id. */
 		ItemId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the max audio channels. */
+		/**
+		 * Gets or sets the max audio channels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAudioChannels: FormControl<number | null | undefined>,
 
-		/** Gets or sets the max streaming bitrate. */
+		/**
+		 * Gets or sets the max streaming bitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStreamingBitrate: FormControl<number | null | undefined>,
 
 		/** Gets or sets the open token. */
@@ -7015,10 +7923,16 @@ export namespace MyNS {
 		/** Gets or sets the play session id. */
 		PlaySessionId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the start time in ticks. */
-		StartTimeTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the start time in ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		StartTimeTicks: FormControl<string | null | undefined>,
 
-		/** Gets or sets the subtitle stream index. */
+		/**
+		 * Gets or sets the subtitle stream index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubtitleStreamIndex: FormControl<number | null | undefined>,
 
 		/** Gets or sets the user id. */
@@ -7034,7 +7948,7 @@ export namespace MyNS {
 			MaxStreamingBitrate: new FormControl<number | null | undefined>(undefined),
 			OpenToken: new FormControl<string | null | undefined>(undefined),
 			PlaySessionId: new FormControl<string | null | undefined>(undefined),
-			StartTimeTicks: new FormControl<number | null | undefined>(undefined),
+			StartTimeTicks: new FormControl<string | null | undefined>(undefined),
 			SubtitleStreamIndex: new FormControl<number | null | undefined>(undefined),
 			UserId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -7213,6 +8127,8 @@ export namespace MyNS {
 	}
 
 	export interface PersonLookupInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber?: number | null;
 		IsAutomated?: boolean | null;
 
@@ -7224,6 +8140,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber?: number | null;
 
 		/** Gets or sets the path. */
@@ -7233,10 +8151,15 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds?: {[id: string]: string };
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year?: number | null;
 	}
 	export interface PersonLookupInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber: FormControl<number | null | undefined>,
 		IsAutomated: FormControl<boolean | null | undefined>,
 
@@ -7248,6 +8171,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the path. */
@@ -7257,7 +8182,10 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year: FormControl<number | null | undefined>,
 	}
 	export function CreatePersonLookupInfoFormGroup() {
@@ -7328,19 +8256,25 @@ export namespace MyNS {
 	/** Class PingRequestDto. */
 	export interface PingRequestDto {
 
-		/** Gets or sets the ping time. */
-		Ping?: number | null;
+		/**
+		 * Gets or sets the ping time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Ping?: string | null;
 	}
 
 	/** Class PingRequestDto. */
 	export interface PingRequestDtoFormProperties {
 
-		/** Gets or sets the ping time. */
-		Ping: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the ping time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Ping: FormControl<string | null | undefined>,
 	}
 	export function CreatePingRequestDtoFormGroup() {
 		return new FormGroup<PingRequestDtoFormProperties>({
-			Ping: new FormControl<number | null | undefined>(undefined),
+			Ping: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -7356,6 +8290,8 @@ export namespace MyNS {
 
 	/** Class PlayRequest. */
 	export interface PlayRequest {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AudioStreamIndex?: number | null;
 
 		/** Gets or sets the controlling user identifier. */
@@ -7367,15 +8303,24 @@ export namespace MyNS {
 
 		/** Enum PlayCommand. */
 		PlayCommand?: PlayCommand | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StartIndex?: number | null;
 
-		/** Gets or sets the start position ticks that the first item should be played at. */
-		StartPositionTicks?: number | null;
+		/**
+		 * Gets or sets the start position ticks that the first item should be played at.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		StartPositionTicks?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SubtitleStreamIndex?: number | null;
 	}
 
 	/** Class PlayRequest. */
 	export interface PlayRequestFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AudioStreamIndex: FormControl<number | null | undefined>,
 
 		/** Gets or sets the controlling user identifier. */
@@ -7384,10 +8329,17 @@ export namespace MyNS {
 
 		/** Enum PlayCommand. */
 		PlayCommand: FormControl<PlayCommand | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		StartIndex: FormControl<number | null | undefined>,
 
-		/** Gets or sets the start position ticks that the first item should be played at. */
-		StartPositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the start position ticks that the first item should be played at.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		StartPositionTicks: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SubtitleStreamIndex: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayRequestFormGroup() {
@@ -7397,7 +8349,7 @@ export namespace MyNS {
 			MediaSourceId: new FormControl<string | null | undefined>(undefined),
 			PlayCommand: new FormControl<PlayCommand | null | undefined>(undefined),
 			StartIndex: new FormControl<number | null | undefined>(undefined),
-			StartPositionTicks: new FormControl<number | null | undefined>(undefined),
+			StartPositionTicks: new FormControl<string | null | undefined>(undefined),
 			SubtitleStreamIndex: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -7407,29 +8359,41 @@ export namespace MyNS {
 	/** Class PlayRequestDto. */
 	export interface PlayRequestDto {
 
-		/** Gets or sets the position of the playing item in the queue. */
+		/**
+		 * Gets or sets the position of the playing item in the queue.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PlayingItemPosition?: number | null;
 
 		/** Gets or sets the playing queue. */
 		PlayingQueue?: Array<string>;
 
-		/** Gets or sets the start position ticks. */
-		StartPositionTicks?: number | null;
+		/**
+		 * Gets or sets the start position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		StartPositionTicks?: string | null;
 	}
 
 	/** Class PlayRequestDto. */
 	export interface PlayRequestDtoFormProperties {
 
-		/** Gets or sets the position of the playing item in the queue. */
+		/**
+		 * Gets or sets the position of the playing item in the queue.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PlayingItemPosition: FormControl<number | null | undefined>,
 
-		/** Gets or sets the start position ticks. */
-		StartPositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the start position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		StartPositionTicks: FormControl<string | null | undefined>,
 	}
 	export function CreatePlayRequestDtoFormGroup() {
 		return new FormGroup<PlayRequestDtoFormProperties>({
 			PlayingItemPosition: new FormControl<number | null | undefined>(undefined),
-			StartPositionTicks: new FormControl<number | null | undefined>(undefined),
+			StartPositionTicks: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -7446,7 +8410,10 @@ export namespace MyNS {
 		/** Gets or sets a value indicating whether to enable video stream copy. */
 		AllowVideoStreamCopy?: boolean | null;
 
-		/** Gets or sets the audio stream index. */
+		/**
+		 * Gets or sets the audio stream index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AudioStreamIndex?: number | null;
 
 		/** Gets or sets a value indicating whether to auto open the live stream. */
@@ -7467,19 +8434,31 @@ export namespace MyNS {
 		/** Gets or sets the live stream id. */
 		LiveStreamId?: string | null;
 
-		/** Gets or sets the max audio channels. */
+		/**
+		 * Gets or sets the max audio channels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAudioChannels?: number | null;
 
-		/** Gets or sets the max streaming bitrate. */
+		/**
+		 * Gets or sets the max streaming bitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStreamingBitrate?: number | null;
 
 		/** Gets or sets the media source id. */
 		MediaSourceId?: string | null;
 
-		/** Gets or sets the start time in ticks. */
-		StartTimeTicks?: number | null;
+		/**
+		 * Gets or sets the start time in ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		StartTimeTicks?: string | null;
 
-		/** Gets or sets the subtitle stream index. */
+		/**
+		 * Gets or sets the subtitle stream index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubtitleStreamIndex?: number | null;
 
 		/** Gets or sets the playback userId. */
@@ -7495,7 +8474,10 @@ export namespace MyNS {
 		/** Gets or sets a value indicating whether to enable video stream copy. */
 		AllowVideoStreamCopy: FormControl<boolean | null | undefined>,
 
-		/** Gets or sets the audio stream index. */
+		/**
+		 * Gets or sets the audio stream index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AudioStreamIndex: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether to auto open the live stream. */
@@ -7513,19 +8495,31 @@ export namespace MyNS {
 		/** Gets or sets the live stream id. */
 		LiveStreamId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the max audio channels. */
+		/**
+		 * Gets or sets the max audio channels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAudioChannels: FormControl<number | null | undefined>,
 
-		/** Gets or sets the max streaming bitrate. */
+		/**
+		 * Gets or sets the max streaming bitrate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxStreamingBitrate: FormControl<number | null | undefined>,
 
 		/** Gets or sets the media source id. */
 		MediaSourceId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the start time in ticks. */
-		StartTimeTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the start time in ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		StartTimeTicks: FormControl<string | null | undefined>,
 
-		/** Gets or sets the subtitle stream index. */
+		/**
+		 * Gets or sets the subtitle stream index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubtitleStreamIndex: FormControl<number | null | undefined>,
 
 		/** Gets or sets the playback userId. */
@@ -7544,7 +8538,7 @@ export namespace MyNS {
 			MaxAudioChannels: new FormControl<number | null | undefined>(undefined),
 			MaxStreamingBitrate: new FormControl<number | null | undefined>(undefined),
 			MediaSourceId: new FormControl<string | null | undefined>(undefined),
-			StartTimeTicks: new FormControl<number | null | undefined>(undefined),
+			StartTimeTicks: new FormControl<string | null | undefined>(undefined),
 			SubtitleStreamIndex: new FormControl<number | null | undefined>(undefined),
 			UserId: new FormControl<string | null | undefined>(undefined),
 		});
@@ -7583,8 +8577,13 @@ export namespace MyNS {
 	export interface PlaybackProgressInfo {
 		AspectRatio?: string | null;
 
-		/** Gets or sets the index of the audio stream. */
+		/**
+		 * Gets or sets the index of the audio stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AudioStreamIndex?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Brightness?: number | null;
 
 		/** Gets or sets a value indicating whether this instance can seek. */
@@ -7615,20 +8614,31 @@ export namespace MyNS {
 
 		/** Gets or sets the play session identifier. */
 		PlaySessionId?: string | null;
-		PlaybackStartTimeTicks?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		PlaybackStartTimeTicks?: string | null;
 		PlaylistItemId?: string | null;
 
-		/** Gets or sets the position ticks. */
-		PositionTicks?: number | null;
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks?: string | null;
 		RepeatMode?: PlayerStateInfoRepeatMode | null;
 
 		/** Gets or sets the session id. */
 		SessionId?: string | null;
 
-		/** Gets or sets the index of the subtitle stream. */
+		/**
+		 * Gets or sets the index of the subtitle stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubtitleStreamIndex?: number | null;
 
-		/** Gets or sets the volume level. */
+		/**
+		 * Gets or sets the volume level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VolumeLevel?: number | null;
 	}
 
@@ -7636,8 +8646,13 @@ export namespace MyNS {
 	export interface PlaybackProgressInfoFormProperties {
 		AspectRatio: FormControl<string | null | undefined>,
 
-		/** Gets or sets the index of the audio stream. */
+		/**
+		 * Gets or sets the index of the audio stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AudioStreamIndex: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Brightness: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether this instance can seek. */
@@ -7661,20 +8676,31 @@ export namespace MyNS {
 
 		/** Gets or sets the play session identifier. */
 		PlaySessionId: FormControl<string | null | undefined>,
-		PlaybackStartTimeTicks: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		PlaybackStartTimeTicks: FormControl<string | null | undefined>,
 		PlaylistItemId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the position ticks. */
-		PositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks: FormControl<string | null | undefined>,
 		RepeatMode: FormControl<PlayerStateInfoRepeatMode | null | undefined>,
 
 		/** Gets or sets the session id. */
 		SessionId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the index of the subtitle stream. */
+		/**
+		 * Gets or sets the index of the subtitle stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubtitleStreamIndex: FormControl<number | null | undefined>,
 
-		/** Gets or sets the volume level. */
+		/**
+		 * Gets or sets the volume level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VolumeLevel: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaybackProgressInfoFormGroup() {
@@ -7690,9 +8716,9 @@ export namespace MyNS {
 			MediaSourceId: new FormControl<string | null | undefined>(undefined),
 			PlayMethod: new FormControl<PlayerStateInfoPlayMethod | null | undefined>(undefined),
 			PlaySessionId: new FormControl<string | null | undefined>(undefined),
-			PlaybackStartTimeTicks: new FormControl<number | null | undefined>(undefined),
+			PlaybackStartTimeTicks: new FormControl<string | null | undefined>(undefined),
 			PlaylistItemId: new FormControl<string | null | undefined>(undefined),
-			PositionTicks: new FormControl<number | null | undefined>(undefined),
+			PositionTicks: new FormControl<string | null | undefined>(undefined),
 			RepeatMode: new FormControl<PlayerStateInfoRepeatMode | null | undefined>(undefined),
 			SessionId: new FormControl<string | null | undefined>(undefined),
 			SubtitleStreamIndex: new FormControl<number | null | undefined>(undefined),
@@ -7706,8 +8732,13 @@ export namespace MyNS {
 	export interface PlaybackStartInfo {
 		AspectRatio?: string | null;
 
-		/** Gets or sets the index of the audio stream. */
+		/**
+		 * Gets or sets the index of the audio stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AudioStreamIndex?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Brightness?: number | null;
 
 		/** Gets or sets a value indicating whether this instance can seek. */
@@ -7738,20 +8769,31 @@ export namespace MyNS {
 
 		/** Gets or sets the play session identifier. */
 		PlaySessionId?: string | null;
-		PlaybackStartTimeTicks?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		PlaybackStartTimeTicks?: string | null;
 		PlaylistItemId?: string | null;
 
-		/** Gets or sets the position ticks. */
-		PositionTicks?: number | null;
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks?: string | null;
 		RepeatMode?: PlayerStateInfoRepeatMode | null;
 
 		/** Gets or sets the session id. */
 		SessionId?: string | null;
 
-		/** Gets or sets the index of the subtitle stream. */
+		/**
+		 * Gets or sets the index of the subtitle stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubtitleStreamIndex?: number | null;
 
-		/** Gets or sets the volume level. */
+		/**
+		 * Gets or sets the volume level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VolumeLevel?: number | null;
 	}
 
@@ -7759,8 +8801,13 @@ export namespace MyNS {
 	export interface PlaybackStartInfoFormProperties {
 		AspectRatio: FormControl<string | null | undefined>,
 
-		/** Gets or sets the index of the audio stream. */
+		/**
+		 * Gets or sets the index of the audio stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AudioStreamIndex: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Brightness: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether this instance can seek. */
@@ -7784,20 +8831,31 @@ export namespace MyNS {
 
 		/** Gets or sets the play session identifier. */
 		PlaySessionId: FormControl<string | null | undefined>,
-		PlaybackStartTimeTicks: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		PlaybackStartTimeTicks: FormControl<string | null | undefined>,
 		PlaylistItemId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the position ticks. */
-		PositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks: FormControl<string | null | undefined>,
 		RepeatMode: FormControl<PlayerStateInfoRepeatMode | null | undefined>,
 
 		/** Gets or sets the session id. */
 		SessionId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the index of the subtitle stream. */
+		/**
+		 * Gets or sets the index of the subtitle stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubtitleStreamIndex: FormControl<number | null | undefined>,
 
-		/** Gets or sets the volume level. */
+		/**
+		 * Gets or sets the volume level.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VolumeLevel: FormControl<number | null | undefined>,
 	}
 	export function CreatePlaybackStartInfoFormGroup() {
@@ -7813,9 +8871,9 @@ export namespace MyNS {
 			MediaSourceId: new FormControl<string | null | undefined>(undefined),
 			PlayMethod: new FormControl<PlayerStateInfoPlayMethod | null | undefined>(undefined),
 			PlaySessionId: new FormControl<string | null | undefined>(undefined),
-			PlaybackStartTimeTicks: new FormControl<number | null | undefined>(undefined),
+			PlaybackStartTimeTicks: new FormControl<string | null | undefined>(undefined),
 			PlaylistItemId: new FormControl<string | null | undefined>(undefined),
-			PositionTicks: new FormControl<number | null | undefined>(undefined),
+			PositionTicks: new FormControl<string | null | undefined>(undefined),
 			RepeatMode: new FormControl<PlayerStateInfoRepeatMode | null | undefined>(undefined),
 			SessionId: new FormControl<string | null | undefined>(undefined),
 			SubtitleStreamIndex: new FormControl<number | null | undefined>(undefined),
@@ -7852,8 +8910,11 @@ export namespace MyNS {
 		PlaySessionId?: string | null;
 		PlaylistItemId?: string | null;
 
-		/** Gets or sets the position ticks. */
-		PositionTicks?: number | null;
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks?: string | null;
 
 		/** Gets or sets the session id. */
 		SessionId?: string | null;
@@ -7879,8 +8940,11 @@ export namespace MyNS {
 		PlaySessionId: FormControl<string | null | undefined>,
 		PlaylistItemId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the position ticks. */
-		PositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks: FormControl<string | null | undefined>,
 
 		/** Gets or sets the session id. */
 		SessionId: FormControl<string | null | undefined>,
@@ -7894,7 +8958,7 @@ export namespace MyNS {
 			NextMediaType: new FormControl<string | null | undefined>(undefined),
 			PlaySessionId: new FormControl<string | null | undefined>(undefined),
 			PlaylistItemId: new FormControl<string | null | undefined>(undefined),
-			PositionTicks: new FormControl<number | null | undefined>(undefined),
+			PositionTicks: new FormControl<string | null | undefined>(undefined),
 			SessionId: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -7924,7 +8988,9 @@ export namespace MyNS {
 
 		/** Gets or sets the controlling user identifier. */
 		ControllingUserId?: string | null;
-		SeekPositionTicks?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		SeekPositionTicks?: string | null;
 	}
 	export interface PlaystateRequestFormProperties {
 
@@ -7933,13 +8999,15 @@ export namespace MyNS {
 
 		/** Gets or sets the controlling user identifier. */
 		ControllingUserId: FormControl<string | null | undefined>,
-		SeekPositionTicks: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		SeekPositionTicks: FormControl<string | null | undefined>,
 	}
 	export function CreatePlaystateRequestFormGroup() {
 		return new FormGroup<PlaystateRequestFormProperties>({
 			Command: new FormControl<PlaystateCommand | null | undefined>(undefined),
 			ControllingUserId: new FormControl<string | null | undefined>(undefined),
-			SeekPositionTicks: new FormControl<number | null | undefined>(undefined),
+			SeekPositionTicks: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -8066,6 +9134,8 @@ export namespace MyNS {
 	export interface ProblemDetails {
 		detail?: string | null;
 		instance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
@@ -8073,6 +9143,8 @@ export namespace MyNS {
 	export interface ProblemDetailsFormProperties {
 		detail: FormControl<string | null | undefined>,
 		instance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -8302,8 +9374,11 @@ export namespace MyNS {
 		/** Gets or sets the playlist item identifier of the playing item. */
 		PlaylistItemId?: string | null;
 
-		/** Gets or sets the position ticks. */
-		PositionTicks?: number | null;
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks?: string | null;
 
 		/** Gets or sets when the request has been made by the client. */
 		When?: Date | null;
@@ -8318,8 +9393,11 @@ export namespace MyNS {
 		/** Gets or sets the playlist item identifier of the playing item. */
 		PlaylistItemId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the position ticks. */
-		PositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks: FormControl<string | null | undefined>,
 
 		/** Gets or sets when the request has been made by the client. */
 		When: FormControl<Date | null | undefined>,
@@ -8328,7 +9406,7 @@ export namespace MyNS {
 		return new FormGroup<ReadyRequestDtoFormProperties>({
 			IsPlaying: new FormControl<boolean | null | undefined>(undefined),
 			PlaylistItemId: new FormControl<string | null | undefined>(undefined),
-			PositionTicks: new FormControl<number | null | undefined>(undefined),
+			PositionTicks: new FormControl<string | null | undefined>(undefined),
 			When: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -8364,10 +9442,16 @@ export namespace MyNS {
 	/** Class RemoteImageInfo. */
 	export interface RemoteImageInfo {
 
-		/** Gets or sets the community rating. */
+		/**
+		 * Gets or sets the community rating.
+		 * Type: double
+		 */
 		CommunityRating?: number | null;
 
-		/** Gets or sets the height. */
+		/**
+		 * Gets or sets the height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Height?: number | null;
 
 		/** Gets or sets the language. */
@@ -8386,20 +9470,32 @@ export namespace MyNS {
 		/** Gets or sets the URL. */
 		Url?: string | null;
 
-		/** Gets or sets the vote count. */
+		/**
+		 * Gets or sets the vote count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VoteCount?: number | null;
 
-		/** Gets or sets the width. */
+		/**
+		 * Gets or sets the width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Width?: number | null;
 	}
 
 	/** Class RemoteImageInfo. */
 	export interface RemoteImageInfoFormProperties {
 
-		/** Gets or sets the community rating. */
+		/**
+		 * Gets or sets the community rating.
+		 * Type: double
+		 */
 		CommunityRating: FormControl<number | null | undefined>,
 
-		/** Gets or sets the height. */
+		/**
+		 * Gets or sets the height.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Height: FormControl<number | null | undefined>,
 
 		/** Gets or sets the language. */
@@ -8418,10 +9514,16 @@ export namespace MyNS {
 		/** Gets or sets the URL. */
 		Url: FormControl<string | null | undefined>,
 
-		/** Gets or sets the vote count. */
+		/**
+		 * Gets or sets the vote count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		VoteCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the width. */
+		/**
+		 * Gets or sets the width.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Width: FormControl<number | null | undefined>,
 	}
 	export function CreateRemoteImageInfoFormGroup() {
@@ -8450,14 +9552,20 @@ export namespace MyNS {
 		/** Gets or sets the providers. */
 		Providers?: Array<string>;
 
-		/** Gets or sets the total record count. */
+		/**
+		 * Gets or sets the total record count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount?: number | null;
 	}
 
 	/** Class RemoteImageResult. */
 	export interface RemoteImageResultFormProperties {
 
-		/** Gets or sets the total record count. */
+		/**
+		 * Gets or sets the total record count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateRemoteImageResultFormGroup() {
@@ -8471,16 +9579,25 @@ export namespace MyNS {
 		AlbumArtist?: RemoteSearchResult;
 		Artists?: Array<RemoteSearchResult>;
 		ImageUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumberEnd?: number | null;
 
 		/** Gets or sets the name. */
 		Name?: string | null;
 		Overview?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber?: number | null;
 		PremiereDate?: Date | null;
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductionYear?: number | null;
 
 		/** Gets or sets the provider ids. */
@@ -8489,16 +9606,25 @@ export namespace MyNS {
 	}
 	export interface RemoteSearchResultFormProperties {
 		ImageUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumberEnd: FormControl<number | null | undefined>,
 
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
 		Overview: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 		PremiereDate: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductionYear: FormControl<number | null | undefined>,
 
 		/** Gets or sets the provider ids. */
@@ -8524,8 +9650,12 @@ export namespace MyNS {
 	export interface RemoteSubtitleInfo {
 		Author?: string | null;
 		Comment?: string | null;
+
+		/** Type: float */
 		CommunityRating?: number | null;
 		DateCreated?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DownloadCount?: number | null;
 		Format?: string | null;
 		Id?: string | null;
@@ -8537,8 +9667,12 @@ export namespace MyNS {
 	export interface RemoteSubtitleInfoFormProperties {
 		Author: FormControl<string | null | undefined>,
 		Comment: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		CommunityRating: FormControl<number | null | undefined>,
 		DateCreated: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DownloadCount: FormControl<number | null | undefined>,
 		Format: FormControl<string | null | undefined>,
 		Id: FormControl<string | null | undefined>,
@@ -8649,11 +9783,17 @@ export namespace MyNS {
 		ChannelName?: string | null;
 		EndDate?: Date | null;
 
-		/** Gets or sets the episode count. */
+		/**
+		 * Gets or sets the episode count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		EpisodeCount?: number | null;
 		Id?: string | null;
 
-		/** Gets or sets the index number. */
+		/**
+		 * Gets or sets the index number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		IndexNumber?: number | null;
 		IsFolder?: boolean | null;
 
@@ -8669,25 +9809,40 @@ export namespace MyNS {
 		/** Gets or sets the name. */
 		Name?: string | null;
 
-		/** Gets or sets the parent index number. */
+		/**
+		 * Gets or sets the parent index number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ParentIndexNumber?: number | null;
 
-		/** Gets or sets the primary image aspect ratio. */
+		/**
+		 * Gets or sets the primary image aspect ratio.
+		 * Type: double
+		 */
 		PrimaryImageAspectRatio?: number | null;
 
 		/** Gets or sets the image tag. */
 		PrimaryImageTag?: string | null;
 
-		/** Gets or sets the production year. */
+		/**
+		 * Gets or sets the production year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductionYear?: number | null;
 
-		/** Gets or sets the run time ticks. */
-		RunTimeTicks?: number | null;
+		/**
+		 * Gets or sets the run time ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		RunTimeTicks?: string | null;
 
 		/** Gets or sets the series. */
 		Series?: string | null;
 
-		/** Gets or sets the song count. */
+		/**
+		 * Gets or sets the song count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SongCount?: number | null;
 		StartDate?: Date | null;
 		Status?: string | null;
@@ -8725,11 +9880,17 @@ export namespace MyNS {
 		ChannelName: FormControl<string | null | undefined>,
 		EndDate: FormControl<Date | null | undefined>,
 
-		/** Gets or sets the episode count. */
+		/**
+		 * Gets or sets the episode count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		EpisodeCount: FormControl<number | null | undefined>,
 		Id: FormControl<string | null | undefined>,
 
-		/** Gets or sets the index number. */
+		/**
+		 * Gets or sets the index number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		IndexNumber: FormControl<number | null | undefined>,
 		IsFolder: FormControl<boolean | null | undefined>,
 
@@ -8745,25 +9906,40 @@ export namespace MyNS {
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
 
-		/** Gets or sets the parent index number. */
+		/**
+		 * Gets or sets the parent index number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
-		/** Gets or sets the primary image aspect ratio. */
+		/**
+		 * Gets or sets the primary image aspect ratio.
+		 * Type: double
+		 */
 		PrimaryImageAspectRatio: FormControl<number | null | undefined>,
 
 		/** Gets or sets the image tag. */
 		PrimaryImageTag: FormControl<string | null | undefined>,
 
-		/** Gets or sets the production year. */
+		/**
+		 * Gets or sets the production year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ProductionYear: FormControl<number | null | undefined>,
 
-		/** Gets or sets the run time ticks. */
-		RunTimeTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the run time ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		RunTimeTicks: FormControl<string | null | undefined>,
 
 		/** Gets or sets the series. */
 		Series: FormControl<string | null | undefined>,
 
-		/** Gets or sets the song count. */
+		/**
+		 * Gets or sets the song count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SongCount: FormControl<number | null | undefined>,
 		StartDate: FormControl<Date | null | undefined>,
 		Status: FormControl<string | null | undefined>,
@@ -8799,7 +9975,7 @@ export namespace MyNS {
 			PrimaryImageAspectRatio: new FormControl<number | null | undefined>(undefined),
 			PrimaryImageTag: new FormControl<string | null | undefined>(undefined),
 			ProductionYear: new FormControl<number | null | undefined>(undefined),
-			RunTimeTicks: new FormControl<number | null | undefined>(undefined),
+			RunTimeTicks: new FormControl<string | null | undefined>(undefined),
 			Series: new FormControl<string | null | undefined>(undefined),
 			SongCount: new FormControl<number | null | undefined>(undefined),
 			StartDate: new FormControl<Date | null | undefined>(undefined),
@@ -8818,14 +9994,20 @@ export namespace MyNS {
 		/** Gets or sets the search hints. */
 		SearchHints?: Array<SearchHint>;
 
-		/** Gets or sets the total record count. */
+		/**
+		 * Gets or sets the total record count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount?: number | null;
 	}
 
 	/** Class SearchHintResult. */
 	export interface SearchHintResultFormProperties {
 
-		/** Gets or sets the total record count. */
+		/**
+		 * Gets or sets the total record count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchHintResultFormGroup() {
@@ -8839,19 +10021,25 @@ export namespace MyNS {
 	/** Class SeekRequestDto. */
 	export interface SeekRequestDto {
 
-		/** Gets or sets the position ticks. */
-		PositionTicks?: number | null;
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks?: string | null;
 	}
 
 	/** Class SeekRequestDto. */
 	export interface SeekRequestDtoFormProperties {
 
-		/** Gets or sets the position ticks. */
-		PositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks: FormControl<string | null | undefined>,
 	}
 	export function CreateSeekRequestDtoFormGroup() {
 		return new FormGroup<SeekRequestDtoFormProperties>({
-			PositionTicks: new FormControl<number | null | undefined>(undefined),
+			PositionTicks: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -8872,8 +10060,11 @@ export namespace MyNS {
 		/** Gets the playlist identifier of the playing item. */
 		PlaylistItemId?: string | null;
 
-		/** Gets the position ticks. */
-		PositionTicks?: number | null;
+		/**
+		 * Gets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks?: string | null;
 
 		/** Gets or sets the UTC time when to execute the command. */
 		When?: Date | null;
@@ -8894,8 +10085,11 @@ export namespace MyNS {
 		/** Gets the playlist identifier of the playing item. */
 		PlaylistItemId: FormControl<string | null | undefined>,
 
-		/** Gets the position ticks. */
-		PositionTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets the position ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		PositionTicks: FormControl<string | null | undefined>,
 
 		/** Gets or sets the UTC time when to execute the command. */
 		When: FormControl<Date | null | undefined>,
@@ -8906,7 +10100,7 @@ export namespace MyNS {
 			EmittedAt: new FormControl<Date | null | undefined>(undefined),
 			GroupId: new FormControl<string | null | undefined>(undefined),
 			PlaylistItemId: new FormControl<string | null | undefined>(undefined),
-			PositionTicks: new FormControl<number | null | undefined>(undefined),
+			PositionTicks: new FormControl<string | null | undefined>(undefined),
 			When: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -8919,6 +10113,8 @@ export namespace MyNS {
 	export enum SendCommandType { Unpause = 'Unpause', Pause = 'Pause', Stop = 'Stop', Seek = 'Seek' }
 
 	export interface SeriesInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber?: number | null;
 		IsAutomated?: boolean | null;
 
@@ -8930,6 +10126,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber?: number | null;
 
 		/** Gets or sets the path. */
@@ -8939,10 +10137,15 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds?: {[id: string]: string };
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year?: number | null;
 	}
 	export interface SeriesInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber: FormControl<number | null | undefined>,
 		IsAutomated: FormControl<boolean | null | undefined>,
 
@@ -8954,6 +10157,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the path. */
@@ -8963,7 +10168,10 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year: FormControl<number | null | undefined>,
 	}
 	export function CreateSeriesInfoFormGroup() {
@@ -9053,6 +10261,8 @@ export namespace MyNS {
 		/** Gets or sets a value indicating whether this instance is pre padding required. */
 		IsPrePaddingRequired?: boolean | null;
 		KeepUntil?: KeepUntil | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		KeepUpTo?: number | null;
 
 		/** Name of the recording. */
@@ -9079,13 +10289,22 @@ export namespace MyNS {
 		/** Gets or sets the parent thumb item id. */
 		ParentThumbItemId?: string | null;
 
-		/** Gets or sets the post padding seconds. */
+		/**
+		 * Gets or sets the post padding seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PostPaddingSeconds?: number | null;
 
-		/** Gets or sets the pre padding seconds. */
+		/**
+		 * Gets or sets the pre padding seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PrePaddingSeconds?: number | null;
 
-		/** Gets or sets the priority. */
+		/**
+		 * Gets or sets the priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Priority?: number | null;
 
 		/** Gets or sets the program identifier. */
@@ -9147,6 +10366,8 @@ export namespace MyNS {
 		/** Gets or sets a value indicating whether this instance is pre padding required. */
 		IsPrePaddingRequired: FormControl<boolean | null | undefined>,
 		KeepUntil: FormControl<KeepUntil | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		KeepUpTo: FormControl<number | null | undefined>,
 
 		/** Name of the recording. */
@@ -9170,13 +10391,22 @@ export namespace MyNS {
 		/** Gets or sets the parent thumb item id. */
 		ParentThumbItemId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the post padding seconds. */
+		/**
+		 * Gets or sets the post padding seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PostPaddingSeconds: FormControl<number | null | undefined>,
 
-		/** Gets or sets the pre padding seconds. */
+		/**
+		 * Gets or sets the pre padding seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PrePaddingSeconds: FormControl<number | null | undefined>,
 
-		/** Gets or sets the priority. */
+		/**
+		 * Gets or sets the priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Priority: FormControl<number | null | undefined>,
 
 		/** Gets or sets the program identifier. */
@@ -9246,18 +10476,30 @@ export namespace MyNS {
 		/** Gets or sets the items. */
 		Items?: Array<SeriesTimerInfoDto>;
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex?: number | null;
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount?: number | null;
 	}
 	export interface SeriesTimerInfoDtoQueryResultFormProperties {
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex: FormControl<number | null | undefined>,
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSeriesTimerInfoDtoQueryResultFormGroup() {
@@ -9272,7 +10514,10 @@ export namespace MyNS {
 	/** Represents the server configuration. */
 	export interface ServerConfiguration {
 
-		/** Gets or sets the number of days we should retain activity logs. */
+		/**
+		 * Gets or sets the number of days we should retain activity logs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityLogRetentionDays?: number | null;
 
 		/** Gets or sets a value indicating whether Autodiscovery is enabled. */
@@ -9346,20 +10591,31 @@ export namespace MyNS {
 		/** Gets or sets a value indicating whether to enable automatic port forwarding. */
 		EnableUPnP?: boolean | null;
 
-		/** Gets or sets the time (in seconds) between the pings of SSDP gateway monitor. */
+		/**
+		 * Gets or sets the time (in seconds) between the pings of SSDP gateway monitor.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		GatewayMonitorPeriod?: number | null;
 
 		/** Gets or sets the ports that HDHomerun uses. */
 		HDHomerunPortRange?: string | null;
 
-		/** Gets or sets the HTTP server port number. */
+		/**
+		 * Gets or sets the HTTP server port number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HttpServerPortNumber?: number | null;
 
-		/** Gets or sets the HTTPS server port number. */
+		/**
+		 * Gets or sets the HTTPS server port number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HttpsPortNumber?: number | null;
 
 		/** Gets or sets a value indicating whether address names that match MediaBrowser.Model.Configuration.ServerConfiguration.VirtualInterfaceNames should be Ignore for the purposes of binding. */
 		IgnoreVirtualInterfaces?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ImageExtractionTimeoutMs?: number | null;
 		ImageSavingConvention?: ImageSavingConvention | null;
 
@@ -9375,17 +10631,24 @@ export namespace MyNS {
 		/** Gets or sets the known proxies. */
 		KnownProxies?: Array<string>;
 
-		/** Gets or sets the how many metadata refreshes can run concurrently. */
+		/**
+		 * Gets or sets the how many metadata refreshes can run concurrently.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LibraryMetadataRefreshConcurrency?: number | null;
 
 		/**
 		 * Gets or sets the delay in seconds that we will wait after a file system change to try and discover what has been added/removed
 		 * Some delay is necessary with some items because their creation is not atomic.  It involves the creation of several
 		 * different directories and files.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		LibraryMonitorDelay?: number | null;
 
-		/** Gets or sets the how the library scan fans out. */
+		/**
+		 * Gets or sets the how the library scan fans out.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LibraryScanFanoutConcurrency?: number | null;
 
 		/** Gets or sets the interface addresses which Jellyfin will bind to. If empty, all interfaces will be used. */
@@ -9394,13 +10657,22 @@ export namespace MyNS {
 		/** Gets or sets the subnets that are deemed to make up the LAN. */
 		LocalNetworkSubnets?: Array<string>;
 
-		/** Gets or sets the number of days we should retain log files. */
+		/**
+		 * Gets or sets the number of days we should retain log files.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LogFileRetentionDays?: number | null;
 
-		/** Gets or sets the remaining minutes of a book that can be played while still saving playstate. If this percentage is crossed playstate will be reset to the beginning and the item will be marked watched. */
+		/**
+		 * Gets or sets the remaining minutes of a book that can be played while still saving playstate. If this percentage is crossed playstate will be reset to the beginning and the item will be marked watched.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAudiobookResume?: number | null;
 
-		/** Gets or sets the maximum percentage of an item that can be played while still saving playstate. If this percentage is crossed playstate will be reset to the beginning and the item will be marked watched. */
+		/**
+		 * Gets or sets the maximum percentage of an item that can be played while still saving playstate. If this percentage is crossed playstate will be reset to the beginning and the item will be marked watched.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResumePct?: number | null;
 
 		/** Gets or sets the metadata country code. */
@@ -9411,13 +10683,22 @@ export namespace MyNS {
 		/** Gets or sets the metadata path. */
 		MetadataPath?: string | null;
 
-		/** Gets or sets the minimum minutes of a book that must be played in order for playstate to be updated. */
+		/**
+		 * Gets or sets the minimum minutes of a book that must be played in order for playstate to be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinAudiobookResume?: number | null;
 
-		/** Gets or sets the minimum duration that an item must have in order to be eligible for playstate updates.. */
+		/**
+		 * Gets or sets the minimum duration that an item must have in order to be eligible for playstate updates..
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinResumeDurationSeconds?: number | null;
 
-		/** Gets or sets the minimum percentage of an item that must be played in order for playstate to be updated. */
+		/**
+		 * Gets or sets the minimum percentage of an item that must be played in order for playstate to be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinResumePct?: number | null;
 		PathSubstitutions?: Array<PathSubstitution>;
 		PluginRepositories?: Array<RepositoryInfo>;
@@ -9432,10 +10713,16 @@ export namespace MyNS {
 		 */
 		PreviousVersionStr?: string | null;
 
-		/** Gets or sets the public HTTPS port. */
+		/**
+		 * Gets or sets the public HTTPS port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PublicHttpsPort?: number | null;
 
-		/** Gets or sets the public mapped port. */
+		/**
+		 * Gets or sets the public mapped port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PublicPort?: number | null;
 
 		/** Gets or sets PublishedServerUri to advertise for specific subnets. */
@@ -9443,6 +10730,8 @@ export namespace MyNS {
 
 		/** Gets or sets a value indicating whether quick connect is available for use on this server. */
 		QuickConnectAvailable?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RemoteClientBitrateLimit?: number | null;
 
 		/** Gets or sets the filter for remote IP connectivity. Used in conjuntion with <seealso cref="P:MediaBrowser.Model.Configuration.ServerConfiguration.IsRemoteIPFilterBlacklist" />. */
@@ -9463,8 +10752,11 @@ export namespace MyNS {
 		ServerName?: string | null;
 		SkipDeserializationForBasicTypes?: boolean | null;
 
-		/** Gets or sets the threshold for the slow response time warning in ms. */
-		SlowResponseThresholdMs?: number | null;
+		/**
+		 * Gets or sets the threshold for the slow response time warning in ms.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		SlowResponseThresholdMs?: string | null;
 
 		/** Gets or sets characters to be removed from strings to create a sort name. */
 		SortRemoveCharacters?: Array<string>;
@@ -9484,10 +10776,16 @@ export namespace MyNS {
 		/** Gets or sets client udp port range. */
 		UDPPortRange?: string | null;
 
-		/** Gets or sets the number of times SSDP UDP messages are sent. */
+		/**
+		 * Gets or sets the number of times SSDP UDP messages are sent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UDPSendCount?: number | null;
 
-		/** Gets or sets the delay between each groups of SSDP messages (in ms). */
+		/**
+		 * Gets or sets the delay between each groups of SSDP messages (in ms).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UDPSendDelay?: number | null;
 		UICulture?: string | null;
 
@@ -9502,7 +10800,10 @@ export namespace MyNS {
 	/** Represents the server configuration. */
 	export interface ServerConfigurationFormProperties {
 
-		/** Gets or sets the number of days we should retain activity logs. */
+		/**
+		 * Gets or sets the number of days we should retain activity logs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityLogRetentionDays: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether Autodiscovery is enabled. */
@@ -9571,20 +10872,31 @@ export namespace MyNS {
 		/** Gets or sets a value indicating whether to enable automatic port forwarding. */
 		EnableUPnP: FormControl<boolean | null | undefined>,
 
-		/** Gets or sets the time (in seconds) between the pings of SSDP gateway monitor. */
+		/**
+		 * Gets or sets the time (in seconds) between the pings of SSDP gateway monitor.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		GatewayMonitorPeriod: FormControl<number | null | undefined>,
 
 		/** Gets or sets the ports that HDHomerun uses. */
 		HDHomerunPortRange: FormControl<string | null | undefined>,
 
-		/** Gets or sets the HTTP server port number. */
+		/**
+		 * Gets or sets the HTTP server port number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HttpServerPortNumber: FormControl<number | null | undefined>,
 
-		/** Gets or sets the HTTPS server port number. */
+		/**
+		 * Gets or sets the HTTPS server port number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HttpsPortNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether address names that match MediaBrowser.Model.Configuration.ServerConfiguration.VirtualInterfaceNames should be Ignore for the purposes of binding. */
 		IgnoreVirtualInterfaces: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ImageExtractionTimeoutMs: FormControl<number | null | undefined>,
 		ImageSavingConvention: FormControl<ImageSavingConvention | null | undefined>,
 
@@ -9597,26 +10909,42 @@ export namespace MyNS {
 		/** Gets or sets a value indicating whether this instance is first run. */
 		IsStartupWizardCompleted: FormControl<boolean | null | undefined>,
 
-		/** Gets or sets the how many metadata refreshes can run concurrently. */
+		/**
+		 * Gets or sets the how many metadata refreshes can run concurrently.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LibraryMetadataRefreshConcurrency: FormControl<number | null | undefined>,
 
 		/**
 		 * Gets or sets the delay in seconds that we will wait after a file system change to try and discover what has been added/removed
 		 * Some delay is necessary with some items because their creation is not atomic.  It involves the creation of several
 		 * different directories and files.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		LibraryMonitorDelay: FormControl<number | null | undefined>,
 
-		/** Gets or sets the how the library scan fans out. */
+		/**
+		 * Gets or sets the how the library scan fans out.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LibraryScanFanoutConcurrency: FormControl<number | null | undefined>,
 
-		/** Gets or sets the number of days we should retain log files. */
+		/**
+		 * Gets or sets the number of days we should retain log files.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LogFileRetentionDays: FormControl<number | null | undefined>,
 
-		/** Gets or sets the remaining minutes of a book that can be played while still saving playstate. If this percentage is crossed playstate will be reset to the beginning and the item will be marked watched. */
+		/**
+		 * Gets or sets the remaining minutes of a book that can be played while still saving playstate. If this percentage is crossed playstate will be reset to the beginning and the item will be marked watched.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxAudiobookResume: FormControl<number | null | undefined>,
 
-		/** Gets or sets the maximum percentage of an item that can be played while still saving playstate. If this percentage is crossed playstate will be reset to the beginning and the item will be marked watched. */
+		/**
+		 * Gets or sets the maximum percentage of an item that can be played while still saving playstate. If this percentage is crossed playstate will be reset to the beginning and the item will be marked watched.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResumePct: FormControl<number | null | undefined>,
 
 		/** Gets or sets the metadata country code. */
@@ -9626,13 +10954,22 @@ export namespace MyNS {
 		/** Gets or sets the metadata path. */
 		MetadataPath: FormControl<string | null | undefined>,
 
-		/** Gets or sets the minimum minutes of a book that must be played in order for playstate to be updated. */
+		/**
+		 * Gets or sets the minimum minutes of a book that must be played in order for playstate to be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinAudiobookResume: FormControl<number | null | undefined>,
 
-		/** Gets or sets the minimum duration that an item must have in order to be eligible for playstate updates.. */
+		/**
+		 * Gets or sets the minimum duration that an item must have in order to be eligible for playstate updates..
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinResumeDurationSeconds: FormControl<number | null | undefined>,
 
-		/** Gets or sets the minimum percentage of an item that must be played in order for playstate to be updated. */
+		/**
+		 * Gets or sets the minimum percentage of an item that must be played in order for playstate to be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinResumePct: FormControl<number | null | undefined>,
 
 		/** Gets or sets the preferred metadata language. */
@@ -9644,14 +10981,22 @@ export namespace MyNS {
 		 */
 		PreviousVersionStr: FormControl<string | null | undefined>,
 
-		/** Gets or sets the public HTTPS port. */
+		/**
+		 * Gets or sets the public HTTPS port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PublicHttpsPort: FormControl<number | null | undefined>,
 
-		/** Gets or sets the public mapped port. */
+		/**
+		 * Gets or sets the public mapped port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PublicPort: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether quick connect is available for use on this server. */
 		QuickConnectAvailable: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RemoteClientBitrateLimit: FormControl<number | null | undefined>,
 
 		/** Gets or sets a value indicating whether older plugins should automatically be deleted from the plugin folder. */
@@ -9669,8 +11014,11 @@ export namespace MyNS {
 		ServerName: FormControl<string | null | undefined>,
 		SkipDeserializationForBasicTypes: FormControl<boolean | null | undefined>,
 
-		/** Gets or sets the threshold for the slow response time warning in ms. */
-		SlowResponseThresholdMs: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the threshold for the slow response time warning in ms.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		SlowResponseThresholdMs: FormControl<string | null | undefined>,
 
 		/**
 		 * Gets or sets a value indicating whether all IPv6 interfaces should be treated as on the internal network.
@@ -9681,10 +11029,16 @@ export namespace MyNS {
 		/** Gets or sets client udp port range. */
 		UDPPortRange: FormControl<string | null | undefined>,
 
-		/** Gets or sets the number of times SSDP UDP messages are sent. */
+		/**
+		 * Gets or sets the number of times SSDP UDP messages are sent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UDPSendCount: FormControl<number | null | undefined>,
 
-		/** Gets or sets the delay between each groups of SSDP messages (in ms). */
+		/**
+		 * Gets or sets the delay between each groups of SSDP messages (in ms).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UDPSendDelay: FormControl<number | null | undefined>,
 		UICulture: FormControl<string | null | undefined>,
 
@@ -9757,7 +11111,7 @@ export namespace MyNS {
 			SaveMetadataHidden: new FormControl<boolean | null | undefined>(undefined),
 			ServerName: new FormControl<string | null | undefined>(undefined),
 			SkipDeserializationForBasicTypes: new FormControl<boolean | null | undefined>(undefined),
-			SlowResponseThresholdMs: new FormControl<number | null | undefined>(undefined),
+			SlowResponseThresholdMs: new FormControl<string | null | undefined>(undefined),
 			TrustAllIP6Interfaces: new FormControl<boolean | null | undefined>(undefined),
 			UDPPortRange: new FormControl<string | null | undefined>(undefined),
 			UDPSendCount: new FormControl<number | null | undefined>(undefined),
@@ -10103,7 +11457,10 @@ export namespace MyNS {
 		/** Gets or sets the web UI resources path. */
 		WebPath?: string | null;
 
-		/** Gets or sets the web socket port number. */
+		/**
+		 * Gets or sets the web socket port number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WebSocketPortNumber?: number | null;
 	}
 
@@ -10176,7 +11533,10 @@ export namespace MyNS {
 		/** Gets or sets the web UI resources path. */
 		WebPath: FormControl<string | null | undefined>,
 
-		/** Gets or sets the web socket port number. */
+		/**
+		 * Gets or sets the web socket port number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		WebSocketPortNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateSystemInfoFormGroup() {
@@ -10221,7 +11581,10 @@ export namespace MyNS {
 		/** Gets or sets the category. */
 		Category?: string | null;
 
-		/** Gets or sets the progress. */
+		/**
+		 * Gets or sets the progress.
+		 * Type: double
+		 */
 		CurrentProgressPercentage?: number | null;
 
 		/** Gets or sets the description. */
@@ -10255,7 +11618,10 @@ export namespace MyNS {
 		/** Gets or sets the category. */
 		Category: FormControl<string | null | undefined>,
 
-		/** Gets or sets the progress. */
+		/**
+		 * Gets or sets the progress.
+		 * Type: double
+		 */
 		CurrentProgressPercentage: FormControl<number | null | undefined>,
 
 		/** Gets or sets the description. */
@@ -10367,14 +11733,23 @@ export namespace MyNS {
 	export interface TaskTriggerInfo {
 		DayOfWeek?: DayOfWeek | null;
 
-		/** Gets or sets the interval. */
-		IntervalTicks?: number | null;
+		/**
+		 * Gets or sets the interval.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		IntervalTicks?: string | null;
 
-		/** Gets or sets the maximum runtime ticks. */
-		MaxRuntimeTicks?: number | null;
+		/**
+		 * Gets or sets the maximum runtime ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		MaxRuntimeTicks?: string | null;
 
-		/** Gets or sets the time of day. */
-		TimeOfDayTicks?: number | null;
+		/**
+		 * Gets or sets the time of day.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		TimeOfDayTicks?: string | null;
 
 		/** Gets or sets the type. */
 		Type?: string | null;
@@ -10384,14 +11759,23 @@ export namespace MyNS {
 	export interface TaskTriggerInfoFormProperties {
 		DayOfWeek: FormControl<DayOfWeek | null | undefined>,
 
-		/** Gets or sets the interval. */
-		IntervalTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the interval.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		IntervalTicks: FormControl<string | null | undefined>,
 
-		/** Gets or sets the maximum runtime ticks. */
-		MaxRuntimeTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the maximum runtime ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		MaxRuntimeTicks: FormControl<string | null | undefined>,
 
-		/** Gets or sets the time of day. */
-		TimeOfDayTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the time of day.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		TimeOfDayTicks: FormControl<string | null | undefined>,
 
 		/** Gets or sets the type. */
 		Type: FormControl<string | null | undefined>,
@@ -10399,9 +11783,9 @@ export namespace MyNS {
 	export function CreateTaskTriggerInfoFormGroup() {
 		return new FormGroup<TaskTriggerInfoFormProperties>({
 			DayOfWeek: new FormControl<DayOfWeek | null | undefined>(undefined),
-			IntervalTicks: new FormControl<number | null | undefined>(undefined),
-			MaxRuntimeTicks: new FormControl<number | null | undefined>(undefined),
-			TimeOfDayTicks: new FormControl<number | null | undefined>(undefined),
+			IntervalTicks: new FormControl<string | null | undefined>(undefined),
+			MaxRuntimeTicks: new FormControl<string | null | undefined>(undefined),
+			TimeOfDayTicks: new FormControl<string | null | undefined>(undefined),
 			Type: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -10473,13 +11857,22 @@ export namespace MyNS {
 		/** If the item does not have any backdrops, this will hold the Id of the Parent that has one. */
 		ParentBackdropItemId?: string | null;
 
-		/** Gets or sets the post padding seconds. */
+		/**
+		 * Gets or sets the post padding seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PostPaddingSeconds?: number | null;
 
-		/** Gets or sets the pre padding seconds. */
+		/**
+		 * Gets or sets the pre padding seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PrePaddingSeconds?: number | null;
 
-		/** Gets or sets the priority. */
+		/**
+		 * Gets or sets the priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Priority?: number | null;
 
 		/** Gets or sets the program identifier. */
@@ -10491,8 +11884,11 @@ export namespace MyNS {
 		 */
 		ProgramInfo?: BaseItemDto;
 
-		/** Gets or sets the run time ticks. */
-		RunTimeTicks?: number | null;
+		/**
+		 * Gets or sets the run time ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		RunTimeTicks?: string | null;
 
 		/** Gets or sets the series timer identifier. */
 		SeriesTimerId?: string | null;
@@ -10551,20 +11947,32 @@ export namespace MyNS {
 		/** If the item does not have any backdrops, this will hold the Id of the Parent that has one. */
 		ParentBackdropItemId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the post padding seconds. */
+		/**
+		 * Gets or sets the post padding seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PostPaddingSeconds: FormControl<number | null | undefined>,
 
-		/** Gets or sets the pre padding seconds. */
+		/**
+		 * Gets or sets the pre padding seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PrePaddingSeconds: FormControl<number | null | undefined>,
 
-		/** Gets or sets the priority. */
+		/**
+		 * Gets or sets the priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Priority: FormControl<number | null | undefined>,
 
 		/** Gets or sets the program identifier. */
 		ProgramId: FormControl<string | null | undefined>,
 
-		/** Gets or sets the run time ticks. */
-		RunTimeTicks: FormControl<number | null | undefined>,
+		/**
+		 * Gets or sets the run time ticks.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		RunTimeTicks: FormControl<string | null | undefined>,
 
 		/** Gets or sets the series timer identifier. */
 		SeriesTimerId: FormControl<string | null | undefined>,
@@ -10601,7 +12009,7 @@ export namespace MyNS {
 			PrePaddingSeconds: new FormControl<number | null | undefined>(undefined),
 			Priority: new FormControl<number | null | undefined>(undefined),
 			ProgramId: new FormControl<string | null | undefined>(undefined),
-			RunTimeTicks: new FormControl<number | null | undefined>(undefined),
+			RunTimeTicks: new FormControl<string | null | undefined>(undefined),
 			SeriesTimerId: new FormControl<string | null | undefined>(undefined),
 			ServerId: new FormControl<string | null | undefined>(undefined),
 			ServiceName: new FormControl<string | null | undefined>(undefined),
@@ -10617,18 +12025,30 @@ export namespace MyNS {
 		/** Gets or sets the items. */
 		Items?: Array<TimerInfoDto>;
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex?: number | null;
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount?: number | null;
 	}
 	export interface TimerInfoDtoQueryResultFormProperties {
 
-		/** The index of the first record in Items. */
+		/**
+		 * The index of the first record in Items.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StartIndex: FormControl<number | null | undefined>,
 
-		/** The total number of records available. */
+		/**
+		 * The total number of records available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalRecordCount: FormControl<number | null | undefined>,
 	}
 	export function CreateTimerInfoDtoQueryResultFormGroup() {
@@ -10640,6 +12060,8 @@ export namespace MyNS {
 	}
 
 	export interface TrailerInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber?: number | null;
 		IsAutomated?: boolean | null;
 
@@ -10651,6 +12073,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber?: number | null;
 
 		/** Gets or sets the path. */
@@ -10660,10 +12084,15 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds?: {[id: string]: string };
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year?: number | null;
 	}
 	export interface TrailerInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		IndexNumber: FormControl<number | null | undefined>,
 		IsAutomated: FormControl<boolean | null | undefined>,
 
@@ -10675,6 +12104,8 @@ export namespace MyNS {
 
 		/** Gets or sets the name. */
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ParentIndexNumber: FormControl<number | null | undefined>,
 
 		/** Gets or sets the path. */
@@ -10684,7 +12115,10 @@ export namespace MyNS {
 		/** Gets or sets the provider ids. */
 		ProviderIds: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Gets or sets the year. */
+		/**
+		 * Gets or sets the year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Year: FormControl<number | null | undefined>,
 	}
 	export function CreateTrailerInfoFormGroup() {
@@ -10743,6 +12177,8 @@ export namespace MyNS {
 		Id?: string | null;
 		ImportFavoritesOnly?: boolean | null;
 		Source?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TunerCount?: number | null;
 		Type?: string | null;
 		Url?: string | null;
@@ -10756,6 +12192,8 @@ export namespace MyNS {
 		Id: FormControl<string | null | undefined>,
 		ImportFavoritesOnly: FormControl<boolean | null | undefined>,
 		Source: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TunerCount: FormControl<number | null | undefined>,
 		Type: FormControl<string | null | undefined>,
 		Url: FormControl<string | null | undefined>,
@@ -11031,6 +12469,8 @@ export namespace MyNS {
 
 		/** Gets or sets the primary image item identifier. */
 		PrimaryImageItemId?: string | null;
+
+		/** Type: double */
 		RefreshProgress?: number | null;
 		RefreshStatus?: string | null;
 	}
@@ -11049,6 +12489,8 @@ export namespace MyNS {
 
 		/** Gets or sets the primary image item identifier. */
 		PrimaryImageItemId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		RefreshProgress: FormControl<number | null | undefined>,
 		RefreshStatus: FormControl<string | null | undefined>,
 	}
@@ -11071,7 +12513,10 @@ export namespace MyNS {
 		/** Gets the MAC address of the device. */
 		MacAddress?: string | null;
 
-		/** Gets or sets the wake-on-LAN port. */
+		/**
+		 * Gets or sets the wake-on-LAN port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Port?: number | null;
 	}
 
@@ -11081,7 +12526,10 @@ export namespace MyNS {
 		/** Gets the MAC address of the device. */
 		MacAddress: FormControl<string | null | undefined>,
 
-		/** Gets or sets the wake-on-LAN port. */
+		/**
+		 * Gets or sets the wake-on-LAN port.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Port: FormControl<number | null | undefined>,
 	}
 	export function CreateWakeOnLanInfoFormGroup() {
@@ -11103,10 +12551,12 @@ export namespace MyNS {
 		 * @param {string} id The item id.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @return {BaseItemDtoQueryResult} Instant playlist returned.
 		 */
@@ -11121,6 +12571,7 @@ export namespace MyNS {
 		 * @param {Array<string>} excludeArtistIds Exclude artist ids.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
 		 * @return {BaseItemDtoQueryResult} Similar items returned.
 		 */
@@ -11132,8 +12583,11 @@ export namespace MyNS {
 		 * Gets all artists from a given item, folder, or the entire library.
 		 * Get Artists
 		 * @param {number} minCommunityRating Optional filter by minimum community rating.
+		 *     Type: double
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} searchTerm Optional. Search term.
 		 * @param {string} parentId Specify this to localize the search to a specific item or folder. Omit to use the root.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
@@ -11149,6 +12603,7 @@ export namespace MyNS {
 		 * @param {Array<number>} years Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited.
 		 * @param {boolean} enableUserData Optional, include user data.
 		 * @param {number} imageTypeLimit Optional, the max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {string} person Optional. If specified, results will be filtered to include only those containing the specified person.
 		 * @param {Array<string>} personIds Optional. If specified, results will be filtered to include only those containing the specified person ids.
@@ -11171,8 +12626,11 @@ export namespace MyNS {
 		 * Gets all album artists from a given item, folder, or the entire library.
 		 * Get Artists/AlbumArtists
 		 * @param {number} minCommunityRating Optional filter by minimum community rating.
+		 *     Type: double
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} searchTerm Optional. Search term.
 		 * @param {string} parentId Specify this to localize the search to a specific item or folder. Omit to use the root.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
@@ -11188,6 +12646,7 @@ export namespace MyNS {
 		 * @param {Array<number>} years Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited.
 		 * @param {boolean} enableUserData Optional, include user data.
 		 * @param {number} imageTypeLimit Optional, the max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {string} person Optional. If specified, results will be filtered to include only those containing the specified person.
 		 * @param {Array<string>} personIds Optional. If specified, results will be filtered to include only those containing the specified person ids.
@@ -11212,10 +12671,12 @@ export namespace MyNS {
 		 * @param {string} id The item id.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @return {BaseItemDtoQueryResult} Instant playlist returned.
 		 */
@@ -11230,6 +12691,7 @@ export namespace MyNS {
 		 * @param {Array<string>} excludeArtistIds Exclude artist ids.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
 		 * @return {BaseItemDtoQueryResult} Similar items returned.
 		 */
@@ -11256,18 +12718,27 @@ export namespace MyNS {
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image stream returned.
 		 */
 		GetArtistImage(name: string, imageType: ImageOptionType, tag: string | null | undefined, format: ImageFormat | null | undefined, maxWidth: number | null | undefined, maxHeight: number | null | undefined, percentPlayed: number | null | undefined, unplayedCount: number | null | undefined, width: number | null | undefined, height: number | null | undefined, quality: number | null | undefined, cropWhitespace: boolean | null | undefined, addPlayedIndicator: boolean | null | undefined, blur: number | null | undefined, backgroundColor: string | null | undefined, foregroundLayer: string | null | undefined, imageIndex: number): Observable<HttpResponse<string>> {
@@ -11302,6 +12773,7 @@ export namespace MyNS {
 		 * @param {string} itemId The item id.
 		 * @param {string} playlistId The playlist id.
 		 * @param {number} segmentId The segment id.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
 		 * @param {boolean} _static Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
 		 * @param {string} params The streaming parameters.
@@ -11310,7 +12782,9 @@ export namespace MyNS {
 		 * @param {string} playSessionId The play session id.
 		 * @param {string} segmentContainer The segment container.
 		 * @param {number} segmentLength The segment length.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minSegments The minimum number of segments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media version id, if playing an alternate version.
 		 * @param {string} deviceId The device id of the client requesting. Used to stop encoding processes when needed.
 		 * @param {string} audioCodec Optional. Specify a audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url's extension. Options: aac, mp3, vorbis, wma.
@@ -11319,41 +12793,60 @@ export namespace MyNS {
 		 * @param {boolean} allowAudioStreamCopy Whether or not to allow copying of the audio stream url.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {number} audioSampleRate Optional. Specify a specific audio sample rate, e.g. 44100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxStreamingBitrate Optional. The maximum streaming bitrate.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioChannels Optional. Specify a specific number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
 		 * @param {string} level Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
 		 * @param {number} framerate Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {number} maxFramerate Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {boolean} copyTimestamps Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} width Optional. The fixed horizontal resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional. The fixed vertical resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoBitRate Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MediaStreamDeliveryMethod} subtitleMethod Optional. Specify the subtitle delivery method.
 		 * @param {number} maxRefFrames Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxVideoBitDepth Optional. The maximum video bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} requireAvc Optional. Whether to require avc.
 		 * @param {boolean} deInterlace Optional. Whether to deinterlace the video.
 		 * @param {boolean} requireNonAnamorphic Optional. Whether to require a non anamorphic stream.
 		 * @param {number} transcodingMaxAudioChannels Optional. The maximum number of audio channels to transcode.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cpuCoreLimit Optional. The limit of how many cpu cores to use.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {boolean} enableMpegtsM2TsMode Optional. Whether to enable the MpegtsM2Ts mode.
 		 * @param {string} videoCodec Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h265, h264, mpeg4, theora, vpx, wmv.
 		 * @param {string} subtitleCodec Optional. Specify a subtitle codec to encode to.
 		 * @param {string} transcodeReasons Optional. The transcoding reason.
 		 * @param {number} audioStreamIndex Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoStreamIndex Optional. The index of the video stream to use. If omitted the first video stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TranscodingProfileContext} context Optional. The MediaBrowser.Model.Dlna.EncodingContext.
 		 * @param {{[id: string]: string }} streamOptions Optional. The streaming options.
 		 * @return {void} Video stream returned.
 		 */
-		GetHlsAudioSegment(itemId: string, playlistId: string, segmentId: number, container: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, maxStreamingBitrate: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: number | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
+		GetHlsAudioSegment(itemId: string, playlistId: string, segmentId: number, container: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, maxStreamingBitrate: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: string | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Audio/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/hls1/' + (playlistId == null ? '' : encodeURIComponent(playlistId)) + '/' + segmentId + '.' + (container == null ? '' : encodeURIComponent(container)) + '&_static=' + _static + '&params=' + (params == null ? '' : encodeURIComponent(params)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&deviceProfileId=' + (deviceProfileId == null ? '' : encodeURIComponent(deviceProfileId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&segmentContainer=' + (segmentContainer == null ? '' : encodeURIComponent(segmentContainer)) + '&segmentLength=' + segmentLength + '&minSegments=' + minSegments + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&enableAutoStreamCopy=' + enableAutoStreamCopy + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&audioSampleRate=' + audioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&maxStreamingBitrate=' + maxStreamingBitrate + '&audioBitRate=' + audioBitRate + '&audioChannels=' + audioChannels + '&maxAudioChannels=' + maxAudioChannels + '&profile=' + (profile == null ? '' : encodeURIComponent(profile)) + '&level=' + (level == null ? '' : encodeURIComponent(level)) + '&framerate=' + framerate + '&maxFramerate=' + maxFramerate + '&copyTimestamps=' + copyTimestamps + '&startTimeTicks=' + startTimeTicks + '&width=' + width + '&height=' + height + '&videoBitRate=' + videoBitRate + '&subtitleStreamIndex=' + subtitleStreamIndex + '&subtitleMethod=' + subtitleMethod + '&maxRefFrames=' + maxRefFrames + '&maxVideoBitDepth=' + maxVideoBitDepth + '&requireAvc=' + requireAvc + '&deInterlace=' + deInterlace + '&requireNonAnamorphic=' + requireNonAnamorphic + '&transcodingMaxAudioChannels=' + transcodingMaxAudioChannels + '&cpuCoreLimit=' + cpuCoreLimit + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&enableMpegtsM2TsMode=' + enableMpegtsM2TsMode + '&videoCodec=' + (videoCodec == null ? '' : encodeURIComponent(videoCodec)) + '&subtitleCodec=' + (subtitleCodec == null ? '' : encodeURIComponent(subtitleCodec)) + '&transcodeReasons=' + (transcodeReasons == null ? '' : encodeURIComponent(transcodeReasons)) + '&audioStreamIndex=' + audioStreamIndex + '&videoStreamIndex=' + videoStreamIndex + '&context=' + context + '&streamOptions=' + streamOptions, { observe: 'response', responseType: 'text' });
 		}
 
@@ -11368,7 +12861,9 @@ export namespace MyNS {
 		 * @param {string} playSessionId The play session id.
 		 * @param {string} segmentContainer The segment container.
 		 * @param {number} segmentLength The segment length.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minSegments The minimum number of segments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media version id, if playing an alternate version.
 		 * @param {string} deviceId The device id of the client requesting. Used to stop encoding processes when needed.
 		 * @param {string} audioCodec Optional. Specify a audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url's extension. Options: aac, mp3, vorbis, wma.
@@ -11377,41 +12872,60 @@ export namespace MyNS {
 		 * @param {boolean} allowAudioStreamCopy Whether or not to allow copying of the audio stream url.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {number} audioSampleRate Optional. Specify a specific audio sample rate, e.g. 44100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxStreamingBitrate Optional. The maximum streaming bitrate.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioChannels Optional. Specify a specific number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
 		 * @param {string} level Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
 		 * @param {number} framerate Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {number} maxFramerate Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {boolean} copyTimestamps Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} width Optional. The fixed horizontal resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional. The fixed vertical resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoBitRate Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MediaStreamDeliveryMethod} subtitleMethod Optional. Specify the subtitle delivery method.
 		 * @param {number} maxRefFrames Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxVideoBitDepth Optional. The maximum video bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} requireAvc Optional. Whether to require avc.
 		 * @param {boolean} deInterlace Optional. Whether to deinterlace the video.
 		 * @param {boolean} requireNonAnamorphic Optional. Whether to require a non anamorphic stream.
 		 * @param {number} transcodingMaxAudioChannels Optional. The maximum number of audio channels to transcode.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cpuCoreLimit Optional. The limit of how many cpu cores to use.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {boolean} enableMpegtsM2TsMode Optional. Whether to enable the MpegtsM2Ts mode.
 		 * @param {string} videoCodec Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h265, h264, mpeg4, theora, vpx, wmv.
 		 * @param {string} subtitleCodec Optional. Specify a subtitle codec to encode to.
 		 * @param {string} transcodeReasons Optional. The transcoding reason.
 		 * @param {number} audioStreamIndex Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoStreamIndex Optional. The index of the video stream to use. If omitted the first video stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TranscodingProfileContext} context Optional. The MediaBrowser.Model.Dlna.EncodingContext.
 		 * @param {{[id: string]: string }} streamOptions Optional. The streaming options.
 		 * @return {void} Audio stream returned.
 		 */
-		GetVariantHlsAudioPlaylist(itemId: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, maxStreamingBitrate: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: number | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
+		GetVariantHlsAudioPlaylist(itemId: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, maxStreamingBitrate: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: string | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Audio/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/main.m3u8&_static=' + _static + '&params=' + (params == null ? '' : encodeURIComponent(params)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&deviceProfileId=' + (deviceProfileId == null ? '' : encodeURIComponent(deviceProfileId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&segmentContainer=' + (segmentContainer == null ? '' : encodeURIComponent(segmentContainer)) + '&segmentLength=' + segmentLength + '&minSegments=' + minSegments + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&enableAutoStreamCopy=' + enableAutoStreamCopy + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&audioSampleRate=' + audioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&maxStreamingBitrate=' + maxStreamingBitrate + '&audioBitRate=' + audioBitRate + '&audioChannels=' + audioChannels + '&maxAudioChannels=' + maxAudioChannels + '&profile=' + (profile == null ? '' : encodeURIComponent(profile)) + '&level=' + (level == null ? '' : encodeURIComponent(level)) + '&framerate=' + framerate + '&maxFramerate=' + maxFramerate + '&copyTimestamps=' + copyTimestamps + '&startTimeTicks=' + startTimeTicks + '&width=' + width + '&height=' + height + '&videoBitRate=' + videoBitRate + '&subtitleStreamIndex=' + subtitleStreamIndex + '&subtitleMethod=' + subtitleMethod + '&maxRefFrames=' + maxRefFrames + '&maxVideoBitDepth=' + maxVideoBitDepth + '&requireAvc=' + requireAvc + '&deInterlace=' + deInterlace + '&requireNonAnamorphic=' + requireNonAnamorphic + '&transcodingMaxAudioChannels=' + transcodingMaxAudioChannels + '&cpuCoreLimit=' + cpuCoreLimit + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&enableMpegtsM2TsMode=' + enableMpegtsM2TsMode + '&videoCodec=' + (videoCodec == null ? '' : encodeURIComponent(videoCodec)) + '&subtitleCodec=' + (subtitleCodec == null ? '' : encodeURIComponent(subtitleCodec)) + '&transcodeReasons=' + (transcodeReasons == null ? '' : encodeURIComponent(transcodeReasons)) + '&audioStreamIndex=' + audioStreamIndex + '&videoStreamIndex=' + videoStreamIndex + '&context=' + context + '&streamOptions=' + streamOptions, { observe: 'response', responseType: 'text' });
 		}
 
@@ -11426,7 +12940,9 @@ export namespace MyNS {
 		 * @param {string} playSessionId The play session id.
 		 * @param {string} segmentContainer The segment container.
 		 * @param {number} segmentLength The segment length.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minSegments The minimum number of segments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media version id, if playing an alternate version.
 		 * @param {string} deviceId The device id of the client requesting. Used to stop encoding processes when needed.
 		 * @param {string} audioCodec Optional. Specify a audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url's extension. Options: aac, mp3, vorbis, wma.
@@ -11435,42 +12951,61 @@ export namespace MyNS {
 		 * @param {boolean} allowAudioStreamCopy Whether or not to allow copying of the audio stream url.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {number} audioSampleRate Optional. Specify a specific audio sample rate, e.g. 44100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxStreamingBitrate Optional. The maximum streaming bitrate.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioChannels Optional. Specify a specific number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
 		 * @param {string} level Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
 		 * @param {number} framerate Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {number} maxFramerate Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {boolean} copyTimestamps Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} width Optional. The fixed horizontal resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional. The fixed vertical resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoBitRate Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MediaStreamDeliveryMethod} subtitleMethod Optional. Specify the subtitle delivery method.
 		 * @param {number} maxRefFrames Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxVideoBitDepth Optional. The maximum video bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} requireAvc Optional. Whether to require avc.
 		 * @param {boolean} deInterlace Optional. Whether to deinterlace the video.
 		 * @param {boolean} requireNonAnamorphic Optional. Whether to require a non anamorphic stream.
 		 * @param {number} transcodingMaxAudioChannels Optional. The maximum number of audio channels to transcode.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cpuCoreLimit Optional. The limit of how many cpu cores to use.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {boolean} enableMpegtsM2TsMode Optional. Whether to enable the MpegtsM2Ts mode.
 		 * @param {string} videoCodec Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h265, h264, mpeg4, theora, vpx, wmv.
 		 * @param {string} subtitleCodec Optional. Specify a subtitle codec to encode to.
 		 * @param {string} transcodeReasons Optional. The transcoding reason.
 		 * @param {number} audioStreamIndex Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoStreamIndex Optional. The index of the video stream to use. If omitted the first video stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TranscodingProfileContext} context Optional. The MediaBrowser.Model.Dlna.EncodingContext.
 		 * @param {{[id: string]: string }} streamOptions Optional. The streaming options.
 		 * @param {boolean} enableAdaptiveBitrateStreaming Enable adaptive bitrate streaming.
 		 * @return {void} Audio stream returned.
 		 */
-		GetMasterHlsAudioPlaylist(itemId: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, maxStreamingBitrate: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: number | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined, enableAdaptiveBitrateStreaming: boolean | null | undefined): Observable<HttpResponse<string>> {
+		GetMasterHlsAudioPlaylist(itemId: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, maxStreamingBitrate: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: string | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined, enableAdaptiveBitrateStreaming: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Audio/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/master.m3u8&_static=' + _static + '&params=' + (params == null ? '' : encodeURIComponent(params)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&deviceProfileId=' + (deviceProfileId == null ? '' : encodeURIComponent(deviceProfileId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&segmentContainer=' + (segmentContainer == null ? '' : encodeURIComponent(segmentContainer)) + '&segmentLength=' + segmentLength + '&minSegments=' + minSegments + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&enableAutoStreamCopy=' + enableAutoStreamCopy + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&audioSampleRate=' + audioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&maxStreamingBitrate=' + maxStreamingBitrate + '&audioBitRate=' + audioBitRate + '&audioChannels=' + audioChannels + '&maxAudioChannels=' + maxAudioChannels + '&profile=' + (profile == null ? '' : encodeURIComponent(profile)) + '&level=' + (level == null ? '' : encodeURIComponent(level)) + '&framerate=' + framerate + '&maxFramerate=' + maxFramerate + '&copyTimestamps=' + copyTimestamps + '&startTimeTicks=' + startTimeTicks + '&width=' + width + '&height=' + height + '&videoBitRate=' + videoBitRate + '&subtitleStreamIndex=' + subtitleStreamIndex + '&subtitleMethod=' + subtitleMethod + '&maxRefFrames=' + maxRefFrames + '&maxVideoBitDepth=' + maxVideoBitDepth + '&requireAvc=' + requireAvc + '&deInterlace=' + deInterlace + '&requireNonAnamorphic=' + requireNonAnamorphic + '&transcodingMaxAudioChannels=' + transcodingMaxAudioChannels + '&cpuCoreLimit=' + cpuCoreLimit + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&enableMpegtsM2TsMode=' + enableMpegtsM2TsMode + '&videoCodec=' + (videoCodec == null ? '' : encodeURIComponent(videoCodec)) + '&subtitleCodec=' + (subtitleCodec == null ? '' : encodeURIComponent(subtitleCodec)) + '&transcodeReasons=' + (transcodeReasons == null ? '' : encodeURIComponent(transcodeReasons)) + '&audioStreamIndex=' + audioStreamIndex + '&videoStreamIndex=' + videoStreamIndex + '&context=' + context + '&streamOptions=' + streamOptions + '&enableAdaptiveBitrateStreaming=' + enableAdaptiveBitrateStreaming, { observe: 'response', responseType: 'text' });
 		}
 
@@ -11486,7 +13021,9 @@ export namespace MyNS {
 		 * @param {string} playSessionId The play session id.
 		 * @param {string} segmentContainer The segment container.
 		 * @param {number} segmentLength The segment length.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minSegments The minimum number of segments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media version id, if playing an alternate version.
 		 * @param {string} deviceId The device id of the client requesting. Used to stop encoding processes when needed.
 		 * @param {string} audioCodec Optional. Specify a audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url's extension. Options: aac, mp3, vorbis, wma.
@@ -11495,40 +13032,58 @@ export namespace MyNS {
 		 * @param {boolean} allowAudioStreamCopy Whether or not to allow copying of the audio stream url.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {number} audioSampleRate Optional. Specify a specific audio sample rate, e.g. 44100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioChannels Optional. Specify a specific number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
 		 * @param {string} level Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
 		 * @param {number} framerate Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {number} maxFramerate Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {boolean} copyTimestamps Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} width Optional. The fixed horizontal resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional. The fixed vertical resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoBitRate Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MediaStreamDeliveryMethod} subtitleMethod Optional. Specify the subtitle delivery method.
 		 * @param {number} maxRefFrames Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxVideoBitDepth Optional. The maximum video bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} requireAvc Optional. Whether to require avc.
 		 * @param {boolean} deInterlace Optional. Whether to deinterlace the video.
 		 * @param {boolean} requireNonAnamorphic Optional. Whether to require a non anamorphic stream.
 		 * @param {number} transcodingMaxAudioChannels Optional. The maximum number of audio channels to transcode.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cpuCoreLimit Optional. The limit of how many cpu cores to use.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {boolean} enableMpegtsM2TsMode Optional. Whether to enable the MpegtsM2Ts mode.
 		 * @param {string} videoCodec Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h265, h264, mpeg4, theora, vpx, wmv.
 		 * @param {string} subtitleCodec Optional. Specify a subtitle codec to encode to.
 		 * @param {string} transcodeReasons Optional. The transcoding reason.
 		 * @param {number} audioStreamIndex Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoStreamIndex Optional. The index of the video stream to use. If omitted the first video stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TranscodingProfileContext} context Optional. The MediaBrowser.Model.Dlna.EncodingContext.
 		 * @param {{[id: string]: string }} streamOptions Optional. The streaming options.
 		 * @return {void} Audio stream returned.
 		 */
-		GetAudioStream(itemId: string, container: string | null | undefined, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: number | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
+		GetAudioStream(itemId: string, container: string | null | undefined, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: string | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Audio/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/stream&container=' + (container == null ? '' : encodeURIComponent(container)) + '&_static=' + _static + '&params=' + (params == null ? '' : encodeURIComponent(params)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&deviceProfileId=' + (deviceProfileId == null ? '' : encodeURIComponent(deviceProfileId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&segmentContainer=' + (segmentContainer == null ? '' : encodeURIComponent(segmentContainer)) + '&segmentLength=' + segmentLength + '&minSegments=' + minSegments + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&enableAutoStreamCopy=' + enableAutoStreamCopy + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&audioSampleRate=' + audioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&audioBitRate=' + audioBitRate + '&audioChannels=' + audioChannels + '&maxAudioChannels=' + maxAudioChannels + '&profile=' + (profile == null ? '' : encodeURIComponent(profile)) + '&level=' + (level == null ? '' : encodeURIComponent(level)) + '&framerate=' + framerate + '&maxFramerate=' + maxFramerate + '&copyTimestamps=' + copyTimestamps + '&startTimeTicks=' + startTimeTicks + '&width=' + width + '&height=' + height + '&videoBitRate=' + videoBitRate + '&subtitleStreamIndex=' + subtitleStreamIndex + '&subtitleMethod=' + subtitleMethod + '&maxRefFrames=' + maxRefFrames + '&maxVideoBitDepth=' + maxVideoBitDepth + '&requireAvc=' + requireAvc + '&deInterlace=' + deInterlace + '&requireNonAnamorphic=' + requireNonAnamorphic + '&transcodingMaxAudioChannels=' + transcodingMaxAudioChannels + '&cpuCoreLimit=' + cpuCoreLimit + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&enableMpegtsM2TsMode=' + enableMpegtsM2TsMode + '&videoCodec=' + (videoCodec == null ? '' : encodeURIComponent(videoCodec)) + '&subtitleCodec=' + (subtitleCodec == null ? '' : encodeURIComponent(subtitleCodec)) + '&transcodeReasons=' + (transcodeReasons == null ? '' : encodeURIComponent(transcodeReasons)) + '&audioStreamIndex=' + audioStreamIndex + '&videoStreamIndex=' + videoStreamIndex + '&context=' + context + '&streamOptions=' + streamOptions, { observe: 'response', responseType: 'text' });
 		}
 
@@ -11544,7 +13099,9 @@ export namespace MyNS {
 		 * @param {string} playSessionId The play session id.
 		 * @param {string} segmentContainer The segment container.
 		 * @param {number} segmentLength The segment lenght.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minSegments The minimum number of segments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media version id, if playing an alternate version.
 		 * @param {string} deviceId The device id of the client requesting. Used to stop encoding processes when needed.
 		 * @param {string} audioCodec Optional. Specify a audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url's extension. Options: aac, mp3, vorbis, wma.
@@ -11553,40 +13110,58 @@ export namespace MyNS {
 		 * @param {boolean} allowAudioStreamCopy Whether or not to allow copying of the audio stream url.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {number} audioSampleRate Optional. Specify a specific audio sample rate, e.g. 44100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioChannels Optional. Specify a specific number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
 		 * @param {string} level Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
 		 * @param {number} framerate Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {number} maxFramerate Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {boolean} copyTimestamps Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} width Optional. The fixed horizontal resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional. The fixed vertical resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoBitRate Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MediaStreamDeliveryMethod} subtitleMethod Optional. Specify the subtitle delivery method.
 		 * @param {number} maxRefFrames Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxVideoBitDepth Optional. The maximum video bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} requireAvc Optional. Whether to require avc.
 		 * @param {boolean} deInterlace Optional. Whether to deinterlace the video.
 		 * @param {boolean} requireNonAnamorphic Optional. Whether to require a non anamporphic stream.
 		 * @param {number} transcodingMaxAudioChannels Optional. The maximum number of audio channels to transcode.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cpuCoreLimit Optional. The limit of how many cpu cores to use.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {boolean} enableMpegtsM2TsMode Optional. Whether to enable the MpegtsM2Ts mode.
 		 * @param {string} videoCodec Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h265, h264, mpeg4, theora, vpx, wmv.
 		 * @param {string} subtitleCodec Optional. Specify a subtitle codec to encode to.
 		 * @param {string} transcodeReasons Optional. The transcoding reason.
 		 * @param {number} audioStreamIndex Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoStreamIndex Optional. The index of the video stream to use. If omitted the first video stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TranscodingProfileContext} context Optional. The MediaBrowser.Model.Dlna.EncodingContext.
 		 * @param {{[id: string]: string }} streamOptions Optional. The streaming options.
 		 * @return {void} Audio stream returned.
 		 */
-		GetAudioStreamByContainer(itemId: string, container: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: number | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
+		GetAudioStreamByContainer(itemId: string, container: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: string | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Audio/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/stream.' + (container == null ? '' : encodeURIComponent(container)) + '&_static=' + _static + '&params=' + (params == null ? '' : encodeURIComponent(params)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&deviceProfileId=' + (deviceProfileId == null ? '' : encodeURIComponent(deviceProfileId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&segmentContainer=' + (segmentContainer == null ? '' : encodeURIComponent(segmentContainer)) + '&segmentLength=' + segmentLength + '&minSegments=' + minSegments + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&enableAutoStreamCopy=' + enableAutoStreamCopy + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&audioSampleRate=' + audioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&audioBitRate=' + audioBitRate + '&audioChannels=' + audioChannels + '&maxAudioChannels=' + maxAudioChannels + '&profile=' + (profile == null ? '' : encodeURIComponent(profile)) + '&level=' + (level == null ? '' : encodeURIComponent(level)) + '&framerate=' + framerate + '&maxFramerate=' + maxFramerate + '&copyTimestamps=' + copyTimestamps + '&startTimeTicks=' + startTimeTicks + '&width=' + width + '&height=' + height + '&videoBitRate=' + videoBitRate + '&subtitleStreamIndex=' + subtitleStreamIndex + '&subtitleMethod=' + subtitleMethod + '&maxRefFrames=' + maxRefFrames + '&maxVideoBitDepth=' + maxVideoBitDepth + '&requireAvc=' + requireAvc + '&deInterlace=' + deInterlace + '&requireNonAnamorphic=' + requireNonAnamorphic + '&transcodingMaxAudioChannels=' + transcodingMaxAudioChannels + '&cpuCoreLimit=' + cpuCoreLimit + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&enableMpegtsM2TsMode=' + enableMpegtsM2TsMode + '&videoCodec=' + (videoCodec == null ? '' : encodeURIComponent(videoCodec)) + '&subtitleCodec=' + (subtitleCodec == null ? '' : encodeURIComponent(subtitleCodec)) + '&transcodeReasons=' + (transcodeReasons == null ? '' : encodeURIComponent(transcodeReasons)) + '&audioStreamIndex=' + audioStreamIndex + '&videoStreamIndex=' + videoStreamIndex + '&context=' + context + '&streamOptions=' + streamOptions, { observe: 'response', responseType: 'text' });
 		}
 
@@ -11600,20 +13175,27 @@ export namespace MyNS {
 		 * @param {string} userId Optional. The user id.
 		 * @param {string} audioCodec Optional. The audio codec to transcode to.
 		 * @param {number} maxAudioChannels Optional. The maximum number of audio channels.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} transcodingAudioChannels Optional. The number of how many audio channels to transcode to.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxStreamingBitrate Optional. The maximum streaming bitrate.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} transcodingContainer Optional. The container to transcode to.
 		 * @param {string} transcodingProtocol Optional. The transcoding protocol.
 		 * @param {number} maxAudioSampleRate Optional. The maximum audio sample rate.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} enableRemoteMedia Optional. Whether to enable remote media.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {boolean} enableRedirection Whether to enable redirection. Defaults to true.
 		 * @return {void} Audio stream returned.
 		 */
-		GetUniversalAudioStream(itemId: string, container: Array<string> | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, userId: string | null | undefined, audioCodec: string | null | undefined, maxAudioChannels: number | null | undefined, transcodingAudioChannels: number | null | undefined, maxStreamingBitrate: number | null | undefined, audioBitRate: number | null | undefined, startTimeTicks: number | null | undefined, transcodingContainer: string | null | undefined, transcodingProtocol: string | null | undefined, maxAudioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, enableRemoteMedia: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, enableRedirection: boolean | null | undefined): Observable<HttpResponse<string>> {
+		GetUniversalAudioStream(itemId: string, container: Array<string> | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, userId: string | null | undefined, audioCodec: string | null | undefined, maxAudioChannels: number | null | undefined, transcodingAudioChannels: number | null | undefined, maxStreamingBitrate: number | null | undefined, audioBitRate: number | null | undefined, startTimeTicks: string | null | undefined, transcodingContainer: string | null | undefined, transcodingProtocol: string | null | undefined, maxAudioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, enableRemoteMedia: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, enableRedirection: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Audio/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/universal&' + container?.map(z => `container=${encodeURIComponent(z)}`).join('&') + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&maxAudioChannels=' + maxAudioChannels + '&transcodingAudioChannels=' + transcodingAudioChannels + '&maxStreamingBitrate=' + maxStreamingBitrate + '&audioBitRate=' + audioBitRate + '&startTimeTicks=' + startTimeTicks + '&transcodingContainer=' + (transcodingContainer == null ? '' : encodeURIComponent(transcodingContainer)) + '&transcodingProtocol=' + (transcodingProtocol == null ? '' : encodeURIComponent(transcodingProtocol)) + '&maxAudioSampleRate=' + maxAudioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&enableRemoteMedia=' + enableRemoteMedia + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&enableRedirection=' + enableRedirection, { observe: 'response', responseType: 'text' });
 		}
 
@@ -11696,7 +13278,9 @@ export namespace MyNS {
 		 * Get Channels
 		 * @param {string} userId User Id to filter by. Use System.Guid.Empty to not filter by user.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} supportsLatestItems Optional. Filter by channels that support getting latest items.
 		 * @param {boolean} supportsMediaDeletion Optional. Filter by channels that support media deletion.
 		 * @param {boolean} isFavorite Optional. Filter by channels that are favorite.
@@ -11720,7 +13304,9 @@ export namespace MyNS {
 		 * Get Channels/Items/Latest
 		 * @param {string} userId Optional. User Id.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFilter>} filters Optional. Specify additional filters to apply.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {Array<string>} channelIds Optional. Specify one or more channel id's, comma delimited.
@@ -11747,7 +13333,9 @@ export namespace MyNS {
 		 * @param {string} folderId Optional. Folder Id.
 		 * @param {string} userId Optional. User Id.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sortOrder Optional. Sort Order - Ascending,Descending.
 		 * @param {Array<ItemFilter>} filters Optional. Specify additional filters to apply.
 		 * @param {string} sortBy Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
@@ -12172,7 +13760,9 @@ export namespace MyNS {
 		 * Gets all genres from a given item, folder, or the entire library.
 		 * Get Genres
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} searchTerm The search term.
 		 * @param {string} parentId Specify this to localize the search to a specific item or folder. Omit to use the root.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
@@ -12180,6 +13770,7 @@ export namespace MyNS {
 		 * @param {Array<string>} includeItemTypes Optional. If specified, results will be filtered in based on item type. This allows multiple, comma delimited.
 		 * @param {boolean} isFavorite Optional filter by items that are marked as favorite, or not.
 		 * @param {number} imageTypeLimit Optional, the max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {string} userId User id.
 		 * @param {string} nameStartsWithOrGreater Optional filter by items whose name is sorted equally or greater than a given input string.
@@ -12212,18 +13803,27 @@ export namespace MyNS {
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image stream returned.
 		 */
 		GetGenreImage(name: string, imageType: ImageOptionType, tag: string | null | undefined, format: ImageFormat | null | undefined, maxWidth: number | null | undefined, maxHeight: number | null | undefined, percentPlayed: number | null | undefined, unplayedCount: number | null | undefined, width: number | null | undefined, height: number | null | undefined, quality: number | null | undefined, cropWhitespace: boolean | null | undefined, addPlayedIndicator: boolean | null | undefined, blur: number | null | undefined, backgroundColor: string | null | undefined, foregroundLayer: string | null | undefined, imageIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12236,18 +13836,27 @@ export namespace MyNS {
 		 * @param {string} name Genre name.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @return {void} Image stream returned.
@@ -12357,6 +13966,7 @@ export namespace MyNS {
 		 * @param {boolean} hasTrailer Optional filter by items with trailers.
 		 * @param {string} adjacentTo Optional. Return items that are siblings of a supplied item.
 		 * @param {number} parentIndexNumber Optional filter by parent index number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} hasParentalRating Optional filter by items that have or do not have a parental rating.
 		 * @param {boolean} isHd Optional filter by items that are HD or not.
 		 * @param {boolean} is4K Optional filter by items that are 4K or not.
@@ -12365,7 +13975,9 @@ export namespace MyNS {
 		 * @param {boolean} isMissing Optional filter by items that are missing episodes or not.
 		 * @param {boolean} isUnaired Optional filter by items that are unaired episodes or not.
 		 * @param {number} minCommunityRating Optional filter by minimum community rating.
+		 *     Type: double
 		 * @param {number} minCriticRating Optional filter by minimum critic rating.
+		 *     Type: double
 		 * @param {Date} minPremiereDate Optional. The minimum premiere date. Format = ISO.
 		 * @param {Date} minDateLastSaved Optional. The minimum last saved date. Format = ISO.
 		 * @param {Date} minDateLastSavedForUser Optional. The minimum last saved date for the current user. Format = ISO.
@@ -12376,7 +13988,9 @@ export namespace MyNS {
 		 * @param {boolean} hasTvdbId Optional filter by items that have a tvdb id or not.
 		 * @param {Array<string>} excludeItemIds Optional. If specified, results will be filtered by excluding item ids. This allows multiple, comma delimited.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} recursive When searching within folders, this determines whether or not the search will be recursive. true/false.
 		 * @param {string} searchTerm Optional. Filter based on a search term.
 		 * @param {string} sortOrder Sort Order - Ascending,Descending.
@@ -12396,6 +14010,7 @@ export namespace MyNS {
 		 * @param {Array<number>} years Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited.
 		 * @param {boolean} enableUserData Optional, include user data.
 		 * @param {number} imageTypeLimit Optional, the max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {string} person Optional. If specified, results will be filtered to include only those containing the specified person.
 		 * @param {Array<string>} personIds Optional. If specified, results will be filtered to include only those containing the specified person id.
@@ -12416,9 +14031,13 @@ export namespace MyNS {
 		 * @param {boolean} hasOfficialRating Optional filter by items that have official ratings.
 		 * @param {boolean} collapseBoxSetItems Whether or not to hide items behind their boxsets.
 		 * @param {number} minWidth Optional. Filter by the minimum width of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minHeight Optional. Filter by the minimum height of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxWidth Optional. Filter by the maximum width of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight Optional. Filter by the maximum height of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} is3D Optional filter by items that are 3D, or not.
 		 * @param {Array<SeriesStatus>} seriesStatus Optional filter by Series Status. Allows multiple, comma delimited.
 		 * @param {string} nameStartsWithOrGreater Optional filter by items whose name is sorted equally or greater than a given input string.
@@ -12596,10 +14215,12 @@ export namespace MyNS {
 		 * @param {string} id The item id.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @return {BaseItemDtoQueryResult} Instant playlist returned.
 		 */
@@ -12705,6 +14326,7 @@ export namespace MyNS {
 		 * @param {string} itemId Item id.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} imageIndex The image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteItemImage(itemId: string, imageType: ImageOptionType, imageIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12717,20 +14339,29 @@ export namespace MyNS {
 		 * @param {string} itemId Item id.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {ImageFormat} format Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image stream returned.
 		 */
 		GetItemImage(itemId: string, imageType: ImageOptionType, maxWidth: number | null | undefined, maxHeight: number | null | undefined, width: number | null | undefined, height: number | null | undefined, quality: number | null | undefined, tag: string | null | undefined, cropWhitespace: boolean | null | undefined, format: ImageFormat | null | undefined, addPlayedIndicator: boolean | null | undefined, percentPlayed: number | null | undefined, unplayedCount: number | null | undefined, blur: number | null | undefined, backgroundColor: string | null | undefined, foregroundLayer: string | null | undefined, imageIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12754,6 +14385,7 @@ export namespace MyNS {
 		 * @param {string} itemId Item id.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} imageIndex The image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteItemImageByIndex(itemId: string, imageType: ImageOptionType, imageIndex: number): Observable<HttpResponse<string>> {
@@ -12766,18 +14398,27 @@ export namespace MyNS {
 		 * @param {string} itemId Item id.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {ImageFormat} format Optional. The MediaBrowser.Model.Drawing.ImageFormat of the returned image.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @return {void} Image stream returned.
@@ -12792,6 +14433,7 @@ export namespace MyNS {
 		 * @param {string} itemId Item id.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} imageIndex (Unused) Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		SetItemImageByIndex(itemId: string, imageType: ImageOptionType, imageIndex: number): Observable<HttpResponse<string>> {
@@ -12804,7 +14446,9 @@ export namespace MyNS {
 		 * @param {string} itemId Item id.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} imageIndex Old image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} newIndex New image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		UpdateItemImageIndex(itemId: string, imageType: ImageOptionType, imageIndex: number, newIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12817,20 +14461,29 @@ export namespace MyNS {
 		 * @param {string} itemId Item id.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image stream returned.
 		 */
 		GetItemImage2(itemId: string, imageType: ImageOptionType, maxWidth: number, maxHeight: number, width: number | null | undefined, height: number | null | undefined, quality: number | null | undefined, tag: string, cropWhitespace: boolean | null | undefined, format: ImageFormat, addPlayedIndicator: boolean | null | undefined, percentPlayed: number, unplayedCount: number, blur: number | null | undefined, backgroundColor: string | null | undefined, foregroundLayer: string | null | undefined, imageIndex: number): Observable<HttpResponse<string>> {
@@ -12865,10 +14518,15 @@ export namespace MyNS {
 		 * @param {string} itemId The item id.
 		 * @param {string} userId The user id.
 		 * @param {number} maxStreamingBitrate The maximum streaming bitrate.
-		 * @param {number} startTimeTicks The start time in ticks.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} startTimeTicks The start time in ticks.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} audioStreamIndex The audio stream index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex The subtitle stream index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels The maximum number of audio channels.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media source id.
 		 * @param {string} liveStreamId The livestream id.
 		 * @param {boolean} autoOpenLiveStream Whether to auto open the livestream.
@@ -12880,7 +14538,7 @@ export namespace MyNS {
 		 * @param {PlaybackInfoDto} requestBody The playback info.
 		 * @return {PlaybackInfoResponse} Playback info returned.
 		 */
-		GetPostedPlaybackInfo(itemId: string, userId: string | null | undefined, maxStreamingBitrate: number | null | undefined, startTimeTicks: number | null | undefined, audioStreamIndex: number | null | undefined, subtitleStreamIndex: number | null | undefined, maxAudioChannels: number | null | undefined, mediaSourceId: string | null | undefined, liveStreamId: string | null | undefined, autoOpenLiveStream: boolean | null | undefined, enableDirectPlay: boolean | null | undefined, enableDirectStream: boolean | null | undefined, enableTranscoding: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, requestBody: PlaybackInfoDto): Observable<PlaybackInfoResponse> {
+		GetPostedPlaybackInfo(itemId: string, userId: string | null | undefined, maxStreamingBitrate: number | null | undefined, startTimeTicks: string | null | undefined, audioStreamIndex: number | null | undefined, subtitleStreamIndex: number | null | undefined, maxAudioChannels: number | null | undefined, mediaSourceId: string | null | undefined, liveStreamId: string | null | undefined, autoOpenLiveStream: boolean | null | undefined, enableDirectPlay: boolean | null | undefined, enableDirectStream: boolean | null | undefined, enableTranscoding: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, requestBody: PlaybackInfoDto): Observable<PlaybackInfoResponse> {
 			return this.http.post<PlaybackInfoResponse>(this.baseUri + 'Items/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/PlaybackInfo&userId=' + (userId == null ? '' : encodeURIComponent(userId)) + '&maxStreamingBitrate=' + maxStreamingBitrate + '&startTimeTicks=' + startTimeTicks + '&audioStreamIndex=' + audioStreamIndex + '&subtitleStreamIndex=' + subtitleStreamIndex + '&maxAudioChannels=' + maxAudioChannels + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&autoOpenLiveStream=' + autoOpenLiveStream + '&enableDirectPlay=' + enableDirectPlay + '&enableDirectStream=' + enableDirectStream + '&enableTranscoding=' + enableTranscoding + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -12904,7 +14562,9 @@ export namespace MyNS {
 		 * @param {string} itemId Item Id.
 		 * @param {ImageOptionType} type The image type.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} providerName Optional. The image provider to use.
 		 * @param {boolean} includeAllLanguages Optional. Include all languages.
 		 * @return {RemoteImageResult} Remote Images returned.
@@ -12965,6 +14625,7 @@ export namespace MyNS {
 		 * @param {Array<string>} excludeArtistIds Exclude artist ids.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
 		 * @return {BaseItemDtoQueryResult} Similar items returned.
 		 */
@@ -13206,17 +14867,22 @@ export namespace MyNS {
 		 * @param {string} userId The user id.
 		 * @param {string} playSessionId The play session id.
 		 * @param {number} maxStreamingBitrate The maximum streaming bitrate.
-		 * @param {number} startTimeTicks The start time in ticks.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} startTimeTicks The start time in ticks.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} audioStreamIndex The audio stream index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex The subtitle stream index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels The maximum number of audio channels.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} itemId The item id.
 		 * @param {boolean} enableDirectPlay Whether to enable direct play. Default: true.
 		 * @param {boolean} enableDirectStream Whether to enable direct stream. Default: true.
 		 * @param {OpenLiveStreamDto} requestBody The open live stream dto.
 		 * @return {LiveStreamResponse} Media source opened.
 		 */
-		OpenLiveStream(openToken: string | null | undefined, userId: string | null | undefined, playSessionId: string | null | undefined, maxStreamingBitrate: number | null | undefined, startTimeTicks: number | null | undefined, audioStreamIndex: number | null | undefined, subtitleStreamIndex: number | null | undefined, maxAudioChannels: number | null | undefined, itemId: string | null | undefined, enableDirectPlay: boolean | null | undefined, enableDirectStream: boolean | null | undefined, requestBody: OpenLiveStreamDto): Observable<LiveStreamResponse> {
+		OpenLiveStream(openToken: string | null | undefined, userId: string | null | undefined, playSessionId: string | null | undefined, maxStreamingBitrate: number | null | undefined, startTimeTicks: string | null | undefined, audioStreamIndex: number | null | undefined, subtitleStreamIndex: number | null | undefined, maxAudioChannels: number | null | undefined, itemId: string | null | undefined, enableDirectPlay: boolean | null | undefined, enableDirectStream: boolean | null | undefined, requestBody: OpenLiveStreamDto): Observable<LiveStreamResponse> {
 			return this.http.post<LiveStreamResponse>(this.baseUri + 'LiveStreams/Open?openToken=' + (openToken == null ? '' : encodeURIComponent(openToken)) + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&maxStreamingBitrate=' + maxStreamingBitrate + '&startTimeTicks=' + startTimeTicks + '&audioStreamIndex=' + audioStreamIndex + '&subtitleStreamIndex=' + subtitleStreamIndex + '&maxAudioChannels=' + maxAudioChannels + '&itemId=' + (itemId == null ? '' : encodeURIComponent(itemId)) + '&enableDirectPlay=' + enableDirectPlay + '&enableDirectStream=' + enableDirectStream, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
 		}
 
@@ -13246,17 +14912,20 @@ export namespace MyNS {
 		 * @param {BaseItemDtoChannelType} type Optional. Filter by channel type.
 		 * @param {string} userId Optional. Filter by user and attach user data.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isMovie Optional. Filter for movies.
 		 * @param {boolean} isSeries Optional. Filter for series.
 		 * @param {boolean} isNews Optional. Filter for news.
 		 * @param {boolean} isKids Optional. Filter for kids.
 		 * @param {boolean} isSports Optional. Filter for sports.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isFavorite Optional. Filter by channels that are favorites, or not.
 		 * @param {boolean} isLiked Optional. Filter by channels that are liked, or not.
 		 * @param {boolean} isDisliked Optional. Filter by channels that are disliked, or not.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes "Optional. The image types to include in the output.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {boolean} enableUserData Optional. Include user data.
@@ -13391,13 +15060,16 @@ export namespace MyNS {
 		 * @param {boolean} isKids Optional. Filter for kids.
 		 * @param {boolean} isSports Optional. Filter for sports.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sortBy Optional. Specify one or more sort orders, comma delimited. Options: Name, StartDate.
 		 * @param {string} sortOrder Sort Order - Ascending,Descending.
 		 * @param {Array<string>} genres The genres to return guide information for.
 		 * @param {Array<string>} genreIds The genre ids to return guide information for.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {string} seriesTimerId Optional. Filter by series timer id.
@@ -13425,6 +15097,7 @@ export namespace MyNS {
 		 * Get LiveTv/Programs/Recommended
 		 * @param {string} userId Optional. filter by user id.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isAiring Optional. Filter by programs that are currently airing, or not.
 		 * @param {boolean} hasAired Optional. Filter by programs that have completed airing, or not.
 		 * @param {boolean} isSeries Optional. Filter for series.
@@ -13434,6 +15107,7 @@ export namespace MyNS {
 		 * @param {boolean} isSports Optional. Filter for sports.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {Array<string>} genreIds The genres to return guide information for.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
@@ -13462,12 +15136,15 @@ export namespace MyNS {
 		 * @param {string} channelId Optional. Filter by channel id.
 		 * @param {string} userId Optional. Filter by user and attach user data.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {RecordingStatus} status Optional. Filter by recording status.
 		 * @param {boolean} isInProgress Optional. Filter by recordings that are in progress, or not.
 		 * @param {string} seriesTimerId Optional. Filter by recordings belonging to a series timer.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {boolean} enableUserData Optional. Include user data.
@@ -13521,12 +15198,15 @@ export namespace MyNS {
 		 * @param {string} userId Optional. Filter by user and attach user data.
 		 * @param {string} groupId Optional. Filter by recording group.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {RecordingStatus} status Optional. Filter by recording status.
 		 * @param {boolean} isInProgress Optional. Filter by recordings that are in progress, or not.
 		 * @param {string} seriesTimerId Optional. Filter by recordings belonging to a series timer.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {boolean} enableUserData Optional. Include user data.
@@ -13776,7 +15456,9 @@ export namespace MyNS {
 		 * @param {string} parentId Specify this to localize the search to a specific item or folder. Omit to use the root.
 		 * @param {Array<ItemFields>} fields Optional. The fields to return.
 		 * @param {number} categoryLimit The max number of categories to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} itemLimit The max number of items to return per category.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<RecommendationDto>} Movie recommendations returned.
 		 */
 		GetMovieRecommendations(userId: string | null | undefined, parentId: string | null | undefined, fields: Array<ItemFields> | null | undefined, categoryLimit: number | null | undefined, itemLimit: number | null | undefined): Observable<Array<RecommendationDto>> {
@@ -13790,6 +15472,7 @@ export namespace MyNS {
 		 * @param {Array<string>} excludeArtistIds Exclude artist ids.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
 		 * @return {BaseItemDtoQueryResult} Similar items returned.
 		 */
@@ -13801,7 +15484,9 @@ export namespace MyNS {
 		 * Gets all music genres from a given item, folder, or the entire library.
 		 * Get MusicGenres
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} searchTerm The search term.
 		 * @param {string} parentId Specify this to localize the search to a specific item or folder. Omit to use the root.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
@@ -13809,6 +15494,7 @@ export namespace MyNS {
 		 * @param {Array<string>} includeItemTypes Optional. If specified, results will be filtered in based on item type. This allows multiple, comma delimited.
 		 * @param {boolean} isFavorite Optional filter by items that are marked as favorite, or not.
 		 * @param {number} imageTypeLimit Optional, the max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {string} userId User id.
 		 * @param {string} nameStartsWithOrGreater Optional filter by items whose name is sorted equally or greater than a given input string.
@@ -13839,10 +15525,12 @@ export namespace MyNS {
 		 * @param {string} id The item id.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @return {BaseItemDtoQueryResult} Instant playlist returned.
 		 */
@@ -13858,18 +15546,27 @@ export namespace MyNS {
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image stream returned.
 		 */
 		GetMusicGenreImage(name: string, imageType: ImageOptionType, tag: string | null | undefined, format: ImageFormat | null | undefined, maxWidth: number | null | undefined, maxHeight: number | null | undefined, percentPlayed: number | null | undefined, unplayedCount: number | null | undefined, width: number | null | undefined, height: number | null | undefined, quality: number | null | undefined, cropWhitespace: boolean | null | undefined, addPlayedIndicator: boolean | null | undefined, blur: number | null | undefined, backgroundColor: string | null | undefined, foregroundLayer: string | null | undefined, imageIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -13882,18 +15579,27 @@ export namespace MyNS {
 		 * @param {string} name Music genre name.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @return {void} Image stream returned.
@@ -13908,10 +15614,12 @@ export namespace MyNS {
 		 * @param {string} name The genre name.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @return {BaseItemDtoQueryResult} Instant playlist returned.
 		 */
@@ -14033,12 +15741,14 @@ export namespace MyNS {
 		 * Gets all persons.
 		 * Get Persons
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} searchTerm The search term.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {Array<ItemFilter>} filters Optional. Specify additional filters to apply.
 		 * @param {boolean} isFavorite Optional filter by items that are marked as favorite, or not. userId is required.
 		 * @param {boolean} enableUserData Optional, include user data.
 		 * @param {number} imageTypeLimit Optional, the max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {Array<string>} excludePersonTypes Optional. If specified results will be filtered to exclude those containing the specified PersonType. Allows multiple, comma-delimited.
 		 * @param {Array<string>} personTypes Optional. If specified results will be filtered to include only those containing the specified PersonType. Allows multiple, comma-delimited.
@@ -14070,18 +15780,27 @@ export namespace MyNS {
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image stream returned.
 		 */
 		GetPersonImage(name: string, imageType: ImageOptionType, tag: string | null | undefined, format: ImageFormat | null | undefined, maxWidth: number | null | undefined, maxHeight: number | null | undefined, percentPlayed: number | null | undefined, unplayedCount: number | null | undefined, width: number | null | undefined, height: number | null | undefined, quality: number | null | undefined, cropWhitespace: boolean | null | undefined, addPlayedIndicator: boolean | null | undefined, blur: number | null | undefined, backgroundColor: string | null | undefined, foregroundLayer: string | null | undefined, imageIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -14094,18 +15813,27 @@ export namespace MyNS {
 		 * @param {string} name Person name.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @return {void} Image stream returned.
@@ -14118,6 +15846,7 @@ export namespace MyNS {
 		 * Tests the network with a request with the size of the bitrate.
 		 * Get Playback/BitrateTest
 		 * @param {number} size The bitrate. Defaults to 102400.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Test buffer returned.
 		 */
 		GetBitrateTestBytes(size: number | null | undefined): Observable<HttpResponse<string>> {
@@ -14145,10 +15874,12 @@ export namespace MyNS {
 		 * @param {string} id The item id.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @return {BaseItemDtoQueryResult} Instant playlist returned.
 		 */
@@ -14173,11 +15904,14 @@ export namespace MyNS {
 		 * @param {string} playlistId The playlist id.
 		 * @param {string} userId User id.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @return {BaseItemDtoQueryResult} Original playlist returned.
 		 */
@@ -14203,6 +15937,7 @@ export namespace MyNS {
 		 * @param {string} playlistId The playlist id.
 		 * @param {string} itemId The item id.
 		 * @param {number} newIndex The new index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		MoveItem(playlistId: string, itemId: string, newIndex: number): Observable<HttpResponse<string>> {
@@ -14366,6 +16101,7 @@ export namespace MyNS {
 		 * Deauthorize all quick connect devices for the current user.
 		 * Post QuickConnect/Deauthorize
 		 * @return {number} All quick connect devices were deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Deauthorize(): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'QuickConnect/Deauthorize', null, {});
@@ -14464,7 +16200,9 @@ export namespace MyNS {
 		 * Gets the search hint result.
 		 * Get Search/Hints
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userId Optional. Supply a user id to search within a user's library or omit to search all.
 		 * @param {string} searchTerm The search term to filter on.
 		 * @param {Array<string>} includeItemTypes If specified, only results with the specified item types are returned. This allows multiple, comma delimeted.
@@ -14493,6 +16231,7 @@ export namespace MyNS {
 		 * @param {string} controllableByUserId Filter by sessions that a given user is allowed to remote control.
 		 * @param {string} deviceId Filter by device Id.
 		 * @param {number} activeWithinSeconds Optional. Filter by sessions that were active in the last n seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<SessionInfo>} List of sessions returned.
 		 */
 		GetSessions(controllableByUserId: string | null | undefined, deviceId: string | null | undefined, activeWithinSeconds: number | null | undefined): Observable<Array<SessionInfo>> {
@@ -14613,10 +16352,11 @@ export namespace MyNS {
 		 * @param {string} sessionId The session id.
 		 * @param {string} text The message test.
 		 * @param {string} header The message header.
-		 * @param {number} timeoutMs The message timeout. If omitted the user will have to confirm viewing the message.
+		 * @param {string} timeoutMs The message timeout. If omitted the user will have to confirm viewing the message.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		SendMessageCommand(sessionId: string, text: string, header: string | null | undefined, timeoutMs: number | null | undefined): Observable<HttpResponse<string>> {
+		SendMessageCommand(sessionId: string, text: string, header: string | null | undefined, timeoutMs: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'Sessions/' + (sessionId == null ? '' : encodeURIComponent(sessionId)) + '/Message&text=' + (text == null ? '' : encodeURIComponent(text)) + '&header=' + (header == null ? '' : encodeURIComponent(header)) + '&timeoutMs=' + timeoutMs, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -14626,10 +16366,11 @@ export namespace MyNS {
 		 * @param {string} sessionId The session id.
 		 * @param {PlayCommand} playCommand The type of play command to issue (PlayNow, PlayNext, PlayLast). Clients who have not yet implemented play next and play last may play now.
 		 * @param {Array<string>} itemIds The ids of the items to play, comma delimited.
-		 * @param {number} startPositionTicks The starting position of the first item.
+		 * @param {string} startPositionTicks The starting position of the first item.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		Play(sessionId: string, playCommand: PlayCommand, itemIds: Array<string>, startPositionTicks: number | null | undefined): Observable<HttpResponse<string>> {
+		Play(sessionId: string, playCommand: PlayCommand, itemIds: Array<string>, startPositionTicks: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'Sessions/' + (sessionId == null ? '' : encodeURIComponent(sessionId)) + '/Playing&playCommand=' + playCommand + '&' + itemIds.map(z => `itemIds=${encodeURIComponent(z)}`).join('&') + '&startPositionTicks=' + startPositionTicks, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -14638,11 +16379,12 @@ export namespace MyNS {
 		 * Post Sessions/{sessionId}/Playing/{command}
 		 * @param {string} sessionId The session id.
 		 * @param {PlaystateCommand} command The MediaBrowser.Model.Session.PlaystateCommand.
-		 * @param {number} seekPositionTicks The optional position ticks.
+		 * @param {string} seekPositionTicks The optional position ticks.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} controllingUserId The optional controlling user id.
 		 * @return {void} 
 		 */
-		SendPlaystateCommand(sessionId: string, command: PlaystateCommand, seekPositionTicks: number | null | undefined, controllingUserId: string | null | undefined): Observable<HttpResponse<string>> {
+		SendPlaystateCommand(sessionId: string, command: PlaystateCommand, seekPositionTicks: string | null | undefined, controllingUserId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'Sessions/' + (sessionId == null ? '' : encodeURIComponent(sessionId)) + '/Playing/' + command + '&seekPositionTicks=' + seekPositionTicks + '&controllingUserId=' + (controllingUserId == null ? '' : encodeURIComponent(controllingUserId)), null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -14697,12 +16439,15 @@ export namespace MyNS {
 		 * Get Shows/NextUp
 		 * @param {string} userId The user id of the user to get the next up episodes for.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {string} seriesId Optional. Filter by series id.
 		 * @param {string} parentId Optional. Specify this to localize the search to a specific item or folder. Omit to use the root.
 		 * @param {boolean} enableImges Optional. Include image information in output.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {boolean} enableTotalRecordCount Whether to enable the total records count. Defaults to true.
@@ -14717,11 +16462,14 @@ export namespace MyNS {
 		 * Get Shows/Upcoming
 		 * @param {string} userId The user id of the user to get the upcoming episodes for.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {string} parentId Optional. Specify this to localize the search to a specific item or folder. Omit to use the root.
 		 * @param {boolean} enableImges Optional. Include image information in output.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @return {BaseItemDtoQueryResult} Success
@@ -14737,6 +16485,7 @@ export namespace MyNS {
 		 * @param {Array<string>} excludeArtistIds Exclude artist ids.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
 		 * @return {BaseItemDtoQueryResult} Similar items returned.
 		 */
@@ -14751,14 +16500,18 @@ export namespace MyNS {
 		 * @param {string} userId The user id.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
 		 * @param {number} season Optional filter by season number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} seasonId Optional. Filter by season id.
 		 * @param {boolean} isMissing Optional. Filter by items that are missing episodes or not.
 		 * @param {string} adjacentTo Optional. Return items that are siblings of a supplied item.
 		 * @param {string} startItemId Optional. Skip through the list until a given item is found.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} enableImages Optional, include image information in output.
 		 * @param {number} imageTypeLimit Optional, the max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {string} sortBy Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
@@ -14779,6 +16532,7 @@ export namespace MyNS {
 		 * @param {string} adjacentTo Optional. Return items that are siblings of a supplied item.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @return {BaseItemDtoQueryResult} Success
@@ -14793,10 +16547,12 @@ export namespace MyNS {
 		 * @param {string} id The item id.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
 		 * @param {boolean} enableImages Optional. Include image information in output.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @return {BaseItemDtoQueryResult} Instant playlist returned.
 		 */
@@ -14874,7 +16630,9 @@ export namespace MyNS {
 		 * Gets all studios from a given item, folder, or the entire library.
 		 * Get Studios
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} searchTerm Optional. Search term.
 		 * @param {string} parentId Specify this to localize the search to a specific item or folder. Omit to use the root.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
@@ -14883,6 +16641,7 @@ export namespace MyNS {
 		 * @param {boolean} isFavorite Optional filter by items that are marked as favorite, or not.
 		 * @param {boolean} enableUserData Optional, include user data.
 		 * @param {number} imageTypeLimit Optional, the max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {string} userId User id.
 		 * @param {string} nameStartsWithOrGreater Optional filter by items whose name is sorted equally or greater than a given input string.
@@ -14915,18 +16674,27 @@ export namespace MyNS {
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image stream returned.
 		 */
 		GetStudioImage(name: string, imageType: ImageOptionType, tag: string | null | undefined, format: ImageFormat | null | undefined, maxWidth: number | null | undefined, maxHeight: number | null | undefined, percentPlayed: number | null | undefined, unplayedCount: number | null | undefined, width: number | null | undefined, height: number | null | undefined, quality: number | null | undefined, cropWhitespace: boolean | null | undefined, addPlayedIndicator: boolean | null | undefined, blur: number | null | undefined, backgroundColor: string | null | undefined, foregroundLayer: string | null | undefined, imageIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -14939,18 +16707,27 @@ export namespace MyNS {
 		 * @param {string} name Studio name.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @return {void} Image stream returned.
@@ -15168,7 +16945,9 @@ export namespace MyNS {
 		 * Gets activity log entries.
 		 * Get System/ActivityLog/Entries
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} minDate Optional. The minimum date. Format = ISO.
 		 * @param {boolean} hasUserId Optional. Filter log entries if it has user id, or not.
 		 * @return {ActivityLogEntryQueryResult} Activity log returned.
@@ -15338,6 +17117,7 @@ export namespace MyNS {
 		 * @param {boolean} hasTrailer Optional filter by items with trailers.
 		 * @param {string} adjacentTo Optional. Return items that are siblings of a supplied item.
 		 * @param {number} parentIndexNumber Optional filter by parent index number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} hasParentalRating Optional filter by items that have or do not have a parental rating.
 		 * @param {boolean} isHd Optional filter by items that are HD or not.
 		 * @param {boolean} is4K Optional filter by items that are 4K or not.
@@ -15346,7 +17126,9 @@ export namespace MyNS {
 		 * @param {boolean} isMissing Optional filter by items that are missing episodes or not.
 		 * @param {boolean} isUnaired Optional filter by items that are unaired episodes or not.
 		 * @param {number} minCommunityRating Optional filter by minimum community rating.
+		 *     Type: double
 		 * @param {number} minCriticRating Optional filter by minimum critic rating.
+		 *     Type: double
 		 * @param {Date} minPremiereDate Optional. The minimum premiere date. Format = ISO.
 		 * @param {Date} minDateLastSaved Optional. The minimum last saved date. Format = ISO.
 		 * @param {Date} minDateLastSavedForUser Optional. The minimum last saved date for the current user. Format = ISO.
@@ -15357,7 +17139,9 @@ export namespace MyNS {
 		 * @param {boolean} hasTvdbId Optional filter by items that have a tvdb id or not.
 		 * @param {Array<string>} excludeItemIds Optional. If specified, results will be filtered by excluding item ids. This allows multiple, comma delimited.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} recursive When searching within folders, this determines whether or not the search will be recursive. true/false.
 		 * @param {string} searchTerm Optional. Filter based on a search term.
 		 * @param {string} sortOrder Sort Order - Ascending,Descending.
@@ -15376,6 +17160,7 @@ export namespace MyNS {
 		 * @param {Array<number>} years Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimited.
 		 * @param {boolean} enableUserData Optional, include user data.
 		 * @param {number} imageTypeLimit Optional, the max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {string} person Optional. If specified, results will be filtered to include only those containing the specified person.
 		 * @param {Array<string>} personIds Optional. If specified, results will be filtered to include only those containing the specified person id.
@@ -15396,9 +17181,13 @@ export namespace MyNS {
 		 * @param {boolean} hasOfficialRating Optional filter by items that have official ratings.
 		 * @param {boolean} collapseBoxSetItems Whether or not to hide items behind their boxsets.
 		 * @param {number} minWidth Optional. Filter by the minimum width of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minHeight Optional. Filter by the minimum height of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxWidth Optional. Filter by the maximum width of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight Optional. Filter by the maximum height of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} is3D Optional filter by items that are 3D, or not.
 		 * @param {Array<SeriesStatus>} seriesStatus Optional filter by Series Status. Allows multiple, comma delimited.
 		 * @param {string} nameStartsWithOrGreater Optional filter by items whose name is sorted equally or greater than a given input string.
@@ -15421,6 +17210,7 @@ export namespace MyNS {
 		 * @param {Array<string>} excludeArtistIds Exclude artist ids.
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines, TrailerUrls.
 		 * @return {BaseItemDtoQueryResult} Similar items returned.
 		 */
@@ -15610,6 +17400,7 @@ export namespace MyNS {
 		 * @param {string} userId User Id.
 		 * @param {ImageOptionType} imageType (Unused) Image type.
 		 * @param {number} index (Unused) Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteUserImage(userId: string, imageType: ImageOptionType, index: number | null | undefined): Observable<HttpResponse<string>> {
@@ -15624,18 +17415,27 @@ export namespace MyNS {
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Image stream returned.
 		 */
 		GetUserImage(userId: string, imageType: ImageOptionType, tag: string | null | undefined, format: ImageFormat | null | undefined, maxWidth: number | null | undefined, maxHeight: number | null | undefined, percentPlayed: number | null | undefined, unplayedCount: number | null | undefined, width: number | null | undefined, height: number | null | undefined, quality: number | null | undefined, cropWhitespace: boolean | null | undefined, addPlayedIndicator: boolean | null | undefined, blur: number | null | undefined, backgroundColor: string | null | undefined, foregroundLayer: string | null | undefined, imageIndex: number | null | undefined): Observable<HttpResponse<string>> {
@@ -15648,6 +17448,7 @@ export namespace MyNS {
 		 * @param {string} userId User Id.
 		 * @param {ImageOptionType} imageType (Unused) Image type.
 		 * @param {number} index (Unused) Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		PostUserImage(userId: string, imageType: ImageOptionType, index: number | null | undefined): Observable<HttpResponse<string>> {
@@ -15660,18 +17461,27 @@ export namespace MyNS {
 		 * @param {string} userId User id.
 		 * @param {ImageOptionType} imageType Image type.
 		 * @param {number} imageIndex Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tag Optional. Supply the cache tag from the item object to receive strong caching headers.
 		 * @param {ImageFormat} format Determines the output format of the image - original,gif,jpg,png.
 		 * @param {number} maxWidth The maximum image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight The maximum image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} percentPlayed Optional. Percent to render for the percent played overlay.
+		 *     Type: double
 		 * @param {number} unplayedCount Optional. Unplayed count overlay to render.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width The fixed image width to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height The fixed image height to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} quality Optional. Quality setting, from 0-100. Defaults to 90 and should suffice in most cases.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} cropWhitespace Optional. Specify if whitespace should be cropped out of the image. True/False. If unspecified, whitespace will be cropped from logos and clear art.
 		 * @param {boolean} addPlayedIndicator Optional. Add a played indicator.
 		 * @param {number} blur Optional. Blur image.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} backgroundColor Optional. Apply a background color for transparent images.
 		 * @param {string} foregroundLayer Optional. Apply a foreground layer on top of the image.
 		 * @return {void} Image stream returned.
@@ -15686,6 +17496,7 @@ export namespace MyNS {
 		 * @param {string} userId User Id.
 		 * @param {ImageOptionType} imageType (Unused) Image type.
 		 * @param {number} index (Unused) Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteUserImageByIndex(userId: string, imageType: ImageOptionType, index: number): Observable<HttpResponse<string>> {
@@ -15698,6 +17509,7 @@ export namespace MyNS {
 		 * @param {string} userId User Id.
 		 * @param {ImageOptionType} imageType (Unused) Image type.
 		 * @param {number} index (Unused) Image index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		PostUserImageByIndex(userId: string, imageType: ImageOptionType, index: number): Observable<HttpResponse<string>> {
@@ -15716,6 +17528,7 @@ export namespace MyNS {
 		 * @param {boolean} hasTrailer Optional filter by items with trailers.
 		 * @param {string} adjacentTo Optional. Return items that are siblings of a supplied item.
 		 * @param {number} parentIndexNumber Optional filter by parent index number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} hasParentalRating Optional filter by items that have or do not have a parental rating.
 		 * @param {boolean} isHd Optional filter by items that are HD or not.
 		 * @param {boolean} is4K Optional filter by items that are 4K or not.
@@ -15724,7 +17537,9 @@ export namespace MyNS {
 		 * @param {boolean} isMissing Optional filter by items that are missing episodes or not.
 		 * @param {boolean} isUnaired Optional filter by items that are unaired episodes or not.
 		 * @param {number} minCommunityRating Optional filter by minimum community rating.
+		 *     Type: double
 		 * @param {number} minCriticRating Optional filter by minimum critic rating.
+		 *     Type: double
 		 * @param {Date} minPremiereDate Optional. The minimum premiere date. Format = ISO.
 		 * @param {Date} minDateLastSaved Optional. The minimum last saved date. Format = ISO.
 		 * @param {Date} minDateLastSavedForUser Optional. The minimum last saved date for the current user. Format = ISO.
@@ -15735,7 +17550,9 @@ export namespace MyNS {
 		 * @param {boolean} hasTvdbId Optional filter by items that have a tvdb id or not.
 		 * @param {Array<string>} excludeItemIds Optional. If specified, results will be filtered by exxcluding item ids. This allows multiple, comma delimeted.
 		 * @param {number} startIndex Optional. The record index to start at. All items with a lower index will be dropped from the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} recursive When searching within folders, this determines whether or not the search will be recursive. true/false.
 		 * @param {string} searchTerm Optional. Filter based on a search term.
 		 * @param {string} sortOrder Sort Order - Ascending,Descending.
@@ -15755,6 +17572,7 @@ export namespace MyNS {
 		 * @param {Array<number>} years Optional. If specified, results will be filtered based on production year. This allows multiple, comma delimeted.
 		 * @param {boolean} enableUserData Optional, include user data.
 		 * @param {number} imageTypeLimit Optional, the max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {string} person Optional. If specified, results will be filtered to include only those containing the specified person.
 		 * @param {Array<string>} personIds Optional. If specified, results will be filtered to include only those containing the specified person id.
@@ -15775,9 +17593,13 @@ export namespace MyNS {
 		 * @param {boolean} hasOfficialRating Optional filter by items that have official ratings.
 		 * @param {boolean} collapseBoxSetItems Whether or not to hide items behind their boxsets.
 		 * @param {number} minWidth Optional. Filter by the minimum width of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minHeight Optional. Filter by the minimum height of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxWidth Optional. Filter by the maximum width of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight Optional. Filter by the maximum height of the item.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} is3D Optional filter by items that are 3D, or not.
 		 * @param {Array<SeriesStatus>} seriesStatus Optional filter by Series Status. Allows multiple, comma delimeted.
 		 * @param {string} nameStartsWithOrGreater Optional filter by items whose name is sorted equally or greater than a given input string.
@@ -15803,9 +17625,11 @@ export namespace MyNS {
 		 * @param {boolean} isPlayed Filter by items that are played, or not.
 		 * @param {boolean} enableImages Optional. include image information in output.
 		 * @param {number} imageTypeLimit Optional. the max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {boolean} enableUserData Optional. include user data.
 		 * @param {number} limit Return item limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} groupItems Whether or not to group items into a parent container.
 		 * @return {Array<BaseItemDto>} Latest media returned.
 		 */
@@ -15818,13 +17642,16 @@ export namespace MyNS {
 		 * Get Users/{userId}/Items/Resume
 		 * @param {string} userId The user id.
 		 * @param {number} startIndex The start index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The item limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} searchTerm The search term.
 		 * @param {string} parentId Specify this to localize the search to a specific item or folder. Omit to use the root.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output. This allows multiple, comma delimited. Options: Budget, Chapters, DateCreated, Genres, HomePageUrl, IndexOptions, MediaStreams, Overview, ParentId, Path, People, ProviderIds, PrimaryImageAspectRatio, Revenue, SortName, Studios, Taglines.
 		 * @param {Array<string>} mediaTypes Optional. Filter by MediaType. Allows multiple, comma delimited.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {Array<string>} excludeItemTypes Optional. If specified, results will be filtered based on item type. This allows multiple, comma delimited.
 		 * @param {Array<string>} includeItemTypes Optional. If specified, results will be filtered based on the item type. This allows multiple, comma delimited.
@@ -15954,12 +17781,13 @@ export namespace MyNS {
 		 * @param {string} itemId Item id.
 		 * @param {string} mediaSourceId The id of the MediaSource.
 		 * @param {string} nextMediaType The next media type that will play.
-		 * @param {number} positionTicks Optional. The position, in ticks, where playback stopped. 1 tick = 10000 ms.
+		 * @param {string} positionTicks Optional. The position, in ticks, where playback stopped. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {string} playSessionId The play session id.
 		 * @return {void} 
 		 */
-		OnPlaybackStopped(userId: string, itemId: string, mediaSourceId: string | null | undefined, nextMediaType: string | null | undefined, positionTicks: number | null | undefined, liveStreamId: string | null | undefined, playSessionId: string | null | undefined): Observable<HttpResponse<string>> {
+		OnPlaybackStopped(userId: string, itemId: string, mediaSourceId: string | null | undefined, nextMediaType: string | null | undefined, positionTicks: string | null | undefined, liveStreamId: string | null | undefined, playSessionId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'Users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/PlayingItems/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&nextMediaType=' + (nextMediaType == null ? '' : encodeURIComponent(nextMediaType)) + '&positionTicks=' + positionTicks + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -15970,7 +17798,9 @@ export namespace MyNS {
 		 * @param {string} itemId Item id.
 		 * @param {string} mediaSourceId The id of the MediaSource.
 		 * @param {number} audioStreamIndex The audio stream index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex The subtitle stream index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {PlayerStateInfoPlayMethod} playMethod The play method.
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {string} playSessionId The play session id.
@@ -15987,10 +17817,14 @@ export namespace MyNS {
 		 * @param {string} userId User id.
 		 * @param {string} itemId Item id.
 		 * @param {string} mediaSourceId The id of the MediaSource.
-		 * @param {number} positionTicks Optional. The current position, in ticks. 1 tick = 10000 ms.
+		 * @param {string} positionTicks Optional. The current position, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} audioStreamIndex The audio stream index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex The subtitle stream index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} volumeLevel Scale of 0-100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {PlayerStateInfoPlayMethod} playMethod The play method.
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {string} playSessionId The play session id.
@@ -15999,7 +17833,7 @@ export namespace MyNS {
 		 * @param {boolean} isMuted Indicates if the player is muted.
 		 * @return {void} 
 		 */
-		OnPlaybackProgress(userId: string, itemId: string, mediaSourceId: string | null | undefined, positionTicks: number | null | undefined, audioStreamIndex: number | null | undefined, subtitleStreamIndex: number | null | undefined, volumeLevel: number | null | undefined, playMethod: PlayerStateInfoPlayMethod | null | undefined, liveStreamId: string | null | undefined, playSessionId: string | null | undefined, repeatMode: PlayerStateInfoRepeatMode | null | undefined, isPaused: boolean | null | undefined, isMuted: boolean | null | undefined): Observable<HttpResponse<string>> {
+		OnPlaybackProgress(userId: string, itemId: string, mediaSourceId: string | null | undefined, positionTicks: string | null | undefined, audioStreamIndex: number | null | undefined, subtitleStreamIndex: number | null | undefined, volumeLevel: number | null | undefined, playMethod: PlayerStateInfoPlayMethod | null | undefined, liveStreamId: string | null | undefined, playSessionId: string | null | undefined, repeatMode: PlayerStateInfoRepeatMode | null | undefined, isPaused: boolean | null | undefined, isMuted: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'Users/' + (userId == null ? '' : encodeURIComponent(userId)) + '/PlayingItems/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/Progress&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&positionTicks=' + positionTicks + '&audioStreamIndex=' + audioStreamIndex + '&subtitleStreamIndex=' + subtitleStreamIndex + '&volumeLevel=' + volumeLevel + '&playMethod=' + playMethod + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&repeatMode=' + repeatMode + '&isPaused=' + isPaused + '&isMuted=' + isMuted, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -16021,7 +17855,9 @@ export namespace MyNS {
 		 * @param {Array<string>} mediaType The media types.
 		 * @param {Array<string>} type The type.
 		 * @param {number} startIndex Optional. The start index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} enableTotalRecordCount Whether to enable the total record count.
 		 * @return {BaseItemDtoQueryResult} Suggestions returned.
 		 */
@@ -16100,6 +17936,7 @@ export namespace MyNS {
 		 * Delete Videos/{itemId}/Subtitles/{index}
 		 * @param {string} itemId The item id.
 		 * @param {number} index The index of the subtitle file.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeleteSubtitle(itemId: string, index: number): Observable<HttpResponse<string>> {
@@ -16136,6 +17973,7 @@ export namespace MyNS {
 		 * @param {string} itemId The item id.
 		 * @param {string} playlistId The playlist id.
 		 * @param {number} segmentId The segment id.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} container The video container. Possible values are: ts, webm, asf, wmv, ogv, mp4, m4v, mkv, mpeg, mpg, avi, 3gp, wmv, wtv, m2ts, mov, iso, flv.
 		 * @param {boolean} _static Optional. If true, the original file will be streamed statically without any encoding. Use either no url extension or the original file extension. true/false.
 		 * @param {string} params The streaming parameters.
@@ -16144,7 +17982,9 @@ export namespace MyNS {
 		 * @param {string} playSessionId The play session id.
 		 * @param {string} segmentContainer The segment container.
 		 * @param {number} segmentLength The segment lenght.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minSegments The minimum number of segments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media version id, if playing an alternate version.
 		 * @param {string} deviceId The device id of the client requesting. Used to stop encoding processes when needed.
 		 * @param {string} audioCodec Optional. Specify a audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url's extension. Options: aac, mp3, vorbis, wma.
@@ -16153,40 +17993,58 @@ export namespace MyNS {
 		 * @param {boolean} allowAudioStreamCopy Whether or not to allow copying of the audio stream url.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {number} audioSampleRate Optional. Specify a specific audio sample rate, e.g. 44100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioChannels Optional. Specify a specific number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
 		 * @param {string} level Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
 		 * @param {number} framerate Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {number} maxFramerate Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {boolean} copyTimestamps Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} width Optional. The fixed horizontal resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional. The fixed vertical resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoBitRate Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MediaStreamDeliveryMethod} subtitleMethod Optional. Specify the subtitle delivery method.
 		 * @param {number} maxRefFrames Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxVideoBitDepth Optional. The maximum video bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} requireAvc Optional. Whether to require avc.
 		 * @param {boolean} deInterlace Optional. Whether to deinterlace the video.
 		 * @param {boolean} requireNonAnamorphic Optional. Whether to require a non anamorphic stream.
 		 * @param {number} transcodingMaxAudioChannels Optional. The maximum number of audio channels to transcode.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cpuCoreLimit Optional. The limit of how many cpu cores to use.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {boolean} enableMpegtsM2TsMode Optional. Whether to enable the MpegtsM2Ts mode.
 		 * @param {string} videoCodec Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h265, h264, mpeg4, theora, vpx, wmv.
 		 * @param {string} subtitleCodec Optional. Specify a subtitle codec to encode to.
 		 * @param {string} transcodeReasons Optional. The transcoding reason.
 		 * @param {number} audioStreamIndex Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoStreamIndex Optional. The index of the video stream to use. If omitted the first video stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TranscodingProfileContext} context Optional. The MediaBrowser.Model.Dlna.EncodingContext.
 		 * @param {{[id: string]: string }} streamOptions Optional. The streaming options.
 		 * @return {void} Video stream returned.
 		 */
-		GetHlsVideoSegment(itemId: string, playlistId: string, segmentId: number, container: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: number | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
+		GetHlsVideoSegment(itemId: string, playlistId: string, segmentId: number, container: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: string | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Videos/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/hls1/' + (playlistId == null ? '' : encodeURIComponent(playlistId)) + '/' + segmentId + '.' + (container == null ? '' : encodeURIComponent(container)) + '&_static=' + _static + '&params=' + (params == null ? '' : encodeURIComponent(params)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&deviceProfileId=' + (deviceProfileId == null ? '' : encodeURIComponent(deviceProfileId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&segmentContainer=' + (segmentContainer == null ? '' : encodeURIComponent(segmentContainer)) + '&segmentLength=' + segmentLength + '&minSegments=' + minSegments + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&enableAutoStreamCopy=' + enableAutoStreamCopy + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&audioSampleRate=' + audioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&audioBitRate=' + audioBitRate + '&audioChannels=' + audioChannels + '&maxAudioChannels=' + maxAudioChannels + '&profile=' + (profile == null ? '' : encodeURIComponent(profile)) + '&level=' + (level == null ? '' : encodeURIComponent(level)) + '&framerate=' + framerate + '&maxFramerate=' + maxFramerate + '&copyTimestamps=' + copyTimestamps + '&startTimeTicks=' + startTimeTicks + '&width=' + width + '&height=' + height + '&videoBitRate=' + videoBitRate + '&subtitleStreamIndex=' + subtitleStreamIndex + '&subtitleMethod=' + subtitleMethod + '&maxRefFrames=' + maxRefFrames + '&maxVideoBitDepth=' + maxVideoBitDepth + '&requireAvc=' + requireAvc + '&deInterlace=' + deInterlace + '&requireNonAnamorphic=' + requireNonAnamorphic + '&transcodingMaxAudioChannels=' + transcodingMaxAudioChannels + '&cpuCoreLimit=' + cpuCoreLimit + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&enableMpegtsM2TsMode=' + enableMpegtsM2TsMode + '&videoCodec=' + (videoCodec == null ? '' : encodeURIComponent(videoCodec)) + '&subtitleCodec=' + (subtitleCodec == null ? '' : encodeURIComponent(subtitleCodec)) + '&transcodeReasons=' + (transcodeReasons == null ? '' : encodeURIComponent(transcodeReasons)) + '&audioStreamIndex=' + audioStreamIndex + '&videoStreamIndex=' + videoStreamIndex + '&context=' + context + '&streamOptions=' + streamOptions, { observe: 'response', responseType: 'text' });
 		}
 
@@ -16202,7 +18060,9 @@ export namespace MyNS {
 		 * @param {string} playSessionId The play session id.
 		 * @param {string} segmentContainer The segment container.
 		 * @param {number} segmentLength The segment lenght.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minSegments The minimum number of segments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media version id, if playing an alternate version.
 		 * @param {string} deviceId The device id of the client requesting. Used to stop encoding processes when needed.
 		 * @param {string} audioCodec Optional. Specify a audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url's extension. Options: aac, mp3, vorbis, wma.
@@ -16211,43 +18071,63 @@ export namespace MyNS {
 		 * @param {boolean} allowAudioStreamCopy Whether or not to allow copying of the audio stream url.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {number} audioSampleRate Optional. Specify a specific audio sample rate, e.g. 44100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioChannels Optional. Specify a specific number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
 		 * @param {string} level Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
 		 * @param {number} framerate Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {number} maxFramerate Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {boolean} copyTimestamps Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} width Optional. The fixed horizontal resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional. The fixed vertical resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoBitRate Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MediaStreamDeliveryMethod} subtitleMethod Optional. Specify the subtitle delivery method.
 		 * @param {number} maxRefFrames Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxVideoBitDepth Optional. The maximum video bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} requireAvc Optional. Whether to require avc.
 		 * @param {boolean} deInterlace Optional. Whether to deinterlace the video.
 		 * @param {boolean} requireNonAnamorphic Optional. Whether to require a non anamorphic stream.
 		 * @param {number} transcodingMaxAudioChannels Optional. The maximum number of audio channels to transcode.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cpuCoreLimit Optional. The limit of how many cpu cores to use.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {boolean} enableMpegtsM2TsMode Optional. Whether to enable the MpegtsM2Ts mode.
 		 * @param {string} videoCodec Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h265, h264, mpeg4, theora, vpx, wmv.
 		 * @param {string} subtitleCodec Optional. Specify a subtitle codec to encode to.
 		 * @param {string} transcodeReasons Optional. The transcoding reason.
 		 * @param {number} audioStreamIndex Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoStreamIndex Optional. The index of the video stream to use. If omitted the first video stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TranscodingProfileContext} context Optional. The MediaBrowser.Model.Dlna.EncodingContext.
 		 * @param {{[id: string]: string }} streamOptions Optional. The streaming options.
 		 * @param {number} maxWidth Optional. The max width.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxHeight Optional. The max height.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} enableSubtitlesInManifest Optional. Whether to enable subtitles in the manifest.
 		 * @return {void} Hls live stream retrieved.
 		 */
-		GetLiveHlsStream(itemId: string, container: string | null | undefined, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: number | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined, maxWidth: number | null | undefined, maxHeight: number | null | undefined, enableSubtitlesInManifest: boolean | null | undefined): Observable<HttpResponse<string>> {
+		GetLiveHlsStream(itemId: string, container: string | null | undefined, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: string | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined, maxWidth: number | null | undefined, maxHeight: number | null | undefined, enableSubtitlesInManifest: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Videos/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/live.m3u8&container=' + (container == null ? '' : encodeURIComponent(container)) + '&_static=' + _static + '&params=' + (params == null ? '' : encodeURIComponent(params)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&deviceProfileId=' + (deviceProfileId == null ? '' : encodeURIComponent(deviceProfileId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&segmentContainer=' + (segmentContainer == null ? '' : encodeURIComponent(segmentContainer)) + '&segmentLength=' + segmentLength + '&minSegments=' + minSegments + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&enableAutoStreamCopy=' + enableAutoStreamCopy + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&audioSampleRate=' + audioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&audioBitRate=' + audioBitRate + '&audioChannels=' + audioChannels + '&maxAudioChannels=' + maxAudioChannels + '&profile=' + (profile == null ? '' : encodeURIComponent(profile)) + '&level=' + (level == null ? '' : encodeURIComponent(level)) + '&framerate=' + framerate + '&maxFramerate=' + maxFramerate + '&copyTimestamps=' + copyTimestamps + '&startTimeTicks=' + startTimeTicks + '&width=' + width + '&height=' + height + '&videoBitRate=' + videoBitRate + '&subtitleStreamIndex=' + subtitleStreamIndex + '&subtitleMethod=' + subtitleMethod + '&maxRefFrames=' + maxRefFrames + '&maxVideoBitDepth=' + maxVideoBitDepth + '&requireAvc=' + requireAvc + '&deInterlace=' + deInterlace + '&requireNonAnamorphic=' + requireNonAnamorphic + '&transcodingMaxAudioChannels=' + transcodingMaxAudioChannels + '&cpuCoreLimit=' + cpuCoreLimit + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&enableMpegtsM2TsMode=' + enableMpegtsM2TsMode + '&videoCodec=' + (videoCodec == null ? '' : encodeURIComponent(videoCodec)) + '&subtitleCodec=' + (subtitleCodec == null ? '' : encodeURIComponent(subtitleCodec)) + '&transcodeReasons=' + (transcodeReasons == null ? '' : encodeURIComponent(transcodeReasons)) + '&audioStreamIndex=' + audioStreamIndex + '&videoStreamIndex=' + videoStreamIndex + '&context=' + context + '&streamOptions=' + streamOptions + '&maxWidth=' + maxWidth + '&maxHeight=' + maxHeight + '&enableSubtitlesInManifest=' + enableSubtitlesInManifest, { observe: 'response', responseType: 'text' });
 		}
 
@@ -16262,7 +18142,9 @@ export namespace MyNS {
 		 * @param {string} playSessionId The play session id.
 		 * @param {string} segmentContainer The segment container.
 		 * @param {number} segmentLength The segment length.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minSegments The minimum number of segments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media version id, if playing an alternate version.
 		 * @param {string} deviceId The device id of the client requesting. Used to stop encoding processes when needed.
 		 * @param {string} audioCodec Optional. Specify a audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url's extension. Options: aac, mp3, vorbis, wma.
@@ -16271,40 +18153,58 @@ export namespace MyNS {
 		 * @param {boolean} allowAudioStreamCopy Whether or not to allow copying of the audio stream url.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {number} audioSampleRate Optional. Specify a specific audio sample rate, e.g. 44100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioChannels Optional. Specify a specific number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
 		 * @param {string} level Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
 		 * @param {number} framerate Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {number} maxFramerate Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {boolean} copyTimestamps Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} width Optional. The fixed horizontal resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional. The fixed vertical resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoBitRate Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MediaStreamDeliveryMethod} subtitleMethod Optional. Specify the subtitle delivery method.
 		 * @param {number} maxRefFrames Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxVideoBitDepth Optional. The maximum video bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} requireAvc Optional. Whether to require avc.
 		 * @param {boolean} deInterlace Optional. Whether to deinterlace the video.
 		 * @param {boolean} requireNonAnamorphic Optional. Whether to require a non anamorphic stream.
 		 * @param {number} transcodingMaxAudioChannels Optional. The maximum number of audio channels to transcode.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cpuCoreLimit Optional. The limit of how many cpu cores to use.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {boolean} enableMpegtsM2TsMode Optional. Whether to enable the MpegtsM2Ts mode.
 		 * @param {string} videoCodec Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h265, h264, mpeg4, theora, vpx, wmv.
 		 * @param {string} subtitleCodec Optional. Specify a subtitle codec to encode to.
 		 * @param {string} transcodeReasons Optional. The transcoding reason.
 		 * @param {number} audioStreamIndex Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoStreamIndex Optional. The index of the video stream to use. If omitted the first video stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TranscodingProfileContext} context Optional. The MediaBrowser.Model.Dlna.EncodingContext.
 		 * @param {{[id: string]: string }} streamOptions Optional. The streaming options.
 		 * @return {void} Video stream returned.
 		 */
-		GetVariantHlsVideoPlaylist(itemId: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: number | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
+		GetVariantHlsVideoPlaylist(itemId: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: string | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Videos/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/main.m3u8&_static=' + _static + '&params=' + (params == null ? '' : encodeURIComponent(params)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&deviceProfileId=' + (deviceProfileId == null ? '' : encodeURIComponent(deviceProfileId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&segmentContainer=' + (segmentContainer == null ? '' : encodeURIComponent(segmentContainer)) + '&segmentLength=' + segmentLength + '&minSegments=' + minSegments + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&enableAutoStreamCopy=' + enableAutoStreamCopy + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&audioSampleRate=' + audioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&audioBitRate=' + audioBitRate + '&audioChannels=' + audioChannels + '&maxAudioChannels=' + maxAudioChannels + '&profile=' + (profile == null ? '' : encodeURIComponent(profile)) + '&level=' + (level == null ? '' : encodeURIComponent(level)) + '&framerate=' + framerate + '&maxFramerate=' + maxFramerate + '&copyTimestamps=' + copyTimestamps + '&startTimeTicks=' + startTimeTicks + '&width=' + width + '&height=' + height + '&videoBitRate=' + videoBitRate + '&subtitleStreamIndex=' + subtitleStreamIndex + '&subtitleMethod=' + subtitleMethod + '&maxRefFrames=' + maxRefFrames + '&maxVideoBitDepth=' + maxVideoBitDepth + '&requireAvc=' + requireAvc + '&deInterlace=' + deInterlace + '&requireNonAnamorphic=' + requireNonAnamorphic + '&transcodingMaxAudioChannels=' + transcodingMaxAudioChannels + '&cpuCoreLimit=' + cpuCoreLimit + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&enableMpegtsM2TsMode=' + enableMpegtsM2TsMode + '&videoCodec=' + (videoCodec == null ? '' : encodeURIComponent(videoCodec)) + '&subtitleCodec=' + (subtitleCodec == null ? '' : encodeURIComponent(subtitleCodec)) + '&transcodeReasons=' + (transcodeReasons == null ? '' : encodeURIComponent(transcodeReasons)) + '&audioStreamIndex=' + audioStreamIndex + '&videoStreamIndex=' + videoStreamIndex + '&context=' + context + '&streamOptions=' + streamOptions, { observe: 'response', responseType: 'text' });
 		}
 
@@ -16319,7 +18219,9 @@ export namespace MyNS {
 		 * @param {string} playSessionId The play session id.
 		 * @param {string} segmentContainer The segment container.
 		 * @param {number} segmentLength The segment length.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minSegments The minimum number of segments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media version id, if playing an alternate version.
 		 * @param {string} deviceId The device id of the client requesting. Used to stop encoding processes when needed.
 		 * @param {string} audioCodec Optional. Specify a audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url's extension. Options: aac, mp3, vorbis, wma.
@@ -16328,41 +18230,59 @@ export namespace MyNS {
 		 * @param {boolean} allowAudioStreamCopy Whether or not to allow copying of the audio stream url.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {number} audioSampleRate Optional. Specify a specific audio sample rate, e.g. 44100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioChannels Optional. Specify a specific number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
 		 * @param {string} level Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
 		 * @param {number} framerate Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {number} maxFramerate Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {boolean} copyTimestamps Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} width Optional. The fixed horizontal resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional. The fixed vertical resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoBitRate Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MediaStreamDeliveryMethod} subtitleMethod Optional. Specify the subtitle delivery method.
 		 * @param {number} maxRefFrames Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxVideoBitDepth Optional. The maximum video bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} requireAvc Optional. Whether to require avc.
 		 * @param {boolean} deInterlace Optional. Whether to deinterlace the video.
 		 * @param {boolean} requireNonAnamorphic Optional. Whether to require a non anamorphic stream.
 		 * @param {number} transcodingMaxAudioChannels Optional. The maximum number of audio channels to transcode.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cpuCoreLimit Optional. The limit of how many cpu cores to use.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {boolean} enableMpegtsM2TsMode Optional. Whether to enable the MpegtsM2Ts mode.
 		 * @param {string} videoCodec Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h265, h264, mpeg4, theora, vpx, wmv.
 		 * @param {string} subtitleCodec Optional. Specify a subtitle codec to encode to.
 		 * @param {string} transcodeReasons Optional. The transcoding reason.
 		 * @param {number} audioStreamIndex Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoStreamIndex Optional. The index of the video stream to use. If omitted the first video stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TranscodingProfileContext} context Optional. The MediaBrowser.Model.Dlna.EncodingContext.
 		 * @param {{[id: string]: string }} streamOptions Optional. The streaming options.
 		 * @param {boolean} enableAdaptiveBitrateStreaming Enable adaptive bitrate streaming.
 		 * @return {void} Video stream returned.
 		 */
-		GetMasterHlsVideoPlaylist(itemId: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: number | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined, enableAdaptiveBitrateStreaming: boolean | null | undefined): Observable<HttpResponse<string>> {
+		GetMasterHlsVideoPlaylist(itemId: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: string | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined, enableAdaptiveBitrateStreaming: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Videos/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/master.m3u8&_static=' + _static + '&params=' + (params == null ? '' : encodeURIComponent(params)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&deviceProfileId=' + (deviceProfileId == null ? '' : encodeURIComponent(deviceProfileId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&segmentContainer=' + (segmentContainer == null ? '' : encodeURIComponent(segmentContainer)) + '&segmentLength=' + segmentLength + '&minSegments=' + minSegments + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&enableAutoStreamCopy=' + enableAutoStreamCopy + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&audioSampleRate=' + audioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&audioBitRate=' + audioBitRate + '&audioChannels=' + audioChannels + '&maxAudioChannels=' + maxAudioChannels + '&profile=' + (profile == null ? '' : encodeURIComponent(profile)) + '&level=' + (level == null ? '' : encodeURIComponent(level)) + '&framerate=' + framerate + '&maxFramerate=' + maxFramerate + '&copyTimestamps=' + copyTimestamps + '&startTimeTicks=' + startTimeTicks + '&width=' + width + '&height=' + height + '&videoBitRate=' + videoBitRate + '&subtitleStreamIndex=' + subtitleStreamIndex + '&subtitleMethod=' + subtitleMethod + '&maxRefFrames=' + maxRefFrames + '&maxVideoBitDepth=' + maxVideoBitDepth + '&requireAvc=' + requireAvc + '&deInterlace=' + deInterlace + '&requireNonAnamorphic=' + requireNonAnamorphic + '&transcodingMaxAudioChannels=' + transcodingMaxAudioChannels + '&cpuCoreLimit=' + cpuCoreLimit + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&enableMpegtsM2TsMode=' + enableMpegtsM2TsMode + '&videoCodec=' + (videoCodec == null ? '' : encodeURIComponent(videoCodec)) + '&subtitleCodec=' + (subtitleCodec == null ? '' : encodeURIComponent(subtitleCodec)) + '&transcodeReasons=' + (transcodeReasons == null ? '' : encodeURIComponent(transcodeReasons)) + '&audioStreamIndex=' + audioStreamIndex + '&videoStreamIndex=' + videoStreamIndex + '&context=' + context + '&streamOptions=' + streamOptions + '&enableAdaptiveBitrateStreaming=' + enableAdaptiveBitrateStreaming, { observe: 'response', responseType: 'text' });
 		}
 
@@ -16378,7 +18298,9 @@ export namespace MyNS {
 		 * @param {string} playSessionId The play session id.
 		 * @param {string} segmentContainer The segment container.
 		 * @param {number} segmentLength The segment length.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minSegments The minimum number of segments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media version id, if playing an alternate version.
 		 * @param {string} deviceId The device id of the client requesting. Used to stop encoding processes when needed.
 		 * @param {string} audioCodec Optional. Specify a audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url's extension. Options: aac, mp3, vorbis, wma.
@@ -16387,40 +18309,58 @@ export namespace MyNS {
 		 * @param {boolean} allowAudioStreamCopy Whether or not to allow copying of the audio stream url.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {number} audioSampleRate Optional. Specify a specific audio sample rate, e.g. 44100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioChannels Optional. Specify a specific number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
 		 * @param {string} level Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
 		 * @param {number} framerate Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {number} maxFramerate Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {boolean} copyTimestamps Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} width Optional. The fixed horizontal resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional. The fixed vertical resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoBitRate Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MediaStreamDeliveryMethod} subtitleMethod Optional. Specify the subtitle delivery method.
 		 * @param {number} maxRefFrames Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxVideoBitDepth Optional. The maximum video bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} requireAvc Optional. Whether to require avc.
 		 * @param {boolean} deInterlace Optional. Whether to deinterlace the video.
 		 * @param {boolean} requireNonAnamorphic Optional. Whether to require a non anamorphic stream.
 		 * @param {number} transcodingMaxAudioChannels Optional. The maximum number of audio channels to transcode.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cpuCoreLimit Optional. The limit of how many cpu cores to use.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {boolean} enableMpegtsM2TsMode Optional. Whether to enable the MpegtsM2Ts mode.
 		 * @param {string} videoCodec Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h265, h264, mpeg4, theora, vpx, wmv.
 		 * @param {string} subtitleCodec Optional. Specify a subtitle codec to encode to.
 		 * @param {string} transcodeReasons Optional. The transcoding reason.
 		 * @param {number} audioStreamIndex Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoStreamIndex Optional. The index of the video stream to use. If omitted the first video stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TranscodingProfileContext} context Optional. The MediaBrowser.Model.Dlna.EncodingContext.
 		 * @param {{[id: string]: string }} streamOptions Optional. The streaming options.
 		 * @return {void} Video stream returned.
 		 */
-		GetVideoStream(itemId: string, container: string | null | undefined, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: number | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
+		GetVideoStream(itemId: string, container: string | null | undefined, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: string | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Videos/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/stream&container=' + (container == null ? '' : encodeURIComponent(container)) + '&_static=' + _static + '&params=' + (params == null ? '' : encodeURIComponent(params)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&deviceProfileId=' + (deviceProfileId == null ? '' : encodeURIComponent(deviceProfileId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&segmentContainer=' + (segmentContainer == null ? '' : encodeURIComponent(segmentContainer)) + '&segmentLength=' + segmentLength + '&minSegments=' + minSegments + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&enableAutoStreamCopy=' + enableAutoStreamCopy + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&audioSampleRate=' + audioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&audioBitRate=' + audioBitRate + '&audioChannels=' + audioChannels + '&maxAudioChannels=' + maxAudioChannels + '&profile=' + (profile == null ? '' : encodeURIComponent(profile)) + '&level=' + (level == null ? '' : encodeURIComponent(level)) + '&framerate=' + framerate + '&maxFramerate=' + maxFramerate + '&copyTimestamps=' + copyTimestamps + '&startTimeTicks=' + startTimeTicks + '&width=' + width + '&height=' + height + '&videoBitRate=' + videoBitRate + '&subtitleStreamIndex=' + subtitleStreamIndex + '&subtitleMethod=' + subtitleMethod + '&maxRefFrames=' + maxRefFrames + '&maxVideoBitDepth=' + maxVideoBitDepth + '&requireAvc=' + requireAvc + '&deInterlace=' + deInterlace + '&requireNonAnamorphic=' + requireNonAnamorphic + '&transcodingMaxAudioChannels=' + transcodingMaxAudioChannels + '&cpuCoreLimit=' + cpuCoreLimit + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&enableMpegtsM2TsMode=' + enableMpegtsM2TsMode + '&videoCodec=' + (videoCodec == null ? '' : encodeURIComponent(videoCodec)) + '&subtitleCodec=' + (subtitleCodec == null ? '' : encodeURIComponent(subtitleCodec)) + '&transcodeReasons=' + (transcodeReasons == null ? '' : encodeURIComponent(transcodeReasons)) + '&audioStreamIndex=' + audioStreamIndex + '&videoStreamIndex=' + videoStreamIndex + '&context=' + context + '&streamOptions=' + streamOptions, { observe: 'response', responseType: 'text' });
 		}
 
@@ -16430,14 +18370,17 @@ export namespace MyNS {
 		 * @param {string} itemId The item id.
 		 * @param {string} mediaSourceId The media source id.
 		 * @param {number} index The subtitle stream index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} format The format of the returned subtitle.
-		 * @param {number} endPositionTicks Optional. The end position of the subtitle in ticks.
+		 * @param {string} endPositionTicks Optional. The end position of the subtitle in ticks.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} copyTimestamps Optional. Whether to copy the timestamps.
 		 * @param {boolean} addVttTimeMap Optional. Whether to add a VTT time map.
-		 * @param {number} startPositionTicks Optional. The start position of the subtitle in ticks.
+		 * @param {string} startPositionTicks Optional. The start position of the subtitle in ticks.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} File returned.
 		 */
-		GetSubtitle(itemId: string, mediaSourceId: string, index: number, format: string, endPositionTicks: number | null | undefined, copyTimestamps: boolean | null | undefined, addVttTimeMap: boolean | null | undefined, startPositionTicks: number | null | undefined): Observable<HttpResponse<string>> {
+		GetSubtitle(itemId: string, mediaSourceId: string, index: number, format: string, endPositionTicks: string | null | undefined, copyTimestamps: boolean | null | undefined, addVttTimeMap: boolean | null | undefined, startPositionTicks: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Videos/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '/Subtitles/' + index + '/Stream.' + (format == null ? '' : encodeURIComponent(format)) + '&endPositionTicks=' + endPositionTicks + '&copyTimestamps=' + copyTimestamps + '&addVttTimeMap=' + addVttTimeMap + '&startPositionTicks=' + startPositionTicks, { observe: 'response', responseType: 'text' });
 		}
 
@@ -16446,8 +18389,10 @@ export namespace MyNS {
 		 * Get Videos/{itemId}/{mediaSourceId}/Subtitles/{index}/subtitles.m3u8
 		 * @param {string} itemId The item id.
 		 * @param {number} index The subtitle stream index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media source id.
 		 * @param {number} segmentLength The subtitle segment length.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Subtitle playlist retrieved.
 		 */
 		GetSubtitlePlaylist(itemId: string, index: number, mediaSourceId: string, segmentLength: number): Observable<HttpResponse<string>> {
@@ -16460,14 +18405,17 @@ export namespace MyNS {
 		 * @param {string} itemId The item id.
 		 * @param {string} mediaSourceId The media source id.
 		 * @param {number} index The subtitle stream index.
-		 * @param {number} startPositionTicks Optional. The start position of the subtitle in ticks.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} startPositionTicks Optional. The start position of the subtitle in ticks.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} format The format of the returned subtitle.
-		 * @param {number} endPositionTicks Optional. The end position of the subtitle in ticks.
+		 * @param {string} endPositionTicks Optional. The end position of the subtitle in ticks.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {boolean} copyTimestamps Optional. Whether to copy the timestamps.
 		 * @param {boolean} addVttTimeMap Optional. Whether to add a VTT time map.
 		 * @return {void} File returned.
 		 */
-		GetSubtitleWithTicks(itemId: string, mediaSourceId: string, index: number, startPositionTicks: number, format: string, endPositionTicks: number | null | undefined, copyTimestamps: boolean | null | undefined, addVttTimeMap: boolean | null | undefined): Observable<HttpResponse<string>> {
+		GetSubtitleWithTicks(itemId: string, mediaSourceId: string, index: number, startPositionTicks: string, format: string, endPositionTicks: string | null | undefined, copyTimestamps: boolean | null | undefined, addVttTimeMap: boolean | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Videos/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '/Subtitles/' + index + '/' + startPositionTicks + '/Stream.' + (format == null ? '' : encodeURIComponent(format)) + '&endPositionTicks=' + endPositionTicks + '&copyTimestamps=' + copyTimestamps + '&addVttTimeMap=' + addVttTimeMap, { observe: 'response', responseType: 'text' });
 		}
 
@@ -16483,7 +18431,9 @@ export namespace MyNS {
 		 * @param {string} playSessionId The play session id.
 		 * @param {string} segmentContainer The segment container.
 		 * @param {number} segmentLength The segment lenght.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minSegments The minimum number of segments.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mediaSourceId The media version id, if playing an alternate version.
 		 * @param {string} deviceId The device id of the client requesting. Used to stop encoding processes when needed.
 		 * @param {string} audioCodec Optional. Specify a audio codec to encode to, e.g. mp3. If omitted the server will auto-select using the url's extension. Options: aac, mp3, vorbis, wma.
@@ -16492,40 +18442,58 @@ export namespace MyNS {
 		 * @param {boolean} allowAudioStreamCopy Whether or not to allow copying of the audio stream url.
 		 * @param {boolean} breakOnNonKeyFrames Optional. Whether to break on non key frames.
 		 * @param {number} audioSampleRate Optional. Specify a specific audio sample rate, e.g. 44100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioBitDepth Optional. The maximum audio bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioBitRate Optional. Specify an audio bitrate to encode to, e.g. 128000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} audioChannels Optional. Specify a specific number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxAudioChannels Optional. Specify a maximum number of audio channels to encode to, e.g. 2.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile Optional. Specify a specific an encoder profile (varies by encoder), e.g. main, baseline, high.
 		 * @param {string} level Optional. Specify a level for the encoder profile (varies by encoder), e.g. 3, 3.1.
 		 * @param {number} framerate Optional. A specific video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {number} maxFramerate Optional. A specific maximum video framerate to encode to, e.g. 23.976. Generally this should be omitted unless the device has specific requirements.
+		 *     Type: float
 		 * @param {boolean} copyTimestamps Whether or not to copy timestamps when transcoding with an offset. Defaults to false.
-		 * @param {number} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 * @param {string} startTimeTicks Optional. Specify a starting offset, in ticks. 1 tick = 10000 ms.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} width Optional. The fixed horizontal resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height Optional. The fixed vertical resolution of the encoded video.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoBitRate Optional. Specify a video bitrate to encode to, e.g. 500000. If omitted this will be left to encoder defaults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subtitleStreamIndex Optional. The index of the subtitle stream to use. If omitted no subtitles will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {MediaStreamDeliveryMethod} subtitleMethod Optional. Specify the subtitle delivery method.
 		 * @param {number} maxRefFrames Optional.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxVideoBitDepth Optional. The maximum video bit depth.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} requireAvc Optional. Whether to require avc.
 		 * @param {boolean} deInterlace Optional. Whether to deinterlace the video.
 		 * @param {boolean} requireNonAnamorphic Optional. Whether to require a non anamporphic stream.
 		 * @param {number} transcodingMaxAudioChannels Optional. The maximum number of audio channels to transcode.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cpuCoreLimit Optional. The limit of how many cpu cores to use.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} liveStreamId The live stream id.
 		 * @param {boolean} enableMpegtsM2TsMode Optional. Whether to enable the MpegtsM2Ts mode.
 		 * @param {string} videoCodec Optional. Specify a video codec to encode to, e.g. h264. If omitted the server will auto-select using the url's extension. Options: h265, h264, mpeg4, theora, vpx, wmv.
 		 * @param {string} subtitleCodec Optional. Specify a subtitle codec to encode to.
 		 * @param {string} transcodeReasons Optional. The transcoding reason.
 		 * @param {number} audioStreamIndex Optional. The index of the audio stream to use. If omitted the first audio stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} videoStreamIndex Optional. The index of the video stream to use. If omitted the first video stream will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TranscodingProfileContext} context Optional. The MediaBrowser.Model.Dlna.EncodingContext.
 		 * @param {{[id: string]: string }} streamOptions Optional. The streaming options.
 		 * @return {void} Video stream returned.
 		 */
-		GetVideoStreamByContainer(itemId: string, container: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: number | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined, stream: string): Observable<HttpResponse<string>> {
+		GetVideoStreamByContainer(itemId: string, container: string, _static: boolean | null | undefined, params: string | null | undefined, tag: string | null | undefined, deviceProfileId: string | null | undefined, playSessionId: string | null | undefined, segmentContainer: string | null | undefined, segmentLength: number | null | undefined, minSegments: number | null | undefined, mediaSourceId: string | null | undefined, deviceId: string | null | undefined, audioCodec: string | null | undefined, enableAutoStreamCopy: boolean | null | undefined, allowVideoStreamCopy: boolean | null | undefined, allowAudioStreamCopy: boolean | null | undefined, breakOnNonKeyFrames: boolean | null | undefined, audioSampleRate: number | null | undefined, maxAudioBitDepth: number | null | undefined, audioBitRate: number | null | undefined, audioChannels: number | null | undefined, maxAudioChannels: number | null | undefined, profile: string | null | undefined, level: string | null | undefined, framerate: number | null | undefined, maxFramerate: number | null | undefined, copyTimestamps: boolean | null | undefined, startTimeTicks: string | null | undefined, width: number | null | undefined, height: number | null | undefined, videoBitRate: number | null | undefined, subtitleStreamIndex: number | null | undefined, subtitleMethod: MediaStreamDeliveryMethod | null | undefined, maxRefFrames: number | null | undefined, maxVideoBitDepth: number | null | undefined, requireAvc: boolean | null | undefined, deInterlace: boolean | null | undefined, requireNonAnamorphic: boolean | null | undefined, transcodingMaxAudioChannels: number | null | undefined, cpuCoreLimit: number | null | undefined, liveStreamId: string | null | undefined, enableMpegtsM2TsMode: boolean | null | undefined, videoCodec: string | null | undefined, subtitleCodec: string | null | undefined, transcodeReasons: string | null | undefined, audioStreamIndex: number | null | undefined, videoStreamIndex: number | null | undefined, context: TranscodingProfileContext | null | undefined, streamOptions: {[id: string]: string } | null | undefined, stream: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'Videos/' + (itemId == null ? '' : encodeURIComponent(itemId)) + '/' + (stream == null ? '' : encodeURIComponent(stream)) + '.' + (container == null ? '' : encodeURIComponent(container)) + '&_static=' + _static + '&params=' + (params == null ? '' : encodeURIComponent(params)) + '&tag=' + (tag == null ? '' : encodeURIComponent(tag)) + '&deviceProfileId=' + (deviceProfileId == null ? '' : encodeURIComponent(deviceProfileId)) + '&playSessionId=' + (playSessionId == null ? '' : encodeURIComponent(playSessionId)) + '&segmentContainer=' + (segmentContainer == null ? '' : encodeURIComponent(segmentContainer)) + '&segmentLength=' + segmentLength + '&minSegments=' + minSegments + '&mediaSourceId=' + (mediaSourceId == null ? '' : encodeURIComponent(mediaSourceId)) + '&deviceId=' + (deviceId == null ? '' : encodeURIComponent(deviceId)) + '&audioCodec=' + (audioCodec == null ? '' : encodeURIComponent(audioCodec)) + '&enableAutoStreamCopy=' + enableAutoStreamCopy + '&allowVideoStreamCopy=' + allowVideoStreamCopy + '&allowAudioStreamCopy=' + allowAudioStreamCopy + '&breakOnNonKeyFrames=' + breakOnNonKeyFrames + '&audioSampleRate=' + audioSampleRate + '&maxAudioBitDepth=' + maxAudioBitDepth + '&audioBitRate=' + audioBitRate + '&audioChannels=' + audioChannels + '&maxAudioChannels=' + maxAudioChannels + '&profile=' + (profile == null ? '' : encodeURIComponent(profile)) + '&level=' + (level == null ? '' : encodeURIComponent(level)) + '&framerate=' + framerate + '&maxFramerate=' + maxFramerate + '&copyTimestamps=' + copyTimestamps + '&startTimeTicks=' + startTimeTicks + '&width=' + width + '&height=' + height + '&videoBitRate=' + videoBitRate + '&subtitleStreamIndex=' + subtitleStreamIndex + '&subtitleMethod=' + subtitleMethod + '&maxRefFrames=' + maxRefFrames + '&maxVideoBitDepth=' + maxVideoBitDepth + '&requireAvc=' + requireAvc + '&deInterlace=' + deInterlace + '&requireNonAnamorphic=' + requireNonAnamorphic + '&transcodingMaxAudioChannels=' + transcodingMaxAudioChannels + '&cpuCoreLimit=' + cpuCoreLimit + '&liveStreamId=' + (liveStreamId == null ? '' : encodeURIComponent(liveStreamId)) + '&enableMpegtsM2TsMode=' + enableMpegtsM2TsMode + '&videoCodec=' + (videoCodec == null ? '' : encodeURIComponent(videoCodec)) + '&subtitleCodec=' + (subtitleCodec == null ? '' : encodeURIComponent(subtitleCodec)) + '&transcodeReasons=' + (transcodeReasons == null ? '' : encodeURIComponent(transcodeReasons)) + '&audioStreamIndex=' + audioStreamIndex + '&videoStreamIndex=' + videoStreamIndex + '&context=' + context + '&streamOptions=' + streamOptions, { observe: 'response', responseType: 'text' });
 		}
 
@@ -16535,6 +18503,7 @@ export namespace MyNS {
 		 * @param {string} videoId Video ID.
 		 * @param {string} mediaSourceId Media Source ID.
 		 * @param {number} index Attachment Index.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Attachment retrieved.
 		 */
 		GetAttachment(videoId: string, mediaSourceId: string, index: number): Observable<HttpResponse<string>> {
@@ -16545,7 +18514,9 @@ export namespace MyNS {
 		 * Get years.
 		 * Get Years
 		 * @param {number} startIndex Skips over a given number of items within the results. Use for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The maximum number of records to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sortOrder Sort Order - Ascending,Descending.
 		 * @param {string} parentId Specify this to localize the search to a specific item or folder. Omit to use the root.
 		 * @param {Array<ItemFields>} fields Optional. Specify additional fields of information to return in the output.
@@ -16555,6 +18526,7 @@ export namespace MyNS {
 		 * @param {string} sortBy Optional. Specify one or more sort orders, comma delimited. Options: Album, AlbumArtist, Artist, Budget, CommunityRating, CriticRating, DateCreated, DatePlayed, PlayCount, PremiereDate, ProductionYear, SortName, Random, Revenue, Runtime.
 		 * @param {boolean} enableUserData Optional. Include user data.
 		 * @param {number} imageTypeLimit Optional. The max number of images to return, per image type.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<ImageType>} enableImageTypes Optional. The image types to include in the output.
 		 * @param {string} userId User Id.
 		 * @param {boolean} recursive Search recursively.
@@ -16569,6 +18541,7 @@ export namespace MyNS {
 		 * Gets a year.
 		 * Get Years/{year}
 		 * @param {number} year The year.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userId Optional. Filter by user id, and attach user data.
 		 * @return {BaseItemDto} Year returned.
 		 */

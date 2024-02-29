@@ -626,8 +626,13 @@ namespace MyNS
 		/// Retrieve a list of all Flows.
 		/// ListFlow v2/Flows
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListFlowReturn> ListFlowAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -662,11 +667,19 @@ namespace MyNS
 		/// Retrieve a list of all Executions for the Flow.
 		/// ListExecution v2/Flows/{FlowSid}/Executions
 		/// </summary>
-		/// <param name="FlowSid">The SID of the Flow with the Execution resources to read.</param>
+		/// <param name="FlowSid">The SID of the Flow with the Execution resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="DateCreatedFrom">Only show Execution resources starting on or after this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time, given as `YYYY-MM-DDThh:mm:ss-hh:mm`.</param>
 		/// <param name="DateCreatedTo">Only show Execution resources starting before this [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) date-time, given as `YYYY-MM-DDThh:mm:ss-hh:mm`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListExecutionReturn> ListExecutionAsync(string FlowSid, System.DateTimeOffset DateCreatedFrom, System.DateTimeOffset DateCreatedTo, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -701,8 +714,14 @@ namespace MyNS
 		/// Retrieve the most recent context for an Execution.
 		/// FetchExecutionContext v2/Flows/{FlowSid}/Executions/{ExecutionSid}/Context
 		/// </summary>
-		/// <param name="FlowSid">The SID of the Flow with the Execution context to fetch.</param>
-		/// <param name="ExecutionSid">The SID of the Execution context to fetch.</param>
+		/// <param name="FlowSid">The SID of the Flow with the Execution context to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ExecutionSid">The SID of the Execution context to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Studiov2flowexecutionexecution_context> FetchExecutionContextAsync(string FlowSid, string ExecutionSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -736,10 +755,21 @@ namespace MyNS
 		/// Retrieve a list of all Steps for an Execution.
 		/// ListExecutionStep v2/Flows/{FlowSid}/Executions/{ExecutionSid}/Steps
 		/// </summary>
-		/// <param name="FlowSid">The SID of the Flow with the Steps to read.</param>
-		/// <param name="ExecutionSid">The SID of the Execution with the Steps to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="FlowSid">The SID of the Flow with the Steps to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ExecutionSid">The SID of the Execution with the Steps to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListExecutionStepReturn> ListExecutionStepAsync(string FlowSid, string ExecutionSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -774,9 +804,18 @@ namespace MyNS
 		/// Retrieve a Step.
 		/// FetchExecutionStep v2/Flows/{FlowSid}/Executions/{ExecutionSid}/Steps/{Sid}
 		/// </summary>
-		/// <param name="FlowSid">The SID of the Flow with the Step to fetch.</param>
-		/// <param name="ExecutionSid">The SID of the Execution resource with the Step to fetch.</param>
-		/// <param name="Sid">The SID of the ExecutionStep resource to fetch.</param>
+		/// <param name="FlowSid">The SID of the Flow with the Step to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ExecutionSid">The SID of the Execution resource with the Step to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the ExecutionStep resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Studiov2flowexecutionexecution_step> FetchExecutionStepAsync(string FlowSid, string ExecutionSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -810,9 +849,18 @@ namespace MyNS
 		/// Retrieve the context for an Execution Step.
 		/// FetchExecutionStepContext v2/Flows/{FlowSid}/Executions/{ExecutionSid}/Steps/{StepSid}/Context
 		/// </summary>
-		/// <param name="FlowSid">The SID of the Flow with the Step to fetch.</param>
-		/// <param name="ExecutionSid">The SID of the Execution resource with the Step to fetch.</param>
-		/// <param name="StepSid">The SID of the Step to fetch.</param>
+		/// <param name="FlowSid">The SID of the Flow with the Step to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ExecutionSid">The SID of the Execution resource with the Step to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="StepSid">The SID of the Step to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Studiov2flowexecutionexecution_stepexecution_step_context> FetchExecutionStepContextAsync(string FlowSid, string ExecutionSid, string StepSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -846,8 +894,14 @@ namespace MyNS
 		/// Delete the Execution and all Steps relating to it.
 		/// DeleteExecution v2/Flows/{FlowSid}/Executions/{Sid}
 		/// </summary>
-		/// <param name="FlowSid">The SID of the Flow with the Execution resources to delete.</param>
-		/// <param name="Sid">The SID of the Execution resource to delete.</param>
+		/// <param name="FlowSid">The SID of the Flow with the Execution resources to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Execution resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteExecutionAsync(string FlowSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/Flows/"+ (FlowSid==null? "" : System.Uri.EscapeDataString(FlowSid))+"/Executions/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -874,8 +928,14 @@ namespace MyNS
 		/// Retrieve an Execution
 		/// FetchExecution v2/Flows/{FlowSid}/Executions/{Sid}
 		/// </summary>
-		/// <param name="FlowSid">The SID of the Flow with the Execution resource to fetch</param>
-		/// <param name="Sid">The SID of the Execution resource to fetch.</param>
+		/// <param name="FlowSid">The SID of the Flow with the Execution resource to fetch
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The SID of the Execution resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Studiov2flowexecution> FetchExecutionAsync(string FlowSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -909,7 +969,10 @@ namespace MyNS
 		/// Delete a specific Flow.
 		/// DeleteFlow v2/Flows/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the Flow resource to delete.</param>
+		/// <param name="Sid">The SID of the Flow resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteFlowAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v2/Flows/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -936,7 +999,10 @@ namespace MyNS
 		/// Retrieve a specific Flow.
 		/// FetchFlow v2/Flows/{Sid}
 		/// </summary>
-		/// <param name="Sid">The SID of the Flow resource to fetch.</param>
+		/// <param name="Sid">The SID of the Flow resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Studiov2flow> FetchFlowAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -970,9 +1036,17 @@ namespace MyNS
 		/// Retrieve a list of all Flows revisions.
 		/// ListFlowRevision v2/Flows/{Sid}/Revisions
 		/// </summary>
-		/// <param name="Sid">The SID of the Flow resource to fetch.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="Sid">The SID of the Flow resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListFlowRevisionReturn> ListFlowRevisionAsync(string Sid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1007,7 +1081,10 @@ namespace MyNS
 		/// Retrieve a specific Flow revision.
 		/// FetchFlowRevision v2/Flows/{Sid}/Revisions/{Revision}
 		/// </summary>
-		/// <param name="Sid">The SID of the Flow resource to fetch.</param>
+		/// <param name="Sid">The SID of the Flow resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <param name="Revision">Specific Revision number or can be `LatestPublished` and `LatestRevision`.</param>
 		/// <returns>OK</returns>
 		public async Task<Studiov2flowflow_revision> FetchFlowRevisionAsync(string Sid, string Revision, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1042,7 +1119,10 @@ namespace MyNS
 		/// Fetch flow test users
 		/// FetchTestUser v2/Flows/{Sid}/TestUsers
 		/// </summary>
-		/// <param name="Sid">Unique identifier of the flow.</param>
+		/// <param name="Sid">Unique identifier of the flow.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Studiov2flowtest_user> FetchTestUserAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

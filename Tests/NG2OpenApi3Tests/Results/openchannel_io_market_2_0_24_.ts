@@ -20,8 +20,9 @@ export namespace MyNS {
 		/**
 		 * The time (in milliseconds) of when the user agreed to the access request
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		date: number;
+		date: string;
 
 		/**
 		 * The ip address of the user agreeing to the access request
@@ -52,8 +53,9 @@ export namespace MyNS {
 		/**
 		 * The time (in milliseconds) of when the user agreed to the access request
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		date: FormControl<number | null | undefined>,
+		date: FormControl<string | null | undefined>,
 
 		/**
 		 * The ip address of the user agreeing to the access request
@@ -76,7 +78,7 @@ export namespace MyNS {
 	export function CreateAccessFormGroup() {
 		return new FormGroup<AccessFormProperties>({
 			appId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			date: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ip: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isValid: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			userId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -211,8 +213,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) that this app was created
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		created: number;
+		created: string;
 
 		/**
 		 * A custom JSON object that you can create and attach to this record
@@ -235,8 +238,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) that this app was last modified
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		lastUpdated: number;
+		lastUpdated: string;
 
 		/**
 		 * The models that describes the cost and pricing for this app
@@ -254,6 +258,7 @@ export namespace MyNS {
 		/**
 		 * A random number that changes hourly and is used for achieving a random sort order when displaying apps
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		randomize: number;
 
@@ -271,7 +276,10 @@ export namespace MyNS {
 		 */
 		restrict: Restrictions;
 
-		/** The number of approved reviews for this app. */
+		/**
+		 * The number of approved reviews for this app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount?: number | null;
 
 		/**
@@ -289,8 +297,11 @@ export namespace MyNS {
 		 */
 		status: Status;
 
-		/** The date (in millis) that this app was submitted for approval */
-		submittedDate?: number | null;
+		/**
+		 * The date (in millis) that this app was submitted for approval
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		submittedDate?: string | null;
 
 		/** The type for this app */
 		type?: string | null;
@@ -298,6 +309,7 @@ export namespace MyNS {
 		/**
 		 * The version number for this app
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version: number;
 	}
@@ -320,8 +332,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) that this app was created
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		created: FormControl<number | null | undefined>,
+		created: FormControl<string | null | undefined>,
 
 		/**
 		 * A custom JSON object that you can create and attach to this record
@@ -344,8 +357,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) that this app was last modified
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		lastUpdated: FormControl<number | null | undefined>,
+		lastUpdated: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of this app
@@ -356,6 +370,7 @@ export namespace MyNS {
 		/**
 		 * A random number that changes hourly and is used for achieving a random sort order when displaying apps
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		randomize: FormControl<number | null | undefined>,
 
@@ -367,14 +382,20 @@ export namespace MyNS {
 		 */
 		rating: FormControl<number | null | undefined>,
 
-		/** The number of approved reviews for this app. */
+		/**
+		 * The number of approved reviews for this app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount: FormControl<number | null | undefined>,
 
 		/** A field containing summary stats about the app and is specially designed to allow apps to be sorted by popularity */
 		statistics: FormControl<string | null | undefined>,
 
-		/** The date (in millis) that this app was submitted for approval */
-		submittedDate: FormControl<number | null | undefined>,
+		/**
+		 * The date (in millis) that this app was submitted for approval
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		submittedDate: FormControl<string | null | undefined>,
 
 		/** The type for this app */
 		type: FormControl<string | null | undefined>,
@@ -382,6 +403,7 @@ export namespace MyNS {
 		/**
 		 * The version number for this app
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version: FormControl<number | null | undefined>,
 	}
@@ -389,17 +411,17 @@ export namespace MyNS {
 		return new FormGroup<AppFormProperties>({
 			appId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			attributes: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			created: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			created: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			customData: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			developerId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isLive: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			lastUpdated: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			lastUpdated: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			randomize: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			rating: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0), Validators.max(500)]),
 			reviewCount: new FormControl<number | null | undefined>(undefined),
 			statistics: new FormControl<string | null | undefined>(undefined),
-			submittedDate: new FormControl<number | null | undefined>(undefined),
+			submittedDate: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -413,12 +435,16 @@ export namespace MyNS {
 		/** The billingPeriod along with the billingPeriodUnit make up the time between billing cycles */
 		billingPeriod?: ModelBillingPeriod | null;
 
-		/** The billingPeriod along with the billingPeriodUnit make up the time between billing cycles */
+		/**
+		 * The billingPeriod along with the billingPeriodUnit make up the time between billing cycles
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		billingPeriodUnit?: number | null;
 
 		/**
 		 * The marketplace commission applied to this app's model multiplied by 100 to include two digits for fractions of a percent
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		commission: number;
 
@@ -449,6 +475,7 @@ export namespace MyNS {
 		/**
 		 * The price of this app in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: number;
 
@@ -458,6 +485,7 @@ export namespace MyNS {
 		/**
 		 * The maximum number of free trial days available
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		trial: number;
 
@@ -474,12 +502,16 @@ export namespace MyNS {
 		/** The billingPeriod along with the billingPeriodUnit make up the time between billing cycles */
 		billingPeriod: FormControl<ModelBillingPeriod | null | undefined>,
 
-		/** The billingPeriod along with the billingPeriodUnit make up the time between billing cycles */
+		/**
+		 * The billingPeriod along with the billingPeriodUnit make up the time between billing cycles
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		billingPeriodUnit: FormControl<number | null | undefined>,
 
 		/**
 		 * The marketplace commission applied to this app's model multiplied by 100 to include two digits for fractions of a percent
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		commission: FormControl<number | null | undefined>,
 
@@ -510,6 +542,7 @@ export namespace MyNS {
 		/**
 		 * The price of this app in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: FormControl<number | null | undefined>,
 
@@ -519,6 +552,7 @@ export namespace MyNS {
 		/**
 		 * The maximum number of free trial days available
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		trial: FormControl<number | null | undefined>,
 
@@ -563,6 +597,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -572,10 +607,16 @@ export namespace MyNS {
 		 */
 		list: Array<App>;
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 	}
 
@@ -585,13 +626,20 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 	}
 	export function CreateAppPagesFormGroup() {
@@ -648,8 +696,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) that this app was created
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		created: number;
+		created: string;
 
 		/**
 		 * A custom JSON object that you can create and attach to this record
@@ -678,8 +727,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) that this app was last modified
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		lastUpdated: number;
+		lastUpdated: string;
 
 		/**
 		 * The models that describes the cost and pricing for this app
@@ -712,7 +762,10 @@ export namespace MyNS {
 		 */
 		restrict: Restrictions;
 
-		/** The number of approved reviews for this app. */
+		/**
+		 * The number of approved reviews for this app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount?: number | null;
 
 		/**
@@ -733,6 +786,7 @@ export namespace MyNS {
 		/**
 		 * The version number for this app
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version: number;
 	}
@@ -752,8 +806,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) that this app was created
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		created: FormControl<number | null | undefined>,
+		created: FormControl<string | null | undefined>,
 
 		/**
 		 * A custom JSON object that you can create and attach to this record
@@ -782,8 +837,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) that this app was last modified
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		lastUpdated: FormControl<number | null | undefined>,
+		lastUpdated: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of this app
@@ -798,7 +854,10 @@ export namespace MyNS {
 		 */
 		rating: FormControl<number | null | undefined>,
 
-		/** The number of approved reviews for this app. */
+		/**
+		 * The number of approved reviews for this app.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reviewCount: FormControl<number | null | undefined>,
 
 		/** The type for this app */
@@ -807,6 +866,7 @@ export namespace MyNS {
 		/**
 		 * The version number for this app
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version: FormControl<number | null | undefined>,
 	}
@@ -814,12 +874,12 @@ export namespace MyNS {
 		return new FormGroup<AppVersionFormProperties>({
 			appId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			attributes: new FormControl<string | null | undefined>(undefined),
-			created: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			created: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			customData: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			developerId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			isLatestVersion: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			isLive: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
-			lastUpdated: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			lastUpdated: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			rating: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(500)]),
 			reviewCount: new FormControl<number | null | undefined>(undefined),
@@ -840,8 +900,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this action was performed
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		date: number;
+		date: string;
 	}
 	export interface App_EntryFormProperties {
 
@@ -854,13 +915,14 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this action was performed
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		date: FormControl<number | null | undefined>,
+		date: FormControl<string | null | undefined>,
 	}
 	export function CreateApp_EntryFormGroup() {
 		return new FormGroup<App_EntryFormProperties>({
 			appId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			date: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -949,12 +1011,14 @@ export namespace MyNS {
 		/**
 		 * The two digit expiration month
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		exp_month: number;
 
 		/**
 		 * The four digit expiration year
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		exp_year: number;
 
@@ -1011,12 +1075,14 @@ export namespace MyNS {
 		/**
 		 * The two digit expiration month
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		exp_month: FormControl<number | null | undefined>,
 
 		/**
 		 * The four digit expiration year
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		exp_year: FormControl<number | null | undefined>,
 
@@ -1167,14 +1233,20 @@ export namespace MyNS {
 	/** The totals for the field */
 	export interface DataTotal {
 
-		/** The totals for the field */
+		/**
+		 * The totals for the field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'$field'?: number | null;
 	}
 
 	/** The totals for the field */
 	export interface DataTotalFormProperties {
 
-		/** The totals for the field */
+		/**
+		 * The totals for the field
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'$field': FormControl<number | null | undefined>,
 	}
 	export function CreateDataTotalFormGroup() {
@@ -1191,6 +1263,7 @@ export namespace MyNS {
 		/**
 		 * The time (in millis) of when this developer was created
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		created: number;
 
@@ -1219,6 +1292,7 @@ export namespace MyNS {
 		/**
 		 * The time (in millis) of when this developer was created
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		created: FormControl<number | null | undefined>,
 
@@ -1320,6 +1394,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -1332,12 +1407,14 @@ export namespace MyNS {
 		/**
 		 * The current page number for this result set
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * The total number of pages available for this result set
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages: number;
 	}
@@ -1348,18 +1425,21 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * The current page number for this result set
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of pages available for this result set
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages: FormControl<number | null | undefined>,
 	}
@@ -1379,6 +1459,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -1391,12 +1472,14 @@ export namespace MyNS {
 		/**
 		 * The current page number for this result set
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: number;
 
 		/**
 		 * The total number of pages available for this result set
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages: number;
 	}
@@ -1407,18 +1490,21 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
 		/**
 		 * The current page number for this result set
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of pages available for this result set
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages: FormControl<number | null | undefined>,
 	}
@@ -1442,8 +1528,9 @@ export namespace MyNS {
 		/**
 		 * The time (in milliseconds) when this URL expires
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		expires: number;
+		expires: string;
 
 		/**
 		 * The URL that this developer can use to connect their Stripe account
@@ -1462,8 +1549,9 @@ export namespace MyNS {
 		/**
 		 * The time (in milliseconds) when this URL expires
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		expires: FormControl<number | null | undefined>,
+		expires: FormControl<string | null | undefined>,
 
 		/**
 		 * The URL that this developer can use to connect their Stripe account
@@ -1474,7 +1562,7 @@ export namespace MyNS {
 	export function CreateDeveloperTokenFormGroup() {
 		return new FormGroup<DeveloperTokenFormProperties>({
 			developerId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			expires: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			expires: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			targetUrl: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1488,8 +1576,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this event occurred
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdDate: number;
+		createdDate: string;
 
 		/** A description of the event */
 		description?: string | null;
@@ -1530,8 +1619,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this event occurred
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		createdDate: FormControl<number | null | undefined>,
+		createdDate: FormControl<string | null | undefined>,
 
 		/** A description of the event */
 		description: FormControl<string | null | undefined>,
@@ -1556,7 +1646,7 @@ export namespace MyNS {
 	}
 	export function CreateEventFormGroup() {
 		return new FormGroup<EventFormProperties>({
-			createdDate: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			createdDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined),
 			eventId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			eventType: new FormControl<EventEventType | null | undefined>(undefined, [Validators.required]),
@@ -1598,14 +1688,16 @@ export namespace MyNS {
 		/**
 		 * The number of bytes in the uploaded file
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: number;
 
 		/**
 		 * The time in milliseconds when the file was uploaded
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		uploadDate: number;
+		uploadDate: string;
 
 		/** The virus scan results for this file */
 		virusScan?: VirusScan;
@@ -1638,14 +1730,16 @@ export namespace MyNS {
 		/**
 		 * The number of bytes in the uploaded file
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
 		/**
 		 * The time in milliseconds when the file was uploaded
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		uploadDate: FormControl<number | null | undefined>,
+		uploadDate: FormControl<string | null | undefined>,
 	}
 	export function CreateFileFormGroup() {
 		return new FormGroup<FileFormProperties>({
@@ -1655,7 +1749,7 @@ export namespace MyNS {
 			mimeCheck: new FormControl<FileMimeCheck | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			size: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			uploadDate: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uploadDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1696,6 +1790,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -1705,10 +1800,16 @@ export namespace MyNS {
 		 */
 		list: Array<File>;
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 	}
 
@@ -1718,13 +1819,20 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 	}
 	export function CreateFile_PagesFormGroup() {
@@ -1868,6 +1976,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -1877,10 +1986,16 @@ export namespace MyNS {
 		 */
 		list: Array<Market>;
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 	}
 
@@ -1890,13 +2005,20 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 	}
 	export function CreateMarket_PagesFormGroup() {
@@ -1922,8 +2044,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this app was owned
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		date: number;
+		date: string;
 
 		/**
 		 * The id of the developer for this app
@@ -1931,8 +2054,11 @@ export namespace MyNS {
 		 */
 		developerId: string;
 
-		/** The date (in millis) of when this app ownership expires */
-		expires?: number | null;
+		/**
+		 * The date (in millis) of when this app ownership expires
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expires?: string | null;
 
 		/**
 		 * The model that describes the cost and pricing for apps
@@ -1958,8 +2084,11 @@ export namespace MyNS {
 		 */
 		ownershipType: OwnershipOwnershipType;
 
-		/** The date (in millis) of when this app was uninstalled */
-		uninstallDate?: number | null;
+		/**
+		 * The date (in millis) of when this app was uninstalled
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		uninstallDate?: string | null;
 
 		/**
 		 * The id of the user that owns this app
@@ -1981,8 +2110,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this app was owned
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		date: FormControl<number | null | undefined>,
+		date: FormControl<string | null | undefined>,
 
 		/**
 		 * The id of the developer for this app
@@ -1990,8 +2120,11 @@ export namespace MyNS {
 		 */
 		developerId: FormControl<string | null | undefined>,
 
-		/** The date (in millis) of when this app ownership expires */
-		expires: FormControl<number | null | undefined>,
+		/**
+		 * The date (in millis) of when this app ownership expires
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expires: FormControl<string | null | undefined>,
 
 		/**
 		 * The id of this ownership
@@ -2011,8 +2144,11 @@ export namespace MyNS {
 		 */
 		ownershipType: FormControl<OwnershipOwnershipType | null | undefined>,
 
-		/** The date (in millis) of when this app was uninstalled */
-		uninstallDate: FormControl<number | null | undefined>,
+		/**
+		 * The date (in millis) of when this app was uninstalled
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		uninstallDate: FormControl<string | null | undefined>,
 
 		/**
 		 * The id of the user that owns this app
@@ -2024,13 +2160,13 @@ export namespace MyNS {
 		return new FormGroup<OwnershipFormProperties>({
 			appId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			customData: new FormControl<string | null | undefined>(undefined),
-			date: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			developerId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			expires: new FormControl<number | null | undefined>(undefined),
+			expires: new FormControl<string | null | undefined>(undefined),
 			ownershipId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			ownershipStatus: new FormControl<OwnershipOwnershipStatus | null | undefined>(undefined, [Validators.required]),
 			ownershipType: new FormControl<OwnershipOwnershipType | null | undefined>(undefined, [Validators.required]),
-			uninstallDate: new FormControl<number | null | undefined>(undefined),
+			uninstallDate: new FormControl<string | null | undefined>(undefined),
 			userId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2047,6 +2183,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -2056,10 +2193,16 @@ export namespace MyNS {
 		 */
 		list: Array<Ownership>;
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 	}
 
@@ -2069,13 +2212,20 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 	}
 	export function CreateOwnershipPagesFormGroup() {
@@ -2111,12 +2261,14 @@ export namespace MyNS {
 		/**
 		 * The ending location of the profanity
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		end: number;
 
 		/**
 		 * The starting location of the profanity
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		start: number;
 
@@ -2133,12 +2285,14 @@ export namespace MyNS {
 		/**
 		 * The ending location of the profanity
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		end: FormControl<number | null | undefined>,
 
 		/**
 		 * The starting location of the profanity
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		start: FormControl<number | null | undefined>,
 
@@ -2192,12 +2346,14 @@ export namespace MyNS {
 		/**
 		 * The total revenue generated for the developer by this app in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		developer: number;
 
 		/**
 		 * The total revenue generated by this app in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 	}
@@ -2208,12 +2364,14 @@ export namespace MyNS {
 		/**
 		 * The total revenue generated for the developer by this app in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		developer: FormControl<number | null | undefined>,
 
 		/**
 		 * The total revenue generated by this app in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -2256,14 +2414,16 @@ export namespace MyNS {
 		/**
 		 * The rating given within this review. The rating is represented as an integer between 100 and 500 (1 - 5 stars)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rating: number;
 
 		/**
 		 * The date (in millis) this Review was posted
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		reportDate: number;
+		reportDate: string;
 
 		/**
 		 * The id for this review.
@@ -2326,14 +2486,16 @@ export namespace MyNS {
 		/**
 		 * The rating given within this review. The rating is represented as an integer between 100 and 500 (1 - 5 stars)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rating: FormControl<number | null | undefined>,
 
 		/**
 		 * The date (in millis) this Review was posted
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		reportDate: FormControl<number | null | undefined>,
+		reportDate: FormControl<string | null | undefined>,
 
 		/**
 		 * The id for this review.
@@ -2360,7 +2522,7 @@ export namespace MyNS {
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			headline: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			rating: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			reportDate: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			reportDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			reviewId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<string | null | undefined>(undefined),
 			userAccountId: new FormControl<string | null | undefined>(undefined),
@@ -2376,6 +2538,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -2385,10 +2548,16 @@ export namespace MyNS {
 		 */
 		list: Array<Review>;
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 	}
 
@@ -2398,13 +2567,20 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 	}
 	export function CreateReviewPagesFormGroup() {
@@ -2421,8 +2597,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this action was performed
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		date: number;
+		date: string;
 
 		/**
 		 * The id of the review involved in this action
@@ -2435,8 +2612,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this action was performed
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		date: FormControl<number | null | undefined>,
+		date: FormControl<string | null | undefined>,
 
 		/**
 		 * The id of the review involved in this action
@@ -2446,7 +2624,7 @@ export namespace MyNS {
 	}
 	export function CreateReview_EntryFormGroup() {
 		return new FormGroup<Review_EntryFormProperties>({
-			date: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			reviewId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -2459,6 +2637,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -2468,10 +2647,16 @@ export namespace MyNS {
 		 */
 		list: Array<App>;
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 	}
 
@@ -2481,13 +2666,20 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchPagesFormGroup() {
@@ -2506,8 +2698,9 @@ export namespace MyNS {
 		/**
 		 * The statistic value
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		value: number;
+		value: string;
 	}
 
 	/** The statistic value */
@@ -2516,12 +2709,13 @@ export namespace MyNS {
 		/**
 		 * The statistic value
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		value: FormControl<number | null | undefined>,
+		value: FormControl<string | null | undefined>,
 	}
 	export function CreateStatFormGroup() {
 		return new FormGroup<StatFormProperties>({
-			value: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			value: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2586,11 +2780,17 @@ export namespace MyNS {
 		 */
 		apps: AppTotal;
 
-		/** The end date for this total (in millis) */
-		end?: number | null;
+		/**
+		 * The end date for this total (in millis)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		end?: string | null;
 
-		/** The start date for this total (in millis) */
-		start?: number | null;
+		/**
+		 * The start date for this total (in millis)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		start?: string | null;
 
 		/**
 		 * The totals for the field
@@ -2602,16 +2802,22 @@ export namespace MyNS {
 	/** The total number of events for a particular field */
 	export interface TotalFormProperties {
 
-		/** The end date for this total (in millis) */
-		end: FormControl<number | null | undefined>,
+		/**
+		 * The end date for this total (in millis)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		end: FormControl<string | null | undefined>,
 
-		/** The start date for this total (in millis) */
-		start: FormControl<number | null | undefined>,
+		/**
+		 * The start date for this total (in millis)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		start: FormControl<string | null | undefined>,
 	}
 	export function CreateTotalFormGroup() {
 		return new FormGroup<TotalFormProperties>({
-			end: new FormControl<number | null | undefined>(undefined),
-			start: new FormControl<number | null | undefined>(undefined),
+			end: new FormControl<string | null | undefined>(undefined),
+			start: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2623,6 +2829,7 @@ export namespace MyNS {
 		/**
 		 * The total amount paid in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: number;
 
@@ -2638,10 +2845,14 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this transaction occurred
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		date: number;
+		date: string;
 
-		/** The total amount paid to the developer in cents */
+		/**
+		 * The total amount paid to the developer in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		developerAmount?: number | null;
 
 		/**
@@ -2650,10 +2861,16 @@ export namespace MyNS {
 		 */
 		developerId: string;
 
-		/** The total amount paid to payment processing fees in cents */
+		/**
+		 * The total amount paid to payment processing fees in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		feeAmount?: number | null;
 
-		/** The total amount paid to the marketplace owner in cents */
+		/**
+		 * The total amount paid to the marketplace owner in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marketplaceAmount?: number | null;
 
 		/**
@@ -2687,6 +2904,7 @@ export namespace MyNS {
 		/**
 		 * The total amount paid in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -2702,10 +2920,14 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this transaction occurred
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		date: FormControl<number | null | undefined>,
+		date: FormControl<string | null | undefined>,
 
-		/** The total amount paid to the developer in cents */
+		/**
+		 * The total amount paid to the developer in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		developerAmount: FormControl<number | null | undefined>,
 
 		/**
@@ -2714,10 +2936,16 @@ export namespace MyNS {
 		 */
 		developerId: FormControl<string | null | undefined>,
 
-		/** The total amount paid to payment processing fees in cents */
+		/**
+		 * The total amount paid to payment processing fees in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		feeAmount: FormControl<number | null | undefined>,
 
-		/** The total amount paid to the marketplace owner in cents */
+		/**
+		 * The total amount paid to the marketplace owner in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marketplaceAmount: FormControl<number | null | undefined>,
 
 		/**
@@ -2749,7 +2977,7 @@ export namespace MyNS {
 			amount: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			appId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			customData: new FormControl<string | null | undefined>(undefined),
-			date: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			date: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			developerAmount: new FormControl<number | null | undefined>(undefined),
 			developerId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			feeAmount: new FormControl<number | null | undefined>(undefined),
@@ -2771,6 +2999,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -2780,10 +3009,16 @@ export namespace MyNS {
 		 */
 		list: Array<Transaction>;
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 	}
 
@@ -2793,13 +3028,20 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 	}
 	export function CreateTransactionPagesFormGroup() {
@@ -2818,8 +3060,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this user was created
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		created: number;
+		created: string;
 
 		/**
 		 * A custom JSON object that you can create and attach to this record
@@ -2849,8 +3092,9 @@ export namespace MyNS {
 		/**
 		 * The date (in millis) of when this user was created
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		created: FormControl<number | null | undefined>,
+		created: FormControl<string | null | undefined>,
 
 		/**
 		 * A custom JSON object that you can create and attach to this record
@@ -2875,7 +3119,7 @@ export namespace MyNS {
 	}
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
-			created: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			created: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			customData: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			email: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -2953,6 +3197,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -2962,10 +3207,16 @@ export namespace MyNS {
 		 */
 		list: Array<UserAccount>;
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 	}
 
@@ -2975,13 +3226,20 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 	}
 	export function CreateUserAccountPagesFormGroup() {
@@ -3000,6 +3258,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -3009,10 +3268,16 @@ export namespace MyNS {
 		 */
 		list: Array<User>;
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 	}
 
@@ -3022,13 +3287,20 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 	}
 	export function CreateUserPagesFormGroup() {
@@ -3047,6 +3319,7 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: number;
 
@@ -3056,10 +3329,16 @@ export namespace MyNS {
 		 */
 		list: Array<AppVersion>;
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 	}
 
@@ -3069,13 +3348,20 @@ export namespace MyNS {
 		/**
 		 * The total number of results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The current page number for this result set */
+		/**
+		 * The current page number for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
-		/** The total number of pages available for this result set */
+		/**
+		 * The total number of pages available for this result set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 	}
 	export function CreateVersionPagesFormGroup() {
@@ -3091,14 +3377,20 @@ export namespace MyNS {
 	/** The virus scan results for this file */
 	export interface VirusScan {
 
-		/** The date (in milliseconds) when this file finished it's scan */
-		finished?: number | null;
+		/**
+		 * The date (in milliseconds) when this file finished it's scan
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		finished?: string | null;
 
 		/** The list of viruses found in this file */
 		foundViruses?: Array<FoundVirus>;
 
-		/** The date (in milliseconds) when this file started it's scan */
-		started?: number | null;
+		/**
+		 * The date (in milliseconds) when this file started it's scan
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		started?: string | null;
 
 		/**
 		 * The status of this scan. Can be NOT_SCANNED, CLEAN or DIRTY
@@ -3110,11 +3402,17 @@ export namespace MyNS {
 	/** The virus scan results for this file */
 	export interface VirusScanFormProperties {
 
-		/** The date (in milliseconds) when this file finished it's scan */
-		finished: FormControl<number | null | undefined>,
+		/**
+		 * The date (in milliseconds) when this file finished it's scan
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		finished: FormControl<string | null | undefined>,
 
-		/** The date (in milliseconds) when this file started it's scan */
-		started: FormControl<number | null | undefined>,
+		/**
+		 * The date (in milliseconds) when this file started it's scan
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		started: FormControl<string | null | undefined>,
 
 		/**
 		 * The status of this scan. Can be NOT_SCANNED, CLEAN or DIRTY
@@ -3124,8 +3422,8 @@ export namespace MyNS {
 	}
 	export function CreateVirusScanFormGroup() {
 		return new FormGroup<VirusScanFormProperties>({
-			finished: new FormControl<number | null | undefined>(undefined),
-			started: new FormControl<number | null | undefined>(undefined),
+			finished: new FormControl<string | null | undefined>(undefined),
+			started: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3144,7 +3442,9 @@ export namespace MyNS {
 		 * @param {string} query A query document. Example: {'name':'MyApp'} matches all the apps that have the name 'MyApp'
 		 * @param {string} sort A sort document. Example: {'name':1} sorts the results by name in ascending order
 		 * @param {number} pageNumber The result set page number to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userId The unique id of the user requesting this resource
 		 * @param {boolean} isOwner Whether this result should only contain apps that are owned by this user
 		 * @return {void} 
@@ -3195,7 +3495,9 @@ export namespace MyNS {
 		 * @param {string} text The text to search for.
 		 * @param {string} fields A JSON array containing all the fields to be searched through. Example: ['name', 'customData.description']
 		 * @param {number} pageNumber The result set page number to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userId The unique id of the user requesting this resource
 		 * @param {boolean} isOwned Whether this result should only contain apps that are owned by this user
 		 * @return {void} 
@@ -3213,7 +3515,9 @@ export namespace MyNS {
 		 * @param {string} query A query document. Example: {'name':'MyApp'} matches all the apps that have the name 'MyApp'
 		 * @param {string} sort A sort document. Example: {'name':1} sorts the results by name in ascending order
 		 * @param {number} pageNumber The result set page number to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} developerId The unique id of the developer requesting this resource
 		 * @return {void} 
 		 */
@@ -3267,6 +3571,7 @@ export namespace MyNS {
 		 * @param {string} appId The id of the app to be published
 		 * @param {string} developerId The unique id of the developer that is modifying this app
 		 * @param {number} version The version of the app to be published
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} autoApprove If true, this AppVersion is automatically approved and becomes immediately available to end users
 		 * @return {void} 
 		 */
@@ -3293,6 +3598,7 @@ export namespace MyNS {
 		 * Get apps/{appId}/versions/{version}
 		 * @param {string} appId The id of the App to be located
 		 * @param {number} version The version number of the app
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} developerId The unique id of the developer that is requesting this resource
 		 * @return {void} 
 		 */
@@ -3356,6 +3662,7 @@ export namespace MyNS {
 		 * Post apps/{appId}/versions/{version}/status
 		 * @param {string} appId The id of the App to be updated
 		 * @param {number} version The version of the App to be updated
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} developerId The unique id of the developer that is modifying this app
 		 * @param {Apps_appIdVersions_versionStatusPostByDeveloperIdAndStatusAndModifiedByAndReasonStatus} status The new status for this app. Can be either 'inReview', 'approved', 'suspended' or 'rejected'
 		 * @param {Apps_appIdVersions_versionStatusPostByDeveloperIdAndStatusAndModifiedByAndReasonModifiedBy} modifiedBy The role initiating this status change. Can be either 'developer' or 'administrator' (default)
@@ -3373,14 +3680,19 @@ export namespace MyNS {
 		 * Post custom-gateway/payment/{ownershipId}
 		 * @param {string} ownershipId The id of the ownership record involved in this transaction
 		 * @param {number} amount The total amount paid in cents
-		 * @param {number} date The date (in milliseconds) of when this payment was made
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} date The date (in milliseconds) of when this payment was made
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} feeAmount The fee (in cents) paid to a payment processors or third parties to process this payment. Default is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} marketplaceAmount The amount (in cents) paid to the marketplace owner as a commission for the purchase of this app. Defaults based on the commission amount configured for this marketplace.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} developerAmount The amount (in cents) paid to the owner of the app. Defaults based on the commission amount configured for this marketplace.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} customData A custom JSON object to attach to this transaction
 		 * @return {void} 
 		 */
-		Custom_gatewayPayment_ownershipIdPostByAmountAndDateAndFeeAmountAndMarketplaceAmountAndDeveloperAmountAndCustomData(ownershipId: string, amount: number, date: number | null | undefined, feeAmount: number | null | undefined, marketplaceAmount: number | null | undefined, developerAmount: number | null | undefined, customData: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		Custom_gatewayPayment_ownershipIdPostByAmountAndDateAndFeeAmountAndMarketplaceAmountAndDeveloperAmountAndCustomData(ownershipId: string, amount: number, date: string | null | undefined, feeAmount: number | null | undefined, marketplaceAmount: number | null | undefined, developerAmount: number | null | undefined, customData: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'custom-gateway/payment/' + (ownershipId == null ? '' : encodeURIComponent(ownershipId)) + '&amount=' + amount + '&date=' + date + '&feeAmount=' + feeAmount + '&marketplaceAmount=' + marketplaceAmount + '&developerAmount=' + developerAmount + '&customData=' + (customData == null ? '' : encodeURIComponent(customData)), null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -3391,14 +3703,19 @@ export namespace MyNS {
 		 * Post custom-gateway/refund/{ownershipId}
 		 * @param {string} ownershipId The id of the ownership record involved in this transaction
 		 * @param {number} amount The total amount refunded in cents
-		 * @param {number} date The date (in milliseconds) of when this refund was made
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} date The date (in milliseconds) of when this refund was made
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} feeAmount The fee (in cents) recovered from a payment processor or third party to process this payment. The default value is 0
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} marketplaceAmount The amount (in cents) recovered from the marketplace owner as a commission refund for the purchase of this app
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} developerAmount The amount (in cents) recovered from the owner of the app
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} customData A custom JSON object to attach to this transaction
 		 * @return {void} 
 		 */
-		Custom_gatewayRefund_ownershipIdPostByAmountAndDateAndFeeAmountAndMarketplaceAmountAndDeveloperAmountAndCustomData(ownershipId: string, amount: number, date: number | null | undefined, feeAmount: number | null | undefined, marketplaceAmount: number | null | undefined, developerAmount: number | null | undefined, customData: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		Custom_gatewayRefund_ownershipIdPostByAmountAndDateAndFeeAmountAndMarketplaceAmountAndDeveloperAmountAndCustomData(ownershipId: string, amount: number, date: string | null | undefined, feeAmount: number | null | undefined, marketplaceAmount: number | null | undefined, developerAmount: number | null | undefined, customData: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'custom-gateway/refund/' + (ownershipId == null ? '' : encodeURIComponent(ownershipId)) + '&amount=' + amount + '&date=' + date + '&feeAmount=' + feeAmount + '&marketplaceAmount=' + marketplaceAmount + '&developerAmount=' + developerAmount + '&customData=' + (customData == null ? '' : encodeURIComponent(customData)), null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -3409,7 +3726,9 @@ export namespace MyNS {
 		 * @param {string} query A query document. Example: {'name':'NASA'} matches all the developerAccounts that have the name 'NASA'
 		 * @param {string} sort A sort document. Example: {'name':1} sorts the results by name in ascending order
 		 * @param {number} pageNumber The result set page number to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DeveloperAccountsGetByQueryAndSortAndPageNumberAndLimit(query: string | null | undefined, sort: string | null | undefined, pageNumber: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3471,7 +3790,9 @@ export namespace MyNS {
 		 * @param {string} query A query document. Example: {'name':'John'} matches all the developers that have the name 'John'
 		 * @param {string} sort A sort document. Example: {'name':1} sorts the results by name in ascending order
 		 * @param {number} pageNumber The result set page number to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		DevelopersGetByQueryAndSortAndPageNumberAndLimit(query: string | null | undefined, sort: string | null | undefined, pageNumber: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3545,7 +3866,9 @@ export namespace MyNS {
 		 * @param {string} query A query document. Example: {'name':'file.txt'} matches all the files that have the name 'file.txt'
 		 * @param {string} sort A sort document. Example: {'name':1} sorts the results by name in ascending order
 		 * @param {number} pageNumber The result set page number to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		FilesGetByQueryAndSortAndPageNumberAndLimit(query: string | null | undefined, sort: string | null | undefined, pageNumber: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3567,6 +3890,7 @@ export namespace MyNS {
 		 * Get files/download
 		 * @param {string} fileId The URL of the file to be uploaded
 		 * @param {number} validSeconds The number of seconds that this signed URL should be valid for. The default is 60.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		FilesDownloadGetByFileIdAndValidSeconds(fileId: string, validSeconds: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3602,7 +3926,9 @@ export namespace MyNS {
 		 * @param {string} query A query document. Example: {'userId':'12'} matches all the ownership records that have the userId '12'.
 		 * @param {string} sort A sort document. Example: {'date':1} sorts the results by date in ascending order
 		 * @param {number} pageNumber The result set page number to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		OwnershipGetByQueryAndSortAndPageNumberAndLimit(query: string | null | undefined, sort: string | null | undefined, pageNumber: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3655,10 +3981,11 @@ export namespace MyNS {
 		 * Patch ownership/{ownershipId}
 		 * @param {string} ownershipId The id of the ownership to be updated
 		 * @param {string} customData Custom JSON object that will be attached to this ownership record
-		 * @param {number} expires The date (in millis) of when this app ownership expires
+		 * @param {string} expires The date (in millis) of when this app ownership expires
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		Ownership_ownershipIdPatchByCustomDataAndExpires(ownershipId: string, customData: string | null | undefined, expires: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		Ownership_ownershipIdPatchByCustomDataAndExpires(ownershipId: string, customData: string | null | undefined, expires: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.patch(this.baseUri + 'ownership/' + (ownershipId == null ? '' : encodeURIComponent(ownershipId)) + '&customData=' + (customData == null ? '' : encodeURIComponent(customData)) + '&expires=' + expires, null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -3668,10 +3995,11 @@ export namespace MyNS {
 		 * Post ownership/{ownershipId}
 		 * @param {string} ownershipId The id of the ownership to be updated
 		 * @param {string} customData Custom JSON object that will be attached to this ownership record
-		 * @param {number} expires The date (in millis) of when this app ownership expires
+		 * @param {string} expires The date (in millis) of when this app ownership expires
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		Ownership_ownershipIdPostByCustomDataAndExpires(ownershipId: string, customData: string | null | undefined, expires: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		Ownership_ownershipIdPostByCustomDataAndExpires(ownershipId: string, customData: string | null | undefined, expires: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'ownership/' + (ownershipId == null ? '' : encodeURIComponent(ownershipId)) + '&customData=' + (customData == null ? '' : encodeURIComponent(customData)) + '&expires=' + expires, null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -3702,11 +4030,12 @@ export namespace MyNS {
 		 * Post permission/apps/{appId}
 		 * @param {string} appId The id of the app
 		 * @param {string} userId The id of the user
-		 * @param {number} date The time (in milliseconds) of when the user agreed to the access request
+		 * @param {string} date The time (in milliseconds) of when the user agreed to the access request
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} ip The ip address of the user agreeing to the access request
 		 * @return {void} 
 		 */
-		PermissionApps_appIdPostByUserIdAndDateAndIp(appId: string, userId: string, date: number | null | undefined, ip: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		PermissionApps_appIdPostByUserIdAndDateAndIp(appId: string, userId: string, date: string | null | undefined, ip: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'permission/apps/' + (appId == null ? '' : encodeURIComponent(appId)) + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)) + '&date=' + date + '&ip=' + (ip == null ? '' : encodeURIComponent(ip)), null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -3717,7 +4046,9 @@ export namespace MyNS {
 		 * @param {string} query A query document. Example: {'rating': 500} matches all the reviews that have a rating of 500. 
 		 * @param {string} sort A sort document. Example: {'rating':1} sorts the results by rating in ascending order
 		 * @param {number} pageNumber The result set page number to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ReviewsGetByQueryAndSortAndPageNumberAndLimit(query: string | null | undefined, sort: string | null | undefined, pageNumber: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3734,6 +4065,7 @@ export namespace MyNS {
 		 * @param {string} userAccountId The id of the User account that is posting this review
 		 * @param {string} headline The review's headline. Limited to 50 characters.
 		 * @param {number} rating The rating given within this review. The rating is represented as an integer between 0 and 500 (0 - 5 stars)
+		 *     Minimum: 0    Maximum: 500
 		 * @param {string} description The review's description. Limited to 2000 characters.
 		 * @param {string} type The type for this review
 		 * @param {boolean} mustOwnApp True if a review can be created only by a user that has owned the app. The default is True.
@@ -3778,6 +4110,7 @@ export namespace MyNS {
 		 * @param {string} userAccountId The id of the User account that is posting this review
 		 * @param {string} headline The review's headline. Limited to 50 characters.
 		 * @param {number} rating The rating given within this review. The rating is represented as an integer between 0 and 500 (0 - 5 stars)
+		 *     Minimum: 0    Maximum: 500
 		 * @param {string} description The review's description. Limited to 2000 characters.
 		 * @param {string} customData A custom JSON object that you can create and attach to this record
 		 * @return {void} 
@@ -3796,6 +4129,7 @@ export namespace MyNS {
 		 * @param {string} userAccountId The id of the User account that is posting this review
 		 * @param {string} headline The review's headline. Limited to 50 characters.
 		 * @param {number} rating The rating given within this review. The rating is represented as an integer between 0 and 500 (0 - 5 stars)
+		 *     Minimum: 0    Maximum: 500
 		 * @param {string} description The review's description. Limited to 2000 characters.
 		 * @param {string} customData A custom JSON object that you can create and attach to this record
 		 * @return {void} 
@@ -3812,10 +4146,12 @@ export namespace MyNS {
 		 * @param {string} appId The id of the app associated with this statistic value
 		 * @param {string} userId The id of the user that is performing the action
 		 * @param {number} value The increment amount. Default is 1 if no value is provided.
-		 * @param {number} date The date (in millis) for when this increment occurred. The default is the current date if no value is provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {string} date The date (in millis) for when this increment occurred. The default is the current date if no value is provided.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		StatsIncrement_fieldPostByAppIdAndUserIdAndValueAndDate(field: string, appId: string, userId: string | null | undefined, value: number | null | undefined, date: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		StatsIncrement_fieldPostByAppIdAndUserIdAndValueAndDate(field: string, appId: string, userId: string | null | undefined, value: number | null | undefined, date: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'stats/increment/' + (field == null ? '' : encodeURIComponent(field)) + '&appId=' + (appId == null ? '' : encodeURIComponent(appId)) + '&userId=' + (userId == null ? '' : encodeURIComponent(userId)) + '&value=' + value + '&date=' + date, null, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -3825,12 +4161,14 @@ export namespace MyNS {
 		 * Get stats/series/{period}/{fields}
 		 * @param {StatsSeries_period_fieldsGetByStartAndEndAndQueryPeriod} period The period for the series (day or month)
 		 * @param {string} fields The field to be graphed. This also be a comma separated list of fields and the result will be a single timeseries containing the sum of all fields.
-		 * @param {number} start The start date for this series (in millis)
-		 * @param {number} end The end date for this series (in millis)
+		 * @param {string} start The start date for this series (in millis)
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} end The end date for this series (in millis)
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} query A query document. Example: {'developerId': '112'} matches all the apps that have the developer with id 112
 		 * @return {void} 
 		 */
-		StatsSeries_period_fieldsGetByStartAndEndAndQuery(period: StatsSeries_period_fieldsGetByStartAndEndAndQueryPeriod, fields: string, start: number | null | undefined, end: number | null | undefined, query: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		StatsSeries_period_fieldsGetByStartAndEndAndQuery(period: StatsSeries_period_fieldsGetByStartAndEndAndQueryPeriod, fields: string, start: string | null | undefined, end: string | null | undefined, query: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'stats/series/' + period + '/' + (fields == null ? '' : encodeURIComponent(fields)) + '&start=' + start + '&end=' + end + '&query=' + (query == null ? '' : encodeURIComponent(query)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -3839,11 +4177,13 @@ export namespace MyNS {
 		 * Get stats/total
 		 * @param {string} fields A comma seperated list of all the fields to be returned in the total (available by default: dislikes, likes, reviews, totalSales, developerSales, marketplaceSales, downloads, ownerships, views)
 		 * @param {string} query A query document. Example: {'developerId': '112'} matches all the apps that have the developer with id 112
-		 * @param {number} start The start date for this total (in millis)
-		 * @param {number} end The end date for this total (in millis)
+		 * @param {string} start The start date for this total (in millis)
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} end The end date for this total (in millis)
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		StatsTotalGetByFieldsAndQueryAndStartAndEnd(fields: string, query: string | null | undefined, start: number | null | undefined, end: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		StatsTotalGetByFieldsAndQueryAndStartAndEnd(fields: string, query: string | null | undefined, start: string | null | undefined, end: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'stats/total?fields=' + (fields == null ? '' : encodeURIComponent(fields)) + '&query=' + (query == null ? '' : encodeURIComponent(query)) + '&start=' + start + '&end=' + end, { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -3944,7 +4284,9 @@ export namespace MyNS {
 		 * @param {string} query A query document. Example: {'userId':'1'} matches all the transactions that have the userId '1'.
 		 * @param {string} sort A sort document. Example: {'date':1} sorts the results by total in ascending order
 		 * @param {number} pageNumber The result set page number to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TransactionsGetByQueryAndSortAndPageNumberAndLimit(query: string | null | undefined, sort: string | null | undefined, pageNumber: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3992,7 +4334,9 @@ export namespace MyNS {
 		 * @param {string} query A query document. Example: {'name':'NASA'} matches all the userAccounts that have the name 'NASA'
 		 * @param {string} sort A sort document. Example: {'name':1} sorts the results by name in ascending order
 		 * @param {number} pageNumber The result set page number to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		UserAccountsGetByQueryAndSortAndPageNumberAndLimit(query: string | null | undefined, sort: string | null | undefined, pageNumber: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -4054,7 +4398,9 @@ export namespace MyNS {
 		 * @param {string} query A query document. Example: {'name':'John'} matches all the users that have the name 'John'
 		 * @param {string} sort A sort document. Example: {'name':1} sorts the results by name in ascending order
 		 * @param {number} pageNumber The result set page number to be returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The maximum number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		UsersGetByQueryAndSortAndPageNumberAndLimit(query: string | null | undefined, sort: string | null | undefined, pageNumber: number | null | undefined, limit: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

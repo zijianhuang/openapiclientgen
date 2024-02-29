@@ -388,16 +388,28 @@ export namespace MyNS {
 
 	export interface RemoveBgJsonResponseData {
 
-		/** Height of the foreground image. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution. */
+		/**
+		 * Height of the foreground image. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreground_height?: number | null;
 
-		/** Left position of the foreground image along the horizontal axis. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution. */
+		/**
+		 * Left position of the foreground image along the horizontal axis. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreground_left?: number | null;
 
-		/** Top position of the foreground image along the vertical axis. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution. */
+		/**
+		 * Top position of the foreground image along the vertical axis. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreground_top?: number | null;
 
-		/** Width of the foreground image. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution. */
+		/**
+		 * Width of the foreground image. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreground_width?: number | null;
 
 		/** Base64 encoded string of result image */
@@ -405,16 +417,28 @@ export namespace MyNS {
 	}
 	export interface RemoveBgJsonResponseDataFormProperties {
 
-		/** Height of the foreground image. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution. */
+		/**
+		 * Height of the foreground image. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreground_height: FormControl<number | null | undefined>,
 
-		/** Left position of the foreground image along the horizontal axis. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution. */
+		/**
+		 * Left position of the foreground image along the horizontal axis. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreground_left: FormControl<number | null | undefined>,
 
-		/** Top position of the foreground image along the vertical axis. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution. */
+		/**
+		 * Top position of the foreground image along the vertical axis. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreground_top: FormControl<number | null | undefined>,
 
-		/** Width of the foreground image. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution. */
+		/**
+		 * Width of the foreground image. In case the input image resolution is higher than the limit (> 25 megapixels) this value is expressed with respect to the input image resolution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		foreground_width: FormControl<number | null | undefined>,
 
 		/** Base64 encoded string of result image */

@@ -143,8 +143,8 @@ export namespace MyNS {
 		/**
 		 * The verification code entered by your user.
 		 * Required
-		 * Max length: 6
 		 * Min length: 4
+		 * Max length: 6
 		 */
 		code: string;
 
@@ -175,8 +175,8 @@ export namespace MyNS {
 		/**
 		 * The verification code entered by your user.
 		 * Required
-		 * Max length: 6
 		 * Min length: 4
+		 * Max length: 6
 		 */
 		code: FormControl<string | null | undefined>,
 
@@ -714,6 +714,7 @@ export namespace MyNS {
 		/**
 		 * The decimal amount of the payment to be confirmed, in Euros
 		 * Required
+		 * Type: float
 		 */
 		amount: number;
 
@@ -776,6 +777,7 @@ export namespace MyNS {
 		/**
 		 * The decimal amount of the payment to be confirmed, in Euros
 		 * Required
+		 * Type: float
 		 */
 		amount: FormControl<number | null | undefined>,
 
@@ -1406,6 +1408,7 @@ export namespace MyNS {
 		 * @param {VerifyCheckFormat} format The response format.
 		 * @param {string} request_id The `request_id` you received in the Verify Request Response. Required if `request_ids` not provided.
 		 * @param {Array<string>} request_ids More than one `request_id`. Each `request_id` is a new parameter in the Verify Search request. Required if `request_id` not provided.
+		 *     Maximum items: 10
 		 * @return {SearchResponse} OK
 		 */
 		VerifySearch(format: VerifyCheckFormat, api_key: string, api_secret: string, request_id: string, request_ids: Array<string> | null | undefined): Observable<SearchResponse> {

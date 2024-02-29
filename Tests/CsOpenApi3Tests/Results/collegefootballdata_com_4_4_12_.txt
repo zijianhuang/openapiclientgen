@@ -3969,9 +3969,15 @@ namespace MyNS
 		/// <param name="firstName">First name filter</param>
 		/// <param name="lastName">Last name filter</param>
 		/// <param name="team">Team name filter</param>
-		/// <param name="year">Year filter</param>
-		/// <param name="minYear">Minimum year filter (inclusive)</param>
-		/// <param name="maxYear">Maximum year filter (inclusive)</param>
+		/// <param name="year">Year filter
+		/// Minimum: 1869
+		// </param>
+		/// <param name="minYear">Minimum year filter (inclusive)
+		/// Minimum: 1869
+		// </param>
+		/// <param name="maxYear">Maximum year filter (inclusive)
+		/// Minimum: 1869
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<Coach[]> GetCoachesAsync(string firstName, string lastName, string team, int year, int minYear, int maxYear, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4148,8 +4154,13 @@ namespace MyNS
 		/// GetDrives drives
 		/// </summary>
 		/// <param name="seasonType">Season type filter</param>
-		/// <param name="year">Year filter</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2001
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <param name="offense">Offensive team filter</param>
 		/// <param name="defense">Defensive team filter</param>
@@ -4226,8 +4237,13 @@ namespace MyNS
 		/// Get game results
 		/// GetGames games
 		/// </summary>
-		/// <param name="year">Year/season filter for games</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year/season filter for games
+		/// Minimum: 1869
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="seasonType">Season type filter (regular or postseason)</param>
 		/// <param name="team">Team</param>
 		/// <param name="home">Home team filter</param>
@@ -4269,8 +4285,13 @@ namespace MyNS
 		/// Game media information (TV, radio, etc)
 		/// GetGameMedia games/media
 		/// </summary>
-		/// <param name="year">Year filter</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2001
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="seasonType">Season type filter (regular, postseason, or both)</param>
 		/// <param name="team">Team filter</param>
 		/// <param name="conference">Conference filter</param>
@@ -4310,8 +4331,13 @@ namespace MyNS
 		/// Player stats broken down by game
 		/// GetPlayerGameStats games/players
 		/// </summary>
-		/// <param name="year">Year/season filter for games</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year/season filter for games
+		/// Minimum: 2001
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="seasonType">Season type filter (regular or postseason)</param>
 		/// <param name="team">Team filter</param>
 		/// <param name="conference">Conference abbreviation filter</param>
@@ -4351,8 +4377,13 @@ namespace MyNS
 		/// Team stats broken down by game
 		/// GetTeamGameStats games/teams
 		/// </summary>
-		/// <param name="year">Year/season filter for games</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year/season filter for games
+		/// Minimum: 2001
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="seasonType">Season type filter (regular or postseason)</param>
 		/// <param name="team">Team filter</param>
 		/// <param name="conference">Conference abbreviation filter</param>
@@ -4393,8 +4424,13 @@ namespace MyNS
 		/// GetGameWeather games/weather
 		/// </summary>
 		/// <param name="gameId">Game id filter (required if no year)</param>
-		/// <param name="year">Year filter (required if no game id)</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year filter (required if no game id)
+		/// Minimum: 2001
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="seasonType">Season type filter (regular, postseason, or both)</param>
 		/// <param name="team">Team filter</param>
 		/// <param name="conference">Conference filter</param>
@@ -4434,8 +4470,13 @@ namespace MyNS
 		/// GetLines lines
 		/// </summary>
 		/// <param name="gameId">Game id filter</param>
-		/// <param name="year">Year/season filter for games</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year/season filter for games
+		/// Minimum: 2013
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="seasonType">Season type filter (regular or postseason)</param>
 		/// <param name="team">Team</param>
 		/// <param name="home">Home team filter</param>
@@ -4545,8 +4586,13 @@ namespace MyNS
 		/// Pregame win probabilities
 		/// GetPregameWinProbabilities metrics/wp/pregame
 		/// </summary>
-		/// <param name="year">Year filter</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2001
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <param name="seasonType">regular or postseason</param>
 		/// <returns>successful operation</returns>
@@ -4617,8 +4663,13 @@ namespace MyNS
 		/// Gets player stats associated by play (limit 1000)
 		/// GetPlayStats play/stats
 		/// </summary>
-		/// <param name="year">Year filter</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2013
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <param name="gameId">gameId filter (from /games endpoint)</param>
 		/// <param name="athleteId">athleteId filter (from /roster endpoint)</param>
@@ -4728,7 +4779,9 @@ namespace MyNS
 		/// Returning production metrics
 		/// GetReturningProduction player/returning
 		/// </summary>
-		/// <param name="year">Year filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2014
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <param name="conference">Conference abbreviation filter</param>
 		/// <returns>successful operation</returns>
@@ -4768,7 +4821,9 @@ namespace MyNS
 		/// <param name="searchTerm">Term to search on</param>
 		/// <param name="position">Position abbreviation filter</param>
 		/// <param name="team">Team filter</param>
-		/// <param name="year">Year filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2001
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<PlayerSearchResult[]> PlayerSearchAsync(string searchTerm, string position, string team, int year, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4803,7 +4858,9 @@ namespace MyNS
 		/// Player usage metrics by season
 		/// GetPlayerUsage player/usage
 		/// </summary>
-		/// <param name="year">Year filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2013
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <param name="conference">Conference abbreviation filter</param>
 		/// <param name="position">Position abbreviation filter</param>
@@ -4844,8 +4901,13 @@ namespace MyNS
 		/// GetPlays plays
 		/// </summary>
 		/// <param name="seasonType">Season type filter</param>
-		/// <param name="year">Year filter</param>
-		/// <param name="week">Week filter (required if team, offense, or defense, not specified)</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2001
+		// </param>
+		/// <param name="week">Week filter (required if team, offense, or defense, not specified)
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <param name="offense">Offensive team filter</param>
 		/// <param name="defense">Defensive team filter</param>
@@ -4888,8 +4950,13 @@ namespace MyNS
 		/// Predicted Points Added (PPA) by game
 		/// GetGamePPA ppa/games
 		/// </summary>
-		/// <param name="year">Year filter</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2001
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <param name="conference">Conference filter</param>
 		/// <param name="excludeGarbageTime">Filter to remove garbage time plays from calculations</param>
@@ -4928,8 +4995,13 @@ namespace MyNS
 		/// Predicted Points Added (PPA) by player game
 		/// GetPlayerGamePPA ppa/players/games
 		/// </summary>
-		/// <param name="year">Year filter</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2013
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <param name="position">Position abbreviation filter</param>
 		/// <param name="playerId">Player id filter</param>
@@ -4970,7 +5042,9 @@ namespace MyNS
 		/// Predicted Points Added (PPA) by player season
 		/// GetPlayerSeasonPPA ppa/players/season
 		/// </summary>
-		/// <param name="year">Year filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2013
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <param name="conference">Conference abbreviation filter</param>
 		/// <param name="position">Position abbreviation filter</param>
@@ -5011,8 +5085,14 @@ namespace MyNS
 		/// Predicted Points
 		/// GetPredictedPoints ppa/predicted
 		/// </summary>
-		/// <param name="down">Down filter</param>
-		/// <param name="distance">Distance filter</param>
+		/// <param name="down">Down filter
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
+		/// <param name="distance">Distance filter
+		/// Minimum: 1
+		/// Maximum: 99
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<PredictedPoints[]> GetPredictedPointsAsync(int down, int distance, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5047,7 +5127,9 @@ namespace MyNS
 		/// Predicted Points Added (PPA)
 		/// GetTeamPPA ppa/teams
 		/// </summary>
-		/// <param name="year">Year filter (required if team not specified)</param>
+		/// <param name="year">Year filter (required if team not specified)
+		/// Minimum: 2001
+		// </param>
 		/// <param name="team">Team filter (required if year not specified)</param>
 		/// <param name="conference">Conference filter</param>
 		/// <param name="excludeGarbageTime">Filter to remove garbage time plays from calculations</param>
@@ -5085,8 +5167,13 @@ namespace MyNS
 		/// Poll rankings
 		/// GetRankings rankings
 		/// </summary>
-		/// <param name="year">Year/season filter for games</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year/season filter for games
+		/// Minimum: 1936
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="seasonType">Season type filter (regular or postseason)</param>
 		/// <returns>successful operation</returns>
 		public async Task<RankingWeek[]> GetRankingsAsync(int year, int week, string seasonType, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5160,7 +5247,9 @@ namespace MyNS
 		/// SP+ rating data
 		/// GetSPRatings ratings/sp
 		/// </summary>
-		/// <param name="year">Season filter (required if team not specified)</param>
+		/// <param name="year">Season filter (required if team not specified)
+		/// Minimum: 1970
+		// </param>
 		/// <param name="team">Team filter (required if year not specified)</param>
 		/// <returns>successful operation</returns>
 		public async Task<TeamSPRating[]> GetSPRatingsAsync(int year, string team, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5196,7 +5285,9 @@ namespace MyNS
 		/// Get average SP+ historical rating data by conference
 		/// GetConferenceSPRatings ratings/sp/conferences
 		/// </summary>
-		/// <param name="year">Season filter</param>
+		/// <param name="year">Season filter
+		/// Minimum: 1970
+		// </param>
 		/// <param name="conference">Conference abbreviation filter</param>
 		/// <returns>successful operation</returns>
 		public async Task<ConferenceSPRating[]> GetConferenceSPRatingsAsync(int year, string conference, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5232,7 +5323,9 @@ namespace MyNS
 		/// SRS rating data (requires either a year or team specified)
 		/// GetSRSRatings ratings/srs
 		/// </summary>
-		/// <param name="year">Season filter (required if team not specified)</param>
+		/// <param name="year">Season filter (required if team not specified)
+		/// Minimum: 1897
+		// </param>
 		/// <param name="team">Team filter (required if year not specified)</param>
 		/// <param name="conference">Conference filter</param>
 		/// <returns>successful operation</returns>
@@ -5269,7 +5362,9 @@ namespace MyNS
 		/// Get team records by year
 		/// GetTeamRecords records
 		/// </summary>
-		/// <param name="year">Year filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 1869
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <param name="conference">Conference filter</param>
 		/// <returns>successful operation</returns>
@@ -5306,8 +5401,12 @@ namespace MyNS
 		/// Gets a list of aggregated statistics by team and position grouping
 		/// GetRecruitingGroups recruiting/groups
 		/// </summary>
-		/// <param name="startYear">Starting year</param>
-		/// <param name="endYear">Ending year</param>
+		/// <param name="startYear">Starting year
+		/// Minimum: 2000
+		// </param>
+		/// <param name="endYear">Ending year
+		/// Minimum: 2000
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <param name="conference">conference filter</param>
 		/// <returns>successful operation</returns>
@@ -5344,7 +5443,9 @@ namespace MyNS
 		/// Get player recruiting rankings and data. Requires either a year or team to be specified.
 		/// GetRecruitingPlayers recruiting/players
 		/// </summary>
-		/// <param name="year">Recruiting class year (required if team no specified)</param>
+		/// <param name="year">Recruiting class year (required if team no specified)
+		/// Minimum: 2000
+		// </param>
 		/// <param name="classification">Type of recruit (HighSchool, JUCO, PrepSchool)</param>
 		/// <param name="position">Position abbreviation filter</param>
 		/// <param name="state">State or province abbreviation filter</param>
@@ -5383,7 +5484,9 @@ namespace MyNS
 		/// Team recruiting rankings
 		/// GetRecruitingTeams recruiting/teams
 		/// </summary>
-		/// <param name="year">Recruiting class year</param>
+		/// <param name="year">Recruiting class year
+		/// Minimum: 2000
+		// </param>
 		/// <param name="team">Team filter</param>
 		/// <returns>successful operation</returns>
 		public async Task<TeamRecruitingRank[]> GetRecruitingTeamsAsync(int year, string team, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5420,7 +5523,9 @@ namespace MyNS
 		/// GetRoster roster
 		/// </summary>
 		/// <param name="team">Team name</param>
-		/// <param name="year">Season year</param>
+		/// <param name="year">Season year
+		/// Minimum: 2009
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<Player[]> GetRosterAsync(string team, int year, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5525,8 +5630,13 @@ namespace MyNS
 		/// Advanced team game stats
 		/// GetAdvancedTeamGameStats stats/game/advanced
 		/// </summary>
-		/// <param name="year">Year filter (required if no team specified)</param>
-		/// <param name="week">Week filter</param>
+		/// <param name="year">Year filter (required if no team specified)
+		/// Minimum: 2001
+		// </param>
+		/// <param name="week">Week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <param name="team">Team filter (required if no year specified)</param>
 		/// <param name="opponent">Opponent filter</param>
 		/// <param name="excludeGarbageTime">Filter to remove garbage time plays from calculations</param>
@@ -5606,11 +5716,19 @@ namespace MyNS
 		/// Team season stats
 		/// GetTeamSeasonStats stats/season
 		/// </summary>
-		/// <param name="year">Year filter (required if no team specified)</param>
+		/// <param name="year">Year filter (required if no team specified)
+		/// Minimum: 2001
+		// </param>
 		/// <param name="team">Team filter (required if no year specified)</param>
 		/// <param name="conference">Conference abbreviation filter</param>
-		/// <param name="startWeek">Starting week filter</param>
-		/// <param name="endWeek">Starting week filter</param>
+		/// <param name="startWeek">Starting week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
+		/// <param name="endWeek">Starting week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<TeamSeasonStat[]> GetTeamSeasonStatsAsync(int year, string team, string conference, int startWeek, int endWeek, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5645,11 +5763,19 @@ namespace MyNS
 		/// Advanced team season stats
 		/// GetAdvancedTeamSeasonStats stats/season/advanced
 		/// </summary>
-		/// <param name="year">Year filter (required if no team specified)</param>
+		/// <param name="year">Year filter (required if no team specified)
+		/// Minimum: 2001
+		// </param>
 		/// <param name="team">Team filter (required if no year specified)</param>
 		/// <param name="excludeGarbageTime">Filter to remove garbage time plays from calculations</param>
-		/// <param name="startWeek">Starting week filter</param>
-		/// <param name="endWeek">Starting week filter</param>
+		/// <param name="startWeek">Starting week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
+		/// <param name="endWeek">Starting week filter
+		/// Minimum: 1
+		/// Maximum: 16
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<AdvancedSeasonStat[]> GetAdvancedTeamSeasonStatsAsync(int year, string team, bool excludeGarbageTime, int startWeek, int endWeek, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5684,7 +5810,9 @@ namespace MyNS
 		/// Team talent composite
 		/// GetTalent talent
 		/// </summary>
-		/// <param name="year">Year filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 2015
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<TeamTalent[]> GetTalentAsync(int year, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5754,7 +5882,9 @@ namespace MyNS
 		/// Information on major division teams
 		/// GetFbsTeams teams/fbs
 		/// </summary>
-		/// <param name="year">Year filter</param>
+		/// <param name="year">Year filter
+		/// Minimum: 1869
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<Team[]> GetFbsTeamsAsync(int year, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5791,8 +5921,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="team1">First team</param>
 		/// <param name="team2">Second team</param>
-		/// <param name="minYear">Minimum year</param>
-		/// <param name="maxYear">Maximum year</param>
+		/// <param name="minYear">Minimum year
+		/// Minimum: 1869
+		// </param>
+		/// <param name="maxYear">Maximum year
+		/// Minimum: 1869
+		// </param>
 		/// <returns>successful operation</returns>
 		public async Task<TeamMatchup> GetTeamMatchupAsync(string team1, string team2, int minYear, int maxYear, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

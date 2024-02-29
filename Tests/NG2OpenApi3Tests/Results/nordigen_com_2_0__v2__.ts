@@ -463,8 +463,8 @@ export namespace MyNS {
 		/**
 		 * Creditor account type identifier
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		account: string;
 
@@ -506,30 +506,30 @@ export namespace MyNS {
 
 		/**
 		 * Creditor account address street
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		address_street?: string | null;
 
 		/**
 		 * Creditor account BICFI Identifier
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		agent?: string | null;
 
 		/**
 		 * Creditor account agent name
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		agent_name?: string | null;
 
 		/**
 		 * Creditor account currency
 		 * Required
-		 * Max length: 3
 		 * Min length: 1
+		 * Max length: 3
 		 */
 		currency: string;
 
@@ -542,15 +542,15 @@ export namespace MyNS {
 		/**
 		 * Creditor account name
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		name: string;
 
 		/**
 		 * Creditor account address post code
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		post_code?: string | null;
 
@@ -568,8 +568,8 @@ export namespace MyNS {
 		/**
 		 * Creditor account type identifier
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		account: FormControl<string | null | undefined>,
 
@@ -611,30 +611,30 @@ export namespace MyNS {
 
 		/**
 		 * Creditor account address street
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		address_street: FormControl<string | null | undefined>,
 
 		/**
 		 * Creditor account BICFI Identifier
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		agent: FormControl<string | null | undefined>,
 
 		/**
 		 * Creditor account agent name
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		agent_name: FormControl<string | null | undefined>,
 
 		/**
 		 * Creditor account currency
 		 * Required
-		 * Max length: 3
 		 * Min length: 1
+		 * Max length: 3
 		 */
 		currency: FormControl<string | null | undefined>,
 
@@ -647,15 +647,15 @@ export namespace MyNS {
 		/**
 		 * Creditor account name
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Creditor account address post code
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		post_code: FormControl<string | null | undefined>,
 
@@ -810,44 +810,44 @@ export namespace MyNS {
 
 		/**
 		 * Debtor account type identifier
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		account?: string | null;
 
 		/**
 		 * Debtor account address country
-		 * Max length: 2
 		 * Min length: 1
+		 * Max length: 2
 		 */
 		address_country?: string | null;
 
 		/**
 		 * Debtor account address street
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		address_street?: string | null;
 
 		/**
 		 * Debtor account currency
-		 * Max length: 3
 		 * Min length: 1
+		 * Max length: 3
 		 */
 		currency?: string | null;
 
 		/**
 		 * Debtor account name
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		name: string;
 
 		/**
 		 * Debtor account post code
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		post_code?: string | null;
 
@@ -860,8 +860,8 @@ export namespace MyNS {
 
 		/**
 		 * Debtor account type identifier
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		type_number?: string | null;
 	}
@@ -871,44 +871,44 @@ export namespace MyNS {
 
 		/**
 		 * Debtor account type identifier
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		account: FormControl<string | null | undefined>,
 
 		/**
 		 * Debtor account address country
-		 * Max length: 2
 		 * Min length: 1
+		 * Max length: 2
 		 */
 		address_country: FormControl<string | null | undefined>,
 
 		/**
 		 * Debtor account address street
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		address_street: FormControl<string | null | undefined>,
 
 		/**
 		 * Debtor account currency
-		 * Max length: 3
 		 * Min length: 1
+		 * Max length: 3
 		 */
 		currency: FormControl<string | null | undefined>,
 
 		/**
 		 * Debtor account name
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Debtor account post code
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		post_code: FormControl<string | null | undefined>,
 
@@ -921,8 +921,8 @@ export namespace MyNS {
 
 		/**
 		 * Debtor account type identifier
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		type_number: FormControl<string | null | undefined>,
 	}
@@ -1199,8 +1199,8 @@ export namespace MyNS {
 		/**
 		 * Instructed amount currency
 		 * Required
-		 * Max length: 3
 		 * Min length: 1
+		 * Max length: 3
 		 */
 		currency: string;
 	}
@@ -1217,8 +1217,8 @@ export namespace MyNS {
 		/**
 		 * Instructed amount currency
 		 * Required
-		 * Max length: 3
 		 * Min length: 1
+		 * Max length: 3
 		 */
 		currency: FormControl<string | null | undefined>,
 	}
@@ -1400,12 +1400,16 @@ export namespace MyNS {
 	}
 
 	export interface PaginatedCreditorAccountList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
 		previous?: string | null;
 		results?: Array<CreditorAccount>;
 	}
 	export interface PaginatedCreditorAccountListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -1420,12 +1424,16 @@ export namespace MyNS {
 	}
 
 	export interface PaginatedEndUserAgreementList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
 		previous?: string | null;
 		results?: Array<EndUserAgreement>;
 	}
 	export interface PaginatedEndUserAgreementListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -1440,12 +1448,16 @@ export namespace MyNS {
 	}
 
 	export interface PaginatedPaymentReadList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
 		previous?: string | null;
 		results?: Array<PaymentRead>;
 	}
 	export interface PaginatedPaymentReadListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -1676,12 +1688,16 @@ export namespace MyNS {
 	export enum PaymentTypeEnum { 'single-payment' = 'single-payment', 'bulk-payment' = 'bulk-payment', 'periodic-payment' = 'periodic-payment' }
 
 	export interface PaginatedRequisitionList {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		next?: string | null;
 		previous?: string | null;
 		results?: Array<Requisition>;
 	}
 	export interface PaginatedRequisitionListFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		next: FormControl<string | null | undefined>,
 		previous: FormControl<string | null | undefined>,
@@ -1838,8 +1854,8 @@ export namespace MyNS {
 
 		/**
 		 * Payment Custom Payment ID
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		custom_payment_id?: string | null;
 
@@ -1885,8 +1901,8 @@ export namespace MyNS {
 		/**
 		 * Redirect URL to your application after payment is done
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		redirect: string;
 	}
@@ -1899,8 +1915,8 @@ export namespace MyNS {
 
 		/**
 		 * Payment Custom Payment ID
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		custom_payment_id: FormControl<string | null | undefined>,
 
@@ -1934,8 +1950,8 @@ export namespace MyNS {
 		/**
 		 * Redirect URL to your application after payment is done
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		redirect: FormControl<string | null | undefined>,
 	}
@@ -2037,7 +2053,10 @@ export namespace MyNS {
 		 */
 		redirect: string;
 
-		/** Payment Execution date (for periodic payments) */
+		/**
+		 * Payment Execution date (for periodic payments)
+		 * Type: DateOnly
+		 */
 		requested_execution_date?: Date | null;
 
 		/** Indicates whether payment should be submitted separately */
@@ -2117,7 +2136,10 @@ export namespace MyNS {
 		 */
 		redirect: FormControl<string | null | undefined>,
 
-		/** Payment Execution date (for periodic payments) */
+		/**
+		 * Payment Execution date (for periodic payments)
+		 * Type: DateOnly
+		 */
 		requested_execution_date: FormControl<Date | null | undefined>,
 
 		/** Indicates whether payment should be submitted separately */
@@ -2144,6 +2166,8 @@ export namespace MyNS {
 	/** Periodic Payment Serializer. */
 	export interface PeriodicPayment {
 		day_of_execution?: string | null;
+
+		/** Type: DateOnly */
 		end_date?: Date | null;
 
 		/**
@@ -2154,13 +2178,18 @@ export namespace MyNS {
 		execution_rule?: ExecutionRuleEnum;
 		frequency?: FrequencyEnum;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		start_date: Date;
 	}
 
 	/** Periodic Payment Serializer. */
 	export interface PeriodicPaymentFormProperties {
 		day_of_execution: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		end_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -2171,7 +2200,10 @@ export namespace MyNS {
 		execution_rule: FormControl<ExecutionRuleEnum | null | undefined>,
 		frequency: FormControl<FrequencyEnum | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		start_date: FormControl<Date | null | undefined>,
 	}
 	export function CreatePeriodicPaymentFormGroup() {
@@ -2197,8 +2229,8 @@ export namespace MyNS {
 
 		/**
 		 * Payment Custom Payment ID
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		custom_payment_id?: string | null;
 
@@ -2244,12 +2276,15 @@ export namespace MyNS {
 		/**
 		 * Redirect URL to your application after payment is done
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		redirect: string;
 
-		/** Payment Execution date (for periodic payments) */
+		/**
+		 * Payment Execution date (for periodic payments)
+		 * Type: DateOnly
+		 */
 		requested_execution_date?: Date | null;
 
 		/** Indicates whether payment should be submitted separately */
@@ -2264,8 +2299,8 @@ export namespace MyNS {
 
 		/**
 		 * Payment Custom Payment ID
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		custom_payment_id: FormControl<string | null | undefined>,
 
@@ -2299,12 +2334,15 @@ export namespace MyNS {
 		/**
 		 * Redirect URL to your application after payment is done
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		redirect: FormControl<string | null | undefined>,
 
-		/** Payment Execution date (for periodic payments) */
+		/**
+		 * Payment Execution date (for periodic payments)
+		 * Type: DateOnly
+		 */
 		requested_execution_date: FormControl<Date | null | undefined>,
 
 		/** Indicates whether payment should be submitted separately */
@@ -2330,6 +2368,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		day_of_execution?: string | null;
+
+		/** Type: DateOnly */
 		end_date?: Date | null;
 
 		/**
@@ -2340,7 +2380,10 @@ export namespace MyNS {
 		execution_rule?: ExecutionRuleEnum;
 		frequency?: FrequencyEnum;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		start_date: Date;
 	}
 
@@ -2349,6 +2392,8 @@ export namespace MyNS {
 
 		/** Min length: 1 */
 		day_of_execution: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		end_date: FormControl<Date | null | undefined>,
 
 		/**
@@ -2359,7 +2404,10 @@ export namespace MyNS {
 		execution_rule: FormControl<ExecutionRuleEnum | null | undefined>,
 		frequency: FormControl<FrequencyEnum | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		start_date: FormControl<Date | null | undefined>,
 	}
 	export function CreatePeriodicPaymentRequestFormGroup() {
@@ -2412,7 +2460,11 @@ export namespace MyNS {
 		 * * `US` - United States of America
 		 */
 		country?: AddressCountryEnum | null;
+
+		/** Type: DateOnly */
 		date_from?: Date | null;
+
+		/** Type: DateOnly */
 		date_to?: Date | null;
 	}
 
@@ -2454,7 +2506,11 @@ export namespace MyNS {
 		 * * `US` - United States of America
 		 */
 		country: FormControl<AddressCountryEnum | null | undefined>,
+
+		/** Type: DateOnly */
 		date_from: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		date_to: FormControl<Date | null | undefined>,
 	}
 	export function CreatePremiumAccountQueryFormGroup() {
@@ -2486,8 +2542,8 @@ export namespace MyNS {
 		/**
 		 * redirect URL to your application after end-user authorization with ASPSP
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		redirect: string;
 
@@ -2496,8 +2552,8 @@ export namespace MyNS {
 
 		/**
 		 * additional ID to identify the end user
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		reference?: string | null;
 
@@ -2509,8 +2565,8 @@ export namespace MyNS {
 
 		/**
 		 * A two-letter country code (ISO 639-1)
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		user_language?: string | null;
 	}
@@ -2534,8 +2590,8 @@ export namespace MyNS {
 		/**
 		 * redirect URL to your application after end-user authorization with ASPSP
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		redirect: FormControl<string | null | undefined>,
 
@@ -2544,8 +2600,8 @@ export namespace MyNS {
 
 		/**
 		 * additional ID to identify the end user
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		reference: FormControl<string | null | undefined>,
 
@@ -2557,8 +2613,8 @@ export namespace MyNS {
 
 		/**
 		 * A two-letter country code (ISO 639-1)
-		 * Max length: 5
 		 * Min length: 1
+		 * Max length: 5
 		 */
 		user_language: FormControl<string | null | undefined>,
 	}
@@ -2583,13 +2639,19 @@ export namespace MyNS {
 		/** Your access token */
 		access?: string | null;
 
-		/** Access token expires in seconds */
+		/**
+		 * Access token expires in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		access_expires?: number | null;
 
 		/** Your refresh token */
 		refresh?: string | null;
 
-		/** Refresh token expires in seconds */
+		/**
+		 * Refresh token expires in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refresh_expires?: number | null;
 	}
 
@@ -2599,13 +2661,19 @@ export namespace MyNS {
 		/** Your access token */
 		access: FormControl<string | null | undefined>,
 
-		/** Access token expires in seconds */
+		/**
+		 * Access token expires in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		access_expires: FormControl<number | null | undefined>,
 
 		/** Your refresh token */
 		refresh: FormControl<string | null | undefined>,
 
-		/** Refresh token expires in seconds */
+		/**
+		 * Refresh token expires in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refresh_expires: FormControl<number | null | undefined>,
 	}
 	export function CreateSpectacularJWTObtainFormGroup() {
@@ -2625,7 +2693,10 @@ export namespace MyNS {
 		/** Your access token */
 		access?: string | null;
 
-		/** Access token expires in seconds */
+		/**
+		 * Access token expires in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		access_expires?: number | null;
 	}
 
@@ -2635,7 +2706,10 @@ export namespace MyNS {
 		/** Your access token */
 		access: FormControl<string | null | undefined>,
 
-		/** Access token expires in seconds */
+		/**
+		 * Access token expires in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		access_expires: FormControl<number | null | undefined>,
 	}
 	export function CreateSpectacularJWTRefreshFormGroup() {
@@ -2784,6 +2858,8 @@ export namespace MyNS {
 		 * Access account premium transactions.
 		 * Get api/v2/accounts/premium/{id}/transactions/
 		 * @param {string} country ISO 3166 two-character country code
+		 * @param {Date} date_from Type: DateOnly
+		 * @param {Date} date_to Type: DateOnly
 		 * @return {{[id: string]: any }} Retrieve account transactions
 		 */
 		Retrieve_account_transactions_v2(country: string | null | undefined, date_from: Date | null | undefined, date_to: Date | null | undefined, id: string): Observable<{[id: string]: any }> {
@@ -2825,6 +2901,8 @@ export namespace MyNS {
 		 * Access account transactions.
 		 * Transactions will be returned in Berlin Group PSD2 format.
 		 * Get api/v2/accounts/{id}/transactions/
+		 * @param {Date} date_from Type: DateOnly
+		 * @param {Date} date_to Type: DateOnly
 		 * @return {{[id: string]: any }} Retrieve account transactions
 		 */
 		Retrieve_account_transactions_v2_2(date_from: Date | null | undefined, date_to: Date | null | undefined, id: string): Observable<{[id: string]: any }> {
@@ -2835,7 +2913,9 @@ export namespace MyNS {
 		 * API endpoints related to end-user agreements.
 		 * Get api/v2/agreements/enduser/
 		 * @param {number} limit Number of results to return per page.
+		 *     Minimum: 1
 		 * @param {number} offset The initial index from which to return the results.
+		 *     Minimum: 1
 		 * @return {PaginatedEndUserAgreementList} Retrieve all end user agreements
 		 */
 		Retrieve_all_EUAs_for_an_end_user_v2(limit: number | null | undefined, offset: number | null | undefined): Observable<PaginatedEndUserAgreementList> {
@@ -2905,7 +2985,9 @@ export namespace MyNS {
 		 * Retrieve all payments belonging to the company
 		 * Get api/v2/payments/
 		 * @param {number} limit Number of results to return per page.
+		 *     Minimum: 1
 		 * @param {number} offset The initial index from which to return the results.
+		 *     Minimum: 1
 		 * @return {PaginatedPaymentReadList} List payments
 		 */
 		List_payments(limit: number | null | undefined, offset: number | null | undefined): Observable<PaginatedPaymentReadList> {
@@ -2934,8 +3016,9 @@ export namespace MyNS {
 		 * API endpoints related to creditor accounts.
 		 * Get api/v2/payments/creditors/
 		 * @param {number} limit Number of results to return per page.
+		 *     Minimum: 1
 		 * @param {number} offset The initial index from which to return the results.
-		 * @return {PaginatedCreditorAccountList} 
+		 *     Minimum: 1
 		 */
 		Payments_creditors_list(account: string | null | undefined, address_country: string | null | undefined, agent: string | null | undefined, currency: string | null | undefined, limit: number | null | undefined, name: string | null | undefined, offset: number | null | undefined, type: string | null | undefined): Observable<PaginatedCreditorAccountList> {
 			return this.http.get<PaginatedCreditorAccountList>(this.baseUri + 'api/v2/payments/creditors/?account=' + (account == null ? '' : encodeURIComponent(account)) + '&address_country=' + (address_country == null ? '' : encodeURIComponent(address_country)) + '&agent=' + (agent == null ? '' : encodeURIComponent(agent)) + '&currency=' + (currency == null ? '' : encodeURIComponent(currency)) + '&limit=' + limit + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&offset=' + offset + '&type=' + (type == null ? '' : encodeURIComponent(type)), {});
@@ -2962,7 +3045,6 @@ export namespace MyNS {
 		/**
 		 * API endpoints related to creditor accounts.
 		 * Get api/v2/payments/creditors/{id}/
-		 * @return {CreditorAccount} 
 		 */
 		Payments_creditors_retrieve(id: string): Observable<CreditorAccount> {
 			return this.http.get<CreditorAccount>(this.baseUri + 'api/v2/payments/creditors/' + (id == null ? '' : encodeURIComponent(id)) + '/', {});
@@ -2999,7 +3081,6 @@ export namespace MyNS {
 		 * Initiate the payment on bank's side.
 		 * Complete the payment and return payment details as a response.
 		 * Post api/v2/payments/{id}/submit/
-		 * @return {PaymentRead} 
 		 */
 		Payments_submit_create(id: string, requestBody: PaymentReadRequest): Observable<PaymentRead> {
 			return this.http.post<PaymentRead>(this.baseUri + 'api/v2/payments/' + (id == null ? '' : encodeURIComponent(id)) + '/submit/', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -3009,7 +3090,9 @@ export namespace MyNS {
 		 * Retrieve all requisitions belonging to the company
 		 * Get api/v2/requisitions/
 		 * @param {number} limit Number of results to return per page.
+		 *     Minimum: 1
 		 * @param {number} offset The initial index from which to return the results.
+		 *     Minimum: 1
 		 * @return {PaginatedRequisitionList} Retrieve all requisitions
 		 */
 		Retrieve_all_requisitions(limit: number | null | undefined, offset: number | null | undefined): Observable<PaginatedRequisitionList> {

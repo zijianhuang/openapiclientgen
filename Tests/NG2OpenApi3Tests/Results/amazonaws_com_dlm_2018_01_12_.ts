@@ -848,8 +848,11 @@ export namespace MyNS {
 		 * @param {Array<string>} policyIds The identifiers of the data lifecycle policies.
 		 * @param {GettablePolicyStateValues} state The activation state.
 		 * @param {Array<ResourceTypeValues>} resourceTypes The resource type.
+		 *     Minimum items: 1    Maximum items: 1
 		 * @param {Array<string>} targetTags <p>The target tag for a policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p>
+		 *     Minimum items: 1    Maximum items: 50
 		 * @param {Array<string>} tagsToAdd <p>The tags to add to objects created by the policy.</p> <p>Tags are strings in the format <code>key=value</code>.</p> <p>These user-defined tags are added in addition to the Amazon Web Services-added lifecycle tags.</p>
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {GetLifecyclePoliciesResponse} Success
 		 */
 		GetLifecyclePolicies(policyIds: Array<string> | null | undefined, state: GettablePolicyStateValues | null | undefined, resourceTypes: Array<ResourceTypeValues> | null | undefined, targetTags: Array<string> | null | undefined, tagsToAdd: Array<string> | null | undefined): Observable<GetLifecyclePoliciesResponse> {
@@ -860,6 +863,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified lifecycle policy and halts the automated operations that the policy specified.</p> <p>For more information about deleting a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#delete">Delete lifecycle policies</a>.</p>
 		 * Delete policies/{policyId}/
 		 * @param {string} policyId The identifier of the lifecycle policy.
+		 *     Min length: 0    Max length: 64
 		 * @return {DeleteLifecyclePolicyResponse} Success
 		 */
 		DeleteLifecyclePolicy(policyId: string): Observable<DeleteLifecyclePolicyResponse> {
@@ -870,6 +874,7 @@ export namespace MyNS {
 		 * Gets detailed information about the specified lifecycle policy.
 		 * Get policies/{policyId}/
 		 * @param {string} policyId The identifier of the lifecycle policy.
+		 *     Min length: 0    Max length: 64
 		 * @return {GetLifecyclePolicyResponse} Success
 		 */
 		GetLifecyclePolicy(policyId: string): Observable<GetLifecyclePolicyResponse> {
@@ -880,6 +885,7 @@ export namespace MyNS {
 		 * Lists the tags for the specified resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 0    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -890,6 +896,7 @@ export namespace MyNS {
 		 * Adds the specified tags to the specified resource.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 0    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -900,7 +907,9 @@ export namespace MyNS {
 		 * Removes the specified tags from the specified resource.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 0    Max length: 2048
 		 * @param {Array<string>} tagKeys The tag keys.
+		 *     Minimum items: 1    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -911,6 +920,7 @@ export namespace MyNS {
 		 * <p>Updates the specified lifecycle policy.</p> <p>For more information about updating a policy, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/view-modify-delete.html#modify">Modify lifecycle policies</a>.</p>
 		 * Patch policies/{policyId}
 		 * @param {string} policyId The identifier of the lifecycle policy.
+		 *     Min length: 0    Max length: 64
 		 * @return {UpdateLifecyclePolicyResponse} Success
 		 */
 		UpdateLifecyclePolicy(policyId: string, requestBody: UpdateLifecyclePolicyPatchBody): Observable<UpdateLifecyclePolicyResponse> {
@@ -923,16 +933,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: string;
 
 		/**
 		 * A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description: string;
 
@@ -956,16 +966,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the lifecycle policy. The characters ^[0-9A-Za-z _-]+$ are supported.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -1035,8 +1045,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn?: string | null;
 
@@ -1045,8 +1055,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the lifecycle policy.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description?: string | null;
 
@@ -1057,8 +1067,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role used to run the operations specified by the lifecycle policy.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
@@ -1067,8 +1077,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the lifecycle policy.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		Description: FormControl<string | null | undefined>,
 	}

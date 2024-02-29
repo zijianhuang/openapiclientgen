@@ -357,6 +357,7 @@ export namespace MyNS {
 		 * @param {string} api_version API version for the operation
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} filter OData filter. Optional.
 		 * @param {string} select OData select. Optional.
 		 * @param {string} expand OData expand. Optional.
@@ -373,6 +374,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId Azure subscription ID
 		 * @param {string} ascLocation The location where ASC stores the data of the subscription. can be retrieved from Get locations
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} filter OData filter. Optional.
 		 * @param {string} select OData select. Optional.
 		 * @param {string} expand OData expand. Optional.
@@ -390,6 +392,7 @@ export namespace MyNS {
 		 * @param {string} ascLocation The location where ASC stores the data of the subscription. can be retrieved from Get locations
 		 * @param {string} alertName Name of the alert object
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @return {Alert} OK
 		 */
 		Alerts_GetResourceGroupLevelAlerts(api_version: string, subscriptionId: string, ascLocation: string, alertName: string, resourceGroupName: string): Observable<Alert> {
@@ -404,6 +407,7 @@ export namespace MyNS {
 		 * @param {string} ascLocation The location where ASC stores the data of the subscription. can be retrieved from Get locations
 		 * @param {string} alertName Name of the alert object
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @return {void} 
 		 */
 		Alerts_UpdateResourceGroupLevelAlertStateToDismiss(api_version: string, subscriptionId: string, ascLocation: string, alertName: string, resourceGroupName: string): Observable<HttpResponse<string>> {
@@ -418,6 +422,7 @@ export namespace MyNS {
 		 * @param {string} ascLocation The location where ASC stores the data of the subscription. can be retrieved from Get locations
 		 * @param {string} alertName Name of the alert object
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @return {void} 
 		 */
 		Alerts_UpdateResourceGroupLevelAlertStateToReactivate(api_version: string, subscriptionId: string, ascLocation: string, alertName: string, resourceGroupName: string): Observable<HttpResponse<string>> {

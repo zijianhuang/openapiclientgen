@@ -24,7 +24,10 @@ export namespace MyNS {
 	/** A banded (alternating colors) range in a sheet. */
 	export interface BandedRange {
 
-		/** The ID of the banded range. */
+		/**
+		 * The ID of the banded range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bandedRangeId?: number | null;
 
 		/** Properties referring a single dimension (either row or column). If both BandedRange.row_properties and BandedRange.column_properties are set, the fill colors are applied to cells according to the following rules: * header_color and footer_color take priority over band colors. * first_band_color takes priority over second_band_color. * row_properties takes priority over column_properties. For example, the first row color takes priority over the first column color, but the first column color takes priority over the second row color. Similarly, the row header takes priority over the column header in the top left cell, but the column header takes priority over the first row color if the row header is not set. */
@@ -40,7 +43,10 @@ export namespace MyNS {
 	/** A banded (alternating colors) range in a sheet. */
 	export interface BandedRangeFormProperties {
 
-		/** The ID of the banded range. */
+		/**
+		 * The ID of the banded range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bandedRangeId: FormControl<number | null | undefined>,
 	}
 	export function CreateBandedRangeFormGroup() {
@@ -92,32 +98,56 @@ export namespace MyNS {
 	/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 	export interface Color {
 
-		/** The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0). */
+		/**
+		 * The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).
+		 * Type: float
+		 */
 		alpha?: number | null;
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue?: number | null;
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green?: number | null;
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red?: number | null;
 	}
 
 	/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 	export interface ColorFormProperties {
 
-		/** The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0). */
+		/**
+		 * The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).
+		 * Type: float
+		 */
 		alpha: FormControl<number | null | undefined>,
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue: FormControl<number | null | undefined>,
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green: FormControl<number | null | undefined>,
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red: FormControl<number | null | undefined>,
 	}
 	export function CreateColorFormGroup() {
@@ -160,38 +190,68 @@ export namespace MyNS {
 	/** A range on a sheet. All indexes are zero-based. Indexes are half open, i.e. the start index is inclusive and the end index is exclusive -- [start_index, end_index). Missing indexes indicate the range is unbounded on that side. For example, if `"Sheet1"` is sheet ID 123456, then: `Sheet1!A1:A1 == sheet_id: 123456, start_row_index: 0, end_row_index: 1, start_column_index: 0, end_column_index: 1` `Sheet1!A3:B4 == sheet_id: 123456, start_row_index: 2, end_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1!A:B == sheet_id: 123456, start_column_index: 0, end_column_index: 2` `Sheet1!A5:B == sheet_id: 123456, start_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1 == sheet_id: 123456` The start index must always be less than or equal to the end index. If the start index equals the end index, then the range is empty. Empty ranges are typically not meaningful and are usually rendered in the UI as `#REF!`. */
 	export interface GridRange {
 
-		/** The end column (exclusive) of the range, or not set if unbounded. */
+		/**
+		 * The end column (exclusive) of the range, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endColumnIndex?: number | null;
 
-		/** The end row (exclusive) of the range, or not set if unbounded. */
+		/**
+		 * The end row (exclusive) of the range, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endRowIndex?: number | null;
 
-		/** The sheet this range is on. */
+		/**
+		 * The sheet this range is on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 
-		/** The start column (inclusive) of the range, or not set if unbounded. */
+		/**
+		 * The start column (inclusive) of the range, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startColumnIndex?: number | null;
 
-		/** The start row (inclusive) of the range, or not set if unbounded. */
+		/**
+		 * The start row (inclusive) of the range, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startRowIndex?: number | null;
 	}
 
 	/** A range on a sheet. All indexes are zero-based. Indexes are half open, i.e. the start index is inclusive and the end index is exclusive -- [start_index, end_index). Missing indexes indicate the range is unbounded on that side. For example, if `"Sheet1"` is sheet ID 123456, then: `Sheet1!A1:A1 == sheet_id: 123456, start_row_index: 0, end_row_index: 1, start_column_index: 0, end_column_index: 1` `Sheet1!A3:B4 == sheet_id: 123456, start_row_index: 2, end_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1!A:B == sheet_id: 123456, start_column_index: 0, end_column_index: 2` `Sheet1!A5:B == sheet_id: 123456, start_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1 == sheet_id: 123456` The start index must always be less than or equal to the end index. If the start index equals the end index, then the range is empty. Empty ranges are typically not meaningful and are usually rendered in the UI as `#REF!`. */
 	export interface GridRangeFormProperties {
 
-		/** The end column (exclusive) of the range, or not set if unbounded. */
+		/**
+		 * The end column (exclusive) of the range, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endColumnIndex: FormControl<number | null | undefined>,
 
-		/** The end row (exclusive) of the range, or not set if unbounded. */
+		/**
+		 * The end row (exclusive) of the range, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endRowIndex: FormControl<number | null | undefined>,
 
-		/** The sheet this range is on. */
+		/**
+		 * The sheet this range is on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 
-		/** The start column (inclusive) of the range, or not set if unbounded. */
+		/**
+		 * The start column (inclusive) of the range, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startColumnIndex: FormControl<number | null | undefined>,
 
-		/** The start row (inclusive) of the range, or not set if unbounded. */
+		/**
+		 * The start row (inclusive) of the range, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startRowIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateGridRangeFormGroup() {
@@ -246,7 +306,10 @@ export namespace MyNS {
 		/** A border along an embedded object. */
 		border?: EmbeddedObjectBorder;
 
-		/** The ID of the chart. */
+		/**
+		 * The ID of the chart.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId?: number | null;
 
 		/** The position of an embedded object such as a chart. */
@@ -259,7 +322,10 @@ export namespace MyNS {
 	/** A chart embedded in a sheet. */
 	export interface EmbeddedChartFormProperties {
 
-		/** The ID of the chart. */
+		/**
+		 * The ID of the chart.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId: FormControl<number | null | undefined>,
 	}
 	export function CreateEmbeddedChartFormGroup() {
@@ -299,7 +365,10 @@ export namespace MyNS {
 		/** The location an object is overlaid on top of a grid. */
 		overlayPosition?: OverlayPosition;
 
-		/** The sheet this is on. Set only if the embedded object is on its own sheet. Must be non-negative. */
+		/**
+		 * The sheet this is on. Set only if the embedded object is on its own sheet. Must be non-negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 	}
 
@@ -309,7 +378,10 @@ export namespace MyNS {
 		/** If true, the embedded object is put on a new sheet whose ID is chosen for you. Used only when writing. */
 		newSheet: FormControl<boolean | null | undefined>,
 
-		/** The sheet this is on. Set only if the embedded object is on its own sheet. Must be non-negative. */
+		/**
+		 * The sheet this is on. Set only if the embedded object is on its own sheet. Must be non-negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateEmbeddedObjectPositionFormGroup() {
@@ -327,32 +399,56 @@ export namespace MyNS {
 		/** A coordinate in a sheet. All indexes are zero-based. */
 		anchorCell?: GridCoordinate;
 
-		/** The height of the object, in pixels. Defaults to 371. */
+		/**
+		 * The height of the object, in pixels. Defaults to 371.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPixels?: number | null;
 
-		/** The horizontal offset, in pixels, that the object is offset from the anchor cell. */
+		/**
+		 * The horizontal offset, in pixels, that the object is offset from the anchor cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetXPixels?: number | null;
 
-		/** The vertical offset, in pixels, that the object is offset from the anchor cell. */
+		/**
+		 * The vertical offset, in pixels, that the object is offset from the anchor cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetYPixels?: number | null;
 
-		/** The width of the object, in pixels. Defaults to 600. */
+		/**
+		 * The width of the object, in pixels. Defaults to 600.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPixels?: number | null;
 	}
 
 	/** The location an object is overlaid on top of a grid. */
 	export interface OverlayPositionFormProperties {
 
-		/** The height of the object, in pixels. Defaults to 371. */
+		/**
+		 * The height of the object, in pixels. Defaults to 371.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPixels: FormControl<number | null | undefined>,
 
-		/** The horizontal offset, in pixels, that the object is offset from the anchor cell. */
+		/**
+		 * The horizontal offset, in pixels, that the object is offset from the anchor cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetXPixels: FormControl<number | null | undefined>,
 
-		/** The vertical offset, in pixels, that the object is offset from the anchor cell. */
+		/**
+		 * The vertical offset, in pixels, that the object is offset from the anchor cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetYPixels: FormControl<number | null | undefined>,
 
-		/** The width of the object, in pixels. Defaults to 600. */
+		/**
+		 * The width of the object, in pixels. Defaults to 600.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPixels: FormControl<number | null | undefined>,
 	}
 	export function CreateOverlayPositionFormGroup() {
@@ -369,26 +465,44 @@ export namespace MyNS {
 	/** A coordinate in a sheet. All indexes are zero-based. */
 	export interface GridCoordinate {
 
-		/** The column index of the coordinate. */
+		/**
+		 * The column index of the coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnIndex?: number | null;
 
-		/** The row index of the coordinate. */
+		/**
+		 * The row index of the coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowIndex?: number | null;
 
-		/** The sheet this coordinate is on. */
+		/**
+		 * The sheet this coordinate is on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 	}
 
 	/** A coordinate in a sheet. All indexes are zero-based. */
 	export interface GridCoordinateFormProperties {
 
-		/** The column index of the coordinate. */
+		/**
+		 * The column index of the coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnIndex: FormControl<number | null | undefined>,
 
-		/** The row index of the coordinate. */
+		/**
+		 * The row index of the coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowIndex: FormControl<number | null | undefined>,
 
-		/** The sheet this coordinate is on. */
+		/**
+		 * The sheet this coordinate is on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateGridCoordinateFormGroup() {
@@ -526,7 +640,10 @@ export namespace MyNS {
 		/** The domain of data this is charting. Only a single domain is supported. */
 		domains?: Array<BasicChartDomain>;
 
-		/** The number of rows or columns in the data that are "headers". If not set, Google Sheets will guess how many rows are headers based on the data. (Note that BasicChartAxis.title may override the axis title inferred from the header values.) */
+		/**
+		 * The number of rows or columns in the data that are "headers". If not set, Google Sheets will guess how many rows are headers based on the data. (Note that BasicChartAxis.title may override the axis title inferred from the header values.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headerCount?: number | null;
 
 		/** If some values in a series are missing, gaps may appear in the chart (e.g, segments of lines in a line chart will be missing). To eliminate these gaps set this to true. Applies to Line, Area, and Combo charts. */
@@ -560,7 +677,10 @@ export namespace MyNS {
 		/** The behavior of tooltips and data highlighting when hovering on data and chart area. */
 		compareMode: FormControl<BasicChartSpecCompareMode | null | undefined>,
 
-		/** The number of rows or columns in the data that are "headers". If not set, Google Sheets will guess how many rows are headers based on the data. (Note that BasicChartAxis.title may override the axis title inferred from the header values.) */
+		/**
+		 * The number of rows or columns in the data that are "headers". If not set, Google Sheets will guess how many rows are headers based on the data. (Note that BasicChartAxis.title may override the axis title inferred from the header values.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		headerCount: FormControl<number | null | undefined>,
 
 		/** If some values in a series are missing, gaps may appear in the chart (e.g, segments of lines in a line chart will be missing). To eliminate these gaps set this to true. Applies to Line, Area, and Combo charts. */
@@ -639,7 +759,10 @@ export namespace MyNS {
 		/** The font family. */
 		fontFamily?: string | null;
 
-		/** The size of the font. */
+		/**
+		 * The size of the font.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontSize?: number | null;
 
 		/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
@@ -670,7 +793,10 @@ export namespace MyNS {
 		/** The font family. */
 		fontFamily: FormControl<string | null | undefined>,
 
-		/** The size of the font. */
+		/**
+		 * The size of the font.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fontSize: FormControl<number | null | undefined>,
 
 		/** True if the text is italicized. */
@@ -744,10 +870,16 @@ export namespace MyNS {
 	/** The options that define a "view window" for a chart (such as the visible values in an axis). */
 	export interface ChartAxisViewWindowOptions {
 
-		/** The maximum numeric value to be shown in this view window. If unset, will automatically determine a maximum value that looks good for the data. */
+		/**
+		 * The maximum numeric value to be shown in this view window. If unset, will automatically determine a maximum value that looks good for the data.
+		 * Type: double
+		 */
 		viewWindowMax?: number | null;
 
-		/** The minimum numeric value to be shown in this view window. If unset, will automatically determine a minimum value that looks good for the data. */
+		/**
+		 * The minimum numeric value to be shown in this view window. If unset, will automatically determine a minimum value that looks good for the data.
+		 * Type: double
+		 */
 		viewWindowMin?: number | null;
 
 		/** The view window's mode. */
@@ -757,10 +889,16 @@ export namespace MyNS {
 	/** The options that define a "view window" for a chart (such as the visible values in an axis). */
 	export interface ChartAxisViewWindowOptionsFormProperties {
 
-		/** The maximum numeric value to be shown in this view window. If unset, will automatically determine a maximum value that looks good for the data. */
+		/**
+		 * The maximum numeric value to be shown in this view window. If unset, will automatically determine a maximum value that looks good for the data.
+		 * Type: double
+		 */
 		viewWindowMax: FormControl<number | null | undefined>,
 
-		/** The minimum numeric value to be shown in this view window. If unset, will automatically determine a minimum value that looks good for the data. */
+		/**
+		 * The minimum numeric value to be shown in this view window. If unset, will automatically determine a minimum value that looks good for the data.
+		 * Type: double
+		 */
 		viewWindowMin: FormControl<number | null | undefined>,
 
 		/** The view window's mode. */
@@ -905,26 +1043,44 @@ export namespace MyNS {
 	/** Allows you to organize numeric values in a source data column into buckets of constant size. */
 	export interface ChartHistogramRule {
 
-		/** The size of the buckets that are created. Must be positive. */
+		/**
+		 * The size of the buckets that are created. Must be positive.
+		 * Type: double
+		 */
 		intervalSize?: number | null;
 
-		/** The maximum value at which items are placed into buckets. Values greater than the maximum are grouped into a single bucket. If omitted, it is determined by the maximum item value. */
+		/**
+		 * The maximum value at which items are placed into buckets. Values greater than the maximum are grouped into a single bucket. If omitted, it is determined by the maximum item value.
+		 * Type: double
+		 */
 		maxValue?: number | null;
 
-		/** The minimum value at which items are placed into buckets. Values that are less than the minimum are grouped into a single bucket. If omitted, it is determined by the minimum item value. */
+		/**
+		 * The minimum value at which items are placed into buckets. Values that are less than the minimum are grouped into a single bucket. If omitted, it is determined by the minimum item value.
+		 * Type: double
+		 */
 		minValue?: number | null;
 	}
 
 	/** Allows you to organize numeric values in a source data column into buckets of constant size. */
 	export interface ChartHistogramRuleFormProperties {
 
-		/** The size of the buckets that are created. Must be positive. */
+		/**
+		 * The size of the buckets that are created. Must be positive.
+		 * Type: double
+		 */
 		intervalSize: FormControl<number | null | undefined>,
 
-		/** The maximum value at which items are placed into buckets. Values greater than the maximum are grouped into a single bucket. If omitted, it is determined by the maximum item value. */
+		/**
+		 * The maximum value at which items are placed into buckets. Values greater than the maximum are grouped into a single bucket. If omitted, it is determined by the maximum item value.
+		 * Type: double
+		 */
 		maxValue: FormControl<number | null | undefined>,
 
-		/** The minimum value at which items are placed into buckets. Values that are less than the minimum are grouped into a single bucket. If omitted, it is determined by the minimum item value. */
+		/**
+		 * The minimum value at which items are placed into buckets. Values that are less than the minimum are grouped into a single bucket. If omitted, it is determined by the minimum item value.
+		 * Type: double
+		 */
 		minValue: FormControl<number | null | undefined>,
 	}
 	export function CreateChartHistogramRuleFormGroup() {
@@ -1049,7 +1205,10 @@ export namespace MyNS {
 		/** The dash type of the line. */
 		type?: LineStyleType | null;
 
-		/** The thickness of the line, in px. */
+		/**
+		 * The thickness of the line, in px.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -1059,7 +1218,10 @@ export namespace MyNS {
 		/** The dash type of the line. */
 		type: FormControl<LineStyleType | null | undefined>,
 
-		/** The thickness of the line, in px. */
+		/**
+		 * The thickness of the line, in px.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateLineStyleFormGroup() {
@@ -1079,7 +1241,10 @@ export namespace MyNS {
 		/** The point shape. If empty or unspecified, a default shape is used. */
 		shape?: PointStyleShape | null;
 
-		/** The point size. If empty, a default size is used. */
+		/**
+		 * The point size. If empty, a default size is used.
+		 * Type: double
+		 */
 		size?: number | null;
 	}
 
@@ -1089,7 +1254,10 @@ export namespace MyNS {
 		/** The point shape. If empty or unspecified, a default shape is used. */
 		shape: FormControl<PointStyleShape | null | undefined>,
 
-		/** The point size. If empty, a default size is used. */
+		/**
+		 * The point size. If empty, a default size is used.
+		 * Type: double
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreatePointStyleFormGroup() {
@@ -1112,7 +1280,10 @@ export namespace MyNS {
 		/** A color value. */
 		colorStyle?: ColorStyle;
 
-		/** The zero-based index of the series data point. */
+		/**
+		 * The zero-based index of the series data point.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** The style of a point on the chart. */
@@ -1122,7 +1293,10 @@ export namespace MyNS {
 	/** Style override settings for a single series data point. */
 	export interface BasicSeriesDataPointStyleOverrideFormProperties {
 
-		/** The zero-based index of the series data point. */
+		/**
+		 * The zero-based index of the series data point.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateBasicSeriesDataPointStyleOverrideFormGroup() {
@@ -1147,13 +1321,22 @@ export namespace MyNS {
 		/** The data included in a domain or series. */
 		bubbleLabels?: ChartData;
 
-		/** The max radius size of the bubbles, in pixels. If specified, the field must be a positive value. */
+		/**
+		 * The max radius size of the bubbles, in pixels. If specified, the field must be a positive value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bubbleMaxRadiusSize?: number | null;
 
-		/** The minimum radius size of the bubbles, in pixels. If specific, the field must be a positive value. */
+		/**
+		 * The minimum radius size of the bubbles, in pixels. If specific, the field must be a positive value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bubbleMinRadiusSize?: number | null;
 
-		/** The opacity of the bubbles between 0 and 1.0. 0 is fully transparent and 1 is fully opaque. */
+		/**
+		 * The opacity of the bubbles between 0 and 1.0. 0 is fully transparent and 1 is fully opaque.
+		 * Type: float
+		 */
 		bubbleOpacity?: number | null;
 
 		/** The data included in a domain or series. */
@@ -1178,13 +1361,22 @@ export namespace MyNS {
 	/** A bubble chart. */
 	export interface BubbleChartSpecFormProperties {
 
-		/** The max radius size of the bubbles, in pixels. If specified, the field must be a positive value. */
+		/**
+		 * The max radius size of the bubbles, in pixels. If specified, the field must be a positive value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bubbleMaxRadiusSize: FormControl<number | null | undefined>,
 
-		/** The minimum radius size of the bubbles, in pixels. If specific, the field must be a positive value. */
+		/**
+		 * The minimum radius size of the bubbles, in pixels. If specific, the field must be a positive value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bubbleMinRadiusSize: FormControl<number | null | undefined>,
 
-		/** The opacity of the bubbles between 0 and 1.0. 0 is fully transparent and 1 is fully opaque. */
+		/**
+		 * The opacity of the bubbles between 0 and 1.0. 0 is fully transparent and 1 is fully opaque.
+		 * Type: float
+		 */
 		bubbleOpacity: FormControl<number | null | undefined>,
 
 		/** Where the legend of the chart should be drawn. */
@@ -1363,7 +1555,10 @@ export namespace MyNS {
 	/** The filter criteria associated with a specific column. */
 	export interface FilterSpec {
 
-		/** The zero-based column index. */
+		/**
+		 * The zero-based column index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnIndex?: number | null;
 
 		/** An unique identifier that references a data source column. */
@@ -1376,7 +1571,10 @@ export namespace MyNS {
 	/** The filter criteria associated with a specific column. */
 	export interface FilterSpecFormProperties {
 
-		/** The zero-based column index. */
+		/**
+		 * The zero-based column index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateFilterSpecFormGroup() {
@@ -1480,13 +1678,19 @@ export namespace MyNS {
 	/** A histogram chart. A histogram chart groups data items into bins, displaying each bin as a column of stacked items. Histograms are used to display the distribution of a dataset. Each column of items represents a range into which those items fall. The number of bins can be chosen automatically or specified explicitly. */
 	export interface HistogramChartSpec {
 
-		/** By default the bucket size (the range of values stacked in a single column) is chosen automatically, but it may be overridden here. E.g., A bucket size of 1.5 results in buckets from 0 - 1.5, 1.5 - 3.0, etc. Cannot be negative. This field is optional. */
+		/**
+		 * By default the bucket size (the range of values stacked in a single column) is chosen automatically, but it may be overridden here. E.g., A bucket size of 1.5 results in buckets from 0 - 1.5, 1.5 - 3.0, etc. Cannot be negative. This field is optional.
+		 * Type: double
+		 */
 		bucketSize?: number | null;
 
 		/** The position of the chart legend. */
 		legendPosition?: HistogramChartSpecLegendPosition | null;
 
-		/** The outlier percentile is used to ensure that outliers do not adversely affect the calculation of bucket sizes. For example, setting an outlier percentile of 0.05 indicates that the top and bottom 5% of values when calculating buckets. The values are still included in the chart, they will be added to the first or last buckets instead of their own buckets. Must be between 0.0 and 0.5. */
+		/**
+		 * The outlier percentile is used to ensure that outliers do not adversely affect the calculation of bucket sizes. For example, setting an outlier percentile of 0.05 indicates that the top and bottom 5% of values when calculating buckets. The values are still included in the chart, they will be added to the first or last buckets instead of their own buckets. Must be between 0.0 and 0.5.
+		 * Type: double
+		 */
 		outlierPercentile?: number | null;
 
 		/** The series for a histogram may be either a single series of values to be bucketed or multiple series, each of the same length, containing the name of the series followed by the values to be bucketed for that series. */
@@ -1499,13 +1703,19 @@ export namespace MyNS {
 	/** A histogram chart. A histogram chart groups data items into bins, displaying each bin as a column of stacked items. Histograms are used to display the distribution of a dataset. Each column of items represents a range into which those items fall. The number of bins can be chosen automatically or specified explicitly. */
 	export interface HistogramChartSpecFormProperties {
 
-		/** By default the bucket size (the range of values stacked in a single column) is chosen automatically, but it may be overridden here. E.g., A bucket size of 1.5 results in buckets from 0 - 1.5, 1.5 - 3.0, etc. Cannot be negative. This field is optional. */
+		/**
+		 * By default the bucket size (the range of values stacked in a single column) is chosen automatically, but it may be overridden here. E.g., A bucket size of 1.5 results in buckets from 0 - 1.5, 1.5 - 3.0, etc. Cannot be negative. This field is optional.
+		 * Type: double
+		 */
 		bucketSize: FormControl<number | null | undefined>,
 
 		/** The position of the chart legend. */
 		legendPosition: FormControl<HistogramChartSpecLegendPosition | null | undefined>,
 
-		/** The outlier percentile is used to ensure that outliers do not adversely affect the calculation of bucket sizes. For example, setting an outlier percentile of 0.05 indicates that the top and bottom 5% of values when calculating buckets. The values are still included in the chart, they will be added to the first or last buckets instead of their own buckets. Must be between 0.0 and 0.5. */
+		/**
+		 * The outlier percentile is used to ensure that outliers do not adversely affect the calculation of bucket sizes. For example, setting an outlier percentile of 0.05 indicates that the top and bottom 5% of values when calculating buckets. The values are still included in the chart, they will be added to the first or last buckets instead of their own buckets. Must be between 0.0 and 0.5.
+		 * Type: double
+		 */
 		outlierPercentile: FormControl<number | null | undefined>,
 
 		/** Whether horizontal divider lines should be displayed between items in each column. */
@@ -1600,7 +1810,10 @@ export namespace MyNS {
 		/** Where the legend of the pie chart should be drawn. */
 		legendPosition?: PieChartSpecLegendPosition | null;
 
-		/** The size of the hole in the pie chart. */
+		/**
+		 * The size of the hole in the pie chart.
+		 * Type: double
+		 */
 		pieHole?: number | null;
 
 		/** The data included in a domain or series. */
@@ -1616,7 +1829,10 @@ export namespace MyNS {
 		/** Where the legend of the pie chart should be drawn. */
 		legendPosition: FormControl<PieChartSpecLegendPosition | null | undefined>,
 
-		/** The size of the hole in the pie chart. */
+		/**
+		 * The size of the hole in the pie chart.
+		 * Type: double
+		 */
 		pieHole: FormControl<number | null | undefined>,
 
 		/** True if the pie is three dimensional. */
@@ -1658,7 +1874,10 @@ export namespace MyNS {
 		/** The number format source used in the scorecard chart. This field is optional. */
 		numberFormatSource?: ScorecardChartSpecNumberFormatSource | null;
 
-		/** Value to scale scorecard key and baseline value. For example, a factor of 10 can be used to divide all values in the chart by 10. This field is optional. */
+		/**
+		 * Value to scale scorecard key and baseline value. For example, a factor of 10 can be used to divide all values in the chart by 10. This field is optional.
+		 * Type: double
+		 */
 		scaleFactor?: number | null;
 	}
 
@@ -1671,7 +1890,10 @@ export namespace MyNS {
 		/** The number format source used in the scorecard chart. This field is optional. */
 		numberFormatSource: FormControl<ScorecardChartSpecNumberFormatSource | null | undefined>,
 
-		/** Value to scale scorecard key and baseline value. For example, a factor of 10 can be used to divide all values in the chart by 10. This field is optional. */
+		/**
+		 * Value to scale scorecard key and baseline value. For example, a factor of 10 can be used to divide all values in the chart by 10. This field is optional.
+		 * Type: double
+		 */
 		scaleFactor: FormControl<number | null | undefined>,
 	}
 	export function CreateScorecardChartSpecFormGroup() {
@@ -1794,7 +2016,10 @@ export namespace MyNS {
 		/** An unique identifier that references a data source column. */
 		dataSourceColumnReference?: DataSourceColumnReference;
 
-		/** The dimension the sort should be applied to. */
+		/**
+		 * The dimension the sort should be applied to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dimensionIndex?: number | null;
 
 		/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
@@ -1810,7 +2035,10 @@ export namespace MyNS {
 	/** A sort order associated with a specific column or row. */
 	export interface SortSpecFormProperties {
 
-		/** The dimension the sort should be applied to. */
+		/**
+		 * The dimension the sort should be applied to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dimensionIndex: FormControl<number | null | undefined>,
 
 		/** The order data should be sorted. */
@@ -1845,19 +2073,31 @@ export namespace MyNS {
 		/** True to hide tooltips. */
 		hideTooltips?: boolean | null;
 
-		/** The number of additional data levels beyond the labeled levels to be shown on the treemap chart. These levels are not interactive and are shown without their labels. Defaults to 0 if not specified. */
+		/**
+		 * The number of additional data levels beyond the labeled levels to be shown on the treemap chart. These levels are not interactive and are shown without their labels. Defaults to 0 if not specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hintedLevels?: number | null;
 
 		/** The data included in a domain or series. */
 		labels?: ChartData;
 
-		/** The number of data levels to show on the treemap chart. These levels are interactive and are shown with their labels. Defaults to 2 if not specified. */
+		/**
+		 * The number of data levels to show on the treemap chart. These levels are interactive and are shown with their labels. Defaults to 2 if not specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		levels?: number | null;
 
-		/** The maximum possible data value. Cells with values greater than this will have the same color as cells with this value. If not specified, defaults to the actual maximum value from color_data, or the maximum value from size_data if color_data is not specified. */
+		/**
+		 * The maximum possible data value. Cells with values greater than this will have the same color as cells with this value. If not specified, defaults to the actual maximum value from color_data, or the maximum value from size_data if color_data is not specified.
+		 * Type: double
+		 */
 		maxValue?: number | null;
 
-		/** The minimum possible data value. Cells with values less than this will have the same color as cells with this value. If not specified, defaults to the actual minimum value from color_data, or the minimum value from size_data if color_data is not specified. */
+		/**
+		 * The minimum possible data value. Cells with values less than this will have the same color as cells with this value. If not specified, defaults to the actual minimum value from color_data, or the minimum value from size_data if color_data is not specified.
+		 * Type: double
+		 */
 		minValue?: number | null;
 
 		/** The data included in a domain or series. */
@@ -1876,16 +2116,28 @@ export namespace MyNS {
 		/** True to hide tooltips. */
 		hideTooltips: FormControl<boolean | null | undefined>,
 
-		/** The number of additional data levels beyond the labeled levels to be shown on the treemap chart. These levels are not interactive and are shown without their labels. Defaults to 0 if not specified. */
+		/**
+		 * The number of additional data levels beyond the labeled levels to be shown on the treemap chart. These levels are not interactive and are shown without their labels. Defaults to 0 if not specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hintedLevels: FormControl<number | null | undefined>,
 
-		/** The number of data levels to show on the treemap chart. These levels are interactive and are shown with their labels. Defaults to 2 if not specified. */
+		/**
+		 * The number of data levels to show on the treemap chart. These levels are interactive and are shown with their labels. Defaults to 2 if not specified.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		levels: FormControl<number | null | undefined>,
 
-		/** The maximum possible data value. Cells with values greater than this will have the same color as cells with this value. If not specified, defaults to the actual maximum value from color_data, or the maximum value from size_data if color_data is not specified. */
+		/**
+		 * The maximum possible data value. Cells with values greater than this will have the same color as cells with this value. If not specified, defaults to the actual maximum value from color_data, or the maximum value from size_data if color_data is not specified.
+		 * Type: double
+		 */
 		maxValue: FormControl<number | null | undefined>,
 
-		/** The minimum possible data value. Cells with values less than this will have the same color as cells with this value. If not specified, defaults to the actual minimum value from color_data, or the minimum value from size_data if color_data is not specified. */
+		/**
+		 * The minimum possible data value. Cells with values less than this will have the same color as cells with this value. If not specified, defaults to the actual minimum value from color_data, or the minimum value from size_data if color_data is not specified.
+		 * Type: double
+		 */
 		minValue: FormControl<number | null | undefined>,
 	}
 	export function CreateTreemapChartSpecFormGroup() {
@@ -2057,7 +2309,10 @@ export namespace MyNS {
 		/** A label for the subtotal column. */
 		label?: string | null;
 
-		/** The zero-based index of a data point within the series. If data_is_subtotal is true, the data point at this index is the subtotal. Otherwise, the subtotal appears after the data point with this index. A series can have multiple subtotals at arbitrary indices, but subtotals do not affect the indices of the data points. For example, if a series has three data points, their indices will always be 0, 1, and 2, regardless of how many subtotals exist on the series or what data points they are associated with. */
+		/**
+		 * The zero-based index of a data point within the series. If data_is_subtotal is true, the data point at this index is the subtotal. Otherwise, the subtotal appears after the data point with this index. A series can have multiple subtotals at arbitrary indices, but subtotals do not affect the indices of the data points. For example, if a series has three data points, their indices will always be 0, 1, and 2, regardless of how many subtotals exist on the series or what data points they are associated with.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subtotalIndex?: number | null;
 	}
 
@@ -2070,7 +2325,10 @@ export namespace MyNS {
 		/** A label for the subtotal column. */
 		label: FormControl<string | null | undefined>,
 
-		/** The zero-based index of a data point within the series. If data_is_subtotal is true, the data point at this index is the subtotal. Otherwise, the subtotal appears after the data point with this index. A series can have multiple subtotals at arbitrary indices, but subtotals do not affect the indices of the data points. For example, if a series has three data points, their indices will always be 0, 1, and 2, regardless of how many subtotals exist on the series or what data points they are associated with. */
+		/**
+		 * The zero-based index of a data point within the series. If data_is_subtotal is true, the data point at this index is the subtotal. Otherwise, the subtotal appears after the data point with this index. A series can have multiple subtotals at arbitrary indices, but subtotals do not affect the indices of the data points. For example, if a series has three data points, their indices will always be 0, 1, and 2, regardless of how many subtotals exist on the series or what data points they are associated with.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subtotalIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateWaterfallChartCustomSubtotalFormGroup() {
@@ -2132,7 +2390,10 @@ export namespace MyNS {
 	/** Adds a new conditional format rule at the given index. All subsequent rules' indexes are incremented. */
 	export interface AddConditionalFormatRuleRequest {
 
-		/** The zero-based index where the rule should be inserted. */
+		/**
+		 * The zero-based index where the rule should be inserted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** A rule describing a conditional format. */
@@ -2142,7 +2403,10 @@ export namespace MyNS {
 	/** Adds a new conditional format rule at the given index. All subsequent rules' indexes are incremented. */
 	export interface AddConditionalFormatRuleRequestFormProperties {
 
-		/** The zero-based index where the rule should be inserted. */
+		/**
+		 * The zero-based index where the rule should be inserted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateAddConditionalFormatRuleRequestFormGroup() {
@@ -2304,7 +2568,10 @@ export namespace MyNS {
 		/** The style of the border. */
 		style?: BorderStyle | null;
 
-		/** The width of the border, in pixels. Deprecated; the width is determined by the "style" field. */
+		/**
+		 * The width of the border, in pixels. Deprecated; the width is determined by the "style" field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -2314,7 +2581,10 @@ export namespace MyNS {
 		/** The style of the border. */
 		style: FormControl<BorderStyle | null | undefined>,
 
-		/** The width of the border, in pixels. Deprecated; the width is determined by the "style" field. */
+		/**
+		 * The width of the border, in pixels. Deprecated; the width is determined by the "style" field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateBorderFormGroup() {
@@ -2363,32 +2633,56 @@ export namespace MyNS {
 	/** The amount of padding around the cell, in pixels. When updating padding, every field must be specified. */
 	export interface Padding {
 
-		/** The bottom padding of the cell. */
+		/**
+		 * The bottom padding of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bottom?: number | null;
 
-		/** The left padding of the cell. */
+		/**
+		 * The left padding of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left?: number | null;
 
-		/** The right padding of the cell. */
+		/**
+		 * The right padding of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		right?: number | null;
 
-		/** The top padding of the cell. */
+		/**
+		 * The top padding of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top?: number | null;
 	}
 
 	/** The amount of padding around the cell, in pixels. When updating padding, every field must be specified. */
 	export interface PaddingFormProperties {
 
-		/** The bottom padding of the cell. */
+		/**
+		 * The bottom padding of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bottom: FormControl<number | null | undefined>,
 
-		/** The left padding of the cell. */
+		/**
+		 * The left padding of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** The right padding of the cell. */
+		/**
+		 * The right padding of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		right: FormControl<number | null | undefined>,
 
-		/** The top padding of the cell. */
+		/**
+		 * The top padding of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top: FormControl<number | null | undefined>,
 	}
 	export function CreatePaddingFormGroup() {
@@ -2407,7 +2701,10 @@ export namespace MyNS {
 	/** The rotation applied to text in a cell. */
 	export interface TextRotation {
 
-		/** The angle between the standard orientation and the desired orientation. Measured in degrees. Valid values are between -90 and 90. Positive angles are angled upwards, negative are angled downwards. Note: For LTR text direction positive angles are in the counterclockwise direction, whereas for RTL they are in the clockwise direction */
+		/**
+		 * The angle between the standard orientation and the desired orientation. Measured in degrees. Valid values are between -90 and 90. Positive angles are angled upwards, negative are angled downwards. Note: For LTR text direction positive angles are in the counterclockwise direction, whereas for RTL they are in the clockwise direction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		angle?: number | null;
 
 		/** If true, text reads top to bottom, but the orientation of individual characters is unchanged. For example: | V | | e | | r | | t | | i | | c | | a | | l | */
@@ -2417,7 +2714,10 @@ export namespace MyNS {
 	/** The rotation applied to text in a cell. */
 	export interface TextRotationFormProperties {
 
-		/** The angle between the standard orientation and the desired orientation. Measured in degrees. Valid values are between -90 and 90. Positive angles are angled upwards, negative are angled downwards. Note: For LTR text direction positive angles are in the counterclockwise direction, whereas for RTL they are in the clockwise direction */
+		/**
+		 * The angle between the standard orientation and the desired orientation. Measured in degrees. Valid values are between -90 and 90. Positive angles are angled upwards, negative are angled downwards. Note: For LTR text direction positive angles are in the counterclockwise direction, whereas for RTL they are in the clockwise direction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		angle: FormControl<number | null | undefined>,
 
 		/** If true, text reads top to bottom, but the orientation of individual characters is unchanged. For example: | V | | e | | r | | t | | i | | c | | a | | l | */
@@ -2521,7 +2821,10 @@ export namespace MyNS {
 		/** The spreadsheet-scoped unique ID that identifies the data source. Example: 1080547365. */
 		dataSourceId?: string | null;
 
-		/** The ID of the Sheet connected with the data source. The field cannot be changed once set. When creating a data source, an associated DATA_SOURCE sheet is also created, if the field is not specified, the ID of the created sheet will be randomly generated. */
+		/**
+		 * The ID of the Sheet connected with the data source. The field cannot be changed once set. When creating a data source, an associated DATA_SOURCE sheet is also created, if the field is not specified, the ID of the created sheet will be randomly generated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 
 		/** This specifies the details of the data source. For example, for BigQuery, this specifies information about the BigQuery source. */
@@ -2534,7 +2837,10 @@ export namespace MyNS {
 		/** The spreadsheet-scoped unique ID that identifies the data source. Example: 1080547365. */
 		dataSourceId: FormControl<string | null | undefined>,
 
-		/** The ID of the Sheet connected with the data source. The field cannot be changed once set. When creating a data source, an associated DATA_SOURCE sheet is also created, if the field is not specified, the ID of the created sheet will be randomly generated. */
+		/**
+		 * The ID of the Sheet connected with the data source. The field cannot be changed once set. When creating a data source, an associated DATA_SOURCE sheet is also created, if the field is not specified, the ID of the created sheet will be randomly generated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateDataSourceFormGroup() {
@@ -2747,13 +3053,22 @@ export namespace MyNS {
 		/** The dimension of the span. */
 		dimension?: DimensionRangeDimension | null;
 
-		/** The end (exclusive) of the span, or not set if unbounded. */
+		/**
+		 * The end (exclusive) of the span, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
-		/** The sheet this span is on. */
+		/**
+		 * The sheet this span is on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 
-		/** The start (inclusive) of the span, or not set if unbounded. */
+		/**
+		 * The start (inclusive) of the span, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 	}
 
@@ -2763,13 +3078,22 @@ export namespace MyNS {
 		/** The dimension of the span. */
 		dimension: FormControl<DimensionRangeDimension | null | undefined>,
 
-		/** The end (exclusive) of the span, or not set if unbounded. */
+		/**
+		 * The end (exclusive) of the span, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
-		/** The sheet this span is on. */
+		/**
+		 * The sheet this span is on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 
-		/** The start (inclusive) of the span, or not set if unbounded. */
+		/**
+		 * The start (inclusive) of the span, or not set if unbounded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateDimensionRangeFormGroup() {
@@ -2808,7 +3132,10 @@ export namespace MyNS {
 		/** This field is true if this group is collapsed. A collapsed group remains collapsed if an overlapping group at a shallower depth is expanded. A true value does not imply that all dimensions within the group are hidden, since a dimension's visibility can change independently from this group property. However, when this property is updated, all dimensions within it are set to hidden if this field is true, or set to visible if this field is false. */
 		collapsed?: boolean | null;
 
-		/** The depth of the group, representing how many groups have a range that wholly contains the range of this group. */
+		/**
+		 * The depth of the group, representing how many groups have a range that wholly contains the range of this group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth?: number | null;
 
 		/** A range along a single dimension on a sheet. All indexes are zero-based. Indexes are half open: the start index is inclusive and the end index is exclusive. Missing indexes indicate the range is unbounded on that side. */
@@ -2821,7 +3148,10 @@ export namespace MyNS {
 		/** This field is true if this group is collapsed. A collapsed group remains collapsed if an overlapping group at a shallower depth is expanded. A true value does not imply that all dimensions within the group are hidden, since a dimension's visibility can change independently from this group property. However, when this property is updated, all dimensions within it are set to hidden if this field is true, or set to visible if this field is false. */
 		collapsed: FormControl<boolean | null | undefined>,
 
-		/** The depth of the group, representing how many groups have a range that wholly contains the range of this group. */
+		/**
+		 * The depth of the group, representing how many groups have a range that wholly contains the range of this group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		depth: FormControl<number | null | undefined>,
 	}
 	export function CreateDimensionGroupFormGroup() {
@@ -2859,7 +3189,10 @@ export namespace MyNS {
 		/** The filter criteria for showing/hiding values per column. Both criteria and filter_specs are populated in responses. If both fields are specified in an update request, this field takes precedence. */
 		filterSpecs?: Array<FilterSpec>;
 
-		/** The ID of the filter view. */
+		/**
+		 * The ID of the filter view.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filterViewId?: number | null;
 
 		/** The named range this filter view is backed by, if any. When writing, only one of range or named_range_id may be set. */
@@ -2881,7 +3214,10 @@ export namespace MyNS {
 		/** The criteria for showing/hiding values per column. The map's key is the column index, and the value is the criteria for that column. This field is deprecated in favor of filter_specs. */
 		criteria: FormControl<{[id: string]: FilterCriteria } | null | undefined>,
 
-		/** The ID of the filter view. */
+		/**
+		 * The ID of the filter view.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filterViewId: FormControl<number | null | undefined>,
 
 		/** The named range this filter view is backed by, if any. When writing, only one of range or named_range_id may be set. */
@@ -3012,7 +3348,10 @@ export namespace MyNS {
 		/** The named range this protected range is backed by, if any. When writing, only one of range or named_range_id may be set. */
 		namedRangeId?: string | null;
 
-		/** The ID of the protected range. This field is read-only. */
+		/**
+		 * The ID of the protected range. This field is read-only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		protectedRangeId?: number | null;
 
 		/** A range on a sheet. All indexes are zero-based. Indexes are half open, i.e. the start index is inclusive and the end index is exclusive -- [start_index, end_index). Missing indexes indicate the range is unbounded on that side. For example, if `"Sheet1"` is sheet ID 123456, then: `Sheet1!A1:A1 == sheet_id: 123456, start_row_index: 0, end_row_index: 1, start_column_index: 0, end_column_index: 1` `Sheet1!A3:B4 == sheet_id: 123456, start_row_index: 2, end_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1!A:B == sheet_id: 123456, start_column_index: 0, end_column_index: 2` `Sheet1!A5:B == sheet_id: 123456, start_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1 == sheet_id: 123456` The start index must always be less than or equal to the end index. If the start index equals the end index, then the range is empty. Empty ranges are typically not meaningful and are usually rendered in the UI as `#REF!`. */
@@ -3037,7 +3376,10 @@ export namespace MyNS {
 		/** The named range this protected range is backed by, if any. When writing, only one of range or named_range_id may be set. */
 		namedRangeId: FormControl<string | null | undefined>,
 
-		/** The ID of the protected range. This field is read-only. */
+		/**
+		 * The ID of the protected range. This field is read-only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		protectedRangeId: FormControl<number | null | undefined>,
 
 		/** True if the user who requested this protected range can edit the protected area. This field is read-only. */
@@ -3131,13 +3473,19 @@ export namespace MyNS {
 		/** True if the sheet is hidden in the UI, false if it's visible. */
 		hidden?: boolean | null;
 
-		/** The index of the sheet within the spreadsheet. When adding or updating sheet properties, if this field is excluded then the sheet is added or moved to the end of the sheet list. When updating sheet indices or inserting sheets, movement is considered in "before the move" indexes. For example, if there were three sheets (S1, S2, S3) in order to move S1 ahead of S2 the index would have to be set to 2. A sheet index update request is ignored if the requested index is identical to the sheets current index or if the requested new index is equal to the current sheet index + 1. */
+		/**
+		 * The index of the sheet within the spreadsheet. When adding or updating sheet properties, if this field is excluded then the sheet is added or moved to the end of the sheet list. When updating sheet indices or inserting sheets, movement is considered in "before the move" indexes. For example, if there were three sheets (S1, S2, S3) in order to move S1 ahead of S2 the index would have to be set to 2. A sheet index update request is ignored if the requested index is identical to the sheets current index or if the requested new index is equal to the current sheet index + 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** True if the sheet is an RTL sheet instead of an LTR sheet. */
 		rightToLeft?: boolean | null;
 
-		/** The ID of the sheet. Must be non-negative. This field cannot be changed once set. */
+		/**
+		 * The ID of the sheet. Must be non-negative. This field cannot be changed once set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 
 		/** The type of sheet. Defaults to GRID. This field cannot be changed once set. */
@@ -3159,13 +3507,19 @@ export namespace MyNS {
 		/** True if the sheet is hidden in the UI, false if it's visible. */
 		hidden: FormControl<boolean | null | undefined>,
 
-		/** The index of the sheet within the spreadsheet. When adding or updating sheet properties, if this field is excluded then the sheet is added or moved to the end of the sheet list. When updating sheet indices or inserting sheets, movement is considered in "before the move" indexes. For example, if there were three sheets (S1, S2, S3) in order to move S1 ahead of S2 the index would have to be set to 2. A sheet index update request is ignored if the requested index is identical to the sheets current index or if the requested new index is equal to the current sheet index + 1. */
+		/**
+		 * The index of the sheet within the spreadsheet. When adding or updating sheet properties, if this field is excluded then the sheet is added or moved to the end of the sheet list. When updating sheet indices or inserting sheets, movement is considered in "before the move" indexes. For example, if there were three sheets (S1, S2, S3) in order to move S1 ahead of S2 the index would have to be set to 2. A sheet index update request is ignored if the requested index is identical to the sheets current index or if the requested new index is equal to the current sheet index + 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** True if the sheet is an RTL sheet instead of an LTR sheet. */
 		rightToLeft: FormControl<boolean | null | undefined>,
 
-		/** The ID of the sheet. Must be non-negative. This field cannot be changed once set. */
+		/**
+		 * The ID of the sheet. Must be non-negative. This field cannot be changed once set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 
 		/** The type of sheet. Defaults to GRID. This field cannot be changed once set. */
@@ -3217,22 +3571,34 @@ export namespace MyNS {
 	/** Properties of a grid. */
 	export interface GridProperties {
 
-		/** The number of columns in the grid. */
+		/**
+		 * The number of columns in the grid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnCount?: number | null;
 
 		/** True if the column grouping control toggle is shown after the group. */
 		columnGroupControlAfter?: boolean | null;
 
-		/** The number of columns that are frozen in the grid. */
+		/**
+		 * The number of columns that are frozen in the grid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frozenColumnCount?: number | null;
 
-		/** The number of rows that are frozen in the grid. */
+		/**
+		 * The number of rows that are frozen in the grid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frozenRowCount?: number | null;
 
 		/** True if the grid isn't showing gridlines in the UI. */
 		hideGridlines?: boolean | null;
 
-		/** The number of rows in the grid. */
+		/**
+		 * The number of rows in the grid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount?: number | null;
 
 		/** True if the row grouping control toggle is shown after the group. */
@@ -3242,22 +3608,34 @@ export namespace MyNS {
 	/** Properties of a grid. */
 	export interface GridPropertiesFormProperties {
 
-		/** The number of columns in the grid. */
+		/**
+		 * The number of columns in the grid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnCount: FormControl<number | null | undefined>,
 
 		/** True if the column grouping control toggle is shown after the group. */
 		columnGroupControlAfter: FormControl<boolean | null | undefined>,
 
-		/** The number of columns that are frozen in the grid. */
+		/**
+		 * The number of columns that are frozen in the grid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frozenColumnCount: FormControl<number | null | undefined>,
 
-		/** The number of rows that are frozen in the grid. */
+		/**
+		 * The number of rows that are frozen in the grid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frozenRowCount: FormControl<number | null | undefined>,
 
 		/** True if the grid isn't showing gridlines in the UI. */
 		hideGridlines: FormControl<boolean | null | undefined>,
 
-		/** The number of rows in the grid. */
+		/**
+		 * The number of rows in the grid.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount: FormControl<number | null | undefined>,
 
 		/** True if the row grouping control toggle is shown after the group. */
@@ -3319,7 +3697,10 @@ export namespace MyNS {
 		/** The position of an embedded object such as a chart. */
 		position?: EmbeddedObjectPosition;
 
-		/** The ID of the slicer. */
+		/**
+		 * The ID of the slicer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		slicerId?: number | null;
 
 		/** The specifications of a slicer. */
@@ -3329,7 +3710,10 @@ export namespace MyNS {
 	/** A slicer in a sheet. */
 	export interface SlicerFormProperties {
 
-		/** The ID of the slicer. */
+		/**
+		 * The ID of the slicer.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		slicerId: FormControl<number | null | undefined>,
 	}
 	export function CreateSlicerFormGroup() {
@@ -3352,7 +3736,10 @@ export namespace MyNS {
 		/** A color value. */
 		backgroundColorStyle?: ColorStyle;
 
-		/** The zero-based column index in the data table on which the filter is applied to. */
+		/**
+		 * The zero-based column index in the data table on which the filter is applied to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnIndex?: number | null;
 
 		/** A range on a sheet. All indexes are zero-based. Indexes are half open, i.e. the start index is inclusive and the end index is exclusive -- [start_index, end_index). Missing indexes indicate the range is unbounded on that side. For example, if `"Sheet1"` is sheet ID 123456, then: `Sheet1!A1:A1 == sheet_id: 123456, start_row_index: 0, end_row_index: 1, start_column_index: 0, end_column_index: 1` `Sheet1!A3:B4 == sheet_id: 123456, start_row_index: 2, end_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1!A:B == sheet_id: 123456, start_column_index: 0, end_column_index: 2` `Sheet1!A5:B == sheet_id: 123456, start_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1 == sheet_id: 123456` The start index must always be less than or equal to the end index. If the start index equals the end index, then the range is empty. Empty ranges are typically not meaningful and are usually rendered in the UI as `#REF!`. */
@@ -3377,7 +3764,10 @@ export namespace MyNS {
 		/** True if the filter should apply to pivot tables. If not set, default to `True`. */
 		applyToPivotTables: FormControl<boolean | null | undefined>,
 
-		/** The zero-based column index in the data table on which the filter is applied to. */
+		/**
+		 * The zero-based column index in the data table on which the filter is applied to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnIndex: FormControl<number | null | undefined>,
 
 		/** The horizontal alignment of title in the slicer. If unspecified, defaults to `LEFT` */
@@ -3423,7 +3813,10 @@ export namespace MyNS {
 		/** The data to append. */
 		rows?: Array<RowData>;
 
-		/** The sheet ID to append the data to. */
+		/**
+		 * The sheet ID to append the data to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 	}
 
@@ -3433,7 +3826,10 @@ export namespace MyNS {
 		/** The fields of CellData that should be updated. At least one field must be specified. The root is the CellData; 'row.values.' should not be specified. A single `"*"` can be used as short-hand for listing every field. */
 		fields: FormControl<string | null | undefined>,
 
-		/** The sheet ID to append the data to. */
+		/**
+		 * The sheet ID to append the data to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateAppendCellsRequestFormGroup() {
@@ -3566,7 +3962,10 @@ export namespace MyNS {
 		/** Filter specifications in the data source table. */
 		filterSpecs?: Array<FilterSpec>;
 
-		/** The limit of rows to return. If not set, a default limit is applied. Please refer to the Sheets editor for the default and max limit. */
+		/**
+		 * The limit of rows to return. If not set, a default limit is applied. Please refer to the Sheets editor for the default and max limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowLimit?: number | null;
 
 		/** Sort specifications in the data source table. The result of the data source table is sorted based on the sort specifications in order. */
@@ -3582,7 +3981,10 @@ export namespace MyNS {
 		/** The ID of the data source the data source table is associated with. */
 		dataSourceId: FormControl<string | null | undefined>,
 
-		/** The limit of rows to return. If not set, a default limit is applied. Please refer to the Sheets editor for the default and max limit. */
+		/**
+		 * The limit of rows to return. If not set, a default limit is applied. Please refer to the Sheets editor for the default and max limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowLimit: FormControl<number | null | undefined>,
 	}
 	export function CreateDataSourceTableFormGroup() {
@@ -3647,7 +4049,10 @@ export namespace MyNS {
 		/** Represents a formula. */
 		formulaValue?: string | null;
 
-		/** Represents a double value. Note: Dates, Times and DateTimes are represented as doubles in SERIAL_NUMBER format. */
+		/**
+		 * Represents a double value. Note: Dates, Times and DateTimes are represented as doubles in SERIAL_NUMBER format.
+		 * Type: double
+		 */
 		numberValue?: number | null;
 
 		/** Represents a string value. Leading single quotes are not included. For example, if the user typed `'123` into the UI, this would be represented as a `stringValue` of `"123"`. */
@@ -3663,7 +4068,10 @@ export namespace MyNS {
 		/** Represents a formula. */
 		formulaValue: FormControl<string | null | undefined>,
 
-		/** Represents a double value. Note: Dates, Times and DateTimes are represented as doubles in SERIAL_NUMBER format. */
+		/**
+		 * Represents a double value. Note: Dates, Times and DateTimes are represented as doubles in SERIAL_NUMBER format.
+		 * Type: double
+		 */
 		numberValue: FormControl<number | null | undefined>,
 
 		/** Represents a string value. Leading single quotes are not included. For example, if the user typed `'123` into the UI, this would be represented as a `stringValue` of `"123"`. */
@@ -3787,7 +4195,10 @@ export namespace MyNS {
 		/** The order the values in this group should be sorted. */
 		sortOrder?: SortSpecSortOrder | null;
 
-		/** The column offset of the source range that this grouping is based on. For example, if the source was `C10:E15`, a `sourceColumnOffset` of `0` means this group refers to column `C`, whereas the offset `1` would refer to column `D`. */
+		/**
+		 * The column offset of the source range that this grouping is based on. For example, if the source was `C10:E15`, a `sourceColumnOffset` of `0` means this group refers to column `C`, whereas the offset `1` would refer to column `D`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceColumnOffset?: number | null;
 
 		/** Information about which values in a pivot group should be used for sorting. */
@@ -3812,7 +4223,10 @@ export namespace MyNS {
 		/** The order the values in this group should be sorted. */
 		sortOrder: FormControl<SortSpecSortOrder | null | undefined>,
 
-		/** The column offset of the source range that this grouping is based on. For example, if the source was `C10:E15`, a `sourceColumnOffset` of `0` means this group refers to column `C`, whereas the offset `1` would refer to column `D`. */
+		/**
+		 * The column offset of the source range that this grouping is based on. For example, if the source was `C10:E15`, a `sourceColumnOffset` of `0` means this group refers to column `C`, whereas the offset `1` would refer to column `D`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceColumnOffset: FormControl<number | null | undefined>,
 	}
 	export function CreatePivotGroupFormGroup() {
@@ -3830,20 +4244,32 @@ export namespace MyNS {
 	/** The count limit on rows or columns in the pivot group. */
 	export interface PivotGroupLimit {
 
-		/** The order in which the group limit is applied to the pivot table. Pivot group limits are applied from lower to higher order number. Order numbers are normalized to consecutive integers from 0. For write request, to fully customize the applying orders, all pivot group limits should have this field set with an unique number. Otherwise, the order is determined by the index in the PivotTable.rows list and then the PivotTable.columns list. */
+		/**
+		 * The order in which the group limit is applied to the pivot table. Pivot group limits are applied from lower to higher order number. Order numbers are normalized to consecutive integers from 0. For write request, to fully customize the applying orders, all pivot group limits should have this field set with an unique number. Otherwise, the order is determined by the index in the PivotTable.rows list and then the PivotTable.columns list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applyOrder?: number | null;
 
-		/** The count limit. */
+		/**
+		 * The count limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		countLimit?: number | null;
 	}
 
 	/** The count limit on rows or columns in the pivot group. */
 	export interface PivotGroupLimitFormProperties {
 
-		/** The order in which the group limit is applied to the pivot table. Pivot group limits are applied from lower to higher order number. Order numbers are normalized to consecutive integers from 0. For write request, to fully customize the applying orders, all pivot group limits should have this field set with an unique number. Otherwise, the order is determined by the index in the PivotTable.rows list and then the PivotTable.columns list. */
+		/**
+		 * The order in which the group limit is applied to the pivot table. Pivot group limits are applied from lower to higher order number. Order numbers are normalized to consecutive integers from 0. For write request, to fully customize the applying orders, all pivot group limits should have this field set with an unique number. Otherwise, the order is determined by the index in the PivotTable.rows list and then the PivotTable.columns list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		applyOrder: FormControl<number | null | undefined>,
 
-		/** The count limit. */
+		/**
+		 * The count limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		countLimit: FormControl<number | null | undefined>,
 	}
 	export function CreatePivotGroupLimitFormGroup() {
@@ -3904,26 +4330,44 @@ export namespace MyNS {
 	/** Allows you to organize the numeric values in a source data column into buckets of a constant size. All values from HistogramRule.start to HistogramRule.end are placed into groups of size HistogramRule.interval. In addition, all values below HistogramRule.start are placed in one group, and all values above HistogramRule.end are placed in another. Only HistogramRule.interval is required, though if HistogramRule.start and HistogramRule.end are both provided, HistogramRule.start must be less than HistogramRule.end. For example, a pivot table showing average purchase amount by age that has 50+ rows: +-----+-------------------+ | Age | AVERAGE of Amount | +-----+-------------------+ | 16 | $27.13 | | 17 | $5.24 | | 18 | $20.15 | ... +-----+-------------------+ could be turned into a pivot table that looks like the one below by applying a histogram group rule with a HistogramRule.start of 25, an HistogramRule.interval of 20, and an HistogramRule.end of 65. +-------------+-------------------+ | Grouped Age | AVERAGE of Amount | +-------------+-------------------+ | < 25 | $19.34 | | 25-45 | $31.43 | | 45-65 | $35.87 | | > 65 | $27.55 | +-------------+-------------------+ | Grand Total | $29.12 | +-------------+-------------------+ */
 	export interface HistogramRule {
 
-		/** The maximum value at which items are placed into buckets of constant size. Values above end are lumped into a single bucket. This field is optional. */
+		/**
+		 * The maximum value at which items are placed into buckets of constant size. Values above end are lumped into a single bucket. This field is optional.
+		 * Type: double
+		 */
 		end?: number | null;
 
-		/** The size of the buckets that are created. Must be positive. */
+		/**
+		 * The size of the buckets that are created. Must be positive.
+		 * Type: double
+		 */
 		interval?: number | null;
 
-		/** The minimum value at which items are placed into buckets of constant size. Values below start are lumped into a single bucket. This field is optional. */
+		/**
+		 * The minimum value at which items are placed into buckets of constant size. Values below start are lumped into a single bucket. This field is optional.
+		 * Type: double
+		 */
 		start?: number | null;
 	}
 
 	/** Allows you to organize the numeric values in a source data column into buckets of a constant size. All values from HistogramRule.start to HistogramRule.end are placed into groups of size HistogramRule.interval. In addition, all values below HistogramRule.start are placed in one group, and all values above HistogramRule.end are placed in another. Only HistogramRule.interval is required, though if HistogramRule.start and HistogramRule.end are both provided, HistogramRule.start must be less than HistogramRule.end. For example, a pivot table showing average purchase amount by age that has 50+ rows: +-----+-------------------+ | Age | AVERAGE of Amount | +-----+-------------------+ | 16 | $27.13 | | 17 | $5.24 | | 18 | $20.15 | ... +-----+-------------------+ could be turned into a pivot table that looks like the one below by applying a histogram group rule with a HistogramRule.start of 25, an HistogramRule.interval of 20, and an HistogramRule.end of 65. +-------------+-------------------+ | Grouped Age | AVERAGE of Amount | +-------------+-------------------+ | < 25 | $19.34 | | 25-45 | $31.43 | | 45-65 | $35.87 | | > 65 | $27.55 | +-------------+-------------------+ | Grand Total | $29.12 | +-------------+-------------------+ */
 	export interface HistogramRuleFormProperties {
 
-		/** The maximum value at which items are placed into buckets of constant size. Values above end are lumped into a single bucket. This field is optional. */
+		/**
+		 * The maximum value at which items are placed into buckets of constant size. Values above end are lumped into a single bucket. This field is optional.
+		 * Type: double
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** The size of the buckets that are created. Must be positive. */
+		/**
+		 * The size of the buckets that are created. Must be positive.
+		 * Type: double
+		 */
 		interval: FormControl<number | null | undefined>,
 
-		/** The minimum value at which items are placed into buckets of constant size. Values below start are lumped into a single bucket. This field is optional. */
+		/**
+		 * The minimum value at which items are placed into buckets of constant size. Values below start are lumped into a single bucket. This field is optional.
+		 * Type: double
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateHistogramRuleFormGroup() {
@@ -3979,14 +4423,20 @@ export namespace MyNS {
 		/** Determines the bucket from which values are chosen to sort. For example, in a pivot table with one row group & two column groups, the row group can list up to two values. The first value corresponds to a value within the first column group, and the second value corresponds to a value in the second column group. If no values are listed, this would indicate that the row should be sorted according to the "Grand Total" over the column groups. If a single value is listed, this would correspond to using the "Total" of that bucket. */
 		buckets?: Array<ExtendedValue>;
 
-		/** The offset in the PivotTable.values list which the values in this grouping should be sorted by. */
+		/**
+		 * The offset in the PivotTable.values list which the values in this grouping should be sorted by.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valuesIndex?: number | null;
 	}
 
 	/** Information about which values in a pivot group should be used for sorting. */
 	export interface PivotGroupSortValueBucketFormProperties {
 
-		/** The offset in the PivotTable.values list which the values in this grouping should be sorted by. */
+		/**
+		 * The offset in the PivotTable.values list which the values in this grouping should be sorted by.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valuesIndex: FormControl<number | null | undefined>,
 	}
 	export function CreatePivotGroupSortValueBucketFormGroup() {
@@ -4051,7 +4501,10 @@ export namespace MyNS {
 	/** The pivot table filter criteria associated with a specific source column offset. */
 	export interface PivotFilterSpec {
 
-		/** The zero-based column offset of the source range. */
+		/**
+		 * The zero-based column offset of the source range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnOffsetIndex?: number | null;
 
 		/** An unique identifier that references a data source column. */
@@ -4064,7 +4517,10 @@ export namespace MyNS {
 	/** The pivot table filter criteria associated with a specific source column offset. */
 	export interface PivotFilterSpecFormProperties {
 
-		/** The zero-based column offset of the source range. */
+		/**
+		 * The zero-based column offset of the source range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnOffsetIndex: FormControl<number | null | undefined>,
 	}
 	export function CreatePivotFilterSpecFormGroup() {
@@ -4092,7 +4548,10 @@ export namespace MyNS {
 		/** A name to use for the value. */
 		name?: string | null;
 
-		/** The column offset of the source range that this value reads from. For example, if the source was `C10:E15`, a `sourceColumnOffset` of `0` means this value refers to column `C`, whereas the offset `1` would refer to column `D`. */
+		/**
+		 * The column offset of the source range that this value reads from. For example, if the source was `C10:E15`, a `sourceColumnOffset` of `0` means this value refers to column `C`, whereas the offset `1` would refer to column `D`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceColumnOffset?: number | null;
 
 		/** A function to summarize the value. If formula is set, the only supported values are SUM and CUSTOM. If sourceColumnOffset is set, then `CUSTOM` is not supported. */
@@ -4111,7 +4570,10 @@ export namespace MyNS {
 		/** A name to use for the value. */
 		name: FormControl<string | null | undefined>,
 
-		/** The column offset of the source range that this value reads from. For example, if the source was `C10:E15`, a `sourceColumnOffset` of `0` means this value refers to column `C`, whereas the offset `1` would refer to column `D`. */
+		/**
+		 * The column offset of the source range that this value reads from. For example, if the source was `C10:E15`, a `sourceColumnOffset` of `0` means this value refers to column `C`, whereas the offset `1` would refer to column `D`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceColumnOffset: FormControl<number | null | undefined>,
 
 		/** A function to summarize the value. If formula is set, the only supported values are SUM and CUSTOM. If sourceColumnOffset is set, then `CUSTOM` is not supported. */
@@ -4139,14 +4601,20 @@ export namespace MyNS {
 		/** The format of a run of text in a cell. Absent values indicate that the field isn't specified. */
 		format?: TextFormat;
 
-		/** The zero-based character index where this run starts, in UTF-16 code units. */
+		/**
+		 * The zero-based character index where this run starts, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 	}
 
 	/** A run of a text format. The format of this run continues until the start index of the next run. When updating, all fields must be set. */
 	export interface TextFormatRunFormProperties {
 
-		/** The zero-based character index where this run starts, in UTF-16 code units. */
+		/**
+		 * The zero-based character index where this run starts, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateTextFormatRunFormGroup() {
@@ -4163,10 +4631,16 @@ export namespace MyNS {
 		/** Whether rows or columns should be appended. */
 		dimension?: DimensionRangeDimension | null;
 
-		/** The number of rows or columns to append. */
+		/**
+		 * The number of rows or columns to append.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** The sheet to append rows or columns to. */
+		/**
+		 * The sheet to append rows or columns to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 	}
 
@@ -4176,10 +4650,16 @@ export namespace MyNS {
 		/** Whether rows or columns should be appended. */
 		dimension: FormControl<DimensionRangeDimension | null | undefined>,
 
-		/** The number of rows or columns to append. */
+		/**
+		 * The number of rows or columns to append.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** The sheet to append rows or columns to. */
+		/**
+		 * The sheet to append rows or columns to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateAppendDimensionRequestFormGroup() {
@@ -4229,10 +4709,16 @@ export namespace MyNS {
 		/** The spreadsheet the updates were applied to. */
 		spreadsheetId?: string | null;
 
-		/** The number of cells updated. */
+		/**
+		 * The number of cells updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedCells?: number | null;
 
-		/** The number of columns where at least one cell in the column was updated. */
+		/**
+		 * The number of columns where at least one cell in the column was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedColumns?: number | null;
 
 		/** Data within a range of the spreadsheet. */
@@ -4241,7 +4727,10 @@ export namespace MyNS {
 		/** The range (in A1 notation) that updates were applied to. */
 		updatedRange?: string | null;
 
-		/** The number of rows where at least one cell in the row was updated. */
+		/**
+		 * The number of rows where at least one cell in the row was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedRows?: number | null;
 	}
 
@@ -4251,16 +4740,25 @@ export namespace MyNS {
 		/** The spreadsheet the updates were applied to. */
 		spreadsheetId: FormControl<string | null | undefined>,
 
-		/** The number of cells updated. */
+		/**
+		 * The number of cells updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedCells: FormControl<number | null | undefined>,
 
-		/** The number of columns where at least one cell in the column was updated. */
+		/**
+		 * The number of columns where at least one cell in the column was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedColumns: FormControl<number | null | undefined>,
 
 		/** The range (in A1 notation) that updates were applied to. */
 		updatedRange: FormControl<string | null | undefined>,
 
-		/** The number of rows where at least one cell in the row was updated. */
+		/**
+		 * The number of rows where at least one cell in the row was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedRows: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateValuesResponseFormGroup() {
@@ -4339,7 +4837,10 @@ export namespace MyNS {
 		/** The dimension that data should be filled into. */
 		dimension?: DimensionRangeDimension | null;
 
-		/** The number of rows or columns that data should be filled into. Positive numbers expand beyond the last row or last column of the source. Negative numbers expand before the first row or first column of the source. */
+		/**
+		 * The number of rows or columns that data should be filled into. Positive numbers expand beyond the last row or last column of the source. Negative numbers expand before the first row or first column of the source.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fillLength?: number | null;
 
 		/** A range on a sheet. All indexes are zero-based. Indexes are half open, i.e. the start index is inclusive and the end index is exclusive -- [start_index, end_index). Missing indexes indicate the range is unbounded on that side. For example, if `"Sheet1"` is sheet ID 123456, then: `Sheet1!A1:A1 == sheet_id: 123456, start_row_index: 0, end_row_index: 1, start_column_index: 0, end_column_index: 1` `Sheet1!A3:B4 == sheet_id: 123456, start_row_index: 2, end_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1!A:B == sheet_id: 123456, start_column_index: 0, end_column_index: 2` `Sheet1!A5:B == sheet_id: 123456, start_row_index: 4, start_column_index: 0, end_column_index: 2` `Sheet1 == sheet_id: 123456` The start index must always be less than or equal to the end index. If the start index equals the end index, then the range is empty. Empty ranges are typically not meaningful and are usually rendered in the UI as `#REF!`. */
@@ -4352,7 +4853,10 @@ export namespace MyNS {
 		/** The dimension that data should be filled into. */
 		dimension: FormControl<DimensionRangeDimension | null | undefined>,
 
-		/** The number of rows or columns that data should be filled into. Positive numbers expand beyond the last row or last column of the source. Negative numbers expand before the first row or first column of the source. */
+		/**
+		 * The number of rows or columns that data should be filled into. Positive numbers expand beyond the last row or last column of the source. Negative numbers expand before the first row or first column of the source.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fillLength: FormControl<number | null | undefined>,
 	}
 	export function CreateSourceAndDestinationFormGroup() {
@@ -4390,14 +4894,20 @@ export namespace MyNS {
 		/** The columns on the data source sheet. */
 		columnReferences?: Array<DataSourceColumnReference>;
 
-		/** The ID of the data source sheet the range is on. */
+		/**
+		 * The ID of the data source sheet the range is on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 	}
 
 	/** A range along a single dimension on a DATA_SOURCE sheet. */
 	export interface DataSourceSheetDimensionRangeFormProperties {
 
-		/** The ID of the data source sheet the range is on. */
+		/**
+		 * The ID of the data source sheet the range is on.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateDataSourceSheetDimensionRangeFormGroup() {
@@ -4491,7 +5001,10 @@ export namespace MyNS {
 		/** Limits the selected developer metadata to those entries which are associated with locations of the specified type. For example, when this field is specified as ROW this lookup only considers developer metadata associated on rows. If the field is left unspecified, all location types are considered. This field cannot be specified as SPREADSHEET when the locationMatchingStrategy is specified as INTERSECTING or when the metadataLocation is specified as a non-spreadsheet location: spreadsheet metadata cannot intersect any other developer metadata location. This field also must be left unspecified when the locationMatchingStrategy is specified as EXACT. */
 		locationType?: DeveloperMetadataLookupLocationType | null;
 
-		/** Limits the selected developer metadata to that which has a matching DeveloperMetadata.metadata_id. */
+		/**
+		 * Limits the selected developer metadata to that which has a matching DeveloperMetadata.metadata_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		metadataId?: number | null;
 
 		/** Limits the selected developer metadata to that which has a matching DeveloperMetadata.metadata_key. */
@@ -4516,7 +5029,10 @@ export namespace MyNS {
 		/** Limits the selected developer metadata to those entries which are associated with locations of the specified type. For example, when this field is specified as ROW this lookup only considers developer metadata associated on rows. If the field is left unspecified, all location types are considered. This field cannot be specified as SPREADSHEET when the locationMatchingStrategy is specified as INTERSECTING or when the metadataLocation is specified as a non-spreadsheet location: spreadsheet metadata cannot intersect any other developer metadata location. This field also must be left unspecified when the locationMatchingStrategy is specified as EXACT. */
 		locationType: FormControl<DeveloperMetadataLookupLocationType | null | undefined>,
 
-		/** Limits the selected developer metadata to that which has a matching DeveloperMetadata.metadata_id. */
+		/**
+		 * Limits the selected developer metadata to that which has a matching DeveloperMetadata.metadata_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		metadataId: FormControl<number | null | undefined>,
 
 		/** Limits the selected developer metadata to that which has a matching DeveloperMetadata.metadata_key. */
@@ -4554,7 +5070,10 @@ export namespace MyNS {
 		/** The type of location this object represents. This field is read-only. */
 		locationType?: DeveloperMetadataLookupLocationType | null;
 
-		/** The ID of the sheet when metadata is associated with an entire sheet. */
+		/**
+		 * The ID of the sheet when metadata is associated with an entire sheet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 
 		/** True when metadata is associated with an entire spreadsheet. */
@@ -4567,7 +5086,10 @@ export namespace MyNS {
 		/** The type of location this object represents. This field is read-only. */
 		locationType: FormControl<DeveloperMetadataLookupLocationType | null | undefined>,
 
-		/** The ID of the sheet when metadata is associated with an entire sheet. */
+		/**
+		 * The ID of the sheet when metadata is associated with an entire sheet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 
 		/** True when metadata is associated with an entire spreadsheet. */
@@ -5006,14 +5528,20 @@ export namespace MyNS {
 	/** Clears the basic filter, if any exists on the sheet. */
 	export interface ClearBasicFilterRequest {
 
-		/** The sheet ID on which the basic filter should be cleared. */
+		/**
+		 * The sheet ID on which the basic filter should be cleared.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 	}
 
 	/** Clears the basic filter, if any exists on the sheet. */
 	export interface ClearBasicFilterRequestFormProperties {
 
-		/** The sheet ID on which the basic filter should be cleared. */
+		/**
+		 * The sheet ID on which the basic filter should be cleared.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateClearBasicFilterRequestFormGroup() {
@@ -5085,7 +5613,10 @@ export namespace MyNS {
 		/** A location where metadata may be associated in a spreadsheet. */
 		location?: DeveloperMetadataLocation;
 
-		/** The spreadsheet-scoped unique ID that identifies the metadata. IDs may be specified when metadata is created, otherwise one will be randomly generated and assigned. Must be positive. */
+		/**
+		 * The spreadsheet-scoped unique ID that identifies the metadata. IDs may be specified when metadata is created, otherwise one will be randomly generated and assigned. Must be positive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		metadataId?: number | null;
 
 		/** The metadata key. There may be multiple metadata in a spreadsheet with the same key. Developer metadata must always have a key specified. */
@@ -5101,7 +5632,10 @@ export namespace MyNS {
 	/** Developer metadata associated with a location or object in a spreadsheet. Developer metadata may be used to associate arbitrary data with various parts of a spreadsheet and will remain associated at those locations as they move around and the spreadsheet is edited. For example, if developer metadata is associated with row 5 and another row is then subsequently inserted above row 5, that original metadata will still be associated with the row it was first associated with (what is now row 6). If the associated object is deleted its metadata is deleted too. */
 	export interface DeveloperMetadataFormProperties {
 
-		/** The spreadsheet-scoped unique ID that identifies the metadata. IDs may be specified when metadata is created, otherwise one will be randomly generated and assigned. Must be positive. */
+		/**
+		 * The spreadsheet-scoped unique ID that identifies the metadata. IDs may be specified when metadata is created, otherwise one will be randomly generated and assigned. Must be positive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		metadataId: FormControl<number | null | undefined>,
 
 		/** The metadata key. There may be multiple metadata in a spreadsheet with the same key. Developer metadata must always have a key specified. */
@@ -5154,14 +5688,20 @@ export namespace MyNS {
 	/** Removes the banded range with the given ID from the spreadsheet. */
 	export interface DeleteBandingRequest {
 
-		/** The ID of the banded range to delete. */
+		/**
+		 * The ID of the banded range to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bandedRangeId?: number | null;
 	}
 
 	/** Removes the banded range with the given ID from the spreadsheet. */
 	export interface DeleteBandingRequestFormProperties {
 
-		/** The ID of the banded range to delete. */
+		/**
+		 * The ID of the banded range to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bandedRangeId: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteBandingRequestFormGroup() {
@@ -5175,20 +5715,32 @@ export namespace MyNS {
 	/** Deletes a conditional format rule at the given index. All subsequent rules' indexes are decremented. */
 	export interface DeleteConditionalFormatRuleRequest {
 
-		/** The zero-based index of the rule to be deleted. */
+		/**
+		 * The zero-based index of the rule to be deleted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
-		/** The sheet the rule is being deleted from. */
+		/**
+		 * The sheet the rule is being deleted from.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 	}
 
 	/** Deletes a conditional format rule at the given index. All subsequent rules' indexes are decremented. */
 	export interface DeleteConditionalFormatRuleRequestFormProperties {
 
-		/** The zero-based index of the rule to be deleted. */
+		/**
+		 * The zero-based index of the rule to be deleted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
-		/** The sheet the rule is being deleted from. */
+		/**
+		 * The sheet the rule is being deleted from.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteConditionalFormatRuleRequestFormGroup() {
@@ -5295,14 +5847,20 @@ export namespace MyNS {
 	/** Deletes the embedded object with the given ID. */
 	export interface DeleteEmbeddedObjectRequest {
 
-		/** The ID of the embedded object to delete. */
+		/**
+		 * The ID of the embedded object to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		objectId?: number | null;
 	}
 
 	/** Deletes the embedded object with the given ID. */
 	export interface DeleteEmbeddedObjectRequestFormProperties {
 
-		/** The ID of the embedded object to delete. */
+		/**
+		 * The ID of the embedded object to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		objectId: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteEmbeddedObjectRequestFormGroup() {
@@ -5316,14 +5874,20 @@ export namespace MyNS {
 	/** Deletes a particular filter view. */
 	export interface DeleteFilterViewRequest {
 
-		/** The ID of the filter to delete. */
+		/**
+		 * The ID of the filter to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filterId?: number | null;
 	}
 
 	/** Deletes a particular filter view. */
 	export interface DeleteFilterViewRequestFormProperties {
 
-		/** The ID of the filter to delete. */
+		/**
+		 * The ID of the filter to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filterId: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteFilterViewRequestFormGroup() {
@@ -5358,14 +5922,20 @@ export namespace MyNS {
 	/** Deletes the protected range with the given ID. */
 	export interface DeleteProtectedRangeRequest {
 
-		/** The ID of the protected range to delete. */
+		/**
+		 * The ID of the protected range to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		protectedRangeId?: number | null;
 	}
 
 	/** Deletes the protected range with the given ID. */
 	export interface DeleteProtectedRangeRequestFormProperties {
 
-		/** The ID of the protected range to delete. */
+		/**
+		 * The ID of the protected range to delete.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		protectedRangeId: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteProtectedRangeRequestFormGroup() {
@@ -5403,14 +5973,20 @@ export namespace MyNS {
 	/** Deletes the requested sheet. */
 	export interface DeleteSheetRequest {
 
-		/** The ID of the sheet to delete. If the sheet is of DATA_SOURCE type, the associated DataSource is also deleted. */
+		/**
+		 * The ID of the sheet to delete. If the sheet is of DATA_SOURCE type, the associated DataSource is also deleted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 	}
 
 	/** Deletes the requested sheet. */
 	export interface DeleteSheetRequestFormProperties {
 
-		/** The ID of the sheet to delete. If the sheet is of DATA_SOURCE type, the associated DataSource is also deleted. */
+		/**
+		 * The ID of the sheet to delete. If the sheet is of DATA_SOURCE type, the associated DataSource is also deleted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteSheetRequestFormGroup() {
@@ -5424,14 +6000,20 @@ export namespace MyNS {
 	/** Duplicates a particular filter view. */
 	export interface DuplicateFilterViewRequest {
 
-		/** The ID of the filter being duplicated. */
+		/**
+		 * The ID of the filter being duplicated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filterId?: number | null;
 	}
 
 	/** Duplicates a particular filter view. */
 	export interface DuplicateFilterViewRequestFormProperties {
 
-		/** The ID of the filter being duplicated. */
+		/**
+		 * The ID of the filter being duplicated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filterId: FormControl<number | null | undefined>,
 	}
 	export function CreateDuplicateFilterViewRequestFormGroup() {
@@ -5445,32 +6027,50 @@ export namespace MyNS {
 	/** Duplicates the contents of a sheet. */
 	export interface DuplicateSheetRequest {
 
-		/** The zero-based index where the new sheet should be inserted. The index of all sheets after this are incremented. */
+		/**
+		 * The zero-based index where the new sheet should be inserted. The index of all sheets after this are incremented.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		insertSheetIndex?: number | null;
 
-		/** If set, the ID of the new sheet. If not set, an ID is chosen. If set, the ID must not conflict with any existing sheet ID. If set, it must be non-negative. */
+		/**
+		 * If set, the ID of the new sheet. If not set, an ID is chosen. If set, the ID must not conflict with any existing sheet ID. If set, it must be non-negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newSheetId?: number | null;
 
 		/** The name of the new sheet. If empty, a new name is chosen for you. */
 		newSheetName?: string | null;
 
-		/** The sheet to duplicate. If the source sheet is of DATA_SOURCE type, its backing DataSource is also duplicated and associated with the new copy of the sheet. No data execution is triggered, the grid data of this sheet is also copied over but only available after the batch request completes. */
+		/**
+		 * The sheet to duplicate. If the source sheet is of DATA_SOURCE type, its backing DataSource is also duplicated and associated with the new copy of the sheet. No data execution is triggered, the grid data of this sheet is also copied over but only available after the batch request completes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceSheetId?: number | null;
 	}
 
 	/** Duplicates the contents of a sheet. */
 	export interface DuplicateSheetRequestFormProperties {
 
-		/** The zero-based index where the new sheet should be inserted. The index of all sheets after this are incremented. */
+		/**
+		 * The zero-based index where the new sheet should be inserted. The index of all sheets after this are incremented.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		insertSheetIndex: FormControl<number | null | undefined>,
 
-		/** If set, the ID of the new sheet. If not set, an ID is chosen. If set, the ID must not conflict with any existing sheet ID. If set, it must be non-negative. */
+		/**
+		 * If set, the ID of the new sheet. If not set, an ID is chosen. If set, the ID must not conflict with any existing sheet ID. If set, it must be non-negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newSheetId: FormControl<number | null | undefined>,
 
 		/** The name of the new sheet. If empty, a new name is chosen for you. */
 		newSheetName: FormControl<string | null | undefined>,
 
-		/** The sheet to duplicate. If the source sheet is of DATA_SOURCE type, its backing DataSource is also duplicated and associated with the new copy of the sheet. No data execution is triggered, the grid data of this sheet is also copied over but only available after the batch request completes. */
+		/**
+		 * The sheet to duplicate. If the source sheet is of DATA_SOURCE type, its backing DataSource is also duplicated and associated with the new copy of the sheet. No data execution is triggered, the grid data of this sheet is also copied over but only available after the batch request completes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceSheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateDuplicateSheetRequestFormGroup() {
@@ -5511,7 +6111,10 @@ export namespace MyNS {
 		/** True if the find value is a regex. The regular expression and replacement should follow Java regex rules at https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html. The replacement string is allowed to refer to capturing groups. For example, if one cell has the contents `"Google Sheets"` and another has `"Google Docs"`, then searching for `"o.* (.*)"` with a replacement of `"$1 Rocks"` would change the contents of the cells to `"GSheets Rocks"` and `"GDocs Rocks"` respectively. */
 		searchByRegex?: boolean | null;
 
-		/** The sheet to find/replace over. */
+		/**
+		 * The sheet to find/replace over.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 	}
 
@@ -5539,7 +6142,10 @@ export namespace MyNS {
 		/** True if the find value is a regex. The regular expression and replacement should follow Java regex rules at https://docs.oracle.com/javase/8/docs/api/java/util/regex/Pattern.html. The replacement string is allowed to refer to capturing groups. For example, if one cell has the contents `"Google Sheets"` and another has `"Google Docs"`, then searching for `"o.* (.*)"` with a replacement of `"$1 Rocks"` would change the contents of the cells to `"GSheets Rocks"` and `"GDocs Rocks"` respectively. */
 		searchByRegex: FormControl<boolean | null | undefined>,
 
-		/** The sheet to find/replace over. */
+		/**
+		 * The sheet to find/replace over.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateFindReplaceRequestFormGroup() {
@@ -5634,7 +6240,10 @@ export namespace MyNS {
 	/** Moves one or more rows or columns. */
 	export interface MoveDimensionRequest {
 
-		/** The zero-based start index of where to move the source data to, based on the coordinates *before* the source data is removed from the grid. Existing data will be shifted down or right (depending on the dimension) to make room for the moved dimensions. The source dimensions are removed from the grid, so the the data may end up in a different index than specified. For example, given `A1..A5` of `0, 1, 2, 3, 4` and wanting to move `"1"` and `"2"` to between `"3"` and `"4"`, the source would be `ROWS [1..3)`,and the destination index would be `"4"` (the zero-based index of row 5). The end result would be `A1..A5` of `0, 3, 1, 2, 4`. */
+		/**
+		 * The zero-based start index of where to move the source data to, based on the coordinates *before* the source data is removed from the grid. Existing data will be shifted down or right (depending on the dimension) to make room for the moved dimensions. The source dimensions are removed from the grid, so the the data may end up in a different index than specified. For example, given `A1..A5` of `0, 1, 2, 3, 4` and wanting to move `"1"` and `"2"` to between `"3"` and `"4"`, the source would be `ROWS [1..3)`,and the destination index would be `"4"` (the zero-based index of row 5). The end result would be `A1..A5` of `0, 3, 1, 2, 4`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationIndex?: number | null;
 
 		/** A range along a single dimension on a sheet. All indexes are zero-based. Indexes are half open: the start index is inclusive and the end index is exclusive. Missing indexes indicate the range is unbounded on that side. */
@@ -5644,7 +6253,10 @@ export namespace MyNS {
 	/** Moves one or more rows or columns. */
 	export interface MoveDimensionRequestFormProperties {
 
-		/** The zero-based start index of where to move the source data to, based on the coordinates *before* the source data is removed from the grid. Existing data will be shifted down or right (depending on the dimension) to make room for the moved dimensions. The source dimensions are removed from the grid, so the the data may end up in a different index than specified. For example, given `A1..A5` of `0, 1, 2, 3, 4` and wanting to move `"1"` and `"2"` to between `"3"` and `"4"`, the source would be `ROWS [1..3)`,and the destination index would be `"4"` (the zero-based index of row 5). The end result would be `A1..A5` of `0, 3, 1, 2, 4`. */
+		/**
+		 * The zero-based start index of where to move the source data to, based on the coordinates *before* the source data is removed from the grid. Existing data will be shifted down or right (depending on the dimension) to make room for the moved dimensions. The source dimensions are removed from the grid, so the the data may end up in a different index than specified. For example, given `A1..A5` of `0, 1, 2, 3, 4` and wanting to move `"1"` and `"2"` to between `"3"` and `"4"`, the source would be `ROWS [1..3)`,and the destination index would be `"4"` (the zero-based index of row 5). The end result would be `A1..A5` of `0, 3, 1, 2, 4`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateMoveDimensionRequestFormGroup() {
@@ -5775,7 +6387,10 @@ export namespace MyNS {
 	/** Reference to a data source object. */
 	export interface DataSourceObjectReference {
 
-		/** References to a data source chart. */
+		/**
+		 * References to a data source chart.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId?: number | null;
 
 		/** A coordinate in a sheet. All indexes are zero-based. */
@@ -5794,7 +6409,10 @@ export namespace MyNS {
 	/** Reference to a data source object. */
 	export interface DataSourceObjectReferenceFormProperties {
 
-		/** References to a data source chart. */
+		/**
+		 * References to a data source chart.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId: FormControl<number | null | undefined>,
 
 		/** References to a DATA_SOURCE sheet. */
@@ -6052,7 +6670,10 @@ export namespace MyNS {
 	/** Updates a chart's specifications. (This does not move or resize a chart. To move or resize a chart, use UpdateEmbeddedObjectPositionRequest.) */
 	export interface UpdateChartSpecRequest {
 
-		/** The ID of the chart to update. */
+		/**
+		 * The ID of the chart to update.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId?: number | null;
 
 		/** The specifications of a chart. */
@@ -6062,7 +6683,10 @@ export namespace MyNS {
 	/** Updates a chart's specifications. (This does not move or resize a chart. To move or resize a chart, use UpdateEmbeddedObjectPositionRequest.) */
 	export interface UpdateChartSpecRequestFormProperties {
 
-		/** The ID of the chart to update. */
+		/**
+		 * The ID of the chart to update.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateChartSpecRequestFormGroup() {
@@ -6076,29 +6700,47 @@ export namespace MyNS {
 	/** Updates a conditional format rule at the given index, or moves a conditional format rule to another index. */
 	export interface UpdateConditionalFormatRuleRequest {
 
-		/** The zero-based index of the rule that should be replaced or moved. */
+		/**
+		 * The zero-based index of the rule that should be replaced or moved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
-		/** The zero-based new index the rule should end up at. */
+		/**
+		 * The zero-based new index the rule should end up at.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newIndex?: number | null;
 
 		/** A rule describing a conditional format. */
 		rule?: ConditionalFormatRule;
 
-		/** The sheet of the rule to move. Required if new_index is set, unused otherwise. */
+		/**
+		 * The sheet of the rule to move. Required if new_index is set, unused otherwise.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId?: number | null;
 	}
 
 	/** Updates a conditional format rule at the given index, or moves a conditional format rule to another index. */
 	export interface UpdateConditionalFormatRuleRequestFormProperties {
 
-		/** The zero-based index of the rule that should be replaced or moved. */
+		/**
+		 * The zero-based index of the rule that should be replaced or moved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
-		/** The zero-based new index the rule should end up at. */
+		/**
+		 * The zero-based new index the rule should end up at.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newIndex: FormControl<number | null | undefined>,
 
-		/** The sheet of the rule to move. Required if new_index is set, unused otherwise. */
+		/**
+		 * The sheet of the rule to move. Required if new_index is set, unused otherwise.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateConditionalFormatRuleRequestFormGroup() {
@@ -6231,7 +6873,10 @@ export namespace MyNS {
 		/** True if this dimension is explicitly hidden. */
 		hiddenByUser?: boolean | null;
 
-		/** The height (if a row) or width (if a column) of the dimension in pixels. */
+		/**
+		 * The height (if a row) or width (if a column) of the dimension in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pixelSize?: number | null;
 	}
 
@@ -6244,7 +6889,10 @@ export namespace MyNS {
 		/** True if this dimension is explicitly hidden. */
 		hiddenByUser: FormControl<boolean | null | undefined>,
 
-		/** The height (if a row) or width (if a column) of the dimension in pixels. */
+		/**
+		 * The height (if a row) or width (if a column) of the dimension in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pixelSize: FormControl<number | null | undefined>,
 	}
 	export function CreateDimensionPropertiesFormGroup() {
@@ -6266,7 +6914,10 @@ export namespace MyNS {
 		/** The fields that should be updated. At least one field must be specified. The root `border` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field. */
 		fields?: string | null;
 
-		/** The ID of the embedded object to update. */
+		/**
+		 * The ID of the embedded object to update.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		objectId?: number | null;
 	}
 
@@ -6276,7 +6927,10 @@ export namespace MyNS {
 		/** The fields that should be updated. At least one field must be specified. The root `border` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field. */
 		fields: FormControl<string | null | undefined>,
 
-		/** The ID of the embedded object to update. */
+		/**
+		 * The ID of the embedded object to update.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		objectId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateEmbeddedObjectBorderRequestFormGroup() {
@@ -6297,7 +6951,10 @@ export namespace MyNS {
 		/** The position of an embedded object such as a chart. */
 		newPosition?: EmbeddedObjectPosition;
 
-		/** The ID of the object to moved. */
+		/**
+		 * The ID of the object to moved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		objectId?: number | null;
 	}
 
@@ -6307,7 +6964,10 @@ export namespace MyNS {
 		/** The fields of OverlayPosition that should be updated when setting a new position. Used only if newPosition.overlayPosition is set, in which case at least one field must be specified. The root `newPosition.overlayPosition` is implied and should not be specified. A single `"*"` can be used as short-hand for listing every field. */
 		fields: FormControl<string | null | undefined>,
 
-		/** The ID of the object to moved. */
+		/**
+		 * The ID of the object to moved.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		objectId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateEmbeddedObjectPositionRequestFormGroup() {
@@ -6421,7 +7081,10 @@ export namespace MyNS {
 		/** The fields that should be updated. At least one field must be specified. The root `SlicerSpec` is implied and should not be specified. A single "*"` can be used as short-hand for listing every field. */
 		fields?: string | null;
 
-		/** The id of the slicer to update. */
+		/**
+		 * The id of the slicer to update.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		slicerId?: number | null;
 
 		/** The specifications of a slicer. */
@@ -6434,7 +7097,10 @@ export namespace MyNS {
 		/** The fields that should be updated. At least one field must be specified. The root `SlicerSpec` is implied and should not be specified. A single "*"` can be used as short-hand for listing every field. */
 		fields: FormControl<string | null | undefined>,
 
-		/** The id of the slicer to update. */
+		/**
+		 * The id of the slicer to update.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		slicerId: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateSlicerSpecRequestFormGroup() {
@@ -6526,20 +7192,32 @@ export namespace MyNS {
 	/** Settings to control how circular dependencies are resolved with iterative calculation. */
 	export interface IterativeCalculationSettings {
 
-		/** When iterative calculation is enabled and successive results differ by less than this threshold value, the calculation rounds stop. */
+		/**
+		 * When iterative calculation is enabled and successive results differ by less than this threshold value, the calculation rounds stop.
+		 * Type: double
+		 */
 		convergenceThreshold?: number | null;
 
-		/** When iterative calculation is enabled, the maximum number of calculation rounds to perform. */
+		/**
+		 * When iterative calculation is enabled, the maximum number of calculation rounds to perform.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxIterations?: number | null;
 	}
 
 	/** Settings to control how circular dependencies are resolved with iterative calculation. */
 	export interface IterativeCalculationSettingsFormProperties {
 
-		/** When iterative calculation is enabled and successive results differ by less than this threshold value, the calculation rounds stop. */
+		/**
+		 * When iterative calculation is enabled and successive results differ by less than this threshold value, the calculation rounds stop.
+		 * Type: double
+		 */
 		convergenceThreshold: FormControl<number | null | undefined>,
 
-		/** When iterative calculation is enabled, the maximum number of calculation rounds to perform. */
+		/**
+		 * When iterative calculation is enabled, the maximum number of calculation rounds to perform.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxIterations: FormControl<number | null | undefined>,
 	}
 	export function CreateIterativeCalculationSettingsFormGroup() {
@@ -6780,14 +7458,20 @@ export namespace MyNS {
 	/** The result of removing duplicates in a range. */
 	export interface DeleteDuplicatesResponse {
 
-		/** The number of duplicate rows removed. */
+		/**
+		 * The number of duplicate rows removed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duplicatesRemovedCount?: number | null;
 	}
 
 	/** The result of removing duplicates in a range. */
 	export interface DeleteDuplicatesResponseFormProperties {
 
-		/** The number of duplicate rows removed. */
+		/**
+		 * The number of duplicate rows removed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duplicatesRemovedCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteDuplicatesResponseFormGroup() {
@@ -6835,38 +7519,68 @@ export namespace MyNS {
 	/** The result of the find/replace. */
 	export interface FindReplaceResponse {
 
-		/** The number of formula cells changed. */
+		/**
+		 * The number of formula cells changed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		formulasChanged?: number | null;
 
-		/** The number of occurrences (possibly multiple within a cell) changed. For example, if replacing `"e"` with `"o"` in `"Google Sheets"`, this would be `"3"` because `"Google Sheets"` -> `"Googlo Shoots"`. */
+		/**
+		 * The number of occurrences (possibly multiple within a cell) changed. For example, if replacing `"e"` with `"o"` in `"Google Sheets"`, this would be `"3"` because `"Google Sheets"` -> `"Googlo Shoots"`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrencesChanged?: number | null;
 
-		/** The number of rows changed. */
+		/**
+		 * The number of rows changed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowsChanged?: number | null;
 
-		/** The number of sheets changed. */
+		/**
+		 * The number of sheets changed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetsChanged?: number | null;
 
-		/** The number of non-formula cells changed. */
+		/**
+		 * The number of non-formula cells changed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valuesChanged?: number | null;
 	}
 
 	/** The result of the find/replace. */
 	export interface FindReplaceResponseFormProperties {
 
-		/** The number of formula cells changed. */
+		/**
+		 * The number of formula cells changed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		formulasChanged: FormControl<number | null | undefined>,
 
-		/** The number of occurrences (possibly multiple within a cell) changed. For example, if replacing `"e"` with `"o"` in `"Google Sheets"`, this would be `"3"` because `"Google Sheets"` -> `"Googlo Shoots"`. */
+		/**
+		 * The number of occurrences (possibly multiple within a cell) changed. For example, if replacing `"e"` with `"o"` in `"Google Sheets"`, this would be `"3"` because `"Google Sheets"` -> `"Googlo Shoots"`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrencesChanged: FormControl<number | null | undefined>,
 
-		/** The number of rows changed. */
+		/**
+		 * The number of rows changed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowsChanged: FormControl<number | null | undefined>,
 
-		/** The number of sheets changed. */
+		/**
+		 * The number of sheets changed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sheetsChanged: FormControl<number | null | undefined>,
 
-		/** The number of non-formula cells changed. */
+		/**
+		 * The number of non-formula cells changed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valuesChanged: FormControl<number | null | undefined>,
 	}
 	export function CreateFindReplaceResponseFormGroup() {
@@ -6921,14 +7635,20 @@ export namespace MyNS {
 	/** The result of trimming whitespace in cells. */
 	export interface TrimWhitespaceResponse {
 
-		/** The number of cells that were trimmed of whitespace. */
+		/**
+		 * The number of cells that were trimmed of whitespace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cellsChangedCount?: number | null;
 	}
 
 	/** The result of trimming whitespace in cells. */
 	export interface TrimWhitespaceResponseFormProperties {
 
-		/** The number of cells that were trimmed of whitespace. */
+		/**
+		 * The number of cells that were trimmed of whitespace.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cellsChangedCount: FormControl<number | null | undefined>,
 	}
 	export function CreateTrimWhitespaceResponseFormGroup() {
@@ -6942,13 +7662,19 @@ export namespace MyNS {
 	/** The result of updating a conditional format rule. */
 	export interface UpdateConditionalFormatRuleResponse {
 
-		/** The index of the new rule. */
+		/**
+		 * The index of the new rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newIndex?: number | null;
 
 		/** A rule describing a conditional format. */
 		newRule?: ConditionalFormatRule;
 
-		/** The old index of the rule. Not set if a rule was replaced (because it is the same as new_index). */
+		/**
+		 * The old index of the rule. Not set if a rule was replaced (because it is the same as new_index).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oldIndex?: number | null;
 
 		/** A rule describing a conditional format. */
@@ -6958,10 +7684,16 @@ export namespace MyNS {
 	/** The result of updating a conditional format rule. */
 	export interface UpdateConditionalFormatRuleResponseFormProperties {
 
-		/** The index of the new rule. */
+		/**
+		 * The index of the new rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		newIndex: FormControl<number | null | undefined>,
 
-		/** The old index of the rule. Not set if a rule was replaced (because it is the same as new_index). */
+		/**
+		 * The old index of the rule. Not set if a rule was replaced (because it is the same as new_index).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oldIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateConditionalFormatRuleResponseFormGroup() {
@@ -7133,32 +7865,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface TimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeOfDayFormGroup() {
@@ -7307,20 +8063,32 @@ export namespace MyNS {
 		/** Metadata about the requested rows in the grid, starting with the row in start_row. */
 		rowMetadata?: Array<DimensionProperties>;
 
-		/** The first column this GridData refers to, zero-based. */
+		/**
+		 * The first column this GridData refers to, zero-based.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startColumn?: number | null;
 
-		/** The first row this GridData refers to, zero-based. */
+		/**
+		 * The first row this GridData refers to, zero-based.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startRow?: number | null;
 	}
 
 	/** Data in the grid, as well as metadata about the dimensions. */
 	export interface GridDataFormProperties {
 
-		/** The first column this GridData refers to, zero-based. */
+		/**
+		 * The first column this GridData refers to, zero-based.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startColumn: FormControl<number | null | undefined>,
 
-		/** The first row this GridData refers to, zero-based. */
+		/**
+		 * The first row this GridData refers to, zero-based.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startRow: FormControl<number | null | undefined>,
 	}
 	export function CreateGridDataFormGroup() {
@@ -7415,16 +8183,28 @@ export namespace MyNS {
 		/** The spreadsheet the updates were applied to. */
 		spreadsheetId?: string | null;
 
-		/** The total number of cells updated. */
+		/**
+		 * The total number of cells updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedCells?: number | null;
 
-		/** The total number of columns where at least one cell in the column was updated. */
+		/**
+		 * The total number of columns where at least one cell in the column was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedColumns?: number | null;
 
-		/** The total number of rows where at least one cell in the row was updated. */
+		/**
+		 * The total number of rows where at least one cell in the row was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedRows?: number | null;
 
-		/** The total number of sheets where at least one cell in the sheet was updated. */
+		/**
+		 * The total number of sheets where at least one cell in the sheet was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedSheets?: number | null;
 	}
 
@@ -7434,16 +8214,28 @@ export namespace MyNS {
 		/** The spreadsheet the updates were applied to. */
 		spreadsheetId: FormControl<string | null | undefined>,
 
-		/** The total number of cells updated. */
+		/**
+		 * The total number of cells updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedCells: FormControl<number | null | undefined>,
 
-		/** The total number of columns where at least one cell in the column was updated. */
+		/**
+		 * The total number of columns where at least one cell in the column was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedColumns: FormControl<number | null | undefined>,
 
-		/** The total number of rows where at least one cell in the row was updated. */
+		/**
+		 * The total number of rows where at least one cell in the row was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedRows: FormControl<number | null | undefined>,
 
-		/** The total number of sheets where at least one cell in the sheet was updated. */
+		/**
+		 * The total number of sheets where at least one cell in the sheet was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedSheets: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchUpdateValuesByDataFilterResponseFormGroup() {
@@ -7464,10 +8256,16 @@ export namespace MyNS {
 		/** Filter that describes what data should be selected or returned from a request. */
 		dataFilter?: DataFilter;
 
-		/** The number of cells updated. */
+		/**
+		 * The number of cells updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedCells?: number | null;
 
-		/** The number of columns where at least one cell in the column was updated. */
+		/**
+		 * The number of columns where at least one cell in the column was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedColumns?: number | null;
 
 		/** Data within a range of the spreadsheet. */
@@ -7476,23 +8274,35 @@ export namespace MyNS {
 		/** The range (in [A1 notation](/sheets/api/guides/concepts#cell)) that updates were applied to. */
 		updatedRange?: string | null;
 
-		/** The number of rows where at least one cell in the row was updated. */
+		/**
+		 * The number of rows where at least one cell in the row was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedRows?: number | null;
 	}
 
 	/** The response when updating a range of values by a data filter in a spreadsheet. */
 	export interface UpdateValuesByDataFilterResponseFormProperties {
 
-		/** The number of cells updated. */
+		/**
+		 * The number of cells updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedCells: FormControl<number | null | undefined>,
 
-		/** The number of columns where at least one cell in the column was updated. */
+		/**
+		 * The number of columns where at least one cell in the column was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedColumns: FormControl<number | null | undefined>,
 
 		/** The range (in [A1 notation](/sheets/api/guides/concepts#cell)) that updates were applied to. */
 		updatedRange: FormControl<string | null | undefined>,
 
-		/** The number of rows where at least one cell in the row was updated. */
+		/**
+		 * The number of rows where at least one cell in the row was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updatedRows: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateValuesByDataFilterResponseFormGroup() {
@@ -7560,16 +8370,28 @@ export namespace MyNS {
 		/** The spreadsheet the updates were applied to. */
 		spreadsheetId?: string | null;
 
-		/** The total number of cells updated. */
+		/**
+		 * The total number of cells updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedCells?: number | null;
 
-		/** The total number of columns where at least one cell in the column was updated. */
+		/**
+		 * The total number of columns where at least one cell in the column was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedColumns?: number | null;
 
-		/** The total number of rows where at least one cell in the row was updated. */
+		/**
+		 * The total number of rows where at least one cell in the row was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedRows?: number | null;
 
-		/** The total number of sheets where at least one cell in the sheet was updated. */
+		/**
+		 * The total number of sheets where at least one cell in the sheet was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedSheets?: number | null;
 	}
 
@@ -7579,16 +8401,28 @@ export namespace MyNS {
 		/** The spreadsheet the updates were applied to. */
 		spreadsheetId: FormControl<string | null | undefined>,
 
-		/** The total number of cells updated. */
+		/**
+		 * The total number of cells updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedCells: FormControl<number | null | undefined>,
 
-		/** The total number of columns where at least one cell in the column was updated. */
+		/**
+		 * The total number of columns where at least one cell in the column was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedColumns: FormControl<number | null | undefined>,
 
-		/** The total number of rows where at least one cell in the row was updated. */
+		/**
+		 * The total number of rows where at least one cell in the row was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedRows: FormControl<number | null | undefined>,
 
-		/** The total number of sheets where at least one cell in the sheet was updated. */
+		/**
+		 * The total number of sheets where at least one cell in the sheet was updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalUpdatedSheets: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchUpdateValuesResponseFormGroup() {
@@ -7774,6 +8608,7 @@ export namespace MyNS {
 		 * Get v4/spreadsheets/{spreadsheetId}/developerMetadata/{metadataId}
 		 * @param {string} spreadsheetId The ID of the spreadsheet to retrieve metadata from.
 		 * @param {number} metadataId The ID of the developer metadata to retrieve.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DeveloperMetadata} Successful response
 		 */
 		Sheets_spreadsheets_developerMetadata_get(spreadsheetId: string, metadataId: number): Observable<DeveloperMetadata> {
@@ -7795,6 +8630,7 @@ export namespace MyNS {
 		 * Post v4/spreadsheets/{spreadsheetId}/sheets/{sheetId}:copyTo
 		 * @param {string} spreadsheetId The ID of the spreadsheet containing the sheet to copy.
 		 * @param {number} sheetId The ID of the sheet to copy.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SheetProperties} Successful response
 		 */
 		Sheets_spreadsheets_sheets_copyTo(spreadsheetId: string, sheetId: number, requestBody: CopySheetToAnotherSpreadsheetRequest): Observable<SheetProperties> {

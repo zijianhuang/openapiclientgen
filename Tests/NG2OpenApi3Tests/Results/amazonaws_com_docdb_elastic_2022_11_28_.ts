@@ -820,6 +820,7 @@ export namespace MyNS {
 		 * Get cluster-snapshots
 		 * @param {string} clusterArn The arn of the Elastic DocumentDB cluster.
 		 * @param {number} maxResults The maximum number of entries to recieve in the response.
+		 *     Minimum: 20    Maximum: 100
 		 * @param {string} nextToken The nextToken which is used the get the next page of data.
 		 * @return {ListClusterSnapshotsOutput} Success
 		 */
@@ -831,6 +832,7 @@ export namespace MyNS {
 		 * Returns information about provisioned Elastic DocumentDB clusters.
 		 * Get clusters
 		 * @param {number} maxResults The maximum number of entries to recieve in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The nextToken which is used the get the next page of data.
 		 * @return {ListClustersOutput} Success
 		 */
@@ -842,6 +844,7 @@ export namespace MyNS {
 		 * Lists all tags on a Elastic DocumentDB resource
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The arn of the Elastic DocumentDB resource.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -852,6 +855,7 @@ export namespace MyNS {
 		 * Adds metadata tags to a Elastic DocumentDB resource
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The arn of the Elastic DocumentDB resource.
+		 *     Min length: 1    Max length: 1011
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -872,7 +876,9 @@ export namespace MyNS {
 		 * Removes metadata tags to a Elastic DocumentDB resource
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The arn of the Elastic DocumentDB resource.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} tagKeys The tag keys to be removed from the Elastic DocumentDB resource.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -918,12 +924,14 @@ export namespace MyNS {
 		/**
 		 * The capacity of each shard in the new Elastic DocumentDB cluster.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		shardCapacity: number;
 
 		/**
 		 * The number of shards to create in the new Elastic DocumentDB cluster.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		shardCount: number;
 
@@ -974,12 +982,14 @@ export namespace MyNS {
 		/**
 		 * The capacity of each shard in the new Elastic DocumentDB cluster.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		shardCapacity: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of shards to create in the new Elastic DocumentDB cluster.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		shardCount: FormControl<number | null | undefined>,
 
@@ -1013,8 +1023,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Elastic DocumentDB snapshot.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		snapshotName: string;
 
@@ -1032,8 +1042,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Elastic DocumentDB snapshot.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		snapshotName: FormControl<string | null | undefined>,
 
@@ -1063,10 +1073,16 @@ export namespace MyNS {
 		/** <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p> <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p> <i>Constraints</i>: Minimum 30-minute window.</p> */
 		preferredMaintenanceWindow?: string | null;
 
-		/** The capacity of each shard in the Elastic DocumentDB cluster. */
+		/**
+		 * The capacity of each shard in the Elastic DocumentDB cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardCapacity?: number | null;
 
-		/** The number of shards to create in the Elastic DocumentDB cluster. */
+		/**
+		 * The number of shards to create in the Elastic DocumentDB cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardCount?: number | null;
 
 		/** The number of shards to create in the Elastic DocumentDB cluster. */
@@ -1089,10 +1105,16 @@ export namespace MyNS {
 		/** <p>The weekly time range during which system maintenance can occur, in Universal Coordinated Time (UTC).</p> <p> <i>Format</i>: <code>ddd:hh24:mi-ddd:hh24:mi</code> </p> <p> <i>Default</i>: a 30-minute window selected at random from an 8-hour block of time for each Amazon Web Services Region, occurring on a random day of the week.</p> <p> <i>Valid days</i>: Mon, Tue, Wed, Thu, Fri, Sat, Sun</p> <p> <i>Constraints</i>: Minimum 30-minute window.</p> */
 		preferredMaintenanceWindow: FormControl<string | null | undefined>,
 
-		/** The capacity of each shard in the Elastic DocumentDB cluster. */
+		/**
+		 * The capacity of each shard in the Elastic DocumentDB cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardCapacity: FormControl<number | null | undefined>,
 
-		/** The number of shards to create in the Elastic DocumentDB cluster. */
+		/**
+		 * The number of shards to create in the Elastic DocumentDB cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateClusterPutBodyFormGroup() {

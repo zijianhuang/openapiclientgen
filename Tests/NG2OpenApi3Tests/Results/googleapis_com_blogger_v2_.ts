@@ -128,7 +128,10 @@ export namespace MyNS {
 		/** The URL of the container for pages in this blog. */
 		selfLink?: string | null;
 
-		/** The count of pages in this blog. */
+		/**
+		 * The count of pages in this blog.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 	export interface BlogPagesFormProperties {
@@ -136,7 +139,10 @@ export namespace MyNS {
 		/** The URL of the container for pages in this blog. */
 		selfLink: FormControl<string | null | undefined>,
 
-		/** The count of pages in this blog. */
+		/**
+		 * The count of pages in this blog.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateBlogPagesFormGroup() {
@@ -155,7 +161,10 @@ export namespace MyNS {
 		/** The URL of the container for posts in this blog. */
 		selfLink?: string | null;
 
-		/** The count of posts in this blog. */
+		/**
+		 * The count of posts in this blog.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 	export interface BlogPostsFormProperties {
@@ -163,7 +172,10 @@ export namespace MyNS {
 		/** The URL of the container for posts in this blog. */
 		selfLink: FormControl<string | null | undefined>,
 
-		/** The count of posts in this blog. */
+		/**
+		 * The count of posts in this blog.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateBlogPostsFormGroup() {
@@ -383,10 +395,16 @@ export namespace MyNS {
 
 	export interface PostLocation {
 
-		/** Location's latitude. */
+		/**
+		 * Location's latitude.
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** Location's longitude. */
+		/**
+		 * Location's longitude.
+		 * Type: double
+		 */
 		lng?: number | null;
 
 		/** Location name. */
@@ -397,10 +415,16 @@ export namespace MyNS {
 	}
 	export interface PostLocationFormProperties {
 
-		/** Location's latitude. */
+		/**
+		 * Location's latitude.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Location's longitude. */
+		/**
+		 * Location's longitude.
+		 * Type: double
+		 */
 		lng: FormControl<number | null | undefined>,
 
 		/** Location name. */
@@ -1150,6 +1174,7 @@ export namespace MyNS {
 		/**
 		 * Lists posts.
 		 * Get v2/blogs/{blogId}/posts
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PostList} Successful response
 		 */
 		Blogger_posts_list(blogId: string, fetchBodies: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined): Observable<PostList> {
@@ -1168,6 +1193,7 @@ export namespace MyNS {
 		/**
 		 * Lists comments.
 		 * Get v2/blogs/{blogId}/posts/{postId}/comments
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentList} Successful response
 		 */
 		Blogger_comments_list(blogId: string, postId: string, fetchBodies: boolean | null | undefined, maxResults: number | null | undefined, pageToken: string | null | undefined, startDate: string | null | undefined): Observable<CommentList> {

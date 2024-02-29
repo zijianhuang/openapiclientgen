@@ -3073,7 +3073,10 @@ namespace MyNS
 		/// Sets values for multiple time series properties.
 		/// BatchPutPropertyValues workspaces/{workspaceId}/entity-properties
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the properties to set.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the properties to set.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchPutPropertyValuesResponse> BatchPutPropertyValuesAsync(string workspaceId, BatchPutPropertyValuesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3114,8 +3117,14 @@ namespace MyNS
 		/// Creates a component type.
 		/// CreateComponentType workspaces/{workspaceId}/component-types/{componentTypeId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the component type.</param>
-		/// <param name="componentTypeId">The ID of the component type.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the component type.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="componentTypeId">The ID of the component type.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateComponentTypeResponse> CreateComponentTypeAsync(string workspaceId, string componentTypeId, CreateComponentTypePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3156,8 +3165,14 @@ namespace MyNS
 		/// Deletes a component type.
 		/// DeleteComponentType workspaces/{workspaceId}/component-types/{componentTypeId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the component type.</param>
-		/// <param name="componentTypeId">The ID of the component type to delete.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the component type.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="componentTypeId">The ID of the component type to delete.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteComponentTypeResponse> DeleteComponentTypeAsync(string workspaceId, string componentTypeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3191,8 +3206,14 @@ namespace MyNS
 		/// Retrieves information about a component type.
 		/// GetComponentType workspaces/{workspaceId}/component-types/{componentTypeId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the component type.</param>
-		/// <param name="componentTypeId">The ID of the component type.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the component type.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="componentTypeId">The ID of the component type.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetComponentTypeResponse> GetComponentTypeAsync(string workspaceId, string componentTypeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3226,8 +3247,14 @@ namespace MyNS
 		/// Updates information in a component type.
 		/// UpdateComponentType workspaces/{workspaceId}/component-types/{componentTypeId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace.</param>
-		/// <param name="componentTypeId">The ID of the component type.</param>
+		/// <param name="workspaceId">The ID of the workspace.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="componentTypeId">The ID of the component type.
+		/// Max length: 256
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateComponentTypeResponse> UpdateComponentTypeAsync(string workspaceId, string componentTypeId, UpdateComponentTypePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3268,7 +3295,10 @@ namespace MyNS
 		/// Creates an entity.
 		/// CreateEntity workspaces/{workspaceId}/entities
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the entity.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the entity.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateEntityResponse> CreateEntityAsync(string workspaceId, CreateEntityPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3309,7 +3339,10 @@ namespace MyNS
 		/// Creates a scene.
 		/// CreateScene workspaces/{workspaceId}/scenes
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the scene.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the scene.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateSceneResponse> CreateSceneAsync(string workspaceId, CreateScenePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3350,7 +3383,10 @@ namespace MyNS
 		/// This action creates a SyncJob.
 		/// CreateSyncJob workspaces/{workspaceId}/sync-jobs/{syncSource}
 		/// </summary>
-		/// <param name="workspaceId">The workspace ID.</param>
+		/// <param name="workspaceId">The workspace ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="syncSource"><p>The sync source.</p> <note> <p>Currently the only supported syncSoource is <code>SITEWISE </code>.</p> </note></param>
 		/// <returns>Success</returns>
 		public async Task<CreateSyncJobResponse> CreateSyncJobAsync(string workspaceId, string syncSource, CreateSyncJobPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3392,7 +3428,10 @@ namespace MyNS
 		/// Delete the SyncJob.
 		/// DeleteSyncJob workspaces/{workspaceId}/sync-jobs/{syncSource}
 		/// </summary>
-		/// <param name="workspaceId">The workspace ID.</param>
+		/// <param name="workspaceId">The workspace ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="syncSource"><p>The sync source.</p> <note> <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> </note></param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSyncJobResponse> DeleteSyncJobAsync(string workspaceId, string syncSource, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3427,7 +3466,10 @@ namespace MyNS
 		/// Creates a workplace.
 		/// CreateWorkspace workspaces/{workspaceId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace.</param>
+		/// <param name="workspaceId">The ID of the workspace.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateWorkspaceResponse> CreateWorkspaceAsync(string workspaceId, CreateWorkspacePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3468,7 +3510,10 @@ namespace MyNS
 		/// Deletes a workspace.
 		/// DeleteWorkspace workspaces/{workspaceId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace to delete.</param>
+		/// <param name="workspaceId">The ID of the workspace to delete.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteWorkspaceResponse> DeleteWorkspaceAsync(string workspaceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3502,7 +3547,10 @@ namespace MyNS
 		/// Retrieves information about a workspace.
 		/// GetWorkspace workspaces/{workspaceId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace.</param>
+		/// <param name="workspaceId">The ID of the workspace.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkspaceResponse> GetWorkspaceAsync(string workspaceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3536,7 +3584,10 @@ namespace MyNS
 		/// Updates a workspace.
 		/// UpdateWorkspace workspaces/{workspaceId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace.</param>
+		/// <param name="workspaceId">The ID of the workspace.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateWorkspaceResponse> UpdateWorkspaceAsync(string workspaceId, UpdateWorkspacePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3577,8 +3628,14 @@ namespace MyNS
 		/// Deletes an entity.
 		/// DeleteEntity workspaces/{workspaceId}/entities/{entityId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the entity to delete.</param>
-		/// <param name="entityId">The ID of the entity to delete.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the entity to delete.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="entityId">The ID of the entity to delete.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="isRecursive">A Boolean value that specifies whether the operation deletes child entities.</param>
 		/// <returns>Success</returns>
 		public async Task<DeleteEntityResponse> DeleteEntityAsync(string workspaceId, string entityId, bool isRecursive, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3613,8 +3670,14 @@ namespace MyNS
 		/// Retrieves information about an entity.
 		/// GetEntity workspaces/{workspaceId}/entities/{entityId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace.</param>
-		/// <param name="entityId">The ID of the entity.</param>
+		/// <param name="workspaceId">The ID of the workspace.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="entityId">The ID of the entity.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetEntityResponse> GetEntityAsync(string workspaceId, string entityId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3648,8 +3711,14 @@ namespace MyNS
 		/// Updates an entity.
 		/// UpdateEntity workspaces/{workspaceId}/entities/{entityId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the entity.</param>
-		/// <param name="entityId">The ID of the entity.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the entity.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="entityId">The ID of the entity.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateEntityResponse> UpdateEntityAsync(string workspaceId, string entityId, UpdateEntityPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3690,8 +3759,14 @@ namespace MyNS
 		/// Deletes a scene.
 		/// DeleteScene workspaces/{workspaceId}/scenes/{sceneId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace.</param>
-		/// <param name="sceneId">The ID of the scene to delete.</param>
+		/// <param name="workspaceId">The ID of the workspace.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="sceneId">The ID of the scene to delete.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteSceneResponse> DeleteSceneAsync(string workspaceId, string sceneId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3725,8 +3800,14 @@ namespace MyNS
 		/// Retrieves information about a scene.
 		/// GetScene workspaces/{workspaceId}/scenes/{sceneId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the scene.</param>
-		/// <param name="sceneId">The ID of the scene.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the scene.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="sceneId">The ID of the scene.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSceneResponse> GetSceneAsync(string workspaceId, string sceneId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3760,8 +3841,14 @@ namespace MyNS
 		/// Updates a scene.
 		/// UpdateScene workspaces/{workspaceId}/scenes/{sceneId}
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the scene.</param>
-		/// <param name="sceneId">The ID of the scene.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the scene.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="sceneId">The ID of the scene.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateSceneResponse> UpdateSceneAsync(string workspaceId, string sceneId, UpdateScenePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3917,7 +4004,10 @@ namespace MyNS
 		/// <p>Gets the property values for a component, component type, entity, or workspace.</p> <p>You must specify a value for either <code>componentName</code>, <code>componentTypeId</code>, <code>entityId</code>, or <code>workspaceId</code>.</p>
 		/// GetPropertyValue workspaces/{workspaceId}/entity-properties/value
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace whose values the operation returns.</param>
+		/// <param name="workspaceId">The ID of the workspace whose values the operation returns.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3960,7 +4050,10 @@ namespace MyNS
 		/// <p>Retrieves information about the history of a time series property value for a component, component type, entity, or workspace.</p> <p>You must specify a value for <code>workspaceId</code>. For entity-specific queries, specify values for <code>componentName</code> and <code>entityId</code>. For cross-entity quries, specify a value for <code>componentTypeId</code>.</p>
 		/// GetPropertyValueHistory workspaces/{workspaceId}/entity-properties/history
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace.</param>
+		/// <param name="workspaceId">The ID of the workspace.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4004,7 +4097,10 @@ namespace MyNS
 		/// GetSyncJob sync-jobs/{syncSource}
 		/// </summary>
 		/// <param name="syncSource"><p>The sync source.</p> <note> <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> </note></param>
-		/// <param name="workspace">The workspace ID.</param>
+		/// <param name="workspace">The workspace ID.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSyncJobResponse> GetSyncJobAsync(string syncSource, string workspace, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4038,7 +4134,10 @@ namespace MyNS
 		/// Lists all component types in a workspace.
 		/// ListComponentTypes workspaces/{workspaceId}/component-types-list
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace.</param>
+		/// <param name="workspaceId">The ID of the workspace.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4081,7 +4180,10 @@ namespace MyNS
 		/// Lists all entities in a workspace.
 		/// ListEntities workspaces/{workspaceId}/entities-list
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace.</param>
+		/// <param name="workspaceId">The ID of the workspace.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4124,7 +4226,10 @@ namespace MyNS
 		/// Lists all scenes in a workspace.
 		/// ListScenes workspaces/{workspaceId}/scenes-list
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the scenes.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the scenes.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4167,7 +4272,10 @@ namespace MyNS
 		/// List all SyncJobs.
 		/// ListSyncJobs workspaces/{workspaceId}/sync-jobs-list
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the sync job.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the sync job.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -4210,7 +4318,10 @@ namespace MyNS
 		/// Lists the sync resources.
 		/// ListSyncResources workspaces/{workspaceId}/sync-jobs/{syncSource}/resources-list
 		/// </summary>
-		/// <param name="workspaceId">The ID of the workspace that contains the sync job.</param>
+		/// <param name="workspaceId">The ID of the workspace that contains the sync job.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="syncSource"><p>The sync source.</p> <note> <p>Currently the only supported syncSource is <code>SITEWISE </code>.</p> </note></param>
 		/// <param name="maxResults">Pagination limit</param>
 		/// <param name="nextToken">Pagination token</param>
@@ -4376,8 +4487,14 @@ namespace MyNS
 		/// Removes tags from a resource.
 		/// UntagResource tags#resourceARN&tagKeys
 		/// </summary>
-		/// <param name="resourceARN">The ARN of the resource.</param>
-		/// <param name="tagKeys">A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed.</param>
+		/// <param name="resourceARN">The ARN of the resource.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="tagKeys">A list of tag key names to remove from the resource. You don't specify the value. Both the key and its associated value are removed.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceARN, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

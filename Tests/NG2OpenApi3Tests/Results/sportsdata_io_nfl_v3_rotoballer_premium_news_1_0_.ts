@@ -7,15 +7,25 @@ export namespace MyNS {
 		Author?: string | null;
 		Categories?: string | null;
 		Content?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NewsID?: number | null;
 		OriginalSource?: string | null;
 		OriginalSourceUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID2?: number | null;
 		Source?: string | null;
 		Team?: string | null;
 		Team2?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID2?: number | null;
 		TermsOfUse?: string | null;
 		TimeAgo?: string | null;
@@ -27,15 +37,25 @@ export namespace MyNS {
 		Author: FormControl<string | null | undefined>,
 		Categories: FormControl<string | null | undefined>,
 		Content: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NewsID: FormControl<number | null | undefined>,
 		OriginalSource: FormControl<string | null | undefined>,
 		OriginalSourceUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID2: FormControl<number | null | undefined>,
 		Source: FormControl<string | null | undefined>,
 		Team: FormControl<string | null | undefined>,
 		Team2: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID2: FormControl<number | null | undefined>,
 		TermsOfUse: FormControl<string | null | undefined>,
 		TimeAgo: FormControl<string | null | undefined>,
@@ -76,7 +96,6 @@ export namespace MyNS {
 		 * Premium News
 		 * Get {format}/RotoBallerPremiumNews
 		 * @param {PremiumNewsFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<News>} 
 		 */
 		PremiumNews(format: PremiumNewsFormat): Observable<Array<News>> {
 			return this.http.get<Array<News>>(this.baseUri + format + '/RotoBallerPremiumNews', {});
@@ -88,7 +107,6 @@ export namespace MyNS {
 		 * @param {PremiumNewsFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} date The date of the news.
 		 * <br>Examples: <code>2017-JUL-31</code>, <code>2017-SEP-01</code>.
-		 * @return {Array<News>} 
 		 */
 		PremiumNewsByDate(format: PremiumNewsFormat, date: string): Observable<Array<News>> {
 			return this.http.get<Array<News>>(this.baseUri + format + '/RotoBallerPremiumNewsByDate/' + (date == null ? '' : encodeURIComponent(date)) + '', {});
@@ -100,7 +118,6 @@ export namespace MyNS {
 		 * @param {PremiumNewsFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} playerid Unique FantasyData Player ID.
 		 * Example:<code>10000507</code>.
-		 * @return {Array<News>} 
 		 */
 		PremiumNewsByPlayer(format: PremiumNewsFormat, playerid: string): Observable<Array<News>> {
 			return this.http.get<Array<News>>(this.baseUri + format + '/RotoBallerPremiumNewsByPlayerID/' + (playerid == null ? '' : encodeURIComponent(playerid)) + '', {});
@@ -111,7 +128,6 @@ export namespace MyNS {
 		 * Get {format}/RotoBallerPremiumNewsByTeam/{team}
 		 * @param {PremiumNewsFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} team Abbreviation of the team. Example: <code>WAS</code>.
-		 * @return {Array<News>} 
 		 */
 		PremiumNewsByTeam(format: PremiumNewsFormat, team: string): Observable<Array<News>> {
 			return this.http.get<Array<News>>(this.baseUri + format + '/RotoBallerPremiumNewsByTeam/' + (team == null ? '' : encodeURIComponent(team)) + '', {});

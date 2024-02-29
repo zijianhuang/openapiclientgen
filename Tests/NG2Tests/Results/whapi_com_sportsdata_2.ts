@@ -1267,7 +1267,9 @@ export namespace MyNS {
 		 * @param {string} status Specify a status to filter results by. This is currently A (active) or S (suspended)
 		 * @param {string} sort The field to order the response by, followed by the order. For example: name,desc
 		 * @param {number} offset Skip over a number of elements by specifying a start value for the query
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Specify the number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} culture Code used to return responses in language other than English, acceptable values are de-DE|es-ES|fr-FR|nn-NO|fi-FI|ru-RU|pt-PT|hu-HU|sl-SL|ga-IE|en-CA|sr-Latn|sv-SE|el=GR|zh-CHS|it-IT|zh-CHT|cs-CZ|de-AT|ja-JP|pl-PL|da-DK|ro-RO|nl-NL|tr-TR
 		 * @return {CompetitionsWrapper} Success
 		 */
@@ -1291,11 +1293,14 @@ export namespace MyNS {
 		 * @param {string} status Specify a status to filter results by. This is currently A (active) or S (suspended)
 		 * @param {string} sort The field to order the response by, followed by the order. For example: name,desc
 		 * @param {number} offset Skip over a number of elements by specifying a start value for the query
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Specify the number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} headlineSummary Return only headline markets (Markets with the lowest display order) Either 1 InPlay and 1 Pre-Match, or the amount specified in marketCount, if available. Markets and Outcomes will be returned.
 		 * @param {boolean} includeAllDescendants Include every descendant in the below heirarchy
 		 * @param {boolean} isInPlay Show only events that are in-play
 		 * @param {number} marketCount Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.
+		 *     Minimum: 1    Maximum: 3
 		 * @param {string} date Return only events for the specified date (yyyy-MM-dd).
 		 * @param {string} dateFrom The UTC datetime from the events to be returned. (yyyy-MM-ddTHH:mm:ss)
 		 * @param {string} dateTo The UTC datetime TO the events to be returned. (yyyy-MM-ddTHH:mm:ss)
@@ -1347,11 +1352,14 @@ export namespace MyNS {
 		 * @param {string} status Specify a status to filter results by. This is currently A (active) or S (suspended)
 		 * @param {string} sort The field to order the response by, followed by the order. For example: name,desc
 		 * @param {number} offset Skip over a number of elements by specifying a start value for the query
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Specify the number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} headlineSummary Return only headline markets (Markets with the lowest display order) Either 1 InPlay and 1 Pre-Match, or the amount specified in marketCount, if available. Markets and Outcomes will be returned.
 		 * @param {boolean} includeAllDescendants Include every descendant in the below heirarchy
 		 * @param {boolean} isInPlay Show only events that are in-play
 		 * @param {number} marketCount Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.
+		 *     Minimum: 1    Maximum: 3
 		 * @param {string} date Return only events for the specified date (yyyy-MM-dd).
 		 * @param {string} dateFrom The UTC datetime from the events to be returned. (yyyy-MM-ddTHH:mm:ss)
 		 * @param {string} dateTo The UTC datetime TO the events to be returned. (yyyy-MM-ddTHH:mm:ss)
@@ -1383,7 +1391,9 @@ export namespace MyNS {
 		 * @param {Array<string>} exclude Specify fields from the default to exclude (Comma-Separated List)
 		 * @param {string} sort The field to order the response by, followed by the order. For example: name,desc
 		 * @param {number} offset Skip over a number of elements by specifying a start value for the query
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Specify the number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} culture Code used to return responses in language other than English, acceptable values are de-DE|es-ES|fr-FR|nn-NO|fi-FI|ru-RU|pt-PT|hu-HU|sl-SL|ga-IE|en-CA|sr-Latn|sv-SE|el=GR|zh-CHS|it-IT|zh-CHT|cs-CZ|de-AT|ja-JP|pl-PL|da-DK|ro-RO|nl-NL|tr-TR
 		 * @param {string} name Filter by market group name
 		 * @return {MarketGroupsWrapper} Success
@@ -1423,9 +1433,12 @@ export namespace MyNS {
 		 * @param {boolean} includeEmpty When declared as false it should exclude markets and events that have no selections / markets
 		 * @param {boolean} headlineSummary Return only headline markets (Markets with the lowest display order) Either 1 InPlay and 1 Pre-Match, or the amount specified in marketCount, if available. Markets and Outcomes will be returned.
 		 * @param {number} marketCount Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.
+		 *     Minimum: 1    Maximum: 3
 		 * @param {string} sort The field to order the response by, followed by the order. For example: name,desc
 		 * @param {number} offset Skip over a number of elements by specifying a start value for the query
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Specify the number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} marketIds Comma-seaerated list of market IDs to filter by
 		 * @param {string} culture Code used to return responses in language other than English, acceptable values are de-DE|es-ES|fr-FR|nn-NO|fi-FI|ru-RU|pt-PT|hu-HU|sl-SL|ga-IE|en-CA|sr-Latn|sv-SE|el=GR|zh-CHS|it-IT|zh-CHT|cs-CZ|de-AT|ja-JP|pl-PL|da-DK|ro-RO|nl-NL|tr-TR
 		 * @param {string} marketPublished Specify whether only active entities should be returned, according to the William Hill definition of active
@@ -1454,6 +1467,7 @@ export namespace MyNS {
 		 * @param {Array<string>} exclude Specify fields from the default to exclude (Comma-Separated List)
 		 * @param {boolean} headlineSummary Return only headline markets (Markets with the lowest display order) Either 1 InPlay and 1 Pre-Match, or the amount specified in marketCount, if available. Markets and Outcomes will be returned.
 		 * @param {number} marketCount Specify the number of markets to return when requesting headlineSummary. This count of InPlay and Pre-Match markets will be returned.For example, when specifying 1, 1 In Play and 1 Pre Match market will be returned.
+		 *     Minimum: 1    Maximum: 3
 		 * @param {Array<string>} marketIds Comma-seaerated list of market IDs to filter by
 		 * @param {boolean} includeEmpty When declared as false it should exclude markets and events that have no selections / markets
 		 * @param {string} culture Code used to return responses in language other than English, acceptable values are de-DE|es-ES|fr-FR|nn-NO|fi-FI|ru-RU|pt-PT|hu-HU|sl-SL|ga-IE|en-CA|sr-Latn|sv-SE|el=GR|zh-CHS|it-IT|zh-CHT|cs-CZ|de-AT|ja-JP|pl-PL|da-DK|ro-RO|nl-NL|tr-TR
@@ -1539,8 +1553,10 @@ export namespace MyNS {
 		 * Get sports/
 		 * @param {string} sort The field to order the response by, followed by the order. For example: name,desc
 		 * @param {number} offset Skip over a number of elements by specifying a start value for the query
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} isPublished Specify whether only active entities should be returned, according to the William Hill definition of active
 		 * @param {number} limit Specify the number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} fields Specify an absolute field list to return (Comma-Separated List)
 		 * @param {Array<string>} include Specify fields in addition to the default to return (Comma-Separated List)
 		 * @param {Array<string>} exclude Specify fields from the default to exclude (Comma-Separated List)
@@ -1565,7 +1581,9 @@ export namespace MyNS {
 		 * @param {string} status Specify a status to filter results by. This is currently A (active) or S (suspended)
 		 * @param {string} sort The field to order the response by, followed by the order. For example: name,desc
 		 * @param {number} offset Skip over a number of elements by specifying a start value for the query
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Specify the number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} culture Code used to return responses in language other than English, acceptable values are de-DE|es-ES|fr-FR|nn-NO|fi-FI|ru-RU|pt-PT|hu-HU|sl-SL|ga-IE|en-CA|sr-Latn|sv-SE|el=GR|zh-CHS|it-IT|zh-CHT|cs-CZ|de-AT|ja-JP|pl-PL|da-DK|ro-RO|nl-NL|tr-TR
 		 * @return {ClassesWrapper} Success
 		 */
@@ -1587,7 +1605,9 @@ export namespace MyNS {
 		 * @param {string} status Specify a status to filter results by. This is currently A (active) or S (suspended)
 		 * @param {string} sort The field to order the response by, followed by the order. For example: name,desc
 		 * @param {number} offset Skip over a number of elements by specifying a start value for the query
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Specify the number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} culture Code used to return responses in language other than English, acceptable values are de-DE|es-ES|fr-FR|nn-NO|fi-FI|ru-RU|pt-PT|hu-HU|sl-SL|ga-IE|en-CA|sr-Latn|sv-SE|el=GR|zh-CHS|it-IT|zh-CHT|cs-CZ|de-AT|ja-JP|pl-PL|da-DK|ro-RO|nl-NL|tr-TR
 		 * @return {CompetitionsWrapper} Success
 		 */
@@ -1602,6 +1622,7 @@ export namespace MyNS {
 		 * @param {Array<string>} sportIds A comma-separated list of sportsIds for which to retrieve topBets for
 		 * @param {Array<string>} competitionIds A comma-separated list of competitionIds for which to retrieve topBets for
 		 * @param {number} limit Specify the number of results to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} fields Specify an absolute field list to return (Comma-Separated List)
 		 * @param {Array<string>} include Specify fields in addition to the default to return (Comma-Separated List)
 		 * @param {Array<string>} exclude Specify fields from the default to exclude (Comma-Separated List)

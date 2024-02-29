@@ -111,11 +111,13 @@ export namespace MyNS {
 		 * @param {string} quote Text of the quote
 		 * @param {string} author Name of the author/source
 		 * @param {number} fontSize Font size for the quote (author font size is calculated automatically)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} quoteFont Font-family used for quote text
 		 * @param {string} quoteFontColor Font color of the quote text
 		 * @param {string} authorFont Font-family used for author name
 		 * @param {string} authorFontColor Font color of the author
 		 * @param {number} enableHighlight Enable highlight on quote text
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} highlightColor Color used for highlight
 		 * @param {string} bgType Background type (gradient/solid)
 		 * @param {string} backgroundColor Background color for solid background type
@@ -125,6 +127,7 @@ export namespace MyNS {
 		 * @param {string} brandLogo URL of the brand logo
 		 * @param {string} animation Animation type: none, rays, glint, circle
 		 * @param {number} showQuoteMark showing/hiding quote mark
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Text_to_Image(quote: string, author: string, fontSize: number, quoteFont: string, quoteFontColor: string, authorFont: string, authorFontColor: string, enableHighlight: number, highlightColor: string, bgType: string, backgroundColor: string, gradientType: string, gradientColor1: string, gradientColor2: string, brandLogo: string, animation: string, showQuoteMark: number | null | undefined): Observable<HttpResponse<string>> {
@@ -147,6 +150,7 @@ export namespace MyNS {
 		 * Get v1/link/short-link
 		 * @param {string} url URL
 		 * @param {number} cta cta id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Shorten_Link(url: string, cta: number): Observable<HttpResponse<string>> {
@@ -171,6 +175,7 @@ export namespace MyNS {
 		 * Get v1/stats/auto-hashtag
 		 * @param {string} post Text of the post
 		 * @param {number} maxHashtags Max number of hashtags.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} hashtagPosition Position of hashtags: end => at the end, auto => anywhere
 		 * @return {void} OK
 		 */

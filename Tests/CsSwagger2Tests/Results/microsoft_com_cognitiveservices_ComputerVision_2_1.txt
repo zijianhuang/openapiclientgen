@@ -1159,8 +1159,14 @@ namespace MyNS
 		/// Upon failure, the error code and an error message are returned. The error code could be one of InvalidImageUrl, InvalidImageFormat, InvalidImageSize, InvalidThumbnailSize, NotSupportedImage, FailedToProcess, Timeout, or InternalServerError.
 		/// GenerateThumbnail generateThumbnail
 		/// </summary>
-		/// <param name="width">Width of the thumbnail, in pixels. It must be between 1 and 1024. Recommended minimum of 50.</param>
-		/// <param name="height">Height of the thumbnail, in pixels. It must be between 1 and 1024. Recommended minimum of 50.</param>
+		/// <param name="width">Width of the thumbnail, in pixels. It must be between 1 and 1024. Recommended minimum of 50.
+		/// Minimum: 1
+		/// Maximum: 1024
+		// </param>
+		/// <param name="height">Height of the thumbnail, in pixels. It must be between 1 and 1024. Recommended minimum of 50.
+		/// Minimum: 1
+		/// Maximum: 1024
+		// </param>
 		/// <param name="smartCropping">Boolean flag for enabling smart cropping.</param>
 		/// <param name="requestBody">A JSON document with a URL pointing to the image that is to be analyzed.</param>
 		/// <returns>The generated thumbnail in binary format.</returns>

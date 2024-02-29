@@ -19,15 +19,23 @@ export namespace MyNS {
 	}
 
 	export interface Annotation {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		annotatedObjectRgdId?: number | null;
 		annotationExtension?: string | null;
 		aspect?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdBy?: number | null;
 		createdDate?: Date | null;
 		dataSrc?: string | null;
 		evidence?: string | null;
 		geneProductFormId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastModifiedBy?: number | null;
 		lastModifiedDate?: Date | null;
 		notes?: string | null;
@@ -35,9 +43,15 @@ export namespace MyNS {
 		objectSymbol?: string | null;
 		originalCreatedDate?: Date | null;
 		qualifier?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		refRgdId?: number | null;
 		relativeTo?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdObjectKey?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey?: number | null;
 		term?: string | null;
 		termAcc?: string | null;
@@ -45,15 +59,23 @@ export namespace MyNS {
 		xrefSource?: string | null;
 	}
 	export interface AnnotationFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		annotatedObjectRgdId: FormControl<number | null | undefined>,
 		annotationExtension: FormControl<string | null | undefined>,
 		aspect: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdBy: FormControl<number | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
 		dataSrc: FormControl<string | null | undefined>,
 		evidence: FormControl<string | null | undefined>,
 		geneProductFormId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lastModifiedBy: FormControl<number | null | undefined>,
 		lastModifiedDate: FormControl<Date | null | undefined>,
 		notes: FormControl<string | null | undefined>,
@@ -61,9 +83,15 @@ export namespace MyNS {
 		objectSymbol: FormControl<string | null | undefined>,
 		originalCreatedDate: FormControl<Date | null | undefined>,
 		qualifier: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		refRgdId: FormControl<number | null | undefined>,
 		relativeTo: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdObjectKey: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey: FormControl<number | null | undefined>,
 		term: FormControl<string | null | undefined>,
 		termAcc: FormControl<string | null | undefined>,
@@ -118,24 +146,48 @@ export namespace MyNS {
 
 	export interface Chromosome {
 		chromosome?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		contigCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gapCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gapLength?: number | null;
 		genbankId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mapKey?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ordinalNumber?: number | null;
 		refseqId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seqLength?: number | null;
 	}
 	export interface ChromosomeFormProperties {
 		chromosome: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		contigCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gapCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gapLength: FormControl<number | null | undefined>,
 		genbankId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mapKey: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ordinalNumber: FormControl<number | null | undefined>,
 		refseqId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seqLength: FormControl<number | null | undefined>,
 	}
 	export function CreateChromosomeFormGroup() {
@@ -194,6 +246,8 @@ export namespace MyNS {
 		ensemblGeneSymbol?: string | null;
 		ensemblGeneType?: string | null;
 		geneSource?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key?: number | null;
 		mergedDescription?: string | null;
 		name?: string | null;
@@ -202,8 +256,12 @@ export namespace MyNS {
 		nomenSource?: string | null;
 		notes?: string | null;
 		refSeqStatus?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId?: number | null;
 		soAccId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey?: number | null;
 		symbol?: string | null;
 		type?: string | null;
@@ -216,6 +274,8 @@ export namespace MyNS {
 		ensemblGeneSymbol: FormControl<string | null | undefined>,
 		ensemblGeneType: FormControl<string | null | undefined>,
 		geneSource: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key: FormControl<number | null | undefined>,
 		mergedDescription: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -224,8 +284,12 @@ export namespace MyNS {
 		nomenSource: FormControl<string | null | undefined>,
 		notes: FormControl<string | null | undefined>,
 		refSeqStatus: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId: FormControl<number | null | undefined>,
 		soAccId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey: FormControl<number | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -260,16 +324,26 @@ export namespace MyNS {
 	export interface Map {
 		dbsnpVersion?: string | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		methodKey?: number | null;
 		name?: string | null;
 		notes?: string | null;
 		primaryRefAssembly?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank?: number | null;
 		refSeqAssemblyAcc?: string | null;
 		refSeqAssemblyName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId?: number | null;
 		source?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey?: number | null;
 		ucscAssemblyId?: string | null;
 		unit?: string | null;
@@ -278,16 +352,26 @@ export namespace MyNS {
 	export interface MapFormProperties {
 		dbsnpVersion: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		methodKey: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		notes: FormControl<string | null | undefined>,
 		primaryRefAssembly: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rank: FormControl<number | null | undefined>,
 		refSeqAssemblyAcc: FormControl<string | null | undefined>,
 		refSeqAssemblyName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId: FormControl<number | null | undefined>,
 		source: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey: FormControl<number | null | undefined>,
 		ucscAssemblyId: FormControl<string | null | undefined>,
 		unit: FormControl<string | null | undefined>,
@@ -334,24 +418,36 @@ export namespace MyNS {
 	export interface MappedGene {
 		chromosome?: string | null;
 		gene?: Gene;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mapKey?: number | null;
-		start?: number | null;
-		stop?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		stop?: string | null;
 		strand?: string | null;
 	}
 	export interface MappedGeneFormProperties {
 		chromosome: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mapKey: FormControl<number | null | undefined>,
-		start: FormControl<number | null | undefined>,
-		stop: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		stop: FormControl<string | null | undefined>,
 		strand: FormControl<string | null | undefined>,
 	}
 	export function CreateMappedGeneFormGroup() {
 		return new FormGroup<MappedGeneFormProperties>({
 			chromosome: new FormControl<string | null | undefined>(undefined),
 			mapKey: new FormControl<number | null | undefined>(undefined),
-			start: new FormControl<number | null | undefined>(undefined),
-			stop: new FormControl<number | null | undefined>(undefined),
+			start: new FormControl<string | null | undefined>(undefined),
+			stop: new FormControl<string | null | undefined>(undefined),
 			strand: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -359,19 +455,35 @@ export namespace MyNS {
 
 	export interface MappedGenePosition {
 		chromosome?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mapKey?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId?: number | null;
-		start?: number | null;
-		stop?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		stop?: string | null;
 		strand?: string | null;
 		symbol?: string | null;
 	}
 	export interface MappedGenePositionFormProperties {
 		chromosome: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mapKey: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId: FormControl<number | null | undefined>,
-		start: FormControl<number | null | undefined>,
-		stop: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		stop: FormControl<string | null | undefined>,
 		strand: FormControl<string | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
 	}
@@ -380,8 +492,8 @@ export namespace MyNS {
 			chromosome: new FormControl<string | null | undefined>(undefined),
 			mapKey: new FormControl<number | null | undefined>(undefined),
 			rgdId: new FormControl<number | null | undefined>(undefined),
-			start: new FormControl<number | null | undefined>(undefined),
-			stop: new FormControl<number | null | undefined>(undefined),
+			start: new FormControl<string | null | undefined>(undefined),
+			stop: new FormControl<string | null | undefined>(undefined),
 			strand: new FormControl<string | null | undefined>(undefined),
 			symbol: new FormControl<string | null | undefined>(undefined),
 		});
@@ -390,25 +502,37 @@ export namespace MyNS {
 
 	export interface MappedQTL {
 		chromosome?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mapKey?: number | null;
 		qtl?: QTL;
-		start?: number | null;
-		stop?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		stop?: string | null;
 		strand?: string | null;
 	}
 	export interface MappedQTLFormProperties {
 		chromosome: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mapKey: FormControl<number | null | undefined>,
-		start: FormControl<number | null | undefined>,
-		stop: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		stop: FormControl<string | null | undefined>,
 		strand: FormControl<string | null | undefined>,
 	}
 	export function CreateMappedQTLFormGroup() {
 		return new FormGroup<MappedQTLFormProperties>({
 			chromosome: new FormControl<string | null | undefined>(undefined),
 			mapKey: new FormControl<number | null | undefined>(undefined),
-			start: new FormControl<number | null | undefined>(undefined),
-			stop: new FormControl<number | null | undefined>(undefined),
+			start: new FormControl<string | null | undefined>(undefined),
+			stop: new FormControl<string | null | undefined>(undefined),
 			strand: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -416,44 +540,84 @@ export namespace MyNS {
 
 	export interface QTL {
 		chromosome?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flank1RgdId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flank2RgdId?: number | null;
 		inheritanceType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key?: number | null;
 		linkageImage?: string | null;
+
+		/** Type: double */
 		lod?: number | null;
 		lodImage?: string | null;
 		mostSignificantCmoTerm?: string | null;
 		name?: string | null;
 		notes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		peakOffset?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		peakRgdId?: number | null;
+
+		/** Type: double */
 		pvalue?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId?: number | null;
 		sourceUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey?: number | null;
 		symbol?: string | null;
+
+		/** Type: double */
 		variance?: number | null;
 	}
 	export interface QTLFormProperties {
 		chromosome: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flank1RgdId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flank2RgdId: FormControl<number | null | undefined>,
 		inheritanceType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key: FormControl<number | null | undefined>,
 		linkageImage: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		lod: FormControl<number | null | undefined>,
 		lodImage: FormControl<string | null | undefined>,
 		mostSignificantCmoTerm: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		notes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		peakOffset: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		peakRgdId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		pvalue: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId: FormControl<number | null | undefined>,
 		sourceUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey: FormControl<number | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		variance: FormControl<number | null | undefined>,
 	}
 	export function CreateQTLFormGroup() {
@@ -483,50 +647,78 @@ export namespace MyNS {
 
 	export interface MappedSSLP {
 		chromosome?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mapKey?: number | null;
 		sslp?: SSLP;
-		start?: number | null;
-		stop?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		stop?: string | null;
 		strand?: string | null;
 	}
 	export interface MappedSSLPFormProperties {
 		chromosome: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mapKey: FormControl<number | null | undefined>,
-		start: FormControl<number | null | undefined>,
-		stop: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		start: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		stop: FormControl<string | null | undefined>,
 		strand: FormControl<string | null | undefined>,
 	}
 	export function CreateMappedSSLPFormGroup() {
 		return new FormGroup<MappedSSLPFormProperties>({
 			chromosome: new FormControl<string | null | undefined>(undefined),
 			mapKey: new FormControl<number | null | undefined>(undefined),
-			start: new FormControl<number | null | undefined>(undefined),
-			stop: new FormControl<number | null | undefined>(undefined),
+			start: new FormControl<string | null | undefined>(undefined),
+			stop: new FormControl<string | null | undefined>(undefined),
 			strand: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface SSLP {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expectedSize?: number | null;
 		forwardSeq?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key?: number | null;
 		name?: string | null;
 		notes?: string | null;
 		reverseSeq?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey?: number | null;
 		sslpType?: string | null;
 		templateSeq?: string | null;
 	}
 	export interface SSLPFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expectedSize: FormControl<number | null | undefined>,
 		forwardSeq: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		notes: FormControl<string | null | undefined>,
 		reverseSeq: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey: FormControl<number | null | undefined>,
 		sslpType: FormControl<string | null | undefined>,
 		templateSeq: FormControl<string | null | undefined>,
@@ -589,9 +781,13 @@ export namespace MyNS {
 		id?: string | null;
 		objDesc?: string | null;
 		objName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId?: number | null;
 		typeName?: string | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xdb_key?: number | null;
 	}
 	export interface PathwayObjectFormProperties {
@@ -599,9 +795,13 @@ export namespace MyNS {
 		id: FormControl<string | null | undefined>,
 		objDesc: FormControl<string | null | undefined>,
 		objName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		typeId: FormControl<number | null | undefined>,
 		typeName: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		xdb_key: FormControl<number | null | undefined>,
 	}
 	export function CreatePathwayObjectFormGroup() {
@@ -623,6 +823,8 @@ export namespace MyNS {
 		doi?: string | null;
 		editors?: string | null;
 		issue?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key?: number | null;
 		notes?: string | null;
 		pages?: string | null;
@@ -633,7 +835,11 @@ export namespace MyNS {
 		publisherCity?: string | null;
 		refAbstract?: string | null;
 		referenceType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey?: number | null;
 		title?: string | null;
 		urlWebReference?: string | null;
@@ -644,6 +850,8 @@ export namespace MyNS {
 		doi: FormControl<string | null | undefined>,
 		editors: FormControl<string | null | undefined>,
 		issue: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key: FormControl<number | null | undefined>,
 		notes: FormControl<string | null | undefined>,
 		pages: FormControl<string | null | undefined>,
@@ -654,7 +862,11 @@ export namespace MyNS {
 		publisherCity: FormControl<string | null | undefined>,
 		refAbstract: FormControl<string | null | undefined>,
 		referenceType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		urlWebReference: FormControl<string | null | undefined>,
@@ -700,18 +912,26 @@ export namespace MyNS {
 		cryopreservedEmbryo?: boolean | null;
 		cryopreservedSperm?: boolean | null;
 		cryorecovery?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key?: number | null;
 		liveAnimals?: boolean | null;
 		statusDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		strainRgdId?: number | null;
 	}
 	export interface StatusFormProperties {
 		cryopreservedEmbryo: FormControl<boolean | null | undefined>,
 		cryopreservedSperm: FormControl<boolean | null | undefined>,
 		cryorecovery: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key: FormControl<number | null | undefined>,
 		liveAnimals: FormControl<boolean | null | undefined>,
 		statusDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		strainRgdId: FormControl<number | null | undefined>,
 	}
 	export function CreateStatusFormGroup() {
@@ -728,6 +948,8 @@ export namespace MyNS {
 	}
 
 	export interface Strain {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		backgroundStrainRgdId?: number | null;
 		chrAltered?: string | null;
 		color?: string | null;
@@ -735,6 +957,8 @@ export namespace MyNS {
 		genetics?: string | null;
 		imageUrl?: string | null;
 		inbredGen?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key?: number | null;
 		lastStatus?: string | null;
 		lastStatusObject?: Status;
@@ -743,8 +967,12 @@ export namespace MyNS {
 		notes?: string | null;
 		origin?: string | null;
 		researchUse?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId?: number | null;
 		source?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey?: number | null;
 		statusLog?: Array<Status>;
 		strain?: string | null;
@@ -753,6 +981,8 @@ export namespace MyNS {
 		symbol?: string | null;
 	}
 	export interface StrainFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		backgroundStrainRgdId: FormControl<number | null | undefined>,
 		chrAltered: FormControl<string | null | undefined>,
 		color: FormControl<string | null | undefined>,
@@ -760,6 +990,8 @@ export namespace MyNS {
 		genetics: FormControl<string | null | undefined>,
 		imageUrl: FormControl<string | null | undefined>,
 		inbredGen: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key: FormControl<number | null | undefined>,
 		lastStatus: FormControl<string | null | undefined>,
 		modificationMethod: FormControl<string | null | undefined>,
@@ -767,8 +999,12 @@ export namespace MyNS {
 		notes: FormControl<string | null | undefined>,
 		origin: FormControl<string | null | undefined>,
 		researchUse: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rgdId: FormControl<number | null | undefined>,
 		source: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		speciesTypeKey: FormControl<number | null | undefined>,
 		strain: FormControl<string | null | undefined>,
 		strainTypeName: FormControl<string | null | undefined>,
@@ -809,6 +1045,8 @@ export namespace MyNS {
 		creationDate?: Date | null;
 		definition?: string | null;
 		modificationDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		obsolete?: number | null;
 		ontologyId?: string | null;
 		term?: string | null;
@@ -821,6 +1059,8 @@ export namespace MyNS {
 		creationDate: FormControl<Date | null | undefined>,
 		definition: FormControl<string | null | undefined>,
 		modificationDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		obsolete: FormControl<number | null | undefined>,
 		ontologyId: FormControl<string | null | undefined>,
 		term: FormControl<string | null | undefined>,
@@ -841,12 +1081,16 @@ export namespace MyNS {
 	}
 
 	export interface TermXRef {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key?: number | null;
 		termAcc?: string | null;
 		xrefDescription?: string | null;
 		xrefValue?: string | null;
 	}
 	export interface TermXRefFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		key: FormControl<number | null | undefined>,
 		termAcc: FormControl<string | null | undefined>,
 		xrefDescription: FormControl<string | null | undefined>,
@@ -941,6 +1185,7 @@ export namespace MyNS {
 		 * Returns a list ontology term accession IDs annotated to an rgd object
 		 * Get annotations/accId/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetTermAccIdsUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -963,6 +1208,7 @@ export namespace MyNS {
 		 * Get annotations/count/{accId}/{speciesTypeKey}/{includeChildren}
 		 * @param {string} accId Ontology term accession ID
 		 * @param {number} speciesTypeKey A list of species type keys can be found using the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeChildren true: return annotations for the term and children, false: return annotations for the term only 
 		 * @return {void} OK
 		 */
@@ -975,8 +1221,10 @@ export namespace MyNS {
 		 * Get annotations/count/{accId}/{speciesTypeKey}/{includeChildren}/{objectType}
 		 * @param {string} accId Ontology term accession ID
 		 * @param {number} speciesTypeKey A list of species type keys can be found using the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeChildren true: return annotations for the term and children, false: return annotations for the term only 
 		 * @param {number} objectType A list of object types can be found using the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetAnnotationCountByAccIdAndObjectTypeUsingGET(accId: string, speciesTypeKey: number, includeChildren: boolean, objectType: number): Observable<HttpResponse<string>> {
@@ -987,6 +1235,7 @@ export namespace MyNS {
 		 * Returns a list of annotations for a reference
 		 * Get annotations/reference/{refRgdId}
 		 * @param {number} refRgdId Reference RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetAnnotsByRefrerenceUsingGET(refRgdId: number): Observable<HttpResponse<string>> {
@@ -997,6 +1246,7 @@ export namespace MyNS {
 		 * Returns a list of annotations by RGD ID
 		 * Get annotations/rgdId/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetAnnotationsByRgdIdUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1007,6 +1257,7 @@ export namespace MyNS {
 		 * Returns a list of annotations by RGD ID and ontology prefix
 		 * Get annotations/rgdId/{rgdId}/{ontologyPrefix}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ontologyPrefix Ontology Prefix.  The prefix can be found left of the semicolon in an ontology term accession ID.  As an example, term accession PW:0000034 has the ontology prefix PW
 		 * @return {void} OK
 		 */
@@ -1019,6 +1270,7 @@ export namespace MyNS {
 		 * Get annotations/{accId}/{rgdId}
 		 * @param {string} accId Ontology Term Accession ID
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetAnnotationsByAccIdAndRgdIdUsingGET(accId: string, rgdId: number): Observable<HttpResponse<string>> {
@@ -1030,6 +1282,7 @@ export namespace MyNS {
 		 * Get annotations/{accId}/{speciesTypeKey}/{includeChildren}
 		 * @param {string} accId Ontology term accession ID
 		 * @param {number} speciesTypeKey A list of species type keys can be found using the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeChildren true: return annotations for the term and children, false: return annotations for the term only 
 		 * @return {void} OK
 		 */
@@ -1062,6 +1315,7 @@ export namespace MyNS {
 		 * Get genes/affyId/{affyId}/{speciesTypeKey}
 		 * @param {string} affyId Affymetrix ID
 		 * @param {number} speciesTypeKey A list of RGD species type keys can be found in the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGenesByAffyIdUsingGET(affyId: string, speciesTypeKey: number): Observable<HttpResponse<string>> {
@@ -1073,6 +1327,7 @@ export namespace MyNS {
 		 * Get genes/alias/{aliasSymbol}/{speciesTypeKey}
 		 * @param {string} aliasSymbol Gene alias symbol
 		 * @param {number} speciesTypeKey A list of RGD species type keys can be found in the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGenesByAliasSymbolUsingGET(aliasSymbol: string, speciesTypeKey: number): Observable<HttpResponse<string>> {
@@ -1083,6 +1338,7 @@ export namespace MyNS {
 		 * Return a list of gene alleles
 		 * Get genes/allele/{rgdId}
 		 * @param {number} rgdId RGD ID of gene
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGeneAllelesUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1114,6 +1370,7 @@ export namespace MyNS {
 		 * Get genes/annotation/{accId}/{speciesTypeKey}
 		 * @param {string} accId Ontology term accession ID
 		 * @param {number} speciesTypeKey Species type key.  A list of species type keys can be found in the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGenesAnnotatedUsingGET(accId: string, speciesTypeKey: number): Observable<HttpResponse<string>> {
@@ -1125,6 +1382,7 @@ export namespace MyNS {
 		 * Get genes/keyword/{keyword}/{speciesTypeKey}
 		 * @param {string} keyword Search keyword
 		 * @param {number} speciesTypeKey Species type key.  A list of species type keys can be found in the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGenesByKeywordUsingGET(keyword: string, speciesTypeKey: number): Observable<HttpResponse<string>> {
@@ -1135,6 +1393,7 @@ export namespace MyNS {
 		 * Return a list of all genes with position information for an assembly
 		 * Get genes/map/{mapKey}
 		 * @param {number} mapKey A list of RGD assembly map keys can be found in the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGeneByMapKeyUsingGET(mapKey: number): Observable<HttpResponse<string>> {
@@ -1145,12 +1404,15 @@ export namespace MyNS {
 		 * Return a list of genes position and map key
 		 * Get genes/mapped/{chr}/{start}/{stop}/{mapKey}
 		 * @param {string} chr Chromosome
-		 * @param {number} start Start Position
-		 * @param {number} stop Stop Position
+		 * @param {string} start Start Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} stop Stop Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} mapKey A list of RGD assembly map keys can be found in the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
-		GetMappedGenesByPositionUsingGET(chr: string, start: number, stop: number, mapKey: number): Observable<HttpResponse<string>> {
+		GetMappedGenesByPositionUsingGET(chr: string, start: string, stop: string, mapKey: number): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'genes/mapped/' + (chr == null ? '' : encodeURIComponent(chr)) + '/' + start + '/' + stop + '/' + mapKey, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1168,6 +1430,7 @@ export namespace MyNS {
 		 * Return a list of gene orthologs
 		 * Get genes/orthologs/{rgdId}
 		 * @param {number} rgdId RGD ID of a gene
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGeneOrthologsUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1178,12 +1441,15 @@ export namespace MyNS {
 		 * Return a list of genes in region
 		 * Get genes/region/{chr}/{start}/{stop}/{mapKey}
 		 * @param {string} chr Chromosome
-		 * @param {number} start Start Position
-		 * @param {number} stop Stop Position
+		 * @param {string} start Start Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} stop Stop Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} mapKey A list of RGD assembly map keys can be found in the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
-		GetGenesInRegionUsingGET(chr: string, start: number, stop: number, mapKey: number): Observable<HttpResponse<string>> {
+		GetGenesInRegionUsingGET(chr: string, start: string, stop: string, mapKey: number): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'genes/region/' + (chr == null ? '' : encodeURIComponent(chr)) + '/' + start + '/' + stop + '/' + mapKey, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1191,6 +1457,7 @@ export namespace MyNS {
 		 * Return a list of all genes for a species in RGD
 		 * Get genes/species/{speciesTypeKey}
 		 * @param {number} speciesTypeKey A list of RGD species type keys can be found in the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGenesBySpeciesUsingGET(speciesTypeKey: number): Observable<HttpResponse<string>> {
@@ -1201,12 +1468,15 @@ export namespace MyNS {
 		 * Return a list of genes position and map key
 		 * Get genes/{chr}/{start}/{stop}/{mapKey}
 		 * @param {string} chr Chromosome
-		 * @param {number} start Start Position
-		 * @param {number} stop Stop Position
+		 * @param {string} start Start Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} stop Stop Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} mapKey A list of RGD assembly map keys can be found in the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
-		GetGenesByPositionUsingGET(chr: string, start: number, stop: number, mapKey: number): Observable<HttpResponse<string>> {
+		GetGenesByPositionUsingGET(chr: string, start: string, stop: string, mapKey: number): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'genes/' + (chr == null ? '' : encodeURIComponent(chr)) + '/' + start + '/' + stop + '/' + mapKey, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1214,6 +1484,7 @@ export namespace MyNS {
 		 * Get a gene record by RGD ID
 		 * Get genes/{rgdId}
 		 * @param {number} rgdId The RGD ID of a Gene in RGD
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGeneByRgdIdUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1225,6 +1496,7 @@ export namespace MyNS {
 		 * Get genes/{symbol}/{speciesTypeKey}
 		 * @param {string} symbol Gene Symbol
 		 * @param {number} speciesTypeKey Species type key.  A list of species type keys can be found in the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGeneBySymbolUsingGET(symbol: string, speciesTypeKey: number): Observable<HttpResponse<string>> {
@@ -1254,6 +1526,7 @@ export namespace MyNS {
 		 * Translate an RGD ID to an Ensembl Gene  ID
 		 * Get lookup/id/map/EnsemblGene/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetEnsemblGeneMappingUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1274,6 +1547,7 @@ export namespace MyNS {
 		 * Translate an RGD ID to an Ensembl Protein ID
 		 * Get lookup/id/map/EnsemblProtein/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetEnsemblProteinMappingUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1294,6 +1568,7 @@ export namespace MyNS {
 		 * Translate an RGD ID to an Ensembl Transcript ID
 		 * Get lookup/id/map/EnsemblTranscript/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetEnsemblTranscriptMappingUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1314,6 +1589,7 @@ export namespace MyNS {
 		 * Translate an RGD ID to an GTEx ID
 		 * Get lookup/id/map/GTEx/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGTEXMappingUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1334,6 +1610,7 @@ export namespace MyNS {
 		 * Translate an RGD ID to a GenBank Nucleotide ID
 		 * Get lookup/id/map/GenBankNucleotide/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGenBankNucleotideMappingUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1354,6 +1631,7 @@ export namespace MyNS {
 		 * Translate an RGD ID to a GenBank Protein ID
 		 * Get lookup/id/map/GenBankProtein/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetGenBankProteinMappingUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1374,6 +1652,7 @@ export namespace MyNS {
 		 * Translate an RGD ID to an HGNC ID
 		 * Get lookup/id/map/HGNC/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetHGNCMappingUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1394,6 +1673,7 @@ export namespace MyNS {
 		 * Translate an RGD ID to an MGI ID
 		 * Get lookup/id/map/MGI/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetMGIMappingUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1414,6 +1694,7 @@ export namespace MyNS {
 		 * Translate an RGD ID to an NCBI Gene ID
 		 * Get lookup/id/map/NCBIGene/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetNCBIGeneMappingUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1434,6 +1715,7 @@ export namespace MyNS {
 		 * Translate an RGD ID to a UniProt ID
 		 * Get lookup/id/map/UniProt/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetUniProtMappingUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1444,6 +1726,7 @@ export namespace MyNS {
 		 * Return a list assembly maps for a species
 		 * Get lookup/maps/{speciesTypeKey}
 		 * @param {number} speciesTypeKey RGD species type key. A full list of keys is available throught the lookup service.  1=human, 2=mouse, 3=rat,ect
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetMapsUsingGET(speciesTypeKey: number): Observable<HttpResponse<string>> {
@@ -1474,6 +1757,7 @@ export namespace MyNS {
 		 * Get maps/chr/{chromosome}/{mapKey}
 		 * @param {string} chromosome chromosome
 		 * @param {number} mapKey mapKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetChromosomeByAssemblyUsingGET(chromosome: string, mapKey: number): Observable<HttpResponse<string>> {
@@ -1484,6 +1768,7 @@ export namespace MyNS {
 		 * Return a list of chromosomes
 		 * Get maps/chr/{mapKey}
 		 * @param {number} mapKey mapKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetChromosomesByAssemblyUsingGET(mapKey: number): Observable<HttpResponse<string>> {
@@ -1494,6 +1779,7 @@ export namespace MyNS {
 		 * Return a list of assemblies
 		 * Get maps/{speciesTypeKey}
 		 * @param {number} speciesTypeKey species Key
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetMapsBySpeciesUsingGET(speciesTypeKey: number): Observable<HttpResponse<string>> {
@@ -1555,7 +1841,9 @@ export namespace MyNS {
 		 * Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms.  Results will be all records that match all terms submitted.  Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139).  Species type is an integer value (3=rat, 4=chinchilla).  Reference RGD ID for a study works like a filter.
 		 * Get phenotype/phenominer/chart/{speciesTypeKey}/{refRgdId}/{termString}
 		 * @param {number} speciesTypeKey Species Type Key - 3=rat 4=chinchilla 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} refRgdId Reference RGD ID for a study
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} termString List of term accession IDs
 		 * @return {void} OK
 		 */
@@ -1567,6 +1855,7 @@ export namespace MyNS {
 		 * Return a list of quantitative phenotypes values based on a combination of Clinical Measurement, Experimental Condition, Rat Strain, and/or Measurement Method ontology terms.  Results will be all records that match all terms submitted.  Ontology ids should be submitted as a comma delimited list (ex. RS:0000029,CMO:0000155,CMO:0000139).  Species type is an integer value (3=rat, 4=chinchilla)
 		 * Get phenotype/phenominer/chart/{speciesTypeKey}/{termString}
 		 * @param {number} speciesTypeKey Species Type Key - 3=rat 4=chinchilla 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} termString List of term accession IDs
 		 * @return {void} OK
 		 */
@@ -1578,12 +1867,15 @@ export namespace MyNS {
 		 * Returns a list QTL for given position and assembly map
 		 * Get qtls/mapped/{chr}/{start}/{stop}/{mapKey}
 		 * @param {string} chr Chromosome
-		 * @param {number} start Start Position
-		 * @param {number} stop Stop Position
+		 * @param {string} start Start Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} stop Stop Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} mapKey A list of assembly map keys can be found using the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
-		GetMappedQTLByPositionUsingGET(chr: string, start: number, stop: number, mapKey: number): Observable<HttpResponse<string>> {
+		GetMappedQTLByPositionUsingGET(chr: string, start: string, stop: string, mapKey: number): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'qtls/mapped/' + (chr == null ? '' : encodeURIComponent(chr)) + '/' + start + '/' + stop + '/' + mapKey, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1591,12 +1883,15 @@ export namespace MyNS {
 		 * Returns a list QTL for given position and assembly map
 		 * Get qtls/{chr}/{start}/{stop}/{mapKey}
 		 * @param {string} chr Chromosome
-		 * @param {number} start Start Position
-		 * @param {number} stop Stop Position
+		 * @param {string} start Start Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} stop Stop Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} mapKey A list of assembly map keys can be found using the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
-		GetQtlListByPositionUsingGET(chr: string, start: number, stop: number, mapKey: number): Observable<HttpResponse<string>> {
+		GetQtlListByPositionUsingGET(chr: string, start: string, stop: string, mapKey: number): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'qtls/' + (chr == null ? '' : encodeURIComponent(chr)) + '/' + start + '/' + stop + '/' + mapKey, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1604,6 +1899,7 @@ export namespace MyNS {
 		 * Return a QTL for provided RGD ID
 		 * Get qtls/{rgdId}
 		 * @param {number} rgdId RGD ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetQTLByRgdIdUsingGET(rgdId: number): Observable<HttpResponse<string>> {
@@ -1614,12 +1910,15 @@ export namespace MyNS {
 		 * Returns a list SSLP for given position and assembly map
 		 * Get sslps/mapped/{chr}/{start}/{stop}/{mapKey}
 		 * @param {string} chr Chromosome
-		 * @param {number} start Start Position
-		 * @param {number} stop Stop Position
+		 * @param {string} start Start Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} stop Stop Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} mapKey A list of assembly map keys can be found using the lookup service
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
-		GetMappedSSLPByPositionUsingGET(chr: string, start: number, stop: number, mapKey: number): Observable<HttpResponse<string>> {
+		GetMappedSSLPByPositionUsingGET(chr: string, start: string, stop: string, mapKey: number): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'sslps/mapped/' + (chr == null ? '' : encodeURIComponent(chr)) + '/' + start + '/' + stop + '/' + mapKey, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1627,6 +1926,7 @@ export namespace MyNS {
 		 * Count of active objects by type, for specified species and date
 		 * Get stats/count/activeObject/{speciesTypeKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1638,6 +1938,7 @@ export namespace MyNS {
 		 * Count of gene types, for specified species and date
 		 * Get stats/count/geneType/{speciesTypeKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1649,6 +1950,7 @@ export namespace MyNS {
 		 * Count of objects with given status, for specified species and date
 		 * Get stats/count/objectStatus/{speciesTypeKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1660,6 +1962,7 @@ export namespace MyNS {
 		 * Count of objects with reference sequence(s), by object type, for specified species and date
 		 * Get stats/count/objectWithRefSeq/{speciesTypeKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1671,6 +1974,7 @@ export namespace MyNS {
 		 * Count of objects with reference, by object type, for specified species and date
 		 * Get stats/count/objectWithReference/{speciesTypeKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1682,7 +1986,9 @@ export namespace MyNS {
 		 * Count of objects with external database ids, by database id, for specified species, object type and date
 		 * Get stats/count/objectWithXdb/{speciesTypeKey}/{objectKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} objectKey objectKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1694,6 +2000,7 @@ export namespace MyNS {
 		 * Count of protein interactions, for specified species and date
 		 * Get stats/count/proteinInteraction/{speciesTypeKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1705,6 +2012,7 @@ export namespace MyNS {
 		 * Count of strains, by qtl inheritance type, for specified species and date
 		 * Get stats/count/qtlInheritanceType/{speciesTypeKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1716,6 +2024,7 @@ export namespace MyNS {
 		 * Count of retired objects by type, for specified species and date
 		 * Get stats/count/retiredObject/{speciesTypeKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1727,6 +2036,7 @@ export namespace MyNS {
 		 * Count of strain types, for specified species and date
 		 * Get stats/count/strainType/{speciesTypeKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1738,6 +2048,7 @@ export namespace MyNS {
 		 * Count of withdrawn objects by type, for specified species and date
 		 * Get stats/count/withdrawnObject/{speciesTypeKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1749,6 +2060,7 @@ export namespace MyNS {
 		 * Count of external database ids, for specied species and date
 		 * Get stats/count/xdb/{speciesTypeKey}/{dateYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateYYYYMMDD dateYYYYMMDD
 		 * @return {void} OK
 		 */
@@ -1760,6 +2072,7 @@ export namespace MyNS {
 		 * Count difference of active objects, by type, for specified species and date range
 		 * Get stats/diff/activeObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1772,6 +2085,7 @@ export namespace MyNS {
 		 * Count difference of gene types, for specified species and date range
 		 * Get stats/diff/geneType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1784,6 +2098,7 @@ export namespace MyNS {
 		 * Count difference of objects with given status, for specified species and date range
 		 * Get stats/diff/objectStatus/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1796,6 +2111,7 @@ export namespace MyNS {
 		 * Count difference of objects with reference sequence(s), by object type, for specified species and date range
 		 * Get stats/diff/objectWithRefSeq/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1808,6 +2124,7 @@ export namespace MyNS {
 		 * Count difference of objects with reference, by object type, for specified species and date range
 		 * Get stats/diff/objectWithReference/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1820,7 +2137,9 @@ export namespace MyNS {
 		 * Count difference of objects with external database ids, by database id, for specified species, object type and date range
 		 * Get stats/diff/objectWithXdb/{speciesTypeKey}/{objectKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} objectKey objectKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1833,6 +2152,7 @@ export namespace MyNS {
 		 * Count difference of protein interactions, for specified species and date range
 		 * Get stats/diff/proteinInteraction/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1845,6 +2165,7 @@ export namespace MyNS {
 		 * Count difference of strains, by qtl inheritance type, for specified species and date range
 		 * Get stats/diff/qtlInheritanceType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1857,6 +2178,7 @@ export namespace MyNS {
 		 * Count difference of retired objects, by type, for specified species and date range
 		 * Get stats/diff/retiredObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1869,6 +2191,7 @@ export namespace MyNS {
 		 * Count difference of strain types, for specified species and date range
 		 * Get stats/diff/strainType/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1881,6 +2204,7 @@ export namespace MyNS {
 		 * Count difference of withdrawn objects, by type, for specified species and date range
 		 * Get stats/diff/withdrawnObject/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1893,6 +2217,7 @@ export namespace MyNS {
 		 * Count difference of external database ids, for specified species and date range
 		 * Get stats/diff/xdb/{speciesTypeKey}/{dateFromYYYYMMDD}/{dateToYYYYMMDD}
 		 * @param {number} speciesTypeKey speciesTypeKey
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dateFromYYYYMMDD dateFromYYYYMMDD
 		 * @param {string} dateToYYYYMMDD dateToYYYYMMDD
 		 * @return {void} OK
@@ -1925,12 +2250,15 @@ export namespace MyNS {
 		 * Return all active strains by position
 		 * Get strains/{chr}/{start}/{stop}/{mapKey}
 		 * @param {string} chr Chromosome
-		 * @param {number} start Start Position
-		 * @param {number} stop Stop Position
+		 * @param {string} start Start Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} stop Stop Position
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} mapKey RGD Map Key (available through lookup service)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
-		GetStrainsByPositionUsingGET(chr: string, start: number, stop: number, mapKey: number): Observable<HttpResponse<string>> {
+		GetStrainsByPositionUsingGET(chr: string, start: string, stop: string, mapKey: number): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'strains/' + (chr == null ? '' : encodeURIComponent(chr)) + '/' + start + '/' + stop + '/' + mapKey, { observe: 'response', responseType: 'text' });
 		}
 
@@ -1938,6 +2266,7 @@ export namespace MyNS {
 		 * Return a strain by RGD ID
 		 * Get strains/{rgdId}
 		 * @param {number} rgdId RGD ID of the strain
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetStrainByRgdIdUsingGET(rgdId: number): Observable<HttpResponse<string>> {

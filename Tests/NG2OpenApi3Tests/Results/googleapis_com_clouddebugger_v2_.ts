@@ -170,7 +170,10 @@ export namespace MyNS {
 		/** Simple value of the variable. */
 		value?: string | null;
 
-		/** Reference to a variable in the shared variable table. More than one variable can reference the same variable in the table. The `var_table_index` field is an index into `variable_table` in Breakpoint. */
+		/**
+		 * Reference to a variable in the shared variable table. More than one variable can reference the same variable in the table. The `var_table_index` field is an index into `variable_table` in Breakpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		varTableIndex?: number | null;
 	}
 
@@ -186,7 +189,10 @@ export namespace MyNS {
 		/** Simple value of the variable. */
 		value: FormControl<string | null | undefined>,
 
-		/** Reference to a variable in the shared variable table. More than one variable can reference the same variable in the table. The `var_table_index` field is an index into `variable_table` in Breakpoint. */
+		/**
+		 * Reference to a variable in the shared variable table. More than one variable can reference the same variable in the table. The `var_table_index` field is an index into `variable_table` in Breakpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		varTableIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateVariableFormGroup() {
@@ -260,10 +266,16 @@ export namespace MyNS {
 	/** Represents a location in the source code. */
 	export interface SourceLocation {
 
-		/** Column within a line. The first column in a line as the value `1`. Agents that do not support setting breakpoints on specific columns ignore this field. */
+		/**
+		 * Column within a line. The first column in a line as the value `1`. Agents that do not support setting breakpoints on specific columns ignore this field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		column?: number | null;
 
-		/** Line inside the file. The first line in the file has the value `1`. */
+		/**
+		 * Line inside the file. The first line in the file has the value `1`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line?: number | null;
 
 		/** Path to the source file within the source context of the target binary. */
@@ -273,10 +285,16 @@ export namespace MyNS {
 	/** Represents a location in the source code. */
 	export interface SourceLocationFormProperties {
 
-		/** Column within a line. The first column in a line as the value `1`. Agents that do not support setting breakpoints on specific columns ignore this field. */
+		/**
+		 * Column within a line. The first column in a line as the value `1`. Agents that do not support setting breakpoints on specific columns ignore this field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		column: FormControl<number | null | undefined>,
 
-		/** Line inside the file. The first line in the file has the value `1`. */
+		/**
+		 * Line inside the file. The first line in the file has the value `1`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		line: FormControl<number | null | undefined>,
 
 		/** Path to the source file within the source context of the target binary. */

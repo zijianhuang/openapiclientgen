@@ -8,7 +8,10 @@ export namespace MyNS {
 		/** The access token containing security credentials allowing you to acccess the API. The token lasts for one hour. */
 		access_token?: string | null;
 
-		/** Lists the time in seconds when your access token expires. It lasts for one hour. */
+		/**
+		 * Lists the time in seconds when your access token expires. It lasts for one hour.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in?: number | null;
 
 		/** A token you can use to get the next access token when your current access token expires. */
@@ -22,7 +25,10 @@ export namespace MyNS {
 		/** The access token containing security credentials allowing you to acccess the API. The token lasts for one hour. */
 		access_token: FormControl<string | null | undefined>,
 
-		/** Lists the time in seconds when your access token expires. It lasts for one hour. */
+		/**
+		 * Lists the time in seconds when your access token expires. It lasts for one hour.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in: FormControl<number | null | undefined>,
 
 		/** A token you can use to get the next access token when your current access token expires. */
@@ -66,24 +72,42 @@ export namespace MyNS {
 
 	export interface AccountQuota {
 
-		/** Deprecated */
+		/**
+		 * Deprecated
+		 * Type: double
+		 */
 		quotaRemaining?: number | null;
 
-		/** Deprecated */
+		/**
+		 * Deprecated
+		 * Type: double
+		 */
 		quotaTotal?: number | null;
 
-		/** Deprecated */
+		/**
+		 * Deprecated
+		 * Type: double
+		 */
 		quotaUsed?: number | null;
 	}
 	export interface AccountQuotaFormProperties {
 
-		/** Deprecated */
+		/**
+		 * Deprecated
+		 * Type: double
+		 */
 		quotaRemaining: FormControl<number | null | undefined>,
 
-		/** Deprecated */
+		/**
+		 * Deprecated
+		 * Type: double
+		 */
 		quotaTotal: FormControl<number | null | undefined>,
 
-		/** Deprecated */
+		/**
+		 * Deprecated
+		 * Type: double
+		 */
 		quotaUsed: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountQuotaFormGroup() {
@@ -121,12 +145,16 @@ export namespace MyNS {
 	export interface Bad_request {
 		name?: string | null;
 		problems?: Array<Bad_request>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
 	}
 	export interface Bad_requestFormProperties {
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -143,24 +171,42 @@ export namespace MyNS {
 
 	export interface Bytes_range {
 
-		/** The starting point for the range of bytes for a chunk of a video. */
+		/**
+		 * The starting point for the range of bytes for a chunk of a video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from?: number | null;
 
-		/** The ending point for the range of bytes for a chunk of a video. */
+		/**
+		 * The ending point for the range of bytes for a chunk of a video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to?: number | null;
 
-		/** The total number of bytes in the provided range. */
+		/**
+		 * The total number of bytes in the provided range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface Bytes_rangeFormProperties {
 
-		/** The starting point for the range of bytes for a chunk of a video. */
+		/**
+		 * The starting point for the range of bytes for a chunk of a video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		from: FormControl<number | null | undefined>,
 
-		/** The ending point for the range of bytes for a chunk of a video. */
+		/**
+		 * The ending point for the range of bytes for a chunk of a video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		to: FormControl<number | null | undefined>,
 
-		/** The total number of bytes in the provided range. */
+		/**
+		 * The total number of bytes in the provided range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateBytes_rangeFormGroup() {
@@ -212,39 +258,69 @@ export namespace MyNS {
 
 	export interface Pagination {
 
-		/** The current page index. */
+		/**
+		 * The current page index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentPage?: number | null;
 
-		/** The number of items on the current page. */
+		/**
+		 * The number of items on the current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentPageItems?: number | null;
 
-		/** Total number of items that exist. */
+		/**
+		 * Total number of items that exist.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsTotal?: number | null;
 
 		/** Required */
 		links: Array<Pagination_link>;
 
-		/** Maximum number of item per page. */
+		/**
+		 * Maximum number of item per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
-		/** Number of items listed in the current page. */
+		/**
+		 * Number of items listed in the current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagesTotal?: number | null;
 	}
 	export interface PaginationFormProperties {
 
-		/** The current page index. */
+		/**
+		 * The current page index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentPage: FormControl<number | null | undefined>,
 
-		/** The number of items on the current page. */
+		/**
+		 * The number of items on the current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentPageItems: FormControl<number | null | undefined>,
 
-		/** Total number of items that exist. */
+		/**
+		 * Total number of items that exist.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsTotal: FormControl<number | null | undefined>,
 
-		/** Maximum number of item per page. */
+		/**
+		 * Maximum number of item per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
-		/** Number of items listed in the current page. */
+		/**
+		 * Number of items listed in the current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagesTotal: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {
@@ -855,12 +931,16 @@ export namespace MyNS {
 
 	export interface Not_found {
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
 	}
 	export interface Not_foundFormProperties {
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -894,10 +974,16 @@ export namespace MyNS {
 		/** Deprecated */
 		shapeBackgroundTop?: string | null;
 
-		/** Deprecated */
+		/**
+		 * Deprecated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shapeMargin?: number | null;
 
-		/** Deprecated */
+		/**
+		 * Deprecated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shapeRadius?: number | null;
 
 		/** When the player was last updated, presented in ISO-8601 format. */
@@ -921,10 +1007,16 @@ export namespace MyNS {
 		/** Deprecated */
 		shapeBackgroundTop: FormControl<string | null | undefined>,
 
-		/** Deprecated */
+		/**
+		 * Deprecated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shapeMargin: FormControl<number | null | undefined>,
 
-		/** Deprecated */
+		/**
+		 * Deprecated
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shapeRadius: FormControl<number | null | undefined>,
 
 		/** When the player was last updated, presented in ISO-8601 format. */
@@ -984,22 +1076,34 @@ export namespace MyNS {
 	}
 
 	export interface Player_session_event {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		at?: number | null;
 
 		/** When an event occurred, presented in ISO-8601 format. */
 		emittedAt?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		from?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		to?: number | null;
 
 		/** Possible values are: ready, play, pause, resume, seek.backward, seek.forward, end */
 		type?: string | null;
 	}
 	export interface Player_session_eventFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		at: FormControl<number | null | undefined>,
 
 		/** When an event occurred, presented in ISO-8601 format. */
 		emittedAt: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		from: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		to: FormControl<number | null | undefined>,
 
 		/** Possible values are: ready, play, pause, resume, seek.backward, seek.forward, end */
@@ -2088,25 +2192,43 @@ export namespace MyNS {
 		/** The method used to compress and decompress digital audio for your video. */
 		audioCodec?: string | null;
 
-		/** The number of bits processed per second. */
+		/**
+		 * The number of bits processed per second.
+		 * Type: double
+		 */
 		bitrate?: number | null;
 
-		/** The length of the video. */
+		/**
+		 * The length of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
-		/** The frequency with which consecutive images or frames appear on a display. Shown in this API as frames per second (fps). */
+		/**
+		 * The frequency with which consecutive images or frames appear on a display. Shown in this API as frames per second (fps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		framerate?: number | null;
 
-		/** The height of the video in pixels. */
+		/**
+		 * The height of the video in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** How many samples per second a digital audio system uses to record an audio signal. The higher the rate, the higher the frequencies that can be recorded. They are presented in this API using hertz. */
+		/**
+		 * How many samples per second a digital audio system uses to record an audio signal. The higher the rate, the higher the frequencies that can be recorded. They are presented in this API using hertz.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		samplerate?: number | null;
 
 		/** The method used to compress and decompress digital video. API Video supports all codecs in the libavcodec library. */
 		videoCodec?: string | null;
 
-		/** The width of the video in pixels. */
+		/**
+		 * The width of the video in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface Videostatus_encoding_metadataFormProperties {
@@ -2115,25 +2237,43 @@ export namespace MyNS {
 		/** The method used to compress and decompress digital audio for your video. */
 		audioCodec: FormControl<string | null | undefined>,
 
-		/** The number of bits processed per second. */
+		/**
+		 * The number of bits processed per second.
+		 * Type: double
+		 */
 		bitrate: FormControl<number | null | undefined>,
 
-		/** The length of the video. */
+		/**
+		 * The length of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
-		/** The frequency with which consecutive images or frames appear on a display. Shown in this API as frames per second (fps). */
+		/**
+		 * The frequency with which consecutive images or frames appear on a display. Shown in this API as frames per second (fps).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		framerate: FormControl<number | null | undefined>,
 
-		/** The height of the video in pixels. */
+		/**
+		 * The height of the video in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** How many samples per second a digital audio system uses to record an audio signal. The higher the rate, the higher the frequencies that can be recorded. They are presented in this API using hertz. */
+		/**
+		 * How many samples per second a digital audio system uses to record an audio signal. The higher the rate, the higher the frequencies that can be recorded. They are presented in this API using hertz.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		samplerate: FormControl<number | null | undefined>,
 
 		/** The method used to compress and decompress digital video. API Video supports all codecs in the libavcodec library. */
 		videoCodec: FormControl<string | null | undefined>,
 
-		/** The width of the video in pixels. */
+		/**
+		 * The width of the video in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateVideostatus_encoding_metadataFormGroup() {
@@ -2155,7 +2295,10 @@ export namespace MyNS {
 	/** Details about the capturing, transferring, and storing of your video for use immediately or in the future. */
 	export interface Videostatus_ingest {
 
-		/** The size of your file in bytes. */
+		/**
+		 * The size of your file in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesize?: number | null;
 
 		/** The total number of bytes received, listed for each chunk of the upload. */
@@ -2168,7 +2311,10 @@ export namespace MyNS {
 	/** Details about the capturing, transferring, and storing of your video for use immediately or in the future. */
 	export interface Videostatus_ingestFormProperties {
 
-		/** The size of your file in bytes. */
+		/**
+		 * The size of your file in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesize: FormControl<number | null | undefined>,
 
 		/** There are three possible ingest statuses. missing - you are missing information required to ingest the video. uploading - the video is in the process of being uploaded. uploaded - the video is ready for use. */
@@ -2290,7 +2436,9 @@ export namespace MyNS {
 		 * For a range period: 
 		 * -  Date range: "2018-01-01/2018-01-15"
 		 * @param {number} currentPage Choose the number of search results to return per page. Minimum value: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Results per page. Allowed values 1-100, default is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Raw_statistics_list_live_stream_analytics_response} Success
 		 */
 		GET_analytics_live_streams_liveStreamId(liveStreamId: string, period: string | null | undefined, currentPage: number | null | undefined, pageSize: number | null | undefined): Observable<Raw_statistics_list_live_stream_analytics_response> {
@@ -2303,7 +2451,9 @@ export namespace MyNS {
 		 * Get analytics/sessions/{sessionId}/events
 		 * @param {string} sessionId A unique identifier you can use to reference and track a session with.
 		 * @param {number} currentPage Choose the number of search results to return per page. Minimum value: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Results per page. Allowed values 1-100, default is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Raw_statistics_list_player_session_events_response} Success
 		 */
 		GET_analytics_sessions_sessionId_events(sessionId: string, currentPage: number | null | undefined, pageSize: number | null | undefined): Observable<Raw_statistics_list_player_session_events_response> {
@@ -2324,7 +2474,9 @@ export namespace MyNS {
 		 * -  Date range: 2018-01-01/2018-01-15
 		 * @param {Array<string>} metadata Metadata and [Dynamic Metadata](https://api.video/blog/endpoints/dynamic-metadata) filter. Send an array of key value pairs you want to filter sessios with.
 		 * @param {number} currentPage Choose the number of search results to return per page. Minimum value: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Results per page. Allowed values 1-100, default is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Raw_statistics_list_sessions_response} Success
 		 */
 		GET_analytics_videos_videoId(videoId: string, period: string | null | undefined, metadata: Array<string> | null | undefined, currentPage: number | null | undefined, pageSize: number | null | undefined): Observable<Raw_statistics_list_sessions_response> {
@@ -2361,7 +2513,9 @@ export namespace MyNS {
 		 * @param {string} sortBy Allowed: createdAt, publishedAt, name. createdAt - the time a livestream was created using the specified streamKey. publishedAt - the time a livestream was published using the specified streamKey. name - the name of the livestream. If you choose one of the time based options, the time is presented in ISO-8601 format.
 		 * @param {GET_live_streamsSortOrder} sortOrder Allowed: asc, desc. Ascending for date and time means that earlier values precede later ones. Descending means that later values preced earlier ones. For title, it is 0-9 and A-Z ascending and Z-A, 9-0 descending.
 		 * @param {number} currentPage Choose the number of search results to return per page. Minimum value: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Results per page. Allowed values 1-100, default is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Live_stream_list_response} Success
 		 */
 		GET_live_streams(streamKey: string | null | undefined, name: string | null | undefined, sortBy: string | null | undefined, sortOrder: GET_live_streamsSortOrder | null | undefined, currentPage: number | null | undefined, pageSize: number | null | undefined): Observable<Live_stream_list_response> {
@@ -2430,7 +2584,9 @@ export namespace MyNS {
 		 * @param {GET_playersSortBy} sortBy createdAt is the time the player was created. updatedAt is the time the player was last updated. The time is presented in ISO-8601 format.
 		 * @param {GET_live_streamsSortOrder} sortOrder Allowed: asc, desc. Ascending for date and time means that earlier values precede later ones. Descending means that later values preced earlier ones.
 		 * @param {number} currentPage Choose the number of search results to return per page. Minimum value: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Results per page. Allowed values 1-100, default is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Players_list_response} Success
 		 */
 		GET_players(sortBy: GET_playersSortBy | null | undefined, sortOrder: GET_live_streamsSortOrder | null | undefined, currentPage: number | null | undefined, pageSize: number | null | undefined): Observable<Players_list_response> {
@@ -2498,7 +2654,9 @@ export namespace MyNS {
 		 * @param {GET_upload_tokensSortBy} sortBy Allowed: createdAt, ttl. You can use these to sort by when a token was created, or how much longer the token will be active (ttl - time to live). Date and time is presented in ISO-8601 format.
 		 * @param {GET_live_streamsSortOrder} sortOrder Allowed: asc, desc. Ascending is 0-9 or A-Z. Descending is 9-0 or Z-A.
 		 * @param {number} currentPage Choose the number of search results to return per page. Minimum value: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Results per page. Allowed values 1-100, default is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Token_list_response} Success
 		 */
 		GET_upload_tokens(sortBy: GET_upload_tokensSortBy | null | undefined, sortOrder: GET_live_streamsSortOrder | null | undefined, currentPage: number | null | undefined, pageSize: number | null | undefined): Observable<Token_list_response> {
@@ -2549,7 +2707,9 @@ export namespace MyNS {
 		 * @param {string} sortBy Allowed: publishedAt, title. You can search by the time videos were published at, or by title.
 		 * @param {string} sortOrder Allowed: asc, desc. asc is ascending and sorts from A to Z. desc is descending and sorts from Z to A.
 		 * @param {number} currentPage Choose the number of search results to return per page. Minimum value: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Results per page. Allowed values 1-100, default is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Videos_list_response} Success
 		 */
 		LIST_videos(title: string | null | undefined, tags: Array<string> | null | undefined, metadata: Array<string> | null | undefined, description: string | null | undefined, liveStreamId: string | null | undefined, sortBy: string | null | undefined, sortOrder: string | null | undefined, currentPage: number | null | undefined, pageSize: number | null | undefined): Observable<Videos_list_response> {
@@ -2638,7 +2798,9 @@ export namespace MyNS {
 		 * Get videos/{videoId}/captions
 		 * @param {string} videoId The unique identifier for the video you want to retrieve a list of captions for.
 		 * @param {number} currentPage Choose the number of search results to return per page. Minimum value: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Results per page. Allowed values 1-100, default is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Captions_list_response} Success
 		 */
 		GET_videos_videoId_captions(videoId: string, currentPage: number | null | undefined, pageSize: number | null | undefined): Observable<Captions_list_response> {
@@ -2688,7 +2850,9 @@ export namespace MyNS {
 		 * Get videos/{videoId}/chapters
 		 * @param {string} videoId The unique identifier for the video you want to retrieve a list of chapters for.
 		 * @param {number} currentPage Choose the number of search results to return per page. Minimum value: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Results per page. Allowed values 1-100, default is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Chapters_list_response} Success
 		 */
 		GET_videos_videoId_chapters(videoId: string, currentPage: number | null | undefined, pageSize: number | null | undefined): Observable<Chapters_list_response> {
@@ -2747,7 +2911,9 @@ export namespace MyNS {
 		 * Get webhooks
 		 * @param {string} events The webhook event that you wish to filter on.
 		 * @param {number} currentPage Choose the number of search results to return per page. Minimum value: 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize Results per page. Allowed values 1-100, default is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Webhooks_list_response} Success
 		 */
 		LIST_webhooks(events: string | null | undefined, currentPage: number | null | undefined, pageSize: number | null | undefined): Observable<Webhooks_list_response> {

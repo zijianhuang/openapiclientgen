@@ -439,10 +439,16 @@ export namespace MyNS {
 		/** The position of the ads relative to the feed entries. */
 		adPosition?: string | null;
 
-		/** The frequency at which ads should appear in the feed (i.e. every N entries). */
+		/**
+		 * The frequency at which ads should appear in the feed (i.e. every N entries).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency?: number | null;
 
-		/** The minimum length an entry should be in order to have attached ads. */
+		/**
+		 * The minimum length an entry should be in order to have attached ads.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumWordCount?: number | null;
 
 		/** The type of ads which should appear. */
@@ -453,10 +459,16 @@ export namespace MyNS {
 		/** The position of the ads relative to the feed entries. */
 		adPosition: FormControl<string | null | undefined>,
 
-		/** The frequency at which ads should appear in the feed (i.e. every N entries). */
+		/**
+		 * The frequency at which ads should appear in the feed (i.e. every N entries).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency: FormControl<number | null | undefined>,
 
-		/** The minimum length an entry should be in order to have attached ads. */
+		/**
+		 * The minimum length an entry should be in order to have attached ads.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumWordCount: FormControl<number | null | undefined>,
 
 		/** The type of ads which should appear. */
@@ -1140,6 +1152,7 @@ export namespace MyNS {
 		 * List all accounts available to this AdSense account.
 		 * Get accounts
 		 * @param {number} maxResults The maximum number of accounts to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through accounts. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {Accounts} Successful response
 		 */
@@ -1163,6 +1176,7 @@ export namespace MyNS {
 		 * Get accounts/{accountId}/adclients
 		 * @param {string} accountId Account for which to list ad clients.
 		 * @param {number} maxResults The maximum number of ad clients to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {AdClients} Successful response
 		 */
@@ -1189,6 +1203,7 @@ export namespace MyNS {
 		 * @param {string} adClientId Ad client for which to list ad units.
 		 * @param {boolean} includeInactive Whether to include inactive ad units. Default: true.
 		 * @param {number} maxResults The maximum number of ad units to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {AdUnits} Successful response
 		 */
@@ -1227,6 +1242,7 @@ export namespace MyNS {
 		 * @param {string} adClientId Ad client which contains the ad unit.
 		 * @param {string} adUnitId Ad unit for which to list custom channels.
 		 * @param {number} maxResults The maximum number of custom channels to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {CustomChannels} Successful response
 		 */
@@ -1240,6 +1256,7 @@ export namespace MyNS {
 		 * @param {string} accountId Account to which the ad client belongs.
 		 * @param {string} adClientId Ad client for which to list custom channels.
 		 * @param {number} maxResults The maximum number of custom channels to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {CustomChannels} Successful response
 		 */
@@ -1267,6 +1284,7 @@ export namespace MyNS {
 		 * @param {string} customChannelId Custom channel for which to list ad units.
 		 * @param {boolean} includeInactive Whether to include inactive ad units. Default: true.
 		 * @param {number} maxResults The maximum number of ad units to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {AdUnits} Successful response
 		 */
@@ -1280,6 +1298,7 @@ export namespace MyNS {
 		 * @param {string} accountId Account to which the ad client belongs.
 		 * @param {string} adClientId Ad client for which to list URL channels.
 		 * @param {number} maxResults The maximum number of URL channels to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {UrlChannels} Successful response
 		 */
@@ -1330,9 +1349,11 @@ export namespace MyNS {
 		 * @param {Array<string>} filter Filters to be run on the report.
 		 * @param {string} locale Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
 		 * @param {number} maxResults The maximum number of rows of report data to return.
+		 *     Minimum: 0    Maximum: 50000
 		 * @param {Array<string>} metric Numeric columns to include in the report.
 		 * @param {Array<string>} sort The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
 		 * @param {number} startIndex Index of the first row of report data to return.
+		 *     Minimum: 0    Maximum: 5000
 		 * @param {boolean} useTimezoneReporting Whether the report should be generated in the AdSense account's local timezone. If false default PST/PDT timezone will be used.
 		 * @return {AdsenseReportsGenerateResponse} Successful response
 		 */
@@ -1345,6 +1366,7 @@ export namespace MyNS {
 		 * Get accounts/{accountId}/reports/saved
 		 * @param {string} accountId Account to which the saved reports belong.
 		 * @param {number} maxResults The maximum number of saved reports to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} pageToken A continuation token, used to page through saved reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {SavedReports} Successful response
 		 */
@@ -1359,7 +1381,9 @@ export namespace MyNS {
 		 * @param {string} savedReportId The saved report to retrieve.
 		 * @param {string} locale Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
 		 * @param {number} maxResults The maximum number of rows of report data to return.
+		 *     Minimum: 0    Maximum: 50000
 		 * @param {number} startIndex Index of the first row of report data to return.
+		 *     Minimum: 0    Maximum: 5000
 		 * @return {AdsenseReportsGenerateResponse} Successful response
 		 */
 		Adsense_accounts_reports_saved_generate(accountId: string, savedReportId: string, locale: string | null | undefined, maxResults: number | null | undefined, startIndex: number | null | undefined): Observable<AdsenseReportsGenerateResponse> {
@@ -1371,6 +1395,7 @@ export namespace MyNS {
 		 * Get accounts/{accountId}/savedadstyles
 		 * @param {string} accountId Account for which to list saved ad styles.
 		 * @param {number} maxResults The maximum number of saved ad styles to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through saved ad styles. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {SavedAdStyles} Successful response
 		 */
@@ -1393,6 +1418,7 @@ export namespace MyNS {
 		 * List all ad clients in this AdSense account.
 		 * Get adclients
 		 * @param {number} maxResults The maximum number of ad clients to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {AdClients} Successful response
 		 */
@@ -1406,6 +1432,7 @@ export namespace MyNS {
 		 * @param {string} adClientId Ad client for which to list ad units.
 		 * @param {boolean} includeInactive Whether to include inactive ad units. Default: true.
 		 * @param {number} maxResults The maximum number of ad units to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {AdUnits} Successful response
 		 */
@@ -1441,6 +1468,7 @@ export namespace MyNS {
 		 * @param {string} adClientId Ad client which contains the ad unit.
 		 * @param {string} adUnitId Ad unit for which to list custom channels.
 		 * @param {number} maxResults The maximum number of custom channels to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {CustomChannels} Successful response
 		 */
@@ -1453,6 +1481,7 @@ export namespace MyNS {
 		 * Get adclients/{adClientId}/customchannels
 		 * @param {string} adClientId Ad client for which to list custom channels.
 		 * @param {number} maxResults The maximum number of custom channels to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {CustomChannels} Successful response
 		 */
@@ -1478,6 +1507,7 @@ export namespace MyNS {
 		 * @param {string} customChannelId Custom channel for which to list ad units.
 		 * @param {boolean} includeInactive Whether to include inactive ad units. Default: true.
 		 * @param {number} maxResults The maximum number of ad units to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {AdUnits} Successful response
 		 */
@@ -1490,6 +1520,7 @@ export namespace MyNS {
 		 * Get adclients/{adClientId}/urlchannels
 		 * @param {string} adClientId Ad client for which to list URL channels.
 		 * @param {number} maxResults The maximum number of URL channels to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {UrlChannels} Successful response
 		 */
@@ -1555,9 +1586,11 @@ export namespace MyNS {
 		 * @param {Array<string>} filter Filters to be run on the report.
 		 * @param {string} locale Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
 		 * @param {number} maxResults The maximum number of rows of report data to return.
+		 *     Minimum: 0    Maximum: 50000
 		 * @param {Array<string>} metric Numeric columns to include in the report.
 		 * @param {Array<string>} sort The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.
 		 * @param {number} startIndex Index of the first row of report data to return.
+		 *     Minimum: 0    Maximum: 5000
 		 * @param {boolean} useTimezoneReporting Whether the report should be generated in the AdSense account's local timezone. If false default PST/PDT timezone will be used.
 		 * @return {AdsenseReportsGenerateResponse} Successful response
 		 */
@@ -1569,6 +1602,7 @@ export namespace MyNS {
 		 * List all saved reports in this AdSense account.
 		 * Get reports/saved
 		 * @param {number} maxResults The maximum number of saved reports to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 100
 		 * @param {string} pageToken A continuation token, used to page through saved reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {SavedReports} Successful response
 		 */
@@ -1582,7 +1616,9 @@ export namespace MyNS {
 		 * @param {string} savedReportId The saved report to retrieve.
 		 * @param {string} locale Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.
 		 * @param {number} maxResults The maximum number of rows of report data to return.
+		 *     Minimum: 0    Maximum: 50000
 		 * @param {number} startIndex Index of the first row of report data to return.
+		 *     Minimum: 0    Maximum: 5000
 		 * @return {AdsenseReportsGenerateResponse} Successful response
 		 */
 		Adsense_reports_saved_generate(savedReportId: string, locale: string | null | undefined, maxResults: number | null | undefined, startIndex: number | null | undefined): Observable<AdsenseReportsGenerateResponse> {
@@ -1593,6 +1629,7 @@ export namespace MyNS {
 		 * List all saved ad styles in the user's account.
 		 * Get savedadstyles
 		 * @param {number} maxResults The maximum number of saved ad styles to include in the response, used for paging.
+		 *     Minimum: 0    Maximum: 10000
 		 * @param {string} pageToken A continuation token, used to page through saved ad styles. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {SavedAdStyles} Successful response
 		 */

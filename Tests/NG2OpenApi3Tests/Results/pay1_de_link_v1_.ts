@@ -7,64 +7,64 @@ export namespace MyNS {
 
 		/**
 		 * customer additional address line
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		addressAddition?: string | null;
 
 		/**
 		 * customer city
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		city?: string | null;
 
 		/**
 		 * customer company name
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		company?: string | null;
 
 		/**
 		 * customer country code (2 letter ISO-3166 code)
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country?: string | null;
 
 		/**
 		 * customer first name
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		firstName?: string | null;
 
 		/**
 		 * customer last name
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		lastName?: string | null;
 
 		/**
 		 * customer state code
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		state?: string | null;
 
 		/**
 		 * customer street name
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		street?: string | null;
 
 		/**
 		 * customer postcode
-		 * Max length: 10
 		 * Min length: 2
+		 * Max length: 10
 		 */
 		zip?: string | null;
 	}
@@ -72,64 +72,64 @@ export namespace MyNS {
 
 		/**
 		 * customer additional address line
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		addressAddition: FormControl<string | null | undefined>,
 
 		/**
 		 * customer city
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		city: FormControl<string | null | undefined>,
 
 		/**
 		 * customer company name
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		company: FormControl<string | null | undefined>,
 
 		/**
 		 * customer country code (2 letter ISO-3166 code)
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country: FormControl<string | null | undefined>,
 
 		/**
 		 * customer first name
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		firstName: FormControl<string | null | undefined>,
 
 		/**
 		 * customer last name
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		lastName: FormControl<string | null | undefined>,
 
 		/**
 		 * customer state code
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		state: FormControl<string | null | undefined>,
 
 		/**
 		 * customer street name
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		street: FormControl<string | null | undefined>,
 
 		/**
 		 * customer postcode
-		 * Max length: 10
 		 * Min length: 2
+		 * Max length: 10
 		 */
 		zip: FormControl<string | null | undefined>,
 	}
@@ -150,24 +150,30 @@ export namespace MyNS {
 
 	export interface CartItemDto {
 
-		/** delivery period end date */
+		/**
+		 * delivery period end date
+		 * Type: DateOnly
+		 */
 		deliveryDateEnd?: Date | null;
 
-		/** delivery date */
+		/**
+		 * delivery date
+		 * Type: DateOnly
+		 */
 		deliveryDateStart?: Date | null;
 
 		/**
 		 * item description
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description?: string | null;
 
 		/**
 		 * item number
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		number: string;
 
@@ -177,7 +183,7 @@ export namespace MyNS {
 		 * Minimum: -1999999999
 		 * Maximum: 1999999999
 		 */
-		price: number;
+		price: string;
 
 		/**
 		 * total number of ordered items
@@ -185,7 +191,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 999999
 		 */
-		quantity: number;
+		quantity: string;
 
 		/**
 		 * item type
@@ -198,28 +204,34 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 9999
 		 */
-		vatRate?: number | null;
+		vatRate?: string | null;
 	}
 	export interface CartItemDtoFormProperties {
 
-		/** delivery period end date */
+		/**
+		 * delivery period end date
+		 * Type: DateOnly
+		 */
 		deliveryDateEnd: FormControl<Date | null | undefined>,
 
-		/** delivery date */
+		/**
+		 * delivery date
+		 * Type: DateOnly
+		 */
 		deliveryDateStart: FormControl<Date | null | undefined>,
 
 		/**
 		 * item description
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * item number
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		number: FormControl<string | null | undefined>,
 
@@ -229,7 +241,7 @@ export namespace MyNS {
 		 * Minimum: -1999999999
 		 * Maximum: 1999999999
 		 */
-		price: FormControl<number | null | undefined>,
+		price: FormControl<string | null | undefined>,
 
 		/**
 		 * total number of ordered items
@@ -237,7 +249,7 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 999999
 		 */
-		quantity: FormControl<number | null | undefined>,
+		quantity: FormControl<string | null | undefined>,
 
 		/**
 		 * item type
@@ -250,7 +262,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 9999
 		 */
-		vatRate: FormControl<number | null | undefined>,
+		vatRate: FormControl<string | null | undefined>,
 	}
 	export function CreateCartItemDtoFormGroup() {
 		return new FormGroup<CartItemDtoFormProperties>({
@@ -258,10 +270,10 @@ export namespace MyNS {
 			deliveryDateStart: new FormControl<Date | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(255)]),
 			number: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(32), Validators.pattern('[0-9A-Za-z(){} +\-_#/:\[\]]{1,32}')]),
-			price: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(-1999999999), Validators.max(1999999999)]),
-			quantity: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999)]),
+			price: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(-1999999999), Validators.max(1999999999)]),
+			quantity: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(999999)]),
 			type: new FormControl<CartItemDtoType | null | undefined>(undefined, [Validators.required]),
-			vatRate: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(9999)]),
+			vatRate: new FormControl<string | null | undefined>(undefined, [Validators.min(0), Validators.max(9999)]),
 		});
 
 	}
@@ -274,15 +286,15 @@ export namespace MyNS {
 
 		/**
 		 * id that should be put on the invoice
-		 * Max length: 20
 		 * Min length: 0
+		 * Max length: 20
 		 */
 		invoiceId?: string | null;
 
 		/**
 		 * short text that should be put after the invoice
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		invoiceText?: string | null;
 	}
@@ -292,15 +304,15 @@ export namespace MyNS {
 
 		/**
 		 * id that should be put on the invoice
-		 * Max length: 20
 		 * Min length: 0
+		 * Max length: 20
 		 */
 		invoiceId: FormControl<string | null | undefined>,
 
 		/**
 		 * short text that should be put after the invoice
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		invoiceText: FormControl<string | null | undefined>,
 	}
@@ -332,29 +344,32 @@ export namespace MyNS {
 		/**
 		 * currency code
 		 * Required
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		currency: LinkCreateRequestCurrency;
 
 		/**
 		 * free format description of the payment
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description?: string | null;
 
 		/**
 		 * email the invoice should be delivered to
-		 * Max length: 254
 		 * Min length: 4
+		 * Max length: 254
 		 */
 		email?: string | null;
 
 		/** final redirect after a final payment */
 		errorUrl?: string | null;
 
-		/** link expiration date, the link will only be executable until end of that day */
+		/**
+		 * link expiration date, the link will only be executable until end of that day
+		 * Type: DateOnly
+		 */
 		expiration?: Date | null;
 
 		/** designates the type of transaction that will be created */
@@ -432,29 +447,32 @@ export namespace MyNS {
 		/**
 		 * currency code
 		 * Required
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		currency: FormControl<LinkCreateRequestCurrency | null | undefined>,
 
 		/**
 		 * free format description of the payment
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * email the invoice should be delivered to
-		 * Max length: 254
 		 * Min length: 4
+		 * Max length: 254
 		 */
 		email: FormControl<string | null | undefined>,
 
 		/** final redirect after a final payment */
 		errorUrl: FormControl<string | null | undefined>,
 
-		/** link expiration date, the link will only be executable until end of that day */
+		/**
+		 * link expiration date, the link will only be executable until end of that day
+		 * Type: DateOnly
+		 */
 		expiration: FormControl<Date | null | undefined>,
 
 		/** designates the type of transaction that will be created */
@@ -544,19 +562,22 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 1999999999
 		 */
-		amount?: number | null;
+		amount?: string | null;
 
 		/** backgroundImage css property */
 		backgroundImage?: string | null;
 		billing?: AddressDataDto;
 
-		/** created time in ISO 8601 format */
-		created?: number | null;
+		/**
+		 * created time in ISO 8601 format
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		created?: string | null;
 
 		/**
 		 * currency code
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		currency?: LinkCreateRequestCurrency | null;
 
@@ -568,15 +589,18 @@ export namespace MyNS {
 
 		/**
 		 * customer email for invoices or payment notification
-		 * Max length: 254
 		 * Min length: 4
+		 * Max length: 254
 		 */
 		email?: string | null;
 
 		/** final redirect after a failed payment */
 		errorUrl?: string | null;
 
-		/** link expiration date, the link will only be executable until end of that day */
+		/**
+		 * link expiration date, the link will only be executable until end of that day
+		 * Type: DateOnly
+		 */
 		expiration?: Date | null;
 
 		/** hash for the client API */
@@ -584,8 +608,8 @@ export namespace MyNS {
 
 		/**
 		 * link id
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		id?: string | null;
 
@@ -610,8 +634,11 @@ export namespace MyNS {
 		/** execution mode */
 		mode?: LinkCreateRequestMode | null;
 
-		/** last modified time in ISO 8601 format */
-		modified?: number | null;
+		/**
+		 * last modified time in ISO 8601 format
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		modified?: string | null;
 
 		/** notify url. If unset no notification will be send */
 		notifyUrl?: string | null;
@@ -633,8 +660,8 @@ export namespace MyNS {
 
 		/**
 		 * payment reference number, has to be unique per merchant and mode
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		reference?: string | null;
 		shipping?: AddressDataDto;
@@ -662,18 +689,21 @@ export namespace MyNS {
 		 * Minimum: 1
 		 * Maximum: 1999999999
 		 */
-		amount: FormControl<number | null | undefined>,
+		amount: FormControl<string | null | undefined>,
 
 		/** backgroundImage css property */
 		backgroundImage: FormControl<string | null | undefined>,
 
-		/** created time in ISO 8601 format */
-		created: FormControl<number | null | undefined>,
+		/**
+		 * created time in ISO 8601 format
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		created: FormControl<string | null | undefined>,
 
 		/**
 		 * currency code
-		 * Max length: 3
 		 * Min length: 3
+		 * Max length: 3
 		 */
 		currency: FormControl<LinkCreateRequestCurrency | null | undefined>,
 
@@ -685,15 +715,18 @@ export namespace MyNS {
 
 		/**
 		 * customer email for invoices or payment notification
-		 * Max length: 254
 		 * Min length: 4
+		 * Max length: 254
 		 */
 		email: FormControl<string | null | undefined>,
 
 		/** final redirect after a failed payment */
 		errorUrl: FormControl<string | null | undefined>,
 
-		/** link expiration date, the link will only be executable until end of that day */
+		/**
+		 * link expiration date, the link will only be executable until end of that day
+		 * Type: DateOnly
+		 */
 		expiration: FormControl<Date | null | undefined>,
 
 		/** hash for the client API */
@@ -701,8 +734,8 @@ export namespace MyNS {
 
 		/**
 		 * link id
-		 * Max length: 32
 		 * Min length: 32
+		 * Max length: 32
 		 */
 		id: FormControl<string | null | undefined>,
 
@@ -724,8 +757,11 @@ export namespace MyNS {
 		/** execution mode */
 		mode: FormControl<LinkCreateRequestMode | null | undefined>,
 
-		/** last modified time in ISO 8601 format */
-		modified: FormControl<number | null | undefined>,
+		/**
+		 * last modified time in ISO 8601 format
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		modified: FormControl<string | null | undefined>,
 
 		/** notify url. If unset no notification will be send */
 		notifyUrl: FormControl<string | null | undefined>,
@@ -744,8 +780,8 @@ export namespace MyNS {
 
 		/**
 		 * payment reference number, has to be unique per merchant and mode
-		 * Max length: 20
 		 * Min length: 1
+		 * Max length: 20
 		 */
 		reference: FormControl<string | null | undefined>,
 
@@ -762,9 +798,9 @@ export namespace MyNS {
 		return new FormGroup<LinkResponseFormProperties>({
 			accountId: new FormControl<string | null | undefined>(undefined),
 			active: new FormControl<boolean | null | undefined>(undefined),
-			amount: new FormControl<number | null | undefined>(undefined, [Validators.min(1), Validators.max(1999999999)]),
+			amount: new FormControl<string | null | undefined>(undefined, [Validators.min(1), Validators.max(1999999999)]),
 			backgroundImage: new FormControl<string | null | undefined>(undefined),
-			created: new FormControl<number | null | undefined>(undefined),
+			created: new FormControl<string | null | undefined>(undefined),
 			currency: new FormControl<LinkCreateRequestCurrency | null | undefined>(undefined, [Validators.minLength(3), Validators.maxLength(3)]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(255)]),
 			email: new FormControl<string | null | undefined>(undefined, [Validators.minLength(4), Validators.maxLength(254)]),
@@ -778,7 +814,7 @@ export namespace MyNS {
 			logo: new FormControl<string | null | undefined>(undefined),
 			merchantId: new FormControl<string | null | undefined>(undefined),
 			mode: new FormControl<LinkCreateRequestMode | null | undefined>(undefined),
-			modified: new FormControl<number | null | undefined>(undefined),
+			modified: new FormControl<string | null | undefined>(undefined),
 			notifyUrl: new FormControl<string | null | undefined>(undefined),
 			paymentMethod: new FormControl<LinkResponsePaymentMethod | null | undefined>(undefined),
 			paymentProcess: new FormControl<string | null | undefined>(undefined),
@@ -801,22 +837,42 @@ export namespace MyNS {
 		empty?: boolean | null;
 		first?: boolean | null;
 		last?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfElements?: number | null;
 		pageable?: Pageable;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 		sort?: Sort;
-		totalElements?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalElements?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages?: number | null;
 	}
 	export interface PageLinkResponseFormProperties {
 		empty: FormControl<boolean | null | undefined>,
 		first: FormControl<boolean | null | undefined>,
 		last: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfElements: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
-		totalElements: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalElements: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreatePageLinkResponseFormGroup() {
@@ -827,30 +883,42 @@ export namespace MyNS {
 			number: new FormControl<number | null | undefined>(undefined),
 			numberOfElements: new FormControl<number | null | undefined>(undefined),
 			size: new FormControl<number | null | undefined>(undefined),
-			totalElements: new FormControl<number | null | undefined>(undefined),
+			totalElements: new FormControl<string | null | undefined>(undefined),
 			totalPages: new FormControl<number | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface Pageable {
-		offset?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		offset?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize?: number | null;
 		paged?: boolean | null;
 		sort?: Sort;
 		unpaged?: boolean | null;
 	}
 	export interface PageableFormProperties {
-		offset: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		offset: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pageSize: FormControl<number | null | undefined>,
 		paged: FormControl<boolean | null | undefined>,
 		unpaged: FormControl<boolean | null | undefined>,
 	}
 	export function CreatePageableFormGroup() {
 		return new FormGroup<PageableFormProperties>({
-			offset: new FormControl<number | null | undefined>(undefined),
+			offset: new FormControl<string | null | undefined>(undefined),
 			pageNumber: new FormControl<number | null | undefined>(undefined),
 			pageSize: new FormControl<number | null | undefined>(undefined),
 			paged: new FormControl<boolean | null | undefined>(undefined),
@@ -886,6 +954,8 @@ export namespace MyNS {
 		/**
 		 * List all payment links.
 		 * Get v1/payment-links
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PageLinkResponse} default response
 		 */
 		GetPaymentLinks(page: number | null | undefined, limit: number | null | undefined, merchantId: string, accountId: string, portalId: string, mode: string): Observable<PageLinkResponse> {

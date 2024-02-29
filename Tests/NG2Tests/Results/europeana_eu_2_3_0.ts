@@ -263,7 +263,9 @@ export namespace MyNS {
 		 * Get v2/opensearch.rss
 		 * @param {string} searchTerms searchTerms
 		 * @param {number} startIndex startIndex
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} count count
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		OpenSearch(searchTerms: string, startIndex: number | null | undefined, count: number | null | undefined): Observable<HttpResponse<string>> {
@@ -317,6 +319,7 @@ export namespace MyNS {
 		 * @param {string} wskey wskey
 		 * @param {string} callback callback
 		 * @param {number} hierarchytimeout hierarchytimeout
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ModelAndView} OK
 		 */
 		GetSingleRecordJson(collectionId: string, recordId: string, profile: string | null | undefined, wskey: string, callback: string | null | undefined, hierarchytimeout: number | null | undefined): Observable<ModelAndView> {
@@ -358,7 +361,9 @@ export namespace MyNS {
 		 * @param {Array<string>} reusability reusability
 		 * @param {string} profile profile
 		 * @param {number} start start
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rows rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} facet facet
 		 * @param {string} sort sort
 		 * @param {Array<string>} colourpalette colourpalette
@@ -379,7 +384,9 @@ export namespace MyNS {
 		 * Get v2/search.rss
 		 * @param {string} query query
 		 * @param {number} offset offset
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit limit
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} profile profile
 		 * @param {string} language language
 		 * @return {void} OK
@@ -393,6 +400,7 @@ export namespace MyNS {
 		 * Get v2/suggestions.json
 		 * @param {string} query query
 		 * @param {number} rows rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} phrases phrases
 		 * @param {string} callback callback
 		 * @return {ModelAndView} OK

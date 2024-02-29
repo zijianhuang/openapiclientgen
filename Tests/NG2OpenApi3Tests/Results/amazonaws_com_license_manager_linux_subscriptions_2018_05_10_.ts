@@ -353,25 +353,31 @@ export namespace MyNS {
 		/** <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>AmiID</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain Amazon Machine Image (AMI) ID.</p> <p>The valid names for this filter are:</p> <ul> <li> <p> <code>AmiID</code> </p> </li> <li> <p> <code>InstanceID</code> </p> </li> <li> <p> <code>AccountID</code> </p> </li> <li> <p> <code>Status</code> </p> </li> <li> <p> <code>Region</code> </p> </li> <li> <p> <code>UsageOperation</code> </p> </li> <li> <p> <code>ProductCode</code> </p> </li> <li> <p> <code>InstanceType</code> </p> </li> </ul> <p>The valid Operators for this filter are:</p> <ul> <li> <p> <code>contains</code> </p> </li> <li> <p> <code>equals</code> </p> </li> <li> <p> <code>Notequal</code> </p> </li> </ul> */
 		Filters?: Array<Filter>;
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults?: number | null;
 
 		/**
 		 * Token for the next set of results.
-		 * Max length: 16384
 		 * Min length: 1
+		 * Max length: 16384
 		 */
 		NextToken?: string | null;
 	}
 	export interface ListLinuxSubscriptionInstancesPostBodyFormProperties {
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 
 		/**
 		 * Token for the next set of results.
-		 * Max length: 16384
 		 * Min length: 1
+		 * Max length: 16384
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -388,25 +394,31 @@ export namespace MyNS {
 		/** <p>An array of structures that you can use to filter the results to those that match one or more sets of key-value pairs that you specify. For example, you can filter by the name of <code>Subscription</code> with an optional operator to see subscriptions that match, partially match, or don't match a certain subscription's name.</p> <p>The valid names for this filter are:</p> <ul> <li> <p> <code>Subscription</code> </p> </li> </ul> <p>The valid Operators for this filter are:</p> <ul> <li> <p> <code>contains</code> </p> </li> <li> <p> <code>equals</code> </p> </li> <li> <p> <code>Notequal</code> </p> </li> </ul> */
 		Filters?: Array<Filter>;
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults?: number | null;
 
 		/**
 		 * Token for the next set of results.
-		 * Max length: 16384
 		 * Min length: 1
+		 * Max length: 16384
 		 */
 		NextToken?: string | null;
 	}
 	export interface ListLinuxSubscriptionsPostBodyFormProperties {
 
-		/** Maximum number of results to return in a single call. */
+		/**
+		 * Maximum number of results to return in a single call.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxResults: FormControl<number | null | undefined>,
 
 		/**
 		 * Token for the next set of results.
-		 * Max length: 16384
 		 * Min length: 1
+		 * Max length: 16384
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}

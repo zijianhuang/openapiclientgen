@@ -13,7 +13,10 @@ export namespace MyNS {
 		/** The user-specified display name of the certificate. This is not guaranteed to be unique. Example: My Certificate. */
 		displayName?: string | null;
 
-		/** Aggregate count of the domain mappings with this certificate mapped. This count includes domain mappings on applications for which the user does not have VIEWER permissions.Only returned by GET or LIST requests when specifically requested by the view=FULL_CERTIFICATE option.@OutputOnly */
+		/**
+		 * Aggregate count of the domain mappings with this certificate mapped. This count includes domain mappings on applications for which the user does not have VIEWER permissions.Only returned by GET or LIST requests when specifically requested by the view=FULL_CERTIFICATE option.@OutputOnly
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		domainMappingsCount?: number | null;
 
 		/** Topmost applicable domains of this certificate. This certificate applies to these domains and their subdomains. Example: example.com.@OutputOnly */
@@ -41,7 +44,10 @@ export namespace MyNS {
 		/** The user-specified display name of the certificate. This is not guaranteed to be unique. Example: My Certificate. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Aggregate count of the domain mappings with this certificate mapped. This count includes domain mappings on applications for which the user does not have VIEWER permissions.Only returned by GET or LIST requests when specifically requested by the view=FULL_CERTIFICATE option.@OutputOnly */
+		/**
+		 * Aggregate count of the domain mappings with this certificate mapped. This count includes domain mappings on applications for which the user does not have VIEWER permissions.Only returned by GET or LIST requests when specifically requested by the view=FULL_CERTIFICATE option.@OutputOnly
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		domainMappingsCount: FormControl<number | null | undefined>,
 
 		/** The time when this certificate expires. To update the renewal time on this certificate, upload an SSL certificate with a different expiration time using AuthorizedCertificates.UpdateAuthorizedCertificate.@OutputOnly */
@@ -642,7 +648,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -655,7 +664,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1002,6 +1014,7 @@ export namespace MyNS {
 		 * Get v1alpha/apps/{appsId}/authorizedCertificates
 		 * @param {string} appsId Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @param {Appengine_apps_authorizedCertificates_listView} view Controls the set of fields returned in the LIST response.
 		 * @return {ListAuthorizedCertificatesResponse} Successful response
@@ -1060,6 +1073,7 @@ export namespace MyNS {
 		 * Get v1alpha/apps/{appsId}/authorizedDomains
 		 * @param {string} appsId Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {ListAuthorizedDomainsResponse} Successful response
 		 */
@@ -1072,6 +1086,7 @@ export namespace MyNS {
 		 * Get v1alpha/apps/{appsId}/domainMappings
 		 * @param {string} appsId Part of `parent`. Name of the parent Application resource. Example: apps/myapp.
 		 * @param {number} pageSize Maximum results to return per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Continuation token for fetching the next page of results.
 		 * @return {ListDomainMappingsResponse} Successful response
 		 */
@@ -1132,6 +1147,7 @@ export namespace MyNS {
 		 * @param {string} appsId Part of `name`. The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like "displayName=tokyo", and is documented in more detail in AIP-160 (https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the next_page_token field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -1156,6 +1172,7 @@ export namespace MyNS {
 		 * @param {string} appsId Part of `name`. The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -1180,6 +1197,7 @@ export namespace MyNS {
 		 * @param {string} projectsId Part of `name`. The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like "displayName=tokyo", and is documented in more detail in AIP-160 (https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the next_page_token field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -1205,6 +1223,7 @@ export namespace MyNS {
 		 * @param {string} locationsId Part of `name`. See documentation of `projectsId`.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */

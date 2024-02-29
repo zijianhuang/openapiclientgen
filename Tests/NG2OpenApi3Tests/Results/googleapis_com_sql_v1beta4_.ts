@@ -49,14 +49,20 @@ export namespace MyNS {
 	/** Specifies options for controlling advanced machine features. */
 	export interface AdvancedMachineFeatures {
 
-		/** The number of threads per physical core. */
+		/**
+		 * The number of threads per physical core.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threadsPerCore?: number | null;
 	}
 
 	/** Specifies options for controlling advanced machine features. */
 	export interface AdvancedMachineFeaturesFormProperties {
 
-		/** The number of threads per physical core. */
+		/**
+		 * The number of threads per physical core.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		threadsPerCore: FormControl<number | null | undefined>,
 	}
 	export function CreateAdvancedMachineFeaturesFormGroup() {
@@ -131,7 +137,10 @@ export namespace MyNS {
 		/** Start time for the daily backup configuration in UTC timezone in the 24 hour format - `HH:MM`. */
 		startTime?: string | null;
 
-		/** The number of days of transaction logs we retain for point in time restore, from 1-7. */
+		/**
+		 * The number of days of transaction logs we retain for point in time restore, from 1-7.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transactionLogRetentionDays?: number | null;
 	}
 
@@ -159,7 +168,10 @@ export namespace MyNS {
 		/** Start time for the daily backup configuration in UTC timezone in the 24 hour format - `HH:MM`. */
 		startTime: FormControl<string | null | undefined>,
 
-		/** The number of days of transaction logs we retain for point in time restore, from 1-7. */
+		/**
+		 * The number of days of transaction logs we retain for point in time restore, from 1-7.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transactionLogRetentionDays: FormControl<number | null | undefined>,
 	}
 	export function CreateBackupConfigurationFormGroup() {
@@ -180,7 +192,10 @@ export namespace MyNS {
 	/** We currently only support backup retention by specifying the number of backups we will retain. */
 	export interface BackupRetentionSettings {
 
-		/** Depending on the value of retention_unit, this is used to determine if a backup needs to be deleted. If retention_unit is 'COUNT', we will retain this many backups. */
+		/**
+		 * Depending on the value of retention_unit, this is used to determine if a backup needs to be deleted. If retention_unit is 'COUNT', we will retain this many backups.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retainedBackups?: number | null;
 
 		/** The unit that 'retained_backups' represents. */
@@ -190,7 +205,10 @@ export namespace MyNS {
 	/** We currently only support backup retention by specifying the number of backups we will retain. */
 	export interface BackupRetentionSettingsFormProperties {
 
-		/** Depending on the value of retention_unit, this is used to determine if a backup needs to be deleted. If retention_unit is 'COUNT', we will retain this many backups. */
+		/**
+		 * Depending on the value of retention_unit, this is used to determine if a backup needs to be deleted. If retention_unit is 'COUNT', we will retain this many backups.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retainedBackups: FormControl<number | null | undefined>,
 
 		/** The unit that 'retained_backups' represents. */
@@ -238,7 +256,10 @@ export namespace MyNS {
 	/** Backup Reencryption Config */
 	export interface BackupReencryptionConfig {
 
-		/** Backup re-encryption limit */
+		/**
+		 * Backup re-encryption limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backupLimit?: number | null;
 
 		/** Type of backups users want to re-encrypt. */
@@ -248,7 +269,10 @@ export namespace MyNS {
 	/** Backup Reencryption Config */
 	export interface BackupReencryptionConfigFormProperties {
 
-		/** Backup re-encryption limit */
+		/**
+		 * Backup re-encryption limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backupLimit: FormControl<number | null | undefined>,
 
 		/** Type of backups users want to re-encrypt. */
@@ -888,7 +912,10 @@ export namespace MyNS {
 	/** Represents a Sql Server database on the Cloud SQL instance. */
 	export interface SqlServerDatabaseDetails {
 
-		/** The version of SQL Server with which the database is to be made compatible */
+		/**
+		 * The version of SQL Server with which the database is to be made compatible
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibilityLevel?: number | null;
 
 		/** The recovery model of a SQL Server database */
@@ -898,7 +925,10 @@ export namespace MyNS {
 	/** Represents a Sql Server database on the Cloud SQL instance. */
 	export interface SqlServerDatabaseDetailsFormProperties {
 
-		/** The version of SQL Server with which the database is to be made compatible */
+		/**
+		 * The version of SQL Server with which the database is to be made compatible
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compatibilityLevel: FormControl<number | null | undefined>,
 
 		/** The recovery model of a SQL Server database */
@@ -1327,7 +1357,10 @@ export namespace MyNS {
 	/** This message wraps up the information written by out-of-disk detection job. */
 	export interface SqlOutOfDiskReport {
 
-		/** The minimum recommended increase size in GigaBytes This field is consumed by the frontend * Writers: * the proactive database wellness job for OOD. * Readers: */
+		/**
+		 * The minimum recommended increase size in GigaBytes This field is consumed by the frontend * Writers: * the proactive database wellness job for OOD. * Readers:
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sqlMinRecommendedIncreaseSizeGb?: number | null;
 
 		/** This field represents the state generated by the proactive database wellness job for OutOfDisk issues. * Writers: * the proactive database wellness job for OOD. * Readers: * the proactive database wellness job */
@@ -1337,7 +1370,10 @@ export namespace MyNS {
 	/** This message wraps up the information written by out-of-disk detection job. */
 	export interface SqlOutOfDiskReportFormProperties {
 
-		/** The minimum recommended increase size in GigaBytes This field is consumed by the frontend * Writers: * the proactive database wellness job for OOD. * Readers: */
+		/**
+		 * The minimum recommended increase size in GigaBytes This field is consumed by the frontend * Writers: * the proactive database wellness job for OOD. * Readers:
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sqlMinRecommendedIncreaseSizeGb: FormControl<number | null | undefined>,
 
 		/** This field represents the state generated by the proactive database wellness job for OutOfDisk issues. * Writers: * the proactive database wellness job for OOD. * Readers: * the proactive database wellness job */
@@ -1404,7 +1440,10 @@ export namespace MyNS {
 		/** PEM representation of the replica's private key. The corresponsing public key is encoded in the client's certificate. */
 		clientKey?: string | null;
 
-		/** Seconds to wait between connect retries. MySQL's default is 60 seconds. */
+		/**
+		 * Seconds to wait between connect retries. MySQL's default is 60 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectRetryInterval?: number | null;
 
 		/** Path to a SQL dump file in Google Cloud Storage from which the replica instance is to be created. The URI is in the form gs://bucketName/fileName. Compressed gzip files (.gz) are also supported. Dumps have the binlog co-ordinates from which replication begins. This can be accomplished by setting --master-data to 1 when using mysqldump. */
@@ -1441,7 +1480,10 @@ export namespace MyNS {
 		/** PEM representation of the replica's private key. The corresponsing public key is encoded in the client's certificate. */
 		clientKey: FormControl<string | null | undefined>,
 
-		/** Seconds to wait between connect retries. MySQL's default is 60 seconds. */
+		/**
+		 * Seconds to wait between connect retries. MySQL's default is 60 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectRetryInterval: FormControl<number | null | undefined>,
 
 		/** Path to a SQL dump file in Google Cloud Storage from which the replica instance is to be created. The URI is in the form gs://bucketName/fileName. Compressed gzip files (.gz) are also supported. Dumps have the binlog co-ordinates from which replication begins. This can be accomplished by setting --master-data to 1 when using mysqldump. */
@@ -1786,10 +1828,16 @@ export namespace MyNS {
 		/** Whether Query Insights feature is enabled. */
 		queryInsightsEnabled?: boolean | null;
 
-		/** Number of query execution plans captured by Insights per minute for all queries combined. Default is 5. */
+		/**
+		 * Number of query execution plans captured by Insights per minute for all queries combined. Default is 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queryPlansPerMinute?: number | null;
 
-		/** Maximum query length stored in bytes. Default value: 1024 bytes. Range: 256-4500 bytes. Query length more than this field value will be truncated to this value. When unset, query length will be the default value. Changing query length will restart the database. */
+		/**
+		 * Maximum query length stored in bytes. Default value: 1024 bytes. Range: 256-4500 bytes. Query length more than this field value will be truncated to this value. When unset, query length will be the default value. Changing query length will restart the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queryStringLength?: number | null;
 
 		/** Whether Query Insights will record application tags from query when enabled. */
@@ -1805,10 +1853,16 @@ export namespace MyNS {
 		/** Whether Query Insights feature is enabled. */
 		queryInsightsEnabled: FormControl<boolean | null | undefined>,
 
-		/** Number of query execution plans captured by Insights per minute for all queries combined. Default is 5. */
+		/**
+		 * Number of query execution plans captured by Insights per minute for all queries combined. Default is 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queryPlansPerMinute: FormControl<number | null | undefined>,
 
-		/** Maximum query length stored in bytes. Default value: 1024 bytes. Range: 256-4500 bytes. Query length more than this field value will be truncated to this value. When unset, query length will be the default value. Changing query length will restart the database. */
+		/**
+		 * Maximum query length stored in bytes. Default value: 1024 bytes. Range: 256-4500 bytes. Query length more than this field value will be truncated to this value. When unset, query length will be the default value. Changing query length will restart the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		queryStringLength: FormControl<number | null | undefined>,
 
 		/** Whether Query Insights will record application tags from query when enabled. */
@@ -1962,10 +2016,16 @@ export namespace MyNS {
 	/** Maintenance window. This specifies when a Cloud SQL instance is restarted for system maintenance purposes. */
 	export interface MaintenanceWindow {
 
-		/** day of week (1-7), starting on Monday. */
+		/**
+		 * day of week (1-7), starting on Monday.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** hour of day - 0 to 23. */
+		/**
+		 * hour of day - 0 to 23.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour?: number | null;
 
 		/** This is always `sql#maintenanceWindow`. */
@@ -1978,10 +2038,16 @@ export namespace MyNS {
 	/** Maintenance window. This specifies when a Cloud SQL instance is restarted for system maintenance purposes. */
 	export interface MaintenanceWindowFormProperties {
 
-		/** day of week (1-7), starting on Monday. */
+		/**
+		 * day of week (1-7), starting on Monday.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** hour of day - 0 to 23. */
+		/**
+		 * hour of day - 0 to 23.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour: FormControl<number | null | undefined>,
 
 		/** This is always `sql#maintenanceWindow`. */
@@ -2018,13 +2084,19 @@ export namespace MyNS {
 		/** Whether the password policy is enabled or not. */
 		enablePasswordPolicy?: boolean | null;
 
-		/** Minimum number of characters allowed. */
+		/**
+		 * Minimum number of characters allowed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLength?: number | null;
 
 		/** Minimum interval after which the password can be changed. This flag is only supported for PostgreSQL. */
 		passwordChangeInterval?: string | null;
 
-		/** Number of previous passwords that cannot be reused. */
+		/**
+		 * Number of previous passwords that cannot be reused.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reuseInterval?: number | null;
 	}
 
@@ -2043,13 +2115,19 @@ export namespace MyNS {
 		/** Whether the password policy is enabled or not. */
 		enablePasswordPolicy: FormControl<boolean | null | undefined>,
 
-		/** Minimum number of characters allowed. */
+		/**
+		 * Minimum number of characters allowed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLength: FormControl<number | null | undefined>,
 
 		/** Minimum interval after which the password can be changed. This flag is only supported for PostgreSQL. */
 		passwordChangeInterval: FormControl<string | null | undefined>,
 
-		/** Number of previous passwords that cannot be reused. */
+		/**
+		 * Number of previous passwords that cannot be reused.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reuseInterval: FormControl<number | null | undefined>,
 	}
 	export function CreatePasswordValidationPolicyFormGroup() {
@@ -2373,7 +2451,10 @@ export namespace MyNS {
 		/** Whether or not the backup can be used as a differential base copy_only backup can not be served as differential base */
 		differentialBase?: boolean | null;
 
-		/** Option for specifying how many stripes to use for the export. If blank, and the value of the striped field is true, the number of stripes is automatically chosen. */
+		/**
+		 * Option for specifying how many stripes to use for the export. If blank, and the value of the striped field is true, the number of stripes is automatically chosen.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stripeCount?: number | null;
 
 		/** Whether or not the export should be striped. */
@@ -2390,7 +2471,10 @@ export namespace MyNS {
 		/** Whether or not the backup can be used as a differential base copy_only backup can not be served as differential base */
 		differentialBase: FormControl<boolean | null | undefined>,
 
-		/** Option for specifying how many stripes to use for the export. If blank, and the value of the striped field is true, the number of stripes is automatically chosen. */
+		/**
+		 * Option for specifying how many stripes to use for the export. If blank, and the value of the striped field is true, the number of stripes is automatically chosen.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stripeCount: FormControl<number | null | undefined>,
 
 		/** Whether or not the export should be striped. */
@@ -2481,12 +2565,18 @@ export namespace MyNS {
 
 	export interface ExportContextSqlExportOptionsMysqlExportOptions {
 
-		/** Option to include SQL statement required to set up replication. If set to `1`, the dump file includes a CHANGE MASTER TO statement with the binary log coordinates, and --set-gtid-purged is set to ON. If set to `2`, the CHANGE MASTER TO statement is written as a SQL comment and has no effect. If set to any value other than `1`, --set-gtid-purged is set to OFF. */
+		/**
+		 * Option to include SQL statement required to set up replication. If set to `1`, the dump file includes a CHANGE MASTER TO statement with the binary log coordinates, and --set-gtid-purged is set to ON. If set to `2`, the CHANGE MASTER TO statement is written as a SQL comment and has no effect. If set to any value other than `1`, --set-gtid-purged is set to OFF.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		masterData?: number | null;
 	}
 	export interface ExportContextSqlExportOptionsMysqlExportOptionsFormProperties {
 
-		/** Option to include SQL statement required to set up replication. If set to `1`, the dump file includes a CHANGE MASTER TO statement with the binary log coordinates, and --set-gtid-purged is set to ON. If set to `2`, the CHANGE MASTER TO statement is written as a SQL comment and has no effect. If set to any value other than `1`, --set-gtid-purged is set to OFF. */
+		/**
+		 * Option to include SQL statement required to set up replication. If set to `1`, the dump file includes a CHANGE MASTER TO statement with the binary log coordinates, and --set-gtid-purged is set to ON. If set to `2`, the CHANGE MASTER TO statement is written as a SQL comment and has no effect. If set to any value other than `1`, --set-gtid-purged is set to OFF.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		masterData: FormControl<number | null | undefined>,
 	}
 	export function CreateExportContextSqlExportOptionsMysqlExportOptionsFormGroup() {
@@ -4085,7 +4175,10 @@ export namespace MyNS {
 	/** User level password validation policy. */
 	export interface UserPasswordValidationPolicy {
 
-		/** Number of failed login attempts allowed before user get locked. */
+		/**
+		 * Number of failed login attempts allowed before user get locked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allowedFailedAttempts?: number | null;
 
 		/** If true, failed login attempts check will be enabled. */
@@ -4104,7 +4197,10 @@ export namespace MyNS {
 	/** User level password validation policy. */
 	export interface UserPasswordValidationPolicyFormProperties {
 
-		/** Number of failed login attempts allowed before user get locked. */
+		/**
+		 * Number of failed login attempts allowed before user get locked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allowedFailedAttempts: FormControl<number | null | undefined>,
 
 		/** If true, failed login attempts check will be enabled. */
@@ -4180,6 +4276,7 @@ export namespace MyNS {
 		 * @param {string} project Project ID of the project for which to list Cloud SQL instances.
 		 * @param {string} filter A filter expression that filters resources listed in the response. The expression is in the form of field:value. For example, 'instanceType:CLOUD_SQL_INSTANCE'. Fields can be nested as needed as per their JSON representation, such as 'settings.userLabels.auto_start:true'. Multiple filter queries are space-separated. For example. 'state:RUNNABLE instanceType:CLOUD_SQL_INSTANCE'. By default, each expression is an AND expression. However, you can include AND and OR expressions explicitly.
 		 * @param {number} maxResults The maximum number of instances to return. The service may return fewer than this value. If unspecified, at most 500 instances are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @return {InstancesListResponse} Successful response
 		 */
@@ -4258,6 +4355,7 @@ export namespace MyNS {
 		 * @param {string} project Project ID of the project that contains the instance.
 		 * @param {string} instance Cloud SQL instance ID, or "-" for all instances. This does not include the project ID.
 		 * @param {number} maxResults Maximum number of backup runs per response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @return {BackupRunsListResponse} Successful response
 		 */
@@ -4783,6 +4881,7 @@ export namespace MyNS {
 		 * @param {string} project Project ID of the project that contains the instance.
 		 * @param {string} instance Cloud SQL instance ID. This does not include the project ID.
 		 * @param {number} maxResults Maximum number of operations per response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @return {OperationsListResponse} Successful response
 		 */

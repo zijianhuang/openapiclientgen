@@ -54,6 +54,7 @@ export namespace MyNS {
 		 * Status code of the individual messages as if it were being created through the non-bulk endpoint.
 		 * If a message was succesfully created, the status code will be 201 and location will contain an URL.
 		 * If a message was ignored, the status code will be 200 and the location will be empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode?: number | null;
 	}
@@ -66,6 +67,7 @@ export namespace MyNS {
 		 * Status code of the individual messages as if it were being created through the non-bulk endpoint.
 		 * If a message was succesfully created, the status code will be 201 and location will contain an URL.
 		 * If a message was ignored, the status code will be 200 and the location will be empty.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode: FormControl<number | null | undefined>,
 	}
@@ -208,8 +210,9 @@ export namespace MyNS {
 		/**
 		 * Optional long for specifying how many milliseconds it took to execute the task resulting in this heartbeat. This can be used to get a better overview
 		 * of how long a scheduled task or service is running or to figure out if the grace period should be increased.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		took?: number | null;
+		took?: string | null;
 
 		/**
 		 * Optional string to identify which version of your application logged this message. If not specified, any errors, warnings, or information messages will get
@@ -242,8 +245,9 @@ export namespace MyNS {
 		/**
 		 * Optional long for specifying how many milliseconds it took to execute the task resulting in this heartbeat. This can be used to get a better overview
 		 * of how long a scheduled task or service is running or to figure out if the grace period should be increased.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		took: FormControl<number | null | undefined>,
+		took: FormControl<string | null | undefined>,
 
 		/**
 		 * Optional string to identify which version of your application logged this message. If not specified, any errors, warnings, or information messages will get
@@ -257,7 +261,7 @@ export namespace MyNS {
 			application: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 			reason: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(8192)]),
 			result: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(9)]),
-			took: new FormControl<number | null | undefined>(undefined),
+			took: new FormControl<string | null | undefined>(undefined),
 			version: new FormControl<string | null | undefined>(undefined, [Validators.maxLength(256)]),
 		});
 
@@ -414,6 +418,7 @@ export namespace MyNS {
 		/**
 		 * If the message logged relates to a HTTP status code, you can put the code in this property. This would probably only be relevant for errors,
 		 * but could be used for logging successful status codes as well.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode?: number | null;
 
@@ -488,6 +493,7 @@ export namespace MyNS {
 		/**
 		 * If the message logged relates to a HTTP status code, you can put the code in this property. This would probably only be relevant for errors,
 		 * but could be used for logging successful status codes as well.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode: FormControl<number | null | undefined>,
 
@@ -799,6 +805,7 @@ export namespace MyNS {
 		/**
 		 * If the message logged relates to a HTTP status code, you can put the code in this property. This would probably only be relevant for errors,
 		 * but could be used for logging successful status codes as well.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode?: number | null;
 
@@ -873,6 +880,7 @@ export namespace MyNS {
 		/**
 		 * If the message logged relates to a HTTP status code, you can put the code in this property. This would probably only be relevant for errors,
 		 * but could be used for logging successful status codes as well.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode: FormControl<number | null | undefined>,
 
@@ -993,6 +1001,7 @@ export namespace MyNS {
 		/**
 		 * If the message logged relates to a HTTP status code, you can put the code in this property. This would probably only be relevant for errors,
 		 * but could be used for logging successful status codes as well.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode?: number | null;
 
@@ -1067,6 +1076,7 @@ export namespace MyNS {
 		/**
 		 * If the message logged relates to a HTTP status code, you can put the code in this property. This would probably only be relevant for errors,
 		 * but could be used for logging successful status codes as well.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		statusCode: FormControl<number | null | undefined>,
 
@@ -1124,12 +1134,18 @@ export namespace MyNS {
 		/** Log messages. */
 		messages?: Array<MessageOverview>;
 
-		/** The total number of log messages found. */
+		/**
+		 * The total number of log messages found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface MessagesResultFormProperties {
 
-		/** The total number of log messages found. */
+		/**
+		 * The total number of log messages found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateMessagesResultFormGroup() {
@@ -1351,7 +1367,9 @@ export namespace MyNS {
 		 * Get v3/messages/{logId}
 		 * @param {string} logId The ID of the log containing the messages.
 		 * @param {number} pageIndex The page number of the result.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pageSize The number of messages to load (max 100) or 15 if not set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} query A full-text or Lucene query to limit the messages by.
 		 * @param {Date} from A start date and time to search from (not included).
 		 * @param {Date} to An end date and time to search to (not included).

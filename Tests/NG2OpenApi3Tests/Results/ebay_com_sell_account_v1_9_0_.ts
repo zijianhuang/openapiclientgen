@@ -231,19 +231,28 @@ export namespace MyNS {
 		/** <i>This field is for future use.</i> */
 		href?: string | null;
 
-		/** <i>This field is for future use.</i> */
+		/**
+		 * <i>This field is for future use.</i>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** <i>This field is for future use.</i> */
 		next?: string | null;
 
-		/** <i>This field is for future use.</i> */
+		/**
+		 * <i>This field is for future use.</i>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** <i>This field is for future use.</i> */
 		prev?: string | null;
 
-		/** <i>This field is for future use.</i> */
+		/**
+		 * <i>This field is for future use.</i>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface CustomPolicyResponseFormProperties {
@@ -251,19 +260,28 @@ export namespace MyNS {
 		/** <i>This field is for future use.</i> */
 		href: FormControl<string | null | undefined>,
 
-		/** <i>This field is for future use.</i> */
+		/**
+		 * <i>This field is for future use.</i>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** <i>This field is for future use.</i> */
 		next: FormControl<string | null | undefined>,
 
-		/** <i>This field is for future use.</i> */
+		/**
+		 * <i>This field is for future use.</i>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** <i>This field is for future use.</i> */
 		prev: FormControl<string | null | undefined>,
 
-		/** <i>This field is for future use.</i> */
+		/**
+		 * <i>This field is for future use.</i>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomPolicyResponseFormGroup() {
@@ -308,7 +326,10 @@ export namespace MyNS {
 		/** These enum values represent the time measurement unit, such as <code>DAY</code>. A span of time is defined when you apply the value specified in the <b>value</b> field to the value specified for <b>unit</b>. <br/><br/>See <b>TimeDurationUnitEnum</b> for a complete list of possible time-measurement units. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/account/types/ba:TimeDurationUnitEnum'>eBay API documentation</a> */
 		unit?: string | null;
 
-		/** An integer that represents an amount of time, as measured by the time-measurement unit specified in the <b>unit</b> field. */
+		/**
+		 * An integer that represents an amount of time, as measured by the time-measurement unit specified in the <b>unit</b> field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 
@@ -318,7 +339,10 @@ export namespace MyNS {
 		/** These enum values represent the time measurement unit, such as <code>DAY</code>. A span of time is defined when you apply the value specified in the <b>value</b> field to the value specified for <b>unit</b>. <br/><br/>See <b>TimeDurationUnitEnum</b> for a complete list of possible time-measurement units. For implementation help, refer to <a href='https://developer.ebay.com/api-docs/sell/account/types/ba:TimeDurationUnitEnum'>eBay API documentation</a> */
 		unit: FormControl<string | null | undefined>,
 
-		/** An integer that represents an amount of time, as measured by the time-measurement unit specified in the <b>unit</b> field. */
+		/**
+		 * An integer that represents an amount of time, as measured by the time-measurement unit specified in the <b>unit</b> field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeDurationFormGroup() {
@@ -394,7 +418,10 @@ export namespace MyNS {
 		/** Name of the domain ,or primary system, of the service or application where the error occurred. */
 		domain?: string | null;
 
-		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** Identifies specific request elements associated with the error, if any. inputRefId's response is format specific. For JSON, use <i>JSONPath</i> notation. */
@@ -425,7 +452,10 @@ export namespace MyNS {
 		/** Name of the domain ,or primary system, of the service or application where the error occurred. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms. */
+		/**
+		 * A positive integer that uniquely identifies the specific error condition that occurred. Your application can use error codes as identifiers in your customized error-handling algorithms.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** A more detailed explanation of the error than given in the <code>message</code> error field. */
@@ -703,7 +733,10 @@ export namespace MyNS {
 		/** This field sets/indicates the domestic or international shipping service option, such as <code>USPSPriority</code>, <code>FedEx2Day</code>, or <code>UPS3rdDay</code>. Although this field uses the <b>string</b> type, the seller must pass in a pre-defined enumeration value here. <br /><br />For a full list of shipping service option enum values for a specified eBay marketplace, the <b>GeteBayDetails</b> call of the <b>Trading API</b> can be used, and the <b>DetailName</b> field's value should be set to <code>ShippingServiceDetails</code>. <br /><br />The enum values for each shipping service option can be found in each <b>ShippingServiceDetails.ShippingService</b> field in the response payload. The seller must make sure that the shipping service option is still valid, which is indicated by a <code>true</code> value in the corresponding <b>ValidForSellingFlow</b> boolean field. International shipping service options are typically returned at the top of the response payload, and are indicated by an <b>InternationalService</b> boolean field that reads <code>true</code>. <br /><br />The <b>InternationalService</b> boolean field is not returned at all for domestic shipping service options. <br/><br/> This field is required for every specified shipping service option.<br/><br/>This field is returned if set. */
 		shippingServiceCode?: string | null;
 
-		/** The integer value set in this field controls the order of the corresponding domestic or international shipping service option in the View Item and Checkout pages. <br/><br/>Sellers can specify up to four domestic shipping services (in four separate <b>shippingService</b> containers), so valid values are 1, 2, 3, and 4. A shipping service option with a <b>sortOrder</b> value of <code>1</code> appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a <b>sortOrder</b> value of <code>1</code> appears at the bottom of the list. <br/><br/>Sellers can specify up to five international shipping services (in five separate <b>shippingService</b> containers), so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the <b>sortOrder</b> value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. <br/><br/>If the <b>sortOrder</b> field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. <br/><br/><b>Min</b>: 1. <b>Max</b>: 4 (for domestic shipping service) or 5 (for international shipping service). */
+		/**
+		 * The integer value set in this field controls the order of the corresponding domestic or international shipping service option in the View Item and Checkout pages. <br/><br/>Sellers can specify up to four domestic shipping services (in four separate <b>shippingService</b> containers), so valid values are 1, 2, 3, and 4. A shipping service option with a <b>sortOrder</b> value of <code>1</code> appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a <b>sortOrder</b> value of <code>1</code> appears at the bottom of the list. <br/><br/>Sellers can specify up to five international shipping services (in five separate <b>shippingService</b> containers), so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the <b>sortOrder</b> value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. <br/><br/>If the <b>sortOrder</b> field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. <br/><br/><b>Min</b>: 1. <b>Max</b>: 4 (for domestic shipping service) or 5 (for international shipping service).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder?: number | null;
 
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. When passing in an amount in a request payload, both <b>currency</b> and <b>value</b> fields are required, and both fields are also always returned for an amount in a response field. */
@@ -728,7 +761,10 @@ export namespace MyNS {
 		/** This field sets/indicates the domestic or international shipping service option, such as <code>USPSPriority</code>, <code>FedEx2Day</code>, or <code>UPS3rdDay</code>. Although this field uses the <b>string</b> type, the seller must pass in a pre-defined enumeration value here. <br /><br />For a full list of shipping service option enum values for a specified eBay marketplace, the <b>GeteBayDetails</b> call of the <b>Trading API</b> can be used, and the <b>DetailName</b> field's value should be set to <code>ShippingServiceDetails</code>. <br /><br />The enum values for each shipping service option can be found in each <b>ShippingServiceDetails.ShippingService</b> field in the response payload. The seller must make sure that the shipping service option is still valid, which is indicated by a <code>true</code> value in the corresponding <b>ValidForSellingFlow</b> boolean field. International shipping service options are typically returned at the top of the response payload, and are indicated by an <b>InternationalService</b> boolean field that reads <code>true</code>. <br /><br />The <b>InternationalService</b> boolean field is not returned at all for domestic shipping service options. <br/><br/> This field is required for every specified shipping service option.<br/><br/>This field is returned if set. */
 		shippingServiceCode: FormControl<string | null | undefined>,
 
-		/** The integer value set in this field controls the order of the corresponding domestic or international shipping service option in the View Item and Checkout pages. <br/><br/>Sellers can specify up to four domestic shipping services (in four separate <b>shippingService</b> containers), so valid values are 1, 2, 3, and 4. A shipping service option with a <b>sortOrder</b> value of <code>1</code> appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a <b>sortOrder</b> value of <code>1</code> appears at the bottom of the list. <br/><br/>Sellers can specify up to five international shipping services (in five separate <b>shippingService</b> containers), so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the <b>sortOrder</b> value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. <br/><br/>If the <b>sortOrder</b> field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. <br/><br/><b>Min</b>: 1. <b>Max</b>: 4 (for domestic shipping service) or 5 (for international shipping service). */
+		/**
+		 * The integer value set in this field controls the order of the corresponding domestic or international shipping service option in the View Item and Checkout pages. <br/><br/>Sellers can specify up to four domestic shipping services (in four separate <b>shippingService</b> containers), so valid values are 1, 2, 3, and 4. A shipping service option with a <b>sortOrder</b> value of <code>1</code> appears at the top of View Item and Checkout pages. Conversely, a shipping service option with a <b>sortOrder</b> value of <code>1</code> appears at the bottom of the list. <br/><br/>Sellers can specify up to five international shipping services (in five separate <b>shippingService</b> containers), so valid values for international shipping services are 1, 2, 3, 4, and 5. Similarly to domestic shipping service options, the <b>sortOrder</b> value of a international shipping service option controls the placement of that shipping service option in the View Item and Checkout pages. <br/><br/>If the <b>sortOrder</b> field is not supplied, the order of domestic and international shipping service options is determined by the order in which they are listed in the API call. <br/><br/><b>Min</b>: 1. <b>Max</b>: 4 (for domestic shipping service) or 5 (for international shipping service).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateShippingServiceFormGroup() {
@@ -828,19 +864,28 @@ export namespace MyNS {
 		/** This field is for future use. */
 		href?: string | null;
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** This field is for future use. */
 		next?: string | null;
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** This field is for future use. */
 		prev?: string | null;
 
-		/** The total number of fulfillment policies retrieved in the result set.  <br/><br/>If no fulfillment policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of fulfillment policies retrieved in the result set.  <br/><br/>If no fulfillment policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -850,19 +895,28 @@ export namespace MyNS {
 		/** This field is for future use. */
 		href: FormControl<string | null | undefined>,
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** This field is for future use. */
 		next: FormControl<string | null | undefined>,
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** This field is for future use. */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of fulfillment policies retrieved in the result set.  <br/><br/>If no fulfillment policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of fulfillment policies retrieved in the result set.  <br/><br/>If no fulfillment policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateFulfillmentPolicyResponseFormGroup() {
@@ -1117,13 +1171,19 @@ export namespace MyNS {
 		/** This field is for future use. */
 		href?: string | null;
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** This field is for future use. */
 		next?: string | null;
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** A list of all of the seller's payment business policies defined for the specified marketplace. This array will be returned as empty if no payment business policies are defined for the specified marketplace. */
@@ -1132,7 +1192,10 @@ export namespace MyNS {
 		/** This field is for future use. */
 		prev?: string | null;
 
-		/** The total number of payment business policies retrieved in the result set.  <br/><br/>If no payment business policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of payment business policies retrieved in the result set.  <br/><br/>If no payment business policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -1142,19 +1205,28 @@ export namespace MyNS {
 		/** This field is for future use. */
 		href: FormControl<string | null | undefined>,
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** This field is for future use. */
 		next: FormControl<string | null | undefined>,
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** This field is for future use. */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of payment business policies retrieved in the result set.  <br/><br/>If no payment business policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of payment business policies retrieved in the result set.  <br/><br/>If no payment business policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePaymentPolicyResponseFormGroup() {
@@ -1567,13 +1639,19 @@ export namespace MyNS {
 		/** This field is for future use. */
 		href?: string | null;
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** This field is for future use. */
 		next?: string | null;
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** This field is for future use. */
@@ -1582,7 +1660,10 @@ export namespace MyNS {
 		/** A list of all of the seller's return business policies defined for the specified marketplace. This array will be returned as empty if no return business policies are defined for the specified marketplace. */
 		returnPolicies?: Array<ReturnPolicy>;
 
-		/** The total number of return business policies retrieved in the result set.  <br/><br/>If no return business policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of return business policies retrieved in the result set.  <br/><br/>If no return business policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -1592,19 +1673,28 @@ export namespace MyNS {
 		/** This field is for future use. */
 		href: FormControl<string | null | undefined>,
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** This field is for future use. */
 		next: FormControl<string | null | undefined>,
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** This field is for future use. */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of return business policies retrieved in the result set.  <br/><br/>If no return business policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>. */
+		/**
+		 * The total number of return business policies retrieved in the result set.  <br/><br/>If no return business policies are defined for the specified marketplace, this field is returned with a value of <code>0</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateReturnPolicyResponseFormGroup() {
@@ -1765,14 +1855,20 @@ export namespace MyNS {
 		/** A complex type that describes the value of a monetary amount as represented by a global currency. When passing in an amount in a request payload, both <b>currency</b> and <b>value</b> fields are required, and both fields are also always returned for an amount in a response field. */
 		amount?: Amount;
 
-		/** This field shows the monthly cap for total quantity sold allowed for the seller's account. This container may not be returned if a seller does not have a monthly cap for total quantity sold. */
+		/**
+		 * This field shows the monthly cap for total quantity sold allowed for the seller's account. This container may not be returned if a seller does not have a monthly cap for total quantity sold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 	}
 
 	/** Type used by the <b>sellingLimit</b> container, a container that lists the monthly cap for the quantity of items sold and total sales amount allowed for the seller's account. */
 	export interface SellingLimitFormProperties {
 
-		/** This field shows the monthly cap for total quantity sold allowed for the seller's account. This container may not be returned if a seller does not have a monthly cap for total quantity sold. */
+		/**
+		 * This field shows the monthly cap for total quantity sold allowed for the seller's account. This container may not be returned if a seller does not have a monthly cap for total quantity sold.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateSellingLimitFormGroup() {
@@ -2117,7 +2213,10 @@ export namespace MyNS {
 		/** This field is for future use. */
 		href?: string | null;
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** This field is for future use. */
@@ -2126,7 +2225,10 @@ export namespace MyNS {
 		/** An array of subscriptions associated with the seller account. */
 		subscriptions?: Array<Subscription>;
 
-		/** The total number of subscriptions displayed on the current page of results. */
+		/**
+		 * The total number of subscriptions displayed on the current page of results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -2136,13 +2238,19 @@ export namespace MyNS {
 		/** This field is for future use. */
 		href: FormControl<string | null | undefined>,
 
-		/** This field is for future use. */
+		/**
+		 * This field is for future use.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** This field is for future use. */
 		next: FormControl<string | null | undefined>,
 
-		/** The total number of subscriptions displayed on the current page of results. */
+		/**
+		 * The total number of subscriptions displayed on the current page of results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionResponseFormGroup() {

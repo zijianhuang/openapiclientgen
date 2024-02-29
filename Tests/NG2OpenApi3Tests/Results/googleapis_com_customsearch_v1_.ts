@@ -91,24 +91,36 @@ export namespace MyNS {
 
 	export interface PromotionImage {
 
-		/** Image height in pixels. */
+		/**
+		 * Image height in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** URL of the image for this promotion link. */
 		source?: string | null;
 
-		/** Image width in pixels. */
+		/**
+		 * Image width in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface PromotionImageFormProperties {
 
-		/** Image height in pixels. */
+		/**
+		 * Image height in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** URL of the image for this promotion link. */
 		source: FormControl<string | null | undefined>,
 
-		/** Image width in pixels. */
+		/**
+		 * Image width in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePromotionImageFormGroup() {
@@ -233,48 +245,78 @@ export namespace MyNS {
 
 	export interface ResultImage {
 
-		/** The size of the image, in bytes. */
+		/**
+		 * The size of the image, in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		byteSize?: number | null;
 
 		/** A URL pointing to the webpage hosting the image. */
 		contextLink?: string | null;
 
-		/** The height of the image, in pixels. */
+		/**
+		 * The height of the image, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** The height of the thumbnail image, in pixels. */
+		/**
+		 * The height of the thumbnail image, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbnailHeight?: number | null;
 
 		/** A URL to the thumbnail image. */
 		thumbnailLink?: string | null;
 
-		/** The width of the thumbnail image, in pixels. */
+		/**
+		 * The width of the thumbnail image, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbnailWidth?: number | null;
 
-		/** The width of the image, in pixels. */
+		/**
+		 * The width of the image, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface ResultImageFormProperties {
 
-		/** The size of the image, in bytes. */
+		/**
+		 * The size of the image, in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		byteSize: FormControl<number | null | undefined>,
 
 		/** A URL pointing to the webpage hosting the image. */
 		contextLink: FormControl<string | null | undefined>,
 
-		/** The height of the image, in pixels. */
+		/**
+		 * The height of the image, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The height of the thumbnail image, in pixels. */
+		/**
+		 * The height of the thumbnail image, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbnailHeight: FormControl<number | null | undefined>,
 
 		/** A URL to the thumbnail image. */
 		thumbnailLink: FormControl<string | null | undefined>,
 
-		/** The width of the thumbnail image, in pixels. */
+		/**
+		 * The width of the thumbnail image, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbnailWidth: FormControl<number | null | undefined>,
 
-		/** The width of the image, in pixels. */
+		/**
+		 * The width of the image, in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateResultImageFormGroup() {
@@ -388,7 +430,10 @@ export namespace MyNS {
 
 	export interface SearchQueriesNextPage {
 
-		/** Number of search results returned in this set. */
+		/**
+		 * Number of search results returned in this set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter's value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document's URL. * The geographic location of the web server's IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter. */
@@ -484,10 +529,16 @@ export namespace MyNS {
 		/** Specifies that results should be sorted according to the specified expression. For example, sort by date. */
 		sort?: string | null;
 
-		/** The index of the current set of search results into the total set of results, where the index of the first result is 1. */
+		/**
+		 * The index of the current set of search results into the total set of results, where the index of the first result is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The page number of this set of results, where the page length is set by the `count` property. */
+		/**
+		 * The page number of this set of results, where the page length is set by the `count` property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startPage?: number | null;
 
 		/** A description of the query. */
@@ -498,7 +549,10 @@ export namespace MyNS {
 	}
 	export interface SearchQueriesNextPageFormProperties {
 
-		/** Number of search results returned in this set. */
+		/**
+		 * Number of search results returned in this set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter's value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document's URL. * The geographic location of the web server's IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter. */
@@ -594,10 +648,16 @@ export namespace MyNS {
 		/** Specifies that results should be sorted according to the specified expression. For example, sort by date. */
 		sort: FormControl<string | null | undefined>,
 
-		/** The index of the current set of search results into the total set of results, where the index of the first result is 1. */
+		/**
+		 * The index of the current set of search results into the total set of results, where the index of the first result is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The page number of this set of results, where the page length is set by the `count` property. */
+		/**
+		 * The page number of this set of results, where the page length is set by the `count` property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startPage: FormControl<number | null | undefined>,
 
 		/** A description of the query. */
@@ -650,7 +710,10 @@ export namespace MyNS {
 
 	export interface SearchQueriesPreviousPage {
 
-		/** Number of search results returned in this set. */
+		/**
+		 * Number of search results returned in this set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter's value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document's URL. * The geographic location of the web server's IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter. */
@@ -746,10 +809,16 @@ export namespace MyNS {
 		/** Specifies that results should be sorted according to the specified expression. For example, sort by date. */
 		sort?: string | null;
 
-		/** The index of the current set of search results into the total set of results, where the index of the first result is 1. */
+		/**
+		 * The index of the current set of search results into the total set of results, where the index of the first result is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The page number of this set of results, where the page length is set by the `count` property. */
+		/**
+		 * The page number of this set of results, where the page length is set by the `count` property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startPage?: number | null;
 
 		/** A description of the query. */
@@ -760,7 +829,10 @@ export namespace MyNS {
 	}
 	export interface SearchQueriesPreviousPageFormProperties {
 
-		/** Number of search results returned in this set. */
+		/**
+		 * Number of search results returned in this set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter's value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document's URL. * The geographic location of the web server's IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter. */
@@ -856,10 +928,16 @@ export namespace MyNS {
 		/** Specifies that results should be sorted according to the specified expression. For example, sort by date. */
 		sort: FormControl<string | null | undefined>,
 
-		/** The index of the current set of search results into the total set of results, where the index of the first result is 1. */
+		/**
+		 * The index of the current set of search results into the total set of results, where the index of the first result is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The page number of this set of results, where the page length is set by the `count` property. */
+		/**
+		 * The page number of this set of results, where the page length is set by the `count` property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startPage: FormControl<number | null | undefined>,
 
 		/** A description of the query. */
@@ -912,7 +990,10 @@ export namespace MyNS {
 
 	export interface SearchQueriesRequest {
 
-		/** Number of search results returned in this set. */
+		/**
+		 * Number of search results returned in this set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter's value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document's URL. * The geographic location of the web server's IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter. */
@@ -1008,10 +1089,16 @@ export namespace MyNS {
 		/** Specifies that results should be sorted according to the specified expression. For example, sort by date. */
 		sort?: string | null;
 
-		/** The index of the current set of search results into the total set of results, where the index of the first result is 1. */
+		/**
+		 * The index of the current set of search results into the total set of results, where the index of the first result is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
-		/** The page number of this set of results, where the page length is set by the `count` property. */
+		/**
+		 * The page number of this set of results, where the page length is set by the `count` property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startPage?: number | null;
 
 		/** A description of the query. */
@@ -1022,7 +1109,10 @@ export namespace MyNS {
 	}
 	export interface SearchQueriesRequestFormProperties {
 
-		/** Number of search results returned in this set. */
+		/**
+		 * Number of search results returned in this set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Restricts search results to documents originating in a particular country. You may use [Boolean operators](https://developers.google.com/custom-search/docs/json_api_reference#BooleanOrSearch) in the `cr` parameter's value. Google WebSearch determines the country of a document by analyzing the following: * The top-level domain (TLD) of the document's URL. * The geographic location of the web server's IP address. See [Country (cr) Parameter Values](https://developers.google.com/custom-search/docs/json_api_reference#countryCollections) for a list of valid values for this parameter. */
@@ -1118,10 +1208,16 @@ export namespace MyNS {
 		/** Specifies that results should be sorted according to the specified expression. For example, sort by date. */
 		sort: FormControl<string | null | undefined>,
 
-		/** The index of the current set of search results into the total set of results, where the index of the first result is 1. */
+		/**
+		 * The index of the current set of search results into the total set of results, where the index of the first result is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
-		/** The page number of this set of results, where the page length is set by the `count` property. */
+		/**
+		 * The page number of this set of results, where the page length is set by the `count` property.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startPage: FormControl<number | null | undefined>,
 
 		/** A description of the query. */
@@ -1180,7 +1276,10 @@ export namespace MyNS {
 		/** The total number of search results, formatted according to locale style. */
 		formattedTotalResults?: string | null;
 
-		/** The time taken for the server to return search results. */
+		/**
+		 * The time taken for the server to return search results.
+		 * Type: double
+		 */
 		searchTime?: number | null;
 
 		/** The total number of search results returned by the query. */
@@ -1194,7 +1293,10 @@ export namespace MyNS {
 		/** The total number of search results, formatted according to locale style. */
 		formattedTotalResults: FormControl<string | null | undefined>,
 
-		/** The time taken for the server to return search results. */
+		/**
+		 * The time taken for the server to return search results.
+		 * Type: double
+		 */
 		searchTime: FormControl<number | null | undefined>,
 
 		/** The total number of search results returned by the query. */
@@ -1287,6 +1389,7 @@ export namespace MyNS {
 		 * @param {string} lowRange Specifies the starting value for a search range. Use `lowRange` and `highRange` to append an inclusive search range of `lowRange...highRange` to the query.
 		 * @param {string} lr Restricts the search to documents written in a particular language (e.g., `lr=lang_ja`). Acceptable values are: * `"lang_ar"`: Arabic * `"lang_bg"`: Bulgarian * `"lang_ca"`: Catalan * `"lang_cs"`: Czech * `"lang_da"`: Danish * `"lang_de"`: German * `"lang_el"`: Greek * `"lang_en"`: English * `"lang_es"`: Spanish * `"lang_et"`: Estonian * `"lang_fi"`: Finnish * `"lang_fr"`: French * `"lang_hr"`: Croatian * `"lang_hu"`: Hungarian * `"lang_id"`: Indonesian * `"lang_is"`: Icelandic * `"lang_it"`: Italian * `"lang_iw"`: Hebrew * `"lang_ja"`: Japanese * `"lang_ko"`: Korean * `"lang_lt"`: Lithuanian * `"lang_lv"`: Latvian * `"lang_nl"`: Dutch * `"lang_no"`: Norwegian * `"lang_pl"`: Polish * `"lang_pt"`: Portuguese * `"lang_ro"`: Romanian * `"lang_ru"`: Russian * `"lang_sk"`: Slovak * `"lang_sl"`: Slovenian * `"lang_sr"`: Serbian * `"lang_sv"`: Swedish * `"lang_tr"`: Turkish * `"lang_zh-CN"`: Chinese (Simplified) * `"lang_zh-TW"`: Chinese (Traditional)
 		 * @param {number} num Number of search results to return. * Valid values are integers between 1 and 10, inclusive.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orTerms Provides additional search terms to check for in a document, where each document in the search results must contain at least one of the additional search terms.
 		 * @param {string} q Query
 		 * @param {string} relatedSite Deprecated.
@@ -1297,6 +1400,7 @@ export namespace MyNS {
 		 * @param {Search_cse_listSiteSearchFilter} siteSearchFilter Controls whether to include or exclude results from the site named in the `siteSearch` parameter. Acceptable values are: * `"e"`: exclude * `"i"`: include
 		 * @param {string} sort The sort expression to apply to the results. The sort parameter specifies that the results be sorted according to the specified expression i.e. sort by date. [Example: sort=date](https://developers.google.com/custom-search/docs/structured_search#sort-by-attribute).
 		 * @param {number} start The index of the first result to return. The default number of results per page is 10, so `&start=11` would start at the top of the second page of results. **Note**: The JSON API will never return more than 100 results, even if more than 100 documents match the query, so setting the sum of `start + num` to a number greater than 100 will produce an error. Also note that the maximum value for `num` is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Search} Successful response
 		 */
 		Search_cse_list(c2coff: string | null | undefined, cr: string | null | undefined, cx: string | null | undefined, dateRestrict: string | null | undefined, exactTerms: string | null | undefined, excludeTerms: string | null | undefined, fileType: string | null | undefined, filter: string | null | undefined, gl: string | null | undefined, googlehost: string | null | undefined, highRange: string | null | undefined, hl: string | null | undefined, hq: string | null | undefined, imgColorType: Search_cse_listImgColorType | null | undefined, imgDominantColor: Search_cse_listImgDominantColor | null | undefined, imgSize: Search_cse_listImgSize | null | undefined, imgType: Search_cse_listImgType | null | undefined, linkSite: string | null | undefined, lowRange: string | null | undefined, lr: string | null | undefined, num: number | null | undefined, orTerms: string | null | undefined, q: string | null | undefined, relatedSite: string | null | undefined, rights: string | null | undefined, safe: Search_cse_listSafe | null | undefined, searchType: Search_cse_listSearchType | null | undefined, siteSearch: string | null | undefined, siteSearchFilter: Search_cse_listSiteSearchFilter | null | undefined, sort: string | null | undefined, start: number | null | undefined): Observable<Search> {
@@ -1327,6 +1431,7 @@ export namespace MyNS {
 		 * @param {string} lowRange Specifies the starting value for a search range. Use `lowRange` and `highRange` to append an inclusive search range of `lowRange...highRange` to the query.
 		 * @param {string} lr Restricts the search to documents written in a particular language (e.g., `lr=lang_ja`). Acceptable values are: * `"lang_ar"`: Arabic * `"lang_bg"`: Bulgarian * `"lang_ca"`: Catalan * `"lang_cs"`: Czech * `"lang_da"`: Danish * `"lang_de"`: German * `"lang_el"`: Greek * `"lang_en"`: English * `"lang_es"`: Spanish * `"lang_et"`: Estonian * `"lang_fi"`: Finnish * `"lang_fr"`: French * `"lang_hr"`: Croatian * `"lang_hu"`: Hungarian * `"lang_id"`: Indonesian * `"lang_is"`: Icelandic * `"lang_it"`: Italian * `"lang_iw"`: Hebrew * `"lang_ja"`: Japanese * `"lang_ko"`: Korean * `"lang_lt"`: Lithuanian * `"lang_lv"`: Latvian * `"lang_nl"`: Dutch * `"lang_no"`: Norwegian * `"lang_pl"`: Polish * `"lang_pt"`: Portuguese * `"lang_ro"`: Romanian * `"lang_ru"`: Russian * `"lang_sk"`: Slovak * `"lang_sl"`: Slovenian * `"lang_sr"`: Serbian * `"lang_sv"`: Swedish * `"lang_tr"`: Turkish * `"lang_zh-CN"`: Chinese (Simplified) * `"lang_zh-TW"`: Chinese (Traditional)
 		 * @param {number} num Number of search results to return. * Valid values are integers between 1 and 10, inclusive.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orTerms Provides additional search terms to check for in a document, where each document in the search results must contain at least one of the additional search terms.
 		 * @param {string} q Query
 		 * @param {string} relatedSite Deprecated.
@@ -1337,6 +1442,7 @@ export namespace MyNS {
 		 * @param {Search_cse_listSiteSearchFilter} siteSearchFilter Controls whether to include or exclude results from the site named in the `siteSearch` parameter. Acceptable values are: * `"e"`: exclude * `"i"`: include
 		 * @param {string} sort The sort expression to apply to the results. The sort parameter specifies that the results be sorted according to the specified expression i.e. sort by date. [Example: sort=date](https://developers.google.com/custom-search/docs/structured_search#sort-by-attribute).
 		 * @param {number} start The index of the first result to return. The default number of results per page is 10, so `&start=11` would start at the top of the second page of results. **Note**: The JSON API will never return more than 100 results, even if more than 100 documents match the query, so setting the sum of `start + num` to a number greater than 100 will produce an error. Also note that the maximum value for `num` is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Search} Successful response
 		 */
 		Search_cse_siterestrict_list(c2coff: string | null | undefined, cr: string | null | undefined, cx: string | null | undefined, dateRestrict: string | null | undefined, exactTerms: string | null | undefined, excludeTerms: string | null | undefined, fileType: string | null | undefined, filter: string | null | undefined, gl: string | null | undefined, googlehost: string | null | undefined, highRange: string | null | undefined, hl: string | null | undefined, hq: string | null | undefined, imgColorType: Search_cse_listImgColorType | null | undefined, imgDominantColor: Search_cse_listImgDominantColor | null | undefined, imgSize: Search_cse_listImgSize | null | undefined, imgType: Search_cse_listImgType | null | undefined, linkSite: string | null | undefined, lowRange: string | null | undefined, lr: string | null | undefined, num: number | null | undefined, orTerms: string | null | undefined, q: string | null | undefined, relatedSite: string | null | undefined, rights: string | null | undefined, safe: Search_cse_listSafe | null | undefined, searchType: Search_cse_listSearchType | null | undefined, siteSearch: string | null | undefined, siteSearchFilter: Search_cse_listSiteSearchFilter | null | undefined, sort: string | null | undefined, start: number | null | undefined): Observable<Search> {

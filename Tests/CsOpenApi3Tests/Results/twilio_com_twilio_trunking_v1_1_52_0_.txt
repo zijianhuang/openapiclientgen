@@ -748,8 +748,13 @@ namespace MyNS
 		/// <summary>
 		/// ListTrunk v1/Trunks
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListTrunkReturn> ListTrunkAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -783,7 +788,10 @@ namespace MyNS
 		/// <summary>
 		/// DeleteTrunk v1/Trunks/{Sid}
 		/// </summary>
-		/// <param name="Sid">The unique string that we created to identify the Trunk resource to delete.</param>
+		/// <param name="Sid">The unique string that we created to identify the Trunk resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteTrunkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Trunks/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -809,7 +817,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchTrunk v1/Trunks/{Sid}
 		/// </summary>
-		/// <param name="Sid">The unique string that we created to identify the Trunk resource to fetch.</param>
+		/// <param name="Sid">The unique string that we created to identify the Trunk resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunk> FetchTrunkAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -842,9 +853,17 @@ namespace MyNS
 		/// <summary>
 		/// ListCredentialList v1/Trunks/{TrunkSid}/CredentialLists
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to read the credential lists.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to read the credential lists.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListCredentialListReturn> ListCredentialListAsync(string TrunkSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -878,8 +897,14 @@ namespace MyNS
 		/// <summary>
 		/// DeleteCredentialList v1/Trunks/{TrunkSid}/CredentialLists/{Sid}
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to delete the credential list.</param>
-		/// <param name="Sid">The unique string that we created to identify the CredentialList resource to delete.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to delete the credential list.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The unique string that we created to identify the CredentialList resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteCredentialListAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Trunks/"+ (TrunkSid==null? "" : System.Uri.EscapeDataString(TrunkSid))+"/CredentialLists/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -905,8 +930,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchCredentialList v1/Trunks/{TrunkSid}/CredentialLists/{Sid}
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the credential list.</param>
-		/// <param name="Sid">The unique string that we created to identify the CredentialList resource to fetch.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the credential list.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The unique string that we created to identify the CredentialList resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunkcredential_list> FetchCredentialListAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -940,9 +971,17 @@ namespace MyNS
 		/// List all IP Access Control Lists for a Trunk
 		/// ListIpAccessControlList v1/Trunks/{TrunkSid}/IpAccessControlLists
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to read the IP Access Control Lists.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to read the IP Access Control Lists.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListIpAccessControlListReturn> ListIpAccessControlListAsync(string TrunkSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -977,8 +1016,14 @@ namespace MyNS
 		/// Remove an associated IP Access Control List from a Trunk
 		/// DeleteIpAccessControlList v1/Trunks/{TrunkSid}/IpAccessControlLists/{Sid}
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to delete the IP Access Control List.</param>
-		/// <param name="Sid">The unique string that we created to identify the IpAccessControlList resource to delete.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to delete the IP Access Control List.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The unique string that we created to identify the IpAccessControlList resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteIpAccessControlListAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Trunks/"+ (TrunkSid==null? "" : System.Uri.EscapeDataString(TrunkSid))+"/IpAccessControlLists/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1004,8 +1049,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchIpAccessControlList v1/Trunks/{TrunkSid}/IpAccessControlLists/{Sid}
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the IP Access Control List.</param>
-		/// <param name="Sid">The unique string that we created to identify the IpAccessControlList resource to fetch.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the IP Access Control List.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The unique string that we created to identify the IpAccessControlList resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunkip_access_control_list> FetchIpAccessControlListAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1038,9 +1089,17 @@ namespace MyNS
 		/// <summary>
 		/// ListOriginationUrl v1/Trunks/{TrunkSid}/OriginationUrls
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to read the OriginationUrl.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to read the OriginationUrl.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListOriginationUrlReturn> ListOriginationUrlAsync(string TrunkSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1074,8 +1133,14 @@ namespace MyNS
 		/// <summary>
 		/// DeleteOriginationUrl v1/Trunks/{TrunkSid}/OriginationUrls/{Sid}
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to delete the OriginationUrl.</param>
-		/// <param name="Sid">The unique string that we created to identify the OriginationUrl resource to delete.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to delete the OriginationUrl.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The unique string that we created to identify the OriginationUrl resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteOriginationUrlAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Trunks/"+ (TrunkSid==null? "" : System.Uri.EscapeDataString(TrunkSid))+"/OriginationUrls/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1101,8 +1166,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchOriginationUrl v1/Trunks/{TrunkSid}/OriginationUrls/{Sid}
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the OriginationUrl.</param>
-		/// <param name="Sid">The unique string that we created to identify the OriginationUrl resource to fetch.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the OriginationUrl.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The unique string that we created to identify the OriginationUrl resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunkorigination_url> FetchOriginationUrlAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1135,9 +1206,17 @@ namespace MyNS
 		/// <summary>
 		/// ListPhoneNumber v1/Trunks/{TrunkSid}/PhoneNumbers
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to read the PhoneNumber resources.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to read the PhoneNumber resources.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListPhoneNumberReturn> ListPhoneNumberAsync(string TrunkSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1171,8 +1250,14 @@ namespace MyNS
 		/// <summary>
 		/// DeletePhoneNumber v1/Trunks/{TrunkSid}/PhoneNumbers/{Sid}
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to delete the PhoneNumber resource.</param>
-		/// <param name="Sid">The unique string that we created to identify the PhoneNumber resource to delete.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to delete the PhoneNumber resource.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The unique string that we created to identify the PhoneNumber resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeletePhoneNumberAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Trunks/"+ (TrunkSid==null? "" : System.Uri.EscapeDataString(TrunkSid))+"/PhoneNumbers/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1198,8 +1283,14 @@ namespace MyNS
 		/// <summary>
 		/// FetchPhoneNumber v1/Trunks/{TrunkSid}/PhoneNumbers/{Sid}
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the PhoneNumber resource.</param>
-		/// <param name="Sid">The unique string that we created to identify the PhoneNumber resource to fetch.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the PhoneNumber resource.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The unique string that we created to identify the PhoneNumber resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunkphone_number> FetchPhoneNumberAsync(string TrunkSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1232,7 +1323,10 @@ namespace MyNS
 		/// <summary>
 		/// FetchRecording v1/Trunks/{TrunkSid}/Recording
 		/// </summary>
-		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the recording settings.</param>
+		/// <param name="TrunkSid">The SID of the Trunk from which to fetch the recording settings.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Trunkingv1trunkrecording> FetchRecordingAsync(string TrunkSid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

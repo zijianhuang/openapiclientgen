@@ -1077,6 +1077,7 @@ export namespace MyNS {
 		 * Returns the full information for a given episode id. __Deprecation Warning:__ The _director_ key will be deprecated in favor of the new _directors_ key in a future release.
 		 * Get episodes/{id}
 		 * @param {string} id ID of the episode
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {EpisodeRecordData} An array of query keys as strings
 		 */
 		Episodes_idGet(id: string, headersHandler?: () => HttpHeaders): Observable<EpisodeRecordData> {
@@ -1147,6 +1148,7 @@ export namespace MyNS {
 		 * Returns a series records that contains all information known about a particular series id.
 		 * Get series/{id}
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SeriesData} A series record.
 		 */
 		Series_idGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesData> {
@@ -1157,6 +1159,7 @@ export namespace MyNS {
 		 * Returns actors for the given series id
 		 * Get series/{id}/actors
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SeriesActors} An array of actor objects for the given series id.
 		 */
 		Series_idActorsGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesActors> {
@@ -1167,6 +1170,7 @@ export namespace MyNS {
 		 * All episodes for a given series. Paginated with 100 results per page.
 		 * Get series/{id}/episodes
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} page Page of results to fetch. Defaults to page 1 if not provided.
 		 * @return {SeriesEpisodes} An array of episode objects for the given series id.
 		 */
@@ -1178,6 +1182,7 @@ export namespace MyNS {
 		 * This route allows the user to query against episodes for the given series. The response is a paginated array of episode records.
 		 * Get series/{id}/episodes/query
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} absoluteNumber Absolute number of the episode
 		 * @param {string} airedSeason Aired season number
 		 * @param {string} airedEpisode Aired episode number
@@ -1195,6 +1200,7 @@ export namespace MyNS {
 		 * Returns the allowed query keys for the `/series/{id}/episodes/query` route
 		 * Get series/{id}/episodes/query/params
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SeriesEpisodesQueryParams} An array of query keys as strings
 		 */
 		Series_idEpisodesQueryParamsGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesEpisodesQueryParams> {
@@ -1206,6 +1212,7 @@ export namespace MyNS {
 		 * __Note__: Season "0" is for all episodes that are considered to be specials.
 		 * Get series/{id}/episodes/summary
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SeriesEpisodesSummary} A summary of the episodes and seasons avaialable for the given series.
 		 */
 		Series_idEpisodesSummaryGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesEpisodesSummary> {
@@ -1216,6 +1223,7 @@ export namespace MyNS {
 		 * Returns a series records, filtered by the supplied comma-separated list of keys. Query keys can be found at the `/series/{id}/filter/params` route.
 		 * Get series/{id}/filter
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} keys Comma-separated list of keys to filter by
 		 * @return {SeriesData} A filtered series record
 		 */
@@ -1227,6 +1235,7 @@ export namespace MyNS {
 		 * Returns the list of keys available for the `/series/{id}/filter` route
 		 * Get series/{id}/filter/params
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {FilterKeys} A list of keys to filter by
 		 */
 		Series_idFilterParamsGet(id: string, headersHandler?: () => HttpHeaders): Observable<FilterKeys> {
@@ -1237,6 +1246,7 @@ export namespace MyNS {
 		 * Returns a summary of the images for a particular series
 		 * Get series/{id}/images
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SeriesImagesCounts} A summary of the image types and counts available for the given series.
 		 */
 		Series_idImagesGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesImagesCounts> {
@@ -1247,6 +1257,7 @@ export namespace MyNS {
 		 * Query images for the given series ID.
 		 * Get series/{id}/images/query
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} keyType Type of image you're querying for (fanart, poster, etc. See ../images/query/params for more details).
 		 * @param {string} resolution Resolution to filter by (1280x1024, for example)
 		 * @param {string} subKey Subkey for the above query keys. See /series/{id}/images/query/params for more information
@@ -1260,6 +1271,7 @@ export namespace MyNS {
 		 * Returns the allowed query keys for the `/series/{id}/images/query` route. Contains a parameter record for each unique `keyType`, listing values that will return results.
 		 * Get series/{id}/images/query/params
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {SeriesImagesQueryParams} An array of query keys as strings
 		 */
 		Series_idImagesQueryParamsGet(id: string, headersHandler?: () => HttpHeaders): Observable<SeriesImagesQueryParams> {
@@ -1309,6 +1321,7 @@ export namespace MyNS {
 		 * Adds the supplied series ID to the user’s favorite’s list and returns the updated list.
 		 * Put user/favorites/{id}
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserFavoritesData} List of user favorites.
 		 */
 		UserFavorites_idPut(id: string, headersHandler?: () => HttpHeaders): Observable<UserFavoritesData> {
@@ -1319,6 +1332,7 @@ export namespace MyNS {
 		 * Deletes the given series ID from the user’s favorite’s list and returns the updated list.
 		 * Delete user/favorites/{id}
 		 * @param {string} id ID of the series
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserFavoritesData} List of user favorites.
 		 */
 		UserFavorites_idDelete(id: string, headersHandler?: () => HttpHeaders): Observable<UserFavoritesData> {
@@ -1358,6 +1372,7 @@ export namespace MyNS {
 		 * Delete user/ratings/{itemType}/{itemId}
 		 * @param {string} itemType Item to update. Can be either 'series', 'episode', or 'image'
 		 * @param {string} itemId ID of the ratings record that you wish to modify
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserRatingsDataNoLinksEmptyArray} Returns OK if the delete was successful
 		 */
 		UserRatings_itemType_itemIdDelete(itemType: string, itemId: string, headersHandler?: () => HttpHeaders): Observable<UserRatingsDataNoLinksEmptyArray> {
@@ -1369,7 +1384,9 @@ export namespace MyNS {
 		 * Put user/ratings/{itemType}/{itemId}/{itemRating}
 		 * @param {string} itemType Item to update. Can be either 'series', 'episode', or 'image'
 		 * @param {string} itemId ID of the ratings record that you wish to modify
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} itemRating The updated rating number
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {UserRatingsDataNoLinks} Update OK if the update was successful
 		 */
 		UserRatings_itemType_itemId_itemRatingPut(itemType: string, itemId: string, itemRating: string, headersHandler?: () => HttpHeaders): Observable<UserRatingsDataNoLinks> {

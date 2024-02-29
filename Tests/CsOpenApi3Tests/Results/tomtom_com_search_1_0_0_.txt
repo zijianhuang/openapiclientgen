@@ -75,8 +75,12 @@ namespace MyNS
 		/// <param name="category">Query string. Must be properly URL encoded.</param>
 		/// <param name="ext">Expected response format.</param>
 		/// <param name="typeahead">If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
-		/// <param name="ofs">Starting offset of the returned results within the full result set.</param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
+		/// <param name="ofs">Starting offset of the returned results within the full result set.
+		/// Maximum: 1900
+		// </param>
 		/// <param name="countrySet">Comma separated string of country codes. This will limit the search to the specified countries.</param>
 		/// <param name="lat">Latitude where results should be biased.
 		///NOTE: supplying a lat/lon without a radius will return search results biased to that point.</param>
@@ -141,8 +145,12 @@ namespace MyNS
 		/// <param name="query">Query string. Must be properly URL encoded.</param>
 		/// <param name="ext">Expected response format.</param>
 		/// <param name="typeahead">If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
-		/// <param name="ofs">Starting offset of the returned results within the full result set.</param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
+		/// <param name="ofs">Starting offset of the returned results within the full result set.
+		/// Maximum: 1900
+		// </param>
 		/// <param name="countrySet">Comma separated string of country codes. This will limit the search to the specified countries.</param>
 		/// <param name="lat">Latitude where results should be biased.
 		///NOTE: supplying a lat/lon without a radius will return search results biased to that point.</param>
@@ -208,8 +216,12 @@ namespace MyNS
 		/// <param name="ext">Expected response format.</param>
 		/// <param name="storeResult">If the "storeResult" flag is set, the query will be interpreted as a stored geocode and will be billed according to the terms of use.</param>
 		/// <param name="typeahead">If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
-		/// <param name="ofs">Starting offset of the returned results within the full result set.</param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
+		/// <param name="ofs">Starting offset of the returned results within the full result set.
+		/// Maximum: 1900
+		// </param>
 		/// <param name="countrySet">Comma separated string of country codes. This will limit the search to the specified countries.</param>
 		/// <param name="lat">Latitude where results should be biased.
 		///NOTE: supplying a lat/lon without a radius will return search results biased to that point.</param>
@@ -342,7 +354,9 @@ namespace MyNS
 		/// <param name="query">Query string. Must be properly URL encoded.</param>
 		/// <param name="ext">Expected response format.</param>
 		/// <param name="geometryList">List of geometries to filter by. Available types are CIRCLE (with the radius expressed in meters) and POLYGON.</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
 		/// <param name="language">Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.</param>
 		/// <param name="extendedPostalCodesFor">Indexes for which extended postal codes should be included in the results. Available indexes are:
 		///  - <b>Addr</b> = Address ranges
@@ -388,7 +402,9 @@ namespace MyNS
 		/// <param name="versionNumber">Service version number. The current value is 2.</param>
 		/// <param name="query">Query string. Must be properly URL encoded.</param>
 		/// <param name="ext">Expected response format.</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
 		/// <param name="language">Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.</param>
 		/// <param name="extendedPostalCodesFor">Indexes for which extended postal codes should be included in the results. Available indexes are:
 		///  - <b>Addr</b> = Address ranges
@@ -444,10 +460,16 @@ namespace MyNS
 		///NOTE: supplying a lat/lon without a radius will return search results biased to that point.</param>
 		/// <param name="lon">Longitude where results should be biased
 		///NOTE: supplying a lat/lon without a radius will return search results biased to that point.</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
-		/// <param name="ofs">Starting offset of the returned results within the full result set.</param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
+		/// <param name="ofs">Starting offset of the returned results within the full result set.
+		/// Maximum: 1900
+		// </param>
 		/// <param name="countrySet">Comma separated string of country codes. This will limit the search to the specified countries.</param>
-		/// <param name="radius">If radius and position are set, the results will be constrained to the defined area. The radius parameter is specified in meters.</param>
+		/// <param name="radius">If radius and position are set, the results will be constrained to the defined area. The radius parameter is specified in meters.
+		/// Maximum: 50000
+		// </param>
 		/// <param name="topLeft">Top left position of the bounding box. This is specified as a comma separated string composed of lat., lon.</param>
 		/// <param name="btmRight">Bottom right position of the bounding box. This is specified as a comma separated string composed of lat., lon.</param>
 		/// <param name="language">Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.</param>
@@ -458,8 +480,14 @@ namespace MyNS
 		///  - <b>POI</b> = Points of Interest
 		///  - <b>Str</b> = Streets
 		///  - <b>XStr</b> = Cross Streets (intersections)</param>
-		/// <param name="minFuzzyLevel">Minimum fuzziness level to be used.</param>
-		/// <param name="maxFuzzyLevel">Maximum fuzziness level to be used.</param>
+		/// <param name="minFuzzyLevel">Minimum fuzziness level to be used.
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
+		/// <param name="maxFuzzyLevel">Maximum fuzziness level to be used.
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
 		/// <param name="idxSet">A comma separated list of indexes which should be utilized for the search. Item order does not matter. Available indexes are:
 		///  - <b>Addr</b> = Address range interpolation (when there is no PAD)
 		///  - <b>Geo</b> = Geographies
@@ -516,8 +544,12 @@ namespace MyNS
 		/// <param name="query">Query string. Must be properly URL encoded.</param>
 		/// <param name="ext">Expected response format.</param>
 		/// <param name="typeahead">If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
-		/// <param name="ofs">Starting offset of the returned results within the full result set.</param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
+		/// <param name="ofs">Starting offset of the returned results within the full result set.
+		/// Maximum: 1900
+		// </param>
 		/// <param name="countrySet">Comma separated string of country codes. This will limit the search to the specified countries.</param>
 		/// <param name="lat">Latitude where results should be biased.
 		///NOTE: supplying a lat/lon without a radius will return search results biased to that point.</param>
@@ -581,7 +613,10 @@ namespace MyNS
 		/// <param name="versionNumber">Service version number. The current value is 2.</param>
 		/// <param name="position">This is specified as a comma separated string composed of lat., lon.</param>
 		/// <param name="ext">Expected response format.</param>
-		/// <param name="limit">Maximum number of cross-streets to return.</param>
+		/// <param name="limit">Maximum number of cross-streets to return.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <param name="spatialKeys">If the "spatialKeys" flag is set, the response will also contain a proprietary geospatial keys for a specified location.</param>
 		/// <param name="heading">The directional heading in degrees, usually similar to the course along a road segment. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.)</param>
 		/// <param name="radius">The maximum distance in meters from the specified position for the reverse geocoder to consider.</param>
@@ -729,7 +764,9 @@ namespace MyNS
 		/// <param name="heading">The directional heading in degrees, usually similar to the course along a road segment. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.)</param>
 		/// <param name="ext">Expected response format.</param>
 		/// <param name="typeahead">If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
 		/// <param name="multiplier">Multiplies the limit by N to gather more candidate POIs, which will then be sorted by drive distance, returning only the top candidates according to the limit.</param>
 		/// <param name="routingTimeout">Only return results that arrive from routing engine within this time limit.</param>
 		/// <param name="language">Language in which search results should be returned. Should be one of <a href="/search-api/search-api-documentation/supported-languages">supported IETF language tags</a>, case insensitive.</param>
@@ -778,8 +815,12 @@ namespace MyNS
 		/// <param name="query">Query string. Must be properly URL encoded.</param>
 		/// <param name="ext">Expected response format.</param>
 		/// <param name="typeahead">If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
-		/// <param name="ofs">Starting offset of the returned results within the full result set.</param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
+		/// <param name="ofs">Starting offset of the returned results within the full result set.
+		/// Maximum: 1900
+		// </param>
 		/// <param name="countrySet">Comma separated string of country codes. This will limit the search to the specified countries.</param>
 		/// <param name="lat">Latitude where results should be biased.
 		///NOTE: supplying a lat/lon without a radius will return search results biased to that point.</param>
@@ -846,8 +887,12 @@ namespace MyNS
 		///To perform a reverse geocode, the user can provide latitude and longitude coordinates directly in the query. More information can be found <a href="/search-api/search-api-documentation-search/fuzzy-search#AdditionalInfo">here</a>.</param>
 		/// <param name="ext">Expected response format.</param>
 		/// <param name="typeahead">If the "typeahead" flag is set, the query will be interpreted as a partial input and the search will enter <b>predictive</b> mode.</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
-		/// <param name="ofs">Starting offset of the returned results within the full result set.</param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
+		/// <param name="ofs">Starting offset of the returned results within the full result set.
+		/// Maximum: 1900
+		// </param>
 		/// <param name="countrySet">Comma separated string of country codes. This will limit the search to the specified countries.</param>
 		/// <param name="lat">Latitude where results should be biased.
 		///NOTE: supplying a lat/lon without a radius will return search results biased to that point.</param>
@@ -864,8 +909,14 @@ namespace MyNS
 		///  - <b>POI</b> = Points of Interest
 		///  - <b>Str</b> = Streets
 		///  - <b>XStr</b> = Cross Streets (intersections)</param>
-		/// <param name="minFuzzyLevel">Minimum fuzziness level to be used.</param>
-		/// <param name="maxFuzzyLevel">Maximum fuzziness level to be used.</param>
+		/// <param name="minFuzzyLevel">Minimum fuzziness level to be used.
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
+		/// <param name="maxFuzzyLevel">Maximum fuzziness level to be used.
+		/// Minimum: 1
+		/// Maximum: 4
+		// </param>
 		/// <param name="idxSet">A comma separated list of indexes which should be utilized for the search. Item order does not matter. Available indexes are:
 		///  - <b>Addr</b> = Address range interpolation (when there is no PAD)
 		///  - <b>Geo</b> = Geographies
@@ -923,8 +974,12 @@ namespace MyNS
 		/// <param name="versionNumber">Service version number. The current value is 2.</param>
 		/// <param name="query">Query string. Must be properly URL encoded.</param>
 		/// <param name="ext">Expected response format.</param>
-		/// <param name="maxDetourTime">Maximum detour time</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
+		/// <param name="maxDetourTime">Maximum detour time
+		/// Maximum: 3600
+		// </param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
 		/// <returns>OK: the search successfully returned zero or more results.</returns>
 		public async Task Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitAsync(Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitVersionNumber versionNumber, string query, Search_versionNumberCS_category__extGetByTypeaheadAndLimitAndOfsAndCountrySetAndLatAndLonAndRadiusAndTopLeftAndBtmRightAndLanguageAndIdxSetAndViewExt ext, int maxDetourTime, int limit, Search_versionNumberSearchAlongRoute_query__extPostByMaxDetourTimeAndLimitPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -962,8 +1017,12 @@ namespace MyNS
 		/// <param name="versionNumber">Service version number. The current value is 2.</param>
 		/// <param name="ext">Expected response format.</param>
 		/// <param name="countryCode">2 or 3 letter country code (e.g.: FR, ES).</param>
-		/// <param name="limit">Maximum number of search results that will be returned.</param>
-		/// <param name="ofs">Starting offset of the returned results within the full result set.</param>
+		/// <param name="limit">Maximum number of search results that will be returned.
+		/// Maximum: 100
+		// </param>
+		/// <param name="ofs">Starting offset of the returned results within the full result set.
+		/// Maximum: 1900
+		// </param>
 		/// <param name="streetNumber">The street number for the structured address.</param>
 		/// <param name="streetName">The street name for the structured address.</param>
 		/// <param name="crossStreet">The cross street name for the structured address.</param>

@@ -169,7 +169,10 @@ export namespace MyNS {
 	/** The details of an AWS instance disk. */
 	export interface AwsDiskDetails {
 
-		/** The ordinal number of the disk. */
+		/**
+		 * The ordinal number of the disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskNumber?: number | null;
 
 		/** Size in GB. */
@@ -182,7 +185,10 @@ export namespace MyNS {
 	/** The details of an AWS instance disk. */
 	export interface AwsDiskDetailsFormProperties {
 
-		/** The ordinal number of the disk. */
+		/**
+		 * The ordinal number of the disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskNumber: FormControl<number | null | undefined>,
 
 		/** Size in GB. */
@@ -286,7 +292,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -299,7 +308,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -416,10 +428,16 @@ export namespace MyNS {
 		/** The total size of the storage allocated to the VM in MB. */
 		committedStorageMb?: string | null;
 
-		/** The number of cpus the VM has. */
+		/**
+		 * The number of cpus the VM has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuCount?: number | null;
 
-		/** The number of disks the VM has. */
+		/**
+		 * The number of disks the VM has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskCount?: number | null;
 
 		/** The display name of the VM. Note that this value is not necessarily unique. */
@@ -428,7 +446,10 @@ export namespace MyNS {
 		/** The instance type of the VM. */
 		instanceType?: string | null;
 
-		/** The memory size of the VM in MB. */
+		/**
+		 * The memory size of the VM in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMb?: number | null;
 
 		/** The VM's OS. */
@@ -474,10 +495,16 @@ export namespace MyNS {
 		/** The total size of the storage allocated to the VM in MB. */
 		committedStorageMb: FormControl<string | null | undefined>,
 
-		/** The number of cpus the VM has. */
+		/**
+		 * The number of cpus the VM has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuCount: FormControl<number | null | undefined>,
 
-		/** The number of disks the VM has. */
+		/**
+		 * The number of disks the VM has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskCount: FormControl<number | null | undefined>,
 
 		/** The display name of the VM. Note that this value is not necessarily unique. */
@@ -486,7 +513,10 @@ export namespace MyNS {
 		/** The instance type of the VM. */
 		instanceType: FormControl<string | null | undefined>,
 
-		/** The memory size of the VM in MB. */
+		/**
+		 * The memory size of the VM in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMb: FormControl<number | null | undefined>,
 
 		/** The VM's OS. */
@@ -571,7 +601,10 @@ export namespace MyNS {
 		/** Azure disk ID. */
 		diskId?: string | null;
 
-		/** The ordinal number of the disk. */
+		/**
+		 * The ordinal number of the disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskNumber?: number | null;
 
 		/** Size in GB. */
@@ -584,7 +617,10 @@ export namespace MyNS {
 		/** Azure disk ID. */
 		diskId: FormControl<string | null | undefined>,
 
-		/** The ordinal number of the disk. */
+		/**
+		 * The ordinal number of the disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskNumber: FormControl<number | null | undefined>,
 
 		/** Size in GB. */
@@ -736,16 +772,25 @@ export namespace MyNS {
 		/** The VM's ComputerName. */
 		computerName?: string | null;
 
-		/** The number of cpus the VM has. */
+		/**
+		 * The number of cpus the VM has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuCount?: number | null;
 
-		/** The number of disks the VM has, including OS disk. */
+		/**
+		 * The number of disks the VM has, including OS disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskCount?: number | null;
 
 		/** Description of the data disks. */
 		disks?: Array<Disk>;
 
-		/** The memory size of the VM in MB. */
+		/**
+		 * The memory size of the VM in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMb?: number | null;
 
 		/** A message describing the VM's OS. Including OS, Publisher, Offer and Plan if applicable. */
@@ -779,13 +824,22 @@ export namespace MyNS {
 		/** The VM's ComputerName. */
 		computerName: FormControl<string | null | undefined>,
 
-		/** The number of cpus the VM has. */
+		/**
+		 * The number of cpus the VM has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuCount: FormControl<number | null | undefined>,
 
-		/** The number of disks the VM has, including OS disk. */
+		/**
+		 * The number of disks the VM has, including OS disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskCount: FormControl<number | null | undefined>,
 
-		/** The memory size of the VM in MB. */
+		/**
+		 * The memory size of the VM in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMb: FormControl<number | null | undefined>,
 
 		/** The power state of the VM at the moment list was taken. */
@@ -820,26 +874,38 @@ export namespace MyNS {
 	/** A message describing a data disk. */
 	export interface Disk {
 
-		/** The disk's Logical Unit Number (LUN). */
+		/**
+		 * The disk's Logical Unit Number (LUN).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lun?: number | null;
 
 		/** The disk name. */
 		name?: string | null;
 
-		/** The disk size in GB. */
+		/**
+		 * The disk size in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 	}
 
 	/** A message describing a data disk. */
 	export interface DiskFormProperties {
 
-		/** The disk's Logical Unit Number (LUN). */
+		/**
+		 * The disk's Logical Unit Number (LUN).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lun: FormControl<number | null | undefined>,
 
 		/** The disk name. */
 		name: FormControl<string | null | undefined>,
 
-		/** The disk size in GB. */
+		/**
+		 * The disk size in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 	}
 	export function CreateDiskFormGroup() {
@@ -900,7 +966,10 @@ export namespace MyNS {
 		/** The disk's full name. */
 		name?: string | null;
 
-		/** The disk's size in GB. */
+		/**
+		 * The disk's size in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 
 		/** The disk's type. */
@@ -913,7 +982,10 @@ export namespace MyNS {
 		/** The disk's full name. */
 		name: FormControl<string | null | undefined>,
 
-		/** The disk's size in GB. */
+		/**
+		 * The disk's size in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 
 		/** The disk's type. */
@@ -1171,7 +1243,10 @@ export namespace MyNS {
 		/** The URI of the Persistent Disk. */
 		diskUri?: string | null;
 
-		/** The ordinal number of the source VM disk. */
+		/**
+		 * The ordinal number of the source VM disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceDiskNumber?: number | null;
 	}
 
@@ -1181,7 +1256,10 @@ export namespace MyNS {
 		/** The URI of the Persistent Disk. */
 		diskUri: FormControl<string | null | undefined>,
 
-		/** The ordinal number of the source VM disk. */
+		/**
+		 * The ordinal number of the source VM disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceDiskNumber: FormControl<number | null | undefined>,
 	}
 	export function CreatePersistentDiskFormGroup() {
@@ -1357,7 +1435,10 @@ export namespace MyNS {
 	export interface ComputeScheduling {
 		automaticRestart?: boolean | null;
 
-		/** The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node. Ignored if no node_affinites are configured. */
+		/**
+		 * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node. Ignored if no node_affinites are configured.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodeCpus?: number | null;
 
 		/** A set of node affinity and anti-affinity configurations for sole tenant nodes. */
@@ -1374,7 +1455,10 @@ export namespace MyNS {
 	export interface ComputeSchedulingFormProperties {
 		automaticRestart: FormControl<boolean | null | undefined>,
 
-		/** The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node. Ignored if no node_affinites are configured. */
+		/**
+		 * The minimum number of virtual CPUs this instance will consume when running on a sole-tenant node. Ignored if no node_affinites are configured.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodeCpus: FormControl<number | null | undefined>,
 
 		/** How the instance should behave when the host machine undergoes maintenance that may temporarily impact instance performance. */
@@ -1743,7 +1827,10 @@ export namespace MyNS {
 		/** Encryption message describes the details of the applied encryption. */
 		encryption?: Encryption;
 
-		/** Required. The ordinal number of the source VM disk. */
+		/**
+		 * Required. The ordinal number of the source VM disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceDiskNumber?: number | null;
 
 		/** Details for attachment of the disk to a VM. */
@@ -1762,7 +1849,10 @@ export namespace MyNS {
 		/** The disk type to use. */
 		diskType: FormControl<BootDiskDefaultsDiskType | null | undefined>,
 
-		/** Required. The ordinal number of the source VM disk. */
+		/**
+		 * Required. The ordinal number of the source VM disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceDiskNumber: FormControl<number | null | undefined>,
 	}
 	export function CreatePersistentDiskDefaultsFormGroup() {
@@ -2067,10 +2157,16 @@ export namespace MyNS {
 		/** Output only. The name of the cutover job. */
 		name?: string | null;
 
-		/** Output only. The current progress in percentage of the cutover job. */
+		/**
+		 * Output only. The current progress in percentage of the cutover job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress?: number | null;
 
-		/** Output only. The current progress in percentage of the cutover job. */
+		/**
+		 * Output only. The current progress in percentage of the cutover job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Output only. State of the cutover job. */
@@ -2101,10 +2197,16 @@ export namespace MyNS {
 		/** Output only. The name of the cutover job. */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. The current progress in percentage of the cutover job. */
+		/**
+		 * Output only. The current progress in percentage of the cutover job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress: FormControl<number | null | undefined>,
 
-		/** Output only. The current progress in percentage of the cutover job. */
+		/**
+		 * Output only. The current progress in percentage of the cutover job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 
 		/** Output only. State of the cutover job. */
@@ -2179,7 +2281,10 @@ export namespace MyNS {
 	/** ReplicationCycle contains information about the current replication cycle status. */
 	export interface ReplicationCycle {
 
-		/** The cycle's ordinal number. */
+		/**
+		 * The cycle's ordinal number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cycleNumber?: number | null;
 
 		/** The time the replication cycle has ended. */
@@ -2191,10 +2296,16 @@ export namespace MyNS {
 		/** The identifier of the ReplicationCycle. */
 		name?: string | null;
 
-		/** The current progress in percentage of this cycle. */
+		/**
+		 * The current progress in percentage of this cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress?: number | null;
 
-		/** The current progress in percentage of this cycle. Was replaced by 'steps' field, which breaks down the cycle progression more accurately. */
+		/**
+		 * The current progress in percentage of this cycle. Was replaced by 'steps' field, which breaks down the cycle progression more accurately.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** The time the replication cycle has started. */
@@ -2216,7 +2327,10 @@ export namespace MyNS {
 	/** ReplicationCycle contains information about the current replication cycle status. */
 	export interface ReplicationCycleFormProperties {
 
-		/** The cycle's ordinal number. */
+		/**
+		 * The cycle's ordinal number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cycleNumber: FormControl<number | null | undefined>,
 
 		/** The time the replication cycle has ended. */
@@ -2225,10 +2339,16 @@ export namespace MyNS {
 		/** The identifier of the ReplicationCycle. */
 		name: FormControl<string | null | undefined>,
 
-		/** The current progress in percentage of this cycle. */
+		/**
+		 * The current progress in percentage of this cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress: FormControl<number | null | undefined>,
 
-		/** The current progress in percentage of this cycle. Was replaced by 'steps' field, which breaks down the cycle progression more accurately. */
+		/**
+		 * The current progress in percentage of this cycle. Was replaced by 'steps' field, which breaks down the cycle progression more accurately.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 
 		/** The time the replication cycle has started. */
@@ -2702,7 +2822,10 @@ export namespace MyNS {
 		/** The total size of the storage allocated to the VM in MB. */
 		committedStorageMb?: string | null;
 
-		/** The number of cpus in the VM. */
+		/**
+		 * The number of cpus in the VM.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuCount?: number | null;
 
 		/** The descriptive name of the vCenter's datacenter this VM is contained in. */
@@ -2711,7 +2834,10 @@ export namespace MyNS {
 		/** The id of the vCenter's datacenter this VM is contained in. */
 		datacenterId?: string | null;
 
-		/** The number of disks the VM has. */
+		/**
+		 * The number of disks the VM has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskCount?: number | null;
 
 		/** The display name of the VM. Note that this is not necessarily unique. */
@@ -2720,7 +2846,10 @@ export namespace MyNS {
 		/** The VM's OS. See for example https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da47f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for types of strings this might hold. */
 		guestDescription?: string | null;
 
-		/** The size of the memory of the VM in MB. */
+		/**
+		 * The size of the memory of the VM in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMb?: number | null;
 
 		/** The power state of the VM at the moment list was taken. */
@@ -2745,7 +2874,10 @@ export namespace MyNS {
 		/** The total size of the storage allocated to the VM in MB. */
 		committedStorageMb: FormControl<string | null | undefined>,
 
-		/** The number of cpus in the VM. */
+		/**
+		 * The number of cpus in the VM.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuCount: FormControl<number | null | undefined>,
 
 		/** The descriptive name of the vCenter's datacenter this VM is contained in. */
@@ -2754,7 +2886,10 @@ export namespace MyNS {
 		/** The id of the vCenter's datacenter this VM is contained in. */
 		datacenterId: FormControl<string | null | undefined>,
 
-		/** The number of disks the VM has. */
+		/**
+		 * The number of disks the VM has.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskCount: FormControl<number | null | undefined>,
 
 		/** The display name of the VM. Note that this is not necessarily unique. */
@@ -2763,7 +2898,10 @@ export namespace MyNS {
 		/** The VM's OS. See for example https://vdc-repo.vmware.com/vmwb-repository/dcr-public/da47f910-60ac-438b-8b9b-6122f4d14524/16b7274a-bf8b-4b4c-a05e-746f2aa93c8c/doc/vim.vm.GuestOsDescriptor.GuestOsIdentifier.html for types of strings this might hold. */
 		guestDescription: FormControl<string | null | undefined>,
 
-		/** The size of the memory of the VM in MB. */
+		/**
+		 * The size of the memory of the VM in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMb: FormControl<number | null | undefined>,
 
 		/** The power state of the VM at the moment list was taken. */
@@ -3294,7 +3432,10 @@ export namespace MyNS {
 	/** The details of a Vmware VM disk. */
 	export interface VmwareDiskDetails {
 
-		/** The ordinal number of the disk. */
+		/**
+		 * The ordinal number of the disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskNumber?: number | null;
 
 		/** The disk label. */
@@ -3307,7 +3448,10 @@ export namespace MyNS {
 	/** The details of a Vmware VM disk. */
 	export interface VmwareDiskDetailsFormProperties {
 
-		/** The ordinal number of the disk. */
+		/**
+		 * The ordinal number of the disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskNumber: FormControl<number | null | undefined>,
 
 		/** The disk label. */
@@ -3692,13 +3836,19 @@ export namespace MyNS {
 		/** Time frame of the report. */
 		timeFrame?: UtilizationReportTimeFrame | null;
 
-		/** Output only. Total number of VMs included in the report. */
+		/**
+		 * Output only. Total number of VMs included in the report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vmCount?: number | null;
 
 		/** List of utilization information per VM. When sent as part of the request, the "vm_id" field is used in order to specify which VMs to include in the report. In that case all other fields are ignored. */
 		vms?: Array<VmUtilizationInfo>;
 
-		/** Output only. Total number of VMs included in the report. */
+		/**
+		 * Output only. Total number of VMs included in the report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vmsCount?: number | null;
 	}
 
@@ -3726,10 +3876,16 @@ export namespace MyNS {
 		/** Time frame of the report. */
 		timeFrame: FormControl<UtilizationReportTimeFrame | null | undefined>,
 
-		/** Output only. Total number of VMs included in the report. */
+		/**
+		 * Output only. Total number of VMs included in the report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vmCount: FormControl<number | null | undefined>,
 
-		/** Output only. Total number of VMs included in the report. */
+		/**
+		 * Output only. Total number of VMs included in the report.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vmsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUtilizationReportFormGroup() {
@@ -3782,16 +3938,28 @@ export namespace MyNS {
 	/** Utilization metrics values for a single VM. */
 	export interface VmUtilizationMetrics {
 
-		/** Average CPU usage, percent. */
+		/**
+		 * Average CPU usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuAverage?: number | null;
 
-		/** Average CPU usage, percent. */
+		/**
+		 * Average CPU usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuAveragePercent?: number | null;
 
-		/** Max CPU usage, percent. */
+		/**
+		 * Max CPU usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuMax?: number | null;
 
-		/** Max CPU usage, percent. */
+		/**
+		 * Max CPU usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuMaxPercent?: number | null;
 
 		/** Average disk IO rate, in kilobytes per second. */
@@ -3806,16 +3974,28 @@ export namespace MyNS {
 		/** Max disk IO rate, in kilobytes per second. */
 		diskIoRateMaxKbps?: string | null;
 
-		/** Average memory usage, percent. */
+		/**
+		 * Average memory usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryAverage?: number | null;
 
-		/** Average memory usage, percent. */
+		/**
+		 * Average memory usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryAveragePercent?: number | null;
 
-		/** Max memory usage, percent. */
+		/**
+		 * Max memory usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMax?: number | null;
 
-		/** Max memory usage, percent. */
+		/**
+		 * Max memory usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMaxPercent?: number | null;
 
 		/** Average network throughput (combined transmit-rates and receive-rates), in kilobytes per second. */
@@ -3834,16 +4014,28 @@ export namespace MyNS {
 	/** Utilization metrics values for a single VM. */
 	export interface VmUtilizationMetricsFormProperties {
 
-		/** Average CPU usage, percent. */
+		/**
+		 * Average CPU usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuAverage: FormControl<number | null | undefined>,
 
-		/** Average CPU usage, percent. */
+		/**
+		 * Average CPU usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuAveragePercent: FormControl<number | null | undefined>,
 
-		/** Max CPU usage, percent. */
+		/**
+		 * Max CPU usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuMax: FormControl<number | null | undefined>,
 
-		/** Max CPU usage, percent. */
+		/**
+		 * Max CPU usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuMaxPercent: FormControl<number | null | undefined>,
 
 		/** Average disk IO rate, in kilobytes per second. */
@@ -3858,16 +4050,28 @@ export namespace MyNS {
 		/** Max disk IO rate, in kilobytes per second. */
 		diskIoRateMaxKbps: FormControl<string | null | undefined>,
 
-		/** Average memory usage, percent. */
+		/**
+		 * Average memory usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryAverage: FormControl<number | null | undefined>,
 
-		/** Average memory usage, percent. */
+		/**
+		 * Average memory usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryAveragePercent: FormControl<number | null | undefined>,
 
-		/** Max memory usage, percent. */
+		/**
+		 * Max memory usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMax: FormControl<number | null | undefined>,
 
-		/** Max memory usage, percent. */
+		/**
+		 * Max memory usage, percent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memoryMaxPercent: FormControl<number | null | undefined>,
 
 		/** Average network throughput (combined transmit-rates and receive-rates), in kilobytes per second. */
@@ -4205,6 +4409,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -4218,6 +4423,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -4242,6 +4448,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The filter request.
 		 * @param {string} orderBy Optional. the order by fields for the result.
 		 * @param {number} pageSize Optional. The maximum number of clone jobs to return. The service may return fewer than this value. If unspecified, at most 500 clone jobs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Required. A page token, received from a previous `ListCloneJobs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCloneJobs` must match the call that provided the page token.
 		 * @return {ListCloneJobsResponse} Successful response
 		 */
@@ -4268,6 +4475,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The filter request.
 		 * @param {string} orderBy Optional. the order by fields for the result.
 		 * @param {number} pageSize Optional. The maximum number of cutover jobs to return. The service may return fewer than this value. If unspecified, at most 500 cutover jobs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Required. A page token, received from a previous `ListCutoverJobs` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListCutoverJobs` must match the call that provided the page token.
 		 * @return {ListCutoverJobsResponse} Successful response
 		 */
@@ -4294,6 +4502,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The filter request.
 		 * @param {string} orderBy Optional. the order by fields for the result.
 		 * @param {number} pageSize Optional. The maximum number of connectors to return. The service may return fewer than this value. If unspecified, at most 500 sources will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Required. A page token, received from a previous `ListDatacenterConnectors` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDatacenterConnectors` must match the call that provided the page token.
 		 * @return {ListDatacenterConnectorsResponse} Successful response
 		 */
@@ -4320,6 +4529,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The filter request.
 		 * @param {string} orderBy Optional. the order by fields for the result.
 		 * @param {number} pageSize Optional. The maximum number of groups to return. The service may return fewer than this value. If unspecified, at most 500 groups will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Required. A page token, received from a previous `ListGroups` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListGroups` must match the call that provided the page token.
 		 * @return {ListGroupsResponse} Successful response
 		 */
@@ -4346,6 +4556,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The filter request.
 		 * @param {string} orderBy Optional. the order by fields for the result.
 		 * @param {number} pageSize Optional. The maximum number of migrating VMs to return. The service may return fewer than this value. If unspecified, at most 500 migrating VMs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Required. A page token, received from a previous `ListMigratingVms` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListMigratingVms` must match the call that provided the page token.
 		 * @param {Vmmigration_projects_locations_sources_migratingVms_listView} view Optional. The level of details of each migrating VM.
 		 * @return {ListMigratingVmsResponse} Successful response
@@ -4373,6 +4584,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The filter request.
 		 * @param {string} orderBy Optional. the order by fields for the result.
 		 * @param {number} pageSize Optional. The maximum number of replication cycles to return. The service may return fewer than this value. If unspecified, at most 100 migrating VMs will be returned. The maximum value is 100; values above 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Required. A page token, received from a previous `ListReplicationCycles` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListReplicationCycles` must match the call that provided the page token.
 		 * @return {ListReplicationCyclesResponse} Successful response
 		 */
@@ -4387,6 +4599,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The filter request.
 		 * @param {string} orderBy Optional. the order by fields for the result.
 		 * @param {number} pageSize Optional. The maximum number of sources to return. The service may return fewer than this value. If unspecified, at most 500 sources will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Required. A page token, received from a previous `ListSources` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListSources` must match the call that provided the page token.
 		 * @return {ListSourcesResponse} Successful response
 		 */
@@ -4413,6 +4626,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The filter request.
 		 * @param {string} orderBy Optional. the order by fields for the result.
 		 * @param {number} pageSize Optional. The maximum number of targets to return. The service may return fewer than this value. If unspecified, at most 500 targets will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Required. A page token, received from a previous `ListTargets` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListTargets` must match the call that provided the page token.
 		 * @return {ListTargetProjectsResponse} Successful response
 		 */
@@ -4439,6 +4653,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The filter request.
 		 * @param {string} orderBy Optional. the order by fields for the result.
 		 * @param {number} pageSize Optional. The maximum number of reports to return. The service may return fewer than this value. If unspecified, at most 500 reports will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Required. A page token, received from a previous `ListUtilizationReports` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListUtilizationReports` must match the call that provided the page token.
 		 * @param {Vmmigration_projects_locations_targetProjects_getView} view Optional. The level of details of each report. Defaults to BASIC.
 		 * @return {ListUtilizationReportsResponse} Successful response
@@ -4465,6 +4680,7 @@ export namespace MyNS {
 		 * @param {string} source Required. The name of the Source.
 		 * @param {boolean} forceRefresh If this flag is set to true, the source will be queried instead of using cached results. Using this flag will make the call slower.
 		 * @param {number} pageSize The maximum number of VMs to return. The service may return fewer than this value. For AWS source: If unspecified, at most 500 VMs will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000. For VMWare source: If unspecified, all VMs will be returned. There is no limit for maximum value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `FetchInventory` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `FetchInventory` must match the call that provided the page token.
 		 * @return {FetchInventoryResponse} Successful response
 		 */

@@ -34,9 +34,10 @@ export namespace MyNS {
 		 * Retrieve the details of a fire.com Account
 		 * You can retrieve the details of a fire.com Account by its `ican`.
 		 * Get v1/accounts/{ican}
+		 * @param {string} ican Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {GetAccountByIdReturn} An array of account objects.
 		 */
-		GetAccountById(ican: number): Observable<GetAccountByIdReturn> {
+		GetAccountById(ican: string): Observable<GetAccountByIdReturn> {
 			return this.http.get<GetAccountByIdReturn>(this.baseUri + 'v1/accounts/' + ican, {});
 		}
 
@@ -44,9 +45,12 @@ export namespace MyNS {
 		 * List transactions for an account (v1)
 		 * Retrieve a list of transactions against an account. Recommended to use the v3 endpoint instead.
 		 * Get v1/accounts/{ican}/transactions
+		 * @param {string} ican Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} limit Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} offset Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {GetTransactionsByAccountIdv1Return} An array of transaction objects for the account with a count (`total`).
 		 */
-		GetTransactionsByAccountIdv1(ican: number, limit: number, offset: number): Observable<GetTransactionsByAccountIdv1Return> {
+		GetTransactionsByAccountIdv1(ican: string, limit: string, offset: string): Observable<GetTransactionsByAccountIdv1Return> {
 			return this.http.get<GetTransactionsByAccountIdv1Return>(this.baseUri + 'v1/accounts/' + ican + '/transactions?limit=' + limit + '&offset=' + offset, {});
 		}
 
@@ -59,9 +63,13 @@ export namespace MyNS {
 		 * * `transactionTypes` - One or more of the transaction types above. This field can be repeated multiple times to allow for multiple transaction types.
 		 * * `offset` - The page offset. Defaults to 0. This is the record number that the returned list will start at. E.g. offset = 40 and limit = 20 will return records 40 to 59.
 		 * Get v1/accounts/{ican}/transactions/filter
+		 * @param {string} ican Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} dateRangeFrom Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} dateRangeTo Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} offset Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {GetTransactionsByAccountIdFilteredReturn} An array of transaction objects for the account with a count (`total`) filtered by the specified query parameter.
 		 */
-		GetTransactionsByAccountIdFiltered(ican: number, dateRangeFrom: number, dateRangeTo: number, searchKeyword: string, transactionTypes: Array<string>, offset: number): Observable<GetTransactionsByAccountIdFilteredReturn> {
+		GetTransactionsByAccountIdFiltered(ican: string, dateRangeFrom: string, dateRangeTo: string, searchKeyword: string, transactionTypes: Array<string>, offset: string): Observable<GetTransactionsByAccountIdFilteredReturn> {
 			return this.http.get<GetTransactionsByAccountIdFilteredReturn>(this.baseUri + 'v1/accounts/' + ican + '/transactions/filter?dateRangeFrom=' + dateRangeFrom + '&dateRangeTo=' + dateRangeTo + '&searchKeyword=' + (searchKeyword == null ? '' : encodeURIComponent(searchKeyword)) + '&' + transactionTypes.map(z => `transactionTypes=${encodeURIComponent(z)}`).join('&') + '&offset=' + offset, {});
 		}
 
@@ -193,9 +201,11 @@ export namespace MyNS {
 		 * List items in a Batch (Bank Transfers)
 		 * Returns a paginated list of items in the specified batch.
 		 * Get v1/batches/{batchUuid}/banktransfers
+		 * @param {string} offset Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} limit Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {GetItemsBatchBankTransferReturn} A fire.com list object of Batch Items (Internal transfers or Bank transfers).
 		 */
-		GetItemsBatchBankTransfer(batchUuid: string, offset: number | null | undefined, limit: number | null | undefined): Observable<GetItemsBatchBankTransferReturn> {
+		GetItemsBatchBankTransfer(batchUuid: string, offset: string | null | undefined, limit: string | null | undefined): Observable<GetItemsBatchBankTransferReturn> {
 			return this.http.get<GetItemsBatchBankTransferReturn>(this.baseUri + 'v1/batches/' + (batchUuid == null ? '' : encodeURIComponent(batchUuid)) + '/banktransfers&offset=' + offset + '&limit=' + limit, {});
 		}
 
@@ -226,9 +236,11 @@ export namespace MyNS {
 		 * List items in a Batch (Internal Transfers)
 		 * Returns a paginated list of items in the specified batch.
 		 * Get v1/batches/{batchUuid}/internaltransfers
+		 * @param {string} offset Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} limit Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {GetItemsBatchInternalTrasnferReturn} A fire.com list object of Batch Items (Internal transfers or Bank transfers).
 		 */
-		GetItemsBatchInternalTrasnfer(batchUuid: string, offset: number | null | undefined, limit: number | null | undefined): Observable<GetItemsBatchInternalTrasnferReturn> {
+		GetItemsBatchInternalTrasnfer(batchUuid: string, offset: string | null | undefined, limit: string | null | undefined): Observable<GetItemsBatchInternalTrasnferReturn> {
 			return this.http.get<GetItemsBatchInternalTrasnferReturn>(this.baseUri + 'v1/batches/' + (batchUuid == null ? '' : encodeURIComponent(batchUuid)) + '/internaltransfers&offset=' + offset + '&limit=' + limit, {});
 		}
 
@@ -278,9 +290,10 @@ export namespace MyNS {
 		 * Block a card
 		 * Updates status of an existing card to block which prevents any transactions being carried out with that card.
 		 * Post v1/cards/{cardId}/block
+		 * @param {string} cardId Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		BlockCard(cardId: number): Observable<HttpResponse<string>> {
+		BlockCard(cardId: string): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/cards/' + cardId + '/block', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -288,9 +301,12 @@ export namespace MyNS {
 		 * List Card Transactions.
 		 * Returns a list of cards transactions related to your fire.com card.
 		 * Get v1/cards/{cardId}/transactions
+		 * @param {string} cardId Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} limit Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} offset Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<GetListofCardTransactionsReturn>} Successful response
 		 */
-		GetListofCardTransactions(cardId: number, limit: number | null | undefined, offset: number | null | undefined): Observable<Array<GetListofCardTransactionsReturn>> {
+		GetListofCardTransactions(cardId: string, limit: string | null | undefined, offset: string | null | undefined): Observable<Array<GetListofCardTransactionsReturn>> {
 			return this.http.get<Array<GetListofCardTransactionsReturn>>(this.baseUri + 'v1/cards/' + cardId + '/transactions?limit=' + limit + '&offset=' + offset, {});
 		}
 
@@ -298,9 +314,10 @@ export namespace MyNS {
 		 * Unblock a card
 		 * Updates status of an existing card to unblock which means that transactions can be carried out with that card.
 		 * Post v1/cards/{cardId}/unblock
+		 * @param {string} cardId Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		UnblockCard(cardId: number): Observable<HttpResponse<string>> {
+		UnblockCard(cardId: string): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'v1/cards/' + cardId + '/unblock', null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -466,9 +483,10 @@ export namespace MyNS {
 		 * Returns details of a specific fire.com user.
 		 * You can retrieve the details of a specific fire.com user
 		 * Get v1/user/{userId}
+		 * @param {string} userId Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {GetUserReturn} Unique information about a User.
 		 */
-		GetUser(userId: number): Observable<GetUserReturn> {
+		GetUser(userId: string): Observable<GetUserReturn> {
 			return this.http.get<GetUserReturn>(this.baseUri + 'v1/user/' + userId, {});
 		}
 
@@ -486,9 +504,11 @@ export namespace MyNS {
 		 * List items in a Batch (International Transfers)
 		 * Returns a paginated list of items in the specified batch.
 		 * Get v2/batches/{batchUuid}/internationaltransfers
+		 * @param {string} offset Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} limit Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {GetItemsBatchInternationalTransferReturn} A fire.com list object of Batch Items (Internal transfers, Bank transfers or International transfers).
 		 */
-		GetItemsBatchInternationalTransfer(batchUuid: string, offset: number | null | undefined, limit: number | null | undefined): Observable<GetItemsBatchInternationalTransferReturn> {
+		GetItemsBatchInternationalTransfer(batchUuid: string, offset: string | null | undefined, limit: string | null | undefined): Observable<GetItemsBatchInternationalTransferReturn> {
 			return this.http.get<GetItemsBatchInternationalTransferReturn>(this.baseUri + 'v2/batches/' + (batchUuid == null ? '' : encodeURIComponent(batchUuid)) + '/internationaltransfers&offset=' + offset + '&limit=' + limit, {});
 		}
 
@@ -518,9 +538,13 @@ export namespace MyNS {
 		 * List transactions for an account (v3)
 		 * Retrieve a list of transactions against an account. Initially, use the optional `limit`, `dateRangeFrom` and `dateRangeTo` query params to limit your query, then use the embedded `next` or `prev` links in the response to get newer or older pages.
 		 * Get v3/accounts/{ican}/transactions
+		 * @param {string} ican Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} limit Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} dateRangeFrom Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} dateRangeTo Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {GetTransactionsByAccountIdv3Return} An array of transaction objects for the account with a count (`total`).
 		 */
-		GetTransactionsByAccountIdv3(ican: number, limit: number | null | undefined, dateRangeFrom: number | null | undefined, dateRangeTo: number | null | undefined, startAfter: string | null | undefined): Observable<GetTransactionsByAccountIdv3Return> {
+		GetTransactionsByAccountIdv3(ican: string, limit: string | null | undefined, dateRangeFrom: string | null | undefined, dateRangeTo: string | null | undefined, startAfter: string | null | undefined): Observable<GetTransactionsByAccountIdv3Return> {
 			return this.http.get<GetTransactionsByAccountIdv3Return>(this.baseUri + 'v3/accounts/' + ican + '/transactions?limit=' + limit + '&dateRangeFrom=' + dateRangeFrom + '&dateRangeTo=' + dateRangeTo + '&startAfter=' + (startAfter == null ? '' : encodeURIComponent(startAfter)), {});
 		}
 	}
@@ -538,8 +562,11 @@ export namespace MyNS {
 
 	export interface GetAccountsReturnAccounts {
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance?: number | null;
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance?: string | null;
 
 		/** the BIC of the account (provided if currency is EUR). */
 		cbic?: string | null;
@@ -568,8 +595,11 @@ export namespace MyNS {
 		/** Indicates that this account is for collecting Fire Open Payments only. All other payments to this account will be returned. */
 		fopOnly?: boolean | null;
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		ican?: number | null;
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican?: string | null;
 
 		/** the name the user gives to the account to help them identify it. */
 		name?: string | null;
@@ -579,8 +609,11 @@ export namespace MyNS {
 	}
 	export interface GetAccountsReturnAccountsFormProperties {
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance: FormControl<number | null | undefined>,
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance: FormControl<string | null | undefined>,
 
 		/** the BIC of the account (provided if currency is EUR). */
 		cbic: FormControl<string | null | undefined>,
@@ -606,8 +639,11 @@ export namespace MyNS {
 		/** Indicates that this account is for collecting Fire Open Payments only. All other payments to this account will be returned. */
 		fopOnly: FormControl<boolean | null | undefined>,
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		ican: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican: FormControl<string | null | undefined>,
 
 		/** the name the user gives to the account to help them identify it. */
 		name: FormControl<string | null | undefined>,
@@ -617,7 +653,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAccountsReturnAccountsFormGroup() {
 		return new FormGroup<GetAccountsReturnAccountsFormProperties>({
-			balance: new FormControl<number | null | undefined>(undefined),
+			balance: new FormControl<string | null | undefined>(undefined),
 			cbic: new FormControl<string | null | undefined>(undefined),
 			ccan: new FormControl<string | null | undefined>(undefined),
 			ciban: new FormControl<string | null | undefined>(undefined),
@@ -626,7 +662,7 @@ export namespace MyNS {
 			defaultAccount: new FormControl<boolean | null | undefined>(undefined),
 			directDebitsAllowed: new FormControl<boolean | null | undefined>(undefined),
 			fopOnly: new FormControl<boolean | null | undefined>(undefined),
-			ican: new FormControl<number | null | undefined>(undefined),
+			ican: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetAccountsReturnAccountsStatus | null | undefined>(undefined),
 		});
@@ -700,8 +736,11 @@ export namespace MyNS {
 
 	export interface GetAccountByIdReturn {
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance?: number | null;
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance?: string | null;
 
 		/** the BIC of the account (provided if currency is EUR). */
 		cbic?: string | null;
@@ -730,8 +769,11 @@ export namespace MyNS {
 		/** Indicates that this account is for collecting Fire Open Payments only. All other payments to this account will be returned. */
 		fopOnly?: boolean | null;
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		ican?: number | null;
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican?: string | null;
 
 		/** the name the user gives to the account to help them identify it. */
 		name?: string | null;
@@ -741,8 +783,11 @@ export namespace MyNS {
 	}
 	export interface GetAccountByIdReturnFormProperties {
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance: FormControl<number | null | undefined>,
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance: FormControl<string | null | undefined>,
 
 		/** the BIC of the account (provided if currency is EUR). */
 		cbic: FormControl<string | null | undefined>,
@@ -768,8 +813,11 @@ export namespace MyNS {
 		/** Indicates that this account is for collecting Fire Open Payments only. All other payments to this account will be returned. */
 		fopOnly: FormControl<boolean | null | undefined>,
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		ican: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican: FormControl<string | null | undefined>,
 
 		/** the name the user gives to the account to help them identify it. */
 		name: FormControl<string | null | undefined>,
@@ -779,7 +827,7 @@ export namespace MyNS {
 	}
 	export function CreateGetAccountByIdReturnFormGroup() {
 		return new FormGroup<GetAccountByIdReturnFormProperties>({
-			balance: new FormControl<number | null | undefined>(undefined),
+			balance: new FormControl<string | null | undefined>(undefined),
 			cbic: new FormControl<string | null | undefined>(undefined),
 			ccan: new FormControl<string | null | undefined>(undefined),
 			ciban: new FormControl<string | null | undefined>(undefined),
@@ -788,7 +836,7 @@ export namespace MyNS {
 			defaultAccount: new FormControl<boolean | null | undefined>(undefined),
 			directDebitsAllowed: new FormControl<boolean | null | undefined>(undefined),
 			fopOnly: new FormControl<boolean | null | undefined>(undefined),
-			ican: new FormControl<number | null | undefined>(undefined),
+			ican: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetAccountsReturnAccountsStatus | null | undefined>(undefined),
 		});
@@ -821,39 +869,60 @@ export namespace MyNS {
 
 	export interface GetTransactionsByAccountIdv1Return {
 
-		/** milisecond timestamp of date range to value. */
-		dateRangeTo?: number | null;
+		/**
+		 * milisecond timestamp of date range to value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dateRangeTo?: string | null;
 
-		/** The total number of card transactions in the list. */
-		total?: number | null;
+		/**
+		 * The total number of card transactions in the list.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total?: string | null;
 		GetTransactionsByAccountIdv1ReturnTransactions?: Array<GetTransactionsByAccountIdv1ReturnTransactions>;
 	}
 	export interface GetTransactionsByAccountIdv1ReturnFormProperties {
 
-		/** milisecond timestamp of date range to value. */
-		dateRangeTo: FormControl<number | null | undefined>,
+		/**
+		 * milisecond timestamp of date range to value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dateRangeTo: FormControl<string | null | undefined>,
 
-		/** The total number of card transactions in the list. */
-		total: FormControl<number | null | undefined>,
+		/**
+		 * The total number of card transactions in the list.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTransactionsByAccountIdv1ReturnFormGroup() {
 		return new FormGroup<GetTransactionsByAccountIdv1ReturnFormProperties>({
-			dateRangeTo: new FormControl<number | null | undefined>(undefined),
-			total: new FormControl<number | null | undefined>(undefined),
+			dateRangeTo: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetTransactionsByAccountIdv1ReturnTransactions {
 
-		/** Net amount lodged or taken from the account after fees and charges were applied. */
-		amountAfterCharges?: number | null;
+		/**
+		 * Net amount lodged or taken from the account after fees and charges were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges?: string | null;
 
-		/** Amount of the transaction before the fees and taxes were applied. */
-		amountBeforeCharges?: number | null;
+		/**
+		 * Amount of the transaction before the fees and taxes were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountBeforeCharges?: string | null;
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance?: number | null;
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance?: string | null;
 
 		/** Details of the batch run if this transaction was part of a batch. */
 		batchItemDetails?: GetTransactionsByAccountIdv1ReturnTransactionsBatchItemDetails;
@@ -874,14 +943,20 @@ export namespace MyNS {
 		/** An internal Fire reference for the transaction (UUID) */
 		eventUuid?: string | null;
 
-		/** The amount of the fee, if any. */
-		feeAmount?: number | null;
+		/**
+		 * The amount of the fee, if any.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount?: string | null;
 
 		/** Details of the FX trade (if applicable) */
 		fxTradeDetails?: GetTransactionsByAccountIdv1ReturnTransactionsFxTradeDetails;
 
-		/** identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version. */
-		ican?: number | null;
+		/**
+		 * identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican?: string | null;
 
 		/** The comment/reference on the transaction */
 		myRef?: string | null;
@@ -892,17 +967,26 @@ export namespace MyNS {
 		/** Extra details about the transaction based on the scheme used to make the payment. */
 		GetTransactionsByAccountIdv1ReturnTransactionsProprietarySchemeDetails?: Array<GetTransactionsByAccountIdv1ReturnTransactionsProprietarySchemeDetails>;
 
-		/** The id of the transaction. */
-		refId?: number | null;
+		/**
+		 * The id of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId?: string | null;
 
 		/** Details of the related third party involved in the transaction. */
 		relatedParty?: GetTransactionsByAccountIdv1ReturnTransactionsRelatedParty;
 
-		/** The amount of the tax, if any (e.g. Stamp duty for ATM transactions) */
-		taxAmount?: number | null;
+		/**
+		 * The amount of the tax, if any (e.g. Stamp duty for ATM transactions)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount?: string | null;
 
-		/** The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction. */
-		txnId?: number | null;
+		/**
+		 * The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		txnId?: string | null;
 
 		/**
 		 * The type of the transaction:
@@ -963,14 +1047,23 @@ export namespace MyNS {
 	}
 	export interface GetTransactionsByAccountIdv1ReturnTransactionsFormProperties {
 
-		/** Net amount lodged or taken from the account after fees and charges were applied. */
-		amountAfterCharges: FormControl<number | null | undefined>,
+		/**
+		 * Net amount lodged or taken from the account after fees and charges were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges: FormControl<string | null | undefined>,
 
-		/** Amount of the transaction before the fees and taxes were applied. */
-		amountBeforeCharges: FormControl<number | null | undefined>,
+		/**
+		 * Amount of the transaction before the fees and taxes were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountBeforeCharges: FormControl<string | null | undefined>,
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance: FormControl<number | null | undefined>,
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance: FormControl<string | null | undefined>,
 
 		/** Date of the transaction */
 		date: FormControl<Date | null | undefined>,
@@ -979,11 +1072,17 @@ export namespace MyNS {
 		/** An internal Fire reference for the transaction (UUID) */
 		eventUuid: FormControl<string | null | undefined>,
 
-		/** The amount of the fee, if any. */
-		feeAmount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the fee, if any.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount: FormControl<string | null | undefined>,
 
-		/** identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version. */
-		ican: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican: FormControl<string | null | undefined>,
 
 		/** The comment/reference on the transaction */
 		myRef: FormControl<string | null | undefined>,
@@ -991,14 +1090,23 @@ export namespace MyNS {
 		/** (FOP payments only) The FOP Payment Code that was used to make this payment. */
 		paymentRequestPublicCode: FormControl<string | null | undefined>,
 
-		/** The id of the transaction. */
-		refId: FormControl<number | null | undefined>,
+		/**
+		 * The id of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId: FormControl<string | null | undefined>,
 
-		/** The amount of the tax, if any (e.g. Stamp duty for ATM transactions) */
-		taxAmount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the tax, if any (e.g. Stamp duty for ATM transactions)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount: FormControl<string | null | undefined>,
 
-		/** The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction. */
-		txnId: FormControl<number | null | undefined>,
+		/**
+		 * The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		txnId: FormControl<string | null | undefined>,
 
 		/**
 		 * The type of the transaction:
@@ -1059,19 +1167,19 @@ export namespace MyNS {
 	}
 	export function CreateGetTransactionsByAccountIdv1ReturnTransactionsFormGroup() {
 		return new FormGroup<GetTransactionsByAccountIdv1ReturnTransactionsFormProperties>({
-			amountAfterCharges: new FormControl<number | null | undefined>(undefined),
-			amountBeforeCharges: new FormControl<number | null | undefined>(undefined),
-			balance: new FormControl<number | null | undefined>(undefined),
+			amountAfterCharges: new FormControl<string | null | undefined>(undefined),
+			amountBeforeCharges: new FormControl<string | null | undefined>(undefined),
+			balance: new FormControl<string | null | undefined>(undefined),
 			date: new FormControl<Date | null | undefined>(undefined),
 			dateAcknowledged: new FormControl<Date | null | undefined>(undefined),
 			eventUuid: new FormControl<string | null | undefined>(undefined),
-			feeAmount: new FormControl<number | null | undefined>(undefined),
-			ican: new FormControl<number | null | undefined>(undefined),
+			feeAmount: new FormControl<string | null | undefined>(undefined),
+			ican: new FormControl<string | null | undefined>(undefined),
 			myRef: new FormControl<string | null | undefined>(undefined),
 			paymentRequestPublicCode: new FormControl<string | null | undefined>(undefined),
-			refId: new FormControl<number | null | undefined>(undefined),
-			taxAmount: new FormControl<number | null | undefined>(undefined),
-			txnId: new FormControl<number | null | undefined>(undefined),
+			refId: new FormControl<string | null | undefined>(undefined),
+			taxAmount: new FormControl<string | null | undefined>(undefined),
+			txnId: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			yourRef: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1118,7 +1226,9 @@ export namespace MyNS {
 
 	export interface GetTransactionsByAccountIdv1ReturnTransactionsCard {
 		alias?: string | null;
-		cardId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		cardId?: string | null;
 		embossBusinessName?: string | null;
 		embossCardName?: string | null;
 		expiryDate?: Date | null;
@@ -1127,7 +1237,9 @@ export namespace MyNS {
 	}
 	export interface GetTransactionsByAccountIdv1ReturnTransactionsCardFormProperties {
 		alias: FormControl<string | null | undefined>,
-		cardId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		cardId: FormControl<string | null | undefined>,
 		embossBusinessName: FormControl<string | null | undefined>,
 		embossCardName: FormControl<string | null | undefined>,
 		expiryDate: FormControl<Date | null | undefined>,
@@ -1137,7 +1249,7 @@ export namespace MyNS {
 	export function CreateGetTransactionsByAccountIdv1ReturnTransactionsCardFormGroup() {
 		return new FormGroup<GetTransactionsByAccountIdv1ReturnTransactionsCardFormProperties>({
 			alias: new FormControl<string | null | undefined>(undefined),
-			cardId: new FormControl<number | null | undefined>(undefined),
+			cardId: new FormControl<string | null | undefined>(undefined),
 			embossBusinessName: new FormControl<string | null | undefined>(undefined),
 			embossCardName: new FormControl<string | null | undefined>(undefined),
 			expiryDate: new FormControl<Date | null | undefined>(undefined),
@@ -1253,8 +1365,11 @@ export namespace MyNS {
 
 	export interface GetTransactionsByAccountIdv1ReturnTransactionsFxTradeDetails {
 
-		/** amount of buyCurrency being bought */
-		buyAmount?: number | null;
+		/**
+		 * amount of buyCurrency being bought
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		buyAmount?: string | null;
 
 		/** currency which is being bought */
 		buyCurrency?: string | null;
@@ -1265,19 +1380,28 @@ export namespace MyNS {
 		/** The FX provider used to make the trade. */
 		provider?: string | null;
 
-		/** exchange rate */
-		rate4d?: number | null;
+		/**
+		 * exchange rate
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rate4d?: string | null;
 
-		/** amount of sellCurrency being sold */
-		sellAmount?: number | null;
+		/**
+		 * amount of sellCurrency being sold
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sellAmount?: string | null;
 
 		/** currency which is being sold */
 		sellCurrency?: string | null;
 	}
 	export interface GetTransactionsByAccountIdv1ReturnTransactionsFxTradeDetailsFormProperties {
 
-		/** amount of buyCurrency being bought */
-		buyAmount: FormControl<number | null | undefined>,
+		/**
+		 * amount of buyCurrency being bought
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		buyAmount: FormControl<string | null | undefined>,
 
 		/** currency which is being bought */
 		buyCurrency: FormControl<string | null | undefined>,
@@ -1288,23 +1412,29 @@ export namespace MyNS {
 		/** The FX provider used to make the trade. */
 		provider: FormControl<string | null | undefined>,
 
-		/** exchange rate */
-		rate4d: FormControl<number | null | undefined>,
+		/**
+		 * exchange rate
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rate4d: FormControl<string | null | undefined>,
 
-		/** amount of sellCurrency being sold */
-		sellAmount: FormControl<number | null | undefined>,
+		/**
+		 * amount of sellCurrency being sold
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sellAmount: FormControl<string | null | undefined>,
 
 		/** currency which is being sold */
 		sellCurrency: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTransactionsByAccountIdv1ReturnTransactionsFxTradeDetailsFormGroup() {
 		return new FormGroup<GetTransactionsByAccountIdv1ReturnTransactionsFxTradeDetailsFormProperties>({
-			buyAmount: new FormControl<number | null | undefined>(undefined),
+			buyAmount: new FormControl<string | null | undefined>(undefined),
 			buyCurrency: new FormControl<string | null | undefined>(undefined),
 			fixedSide: new FormControl<string | null | undefined>(undefined),
 			provider: new FormControl<string | null | undefined>(undefined),
-			rate4d: new FormControl<number | null | undefined>(undefined),
-			sellAmount: new FormControl<number | null | undefined>(undefined),
+			rate4d: new FormControl<string | null | undefined>(undefined),
+			sellAmount: new FormControl<string | null | undefined>(undefined),
 			sellCurrency: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1362,8 +1492,11 @@ export namespace MyNS {
 		/** the IBAN of the account (provided if currency is EUR). */
 		iban?: string | null;
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		id?: number | null;
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** the Sort Code of the account. */
 		nsc?: string | null;
@@ -1382,8 +1515,11 @@ export namespace MyNS {
 		/** the IBAN of the account (provided if currency is EUR). */
 		iban: FormControl<string | null | undefined>,
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** the Sort Code of the account. */
 		nsc: FormControl<string | null | undefined>,
@@ -1394,7 +1530,7 @@ export namespace MyNS {
 			alias: new FormControl<string | null | undefined>(undefined),
 			bic: new FormControl<string | null | undefined>(undefined),
 			iban: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			nsc: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1404,39 +1540,60 @@ export namespace MyNS {
 
 	export interface GetTransactionsByAccountIdFilteredReturn {
 
-		/** milisecond timestamp of date range to value. */
-		dateRangeTo?: number | null;
+		/**
+		 * milisecond timestamp of date range to value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dateRangeTo?: string | null;
 
-		/** The total number of card transactions in the list. */
-		total?: number | null;
+		/**
+		 * The total number of card transactions in the list.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total?: string | null;
 		GetTransactionsByAccountIdFilteredReturnTransactions?: Array<GetTransactionsByAccountIdFilteredReturnTransactions>;
 	}
 	export interface GetTransactionsByAccountIdFilteredReturnFormProperties {
 
-		/** milisecond timestamp of date range to value. */
-		dateRangeTo: FormControl<number | null | undefined>,
+		/**
+		 * milisecond timestamp of date range to value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dateRangeTo: FormControl<string | null | undefined>,
 
-		/** The total number of card transactions in the list. */
-		total: FormControl<number | null | undefined>,
+		/**
+		 * The total number of card transactions in the list.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTransactionsByAccountIdFilteredReturnFormGroup() {
 		return new FormGroup<GetTransactionsByAccountIdFilteredReturnFormProperties>({
-			dateRangeTo: new FormControl<number | null | undefined>(undefined),
-			total: new FormControl<number | null | undefined>(undefined),
+			dateRangeTo: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetTransactionsByAccountIdFilteredReturnTransactions {
 
-		/** Net amount lodged or taken from the account after fees and charges were applied. */
-		amountAfterCharges?: number | null;
+		/**
+		 * Net amount lodged or taken from the account after fees and charges were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges?: string | null;
 
-		/** Amount of the transaction before the fees and taxes were applied. */
-		amountBeforeCharges?: number | null;
+		/**
+		 * Amount of the transaction before the fees and taxes were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountBeforeCharges?: string | null;
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance?: number | null;
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance?: string | null;
 
 		/** Details of the batch run if this transaction was part of a batch. */
 		batchItemDetails?: GetTransactionsByAccountIdFilteredReturnTransactionsBatchItemDetails;
@@ -1457,14 +1614,20 @@ export namespace MyNS {
 		/** An internal Fire reference for the transaction (UUID) */
 		eventUuid?: string | null;
 
-		/** The amount of the fee, if any. */
-		feeAmount?: number | null;
+		/**
+		 * The amount of the fee, if any.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount?: string | null;
 
 		/** Details of the FX trade (if applicable) */
 		fxTradeDetails?: GetTransactionsByAccountIdFilteredReturnTransactionsFxTradeDetails;
 
-		/** identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version. */
-		ican?: number | null;
+		/**
+		 * identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican?: string | null;
 
 		/** The comment/reference on the transaction */
 		myRef?: string | null;
@@ -1475,17 +1638,26 @@ export namespace MyNS {
 		/** Extra details about the transaction based on the scheme used to make the payment. */
 		GetTransactionsByAccountIdFilteredReturnTransactionsProprietarySchemeDetails?: Array<GetTransactionsByAccountIdFilteredReturnTransactionsProprietarySchemeDetails>;
 
-		/** The id of the transaction. */
-		refId?: number | null;
+		/**
+		 * The id of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId?: string | null;
 
 		/** Details of the related third party involved in the transaction. */
 		relatedParty?: GetTransactionsByAccountIdFilteredReturnTransactionsRelatedParty;
 
-		/** The amount of the tax, if any (e.g. Stamp duty for ATM transactions) */
-		taxAmount?: number | null;
+		/**
+		 * The amount of the tax, if any (e.g. Stamp duty for ATM transactions)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount?: string | null;
 
-		/** The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction. */
-		txnId?: number | null;
+		/**
+		 * The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		txnId?: string | null;
 
 		/**
 		 * The type of the transaction:
@@ -1546,14 +1718,23 @@ export namespace MyNS {
 	}
 	export interface GetTransactionsByAccountIdFilteredReturnTransactionsFormProperties {
 
-		/** Net amount lodged or taken from the account after fees and charges were applied. */
-		amountAfterCharges: FormControl<number | null | undefined>,
+		/**
+		 * Net amount lodged or taken from the account after fees and charges were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges: FormControl<string | null | undefined>,
 
-		/** Amount of the transaction before the fees and taxes were applied. */
-		amountBeforeCharges: FormControl<number | null | undefined>,
+		/**
+		 * Amount of the transaction before the fees and taxes were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountBeforeCharges: FormControl<string | null | undefined>,
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance: FormControl<number | null | undefined>,
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance: FormControl<string | null | undefined>,
 
 		/** Date of the transaction */
 		date: FormControl<Date | null | undefined>,
@@ -1562,11 +1743,17 @@ export namespace MyNS {
 		/** An internal Fire reference for the transaction (UUID) */
 		eventUuid: FormControl<string | null | undefined>,
 
-		/** The amount of the fee, if any. */
-		feeAmount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the fee, if any.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount: FormControl<string | null | undefined>,
 
-		/** identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version. */
-		ican: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican: FormControl<string | null | undefined>,
 
 		/** The comment/reference on the transaction */
 		myRef: FormControl<string | null | undefined>,
@@ -1574,14 +1761,23 @@ export namespace MyNS {
 		/** (FOP payments only) The FOP Payment Code that was used to make this payment. */
 		paymentRequestPublicCode: FormControl<string | null | undefined>,
 
-		/** The id of the transaction. */
-		refId: FormControl<number | null | undefined>,
+		/**
+		 * The id of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId: FormControl<string | null | undefined>,
 
-		/** The amount of the tax, if any (e.g. Stamp duty for ATM transactions) */
-		taxAmount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the tax, if any (e.g. Stamp duty for ATM transactions)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount: FormControl<string | null | undefined>,
 
-		/** The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction. */
-		txnId: FormControl<number | null | undefined>,
+		/**
+		 * The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		txnId: FormControl<string | null | undefined>,
 
 		/**
 		 * The type of the transaction:
@@ -1642,19 +1838,19 @@ export namespace MyNS {
 	}
 	export function CreateGetTransactionsByAccountIdFilteredReturnTransactionsFormGroup() {
 		return new FormGroup<GetTransactionsByAccountIdFilteredReturnTransactionsFormProperties>({
-			amountAfterCharges: new FormControl<number | null | undefined>(undefined),
-			amountBeforeCharges: new FormControl<number | null | undefined>(undefined),
-			balance: new FormControl<number | null | undefined>(undefined),
+			amountAfterCharges: new FormControl<string | null | undefined>(undefined),
+			amountBeforeCharges: new FormControl<string | null | undefined>(undefined),
+			balance: new FormControl<string | null | undefined>(undefined),
 			date: new FormControl<Date | null | undefined>(undefined),
 			dateAcknowledged: new FormControl<Date | null | undefined>(undefined),
 			eventUuid: new FormControl<string | null | undefined>(undefined),
-			feeAmount: new FormControl<number | null | undefined>(undefined),
-			ican: new FormControl<number | null | undefined>(undefined),
+			feeAmount: new FormControl<string | null | undefined>(undefined),
+			ican: new FormControl<string | null | undefined>(undefined),
 			myRef: new FormControl<string | null | undefined>(undefined),
 			paymentRequestPublicCode: new FormControl<string | null | undefined>(undefined),
-			refId: new FormControl<number | null | undefined>(undefined),
-			taxAmount: new FormControl<number | null | undefined>(undefined),
-			txnId: new FormControl<number | null | undefined>(undefined),
+			refId: new FormControl<string | null | undefined>(undefined),
+			taxAmount: new FormControl<string | null | undefined>(undefined),
+			txnId: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			yourRef: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1701,7 +1897,9 @@ export namespace MyNS {
 
 	export interface GetTransactionsByAccountIdFilteredReturnTransactionsCard {
 		alias?: string | null;
-		cardId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		cardId?: string | null;
 		embossBusinessName?: string | null;
 		embossCardName?: string | null;
 		expiryDate?: Date | null;
@@ -1710,7 +1908,9 @@ export namespace MyNS {
 	}
 	export interface GetTransactionsByAccountIdFilteredReturnTransactionsCardFormProperties {
 		alias: FormControl<string | null | undefined>,
-		cardId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		cardId: FormControl<string | null | undefined>,
 		embossBusinessName: FormControl<string | null | undefined>,
 		embossCardName: FormControl<string | null | undefined>,
 		expiryDate: FormControl<Date | null | undefined>,
@@ -1720,7 +1920,7 @@ export namespace MyNS {
 	export function CreateGetTransactionsByAccountIdFilteredReturnTransactionsCardFormGroup() {
 		return new FormGroup<GetTransactionsByAccountIdFilteredReturnTransactionsCardFormProperties>({
 			alias: new FormControl<string | null | undefined>(undefined),
-			cardId: new FormControl<number | null | undefined>(undefined),
+			cardId: new FormControl<string | null | undefined>(undefined),
 			embossBusinessName: new FormControl<string | null | undefined>(undefined),
 			embossCardName: new FormControl<string | null | undefined>(undefined),
 			expiryDate: new FormControl<Date | null | undefined>(undefined),
@@ -1836,8 +2036,11 @@ export namespace MyNS {
 
 	export interface GetTransactionsByAccountIdFilteredReturnTransactionsFxTradeDetails {
 
-		/** amount of buyCurrency being bought */
-		buyAmount?: number | null;
+		/**
+		 * amount of buyCurrency being bought
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		buyAmount?: string | null;
 
 		/** currency which is being bought */
 		buyCurrency?: string | null;
@@ -1848,19 +2051,28 @@ export namespace MyNS {
 		/** The FX provider used to make the trade. */
 		provider?: string | null;
 
-		/** exchange rate */
-		rate4d?: number | null;
+		/**
+		 * exchange rate
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rate4d?: string | null;
 
-		/** amount of sellCurrency being sold */
-		sellAmount?: number | null;
+		/**
+		 * amount of sellCurrency being sold
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sellAmount?: string | null;
 
 		/** currency which is being sold */
 		sellCurrency?: string | null;
 	}
 	export interface GetTransactionsByAccountIdFilteredReturnTransactionsFxTradeDetailsFormProperties {
 
-		/** amount of buyCurrency being bought */
-		buyAmount: FormControl<number | null | undefined>,
+		/**
+		 * amount of buyCurrency being bought
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		buyAmount: FormControl<string | null | undefined>,
 
 		/** currency which is being bought */
 		buyCurrency: FormControl<string | null | undefined>,
@@ -1871,23 +2083,29 @@ export namespace MyNS {
 		/** The FX provider used to make the trade. */
 		provider: FormControl<string | null | undefined>,
 
-		/** exchange rate */
-		rate4d: FormControl<number | null | undefined>,
+		/**
+		 * exchange rate
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rate4d: FormControl<string | null | undefined>,
 
-		/** amount of sellCurrency being sold */
-		sellAmount: FormControl<number | null | undefined>,
+		/**
+		 * amount of sellCurrency being sold
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sellAmount: FormControl<string | null | undefined>,
 
 		/** currency which is being sold */
 		sellCurrency: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTransactionsByAccountIdFilteredReturnTransactionsFxTradeDetailsFormGroup() {
 		return new FormGroup<GetTransactionsByAccountIdFilteredReturnTransactionsFxTradeDetailsFormProperties>({
-			buyAmount: new FormControl<number | null | undefined>(undefined),
+			buyAmount: new FormControl<string | null | undefined>(undefined),
 			buyCurrency: new FormControl<string | null | undefined>(undefined),
 			fixedSide: new FormControl<string | null | undefined>(undefined),
 			provider: new FormControl<string | null | undefined>(undefined),
-			rate4d: new FormControl<number | null | undefined>(undefined),
-			sellAmount: new FormControl<number | null | undefined>(undefined),
+			rate4d: new FormControl<string | null | undefined>(undefined),
+			sellAmount: new FormControl<string | null | undefined>(undefined),
 			sellCurrency: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1945,8 +2163,11 @@ export namespace MyNS {
 		/** the IBAN of the account (provided if currency is EUR). */
 		iban?: string | null;
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		id?: number | null;
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** the Sort Code of the account. */
 		nsc?: string | null;
@@ -1965,8 +2186,11 @@ export namespace MyNS {
 		/** the IBAN of the account (provided if currency is EUR). */
 		iban: FormControl<string | null | undefined>,
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** the Sort Code of the account. */
 		nsc: FormControl<string | null | undefined>,
@@ -1977,7 +2201,7 @@ export namespace MyNS {
 			alias: new FormControl<string | null | undefined>(undefined),
 			bic: new FormControl<string | null | undefined>(undefined),
 			iban: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			nsc: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1994,13 +2218,22 @@ export namespace MyNS {
 		/** The date that this API Application can no longer be used. */
 		expiry?: Date | null;
 
-		/** The ICAN of one of your Fire accounts. Restrict this API Application to a certan account. */
-		ican?: number | null;
+		/**
+		 * The ICAN of one of your Fire accounts. Restrict this API Application to a certan account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican?: string | null;
 
-		/** Number of approvals required to create a payee in a batch */
+		/**
+		 * Number of approvals required to create a payee in a batch
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfPayeeApprovalsRequired?: number | null;
 
-		/** Number of approvals required to process a payment in a batch */
+		/**
+		 * Number of approvals required to process a payment in a batch
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfPaymentApprovalsRequired?: number | null;
 
 		/** The list of permissions required */
@@ -2017,13 +2250,22 @@ export namespace MyNS {
 		/** The date that this API Application can no longer be used. */
 		expiry: FormControl<Date | null | undefined>,
 
-		/** The ICAN of one of your Fire accounts. Restrict this API Application to a certan account. */
-		ican: FormControl<number | null | undefined>,
+		/**
+		 * The ICAN of one of your Fire accounts. Restrict this API Application to a certan account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican: FormControl<string | null | undefined>,
 
-		/** Number of approvals required to create a payee in a batch */
+		/**
+		 * Number of approvals required to create a payee in a batch
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfPayeeApprovalsRequired: FormControl<number | null | undefined>,
 
-		/** Number of approvals required to process a payment in a batch */
+		/**
+		 * Number of approvals required to process a payment in a batch
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfPaymentApprovalsRequired: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateApiApplicationPostBodyFormGroup() {
@@ -2031,7 +2273,7 @@ export namespace MyNS {
 			applicationName: new FormControl<string | null | undefined>(undefined),
 			enabled: new FormControl<boolean | null | undefined>(undefined),
 			expiry: new FormControl<Date | null | undefined>(undefined),
-			ican: new FormControl<number | null | undefined>(undefined),
+			ican: new FormControl<string | null | undefined>(undefined),
 			numberOfPayeeApprovalsRequired: new FormControl<number | null | undefined>(undefined),
 			numberOfPaymentApprovalsRequired: new FormControl<number | null | undefined>(undefined),
 		});
@@ -2040,8 +2282,11 @@ export namespace MyNS {
 
 	export interface CreateApiApplicationReturn {
 
-		/** The ID of the API Application */
-		applicationId?: number | null;
+		/**
+		 * The ID of the API Application
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		applicationId?: string | null;
 
 		/** The Client ID of the new API Application */
 		clientId?: string | null;
@@ -2055,13 +2300,22 @@ export namespace MyNS {
 		/** The date that this API Application can no longer be used. */
 		expiry?: Date | null;
 
-		/** The ICAN of one of your Fire accounts. Restrict this API Application to a certan account. */
-		ican?: number | null;
+		/**
+		 * The ICAN of one of your Fire accounts. Restrict this API Application to a certan account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican?: string | null;
 
-		/** Number of approvals required to create a payee in a batch */
+		/**
+		 * Number of approvals required to create a payee in a batch
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfPayeeApprovalsRequired?: number | null;
 
-		/** Number of approvals required to process a payment in a batch */
+		/**
+		 * Number of approvals required to process a payment in a batch
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfPaymentApprovalsRequired?: number | null;
 
 		/** The Refresh Token of the new API Application */
@@ -2069,8 +2323,11 @@ export namespace MyNS {
 	}
 	export interface CreateApiApplicationReturnFormProperties {
 
-		/** The ID of the API Application */
-		applicationId: FormControl<number | null | undefined>,
+		/**
+		 * The ID of the API Application
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		applicationId: FormControl<string | null | undefined>,
 
 		/** The Client ID of the new API Application */
 		clientId: FormControl<string | null | undefined>,
@@ -2084,13 +2341,22 @@ export namespace MyNS {
 		/** The date that this API Application can no longer be used. */
 		expiry: FormControl<Date | null | undefined>,
 
-		/** The ICAN of one of your Fire accounts. Restrict this API Application to a certan account. */
-		ican: FormControl<number | null | undefined>,
+		/**
+		 * The ICAN of one of your Fire accounts. Restrict this API Application to a certan account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican: FormControl<string | null | undefined>,
 
-		/** Number of approvals required to create a payee in a batch */
+		/**
+		 * Number of approvals required to create a payee in a batch
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfPayeeApprovalsRequired: FormControl<number | null | undefined>,
 
-		/** Number of approvals required to process a payment in a batch */
+		/**
+		 * Number of approvals required to process a payment in a batch
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfPaymentApprovalsRequired: FormControl<number | null | undefined>,
 
 		/** The Refresh Token of the new API Application */
@@ -2098,12 +2364,12 @@ export namespace MyNS {
 	}
 	export function CreateCreateApiApplicationReturnFormGroup() {
 		return new FormGroup<CreateApiApplicationReturnFormProperties>({
-			applicationId: new FormControl<number | null | undefined>(undefined),
+			applicationId: new FormControl<string | null | undefined>(undefined),
 			clientId: new FormControl<string | null | undefined>(undefined),
 			clientKey: new FormControl<string | null | undefined>(undefined),
 			enabled: new FormControl<boolean | null | undefined>(undefined),
 			expiry: new FormControl<Date | null | undefined>(undefined),
-			ican: new FormControl<number | null | undefined>(undefined),
+			ican: new FormControl<string | null | undefined>(undefined),
 			numberOfPayeeApprovalsRequired: new FormControl<number | null | undefined>(undefined),
 			numberOfPaymentApprovalsRequired: new FormControl<number | null | undefined>(undefined),
 			refreshToken: new FormControl<string | null | undefined>(undefined),
@@ -2122,8 +2388,11 @@ export namespace MyNS {
 		/** Always `AccessToken`. (This will change to `refresh_token` in a future release.) */
 		grantType?: AuthenticatePostBodyGrantType | null;
 
-		/** A random non-repeating number used as a salt for the `clientSecret` below. The simplest nonce is a unix time. */
-		nonce?: number | null;
+		/**
+		 * A random non-repeating number used as a salt for the `clientSecret` below. The simplest nonce is a unix time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nonce?: string | null;
 
 		/** The Refresh Token for this API Application */
 		refreshToken?: string | null;
@@ -2139,8 +2408,11 @@ export namespace MyNS {
 		/** Always `AccessToken`. (This will change to `refresh_token` in a future release.) */
 		grantType: FormControl<AuthenticatePostBodyGrantType | null | undefined>,
 
-		/** A random non-repeating number used as a salt for the `clientSecret` below. The simplest nonce is a unix time. */
-		nonce: FormControl<number | null | undefined>,
+		/**
+		 * A random non-repeating number used as a salt for the `clientSecret` below. The simplest nonce is a unix time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		nonce: FormControl<string | null | undefined>,
 
 		/** The Refresh Token for this API Application */
 		refreshToken: FormControl<string | null | undefined>,
@@ -2150,7 +2422,7 @@ export namespace MyNS {
 			clientId: new FormControl<string | null | undefined>(undefined),
 			clientSecret: new FormControl<string | null | undefined>(undefined),
 			grantType: new FormControl<AuthenticatePostBodyGrantType | null | undefined>(undefined),
-			nonce: new FormControl<number | null | undefined>(undefined),
+			nonce: new FormControl<string | null | undefined>(undefined),
 			refreshToken: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2163,11 +2435,17 @@ export namespace MyNS {
 		/** The App Bearer Access Token you can use in further API calls. */
 		accessToken?: string | null;
 
-		/** The ID of the application you are using. */
-		apiApplicationId?: number | null;
+		/**
+		 * The ID of the application you are using.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		apiApplicationId?: string | null;
 
-		/** The business ID for the business. */
-		businessId?: number | null;
+		/**
+		 * The business ID for the business.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		businessId?: string | null;
 
 		/** The expiry date and time for this token (ISO-8601). */
 		expiry?: Date | null;
@@ -2180,11 +2458,17 @@ export namespace MyNS {
 		/** The App Bearer Access Token you can use in further API calls. */
 		accessToken: FormControl<string | null | undefined>,
 
-		/** The ID of the application you are using. */
-		apiApplicationId: FormControl<number | null | undefined>,
+		/**
+		 * The ID of the application you are using.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		apiApplicationId: FormControl<string | null | undefined>,
 
-		/** The business ID for the business. */
-		businessId: FormControl<number | null | undefined>,
+		/**
+		 * The business ID for the business.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		businessId: FormControl<string | null | undefined>,
 
 		/** The expiry date and time for this token (ISO-8601). */
 		expiry: FormControl<Date | null | undefined>,
@@ -2192,8 +2476,8 @@ export namespace MyNS {
 	export function CreateAuthenticateReturnFormGroup() {
 		return new FormGroup<AuthenticateReturnFormProperties>({
 			accessToken: new FormControl<string | null | undefined>(undefined),
-			apiApplicationId: new FormControl<number | null | undefined>(undefined),
-			businessId: new FormControl<number | null | undefined>(undefined),
+			apiApplicationId: new FormControl<string | null | undefined>(undefined),
+			businessId: new FormControl<string | null | undefined>(undefined),
 			expiry: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -2202,12 +2486,18 @@ export namespace MyNS {
 	export interface GetListOfAspspsReturn {
 		GetListOfAspspsReturnAspsps?: Array<GetListOfAspspsReturnAspsps>;
 
-		/** The total number of ASPSPs in the list. */
+		/**
+		 * The total number of ASPSPs in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface GetListOfAspspsReturnFormProperties {
 
-		/** The total number of ASPSPs in the list. */
+		/**
+		 * The total number of ASPSPs in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetListOfAspspsReturnFormGroup() {
@@ -2325,28 +2615,40 @@ export namespace MyNS {
 	export interface GetBatchesReturn {
 		GetBatchesReturnItems?: Array<GetBatchesReturnItems>;
 
-		/** total number of batches returned */
-		total?: number | null;
+		/**
+		 * total number of batches returned
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total?: string | null;
 	}
 	export interface GetBatchesReturnFormProperties {
 
-		/** total number of batches returned */
-		total: FormControl<number | null | undefined>,
+		/**
+		 * total number of batches returned
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateGetBatchesReturnFormGroup() {
 		return new FormGroup<GetBatchesReturnFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetBatchesReturnItems {
 
-		/** The amount of funds to send. In cent or pence */
-		amount?: number | null;
+		/**
+		 * The amount of funds to send. In cent or pence
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
-		/** The amount of the transfer after fees and taxes. in pence or cent. */
-		amountAfterCharges?: number | null;
+		/**
+		 * The amount of the transfer after fees and taxes. in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges?: string | null;
 
 		/** A UUID for this item. */
 		batchItemUuid?: string | null;
@@ -2354,14 +2656,23 @@ export namespace MyNS {
 		/** The datestamp the batch was created - ISO format - e.g. 2018-04-04T00:53:21.910Z */
 		dateCreated?: Date | null;
 
-		/** The fee charged by fire.com for the payment. In pence or cent. */
-		feeAmount?: number | null;
+		/**
+		 * The fee charged by fire.com for the payment. In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount?: string | null;
 
-		/** The Fire account ID of the source account. */
-		icanFrom?: number | null;
+		/**
+		 * The Fire account ID of the source account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom?: string | null;
 
-		/** The Fire account ID for the fire.com account the funds are sent to. */
-		icanTo?: number | null;
+		/**
+		 * The Fire account ID for the fire.com account the funds are sent to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo?: string | null;
 
 		/** The datestamp of the last action on this batch - ISO format - e.g. 2018-04-04T10:48:53.540Z */
 		lastUpdated?: Date | null;
@@ -2369,8 +2680,11 @@ export namespace MyNS {
 		/** The reference on the transaction. */
 		ref?: string | null;
 
-		/** The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint. */
-		refId?: number | null;
+		/**
+		 * The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId?: string | null;
 
 		/** The outcome of the attempted transaction. */
 		result?: GetBatchesReturnItemsResult;
@@ -2378,16 +2692,25 @@ export namespace MyNS {
 		/** status of the batch if internal trasnfer */
 		status?: GetBatchesBatchStatus | null;
 
-		/** Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent. */
-		taxAmount?: number | null;
+		/**
+		 * Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount?: string | null;
 	}
 	export interface GetBatchesReturnItemsFormProperties {
 
-		/** The amount of funds to send. In cent or pence */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of funds to send. In cent or pence
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
-		/** The amount of the transfer after fees and taxes. in pence or cent. */
-		amountAfterCharges: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the transfer after fees and taxes. in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges: FormControl<string | null | undefined>,
 
 		/** A UUID for this item. */
 		batchItemUuid: FormControl<string | null | undefined>,
@@ -2395,14 +2718,23 @@ export namespace MyNS {
 		/** The datestamp the batch was created - ISO format - e.g. 2018-04-04T00:53:21.910Z */
 		dateCreated: FormControl<Date | null | undefined>,
 
-		/** The fee charged by fire.com for the payment. In pence or cent. */
-		feeAmount: FormControl<number | null | undefined>,
+		/**
+		 * The fee charged by fire.com for the payment. In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount: FormControl<string | null | undefined>,
 
-		/** The Fire account ID of the source account. */
-		icanFrom: FormControl<number | null | undefined>,
+		/**
+		 * The Fire account ID of the source account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom: FormControl<string | null | undefined>,
 
-		/** The Fire account ID for the fire.com account the funds are sent to. */
-		icanTo: FormControl<number | null | undefined>,
+		/**
+		 * The Fire account ID for the fire.com account the funds are sent to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo: FormControl<string | null | undefined>,
 
 		/** The datestamp of the last action on this batch - ISO format - e.g. 2018-04-04T10:48:53.540Z */
 		lastUpdated: FormControl<Date | null | undefined>,
@@ -2410,44 +2742,54 @@ export namespace MyNS {
 		/** The reference on the transaction. */
 		ref: FormControl<string | null | undefined>,
 
-		/** The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint. */
-		refId: FormControl<number | null | undefined>,
+		/**
+		 * The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId: FormControl<string | null | undefined>,
 
 		/** status of the batch if internal trasnfer */
 		status: FormControl<GetBatchesBatchStatus | null | undefined>,
 
-		/** Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent. */
-		taxAmount: FormControl<number | null | undefined>,
+		/**
+		 * Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount: FormControl<string | null | undefined>,
 	}
 	export function CreateGetBatchesReturnItemsFormGroup() {
 		return new FormGroup<GetBatchesReturnItemsFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined),
-			amountAfterCharges: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
+			amountAfterCharges: new FormControl<string | null | undefined>(undefined),
 			batchItemUuid: new FormControl<string | null | undefined>(undefined),
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
-			feeAmount: new FormControl<number | null | undefined>(undefined),
-			icanFrom: new FormControl<number | null | undefined>(undefined),
-			icanTo: new FormControl<number | null | undefined>(undefined),
+			feeAmount: new FormControl<string | null | undefined>(undefined),
+			icanFrom: new FormControl<string | null | undefined>(undefined),
+			icanTo: new FormControl<string | null | undefined>(undefined),
 			lastUpdated: new FormControl<Date | null | undefined>(undefined),
 			ref: new FormControl<string | null | undefined>(undefined),
-			refId: new FormControl<number | null | undefined>(undefined),
+			refId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetBatchesBatchStatus | null | undefined>(undefined),
-			taxAmount: new FormControl<number | null | undefined>(undefined),
+			taxAmount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetBatchesReturnItemsResult {
-		code?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		code?: string | null;
 		message?: string | null;
 	}
 	export interface GetBatchesReturnItemsResultFormProperties {
-		code: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		code: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateGetBatchesReturnItemsResultFormGroup() {
 		return new FormGroup<GetBatchesReturnItemsResultFormProperties>({
-			code: new FormControl<number | null | undefined>(undefined),
+			code: new FormControl<string | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2540,14 +2882,23 @@ export namespace MyNS {
 		/** The datestamp of the last action on this batch - ISO format - e.g. 2018-04-04T10:48:53.540Z */
 		lastUpdated?: Date | null;
 
-		/** Once processed, a count of the number of items that didn’t process successfully. */
-		numberOfItemsFailed?: number | null;
+		/**
+		 * Once processed, a count of the number of items that didn’t process successfully.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfItemsFailed?: string | null;
 
-		/** A count of the number of items in the batch */
-		numberOfItemsSubmitted?: number | null;
+		/**
+		 * A count of the number of items in the batch
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfItemsSubmitted?: string | null;
 
-		/** Once processed, a count of the number of items that processed successfully. */
-		numberOfItemsSucceeded?: number | null;
+		/**
+		 * Once processed, a count of the number of items that processed successfully.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfItemsSucceeded?: string | null;
 
 		/** A string describing where the batch originated - for instance the name of the API token that was used, or showing that the batch was automatically created by fire.com (in the case of a new payee batch). */
 		sourceName?: string | null;
@@ -2558,14 +2909,23 @@ export namespace MyNS {
 		/** The type of the batch - can be one of the listed enums */
 		type?: GetBatchesBatchTypes | null;
 
-		/** Once processed, a sum of the value of items that didn’t process successfully. Specified in pence or cent. */
-		valueOfItemsFailed?: number | null;
+		/**
+		 * Once processed, a sum of the value of items that didn’t process successfully. Specified in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valueOfItemsFailed?: string | null;
 
-		/** A sum of the value of items in the batch. Specified in pence or cent. */
-		valueOfItemsSubmitted?: number | null;
+		/**
+		 * A sum of the value of items in the batch. Specified in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valueOfItemsSubmitted?: string | null;
 
-		/** Once processed, a sum of the value of items that processed successfully. Specified in pence or cent. */
-		valueOfItemsSucceeded?: number | null;
+		/**
+		 * Once processed, a sum of the value of items that processed successfully. Specified in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valueOfItemsSucceeded?: string | null;
 	}
 	export interface GetDetailsSingleBatchReturnFormProperties {
 
@@ -2590,14 +2950,23 @@ export namespace MyNS {
 		/** The datestamp of the last action on this batch - ISO format - e.g. 2018-04-04T10:48:53.540Z */
 		lastUpdated: FormControl<Date | null | undefined>,
 
-		/** Once processed, a count of the number of items that didn’t process successfully. */
-		numberOfItemsFailed: FormControl<number | null | undefined>,
+		/**
+		 * Once processed, a count of the number of items that didn’t process successfully.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfItemsFailed: FormControl<string | null | undefined>,
 
-		/** A count of the number of items in the batch */
-		numberOfItemsSubmitted: FormControl<number | null | undefined>,
+		/**
+		 * A count of the number of items in the batch
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfItemsSubmitted: FormControl<string | null | undefined>,
 
-		/** Once processed, a count of the number of items that processed successfully. */
-		numberOfItemsSucceeded: FormControl<number | null | undefined>,
+		/**
+		 * Once processed, a count of the number of items that processed successfully.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfItemsSucceeded: FormControl<string | null | undefined>,
 
 		/** A string describing where the batch originated - for instance the name of the API token that was used, or showing that the batch was automatically created by fire.com (in the case of a new payee batch). */
 		sourceName: FormControl<string | null | undefined>,
@@ -2608,14 +2977,23 @@ export namespace MyNS {
 		/** The type of the batch - can be one of the listed enums */
 		type: FormControl<GetBatchesBatchTypes | null | undefined>,
 
-		/** Once processed, a sum of the value of items that didn’t process successfully. Specified in pence or cent. */
-		valueOfItemsFailed: FormControl<number | null | undefined>,
+		/**
+		 * Once processed, a sum of the value of items that didn’t process successfully. Specified in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valueOfItemsFailed: FormControl<string | null | undefined>,
 
-		/** A sum of the value of items in the batch. Specified in pence or cent. */
-		valueOfItemsSubmitted: FormControl<number | null | undefined>,
+		/**
+		 * A sum of the value of items in the batch. Specified in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valueOfItemsSubmitted: FormControl<string | null | undefined>,
 
-		/** Once processed, a sum of the value of items that processed successfully. Specified in pence or cent. */
-		valueOfItemsSucceeded: FormControl<number | null | undefined>,
+		/**
+		 * Once processed, a sum of the value of items that processed successfully. Specified in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valueOfItemsSucceeded: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDetailsSingleBatchReturnFormGroup() {
 		return new FormGroup<GetDetailsSingleBatchReturnFormProperties>({
@@ -2626,15 +3004,15 @@ export namespace MyNS {
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
 			jobNumber: new FormControl<string | null | undefined>(undefined),
 			lastUpdated: new FormControl<Date | null | undefined>(undefined),
-			numberOfItemsFailed: new FormControl<number | null | undefined>(undefined),
-			numberOfItemsSubmitted: new FormControl<number | null | undefined>(undefined),
-			numberOfItemsSucceeded: new FormControl<number | null | undefined>(undefined),
+			numberOfItemsFailed: new FormControl<string | null | undefined>(undefined),
+			numberOfItemsSubmitted: new FormControl<string | null | undefined>(undefined),
+			numberOfItemsSucceeded: new FormControl<string | null | undefined>(undefined),
 			sourceName: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetDetailsSingleBatchReturnStatus | null | undefined>(undefined),
 			type: new FormControl<GetBatchesBatchTypes | null | undefined>(undefined),
-			valueOfItemsFailed: new FormControl<number | null | undefined>(undefined),
-			valueOfItemsSubmitted: new FormControl<number | null | undefined>(undefined),
-			valueOfItemsSucceeded: new FormControl<number | null | undefined>(undefined),
+			valueOfItemsFailed: new FormControl<string | null | undefined>(undefined),
+			valueOfItemsSubmitted: new FormControl<string | null | undefined>(undefined),
+			valueOfItemsSucceeded: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2664,8 +3042,11 @@ export namespace MyNS {
 		mobileNumber?: string | null;
 		status?: string | null;
 
-		/** User id assigned by fire.com */
-		userId?: number | null;
+		/**
+		 * User id assigned by fire.com
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userId?: string | null;
 	}
 	export interface GetListofApproversForBatchReturnApprovalsFormProperties {
 
@@ -2679,8 +3060,11 @@ export namespace MyNS {
 		mobileNumber: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
 
-		/** User id assigned by fire.com */
-		userId: FormControl<number | null | undefined>,
+		/**
+		 * User id assigned by fire.com
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetListofApproversForBatchReturnApprovalsFormGroup() {
 		return new FormGroup<GetListofApproversForBatchReturnApprovalsFormProperties>({
@@ -2690,7 +3074,7 @@ export namespace MyNS {
 			lastUpdated: new FormControl<Date | null | undefined>(undefined),
 			mobileNumber: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2698,28 +3082,40 @@ export namespace MyNS {
 	export interface GetItemsBatchBankTransferReturn {
 		GetItemsBatchBankTransferReturnItems?: Array<GetItemsBatchBankTransferReturnItems>;
 
-		/** total number of batches returned */
-		total?: number | null;
+		/**
+		 * total number of batches returned
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total?: string | null;
 	}
 	export interface GetItemsBatchBankTransferReturnFormProperties {
 
-		/** total number of batches returned */
-		total: FormControl<number | null | undefined>,
+		/**
+		 * total number of batches returned
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateGetItemsBatchBankTransferReturnFormGroup() {
 		return new FormGroup<GetItemsBatchBankTransferReturnFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetItemsBatchBankTransferReturnItems {
 
-		/** The amount of funds to send. In cent or pence */
-		amount?: number | null;
+		/**
+		 * The amount of funds to send. In cent or pence
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
-		/** The amount of the transfer after fees and taxes. in pence or cent. */
-		amountAfterCharges?: number | null;
+		/**
+		 * The amount of the transfer after fees and taxes. in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges?: string | null;
 
 		/** A UUID for this item. */
 		batchItemUuid?: string | null;
@@ -2727,14 +3123,23 @@ export namespace MyNS {
 		/** The datestamp the batch was created - ISO format - e.g. 2018-04-04T00:53:21.910Z */
 		dateCreated?: Date | null;
 
-		/** The fee charged by fire.com for the payment. In pence or cent. */
-		feeAmount?: number | null;
+		/**
+		 * The fee charged by fire.com for the payment. In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount?: string | null;
 
-		/** The Fire account ID of the source account. */
-		icanFrom?: number | null;
+		/**
+		 * The Fire account ID of the source account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom?: string | null;
 
-		/** The Fire account ID for the fire.com account the funds are sent to. */
-		icanTo?: number | null;
+		/**
+		 * The Fire account ID for the fire.com account the funds are sent to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo?: string | null;
 
 		/** The datestamp of the last action on this batch - ISO format - e.g. 2018-04-04T10:48:53.540Z */
 		lastUpdated?: Date | null;
@@ -2742,8 +3147,11 @@ export namespace MyNS {
 		/** The reference on the transaction. */
 		ref?: string | null;
 
-		/** The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint. */
-		refId?: number | null;
+		/**
+		 * The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId?: string | null;
 
 		/** The outcome of the attempted transaction. */
 		result?: GetItemsBatchBankTransferReturnItemsResult;
@@ -2751,16 +3159,25 @@ export namespace MyNS {
 		/** status of the batch if internal trasnfer */
 		status?: GetBatchesBatchStatus | null;
 
-		/** Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent. */
-		taxAmount?: number | null;
+		/**
+		 * Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount?: string | null;
 	}
 	export interface GetItemsBatchBankTransferReturnItemsFormProperties {
 
-		/** The amount of funds to send. In cent or pence */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of funds to send. In cent or pence
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
-		/** The amount of the transfer after fees and taxes. in pence or cent. */
-		amountAfterCharges: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the transfer after fees and taxes. in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges: FormControl<string | null | undefined>,
 
 		/** A UUID for this item. */
 		batchItemUuid: FormControl<string | null | undefined>,
@@ -2768,14 +3185,23 @@ export namespace MyNS {
 		/** The datestamp the batch was created - ISO format - e.g. 2018-04-04T00:53:21.910Z */
 		dateCreated: FormControl<Date | null | undefined>,
 
-		/** The fee charged by fire.com for the payment. In pence or cent. */
-		feeAmount: FormControl<number | null | undefined>,
+		/**
+		 * The fee charged by fire.com for the payment. In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount: FormControl<string | null | undefined>,
 
-		/** The Fire account ID of the source account. */
-		icanFrom: FormControl<number | null | undefined>,
+		/**
+		 * The Fire account ID of the source account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom: FormControl<string | null | undefined>,
 
-		/** The Fire account ID for the fire.com account the funds are sent to. */
-		icanTo: FormControl<number | null | undefined>,
+		/**
+		 * The Fire account ID for the fire.com account the funds are sent to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo: FormControl<string | null | undefined>,
 
 		/** The datestamp of the last action on this batch - ISO format - e.g. 2018-04-04T10:48:53.540Z */
 		lastUpdated: FormControl<Date | null | undefined>,
@@ -2783,44 +3209,54 @@ export namespace MyNS {
 		/** The reference on the transaction. */
 		ref: FormControl<string | null | undefined>,
 
-		/** The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint. */
-		refId: FormControl<number | null | undefined>,
+		/**
+		 * The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId: FormControl<string | null | undefined>,
 
 		/** status of the batch if internal trasnfer */
 		status: FormControl<GetBatchesBatchStatus | null | undefined>,
 
-		/** Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent. */
-		taxAmount: FormControl<number | null | undefined>,
+		/**
+		 * Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount: FormControl<string | null | undefined>,
 	}
 	export function CreateGetItemsBatchBankTransferReturnItemsFormGroup() {
 		return new FormGroup<GetItemsBatchBankTransferReturnItemsFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined),
-			amountAfterCharges: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
+			amountAfterCharges: new FormControl<string | null | undefined>(undefined),
 			batchItemUuid: new FormControl<string | null | undefined>(undefined),
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
-			feeAmount: new FormControl<number | null | undefined>(undefined),
-			icanFrom: new FormControl<number | null | undefined>(undefined),
-			icanTo: new FormControl<number | null | undefined>(undefined),
+			feeAmount: new FormControl<string | null | undefined>(undefined),
+			icanFrom: new FormControl<string | null | undefined>(undefined),
+			icanTo: new FormControl<string | null | undefined>(undefined),
 			lastUpdated: new FormControl<Date | null | undefined>(undefined),
 			ref: new FormControl<string | null | undefined>(undefined),
-			refId: new FormControl<number | null | undefined>(undefined),
+			refId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetBatchesBatchStatus | null | undefined>(undefined),
-			taxAmount: new FormControl<number | null | undefined>(undefined),
+			taxAmount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetItemsBatchBankTransferReturnItemsResult {
-		code?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		code?: string | null;
 		message?: string | null;
 	}
 	export interface GetItemsBatchBankTransferReturnItemsResultFormProperties {
-		code: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		code: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateGetItemsBatchBankTransferReturnItemsResultFormGroup() {
 		return new FormGroup<GetItemsBatchBankTransferReturnItemsResultFormProperties>({
-			code: new FormControl<number | null | undefined>(undefined),
+			code: new FormControl<string | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2828,8 +3264,11 @@ export namespace MyNS {
 
 	export interface AddBankTransferBatchPaymentPostBody {
 
-		/** The value of the transaction */
-		amount?: number | null;
+		/**
+		 * The value of the transaction
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
 		/** The destination account holder name */
 		destAccountHolderName?: string | null;
@@ -2843,8 +3282,11 @@ export namespace MyNS {
 		/** The destination Nsc if a GBP bank transfer */
 		destNsc?: string | null;
 
-		/** The Fire account ID for the fire.com account the funds are taken from. */
-		icanFrom?: number | null;
+		/**
+		 * The Fire account ID for the fire.com account the funds are taken from.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom?: string | null;
 
 		/** The reference on the transaction for your records - not shown to the beneficiary. */
 		myRef?: string | null;
@@ -2857,8 +3299,11 @@ export namespace MyNS {
 	}
 	export interface AddBankTransferBatchPaymentPostBodyFormProperties {
 
-		/** The value of the transaction */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * The value of the transaction
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
 		/** The destination account holder name */
 		destAccountHolderName: FormControl<string | null | undefined>,
@@ -2872,8 +3317,11 @@ export namespace MyNS {
 		/** The destination Nsc if a GBP bank transfer */
 		destNsc: FormControl<string | null | undefined>,
 
-		/** The Fire account ID for the fire.com account the funds are taken from. */
-		icanFrom: FormControl<number | null | undefined>,
+		/**
+		 * The Fire account ID for the fire.com account the funds are taken from.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom: FormControl<string | null | undefined>,
 
 		/** The reference on the transaction for your records - not shown to the beneficiary. */
 		myRef: FormControl<string | null | undefined>,
@@ -2886,12 +3334,12 @@ export namespace MyNS {
 	}
 	export function CreateAddBankTransferBatchPaymentPostBodyFormGroup() {
 		return new FormGroup<AddBankTransferBatchPaymentPostBodyFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
 			destAccountHolderName: new FormControl<string | null | undefined>(undefined),
 			destAccountNumber: new FormControl<string | null | undefined>(undefined),
 			destIban: new FormControl<string | null | undefined>(undefined),
 			destNsc: new FormControl<string | null | undefined>(undefined),
-			icanFrom: new FormControl<number | null | undefined>(undefined),
+			icanFrom: new FormControl<string | null | undefined>(undefined),
 			myRef: new FormControl<string | null | undefined>(undefined),
 			payeeType: new FormControl<AddBankTransferBatchPaymentPostBodyPayeeType | null | undefined>(undefined),
 			yourRef: new FormControl<string | null | undefined>(undefined),
@@ -2921,28 +3369,40 @@ export namespace MyNS {
 	export interface GetItemsBatchInternalTrasnferReturn {
 		GetItemsBatchInternalTrasnferReturnItems?: Array<GetItemsBatchInternalTrasnferReturnItems>;
 
-		/** total number of batches returned */
-		total?: number | null;
+		/**
+		 * total number of batches returned
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total?: string | null;
 	}
 	export interface GetItemsBatchInternalTrasnferReturnFormProperties {
 
-		/** total number of batches returned */
-		total: FormControl<number | null | undefined>,
+		/**
+		 * total number of batches returned
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateGetItemsBatchInternalTrasnferReturnFormGroup() {
 		return new FormGroup<GetItemsBatchInternalTrasnferReturnFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetItemsBatchInternalTrasnferReturnItems {
 
-		/** The amount of funds to send. In cent or pence */
-		amount?: number | null;
+		/**
+		 * The amount of funds to send. In cent or pence
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
-		/** The amount of the transfer after fees and taxes. in pence or cent. */
-		amountAfterCharges?: number | null;
+		/**
+		 * The amount of the transfer after fees and taxes. in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges?: string | null;
 
 		/** A UUID for this item. */
 		batchItemUuid?: string | null;
@@ -2950,14 +3410,23 @@ export namespace MyNS {
 		/** The datestamp the batch was created - ISO format - e.g. 2018-04-04T00:53:21.910Z */
 		dateCreated?: Date | null;
 
-		/** The fee charged by fire.com for the payment. In pence or cent. */
-		feeAmount?: number | null;
+		/**
+		 * The fee charged by fire.com for the payment. In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount?: string | null;
 
-		/** The Fire account ID of the source account. */
-		icanFrom?: number | null;
+		/**
+		 * The Fire account ID of the source account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom?: string | null;
 
-		/** The Fire account ID for the fire.com account the funds are sent to. */
-		icanTo?: number | null;
+		/**
+		 * The Fire account ID for the fire.com account the funds are sent to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo?: string | null;
 
 		/** The datestamp of the last action on this batch - ISO format - e.g. 2018-04-04T10:48:53.540Z */
 		lastUpdated?: Date | null;
@@ -2965,8 +3434,11 @@ export namespace MyNS {
 		/** The reference on the transaction. */
 		ref?: string | null;
 
-		/** The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint. */
-		refId?: number | null;
+		/**
+		 * The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId?: string | null;
 
 		/** The outcome of the attempted transaction. */
 		result?: GetItemsBatchInternalTrasnferReturnItemsResult;
@@ -2974,16 +3446,25 @@ export namespace MyNS {
 		/** status of the batch if internal trasnfer */
 		status?: GetBatchesBatchStatus | null;
 
-		/** Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent. */
-		taxAmount?: number | null;
+		/**
+		 * Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount?: string | null;
 	}
 	export interface GetItemsBatchInternalTrasnferReturnItemsFormProperties {
 
-		/** The amount of funds to send. In cent or pence */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of funds to send. In cent or pence
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
-		/** The amount of the transfer after fees and taxes. in pence or cent. */
-		amountAfterCharges: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the transfer after fees and taxes. in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges: FormControl<string | null | undefined>,
 
 		/** A UUID for this item. */
 		batchItemUuid: FormControl<string | null | undefined>,
@@ -2991,14 +3472,23 @@ export namespace MyNS {
 		/** The datestamp the batch was created - ISO format - e.g. 2018-04-04T00:53:21.910Z */
 		dateCreated: FormControl<Date | null | undefined>,
 
-		/** The fee charged by fire.com for the payment. In pence or cent. */
-		feeAmount: FormControl<number | null | undefined>,
+		/**
+		 * The fee charged by fire.com for the payment. In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount: FormControl<string | null | undefined>,
 
-		/** The Fire account ID of the source account. */
-		icanFrom: FormControl<number | null | undefined>,
+		/**
+		 * The Fire account ID of the source account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom: FormControl<string | null | undefined>,
 
-		/** The Fire account ID for the fire.com account the funds are sent to. */
-		icanTo: FormControl<number | null | undefined>,
+		/**
+		 * The Fire account ID for the fire.com account the funds are sent to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo: FormControl<string | null | undefined>,
 
 		/** The datestamp of the last action on this batch - ISO format - e.g. 2018-04-04T10:48:53.540Z */
 		lastUpdated: FormControl<Date | null | undefined>,
@@ -3006,44 +3496,54 @@ export namespace MyNS {
 		/** The reference on the transaction. */
 		ref: FormControl<string | null | undefined>,
 
-		/** The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint. */
-		refId: FormControl<number | null | undefined>,
+		/**
+		 * The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId: FormControl<string | null | undefined>,
 
 		/** status of the batch if internal trasnfer */
 		status: FormControl<GetBatchesBatchStatus | null | undefined>,
 
-		/** Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent. */
-		taxAmount: FormControl<number | null | undefined>,
+		/**
+		 * Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount: FormControl<string | null | undefined>,
 	}
 	export function CreateGetItemsBatchInternalTrasnferReturnItemsFormGroup() {
 		return new FormGroup<GetItemsBatchInternalTrasnferReturnItemsFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined),
-			amountAfterCharges: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
+			amountAfterCharges: new FormControl<string | null | undefined>(undefined),
 			batchItemUuid: new FormControl<string | null | undefined>(undefined),
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
-			feeAmount: new FormControl<number | null | undefined>(undefined),
-			icanFrom: new FormControl<number | null | undefined>(undefined),
-			icanTo: new FormControl<number | null | undefined>(undefined),
+			feeAmount: new FormControl<string | null | undefined>(undefined),
+			icanFrom: new FormControl<string | null | undefined>(undefined),
+			icanTo: new FormControl<string | null | undefined>(undefined),
 			lastUpdated: new FormControl<Date | null | undefined>(undefined),
 			ref: new FormControl<string | null | undefined>(undefined),
-			refId: new FormControl<number | null | undefined>(undefined),
+			refId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetBatchesBatchStatus | null | undefined>(undefined),
-			taxAmount: new FormControl<number | null | undefined>(undefined),
+			taxAmount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetItemsBatchInternalTrasnferReturnItemsResult {
-		code?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		code?: string | null;
 		message?: string | null;
 	}
 	export interface GetItemsBatchInternalTrasnferReturnItemsResultFormProperties {
-		code: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		code: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateGetItemsBatchInternalTrasnferReturnItemsResultFormGroup() {
 		return new FormGroup<GetItemsBatchInternalTrasnferReturnItemsResultFormProperties>({
-			code: new FormControl<number | null | undefined>(undefined),
+			code: new FormControl<string | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3051,37 +3551,55 @@ export namespace MyNS {
 
 	export interface AddInternalTransferBatchPaymentPostBody {
 
-		/** amount of funds to be transfered */
-		amount?: number | null;
+		/**
+		 * amount of funds to be transfered
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
-		/** The account ID for the fire.com account the funds are taken from */
-		icanFrom?: number | null;
+		/**
+		 * The account ID for the fire.com account the funds are taken from
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom?: string | null;
 
-		/** The account ID for the fire.com account the funds are directed to */
-		icanTo?: number | null;
+		/**
+		 * The account ID for the fire.com account the funds are directed to
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo?: string | null;
 
 		/** The reference on the transaction */
 		ref?: string | null;
 	}
 	export interface AddInternalTransferBatchPaymentPostBodyFormProperties {
 
-		/** amount of funds to be transfered */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * amount of funds to be transfered
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
-		/** The account ID for the fire.com account the funds are taken from */
-		icanFrom: FormControl<number | null | undefined>,
+		/**
+		 * The account ID for the fire.com account the funds are taken from
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom: FormControl<string | null | undefined>,
 
-		/** The account ID for the fire.com account the funds are directed to */
-		icanTo: FormControl<number | null | undefined>,
+		/**
+		 * The account ID for the fire.com account the funds are directed to
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo: FormControl<string | null | undefined>,
 
 		/** The reference on the transaction */
 		ref: FormControl<string | null | undefined>,
 	}
 	export function CreateAddInternalTransferBatchPaymentPostBodyFormGroup() {
 		return new FormGroup<AddInternalTransferBatchPaymentPostBodyFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined),
-			icanFrom: new FormControl<number | null | undefined>(undefined),
-			icanTo: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
+			icanFrom: new FormControl<string | null | undefined>(undefined),
+			icanTo: new FormControl<string | null | undefined>(undefined),
 			ref: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3120,8 +3638,11 @@ export namespace MyNS {
 		/** Whether the card is blocked or not */
 		blocked?: boolean | null;
 
-		/** card id assigned by fire.com */
-		cardId?: number | null;
+		/**
+		 * card id assigned by fire.com
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cardId?: string | null;
 
 		/** The date-time the card was created */
 		dateCreated?: Date | null;
@@ -3129,8 +3650,11 @@ export namespace MyNS {
 		/** card user email address */
 		emailAddress?: string | null;
 
-		/** identifier for the eur fire.com account (assigned by fire.com) */
-		eurIcan?: number | null;
+		/**
+		 * identifier for the eur fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		eurIcan?: string | null;
 
 		/** card expiry date */
 		expiryDate?: Date | null;
@@ -3138,8 +3662,11 @@ export namespace MyNS {
 		/** card user first name */
 		firstName?: string | null;
 
-		/** identifier for the gbp fire.com account (assigned by fire.com) */
-		gbpIcan?: number | null;
+		/**
+		 * identifier for the gbp fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		gbpIcan?: string | null;
 
 		/** card user last name */
 		lastName?: string | null;
@@ -3156,16 +3683,22 @@ export namespace MyNS {
 		/** reason for card status */
 		statusReason?: GetListofCardsReturnCardsStatusReason | null;
 
-		/** card user id assigned by fire.com */
-		userId?: number | null;
+		/**
+		 * card user id assigned by fire.com
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userId?: string | null;
 	}
 	export interface GetListofCardsReturnCardsFormProperties {
 
 		/** Whether the card is blocked or not */
 		blocked: FormControl<boolean | null | undefined>,
 
-		/** card id assigned by fire.com */
-		cardId: FormControl<number | null | undefined>,
+		/**
+		 * card id assigned by fire.com
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cardId: FormControl<string | null | undefined>,
 
 		/** The date-time the card was created */
 		dateCreated: FormControl<Date | null | undefined>,
@@ -3173,8 +3706,11 @@ export namespace MyNS {
 		/** card user email address */
 		emailAddress: FormControl<string | null | undefined>,
 
-		/** identifier for the eur fire.com account (assigned by fire.com) */
-		eurIcan: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the eur fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		eurIcan: FormControl<string | null | undefined>,
 
 		/** card expiry date */
 		expiryDate: FormControl<Date | null | undefined>,
@@ -3182,8 +3718,11 @@ export namespace MyNS {
 		/** card user first name */
 		firstName: FormControl<string | null | undefined>,
 
-		/** identifier for the gbp fire.com account (assigned by fire.com) */
-		gbpIcan: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the gbp fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		gbpIcan: FormControl<string | null | undefined>,
 
 		/** card user last name */
 		lastName: FormControl<string | null | undefined>,
@@ -3200,25 +3739,28 @@ export namespace MyNS {
 		/** reason for card status */
 		statusReason: FormControl<GetListofCardsReturnCardsStatusReason | null | undefined>,
 
-		/** card user id assigned by fire.com */
-		userId: FormControl<number | null | undefined>,
+		/**
+		 * card user id assigned by fire.com
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateGetListofCardsReturnCardsFormGroup() {
 		return new FormGroup<GetListofCardsReturnCardsFormProperties>({
 			blocked: new FormControl<boolean | null | undefined>(undefined),
-			cardId: new FormControl<number | null | undefined>(undefined),
+			cardId: new FormControl<string | null | undefined>(undefined),
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
 			emailAddress: new FormControl<string | null | undefined>(undefined),
-			eurIcan: new FormControl<number | null | undefined>(undefined),
+			eurIcan: new FormControl<string | null | undefined>(undefined),
 			expiryDate: new FormControl<Date | null | undefined>(undefined),
 			firstName: new FormControl<string | null | undefined>(undefined),
-			gbpIcan: new FormControl<number | null | undefined>(undefined),
+			gbpIcan: new FormControl<string | null | undefined>(undefined),
 			lastName: new FormControl<string | null | undefined>(undefined),
 			maskedPan: new FormControl<string | null | undefined>(undefined),
 			provider: new FormControl<GetListofCardsReturnCardsProvider | null | undefined>(undefined),
 			status: new FormControl<GetListofCardsReturnCardsStatus | null | undefined>(undefined),
 			statusReason: new FormControl<GetListofCardsReturnCardsStatusReason | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3233,26 +3775,38 @@ export namespace MyNS {
 		acceptFeesAndCharges?: boolean | null;
 		addressType?: CreateNewCardPostBodyAddressType | null;
 		cardPin?: string | null;
-		eurIcan?: number | null;
-		gbpIcan?: number | null;
-		userId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		eurIcan?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		gbpIcan?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId?: string | null;
 	}
 	export interface CreateNewCardPostBodyFormProperties {
 		acceptFeesAndCharges: FormControl<boolean | null | undefined>,
 		addressType: FormControl<CreateNewCardPostBodyAddressType | null | undefined>,
 		cardPin: FormControl<string | null | undefined>,
-		eurIcan: FormControl<number | null | undefined>,
-		gbpIcan: FormControl<number | null | undefined>,
-		userId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		eurIcan: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		gbpIcan: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateCreateNewCardPostBodyFormGroup() {
 		return new FormGroup<CreateNewCardPostBodyFormProperties>({
 			acceptFeesAndCharges: new FormControl<boolean | null | undefined>(undefined),
 			addressType: new FormControl<CreateNewCardPostBodyAddressType | null | undefined>(undefined),
 			cardPin: new FormControl<string | null | undefined>(undefined),
-			eurIcan: new FormControl<number | null | undefined>(undefined),
-			gbpIcan: new FormControl<number | null | undefined>(undefined),
-			userId: new FormControl<number | null | undefined>(undefined),
+			eurIcan: new FormControl<string | null | undefined>(undefined),
+			gbpIcan: new FormControl<string | null | undefined>(undefined),
+			userId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3260,20 +3814,24 @@ export namespace MyNS {
 	export enum CreateNewCardPostBodyAddressType { HOME = 'HOME', BUSINESS = 'BUSINESS' }
 
 	export interface CreateNewCardReturn {
-		cardId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		cardId?: string | null;
 		expiryDate?: Date | null;
 		maskedPan?: string | null;
 		status?: CreateNewCardReturnStatus | null;
 	}
 	export interface CreateNewCardReturnFormProperties {
-		cardId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		cardId: FormControl<string | null | undefined>,
 		expiryDate: FormControl<Date | null | undefined>,
 		maskedPan: FormControl<string | null | undefined>,
 		status: FormControl<CreateNewCardReturnStatus | null | undefined>,
 	}
 	export function CreateCreateNewCardReturnFormGroup() {
 		return new FormGroup<CreateNewCardReturnFormProperties>({
-			cardId: new FormControl<number | null | undefined>(undefined),
+			cardId: new FormControl<string | null | undefined>(undefined),
 			expiryDate: new FormControl<Date | null | undefined>(undefined),
 			maskedPan: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<CreateNewCardReturnStatus | null | undefined>(undefined),
@@ -3285,39 +3843,60 @@ export namespace MyNS {
 
 	export interface GetListofCardTransactionsReturn {
 
-		/** milisecond timestamp of date range to value. */
-		dateRangeTo?: number | null;
+		/**
+		 * milisecond timestamp of date range to value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dateRangeTo?: string | null;
 
-		/** The total number of card transactions in the list. */
-		total?: number | null;
+		/**
+		 * The total number of card transactions in the list.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total?: string | null;
 		GetListofCardTransactionsReturnTransactions?: Array<GetListofCardTransactionsReturnTransactions>;
 	}
 	export interface GetListofCardTransactionsReturnFormProperties {
 
-		/** milisecond timestamp of date range to value. */
-		dateRangeTo: FormControl<number | null | undefined>,
+		/**
+		 * milisecond timestamp of date range to value.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		dateRangeTo: FormControl<string | null | undefined>,
 
-		/** The total number of card transactions in the list. */
-		total: FormControl<number | null | undefined>,
+		/**
+		 * The total number of card transactions in the list.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateGetListofCardTransactionsReturnFormGroup() {
 		return new FormGroup<GetListofCardTransactionsReturnFormProperties>({
-			dateRangeTo: new FormControl<number | null | undefined>(undefined),
-			total: new FormControl<number | null | undefined>(undefined),
+			dateRangeTo: new FormControl<string | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetListofCardTransactionsReturnTransactions {
 
-		/** Net amount lodged or taken from the account after fees and charges were applied. */
-		amountAfterCharges?: number | null;
+		/**
+		 * Net amount lodged or taken from the account after fees and charges were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges?: string | null;
 
-		/** Amount of the transaction before the fees and taxes were applied. */
-		amountBeforeCharges?: number | null;
+		/**
+		 * Amount of the transaction before the fees and taxes were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountBeforeCharges?: string | null;
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance?: number | null;
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance?: string | null;
 
 		/** Details of the batch run if this transaction was part of a batch. */
 		batchItemDetails?: GetListofCardTransactionsReturnTransactionsBatchItemDetails;
@@ -3338,14 +3917,20 @@ export namespace MyNS {
 		/** An internal Fire reference for the transaction (UUID) */
 		eventUuid?: string | null;
 
-		/** The amount of the fee, if any. */
-		feeAmount?: number | null;
+		/**
+		 * The amount of the fee, if any.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount?: string | null;
 
 		/** Details of the FX trade (if applicable) */
 		fxTradeDetails?: GetListofCardTransactionsReturnTransactionsFxTradeDetails;
 
-		/** identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version. */
-		ican?: number | null;
+		/**
+		 * identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican?: string | null;
 
 		/** The comment/reference on the transaction */
 		myRef?: string | null;
@@ -3356,17 +3941,26 @@ export namespace MyNS {
 		/** Extra details about the transaction based on the scheme used to make the payment. */
 		GetListofCardTransactionsReturnTransactionsProprietarySchemeDetails?: Array<GetListofCardTransactionsReturnTransactionsProprietarySchemeDetails>;
 
-		/** The id of the transaction. */
-		refId?: number | null;
+		/**
+		 * The id of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId?: string | null;
 
 		/** Details of the related third party involved in the transaction. */
 		relatedParty?: GetListofCardTransactionsReturnTransactionsRelatedParty;
 
-		/** The amount of the tax, if any (e.g. Stamp duty for ATM transactions) */
-		taxAmount?: number | null;
+		/**
+		 * The amount of the tax, if any (e.g. Stamp duty for ATM transactions)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount?: string | null;
 
-		/** The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction. */
-		txnId?: number | null;
+		/**
+		 * The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		txnId?: string | null;
 
 		/**
 		 * The type of the transaction:
@@ -3427,14 +4021,23 @@ export namespace MyNS {
 	}
 	export interface GetListofCardTransactionsReturnTransactionsFormProperties {
 
-		/** Net amount lodged or taken from the account after fees and charges were applied. */
-		amountAfterCharges: FormControl<number | null | undefined>,
+		/**
+		 * Net amount lodged or taken from the account after fees and charges were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges: FormControl<string | null | undefined>,
 
-		/** Amount of the transaction before the fees and taxes were applied. */
-		amountBeforeCharges: FormControl<number | null | undefined>,
+		/**
+		 * Amount of the transaction before the fees and taxes were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountBeforeCharges: FormControl<string | null | undefined>,
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance: FormControl<number | null | undefined>,
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance: FormControl<string | null | undefined>,
 
 		/** Date of the transaction */
 		date: FormControl<Date | null | undefined>,
@@ -3443,11 +4046,17 @@ export namespace MyNS {
 		/** An internal Fire reference for the transaction (UUID) */
 		eventUuid: FormControl<string | null | undefined>,
 
-		/** The amount of the fee, if any. */
-		feeAmount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the fee, if any.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount: FormControl<string | null | undefined>,
 
-		/** identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version. */
-		ican: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican: FormControl<string | null | undefined>,
 
 		/** The comment/reference on the transaction */
 		myRef: FormControl<string | null | undefined>,
@@ -3455,14 +4064,23 @@ export namespace MyNS {
 		/** (FOP payments only) The FOP Payment Code that was used to make this payment. */
 		paymentRequestPublicCode: FormControl<string | null | undefined>,
 
-		/** The id of the transaction. */
-		refId: FormControl<number | null | undefined>,
+		/**
+		 * The id of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId: FormControl<string | null | undefined>,
 
-		/** The amount of the tax, if any (e.g. Stamp duty for ATM transactions) */
-		taxAmount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the tax, if any (e.g. Stamp duty for ATM transactions)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount: FormControl<string | null | undefined>,
 
-		/** The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction. */
-		txnId: FormControl<number | null | undefined>,
+		/**
+		 * The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		txnId: FormControl<string | null | undefined>,
 
 		/**
 		 * The type of the transaction:
@@ -3523,19 +4141,19 @@ export namespace MyNS {
 	}
 	export function CreateGetListofCardTransactionsReturnTransactionsFormGroup() {
 		return new FormGroup<GetListofCardTransactionsReturnTransactionsFormProperties>({
-			amountAfterCharges: new FormControl<number | null | undefined>(undefined),
-			amountBeforeCharges: new FormControl<number | null | undefined>(undefined),
-			balance: new FormControl<number | null | undefined>(undefined),
+			amountAfterCharges: new FormControl<string | null | undefined>(undefined),
+			amountBeforeCharges: new FormControl<string | null | undefined>(undefined),
+			balance: new FormControl<string | null | undefined>(undefined),
 			date: new FormControl<Date | null | undefined>(undefined),
 			dateAcknowledged: new FormControl<Date | null | undefined>(undefined),
 			eventUuid: new FormControl<string | null | undefined>(undefined),
-			feeAmount: new FormControl<number | null | undefined>(undefined),
-			ican: new FormControl<number | null | undefined>(undefined),
+			feeAmount: new FormControl<string | null | undefined>(undefined),
+			ican: new FormControl<string | null | undefined>(undefined),
 			myRef: new FormControl<string | null | undefined>(undefined),
 			paymentRequestPublicCode: new FormControl<string | null | undefined>(undefined),
-			refId: new FormControl<number | null | undefined>(undefined),
-			taxAmount: new FormControl<number | null | undefined>(undefined),
-			txnId: new FormControl<number | null | undefined>(undefined),
+			refId: new FormControl<string | null | undefined>(undefined),
+			taxAmount: new FormControl<string | null | undefined>(undefined),
+			txnId: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			yourRef: new FormControl<string | null | undefined>(undefined),
 		});
@@ -3582,7 +4200,9 @@ export namespace MyNS {
 
 	export interface GetListofCardTransactionsReturnTransactionsCard {
 		alias?: string | null;
-		cardId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		cardId?: string | null;
 		embossBusinessName?: string | null;
 		embossCardName?: string | null;
 		expiryDate?: Date | null;
@@ -3591,7 +4211,9 @@ export namespace MyNS {
 	}
 	export interface GetListofCardTransactionsReturnTransactionsCardFormProperties {
 		alias: FormControl<string | null | undefined>,
-		cardId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		cardId: FormControl<string | null | undefined>,
 		embossBusinessName: FormControl<string | null | undefined>,
 		embossCardName: FormControl<string | null | undefined>,
 		expiryDate: FormControl<Date | null | undefined>,
@@ -3601,7 +4223,7 @@ export namespace MyNS {
 	export function CreateGetListofCardTransactionsReturnTransactionsCardFormGroup() {
 		return new FormGroup<GetListofCardTransactionsReturnTransactionsCardFormProperties>({
 			alias: new FormControl<string | null | undefined>(undefined),
-			cardId: new FormControl<number | null | undefined>(undefined),
+			cardId: new FormControl<string | null | undefined>(undefined),
 			embossBusinessName: new FormControl<string | null | undefined>(undefined),
 			embossCardName: new FormControl<string | null | undefined>(undefined),
 			expiryDate: new FormControl<Date | null | undefined>(undefined),
@@ -3717,8 +4339,11 @@ export namespace MyNS {
 
 	export interface GetListofCardTransactionsReturnTransactionsFxTradeDetails {
 
-		/** amount of buyCurrency being bought */
-		buyAmount?: number | null;
+		/**
+		 * amount of buyCurrency being bought
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		buyAmount?: string | null;
 
 		/** currency which is being bought */
 		buyCurrency?: string | null;
@@ -3729,19 +4354,28 @@ export namespace MyNS {
 		/** The FX provider used to make the trade. */
 		provider?: string | null;
 
-		/** exchange rate */
-		rate4d?: number | null;
+		/**
+		 * exchange rate
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rate4d?: string | null;
 
-		/** amount of sellCurrency being sold */
-		sellAmount?: number | null;
+		/**
+		 * amount of sellCurrency being sold
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sellAmount?: string | null;
 
 		/** currency which is being sold */
 		sellCurrency?: string | null;
 	}
 	export interface GetListofCardTransactionsReturnTransactionsFxTradeDetailsFormProperties {
 
-		/** amount of buyCurrency being bought */
-		buyAmount: FormControl<number | null | undefined>,
+		/**
+		 * amount of buyCurrency being bought
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		buyAmount: FormControl<string | null | undefined>,
 
 		/** currency which is being bought */
 		buyCurrency: FormControl<string | null | undefined>,
@@ -3752,23 +4386,29 @@ export namespace MyNS {
 		/** The FX provider used to make the trade. */
 		provider: FormControl<string | null | undefined>,
 
-		/** exchange rate */
-		rate4d: FormControl<number | null | undefined>,
+		/**
+		 * exchange rate
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rate4d: FormControl<string | null | undefined>,
 
-		/** amount of sellCurrency being sold */
-		sellAmount: FormControl<number | null | undefined>,
+		/**
+		 * amount of sellCurrency being sold
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sellAmount: FormControl<string | null | undefined>,
 
 		/** currency which is being sold */
 		sellCurrency: FormControl<string | null | undefined>,
 	}
 	export function CreateGetListofCardTransactionsReturnTransactionsFxTradeDetailsFormGroup() {
 		return new FormGroup<GetListofCardTransactionsReturnTransactionsFxTradeDetailsFormProperties>({
-			buyAmount: new FormControl<number | null | undefined>(undefined),
+			buyAmount: new FormControl<string | null | undefined>(undefined),
 			buyCurrency: new FormControl<string | null | undefined>(undefined),
 			fixedSide: new FormControl<string | null | undefined>(undefined),
 			provider: new FormControl<string | null | undefined>(undefined),
-			rate4d: new FormControl<number | null | undefined>(undefined),
-			sellAmount: new FormControl<number | null | undefined>(undefined),
+			rate4d: new FormControl<string | null | undefined>(undefined),
+			sellAmount: new FormControl<string | null | undefined>(undefined),
 			sellCurrency: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3826,8 +4466,11 @@ export namespace MyNS {
 		/** the IBAN of the account (provided if currency is EUR). */
 		iban?: string | null;
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		id?: number | null;
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** the Sort Code of the account. */
 		nsc?: string | null;
@@ -3846,8 +4489,11 @@ export namespace MyNS {
 		/** the IBAN of the account (provided if currency is EUR). */
 		iban: FormControl<string | null | undefined>,
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** the Sort Code of the account. */
 		nsc: FormControl<string | null | undefined>,
@@ -3858,7 +4504,7 @@ export namespace MyNS {
 			alias: new FormControl<string | null | undefined>(undefined),
 			bic: new FormControl<string | null | undefined>(undefined),
 			iban: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			nsc: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3867,25 +4513,34 @@ export namespace MyNS {
 	export interface GetDirectDebitsForMandateUuidReturn {
 		GetDirectDebitsForMandateUuidReturnDirectdebits?: Array<GetDirectDebitsForMandateUuidReturnDirectdebits>;
 
-		/** Number of direct debits found */
-		total?: number | null;
+		/**
+		 * Number of direct debits found
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total?: string | null;
 	}
 	export interface GetDirectDebitsForMandateUuidReturnFormProperties {
 
-		/** Number of direct debits found */
-		total: FormControl<number | null | undefined>,
+		/**
+		 * Number of direct debits found
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDirectDebitsForMandateUuidReturnFormGroup() {
 		return new FormGroup<GetDirectDebitsForMandateUuidReturnFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetDirectDebitsForMandateUuidReturnDirectdebits {
 
-		/** Value of the payment */
-		amount?: number | null;
+		/**
+		 * Value of the payment
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
 		/** The currency. */
 		currency?: GetDirectDebitsForMandateUuidReturnDirectdebitsCurrency;
@@ -3941,19 +4596,28 @@ export namespace MyNS {
 		 */
 		status?: GetDirectDebitsForMandateUuidReturnDirectdebitsStatus | null;
 
-		/** The ican of your fire account that the money was taken from */
-		targetIcan?: number | null;
+		/**
+		 * The ican of your fire account that the money was taken from
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetIcan?: string | null;
 
-		/** The payee that was created when the DD was processed */
-		targetPayeeId?: number | null;
+		/**
+		 * The payee that was created when the DD was processed
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetPayeeId?: string | null;
 
 		/** The type of the direct debit. */
 		type?: GetDirectDebitsForMandateUuidReturnDirectdebitsType | null;
 	}
 	export interface GetDirectDebitsForMandateUuidReturnDirectdebitsFormProperties {
 
-		/** Value of the payment */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * Value of the payment
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
 		/** Date the direct debit was created. Milliseconds since the epoch (1970). */
 		dateCreated: FormControl<Date | null | undefined>,
@@ -4006,18 +4670,24 @@ export namespace MyNS {
 		 */
 		status: FormControl<GetDirectDebitsForMandateUuidReturnDirectdebitsStatus | null | undefined>,
 
-		/** The ican of your fire account that the money was taken from */
-		targetIcan: FormControl<number | null | undefined>,
+		/**
+		 * The ican of your fire account that the money was taken from
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetIcan: FormControl<string | null | undefined>,
 
-		/** The payee that was created when the DD was processed */
-		targetPayeeId: FormControl<number | null | undefined>,
+		/**
+		 * The payee that was created when the DD was processed
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetPayeeId: FormControl<string | null | undefined>,
 
 		/** The type of the direct debit. */
 		type: FormControl<GetDirectDebitsForMandateUuidReturnDirectdebitsType | null | undefined>,
 	}
 	export function CreateGetDirectDebitsForMandateUuidReturnDirectdebitsFormGroup() {
 		return new FormGroup<GetDirectDebitsForMandateUuidReturnDirectdebitsFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
 			directDebitReference: new FormControl<string | null | undefined>(undefined),
 			directDebitUuid: new FormControl<string | null | undefined>(undefined),
@@ -4030,8 +4700,8 @@ export namespace MyNS {
 			schemeRejectReason: new FormControl<string | null | undefined>(undefined),
 			schemeRejectReasonCode: new FormControl<GetDirectDebitsForMandateUuidReturnDirectdebitsSchemeRejectReasonCode | null | undefined>(undefined),
 			status: new FormControl<GetDirectDebitsForMandateUuidReturnDirectdebitsStatus | null | undefined>(undefined),
-			targetIcan: new FormControl<number | null | undefined>(undefined),
-			targetPayeeId: new FormControl<number | null | undefined>(undefined),
+			targetIcan: new FormControl<string | null | undefined>(undefined),
+			targetPayeeId: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<GetDirectDebitsForMandateUuidReturnDirectdebitsType | null | undefined>(undefined),
 		});
 
@@ -4069,8 +4739,11 @@ export namespace MyNS {
 
 	export interface GetDirectDebitByUuidReturn {
 
-		/** Value of the payment */
-		amount?: number | null;
+		/**
+		 * Value of the payment
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
 		/** The currency. */
 		currency?: GetDirectDebitByUuidReturnCurrency;
@@ -4126,19 +4799,28 @@ export namespace MyNS {
 		 */
 		status?: GetDirectDebitsForMandateUuidReturnDirectdebitsStatus | null;
 
-		/** The ican of your fire account that the money was taken from */
-		targetIcan?: number | null;
+		/**
+		 * The ican of your fire account that the money was taken from
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetIcan?: string | null;
 
-		/** The payee that was created when the DD was processed */
-		targetPayeeId?: number | null;
+		/**
+		 * The payee that was created when the DD was processed
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetPayeeId?: string | null;
 
 		/** The type of the direct debit. */
 		type?: GetDirectDebitsForMandateUuidReturnDirectdebitsType | null;
 	}
 	export interface GetDirectDebitByUuidReturnFormProperties {
 
-		/** Value of the payment */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * Value of the payment
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
 		/** Date the direct debit was created. Milliseconds since the epoch (1970). */
 		dateCreated: FormControl<Date | null | undefined>,
@@ -4191,18 +4873,24 @@ export namespace MyNS {
 		 */
 		status: FormControl<GetDirectDebitsForMandateUuidReturnDirectdebitsStatus | null | undefined>,
 
-		/** The ican of your fire account that the money was taken from */
-		targetIcan: FormControl<number | null | undefined>,
+		/**
+		 * The ican of your fire account that the money was taken from
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetIcan: FormControl<string | null | undefined>,
 
-		/** The payee that was created when the DD was processed */
-		targetPayeeId: FormControl<number | null | undefined>,
+		/**
+		 * The payee that was created when the DD was processed
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetPayeeId: FormControl<string | null | undefined>,
 
 		/** The type of the direct debit. */
 		type: FormControl<GetDirectDebitsForMandateUuidReturnDirectdebitsType | null | undefined>,
 	}
 	export function CreateGetDirectDebitByUuidReturnFormGroup() {
 		return new FormGroup<GetDirectDebitByUuidReturnFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
 			directDebitReference: new FormControl<string | null | undefined>(undefined),
 			directDebitUuid: new FormControl<string | null | undefined>(undefined),
@@ -4215,8 +4903,8 @@ export namespace MyNS {
 			schemeRejectReason: new FormControl<string | null | undefined>(undefined),
 			schemeRejectReasonCode: new FormControl<GetDirectDebitsForMandateUuidReturnDirectdebitsSchemeRejectReasonCode | null | undefined>(undefined),
 			status: new FormControl<GetDirectDebitsForMandateUuidReturnDirectdebitsStatus | null | undefined>(undefined),
-			targetIcan: new FormControl<number | null | undefined>(undefined),
-			targetPayeeId: new FormControl<number | null | undefined>(undefined),
+			targetIcan: new FormControl<string | null | undefined>(undefined),
+			targetPayeeId: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<GetDirectDebitsForMandateUuidReturnDirectdebitsType | null | undefined>(undefined),
 		});
 
@@ -4249,17 +4937,23 @@ export namespace MyNS {
 	export interface GetDirectDebitMandatesReturn {
 		GetDirectDebitMandatesReturnMandates?: Array<GetDirectDebitMandatesReturnMandates>;
 
-		/** Number of direct debits found */
-		total?: number | null;
+		/**
+		 * Number of direct debits found
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total?: string | null;
 	}
 	export interface GetDirectDebitMandatesReturnFormProperties {
 
-		/** Number of direct debits found */
-		total: FormControl<number | null | undefined>,
+		/**
+		 * Number of direct debits found
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDirectDebitMandatesReturnFormGroup() {
 		return new FormGroup<GetDirectDebitMandatesReturnFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4287,8 +4981,11 @@ export namespace MyNS {
 		/** Date the direct debit was last updated. Milliseconds since the epoch (1970). */
 		lastUpdated?: Date | null;
 
-		/** The value of largest direct debit collected */
-		latestDirectDebitAmount?: number | null;
+		/**
+		 * The value of largest direct debit collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latestDirectDebitAmount?: string | null;
 
 		/** The date of latest direct debit collected */
 		latestDirectDebitDate?: Date | null;
@@ -4299,8 +4996,11 @@ export namespace MyNS {
 		/** The UUID for the mandate */
 		mandateUuid?: string | null;
 
-		/** The number of direct debits collected */
-		numberOfDirectDebitCollected?: number | null;
+		/**
+		 * The number of direct debits collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfDirectDebitCollected?: string | null;
 
 		/** The name of the alias */
 		originatorAlias?: string | null;
@@ -4342,11 +5042,17 @@ export namespace MyNS {
 		 */
 		status?: GetDirectDebitMandatesReturnMandatesStatus | null;
 
-		/** Identifier for the fire.com account (assigned by fire.com) */
-		targetIcan?: number | null;
+		/**
+		 * Identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetIcan?: string | null;
 
-		/** The value of direct debits collected */
-		valueOfDirectDebitCollected?: number | null;
+		/**
+		 * The value of direct debits collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valueOfDirectDebitCollected?: string | null;
 	}
 	export interface GetDirectDebitMandatesReturnMandatesFormProperties {
 
@@ -4368,8 +5074,11 @@ export namespace MyNS {
 		/** Date the direct debit was last updated. Milliseconds since the epoch (1970). */
 		lastUpdated: FormControl<Date | null | undefined>,
 
-		/** The value of largest direct debit collected */
-		latestDirectDebitAmount: FormControl<number | null | undefined>,
+		/**
+		 * The value of largest direct debit collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latestDirectDebitAmount: FormControl<string | null | undefined>,
 
 		/** The date of latest direct debit collected */
 		latestDirectDebitDate: FormControl<Date | null | undefined>,
@@ -4380,8 +5089,11 @@ export namespace MyNS {
 		/** The UUID for the mandate */
 		mandateUuid: FormControl<string | null | undefined>,
 
-		/** The number of direct debits collected */
-		numberOfDirectDebitCollected: FormControl<number | null | undefined>,
+		/**
+		 * The number of direct debits collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfDirectDebitCollected: FormControl<string | null | undefined>,
 
 		/** The name of the alias */
 		originatorAlias: FormControl<string | null | undefined>,
@@ -4423,11 +5135,17 @@ export namespace MyNS {
 		 */
 		status: FormControl<GetDirectDebitMandatesReturnMandatesStatus | null | undefined>,
 
-		/** Identifier for the fire.com account (assigned by fire.com) */
-		targetIcan: FormControl<number | null | undefined>,
+		/**
+		 * Identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetIcan: FormControl<string | null | undefined>,
 
-		/** The value of direct debits collected */
-		valueOfDirectDebitCollected: FormControl<number | null | undefined>,
+		/**
+		 * The value of direct debits collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valueOfDirectDebitCollected: FormControl<string | null | undefined>,
 	}
 	export function CreateGetDirectDebitMandatesReturnMandatesFormGroup() {
 		return new FormGroup<GetDirectDebitMandatesReturnMandatesFormProperties>({
@@ -4437,11 +5155,11 @@ export namespace MyNS {
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
 			fireRejectionReason: new FormControl<GetDirectDebitMandatesReturnMandatesFireRejectionReason | null | undefined>(undefined),
 			lastUpdated: new FormControl<Date | null | undefined>(undefined),
-			latestDirectDebitAmount: new FormControl<number | null | undefined>(undefined),
+			latestDirectDebitAmount: new FormControl<string | null | undefined>(undefined),
 			latestDirectDebitDate: new FormControl<Date | null | undefined>(undefined),
 			mandateReference: new FormControl<string | null | undefined>(undefined),
 			mandateUuid: new FormControl<string | null | undefined>(undefined),
-			numberOfDirectDebitCollected: new FormControl<number | null | undefined>(undefined),
+			numberOfDirectDebitCollected: new FormControl<string | null | undefined>(undefined),
 			originatorAlias: new FormControl<string | null | undefined>(undefined),
 			originatorLogoUrlLarge: new FormControl<string | null | undefined>(undefined),
 			originatorLogoUrlSmall: new FormControl<string | null | undefined>(undefined),
@@ -4450,8 +5168,8 @@ export namespace MyNS {
 			schemeCancelReason: new FormControl<string | null | undefined>(undefined),
 			schemeCancelReasonCode: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetDirectDebitMandatesReturnMandatesStatus | null | undefined>(undefined),
-			targetIcan: new FormControl<number | null | undefined>(undefined),
-			valueOfDirectDebitCollected: new FormControl<number | null | undefined>(undefined),
+			targetIcan: new FormControl<string | null | undefined>(undefined),
+			valueOfDirectDebitCollected: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4507,8 +5225,11 @@ export namespace MyNS {
 		/** Date the direct debit was last updated. Milliseconds since the epoch (1970). */
 		lastUpdated?: Date | null;
 
-		/** The value of largest direct debit collected */
-		latestDirectDebitAmount?: number | null;
+		/**
+		 * The value of largest direct debit collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latestDirectDebitAmount?: string | null;
 
 		/** The date of latest direct debit collected */
 		latestDirectDebitDate?: Date | null;
@@ -4519,8 +5240,11 @@ export namespace MyNS {
 		/** The UUID for the mandate */
 		mandateUuid?: string | null;
 
-		/** The number of direct debits collected */
-		numberOfDirectDebitCollected?: number | null;
+		/**
+		 * The number of direct debits collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfDirectDebitCollected?: string | null;
 
 		/** The name of the alias */
 		originatorAlias?: string | null;
@@ -4562,11 +5286,17 @@ export namespace MyNS {
 		 */
 		status?: GetDirectDebitMandatesReturnMandatesStatus | null;
 
-		/** Identifier for the fire.com account (assigned by fire.com) */
-		targetIcan?: number | null;
+		/**
+		 * Identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetIcan?: string | null;
 
-		/** The value of direct debits collected */
-		valueOfDirectDebitCollected?: number | null;
+		/**
+		 * The value of direct debits collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valueOfDirectDebitCollected?: string | null;
 	}
 	export interface GetMandateReturnFormProperties {
 
@@ -4588,8 +5318,11 @@ export namespace MyNS {
 		/** Date the direct debit was last updated. Milliseconds since the epoch (1970). */
 		lastUpdated: FormControl<Date | null | undefined>,
 
-		/** The value of largest direct debit collected */
-		latestDirectDebitAmount: FormControl<number | null | undefined>,
+		/**
+		 * The value of largest direct debit collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		latestDirectDebitAmount: FormControl<string | null | undefined>,
 
 		/** The date of latest direct debit collected */
 		latestDirectDebitDate: FormControl<Date | null | undefined>,
@@ -4600,8 +5333,11 @@ export namespace MyNS {
 		/** The UUID for the mandate */
 		mandateUuid: FormControl<string | null | undefined>,
 
-		/** The number of direct debits collected */
-		numberOfDirectDebitCollected: FormControl<number | null | undefined>,
+		/**
+		 * The number of direct debits collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		numberOfDirectDebitCollected: FormControl<string | null | undefined>,
 
 		/** The name of the alias */
 		originatorAlias: FormControl<string | null | undefined>,
@@ -4643,11 +5379,17 @@ export namespace MyNS {
 		 */
 		status: FormControl<GetDirectDebitMandatesReturnMandatesStatus | null | undefined>,
 
-		/** Identifier for the fire.com account (assigned by fire.com) */
-		targetIcan: FormControl<number | null | undefined>,
+		/**
+		 * Identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		targetIcan: FormControl<string | null | undefined>,
 
-		/** The value of direct debits collected */
-		valueOfDirectDebitCollected: FormControl<number | null | undefined>,
+		/**
+		 * The value of direct debits collected
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		valueOfDirectDebitCollected: FormControl<string | null | undefined>,
 	}
 	export function CreateGetMandateReturnFormGroup() {
 		return new FormGroup<GetMandateReturnFormProperties>({
@@ -4657,11 +5399,11 @@ export namespace MyNS {
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
 			fireRejectionReason: new FormControl<GetDirectDebitMandatesReturnMandatesFireRejectionReason | null | undefined>(undefined),
 			lastUpdated: new FormControl<Date | null | undefined>(undefined),
-			latestDirectDebitAmount: new FormControl<number | null | undefined>(undefined),
+			latestDirectDebitAmount: new FormControl<string | null | undefined>(undefined),
 			latestDirectDebitDate: new FormControl<Date | null | undefined>(undefined),
 			mandateReference: new FormControl<string | null | undefined>(undefined),
 			mandateUuid: new FormControl<string | null | undefined>(undefined),
-			numberOfDirectDebitCollected: new FormControl<number | null | undefined>(undefined),
+			numberOfDirectDebitCollected: new FormControl<string | null | undefined>(undefined),
 			originatorAlias: new FormControl<string | null | undefined>(undefined),
 			originatorLogoUrlLarge: new FormControl<string | null | undefined>(undefined),
 			originatorLogoUrlSmall: new FormControl<string | null | undefined>(undefined),
@@ -4670,8 +5412,8 @@ export namespace MyNS {
 			schemeCancelReason: new FormControl<string | null | undefined>(undefined),
 			schemeCancelReasonCode: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetDirectDebitMandatesReturnMandatesStatus | null | undefined>(undefined),
-			targetIcan: new FormControl<number | null | undefined>(undefined),
-			valueOfDirectDebitCollected: new FormControl<number | null | undefined>(undefined),
+			targetIcan: new FormControl<string | null | undefined>(undefined),
+			valueOfDirectDebitCollected: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4703,12 +5445,18 @@ export namespace MyNS {
 	export interface GetPayeesReturn {
 		GetPayeesReturnFundingSources?: Array<GetPayeesReturnFundingSources>;
 
-		/** The total number of payees in the list. */
+		/**
+		 * The total number of payees in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface GetPayeesReturnFormProperties {
 
-		/** The total number of payees in the list. */
+		/**
+		 * The total number of payees in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetPayeesReturnFormGroup() {
@@ -4744,8 +5492,11 @@ export namespace MyNS {
 		/** The IBAN of the account if currency is EUR. */
 		iban?: string | null;
 
-		/** Identifier for the fire.com payee bank account (assigned by fire.com). */
-		id?: number | null;
+		/**
+		 * Identifier for the fire.com payee bank account (assigned by fire.com).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The Sort Code of the account if currency is GBP. */
 		nsc?: string | null;
@@ -4782,8 +5533,11 @@ export namespace MyNS {
 		/** The IBAN of the account if currency is EUR. */
 		iban: FormControl<string | null | undefined>,
 
-		/** Identifier for the fire.com payee bank account (assigned by fire.com). */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Identifier for the fire.com payee bank account (assigned by fire.com).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The Sort Code of the account if currency is GBP. */
 		nsc: FormControl<string | null | undefined>,
@@ -4806,7 +5560,7 @@ export namespace MyNS {
 			createdBy: new FormControl<GetPayeesReturnFundingSourcesCreatedBy | null | undefined>(undefined),
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
 			iban: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			nsc: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetPayeesReturnFundingSourcesStatus | null | undefined>(undefined),
 		});
@@ -4846,8 +5600,11 @@ export namespace MyNS {
 		/** These fields will be dispalyed to the payer when using the hosted option. You can choose to display any of `ORDER_ID`, `PRODUCT_ID`, `CUSTOMER_ID`, `CUSTOMER_NUMBER` and `COMMENT2` to the payer. */
 		additionalFields?: string | null;
 
-		/** The requested amount to pay. Note the last two digits represent pennies/cents, (e.g., £1.00 = 100). */
-		amount?: number | null;
+		/**
+		 * The requested amount to pay. Note the last two digits represent pennies/cents, (e.g., £1.00 = 100).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
 		/** For the hosted option, the payer will be asked to fill in these fields but they will not be mandatory. You can choose to collect any of the payer's `ADDRESS`, `REFERENCE` and/or `COMMENT1`. If you choose to collect these fields from the payer, you cannot set 'delivery’, 'variableReference’ or 'comment1’ fields respectively. */
 		collectFields?: string | null;
@@ -4870,13 +5627,17 @@ export namespace MyNS {
 		/**
 		 * The ican of the account to collect the funds into. Must be one of your fire.com Accounts.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		icanTo: number;
+		icanTo: string;
 
 		/** For the hosted option, these fields will be madatory for the payer to fill in on the hosted payment page. You can choose to collect any the payer's `ADDRESS`, `REFERENCE` and/or `COMMENT1`. If you choose to collect these fields from the payer, you cannot set 'delivery’, 'variableReference’ or 'comment1’ fields respectively. */
 		mandatoryFields?: string | null;
 
-		/** The max number of people who can pay this request. Must be set to 1 for the ECOMMERCE_GOODS and ECOMMERCE_SERVICES types. */
+		/**
+		 * The max number of people who can pay this request. Must be set to 1 for the ECOMMERCE_GOODS and ECOMMERCE_SERVICES types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberPayments?: number | null;
 
 		/**
@@ -4900,8 +5661,11 @@ export namespace MyNS {
 		/** These fields will be dispalyed to the payer when using the hosted option. You can choose to display any of `ORDER_ID`, `PRODUCT_ID`, `CUSTOMER_ID`, `CUSTOMER_NUMBER` and `COMMENT2` to the payer. */
 		additionalFields: FormControl<string | null | undefined>,
 
-		/** The requested amount to pay. Note the last two digits represent pennies/cents, (e.g., £1.00 = 100). */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * The requested amount to pay. Note the last two digits represent pennies/cents, (e.g., £1.00 = 100).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
 		/** For the hosted option, the payer will be asked to fill in these fields but they will not be mandatory. You can choose to collect any of the payer's `ADDRESS`, `REFERENCE` and/or `COMMENT1`. If you choose to collect these fields from the payer, you cannot set 'delivery’, 'variableReference’ or 'comment1’ fields respectively. */
 		collectFields: FormControl<string | null | undefined>,
@@ -4924,13 +5688,17 @@ export namespace MyNS {
 		/**
 		 * The ican of the account to collect the funds into. Must be one of your fire.com Accounts.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		icanTo: FormControl<number | null | undefined>,
+		icanTo: FormControl<string | null | undefined>,
 
 		/** For the hosted option, these fields will be madatory for the payer to fill in on the hosted payment page. You can choose to collect any the payer's `ADDRESS`, `REFERENCE` and/or `COMMENT1`. If you choose to collect these fields from the payer, you cannot set 'delivery’, 'variableReference’ or 'comment1’ fields respectively. */
 		mandatoryFields: FormControl<string | null | undefined>,
 
-		/** The max number of people who can pay this request. Must be set to 1 for the ECOMMERCE_GOODS and ECOMMERCE_SERVICES types. */
+		/**
+		 * The max number of people who can pay this request. Must be set to 1 for the ECOMMERCE_GOODS and ECOMMERCE_SERVICES types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberPayments: FormControl<number | null | undefined>,
 
 		/**
@@ -4951,12 +5719,12 @@ export namespace MyNS {
 	export function CreateNewPaymentRequestPostBodyFormGroup() {
 		return new FormGroup<NewPaymentRequestPostBodyFormProperties>({
 			additionalFields: new FormControl<string | null | undefined>(undefined),
-			amount: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
 			collectFields: new FormControl<string | null | undefined>(undefined),
 			currency: new FormControl<GetAccountsReturnAccountsCurrencyCode | null | undefined>(undefined, [Validators.required]),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			expiry: new FormControl<Date | null | undefined>(undefined),
-			icanTo: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			icanTo: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			mandatoryFields: new FormControl<string | null | undefined>(undefined),
 			maxNumberPayments: new FormControl<number | null | undefined>(undefined),
 			myRef: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -5073,8 +5841,8 @@ export namespace MyNS {
 
 		/**
 		 * The code for this request. Create a URL in this format: `https://payments.fire.com/{code}` and share to your customers.
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		code?: string | null;
 
@@ -5085,8 +5853,8 @@ export namespace MyNS {
 
 		/**
 		 * The code for this request. Create a URL in this format: `https://payments.fire.com/{code}` and share to your customers.
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		code: FormControl<string | null | undefined>,
 
@@ -5106,8 +5874,11 @@ export namespace MyNS {
 		/** These fields will be dispalyed to the payer when using the hosted option. You can choose to display any of `ORDER_ID`, `PRODUCT_ID`, `CUSTOMER_ID`, `CUSTOMER_NUMBER` and `COMMENT2` to the payer. */
 		additionalFields?: string | null;
 
-		/** The requested amount to pay. Note the last two digits represent pennies/cents, (e.g., £1.00 = 100). */
-		amount?: number | null;
+		/**
+		 * The requested amount to pay. Note the last two digits represent pennies/cents, (e.g., £1.00 = 100).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
 		/** For the hosted option, the payer will be asked to fill in these fields but they will not be mandatory. You can choose to collect any of the payer's `ADDRESS`, `REFERENCE` and/or `COMMENT1`. If you choose to collect these fields from the payer, you cannot set 'delivery’, 'variableReference’ or 'comment1’ fields respectively. */
 		collectFields?: string | null;
@@ -5121,13 +5892,19 @@ export namespace MyNS {
 		/** This is the expiry of the payment request. After this time, the payment cannot be paid. */
 		expiry?: Date | null;
 
-		/** The ican of the account to collect the funds into. Must be one of your fire.com Accounts. */
-		icanTo?: number | null;
+		/**
+		 * The ican of the account to collect the funds into. Must be one of your fire.com Accounts.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo?: string | null;
 
 		/** For the hosted option, these fields will be madatory for the payer to fill in on the hosted payment page. You can choose to collect any the payer's `ADDRESS`, `REFERENCE` and/or `COMMENT1`. If you choose to collect these fields from the payer, you cannot set 'delivery’, 'variableReference’ or 'comment1’ fields respectively. */
 		mandatoryFields?: string | null;
 
-		/** The max number of people who can pay this request. Must be set to 1 for the ECOMMERCE_GOODS and ECOMMERCE_SERVICES types. */
+		/**
+		 * The max number of people who can pay this request. Must be set to 1 for the ECOMMERCE_GOODS and ECOMMERCE_SERVICES types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberPayments?: number | null;
 
 		/** An internal description of the request. */
@@ -5136,8 +5913,8 @@ export namespace MyNS {
 
 		/**
 		 * The code that was returned when you created the payment request.
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		paymentRequestCode?: string | null;
 
@@ -5164,8 +5941,11 @@ export namespace MyNS {
 		/** These fields will be dispalyed to the payer when using the hosted option. You can choose to display any of `ORDER_ID`, `PRODUCT_ID`, `CUSTOMER_ID`, `CUSTOMER_NUMBER` and `COMMENT2` to the payer. */
 		additionalFields: FormControl<string | null | undefined>,
 
-		/** The requested amount to pay. Note the last two digits represent pennies/cents, (e.g., £1.00 = 100). */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * The requested amount to pay. Note the last two digits represent pennies/cents, (e.g., £1.00 = 100).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
 		/** For the hosted option, the payer will be asked to fill in these fields but they will not be mandatory. You can choose to collect any of the payer's `ADDRESS`, `REFERENCE` and/or `COMMENT1`. If you choose to collect these fields from the payer, you cannot set 'delivery’, 'variableReference’ or 'comment1’ fields respectively. */
 		collectFields: FormControl<string | null | undefined>,
@@ -5176,13 +5956,19 @@ export namespace MyNS {
 		/** This is the expiry of the payment request. After this time, the payment cannot be paid. */
 		expiry: FormControl<Date | null | undefined>,
 
-		/** The ican of the account to collect the funds into. Must be one of your fire.com Accounts. */
-		icanTo: FormControl<number | null | undefined>,
+		/**
+		 * The ican of the account to collect the funds into. Must be one of your fire.com Accounts.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo: FormControl<string | null | undefined>,
 
 		/** For the hosted option, these fields will be madatory for the payer to fill in on the hosted payment page. You can choose to collect any the payer's `ADDRESS`, `REFERENCE` and/or `COMMENT1`. If you choose to collect these fields from the payer, you cannot set 'delivery’, 'variableReference’ or 'comment1’ fields respectively. */
 		mandatoryFields: FormControl<string | null | undefined>,
 
-		/** The max number of people who can pay this request. Must be set to 1 for the ECOMMERCE_GOODS and ECOMMERCE_SERVICES types. */
+		/**
+		 * The max number of people who can pay this request. Must be set to 1 for the ECOMMERCE_GOODS and ECOMMERCE_SERVICES types.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumberPayments: FormControl<number | null | undefined>,
 
 		/** An internal description of the request. */
@@ -5190,8 +5976,8 @@ export namespace MyNS {
 
 		/**
 		 * The code that was returned when you created the payment request.
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		paymentRequestCode: FormControl<string | null | undefined>,
 
@@ -5216,11 +6002,11 @@ export namespace MyNS {
 	export function CreateGetPaymentDetailsReturnFormGroup() {
 		return new FormGroup<GetPaymentDetailsReturnFormProperties>({
 			additionalFields: new FormControl<string | null | undefined>(undefined),
-			amount: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
 			collectFields: new FormControl<string | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			expiry: new FormControl<Date | null | undefined>(undefined),
-			icanTo: new FormControl<number | null | undefined>(undefined),
+			icanTo: new FormControl<string | null | undefined>(undefined),
 			mandatoryFields: new FormControl<string | null | undefined>(undefined),
 			maxNumberPayments: new FormControl<number | null | undefined>(undefined),
 			myRef: new FormControl<string | null | undefined>(undefined),
@@ -5372,8 +6158,11 @@ export namespace MyNS {
 		/** User first name */
 		firstName?: string | null;
 
-		/** The User ID for this User */
-		id?: number | null;
+		/**
+		 * The User ID for this User
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** User second name */
 		lastName?: string | null;
@@ -5402,8 +6191,11 @@ export namespace MyNS {
 		/** User first name */
 		firstName: FormControl<string | null | undefined>,
 
-		/** The User ID for this User */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The User ID for this User
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** User second name */
 		lastName: FormControl<string | null | undefined>,
@@ -5427,7 +6219,7 @@ export namespace MyNS {
 		return new FormGroup<GetUserReturnFormProperties>({
 			emailAddress: new FormControl<string | null | undefined>(undefined),
 			firstName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastName: new FormControl<string | null | undefined>(undefined),
 			lastlogin: new FormControl<string | null | undefined>(undefined),
 			mobileNumber: new FormControl<string | null | undefined>(undefined),
@@ -5443,8 +6235,11 @@ export namespace MyNS {
 		/** Operating system of device. */
 		OS?: GetUserReturnMobileApplicationDetailsOS | null;
 
-		/** Business user ID */
-		businessUserId?: number | null;
+		/**
+		 * Business user ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		businessUserId?: string | null;
 
 		/** Client ID of user. */
 		clientID?: string | null;
@@ -5455,8 +6250,11 @@ export namespace MyNS {
 		/** OS version for device. */
 		deviceOSVersion?: string | null;
 
-		/** Mobile application id for user. */
-		mobileApplicationId?: number | null;
+		/**
+		 * Mobile application id for user.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		mobileApplicationId?: string | null;
 
 		/** Status of user */
 		status?: GetUserReturnMobileApplicationDetailsStatus | null;
@@ -5466,8 +6264,11 @@ export namespace MyNS {
 		/** Operating system of device. */
 		OS: FormControl<GetUserReturnMobileApplicationDetailsOS | null | undefined>,
 
-		/** Business user ID */
-		businessUserId: FormControl<number | null | undefined>,
+		/**
+		 * Business user ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		businessUserId: FormControl<string | null | undefined>,
 
 		/** Client ID of user. */
 		clientID: FormControl<string | null | undefined>,
@@ -5478,8 +6279,11 @@ export namespace MyNS {
 		/** OS version for device. */
 		deviceOSVersion: FormControl<string | null | undefined>,
 
-		/** Mobile application id for user. */
-		mobileApplicationId: FormControl<number | null | undefined>,
+		/**
+		 * Mobile application id for user.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		mobileApplicationId: FormControl<string | null | undefined>,
 
 		/** Status of user */
 		status: FormControl<GetUserReturnMobileApplicationDetailsStatus | null | undefined>,
@@ -5487,11 +6291,11 @@ export namespace MyNS {
 	export function CreateGetUserReturnMobileApplicationDetailsFormGroup() {
 		return new FormGroup<GetUserReturnMobileApplicationDetailsFormProperties>({
 			OS: new FormControl<GetUserReturnMobileApplicationDetailsOS | null | undefined>(undefined),
-			businessUserId: new FormControl<number | null | undefined>(undefined),
+			businessUserId: new FormControl<string | null | undefined>(undefined),
 			clientID: new FormControl<string | null | undefined>(undefined),
 			deviceName: new FormControl<GetUserReturnMobileApplicationDetailsDeviceName | null | undefined>(undefined),
 			deviceOSVersion: new FormControl<string | null | undefined>(undefined),
-			mobileApplicationId: new FormControl<number | null | undefined>(undefined),
+			mobileApplicationId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetUserReturnMobileApplicationDetailsStatus | null | undefined>(undefined),
 		});
 
@@ -5515,8 +6319,11 @@ export namespace MyNS {
 		/** User first name */
 		firstName?: string | null;
 
-		/** The User ID for this User */
-		id?: number | null;
+		/**
+		 * The User ID for this User
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** User second name */
 		lastName?: string | null;
@@ -5545,8 +6352,11 @@ export namespace MyNS {
 		/** User first name */
 		firstName: FormControl<string | null | undefined>,
 
-		/** The User ID for this User */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The User ID for this User
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** User second name */
 		lastName: FormControl<string | null | undefined>,
@@ -5570,7 +6380,7 @@ export namespace MyNS {
 		return new FormGroup<GetUsersReturnFormProperties>({
 			emailAddress: new FormControl<string | null | undefined>(undefined),
 			firstName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastName: new FormControl<string | null | undefined>(undefined),
 			lastlogin: new FormControl<string | null | undefined>(undefined),
 			mobileNumber: new FormControl<string | null | undefined>(undefined),
@@ -5586,8 +6396,11 @@ export namespace MyNS {
 		/** Operating system of device. */
 		OS?: GetUserReturnMobileApplicationDetailsOS | null;
 
-		/** Business user ID */
-		businessUserId?: number | null;
+		/**
+		 * Business user ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		businessUserId?: string | null;
 
 		/** Client ID of user. */
 		clientID?: string | null;
@@ -5598,8 +6411,11 @@ export namespace MyNS {
 		/** OS version for device. */
 		deviceOSVersion?: string | null;
 
-		/** Mobile application id for user. */
-		mobileApplicationId?: number | null;
+		/**
+		 * Mobile application id for user.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		mobileApplicationId?: string | null;
 
 		/** Status of user */
 		status?: GetUserReturnMobileApplicationDetailsStatus | null;
@@ -5609,8 +6425,11 @@ export namespace MyNS {
 		/** Operating system of device. */
 		OS: FormControl<GetUserReturnMobileApplicationDetailsOS | null | undefined>,
 
-		/** Business user ID */
-		businessUserId: FormControl<number | null | undefined>,
+		/**
+		 * Business user ID
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		businessUserId: FormControl<string | null | undefined>,
 
 		/** Client ID of user. */
 		clientID: FormControl<string | null | undefined>,
@@ -5621,8 +6440,11 @@ export namespace MyNS {
 		/** OS version for device. */
 		deviceOSVersion: FormControl<string | null | undefined>,
 
-		/** Mobile application id for user. */
-		mobileApplicationId: FormControl<number | null | undefined>,
+		/**
+		 * Mobile application id for user.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		mobileApplicationId: FormControl<string | null | undefined>,
 
 		/** Status of user */
 		status: FormControl<GetUserReturnMobileApplicationDetailsStatus | null | undefined>,
@@ -5630,11 +6452,11 @@ export namespace MyNS {
 	export function CreateGetUsersReturnMobileApplicationDetailsFormGroup() {
 		return new FormGroup<GetUsersReturnMobileApplicationDetailsFormProperties>({
 			OS: new FormControl<GetUserReturnMobileApplicationDetailsOS | null | undefined>(undefined),
-			businessUserId: new FormControl<number | null | undefined>(undefined),
+			businessUserId: new FormControl<string | null | undefined>(undefined),
 			clientID: new FormControl<string | null | undefined>(undefined),
 			deviceName: new FormControl<GetUserReturnMobileApplicationDetailsDeviceName | null | undefined>(undefined),
 			deviceOSVersion: new FormControl<string | null | undefined>(undefined),
-			mobileApplicationId: new FormControl<number | null | undefined>(undefined),
+			mobileApplicationId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetUserReturnMobileApplicationDetailsStatus | null | undefined>(undefined),
 		});
 
@@ -5643,28 +6465,40 @@ export namespace MyNS {
 	export interface GetItemsBatchInternationalTransferReturn {
 		GetItemsBatchInternationalTransferReturnItems?: Array<GetItemsBatchInternationalTransferReturnItems>;
 
-		/** total number of batches returned */
-		total?: number | null;
+		/**
+		 * total number of batches returned
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total?: string | null;
 	}
 	export interface GetItemsBatchInternationalTransferReturnFormProperties {
 
-		/** total number of batches returned */
-		total: FormControl<number | null | undefined>,
+		/**
+		 * total number of batches returned
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateGetItemsBatchInternationalTransferReturnFormGroup() {
 		return new FormGroup<GetItemsBatchInternationalTransferReturnFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetItemsBatchInternationalTransferReturnItems {
 
-		/** The amount of funds to send. In cent or pence */
-		amount?: number | null;
+		/**
+		 * The amount of funds to send. In cent or pence
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
-		/** The amount of the transfer after fees and taxes. in pence or cent. */
-		amountAfterCharges?: number | null;
+		/**
+		 * The amount of the transfer after fees and taxes. in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges?: string | null;
 
 		/** A UUID for this item. */
 		batchItemUuid?: string | null;
@@ -5672,14 +6506,23 @@ export namespace MyNS {
 		/** The datestamp the batch was created - ISO format - e.g. 2018-04-04T00:53:21.910Z */
 		dateCreated?: Date | null;
 
-		/** The fee charged by fire.com for the payment. In pence or cent. */
-		feeAmount?: number | null;
+		/**
+		 * The fee charged by fire.com for the payment. In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount?: string | null;
 
-		/** The Fire account ID of the source account. */
-		icanFrom?: number | null;
+		/**
+		 * The Fire account ID of the source account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom?: string | null;
 
-		/** The Fire account ID for the fire.com account the funds are sent to. */
-		icanTo?: number | null;
+		/**
+		 * The Fire account ID for the fire.com account the funds are sent to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo?: string | null;
 
 		/** The datestamp of the last action on this batch - ISO format - e.g. 2018-04-04T10:48:53.540Z */
 		lastUpdated?: Date | null;
@@ -5687,8 +6530,11 @@ export namespace MyNS {
 		/** The reference on the transaction. */
 		ref?: string | null;
 
-		/** The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint. */
-		refId?: number | null;
+		/**
+		 * The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId?: string | null;
 
 		/** The outcome of the attempted transaction. */
 		result?: GetItemsBatchInternationalTransferReturnItemsResult;
@@ -5696,16 +6542,25 @@ export namespace MyNS {
 		/** status of the batch if internal trasnfer */
 		status?: GetBatchesBatchStatus | null;
 
-		/** Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent. */
-		taxAmount?: number | null;
+		/**
+		 * Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount?: string | null;
 	}
 	export interface GetItemsBatchInternationalTransferReturnItemsFormProperties {
 
-		/** The amount of funds to send. In cent or pence */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of funds to send. In cent or pence
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
-		/** The amount of the transfer after fees and taxes. in pence or cent. */
-		amountAfterCharges: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the transfer after fees and taxes. in pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges: FormControl<string | null | undefined>,
 
 		/** A UUID for this item. */
 		batchItemUuid: FormControl<string | null | undefined>,
@@ -5713,14 +6568,23 @@ export namespace MyNS {
 		/** The datestamp the batch was created - ISO format - e.g. 2018-04-04T00:53:21.910Z */
 		dateCreated: FormControl<Date | null | undefined>,
 
-		/** The fee charged by fire.com for the payment. In pence or cent. */
-		feeAmount: FormControl<number | null | undefined>,
+		/**
+		 * The fee charged by fire.com for the payment. In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount: FormControl<string | null | undefined>,
 
-		/** The Fire account ID of the source account. */
-		icanFrom: FormControl<number | null | undefined>,
+		/**
+		 * The Fire account ID of the source account.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom: FormControl<string | null | undefined>,
 
-		/** The Fire account ID for the fire.com account the funds are sent to. */
-		icanTo: FormControl<number | null | undefined>,
+		/**
+		 * The Fire account ID for the fire.com account the funds are sent to.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanTo: FormControl<string | null | undefined>,
 
 		/** The datestamp of the last action on this batch - ISO format - e.g. 2018-04-04T10:48:53.540Z */
 		lastUpdated: FormControl<Date | null | undefined>,
@@ -5728,44 +6592,54 @@ export namespace MyNS {
 		/** The reference on the transaction. */
 		ref: FormControl<string | null | undefined>,
 
-		/** The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint. */
-		refId: FormControl<number | null | undefined>,
+		/**
+		 * The ID of the resulting payment in your account. Can be used to retrieve the transaction using the https://api.fire.com/business/v1/accounts/{accountId}/transactions/{refId} endpoint.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId: FormControl<string | null | undefined>,
 
 		/** status of the batch if internal trasnfer */
 		status: FormControl<GetBatchesBatchStatus | null | undefined>,
 
-		/** Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent. */
-		taxAmount: FormControl<number | null | undefined>,
+		/**
+		 * Any taxes/duty collected by fire.com for this payments (e.g. stamp duty etc). In pence or cent.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount: FormControl<string | null | undefined>,
 	}
 	export function CreateGetItemsBatchInternationalTransferReturnItemsFormGroup() {
 		return new FormGroup<GetItemsBatchInternationalTransferReturnItemsFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined),
-			amountAfterCharges: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
+			amountAfterCharges: new FormControl<string | null | undefined>(undefined),
 			batchItemUuid: new FormControl<string | null | undefined>(undefined),
 			dateCreated: new FormControl<Date | null | undefined>(undefined),
-			feeAmount: new FormControl<number | null | undefined>(undefined),
-			icanFrom: new FormControl<number | null | undefined>(undefined),
-			icanTo: new FormControl<number | null | undefined>(undefined),
+			feeAmount: new FormControl<string | null | undefined>(undefined),
+			icanFrom: new FormControl<string | null | undefined>(undefined),
+			icanTo: new FormControl<string | null | undefined>(undefined),
 			lastUpdated: new FormControl<Date | null | undefined>(undefined),
 			ref: new FormControl<string | null | undefined>(undefined),
-			refId: new FormControl<number | null | undefined>(undefined),
+			refId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<GetBatchesBatchStatus | null | undefined>(undefined),
-			taxAmount: new FormControl<number | null | undefined>(undefined),
+			taxAmount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface GetItemsBatchInternationalTransferReturnItemsResult {
-		code?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		code?: string | null;
 		message?: string | null;
 	}
 	export interface GetItemsBatchInternationalTransferReturnItemsResultFormProperties {
-		code: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		code: FormControl<string | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
 	export function CreateGetItemsBatchInternationalTransferReturnItemsResultFormGroup() {
 		return new FormGroup<GetItemsBatchInternationalTransferReturnItemsResultFormProperties>({
-			code: new FormControl<number | null | undefined>(undefined),
+			code: new FormControl<string | null | undefined>(undefined),
 			message: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -5773,17 +6647,26 @@ export namespace MyNS {
 
 	export interface AddInternationalTransferBatchPaymentPostBody {
 
-		/** The value of the payment in the beneficiary currency. */
-		amount?: number | null;
+		/**
+		 * The value of the payment in the beneficiary currency.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount?: string | null;
 
-		/** The Fire account ID for the fire.com account the funds are taken from. */
-		icanFrom?: number | null;
+		/**
+		 * The Fire account ID for the fire.com account the funds are taken from.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom?: string | null;
 
 		/** The reference on the transaction for your records - not shown to the beneficiary. */
 		myRef?: string | null;
 
-		/** The ID of the existing payee */
-		payeeId?: number | null;
+		/**
+		 * The ID of the existing payee
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		payeeId?: string | null;
 
 		/** The reason for the payment, used for transaction monitoring purposes. Must be one of Invoice Payment|Salary/Dividend Payment|Expenses|Savings|Other */
 		paymentReason?: string | null;
@@ -5793,17 +6676,26 @@ export namespace MyNS {
 	}
 	export interface AddInternationalTransferBatchPaymentPostBodyFormProperties {
 
-		/** The value of the payment in the beneficiary currency. */
-		amount: FormControl<number | null | undefined>,
+		/**
+		 * The value of the payment in the beneficiary currency.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amount: FormControl<string | null | undefined>,
 
-		/** The Fire account ID for the fire.com account the funds are taken from. */
-		icanFrom: FormControl<number | null | undefined>,
+		/**
+		 * The Fire account ID for the fire.com account the funds are taken from.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		icanFrom: FormControl<string | null | undefined>,
 
 		/** The reference on the transaction for your records - not shown to the beneficiary. */
 		myRef: FormControl<string | null | undefined>,
 
-		/** The ID of the existing payee */
-		payeeId: FormControl<number | null | undefined>,
+		/**
+		 * The ID of the existing payee
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		payeeId: FormControl<string | null | undefined>,
 
 		/** The reason for the payment, used for transaction monitoring purposes. Must be one of Invoice Payment|Salary/Dividend Payment|Expenses|Savings|Other */
 		paymentReason: FormControl<string | null | undefined>,
@@ -5813,10 +6705,10 @@ export namespace MyNS {
 	}
 	export function CreateAddInternationalTransferBatchPaymentPostBodyFormGroup() {
 		return new FormGroup<AddInternationalTransferBatchPaymentPostBodyFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined),
-			icanFrom: new FormControl<number | null | undefined>(undefined),
+			amount: new FormControl<string | null | undefined>(undefined),
+			icanFrom: new FormControl<string | null | undefined>(undefined),
 			myRef: new FormControl<string | null | undefined>(undefined),
-			payeeId: new FormControl<number | null | undefined>(undefined),
+			payeeId: new FormControl<string | null | undefined>(undefined),
 			paymentReason: new FormControl<string | null | undefined>(undefined),
 			yourRef: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5854,14 +6746,23 @@ export namespace MyNS {
 
 	export interface GetTransactionsByAccountIdv3ReturnContent {
 
-		/** Net amount lodged or taken from the account after fees and charges were applied. */
-		amountAfterCharges?: number | null;
+		/**
+		 * Net amount lodged or taken from the account after fees and charges were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges?: string | null;
 
-		/** Amount of the transaction before the fees and taxes were applied. */
-		amountBeforeCharges?: number | null;
+		/**
+		 * Amount of the transaction before the fees and taxes were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountBeforeCharges?: string | null;
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance?: number | null;
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance?: string | null;
 
 		/** Details of the batch run if this transaction was part of a batch. */
 		batchItemDetails?: GetTransactionsByAccountIdv3ReturnContentBatchItemDetails;
@@ -5882,14 +6783,20 @@ export namespace MyNS {
 		/** An internal Fire reference for the transaction (UUID) */
 		eventUuid?: string | null;
 
-		/** The amount of the fee, if any. */
-		feeAmount?: number | null;
+		/**
+		 * The amount of the fee, if any.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount?: string | null;
 
 		/** Details of the FX trade (if applicable) */
 		fxTradeDetails?: GetTransactionsByAccountIdv3ReturnContentFxTradeDetails;
 
-		/** identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version. */
-		ican?: number | null;
+		/**
+		 * identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican?: string | null;
 
 		/** The comment/reference on the transaction */
 		myRef?: string | null;
@@ -5900,17 +6807,26 @@ export namespace MyNS {
 		/** Extra details about the transaction based on the scheme used to make the payment. */
 		GetTransactionsByAccountIdv3ReturnContentProprietarySchemeDetails?: Array<GetTransactionsByAccountIdv3ReturnContentProprietarySchemeDetails>;
 
-		/** The id of the transaction. */
-		refId?: number | null;
+		/**
+		 * The id of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId?: string | null;
 
 		/** Details of the related third party involved in the transaction. */
 		relatedParty?: GetTransactionsByAccountIdv3ReturnContentRelatedParty;
 
-		/** The amount of the tax, if any (e.g. Stamp duty for ATM transactions) */
-		taxAmount?: number | null;
+		/**
+		 * The amount of the tax, if any (e.g. Stamp duty for ATM transactions)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount?: string | null;
 
-		/** The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction. */
-		txnId?: number | null;
+		/**
+		 * The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		txnId?: string | null;
 
 		/**
 		 * The type of the transaction:
@@ -5971,14 +6887,23 @@ export namespace MyNS {
 	}
 	export interface GetTransactionsByAccountIdv3ReturnContentFormProperties {
 
-		/** Net amount lodged or taken from the account after fees and charges were applied. */
-		amountAfterCharges: FormControl<number | null | undefined>,
+		/**
+		 * Net amount lodged or taken from the account after fees and charges were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountAfterCharges: FormControl<string | null | undefined>,
 
-		/** Amount of the transaction before the fees and taxes were applied. */
-		amountBeforeCharges: FormControl<number | null | undefined>,
+		/**
+		 * Amount of the transaction before the fees and taxes were applied.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		amountBeforeCharges: FormControl<string | null | undefined>,
 
-		/** the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account). */
-		balance: FormControl<number | null | undefined>,
+		/**
+		 * the balance of the account (in minor currency units - pence, cent etc. 434050 == 4,340.50 GBP for a GBP account).
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		balance: FormControl<string | null | undefined>,
 
 		/** Date of the transaction */
 		date: FormControl<Date | null | undefined>,
@@ -5987,11 +6912,17 @@ export namespace MyNS {
 		/** An internal Fire reference for the transaction (UUID) */
 		eventUuid: FormControl<string | null | undefined>,
 
-		/** The amount of the fee, if any. */
-		feeAmount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the fee, if any.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		feeAmount: FormControl<string | null | undefined>,
 
-		/** identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version. */
-		ican: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the fire.com account (assigned by fire.com) This field is only used in the condensed version.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ican: FormControl<string | null | undefined>,
 
 		/** The comment/reference on the transaction */
 		myRef: FormControl<string | null | undefined>,
@@ -5999,14 +6930,23 @@ export namespace MyNS {
 		/** (FOP payments only) The FOP Payment Code that was used to make this payment. */
 		paymentRequestPublicCode: FormControl<string | null | undefined>,
 
-		/** The id of the transaction. */
-		refId: FormControl<number | null | undefined>,
+		/**
+		 * The id of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		refId: FormControl<string | null | undefined>,
 
-		/** The amount of the tax, if any (e.g. Stamp duty for ATM transactions) */
-		taxAmount: FormControl<number | null | undefined>,
+		/**
+		 * The amount of the tax, if any (e.g. Stamp duty for ATM transactions)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		taxAmount: FormControl<string | null | undefined>,
 
-		/** The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction. */
-		txnId: FormControl<number | null | undefined>,
+		/**
+		 * The id of this side of the transaction (each transaction has two sides - a to and a from). This is used to get the details of the transaction.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		txnId: FormControl<string | null | undefined>,
 
 		/**
 		 * The type of the transaction:
@@ -6067,19 +7007,19 @@ export namespace MyNS {
 	}
 	export function CreateGetTransactionsByAccountIdv3ReturnContentFormGroup() {
 		return new FormGroup<GetTransactionsByAccountIdv3ReturnContentFormProperties>({
-			amountAfterCharges: new FormControl<number | null | undefined>(undefined),
-			amountBeforeCharges: new FormControl<number | null | undefined>(undefined),
-			balance: new FormControl<number | null | undefined>(undefined),
+			amountAfterCharges: new FormControl<string | null | undefined>(undefined),
+			amountBeforeCharges: new FormControl<string | null | undefined>(undefined),
+			balance: new FormControl<string | null | undefined>(undefined),
 			date: new FormControl<Date | null | undefined>(undefined),
 			dateAcknowledged: new FormControl<Date | null | undefined>(undefined),
 			eventUuid: new FormControl<string | null | undefined>(undefined),
-			feeAmount: new FormControl<number | null | undefined>(undefined),
-			ican: new FormControl<number | null | undefined>(undefined),
+			feeAmount: new FormControl<string | null | undefined>(undefined),
+			ican: new FormControl<string | null | undefined>(undefined),
 			myRef: new FormControl<string | null | undefined>(undefined),
 			paymentRequestPublicCode: new FormControl<string | null | undefined>(undefined),
-			refId: new FormControl<number | null | undefined>(undefined),
-			taxAmount: new FormControl<number | null | undefined>(undefined),
-			txnId: new FormControl<number | null | undefined>(undefined),
+			refId: new FormControl<string | null | undefined>(undefined),
+			taxAmount: new FormControl<string | null | undefined>(undefined),
+			txnId: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			yourRef: new FormControl<string | null | undefined>(undefined),
 		});
@@ -6126,7 +7066,9 @@ export namespace MyNS {
 
 	export interface GetTransactionsByAccountIdv3ReturnContentCard {
 		alias?: string | null;
-		cardId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		cardId?: string | null;
 		embossBusinessName?: string | null;
 		embossCardName?: string | null;
 		expiryDate?: Date | null;
@@ -6135,7 +7077,9 @@ export namespace MyNS {
 	}
 	export interface GetTransactionsByAccountIdv3ReturnContentCardFormProperties {
 		alias: FormControl<string | null | undefined>,
-		cardId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		cardId: FormControl<string | null | undefined>,
 		embossBusinessName: FormControl<string | null | undefined>,
 		embossCardName: FormControl<string | null | undefined>,
 		expiryDate: FormControl<Date | null | undefined>,
@@ -6145,7 +7089,7 @@ export namespace MyNS {
 	export function CreateGetTransactionsByAccountIdv3ReturnContentCardFormGroup() {
 		return new FormGroup<GetTransactionsByAccountIdv3ReturnContentCardFormProperties>({
 			alias: new FormControl<string | null | undefined>(undefined),
-			cardId: new FormControl<number | null | undefined>(undefined),
+			cardId: new FormControl<string | null | undefined>(undefined),
 			embossBusinessName: new FormControl<string | null | undefined>(undefined),
 			embossCardName: new FormControl<string | null | undefined>(undefined),
 			expiryDate: new FormControl<Date | null | undefined>(undefined),
@@ -6261,8 +7205,11 @@ export namespace MyNS {
 
 	export interface GetTransactionsByAccountIdv3ReturnContentFxTradeDetails {
 
-		/** amount of buyCurrency being bought */
-		buyAmount?: number | null;
+		/**
+		 * amount of buyCurrency being bought
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		buyAmount?: string | null;
 
 		/** currency which is being bought */
 		buyCurrency?: string | null;
@@ -6273,19 +7220,28 @@ export namespace MyNS {
 		/** The FX provider used to make the trade. */
 		provider?: string | null;
 
-		/** exchange rate */
-		rate4d?: number | null;
+		/**
+		 * exchange rate
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rate4d?: string | null;
 
-		/** amount of sellCurrency being sold */
-		sellAmount?: number | null;
+		/**
+		 * amount of sellCurrency being sold
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sellAmount?: string | null;
 
 		/** currency which is being sold */
 		sellCurrency?: string | null;
 	}
 	export interface GetTransactionsByAccountIdv3ReturnContentFxTradeDetailsFormProperties {
 
-		/** amount of buyCurrency being bought */
-		buyAmount: FormControl<number | null | undefined>,
+		/**
+		 * amount of buyCurrency being bought
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		buyAmount: FormControl<string | null | undefined>,
 
 		/** currency which is being bought */
 		buyCurrency: FormControl<string | null | undefined>,
@@ -6296,23 +7252,29 @@ export namespace MyNS {
 		/** The FX provider used to make the trade. */
 		provider: FormControl<string | null | undefined>,
 
-		/** exchange rate */
-		rate4d: FormControl<number | null | undefined>,
+		/**
+		 * exchange rate
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		rate4d: FormControl<string | null | undefined>,
 
-		/** amount of sellCurrency being sold */
-		sellAmount: FormControl<number | null | undefined>,
+		/**
+		 * amount of sellCurrency being sold
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		sellAmount: FormControl<string | null | undefined>,
 
 		/** currency which is being sold */
 		sellCurrency: FormControl<string | null | undefined>,
 	}
 	export function CreateGetTransactionsByAccountIdv3ReturnContentFxTradeDetailsFormGroup() {
 		return new FormGroup<GetTransactionsByAccountIdv3ReturnContentFxTradeDetailsFormProperties>({
-			buyAmount: new FormControl<number | null | undefined>(undefined),
+			buyAmount: new FormControl<string | null | undefined>(undefined),
 			buyCurrency: new FormControl<string | null | undefined>(undefined),
 			fixedSide: new FormControl<string | null | undefined>(undefined),
 			provider: new FormControl<string | null | undefined>(undefined),
-			rate4d: new FormControl<number | null | undefined>(undefined),
-			sellAmount: new FormControl<number | null | undefined>(undefined),
+			rate4d: new FormControl<string | null | undefined>(undefined),
+			sellAmount: new FormControl<string | null | undefined>(undefined),
 			sellCurrency: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -6370,8 +7332,11 @@ export namespace MyNS {
 		/** the IBAN of the account (provided if currency is EUR). */
 		iban?: string | null;
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		id?: number | null;
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** the Sort Code of the account. */
 		nsc?: string | null;
@@ -6390,8 +7355,11 @@ export namespace MyNS {
 		/** the IBAN of the account (provided if currency is EUR). */
 		iban: FormControl<string | null | undefined>,
 
-		/** identifier for the fire.com account (assigned by fire.com) */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * identifier for the fire.com account (assigned by fire.com)
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** the Sort Code of the account. */
 		nsc: FormControl<string | null | undefined>,
@@ -6402,7 +7370,7 @@ export namespace MyNS {
 			alias: new FormControl<string | null | undefined>(undefined),
 			bic: new FormControl<string | null | undefined>(undefined),
 			iban: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			nsc: new FormControl<string | null | undefined>(undefined),
 		});
 

@@ -1972,8 +1972,13 @@ namespace MyNS
 		/// <param name="id">Filter entities by its id</param>
 		/// <param name="source">Filter entities by its source name</param>
 		/// <param name="includeTest">True if you want to have entities flag as test in the response. Only, if you only wanted test entities</param>
-		/// <param name="page">Page number</param>
-		/// <param name="size">Page size of the response</param>
+		/// <param name="page">Page number
+		/// Minimum: 0
+		// </param>
+		/// <param name="size">Page size of the response
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="locale">The locale in ISO code format. Multiple comma-separated values can be provided. When omitting the country part of the code (e.g. only 'en' or 'fr') then the first matching locale is used. When using a '*' it matches all locales. '*' can only be used at the end (e.g. 'en-us,en,*') </param>
 		/// <param name="includeLicensedContent">Yes if you want to display licensed content</param>
 		/// <param name="includeSpellcheck">yes, to include spell check suggestions in the response.</param>
@@ -2041,8 +2046,13 @@ namespace MyNS
 		/// <param name="id">Filter entities by its id</param>
 		/// <param name="source">Filter entities by its source name</param>
 		/// <param name="includeTest">True if you want to have entities flag as test in the response. Only, if you only wanted test entities</param>
-		/// <param name="page">Page number</param>
-		/// <param name="size">Page size of the response</param>
+		/// <param name="page">Page number
+		/// Minimum: 0
+		// </param>
+		/// <param name="size">Page size of the response
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="locale">The locale in ISO code format. Multiple comma-separated values can be provided. When omitting the country part of the code (e.g. only 'en' or 'fr') then the first matching locale is used. When using a '*' it matches all locales. '*' can only be used at the end (e.g. 'en-us,en,*') </param>
 		/// <param name="includeLicensedContent">Yes if you want to display licensed content</param>
 		/// <param name="includeSpellcheck">yes, to include spell check suggestions in the response.</param>
@@ -2229,8 +2239,13 @@ namespace MyNS
 		/// <param name="id">Filter entities by its id</param>
 		/// <param name="source">Filter entities by its source name</param>
 		/// <param name="includeTest">True if you want to have entities flag as test in the response. Only, if you only wanted test entities</param>
-		/// <param name="page">Page number</param>
-		/// <param name="size">Page size of the response</param>
+		/// <param name="page">Page number
+		/// Minimum: 0
+		// </param>
+		/// <param name="size">Page size of the response
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="locale">The locale in ISO code format. Multiple comma-separated values can be provided. When omitting the country part of the code (e.g. only 'en' or 'fr') then the first matching locale is used. When using a '*' it matches all locales. '*' can only be used at the end (e.g. 'en-us,en,*') </param>
 		/// <param name="includeLicensedContent">Yes if you want to display licensed content</param>
 		/// <param name="includeSpellcheck">yes, to include spell check suggestions in the response.</param>
@@ -2366,7 +2381,10 @@ namespace MyNS
 		/// <param name="latlong">Filter events by latitude and longitude, this filter is deprecated and maybe removed in a future release, please use geoPoint instead</param>
 		/// <param name="radius">Radius of the area in which we want to search for events.</param>
 		/// <param name="unit">Unit of the radius</param>
-		/// <param name="size">Size of every entity returned in the response</param>
+		/// <param name="size">Size of every entity returned in the response
+		/// Minimum: 1
+		/// Maximum: 5
+		// </param>
 		/// <param name="includeFuzzy">yes, to include fuzzy matches in the search. This has performance impact.</param>
 		/// <param name="clientVisibility">Filter events to clientName</param>
 		/// <param name="countryCode">Filter suggestions by country code</param>
@@ -2433,8 +2451,13 @@ namespace MyNS
 		/// <param name="id">Filter entities by its id</param>
 		/// <param name="source">Filter entities by its source name</param>
 		/// <param name="includeTest">True if you want to have entities flag as test in the response. Only, if you only wanted test entities</param>
-		/// <param name="page">Page number</param>
-		/// <param name="size">Page size of the response</param>
+		/// <param name="page">Page number
+		/// Minimum: 0
+		// </param>
+		/// <param name="size">Page size of the response
+		/// Minimum: 1
+		/// Maximum: 500
+		// </param>
 		/// <param name="locale">The locale in ISO code format. Multiple comma-separated values can be provided. When omitting the country part of the code (e.g. only 'en' or 'fr') then the first matching locale is used. When using a '*' it matches all locales. '*' can only be used at the end (e.g. 'en-us,en,*') </param>
 		/// <param name="includeLicensedContent">Yes if you want to display licensed content</param>
 		/// <param name="includeSpellcheck">yes, to include spell check suggestions in the response.</param>

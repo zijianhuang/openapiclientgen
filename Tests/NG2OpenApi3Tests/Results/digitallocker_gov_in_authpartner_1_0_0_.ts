@@ -32,8 +32,9 @@ export namespace MyNS {
 		/**
 		 * The duration in seconds for which the access token is valid
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		expires_in: number;
+		expires_in: string;
 
 		/**
 		 * This is gender of the user as registered with DigiLocker. The possible values are M, F, T for male, female and transgender respectively.
@@ -100,8 +101,9 @@ export namespace MyNS {
 		/**
 		 * The duration in seconds for which the access token is valid
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		expires_in: FormControl<number | null | undefined>,
+		expires_in: FormControl<string | null | undefined>,
 
 		/**
 		 * This is gender of the user as registered with DigiLocker. The possible values are M, F, T for male, female and transgender respectively.
@@ -145,7 +147,7 @@ export namespace MyNS {
 			digilocker_id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			dob: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			eaadhar: new FormControl<AccessResponseEaadhar | null | undefined>(undefined, [Validators.required]),
-			expires_in: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			expires_in: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			gender: new FormControl<AccessResponseGender | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			reference_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -215,8 +217,9 @@ export namespace MyNS {
 		 * The duration in seconds for which the access token is
 		 * valid.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		expires_in: number;
+		expires_in: string;
 
 		/**
 		 * The refresh token used to refresh the above access
@@ -252,8 +255,9 @@ export namespace MyNS {
 		 * The duration in seconds for which the access token is
 		 * valid.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		expires_in: FormControl<number | null | undefined>,
+		expires_in: FormControl<string | null | undefined>,
 
 		/**
 		 * The refresh token used to refresh the above access
@@ -279,7 +283,7 @@ export namespace MyNS {
 	export function CreateAuthTokenResponseFormGroup() {
 		return new FormGroup<AuthTokenResponseFormProperties>({
 			access_token: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			expires_in: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			expires_in: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			refresh_token: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			scope: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			token_type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -298,7 +302,10 @@ export namespace MyNS {
 		/** The parameter indicates whether Aadhaar demographic authentication must be successful for creating DigiLocker account. The possible values are ‘Y’ and ‘N’. The value of ‘Y’ will perform Aadhaar demographic authentication and will return errors if any in response. The value of ‘N’ will also perform Aadhaar demographic authentication but will return any error in case of authentication failure. It will create a basic mobile based account for the user. Value ‘N’ should be used when the user account needs to be created in the absence of the user. */
 		demoauth?: string | null;
 
-		/** This is date of birth of the user as mentioned in Aadhaar in DDMMYYYY format. */
+		/**
+		 * This is date of birth of the user as mentioned in Aadhaar in DDMMYYYY format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dob?: number | null;
 
 		/** This is gender of the user as mentioned in Aadhaar. The possible values are M, F, T for male, female and transgender respectively. */
@@ -307,7 +314,10 @@ export namespace MyNS {
 		/** Provide SHA-256 encrypted value of the client secret, clientid and ts parameters above concatenated in this sequence (client secret, clientid, ts). The hmac parameter is used by DigiLocker to ensure the data integrity and authentication of the request. Use the Client Secret Key generated during the application registration process on Partners Portal as the client secret. */
 		hmac?: string | null;
 
-		/** This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists. */
+		/**
+		 * This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mobile?: number | null;
 
 		/** This is name of the user as mentioned in Aadhaar. */
@@ -316,7 +326,10 @@ export namespace MyNS {
 		/** Provide a timestamp value in UNIX (or POSIX) format in IST time zone in seconds. This timestamp value must not be older than 30 minutes. */
 		ts?: string | null;
 
-		/** This is the Aadhaar number of the user. DigiLocker will check whether an account exists for this Aadhaar number. Either uid or mobile is required to verify whether an account exists. */
+		/**
+		 * This is the Aadhaar number of the user. DigiLocker will check whether an account exists for this Aadhaar number. Either uid or mobile is required to verify whether an account exists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uid?: number | null;
 
 		/** The parameter indicates whether the mobile number provided above should be validated by DigiLocker. If this parameter is ‘Y’, the DigiLocker sends an OTP to verify the mobile number. In this case the client application will call the second API to validate the OTP. The user will be signed on only after successful OTP validation. This flow should be used when the user account is created by user himself/herself or the user is present to provide the OTP. If this parameter is ‘N’, the user account will be created without OTP validation. The OTP validation will be performed when the user signs in for the first time in DigiLocker. This flow should be used when the user account needs to be created in the absence of the user. */
@@ -333,7 +346,10 @@ export namespace MyNS {
 		/** The parameter indicates whether Aadhaar demographic authentication must be successful for creating DigiLocker account. The possible values are ‘Y’ and ‘N’. The value of ‘Y’ will perform Aadhaar demographic authentication and will return errors if any in response. The value of ‘N’ will also perform Aadhaar demographic authentication but will return any error in case of authentication failure. It will create a basic mobile based account for the user. Value ‘N’ should be used when the user account needs to be created in the absence of the user. */
 		demoauth: FormControl<string | null | undefined>,
 
-		/** This is date of birth of the user as mentioned in Aadhaar in DDMMYYYY format. */
+		/**
+		 * This is date of birth of the user as mentioned in Aadhaar in DDMMYYYY format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dob: FormControl<number | null | undefined>,
 
 		/** This is gender of the user as mentioned in Aadhaar. The possible values are M, F, T for male, female and transgender respectively. */
@@ -342,7 +358,10 @@ export namespace MyNS {
 		/** Provide SHA-256 encrypted value of the client secret, clientid and ts parameters above concatenated in this sequence (client secret, clientid, ts). The hmac parameter is used by DigiLocker to ensure the data integrity and authentication of the request. Use the Client Secret Key generated during the application registration process on Partners Portal as the client secret. */
 		hmac: FormControl<string | null | undefined>,
 
-		/** This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists. */
+		/**
+		 * This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mobile: FormControl<number | null | undefined>,
 
 		/** This is name of the user as mentioned in Aadhaar. */
@@ -351,7 +370,10 @@ export namespace MyNS {
 		/** Provide a timestamp value in UNIX (or POSIX) format in IST time zone in seconds. This timestamp value must not be older than 30 minutes. */
 		ts: FormControl<string | null | undefined>,
 
-		/** This is the Aadhaar number of the user. DigiLocker will check whether an account exists for this Aadhaar number. Either uid or mobile is required to verify whether an account exists. */
+		/**
+		 * This is the Aadhaar number of the user. DigiLocker will check whether an account exists for this Aadhaar number. Either uid or mobile is required to verify whether an account exists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uid: FormControl<number | null | undefined>,
 
 		/** The parameter indicates whether the mobile number provided above should be validated by DigiLocker. If this parameter is ‘Y’, the DigiLocker sends an OTP to verify the mobile number. In this case the client application will call the second API to validate the OTP. The user will be signed on only after successful OTP validation. This flow should be used when the user account is created by user himself/herself or the user is present to provide the OTP. If this parameter is ‘N’, the user account will be created without OTP validation. The OTP validation will be performed when the user signs in for the first time in DigiLocker. This flow should be used when the user account needs to be created in the absence of the user. */
@@ -404,6 +426,7 @@ export namespace MyNS {
 		/**
 		 * The masked mobile number of the user on which the OTP has been sent.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mobile: number;
 
@@ -442,6 +465,7 @@ export namespace MyNS {
 		/**
 		 * The masked mobile number of the user on which the OTP has been sent.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		mobile: FormControl<number | null | undefined>,
 
@@ -483,10 +507,16 @@ export namespace MyNS {
 		/** Provide SHA-256 encrypted value of the client secret, clientid and ts parameters above concatenated in this sequence (client secret, clientid, ts). The hmac parameter is used by DigiLocker to ensure the data integrity and authentication of the request. Use the Client Secret Key generated during the application registration process on Partners Portal as the client secret. */
 		hmac?: string | null;
 
-		/** This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists. */
+		/**
+		 * This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mobile?: number | null;
 
-		/** The OTP provided by the user. */
+		/**
+		 * The OTP provided by the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otp?: number | null;
 
 		/** Provide a timestamp value in UNIX (or POSIX) format in IST time zone in seconds. This timestamp value must not be older than 30 minutes. */
@@ -500,10 +530,16 @@ export namespace MyNS {
 		/** Provide SHA-256 encrypted value of the client secret, clientid and ts parameters above concatenated in this sequence (client secret, clientid, ts). The hmac parameter is used by DigiLocker to ensure the data integrity and authentication of the request. Use the Client Secret Key generated during the application registration process on Partners Portal as the client secret. */
 		hmac: FormControl<string | null | undefined>,
 
-		/** This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists. */
+		/**
+		 * This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mobile: FormControl<number | null | undefined>,
 
-		/** The OTP provided by the user. */
+		/**
+		 * The OTP provided by the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		otp: FormControl<number | null | undefined>,
 
 		/** Provide a timestamp value in UNIX (or POSIX) format in IST time zone in seconds. This timestamp value must not be older than 30 minutes. */
@@ -650,6 +686,7 @@ export namespace MyNS {
 		/**
 		 * Mobile number associated with DigiLocker account of the
 		 * user. The client device accepts the mobile number on the device from user and sends it in this parameter. Either the username or the mobile number must be provided.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dl_mobile?: number | null;
 
@@ -665,6 +702,7 @@ export namespace MyNS {
 		/**
 		 * Mobile number associated with DigiLocker account of the
 		 * user. The client device accepts the mobile number on the device from user and sends it in this parameter. Either the username or the mobile number must be provided.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dl_mobile: FormControl<number | null | undefined>,
 
@@ -701,12 +739,14 @@ export namespace MyNS {
 		/**
 		 * The masked mobile number on which the OTP is sent.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dl_masked_mobile: number;
 
 		/**
 		 * The duration in seconds for which the code is valid.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expires_in: number;
 	}
@@ -727,12 +767,14 @@ export namespace MyNS {
 		/**
 		 * The masked mobile number on which the OTP is sent.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dl_masked_mobile: FormControl<number | null | undefined>,
 
 		/**
 		 * The duration in seconds for which the code is valid.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expires_in: FormControl<number | null | undefined>,
 	}
@@ -1778,31 +1820,55 @@ export namespace MyNS {
 
 	export interface GetStatisticsResponseMonthwise_registations {
 
-		/** Count of cumulative user registrations in the given month. */
+		/**
+		 * Count of cumulative user registrations in the given month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 		details2?: GetStatisticsResponseMonthwise_registationsDetails2;
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** Month of the year in numeric format with January as 1 */
+		/**
+		 * Month of the year in numeric format with January as 1
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year in YYYY format */
+		/**
+		 * Year in YYYY format
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 	export interface GetStatisticsResponseMonthwise_registationsFormProperties {
 
-		/** Count of cumulative user registrations in the given month. */
+		/**
+		 * Count of cumulative user registrations in the given month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Month of the year in numeric format with January as 1 */
+		/**
+		 * Month of the year in numeric format with January as 1
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year in YYYY format */
+		/**
+		 * Year in YYYY format
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGetStatisticsResponseMonthwise_registationsFormGroup() {
@@ -1817,30 +1883,54 @@ export namespace MyNS {
 
 	export interface GetStatisticsResponseMonthwise_registationsDetails2 {
 
-		/** Count of cumulative user registrations in the given month. */
+		/**
+		 * Count of cumulative user registrations in the given month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** Month of the year in numeric format with January as 1 */
+		/**
+		 * Month of the year in numeric format with January as 1
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year in YYYY format */
+		/**
+		 * Year in YYYY format
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 	export interface GetStatisticsResponseMonthwise_registationsDetails2FormProperties {
 
-		/** Count of cumulative user registrations in the given month. */
+		/**
+		 * Count of cumulative user registrations in the given month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Month of the year in numeric format with January as 1 */
+		/**
+		 * Month of the year in numeric format with January as 1
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year in YYYY format */
+		/**
+		 * Year in YYYY format
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGetStatisticsResponseMonthwise_registationsDetails2FormGroup() {
@@ -1858,16 +1948,23 @@ export namespace MyNS {
 		/**
 		 * Count of cumulative user authentic documents in
 		 * the given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count?: number | null;
 		details?: GetStatisticsResponseYearwise_authentic_documentsDetails;
 		details1?: GetStatisticsResponseYearwise_authentic_documentsDetails1;
 		details2?: GetStatisticsResponseYearwise_authentic_documentsDetails2;
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** Year in YYYY format. */
+		/**
+		 * Year in YYYY format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 	export interface GetStatisticsResponseYearwise_authentic_documentsFormProperties {
@@ -1875,13 +1972,20 @@ export namespace MyNS {
 		/**
 		 * Count of cumulative user authentic documents in
 		 * the given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Year in YYYY format. */
+		/**
+		 * Year in YYYY format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGetStatisticsResponseYearwise_authentic_documentsFormGroup() {
@@ -1895,24 +1999,42 @@ export namespace MyNS {
 
 	export interface GetStatisticsResponseYearwise_authentic_documentsDetails {
 
-		/** Count of cumulative user authentic documents in the given year. */
+		/**
+		 * Count of cumulative user authentic documents in the given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** Year in YYYY format. */
+		/**
+		 * Year in YYYY format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 	export interface GetStatisticsResponseYearwise_authentic_documentsDetailsFormProperties {
 
-		/** Count of cumulative user authentic documents in the given year. */
+		/**
+		 * Count of cumulative user authentic documents in the given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Year in YYYY format. */
+		/**
+		 * Year in YYYY format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGetStatisticsResponseYearwise_authentic_documentsDetailsFormGroup() {
@@ -1926,24 +2048,42 @@ export namespace MyNS {
 
 	export interface GetStatisticsResponseYearwise_authentic_documentsDetails1 {
 
-		/** Count of cumulative user authentic documents in the given year. */
+		/**
+		 * Count of cumulative user authentic documents in the given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** Year in YYYY format. */
+		/**
+		 * Year in YYYY format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 	export interface GetStatisticsResponseYearwise_authentic_documentsDetails1FormProperties {
 
-		/** Count of cumulative user authentic documents in the given year. */
+		/**
+		 * Count of cumulative user authentic documents in the given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Year in YYYY format. */
+		/**
+		 * Year in YYYY format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGetStatisticsResponseYearwise_authentic_documentsDetails1FormGroup() {
@@ -1957,24 +2097,42 @@ export namespace MyNS {
 
 	export interface GetStatisticsResponseYearwise_authentic_documentsDetails2 {
 
-		/** Count of cumulative user authentic documents in the given year. */
+		/**
+		 * Count of cumulative user authentic documents in the given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** Year in YYYY format. */
+		/**
+		 * Year in YYYY format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 	export interface GetStatisticsResponseYearwise_authentic_documentsDetails2FormProperties {
 
-		/** Count of cumulative user authentic documents in the given year. */
+		/**
+		 * Count of cumulative user authentic documents in the given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Unique id of the list item. */
+		/**
+		 * Unique id of the list item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Year in YYYY format. */
+		/**
+		 * Year in YYYY format.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGetStatisticsResponseYearwise_authentic_documentsDetails2FormGroup() {
@@ -2155,7 +2313,10 @@ export namespace MyNS {
 		/** Provide the client id that was created during the application registration process on Partners Portal. */
 		clientid?: string | null;
 
-		/** This is the DigiLocker Id of the user that was acquired using Get User Details API. */
+		/**
+		 * This is the DigiLocker Id of the user that was acquired using Get User Details API.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		digilockerid?: number | null;
 
 		/** A unique number of the document. This id will be unique within the document type issued by the issuer. */
@@ -2173,7 +2334,10 @@ export namespace MyNS {
 		/** This is the unique identifier of the document. */
 		uri?: string | null;
 
-		/** The date from which the document is valid in DDMMYYYY format. This may be same as the issue date. */
+		/**
+		 * The date from which the document is valid in DDMMYYYY format. This may be same as the issue date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validfrom?: number | null;
 
 		/** The expiry date of the document in DDMMYYYY format. */
@@ -2187,7 +2351,10 @@ export namespace MyNS {
 		/** Provide the client id that was created during the application registration process on Partners Portal. */
 		clientid: FormControl<string | null | undefined>,
 
-		/** This is the DigiLocker Id of the user that was acquired using Get User Details API. */
+		/**
+		 * This is the DigiLocker Id of the user that was acquired using Get User Details API.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		digilockerid: FormControl<number | null | undefined>,
 
 		/** A unique number of the document. This id will be unique within the document type issued by the issuer. */
@@ -2205,7 +2372,10 @@ export namespace MyNS {
 		/** This is the unique identifier of the document. */
 		uri: FormControl<string | null | undefined>,
 
-		/** The date from which the document is valid in DDMMYYYY format. This may be same as the issue date. */
+		/**
+		 * The date from which the document is valid in DDMMYYYY format. This may be same as the issue date.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		validfrom: FormControl<number | null | undefined>,
 
 		/** The expiry date of the document in DDMMYYYY format. */
@@ -2996,13 +3166,19 @@ export namespace MyNS {
 		/** Provide SHA-256 encrypted value of the client secret, clientid and ts parameters above concatenated in this sequence (client secret, clientid, ts). The hmac parameter is used by DigiLocker to ensure the data integrity and authentication of the request. Use the Client Secret Key generated during the application registration process on Partners Portal as the client secret. */
 		hmac?: string | null;
 
-		/** This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists. */
+		/**
+		 * This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mobile?: number | null;
 
 		/** Provide a timestamp value in UNIX (or POSIX) format in IST time zone in seconds. This timestamp value must not be older than 30 minutes. */
 		ts?: string | null;
 
-		/** This is the Aadhaar number of the user. DigiLocker will check whether an account exists for this Aadhaar number. Either uid or mobile is required to verify whether an account exists. */
+		/**
+		 * This is the Aadhaar number of the user. DigiLocker will check whether an account exists for this Aadhaar number. Either uid or mobile is required to verify whether an account exists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uid?: number | null;
 	}
 	export interface VerifyAccountFormProperties {
@@ -3013,13 +3189,19 @@ export namespace MyNS {
 		/** Provide SHA-256 encrypted value of the client secret, clientid and ts parameters above concatenated in this sequence (client secret, clientid, ts). The hmac parameter is used by DigiLocker to ensure the data integrity and authentication of the request. Use the Client Secret Key generated during the application registration process on Partners Portal as the client secret. */
 		hmac: FormControl<string | null | undefined>,
 
-		/** This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists. */
+		/**
+		 * This is the mobile number of the user. DigiLocker will check whether an account exists for this mobile number. Either uid or mobile is required to verify whether an account exists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mobile: FormControl<number | null | undefined>,
 
 		/** Provide a timestamp value in UNIX (or POSIX) format in IST time zone in seconds. This timestamp value must not be older than 30 minutes. */
 		ts: FormControl<string | null | undefined>,
 
-		/** This is the Aadhaar number of the user. DigiLocker will check whether an account exists for this Aadhaar number. Either uid or mobile is required to verify whether an account exists. */
+		/**
+		 * This is the Aadhaar number of the user. DigiLocker will check whether an account exists for this Aadhaar number. Either uid or mobile is required to verify whether an account exists.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		uid: FormControl<number | null | undefined>,
 	}
 	export function CreateVerifyAccountFormGroup() {
@@ -3147,6 +3329,7 @@ export namespace MyNS {
 		 * @param {Get_Authorization_Code_idCode_challenge_method} Code_challenge_method Specifies what method was used to encode a code_verifier to generate code_challenge parameter above. This parameter must be used with the code_challenge parameter. The only supported values for this parameter is S256.
 		 * @param {string} dl_flow If this parameter is provided its value will always be signup. This parameter indicates that the user does not have a DigiLocker account and will be directed to the signup flow directly. After the account is created, the user will be directed to the authorization flow. If this parameter is not sent, the user will be redirected to the sign in flow.
 		 * @param {number} Verified_mobile Verified mobile number of the user. If this parameter is passed, DigiLocker will skip the mobile OTP verification step during sign up. DigiLocker will treat the mobile number passed in this parameter as a verified mobile number by the trusted client application. This parameter will be used only if dl_flow parameter mentioned above is set to signup and will be ignored otherwise.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {any} successful operation
 		 */
 		Get_Authorization_Code_id(client_id: string | null | undefined, response_type: string, redirect_uri: string, state: string, Code_challenge: Get_Authorization_Code_idCode_challenge | null | undefined, Code_challenge_method: Get_Authorization_Code_idCode_challenge_method | null | undefined, dl_flow: string | null | undefined, Verified_mobile: number | null | undefined): Observable<HttpResponse<string>> {

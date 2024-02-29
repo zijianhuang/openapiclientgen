@@ -927,7 +927,9 @@ namespace MyNS
 		/// <param name="channel">Filter to restrict to subscriptions associated with that channel.</param>
 		/// <param name="deviceId">Optional filter to restrict to devices associated with that deviceId. Cannot be used with clientId.</param>
 		/// <param name="clientId">Optional filter to restrict to devices associated with that clientId. Cannot be used with deviceId.</param>
-		/// <param name="limit">The maximum number of records to return.</param>
+		/// <param name="limit">The maximum number of records to return.
+		/// Maximum: 1000
+		// </param>
 		public async Task GetPushSubscriptionsOnChannelsAsync(string channel, string deviceId, string clientId, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "push/channelSubscriptions?channel=" + (channel==null? "" : System.Uri.EscapeDataString(channel))+"&deviceId=" + (deviceId==null? "" : System.Uri.EscapeDataString(deviceId))+"&clientId=" + (clientId==null? "" : System.Uri.EscapeDataString(clientId))+"&limit="+limit;
@@ -1047,7 +1049,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="deviceId">Optional filter to restrict to devices associated with that deviceId.</param>
 		/// <param name="clientId">Optional filter to restrict to devices associated with that clientId.</param>
-		/// <param name="limit">The maximum number of records to return.</param>
+		/// <param name="limit">The maximum number of records to return.
+		/// Maximum: 1000
+		// </param>
 		public async Task GetRegisteredPushDevicesAsync(string deviceId, string clientId, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "push/deviceRegistrations?deviceId=" + (deviceId==null? "" : System.Uri.EscapeDataString(deviceId))+"&clientId=" + (clientId==null? "" : System.Uri.EscapeDataString(clientId))+"&limit="+limit;

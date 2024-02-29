@@ -43,13 +43,19 @@ export namespace MyNS {
 		/** Collection for the next billing period is autommatic/manual */
 		auto_collection?: AccountAuto_collection | null;
 
-		/** Account balance in cents */
+		/**
+		 * Account balance in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance?: number | null;
 
 		/** 3 letter currency code */
 		balance_currency_code?: string | null;
 
-		/** Number of free targets */
+		/**
+		 * Number of free targets
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		free_target_quantity?: number | null;
 
 		/** Has account used up it's trial */
@@ -58,14 +64,23 @@ export namespace MyNS {
 		/** Heroku accounts (for future use) */
 		heroku?: boolean | null;
 
-		/** Date of next billing */
+		/**
+		 * Date of next billing
+		 * Type: DateOnly
+		 */
 		next_billing_at?: Date | null;
 		plan?: Plan;
 
-		/** Number of subscribed targets */
+		/**
+		 * Number of subscribed targets
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plan_target_quantity?: number | null;
 
-		/** Maximum number of subscribed target for pool plans */
+		/**
+		 * Maximum number of subscribed target for pool plans
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pool_size?: number | null;
 
 		/**
@@ -83,13 +98,19 @@ export namespace MyNS {
 		/** Collection for the next billing period is autommatic/manual */
 		auto_collection: FormControl<AccountAuto_collection | null | undefined>,
 
-		/** Account balance in cents */
+		/**
+		 * Account balance in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** 3 letter currency code */
 		balance_currency_code: FormControl<string | null | undefined>,
 
-		/** Number of free targets */
+		/**
+		 * Number of free targets
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		free_target_quantity: FormControl<number | null | undefined>,
 
 		/** Has account used up it's trial */
@@ -98,13 +119,22 @@ export namespace MyNS {
 		/** Heroku accounts (for future use) */
 		heroku: FormControl<boolean | null | undefined>,
 
-		/** Date of next billing */
+		/**
+		 * Date of next billing
+		 * Type: DateOnly
+		 */
 		next_billing_at: FormControl<Date | null | undefined>,
 
-		/** Number of subscribed targets */
+		/**
+		 * Number of subscribed targets
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plan_target_quantity: FormControl<number | null | undefined>,
 
-		/** Maximum number of subscribed target for pool plans */
+		/**
+		 * Maximum number of subscribed target for pool plans
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pool_size: FormControl<number | null | undefined>,
 
 		/**
@@ -168,7 +198,10 @@ export namespace MyNS {
 		/** Unit of billing period */
 		period_unit?: PlanPeriod_unit | null;
 
-		/** Price in cents */
+		/**
+		 * Price in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 	}
 	export interface PlanFormProperties {
@@ -200,7 +233,10 @@ export namespace MyNS {
 		/** Unit of billing period */
 		period_unit: FormControl<PlanPeriod_unit | null | undefined>,
 
-		/** Price in cents */
+		/**
+		 * Price in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 	}
 	export function CreatePlanFormGroup() {
@@ -1021,7 +1057,10 @@ export namespace MyNS {
 		/** User comment left on the finding. */
 		comment?: string | null;
 
-		/** CVSS score */
+		/**
+		 * CVSS score
+		 * Type: float
+		 */
 		cvss_score?: number | null;
 
 		/** CVSS vector */
@@ -1117,7 +1156,10 @@ export namespace MyNS {
 		/** User comment left on the finding. */
 		comment: FormControl<string | null | undefined>,
 
-		/** CVSS score */
+		/**
+		 * CVSS score
+		 * Type: float
+		 */
 		cvss_score: FormControl<number | null | undefined>,
 
 		/** CVSS vector */
@@ -1378,7 +1420,10 @@ export namespace MyNS {
 		/** User comment left on the finding. */
 		comment?: string | null;
 
-		/** CVSS score */
+		/**
+		 * CVSS score
+		 * Type: float
+		 */
 		cvss_score?: number | null;
 
 		/** CVSS vector */
@@ -1474,7 +1519,10 @@ export namespace MyNS {
 		/** User comment left on the finding. */
 		comment: FormControl<string | null | undefined>,
 
-		/** CVSS score */
+		/**
+		 * CVSS score
+		 * Type: float
+		 */
 		cvss_score: FormControl<number | null | undefined>,
 
 		/** CVSS vector */
@@ -1602,7 +1650,10 @@ export namespace MyNS {
 		/** User comment left on the finding. */
 		comment?: string | null;
 
-		/** CVSS score */
+		/**
+		 * CVSS score
+		 * Type: float
+		 */
 		cvss_score?: number | null;
 
 		/** CVSS vector */
@@ -1698,7 +1749,10 @@ export namespace MyNS {
 		/** User comment left on the finding. */
 		comment: FormControl<string | null | undefined>,
 
-		/** CVSS score */
+		/**
+		 * CVSS score
+		 * Type: float
+		 */
 		cvss_score: FormControl<number | null | undefined>,
 
 		/** CVSS vector */
@@ -1931,10 +1985,16 @@ export namespace MyNS {
 
 	export interface Invoice {
 
-		/** Amount remaining to pay in cents */
+		/**
+		 * Amount remaining to pay in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount_due?: number | null;
 
-		/** Amount already paid in cents */
+		/**
+		 * Amount already paid in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount_paid?: number | null;
 
 		/** 3 letter currency code */
@@ -1948,19 +2008,31 @@ export namespace MyNS {
 		/** Current plan id */
 		plan_id?: string | null;
 
-		/** Price before taxes in cents */
+		/**
+		 * Price before taxes in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sub_total?: number | null;
 		InvoiceTaxes?: Array<InvoiceTaxes>;
 
-		/** Price after taxes in cents */
+		/**
+		 * Price after taxes in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface InvoiceFormProperties {
 
-		/** Amount remaining to pay in cents */
+		/**
+		 * Amount remaining to pay in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount_due: FormControl<number | null | undefined>,
 
-		/** Amount already paid in cents */
+		/**
+		 * Amount already paid in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount_paid: FormControl<number | null | undefined>,
 
 		/** 3 letter currency code */
@@ -1972,10 +2044,16 @@ export namespace MyNS {
 		/** Current plan id */
 		plan_id: FormControl<string | null | undefined>,
 
-		/** Price before taxes in cents */
+		/**
+		 * Price before taxes in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sub_total: FormControl<number | null | undefined>,
 
-		/** Price after taxes in cents */
+		/**
+		 * Price after taxes in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceFormGroup() {
@@ -1993,7 +2071,10 @@ export namespace MyNS {
 
 	export interface InvoiceDiscounts {
 
-		/** Discounted amount in cents */
+		/**
+		 * Discounted amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount?: number | null;
 
 		/** Discount description */
@@ -2001,7 +2082,10 @@ export namespace MyNS {
 	}
 	export interface InvoiceDiscountsFormProperties {
 
-		/** Discounted amount in cents */
+		/**
+		 * Discounted amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Discount description */
@@ -2017,42 +2101,72 @@ export namespace MyNS {
 
 	export interface InvoiceLine_items {
 
-		/** Total amount in cents */
+		/**
+		 * Total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount?: number | null;
 
 		/** Charge description */
 		description?: string | null;
 
-		/** Discount amount in cents */
+		/**
+		 * Discount amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discount_amount?: number | null;
 
-		/** Units charged */
+		/**
+		 * Units charged
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** Tax amount in cents */
+		/**
+		 * Tax amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax_amount?: number | null;
 
-		/** Price per unit in cents */
+		/**
+		 * Price per unit in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unit_amount?: number | null;
 	}
 	export interface InvoiceLine_itemsFormProperties {
 
-		/** Total amount in cents */
+		/**
+		 * Total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Charge description */
 		description: FormControl<string | null | undefined>,
 
-		/** Discount amount in cents */
+		/**
+		 * Discount amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		discount_amount: FormControl<number | null | undefined>,
 
-		/** Units charged */
+		/**
+		 * Units charged
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Tax amount in cents */
+		/**
+		 * Tax amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
-		/** Price per unit in cents */
+		/**
+		 * Price per unit in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unit_amount: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceLine_itemsFormGroup() {
@@ -2069,24 +2183,36 @@ export namespace MyNS {
 
 	export interface InvoiceTaxes {
 
-		/** Amount of tax in cents */
+		/**
+		 * Amount of tax in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax_amount?: number | null;
 
 		/** Name of applied tax */
 		tax_name?: string | null;
 
-		/** Tax rate */
+		/**
+		 * Tax rate
+		 * Type: float
+		 */
 		tax_rate?: number | null;
 	}
 	export interface InvoiceTaxesFormProperties {
 
-		/** Amount of tax in cents */
+		/**
+		 * Amount of tax in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax_amount: FormControl<number | null | undefined>,
 
 		/** Name of applied tax */
 		tax_name: FormControl<string | null | undefined>,
 
-		/** Tax rate */
+		/**
+		 * Tax rate
+		 * Type: float
+		 */
 		tax_rate: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceTaxesFormGroup() {
@@ -2461,16 +2587,25 @@ export namespace MyNS {
 		/** Information on the status of the crawling step of the scanning process */
 		fingerprinter?: ScanFingerprinter;
 
-		/** Number of high severity findings in this scan */
+		/**
+		 * Number of high severity findings in this scan
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		highs?: number | null;
 
 		/** Object id. */
 		id?: string | null;
 
-		/** Number of low severity findings in this scan */
+		/**
+		 * Number of low severity findings in this scan
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lows?: number | null;
 
-		/** Number of medium severity findings in this scan */
+		/**
+		 * Number of medium severity findings in this scan
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mediums?: number | null;
 
 		/**
@@ -2514,16 +2649,25 @@ export namespace MyNS {
 		/** Date time of creation */
 		created: FormControl<Date | null | undefined>,
 
-		/** Number of high severity findings in this scan */
+		/**
+		 * Number of high severity findings in this scan
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		highs: FormControl<number | null | undefined>,
 
 		/** Object id. */
 		id: FormControl<string | null | undefined>,
 
-		/** Number of low severity findings in this scan */
+		/**
+		 * Number of low severity findings in this scan
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lows: FormControl<number | null | undefined>,
 
-		/** Number of medium severity findings in this scan */
+		/**
+		 * Number of medium severity findings in this scan
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mediums: FormControl<number | null | undefined>,
 
 		/**
@@ -2598,18 +2742,30 @@ export namespace MyNS {
 
 	export interface ScanCrawlerStatus {
 
-		/** Number of crawled URLs */
+		/**
+		 * Number of crawled URLs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'0'?: number | null;
 
-		/** Total number of URLs in the queue */
+		/**
+		 * Total number of URLs in the queue
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 	}
 	export interface ScanCrawlerStatusFormProperties {
 
-		/** Number of crawled URLs */
+		/**
+		 * Number of crawled URLs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'0': FormControl<number | null | undefined>,
 
-		/** Total number of URLs in the queue */
+		/**
+		 * Total number of URLs in the queue
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 	}
 	export function CreateScanCrawlerStatusFormGroup() {
@@ -2622,7 +2778,10 @@ export namespace MyNS {
 
 	export interface ScanFingerprinter {
 
-		/** The number of detected frameworks/software on the target */
+		/**
+		 * The number of detected frameworks/software on the target
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** List of possible errors from the fingerprinter */
@@ -2636,7 +2795,10 @@ export namespace MyNS {
 	}
 	export interface ScanFingerprinterFormProperties {
 
-		/** The number of detected frameworks/software on the target */
+		/**
+		 * The number of detected frameworks/software on the target
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** The current state of the fingerprinter */
@@ -2678,18 +2840,30 @@ export namespace MyNS {
 
 	export interface ScanScannerStatus {
 
-		/** Number of completed tasks */
+		/**
+		 * Number of completed tasks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'0'?: number | null;
 
-		/** Total number of tasks in the queue */
+		/**
+		 * Total number of tasks in the queue
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 	}
 	export interface ScanScannerStatusFormProperties {
 
-		/** Number of completed tasks */
+		/**
+		 * Number of completed tasks
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'0': FormControl<number | null | undefined>,
 
-		/** Total number of tasks in the queue */
+		/**
+		 * Total number of tasks in the queue
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 	}
 	export function CreateScanScannerStatusFormGroup() {
@@ -3895,7 +4069,9 @@ export namespace MyNS {
 		 * List frameworks
 		 * Get frameworks/
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @return {FrameworksGetByPageAndLengthAndOrderingAndSearchReturn} Framework list
@@ -4009,7 +4185,9 @@ export namespace MyNS {
 		 * List API keys allowed to operate on account
 		 * Get keys/
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @return {KeysGetByPageAndLengthAndOrderingAndSearchReturn} API Key list
@@ -4051,7 +4229,9 @@ export namespace MyNS {
 		 * List labels
 		 * Get labels/
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @return {LabelsGetByPageAndLengthAndOrderingAndSearchReturn} Label list
@@ -4122,7 +4302,9 @@ export namespace MyNS {
 		 * User data
 		 * Get profile/
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @return {User} User object
@@ -4173,7 +4355,9 @@ export namespace MyNS {
 		 * List targets
 		 * Get targets/
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @return {TargetsGetByPageAndLengthAndOrderingAndSearchReturn} List of targets
@@ -4240,7 +4424,9 @@ export namespace MyNS {
 		 * List scans for all targets
 		 * Get targets/all/scans/
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @param {Array<string>} started Filter by scan start dates
@@ -4255,6 +4441,7 @@ export namespace MyNS {
 		 * List scheduled scans for all targets expanding recurrence
 		 * Get targets/all/scheduledscans/expanded/
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TargetsAllScheduledscansExpandedGetByLengthReturn} Next scheduled scans
 		 */
 		TargetsAllScheduledscansExpandedGetByLength(length: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<TargetsAllScheduledscansExpandedGetByLengthReturn> {
@@ -4342,7 +4529,9 @@ export namespace MyNS {
 		 * Get targets/{target_id}/assets/
 		 * @param {string} target_id Target id
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @return {Targets_target_idAssetsGetByPageAndLengthAndOrderingAndSearchReturn} Asset list
@@ -4457,7 +4646,9 @@ export namespace MyNS {
 		 * @param {Array<string>} assignee Filter by assignee ids
 		 * @param {Array<string>} label Filter by finding labels
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @return {Targets_target_idFindingsGetByScanAndSeverityAndStateAndAssigneeAndLabelAndPageAndLengthAndOrderingAndSearchReturn} Finding list
@@ -4734,7 +4925,9 @@ export namespace MyNS {
 		 * Get targets/{target_id}/keys/
 		 * @param {string} target_id Target id
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @return {Targets_target_idKeysGetByPageAndLengthAndOrderingAndSearchReturn} API Key list
@@ -4800,7 +4993,9 @@ export namespace MyNS {
 		 * Get targets/{target_id}/scans/
 		 * @param {string} target_id Target id
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @param {Array<string>} started Filter by scan start dates
@@ -4827,7 +5022,9 @@ export namespace MyNS {
 		 * Get targets/{target_id}/scans/retrieve_page/
 		 * @param {string} target_id Target id
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} date Date
+		 *     Type: DateOnly
 		 * @return {Targets_target_idScansRetrieve_pageGetByLengthAndDateReturn} Page number for supplied date
 		 */
 		Targets_target_idScansRetrieve_pageGetByLengthAndDate(target_id: string, length: number | null | undefined, date: Date, headersHandler?: () => HttpHeaders): Observable<Targets_target_idScansRetrieve_pageGetByLengthAndDateReturn> {
@@ -4916,7 +5113,9 @@ export namespace MyNS {
 		 * Get targets/{target_id}/scheduledscans/
 		 * @param {string} target_id Target id
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @return {Targets_target_idScheduledscansGetByPageAndLengthAndOrderingAndSearchReturn} Scheduled scan list
@@ -4940,6 +5139,7 @@ export namespace MyNS {
 		 * Get targets/{target_id}/scheduledscans/expanded/
 		 * @param {string} target_id Target id
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Targets_target_idScheduledscansExpandedGetByLengthReturn} Next scheduled scans
 		 */
 		Targets_target_idScheduledscansExpandedGetByLength(target_id: string, length: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Targets_target_idScheduledscansExpandedGetByLengthReturn> {
@@ -5120,7 +5320,9 @@ export namespace MyNS {
 		 * List users
 		 * Get users/
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @return {UsersGetByPageAndLengthAndOrderingAndSearchReturn} User list
@@ -5182,7 +5384,9 @@ export namespace MyNS {
 		 * List vulnerability definitions
 		 * Get vulnerability_definitions/
 		 * @param {number} page Page number within the paginated result set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} length Number of results to return per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} ordering Which field to use when ordering the results, prefix with `-` to invert ordering.
 		 * @param {string} search Search term
 		 * @return {Vulnerability_definitionsGetByPageAndLengthAndOrderingAndSearchReturn} Vulnerability defitions list
@@ -5265,7 +5469,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token?: string | null;
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface AuthObtainPostReturnFormProperties {
@@ -5273,7 +5480,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token: FormControl<string | null | undefined>,
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateAuthObtainPostReturnFormGroup() {
@@ -5289,7 +5499,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token?: string | null;
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface AuthRefreshPostReturnFormProperties {
@@ -5297,7 +5510,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token: FormControl<string | null | undefined>,
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateAuthRefreshPostReturnFormGroup() {
@@ -5313,7 +5529,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token?: string | null;
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface AuthRevokePostReturnFormProperties {
@@ -5321,7 +5540,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token: FormControl<string | null | undefined>,
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateAuthRevokePostReturnFormGroup() {
@@ -5337,7 +5559,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token?: string | null;
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface AuthVerifyPostReturnFormProperties {
@@ -5345,7 +5570,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token: FormControl<string | null | undefined>,
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateAuthVerifyPostReturnFormGroup() {
@@ -5378,7 +5606,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token?: string | null;
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface EnterpriseAuthObtainPostReturnFormProperties {
@@ -5386,7 +5617,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token: FormControl<string | null | undefined>,
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseAuthObtainPostReturnFormGroup() {
@@ -5402,7 +5636,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token?: string | null;
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface EnterpriseAuthRefreshPostReturnFormProperties {
@@ -5410,7 +5647,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token: FormControl<string | null | undefined>,
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseAuthRefreshPostReturnFormGroup() {
@@ -5426,7 +5666,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token?: string | null;
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface EnterpriseAuthRevokePostReturnFormProperties {
@@ -5434,7 +5677,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token: FormControl<string | null | undefined>,
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseAuthRevokePostReturnFormGroup() {
@@ -5450,7 +5696,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token?: string | null;
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 	}
 	export interface EnterpriseAuthVerifyPostReturnFormProperties {
@@ -5458,7 +5707,10 @@ export namespace MyNS {
 		/** Authentication token */
 		token: FormControl<string | null | undefined>,
 
-		/** Token time to live in seconds */
+		/**
+		 * Token time to live in seconds
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 	}
 	export function CreateEnterpriseAuthVerifyPostReturnFormGroup() {
@@ -5471,16 +5723,28 @@ export namespace MyNS {
 
 	export interface EventsGetReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** Event objects */
@@ -5488,16 +5752,28 @@ export namespace MyNS {
 	}
 	export interface EventsGetReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateEventsGetReturnFormGroup() {
@@ -5512,16 +5788,28 @@ export namespace MyNS {
 
 	export interface FrameworksGetByPageAndLengthAndOrderingAndSearchReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** Framework objects */
@@ -5529,16 +5817,28 @@ export namespace MyNS {
 	}
 	export interface FrameworksGetByPageAndLengthAndOrderingAndSearchReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateFrameworksGetByPageAndLengthAndOrderingAndSearchReturnFormGroup() {
@@ -5553,16 +5853,28 @@ export namespace MyNS {
 
 	export interface KeysGetByPageAndLengthAndOrderingAndSearchReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** API key objects */
@@ -5570,16 +5882,28 @@ export namespace MyNS {
 	}
 	export interface KeysGetByPageAndLengthAndOrderingAndSearchReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateKeysGetByPageAndLengthAndOrderingAndSearchReturnFormGroup() {
@@ -5594,16 +5918,28 @@ export namespace MyNS {
 
 	export interface LabelsGetByPageAndLengthAndOrderingAndSearchReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** label objects. */
@@ -5611,16 +5947,28 @@ export namespace MyNS {
 	}
 	export interface LabelsGetByPageAndLengthAndOrderingAndSearchReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateLabelsGetByPageAndLengthAndOrderingAndSearchReturnFormGroup() {
@@ -5730,16 +6078,28 @@ export namespace MyNS {
 
 	export interface TargetsGetByPageAndLengthAndOrderingAndSearchReturn {
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagination_count?: number | null;
 
 		/** Target objects */
@@ -5747,16 +6107,28 @@ export namespace MyNS {
 	}
 	export interface TargetsGetByPageAndLengthAndOrderingAndSearchReturnFormProperties {
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagination_count: FormControl<number | null | undefined>,
 	}
 	export function CreateTargetsGetByPageAndLengthAndOrderingAndSearchReturnFormGroup() {
@@ -5782,24 +6154,42 @@ export namespace MyNS {
 
 	export interface TargetsAllAverage_fix_timeGetReturnResults {
 
-		/** Average fix time in seconds for high severity findings */
+		/**
+		 * Average fix time in seconds for high severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		high?: number | null;
 
-		/** Average fix time in seconds for low severity findings */
+		/**
+		 * Average fix time in seconds for low severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		low?: number | null;
 
-		/** Average fix time in seconds for medium severity findings */
+		/**
+		 * Average fix time in seconds for medium severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		medium?: number | null;
 	}
 	export interface TargetsAllAverage_fix_timeGetReturnResultsFormProperties {
 
-		/** Average fix time in seconds for high severity findings */
+		/**
+		 * Average fix time in seconds for high severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		high: FormControl<number | null | undefined>,
 
-		/** Average fix time in seconds for low severity findings */
+		/**
+		 * Average fix time in seconds for low severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		low: FormControl<number | null | undefined>,
 
-		/** Average fix time in seconds for medium severity findings */
+		/**
+		 * Average fix time in seconds for medium severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		medium: FormControl<number | null | undefined>,
 	}
 	export function CreateTargetsAllAverage_fix_timeGetReturnResultsFormGroup() {
@@ -5836,7 +6226,10 @@ export namespace MyNS {
 		/** needing attention */
 		'0'?: string | null;
 
-		/** Number of targets */
+		/**
+		 * Number of targets
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 
 		/** needs_atention */
@@ -5847,7 +6240,10 @@ export namespace MyNS {
 		/** needing attention */
 		'0': FormControl<string | null | undefined>,
 
-		/** Number of targets */
+		/**
+		 * Number of targets
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 
 		/** needs_atention */
@@ -5867,7 +6263,10 @@ export namespace MyNS {
 		/** no issues found */
 		'0'?: string | null;
 
-		/** Number of targets */
+		/**
+		 * Number of targets
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 
 		/** no_issues_found */
@@ -5878,7 +6277,10 @@ export namespace MyNS {
 		/** no issues found */
 		'0': FormControl<string | null | undefined>,
 
-		/** Number of targets */
+		/**
+		 * Number of targets
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 
 		/** no_issues_found */
@@ -5895,16 +6297,25 @@ export namespace MyNS {
 
 	export interface TargetsAllNeeds_attention_topGetReturn {
 
-		/** Number of high severity findings */
+		/**
+		 * Number of high severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		highs?: number | null;
 
 		/** Target id */
 		id?: string | null;
 
-		/** Number of low severity findings */
+		/**
+		 * Number of low severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lows?: number | null;
 
-		/** Number of medium severity findings */
+		/**
+		 * Number of medium severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mediums?: number | null;
 
 		/** Name */
@@ -5915,16 +6326,25 @@ export namespace MyNS {
 	}
 	export interface TargetsAllNeeds_attention_topGetReturnFormProperties {
 
-		/** Number of high severity findings */
+		/**
+		 * Number of high severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		highs: FormControl<number | null | undefined>,
 
 		/** Target id */
 		id: FormControl<string | null | undefined>,
 
-		/** Number of low severity findings */
+		/**
+		 * Number of low severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lows: FormControl<number | null | undefined>,
 
-		/** Number of medium severity findings */
+		/**
+		 * Number of medium severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mediums: FormControl<number | null | undefined>,
 
 		/** Name */
@@ -5950,7 +6370,10 @@ export namespace MyNS {
 		/** Date time */
 		'0'?: Date | null;
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 	}
 	export interface TargetsAllRisk_trendGetReturnFormProperties {
@@ -5958,7 +6381,10 @@ export namespace MyNS {
 		/** Date time */
 		'0': FormControl<Date | null | undefined>,
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 	}
 	export function CreateTargetsAllRisk_trendGetReturnFormGroup() {
@@ -5971,16 +6397,28 @@ export namespace MyNS {
 
 	export interface TargetsAllScansGetByPageAndLengthAndOrderingAndSearchAndStartedAndStatusReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** Scan objects */
@@ -5988,16 +6426,28 @@ export namespace MyNS {
 	}
 	export interface TargetsAllScansGetByPageAndLengthAndOrderingAndSearchAndStartedAndStatusReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateTargetsAllScansGetByPageAndLengthAndOrderingAndSearchAndStartedAndStatusReturnFormGroup() {
@@ -6025,9 +6475,13 @@ export namespace MyNS {
 
 	export interface TargetsAllSeverity_trendGetReturn {
 		results?: TargetsAllSeverity_trendGetReturnResults;
+
+		/** Type: float */
 		step?: number | null;
 	}
 	export interface TargetsAllSeverity_trendGetReturnFormProperties {
+
+		/** Type: float */
 		step: FormControl<number | null | undefined>,
 	}
 	export function CreateTargetsAllSeverity_trendGetReturnFormGroup() {
@@ -6055,7 +6509,10 @@ export namespace MyNS {
 		/** Date time */
 		'0'?: Date | null;
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 	}
 	export interface TargetsAllSeverity_trendGetReturnResultsHighFormProperties {
@@ -6063,7 +6520,10 @@ export namespace MyNS {
 		/** Date time */
 		'0': FormControl<Date | null | undefined>,
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 	}
 	export function CreateTargetsAllSeverity_trendGetReturnResultsHighFormGroup() {
@@ -6079,7 +6539,10 @@ export namespace MyNS {
 		/** Date time */
 		'0'?: Date | null;
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 	}
 	export interface TargetsAllSeverity_trendGetReturnResultsLowFormProperties {
@@ -6087,7 +6550,10 @@ export namespace MyNS {
 		/** Date time */
 		'0': FormControl<Date | null | undefined>,
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 	}
 	export function CreateTargetsAllSeverity_trendGetReturnResultsLowFormGroup() {
@@ -6103,7 +6569,10 @@ export namespace MyNS {
 		/** Date time */
 		'0'?: Date | null;
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 	}
 	export interface TargetsAllSeverity_trendGetReturnResultsMediumFormProperties {
@@ -6111,7 +6580,10 @@ export namespace MyNS {
 		/** Date time */
 		'0': FormControl<Date | null | undefined>,
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 	}
 	export function CreateTargetsAllSeverity_trendGetReturnResultsMediumFormGroup() {
@@ -6148,16 +6620,28 @@ export namespace MyNS {
 
 	export interface TargetsArchivedPostReturn {
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagination_count?: number | null;
 
 		/** Target objects */
@@ -6165,16 +6649,28 @@ export namespace MyNS {
 	}
 	export interface TargetsArchivedPostReturnFormProperties {
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pagination_count: FormControl<number | null | undefined>,
 	}
 	export function CreateTargetsArchivedPostReturnFormGroup() {
@@ -6189,16 +6685,28 @@ export namespace MyNS {
 
 	export interface Targets_target_idAssetsGetByPageAndLengthAndOrderingAndSearchReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** Asset objects. */
@@ -6206,16 +6714,28 @@ export namespace MyNS {
 	}
 	export interface Targets_target_idAssetsGetByPageAndLengthAndOrderingAndSearchReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idAssetsGetByPageAndLengthAndOrderingAndSearchReturnFormGroup() {
@@ -6258,24 +6778,42 @@ export namespace MyNS {
 
 	export interface Targets_target_idAverage_fix_timeGetReturnResults {
 
-		/** Average fix time in seconds for high severity findings */
+		/**
+		 * Average fix time in seconds for high severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		high?: number | null;
 
-		/** Average fix time in seconds for low severity findings */
+		/**
+		 * Average fix time in seconds for low severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		low?: number | null;
 
-		/** Average fix time in seconds for medium severity findings */
+		/**
+		 * Average fix time in seconds for medium severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		medium?: number | null;
 	}
 	export interface Targets_target_idAverage_fix_timeGetReturnResultsFormProperties {
 
-		/** Average fix time in seconds for high severity findings */
+		/**
+		 * Average fix time in seconds for high severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		high: FormControl<number | null | undefined>,
 
-		/** Average fix time in seconds for low severity findings */
+		/**
+		 * Average fix time in seconds for low severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		low: FormControl<number | null | undefined>,
 
-		/** Average fix time in seconds for medium severity findings */
+		/**
+		 * Average fix time in seconds for medium severity findings
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		medium: FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idAverage_fix_timeGetReturnResultsFormGroup() {
@@ -6289,16 +6827,28 @@ export namespace MyNS {
 
 	export interface Targets_target_idEventsGetReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** Event objects */
@@ -6306,16 +6856,28 @@ export namespace MyNS {
 	}
 	export interface Targets_target_idEventsGetReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idEventsGetReturnFormGroup() {
@@ -6330,16 +6892,28 @@ export namespace MyNS {
 
 	export interface Targets_target_idFindingsGetByScanAndSeverityAndStateAndAssigneeAndLabelAndPageAndLengthAndOrderingAndSearchReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** Finding objects. */
@@ -6347,16 +6921,28 @@ export namespace MyNS {
 	}
 	export interface Targets_target_idFindingsGetByScanAndSeverityAndStateAndAssigneeAndLabelAndPageAndLengthAndOrderingAndSearchReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idFindingsGetByScanAndSeverityAndStateAndAssigneeAndLabelAndPageAndLengthAndOrderingAndSearchReturnFormGroup() {
@@ -6371,16 +6957,28 @@ export namespace MyNS {
 
 	export interface Targets_target_idKeysGetByPageAndLengthAndOrderingAndSearchReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** API key objects */
@@ -6388,16 +6986,28 @@ export namespace MyNS {
 	}
 	export interface Targets_target_idKeysGetByPageAndLengthAndOrderingAndSearchReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idKeysGetByPageAndLengthAndOrderingAndSearchReturnFormGroup() {
@@ -6415,7 +7025,10 @@ export namespace MyNS {
 		/** Date time */
 		'0'?: Date | null;
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 	}
 	export interface Targets_target_idRisk_trendGetReturnFormProperties {
@@ -6423,7 +7036,10 @@ export namespace MyNS {
 		/** Date time */
 		'0': FormControl<Date | null | undefined>,
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idRisk_trendGetReturnFormGroup() {
@@ -6436,16 +7052,28 @@ export namespace MyNS {
 
 	export interface Targets_target_idScansGetByPageAndLengthAndOrderingAndSearchAndStartedAndStatusReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** Scan objects */
@@ -6453,16 +7081,28 @@ export namespace MyNS {
 	}
 	export interface Targets_target_idScansGetByPageAndLengthAndOrderingAndSearchAndStartedAndStatusReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idScansGetByPageAndLengthAndOrderingAndSearchAndStartedAndStatusReturnFormGroup() {
@@ -6477,12 +7117,18 @@ export namespace MyNS {
 
 	export interface Targets_target_idScansRetrieve_pageGetByLengthAndDateReturn {
 
-		/** Page number */
+		/**
+		 * Page number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 	}
 	export interface Targets_target_idScansRetrieve_pageGetByLengthAndDateReturnFormProperties {
 
-		/** Page number */
+		/**
+		 * Page number
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idScansRetrieve_pageGetByLengthAndDateReturnFormGroup() {
@@ -6494,16 +7140,28 @@ export namespace MyNS {
 
 	export interface Targets_target_idScheduledscansGetByPageAndLengthAndOrderingAndSearchReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** Scheduled scan objects */
@@ -6511,16 +7169,28 @@ export namespace MyNS {
 	}
 	export interface Targets_target_idScheduledscansGetByPageAndLengthAndOrderingAndSearchReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idScheduledscansGetByPageAndLengthAndOrderingAndSearchReturnFormGroup() {
@@ -6548,9 +7218,13 @@ export namespace MyNS {
 
 	export interface Targets_target_idSeverity_trendGetReturn {
 		results?: Targets_target_idSeverity_trendGetReturnResults;
+
+		/** Type: float */
 		step?: number | null;
 	}
 	export interface Targets_target_idSeverity_trendGetReturnFormProperties {
+
+		/** Type: float */
 		step: FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idSeverity_trendGetReturnFormGroup() {
@@ -6578,7 +7252,10 @@ export namespace MyNS {
 		/** Date time */
 		'0'?: Date | null;
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 	}
 	export interface Targets_target_idSeverity_trendGetReturnResultsHighFormProperties {
@@ -6586,7 +7263,10 @@ export namespace MyNS {
 		/** Date time */
 		'0': FormControl<Date | null | undefined>,
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idSeverity_trendGetReturnResultsHighFormGroup() {
@@ -6602,7 +7282,10 @@ export namespace MyNS {
 		/** Date time */
 		'0'?: Date | null;
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 	}
 	export interface Targets_target_idSeverity_trendGetReturnResultsLowFormProperties {
@@ -6610,7 +7293,10 @@ export namespace MyNS {
 		/** Date time */
 		'0': FormControl<Date | null | undefined>,
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idSeverity_trendGetReturnResultsLowFormGroup() {
@@ -6626,7 +7312,10 @@ export namespace MyNS {
 		/** Date time */
 		'0'?: Date | null;
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1'?: number | null;
 	}
 	export interface Targets_target_idSeverity_trendGetReturnResultsMediumFormProperties {
@@ -6634,7 +7323,10 @@ export namespace MyNS {
 		/** Date time */
 		'0': FormControl<Date | null | undefined>,
 
-		/** Risk score */
+		/**
+		 * Risk score
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'1': FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idSeverity_trendGetReturnResultsMediumFormGroup() {
@@ -6688,16 +7380,28 @@ export namespace MyNS {
 
 	export interface Targets_target_idWebhooksGetReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** Webhook objects */
@@ -6705,16 +7409,28 @@ export namespace MyNS {
 	}
 	export interface Targets_target_idWebhooksGetReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateTargets_target_idWebhooksGetReturnFormGroup() {
@@ -6729,16 +7445,28 @@ export namespace MyNS {
 
 	export interface UsersGetByPageAndLengthAndOrderingAndSearchReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** User objects */
@@ -6746,16 +7474,28 @@ export namespace MyNS {
 	}
 	export interface UsersGetByPageAndLengthAndOrderingAndSearchReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateUsersGetByPageAndLengthAndOrderingAndSearchReturnFormGroup() {
@@ -6770,16 +7510,28 @@ export namespace MyNS {
 
 	export interface Vulnerability_definitionsGetByPageAndLengthAndOrderingAndSearchReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** Vulnerability definition objects. */
@@ -6787,16 +7539,28 @@ export namespace MyNS {
 	}
 	export interface Vulnerability_definitionsGetByPageAndLengthAndOrderingAndSearchReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateVulnerability_definitionsGetByPageAndLengthAndOrderingAndSearchReturnFormGroup() {
@@ -6811,16 +7575,28 @@ export namespace MyNS {
 
 	export interface WebhooksGetReturn {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length?: number | null;
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total?: number | null;
 
 		/** Webhook objects */
@@ -6828,16 +7604,28 @@ export namespace MyNS {
 	}
 	export interface WebhooksGetReturnFormProperties {
 
-		/** Number of objects in the response. */
+		/**
+		 * Number of objects in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Number of objects per page. */
+		/**
+		 * Number of objects per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		length: FormControl<number | null | undefined>,
 
-		/** Current page. */
+		/**
+		 * Current page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of pages. */
+		/**
+		 * Number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_total: FormControl<number | null | undefined>,
 	}
 	export function CreateWebhooksGetReturnFormGroup() {

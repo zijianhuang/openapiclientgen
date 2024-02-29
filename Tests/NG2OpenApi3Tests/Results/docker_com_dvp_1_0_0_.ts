@@ -38,9 +38,13 @@ export namespace MyNS {
 	}
 
 	export interface MonthModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month?: number | null;
 	}
 	export interface MonthModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month: FormControl<number | null | undefined>,
 	}
 	export function CreateMonthModelFormGroup() {
@@ -170,16 +174,20 @@ export namespace MyNS {
 	}
 
 	export interface ResponseDataFile {
-		size?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size?: string | null;
 		url?: string | null;
 	}
 	export interface ResponseDataFileFormProperties {
-		size: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateResponseDataFileFormGroup() {
 		return new FormGroup<ResponseDataFileFormProperties>({
-			size: new FormControl<number | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -297,9 +305,13 @@ export namespace MyNS {
 	}
 
 	export interface WeekModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		week?: number | null;
 	}
 	export interface WeekModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		week: FormControl<number | null | undefined>,
 	}
 	export function CreateWeekModelFormGroup() {
@@ -321,9 +333,13 @@ export namespace MyNS {
 	}
 
 	export interface YearModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year?: number | null;
 	}
 	export interface YearModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateYearModelFormGroup() {
@@ -376,6 +392,7 @@ export namespace MyNS {
 		 * Get namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}
 		 * @param {string} namespace Namespace to fetch data for
 		 * @param {number} year Year to fetch data for
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TimespanType} timespantype Type of timespan to fetch data for
 		 * @return {TimespanData} Success
 		 */
@@ -389,8 +406,10 @@ export namespace MyNS {
 		 * Get namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}
 		 * @param {string} namespace Namespace to fetch data for
 		 * @param {number} year Year to fetch data for
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TimespanType} timespantype Type of timespan to fetch data for
 		 * @param {number} timespan Timespan to fetch data for
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TimespanModel} Success
 		 */
 		GetNamespaceTimespanMetadata(namespace: string, year: number, timespantype: TimespanType, timespan: number): Observable<TimespanModel> {
@@ -403,8 +422,10 @@ export namespace MyNS {
 		 * Get namespaces/{namespace}/pulls/exports/years/{year}/{timespantype}/{timespan}/{dataview}
 		 * @param {string} namespace Namespace to fetch data for
 		 * @param {number} year Year to fetch data for
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TimespanType} timespantype Type of timespan to fetch data for
 		 * @param {number} timespan Timespan to fetch data for
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {DataviewType} dataview Type of data to fetch
 		 * @return {ResponseData} Success
 		 */

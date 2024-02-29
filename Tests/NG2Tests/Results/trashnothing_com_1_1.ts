@@ -1192,10 +1192,15 @@ export namespace MyNS {
 		 * Get conversations
 		 * @param {string} category Used to filter messases by category.  Must be set to one of the following three categories: inbox, archived, blocked
 		 * @param {number} page The page of conversations to return.
+		 *     Minimum: 1
 		 * @param {number} per_page The number of conversations to return per page (must be >= 1 and <= 30).
+		 *     Minimum: 1    Maximum: 30
 		 * @param {number} num_messages The number of recent messages to return with each conversation. Additional messages can be retrieved using get conversation messages endpoint.
+		 *     Minimum: 0    Maximum: 30
 		 * @param {number} include_num_unread If set to 1, the num_unread field in the response will be set to the count of the total number of conversations that have unread messages. <br /><br /> This is useful for showing users the total number of unread messages that they have in their inbox. Calculating the count will slow the request down a bit so setting this should be avoided for requests where it's not needed (eg. requesting archived or blocked conversations or requests that are just paging through older conversations).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @return {Get_conversationsReturn} The conversations and paging data.
 		 */
 		Get_conversations(category: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined, num_messages: number | null | undefined, include_num_unread: number | null | undefined, device_pixel_ratio: number | null | undefined): Observable<Get_conversationsReturn> {
@@ -1208,8 +1213,11 @@ export namespace MyNS {
 		 * Get conversations/search
 		 * @param {string} search The search query used to find conversations and messages.
 		 * @param {number} page The page of conversations to return.
+		 *     Minimum: 1
 		 * @param {number} per_page The number of conversations to return per page (must be >= 1 and <= 30).
+		 *     Minimum: 1    Maximum: 30
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @return {Search_conversationsReturn} The conversations and paging data.
 		 */
 		Search_conversations(search: string, page: number | null | undefined, per_page: number | null | undefined, device_pixel_ratio: number | null | undefined): Observable<Search_conversationsReturn> {
@@ -1241,9 +1249,13 @@ export namespace MyNS {
 		 * Get conversations/{conversation_id}/messages
 		 * @param {string} conversation_id The ID of the conversation to return messages from.
 		 * @param {number} page The page of messages to return.
+		 *     Minimum: 1
 		 * @param {number} per_page The number of messages to return per page (must be >= 1 and <= 30).
+		 *     Minimum: 1    Maximum: 30
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @param {number} include_conversation If set to 1, the conversation will be returned along with the messages.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Get_conversation_messagesReturn} The messages and page data.  The conversation data is optional and is only returned if the include_conversation parameter is set.
 		 */
 		Get_conversation_messages(conversation_id: string, page: number | null | undefined, per_page: number | null | undefined, device_pixel_ratio: number | null | undefined, include_conversation: number | null | undefined): Observable<Get_conversation_messagesReturn> {
@@ -1275,13 +1287,18 @@ export namespace MyNS {
 		 * Get groups
 		 * @param {string} name Find groups that have the given text somewhere in their name (case insensitive).
 		 * @param {number} latitude Find groups near the given latitude and longitude.
+		 *     Type: double
 		 * @param {number} longitude Find groups near the given latitude and longitude.
+		 *     Type: double
 		 * @param {number} distance When latitude and longitude are passed, distance can optionally be passed to only return groups within a certain distance (in kilometers) from the point specified by the latitude and longitude.  The distance must be > 0 and <= 150 and will default to 100.
+		 *     Minimum: 0    Maximum: 150
 		 * @param {string} country Find groups in the given country where country is a 2 letter country code for the country (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 ).
 		 * @param {string} region For countries with regions (AU, CA, GB, US), search groups in a specific region as specified by the region abbreviation.  The supported regions and their abbreviations are listed below. <br /><br /> NOTE: The region and postal_code parameters cannot be used at the same time and if both are passed then the postal_code will take priority. <br /><br /> --- <br /><br /> **AU**<br /> - QLD: Queensland<br /> - SA: South Australia<br /> - TAS: Tasmania<br /> - VIC: Victoria<br /> - WA: Western Australia<br /> - NT: Northern Territory<br /> - NSW: New South Wales - ACT<br /> <br /> **CA**<br /> - AB: Alberta<br /> - BC: British Columbia<br /> - MB: Manitoba<br /> - NB: New Brunswick<br /> - NL: Newfoundland and Labrador<br /> - NS: Nova Scotia<br /> - ON: Ontario<br /> - QC: Quebec<br /> - SK: Saskatchewan<br /> - PE: Prince Edward Island<br /> <br /> **GB**<br /> - E: East<br /> - EM: East Midlands<br /> - LDN: London<br /> - NE: North East<br /> - NW: North West<br /> - NI: Northern Ireland<br /> - SC: Scotland<br /> - SE: South East<br /> - SW: South West<br /> - WA: Wales<br /> - WM: West Midlands<br /> - YH: Yorkshire and the Humber<br /> <br /> **US**<br /> All 50 states and the District of Columbia are supported.  For the abbreviations, see: https://github.com/jasonong/List-of-US-States/blob/master/states.csv
 		 * @param {string} postal_code Find groups in the given postal code.  Only a few countries support postal code searches (US, CA, AU, GB).  The country parameter must be passed when the postal_code parameter is set. <br /><br /> NOTE: The region and postal_code parameters cannot be used at the same time and if both are passed then the postal_code will take priority.
 		 * @param {number} page The page of groups to return.
+		 *     Minimum: 1
 		 * @param {number} per_page The number of groups to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @return {Search_groupsReturn} The groups and paging data.
 		 */
 		Search_groups(name: string | null | undefined, latitude: number | null | undefined, longitude: number | null | undefined, distance: number | null | undefined, country: string | null | undefined, region: string | null | undefined, postal_code: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<Search_groupsReturn> {
@@ -1335,6 +1352,7 @@ export namespace MyNS {
 		 * Get photos/multiple
 		 * @param {string} photo_ids The IDs of the photos to retrieve.  If more than 50 photo IDs are passed, only the first 50 photos will be returned.
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @return {Array<PhotoResult>} The photos.
 		 */
 		Get_photos_by_ids(photo_ids: string, device_pixel_ratio: number | null | undefined): Observable<Array<PhotoResult>> {
@@ -1354,7 +1372,9 @@ export namespace MyNS {
 		 * Rotate a photo
 		 * Post photos/{photo_id}/rotate
 		 * @param {number} degrees Rotation in degrees - currently only 90, 180 and 270 are supported which correspond to rotate left, rotate upside down and rotate right.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @return {PhotoResult} Photo rotated.
 		 */
 		Rotate_photo(photo_id: string, degrees: number, device_pixel_ratio: number | null | undefined): Observable<PhotoResult> {
@@ -1370,11 +1390,17 @@ export namespace MyNS {
 		 * @param {string} sources A comma separated list of the post sources to retrieve posts from. The available sources are: groups, trashnothing, open_archive_groups. The trashnothing source is for public posts that are posted on trash nothing but are not associated with any group. The open_archive_groups source provides a way to easily request posts from groups that have open_archives set to true without having to pass a group_ids parameter.  When passed, it will automatically return posts from open archive groups that are within the area specified by the latitude, longitude and radius parameters (or the current users' location if latitude, longitude and radius aren't passed). <br /><br /> NOTE: For requests using an api key instead of oauth, passing the trashnothing source or the open_archive_groups source makes the latitude, longitude and radius parameters required.
 		 * @param {string} group_ids A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @param {number} latitude The latitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} longitude The longitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} radius The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
+		 *     Minimum: 0    Maximum: 257500
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned.  If unset, defaults to the current date and time minus 90 days.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned.  If unset, defaults to the current date and time.
 		 * @param {string} outcomes A comma separated list of the post outcomes to return.  The available post outcomes are: satisfied, withdrawn <br /><br /> There are also a couple special values that can be passed.  If set to an empty string (the default), only posts that are not satisfied and not withdrawn are returned. If set to 'all', all posts will be returned no matter what outcome the posts have.
@@ -1392,8 +1418,11 @@ export namespace MyNS {
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned. The UTC date and time used must be within a day or less of date_max. And the date and time must be within the last 30 days. And the date and time must be rounded to the nearest second.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned. The UTC date and time used must be within a day or less of date_min. And the date and time must be rounded to the nearest second.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 50).
+		 *     Minimum: 1    Maximum: 50
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @return {Get_all_postsReturn} The posts.
 		 */
 		Get_all_posts(types: string, date_min: Date, date_max: Date, per_page: number | null | undefined, page: number | null | undefined, device_pixel_ratio: number | null | undefined): Observable<Get_all_postsReturn> {
@@ -1499,11 +1528,17 @@ export namespace MyNS {
 		 * @param {string} sources A comma separated list of the post sources to retrieve posts from. The available sources are: groups, trashnothing, open_archive_groups. The trashnothing source is for public posts that are posted on trash nothing but are not associated with any group. The open_archive_groups source provides a way to easily request posts from groups that have open_archives set to true without having to pass a group_ids parameter.  When passed, it will automatically return posts from open archive groups that are within the area specified by the latitude, longitude and radius parameters (or the current users' location if latitude, longitude and radius aren't passed). <br /><br /> NOTE: For requests using an api key instead of oauth, passing the trashnothing source or the open_archive_groups source makes the latitude, longitude and radius parameters required.
 		 * @param {string} group_ids A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @param {number} latitude The latitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} longitude The longitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} radius The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
+		 *     Minimum: 0    Maximum: 257500
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned.  If unset, defaults to the current date and time minus 90 days.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned.  If unset, defaults to the current date and time.
 		 * @param {string} outcomes A comma separated list of the post outcomes to return.  The available post outcomes are: satisfied, withdrawn <br /><br /> There are also a couple special values that can be passed.  If set to an empty string (the default), only posts that are not satisfied and not withdrawn are returned. If set to 'all', all posts will be returned no matter what outcome the posts have.
@@ -1644,11 +1679,17 @@ export namespace MyNS {
 		 * @param {string} sources A comma separated list of the post sources to retrieve posts from. The available sources are: groups, trashnothing, open_archive_groups. The trashnothing source is for public posts that are posted on trash nothing but are not associated with any group. The open_archive_groups source provides a way to easily request posts from groups that have open_archives set to true without having to pass a group_ids parameter.  When passed, it will automatically return posts from open archive groups that are within the area specified by the latitude, longitude and radius parameters (or the current users' location if latitude, longitude and radius aren't passed). <br /><br /> NOTE: For requests using an api key instead of oauth, passing the trashnothing source or the open_archive_groups source makes the latitude, longitude and radius parameters required.
 		 * @param {string} group_ids A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @param {number} latitude The latitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} longitude The longitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} radius The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
+		 *     Minimum: 0    Maximum: 257500
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned.
 		 * @param {string} outcomes A comma separated list of the post outcomes to return.  The available post outcomes are: satisfied, withdrawn <br /><br /> There are also a couple special values that can be passed.  If set to an empty string (the default), only posts that are not satisfied and not withdrawn are returned. If set to 'all', all posts will be returned no matter what outcome the posts have.
@@ -1668,11 +1709,17 @@ export namespace MyNS {
 		 * @param {string} sources A comma separated list of the post sources to retrieve posts from. The available sources are: groups, trashnothing, open_archive_groups. The trashnothing source is for public posts that are posted on trash nothing but are not associated with any group. The open_archive_groups source provides a way to easily request posts from groups that have open_archives set to true without having to pass a group_ids parameter.  When passed, it will automatically return posts from open archive groups that are within the area specified by the latitude, longitude and radius parameters (or the current users' location if latitude, longitude and radius aren't passed). <br /><br /> NOTE: For requests using an api key instead of oauth, passing the trashnothing source or the open_archive_groups source makes the latitude, longitude and radius parameters required.
 		 * @param {string} group_ids A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @param {number} latitude The latitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} longitude The longitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} radius The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
+		 *     Minimum: 0    Maximum: 257500
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned.
 		 * @param {string} outcomes A comma separated list of the post outcomes to return.  The available post outcomes are: satisfied, withdrawn <br /><br /> There are also a couple special values that can be passed.  If set to an empty string (the default), only posts that are not satisfied and not withdrawn are returned. If set to 'all', all posts will be returned no matter what outcome the posts have.
@@ -1728,11 +1775,17 @@ export namespace MyNS {
 		 * @param {string} sources A comma separated list of the post sources to retrieve posts from. The available sources are: groups, trashnothing, open_archive_groups. The trashnothing source is for public posts that are posted on trash nothing but are not associated with any group. The open_archive_groups source provides a way to easily request posts from groups that have open_archives set to true without having to pass a group_ids parameter.  When passed, it will automatically return posts from open archive groups that are within the area specified by the latitude, longitude and radius parameters (or all the open archive groups the requested user has posted to if latitude, longitude and radius aren't passed). <br /><br /> NOTE: For requests using an api key instead of oauth, passing the trashnothing source or the open_archive_groups source makes the latitude, longitude and radius parameters required.
 		 * @param {string} group_ids A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @param {number} latitude The latitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} longitude The longitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} radius The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
+		 *     Minimum: 0    Maximum: 257500
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned.
 		 * @param {string} outcomes A comma separated list of the post outcomes to return.  The available post outcomes are: satisfied, withdrawn <br /><br /> There are also a couple special values that can be passed.  If set to an empty string (the default), only posts that are not satisfied and not withdrawn are returned. If set to 'all', all posts will be returned no matter what outcome the posts have.
@@ -1753,11 +1806,17 @@ export namespace MyNS {
 		 * @param {string} sources A comma separated list of the post sources to retrieve posts from. The available sources are: groups, trashnothing, open_archive_groups. The trashnothing source is for public posts that are posted on trash nothing but are not associated with any group. The open_archive_groups source provides a way to easily request posts from groups that have open_archives set to true without having to pass a group_ids parameter.  When passed, it will automatically return posts from open archive groups that are within the area specified by the latitude, longitude and radius parameters (or all the open archive groups the requested user has posted to if latitude, longitude and radius aren't passed). <br /><br /> NOTE: For requests using an api key instead of oauth, passing the trashnothing source or the open_archive_groups source makes the latitude, longitude and radius parameters required.
 		 * @param {string} group_ids A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @param {number} latitude The latitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} longitude The longitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} radius The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
+		 *     Minimum: 0    Maximum: 257500
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned.
 		 * @param {string} outcomes A comma separated list of the post outcomes to return.  The available post outcomes are: satisfied, withdrawn <br /><br /> There are also a couple special values that can be passed.  If set to an empty string (the default), only posts that are not satisfied and not withdrawn are returned. If set to 'all', all posts will be returned no matter what outcome the posts have.

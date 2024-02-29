@@ -308,7 +308,10 @@ namespace MyNS
 		/// <param name="To">Retrieve only those faxes sent to this phone number, specified in [E.164](https://www.twilio.com/docs/glossary/what-e164) format.</param>
 		/// <param name="DateCreatedOnOrBefore">Retrieve only those faxes with a `date_created` that is before or equal to this value, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
 		/// <param name="DateCreatedAfter">Retrieve only those faxes with a `date_created` that is later than this value, specified in [ISO 8601](https://en.wikipedia.org/wiki/ISO_8601) format.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<ListFaxReturn> ListFaxAsync(string From, string To, System.DateTimeOffset DateCreatedOnOrBefore, System.DateTimeOffset DateCreatedAfter, int PageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -342,8 +345,14 @@ namespace MyNS
 		/// Retrieve a list of all fax media instances for the specified fax.
 		/// ListFaxMedia v1/Faxes/{FaxSid}/Media
 		/// </summary>
-		/// <param name="FaxSid">The SID of the fax with the FaxMedia resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
+		/// <param name="FaxSid">The SID of the fax with the FaxMedia resources to read.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<ListFaxMediaReturn> ListFaxMediaAsync(string FaxSid, int PageSize, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -377,8 +386,14 @@ namespace MyNS
 		/// Delete a specific fax media instance.
 		/// DeleteFaxMedia v1/Faxes/{FaxSid}/Media/{Sid}
 		/// </summary>
-		/// <param name="FaxSid">The SID of the fax with the FaxMedia resource to delete.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the FaxMedia resource to delete.</param>
+		/// <param name="FaxSid">The SID of the fax with the FaxMedia resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the FaxMedia resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteFaxMediaAsync(string FaxSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Faxes/"+ (FaxSid==null? "" : System.Uri.EscapeDataString(FaxSid))+"/Media/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -405,8 +420,14 @@ namespace MyNS
 		/// Fetch a specific fax media instance.
 		/// FetchFaxMedia v1/Faxes/{FaxSid}/Media/{Sid}
 		/// </summary>
-		/// <param name="FaxSid">The SID of the fax with the FaxMedia resource to fetch.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the FaxMedia resource to fetch.</param>
+		/// <param name="FaxSid">The SID of the fax with the FaxMedia resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the FaxMedia resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Faxv1faxfax_media> FetchFaxMediaAsync(string FaxSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -440,7 +461,10 @@ namespace MyNS
 		/// Delete a specific fax and its associated media.
 		/// DeleteFax v1/Faxes/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Fax resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Fax resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteFaxAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Faxes/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -467,7 +491,10 @@ namespace MyNS
 		/// Fetch a specific fax.
 		/// FetchFax v1/Faxes/{Sid}
 		/// </summary>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Fax resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Fax resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Faxv1fax> FetchFaxAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

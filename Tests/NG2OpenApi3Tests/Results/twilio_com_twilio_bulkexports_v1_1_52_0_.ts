@@ -48,7 +48,10 @@ export namespace MyNS {
 		/** The type of communication – Messages, Calls, Conferences, and Participants */
 		resource_type?: string | null;
 
-		/** The size of the day's data file in bytes */
+		/**
+		 * The size of the day's data file in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 	}
 	export interface Bulkexportsv1exportdayFormProperties {
@@ -65,7 +68,10 @@ export namespace MyNS {
 		/** The type of communication – Messages, Calls, Conferences, and Participants */
 		resource_type: FormControl<string | null | undefined>,
 
-		/** The size of the day's data file in bytes */
+		/**
+		 * The size of the day's data file in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateBulkexportsv1exportdayFormGroup() {
@@ -114,8 +120,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique job_sid returned when the custom export was created
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		job_sid?: string | null;
 
@@ -153,8 +159,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique job_sid returned when the custom export was created
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		job_sid: FormControl<string | null | undefined>,
 
@@ -209,8 +215,8 @@ export namespace MyNS {
 
 		/**
 		 * The job_sid returned when the export was created
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		job_sid?: string | null;
 
@@ -249,8 +255,8 @@ export namespace MyNS {
 
 		/**
 		 * The job_sid returned when the export was created
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		job_sid: FormControl<string | null | undefined>,
 
@@ -342,6 +348,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Exports/Jobs/{JobSid}
 		 * @param {string} JobSid The unique string that that we created to identify the Bulk Export job
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteJob(JobSid: string): Observable<HttpResponse<string>> {
@@ -351,6 +358,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Exports/Jobs/{JobSid}
 		 * @param {string} JobSid The unique string that that we created to identify the Bulk Export job
+		 *     Min length: 34    Max length: 34
 		 * @return {Bulkexportsv1exportjob} OK
 		 */
 		FetchJob(JobSid: string): Observable<Bulkexportsv1exportjob> {
@@ -382,7 +390,9 @@ export namespace MyNS {
 		 * Get v1/Exports/{ResourceType}/Days
 		 * @param {string} ResourceType The type of communication – Messages, Calls, Conferences, and Participants
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListDayReturn} OK
 		 */
@@ -405,7 +415,9 @@ export namespace MyNS {
 		 * Get v1/Exports/{ResourceType}/Jobs
 		 * @param {string} ResourceType The type of communication – Messages, Calls, Conferences, and Participants
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListExportCustomJobReturn} OK
 		 */
@@ -430,7 +442,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -439,7 +455,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -473,7 +493,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -482,7 +506,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

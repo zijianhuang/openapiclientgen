@@ -17251,7 +17251,10 @@ namespace MyNS
 		/// Get holidays.
 		/// Holidays_GetHolidays v1/holidays
 		/// </summary>
-		/// <param name="year">Optional: Holidays for this year only. Default: all years.</param>
+		/// <param name="year">Optional: Holidays for this year only. Default: all years.
+		/// Minimum: 1900
+		/// Maximum: 2075
+		// </param>
 		/// <param name="countryGuid">Optional: Holidays for this country only. Default local.</param>
 		/// <returns>List of holidays. </returns>
 		public async Task<HolidayModel[]> Holidays_GetHolidaysAsync(int year, string countryGuid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -19405,7 +19408,10 @@ namespace MyNS
 		/// Get a country by ISO Alpha-2 code
 		/// Countries_GetCountryByCode2 v1/localization/countries/{code2}
 		/// </summary>
-		/// <param name="code2">Optional: ISO Alpha-2 code used to get a country.</param>
+		/// <param name="code2">Optional: ISO Alpha-2 code used to get a country.
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <returns>Country</returns>
 		public async Task<CountryModel[]> Countries_GetCountryByCode2Async(string code2, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -19439,7 +19445,10 @@ namespace MyNS
 		/// Get a country by ISO Alpha-3 code
 		/// Countries_GetCountryByCode3 v1/localization/countries/{code3}
 		/// </summary>
-		/// <param name="code3">Optional: ISO Alpha-3 code used to get a country.</param>
+		/// <param name="code3">Optional: ISO Alpha-3 code used to get a country.
+		/// Max length: 3
+		/// Min length: 3
+		// </param>
 		/// <returns>Country</returns>
 		public async Task<CountryModel[]> Countries_GetCountryByCode3Async(string code3, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -24067,8 +24076,14 @@ namespace MyNS
 		/// ProjectForecasts_DeleteForecasts v1/projects/{projectGuid}/projectforecasts
 		/// </summary>
 		/// <param name="projectGuid">Project for the forecasts to delete</param>
-		/// <param name="year">Year where to start deleting the forecasts</param>
-		/// <param name="month">Month where to start deleting the forecasts</param>
+		/// <param name="year">Year where to start deleting the forecasts
+		/// Minimum: 1900
+		/// Maximum: 2075
+		// </param>
+		/// <param name="month">Month where to start deleting the forecasts
+		/// Minimum: 1
+		/// Maximum: 12
+		// </param>
 		public async Task ProjectForecasts_DeleteForecastsAsync(string projectGuid, int year, int month, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/projects/"+ (projectGuid==null? "" : System.Uri.EscapeDataString(projectGuid))+"/projectforecasts&year="+year+"&month="+month;

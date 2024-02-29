@@ -4,25 +4,49 @@ import { Observable } from 'rxjs';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Country_read {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths?: number | null;
 		lastChange?: Date | null;
 		lastUpdate?: Date | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered?: number | null;
 	}
 	export interface Country_readFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths: FormControl<number | null | undefined>,
 		lastChange: FormControl<Date | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered: FormControl<number | null | undefined>,
 	}
 	export function CreateCountry_readFormGroup() {
@@ -170,25 +194,49 @@ export namespace MyNS {
 	export enum GetLatestCountryDataByNameFormat { json = 'json', xml = 'xml' }
 
 	export interface GetLatestCountryDataByNameReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed?: number | null;
 		country?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths?: number | null;
 		lastChange?: Date | null;
 		lastUpdate?: Date | null;
+
+		/** Type: float */
 		latitude?: number | null;
+
+		/** Type: float */
 		longitude?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered?: number | null;
 	}
 	export interface GetLatestCountryDataByNameReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed: FormControl<number | null | undefined>,
 		country: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths: FormControl<number | null | undefined>,
 		lastChange: FormControl<Date | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
+
+		/** Type: float */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		longitude: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered: FormControl<number | null | undefined>,
 	}
 	export function CreateGetLatestCountryDataByNameReturnFormGroup() {
@@ -207,25 +255,49 @@ export namespace MyNS {
 	}
 
 	export interface GetLatestAllCountriesReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed?: number | null;
 		country?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths?: number | null;
 		lastChange?: Date | null;
 		lastUpdate?: Date | null;
+
+		/** Type: float */
 		latitude?: number | null;
+
+		/** Type: float */
 		longitude?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered?: number | null;
 	}
 	export interface GetLatestAllCountriesReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed: FormControl<number | null | undefined>,
 		country: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths: FormControl<number | null | undefined>,
 		lastChange: FormControl<Date | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
+
+		/** Type: float */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		longitude: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered: FormControl<number | null | undefined>,
 	}
 	export function CreateGetLatestAllCountriesReturnFormGroup() {
@@ -244,25 +316,49 @@ export namespace MyNS {
 	}
 
 	export interface GetLatestCountryDataByCodeReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed?: number | null;
 		country?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths?: number | null;
 		lastChange?: Date | null;
 		lastUpdate?: Date | null;
+
+		/** Type: float */
 		latitude?: number | null;
+
+		/** Type: float */
 		longitude?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered?: number | null;
 	}
 	export interface GetLatestCountryDataByCodeReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed: FormControl<number | null | undefined>,
 		country: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths: FormControl<number | null | undefined>,
 		lastChange: FormControl<Date | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
+
+		/** Type: float */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		longitude: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered: FormControl<number | null | undefined>,
 	}
 	export function CreateGetLatestCountryDataByCodeReturnFormGroup() {
@@ -283,14 +379,22 @@ export namespace MyNS {
 	export interface GetListOfCountriesReturn {
 		'alpha-2-code'?: string | null;
 		'alpha-3-code'?: string | null;
+
+		/** Type: float */
 		latitude?: number | null;
+
+		/** Type: float */
 		longitude?: number | null;
 		name?: string | null;
 	}
 	export interface GetListOfCountriesReturnFormProperties {
 		'alpha-2-code': FormControl<string | null | undefined>,
 		'alpha-3-code': FormControl<string | null | undefined>,
+
+		/** Type: float */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		longitude: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -310,14 +414,22 @@ export namespace MyNS {
 	export interface GetDailyReportAllCountriesReturn {
 		country?: string | null;
 		date?: string | null;
+
+		/** Type: float */
 		latitude?: number | null;
+
+		/** Type: float */
 		longitude?: number | null;
 		GetDailyReportAllCountriesReturnProvince?: Array<GetDailyReportAllCountriesReturnProvince>;
 	}
 	export interface GetDailyReportAllCountriesReturnFormProperties {
 		country: FormControl<string | null | undefined>,
 		date: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDailyReportAllCountriesReturnFormGroup() {
@@ -331,15 +443,31 @@ export namespace MyNS {
 	}
 
 	export interface GetDailyReportAllCountriesReturnProvince {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		active?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered?: number | null;
 	}
 	export interface GetDailyReportAllCountriesReturnProvinceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		active: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDailyReportAllCountriesReturnProvinceFormGroup() {
@@ -355,14 +483,22 @@ export namespace MyNS {
 	export interface GetDailyReportByCountryCodeReturn {
 		country?: string | null;
 		date?: string | null;
+
+		/** Type: float */
 		latitude?: number | null;
+
+		/** Type: float */
 		longitude?: number | null;
 		GetDailyReportByCountryCodeReturnProvince?: Array<GetDailyReportByCountryCodeReturnProvince>;
 	}
 	export interface GetDailyReportByCountryCodeReturnFormProperties {
 		country: FormControl<string | null | undefined>,
 		date: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDailyReportByCountryCodeReturnFormGroup() {
@@ -376,15 +512,31 @@ export namespace MyNS {
 	}
 
 	export interface GetDailyReportByCountryCodeReturnProvince {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		active?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered?: number | null;
 	}
 	export interface GetDailyReportByCountryCodeReturnProvinceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		active: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDailyReportByCountryCodeReturnProvinceFormGroup() {
@@ -400,14 +552,22 @@ export namespace MyNS {
 	export interface GetDailyReportByCountryNameReturn {
 		country?: string | null;
 		date?: string | null;
+
+		/** Type: float */
 		latitude?: number | null;
+
+		/** Type: float */
 		longitude?: number | null;
 		GetDailyReportByCountryNameReturnProvince?: Array<GetDailyReportByCountryNameReturnProvince>;
 	}
 	export interface GetDailyReportByCountryNameReturnFormProperties {
 		country: FormControl<string | null | undefined>,
 		date: FormControl<string | null | undefined>,
+
+		/** Type: float */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDailyReportByCountryNameReturnFormGroup() {
@@ -421,15 +581,31 @@ export namespace MyNS {
 	}
 
 	export interface GetDailyReportByCountryNameReturnProvince {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		active?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered?: number | null;
 	}
 	export interface GetDailyReportByCountryNameReturnProvinceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		active: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDailyReportByCountryNameReturnProvinceFormGroup() {
@@ -443,19 +619,39 @@ export namespace MyNS {
 	}
 
 	export interface GetDailyReportTotalsReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		active?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical?: number | null;
 		date?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered?: number | null;
 	}
 	export interface GetDailyReportTotalsReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		active: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical: FormControl<number | null | undefined>,
 		date: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered: FormControl<number | null | undefined>,
 	}
 	export function CreateGetDailyReportTotalsReturnFormGroup() {
@@ -471,19 +667,35 @@ export namespace MyNS {
 	}
 
 	export interface GetLatestTotalsReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths?: number | null;
 		lastChange?: Date | null;
 		lastUpdate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered?: number | null;
 	}
 	export interface GetLatestTotalsReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		confirmed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		critical: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deaths: FormControl<number | null | undefined>,
 		lastChange: FormControl<Date | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recovered: FormControl<number | null | undefined>,
 	}
 	export function CreateGetLatestTotalsReturnFormGroup() {

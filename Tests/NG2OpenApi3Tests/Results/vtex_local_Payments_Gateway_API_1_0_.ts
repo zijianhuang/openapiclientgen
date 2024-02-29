@@ -15,7 +15,10 @@ export namespace MyNS {
 		salesChannel: string;
 		urn?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface _1CreateanewtransactionRequestFormProperties {
@@ -30,7 +33,10 @@ export namespace MyNS {
 		salesChannel: FormControl<string | null | undefined>,
 		urn: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function Create_1CreateanewtransactionRequestFormGroup() {
@@ -52,25 +58,43 @@ export namespace MyNS {
 		/** Required */
 		fields: Fields;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: number;
 
 		/** Required */
 		transaction: Transaction;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface _2SendPaymentsPrivateRequestFormProperties {
@@ -78,22 +102,40 @@ export namespace MyNS {
 		/** Required */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function Create_2SendPaymentsPrivateRequestFormGroup() {
@@ -207,25 +249,43 @@ export namespace MyNS {
 		/** Required */
 		fields: Fields;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: number;
 
 		/** Required */
 		transaction: Transaction;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface _2SendPaymentsPublicRequestFormProperties {
@@ -233,22 +293,40 @@ export namespace MyNS {
 		/** Required */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function Create_2SendPaymentsPublicRequestFormGroup() {
@@ -272,25 +350,43 @@ export namespace MyNS {
 		/** Required */
 		fields: Fields3;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: number;
 
 		/** Required */
 		transaction: Transaction;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface _2SendPaymentsWithSavedCreditCardRequestFormProperties {
@@ -298,22 +394,40 @@ export namespace MyNS {
 		/** Required */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function Create_2SendPaymentsWithSavedCreditCardRequestFormGroup() {
@@ -446,7 +560,10 @@ export namespace MyNS {
 		/** Required */
 		type: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface ActionFormProperties {
@@ -463,7 +580,10 @@ export namespace MyNS {
 		/** Required */
 		type: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateActionFormGroup() {
@@ -560,6 +680,7 @@ export namespace MyNS {
 		/**
 		 * Value of the purchase.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -568,6 +689,7 @@ export namespace MyNS {
 		/**
 		 * Value of the purchase.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -579,12 +701,20 @@ export namespace MyNS {
 	}
 
 	export interface CancelthetransactionRequestMinicart {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		freight?: number | null;
 		items?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tax?: number | null;
 	}
 	export interface CancelthetransactionRequestMinicartFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		freight: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tax: FormControl<number | null | undefined>,
 	}
 	export function CreateCancelthetransactionRequestMinicartFormGroup() {
@@ -898,7 +1028,10 @@ export namespace MyNS {
 
 	export interface PaymentSystem {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -909,7 +1042,10 @@ export namespace MyNS {
 	}
 	export interface PaymentSystemFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -962,24 +1098,42 @@ export namespace MyNS {
 
 	export interface Option {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		interestRate: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: number;
 	}
 	export interface OptionFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		interestRate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateOptionFormGroup() {
@@ -996,7 +1150,10 @@ export namespace MyNS {
 		/** Required */
 		bin: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -1008,7 +1165,10 @@ export namespace MyNS {
 		/** Required */
 		self: Self;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: number;
 	}
 	export interface PaymentFormProperties {
@@ -1016,7 +1176,10 @@ export namespace MyNS {
 		/** Required */
 		bin: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1025,7 +1188,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePaymentFormGroup() {
@@ -1141,13 +1307,22 @@ export namespace MyNS {
 		/** Required */
 		id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: number;
 
 		/** Required */
@@ -1159,7 +1334,10 @@ export namespace MyNS {
 		/** Required */
 		merchantName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: number;
 
 		/** Required */
@@ -1168,7 +1346,10 @@ export namespace MyNS {
 		/** Required */
 		provider: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: number;
 
 		/** Required */
@@ -1189,7 +1370,10 @@ export namespace MyNS {
 		/** Required */
 		tid: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface PaymentDetailsResponseFormProperties {
@@ -1227,13 +1411,22 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1245,7 +1438,10 @@ export namespace MyNS {
 		/** Required */
 		merchantName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1254,7 +1450,10 @@ export namespace MyNS {
 		/** Required */
 		provider: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1272,7 +1471,10 @@ export namespace MyNS {
 		/** Required */
 		tid: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePaymentDetailsResponseFormGroup() {
@@ -1340,7 +1542,10 @@ export namespace MyNS {
 		/** Required */
 		antifraudConnectorImplementation: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectorId: number;
 
 		/** Required */
@@ -1358,7 +1563,10 @@ export namespace MyNS {
 		/** Required */
 		groupName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -1420,7 +1628,10 @@ export namespace MyNS {
 		/** Required */
 		antifraudConnectorImplementation: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectorId: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1438,7 +1649,10 @@ export namespace MyNS {
 		/** Required */
 		groupName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1654,13 +1868,22 @@ export namespace MyNS {
 		/** Required */
 		id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: number;
 
 		/** Required */
@@ -1672,7 +1895,10 @@ export namespace MyNS {
 		/** Required */
 		merchantName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: number;
 
 		/** Required */
@@ -1681,7 +1907,10 @@ export namespace MyNS {
 		/** Required */
 		provider: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: number;
 
 		/** Required */
@@ -1702,7 +1931,10 @@ export namespace MyNS {
 		/** Required */
 		tid: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface PaymentsByTransactionResponseFormProperties {
@@ -1740,13 +1972,22 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1758,7 +1999,10 @@ export namespace MyNS {
 		/** Required */
 		merchantName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1767,7 +2011,10 @@ export namespace MyNS {
 		/** Required */
 		provider: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1785,7 +2032,10 @@ export namespace MyNS {
 		/** Required */
 		tid: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePaymentsByTransactionResponseFormGroup() {
@@ -1859,13 +2109,22 @@ export namespace MyNS {
 		/** Required */
 		id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: number;
 
 		/** Required */
@@ -1877,7 +2136,10 @@ export namespace MyNS {
 		/** Required */
 		merchantName: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: number;
 
 		/** Required */
@@ -1886,7 +2148,10 @@ export namespace MyNS {
 		/** Required */
 		provider: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: number;
 
 		/** Required */
@@ -1907,7 +2172,10 @@ export namespace MyNS {
 		/** Required */
 		tid: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface ReceivePaymentsResponseFormProperties {
@@ -1945,13 +2213,22 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installments: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsInterestRate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		installmentsValue: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1963,7 +2240,10 @@ export namespace MyNS {
 		/** Required */
 		merchantName: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		paymentSystem: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1972,7 +2252,10 @@ export namespace MyNS {
 		/** Required */
 		provider: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referenceValue: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1990,7 +2273,10 @@ export namespace MyNS {
 		/** Required */
 		tid: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateReceivePaymentsResponseFormGroup() {
@@ -2051,6 +2337,7 @@ export namespace MyNS {
 		/**
 		 * Value of the purchase.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -2059,6 +2346,7 @@ export namespace MyNS {
 		/**
 		 * Value of the purchase.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -2070,12 +2358,20 @@ export namespace MyNS {
 	}
 
 	export interface RefundthetransactionRequestMinicart {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		freight?: number | null;
 		items?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tax?: number | null;
 	}
 	export interface RefundthetransactionRequestMinicartFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		freight: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tax: FormControl<number | null | undefined>,
 	}
 	export function CreateRefundthetransactionRequestMinicartFormGroup() {
@@ -2094,7 +2390,10 @@ export namespace MyNS {
 		/** Required */
 		id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface RequestFormProperties {
@@ -2105,7 +2404,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateRequestFormGroup() {
@@ -2224,10 +2526,16 @@ export namespace MyNS {
 
 	export interface SettleResponse {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cancelledValue: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectorRefundedValue: number;
 
 		/** Required */
@@ -2239,10 +2547,16 @@ export namespace MyNS {
 		/** Required */
 		refundedToken: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refundedValue: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: number;
 
 		/** Required */
@@ -2253,10 +2567,16 @@ export namespace MyNS {
 	}
 	export interface SettleResponseFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cancelledValue: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectorRefundedValue: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2268,10 +2588,16 @@ export namespace MyNS {
 		/** Required */
 		refundedToken: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		refundedValue: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2314,12 +2640,18 @@ export namespace MyNS {
 
 	export interface SettlethetransactionRequest {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface SettlethetransactionRequestFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateSettlethetransactionRequestFormGroup() {
@@ -2418,10 +2750,16 @@ export namespace MyNS {
 		/** Required */
 		status: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutStatus: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		totalRefunds: number;
 
 		/** Required */
@@ -2433,7 +2771,10 @@ export namespace MyNS {
 		/** Required */
 		userAgent: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface StartTransactionResponseFormProperties {
@@ -2507,10 +2848,16 @@ export namespace MyNS {
 		/** Required */
 		status: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutStatus: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		totalRefunds: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2522,7 +2869,10 @@ export namespace MyNS {
 		/** Required */
 		userAgent: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateStartTransactionResponseFormGroup() {
@@ -2649,10 +2999,16 @@ export namespace MyNS {
 		/** Required */
 		status: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutStatus: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		totalRefunds: number;
 
 		/** Required */
@@ -2664,7 +3020,10 @@ export namespace MyNS {
 		/** Required */
 		userAgent: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: number;
 	}
 	export interface TransactionDetailsResponseFormProperties {
@@ -2738,10 +3097,16 @@ export namespace MyNS {
 		/** Required */
 		status: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutStatus: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		totalRefunds: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2753,7 +3118,10 @@ export namespace MyNS {
 		/** Required */
 		userAgent: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateTransactionDetailsResponseFormGroup() {
@@ -2860,12 +3228,18 @@ export namespace MyNS {
 		/** Required */
 		installments: Array<Installment>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: number;
 	}
 	export interface ValidRequestFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateValidRequestFormGroup() {
@@ -2934,6 +3308,11 @@ export namespace MyNS {
 		 * Installments options
 		 * Returns the best installment options according to the informed params.
 		 * Get api/pvt/installments
+		 * @param {number} request_value Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} request_salesChannel Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} request_paymentDetails_0_id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} request_paymentDetails_0_value Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} request_paymentDetails_0_bin Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiPvtInstallmentsGetByRequest_valueAndRequest_salesChannelAndRequest_paymentDetails_0_idAndRequest_paymentDetails_0_valueAndRequest_paymentDetails_0_bin(request_value: number, request_salesChannel: number | null | undefined, request_paymentDetails_0_id: number | null | undefined, request_paymentDetails_0_value: number | null | undefined, request_paymentDetails_0_bin: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3085,7 +3464,6 @@ export namespace MyNS {
 		 * Settle the transaction
 		 * Settles transaction's value.
 		 * Post api/pvt/transactions/{transactionId}/settlement-request
-		 * @return {SettleResponse} 
 		 */
 		ApiPvtTransactions_transactionIdSettlement_requestPost(transactionId: string, requestBody: SettlethetransactionRequest, headersHandler?: () => HttpHeaders): Observable<SettleResponse> {
 			return this.http.post<SettleResponse>(this.baseUri + 'api/pvt/transactions/' + (transactionId == null ? '' : encodeURIComponent(transactionId)) + '/settlement-request', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -3095,7 +3473,6 @@ export namespace MyNS {
 		 * Transaction Settlement  Details
 		 * Returns associated settlements data for the specified transaction id.
 		 * Get api/pvt/transactions/{transactionId}/settlements
-		 * @return {TransactionSettlementDetails} 
 		 */
 		ApiPvtTransactions_transactionIdSettlementsGet(transactionId: string, headersHandler?: () => HttpHeaders): Observable<TransactionSettlementDetails> {
 			return this.http.get<TransactionSettlementDetails>(this.baseUri + 'api/pvt/transactions/' + (transactionId == null ? '' : encodeURIComponent(transactionId)) + '/settlements', { headers: headersHandler ? headersHandler() : undefined });

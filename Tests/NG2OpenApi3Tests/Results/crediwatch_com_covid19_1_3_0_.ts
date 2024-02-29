@@ -121,6 +121,8 @@ export namespace MyNS {
 
 	export interface VerifyNameMeta {
 		job_id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		job_time?: number | null;
 
 		/** Required */
@@ -128,6 +130,8 @@ export namespace MyNS {
 	}
 	export interface VerifyNameMetaFormProperties {
 		job_id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		job_time: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -165,6 +169,8 @@ export namespace MyNS {
 		entity_type?: string | null;
 		is_gstn_verified?: boolean | null;
 		nature_of_business?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pincode?: number | null;
 		registration_date?: string | null;
 		registration_type?: string | null;
@@ -175,6 +181,8 @@ export namespace MyNS {
 		city: FormControl<string | null | undefined>,
 		entity_type: FormControl<string | null | undefined>,
 		is_gstn_verified: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		pincode: FormControl<number | null | undefined>,
 		registration_date: FormControl<string | null | undefined>,
 		registration_type: FormControl<string | null | undefined>,

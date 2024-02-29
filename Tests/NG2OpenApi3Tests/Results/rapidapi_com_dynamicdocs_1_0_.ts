@@ -13,8 +13,10 @@ export namespace MyNS {
 		 * Compile a PDF document from a specific template
 		 * Post templates/{template_token}/compile
 		 * @param {number} doc_url_expires_in The doc-url-expires-in is a numerical parameter which takes integers and describes after how many seconds the provided URL is available to download the document.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CompileLatex_compiler} latex_compiler The latex-compiler parameter can take the following values:  pdflatex lualatex
 		 * @param {number} latex_runs  The latex-runs is a numerical parameter and can take values of 1, 2 and 3. 
+		 *     Minimum: 1    Maximum: 3
 		 * @param {string} main_file_name The main-file-name is a string parameter which identifies the main file to compile.
 		 * @param {string} doc_file_name The doc-file-name is a string parameter which determines the name of the file. Note that the extension of the file is not required.
 		 * @param {string} requestBody Post the dynamic data for the template to compile the document PDF.

@@ -8,6 +8,7 @@ export namespace MyNS {
 		/**
 		 * Action Id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listingActionId: number;
 	}
@@ -16,6 +17,7 @@ export namespace MyNS {
 		/**
 		 * Action Id
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listingActionId: FormControl<number | null | undefined>,
 	}
@@ -47,10 +49,16 @@ export namespace MyNS {
 		 */
 		losingRegistrarId: number;
 
-		/** Monthly traffic page view for the domain */
+		/**
+		 * Monthly traffic page view for the domain
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageViewsMonthly?: number | null;
 
-		/** Monthly parking revenue (in USD micro unit) for the domain */
+		/**
+		 * Monthly parking revenue (in USD micro unit) for the domain
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revenueMonthly?: number | null;
 	}
 	export interface AftermarketListingExpiryCreateFormProperties {
@@ -74,10 +82,16 @@ export namespace MyNS {
 		 */
 		losingRegistrarId: FormControl<number | null | undefined>,
 
-		/** Monthly traffic page view for the domain */
+		/**
+		 * Monthly traffic page view for the domain
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageViewsMonthly: FormControl<number | null | undefined>,
 
-		/** Monthly parking revenue (in USD micro unit) for the domain */
+		/**
+		 * Monthly parking revenue (in USD micro unit) for the domain
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revenueMonthly: FormControl<number | null | undefined>,
 	}
 	export function CreateAftermarketListingExpiryCreateFormGroup() {
@@ -229,9 +243,13 @@ export namespace MyNS {
 	}
 
 	export interface Expiry {
+
+		/** Type: double */
 		id?: number | null;
 	}
 	export interface ExpiryFormProperties {
+
+		/** Type: double */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateExpiryFormGroup() {

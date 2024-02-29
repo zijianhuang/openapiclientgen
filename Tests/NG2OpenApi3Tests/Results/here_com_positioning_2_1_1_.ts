@@ -339,47 +339,47 @@ export namespace MyNS {
 
 		/**
 		 * Device firmware version information
-		 * Max length: 150
 		 * Min length: 1
+		 * Max length: 150
 		 */
 		firmware?: string | null;
 
 		/**
 		 * Manufacturer of the device (hardware)
 		 * Required
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		manufacturer: string;
 
 		/**
 		 * Model of the device (hardware)
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		model: string;
 
 		/**
 		 * Name of the client software accessing the HERE API
 		 * Required
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		name: string;
 
 		/**
 		 * Software platform information of the device, for example operating system name and version.
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		platform?: string | null;
 
 		/**
 		 * Version of the client software in format X.Y.Z, where X [0..255] is a major, Y [0..255] is a minor, and Z [0..65535] is a build version number. Increase the version/build number for each release of the client.
 		 * Required
-		 * Max length: 13
 		 * Min length: 3
+		 * Max length: 13
 		 */
 		version: string;
 	}
@@ -389,47 +389,47 @@ export namespace MyNS {
 
 		/**
 		 * Device firmware version information
-		 * Max length: 150
 		 * Min length: 1
+		 * Max length: 150
 		 */
 		firmware: FormControl<string | null | undefined>,
 
 		/**
 		 * Manufacturer of the device (hardware)
 		 * Required
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		manufacturer: FormControl<string | null | undefined>,
 
 		/**
 		 * Model of the device (hardware)
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		model: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the client software accessing the HERE API
 		 * Required
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Software platform information of the device, for example operating system name and version.
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		platform: FormControl<string | null | undefined>,
 
 		/**
 		 * Version of the client software in format X.Y.Z, where X [0..255] is a major, Y [0..255] is a minor, and Z [0..65535] is a build version number. Increase the version/build number for each release of the client.
 		 * Required
-		 * Max length: 13
 		 * Min length: 3
+		 * Max length: 13
 		 */
 		version: FormControl<string | null | undefined>,
 	}
@@ -477,6 +477,7 @@ export namespace MyNS {
 		/**
 		 * Equals HTTP status code
 		 * Required
+		 * Type: double
 		 */
 		status: number;
 
@@ -517,6 +518,7 @@ export namespace MyNS {
 		/**
 		 * Equals HTTP status code
 		 * Required
+		 * Type: double
 		 */
 		status: FormControl<number | null | undefined>,
 
@@ -1802,7 +1804,10 @@ export namespace MyNS {
 		 */
 		accuracy: number;
 
-		/** Altitude in meters (referenced to the WGS-84 ellipsoid) negative or positive. */
+		/**
+		 * Altitude in meters (referenced to the WGS-84 ellipsoid) negative or positive.
+		 * Type: double
+		 */
 		alt?: number | null;
 
 		/**
@@ -1838,7 +1843,10 @@ export namespace MyNS {
 		 */
 		accuracy: FormControl<number | null | undefined>,
 
-		/** Altitude in meters (referenced to the WGS-84 ellipsoid) negative or positive. */
+		/**
+		 * Altitude in meters (referenced to the WGS-84 ellipsoid) negative or positive.
+		 * Type: double
+		 */
 		alt: FormControl<number | null | undefined>,
 
 		/**
@@ -1894,6 +1902,7 @@ export namespace MyNS {
 		 * Request WGS-84 compliant geocoordinates for a location based on 2G/3G/4G cell and/or WLAN measurements.
 		 * Post locate
 		 * @param {number} confidence Confidence level in percent for the accuracy/uncertainty in the location estimate response. If not specified, the default is 68 (this corresponds to a 68% probability that the true position is within the accuracy/uncertainty radius of the location estimate: the higher the number, the greater the confidence level).
+		 *     Minimum: 50    Maximum: 99
 		 * @param {Array<string>} fallback Acceptable fallback options for cell and WLAN positioning. Values `area` and `any` apply to cell based positioning, and value `singleWifi` applies to WLAN based positioning. Both cell and WLAN options may be specified in the same request. If both `area` and `any` are specified, then `area` is ignored.
 		 * By default, cell based positioning returns cell tower level location estimates only. If you allow a WGS-84 compliant geocoordinate location estimate based on LAC, RNC, TAC, NID, or RZ areas, use the `fallback=area` setting. If you use the `fallback=any` setting, the service uses all available cell fallback methods and therefore the location estimate in the response may be at the MNC, SID, or MCC level.
 		 * For privacy reasons, the precise positioning based on a single WLAN AP is not possible. You can use the `fallback=singleWifi` setting to allow less accurate positioning based on a single WLAN AP. In that case, the center location of the position estimate will be deviated and the reported accuracy radius will be larger.

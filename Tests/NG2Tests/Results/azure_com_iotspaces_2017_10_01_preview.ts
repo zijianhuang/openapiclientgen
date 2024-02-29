@@ -438,6 +438,7 @@ export namespace MyNS {
 		 * Lists all of the available IoTSpaces service REST API operations.
 		 * Get providers/Microsoft.IoTSpaces/operations
 		 * @param {Operations_ListApi_version} api_version The version of the API.
+		 *     Min length: 10
 		 * @return {OperationListResult} OK. The request has succeeded.
 		 */
 		Operations_List(api_version: Operations_ListApi_version): Observable<OperationListResult> {
@@ -448,6 +449,7 @@ export namespace MyNS {
 		 * Get all the IoTSpaces instances in a subscription.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.IoTSpaces/Graph
 		 * @param {Operations_ListApi_version} api_version The version of the API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @return {IoTSpacesDescriptionListResult} This is a synchronous operation. The body contains a JSON-serialized array of the metadata from all the IoTSpaces instances in the subscription.
 		 */
@@ -459,6 +461,7 @@ export namespace MyNS {
 		 * Check if an IoTSpaces instance name is available.
 		 * Post subscriptions/{subscriptionId}/providers/Microsoft.IoTSpaces/checkNameAvailability
 		 * @param {Operations_ListApi_version} api_version The version of the API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {OperationInputs} requestBody Set the name parameter in the OperationInputs structure to the name of the IoTSpaces instance to check.
 		 * @return {IoTSpacesNameAvailabilityInfo} This is a synchronous operation. The body contains a JSON-serialized response that specifies whether the IoTSpaces service name is available. If the name is not available, the body contains the reason.
@@ -471,8 +474,10 @@ export namespace MyNS {
 		 * Get all the IoTSpaces instances in a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.IoTSpaces/Graph
 		 * @param {Operations_ListApi_version} api_version The version of the API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the IoTSpaces instance.
+		 *     Min length: 1    Max length: 64
 		 * @return {IoTSpacesDescriptionListResult} This is a synchronous operation. The body contains a JSON-serialized array of the metadata from all the IoTSpaces instances in the resource group.
 		 */
 		IoTSpaces_ListByResourceGroup(api_version: Operations_ListApi_version, subscriptionId: string, resourceGroupName: string): Observable<IoTSpacesDescriptionListResult> {
@@ -483,9 +488,12 @@ export namespace MyNS {
 		 * Get the metadata of a IoTSpaces instance.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.IoTSpaces/Graph/{resourceName}
 		 * @param {Operations_ListApi_version} api_version The version of the API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the IoTSpaces instance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the IoTSpaces instance.
+		 *     Min length: 1    Max length: 64
 		 * @return {IoTSpacesDescription} The body contains all the non-security properties of the IoTSpaces instance. Security-related properties are set to null.
 		 */
 		IoTSpaces_Get(api_version: Operations_ListApi_version, subscriptionId: string, resourceGroupName: string, resourceName: string): Observable<IoTSpacesDescription> {
@@ -496,9 +504,12 @@ export namespace MyNS {
 		 * Create or update the metadata of an IoTSpaces instance. The usual pattern to modify a property is to retrieve the IoTSpaces instance metadata and security metadata, and then combine them with the modified values in a new body to update the IoTSpaces instance.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.IoTSpaces/Graph/{resourceName}
 		 * @param {Operations_ListApi_version} api_version The version of the API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the IoTSpaces instance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the IoTSpaces instance.
+		 *     Min length: 1    Max length: 64
 		 * @param {IoTSpacesDescription} requestBody The IoTSpaces instance metadata and security metadata.
 		 * @return {IoTSpacesDescription} This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.
 		 */
@@ -510,9 +521,12 @@ export namespace MyNS {
 		 * Delete an IoTSpaces instance.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.IoTSpaces/Graph/{resourceName}
 		 * @param {Operations_ListApi_version} api_version The version of the API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the IoTSpaces instance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the IoTSpaces instance.
+		 *     Min length: 1    Max length: 64
 		 * @return {IoTSpacesDescription} This is returned as a response to the status polling request for the delete operation. The body contains the resource representation that indicates a transitional provisioning state.
 		 */
 		IoTSpaces_Delete(api_version: Operations_ListApi_version, subscriptionId: string, resourceGroupName: string, resourceName: string): Observable<IoTSpacesDescription> {
@@ -523,9 +537,12 @@ export namespace MyNS {
 		 * Update the metadata of a IoTSpaces instance.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.IoTSpaces/Graph/{resourceName}
 		 * @param {Operations_ListApi_version} api_version The version of the API.
+		 *     Min length: 10
 		 * @param {string} subscriptionId The subscription identifier.
 		 * @param {string} resourceGroupName The name of the resource group that contains the IoTSpaces instance.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} resourceName The name of the IoTSpaces instance.
+		 *     Min length: 1    Max length: 64
 		 * @param {IoTSpacesPatchDescription} requestBody The IoTSpaces instance metadata and security metadata.
 		 * @return {IoTSpacesDescription} This is returned as a response to the status polling request for the create or update operation. The body contains the resource representation that indicates a transitional provisioning state.
 		 */

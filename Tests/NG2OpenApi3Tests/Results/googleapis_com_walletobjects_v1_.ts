@@ -377,7 +377,10 @@ export namespace MyNS {
 
 	export interface AuthenticationKey {
 
-		/** Available only to Smart Tap enabled partners. Contact support for additional guidance. */
+		/**
+		 * Available only to Smart Tap enabled partners. Contact support for additional guidance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Available only to Smart Tap enabled partners. Contact support for additional guidance. */
@@ -385,7 +388,10 @@ export namespace MyNS {
 	}
 	export interface AuthenticationKeyFormProperties {
 
-		/** Available only to Smart Tap enabled partners. Contact support for additional guidance. */
+		/**
+		 * Available only to Smart Tap enabled partners. Contact support for additional guidance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Available only to Smart Tap enabled partners. Contact support for additional guidance. */
@@ -868,7 +874,10 @@ export namespace MyNS {
 		/** A binary data reference for a media download. Serves as a technology-agnostic binary reference in some Google infrastructure. This value is a serialized storage_cosmo.BinaryReference proto. Storing it as bytes is a hack to get around the fact that the cosmo proto (as well as others it includes) doesn't support JavaScript. This prevents us from including the actual type of this field. */
 		cosmoBinaryReference?: string | null;
 
-		/** crc32.c hash for the payload. */
+		/**
+		 * crc32.c hash for the payload.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash?: number | null;
 
 		/** Media data, set if reference_type is INLINE */
@@ -902,7 +911,10 @@ export namespace MyNS {
 		/** A binary data reference for a media download. Serves as a technology-agnostic binary reference in some Google infrastructure. This value is a serialized storage_cosmo.BinaryReference proto. Storing it as bytes is a hack to get around the fact that the cosmo proto (as well as others it includes) doesn't support JavaScript. This prevents us from including the actual type of this field. */
 		cosmoBinaryReference: FormControl<string | null | undefined>,
 
-		/** crc32.c hash for the payload. */
+		/**
+		 * crc32.c hash for the payload.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash: FormControl<number | null | undefined>,
 
 		/** Media data, set if reference_type is INLINE */
@@ -1639,10 +1651,16 @@ export namespace MyNS {
 		/** Identifies what kind of resource this is. Value: the fixed string `"walletobjects#latLongPoint"`. */
 		kind?: string | null;
 
-		/** The latitude specified as any value in the range of -90.0 through +90.0, both inclusive. Values outside these bounds will be rejected. */
+		/**
+		 * The latitude specified as any value in the range of -90.0 through +90.0, both inclusive. Values outside these bounds will be rejected.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude specified in the range -180.0 through +180.0, both inclusive. Values outside these bounds will be rejected. */
+		/**
+		 * The longitude specified in the range -180.0 through +180.0, both inclusive. Values outside these bounds will be rejected.
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 	export interface LatLongPointFormProperties {
@@ -1650,10 +1668,16 @@ export namespace MyNS {
 		/** Identifies what kind of resource this is. Value: the fixed string `"walletobjects#latLongPoint"`. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The latitude specified as any value in the range of -90.0 through +90.0, both inclusive. Values outside these bounds will be rejected. */
+		/**
+		 * The latitude specified as any value in the range of -90.0 through +90.0, both inclusive. Values outside these bounds will be rejected.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude specified in the range -180.0 through +180.0, both inclusive. Values outside these bounds will be rejected. */
+		/**
+		 * The longitude specified in the range -180.0 through +180.0, both inclusive. Values outside these bounds will be rejected.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLatLongPointFormGroup() {
@@ -1798,7 +1822,10 @@ export namespace MyNS {
 		/** Page token to send to fetch the next page. */
 		nextPageToken?: string | null;
 
-		/** Number of results returned in this page. */
+		/**
+		 * Number of results returned in this page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resultsPerPage?: number | null;
 	}
 	export interface PaginationFormProperties {
@@ -1809,7 +1836,10 @@ export namespace MyNS {
 		/** Page token to send to fetch the next page. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Number of results returned in this page. */
+		/**
+		 * Number of results returned in this page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resultsPerPage: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {
@@ -1984,7 +2014,10 @@ export namespace MyNS {
 		/** Optional grouping ID for grouping the passes with the same ID visually together. Grouping with different types of passes is allowed. */
 		groupingId?: string | null;
 
-		/** Optional index for sorting the passes when they are grouped with other passes. Passes with lower sort index are shown before passes with higher sort index. If unspecified, the value is assumed to be INT_MAX. For two passes with the same sort index, the sorting behavior is undefined. */
+		/**
+		 * Optional index for sorting the passes when they are grouped with other passes. Passes with lower sort index are shown before passes with higher sort index. If unspecified, the value is assumed to be INT_MAX. For two passes with the same sort index, the sorting behavior is undefined.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortIndex?: number | null;
 	}
 	export interface GroupingInfoFormProperties {
@@ -1992,7 +2025,10 @@ export namespace MyNS {
 		/** Optional grouping ID for grouping the passes with the same ID visually together. Grouping with different types of passes is allowed. */
 		groupingId: FormControl<string | null | undefined>,
 
-		/** Optional index for sorting the passes when they are grouped with other passes. Passes with lower sort index are shown before passes with higher sort index. If unspecified, the value is assumed to be INT_MAX. For two passes with the same sort index, the sorting behavior is undefined. */
+		/**
+		 * Optional index for sorting the passes when they are grouped with other passes. Passes with lower sort index are shown before passes with higher sort index. If unspecified, the value is assumed to be INT_MAX. For two passes with the same sort index, the sorting behavior is undefined.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sortIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateGroupingInfoFormGroup() {
@@ -2145,7 +2181,10 @@ export namespace MyNS {
 		/** The secret key used for the TOTP value generation, encoded as a Base16 string. */
 		key?: string | null;
 
-		/** The length of the TOTP value in decimal digits. */
+		/**
+		 * The length of the TOTP value in decimal digits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valueLength?: number | null;
 	}
 
@@ -2155,7 +2194,10 @@ export namespace MyNS {
 		/** The secret key used for the TOTP value generation, encoded as a Base16 string. */
 		key: FormControl<string | null | undefined>,
 
-		/** The length of the TOTP value in decimal digits. */
+		/**
+		 * The length of the TOTP value in decimal digits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		valueLength: FormControl<number | null | undefined>,
 	}
 	export function CreateRotatingBarcodeTotpDetailsTotpParametersFormGroup() {
@@ -3766,10 +3808,16 @@ export namespace MyNS {
 
 	export interface LoyaltyPointsBalance {
 
-		/** The double form of a balance. Only one of these subtypes (string, int, double, money) should be populated. */
+		/**
+		 * The double form of a balance. Only one of these subtypes (string, int, double, money) should be populated.
+		 * Type: double
+		 */
 		double?: number | null;
 
-		/** The integer form of a balance. Only one of these subtypes (string, int, double, money) should be populated. */
+		/**
+		 * The integer form of a balance. Only one of these subtypes (string, int, double, money) should be populated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		int?: number | null;
 		money?: Money;
 
@@ -3778,10 +3826,16 @@ export namespace MyNS {
 	}
 	export interface LoyaltyPointsBalanceFormProperties {
 
-		/** The double form of a balance. Only one of these subtypes (string, int, double, money) should be populated. */
+		/**
+		 * The double form of a balance. Only one of these subtypes (string, int, double, money) should be populated.
+		 * Type: double
+		 */
 		double: FormControl<number | null | undefined>,
 
-		/** The integer form of a balance. Only one of these subtypes (string, int, double, money) should be populated. */
+		/**
+		 * The integer form of a balance. Only one of these subtypes (string, int, double, money) should be populated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		int: FormControl<number | null | undefined>,
 
 		/** The string form of a balance. Only one of these subtypes (string, int, double, money) should be populated. */
@@ -4665,7 +4719,10 @@ export namespace MyNS {
 		/** A binary data reference for a media download. Serves as a technology-agnostic binary reference in some Google infrastructure. This value is a serialized storage_cosmo.BinaryReference proto. Storing it as bytes is a hack to get around the fact that the cosmo proto (as well as others it includes) doesn't support JavaScript. This prevents us from including the actual type of this field. */
 		cosmoBinaryReference?: string | null;
 
-		/** For Scotty Uploads: Scotty-provided hashes for uploads For Scotty Downloads: (WARNING: DO NOT USE WITHOUT PERMISSION FROM THE SCOTTY TEAM.) A Hash provided by the agent to be used to verify the data being downloaded. Currently only supported for inline payloads. Further, only crc32c_hash is currently supported. */
+		/**
+		 * For Scotty Uploads: Scotty-provided hashes for uploads For Scotty Downloads: (WARNING: DO NOT USE WITHOUT PERMISSION FROM THE SCOTTY TEAM.) A Hash provided by the agent to be used to verify the data being downloaded. Currently only supported for inline payloads. Further, only crc32c_hash is currently supported.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash?: number | null;
 
 		/** Backend response for a Diff get checksums response. For details on the Scotty Diff protocol, visit http://go/scotty-diff-protocol. */
@@ -4750,7 +4807,10 @@ export namespace MyNS {
 		/** A binary data reference for a media download. Serves as a technology-agnostic binary reference in some Google infrastructure. This value is a serialized storage_cosmo.BinaryReference proto. Storing it as bytes is a hack to get around the fact that the cosmo proto (as well as others it includes) doesn't support JavaScript. This prevents us from including the actual type of this field. */
 		cosmoBinaryReference: FormControl<string | null | undefined>,
 
-		/** For Scotty Uploads: Scotty-provided hashes for uploads For Scotty Downloads: (WARNING: DO NOT USE WITHOUT PERMISSION FROM THE SCOTTY TEAM.) A Hash provided by the agent to be used to verify the data being downloaded. Currently only supported for inline payloads. Further, only crc32c_hash is currently supported. */
+		/**
+		 * For Scotty Uploads: Scotty-provided hashes for uploads For Scotty Downloads: (WARNING: DO NOT USE WITHOUT PERMISSION FROM THE SCOTTY TEAM.) A Hash provided by the agent to be used to verify the data being downloaded. Currently only supported for inline payloads. Further, only crc32c_hash is currently supported.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash: FormControl<number | null | undefined>,
 
 		/** Original file name */
@@ -4836,7 +4896,10 @@ export namespace MyNS {
 		/** Set if the http request info is diff encoded. The value of this field is the version number of the base revision. This is corresponding to Apiary's mediaDiffObjectVersion (//depot/google3/java/com/google/api/server/media/variable/DiffObjectVersionVariable.java). See go/esf-scotty-diff-upload for more information. */
 		diffObjectVersion?: string | null;
 
-		/** The existence of the final_status field indicates that this is the last call to the agent for this request_id. http://google3/uploader/agent/scotty_agent.proto?l=737&rcl=347601929 */
+		/**
+		 * The existence of the final_status field indicates that this is the last call to the agent for this request_id. http://google3/uploader/agent/scotty_agent.proto?l=737&rcl=347601929
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		finalStatus?: number | null;
 
 		/** The type of notification received from Scotty. */
@@ -4867,7 +4930,10 @@ export namespace MyNS {
 		/** Set if the http request info is diff encoded. The value of this field is the version number of the base revision. This is corresponding to Apiary's mediaDiffObjectVersion (//depot/google3/java/com/google/api/server/media/variable/DiffObjectVersionVariable.java). See go/esf-scotty-diff-upload for more information. */
 		diffObjectVersion: FormControl<string | null | undefined>,
 
-		/** The existence of the final_status field indicates that this is the last call to the agent for this request_id. http://google3/uploader/agent/scotty_agent.proto?l=737&rcl=347601929 */
+		/**
+		 * The existence of the final_status field indicates that this is the last call to the agent for this request_id. http://google3/uploader/agent/scotty_agent.proto?l=737&rcl=347601929
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		finalStatus: FormControl<number | null | undefined>,
 
 		/** The type of notification received from Scotty. */
@@ -5308,6 +5374,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/eventTicketClass
 		 * @param {string} issuerId The ID of the issuer authorized to list classes.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` classes are available in a list. For example, if you have a list of 200 classes and you call list with `maxResults` set to 20, list will return the first 20 classes and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 classes.
 		 * @return {EventTicketClassListResponse} Successful response
 		 */
@@ -5369,6 +5436,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/eventTicketObject
 		 * @param {string} classId The ID of the class whose objects will be listed.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` objects are available in a list. For example, if you have a list of 200 objects and you call list with `maxResults` set to 20, list will return the first 20 objects and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 objects.
 		 * @return {EventTicketObjectListResponse} Successful response
 		 */
@@ -5440,6 +5508,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/flightClass
 		 * @param {string} issuerId The ID of the issuer authorized to list classes.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` classes are available in a list. For example, if you have a list of 200 classes and you call list with `maxResults` set to 20, list will return the first 20 classes and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 classes.
 		 * @return {FlightClassListResponse} Successful response
 		 */
@@ -5501,6 +5570,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/flightObject
 		 * @param {string} classId The ID of the class whose objects will be listed.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` objects are available in a list. For example, if you have a list of 200 objects and you call list with `maxResults` set to 20, list will return the first 20 objects and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 objects.
 		 * @return {FlightObjectListResponse} Successful response
 		 */
@@ -5562,6 +5632,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/genericClass
 		 * @param {string} issuerId The ID of the issuer authorized to list classes.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` classes are available in a list. For example, if you have a list of 200 classes and you call list with `maxResults` set to 20, list will return the first 20 classes and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 classes.
 		 * @return {GenericClassListResponse} Successful response
 		 */
@@ -5613,6 +5684,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/genericObject
 		 * @param {string} classId The ID of the class whose objects will be listed.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` objects are available in a list. For example, if you have a list of 200 objects and you call list with `maxResults` set to 20, list will return the first 20 objects and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 objects.
 		 * @return {GenericObjectListResponse} Successful response
 		 */
@@ -5664,6 +5736,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/giftCardClass
 		 * @param {string} issuerId The ID of the issuer authorized to list classes.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` classes are available in a list. For example, if you have a list of 200 classes and you call list with `maxResults` set to 20, list will return the first 20 classes and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 classes.
 		 * @return {GiftCardClassListResponse} Successful response
 		 */
@@ -5725,6 +5798,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/giftCardObject
 		 * @param {string} classId The ID of the class whose objects will be listed.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` objects are available in a list. For example, if you have a list of 200 objects and you call list with `maxResults` set to 20, list will return the first 20 objects and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 objects.
 		 * @return {GiftCardObjectListResponse} Successful response
 		 */
@@ -5843,6 +5917,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/loyaltyClass
 		 * @param {string} issuerId The ID of the issuer authorized to list classes.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` classes are available in a list. For example, if you have a list of 200 classes and you call list with `maxResults` set to 20, list will return the first 20 classes and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 classes.
 		 * @return {LoyaltyClassListResponse} Successful response
 		 */
@@ -5904,6 +5979,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/loyaltyObject
 		 * @param {string} classId The ID of the class whose objects will be listed.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` objects are available in a list. For example, if you have a list of 200 objects and you call list with `maxResults` set to 20, list will return the first 20 objects and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 objects.
 		 * @return {LoyaltyObjectListResponse} Successful response
 		 */
@@ -5975,6 +6051,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/offerClass
 		 * @param {string} issuerId The ID of the issuer authorized to list classes.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` classes are available in a list. For example, if you have a list of 200 classes and you call list with `maxResults` set to 20, list will return the first 20 classes and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 classes.
 		 * @return {OfferClassListResponse} Successful response
 		 */
@@ -6036,6 +6113,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/offerObject
 		 * @param {string} classId The ID of the class whose objects will be listed.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` objects are available in a list. For example, if you have a list of 200 objects and you call list with `maxResults` set to 20, list will return the first 20 objects and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 objects.
 		 * @return {OfferObjectListResponse} Successful response
 		 */
@@ -6144,6 +6222,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/transitClass
 		 * @param {string} issuerId The ID of the issuer authorized to list classes.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` classes are available in a list. For example, if you have a list of 200 classes and you call list with `maxResults` set to 20, list will return the first 20 classes and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 classes.
 		 * @return {TransitClassListResponse} Successful response
 		 */
@@ -6205,6 +6284,7 @@ export namespace MyNS {
 		 * Get walletobjects/v1/transitObject
 		 * @param {string} classId The ID of the class whose objects will be listed.
 		 * @param {number} maxResults Identifies the max number of results returned by a list. All results are returned if `maxResults` isn't defined.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Used to get the next set of results if `maxResults` is specified, but more than `maxResults` objects are available in a list. For example, if you have a list of 200 objects and you call list with `maxResults` set to 20, list will return the first 20 objects and a token. Call list again with `maxResults` set to 20 and the token to get the next 20 objects.
 		 * @return {TransitObjectListResponse} Successful response
 		 */

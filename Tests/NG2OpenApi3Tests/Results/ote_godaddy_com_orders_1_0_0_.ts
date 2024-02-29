@@ -295,12 +295,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		label: string;
+
+		/** Type: double */
 		period?: number | null;
 
 		/** The unit of time that periodCount is measured in */
 		periodUnit?: LineItemPeriodUnit | null;
 
-		/** Unique identifier of the current product */
+		/**
+		 * Unique identifier of the current product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pfid?: number | null;
 
 		/** Required */
@@ -320,12 +325,17 @@ export namespace MyNS {
 		 * Required
 		 */
 		label: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		period: FormControl<number | null | undefined>,
 
 		/** The unit of time that periodCount is measured in */
 		periodUnit: FormControl<LineItemPeriodUnit | null | undefined>,
 
-		/** Unique identifier of the current product */
+		/**
+		 * Unique identifier of the current product
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pfid: FormControl<number | null | undefined>,
 
 		/**
@@ -455,12 +465,16 @@ export namespace MyNS {
 
 		/** Tax amount */
 		amount?: string | null;
+
+		/** Type: double */
 		rate?: number | null;
 	}
 	export interface LineItemPricingTaxDetailFormProperties {
 
 		/** Tax amount */
 		amount: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		rate: FormControl<number | null | undefined>,
 	}
 	export function CreateLineItemPricingTaxDetailFormGroup() {
@@ -869,6 +883,8 @@ export namespace MyNS {
 
 		/** Required */
 		fees: OrderFee;
+
+		/** Type: double */
 		id?: number | null;
 
 		/**
@@ -911,6 +927,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		discount: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -993,7 +1011,10 @@ export namespace MyNS {
 		/** URI to access the previous page */
 		previous?: string | null;
 
-		/** Number of records available */
+		/**
+		 * Number of records available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface PaginationFormProperties {
@@ -1010,7 +1031,10 @@ export namespace MyNS {
 		/** URI to access the previous page */
 		previous: FormControl<string | null | undefined>,
 
-		/** Number of records available */
+		/**
+		 * Number of records available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {
@@ -1037,10 +1061,14 @@ export namespace MyNS {
 		 * @param {string} periodEnd End of range indicating what time-frame should be returned. Inclusive
 		 * @param {string} domain Domain name to use as the filter of results
 		 * @param {number} productGroupId Product group id to use as the filter of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} paymentProfileId Payment profile id to use as the filter of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} parentOrderId Parent order id to use as the filter of results
 		 * @param {number} offset Number of results to skip for pagination
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Maximum number of items to return
+		 *     Minimum: 1    Maximum: 10000
 		 * @param {ListSort} sort Property name that will be used to sort results. '-' indicates descending
 		 * @return {OrderList} Request was successful
 		 */

@@ -2500,6 +2500,7 @@ export namespace MyNS {
 		 * <p>Creates a new version of the bot based on the <code>$LATEST</code> version. If the <code>$LATEST</code> version of this resource hasn't changed since you created the last version, Amazon Lex doesn't create a new version. It returns the last created version.</p> <note> <p>You can update only the <code>$LATEST</code> version of the bot. You can't update the numbered versions that you create with the <code>CreateBotVersion</code> operation.</p> </note> <p> When you create the first version of a bot, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <a>versioning-intro</a>. </p> <p> This operation requires permission for the <code>lex:CreateBotVersion</code> action. </p>
 		 * Post bots/{name}/versions
 		 * @param {string} name The name of the bot that you want to create a new version of. The name is case sensitive. 
+		 *     Min length: 2    Max length: 50
 		 * @return {void} 
 		 */
 		CreateBotVersion(name: string, requestBody: CreateBotVersionPostBody): Observable<HttpResponse<string>> {
@@ -2510,6 +2511,7 @@ export namespace MyNS {
 		 * <p>Creates a new version of an intent based on the <code>$LATEST</code> version of the intent. If the <code>$LATEST</code> version of this intent hasn't changed since you last updated it, Amazon Lex doesn't create a new version. It returns the last version you created.</p> <note> <p>You can update only the <code>$LATEST</code> version of the intent. You can't update the numbered versions that you create with the <code>CreateIntentVersion</code> operation.</p> </note> <p> When you create a version of an intent, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <a>versioning-intro</a>. </p> <p>This operation requires permissions to perform the <code>lex:CreateIntentVersion</code> action. </p>
 		 * Post intents/{name}/versions
 		 * @param {string} name The name of the intent that you want to create a new version of. The name is case sensitive. 
+		 *     Min length: 1    Max length: 100
 		 * @return {void} 
 		 */
 		CreateIntentVersion(name: string, requestBody: CreateIntentVersionPostBody): Observable<HttpResponse<string>> {
@@ -2520,6 +2522,7 @@ export namespace MyNS {
 		 * <p>Creates a new version of a slot type based on the <code>$LATEST</code> version of the specified slot type. If the <code>$LATEST</code> version of this resource has not changed since the last version that you created, Amazon Lex doesn't create a new version. It returns the last version that you created. </p> <note> <p>You can update only the <code>$LATEST</code> version of a slot type. You can't update the numbered versions that you create with the <code>CreateSlotTypeVersion</code> operation.</p> </note> <p>When you create a version of a slot type, Amazon Lex sets the version to 1. Subsequent versions increment by 1. For more information, see <a>versioning-intro</a>. </p> <p>This operation requires permissions for the <code>lex:CreateSlotTypeVersion</code> action.</p>
 		 * Post slottypes/{name}/versions
 		 * @param {string} name The name of the slot type that you want to create a new version for. The name is case sensitive. 
+		 *     Min length: 1    Max length: 100
 		 * @return {void} 
 		 */
 		CreateSlotTypeVersion(name: string, requestBody: CreateSlotTypeVersionPostBody): Observable<HttpResponse<string>> {
@@ -2530,6 +2533,7 @@ export namespace MyNS {
 		 * <p>Deletes all versions of the bot, including the <code>$LATEST</code> version. To delete a specific version of the bot, use the <a>DeleteBotVersion</a> operation. The <code>DeleteBot</code> operation doesn't immediately remove the bot schema. Instead, it is marked for deletion and removed later.</p> <p>Amazon Lex stores utterances indefinitely for improving the ability of your bot to respond to user inputs. These utterances are not removed when the bot is deleted. To remove the utterances, use the <a>DeleteUtterances</a> operation.</p> <p>If a bot has an alias, you can't delete it. Instead, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code> exception that includes a reference to the alias that refers to the bot. To remove the reference to the bot, delete the alias. If you get the same exception again, delete the referring alias until the <code>DeleteBot</code> operation is successful.</p> <p>This operation requires permissions for the <code>lex:DeleteBot</code> action.</p>
 		 * Delete bots/{name}
 		 * @param {string} name The name of the bot. The name is case sensitive. 
+		 *     Min length: 2    Max length: 50
 		 * @return {void} 
 		 */
 		DeleteBot(name: string): Observable<HttpResponse<string>> {
@@ -2540,7 +2544,9 @@ export namespace MyNS {
 		 * <p>Deletes an alias for the specified bot. </p> <p>You can't delete an alias that is used in the association between a bot and a messaging channel. If an alias is used in a channel association, the <code>DeleteBot</code> operation returns a <code>ResourceInUseException</code> exception that includes a reference to the channel association that refers to the bot. You can remove the reference to the alias by deleting the channel association. If you get the same exception again, delete the referring association until the <code>DeleteBotAlias</code> operation is successful.</p>
 		 * Delete bots/{botName}/aliases/{name}
 		 * @param {string} name The name of the alias to delete. The name is case sensitive. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} botName The name of the bot that the alias points to.
+		 *     Min length: 2    Max length: 50
 		 * @return {void} 
 		 */
 		DeleteBotAlias(name: string, botName: string): Observable<HttpResponse<string>> {
@@ -2551,7 +2557,9 @@ export namespace MyNS {
 		 * <p>Returns information about an Amazon Lex bot alias. For more information about aliases, see <a>versioning-aliases</a>.</p> <p>This operation requires permissions for the <code>lex:GetBotAlias</code> action.</p>
 		 * Get bots/{botName}/aliases/{name}
 		 * @param {string} name The name of the bot alias. The name is case sensitive.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} botName The name of the bot.
+		 *     Min length: 2    Max length: 50
 		 * @return {GetBotAliasResponse} Success
 		 */
 		GetBotAlias(name: string, botName: string): Observable<GetBotAliasResponse> {
@@ -2562,7 +2570,9 @@ export namespace MyNS {
 		 * <p>Creates an alias for the specified version of the bot or replaces an alias for the specified bot. To change the version of the bot that the alias points to, replace the alias. For more information about aliases, see <a>versioning-aliases</a>.</p> <p>This operation requires permissions for the <code>lex:PutBotAlias</code> action. </p>
 		 * Put bots/{botName}/aliases/{name}
 		 * @param {string} name The name of the alias. The name is <i>not</i> case sensitive.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} botName The name of the bot.
+		 *     Min length: 2    Max length: 50
 		 * @return {PutBotAliasResponse} Success
 		 */
 		PutBotAlias(name: string, botName: string, requestBody: PutBotAliasPutBody): Observable<PutBotAliasResponse> {
@@ -2573,8 +2583,11 @@ export namespace MyNS {
 		 * <p>Deletes the association between an Amazon Lex bot and a messaging platform.</p> <p>This operation requires permission for the <code>lex:DeleteBotChannelAssociation</code> action.</p>
 		 * Delete bots/{botName}/aliases/{aliasName}/channels/{name}
 		 * @param {string} name The name of the association. The name is case sensitive. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} botName The name of the Amazon Lex bot.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} aliasName An alias that points to the specific version of the Amazon Lex bot to which this association is being made.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} 
 		 */
 		DeleteBotChannelAssociation(name: string, botName: string, aliasName: string): Observable<HttpResponse<string>> {
@@ -2585,8 +2598,11 @@ export namespace MyNS {
 		 * <p>Returns information about the association between an Amazon Lex bot and a messaging platform.</p> <p>This operation requires permissions for the <code>lex:GetBotChannelAssociation</code> action.</p>
 		 * Get bots/{botName}/aliases/{aliasName}/channels/{name}
 		 * @param {string} name The name of the association between the bot and the channel. The name is case sensitive. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} botName The name of the Amazon Lex bot.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} aliasName An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetBotChannelAssociationResponse} Success
 		 */
 		GetBotChannelAssociation(name: string, botName: string, aliasName: string): Observable<GetBotChannelAssociationResponse> {
@@ -2597,7 +2613,9 @@ export namespace MyNS {
 		 * <p>Deletes a specific version of a bot. To delete all versions of a bot, use the <a>DeleteBot</a> operation. </p> <p>This operation requires permissions for the <code>lex:DeleteBotVersion</code> action.</p>
 		 * Delete bots/{name}/versions/{version}
 		 * @param {string} name The name of the bot.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} version The version of the bot to delete. You cannot delete the <code>$LATEST</code> version of the bot. To delete the <code>$LATEST</code> version, use the <a>DeleteBot</a> operation.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteBotVersion(name: string, version: string): Observable<HttpResponse<string>> {
@@ -2608,6 +2626,7 @@ export namespace MyNS {
 		 * <p>Deletes all versions of the intent, including the <code>$LATEST</code> version. To delete a specific version of the intent, use the <a>DeleteIntentVersion</a> operation.</p> <p> You can delete a version of an intent only if it is not referenced. To delete an intent that is referred to in one or more bots (see <a>how-it-works</a>), you must remove those references first. </p> <note> <p> If you get the <code>ResourceInUseException</code> exception, it provides an example reference that shows where the intent is referenced. To remove the reference to the intent, either update the bot or delete it. If you get the same exception when you attempt to delete the intent again, repeat until the intent has no references and the call to <code>DeleteIntent</code> is successful. </p> </note> <p> This operation requires permission for the <code>lex:DeleteIntent</code> action. </p>
 		 * Delete intents/{name}
 		 * @param {string} name The name of the intent. The name is case sensitive. 
+		 *     Min length: 1    Max length: 100
 		 * @return {void} 
 		 */
 		DeleteIntent(name: string): Observable<HttpResponse<string>> {
@@ -2618,7 +2637,9 @@ export namespace MyNS {
 		 * <p>Deletes a specific version of an intent. To delete all versions of a intent, use the <a>DeleteIntent</a> operation. </p> <p>This operation requires permissions for the <code>lex:DeleteIntentVersion</code> action.</p>
 		 * Delete intents/{name}/versions/{version}
 		 * @param {string} name The name of the intent.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} version The version of the intent to delete. You cannot delete the <code>$LATEST</code> version of the intent. To delete the <code>$LATEST</code> version, use the <a>DeleteIntent</a> operation.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteIntentVersion(name: string, version: string): Observable<HttpResponse<string>> {
@@ -2629,7 +2650,9 @@ export namespace MyNS {
 		 * <p> Returns information about an intent. In addition to the intent name, you must specify the intent version. </p> <p> This operation requires permissions to perform the <code>lex:GetIntent</code> action. </p>
 		 * Get intents/{name}/versions/{version}
 		 * @param {string} name The name of the intent. The name is case sensitive. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} version The version of the intent.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetIntentResponse} Success
 		 */
 		GetIntent(name: string, version: string): Observable<GetIntentResponse> {
@@ -2640,6 +2663,7 @@ export namespace MyNS {
 		 * <p>Deletes all versions of the slot type, including the <code>$LATEST</code> version. To delete a specific version of the slot type, use the <a>DeleteSlotTypeVersion</a> operation.</p> <p> You can delete a version of a slot type only if it is not referenced. To delete a slot type that is referred to in one or more intents, you must remove those references first. </p> <note> <p> If you get the <code>ResourceInUseException</code> exception, the exception provides an example reference that shows the intent where the slot type is referenced. To remove the reference to the slot type, either update the intent or delete it. If you get the same exception when you attempt to delete the slot type again, repeat until the slot type has no references and the <code>DeleteSlotType</code> call is successful. </p> </note> <p>This operation requires permission for the <code>lex:DeleteSlotType</code> action.</p>
 		 * Delete slottypes/{name}
 		 * @param {string} name The name of the slot type. The name is case sensitive. 
+		 *     Min length: 1    Max length: 100
 		 * @return {void} 
 		 */
 		DeleteSlotType(name: string): Observable<HttpResponse<string>> {
@@ -2650,7 +2674,9 @@ export namespace MyNS {
 		 * <p>Deletes a specific version of a slot type. To delete all versions of a slot type, use the <a>DeleteSlotType</a> operation. </p> <p>This operation requires permissions for the <code>lex:DeleteSlotTypeVersion</code> action.</p>
 		 * Delete slottypes/{name}/version/{version}
 		 * @param {string} name The name of the slot type.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} version The version of the slot type to delete. You cannot delete the <code>$LATEST</code> version of the slot type. To delete the <code>$LATEST</code> version, use the <a>DeleteSlotType</a> operation.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} 
 		 */
 		DeleteSlotTypeVersion(name: string, version: string): Observable<HttpResponse<string>> {
@@ -2661,7 +2687,9 @@ export namespace MyNS {
 		 * <p>Deletes stored utterances.</p> <p>Amazon Lex stores the utterances that users send to your bot. Utterances are stored for 15 days for use with the <a>GetUtterancesView</a> operation, and then stored indefinitely for use in improving the ability of your bot to respond to user input.</p> <p>Use the <code>DeleteUtterances</code> operation to manually delete stored utterances for a specific user. When you use the <code>DeleteUtterances</code> operation, utterances stored for improving your bot's ability to respond to user input are deleted immediately. Utterances stored for use with the <code>GetUtterancesView</code> operation are deleted after 15 days.</p> <p>This operation requires permissions for the <code>lex:DeleteUtterances</code> action.</p>
 		 * Delete bots/{botName}/utterances/{userId}
 		 * @param {string} botName The name of the bot that stored the utterances.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} userId  The unique identifier for the user that made the utterances. This is the user ID that was sent in the <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostContent.html">PostContent</a> or <a href="http://docs.aws.amazon.com/lex/latest/dg/API_runtime_PostText.html">PostText</a> operation request that contained the utterance.
+		 *     Min length: 2    Max length: 100
 		 * @return {void} 
 		 */
 		DeleteUtterances(botName: string, userId: string): Observable<HttpResponse<string>> {
@@ -2672,6 +2700,7 @@ export namespace MyNS {
 		 * <p>Returns metadata information for a specific bot. You must provide the bot name and the bot version or alias. </p> <p> This operation requires permissions for the <code>lex:GetBot</code> action. </p>
 		 * Get bots/{name}/versions/{versionoralias}
 		 * @param {string} name The name of the bot. The name is case sensitive. 
+		 *     Min length: 2    Max length: 50
 		 * @param {string} versionoralias The version or alias of the bot.
 		 * @return {GetBotResponse} Success
 		 */
@@ -2683,9 +2712,12 @@ export namespace MyNS {
 		 * <p>Returns a list of aliases for a specified Amazon Lex bot.</p> <p>This operation requires permissions for the <code>lex:GetBotAliases</code> action.</p>
 		 * Get bots/{botName}/aliases/
 		 * @param {string} botName The name of the bot.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} nextToken A pagination token for fetching the next page of aliases. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of aliases, specify the pagination token in the next request. 
 		 * @param {number} maxResults The maximum number of aliases to return in the response. The default is 50. . 
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nameContains Substring to match in bot alias names. An alias will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
+		 *     Min length: 1    Max length: 100
 		 * @return {GetBotAliasesResponse} Success
 		 */
 		GetBotAliases(botName: string, nextToken: string | null | undefined, maxResults: number | null | undefined, nameContains: string | null | undefined): Observable<GetBotAliasesResponse> {
@@ -2696,10 +2728,14 @@ export namespace MyNS {
 		 * <p> Returns a list of all of the channels associated with the specified bot. </p> <p>The <code>GetBotChannelAssociations</code> operation requires permissions for the <code>lex:GetBotChannelAssociations</code> action.</p>
 		 * Get bots/{botName}/aliases/{aliasName}/channels/
 		 * @param {string} botName The name of the Amazon Lex bot in the association.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} aliasName An alias pointing to the specific version of the Amazon Lex bot to which this association is being made.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken A pagination token for fetching the next page of associations. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of associations, specify the pagination token in the next request. 
 		 * @param {number} maxResults The maximum number of associations to return in the response. The default is 50. 
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nameContains Substring to match in channel association names. An association will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To return all bot channel associations, use a hyphen ("-") as the <code>nameContains</code> parameter.
+		 *     Min length: 1    Max length: 100
 		 * @return {GetBotChannelAssociationsResponse} Success
 		 */
 		GetBotChannelAssociations(botName: string, aliasName: string, nextToken: string | null | undefined, maxResults: number | null | undefined, nameContains: string | null | undefined): Observable<GetBotChannelAssociationsResponse> {
@@ -2710,8 +2746,10 @@ export namespace MyNS {
 		 * <p>Gets information about all of the versions of a bot.</p> <p>The <code>GetBotVersions</code> operation returns a <code>BotMetadata</code> object for each version of a bot. For example, if a bot has three numbered versions, the <code>GetBotVersions</code> operation returns four <code>BotMetadata</code> objects in the response, one for each numbered version and one for the <code>$LATEST</code> version. </p> <p>The <code>GetBotVersions</code> operation always returns at least one version, the <code>$LATEST</code> version.</p> <p>This operation requires permissions for the <code>lex:GetBotVersions</code> action.</p>
 		 * Get bots/{name}/versions/
 		 * @param {string} name The name of the bot for which versions should be returned.
+		 *     Min length: 2    Max length: 50
 		 * @param {string} nextToken A pagination token for fetching the next page of bot versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. 
 		 * @param {number} maxResults The maximum number of bot versions to return in the response. The default is 10.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {GetBotVersionsResponse} Success
 		 */
 		GetBotVersions(name: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetBotVersionsResponse> {
@@ -2723,7 +2761,9 @@ export namespace MyNS {
 		 * Get bots/
 		 * @param {string} nextToken A pagination token that fetches the next page of bots. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of bots, specify the pagination token in the next request. 
 		 * @param {number} maxResults The maximum number of bots to return in the response that the request will return. The default is 10.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nameContains Substring to match in bot names. A bot will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
+		 *     Min length: 2    Max length: 50
 		 * @return {GetBotsResponse} Success
 		 */
 		GetBots(nextToken: string | null | undefined, maxResults: number | null | undefined, nameContains: string | null | undefined): Observable<GetBotsResponse> {
@@ -2747,6 +2787,7 @@ export namespace MyNS {
 		 * @param {string} signatureContains Substring to match in built-in intent signatures. An intent will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz." To find the signature for an intent, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.
 		 * @param {string} nextToken A pagination token that fetches the next page of intents. If this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, use the pagination token in the next request.
 		 * @param {number} maxResults The maximum number of intents to return in the response. The default is 10.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {GetBuiltinIntentsResponse} Success
 		 */
 		GetBuiltinIntents(locale: Locale | null | undefined, signatureContains: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetBuiltinIntentsResponse> {
@@ -2760,6 +2801,7 @@ export namespace MyNS {
 		 * @param {string} signatureContains Substring to match in built-in slot type signatures. A slot type will be returned if any part of its signature matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
 		 * @param {string} nextToken A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of slot types, specify the pagination token in the next request.
 		 * @param {number} maxResults The maximum number of slot types to return in the response. The default is 10.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {GetBuiltinSlotTypesResponse} Success
 		 */
 		GetBuiltinSlotTypes(locale: Locale | null | undefined, signatureContains: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetBuiltinSlotTypesResponse> {
@@ -2770,7 +2812,9 @@ export namespace MyNS {
 		 * Exports the contents of a Amazon Lex resource in a specified format.
 		 * Get exports/#name&version&resourceType&exportType
 		 * @param {string} name The name of the bot to export.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} version The version of the bot to export.
+		 *     Min length: 1    Max length: 64
 		 * @param {ResourceType} resourceType The type of resource to export. 
 		 * @param {ExportType} exportType The format of the exported data.
 		 * @return {GetExportResponse} Success
@@ -2793,8 +2837,10 @@ export namespace MyNS {
 		 * <p>Gets information about all of the versions of an intent.</p> <p>The <code>GetIntentVersions</code> operation returns an <code>IntentMetadata</code> object for each version of an intent. For example, if an intent has three numbered versions, the <code>GetIntentVersions</code> operation returns four <code>IntentMetadata</code> objects in the response, one for each numbered version and one for the <code>$LATEST</code> version. </p> <p>The <code>GetIntentVersions</code> operation always returns at least one version, the <code>$LATEST</code> version.</p> <p>This operation requires permissions for the <code>lex:GetIntentVersions</code> action.</p>
 		 * Get intents/{name}/versions/
 		 * @param {string} name The name of the intent for which versions should be returned.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken A pagination token for fetching the next page of intent versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. 
 		 * @param {number} maxResults The maximum number of intent versions to return in the response. The default is 10.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {GetIntentVersionsResponse} Success
 		 */
 		GetIntentVersions(name: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetIntentVersionsResponse> {
@@ -2806,7 +2852,9 @@ export namespace MyNS {
 		 * Get intents/
 		 * @param {string} nextToken A pagination token that fetches the next page of intents. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of intents, specify the pagination token in the next request. 
 		 * @param {number} maxResults The maximum number of intents to return in the response. The default is 10.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nameContains Substring to match in intent names. An intent will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
+		 *     Min length: 1    Max length: 100
 		 * @return {GetIntentsResponse} Success
 		 */
 		GetIntents(nextToken: string | null | undefined, maxResults: number | null | undefined, nameContains: string | null | undefined): Observable<GetIntentsResponse> {
@@ -2817,6 +2865,7 @@ export namespace MyNS {
 		 * Provides details about an ongoing or complete migration from an Amazon Lex V1 bot to an Amazon Lex V2 bot. Use this operation to view the migration alerts and warnings related to the migration.
 		 * Get migrations/{migrationId}
 		 * @param {string} migrationId The unique identifier of the migration to view. The <code>migrationID</code> is returned by the operation.
+		 *     Min length: 10    Max length: 10
 		 * @return {GetMigrationResponse} Success
 		 */
 		GetMigration(migrationId: string): Observable<GetMigrationResponse> {
@@ -2829,8 +2878,10 @@ export namespace MyNS {
 		 * @param {MigrationSortAttribute} sortByAttribute The field to sort the list of migrations by. You can sort by the Amazon Lex V1 bot name or the date and time that the migration was started.
 		 * @param {SortOrder} sortByOrder The order so sort the list.
 		 * @param {string} v1BotNameContains Filters the list to contain only bots whose name contains the specified string. The string is matched anywhere in bot name.
+		 *     Min length: 2    Max length: 50
 		 * @param {MigrationStatus} migrationStatusEquals Filters the list to contain only migrations in the specified state.
 		 * @param {number} maxResults The maximum number of migrations to return in the response. The default is 10.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nextToken A pagination token that fetches the next page of migrations. If the response to this operation is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of migrations, specify the pagination token in the request.
 		 * @return {GetMigrationsResponse} Success
 		 */
@@ -2851,7 +2902,9 @@ export namespace MyNS {
 		 * <p>Returns information about a specific version of a slot type. In addition to specifying the slot type name, you must specify the slot type version.</p> <p>This operation requires permissions for the <code>lex:GetSlotType</code> action.</p>
 		 * Get slottypes/{name}/versions/{version}
 		 * @param {string} name The name of the slot type. The name is case sensitive. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} version The version of the slot type. 
+		 *     Min length: 1    Max length: 64
 		 * @return {GetSlotTypeResponse} Success
 		 */
 		GetSlotType(name: string, version: string): Observable<GetSlotTypeResponse> {
@@ -2862,8 +2915,10 @@ export namespace MyNS {
 		 * <p>Gets information about all versions of a slot type.</p> <p>The <code>GetSlotTypeVersions</code> operation returns a <code>SlotTypeMetadata</code> object for each version of a slot type. For example, if a slot type has three numbered versions, the <code>GetSlotTypeVersions</code> operation returns four <code>SlotTypeMetadata</code> objects in the response, one for each numbered version and one for the <code>$LATEST</code> version. </p> <p>The <code>GetSlotTypeVersions</code> operation always returns at least one version, the <code>$LATEST</code> version.</p> <p>This operation requires permissions for the <code>lex:GetSlotTypeVersions</code> action.</p>
 		 * Get slottypes/{name}/versions/
 		 * @param {string} name The name of the slot type for which versions should be returned.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} nextToken A pagination token for fetching the next page of slot type versions. If the response to this call is truncated, Amazon Lex returns a pagination token in the response. To fetch the next page of versions, specify the pagination token in the next request. 
 		 * @param {number} maxResults The maximum number of slot type versions to return in the response. The default is 10.
+		 *     Minimum: 1    Maximum: 50
 		 * @return {GetSlotTypeVersionsResponse} Success
 		 */
 		GetSlotTypeVersions(name: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetSlotTypeVersionsResponse> {
@@ -2875,7 +2930,9 @@ export namespace MyNS {
 		 * Get slottypes/
 		 * @param {string} nextToken A pagination token that fetches the next page of slot types. If the response to this API call is truncated, Amazon Lex returns a pagination token in the response. To fetch next page of slot types, specify the pagination token in the next request.
 		 * @param {number} maxResults The maximum number of slot types to return in the response. The default is 10.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} nameContains Substring to match in slot type names. A slot type will be returned if any part of its name matches the substring. For example, "xyz" matches both "xyzabc" and "abcxyz."
+		 *     Min length: 1    Max length: 100
 		 * @return {GetSlotTypesResponse} Success
 		 */
 		GetSlotTypes(nextToken: string | null | undefined, maxResults: number | null | undefined, nameContains: string | null | undefined): Observable<GetSlotTypesResponse> {
@@ -2886,7 +2943,9 @@ export namespace MyNS {
 		 * <p>Use the <code>GetUtterancesView</code> operation to get information about the utterances that your users have made to your bot. You can use this list to tune the utterances that your bot responds to.</p> <p>For example, say that you have created a bot to order flowers. After your users have used your bot for a while, use the <code>GetUtterancesView</code> operation to see the requests that they have made and whether they have been successful. You might find that the utterance "I want flowers" is not being recognized. You could add this utterance to the <code>OrderFlowers</code> intent so that your bot recognizes that utterance.</p> <p>After you publish a new version of a bot, you can get information about the old version and the new so that you can compare the performance across the two versions. </p> <p>Utterance statistics are generated once a day. Data is available for the last 15 days. You can request information for up to 5 versions of your bot in each request. Amazon Lex returns the most frequent utterances received by the bot in the last 15 days. The response contains information about a maximum of 100 utterances for each version.</p> <p>If you set <code>childDirected</code> field to true when you created your bot, if you are using slot obfuscation with one or more slots, or if you opted out of participating in improving Amazon Lex, utterances are not available.</p> <p>This operation requires permissions for the <code>lex:GetUtterancesView</code> action.</p>
 		 * Get bots/{botname}/utterances#view=aggregation&bot_versions&status_type
 		 * @param {string} botname The name of the bot for which utterance information should be returned.
+		 *     Min length: 2    Max length: 50
 		 * @param {Array<string>} bot_versions An array of bot versions for which utterance information should be returned. The limit is 5 versions per request.
+		 *     Minimum items: 1    Maximum items: 5
 		 * @param {StatusType} status_type To return utterances that were recognized and handled, use <code>Detected</code>. To return utterances that were not recognized, use <code>Missed</code>.
 		 * @return {GetUtterancesViewResponse} Success
 		 */
@@ -2898,6 +2957,7 @@ export namespace MyNS {
 		 * Gets a list of tags associated with the specified resource. Only bots, bot aliases, and bot channels can have tags associated with them.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource to get a list of tags for.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -2908,6 +2968,7 @@ export namespace MyNS {
 		 * Adds the specified tags to the specified resource. If a tag key already exists, the existing value is replaced with the new value.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the bot, bot alias, or bot channel to tag.
+		 *     Min length: 1    Max length: 1011
 		 * @return {void} 
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -2918,6 +2979,7 @@ export namespace MyNS {
 		 * <p>Creates an Amazon Lex conversational bot or replaces an existing bot. When you create or update a bot you are only required to specify a name, a locale, and whether the bot is directed toward children under age 13. You can use this to add intents later, or to remove intents from an existing bot. When you create a bot with the minimum information, the bot is created or updated but Amazon Lex returns the <code/> response <code>FAILED</code>. You can build the bot after you add one or more intents. For more information about Amazon Lex bots, see <a>how-it-works</a>. </p> <p>If you specify the name of an existing bot, the fields in the request replace the existing values in the <code>$LATEST</code> version of the bot. Amazon Lex removes any fields that you don't provide values for in the request, except for the <code>idleTTLInSeconds</code> and <code>privacySettings</code> fields, which are set to their default values. If you don't specify values for required fields, Amazon Lex throws an exception.</p> <p>This operation requires permissions for the <code>lex:PutBot</code> action. For more information, see <a>security-iam</a>.</p>
 		 * Put bots/{name}/versions/$LATEST
 		 * @param {string} name The name of the bot. The name is <i>not</i> case sensitive. 
+		 *     Min length: 2    Max length: 50
 		 * @return {PutBotResponse} Success
 		 */
 		PutBot(name: string, requestBody: PutBotPutBody): Observable<PutBotResponse> {
@@ -2928,6 +2990,7 @@ export namespace MyNS {
 		 * <p>Creates an intent or replaces an existing intent.</p> <p>To define the interaction between the user and your bot, you use one or more intents. For a pizza ordering bot, for example, you would create an <code>OrderPizza</code> intent. </p> <p>To create an intent or replace an existing intent, you must provide the following:</p> <ul> <li> <p>Intent name. For example, <code>OrderPizza</code>.</p> </li> <li> <p>Sample utterances. For example, "Can I order a pizza, please." and "I want to order a pizza."</p> </li> <li> <p>Information to be gathered. You specify slot types for the information that your bot will request from the user. You can specify standard slot types, such as a date or a time, or custom slot types such as the size and crust of a pizza.</p> </li> <li> <p>How the intent will be fulfilled. You can provide a Lambda function or configure the intent to return the intent information to the client application. If you use a Lambda function, when all of the intent information is available, Amazon Lex invokes your Lambda function. If you configure your intent to return the intent information to the client application. </p> </li> </ul> <p>You can specify other optional information in the request, such as:</p> <ul> <li> <p>A confirmation prompt to ask the user to confirm an intent. For example, "Shall I order your pizza?"</p> </li> <li> <p>A conclusion statement to send to the user after the intent has been fulfilled. For example, "I placed your pizza order."</p> </li> <li> <p>A follow-up prompt that asks the user for additional activity. For example, asking "Do you want to order a drink with your pizza?"</p> </li> </ul> <p>If you specify an existing intent name to update the intent, Amazon Lex replaces the values in the <code>$LATEST</code> version of the intent with the values in the request. Amazon Lex removes fields that you don't provide in the request. If you don't specify the required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version of an intent, the <code>status</code> field of any bot that uses the <code>$LATEST</code> version of the intent is set to <code>NOT_BUILT</code>.</p> <p>For more information, see <a>how-it-works</a>.</p> <p>This operation requires permissions for the <code>lex:PutIntent</code> action.</p>
 		 * Put intents/{name}/versions/$LATEST
 		 * @param {string} name <p>The name of the intent. The name is <i>not</i> case sensitive. </p> <p>The name can't match a built-in intent name, or a built-in intent name with "AMAZON." removed. For example, because there is a built-in intent called <code>AMAZON.HelpIntent</code>, you can't create a custom intent called <code>HelpIntent</code>.</p> <p>For a list of built-in intents, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/standard-intents">Standard Built-in Intents</a> in the <i>Alexa Skills Kit</i>.</p>
+		 *     Min length: 1    Max length: 100
 		 * @return {PutIntentResponse} Success
 		 */
 		PutIntent(name: string, requestBody: PutIntentPutBody): Observable<PutIntentResponse> {
@@ -2938,6 +3001,7 @@ export namespace MyNS {
 		 * <p>Creates a custom slot type or replaces an existing custom slot type.</p> <p>To create a custom slot type, specify a name for the slot type and a set of enumeration values, which are the values that a slot of this type can assume. For more information, see <a>how-it-works</a>.</p> <p>If you specify the name of an existing slot type, the fields in the request replace the existing values in the <code>$LATEST</code> version of the slot type. Amazon Lex removes the fields that you don't provide in the request. If you don't specify required fields, Amazon Lex throws an exception. When you update the <code>$LATEST</code> version of a slot type, if a bot uses the <code>$LATEST</code> version of an intent that contains the slot type, the bot's <code>status</code> field is set to <code>NOT_BUILT</code>.</p> <p>This operation requires permissions for the <code>lex:PutSlotType</code> action.</p>
 		 * Put slottypes/{name}/versions/$LATEST
 		 * @param {string} name <p>The name of the slot type. The name is <i>not</i> case sensitive. </p> <p>The name can't match a built-in slot type name, or a built-in slot type name with "AMAZON." removed. For example, because there is a built-in slot type called <code>AMAZON.DATE</code>, you can't create a custom slot type called <code>DATE</code>.</p> <p>For a list of built-in slot types, see <a href="https://developer.amazon.com/public/solutions/alexa/alexa-skills-kit/docs/built-in-intent-ref/slot-type-reference">Slot Type Reference</a> in the <i>Alexa Skills Kit</i>.</p>
+		 *     Min length: 1    Max length: 100
 		 * @return {PutSlotTypeResponse} Success
 		 */
 		PutSlotType(name: string, requestBody: PutSlotTypePutBody): Observable<PutSlotTypeResponse> {
@@ -2957,7 +3021,9 @@ export namespace MyNS {
 		 * Removes tags from a bot, bot alias or bot channel.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource to remove the tags from.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} tagKeys A list of tag keys to remove from the resource. If a tag key does not exist on the resource, it is ignored.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {void} 
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -3020,16 +3086,16 @@ export namespace MyNS {
 
 		/**
 		 * A description of the alias.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
 		/**
 		 * The version of the bot.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		botVersion: string;
 
@@ -3050,16 +3116,16 @@ export namespace MyNS {
 
 		/**
 		 * A description of the alias.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the bot.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		botVersion: FormControl<string | null | undefined>,
 
@@ -3094,32 +3160,32 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.
 		 * Required
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		v1BotName: string;
 
 		/**
 		 * The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		v1BotVersion: string;
 
 		/**
 		 * <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p> <ul> <li> <p>If the Amazon Lex V2 bot doesn't exist, you must use the <code>CREATE_NEW</code> migration strategy.</p> </li> <li> <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		v2BotName: string;
 
 		/**
 		 * The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		v2BotRole: string;
 
@@ -3134,32 +3200,32 @@ export namespace MyNS {
 		/**
 		 * The name of the Amazon Lex V1 bot that you are migrating to Amazon Lex V2.
 		 * Required
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		v1BotName: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the bot to migrate to Amazon Lex V2. You can migrate the <code>$LATEST</code> version as well as any numbered version.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		v1BotVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The name of the Amazon Lex V2 bot that you are migrating the Amazon Lex V1 bot to. </p> <ul> <li> <p>If the Amazon Lex V2 bot doesn't exist, you must use the <code>CREATE_NEW</code> migration strategy.</p> </li> <li> <p>If the Amazon Lex V2 bot exists, you must use the <code>UPDATE_EXISTING</code> migration strategy to change the contents of the Amazon Lex V2 bot.</p> </li> </ul>
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		v2BotName: FormControl<string | null | undefined>,
 
 		/**
 		 * The IAM role that Amazon Lex uses to run the Amazon Lex V2 bot.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		v2BotRole: FormControl<string | null | undefined>,
 
@@ -3204,8 +3270,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the bot.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -3273,8 +3339,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the bot.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3374,8 +3440,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the intent.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -3441,8 +3507,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the intent.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3575,8 +3641,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the slot type.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description?: string | null;
 
@@ -3598,8 +3664,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		parentSlotTypeSignature?: string | null;
 
@@ -3614,8 +3680,8 @@ export namespace MyNS {
 
 		/**
 		 * A description of the slot type.
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -3630,8 +3696,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The built-in slot type used as the parent of the slot type. When you define a parent slot type, the new slot type has all of the same configuration as the parent.</p> <p>Only <code>AMAZON.AlphaNumeric</code> is supported.</p>
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		parentSlotTypeSignature: FormControl<string | null | undefined>,
 	}

@@ -129,6 +129,7 @@ export namespace MyNS {
 		/**
 		 * Version number.
 		 * In version 0, if the "repeated xxx" representations contain only one element, that element is repeated to fill the shape.  This makes it easy to represent a constant Tensor with a single value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version_number?: number | null;
 	}
@@ -148,6 +149,7 @@ export namespace MyNS {
 		/**
 		 * Version number.
 		 * In version 0, if the "repeated xxx" representations contain only one element, that element is repeated to fill the shape.  This makes it easy to represent a constant Tensor with a single value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version_number: FormControl<number | null | undefined>,
 	}
@@ -366,10 +368,14 @@ export namespace MyNS {
 	export interface Feedback {
 		request?: SeldonMessage;
 		response?: SeldonMessage;
+
+		/** Type: float */
 		reward?: number | null;
 		truth?: SeldonMessage;
 	}
 	export interface FeedbackFormProperties {
+
+		/** Type: float */
 		reward: FormControl<number | null | undefined>,
 	}
 	export function CreateFeedbackFormGroup() {
@@ -442,6 +448,8 @@ export namespace MyNS {
 
 		/** Max length: 2097152 */
 		type?: MetricType | null;
+
+		/** Type: float */
 		value?: number | null;
 	}
 	export interface MetricFormProperties {
@@ -451,6 +459,8 @@ export namespace MyNS {
 
 		/** Max length: 2097152 */
 		type: FormControl<MetricType | null | undefined>,
+
+		/** Type: float */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricFormGroup() {
@@ -465,6 +475,8 @@ export namespace MyNS {
 	export enum MetricType { COUNTER = 'COUNTER', GAUGE = 'GAUGE', TIMER = 'TIMER' }
 
 	export interface Status {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code?: number | null;
 
 		/** Max length: 2097152 */
@@ -477,6 +489,8 @@ export namespace MyNS {
 		status?: StatusStatus | null;
 	}
 	export interface StatusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		code: FormControl<number | null | undefined>,
 
 		/** Max length: 2097152 */
@@ -526,6 +540,8 @@ export namespace MyNS {
 
 		/**
 		 * Post seldon/{namespace}/{deployment}/api/v1.0/feedback
+		 * @param {string} namespace Max length: 2097152
+		 * @param {string} deployment Max length: 2097152
 		 * @return {SeldonMessage} A successful response.
 		 */
 		SendFeedback(namespace: string, deployment: string, requestBody: Feedback): Observable<SeldonMessage> {
@@ -534,6 +550,8 @@ export namespace MyNS {
 
 		/**
 		 * Post seldon/{namespace}/{deployment}/api/v1.0/predictions
+		 * @param {string} namespace Max length: 2097152
+		 * @param {string} deployment Max length: 2097152
 		 * @return {SeldonMessage} A successful response.
 		 */
 		Predict(namespace: string, deployment: string, requestBody: SeldonMessage): Observable<SeldonMessage> {

@@ -743,7 +743,9 @@ export namespace MyNS {
 		 * Used to cancel an open change request. Must be sent before the status of the request changes to <code>APPLYING</code>, the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls.
 		 * Patch CancelChangeSet#catalog&changeSetId
 		 * @param {string} catalog Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} changeSetId Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.
+		 *     Min length: 1    Max length: 255
 		 * @return {CancelChangeSetResponse} Success
 		 */
 		CancelChangeSet(catalog: string, changeSetId: string): Observable<CancelChangeSetResponse> {
@@ -754,6 +756,7 @@ export namespace MyNS {
 		 * Deletes a resource-based policy on an Entity that is identified by its resource ARN.
 		 * Delete DeleteResourcePolicy#resourceArn
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteResourcePolicyResponse} Success
 		 */
 		DeleteResourcePolicy(resourceArn: string): Observable<DeleteResourcePolicyResponse> {
@@ -764,7 +767,9 @@ export namespace MyNS {
 		 * Provides information about a given change set.
 		 * Get DescribeChangeSet#catalog&changeSetId
 		 * @param {string} catalog Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> 
+		 *     Min length: 1    Max length: 64
 		 * @param {string} changeSetId Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeChangeSetResponse} Success
 		 */
 		DescribeChangeSet(catalog: string, changeSetId: string): Observable<DescribeChangeSetResponse> {
@@ -775,7 +780,9 @@ export namespace MyNS {
 		 * Returns the metadata and content of the entity.
 		 * Get DescribeEntity#catalog&entityId
 		 * @param {string} catalog Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> 
+		 *     Min length: 1    Max length: 64
 		 * @param {string} entityId Required. The unique ID of the entity to describe.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeEntityResponse} Success
 		 */
 		DescribeEntity(catalog: string, entityId: string): Observable<DescribeEntityResponse> {
@@ -786,6 +793,7 @@ export namespace MyNS {
 		 * Gets a resource-based policy of an Entity that is identified by its resource ARN.
 		 * Get GetResourcePolicy#resourceArn
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetResourcePolicyResponse} Success
 		 */
 		GetResourcePolicy(resourceArn: string): Observable<GetResourcePolicyResponse> {
@@ -865,8 +873,8 @@ export namespace MyNS {
 		/**
 		 * The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Catalog: string;
 
@@ -889,8 +897,8 @@ export namespace MyNS {
 
 		/**
 		 * The token value retrieved from a previous call to access the next page of results.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken?: string | null;
 	}
@@ -899,8 +907,8 @@ export namespace MyNS {
 		/**
 		 * The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Catalog: FormControl<string | null | undefined>,
 
@@ -913,8 +921,8 @@ export namespace MyNS {
 
 		/**
 		 * The token value retrieved from a previous call to access the next page of results.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -948,16 +956,16 @@ export namespace MyNS {
 		/**
 		 * The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Catalog: string;
 
 		/**
 		 * The type of entities to retrieve.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		EntityType: string;
 
@@ -973,8 +981,8 @@ export namespace MyNS {
 
 		/**
 		 * The value of the next token, if it exists. Null if there are no more results.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken?: string | null;
 
@@ -991,23 +999,23 @@ export namespace MyNS {
 		/**
 		 * The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Catalog: FormControl<string | null | undefined>,
 
 		/**
 		 * The type of entities to retrieve.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		EntityType: FormControl<string | null | undefined>,
 
 		/**
 		 * The value of the next token, if it exists. Null if there are no more results.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1051,8 +1059,8 @@ export namespace MyNS {
 		/**
 		 * Required. The Amazon Resource Name (ARN) associated with the resource you want to list tags on.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ResourceArn: string;
 	}
@@ -1061,8 +1069,8 @@ export namespace MyNS {
 		/**
 		 * Required. The Amazon Resource Name (ARN) associated with the resource you want to list tags on.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
@@ -1078,16 +1086,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ResourceArn: string;
 
 		/**
 		 * The policy document to set; formatted in JSON.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 1
+		 * Max length: 10240
 		 */
 		Policy: string;
 	}
@@ -1096,16 +1104,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Entity resource you want to associate with a resource policy.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The policy document to set; formatted in JSON.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 1
+		 * Max length: 10240
 		 */
 		Policy: FormControl<string | null | undefined>,
 	}
@@ -1122,8 +1130,8 @@ export namespace MyNS {
 		/**
 		 * The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Catalog: string;
 
@@ -1137,15 +1145,15 @@ export namespace MyNS {
 
 		/**
 		 * Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		ChangeSetName?: string | null;
 
 		/**
 		 * A unique token to identify the request to ensure idempotency.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -1161,22 +1169,22 @@ export namespace MyNS {
 		/**
 		 * The catalog related to the request. Fixed value: <code>AWSMarketplace</code>
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		Catalog: FormControl<string | null | undefined>,
 
 		/**
 		 * Optional case sensitive string of up to 100 ASCII characters. The change set name can be used to filter the list of change sets.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		ChangeSetName: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique token to identify the request to ensure idempotency.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -1194,8 +1202,8 @@ export namespace MyNS {
 		/**
 		 * Required. The Amazon Resource Name (ARN) associated with the resource you want to tag.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ResourceArn: string;
 
@@ -1212,8 +1220,8 @@ export namespace MyNS {
 		/**
 		 * Required. The Amazon Resource Name (ARN) associated with the resource you want to tag.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}
@@ -1229,8 +1237,8 @@ export namespace MyNS {
 		/**
 		 * Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ResourceArn: string;
 
@@ -1247,8 +1255,8 @@ export namespace MyNS {
 		/**
 		 * Required. The Amazon Resource Name (ARN) associated with the resource you want to remove the tag from.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}

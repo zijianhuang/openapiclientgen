@@ -110,7 +110,10 @@ export namespace MyNS {
 		/** The member ID of the sender */
 		from?: string | null;
 
-		/** The ID of the event */
+		/**
+		 * The ID of the event
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The time that the event happened */
@@ -121,7 +124,10 @@ export namespace MyNS {
 		/** The member ID of the sender */
 		from: FormControl<string | null | undefined>,
 
-		/** The ID of the event */
+		/**
+		 * The ID of the event
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The time that the event happened */
@@ -476,6 +482,7 @@ export namespace MyNS {
 		 * [GET /conversations/:id](#get-conversation) endpoint to fetch all of the conversation details
 		 * Get conversations
 		 * @param {number} page_size The number of results returned per page.   The default value is `10`. The maximum value is `100`.
+		 *     Maximum: 100
 		 * @param {Get_conversationsOrder} order Show the most (`desc`) / least (`asc`) recently created entries first
 		 * @param {string} cursor The cursor to start returning results from.
 		 * You are not expected to provide this manually, but to follow the url provided in `_links.next.href` in the response which contains a `cursor` value
@@ -492,6 +499,7 @@ export namespace MyNS {
 		 * Get conversations/{conversation_id}/events
 		 * @param {string} conversation_id The ID of the conversation
 		 * @param {number} page_size The number of results returned per page.   The default value is `10`. The maximum value is `100`.
+		 *     Maximum: 100
 		 * @param {Get_conversationsOrder} order Show the most (`desc`) / least (`asc`) recently created entries first
 		 * @param {string} cursor The cursor to start returning results from.
 		 * You are not expected to provide this manually, but to follow the url provided in `_links.next.href` in the response which contains a `cursor` value
@@ -509,6 +517,7 @@ export namespace MyNS {
 		 * Get conversations/{conversation_id}/members
 		 * @param {string} conversation_id The ID of the conversation
 		 * @param {number} page_size The number of results returned per page.   The default value is `10`. The maximum value is `100`.
+		 *     Maximum: 100
 		 * @param {Get_conversationsOrder} order Show the most (`desc`) / least (`asc`) recently created entries first
 		 * @param {string} cursor The cursor to start returning results from.
 		 * You are not expected to provide this manually, but to follow the url provided in `_links.next.href` in the response which contains a `cursor` value
@@ -522,6 +531,7 @@ export namespace MyNS {
 		 * List Users
 		 * Get users
 		 * @param {number} page_size The number of results returned per page.   The default value is `10`. The maximum value is `100`.
+		 *     Maximum: 100
 		 * @param {Get_conversationsOrder} order Show the most (`desc`) / least (`asc`) recently created entries first
 		 * @param {string} cursor The cursor to start returning results from.
 		 * You are not expected to provide this manually, but to follow the url provided in `_links.next.href` in the response which contains a `cursor` value

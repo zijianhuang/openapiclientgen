@@ -5,30 +5,54 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface A_page_of_results {
 
-		/** Number of this page of results */
+		/**
+		 * Number of this page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Total number of pages of results */
+		/**
+		 * Total number of pages of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 
-		/** Number of items per page of results */
+		/**
+		 * Number of items per page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total number of results */
+		/**
+		 * Total number of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface A_page_of_resultsFormProperties {
 
-		/** Number of this page of results */
+		/**
+		 * Number of this page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Total number of pages of results */
+		/**
+		 * Total number of pages of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 
-		/** Number of items per page of results */
+		/**
+		 * Number of items per page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total number of results */
+		/**
+		 * Total number of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateA_page_of_resultsFormGroup() {
@@ -569,10 +593,16 @@ export namespace MyNS {
 
 	export interface Span {
 
-		/** end of span text relative to content */
+		/**
+		 * end of span text relative to content
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end?: number | null;
 
-		/** start of span text relative to content */
+		/**
+		 * start of span text relative to content
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start?: number | null;
 
 		/** span text */
@@ -583,10 +613,16 @@ export namespace MyNS {
 	}
 	export interface SpanFormProperties {
 
-		/** end of span text relative to content */
+		/**
+		 * end of span text relative to content
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** start of span text relative to content */
+		/**
+		 * start of span text relative to content
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: FormControl<number | null | undefined>,
 
 		/** span text */
@@ -664,12 +700,18 @@ export namespace MyNS {
 
 	export interface IcNode extends Node {
 
-		/** Information content */
+		/**
+		 * Information content
+		 * Type: double
+		 */
 		IC?: number | null;
 	}
 	export interface IcNodeFormProperties extends NodeFormProperties {
 
-		/** Information content */
+		/**
+		 * Information content
+		 * Type: double
+		 */
 		IC: FormControl<number | null | undefined>,
 	}
 	export function CreateIcNodeFormGroup() {
@@ -838,9 +880,14 @@ export namespace MyNS {
 		 */
 		body: string;
 		category?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		category_id?: number | null;
 
-		/** The unique identifier of a variant set */
+		/**
+		 * The unique identifier of a variant set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 		pub_date?: Date | null;
 
@@ -858,9 +905,14 @@ export namespace MyNS {
 		 */
 		body: FormControl<string | null | undefined>,
 		category: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		category_id: FormControl<number | null | undefined>,
 
-		/** The unique identifier of a variant set */
+		/**
+		 * The unique identifier of a variant set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 		pub_date: FormControl<Date | null | undefined>,
 
@@ -932,7 +984,10 @@ export namespace MyNS {
 		/** Mapping between id and solr highlight */
 		highlighting?: string | null;
 
-		/** total number of associations matching query */
+		/**
+		 * total number of associations matching query
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFound?: number | null;
 	}
 	export interface SearchResultFormProperties {
@@ -943,7 +998,10 @@ export namespace MyNS {
 		/** Mapping between id and solr highlight */
 		highlighting: FormControl<string | null | undefined>,
 
-		/** total number of associations matching query */
+		/**
+		 * total number of associations matching query
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFound: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchResultFormGroup() {
@@ -1020,18 +1078,32 @@ export namespace MyNS {
 
 	export interface SequenceLocation extends BioObject {
 		end?: SequencePosition;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		phase?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		start?: SequencePosition;
 
-		/** Strand direction: 1=='+', -1=='-', 0 or null infers unknown. */
+		/**
+		 * Strand direction: 1=='+', -1=='-', 0 or null infers unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		strand?: number | null;
 	}
 	export interface SequenceLocationFormProperties extends BioObjectFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		phase: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 
-		/** Strand direction: 1=='+', -1=='-', 0 or null infers unknown. */
+		/**
+		 * Strand direction: 1=='+', -1=='-', 0 or null infers unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		strand: FormControl<number | null | undefined>,
 	}
 	export function CreateSequenceLocationFormGroup() {
@@ -1050,10 +1122,14 @@ export namespace MyNS {
 	}
 
 	export interface SequencePosition {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 		reference?: string | null;
 	}
 	export interface SequencePositionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 		reference: FormControl<string | null | undefined>,
 	}
@@ -1071,7 +1147,10 @@ export namespace MyNS {
 		/** rank */
 		rank?: string | null;
 
-		/** sim score */
+		/**
+		 * sim score
+		 * Type: double
+		 */
 		score?: number | null;
 
 		/** p-value */
@@ -1082,7 +1161,10 @@ export namespace MyNS {
 		/** rank */
 		rank: FormControl<string | null | undefined>,
 
-		/** sim score */
+		/**
+		 * sim score
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** p-value */
@@ -1102,12 +1184,18 @@ export namespace MyNS {
 
 	export interface SimMetadata {
 
-		/** max IC */
+		/**
+		 * max IC
+		 * Type: double
+		 */
 		max_max_ic?: number | null;
 	}
 	export interface SimMetadataFormProperties {
 
-		/** max IC */
+		/**
+		 * max IC
+		 * Type: double
+		 */
 		max_max_ic: FormControl<number | null | undefined>,
 	}
 	export function CreateSimMetadataFormGroup() {
@@ -1151,24 +1239,42 @@ export namespace MyNS {
 
 	export interface SufficiencyOutput {
 
-		/** categorical score */
+		/**
+		 * categorical score
+		 * Type: double
+		 */
 		categorical_score?: number | null;
 
-		/** scaled score */
+		/**
+		 * scaled score
+		 * Type: double
+		 */
 		scaled_score?: number | null;
 
-		/** simple score */
+		/**
+		 * simple score
+		 * Type: double
+		 */
 		simple_score?: number | null;
 	}
 	export interface SufficiencyOutputFormProperties {
 
-		/** categorical score */
+		/**
+		 * categorical score
+		 * Type: double
+		 */
 		categorical_score: FormControl<number | null | undefined>,
 
-		/** scaled score */
+		/**
+		 * scaled score
+		 * Type: double
+		 */
 		scaled_score: FormControl<number | null | undefined>,
 
-		/** simple score */
+		/**
+		 * simple score
+		 * Type: double
+		 */
 		simple_score: FormControl<number | null | undefined>,
 	}
 	export function CreateSufficiencyOutputFormGroup() {
@@ -1244,7 +1350,9 @@ export namespace MyNS {
 		 * the connection.
 		 * Get association/between/{subject}/{object}
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} evidence Object id, e.g. ECO:0000501 (for IEA; Includes inferred by default) or a specific publication or other supporting object, e.g. ZFIN:ZDB-PUB-060503-2
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
 		 * @param {boolean} exclude_automatic_assertions If true, excludes associations that involve IEAs (ECO:0000501)
@@ -1259,7 +1367,9 @@ export namespace MyNS {
 		 * Returns list of matching associations for a given subject category
 		 * Get association/find/{subject_category}
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} evidence Object id, e.g. ECO:0000501 (for IEA; Includes inferred by default) or a specific publication or other supporting object, e.g. ZFIN:ZDB-PUB-060503-2
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
 		 * @param {boolean} exclude_automatic_assertions If true, excludes associations that involve IEAs (ECO:0000501)
@@ -1277,7 +1387,9 @@ export namespace MyNS {
 		 * Returns list of matching associations between a given subject and object category
 		 * Get association/find/{subject_category}/{object_category}
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} evidence Object id, e.g. ECO:0000501 (for IEA; Includes inferred by default) or a specific publication or other supporting object, e.g. ZFIN:ZDB-PUB-060503-2
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
 		 * @param {boolean} exclude_automatic_assertions If true, excludes associations that involve IEAs (ECO:0000501)
@@ -1297,7 +1409,9 @@ export namespace MyNS {
 		 * Returns list of matching associations starting from a given subject (source)
 		 * Get association/from/{subject}
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} evidence Object id, e.g. ECO:0000501 (for IEA; Includes inferred by default) or a specific publication or other supporting object, e.g. ZFIN:ZDB-PUB-060503-2
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
 		 * @param {boolean} exclude_automatic_assertions If true, excludes associations that involve IEAs (ECO:0000501)
@@ -1314,7 +1428,9 @@ export namespace MyNS {
 		 * Returns list of matching associations pointing to a given object (target)
 		 * Get association/to/{object}
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} evidence Object id, e.g. ECO:0000501 (for IEA; Includes inferred by default) or a specific publication or other supporting object, e.g. ZFIN:ZDB-PUB-060503-2
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
 		 * @param {boolean} exclude_automatic_assertions If true, excludes associations that involve IEAs (ECO:0000501)
@@ -1329,7 +1445,9 @@ export namespace MyNS {
 		 * Returns list of matching associations of a given type
 		 * Get association/type/{association_type}
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} evidence Object id, e.g. ECO:0000501 (for IEA; Includes inferred by default) or a specific publication or other supporting object, e.g. ZFIN:ZDB-PUB-060503-2
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
 		 * @param {boolean} exclude_automatic_assertions If true, excludes associations that involve IEAs (ECO:0000501)
@@ -1357,7 +1475,9 @@ export namespace MyNS {
 		 * Returns genes associated with a given anatomy
 		 * Get bioentity/anatomy/{id}/genes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1383,7 +1503,9 @@ export namespace MyNS {
 		 * For example, + NCBITaxon:10090 (mouse)
 		 * Get bioentity/anatomy/{id}/genes/{taxid}
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1408,7 +1530,9 @@ export namespace MyNS {
 		 * Returns diseases associated with a case
 		 * Get bioentity/case/{id}/diseases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1428,7 +1552,9 @@ export namespace MyNS {
 		 * Returns genotypes associated with a case
 		 * Get bioentity/case/{id}/genotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1448,7 +1574,9 @@ export namespace MyNS {
 		 * Returns models associated with a case
 		 * Get bioentity/case/{id}/models
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1468,7 +1596,9 @@ export namespace MyNS {
 		 * Returns phenotypes associated with a case
 		 * Get bioentity/case/{id}/phenotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1488,7 +1618,9 @@ export namespace MyNS {
 		 * Returns variants associated with a case
 		 * Get bioentity/case/{id}/variants
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1508,7 +1640,9 @@ export namespace MyNS {
 		 * Returns cases associated with a disease
 		 * Get bioentity/disease/{id}/cases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1528,7 +1662,9 @@ export namespace MyNS {
 		 * Returns genes associated with a disease
 		 * Get bioentity/disease/{id}/genes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1554,7 +1690,9 @@ export namespace MyNS {
 		 * Returns genotypes associated with a disease
 		 * Get bioentity/disease/{id}/genotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1587,7 +1725,9 @@ export namespace MyNS {
 		 * * TODO: provide hook into owlsim for dynamic computation of models by similarity
 		 * Get bioentity/disease/{id}/models
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1613,7 +1753,9 @@ export namespace MyNS {
 		 * See /disease/<id>/models route for full details
 		 * Get bioentity/disease/{id}/models/{taxon}
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1633,7 +1775,9 @@ export namespace MyNS {
 		 * Returns pathways associated with a disease
 		 * Get bioentity/disease/{id}/pathways
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1658,7 +1802,9 @@ export namespace MyNS {
 		 * Returns phenotypes associated with disease
 		 * Get bioentity/disease/{id}/phenotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1683,7 +1829,9 @@ export namespace MyNS {
 		 * Returns publications associated with a disease
 		 * Get bioentity/disease/{id}/publications
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1709,7 +1857,9 @@ export namespace MyNS {
 		 * e.g. drugs or small molecules used to treat
 		 * Get bioentity/disease/{id}/treatment
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1729,7 +1879,9 @@ export namespace MyNS {
 		 * Returns variants associated with a disease
 		 * Get bioentity/disease/{id}/variants
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1754,7 +1906,9 @@ export namespace MyNS {
 		 * Returns annotations associated to a function term
 		 * Get bioentity/function/{id}
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} evidence Object id, e.g. ECO:0000501 (for IEA; Includes inferred by default) or a specific publication or other supporting object, e.g. ZFIN:ZDB-PUB-060503-2
 		 * @return {void} Success
 		 */
@@ -1766,7 +1920,9 @@ export namespace MyNS {
 		 * Returns genes associated to a GO term
 		 * Get bioentity/function/{id}/genes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1792,7 +1948,9 @@ export namespace MyNS {
 		 * Returns publications associated to a GO term
 		 * Get bioentity/function/{id}/publications
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} evidence Object id, e.g. ECO:0000501 (for IEA; Includes inferred by default) or a specific publication or other supporting object, e.g. ZFIN:ZDB-PUB-060503-2
 		 * @return {void} Success
 		 */
@@ -1804,7 +1962,9 @@ export namespace MyNS {
 		 * Returns taxons associated to a GO term
 		 * Get bioentity/function/{id}/taxons
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} evidence Object id, e.g. ECO:0000501 (for IEA; Includes inferred by default) or a specific publication or other supporting object, e.g. ZFIN:ZDB-PUB-060503-2
 		 * @return {void} Success
 		 */
@@ -1816,7 +1976,9 @@ export namespace MyNS {
 		 * Returns anatomical entities associated with a gene
 		 * Get bioentity/gene/{id}/anatomy
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1841,7 +2003,9 @@ export namespace MyNS {
 		 * Returns cases associated with a gene
 		 * Get bioentity/gene/{id}/cases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1861,7 +2025,9 @@ export namespace MyNS {
 		 * Returns diseases associated with gene
 		 * Get bioentity/gene/{id}/diseases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1887,7 +2053,9 @@ export namespace MyNS {
 		 * Returns expression events for a gene
 		 * Get bioentity/gene/{id}/expression/anatomy
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1923,7 +2091,9 @@ export namespace MyNS {
 		 * mapped behind the scenes for querying.
 		 * Get bioentity/gene/{id}/function
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1943,7 +2113,9 @@ export namespace MyNS {
 		 * Returns genotypes associated with a gene
 		 * Get bioentity/gene/{id}/genotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1968,7 +2140,9 @@ export namespace MyNS {
 		 * Returns homologs for a gene
 		 * Get bioentity/gene/{id}/homologs
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -1991,7 +2165,9 @@ export namespace MyNS {
 		 * Returns interactions for a gene
 		 * Get bioentity/gene/{id}/interactions
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2016,7 +2192,9 @@ export namespace MyNS {
 		 * Returns models associated with a gene
 		 * Get bioentity/gene/{id}/models
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2041,7 +2219,9 @@ export namespace MyNS {
 		 * Return diseases associated with orthologs of a gene
 		 * Get bioentity/gene/{id}/ortholog/diseases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2066,7 +2246,9 @@ export namespace MyNS {
 		 * Return phenotypes associated with orthologs for a gene
 		 * Get bioentity/gene/{id}/ortholog/phenotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2091,7 +2273,9 @@ export namespace MyNS {
 		 * Returns pathways associated with gene
 		 * Get bioentity/gene/{id}/pathways
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2116,7 +2300,9 @@ export namespace MyNS {
 		 * Returns phenotypes associated with gene
 		 * Get bioentity/gene/{id}/phenotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2141,7 +2327,9 @@ export namespace MyNS {
 		 * Returns publications associated with a gene
 		 * Get bioentity/gene/{id}/publications
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2166,7 +2354,9 @@ export namespace MyNS {
 		 * Returns variants associated with a gene
 		 * Get bioentity/gene/{id}/variants
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2191,7 +2381,9 @@ export namespace MyNS {
 		 * Returns cases associated with a genotype
 		 * Get bioentity/genotype/{id}/cases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2211,7 +2403,9 @@ export namespace MyNS {
 		 * Returns diseases associated with a genotype
 		 * Get bioentity/genotype/{id}/diseases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2236,7 +2430,9 @@ export namespace MyNS {
 		 * Returns genes associated with a genotype
 		 * Get bioentity/genotype/{id}/genes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2262,7 +2458,9 @@ export namespace MyNS {
 		 * Genotypes may be related to one another according to the GENO model
 		 * Get bioentity/genotype/{id}/genotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2287,7 +2485,9 @@ export namespace MyNS {
 		 * Returns models associated with a genotype
 		 * Get bioentity/genotype/{id}/models
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2312,7 +2512,9 @@ export namespace MyNS {
 		 * Returns phenotypes associated with a genotype
 		 * Get bioentity/genotype/{id}/phenotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2337,7 +2539,9 @@ export namespace MyNS {
 		 * Returns publications associated with a genotype
 		 * Get bioentity/genotype/{id}/publications
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2362,7 +2566,9 @@ export namespace MyNS {
 		 * Returns genotypes-variant associations
 		 * Get bioentity/genotype/{id}/variants
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2387,7 +2593,9 @@ export namespace MyNS {
 		 * Returns associations to GO terms for a gene
 		 * Get bioentity/goterm/{id}/genes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2408,7 +2616,9 @@ export namespace MyNS {
 		 * Returns cases associated with a model
 		 * Get bioentity/model/{id}/cases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2428,7 +2638,9 @@ export namespace MyNS {
 		 * Returns diseases associated with a model
 		 * Get bioentity/model/{id}/diseases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2453,7 +2665,9 @@ export namespace MyNS {
 		 * Returns genes associated with a model
 		 * Get bioentity/model/{id}/genes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2478,7 +2692,9 @@ export namespace MyNS {
 		 * Returns genotypes associated with a model
 		 * Get bioentity/model/{id}/genotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2503,7 +2719,9 @@ export namespace MyNS {
 		 * Returns phenotypes associated with a model
 		 * Get bioentity/model/{id}/phenotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2528,7 +2746,9 @@ export namespace MyNS {
 		 * Returns publications associated with a model
 		 * Get bioentity/model/{id}/publications
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2553,7 +2773,9 @@ export namespace MyNS {
 		 * Returns variants associated with a model
 		 * Get bioentity/model/{id}/variants
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2578,7 +2800,9 @@ export namespace MyNS {
 		 * Returns diseases associated with a pathway
 		 * Get bioentity/pathway/{id}/diseases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2603,7 +2827,9 @@ export namespace MyNS {
 		 * Returns genes associated with a pathway
 		 * Get bioentity/pathway/{id}/genes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2628,7 +2854,9 @@ export namespace MyNS {
 		 * Returns phenotypes associated with a pathway
 		 * Get bioentity/pathway/{id}/phenotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2655,7 +2883,9 @@ export namespace MyNS {
 		 * * MP:0008521 abnormal Bowman membrane
 		 * Get bioentity/phenotype/{id}/anatomy
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2675,7 +2905,9 @@ export namespace MyNS {
 		 * Returns cases associated with a phenotype
 		 * Get bioentity/phenotype/{id}/cases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2695,7 +2927,9 @@ export namespace MyNS {
 		 * Returns diseases associated with a phenotype
 		 * Get bioentity/phenotype/{id}/diseases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2721,7 +2955,9 @@ export namespace MyNS {
 		 * For example, MP:0001569 + NCBITaxon:10090 (mouse)
 		 * Get bioentity/phenotype/{id}/gene/{taxid}/ids
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2741,7 +2977,9 @@ export namespace MyNS {
 		 * Returns genes associated with a phenotype
 		 * Get bioentity/phenotype/{id}/genes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2766,7 +3004,9 @@ export namespace MyNS {
 		 * Returns genotypes associated with a phenotype
 		 * Get bioentity/phenotype/{id}/genotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2791,7 +3031,9 @@ export namespace MyNS {
 		 * Returns pathways associated with a phenotype
 		 * Get bioentity/phenotype/{id}/pathways
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2816,7 +3058,9 @@ export namespace MyNS {
 		 * Returns publications associated with a phenotype
 		 * Get bioentity/phenotype/{id}/publications
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2841,7 +3085,9 @@ export namespace MyNS {
 		 * Returns variants associated with a phenotype
 		 * Get bioentity/phenotype/{id}/variants
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2866,7 +3112,9 @@ export namespace MyNS {
 		 * Returns diseases associated with a publication
 		 * Get bioentity/publication/{id}/diseases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2891,7 +3139,9 @@ export namespace MyNS {
 		 * Returns genes associated with a publication
 		 * Get bioentity/publication/{id}/genes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2916,7 +3166,9 @@ export namespace MyNS {
 		 * Returns genotypes associated with a publication
 		 * Get bioentity/publication/{id}/genotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2941,7 +3193,9 @@ export namespace MyNS {
 		 * Returns models associated with a publication
 		 * Get bioentity/publication/{id}/models
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2966,7 +3220,9 @@ export namespace MyNS {
 		 * Returns phenotypes associated with a publication
 		 * Get bioentity/publication/{id}/phenotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -2991,7 +3247,9 @@ export namespace MyNS {
 		 * Returns variants associated with a publication
 		 * Get bioentity/publication/{id}/variants
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3023,7 +3281,9 @@ export namespace MyNS {
 		 * For example, CHEBI:40036 (amitrole)
 		 * Get bioentity/substance/{id}/participant_in
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3044,7 +3304,9 @@ export namespace MyNS {
 		 * Roles may be human-oriented (e.g. pesticide) or molecular (e.g. enzyme inhibitor)
 		 * Get bioentity/substance/{id}/roles
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3065,7 +3327,9 @@ export namespace MyNS {
 		 * e.g. drugs or small molecules used to treat
 		 * Get bioentity/substance/{id}/treats
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3085,7 +3349,9 @@ export namespace MyNS {
 		 * Returns cases associated with a variant
 		 * Get bioentity/variant/{id}/cases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3105,7 +3371,9 @@ export namespace MyNS {
 		 * Returns diseases associated with a variant
 		 * Get bioentity/variant/{id}/diseases
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3130,7 +3398,9 @@ export namespace MyNS {
 		 * Returns genes associated with a variant
 		 * Get bioentity/variant/{id}/genes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3155,7 +3425,9 @@ export namespace MyNS {
 		 * Returns genotypes associated with a variant
 		 * Get bioentity/variant/{id}/genotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3180,7 +3452,9 @@ export namespace MyNS {
 		 * Returns models associated with a variant
 		 * Get bioentity/variant/{id}/models
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3200,7 +3474,9 @@ export namespace MyNS {
 		 * Returns phenotypes associated with a variant
 		 * Get bioentity/variant/{id}/phenotypes
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3225,7 +3501,9 @@ export namespace MyNS {
 		 * Returns publications associated with a variant
 		 * Get bioentity/variant/{id}/publications
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3250,7 +3528,9 @@ export namespace MyNS {
 		 * Returns basic info on object of any type
 		 * Get bioentity/{id}
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3270,7 +3550,9 @@ export namespace MyNS {
 		 * Returns associations for an entity regardless of the type
 		 * Get bioentity/{id}/associations
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3295,7 +3577,9 @@ export namespace MyNS {
 		 * Return basic info on an object for a given type
 		 * Get bioentity/{type}/{id}
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} facet Enable faceting
 		 * @param {Array<string>} facet_fields Fields to facet on
 		 * @param {boolean} unselect_evidence If true, excludes evidence objects in response
@@ -3385,7 +3669,9 @@ export namespace MyNS {
 		 * @param {Array<string>} slim Map objects up (slim) to a higher level category. Value can be ontology class ID (IMPLEMENTED) or subset ID (TODO)
 		 * @param {boolean} exclude_automatic_assertions If set, excludes associations that involve IEAs (ECO:0000501)
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		Get_entity_set_anatomy_slimmer(subject: Array<string>, slim: Array<string>, exclude_automatic_assertions: boolean | null | undefined, rows: number | null | undefined, start: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3400,7 +3686,9 @@ export namespace MyNS {
 		 * @param {Array<string>} slim Map objects up (slim) to a higher level category. Value can be ontology class ID (IMPLEMENTED) or subset ID (TODO)
 		 * @param {boolean} exclude_automatic_assertions If set, excludes associations that involve IEAs (ECO:0000501)
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		Get_entity_set_function_slimmer(relationship_type: Get_entity_set_function_slimmerRelationship_type | null | undefined, subject: Array<string>, slim: Array<string>, exclude_automatic_assertions: boolean | null | undefined, rows: number | null | undefined, start: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3414,7 +3702,9 @@ export namespace MyNS {
 		 * @param {Array<string>} slim Map objects up (slim) to a higher level category. Value can be ontology class ID (IMPLEMENTED) or subset ID (TODO)
 		 * @param {boolean} exclude_automatic_assertions If set, excludes associations that involve IEAs (ECO:0000501)
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start beginning row
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		Get_entity_set_phenotype_slimmer(subject: Array<string>, slim: Array<string>, exclude_automatic_assertions: boolean | null | undefined, rows: number | null | undefined, start: number | null | undefined): Observable<HttpResponse<string>> {
@@ -3557,6 +3847,7 @@ export namespace MyNS {
 		 * Returns edges emanating from a given node
 		 * Get graph/edges/from/{id}
 		 * @param {number} depth How far to traverse for neighbors
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Get_edge_resourceDirection} direction Which direction to traverse (used only if relationship_type is defined)
 		 * @param {Array<string>} relationship_type Relationship type to traverse
 		 * @param {boolean} entail Include sub-properties and equivalent properties
@@ -4033,6 +4324,7 @@ export namespace MyNS {
 		 * @param {Array<string>} boost_q boost query e.g. category:genotype^-10
 		 * @param {Array<string>} taxon taxon filter, eg NCBITaxon:9606, includes inferred taxa
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start row number to start from
 		 * @param {string} highlight_class highlight class
 		 * @param {string} min_match minimum should match parameter, see solr docs for details
@@ -4048,6 +4340,7 @@ export namespace MyNS {
 		 * Returns list of matching concepts or entities using lexical search
 		 * Get search/entity/hpo-pl/{term}
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start row number to start from
 		 * @param {string} phenotype_group phenotype group id
 		 * @param {string} phenotype_group_label phenotype group label
@@ -4071,6 +4364,7 @@ export namespace MyNS {
 		 * @param {Array<string>} boost_q boost query e.g. category:genotype^-10
 		 * @param {Array<string>} taxon taxon filter, eg NCBITaxon:9606, includes inferred taxa
 		 * @param {number} rows number of rows
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start row number to start from
 		 * @param {string} highlight_class highlight class
 		 * @param {string} min_match minimum should match parameter, see solr docs for details
@@ -4131,6 +4425,7 @@ export namespace MyNS {
 		 * @param {Get_sim_compareMetric} metric Metric for computing similarity
 		 * @param {Array<string>} id A phenotype or identifier that is composed of phenotypes (eg disease, gene)
 		 * @param {number} limit number of rows, max 500
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} taxon ncbi taxon id
 		 * @return {SimResult} Success
 		 */
@@ -4142,7 +4437,9 @@ export namespace MyNS {
 		 * Returns list of variant sets
 		 * Get variation/set/
 		 * @param {number} page Page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Get_variant_sets_collectionPer_page} per_page Results per page {error_msg}
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Page_of_variant_sets} Success
 		 */
 		Get_variant_sets_collection(page: number | null | undefined, per_page: Get_variant_sets_collectionPer_page | null | undefined): Observable<Page_of_variant_sets> {
@@ -4171,7 +4468,9 @@ export namespace MyNS {
 		 * Returns list of variant sets from a specified time period
 		 * Get variation/set/archive/{year}/{month}/{day}
 		 * @param {number} page Page number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Get_variant_sets_archive_collectionPer_page} per_page Results per page {error_msg}
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Page_of_variant_sets} Success
 		 */
 		Get_variant_sets_archive_collection(page: number | null | undefined, per_page: Get_variant_sets_archive_collectionPer_page | null | undefined): Observable<Page_of_variant_sets> {

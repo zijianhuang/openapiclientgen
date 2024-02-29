@@ -103,14 +103,20 @@ export namespace MyNS {
 	/** A quantity based policy specifies that a certain number of the most recent successful backups should be retained. */
 	export interface QuantityBasedRetention {
 
-		/** The number of backups to retain. */
+		/**
+		 * The number of backups to retain.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 	}
 
 	/** A quantity based policy specifies that a certain number of the most recent successful backups should be retained. */
 	export interface QuantityBasedRetentionFormProperties {
 
-		/** The number of backups to retain. */
+		/**
+		 * The number of backups to retain.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateQuantityBasedRetentionFormGroup() {
@@ -165,32 +171,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface GoogleTypeTimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface GoogleTypeTimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeTimeOfDayFormGroup() {
@@ -391,20 +421,32 @@ export namespace MyNS {
 	/** A backup's position in a quantity-based retention queue, of backups with the same source cluster and type, with length, retention, specified by the backup's retention policy. Once the position is greater than the retention, the backup is eligible to be garbage collected. Example: 5 backups from the same source cluster and type with a quantity-based retention of 3 and denoted by backup_id (position, retention). Safe: backup_5 (1, 3), backup_4, (2, 3), backup_3 (3, 3). Awaiting garbage collection: backup_2 (4, 3), backup_1 (5, 3) */
 	export interface QuantityBasedExpiry {
 
-		/** Output only. The backup's position among its backups with the same source cluster and type, by descending chronological order create time(i.e. newest first). */
+		/**
+		 * Output only. The backup's position among its backups with the same source cluster and type, by descending chronological order create time(i.e. newest first).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionCount?: number | null;
 
-		/** Output only. The length of the quantity-based queue, specified by the backup's retention policy. */
+		/**
+		 * Output only. The length of the quantity-based queue, specified by the backup's retention policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRetentionCount?: number | null;
 	}
 
 	/** A backup's position in a quantity-based retention queue, of backups with the same source cluster and type, with length, retention, specified by the backup's retention policy. Once the position is greater than the retention, the backup is eligible to be garbage collected. Example: 5 backups from the same source cluster and type with a quantity-based retention of 3 and denoted by backup_id (position, retention). Safe: backup_5 (1, 3), backup_4, (2, 3), backup_3 (3, 3). Awaiting garbage collection: backup_2 (4, 3), backup_1 (5, 3) */
 	export interface QuantityBasedExpiryFormProperties {
 
-		/** Output only. The backup's position among its backups with the same source cluster and type, by descending chronological order create time(i.e. newest first). */
+		/**
+		 * Output only. The backup's position among its backups with the same source cluster and type, by descending chronological order create time(i.e. newest first).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retentionCount: FormControl<number | null | undefined>,
 
-		/** Output only. The length of the quantity-based queue, specified by the backup's retention policy. */
+		/**
+		 * Output only. The length of the quantity-based queue, specified by the backup's retention policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRetentionCount: FormControl<number | null | undefined>,
 	}
 	export function CreateQuantityBasedExpiryFormGroup() {
@@ -700,7 +742,10 @@ export namespace MyNS {
 		/** EncryptionConfig describes the encryption config of a cluster or a backup that is encrypted with a CMEK (customer-managed encryption key). */
 		encryptionConfig?: EncryptionConfig;
 
-		/** The number of days that are eligible to restore from using PITR. To support the entire recovery window, backups and logs are retained for one day more than the recovery window. If not set, defaults to 14 days. */
+		/**
+		 * The number of days that are eligible to restore from using PITR. To support the entire recovery window, backups and logs are retained for one day more than the recovery window. If not set, defaults to 14 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recoveryWindowDays?: number | null;
 	}
 
@@ -710,7 +755,10 @@ export namespace MyNS {
 		/** Whether ContinuousBackup is enabled. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** The number of days that are eligible to restore from using PITR. To support the entire recovery window, backups and logs are retained for one day more than the recovery window. If not set, defaults to 14 days. */
+		/**
+		 * The number of days that are eligible to restore from using PITR. To support the entire recovery window, backups and logs are retained for one day more than the recovery window. If not set, defaults to 14 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		recoveryWindowDays: FormControl<number | null | undefined>,
 	}
 	export function CreateContinuousBackupConfigFormGroup() {
@@ -1358,14 +1406,20 @@ export namespace MyNS {
 	/** MachineConfig describes the configuration of a machine. */
 	export interface MachineConfig {
 
-		/** The number of CPU's in the VM instance. */
+		/**
+		 * The number of CPU's in the VM instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuCount?: number | null;
 	}
 
 	/** MachineConfig describes the configuration of a machine. */
 	export interface MachineConfigFormProperties {
 
-		/** The number of CPU's in the VM instance. */
+		/**
+		 * The number of CPU's in the VM instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuCount: FormControl<number | null | undefined>,
 	}
 	export function CreateMachineConfigFormGroup() {
@@ -1445,10 +1499,16 @@ export namespace MyNS {
 	/** QueryInsights Instance specific configuration. */
 	export interface QueryInsightsInstanceConfig {
 
-		/** Number of query execution plans captured by Insights per minute for all queries combined. The default value is 5. Any integer between 0 and 20 is considered valid. */
+		/**
+		 * Number of query execution plans captured by Insights per minute for all queries combined. The default value is 5. Any integer between 0 and 20 is considered valid.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		queryPlansPerMinute?: number | null;
 
-		/** Query string length. The default value is 1024. Any integer between 256 and 4500 is considered valid. */
+		/**
+		 * Query string length. The default value is 1024. Any integer between 256 and 4500 is considered valid.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		queryStringLength?: number | null;
 
 		/** Record application tags for an instance. This flag is turned "on" by default. */
@@ -1461,10 +1521,16 @@ export namespace MyNS {
 	/** QueryInsights Instance specific configuration. */
 	export interface QueryInsightsInstanceConfigFormProperties {
 
-		/** Number of query execution plans captured by Insights per minute for all queries combined. The default value is 5. Any integer between 0 and 20 is considered valid. */
+		/**
+		 * Number of query execution plans captured by Insights per minute for all queries combined. The default value is 5. Any integer between 0 and 20 is considered valid.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		queryPlansPerMinute: FormControl<number | null | undefined>,
 
-		/** Query string length. The default value is 1024. Any integer between 256 and 4500 is considered valid. */
+		/**
+		 * Query string length. The default value is 1024. Any integer between 256 and 4500 is considered valid.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		queryStringLength: FormControl<number | null | undefined>,
 
 		/** Record application tags for an instance. This flag is turned "on" by default. */
@@ -1487,14 +1553,20 @@ export namespace MyNS {
 	/** Configuration for a read pool instance. */
 	export interface ReadPoolConfig {
 
-		/** Read capacity, i.e. number of nodes in a read pool instance. */
+		/**
+		 * Read capacity, i.e. number of nodes in a read pool instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount?: number | null;
 	}
 
 	/** Configuration for a read pool instance. */
 	export interface ReadPoolConfigFormProperties {
 
-		/** Read capacity, i.e. number of nodes in a read pool instance. */
+		/**
+		 * Read capacity, i.e. number of nodes in a read pool instance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount: FormControl<number | null | undefined>,
 	}
 	export function CreateReadPoolConfigFormGroup() {
@@ -1711,7 +1783,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1724,7 +1799,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2127,6 +2205,8 @@ export namespace MyNS {
 	}
 
 	export interface StorageDatabasecenterPartnerapiV1mainRetentionSettings {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quantityBasedRetention?: number | null;
 
 		/** The unit that 'retained_backups' represents. */
@@ -2134,6 +2214,8 @@ export namespace MyNS {
 		timeBasedRetention?: string | null;
 	}
 	export interface StorageDatabasecenterPartnerapiV1mainRetentionSettingsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		quantityBasedRetention: FormControl<number | null | undefined>,
 
 		/** The unit that 'retained_backups' represents. */
@@ -2626,6 +2708,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {GoogleCloudLocationListLocationsResponse} Successful response
 		 */
@@ -2639,6 +2722,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -2703,6 +2787,7 @@ export namespace MyNS {
 		 * @param {string} filter Filtering results
 		 * @param {string} orderBy Hint for how to order the results
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @return {ListBackupsResponse} Successful response
 		 */
@@ -2730,6 +2815,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filtering results
 		 * @param {string} orderBy Optional. Hint for how to order the results
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @return {ListClustersResponse} Successful response
 		 */
@@ -2791,6 +2877,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filtering results
 		 * @param {string} orderBy Optional. Hint for how to order the results
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @return {ListInstancesResponse} Successful response
 		 */
@@ -2829,6 +2916,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/supportedDatabaseFlags
 		 * @param {string} parent Required. The name of the parent resource. The required format is: * projects/{project}/locations/{location} Regardless of the parent specified here, as long it is contains a valid project and location, the service will return a static list of supported flags resources. Note that we do not yet support region-specific flags.
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return.
 		 * @return {ListSupportedDatabaseFlagsResponse} Successful response
 		 */
@@ -2843,6 +2931,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filtering results
 		 * @param {string} orderBy Optional. Hint for how to order the results
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results the server should return.
 		 * @return {ListUsersResponse} Successful response
 		 */

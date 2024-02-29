@@ -2782,9 +2782,18 @@ namespace MyNS
 		/// Returns a list of application instances.
 		/// ListApplicationInstances application-instances
 		/// </summary>
-		/// <param name="deviceId">The application instances' device ID.</param>
-		/// <param name="maxResults">The maximum number of application instances to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="deviceId">The application instances' device ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of application instances to return in one page of results.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <param name="statusFilter">Only include instances with a specific status.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -2861,9 +2870,18 @@ namespace MyNS
 		/// Returns a list of jobs.
 		/// ListDevicesJobs jobs
 		/// </summary>
-		/// <param name="DeviceId">Filter results by the job's target device ID.</param>
-		/// <param name="MaxResults">The maximum number of device jobs to return in one page of results.</param>
-		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="DeviceId">Filter results by the job's target device ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="MaxResults">The maximum number of device jobs to return in one page of results.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
+		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDevicesJobsResponse> ListDevicesJobsAsync(string DeviceId, int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2937,8 +2955,14 @@ namespace MyNS
 		/// Returns a list of camera stream node jobs.
 		/// ListNodeFromTemplateJobs packages/template-job
 		/// </summary>
-		/// <param name="MaxResults">The maximum number of node from template jobs to return in one page of results.</param>
-		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="MaxResults">The maximum number of node from template jobs to return in one page of results.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
+		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListNodeFromTemplateJobsResponse> ListNodeFromTemplateJobsAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3012,8 +3036,14 @@ namespace MyNS
 		/// Returns a list of packages.
 		/// ListPackages packages
 		/// </summary>
-		/// <param name="maxResults">The maximum number of packages to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="maxResults">The maximum number of packages to return in one page of results.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3089,8 +3119,14 @@ namespace MyNS
 		/// Returns a list of package import jobs.
 		/// ListPackageImportJobs packages/import-jobs
 		/// </summary>
-		/// <param name="MaxResults">The maximum number of package import jobs to return in one page of results.</param>
-		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="MaxResults">The maximum number of package import jobs to return in one page of results.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
+		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPackageImportJobsResponse> ListPackageImportJobsAsync(int MaxResults, string NextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3124,7 +3160,10 @@ namespace MyNS
 		/// Deletes a device.
 		/// DeleteDevice devices/{DeviceId}
 		/// </summary>
-		/// <param name="DeviceId">The device's ID.</param>
+		/// <param name="DeviceId">The device's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDeviceResponse> DeleteDeviceAsync(string DeviceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3158,7 +3197,10 @@ namespace MyNS
 		/// Returns information about a device.
 		/// DescribeDevice devices/{DeviceId}
 		/// </summary>
-		/// <param name="DeviceId">The device's ID.</param>
+		/// <param name="DeviceId">The device's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDeviceResponse> DescribeDeviceAsync(string DeviceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3192,7 +3234,10 @@ namespace MyNS
 		/// Updates a device's metadata.
 		/// UpdateDeviceMetadata devices/{DeviceId}
 		/// </summary>
-		/// <param name="DeviceId">The device's ID.</param>
+		/// <param name="DeviceId">The device's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDeviceMetadataResponse> UpdateDeviceMetadataAsync(string DeviceId, UpdateDeviceMetadataPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3234,7 +3279,10 @@ namespace MyNS
 		/// DeletePackage packages/{PackageId}
 		/// </summary>
 		/// <param name="ForceDelete">Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.</param>
-		/// <param name="PackageId">The package's ID.</param>
+		/// <param name="PackageId">The package's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePackageResponse> DeletePackageAsync(bool ForceDelete, string PackageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3268,11 +3316,26 @@ namespace MyNS
 		/// Deregisters a package version.
 		/// DeregisterPackageVersion packages/{PackageId}/versions/{PackageVersion}/patch/{PatchVersion}
 		/// </summary>
-		/// <param name="OwnerAccount">An owner account.</param>
-		/// <param name="PackageId">A package ID.</param>
-		/// <param name="PackageVersion">A package version.</param>
-		/// <param name="PatchVersion">A patch version.</param>
-		/// <param name="UpdatedLatestPatchVersion">If the version was marked latest, the new version to maker as latest.</param>
+		/// <param name="OwnerAccount">An owner account.
+		/// Max length: 12
+		/// Min length: 1
+		// </param>
+		/// <param name="PackageId">A package ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="PackageVersion">A package version.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="PatchVersion">A patch version.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="UpdatedLatestPatchVersion">If the version was marked latest, the new version to maker as latest.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeregisterPackageVersionResponse> DeregisterPackageVersionAsync(string OwnerAccount, string PackageId, string PackageVersion, string PatchVersion, string UpdatedLatestPatchVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3306,9 +3369,18 @@ namespace MyNS
 		/// Registers a package version.
 		/// RegisterPackageVersion packages/{PackageId}/versions/{PackageVersion}/patch/{PatchVersion}
 		/// </summary>
-		/// <param name="PackageId">A package ID.</param>
-		/// <param name="PackageVersion">A package version.</param>
-		/// <param name="PatchVersion">A patch version.</param>
+		/// <param name="PackageId">A package ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="PackageVersion">A package version.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="PatchVersion">A patch version.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RegisterPackageVersionResponse> RegisterPackageVersionAsync(string PackageId, string PackageVersion, string PatchVersion, RegisterPackageVersionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3349,7 +3421,10 @@ namespace MyNS
 		/// Returns information about an application instance on a device.
 		/// DescribeApplicationInstance application-instances/{ApplicationInstanceId}
 		/// </summary>
-		/// <param name="ApplicationInstanceId">The application instance's ID.</param>
+		/// <param name="ApplicationInstanceId">The application instance's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeApplicationInstanceResponse> DescribeApplicationInstanceAsync(string ApplicationInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3383,7 +3458,10 @@ namespace MyNS
 		/// Removes an application instance.
 		/// RemoveApplicationInstance application-instances/{ApplicationInstanceId}
 		/// </summary>
-		/// <param name="ApplicationInstanceId">An application instance ID.</param>
+		/// <param name="ApplicationInstanceId">An application instance ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RemoveApplicationInstanceResponse> RemoveApplicationInstanceAsync(string ApplicationInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3417,7 +3495,10 @@ namespace MyNS
 		/// Returns information about an application instance's configuration manifest.
 		/// DescribeApplicationInstanceDetails application-instances/{ApplicationInstanceId}/details
 		/// </summary>
-		/// <param name="ApplicationInstanceId">The application instance's ID.</param>
+		/// <param name="ApplicationInstanceId">The application instance's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeApplicationInstanceDetailsResponse> DescribeApplicationInstanceDetailsAsync(string ApplicationInstanceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3451,7 +3532,10 @@ namespace MyNS
 		/// Returns information about a device job.
 		/// DescribeDeviceJob jobs/{JobId}
 		/// </summary>
-		/// <param name="JobId">The job's ID.</param>
+		/// <param name="JobId">The job's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDeviceJobResponse> DescribeDeviceJobAsync(string JobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3485,8 +3569,14 @@ namespace MyNS
 		/// Returns information about a node.
 		/// DescribeNode nodes/{NodeId}
 		/// </summary>
-		/// <param name="NodeId">The node's ID.</param>
-		/// <param name="OwnerAccount">The account ID of the node's owner.</param>
+		/// <param name="NodeId">The node's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="OwnerAccount">The account ID of the node's owner.
+		/// Max length: 12
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeNodeResponse> DescribeNodeAsync(string NodeId, string OwnerAccount, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3520,7 +3610,10 @@ namespace MyNS
 		/// Returns information about a job to create a camera stream node.
 		/// DescribeNodeFromTemplateJob packages/template-job/{JobId}
 		/// </summary>
-		/// <param name="JobId">The job's ID.</param>
+		/// <param name="JobId">The job's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeNodeFromTemplateJobResponse> DescribeNodeFromTemplateJobAsync(string JobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3554,7 +3647,10 @@ namespace MyNS
 		/// Returns information about a package.
 		/// DescribePackage packages/metadata/{PackageId}
 		/// </summary>
-		/// <param name="PackageId">The package's ID.</param>
+		/// <param name="PackageId">The package's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePackageResponse> DescribePackageAsync(string PackageId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3588,7 +3684,10 @@ namespace MyNS
 		/// Returns information about a package import job.
 		/// DescribePackageImportJob packages/import-jobs/{JobId}
 		/// </summary>
-		/// <param name="JobId">The job's ID.</param>
+		/// <param name="JobId">The job's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePackageImportJobResponse> DescribePackageImportJobAsync(string JobId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3622,10 +3721,22 @@ namespace MyNS
 		/// Returns information about a package version.
 		/// DescribePackageVersion packages/metadata/{PackageId}/versions/{PackageVersion}
 		/// </summary>
-		/// <param name="OwnerAccount">The version's owner account.</param>
-		/// <param name="PackageId">The version's ID.</param>
-		/// <param name="PackageVersion">The version's version.</param>
-		/// <param name="PatchVersion">The version's patch version.</param>
+		/// <param name="OwnerAccount">The version's owner account.
+		/// Max length: 12
+		/// Min length: 1
+		// </param>
+		/// <param name="PackageId">The version's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="PackageVersion">The version's version.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="PatchVersion">The version's patch version.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePackageVersionResponse> DescribePackageVersionAsync(string OwnerAccount, string PackageId, string PackageVersion, string PatchVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3659,9 +3770,18 @@ namespace MyNS
 		/// Returns a list of application instance dependencies.
 		/// ListApplicationInstanceDependencies application-instances/{ApplicationInstanceId}/package-dependencies
 		/// </summary>
-		/// <param name="ApplicationInstanceId">The application instance's ID.</param>
-		/// <param name="maxResults">The maximum number of application instance dependencies to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="ApplicationInstanceId">The application instance's ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of application instance dependencies to return in one page of results.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3697,9 +3817,18 @@ namespace MyNS
 		/// Returns a list of application node instances.
 		/// ListApplicationInstanceNodeInstances application-instances/{ApplicationInstanceId}/node-instances
 		/// </summary>
-		/// <param name="ApplicationInstanceId">The node instances' application instance ID.</param>
-		/// <param name="maxResults">The maximum number of node instances to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="ApplicationInstanceId">The node instances' application instance ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of node instances to return in one page of results.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3736,9 +3865,15 @@ namespace MyNS
 		/// ListDevices devices
 		/// </summary>
 		/// <param name="DeviceAggregatedStatusFilter">Filter based on a device's status.</param>
-		/// <param name="MaxResults">The maximum number of devices to return in one page of results.</param>
+		/// <param name="MaxResults">The maximum number of devices to return in one page of results.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
 		/// <param name="NameFilter">Filter based on device's name. Prefixes supported.</param>
-		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
+		/// <param name="NextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
 		/// <param name="SortBy">The target column to be sorted on. Default column sort is CREATED_TIME.</param>
 		/// <param name="SortOrder">The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.</param>
 		/// <returns>Success</returns>
@@ -3815,12 +3950,30 @@ namespace MyNS
 		/// ListNodes nodes
 		/// </summary>
 		/// <param name="category">Search for nodes by category.</param>
-		/// <param name="maxResults">The maximum number of nodes to return in one page of results.</param>
-		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.</param>
-		/// <param name="ownerAccount">Search for nodes by the account ID of the nodes' owner.</param>
-		/// <param name="packageName">Search for nodes by name.</param>
-		/// <param name="packageVersion">Search for nodes by version.</param>
-		/// <param name="patchVersion">Search for nodes by patch version.</param>
+		/// <param name="maxResults">The maximum number of nodes to return in one page of results.
+		/// Minimum: 0
+		/// Maximum: 25
+		// </param>
+		/// <param name="nextToken">Specify the pagination token from a previous request to retrieve the next page of results.
+		/// Max length: 4096
+		/// Min length: 1
+		// </param>
+		/// <param name="ownerAccount">Search for nodes by the account ID of the nodes' owner.
+		/// Max length: 12
+		/// Min length: 1
+		// </param>
+		/// <param name="packageName">Search for nodes by name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="packageVersion">Search for nodes by version.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="patchVersion">Search for nodes by patch version.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -3856,7 +4009,10 @@ namespace MyNS
 		/// Returns a list of tags for a resource.
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The resource's ARN.</param>
+		/// <param name="ResourceArn">The resource's ARN.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3890,7 +4046,10 @@ namespace MyNS
 		/// Tags a resource.
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn">The resource's ARN.</param>
+		/// <param name="ResourceArn">The resource's ARN.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3931,7 +4090,10 @@ namespace MyNS
 		/// Signal camera nodes to stop or resume.
 		/// SignalApplicationInstanceNodeInstances application-instances/{ApplicationInstanceId}/node-signals
 		/// </summary>
-		/// <param name="ApplicationInstanceId">An application instance ID.</param>
+		/// <param name="ApplicationInstanceId">An application instance ID.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SignalApplicationInstanceNodeInstancesResponse> SignalApplicationInstanceNodeInstancesAsync(string ApplicationInstanceId, SignalApplicationInstanceNodeInstancesPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3972,8 +4134,14 @@ namespace MyNS
 		/// Removes tags from a resource.
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
-		/// <param name="ResourceArn">The resource's ARN.</param>
-		/// <param name="tagKeys">Tag keys to remove.</param>
+		/// <param name="ResourceArn">The resource's ARN.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">Tag keys to remove.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string ResourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

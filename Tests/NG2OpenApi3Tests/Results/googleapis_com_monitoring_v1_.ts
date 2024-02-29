@@ -73,7 +73,10 @@ export namespace MyNS {
 	/** Preview: Parameter value applied to the aggregation function. This is a preview feature and may be subject to change before final release. */
 	export interface Parameter {
 
-		/** A floating-point parameter value. */
+		/**
+		 * A floating-point parameter value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** An integer parameter value. */
@@ -83,7 +86,10 @@ export namespace MyNS {
 	/** Preview: Parameter value applied to the aggregation function. This is a preview feature and may be subject to change before final release. */
 	export interface ParameterFormProperties {
 
-		/** A floating-point parameter value. */
+		/**
+		 * A floating-point parameter value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** An integer parameter value. */
@@ -158,7 +164,10 @@ export namespace MyNS {
 		/** Required. The name of the column in the dataset containing the breakdown values. */
 		column?: string | null;
 
-		/** Required. A limit to the number of breakdowns. If set to zero then all possible breakdowns are applied. The list of breakdowns is dependent on the value of the sort_order field. */
+		/**
+		 * Required. A limit to the number of breakdowns. If set to zero then all possible breakdowns are applied. The list of breakdowns is dependent on the value of the sort_order field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** Required. The sort order is applied to the values of the breakdown column. */
@@ -171,7 +180,10 @@ export namespace MyNS {
 		/** Required. The name of the column in the dataset containing the breakdown values. */
 		column: FormControl<string | null | undefined>,
 
-		/** Required. A limit to the number of breakdowns. If set to zero then all possible breakdowns are applied. The list of breakdowns is dependent on the value of the sort_order field. */
+		/**
+		 * Required. A limit to the number of breakdowns. If set to zero then all possible breakdowns are applied. The list of breakdowns is dependent on the value of the sort_order field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** Required. The sort order is applied to the values of the breakdown column. */
@@ -519,13 +531,22 @@ export namespace MyNS {
 		/** The type of the dimension column. This is relevant only if one of the bin_size fields is set. If it is empty, the type TIMESTAMP or INT64 will be assumed based on which bin_size field is set. If populated, this should be set to one of the following types: DATE, TIME, DATETIME, TIMESTAMP, BIGNUMERIC, INT64, NUMERIC, FLOAT64. */
 		columnType?: string | null;
 
-		/** float_bin_size is used when the column type used for a dimension is a floating point numeric column. */
+		/**
+		 * float_bin_size is used when the column type used for a dimension is a floating point numeric column.
+		 * Type: double
+		 */
 		floatBinSize?: number | null;
 
-		/** A limit to the number of bins generated. When 0 is specified, the maximum count is not enforced. */
+		/**
+		 * A limit to the number of bins generated. When 0 is specified, the maximum count is not enforced.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxBinCount?: number | null;
 
-		/** numeric_bin_size is used when the column type used for a dimension is numeric or string. */
+		/**
+		 * numeric_bin_size is used when the column type used for a dimension is numeric or string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numericBinSize?: number | null;
 
 		/** The column name to sort on for binning. This column can be the same column as this dimension or any other column used as a measure in the results. If sort_order is set to NONE, then this value is not used. */
@@ -547,13 +568,22 @@ export namespace MyNS {
 		/** The type of the dimension column. This is relevant only if one of the bin_size fields is set. If it is empty, the type TIMESTAMP or INT64 will be assumed based on which bin_size field is set. If populated, this should be set to one of the following types: DATE, TIME, DATETIME, TIMESTAMP, BIGNUMERIC, INT64, NUMERIC, FLOAT64. */
 		columnType: FormControl<string | null | undefined>,
 
-		/** float_bin_size is used when the column type used for a dimension is a floating point numeric column. */
+		/**
+		 * float_bin_size is used when the column type used for a dimension is a floating point numeric column.
+		 * Type: double
+		 */
 		floatBinSize: FormControl<number | null | undefined>,
 
-		/** A limit to the number of bins generated. When 0 is specified, the maximum count is not enforced. */
+		/**
+		 * A limit to the number of bins generated. When 0 is specified, the maximum count is not enforced.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxBinCount: FormControl<number | null | undefined>,
 
-		/** numeric_bin_size is used when the column type used for a dimension is numeric or string. */
+		/**
+		 * numeric_bin_size is used when the column type used for a dimension is numeric or string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numericBinSize: FormControl<number | null | undefined>,
 
 		/** The column name to sort on for binning. This column can be the same column as this dimension or any other column used as a measure in the results. If sort_order is set to NONE, then this value is not used. */
@@ -718,7 +748,10 @@ export namespace MyNS {
 		/** Represents a time interval, encoded as a Timestamp start (inclusive) and a Timestamp end (exclusive).The start must be less than or equal to the end. When the start equals the end, the interval is empty (matches no time). When both start and end are unspecified, the interval matches any time. */
 		interval?: Interval;
 
-		/** How many time series to allow to pass through the filter. */
+		/**
+		 * How many time series to allow to pass through the filter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numTimeSeries?: number | null;
 
 		/** ranking_method is applied to each time series independently to produce the value which will be used to compare the time series to other time series. */
@@ -731,7 +764,10 @@ export namespace MyNS {
 		/** How to use the ranking to select time series that pass through the filter. */
 		direction: FormControl<PickTimeSeriesFilterDirection | null | undefined>,
 
-		/** How many time series to allow to pass through the filter. */
+		/**
+		 * How many time series to allow to pass through the filter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numTimeSeries: FormControl<number | null | undefined>,
 
 		/** ranking_method is applied to each time series independently to produce the value which will be used to compare the time series to other time series. */
@@ -782,7 +818,10 @@ export namespace MyNS {
 	/** A filter that ranks streams based on their statistical relation to other streams in a request. Note: This field is deprecated and completely ignored by the API. */
 	export interface StatisticalTimeSeriesFilter {
 
-		/** How many time series to output. */
+		/**
+		 * How many time series to output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numTimeSeries?: number | null;
 
 		/** rankingMethod is applied to a set of time series, and then the produced value for each individual time series is used to compare a given time series to others. These are methods that cannot be applied stream-by-stream, but rather require the full context of a request to evaluate time series. */
@@ -792,7 +831,10 @@ export namespace MyNS {
 	/** A filter that ranks streams based on their statistical relation to other streams in a request. Note: This field is deprecated and completely ignored by the API. */
 	export interface StatisticalTimeSeriesFilterFormProperties {
 
-		/** How many time series to output. */
+		/**
+		 * How many time series to output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numTimeSeries: FormControl<number | null | undefined>,
 
 		/** rankingMethod is applied to a set of time series, and then the produced value for each individual time series is used to compare a given time series to others. These are methods that cannot be applied stream-by-stream, but rather require the full context of a request to evaluate time series. */
@@ -894,20 +936,32 @@ export namespace MyNS {
 	/** A gauge chart shows where the current value sits within a pre-defined range. The upper and lower bounds should define the possible range of values for the scorecard's query (inclusive). */
 	export interface GaugeView {
 
-		/** The lower bound for this gauge chart. The value of the chart should always be greater than or equal to this. */
+		/**
+		 * The lower bound for this gauge chart. The value of the chart should always be greater than or equal to this.
+		 * Type: double
+		 */
 		lowerBound?: number | null;
 
-		/** The upper bound for this gauge chart. The value of the chart should always be less than or equal to this. */
+		/**
+		 * The upper bound for this gauge chart. The value of the chart should always be less than or equal to this.
+		 * Type: double
+		 */
 		upperBound?: number | null;
 	}
 
 	/** A gauge chart shows where the current value sits within a pre-defined range. The upper and lower bounds should define the possible range of values for the scorecard's query (inclusive). */
 	export interface GaugeViewFormProperties {
 
-		/** The lower bound for this gauge chart. The value of the chart should always be greater than or equal to this. */
+		/**
+		 * The lower bound for this gauge chart. The value of the chart should always be greater than or equal to this.
+		 * Type: double
+		 */
 		lowerBound: FormControl<number | null | undefined>,
 
-		/** The upper bound for this gauge chart. The value of the chart should always be less than or equal to this. */
+		/**
+		 * The upper bound for this gauge chart. The value of the chart should always be less than or equal to this.
+		 * Type: double
+		 */
 		upperBound: FormControl<number | null | undefined>,
 	}
 	export function CreateGaugeViewFormGroup() {
@@ -964,7 +1018,10 @@ export namespace MyNS {
 		/** The target axis to use for plotting the threshold. Target axis is not allowed in a Scorecard. */
 		targetAxis?: ThresholdTargetAxis | null;
 
-		/** The value of the threshold. The value should be defined in the native scale of the metric. */
+		/**
+		 * The value of the threshold. The value should be defined in the native scale of the metric.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -983,7 +1040,10 @@ export namespace MyNS {
 		/** The target axis to use for plotting the threshold. Target axis is not allowed in a Scorecard. */
 		targetAxis: FormControl<ThresholdTargetAxis | null | undefined>,
 
-		/** The value of the threshold. The value should be defined in the native scale of the metric. */
+		/**
+		 * The value of the threshold. The value should be defined in the native scale of the metric.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateThresholdFormGroup() {
@@ -1500,7 +1560,10 @@ export namespace MyNS {
 	/** A mosaic layout divides the available space into a grid of blocks, and overlays the grid with tiles. Unlike GridLayout, tiles may span multiple grid blocks and can be placed at arbitrary locations in the grid. */
 	export interface MosaicLayout {
 
-		/** The number of columns in the mosaic grid. The number of columns must be between 1 and 12, inclusive. */
+		/**
+		 * The number of columns in the mosaic grid. The number of columns must be between 1 and 12, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columns?: number | null;
 
 		/** The tiles to display. */
@@ -1510,7 +1573,10 @@ export namespace MyNS {
 	/** A mosaic layout divides the available space into a grid of blocks, and overlays the grid with tiles. Unlike GridLayout, tiles may span multiple grid blocks and can be placed at arbitrary locations in the grid. */
 	export interface MosaicLayoutFormProperties {
 
-		/** The number of columns in the mosaic grid. The number of columns must be between 1 and 12, inclusive. */
+		/**
+		 * The number of columns in the mosaic grid. The number of columns must be between 1 and 12, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columns: FormControl<number | null | undefined>,
 	}
 	export function CreateMosaicLayoutFormGroup() {
@@ -1524,35 +1590,59 @@ export namespace MyNS {
 	/** A single tile in the mosaic. The placement and size of the tile are configurable. */
 	export interface Tile {
 
-		/** The height of the tile, measured in grid blocks. Tiles must have a minimum height of 1. */
+		/**
+		 * The height of the tile, measured in grid blocks. Tiles must have a minimum height of 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Widget contains a single dashboard component and configuration of how to present the component in the dashboard. */
 		widget?: Widget;
 
-		/** The width of the tile, measured in grid blocks. Tiles must have a minimum width of 1. */
+		/**
+		 * The width of the tile, measured in grid blocks. Tiles must have a minimum width of 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 
-		/** The zero-indexed position of the tile in grid blocks relative to the left edge of the grid. Tiles must be contained within the specified number of columns. x_pos cannot be negative. */
+		/**
+		 * The zero-indexed position of the tile in grid blocks relative to the left edge of the grid. Tiles must be contained within the specified number of columns. x_pos cannot be negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		xPos?: number | null;
 
-		/** The zero-indexed position of the tile in grid blocks relative to the top edge of the grid. y_pos cannot be negative. */
+		/**
+		 * The zero-indexed position of the tile in grid blocks relative to the top edge of the grid. y_pos cannot be negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		yPos?: number | null;
 	}
 
 	/** A single tile in the mosaic. The placement and size of the tile are configurable. */
 	export interface TileFormProperties {
 
-		/** The height of the tile, measured in grid blocks. Tiles must have a minimum height of 1. */
+		/**
+		 * The height of the tile, measured in grid blocks. Tiles must have a minimum height of 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The width of the tile, measured in grid blocks. Tiles must have a minimum width of 1. */
+		/**
+		 * The width of the tile, measured in grid blocks. Tiles must have a minimum width of 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 
-		/** The zero-indexed position of the tile in grid blocks relative to the left edge of the grid. Tiles must be contained within the specified number of columns. x_pos cannot be negative. */
+		/**
+		 * The zero-indexed position of the tile in grid blocks relative to the left edge of the grid. Tiles must be contained within the specified number of columns. x_pos cannot be negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		xPos: FormControl<number | null | undefined>,
 
-		/** The zero-indexed position of the tile in grid blocks relative to the top edge of the grid. y_pos cannot be negative. */
+		/**
+		 * The zero-indexed position of the tile in grid blocks relative to the top edge of the grid. y_pos cannot be negative.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		yPos: FormControl<number | null | undefined>,
 	}
 	export function CreateTileFormGroup() {
@@ -1646,10 +1736,16 @@ export namespace MyNS {
 		/** The field name. */
 		name?: string | null;
 
-		/** The field number. */
+		/**
+		 * The field number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
-		/** The index of the field type in Type.oneofs, for message or enumeration types. The first type has index 1; zero means the type is not in the list. */
+		/**
+		 * The index of the field type in Type.oneofs, for message or enumeration types. The first type has index 1; zero means the type is not in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oneofIndex?: number | null;
 
 		/** The protocol buffer options. */
@@ -1680,10 +1776,16 @@ export namespace MyNS {
 		/** The field name. */
 		name: FormControl<string | null | undefined>,
 
-		/** The field number. */
+		/**
+		 * The field number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
-		/** The index of the field type in Type.oneofs, for message or enumeration types. The first type has index 1; zero means the type is not in the list. */
+		/**
+		 * The index of the field type in Type.oneofs, for message or enumeration types. The first type has index 1; zero means the type is not in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oneofIndex: FormControl<number | null | undefined>,
 
 		/** Whether to use alternative packed wire representation. */
@@ -1926,7 +2028,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1939,7 +2044,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2397,6 +2505,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/dashboards
 		 * @param {string} parent Required. The scope of the dashboards to list. The format is: projects/[PROJECT_ID_OR_NUMBER] 
 		 * @param {number} pageSize A positive number that is the maximum number of results to return. If unspecified, a default of 1000 is used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @return {ListDashboardsResponse} Successful response
 		 */

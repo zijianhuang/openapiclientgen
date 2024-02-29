@@ -74,7 +74,10 @@ export namespace MyNS {
 		/** List of notifications under a given parent. */
 		notifications?: Array<GoogleCloudAdvisorynotificationsV1Notification>;
 
-		/** Estimation of a total number of notifications. */
+		/**
+		 * Estimation of a total number of notifications.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -84,7 +87,10 @@ export namespace MyNS {
 		/** A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Estimation of a total number of notifications. */
+		/**
+		 * Estimation of a total number of notifications.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAdvisorynotificationsV1ListNotificationsResponseFormGroup() {
@@ -331,6 +337,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent, which owns this collection of notifications. Must be of the form "organizations/{organization}/locations/{location}" or "projects/{project}/locations/{location}"
 		 * @param {string} languageCode ISO code for requested localization language. If unset, will be interpereted as "en". If the requested language is valid, but not supported for this notification, English will be returned with an "Not applicable" LocalizationState. If the ISO code is invalid (i.e. not a real language), this RPC will throw an error.
 		 * @param {number} pageSize The maximum number of notifications to return. The service may return fewer than this value. If unspecified or equal to 0, at most 50 notifications will be returned. The maximum value is 50; values above 50 will be coerced to 50.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token returned from a previous request. When paginating, all other parameters provided in the request must match the call that returned the page token.
 		 * @param {Advisorynotifications_projects_locations_notifications_listView} view Specifies which parts of the notification resource should be returned in the response.
 		 * @return {GoogleCloudAdvisorynotificationsV1ListNotificationsResponse} Successful response

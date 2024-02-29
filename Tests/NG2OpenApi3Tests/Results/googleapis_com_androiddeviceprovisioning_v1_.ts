@@ -771,26 +771,38 @@ export namespace MyNS {
 	/** Tracks the status of a long-running operation to asynchronously update a batch of reseller metadata attached to devices. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations). */
 	export interface DevicesLongRunningOperationMetadata {
 
-		/** The number of metadata updates in the operation. This might be different from the number of updates in the request if the API can't parse some of the updates. */
+		/**
+		 * The number of metadata updates in the operation. This might be different from the number of updates in the request if the API can't parse some of the updates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		devicesCount?: number | null;
 
 		/** The processing status of the operation. */
 		processingStatus?: DevicesLongRunningOperationMetadataProcessingStatus | null;
 
-		/** The processing progress of the operation. Measured as a number from 0 to 100. A value of 10O doesn't always mean the operation completed—check for the inclusion of a `done` field. */
+		/**
+		 * The processing progress of the operation. Measured as a number from 0 to 100. A value of 10O doesn't always mean the operation completed—check for the inclusion of a `done` field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress?: number | null;
 	}
 
 	/** Tracks the status of a long-running operation to asynchronously update a batch of reseller metadata attached to devices. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations). */
 	export interface DevicesLongRunningOperationMetadataFormProperties {
 
-		/** The number of metadata updates in the operation. This might be different from the number of updates in the request if the API can't parse some of the updates. */
+		/**
+		 * The number of metadata updates in the operation. This might be different from the number of updates in the request if the API can't parse some of the updates.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		devicesCount: FormControl<number | null | undefined>,
 
 		/** The processing status of the operation. */
 		processingStatus: FormControl<DevicesLongRunningOperationMetadataProcessingStatus | null | undefined>,
 
-		/** The processing progress of the operation. Measured as a number from 0 to 100. A value of 10O doesn't always mean the operation completed—check for the inclusion of a `done` field. */
+		/**
+		 * The processing progress of the operation. Measured as a number from 0 to 100. A value of 10O doesn't always mean the operation completed—check for the inclusion of a `done` field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress: FormControl<number | null | undefined>,
 	}
 	export function CreateDevicesLongRunningOperationMetadataFormGroup() {
@@ -811,14 +823,20 @@ export namespace MyNS {
 		/** The processing status for each device in the operation. One `PerDeviceStatus` per device. The list order matches the items in the original request. */
 		perDeviceStatus?: Array<OperationPerDevice>;
 
-		/** A summary of how many items in the operation the server processed successfully. Updated as the operation progresses. */
+		/**
+		 * A summary of how many items in the operation the server processed successfully. Updated as the operation progresses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successCount?: number | null;
 	}
 
 	/** Tracks the status of a long-running operation to claim, unclaim, or attach metadata to devices. To learn more, read [Long‑running batch operations](/zero-touch/guides/how-it-works#operations). */
 	export interface DevicesLongRunningOperationResponseFormProperties {
 
-		/** A summary of how many items in the operation the server processed successfully. Updated as the operation progresses. */
+		/**
+		 * A summary of how many items in the operation the server processed successfully. Updated as the operation progresses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDevicesLongRunningOperationResponseFormGroup() {
@@ -911,7 +929,10 @@ export namespace MyNS {
 		/** Required. The section type of the device's provisioning record. */
 		sectionType?: ClaimDeviceRequestSectionType | null;
 
-		/** Optional. The duration of the vacation unlock starting from when the request is processed. (1 day is treated as 24 hours) */
+		/**
+		 * Optional. The duration of the vacation unlock starting from when the request is processed. (1 day is treated as 24 hours)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vacationModeDays?: number | null;
 
 		/** Optional. The expiration time of the vacation unlock. */
@@ -927,7 +948,10 @@ export namespace MyNS {
 		/** Required. The section type of the device's provisioning record. */
 		sectionType: FormControl<ClaimDeviceRequestSectionType | null | undefined>,
 
-		/** Optional. The duration of the vacation unlock starting from when the request is processed. (1 day is treated as 24 hours) */
+		/**
+		 * Optional. The duration of the vacation unlock starting from when the request is processed. (1 day is treated as 24 hours)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vacationModeDays: FormControl<number | null | undefined>,
 
 		/** Optional. The expiration time of the vacation unlock. */
@@ -1025,7 +1049,10 @@ export namespace MyNS {
 		/** A token used to access the next page of results. Omitted if no further results are available. */
 		nextPageToken?: string | null;
 
-		/** The total count of items in the list irrespective of pagination. */
+		/**
+		 * The total count of items in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1035,7 +1062,10 @@ export namespace MyNS {
 		/** A token used to access the next page of results. Omitted if no further results are available. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total count of items in the list irrespective of pagination. */
+		/**
+		 * The total count of items in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateFindDevicesByDeviceIdentifierResponseFormGroup() {
@@ -1097,7 +1127,10 @@ export namespace MyNS {
 		/** A token used to access the next page of results. Omitted if no further results are available. */
 		nextPageToken?: string | null;
 
-		/** The total count of items in the list irrespective of pagination. */
+		/**
+		 * The total count of items in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1107,7 +1140,10 @@ export namespace MyNS {
 		/** A token used to access the next page of results. Omitted if no further results are available. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total count of items in the list irrespective of pagination. */
+		/**
+		 * The total count of items in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateFindDevicesByOwnerResponseFormGroup() {
@@ -1164,7 +1200,10 @@ export namespace MyNS {
 		/** A token to retrieve the next page of results. Omitted if no further results are available. */
 		nextPageToken?: string | null;
 
-		/** The total count of items in the list irrespective of pagination. */
+		/**
+		 * The total count of items in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1174,7 +1213,10 @@ export namespace MyNS {
 		/** A token to retrieve the next page of results. Omitted if no further results are available. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total count of items in the list irrespective of pagination. */
+		/**
+		 * The total count of items in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListCustomersResponseFormGroup() {
@@ -1195,7 +1237,10 @@ export namespace MyNS {
 		/** A token to retrieve the next page of results. Omitted if no further results are available. */
 		nextPageToken?: string | null;
 
-		/** The total count of items in the list irrespective of pagination. */
+		/**
+		 * The total count of items in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -1205,7 +1250,10 @@ export namespace MyNS {
 		/** A token to retrieve the next page of results. Omitted if no further results are available. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total count of items in the list irrespective of pagination. */
+		/**
+		 * The total count of items in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListVendorCustomersResponseFormGroup() {
@@ -1223,7 +1271,10 @@ export namespace MyNS {
 		/** A token to retrieve the next page of results. Omitted if no further results are available. */
 		nextPageToken?: string | null;
 
-		/** The total count of items in the list irrespective of pagination. */
+		/**
+		 * The total count of items in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 
 		/** List of vendors of the reseller partner. Fields `name`, `companyId` and `companyName` are populated to the Company object. */
@@ -1236,7 +1287,10 @@ export namespace MyNS {
 		/** A token to retrieve the next page of results. Omitted if no further results are available. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total count of items in the list irrespective of pagination. */
+		/**
+		 * The total count of items in the list irrespective of pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListVendorsResponseFormGroup() {
@@ -1296,7 +1350,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1309,7 +1366,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1336,7 +1396,10 @@ export namespace MyNS {
 		/** Required. The section type of the device's provisioning record. */
 		sectionType?: ClaimDeviceRequestSectionType | null;
 
-		/** The duration of the vacation unlock starting from when the request is processed. (1 day is treated as 24 hours) */
+		/**
+		 * The duration of the vacation unlock starting from when the request is processed. (1 day is treated as 24 hours)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vacationModeDays?: number | null;
 
 		/** The expiration time of the vacation unlock. */
@@ -1352,7 +1415,10 @@ export namespace MyNS {
 		/** Required. The section type of the device's provisioning record. */
 		sectionType: FormControl<ClaimDeviceRequestSectionType | null | undefined>,
 
-		/** The duration of the vacation unlock starting from when the request is processed. (1 day is treated as 24 hours) */
+		/**
+		 * The duration of the vacation unlock starting from when the request is processed. (1 day is treated as 24 hours)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vacationModeDays: FormControl<number | null | undefined>,
 
 		/** The expiration time of the vacation unlock. */
@@ -1428,6 +1494,7 @@ export namespace MyNS {
 		 * Lists the user's customer accounts.
 		 * Get v1/customers
 		 * @param {number} pageSize The maximum number of customers to show in a page of results. A number between 1 and 100 (inclusive).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token specifying which result page to return. This field has custom validations in ListCustomersRequestValidator
 		 * @return {CustomerListCustomersResponse} Successful response
 		 */
@@ -1451,6 +1518,7 @@ export namespace MyNS {
 		 * Get v1/partners/{partnerId}/customers
 		 * @param {string} partnerId Required. The ID of the reseller partner.
 		 * @param {number} pageSize The maximum number of results to be returned. If not specified or 0, all the records are returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {ListCustomersResponse} Successful response
 		 */
@@ -1594,6 +1662,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/customers
 		 * @param {string} parent Required. The resource name in the format `partners/[PARTNER_ID]/vendors/[VENDOR_ID]`.
 		 * @param {number} pageSize The maximum number of results to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {ListVendorCustomersResponse} Successful response
 		 */
@@ -1668,6 +1737,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/vendors
 		 * @param {string} parent Required. The resource name in the format `partners/[PARTNER_ID]`.
 		 * @param {number} pageSize The maximum number of results to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results returned by the server.
 		 * @return {ListVendorsResponse} Successful response
 		 */

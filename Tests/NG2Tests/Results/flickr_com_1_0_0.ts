@@ -1494,6 +1494,7 @@ export namespace MyNS {
 		 *   3: private photos visible to family,
 		 *   4: private photos visible to friends & family,
 		 *   5: completely private photos
+		 *     Type: double
 		 * @param {string} bbox A comma-delimited list of 4 values defining the Bounding Box of the area that will be searched.
 		 * @param {string} accuracy Recorded accuracy level of the location information. Current range is 1-16:
 		 *   World level is 1
@@ -1505,6 +1506,7 @@ export namespace MyNS {
 		 *   1: for safe,
 		 *   2: for moderate,
 		 *   3: for restricted
+		 *     Type: double
 		 * @param {number} content_type Content Type setting:
 		 *   1: photos only.
 		 *   2: screenshots only.
@@ -1513,6 +1515,7 @@ export namespace MyNS {
 		 *   5: screenshots and 'other'.
 		 *   6: photos and 'other'.
 		 *   7: photos, screenshots, and 'other' (all).
+		 *     Type: double
 		 * @param {string} machine_tags Aside from passing in a fully formed machine tag, there is a special syntax for searching on specific properties : Find photos using the 'dc' namespace : "machine_tags" => "dc:" Find photos with a title in the 'dc' namespace : "machine_tags" => "dc:title=" Find photos titled "mr. camera" in the 'dc' namespace : "machine_tags" => "dc:title=\"mr. camera\" Find photos whose value is "mr. camera" : "machine_tags" => "*:*=\"mr. camera\"" Find photos that have a title, in any namespace : "machine_tags" => "*:title=" Find photos that have a title, in any namespace, whose value is "mr. camera" : "machine_tags" => "*:title=\"mr. camera\"" Find photos, in the 'dc' namespace whose value is "mr. camera" : "machine_tags" => "dc:*=\"mr. camera\"" Multiple machine tags may be queried by passing a comma-separated list. The number of machine tags you can pass in a single query depends on the tag mode (AND or OR) that you are querying with. "AND" queries are limited to (16) machine tags. "OR" queries are limited to (8).
 		 * @param {string} machine_tag_mode Either 'any' for an OR combination of tags, or 'all' for an AND combination. Defaults to 'any' if not specified.
 		 * @param {string} group_id The id of a group who's pool to search. If specified, only matching photos posted to the group's pool will be returned.
@@ -1525,12 +1528,15 @@ export namespace MyNS {
 		 * @param {string} lat A valid latitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against "parameterless searches" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).
 		 * @param {string} lon A valid longitude, in decimal format, for doing radial geo queries. Geo queries require some sort of limiting agent in order to prevent the database from crying. This is basically like the check against "parameterless searches" for queries without a geo component. A tag, for instance, is considered a limiting agent as are user defined min_date_taken and min_date_upload parameters — If no limiting factor is passed we return only photos added in the last 12 hours (though we may extend the limit in the future).
 		 * @param {number} radius A valid radius used for geo queries, greater than zero and less than 20 miles (or 32 kilometers), for use with point-based geo queries. The default value is 5 (km).
+		 *     Type: double
 		 * @param {string} radius_units The unit of measure when doing radial geo queries. Valid options are "mi" (miles) and "km" (kilometers). The default is "km".
 		 * @param {boolean} is_commons Limit the scope of the search to only photos that are part of the Flickr Commons project. Default is false.
 		 * @param {boolean} in_gallery Limit the scope of the search to only photos that are in a gallery? Default is false, search all photos.
 		 * @param {boolean} is_getty Limit the scope of the search to only photos that are for sale on Getty. Default is false.
 		 * @param {number} per_page Number of photos to return per page. If this argument is omitted, it defaults to 100. The maximum allowed value is 500.
+		 *     Type: double
 		 * @param {number} page The page of results to return. If this argument is omitted, it defaults to 1.
+		 *     Type: double
 		 * @return {GetMediaBySearchReturn} OK
 		 */
 		GetMediaBySearch(api_key: string, text: string | null | undefined, tags: string | null | undefined, user_id: string | null | undefined, min_upload_date: string | null | undefined, max_upload_date: string | null | undefined, min_taken_date: string | null | undefined, max_taken_date: string | null | undefined, license: string | null | undefined, sort: string | null | undefined, privacy_filter: number | null | undefined, bbox: string | null | undefined, accuracy: string | null | undefined, safe_search: number | null | undefined, content_type: number | null | undefined, machine_tags: string | null | undefined, machine_tag_mode: string | null | undefined, group_id: string | null | undefined, contacts: string | null | undefined, woe_id: string | null | undefined, place_id: string | null | undefined, media: string | null | undefined, has_geo: string | null | undefined, geo_context: string | null | undefined, lat: string | null | undefined, lon: string | null | undefined, radius: number | null | undefined, radius_units: string | null | undefined, is_commons: boolean | null | undefined, in_gallery: boolean | null | undefined, is_getty: boolean | null | undefined, per_page: number | null | undefined, page: number | null | undefined): Observable<GetMediaBySearchReturn> {

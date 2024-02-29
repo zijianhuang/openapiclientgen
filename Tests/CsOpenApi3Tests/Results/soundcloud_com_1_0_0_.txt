@@ -2178,7 +2178,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="access">Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		///</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task MeActivitiesGetByAccessAndLimitAsync(string[] access, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2208,7 +2211,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="access">Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		///</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task MeActivitiesAllOwnGetByAccessAndLimitAsync(string[] access, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2238,7 +2244,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="access">Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		///</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task MeActivitiesTracksGetByAccessAndLimitAsync(string[] access, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2266,7 +2275,10 @@ namespace MyNS
 		/// Returns a list of the authenticated user's connected social accounts.
 		/// MeConnectionsGetByLimitAndOffset me/connections
 		/// </summary>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="offset">Offset of first result. Deprecated, use `linked_partitioning` instead.</param>
 		/// <returns>Success</returns>
 		public async Task MeConnectionsGetByLimitAndOffsetAsync(int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2323,7 +2335,10 @@ namespace MyNS
 		/// Returns user’s favorites ids. (use /me/likes/tracks instead to fetch the authenticated user's likes)
 		/// MeFavoritesIdsGetByLimit me/favorites/ids
 		/// </summary>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task MeFavoritesIdsGetByLimitAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2351,7 +2366,10 @@ namespace MyNS
 		/// Returns a list of users who are following the authenticated user.
 		/// MeFollowersGetByLimit me/followers
 		/// </summary>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task MeFollowersGetByLimitAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2407,7 +2425,10 @@ namespace MyNS
 		/// Returns a list of users who are followed by the authenticated user.
 		/// MeFollowingsGetByLimitAndOffset me/followings
 		/// </summary>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="offset">Offset of first result. Deprecated, use `linked_partitioning` instead.</param>
 		/// <returns>Success</returns>
 		public async Task MeFollowingsGetByLimitAndOffsetAsync(int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2438,7 +2459,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="access">Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		///</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="offset">Offset of first result. Deprecated, use `linked_partitioning` instead.</param>
 		/// <returns>Success</returns>
 		public async Task MeFollowingsTracksGetByAccessAndLimitAndOffsetAsync(string[] access, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2546,7 +2570,10 @@ namespace MyNS
 		/// Returns a list of favorited or liked tracks of the authenticated user.
 		/// MeLikesTracksGetByLimitAndLinked_partitioning me/likes/tracks
 		/// </summary>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="linked_partitioning">Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)</param>
 		/// <returns>Success</returns>
 		public async Task MeLikesTracksGetByLimitAndLinked_partitioningAsync(int limit, bool linked_partitioning, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2576,7 +2603,10 @@ namespace MyNS
 		/// Returns playlist info, playlist tracks and tracks owner info.
 		/// MePlaylistsGetByLimit me/playlists
 		/// </summary>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task MePlaylistsGetByLimitAsync(int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2632,7 +2662,10 @@ namespace MyNS
 		/// Returns a list of user's tracks.
 		/// MeTracksGetByLimitAndLinked_partitioning me/tracks
 		/// </summary>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="linked_partitioning">Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)</param>
 		/// <returns>Success</returns>
 		public async Task MeTracksGetByLimitAndLinked_partitioningAsync(int limit, bool linked_partitioning, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2692,7 +2725,10 @@ namespace MyNS
 		/// <param name="q">search</param>
 		/// <param name="access">Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		///</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="offset">Offset of first result. Deprecated, use `linked_partitioning` instead.</param>
 		/// <param name="linked_partitioning">Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)</param>
 		/// <returns>Success</returns>
@@ -2852,7 +2888,10 @@ namespace MyNS
 		/// Playlists_playlist_idRepostersGetByLimit playlists/{playlist_id}/reposters
 		/// </summary>
 		/// <param name="playlist_id">SoundCloud playlist id</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task Playlists_playlist_idRepostersGetByLimitAsync(int playlist_id, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3048,7 +3087,10 @@ namespace MyNS
 		/// <param name="created_at">(yyyy-mm-dd hh:mm:ss) return tracks created within the specified dates</param>
 		/// <param name="access">Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		///</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="offset">Offset of first result. Deprecated, use `linked_partitioning` instead.</param>
 		/// <param name="linked_partitioning">Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)</param>
 		/// <returns>Success</returns>
@@ -3172,7 +3214,10 @@ namespace MyNS
 		/// Tracks_track_idCommentsGetByLimitAndOffsetAndLinked_partitioning tracks/{track_id}/comments
 		/// </summary>
 		/// <param name="track_id">SoundCloud Track id</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="offset">Offset of first result. Deprecated, use `linked_partitioning` instead.</param>
 		/// <param name="linked_partitioning">Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)</param>
 		/// <returns>Success</returns>
@@ -3203,7 +3248,10 @@ namespace MyNS
 		/// Tracks_track_idFavoritersGetByLimitAndOffset tracks/{track_id}/favoriters
 		/// </summary>
 		/// <param name="track_id">SoundCloud Track id</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="offset">Offset of first result. Deprecated, use `linked_partitioning` instead.</param>
 		/// <returns>Success</returns>
 		public async Task Tracks_track_idFavoritersGetByLimitAndOffsetAsync(int track_id, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3235,7 +3283,10 @@ namespace MyNS
 		/// <param name="track_id">SoundCloud Track id</param>
 		/// <param name="access">Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		///</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="offset">Offset of first result. Deprecated, use `linked_partitioning` instead.</param>
 		/// <param name="linked_partitioning">Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)</param>
 		/// <returns>Success</returns>
@@ -3266,7 +3317,10 @@ namespace MyNS
 		/// Tracks_track_idRepostersGetByLimit tracks/{track_id}/reposters
 		/// </summary>
 		/// <param name="track_id">SoundCloud Track id</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task Tracks_track_idRepostersGetByLimitAsync(int track_id, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3325,7 +3379,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="q">search</param>
 		/// <param name="ids">A comma separated list of track ids to filter on</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="offset">Offset of first result. Deprecated, use `linked_partitioning` instead.</param>
 		/// <param name="linked_partitioning">Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)</param>
 		/// <returns>Success</returns>
@@ -3384,7 +3441,10 @@ namespace MyNS
 		/// Users_user_idCommentsGetByLimitAndOffset users/{user_id}/comments
 		/// </summary>
 		/// <param name="user_id">SoundCloud User id</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="offset">Offset of first result. Deprecated, use `linked_partitioning` instead.</param>
 		/// <returns>Success</returns>
 		public async Task Users_user_idCommentsGetByLimitAndOffsetAsync(int user_id, int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3414,7 +3474,10 @@ namespace MyNS
 		/// Users_user_idFavoritesGetByLimitAndLinked_partitioning users/{user_id}/favorites
 		/// </summary>
 		/// <param name="user_id">SoundCloud User id</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="linked_partitioning">Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)</param>
 		/// <returns>Success</returns>
 		public async Task Users_user_idFavoritesGetByLimitAndLinked_partitioningAsync(int user_id, int limit, bool linked_partitioning, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3445,7 +3508,10 @@ namespace MyNS
 		/// Users_user_idFollowersGetByLimit users/{user_id}/followers
 		/// </summary>
 		/// <param name="user_id">SoundCloud User id</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task Users_user_idFollowersGetByLimitAsync(int user_id, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3475,7 +3541,10 @@ namespace MyNS
 		/// Users_user_idFollowingsGetByLimit users/{user_id}/followings
 		/// </summary>
 		/// <param name="user_id">SoundCloud User id</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task Users_user_idFollowingsGetByLimitAsync(int user_id, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3536,7 +3605,10 @@ namespace MyNS
 		/// <param name="user_id">SoundCloud User id</param>
 		/// <param name="access">Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		///</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="linked_partitioning">Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)</param>
 		/// <returns>Success</returns>
 		public async Task Users_user_idLikesTracksGetByAccessAndLimitAndLinked_partitioningAsync(int user_id, string[] access, int limit, bool linked_partitioning, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3568,7 +3640,10 @@ namespace MyNS
 		/// <param name="user_id">SoundCloud User id</param>
 		/// <param name="access">Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		///</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="linked_partitioning">Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)</param>
 		/// <returns>Success</returns>
 		public async Task Users_user_idPlaylistsGetByAccessAndLimitAndLinked_partitioningAsync(int user_id, string[] access, int limit, bool linked_partitioning, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3600,7 +3675,10 @@ namespace MyNS
 		/// <param name="user_id">SoundCloud User id</param>
 		/// <param name="access">Filters content by level of access the user (logged in or anonymous) has to the track. The result list will include only tracks with the specified access. Include all options if you'd like to see all possible tracks. See `Track#access` schema for more details.
 		///</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <param name="linked_partitioning">Returns paginated collection of items (recommended, returning a list without pagination is deprecated and should not be used)</param>
 		/// <returns>Success</returns>
 		public async Task Users_user_idTracksGetByAccessAndLimitAndLinked_partitioningAsync(int user_id, string[] access, int limit, bool linked_partitioning, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3630,7 +3708,10 @@ namespace MyNS
 		/// Users_user_idWeb_profilesGetByLimit users/{user_id}/web-profiles
 		/// </summary>
 		/// <param name="user_id">SoundCloud User id</param>
-		/// <param name="limit">Number of results to return in the collection.</param>
+		/// <param name="limit">Number of results to return in the collection.
+		/// Minimum: 1
+		/// Maximum: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task Users_user_idWeb_profilesGetByLimitAsync(int user_id, int limit, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

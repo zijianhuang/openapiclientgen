@@ -5,14 +5,22 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface ErskineMayChapterOverview {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		partNumber?: number | null;
 		sections?: Array<ErskineMaySectionOverview>;
 		title?: string | null;
 	}
 	export interface ErskineMayChapterOverviewFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		partNumber: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -27,12 +35,16 @@ export namespace MyNS {
 	}
 
 	export interface ErskineMaySectionOverview {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		subSections?: Array<ErskineMaySectionOverview>;
 		title?: string | null;
 		titleChain?: string | null;
 	}
 	export interface ErskineMaySectionOverviewFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		titleChain: FormControl<string | null | undefined>,
@@ -65,6 +77,8 @@ export namespace MyNS {
 	export interface ErskineMayIndexTerm {
 		childTerms?: Array<ErskineMayIndexTerm>;
 		displayAs?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		parentTerm?: ErskineMayIndexTerm;
 		references?: Array<ErskineMayParagraphSearchResult>;
@@ -73,6 +87,8 @@ export namespace MyNS {
 	}
 	export interface ErskineMayIndexTermFormProperties {
 		displayAs: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		term: FormControl<string | null | undefined>,
 	}
@@ -86,21 +102,33 @@ export namespace MyNS {
 	}
 
 	export interface ErskineMayParagraphSearchResult {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		chapterNumber?: number | null;
 		chapterTitle?: string | null;
 		paragraphReference?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		partNumber?: number | null;
 		searchResultText?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sectionId?: number | null;
 		sectionTitle?: string | null;
 		sectionTitleChain?: string | null;
 	}
 	export interface ErskineMayParagraphSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		chapterNumber: FormControl<number | null | undefined>,
 		chapterTitle: FormControl<string | null | undefined>,
 		paragraphReference: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		partNumber: FormControl<number | null | undefined>,
 		searchResultText: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sectionId: FormControl<number | null | undefined>,
 		sectionTitle: FormControl<string | null | undefined>,
 		sectionTitleChain: FormControl<string | null | undefined>,
@@ -120,11 +148,15 @@ export namespace MyNS {
 	}
 
 	export interface ErskineMayIndexTermSeeLink {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		indexTermId?: number | null;
 		seeType?: string | null;
 		seeValue?: string | null;
 	}
 	export interface ErskineMayIndexTermSeeLinkFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		indexTermId: FormControl<number | null | undefined>,
 		seeType: FormControl<string | null | undefined>,
 		seeValue: FormControl<string | null | undefined>,
@@ -140,11 +172,15 @@ export namespace MyNS {
 
 	export interface ErskineMayIndexTermSearchResult {
 		displayAs?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		seeValue?: string | null;
 	}
 	export interface ErskineMayIndexTermSearchResultFormProperties {
 		displayAs: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		seeValue: FormControl<string | null | undefined>,
 	}
@@ -161,16 +197,28 @@ export namespace MyNS {
 		searchResults?: Array<ErskineMayIndexTermSearchResult>;
 		searchTerm?: string | null;
 		searchTerms?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
 		suggestedSearch?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface ErskineMayIndexTermSearchResultErskineMaySearchFormProperties {
 		searchTerm: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
 		suggestedSearch: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateErskineMayIndexTermSearchResultErskineMaySearchFormGroup() {
@@ -188,16 +236,28 @@ export namespace MyNS {
 		searchResults?: Array<ErskineMayParagraphSearchResult>;
 		searchTerm?: string | null;
 		searchTerms?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
 		suggestedSearch?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface ErskineMayParagraphSearchResultErskineMaySearchFormProperties {
 		searchTerm: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
 		suggestedSearch: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateErskineMayParagraphSearchResultErskineMaySearchFormGroup() {
@@ -214,11 +274,15 @@ export namespace MyNS {
 	export interface ErskineMayPart {
 		chapters?: Array<ErskineMayChapterOverview>;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 		title?: string | null;
 	}
 	export interface ErskineMayPartFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -232,14 +296,22 @@ export namespace MyNS {
 	}
 
 	export interface ErskineMaySectionDetail {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		chapterNumber?: number | null;
 		chapterTitle?: string | null;
 		contentHtml?: string | null;
 		footnotes?: Array<ErskineMayFootnote>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isUpdated?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parentSectionId?: number | null;
 		parentSectionTitle?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		partNumber?: number | null;
 		partTitle?: string | null;
 		subSections?: Array<ErskineMaySectionOverview>;
@@ -248,13 +320,21 @@ export namespace MyNS {
 		updatedDate?: Date | null;
 	}
 	export interface ErskineMaySectionDetailFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		chapterNumber: FormControl<number | null | undefined>,
 		chapterTitle: FormControl<string | null | undefined>,
 		contentHtml: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isUpdated: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		parentSectionId: FormControl<number | null | undefined>,
 		parentSectionTitle: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		partNumber: FormControl<number | null | undefined>,
 		partTitle: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
@@ -280,17 +360,29 @@ export namespace MyNS {
 	}
 
 	export interface ErskineMaySectionSearchResult {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		chapterNumber?: number | null;
 		chapterTitle?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		partNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sectionId?: number | null;
 		sectionTitle?: string | null;
 		sectionTitleChain?: string | null;
 	}
 	export interface ErskineMaySectionSearchResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		chapterNumber: FormControl<number | null | undefined>,
 		chapterTitle: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		partNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sectionId: FormControl<number | null | undefined>,
 		sectionTitle: FormControl<string | null | undefined>,
 		sectionTitleChain: FormControl<string | null | undefined>,
@@ -311,16 +403,28 @@ export namespace MyNS {
 		searchResults?: Array<ErskineMaySectionSearchResult>;
 		searchTerm?: string | null;
 		searchTerms?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip?: number | null;
 		suggestedSearch?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface ErskineMaySectionSearchResultErskineMaySearchFormProperties {
 		searchTerm: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		skip: FormControl<number | null | undefined>,
 		suggestedSearch: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		take: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreateErskineMaySectionSearchResultErskineMaySearchFormGroup() {
@@ -343,6 +447,7 @@ export namespace MyNS {
 		 * Returns a single chapter overview by chapter number.
 		 * Get api/Chapter/{chapterNumber}
 		 * @param {number} chapterNumber Chapter overview with the chapter number specified
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ErskineMayChapterOverview} Success
 		 */
 		ApiChapter_chapterNumberGet(chapterNumber: number, headersHandler?: () => HttpHeaders): Observable<ErskineMayChapterOverview> {
@@ -354,7 +459,9 @@ export namespace MyNS {
 		 * Get api/IndexTerm/browse
 		 * @param {string} startLetter Index terms by start letter
 		 * @param {number} skip The number of records to skip from the first, default is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of records to return, default is 20, maximum is 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ErskineMayIndexTermSearchResultErskineMaySearch} Success
 		 */
 		ApiIndexTermBrowseGetByStartLetterAndSkipAndTake(startLetter: string | null | undefined, skip: number | null | undefined, take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ErskineMayIndexTermSearchResultErskineMaySearch> {
@@ -365,6 +472,7 @@ export namespace MyNS {
 		 * Returns an index term by id.
 		 * Get api/IndexTerm/{indexTermId}
 		 * @param {number} indexTermId Index term by if
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ErskineMayIndexTerm} Success
 		 */
 		ApiIndexTerm_indexTermIdGet(indexTermId: number, headersHandler?: () => HttpHeaders): Observable<ErskineMayIndexTerm> {
@@ -384,6 +492,7 @@ export namespace MyNS {
 		 * Returns a part by part number.
 		 * Get api/Part/{partNumber}
 		 * @param {number} partNumber Part by part number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ErskineMayPart} Success
 		 */
 		ApiPart_partNumberGet(partNumber: number, headersHandler?: () => HttpHeaders): Observable<ErskineMayPart> {
@@ -395,7 +504,9 @@ export namespace MyNS {
 		 * Get api/Search/IndexTermSearchResults/{searchTerm}
 		 * @param {string} searchTerm Index terms which contain search term.
 		 * @param {number} skip The number of records to skip from the first, default is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of records to return, default is 20, maximum is 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ErskineMayIndexTermSearchResultErskineMaySearch} Success
 		 */
 		ApiSearchIndexTermSearchResults_searchTermGetBySkipAndTake(searchTerm: string, skip: number | null | undefined, take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ErskineMayIndexTermSearchResultErskineMaySearch> {
@@ -417,7 +528,9 @@ export namespace MyNS {
 		 * Get api/Search/ParagraphSearchResults/{searchTerm}
 		 * @param {string} searchTerm Paragraphs which contain search term in their content.
 		 * @param {number} skip The number of records to skip from the first, default is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of records to return, default is 20, maximum is 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ErskineMayParagraphSearchResultErskineMaySearch} Success
 		 */
 		ApiSearchParagraphSearchResults_searchTermGetBySkipAndTake(searchTerm: string, skip: number | null | undefined, take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ErskineMayParagraphSearchResultErskineMaySearch> {
@@ -429,7 +542,9 @@ export namespace MyNS {
 		 * Get api/Search/SectionSearchResults/{searchTerm}
 		 * @param {string} searchTerm Sections which contain search term in their title.
 		 * @param {number} skip The number of records to skip from the first, default is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of records to return, default is 20, maximum is 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ErskineMaySectionSearchResultErskineMaySearch} Success
 		 */
 		ApiSearchSectionSearchResults_searchTermGetBySkipAndTake(searchTerm: string, skip: number | null | undefined, take: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<ErskineMaySectionSearchResultErskineMaySearch> {
@@ -440,6 +555,7 @@ export namespace MyNS {
 		 * Returns a section by section id.
 		 * Get api/Section/{sectionId}
 		 * @param {number} sectionId Section by id.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ErskineMaySectionDetail} Success
 		 */
 		ApiSection_sectionIdGet(sectionId: number, headersHandler?: () => HttpHeaders): Observable<ErskineMaySectionDetail> {
@@ -450,7 +566,9 @@ export namespace MyNS {
 		 * Returns a section overview by section id and step.
 		 * Get api/Section/{sectionId},{step}
 		 * @param {number} sectionId Section by id.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} step Number of sections to step over from given section.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ErskineMaySectionOverview} Success
 		 */
 		ApiSection_sectionId__stepGet(sectionId: number, step: number, headersHandler?: () => HttpHeaders): Observable<ErskineMaySectionOverview> {

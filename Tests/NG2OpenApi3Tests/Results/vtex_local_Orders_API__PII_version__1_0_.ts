@@ -180,6 +180,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: number;
 
@@ -192,50 +193,58 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: number;
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: number;
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: number;
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: number;
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: number;
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: number;
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: number;
+		SumOfSquares: string;
 	}
 	export interface BRLFormProperties {
 
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: FormControl<number | null | undefined>,
 
@@ -248,44 +257,51 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: FormControl<number | null | undefined>,
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: FormControl<number | null | undefined>,
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: FormControl<number | null | undefined>,
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: FormControl<number | null | undefined>,
+		SumOfSquares: FormControl<string | null | undefined>,
 	}
 	export function CreateBRLFormGroup() {
 		return new FormGroup<BRLFormProperties>({
@@ -297,7 +313,7 @@ export namespace MyNS {
 			Missing: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			StdDev: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Sum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			SumOfSquares: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			SumOfSquares: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -307,6 +323,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: number;
 
@@ -319,50 +336,58 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: number;
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: number;
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: number;
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: number;
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: number;
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: number;
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: number;
+		SumOfSquares: string;
 	}
 	export interface BRL1FormProperties {
 
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: FormControl<number | null | undefined>,
 
@@ -375,44 +400,51 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: FormControl<number | null | undefined>,
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: FormControl<number | null | undefined>,
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: FormControl<number | null | undefined>,
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: FormControl<number | null | undefined>,
+		SumOfSquares: FormControl<string | null | undefined>,
 	}
 	export function CreateBRL1FormGroup() {
 		return new FormGroup<BRL1FormProperties>({
@@ -424,7 +456,7 @@ export namespace MyNS {
 			Missing: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			StdDev: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Sum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			SumOfSquares: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			SumOfSquares: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -463,12 +495,14 @@ export namespace MyNS {
 		/**
 		 * Discount value in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		discountValue: number;
 
 		/**
 		 * Order value increment in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		incrementValue: number;
 
@@ -498,12 +532,14 @@ export namespace MyNS {
 		/**
 		 * Discount value in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		discountValue: FormControl<number | null | undefined>,
 
 		/**
 		 * Order value increment in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		incrementValue: FormControl<number | null | undefined>,
 
@@ -539,12 +575,14 @@ export namespace MyNS {
 		/**
 		 * Removed items price in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: number;
 
 		/**
 		 * Quantity of items removed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: number;
 
@@ -571,12 +609,14 @@ export namespace MyNS {
 		/**
 		 * Removed items price in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: FormControl<number | null | undefined>,
 
 		/**
 		 * Quantity of items removed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: FormControl<number | null | undefined>,
 
@@ -882,6 +922,7 @@ export namespace MyNS {
 		/**
 		 * Currency decimal digits.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		CurrencyDecimalDigits: number;
 
@@ -900,6 +941,7 @@ export namespace MyNS {
 		/**
 		 * Currency group size.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		CurrencyGroupSize: number;
 
@@ -914,6 +956,7 @@ export namespace MyNS {
 		/**
 		 * Currency decimal digits.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		CurrencyDecimalDigits: FormControl<number | null | undefined>,
 
@@ -932,6 +975,7 @@ export namespace MyNS {
 		/**
 		 * Currency group size.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		CurrencyGroupSize: FormControl<number | null | undefined>,
 
@@ -975,6 +1019,7 @@ export namespace MyNS {
 		/**
 		 * Quantity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: number;
 
@@ -1007,6 +1052,7 @@ export namespace MyNS {
 		/**
 		 * Quantity.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: FormControl<number | null | undefined>,
 
@@ -1064,6 +1110,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: number;
 
@@ -1076,42 +1123,49 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: number;
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: number;
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: number;
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: number;
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: number;
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: number;
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SumOfSquares: number;
 	}
@@ -1120,6 +1174,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: FormControl<number | null | undefined>,
 
@@ -1132,42 +1187,49 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: FormControl<number | null | undefined>,
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: FormControl<number | null | undefined>,
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: FormControl<number | null | undefined>,
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SumOfSquares: FormControl<number | null | undefined>,
 	}
@@ -1191,6 +1253,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: number;
 
@@ -1203,50 +1266,58 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: number;
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: number;
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: number;
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: number;
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: number;
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: number;
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: number;
+		SumOfSquares: string;
 	}
 	export interface Marketplace1FormProperties {
 
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: FormControl<number | null | undefined>,
 
@@ -1259,44 +1330,51 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: FormControl<number | null | undefined>,
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: FormControl<number | null | undefined>,
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: FormControl<number | null | undefined>,
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: FormControl<number | null | undefined>,
+		SumOfSquares: FormControl<string | null | undefined>,
 	}
 	export function CreateMarketplace1FormGroup() {
 		return new FormGroup<Marketplace1FormProperties>({
@@ -1308,7 +1386,7 @@ export namespace MyNS {
 			Missing: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			StdDev: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Sum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			SumOfSquares: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			SumOfSquares: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1350,6 +1428,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: number;
 
@@ -1362,50 +1441,58 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: number;
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: number;
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: number;
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: number;
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: number;
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: number;
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: number;
+		SumOfSquares: string;
 	}
 	export interface Fulfillment1FormProperties {
 
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: FormControl<number | null | undefined>,
 
@@ -1418,44 +1505,51 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: FormControl<number | null | undefined>,
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: FormControl<number | null | undefined>,
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: FormControl<number | null | undefined>,
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: FormControl<number | null | undefined>,
+		SumOfSquares: FormControl<string | null | undefined>,
 	}
 	export function CreateFulfillment1FormGroup() {
 		return new FormGroup<Fulfillment1FormProperties>({
@@ -1467,7 +1561,7 @@ export namespace MyNS {
 			Missing: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			StdDev: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Sum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			SumOfSquares: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			SumOfSquares: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1477,6 +1571,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: number;
 
@@ -1489,50 +1584,58 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: number;
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: number;
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: number;
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: number;
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: number;
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: number;
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: number;
+		SumOfSquares: string;
 	}
 	export interface Marketplace2FormProperties {
 
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: FormControl<number | null | undefined>,
 
@@ -1545,44 +1648,51 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: FormControl<number | null | undefined>,
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: FormControl<number | null | undefined>,
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: FormControl<number | null | undefined>,
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: FormControl<number | null | undefined>,
+		SumOfSquares: FormControl<string | null | undefined>,
 	}
 	export function CreateMarketplace2FormGroup() {
 		return new FormGroup<Marketplace2FormProperties>({
@@ -1594,7 +1704,7 @@ export namespace MyNS {
 			Missing: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			StdDev: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Sum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			SumOfSquares: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			SumOfSquares: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1610,7 +1720,10 @@ export namespace MyNS {
 		 */
 		courier?: string | null;
 
-		/** Extra value in the invoice in cents. Do not use any decimal separator. For instance, `$24.99` should be represented as `2499`. */
+		/**
+		 * Extra value in the invoice in cents. Do not use any decimal separator. For instance, `$24.99` should be represented as `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		extraValue?: number | null;
 
 		/** Invoice key. */
@@ -1661,7 +1774,10 @@ export namespace MyNS {
 		 */
 		type: string;
 
-		/** Number of volumes in the invoice. */
+		/**
+		 * Number of volumes in the invoice.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volumes?: number | null;
 	}
 	export interface InvoiceNotificationRequestFormProperties {
@@ -1675,7 +1791,10 @@ export namespace MyNS {
 		 */
 		courier: FormControl<string | null | undefined>,
 
-		/** Extra value in the invoice in cents. Do not use any decimal separator. For instance, `$24.99` should be represented as `2499`. */
+		/**
+		 * Extra value in the invoice in cents. Do not use any decimal separator. For instance, `$24.99` should be represented as `2499`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		extraValue: FormControl<number | null | undefined>,
 
 		/** Invoice key. */
@@ -1720,7 +1839,10 @@ export namespace MyNS {
 		 */
 		type: FormControl<string | null | undefined>,
 
-		/** Number of volumes in the invoice. */
+		/**
+		 * Number of volumes in the invoice.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volumes: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceNotificationRequestFormGroup() {
@@ -1752,12 +1874,14 @@ export namespace MyNS {
 		/**
 		 * Total price of the SKU being invoiced in cents. Do not use any decimal separator. For instance, `$24.99` should be represented as `2499`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: number;
 
 		/**
 		 * Quantity cof the SKU being invoiced.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: number;
 	}
@@ -1772,12 +1896,14 @@ export namespace MyNS {
 		/**
 		 * Total price of the SKU being invoiced in cents. Do not use any decimal separator. For instance, `$24.99` should be represented as `2499`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: FormControl<number | null | undefined>,
 
 		/**
 		 * Quantity cof the SKU being invoiced.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quantity: FormControl<number | null | undefined>,
 	}
@@ -1927,12 +2053,14 @@ export namespace MyNS {
 		/**
 		 * Total items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalItems: number;
 
 		/**
 		 * Order total value in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalValue: number;
 
@@ -2085,12 +2213,14 @@ export namespace MyNS {
 		/**
 		 * Total items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalItems: FormControl<number | null | undefined>,
 
 		/**
 		 * Order total value in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		totalValue: FormControl<number | null | undefined>,
 
@@ -2171,24 +2301,28 @@ export namespace MyNS {
 		/**
 		 * Current returned page.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		currentPage: number;
 
 		/**
 		 * Number of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages: number;
 
 		/**
 		 * Number of items returned per page.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		perPage: number;
 
 		/**
 		 * Paging total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 	}
@@ -2197,24 +2331,28 @@ export namespace MyNS {
 		/**
 		 * Current returned page.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		currentPage: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of pages.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pages: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of items returned per page.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		perPage: FormControl<number | null | undefined>,
 
 		/**
 		 * Paging total.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -2262,6 +2400,7 @@ export namespace MyNS {
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: number;
 
@@ -2274,50 +2413,58 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: number;
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: number;
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: number;
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: number;
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: number;
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: number;
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: number;
+		SumOfSquares: string;
 	}
 	export interface TotalItemsFormProperties {
 
 		/**
 		 * Count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: FormControl<number | null | undefined>,
 
@@ -2330,44 +2477,51 @@ export namespace MyNS {
 		/**
 		 * Maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: FormControl<number | null | undefined>,
 
 		/**
 		 * Mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: FormControl<number | null | undefined>,
 
 		/**
 		 * Minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: FormControl<number | null | undefined>,
 
 		/**
 		 * Missing.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: FormControl<number | null | undefined>,
 
 		/**
 		 * Standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: FormControl<number | null | undefined>,
 
 		/**
 		 * Sum of squares.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: FormControl<number | null | undefined>,
+		SumOfSquares: FormControl<string | null | undefined>,
 	}
 	export function CreateTotalItemsFormGroup() {
 		return new FormGroup<TotalItemsFormProperties>({
@@ -2379,7 +2533,7 @@ export namespace MyNS {
 			Missing: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			StdDev: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Sum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			SumOfSquares: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			SumOfSquares: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2389,6 +2543,7 @@ export namespace MyNS {
 		/**
 		 * Value count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: number;
 
@@ -2398,94 +2553,109 @@ export namespace MyNS {
 		/**
 		 * Value maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: number;
 
 		/**
 		 * Value mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: number;
 
 		/**
 		 * Value minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: number;
 
 		/**
 		 * Missing values.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: number;
 
 		/**
 		 * Values standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: number;
 
 		/**
 		 * Values sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: number;
 
 		/**
 		 * Values sum of squares
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: number;
+		SumOfSquares: string;
 	}
 	export interface TotalValueFormProperties {
 
 		/**
 		 * Value count.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Count: FormControl<number | null | undefined>,
 
 		/**
 		 * Value maximum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Max: FormControl<number | null | undefined>,
 
 		/**
 		 * Value mean.
 		 * Required
+		 * Type: double
 		 */
 		Mean: FormControl<number | null | undefined>,
 
 		/**
 		 * Value minimum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Min: FormControl<number | null | undefined>,
 
 		/**
 		 * Missing values.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Missing: FormControl<number | null | undefined>,
 
 		/**
 		 * Values standard deviation.
 		 * Required
+		 * Type: double
 		 */
 		StdDev: FormControl<number | null | undefined>,
 
 		/**
 		 * Values sum.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Sum: FormControl<number | null | undefined>,
 
 		/**
 		 * Values sum of squares
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		SumOfSquares: FormControl<number | null | undefined>,
+		SumOfSquares: FormControl<string | null | undefined>,
 	}
 	export function CreateTotalValueFormGroup() {
 		return new FormGroup<TotalValueFormProperties>({
@@ -2496,7 +2666,7 @@ export namespace MyNS {
 			Missing: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			StdDev: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 			Sum: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			SumOfSquares: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			SumOfSquares: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2536,12 +2706,14 @@ export namespace MyNS {
 		/**
 		 * Item index, matching the index in the `items` array.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		itemIndex: number;
 
 		/**
 		 * List price in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listPrice: number;
 
@@ -2563,6 +2735,7 @@ export namespace MyNS {
 		/**
 		 * Prince in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: number;
 
@@ -2575,6 +2748,7 @@ export namespace MyNS {
 		/**
 		 * Selling price in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sellingPrice: number;
 
@@ -2631,12 +2805,14 @@ export namespace MyNS {
 		/**
 		 * Item index, matching the index in the `items` array.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		itemIndex: FormControl<number | null | undefined>,
 
 		/**
 		 * List price in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listPrice: FormControl<number | null | undefined>,
 
@@ -2655,6 +2831,7 @@ export namespace MyNS {
 		/**
 		 * Prince in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: FormControl<number | null | undefined>,
 
@@ -2667,6 +2844,7 @@ export namespace MyNS {
 		/**
 		 * Selling price in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sellingPrice: FormControl<number | null | undefined>,
 
@@ -2814,6 +2992,7 @@ export namespace MyNS {
 		/**
 		 * SLA price in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: number;
 
@@ -2858,6 +3037,7 @@ export namespace MyNS {
 		/**
 		 * SLA price in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		price: FormControl<number | null | undefined>,
 
@@ -3012,6 +3192,7 @@ export namespace MyNS {
 		/**
 		 * Payment installments.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		installments: number;
 
@@ -3042,6 +3223,7 @@ export namespace MyNS {
 		/**
 		 * Reference value for interest calculation in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		referenceValue: number;
 
@@ -3060,6 +3242,7 @@ export namespace MyNS {
 		/**
 		 * Payment value in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: number;
 	}
@@ -3146,6 +3329,7 @@ export namespace MyNS {
 		/**
 		 * Payment installments.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		installments: FormControl<number | null | undefined>,
 
@@ -3176,6 +3360,7 @@ export namespace MyNS {
 		/**
 		 * Reference value for interest calculation in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		referenceValue: FormControl<number | null | undefined>,
 
@@ -3194,6 +3379,7 @@ export namespace MyNS {
 		/**
 		 * Payment value in cents.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -3617,6 +3803,7 @@ export namespace MyNS {
 		/**
 		 * Currency locale.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		currencyLocale: number;
 
@@ -3649,6 +3836,7 @@ export namespace MyNS {
 		/**
 		 * Currency locale.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		currencyLocale: FormControl<number | null | undefined>,
 
@@ -4369,12 +4557,14 @@ export namespace MyNS {
 		/**
 		 * Number of the page to be retrieved.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		page: number;
 
 		/**
 		 * Number of orders per page.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		per_page: number;
 
@@ -4392,12 +4582,14 @@ export namespace MyNS {
 		/**
 		 * Number of the page to be retrieved.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		page: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of orders per page.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		per_page: FormControl<number | null | undefined>,
 
@@ -4520,7 +4712,10 @@ export namespace MyNS {
 		paymentData?: PaymentData;
 		ratesAndBenefitsData?: RatesAndBenefitsData;
 
-		/** Rounding error in cents. */
+		/**
+		 * Rounding error in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		roundingError?: number | null;
 
 		/** Sales channel. */
@@ -4546,7 +4741,10 @@ export namespace MyNS {
 		/** Information on each of the order's totals. */
 		GetOrder2ReturnTotals?: Array<GetOrder2ReturnTotals>;
 
-		/** Value in cents. */
+		/**
+		 * Value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface GetOrder2ReturnFormProperties {
@@ -4641,7 +4839,10 @@ export namespace MyNS {
 		/** Origin. */
 		origin: FormControl<string | null | undefined>,
 
-		/** Rounding error in cents. */
+		/**
+		 * Rounding error in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		roundingError: FormControl<number | null | undefined>,
 
 		/** Sales channel. */
@@ -4659,7 +4860,10 @@ export namespace MyNS {
 		/** Status description which is displayed on the Admin panel. */
 		statusDescription: FormControl<string | null | undefined>,
 
-		/** Value in cents. */
+		/**
+		 * Value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrder2ReturnFormGroup() {
@@ -4734,10 +4938,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift?: boolean | null;
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice?: number | null;
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice?: number | null;
 
 		/** User that applied the manual price, if that is the case. */
@@ -4758,13 +4968,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding?: string | null;
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex?: number | null;
 
 		/** Presale date. */
 		preSaleDate?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Price information. */
@@ -4788,13 +5004,19 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
 		/** Ref ID. */
 		refId?: string | null;
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue?: number | null;
 
 		/** Seller. */
@@ -4803,19 +5025,28 @@ export namespace MyNS {
 		/** Sellers involved in the chain. The list should contain only one seller, unless it is a [Multilevel Omnichannel Inventory](https://help.vtex.com/pt/tutorial/multilevel-omnichannel-inventory--7M1xyCZWUyCB7PcjNtOyw4) order. */
 		sellerChain?: Array<string>;
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice?: number | null;
 
 		/** SKU name. */
 		skuName?: string | null;
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax?: number | null;
 
 		/** Order's item unique ID. */
 		uniqueId?: string | null;
 
-		/** Unit multiplier */
+		/**
+		 * Unit multiplier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier?: number | null;
 	}
 	export interface GetOrder2ReturnItemsFormProperties {
@@ -4838,10 +5069,16 @@ export namespace MyNS {
 		/** Indicates whether item is a gift. */
 		isGift: FormControl<boolean | null | undefined>,
 
-		/** List price in cents. */
+		/**
+		 * List price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		listPrice: FormControl<number | null | undefined>,
 
-		/** Manual price in cents. */
+		/**
+		 * Manual price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		manualPrice: FormControl<number | null | undefined>,
 
 		/** User that applied the manual price, if that is the case. */
@@ -4862,13 +5099,19 @@ export namespace MyNS {
 		/** Parent assembly binding. */
 		parentAssemblyBinding: FormControl<string | null | undefined>,
 
-		/** Parent item index. */
+		/**
+		 * Parent item index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parentItemIndex: FormControl<number | null | undefined>,
 
 		/** Presale date. */
 		preSaleDate: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Price expiration date and time. */
@@ -4883,31 +5126,46 @@ export namespace MyNS {
 		/** Product Ref ID. */
 		productRefId: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Ref ID. */
 		refId: FormControl<string | null | undefined>,
 
-		/** Reward value in cents. */
+		/**
+		 * Reward value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewardValue: FormControl<number | null | undefined>,
 
 		/** Seller. */
 		seller: FormControl<string | null | undefined>,
 
-		/** Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead. */
+		/**
+		 * Selling price in cents. Note that this field may be subject to rounding discrepancies. We recommend retrieving data from the `priceDefinition` data structure instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 
 		/** SKU name. */
 		skuName: FormControl<string | null | undefined>,
 
-		/** Tax value in cents. */
+		/**
+		 * Tax value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** Order's item unique ID. */
 		uniqueId: FormControl<string | null | undefined>,
 
-		/** Unit multiplier */
+		/**
+		 * Unit multiplier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrder2ReturnItemsFormGroup() {
@@ -5000,13 +5258,19 @@ export namespace MyNS {
 
 	export interface GetOrder2ReturnItemsBundleItems {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name. */
 		name?: string | null;
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
 		/** Type */
@@ -5014,13 +5278,19 @@ export namespace MyNS {
 	}
 	export interface GetOrder2ReturnItemsBundleItemsFormProperties {
 
-		/** Service identifier. */
+		/**
+		 * Service identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Price in cents. */
+		/**
+		 * Price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Type */
@@ -5038,21 +5308,33 @@ export namespace MyNS {
 
 	export interface GetOrder2ReturnItemsPriceDefinition {
 
-		/** Calculated selling price in cents. */
+		/**
+		 * Calculated selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice?: number | null;
 
 		/** Selling prices. */
 		GetOrder2ReturnItemsPriceDefinitionSellingPrices?: Array<GetOrder2ReturnItemsPriceDefinitionSellingPrices>;
 
-		/** Total in cents. */
+		/**
+		 * Total in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface GetOrder2ReturnItemsPriceDefinitionFormProperties {
 
-		/** Calculated selling price in cents. */
+		/**
+		 * Calculated selling price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calculatedSellingPrice: FormControl<number | null | undefined>,
 
-		/** Total in cents. */
+		/**
+		 * Total in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrder2ReturnItemsPriceDefinitionFormGroup() {
@@ -5065,18 +5347,30 @@ export namespace MyNS {
 
 	export interface GetOrder2ReturnItemsPriceDefinitionSellingPrices {
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** Value in cents. */
+		/**
+		 * Value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface GetOrder2ReturnItemsPriceDefinitionSellingPricesFormProperties {
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Value in cents. */
+		/**
+		 * Value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrder2ReturnItemsPriceDefinitionSellingPricesFormGroup() {
@@ -5098,10 +5392,16 @@ export namespace MyNS {
 		/** Name. */
 		name?: string | null;
 
-		/** Raw value. */
+		/**
+		 * Raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue?: number | null;
 
-		/** Value. */
+		/**
+		 * Value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface GetOrder2ReturnItemsPriceTagsFormProperties {
@@ -5115,10 +5415,16 @@ export namespace MyNS {
 		/** Name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Raw value. */
+		/**
+		 * Raw value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rawValue: FormControl<number | null | undefined>,
 
-		/** Value. */
+		/**
+		 * Value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrder2ReturnItemsPriceTagsFormGroup() {
@@ -5185,7 +5491,10 @@ export namespace MyNS {
 		/** Invoice URL. */
 		invoiceUrl?: string | null;
 
-		/** Invoice value in cents. */
+		/**
+		 * Invoice value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		invoiceValue?: number | null;
 
 		/** Issuance date. */
@@ -5206,7 +5515,10 @@ export namespace MyNS {
 		/** Invoice type `Output` for sales and `Input` for returns. */
 		type?: string | null;
 
-		/** Quantity of packages involved in the order. */
+		/**
+		 * Quantity of packages involved in the order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volumes?: number | null;
 	}
 	export interface GetOrder2ReturnPackageAttachmentPackagesFormProperties {
@@ -5232,7 +5544,10 @@ export namespace MyNS {
 		/** Invoice URL. */
 		invoiceUrl: FormControl<string | null | undefined>,
 
-		/** Invoice value in cents. */
+		/**
+		 * Invoice value in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		invoiceValue: FormControl<number | null | undefined>,
 
 		/** Issuance date. */
@@ -5247,7 +5562,10 @@ export namespace MyNS {
 		/** Invoice type `Output` for sales and `Input` for returns. */
 		type: FormControl<string | null | undefined>,
 
-		/** Quantity of packages involved in the order. */
+		/**
+		 * Quantity of packages involved in the order.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volumes: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrder2ReturnPackageAttachmentPackagesFormGroup() {
@@ -5274,16 +5592,28 @@ export namespace MyNS {
 		/** Item description. */
 		description?: string | null;
 
-		/** Item index in reference to the position of the item in the `items` array. */
+		/**
+		 * Item index in reference to the position of the item in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex?: number | null;
 
-		/** Item price in cents. */
+		/**
+		 * Item price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price?: number | null;
 
-		/** Item quantity. */
+		/**
+		 * Item quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** Item unit multiplier. */
+		/**
+		 * Item unit multiplier.
+		 * Type: double
+		 */
 		unitMultiplier?: number | null;
 	}
 	export interface GetOrder2ReturnPackageAttachmentPackagesItemsFormProperties {
@@ -5291,16 +5621,28 @@ export namespace MyNS {
 		/** Item description. */
 		description: FormControl<string | null | undefined>,
 
-		/** Item index in reference to the position of the item in the `items` array. */
+		/**
+		 * Item index in reference to the position of the item in the `items` array.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemIndex: FormControl<number | null | undefined>,
 
-		/** Item price in cents. */
+		/**
+		 * Item price in cents.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Item quantity. */
+		/**
+		 * Item quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** Item unit multiplier. */
+		/**
+		 * Item unit multiplier.
+		 * Type: double
+		 */
 		unitMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrder2ReturnPackageAttachmentPackagesItemsFormGroup() {
@@ -5345,7 +5687,10 @@ export namespace MyNS {
 		/** Item index corresponding to the position of the item in the main `items` array. */
 		itemIndex?: string | null;
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 	}
 	export interface GetOrder2ReturnPackageAttachmentPackagesRestitutionsRefundItemsFormProperties {
@@ -5353,7 +5698,10 @@ export namespace MyNS {
 		/** Item index corresponding to the position of the item in the main `items` array. */
 		itemIndex: FormControl<string | null | undefined>,
 
-		/** Quantity. */
+		/**
+		 * Quantity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrder2ReturnPackageAttachmentPackagesRestitutionsRefundItemsFormGroup() {
@@ -5372,7 +5720,10 @@ export namespace MyNS {
 		/** Order's total name. */
 		name?: string | null;
 
-		/** Order's total value. */
+		/**
+		 * Order's total value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value?: number | null;
 	}
 	export interface GetOrder2ReturnTotalsFormProperties {
@@ -5383,7 +5734,10 @@ export namespace MyNS {
 		/** Order's total name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Order's total value. */
+		/**
+		 * Order's total value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGetOrder2ReturnTotalsFormGroup() {

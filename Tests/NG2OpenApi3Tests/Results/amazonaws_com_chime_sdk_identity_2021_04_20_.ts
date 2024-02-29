@@ -1423,7 +1423,9 @@ export namespace MyNS {
 		 * Lists all Amazon Chime <code>AppInstance</code>s created under a single AWS account.
 		 * Get app-instances
 		 * @param {number} max_results The maximum number of <code>AppInstance</code>s that you want to return.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API requests until you reach the maximum number of <code>AppInstances</code>.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppInstancesResponse} Success
@@ -1436,6 +1438,7 @@ export namespace MyNS {
 		 * <p>Promotes an <code>AppInstanceUser</code> or <code>AppInstanceBot</code> to an <code>AppInstanceAdmin</code>. The promoted entity can perform the following actions. </p> <ul> <li> <p> <code>ChannelModerator</code> actions across all channels in the <code>AppInstance</code>.</p> </li> <li> <p> <code>DeleteChannelMessage</code> actions.</p> </li> </ul> <p>Only an <code>AppInstanceUser</code> and <code>AppInstanceBot</code> can be promoted to an <code>AppInstanceAdmin</code> role.</p>
 		 * Post app-instances/{appInstanceArn}/admins
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		CreateAppInstanceAdmin(appInstanceArn: string, requestBody: CreateAppInstanceAdminPostBody): Observable<HttpResponse<string>> {
@@ -1446,8 +1449,11 @@ export namespace MyNS {
 		 * Returns a list of the administrators in the <code>AppInstance</code>.
 		 * Get app-instances/{appInstanceArn}/admins
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of administrators that you want to return.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token returned from previous API requests until the number of administrators is reached.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppInstanceAdminsResponse} Success
@@ -1478,6 +1484,7 @@ export namespace MyNS {
 		 * Deletes an <code>AppInstance</code> and all associated data asynchronously.
 		 * Delete app-instances/{appInstanceArn}
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteAppInstance(appInstanceArn: string): Observable<HttpResponse<string>> {
@@ -1488,6 +1495,7 @@ export namespace MyNS {
 		 * Returns the full details of an <code>AppInstance</code>.
 		 * Get app-instances/{appInstanceArn}
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeAppInstanceResponse} Success
 		 */
 		DescribeAppInstance(appInstanceArn: string): Observable<DescribeAppInstanceResponse> {
@@ -1498,6 +1506,7 @@ export namespace MyNS {
 		 * Updates <code>AppInstance</code> metadata.
 		 * Put app-instances/{appInstanceArn}
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {UpdateAppInstanceResponse} Success
 		 */
 		UpdateAppInstance(appInstanceArn: string, requestBody: UpdateAppInstancePutBody): Observable<UpdateAppInstanceResponse> {
@@ -1508,7 +1517,9 @@ export namespace MyNS {
 		 * Demotes an <code>AppInstanceAdmin</code> to an <code>AppInstanceUser</code> or <code>AppInstanceBot</code>. This action does not delete the user.
 		 * Delete app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		 * @param {string} appInstanceAdminArn The ARN of the <code>AppInstance</code>'s administrator.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteAppInstanceAdmin(appInstanceAdminArn: string, appInstanceArn: string): Observable<HttpResponse<string>> {
@@ -1519,7 +1530,9 @@ export namespace MyNS {
 		 * Returns the full details of an <code>AppInstanceAdmin</code>.
 		 * Get app-instances/{appInstanceArn}/admins/{appInstanceAdminArn}
 		 * @param {string} appInstanceAdminArn The ARN of the <code>AppInstanceAdmin</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeAppInstanceAdminResponse} Success
 		 */
 		DescribeAppInstanceAdmin(appInstanceAdminArn: string, appInstanceArn: string): Observable<DescribeAppInstanceAdminResponse> {
@@ -1530,6 +1543,7 @@ export namespace MyNS {
 		 * Deletes an <code>AppInstanceBot</code>.
 		 * Delete app-instance-bots/{appInstanceBotArn}
 		 * @param {string} appInstanceBotArn The ARN of the <code>AppInstanceBot</code> being deleted.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteAppInstanceBot(appInstanceBotArn: string): Observable<HttpResponse<string>> {
@@ -1540,6 +1554,7 @@ export namespace MyNS {
 		 * The <code>AppInstanceBot's</code> information.
 		 * Get app-instance-bots/{appInstanceBotArn}
 		 * @param {string} appInstanceBotArn The ARN of the <code>AppInstanceBot</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeAppInstanceBotResponse} Success
 		 */
 		DescribeAppInstanceBot(appInstanceBotArn: string): Observable<DescribeAppInstanceBotResponse> {
@@ -1550,6 +1565,7 @@ export namespace MyNS {
 		 * Updates the name and metadata of an <code>AppInstanceBot</code>.
 		 * Put app-instance-bots/{appInstanceBotArn}
 		 * @param {string} appInstanceBotArn The ARN of the <code>AppInstanceBot</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {UpdateAppInstanceBotResponse} Success
 		 */
 		UpdateAppInstanceBot(appInstanceBotArn: string, requestBody: UpdateAppInstanceBotPutBody): Observable<UpdateAppInstanceBotResponse> {
@@ -1560,6 +1576,7 @@ export namespace MyNS {
 		 * Deletes an <code>AppInstanceUser</code>.
 		 * Delete app-instance-users/{appInstanceUserArn}
 		 * @param {string} appInstanceUserArn The ARN of the user request being deleted.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		DeleteAppInstanceUser(appInstanceUserArn: string): Observable<HttpResponse<string>> {
@@ -1570,6 +1587,7 @@ export namespace MyNS {
 		 * Returns the full details of an <code>AppInstanceUser</code>.
 		 * Get app-instance-users/{appInstanceUserArn}
 		 * @param {string} appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {DescribeAppInstanceUserResponse} Success
 		 */
 		DescribeAppInstanceUser(appInstanceUserArn: string): Observable<DescribeAppInstanceUserResponse> {
@@ -1580,6 +1598,7 @@ export namespace MyNS {
 		 * Updates the details of an <code>AppInstanceUser</code>. You can update names and metadata.
 		 * Put app-instance-users/{appInstanceUserArn}
 		 * @param {string} appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {UpdateAppInstanceUserResponse} Success
 		 */
 		UpdateAppInstanceUser(appInstanceUserArn: string, requestBody: UpdateAppInstanceUserPutBody): Observable<UpdateAppInstanceUserResponse> {
@@ -1590,7 +1609,9 @@ export namespace MyNS {
 		 * Deregisters an <code>AppInstanceUserEndpoint</code>.
 		 * Delete app-instance-users/{appInstanceUserArn}/endpoints/{endpointId}
 		 * @param {string} appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.
+		 *     Min length: 0    Max length: 64
 		 * @return {void} 
 		 */
 		DeregisterAppInstanceUserEndpoint(appInstanceUserArn: string, endpointId: string): Observable<HttpResponse<string>> {
@@ -1601,7 +1622,9 @@ export namespace MyNS {
 		 * Returns the full details of an <code>AppInstanceUserEndpoint</code>.
 		 * Get app-instance-users/{appInstanceUserArn}/endpoints/{endpointId}
 		 * @param {string} appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.
+		 *     Min length: 0    Max length: 1600
 		 * @param {string} endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.
+		 *     Min length: 0    Max length: 64
 		 * @return {DescribeAppInstanceUserEndpointResponse} Success
 		 */
 		DescribeAppInstanceUserEndpoint(appInstanceUserArn: string, endpointId: string): Observable<DescribeAppInstanceUserEndpointResponse> {
@@ -1612,7 +1635,9 @@ export namespace MyNS {
 		 * Updates the details of an <code>AppInstanceUserEndpoint</code>. You can update the name and <code>AllowMessage</code> values.
 		 * Put app-instance-users/{appInstanceUserArn}/endpoints/{endpointId}
 		 * @param {string} appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {string} endpointId The unique identifier of the <code>AppInstanceUserEndpoint</code>.
+		 *     Min length: 0    Max length: 64
 		 * @return {UpdateAppInstanceUserEndpointResponse} Success
 		 */
 		UpdateAppInstanceUserEndpoint(appInstanceUserArn: string, endpointId: string, requestBody: UpdateAppInstanceUserEndpointPutBody): Observable<UpdateAppInstanceUserEndpointResponse> {
@@ -1623,6 +1648,7 @@ export namespace MyNS {
 		 * Gets the retention settings for an <code>AppInstance</code>.
 		 * Get app-instances/{appInstanceArn}/retention-settings
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {GetAppInstanceRetentionSettingsResponse} Success
 		 */
 		GetAppInstanceRetentionSettings(appInstanceArn: string): Observable<GetAppInstanceRetentionSettingsResponse> {
@@ -1633,6 +1659,7 @@ export namespace MyNS {
 		 * Sets the amount of time in days that a given <code>AppInstance</code> retains data.
 		 * Put app-instances/{appInstanceArn}/retention-settings
 		 * @param {string} appInstanceArn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {PutAppInstanceRetentionSettingsResponse} Success
 		 */
 		PutAppInstanceRetentionSettings(appInstanceArn: string, requestBody: PutAppInstanceRetentionSettingsPutBody): Observable<PutAppInstanceRetentionSettingsResponse> {
@@ -1643,8 +1670,11 @@ export namespace MyNS {
 		 * Lists all <code>AppInstanceBots</code> created under a single <code>AppInstance</code>.
 		 * Get app-instance-bots#app-instance-arn
 		 * @param {string} app_instance_arn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of requests to return.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested bots are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppInstanceBotsResponse} Success
@@ -1657,8 +1687,11 @@ export namespace MyNS {
 		 * Lists all the <code>AppInstanceUserEndpoints</code> created under a single <code>AppInstanceUser</code>.
 		 * Get app-instance-users/{appInstanceUserArn}/endpoints
 		 * @param {string} appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of endpoints that you want to return.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested endpoints are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppInstanceUserEndpointsResponse} Success
@@ -1671,6 +1704,7 @@ export namespace MyNS {
 		 * Registers an endpoint under an Amazon Chime <code>AppInstanceUser</code>. The endpoint receives messages for a user. For push notifications, the endpoint is a mobile device used to receive mobile push notifications for a user.
 		 * Post app-instance-users/{appInstanceUserArn}/endpoints
 		 * @param {string} appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {void} 
 		 */
 		RegisterAppInstanceUserEndpoint(appInstanceUserArn: string, requestBody: RegisterAppInstanceUserEndpointPostBody): Observable<HttpResponse<string>> {
@@ -1681,8 +1715,11 @@ export namespace MyNS {
 		 * List all <code>AppInstanceUsers</code> created under a single <code>AppInstance</code>.
 		 * Get app-instance-users#app-instance-arn
 		 * @param {string} app_instance_arn The ARN of the <code>AppInstance</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @param {number} max_results The maximum number of requests that you want returned.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} next_token The token passed by previous API calls until all requested users are returned.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAppInstanceUsersResponse} Success
@@ -1695,6 +1732,7 @@ export namespace MyNS {
 		 * Lists the tags applied to an Amazon Chime SDK identity resource.
 		 * Get tags#arn
 		 * @param {string} arn The ARN of the resource.
+		 *     Min length: 5    Max length: 1600
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(arn: string): Observable<ListTagsForResourceResponse> {
@@ -1705,6 +1743,7 @@ export namespace MyNS {
 		 * <p>Sets the number of days before the <code>AppInstanceUser</code> is automatically deleted.</p> <note> <p>A background process deletes expired <code>AppInstanceUsers</code> within 6 hours of expiration. Actual deletion times may vary.</p> <p>Expired <code>AppInstanceUsers</code> that have not yet been deleted appear as active, and you can update their expiration settings. The system honors the new settings.</p> </note>
 		 * Put app-instance-users/{appInstanceUserArn}/expiration-settings
 		 * @param {string} appInstanceUserArn The ARN of the <code>AppInstanceUser</code>.
+		 *     Min length: 5    Max length: 1600
 		 * @return {PutAppInstanceUserExpirationSettingsResponse} Success
 		 */
 		PutAppInstanceUserExpirationSettings(appInstanceUserArn: string, requestBody: PutAppInstanceUserExpirationSettingsPutBody): Observable<PutAppInstanceUserExpirationSettingsResponse> {
@@ -1735,23 +1774,23 @@ export namespace MyNS {
 		/**
 		 * The name of the <code>AppInstance</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
 		/**
 		 * The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 
 		/**
 		 * The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
@@ -1767,23 +1806,23 @@ export namespace MyNS {
 		/**
 		 * The name of the <code>AppInstance</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The metadata of the <code>AppInstance</code>. Limited to a 1KB string in UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique ID of the request. Use different tokens to create different <code>AppInstances</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -1801,8 +1840,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the administrator of the current <code>AppInstance</code>.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceAdminArn: string;
 	}
@@ -1811,8 +1850,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the administrator of the current <code>AppInstance</code>.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceAdminArn: FormControl<string | null | undefined>,
 	}
@@ -1828,30 +1867,30 @@ export namespace MyNS {
 		/**
 		 * The ARN of the <code>AppInstance</code> request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: string;
 
 		/**
 		 * The user's name.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Name?: string | null;
 
 		/**
 		 * The request metadata. Limited to a 1KB string in UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 
 		/**
 		 * The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
@@ -1873,30 +1912,30 @@ export namespace MyNS {
 		/**
 		 * The ARN of the <code>AppInstance</code> request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The user's name.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The request metadata. Limited to a 1KB string in UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique ID for the client making the request. Use different tokens for different <code>AppInstanceBots</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -1926,39 +1965,39 @@ export namespace MyNS {
 		/**
 		 * The ARN of the <code>AppInstance</code> request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: string;
 
 		/**
 		 * The user ID of the <code>AppInstance</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AppInstanceUserId: string;
 
 		/**
 		 * The user's name.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: string;
 
 		/**
 		 * The request's metadata. Limited to a 1KB string in UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata?: string | null;
 
 		/**
 		 * The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
@@ -1977,39 +2016,39 @@ export namespace MyNS {
 		/**
 		 * The ARN of the <code>AppInstance</code> request.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		AppInstanceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The user ID of the <code>AppInstance</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		AppInstanceUserId: FormControl<string | null | undefined>,
 
 		/**
 		 * The user's name.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The request's metadata. Limited to a 1KB string in UTF-8.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique ID of the request. Use different tokens to request additional <code>AppInstances</code>.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -2045,16 +2084,16 @@ export namespace MyNS {
 		/**
 		 * The name that you want to change.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
 		/**
 		 * The metadata that you want to change.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: string;
 	}
@@ -2063,16 +2102,16 @@ export namespace MyNS {
 		/**
 		 * The name that you want to change.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The metadata that you want to change.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 	}
@@ -2089,16 +2128,16 @@ export namespace MyNS {
 		/**
 		 * The name of the <code>AppInstanceBot</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Name: string;
 
 		/**
 		 * The metadata of the <code>AppInstanceBot</code>.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: string;
 
@@ -2110,16 +2149,16 @@ export namespace MyNS {
 		/**
 		 * The name of the <code>AppInstanceBot</code>.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The metadata of the <code>AppInstanceBot</code>.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 	}
@@ -2147,16 +2186,16 @@ export namespace MyNS {
 		/**
 		 * The name of the <code>AppInstanceUser</code>.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: string;
 
 		/**
 		 * The metadata of the <code>AppInstanceUser</code>.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: string;
 	}
@@ -2165,16 +2204,16 @@ export namespace MyNS {
 		/**
 		 * The name of the <code>AppInstanceUser</code>.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The metadata of the <code>AppInstanceUser</code>.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Metadata: FormControl<string | null | undefined>,
 	}
@@ -2190,8 +2229,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the <code>AppInstanceUserEndpoint</code>.
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		Name?: string | null;
 
@@ -2202,8 +2241,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the <code>AppInstanceUserEndpoint</code>.
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2249,8 +2288,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the <code>AppInstanceUserEndpoint</code>.
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		Name?: string | null;
 
@@ -2263,8 +2302,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource to which the endpoint belongs.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ResourceArn: string;
 
@@ -2277,8 +2316,8 @@ export namespace MyNS {
 		/**
 		 * The unique ID assigned to the request. Use different tokens to register other endpoints.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: string;
 
@@ -2289,8 +2328,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the <code>AppInstanceUserEndpoint</code>.
-		 * Max length: 1600
 		 * Min length: 0
+		 * Max length: 1600
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2303,16 +2342,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource to which the endpoint belongs.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique ID assigned to the request. Use different tokens to register other endpoints.
 		 * Required
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -2382,8 +2421,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ResourceARN: string;
 
@@ -2400,8 +2439,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -2419,8 +2458,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ResourceARN: string;
 
@@ -2437,8 +2476,8 @@ export namespace MyNS {
 		/**
 		 * The resource ARN.
 		 * Required
-		 * Max length: 1600
 		 * Min length: 5
+		 * Max length: 1600
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}

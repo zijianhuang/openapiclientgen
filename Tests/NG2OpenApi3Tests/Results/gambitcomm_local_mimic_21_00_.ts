@@ -23,11 +23,19 @@ export namespace MyNS {
 	}
 
 	export interface AgentState {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		agentNum?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		state?: number | null;
 	}
 	export interface AgentStateFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		agentNum: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		state: FormControl<number | null | undefined>,
 	}
 	export function CreateAgentStateFormGroup() {
@@ -40,14 +48,22 @@ export namespace MyNS {
 
 	export interface ConfigCOAP {
 		keystore?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		primary_port?: number | null;
 		rule?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		secure_port?: number | null;
 	}
 	export interface ConfigCOAPFormProperties {
 		keystore: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		primary_port: FormControl<number | null | undefined>,
 		rule: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		secure_port: FormControl<number | null | undefined>,
 	}
 	export function CreateConfigCOAPFormGroup() {
@@ -83,12 +99,20 @@ export namespace MyNS {
 	}
 
 	export interface ConfigIPMI {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		primary_port?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		secure_port?: number | null;
 		version?: string | null;
 	}
 	export interface ConfigIPMIFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		primary_port: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		secure_port: FormControl<number | null | undefined>,
 		version: FormControl<string | null | undefined>,
 	}
@@ -107,6 +131,8 @@ export namespace MyNS {
 		filename?: string | null;
 		is_tls?: string | null;
 		password?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 		tls_conf_filename?: string | null;
 		username?: string | null;
@@ -118,6 +144,8 @@ export namespace MyNS {
 		filename: FormControl<string | null | undefined>,
 		is_tls: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 		tls_conf_filename: FormControl<string | null | undefined>,
 		username: FormControl<string | null | undefined>,
@@ -139,14 +167,22 @@ export namespace MyNS {
 	}
 
 	export interface ConfigNETFLOW {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bundleflowsets?: number | null;
 		collector?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collectorport?: number | null;
 		filename?: string | null;
 	}
 	export interface ConfigNETFLOWFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bundleflowsets: FormControl<number | null | undefined>,
 		collector: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collectorport: FormControl<number | null | undefined>,
 		filename: FormControl<string | null | undefined>,
 	}
@@ -161,10 +197,18 @@ export namespace MyNS {
 	}
 
 	export interface ConfigPROXY {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TCP_NODELAY?: number | null;
 		client_to_server?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		disconnect_delay?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_connects?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		portno?: number | null;
 		pre_connect?: string | null;
 		server_to_client?: string | null;
@@ -172,10 +216,18 @@ export namespace MyNS {
 		transport?: string | null;
 	}
 	export interface ConfigPROXYFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TCP_NODELAY: FormControl<number | null | undefined>,
 		client_to_server: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		disconnect_delay: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_connects: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		portno: FormControl<number | null | undefined>,
 		pre_connect: FormControl<string | null | undefined>,
 		server_to_client: FormControl<string | null | undefined>,
@@ -199,9 +251,13 @@ export namespace MyNS {
 
 	export interface ConfigSFLOW {
 		collector?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collectorport?: number | null;
 		encoding_type?: string | null;
 		filename?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flows_per_min?: number | null;
 		include_samples?: string | null;
 		records_per_sample?: string | null;
@@ -209,9 +265,13 @@ export namespace MyNS {
 	}
 	export interface ConfigSFLOWFormProperties {
 		collector: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		collectorport: FormControl<number | null | undefined>,
 		encoding_type: FormControl<string | null | undefined>,
 		filename: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		flows_per_min: FormControl<number | null | undefined>,
 		include_samples: FormControl<string | null | undefined>,
 		records_per_sample: FormControl<string | null | undefined>,
@@ -232,9 +292,13 @@ export namespace MyNS {
 	}
 
 	export interface ConfigSNMPTCP {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		connections?: number | null;
 	}
 	export interface ConfigSNMPTCPFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		connections: FormControl<number | null | undefined>,
 	}
 	export function CreateConfigSNMPTCPFormGroup() {
@@ -267,10 +331,14 @@ export namespace MyNS {
 	}
 
 	export interface ConfigSSH {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 		version?: string | null;
 	}
 	export interface ConfigSSHFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 		version: FormControl<string | null | undefined>,
 	}
@@ -285,20 +353,32 @@ export namespace MyNS {
 	export interface ConfigSYSLOG {
 		client?: string | null;
 		hostname?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		localport?: number | null;
 		separator?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence?: number | null;
 		server?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serverport?: number | null;
 		timestamp?: string | null;
 	}
 	export interface ConfigSYSLOGFormProperties {
 		client: FormControl<string | null | undefined>,
 		hostname: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		localport: FormControl<number | null | undefined>,
 		separator: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sequence: FormControl<number | null | undefined>,
 		server: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		serverport: FormControl<number | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
 	}
@@ -319,6 +399,8 @@ export namespace MyNS {
 	export interface ConfigTELNET {
 		keymap?: string | null;
 		paging_prompt?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 		prompt?: string | null;
 		rule?: string | null;
@@ -327,6 +409,8 @@ export namespace MyNS {
 	export interface ConfigTELNETFormProperties {
 		keymap: FormControl<string | null | undefined>,
 		paging_prompt: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 		prompt: FormControl<string | null | undefined>,
 		rule: FormControl<string | null | undefined>,
@@ -345,28 +429,44 @@ export namespace MyNS {
 	}
 
 	export interface ConfigTFTP {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cache?: number | null;
 		client?: string | null;
 		dstfile?: string | null;
 		mode?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retries?: number | null;
 		script?: string | null;
 		server?: string | null;
 		srcfile?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout?: number | null;
 		trace?: string | null;
 	}
 	export interface ConfigTFTPFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cache: FormControl<number | null | undefined>,
 		client: FormControl<string | null | undefined>,
 		dstfile: FormControl<string | null | undefined>,
 		mode: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retries: FormControl<number | null | undefined>,
 		script: FormControl<string | null | undefined>,
 		server: FormControl<string | null | undefined>,
 		srcfile: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout: FormControl<number | null | undefined>,
 		trace: FormControl<string | null | undefined>,
 	}
@@ -388,17 +488,29 @@ export namespace MyNS {
 	}
 
 	export interface ConfigTOD {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retries?: number | null;
 		script?: string | null;
 		server?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout?: number | null;
 	}
 	export interface ConfigTODFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		retries: FormControl<number | null | undefined>,
 		script: FormControl<string | null | undefined>,
 		server: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timeout: FormControl<number | null | undefined>,
 	}
 	export function CreateConfigTODFormGroup() {
@@ -413,16 +525,24 @@ export namespace MyNS {
 	}
 
 	export interface ConfigWEB {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		is_persistent_connections?: number | null;
 		password?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 		rule?: string | null;
 		username?: string | null;
 		wsdl?: string | null;
 	}
 	export interface ConfigWEBFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		is_persistent_connections: FormControl<number | null | undefined>,
 		password: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 		rule: FormControl<string | null | undefined>,
 		username: FormControl<string | null | undefined>,
@@ -444,12 +564,16 @@ export namespace MyNS {
 		IP?: string | null;
 		interface?: string | null;
 		mask?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 	}
 	export interface IPAliasFormProperties {
 		IP: FormControl<string | null | undefined>,
 		interface: FormControl<string | null | undefined>,
 		mask: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateIPAliasFormGroup() {
@@ -464,10 +588,14 @@ export namespace MyNS {
 
 	export interface IPSource {
 		IP?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 	}
 	export interface IPSourceFormProperties {
 		IP: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateIPSourceFormGroup() {
@@ -505,11 +633,15 @@ export namespace MyNS {
 
 	export interface TelnetUser {
 		groups?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hasPassword?: number | null;
 		password?: string | null;
 		username?: string | null;
 	}
 	export interface TelnetUserFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hasPassword: FormControl<number | null | undefined>,
 		password: FormControl<string | null | undefined>,
 		username: FormControl<string | null | undefined>,
@@ -525,11 +657,15 @@ export namespace MyNS {
 
 	export interface TimerScript {
 		arg?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interval?: number | null;
 		script?: string | null;
 	}
 	export interface TimerScriptFormProperties {
 		arg: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interval: FormControl<number | null | undefined>,
 		script: FormControl<string | null | undefined>,
 	}
@@ -544,10 +680,14 @@ export namespace MyNS {
 
 	export interface TrapDest {
 		IP?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port?: number | null;
 	}
 	export interface TrapDestFormProperties {
 		IP: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateTrapDestFormGroup() {
@@ -561,11 +701,15 @@ export namespace MyNS {
 	export interface Triplet {
 		device?: string | null;
 		mib?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		scenario?: number | null;
 	}
 	export interface TripletFormProperties {
 		device: FormControl<string | null | undefined>,
 		mib: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		scenario: FormControl<number | null | undefined>,
 	}
 	export function CreateTripletFormGroup() {
@@ -705,6 +849,7 @@ export namespace MyNS {
 		 * Add an agent.
 		 * Post mimic/agent/{agentNum}/add/{IP}
 		 * @param {number} agentNum Agent to return the primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} IP Primary IP
 		 * @param {Array<Triplet>} requestBody Created agent object
 		 * @return {string} successful operation
@@ -718,8 +863,10 @@ export namespace MyNS {
 		 * An empty ipaddress or 0.0.0.0 both imply any address. Similarly an empty port or 0 both imply any port. For agents with source-address-indexing enabled, messages which do not match any source address will be discarded with an ERROR message, similar to community string mismatches.
 		 * Post mimic/agent/{agentNum}/from/add/{IP}/{port}
 		 * @param {number} agentNum Agent to add the IP source
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} IP IP of the port, 0.0.0.0 for any
 		 * @param {number} port port of the source, 0 for any
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		From_add(agentNum: number, IP: string, port: number): Observable<string> {
@@ -731,8 +878,10 @@ export namespace MyNS {
 		 * An empty ipaddress or 0.0.0.0 both imply any address. Similarly an empty port or 0 both imply any port. For agents with source-address-indexing enabled, messages which do not match any source address will be discarded with an ERROR message, similar to community string mismatches.
 		 * Delete mimic/agent/{agentNum}/from/delete/{IP}/{port}
 		 * @param {number} agentNum Agent to delete the IP source
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} IP IP of the source
 		 * @param {number} port port of the source
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		From_del(agentNum: number, IP: string, port: number): Observable<string> {
@@ -744,6 +893,7 @@ export namespace MyNS {
 		 * This in effect implements source-address-indexing, where 2 agents with the same address can be configured, each accepting messages from different management stations.
 		 * Get mimic/agent/{agentNum}/from/list
 		 * @param {number} agentNum Agent to show the IP sources
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<IPSource>} successful operation
 		 */
 		From_list(agentNum: number): Observable<Array<IPSource>> {
@@ -755,7 +905,9 @@ export namespace MyNS {
 		 * has the agent value space changed?
 		 * Get mimic/agent/{agentNum}/get/changed
 		 * @param {number} agentNum Agent to return the indicator
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_changed(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/changed', {});
@@ -766,7 +918,9 @@ export namespace MyNS {
 		 * has the lab configuration changed?
 		 * Get mimic/agent/{agentNum}/get/config_changed
 		 * @param {number} agentNum Agent to return the indicator
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_config_changed(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/config_changed', {});
@@ -777,7 +931,9 @@ export namespace MyNS {
 		 * The minimum granularity is 10 msec.
 		 * Get mimic/agent/{agentNum}/get/delay
 		 * @param {number} agentNum Agent to return the delay time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_delay(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/delay', {});
@@ -788,7 +944,9 @@ export namespace MyNS {
 		 * drop rate (every N-th PDU). 0 means no drops.
 		 * Get mimic/agent/{agentNum}/get/drops
 		 * @param {number} agentNum Agent to return the drop rate
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_drops(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/drops', {});
@@ -810,7 +968,9 @@ export namespace MyNS {
 		 * The agent will retransmit INFORM PDUs at this interval until it has received a reply from the manager.
 		 * Get mimic/agent/{agentNum}/get/inform_timeout
 		 * @param {number} agentNum Agent to return the timeout setting
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_inform_timeout(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/inform_timeout', {});
@@ -843,6 +1003,7 @@ export namespace MyNS {
 		 * set of MIBs, simulations and scenarios
 		 * Get mimic/agent/{agentNum}/get/mibs
 		 * @param {number} agentNum Agent to return the MIB triplets
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Triplet>} successful operation
 		 */
 		Get_mibs(agentNum: number): Observable<Array<Triplet>> {
@@ -854,7 +1015,9 @@ export namespace MyNS {
 		 * This count is incremented each time an agent starts. It affects the SNMPv3 EngineBoots parameter.
 		 * Get mimic/agent/{agentNum}/get/num_starts
 		 * @param {number} agentNum Agent to return the count
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_number_starts(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/num_starts', {});
@@ -865,6 +1028,7 @@ export namespace MyNS {
 		 * MIB directory of the agent.
 		 * Get mimic/agent/{agentNum}/get/oiddir
 		 * @param {number} agentNum Agent to return the directory path
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Get_oiddir(agentNum: number): Observable<string> {
@@ -876,6 +1040,7 @@ export namespace MyNS {
 		 * owner of the agent.
 		 * Get mimic/agent/{agentNum}/get/owner
 		 * @param {number} agentNum Agent to return the owner
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Get_owner(agentNum: number): Observable<string> {
@@ -887,7 +1052,9 @@ export namespace MyNS {
 		 * The limit for this configurable is 65536.
 		 * Get mimic/agent/{agentNum}/get/pdusize
 		 * @param {number} agentNum Agent to return the PDU size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_pdusize(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/pdusize', {});
@@ -898,6 +1065,7 @@ export namespace MyNS {
 		 * port number
 		 * Get mimic/agent/{agentNum}/get/port
 		 * @param {number} agentNum Agent to return the primary SNMP port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Get_port(agentNum: number): Observable<string> {
@@ -909,6 +1077,7 @@ export namespace MyNS {
 		 * private directory of the agent.
 		 * Get mimic/agent/{agentNum}/get/privdir
 		 * @param {number} agentNum Agent to return the directory path
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Get_privdir(agentNum: number): Observable<string> {
@@ -920,6 +1089,7 @@ export namespace MyNS {
 		 * protocols supported by agent as an array of strings
 		 * Get mimic/agent/{agentNum}/get/protocol
 		 * @param {number} agentNum Agent to return the protocols arrary
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Get_protocols(agentNum: number): Observable<Array<string>> {
@@ -931,6 +1101,7 @@ export namespace MyNS {
 		 * read community string
 		 * Get mimic/agent/{agentNum}/get/read
 		 * @param {number} agentNum Agent to return the SNMP read community string
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Get_read_community(agentNum: number): Observable<string> {
@@ -942,7 +1113,9 @@ export namespace MyNS {
 		 * first scenario name
 		 * Get mimic/agent/{agentNum}/get/scen
 		 * @param {number} agentNum Agent to return the first scenario number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_scen(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/scen', {});
@@ -953,6 +1126,7 @@ export namespace MyNS {
 		 * first simulation name
 		 * Get mimic/agent/{agentNum}/get/sim
 		 * @param {number} agentNum Agent to return the first simulation name
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Get_sim(agentNum: number): Observable<string> {
@@ -964,6 +1138,7 @@ export namespace MyNS {
 		 * relative start time
 		 * Get mimic/agent/{agentNum}/get/start
 		 * @param {number} agentNum Agent to return the relative start time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Get_starttime(agentNum: number): Observable<string> {
@@ -975,7 +1150,9 @@ export namespace MyNS {
 		 * 0-Unknown 1-Running 2-Stopped 3-Halted 4-Paused 5-Deleted 6-Stopping
 		 * Get mimic/agent/{agentNum}/get/state
 		 * @param {number} agentNum Agent to return the state
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_agent_state(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/state', {});
@@ -986,7 +1163,9 @@ export namespace MyNS {
 		 * has the agent state changed?
 		 * Get mimic/agent/{agentNum}/get/state_changed
 		 * @param {number} agentNum Agent to return the indicator
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_state_changed(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/state_changed', {});
@@ -997,6 +1176,7 @@ export namespace MyNS {
 		 * The statistics are returned as 64-bit decimal numbers for the following statistics, total, discarded, error, GET, GETNEXT, SET, GETBULK, trap, GET variables, GETNEXT variables, SET variables, GETBULK variables, INFORM sent, INFORM re-sent, INFORM timed out, INFORM acked, INFORM REPORT
 		 * Get mimic/agent/{agentNum}/get/statistics
 		 * @param {number} agentNum Agent to return the statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Get_statistics(agentNum: number): Observable<Array<number>> {
@@ -1008,7 +1188,9 @@ export namespace MyNS {
 		 * SNMP PDU tracing
 		 * Get mimic/agent/{agentNum}/get/trace
 		 * @param {number} agentNum Agent to return the indicator
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_trace(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/trace', {});
@@ -1019,7 +1201,9 @@ export namespace MyNS {
 		 * Is a bitmask in which with the following bits (from LSB) check for type, length, range, access
 		 * Get mimic/agent/{agentNum}/get/validate
 		 * @param {number} agentNum Agent to return the bitmask integer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_validate(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/get/validate', {});
@@ -1030,6 +1214,7 @@ export namespace MyNS {
 		 * write community string
 		 * Get mimic/agent/{agentNum}/get/write
 		 * @param {number} agentNum Agent to return the SNMP write community string
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Get_write_community(agentNum: number): Observable<string> {
@@ -1041,6 +1226,7 @@ export namespace MyNS {
 		 * Halt the current agent.
 		 * Put mimic/agent/{agentNum}/halt
 		 * @param {number} agentNum Agent to return the primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Halt(agentNum: number): Observable<string> {
@@ -1052,8 +1238,10 @@ export namespace MyNS {
 		 * port defaults to 161 if not specified. mask defaults to the class-based network mask for the address. interface defaults to the default network interface.  If port is set to 0, the system will automatically select a port number. This is useful for client-mode protocols, such as TFTP or TOD. Upon start of an IP alias with a 0 (auto-assigned) port number, its port will change to contain the value of the selected system port.
 		 * Post mimic/agent/{agentNum}/ipalias/add/{IP}/{port}/{mask}/{interface}
 		 * @param {number} agentNum Agent to add the IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} IP IP address , IPv4 or IPv6
 		 * @param {number} port SNMP port , 0 or empty for default
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} mask Netmask, empty for default
 		 * @param {string} _interface Interface. Empty for default
 		 * @return {string} successful operation
@@ -1067,8 +1255,10 @@ export namespace MyNS {
 		 * port defaults to 161 if not specified.
 		 * Delete mimic/agent/{agentNum}/ipalias/delete/{IP}/{port}
 		 * @param {number} agentNum Agent to delete the IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} IP IP address , IPv4 or IPv6
 		 * @param {number} port SNMP port , 0 or empty for default
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Del_ipalias(agentNum: number, IP: string, port: number): Observable<string> {
@@ -1080,6 +1270,7 @@ export namespace MyNS {
 		 * The agent host address (set with mimic agent set host) is not in this list, since it is already accessible separately with mimic agent get host.
 		 * Get mimic/agent/{agentNum}/ipalias/list
 		 * @param {number} agentNum Agent to show the IP alias list
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<IPAlias>} successful operation
 		 */
 		List_ipaliases(agentNum: number): Observable<Array<IPAlias>> {
@@ -1091,8 +1282,10 @@ export namespace MyNS {
 		 * port defaults to 161 if not specified.
 		 * Put mimic/agent/{agentNum}/ipalias/start/{IP}/{port}
 		 * @param {number} agentNum Agent to start the IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} IP IP address , IPv4 or IPv6
 		 * @param {number} port SNMP port , 0 or empty for default
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Start_ipalias(agentNum: number, IP: string, port: number): Observable<string> {
@@ -1104,8 +1297,10 @@ export namespace MyNS {
 		 * port defaults to 161 if not specified.
 		 * Get mimic/agent/{agentNum}/ipalias/status/{IP}/{port}
 		 * @param {number} agentNum Agent to show status of the IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} IP IP address , IPv4 or IPv6
 		 * @param {number} port SNMP port , 0 or empty for default
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Status_ipalias(agentNum: number, IP: string, port: number): Observable<string> {
@@ -1117,8 +1312,10 @@ export namespace MyNS {
 		 * port defaults to 161 if not specified.
 		 * Put mimic/agent/{agentNum}/ipalias/stop/{IP}/{port}
 		 * @param {number} agentNum Agent to stop the IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} IP IP address , IPv4 or IPv6
 		 * @param {number} port SNMP port , 0 or empty for default
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Stop_ipalias(agentNum: number, IP: string, port: number): Observable<string> {
@@ -1130,6 +1327,7 @@ export namespace MyNS {
 		 * Pause the current agent.
 		 * Put mimic/agent/{agentNum}/pause
 		 * @param {number} agentNum Agent to return the primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Pause_now(agentNum: number): Observable<string> {
@@ -1141,6 +1339,7 @@ export namespace MyNS {
 		 * Agent's COAP configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/coap/get/args
 		 * @param {number} agentNum Agent to show the COAP argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_coap_get_args(agentNum: number): Observable<string> {
@@ -1152,6 +1351,7 @@ export namespace MyNS {
 		 * Agent's COAP configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/coap/get/config
 		 * @param {number} agentNum Agent to show the COAP configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigCOAP} successful operation
 		 */
 		Protocol_coap_get_config(agentNum: number): Observable<ConfigCOAP> {
@@ -1163,6 +1363,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/coap/get/statistics
 		 * @param {number} agentNum Agent to show COAP statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_coap_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -1174,6 +1375,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/coap/get/trace
 		 * @param {number} agentNum Agent to show whether COAP tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigCOAP} successful operation
 		 */
 		Protocol_coap_get_trace(agentNum: number): Observable<ConfigCOAP> {
@@ -1185,6 +1387,7 @@ export namespace MyNS {
 		 * Agent's COAP configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/coap/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the COAP configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the COAP configuration
 		 * @param {string} value Value to set the COAP configuration
 		 * @return {string} successful operation
@@ -1198,6 +1401,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/coap/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the COAP tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the COAP tracing
 		 * @return {string} successful operation
 		 */
@@ -1210,6 +1414,7 @@ export namespace MyNS {
 		 * Agent's DHCP configuration particulars
 		 * Get mimic/agent/{agentNum}/protocol/msg/dhcp/get/args
 		 * @param {number} agentNum Agent to show the DHCP argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_dhcp_get_args(agentNum: number): Observable<string> {
@@ -1221,6 +1426,7 @@ export namespace MyNS {
 		 * Agent's DHCP configuration hwaddr,classid,add_options,script
 		 * Get mimic/agent/{agentNum}/protocol/msg/dhcp/get/config
 		 * @param {number} agentNum Agent to show the DHCP configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigDHCP} successful operation
 		 */
 		Protocol_dhcp_get_config(agentNum: number): Observable<ConfigDHCP> {
@@ -1232,6 +1438,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/dhcp/get/statistics
 		 * @param {number} agentNum Agent to show DHCP statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_dhcp_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -1243,6 +1450,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/dhcp/get/trace
 		 * @param {number} agentNum Agent to show whether DHCP tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigDHCP} successful operation
 		 */
 		Protocol_dhcp_get_trace(agentNum: number): Observable<ConfigDHCP> {
@@ -1254,6 +1462,7 @@ export namespace MyNS {
 		 * DHCP-OFFER message parameters
 		 * Get mimic/agent/{agentNum}/protocol/msg/dhcp/params
 		 * @param {number} agentNum Agent to show DHCP DHCP-OFFER message
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_dhcp_params(agentNum: number): Observable<Array<string>> {
@@ -1265,6 +1474,7 @@ export namespace MyNS {
 		 * Agent's DHCP configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/dhcp/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the DHCP configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the DHCP configuration
 		 * @param {string} value Value to set the DHCP configuration
 		 * @return {string} successful operation
@@ -1278,6 +1488,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/dhcp/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the DHCP tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the DHCP tracing
 		 * @return {string} successful operation
 		 */
@@ -1290,6 +1501,7 @@ export namespace MyNS {
 		 * Agent's IPMI configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/ipmi/get/args
 		 * @param {number} agentNum Agent to show the IPMI argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_ipmi_get_args(agentNum: number): Observable<string> {
@@ -1301,6 +1513,7 @@ export namespace MyNS {
 		 * Agent's IPMI configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/ipmi/get/config
 		 * @param {number} agentNum Agent to show the IPMI configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigIPMI} successful operation
 		 */
 		Protocol_ipmi_get_config(agentNum: number): Observable<ConfigIPMI> {
@@ -1312,6 +1525,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/ipmi/get/statistics
 		 * @param {number} agentNum Agent to show IPMI statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_ipmi_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -1323,6 +1537,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/ipmi/get/trace
 		 * @param {number} agentNum Agent to show whether IPMI tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigIPMI} successful operation
 		 */
 		Protocol_ipmi_get_trace(agentNum: number): Observable<ConfigIPMI> {
@@ -1334,6 +1549,7 @@ export namespace MyNS {
 		 * Attribute can be working_authtype ,session_id, outbound_seq, inbound_seq , field_N
 		 * Get mimic/agent/{agentNum}/protocol/msg/ipmi/get/{attr}
 		 * @param {number} agentNum Agent to set the IPMI tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} attr Attribute
 		 * @return {string} successful operation
 		 */
@@ -1346,6 +1562,7 @@ export namespace MyNS {
 		 * Agent's IPMI configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/ipmi/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the IPMI configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the IPMI configuration
 		 * @param {string} value Value to set the IPMI configuration
 		 * @return {string} successful operation
@@ -1359,6 +1576,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/ipmi/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the IPMI tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the IPMI tracing
 		 * @return {string} successful operation
 		 */
@@ -1371,6 +1589,7 @@ export namespace MyNS {
 		 * Attribute can be working_authtype ,session_id, outbound_seq, inbound_seq , field_N
 		 * Put mimic/agent/{agentNum}/protocol/msg/ipmi/set/{attr}/{value}
 		 * @param {number} agentNum Agent to set the IPMI tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} attr Attribute
 		 * @return {string} successful operation
 		 */
@@ -1383,6 +1602,7 @@ export namespace MyNS {
 		 * 0 - stopped, 2 - disconnected, 3 - connecting, 4 - connected, 5 - waiting for CONNACK, 6 - waiting for SUBACK, 7 - CONNACK received, in steady state
 		 * Get mimic/agent/{agentNum}/protocol/msg/mqtt/client/get/protstate
 		 * @param {number} agentNum Agent to show MQTT state
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_mqtt_client_get_protstate(agentNum: number): Observable<Array<number>> {
@@ -1394,6 +1614,7 @@ export namespace MyNS {
 		 * 0 means stopped, 1 means running
 		 * Get mimic/agent/{agentNum}/protocol/msg/mqtt/client/get/state
 		 * @param {number} agentNum Agent to show MQTT state
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_mqtt_client_get_state(agentNum: number): Observable<Array<number>> {
@@ -1405,6 +1626,7 @@ export namespace MyNS {
 		 * 0 or more
 		 * Get mimic/agent/{agentNum}/protocol/msg/mqtt/client/message/card
 		 * @param {number} agentNum Agent to show MQTT message state
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_mqtt_client_message_card(agentNum: number): Observable<Array<number>> {
@@ -1416,7 +1638,9 @@ export namespace MyNS {
 		 * Attribute can be topic, interval, count, sent , pre, post, properties(list of PUBLISH properties), properties.i (i-th PUBLISH property), properties.PROP-NAME (PUBLISH property with name PROP-NAME)
 		 * Get mimic/agent/{agentNum}/protocol/msg/mqtt/client/message/get/{msgNum}/{attr}
 		 * @param {number} agentNum Agent to show MQTT state
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} msgNum Message Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} attr Attribute
 		 * @return {Array<string>} successful operation
 		 */
@@ -1429,7 +1653,9 @@ export namespace MyNS {
 		 * Attribute can not be sent or properties . Use set/{msgNum}/count/{value} together with get/{msgNum}/count to throttle the outgoing MQTT message to the broker.
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/message/set/{msgNum}/{attr}/{value}
 		 * @param {number} agentNum Agent to show MQTT state
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} msgNum Message Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} attr Attribute
 		 * @param {string} value Value
 		 * @return {Array<string>} successful operation
@@ -1443,7 +1669,9 @@ export namespace MyNS {
 		 * Restarts a subscription
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/resubscribe/{subNum}
 		 * @param {number} agentNum Agent to change MQTT state
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subNum Subscription Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_mqtt_client_resubscribe(agentNum: number, subNum: number): Observable<string> {
@@ -1455,6 +1683,7 @@ export namespace MyNS {
 		 * Abort a connection
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/runtime/abort
 		 * @param {number} agentNum Agent to set MQTT behavior
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_mqtt_client_runtime_abort(agentNum: number): Observable<Array<string>> {
@@ -1466,6 +1695,7 @@ export namespace MyNS {
 		 * Start a connection
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/runtime/connect
 		 * @param {number} agentNum Agent to set MQTT behavior
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_mqtt_client_runtime_connect(agentNum: number): Observable<Array<string>> {
@@ -1477,6 +1707,7 @@ export namespace MyNS {
 		 * Graceful disconnect
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/runtime/disconnect
 		 * @param {number} agentNum Agent to set MQTT behavior
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_mqtt_client_runtime_disconnect(agentNum: number): Observable<Array<string>> {
@@ -1488,6 +1719,7 @@ export namespace MyNS {
 		 * Broker IP address
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/broker/{brokerAddr}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} brokerAddr Broker address
 		 * @return {Array<number>} successful operation
 		 */
@@ -1500,7 +1732,9 @@ export namespace MyNS {
 		 * 1 for clean session , 0 not
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/cleansession/{cleanOrNot}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} cleanOrNot Clean session
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_mqtt_client_set_cleansession(agentNum: number, cleanOrNot: number): Observable<Array<number>> {
@@ -1512,6 +1746,7 @@ export namespace MyNS {
 		 * MQTT client ID
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/clientid/{clientID}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} clientID Client ID
 		 * @return {Array<number>} successful operation
 		 */
@@ -1524,7 +1759,9 @@ export namespace MyNS {
 		 * Keep alive the TCP connection
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/keepalive/{aliveTime}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} aliveTime period to send keepalive messages
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_mqtt_client_set_keepalive(agentNum: number, aliveTime: number): Observable<Array<number>> {
@@ -1536,6 +1773,7 @@ export namespace MyNS {
 		 * Action to take when MQTT session is disconnected
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/on_disconnect/{action}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} action Action to take
 		 * @return {Array<number>} successful operation
 		 */
@@ -1548,6 +1786,7 @@ export namespace MyNS {
 		 * Client password
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/password/{password}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} password Password
 		 * @return {Array<number>} successful operation
 		 */
@@ -1560,6 +1799,7 @@ export namespace MyNS {
 		 * target TCP port
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/port/{port}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} port TCP port
 		 * @return {Array<number>} successful operation
 		 */
@@ -1572,6 +1812,7 @@ export namespace MyNS {
 		 * Client username
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/username/{username}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} username User name
 		 * @return {Array<number>} successful operation
 		 */
@@ -1584,6 +1825,7 @@ export namespace MyNS {
 		 * Will message
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willmsg/{msg}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} msg Will message
 		 * @return {Array<number>} successful operation
 		 */
@@ -1596,6 +1838,7 @@ export namespace MyNS {
 		 * QOS field
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willqos/{qos}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} qos Quality of service field
 		 * @return {Array<number>} successful operation
 		 */
@@ -1608,6 +1851,7 @@ export namespace MyNS {
 		 * Retaining will
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willretain/{retain}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} retain Retaining will
 		 * @return {Array<number>} successful operation
 		 */
@@ -1620,6 +1864,7 @@ export namespace MyNS {
 		 * Will topic for the will message
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/set/willtopic/{topic}
 		 * @param {number} agentNum Agent to set MQTT config
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} topic topic
 		 * @return {Array<number>} successful operation
 		 */
@@ -1632,6 +1877,7 @@ export namespace MyNS {
 		 * 0 or more
 		 * Get mimic/agent/{agentNum}/protocol/msg/mqtt/client/subscribe/card
 		 * @param {number} agentNum Agent to show MQTT subscription state
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_mqtt_client_subscribe_card(agentNum: number): Observable<Array<number>> {
@@ -1643,7 +1889,9 @@ export namespace MyNS {
 		 * Attribute can be topic, properties(list of SUBSCRIBE properties), properties.i (i-th SUBSCRIBE property), properties.PROP-NAME (SUBSCRIBE property with name PROP-NAME)
 		 * Get mimic/agent/{agentNum}/protocol/msg/mqtt/client/subscribe/get/{subNum}/{attr}
 		 * @param {number} agentNum Agent to show MQTT state
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subNum Subscribe Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} attr Attribute
 		 * @return {Array<string>} successful operation
 		 */
@@ -1656,7 +1904,9 @@ export namespace MyNS {
 		 * Attribute can not be properties .
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/subscribe/set/{subNum}/{attr}/{value}
 		 * @param {number} agentNum Agent to show MQTT state
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subNum Subscribe Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} attr Attribute
 		 * @param {string} value Value
 		 * @return {Array<string>} successful operation
@@ -1670,7 +1920,9 @@ export namespace MyNS {
 		 * Stops a subscription
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/client/unsubscribe/{subNum}
 		 * @param {number} agentNum Agent to change MQTT state
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} subNum Subscription Number
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_mqtt_client_unsubscribe(agentNum: number, subNum: number): Observable<string> {
@@ -1682,6 +1934,7 @@ export namespace MyNS {
 		 * Agent's MQTT configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/mqtt/get/args
 		 * @param {number} agentNum Agent to show the MQTT argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_mqtt_get_args(agentNum: number): Observable<string> {
@@ -1693,6 +1946,7 @@ export namespace MyNS {
 		 * Agent's MQTT configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/mqtt/get/config
 		 * @param {number} agentNum Agent to show the MQTT configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigMQTT} successful operation
 		 */
 		Protocol_mqtt_get_config(agentNum: number): Observable<ConfigMQTT> {
@@ -1704,6 +1958,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/mqtt/get/statistics
 		 * @param {number} agentNum Agent to show MQTT statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_mqtt_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -1715,6 +1970,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/mqtt/get/trace
 		 * @param {number} agentNum Agent to show whether MQTT tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigMQTT} successful operation
 		 */
 		Protocol_mqtt_get_trace(agentNum: number): Observable<ConfigMQTT> {
@@ -1726,6 +1982,7 @@ export namespace MyNS {
 		 * Agent's MQTT configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the MQTT configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the MQTT configuration
 		 * @param {string} value Value to set the MQTT configuration
 		 * @return {string} successful operation
@@ -1739,6 +1996,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/mqtt/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the MQTT tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the MQTT tracing
 		 * @return {string} successful operation
 		 */
@@ -1751,7 +2009,9 @@ export namespace MyNS {
 		 * Interval in msec .
 		 * Put mimic/agent/{agentNum}/protocol/msg/netflow/flow/change/dfs_interval/{interval}
 		 * @param {number} agentNum Agent to set the NETFLOW
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} interval NETFLOW export interval
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_netflow_change_dfs(agentNum: number, interval: number): Observable<string> {
@@ -1763,7 +2023,9 @@ export namespace MyNS {
 		 * Interval in msec .
 		 * Put mimic/agent/{agentNum}/protocol/msg/netflow/flow/change/tfs_interval/{interval}
 		 * @param {number} agentNum Agent to set the NETFLOW
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} interval NETFLOW export interval
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_netflow_change_tfs(agentNum: number, interval: number): Observable<string> {
@@ -1775,6 +2037,9 @@ export namespace MyNS {
 		 * Change attributes
 		 * Put mimic/agent/{agentNum}/protocol/msg/netflow/flow/change/{flowset_uid}/{field_num}/{attr}/{value}
 		 * @param {number} agentNum Agent to set the NETFLOW
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} flowset_uid Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} field_num Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_netflow_change_attr(agentNum: number, flowset_uid: number, field_num: number, attr: string, value: string): Observable<string> {
@@ -1786,6 +2051,7 @@ export namespace MyNS {
 		 * Show list of NETFLOW exports
 		 * Get mimic/agent/{agentNum}/protocol/msg/netflow/flow/list
 		 * @param {number} agentNum Agent to show NETFLOW statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_netflow_list(agentNum: number): Observable<Array<string>> {
@@ -1797,6 +2063,7 @@ export namespace MyNS {
 		 * Agent's NETFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/netflow/get/args
 		 * @param {number} agentNum Agent to show the NETFLOW argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_netflow_get_args(agentNum: number): Observable<string> {
@@ -1808,6 +2075,7 @@ export namespace MyNS {
 		 * Agent's NETFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/netflow/get/config
 		 * @param {number} agentNum Agent to show the NETFLOW configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigNETFLOW} successful operation
 		 */
 		Protocol_netflow_get_config(agentNum: number): Observable<ConfigNETFLOW> {
@@ -1819,6 +2087,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/netflow/get/statistics
 		 * @param {number} agentNum Agent to show NETFLOW statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_netflow_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -1830,6 +2099,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/netflow/get/trace
 		 * @param {number} agentNum Agent to show whether NETFLOW tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigNETFLOW} successful operation
 		 */
 		Protocol_netflow_get_trace(agentNum: number): Observable<ConfigNETFLOW> {
@@ -1841,6 +2111,7 @@ export namespace MyNS {
 		 * Halt NETFLOW traffic
 		 * Put mimic/agent/{agentNum}/protocol/msg/netflow/halt
 		 * @param {number} agentNum Agent to set the NETFLOW
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_netflow_halt(agentNum: number): Observable<string> {
@@ -1852,6 +2123,7 @@ export namespace MyNS {
 		 * Reload NETFLOW configuration before resuming traffic
 		 * Put mimic/agent/{agentNum}/protocol/msg/netflow/reload
 		 * @param {number} agentNum Agent to set the NETFLOW
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_netflow_reload(agentNum: number): Observable<string> {
@@ -1863,6 +2135,7 @@ export namespace MyNS {
 		 * Resuming traffic
 		 * Put mimic/agent/{agentNum}/protocol/msg/netflow/resume
 		 * @param {number} agentNum Agent to set the NETFLOW
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_netflow_resume(agentNum: number): Observable<string> {
@@ -1874,6 +2147,7 @@ export namespace MyNS {
 		 * Allow changing collector without stopping agent
 		 * Put mimic/agent/{agentNum}/protocol/msg/netflow/set/collector/{collectorIP}
 		 * @param {number} agentNum Agent to set the NETFLOW
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} collectorIP file name to load config
 		 * @return {string} successful operation
 		 */
@@ -1886,6 +2160,7 @@ export namespace MyNS {
 		 * Agent's NETFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/netflow/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the NETFLOW configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the NETFLOW configuration
 		 * @param {string} value Value to set the NETFLOW configuration
 		 * @return {string} successful operation
@@ -1899,6 +2174,7 @@ export namespace MyNS {
 		 * Allow reloading the configuration file for an agent without stopping agent
 		 * Put mimic/agent/{agentNum}/protocol/msg/netflow/set/filename/{fileName}
 		 * @param {number} agentNum Agent to set the NETFLOW
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} fileName file name to load config
 		 * @return {string} successful operation
 		 */
@@ -1911,6 +2187,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/netflow/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the NETFLOW tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the NETFLOW tracing
 		 * @return {string} successful operation
 		 */
@@ -1923,6 +2200,7 @@ export namespace MyNS {
 		 * Agent's PROXY configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/proxy/get/args
 		 * @param {number} agentNum Agent to show the PROXY argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_proxy_get_args(agentNum: number): Observable<string> {
@@ -1934,6 +2212,7 @@ export namespace MyNS {
 		 * Agent's PROXY configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/proxy/get/config
 		 * @param {number} agentNum Agent to show the PROXY configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigPROXY} successful operation
 		 */
 		Protocol_proxy_get_config(agentNum: number): Observable<ConfigPROXY> {
@@ -1945,6 +2224,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/proxy/get/statistics
 		 * @param {number} agentNum Agent to show PROXY statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_proxy_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -1956,6 +2236,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/proxy/get/trace
 		 * @param {number} agentNum Agent to show whether PROXY tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigPROXY} successful operation
 		 */
 		Protocol_proxy_get_trace(agentNum: number): Observable<ConfigPROXY> {
@@ -1967,6 +2248,9 @@ export namespace MyNS {
 		 * Additional proxy target
 		 * Post mimic/agent/{agentNum}/protocol/msg/proxy/port/add/{port}/{target}/{targetPort}
 		 * @param {number} agentNum Agent to manipulate PROXY target
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} targetPort Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_proxy_port_add(agentNum: number, port: number, target: string, targetPort: number): Observable<string> {
@@ -1978,6 +2262,8 @@ export namespace MyNS {
 		 * Check individual target
 		 * Get mimic/agent/{agentNum}/protocol/msg/proxy/port/isStarted/{port}
 		 * @param {number} agentNum Agent to manipulate PROXY target
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_proxy_port_isstarted(agentNum: number, port: number): Observable<string> {
@@ -1988,6 +2274,7 @@ export namespace MyNS {
 		 * List all proxy targets
 		 * Get mimic/agent/{agentNum}/protocol/msg/proxy/port/list
 		 * @param {number} agentNum Agent to manipulate PROXY target
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_proxy_port_list(agentNum: number): Observable<Array<number>> {
@@ -1999,6 +2286,8 @@ export namespace MyNS {
 		 * Remove proxy target
 		 * Delete mimic/agent/{agentNum}/protocol/msg/proxy/port/remove/{port}
 		 * @param {number} agentNum Agent to manipulate PROXY target
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_proxy_port_remove(agentNum: number, port: number): Observable<string> {
@@ -2010,6 +2299,8 @@ export namespace MyNS {
 		 * Start additional target
 		 * Put mimic/agent/{agentNum}/protocol/msg/proxy/port/start/{port}
 		 * @param {number} agentNum Agent to manipulate PROXY target
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_proxy_port_start(agentNum: number, port: number): Observable<string> {
@@ -2021,6 +2312,8 @@ export namespace MyNS {
 		 * Stop additional target
 		 * Put mimic/agent/{agentNum}/protocol/msg/proxy/port/stop/{port}
 		 * @param {number} agentNum Agent to manipulate PROXY target
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_proxy_port_stop(agentNum: number, port: number): Observable<string> {
@@ -2032,6 +2325,7 @@ export namespace MyNS {
 		 * Agent's PROXY configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/proxy/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the PROXY configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the PROXY configuration
 		 * @param {string} value Value to set the PROXY configuration
 		 * @return {string} successful operation
@@ -2045,6 +2339,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/proxy/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the PROXY tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the PROXY tracing
 		 * @return {string} successful operation
 		 */
@@ -2057,6 +2352,7 @@ export namespace MyNS {
 		 * Agent's SFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/sflow/get/args
 		 * @param {number} agentNum Agent to show the SFLOW argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_sflow_get_args(agentNum: number): Observable<string> {
@@ -2068,6 +2364,7 @@ export namespace MyNS {
 		 * Agent's SFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/sflow/get/config
 		 * @param {number} agentNum Agent to show the SFLOW configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigSFLOW} successful operation
 		 */
 		Protocol_sflow_get_config(agentNum: number): Observable<ConfigSFLOW> {
@@ -2079,6 +2376,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/sflow/get/statistics
 		 * @param {number} agentNum Agent to show SFLOW statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_sflow_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -2090,6 +2388,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/sflow/get/trace
 		 * @param {number} agentNum Agent to show whether SFLOW tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigSFLOW} successful operation
 		 */
 		Protocol_sflow_get_trace(agentNum: number): Observable<ConfigSFLOW> {
@@ -2101,6 +2400,7 @@ export namespace MyNS {
 		 * Halt SFLOW traffic
 		 * Put mimic/agent/{agentNum}/protocol/msg/sflow/halt
 		 * @param {number} agentNum Agent to set the SFLOW
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_sflow_halt(agentNum: number): Observable<string> {
@@ -2112,6 +2412,7 @@ export namespace MyNS {
 		 * Reload SFLOW configuration before resuming traffic
 		 * Put mimic/agent/{agentNum}/protocol/msg/sflow/reload
 		 * @param {number} agentNum Agent to set the SFLOW
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_sflow_reload(agentNum: number): Observable<string> {
@@ -2123,6 +2424,7 @@ export namespace MyNS {
 		 * Resuming traffic
 		 * Put mimic/agent/{agentNum}/protocol/msg/sflow/resume
 		 * @param {number} agentNum Agent to set the SFLOW
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_sflow_resume(agentNum: number): Observable<string> {
@@ -2134,6 +2436,7 @@ export namespace MyNS {
 		 * Agent's SFLOW configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/sflow/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the SFLOW configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the SFLOW configuration
 		 * @param {string} value Value to set the SFLOW configuration
 		 * @return {string} successful operation
@@ -2147,6 +2450,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/sflow/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the SFLOW tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the SFLOW tracing
 		 * @return {string} successful operation
 		 */
@@ -2159,6 +2463,7 @@ export namespace MyNS {
 		 * Agent's SNMPTCP configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmptcp/get/args
 		 * @param {number} agentNum Agent to show the SNMPTCP argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_snmptcp_get_args(agentNum: number): Observable<string> {
@@ -2170,6 +2475,7 @@ export namespace MyNS {
 		 * Agent's SNMPTCP configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmptcp/get/config
 		 * @param {number} agentNum Agent to show the SNMPTCP configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigSNMPTCP} successful operation
 		 */
 		Protocol_snmptcp_get_config(agentNum: number): Observable<ConfigSNMPTCP> {
@@ -2181,6 +2487,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmptcp/get/statistics
 		 * @param {number} agentNum Agent to show SNMPTCP statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_snmptcp_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -2192,6 +2499,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmptcp/get/trace
 		 * @param {number} agentNum Agent to show whether SNMPTCP tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigSNMPTCP} successful operation
 		 */
 		Protocol_snmptcp_get_trace(agentNum: number): Observable<ConfigSNMPTCP> {
@@ -2203,6 +2511,8 @@ export namespace MyNS {
 		 * By default, the MIMIC SNMPTCP server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Put mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/disable/{ipaddress}/{port}
 		 * @param {number} agentNum Agent to manipulate SNMPTCP IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_snmptcp_ipalias_disable(agentNum: number, ipaddress: string, port: number): Observable<string> {
@@ -2214,6 +2524,8 @@ export namespace MyNS {
 		 * By default, the MIMIC SNMPTCP server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Put mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/enable/{ipaddress}/{port}
 		 * @param {number} agentNum Agent to manipulate SNMPTCP IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_snmptcp_ipalias_enable(agentNum: number, ipaddress: string, port: number): Observable<string> {
@@ -2225,6 +2537,8 @@ export namespace MyNS {
 		 * By default, the MIMIC SNMPTCP server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/isenabled/{ipaddress}/{port}
 		 * @param {number} agentNum Agent to manipulate SNMPTCP IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_snmptcp_ipalias_isenabled(agentNum: number, ipaddress: string, port: number): Observable<string> {
@@ -2236,6 +2550,7 @@ export namespace MyNS {
 		 * By default, the MIMIC SNMPTCP server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmptcp/ipalias/list
 		 * @param {number} agentNum Agent to manipulate SNMPTCP IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<IPAlias>} successful operation
 		 */
 		Protocol_snmptcp_ipalias_list(agentNum: number): Observable<Array<IPAlias>> {
@@ -2247,6 +2562,7 @@ export namespace MyNS {
 		 * Agent's SNMPTCP configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/snmptcp/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the SNMPTCP configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the SNMPTCP configuration
 		 * @param {string} value Value to set the SNMPTCP configuration
 		 * @return {string} successful operation
@@ -2260,6 +2576,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/snmptcp/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the SNMPTCP tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the SNMPTCP tracing
 		 * @return {string} successful operation
 		 */
@@ -2272,6 +2589,7 @@ export namespace MyNS {
 		 * Adds a new access entry with the specified parameters.
 		 * Post mimic/agent/{agentNum}/protocol/msg/snmpv3/access/add/{groupName}/{prefix}/{securityModel}/{securityLevel}/{contextMatch}/{readView}/{writeView}/{notifyView}
 		 * @param {number} agentNum Agent to add the SNMPv3 access
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} groupName SNMPv3 access name
 		 * @param {string} prefix SNMPv3 prefix
 		 * @param {string} securityModel SNMPv3 access security model
@@ -2291,6 +2609,7 @@ export namespace MyNS {
 		 * Clears all access entries.
 		 * Delete mimic/agent/{agentNum}/protocol/msg/snmpv3/access/clear
 		 * @param {number} agentNum Agent to add the SNMPv3 access
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_snmpv3_access_clear(agentNum: number): Observable<string> {
@@ -2302,6 +2621,7 @@ export namespace MyNS {
 		 * Deletes the specified access entry.
 		 * Delete mimic/agent/{agentNum}/protocol/msg/snmpv3/access/del/{accessName}
 		 * @param {number} agentNum Agent to add the SNMPv3 access
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} accessName SNMPv3 access name
 		 * @return {string} successful operation
 		 */
@@ -2314,6 +2634,7 @@ export namespace MyNS {
 		 * Returns the current acccess entries as an array of strings.
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmpv3/access/list
 		 * @param {number} agentNum Agent to show the SNMPv3 configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_snmpv3_access_list(agentNum: number): Observable<Array<string>> {
@@ -2325,6 +2646,7 @@ export namespace MyNS {
 		 * Returns the SNMPv3 configuration.
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmpv3/get/config
 		 * @param {number} agentNum Agent to show the SNMPv3 configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigSNMPv3} successful operation
 		 */
 		Protocol_snmpv3_get_config(agentNum: number): Observable<ConfigSNMPv3> {
@@ -2336,6 +2658,7 @@ export namespace MyNS {
 		 * Retrieves the contextEngineID for the agent instance.
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmpv3/get/context_engineid
 		 * @param {number} agentNum Agent to show the SNMPv3 engine
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_snmpv3_get_context_engineid(agentNum: number): Observable<string> {
@@ -2347,7 +2670,9 @@ export namespace MyNS {
 		 * Retrieves the number of times the agent has been restarted.
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmpv3/get/engineboots
 		 * @param {number} agentNum Agent to show the SNMPv3 engine
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Protocol_snmpv3_get_engineboots(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/protocol/msg/snmpv3/get/engineboots', {});
@@ -2358,6 +2683,7 @@ export namespace MyNS {
 		 * For stopped agents, this operation is meaningless. If not explicitly set by the user then the autogenerated engineID is returned. The format of the engineID is in the familiar hex format, eg. \x01 23 45 67 89...
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmpv3/get/engineid
 		 * @param {number} agentNum Agent to show the SNMPv3 configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_snmpv3_get_engineid(agentNum: number): Observable<string> {
@@ -2369,7 +2695,9 @@ export namespace MyNS {
 		 * Retrieves the time in seconds for which the agent has been running.
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmpv3/get/enginetime
 		 * @param {number} agentNum Agent to show the SNMPv3 engine
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Protocol_snmpv3_get_enginetime(agentNum: number): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/agent/' + agentNum + '/protocol/msg/snmpv3/get/enginetime', {});
@@ -2380,6 +2708,7 @@ export namespace MyNS {
 		 * Adds a new group entry with the specified parameters.
 		 * Post mimic/agent/{agentNum}/protocol/msg/snmpv3/group/add/{groupName}/{securityModel}/{securityName}
 		 * @param {number} agentNum Agent to add the SNMPv3 group
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} groupName SNMPv3 group name
 		 * @param {string} securityModel SNMPv3 group security model
 		 * @param {string} securityName SNMPv3 group security name
@@ -2394,6 +2723,7 @@ export namespace MyNS {
 		 * Clears all group entries.
 		 * Delete mimic/agent/{agentNum}/protocol/msg/snmpv3/group/clear
 		 * @param {number} agentNum Agent to add the SNMPv3 group
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_snmpv3_group_clear(agentNum: number): Observable<string> {
@@ -2405,6 +2735,7 @@ export namespace MyNS {
 		 * Deletes the specified group entry.
 		 * Delete mimic/agent/{agentNum}/protocol/msg/snmpv3/group/del/{groupName}
 		 * @param {number} agentNum Agent to add the SNMPv3 group
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} groupName SNMPv3 group name
 		 * @return {string} successful operation
 		 */
@@ -2417,6 +2748,7 @@ export namespace MyNS {
 		 * Returns the current group entries as an array of strings.
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmpv3/group/list
 		 * @param {number} agentNum Agent to show the SNMPv3 configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_snmpv3_group_list(agentNum: number): Observable<Array<string>> {
@@ -2428,6 +2760,7 @@ export namespace MyNS {
 		 * Changes the SNMPv3 configuration.
 		 * Put mimic/agent/{agentNum}/protocol/msg/snmpv3/set/config/{parameter}/{value}
 		 * @param {number} agentNum Agent to show the SNMPv3 configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} parameter SNMPv3 configuration parameter
 		 * @param {string} value SNMPv3 parameter value
 		 * @return {string} successful operation
@@ -2441,6 +2774,7 @@ export namespace MyNS {
 		 * Adds a new user entry with the specified parameters.
 		 * Post mimic/agent/{agentNum}/protocol/msg/snmpv3/user/add/{userName}/{securityName}/{authProtocol}/{authKey}/{privProtocol}/{privKey}
 		 * @param {number} agentNum Agent to add the SNMPv3 user
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userName SNMPv3 user name
 		 * @param {string} securityName SNMPv3 user security name
 		 * @param {string} authProtocol SNMPv3 user authentication protocol
@@ -2458,6 +2792,7 @@ export namespace MyNS {
 		 * Clears all user entries.
 		 * Delete mimic/agent/{agentNum}/protocol/msg/snmpv3/user/clear
 		 * @param {number} agentNum Agent to add the SNMPv3 user
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_snmpv3_user_clear(agentNum: number): Observable<string> {
@@ -2469,6 +2804,7 @@ export namespace MyNS {
 		 * Deletes the specified user entry.
 		 * Delete mimic/agent/{agentNum}/protocol/msg/snmpv3/user/del/{userName}
 		 * @param {number} agentNum Agent to add the SNMPv3 user
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userName SNMPv3 user name
 		 * @return {string} successful operation
 		 */
@@ -2481,6 +2817,7 @@ export namespace MyNS {
 		 * Returns the current user entries as a Tcl list.
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmpv3/user/list
 		 * @param {number} agentNum Agent to show the SNMPv3 configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_snmpv3_user_list(agentNum: number): Observable<Array<string>> {
@@ -2492,6 +2829,7 @@ export namespace MyNS {
 		 * Saves current user settings in the currently loaded USM config file.
 		 * Put mimic/agent/{agentNum}/protocol/msg/snmpv3/usm/save
 		 * @param {number} agentNum Agent to show the SNMPv3 configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_snmpv3_usm_save(agentNum: number): Observable<Array<string>> {
@@ -2503,6 +2841,7 @@ export namespace MyNS {
 		 * Saves current user settings in the specified USM config file.
 		 * Put mimic/agent/{agentNum}/protocol/msg/snmpv3/usm/saveas/{filename}
 		 * @param {number} agentNum Agent to show the SNMPv3 configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filename Filename to save
 		 * @return {Array<string>} successful operation
 		 */
@@ -2515,6 +2854,7 @@ export namespace MyNS {
 		 * Saves current group, access, view settings in the currently loaded VACM config file.
 		 * Put mimic/agent/{agentNum}/protocol/msg/snmpv3/vacm/save
 		 * @param {number} agentNum Agent to show the SNMPv3 configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_snmpv3_vacm_save(agentNum: number): Observable<Array<string>> {
@@ -2526,6 +2866,7 @@ export namespace MyNS {
 		 * Saves current group, access, view settings in the specified VACM config file.
 		 * Put mimic/agent/{agentNum}/protocol/msg/snmpv3/vacm/saveas/{filename}
 		 * @param {number} agentNum Agent to show the SNMPv3 configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filename Filename to save
 		 * @return {Array<string>} successful operation
 		 */
@@ -2538,6 +2879,7 @@ export namespace MyNS {
 		 * Adds a new view entry with the specified parameters.
 		 * Post mimic/agent/{agentNum}/protocol/msg/snmpv3/view/add/{viewName}/{viewType}/{subtree}/{mask}
 		 * @param {number} agentNum Agent to add the SNMPv3 view
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} viewName SNMPv3 view name
 		 * @param {string} viewType SNMPv3 view type
 		 * @param {string} subtree SNMPv3 view subtree
@@ -2553,6 +2895,7 @@ export namespace MyNS {
 		 * Clears all view entries.
 		 * Delete mimic/agent/{agentNum}/protocol/msg/snmpv3/view/clear
 		 * @param {number} agentNum Agent to add the SNMPv3 view
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_snmpv3_view_clear(agentNum: number): Observable<string> {
@@ -2564,6 +2907,7 @@ export namespace MyNS {
 		 * Deletes the specified view entry.
 		 * Delete mimic/agent/{agentNum}/protocol/msg/snmpv3/view/del/{viewName}
 		 * @param {number} agentNum Agent to add the SNMPv3 view
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} viewName SNMPv3 view name
 		 * @return {string} successful operation
 		 */
@@ -2576,6 +2920,7 @@ export namespace MyNS {
 		 * Returns the current view entries as an array of strings.
 		 * Get mimic/agent/{agentNum}/protocol/msg/snmpv3/view/list
 		 * @param {number} agentNum Agent to show the SNMPv3 configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_snmpv3_view_list(agentNum: number): Observable<Array<string>> {
@@ -2587,6 +2932,7 @@ export namespace MyNS {
 		 * Agent's SSH configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/ssh/get/args
 		 * @param {number} agentNum Agent to show the SSH argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_ssh_get_args(agentNum: number): Observable<string> {
@@ -2598,6 +2944,7 @@ export namespace MyNS {
 		 * Agent's SSH configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/ssh/get/config
 		 * @param {number} agentNum Agent to show the SSH configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigSSH} successful operation
 		 */
 		Protocol_ssh_get_config(agentNum: number): Observable<ConfigSSH> {
@@ -2609,6 +2956,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/ssh/get/statistics
 		 * @param {number} agentNum Agent to show SSH statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_ssh_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -2620,6 +2968,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/ssh/get/trace
 		 * @param {number} agentNum Agent to show whether SSH tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigSSH} successful operation
 		 */
 		Protocol_ssh_get_trace(agentNum: number): Observable<ConfigSSH> {
@@ -2631,6 +2980,8 @@ export namespace MyNS {
 		 * By default, the MIMIC SSH server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Put mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/disable/{ipaddress}/{port}
 		 * @param {number} agentNum Agent to manipulate SSH IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_ssh_ipalias_disable(agentNum: number, ipaddress: string, port: number): Observable<string> {
@@ -2642,6 +2993,8 @@ export namespace MyNS {
 		 * By default, the MIMIC SSH server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Put mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/enable/{ipaddress}/{port}
 		 * @param {number} agentNum Agent to manipulate SSH IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_ssh_ipalias_enable(agentNum: number, ipaddress: string, port: number): Observable<string> {
@@ -2653,6 +3006,8 @@ export namespace MyNS {
 		 * By default, the MIMIC SSH server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Get mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/isenabled/{ipaddress}/{port}
 		 * @param {number} agentNum Agent to manipulate SSH IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_ssh_ipalias_isenabled(agentNum: number, ipaddress: string, port: number): Observable<string> {
@@ -2664,6 +3019,7 @@ export namespace MyNS {
 		 * By default, the MIMIC SSH server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Get mimic/agent/{agentNum}/protocol/msg/ssh/ipalias/list
 		 * @param {number} agentNum Agent to manipulate SSH IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<IPAlias>} successful operation
 		 */
 		Protocol_ssh_ipalias_list(agentNum: number): Observable<Array<IPAlias>> {
@@ -2675,6 +3031,7 @@ export namespace MyNS {
 		 * Agent's SSH configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/ssh/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the SSH configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the SSH configuration
 		 * @param {string} value Value to set the SSH configuration
 		 * @return {string} successful operation
@@ -2688,6 +3045,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/ssh/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the SSH tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the SSH tracing
 		 * @return {string} successful operation
 		 */
@@ -2700,6 +3058,7 @@ export namespace MyNS {
 		 * Agent's SYSLOG configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/syslog/get/args
 		 * @param {number} agentNum Agent to show the SYSLOG argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_syslog_get_args(agentNum: number): Observable<string> {
@@ -2711,6 +3070,7 @@ export namespace MyNS {
 		 * Agent's SYSLOG configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/syslog/get/config
 		 * @param {number} agentNum Agent to show the SYSLOG configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigSYSLOG} successful operation
 		 */
 		Protocol_syslog_get_config(agentNum: number): Observable<ConfigSYSLOG> {
@@ -2722,6 +3082,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/syslog/get/statistics
 		 * @param {number} agentNum Agent to show SYSLOG statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_syslog_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -2733,6 +3094,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/syslog/get/trace
 		 * @param {number} agentNum Agent to show whether SYSLOG tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigSYSLOG} successful operation
 		 */
 		Protocol_syslog_get_trace(agentNum: number): Observable<ConfigSYSLOG> {
@@ -2744,6 +3106,7 @@ export namespace MyNS {
 		 * Attribute can be server , sequence , separator , hostname , timestamp
 		 * Get mimic/agent/{agentNum}/protocol/msg/syslog/get/{attr}
 		 * @param {number} agentNum Agent to set the SYSLOG tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} attr Attribute
 		 * @return {string} successful operation
 		 */
@@ -2756,7 +3119,9 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Post mimic/agent/{agentNum}/protocol/msg/syslog/send/{pri}
 		 * @param {number} agentNum Agent to set the SYSLOG tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pri Message Priority
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_syslog_send(agentNum: number, pri: number, requestBody: SyslogMsg): Observable<string> {
@@ -2768,6 +3133,7 @@ export namespace MyNS {
 		 * Agent's SYSLOG configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/syslog/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the SYSLOG configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the SYSLOG configuration
 		 * @param {string} value Value to set the SYSLOG configuration
 		 * @return {string} successful operation
@@ -2781,6 +3147,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/syslog/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the SYSLOG tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the SYSLOG tracing
 		 * @return {string} successful operation
 		 */
@@ -2793,6 +3160,7 @@ export namespace MyNS {
 		 * Attribute can be server , sequence , separator , hostname , timestamp
 		 * Put mimic/agent/{agentNum}/protocol/msg/syslog/set/{attr}/{value}
 		 * @param {number} agentNum Agent to set the SYSLOG tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} attr Attribute
 		 * @return {string} successful operation
 		 */
@@ -2805,6 +3173,8 @@ export namespace MyNS {
 		 * Logon change allows (hidden) commands for a different access mode to run.
 		 * Put mimic/agent/{agentNum}/protocol/msg/telnet/connection/logon/{connectionID}/{user}/{password}
 		 * @param {number} agentNum Agent to manipulate TELNET connection
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} connectionID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_telnet_connection_logon(agentNum: number, connectionID: number, user: string, password: string): Observable<Array<string>> {
@@ -2816,6 +3186,8 @@ export namespace MyNS {
 		 * Equivalent of the command typed in by the user.
 		 * Put mimic/agent/{agentNum}/protocol/msg/telnet/connection/request/{connectionID}/{command}
 		 * @param {number} agentNum Agent to manipulate TELNET connection
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} connectionID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_telnet_connection_request(agentNum: number, connectionID: number, command: string): Observable<Array<string>> {
@@ -2827,6 +3199,8 @@ export namespace MyNS {
 		 * Signal name is either connect or idle
 		 * Put mimic/agent/{agentNum}/protocol/msg/telnet/connection/signal/{connectionID}/{signalName}
 		 * @param {number} agentNum Agent to manipulate TELNET connection
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} connectionID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_telnet_connection_signal(agentNum: number, connectionID: number, signalName: string): Observable<Array<string>> {
@@ -2838,6 +3212,7 @@ export namespace MyNS {
 		 * Agent's TELNET configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/get/args
 		 * @param {number} agentNum Agent to show the TELNET argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_telnet_get_args(agentNum: number): Observable<string> {
@@ -2849,6 +3224,7 @@ export namespace MyNS {
 		 * Agent's TELNET configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/get/config
 		 * @param {number} agentNum Agent to show the TELNET configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigTELNET} successful operation
 		 */
 		Protocol_telnet_get_config(agentNum: number): Observable<ConfigTELNET> {
@@ -2860,6 +3236,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/get/statistics
 		 * @param {number} agentNum Agent to show TELNET statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_telnet_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -2871,6 +3248,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/get/trace
 		 * @param {number} agentNum Agent to show whether TELNET tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigTELNET} successful operation
 		 */
 		Protocol_telnet_get_trace(agentNum: number): Observable<ConfigTELNET> {
@@ -2882,6 +3260,8 @@ export namespace MyNS {
 		 * By default, the MIMIC TELNET server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Put mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/disable/{ipaddress}/{port}
 		 * @param {number} agentNum Agent to manipulate TELNET IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_telnet_ipalias_disable(agentNum: number, ipaddress: string, port: number): Observable<string> {
@@ -2893,6 +3273,8 @@ export namespace MyNS {
 		 * By default, the MIMIC TELNET server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Put mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/enable/{ipaddress}/{port}
 		 * @param {number} agentNum Agent to manipulate TELNET IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_telnet_ipalias_enable(agentNum: number, ipaddress: string, port: number): Observable<string> {
@@ -2904,6 +3286,8 @@ export namespace MyNS {
 		 * By default, the MIMIC TELNET server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/isenabled/{ipaddress}/{port}
 		 * @param {number} agentNum Agent to manipulate TELNET IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} port Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_telnet_ipalias_isenabled(agentNum: number, ipaddress: string, port: number): Observable<string> {
@@ -2915,6 +3299,7 @@ export namespace MyNS {
 		 * By default, the MIMIC TELNET server listens on all the IP addresses (aliases) that are configured for an agent
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/ipalias/list
 		 * @param {number} agentNum Agent to manipulate TELNET IP alias
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<IPAlias>} successful operation
 		 */
 		Protocol_telnet_ipalias_list(agentNum: number): Observable<Array<IPAlias>> {
@@ -2926,6 +3311,7 @@ export namespace MyNS {
 		 * IDs of all connected connections
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/server/get/connections
 		 * @param {number} agentNum Agent to show TELNET configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_telnet_server_get_connections(agentNum: number): Observable<Array<number>> {
@@ -2937,6 +3323,7 @@ export namespace MyNS {
 		 * Keymap file name
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/server/get/keymap
 		 * @param {number} agentNum Agent to show TELNET statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_telnet_server_get_keymap(agentNum: number): Observable<Array<string>> {
@@ -2948,6 +3335,7 @@ export namespace MyNS {
 		 * Rules db file name
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/server/get/rulesdb
 		 * @param {number} agentNum Agent to show TELNET statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_telnet_server_get_rulesdb(agentNum: number): Observable<Array<string>> {
@@ -2959,6 +3347,7 @@ export namespace MyNS {
 		 * Return 1 means accepting connections, 0 not
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/server/get/state
 		 * @param {number} agentNum Agent to show TELNET statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_telnet_server_get_state(agentNum: number): Observable<Array<number>> {
@@ -2970,6 +3359,7 @@ export namespace MyNS {
 		 * User db file name
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/server/get/userdb
 		 * @param {number} agentNum Agent to show TELNET statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_telnet_server_get_userdb(agentNum: number): Observable<Array<string>> {
@@ -2981,6 +3371,7 @@ export namespace MyNS {
 		 * List of users
 		 * Get mimic/agent/{agentNum}/protocol/msg/telnet/server/get/users
 		 * @param {number} agentNum Agent to show TELNET configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TelnetUser>} successful operation
 		 */
 		Protocol_telnet_server_get_users(agentNum: number): Observable<Array<TelnetUser>> {
@@ -2992,6 +3383,7 @@ export namespace MyNS {
 		 * Agent's TELNET configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/telnet/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the TELNET configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the TELNET configuration
 		 * @param {string} value Value to set the TELNET configuration
 		 * @return {string} successful operation
@@ -3005,6 +3397,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/telnet/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the TELNET tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the TELNET tracing
 		 * @return {string} successful operation
 		 */
@@ -3017,6 +3410,7 @@ export namespace MyNS {
 		 * Agent's TFTP configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/tftp/get/args
 		 * @param {number} agentNum Agent to show the TFTP argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_tftp_get_args(agentNum: number): Observable<string> {
@@ -3028,6 +3422,7 @@ export namespace MyNS {
 		 * Agent's TFTP configuration
 		 * Get mimic/agent/{agentNum}/protocol/msg/tftp/get/config
 		 * @param {number} agentNum Agent to show the TFTP configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigTFTP} successful operation
 		 */
 		Protocol_tftp_get_config(agentNum: number): Observable<ConfigTFTP> {
@@ -3039,6 +3434,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/tftp/get/statistics
 		 * @param {number} agentNum Agent to show TFTP statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_tftp_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -3050,6 +3446,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/tftp/get/trace
 		 * @param {number} agentNum Agent to show whether TFTP tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigTFTP} successful operation
 		 */
 		Protocol_tftp_get_trace(agentNum: number): Observable<ConfigTFTP> {
@@ -3061,6 +3458,7 @@ export namespace MyNS {
 		 * Session ID is returned
 		 * Post mimic/agent/{agentNum}/protocol/msg/tftp/session/read/server/{srcfile}
 		 * @param {number} agentNum Agent to show TFTP statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} srcfile File name to retrieve from server
 		 * @return {Array<number>} successful operation
 		 */
@@ -3073,6 +3471,7 @@ export namespace MyNS {
 		 * Session ID is returned
 		 * Post mimic/agent/{agentNum}/protocol/msg/tftp/session/write/server/{srcfile}
 		 * @param {number} agentNum Agent to show TFTP statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} srcfile File name to upload to server
 		 * @return {Array<number>} successful operation
 		 */
@@ -3085,6 +3484,7 @@ export namespace MyNS {
 		 * Agent's TFTP configuration
 		 * Put mimic/agent/{agentNum}/protocol/msg/tftp/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the TFTP configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the TFTP configuration
 		 * @param {string} value Value to set the TFTP configuration
 		 * @return {string} successful operation
@@ -3098,6 +3498,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/tftp/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the TFTP tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the TFTP tracing
 		 * @return {string} successful operation
 		 */
@@ -3110,6 +3511,7 @@ export namespace MyNS {
 		 * Parameter is server , port , or dstfile
 		 * Get mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/get/{parameter}
 		 * @param {number} agentNum Agent to show TFTP parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sessionID SessionID
 		 * @param {string} parameter Parameter to show
 		 * @return {string} successful operation
@@ -3123,6 +3525,7 @@ export namespace MyNS {
 		 * Parameter is server , port , or dstfile
 		 * Put mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/set/{parameter}/{value}
 		 * @param {number} agentNum Agent to set TFTP parameter
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sessionID SessionID
 		 * @param {string} parameter Parameter to set
 		 * @param {string} value Value to set
@@ -3137,6 +3540,7 @@ export namespace MyNS {
 		 * Start uploading or downloading the file
 		 * Put mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/start
 		 * @param {number} agentNum Agent to start TFTP transaction
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sessionID SessionID
 		 * @return {string} successful operation
 		 */
@@ -3149,6 +3553,7 @@ export namespace MyNS {
 		 * Status includes running state, bytes transfered, and time elapsed
 		 * Get mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/status
 		 * @param {number} agentNum Agent to show TFTP transaction
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sessionID SessionID
 		 * @return {string} successful operation
 		 */
@@ -3161,6 +3566,7 @@ export namespace MyNS {
 		 * Stop uploading or downloading the file
 		 * Put mimic/agent/{agentNum}/protocol/msg/tftp/{sessionID}/stop
 		 * @param {number} agentNum Agent to stop TFTP transaction
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sessionID SessionID
 		 * @return {string} successful operation
 		 */
@@ -3173,6 +3579,7 @@ export namespace MyNS {
 		 * Agent's TOD configuration
 		 * Get mimic/agent/{agentNum}/protocol/msg/tod/get/args
 		 * @param {number} agentNum Agent to show the TOD argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_tod_get_args(agentNum: number): Observable<string> {
@@ -3184,6 +3591,7 @@ export namespace MyNS {
 		 * Agent's TOD configuration
 		 * Get mimic/agent/{agentNum}/protocol/msg/tod/get/config
 		 * @param {number} agentNum Agent to show the TOD configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigTOD} successful operation
 		 */
 		Protocol_tod_get_config(agentNum: number): Observable<ConfigTOD> {
@@ -3195,6 +3603,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/tod/get/statistics
 		 * @param {number} agentNum Agent to show TOD statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_tod_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -3206,6 +3615,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/tod/get/trace
 		 * @param {number} agentNum Agent to show whether TOD tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigTOD} successful operation
 		 */
 		Protocol_tod_get_trace(agentNum: number): Observable<ConfigTOD> {
@@ -3217,11 +3627,15 @@ export namespace MyNS {
 		 * Retrive time from server
 		 * Get mimic/agent/{agentNum}/protocol/msg/tod/gettime/server/{serverAddr}/port/{portNum}/script/{scriptName}/timeout/{timeSec}/retries/{numRetries}
 		 * @param {number} agentNum Agent to show TOD return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} serverAddr serverAddr
 		 * @param {number} portNum portNum
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} scriptName scriptName
 		 * @param {number} timeSec timeSec
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} numRetries numRetries
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_tod_gettime(agentNum: number, serverAddr: string, portNum: number, scriptName: string, timeSec: number, numRetries: number): Observable<Array<string>> {
@@ -3233,6 +3647,7 @@ export namespace MyNS {
 		 * Agent's TOD configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/tod/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the TOD configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the TOD configuration
 		 * @param {string} value Value to set the TOD configuration
 		 * @return {string} successful operation
@@ -3246,6 +3661,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/tod/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the TOD tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the TOD tracing
 		 * @return {string} successful operation
 		 */
@@ -3258,6 +3674,7 @@ export namespace MyNS {
 		 * Agent's WEB configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/web/get/args
 		 * @param {number} agentNum Agent to show the WEB argument structure
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_web_get_args(agentNum: number): Observable<string> {
@@ -3269,6 +3686,7 @@ export namespace MyNS {
 		 * Agent's WEB configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Get mimic/agent/{agentNum}/protocol/msg/web/get/config
 		 * @param {number} agentNum Agent to show the WEB configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigWEB} successful operation
 		 */
 		Protocol_web_get_config(agentNum: number): Observable<ConfigWEB> {
@@ -3280,6 +3698,7 @@ export namespace MyNS {
 		 * Statistics of fields indicated in the headers
 		 * Get mimic/agent/{agentNum}/protocol/msg/web/get/statistics
 		 * @param {number} agentNum Agent to show WEB statistics
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<number>} successful operation
 		 */
 		Protocol_web_get_statistics(agentNum: number): Observable<Array<number>> {
@@ -3291,6 +3710,7 @@ export namespace MyNS {
 		 * Trace 1 means enabled, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/web/get/trace
 		 * @param {number} agentNum Agent to show whether WEB tracing is enabled
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ConfigWEB} successful operation
 		 */
 		Protocol_web_get_trace(agentNum: number): Observable<ConfigWEB> {
@@ -3302,7 +3722,9 @@ export namespace MyNS {
 		 * Add port
 		 * Post mimic/agent/{agentNum}/protocol/msg/web/port/add/{port}
 		 * @param {number} agentNum Agent to add WEB port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} port TCP port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_web_port_add(agentNum: number, port: number): Observable<string> {
@@ -3314,7 +3736,9 @@ export namespace MyNS {
 		 * Check the port. 1 means existing, 0 means not
 		 * Get mimic/agent/{agentNum}/protocol/msg/web/port/exists/{port}
 		 * @param {number} agentNum Agent to show WEB configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} port TCP port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Protocol_web_port_exists(agentNum: number, port: number): Observable<Array<string>> {
@@ -3326,7 +3750,9 @@ export namespace MyNS {
 		 * Remove port
 		 * Delete mimic/agent/{agentNum}/protocol/msg/web/port/remove/{port}
 		 * @param {number} agentNum Agent to remove WEB port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} port TCP port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_web_port_remove(agentNum: number, port: number): Observable<string> {
@@ -3338,7 +3764,9 @@ export namespace MyNS {
 		 * Set port
 		 * Put mimic/agent/{agentNum}/protocol/msg/web/port/set/{port}/{protocol}/{version}
 		 * @param {number} agentNum Agent to set WEB port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} port TCP port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} protocol Encryption or related protocol
 		 * @param {string} version Encryption or related protocol version
 		 * @return {string} successful operation
@@ -3352,7 +3780,9 @@ export namespace MyNS {
 		 * Start port
 		 * Put mimic/agent/{agentNum}/protocol/msg/web/port/start/{port}
 		 * @param {number} agentNum Agent to start WEB port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} port TCP port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_web_port_start(agentNum: number, port: number): Observable<string> {
@@ -3364,7 +3794,9 @@ export namespace MyNS {
 		 * Stop port
 		 * Put mimic/agent/{agentNum}/protocol/msg/web/port/stop/{port}
 		 * @param {number} agentNum Agent to stop WEB port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} port TCP port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Protocol_web_port_stop(agentNum: number, port: number): Observable<string> {
@@ -3376,6 +3808,7 @@ export namespace MyNS {
 		 * Agent's WEB configuration with port,rule,prompt,paging_prompt,userdb,keymap
 		 * Put mimic/agent/{agentNum}/protocol/msg/web/set/config/{argument}/{value}
 		 * @param {number} agentNum Agent to set the WEB configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} argument Parameter to set the WEB configuration
 		 * @param {string} value Value to set the WEB configuration
 		 * @return {string} successful operation
@@ -3389,6 +3822,7 @@ export namespace MyNS {
 		 * 1 to enable, 0 to disable
 		 * Put mimic/agent/{agentNum}/protocol/msg/web/set/trace/{enableOrNot}
 		 * @param {number} agentNum Agent to set the WEB tracing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} enableOrNot Value to set the WEB tracing
 		 * @return {string} successful operation
 		 */
@@ -3401,6 +3835,7 @@ export namespace MyNS {
 		 * Returns the protocol's configuration.
 		 * Get mimic/agent/{agentNum}/protocol/{prot}/get/config
 		 * @param {number} agentNum Agent to show the protocol configuration
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} prot Protocol to show configuration
 		 * @return {string} successful operation
 		 */
@@ -3413,6 +3848,7 @@ export namespace MyNS {
 		 * This only works for halted agents. The net effect is the same as restarting an agent (ie. stop, start, halt), but without disconnecting the network (and thus existing connections).
 		 * Put mimic/agent/{agentNum}/reload
 		 * @param {number} agentNum Agent to return the primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Reload(agentNum: number): Observable<string> {
@@ -3424,6 +3860,7 @@ export namespace MyNS {
 		 * For speed, this operation will complete asynchronously. The same synchronization considerations apply as in /mimic/agent/start.
 		 * Delete mimic/agent/{agentNum}/remove
 		 * @param {number} agentNum Agent to return the primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Agent_remove(agentNum: number): Observable<string> {
@@ -3435,6 +3872,7 @@ export namespace MyNS {
 		 * Resume the current agent.
 		 * Put mimic/agent/{agentNum}/resume
 		 * @param {number} agentNum Agent to return the primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Resume(agentNum: number): Observable<string> {
@@ -3446,6 +3884,7 @@ export namespace MyNS {
 		 * Save agent MIB values.
 		 * Put mimic/agent/{agentNum}/save
 		 * @param {number} agentNum Agent to save
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Save(agentNum: number): Observable<string> {
@@ -3457,8 +3896,11 @@ export namespace MyNS {
 		 * The minimum granularity is 10 msec.
 		 * Put mimic/agent/{agentNum}/set/delay/{delay}
 		 * @param {number} agentNum Agent to set the delay time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} delay Delay time of the agent
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Set_delay(agentNum: number, delay: number): Observable<number> {
 			return this.http.put<number>(this.baseUri + 'mimic/agent/' + agentNum + '/set/delay/' + delay, null, {});
@@ -3469,8 +3911,11 @@ export namespace MyNS {
 		 * 0 means no drops
 		 * Put mimic/agent/{agentNum}/set/drops/{drops}
 		 * @param {number} agentNum Agent to set the drop rate
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} drops Drop rate of the agent
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Set_drops(agentNum: number, drops: number): Observable<number> {
 			return this.http.put<number>(this.baseUri + 'mimic/agent/' + agentNum + '/set/drops/' + drops, null, {});
@@ -3493,8 +3938,11 @@ export namespace MyNS {
 		 * The agent will retransmit INFORM PDUs at this interval until it has received a reply from the manager.
 		 * Put mimic/agent/{agentNum}/set/inform_timeout/{inform_timeout}
 		 * @param {number} agentNum Agent to set the timeout setting
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} inform_timeout Tmeout setting
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Set_inform_timeout(agentNum: number, inform_timeout: number): Observable<number> {
 			return this.http.put<number>(this.baseUri + 'mimic/agent/' + agentNum + '/set/inform_timeout/' + inform_timeout, null, {});
@@ -3529,6 +3977,7 @@ export namespace MyNS {
 		 * set of MIBs, simulations and scenarios
 		 * Put mimic/agent/{agentNum}/set/mibs
 		 * @param {number} agentNum Agent to return the MIB triplets
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Set_mibs(agentNum: number, requestBody: Array<Triplet>): Observable<string> {
@@ -3540,6 +3989,7 @@ export namespace MyNS {
 		 * MIB directory of the agent.
 		 * Put mimic/agent/{agentNum}/set/oiddir/{oiddir}
 		 * @param {number} agentNum Agent to set the directory path
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} oiddir Directory path for the agent
 		 * @return {string} successful operation
 		 */
@@ -3552,6 +4002,7 @@ export namespace MyNS {
 		 * owner of the agent
 		 * Put mimic/agent/{agentNum}/set/owner/{owner}
 		 * @param {number} agentNum Agent to set the owner
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} owner Owner of the agent
 		 * @return {string} successful operation
 		 */
@@ -3564,8 +4015,11 @@ export namespace MyNS {
 		 * The limit for this configurable is 65536
 		 * Put mimic/agent/{agentNum}/set/pdusize/{pdusize}
 		 * @param {number} agentNum Agent to return the PDU size
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pdusize PDU size setting for the agent
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Set_pdusize(agentNum: number, pdusize: number): Observable<number> {
 			return this.http.put<number>(this.baseUri + 'mimic/agent/' + agentNum + '/set/pdusize/' + pdusize, null, {});
@@ -3576,7 +4030,9 @@ export namespace MyNS {
 		 * port number
 		 * Put mimic/agent/{agentNum}/set/port/{port}
 		 * @param {number} agentNum Agent to set the primary SNMP port
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} port Primary SNMP port of the agent
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Set_port(agentNum: number, port: number): Observable<string> {
@@ -3588,6 +4044,7 @@ export namespace MyNS {
 		 * private directory of the agent.
 		 * Put mimic/agent/{agentNum}/set/privdir/{privdir}
 		 * @param {number} agentNum Agent to set the directory path
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} privdir Directory path for the agent
 		 * @return {string} successful operation
 		 */
@@ -3600,6 +4057,7 @@ export namespace MyNS {
 		 * protocols supported by agent as a comma-separated list
 		 * Put mimic/agent/{agentNum}/set/protocol
 		 * @param {number} agentNum Agent to return the protocols arrary
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} requestBody Created agent object
 		 * @return {Array<number>} successful operation
 		 */
@@ -3612,6 +4070,7 @@ export namespace MyNS {
 		 * read community string
 		 * Put mimic/agent/{agentNum}/set/read/{read}
 		 * @param {number} agentNum Agent to return the SNMP read community string
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} read SNMP read community string
 		 * @return {string} successful operation
 		 */
@@ -3624,7 +4083,9 @@ export namespace MyNS {
 		 * relative start time
 		 * Put mimic/agent/{agentNum}/set/start/{start}
 		 * @param {number} agentNum Agent to return the relative start time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start Relative start time of the agent
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Set_starttime(agentNum: number, start: number): Observable<string> {
@@ -3636,8 +4097,11 @@ export namespace MyNS {
 		 * SNMP PDU tracing
 		 * Put mimic/agent/{agentNum}/set/trace/{trace}
 		 * @param {number} agentNum Agent to set trace setting
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} trace Trace setting for the agent
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Set_trace(agentNum: number, trace: number): Observable<number> {
 			return this.http.put<number>(this.baseUri + 'mimic/agent/' + agentNum + '/set/trace/' + trace, null, {});
@@ -3648,8 +4112,11 @@ export namespace MyNS {
 		 * Is a bitmask in which with the following bits (from LSB) check for type, length, range, access. A default value of 65535 does all validation checking.
 		 * Put mimic/agent/{agentNum}/set/validate/{validate}
 		 * @param {number} agentNum Agent to set the bitmask integer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} validate Bitmask integer to set
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Set_validate(agentNum: number, validate: number): Observable<number> {
 			return this.http.put<number>(this.baseUri + 'mimic/agent/' + agentNum + '/set/validate/' + validate, null, {});
@@ -3660,6 +4127,7 @@ export namespace MyNS {
 		 * write community string
 		 * Put mimic/agent/{agentNum}/set/write/{write}
 		 * @param {number} agentNum Agent to set the SNMP write community string
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} write SNMP write community string
 		 * @return {string} successful operation
 		 */
@@ -3672,6 +4140,7 @@ export namespace MyNS {
 		 * For speed, this operation will complete asynchronously. A successful return from this command means the starting of the agent is in progress. If you need to rely on the agent to have completed startup, you should wait for it's state to become RUNNING.
 		 * Put mimic/agent/{agentNum}/start
 		 * @param {number} agentNum Agent to return the primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Start(agentNum: number): Observable<string> {
@@ -3683,6 +4152,7 @@ export namespace MyNS {
 		 * Agent primary IP address
 		 * Put mimic/agent/{agentNum}/stop
 		 * @param {number} agentNum Agent to return the primary IP
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Stop(agentNum: number): Observable<string> {
@@ -3694,7 +4164,9 @@ export namespace MyNS {
 		 * This command copies the variable store from the other agent to this agent.
 		 * Put mimic/agent/{agentNum}/store/copy/{otherAgent}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} otherAgent Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Agent_store_copy(agentNum: number, otherAgent: number): Observable<string> {
@@ -3706,6 +4178,7 @@ export namespace MyNS {
 		 * It returns "1" if the variable exists, else "0".
 		 * Get mimic/agent/{agentNum}/store/exists/{var}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} _var Variable name
 		 * @return {string} successful operation
 		 */
@@ -3718,6 +4191,7 @@ export namespace MyNS {
 		 * The value will be returned as a string (like all Tcl values).
 		 * Get mimic/agent/{agentNum}/store/get/{var}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} _var Variable name
 		 * @return {string} successful operation
 		 */
@@ -3730,6 +4204,7 @@ export namespace MyNS {
 		 * The list will be a Tcl format list with curly braces "{}" around each list element. These elements in turn are space separated.
 		 * Get mimic/agent/{agentNum}/store/list
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Agent_store_list(agentNum: number): Observable<Array<string>> {
@@ -3741,8 +4216,10 @@ export namespace MyNS {
 		 * These commands treat the variable as a list, and allow to replace an entry in the list at the specified index with the specified value. The variable has to already exist.
 		 * Put mimic/agent/{agentNum}/store/lreplace/{var}/{index}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} _var Variable name
 		 * @param {number} index Index
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestBody Value
 		 * @return {string} successful operation
 		 */
@@ -3755,6 +4232,7 @@ export namespace MyNS {
 		 * It returns "1" if the variable is persistent, else "0".
 		 * Get mimic/agent/{agentNum}/store/persists/{var}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} _var Variable name
 		 * @return {string} successful operation
 		 */
@@ -3767,8 +4245,10 @@ export namespace MyNS {
 		 * The append sub-command will append the value to an existing variable, or create a new one. The set sub-command will overwrite an existing variable, or create a new one. The optional persist flag can be used to indicate if the variable is to be persistent as described above. By default a value of '0' will be implied for the persist flag. To avoid mistakes, for existing variables the persist flag can only be set. If you want to reset it, you first need to unset the variable.
 		 * Put mimic/agent/{agentNum}/store/set/{var}/{persist}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} _var Variable name
 		 * @param {number} persist Persistent setting
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestBody Value
 		 * @return {string} successful operation
 		 */
@@ -3781,6 +4261,7 @@ export namespace MyNS {
 		 * This will cleanup persistent variables if needed
 		 * Put mimic/agent/{agentNum}/store/unset/{var}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} _var Variable name
 		 * @return {string} successful operation
 		 */
@@ -3793,8 +4274,10 @@ export namespace MyNS {
 		 * Add a new timer script to be executed at specified interval (in msec) with the specified argument.
 		 * Post mimic/agent/{agentNum}/timer/script/add/{script}/{interval}/{arg}
 		 * @param {number} agentNum Agent to return the timer script list
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} script Script name
 		 * @param {number} interval Interval in msec
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} arg Arguments to the script
 		 * @return {string} successful operation
 		 */
@@ -3807,8 +4290,10 @@ export namespace MyNS {
 		 * The first scheduled script that matches the script name, and optionally the interval and argument will be deleted.
 		 * Delete mimic/agent/{agentNum}/timer/script/delete/{script}/{interval}/{arg}
 		 * @param {number} agentNum Agent to return the timer script list
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} script Script name
 		 * @param {number} interval Interval in msec
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} arg Arguments to the script
 		 * @return {string} successful operation
 		 */
@@ -3821,6 +4306,7 @@ export namespace MyNS {
 		 * The command mimic timer script list lists global timer scripts, the command /mimic/timer/script/{agentNum}/list is the per-agent equivalent NOTE Global timer scripts run globally but within them you can address individual agents using {agentNum}. To schedule timerscripts for an individual agent, use /mimic/timer/script/{agentNum}.
 		 * Get mimic/agent/{agentNum}/timer/script/list
 		 * @param {number} agentNum Agent to return the timer script list
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TimerScript>} successful operation
 		 */
 		List_timer_scripts(agentNum: number): Observable<Array<TimerScript>> {
@@ -3832,8 +4318,10 @@ export namespace MyNS {
 		 * Add a trap destination to the set of destinations.
 		 * Post mimic/agent/{agentNum}/trap/config/add/{IP}/{port}
 		 * @param {number} agentNum Agent to add the destination
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} IP IP of the destination
 		 * @param {number} port port of the destination
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Trap_config_add(agentNum: number, IP: string, port: number): Observable<string> {
@@ -3845,8 +4333,10 @@ export namespace MyNS {
 		 * Remove a trap destination from the set of destinations.
 		 * Delete mimic/agent/{agentNum}/trap/config/delete/{IP}/{port}
 		 * @param {number} agentNum Agent to delete the destination
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} IP IP of the destination
 		 * @param {number} port port of the destination
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Trap_config_del(agentNum: number, IP: string, port: number): Observable<string> {
@@ -3858,6 +4348,7 @@ export namespace MyNS {
 		 * Each trap destination is identified with an IP address and a port number. The default port number is the standard SNMP trap port 162.
 		 * Get mimic/agent/{agentNum}/trap/config/list
 		 * @param {number} agentNum Agent to show the IP alias list
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TrapDest>} successful operation
 		 */
 		Trap_config_list(agentNum: number): Observable<Array<TrapDest>> {
@@ -3869,6 +4360,7 @@ export namespace MyNS {
 		 * List the outstanding asynchronous traps for this agent instance.
 		 * Get mimic/agent/{agentNum}/trap/list
 		 * @param {number} agentNum Agent to list the traps
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} successful operation
 		 */
 		Trap_list(agentNum: number): Observable<Array<string>> {
@@ -3880,6 +4372,7 @@ export namespace MyNS {
 		 * The object needs to specify the MIB object with the INDEX clause, usually an object whose name ends with Entry.
 		 * Post mimic/agent/{agentNum}/value/add/{object}/{instance}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Object (column) of the table in the agent's value space
 		 * @param {string} instance Object (column) of the table in the agent's value space
 		 * @return {string} successful operation
@@ -3893,6 +4386,7 @@ export namespace MyNS {
 		 * Evaluate the values of the specified instance instance for each specified MIB object object and return it as it would through SNMP requests.
 		 * Get mimic/agent/{agentNum}/value/eval/{object}/{instance}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Single instance object or object (column) of the table in the agent's value space.
 		 * @param {string} instance Row of the table in the agent's value space. 0 for single instance objects
 		 * @return {string} successful operation
@@ -3906,6 +4400,7 @@ export namespace MyNS {
 		 * Get a variable in the Value Space.
 		 * Get mimic/agent/{agentNum}/value/get/{object}/{instance}/{variable}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Object (column) of the table in the agent's value space
 		 * @param {string} instance Object (column) of the table in the agent's value space
 		 * @param {string} variable Object (column) of the table in the agent's value space
@@ -3920,6 +4415,7 @@ export namespace MyNS {
 		 * Return the syntactical information for the specified object, such as type, size, range, enumerations, and ACCESS.
 		 * Get mimic/agent/{agentNum}/value/info/{object}
 		 * @param {number} agentNum Agent to show the information of the object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Object
 		 * @return {string} successful operation
 		 */
@@ -3932,6 +4428,7 @@ export namespace MyNS {
 		 * This enables MIB browsing of the MIB on the current agent.
 		 * Get mimic/agent/{agentNum}/value/instances/{object}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Object (column) of the table in the agent's value space
 		 * @return {Array<string>} successful operation
 		 */
@@ -3944,6 +4441,7 @@ export namespace MyNS {
 		 * This command is similar to the ls or dir operating system commands to list filesystem directories.
 		 * Get mimic/agent/{agentNum}/value/list/{OID}
 		 * @param {number} agentNum Agent to show the OID branches
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} OID Current OID
 		 * @return {Array<string>} successful operation
 		 */
@@ -3956,6 +4454,7 @@ export namespace MyNS {
 		 * Evaluate the values of the specified instance instance for each specified MIB object object and return it as it would through SNMP requests.
 		 * Get mimic/agent/{agentNum}/value/meval/{objInsArray}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} objInsArray Multiple objects or object (column) of the table in the agent's value space.
 		 * @return {Array<string>} successful operation
 		 */
@@ -3968,6 +4467,7 @@ export namespace MyNS {
 		 * This is a performance optimization of the mimic value get command, to be used when many variables are requested.
 		 * Get mimic/agent/{agentNum}/value/mget/{objInsVarArray}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} objInsVarArray Multiple objects or object (column) of the table in the agent's value space.
 		 * @return {Array<string>} successful operation
 		 */
@@ -3980,6 +4480,7 @@ export namespace MyNS {
 		 * This will only return a MIB name if the object is unmistakeably defined in a MIB.
 		 * Get mimic/agent/{agentNum}/value/mib/{object}
 		 * @param {number} agentNum Agent to show the MIB
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Object
 		 * @return {string} successful operation
 		 */
@@ -3992,6 +4493,7 @@ export namespace MyNS {
 		 * This is a performance optimization of the mimic value set command, to be used when many variables are to be set.
 		 * Put mimic/agent/{agentNum}/value/mset
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} requestBody objInsVarValArray
 		 * @return {string} successful operation
 		 */
@@ -4004,6 +4506,7 @@ export namespace MyNS {
 		 * This is a performance optimization of the mimic value unset command, to be used when many variables are to be unset.
 		 * Put mimic/agent/{agentNum}/value/munset
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} requestBody objInsVarArray
 		 * @return {string} successful operation
 		 */
@@ -4016,6 +4519,7 @@ export namespace MyNS {
 		 * Return the symbolic name of the specified object identifier.
 		 * Get mimic/agent/{agentNum}/value/name/{OID}
 		 * @param {number} agentNum Agent to show the object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} OID OID
 		 * @return {string} successful operation
 		 */
@@ -4028,6 +4532,7 @@ export namespace MyNS {
 		 * Return the numeric OID of the specified object.
 		 * Get mimic/agent/{agentNum}/value/oid/{object}
 		 * @param {number} agentNum Agent to show the OID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Object
 		 * @return {string} successful operation
 		 */
@@ -4040,6 +4545,7 @@ export namespace MyNS {
 		 * The object needs to specify the MIB object with the INDEX clause, usually an object whose name ends with Entry.
 		 * Delete mimic/agent/{agentNum}/value/remove/{object}/{instance}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Object (column) of the table in the agent's value space
 		 * @param {string} instance Object (column) of the table in the agent's value space
 		 * @return {string} successful operation
@@ -4053,6 +4559,7 @@ export namespace MyNS {
 		 * NOTE to set a binary string value, specify a string starting with \\x followed by pairs of hexadecimal digits, eg. "\\x 01 23 45". This command also assigns SNMP PDU action scripts for GET* and SET requests on a MIB object. The instance parameter must be 0. The following variables enable actions, g - The specified TCL script will be run on GET or GETNEXT requests. It has to exist under the simulation directory. s - The specified script will be run on SET requests. It has to exist under the simulation directory. This command also controls advanced trap generation functionality. The following variables control trap generation r, tu, c - These variables together represent the rate settings for the trap. r and tu is the actual per second rate and c represents the total duration in seconds for which the trap is sent. As soon as the c variable is set, the trap generation begins, for this reason it should be the last variable set for a particular trap. The following variables have to be set before setting the c variable to modify the behavior of the generated trap(s). OBJECT - An object name when used as a variable is looked up during the trap send and the value of that variable is included in the PDU. OBJECT.i - This type of variable will be used to assign an optional instance for the specified object in the traps varbind. The value of this variable identifies the index. e.g. The commands below will send ifIndex.2 with a value of 5 in the linkUp trap PDU. i - This variable is used to specify any extra version specific information to the trap generation code. Here is what it can be used to represent for various SNMP versions SNMPv1 - [community_string][,[enterprise][,agent_addr]] SNMPv2c - community_string SNMPv2 - source_party,destination_party,context SNMPv3 - user_name,context v - This variable lets the user override the version of the PDU being generated. The possible values are - "1", "2c", "2" and "3". o - This variable is used for traps that need extra variables to be added to the PDU along with the ones defined in the MIB as its variables. This lets the user force extra objects (along with instances if needed). All variables to be sent need to be assigned to the o variable. O - To omit any variables which are defined in the MIB you can use the O (capital o) variable. This needs to be set to the list of OIDs of the variable bindings in the order defined in the MIB. ip - The variable ip is used for generating the trap from the N-th IP alias address. a - This variable associates an action script to the trap or INFORM request. The action script specified in the value of this variable has to exist in the simulation directory. It will be executed before each instance of the trap is sent out. I - This optional variable controls the generation of INFORM PDUs. An INFORM is sent only if the variable is non-zero, else a TRAP is generated. R, T, E - This variable associates an action script to the INFORM request. The action script specified in the value of this variable has to exist in the simulation directory. The action script associated with the R variable will be executed on receiving a INFORM RESPONSE, the one associated with the T variable on a timeout (ie. no response), the one associated with the E variable on a report PDU. eid.IP-ADDRESS.PORT - control variable allows to configure message authoritative engine id for the destination specified by IP-ADDRESS and optionally by PORT. eb.IP-ADDRESS.PORT - control variable allows to configure message authoritative engine boots. et.IP-ADDRESS.PORT - control variable allows to configure message authoritative engine time.
 		 * Put mimic/agent/{agentNum}/value/set/{object}/{instance}/{variable}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Single instance object or object (column) of the table in the agent's value space.
 		 * @param {string} instance Row of the table in the agent's value space. 0 for single instance objects
 		 * @param {string} variable Variable
@@ -4068,6 +4575,7 @@ export namespace MyNS {
 		 * This is useful if you have an OID which is a combination of object and instance.
 		 * Get mimic/agent/{agentNum}/value/split/{OID}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} OID OID
 		 * @return {Array<string>} successful operation
 		 */
@@ -4080,6 +4588,7 @@ export namespace MyNS {
 		 * To disable traversal into a MIB object and any subtree underneath, set the state to 0, else set the state to 1.
 		 * Get mimic/agent/{agentNum}/value/state/get/{object}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Object
 		 * @return {string} successful operation
 		 */
@@ -4092,8 +4601,10 @@ export namespace MyNS {
 		 * To disable traversal into a MIB object and any subtree underneath, set the state to 0, else set the state to 1.
 		 * Put mimic/agent/{agentNum}/value/state/set/{object}/{state}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Object
 		 * @param {number} state State
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} successful operation
 		 */
 		Set_state(agentNum: number, object: string, state: number): Observable<string> {
@@ -4105,6 +4616,7 @@ export namespace MyNS {
 		 * Only variables that have previously been set can be unset.
 		 * Put mimic/agent/{agentNum}/value/unset/{object}/{instance}/{variable}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Single instance object or object (column) of the table in the agent's value space.
 		 * @param {string} instance Row of the table in the agent's value space. 0 for single instance objects
 		 * @param {string} variable Variable
@@ -4119,6 +4631,7 @@ export namespace MyNS {
 		 * This enables variable browsing of the MIB on the current agent.
 		 * Get mimic/agent/{agentNum}/value/variables/{object}/{instance}
 		 * @param {number} agentNum Agent of the value space
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} object Single instance object or object (column) of the table in the agent's value space.
 		 * @param {string} instance Row of the table in the agent's value space. 0 for single instance objects
 		 * @return {Array<string>} successful operation
@@ -4132,7 +4645,9 @@ export namespace MyNS {
 		 * Clear the lab configuration.
 		 * Put mimic/clear/{firstAgentNum}/{lastAgentNum}
 		 * @param {number} firstAgentNum Agent number to start clearing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} lastAgentNum Agent number to end the clearing
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {{[id: string]: number }} successful operation
 		 */
 		Cfg_new(firstAgentNum: number, lastAgentNum: number): Observable<{[id: string]: number }> {
@@ -4234,6 +4749,7 @@ export namespace MyNS {
 		 * The last configured agent instance.
 		 * Get mimic/get/last
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_last(): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/get/last', {});
@@ -4254,6 +4770,7 @@ export namespace MyNS {
 		 * The maximum number of agent instances.
 		 * Get mimic/get/max
 		 * @return {number} successful operation
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Get_max(): Observable<number> {
 			return this.http.get<number>(this.baseUri + 'mimic/get/max', {});
@@ -4325,8 +4842,11 @@ export namespace MyNS {
 		 * Put mimic/load/{cfgFile}/{firstAgentNum}/{lastAgentNum}/{startAgentNum}
 		 * @param {string} cfgFile MIMIC agent configuration file to load
 		 * @param {number} firstAgentNum Agent number in cfgFile to start the loading
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} lastAgentNum Agent number in cfgFile to end the loading
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startAgentNum Agent number in current configuration to start placing the new agents
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {{[id: string]: number }} successful operation
 		 */
 		Cfg_load(cfgFile: string, firstAgentNum: number, lastAgentNum: number, startAgentNum: number): Observable<{[id: string]: number }> {
@@ -4500,7 +5020,9 @@ export namespace MyNS {
 		 * Put mimic/saveas/{cfgFile}/{firstAgentNum}/{lastAgentNum}
 		 * @param {string} cfgFile MIMIC agent configuration file to save
 		 * @param {number} firstAgentNum Agent number in cfgFile to start the loading
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} lastAgentNum Agent number in cfgFile to end the loading
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {{[id: string]: number }} successful operation
 		 */
 		Cfg_saveas(cfgFile: string, firstAgentNum: number, lastAgentNum: number): Observable<{[id: string]: number }> {
@@ -4596,6 +5118,7 @@ export namespace MyNS {
 		 * Put mimic/store/lreplace/{var}/{index}
 		 * @param {string} _var Variable name
 		 * @param {number} index Index
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestBody Value
 		 * @return {string} successful operation
 		 */
@@ -4620,6 +5143,7 @@ export namespace MyNS {
 		 * Put mimic/store/set/{var}/{persist}
 		 * @param {string} _var Variable name
 		 * @param {number} persist Persistent setting
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestBody Value
 		 * @return {string} successful operation
 		 */
@@ -4654,6 +5178,7 @@ export namespace MyNS {
 		 * Post mimic/timer/script/add/{script}/{interval}/{arg}
 		 * @param {string} script Script name
 		 * @param {number} interval Interval in msec
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} arg Arguments to the script
 		 * @return {string} successful operation
 		 */
@@ -4667,6 +5192,7 @@ export namespace MyNS {
 		 * Delete mimic/timer/script/delete/{script}/{interval}/{arg}
 		 * @param {string} script Script name
 		 * @param {number} interval Interval in msec
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} arg Arguments to the script
 		 * @return {string} successful operation
 		 */

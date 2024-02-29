@@ -6,12 +6,18 @@ export namespace MyNS {
 	export interface BatchDataElement {
 		data?: Data;
 
-		/** Template id */
+		/**
+		 * Template id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		template?: number | null;
 	}
 	export interface BatchDataElementFormProperties {
 
-		/** Template id */
+		/**
+		 * Template id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		template: FormControl<number | null | undefined>,
 	}
 	export function CreateBatchDataElementFormGroup() {
@@ -22,10 +28,14 @@ export namespace MyNS {
 	}
 
 	export interface Data {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface DataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -47,25 +57,40 @@ export namespace MyNS {
 		/** Defines data field for Table and Container components which are used to iterate over list of items */
 		dataIndex?: string | null;
 
-		/** Height in units */
+		/**
+		 * Height in units
+		 * Type: double
+		 */
 		height?: number | null;
 
 		/** Component id */
 		id?: string | null;
 
-		/** Position from the page left in units */
+		/**
+		 * Position from the page left in units
+		 * Type: double
+		 */
 		left?: number | null;
 
-		/** Position from the page top in units */
+		/**
+		 * Position from the page top in units
+		 * Type: double
+		 */
 		top?: number | null;
 
 		/** Component value */
 		value?: string | null;
 
-		/** Width in units */
+		/**
+		 * Width in units
+		 * Type: double
+		 */
 		width?: number | null;
 
-		/** Defines the rendering order on page. Components with smaller zindex are rendered before */
+		/**
+		 * Defines the rendering order on page. Components with smaller zindex are rendered before
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zindex?: number | null;
 	}
 
@@ -78,25 +103,40 @@ export namespace MyNS {
 		/** Defines data field for Table and Container components which are used to iterate over list of items */
 		dataIndex: FormControl<string | null | undefined>,
 
-		/** Height in units */
+		/**
+		 * Height in units
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Component id */
 		id: FormControl<string | null | undefined>,
 
-		/** Position from the page left in units */
+		/**
+		 * Position from the page left in units
+		 * Type: double
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** Position from the page top in units */
+		/**
+		 * Position from the page top in units
+		 * Type: double
+		 */
 		top: FormControl<number | null | undefined>,
 
 		/** Component value */
 		value: FormControl<string | null | undefined>,
 
-		/** Width in units */
+		/**
+		 * Width in units
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 
-		/** Defines the rendering order on page. Components with smaller zindex are rendered before */
+		/**
+		 * Defines the rendering order on page. Components with smaller zindex are rendered before
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		zindex: FormControl<number | null | undefined>,
 	}
 	export function CreateComponentFormGroup() {
@@ -120,7 +160,10 @@ export namespace MyNS {
 	/** Template object */
 	export interface Template {
 
-		/** Unique identifier */
+		/**
+		 * Unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Timestamp when the template was modified */
@@ -139,7 +182,10 @@ export namespace MyNS {
 	/** Template object */
 	export interface TemplateFormProperties {
 
-		/** Unique identifier */
+		/**
+		 * Unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Timestamp when the template was modified */
@@ -169,7 +215,10 @@ export namespace MyNS {
 		/** Configuration preferences for the editor */
 		editor?: TemplateDefinitionEditor;
 
-		/** Unique identifier */
+		/**
+		 * Unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Indicates if the template is a draft or published. */
@@ -189,7 +238,10 @@ export namespace MyNS {
 	}
 	export interface TemplateDefinitionFormProperties {
 
-		/** Unique identifier */
+		/**
+		 * Unique identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Indicates if the template is a draft or published. */
@@ -220,9 +272,13 @@ export namespace MyNS {
 	}
 
 	export interface TemplateDefinitionEditor {
+
+		/** Type: double */
 		heightMultiplier?: number | null;
 	}
 	export interface TemplateDefinitionEditorFormProperties {
+
+		/** Type: double */
 		heightMultiplier: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateDefinitionEditorFormGroup() {
@@ -234,13 +290,19 @@ export namespace MyNS {
 
 	export interface TemplateDefinitionLayout {
 
-		/** Defines how many pages or labels should be empty */
+		/**
+		 * Defines how many pages or labels should be empty
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		emptyLabels?: number | null;
 
 		/** Defines template page size */
 		format?: TemplateDefinitionLayoutFormat | null;
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height?: number | null;
 
 		/** Page margins in units */
@@ -258,18 +320,27 @@ export namespace MyNS {
 		/** Measure unit */
 		unit?: TemplateDefinitionLayoutUnit | null;
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 	export interface TemplateDefinitionLayoutFormProperties {
 
-		/** Defines how many pages or labels should be empty */
+		/**
+		 * Defines how many pages or labels should be empty
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		emptyLabels: FormControl<number | null | undefined>,
 
 		/** Defines template page size */
 		format: FormControl<TemplateDefinitionLayoutFormat | null | undefined>,
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Page orientation */
@@ -281,7 +352,10 @@ export namespace MyNS {
 		/** Measure unit */
 		unit: FormControl<TemplateDefinitionLayoutUnit | null | undefined>,
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateDefinitionLayoutFormGroup() {
@@ -300,15 +374,31 @@ export namespace MyNS {
 	export enum TemplateDefinitionLayoutFormat { A4 = 'A4', letter = 'letter', custom = 'custom' }
 
 	export interface TemplateDefinitionLayoutMargins {
+
+		/** Type: double */
 		bottom?: number | null;
+
+		/** Type: double */
 		left?: number | null;
+
+		/** Type: double */
 		right?: number | null;
+
+		/** Type: double */
 		top?: number | null;
 	}
 	export interface TemplateDefinitionLayoutMarginsFormProperties {
+
+		/** Type: double */
 		bottom: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		left: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		right: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		top: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateDefinitionLayoutMarginsFormGroup() {
@@ -328,10 +418,16 @@ export namespace MyNS {
 		/** Defines template page size */
 		format?: TemplateDefinitionLayoutFormat | null;
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height?: number | null;
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 	export interface TemplateDefinitionLayoutRepeatLayoutFormProperties {
@@ -339,10 +435,16 @@ export namespace MyNS {
 		/** Defines template page size */
 		format: FormControl<TemplateDefinitionLayoutFormat | null | undefined>,
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateDefinitionLayoutRepeatLayoutFormGroup() {
@@ -361,19 +463,31 @@ export namespace MyNS {
 	export interface TemplateDefinitionPages {
 		components?: Array<Component>;
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height?: number | null;
 		margins?: TemplateDefinitionPagesMargins;
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 	export interface TemplateDefinitionPagesFormProperties {
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateDefinitionPagesFormGroup() {
@@ -386,18 +500,30 @@ export namespace MyNS {
 
 	export interface TemplateDefinitionPagesMargins {
 
-		/** Page or label margin from bottom */
+		/**
+		 * Page or label margin from bottom
+		 * Type: double
+		 */
 		bottom?: number | null;
 
-		/** Page or label margin from right */
+		/**
+		 * Page or label margin from right
+		 * Type: double
+		 */
 		right?: number | null;
 	}
 	export interface TemplateDefinitionPagesMarginsFormProperties {
 
-		/** Page or label margin from bottom */
+		/**
+		 * Page or label margin from bottom
+		 * Type: double
+		 */
 		bottom: FormControl<number | null | undefined>,
 
-		/** Page or label margin from right */
+		/**
+		 * Page or label margin from right
+		 * Type: double
+		 */
 		right: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateDefinitionPagesMarginsFormGroup() {
@@ -453,13 +579,19 @@ export namespace MyNS {
 
 	export interface TemplateDefinitionNewLayout {
 
-		/** Defines how many pages or labels should be empty */
+		/**
+		 * Defines how many pages or labels should be empty
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		emptyLabels?: number | null;
 
 		/** Defines template page size */
 		format?: TemplateDefinitionLayoutFormat | null;
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height?: number | null;
 
 		/** Page margins in units */
@@ -477,18 +609,27 @@ export namespace MyNS {
 		/** Measure unit */
 		unit?: TemplateDefinitionLayoutUnit | null;
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 	export interface TemplateDefinitionNewLayoutFormProperties {
 
-		/** Defines how many pages or labels should be empty */
+		/**
+		 * Defines how many pages or labels should be empty
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		emptyLabels: FormControl<number | null | undefined>,
 
 		/** Defines template page size */
 		format: FormControl<TemplateDefinitionLayoutFormat | null | undefined>,
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Page orientation */
@@ -500,7 +641,10 @@ export namespace MyNS {
 		/** Measure unit */
 		unit: FormControl<TemplateDefinitionLayoutUnit | null | undefined>,
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateDefinitionNewLayoutFormGroup() {
@@ -517,15 +661,31 @@ export namespace MyNS {
 	}
 
 	export interface TemplateDefinitionNewLayoutMargins {
+
+		/** Type: double */
 		bottom?: number | null;
+
+		/** Type: double */
 		left?: number | null;
+
+		/** Type: double */
 		right?: number | null;
+
+		/** Type: double */
 		top?: number | null;
 	}
 	export interface TemplateDefinitionNewLayoutMarginsFormProperties {
+
+		/** Type: double */
 		bottom: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		left: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		right: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		top: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateDefinitionNewLayoutMarginsFormGroup() {
@@ -543,10 +703,16 @@ export namespace MyNS {
 		/** Defines template page size */
 		format?: TemplateDefinitionLayoutFormat | null;
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height?: number | null;
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 	export interface TemplateDefinitionNewLayoutRepeatLayoutFormProperties {
@@ -554,10 +720,16 @@ export namespace MyNS {
 		/** Defines template page size */
 		format: FormControl<TemplateDefinitionLayoutFormat | null | undefined>,
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateDefinitionNewLayoutRepeatLayoutFormGroup() {
@@ -574,19 +746,31 @@ export namespace MyNS {
 	export interface TemplateDefinitionNewPages {
 		components?: Array<Component>;
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height?: number | null;
 		margins?: TemplateDefinitionNewPagesMargins;
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 	export interface TemplateDefinitionNewPagesFormProperties {
 
-		/** Page height in units */
+		/**
+		 * Page height in units
+		 * Type: double
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Page width in units */
+		/**
+		 * Page width in units
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateDefinitionNewPagesFormGroup() {
@@ -599,18 +783,30 @@ export namespace MyNS {
 
 	export interface TemplateDefinitionNewPagesMargins {
 
-		/** Page or label margin from bottom */
+		/**
+		 * Page or label margin from bottom
+		 * Type: double
+		 */
 		bottom?: number | null;
 
-		/** Page or label margin from right */
+		/**
+		 * Page or label margin from right
+		 * Type: double
+		 */
 		right?: number | null;
 	}
 	export interface TemplateDefinitionNewPagesMarginsFormProperties {
 
-		/** Page or label margin from bottom */
+		/**
+		 * Page or label margin from bottom
+		 * Type: double
+		 */
 		bottom: FormControl<number | null | undefined>,
 
-		/** Page or label margin from right */
+		/**
+		 * Page or label margin from right
+		 * Type: double
+		 */
 		right: FormControl<number | null | undefined>,
 	}
 	export function CreateTemplateDefinitionNewPagesMarginsFormGroup() {
@@ -624,7 +820,10 @@ export namespace MyNS {
 	export interface Workspace {
 		created_at?: string | null;
 
-		/** Internal workspace id */
+		/**
+		 * Internal workspace id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The unique workspace idenfitifer specified by your application */
@@ -636,7 +835,10 @@ export namespace MyNS {
 	export interface WorkspaceFormProperties {
 		created_at: FormControl<string | null | undefined>,
 
-		/** Internal workspace id */
+		/**
+		 * Internal workspace id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The unique workspace idenfitifer specified by your application */
@@ -700,6 +902,7 @@ export namespace MyNS {
 		 * Deletes the template from workspace
 		 * Delete templates/templateId
 		 * @param {number} templateId Template unique identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DeleteTemplateReturn} The request was successfully executed.
 		 */
 		DeleteTemplate(templateId: number): Observable<DeleteTemplateReturn> {
@@ -711,6 +914,7 @@ export namespace MyNS {
 		 * Returns template configuration
 		 * Get templates/templateId
 		 * @param {number} templateId Template unique identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetTemplateReturn} Template configuration as JSON object
 		 */
 		GetTemplate(templateId: number): Observable<GetTemplateReturn> {
@@ -722,6 +926,7 @@ export namespace MyNS {
 		 * Updates template configuration. The template configuration for pages and layout must be complete as the entire configuration is replaced and not merged.
 		 * Put templates/templateId
 		 * @param {number} templateId Template unique identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TemplateDefinitionNew} requestBody Template configuration as JSON string
 		 * @return {UpdateTemplateReturn} Template configuration as JSON object
 		 */
@@ -734,6 +939,7 @@ export namespace MyNS {
 		 * Creates a copy of a template to the workspace specified in authentication parameters.
 		 * Post templates/templateId/copy
 		 * @param {number} templateId Template unique identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Name for the copied template. If name is not specified then the original name is used.
 		 * @return {CopyTemplateReturn} Template configuration as JSON object
 		 */
@@ -746,6 +952,7 @@ export namespace MyNS {
 		 * Returns an unique URL which you can use to redirect your user to the editor from your application or use the generated URL as iframe source to show the editor within your application.
 		 * Post templates/templateId/editor
 		 * @param {number} templateId Template unique identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {GetEditorUrlLanguage} language Specify the editor UI language. Defaults to organization editor language.
 		 * @param {string} requestBody Data used to generate the PDF. This can be JSON encoded string or a public URL to your JSON file.
 		 * @return {GetEditorUrlReturn} Returns an URL which you can use to redirect your user to the editor or use as iframe source
@@ -759,6 +966,7 @@ export namespace MyNS {
 		 * Merges template with data and returns base64 encoded document or a public URL to a document. You can send json encoded data in request body or a public URL to your json file as the data parameter. NB! When the public URL option is used, the document is stored for 30 days and automatically deleted.
 		 * Post templates/templateId/output
 		 * @param {number} templateId Template unique identifier
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Document name, returned in the meta data.
 		 * @param {MergeTemplatesFormat} format Document format. The zip option will return a ZIP file with PDF files.
 		 * @param {MergeTemplatesOutput} output Response format. With the url option, the document is stored for 30 days and automatically deleted.
@@ -821,12 +1029,18 @@ export namespace MyNS {
 	export interface MergeTemplatesPostBody {
 		data?: Data;
 
-		/** Template id */
+		/**
+		 * Template id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		template?: number | null;
 	}
 	export interface MergeTemplatesPostBodyFormProperties {
 
-		/** Template id */
+		/**
+		 * Template id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		template: FormControl<number | null | undefined>,
 	}
 	export function CreateMergeTemplatesPostBodyFormGroup() {

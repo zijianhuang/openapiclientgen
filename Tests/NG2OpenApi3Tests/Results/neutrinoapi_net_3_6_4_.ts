@@ -8,6 +8,7 @@ export namespace MyNS {
 		/**
 		 * API error code. If set and > 0 then an API error has occurred your request could not be completed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'api-error': number;
 
@@ -22,6 +23,7 @@ export namespace MyNS {
 		/**
 		 * API error code. If set and > 0 then an API error has occurred your request could not be completed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'api-error': FormControl<number | null | undefined>,
 
@@ -339,6 +341,7 @@ export namespace MyNS {
 		/**
 		 * Total number of bad words detected
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'bad-words-total': number;
 
@@ -359,6 +362,7 @@ export namespace MyNS {
 		/**
 		 * Total number of bad words detected
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'bad-words-total': FormControl<number | null | undefined>,
 
@@ -406,12 +410,14 @@ export namespace MyNS {
 		/**
 		 * The list rating [1-3] with 1 being the best rating and 3 the lowest rating
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'list-rating': number;
 
 		/**
 		 * The DNSBL server response time in milliseconds
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'response-time': number;
 
@@ -450,12 +456,14 @@ export namespace MyNS {
 		/**
 		 * The list rating [1-3] with 1 being the best rating and 3 the lowest rating
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'list-rating': FormControl<number | null | undefined>,
 
 		/**
 		 * The DNSBL server response time in milliseconds
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'response-time': FormControl<number | null | undefined>,
 
@@ -501,6 +509,7 @@ export namespace MyNS {
 		/**
 		 * The sensor ID. This is a permanent and unique ID for each sensor
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 	}
@@ -521,6 +530,7 @@ export namespace MyNS {
 		/**
 		 * The sensor ID. This is a permanent and unique ID for each sensor
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -568,6 +578,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code the URL returned
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'http-status-code': number;
 
@@ -616,6 +627,7 @@ export namespace MyNS {
 		/**
 		 * The number of seconds taken to load the page (from initial request until DOM ready)
 		 * Required
+		 * Type: double
 		 */
 		'load-time': number;
 
@@ -678,6 +690,7 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code the URL returned
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'http-status-code': FormControl<number | null | undefined>,
 
@@ -726,6 +739,7 @@ export namespace MyNS {
 		/**
 		 * The number of seconds taken to load the page (from initial request until DOM ready)
 		 * Required
+		 * Type: double
 		 */
 		'load-time': FormControl<number | null | undefined>,
 
@@ -812,6 +826,7 @@ export namespace MyNS {
 		/**
 		 * The result of the conversion as a floating-point number
 		 * Required
+		 * Type: double
 		 */
 		'result-float': number;
 
@@ -850,6 +865,7 @@ export namespace MyNS {
 		/**
 		 * The result of the conversion as a floating-point number
 		 * Required
+		 * Type: double
 		 */
 		'result-float': FormControl<number | null | undefined>,
 
@@ -882,6 +898,7 @@ export namespace MyNS {
 		/**
 		 * The number of days since the domain was registered. A domain age of under 90 days is generally considered to be potentially risky. A value of 0 indicates no registration date was found for this domain
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		age: number;
 
@@ -954,6 +971,7 @@ export namespace MyNS {
 		/**
 		 * The domains estimated global traffic rank with the highest rank being 1. A value of 0 indicates the domain is currently ranked outside of the top 1M of domains
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rank: number;
 
@@ -966,6 +984,7 @@ export namespace MyNS {
 		/**
 		 * The IANA registrar ID (0 if no registrar ID was found)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'registrar-id': number;
 
@@ -1004,6 +1023,7 @@ export namespace MyNS {
 		/**
 		 * The number of days since the domain was registered. A domain age of under 90 days is generally considered to be potentially risky. A value of 0 indicates no registration date was found for this domain
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		age: FormControl<number | null | undefined>,
 
@@ -1070,6 +1090,7 @@ export namespace MyNS {
 		/**
 		 * The domains estimated global traffic rank with the highest rank being 1. A value of 0 indicates the domain is currently ranked outside of the top 1M of domains
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rank: FormControl<number | null | undefined>,
 
@@ -1082,6 +1103,7 @@ export namespace MyNS {
 		/**
 		 * The IANA registrar ID (0 if no registrar ID was found)
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'registrar-id': FormControl<number | null | undefined>,
 
@@ -1483,6 +1505,7 @@ export namespace MyNS {
 		/**
 		 * The number of possible matching locations found
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		found: number;
 
@@ -1497,6 +1520,7 @@ export namespace MyNS {
 		/**
 		 * The number of possible matching locations found
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		found: FormControl<number | null | undefined>,
 	}
@@ -1554,6 +1578,7 @@ export namespace MyNS {
 		/**
 		 * The location latitude
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
@@ -1572,6 +1597,7 @@ export namespace MyNS {
 		/**
 		 * The location longitude
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -1652,6 +1678,7 @@ export namespace MyNS {
 		/**
 		 * The location latitude
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
@@ -1664,6 +1691,7 @@ export namespace MyNS {
 		/**
 		 * The location longitude
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -1856,6 +1884,7 @@ export namespace MyNS {
 		/**
 		 * The location latitude
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
@@ -1874,6 +1903,7 @@ export namespace MyNS {
 		/**
 		 * The location longitude
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -1960,6 +1990,7 @@ export namespace MyNS {
 		/**
 		 * The location latitude
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
@@ -1972,6 +2003,7 @@ export namespace MyNS {
 		/**
 		 * The location longitude
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -2366,6 +2398,7 @@ export namespace MyNS {
 		/**
 		 * The number of DNSBLs the host is listed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'list-count': number;
 
@@ -2392,6 +2425,7 @@ export namespace MyNS {
 		/**
 		 * The number of DNSBLs the host is listed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'list-count': FormControl<number | null | undefined>,
 	}
@@ -2499,12 +2533,14 @@ export namespace MyNS {
 		/**
 		 * The unix time when this IP was last seen on any blocklist. IPs are automatically removed after 7 days therefor this value will never be older than 7 days
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'last-seen': number;
 
 		/**
 		 * The number of blocklists the IP is listed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'list-count': number;
 
@@ -2603,12 +2639,14 @@ export namespace MyNS {
 		/**
 		 * The unix time when this IP was last seen on any blocklist. IPs are automatically removed after 7 days therefor this value will never be older than 7 days
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'last-seen': FormControl<number | null | undefined>,
 
 		/**
 		 * The number of blocklists the IP is listed on
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'list-count': FormControl<number | null | undefined>,
 	}
@@ -2711,12 +2749,14 @@ export namespace MyNS {
 		/**
 		 * Location latitude
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Location longitude
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
@@ -2821,12 +2861,14 @@ export namespace MyNS {
 		/**
 		 * Location latitude
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Location longitude
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
@@ -2876,6 +2918,7 @@ export namespace MyNS {
 		/**
 		 * The age of the autonomous system (AS) in number of years since registration
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'as-age': number;
 
@@ -3064,6 +3107,7 @@ export namespace MyNS {
 		/**
 		 * The age of the autonomous system (AS) in number of years since registration
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'as-age': FormControl<number | null | undefined>,
 
@@ -3600,6 +3644,7 @@ export namespace MyNS {
 		/**
 		 * The device display height in CSS 'px'
 		 * Required
+		 * Type: double
 		 */
 		'device-height-px': number;
 
@@ -3618,18 +3663,21 @@ export namespace MyNS {
 		/**
 		 * The device display pixel ratio (the ratio of the resolution in physical pixels to the resolution in CSS pixels)
 		 * Required
+		 * Type: double
 		 */
 		'device-pixel-ratio': number;
 
 		/**
 		 * The device display PPI (pixels per inch)
 		 * Required
+		 * Type: double
 		 */
 		'device-ppi': number;
 
 		/**
 		 * The average device price on release in USD
 		 * Required
+		 * Type: double
 		 */
 		'device-price': number;
 
@@ -3648,6 +3696,7 @@ export namespace MyNS {
 		/**
 		 * The device display width in CSS 'px'
 		 * Required
+		 * Type: double
 		 */
 		'device-width-px': number;
 
@@ -3740,6 +3789,7 @@ export namespace MyNS {
 		/**
 		 * The device display height in CSS 'px'
 		 * Required
+		 * Type: double
 		 */
 		'device-height-px': FormControl<number | null | undefined>,
 
@@ -3758,18 +3808,21 @@ export namespace MyNS {
 		/**
 		 * The device display pixel ratio (the ratio of the resolution in physical pixels to the resolution in CSS pixels)
 		 * Required
+		 * Type: double
 		 */
 		'device-pixel-ratio': FormControl<number | null | undefined>,
 
 		/**
 		 * The device display PPI (pixels per inch)
 		 * Required
+		 * Type: double
 		 */
 		'device-ppi': FormControl<number | null | undefined>,
 
 		/**
 		 * The average device price on release in USD
 		 * Required
+		 * Type: double
 		 */
 		'device-price': FormControl<number | null | undefined>,
 
@@ -3788,6 +3841,7 @@ export namespace MyNS {
 		/**
 		 * The device display width in CSS 'px'
 		 * Required
+		 * Type: double
 		 */
 		'device-width-px': FormControl<number | null | undefined>,
 
@@ -3903,6 +3957,7 @@ export namespace MyNS {
 		/**
 		 * The size of the URL content in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'content-size': number;
 
@@ -3927,12 +3982,14 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code this URL responded with. An HTTP status of 0 indicates a network level issue
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'http-status': number;
 
 		/**
 		 * The HTTP status message assoicated with the status code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'http-status-message': number;
 
@@ -3957,6 +4014,7 @@ export namespace MyNS {
 		/**
 		 * The time taken to load the URL content in seconds
 		 * Required
+		 * Type: double
 		 */
 		'load-time': number;
 
@@ -4035,6 +4093,7 @@ export namespace MyNS {
 		/**
 		 * The URL port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'url-port': number;
 
@@ -4067,6 +4126,7 @@ export namespace MyNS {
 		/**
 		 * The size of the URL content in bytes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'content-size': FormControl<number | null | undefined>,
 
@@ -4091,12 +4151,14 @@ export namespace MyNS {
 		/**
 		 * The HTTP status code this URL responded with. An HTTP status of 0 indicates a network level issue
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'http-status': FormControl<number | null | undefined>,
 
 		/**
 		 * The HTTP status message assoicated with the status code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'http-status-message': FormControl<number | null | undefined>,
 
@@ -4121,6 +4183,7 @@ export namespace MyNS {
 		/**
 		 * The time taken to load the URL content in seconds
 		 * Required
+		 * Type: double
 		 */
 		'load-time': FormControl<number | null | undefined>,
 
@@ -4199,6 +4262,7 @@ export namespace MyNS {
 		/**
 		 * The URL port
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'url-port': FormControl<number | null | undefined>,
 
@@ -4281,7 +4345,6 @@ export namespace MyNS {
 		 * Get bin-list-download
 		 * @param {boolean} include_iso3 Include ISO 3-letter country codes and ISO 3-letter currency codes in the data. These will be added to columns 10 and 11 respectively
 		 * @param {boolean} include_8digit Include 8-digit and higher BIN codes. This option includes all 6-digit BINs and all 8-digit and higher BINs (including some 9, 10 and 11 digit BINs where available)
-		 * @return {string} 
 		 */
 		BINListDownload(include_iso3: boolean | null | undefined, include_8digit: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'bin-list-download?include_iso3=' + include_iso3 + '&include_8digit=' + include_8digit, { responseType: 'text' });
@@ -4293,7 +4356,6 @@ export namespace MyNS {
 		 * Get bin-lookup
 		 * @param {string} bin_number The BIN or IIN number. This is the first 6, 8 or 10 digits of a card number, use 8 (or more) digits for the highest level of accuracy
 		 * @param {string} customer_ip Pass in the customers IP address and we will return some extra information about them
-		 * @return {BINLookupResponse} 
 		 */
 		BINLookup(bin_number: string, customer_ip: string | null | undefined): Observable<BINLookupResponse> {
 			return this.http.get<BINLookupResponse>(this.baseUri + 'bin-lookup?bin_number=' + (bin_number == null ? '' : encodeURIComponent(bin_number)) + '&customer_ip=' + (customer_ip == null ? '' : encodeURIComponent(customer_ip)), {});
@@ -4306,7 +4368,6 @@ export namespace MyNS {
 		 * @param {string} from_value The value to convert from (e.g. 10.95)
 		 * @param {string} from_type The type of the value to convert from (e.g. USD)
 		 * @param {string} to_type The type to convert to (e.g. EUR)
-		 * @return {ConvertResponse} 
 		 */
 		Convert(from_value: string, from_type: string, to_type: string): Observable<ConvertResponse> {
 			return this.http.get<ConvertResponse>(this.baseUri + 'convert?from_value=' + (from_value == null ? '' : encodeURIComponent(from_value)) + '&from_type=' + (from_type == null ? '' : encodeURIComponent(from_type)) + '&to_type=' + (to_type == null ? '' : encodeURIComponent(to_type)), {});
@@ -4318,7 +4379,6 @@ export namespace MyNS {
 		 * Get domain-lookup
 		 * @param {string} host A domain name, hostname, FQDN, URL, HTML link or email address to lookup
 		 * @param {boolean} live For domains that we have never seen before then perform various live checks and realtime reconnaissance. <br>NOTE: this option may add additional non-deterministic delay to the request, if you require consistently fast API response times or just want to check our domain blocklists then you can disable this option
-		 * @return {DomainLookupResponse} 
 		 */
 		DomainLookup(host: string, live: boolean | null | undefined): Observable<DomainLookupResponse> {
 			return this.http.get<DomainLookupResponse>(this.baseUri + 'domain-lookup?host=' + (host == null ? '' : encodeURIComponent(host)) + '&live=' + live, {});
@@ -4330,7 +4390,6 @@ export namespace MyNS {
 		 * Get email-validate
 		 * @param {string} email An email address
 		 * @param {boolean} fix_typos Automatically attempt to fix typos in the address
-		 * @return {EmailValidateResponse} 
 		 */
 		EmailValidate(email: string, fix_typos: boolean | null | undefined): Observable<EmailValidateResponse> {
 			return this.http.get<EmailValidateResponse>(this.baseUri + 'email-validate?email=' + (email == null ? '' : encodeURIComponent(email)) + '&fix_typos=' + fix_typos, {});
@@ -4342,7 +4401,6 @@ export namespace MyNS {
 		 * Get email-verify
 		 * @param {string} email An email address
 		 * @param {boolean} fix_typos Automatically attempt to fix typos in the address
-		 * @return {EmailVerifyResponse} 
 		 */
 		EmailVerify(email: string, fix_typos: boolean | null | undefined): Observable<EmailVerifyResponse> {
 			return this.http.get<EmailVerifyResponse>(this.baseUri + 'email-verify?email=' + (email == null ? '' : encodeURIComponent(email)) + '&fix_typos=' + fix_typos, {});
@@ -4362,7 +4420,6 @@ export namespace MyNS {
 		 * @param {string} country_code Limit result to this country (the default is no country bias)
 		 * @param {string} language_code The language to display results in, available languages are: <ul> <li>de, en, es, fr, it, pt, ru, zh</li> </ul>
 		 * @param {boolean} fuzzy_search If no matches are found for the given address, start performing a recursive fuzzy search until a geolocation is found. This option is recommended for processing user input or implementing auto-complete. We use a combination of approximate string matching and data cleansing to find possible location matches
-		 * @return {GeocodeAddressResponse} 
 		 */
 		GeocodeAddress(address: string | null | undefined, house_number: string | null | undefined, street: string | null | undefined, city: string | null | undefined, county: string | null | undefined, state: string | null | undefined, postal_code: string | null | undefined, country_code: string | null | undefined, language_code: string | null | undefined, fuzzy_search: boolean | null | undefined): Observable<GeocodeAddressResponse> {
 			return this.http.get<GeocodeAddressResponse>(this.baseUri + 'geocode-address?address=' + (address == null ? '' : encodeURIComponent(address)) + '&house_number=' + (house_number == null ? '' : encodeURIComponent(house_number)) + '&street=' + (street == null ? '' : encodeURIComponent(street)) + '&city=' + (city == null ? '' : encodeURIComponent(city)) + '&county=' + (county == null ? '' : encodeURIComponent(county)) + '&state=' + (state == null ? '' : encodeURIComponent(state)) + '&postal_code=' + (postal_code == null ? '' : encodeURIComponent(postal_code)) + '&country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)) + '&language_code=' + (language_code == null ? '' : encodeURIComponent(language_code)) + '&fuzzy_search=' + fuzzy_search, {});
@@ -4376,7 +4433,6 @@ export namespace MyNS {
 		 * @param {string} longitude The location longitude in decimal degrees format
 		 * @param {string} language_code The language to display results in, available languages are: <ul> <li>de, en, es, fr, it, pt, ru</li> </ul>
 		 * @param {string} zoom The zoom level to respond with: <br> <ul> <li>address - the most precise address available</li> <li>street - the street level</li> <li>city - the city level</li> <li>state - the state level</li> <li>country - the country level</li> </ul>
-		 * @return {GeocodeReverseResponse} 
 		 */
 		GeocodeReverse(latitude: string, longitude: string, language_code: string | null | undefined, zoom: string | null | undefined): Observable<GeocodeReverseResponse> {
 			return this.http.get<GeocodeReverseResponse>(this.baseUri + 'geocode-reverse?latitude=' + (latitude == null ? '' : encodeURIComponent(latitude)) + '&longitude=' + (longitude == null ? '' : encodeURIComponent(longitude)) + '&language_code=' + (language_code == null ? '' : encodeURIComponent(language_code)) + '&zoom=' + (zoom == null ? '' : encodeURIComponent(zoom)), {});
@@ -4388,7 +4444,6 @@ export namespace MyNS {
 		 * Get hlr-lookup
 		 * @param {string} number A phone number
 		 * @param {string} country_code ISO 2-letter country code, assume numbers are based in this country. <br>If not set numbers are assumed to be in international format (with or without the leading + sign)
-		 * @return {HLRLookupResponse} 
 		 */
 		HLRLookup(number: string, country_code: string | null | undefined): Observable<HLRLookupResponse> {
 			return this.http.get<HLRLookupResponse>(this.baseUri + 'hlr-lookup?number=' + (number == null ? '' : encodeURIComponent(number)) + '&country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)), {});
@@ -4400,8 +4455,8 @@ export namespace MyNS {
 		 * Get host-reputation
 		 * @param {string} host An IP address, domain name, FQDN or URL. <br>If you supply a domain/URL it will be checked against the URI DNSBL lists
 		 * @param {number} list_rating Only check lists with this rating or better
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} zones Only check these DNSBL zones/hosts. Multiple zones can be supplied as comma-separated values
-		 * @return {HostReputationResponse} 
 		 */
 		HostReputation(host: string, list_rating: number | null | undefined, zones: string | null | undefined): Observable<HostReputationResponse> {
 			return this.http.get<HostReputationResponse>(this.baseUri + 'host-reputation?host=' + (host == null ? '' : encodeURIComponent(host)) + '&list_rating=' + list_rating + '&zones=' + (zones == null ? '' : encodeURIComponent(zones)), {});
@@ -4413,7 +4468,6 @@ export namespace MyNS {
 		 * Get ip-blocklist
 		 * @param {string} ip An IPv4 or IPv6 address. Accepts standard IP notation (with or without port number), CIDR notation and IPv6 compressed notation. If multiple IPs are passed using comma-separated values the first non-bogon address on the list will be checked
 		 * @param {boolean} vpn_lookup Include public VPN provider IP addresses. <br><b>NOTE</b>: For more advanced VPN detection including the ability to identify private and stealth VPNs use the <a href="https://www.neutrinoapi.com/api/ip-probe/">IP Probe API</a>
-		 * @return {IPBlocklistResponse} 
 		 */
 		IPBlocklist(ip: string, vpn_lookup: boolean | null | undefined): Observable<IPBlocklistResponse> {
 			return this.http.get<IPBlocklistResponse>(this.baseUri + 'ip-blocklist?ip=' + (ip == null ? '' : encodeURIComponent(ip)) + '&vpn_lookup=' + vpn_lookup, {});
@@ -4427,7 +4481,6 @@ export namespace MyNS {
 		 * @param {boolean} include_vpn Include public VPN provider addresses, this option is only available for Tier 3 or higher accounts. Adds any IPs which are solely listed as VPN providers, IPs that are listed on multiple sensors will still be included without enabling this option. <br><b>WARNING</b>: This adds at least an additional 8 million IP addresses to the download if not using CIDR notation
 		 * @param {boolean} cidr Output IPs using CIDR notation. This option should be preferred but is off by default for backwards compatibility
 		 * @param {boolean} ip6 Output the IPv6 version of the blocklist, the default is to output IPv4 only. Note that this option enables CIDR notation too as this is the only notation currently supported for IPv6
-		 * @return {string} 
 		 */
 		IPBlocklistDownload(format: string | null | undefined, include_vpn: boolean | null | undefined, cidr: boolean | null | undefined, ip6: boolean | null | undefined): Observable<string> {
 			return this.http.get(this.baseUri + 'ip-blocklist-download?format=' + (format == null ? '' : encodeURIComponent(format)) + '&include_vpn=' + include_vpn + '&cidr=' + cidr + '&ip6=' + ip6, { responseType: 'text' });
@@ -4439,7 +4492,6 @@ export namespace MyNS {
 		 * Get ip-info
 		 * @param {string} ip IPv4 or IPv6 address
 		 * @param {boolean} reverse_lookup Do a reverse DNS (PTR) lookup. This option can add extra delay to the request so only use it if you need it
-		 * @return {IPInfoResponse} 
 		 */
 		IPInfo(ip: string, reverse_lookup: boolean | null | undefined): Observable<IPInfoResponse> {
 			return this.http.get<IPInfoResponse>(this.baseUri + 'ip-info?ip=' + (ip == null ? '' : encodeURIComponent(ip)) + '&reverse_lookup=' + reverse_lookup, {});
@@ -4450,7 +4502,6 @@ export namespace MyNS {
 		 * Execute a realtime network probe against an IPv4 or IPv6 address
 		 * Get ip-probe
 		 * @param {string} ip IPv4 or IPv6 address
-		 * @return {IPProbeResponse} 
 		 */
 		IPProbe(ip: string): Observable<IPProbeResponse> {
 			return this.http.get<IPProbeResponse>(this.baseUri + 'ip-probe?ip=' + (ip == null ? '' : encodeURIComponent(ip)), {});
@@ -4463,7 +4514,6 @@ export namespace MyNS {
 		 * @param {string} number A phone number. This can be in international format (E.164) or local format. If passing local format you must also set either the 'country-code' OR 'ip' options as well
 		 * @param {string} country_code ISO 2-letter country code, assume numbers are based in this country. If not set numbers are assumed to be in international format (with or without the leading + sign)
 		 * @param {string} ip Pass in a users IP address and we will assume numbers are based in the country of the IP address
-		 * @return {PhoneValidateResponse} 
 		 */
 		PhoneValidate(number: string, country_code: string | null | undefined, ip: string | null | undefined): Observable<PhoneValidateResponse> {
 			return this.http.get<PhoneValidateResponse>(this.baseUri + 'phone-validate?number=' + (number == null ? '' : encodeURIComponent(number)) + '&country_code=' + (country_code == null ? '' : encodeURIComponent(country_code)) + '&ip=' + (ip == null ? '' : encodeURIComponent(ip)), {});
@@ -4480,7 +4530,6 @@ export namespace MyNS {
 		 * @param {string} ua_mobile For client hints this corresponds to the 'UA-Mobile' header or 'mobile' from NavigatorUAData
 		 * @param {string} device_model For client hints this corresponds to the 'UA-Model' header or 'model' from NavigatorUAData. <br>You can also use this parameter to lookup a device directly by its model name, model code or hardware code, on android you can get the model name from: https://developer.android.com/reference/android/os/Build.html#MODEL
 		 * @param {string} device_brand This parameter is only used in combination with 'device-model' when doing direct device lookups without any user-agent data. Set this to the brand or manufacturer name, this is required for accurate device detection with ambiguous model names. On android you can get the device brand from: https://developer.android.com/reference/android/os/Build#MANUFACTURER
-		 * @return {UALookupResponse} 
 		 */
 		UALookup(ua: string, ua_version: string | null | undefined, ua_platform: string | null | undefined, ua_platform_version: string | null | undefined, ua_mobile: string | null | undefined, device_model: string | null | undefined, device_brand: string | null | undefined): Observable<UALookupResponse> {
 			return this.http.get<UALookupResponse>(this.baseUri + 'ua-lookup?ua=' + (ua == null ? '' : encodeURIComponent(ua)) + '&ua_version=' + (ua_version == null ? '' : encodeURIComponent(ua_version)) + '&ua_platform=' + (ua_platform == null ? '' : encodeURIComponent(ua_platform)) + '&ua_platform_version=' + (ua_platform_version == null ? '' : encodeURIComponent(ua_platform_version)) + '&ua_mobile=' + (ua_mobile == null ? '' : encodeURIComponent(ua_mobile)) + '&device_model=' + (device_model == null ? '' : encodeURIComponent(device_model)) + '&device_brand=' + (device_brand == null ? '' : encodeURIComponent(device_brand)), {});
@@ -4494,8 +4543,9 @@ export namespace MyNS {
 		 * @param {boolean} fetch_content If this URL responds with html, text, json or xml then return the response. This option is useful if you want to perform further processing on the URL content (e.g. with the HTML Extract or HTML Clean APIs)
 		 * @param {boolean} ignore_certificate_errors Ignore any TLS/SSL certificate errors and load the URL anyway
 		 * @param {number} timeout Timeout in seconds. Give up if still trying to load the URL after this number of seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} retry If the request fails for any reason try again this many times
-		 * @return {URLInfoResponse} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		URLInfo(url: string, fetch_content: boolean | null | undefined, ignore_certificate_errors: boolean | null | undefined, timeout: number | null | undefined, retry: number | null | undefined): Observable<URLInfoResponse> {
 			return this.http.get<URLInfoResponse>(this.baseUri + 'url-info?url=' + (url == null ? '' : encodeURIComponent(url)) + '&fetch_content=' + fetch_content + '&ignore_certificate_errors=' + ignore_certificate_errors + '&timeout=' + timeout + '&retry=' + retry, {});
@@ -4507,7 +4557,6 @@ export namespace MyNS {
 		 * Get verify-security-code
 		 * @param {string} security_code The security code to verify
 		 * @param {string} limit_by If set then enable additional brute-force protection by limiting the number of attempts by the supplied value. This can be set to any unique identifier you would like to limit by, for example a hash of the users email, phone number or IP address. Requests to this API will be ignored after approximately 10 failed verification attempts
-		 * @return {VerifySecurityCodeResponse} 
 		 */
 		VerifySecurityCode(security_code: string, limit_by: string | null | undefined): Observable<VerifySecurityCodeResponse> {
 			return this.http.get<VerifySecurityCodeResponse>(this.baseUri + 'verify-security-code?security_code=' + (security_code == null ? '' : encodeURIComponent(security_code)) + '&limit_by=' + (limit_by == null ? '' : encodeURIComponent(limit_by)), {});

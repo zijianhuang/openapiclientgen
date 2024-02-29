@@ -177,9 +177,13 @@ export namespace MyNS {
 		 * List all file services in storage accounts
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {FileServiceItems} OK -- List file services operation completed successfully.
 		 */
 		FileServices_List(resourceGroupName: string, accountName: string, api_version: string, subscriptionId: string): Observable<FileServiceItems> {
@@ -190,9 +194,13 @@ export namespace MyNS {
 		 * Lists all shares.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} maxpagesize Optional. Specified maximum number of shares that can be included in the list.
 		 * @param {string} filter Optional. When specified, only share names starting with the filter will be listed.
 		 * @return {FileShareItems} OK -- List Shares operation completed successfully.
@@ -205,10 +213,15 @@ export namespace MyNS {
 		 * Gets properties of a specified share.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares/{shareName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {FileShare} OK -- Get Share operation completed successfully.
 		 */
 		FileShares_Get(resourceGroupName: string, accountName: string, shareName: string, api_version: string, subscriptionId: string): Observable<FileShare> {
@@ -219,10 +232,15 @@ export namespace MyNS {
 		 * Creates a new share under the specified account as described by request body. The share resource includes metadata and properties for that share. It does not include a list of the files contained by the share.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares/{shareName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {FileShare} requestBody Properties of the file share to create.
 		 * @return {FileShare} OK -- The Share is already created.
 		 */
@@ -234,10 +252,15 @@ export namespace MyNS {
 		 * Deletes specified share under its account.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares/{shareName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {void} OK -- Delete Share operation completed successfully.
 		 */
 		FileShares_Delete(resourceGroupName: string, accountName: string, shareName: string, api_version: string, subscriptionId: string): Observable<HttpResponse<string>> {
@@ -248,10 +271,15 @@ export namespace MyNS {
 		 * Updates share properties as specified in request body. Properties not mentioned in the request will not be changed. Update fails if the specified share does not already exist.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/default/shares/{shareName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} shareName The name of the file share within the specified storage account. File share names must be between 3 and 63 characters in length and use numbers, lower-case letters and dash (-) only. Every dash (-) character must be immediately preceded and followed by a letter or number.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {FileShare} requestBody Properties to update for the file share.
 		 * @return {FileShare} OK -- Update Share operation completed successfully.
 		 */
@@ -263,9 +291,13 @@ export namespace MyNS {
 		 * Gets the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/{FileServicesName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {FileServices_GetServicePropertiesFileServicesName} FileServicesName The name of the file Service within the specified storage account. File Service Name must be "default"
 		 * @return {FileServiceProperties} OK -- returned the properties of a storage account’s File service.
 		 */
@@ -277,9 +309,13 @@ export namespace MyNS {
 		 * Sets the properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/fileServices/{FileServicesName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {FileServices_GetServicePropertiesFileServicesName} FileServicesName The name of the file Service within the specified storage account. File Service Name must be "default"
 		 * @param {FileServiceProperties} requestBody The properties of file services in storage accounts, including CORS (Cross-Origin Resource Sharing) rules.
 		 * @return {FileServiceProperties} OK -- Sets The properties of a storage account’s File service successfully.

@@ -266,6 +266,7 @@ export namespace MyNS {
 		/**
 		 * The height of the image.
 		 * Required
+		 * Type: double
 		 */
 		height: number;
 
@@ -281,6 +282,7 @@ export namespace MyNS {
 		/**
 		 * The width of the image.
 		 * Required
+		 * Type: double
 		 */
 		width: number;
 	}
@@ -289,6 +291,7 @@ export namespace MyNS {
 		/**
 		 * The height of the image.
 		 * Required
+		 * Type: double
 		 */
 		height: FormControl<number | null | undefined>,
 
@@ -304,6 +307,7 @@ export namespace MyNS {
 		/**
 		 * The width of the image.
 		 * Required
+		 * Type: double
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -386,6 +390,7 @@ export namespace MyNS {
 		/**
 		 * The total number of channels on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -400,6 +405,7 @@ export namespace MyNS {
 		/**
 		 * The total number of channels on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -428,6 +434,7 @@ export namespace MyNS {
 		/**
 		 * The total number of groups on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -442,6 +449,7 @@ export namespace MyNS {
 		/**
 		 * The total number of groups on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -470,6 +478,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -484,6 +493,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -512,6 +522,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -526,6 +537,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -910,6 +922,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection. This data requires a bearer token with the `private` scope.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -924,6 +937,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection. This data requires a bearer token with the `private` scope.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -952,6 +966,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -966,6 +981,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -994,6 +1010,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -1008,6 +1025,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -1360,6 +1378,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -1374,6 +1393,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -1731,6 +1751,7 @@ export namespace MyNS {
 		/**
 		 * The total number of albums on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -1745,6 +1766,7 @@ export namespace MyNS {
 		/**
 		 * The total number of albums on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -1773,6 +1795,7 @@ export namespace MyNS {
 		/**
 		 * The total number of appearances on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -1787,6 +1810,7 @@ export namespace MyNS {
 		/**
 		 * The total number of appearances on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -1815,6 +1839,7 @@ export namespace MyNS {
 		/**
 		 * The total number of blocked users on this connection. This data requires a bearer token with the `private` scope.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -1829,6 +1854,7 @@ export namespace MyNS {
 		/**
 		 * The total number of blocked users on this connection. This data requires a bearer token with the `private` scope.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -1857,6 +1883,7 @@ export namespace MyNS {
 		/**
 		 * The total number of categories on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -1871,6 +1898,7 @@ export namespace MyNS {
 		/**
 		 * The total number of categories on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -1899,6 +1927,7 @@ export namespace MyNS {
 		/**
 		 * The total number of channels on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -1913,6 +1942,7 @@ export namespace MyNS {
 		/**
 		 * The total number of channels on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -1970,6 +2000,7 @@ export namespace MyNS {
 		/**
 		 * The total number of folders on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -1984,6 +2015,7 @@ export namespace MyNS {
 		/**
 		 * The total number of folders on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2012,6 +2044,7 @@ export namespace MyNS {
 		/**
 		 * The total number of followers on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2026,6 +2059,7 @@ export namespace MyNS {
 		/**
 		 * The total number of followers on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2054,6 +2088,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2068,6 +2103,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2096,6 +2132,7 @@ export namespace MyNS {
 		/**
 		 * The total number of groups on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2110,6 +2147,7 @@ export namespace MyNS {
 		/**
 		 * The total number of groups on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2138,6 +2176,7 @@ export namespace MyNS {
 		/**
 		 * The total number of likes on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2152,6 +2191,7 @@ export namespace MyNS {
 		/**
 		 * The total number of likes on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2180,6 +2220,7 @@ export namespace MyNS {
 		/**
 		 * The total number of channels on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2194,6 +2235,7 @@ export namespace MyNS {
 		/**
 		 * The total number of channels on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2222,6 +2264,7 @@ export namespace MyNS {
 		/**
 		 * The total number of pictures on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2236,6 +2279,7 @@ export namespace MyNS {
 		/**
 		 * The total number of pictures on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2264,6 +2308,7 @@ export namespace MyNS {
 		/**
 		 * The total number of portfolios on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2278,6 +2323,7 @@ export namespace MyNS {
 		/**
 		 * The total number of portfolios on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2306,6 +2352,7 @@ export namespace MyNS {
 		/**
 		 * The total number of channels on this connection. This data requires a bearer token with the `private` scope.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2320,6 +2367,7 @@ export namespace MyNS {
 		/**
 		 * The total number of channels on this connection. This data requires a bearer token with the `private` scope.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2348,6 +2396,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection. This data requires a bearer token with the `private` scope.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2362,6 +2411,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection. This data requires a bearer token with the `private` scope.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2390,6 +2440,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2404,6 +2455,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2432,6 +2484,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2446,6 +2499,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2474,6 +2528,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2488,6 +2543,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2516,6 +2572,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -2530,6 +2587,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -2878,18 +2936,21 @@ export namespace MyNS {
 		/**
 		 * The number of bytes remaining in your lifetime maximum.
 		 * Required
+		 * Type: double
 		 */
 		free: number;
 
 		/**
 		 * The total number of bytes that you can upload across the lifetime of your account.
 		 * Required
+		 * Type: double
 		 */
 		max: number;
 
 		/**
 		 * The number of bytes that you've already uploaded against your lifetime limit.
 		 * Required
+		 * Type: double
 		 */
 		used: number;
 	}
@@ -2898,18 +2959,21 @@ export namespace MyNS {
 		/**
 		 * The number of bytes remaining in your lifetime maximum.
 		 * Required
+		 * Type: double
 		 */
 		free: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of bytes that you can upload across the lifetime of your account.
 		 * Required
+		 * Type: double
 		 */
 		max: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of bytes that you've already uploaded against your lifetime limit.
 		 * Required
+		 * Type: double
 		 */
 		used: FormControl<number | null | undefined>,
 	}
@@ -2927,12 +2991,14 @@ export namespace MyNS {
 		/**
 		 * The number of bytes remaining in your upload quota for the current period.
 		 * Required
+		 * Type: double
 		 */
 		free: number;
 
 		/**
 		 * The total number of bytes that you can upload per period.
 		 * Required
+		 * Type: double
 		 */
 		max: number;
 
@@ -2945,6 +3011,7 @@ export namespace MyNS {
 		/**
 		 * The number of bytes that you've already uploaded against your quota in the current period.
 		 * Required
+		 * Type: double
 		 */
 		used: number;
 	}
@@ -2953,12 +3020,14 @@ export namespace MyNS {
 		/**
 		 * The number of bytes remaining in your upload quota for the current period.
 		 * Required
+		 * Type: double
 		 */
 		free: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of bytes that you can upload per period.
 		 * Required
+		 * Type: double
 		 */
 		max: FormControl<number | null | undefined>,
 
@@ -2971,6 +3040,7 @@ export namespace MyNS {
 		/**
 		 * The number of bytes that you've already uploaded against your quota in the current period.
 		 * Required
+		 * Type: double
 		 */
 		used: FormControl<number | null | undefined>,
 	}
@@ -2989,12 +3059,14 @@ export namespace MyNS {
 		/**
 		 * The number of bytes remaining in your upload quota.
 		 * Required
+		 * Type: double
 		 */
 		free: number;
 
 		/**
 		 * The maximum number of bytes allotted to your upload quota.
 		 * Required
+		 * Type: double
 		 */
 		max: number;
 
@@ -3007,6 +3079,7 @@ export namespace MyNS {
 		/**
 		 * The number of bytes that you've already uploaded against your quota.
 		 * Required
+		 * Type: double
 		 */
 		used: number;
 	}
@@ -3015,12 +3088,14 @@ export namespace MyNS {
 		/**
 		 * The number of bytes remaining in your upload quota.
 		 * Required
+		 * Type: double
 		 */
 		free: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum number of bytes allotted to your upload quota.
 		 * Required
+		 * Type: double
 		 */
 		max: FormControl<number | null | undefined>,
 
@@ -3033,6 +3108,7 @@ export namespace MyNS {
 		/**
 		 * The number of bytes that you've already uploaded against your quota.
 		 * Required
+		 * Type: double
 		 */
 		used: FormControl<number | null | undefined>,
 	}
@@ -3132,6 +3208,7 @@ export namespace MyNS {
 		/**
 		 * The video's duration in seconds.
 		 * Required
+		 * Type: double
 		 */
 		duration: number;
 
@@ -3144,6 +3221,7 @@ export namespace MyNS {
 		/**
 		 * The video's height in pixels.
 		 * Required
+		 * Type: double
 		 */
 		height: number;
 
@@ -3285,6 +3363,7 @@ export namespace MyNS {
 		/**
 		 * The video's width in pixels.
 		 * Required
+		 * Type: double
 		 */
 		width: number;
 	}
@@ -3305,12 +3384,14 @@ export namespace MyNS {
 		/**
 		 * The video's duration in seconds.
 		 * Required
+		 * Type: double
 		 */
 		duration: FormControl<number | null | undefined>,
 
 		/**
 		 * The video's height in pixels.
 		 * Required
+		 * Type: double
 		 */
 		height: FormControl<number | null | undefined>,
 
@@ -3395,6 +3476,7 @@ export namespace MyNS {
 		/**
 		 * The video's width in pixels.
 		 * Required
+		 * Type: double
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -3939,6 +4021,7 @@ export namespace MyNS {
 		/**
 		 * The total number of comments on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -3953,6 +4036,7 @@ export namespace MyNS {
 		/**
 		 * The total number of comments on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -3975,7 +4059,10 @@ export namespace MyNS {
 		/** An array of HTTP methods permitted on this URI. */
 		options?: Array<string>;
 
-		/** The total number of users on this connection. */
+		/**
+		 * The total number of users on this connection.
+		 * Type: double
+		 */
 		total?: number | null;
 
 		/** The API URI that resolves to the connection data. */
@@ -3983,7 +4070,10 @@ export namespace MyNS {
 	}
 	export interface VideoMetadataConnectionsCreditsFormProperties {
 
-		/** The total number of users on this connection. */
+		/**
+		 * The total number of users on this connection.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 
 		/** The API URI that resolves to the connection data. */
@@ -4008,6 +4098,7 @@ export namespace MyNS {
 		/**
 		 * The total number of likes on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -4022,6 +4113,7 @@ export namespace MyNS {
 		/**
 		 * The total number of likes on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -4092,6 +4184,7 @@ export namespace MyNS {
 		/**
 		 * Total number of thumbnails on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -4106,6 +4199,7 @@ export namespace MyNS {
 		/**
 		 * Total number of thumbnails on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -4245,6 +4339,7 @@ export namespace MyNS {
 		/**
 		 * The total number of text tracks on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -4259,6 +4354,7 @@ export namespace MyNS {
 		/**
 		 * The total number of text tracks on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -4329,6 +4425,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -4343,6 +4440,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -4374,6 +4472,7 @@ export namespace MyNS {
 		/**
 		 * The total number of versions on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -4391,6 +4490,7 @@ export namespace MyNS {
 		/**
 		 * The total number of versions on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -4504,6 +4604,7 @@ export namespace MyNS {
 		/**
 		 * The numeric value of the price for buying the On Demand video.
 		 * Required
+		 * Type: double
 		 */
 		price: number;
 
@@ -4570,6 +4671,7 @@ export namespace MyNS {
 		/**
 		 * The numeric value of the price for buying the On Demand video.
 		 * Required
+		 * Type: double
 		 */
 		price: FormControl<number | null | undefined>,
 
@@ -4732,6 +4834,7 @@ export namespace MyNS {
 		/**
 		 * The numeric value of the price for buying the On Demand video.
 		 * Required
+		 * Type: double
 		 */
 		price: number;
 
@@ -4793,6 +4896,7 @@ export namespace MyNS {
 		/**
 		 * The numeric value of the price for buying the On Demand video.
 		 * Required
+		 * Type: double
 		 */
 		price: FormControl<number | null | undefined>,
 
@@ -5147,6 +5251,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -5161,6 +5266,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -5296,6 +5402,7 @@ export namespace MyNS {
 		/**
 		 * The 360 field of view, from 30 (minimum) to 90 (maximum). The default is 50.
 		 * Required
+		 * Type: double
 		 */
 		field_of_view: number;
 
@@ -5326,6 +5433,7 @@ export namespace MyNS {
 		/**
 		 * The 360 field of view, from 30 (minimum) to 90 (maximum). The default is 50.
 		 * Required
+		 * Type: double
 		 */
 		field_of_view: FormControl<number | null | undefined>,
 
@@ -5362,30 +5470,54 @@ export namespace MyNS {
 
 	export interface VideoSpatialDirector_timeline {
 
-		/** The director timeline pitch, from -90 (minimum) to 90 (maximum). */
+		/**
+		 * The director timeline pitch, from -90 (minimum) to 90 (maximum).
+		 * Type: double
+		 */
 		pitch?: number | null;
 
-		/** The director timeline roll. */
+		/**
+		 * The director timeline roll.
+		 * Type: double
+		 */
 		roll?: number | null;
 
-		/** The director timeline time code. */
+		/**
+		 * The director timeline time code.
+		 * Type: double
+		 */
 		time_code?: number | null;
 
-		/** The director timeline yaw, from 0 (minimum) to 360 (maximum). */
+		/**
+		 * The director timeline yaw, from 0 (minimum) to 360 (maximum).
+		 * Type: double
+		 */
 		yaw?: number | null;
 	}
 	export interface VideoSpatialDirector_timelineFormProperties {
 
-		/** The director timeline pitch, from -90 (minimum) to 90 (maximum). */
+		/**
+		 * The director timeline pitch, from -90 (minimum) to 90 (maximum).
+		 * Type: double
+		 */
 		pitch: FormControl<number | null | undefined>,
 
-		/** The director timeline roll. */
+		/**
+		 * The director timeline roll.
+		 * Type: double
+		 */
 		roll: FormControl<number | null | undefined>,
 
-		/** The director timeline time code. */
+		/**
+		 * The director timeline time code.
+		 * Type: double
+		 */
 		time_code: FormControl<number | null | undefined>,
 
-		/** The director timeline yaw, from 0 (minimum) to 360 (maximum). */
+		/**
+		 * The director timeline yaw, from 0 (minimum) to 360 (maximum).
+		 * Type: double
+		 */
 		yaw: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoSpatialDirector_timelineFormGroup() {
@@ -5407,6 +5539,7 @@ export namespace MyNS {
 		/**
 		 * The current total number of times that the video has been played.
 		 * Required
+		 * Type: double
 		 */
 		plays: number;
 	}
@@ -5415,6 +5548,7 @@ export namespace MyNS {
 		/**
 		 * The current total number of times that the video has been played.
 		 * Required
+		 * Type: double
 		 */
 		plays: FormControl<number | null | undefined>,
 	}
@@ -5463,7 +5597,10 @@ export namespace MyNS {
 		/** The redirect URL for the upload app. */
 		redirect_url?: string | null;
 
-		/** The file size in bytes of the uploaded video. */
+		/**
+		 * The file size in bytes of the uploaded video.
+		 * Type: double
+		 */
 		size?: number | null;
 
 		/**
@@ -5496,7 +5633,10 @@ export namespace MyNS {
 		/** The redirect URL for the upload app. */
 		redirect_url: FormControl<string | null | undefined>,
 
-		/** The file size in bytes of the uploaded video. */
+		/**
+		 * The file size in bytes of the uploaded video.
+		 * Type: double
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/**
@@ -5705,6 +5845,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -5719,6 +5860,7 @@ export namespace MyNS {
 		/**
 		 * The total number of users on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -5747,6 +5889,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -5761,6 +5904,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -6102,6 +6246,7 @@ export namespace MyNS {
 		/**
 		 * The total duration in seconds of all the videos in the album.
 		 * Required
+		 * Type: double
 		 */
 		duration: number;
 
@@ -6284,6 +6429,7 @@ export namespace MyNS {
 		/**
 		 * The total duration in seconds of all the videos in the album.
 		 * Required
+		 * Type: double
 		 */
 		duration: FormControl<number | null | undefined>,
 
@@ -6494,6 +6640,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -6508,6 +6655,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -6962,6 +7110,7 @@ export namespace MyNS {
 		/**
 		 * The total number of replies on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -6976,6 +7125,7 @@ export namespace MyNS {
 		/**
 		 * The total number of replies on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -7275,6 +7425,7 @@ export namespace MyNS {
 		/**
 		 * The error code.
 		 * Required
+		 * Type: double
 		 */
 		error_code: number;
 
@@ -7301,6 +7452,7 @@ export namespace MyNS {
 		/**
 		 * The error code.
 		 * Required
+		 * Type: double
 		 */
 		error_code: FormControl<number | null | undefined>,
 
@@ -7652,6 +7804,7 @@ export namespace MyNS {
 		/**
 		 * The rating of this page.
 		 * Required
+		 * Type: double
 		 */
 		rating: number;
 
@@ -7744,6 +7897,7 @@ export namespace MyNS {
 		/**
 		 * The rating of this page.
 		 * Required
+		 * Type: double
 		 */
 		rating: FormControl<number | null | undefined>,
 
@@ -7858,6 +8012,7 @@ export namespace MyNS {
 		/**
 		 * The default price to buy an episode.
 		 * Required
+		 * Type: double
 		 */
 		price: number;
 	}
@@ -7872,6 +8027,7 @@ export namespace MyNS {
 		/**
 		 * The default price to buy an episode.
 		 * Required
+		 * Type: double
 		 */
 		price: FormControl<number | null | undefined>,
 	}
@@ -7915,6 +8071,7 @@ export namespace MyNS {
 		/**
 		 * The default price to rent an episode.
 		 * Required
+		 * Type: double
 		 */
 		price: number;
 	}
@@ -7950,6 +8107,7 @@ export namespace MyNS {
 		/**
 		 * The default price to rent an episode.
 		 * Required
+		 * Type: double
 		 */
 		price: FormControl<number | null | undefined>,
 	}
@@ -8069,6 +8227,7 @@ export namespace MyNS {
 		/**
 		 * The total number of comments on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -8083,6 +8242,7 @@ export namespace MyNS {
 		/**
 		 * The total number of comments on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -8111,6 +8271,7 @@ export namespace MyNS {
 		/**
 		 * The total number of genres on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -8125,6 +8286,7 @@ export namespace MyNS {
 		/**
 		 * The total number of genres on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -8153,6 +8315,7 @@ export namespace MyNS {
 		/**
 		 * The total number of likes on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -8167,6 +8330,7 @@ export namespace MyNS {
 		/**
 		 * The total number of likes on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -8195,6 +8359,7 @@ export namespace MyNS {
 		/**
 		 * The total number of pictures on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -8209,6 +8374,7 @@ export namespace MyNS {
 		/**
 		 * The total number of pictures on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -8237,6 +8403,7 @@ export namespace MyNS {
 		/**
 		 * The total number of seasons on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -8251,6 +8418,7 @@ export namespace MyNS {
 		/**
 		 * The total number of seasons on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -8273,12 +8441,14 @@ export namespace MyNS {
 		/**
 		 * The total number of extra videos.
 		 * Required
+		 * Type: double
 		 */
 		extra_total: number;
 
 		/**
 		 * The total number of main videos.
 		 * Required
+		 * Type: double
 		 */
 		main_total: number;
 
@@ -8291,6 +8461,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -8303,6 +8474,7 @@ export namespace MyNS {
 		/**
 		 * The total number of viewable videos.
 		 * Required
+		 * Type: double
 		 */
 		viewable_total: number;
 	}
@@ -8311,18 +8483,21 @@ export namespace MyNS {
 		/**
 		 * The total number of extra videos.
 		 * Required
+		 * Type: double
 		 */
 		extra_total: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of main videos.
 		 * Required
+		 * Type: double
 		 */
 		main_total: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -8335,6 +8510,7 @@ export namespace MyNS {
 		/**
 		 * The total number of viewable videos.
 		 * Required
+		 * Type: double
 		 */
 		viewable_total: FormControl<number | null | undefined>,
 	}
@@ -8653,6 +8829,7 @@ export namespace MyNS {
 		/**
 		 * The percentage amount that is deducted from the product price.
 		 * Required
+		 * Type: double
 		 */
 		percent_off: number;
 
@@ -8687,6 +8864,7 @@ export namespace MyNS {
 		/**
 		 * The total amount of times that this promotion can be used.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -8742,6 +8920,7 @@ export namespace MyNS {
 		/**
 		 * The percentage amount that is deducted from the product price.
 		 * Required
+		 * Type: double
 		 */
 		percent_off: FormControl<number | null | undefined>,
 
@@ -8776,6 +8955,7 @@ export namespace MyNS {
 		/**
 		 * The total amount of times that this promotion can be used.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -8858,6 +9038,7 @@ export namespace MyNS {
 		/**
 		 * The total number of uses on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -8872,6 +9053,7 @@ export namespace MyNS {
 		/**
 		 * The total number of uses on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -8912,12 +9094,14 @@ export namespace MyNS {
 		/**
 		 * The total amount of times this code can be used.
 		 * Required
+		 * Type: double
 		 */
 		max_uses: number;
 
 		/**
 		 * The number of times that this code has been used.
 		 * Required
+		 * Type: double
 		 */
 		uses: number;
 	}
@@ -8938,12 +9122,14 @@ export namespace MyNS {
 		/**
 		 * The total amount of times this code can be used.
 		 * Required
+		 * Type: double
 		 */
 		max_uses: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of times that this code has been used.
 		 * Required
+		 * Type: double
 		 */
 		uses: FormControl<number | null | undefined>,
 	}
@@ -9026,6 +9212,7 @@ export namespace MyNS {
 		/**
 		 * The position of the season relative to other seasons in the series.
 		 * Required
+		 * Type: double
 		 */
 		position: number;
 
@@ -9070,6 +9257,7 @@ export namespace MyNS {
 		/**
 		 * The position of the season relative to other seasons in the series.
 		 * Required
+		 * Type: double
 		 */
 		position: FormControl<number | null | undefined>,
 
@@ -9143,6 +9331,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -9157,6 +9346,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -9188,7 +9378,10 @@ export namespace MyNS {
 		/** The duration of the On Demand video. */
 		duration?: string | null;
 
-		/** The episode number of the On Demand video. */
+		/**
+		 * The episode number of the On Demand video.
+		 * Type: double
+		 */
 		episode?: number | null;
 
 		/**
@@ -9221,10 +9414,14 @@ export namespace MyNS {
 		/**
 		 * The user's most recent play position in seconds for this video.
 		 * Required
+		 * Type: double
 		 */
 		play_progress: number;
 
-		/** Describes the manual position of this video relative to the other videos owned by this On Demand page. */
+		/**
+		 * Describes the manual position of this video relative to the other videos owned by this On Demand page.
+		 * Type: double
+		 */
 		position?: number | null;
 
 		/** The time in ISO 8601 format when the On Demand video was created or published. */
@@ -9233,6 +9430,7 @@ export namespace MyNS {
 		/**
 		 * The year that this On Demand video was released.
 		 * Required
+		 * Type: double
 		 */
 		release_year: number;
 
@@ -9269,7 +9467,10 @@ export namespace MyNS {
 		/** The duration of the On Demand video. */
 		duration: FormControl<string | null | undefined>,
 
-		/** The episode number of the On Demand video. */
+		/**
+		 * The episode number of the On Demand video.
+		 * Type: double
+		 */
 		episode: FormControl<number | null | undefined>,
 
 		/**
@@ -9284,10 +9485,14 @@ export namespace MyNS {
 		/**
 		 * The user's most recent play position in seconds for this video.
 		 * Required
+		 * Type: double
 		 */
 		play_progress: FormControl<number | null | undefined>,
 
-		/** Describes the manual position of this video relative to the other videos owned by this On Demand page. */
+		/**
+		 * Describes the manual position of this video relative to the other videos owned by this On Demand page.
+		 * Type: double
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/** The time in ISO 8601 format when the On Demand video was created or published. */
@@ -9296,6 +9501,7 @@ export namespace MyNS {
 		/**
 		 * The year that this On Demand video was released.
 		 * Required
+		 * Type: double
 		 */
 		release_year: FormControl<number | null | undefined>,
 
@@ -9719,12 +9925,14 @@ export namespace MyNS {
 		/**
 		 * The FPS of the video file.
 		 * Required
+		 * Type: double
 		 */
 		fps: number;
 
 		/**
 		 * The height in pixels of the video.
 		 * Required
+		 * Type: double
 		 */
 		height: number;
 
@@ -9752,6 +9960,7 @@ export namespace MyNS {
 		/**
 		 * The file size in bytes of this video.
 		 * Required
+		 * Type: double
 		 */
 		size: number;
 
@@ -9769,6 +9978,7 @@ export namespace MyNS {
 		/**
 		 * The width in pixels of the video.
 		 * Required
+		 * Type: double
 		 */
 		width: number;
 	}
@@ -9783,12 +9993,14 @@ export namespace MyNS {
 		/**
 		 * The FPS of the video file.
 		 * Required
+		 * Type: double
 		 */
 		fps: FormControl<number | null | undefined>,
 
 		/**
 		 * The height in pixels of the video.
 		 * Required
+		 * Type: double
 		 */
 		height: FormControl<number | null | undefined>,
 
@@ -9816,6 +10028,7 @@ export namespace MyNS {
 		/**
 		 * The file size in bytes of this video.
 		 * Required
+		 * Type: double
 		 */
 		size: FormControl<number | null | undefined>,
 
@@ -9833,6 +10046,7 @@ export namespace MyNS {
 		/**
 		 * The width in pixels of the video.
 		 * Required
+		 * Type: double
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -10016,6 +10230,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -10030,6 +10245,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -10146,6 +10362,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -10160,6 +10377,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -10638,6 +10856,7 @@ export namespace MyNS {
 		/**
 		 * The duration of the video version in seconds.
 		 * Required
+		 * Type: double
 		 */
 		duration: number;
 
@@ -10650,6 +10869,7 @@ export namespace MyNS {
 		/**
 		 * The size in byes of the video version file.
 		 * Required
+		 * Type: double
 		 */
 		filesize: number;
 
@@ -10712,6 +10932,7 @@ export namespace MyNS {
 		/**
 		 * The duration of the video version in seconds.
 		 * Required
+		 * Type: double
 		 */
 		duration: FormControl<number | null | undefined>,
 
@@ -10724,6 +10945,7 @@ export namespace MyNS {
 		/**
 		 * The size in byes of the video version file.
 		 * Required
+		 * Type: double
 		 */
 		filesize: FormControl<number | null | undefined>,
 
@@ -10799,6 +11021,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: number;
 
@@ -10813,6 +11036,7 @@ export namespace MyNS {
 		/**
 		 * The total number of videos on this connection.
 		 * Required
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -10847,7 +11071,10 @@ export namespace MyNS {
 		/** The redirect URL for the upload app. */
 		redirect_url?: string | null;
 
-		/** The file size in bytes of the uploaded video. */
+		/**
+		 * The file size in bytes of the uploaded video.
+		 * Type: double
+		 */
 		size?: number | null;
 
 		/**
@@ -10880,7 +11107,10 @@ export namespace MyNS {
 		/** The redirect URL for the upload app. */
 		redirect_url: FormControl<string | null | undefined>,
 
-		/** The file size in bytes of the uploaded video. */
+		/**
+		 * The file size in bytes of the uploaded video.
+		 * Type: double
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/**
@@ -10931,7 +11161,9 @@ export namespace MyNS {
 		 * Get categories
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_categoriesSort} sort The way to sort the results.
 		 * @return {void} The categories were returned.
 		 */
@@ -10955,7 +11187,9 @@ export namespace MyNS {
 		 * @param {string} category The name of the category.
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_category_channelsSort} sort The way to sort the results.
 		 * @return {void} The channels were returned.
@@ -10970,7 +11204,9 @@ export namespace MyNS {
 		 * @param {string} category The name of the category.
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_category_groupsSort} sort The way to sort the results.
 		 * @return {void} The groups were returned.
@@ -10989,7 +11225,9 @@ export namespace MyNS {
 		 *  * `conditional_featured` - Featured (promoted) videos
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_category_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
@@ -11003,6 +11241,7 @@ export namespace MyNS {
 		 * Get categories/{category}/videos/{video_id}
 		 * @param {string} category The name of the category.
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The video belongs to the category.
 		 */
 		Check_category_for_video(category: string, video_id: number): Observable<HttpResponse<string>> {
@@ -11015,7 +11254,9 @@ export namespace MyNS {
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channelsFilter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channelsSort} sort The way to sort the results.
 		 * Option descriptions:
@@ -11030,6 +11271,7 @@ export namespace MyNS {
 		 * Delete a channel
 		 * Delete channels/{channel_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_channel(channel_id: number): Observable<HttpResponse<string>> {
@@ -11040,6 +11282,7 @@ export namespace MyNS {
 		 * Get a specific channel
 		 * Get channels/{channel_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} The channel was returned.
 		 */
 		Get_channel(channel_id: number): Observable<HttpResponse<string>> {
@@ -11051,6 +11294,7 @@ export namespace MyNS {
 		 * This method gets all the categories in the specified channel.
 		 * Get channels/{channel_id}/categories
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} The categories were returned.
 		 */
 		Get_channel_categories(channel_id: number): Observable<HttpResponse<string>> {
@@ -11062,6 +11306,7 @@ export namespace MyNS {
 		 * This method adds multiple categories to the specified channel.
 		 * Put channels/{channel_id}/categories
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_channel_categories(channel_id: number, requestBody: Add_channel_categoriesPutBody): Observable<HttpResponse<string>> {
@@ -11074,6 +11319,7 @@ export namespace MyNS {
 		 * Delete channels/{channel_id}/categories/{category}
 		 * @param {string} category The name of the category.
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_channel_category(category: string, channel_id: number): Observable<HttpResponse<string>> {
@@ -11086,6 +11332,7 @@ export namespace MyNS {
 		 * Put channels/{channel_id}/categories/{category}
 		 * @param {string} category The name of the category.
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Categorize_channel(category: string, channel_id: number): Observable<HttpResponse<string>> {
@@ -11096,6 +11343,7 @@ export namespace MyNS {
 		 * Remove a list of channel moderators
 		 * Delete channels/{channel_id}/moderators
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Remove_channel_moderators(channel_id: number): Observable<HttpResponse<string>> {
@@ -11106,9 +11354,12 @@ export namespace MyNS {
 		 * Get all the moderators in a channel
 		 * Get channels/{channel_id}/moderators
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The moderators were returned.
@@ -11121,6 +11372,7 @@ export namespace MyNS {
 		 * Replace the moderators of a channel
 		 * Patch channels/{channel_id}/moderators
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {Array<User>} The moderators were replaced.
 		 */
 		Replace_channel_moderators(channel_id: number, requestBody: Replace_channel_moderatorsPatchBody): Observable<Array<User>> {
@@ -11131,6 +11383,7 @@ export namespace MyNS {
 		 * Add a list of channel moderators
 		 * Put channels/{channel_id}/moderators
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} The moderators were added.
 		 */
 		Add_channel_moderators(channel_id: number, requestBody: Add_channel_moderatorsPutBody): Observable<HttpResponse<string>> {
@@ -11141,7 +11394,9 @@ export namespace MyNS {
 		 * Remove a specific channel moderator
 		 * Delete channels/{channel_id}/moderators/{user_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Remove_channel_moderator(channel_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -11152,7 +11407,9 @@ export namespace MyNS {
 		 * Get a specific channel moderator
 		 * Get channels/{channel_id}/moderators/{user_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The moderator was returned.
 		 */
 		Get_channel_moderator(channel_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -11163,7 +11420,9 @@ export namespace MyNS {
 		 * Add a specific channel moderator
 		 * Put channels/{channel_id}/moderators/{user_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_channel_moderator(channel_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -11175,9 +11434,12 @@ export namespace MyNS {
 		 * This method gets all the users who have access to the specified private channel.
 		 * Get channels/{channel_id}/privacy/users
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The users were returned.
 		 */
 		Get_channel_privacy_users(channel_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -11189,7 +11451,9 @@ export namespace MyNS {
 		 * This method prevents a single user from being able to access the specified private channel.
 		 * Delete channels/{channel_id}/privacy/users/{user_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_channel_privacy_user(channel_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -11201,7 +11465,9 @@ export namespace MyNS {
 		 * This method gives a single user access to the specified private channel.
 		 * Put channels/{channel_id}/privacy/users/{user_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The user can now view the private channel.
 		 */
 		Set_channel_privacy_user(channel_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -11213,6 +11479,7 @@ export namespace MyNS {
 		 * This method gets all the tags that have been added to the specified channel.
 		 * Get channels/{channel_id}/tags
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} The tags were returned.
 		 */
 		Get_channel_tags(channel_id: number): Observable<HttpResponse<string>> {
@@ -11224,6 +11491,7 @@ export namespace MyNS {
 		 * This method removes a single tag from the specified channel.
 		 * Delete channels/{channel_id}/tags/{word}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {string} word The word to use as the tag.
 		 * @return {void} 
 		 */
@@ -11236,6 +11504,7 @@ export namespace MyNS {
 		 * This method determines whether a specific tag has been added to the channel in question.
 		 * Get channels/{channel_id}/tags/{word}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {string} word The word to use as the tag.
 		 * @return {void} 
 		 */
@@ -11248,6 +11517,7 @@ export namespace MyNS {
 		 * This method adds a single tag to the specified channel.
 		 * Put channels/{channel_id}/tags/{word}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {string} word The word to use as the tag.
 		 * @return {void} 
 		 */
@@ -11259,10 +11529,13 @@ export namespace MyNS {
 		 * Get all the followers of a channel
 		 * Get channels/{channel_id}/users
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_subscribersFilter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The followers were returned.
@@ -11275,6 +11548,7 @@ export namespace MyNS {
 		 * Remove a list of videos from a channel
 		 * Delete channels/{channel_id}/videos
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Remove_videos_from_channel(channel_id: number): Observable<HttpResponse<string>> {
@@ -11285,12 +11559,15 @@ export namespace MyNS {
 		 * Get all the videos in a channel
 		 * Get channels/{channel_id}/videos
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {string} containing_uri The page that contains the video URI.
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
@@ -11303,6 +11580,7 @@ export namespace MyNS {
 		 * Add a list of videos to a channel
 		 * Put channels/{channel_id}/videos
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} The videos were added.
 		 */
 		Add_videos_to_channel(channel_id: number, requestBody: Add_videos_to_channelPutBody): Observable<HttpResponse<string>> {
@@ -11313,7 +11591,9 @@ export namespace MyNS {
 		 * Remove a specific video from a channel
 		 * Delete channels/{channel_id}/videos/{video_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_from_channel(channel_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -11325,7 +11605,9 @@ export namespace MyNS {
 		 * This method returns a specific video in a channel. You can use it to determine whether the video is in the channel.
 		 * Get channels/{channel_id}/videos/{video_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The video was returned.
 		 */
 		Get_channel_video(channel_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -11336,7 +11618,9 @@ export namespace MyNS {
 		 * Add a specific video to a channel
 		 * Put channels/{channel_id}/videos/{video_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_video_to_channel(channel_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -11347,10 +11631,14 @@ export namespace MyNS {
 		 * Get all the comments on a video
 		 * Get channels/{channel_id}/videos/{video_id}/comments
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The comments were returned.
 		 */
 		Get_comments_alt1(channel_id: number, video_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -11361,10 +11649,14 @@ export namespace MyNS {
 		 * Get all the credited users in a video
 		 * Get channels/{channel_id}/videos/{video_id}/credits
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The users were returned.
@@ -11377,10 +11669,14 @@ export namespace MyNS {
 		 * Get all the users who have liked a video
 		 * Get channels/{channel_id}/videos/{video_id}/likes
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The users were returned.
 		 */
@@ -11392,9 +11688,13 @@ export namespace MyNS {
 		 * Get all the thumbnails of a video
 		 * Get channels/{channel_id}/videos/{video_id}/pictures
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The thumbnails were returned.
 		 */
 		Get_video_thumbnails_alt1(channel_id: number, video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -11405,9 +11705,13 @@ export namespace MyNS {
 		 * Get all the users who can view a user's private videos by default
 		 * Get channels/{channel_id}/videos/{video_id}/privacy/users
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The users were returned.
 		 */
 		Get_video_privacy_users_alt1(channel_id: number, video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -11421,7 +11725,9 @@ export namespace MyNS {
 		 * a single `URI` field, and the value of this field must be the URI of the user who can view this video.
 		 * Put channels/{channel_id}/videos/{video_id}/privacy/users
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The users can now view the private video.
 		 */
 		Add_video_privacy_users_alt1(channel_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -11432,7 +11738,9 @@ export namespace MyNS {
 		 * Get all the text tracks of a video
 		 * Get channels/{channel_id}/videos/{video_id}/texttracks
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The text tracks were returned.
 		 */
 		Get_text_tracks_alt1(channel_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -11463,7 +11771,9 @@ export namespace MyNS {
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channelsFilter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channelsSort} sort The way to sort the results.
 		 * Option descriptions:
@@ -11478,6 +11788,7 @@ export namespace MyNS {
 		 * Delete a group
 		 * Delete groups/{group_id}
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_group(group_id: number): Observable<HttpResponse<string>> {
@@ -11488,6 +11799,7 @@ export namespace MyNS {
 		 * Get a specific group
 		 * Get groups/{group_id}
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @return {void} The group was returned.
 		 */
 		Get_group(group_id: number): Observable<HttpResponse<string>> {
@@ -11498,10 +11810,13 @@ export namespace MyNS {
 		 * Get all the members of a group
 		 * Get groups/{group_id}/users
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_subscribersFilter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The members were returned.
@@ -11514,11 +11829,14 @@ export namespace MyNS {
 		 * Get all the videos in a group
 		 * Get groups/{group_id}/videos
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
@@ -11531,7 +11849,9 @@ export namespace MyNS {
 		 * Remove a video from a group
 		 * Delete groups/{group_id}/videos/{video_id}
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_from_group(group_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -11543,7 +11863,9 @@ export namespace MyNS {
 		 * Check if a group has a video.
 		 * Get groups/{group_id}/videos/{video_id}
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The video was returned.
 		 */
 		Get_group_video(group_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -11554,7 +11876,9 @@ export namespace MyNS {
 		 * Add a video to a group
 		 * Put groups/{group_id}/videos/{video_id}
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The video was added.
 		 */
 		Add_video_to_group(group_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -11587,7 +11911,9 @@ export namespace MyNS {
 		 * Get me/albums
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_albums_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Album>} The albums were returned.
@@ -11600,6 +11926,7 @@ export namespace MyNS {
 		 * Delete an album
 		 * Delete me/albums/{album_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_album_alt1(album_id: number): Observable<HttpResponse<string>> {
@@ -11610,6 +11937,7 @@ export namespace MyNS {
 		 * Get a specific album
 		 * Get me/albums/{album_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @return {void} The album was returned.
 		 */
 		Get_album_alt1(album_id: number): Observable<HttpResponse<string>> {
@@ -11620,13 +11948,16 @@ export namespace MyNS {
 		 * Get all the videos in an album
 		 * Get me/albums/{album_id}/videos
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {string} containing_uri The page containing the video URI.
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {string} password The password of the album.
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_album_videos_alt1Sort} sort The way to sort the results.
 		 * @param {boolean} weak_search Whether to include private videos in the search. Please note that a separate search service provides this functionality. The service performs a partial text search on the video's name.
@@ -11641,6 +11972,7 @@ export namespace MyNS {
 		 * This method replaces all the existing videos in an album with one or more videos.
 		 * Put me/albums/{album_id}/videos
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Replace_videos_in_album_alt1(album_id: number, requestBody: Replace_videos_in_album_alt1PutBody): Observable<HttpResponse<string>> {
@@ -11651,7 +11983,9 @@ export namespace MyNS {
 		 * Remove a video from an album
 		 * Delete me/albums/{album_id}/videos/{video_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Remove_video_from_album_alt1(album_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -11663,7 +11997,9 @@ export namespace MyNS {
 		 * This method gets a single video from an album. You can use this method to determine whether the album contains the specified video.
 		 * Get me/albums/{album_id}/videos/{video_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {string} password The password of the album.
 		 * @return {void} The video was returned.
 		 */
@@ -11675,7 +12011,9 @@ export namespace MyNS {
 		 * Add a specific video to an album
 		 * Put me/albums/{album_id}/videos/{video_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_video_to_album_alt1(album_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -11686,7 +12024,9 @@ export namespace MyNS {
 		 * Set a video as the album thumbnail
 		 * Post me/albums/{album_id}/videos/{video_id}/set_album_thumbnail
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {Album} The album was updated with a new thumbnail.
 		 */
 		Set_video_as_album_thumbnail_alt1(album_id: number, video_id: number, requestBody: Set_video_as_album_thumbnail_alt1PostBody): Observable<Album> {
@@ -11700,7 +12040,9 @@ export namespace MyNS {
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
@@ -11714,7 +12056,9 @@ export namespace MyNS {
 		 * Get me/categories
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_category_subscriptions_alt1Sort} sort The way to sort the results.
 		 * @return {void} The categories were returned.
 		 */
@@ -11746,6 +12090,7 @@ export namespace MyNS {
 		 * Subscribe a user to a single category
 		 * Put me/categories/{category}
 		 * @param {number} category The name of the category.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Subscribe_to_category_alt1(category: number): Observable<HttpResponse<string>> {
@@ -11758,7 +12103,9 @@ export namespace MyNS {
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_subscriptions_alt1Filter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_category_channelsSort} sort The way to sort the results.
 		 * @return {void} The channels were returned.
@@ -11771,6 +12118,7 @@ export namespace MyNS {
 		 * Unsubscribe a user from a specific channel
 		 * Delete me/channels/{channel_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Unsubscribe_from_channel_alt1(channel_id: number): Observable<HttpResponse<string>> {
@@ -11781,6 +12129,7 @@ export namespace MyNS {
 		 * Check if a user follows a channel
 		 * Get me/channels/{channel_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Check_if_user_subscribed_to_channel_alt1(channel_id: number): Observable<HttpResponse<string>> {
@@ -11791,6 +12140,7 @@ export namespace MyNS {
 		 * Subscribe a user to a specific channel
 		 * Put me/channels/{channel_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Subscribe_to_channel_alt1(channel_id: number): Observable<HttpResponse<string>> {
@@ -11819,6 +12169,7 @@ export namespace MyNS {
 		 * Get a specific custom logo
 		 * Get me/customlogos/{logo_id}
 		 * @param {number} logo_id The ID of the custom logo.
+		 *     Type: double
 		 * @return {void} The custom logo was returned.
 		 */
 		Get_custom_logo_alt1(logo_id: number): Observable<HttpResponse<string>> {
@@ -11830,7 +12181,9 @@ export namespace MyNS {
 		 * Get me/feed
 		 * @param {string} offset Necessary for proper pagination. You shouldn't provide this value yourself, and instead use the pagination links in the feed response. Please see our [pagination documentation](https://developer.vimeo.com/api/common-formats#using-the-pagination-parameter) for more information.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_feed_alt1Type} type The feed type.
 		 * @return {void} The videos were returned.
 		 */
@@ -11843,7 +12196,9 @@ export namespace MyNS {
 		 * Get me/followers
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The user's followers were returned.
@@ -11858,7 +12213,9 @@ export namespace MyNS {
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_user_following_alt1Filter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The followed users were returned.
@@ -11880,6 +12237,7 @@ export namespace MyNS {
 		 * Unfollow a user
 		 * Delete me/following/{follow_user_id}
 		 * @param {number} follow_user_id The ID of the following user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Unfollow_user_alt1(follow_user_id: number): Observable<HttpResponse<string>> {
@@ -11890,6 +12248,7 @@ export namespace MyNS {
 		 * Check if a user is following another user
 		 * Get me/following/{follow_user_id}
 		 * @param {number} follow_user_id The ID of the following user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Check_if_user_is_following_alt1(follow_user_id: number): Observable<HttpResponse<string>> {
@@ -11900,6 +12259,7 @@ export namespace MyNS {
 		 * Follow a specific user
 		 * Put me/following/{follow_user_id}
 		 * @param {number} follow_user_id The ID of the following user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Follow_user_alt1(follow_user_id: number): Observable<HttpResponse<string>> {
@@ -11912,7 +12272,9 @@ export namespace MyNS {
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_subscriptions_alt1Filter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_category_groupsSort} sort The way to sort the results.
 		 * @return {void} The groups were returned.
@@ -11925,6 +12287,7 @@ export namespace MyNS {
 		 * Remove a user from a group
 		 * Delete me/groups/{group_id}
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Leave_group_alt1(group_id: number): Observable<HttpResponse<string>> {
@@ -11935,6 +12298,7 @@ export namespace MyNS {
 		 * Check if a user has joined a group
 		 * Get me/groups/{group_id}
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Check_if_user_joined_group_alt1(group_id: number): Observable<HttpResponse<string>> {
@@ -11945,6 +12309,7 @@ export namespace MyNS {
 		 * Add a user to a group
 		 * Put me/groups/{group_id}
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Join_group_alt1(group_id: number): Observable<HttpResponse<string>> {
@@ -11957,7 +12322,9 @@ export namespace MyNS {
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
@@ -11970,6 +12337,7 @@ export namespace MyNS {
 		 * Cause a user to unlike a video
 		 * Delete me/likes/{video_id}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Unlike_video_alt1(video_id: number): Observable<HttpResponse<string>> {
@@ -11980,6 +12348,7 @@ export namespace MyNS {
 		 * Check if a user has liked a video
 		 * Get me/likes/{video_id}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Check_if_user_liked_video_alt1(video_id: number): Observable<HttpResponse<string>> {
@@ -11990,6 +12359,7 @@ export namespace MyNS {
 		 * Cause a user to like a video
 		 * Put me/likes/{video_id}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Like_video_alt1(video_id: number): Observable<HttpResponse<string>> {
@@ -12002,7 +12372,9 @@ export namespace MyNS {
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {On_demand_pageType} filter The type of On Demand pages to return.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_user_vods_alt1Sort} sort The way to sort the results.
 		 * @return {void} The On Demand pages were returned.
 		 */
@@ -12027,7 +12399,9 @@ export namespace MyNS {
 		 * Option descriptions:
 		 *  * `important` - Will show all pages which are about to expire.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_vod_purchasesSort} sort The way to sort the results.
 		 * @return {void} The purchases and rentals were returned.
 		 */
@@ -12039,6 +12413,7 @@ export namespace MyNS {
 		 * Check if a user has made a purchase or rental from an On Demand page
 		 * Get me/ondemand/purchases/{ondemand_id}
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} You have purchased the On Demand page.
 		 */
 		Check_if_vod_was_purchased_alt1(ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12049,7 +12424,9 @@ export namespace MyNS {
 		 * Get all the pictures that belong to a user
 		 * Get me/pictures
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The pictures were returned.
 		 */
 		Get_pictures_alt1(page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12069,6 +12446,7 @@ export namespace MyNS {
 		 * Delete a user picture
 		 * Delete me/pictures/{portraitset_id}
 		 * @param {number} portraitset_id The ID of the picture.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_picture_alt1(portraitset_id: number): Observable<HttpResponse<string>> {
@@ -12079,6 +12457,7 @@ export namespace MyNS {
 		 * Get a specific user picture
 		 * Get me/pictures/{portraitset_id}
 		 * @param {number} portraitset_id The ID of the picture.
+		 *     Type: double
 		 * @return {void} The picture was returned.
 		 */
 		Get_picture_alt1(portraitset_id: number): Observable<HttpResponse<string>> {
@@ -12090,7 +12469,9 @@ export namespace MyNS {
 		 * Get me/portfolios
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The portfolios were returned.
@@ -12103,6 +12484,7 @@ export namespace MyNS {
 		 * Get a specific portfolio
 		 * Get me/portfolios/{portfolio_id}
 		 * @param {number} portfolio_id The ID of the portfolio.
+		 *     Type: double
 		 * @return {void} The portfolio was returned.
 		 */
 		Get_portfolio_alt1(portfolio_id: number): Observable<HttpResponse<string>> {
@@ -12113,11 +12495,14 @@ export namespace MyNS {
 		 * Get all the videos in a portfolio
 		 * Get me/portfolios/{portfolio_id}/videos
 		 * @param {number} portfolio_id The ID of the portfolio.
+		 *     Type: double
 		 * @param {string} containing_uri The page that contains the video URI.
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_portfolio_videos_alt1Sort} sort The way to sort the results.
 		 * Option descriptions:
 		 *  * `default` - This will sort to the default sort set on the portfolio.
@@ -12131,7 +12516,9 @@ export namespace MyNS {
 		 * Remove a video from a portfolio
 		 * Delete me/portfolios/{portfolio_id}/videos/{video_id}
 		 * @param {number} portfolio_id The ID of the portfolio.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_from_portfolio_alt1(portfolio_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -12142,7 +12529,9 @@ export namespace MyNS {
 		 * Get a specific video in a portfolio
 		 * Get me/portfolios/{portfolio_id}/videos/{video_id}
 		 * @param {number} portfolio_id The ID of the portfolio.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The video was returned.
 		 */
 		Get_portfolio_video_alt1(portfolio_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -12153,7 +12542,9 @@ export namespace MyNS {
 		 * Add a video to a portfolio
 		 * Put me/portfolios/{portfolio_id}/videos/{video_id}
 		 * @param {number} portfolio_id The ID of the portfolio.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_video_to_portfolio_alt1(portfolio_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -12164,7 +12555,9 @@ export namespace MyNS {
 		 * Get all the embed presets that a user has created
 		 * Get me/presets
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The embed presets were returned.
 		 */
 		Get_embed_presets_alt1(page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12175,6 +12568,7 @@ export namespace MyNS {
 		 * Get a specific embed preset
 		 * Get me/presets/{preset_id}
 		 * @param {number} preset_id The ID of the preset.
+		 *     Type: double
 		 * @return {void} The embed preset was returned.
 		 */
 		Get_embed_preset_alt1(preset_id: number): Observable<HttpResponse<string>> {
@@ -12185,8 +12579,11 @@ export namespace MyNS {
 		 * Get all the videos that have been added to an embed preset
 		 * Get me/presets/{preset_id}/videos
 		 * @param {number} preset_id The ID of the preset.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The videos were returned.
 		 */
 		Get_embed_preset_videos_alt1(preset_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12199,7 +12596,9 @@ export namespace MyNS {
 		 * Get me/projects
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_projects_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Project>} The projects were returned.
 		 */
@@ -12222,6 +12621,7 @@ export namespace MyNS {
 		 * This method deletes a project and optionally also the videos that it contains.
 		 * Delete me/projects/{project_id}
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {boolean} should_delete_clips Whether to delete all the videos in the project along with the project itself.
 		 * @return {void} 
 		 */
@@ -12234,6 +12634,7 @@ export namespace MyNS {
 		 * This method gets a single project that belongs to the specified user.
 		 * Get me/projects/{project_id}
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @return {Project} The project was returned.
 		 */
 		Get_project_alt1(project_id: number): Observable<Project> {
@@ -12245,6 +12646,7 @@ export namespace MyNS {
 		 * This method edits an existing project.
 		 * Patch me/projects/{project_id}
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @return {Project} The project was edited.
 		 */
 		Edit_project_alt1(project_id: number, requestBody: Edit_project_alt1PatchBody): Observable<Project> {
@@ -12256,6 +12658,7 @@ export namespace MyNS {
 		 * This method removed multiple videos from the specified project.
 		 * Delete me/projects/{project_id}/videos
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {boolean} should_delete_clips Whether to delete the videos when removing them from the project.
 		 * @param {string} uris A comma-separated list of the video URIs to remove.
 		 * @return {void} 
@@ -12269,9 +12672,12 @@ export namespace MyNS {
 		 * This method gets all the videos that belong to the specified project.
 		 * Get me/projects/{project_id}/videos
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_project_videos_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Video>} The videos were returned.
 		 */
@@ -12284,6 +12690,7 @@ export namespace MyNS {
 		 * This method adds multiple videos to the specified project.
 		 * Put me/projects/{project_id}/videos
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {string} uris A comma-separated list of video URIs to add.
 		 * @return {void} 
 		 */
@@ -12296,7 +12703,9 @@ export namespace MyNS {
 		 * This method removes a single video from the specified project.
 		 * Delete me/projects/{project_id}/videos/{video_id}
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Remove_video_from_project_alt1(project_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -12308,7 +12717,9 @@ export namespace MyNS {
 		 * This method adds a single video to the specified project.
 		 * Put me/projects/{project_id}/videos/{video_id}
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_video_to_project_alt1(project_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -12324,7 +12735,9 @@ export namespace MyNS {
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {boolean} filter_playable Whether to filter by all playable videos or by all videos that are not  playable.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_videos_alt1Sort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
@@ -12337,6 +12750,7 @@ export namespace MyNS {
 		 * Check if a user owns a video
 		 * Get me/videos/{video_id}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The user owns the video.
 		 */
 		Check_if_user_owns_video_alt1(video_id: number): Observable<HttpResponse<string>> {
@@ -12356,7 +12770,9 @@ export namespace MyNS {
 		 * Get all the videos that a user has watched
 		 * Get me/watched/videos
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The videos were returned.
 		 */
 		Get_watch_history(page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12367,6 +12783,7 @@ export namespace MyNS {
 		 * Delete a specific video from a user's watch history
 		 * Delete me/watched/videos/{video_id}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_from_watch_history(video_id: number): Observable<HttpResponse<string>> {
@@ -12380,7 +12797,9 @@ export namespace MyNS {
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
@@ -12393,6 +12812,7 @@ export namespace MyNS {
 		 * Remove a video from a user's Watch Later queue
 		 * Delete me/watchlater/{video_id}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_from_watch_later_alt1(video_id: number): Observable<HttpResponse<string>> {
@@ -12403,6 +12823,7 @@ export namespace MyNS {
 		 * Check if a user has added a specific video to their Watch Later queue
 		 * Get me/watchlater/{video_id}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The video appears in the user's Watch Later queue.
 		 */
 		Check_watch_later_queue_alt1(video_id: number): Observable<HttpResponse<string>> {
@@ -12413,6 +12834,7 @@ export namespace MyNS {
 		 * Add a video to a user's Watch Later queue
 		 * Put me/watchlater/{video_id}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_video_to_watch_later_alt1(video_id: number): Observable<HttpResponse<string>> {
@@ -12454,7 +12876,9 @@ export namespace MyNS {
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_genre_vodsFilter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_genre_vodsSort} sort The way to sort the results.
 		 * @return {void} The On Demand pages were returned.
@@ -12469,6 +12893,7 @@ export namespace MyNS {
 		 * Get ondemand/genres/{genre_id}/pages/{ondemand_id}
 		 * @param {string} genre_id The ID of the genre.
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} The On Demand page belongs to the genre.
 		 */
 		Get_genre_vod(genre_id: string, ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12479,6 +12904,7 @@ export namespace MyNS {
 		 * Delete a draft of an On Demand page
 		 * Delete ondemand/pages/{ondemand_id}
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_vod_draft(ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12489,6 +12915,7 @@ export namespace MyNS {
 		 * Get a specific On Demand page
 		 * Get ondemand/pages/{ondemand_id}
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} The On Demand page was returned.
 		 */
 		Get_vod(ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12499,8 +12926,11 @@ export namespace MyNS {
 		 * Get all the backgrounds of an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/backgrounds
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The background images were returned.
 		 */
 		Get_vod_backgrounds(ondemand_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12511,6 +12941,7 @@ export namespace MyNS {
 		 * Add a background to an On Demand page
 		 * Post ondemand/pages/{ondemand_id}/backgrounds
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} The background was created.
 		 */
 		Create_vod_background(ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12521,7 +12952,9 @@ export namespace MyNS {
 		 * Remove a background from an On Demand page
 		 * Delete ondemand/pages/{ondemand_id}/backgrounds/{background_id}
 		 * @param {number} background_id The ID of the background.
+		 *     Type: double
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_vod_background(background_id: number, ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12532,7 +12965,9 @@ export namespace MyNS {
 		 * Get a specific background of an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/backgrounds/{background_id}
 		 * @param {number} background_id The ID of the background.
+		 *     Type: double
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} The background image was returned.
 		 */
 		Get_vod_background(background_id: number, ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12543,6 +12978,7 @@ export namespace MyNS {
 		 * Get all the genres of an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/genres
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} The genres were returned.
 		 */
 		Get_vod_genres_by_ondemand_id(ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12554,6 +12990,7 @@ export namespace MyNS {
 		 * Delete ondemand/pages/{ondemand_id}/genres/{genre_id}
 		 * @param {string} genre_id The ID of the genre.
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_vod_genre(genre_id: string, ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12565,6 +13002,7 @@ export namespace MyNS {
 		 * Get ondemand/pages/{ondemand_id}/genres/{genre_id}
 		 * @param {string} genre_id The ID of the genre.
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} The On Demand page's genre was returned.
 		 */
 		Get_vod_genre_by_ondemand_id(genre_id: string, ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12576,6 +13014,7 @@ export namespace MyNS {
 		 * Put ondemand/pages/{ondemand_id}/genres/{genre_id}
 		 * @param {string} genre_id The ID of the genre.
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_vod_genre(genre_id: string, ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12587,10 +13026,13 @@ export namespace MyNS {
 		 * This method gets all the users who have liked a particular video on an On Demand page.
 		 * Get ondemand/pages/{ondemand_id}/likes
 		 * @param {number} ondemand_id The ID of the On Demand page.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {On_demand_videoType} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The users were returned.
 		 */
@@ -12602,8 +13044,11 @@ export namespace MyNS {
 		 * Get all the posters of an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/pictures
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The posters were returned.
 		 */
 		Get_vod_posters(ondemand_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12614,6 +13059,7 @@ export namespace MyNS {
 		 * Add a poster to an On Demand page
 		 * Post ondemand/pages/{ondemand_id}/pictures
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_vod_poster(ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12624,7 +13070,9 @@ export namespace MyNS {
 		 * Get a specific poster of an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/pictures/{poster_id}
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {number} poster_id The ID of the picture.
+		 *     Type: double
 		 * @return {void} The poster was returned.
 		 */
 		Get_vod_poster(ondemand_id: number, poster_id: number): Observable<HttpResponse<string>> {
@@ -12635,9 +13083,12 @@ export namespace MyNS {
 		 * Get all the promotions on an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/promotions
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {Get_vod_promotionsFilter} filter The filter to apply to the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The promotions were returned.
 		 */
 		Get_vod_promotions(ondemand_id: number, filter: Get_vod_promotionsFilter, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12648,7 +13099,9 @@ export namespace MyNS {
 		 * Remove a promotion from an On Demand page
 		 * Delete ondemand/pages/{ondemand_id}/promotions/{promotion_id}
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {number} promotion_id The ID of the promotion.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_vod_promotion(ondemand_id: number, promotion_id: number): Observable<HttpResponse<string>> {
@@ -12659,7 +13112,9 @@ export namespace MyNS {
 		 * Get a specific promotion on an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/promotions/{promotion_id}
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {number} promotion_id The ID of the promotion.
+		 *     Type: double
 		 * @return {void} The promotion was returned.
 		 */
 		Get_vod_promotion(ondemand_id: number, promotion_id: number): Observable<HttpResponse<string>> {
@@ -12670,9 +13125,13 @@ export namespace MyNS {
 		 * Get all the codes of a promotion on an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/promotions/{promotion_id}/codes
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {number} promotion_id The ID of the promotion.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The codes were returned.
 		 */
 		Get_vod_promotion_codes(ondemand_id: number, promotion_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12683,6 +13142,7 @@ export namespace MyNS {
 		 * Remove a list of regions from an On Demand page
 		 * Delete ondemand/pages/{ondemand_id}/regions
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} The On Demand regions were deleted.
 		 */
 		Delete_vod_regions(ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12693,6 +13153,7 @@ export namespace MyNS {
 		 * Get all the regions of an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/regions
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} The regions were returned.
 		 */
 		Get_vod_regions(ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12704,6 +13165,7 @@ export namespace MyNS {
 		 * Delete ondemand/pages/{ondemand_id}/regions/{country}
 		 * @param {string} country The country code.
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_vod_region(country: string, ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12716,6 +13178,7 @@ export namespace MyNS {
 		 * Get ondemand/pages/{ondemand_id}/regions/{country}
 		 * @param {string} country The country code.
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} The On Demand page's region was returned.
 		 */
 		Get_vod_region(country: string, ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12727,6 +13190,7 @@ export namespace MyNS {
 		 * Put ondemand/pages/{ondemand_id}/regions/{country}
 		 * @param {string} country The country code.
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_vod_region(country: string, ondemand_id: number): Observable<HttpResponse<string>> {
@@ -12737,10 +13201,13 @@ export namespace MyNS {
 		 * Get all the seasons on an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/seasons
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_vod_seasonsFilter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_vod_seasonsSort} sort The way to sort the results.
 		 * @return {void} The seasons were returned.
 		 */
@@ -12752,7 +13219,9 @@ export namespace MyNS {
 		 * Get a specific season on an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/seasons/{season_id}
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {number} season_id The ID of the season.
+		 *     Type: double
 		 * @return {void} The season was returned.
 		 */
 		Get_vod_season(ondemand_id: number, season_id: number): Observable<HttpResponse<string>> {
@@ -12763,10 +13232,14 @@ export namespace MyNS {
 		 * Get all the videos in a season on an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/seasons/{season_id}/videos
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {number} season_id The ID of the season.
+		 *     Type: double
 		 * @param {Get_vod_seasonsFilter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_vod_season_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
@@ -12778,10 +13251,13 @@ export namespace MyNS {
 		 * Get all the videos on an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/videos
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_vod_videosFilter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_vod_videosSort} sort The way to sort the results.
 		 * @return {void} * The videos were returned.
 		 * * The videos were returned.
@@ -12794,7 +13270,9 @@ export namespace MyNS {
 		 * Remove a video from an On Demand page
 		 * Delete ondemand/pages/{ondemand_id}/videos/{video_id}
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_from_vod(ondemand_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -12805,7 +13283,9 @@ export namespace MyNS {
 		 * Get a specific video on an On Demand page
 		 * Get ondemand/pages/{ondemand_id}/videos/{video_id}
 		 * @param {number} ondemand_id The ID of the On Demand.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The video is on the On Demand page.
 		 */
 		Get_vod_video(ondemand_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -12847,7 +13327,9 @@ export namespace MyNS {
 		 * @param {string} word The tag word.
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_videos_with_tagSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
 		 */
@@ -12870,7 +13352,9 @@ export namespace MyNS {
 		 * Get users
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channelsSort} sort The way to sort the results.
 		 * @return {void} The search results were returned.
@@ -12883,6 +13367,7 @@ export namespace MyNS {
 		 * Get a user
 		 * Get users/{user_id}
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The user was returned.
 		 */
 		Get_user(user_id: number): Observable<HttpResponse<string>> {
@@ -12893,9 +13378,12 @@ export namespace MyNS {
 		 * Get all the albums that belong to a user
 		 * Get users/{user_id}/albums
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_albums_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Album>} The albums were returned.
@@ -12908,7 +13396,9 @@ export namespace MyNS {
 		 * Delete an album
 		 * Delete users/{user_id}/albums/{album_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_album(album_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -12919,7 +13409,9 @@ export namespace MyNS {
 		 * Get a specific album
 		 * Get users/{user_id}/albums/{album_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The album was returned.
 		 */
 		Get_album(album_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -12930,9 +13422,13 @@ export namespace MyNS {
 		 * Get all the custom upload thumbnails of an album
 		 * Get users/{user_id}/albums/{album_id}/custom_thumbnails
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The custom uploaded thumbnails were returned.
 		 */
 		Get_album_custom_thumbs(album_id: number, user_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12943,7 +13439,9 @@ export namespace MyNS {
 		 * Add a custom uploaded thumbnail
 		 * Post users/{user_id}/albums/{album_id}/custom_thumbnails
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Create_album_custom_thumb(album_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -12955,8 +13453,11 @@ export namespace MyNS {
 		 * This method removes a custom uploaded thumbnail from the specified album.
 		 * Delete users/{user_id}/albums/{album_id}/custom_thumbnails/{thumbnail_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} thumbnail_id The ID of the custom thumbnail.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_album_custom_thumbnail(album_id: number, thumbnail_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -12967,8 +13468,11 @@ export namespace MyNS {
 		 * Get a specific custom uploaded album thumbnail
 		 * Get users/{user_id}/albums/{album_id}/custom_thumbnails/{thumbnail_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} thumbnail_id The ID of the custom thumbnail.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The custom thumbnail was returned.
 		 */
 		Get_album_custom_thumbnail(album_id: number, thumbnail_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -12979,9 +13483,13 @@ export namespace MyNS {
 		 * Get all the custom logos of an album
 		 * Get users/{user_id}/albums/{album_id}/logos
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The custom logos were returned.
 		 */
 		Get_album_logos(album_id: number, user_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -12992,7 +13500,9 @@ export namespace MyNS {
 		 * Add a custom album logo
 		 * Post users/{user_id}/albums/{album_id}/logos
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Create_album_logo(album_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13004,8 +13514,11 @@ export namespace MyNS {
 		 * This method removes a custom logo from the specified album.
 		 * Delete users/{user_id}/albums/{album_id}/logos/{logo_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} logo_id The ID of the custom logo.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_album_logo(album_id: number, logo_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13016,8 +13529,11 @@ export namespace MyNS {
 		 * Get a specific custom album logo
 		 * Get users/{user_id}/albums/{album_id}/logos/{logo_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} logo_id The ID of the custom logo.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The custom logo was returned.
 		 */
 		Get_album_logo(album_id: number, logo_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13028,14 +13544,18 @@ export namespace MyNS {
 		 * Get all the videos in an album
 		 * Get users/{user_id}/albums/{album_id}/videos
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {string} containing_uri The page containing the video URI.
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {string} password The password of the album.
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_album_videos_alt1Sort} sort The way to sort the results.
 		 * @param {boolean} weak_search Whether to include private videos in the search. Please note that a separate search service provides this functionality. The service performs a partial text search on the video's name.
@@ -13050,7 +13570,9 @@ export namespace MyNS {
 		 * This method replaces all the existing videos in an album with one or more videos.
 		 * Put users/{user_id}/albums/{album_id}/videos
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Replace_videos_in_album(album_id: number, user_id: number, requestBody: Replace_videos_in_albumPutBody): Observable<HttpResponse<string>> {
@@ -13061,8 +13583,11 @@ export namespace MyNS {
 		 * Remove a video from an album
 		 * Delete users/{user_id}/albums/{album_id}/videos/{video_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Remove_video_from_album(album_id: number, user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13074,8 +13599,11 @@ export namespace MyNS {
 		 * This method gets a single video from an album. You can use this method to determine whether the album contains the specified video.
 		 * Get users/{user_id}/albums/{album_id}/videos/{video_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {string} password The password of the album.
 		 * @return {void} The video was returned.
 		 */
@@ -13087,8 +13615,11 @@ export namespace MyNS {
 		 * Add a specific video to an album
 		 * Put users/{user_id}/albums/{album_id}/videos/{video_id}
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_video_to_album(album_id: number, user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13099,8 +13630,11 @@ export namespace MyNS {
 		 * Set a video as the album thumbnail
 		 * Post users/{user_id}/albums/{album_id}/videos/{video_id}/set_album_thumbnail
 		 * @param {number} album_id The ID of the album.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {Album} The album was updated with a new thumbnail.
 		 */
 		Set_video_as_album_thumbnail(album_id: number, user_id: number, video_id: number, requestBody: Set_video_as_album_thumbnailPostBody): Observable<Album> {
@@ -13111,11 +13645,14 @@ export namespace MyNS {
 		 * Get all the videos in which a user appears
 		 * Get users/{user_id}/appearances
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
@@ -13128,9 +13665,12 @@ export namespace MyNS {
 		 * Get all the categories that a user follows
 		 * Get users/{user_id}/categories
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_category_subscriptions_alt1Sort} sort The way to sort the results.
 		 * @return {void} The categories were returned.
 		 */
@@ -13143,6 +13683,7 @@ export namespace MyNS {
 		 * Delete users/{user_id}/categories/{category}
 		 * @param {string} category The name of the category.
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Unsubscribe_from_category(category: string, user_id: number): Observable<HttpResponse<string>> {
@@ -13154,6 +13695,7 @@ export namespace MyNS {
 		 * Get users/{user_id}/categories/{category}
 		 * @param {string} category The name of the category.
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Check_if_user_subscribed_to_category(category: string, user_id: number): Observable<HttpResponse<string>> {
@@ -13164,7 +13706,9 @@ export namespace MyNS {
 		 * Subscribe a user to a single category
 		 * Put users/{user_id}/categories/{category}
 		 * @param {number} category The name of the category.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Subscribe_to_category(category: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13175,10 +13719,13 @@ export namespace MyNS {
 		 * Get all the channels to which a user subscribes
 		 * Get users/{user_id}/channels
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_subscriptions_alt1Filter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_category_channelsSort} sort The way to sort the results.
 		 * @return {void} The channels were returned.
@@ -13191,7 +13738,9 @@ export namespace MyNS {
 		 * Unsubscribe a user from a specific channel
 		 * Delete users/{user_id}/channels/{channel_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Unsubscribe_from_channel(channel_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13202,7 +13751,9 @@ export namespace MyNS {
 		 * Check if a user follows a channel
 		 * Get users/{user_id}/channels/{channel_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Check_if_user_subscribed_to_channel(channel_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13213,7 +13764,9 @@ export namespace MyNS {
 		 * Subscribe a user to a specific channel
 		 * Put users/{user_id}/channels/{channel_id}
 		 * @param {number} channel_id The ID of the channel.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Subscribe_to_channel(channel_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13224,6 +13777,7 @@ export namespace MyNS {
 		 * Get all the custom logos that belong to a user
 		 * Get users/{user_id}/customlogos
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The custom logos were returned.
 		 */
 		Get_custom_logos(user_id: number): Observable<HttpResponse<string>> {
@@ -13234,6 +13788,7 @@ export namespace MyNS {
 		 * Add a custom logo
 		 * Post users/{user_id}/customlogos
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Create_custom_logo(user_id: number): Observable<HttpResponse<string>> {
@@ -13244,7 +13799,9 @@ export namespace MyNS {
 		 * Get a specific custom logo
 		 * Get users/{user_id}/customlogos/{logo_id}
 		 * @param {number} logo_id The ID of the custom logo.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The custom logo was returned.
 		 */
 		Get_custom_logo(logo_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13255,9 +13812,12 @@ export namespace MyNS {
 		 * Get all videos in a user's feed
 		 * Get users/{user_id}/feed
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {string} offset Necessary for proper pagination. You shouldn't provide this value yourself, and instead use the pagination links in the feed response. Please see our [pagination documentation](https://developer.vimeo.com/api/common-formats#using-the-pagination-parameter) for more information.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_feed_alt1Type} type The feed type.
 		 * @return {void} The videos were returned.
 		 */
@@ -13269,9 +13829,12 @@ export namespace MyNS {
 		 * Get all the followers of a user
 		 * Get users/{user_id}/followers
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The user's followers were returned.
@@ -13284,10 +13847,13 @@ export namespace MyNS {
 		 * Get all the users that a user is following
 		 * Get users/{user_id}/following
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_user_following_alt1Filter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The followed users were returned.
@@ -13300,6 +13866,7 @@ export namespace MyNS {
 		 * Follow a list of users
 		 * Post users/{user_id}/following
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Follow_users(user_id: number, requestBody: Follow_usersPostBody): Observable<HttpResponse<string>> {
@@ -13310,7 +13877,9 @@ export namespace MyNS {
 		 * Unfollow a user
 		 * Delete users/{user_id}/following/{follow_user_id}
 		 * @param {number} follow_user_id The ID of the following user.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Unfollow_user(follow_user_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13321,7 +13890,9 @@ export namespace MyNS {
 		 * Check if a user is following another user
 		 * Get users/{user_id}/following/{follow_user_id}
 		 * @param {number} follow_user_id The ID of the following user.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Check_if_user_is_following(follow_user_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13332,7 +13903,9 @@ export namespace MyNS {
 		 * Follow a specific user
 		 * Put users/{user_id}/following/{follow_user_id}
 		 * @param {number} follow_user_id The ID of the following user.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Follow_user(follow_user_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13343,10 +13916,13 @@ export namespace MyNS {
 		 * Get all the groups that a user has joined
 		 * Get users/{user_id}/groups
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_subscriptions_alt1Filter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_category_groupsSort} sort The way to sort the results.
 		 * @return {void} The groups were returned.
@@ -13359,7 +13935,9 @@ export namespace MyNS {
 		 * Remove a user from a group
 		 * Delete users/{user_id}/groups/{group_id}
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Leave_group(group_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13370,7 +13948,9 @@ export namespace MyNS {
 		 * Check if a user has joined a group
 		 * Get users/{user_id}/groups/{group_id}
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Check_if_user_joined_group(group_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13381,7 +13961,9 @@ export namespace MyNS {
 		 * Add a user to a group
 		 * Put users/{user_id}/groups/{group_id}
 		 * @param {number} group_id The ID of the group.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Join_group(group_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13392,10 +13974,13 @@ export namespace MyNS {
 		 * Get all the videos that a user has liked
 		 * Get users/{user_id}/likes
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
@@ -13408,7 +13993,9 @@ export namespace MyNS {
 		 * Cause a user to unlike a video
 		 * Delete users/{user_id}/likes/{video_id}
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Unlike_video(user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13419,7 +14006,9 @@ export namespace MyNS {
 		 * Check if a user has liked a video
 		 * Get users/{user_id}/likes/{video_id}
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Check_if_user_liked_video(user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13430,7 +14019,9 @@ export namespace MyNS {
 		 * Cause a user to like a video
 		 * Put users/{user_id}/likes/{video_id}
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Like_video(user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13441,10 +14032,13 @@ export namespace MyNS {
 		 * Get all the On Demand pages of a user
 		 * Get users/{user_id}/ondemand/pages
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {On_demand_pageType} filter The type of On Demand pages to return.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_user_vods_alt1Sort} sort The way to sort the results.
 		 * @return {void} The On Demand pages were returned.
 		 */
@@ -13456,6 +14050,7 @@ export namespace MyNS {
 		 * Create an On Demand page
 		 * Post users/{user_id}/ondemand/pages
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Create_vod(user_id: number, requestBody: Create_vodPostBody): Observable<HttpResponse<string>> {
@@ -13466,6 +14061,7 @@ export namespace MyNS {
 		 * Check if a user has made a purchase or rental from an On Demand page
 		 * Get users/{user_id}/ondemand/purchases
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} You have purchased the On Demand page.
 		 */
 		Check_if_vod_was_purchased(user_id: number): Observable<HttpResponse<string>> {
@@ -13476,8 +14072,11 @@ export namespace MyNS {
 		 * Get all the pictures that belong to a user
 		 * Get users/{user_id}/pictures
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The pictures were returned.
 		 */
 		Get_pictures(user_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -13488,6 +14087,7 @@ export namespace MyNS {
 		 * Add a user picture
 		 * Post users/{user_id}/pictures
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The user picture was created.
 		 */
 		Create_picture(user_id: number): Observable<HttpResponse<string>> {
@@ -13498,7 +14098,9 @@ export namespace MyNS {
 		 * Delete a user picture
 		 * Delete users/{user_id}/pictures/{portraitset_id}
 		 * @param {number} portraitset_id The ID of the picture.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_picture(portraitset_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13509,7 +14111,9 @@ export namespace MyNS {
 		 * Get a specific user picture
 		 * Get users/{user_id}/pictures/{portraitset_id}
 		 * @param {number} portraitset_id The ID of the picture.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The picture was returned.
 		 */
 		Get_picture(portraitset_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13520,9 +14124,12 @@ export namespace MyNS {
 		 * Get all the portfolios that belong to a user
 		 * Get users/{user_id}/portfolios
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The portfolios were returned.
@@ -13535,7 +14142,9 @@ export namespace MyNS {
 		 * Get a specific portfolio
 		 * Get users/{user_id}/portfolios/{portfolio_id}
 		 * @param {number} portfolio_id The ID of the portfolio.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The portfolio was returned.
 		 */
 		Get_portfolio(portfolio_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13546,12 +14155,16 @@ export namespace MyNS {
 		 * Get all the videos in a portfolio
 		 * Get users/{user_id}/portfolios/{portfolio_id}/videos
 		 * @param {number} portfolio_id The ID of the portfolio.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {string} containing_uri The page that contains the video URI.
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_portfolio_videos_alt1Sort} sort The way to sort the results.
 		 * Option descriptions:
 		 *  * `default` - This will sort to the default sort set on the portfolio.
@@ -13565,8 +14178,11 @@ export namespace MyNS {
 		 * Remove a video from a portfolio
 		 * Delete users/{user_id}/portfolios/{portfolio_id}/videos/{video_id}
 		 * @param {number} portfolio_id The ID of the portfolio.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_from_portfolio(portfolio_id: number, user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13577,8 +14193,11 @@ export namespace MyNS {
 		 * Get a specific video in a portfolio
 		 * Get users/{user_id}/portfolios/{portfolio_id}/videos/{video_id}
 		 * @param {number} portfolio_id The ID of the portfolio.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The video was returned.
 		 */
 		Get_portfolio_video(portfolio_id: number, user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13589,8 +14208,11 @@ export namespace MyNS {
 		 * Add a video to a portfolio
 		 * Put users/{user_id}/portfolios/{portfolio_id}/videos/{video_id}
 		 * @param {number} portfolio_id The ID of the portfolio.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_video_to_portfolio(portfolio_id: number, user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13601,8 +14223,11 @@ export namespace MyNS {
 		 * Get all the embed presets that a user has created
 		 * Get users/{user_id}/presets
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The embed presets were returned.
 		 */
 		Get_embed_presets(user_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -13613,7 +14238,9 @@ export namespace MyNS {
 		 * Get a specific embed preset
 		 * Get users/{user_id}/presets/{preset_id}
 		 * @param {number} preset_id The ID of the preset.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The embed preset was returned.
 		 */
 		Get_embed_preset(preset_id: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13624,9 +14251,13 @@ export namespace MyNS {
 		 * Get all the videos that have been added to an embed preset
 		 * Get users/{user_id}/presets/{preset_id}/videos
 		 * @param {number} preset_id The ID of the preset.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The videos were returned.
 		 */
 		Get_embed_preset_videos(preset_id: number, user_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -13638,9 +14269,12 @@ export namespace MyNS {
 		 * This method gets all the projects that belong to the specified user.
 		 * Get users/{user_id}/projects
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_projects_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Project>} The projects were returned.
 		 */
@@ -13653,6 +14287,7 @@ export namespace MyNS {
 		 * This method creates a new project for the specified user.
 		 * Post users/{user_id}/projects
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Create_project(user_id: number, requestBody: Create_projectPostBody): Observable<HttpResponse<string>> {
@@ -13664,7 +14299,9 @@ export namespace MyNS {
 		 * This method deletes a project and optionally also the videos that it contains.
 		 * Delete users/{user_id}/projects/{project_id}
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {boolean} should_delete_clips Whether to delete all the videos in the project along with the project itself.
 		 * @return {void} 
 		 */
@@ -13677,7 +14314,9 @@ export namespace MyNS {
 		 * This method gets a single project that belongs to the specified user.
 		 * Get users/{user_id}/projects/{project_id}
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {Project} The project was returned.
 		 */
 		Get_project(project_id: number, user_id: number): Observable<Project> {
@@ -13689,7 +14328,9 @@ export namespace MyNS {
 		 * This method edits an existing project.
 		 * Patch users/{user_id}/projects/{project_id}
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {Project} The project was edited.
 		 */
 		Edit_project(project_id: number, user_id: number, requestBody: Edit_projectPatchBody): Observable<Project> {
@@ -13701,7 +14342,9 @@ export namespace MyNS {
 		 * This method removed multiple videos from the specified project.
 		 * Delete users/{user_id}/projects/{project_id}/videos
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {boolean} should_delete_clips Whether to delete the videos when removing them from the project.
 		 * @param {string} uris A comma-separated list of the video URIs to remove.
 		 * @return {void} 
@@ -13715,10 +14358,14 @@ export namespace MyNS {
 		 * This method gets all the videos that belong to the specified project.
 		 * Get users/{user_id}/projects/{project_id}/videos
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_project_videos_alt1Sort} sort The way to sort the results.
 		 * @return {Array<Video>} The videos were returned.
 		 */
@@ -13731,7 +14378,9 @@ export namespace MyNS {
 		 * This method adds multiple videos to the specified project.
 		 * Put users/{user_id}/projects/{project_id}/videos
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {string} uris A comma-separated list of video URIs to add.
 		 * @return {void} 
 		 */
@@ -13744,8 +14393,11 @@ export namespace MyNS {
 		 * This method removes a single video from the specified project.
 		 * Delete users/{user_id}/projects/{project_id}/videos/{video_id}
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Remove_video_from_project(project_id: number, user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13757,8 +14409,11 @@ export namespace MyNS {
 		 * This method adds a single video to the specified project.
 		 * Put users/{user_id}/projects/{project_id}/videos/{video_id}
 		 * @param {number} project_id The ID of the project.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_video_to_project(project_id: number, user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13769,9 +14424,12 @@ export namespace MyNS {
 		 * Complete a user's streaming upload
 		 * Delete users/{user_id}/uploads/{upload}
 		 * @param {number} upload The ID of the upload attempt.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {string} signature The crypto signature of the completed upload.
 		 * @param {number} video_file_id The ID of the uploaded file.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Complete_streaming_upload(upload: number, user_id: number, signature: string, video_file_id: number): Observable<HttpResponse<string>> {
@@ -13782,7 +14440,9 @@ export namespace MyNS {
 		 * Get a user's upload attempt
 		 * Get users/{user_id}/uploads/{upload}
 		 * @param {number} upload The ID of the upload attempt.
+		 *     Type: double
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @return {void} The upload attempt was returned.
 		 */
 		Get_upload_attempt(upload: number, user_id: number): Observable<HttpResponse<string>> {
@@ -13793,13 +14453,16 @@ export namespace MyNS {
 		 * Get all the videos that a user has uploaded
 		 * Get users/{user_id}/videos
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {string} containing_uri The page that contains the video URI. Only available when not paired with `query`.
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_videos_alt1Filter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {boolean} filter_playable Whether to filter by all playable videos or by all videos that are not  playable.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_videos_alt1Sort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
@@ -13812,7 +14475,9 @@ export namespace MyNS {
 		 * Check if a user owns a video
 		 * Get users/{user_id}/videos/{video_id}
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The user owns the video.
 		 */
 		Check_if_user_owns_video(user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13823,11 +14488,14 @@ export namespace MyNS {
 		 * Get all the videos in a user's Watch Later queue
 		 * Get users/{user_id}/watchlater
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {Get_channel_videosFilter} filter The attribute by which to filter the results.
 		 * @param {boolean} filter_embeddable Whether to filter the results by embeddable videos (`true`) or non-embeddable videos (`false`). Required only if **filter** is `embeddable`.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_group_videosSort} sort The way to sort the results.
 		 * @return {void} The videos were returned.
@@ -13840,7 +14508,9 @@ export namespace MyNS {
 		 * Remove a video from a user's Watch Later queue
 		 * Delete users/{user_id}/watchlater/{video_id}
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_from_watch_later(user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13851,7 +14521,9 @@ export namespace MyNS {
 		 * Check if a user has added a specific video to their Watch Later queue
 		 * Get users/{user_id}/watchlater/{video_id}
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The video appears in the user's Watch Later queue.
 		 */
 		Check_watch_later_queue(user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13862,7 +14534,9 @@ export namespace MyNS {
 		 * Add a video to a user's Watch Later queue
 		 * Put users/{user_id}/watchlater/{video_id}
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_video_to_watch_later(user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13876,7 +14550,9 @@ export namespace MyNS {
 		 * @param {Search_videosFilter} filter The attribute by which to filter the results. `CC` and related filters target videos with the corresponding Creative Commons licenses. For more information, see our [Creative Commons](https://vimeo.com/creativecommons) page.
 		 * @param {string} links A comma-separated list of video URLs to find.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query Search query.
 		 * @param {Search_videosSort} sort The way to sort the results.
 		 * @param {string} uris The comma-separated list of videos to find.
@@ -13890,6 +14566,7 @@ export namespace MyNS {
 		 * Delete a video
 		 * Delete videos/{video_id}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video(video_id: number): Observable<HttpResponse<string>> {
@@ -13900,6 +14577,7 @@ export namespace MyNS {
 		 * Get a specific video
 		 * Get videos/{video_id}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The video was returned.
 		 */
 		Get_video(video_id: number): Observable<HttpResponse<string>> {
@@ -13910,6 +14588,7 @@ export namespace MyNS {
 		 * Get all the channels to which a user can add or remove a specific video
 		 * Get videos/{video_id}/available_channels
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The channels were returned.
 		 */
 		Get_available_video_channels(video_id: number): Observable<HttpResponse<string>> {
@@ -13920,6 +14599,7 @@ export namespace MyNS {
 		 * Get all the categories to which a video belongs
 		 * Get videos/{video_id}/categories
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The categories were returned.
 		 */
 		Get_video_categories(video_id: number): Observable<HttpResponse<string>> {
@@ -13930,9 +14610,12 @@ export namespace MyNS {
 		 * Get all the comments on a video
 		 * Get videos/{video_id}/comments
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The comments were returned.
 		 */
 		Get_comments(video_id: number, direction: Get_categoriesDirection | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -13943,7 +14626,9 @@ export namespace MyNS {
 		 * Delete a video comment
 		 * Delete videos/{video_id}/comments/{comment_id}
 		 * @param {number} comment_id The ID of the comment.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_comment(comment_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13954,7 +14639,9 @@ export namespace MyNS {
 		 * Get a specific video comment
 		 * Get videos/{video_id}/comments/{comment_id}
 		 * @param {number} comment_id The ID of the comment.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The comment was returned.
 		 */
 		Get_comment(comment_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -13965,9 +14652,13 @@ export namespace MyNS {
 		 * Get all the replies to a video comment
 		 * Get videos/{video_id}/comments/{comment_id}/replies
 		 * @param {number} comment_id The ID of the comment.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The replies were returned.
 		 */
 		Get_comment_replies(comment_id: number, video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -13978,9 +14669,12 @@ export namespace MyNS {
 		 * Get all the credited users in a video
 		 * Get videos/{video_id}/credits
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {string} query The search query to use to filter the results.
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The users were returned.
@@ -13993,7 +14687,9 @@ export namespace MyNS {
 		 * Delete a credit for a user in a video
 		 * Delete videos/{video_id}/credits/{credit_id}
 		 * @param {number} credit_id The ID of the credit.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_credit(credit_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14004,7 +14700,9 @@ export namespace MyNS {
 		 * Get a specific credited user in a video
 		 * Get videos/{video_id}/credits/{credit_id}
 		 * @param {number} credit_id The ID of the credit.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The credit was returned.
 		 */
 		Get_video_credit(credit_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14015,9 +14713,12 @@ export namespace MyNS {
 		 * Get all the users who have liked a video
 		 * Get videos/{video_id}/likes
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {Get_categoriesDirection} direction The sort direction of the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @param {Get_channel_moderatorsSort} sort The way to sort the results.
 		 * @return {void} The users were returned.
 		 */
@@ -14029,8 +14730,11 @@ export namespace MyNS {
 		 * Get all the thumbnails of a video
 		 * Get videos/{video_id}/pictures
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The thumbnails were returned.
 		 */
 		Get_video_thumbnails(video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -14041,7 +14745,9 @@ export namespace MyNS {
 		 * Delete a video thumbnail
 		 * Delete videos/{video_id}/pictures/{picture_id}
 		 * @param {number} picture_id The ID of the picture.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_thumbnail(picture_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14052,7 +14758,9 @@ export namespace MyNS {
 		 * Get a video thumbnail
 		 * Get videos/{video_id}/pictures/{picture_id}
 		 * @param {number} picture_id The ID of the picture.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The thumbnail was returned.
 		 */
 		Get_video_thumbnail(picture_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14063,7 +14771,9 @@ export namespace MyNS {
 		 * Remove an embed preset from a video
 		 * Delete videos/{video_id}/presets/{preset_id}
 		 * @param {number} preset_id The ID of the preset.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_embed_preset(preset_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14074,7 +14784,9 @@ export namespace MyNS {
 		 * Check if an embed preset has been added to a video
 		 * Get videos/{video_id}/presets/{preset_id}
 		 * @param {number} preset_id The ID of the preset.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Get_video_embed_preset(preset_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14085,7 +14797,9 @@ export namespace MyNS {
 		 * Add an embed preset to a video
 		 * Put videos/{video_id}/presets/{preset_id}
 		 * @param {number} preset_id The ID of the preset.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_video_embed_preset(preset_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14096,8 +14810,11 @@ export namespace MyNS {
 		 * Get all the domains on which a video can be embedded
 		 * Get videos/{video_id}/privacy/domains
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The domains were returned.
 		 */
 		Get_video_privacy_domains(video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -14109,6 +14826,7 @@ export namespace MyNS {
 		 * Delete videos/{video_id}/privacy/domains/{domain}
 		 * @param {string} domain The domain name.
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_privacy_domain(domain: string, video_id: number): Observable<HttpResponse<string>> {
@@ -14121,6 +14839,7 @@ export namespace MyNS {
 		 * Put videos/{video_id}/privacy/domains/{domain}
 		 * @param {string} domain The domain name.
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Add_video_privacy_domain(domain: string, video_id: number): Observable<HttpResponse<string>> {
@@ -14131,8 +14850,11 @@ export namespace MyNS {
 		 * Get all the users who can view a user's private videos by default
 		 * Get videos/{video_id}/privacy/users
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The users were returned.
 		 */
 		Get_video_privacy_users(video_id: number, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -14146,6 +14868,7 @@ export namespace MyNS {
 		 * a single `URI` field, and the value of this field must be the URI of the user who can view this video.
 		 * Put videos/{video_id}/privacy/users
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The users can now view the private video.
 		 */
 		Add_video_privacy_users(video_id: number): Observable<HttpResponse<string>> {
@@ -14156,7 +14879,9 @@ export namespace MyNS {
 		 * Restrict a user from viewing a private video
 		 * Delete videos/{video_id}/privacy/users/{user_id}
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_video_privacy_user(user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14167,7 +14892,9 @@ export namespace MyNS {
 		 * Permit a specific user to view a private video
 		 * Put videos/{video_id}/privacy/users/{user_id}
 		 * @param {number} user_id The ID of the user.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The user can now view the private video.
 		 */
 		Add_video_privacy_user(user_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14178,6 +14905,7 @@ export namespace MyNS {
 		 * Get all the tags of a video
 		 * Get videos/{video_id}/tags
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The tags were returned.
 		 */
 		Get_video_tags(video_id: number): Observable<HttpResponse<string>> {
@@ -14188,6 +14916,7 @@ export namespace MyNS {
 		 * Remove a tag from a video
 		 * Delete videos/{video_id}/tags/{word}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {string} word The tag word.
 		 * @return {void} 
 		 */
@@ -14199,6 +14928,7 @@ export namespace MyNS {
 		 * Check if a tag has been added to a video
 		 * Get videos/{video_id}/tags/{word}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {string} word The tag word.
 		 * @return {void} 
 		 */
@@ -14210,6 +14940,7 @@ export namespace MyNS {
 		 * Add a specific tag to a video
 		 * Put videos/{video_id}/tags/{word}
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {string} word The tag word.
 		 * @return {void} 
 		 */
@@ -14221,6 +14952,7 @@ export namespace MyNS {
 		 * Get all the text tracks of a video
 		 * Get videos/{video_id}/texttracks
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The text tracks were returned.
 		 */
 		Get_text_tracks(video_id: number): Observable<HttpResponse<string>> {
@@ -14231,7 +14963,9 @@ export namespace MyNS {
 		 * Delete a text track
 		 * Delete videos/{video_id}/texttracks/{texttrack_id}
 		 * @param {number} texttrack_id The ID of the text track.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Delete_text_track(texttrack_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14242,7 +14976,9 @@ export namespace MyNS {
 		 * Get a specific text track
 		 * Get videos/{video_id}/texttracks/{texttrack_id}
 		 * @param {number} texttrack_id The ID of the text track.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The text track was returned.
 		 */
 		Get_text_track(texttrack_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14253,6 +14989,7 @@ export namespace MyNS {
 		 * Add a new custom logo to a video
 		 * Post videos/{video_id}/timelinethumbnails
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} 
 		 */
 		Create_video_custom_logo(video_id: number): Observable<HttpResponse<string>> {
@@ -14263,7 +15000,9 @@ export namespace MyNS {
 		 * Get a custom video logo
 		 * Get videos/{video_id}/timelinethumbnails/{thumbnail_id}
 		 * @param {number} thumbnail_id The ID of the picture.
+		 *     Type: double
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @return {void} The custom logo was returned.
 		 */
 		Get_video_custom_logo(thumbnail_id: number, video_id: number): Observable<HttpResponse<string>> {
@@ -14274,9 +15013,12 @@ export namespace MyNS {
 		 * Get all the related videos of a video
 		 * Get videos/{video_id}/videos
 		 * @param {number} video_id The ID of the video.
+		 *     Type: double
 		 * @param {Get_related_videosFilter} filter The attribute by which to filter the results.
 		 * @param {number} page The page number of the results to show.
+		 *     Type: double
 		 * @param {number} per_page The number of items to show on each page of results, up to a maximum of 100.
+		 *     Type: double
 		 * @return {void} The related videos were returned.
 		 */
 		Get_related_videos(video_id: number, filter: Get_related_videosFilter | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -14426,12 +15168,18 @@ export namespace MyNS {
 
 	export interface Set_video_as_album_thumbnail_alt1PostBody {
 
-		/** The video frame time in seconds to use as the album thumbnail. */
+		/**
+		 * The video frame time in seconds to use as the album thumbnail.
+		 * Type: double
+		 */
 		time_code?: number | null;
 	}
 	export interface Set_video_as_album_thumbnail_alt1PostBodyFormProperties {
 
-		/** The video frame time in seconds to use as the album thumbnail. */
+		/**
+		 * The video frame time in seconds to use as the album thumbnail.
+		 * Type: double
+		 */
 		time_code: FormControl<number | null | undefined>,
 	}
 	export function CreateSet_video_as_album_thumbnail_alt1PostBodyFormGroup() {
@@ -14613,78 +15361,150 @@ export namespace MyNS {
 
 	export interface Create_vod_alt1PostBodyBuyPrice {
 
-		/** The purchase price of this video in AUD. */
+		/**
+		 * The purchase price of this video in AUD.
+		 * Type: double
+		 */
 		AUD?: number | null;
 
-		/** The purchase price of this video in CAD. */
+		/**
+		 * The purchase price of this video in CAD.
+		 * Type: double
+		 */
 		CAD?: number | null;
 
-		/** The purchase price of this video in CHF. */
+		/**
+		 * The purchase price of this video in CHF.
+		 * Type: double
+		 */
 		CHF?: number | null;
 
-		/** The purchase price of this video in DKK. */
+		/**
+		 * The purchase price of this video in DKK.
+		 * Type: double
+		 */
 		DKK?: number | null;
 
-		/** The purchase price of this video in EUR. */
+		/**
+		 * The purchase price of this video in EUR.
+		 * Type: double
+		 */
 		EUR?: number | null;
 
-		/** The purchase price of this video in GBP. */
+		/**
+		 * The purchase price of this video in GBP.
+		 * Type: double
+		 */
 		GBP?: number | null;
 
-		/** The purchase price of this video in JPY. */
+		/**
+		 * The purchase price of this video in JPY.
+		 * Type: double
+		 */
 		JPY?: number | null;
 
-		/** The purchase price of this video in KRW. */
+		/**
+		 * The purchase price of this video in KRW.
+		 * Type: double
+		 */
 		KRW?: number | null;
 
-		/** The purchase price of this video in NOK. */
+		/**
+		 * The purchase price of this video in NOK.
+		 * Type: double
+		 */
 		NOK?: number | null;
 
-		/** The purchase price of this video in PLN. */
+		/**
+		 * The purchase price of this video in PLN.
+		 * Type: double
+		 */
 		PLN?: number | null;
 
-		/** The purchase price of this video in SEK. */
+		/**
+		 * The purchase price of this video in SEK.
+		 * Type: double
+		 */
 		SEK?: number | null;
 
-		/** The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`. */
+		/**
+		 * The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`.
+		 * Type: double
+		 */
 		USD?: number | null;
 	}
 	export interface Create_vod_alt1PostBodyBuyPriceFormProperties {
 
-		/** The purchase price of this video in AUD. */
+		/**
+		 * The purchase price of this video in AUD.
+		 * Type: double
+		 */
 		AUD: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in CAD. */
+		/**
+		 * The purchase price of this video in CAD.
+		 * Type: double
+		 */
 		CAD: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in CHF. */
+		/**
+		 * The purchase price of this video in CHF.
+		 * Type: double
+		 */
 		CHF: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in DKK. */
+		/**
+		 * The purchase price of this video in DKK.
+		 * Type: double
+		 */
 		DKK: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in EUR. */
+		/**
+		 * The purchase price of this video in EUR.
+		 * Type: double
+		 */
 		EUR: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in GBP. */
+		/**
+		 * The purchase price of this video in GBP.
+		 * Type: double
+		 */
 		GBP: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in JPY. */
+		/**
+		 * The purchase price of this video in JPY.
+		 * Type: double
+		 */
 		JPY: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in KRW. */
+		/**
+		 * The purchase price of this video in KRW.
+		 * Type: double
+		 */
 		KRW: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in NOK. */
+		/**
+		 * The purchase price of this video in NOK.
+		 * Type: double
+		 */
 		NOK: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in PLN. */
+		/**
+		 * The purchase price of this video in PLN.
+		 * Type: double
+		 */
 		PLN: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in SEK. */
+		/**
+		 * The purchase price of this video in SEK.
+		 * Type: double
+		 */
 		SEK: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`. */
+		/**
+		 * The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`.
+		 * Type: double
+		 */
 		USD: FormControl<number | null | undefined>,
 	}
 	export function CreateCreate_vod_alt1PostBodyBuyPriceFormGroup() {
@@ -14744,12 +15564,18 @@ export namespace MyNS {
 
 	export interface Create_vod_alt1PostBodyEpisodesBuyPrice {
 
-		/** The purchase price per episode. *Required if `episodes.buy.active` is true. */
+		/**
+		 * The purchase price per episode. *Required if `episodes.buy.active` is true.
+		 * Type: double
+		 */
 		USD?: number | null;
 	}
 	export interface Create_vod_alt1PostBodyEpisodesBuyPriceFormProperties {
 
-		/** The purchase price per episode. *Required if `episodes.buy.active` is true. */
+		/**
+		 * The purchase price per episode. *Required if `episodes.buy.active` is true.
+		 * Type: double
+		 */
 		USD: FormControl<number | null | undefined>,
 	}
 	export function CreateCreate_vod_alt1PostBodyEpisodesBuyPriceFormGroup() {
@@ -14788,12 +15614,18 @@ export namespace MyNS {
 
 	export interface Create_vod_alt1PostBodyEpisodesRentPrice {
 
-		/** The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true. */
+		/**
+		 * The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true.
+		 * Type: double
+		 */
 		USD?: number | null;
 	}
 	export interface Create_vod_alt1PostBodyEpisodesRentPriceFormProperties {
 
-		/** The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true. */
+		/**
+		 * The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true.
+		 * Type: double
+		 */
 		USD: FormControl<number | null | undefined>,
 	}
 	export function CreateCreate_vod_alt1PostBodyEpisodesRentPriceFormGroup() {
@@ -14830,78 +15662,150 @@ export namespace MyNS {
 
 	export interface Create_vod_alt1PostBodyRentPrice {
 
-		/** The rental price of this video in AUD. */
+		/**
+		 * The rental price of this video in AUD.
+		 * Type: double
+		 */
 		AUD?: number | null;
 
-		/** The rental price of this video in CAD. */
+		/**
+		 * The rental price of this video in CAD.
+		 * Type: double
+		 */
 		CAD?: number | null;
 
-		/** The rental price of this video in CHF. */
+		/**
+		 * The rental price of this video in CHF.
+		 * Type: double
+		 */
 		CHF?: number | null;
 
-		/** The rental price of this video in DKK. */
+		/**
+		 * The rental price of this video in DKK.
+		 * Type: double
+		 */
 		DKK?: number | null;
 
-		/** The rental price of this video in EUR. */
+		/**
+		 * The rental price of this video in EUR.
+		 * Type: double
+		 */
 		EUR?: number | null;
 
-		/** The rental price of this video in GBP. */
+		/**
+		 * The rental price of this video in GBP.
+		 * Type: double
+		 */
 		GBP?: number | null;
 
-		/** The rental price of this video in JPY. */
+		/**
+		 * The rental price of this video in JPY.
+		 * Type: double
+		 */
 		JPY?: number | null;
 
-		/** The rental price of this video in KRW. */
+		/**
+		 * The rental price of this video in KRW.
+		 * Type: double
+		 */
 		KRW?: number | null;
 
-		/** The rental price of this video in NOK. */
+		/**
+		 * The rental price of this video in NOK.
+		 * Type: double
+		 */
 		NOK?: number | null;
 
-		/** The rental price of this video in PLN. */
+		/**
+		 * The rental price of this video in PLN.
+		 * Type: double
+		 */
 		PLN?: number | null;
 
-		/** The rental price of this video in SEK. */
+		/**
+		 * The rental price of this video in SEK.
+		 * Type: double
+		 */
 		SEK?: number | null;
 
-		/** The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`. */
+		/**
+		 * The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`.
+		 * Type: double
+		 */
 		USD?: number | null;
 	}
 	export interface Create_vod_alt1PostBodyRentPriceFormProperties {
 
-		/** The rental price of this video in AUD. */
+		/**
+		 * The rental price of this video in AUD.
+		 * Type: double
+		 */
 		AUD: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in CAD. */
+		/**
+		 * The rental price of this video in CAD.
+		 * Type: double
+		 */
 		CAD: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in CHF. */
+		/**
+		 * The rental price of this video in CHF.
+		 * Type: double
+		 */
 		CHF: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in DKK. */
+		/**
+		 * The rental price of this video in DKK.
+		 * Type: double
+		 */
 		DKK: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in EUR. */
+		/**
+		 * The rental price of this video in EUR.
+		 * Type: double
+		 */
 		EUR: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in GBP. */
+		/**
+		 * The rental price of this video in GBP.
+		 * Type: double
+		 */
 		GBP: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in JPY. */
+		/**
+		 * The rental price of this video in JPY.
+		 * Type: double
+		 */
 		JPY: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in KRW. */
+		/**
+		 * The rental price of this video in KRW.
+		 * Type: double
+		 */
 		KRW: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in NOK. */
+		/**
+		 * The rental price of this video in NOK.
+		 * Type: double
+		 */
 		NOK: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in PLN. */
+		/**
+		 * The rental price of this video in PLN.
+		 * Type: double
+		 */
 		PLN: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in SEK. */
+		/**
+		 * The rental price of this video in SEK.
+		 * Type: double
+		 */
 		SEK: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`. */
+		/**
+		 * The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`.
+		 * Type: double
+		 */
 		USD: FormControl<number | null | undefined>,
 	}
 	export function CreateCreate_vod_alt1PostBodyRentPriceFormGroup() {
@@ -14953,12 +15857,18 @@ export namespace MyNS {
 
 	export interface Create_vod_alt1PostBodySubscriptionMonthlyPrice {
 
-		/** The monthly subscription price in USD. *Required if `subscription.active` is true. */
+		/**
+		 * The monthly subscription price in USD. *Required if `subscription.active` is true.
+		 * Type: double
+		 */
 		USD?: number | null;
 	}
 	export interface Create_vod_alt1PostBodySubscriptionMonthlyPriceFormProperties {
 
-		/** The monthly subscription price in USD. *Required if `subscription.active` is true. */
+		/**
+		 * The monthly subscription price in USD. *Required if `subscription.active` is true.
+		 * Type: double
+		 */
 		USD: FormControl<number | null | undefined>,
 	}
 	export function CreateCreate_vod_alt1PostBodySubscriptionMonthlyPriceFormGroup() {
@@ -15071,12 +15981,18 @@ export namespace MyNS {
 
 	export interface Set_video_as_album_thumbnailPostBody {
 
-		/** The video frame time in seconds to use as the album thumbnail. */
+		/**
+		 * The video frame time in seconds to use as the album thumbnail.
+		 * Type: double
+		 */
 		time_code?: number | null;
 	}
 	export interface Set_video_as_album_thumbnailPostBodyFormProperties {
 
-		/** The video frame time in seconds to use as the album thumbnail. */
+		/**
+		 * The video frame time in seconds to use as the album thumbnail.
+		 * Type: double
+		 */
 		time_code: FormControl<number | null | undefined>,
 	}
 	export function CreateSet_video_as_album_thumbnailPostBodyFormGroup() {
@@ -15246,78 +16162,150 @@ export namespace MyNS {
 
 	export interface Create_vodPostBodyBuyPrice {
 
-		/** The purchase price of this video in AUD. */
+		/**
+		 * The purchase price of this video in AUD.
+		 * Type: double
+		 */
 		AUD?: number | null;
 
-		/** The purchase price of this video in CAD. */
+		/**
+		 * The purchase price of this video in CAD.
+		 * Type: double
+		 */
 		CAD?: number | null;
 
-		/** The purchase price of this video in CHF. */
+		/**
+		 * The purchase price of this video in CHF.
+		 * Type: double
+		 */
 		CHF?: number | null;
 
-		/** The purchase price of this video in DKK. */
+		/**
+		 * The purchase price of this video in DKK.
+		 * Type: double
+		 */
 		DKK?: number | null;
 
-		/** The purchase price of this video in EUR. */
+		/**
+		 * The purchase price of this video in EUR.
+		 * Type: double
+		 */
 		EUR?: number | null;
 
-		/** The purchase price of this video in GBP. */
+		/**
+		 * The purchase price of this video in GBP.
+		 * Type: double
+		 */
 		GBP?: number | null;
 
-		/** The purchase price of this video in JPY. */
+		/**
+		 * The purchase price of this video in JPY.
+		 * Type: double
+		 */
 		JPY?: number | null;
 
-		/** The purchase price of this video in KRW. */
+		/**
+		 * The purchase price of this video in KRW.
+		 * Type: double
+		 */
 		KRW?: number | null;
 
-		/** The purchase price of this video in NOK. */
+		/**
+		 * The purchase price of this video in NOK.
+		 * Type: double
+		 */
 		NOK?: number | null;
 
-		/** The purchase price of this video in PLN. */
+		/**
+		 * The purchase price of this video in PLN.
+		 * Type: double
+		 */
 		PLN?: number | null;
 
-		/** The purchase price of this video in SEK. */
+		/**
+		 * The purchase price of this video in SEK.
+		 * Type: double
+		 */
 		SEK?: number | null;
 
-		/** The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`. */
+		/**
+		 * The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`.
+		 * Type: double
+		 */
 		USD?: number | null;
 	}
 	export interface Create_vodPostBodyBuyPriceFormProperties {
 
-		/** The purchase price of this video in AUD. */
+		/**
+		 * The purchase price of this video in AUD.
+		 * Type: double
+		 */
 		AUD: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in CAD. */
+		/**
+		 * The purchase price of this video in CAD.
+		 * Type: double
+		 */
 		CAD: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in CHF. */
+		/**
+		 * The purchase price of this video in CHF.
+		 * Type: double
+		 */
 		CHF: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in DKK. */
+		/**
+		 * The purchase price of this video in DKK.
+		 * Type: double
+		 */
 		DKK: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in EUR. */
+		/**
+		 * The purchase price of this video in EUR.
+		 * Type: double
+		 */
 		EUR: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in GBP. */
+		/**
+		 * The purchase price of this video in GBP.
+		 * Type: double
+		 */
 		GBP: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in JPY. */
+		/**
+		 * The purchase price of this video in JPY.
+		 * Type: double
+		 */
 		JPY: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in KRW. */
+		/**
+		 * The purchase price of this video in KRW.
+		 * Type: double
+		 */
 		KRW: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in NOK. */
+		/**
+		 * The purchase price of this video in NOK.
+		 * Type: double
+		 */
 		NOK: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in PLN. */
+		/**
+		 * The purchase price of this video in PLN.
+		 * Type: double
+		 */
 		PLN: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in SEK. */
+		/**
+		 * The purchase price of this video in SEK.
+		 * Type: double
+		 */
 		SEK: FormControl<number | null | undefined>,
 
-		/** The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`. */
+		/**
+		 * The purchase price of this video in USD when `type` is `film`, or the purchase price of the entire collection in USD when `type` is `series`.
+		 * Type: double
+		 */
 		USD: FormControl<number | null | undefined>,
 	}
 	export function CreateCreate_vodPostBodyBuyPriceFormGroup() {
@@ -15377,12 +16365,18 @@ export namespace MyNS {
 
 	export interface Create_vodPostBodyEpisodesBuyPrice {
 
-		/** The purchase price per episode. *Required if `episodes.buy.active` is true. */
+		/**
+		 * The purchase price per episode. *Required if `episodes.buy.active` is true.
+		 * Type: double
+		 */
 		USD?: number | null;
 	}
 	export interface Create_vodPostBodyEpisodesBuyPriceFormProperties {
 
-		/** The purchase price per episode. *Required if `episodes.buy.active` is true. */
+		/**
+		 * The purchase price per episode. *Required if `episodes.buy.active` is true.
+		 * Type: double
+		 */
 		USD: FormControl<number | null | undefined>,
 	}
 	export function CreateCreate_vodPostBodyEpisodesBuyPriceFormGroup() {
@@ -15419,12 +16413,18 @@ export namespace MyNS {
 
 	export interface Create_vodPostBodyEpisodesRentPrice {
 
-		/** The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true. */
+		/**
+		 * The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true.
+		 * Type: double
+		 */
 		USD?: number | null;
 	}
 	export interface Create_vodPostBodyEpisodesRentPriceFormProperties {
 
-		/** The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true. */
+		/**
+		 * The default price to rent an episode. This field is applicable only when `type` is `series`. *Required if `episodes.rent.active` is true.
+		 * Type: double
+		 */
 		USD: FormControl<number | null | undefined>,
 	}
 	export function CreateCreate_vodPostBodyEpisodesRentPriceFormGroup() {
@@ -15461,78 +16461,150 @@ export namespace MyNS {
 
 	export interface Create_vodPostBodyRentPrice {
 
-		/** The rental price of this video in AUD. */
+		/**
+		 * The rental price of this video in AUD.
+		 * Type: double
+		 */
 		AUD?: number | null;
 
-		/** The rental price of this video in CAD. */
+		/**
+		 * The rental price of this video in CAD.
+		 * Type: double
+		 */
 		CAD?: number | null;
 
-		/** The rental price of this video in CHF. */
+		/**
+		 * The rental price of this video in CHF.
+		 * Type: double
+		 */
 		CHF?: number | null;
 
-		/** The rental price of this video in DKK. */
+		/**
+		 * The rental price of this video in DKK.
+		 * Type: double
+		 */
 		DKK?: number | null;
 
-		/** The rental price of this video in EUR. */
+		/**
+		 * The rental price of this video in EUR.
+		 * Type: double
+		 */
 		EUR?: number | null;
 
-		/** The rental price of this video in GBP. */
+		/**
+		 * The rental price of this video in GBP.
+		 * Type: double
+		 */
 		GBP?: number | null;
 
-		/** The rental price of this video in JPY. */
+		/**
+		 * The rental price of this video in JPY.
+		 * Type: double
+		 */
 		JPY?: number | null;
 
-		/** The rental price of this video in KRW. */
+		/**
+		 * The rental price of this video in KRW.
+		 * Type: double
+		 */
 		KRW?: number | null;
 
-		/** The rental price of this video in NOK. */
+		/**
+		 * The rental price of this video in NOK.
+		 * Type: double
+		 */
 		NOK?: number | null;
 
-		/** The rental price of this video in PLN. */
+		/**
+		 * The rental price of this video in PLN.
+		 * Type: double
+		 */
 		PLN?: number | null;
 
-		/** The rental price of this video in SEK. */
+		/**
+		 * The rental price of this video in SEK.
+		 * Type: double
+		 */
 		SEK?: number | null;
 
-		/** The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`. */
+		/**
+		 * The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`.
+		 * Type: double
+		 */
 		USD?: number | null;
 	}
 	export interface Create_vodPostBodyRentPriceFormProperties {
 
-		/** The rental price of this video in AUD. */
+		/**
+		 * The rental price of this video in AUD.
+		 * Type: double
+		 */
 		AUD: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in CAD. */
+		/**
+		 * The rental price of this video in CAD.
+		 * Type: double
+		 */
 		CAD: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in CHF. */
+		/**
+		 * The rental price of this video in CHF.
+		 * Type: double
+		 */
 		CHF: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in DKK. */
+		/**
+		 * The rental price of this video in DKK.
+		 * Type: double
+		 */
 		DKK: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in EUR. */
+		/**
+		 * The rental price of this video in EUR.
+		 * Type: double
+		 */
 		EUR: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in GBP. */
+		/**
+		 * The rental price of this video in GBP.
+		 * Type: double
+		 */
 		GBP: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in JPY. */
+		/**
+		 * The rental price of this video in JPY.
+		 * Type: double
+		 */
 		JPY: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in KRW. */
+		/**
+		 * The rental price of this video in KRW.
+		 * Type: double
+		 */
 		KRW: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in NOK. */
+		/**
+		 * The rental price of this video in NOK.
+		 * Type: double
+		 */
 		NOK: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in PLN. */
+		/**
+		 * The rental price of this video in PLN.
+		 * Type: double
+		 */
 		PLN: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in SEK. */
+		/**
+		 * The rental price of this video in SEK.
+		 * Type: double
+		 */
 		SEK: FormControl<number | null | undefined>,
 
-		/** The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`. */
+		/**
+		 * The rental price of this video in USD when `type` is `film`, or the rental price of the entire collection in USD when `type` is `series`.
+		 * Type: double
+		 */
 		USD: FormControl<number | null | undefined>,
 	}
 	export function CreateCreate_vodPostBodyRentPriceFormGroup() {
@@ -15584,12 +16656,18 @@ export namespace MyNS {
 
 	export interface Create_vodPostBodySubscriptionMonthlyPrice {
 
-		/** The monthly subscription price in USD. *Required if `subscription.active` is true. */
+		/**
+		 * The monthly subscription price in USD. *Required if `subscription.active` is true.
+		 * Type: double
+		 */
 		USD?: number | null;
 	}
 	export interface Create_vodPostBodySubscriptionMonthlyPriceFormProperties {
 
-		/** The monthly subscription price in USD. *Required if `subscription.active` is true. */
+		/**
+		 * The monthly subscription price in USD. *Required if `subscription.active` is true.
+		 * Type: double
+		 */
 		USD: FormControl<number | null | undefined>,
 	}
 	export function CreateCreate_vodPostBodySubscriptionMonthlyPriceFormGroup() {

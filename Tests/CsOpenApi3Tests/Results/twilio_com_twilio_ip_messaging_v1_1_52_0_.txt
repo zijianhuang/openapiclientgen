@@ -818,8 +818,13 @@ namespace MyNS
 		/// <summary>
 		/// ListCredential v1/Credentials
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListCredentialReturn> ListCredentialAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -853,6 +858,9 @@ namespace MyNS
 		/// <summary>
 		/// DeleteCredential v1/Credentials/{Sid}
 		/// </summary>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Credentials/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -878,6 +886,9 @@ namespace MyNS
 		/// <summary>
 		/// FetchCredential v1/Credentials/{Sid}
 		/// </summary>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1credential> FetchCredentialAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -910,8 +921,13 @@ namespace MyNS
 		/// <summary>
 		/// ListService v1/Services
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListServiceReturn> ListServiceAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -945,8 +961,16 @@ namespace MyNS
 		/// <summary>
 		/// ListChannel v1/Services/{ServiceSid}/Channels
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListChannelReturn> ListChannelAsync(string ServiceSid, Channel_enum_channel_type[] Type, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -980,8 +1004,16 @@ namespace MyNS
 		/// <summary>
 		/// ListInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListInviteReturn> ListInviteAsync(string ServiceSid, string ChannelSid, string[] Identity, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1015,6 +1047,12 @@ namespace MyNS
 		/// <summary>
 		/// DeleteInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteInviteAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Channels/"+ (ChannelSid==null? "" : System.Uri.EscapeDataString(ChannelSid))+"/Invites/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1040,6 +1078,12 @@ namespace MyNS
 		/// <summary>
 		/// FetchInvite v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1servicechannelinvite> FetchInviteAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1072,8 +1116,16 @@ namespace MyNS
 		/// <summary>
 		/// ListMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListMemberReturn> ListMemberAsync(string ServiceSid, string ChannelSid, string[] Identity, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1107,6 +1159,12 @@ namespace MyNS
 		/// <summary>
 		/// DeleteMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteMemberAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Channels/"+ (ChannelSid==null? "" : System.Uri.EscapeDataString(ChannelSid))+"/Members/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1132,6 +1190,12 @@ namespace MyNS
 		/// <summary>
 		/// FetchMember v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1servicechannelmember> FetchMemberAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1164,8 +1228,19 @@ namespace MyNS
 		/// <summary>
 		/// ListMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ChannelSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListMessageReturn> ListMessageAsync(string ServiceSid, string ChannelSid, Message_enum_order_type Order, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1199,6 +1274,15 @@ namespace MyNS
 		/// <summary>
 		/// DeleteMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ChannelSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteMessageAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Channels/"+ (ChannelSid==null? "" : System.Uri.EscapeDataString(ChannelSid))+"/Messages/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1224,6 +1308,15 @@ namespace MyNS
 		/// <summary>
 		/// FetchMessage v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="ChannelSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1servicechannelmessage> FetchMessageAsync(string ServiceSid, string ChannelSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1256,6 +1349,9 @@ namespace MyNS
 		/// <summary>
 		/// DeleteChannel v1/Services/{ServiceSid}/Channels/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteChannelAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Channels/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1281,6 +1377,9 @@ namespace MyNS
 		/// <summary>
 		/// FetchChannel v1/Services/{ServiceSid}/Channels/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1servicechannel> FetchChannelAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1313,8 +1412,16 @@ namespace MyNS
 		/// <summary>
 		/// ListRole v1/Services/{ServiceSid}/Roles
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListRoleReturn> ListRoleAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1348,6 +1455,12 @@ namespace MyNS
 		/// <summary>
 		/// DeleteRole v1/Services/{ServiceSid}/Roles/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteRoleAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Roles/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1373,6 +1486,12 @@ namespace MyNS
 		/// <summary>
 		/// FetchRole v1/Services/{ServiceSid}/Roles/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1servicerole> FetchRoleAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1405,8 +1524,16 @@ namespace MyNS
 		/// <summary>
 		/// ListUser v1/Services/{ServiceSid}/Users
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListUserReturn> ListUserAsync(string ServiceSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1440,6 +1567,9 @@ namespace MyNS
 		/// <summary>
 		/// DeleteUser v1/Services/{ServiceSid}/Users/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteUserAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (ServiceSid==null? "" : System.Uri.EscapeDataString(ServiceSid))+"/Users/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1465,6 +1595,9 @@ namespace MyNS
 		/// <summary>
 		/// FetchUser v1/Services/{ServiceSid}/Users/{Sid}
 		/// </summary>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1serviceuser> FetchUserAsync(string ServiceSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1497,8 +1630,16 @@ namespace MyNS
 		/// <summary>
 		/// ListUserChannel v1/Services/{ServiceSid}/Users/{UserSid}/Channels
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="ServiceSid">Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListUserChannelReturn> ListUserChannelAsync(string ServiceSid, string UserSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1532,6 +1673,9 @@ namespace MyNS
 		/// <summary>
 		/// DeleteService v1/Services/{Sid}
 		/// </summary>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Services/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -1557,6 +1701,9 @@ namespace MyNS
 		/// <summary>
 		/// FetchService v1/Services/{Sid}
 		/// </summary>
+		/// <param name="Sid">Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Ip_messagingv1service> FetchServiceAsync(string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

@@ -169,26 +169,44 @@ export namespace MyNS {
 	/** An RGB color. */
 	export interface RgbColor {
 
-		/** The blue component of the color, from 0.0 to 1.0. */
+		/**
+		 * The blue component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		blue?: number | null;
 
-		/** The green component of the color, from 0.0 to 1.0. */
+		/**
+		 * The green component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		green?: number | null;
 
-		/** The red component of the color, from 0.0 to 1.0. */
+		/**
+		 * The red component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		red?: number | null;
 	}
 
 	/** An RGB color. */
 	export interface RgbColorFormProperties {
 
-		/** The blue component of the color, from 0.0 to 1.0. */
+		/**
+		 * The blue component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		blue: FormControl<number | null | undefined>,
 
-		/** The green component of the color, from 0.0 to 1.0. */
+		/**
+		 * The green component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		green: FormControl<number | null | undefined>,
 
-		/** The red component of the color, from 0.0 to 1.0. */
+		/**
+		 * The red component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		red: FormControl<number | null | undefined>,
 	}
 	export function CreateRgbColorFormGroup() {
@@ -206,7 +224,10 @@ export namespace MyNS {
 	/** A magnitude in a single direction in the specified units. */
 	export interface Dimension {
 
-		/** The magnitude. */
+		/**
+		 * The magnitude.
+		 * Type: double
+		 */
 		magnitude?: number | null;
 
 		/** The units for magnitude. */
@@ -216,7 +237,10 @@ export namespace MyNS {
 	/** A magnitude in a single direction in the specified units. */
 	export interface DimensionFormProperties {
 
-		/** The magnitude. */
+		/**
+		 * The magnitude.
+		 * Type: double
+		 */
 		magnitude: FormControl<number | null | undefined>,
 
 		/** The units for magnitude. */
@@ -274,7 +298,10 @@ export namespace MyNS {
 		/** The font family of the text. The font family can be any font from the Font menu in Docs or from [Google Fonts] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`. */
 		fontFamily?: string | null;
 
-		/** The weight of the font. This field can have any value that's a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. The default value is `400` ("normal"). The font weight makes up just one component of the rendered font weight. A combination of the `weight` and the text style's resolved `bold` value determine the rendered weight, after accounting for inheritance: * If the text is bold and the weight is less than `400`, the rendered weight is 400. * If the text is bold and the weight is greater than or equal to `400` but is less than `700`, the rendered weight is `700`. * If the weight is greater than or equal to `700`, the rendered weight is equal to the weight. * If the text is not bold, the rendered weight is equal to the weight. */
+		/**
+		 * The weight of the font. This field can have any value that's a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. The default value is `400` ("normal"). The font weight makes up just one component of the rendered font weight. A combination of the `weight` and the text style's resolved `bold` value determine the rendered weight, after accounting for inheritance: * If the text is bold and the weight is less than `400`, the rendered weight is 400. * If the text is bold and the weight is greater than or equal to `400` but is less than `700`, the rendered weight is `700`. * If the weight is greater than or equal to `700`, the rendered weight is equal to the weight. * If the text is not bold, the rendered weight is equal to the weight.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 
@@ -284,7 +311,10 @@ export namespace MyNS {
 		/** The font family of the text. The font family can be any font from the Font menu in Docs or from [Google Fonts] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`. */
 		fontFamily: FormControl<string | null | undefined>,
 
-		/** The weight of the font. This field can have any value that's a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. The default value is `400` ("normal"). The font weight makes up just one component of the rendered font weight. A combination of the `weight` and the text style's resolved `bold` value determine the rendered weight, after accounting for inheritance: * If the text is bold and the weight is less than `400`, the rendered weight is 400. * If the text is bold and the weight is greater than or equal to `400` but is less than `700`, the rendered weight is `700`. * If the weight is greater than or equal to `700`, the rendered weight is equal to the weight. * If the text is not bold, the rendered weight is equal to the weight. */
+		/**
+		 * The weight of the font. This field can have any value that's a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. The default value is `400` ("normal"). The font weight makes up just one component of the rendered font weight. A combination of the `weight` and the text style's resolved `bold` value determine the rendered weight, after accounting for inheritance: * If the text is bold and the weight is less than `400`, the rendered weight is 400. * If the text is bold and the weight is greater than or equal to `400` but is less than `700`, the rendered weight is `700`. * If the weight is greater than or equal to `700`, the rendered weight is equal to the weight. * If the text is not bold, the rendered weight is equal to the weight.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateWeightedFontFamilyFormGroup() {
@@ -587,7 +617,10 @@ export namespace MyNS {
 	/** A particular location in the document. */
 	export interface Location {
 
-		/** The zero-based index, in UTF-16 code units. The index is relative to the beginning of the segment specified by segment_id. */
+		/**
+		 * The zero-based index, in UTF-16 code units. The index is relative to the beginning of the segment specified by segment_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** The ID of the header, footer or footnote the location is in. An empty segment ID signifies the document's body. */
@@ -597,7 +630,10 @@ export namespace MyNS {
 	/** A particular location in the document. */
 	export interface LocationFormProperties {
 
-		/** The zero-based index, in UTF-16 code units. The index is relative to the beginning of the segment specified by segment_id. */
+		/**
+		 * The zero-based index, in UTF-16 code units. The index is relative to the beginning of the segment specified by segment_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** The ID of the header, footer or footnote the location is in. An empty segment ID signifies the document's body. */
@@ -706,26 +742,38 @@ export namespace MyNS {
 	/** Specifies a contiguous range of text. */
 	export interface Range {
 
-		/** The zero-based end index of this range, exclusive, in UTF-16 code units. In all current uses, an end index must be provided. This field is an Int32Value in order to accommodate future use cases with open-ended ranges. */
+		/**
+		 * The zero-based end index of this range, exclusive, in UTF-16 code units. In all current uses, an end index must be provided. This field is an Int32Value in order to accommodate future use cases with open-ended ranges.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
 		/** The ID of the header, footer, or footnote that this range is contained in. An empty segment ID signifies the document's body. */
 		segmentId?: string | null;
 
-		/** The zero-based start index of this range, in UTF-16 code units. In all current uses, a start index must be provided. This field is an Int32Value in order to accommodate future use cases with open-ended ranges. */
+		/**
+		 * The zero-based start index of this range, in UTF-16 code units. In all current uses, a start index must be provided. This field is an Int32Value in order to accommodate future use cases with open-ended ranges.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 	}
 
 	/** Specifies a contiguous range of text. */
 	export interface RangeFormProperties {
 
-		/** The zero-based end index of this range, exclusive, in UTF-16 code units. In all current uses, an end index must be provided. This field is an Int32Value in order to accommodate future use cases with open-ended ranges. */
+		/**
+		 * The zero-based end index of this range, exclusive, in UTF-16 code units. In all current uses, an end index must be provided. This field is an Int32Value in order to accommodate future use cases with open-ended ranges.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
 		/** The ID of the header, footer, or footnote that this range is contained in. An empty segment ID signifies the document's body. */
 		segmentId: FormControl<string | null | undefined>,
 
-		/** The zero-based start index of this range, in UTF-16 code units. In all current uses, a start index must be provided. This field is an Int32Value in order to accommodate future use cases with open-ended ranges. */
+		/**
+		 * The zero-based start index of this range, in UTF-16 code units. In all current uses, a start index must be provided. This field is an Int32Value in order to accommodate future use cases with open-ended ranges.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateRangeFormGroup() {
@@ -909,10 +957,16 @@ export namespace MyNS {
 	/** Location of a single cell within a table. */
 	export interface TableCellLocation {
 
-		/** The zero-based column index. For example, the second column in the table has a column index of 1. */
+		/**
+		 * The zero-based column index. For example, the second column in the table has a column index of 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnIndex?: number | null;
 
-		/** The zero-based row index. For example, the second row in the table has a row index of 1. */
+		/**
+		 * The zero-based row index. For example, the second row in the table has a row index of 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowIndex?: number | null;
 
 		/** A particular location in the document. */
@@ -922,10 +976,16 @@ export namespace MyNS {
 	/** Location of a single cell within a table. */
 	export interface TableCellLocationFormProperties {
 
-		/** The zero-based column index. For example, the second column in the table has a column index of 1. */
+		/**
+		 * The zero-based column index. For example, the second column in the table has a column index of 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnIndex: FormControl<number | null | undefined>,
 
-		/** The zero-based row index. For example, the second row in the table has a row index of 1. */
+		/**
+		 * The zero-based row index. For example, the second row in the table has a row index of 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateTableCellLocationFormGroup() {
@@ -1056,7 +1116,10 @@ export namespace MyNS {
 	/** Inserts a table at the specified location. A newline character will be inserted before the inserted table. */
 	export interface InsertTableRequest {
 
-		/** The number of columns in the table. */
+		/**
+		 * The number of columns in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columns?: number | null;
 
 		/** Location at the end of a body, header, footer or footnote. The location is immediately before the last newline in the document segment. */
@@ -1065,17 +1128,26 @@ export namespace MyNS {
 		/** A particular location in the document. */
 		location?: Location;
 
-		/** The number of rows in the table. */
+		/**
+		 * The number of rows in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows?: number | null;
 	}
 
 	/** Inserts a table at the specified location. A newline character will be inserted before the inserted table. */
 	export interface InsertTableRequestFormProperties {
 
-		/** The number of columns in the table. */
+		/**
+		 * The number of columns in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columns: FormControl<number | null | undefined>,
 
-		/** The number of rows in the table. */
+		/**
+		 * The number of rows in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows: FormControl<number | null | undefined>,
 	}
 	export function CreateInsertTableRequestFormGroup() {
@@ -1182,10 +1254,16 @@ export namespace MyNS {
 	/** A table range represents a reference to a subset of a table. It's important to note that the cells specified by a table range do not necessarily form a rectangle. For example, let's say we have a 3 x 3 table where all the cells of the last row are merged together. The table looks like this: [ ] A table range with table cell location = (table_start_location, row = 0, column = 0), row span = 3 and column span = 2 specifies the following cells: x x [ x x x ] */
 	export interface TableRange {
 
-		/** The column span of the table range. */
+		/**
+		 * The column span of the table range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnSpan?: number | null;
 
-		/** The row span of the table range. */
+		/**
+		 * The row span of the table range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan?: number | null;
 
 		/** Location of a single cell within a table. */
@@ -1195,10 +1273,16 @@ export namespace MyNS {
 	/** A table range represents a reference to a subset of a table. It's important to note that the cells specified by a table range do not necessarily form a rectangle. For example, let's say we have a 3 x 3 table where all the cells of the last row are merged together. The table looks like this: [ ] A table range with table cell location = (table_start_location, row = 0, column = 0), row span = 3 and column span = 2 specifies the following cells: x x [ x x x ] */
 	export interface TableRangeFormProperties {
 
-		/** The column span of the table range. */
+		/**
+		 * The column span of the table range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnSpan: FormControl<number | null | undefined>,
 
-		/** The row span of the table range. */
+		/**
+		 * The row span of the table range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan: FormControl<number | null | undefined>,
 	}
 	export function CreateTableRangeFormGroup() {
@@ -1213,7 +1297,10 @@ export namespace MyNS {
 	/** Updates the number of pinned table header rows in a table. */
 	export interface PinTableHeaderRowsRequest {
 
-		/** The number of table rows to pin, where 0 implies that all rows are unpinned. */
+		/**
+		 * The number of table rows to pin, where 0 implies that all rows are unpinned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pinnedHeaderRowsCount?: number | null;
 
 		/** A particular location in the document. */
@@ -1223,7 +1310,10 @@ export namespace MyNS {
 	/** Updates the number of pinned table header rows in a table. */
 	export interface PinTableHeaderRowsRequestFormProperties {
 
-		/** The number of table rows to pin, where 0 implies that all rows are unpinned. */
+		/**
+		 * The number of table rows to pin, where 0 implies that all rows are unpinned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pinnedHeaderRowsCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePinTableHeaderRowsRequestFormGroup() {
@@ -1444,7 +1534,10 @@ export namespace MyNS {
 		/** A magnitude in a single direction in the specified units. */
 		marginTop?: Dimension;
 
-		/** The page number from which to start counting the number of pages. */
+		/**
+		 * The page number from which to start counting the number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumberStart?: number | null;
 
 		/** A width and height. */
@@ -1484,7 +1577,10 @@ export namespace MyNS {
 		/** Optional. Indicates whether to flip the dimensions of the page_size, which allows changing the page orientation between portrait and landscape. */
 		flipPageOrientation: FormControl<boolean | null | undefined>,
 
-		/** The page number from which to start counting the number of pages. */
+		/**
+		 * The page number from which to start counting the number of pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumberStart: FormControl<number | null | undefined>,
 
 		/** Indicates whether DocumentStyle margin_header, SectionStyle margin_header and DocumentStyle margin_footer, SectionStyle margin_footer are respected. When false, the default values in the Docs editor for header and footer margin are used. This property is read-only. */
@@ -1586,7 +1682,10 @@ export namespace MyNS {
 		/** Whether at least a part of this paragraph should be laid out on the same page or column as the next paragraph if possible. If unset, the value is inherited from the parent. */
 		keepWithNext?: boolean | null;
 
-		/** The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent. */
+		/**
+		 * The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent.
+		 * Type: float
+		 */
 		lineSpacing?: number | null;
 
 		/** The named style type of the paragraph. Since updating the named style type affects other properties within ParagraphStyle, the named style type is applied before the other properties are updated. */
@@ -1632,7 +1731,10 @@ export namespace MyNS {
 		/** Whether at least a part of this paragraph should be laid out on the same page or column as the next paragraph if possible. If unset, the value is inherited from the parent. */
 		keepWithNext: FormControl<boolean | null | undefined>,
 
-		/** The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent. */
+		/**
+		 * The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent.
+		 * Type: float
+		 */
 		lineSpacing: FormControl<number | null | undefined>,
 
 		/** The named style type of the paragraph. Since updating the named style type affects other properties within ParagraphStyle, the named style type is applied before the other properties are updated. */
@@ -1822,7 +1924,10 @@ export namespace MyNS {
 		/** A magnitude in a single direction in the specified units. */
 		marginTop?: Dimension;
 
-		/** The page number from which to start counting the number of pages for this section. If unset, page numbering continues from the previous section. If the value is unset in the first SectionBreak, refer to DocumentStyle's page_number_start. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error. */
+		/**
+		 * The page number from which to start counting the number of pages for this section. If unset, page numbering continues from the previous section. If the value is unset in the first SectionBreak, refer to DocumentStyle's page_number_start. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumberStart?: number | null;
 
 		/** Output only. The type of section. */
@@ -1862,7 +1967,10 @@ export namespace MyNS {
 		/** Optional. Indicates whether to flip the dimensions of DocumentStyle's page_size for this section, which allows changing the page orientation between portrait and landscape. If unset, the value inherits from DocumentStyle's flip_page_orientation. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error. */
 		flipPageOrientation: FormControl<boolean | null | undefined>,
 
-		/** The page number from which to start counting the number of pages for this section. If unset, page numbering continues from the previous section. If the value is unset in the first SectionBreak, refer to DocumentStyle's page_number_start. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error. */
+		/**
+		 * The page number from which to start counting the number of pages for this section. If unset, page numbering continues from the previous section. If the value is unset in the first SectionBreak, refer to DocumentStyle's page_number_start. When updating this property, setting a concrete value is required. Unsetting this property results in a 400 bad request error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumberStart: FormControl<number | null | undefined>,
 
 		/** Output only. The type of section. */
@@ -1960,7 +2068,10 @@ export namespace MyNS {
 		/** A border around a table cell. Table cell borders cannot be transparent. To hide a table cell border, make its width 0. */
 		borderTop?: TableCellBorder;
 
-		/** The column span of the cell. This property is read-only. */
+		/**
+		 * The column span of the cell. This property is read-only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnSpan?: number | null;
 
 		/** The alignment of the content in the table cell. The default alignment matches the alignment for newly created table cells in the Docs editor. */
@@ -1978,20 +2089,29 @@ export namespace MyNS {
 		/** A magnitude in a single direction in the specified units. */
 		paddingTop?: Dimension;
 
-		/** The row span of the cell. This property is read-only. */
+		/**
+		 * The row span of the cell. This property is read-only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan?: number | null;
 	}
 
 	/** The style of a TableCell. Inherited table cell styles are represented as unset fields in this message. A table cell style can inherit from the table's style. */
 	export interface TableCellStyleFormProperties {
 
-		/** The column span of the cell. This property is read-only. */
+		/**
+		 * The column span of the cell. This property is read-only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnSpan: FormControl<number | null | undefined>,
 
 		/** The alignment of the content in the table cell. The default alignment matches the alignment for newly created table cells in the Docs editor. */
 		contentAlignment: FormControl<TableCellStyleContentAlignment | null | undefined>,
 
-		/** The row span of the cell. This property is read-only. */
+		/**
+		 * The row span of the cell. This property is read-only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan: FormControl<number | null | undefined>,
 	}
 	export function CreateTableCellStyleFormGroup() {
@@ -2396,14 +2516,20 @@ export namespace MyNS {
 	/** The result of replacing text. */
 	export interface ReplaceAllTextResponse {
 
-		/** The number of occurrences changed by replacing all text. */
+		/**
+		 * The number of occurrences changed by replacing all text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrencesChanged?: number | null;
 	}
 
 	/** The result of replacing text. */
 	export interface ReplaceAllTextResponseFormProperties {
 
-		/** The number of occurrences changed by replacing all text. */
+		/**
+		 * The number of occurrences changed by replacing all text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrencesChanged: FormControl<number | null | undefined>,
 	}
 	export function CreateReplaceAllTextResponseFormGroup() {
@@ -2434,7 +2560,10 @@ export namespace MyNS {
 	/** A StructuralElement describes content that provides structure to the document. */
 	export interface StructuralElement {
 
-		/** The zero-based end index of this structural element, exclusive, in UTF-16 code units. */
+		/**
+		 * The zero-based end index of this structural element, exclusive, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
 		/** A StructuralElement representing a paragraph. A paragraph is a range of content that's terminated with a newline character. */
@@ -2443,7 +2572,10 @@ export namespace MyNS {
 		/** A StructuralElement representing a section break. A section is a range of content that has the same SectionStyle. A section break represents the start of a new section, and the section style applies to the section after the section break. The document body always begins with a section break. */
 		sectionBreak?: SectionBreak;
 
-		/** The zero-based start index of this structural element, in UTF-16 code units. */
+		/**
+		 * The zero-based start index of this structural element, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
 		/** A StructuralElement representing a table. */
@@ -2456,10 +2588,16 @@ export namespace MyNS {
 	/** A StructuralElement describes content that provides structure to the document. */
 	export interface StructuralElementFormProperties {
 
-		/** The zero-based end index of this structural element, exclusive, in UTF-16 code units. */
+		/**
+		 * The zero-based end index of this structural element, exclusive, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
-		/** The zero-based start index of this structural element, in UTF-16 code units. */
+		/**
+		 * The zero-based start index of this structural element, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateStructuralElementFormGroup() {
@@ -2524,7 +2662,10 @@ export namespace MyNS {
 		/** The ID of the list this paragraph belongs to. */
 		listId?: string | null;
 
-		/** The nesting level of this paragraph in the list. */
+		/**
+		 * The nesting level of this paragraph in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nestingLevel?: number | null;
 
 		/** Represents the styling that can be applied to text. Inherited text styles are represented as unset fields in this message. A text style's parent depends on where the text style is defined: * The TextStyle of text in a Paragraph inherits from the paragraph's corresponding named style type. * The TextStyle on a named style inherits from the normal text named style. * The TextStyle of the normal text named style inherits from the default text style in the Docs editor. * The TextStyle on a Paragraph element that's contained in a table may inherit its text style from the table style. If the text style does not inherit from a parent, unsetting fields will revert the style to a value matching the defaults in the Docs editor. */
@@ -2537,7 +2678,10 @@ export namespace MyNS {
 		/** The ID of the list this paragraph belongs to. */
 		listId: FormControl<string | null | undefined>,
 
-		/** The nesting level of this paragraph in the list. */
+		/**
+		 * The nesting level of this paragraph in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nestingLevel: FormControl<number | null | undefined>,
 	}
 	export function CreateBulletFormGroup() {
@@ -2558,7 +2702,10 @@ export namespace MyNS {
 		/** A ParagraphElement representing a column break. A column break makes the subsequent text start at the top of the next column. */
 		columnBreak?: ColumnBreak;
 
-		/** The zero-base end index of this paragraph element, exclusive, in UTF-16 code units. */
+		/**
+		 * The zero-base end index of this paragraph element, exclusive, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
 		/** A ParagraphElement representing an equation. */
@@ -2582,7 +2729,10 @@ export namespace MyNS {
 		/** A link to a Google resource (such as a file in Drive, a YouTube video, or a Calendar event). */
 		richLink?: RichLink;
 
-		/** The zero-based start index of this paragraph element, in UTF-16 code units. */
+		/**
+		 * The zero-based start index of this paragraph element, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
 		/** A ParagraphElement that represents a run of text that all has the same styling. */
@@ -2592,10 +2742,16 @@ export namespace MyNS {
 	/** A ParagraphElement describes content within a Paragraph. */
 	export interface ParagraphElementFormProperties {
 
-		/** The zero-base end index of this paragraph element, exclusive, in UTF-16 code units. */
+		/**
+		 * The zero-base end index of this paragraph element, exclusive, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
-		/** The zero-based start index of this paragraph element, in UTF-16 code units. */
+		/**
+		 * The zero-based start index of this paragraph element, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateParagraphElementFormGroup() {
@@ -3270,10 +3426,16 @@ export namespace MyNS {
 	/** A StructuralElement representing a table. */
 	export interface Table {
 
-		/** Number of columns in the table. It's possible for a table to be non-rectangular, so some rows may have a different number of cells. */
+		/**
+		 * Number of columns in the table. It's possible for a table to be non-rectangular, so some rows may have a different number of cells.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columns?: number | null;
 
-		/** Number of rows in the table. */
+		/**
+		 * Number of rows in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows?: number | null;
 
 		/** The suggested deletion IDs. If empty, then there are no suggested deletions of this content. */
@@ -3292,10 +3454,16 @@ export namespace MyNS {
 	/** A StructuralElement representing a table. */
 	export interface TableFormProperties {
 
-		/** Number of columns in the table. It's possible for a table to be non-rectangular, so some rows may have a different number of cells. */
+		/**
+		 * Number of columns in the table. It's possible for a table to be non-rectangular, so some rows may have a different number of cells.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columns: FormControl<number | null | undefined>,
 
-		/** Number of rows in the table. */
+		/**
+		 * Number of rows in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows: FormControl<number | null | undefined>,
 	}
 	export function CreateTableFormGroup() {
@@ -3310,10 +3478,16 @@ export namespace MyNS {
 	/** The contents and style of a row in a Table. */
 	export interface TableRow {
 
-		/** The zero-based end index of this row, exclusive, in UTF-16 code units. */
+		/**
+		 * The zero-based end index of this row, exclusive, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
-		/** The zero-based start index of this row, in UTF-16 code units. */
+		/**
+		 * The zero-based start index of this row, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
 		/** The suggested deletion IDs. If empty, then there are no suggested deletions of this content. */
@@ -3335,10 +3509,16 @@ export namespace MyNS {
 	/** The contents and style of a row in a Table. */
 	export interface TableRowFormProperties {
 
-		/** The zero-based end index of this row, exclusive, in UTF-16 code units. */
+		/**
+		 * The zero-based end index of this row, exclusive, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
-		/** The zero-based start index of this row, in UTF-16 code units. */
+		/**
+		 * The zero-based start index of this row, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
 		/** The suggested style changes to this row, keyed by suggestion ID. */
@@ -3401,10 +3581,16 @@ export namespace MyNS {
 		/** The content of the cell. */
 		content?: Array<StructuralElement>;
 
-		/** The zero-based end index of this cell, exclusive, in UTF-16 code units. */
+		/**
+		 * The zero-based end index of this cell, exclusive, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
-		/** The zero-based start index of this cell, in UTF-16 code units. */
+		/**
+		 * The zero-based start index of this cell, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
 		/** The suggested deletion IDs. If empty, then there are no suggested deletions of this content. */
@@ -3423,10 +3609,16 @@ export namespace MyNS {
 	/** The contents and style of a cell in a Table. */
 	export interface TableCellFormProperties {
 
-		/** The zero-based end index of this cell, exclusive, in UTF-16 code units. */
+		/**
+		 * The zero-based end index of this cell, exclusive, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
-		/** The zero-based start index of this cell, in UTF-16 code units. */
+		/**
+		 * The zero-based start index of this cell, in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
 		/** The suggested changes to the table cell style, keyed by suggestion ID. */
@@ -3603,38 +3795,68 @@ export namespace MyNS {
 	/** The crop properties of an image. The crop rectangle is represented using fractional offsets from the original content's 4 edges. - If the offset is in the interval (0, 1), the corresponding edge of crop rectangle is positioned inside of the image's original bounding rectangle. - If the offset is negative or greater than 1, the corresponding edge of crop rectangle is positioned outside of the image's original bounding rectangle. - If all offsets and rotation angle are 0, the image is not cropped. */
 	export interface CropProperties {
 
-		/** The clockwise rotation angle of the crop rectangle around its center, in radians. Rotation is applied after the offsets. */
+		/**
+		 * The clockwise rotation angle of the crop rectangle around its center, in radians. Rotation is applied after the offsets.
+		 * Type: float
+		 */
 		angle?: number | null;
 
-		/** The offset specifies how far inwards the bottom edge of the crop rectangle is from the bottom edge of the original content as a fraction of the original content's height. */
+		/**
+		 * The offset specifies how far inwards the bottom edge of the crop rectangle is from the bottom edge of the original content as a fraction of the original content's height.
+		 * Type: float
+		 */
 		offsetBottom?: number | null;
 
-		/** The offset specifies how far inwards the left edge of the crop rectangle is from the left edge of the original content as a fraction of the original content's width. */
+		/**
+		 * The offset specifies how far inwards the left edge of the crop rectangle is from the left edge of the original content as a fraction of the original content's width.
+		 * Type: float
+		 */
 		offsetLeft?: number | null;
 
-		/** The offset specifies how far inwards the right edge of the crop rectangle is from the right edge of the original content as a fraction of the original content's width. */
+		/**
+		 * The offset specifies how far inwards the right edge of the crop rectangle is from the right edge of the original content as a fraction of the original content's width.
+		 * Type: float
+		 */
 		offsetRight?: number | null;
 
-		/** The offset specifies how far inwards the top edge of the crop rectangle is from the top edge of the original content as a fraction of the original content's height. */
+		/**
+		 * The offset specifies how far inwards the top edge of the crop rectangle is from the top edge of the original content as a fraction of the original content's height.
+		 * Type: float
+		 */
 		offsetTop?: number | null;
 	}
 
 	/** The crop properties of an image. The crop rectangle is represented using fractional offsets from the original content's 4 edges. - If the offset is in the interval (0, 1), the corresponding edge of crop rectangle is positioned inside of the image's original bounding rectangle. - If the offset is negative or greater than 1, the corresponding edge of crop rectangle is positioned outside of the image's original bounding rectangle. - If all offsets and rotation angle are 0, the image is not cropped. */
 	export interface CropPropertiesFormProperties {
 
-		/** The clockwise rotation angle of the crop rectangle around its center, in radians. Rotation is applied after the offsets. */
+		/**
+		 * The clockwise rotation angle of the crop rectangle around its center, in radians. Rotation is applied after the offsets.
+		 * Type: float
+		 */
 		angle: FormControl<number | null | undefined>,
 
-		/** The offset specifies how far inwards the bottom edge of the crop rectangle is from the bottom edge of the original content as a fraction of the original content's height. */
+		/**
+		 * The offset specifies how far inwards the bottom edge of the crop rectangle is from the bottom edge of the original content as a fraction of the original content's height.
+		 * Type: float
+		 */
 		offsetBottom: FormControl<number | null | undefined>,
 
-		/** The offset specifies how far inwards the left edge of the crop rectangle is from the left edge of the original content as a fraction of the original content's width. */
+		/**
+		 * The offset specifies how far inwards the left edge of the crop rectangle is from the left edge of the original content as a fraction of the original content's width.
+		 * Type: float
+		 */
 		offsetLeft: FormControl<number | null | undefined>,
 
-		/** The offset specifies how far inwards the right edge of the crop rectangle is from the right edge of the original content as a fraction of the original content's width. */
+		/**
+		 * The offset specifies how far inwards the right edge of the crop rectangle is from the right edge of the original content as a fraction of the original content's width.
+		 * Type: float
+		 */
 		offsetRight: FormControl<number | null | undefined>,
 
-		/** The offset specifies how far inwards the top edge of the crop rectangle is from the top edge of the original content as a fraction of the original content's height. */
+		/**
+		 * The offset specifies how far inwards the top edge of the crop rectangle is from the top edge of the original content as a fraction of the original content's height.
+		 * Type: float
+		 */
 		offsetTop: FormControl<number | null | undefined>,
 	}
 	export function CreateCropPropertiesFormGroup() {
@@ -4050,16 +4272,25 @@ export namespace MyNS {
 	/** The properties of an image. */
 	export interface ImageProperties {
 
-		/** The clockwise rotation angle of the image, in radians. */
+		/**
+		 * The clockwise rotation angle of the image, in radians.
+		 * Type: float
+		 */
 		angle?: number | null;
 
-		/** The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. */
+		/**
+		 * The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect.
+		 * Type: float
+		 */
 		brightness?: number | null;
 
 		/** A URI to the image with a default lifetime of 30 minutes. This URI is tagged with the account of the requester. Anyone with the URI effectively accesses the image as the original requester. Access to the image may be lost if the document's sharing settings change. */
 		contentUri?: string | null;
 
-		/** The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. */
+		/**
+		 * The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect.
+		 * Type: float
+		 */
 		contrast?: number | null;
 
 		/** The crop properties of an image. The crop rectangle is represented using fractional offsets from the original content's 4 edges. - If the offset is in the interval (0, 1), the corresponding edge of crop rectangle is positioned inside of the image's original bounding rectangle. - If the offset is negative or greater than 1, the corresponding edge of crop rectangle is positioned outside of the image's original bounding rectangle. - If all offsets and rotation angle are 0, the image is not cropped. */
@@ -4068,29 +4299,44 @@ export namespace MyNS {
 		/** The source URI is the URI used to insert the image. The source URI can be empty. */
 		sourceUri?: string | null;
 
-		/** The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means transparent. */
+		/**
+		 * The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means transparent.
+		 * Type: float
+		 */
 		transparency?: number | null;
 	}
 
 	/** The properties of an image. */
 	export interface ImagePropertiesFormProperties {
 
-		/** The clockwise rotation angle of the image, in radians. */
+		/**
+		 * The clockwise rotation angle of the image, in radians.
+		 * Type: float
+		 */
 		angle: FormControl<number | null | undefined>,
 
-		/** The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. */
+		/**
+		 * The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect.
+		 * Type: float
+		 */
 		brightness: FormControl<number | null | undefined>,
 
 		/** A URI to the image with a default lifetime of 30 minutes. This URI is tagged with the account of the requester. Anyone with the URI effectively accesses the image as the original requester. Access to the image may be lost if the document's sharing settings change. */
 		contentUri: FormControl<string | null | undefined>,
 
-		/** The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. */
+		/**
+		 * The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect.
+		 * Type: float
+		 */
 		contrast: FormControl<number | null | undefined>,
 
 		/** The source URI is the URI used to insert the image. The source URI can be empty. */
 		sourceUri: FormControl<string | null | undefined>,
 
-		/** The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means transparent. */
+		/**
+		 * The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means transparent.
+		 * Type: float
+		 */
 		transparency: FormControl<number | null | undefined>,
 	}
 	export function CreateImagePropertiesFormGroup() {
@@ -4126,7 +4372,10 @@ export namespace MyNS {
 	/** A reference to a linked chart embedded from Google Sheets. */
 	export interface SheetsChartReference {
 
-		/** The ID of the specific chart in the Google Sheets spreadsheet that's embedded. */
+		/**
+		 * The ID of the specific chart in the Google Sheets spreadsheet that's embedded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId?: number | null;
 
 		/** The ID of the Google Sheets spreadsheet that contains the source chart. */
@@ -4136,7 +4385,10 @@ export namespace MyNS {
 	/** A reference to a linked chart embedded from Google Sheets. */
 	export interface SheetsChartReferenceFormProperties {
 
-		/** The ID of the specific chart in the Google Sheets spreadsheet that's embedded. */
+		/**
+		 * The ID of the specific chart in the Google Sheets spreadsheet that's embedded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId: FormControl<number | null | undefined>,
 
 		/** The ID of the Google Sheets spreadsheet that contains the source chart. */
@@ -4519,7 +4771,10 @@ export namespace MyNS {
 		/** A magnitude in a single direction in the specified units. */
 		indentStart?: Dimension;
 
-		/** The number of the first list item at this nesting level. A value of 0 is treated as a value of 1 for lettered lists and Roman numeral lists. For values of both 0 and 1, lettered and Roman numeral lists will begin at `a` and `i` respectively. This value is ignored for nesting levels with unordered glyphs. */
+		/**
+		 * The number of the first list item at this nesting level. A value of 0 is treated as a value of 1 for lettered lists and Roman numeral lists. For values of both 0 and 1, lettered and Roman numeral lists will begin at `a` and `i` respectively. This value is ignored for nesting levels with unordered glyphs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startNumber?: number | null;
 
 		/** Represents the styling that can be applied to text. Inherited text styles are represented as unset fields in this message. A text style's parent depends on where the text style is defined: * The TextStyle of text in a Paragraph inherits from the paragraph's corresponding named style type. * The TextStyle on a named style inherits from the normal text named style. * The TextStyle of the normal text named style inherits from the default text style in the Docs editor. * The TextStyle on a Paragraph element that's contained in a table may inherit its text style from the table style. If the text style does not inherit from a parent, unsetting fields will revert the style to a value matching the defaults in the Docs editor. */
@@ -4541,7 +4796,10 @@ export namespace MyNS {
 		/** The type of glyph used by bullets when paragraphs at this level of nesting are ordered. The glyph type determines the type of glyph used to replace placeholders within the glyph_format when paragraphs at this level of nesting are ordered. For example, if the nesting level is 0, the glyph_format is `%0.` and the glyph type is DECIMAL, then the rendered glyph would replace the placeholder `%0` in the glyph format with a number corresponding to list item's order within the list. */
 		glyphType: FormControl<NestingLevelGlyphType | null | undefined>,
 
-		/** The number of the first list item at this nesting level. A value of 0 is treated as a value of 1 for lettered lists and Roman numeral lists. For values of both 0 and 1, lettered and Roman numeral lists will begin at `a` and `i` respectively. This value is ignored for nesting levels with unordered glyphs. */
+		/**
+		 * The number of the first list item at this nesting level. A value of 0 is treated as a value of 1 for lettered lists and Roman numeral lists. For values of both 0 and 1, lettered and Roman numeral lists will begin at `a` and `i` respectively. This value is ignored for nesting levels with unordered glyphs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateNestingLevelFormGroup() {

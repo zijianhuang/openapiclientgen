@@ -57,11 +57,17 @@ export namespace MyNS {
 		aggregationSource?: AccountAggregationSource | null;
 		amountDue?: Money;
 
-		/** Annual percentage yield (APY) is a normalized representation of an interest rate, based on a compounding period of one year. APY generally refers to the rate paid to a depositor by a financial institution on an account.<br><b>Applicable containers</b>: bank<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Annual percentage yield (APY) is a normalized representation of an interest rate, based on a compounding period of one year. APY generally refers to the rate paid to a depositor by a financial institution on an account.<br><b>Applicable containers</b>: bank<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		annualPercentageYield?: number | null;
 		annuityBalance?: Money;
 
-		/** The annual percentage rate (APR) is the yearly rate of interest on the credit card account.<br><b>Additional Details:</b> The yearly percentage rate charged when a balance is held on a credit card. This rate of interest is applied every month on the outstanding credit card balance.<br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * The annual percentage rate (APR) is the yearly rate of interest on the credit card account.<br><b>Additional Details:</b> The yearly percentage rate charged when a balance is held on a credit card. This rate of interest is applied every month on the outstanding credit card balance.<br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		apr?: number | null;
 
 		/** The providerAccountIds that share the account with the primary providerAccountId that was created when the user had added the account for the first time.<br><b>Additional Details</b>: This attribute is returned in the response only if the account deduplication feature is enabled and the same account is mapped to more than one provider account IDs indicating the account is owned by more than one user, for example, joint accounts.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: All Containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
@@ -76,7 +82,10 @@ export namespace MyNS {
 		bankTransferCode?: Array<BankTransferCode>;
 		cash?: Money;
 
-		/** Annual percentage rate applied to cash withdrawals on the card.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Annual percentage rate applied to cash withdrawals on the card.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		cashApr?: number | null;
 		cashValue?: Money;
 
@@ -100,7 +109,10 @@ export namespace MyNS {
 		dataset?: Array<AccountDataset>;
 		deathBenefit?: Money;
 
-		/** Derived APR will be an estimated purchase APR based on consumers credit card transactions and credit card purchase.<br><b>Aggregated / Manual / Derived</b>: Derived<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Derived APR will be an estimated purchase APR based on consumers credit card transactions and credit card purchase.<br><b>Aggregated / Manual / Derived</b>: Derived<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		derivedApr?: number | null;
 
 		/** The name or identification of the account owner, as it appears at the FI site. <br><b>Note:</b> The account holder name can be full or partial based on how it is displayed in the account summary page of the FI site. In most cases, the FI site does not display the full account holder name in the account summary page.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, creditCard, investment, insurance, loan,  reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
@@ -137,15 +149,21 @@ export namespace MyNS {
 		homeInsuranceType?: AccountHomeInsuranceType | null;
 		homeValue?: Money;
 
-		/** The primary key of the account resource and the unique identifier for the account.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts </li><li>GET accounts/{accountId}</li><li>GET investmentOptions</li><li>GET accounts/historicalBalances</li><li>POST accounts</li><li>GET dataExtracts/userData</li></ul> */
-		id?: number | null;
+		/**
+		 * The primary key of the account resource and the unique identifier for the account.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts </li><li>GET accounts/{accountId}</li><li>GET investmentOptions</li><li>GET accounts/historicalBalances</li><li>POST accounts</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Used to determine  whether an account to be considered in the networth calculation.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank,creditCard,loan,investment,insurance,realEstate,otherAssets,otherLiabilities<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		includeInNetWorth?: boolean | null;
 		interestPaidLastYear?: Money;
 		interestPaidYTD?: Money;
 
-		/** <br><b>Bank:</b> The interest rate offered by a FI to its depositors on a bank account.<br><b>Loan:</b> Interest rate applied on the loan.<br><b>Additional Details:</b><br><b>Note:</b> The Interest Rate field is only applicable for the following account types: savings, checking, money market, and certificate of deposit.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, loan<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * <br><b>Bank:</b> The interest rate offered by a FI to its depositors on a bank account.<br><b>Loan:</b> Interest rate applied on the loan.<br><b>Additional Details:</b><br><b>Note:</b> The Interest Rate field is only applicable for the following account types: savings, checking, money market, and certificate of deposit.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, loan<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		interestRate?: number | null;
 
 		/** The type of the interest rate, for example, fixed or variable.<br><b>Applicable containers</b>: loan<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
@@ -229,8 +247,11 @@ export namespace MyNS {
 		principalBalance?: Money;
 		profile?: AccountProfile;
 
-		/** The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerAccountId?: number | null;
+		/**
+		 * The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId?: string | null;
 
 		/** Identifier of the provider site. The primary key of provider resource. <br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		providerId?: string | null;
@@ -288,13 +309,22 @@ export namespace MyNS {
 		/** The source through which the account(s) are added in the system.<br><b>Valid Values</b>: SYSTEM, USER<br><b>Applicable containers</b>: All Containers<br><b>Aggregated / Manual</b>: Both <br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
 		aggregationSource: FormControl<AccountAggregationSource | null | undefined>,
 
-		/** Annual percentage yield (APY) is a normalized representation of an interest rate, based on a compounding period of one year. APY generally refers to the rate paid to a depositor by a financial institution on an account.<br><b>Applicable containers</b>: bank<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Annual percentage yield (APY) is a normalized representation of an interest rate, based on a compounding period of one year. APY generally refers to the rate paid to a depositor by a financial institution on an account.<br><b>Applicable containers</b>: bank<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		annualPercentageYield: FormControl<number | null | undefined>,
 
-		/** The annual percentage rate (APR) is the yearly rate of interest on the credit card account.<br><b>Additional Details:</b> The yearly percentage rate charged when a balance is held on a credit card. This rate of interest is applied every month on the outstanding credit card balance.<br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * The annual percentage rate (APR) is the yearly rate of interest on the credit card account.<br><b>Additional Details:</b> The yearly percentage rate charged when a balance is held on a credit card. This rate of interest is applied every month on the outstanding credit card balance.<br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		apr: FormControl<number | null | undefined>,
 
-		/** Annual percentage rate applied to cash withdrawals on the card.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Annual percentage rate applied to cash withdrawals on the card.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		cashApr: FormControl<number | null | undefined>,
 
 		/** The classification of the account such as personal, corporate, etc.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, creditCard, investment, reward, loan, insurance<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
@@ -309,7 +339,10 @@ export namespace MyNS {
 		/** Current level of the reward program the user is associated with. E.g. Silver, Jade etc.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		currentLevel: FormControl<string | null | undefined>,
 
-		/** Derived APR will be an estimated purchase APR based on consumers credit card transactions and credit card purchase.<br><b>Aggregated / Manual / Derived</b>: Derived<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Derived APR will be an estimated purchase APR based on consumers credit card transactions and credit card purchase.<br><b>Aggregated / Manual / Derived</b>: Derived<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		derivedApr: FormControl<number | null | undefined>,
 
 		/** The name or identification of the account owner, as it appears at the FI site. <br><b>Note:</b> The account holder name can be full or partial based on how it is displayed in the account summary page of the FI site. In most cases, the FI site does not display the full account holder name in the account summary page.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, creditCard, investment, insurance, loan,  reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
@@ -339,13 +372,19 @@ export namespace MyNS {
 		/** Type of home insurance, like -<ul><li>HOME_OWNER</li><li>RENTAL</li><li>RENTER</li><li>etc..</li></ul><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: insurance<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
 		homeInsuranceType: FormControl<AccountHomeInsuranceType | null | undefined>,
 
-		/** The primary key of the account resource and the unique identifier for the account.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts </li><li>GET accounts/{accountId}</li><li>GET investmentOptions</li><li>GET accounts/historicalBalances</li><li>POST accounts</li><li>GET dataExtracts/userData</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The primary key of the account resource and the unique identifier for the account.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts </li><li>GET accounts/{accountId}</li><li>GET investmentOptions</li><li>GET accounts/historicalBalances</li><li>POST accounts</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Used to determine  whether an account to be considered in the networth calculation.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank,creditCard,loan,investment,insurance,realEstate,otherAssets,otherLiabilities<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		includeInNetWorth: FormControl<boolean | null | undefined>,
 
-		/** <br><b>Bank:</b> The interest rate offered by a FI to its depositors on a bank account.<br><b>Loan:</b> Interest rate applied on the loan.<br><b>Additional Details:</b><br><b>Note:</b> The Interest Rate field is only applicable for the following account types: savings, checking, money market, and certificate of deposit.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, loan<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * <br><b>Bank:</b> The interest rate offered by a FI to its depositors on a bank account.<br><b>Loan:</b> Interest rate applied on the loan.<br><b>Additional Details:</b><br><b>Note:</b> The Interest Rate field is only applicable for the following account types: savings, checking, money market, and certificate of deposit.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, loan<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/** The type of the interest rate, for example, fixed or variable.<br><b>Applicable containers</b>: loan<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
@@ -414,8 +453,11 @@ export namespace MyNS {
 		/** Primary reward unit for this reward program. E.g. miles, points, etc.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		primaryRewardUnit: FormControl<string | null | undefined>,
 
-		/** The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerAccountId: FormControl<number | null | undefined>,
+		/**
+		 * The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId: FormControl<string | null | undefined>,
 
 		/** Identifier of the provider site. The primary key of provider resource. <br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		providerId: FormControl<string | null | undefined>,
@@ -466,7 +508,7 @@ export namespace MyNS {
 			fullAccountNumber: new FormControl<string | null | undefined>(undefined),
 			guarantor: new FormControl<string | null | undefined>(undefined),
 			homeInsuranceType: new FormControl<AccountHomeInsuranceType | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			includeInNetWorth: new FormControl<boolean | null | undefined>(undefined),
 			interestRate: new FormControl<number | null | undefined>(undefined),
 			interestRateType: new FormControl<AccountInterestRateType | null | undefined>(undefined),
@@ -491,7 +533,7 @@ export namespace MyNS {
 			policyToDate: new FormControl<string | null | undefined>(undefined),
 			premiumPaymentTerm: new FormControl<string | null | undefined>(undefined),
 			primaryRewardUnit: new FormControl<string | null | undefined>(undefined),
-			providerAccountId: new FormControl<number | null | undefined>(undefined),
+			providerAccountId: new FormControl<string | null | undefined>(undefined),
 			providerId: new FormControl<string | null | undefined>(undefined),
 			providerName: new FormControl<string | null | undefined>(undefined),
 			repaymentPlanType: new FormControl<AccountRepaymentPlanType | null | undefined>(undefined),
@@ -506,7 +548,10 @@ export namespace MyNS {
 
 	export interface Money {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: number;
 
 		/** Required */
@@ -514,7 +559,10 @@ export namespace MyNS {
 	}
 	export interface MoneyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1053,7 +1101,10 @@ export namespace MyNS {
 
 	export interface RewardBalance {
 
-		/** The actual reward balance.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * The actual reward balance.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		balance?: number | null;
 
 		/** The balance required to reach a reward level.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
@@ -1076,7 +1127,10 @@ export namespace MyNS {
 	}
 	export interface RewardBalanceFormProperties {
 
-		/** The actual reward balance.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * The actual reward balance.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** The balance required to reach a reward level.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
@@ -1131,14 +1185,18 @@ export namespace MyNS {
 
 	export interface AccountHistory {
 		historicalBalances?: Array<HistoricalBalance>;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface AccountHistoryFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountHistoryFormGroup() {
 		return new FormGroup<AccountHistoryFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1200,16 +1258,19 @@ export namespace MyNS {
 		/** The date on which the apiKey was created for the customer.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul> */
 		createdDate?: string | null;
 
-		/** Time in seconds after which the JWT token created for users expires.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul> */
-		expiresIn?: number | null;
+		/**
+		 * Time in seconds after which the JWT token created for users expires.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expiresIn?: string | null;
 
 		/** ApiKey or the issuer key used to generate the JWT token for authentication.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul> */
 		key?: string | null;
 
 		/**
 		 * Public key uploaded by the customer while generating ApiKey.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		publicKey?: string | null;
 	}
@@ -1218,23 +1279,26 @@ export namespace MyNS {
 		/** The date on which the apiKey was created for the customer.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul> */
 		createdDate: FormControl<string | null | undefined>,
 
-		/** Time in seconds after which the JWT token created for users expires.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul> */
-		expiresIn: FormControl<number | null | undefined>,
+		/**
+		 * Time in seconds after which the JWT token created for users expires.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		expiresIn: FormControl<string | null | undefined>,
 
 		/** ApiKey or the issuer key used to generate the JWT token for authentication.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul> */
 		key: FormControl<string | null | undefined>,
 
 		/**
 		 * Public key uploaded by the customer while generating ApiKey.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		publicKey: FormControl<string | null | undefined>,
 	}
 	export function CreateApiKeyOutputFormGroup() {
 		return new FormGroup<ApiKeyOutputFormProperties>({
 			createdDate: new FormControl<string | null | undefined>(undefined),
-			expiresIn: new FormControl<number | null | undefined>(undefined),
+			expiresIn: new FormControl<string | null | undefined>(undefined),
 			key: new FormControl<string | null | undefined>(undefined),
 			publicKey: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(2147483647)]),
 		});
@@ -1245,8 +1309,8 @@ export namespace MyNS {
 
 		/**
 		 * Public key uploaded by the customer while generating ApiKey.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		publicKey?: string | null;
 	}
@@ -1254,8 +1318,8 @@ export namespace MyNS {
 
 		/**
 		 * Public key uploaded by the customer while generating ApiKey.<br><br><b>Endpoints</b>:<ul><li>GET /auth/apiKey</li><li>POST /auth/apiKey</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		publicKey: FormControl<string | null | undefined>,
 	}
@@ -1281,7 +1345,10 @@ export namespace MyNS {
 
 	export interface AssetClassification {
 
-		/** The allocation percentage of the holding.<br><br><b>Required Feature Enablement</b>: Asset classification feature<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The allocation percentage of the holding.<br><br><b>Required Feature Enablement</b>: Asset classification feature<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		allocation?: number | null;
 
 		/** The type of classification to which the investment belongs (assetClass, country, sector, and style).<br><b>Required Feature Enablement</b>: Asset classification feature<br><br><b>Applicable containers</b>: investment<br> */
@@ -1292,7 +1359,10 @@ export namespace MyNS {
 	}
 	export interface AssetClassificationFormProperties {
 
-		/** The allocation percentage of the holding.<br><br><b>Required Feature Enablement</b>: Asset classification feature<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The allocation percentage of the holding.<br><br><b>Required Feature Enablement</b>: Asset classification feature<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		allocation: FormControl<number | null | undefined>,
 
 		/** The type of classification to which the investment belongs (assetClass, country, sector, and style).<br><b>Required Feature Enablement</b>: Asset classification feature<br><br><b>Applicable containers</b>: investment<br> */
@@ -1396,9 +1466,13 @@ export namespace MyNS {
 
 	export interface TransactionDays {
 		fullAccountNumberFields?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfTransactionDays?: number | null;
 	}
 	export interface TransactionDaysFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfTransactionDays: FormControl<number | null | undefined>,
 	}
 	export function CreateTransactionDaysFormGroup() {
@@ -1429,7 +1503,10 @@ export namespace MyNS {
 		/** Access Token to access YSL 1.1 services.<br><br><b>Endpoints</b>:<ul><li>POST /auth/token</li></ul> */
 		accessToken?: string | null;
 
-		/** Time in seconds after which the issued accessToken expires.<br><br><b>Endpoints</b>:<ul><li>POST /auth/token</li></ul> */
+		/**
+		 * Time in seconds after which the issued accessToken expires.<br><br><b>Endpoints</b>:<ul><li>POST /auth/token</li></ul>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiresIn?: number | null;
 
 		/** The date and time on which accessToken was created for the customer.<br><br><b>Endpoints</b>:<ul><li>POST /auth/token</li></ul> */
@@ -1440,7 +1517,10 @@ export namespace MyNS {
 		/** Access Token to access YSL 1.1 services.<br><br><b>Endpoints</b>:<ul><li>POST /auth/token</li></ul> */
 		accessToken: FormControl<string | null | undefined>,
 
-		/** Time in seconds after which the issued accessToken expires.<br><br><b>Endpoints</b>:<ul><li>POST /auth/token</li></ul> */
+		/**
+		 * Time in seconds after which the issued accessToken expires.<br><br><b>Endpoints</b>:<ul><li>POST /auth/token</li></ul>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expiresIn: FormControl<number | null | undefined>,
 
 		/** The date and time on which accessToken was created for the customer.<br><br><b>Endpoints</b>:<ul><li>POST /auth/token</li></ul> */
@@ -1470,15 +1550,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		cobrandLogin: string;
 
 		/**
 		 * Required
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		cobrandPassword: string;
 
@@ -1489,15 +1569,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		cobrandLogin: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		cobrandPassword: FormControl<string | null | undefined>,
 
@@ -1531,8 +1611,11 @@ export namespace MyNS {
 		/** The application identifier.<br><br><b>Endpoints</b>:<ul><li>POST cobrand/login</li></ul> */
 		applicationId?: string | null;
 
-		/** Unique identifier of the cobrand (customer) in the system.<br><br><b>Endpoints</b>:<ul><li>POST cobrand/login</li></ul> */
-		cobrandId?: number | null;
+		/**
+		 * Unique identifier of the cobrand (customer) in the system.<br><br><b>Endpoints</b>:<ul><li>POST cobrand/login</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cobrandId?: string | null;
 
 		/** The customer's locale that will be considered for the localization functionality.<br><br><b>Endpoints</b>:<ul><li>POST cobrand/login</li></ul> */
 		locale?: string | null;
@@ -1543,8 +1626,11 @@ export namespace MyNS {
 		/** The application identifier.<br><br><b>Endpoints</b>:<ul><li>POST cobrand/login</li></ul> */
 		applicationId: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the cobrand (customer) in the system.<br><br><b>Endpoints</b>:<ul><li>POST cobrand/login</li></ul> */
-		cobrandId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier of the cobrand (customer) in the system.<br><br><b>Endpoints</b>:<ul><li>POST cobrand/login</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		cobrandId: FormControl<string | null | undefined>,
 
 		/** The customer's locale that will be considered for the localization functionality.<br><br><b>Endpoints</b>:<ul><li>POST cobrand/login</li></ul> */
 		locale: FormControl<string | null | undefined>,
@@ -1552,7 +1638,7 @@ export namespace MyNS {
 	export function CreateCobrandLoginResponseFormGroup() {
 		return new FormGroup<CobrandLoginResponseFormProperties>({
 			applicationId: new FormControl<string | null | undefined>(undefined),
-			cobrandId: new FormControl<number | null | undefined>(undefined),
+			cobrandId: new FormControl<string | null | undefined>(undefined),
 			locale: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -1575,8 +1661,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET cobrand/config/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl?: string | null;
 
@@ -1587,8 +1673,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET cobrand/config/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl: FormControl<string | null | undefined>,
 
@@ -1644,8 +1730,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET configs/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl?: string | null;
 
@@ -1656,8 +1742,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET configs/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl: FormControl<string | null | undefined>,
 
@@ -1744,18 +1830,30 @@ export namespace MyNS {
 
 	export interface Coordinates {
 
-		/** Latitude of the merchant<br><br><b>Applicable containers</b>: bank,creditCard,loan<br> */
+		/**
+		 * Latitude of the merchant<br><br><b>Applicable containers</b>: bank,creditCard,loan<br>
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Longitude of the merchant<br><br><b>Applicable containers</b>: bank,creditCard,loan<br> */
+		/**
+		 * Longitude of the merchant<br><br><b>Applicable containers</b>: bank,creditCard,loan<br>
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 	export interface CoordinatesFormProperties {
 
-		/** Latitude of the merchant<br><br><b>Applicable containers</b>: bank,creditCard,loan<br> */
+		/**
+		 * Latitude of the merchant<br><br><b>Applicable containers</b>: bank,creditCard,loan<br>
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Longitude of the merchant<br><br><b>Applicable containers</b>: bank,creditCard,loan<br> */
+		/**
+		 * Longitude of the merchant<br><br><b>Applicable containers</b>: bank,creditCard,loan<br>
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateCoordinatesFormGroup() {
@@ -1770,21 +1868,21 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		accountName: string;
 
 		/**
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		accountNumber?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		accountType: string;
 		address?: AccountAddress;
@@ -1796,14 +1894,14 @@ export namespace MyNS {
 		includeInNetWorth?: string | null;
 
 		/**
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		memo?: string | null;
 
 		/**
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		nickname?: string | null;
 		valuationType?: AccountValuationType | null;
@@ -1812,21 +1910,21 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		accountName: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		accountNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		accountType: FormControl<string | null | undefined>,
 		dueDate: FormControl<string | null | undefined>,
@@ -1834,14 +1932,14 @@ export namespace MyNS {
 		includeInNetWorth: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		memo: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		nickname: FormControl<string | null | undefined>,
 		valuationType: FormControl<AccountValuationType | null | undefined>,
@@ -1878,8 +1976,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET cobrand/config/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl?: string | null;
 	}
@@ -1887,8 +1985,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET cobrand/config/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl: FormControl<string | null | undefined>,
 	}
@@ -1916,8 +2014,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET configs/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl?: string | null;
 	}
@@ -1925,8 +2023,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET configs/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl: FormControl<string | null | undefined>,
 	}
@@ -1953,18 +2051,22 @@ export namespace MyNS {
 	export interface CreatedAccountInfo {
 		accountName?: string | null;
 		accountNumber?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface CreatedAccountInfoFormProperties {
 		accountName: FormControl<string | null | undefined>,
 		accountNumber: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateCreatedAccountInfoFormGroup() {
 		return new FormGroup<CreatedAccountInfoFormProperties>({
 			accountName: new FormControl<string | null | undefined>(undefined),
 			accountNumber: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -2003,11 +2105,17 @@ export namespace MyNS {
 		aggregationSource?: AccountAggregationSource | null;
 		amountDue?: Money;
 
-		/** Annual percentage yield (APY) is a normalized representation of an interest rate, based on a compounding period of one year. APY generally refers to the rate paid to a depositor by a financial institution on an account.<br><b>Applicable containers</b>: bank<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Annual percentage yield (APY) is a normalized representation of an interest rate, based on a compounding period of one year. APY generally refers to the rate paid to a depositor by a financial institution on an account.<br><b>Applicable containers</b>: bank<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		annualPercentageYield?: number | null;
 		annuityBalance?: Money;
 
-		/** The annual percentage rate (APR) is the yearly rate of interest on the credit card account.<br><b>Additional Details:</b> The yearly percentage rate charged when a balance is held on a credit card. This rate of interest is applied every month on the outstanding credit card balance.<br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * The annual percentage rate (APR) is the yearly rate of interest on the credit card account.<br><b>Additional Details:</b> The yearly percentage rate charged when a balance is held on a credit card. This rate of interest is applied every month on the outstanding credit card balance.<br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		apr?: number | null;
 
 		/** The providerAccountIds that share the account with the primary providerAccountId that was created when the user had added the account for the first time.<br><b>Additional Details</b>: This attribute is returned in the response only if the account deduplication feature is enabled and the same account is mapped to more than one provider account IDs indicating the account is owned by more than one user, for example, joint accounts.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: All Containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
@@ -2021,7 +2129,10 @@ export namespace MyNS {
 		bankTransferCode?: Array<BankTransferCode>;
 		cash?: Money;
 
-		/** Annual percentage rate applied to cash withdrawals on the card.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Annual percentage rate applied to cash withdrawals on the card.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		cashApr?: number | null;
 		cashValue?: Money;
 
@@ -2045,7 +2156,10 @@ export namespace MyNS {
 		dataset?: Array<AccountDataset>;
 		deathBenefit?: Money;
 
-		/** Derived APR will be an estimated purchase APR based on consumers credit card transactions and credit card purchase.<br><b>Aggregated / Manual / Derived</b>: Derived<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Derived APR will be an estimated purchase APR based on consumers credit card transactions and credit card purchase.<br><b>Aggregated / Manual / Derived</b>: Derived<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		derivedApr?: number | null;
 
 		/** The name or identification of the account owner, as it appears at the FI site. <br><b>Note:</b> The account holder name can be full or partial based on how it is displayed in the account summary page of the FI site. In most cases, the FI site does not display the full account holder name in the account summary page.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, creditCard, investment, insurance, loan,  reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
@@ -2075,15 +2189,21 @@ export namespace MyNS {
 		homeInsuranceType?: AccountHomeInsuranceType | null;
 		homeValue?: Money;
 
-		/** The primary key of the account resource and the unique identifier for the account.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts </li><li>GET accounts/{accountId}</li><li>GET investmentOptions</li><li>GET accounts/historicalBalances</li><li>POST accounts</li><li>GET dataExtracts/userData</li></ul> */
-		id?: number | null;
+		/**
+		 * The primary key of the account resource and the unique identifier for the account.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts </li><li>GET accounts/{accountId}</li><li>GET investmentOptions</li><li>GET accounts/historicalBalances</li><li>POST accounts</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Used to determine  whether an account to be considered in the networth calculation.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank,creditCard,loan,investment,insurance,realEstate,otherAssets,otherLiabilities<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		includeInNetWorth?: boolean | null;
 		interestPaidLastYear?: Money;
 		interestPaidYTD?: Money;
 
-		/** <br><b>Bank:</b> The interest rate offered by a FI to its depositors on a bank account.<br><b>Loan:</b> Interest rate applied on the loan.<br><b>Additional Details:</b><br><b>Note:</b> The Interest Rate field is only applicable for the following account types: savings, checking, money market, and certificate of deposit.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, loan<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * <br><b>Bank:</b> The interest rate offered by a FI to its depositors on a bank account.<br><b>Loan:</b> Interest rate applied on the loan.<br><b>Additional Details:</b><br><b>Note:</b> The Interest Rate field is only applicable for the following account types: savings, checking, money market, and certificate of deposit.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, loan<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		interestRate?: number | null;
 
 		/** The type of the interest rate, for example, fixed or variable.<br><b>Applicable containers</b>: loan<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
@@ -2168,8 +2288,11 @@ export namespace MyNS {
 		primaryRewardUnit?: string | null;
 		principalBalance?: Money;
 
-		/** The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerAccountId?: number | null;
+		/**
+		 * The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId?: string | null;
 
 		/** Identifier of the provider site. The primary key of provider resource. <br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		providerId?: string | null;
@@ -2227,13 +2350,22 @@ export namespace MyNS {
 		/** The source through which the account(s) are added in the system.<br><b>Valid Values</b>: SYSTEM, USER<br><b>Applicable containers</b>: All Containers<br><b>Aggregated / Manual</b>: Both <br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
 		aggregationSource: FormControl<AccountAggregationSource | null | undefined>,
 
-		/** Annual percentage yield (APY) is a normalized representation of an interest rate, based on a compounding period of one year. APY generally refers to the rate paid to a depositor by a financial institution on an account.<br><b>Applicable containers</b>: bank<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Annual percentage yield (APY) is a normalized representation of an interest rate, based on a compounding period of one year. APY generally refers to the rate paid to a depositor by a financial institution on an account.<br><b>Applicable containers</b>: bank<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		annualPercentageYield: FormControl<number | null | undefined>,
 
-		/** The annual percentage rate (APR) is the yearly rate of interest on the credit card account.<br><b>Additional Details:</b> The yearly percentage rate charged when a balance is held on a credit card. This rate of interest is applied every month on the outstanding credit card balance.<br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * The annual percentage rate (APR) is the yearly rate of interest on the credit card account.<br><b>Additional Details:</b> The yearly percentage rate charged when a balance is held on a credit card. This rate of interest is applied every month on the outstanding credit card balance.<br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		apr: FormControl<number | null | undefined>,
 
-		/** Annual percentage rate applied to cash withdrawals on the card.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Annual percentage rate applied to cash withdrawals on the card.<br><br><b>Account Type</b>: Aggregated<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		cashApr: FormControl<number | null | undefined>,
 
 		/** The classification of the account such as personal, corporate, etc.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, creditCard, investment, reward, loan, insurance<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
@@ -2248,7 +2380,10 @@ export namespace MyNS {
 		/** Current level of the reward program the user is associated with. E.g. Silver, Jade etc.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		currentLevel: FormControl<string | null | undefined>,
 
-		/** Derived APR will be an estimated purchase APR based on consumers credit card transactions and credit card purchase.<br><b>Aggregated / Manual / Derived</b>: Derived<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * Derived APR will be an estimated purchase APR based on consumers credit card transactions and credit card purchase.<br><b>Aggregated / Manual / Derived</b>: Derived<br><b>Applicable containers</b>: creditCard<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		derivedApr: FormControl<number | null | undefined>,
 
 		/** The name or identification of the account owner, as it appears at the FI site. <br><b>Note:</b> The account holder name can be full or partial based on how it is displayed in the account summary page of the FI site. In most cases, the FI site does not display the full account holder name in the account summary page.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, creditCard, investment, insurance, loan,  reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
@@ -2275,13 +2410,19 @@ export namespace MyNS {
 		/** Type of home insurance, like -<ul><li>HOME_OWNER</li><li>RENTAL</li><li>RENTER</li><li>etc..</li></ul><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: insurance<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
 		homeInsuranceType: FormControl<AccountHomeInsuranceType | null | undefined>,
 
-		/** The primary key of the account resource and the unique identifier for the account.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts </li><li>GET accounts/{accountId}</li><li>GET investmentOptions</li><li>GET accounts/historicalBalances</li><li>POST accounts</li><li>GET dataExtracts/userData</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The primary key of the account resource and the unique identifier for the account.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts </li><li>GET accounts/{accountId}</li><li>GET investmentOptions</li><li>GET accounts/historicalBalances</li><li>POST accounts</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Used to determine  whether an account to be considered in the networth calculation.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank,creditCard,loan,investment,insurance,realEstate,otherAssets,otherLiabilities<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		includeInNetWorth: FormControl<boolean | null | undefined>,
 
-		/** <br><b>Bank:</b> The interest rate offered by a FI to its depositors on a bank account.<br><b>Loan:</b> Interest rate applied on the loan.<br><b>Additional Details:</b><br><b>Note:</b> The Interest Rate field is only applicable for the following account types: savings, checking, money market, and certificate of deposit.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, loan<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
+		/**
+		 * <br><b>Bank:</b> The interest rate offered by a FI to its depositors on a bank account.<br><b>Loan:</b> Interest rate applied on the loan.<br><b>Additional Details:</b><br><b>Note:</b> The Interest Rate field is only applicable for the following account types: savings, checking, money market, and certificate of deposit.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: bank, loan<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: double
+		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/** The type of the interest rate, for example, fixed or variable.<br><b>Applicable containers</b>: loan<br><b>Aggregated / Manual</b>: Aggregated<br><b>Endpoints</b>:<br><ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
@@ -2353,8 +2494,11 @@ export namespace MyNS {
 		/** Primary reward unit for this reward program. E.g. miles, points, etc.<br><br><b>Aggregated / Manual</b>: Aggregated<br><b>Applicable containers</b>: reward<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		primaryRewardUnit: FormControl<string | null | undefined>,
 
-		/** The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerAccountId: FormControl<number | null | undefined>,
+		/**
+		 * The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId: FormControl<string | null | undefined>,
 
 		/** Identifier of the provider site. The primary key of provider resource. <br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br><b>Endpoints</b>:<ul><li>GET accounts</li><li>GET accounts/{accountId}</li><li>GET dataExtracts/userData</li></ul> */
 		providerId: FormControl<string | null | undefined>,
@@ -2404,7 +2548,7 @@ export namespace MyNS {
 			frequency: new FormControl<AccountFrequency | null | undefined>(undefined),
 			guarantor: new FormControl<string | null | undefined>(undefined),
 			homeInsuranceType: new FormControl<AccountHomeInsuranceType | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			includeInNetWorth: new FormControl<boolean | null | undefined>(undefined),
 			interestRate: new FormControl<number | null | undefined>(undefined),
 			interestRateType: new FormControl<AccountInterestRateType | null | undefined>(undefined),
@@ -2430,7 +2574,7 @@ export namespace MyNS {
 			policyToDate: new FormControl<string | null | undefined>(undefined),
 			premiumPaymentTerm: new FormControl<string | null | undefined>(undefined),
 			primaryRewardUnit: new FormControl<string | null | undefined>(undefined),
-			providerAccountId: new FormControl<number | null | undefined>(undefined),
+			providerAccountId: new FormControl<string | null | undefined>(undefined),
 			providerId: new FormControl<string | null | undefined>(undefined),
 			providerName: new FormControl<string | null | undefined>(undefined),
 			repaymentPlanType: new FormControl<AccountRepaymentPlanType | null | undefined>(undefined),
@@ -2460,12 +2604,16 @@ export namespace MyNS {
 	export interface DataExtractsEventData {
 		fromDate?: string | null;
 		toDate?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		userCount?: number | null;
 		userData?: Array<DataExtractsEventUserData>;
 	}
 	export interface DataExtractsEventDataFormProperties {
 		fromDate: FormControl<string | null | undefined>,
 		toDate: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		userCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDataExtractsEventDataFormGroup() {
@@ -2534,16 +2682,25 @@ export namespace MyNS {
 
 	export interface DataExtractsHolding {
 
-		/** Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		accountId?: number | null;
+		/**
+		 * Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId?: string | null;
 		accruedIncome?: Money;
 		accruedInterest?: Money;
 
-		/** The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		contractQuantity?: number | null;
 		costBasis?: Money;
 
-		/** The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		couponRate?: number | null;
 
 		/** The date on which the holding is created in the Yodlee system.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -2558,7 +2715,10 @@ export namespace MyNS {
 		/** The enrichedDescription is the security description of the normalized holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		enrichedDescription?: string | null;
 
-		/** The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		exercisedQuantity?: number | null;
 
 		/** The date on which an option, right or warrant expires.<br><b>Note</b>: The expiration date field is only applicable to options and employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
@@ -2570,10 +2730,16 @@ export namespace MyNS {
 		/** Type of holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		holdingType?: DataExtractsHoldingHoldingType | null;
 
-		/** Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		id?: number | null;
+		/**
+		 * Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
-		/** The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		interestRate?: number | null;
 
 		/** Indicates that the holding is a short trading.<br><br><b>Applicable containers</b>: investment<br> */
@@ -2595,10 +2761,16 @@ export namespace MyNS {
 		optionType?: DataExtractsHoldingOptionType | null;
 		price?: Money;
 
-		/** Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		providerAccountId?: number | null;
+		/**
+		 * Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId?: string | null;
 
-		/** The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** Indicates the security style of holding identified through the security service.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -2618,15 +2790,24 @@ export namespace MyNS {
 		/** The fixed duration for which the bond or CD is issued.<br><b>Note</b>: The term field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
 		term?: string | null;
 
-		/** Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		unvestedQuantity?: number | null;
 		unvestedValue?: Money;
 		value?: Money;
 
-		/** The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedQuantity?: number | null;
 
-		/** The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedSharesExercisable?: number | null;
 		vestedValue?: Money;
 
@@ -2635,13 +2816,22 @@ export namespace MyNS {
 	}
 	export interface DataExtractsHoldingFormProperties {
 
-		/** Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		accountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId: FormControl<string | null | undefined>,
 
-		/** The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		contractQuantity: FormControl<number | null | undefined>,
 
-		/** The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		couponRate: FormControl<number | null | undefined>,
 
 		/** The date on which the holding is created in the Yodlee system.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -2656,7 +2846,10 @@ export namespace MyNS {
 		/** The enrichedDescription is the security description of the normalized holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		enrichedDescription: FormControl<string | null | undefined>,
 
-		/** The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		exercisedQuantity: FormControl<number | null | undefined>,
 
 		/** The date on which an option, right or warrant expires.<br><b>Note</b>: The expiration date field is only applicable to options and employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
@@ -2668,10 +2861,16 @@ export namespace MyNS {
 		/** Type of holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		holdingType: FormControl<DataExtractsHoldingHoldingType | null | undefined>,
 
-		/** Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
-		/** The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/** Indicates that the holding is a short trading.<br><br><b>Applicable containers</b>: investment<br> */
@@ -2692,10 +2891,16 @@ export namespace MyNS {
 		/** The type of the option position (i.e., put or call).<br><b>Note</b>: The option type field is only applicable to options.<br><br><b>Applicable containers</b>: investment<br><b>Applicable Values</b><br> */
 		optionType: FormControl<DataExtractsHoldingOptionType | null | undefined>,
 
-		/** Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		providerAccountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId: FormControl<string | null | undefined>,
 
-		/** The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Indicates the security style of holding identified through the security service.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -2713,13 +2918,22 @@ export namespace MyNS {
 		/** The fixed duration for which the bond or CD is issued.<br><b>Note</b>: The term field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
 		term: FormControl<string | null | undefined>,
 
-		/** Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		unvestedQuantity: FormControl<number | null | undefined>,
 
-		/** The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedQuantity: FormControl<number | null | undefined>,
 
-		/** The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedSharesExercisable: FormControl<number | null | undefined>,
 
 		/** The date on which a RSU, RSA, or an employee stock options become vested.<br><b>Note</b>: The vesting date field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
@@ -2727,7 +2941,7 @@ export namespace MyNS {
 	}
 	export function CreateDataExtractsHoldingFormGroup() {
 		return new FormGroup<DataExtractsHoldingFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
 			contractQuantity: new FormControl<number | null | undefined>(undefined),
 			couponRate: new FormControl<number | null | undefined>(undefined),
 			createdDate: new FormControl<string | null | undefined>(undefined),
@@ -2738,7 +2952,7 @@ export namespace MyNS {
 			expirationDate: new FormControl<string | null | undefined>(undefined),
 			grantDate: new FormControl<string | null | undefined>(undefined),
 			holdingType: new FormControl<DataExtractsHoldingHoldingType | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			interestRate: new FormControl<number | null | undefined>(undefined),
 			isShort: new FormControl<boolean | null | undefined>(undefined),
 			isin: new FormControl<string | null | undefined>(undefined),
@@ -2746,7 +2960,7 @@ export namespace MyNS {
 			matchStatus: new FormControl<string | null | undefined>(undefined),
 			maturityDate: new FormControl<string | null | undefined>(undefined),
 			optionType: new FormControl<DataExtractsHoldingOptionType | null | undefined>(undefined),
-			providerAccountId: new FormControl<number | null | undefined>(undefined),
+			providerAccountId: new FormControl<string | null | undefined>(undefined),
 			quantity: new FormControl<number | null | undefined>(undefined),
 			securityStyle: new FormControl<string | null | undefined>(undefined),
 			securityType: new FormControl<string | null | undefined>(undefined),
@@ -2776,8 +2990,11 @@ export namespace MyNS {
 		/** Logical grouping of dataset attributes into datasets such as Basic Aggregation Data, Account Profile and Documents.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		dataset?: Array<AccountDataset>;
 
-		/** Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		id?: number | null;
+		/**
+		 * Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Indicates if the provider account is deleted from the system.<b>Applicable containers</b>: All Containers<br><b>Aggregated / Manual</b>: Both <br><b>Endpoints</b>:<br><ul><li>GET dataExtracts/userData</li></ul> */
 		isDeleted?: boolean | null;
@@ -2791,8 +3008,11 @@ export namespace MyNS {
 		/** Indicates the migration status of the provider account from screen-scraping provider to the Open Banking provider. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>GET providerAccounts/{providerAccountId}</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		oauthMigrationStatus?: AccountOauthMigrationStatus | null;
 
-		/** Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerId?: number | null;
+		/**
+		 * Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerId?: string | null;
 
 		/** Unique id generated to indicate the request.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		requestId?: string | null;
@@ -2808,8 +3028,11 @@ export namespace MyNS {
 		/** The date on when the provider account is created in the system.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		createdDate: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Indicates if the provider account is deleted from the system.<b>Applicable containers</b>: All Containers<br><b>Aggregated / Manual</b>: Both <br><b>Endpoints</b>:<br><ul><li>GET dataExtracts/userData</li></ul> */
 		isDeleted: FormControl<boolean | null | undefined>,
@@ -2823,8 +3046,11 @@ export namespace MyNS {
 		/** Indicates the migration status of the provider account from screen-scraping provider to the Open Banking provider. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>GET providerAccounts/{providerAccountId}</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		oauthMigrationStatus: FormControl<AccountOauthMigrationStatus | null | undefined>,
 
-		/** Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerId: FormControl<string | null | undefined>,
 
 		/** Unique id generated to indicate the request.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		requestId: FormControl<string | null | undefined>,
@@ -2836,12 +3062,12 @@ export namespace MyNS {
 		return new FormGroup<DataExtractsProviderAccountFormProperties>({
 			aggregationSource: new FormControl<AccountAggregationSource | null | undefined>(undefined),
 			createdDate: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isDeleted: new FormControl<boolean | null | undefined>(undefined),
 			isManual: new FormControl<boolean | null | undefined>(undefined),
 			lastUpdated: new FormControl<string | null | undefined>(undefined),
 			oauthMigrationStatus: new FormControl<AccountOauthMigrationStatus | null | undefined>(undefined),
-			providerId: new FormControl<number | null | undefined>(undefined),
+			providerId: new FormControl<string | null | undefined>(undefined),
 			requestId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<DataExtractsProviderAccountStatus | null | undefined>(undefined),
 		});
@@ -2855,8 +3081,11 @@ export namespace MyNS {
 		/** The account's container.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
 		CONTAINER?: AccountCONTAINER | null;
 
-		/** The account from which the transaction was made. This is basically the primary key of the account resource. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		accountId?: number | null;
+		/**
+		 * The account from which the transaction was made. This is basically the primary key of the account resource. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId?: string | null;
 		amount?: Money;
 
 		/** Indicates if the transaction appears as a debit or a credit transaction in the account. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
@@ -2865,8 +3094,11 @@ export namespace MyNS {
 		/** The name of the category assigned to the transaction. This is the category field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
 		category?: string | null;
 
-		/** The id of the category assigned to the transaction. This is the id field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		categoryId?: number | null;
+		/**
+		 * The id of the category assigned to the transaction. This is the id field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		categoryId?: string | null;
 
 		/** Indicates the source of the category, i.e., categories derived by the system or assigned/provided by the consumer. This is the source field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
 		categorySource?: AccountAggregationSource | null;
@@ -2886,17 +3118,26 @@ export namespace MyNS {
 		date?: string | null;
 		description?: Description;
 
-		/** The id of the detail category that is assigned to the transaction. The supported values are provided by GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard<br> */
-		detailCategoryId?: number | null;
+		/**
+		 * The id of the detail category that is assigned to the transaction. The supported values are provided by GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		detailCategoryId?: string | null;
 
-		/** The high level category assigned to the transaction. The supported values are provided by the GET transactions/categories. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		highLevelCategoryId?: number | null;
+		/**
+		 * The high level category assigned to the transaction. The supported values are provided by the GET transactions/categories. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		highLevelCategoryId?: string | null;
 
 		/** For transactions involving securities, this captures the securities description.<br><br><b>Applicable containers</b>: investment<br> */
 		holdingDescription?: string | null;
 
-		/** An unique identifier for the transaction. The combination of the id and account container are unique in the system. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		id?: number | null;
+		/**
+		 * An unique identifier for the transaction. The combination of the id and account container are unique in the system. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 		interest?: Money;
 
 		/** Indicates if the transaction is marked as deleted.<b>Applicable containers</b>: All Containers<br><b>Aggregated / Manual</b>: Both <br><b>Endpoints</b>:<br><ul><li>GET dataExtracts/userData</li></ul> */
@@ -2913,15 +3154,21 @@ export namespace MyNS {
 		memo?: string | null;
 		merchant?: Merchant;
 
-		/** The parentCategoryId of the category assigned to the transaction.<br><b>Note</b>: This field will be provided in the response if the transaction is assigned to a user-created category. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		parentCategoryId?: number | null;
+		/**
+		 * The parentCategoryId of the category assigned to the transaction.<br><b>Note</b>: This field will be provided in the response if the transaction is assigned to a user-created category. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentCategoryId?: string | null;
 
 		/** The date on which the transaction is posted to the account.<br><br><b>Applicable containers</b>: bank,creditCard,insurance,loan<br> */
 		postDate?: string | null;
 		price?: Money;
 		principal?: Money;
 
-		/** The quantity associated with the transaction.<br><b>Note</b>: The quantity field applies only to trade-related transactions.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity associated with the transaction.<br><b>Note</b>: The quantity field applies only to trade-related transactions.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		quantity?: number | null;
 		runningBalance?: Money;
 
@@ -2960,8 +3207,11 @@ export namespace MyNS {
 		/** The account's container.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
 		CONTAINER: FormControl<AccountCONTAINER | null | undefined>,
 
-		/** The account from which the transaction was made. This is basically the primary key of the account resource. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		accountId: FormControl<number | null | undefined>,
+		/**
+		 * The account from which the transaction was made. This is basically the primary key of the account resource. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId: FormControl<string | null | undefined>,
 
 		/** Indicates if the transaction appears as a debit or a credit transaction in the account. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
 		baseType: FormControl<DataExtractsTransactionBaseType | null | undefined>,
@@ -2969,8 +3219,11 @@ export namespace MyNS {
 		/** The name of the category assigned to the transaction. This is the category field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
 		category: FormControl<string | null | undefined>,
 
-		/** The id of the category assigned to the transaction. This is the id field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		categoryId: FormControl<number | null | undefined>,
+		/**
+		 * The id of the category assigned to the transaction. This is the id field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		categoryId: FormControl<string | null | undefined>,
 
 		/** Indicates the source of the category, i.e., categories derived by the system or assigned/provided by the consumer. This is the source field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
 		categorySource: FormControl<AccountAggregationSource | null | undefined>,
@@ -2988,17 +3241,26 @@ export namespace MyNS {
 		/** The value provided will be either postDate or transactionDate. postDate takes higher priority than transactionDate, except for the investment container as only transactionDate is available. The availability of postDate or transactionDate depends on the provider site.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
 		date: FormControl<string | null | undefined>,
 
-		/** The id of the detail category that is assigned to the transaction. The supported values are provided by GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard<br> */
-		detailCategoryId: FormControl<number | null | undefined>,
+		/**
+		 * The id of the detail category that is assigned to the transaction. The supported values are provided by GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		detailCategoryId: FormControl<string | null | undefined>,
 
-		/** The high level category assigned to the transaction. The supported values are provided by the GET transactions/categories. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		highLevelCategoryId: FormControl<number | null | undefined>,
+		/**
+		 * The high level category assigned to the transaction. The supported values are provided by the GET transactions/categories. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		highLevelCategoryId: FormControl<string | null | undefined>,
 
 		/** For transactions involving securities, this captures the securities description.<br><br><b>Applicable containers</b>: investment<br> */
 		holdingDescription: FormControl<string | null | undefined>,
 
-		/** An unique identifier for the transaction. The combination of the id and account container are unique in the system. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * An unique identifier for the transaction. The combination of the id and account container are unique in the system. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Indicates if the transaction is marked as deleted.<b>Applicable containers</b>: All Containers<br><b>Aggregated / Manual</b>: Both <br><b>Endpoints</b>:<br><ul><li>GET dataExtracts/userData</li></ul> */
 		isDeleted: FormControl<boolean | null | undefined>,
@@ -3013,13 +3275,19 @@ export namespace MyNS {
 		/** Additional notes provided by the user for a particular  transaction through application or API services. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
 		memo: FormControl<string | null | undefined>,
 
-		/** The parentCategoryId of the category assigned to the transaction.<br><b>Note</b>: This field will be provided in the response if the transaction is assigned to a user-created category. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		parentCategoryId: FormControl<number | null | undefined>,
+		/**
+		 * The parentCategoryId of the category assigned to the transaction.<br><b>Note</b>: This field will be provided in the response if the transaction is assigned to a user-created category. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentCategoryId: FormControl<string | null | undefined>,
 
 		/** The date on which the transaction is posted to the account.<br><br><b>Applicable containers</b>: bank,creditCard,insurance,loan<br> */
 		postDate: FormControl<string | null | undefined>,
 
-		/** The quantity associated with the transaction.<br><b>Note</b>: The quantity field applies only to trade-related transactions.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity associated with the transaction.<br><b>Note</b>: The quantity field applies only to trade-related transactions.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** SEDOL stands for Stock Exchange Daily Official List, a list of security identifiers used in the United Kingdom and Ireland for clearing purposes.<br><br><b>Applicable containers</b>: investment<br> */
@@ -3055,26 +3323,26 @@ export namespace MyNS {
 	export function CreateDataExtractsTransactionFormGroup() {
 		return new FormGroup<DataExtractsTransactionFormProperties>({
 			CONTAINER: new FormControl<AccountCONTAINER | null | undefined>(undefined),
-			accountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
 			baseType: new FormControl<DataExtractsTransactionBaseType | null | undefined>(undefined),
 			category: new FormControl<string | null | undefined>(undefined),
-			categoryId: new FormControl<number | null | undefined>(undefined),
+			categoryId: new FormControl<string | null | undefined>(undefined),
 			categorySource: new FormControl<AccountAggregationSource | null | undefined>(undefined),
 			categoryType: new FormControl<DataExtractsTransactionCategoryType | null | undefined>(undefined),
 			checkNumber: new FormControl<string | null | undefined>(undefined),
 			createdDate: new FormControl<string | null | undefined>(undefined),
 			cusipNumber: new FormControl<string | null | undefined>(undefined),
 			date: new FormControl<string | null | undefined>(undefined),
-			detailCategoryId: new FormControl<number | null | undefined>(undefined),
-			highLevelCategoryId: new FormControl<number | null | undefined>(undefined),
+			detailCategoryId: new FormControl<string | null | undefined>(undefined),
+			highLevelCategoryId: new FormControl<string | null | undefined>(undefined),
 			holdingDescription: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isDeleted: new FormControl<boolean | null | undefined>(undefined),
 			isManual: new FormControl<boolean | null | undefined>(undefined),
 			isin: new FormControl<string | null | undefined>(undefined),
 			lastUpdated: new FormControl<string | null | undefined>(undefined),
 			memo: new FormControl<string | null | undefined>(undefined),
-			parentCategoryId: new FormControl<number | null | undefined>(undefined),
+			parentCategoryId: new FormControl<string | null | undefined>(undefined),
 			postDate: new FormControl<string | null | undefined>(undefined),
 			quantity: new FormControl<number | null | undefined>(undefined),
 			sedol: new FormControl<string | null | undefined>(undefined),
@@ -3189,16 +3457,20 @@ export namespace MyNS {
 		account?: Array<DataExtractsAccount>;
 		holding?: Array<DataExtractsHolding>;
 		providerAccount?: Array<DataExtractsProviderAccount>;
-		totalTransactionsCount?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalTransactionsCount?: string | null;
 		transaction?: Array<DataExtractsTransaction>;
 		user?: DataExtractsUser;
 	}
 	export interface DataExtractsUserDataFormProperties {
-		totalTransactionsCount: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalTransactionsCount: FormControl<string | null | undefined>,
 	}
 	export function CreateDataExtractsUserDataFormGroup() {
 		return new FormGroup<DataExtractsUserDataFormProperties>({
-			totalTransactionsCount: new FormControl<number | null | undefined>(undefined),
+			totalTransactionsCount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3216,8 +3488,11 @@ export namespace MyNS {
 
 	export interface DerivedCategorySummary {
 
-		/** Id of the category. This information is provided by transactions/categories service.<br><br><b>Applicable containers</b>: creditCard, bank, investment<br> */
-		categoryId?: number | null;
+		/**
+		 * Id of the category. This information is provided by transactions/categories service.<br><br><b>Applicable containers</b>: creditCard, bank, investment<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		categoryId?: string | null;
 
 		/** The name of the category.<br><br><b>Applicable containers</b>: creditCard, bank, investment<br> */
 		categoryName?: string | null;
@@ -3230,15 +3505,18 @@ export namespace MyNS {
 	}
 	export interface DerivedCategorySummaryFormProperties {
 
-		/** Id of the category. This information is provided by transactions/categories service.<br><br><b>Applicable containers</b>: creditCard, bank, investment<br> */
-		categoryId: FormControl<number | null | undefined>,
+		/**
+		 * Id of the category. This information is provided by transactions/categories service.<br><br><b>Applicable containers</b>: creditCard, bank, investment<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		categoryId: FormControl<string | null | undefined>,
 
 		/** The name of the category.<br><br><b>Applicable containers</b>: creditCard, bank, investment<br> */
 		categoryName: FormControl<string | null | undefined>,
 	}
 	export function CreateDerivedCategorySummaryFormGroup() {
 		return new FormGroup<DerivedCategorySummaryFormProperties>({
-			categoryId: new FormControl<number | null | undefined>(undefined),
+			categoryId: new FormControl<string | null | undefined>(undefined),
 			categoryName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3282,17 +3560,26 @@ export namespace MyNS {
 
 	export interface DerivedHolding {
 
-		/** Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		accountId?: number | null;
+		/**
+		 * Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId?: string | null;
 		accruedIncome?: Money;
 		accruedInterest?: Money;
 		assetClassification?: AssetClassification;
 
-		/** The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		contractQuantity?: number | null;
 		costBasis?: Money;
 
-		/** The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		couponRate?: number | null;
 
 		/** The date on which the holding is created in the Yodlee system.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -3307,7 +3594,10 @@ export namespace MyNS {
 		/** The enrichedDescription is the security description of the normalized holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		enrichedDescription?: string | null;
 
-		/** The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		exercisedQuantity?: number | null;
 
 		/** The date on which an option, right or warrant expires.<br><b>Note</b>: The expiration date field is only applicable to options and employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
@@ -3319,10 +3609,16 @@ export namespace MyNS {
 		/** Type of holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		holdingType?: DataExtractsHoldingHoldingType | null;
 
-		/** Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		id?: number | null;
+		/**
+		 * Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
-		/** The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		interestRate?: number | null;
 
 		/** Indicates that the holding is a short trading.<br><br><b>Applicable containers</b>: investment<br> */
@@ -3344,10 +3640,16 @@ export namespace MyNS {
 		optionType?: DataExtractsHoldingOptionType | null;
 		price?: Money;
 
-		/** Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		providerAccountId?: number | null;
+		/**
+		 * Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId?: string | null;
 
-		/** The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** Indicates the security style of holding identified through the security service.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -3367,15 +3669,24 @@ export namespace MyNS {
 		/** The fixed duration for which the bond or CD is issued.<br><b>Note</b>: The term field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
 		term?: string | null;
 
-		/** Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		unvestedQuantity?: number | null;
 		unvestedValue?: Money;
 		value?: Money;
 
-		/** The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedQuantity?: number | null;
 
-		/** The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedSharesExercisable?: number | null;
 		vestedValue?: Money;
 
@@ -3384,13 +3695,22 @@ export namespace MyNS {
 	}
 	export interface DerivedHoldingFormProperties {
 
-		/** Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		accountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId: FormControl<string | null | undefined>,
 
-		/** The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		contractQuantity: FormControl<number | null | undefined>,
 
-		/** The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		couponRate: FormControl<number | null | undefined>,
 
 		/** The date on which the holding is created in the Yodlee system.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -3405,7 +3725,10 @@ export namespace MyNS {
 		/** The enrichedDescription is the security description of the normalized holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		enrichedDescription: FormControl<string | null | undefined>,
 
-		/** The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		exercisedQuantity: FormControl<number | null | undefined>,
 
 		/** The date on which an option, right or warrant expires.<br><b>Note</b>: The expiration date field is only applicable to options and employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
@@ -3417,10 +3740,16 @@ export namespace MyNS {
 		/** Type of holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		holdingType: FormControl<DataExtractsHoldingHoldingType | null | undefined>,
 
-		/** Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
-		/** The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/** Indicates that the holding is a short trading.<br><br><b>Applicable containers</b>: investment<br> */
@@ -3441,10 +3770,16 @@ export namespace MyNS {
 		/** The type of the option position (i.e., put or call).<br><b>Note</b>: The option type field is only applicable to options.<br><br><b>Applicable containers</b>: investment<br><b>Applicable Values</b><br> */
 		optionType: FormControl<DataExtractsHoldingOptionType | null | undefined>,
 
-		/** Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		providerAccountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId: FormControl<string | null | undefined>,
 
-		/** The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Indicates the security style of holding identified through the security service.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -3462,13 +3797,22 @@ export namespace MyNS {
 		/** The fixed duration for which the bond or CD is issued.<br><b>Note</b>: The term field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
 		term: FormControl<string | null | undefined>,
 
-		/** Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		unvestedQuantity: FormControl<number | null | undefined>,
 
-		/** The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedQuantity: FormControl<number | null | undefined>,
 
-		/** The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedSharesExercisable: FormControl<number | null | undefined>,
 
 		/** The date on which a RSU, RSA, or an employee stock options become vested.<br><b>Note</b>: The vesting date field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
@@ -3476,7 +3820,7 @@ export namespace MyNS {
 	}
 	export function CreateDerivedHoldingFormGroup() {
 		return new FormGroup<DerivedHoldingFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
 			contractQuantity: new FormControl<number | null | undefined>(undefined),
 			couponRate: new FormControl<number | null | undefined>(undefined),
 			createdDate: new FormControl<string | null | undefined>(undefined),
@@ -3487,7 +3831,7 @@ export namespace MyNS {
 			expirationDate: new FormControl<string | null | undefined>(undefined),
 			grantDate: new FormControl<string | null | undefined>(undefined),
 			holdingType: new FormControl<DataExtractsHoldingHoldingType | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			interestRate: new FormControl<number | null | undefined>(undefined),
 			isShort: new FormControl<boolean | null | undefined>(undefined),
 			isin: new FormControl<string | null | undefined>(undefined),
@@ -3495,7 +3839,7 @@ export namespace MyNS {
 			matchStatus: new FormControl<string | null | undefined>(undefined),
 			maturityDate: new FormControl<string | null | undefined>(undefined),
 			optionType: new FormControl<DataExtractsHoldingOptionType | null | undefined>(undefined),
-			providerAccountId: new FormControl<number | null | undefined>(undefined),
+			providerAccountId: new FormControl<string | null | undefined>(undefined),
 			quantity: new FormControl<number | null | undefined>(undefined),
 			securityStyle: new FormControl<string | null | undefined>(undefined),
 			securityType: new FormControl<string | null | undefined>(undefined),
@@ -3555,18 +3899,24 @@ export namespace MyNS {
 
 	export interface DerivedHoldingsAccount {
 
-		/** The primary key of the account resource and the unique identifier for the account.<br>Required Feature Enablement: Asset classification feature.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		id?: number | null;
+		/**
+		 * The primary key of the account resource and the unique identifier for the account.<br>Required Feature Enablement: Asset classification feature.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 		value?: Money;
 	}
 	export interface DerivedHoldingsAccountFormProperties {
 
-		/** The primary key of the account resource and the unique identifier for the account.<br>Required Feature Enablement: Asset classification feature.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The primary key of the account resource and the unique identifier for the account.<br>Required Feature Enablement: Asset classification feature.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateDerivedHoldingsAccountFormGroup() {
 		return new FormGroup<DerivedHoldingsAccountFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3608,7 +3958,9 @@ export namespace MyNS {
 	}
 
 	export interface DerivedNetworthHistoricalBalance {
-		accountId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		accountId?: string | null;
 
 		/** Date as of when the balance is last  updated due to the auto account updates or user triggered updates. This balance will be carry forward for the days where there is no balance available in the system. <br><br><b>Account Type</b>: Aggregated and Manual<br><b>Applicable containers</b>: bank, creditCard, investment, insurance, realEstate, loan<br><b>Endpoints</b>:<ul><li>GET accounts/historicalBalances</li></ul> */
 		asOfDate?: string | null;
@@ -3624,7 +3976,9 @@ export namespace MyNS {
 		isAsset?: boolean | null;
 	}
 	export interface DerivedNetworthHistoricalBalanceFormProperties {
-		accountId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		accountId: FormControl<string | null | undefined>,
 
 		/** Date as of when the balance is last  updated due to the auto account updates or user triggered updates. This balance will be carry forward for the days where there is no balance available in the system. <br><br><b>Account Type</b>: Aggregated and Manual<br><b>Applicable containers</b>: bank, creditCard, investment, insurance, realEstate, loan<br><b>Endpoints</b>:<ul><li>GET accounts/historicalBalances</li></ul> */
 		asOfDate: FormControl<string | null | undefined>,
@@ -3640,7 +3994,7 @@ export namespace MyNS {
 	}
 	export function CreateDerivedNetworthHistoricalBalanceFormGroup() {
 		return new FormGroup<DerivedNetworthHistoricalBalanceFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
 			asOfDate: new FormControl<string | null | undefined>(undefined),
 			dataSourceType: new FormControl<HistoricalBalanceDataSourceType | null | undefined>(undefined),
 			date: new FormControl<string | null | undefined>(undefined),
@@ -3697,23 +4051,29 @@ export namespace MyNS {
 
 	export interface DetailCategory {
 
-		/** The unique identifier of the detail category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		id?: number | null;
+		/**
+		 * The unique identifier of the detail category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The name of the detail category<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
 		name?: string | null;
 	}
 	export interface DetailCategoryFormProperties {
 
-		/** The unique identifier of the detail category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The unique identifier of the detail category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The name of the detail category<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateDetailCategoryFormGroup() {
 		return new FormGroup<DetailCategoryFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -3721,8 +4081,11 @@ export namespace MyNS {
 
 	export interface Document {
 
-		/** The unique identifier for the account. The account ID to which the document is linked.<br><br><b>Applicable containers</b>: bank, investment, creditCard, loan, insurance<br> */
-		accountID?: number | null;
+		/**
+		 * The unique identifier for the account. The account ID to which the document is linked.<br><br><b>Applicable containers</b>: bank, investment, creditCard, loan, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountID?: string | null;
 
 		/** Indicates the type of the document.<br><br><b>Applicable containers</b>: bank, investment, creditCard, loan, insurance<br> */
 		docType?: DocumentDocType | null;
@@ -3747,8 +4110,11 @@ export namespace MyNS {
 	}
 	export interface DocumentFormProperties {
 
-		/** The unique identifier for the account. The account ID to which the document is linked.<br><br><b>Applicable containers</b>: bank, investment, creditCard, loan, insurance<br> */
-		accountID: FormControl<number | null | undefined>,
+		/**
+		 * The unique identifier for the account. The account ID to which the document is linked.<br><br><b>Applicable containers</b>: bank, investment, creditCard, loan, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountID: FormControl<string | null | undefined>,
 
 		/** Indicates the type of the document.<br><br><b>Applicable containers</b>: bank, investment, creditCard, loan, insurance<br> */
 		docType: FormControl<DocumentDocType | null | undefined>,
@@ -3773,7 +4139,7 @@ export namespace MyNS {
 	}
 	export function CreateDocumentFormGroup() {
 		return new FormGroup<DocumentFormProperties>({
-			accountID: new FormControl<number | null | undefined>(undefined),
+			accountID: new FormControl<string | null | undefined>(undefined),
 			docType: new FormControl<DocumentDocType | null | undefined>(undefined),
 			formType: new FormControl<string | null | undefined>(undefined),
 			id: new FormControl<string | null | undefined>(undefined),
@@ -3908,8 +4274,8 @@ export namespace MyNS {
 
 		/**
 		 * Identifier for the field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		id?: string | null;
 
@@ -3922,11 +4288,17 @@ export namespace MyNS {
 		/** Indicates that the answer to the security question already exists in the Yodlee system.Persuading the user to provide the answer to the security question again during the edit-credential flow can be avoided.<br><br><br><b>Endpoints</b>:<ul><li>GET providerAccounts?include=questions</li><li>GET providerAccounts/{providerAccountId}? include=questions</li></ul> */
 		isValueProvided?: boolean | null;
 
-		/** The maximum length of the login form field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
-		maxLength?: number | null;
+		/**
+		 * The maximum length of the login form field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxLength?: string | null;
 
-		/** The minimum length of the login form field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
-		minLength?: number | null;
+		/**
+		 * The minimum length of the login form field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minLength?: string | null;
 
 		/** Name of the field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
 		name?: string | null;
@@ -3953,8 +4325,8 @@ export namespace MyNS {
 
 		/**
 		 * Identifier for the field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		id: FormControl<string | null | undefined>,
 
@@ -3967,11 +4339,17 @@ export namespace MyNS {
 		/** Indicates that the answer to the security question already exists in the Yodlee system.Persuading the user to provide the answer to the security question again during the edit-credential flow can be avoided.<br><br><br><b>Endpoints</b>:<ul><li>GET providerAccounts?include=questions</li><li>GET providerAccounts/{providerAccountId}? include=questions</li></ul> */
 		isValueProvided: FormControl<boolean | null | undefined>,
 
-		/** The maximum length of the login form field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
-		maxLength: FormControl<number | null | undefined>,
+		/**
+		 * The maximum length of the login form field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		maxLength: FormControl<string | null | undefined>,
 
-		/** The minimum length of the login form field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
-		minLength: FormControl<number | null | undefined>,
+		/**
+		 * The minimum length of the login form field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		minLength: FormControl<string | null | undefined>,
 
 		/** Name of the field.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
 		name: FormControl<string | null | undefined>,
@@ -3997,8 +4375,8 @@ export namespace MyNS {
 			image: new FormControl<string | null | undefined>(undefined),
 			isOptional: new FormControl<boolean | null | undefined>(undefined),
 			isValueProvided: new FormControl<boolean | null | undefined>(undefined),
-			maxLength: new FormControl<number | null | undefined>(undefined),
-			minLength: new FormControl<number | null | undefined>(undefined),
+			maxLength: new FormControl<string | null | undefined>(undefined),
+			minLength: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			prefix: new FormControl<string | null | undefined>(undefined),
 			suffix: new FormControl<string | null | undefined>(undefined),
@@ -4079,19 +4457,28 @@ export namespace MyNS {
 
 	export interface Holding {
 
-		/** Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		accountId?: number | null;
+		/**
+		 * Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId?: string | null;
 		accruedIncome?: Money;
 		accruedInterest?: Money;
 
 		/** Asset classification applied to the holding. <br><br><b>Applicable containers</b>: investment<br> */
 		assetClassification?: Array<AssetClassification>;
 
-		/** The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		contractQuantity?: number | null;
 		costBasis?: Money;
 
-		/** The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		couponRate?: number | null;
 
 		/** The date on which the holding is created in the Yodlee system.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4106,7 +4493,10 @@ export namespace MyNS {
 		/** The enrichedDescription is the security description of the normalized holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		enrichedDescription?: string | null;
 
-		/** The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		exercisedQuantity?: number | null;
 
 		/** The date on which an option, right or warrant expires.<br><b>Note</b>: The expiration date field is only applicable to options and employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
@@ -4118,10 +4508,16 @@ export namespace MyNS {
 		/** Type of holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		holdingType?: DataExtractsHoldingHoldingType | null;
 
-		/** Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		id?: number | null;
+		/**
+		 * Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
-		/** The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		interestRate?: number | null;
 
 		/** Indicates that the holding is a short trading.<br><br><b>Applicable containers</b>: investment<br> */
@@ -4143,10 +4539,16 @@ export namespace MyNS {
 		optionType?: DataExtractsHoldingOptionType | null;
 		price?: Money;
 
-		/** Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		providerAccountId?: number | null;
+		/**
+		 * Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId?: string | null;
 
-		/** The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		quantity?: number | null;
 
 		/** Indicates the security style of holding identified through the security service.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4166,15 +4568,24 @@ export namespace MyNS {
 		/** The fixed duration for which the bond or CD is issued.<br><b>Note</b>: The term field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
 		term?: string | null;
 
-		/** Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		unvestedQuantity?: number | null;
 		unvestedValue?: Money;
 		value?: Money;
 
-		/** The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedQuantity?: number | null;
 
-		/** The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedSharesExercisable?: number | null;
 		vestedValue?: Money;
 
@@ -4183,13 +4594,22 @@ export namespace MyNS {
 	}
 	export interface HoldingFormProperties {
 
-		/** Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		accountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier of the account to which the security is linked.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId: FormControl<string | null | undefined>,
 
-		/** The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of tradeable units in a contract.<br><b>Note</b>: The contract quantity field is only applicable to commodity and currency.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		contractQuantity: FormControl<number | null | undefined>,
 
-		/** The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The stated interest rate for a bond.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		couponRate: FormControl<number | null | undefined>,
 
 		/** The date on which the holding is created in the Yodlee system.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4204,7 +4624,10 @@ export namespace MyNS {
 		/** The enrichedDescription is the security description of the normalized holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		enrichedDescription: FormControl<string | null | undefined>,
 
-		/** The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of the employee stock options that are already exercised or bought by the employee.<br><b>Note</b>: Once the employee stock options is exercised, they are either converted to cash value or equity positions depending on the FI. The exercised quantity field is only applicable to employee stock options.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		exercisedQuantity: FormControl<number | null | undefined>,
 
 		/** The date on which an option, right or warrant expires.<br><b>Note</b>: The expiration date field is only applicable to options and employee stock options.<br><br><b>Applicable containers</b>: investment<br> */
@@ -4216,10 +4639,16 @@ export namespace MyNS {
 		/** Type of holding<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		holdingType: FormControl<DataExtractsHoldingHoldingType | null | undefined>,
 
-		/** Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the security added in the system. This is the primary key of the holding resource.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
-		/** The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The interest rate on a CD.<br><b>Note</b>: The interest rate field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/** Indicates that the holding is a short trading.<br><br><b>Applicable containers</b>: investment<br> */
@@ -4240,10 +4669,16 @@ export namespace MyNS {
 		/** The type of the option position (i.e., put or call).<br><b>Note</b>: The option type field is only applicable to options.<br><br><b>Applicable containers</b>: investment<br><b>Applicable Values</b><br> */
 		optionType: FormControl<DataExtractsHoldingOptionType | null | undefined>,
 
-		/** Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		providerAccountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the user's association with the provider.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId: FormControl<string | null | undefined>,
 
-		/** The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * The quantity held for the holding.<br><b>Note</b>: Only for bonds the quantity field indicates the normalized quantity and not the quantity aggregated from the site. The quantity field is only applicable to restricted stock units/awards, performance units, currency, and commodity.<br>For insurance container, the field is only applicable for insurance annuity and variable life insurance types.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** Indicates the security style of holding identified through the security service.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4261,13 +4696,22 @@ export namespace MyNS {
 		/** The fixed duration for which the bond or CD is issued.<br><b>Note</b>: The term field is only applicable to CD.<br><br><b>Applicable containers</b>: investment<br> */
 		term: FormControl<string | null | undefined>,
 
-		/** Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * Indicates the number of unvested quantity or units.<br><b>Note</b>: The unvested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		unvestedQuantity: FormControl<number | null | undefined>,
 
-		/** The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity of units or shares that are already vested on a vest date.<br><b>Note</b>: The vested quantity field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedQuantity: FormControl<number | null | undefined>,
 
-		/** The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The number of vested shares that can be exercised by the employee. It is usually equal to the vested quantity.<br><b>Note</b>: The vested shares exercisable field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		vestedSharesExercisable: FormControl<number | null | undefined>,
 
 		/** The date on which a RSU, RSA, or an employee stock options become vested.<br><b>Note</b>: The vesting date field is only applicable to employee stock options, restricted stock units/awards, performance units, etc.<br><br><b>Applicable containers</b>: investment<br> */
@@ -4275,7 +4719,7 @@ export namespace MyNS {
 	}
 	export function CreateHoldingFormGroup() {
 		return new FormGroup<HoldingFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
 			contractQuantity: new FormControl<number | null | undefined>(undefined),
 			couponRate: new FormControl<number | null | undefined>(undefined),
 			createdDate: new FormControl<string | null | undefined>(undefined),
@@ -4286,7 +4730,7 @@ export namespace MyNS {
 			expirationDate: new FormControl<string | null | undefined>(undefined),
 			grantDate: new FormControl<string | null | undefined>(undefined),
 			holdingType: new FormControl<DataExtractsHoldingHoldingType | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			interestRate: new FormControl<number | null | undefined>(undefined),
 			isShort: new FormControl<boolean | null | undefined>(undefined),
 			isin: new FormControl<string | null | undefined>(undefined),
@@ -4294,7 +4738,7 @@ export namespace MyNS {
 			matchStatus: new FormControl<string | null | undefined>(undefined),
 			maturityDate: new FormControl<string | null | undefined>(undefined),
 			optionType: new FormControl<DataExtractsHoldingOptionType | null | undefined>(undefined),
-			providerAccountId: new FormControl<number | null | undefined>(undefined),
+			providerAccountId: new FormControl<string | null | undefined>(undefined),
 			quantity: new FormControl<number | null | undefined>(undefined),
 			securityStyle: new FormControl<string | null | undefined>(undefined),
 			securityType: new FormControl<string | null | undefined>(undefined),
@@ -4361,13 +4805,19 @@ export namespace MyNS {
 		/** The method in which interest is accrued or earned.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		accrualMethod?: string | null;
 
-		/** Agency factor of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * Agency factor of the security.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		agencyFactor?: number | null;
 
 		/** Next call date of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		callDate?: string | null;
 
-		/** Next call price of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * Next call price of the security.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		callPrice?: number | null;
 
 		/** cdsc fund flag of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4391,7 +4841,10 @@ export namespace MyNS {
 		/** First coupon date of security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		firstCouponDate?: string | null;
 
-		/** Coupon Frequency.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * Coupon Frequency.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency?: number | null;
 
 		/** Mutual Fund Family Name.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4400,13 +4853,19 @@ export namespace MyNS {
 		/** GICS Sector is a categorization the S&P assigns to all publically traded companies. <br><br><b>Applicable containers</b>: investment, insurance<br> */
 		gicsSector?: string | null;
 
-		/** The unique identifier of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		id?: number | null;
+		/**
+		 * The unique identifier of the security.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** ISO 4217 currency code indicating income currency of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		incomeCurrency?: string | null;
 
-		/** The rate of interest paid annually, expressed as a percentage of the bond's par or face value.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * The rate of interest paid annually, expressed as a percentage of the bond's par or face value.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		interestRate?: number | null;
 
 		/** Indicates whether the security is a dummy security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4424,7 +4883,10 @@ export namespace MyNS {
 		/** Issue date of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		issueDate?: string | null;
 
-		/** Price units corresponding to the security style. This is used to derive actual price of the security from market value.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * Price units corresponding to the security style. This is used to derive actual price of the security from market value.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		issueTypeMultiplier?: number | null;
 
 		/** Last coupon date of security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4436,7 +4898,10 @@ export namespace MyNS {
 		/** Maturity date of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		maturityDate?: string | null;
 
-		/** Minimum purchase of security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * Minimum purchase of security.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumPurchase?: number | null;
 
 		/** Unique identifier for Moody rating on Envestnet platform.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4477,13 +4942,19 @@ export namespace MyNS {
 		/** The method in which interest is accrued or earned.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		accrualMethod: FormControl<string | null | undefined>,
 
-		/** Agency factor of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * Agency factor of the security.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		agencyFactor: FormControl<number | null | undefined>,
 
 		/** Next call date of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		callDate: FormControl<string | null | undefined>,
 
-		/** Next call price of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * Next call price of the security.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		callPrice: FormControl<number | null | undefined>,
 
 		/** cdsc fund flag of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4507,7 +4978,10 @@ export namespace MyNS {
 		/** First coupon date of security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		firstCouponDate: FormControl<string | null | undefined>,
 
-		/** Coupon Frequency.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * Coupon Frequency.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency: FormControl<number | null | undefined>,
 
 		/** Mutual Fund Family Name.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4516,13 +4990,19 @@ export namespace MyNS {
 		/** GICS Sector is a categorization the S&P assigns to all publically traded companies. <br><br><b>Applicable containers</b>: investment, insurance<br> */
 		gicsSector: FormControl<string | null | undefined>,
 
-		/** The unique identifier of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The unique identifier of the security.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** ISO 4217 currency code indicating income currency of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		incomeCurrency: FormControl<string | null | undefined>,
 
-		/** The rate of interest paid annually, expressed as a percentage of the bond's par or face value.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * The rate of interest paid annually, expressed as a percentage of the bond's par or face value.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		interestRate: FormControl<number | null | undefined>,
 
 		/** Indicates whether the security is a dummy security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4540,7 +5020,10 @@ export namespace MyNS {
 		/** Issue date of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		issueDate: FormControl<string | null | undefined>,
 
-		/** Price units corresponding to the security style. This is used to derive actual price of the security from market value.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * Price units corresponding to the security style. This is used to derive actual price of the security from market value.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: double
+		 */
 		issueTypeMultiplier: FormControl<number | null | undefined>,
 
 		/** Last coupon date of security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4552,7 +5035,10 @@ export namespace MyNS {
 		/** Maturity date of the security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
 		maturityDate: FormControl<string | null | undefined>,
 
-		/** Minimum purchase of security.<br><br><b>Applicable containers</b>: investment, insurance<br> */
+		/**
+		 * Minimum purchase of security.<br><br><b>Applicable containers</b>: investment, insurance<br>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumPurchase: FormControl<number | null | undefined>,
 
 		/** Unique identifier for Moody rating on Envestnet platform.<br><br><b>Applicable containers</b>: investment, insurance<br> */
@@ -4601,7 +5087,7 @@ export namespace MyNS {
 			frequency: new FormControl<number | null | undefined>(undefined),
 			fundFamily: new FormControl<string | null | undefined>(undefined),
 			gicsSector: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			incomeCurrency: new FormControl<string | null | undefined>(undefined),
 			interestRate: new FormControl<number | null | undefined>(undefined),
 			isDummySecurity: new FormControl<boolean | null | undefined>(undefined),
@@ -4688,8 +5174,11 @@ export namespace MyNS {
 		/** The help that can be displayed to the customer in the login form.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
 		help?: string | null;
 
-		/** The identifier of the login form.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
-		id?: number | null;
+		/**
+		 * The identifier of the login form.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The help that can be displayed to the customer in the login form.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
 		loginHelp?: string | null;
@@ -4700,8 +5189,11 @@ export namespace MyNS {
 		/** The title for the MFA information demanded from the user.This is the title displayed in the provider site.This field is applicable for MFA form types only. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		mfaInfoTitle?: string | null;
 
-		/** The amount of time before which the user is expected to provide MFA information. This field is applicable for MFA form types only. This would be an useful information that could be displayed to the users. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
-		mfaTimeout?: number | null;
+		/**
+		 * The amount of time before which the user is expected to provide MFA information. This field is applicable for MFA form types only. This would be an useful information that could be displayed to the users. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		mfaTimeout?: string | null;
 
 		/** This indicates one row in the form. The row will have one label. But it may have single or multiple fields.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
 		row?: Array<Row>;
@@ -4717,8 +5209,11 @@ export namespace MyNS {
 		/** The help that can be displayed to the customer in the login form.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
 		help: FormControl<string | null | undefined>,
 
-		/** The identifier of the login form.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The identifier of the login form.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The help that can be displayed to the customer in the login form.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
 		loginHelp: FormControl<string | null | undefined>,
@@ -4729,19 +5224,22 @@ export namespace MyNS {
 		/** The title for the MFA information demanded from the user.This is the title displayed in the provider site.This field is applicable for MFA form types only. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		mfaInfoTitle: FormControl<string | null | undefined>,
 
-		/** The amount of time before which the user is expected to provide MFA information. This field is applicable for MFA form types only. This would be an useful information that could be displayed to the users. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul> */
-		mfaTimeout: FormControl<number | null | undefined>,
+		/**
+		 * The amount of time before which the user is expected to provide MFA information. This field is applicable for MFA form types only. This would be an useful information that could be displayed to the users. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/{providerAccountId}</li><li>GET providers/{providerId}</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		mfaTimeout: FormControl<string | null | undefined>,
 	}
 	export function CreateLoginFormFormGroup() {
 		return new FormGroup<LoginFormFormProperties>({
 			forgetPasswordURL: new FormControl<string | null | undefined>(undefined),
 			formType: new FormControl<LoginFormFormType | null | undefined>(undefined),
 			help: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			loginHelp: new FormControl<string | null | undefined>(undefined),
 			mfaInfoText: new FormControl<string | null | undefined>(undefined),
 			mfaInfoTitle: new FormControl<string | null | undefined>(undefined),
-			mfaTimeout: new FormControl<number | null | undefined>(undefined),
+			mfaTimeout: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4824,8 +5322,11 @@ export namespace MyNS {
 		/** The source through which the providerAccount is added in the system.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
 		aggregationSource?: AccountAggregationSource | null;
 
-		/** Consent Id generated through POST Consent.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
-		consentId?: number | null;
+		/**
+		 * Consent Id generated through POST Consent.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		consentId?: string | null;
 
 		/** The date on when the provider account is created in the system.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		createdDate?: string | null;
@@ -4833,8 +5334,11 @@ export namespace MyNS {
 		/** Logical grouping of dataset attributes into datasets such as Basic Aggregation Data, Account Profile and Documents.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		dataset?: Array<AccountDataset>;
 
-		/** Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		id?: number | null;
+		/**
+		 * Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Indicates whether account is a manual or aggregated provider account.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		isManual?: boolean | null;
@@ -4846,8 +5350,11 @@ export namespace MyNS {
 		oauthMigrationStatus?: AccountOauthMigrationStatus | null;
 		preferences?: ProviderAccountPreferences;
 
-		/** Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerId?: number | null;
+		/**
+		 * Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerId?: string | null;
 
 		/** Unique id generated to indicate the request.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		requestId?: string | null;
@@ -4860,14 +5367,20 @@ export namespace MyNS {
 		/** The source through which the providerAccount is added in the system.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul><b>Applicable Values</b><br> */
 		aggregationSource: FormControl<AccountAggregationSource | null | undefined>,
 
-		/** Consent Id generated through POST Consent.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
-		consentId: FormControl<number | null | undefined>,
+		/**
+		 * Consent Id generated through POST Consent.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		consentId: FormControl<string | null | undefined>,
 
 		/** The date on when the provider account is created in the system.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		createdDate: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Indicates whether account is a manual or aggregated provider account.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		isManual: FormControl<boolean | null | undefined>,
@@ -4878,8 +5391,11 @@ export namespace MyNS {
 		/** Indicates the migration status of the provider account from screen-scraping provider to the Open Banking provider. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>GET providerAccounts/{providerAccountId}</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		oauthMigrationStatus: FormControl<AccountOauthMigrationStatus | null | undefined>,
 
-		/** Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerId: FormControl<string | null | undefined>,
 
 		/** Unique id generated to indicate the request.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		requestId: FormControl<string | null | undefined>,
@@ -4890,13 +5406,13 @@ export namespace MyNS {
 	export function CreateProviderAccountFormGroup() {
 		return new FormGroup<ProviderAccountFormProperties>({
 			aggregationSource: new FormControl<AccountAggregationSource | null | undefined>(undefined),
-			consentId: new FormControl<number | null | undefined>(undefined),
+			consentId: new FormControl<string | null | undefined>(undefined),
 			createdDate: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isManual: new FormControl<boolean | null | undefined>(undefined),
 			lastUpdated: new FormControl<string | null | undefined>(undefined),
 			oauthMigrationStatus: new FormControl<AccountOauthMigrationStatus | null | undefined>(undefined),
-			providerId: new FormControl<number | null | undefined>(undefined),
+			providerId: new FormControl<string | null | undefined>(undefined),
 			requestId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<DataExtractsProviderAccountStatus | null | undefined>(undefined),
 		});
@@ -4911,8 +5427,11 @@ export namespace MyNS {
 		/** Indicates if the updates to the provider account should be part of the data extracts event notification or the data extract data retrieval service.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts?include=preferences</li><li>GET providerAccounts/{providerAccountId}?include=preferences</li></ul> */
 		isDataExtractsEnabled?: boolean | null;
 
-		/** LinkedproviderAccountd is a providerAccountId linked by the user to the primary provider account. <br>LinkedProviderAccountId and the providerAccountId belongs to the same institution.<br><br><b>Endpoints</b>:<ul><li>POST Provider Account</li><li>PUT Provider Account</li><li>GET Provider Accounts</li></ul> */
-		linkedProviderAccountId?: number | null;
+		/**
+		 * LinkedproviderAccountd is a providerAccountId linked by the user to the primary provider account. <br>LinkedProviderAccountId and the providerAccountId belongs to the same institution.<br><br><b>Endpoints</b>:<ul><li>POST Provider Account</li><li>PUT Provider Account</li><li>GET Provider Accounts</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		linkedProviderAccountId?: string | null;
 	}
 	export interface ProviderAccountPreferencesFormProperties {
 
@@ -4922,14 +5441,17 @@ export namespace MyNS {
 		/** Indicates if the updates to the provider account should be part of the data extracts event notification or the data extract data retrieval service.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts?include=preferences</li><li>GET providerAccounts/{providerAccountId}?include=preferences</li></ul> */
 		isDataExtractsEnabled: FormControl<boolean | null | undefined>,
 
-		/** LinkedproviderAccountd is a providerAccountId linked by the user to the primary provider account. <br>LinkedProviderAccountId and the providerAccountId belongs to the same institution.<br><br><b>Endpoints</b>:<ul><li>POST Provider Account</li><li>PUT Provider Account</li><li>GET Provider Accounts</li></ul> */
-		linkedProviderAccountId: FormControl<number | null | undefined>,
+		/**
+		 * LinkedproviderAccountd is a providerAccountId linked by the user to the primary provider account. <br>LinkedProviderAccountId and the providerAccountId belongs to the same institution.<br><br><b>Endpoints</b>:<ul><li>POST Provider Account</li><li>PUT Provider Account</li><li>GET Provider Accounts</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		linkedProviderAccountId: FormControl<string | null | undefined>,
 	}
 	export function CreateProviderAccountPreferencesFormGroup() {
 		return new FormGroup<ProviderAccountPreferencesFormProperties>({
 			isAutoRefreshEnabled: new FormControl<boolean | null | undefined>(undefined),
 			isDataExtractsEnabled: new FormControl<boolean | null | undefined>(undefined),
-			linkedProviderAccountId: new FormControl<number | null | undefined>(undefined),
+			linkedProviderAccountId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -4942,8 +5464,9 @@ export namespace MyNS {
 		/**
 		 * Consent Id generated through POST Consent.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul>
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		consentId: number;
+		consentId: string;
 
 		/** The date on when the provider account is created in the system.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		createdDate?: string | null;
@@ -4951,8 +5474,11 @@ export namespace MyNS {
 		/** Logical grouping of dataset attributes into datasets such as Basic Aggregation Data, Account Profile and Documents.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		dataset?: Array<AccountDataset>;
 
-		/** Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		id?: number | null;
+		/**
+		 * Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Indicates whether account is a manual or aggregated provider account.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		isManual?: boolean | null;
@@ -4967,8 +5493,11 @@ export namespace MyNS {
 		oauthMigrationStatus?: AccountOauthMigrationStatus | null;
 		preferences?: ProviderAccountPreferences;
 
-		/** Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerId?: number | null;
+		/**
+		 * Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerId?: string | null;
 
 		/** Unique id generated to indicate the request.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		requestId?: string | null;
@@ -4984,14 +5513,18 @@ export namespace MyNS {
 		/**
 		 * Consent Id generated through POST Consent.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul>
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		consentId: FormControl<number | null | undefined>,
+		consentId: FormControl<string | null | undefined>,
 
 		/** The date on when the provider account is created in the system.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		createdDate: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Indicates whether account is a manual or aggregated provider account.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		isManual: FormControl<boolean | null | undefined>,
@@ -5002,8 +5535,11 @@ export namespace MyNS {
 		/** Indicates the migration status of the provider account from screen-scraping provider to the Open Banking provider. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>GET providerAccounts/{providerAccountId}</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		oauthMigrationStatus: FormControl<AccountOauthMigrationStatus | null | undefined>,
 
-		/** Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerId: FormControl<string | null | undefined>,
 
 		/** Unique id generated to indicate the request.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		requestId: FormControl<string | null | undefined>,
@@ -5014,13 +5550,13 @@ export namespace MyNS {
 	export function CreateProviderAccountDetailFormGroup() {
 		return new FormGroup<ProviderAccountDetailFormProperties>({
 			aggregationSource: new FormControl<AccountAggregationSource | null | undefined>(undefined),
-			consentId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			consentId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			createdDate: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isManual: new FormControl<boolean | null | undefined>(undefined),
 			lastUpdated: new FormControl<string | null | undefined>(undefined),
 			oauthMigrationStatus: new FormControl<AccountOauthMigrationStatus | null | undefined>(undefined),
-			providerId: new FormControl<number | null | undefined>(undefined),
+			providerId: new FormControl<string | null | undefined>(undefined),
 			requestId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<DataExtractsProviderAccountStatus | null | undefined>(undefined),
 		});
@@ -5051,20 +5587,26 @@ export namespace MyNS {
 
 	export interface ProviderAccountProfile {
 
-		/** Unique identifier for profile<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/profile</li></ul> */
-		id?: number | null;
+		/**
+		 * Unique identifier for profile<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/profile</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** PII related data like address, name, phoneNumber, identifier and email.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/profile</li></ul> */
 		profile?: Array<Profile>;
 	}
 	export interface ProviderAccountProfileFormProperties {
 
-		/** Unique identifier for profile<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/profile</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for profile<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts/profile</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateProviderAccountProfileFormGroup() {
 		return new FormGroup<ProviderAccountProfileFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -5072,8 +5614,11 @@ export namespace MyNS {
 	export interface ProviderAccountRequest {
 		aggregationSource?: AccountAggregationSource | null;
 
-		/** Consent Id generated for the request through POST Consent.<br><br><b>Endpoints</b>:<ul><li>POST Provider Account</li><li>PUT Provider Account</li></ul> */
-		consentId?: number | null;
+		/**
+		 * Consent Id generated for the request through POST Consent.<br><br><b>Endpoints</b>:<ul><li>POST Provider Account</li><li>PUT Provider Account</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		consentId?: string | null;
 		dataset?: Array<ProvidersDataset>;
 		datasetName?: Array<AccountDatasetName>;
 
@@ -5084,13 +5629,16 @@ export namespace MyNS {
 	export interface ProviderAccountRequestFormProperties {
 		aggregationSource: FormControl<AccountAggregationSource | null | undefined>,
 
-		/** Consent Id generated for the request through POST Consent.<br><br><b>Endpoints</b>:<ul><li>POST Provider Account</li><li>PUT Provider Account</li></ul> */
-		consentId: FormControl<number | null | undefined>,
+		/**
+		 * Consent Id generated for the request through POST Consent.<br><br><b>Endpoints</b>:<ul><li>POST Provider Account</li><li>PUT Provider Account</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		consentId: FormControl<string | null | undefined>,
 	}
 	export function CreateProviderAccountRequestFormGroup() {
 		return new FormGroup<ProviderAccountRequestFormProperties>({
 			aggregationSource: new FormControl<AccountAggregationSource | null | undefined>(undefined),
-			consentId: new FormControl<number | null | undefined>(undefined),
+			consentId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -5172,8 +5720,11 @@ export namespace MyNS {
 		/** Text to guide user through linking an account that belongs to the site<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
 		help?: string | null;
 
-		/** Unique identifier for the provider site(e.g., financial institution sites, biller sites, lender sites, etc.).<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
-		id?: number | null;
+		/**
+		 * Unique identifier for the provider site(e.g., financial institution sites, biller sites, lender sites, etc.).<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Indicates that the site has been added by the user at least once.<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
 		isAddedByUser?: string | null;
@@ -5228,8 +5779,11 @@ export namespace MyNS {
 		/** Text to guide user through linking an account that belongs to the site<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
 		help: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the provider site(e.g., financial institution sites, biller sites, lender sites, etc.).<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider site(e.g., financial institution sites, biller sites, lender sites, etc.).<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Indicates that the site has been added by the user at least once.<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
 		isAddedByUser: FormControl<string | null | undefined>,
@@ -5269,7 +5823,7 @@ export namespace MyNS {
 			countryISOCode: new FormControl<string | null | undefined>(undefined),
 			favicon: new FormControl<string | null | undefined>(undefined),
 			help: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isAddedByUser: new FormControl<string | null | undefined>(undefined),
 			isAutoRefreshEnabled: new FormControl<boolean | null | undefined>(undefined),
 			isConsentRequired: new FormControl<boolean | null | undefined>(undefined),
@@ -5350,8 +5904,11 @@ export namespace MyNS {
 		/** Text to guide user through linking an account that belongs to the site<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
 		help?: string | null;
 
-		/** Unique identifier for the provider site(e.g., financial institution sites, biller sites, lender sites, etc.).<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
-		id?: number | null;
+		/**
+		 * Unique identifier for the provider site(e.g., financial institution sites, biller sites, lender sites, etc.).<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Indicates that the site has been added by the user at least once.<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
 		isAddedByUser?: string | null;
@@ -5409,8 +5966,11 @@ export namespace MyNS {
 		/** Text to guide user through linking an account that belongs to the site<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
 		help: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the provider site(e.g., financial institution sites, biller sites, lender sites, etc.).<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider site(e.g., financial institution sites, biller sites, lender sites, etc.).<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Indicates that the site has been added by the user at least once.<br><br><b>Endpoints</b>:<ul><li>GET providers/{providerId}</li><li>GET providers</li></ul> */
 		isAddedByUser: FormControl<string | null | undefined>,
@@ -5454,7 +6014,7 @@ export namespace MyNS {
 			favicon: new FormControl<string | null | undefined>(undefined),
 			forgetPasswordUrl: new FormControl<string | null | undefined>(undefined),
 			help: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isAddedByUser: new FormControl<string | null | undefined>(undefined),
 			isAutoRefreshEnabled: new FormControl<boolean | null | undefined>(undefined),
 			isConsentRequired: new FormControl<boolean | null | undefined>(undefined),
@@ -5482,14 +6042,18 @@ export namespace MyNS {
 	}
 
 	export interface TotalCount {
-		count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count?: string | null;
 	}
 	export interface TotalCountFormProperties {
-		count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count: FormControl<string | null | undefined>,
 	}
 	export function CreateTotalCountFormGroup() {
 		return new FormGroup<TotalCountFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -5516,11 +6080,17 @@ export namespace MyNS {
 		/** Operation for which the clause is created.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
 		operation?: FieldOperationOperation | null;
 
-		/** Unique identifier generated for the rule clause.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		ruleClauseId?: number | null;
+		/**
+		 * Unique identifier generated for the rule clause.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ruleClauseId?: string | null;
 
-		/** Unique identifier generated for every rule the user creates.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		userDefinedRuleId?: number | null;
+		/**
+		 * Unique identifier generated for every rule the user creates.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userDefinedRuleId?: string | null;
 	}
 	export interface RuleClauseFormProperties {
 
@@ -5533,30 +6103,42 @@ export namespace MyNS {
 		/** Operation for which the clause is created.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
 		operation: FormControl<FieldOperationOperation | null | undefined>,
 
-		/** Unique identifier generated for the rule clause.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		ruleClauseId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier generated for the rule clause.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ruleClauseId: FormControl<string | null | undefined>,
 
-		/** Unique identifier generated for every rule the user creates.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		userDefinedRuleId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier generated for every rule the user creates.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userDefinedRuleId: FormControl<string | null | undefined>,
 	}
 	export function CreateRuleClauseFormGroup() {
 		return new FormGroup<RuleClauseFormProperties>({
 			field: new FormControl<FieldOperationField | null | undefined>(undefined),
 			fieldValue: new FormControl<string | null | undefined>(undefined),
 			operation: new FormControl<FieldOperationOperation | null | undefined>(undefined),
-			ruleClauseId: new FormControl<number | null | undefined>(undefined),
-			userDefinedRuleId: new FormControl<number | null | undefined>(undefined),
+			ruleClauseId: new FormControl<string | null | undefined>(undefined),
+			userDefinedRuleId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface Statement {
 
-		/** Account to which the statement belongs to.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
-		accountId?: number | null;
+		/**
+		 * Account to which the statement belongs to.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId?: string | null;
 		amountDue?: Money;
 
-		/** The APR applied to the balance on the credit card account, as available in the statement.<br><b>Note:</b> In case of variable APR, the APR available on the statement might differ from the APR available at the account-level.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
+		/**
+		 * The APR applied to the balance on the credit card account, as available in the statement.<br><b>Note:</b> In case of variable APR, the APR available on the statement might differ from the APR available at the account-level.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br>
+		 * Type: double
+		 */
 		apr?: number | null;
 
 		/** The end date of the statement period.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
@@ -5566,14 +6148,20 @@ export namespace MyNS {
 		billingPeriodStart?: string | null;
 		cashAdvance?: Money;
 
-		/** The APR applicable to cash withdrawals on the credit card account.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
+		/**
+		 * The APR applicable to cash withdrawals on the credit card account.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br>
+		 * Type: double
+		 */
 		cashApr?: number | null;
 
 		/** The date by when the minimum payment is due to be paid.<br><b>Note:</b> The due date that appears in the statement may differ from the due date at the account-level.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
 		dueDate?: string | null;
 
-		/** Unique identifier for the statement.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
-		id?: number | null;
+		/**
+		 * Unique identifier for the statement.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 		interestAmount?: Money;
 
 		/** The field is set to true if the statement is the latest generated statement.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
@@ -5595,10 +6183,16 @@ export namespace MyNS {
 	}
 	export interface StatementFormProperties {
 
-		/** Account to which the statement belongs to.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
-		accountId: FormControl<number | null | undefined>,
+		/**
+		 * Account to which the statement belongs to.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId: FormControl<string | null | undefined>,
 
-		/** The APR applied to the balance on the credit card account, as available in the statement.<br><b>Note:</b> In case of variable APR, the APR available on the statement might differ from the APR available at the account-level.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
+		/**
+		 * The APR applied to the balance on the credit card account, as available in the statement.<br><b>Note:</b> In case of variable APR, the APR available on the statement might differ from the APR available at the account-level.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br>
+		 * Type: double
+		 */
 		apr: FormControl<number | null | undefined>,
 
 		/** The end date of the statement period.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
@@ -5607,14 +6201,20 @@ export namespace MyNS {
 		/** The start date of the statement period.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
 		billingPeriodStart: FormControl<string | null | undefined>,
 
-		/** The APR applicable to cash withdrawals on the credit card account.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
+		/**
+		 * The APR applicable to cash withdrawals on the credit card account.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br>
+		 * Type: double
+		 */
 		cashApr: FormControl<number | null | undefined>,
 
 		/** The date by when the minimum payment is due to be paid.<br><b>Note:</b> The due date that appears in the statement may differ from the due date at the account-level.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
 		dueDate: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the statement.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the statement.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The field is set to true if the statement is the latest generated statement.<br><br><b>Applicable containers</b>: creditCard,  loan, insurance<br> */
 		isLatest: FormControl<boolean | null | undefined>,
@@ -5630,13 +6230,13 @@ export namespace MyNS {
 	}
 	export function CreateStatementFormGroup() {
 		return new FormGroup<StatementFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
 			apr: new FormControl<number | null | undefined>(undefined),
 			billingPeriodEnd: new FormControl<string | null | undefined>(undefined),
 			billingPeriodStart: new FormControl<string | null | undefined>(undefined),
 			cashApr: new FormControl<number | null | undefined>(undefined),
 			dueDate: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isLatest: new FormControl<boolean | null | undefined>(undefined),
 			lastPaymentDate: new FormControl<string | null | undefined>(undefined),
 			lastUpdated: new FormControl<string | null | undefined>(undefined),
@@ -5661,8 +6261,11 @@ export namespace MyNS {
 		/** The account's container.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
 		CONTAINER?: AccountCONTAINER | null;
 
-		/** The account from which the transaction was made. This is basically the primary key of the account resource. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		accountId?: number | null;
+		/**
+		 * The account from which the transaction was made. This is basically the primary key of the account resource. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId?: string | null;
 		amount?: Money;
 
 		/** Indicates if the transaction appears as a debit or a credit transaction in the account. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
@@ -5671,8 +6274,11 @@ export namespace MyNS {
 		/** The name of the category assigned to the transaction. This is the category field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
 		category?: string | null;
 
-		/** The id of the category assigned to the transaction. This is the id field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		categoryId?: number | null;
+		/**
+		 * The id of the category assigned to the transaction. This is the id field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		categoryId?: string | null;
 
 		/** Indicates the source of the category, i.e., categories derived by the system or assigned/provided by the consumer. This is the source field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
 		categorySource?: AccountAggregationSource | null;
@@ -5692,17 +6298,26 @@ export namespace MyNS {
 		date?: string | null;
 		description?: Description;
 
-		/** The id of the detail category that is assigned to the transaction. The supported values are provided by GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard<br> */
-		detailCategoryId?: number | null;
+		/**
+		 * The id of the detail category that is assigned to the transaction. The supported values are provided by GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		detailCategoryId?: string | null;
 
-		/** The high level category assigned to the transaction. The supported values are provided by the GET transactions/categories. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		highLevelCategoryId?: number | null;
+		/**
+		 * The high level category assigned to the transaction. The supported values are provided by the GET transactions/categories. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		highLevelCategoryId?: string | null;
 
 		/** For transactions involving securities, this captures the securities description.<br><br><b>Applicable containers</b>: investment<br> */
 		holdingDescription?: string | null;
 
-		/** An unique identifier for the transaction. The combination of the id and account container are unique in the system. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		id?: number | null;
+		/**
+		 * An unique identifier for the transaction. The combination of the id and account container are unique in the system. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 		interest?: Money;
 
 		/** Indicates if the transaction is aggregated from the FI site or the consumer has manually created the transaction using the application or an API. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
@@ -5716,15 +6331,21 @@ export namespace MyNS {
 		memo?: string | null;
 		merchant?: Merchant;
 
-		/** The parentCategoryId of the category assigned to the transaction.<br><b>Note</b>: This field will be provided in the response if the transaction is assigned to a user-created category. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		parentCategoryId?: number | null;
+		/**
+		 * The parentCategoryId of the category assigned to the transaction.<br><b>Note</b>: This field will be provided in the response if the transaction is assigned to a user-created category. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentCategoryId?: string | null;
 
 		/** The date on which the transaction is posted to the account.<br><br><b>Applicable containers</b>: bank,creditCard,insurance,loan<br> */
 		postDate?: string | null;
 		price?: Money;
 		principal?: Money;
 
-		/** The quantity associated with the transaction.<br><b>Note</b>: The quantity field applies only to trade-related transactions.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity associated with the transaction.<br><b>Note</b>: The quantity field applies only to trade-related transactions.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		quantity?: number | null;
 		runningBalance?: Money;
 
@@ -5763,8 +6384,11 @@ export namespace MyNS {
 		/** The account's container.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
 		CONTAINER: FormControl<AccountCONTAINER | null | undefined>,
 
-		/** The account from which the transaction was made. This is basically the primary key of the account resource. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		accountId: FormControl<number | null | undefined>,
+		/**
+		 * The account from which the transaction was made. This is basically the primary key of the account resource. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId: FormControl<string | null | undefined>,
 
 		/** Indicates if the transaction appears as a debit or a credit transaction in the account. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
 		baseType: FormControl<DataExtractsTransactionBaseType | null | undefined>,
@@ -5772,8 +6396,11 @@ export namespace MyNS {
 		/** The name of the category assigned to the transaction. This is the category field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
 		category: FormControl<string | null | undefined>,
 
-		/** The id of the category assigned to the transaction. This is the id field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		categoryId: FormControl<number | null | undefined>,
+		/**
+		 * The id of the category assigned to the transaction. This is the id field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		categoryId: FormControl<string | null | undefined>,
 
 		/** Indicates the source of the category, i.e., categories derived by the system or assigned/provided by the consumer. This is the source field of the transaction category resource. The supported values are provided by the GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
 		categorySource: FormControl<AccountAggregationSource | null | undefined>,
@@ -5791,17 +6418,26 @@ export namespace MyNS {
 		/** The value provided will be either postDate or transactionDate. postDate takes higher priority than transactionDate, except for the investment container as only transactionDate is available. The availability of postDate or transactionDate depends on the provider site.<br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
 		date: FormControl<string | null | undefined>,
 
-		/** The id of the detail category that is assigned to the transaction. The supported values are provided by GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard<br> */
-		detailCategoryId: FormControl<number | null | undefined>,
+		/**
+		 * The id of the detail category that is assigned to the transaction. The supported values are provided by GET transactions/categories.<br><br><b>Applicable containers</b>: bank,creditCard<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		detailCategoryId: FormControl<string | null | undefined>,
 
-		/** The high level category assigned to the transaction. The supported values are provided by the GET transactions/categories. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		highLevelCategoryId: FormControl<number | null | undefined>,
+		/**
+		 * The high level category assigned to the transaction. The supported values are provided by the GET transactions/categories. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		highLevelCategoryId: FormControl<string | null | undefined>,
 
 		/** For transactions involving securities, this captures the securities description.<br><br><b>Applicable containers</b>: investment<br> */
 		holdingDescription: FormControl<string | null | undefined>,
 
-		/** An unique identifier for the transaction. The combination of the id and account container are unique in the system. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * An unique identifier for the transaction. The combination of the id and account container are unique in the system. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Indicates if the transaction is aggregated from the FI site or the consumer has manually created the transaction using the application or an API. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
 		isManual: FormControl<boolean | null | undefined>,
@@ -5813,13 +6449,19 @@ export namespace MyNS {
 		/** Additional notes provided by the user for a particular  transaction through application or API services. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
 		memo: FormControl<string | null | undefined>,
 
-		/** The parentCategoryId of the category assigned to the transaction.<br><b>Note</b>: This field will be provided in the response if the transaction is assigned to a user-created category. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br> */
-		parentCategoryId: FormControl<number | null | undefined>,
+		/**
+		 * The parentCategoryId of the category assigned to the transaction.<br><b>Note</b>: This field will be provided in the response if the transaction is assigned to a user-created category. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parentCategoryId: FormControl<string | null | undefined>,
 
 		/** The date on which the transaction is posted to the account.<br><br><b>Applicable containers</b>: bank,creditCard,insurance,loan<br> */
 		postDate: FormControl<string | null | undefined>,
 
-		/** The quantity associated with the transaction.<br><b>Note</b>: The quantity field applies only to trade-related transactions.<br><br><b>Applicable containers</b>: investment<br> */
+		/**
+		 * The quantity associated with the transaction.<br><b>Note</b>: The quantity field applies only to trade-related transactions.<br><br><b>Applicable containers</b>: investment<br>
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 
 		/** SEDOL stands for Stock Exchange Daily Official List, a list of security identifiers used in the United Kingdom and Ireland for clearing purposes.<br><br><b>Applicable containers</b>: investment<br> */
@@ -5855,25 +6497,25 @@ export namespace MyNS {
 	export function CreateTransactionFormGroup() {
 		return new FormGroup<TransactionFormProperties>({
 			CONTAINER: new FormControl<AccountCONTAINER | null | undefined>(undefined),
-			accountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
 			baseType: new FormControl<DataExtractsTransactionBaseType | null | undefined>(undefined),
 			category: new FormControl<string | null | undefined>(undefined),
-			categoryId: new FormControl<number | null | undefined>(undefined),
+			categoryId: new FormControl<string | null | undefined>(undefined),
 			categorySource: new FormControl<AccountAggregationSource | null | undefined>(undefined),
 			categoryType: new FormControl<DataExtractsTransactionCategoryType | null | undefined>(undefined),
 			checkNumber: new FormControl<string | null | undefined>(undefined),
 			createdDate: new FormControl<string | null | undefined>(undefined),
 			cusipNumber: new FormControl<string | null | undefined>(undefined),
 			date: new FormControl<string | null | undefined>(undefined),
-			detailCategoryId: new FormControl<number | null | undefined>(undefined),
-			highLevelCategoryId: new FormControl<number | null | undefined>(undefined),
+			detailCategoryId: new FormControl<string | null | undefined>(undefined),
+			highLevelCategoryId: new FormControl<string | null | undefined>(undefined),
 			holdingDescription: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isManual: new FormControl<boolean | null | undefined>(undefined),
 			isin: new FormControl<string | null | undefined>(undefined),
 			lastUpdated: new FormControl<string | null | undefined>(undefined),
 			memo: new FormControl<string | null | undefined>(undefined),
-			parentCategoryId: new FormControl<number | null | undefined>(undefined),
+			parentCategoryId: new FormControl<string | null | undefined>(undefined),
 			postDate: new FormControl<string | null | undefined>(undefined),
 			quantity: new FormControl<number | null | undefined>(undefined),
 			sedol: new FormControl<string | null | undefined>(undefined),
@@ -5892,56 +6534,91 @@ export namespace MyNS {
 
 	export interface TransactionCategorizationRule {
 
-		/** The level of the category for which the rule is created.<br><br><b>Applicable containers</b>:  creditCard, insurance, loan<br> */
+		/**
+		 * The level of the category for which the rule is created.<br><br><b>Applicable containers</b>:  creditCard, insurance, loan<br>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		categoryLevelId?: number | null;
 
-		/** Unique identifier of the user.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		memId?: number | null;
+		/**
+		 * Unique identifier of the user.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		memId?: string | null;
 
 		/** Details of rules. <br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
 		ruleClauses?: Array<RuleClause>;
 
-		/** The order in which the rules get executed on transactions.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
+		/**
+		 * The order in which the rules get executed on transactions.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rulePriority?: number | null;
 
-		/** Category id that is assigned to the transaction when the transaction matches the rule clause. This is the id field of the transaction category resource.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		transactionCategorisationId?: number | null;
+		/**
+		 * Category id that is assigned to the transaction when the transaction matches the rule clause. This is the id field of the transaction category resource.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transactionCategorisationId?: string | null;
 
-		/** Unique identifier generated for every rule the user creates.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		userDefinedRuleId?: number | null;
+		/**
+		 * Unique identifier generated for every rule the user creates.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userDefinedRuleId?: string | null;
 	}
 	export interface TransactionCategorizationRuleFormProperties {
 
-		/** The level of the category for which the rule is created.<br><br><b>Applicable containers</b>:  creditCard, insurance, loan<br> */
+		/**
+		 * The level of the category for which the rule is created.<br><br><b>Applicable containers</b>:  creditCard, insurance, loan<br>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		categoryLevelId: FormControl<number | null | undefined>,
 
-		/** Unique identifier of the user.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		memId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier of the user.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		memId: FormControl<string | null | undefined>,
 
-		/** The order in which the rules get executed on transactions.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
+		/**
+		 * The order in which the rules get executed on transactions.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rulePriority: FormControl<number | null | undefined>,
 
-		/** Category id that is assigned to the transaction when the transaction matches the rule clause. This is the id field of the transaction category resource.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		transactionCategorisationId: FormControl<number | null | undefined>,
+		/**
+		 * Category id that is assigned to the transaction when the transaction matches the rule clause. This is the id field of the transaction category resource.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		transactionCategorisationId: FormControl<string | null | undefined>,
 
-		/** Unique identifier generated for every rule the user creates.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		userDefinedRuleId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier generated for every rule the user creates.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		userDefinedRuleId: FormControl<string | null | undefined>,
 	}
 	export function CreateTransactionCategorizationRuleFormGroup() {
 		return new FormGroup<TransactionCategorizationRuleFormProperties>({
 			categoryLevelId: new FormControl<number | null | undefined>(undefined),
-			memId: new FormControl<number | null | undefined>(undefined),
+			memId: new FormControl<string | null | undefined>(undefined),
 			rulePriority: new FormControl<number | null | undefined>(undefined),
-			transactionCategorisationId: new FormControl<number | null | undefined>(undefined),
-			userDefinedRuleId: new FormControl<number | null | undefined>(undefined),
+			transactionCategorisationId: new FormControl<string | null | undefined>(undefined),
+			userDefinedRuleId: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface TransactionCategorizationRuleInfo {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		categoryId: number;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority?: number | null;
 
 		/** Required */
@@ -5950,8 +6627,13 @@ export namespace MyNS {
 	}
 	export interface TransactionCategorizationRuleInfoFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		categoryId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		priority: FormControl<number | null | undefined>,
 		source: FormControl<AccountAggregationSource | null | undefined>,
 	}
@@ -6005,14 +6687,20 @@ export namespace MyNS {
 		/** Entity that provides detail category attributes<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
 		detailCategory?: Array<DetailCategory>;
 
-		/** The unique identifier of the high level category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		highLevelCategoryId?: number | null;
+		/**
+		 * The unique identifier of the high level category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		highLevelCategoryId?: string | null;
 
 		/** The name of the high level category. A group of similar transaction categories are clubbed together to form a high-level category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
 		highLevelCategoryName?: string | null;
 
-		/** Unique identifier of the category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		id?: number | null;
+		/**
+		 * Unique identifier of the category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Source used to identify whether the transaction category is user defined category or system created category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br><b>Applicable Values</b><br> */
 		source?: AccountAggregationSource | null;
@@ -6034,14 +6722,20 @@ export namespace MyNS {
 		/** A attribute which will always hold the first value(initial name) of Yodlee defined highLevelCategoryName attribute.<br><br><b>Applicable containers</b>: creditCard, investment, insurance, loan<br> */
 		defaultHighLevelCategoryName: FormControl<string | null | undefined>,
 
-		/** The unique identifier of the high level category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		highLevelCategoryId: FormControl<number | null | undefined>,
+		/**
+		 * The unique identifier of the high level category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		highLevelCategoryId: FormControl<string | null | undefined>,
 
 		/** The name of the high level category. A group of similar transaction categories are clubbed together to form a high-level category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
 		highLevelCategoryName: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier of the category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Source used to identify whether the transaction category is user defined category or system created category.<br><br><b>Applicable containers</b>:  creditCard, investment, insurance, loan<br><b>Applicable Values</b><br> */
 		source: FormControl<AccountAggregationSource | null | undefined>,
@@ -6055,9 +6749,9 @@ export namespace MyNS {
 			classification: new FormControl<TransactionCategoryClassification | null | undefined>(undefined),
 			defaultCategoryName: new FormControl<string | null | undefined>(undefined),
 			defaultHighLevelCategoryName: new FormControl<string | null | undefined>(undefined),
-			highLevelCategoryId: new FormControl<number | null | undefined>(undefined),
+			highLevelCategoryId: new FormControl<string | null | undefined>(undefined),
 			highLevelCategoryName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			source: new FormControl<AccountAggregationSource | null | undefined>(undefined),
 			type: new FormControl<DataExtractsTransactionCategoryType | null | undefined>(undefined),
 		});
@@ -6069,8 +6763,8 @@ export namespace MyNS {
 	export interface TransactionCategoryRequest {
 
 		/**
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		categoryName?: string | null;
 
@@ -6084,8 +6778,8 @@ export namespace MyNS {
 	export interface TransactionCategoryRequestFormProperties {
 
 		/**
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		categoryName: FormControl<string | null | undefined>,
 
@@ -6128,14 +6822,18 @@ export namespace MyNS {
 	}
 
 	export interface TransactionTotal {
-		count?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count?: string | null;
 	}
 	export interface TransactionTotalFormProperties {
-		count: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		count: FormControl<string | null | undefined>,
 	}
 	export function CreateTransactionTotalFormGroup() {
 		return new FormGroup<TransactionTotalFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -6166,8 +6864,11 @@ export namespace MyNS {
 
 	export interface UpdateTransaction {
 
-		/** Required */
-		categoryId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		categoryId: string;
 
 		/** Required */
 		categorySource: AccountAggregationSource;
@@ -6179,8 +6880,11 @@ export namespace MyNS {
 	}
 	export interface UpdateTransactionFormProperties {
 
-		/** Required */
-		categoryId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		categoryId: FormControl<string | null | undefined>,
 
 		/** Required */
 		categorySource: FormControl<AccountAggregationSource | null | undefined>,
@@ -6191,7 +6895,7 @@ export namespace MyNS {
 	}
 	export function CreateUpdateTransactionFormGroup() {
 		return new FormGroup<UpdateTransactionFormProperties>({
-			categoryId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			categoryId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			categorySource: new FormControl<AccountAggregationSource | null | undefined>(undefined, [Validators.required]),
 			container: new FormControl<AccountCONTAINER | null | undefined>(undefined, [Validators.required]),
 			memo: new FormControl<string | null | undefined>(undefined),
@@ -6213,14 +6917,14 @@ export namespace MyNS {
 	export interface UpdateAccountInfo {
 
 		/**
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		accountName?: string | null;
 
 		/**
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		accountNumber?: string | null;
 		accountStatus?: AccountAccountStatus | null;
@@ -6235,28 +6939,28 @@ export namespace MyNS {
 		isEbillEnrolled?: string | null;
 
 		/**
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		memo?: string | null;
 
 		/**
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		nickname?: string | null;
 	}
 	export interface UpdateAccountInfoFormProperties {
 
 		/**
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		accountName: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		accountNumber: FormControl<string | null | undefined>,
 		accountStatus: FormControl<AccountAccountStatus | null | undefined>,
@@ -6267,14 +6971,14 @@ export namespace MyNS {
 		isEbillEnrolled: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 250
 		 * Min length: 0
+		 * Max length: 250
 		 */
 		memo: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		nickname: FormControl<string | null | undefined>,
 	}
@@ -6315,7 +7019,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 1
 		 */
-		id: number;
+		id: string;
 
 		/** Required */
 		source: AccountAggregationSource;
@@ -6328,7 +7032,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 1
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** Required */
 		source: FormControl<AccountAggregationSource | null | undefined>,
@@ -6337,7 +7041,7 @@ export namespace MyNS {
 		return new FormGroup<UpdateCategoryRequestFormProperties>({
 			categoryName: new FormControl<string | null | undefined>(undefined),
 			highLevelCategoryName: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(1)]),
 			source: new FormControl<AccountAggregationSource | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -6347,8 +7051,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET cobrand/config/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl?: string | null;
 	}
@@ -6356,8 +7060,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET cobrand/config/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl: FormControl<string | null | undefined>,
 	}
@@ -6385,8 +7089,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET configs/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl?: string | null;
 	}
@@ -6394,8 +7098,8 @@ export namespace MyNS {
 
 		/**
 		 * URL to which the notification should be posted.<br><br><b>Endpoints</b>:<ul><li>GET configs/notifications/events</li></ul>
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		callbackUrl: FormControl<string | null | undefined>,
 	}
@@ -6476,8 +7180,8 @@ export namespace MyNS {
 
 		/**
 		 * The dateformat of the user.This attribute is just a place holder and has no impact on any other API services.
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		dateFormat?: string | null;
 
@@ -6486,8 +7190,8 @@ export namespace MyNS {
 
 		/**
 		 * The timezone of the user. This attribute is just a place holder and has no impact on any other API services.
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		timeZone?: string | null;
 	}
@@ -6498,8 +7202,8 @@ export namespace MyNS {
 
 		/**
 		 * The dateformat of the user.This attribute is just a place holder and has no impact on any other API services.
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		dateFormat: FormControl<string | null | undefined>,
 
@@ -6508,8 +7212,8 @@ export namespace MyNS {
 
 		/**
 		 * The timezone of the user. This attribute is just a place holder and has no impact on any other API services.
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		timeZone: FormControl<string | null | undefined>,
 	}
@@ -6541,11 +7245,17 @@ export namespace MyNS {
 	export interface UpdateVerification {
 		account?: VerificationAccount;
 
-		/** Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		accountId?: number | null;
+		/**
+		 * Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId?: string | null;
 
-		/** Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		providerAccountId?: number | null;
+		/**
+		 * Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId?: string | null;
 
 		/** The reason the account verification failed.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		reason?: UpdateVerificationReason | null;
@@ -6556,8 +7266,11 @@ export namespace MyNS {
 		/** The date of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		verificationDate?: string | null;
 
-		/** Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		verificationId?: number | null;
+		/**
+		 * Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		verificationId?: string | null;
 
 		/** The status of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul><br><b>Applicable Values</b> */
 		verificationStatus?: UpdateVerificationVerificationStatus | null;
@@ -6567,11 +7280,17 @@ export namespace MyNS {
 	}
 	export interface UpdateVerificationFormProperties {
 
-		/** Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		accountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		providerAccountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId: FormControl<string | null | undefined>,
 
 		/** The reason the account verification failed.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		reason: FormControl<UpdateVerificationReason | null | undefined>,
@@ -6579,8 +7298,11 @@ export namespace MyNS {
 		/** The date of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		verificationDate: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		verificationId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		verificationId: FormControl<string | null | undefined>,
 
 		/** The status of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul><br><b>Applicable Values</b> */
 		verificationStatus: FormControl<UpdateVerificationVerificationStatus | null | undefined>,
@@ -6590,11 +7312,11 @@ export namespace MyNS {
 	}
 	export function CreateUpdateVerificationFormGroup() {
 		return new FormGroup<UpdateVerificationFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
-			providerAccountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
+			providerAccountId: new FormControl<string | null | undefined>(undefined),
 			reason: new FormControl<UpdateVerificationReason | null | undefined>(undefined),
 			verificationDate: new FormControl<string | null | undefined>(undefined),
-			verificationId: new FormControl<number | null | undefined>(undefined),
+			verificationId: new FormControl<string | null | undefined>(undefined),
 			verificationStatus: new FormControl<UpdateVerificationVerificationStatus | null | undefined>(undefined),
 			verificationType: new FormControl<UpdateVerificationVerificationType | null | undefined>(undefined),
 		});
@@ -6606,8 +7328,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 3
+		 * Max length: 17
 		 */
 		accountNumber: string;
 
@@ -6622,8 +7344,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 17
 		 * Min length: 3
+		 * Max length: 17
 		 */
 		accountNumber: FormControl<string | null | undefined>,
 
@@ -6713,8 +7435,11 @@ export namespace MyNS {
 		/** Logical grouping of dataset attributes into datasets such as Basic Aggregation Data, Account Profile and Documents.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		dataset?: Array<AccountDataset>;
 
-		/** Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		id?: number | null;
+		/**
+		 * Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** Indicates whether account is a manual or aggregated provider account.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		isManual?: boolean | null;
@@ -6728,8 +7453,11 @@ export namespace MyNS {
 		/** Indicates the migration status of the provider account from screen-scraping provider to the Open Banking provider. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>GET providerAccounts/{providerAccountId}</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		oauthMigrationStatus?: AccountOauthMigrationStatus | null;
 
-		/** Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerId?: number | null;
+		/**
+		 * Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerId?: string | null;
 
 		/** Unique id generated to indicate the request.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		requestId?: string | null;
@@ -6745,8 +7473,11 @@ export namespace MyNS {
 		/** The date on when the provider account is created in the system.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		createdDate: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider account resource. This is created during account addition.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Indicates whether account is a manual or aggregated provider account.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		isManual: FormControl<boolean | null | undefined>,
@@ -6757,8 +7488,11 @@ export namespace MyNS {
 		/** Indicates the migration status of the provider account from screen-scraping provider to the Open Banking provider. <br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>GET providerAccounts/{providerAccountId}</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
 		oauthMigrationStatus: FormControl<AccountOauthMigrationStatus | null | undefined>,
 
-		/** Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul> */
-		providerId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider resource. This denotes the provider for which the provider account id is generated by the user.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li><li>GET dataExtracts/userData</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerId: FormControl<string | null | undefined>,
 
 		/** Unique id generated to indicate the request.<br><br><b>Endpoints</b>:<ul><li>GET providerAccounts</li><li>POST providerAccounts</li><li>PUT providerAccounts/{providerAccountId}</li><li>GET providerAccounts/{providerAccountId}</li></ul> */
 		requestId: FormControl<string | null | undefined>,
@@ -6770,11 +7504,11 @@ export namespace MyNS {
 		return new FormGroup<UpdatedProviderAccountFormProperties>({
 			aggregationSource: new FormControl<AccountAggregationSource | null | undefined>(undefined),
 			createdDate: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			isManual: new FormControl<boolean | null | undefined>(undefined),
 			lastUpdated: new FormControl<string | null | undefined>(undefined),
 			oauthMigrationStatus: new FormControl<AccountOauthMigrationStatus | null | undefined>(undefined),
-			providerId: new FormControl<number | null | undefined>(undefined),
+			providerId: new FormControl<string | null | undefined>(undefined),
 			requestId: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<DataExtractsProviderAccountStatus | null | undefined>(undefined),
 		});
@@ -6794,8 +7528,11 @@ export namespace MyNS {
 
 	export interface User {
 
-		/** The unique identifier of a consumer/user in Yodlee system for whom the API services would be accessed for.<br><br><b>Endpoints</b>:<ul><li>POST user/samlLogin</li><li>POST user/register</li><li>GET user</li></ul> */
-		id?: number | null;
+		/**
+		 * The unique identifier of a consumer/user in Yodlee system for whom the API services would be accessed for.<br><br><b>Endpoints</b>:<ul><li>POST user/samlLogin</li><li>POST user/register</li><li>GET user</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The login name of the user used for authentication.<br><br><b>Endpoints</b>:<ul><li>POST user/register</li><li>GET user</li></ul> */
 		loginName?: string | null;
@@ -6806,8 +7543,11 @@ export namespace MyNS {
 	}
 	export interface UserFormProperties {
 
-		/** The unique identifier of a consumer/user in Yodlee system for whom the API services would be accessed for.<br><br><b>Endpoints</b>:<ul><li>POST user/samlLogin</li><li>POST user/register</li><li>GET user</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The unique identifier of a consumer/user in Yodlee system for whom the API services would be accessed for.<br><br><b>Endpoints</b>:<ul><li>POST user/samlLogin</li><li>POST user/register</li><li>GET user</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The login name of the user used for authentication.<br><br><b>Endpoints</b>:<ul><li>POST user/register</li><li>GET user</li></ul> */
 		loginName: FormControl<string | null | undefined>,
@@ -6815,7 +7555,7 @@ export namespace MyNS {
 	}
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			loginName: new FormControl<string | null | undefined>(undefined),
 			roleType: new FormControl<UserRoleType | null | undefined>(undefined),
 		});
@@ -6829,8 +7569,8 @@ export namespace MyNS {
 
 		/**
 		 * The dateformat of the user.This attribute is just a place holder and has no impact on any other API services.
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		dateFormat?: string | null;
 
@@ -6839,8 +7579,8 @@ export namespace MyNS {
 
 		/**
 		 * The timezone of the user. This attribute is just a place holder and has no impact on any other API services.
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		timeZone?: string | null;
 	}
@@ -6851,8 +7591,8 @@ export namespace MyNS {
 
 		/**
 		 * The dateformat of the user.This attribute is just a place holder and has no impact on any other API services.
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		dateFormat: FormControl<string | null | undefined>,
 
@@ -6861,8 +7601,8 @@ export namespace MyNS {
 
 		/**
 		 * The timezone of the user. This attribute is just a place holder and has no impact on any other API services.
-		 * Max length: 2147483647
 		 * Min length: 1
+		 * Max length: 2147483647
 		 */
 		timeZone: FormControl<string | null | undefined>,
 	}
@@ -6923,8 +7663,11 @@ export namespace MyNS {
 		/** The email address of the user.<br><br><b>Endpoints</b>:<ul><li>GET user</li></ul> */
 		email?: string | null;
 
-		/** The unique identifier of a consumer/user in Yodlee system for whom the API services would be accessed for.<br><br><b>Endpoints</b>:<ul><li>POST user/samlLogin</li><li>POST user/register</li><li>GET user</li></ul> */
-		id?: number | null;
+		/**
+		 * The unique identifier of a consumer/user in Yodlee system for whom the API services would be accessed for.<br><br><b>Endpoints</b>:<ul><li>POST user/samlLogin</li><li>POST user/register</li><li>GET user</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 
 		/** The login name of the user used for authentication.<br><br><b>Endpoints</b>:<ul><li>POST user/register</li><li>GET user</li></ul> */
 		loginName?: string | null;
@@ -6938,8 +7681,11 @@ export namespace MyNS {
 		/** The email address of the user.<br><br><b>Endpoints</b>:<ul><li>GET user</li></ul> */
 		email: FormControl<string | null | undefined>,
 
-		/** The unique identifier of a consumer/user in Yodlee system for whom the API services would be accessed for.<br><br><b>Endpoints</b>:<ul><li>POST user/samlLogin</li><li>POST user/register</li><li>GET user</li></ul> */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * The unique identifier of a consumer/user in Yodlee system for whom the API services would be accessed for.<br><br><b>Endpoints</b>:<ul><li>POST user/samlLogin</li><li>POST user/register</li><li>GET user</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** The login name of the user used for authentication.<br><br><b>Endpoints</b>:<ul><li>POST user/register</li><li>GET user</li></ul> */
 		loginName: FormControl<string | null | undefined>,
@@ -6949,7 +7695,7 @@ export namespace MyNS {
 	export function CreateUserDetailFormGroup() {
 		return new FormGroup<UserDetailFormProperties>({
 			email: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			loginName: new FormControl<string | null | undefined>(undefined),
 			roleType: new FormControl<UserRoleType | null | undefined>(undefined),
 			segmentName: new FormControl<string | null | undefined>(undefined),
@@ -6974,8 +7720,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 150
 		 * Min length: 3
+		 * Max length: 150
 		 */
 		loginName: string;
 		name?: Name;
@@ -6987,8 +7733,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 150
 		 * Min length: 3
+		 * Max length: 150
 		 */
 		loginName: FormControl<string | null | undefined>,
 		segmentName: FormControl<string | null | undefined>,
@@ -7029,11 +7775,17 @@ export namespace MyNS {
 	export interface Verification {
 		account?: VerificationAccount;
 
-		/** Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		accountId?: number | null;
+		/**
+		 * Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId?: string | null;
 
-		/** Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		providerAccountId?: number | null;
+		/**
+		 * Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId?: string | null;
 
 		/** The reason the account verification failed.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		reason?: UpdateVerificationReason | null;
@@ -7041,8 +7793,11 @@ export namespace MyNS {
 		/** The date of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		verificationDate?: string | null;
 
-		/** Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		verificationId?: number | null;
+		/**
+		 * Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		verificationId?: string | null;
 
 		/** The status of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul><br><b>Applicable Values</b> */
 		verificationStatus?: UpdateVerificationVerificationStatus | null;
@@ -7052,11 +7807,17 @@ export namespace MyNS {
 	}
 	export interface VerificationFormProperties {
 
-		/** Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		accountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		providerAccountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId: FormControl<string | null | undefined>,
 
 		/** The reason the account verification failed.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		reason: FormControl<UpdateVerificationReason | null | undefined>,
@@ -7064,8 +7825,11 @@ export namespace MyNS {
 		/** The date of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		verificationDate: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		verificationId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		verificationId: FormControl<string | null | undefined>,
 
 		/** The status of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul><br><b>Applicable Values</b> */
 		verificationStatus: FormControl<UpdateVerificationVerificationStatus | null | undefined>,
@@ -7075,11 +7839,11 @@ export namespace MyNS {
 	}
 	export function CreateVerificationFormGroup() {
 		return new FormGroup<VerificationFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
-			providerAccountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
+			providerAccountId: new FormControl<string | null | undefined>(undefined),
 			reason: new FormControl<UpdateVerificationReason | null | undefined>(undefined),
 			verificationDate: new FormControl<string | null | undefined>(undefined),
-			verificationId: new FormControl<number | null | undefined>(undefined),
+			verificationId: new FormControl<string | null | undefined>(undefined),
 			verificationStatus: new FormControl<UpdateVerificationVerificationStatus | null | undefined>(undefined),
 			verificationType: new FormControl<UpdateVerificationVerificationType | null | undefined>(undefined),
 		});
@@ -7113,21 +7877,32 @@ export namespace MyNS {
 	export interface VerificationStatus {
 		account?: VerificationAccount;
 
-		/** Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		accountId?: number | null;
+		/**
+		 * Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId?: string | null;
 
-		/** Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		providerAccountId?: number | null;
+		/**
+		 * Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId?: string | null;
 
 		/** The reason the account verification failed.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		reason?: UpdateVerificationReason | null;
-		remainingAttempts?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		remainingAttempts?: string | null;
 
 		/** The date of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		verificationDate?: string | null;
 
-		/** Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		verificationId?: number | null;
+		/**
+		 * Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		verificationId?: string | null;
 
 		/** The status of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul><br><b>Applicable Values</b> */
 		verificationStatus?: UpdateVerificationVerificationStatus | null;
@@ -7137,21 +7912,32 @@ export namespace MyNS {
 	}
 	export interface VerificationStatusFormProperties {
 
-		/** Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		accountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		accountId: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		providerAccountId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the provider account.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId: FormControl<string | null | undefined>,
 
 		/** The reason the account verification failed.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		reason: FormControl<UpdateVerificationReason | null | undefined>,
-		remainingAttempts: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		remainingAttempts: FormControl<string | null | undefined>,
 
 		/** The date of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
 		verificationDate: FormControl<string | null | undefined>,
 
-		/** Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul> */
-		verificationId: FormControl<number | null | undefined>,
+		/**
+		 * Unique identifier for the verification request.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		verificationId: FormControl<string | null | undefined>,
 
 		/** The status of the account verification.<br><br><b>Endpoints</b>:<ul><li>POST verification</li><li>GET verification</li><li>PUT verification</li></ul><br><b>Applicable Values</b> */
 		verificationStatus: FormControl<UpdateVerificationVerificationStatus | null | undefined>,
@@ -7161,12 +7947,12 @@ export namespace MyNS {
 	}
 	export function CreateVerificationStatusFormGroup() {
 		return new FormGroup<VerificationStatusFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
-			providerAccountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
+			providerAccountId: new FormControl<string | null | undefined>(undefined),
 			reason: new FormControl<UpdateVerificationReason | null | undefined>(undefined),
-			remainingAttempts: new FormControl<number | null | undefined>(undefined),
+			remainingAttempts: new FormControl<string | null | undefined>(undefined),
 			verificationDate: new FormControl<string | null | undefined>(undefined),
-			verificationId: new FormControl<number | null | undefined>(undefined),
+			verificationId: new FormControl<string | null | undefined>(undefined),
 			verificationStatus: new FormControl<UpdateVerificationVerificationStatus | null | undefined>(undefined),
 			verificationType: new FormControl<UpdateVerificationVerificationType | null | undefined>(undefined),
 		});
@@ -7196,10 +7982,15 @@ export namespace MyNS {
 		bankTransferCode?: Array<BankTransferCode>;
 		fullAccountNumber?: string | null;
 		holder?: Array<AccountHolder>;
-		id?: number | null;
 
-		/** The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br> */
-		providerAccountId?: number | null;
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/**
+		 * The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId?: string | null;
 
 		/** <b>Applicable containers</b>: reward, bank, creditCard, investment, loan, insurance, realEstate,  otherLiabilities<br> */
 		providerName?: string | null;
@@ -7212,10 +8003,15 @@ export namespace MyNS {
 		/** The type of account that is aggregated, i.e., savings, checking, credit card, charge, HELOC, etc. The account type is derived based on the attributes of the account. <br><b>Valid Values:</b><br><b>Aggregated Account Type</b><br><b>bank</b><ul><li>CHECKING</li><li>SAVINGS</li><li>CD</li><li>PPF</li><li>RECURRING_DEPOSIT</li><li>FSA</li><li>MONEY_MARKET</li><li>IRA</li><li>PREPAID</li></ul><b>creditCard</b><ul><li>OTHER</li><li>CREDIT</li><li>STORE</li><li>CHARGE</li><li>OTHER</li></ul><b>investment (SN 1.0)</b><ul><li>BROKERAGE_MARGIN</li><li>HSA</li><li>IRA</li><li>BROKERAGE_CASH</li><li>401K</li><li>403B</li><li>TRUST</li><li>ANNUITY</li><li>SIMPLE</li><li>CUSTODIAL</li><li>BROKERAGE_CASH_OPTION</li><li>BROKERAGE_MARGIN_OPTION</li><li>INDIVIDUAL</li><li>CORPORATE</li><li>JTTIC</li><li>JTWROS</li><li>COMMUNITY_PROPERTY</li><li>JOINT_BY_ENTIRETY</li><li>CONSERVATORSHIP</li><li>ROTH</li><li>ROTH_CONVERSION</li><li>ROLLOVER</li><li>EDUCATIONAL</li><li>529_PLAN</li><li>457_DEFERRED_COMPENSATION</li><li>401A</li><li>PSP</li><li>MPP</li><li>STOCK_BASKET</li><li>LIVING_TRUST</li><li>REVOCABLE_TRUST</li><li>IRREVOCABLE_TRUST</li><li>CHARITABLE_REMAINDER</li><li>CHARITABLE_LEAD</li><li>CHARITABLE_GIFT_ACCOUNT</li><li>SEP</li><li>UTMA</li><li>UGMA</li><li>ESOPP</li><li>ADMINISTRATOR</li><li>EXECUTOR</li><li>PARTNERSHIP</li><li>SOLE_PROPRIETORSHIP</li><li>CHURCH</li><li>INVESTMENT_CLUB</li><li>RESTRICTED_STOCK_AWARD</li><li>CMA</li><li>EMPLOYEE_STOCK_PURCHASE_PLAN</li><li>PERFORMANCE_PLAN</li><li>BROKERAGE_LINK_ACCOUNT</li><li>MONEY_MARKET</li><li>SUPER_ANNUATION</li><li>REGISTERED_RETIREMENT_SAVINGS_PLAN</li><li>SPOUSAL_RETIREMENT_SAVINGS_PLAN</li><li>DEFERRED_PROFIT_SHARING_PLAN</li><li>NON_REGISTERED_SAVINGS_PLAN</li><li>REGISTERED_EDUCATION_SAVINGS_PLAN</li><li>GROUP_RETIREMENT_SAVINGS_PLAN</li><li>LOCKED_IN_RETIREMENT_SAVINGS_PLAN</li><li>RESTRICTED_LOCKED_IN_SAVINGS_PLAN</li><li>LOCKED_IN_RETIREMENT_ACCOUNT</li><li>REGISTERED_PENSION_PLAN</li><li>TAX_FREE_SAVINGS_ACCOUNT</li><li>LIFE_INCOME_FUND</li><li>REGISTERED_RETIREMENT_INCOME_FUND</li><li>SPOUSAL_RETIREMENT_INCOME_FUND</li><li>LOCKED_IN_REGISTERED_INVESTMENT_FUND</li><li>PRESCRIBED_REGISTERED_RETIREMENT_INCOME_FUND</li><li>GUARANTEED_INVESTMENT_CERTIFICATES</li><li>REGISTERED_DISABILITY_SAVINGS_PLAN</li><li>OTHER</li></ul><b>investment (SN 2.0)</b><ul><li>BROKERAGE_CASH</li><li>BROKERAGE_MARGIN</li><li>INDIVIDUAL_RETIREMENT_ACCOUNT_IRA</li><li>EMPLOYEE_RETIREMENT_ACCOUNT_401K</li><li>EMPLOYEE_RETIREMENT_SAVINGS_PLAN_403B</li><li>TRUST</li><li>ANNUITY</li><li>SIMPLE_IRA</li><li>CUSTODIAL_ACCOUNT</li><li>BROKERAGE_CASH_OPTION</li><li>BROKERAGE_MARGIN_OPTION</li><li>INDIVIDUAL</li><li>CORPORATE_INVESTMENT_ACCOUNT</li><li>JOINT_TENANTS_TENANCY_IN_COMMON_JTIC</li><li>JOINT_TENANTS_WITH_RIGHTS_OF_SURVIVORSHIP_JTWROS</li><li>JOINT_TENANTS_COMMUNITY_PROPERTY</li><li>JOINT_TENANTS_TENANTS_BY_ENTIRETY</li><li>CONSERVATOR</li><li>ROTH_IRA</li><li>ROTH_CONVERSION</li><li>ROLLOVER_IRA</li><li>EDUCATIONAL</li><li>EDUCATIONAL_SAVINGS_PLAN_529</li><li>DEFERRED_COMPENSATION_PLAN_457</li><li>MONEY_PURCHASE_RETIREMENT_PLAN_401A</li><li>PROFIT_SHARING_PLAN</li><li>MONEY_PURCHASE_PLAN</li><li>STOCK_BASKET_ACCOUNT</li><li>LIVING_TRUST</li><li>REVOCABLE_TRUST</li><li>IRREVOCABLE_TRUST</li><li>CHARITABLE_REMAINDER_TRUST</li><li>CHARITABLE_LEAD_TRUST</li><li>CHARITABLE_GIFT_ACCOUNT</li><li>SEP_IRA</li><li>UNIFORM_TRANSFER_TO_MINORS_ACT_UTMA</li><li>UNIFORM_GIFT_TO_MINORS_ACT_UGMA</li><li>EMPLOYEE_STOCK_OWNERSHIP_PLAN_ESOP</li><li>ADMINISTRATOR</li><li>EXECUTOR</li><li>PARTNERSHIP</li><li>PROPRIETORSHIP</li><li>CHURCH_ACCOUNT</li><li>INVESTMENT_CLUB</li><li>RESTRICTED_STOCK_AWARD</li><li>CASH_MANAGEMENT_ACCOUNT</li><li>EMPLOYEE_STOCK_PURCHASE_PLAN_ESPP</li><li>PERFORMANCE_PLAN</li><li>BROKERAGE_LINK_ACCOUNT</li><li>MONEY_MARKET_ACCOUNT</li><li>SUPERANNUATION</li><li>REGISTERED_RETIREMENT_SAVINGS_PLAN_RRSP</li><li>SPOUSAL_RETIREMENT_SAVINGS_PLAN_SRSP</li><li>DEFERRED_PROFIT_SHARING_PLAN_DPSP</li><li>NON_REGISTERED_SAVINGS_PLAN_NRSP</li><li>REGISTERED_EDUCATION_SAVINGS_PLAN_RESP</li><li>GROUP_RETIREMENT_SAVINGS_PLAN_GRSP</li><li>LOCKED_IN_RETIREMENT_SAVINGS_PLAN_LRSP</li><li>RESTRICTED_LOCKED_IN_SAVINGS_PLAN_RLSP</li><li>LOCKED_IN_RETIREMENT_ACCOUNT_LIRA</li><li>REGISTERED_PENSION_PLAN_RPP</li><li>TAX_FREE_SAVINGS_ACCOUNT_TFSA</li><li>LIFE_INCOME_FUND_LIF</li><li>REGISTERED_RETIREMENT_INCOME_FUND_RIF</li><li>SPOUSAL_RETIREMENT_INCOME_FUND_SRIF</li><li>LOCKED_IN_REGISTERED_INVESTMENT_FUND_LRIF</li><li>PRESCRIBED_REGISTERED_RETIREMENT_INCOME_FUND_PRIF</li><li>GUARANTEED_INVESTMENT_CERTIFICATES_GIC</li><li>REGISTERED_DISABILITY_SAVINGS_PLAN_RDSP</li><li>DEFINED_CONTRIBUTION_PLAN</li><li>DEFINED_BENEFIT_PLAN</li><li>EMPLOYEE_STOCK_OPTION_PLAN</li><li>NONQUALIFIED_DEFERRED_COMPENSATION_PLAN_409A</li><li>KEOGH_PLAN</li><li>EMPLOYEE_RETIREMENT_ACCOUNT_ROTH_401K</li><li>DEFERRED_CONTINGENT_CAPITAL_PLAN_DCCP</li><li>EMPLOYEE_BENEFIT_PLAN</li><li>EMPLOYEE_SAVINGS_PLAN</li><li>HEALTH_SAVINGS_ACCOUNT_HSA</li><li>COVERDELL_EDUCATION_SAVINGS_ACCOUNT_ESA</li><li>TESTAMENTARY_TRUST</li><li>ESTATE</li><li>GRANTOR_RETAINED_ANNUITY_TRUST_GRAT</li><li>ADVISORY_ACCOUNT</li><li>NON_PROFIT_ORGANIZATION_501C</li><li>HEALTH_REIMBURSEMENT_ARRANGEMENT_HRA</li><li>INDIVIDUAL_SAVINGS_ACCOUNT_ISA</li><li>CASH_ISA</li><li>STOCKS_AND_SHARES_ISA</li><li>INNOVATIVE_FINANCE_ISA</li><li>JUNIOR_ISA</li><li>EMPLOYEES_PROVIDENT_FUND_ORGANIZATION_EPFO</li><li>PUBLIC_PROVIDENT_FUND_PPF</li><li>EMPLOYEES_PENSION_SCHEME_EPS</li><li>NATIONAL_PENSION_SYSTEM_NPS</li><li>INDEXED_ANNUITY</li><li>ANNUITIZED_ANNUITY</li><li>VARIABLE_ANNUITY</li><li>ROTH_403B</li><li>SPOUSAL_IRA</li><li>SPOUSAL_ROTH_IRA</li><li>SARSEP_IRA</li><li>SUBSTANTIALLY_EQUAL_PERIODIC_PAYMENTS_SEPP</li><li>OFFSHORE_TRUST</li><li>IRREVOCABLE_LIFE_INSURANCE_TRUST</li><li>INTERNATIONAL_TRUST</li><li>LIFE_INTEREST_TRUST</li><li>EMPLOYEE_BENEFIT_TRUST</li><li>PRECIOUS_METAL_ACCOUNT</li><li>INVESTMENT_LOAN_ACCOUNT</li><li>GRANTOR_RETAINED_INCOME_TRUST</li><li>PENSION_PLAN</li><li>OTHER</li></ul><b>loan</b><ul><li>MORTGAGE</li><li>INSTALLMENT_LOAN</li><li>PERSONAL_LOAN</li><li>HOME_EQUITY_LINE_OF_CREDIT</li><li>LINE_OF_CREDIT</li><li>AUTO_LOAN</li><li>STUDENT_LOAN</li><li>HOME_LOAN</li></ul><b>insurance</b><ul><li>AUTO_INSURANCE</li><li>HEALTH_INSURANCE</li><li>HOME_INSURANCE</li><li>LIFE_INSURANCE</li><li>ANNUITY</li><li>TRAVEL_INSURANCE</li><li>INSURANCE</li></ul><b>realEstate</b><ul> <li>REAL_ESTATE</li></ul><b>reward</b><ul><li>REWARD_POINTS</li></ul><b>Manual Account Type</b><br><b>bank</b><ul><li>CHECKING</li><li>SAVINGS</li><li>CD</li><li>PREPAID</li></ul><b>credit</b><ul>  <li>CREDIT</li></ul><b>loan</b><ul>  <li>PERSONAL_LOAN</li><li>HOME_LOAN</li></ul><b>insurance</b><ul><li>INSURANCE</li><li>ANNUITY</li></ul><b>investment</b><ul><li>BROKERAGE_CASH</li></ul><br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br></ul> */
 		accountType: FormControl<string | null | undefined>,
 		fullAccountNumber: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
 
-		/** The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br> */
-		providerAccountId: FormControl<number | null | undefined>,
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/**
+		 * The primary key of the provider account resource.<br><br><b>Aggregated / Manual</b>: Both <br><b>Applicable containers</b>: All containers<br>
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		providerAccountId: FormControl<string | null | undefined>,
 
 		/** <b>Applicable containers</b>: reward, bank, creditCard, investment, loan, insurance, realEstate,  otherLiabilities<br> */
 		providerName: FormControl<string | null | undefined>,
@@ -7225,8 +8021,8 @@ export namespace MyNS {
 			accountNumber: new FormControl<string | null | undefined>(undefined),
 			accountType: new FormControl<string | null | undefined>(undefined),
 			fullAccountNumber: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
-			providerAccountId: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			providerAccountId: new FormControl<string | null | undefined>(undefined),
 			providerName: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -7246,7 +8042,10 @@ export namespace MyNS {
 
 	export interface VerifyTransactionCriteria {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: number;
 
 		/** Indicates if the transaction appears as a debit or a credit transaction in the account. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
@@ -7263,7 +8062,10 @@ export namespace MyNS {
 	}
 	export interface VerifyTransactionCriteriaFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Indicates if the transaction appears as a debit or a credit transaction in the account. <br><br><b>Applicable containers</b>: bank,creditCard,investment,insurance,loan<br><b>Applicable Values</b><br> */
@@ -7292,19 +8094,23 @@ export namespace MyNS {
 	export enum VerifyTransactionCriteriaMatched { COMPLETE = 'COMPLETE', NONE = 'NONE' }
 
 	export interface VerifyAccountRequest {
-		accountId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		accountId?: string | null;
 		container?: AccountCONTAINER | null;
 
 		/** Required */
 		transactionCriteria: Array<VerifyTransactionCriteria>;
 	}
 	export interface VerifyAccountRequestFormProperties {
-		accountId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		accountId: FormControl<string | null | undefined>,
 		container: FormControl<AccountCONTAINER | null | undefined>,
 	}
 	export function CreateVerifyAccountRequestFormGroup() {
 		return new FormGroup<VerifyAccountRequestFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined),
+			accountId: new FormControl<string | null | undefined>(undefined),
 			container: new FormControl<AccountCONTAINER | null | undefined>(undefined),
 		});
 
@@ -7392,8 +8198,10 @@ export namespace MyNS {
 		 * @param {boolean} includeCF Consider carry forward logic for missing balances
 		 * @param {string} interval D-daily, W-weekly or M-monthly
 		 * @param {number} skip skip (Min 0)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} toDate toDate for balance retrieval (YYYY-MM-DD)
 		 * @param {number} top top (Max 500)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetHistoricalBalances(accountId: string | null | undefined, fromDate: string | null | undefined, includeCF: boolean | null | undefined, interval: string | null | undefined, skip: number | null | undefined, toDate: string | null | undefined, top: number | null | undefined): Observable<HttpResponse<string>> {
@@ -7404,10 +8212,11 @@ export namespace MyNS {
 		 * Delete Account
 		 * The delete account service allows an account to be deleted.<br>This service does not return a response. The HTTP response code is 204 (Success with no content).<br>
 		 * Delete accounts/{accountId}
-		 * @param {number} accountId accountId
+		 * @param {string} accountId accountId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		DeleteAccount(accountId: number): Observable<HttpResponse<string>> {
+		DeleteAccount(accountId: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'accounts/' + accountId, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7415,11 +8224,12 @@ export namespace MyNS {
 		 * Get Account Details
 		 * The get account details service provides detailed information of an account.<br><br><b>Note:</b><li>fullAccountNumber is deprecated and is replaced with fullAccountNumberList in include parameter and response.</li>
 		 * Get accounts/{accountId}
-		 * @param {number} accountId accountId
+		 * @param {string} accountId accountId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} include profile, holder, fullAccountNumber, fullAccountNumberList, paymentProfile, autoRefresh<br><b>Note:</b>fullAccountNumber is deprecated and is replaced with fullAccountNumberList in include parameter and response.
 		 * @return {void} OK
 		 */
-		GetAccount(accountId: number, include: string | null | undefined): Observable<HttpResponse<string>> {
+		GetAccount(accountId: string, include: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'accounts/' + accountId + '?include=' + (include == null ? '' : encodeURIComponent(include)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -7427,11 +8237,12 @@ export namespace MyNS {
 		 * Update Account
 		 * The update account service is used to update manual and aggregated accounts.<br>The HTTP response code is 204 (Success without content).<br>Update manual account support is available for bank, card, investment, insurance, loan, otherAssets, otherLiabilities and realEstate containers only.<br><br><b>Note:</b><li> A real estate account update is only supported for SYSTEM and MANUAL valuation type.</li><li> Attribute <b>isEbillEnrolled</b> is deprecated as it is applicable for bill accounts only.</li>
 		 * Put accounts/{accountId}
-		 * @param {number} accountId accountId
+		 * @param {string} accountId accountId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {UpdateAccountRequest} requestBody accountRequest
 		 * @return {void} 
 		 */
-		UpdateAccount(accountId: number, requestBody: UpdateAccountRequest): Observable<HttpResponse<string>> {
+		UpdateAccount(accountId: string, requestBody: UpdateAccountRequest): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'accounts/' + accountId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -7669,8 +8480,10 @@ export namespace MyNS {
 		 * @param {string} include details
 		 * @param {string} interval D-daily, W-weekly or M-monthly
 		 * @param {number} skip skip (Min 0)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} toDate toDate for balance retrieval (YYYY-MM-DD)
 		 * @param {number} top top (Max 500)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		GetNetworth(accountIds: string | null | undefined, container: string | null | undefined, fromDate: string | null | undefined, include: string | null | undefined, interval: string | null | undefined, skip: number | null | undefined, toDate: string | null | undefined, top: number | null | undefined): Observable<HttpResponse<string>> {
@@ -7818,10 +8631,11 @@ export namespace MyNS {
 		 * Delete Provider Account
 		 * The delete provider account service is used to delete a provider account from the Yodlee system. This service also deletes the accounts that are created in the Yodlee system for that provider account. <br>This service does not return a response. The HTTP response code is 204 (Success with no content).<br>
 		 * Delete providerAccounts/{providerAccountId}
-		 * @param {number} providerAccountId providerAccountId
+		 * @param {string} providerAccountId providerAccountId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} OK
 		 */
-		DeleteProviderAccount(providerAccountId: number): Observable<HttpResponse<string>> {
+		DeleteProviderAccount(providerAccountId: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'providerAccounts/' + providerAccountId, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7830,11 +8644,12 @@ export namespace MyNS {
 		 * The get provider account details service is used to learn the status of adding accounts and updating accounts.<br>This service has to be called continuously to know the progress level of the triggered process. This service also provides the MFA information requested by the provider site.<br>When <i>include = credentials</i>, questions is passed as input, the service returns the credentials (non-password values) and questions stored in the Yodlee system for that provider account. <br><br><b>Note:</b> <li>The password and answer fields are not returned in the response.</li>
 		 * Get providerAccounts/{providerAccountId}
 		 * @param {string} include include credentials,questions
-		 * @param {number} providerAccountId providerAccountId
+		 * @param {string} providerAccountId providerAccountId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} requestId The unique identifier for the request that returns contextual data
 		 * @return {void} OK
 		 */
-		GetProviderAccount(include: string | null | undefined, providerAccountId: number, requestId: string | null | undefined): Observable<HttpResponse<string>> {
+		GetProviderAccount(include: string | null | undefined, providerAccountId: string, requestId: string | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'providerAccounts/' + providerAccountId + '?include=' + (include == null ? '' : encodeURIComponent(include)) + '&requestId=' + (requestId == null ? '' : encodeURIComponent(requestId)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -7842,11 +8657,12 @@ export namespace MyNS {
 		 * Update Preferences
 		 * This endpoint is used to update preferences like data extracts and auto refreshes without triggering refresh for the providerAccount.<br>Setting isDataExtractsEnabled to false will not trigger data extracts notification and dataExtracts/events will not reflect any data change that is happening for the providerAccount.<br>Modified data will not be provided in the dataExtracts/userData endpoint.<br>Setting isAutoRefreshEnabled to false will not trigger auto refreshes for the provider account.<br>
 		 * Put providerAccounts/{providerAccountId}/preferences
-		 * @param {number} providerAccountId providerAccountId
+		 * @param {string} providerAccountId providerAccountId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {ProviderAccountPreferencesRequest} requestBody preferences
 		 * @return {void} 
 		 */
-		UpdatePreferences(providerAccountId: number, requestBody: ProviderAccountPreferencesRequest): Observable<HttpResponse<string>> {
+		UpdatePreferences(providerAccountId: string, requestBody: ProviderAccountPreferencesRequest): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'providerAccounts/' + providerAccountId + '/preferences', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -7857,15 +8673,18 @@ export namespace MyNS {
 		 * @param {string} capability CHALLENGE_DEPOSIT_VERIFICATION - capability search is deprecated
 		 * @param {string} datasetfilter Expression to filter the providers by dataset(s) or dataset attribute(s). The default value will be the dataset or dataset attributes configured as default for the customer.
 		 * @param {string} fullAccountNumberFields Specify to filter the providers with values paymentAccountNumber,unmaskedAccountNumber.
-		 * @param {number} institutionId Institution Id for Single site selection
+		 * @param {string} institutionId Institution Id for Single site selection
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} name Name in minimum 1 character or routing number.
 		 * @param {string} priority Search priority
 		 * @param {string} providerId Max 5 Comma seperated Provider Ids
 		 * @param {number} skip skip (Min 0) - This is not applicable along with 'name' parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} top top (Max 500) - This is not applicable along with 'name' parameter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
-		GetAllProviders(capability: string | null | undefined, datasetfilter: string | null | undefined, fullAccountNumberFields: string | null | undefined, institutionId: number | null | undefined, name: string | null | undefined, priority: string | null | undefined, providerId: string | null | undefined, skip: number | null | undefined, top: number | null | undefined): Observable<HttpResponse<string>> {
+		GetAllProviders(capability: string | null | undefined, datasetfilter: string | null | undefined, fullAccountNumberFields: string | null | undefined, institutionId: string | null | undefined, name: string | null | undefined, priority: string | null | undefined, providerId: string | null | undefined, skip: number | null | undefined, top: number | null | undefined): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'providers?capability=' + (capability == null ? '' : encodeURIComponent(capability)) + '&datasetfilter=' + (datasetfilter == null ? '' : encodeURIComponent(datasetfilter)) + '&fullAccountNumberFields=' + (fullAccountNumberFields == null ? '' : encodeURIComponent(fullAccountNumberFields)) + '&institutionId=' + institutionId + '&name=' + (name == null ? '' : encodeURIComponent(name)) + '&priority=' + (priority == null ? '' : encodeURIComponent(priority)) + '&providerId=' + (providerId == null ? '' : encodeURIComponent(providerId)) + '&skip=' + skip + '&top=' + top, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7888,10 +8707,11 @@ export namespace MyNS {
 		 * Get Provider Details
 		 * The get provider detail service is used to get detailed information including the login form for a provider.<br>The response is a provider object that includes information such as name of the provider, <br>provider's base URL, a list of containers supported by the provider, the login form details of the provider, etc.<br>Only enabled datasets, attributes and containers gets returned in the response.<br><br><b>Note:</b><li>This service supports the localization feature and accepts locale as a header parameter.<li>The capability has been deprecated in the response.
 		 * Get providers/{providerId}
-		 * @param {number} providerId providerId
+		 * @param {string} providerId providerId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} OK
 		 */
-		GetProvider(providerId: number): Observable<HttpResponse<string>> {
+		GetProvider(providerId: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'providers/' + providerId, { observe: 'response', responseType: 'text' });
 		}
 
@@ -7924,8 +8744,10 @@ export namespace MyNS {
 		 * @param {string} highLevelCategoryId Comma separated highLevelCategoryIds
 		 * @param {string} keyword Transaction search text
 		 * @param {number} skip skip (Min 0)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} toDate Transaction end date (YYYY-MM-DD)
 		 * @param {number} top top (Max 500)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} type Transaction Type(SELL,SWEEP, etc.) for bank/creditCard/investment
 		 * @return {void} OK
 		 */
@@ -7991,10 +8813,11 @@ export namespace MyNS {
 		 * Delete Transaction Categorization Rule
 		 * The delete transaction categorization rule service is used to delete the given user-defined transaction categorization rule for both system-defined category as well as user-defined category.<br>This will delete all the corresponding rule clauses associated with the rule.<br>The HTTP response code is 204 (Success without content).<br>
 		 * Delete transactions/categories/rules/{ruleId}
-		 * @param {number} ruleId ruleId
+		 * @param {string} ruleId ruleId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		DeleteTransactionCategorizationRule(ruleId: number): Observable<HttpResponse<string>> {
+		DeleteTransactionCategorizationRule(ruleId: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'transactions/categories/rules/' + ruleId, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8002,10 +8825,11 @@ export namespace MyNS {
 		 * Run Transaction Categorization Rule
 		 * The run transaction categorization rule service is used to run a rule on transactions, to categorize the transactions.<br>The HTTP response code is 204 (Success with no content).<br>
 		 * Post transactions/categories/rules/{ruleId}
-		 * @param {number} ruleId Unique id of the categorization rule
+		 * @param {string} ruleId Unique id of the categorization rule
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		RunTransactionCategorizationRule(action: RunTransactionCategorizationRuleAction, ruleId: number): Observable<HttpResponse<string>> {
+		RunTransactionCategorizationRule(action: RunTransactionCategorizationRuleAction, ruleId: string): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'transactions/categories/rules/' + ruleId + '?action=' + action, null, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8013,11 +8837,12 @@ export namespace MyNS {
 		 * Update Transaction Categorization Rule
 		 * The update transaction categorization rule service is used to update a categorization rule for both system-defined category as well as user-defined category.<br>ruleParam JSON input should be as explained in the create transaction categorization rule service.<br>The HTTP response code is 204 (Success without content).<br>
 		 * Put transactions/categories/rules/{ruleId}
-		 * @param {number} ruleId ruleId
+		 * @param {string} ruleId ruleId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {TransactionCategorizationRuleRequest} requestBody transactionCategoriesRuleRequest
 		 * @return {void} 
 		 */
-		UpdateTransactionCategorizationRule(ruleId: number, requestBody: TransactionCategorizationRuleRequest): Observable<HttpResponse<string>> {
+		UpdateTransactionCategorizationRule(ruleId: string, requestBody: TransactionCategorizationRuleRequest): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'transactions/categories/rules/' + ruleId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -8035,10 +8860,11 @@ export namespace MyNS {
 		 * Delete Category
 		 * The delete transaction categories service is used to delete the given user-defined category.<br>The HTTP response code is 204 (Success without content).<br>
 		 * Delete transactions/categories/{categoryId}
-		 * @param {number} categoryId categoryId
+		 * @param {string} categoryId categoryId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} 
 		 */
-		DeleteTransactionCategory(categoryId: number): Observable<HttpResponse<string>> {
+		DeleteTransactionCategory(categoryId: string): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'transactions/categories/' + categoryId, { observe: 'response', responseType: 'text' });
 		}
 
@@ -8067,11 +8893,12 @@ export namespace MyNS {
 		 * Update Transaction
 		 * The update transaction service is used to update the category,consumer description, memo for a transaction.<br>The HTTP response code is 204 (Success without content).<br>
 		 * Put transactions/{transactionId}
-		 * @param {number} transactionId transactionId
+		 * @param {string} transactionId transactionId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {TransactionRequest} requestBody transactionRequest
 		 * @return {void} 
 		 */
-		UpdateTransaction(transactionId: number, requestBody: TransactionRequest): Observable<HttpResponse<string>> {
+		UpdateTransaction(transactionId: string, requestBody: TransactionRequest): Observable<HttpResponse<string>> {
 			return this.http.put(this.baseUri + 'transactions/' + transactionId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 

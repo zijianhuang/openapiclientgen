@@ -19,8 +19,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -44,8 +44,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -62,8 +62,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -87,8 +87,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -122,8 +122,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Asset resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -141,15 +141,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Asset resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Asset resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -160,8 +160,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Asset resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -179,15 +179,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Asset resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Asset resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -212,15 +212,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Asset Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the Asset resource that is the parent of the Asset Version.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		asset_sid?: string | null;
 
@@ -232,15 +232,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Asset Version resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Asset Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -252,15 +252,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Asset Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Asset resource that is the parent of the Asset Version.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		asset_sid: FormControl<string | null | undefined>,
 
@@ -272,15 +272,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Asset Version resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Asset Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -306,8 +306,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Build resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -330,15 +330,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Build resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Build resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Build_enum_status | null;
@@ -350,8 +350,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Build resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -365,15 +365,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Build resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Build resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Build_enum_status | null | undefined>,
@@ -400,22 +400,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Build resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the Service that the Build resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Build resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Build_enum_status | null;
@@ -427,22 +427,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Build resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Service that the Build resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Build resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Build_enum_status | null | undefined>,
@@ -465,15 +465,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Environment resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the build deployed in the environment.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		build_sid?: string | null;
 
@@ -494,15 +494,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Environment resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Environment resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -516,15 +516,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Environment resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the build deployed in the environment.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		build_sid: FormControl<string | null | undefined>,
 
@@ -545,15 +545,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Environment resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Environment resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -584,15 +584,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Deployment resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the Build for the deployment.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		build_sid?: string | null;
 
@@ -604,22 +604,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Environment for the Deployment.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		environment_sid?: string | null;
 
 		/**
 		 * The SID of the Service that the Deployment resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Deployment resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -630,15 +630,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Deployment resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Build for the deployment.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		build_sid: FormControl<string | null | undefined>,
 
@@ -650,22 +650,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Environment for the Deployment.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		environment_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Service that the Deployment resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Deployment resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -690,15 +690,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Log resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the build that corresponds to the log.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		build_sid?: string | null;
 
@@ -707,22 +707,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the deployment that corresponds to the log.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		deployment_sid?: string | null;
 
 		/**
 		 * The SID of the environment in which the log occurred.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		environment_sid?: string | null;
 
 		/**
 		 * The SID of the function whose invocation produced the log.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		function_sid?: string | null;
 		level?: Log_enum_level | null;
@@ -732,22 +732,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the request associated with the log.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		request_sid?: string | null;
 
 		/**
 		 * The SID of the Service that the Log resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Log resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -758,15 +758,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Log resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the build that corresponds to the log.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		build_sid: FormControl<string | null | undefined>,
 
@@ -775,22 +775,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the deployment that corresponds to the log.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		deployment_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the environment in which the log occurred.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		environment_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the function whose invocation produced the log.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		function_sid: FormControl<string | null | undefined>,
 		level: FormControl<Log_enum_level | null | undefined>,
@@ -800,22 +800,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the request associated with the log.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		request_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Service that the Log resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Log resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -844,8 +844,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Variable resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -857,8 +857,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Environment in which the Variable exists.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		environment_sid?: string | null;
 
@@ -867,15 +867,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Variable resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Variable resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -889,8 +889,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Variable resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -902,8 +902,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Environment in which the Variable exists.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		environment_sid: FormControl<string | null | undefined>,
 
@@ -912,15 +912,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Variable resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Variable resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -949,8 +949,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Function resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -968,15 +968,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Function resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Function resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -987,8 +987,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Function resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -1006,15 +1006,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Function resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Function resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -1039,8 +1039,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Function Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -1049,8 +1049,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Function resource that is the parent of the Function Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		function_sid?: string | null;
 		links?: string | null;
@@ -1060,15 +1060,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Function Version resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Function Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -1080,8 +1080,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Function Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -1090,8 +1090,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Function resource that is the parent of the Function Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		function_sid: FormControl<string | null | undefined>,
 		links: FormControl<string | null | undefined>,
@@ -1101,15 +1101,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Service that the Function Version resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Function Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -1136,8 +1136,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Function Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -1146,22 +1146,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Function that is the parent of the Function Version.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		function_sid?: string | null;
 
 		/**
 		 * The SID of the Service that the Function Version resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Function Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		url?: string | null;
@@ -1170,8 +1170,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/iam/api/account) that created the Function Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -1180,22 +1180,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the Function that is the parent of the Function Version.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		function_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the Service that the Function Version resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Function Version resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1221,7 +1221,9 @@ export namespace MyNS {
 		 * Retrieve a list of all Services.
 		 * Get v1/Services
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListServiceReturn} OK
 		 */
@@ -1234,7 +1236,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Assets
 		 * @param {string} ServiceSid The SID of the Service to read the Asset resources from.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListAssetReturn} OK
 		 */
@@ -1247,8 +1251,11 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Assets/{AssetSid}/Versions
 		 * @param {string} ServiceSid The SID of the Service to read the Asset Version resource from.
 		 * @param {string} AssetSid The SID of the Asset resource that is the parent of the Asset Version resources to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListAssetVersionReturn} OK
 		 */
@@ -1261,7 +1268,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Assets/{AssetSid}/Versions/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to fetch the Asset Version resource from.
 		 * @param {string} AssetSid The SID of the Asset resource that is the parent of the Asset Version resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the Asset Version resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Serverlessv1serviceassetasset_version} OK
 		 */
 		FetchAssetVersion(ServiceSid: string, AssetSid: string, Sid: string): Observable<Serverlessv1serviceassetasset_version> {
@@ -1273,6 +1282,7 @@ export namespace MyNS {
 		 * Delete v1/Services/{ServiceSid}/Assets/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to delete the Asset resource from.
 		 * @param {string} Sid The SID that identifies the Asset resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteAsset(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1284,6 +1294,7 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Assets/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to fetch the Asset resource from.
 		 * @param {string} Sid The SID that identifies the Asset resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Serverlessv1serviceasset} OK
 		 */
 		FetchAsset(ServiceSid: string, Sid: string): Observable<Serverlessv1serviceasset> {
@@ -1295,7 +1306,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Builds
 		 * @param {string} ServiceSid The SID of the Service to read the Build resources from.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListBuildReturn} OK
 		 */
@@ -1308,6 +1321,7 @@ export namespace MyNS {
 		 * Delete v1/Services/{ServiceSid}/Builds/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to delete the Build resource from.
 		 * @param {string} Sid The SID of the Build resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteBuild(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1319,6 +1333,7 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Builds/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to fetch the Build resource from.
 		 * @param {string} Sid The SID of the Build resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Serverlessv1servicebuild} OK
 		 */
 		FetchBuild(ServiceSid: string, Sid: string): Observable<Serverlessv1servicebuild> {
@@ -1330,6 +1345,7 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Builds/{Sid}/Status
 		 * @param {string} ServiceSid The SID of the Service to fetch the Build resource from.
 		 * @param {string} Sid The SID of the Build resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Serverlessv1servicebuildbuild_status} OK
 		 */
 		FetchBuildStatus(ServiceSid: string, Sid: string): Observable<Serverlessv1servicebuildbuild_status> {
@@ -1341,7 +1357,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Environments
 		 * @param {string} ServiceSid The SID of the Service to read the Environment resources from.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListEnvironmentReturn} OK
 		 */
@@ -1354,8 +1372,11 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Deployments
 		 * @param {string} ServiceSid The SID of the Service to read the Deployment resources from.
 		 * @param {string} EnvironmentSid The SID of the Environment used by the Deployment resources to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListDeploymentReturn} OK
 		 */
@@ -1368,7 +1389,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Deployments/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to fetch the Deployment resource from.
 		 * @param {string} EnvironmentSid The SID of the Environment used by the Deployment to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID that identifies the Deployment resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Serverlessv1serviceenvironmentdeployment} OK
 		 */
 		FetchDeployment(ServiceSid: string, EnvironmentSid: string, Sid: string): Observable<Serverlessv1serviceenvironmentdeployment> {
@@ -1380,11 +1403,15 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Logs
 		 * @param {string} ServiceSid The SID of the Service to read the Log resource from.
 		 * @param {string} EnvironmentSid The SID of the environment with the Log resources to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} FunctionSid The SID of the function whose invocation produced the Log resources to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {Date} StartDate The date/time (in GMT, ISO 8601) after which the Log resources must have been created. Defaults to 1 day prior to current date/time.
 		 * @param {Date} EndDate The date/time (in GMT, ISO 8601) before which the Log resources must have been created. Defaults to current date/time.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListLogReturn} OK
 		 */
@@ -1397,7 +1424,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Logs/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to fetch the Log resource from.
 		 * @param {string} EnvironmentSid The SID of the environment with the Log resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the Log resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Serverlessv1serviceenvironmentlog} OK
 		 */
 		FetchLog(ServiceSid: string, EnvironmentSid: string, Sid: string): Observable<Serverlessv1serviceenvironmentlog> {
@@ -1409,8 +1438,11 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Variables
 		 * @param {string} ServiceSid The SID of the Service to read the Variable resources from.
 		 * @param {string} EnvironmentSid The SID of the Environment with the Variable resources to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListVariableReturn} OK
 		 */
@@ -1423,7 +1455,9 @@ export namespace MyNS {
 		 * Delete v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Variables/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to delete the Variable resource from.
 		 * @param {string} EnvironmentSid The SID of the Environment with the Variables to delete.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the Variable resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteVariable(ServiceSid: string, EnvironmentSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1435,7 +1469,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Environments/{EnvironmentSid}/Variables/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to fetch the Variable resource from.
 		 * @param {string} EnvironmentSid The SID of the Environment with the Variable resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the Variable resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Serverlessv1serviceenvironmentvariable} OK
 		 */
 		FetchVariable(ServiceSid: string, EnvironmentSid: string, Sid: string): Observable<Serverlessv1serviceenvironmentvariable> {
@@ -1447,6 +1483,7 @@ export namespace MyNS {
 		 * Delete v1/Services/{ServiceSid}/Environments/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to delete the Environment resource from.
 		 * @param {string} Sid The SID of the Environment resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteEnvironment(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1458,6 +1495,7 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Environments/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to fetch the Environment resource from.
 		 * @param {string} Sid The SID of the Environment resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Serverlessv1serviceenvironment} OK
 		 */
 		FetchEnvironment(ServiceSid: string, Sid: string): Observable<Serverlessv1serviceenvironment> {
@@ -1469,7 +1507,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Functions
 		 * @param {string} ServiceSid The SID of the Service to read the Function resources from.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListFunctionReturn} OK
 		 */
@@ -1482,8 +1522,11 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Functions/{FunctionSid}/Versions
 		 * @param {string} ServiceSid The SID of the Service to read the Function Version resources from.
 		 * @param {string} FunctionSid The SID of the function that is the parent of the Function Version resources to read.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListFunctionVersionReturn} OK
 		 */
@@ -1496,7 +1539,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Functions/{FunctionSid}/Versions/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to fetch the Function Version resource from.
 		 * @param {string} FunctionSid The SID of the function that is the parent of the Function Version resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the Function Version resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Serverlessv1servicefunctionfunction_version} OK
 		 */
 		FetchFunctionVersion(ServiceSid: string, FunctionSid: string, Sid: string): Observable<Serverlessv1servicefunctionfunction_version> {
@@ -1508,7 +1553,9 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Functions/{FunctionSid}/Versions/{Sid}/Content
 		 * @param {string} ServiceSid The SID of the Service to fetch the Function Version content from.
 		 * @param {string} FunctionSid The SID of the Function that is the parent of the Function Version content to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The SID of the Function Version content to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Serverlessv1servicefunctionfunction_versionfunction_version_content} OK
 		 */
 		FetchFunctionVersionContent(ServiceSid: string, FunctionSid: string, Sid: string): Observable<Serverlessv1servicefunctionfunction_versionfunction_version_content> {
@@ -1520,6 +1567,7 @@ export namespace MyNS {
 		 * Delete v1/Services/{ServiceSid}/Functions/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to delete the Function resource from.
 		 * @param {string} Sid The SID of the Function resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteFunction(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1531,6 +1579,7 @@ export namespace MyNS {
 		 * Get v1/Services/{ServiceSid}/Functions/{Sid}
 		 * @param {string} ServiceSid The SID of the Service to fetch the Function resource from.
 		 * @param {string} Sid The SID of the Function resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Serverlessv1servicefunction} OK
 		 */
 		FetchFunction(ServiceSid: string, Sid: string): Observable<Serverlessv1servicefunction> {
@@ -1574,7 +1623,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1583,7 +1636,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1617,7 +1674,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1626,7 +1687,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1660,7 +1725,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1669,7 +1738,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1703,7 +1776,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1712,7 +1789,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1746,7 +1827,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1755,7 +1840,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1789,7 +1878,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1798,7 +1891,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1832,7 +1929,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1841,7 +1942,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1875,7 +1980,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1884,7 +1993,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1918,7 +2031,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1927,7 +2044,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1961,7 +2082,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1970,7 +2095,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

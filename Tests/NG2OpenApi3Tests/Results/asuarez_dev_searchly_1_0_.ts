@@ -51,16 +51,25 @@ export namespace MyNS {
 		/** Artist URL. */
 		artist_url?: string | null;
 
-		/** Song internal identifier. */
+		/**
+		 * Song internal identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** Index internal identifier. */
+		/**
+		 * Index internal identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index_id?: number | null;
 
 		/** Song lyrics. */
 		lyrics?: string | null;
 
-		/** Similarity percentage. */
+		/**
+		 * Similarity percentage.
+		 * Type: float
+		 */
 		percentage?: number | null;
 
 		/** Song name. */
@@ -77,16 +86,25 @@ export namespace MyNS {
 		/** Artist URL. */
 		artist_url: FormControl<string | null | undefined>,
 
-		/** Song internal identifier. */
+		/**
+		 * Song internal identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** Index internal identifier. */
+		/**
+		 * Index internal identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index_id: FormControl<number | null | undefined>,
 
 		/** Song lyrics. */
 		lyrics: FormControl<string | null | undefined>,
 
-		/** Similarity percentage. */
+		/**
+		 * Similarity percentage.
+		 * Type: float
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** Song name. */
@@ -151,7 +169,10 @@ export namespace MyNS {
 
 	export interface APIResponseSongResponseResults {
 
-		/** Song internal identifier. */
+		/**
+		 * Song internal identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Song and Artist name. */
@@ -159,7 +180,10 @@ export namespace MyNS {
 	}
 	export interface APIResponseSongResponseResultsFormProperties {
 
-		/** Song internal identifier. */
+		/**
+		 * Song internal identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Song and Artist name. */
@@ -202,6 +226,7 @@ export namespace MyNS {
 		 * ```
 		 * Get similarity/by_song
 		 * @param {number} song_id Song identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIResponseSimilarity} Standard SearchLy API v1 JSON response. You should check the `error` attribute to determine if there was an error.
 		 */
 		Src_searchly_api_v1_controllers_similarity_by_song(song_id: number): Observable<APIResponseSimilarity> {

@@ -2513,7 +2513,9 @@ export namespace MyNS {
 		 * Get tile/{z}/{x}/{y}#Arn&ImageAssets&Target
 		 * @param {string} Arn The Amazon Resource Name (ARN) of the tile operation.
 		 * @param {string} ExecutionRoleArn The Amazon Resource Name (ARN) of the IAM role that you specify.
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} ImageAssets The particular assets or bands to tile.
+		 *     Minimum items: 1
 		 * @param {boolean} ImageMask Determines whether or not to return a valid data mask.
 		 * @param {OutputType} OutputDataType The output data type of the tile operation.
 		 * @param {string} OutputFormat The data format of the output tile. The formats include .npy, .png and .jpg.
@@ -2521,8 +2523,11 @@ export namespace MyNS {
 		 * @param {TargetOptions} Target Determines what part of the Earth Observation job to tile. 'INPUT' or 'OUTPUT' are the valid options.
 		 * @param {string} TimeRangeFilter Time range filter applied to imagery to find the images to tile.
 		 * @param {number} x The x coordinate of the tile input.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} y The y coordinate of the tile input.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} z The z coordinate of the tile input.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetTileOutput} Success
 		 */
 		GetTile(Arn: string, ExecutionRoleArn: string | null | undefined, ImageAssets: Array<string>, ImageMask: boolean | null | undefined, OutputDataType: OutputType | null | undefined, OutputFormat: string | null | undefined, PropertyFilters: string | null | undefined, Target: TargetOptions, TimeRangeFilter: string | null | undefined, x: number, y: number, z: number): Observable<GetTileOutput> {
@@ -2544,7 +2549,9 @@ export namespace MyNS {
 		 * Use this operation to get raster data collections.
 		 * Get raster-data-collections
 		 * @param {number} MaxResults The total number of items to return.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {string} NextToken If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
+		 *     Min length: 0    Max length: 8192
 		 * @return {ListRasterDataCollectionsOutput} Success
 		 */
 		ListRasterDataCollections(MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListRasterDataCollectionsOutput> {
@@ -2555,6 +2562,7 @@ export namespace MyNS {
 		 * Lists the tags attached to the resource.
 		 * Get tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource you want to tag.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(ResourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -2565,6 +2573,7 @@ export namespace MyNS {
 		 * The resource you want to tag.
 		 * Put tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource you want to tag.
+		 *     Min length: 1    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(ResourceArn: string, requestBody: TagResourcePutBody): Observable<TagResourceResponse> {
@@ -2632,7 +2641,9 @@ export namespace MyNS {
 		 * The resource you want to untag.
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the resource you want to untag.
+		 *     Min length: 1    Max length: 2048
 		 * @param {Array<string>} tagKeys Keys of the tags you want to remove.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2650,16 +2661,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique token that guarantees that the call to this API is idempotent.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: string;
 
@@ -2682,16 +2693,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique token that guarantees that the call to this API is idempotent.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
@@ -2729,16 +2740,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique token that guarantees that the call to this API is idempotent.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: string;
 
@@ -2758,16 +2769,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique token that guarantees that the call to this API is idempotent.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM rolewith permission to upload to the location in OutputConfig.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 	}
@@ -2802,8 +2813,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
-		 * Max length: 8192
 		 * Min length: 0
+		 * Max length: 8192
 		 */
 		NextToken?: string | null;
 
@@ -2827,8 +2838,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
-		 * Max length: 8192
 		 * Min length: 0
+		 * Max length: 8192
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2886,8 +2897,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
-		 * Max length: 8192
 		 * Min length: 0
+		 * Max length: 8192
 		 */
 		NextToken?: string | null;
 
@@ -2911,8 +2922,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
-		 * Max length: 8192
 		 * Min length: 0
+		 * Max length: 8192
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2946,8 +2957,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
-		 * Max length: 8192
 		 * Min length: 0
+		 * Max length: 8192
 		 */
 		NextToken?: string | null;
 
@@ -2967,8 +2978,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was truncated, you receive this token. Use it in your next request to receive the next set of results.
-		 * Max length: 8192
 		 * Min length: 0
+		 * Max length: 8192
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -2998,16 +3009,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique token that guarantees that the call to this API is idempotent.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: string;
 
@@ -3025,16 +3036,16 @@ export namespace MyNS {
 
 		/**
 		 * The Key Management Service key ID for server-side encryption.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		KmsKeyId?: string | null;
 
 		/**
 		 * The name of the Earth Observation job.
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		Name: string;
 
@@ -3045,31 +3056,31 @@ export namespace MyNS {
 
 		/**
 		 * A unique token that guarantees that the call to this API is idempotent.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The Key Management Service key ID for server-side encryption.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the Earth Observation job.
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -3124,16 +3135,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique token that guarantees that the call to this API is idempotent.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: string;
 
@@ -3151,16 +3162,16 @@ export namespace MyNS {
 
 		/**
 		 * The Key Management Service key ID for server-side encryption.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		KmsKeyId?: string | null;
 
 		/**
 		 * The name of the Vector Enrichment job.
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		Name: string;
 
@@ -3171,31 +3182,31 @@ export namespace MyNS {
 
 		/**
 		 * A unique token that guarantees that the call to this API is idempotent.
-		 * Max length: 64
 		 * Min length: 36
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the IAM role that you specified for the job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ExecutionRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The Key Management Service key ID for server-side encryption.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		KmsKeyId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the Vector Enrichment job.
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		Name: FormControl<string | null | undefined>,
 

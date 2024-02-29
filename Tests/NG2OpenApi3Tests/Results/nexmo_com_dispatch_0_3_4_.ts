@@ -7,8 +7,8 @@ export namespace MyNS {
 
 		/**
 		 * The URL of the audio attachment. `messenger` supports .mp3. `whatsapp` supports .aac, .m4a, .amr, .mp3 and .opus.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		url?: string | null;
 	}
@@ -16,8 +16,8 @@ export namespace MyNS {
 
 		/**
 		 * The URL of the audio attachment. `messenger` supports .mp3. `whatsapp` supports .aac, .m4a, .amr, .mp3 and .opus.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -122,15 +122,15 @@ export namespace MyNS {
 
 		/**
 		 * Additional text to accompany the image. Supported by WhatsApp and MMS.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		caption?: string | null;
 
 		/**
 		 * The URL of the file attachment. `messenger` supports a wide range of attachments including .zip, .csv and .pdf. `whatsapp` supports .pdf, .doc(x), .ppt(x) and .xls(x).
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		url?: string | null;
 	}
@@ -138,15 +138,15 @@ export namespace MyNS {
 
 		/**
 		 * Additional text to accompany the image. Supported by WhatsApp and MMS.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		caption: FormControl<string | null | undefined>,
 
 		/**
 		 * The URL of the file attachment. `messenger` supports a wide range of attachments including .zip, .csv and .pdf. `whatsapp` supports .pdf, .doc(x), .ppt(x) and .xls(x).
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -165,8 +165,8 @@ export namespace MyNS {
 		 * **Messenger**: This value should be the `to.id` value you received in the inbound messenger event.
 		 * **Viber**: This is your Service Message ID given to you by your Vonage Account Manager. To find out more please visit [vonage.com](https://www.vonage.com/communications-apis/messages/).
 		 * **SMS**: **MMS**: or **WhatsApp** This value is not required.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		id?: string | null;
 
@@ -174,8 +174,8 @@ export namespace MyNS {
 		 * **SMS**: or **MMS**: The phone number of the message sender in the [E.164](https://en.wikipedia.org/wiki/E.164) format.
 		 * **WhatsApp**: This is your WhatsApp Business Number given to you by your Vonage Account Manager. To find out more please visit [vonage.com](https://www.vonage.com/communications-apis/messages/).
 		 * **Messenger**: or **Viber**: This value is not required.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		number?: string | null;
 
@@ -192,8 +192,8 @@ export namespace MyNS {
 		 * **Messenger**: This value should be the `to.id` value you received in the inbound messenger event.
 		 * **Viber**: This is your Service Message ID given to you by your Vonage Account Manager. To find out more please visit [vonage.com](https://www.vonage.com/communications-apis/messages/).
 		 * **SMS**: **MMS**: or **WhatsApp** This value is not required.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		id: FormControl<string | null | undefined>,
 
@@ -201,8 +201,8 @@ export namespace MyNS {
 		 * **SMS**: or **MMS**: The phone number of the message sender in the [E.164](https://en.wikipedia.org/wiki/E.164) format.
 		 * **WhatsApp**: This is your WhatsApp Business Number given to you by your Vonage Account Manager. To find out more please visit [vonage.com](https://www.vonage.com/communications-apis/messages/).
 		 * **Messenger**: or **Viber**: This value is not required.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		number: FormControl<string | null | undefined>,
 
@@ -227,15 +227,15 @@ export namespace MyNS {
 
 		/**
 		 * Additional text to accompany the image. Supported by WhatsApp and MMS.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		caption?: string | null;
 
 		/**
 		 * The URL of the image attachment. `messenger` and `mms` supports .jpg, .jpeg, .png and .gif. `viber_service_msg` supports .jpg .jpeg, and .png. `whatsapp` supports .jpg .jpeg, and .png.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		url?: string | null;
 	}
@@ -243,15 +243,15 @@ export namespace MyNS {
 
 		/**
 		 * Additional text to accompany the image. Supported by WhatsApp and MMS.
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		caption: FormControl<string | null | undefined>,
 
 		/**
 		 * The URL of the image attachment. `messenger` and `mms` supports .jpg, .jpeg, .png and .gif. `viber_service_msg` supports .jpg .jpeg, and .png. `whatsapp` supports .jpg .jpeg, and .png.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -290,8 +290,8 @@ export namespace MyNS {
 		 * **Messenger**: Is limited to 640 characters
 		 * **SMS** or **Viber**: Is 1000 characters
 		 * **WhatsApp**: is 4096 characters
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		text?: string | null;
 
@@ -313,8 +313,8 @@ export namespace MyNS {
 		 * **Messenger**: Is limited to 640 characters
 		 * **SMS** or **Viber**: Is 1000 characters
 		 * **WhatsApp**: is 4096 characters
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		text: FormControl<string | null | undefined>,
 
@@ -379,8 +379,8 @@ export namespace MyNS {
 		 * The URL of the video attachment.
 		 * **messenger** supports .mp4
 		 * **whatsapp** supports .mp4 and .3gpp. Note, only H.264 video codec and AAC audio codec is supported.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		url?: string | null;
 	}
@@ -390,8 +390,8 @@ export namespace MyNS {
 		 * The URL of the video attachment.
 		 * **messenger** supports .mp4
 		 * **whatsapp** supports .mp4 and .3gpp. Note, only H.264 video codec and AAC audio codec is supported.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		url: FormControl<string | null | undefined>,
 	}
@@ -557,7 +557,10 @@ export namespace MyNS {
 
 	export interface MessageStatusError {
 
-		/** The error code. See [our errors list](/api-errors/messages-olympus) for a list of possible errors */
+		/**
+		 * The error code. See [our errors list](/api-errors/messages-olympus) for a list of possible errors
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** Text describing the error. See [our errors list](/api-errors/messages-olympus) for a list of possible errors */
@@ -565,7 +568,10 @@ export namespace MyNS {
 	}
 	export interface MessageStatusErrorFormProperties {
 
-		/** The error code. See [our errors list](/api-errors/messages-olympus) for a list of possible errors */
+		/**
+		 * The error code. See [our errors list](/api-errors/messages-olympus) for a list of possible errors
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Text describing the error. See [our errors list](/api-errors/messages-olympus) for a list of possible errors */
@@ -587,16 +593,16 @@ export namespace MyNS {
 		 * The ID of the message recipient.
 		 * **Messenger**: This value should be the `from.id` value you received in the inbound messenger event.
 		 * **SMS**: or **Viber**: or **WhatsApp** This value is not required.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		id?: string | null;
 
 		/**
 		 * **SMS**: or **MMS**: or **Viber**: or **WhatsApp** The phone number of the message recipient in the [E.164](https://en.wikipedia.org/wiki/E.164) format. Don't use a leading + or 00 when entering a phone number, start with the country code, for example, 447700900000.
 		 * **Messenger**: This value is not required.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		number?: string | null;
 
@@ -612,16 +618,16 @@ export namespace MyNS {
 		 * The ID of the message recipient.
 		 * **Messenger**: This value should be the `from.id` value you received in the inbound messenger event.
 		 * **SMS**: or **Viber**: or **WhatsApp** This value is not required.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		id: FormControl<string | null | undefined>,
 
 		/**
 		 * **SMS**: or **MMS**: or **Viber**: or **WhatsApp** The phone number of the message recipient in the [E.164](https://en.wikipedia.org/wiki/E.164) format. Don't use a leading + or 00 when entering a phone number, start with the country code, for example, 447700900000.
 		 * **Messenger**: This value is not required.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		number: FormControl<string | null | undefined>,
 

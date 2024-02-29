@@ -7,7 +7,10 @@ export namespace MyNS {
 	/** Metrics aggregated over the input time range. */
 	export interface AggregateMetrics {
 
-		/** Total count of answered calls. */
+		/**
+		 * Total count of answered calls.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		answeredCallsCount?: number | null;
 
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
@@ -16,7 +19,10 @@ export namespace MyNS {
 		/** A list of metrics by hour of day. */
 		hourlyMetrics?: Array<HourlyMetrics>;
 
-		/** Total count of missed calls. */
+		/**
+		 * Total count of missed calls.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		missedCallsCount?: number | null;
 
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
@@ -29,10 +35,16 @@ export namespace MyNS {
 	/** Metrics aggregated over the input time range. */
 	export interface AggregateMetricsFormProperties {
 
-		/** Total count of answered calls. */
+		/**
+		 * Total count of answered calls.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		answeredCallsCount: FormControl<number | null | undefined>,
 
-		/** Total count of missed calls. */
+		/**
+		 * Total count of missed calls.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		missedCallsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAggregateMetricsFormGroup() {
@@ -47,26 +59,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -82,20 +112,32 @@ export namespace MyNS {
 	/** Metrics for an hour. */
 	export interface HourlyMetrics {
 
-		/** Hour of the day. Allowed values are 0-23. */
+		/**
+		 * Hour of the day. Allowed values are 0-23.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour?: number | null;
 
-		/** Total count of missed calls for this hour. */
+		/**
+		 * Total count of missed calls for this hour.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		missedCallsCount?: number | null;
 	}
 
 	/** Metrics for an hour. */
 	export interface HourlyMetricsFormProperties {
 
-		/** Hour of the day. Allowed values are 0-23. */
+		/**
+		 * Hour of the day. Allowed values are 0-23.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hour: FormControl<number | null | undefined>,
 
-		/** Total count of missed calls for this hour. */
+		/**
+		 * Total count of missed calls for this hour.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		missedCallsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateHourlyMetricsFormGroup() {
@@ -113,7 +155,10 @@ export namespace MyNS {
 		/** Day of the week. Allowed values are Sunday - Saturday. */
 		day?: WeekDayMetricsDay | null;
 
-		/** Total count of missed calls for this hour. */
+		/**
+		 * Total count of missed calls for this hour.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		missedCallsCount?: number | null;
 	}
 
@@ -123,7 +168,10 @@ export namespace MyNS {
 		/** Day of the week. Allowed values are Sunday - Saturday. */
 		day: FormControl<WeekDayMetricsDay | null | undefined>,
 
-		/** Total count of missed calls for this hour. */
+		/**
+		 * Total count of missed calls for this hour.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		missedCallsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateWeekDayMetricsFormGroup() {
@@ -262,6 +310,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent location to fetch calls insights for. Format: locations/{location_id}
 		 * @param {string} filter Optional. A filter constraining the calls insights to return. The response includes only entries that match the filter. If the MetricType is not provided, AGGREGATE_COUNT is returned. If no end_date is provided, the last date for which data is available is used. If no start_date is provided, we will default to the first date for which data is available, which is currently 6 months. If start_date is before the date when data is available, data is returned starting from the date when it is available. At this time we support following filters. 1. start_date="DATE" where date is in YYYY-MM-DD format. 2. end_date="DATE" where date is in YYYY-MM-DD format. 3. metric_type=XYZ where XYZ is a valid MetricType. 4. Conjunctions(AND) of all of the above. e.g., "start_date=2021-08-01 AND end_date=2021-08-10 AND metric_type=AGGREGATE_COUNT" The AGGREGATE_COUNT metric_type ignores the DD part of the date.
 		 * @param {number} pageSize Optional. The maximum number of BusinessCallsInsights to return. If unspecified, at most 20 will be returned. Some of the metric_types(e.g, AGGREGATE_COUNT) returns a single page. For these metrics, the page_size is ignored.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListBusinessCallsInsights` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBusinessCallsInsights` must match the call that provided the page token. Some of the metric_types (e.g, AGGREGATE_COUNT) returns a single page. For these metrics, the pake_token is ignored.
 		 * @return {ListBusinessCallsInsightsResponse} Successful response
 		 */

@@ -1143,8 +1143,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
@@ -1154,8 +1154,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 		NumResults: FormControl<number | null | undefined>,
@@ -1207,8 +1207,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 		BonusPayments?: Array<BonusPayment>;
@@ -1218,8 +1218,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1300,8 +1300,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
@@ -1311,8 +1311,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 		NumResults: FormControl<number | null | undefined>,
@@ -1355,8 +1355,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
@@ -1366,8 +1366,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 		NumResults: FormControl<number | null | undefined>,
@@ -1408,8 +1408,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 		QualificationRequests?: Array<QualificationRequest>;
@@ -1419,8 +1419,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1469,8 +1469,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 		MaxResults?: number | null;
@@ -1480,8 +1480,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
@@ -1500,8 +1500,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 		QualificationTypes?: Array<QualificationType>;
@@ -1511,8 +1511,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1533,8 +1533,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 		MaxResults?: number | null;
@@ -1548,8 +1548,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 		MaxResults: FormControl<number | null | undefined>,
@@ -1574,8 +1574,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 	}
@@ -1584,8 +1584,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -1721,8 +1721,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
@@ -1732,8 +1732,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 		NumResults: FormControl<number | null | undefined>,
@@ -1774,8 +1774,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
@@ -1785,8 +1785,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 		NumResults: FormControl<number | null | undefined>,
@@ -1849,8 +1849,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken?: string | null;
 		NumResults?: number | null;
@@ -1860,8 +1860,8 @@ export namespace MyNS {
 
 		/**
 		 * If the previous response was incomplete (because there is more data to retrieve), Amazon Mechanical Turk returns a pagination token in the response. You can use this pagination token to retrieve the next set of results.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		NextToken: FormControl<string | null | undefined>,
 		NumResults: FormControl<number | null | undefined>,

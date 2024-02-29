@@ -23,6 +23,8 @@ export namespace MyNS {
 		canonical_url?: string | null;
 		description?: string | null;
 		main_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		organization_id?: number | null;
 		published?: boolean | null;
 		series?: string | null;
@@ -34,6 +36,8 @@ export namespace MyNS {
 		canonical_url: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		main_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		organization_id: FormControl<number | null | undefined>,
 		published: FormControl<boolean | null | undefined>,
 		series: FormControl<string | null | undefined>,
@@ -111,7 +115,10 @@ export namespace MyNS {
 		/** Flare tag of the article */
 		flare_tag?: ArticleFlareTag;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/** Required */
@@ -123,10 +130,16 @@ export namespace MyNS {
 		/** Required */
 		path: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		positive_reactions_count: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_reactions_count: number;
 
 		/** Required */
@@ -144,6 +157,7 @@ export namespace MyNS {
 		/**
 		 * Reading time, in minutes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reading_time_minutes: number;
 
@@ -196,7 +210,10 @@ export namespace MyNS {
 		/** Required */
 		edited_at: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -205,10 +222,16 @@ export namespace MyNS {
 		/** Required */
 		path: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		positive_reactions_count: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		public_reactions_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -226,6 +249,7 @@ export namespace MyNS {
 		/**
 		 * Reading time, in minutes
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reading_time_minutes: FormControl<number | null | undefined>,
 
@@ -400,13 +424,19 @@ export namespace MyNS {
 		 */
 		body_markdown: string;
 
-		/** Identifies the user who created the ad. */
+		/**
+		 * Identifies the user who created the ad.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creator_id?: number | null;
 
 		/** Potentially limits visitors to whom the ad is visible */
 		display_to?: DisplayAdDisplay_to | null;
 
-		/** The ID of the Display Ad */
+		/**
+		 * The ID of the Display Ad
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -415,7 +445,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Identifies the organization to which the ad belongs */
+		/**
+		 * Identifies the organization to which the ad belongs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		organization_id?: number | null;
 
 		/**
@@ -454,13 +487,19 @@ export namespace MyNS {
 		 */
 		body_markdown: FormControl<string | null | undefined>,
 
-		/** Identifies the user who created the ad. */
+		/**
+		 * Identifies the user who created the ad.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creator_id: FormControl<number | null | undefined>,
 
 		/** Potentially limits visitors to whom the ad is visible */
 		display_to: FormControl<DisplayAdDisplay_to | null | undefined>,
 
-		/** The ID of the Display Ad */
+		/**
+		 * The ID of the Display Ad
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -469,7 +508,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Identifies the organization to which the ad belongs */
+		/**
+		 * Identifies the organization to which the ad belongs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		organization_id: FormControl<number | null | undefined>,
 
 		/**
@@ -523,13 +565,17 @@ export namespace MyNS {
 		/**
 		 * Tag id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/** Required */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		points: number;
 	}
 
@@ -539,18 +585,22 @@ export namespace MyNS {
 		/**
 		 * Tag id
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		points: FormControl<number | null | undefined>,
 	}
 	export function CreateFollowedTagFormGroup() {
 		return new FormGroup<FollowedTagFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			points: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
@@ -706,7 +756,10 @@ export namespace MyNS {
 		/** Required */
 		class_name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: number;
 
 		/**
@@ -737,7 +790,10 @@ export namespace MyNS {
 		/** Required */
 		class_name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -841,8 +897,11 @@ export namespace MyNS {
 	export interface Tag {
 		bg_color_hex?: string | null;
 
-		/** Tag id */
-		id?: number | null;
+		/**
+		 * Tag id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id?: string | null;
 		name?: string | null;
 		text_color_hex?: string | null;
 	}
@@ -851,15 +910,18 @@ export namespace MyNS {
 	export interface TagFormProperties {
 		bg_color_hex: FormControl<string | null | undefined>,
 
-		/** Tag id */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Tag id
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		text_color_hex: FormControl<string | null | undefined>,
 	}
 	export function CreateTagFormGroup() {
 		return new FormGroup<TagFormProperties>({
 			bg_color_hex: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			text_color_hex: new FormControl<string | null | undefined>(undefined),
 		});
@@ -870,7 +932,9 @@ export namespace MyNS {
 	/** The representation of a user */
 	export interface User {
 		github_username?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		joined_at?: string | null;
 		location?: string | null;
 		name?: string | null;
@@ -885,7 +949,9 @@ export namespace MyNS {
 	/** The representation of a user */
 	export interface UserFormProperties {
 		github_username: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		joined_at: FormControl<string | null | undefined>,
 		location: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -899,7 +965,7 @@ export namespace MyNS {
 	export function CreateUserFormGroup() {
 		return new FormGroup<UserFormProperties>({
 			github_username: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			joined_at: new FormControl<string | null | undefined>(undefined),
 			location: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -937,14 +1003,18 @@ export namespace MyNS {
 	/** Representation of an Article with video */
 	export interface VideoArticle {
 		cloudinary_video_url?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		path?: string | null;
 		title?: string | null;
 		type_of?: string | null;
 
 		/** Author of the article */
 		user?: VideoArticleUser;
-		user_id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		user_id?: string | null;
 		video_duration_in_minutes?: string | null;
 		video_source_url?: string | null;
 	}
@@ -952,22 +1022,26 @@ export namespace MyNS {
 	/** Representation of an Article with video */
 	export interface VideoArticleFormProperties {
 		cloudinary_video_url: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		path: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type_of: FormControl<string | null | undefined>,
-		user_id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		user_id: FormControl<string | null | undefined>,
 		video_duration_in_minutes: FormControl<string | null | undefined>,
 		video_source_url: FormControl<string | null | undefined>,
 	}
 	export function CreateVideoArticleFormGroup() {
 		return new FormGroup<VideoArticleFormProperties>({
 			cloudinary_video_url: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			path: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
 			type_of: new FormControl<string | null | undefined>(undefined),
-			user_id: new FormControl<number | null | undefined>(undefined),
+			user_id: new FormControl<string | null | undefined>(undefined),
 			video_duration_in_minutes: new FormControl<string | null | undefined>(undefined),
 			video_source_url: new FormControl<string | null | undefined>(undefined),
 		});
@@ -1014,7 +1088,9 @@ export namespace MyNS {
 		 * It supports pagination, each page will contain `30` articles by default.
 		 * Get api/articles
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} tag Using this parameter will retrieve articles that contain the requested tag. Articles
 		 * will be ordered by descending popularity.This parameter can be used in conjuction with `top`.
 		 * @param {string} tags Using this parameter will retrieve articles with any of the comma-separated tags.
@@ -1033,8 +1109,10 @@ export namespace MyNS {
 		 * in the last `N` days.
 		 * `top` indicates the number of days since publication of the articles returned.
 		 * This param can be used in conjuction with `tag`.
+		 *     Minimum: 1
 		 * @param {number} collection_id Adding this will allow the client to return the list of articles
 		 * belonging to the requested collection, ordered by ascending publication date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ArticleIndex>} A List of Articles
 		 */
 		ApiArticlesGetByPageAndPer_pageAndTagAndTagsAndTags_excludeAndUsernameAndStateAndTopAndCollection_id(page: number | null | undefined, per_page: number | null | undefined, tag: string | null | undefined, tags: string | null | undefined, tags_exclude: string | null | undefined, username: string | null | undefined, state: ApiArticlesGetByPageAndPer_pageAndTagAndTagsAndTags_excludeAndUsernameAndStateAndTopAndCollection_idState | null | undefined, top: number | null | undefined, collection_id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<ArticleIndex>> {
@@ -1058,7 +1136,9 @@ export namespace MyNS {
 		 * It supports pagination, each page will contain 30 articles by default.
 		 * Get api/articles/latest
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<ArticleIndex>} A List of Articles
 		 */
 		ApiArticlesLatestGetByPageAndPer_page(page: number | null | undefined, per_page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<ArticleIndex>> {
@@ -1073,7 +1153,9 @@ export namespace MyNS {
 		 * It will return published articles with pagination. By default a page will contain 30 articles.
 		 * Get api/articles/me
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<ArticleIndex>} A List of the authenticated user's Articles
 		 */
 		ApiArticlesMeGetByPageAndPer_page(page: number | null | undefined, per_page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<ArticleIndex>> {
@@ -1089,7 +1171,9 @@ export namespace MyNS {
 		 * By default a page will contain 30 articles.
 		 * Get api/articles/me/all
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<ArticleIndex>} A List of the authenticated user's Articles
 		 */
 		ApiArticlesMeAllGetByPageAndPer_page(page: number | null | undefined, per_page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<ArticleIndex>> {
@@ -1104,7 +1188,9 @@ export namespace MyNS {
 		 * It will return published articles with pagination. By default a page will contain 30 articles.
 		 * Get api/articles/me/published
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<ArticleIndex>} A List of the authenticated user's Articles
 		 */
 		ApiArticlesMePublishedGetByPageAndPer_page(page: number | null | undefined, per_page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<ArticleIndex>> {
@@ -1119,7 +1205,9 @@ export namespace MyNS {
 		 * It will return unpublished articles with pagination. By default a page will contain 30 articles.
 		 * Get api/articles/me/unpublished
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<ArticleIndex>} A List of the authenticated user's Articles
 		 */
 		ApiArticlesMeUnpublishedGetByPageAndPer_page(page: number | null | undefined, per_page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<ArticleIndex>> {
@@ -1130,6 +1218,7 @@ export namespace MyNS {
 		 * Published article by id
 		 * This endpoint allows the client to retrieve a single published article given its `id`.
 		 * Get api/articles/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} An Article
 		 */
 		ApiArticles_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -1142,6 +1231,7 @@ export namespace MyNS {
 		 * "Articles" are all the posts that users create on DEV that typically show up in the feed. They can be a blog post, a discussion question, a help thread etc. but is referred to as article within the code.
 		 * Put api/articles/{id}
 		 * @param {number} id The ID of the user to unpublish.
+		 *     Minimum: 1
 		 * @return {void} An Article
 		 */
 		ApiArticles_idPut(id: number, requestBody: Article, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1158,6 +1248,7 @@ export namespace MyNS {
 		 * will remain.
 		 * Put api/articles/{id}/unpublish
 		 * @param {number} id The ID of the article to unpublish.
+		 *     Minimum: 1
 		 * @param {string} note Content for the note that's created along with unpublishing
 		 * @return {void} 
 		 */
@@ -1195,6 +1286,7 @@ export namespace MyNS {
 		 * See the format specification for further details.
 		 * Get api/comments/{id}
 		 * @param {number} id Comment identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} A List of the Comments
 		 */
 		ApiComments_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1226,6 +1318,7 @@ export namespace MyNS {
 		 * This endpoint allows the client to retrieve a single display ad, via its id.
 		 * Get api/display_ads/{id}
 		 * @param {number} id The ID of the display ad.
+		 *     Minimum: 1
 		 * @return {void} successful
 		 */
 		ApiDisplay_ads_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1237,6 +1330,7 @@ export namespace MyNS {
 		 * This endpoint allows the client to update the attributes of a single display ad, via its id.
 		 * Put api/display_ads/{id}
 		 * @param {number} id The ID of the display ad.
+		 *     Minimum: 1
 		 * @return {string} successful
 		 */
 		ApiDisplay_ads_idPut(id: number, requestBody: string, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -1248,6 +1342,7 @@ export namespace MyNS {
 		 * This endpoint allows the client to remove a display ad from rotation by un-publishing it.
 		 * Put api/display_ads/{id}/unpublish
 		 * @param {number} id The ID of the display ad to unpublish.
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
 		ApiDisplay_ads_idUnpublishPut(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1261,7 +1356,9 @@ export namespace MyNS {
 		 * It supports pagination, each page will contain 80 followers by default.
 		 * Get api/followers/users
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} sort Default is 'created_at'. Specifies the sort order for the created_at param of the follow
 		 *                                 relationship. To sort by newest followers first (descending order) specify
 		 *                                 ?sort=-created_at.
@@ -1297,7 +1394,9 @@ export namespace MyNS {
 		 * It supports pagination, each page will contain `30` users by default.
 		 * Get api/organizations/{username}/articles
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<ArticleIndex>} An Organization's Articles
 		 */
 		ApiOrganizations_usernameArticlesGetByPageAndPer_page(username: string, page: number | null | undefined, per_page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<ArticleIndex>> {
@@ -1310,7 +1409,9 @@ export namespace MyNS {
 		 * It supports pagination, each page will contain `30` users by default.
 		 * Get api/organizations/{username}/users
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<User>} An Organization's users
 		 */
 		ApiOrganizations_usernameUsersGetByPageAndPer_page(username: string, page: number | null | undefined, per_page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<User>> {
@@ -1342,6 +1443,7 @@ export namespace MyNS {
 		 * This endpoint allows the client to delete a single Page object, specified by ID.
 		 * Delete api/pages/{id}
 		 * @param {number} id The ID of the page.
+		 *     Minimum: 1
 		 * @return {Page} successful
 		 */
 		ApiPages_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<Page> {
@@ -1353,6 +1455,7 @@ export namespace MyNS {
 		 * This endpoint allows the client to retrieve details for a single Page object, specified by ID.
 		 * Get api/pages/{id}
 		 * @param {number} id The ID of the page.
+		 *     Minimum: 1
 		 * @return {Page} successful
 		 */
 		ApiPages_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Page> {
@@ -1364,6 +1467,7 @@ export namespace MyNS {
 		 * This endpoint allows the client to retrieve details for a single Page object, specified by ID.
 		 * Put api/pages/{id}
 		 * @param {number} id The ID of the page.
+		 *     Minimum: 1
 		 * @return {Page} successful
 		 */
 		ApiPages_idPut(id: number, requestBody: Page, headersHandler?: () => HttpHeaders): Observable<Page> {
@@ -1378,7 +1482,9 @@ export namespace MyNS {
 		 * It supports pagination, each page will contain 30 articles by default.
 		 * Get api/podcast_episodes
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} username Using this parameter will retrieve episodes belonging to a specific podcast.
 		 * @return {Array<PodcastEpisodeIndex>} A List of Podcast episodes filtered by username
 		 */
@@ -1404,6 +1510,7 @@ export namespace MyNS {
 		 * * "Like"ing an Article will create a new "like" Reaction from the user for that Articles
 		 * * "Like"ing that Article a second time will return the previous "like"
 		 * Post api/reactions
+		 * @param {number} reactable_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} successful
 		 */
 		ApiReactionsPostByCategoryAndReactable_idAndReactable_type(category: ApiReactionsPostByCategoryAndReactable_idAndReactable_typeCategory, reactable_id: number, reactable_type: ApiReactionsPostByCategoryAndReactable_idAndReactable_typeReactable_type, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1416,6 +1523,7 @@ export namespace MyNS {
 		 * * "Like"ing an Article will create a new "like" Reaction from the user for that Articles
 		 * * "Like"ing that Article a second time will remove the "like" from the user
 		 * Post api/reactions/toggle
+		 * @param {number} reactable_id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} successful
 		 */
 		ApiReactionsTogglePostByCategoryAndReactable_idAndReactable_type(category: ApiReactionsPostByCategoryAndReactable_idAndReactable_typeCategory, reactable_id: number, reactable_type: ApiReactionsPostByCategoryAndReactable_idAndReactable_typeReactable_type, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1428,7 +1536,9 @@ export namespace MyNS {
 		 * It supports pagination, each page will contain `30` articles by default
 		 * Get api/readinglist
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<ArticleIndex>} A list of articles in the users readinglist
 		 */
 		ApiReadinglistGetByPageAndPer_page(page: number | null | undefined, per_page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<ArticleIndex>> {
@@ -1442,7 +1552,9 @@ export namespace MyNS {
 		 * It supports pagination, each page will contain 10 tags by default.
 		 * Get api/tags
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<Tag>} A List of all tags
 		 */
 		ApiTagsGetByPageAndPer_page(page: number | null | undefined, per_page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Tag>> {
@@ -1481,6 +1593,7 @@ export namespace MyNS {
 		 * in the UI, so if you want them to know about this, you must notify them.
 		 * Put api/users/{id}/suspend
 		 * @param {number} id The ID of the user to suspend.
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
 		ApiUsers_idSuspendPut(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1501,6 +1614,7 @@ export namespace MyNS {
 		 * request is completed on the server.
 		 * Put api/users/{id}/unpublish
 		 * @param {number} id The ID of the user to unpublish.
+		 *     Minimum: 1
 		 * @return {void} 
 		 */
 		ApiUsers_idUnpublishPut(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1514,7 +1628,9 @@ export namespace MyNS {
 		 * It supports pagination, each page will contain 24 articles by default.
 		 * Get api/videos
 		 * @param {number} page Pagination page
+		 *     Minimum: 1
 		 * @param {number} per_page Page size (the number of items to return per page). The default maximum value can be overridden by "API_PER_PAGE_MAX" environment variable.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<VideoArticle>} A List of all articles with videos
 		 */
 		ApiVideosGetByPageAndPer_page(page: number | null | undefined, per_page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<VideoArticle>> {
@@ -1525,6 +1641,8 @@ export namespace MyNS {
 	export enum ApiArticlesGetByPageAndPer_pageAndTagAndTagsAndTags_excludeAndUsernameAndStateAndTopAndCollection_idState { fresh = 'fresh', rising = 'rising', all = 'all' }
 
 	export interface ApiFollowersUsersGetByPageAndPer_pageAndSortReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** The follower's name */
@@ -1539,10 +1657,15 @@ export namespace MyNS {
 		/** user_follower by default */
 		type_of?: string | null;
 
-		/** The follower's user id */
+		/**
+		 * The follower's user id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id?: number | null;
 	}
 	export interface ApiFollowersUsersGetByPageAndPer_pageAndSortReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** The follower's name */
@@ -1557,7 +1680,10 @@ export namespace MyNS {
 		/** user_follower by default */
 		type_of: FormControl<string | null | undefined>,
 
-		/** The follower's user id */
+		/**
+		 * The follower's user id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateApiFollowersUsersGetByPageAndPer_pageAndSortReturnFormGroup() {

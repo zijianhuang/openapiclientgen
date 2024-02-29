@@ -144,8 +144,11 @@ export namespace MyNS {
 		 * Gets the list of annotations for a component for given time range
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the Application Insights component resource.
 		 * @param {string} start The start time to query from for annotations, cannot be older than 90 days from current date.
 		 * @param {string} end The end time to query for annotations.
@@ -159,8 +162,11 @@ export namespace MyNS {
 		 * Create an Annotation of an Application Insights component.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the Application Insights component resource.
 		 * @param {Annotation} requestBody Properties that need to be specified to create an annotation of a Application Insights component.
 		 * @return {Array<Annotation>} An object containing the annotation definition created by this PUT call.
@@ -173,8 +179,11 @@ export namespace MyNS {
 		 * Get the annotation for given id.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations/{annotationId}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the Application Insights component resource.
 		 * @param {string} annotationId The unique annotation ID. This is unique within a Application Insights component.
 		 * @return {Array<Annotation>} The Annotation object for this id.
@@ -187,8 +196,11 @@ export namespace MyNS {
 		 * Delete an Annotation of an Application Insights component.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/Annotations/{annotationId}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the Application Insights component resource.
 		 * @param {string} annotationId The unique annotation ID. This is unique within a Application Insights component.
 		 * @return {void} The annotation that was successfully deleted.

@@ -11,6 +11,7 @@ export namespace MyNS {
 		/**
 		 * Year of the current FRC season.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		current_season: number;
 
@@ -32,6 +33,7 @@ export namespace MyNS {
 		/**
 		 * Maximum FRC season year for valid queries.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		max_season: number;
 	}
@@ -40,6 +42,7 @@ export namespace MyNS {
 		/**
 		 * Year of the current FRC season.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		current_season: FormControl<number | null | undefined>,
 
@@ -52,6 +55,7 @@ export namespace MyNS {
 		/**
 		 * Maximum FRC season year for valid queries.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		max_season: FormControl<number | null | undefined>,
 	}
@@ -69,12 +73,14 @@ export namespace MyNS {
 		/**
 		 * Internal use - Latest application version available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		latest_app_version: number;
 
 		/**
 		 * Internal use - Minimum application version required to correctly connect and process data.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		min_app_version: number;
 	}
@@ -83,12 +89,14 @@ export namespace MyNS {
 		/**
 		 * Internal use - Latest application version available.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		latest_app_version: FormControl<number | null | undefined>,
 
 		/**
 		 * Internal use - Minimum application version required to correctly connect and process data.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		min_app_version: FormControl<number | null | undefined>,
 	}
@@ -105,6 +113,7 @@ export namespace MyNS {
 		/**
 		 * Type of award given. See https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/award_type.py#L6
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		award_type: number;
 
@@ -129,6 +138,7 @@ export namespace MyNS {
 		/**
 		 * The year this award was won.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: number;
 	}
@@ -137,6 +147,7 @@ export namespace MyNS {
 		/**
 		 * Type of award given. See https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/award_type.py#L6
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		award_type: FormControl<number | null | undefined>,
 
@@ -155,6 +166,7 @@ export namespace MyNS {
 		/**
 		 * The year this award was won.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: FormControl<number | null | undefined>,
 	}
@@ -219,6 +231,7 @@ export namespace MyNS {
 		/**
 		 * Year this district participated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: number;
 	}
@@ -245,6 +258,7 @@ export namespace MyNS {
 		/**
 		 * Year this district participated.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: FormControl<number | null | undefined>,
 	}
@@ -268,16 +282,21 @@ export namespace MyNS {
 		/**
 		 * Total district points for the team.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		point_total: number;
 
 		/**
 		 * Numerical rank of the team, 1 being top rank.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rank: number;
 
-		/** Any points added to a team as a result of the rookie bonus. */
+		/**
+		 * Any points added to a team as a result of the rookie bonus.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rookie_bonus?: number | null;
 
 		/**
@@ -293,16 +312,21 @@ export namespace MyNS {
 		/**
 		 * Total district points for the team.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		point_total: FormControl<number | null | undefined>,
 
 		/**
 		 * Numerical rank of the team, 1 being top rank.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rank: FormControl<number | null | undefined>,
 
-		/** Any points added to a team as a result of the rookie bonus. */
+		/**
+		 * Any points added to a team as a result of the rookie bonus.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rookie_bonus: FormControl<number | null | undefined>,
 
 		/**
@@ -326,12 +350,14 @@ export namespace MyNS {
 		/**
 		 * Points awarded for alliance selection.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		alliance_points: number;
 
 		/**
 		 * Points awarded for event awards.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		award_points: number;
 
@@ -344,6 +370,7 @@ export namespace MyNS {
 		/**
 		 * Points awarded for elimination match performance.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		elim_points: number;
 
@@ -356,12 +383,14 @@ export namespace MyNS {
 		/**
 		 * Points awarded for qualification match performance.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		qual_points: number;
 
 		/**
 		 * Total points awarded at this event.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 	}
@@ -370,12 +399,14 @@ export namespace MyNS {
 		/**
 		 * Points awarded for alliance selection.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		alliance_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Points awarded for event awards.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		award_points: FormControl<number | null | undefined>,
 
@@ -388,6 +419,7 @@ export namespace MyNS {
 		/**
 		 * Points awarded for elimination match performance.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		elim_points: FormControl<number | null | undefined>,
 
@@ -400,12 +432,14 @@ export namespace MyNS {
 		/**
 		 * Points awarded for qualification match performance.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		qual_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Total points awarded at this event.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -481,6 +515,8 @@ export namespace MyNS {
 		/** A Win-Loss-Tie record for a team, or an alliance. */
 		current_level_record?: WLT_Record;
 		level?: string | null;
+
+		/** Type: double */
 		playoff_average?: number | null;
 
 		/** A Win-Loss-Tie record for a team, or an alliance. */
@@ -489,6 +525,8 @@ export namespace MyNS {
 	}
 	export interface Elimination_AllianceStatusFormProperties {
 		level: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		playoff_average: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}
@@ -508,18 +546,21 @@ export namespace MyNS {
 		/**
 		 * Number of losses.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		losses: number;
 
 		/**
 		 * Number of ties.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ties: number;
 
 		/**
 		 * Number of wins.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		wins: number;
 	}
@@ -530,18 +571,21 @@ export namespace MyNS {
 		/**
 		 * Number of losses.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		losses: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of ties.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ties: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of wins.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		wins: FormControl<number | null | undefined>,
 	}
@@ -572,6 +616,7 @@ export namespace MyNS {
 		/**
 		 * Event end date in `yyyy-mm-dd` format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: Date;
 
@@ -584,6 +629,7 @@ export namespace MyNS {
 		/**
 		 * Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		event_type: number;
 
@@ -611,10 +657,16 @@ export namespace MyNS {
 		 */
 		key: string;
 
-		/** Latitude for the event address. */
+		/**
+		 * Latitude for the event address.
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** Longitude for the event address. */
+		/**
+		 * Longitude for the event address.
+		 * Type: double
+		 */
 		lng?: number | null;
 
 		/** Name of the location at the address for the event, eg. Blue Alliance High School. */
@@ -629,7 +681,10 @@ export namespace MyNS {
 		/** The TBA Event key that represents the event's parent. Used to link back to the event from a division event. It is also the inverse relation of `divison_keys`. */
 		parent_event_key?: string | null;
 
-		/** Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null. */
+		/**
+		 * Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playoff_type?: number | null;
 
 		/** String representation of the `playoff_type`, or null. */
@@ -644,6 +699,7 @@ export namespace MyNS {
 		/**
 		 * Event start date in `yyyy-mm-dd` format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: Date;
 
@@ -657,12 +713,16 @@ export namespace MyNS {
 		/** The event's website, if any. */
 		website?: string | null;
 
-		/** Week of the event relative to the first official season event, zero-indexed. Only valid for Regionals, Districts, and District Championships. Null otherwise. (Eg. A season with a week 0 'preseason' event does not count, and week 1 events will show 0 here. Seasons with a week 0.5 regional event will show week 0 for those event(s) and week 1 for week 1 events and so on.) */
+		/**
+		 * Week of the event relative to the first official season event, zero-indexed. Only valid for Regionals, Districts, and District Championships. Null otherwise. (Eg. A season with a week 0 'preseason' event does not count, and week 1 events will show 0 here. Seasons with a week 0.5 regional event will show week 0 for those event(s) and week 1 for week 1 events and so on.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		week?: number | null;
 
 		/**
 		 * Year the event data is for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: number;
 	}
@@ -680,6 +740,7 @@ export namespace MyNS {
 		/**
 		 * Event end date in `yyyy-mm-dd` format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
@@ -692,6 +753,7 @@ export namespace MyNS {
 		/**
 		 * Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		event_type: FormControl<number | null | undefined>,
 
@@ -719,10 +781,16 @@ export namespace MyNS {
 		 */
 		key: FormControl<string | null | undefined>,
 
-		/** Latitude for the event address. */
+		/**
+		 * Latitude for the event address.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Longitude for the event address. */
+		/**
+		 * Longitude for the event address.
+		 * Type: double
+		 */
 		lng: FormControl<number | null | undefined>,
 
 		/** Name of the location at the address for the event, eg. Blue Alliance High School. */
@@ -737,7 +805,10 @@ export namespace MyNS {
 		/** The TBA Event key that represents the event's parent. Used to link back to the event from a division event. It is also the inverse relation of `divison_keys`. */
 		parent_event_key: FormControl<string | null | undefined>,
 
-		/** Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null. */
+		/**
+		 * Playoff Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/playoff_type.py#L4, or null.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playoff_type: FormControl<number | null | undefined>,
 
 		/** String representation of the `playoff_type`, or null. */
@@ -752,6 +823,7 @@ export namespace MyNS {
 		/**
 		 * Event start date in `yyyy-mm-dd` format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: FormControl<Date | null | undefined>,
 
@@ -764,12 +836,16 @@ export namespace MyNS {
 		/** The event's website, if any. */
 		website: FormControl<string | null | undefined>,
 
-		/** Week of the event relative to the first official season event, zero-indexed. Only valid for Regionals, Districts, and District Championships. Null otherwise. (Eg. A season with a week 0 'preseason' event does not count, and week 1 events will show 0 here. Seasons with a week 0.5 regional event will show week 0 for those event(s) and week 1 for week 1 events and so on.) */
+		/**
+		 * Week of the event relative to the first official season event, zero-indexed. Only valid for Regionals, Districts, and District Championships. Null otherwise. (Eg. A season with a week 0 'preseason' event does not count, and week 1 events will show 0 here. Seasons with a week 0.5 regional event will show week 0 for those event(s) and week 1 for week 1 events and so on.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		week: FormControl<number | null | undefined>,
 
 		/**
 		 * Year the event data is for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: FormControl<number | null | undefined>,
 	}
@@ -893,30 +969,35 @@ export namespace MyNS {
 		/**
 		 * Points awarded for alliance selection
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		alliance_points: number;
 
 		/**
 		 * Points awarded for event awards.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		award_points: number;
 
 		/**
 		 * Points awarded for elimination match performance.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		elim_points: number;
 
 		/**
 		 * Points awarded for qualification match performance.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		qual_points: number;
 
 		/**
 		 * Total points awarded at this event.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: number;
 	}
@@ -925,30 +1006,35 @@ export namespace MyNS {
 		/**
 		 * Points awarded for alliance selection
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		alliance_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Points awarded for event awards.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		award_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Points awarded for elimination match performance.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		elim_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Points awarded for qualification match performance.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		qual_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Total points awarded at this event.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -965,9 +1051,13 @@ export namespace MyNS {
 
 	export interface Event_District_PointsTiebreakers {
 		highest_qual_scores?: Array<number>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		qual_wins?: number | null;
 	}
 	export interface Event_District_PointsTiebreakersFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		qual_wins: FormControl<number | null | undefined>,
 	}
 	export function CreateEvent_District_PointsTiebreakersFormGroup() {
@@ -1066,60 +1156,70 @@ export namespace MyNS {
 		/**
 		 * Average autonomous score.
 		 * Required
+		 * Type: float
 		 */
 		average_auto_score: number;
 
 		/**
 		 * Average boulder score.
 		 * Required
+		 * Type: float
 		 */
 		average_boulder_score: number;
 
 		/**
 		 * Average crossing score.
 		 * Required
+		 * Type: float
 		 */
 		average_crossing_score: number;
 
 		/**
 		 * Average foul score.
 		 * Required
+		 * Type: float
 		 */
 		average_foul_score: number;
 
 		/**
 		 * Average number of high goals scored.
 		 * Required
+		 * Type: float
 		 */
 		average_high_goals: number;
 
 		/**
 		 * Average number of low goals scored.
 		 * Required
+		 * Type: float
 		 */
 		average_low_goals: number;
 
 		/**
 		 * Average total score.
 		 * Required
+		 * Type: float
 		 */
 		average_score: number;
 
 		/**
 		 * Average tower score.
 		 * Required
+		 * Type: float
 		 */
 		average_tower_score: number;
 
 		/**
 		 * Average margin of victory.
 		 * Required
+		 * Type: float
 		 */
 		average_win_margin: number;
 
 		/**
 		 * Average winning score.
 		 * Required
+		 * Type: float
 		 */
 		average_win_score: number;
 
@@ -1160,60 +1260,70 @@ export namespace MyNS {
 		/**
 		 * Average autonomous score.
 		 * Required
+		 * Type: float
 		 */
 		average_auto_score: FormControl<number | null | undefined>,
 
 		/**
 		 * Average boulder score.
 		 * Required
+		 * Type: float
 		 */
 		average_boulder_score: FormControl<number | null | undefined>,
 
 		/**
 		 * Average crossing score.
 		 * Required
+		 * Type: float
 		 */
 		average_crossing_score: FormControl<number | null | undefined>,
 
 		/**
 		 * Average foul score.
 		 * Required
+		 * Type: float
 		 */
 		average_foul_score: FormControl<number | null | undefined>,
 
 		/**
 		 * Average number of high goals scored.
 		 * Required
+		 * Type: float
 		 */
 		average_high_goals: FormControl<number | null | undefined>,
 
 		/**
 		 * Average number of low goals scored.
 		 * Required
+		 * Type: float
 		 */
 		average_low_goals: FormControl<number | null | undefined>,
 
 		/**
 		 * Average total score.
 		 * Required
+		 * Type: float
 		 */
 		average_score: FormControl<number | null | undefined>,
 
 		/**
 		 * Average tower score.
 		 * Required
+		 * Type: float
 		 */
 		average_tower_score: FormControl<number | null | undefined>,
 
 		/**
 		 * Average margin of victory.
 		 * Required
+		 * Type: float
 		 */
 		average_win_margin: FormControl<number | null | undefined>,
 
 		/**
 		 * Average winning score.
 		 * Required
+		 * Type: float
 		 */
 		average_win_score: FormControl<number | null | undefined>,
 	}
@@ -1240,120 +1350,140 @@ export namespace MyNS {
 		/**
 		 * Average foul score.
 		 * Required
+		 * Type: float
 		 */
 		average_foul_score: number;
 
 		/**
 		 * Average fuel points scored.
 		 * Required
+		 * Type: float
 		 */
 		average_fuel_points: number;
 
 		/**
 		 * Average fuel points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_fuel_points_auto: number;
 
 		/**
 		 * Average fuel points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_fuel_points_teleop: number;
 
 		/**
 		 * Average points scored in the high goal.
 		 * Required
+		 * Type: float
 		 */
 		average_high_goals: number;
 
 		/**
 		 * Average points scored in the high goal during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_high_goals_auto: number;
 
 		/**
 		 * Average points scored in the high goal during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_high_goals_teleop: number;
 
 		/**
 		 * Average points scored in the low goal.
 		 * Required
+		 * Type: float
 		 */
 		average_low_goals: number;
 
 		/**
 		 * Average points scored in the low goal during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_low_goals_auto: number;
 
 		/**
 		 * Average points scored in the low goal during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_low_goals_teleop: number;
 
 		/**
 		 * Average mobility points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_mobility_points_auto: number;
 
 		/**
 		 * Average points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_points_auto: number;
 
 		/**
 		 * Average points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_points_teleop: number;
 
 		/**
 		 * Average rotor points scored.
 		 * Required
+		 * Type: float
 		 */
 		average_rotor_points: number;
 
 		/**
 		 * Average rotor points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_rotor_points_auto: number;
 
 		/**
 		 * Average rotor points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_rotor_points_teleop: number;
 
 		/**
 		 * Average score.
 		 * Required
+		 * Type: float
 		 */
 		average_score: number;
 
 		/**
 		 * Average takeoff points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_takeoff_points_teleop: number;
 
 		/**
 		 * Average margin of victory.
 		 * Required
+		 * Type: float
 		 */
 		average_win_margin: number;
 
 		/**
 		 * Average winning score.
 		 * Required
+		 * Type: float
 		 */
 		average_win_score: number;
 
@@ -1436,120 +1566,140 @@ export namespace MyNS {
 		/**
 		 * Average foul score.
 		 * Required
+		 * Type: float
 		 */
 		average_foul_score: FormControl<number | null | undefined>,
 
 		/**
 		 * Average fuel points scored.
 		 * Required
+		 * Type: float
 		 */
 		average_fuel_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Average fuel points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_fuel_points_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average fuel points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_fuel_points_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average points scored in the high goal.
 		 * Required
+		 * Type: float
 		 */
 		average_high_goals: FormControl<number | null | undefined>,
 
 		/**
 		 * Average points scored in the high goal during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_high_goals_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average points scored in the high goal during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_high_goals_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average points scored in the low goal.
 		 * Required
+		 * Type: float
 		 */
 		average_low_goals: FormControl<number | null | undefined>,
 
 		/**
 		 * Average points scored in the low goal during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_low_goals_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average points scored in the low goal during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_low_goals_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average mobility points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_mobility_points_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_points_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_points_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average rotor points scored.
 		 * Required
+		 * Type: float
 		 */
 		average_rotor_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Average rotor points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_rotor_points_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average rotor points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_rotor_points_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average score.
 		 * Required
+		 * Type: float
 		 */
 		average_score: FormControl<number | null | undefined>,
 
 		/**
 		 * Average takeoff points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_takeoff_points_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average margin of victory.
 		 * Required
+		 * Type: float
 		 */
 		average_win_margin: FormControl<number | null | undefined>,
 
 		/**
 		 * Average winning score.
 		 * Required
+		 * Type: float
 		 */
 		average_win_score: FormControl<number | null | undefined>,
 	}
@@ -1592,102 +1742,119 @@ export namespace MyNS {
 		/**
 		 * Average number of boost power up scored (out of 3).
 		 * Required
+		 * Type: float
 		 */
 		average_boost_played: number;
 
 		/**
 		 * Average endgame points.
 		 * Required
+		 * Type: float
 		 */
 		average_endgame_points: number;
 
 		/**
 		 * Average number of force power up scored (out of 3).
 		 * Required
+		 * Type: float
 		 */
 		average_force_played: number;
 
 		/**
 		 * Average foul score.
 		 * Required
+		 * Type: float
 		 */
 		average_foul_score: number;
 
 		/**
 		 * Average points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_points_auto: number;
 
 		/**
 		 * Average points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_points_teleop: number;
 
 		/**
 		 * Average mobility points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_run_points_auto: number;
 
 		/**
 		 * Average scale ownership points scored.
 		 * Required
+		 * Type: float
 		 */
 		average_scale_ownership_points: number;
 
 		/**
 		 * Average scale ownership points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_scale_ownership_points_auto: number;
 
 		/**
 		 * Average scale ownership points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_scale_ownership_points_teleop: number;
 
 		/**
 		 * Average score.
 		 * Required
+		 * Type: float
 		 */
 		average_score: number;
 
 		/**
 		 * Average switch ownership points scored.
 		 * Required
+		 * Type: float
 		 */
 		average_switch_ownership_points: number;
 
 		/**
 		 * Average switch ownership points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_switch_ownership_points_auto: number;
 
 		/**
 		 * Average switch ownership points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_switch_ownership_points_teleop: number;
 
 		/**
 		 * Average value points scored.
 		 * Required
+		 * Type: float
 		 */
 		average_vault_points: number;
 
 		/**
 		 * Average margin of victory.
 		 * Required
+		 * Type: float
 		 */
 		average_win_margin: number;
 
 		/**
 		 * Average winning score.
 		 * Required
+		 * Type: float
 		 */
 		average_win_score: number;
 
@@ -1736,18 +1903,21 @@ export namespace MyNS {
 		/**
 		 * Average scale neutral percentage.
 		 * Required
+		 * Type: float
 		 */
 		scale_neutral_percentage: number;
 
 		/**
 		 * Average scale neutral percentage during auto.
 		 * Required
+		 * Type: float
 		 */
 		scale_neutral_percentage_auto: number;
 
 		/**
 		 * Average scale neutral percentage during teleop.
 		 * Required
+		 * Type: float
 		 */
 		scale_neutral_percentage_teleop: number;
 
@@ -1766,42 +1936,49 @@ export namespace MyNS {
 		/**
 		 * Average opposing switch denail percentage for the winning alliance during teleop.
 		 * Required
+		 * Type: float
 		 */
 		winning_opp_switch_denial_percentage_teleop: number;
 
 		/**
 		 * Average own switch ownership percentage for the winning alliance.
 		 * Required
+		 * Type: float
 		 */
 		winning_own_switch_ownership_percentage: number;
 
 		/**
 		 * Average own switch ownership percentage for the winning alliance during auto.
 		 * Required
+		 * Type: float
 		 */
 		winning_own_switch_ownership_percentage_auto: number;
 
 		/**
 		 * Average own switch ownership percentage for the winning alliance during teleop.
 		 * Required
+		 * Type: float
 		 */
 		winning_own_switch_ownership_percentage_teleop: number;
 
 		/**
 		 * Average scale ownership percentage for the winning alliance.
 		 * Required
+		 * Type: float
 		 */
 		winning_scale_ownership_percentage: number;
 
 		/**
 		 * Average scale ownership percentage for the winning alliance during auto.
 		 * Required
+		 * Type: float
 		 */
 		winning_scale_ownership_percentage_auto: number;
 
 		/**
 		 * Average scale ownership percentage for the winning alliance during teleop.
 		 * Required
+		 * Type: float
 		 */
 		winning_scale_ownership_percentage_teleop: number;
 	}
@@ -1812,162 +1989,189 @@ export namespace MyNS {
 		/**
 		 * Average number of boost power up scored (out of 3).
 		 * Required
+		 * Type: float
 		 */
 		average_boost_played: FormControl<number | null | undefined>,
 
 		/**
 		 * Average endgame points.
 		 * Required
+		 * Type: float
 		 */
 		average_endgame_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Average number of force power up scored (out of 3).
 		 * Required
+		 * Type: float
 		 */
 		average_force_played: FormControl<number | null | undefined>,
 
 		/**
 		 * Average foul score.
 		 * Required
+		 * Type: float
 		 */
 		average_foul_score: FormControl<number | null | undefined>,
 
 		/**
 		 * Average points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_points_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_points_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average mobility points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_run_points_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average scale ownership points scored.
 		 * Required
+		 * Type: float
 		 */
 		average_scale_ownership_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Average scale ownership points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_scale_ownership_points_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average scale ownership points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_scale_ownership_points_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average score.
 		 * Required
+		 * Type: float
 		 */
 		average_score: FormControl<number | null | undefined>,
 
 		/**
 		 * Average switch ownership points scored.
 		 * Required
+		 * Type: float
 		 */
 		average_switch_ownership_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Average switch ownership points scored during auto.
 		 * Required
+		 * Type: float
 		 */
 		average_switch_ownership_points_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average switch ownership points scored during teleop.
 		 * Required
+		 * Type: float
 		 */
 		average_switch_ownership_points_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average value points scored.
 		 * Required
+		 * Type: float
 		 */
 		average_vault_points: FormControl<number | null | undefined>,
 
 		/**
 		 * Average margin of victory.
 		 * Required
+		 * Type: float
 		 */
 		average_win_margin: FormControl<number | null | undefined>,
 
 		/**
 		 * Average winning score.
 		 * Required
+		 * Type: float
 		 */
 		average_win_score: FormControl<number | null | undefined>,
 
 		/**
 		 * Average scale neutral percentage.
 		 * Required
+		 * Type: float
 		 */
 		scale_neutral_percentage: FormControl<number | null | undefined>,
 
 		/**
 		 * Average scale neutral percentage during auto.
 		 * Required
+		 * Type: float
 		 */
 		scale_neutral_percentage_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average scale neutral percentage during teleop.
 		 * Required
+		 * Type: float
 		 */
 		scale_neutral_percentage_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average opposing switch denail percentage for the winning alliance during teleop.
 		 * Required
+		 * Type: float
 		 */
 		winning_opp_switch_denial_percentage_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average own switch ownership percentage for the winning alliance.
 		 * Required
+		 * Type: float
 		 */
 		winning_own_switch_ownership_percentage: FormControl<number | null | undefined>,
 
 		/**
 		 * Average own switch ownership percentage for the winning alliance during auto.
 		 * Required
+		 * Type: float
 		 */
 		winning_own_switch_ownership_percentage_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average own switch ownership percentage for the winning alliance during teleop.
 		 * Required
+		 * Type: float
 		 */
 		winning_own_switch_ownership_percentage_teleop: FormControl<number | null | undefined>,
 
 		/**
 		 * Average scale ownership percentage for the winning alliance.
 		 * Required
+		 * Type: float
 		 */
 		winning_scale_ownership_percentage: FormControl<number | null | undefined>,
 
 		/**
 		 * Average scale ownership percentage for the winning alliance during auto.
 		 * Required
+		 * Type: float
 		 */
 		winning_scale_ownership_percentage_auto: FormControl<number | null | undefined>,
 
 		/**
 		 * Average scale ownership percentage for the winning alliance during teleop.
 		 * Required
+		 * Type: float
 		 */
 		winning_scale_ownership_percentage_teleop: FormControl<number | null | undefined>,
 	}
@@ -2089,6 +2293,7 @@ export namespace MyNS {
 		/**
 		 * Integer expressing the number of digits of precision in the number provided in `sort_orders`.
 		 * Required
+		 * Type: double
 		 */
 		precision: number;
 	}
@@ -2103,6 +2308,7 @@ export namespace MyNS {
 		/**
 		 * Integer expressing the number of digits of precision in the number provided in `sort_orders`.
 		 * Required
+		 * Type: double
 		 */
 		precision: FormControl<number | null | undefined>,
 	}
@@ -2119,6 +2325,7 @@ export namespace MyNS {
 		/**
 		 * Number of times disqualified.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dq: number;
 
@@ -2128,15 +2335,20 @@ export namespace MyNS {
 		/**
 		 * Number of matches played by this team.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		matches_played: number;
 
-		/** The average match score during qualifications. Year specific. May be null if not relevant for a given year. */
+		/**
+		 * The average match score during qualifications. Year specific. May be null if not relevant for a given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		qual_average?: number | null;
 
 		/**
 		 * The team's rank at the event as provided by FIRST.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rank: number;
 
@@ -2160,21 +2372,27 @@ export namespace MyNS {
 		/**
 		 * Number of times disqualified.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		dq: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of matches played by this team.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		matches_played: FormControl<number | null | undefined>,
 
-		/** The average match score during qualifications. Year specific. May be null if not relevant for a given year. */
+		/**
+		 * The average match score during qualifications. Year specific. May be null if not relevant for a given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		qual_average: FormControl<number | null | undefined>,
 
 		/**
 		 * The team's rank at the event as provided by FIRST.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		rank: FormControl<number | null | undefined>,
 
@@ -2206,6 +2424,7 @@ export namespace MyNS {
 		/**
 		 * Integer expressing the number of digits of precision in the number provided in `sort_orders`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precision: number;
 	}
@@ -2220,6 +2439,7 @@ export namespace MyNS {
 		/**
 		 * Integer expressing the number of digits of precision in the number provided in `sort_orders`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		precision: FormControl<number | null | undefined>,
 	}
@@ -2243,6 +2463,7 @@ export namespace MyNS {
 		/**
 		 * Event end date in `yyyy-mm-dd` format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: Date;
 
@@ -2255,6 +2476,7 @@ export namespace MyNS {
 		/**
 		 * Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		event_type: number;
 
@@ -2273,6 +2495,7 @@ export namespace MyNS {
 		/**
 		 * Event start date in `yyyy-mm-dd` format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: Date;
 
@@ -2282,6 +2505,7 @@ export namespace MyNS {
 		/**
 		 * Year the event data is for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: number;
 	}
@@ -2296,6 +2520,7 @@ export namespace MyNS {
 		/**
 		 * Event end date in `yyyy-mm-dd` format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		end_date: FormControl<Date | null | undefined>,
 
@@ -2308,6 +2533,7 @@ export namespace MyNS {
 		/**
 		 * Event Type, as defined here: https://github.com/the-blue-alliance/the-blue-alliance/blob/master/consts/event_type.py#L2
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		event_type: FormControl<number | null | undefined>,
 
@@ -2326,6 +2552,7 @@ export namespace MyNS {
 		/**
 		 * Event start date in `yyyy-mm-dd` format.
 		 * Required
+		 * Type: DateOnly
 		 */
 		start_date: FormControl<Date | null | undefined>,
 
@@ -2335,6 +2562,7 @@ export namespace MyNS {
 		/**
 		 * Year the event data is for.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: FormControl<number | null | undefined>,
 	}
@@ -2356,8 +2584,11 @@ export namespace MyNS {
 
 	export interface Match {
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time. */
-		actual_time?: number | null;
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		actual_time?: string | null;
 
 		/** A list of alliances, the teams on the alliances, and their score. */
 		alliances?: MatchAlliances;
@@ -2383,14 +2614,21 @@ export namespace MyNS {
 		/**
 		 * The match number of the match in the competition level.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		match_number: number;
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) when the match result was posted. */
-		post_result_time?: number | null;
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) when the match result was posted.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		post_result_time?: string | null;
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time. */
-		predicted_time?: number | null;
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predicted_time?: string | null;
 
 		/** Score breakdown for auto, teleop, etc. points. Varies from year to year. May be null. */
 		score_breakdown?: string | null;
@@ -2398,11 +2636,15 @@ export namespace MyNS {
 		/**
 		 * The set number in a series of matches where more than one match is required in the match series.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		set_number: number;
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule. */
-		time?: number | null;
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		time?: string | null;
 
 		/** Array of video objects associated with this match. */
 		MatchVideos?: Array<MatchVideos>;
@@ -2412,8 +2654,11 @@ export namespace MyNS {
 	}
 	export interface MatchFormProperties {
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time. */
-		actual_time: FormControl<number | null | undefined>,
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		actual_time: FormControl<string | null | undefined>,
 
 		/**
 		 * The competition level the match was played at.
@@ -2436,14 +2681,21 @@ export namespace MyNS {
 		/**
 		 * The match number of the match in the competition level.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		match_number: FormControl<number | null | undefined>,
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) when the match result was posted. */
-		post_result_time: FormControl<number | null | undefined>,
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) when the match result was posted.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		post_result_time: FormControl<string | null | undefined>,
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time. */
-		predicted_time: FormControl<number | null | undefined>,
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predicted_time: FormControl<string | null | undefined>,
 
 		/** Score breakdown for auto, teleop, etc. points. Varies from year to year. May be null. */
 		score_breakdown: FormControl<string | null | undefined>,
@@ -2451,27 +2703,31 @@ export namespace MyNS {
 		/**
 		 * The set number in a series of matches where more than one match is required in the match series.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		set_number: FormControl<number | null | undefined>,
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule. */
-		time: FormControl<number | null | undefined>,
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		time: FormControl<string | null | undefined>,
 
 		/** The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie. */
 		winning_alliance: FormControl<MatchWinning_alliance | null | undefined>,
 	}
 	export function CreateMatchFormGroup() {
 		return new FormGroup<MatchFormProperties>({
-			actual_time: new FormControl<number | null | undefined>(undefined),
+			actual_time: new FormControl<string | null | undefined>(undefined),
 			comp_level: new FormControl<MatchComp_level | null | undefined>(undefined, [Validators.required]),
 			event_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			match_number: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			post_result_time: new FormControl<number | null | undefined>(undefined),
-			predicted_time: new FormControl<number | null | undefined>(undefined),
+			post_result_time: new FormControl<string | null | undefined>(undefined),
+			predicted_time: new FormControl<string | null | undefined>(undefined),
 			score_breakdown: new FormControl<string | null | undefined>(undefined),
 			set_number: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			time: new FormControl<number | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
 			winning_alliance: new FormControl<MatchWinning_alliance | null | undefined>(undefined),
 		});
 
@@ -2497,6 +2753,7 @@ export namespace MyNS {
 		/**
 		 * Score for this alliance. Will be null or -1 for an unplayed match.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		score: number;
 
@@ -2511,6 +2768,7 @@ export namespace MyNS {
 		/**
 		 * Score for this alliance. Will be null or -1 for an unplayed match.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		score: FormControl<number | null | undefined>,
 	}
@@ -2554,6 +2812,8 @@ export namespace MyNS {
 	export interface Match_Score_Breakdown_2015 {
 		blue?: Match_Score_Breakdown_2015_Alliance;
 		coopertition?: Match_Score_Breakdown_2015Coopertition | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		coopertition_points?: number | null;
 		red?: Match_Score_Breakdown_2015_Alliance;
 	}
@@ -2561,6 +2821,8 @@ export namespace MyNS {
 	/** See the 2015 FMS API documentation for a description of each value */
 	export interface Match_Score_Breakdown_2015FormProperties {
 		coopertition: FormControl<Match_Score_Breakdown_2015Coopertition | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		coopertition_points: FormControl<number | null | undefined>,
 	}
 	export function CreateMatch_Score_Breakdown_2015FormGroup() {
@@ -2572,53 +2834,133 @@ export namespace MyNS {
 	}
 
 	export interface Match_Score_Breakdown_2015_Alliance {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjust_points?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		auto_points?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level1?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level2?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level3?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level4?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level5?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level6?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_points?: number | null;
 		container_set?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foul_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foul_points?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		litter_count_container?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		litter_count_landfill?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		litter_count_unprocessed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		litter_points?: number | null;
 		robot_set?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleop_points?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_points?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tote_count_far?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tote_count_near?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tote_points?: number | null;
 		tote_set?: boolean | null;
 		tote_stack?: boolean | null;
 	}
 	export interface Match_Score_Breakdown_2015_AllianceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjust_points: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		auto_points: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level1: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level2: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level3: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level4: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level5: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_count_level6: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		container_points: FormControl<number | null | undefined>,
 		container_set: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foul_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foul_points: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		litter_count_container: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		litter_count_landfill: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		litter_count_unprocessed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		litter_points: FormControl<number | null | undefined>,
 		robot_set: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleop_points: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_points: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tote_count_far: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tote_count_near: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		tote_points: FormControl<number | null | undefined>,
 		tote_set: FormControl<boolean | null | undefined>,
 		tote_stack: FormControl<boolean | null | undefined>,
@@ -2672,80 +3014,188 @@ export namespace MyNS {
 	}
 
 	export interface Match_Score_Breakdown_2016_Alliance {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoBoulderPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoBouldersHigh?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoBouldersLow?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCrossingPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoReachPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		breachPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		capturePoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position1crossings?: number | null;
 		position2?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position2crossings?: number | null;
 		position3?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position3crossings?: number | null;
 		position4?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position4crossings?: number | null;
 		position5?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position5crossings?: number | null;
 		robot1Auto?: Match_Score_Breakdown_2016_AllianceRobot1Auto | null;
 		robot2Auto?: Match_Score_Breakdown_2016_AllianceRobot1Auto | null;
 		robot3Auto?: Match_Score_Breakdown_2016_AllianceRobot1Auto | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopBoulderPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopBouldersHigh?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopBouldersLow?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopChallengePoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCrossingPoints?: number | null;
 		teleopDefensesBreached?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopScalePoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopTowerCaptured?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		towerEndStrength?: number | null;
 		towerFaceA?: string | null;
 		towerFaceB?: string | null;
 		towerFaceC?: string | null;
 	}
 	export interface Match_Score_Breakdown_2016_AllianceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoBoulderPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoBouldersHigh: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoBouldersLow: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCrossingPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoReachPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		breachPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		capturePoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position1crossings: FormControl<number | null | undefined>,
 		position2: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position2crossings: FormControl<number | null | undefined>,
 		position3: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position3crossings: FormControl<number | null | undefined>,
 		position4: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position4crossings: FormControl<number | null | undefined>,
 		position5: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position5crossings: FormControl<number | null | undefined>,
 		robot1Auto: FormControl<Match_Score_Breakdown_2016_AllianceRobot1Auto | null | undefined>,
 		robot2Auto: FormControl<Match_Score_Breakdown_2016_AllianceRobot1Auto | null | undefined>,
 		robot3Auto: FormControl<Match_Score_Breakdown_2016_AllianceRobot1Auto | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopBoulderPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopBouldersHigh: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopBouldersLow: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopChallengePoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCrossingPoints: FormControl<number | null | undefined>,
 		teleopDefensesBreached: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopScalePoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopTowerCaptured: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		towerEndStrength: FormControl<number | null | undefined>,
 		towerFaceA: FormControl<string | null | undefined>,
 		towerFaceB: FormControl<string | null | undefined>,
@@ -2814,15 +3264,35 @@ export namespace MyNS {
 	}
 
 	export interface Match_Score_Breakdown_2017_Alliance {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoFuelHigh?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoFuelLow?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoFuelPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoMobilityPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoRotorPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		kPaBonusPoints?: number | null;
 		kPaRankingPointAchieved?: boolean | null;
 		robot1Auto?: Match_Score_Breakdown_2017_AllianceRobot1Auto | null;
@@ -2834,30 +3304,68 @@ export namespace MyNS {
 		rotor2Engaged?: boolean | null;
 		rotor3Engaged?: boolean | null;
 		rotor4Engaged?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rotorBonusPoints?: number | null;
 		rotorRankingPointAchieved?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopFuelHigh?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopFuelLow?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopFuelPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopRotorPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopTakeoffPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints?: number | null;
 		touchpadFar?: string | null;
 		touchpadMiddle?: string | null;
 		touchpadNear?: string | null;
 	}
 	export interface Match_Score_Breakdown_2017_AllianceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoFuelHigh: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoFuelLow: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoFuelPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoMobilityPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoRotorPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		kPaBonusPoints: FormControl<number | null | undefined>,
 		kPaRankingPointAchieved: FormControl<boolean | null | undefined>,
 		robot1Auto: FormControl<Match_Score_Breakdown_2017_AllianceRobot1Auto | null | undefined>,
@@ -2869,15 +3377,33 @@ export namespace MyNS {
 		rotor2Engaged: FormControl<boolean | null | undefined>,
 		rotor3Engaged: FormControl<boolean | null | undefined>,
 		rotor4Engaged: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rotorBonusPoints: FormControl<number | null | undefined>,
 		rotorRankingPointAchieved: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopFuelHigh: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopFuelLow: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopFuelPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopRotorPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopTakeoffPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints: FormControl<number | null | undefined>,
 		touchpadFar: FormControl<string | null | undefined>,
 		touchpadMiddle: FormControl<string | null | undefined>,
@@ -2941,85 +3467,193 @@ export namespace MyNS {
 	}
 
 	export interface Match_Score_Breakdown_2018_Alliance {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoOwnershipPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints?: number | null;
 		autoQuestRankingPoint?: boolean | null;
 		autoRobot1?: string | null;
 		autoRobot2?: string | null;
 		autoRobot3?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoRunPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoScaleOwnershipSec?: number | null;
 		autoSwitchAtZero?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoSwitchOwnershipSec?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endgamePoints?: number | null;
 		endgameRobot1?: string | null;
 		endgameRobot2?: string | null;
 		endgameRobot3?: string | null;
 		faceTheBossRankingPoint?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rp?: number | null;
 
 		/** Unofficial TBA-computed value of the FMS provided GameData given to the alliance teams at the start of the match. 3 Character String containing `L` and `R` only. The first character represents the near switch, the 2nd the scale, and the 3rd the far, opposing, switch from the alliance's perspective. An `L` in a position indicates the platform on the left will be lit for the alliance while an `R` will indicate the right platform will be lit for the alliance. See also [WPI Screen Steps](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details). */
 		tba_gameData?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopOwnershipPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopScaleBoostSec?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopScaleForceSec?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopScaleOwnershipSec?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopSwitchBoostSec?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopSwitchForceSec?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopSwitchOwnershipSec?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultBoostPlayed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultBoostTotal?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultForcePlayed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultForceTotal?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultLevitatePlayed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultLevitateTotal?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultPoints?: number | null;
 	}
 	export interface Match_Score_Breakdown_2018_AllianceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoOwnershipPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints: FormControl<number | null | undefined>,
 		autoQuestRankingPoint: FormControl<boolean | null | undefined>,
 		autoRobot1: FormControl<string | null | undefined>,
 		autoRobot2: FormControl<string | null | undefined>,
 		autoRobot3: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoRunPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoScaleOwnershipSec: FormControl<number | null | undefined>,
 		autoSwitchAtZero: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoSwitchOwnershipSec: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endgamePoints: FormControl<number | null | undefined>,
 		endgameRobot1: FormControl<string | null | undefined>,
 		endgameRobot2: FormControl<string | null | undefined>,
 		endgameRobot3: FormControl<string | null | undefined>,
 		faceTheBossRankingPoint: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rp: FormControl<number | null | undefined>,
 
 		/** Unofficial TBA-computed value of the FMS provided GameData given to the alliance teams at the start of the match. 3 Character String containing `L` and `R` only. The first character represents the near switch, the 2nd the scale, and the 3rd the far, opposing, switch from the alliance's perspective. An `L` in a position indicates the platform on the left will be lit for the alliance while an `R` will indicate the right platform will be lit for the alliance. See also [WPI Screen Steps](https://wpilib.screenstepslive.com/s/currentCS/m/getting_started/l/826278-2018-game-data-details). */
 		tba_gameData: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopOwnershipPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopScaleBoostSec: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopScaleForceSec: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopScaleOwnershipSec: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopSwitchBoostSec: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopSwitchForceSec: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopSwitchOwnershipSec: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultBoostPlayed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultBoostTotal: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultForcePlayed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultForceTotal: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultLevitatePlayed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultLevitateTotal: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		vaultPoints: FormControl<number | null | undefined>,
 	}
 	export function CreateMatch_Score_Breakdown_2018_AllianceFormGroup() {
@@ -3082,7 +3716,11 @@ export namespace MyNS {
 	}
 
 	export interface Match_Score_Breakdown_2019_Alliance {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints?: number | null;
 		bay1?: string | null;
 		bay2?: string | null;
@@ -3092,6 +3730,8 @@ export namespace MyNS {
 		bay6?: string | null;
 		bay7?: string | null;
 		bay8?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cargoPoints?: number | null;
 		completeRocketRankingPoint?: boolean | null;
 		completedRocketFar?: boolean | null;
@@ -3099,13 +3739,21 @@ export namespace MyNS {
 		endgameRobot1?: string | null;
 		endgameRobot2?: string | null;
 		endgameRobot3?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		habClimbPoints?: number | null;
 		habDockingRankingPoint?: boolean | null;
 		habLineRobot1?: string | null;
 		habLineRobot2?: string | null;
 		habLineRobot3?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hatchPanelPoints?: number | null;
 		lowLeftRocketFar?: string | null;
 		lowLeftRocketNear?: string | null;
@@ -3124,18 +3772,32 @@ export namespace MyNS {
 		preMatchLevelRobot1?: string | null;
 		preMatchLevelRobot2?: string | null;
 		preMatchLevelRobot3?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rp?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sandStormBonusPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints?: number | null;
 		topLeftRocketFar?: string | null;
 		topLeftRocketNear?: string | null;
 		topRightRocketFar?: string | null;
 		topRightRocketNear?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints?: number | null;
 	}
 	export interface Match_Score_Breakdown_2019_AllianceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints: FormControl<number | null | undefined>,
 		bay1: FormControl<string | null | undefined>,
 		bay2: FormControl<string | null | undefined>,
@@ -3145,6 +3807,8 @@ export namespace MyNS {
 		bay6: FormControl<string | null | undefined>,
 		bay7: FormControl<string | null | undefined>,
 		bay8: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		cargoPoints: FormControl<number | null | undefined>,
 		completeRocketRankingPoint: FormControl<boolean | null | undefined>,
 		completedRocketFar: FormControl<boolean | null | undefined>,
@@ -3152,13 +3816,21 @@ export namespace MyNS {
 		endgameRobot1: FormControl<string | null | undefined>,
 		endgameRobot2: FormControl<string | null | undefined>,
 		endgameRobot3: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		habClimbPoints: FormControl<number | null | undefined>,
 		habDockingRankingPoint: FormControl<boolean | null | undefined>,
 		habLineRobot1: FormControl<string | null | undefined>,
 		habLineRobot2: FormControl<string | null | undefined>,
 		habLineRobot3: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hatchPanelPoints: FormControl<number | null | undefined>,
 		lowLeftRocketFar: FormControl<string | null | undefined>,
 		lowLeftRocketNear: FormControl<string | null | undefined>,
@@ -3177,14 +3849,24 @@ export namespace MyNS {
 		preMatchLevelRobot1: FormControl<string | null | undefined>,
 		preMatchLevelRobot2: FormControl<string | null | undefined>,
 		preMatchLevelRobot3: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rp: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sandStormBonusPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints: FormControl<number | null | undefined>,
 		topLeftRocketFar: FormControl<string | null | undefined>,
 		topLeftRocketNear: FormControl<string | null | undefined>,
 		topRightRocketFar: FormControl<string | null | undefined>,
 		topRightRocketNear: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints: FormControl<number | null | undefined>,
 	}
 	export function CreateMatch_Score_Breakdown_2019_AllianceFormGroup() {
@@ -3261,24 +3943,48 @@ export namespace MyNS {
 	}
 
 	export interface Match_Score_Breakdown_2020_Alliance {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCellPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCellsBottom?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCellsInner?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCellsOuter?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoInitLinePoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		controlPanelPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endgamePoints?: number | null;
 		endgameRobot1?: string | null;
 		endgameRobot2?: string | null;
 		endgameRobot3?: string | null;
 		endgameRungIsLevel?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints?: number | null;
 		initLineRobot1?: string | null;
 		initLineRobot2?: string | null;
 		initLineRobot3?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rp?: number | null;
 		shieldEnergizedRankingPoint?: boolean | null;
 		shieldOperationalRankingPoint?: boolean | null;
@@ -3287,38 +3993,79 @@ export namespace MyNS {
 		stage3Activated?: boolean | null;
 		stage3TargetColor?: string | null;
 
-		/** Unofficial TBA-computed value that counts the number of robots who were hanging at the end of the match. */
+		/**
+		 * Unofficial TBA-computed value that counts the number of robots who were hanging at the end of the match.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tba_numRobotsHanging?: number | null;
 
 		/** Unofficial TBA-computed value that indicates whether the shieldEnergizedRankingPoint was earned normally or awarded due to a foul. */
 		tba_shieldEnergizedRankingPointFromFoul?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCellPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCellsBottom?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCellsInner?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCellsOuter?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints?: number | null;
 	}
 	export interface Match_Score_Breakdown_2020_AllianceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCellPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCellsBottom: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCellsInner: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCellsOuter: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoInitLinePoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		controlPanelPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endgamePoints: FormControl<number | null | undefined>,
 		endgameRobot1: FormControl<string | null | undefined>,
 		endgameRobot2: FormControl<string | null | undefined>,
 		endgameRobot3: FormControl<string | null | undefined>,
 		endgameRungIsLevel: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints: FormControl<number | null | undefined>,
 		initLineRobot1: FormControl<string | null | undefined>,
 		initLineRobot2: FormControl<string | null | undefined>,
 		initLineRobot3: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rp: FormControl<number | null | undefined>,
 		shieldEnergizedRankingPoint: FormControl<boolean | null | undefined>,
 		shieldOperationalRankingPoint: FormControl<boolean | null | undefined>,
@@ -3327,17 +4074,34 @@ export namespace MyNS {
 		stage3Activated: FormControl<boolean | null | undefined>,
 		stage3TargetColor: FormControl<string | null | undefined>,
 
-		/** Unofficial TBA-computed value that counts the number of robots who were hanging at the end of the match. */
+		/**
+		 * Unofficial TBA-computed value that counts the number of robots who were hanging at the end of the match.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tba_numRobotsHanging: FormControl<number | null | undefined>,
 
 		/** Unofficial TBA-computed value that indicates whether the shieldEnergizedRankingPoint was earned normally or awarded due to a foul. */
 		tba_shieldEnergizedRankingPointFromFoul: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCellPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCellsBottom: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCellsInner: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCellsOuter: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints: FormControl<number | null | undefined>,
 	}
 	export function CreateMatch_Score_Breakdown_2020_AllianceFormGroup() {
@@ -3397,87 +4161,211 @@ export namespace MyNS {
 	}
 
 	export interface Match_Score_Breakdown_2022_Alliance {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoLowerBlue?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoLowerFar?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoLowerNear?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoLowerRed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoTotal?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoUpperBlue?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoUpperFar?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoUpperNear?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoUpperRed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoTaxiPoints?: number | null;
 		cargoBonusRankingPoint?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endgamePoints?: number | null;
 		endgameRobot1?: Match_Score_Breakdown_2022_AllianceEndgameRobot1 | null;
 		endgameRobot2?: Match_Score_Breakdown_2022_AllianceEndgameRobot1 | null;
 		endgameRobot3?: Match_Score_Breakdown_2022_AllianceEndgameRobot1 | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints?: number | null;
 		hangarBonusRankingPoint?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		matchCargoTotal?: number | null;
 		quintetAchieved?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rp?: number | null;
 		taxiRobot1?: Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null;
 		taxiRobot2?: Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null;
 		taxiRobot3?: Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoLowerBlue?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoLowerFar?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoLowerNear?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoLowerRed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoTotal?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoUpperBlue?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoUpperFar?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoUpperNear?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoUpperRed?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints?: number | null;
 	}
 	export interface Match_Score_Breakdown_2022_AllianceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoLowerBlue: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoLowerFar: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoLowerNear: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoLowerRed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoTotal: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoUpperBlue: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoUpperFar: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoUpperNear: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoCargoUpperRed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoTaxiPoints: FormControl<number | null | undefined>,
 		cargoBonusRankingPoint: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endgamePoints: FormControl<number | null | undefined>,
 		endgameRobot1: FormControl<Match_Score_Breakdown_2022_AllianceEndgameRobot1 | null | undefined>,
 		endgameRobot2: FormControl<Match_Score_Breakdown_2022_AllianceEndgameRobot1 | null | undefined>,
 		endgameRobot3: FormControl<Match_Score_Breakdown_2022_AllianceEndgameRobot1 | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints: FormControl<number | null | undefined>,
 		hangarBonusRankingPoint: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		matchCargoTotal: FormControl<number | null | undefined>,
 		quintetAchieved: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rp: FormControl<number | null | undefined>,
 		taxiRobot1: FormControl<Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null | undefined>,
 		taxiRobot2: FormControl<Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null | undefined>,
 		taxiRobot3: FormControl<Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoLowerBlue: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoLowerFar: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoLowerNear: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoLowerRed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoTotal: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoUpperBlue: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoUpperFar: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoUpperNear: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopCargoUpperRed: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints: FormControl<number | null | undefined>,
 	}
 	export function CreateMatch_Score_Breakdown_2022_AllianceFormGroup() {
@@ -3548,79 +4436,159 @@ export namespace MyNS {
 
 	export interface Match_Score_Breakdown_2023_Alliance {
 		activationBonusAchieved?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints?: number | null;
 		autoBridgeState?: Match_Score_Breakdown_2023_AllianceAutoBridgeState | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoChargeStationPoints?: number | null;
 		autoChargeStationRobot1?: Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null;
 		autoChargeStationRobot2?: Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null;
 		autoChargeStationRobot3?: Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null;
 		autoCommunity?: Match_Score_Breakdown_2023_AllianceAutoCommunity;
 		autoDocked?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoGamePieceCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoGamePiecePoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoMobilityPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		coopGamePieceCount?: number | null;
 		coopertitionCriteriaMet?: boolean | null;
 		endGameBridgeState?: Match_Score_Breakdown_2023_AllianceAutoBridgeState | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endGameChargeStationPoints?: number | null;
 		endGameChargeStationRobot1?: Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null;
 		endGameChargeStationRobot2?: Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null;
 		endGameChargeStationRobot3?: Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endGameParkPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		extraGamePieceCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		linkPoints?: number | null;
 		Match_Score_Breakdown_2023_AllianceLinks?: Array<Match_Score_Breakdown_2023_AllianceLinks>;
 		mobilityRobot1?: Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null;
 		mobilityRobot2?: Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null;
 		mobilityRobot3?: Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rp?: number | null;
 		sustainabilityBonusAchieved?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount?: number | null;
 		teleopCommunity?: Match_Score_Breakdown_2023_AllianceTeleopCommunity;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopGamePieceCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopGamePiecePoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalChargeStationPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints?: number | null;
 	}
 	export interface Match_Score_Breakdown_2023_AllianceFormProperties {
 		activationBonusAchieved: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		adjustPoints: FormControl<number | null | undefined>,
 		autoBridgeState: FormControl<Match_Score_Breakdown_2023_AllianceAutoBridgeState | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoChargeStationPoints: FormControl<number | null | undefined>,
 		autoChargeStationRobot1: FormControl<Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null | undefined>,
 		autoChargeStationRobot2: FormControl<Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null | undefined>,
 		autoChargeStationRobot3: FormControl<Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null | undefined>,
 		autoDocked: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoGamePieceCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoGamePiecePoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoMobilityPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		coopGamePieceCount: FormControl<number | null | undefined>,
 		coopertitionCriteriaMet: FormControl<boolean | null | undefined>,
 		endGameBridgeState: FormControl<Match_Score_Breakdown_2023_AllianceAutoBridgeState | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endGameChargeStationPoints: FormControl<number | null | undefined>,
 		endGameChargeStationRobot1: FormControl<Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null | undefined>,
 		endGameChargeStationRobot2: FormControl<Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null | undefined>,
 		endGameChargeStationRobot3: FormControl<Match_Score_Breakdown_2023_AllianceAutoChargeStationRobot1 | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endGameParkPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		extraGamePieceCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		foulPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		linkPoints: FormControl<number | null | undefined>,
 		mobilityRobot1: FormControl<Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null | undefined>,
 		mobilityRobot2: FormControl<Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null | undefined>,
 		mobilityRobot3: FormControl<Match_Score_Breakdown_2022_AllianceTaxiRobot1 | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rp: FormControl<number | null | undefined>,
 		sustainabilityBonusAchieved: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		techFoulCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopGamePieceCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopGamePiecePoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		teleopPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalChargeStationPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalPoints: FormControl<number | null | undefined>,
 	}
 	export function CreateMatch_Score_Breakdown_2023_AllianceFormGroup() {
@@ -3712,8 +4680,11 @@ export namespace MyNS {
 
 	export interface Match_Simple {
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time. */
-		actual_time?: number | null;
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		actual_time?: string | null;
 
 		/** A list of alliances, the teams on the alliances, and their score. */
 		alliances?: Match_SimpleAlliances;
@@ -3739,28 +4710,39 @@ export namespace MyNS {
 		/**
 		 * The match number of the match in the competition level.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		match_number: number;
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time. */
-		predicted_time?: number | null;
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predicted_time?: string | null;
 
 		/**
 		 * The set number in a series of matches where more than one match is required in the match series.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		set_number: number;
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule. */
-		time?: number | null;
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		time?: string | null;
 
 		/** The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie. */
 		winning_alliance?: MatchWinning_alliance | null;
 	}
 	export interface Match_SimpleFormProperties {
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time. */
-		actual_time: FormControl<number | null | undefined>,
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of actual match start time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		actual_time: FormControl<string | null | undefined>,
 
 		/**
 		 * The competition level the match was played at.
@@ -3783,34 +4765,42 @@ export namespace MyNS {
 		/**
 		 * The match number of the match in the competition level.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		match_number: FormControl<number | null | undefined>,
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time. */
-		predicted_time: FormControl<number | null | undefined>,
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the TBA predicted match start time.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		predicted_time: FormControl<string | null | undefined>,
 
 		/**
 		 * The set number in a series of matches where more than one match is required in the match series.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		set_number: FormControl<number | null | undefined>,
 
-		/** UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule. */
-		time: FormControl<number | null | undefined>,
+		/**
+		 * UNIX timestamp (seconds since 1-Jan-1970 00:00:00) of the scheduled match time, as taken from the published schedule.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		time: FormControl<string | null | undefined>,
 
 		/** The color (red/blue) of the winning alliance. Will contain an empty string in the event of no winner, or a tie. */
 		winning_alliance: FormControl<MatchWinning_alliance | null | undefined>,
 	}
 	export function CreateMatch_SimpleFormGroup() {
 		return new FormGroup<Match_SimpleFormProperties>({
-			actual_time: new FormControl<number | null | undefined>(undefined),
+			actual_time: new FormControl<string | null | undefined>(undefined),
 			comp_level: new FormControl<MatchComp_level | null | undefined>(undefined, [Validators.required]),
 			event_key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			key: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			match_number: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			predicted_time: new FormControl<number | null | undefined>(undefined),
+			predicted_time: new FormControl<string | null | undefined>(undefined),
 			set_number: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			time: new FormControl<number | null | undefined>(undefined),
+			time: new FormControl<string | null | undefined>(undefined),
 			winning_alliance: new FormControl<MatchWinning_alliance | null | undefined>(undefined),
 		});
 
@@ -3836,43 +4826,76 @@ export namespace MyNS {
 	 */
 	export interface Match_Timeseries_2018 {
 
-		/** 1 if the blue alliance is credited with the AUTO QUEST, 0 if not. */
+		/**
+		 * 1 if the blue alliance is credited with the AUTO QUEST, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_auto_quest?: number | null;
 
-		/** Number of POWER CUBES in the BOOST section of the blue alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the BOOST section of the blue alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_boost_count?: number | null;
 
-		/** Returns 1 if the blue alliance BOOST was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the blue alliance BOOST was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_boost_played?: number | null;
 
 		/** Name of the current blue alliance POWER UP being played, or `null`. */
 		blue_current_powerup?: string | null;
 
-		/** 1 if the blue alliance is credited with FACING THE BOSS, 0 if not. */
+		/**
+		 * 1 if the blue alliance is credited with FACING THE BOSS, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_face_the_boss?: number | null;
 
-		/** Number of POWER CUBES in the FORCE section of the blue alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the FORCE section of the blue alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_force_count?: number | null;
 
-		/** Returns 1 if the blue alliance FORCE was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the blue alliance FORCE was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_force_played?: number | null;
 
-		/** Number of POWER CUBES in the LEVITATE section of the blue alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the LEVITATE section of the blue alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_levitate_count?: number | null;
 
-		/** Returns 1 if the blue alliance LEVITATE was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the blue alliance LEVITATE was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_levitate_played?: number | null;
 
 		/** Number of seconds remaining in the blue alliance POWER UP time, or 0 if none is active. */
 		blue_powerup_time_remaining?: string | null;
 
-		/** 1 if the blue alliance owns the SCALE, 0 if not. */
+		/**
+		 * 1 if the blue alliance owns the SCALE, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_scale_owned?: number | null;
 
-		/** Current score for the blue alliance. */
+		/**
+		 * Current score for the blue alliance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_score?: number | null;
 
-		/** 1 if the blue alliance owns their SWITCH, 0 if not. */
+		/**
+		 * 1 if the blue alliance owns their SWITCH, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_switch_owned?: number | null;
 
 		/** TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event. */
@@ -3883,48 +4906,86 @@ export namespace MyNS {
 
 		/** Current mode of play, can be `pre_match`, `auto`, `telop`, or `post_match`. */
 		mode?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		play?: number | null;
 
-		/** 1 if the red alliance is credited with the AUTO QUEST, 0 if not. */
+		/**
+		 * 1 if the red alliance is credited with the AUTO QUEST, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_auto_quest?: number | null;
 
-		/** Number of POWER CUBES in the BOOST section of the red alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the BOOST section of the red alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_boost_count?: number | null;
 
-		/** Returns 1 if the red alliance BOOST was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the red alliance BOOST was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_boost_played?: number | null;
 
 		/** Name of the current red alliance POWER UP being played, or `null`. */
 		red_current_powerup?: string | null;
 
-		/** 1 if the red alliance is credited with FACING THE BOSS, 0 if not. */
+		/**
+		 * 1 if the red alliance is credited with FACING THE BOSS, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_face_the_boss?: number | null;
 
-		/** Number of POWER CUBES in the FORCE section of the red alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the FORCE section of the red alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_force_count?: number | null;
 
-		/** Returns 1 if the red alliance FORCE was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the red alliance FORCE was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_force_played?: number | null;
 
-		/** Number of POWER CUBES in the LEVITATE section of the red alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the LEVITATE section of the red alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_levitate_count?: number | null;
 
-		/** Returns 1 if the red alliance LEVITATE was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the red alliance LEVITATE was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_levitate_played?: number | null;
 
 		/** Number of seconds remaining in the red alliance POWER UP time, or 0 if none is active. */
 		red_powerup_time_remaining?: string | null;
 
-		/** 1 if the red alliance owns the SCALE, 0 if not. */
+		/**
+		 * 1 if the red alliance owns the SCALE, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_scale_owned?: number | null;
 
-		/** Current score for the red alliance. */
+		/**
+		 * Current score for the red alliance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_score?: number | null;
 
-		/** 1 if the red alliance owns their SWITCH, 0 if not. */
+		/**
+		 * 1 if the red alliance owns their SWITCH, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_switch_owned?: number | null;
 
-		/** Amount of time remaining in the match, only valid during `auto` and `teleop` modes. */
+		/**
+		 * Amount of time remaining in the match, only valid during `auto` and `teleop` modes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time_remaining?: number | null;
 	}
 
@@ -3935,43 +4996,76 @@ export namespace MyNS {
 	 */
 	export interface Match_Timeseries_2018FormProperties {
 
-		/** 1 if the blue alliance is credited with the AUTO QUEST, 0 if not. */
+		/**
+		 * 1 if the blue alliance is credited with the AUTO QUEST, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_auto_quest: FormControl<number | null | undefined>,
 
-		/** Number of POWER CUBES in the BOOST section of the blue alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the BOOST section of the blue alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_boost_count: FormControl<number | null | undefined>,
 
-		/** Returns 1 if the blue alliance BOOST was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the blue alliance BOOST was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_boost_played: FormControl<number | null | undefined>,
 
 		/** Name of the current blue alliance POWER UP being played, or `null`. */
 		blue_current_powerup: FormControl<string | null | undefined>,
 
-		/** 1 if the blue alliance is credited with FACING THE BOSS, 0 if not. */
+		/**
+		 * 1 if the blue alliance is credited with FACING THE BOSS, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_face_the_boss: FormControl<number | null | undefined>,
 
-		/** Number of POWER CUBES in the FORCE section of the blue alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the FORCE section of the blue alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_force_count: FormControl<number | null | undefined>,
 
-		/** Returns 1 if the blue alliance FORCE was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the blue alliance FORCE was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_force_played: FormControl<number | null | undefined>,
 
-		/** Number of POWER CUBES in the LEVITATE section of the blue alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the LEVITATE section of the blue alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_levitate_count: FormControl<number | null | undefined>,
 
-		/** Returns 1 if the blue alliance LEVITATE was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the blue alliance LEVITATE was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_levitate_played: FormControl<number | null | undefined>,
 
 		/** Number of seconds remaining in the blue alliance POWER UP time, or 0 if none is active. */
 		blue_powerup_time_remaining: FormControl<string | null | undefined>,
 
-		/** 1 if the blue alliance owns the SCALE, 0 if not. */
+		/**
+		 * 1 if the blue alliance owns the SCALE, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_scale_owned: FormControl<number | null | undefined>,
 
-		/** Current score for the blue alliance. */
+		/**
+		 * Current score for the blue alliance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_score: FormControl<number | null | undefined>,
 
-		/** 1 if the blue alliance owns their SWITCH, 0 if not. */
+		/**
+		 * 1 if the blue alliance owns their SWITCH, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		blue_switch_owned: FormControl<number | null | undefined>,
 
 		/** TBA event key with the format yyyy[EVENT_CODE], where yyyy is the year, and EVENT_CODE is the event code of the event. */
@@ -3982,48 +5076,86 @@ export namespace MyNS {
 
 		/** Current mode of play, can be `pre_match`, `auto`, `telop`, or `post_match`. */
 		mode: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		play: FormControl<number | null | undefined>,
 
-		/** 1 if the red alliance is credited with the AUTO QUEST, 0 if not. */
+		/**
+		 * 1 if the red alliance is credited with the AUTO QUEST, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_auto_quest: FormControl<number | null | undefined>,
 
-		/** Number of POWER CUBES in the BOOST section of the red alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the BOOST section of the red alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_boost_count: FormControl<number | null | undefined>,
 
-		/** Returns 1 if the red alliance BOOST was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the red alliance BOOST was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_boost_played: FormControl<number | null | undefined>,
 
 		/** Name of the current red alliance POWER UP being played, or `null`. */
 		red_current_powerup: FormControl<string | null | undefined>,
 
-		/** 1 if the red alliance is credited with FACING THE BOSS, 0 if not. */
+		/**
+		 * 1 if the red alliance is credited with FACING THE BOSS, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_face_the_boss: FormControl<number | null | undefined>,
 
-		/** Number of POWER CUBES in the FORCE section of the red alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the FORCE section of the red alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_force_count: FormControl<number | null | undefined>,
 
-		/** Returns 1 if the red alliance FORCE was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the red alliance FORCE was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_force_played: FormControl<number | null | undefined>,
 
-		/** Number of POWER CUBES in the LEVITATE section of the red alliance VAULT. */
+		/**
+		 * Number of POWER CUBES in the LEVITATE section of the red alliance VAULT.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_levitate_count: FormControl<number | null | undefined>,
 
-		/** Returns 1 if the red alliance LEVITATE was played, or 0 if not played. */
+		/**
+		 * Returns 1 if the red alliance LEVITATE was played, or 0 if not played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_levitate_played: FormControl<number | null | undefined>,
 
 		/** Number of seconds remaining in the red alliance POWER UP time, or 0 if none is active. */
 		red_powerup_time_remaining: FormControl<string | null | undefined>,
 
-		/** 1 if the red alliance owns the SCALE, 0 if not. */
+		/**
+		 * 1 if the red alliance owns the SCALE, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_scale_owned: FormControl<number | null | undefined>,
 
-		/** Current score for the red alliance. */
+		/**
+		 * Current score for the red alliance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_score: FormControl<number | null | undefined>,
 
-		/** 1 if the red alliance owns their SWITCH, 0 if not. */
+		/**
+		 * 1 if the red alliance owns their SWITCH, 0 if not.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		red_switch_owned: FormControl<number | null | undefined>,
 
-		/** Amount of time remaining in the match, only valid during `auto` and `teleop` modes. */
+		/**
+		 * Amount of time remaining in the match, only valid during `auto` and `teleop` modes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		time_remaining: FormControl<number | null | undefined>,
 	}
 	export function CreateMatch_Timeseries_2018FormGroup() {
@@ -4159,10 +5291,16 @@ export namespace MyNS {
 		 */
 		key: string;
 
-		/** Will be NULL, for future development. */
+		/**
+		 * Will be NULL, for future development.
+		 * Type: double
+		 */
 		lat?: number | null;
 
-		/** Will be NULL, for future development. */
+		/**
+		 * Will be NULL, for future development.
+		 * Type: double
+		 */
 		lng?: number | null;
 
 		/** Will be NULL, for future development. */
@@ -4183,7 +5321,10 @@ export namespace MyNS {
 		/** Postal code from the team address. */
 		postal_code?: string | null;
 
-		/** First year the team officially competed. */
+		/**
+		 * First year the team officially competed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rookie_year?: number | null;
 
 		/** Name of team school or affilited group registered with FIRST. */
@@ -4195,6 +5336,7 @@ export namespace MyNS {
 		/**
 		 * Official team number issued by FIRST.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		team_number: number;
 
@@ -4227,10 +5369,16 @@ export namespace MyNS {
 		 */
 		key: FormControl<string | null | undefined>,
 
-		/** Will be NULL, for future development. */
+		/**
+		 * Will be NULL, for future development.
+		 * Type: double
+		 */
 		lat: FormControl<number | null | undefined>,
 
-		/** Will be NULL, for future development. */
+		/**
+		 * Will be NULL, for future development.
+		 * Type: double
+		 */
 		lng: FormControl<number | null | undefined>,
 
 		/** Will be NULL, for future development. */
@@ -4251,7 +5399,10 @@ export namespace MyNS {
 		/** Postal code from the team address. */
 		postal_code: FormControl<string | null | undefined>,
 
-		/** First year the team officially competed. */
+		/**
+		 * First year the team officially competed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rookie_year: FormControl<number | null | undefined>,
 
 		/** Name of team school or affilited group registered with FIRST. */
@@ -4263,6 +5414,7 @@ export namespace MyNS {
 		/**
 		 * Official team number issued by FIRST.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		team_number: FormControl<number | null | undefined>,
 
@@ -4355,12 +5507,14 @@ export namespace MyNS {
 		/**
 		 * Alliance number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: number;
 
 		/**
 		 * Order the team was picked in the alliance from 0-2, with 0 being alliance captain.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pick: number;
 	}
@@ -4372,12 +5526,14 @@ export namespace MyNS {
 		/**
 		 * Alliance number.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		number: FormControl<number | null | undefined>,
 
 		/**
 		 * Order the team was picked in the alliance from 0-2, with 0 being alliance captain.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pick: FormControl<number | null | undefined>,
 	}
@@ -4428,7 +5584,10 @@ export namespace MyNS {
 		/** The highest playoff level the team reached. */
 		level?: MatchComp_level | null;
 
-		/** The average match score during playoffs. Year specific. May be null if not relevant for a given year. */
+		/**
+		 * The average match score during playoffs. Year specific. May be null if not relevant for a given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playoff_average?: number | null;
 
 		/** A Win-Loss-Tie record for a team, or an alliance. */
@@ -4444,7 +5603,10 @@ export namespace MyNS {
 		/** The highest playoff level the team reached. */
 		level: FormControl<MatchComp_level | null | undefined>,
 
-		/** The average match score during playoffs. Year specific. May be null if not relevant for a given year. */
+		/**
+		 * The average match score during playoffs. Year specific. May be null if not relevant for a given year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playoff_average: FormControl<number | null | undefined>,
 
 		/** Current competition status for the playoffs. */
@@ -4463,7 +5625,10 @@ export namespace MyNS {
 
 	export interface Team_Event_Status_rank {
 
-		/** Number of teams ranked. */
+		/**
+		 * Number of teams ranked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_teams?: number | null;
 		ranking?: Team_Event_Status_rankRanking;
 
@@ -4473,7 +5638,10 @@ export namespace MyNS {
 	}
 	export interface Team_Event_Status_rankFormProperties {
 
-		/** Number of teams ranked. */
+		/**
+		 * Number of teams ranked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_teams: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}
@@ -4487,16 +5655,28 @@ export namespace MyNS {
 
 	export interface Team_Event_Status_rankRanking {
 
-		/** Number of matches the team was disqualified for. */
+		/**
+		 * Number of matches the team was disqualified for.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dq?: number | null;
 
-		/** Number of matches played. */
+		/**
+		 * Number of matches played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		matches_played?: number | null;
 
-		/** For some years, average qualification score. Can be null. */
+		/**
+		 * For some years, average qualification score. Can be null.
+		 * Type: double
+		 */
 		qual_average?: number | null;
 
-		/** Relative rank of this team. */
+		/**
+		 * Relative rank of this team.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rank?: number | null;
 
 		/** A Win-Loss-Tie record for a team, or an alliance. */
@@ -4510,16 +5690,28 @@ export namespace MyNS {
 	}
 	export interface Team_Event_Status_rankRankingFormProperties {
 
-		/** Number of matches the team was disqualified for. */
+		/**
+		 * Number of matches the team was disqualified for.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dq: FormControl<number | null | undefined>,
 
-		/** Number of matches played. */
+		/**
+		 * Number of matches played.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		matches_played: FormControl<number | null | undefined>,
 
-		/** For some years, average qualification score. Can be null. */
+		/**
+		 * For some years, average qualification score. Can be null.
+		 * Type: double
+		 */
 		qual_average: FormControl<number | null | undefined>,
 
-		/** Relative rank of this team. */
+		/**
+		 * Relative rank of this team.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rank: FormControl<number | null | undefined>,
 
 		/** TBA team key for this rank. */
@@ -4541,7 +5733,10 @@ export namespace MyNS {
 		/** The descriptive name of the value used to sort the ranking. */
 		name?: string | null;
 
-		/** The number of digits of precision used for this value, eg `2` would correspond to a value of `101.11` while `0` would correspond to `101`. */
+		/**
+		 * The number of digits of precision used for this value, eg `2` would correspond to a value of `101.11` while `0` would correspond to `101`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precision?: number | null;
 	}
 	export interface Team_Event_Status_rankSort_order_infoFormProperties {
@@ -4549,7 +5744,10 @@ export namespace MyNS {
 		/** The descriptive name of the value used to sort the ranking. */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of digits of precision used for this value, eg `2` would correspond to a value of `101.11` while `0` would correspond to `101`. */
+		/**
+		 * The number of digits of precision used for this value, eg `2` would correspond to a value of `101.11` while `0` would correspond to `101`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		precision: FormControl<number | null | undefined>,
 	}
 	export function CreateTeam_Event_Status_rankSort_order_infoFormGroup() {
@@ -4583,6 +5781,7 @@ export namespace MyNS {
 		/**
 		 * Year this robot competed in.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: number;
 	}
@@ -4609,6 +5808,7 @@ export namespace MyNS {
 		/**
 		 * Year this robot competed in.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		year: FormControl<number | null | undefined>,
 	}
@@ -4651,6 +5851,7 @@ export namespace MyNS {
 		/**
 		 * Official team number issued by FIRST.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		team_number: number;
 	}
@@ -4683,6 +5884,7 @@ export namespace MyNS {
 		/**
 		 * Official team number issued by FIRST.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		team_number: FormControl<number | null | undefined>,
 	}
@@ -4861,6 +6063,7 @@ export namespace MyNS {
 		 * Gets a list of districts and their corresponding district key, for the given year.
 		 * Get districts/{year}
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<District_List>} Successful response
 		 */
 		GetDistrictsByYear(year: number): Observable<Array<District_List>> {
@@ -5043,6 +6246,7 @@ export namespace MyNS {
 		 * Gets a list of events in the given year.
 		 * Get events/{year}
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event>} Successful response
 		 */
 		GetEventsByYear(year: number): Observable<Array<Event>> {
@@ -5053,6 +6257,7 @@ export namespace MyNS {
 		 * Gets a list of event keys in the given year.
 		 * Get events/{year}/keys
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Successful response
 		 */
 		GetEventsByYearKeys(year: number): Observable<Array<string>> {
@@ -5063,6 +6268,7 @@ export namespace MyNS {
 		 * Gets a short-form list of events in the given year.
 		 * Get events/{year}/simple
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event_Simple>} Successful response
 		 */
 		GetEventsByYearSimple(year: number): Observable<Array<Event_Simple>> {
@@ -5145,6 +6351,7 @@ export namespace MyNS {
 		 * Get team/{team_key}/awards/{year}
 		 * @param {string} team_key TBA Team Key, eg `frc254`
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Award>} Successful response
 		 */
 		GetTeamAwardsByYear(team_key: string, year: number): Observable<Array<Award>> {
@@ -5251,6 +6458,7 @@ export namespace MyNS {
 		 * Get team/{team_key}/events/{year}
 		 * @param {string} team_key TBA Team Key, eg `frc254`
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event>} Successful response
 		 */
 		GetTeamEventsByYear(team_key: string, year: number): Observable<Array<Event>> {
@@ -5262,6 +6470,7 @@ export namespace MyNS {
 		 * Get team/{team_key}/events/{year}/keys
 		 * @param {string} team_key TBA Team Key, eg `frc254`
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Successful response
 		 */
 		GetTeamEventsByYearKeys(team_key: string, year: number): Observable<Array<string>> {
@@ -5273,6 +6482,7 @@ export namespace MyNS {
 		 * Get team/{team_key}/events/{year}/simple
 		 * @param {string} team_key TBA Team Key, eg `frc254`
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Event_Simple>} Successful response
 		 */
 		GetTeamEventsByYearSimple(team_key: string, year: number): Observable<Array<Event_Simple>> {
@@ -5284,6 +6494,7 @@ export namespace MyNS {
 		 * Get team/{team_key}/events/{year}/statuses
 		 * @param {string} team_key TBA Team Key, eg `frc254`
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {{[id: string]: Team_Event_Status }} Successful response
 		 */
 		GetTeamEventsStatusesByYear(team_key: string, year: number): Observable<{[id: string]: Team_Event_Status }> {
@@ -5295,6 +6506,7 @@ export namespace MyNS {
 		 * Get team/{team_key}/matches/{year}
 		 * @param {string} team_key TBA Team Key, eg `frc254`
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Match>} Successful response
 		 */
 		GetTeamMatchesByYear(team_key: string, year: number): Observable<Array<Match>> {
@@ -5306,6 +6518,7 @@ export namespace MyNS {
 		 * Get team/{team_key}/matches/{year}/keys
 		 * @param {string} team_key TBA Team Key, eg `frc254`
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Successful response
 		 */
 		GetTeamMatchesByYearKeys(team_key: string, year: number): Observable<Array<string>> {
@@ -5317,6 +6530,7 @@ export namespace MyNS {
 		 * Get team/{team_key}/matches/{year}/simple
 		 * @param {string} team_key TBA Team Key, eg `frc254`
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Match_Simple>} Successful response
 		 */
 		GetTeamMatchesByYearSimple(team_key: string, year: number): Observable<Array<Match_Simple>> {
@@ -5340,6 +6554,7 @@ export namespace MyNS {
 		 * @param {string} team_key TBA Team Key, eg `frc254`
 		 * @param {string} media_tag Media Tag which describes the Media.
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Media>} Successful response
 		 */
 		GetTeamMediaByTagYear(team_key: string, media_tag: string, year: number): Observable<Array<Media>> {
@@ -5351,6 +6566,7 @@ export namespace MyNS {
 		 * Get team/{team_key}/media/{year}
 		 * @param {string} team_key TBA Team Key, eg `frc254`
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Media>} Successful response
 		 */
 		GetTeamMediaByYear(team_key: string, year: number): Observable<Array<Media>> {
@@ -5401,6 +6617,7 @@ export namespace MyNS {
 		 * Gets a list of `Team` objects, paginated in groups of 500.
 		 * Get teams/{page_num}
 		 * @param {number} page_num Page number of results to return, zero-indexed
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team>} Successful response
 		 */
 		GetTeams(page_num: number): Observable<Array<Team>> {
@@ -5411,6 +6628,7 @@ export namespace MyNS {
 		 * Gets a list of Team keys, paginated in groups of 500. (Note, each page will not have 500 teams, but will include the teams within that range of 500.)
 		 * Get teams/{page_num}/keys
 		 * @param {number} page_num Page number of results to return, zero-indexed
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Successful response
 		 */
 		GetTeamsKeys(page_num: number): Observable<Array<string>> {
@@ -5421,6 +6639,7 @@ export namespace MyNS {
 		 * Gets a list of short form `Team_Simple` objects, paginated in groups of 500.
 		 * Get teams/{page_num}/simple
 		 * @param {number} page_num Page number of results to return, zero-indexed
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team_Simple>} Successful response
 		 */
 		GetTeamsSimple(page_num: number): Observable<Array<Team_Simple>> {
@@ -5431,7 +6650,9 @@ export namespace MyNS {
 		 * Gets a list of `Team` objects that competed in the given year, paginated in groups of 500.
 		 * Get teams/{year}/{page_num}
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_num Page number of results to return, zero-indexed
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team>} Successful response
 		 */
 		GetTeamsByYear(year: number, page_num: number): Observable<Array<Team>> {
@@ -5442,7 +6663,9 @@ export namespace MyNS {
 		 * Gets a list Team Keys that competed in the given year, paginated in groups of 500.
 		 * Get teams/{year}/{page_num}/keys
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_num Page number of results to return, zero-indexed
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Successful response
 		 */
 		GetTeamsByYearKeys(year: number, page_num: number): Observable<Array<string>> {
@@ -5453,7 +6676,9 @@ export namespace MyNS {
 		 * Gets a list of short form `Team_Simple` objects that competed in the given year, paginated in groups of 500.
 		 * Get teams/{year}/{page_num}/simple
 		 * @param {number} year Competition Year (or Season). Must be 4 digits.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_num Page number of results to return, zero-indexed
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Team_Simple>} Successful response
 		 */
 		GetTeamsByYearSimple(year: number, page_num: number): Observable<Array<Team_Simple>> {

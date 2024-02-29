@@ -1170,6 +1170,7 @@ export namespace MyNS {
 		 * Lists all the support tickets for an Azure subscription. <br/><br/>You can also filter the support tickets by <i>Status</i> or <i>CreatedDate</i> using the $filter parameter. Output will be a paged result with <i>nextLink</i>, using which you can retrieve the next set of support tickets. <br/><br/>Support ticket data is available for 12 months after ticket creation. If a ticket was created more than 12 months ago, a request for data might cause an error.
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Support/supportTickets
 		 * @param {number} top The number of values to return in the collection. Default is 25 and max is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. We support 'odata v4.0' filter semantics. <a target='_blank' href='https://docs.microsoft.com/odata/concepts/queryoptions-overview'>Learn more</a> <br/><i>Status</i> filter can only be used with 'eq' operator. For <i>CreatedDate</i> filter, the supported operators are 'gt' and 'ge'. When using both filters, combine them using the logical 'AND'.
 		 * @param {string} subscriptionId Azure subscription id
 		 * @param {string} api_version Api version
@@ -1235,6 +1236,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Support/supportTickets/{supportTicketName}/communications
 		 * @param {string} supportTicketName Support ticket name
 		 * @param {number} top The number of values to return in the collection. Default is 10 and max is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter The filter to apply on the operation. You can filter by communicationType and createdDate properties. CommunicationType supports Equals ('eq') operator and createdDate supports Greater Than ('gt') and Greater Than or Equals ('ge') operators. You may combine the CommunicationType and CreatedDate filters by Logical And ('and') operator.
 		 * @param {string} subscriptionId Azure subscription id
 		 * @param {string} api_version Api version

@@ -185,16 +185,28 @@ export namespace MyNS {
 		/** Data used for charting etc */
 		datasets?: Array<string>;
 
-		/** Percentage of all APIs where auto fixes have been applied */
+		/**
+		 * Percentage of all APIs where auto fixes have been applied
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedPct?: number | null;
 
-		/** Total number of fixes applied across all APIs */
+		/**
+		 * Total number of fixes applied across all APIs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixes?: number | null;
 
-		/** Number of newly invalid APIs */
+		/**
+		 * Number of newly invalid APIs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		invalid?: number | null;
 
-		/** Open GitHub issues on our main repo */
+		/**
+		 * Open GitHub issues on our main repo
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		issues?: number | null;
 
 		/**
@@ -204,7 +216,10 @@ export namespace MyNS {
 		 */
 		numAPIs: number;
 
-		/** Number of methods of API retrieval */
+		/**
+		 * Number of methods of API retrieval
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numDrivers?: number | null;
 
 		/**
@@ -214,7 +229,10 @@ export namespace MyNS {
 		 */
 		numEndpoints: number;
 
-		/** Number of API providers in directory */
+		/**
+		 * Number of API providers in directory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numProviders?: number | null;
 
 		/**
@@ -224,32 +242,53 @@ export namespace MyNS {
 		 */
 		numSpecs: number;
 
-		/** GitHub stars for our main repo */
+		/**
+		 * GitHub stars for our main repo
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stars?: number | null;
 
 		/** Summary totals for the last 7 days */
 		thisWeek?: MetricsThisWeek;
 
-		/** Number of unofficial APIs */
+		/**
+		 * Number of unofficial APIs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unofficial?: number | null;
 
-		/** Number of unreachable (4XX,5XX status) APIs */
+		/**
+		 * Number of unreachable (4XX,5XX status) APIs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unreachable?: number | null;
 	}
 
 	/** List of basic metrics */
 	export interface MetricsFormProperties {
 
-		/** Percentage of all APIs where auto fixes have been applied */
+		/**
+		 * Percentage of all APIs where auto fixes have been applied
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedPct: FormControl<number | null | undefined>,
 
-		/** Total number of fixes applied across all APIs */
+		/**
+		 * Total number of fixes applied across all APIs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixes: FormControl<number | null | undefined>,
 
-		/** Number of newly invalid APIs */
+		/**
+		 * Number of newly invalid APIs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		invalid: FormControl<number | null | undefined>,
 
-		/** Open GitHub issues on our main repo */
+		/**
+		 * Open GitHub issues on our main repo
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		issues: FormControl<number | null | undefined>,
 
 		/**
@@ -259,7 +298,10 @@ export namespace MyNS {
 		 */
 		numAPIs: FormControl<number | null | undefined>,
 
-		/** Number of methods of API retrieval */
+		/**
+		 * Number of methods of API retrieval
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numDrivers: FormControl<number | null | undefined>,
 
 		/**
@@ -269,7 +311,10 @@ export namespace MyNS {
 		 */
 		numEndpoints: FormControl<number | null | undefined>,
 
-		/** Number of API providers in directory */
+		/**
+		 * Number of API providers in directory
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numProviders: FormControl<number | null | undefined>,
 
 		/**
@@ -279,13 +324,22 @@ export namespace MyNS {
 		 */
 		numSpecs: FormControl<number | null | undefined>,
 
-		/** GitHub stars for our main repo */
+		/**
+		 * GitHub stars for our main repo
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stars: FormControl<number | null | undefined>,
 
-		/** Number of unofficial APIs */
+		/**
+		 * Number of unofficial APIs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unofficial: FormControl<number | null | undefined>,
 
-		/** Number of unreachable (4XX,5XX status) APIs */
+		/**
+		 * Number of unreachable (4XX,5XX status) APIs
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unreachable: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricsFormGroup() {
@@ -308,18 +362,30 @@ export namespace MyNS {
 
 	export interface MetricsThisWeek {
 
-		/** APIs added in the last week */
+		/**
+		 * APIs added in the last week
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		added?: number | null;
 
-		/** APIs updated in the last week */
+		/**
+		 * APIs updated in the last week
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated?: number | null;
 	}
 	export interface MetricsThisWeekFormProperties {
 
-		/** APIs added in the last week */
+		/**
+		 * APIs added in the last week
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		added: FormControl<number | null | undefined>,
 
-		/** APIs updated in the last week */
+		/**
+		 * APIs updated in the last week
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		updated: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricsThisWeekFormGroup() {
@@ -374,6 +440,10 @@ export namespace MyNS {
 		 * Retrieve one version of a particular API
 		 * Returns the API entry for one specific version of an API where there is no serviceName.
 		 * Get specs/{provider}/{api}.json
+		 * @param {string} provider Min length: 1
+		 *     Max length: 255
+		 * @param {string} api Min length: 1
+		 *     Max length: 255
 		 * @return {API} OK
 		 */
 		GetAPI(provider: string, api: string): Observable<API> {
@@ -384,6 +454,12 @@ export namespace MyNS {
 		 * Retrieve one version of a particular API with a serviceName.
 		 * Returns the API entry for one specific version of an API where there is a serviceName.
 		 * Get specs/{provider}/{service}/{api}.json
+		 * @param {string} provider Min length: 1
+		 *     Max length: 255
+		 * @param {string} service Min length: 1
+		 *     Max length: 255
+		 * @param {string} api Min length: 1
+		 *     Max length: 255
 		 * @return {API} OK
 		 */
 		GetServiceAPI(provider: string, service: string, api: string): Observable<API> {
@@ -395,6 +471,8 @@ export namespace MyNS {
 		 * List all APIs in the directory for a particular providerName
 		 * Returns links to the individual API entry for each API.
 		 * Get {provider}.json
+		 * @param {string} provider Min length: 1
+		 *     Max length: 255
 		 * @return {APIs} OK
 		 */
 		GetProvider(provider: string): Observable<APIs> {
@@ -405,6 +483,8 @@ export namespace MyNS {
 		 * List all serviceNames for a particular provider
 		 * List all serviceNames in the directory for a particular providerName
 		 * Get {provider}/services.json
+		 * @param {string} provider Min length: 1
+		 *     Max length: 255
 		 * @return {GetServicesReturn} OK
 		 */
 		GetServices(provider: string): Observable<GetServicesReturn> {

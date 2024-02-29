@@ -348,7 +348,10 @@ export namespace MyNS {
 	/** The response message for language detection. */
 	export interface DetectedLanguage {
 
-		/** The confidence of the detection result for this language. */
+		/**
+		 * The confidence of the detection result for this language.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The BCP-47 language code of source content in the request, detected automatically. */
@@ -358,7 +361,10 @@ export namespace MyNS {
 	/** The response message for language detection. */
 	export interface DetectedLanguageFormProperties {
 
-		/** The confidence of the detection result for this language. */
+		/**
+		 * The confidence of the detection result for this language.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The BCP-47 language code of source content in the request, detected automatically. */
@@ -479,7 +485,10 @@ export namespace MyNS {
 		/** Output only. When the glossary creation was finished. */
 		endTime?: string | null;
 
-		/** Output only. The number of entries defined in the glossary. */
+		/**
+		 * Output only. The number of entries defined in the glossary.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		entryCount?: number | null;
 
 		/** Input configuration for glossaries. */
@@ -504,7 +513,10 @@ export namespace MyNS {
 		/** Output only. When the glossary creation was finished. */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Output only. The number of entries defined in the glossary. */
+		/**
+		 * Output only. The number of entries defined in the glossary.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		entryCount: FormControl<number | null | undefined>,
 
 		/** Required. The resource name of the glossary. Glossary names have the form `projects/{project-number-or-id}/locations/{location-id}/glossaries/{glossary-id}`. */
@@ -755,7 +767,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -768,7 +783,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1111,6 +1129,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -1124,6 +1143,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -1157,6 +1177,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the project from which to list all of the glossaries.
 		 * @param {string} filter Optional. Filter specifying constraints of a list operation. Specify the constraint by the format of "key=value", where key must be "src" or "tgt", and the value must be a valid language code. For multiple restrictions, concatenate them by "AND" (uppercase only), such as: "src=en-US AND tgt=zh-CN". Notice that the exact match is used here, which means using 'en-US' and 'en' can lead to different results, which depends on the language code you used when you create the glossary. For the unidirectional glossaries, the "src" and "tgt" add restrictions on the source and target language code separately. For the equivalent term set glossaries, the "src" and/or "tgt" add restrictions on the term set. For example: "src=en-US AND tgt=zh-CN" will only pick the unidirectional glossaries which exactly match the source language code as "en-US" and the target language code "zh-CN", but all equivalent term set glossaries which contain "en-US" and "zh-CN" in their language set will be picked. If missing, no filtering is performed.
 		 * @param {number} pageSize Optional. Requested page size. The server may return fewer glossaries than requested. If unspecified, the server picks an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results the server should return. Typically, this is the value of [ListGlossariesResponse.next_page_token] returned from the previous call to `ListGlossaries` method. The first page is returned if `page_token`is empty or missing.
 		 * @return {ListGlossariesResponse} Successful response
 		 */

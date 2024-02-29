@@ -577,8 +577,12 @@ namespace MyNS
 		/// PersonaGetByNameAndCountAndPageAndFieldsAndExpand personas
 		/// </summary>
 		/// <param name="name">Filter by Persona name</param>
-		/// <param name="count">Amount of items to return</param>
-		/// <param name="page">Offset, used together with count</param>
+		/// <param name="count">Amount of items to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page">Offset, used together with count
+		/// Minimum: 1
+		// </param>
 		/// <param name="fields">Allows to select only needed fields</param>
 		/// <param name="expand">Allows to select extra fields</param>
 		/// <returns>The personas</returns>
@@ -660,8 +664,12 @@ namespace MyNS
 		///</param>
 		/// <param name="show_id">Filter by show</param>
 		/// <param name="persona_id">Filter by persona</param>
-		/// <param name="count">Amount of items to return</param>
-		/// <param name="page">Offset, used together with count</param>
+		/// <param name="count">Amount of items to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page">Offset, used together with count
+		/// Minimum: 1
+		// </param>
 		/// <param name="fields">Allows to select only needed fields</param>
 		/// <param name="expand">Allows to select extra fields</param>
 		/// <returns>The playlists</returns>
@@ -769,8 +777,12 @@ namespace MyNS
 		///</param>
 		/// <param name="end">The ending datetime. Maximum 1 hour in past.
 		///</param>
-		/// <param name="count">Amount of items to return</param>
-		/// <param name="page">Offset, used together with count</param>
+		/// <param name="count">Amount of items to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page">Offset, used together with count
+		/// Minimum: 1
+		// </param>
 		/// <param name="fields">Allows to select only needed fields</param>
 		/// <param name="expand">Allows to select extra fields</param>
 		/// <returns>The shows</returns>
@@ -853,8 +865,12 @@ namespace MyNS
 		///</param>
 		/// <param name="playlist_id">Filter by playlist</param>
 		/// <param name="show_id">Filter by show</param>
-		/// <param name="count">Amount of items to return</param>
-		/// <param name="page">Offset, used together with count</param>
+		/// <param name="count">Amount of items to return
+		/// Minimum: 1
+		// </param>
+		/// <param name="page">Offset, used together with count
+		/// Minimum: 1
+		// </param>
 		/// <param name="fields">Allows to select only needed fields</param>
 		/// <param name="expand">Allows to select extra fields</param>
 		/// <returns>The spins</returns>

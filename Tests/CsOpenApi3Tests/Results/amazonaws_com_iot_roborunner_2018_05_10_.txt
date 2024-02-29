@@ -2512,6 +2512,9 @@ namespace MyNS
 		/// Grants permission to get a destination
 		/// GetDestination getDestination#id
 		/// </summary>
+		/// <param name="id">Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDestinationResponse> GetDestinationAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2545,6 +2548,9 @@ namespace MyNS
 		/// Grants permission to get a site
 		/// GetSite getSite#id
 		/// </summary>
+		/// <param name="id">Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetSiteResponse> GetSiteAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2578,6 +2584,9 @@ namespace MyNS
 		/// Grants permission to get a worker
 		/// GetWorker getWorker#id
 		/// </summary>
+		/// <param name="id">Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkerResponse> GetWorkerAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2611,6 +2620,9 @@ namespace MyNS
 		/// Grants permission to get a worker fleet
 		/// GetWorkerFleet getWorkerFleet#id
 		/// </summary>
+		/// <param name="id">Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkerFleetResponse> GetWorkerFleetAsync(string id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2644,6 +2656,15 @@ namespace MyNS
 		/// Grants permission to list destinations
 		/// ListDestinations listDestinations#site
 		/// </summary>
+		/// <param name="site">Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="nextToken">Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDestinationsResponse> ListDestinationsAsync(string site, int maxResults, string nextToken, CreateDestinationResponseState state, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2677,6 +2698,12 @@ namespace MyNS
 		/// Grants permission to list sites
 		/// ListSites listSites
 		/// </summary>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 25
+		// </param>
+		/// <param name="nextToken">Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListSitesResponse> ListSitesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2710,6 +2737,15 @@ namespace MyNS
 		/// Grants permission to list worker fleets
 		/// ListWorkerFleets listWorkerFleets#site
 		/// </summary>
+		/// <param name="site">Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 25
+		// </param>
+		/// <param name="nextToken">Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkerFleetsResponse> ListWorkerFleetsAsync(string site, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2743,6 +2779,18 @@ namespace MyNS
 		/// Grants permission to list workers
 		/// ListWorkers listWorkers#site
 		/// </summary>
+		/// <param name="site">Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">Minimum: 1
+		/// Maximum: 25
+		// </param>
+		/// <param name="nextToken">Max length: 2048
+		/// Min length: 1
+		// </param>
+		/// <param name="fleet">Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkersResponse> ListWorkersAsync(string site, int maxResults, string nextToken, string fleet, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

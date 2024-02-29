@@ -3998,6 +3998,7 @@ export namespace MyNS {
 		 * Get apikeys
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name The name of queried API keys.
 		 * @param {string} customerId The identifier of a customer in AWS Marketplace or an external system, such as a developer portal.
 		 * @param {boolean} includeValues A boolean flag to specify whether (<code>true</code>) or not (<code>false</code>) the result contains key values.
@@ -4023,6 +4024,7 @@ export namespace MyNS {
 		 * @param {string} restapi_id The string identifier of the associated RestApi.
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Authorizers} Success
 		 */
 		GetAuthorizers(restapi_id: string, position: string | null | undefined, limit: number | null | undefined): Observable<Authorizers> {
@@ -4045,6 +4047,7 @@ export namespace MyNS {
 		 * @param {string} domain_name The domain name of a BasePathMapping resource.
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BasePathMappings} Success
 		 */
 		GetBasePathMappings(domain_name: string, position: string | null | undefined, limit: number | null | undefined): Observable<BasePathMappings> {
@@ -4067,6 +4070,7 @@ export namespace MyNS {
 		 * @param {string} restapi_id The string identifier of the associated RestApi.
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Deployments} Success
 		 */
 		GetDeployments(restapi_id: string, position: string | null | undefined, limit: number | null | undefined): Observable<Deployments> {
@@ -4092,6 +4096,7 @@ export namespace MyNS {
 		 * @param {string} path The path of API entities of the to-be-retrieved documentation parts.
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {LocationStatusType} locationStatus The status of the API documentation parts to retrieve. Valid values are <code>DOCUMENTED</code> for retrieving DocumentationPart resources with content and <code>UNDOCUMENTED</code> for DocumentationPart resources without content.
 		 * @return {DocumentationParts} Success
 		 */
@@ -4127,6 +4132,7 @@ export namespace MyNS {
 		 * @param {string} restapi_id The string identifier of the associated RestApi.
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DocumentationVersions} Success
 		 */
 		GetDocumentationVersions(restapi_id: string, position: string | null | undefined, limit: number | null | undefined): Observable<DocumentationVersions> {
@@ -4147,6 +4153,7 @@ export namespace MyNS {
 		 * Get domainnames
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DomainNames} Success
 		 */
 		GetDomainNames(position: string | null | undefined, limit: number | null | undefined): Observable<DomainNames> {
@@ -4169,6 +4176,7 @@ export namespace MyNS {
 		 * @param {string} restapi_id The string identifier of the associated RestApi.
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Models} Success
 		 */
 		GetModels(restapi_id: string, position: string | null | undefined, limit: number | null | undefined): Observable<Models> {
@@ -4191,6 +4199,7 @@ export namespace MyNS {
 		 * @param {string} restapi_id The string identifier of the associated RestApi.
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RequestValidators} Success
 		 */
 		GetRequestValidators(restapi_id: string, position: string | null | undefined, limit: number | null | undefined): Observable<RequestValidators> {
@@ -4222,6 +4231,7 @@ export namespace MyNS {
 		 * Get restapis
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RestApis} Success
 		 */
 		GetRestApis(position: string | null | undefined, limit: number | null | undefined): Observable<RestApis> {
@@ -4264,6 +4274,7 @@ export namespace MyNS {
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {string} keyId The identifier of the API key associated with the usage plans.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UsagePlans} Success
 		 */
 		GetUsagePlans(position: string | null | undefined, keyId: string | null | undefined, limit: number | null | undefined): Observable<UsagePlans> {
@@ -4286,6 +4297,7 @@ export namespace MyNS {
 		 * @param {string} usageplanId The Id of the UsagePlan resource representing the usage plan containing the to-be-retrieved UsagePlanKey resource representing a plan customer.
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name A query parameter specifying the name of the to-be-returned usage plan keys.
 		 * @return {UsagePlanKeys} Success
 		 */
@@ -4307,6 +4319,7 @@ export namespace MyNS {
 		 * Get vpclinks
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {VpcLinks} Success
 		 */
 		GetVpcLinks(position: string | null | undefined, limit: number | null | undefined): Observable<VpcLinks> {
@@ -5132,6 +5145,7 @@ export namespace MyNS {
 		 * Get clientcertificates
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ClientCertificates} Success
 		 */
 		GetClientCertificates(position: string | null | undefined, limit: number | null | undefined): Observable<ClientCertificates> {
@@ -5175,6 +5189,7 @@ export namespace MyNS {
 		 * @param {string} restapi_id The string identifier of the associated RestApi.
 		 * @param {string} position The current pagination position in the paged result set. The GatewayResponse collection does not support pagination and the position does not apply here.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500. The GatewayResponses collection does not support pagination and the limit does not apply here.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GatewayResponses} Success
 		 */
 		GetGatewayResponses(restapi_id: string, position: string | null | undefined, limit: number | null | undefined): Observable<GatewayResponses> {
@@ -5198,6 +5213,7 @@ export namespace MyNS {
 		 * @param {string} restapi_id The string identifier of the associated RestApi.
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} embed A query parameter used to retrieve the specified resources embedded in the returned Resources resource in the response. This <code>embed</code> parameter value is a list of comma-separated strings. Currently, the request supports only retrieval of the embedded Method resources this way. The query parameter value must be a single-valued list and contain the <code>"methods"</code> string. For example, <code>GET /restapis/{restapi_id}/resources?embed=methods</code>.
 		 * @return {Resources} Success
 		 */
@@ -5233,6 +5249,7 @@ export namespace MyNS {
 		 * Get sdktypes
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SdkTypes} Success
 		 */
 		GetSdkTypes(position: string | null | undefined, limit: number | null | undefined): Observable<SdkTypes> {
@@ -5245,6 +5262,7 @@ export namespace MyNS {
 		 * @param {string} resource_arn The ARN of a resource that can be tagged.
 		 * @param {string} position (Not currently supported) The current pagination position in the paged result set.
 		 * @param {number} limit (Not currently supported) The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Tags} Success
 		 */
 		GetTags(resource_arn: string, position: string | null | undefined, limit: number | null | undefined): Observable<Tags> {
@@ -5270,6 +5288,7 @@ export namespace MyNS {
 		 * @param {string} endDate The ending date (e.g., 2016-12-31) of the usage data.
 		 * @param {string} position The current pagination position in the paged result set.
 		 * @param {number} limit The maximum number of returned results per page. The default value is 25 and the maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Usage} Success
 		 */
 		GetUsage(usageplanId: string, keyId: string | null | undefined, startDate: string, endDate: string, position: string | null | undefined, limit: number | null | undefined): Observable<Usage> {
@@ -5415,7 +5434,10 @@ export namespace MyNS {
 		/** A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer. */
 		identityValidationExpression?: string | null;
 
-		/** The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour. */
+		/**
+		 * The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		authorizerResultTtlInSeconds?: number | null;
 	}
 	export interface CreateAuthorizerPostBodyFormProperties {
@@ -5447,7 +5469,10 @@ export namespace MyNS {
 		/** A validation expression for the incoming identity token. For <code>TOKEN</code> authorizers, this value is a regular expression. For <code>COGNITO_USER_POOLS</code> authorizers, API Gateway will match the <code>aud</code> field of the incoming token from the client against the specified regular expression. It will invoke the authorizer's Lambda function when there is a match. Otherwise, it will return a 401 Unauthorized response without calling the Lambda function. The validation expression does not apply to the <code>REQUEST</code> authorizer. */
 		identityValidationExpression: FormControl<string | null | undefined>,
 
-		/** The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour. */
+		/**
+		 * The TTL in seconds of cached authorizer results. If it equals 0, authorization caching is disabled. If it is greater than 0, API Gateway will cache authorizer responses. If this field is not set, the default value is 300. The maximum value is 3600, or 1 hour.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		authorizerResultTtlInSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateAuthorizerPostBodyFormGroup() {
@@ -5945,7 +5970,10 @@ export namespace MyNS {
 		/** The list of binary media types supported by the RestApi. By default, the RestApi supports only UTF-8-encoded text payloads. */
 		binaryMediaTypes?: Array<string>;
 
-		/** A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size. */
+		/**
+		 * A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumCompressionSize?: number | null;
 
 		/** The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer. */
@@ -5980,7 +6008,10 @@ export namespace MyNS {
 		/** The ID of the RestApi that you want to clone from. */
 		cloneFrom: FormControl<string | null | undefined>,
 
-		/** A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size. */
+		/**
+		 * A nullable integer that is used to enable compression (with non-negative between 0 and 10485760 (10M) bytes, inclusive) or disable compression (with a null value) on an API. When compression is enabled, compression or decompression is not applied on the payload if the payload size is smaller than this value. Setting it to zero allows compression for any payload size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumCompressionSize: FormControl<number | null | undefined>,
 
 		/** The source of the API key for metering requests according to a usage plan. Valid values are: &gt;<code>HEADER</code> to read the API key from the <code>X-API-Key</code> header of a request. <code>AUTHORIZER</code> to read the API key from the <code>UsageIdentifierKey</code> from a custom authorizer. */
@@ -6531,7 +6562,10 @@ export namespace MyNS {
 		/** <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p> <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p> */
 		contentHandling?: ContentHandlingStrategy | null;
 
-		/** Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds. */
+		/**
+		 * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutInMillis?: number | null;
 
 		/** Specifies the TLS configuration for an integration. */
@@ -6575,7 +6609,10 @@ export namespace MyNS {
 		/** <p>Specifies how to handle request payload content type conversions. Supported values are <code>CONVERT_TO_BINARY</code> and <code>CONVERT_TO_TEXT</code>, with the following behaviors:</p> <p>If this property is not defined, the request payload will be passed through from the method request to integration request without modification, provided that the <code>passthroughBehavior</code> is configured to support payload pass-through.</p> */
 		contentHandling: FormControl<ContentHandlingStrategy | null | undefined>,
 
-		/** Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds. */
+		/**
+		 * Custom timeout between 50 and 29,000 milliseconds. The default value is 29,000 milliseconds or 29 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutInMillis: FormControl<number | null | undefined>,
 	}
 	export function CreatePutIntegrationPutBodyFormGroup() {

@@ -955,7 +955,10 @@ namespace MyNS
 		/// <p>Specifies the extended metrics and custom metrics that you want a CloudWatch RUM app monitor to send to a destination. Valid destinations include CloudWatch and Evidently.</p> <p>By default, RUM app monitors send some metrics to CloudWatch. These default metrics are listed in <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-metrics.html">CloudWatch metrics that you can collect with CloudWatch RUM</a>.</p> <p>In addition to these default metrics, you can choose to send extended metrics or custom metrics or both.</p> <ul> <li> <p>Extended metrics enable you to send metrics with additional dimensions not included in the default metrics. You can also send extended metrics to Evidently as well as CloudWatch. The valid dimension names for the additional dimensions for extended metrics are <code>BrowserName</code>, <code>CountryCode</code>, <code>DeviceType</code>, <code>FileType</code>, <code>OSName</code>, and <code>PageId</code>. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-vended-metrics.html"> Extended metrics that you can send to CloudWatch and CloudWatch Evidently</a>.</p> </li> <li> <p>Custom metrics are metrics that you define. You can send custom metrics to CloudWatch or to CloudWatch Evidently or to both. With custom metrics, you can use any metric name and namespace, and to derive the metrics you can use any custom events, built-in events, custom attributes, or default attributes. </p> <p>You can't send custom metrics to the <code>AWS/RUM</code> namespace. You must send custom metrics to a custom namespace that you define. The namespace that you use can't start with <code>AWS/</code>. CloudWatch RUM prepends <code>RUM/CustomMetrics/</code> to the custom namespace that you define, so the final namespace for your metrics in CloudWatch is <code>RUM/CustomMetrics/<i>your-custom-namespace</i> </code>.</p> </li> </ul> <p>The maximum number of metric definitions that you can specify in one <code>BatchCreateRumMetricDefinitions</code> operation is 200.</p> <p>The maximum number of metric definitions that one destination can contain is 2000.</p> <p>Extended metrics sent to CloudWatch and RUM custom metrics are charged as CloudWatch custom metrics. Each combination of additional dimension name and dimension value counts as a custom metric. For more information, see <a href="https://aws.amazon.com/cloudwatch/pricing/">Amazon CloudWatch Pricing</a>.</p> <p>You must have already created a destination for the metrics before you send them. For more information, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_PutRumMetricsDestination.html">PutRumMetricsDestination</a>.</p> <p>If some metric definitions specified in a <code>BatchCreateRumMetricDefinitions</code> operations are not valid, those metric definitions fail and return errors, but all valid metric definitions in the same operation still succeed.</p>
 		/// BatchCreateRumMetricDefinitions rummetrics/{AppMonitorName}/metrics
 		/// </summary>
-		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that is to send the metrics.</param>
+		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that is to send the metrics.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchCreateRumMetricDefinitionsResponse> BatchCreateRumMetricDefinitionsAsync(string AppMonitorName, BatchCreateRumMetricDefinitionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -996,7 +999,10 @@ namespace MyNS
 		/// Modifies one existing metric definition for CloudWatch RUM extended metrics. For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricsDefinitions.html">BatchCreateRumMetricsDefinitions</a>.
 		/// UpdateRumMetricDefinition rummetrics/{AppMonitorName}/metrics
 		/// </summary>
-		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that sends these metrics.</param>
+		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that sends these metrics.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRumMetricDefinitionResponse> UpdateRumMetricDefinitionAsync(string AppMonitorName, UpdateRumMetricDefinitionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1037,9 +1043,15 @@ namespace MyNS
 		/// <p>Removes the specified metrics from being sent to an extended metrics destination.</p> <p>If some metric definition IDs specified in a <code>BatchDeleteRumMetricDefinitions</code> operations are not valid, those metric definitions fail and return errors, but all valid metric definition IDs in the same operation are still deleted.</p> <p>The maximum number of metric definitions that you can specify in one <code>BatchDeleteRumMetricDefinitions</code> operation is 200.</p>
 		/// BatchDeleteRumMetricDefinitions rummetrics/{AppMonitorName}/metrics#destination&metricDefinitionIds
 		/// </summary>
-		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that is sending these metrics.</param>
+		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that is sending these metrics.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="destination">Defines the destination where you want to stop sending the specified metrics. Valid values are <code>CloudWatch</code> and <code>Evidently</code>. If you specify <code>Evidently</code>, you must also specify the ARN of the CloudWatchEvidently experiment that is to be the destination and an IAM role that has permission to write to the experiment.</param>
-		/// <param name="destinationArn"><p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p> <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p></param>
+		/// <param name="destinationArn"><p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. </p> <p>This parameter specifies the ARN of the Evidently experiment that was receiving the metrics that are being deleted.</p>
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <param name="metricDefinitionIds">An array of structures which define the metrics that you want to stop sending.</param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteRumMetricDefinitionsResponse> BatchDeleteRumMetricDefinitionsAsync(string AppMonitorName, MetricDestination destination, string destinationArn, string[] metricDefinitionIds, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1074,10 +1086,19 @@ namespace MyNS
 		/// Retrieves the list of metrics and dimensions that a RUM app monitor is sending to a single destination.
 		/// BatchGetRumMetricDefinitions rummetrics/{AppMonitorName}/metrics#destination
 		/// </summary>
-		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that is sending the metrics.</param>
+		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that is sending the metrics.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="destination">The type of destination that you want to view metrics for. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</param>
-		/// <param name="destinationArn"><p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p> <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p></param>
-		/// <param name="maxResults"><p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p> <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p></param>
+		/// <param name="destinationArn"><p>This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter.</p> <p>This parameter specifies the ARN of the Evidently experiment that corresponds to the destination.</p>
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
+		/// <param name="maxResults"><p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p> <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">Use the token returned by the previous operation to request the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1154,7 +1175,10 @@ namespace MyNS
 		/// Deletes an existing app monitor. This immediately stops the collection of data.
 		/// DeleteAppMonitor appmonitor/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the app monitor to delete.</param>
+		/// <param name="Name">The name of the app monitor to delete.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAppMonitorResponse> DeleteAppMonitorAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1188,7 +1212,10 @@ namespace MyNS
 		/// Retrieves the complete configuration information for one app monitor.
 		/// GetAppMonitor appmonitor/{Name}
 		/// </summary>
-		/// <param name="Name">The app monitor to retrieve information for.</param>
+		/// <param name="Name">The app monitor to retrieve information for.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAppMonitorResponse> GetAppMonitorAsync(string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1222,7 +1249,10 @@ namespace MyNS
 		/// <p>Updates the configuration of an existing app monitor. When you use this operation, only the parts of the app monitor configuration that you specify in this operation are changed. For any parameters that you omit, the existing values are kept.</p> <p>You can't use this operation to change the tags of an existing app monitor. To change the tags of an existing app monitor, use <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_TagResource.html">TagResource</a>.</p> <p>To create a new app monitor, use <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_CreateAppMonitor.html">CreateAppMonitor</a>.</p> <p>After you update an app monitor, sign in to the CloudWatch RUM console to get the updated JavaScript code snippet to add to your web application. For more information, see <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/monitoring/CloudWatch-RUM-find-code-snippet.html">How do I find a code snippet that I've already generated?</a> </p>
 		/// UpdateAppMonitor appmonitor/{Name}
 		/// </summary>
-		/// <param name="Name">The name of the app monitor to update.</param>
+		/// <param name="Name">The name of the app monitor to update.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAppMonitorResponse> UpdateAppMonitorAsync(string Name, UpdateAppMonitorPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1263,9 +1293,15 @@ namespace MyNS
 		/// Deletes a destination for CloudWatch RUM extended metrics, so that the specified app monitor stops sending extended metrics to that destination.
 		/// DeleteRumMetricsDestination rummetrics/{AppMonitorName}/metricsdestination#destination
 		/// </summary>
-		/// <param name="AppMonitorName">The name of the app monitor that is sending metrics to the destination that you want to delete.</param>
+		/// <param name="AppMonitorName">The name of the app monitor that is sending metrics to the destination that you want to delete.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="destination">The type of destination to delete. Valid values are <code>CloudWatch</code> and <code>Evidently</code>.</param>
-		/// <param name="destinationArn">This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.</param>
+		/// <param name="destinationArn">This parameter is required if <code>Destination</code> is <code>Evidently</code>. If <code>Destination</code> is <code>CloudWatch</code>, do not use this parameter. This parameter specifies the ARN of the Evidently experiment that corresponds to the destination to delete.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRumMetricsDestinationResponse> DeleteRumMetricsDestinationAsync(string AppMonitorName, MetricDestination destination, string destinationArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1299,7 +1335,10 @@ namespace MyNS
 		/// Retrieves the raw performance events that RUM has collected from your web application, so that you can do your own processing or analysis of this data.
 		/// GetAppMonitorData appmonitor/{Name}/data
 		/// </summary>
-		/// <param name="Name">The name of the app monitor that collected the data that you want to retrieve.</param>
+		/// <param name="Name">The name of the app monitor that collected the data that you want to retrieve.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1342,7 +1381,10 @@ namespace MyNS
 		/// Returns a list of the Amazon CloudWatch RUM app monitors in the account.
 		/// ListAppMonitors appmonitors
 		/// </summary>
-		/// <param name="maxResults">The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</param>
+		/// <param name="maxResults">The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">Use the token returned by the previous operation to request the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1374,8 +1416,14 @@ namespace MyNS
 		/// <p>Returns a list of destinations that you have created to receive RUM extended metrics, for the specified app monitor.</p> <p>For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_AddRumMetrcs.html">AddRumMetrics</a>.</p>
 		/// ListRumMetricsDestinations rummetrics/{AppMonitorName}/metricsdestination
 		/// </summary>
-		/// <param name="AppMonitorName">The name of the app monitor associated with the destinations that you want to retrieve.</param>
-		/// <param name="maxResults"><p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p> <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p></param>
+		/// <param name="AppMonitorName">The name of the app monitor associated with the destinations that you want to retrieve.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"><p>The maximum number of results to return in one operation. The default is 50. The maximum that you can specify is 100.</p> <p>To retrieve the remaining results, make another call with the returned <code>NextToken</code> value. </p>
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">Use the token returned by the previous operation to request the next page of results.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1412,7 +1460,10 @@ namespace MyNS
 		/// <p>Creates or updates a destination to receive extended metrics from CloudWatch RUM. You can send extended metrics to CloudWatch or to a CloudWatch Evidently experiment.</p> <p>For more information about extended metrics, see <a href="https://docs.aws.amazon.com/cloudwatchrum/latest/APIReference/API_BatchCreateRumMetricDefinitions.html">BatchCreateRumMetricDefinitions</a>.</p>
 		/// PutRumMetricsDestination rummetrics/{AppMonitorName}/metricsdestination
 		/// </summary>
-		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that will send the metrics.</param>
+		/// <param name="AppMonitorName">The name of the CloudWatch RUM app monitor that will send the metrics.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutRumMetricsDestinationResponse> PutRumMetricsDestinationAsync(string AppMonitorName, PutRumMetricsDestinationPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1528,7 +1579,10 @@ namespace MyNS
 		/// <p>Sends telemetry events about your application performance and user behavior to CloudWatch RUM. The code snippet that RUM generates for you to add to your application includes <code>PutRumEvents</code> operations to send this data to RUM.</p> <p>Each <code>PutRumEvents</code> operation can send a batch of events from one user session.</p>
 		/// PutRumEvents appmonitors/{Id}/
 		/// </summary>
-		/// <param name="Id">The ID of the app monitor that is sending this data.</param>
+		/// <param name="Id">The ID of the app monitor that is sending this data.
+		/// Max length: 36
+		/// Min length: 36
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutRumEventsResponse> PutRumEventsAsync(string Id, PutRumEventsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1570,7 +1624,10 @@ namespace MyNS
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
 		/// <param name="ResourceArn">The ARN of the CloudWatch RUM resource that you're removing tags from.</param>
-		/// <param name="tagKeys">The list of tag keys to remove from the resource.</param>
+		/// <param name="tagKeys">The list of tag keys to remove from the resource.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string ResourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

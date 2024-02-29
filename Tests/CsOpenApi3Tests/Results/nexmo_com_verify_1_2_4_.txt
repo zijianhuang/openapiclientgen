@@ -1498,7 +1498,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="format">The response format.</param>
 		/// <param name="request_id">The `request_id` you received in the Verify Request Response. Required if `request_ids` not provided.</param>
-		/// <param name="request_ids">More than one `request_id`. Each `request_id` is a new parameter in the Verify Search request. Required if `request_id` not provided.</param>
+		/// <param name="request_ids">More than one `request_id`. Each `request_id` is a new parameter in the Verify Search request. Required if `request_id` not provided.
+		/// Maximum items: 10
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<SearchResponse> VerifySearchAsync(VerifyCheckFormat format, string api_key, string api_secret, string request_id, string[] request_ids, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

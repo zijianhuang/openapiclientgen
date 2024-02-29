@@ -82,9 +82,13 @@ export namespace MyNS {
 		 * Gets the data policy rules associated with the specified storage account.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {ManagementPolicies_GetManagementPolicyName} managementPolicyName The name of the Storage Account Management Policy. It should always be 'default'
 		 * @return {StorageAccountManagementPolicies} OK -- Get management policies successfully.
 		 */
@@ -96,9 +100,13 @@ export namespace MyNS {
 		 * Sets the data policy rules associated with the specified storage account.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {ManagementPolicies_GetManagementPolicyName} managementPolicyName The name of the Storage Account Management Policy. It should always be 'default'
 		 * @param {ManagementPoliciesRulesSetParameter} requestBody The data policy rules to set to a storage account.
 		 * @return {StorageAccountManagementPolicies} OK -- Get management policies successfully.
@@ -111,9 +119,13 @@ export namespace MyNS {
 		 * Deletes the data policy rules associated with the specified storage account.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Storage/storageAccounts/{accountName}/managementPolicies/{managementPolicyName}
 		 * @param {string} resourceGroupName The name of the resource group within the user's subscription. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the storage account within the specified resource group. Storage account names must be between 3 and 24 characters in length and use numbers and lower-case letters only.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {ManagementPolicies_GetManagementPolicyName} managementPolicyName The name of the Storage Account Management Policy. It should always be 'default'
 		 * @return {void} OK -- Delete management policies successfully.
 		 */

@@ -3327,6 +3327,7 @@ export namespace MyNS {
 		 * Get #Action=AbortEnvironmentUpdate
 		 * @param {string} EnvironmentId This specifies the ID of the environment with the in-progress update that you want to cancel.
 		 * @param {string} EnvironmentName This specifies the name of the environment with the in-progress update that you want to cancel.
+		 *     Min length: 4    Max length: 40
 		 * @return {void} Success
 		 */
 		GET_AbortEnvironmentUpdate(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, Action: GET_AbortEnvironmentUpdateAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3349,7 +3350,9 @@ export namespace MyNS {
 		 * Add or change the operations role used by an environment. After this call is made, Elastic Beanstalk uses the associated operations role for permissions to downstream services during subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
 		 * Get #Action=AssociateEnvironmentOperationsRole
 		 * @param {string} EnvironmentName The name of the environment to which to set the operations role.
+		 *     Min length: 4    Max length: 40
 		 * @param {string} OperationsRole The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} Success
 		 */
 		GET_AssociateEnvironmentOperationsRole(EnvironmentName: string, OperationsRole: string, Action: GET_AssociateEnvironmentOperationsRoleAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3360,6 +3363,7 @@ export namespace MyNS {
 		 * Checks if the specified CNAME is available.
 		 * Get #Action=CheckDNSAvailability
 		 * @param {string} CNAMEPrefix The prefix used when this CNAME is reserved.
+		 *     Min length: 4    Max length: 63
 		 * @return {void} Success
 		 */
 		GET_CheckDNSAvailability(CNAMEPrefix: string, Action: GET_CheckDNSAvailabilityAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3370,7 +3374,9 @@ export namespace MyNS {
 		 * Create or update a group of environments that each run a separate component of a single application. Takes a list of version labels that specify application source bundles for each of the environments to create or update. The name of each environment and other required information must be included in the source bundles in an environment manifest named <code>env.yaml</code>. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-mgmt-compose.html">Compose Environments</a> for details.
 		 * Get #Action=ComposeEnvironments
 		 * @param {string} ApplicationName The name of the application to which the specified source bundles belong.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} GroupName The name of the group to which the target environments belong. Specify a group name only if the environment name defined in each target environment's manifest ends with a + (plus) character. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.
+		 *     Min length: 1    Max length: 19
 		 * @param {Array<string>} VersionLabels A list of version labels, specifying one or more application source bundles that belong to the target application. Each source bundle must include an environment manifest that specifies the name of the environment and the name of the solution stack to use, and optionally can specify environment links to create.
 		 * @return {void} Success
 		 */
@@ -3382,7 +3388,9 @@ export namespace MyNS {
 		 * Creates an application that has one configuration template named <code>default</code> and no application versions.
 		 * Get #Action=CreateApplication
 		 * @param {string} ApplicationName The name of the application. Must be unique within your account.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} Description Your description of the application.
+		 *     Max length: 200
 		 * @param {GET_CreateApplicationResourceLifecycleConfig} ResourceLifecycleConfig Specifies an application resource lifecycle configuration to prevent your application from accumulating too many versions.
 		 * @param {Array<Tag>} Tags <p>Specifies the tags applied to the application.</p> <p>Elastic Beanstalk applies these tags only to the application. Environments that you create in the application don't inherit the tags.</p>
 		 * @return {void} Success
@@ -3395,8 +3403,11 @@ export namespace MyNS {
 		 * <p>Creates an application version for the specified application. You can create an application version from a source bundle in Amazon S3, a commit in AWS CodeCommit, or the output of an AWS CodeBuild build as follows:</p> <p>Specify a commit in an AWS CodeCommit repository with <code>SourceBuildInformation</code>.</p> <p>Specify a build in an AWS CodeBuild with <code>SourceBuildInformation</code> and <code>BuildConfiguration</code>.</p> <p>Specify a source bundle in S3 with <code>SourceBundle</code> </p> <p>Omit both <code>SourceBuildInformation</code> and <code>SourceBundle</code> to use the default sample application.</p> <note> <p>After you create an application version with a specified Amazon S3 bucket and key location, you can't change that Amazon S3 location. If you change the Amazon S3 location, you receive an exception when you attempt to launch an environment from the application version.</p> </note>
 		 * Get #Action=CreateApplicationVersion
 		 * @param {string} ApplicationName  The name of the application. If no application is found with this name, and <code>AutoCreateApplication</code> is <code>false</code>, returns an <code>InvalidParameterValue</code> error. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} VersionLabel <p>A label identifying this version.</p> <p>Constraint: Must be unique per application. If an application version already exists with this label for the specified application, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p>
+		 *     Min length: 1    Max length: 100
 		 * @param {string} Description A description of this application version.
+		 *     Max length: 200
 		 * @param {GET_CreateApplicationVersionSourceBuildInformation} SourceBuildInformation Specify a commit in an AWS CodeCommit Git repository to use as the source code for the application version.
 		 * @param {GET_CreateApplicationVersionSourceBundle} SourceBundle <p>The Amazon S3 bucket and key that identify the location of the source bundle for this version.</p> <note> <p>The Amazon S3 bucket must be in the same region as the environment.</p> </note> <p>Specify a source bundle in S3 or a commit in an AWS CodeCommit repository (with <code>SourceBuildInformation</code>), but not both. If neither <code>SourceBundle</code> nor <code>SourceBuildInformation</code> are provided, Elastic Beanstalk uses a sample application.</p>
 		 * @param {GET_CreateApplicationVersionBuildConfiguration} BuildConfiguration Settings for an AWS CodeBuild build.
@@ -3413,12 +3424,15 @@ export namespace MyNS {
 		 * <p>Creates an AWS Elastic Beanstalk configuration template, associated with a specific Elastic Beanstalk application. You define application configuration settings in a configuration template. You can then use the configuration template to deploy different versions of the application with the same configuration settings.</p> <p>Templates aren't associated with any environment. The <code>EnvironmentName</code> response element is always <code>null</code>.</p> <p>Related Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> <li> <p> <a>DescribeConfigurationSettings</a> </p> </li> <li> <p> <a>ListAvailableSolutionStacks</a> </p> </li> </ul>
 		 * Get #Action=CreateConfigurationTemplate
 		 * @param {string} ApplicationName The name of the Elastic Beanstalk application to associate with this configuration template.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TemplateName <p>The name of the configuration template.</p> <p>Constraint: This name must be unique per application.</p>
+		 *     Min length: 1    Max length: 100
 		 * @param {string} SolutionStackName <p>The name of an Elastic Beanstalk solution stack (platform version) that this configuration uses. For example, <code>64bit Amazon Linux 2013.09 running Tomcat 7 Java 7</code>. A solution stack specifies the operating system, runtime, and application server for a configuration template. It also determines the set of configuration options as well as the possible and default values. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/concepts.platforms.html">Supported Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <p>You must specify <code>SolutionStackName</code> if you don't specify <code>PlatformArn</code>, <code>EnvironmentId</code>, or <code>SourceConfiguration</code>.</p> <p>Use the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/api/API_ListAvailableSolutionStacks.html"> <code>ListAvailableSolutionStacks</code> </a> API to obtain a list of available solution stacks.</p>
 		 * @param {string} PlatformArn <p>The Amazon Resource Name (ARN) of the custom platform. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html"> Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note> <p>If you specify <code>PlatformArn</code>, then don't specify <code>SolutionStackName</code>.</p> </note>
 		 * @param {GET_CreateConfigurationTemplateSourceConfiguration} SourceConfiguration <p>An Elastic Beanstalk configuration template to base this one on. If specified, Elastic Beanstalk uses the configuration values from the specified configuration template to create a new configuration.</p> <p>Values specified in <code>OptionSettings</code> override any values obtained from the <code>SourceConfiguration</code>.</p> <p>You must specify <code>SourceConfiguration</code> if you don't specify <code>PlatformArn</code>, <code>EnvironmentId</code>, or <code>SolutionStackName</code>.</p> <p>Constraint: If both solution stack name and source configuration are specified, the solution stack of the source configuration template must match the specified solution stack name.</p>
 		 * @param {string} EnvironmentId The ID of an environment whose settings you want to use to create the configuration template. You must specify <code>EnvironmentId</code> if you don't specify <code>PlatformArn</code>, <code>SolutionStackName</code>, or <code>SourceConfiguration</code>.
 		 * @param {string} Description An optional description for this configuration.
+		 *     Max length: 200
 		 * @param {Array<ConfigurationOptionSetting>} OptionSettings Option values for the Elastic Beanstalk configuration, such as the instance type. If specified, these values override the values obtained from the solution stack or the source configuration template. For a complete list of Elastic Beanstalk configuration options, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/command-options.html">Option Values</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
 		 * @param {Array<Tag>} Tags Specifies the tags applied to the configuration template.
 		 * @return {void} Success
@@ -3431,19 +3445,27 @@ export namespace MyNS {
 		 * Launches an AWS Elastic Beanstalk environment for the specified application using the specified configuration.
 		 * Get #Action=CreateEnvironment
 		 * @param {string} ApplicationName The name of the application that is associated with this environment.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EnvironmentName <p>A unique name for the environment.</p> <p>Constraint: Must be from 4 to 40 characters in length. The name can contain only letters, numbers, and hyphens. It can't start or end with a hyphen. This name must be unique within a region in your account. If the specified name already exists in the region, Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p> <p>If you don't specify the <code>CNAMEPrefix</code> parameter, the environment name becomes part of the CNAME, and therefore part of the visible URL for your application.</p>
+		 *     Min length: 4    Max length: 40
 		 * @param {string} GroupName The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name parameter. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.
+		 *     Min length: 1    Max length: 19
 		 * @param {string} Description Your description for this environment.
+		 *     Max length: 200
 		 * @param {string} CNAMEPrefix If specified, the environment attempts to use this value as the prefix for the CNAME in your Elastic Beanstalk environment URL. If not specified, the CNAME is generated automatically by appending a random alphanumeric string to the environment name.
+		 *     Min length: 4    Max length: 63
 		 * @param {GET_CreateEnvironmentTier} Tier Specifies the tier to use in creating this environment. The environment tier that you choose determines whether Elastic Beanstalk provisions resources to support a web application that handles HTTP(S) requests or a web application that handles background-processing tasks.
 		 * @param {Array<Tag>} Tags Specifies the tags applied to resources in the environment.
 		 * @param {string} VersionLabel <p>The name of the application version to deploy.</p> <p>Default: If not specified, Elastic Beanstalk attempts to deploy the sample application.</p>
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TemplateName <p>The name of the Elastic Beanstalk configuration template to use with the environment.</p> <note> <p>If you specify <code>TemplateName</code>, then don't specify <code>SolutionStackName</code>.</p> </note>
+		 *     Min length: 1    Max length: 100
 		 * @param {string} SolutionStackName <p>The name of an Elastic Beanstalk solution stack (platform version) to use with the environment. If specified, Elastic Beanstalk sets the configuration values to the default values associated with the specified solution stack. For a list of current solution stacks, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/platforms/platforms-supported.html">Elastic Beanstalk Supported Platforms</a> in the <i>AWS Elastic Beanstalk Platforms</i> guide.</p> <note> <p>If you specify <code>SolutionStackName</code>, don't specify <code>PlatformArn</code> or <code>TemplateName</code>.</p> </note>
 		 * @param {string} PlatformArn <p>The Amazon Resource Name (ARN) of the custom platform to use with the environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/custom-platforms.html">Custom Platforms</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.</p> <note> <p>If you specify <code>PlatformArn</code>, don't specify <code>SolutionStackName</code>.</p> </note>
 		 * @param {Array<ConfigurationOptionSetting>} OptionSettings If specified, AWS Elastic Beanstalk sets the specified configuration options to the requested value in the configuration set for the new environment. These override the values obtained from the solution stack or the configuration template.
 		 * @param {Array<OptionSpecification>} OptionsToRemove A list of custom user-defined configuration options to remove from the configuration set for this new environment.
 		 * @param {string} OperationsRole The Amazon Resource Name (ARN) of an existing IAM role to be used as the environment's operations role. If specified, Elastic Beanstalk uses the operations role for permissions to downstream services during this call and during subsequent calls acting on this environment. To specify an operations role, you must have the <code>iam:PassRole</code> permission for the role. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} Success
 		 */
 		GET_CreateEnvironment(ApplicationName: string, EnvironmentName: string | null | undefined, GroupName: string | null | undefined, Description: string | null | undefined, CNAMEPrefix: string | null | undefined, Tier: GET_CreateEnvironmentTier | null | undefined, Tags: Array<Tag> | null | undefined, VersionLabel: string | null | undefined, TemplateName: string | null | undefined, SolutionStackName: string | null | undefined, PlatformArn: string | null | undefined, OptionSettings: Array<ConfigurationOptionSetting> | null | undefined, OptionsToRemove: Array<OptionSpecification> | null | undefined, OperationsRole: string | null | undefined, Action: GET_CreateEnvironmentAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3457,6 +3479,7 @@ export namespace MyNS {
 		 * @param {string} PlatformVersion The number, such as 1.0.2, for the new platform version.
 		 * @param {GET_CreatePlatformVersionPlatformDefinitionBundle} PlatformDefinitionBundle The location of the platform definition archive in Amazon S3.
 		 * @param {string} EnvironmentName The name of the builder environment.
+		 *     Min length: 4    Max length: 40
 		 * @param {Array<ConfigurationOptionSetting>} OptionSettings The configuration option settings to apply to the builder environment.
 		 * @param {Array<Tag>} Tags <p>Specifies the tags applied to the new platform version.</p> <p>Elastic Beanstalk applies these tags only to the platform version. Environments that you create using the platform version don't inherit the tags.</p>
 		 * @return {void} Success
@@ -3487,6 +3510,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified application along with all associated versions and configurations. The application versions will not be deleted from your Amazon S3 bucket.</p> <note> <p>You cannot delete an application that has a running environment.</p> </note>
 		 * Get #Action=DeleteApplication
 		 * @param {string} ApplicationName The name of the application to delete.
+		 *     Min length: 1    Max length: 100
 		 * @param {boolean} TerminateEnvByForce When set to true, running environments will be terminated before deleting the application.
 		 * @return {void} Success
 		 */
@@ -3498,7 +3522,9 @@ export namespace MyNS {
 		 * <p>Deletes the specified version from the specified application.</p> <note> <p>You cannot delete an application version that is associated with a running environment.</p> </note>
 		 * Get #Action=DeleteApplicationVersion
 		 * @param {string} ApplicationName The name of the application to which the version belongs.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} VersionLabel The label of the version to delete.
+		 *     Min length: 1    Max length: 100
 		 * @param {boolean} DeleteSourceBundle Set to <code>true</code> to delete the source bundle from your storage bucket. Otherwise, the application version is deleted only from Elastic Beanstalk and the source bundle remains in Amazon S3.
 		 * @return {void} Success
 		 */
@@ -3510,7 +3536,9 @@ export namespace MyNS {
 		 * <p>Deletes the specified configuration template.</p> <note> <p>When you launch an environment using a configuration template, the environment gets a copy of the template. You can delete or modify the environment's copy of the template without affecting the running environment.</p> </note>
 		 * Get #Action=DeleteConfigurationTemplate
 		 * @param {string} ApplicationName The name of the application to delete the configuration template from.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TemplateName The name of the configuration template to delete.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		GET_DeleteConfigurationTemplate(ApplicationName: string, TemplateName: string, Action: GET_DeleteConfigurationTemplateAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3521,7 +3549,9 @@ export namespace MyNS {
 		 * <p>Deletes the draft configuration associated with the running environment.</p> <p>Updating a running environment with any configuration changes creates a draft configuration set. You can get the draft configuration using <a>DescribeConfigurationSettings</a> while the update is in progress or if the update fails. The <code>DeploymentStatus</code> for the draft configuration indicates whether the deployment is in process or has failed. The draft configuration remains in existence until it is deleted with this action.</p>
 		 * Get #Action=DeleteEnvironmentConfiguration
 		 * @param {string} ApplicationName The name of the application the environment is associated with.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EnvironmentName The name of the environment to delete the draft configuration from.
+		 *     Min length: 4    Max length: 40
 		 * @return {void} Success
 		 */
 		GET_DeleteEnvironmentConfiguration(ApplicationName: string, EnvironmentName: string, Action: GET_DeleteEnvironmentConfigurationAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3560,8 +3590,10 @@ export namespace MyNS {
 		 * Retrieve a list of application versions.
 		 * Get #Action=DescribeApplicationVersions
 		 * @param {string} ApplicationName Specify an application name to show only application versions for that application.
+		 *     Min length: 1    Max length: 100
 		 * @param {Array<string>} VersionLabels Specify a version label to show a specific application version.
 		 * @param {number} MaxRecords <p>For a paginated request. Specify a maximum number of application versions to include in each response.</p> <p>If no <code>MaxRecords</code> is specified, all available application versions are retrieved in a single response.</p>
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} NextToken <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
 		 * @return {void} Success
 		 */
@@ -3583,8 +3615,11 @@ export namespace MyNS {
 		 * Describes the configuration options that are used in a particular configuration template or environment, or that a specified solution stack defines. The description includes the values the options, their default values, and an indication of the required action on a running environment if an option value is changed.
 		 * Get #Action=DescribeConfigurationOptions
 		 * @param {string} ApplicationName The name of the application associated with the configuration template or environment. Only needed if you want to describe the configuration options associated with either the configuration template or environment.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TemplateName The name of the configuration template whose configuration options you want to describe.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EnvironmentName The name of the environment whose configuration options you want to describe.
+		 *     Min length: 4    Max length: 40
 		 * @param {string} SolutionStackName The name of the solution stack whose configuration options you want to describe.
 		 * @param {string} PlatformArn The ARN of the custom platform.
 		 * @param {Array<OptionSpecification>} Options If specified, restricts the descriptions to only the specified options.
@@ -3598,8 +3633,11 @@ export namespace MyNS {
 		 * <p>Returns a description of the settings for the specified configuration set, that is, either a configuration template or the configuration set associated with a running environment.</p> <p>When describing the settings for the configuration set associated with a running environment, it is possible to receive two sets of setting descriptions. One is the deployed configuration set, and the other is a draft configuration of an environment that is either in the process of deployment or that failed to deploy.</p> <p>Related Topics</p> <ul> <li> <p> <a>DeleteEnvironmentConfiguration</a> </p> </li> </ul>
 		 * Get #Action=DescribeConfigurationSettings
 		 * @param {string} ApplicationName The application for the environment or configuration template.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TemplateName <p>The name of the configuration template to describe.</p> <p> Conditional: You must specify either this parameter or an EnvironmentName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns a <code>MissingRequiredParameter</code> error. </p>
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EnvironmentName <p>The name of the environment to describe.</p> <p> Condition: You must specify either this or a TemplateName, but not both. If you specify both, AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+		 *     Min length: 4    Max length: 40
 		 * @return {void} Success
 		 */
 		GET_DescribeConfigurationSettings(ApplicationName: string, TemplateName: string | null | undefined, EnvironmentName: string | null | undefined, Action: GET_DescribeConfigurationSettingsAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3610,6 +3648,7 @@ export namespace MyNS {
 		 * Returns information about the overall health of the specified environment. The <b>DescribeEnvironmentHealth</b> operation is only available with AWS Elastic Beanstalk Enhanced Health.
 		 * Get #Action=DescribeEnvironmentHealth
 		 * @param {string} EnvironmentName <p>Specify the environment by name.</p> <p>You must specify either this or an EnvironmentName, or both.</p>
+		 *     Min length: 4    Max length: 40
 		 * @param {string} EnvironmentId <p>Specify the environment by ID.</p> <p>You must specify either this or an EnvironmentName, or both.</p>
 		 * @param {Array<EnvironmentHealthAttribute>} AttributeNames Specify the response elements to return. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns the name of the environment.
 		 * @return {void} Success
@@ -3623,8 +3662,10 @@ export namespace MyNS {
 		 * Get #Action=DescribeEnvironmentManagedActionHistory
 		 * @param {string} EnvironmentId The environment ID of the target environment.
 		 * @param {string} EnvironmentName The name of the target environment.
+		 *     Min length: 4    Max length: 40
 		 * @param {string} NextToken The pagination token returned by a previous request.
 		 * @param {number} MaxItems The maximum number of items to return for a single request.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {void} Success
 		 */
 		GET_DescribeEnvironmentManagedActionHistory(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, NextToken: string | null | undefined, MaxItems: number | null | undefined, Action: GET_DescribeEnvironmentManagedActionHistoryAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3648,6 +3689,7 @@ export namespace MyNS {
 		 * Get #Action=DescribeEnvironmentResources
 		 * @param {string} EnvironmentId <p>The ID of the environment to retrieve AWS resource usage data.</p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
 		 * @param {string} EnvironmentName <p>The name of the environment to retrieve AWS resource usage data.</p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+		 *     Min length: 4    Max length: 40
 		 * @return {void} Success
 		 */
 		GET_DescribeEnvironmentResources(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, Action: GET_DescribeEnvironmentResourcesAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3658,12 +3700,15 @@ export namespace MyNS {
 		 * Returns descriptions for existing environments.
 		 * Get #Action=DescribeEnvironments
 		 * @param {string} ApplicationName If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} VersionLabel If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that are associated with this application version.
+		 *     Min length: 1    Max length: 100
 		 * @param {Array<string>} EnvironmentIds If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified IDs.
 		 * @param {Array<string>} EnvironmentNames If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those that have the specified names.
 		 * @param {boolean} IncludeDeleted <p>Indicates whether to include deleted environments:</p> <p> <code>true</code>: Environments that have been deleted after <code>IncludedDeletedBackTo</code> are displayed.</p> <p> <code>false</code>: Do not include deleted environments.</p>
 		 * @param {Date} IncludedDeletedBackTo  If specified when <code>IncludeDeleted</code> is set to <code>true</code>, then environments deleted after this date are displayed. 
 		 * @param {number} MaxRecords <p>For a paginated request. Specify a maximum number of environments to include in each response.</p> <p>If no <code>MaxRecords</code> is specified, all available environments are retrieved in a single response.</p>
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} NextToken <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
 		 * @return {void} Success
 		 */
@@ -3675,16 +3720,21 @@ export namespace MyNS {
 		 * <p>Returns list of event descriptions matching criteria up to the last 6 weeks.</p> <note> <p>This action returns the most recent 1,000 events from the specified <code>NextToken</code>.</p> </note>
 		 * Get #Action=DescribeEvents
 		 * @param {string} ApplicationName If specified, AWS Elastic Beanstalk restricts the returned descriptions to include only those associated with this application.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} VersionLabel If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this application version.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TemplateName If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that are associated with this environment configuration.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EnvironmentId If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.
 		 * @param {string} EnvironmentName If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this environment.
+		 *     Min length: 4    Max length: 40
 		 * @param {string} PlatformArn The ARN of a custom platform version. If specified, AWS Elastic Beanstalk restricts the returned descriptions to those associated with this custom platform version.
 		 * @param {string} RequestId If specified, AWS Elastic Beanstalk restricts the described events to include only those associated with this request ID.
 		 * @param {EventSeverity} Severity If specified, limits the events returned from this call to include only those with the specified severity or higher.
 		 * @param {Date} StartTime If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur on or after this time.
 		 * @param {Date} EndTime  If specified, AWS Elastic Beanstalk restricts the returned descriptions to those that occur up to, but not including, the <code>EndTime</code>. 
 		 * @param {number} MaxRecords Specifies the maximum number of events that can be returned, beginning with the most recent event.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} NextToken Pagination token. If specified, the events return the next batch of results.
 		 * @return {void} Success
 		 */
@@ -3696,9 +3746,11 @@ export namespace MyNS {
 		 * Retrieves detailed information about the health of instances in your AWS Elastic Beanstalk. This operation requires <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/health-enhanced.html">enhanced health reporting</a>.
 		 * Get #Action=DescribeInstancesHealth
 		 * @param {string} EnvironmentName Specify the AWS Elastic Beanstalk environment by name.
+		 *     Min length: 4    Max length: 40
 		 * @param {string} EnvironmentId Specify the AWS Elastic Beanstalk environment by ID.
 		 * @param {Array<InstancesHealthAttribute>} AttributeNames Specifies the response elements you wish to receive. To retrieve all attributes, set to <code>All</code>. If no attribute names are specified, returns a list of instances.
 		 * @param {string} NextToken Specify the pagination token returned by a previous call.
+		 *     Min length: 1    Max length: 100
 		 * @return {void} Success
 		 */
 		GET_DescribeInstancesHealth(EnvironmentName: string | null | undefined, EnvironmentId: string | null | undefined, AttributeNames: Array<InstancesHealthAttribute> | null | undefined, NextToken: string | null | undefined, Action: GET_DescribeInstancesHealthAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3719,6 +3771,7 @@ export namespace MyNS {
 		 * Disassociate the operations role from an environment. After this call is made, Elastic Beanstalk uses the caller's permissions for permissions to downstream services during subsequent calls acting on this environment. For more information, see <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/iam-operationsrole.html">Operations roles</a> in the <i>AWS Elastic Beanstalk Developer Guide</i>.
 		 * Get #Action=DisassociateEnvironmentOperationsRole
 		 * @param {string} EnvironmentName The name of the environment from which to disassociate the operations role.
+		 *     Min length: 4    Max length: 40
 		 * @return {void} Success
 		 */
 		GET_DisassociateEnvironmentOperationsRole(EnvironmentName: string, Action: GET_DisassociateEnvironmentOperationsRoleAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3748,6 +3801,7 @@ export namespace MyNS {
 		 * Get #Action=ListPlatformBranches
 		 * @param {Array<SearchFilter>} Filters <p>Criteria for restricting the resulting list of platform branches. The filter is evaluated as a logical conjunction (AND) of the separate <code>SearchFilter</code> terms.</p> <p>The following list shows valid attribute values for each of the <code>SearchFilter</code> terms. Most operators take a single value. The <code>in</code> and <code>not_in</code> operators can take multiple values.</p> <ul> <li> <p> <code>Attribute = BranchName</code>:</p> <ul> <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li> </ul> </li> <li> <p> <code>Attribute = LifecycleState</code>:</p> <ul> <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>in</code> | <code>not_in</code> </p> </li> <li> <p> <code>Values</code>: <code>beta</code> | <code>supported</code> | <code>deprecated</code> | <code>retired</code> </p> </li> </ul> </li> <li> <p> <code>Attribute = PlatformName</code>:</p> <ul> <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> | <code>begins_with</code> | <code>ends_with</code> | <code>contains</code> | <code>in</code> | <code>not_in</code> </p> </li> </ul> </li> <li> <p> <code>Attribute = TierType</code>:</p> <ul> <li> <p> <code>Operator</code>: <code>=</code> | <code>!=</code> </p> </li> <li> <p> <code>Values</code>: <code>WebServer/Standard</code> | <code>Worker/SQS/HTTP</code> </p> </li> </ul> </li> </ul> <p>Array size: limited to 10 <code>SearchFilter</code> objects.</p> <p>Within each <code>SearchFilter</code> item, the <code>Values</code> array is limited to 10 items.</p>
 		 * @param {number} MaxRecords The maximum number of platform branch values returned in one call.
+		 *     Minimum: 1
 		 * @param {string} NextToken <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
 		 * @return {void} Success
 		 */
@@ -3760,6 +3814,7 @@ export namespace MyNS {
 		 * Get #Action=ListPlatformVersions
 		 * @param {Array<PlatformFilter>} Filters Criteria for restricting the resulting list of platform versions. The filter is interpreted as a logical conjunction (AND) of the separate <code>PlatformFilter</code> terms.
 		 * @param {number} MaxRecords The maximum number of platform version values returned in one call.
+		 *     Minimum: 1
 		 * @param {string} NextToken <p>For a paginated request. Specify a token from a previous response page to retrieve the next response page. All other parameter values must be identical to the ones specified in the initial request.</p> <p>If no <code>NextToken</code> is specified, the first page is retrieved.</p>
 		 * @return {void} Success
 		 */
@@ -3782,6 +3837,7 @@ export namespace MyNS {
 		 * Get #Action=RebuildEnvironment
 		 * @param {string} EnvironmentId <p>The ID of the environment to rebuild.</p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
 		 * @param {string} EnvironmentName <p>The name of the environment to rebuild.</p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+		 *     Min length: 4    Max length: 40
 		 * @return {void} Success
 		 */
 		GET_RebuildEnvironment(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, Action: GET_RebuildEnvironmentAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3793,6 +3849,7 @@ export namespace MyNS {
 		 * Get #Action=RequestEnvironmentInfo
 		 * @param {string} EnvironmentId <p>The ID of the environment of the requested data.</p> <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
 		 * @param {string} EnvironmentName <p>The name of the environment of the requested data.</p> <p>If no such environment is found, <code>RequestEnvironmentInfo</code> returns an <code>InvalidParameterValue</code> error. </p> <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+		 *     Min length: 4    Max length: 40
 		 * @param {EnvironmentInfoType} InfoType The type of information to request.
 		 * @return {void} Success
 		 */
@@ -3805,6 +3862,7 @@ export namespace MyNS {
 		 * Get #Action=RestartAppServer
 		 * @param {string} EnvironmentId <p>The ID of the environment to restart the server for.</p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
 		 * @param {string} EnvironmentName <p>The name of the environment to restart the server for.</p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+		 *     Min length: 4    Max length: 40
 		 * @return {void} Success
 		 */
 		GET_RestartAppServer(EnvironmentId: string | null | undefined, EnvironmentName: string | null | undefined, Action: GET_RestartAppServerAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3816,6 +3874,7 @@ export namespace MyNS {
 		 * Get #Action=RetrieveEnvironmentInfo
 		 * @param {string} EnvironmentId <p>The ID of the data's environment.</p> <p>If no such environment is found, returns an <code>InvalidParameterValue</code> error.</p> <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error.</p>
 		 * @param {string} EnvironmentName <p>The name of the data's environment.</p> <p> If no such environment is found, returns an <code>InvalidParameterValue</code> error. </p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+		 *     Min length: 4    Max length: 40
 		 * @param {EnvironmentInfoType} InfoType The type of information to retrieve.
 		 * @return {void} Success
 		 */
@@ -3828,8 +3887,10 @@ export namespace MyNS {
 		 * Get #Action=SwapEnvironmentCNAMEs
 		 * @param {string} SourceEnvironmentId <p>The ID of the source environment.</p> <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentId</code>, you must specify the <code>DestinationEnvironmentId</code>. </p>
 		 * @param {string} SourceEnvironmentName <p>The name of the source environment.</p> <p> Condition: You must specify at least the <code>SourceEnvironmentID</code> or the <code>SourceEnvironmentName</code>. You may also specify both. If you specify the <code>SourceEnvironmentName</code>, you must specify the <code>DestinationEnvironmentName</code>. </p>
+		 *     Min length: 4    Max length: 40
 		 * @param {string} DestinationEnvironmentId <p>The ID of the destination environment.</p> <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentId</code> with the <code>DestinationEnvironmentId</code>. </p>
 		 * @param {string} DestinationEnvironmentName <p>The name of the destination environment.</p> <p> Condition: You must specify at least the <code>DestinationEnvironmentID</code> or the <code>DestinationEnvironmentName</code>. You may also specify both. You must specify the <code>SourceEnvironmentName</code> with the <code>DestinationEnvironmentName</code>. </p>
+		 *     Min length: 4    Max length: 40
 		 * @return {void} Success
 		 */
 		GET_SwapEnvironmentCNAMEs(SourceEnvironmentId: string | null | undefined, SourceEnvironmentName: string | null | undefined, DestinationEnvironmentId: string | null | undefined, DestinationEnvironmentName: string | null | undefined, Action: GET_SwapEnvironmentCNAMEsAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3841,6 +3902,7 @@ export namespace MyNS {
 		 * Get #Action=TerminateEnvironment
 		 * @param {string} EnvironmentId <p>The ID of the environment to terminate.</p> <p> Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
 		 * @param {string} EnvironmentName <p>The name of the environment to terminate.</p> <p> Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+		 *     Min length: 4    Max length: 40
 		 * @param {boolean} TerminateResources <p>Indicates whether the associated AWS resources should shut down when the environment is terminated:</p> <ul> <li> <p> <code>true</code>: The specified environment as well as the associated AWS resources, such as Auto Scaling group and LoadBalancer, are terminated.</p> </li> <li> <p> <code>false</code>: AWS Elastic Beanstalk resource management is removed from the environment, but the AWS resources continue to operate.</p> </li> </ul> <p> For more information, see the <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/ug/"> AWS Elastic Beanstalk User Guide. </a> </p> <p> Default: <code>true</code> </p> <p> Valid Values: <code>true</code> | <code>false</code> </p>
 		 * @param {boolean} ForceTerminate Terminates the target environment even if another environment in the same group is dependent on it.
 		 * @return {void} Success
@@ -3853,7 +3915,9 @@ export namespace MyNS {
 		 * <p>Updates the specified application to have the specified properties.</p> <note> <p>If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear these properties, specify an empty string.</p> </note>
 		 * Get #Action=UpdateApplication
 		 * @param {string} ApplicationName The name of the application to update. If no such application is found, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} Description <p>A new description for the application.</p> <p>Default: If not specified, AWS Elastic Beanstalk does not update the description.</p>
+		 *     Max length: 200
 		 * @return {void} Success
 		 */
 		GET_UpdateApplication(ApplicationName: string, Description: string | null | undefined, Action: GET_UpdateApplicationAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3864,6 +3928,7 @@ export namespace MyNS {
 		 * Modifies lifecycle settings for an application.
 		 * Get #Action=UpdateApplicationResourceLifecycle
 		 * @param {string} ApplicationName The name of the application.
+		 *     Min length: 1    Max length: 100
 		 * @param {GET_UpdateApplicationResourceLifecycleResourceLifecycleConfig} ResourceLifecycleConfig The lifecycle configuration.
 		 * @return {void} Success
 		 */
@@ -3875,8 +3940,11 @@ export namespace MyNS {
 		 * <p>Updates the specified application version to have the specified properties.</p> <note> <p>If a property (for example, <code>description</code>) is not provided, the value remains unchanged. To clear properties, specify an empty string.</p> </note>
 		 * Get #Action=UpdateApplicationVersion
 		 * @param {string} ApplicationName <p>The name of the application associated with this version.</p> <p> If no application is found with this name, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error.</p>
+		 *     Min length: 1    Max length: 100
 		 * @param {string} VersionLabel <p>The name of the version to update.</p> <p>If no application version is found with this label, <code>UpdateApplication</code> returns an <code>InvalidParameterValue</code> error. </p>
+		 *     Min length: 1    Max length: 100
 		 * @param {string} Description A new description for this version.
+		 *     Max length: 200
 		 * @return {void} Success
 		 */
 		GET_UpdateApplicationVersion(ApplicationName: string, VersionLabel: string, Description: string | null | undefined, Action: GET_UpdateApplicationVersionAction, Version: GET_AbortEnvironmentUpdateVersion): Observable<HttpResponse<string>> {
@@ -3887,8 +3955,11 @@ export namespace MyNS {
 		 * <p>Updates the specified configuration template to have the specified properties or configuration option values.</p> <note> <p>If a property (for example, <code>ApplicationName</code>) is not provided, its value remains unchanged. To clear such properties, specify an empty string.</p> </note> <p>Related Topics</p> <ul> <li> <p> <a>DescribeConfigurationOptions</a> </p> </li> </ul>
 		 * Get #Action=UpdateConfigurationTemplate
 		 * @param {string} ApplicationName <p>The name of the application associated with the configuration template to update.</p> <p> If no application is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TemplateName <p>The name of the configuration template to update.</p> <p> If no configuration template is found with this name, <code>UpdateConfigurationTemplate</code> returns an <code>InvalidParameterValue</code> error. </p>
+		 *     Min length: 1    Max length: 100
 		 * @param {string} Description A new description for the configuration.
+		 *     Max length: 200
 		 * @param {Array<ConfigurationOptionSetting>} OptionSettings A list of configuration option settings to update with the new specified option value.
 		 * @param {Array<OptionSpecification>} OptionsToRemove <p>A list of configuration options to remove from the configuration set.</p> <p> Constraint: You can remove only <code>UserDefined</code> configuration options. </p>
 		 * @return {void} Success
@@ -3901,13 +3972,19 @@ export namespace MyNS {
 		 * <p>Updates the environment description, deploys a new application version, updates the configuration settings to an entirely new configuration template, or updates select configuration option values in the running environment.</p> <p> Attempting to update both the release and configuration is not allowed and AWS Elastic Beanstalk returns an <code>InvalidParameterCombination</code> error. </p> <p> When updating the configuration settings to a new template or individual settings, a draft configuration is created and <a>DescribeConfigurationSettings</a> for this environment returns two setting descriptions with different <code>DeploymentStatus</code> values. </p>
 		 * Get #Action=UpdateEnvironment
 		 * @param {string} ApplicationName The name of the application with which the environment is associated.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EnvironmentId <p>The ID of the environment to update.</p> <p>If no environment with this ID exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error.</p> <p>Condition: You must specify either this or an EnvironmentName, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
 		 * @param {string} EnvironmentName <p>The name of the environment to update. If no environment with this name exists, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. </p> <p>Condition: You must specify either this or an EnvironmentId, or both. If you do not specify either, AWS Elastic Beanstalk returns <code>MissingRequiredParameter</code> error. </p>
+		 *     Min length: 4    Max length: 40
 		 * @param {string} GroupName The name of the group to which the target environment belongs. Specify a group name only if the environment's name is specified in an environment manifest and not with the environment name or environment ID parameters. See <a href="https://docs.aws.amazon.com/elasticbeanstalk/latest/dg/environment-cfg-manifest.html">Environment Manifest (env.yaml)</a> for details.
+		 *     Min length: 1    Max length: 19
 		 * @param {string} Description If this parameter is specified, AWS Elastic Beanstalk updates the description of this environment.
+		 *     Max length: 200
 		 * @param {GET_UpdateEnvironmentTier} Tier <p>This specifies the tier to use to update the environment.</p> <p>Condition: At this time, if you change the tier version, name, or type, AWS Elastic Beanstalk returns <code>InvalidParameterValue</code> error. </p>
 		 * @param {string} VersionLabel If this parameter is specified, AWS Elastic Beanstalk deploys the named application version to the environment. If no such application version is found, returns an <code>InvalidParameterValue</code> error. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TemplateName If this parameter is specified, AWS Elastic Beanstalk deploys this configuration template to the environment. If no such configuration template is found, AWS Elastic Beanstalk returns an <code>InvalidParameterValue</code> error. 
+		 *     Min length: 1    Max length: 100
 		 * @param {string} SolutionStackName This specifies the platform version that the environment will run after the environment is updated.
 		 * @param {string} PlatformArn The ARN of the platform, if used.
 		 * @param {Array<ConfigurationOptionSetting>} OptionSettings If specified, AWS Elastic Beanstalk updates the configuration set associated with the running environment and sets the specified configuration options to the requested value.
@@ -3934,8 +4011,11 @@ export namespace MyNS {
 		 * <p>Takes a set of configuration settings and either a configuration template or environment, and determines whether those values are valid.</p> <p>This action returns a list of messages indicating any errors or warnings associated with the selection of option values.</p>
 		 * Get #Action=ValidateConfigurationSettings
 		 * @param {string} ApplicationName The name of the application that the configuration template or environment belongs to.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} TemplateName <p>The name of the configuration template to validate the settings against.</p> <p>Condition: You cannot specify both this and an environment name.</p>
+		 *     Min length: 1    Max length: 100
 		 * @param {string} EnvironmentName <p>The name of the environment to validate the settings against.</p> <p>Condition: You cannot specify both this and a configuration template name.</p>
+		 *     Min length: 4    Max length: 40
 		 * @param {Array<ConfigurationOptionSetting>} OptionSettings A list of the options and desired values to evaluate.
 		 * @return {void} Success
 		 */

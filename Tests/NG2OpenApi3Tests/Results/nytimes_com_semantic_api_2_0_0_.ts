@@ -8,12 +8,16 @@ export namespace MyNS {
 		article_list?: ConceptArticle_list;
 		ConceptCombinations?: Array<ConceptCombinations>;
 		concept_created?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		concept_id?: number | null;
 		concept_name?: string | null;
 		concept_status?: string | null;
 		concept_type?: string | null;
 		concept_updated?: string | null;
 		descendants?: Array<ConceptRelation>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		is_times_tag?: number | null;
 		ConceptLinks?: Array<ConceptLinks>;
 		ConceptScope_notes?: Array<ConceptScope_notes>;
@@ -23,11 +27,15 @@ export namespace MyNS {
 	}
 	export interface ConceptFormProperties {
 		concept_created: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		concept_id: FormControl<number | null | undefined>,
 		concept_name: FormControl<string | null | undefined>,
 		concept_status: FormControl<string | null | undefined>,
 		concept_type: FormControl<string | null | undefined>,
 		concept_updated: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		is_times_tag: FormControl<number | null | undefined>,
 		search_api_query: FormControl<string | null | undefined>,
 		vernacular: FormControl<string | null | undefined>,
@@ -49,21 +57,29 @@ export namespace MyNS {
 
 	export interface ConceptRelation {
 		concept_created?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		concept_id?: number | null;
 		concept_name?: string | null;
 		concept_status?: string | null;
 		concept_type?: string | null;
 		concept_updated?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		is_times_tag?: number | null;
 		vernacular?: string | null;
 	}
 	export interface ConceptRelationFormProperties {
 		concept_created: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		concept_id: FormControl<number | null | undefined>,
 		concept_name: FormControl<string | null | undefined>,
 		concept_status: FormControl<string | null | undefined>,
 		concept_type: FormControl<string | null | undefined>,
 		concept_updated: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		is_times_tag: FormControl<number | null | undefined>,
 		vernacular: FormControl<string | null | undefined>,
 	}
@@ -83,9 +99,13 @@ export namespace MyNS {
 
 	export interface ConceptArticle_list {
 		ConceptArticle_listResults?: Array<ConceptArticle_listResults>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 	export interface ConceptArticle_listFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateConceptArticle_listFormGroup() {
@@ -142,18 +162,26 @@ export namespace MyNS {
 
 	export interface ConceptCombinations {
 		combination_note?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		combination_source_concept_id?: number | null;
 		combination_source_concept_name?: string | null;
 		combination_source_concept_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		combination_target_concept_id?: number | null;
 		combination_target_concept_name?: string | null;
 		combination_target_concept_type?: string | null;
 	}
 	export interface ConceptCombinationsFormProperties {
 		combination_note: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		combination_source_concept_id: FormControl<number | null | undefined>,
 		combination_source_concept_name: FormControl<string | null | undefined>,
 		combination_source_concept_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		combination_target_concept_id: FormControl<number | null | undefined>,
 		combination_target_concept_name: FormControl<string | null | undefined>,
 		combination_target_concept_type: FormControl<string | null | undefined>,
@@ -172,24 +200,36 @@ export namespace MyNS {
 	}
 
 	export interface ConceptLinks {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		concept_id?: number | null;
 		concept_name?: string | null;
 		concept_status?: string | null;
 		concept_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		is_times_tag?: number | null;
 		link?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id?: number | null;
 		link_type?: string | null;
 		mapping_type?: string | null;
 		relation?: string | null;
 	}
 	export interface ConceptLinksFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		concept_id: FormControl<number | null | undefined>,
 		concept_name: FormControl<string | null | undefined>,
 		concept_status: FormControl<string | null | undefined>,
 		concept_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		is_times_tag: FormControl<number | null | undefined>,
 		link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		link_id: FormControl<number | null | undefined>,
 		link_type: FormControl<string | null | undefined>,
 		mapping_type: FormControl<string | null | undefined>,
@@ -231,10 +271,14 @@ export namespace MyNS {
 	}
 
 	export interface ConceptTaxonomy {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		source_concept_id?: number | null;
 		source_concept_name?: string | null;
 		source_concept_type?: string | null;
 		source_concept_vernacular?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		target_concept_id?: number | null;
 		target_concept_name?: string | null;
 		target_concept_type?: string | null;
@@ -243,10 +287,14 @@ export namespace MyNS {
 		taxonomic_verification_status?: string | null;
 	}
 	export interface ConceptTaxonomyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		source_concept_id: FormControl<number | null | undefined>,
 		source_concept_name: FormControl<string | null | undefined>,
 		source_concept_type: FormControl<string | null | undefined>,
 		source_concept_vernacular: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		target_concept_id: FormControl<number | null | undefined>,
 		target_concept_name: FormControl<string | null | undefined>,
 		target_concept_type: FormControl<string | null | undefined>,
@@ -301,6 +349,7 @@ export namespace MyNS {
 		 * Get search.json
 		 * @param {string} query Precedes the search term string. Used in a Search Query. Except for &lt;specific_concept_name&gt;, Search Query will take the required parameters listed above (&lt;concept_type&gt;, &lt;concept_uri&gt;, &lt;article_uri&gt;) as an optional_parameter in addition to the query=&lt;query_term&gt;.
 		 * @param {number} offset Integer value for the index count from the first concept to the last concept, sorted alphabetically. Used in a Search Query. A Search Query will return up to 10 concepts in its results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Name_concept_type_specific_concept_jsonGetByFieldsAndQueryFields} fields "all" or comma-separated list of specific optional fields: pages, ticker_symbol, links, taxonomy, combinations, geocodes, article_list, scope_notes, search_api_query
 		 * Optional fields are returned in result_set. They are briefly explained here:
 		 * pages: A list of topic pages associated with a specific concept.
@@ -325,12 +374,16 @@ export namespace MyNS {
 
 	export interface Name_concept_type_specific_concept_jsonGetByFieldsAndQueryReturn {
 		copyright?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results?: number | null;
 		results?: Array<Concept>;
 		status?: string | null;
 	}
 	export interface Name_concept_type_specific_concept_jsonGetByFieldsAndQueryReturnFormProperties {
 		copyright: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}
@@ -345,12 +398,16 @@ export namespace MyNS {
 
 	export interface Search_jsonGetByQueryAndOffsetAndFieldsReturn {
 		copyright?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results?: number | null;
 		results?: Array<ConceptRelation>;
 		status?: string | null;
 	}
 	export interface Search_jsonGetByQueryAndOffsetAndFieldsReturnFormProperties {
 		copyright: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		num_results: FormControl<number | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}

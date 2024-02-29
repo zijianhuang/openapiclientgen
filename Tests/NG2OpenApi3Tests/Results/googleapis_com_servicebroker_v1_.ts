@@ -253,6 +253,7 @@ export namespace MyNS {
 		 * the conditions in the version `3` policy are lost.
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version?: number | null;
 	}
@@ -348,6 +349,7 @@ export namespace MyNS {
 		 * the conditions in the version `3` policy are lost.
 		 * If a policy does not include any conditions, operations on that policy may
 		 * specify any valid version or leave the field unset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		version: FormControl<number | null | undefined>,
 	}
@@ -492,6 +494,7 @@ export namespace MyNS {
 		 * Requests for policies with any conditional bindings must specify version 3.
 		 * Policies without any conditional bindings may specify any valid value or
 		 * leave the field unset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Servicebroker_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<HttpResponse<string>> {

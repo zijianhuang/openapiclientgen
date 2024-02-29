@@ -197,7 +197,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -217,7 +220,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -328,10 +334,16 @@ export namespace MyNS {
 
 	export interface Benefit {
 
-		/** The amount deducted for benefit. */
+		/**
+		 * The amount deducted for benefit.
+		 * Type: double
+		 */
 		employee_deduction?: number | null;
 
-		/** The amount of employer contribution. */
+		/**
+		 * The amount of employer contribution.
+		 * Type: double
+		 */
 		employer_contribution?: number | null;
 
 		/** The name of the benefit. */
@@ -339,10 +351,16 @@ export namespace MyNS {
 	}
 	export interface BenefitFormProperties {
 
-		/** The amount deducted for benefit. */
+		/**
+		 * The amount deducted for benefit.
+		 * Type: double
+		 */
 		employee_deduction: FormControl<number | null | undefined>,
 
-		/** The amount of employer contribution. */
+		/**
+		 * The amount of employer contribution.
+		 * Type: double
+		 */
 		employer_contribution: FormControl<number | null | undefined>,
 
 		/** The name of the benefit. */
@@ -371,10 +389,16 @@ export namespace MyNS {
 		 */
 		employee_id: string;
 
-		/** The employee's gross pay. Only available when payroll has been processed */
+		/**
+		 * The employee's gross pay. Only available when payroll has been processed
+		 * Type: double
+		 */
 		gross_pay?: number | null;
 
-		/** The employee's net pay. Only available when payroll has been processed */
+		/**
+		 * The employee's net pay. Only available when payroll has been processed
+		 * Type: double
+		 */
 		net_pay?: number | null;
 
 		/** An array of employer and employee taxes for the pay period. */
@@ -388,10 +412,16 @@ export namespace MyNS {
 		 */
 		employee_id: FormControl<string | null | undefined>,
 
-		/** The employee's gross pay. Only available when payroll has been processed */
+		/**
+		 * The employee's gross pay. Only available when payroll has been processed
+		 * Type: double
+		 */
 		gross_pay: FormControl<number | null | undefined>,
 
-		/** The employee's net pay. Only available when payroll has been processed */
+		/**
+		 * The employee's net pay. Only available when payroll has been processed
+		 * Type: double
+		 */
 		net_pay: FormControl<number | null | undefined>,
 	}
 	export function CreateCompensationFormGroup() {
@@ -405,7 +435,10 @@ export namespace MyNS {
 
 	export interface Deduction {
 
-		/** The amount deducted. */
+		/**
+		 * The amount deducted.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** The name of the deduction. */
@@ -413,7 +446,10 @@ export namespace MyNS {
 	}
 	export interface DeductionFormProperties {
 
-		/** The amount deducted. */
+		/**
+		 * The amount deducted.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The name of the deduction. */
@@ -429,7 +465,10 @@ export namespace MyNS {
 
 	export interface Tax {
 
-		/** The amount of the tax. */
+		/**
+		 * The amount of the tax.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Paid by employer. */
@@ -440,7 +479,10 @@ export namespace MyNS {
 	}
 	export interface TaxFormProperties {
 
-		/** The amount of the tax. */
+		/**
+		 * The amount of the tax.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Paid by employer. */
@@ -490,6 +532,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -522,6 +565,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -591,6 +635,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -623,6 +668,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -669,6 +715,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -701,6 +748,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -747,6 +795,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -779,6 +828,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -883,6 +933,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -915,6 +966,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -961,6 +1013,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -993,6 +1046,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1039,6 +1093,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1071,6 +1126,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1117,6 +1173,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1149,6 +1206,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1276,7 +1334,10 @@ export namespace MyNS {
 		addresses?: Array<Address>;
 		bank_accounts?: Array<BankAccount>;
 
-		/** The date of birth of the person. */
+		/**
+		 * The date of birth of the person.
+		 * Type: DateOnly
+		 */
 		birthday?: Date | null;
 
 		/** The unique identifier of the company. */
@@ -1288,8 +1349,8 @@ export namespace MyNS {
 
 		/**
 		 * Country code according to ISO 3166-1 alpha-2.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country_of_birth?: string | null;
 
@@ -1303,7 +1364,10 @@ export namespace MyNS {
 		/** When custom mappings are configured on the resource, the result is included here. */
 		custom_mappings?: CustomMappings;
 
-		/** The date the person deceased. */
+		/**
+		 * The date the person deceased.
+		 * Type: DateOnly
+		 */
 		deceased_on?: Date | null;
 
 		/** Flag to indicate if the object is deleted. */
@@ -1442,7 +1506,10 @@ export namespace MyNS {
 	}
 	export interface EmployeeFormProperties {
 
-		/** The date of birth of the person. */
+		/**
+		 * The date of birth of the person.
+		 * Type: DateOnly
+		 */
 		birthday: FormControl<Date | null | undefined>,
 
 		/** The unique identifier of the company. */
@@ -1453,8 +1520,8 @@ export namespace MyNS {
 
 		/**
 		 * Country code according to ISO 3166-1 alpha-2.
-		 * Max length: 2
 		 * Min length: 2
+		 * Max length: 2
 		 */
 		country_of_birth: FormControl<string | null | undefined>,
 
@@ -1464,7 +1531,10 @@ export namespace MyNS {
 		/** The user who created the object. */
 		created_by: FormControl<string | null | undefined>,
 
-		/** The date the person deceased. */
+		/**
+		 * The date the person deceased.
+		 * Type: DateOnly
+		 */
 		deceased_on: FormControl<Date | null | undefined>,
 
 		/** Flag to indicate if the object is deleted. */
@@ -1656,7 +1726,10 @@ export namespace MyNS {
 		/** Unit of measurement for employee compensation. */
 		payment_unit?: EmployeeCompensationPayment_unit | null;
 
-		/** The amount paid per payment unit. */
+		/**
+		 * The amount paid per payment unit.
+		 * Type: double
+		 */
 		rate?: number | null;
 	}
 	export interface EmployeeCompensationFormProperties {
@@ -1682,7 +1755,10 @@ export namespace MyNS {
 		/** Unit of measurement for employee compensation. */
 		payment_unit: FormControl<EmployeeCompensationPayment_unit | null | undefined>,
 
-		/** The amount paid per payment unit. */
+		/**
+		 * The amount paid per payment unit.
+		 * Type: double
+		 */
 		rate: FormControl<number | null | undefined>,
 	}
 	export function CreateEmployeeCompensationFormGroup() {
@@ -1739,7 +1815,10 @@ export namespace MyNS {
 
 	export interface EmployeeJob {
 
-		/** The rate of pay for the employee in their current job role. */
+		/**
+		 * The rate of pay for the employee in their current job role.
+		 * Type: double
+		 */
 		compensation_rate?: number | null;
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -1748,10 +1827,16 @@ export namespace MyNS {
 		/** A unique identifier for an object. */
 		employee_id?: string | null;
 
-		/** The date on which the employee leaves or is expected to leave their current job role. */
+		/**
+		 * The date on which the employee leaves or is expected to leave their current job role.
+		 * Type: DateOnly
+		 */
 		end_date?: Date | null;
 
-		/** The date on which the employee was hired by the organization */
+		/**
+		 * The date on which the employee was hired by the organization
+		 * Type: DateOnly
+		 */
 		hired_at?: Date | null;
 
 		/** A unique identifier for an object. */
@@ -1767,7 +1852,10 @@ export namespace MyNS {
 		/** The position and responsibilities of the person within the organization. */
 		role?: string | null;
 
-		/** The date on which the employee starts working in their current job role. */
+		/**
+		 * The date on which the employee starts working in their current job role.
+		 * Type: DateOnly
+		 */
 		start_date?: Date | null;
 
 		/** The job title of the person. */
@@ -1775,7 +1863,10 @@ export namespace MyNS {
 	}
 	export interface EmployeeJobFormProperties {
 
-		/** The rate of pay for the employee in their current job role. */
+		/**
+		 * The rate of pay for the employee in their current job role.
+		 * Type: double
+		 */
 		compensation_rate: FormControl<number | null | undefined>,
 
 		/** Indicates the associated currency for an amount of money. Values correspond to [ISO 4217](https://en.wikipedia.org/wiki/ISO_4217). */
@@ -1784,10 +1875,16 @@ export namespace MyNS {
 		/** A unique identifier for an object. */
 		employee_id: FormControl<string | null | undefined>,
 
-		/** The date on which the employee leaves or is expected to leave their current job role. */
+		/**
+		 * The date on which the employee leaves or is expected to leave their current job role.
+		 * Type: DateOnly
+		 */
 		end_date: FormControl<Date | null | undefined>,
 
-		/** The date on which the employee was hired by the organization */
+		/**
+		 * The date on which the employee was hired by the organization
+		 * Type: DateOnly
+		 */
 		hired_at: FormControl<Date | null | undefined>,
 
 		/** A unique identifier for an object. */
@@ -1802,7 +1899,10 @@ export namespace MyNS {
 		/** The position and responsibilities of the person within the organization. */
 		role: FormControl<string | null | undefined>,
 
-		/** The date on which the employee starts working in their current job role. */
+		/**
+		 * The date on which the employee starts working in their current job role.
+		 * Type: DateOnly
+		 */
 		start_date: FormControl<Date | null | undefined>,
 
 		/** The job title of the person. */
@@ -1881,13 +1981,19 @@ export namespace MyNS {
 
 	export interface Person {
 
-		/** Date of birth */
+		/**
+		 * Date of birth
+		 * Type: DateOnly
+		 */
 		birthday?: Date | null;
 
 		/** When custom mappings are configured on the resource, the result is included here. */
 		custom_mappings?: CustomMappings;
 
-		/** Date of death */
+		/**
+		 * Date of death
+		 * Type: DateOnly
+		 */
 		deceased_on?: Date | null;
 
 		/** The first name of the person. */
@@ -1910,10 +2016,16 @@ export namespace MyNS {
 	}
 	export interface PersonFormProperties {
 
-		/** Date of birth */
+		/**
+		 * Date of birth
+		 * Type: DateOnly
+		 */
 		birthday: FormControl<Date | null | undefined>,
 
-		/** Date of death */
+		/**
+		 * Date of death
+		 * Type: DateOnly
+		 */
 		deceased_on: FormControl<Date | null | undefined>,
 
 		/** The first name of the person. */
@@ -2012,18 +2124,30 @@ export namespace MyNS {
 
 	export interface EmployeeProbation_period {
 
-		/** The date that the employee ended their probation period at the company. */
+		/**
+		 * The date that the employee ended their probation period at the company.
+		 * Type: DateOnly
+		 */
 		end_date?: Date | null;
 
-		/** The date that the employee started their probation period at the company. */
+		/**
+		 * The date that the employee started their probation period at the company.
+		 * Type: DateOnly
+		 */
 		start_date?: Date | null;
 	}
 	export interface EmployeeProbation_periodFormProperties {
 
-		/** The date that the employee ended their probation period at the company. */
+		/**
+		 * The date that the employee ended their probation period at the company.
+		 * Type: DateOnly
+		 */
 		end_date: FormControl<Date | null | undefined>,
 
-		/** The date that the employee started their probation period at the company. */
+		/**
+		 * The date that the employee started their probation period at the company.
+		 * Type: DateOnly
+		 */
 		start_date: FormControl<Date | null | undefined>,
 	}
 	export function CreateEmployeeProbation_periodFormGroup() {
@@ -2248,60 +2372,114 @@ export namespace MyNS {
 
 	export interface PayrollTotals {
 
-		/** The total check amount for the payroll. */
+		/**
+		 * The total check amount for the payroll.
+		 * Type: double
+		 */
 		check_amount?: number | null;
 
-		/** The total company debit for the payroll. */
+		/**
+		 * The total company debit for the payroll.
+		 * Type: double
+		 */
 		company_debit?: number | null;
 
-		/** The total amount of employee deducted benefits for the payroll. */
+		/**
+		 * The total amount of employee deducted benefits for the payroll.
+		 * Type: double
+		 */
 		employee_benefit_deductions?: number | null;
 
-		/** The total amount of employee paid taxes for the payroll. */
+		/**
+		 * The total amount of employee paid taxes for the payroll.
+		 * Type: double
+		 */
 		employee_taxes?: number | null;
 
-		/** The total amount of company contributed benefits for the payroll. */
+		/**
+		 * The total amount of company contributed benefits for the payroll.
+		 * Type: double
+		 */
 		employer_benefit_contributions?: number | null;
 
-		/** The total amount of employer paid taxes for the payroll. */
+		/**
+		 * The total amount of employer paid taxes for the payroll.
+		 * Type: double
+		 */
 		employer_taxes?: number | null;
 
-		/** The gross pay amount for the payroll. */
+		/**
+		 * The gross pay amount for the payroll.
+		 * Type: double
+		 */
 		gross_pay?: number | null;
 
-		/** The net pay amount for the payroll. */
+		/**
+		 * The net pay amount for the payroll.
+		 * Type: double
+		 */
 		net_pay?: number | null;
 
-		/** The total tax debit for the payroll. */
+		/**
+		 * The total tax debit for the payroll.
+		 * Type: double
+		 */
 		tax_debit?: number | null;
 	}
 	export interface PayrollTotalsFormProperties {
 
-		/** The total check amount for the payroll. */
+		/**
+		 * The total check amount for the payroll.
+		 * Type: double
+		 */
 		check_amount: FormControl<number | null | undefined>,
 
-		/** The total company debit for the payroll. */
+		/**
+		 * The total company debit for the payroll.
+		 * Type: double
+		 */
 		company_debit: FormControl<number | null | undefined>,
 
-		/** The total amount of employee deducted benefits for the payroll. */
+		/**
+		 * The total amount of employee deducted benefits for the payroll.
+		 * Type: double
+		 */
 		employee_benefit_deductions: FormControl<number | null | undefined>,
 
-		/** The total amount of employee paid taxes for the payroll. */
+		/**
+		 * The total amount of employee paid taxes for the payroll.
+		 * Type: double
+		 */
 		employee_taxes: FormControl<number | null | undefined>,
 
-		/** The total amount of company contributed benefits for the payroll. */
+		/**
+		 * The total amount of company contributed benefits for the payroll.
+		 * Type: double
+		 */
 		employer_benefit_contributions: FormControl<number | null | undefined>,
 
-		/** The total amount of employer paid taxes for the payroll. */
+		/**
+		 * The total amount of employer paid taxes for the payroll.
+		 * Type: double
+		 */
 		employer_taxes: FormControl<number | null | undefined>,
 
-		/** The gross pay amount for the payroll. */
+		/**
+		 * The gross pay amount for the payroll.
+		 * Type: double
+		 */
 		gross_pay: FormControl<number | null | undefined>,
 
-		/** The net pay amount for the payroll. */
+		/**
+		 * The net pay amount for the payroll.
+		 * Type: double
+		 */
 		net_pay: FormControl<number | null | undefined>,
 
-		/** The total tax debit for the payroll. */
+		/**
+		 * The total tax debit for the payroll.
+		 * Type: double
+		 */
 		tax_debit: FormControl<number | null | undefined>,
 	}
 	export function CreatePayrollTotalsFormGroup() {
@@ -2738,6 +2916,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2770,6 +2949,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2822,6 +3002,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2854,6 +3035,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2910,14 +3092,20 @@ export namespace MyNS {
 		/** Cursors to navigate to previous or next pages through the API */
 		cursors?: MetaCursors;
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page?: number | null;
 	}
 
 	/** Response metadata */
 	export interface MetaFormProperties {
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -2990,6 +3178,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3022,6 +3211,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3068,6 +3258,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3100,6 +3291,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3146,6 +3338,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3178,6 +3371,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3224,6 +3418,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3256,6 +3451,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3308,6 +3504,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3340,6 +3537,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3392,6 +3590,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3424,6 +3623,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3619,6 +3819,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3651,6 +3852,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3697,6 +3899,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3729,6 +3932,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3756,6 +3960,8 @@ export namespace MyNS {
 
 		/** The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status. */
 		employment_status?: EmployeeEmployment_status | null;
+
+		/** Type: DateOnly */
 		end_date?: Date | null;
 
 		/** A unique identifier for an object. */
@@ -3764,6 +3970,8 @@ export namespace MyNS {
 		/** Indicates whether this the employee's primary job. */
 		is_primary?: boolean | null;
 		location?: HrisJobLocation;
+
+		/** Type: DateOnly */
 		start_date?: Date | null;
 
 		/** The job title of the person. */
@@ -3779,6 +3987,8 @@ export namespace MyNS {
 
 		/** The employment status of the employee, indicating whether they are currently employed, inactive, terminated, or in another status. */
 		employment_status: FormControl<EmployeeEmployment_status | null | undefined>,
+
+		/** Type: DateOnly */
 		end_date: FormControl<Date | null | undefined>,
 
 		/** A unique identifier for an object. */
@@ -3786,6 +3996,8 @@ export namespace MyNS {
 
 		/** Indicates whether this the employee's primary job. */
 		is_primary: FormControl<boolean | null | undefined>,
+
+		/** Type: DateOnly */
 		start_date: FormControl<Date | null | undefined>,
 
 		/** The job title of the person. */
@@ -3850,6 +4062,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3882,6 +4095,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -3940,6 +4154,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -3972,6 +4187,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4114,6 +4330,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4146,6 +4363,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4192,6 +4410,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4224,6 +4443,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4240,7 +4460,10 @@ export namespace MyNS {
 
 	export interface TimeOffRequest {
 
-		/** The amount of time off requested. */
+		/**
+		 * The amount of time off requested.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** The date the request was approved */
@@ -4294,7 +4517,10 @@ export namespace MyNS {
 	}
 	export interface TimeOffRequestFormProperties {
 
-		/** The amount of time off requested. */
+		/**
+		 * The amount of time off requested.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The date the request was approved */
@@ -4424,6 +4650,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -4456,6 +4683,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -4508,7 +4736,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -4528,7 +4759,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -4560,7 +4794,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -4580,7 +4817,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -4633,7 +4873,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -4653,7 +4896,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -4753,7 +4999,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -4770,7 +5019,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -4817,7 +5069,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -4837,7 +5092,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -4869,7 +5127,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -4889,7 +5150,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -4921,7 +5185,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -4941,7 +5208,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -4991,6 +5261,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5023,6 +5294,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5069,6 +5341,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5101,6 +5374,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5147,6 +5421,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5179,6 +5454,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5225,6 +5501,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -5257,6 +5534,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -5288,7 +5566,10 @@ export namespace MyNS {
 		/** Unique reference to this request event */
 		event_id?: string | null;
 
-		/** The current count this request event has been attempted */
+		/**
+		 * The current count this request event has been attempted
+		 * Type: double
+		 */
 		execution_attempt?: number | null;
 
 		/** ISO Datetime for when the original event occurred */
@@ -5317,7 +5598,10 @@ export namespace MyNS {
 		/** Unique reference to this request event */
 		event_id: FormControl<string | null | undefined>,
 
-		/** The current count this request event has been attempted */
+		/**
+		 * The current count this request event has been attempted
+		 * Type: double
+		 */
 		execution_attempt: FormControl<number | null | undefined>,
 
 		/** ISO Datetime for when the original event occurred */
@@ -5358,6 +5642,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetHrisCompaniesResponse} Companies
@@ -5421,6 +5706,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetDepartmentsResponse} Departments
@@ -5484,6 +5770,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {EmployeesFilter} filter Apply filters
 		 * @param {EmployeesSort} sort Apply sorting
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
@@ -5619,6 +5906,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {TimeOffRequestsFilter} filter Apply filters
 		 * @param {PassThroughQuery} pass_through Optional unmapped key/values that will be passed through to downstream as query parameters. Ie: ?pass_through[search]=leads becomes ?search=leads
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.

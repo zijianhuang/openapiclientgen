@@ -112,37 +112,71 @@ export namespace MyNS {
 	export interface SignierteBelegdaten {
 		'Beleg-Datum-Uhrzeit'?: string | null;
 		Belegnummer?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		'Betrag-Brutto'?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		'Betrag-Netto'?: number | null;
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Besonders-Brutto'?: number | null;
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Besonders-Netto'?: number | null;
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Ermaessigt-1-Brutto'?: number | null;
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Ermaessigt-1-Netto'?: number | null;
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Ermaessigt-2-Brutto'?: number | null;
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Ermaessigt-2-Netto'?: number | null;
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Normal-Brutto'?: number | null;
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Normal-Netto'?: number | null;
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Null-Brutto'?: number | null;
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Null-Netto'?: number | null;
 		'Externer-Beleg-Belegkreis'?: string | null;
 		'Externer-Beleg-Bezeichnung'?: string | null;
@@ -179,37 +213,71 @@ export namespace MyNS {
 	export interface SignierteBelegdatenFormProperties {
 		'Beleg-Datum-Uhrzeit': FormControl<string | null | undefined>,
 		Belegnummer: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		'Betrag-Brutto': FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		'Betrag-Netto': FormControl<number | null | undefined>,
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Besonders-Brutto': FormControl<number | null | undefined>,
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Besonders-Netto': FormControl<number | null | undefined>,
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Ermaessigt-1-Brutto': FormControl<number | null | undefined>,
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Ermaessigt-1-Netto': FormControl<number | null | undefined>,
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Ermaessigt-2-Brutto': FormControl<number | null | undefined>,
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Ermaessigt-2-Netto': FormControl<number | null | undefined>,
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Normal-Brutto': FormControl<number | null | undefined>,
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Normal-Netto': FormControl<number | null | undefined>,
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Null-Brutto': FormControl<number | null | undefined>,
 
-		/** The total amount in cents */
+		/**
+		 * The total amount in cents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'Betrag-Satz-Null-Netto': FormControl<number | null | undefined>,
 		'Externer-Beleg-Belegkreis': FormControl<string | null | undefined>,
 		'Externer-Beleg-Bezeichnung': FormControl<string | null | undefined>,
@@ -284,18 +352,23 @@ export namespace MyNS {
 		/**
 		 * The amount in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		BruttoBetrag: number;
 		'Externer-Beleg-Belegkreis'?: string | null;
 		'Externer-Beleg-Bezeichnung'?: string | null;
 		'Externer-Beleg-Referenz'?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Menge: number;
 
 		/**
 		 * The amount in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NettoBetrag: number;
 
@@ -310,18 +383,23 @@ export namespace MyNS {
 		/**
 		 * The amount in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		BruttoBetrag: FormControl<number | null | undefined>,
 		'Externer-Beleg-Belegkreis': FormControl<string | null | undefined>,
 		'Externer-Beleg-Bezeichnung': FormControl<string | null | undefined>,
 		'Externer-Beleg-Referenz': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Menge: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		NettoBetrag: FormControl<number | null | undefined>,
 
@@ -349,12 +427,14 @@ export namespace MyNS {
 		/**
 		 * The amount in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'Betrag-Brutto': number;
 
 		/**
 		 * The amount in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'Betrag-Netto': number;
 
@@ -367,12 +447,14 @@ export namespace MyNS {
 		/**
 		 * The amount in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'Betrag-Brutto': FormControl<number | null | undefined>,
 
 		/**
 		 * The amount in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		'Betrag-Netto': FormControl<number | null | undefined>,
 
@@ -397,6 +479,7 @@ export namespace MyNS {
 		/**
 		 * The amount in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Betrag: number;
 
@@ -409,6 +492,7 @@ export namespace MyNS {
 		/**
 		 * The amount in cents
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Betrag: FormControl<number | null | undefined>,
 
@@ -573,14 +657,22 @@ export namespace MyNS {
 		'Beleg-UUID'?: string | null;
 		'FON-Geprueft-Datum-Uhrzeit'?: string | null;
 		'FON-Geprueft-Erfolgreich'?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Jahr?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Monat?: number | null;
 	}
 	export interface MonatsbelegFormProperties {
 		'Beleg-UUID': FormControl<string | null | undefined>,
 		'FON-Geprueft-Datum-Uhrzeit': FormControl<string | null | undefined>,
 		'FON-Geprueft-Erfolgreich': FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Jahr: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Monat: FormControl<number | null | undefined>,
 	}
 	export function CreateMonatsbelegFormGroup() {
@@ -740,6 +832,7 @@ export namespace MyNS {
 		 * @param {string} belegUuid The `_uuid` of a particular `Beleg` to export.
 		 * @param {boolean} qr Should the RKSV QR code should be rendered?
 		 * @param {number} width Number of characters per line.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ExportThermal_printBelege_belegUuidGetByQrAndWidthAndDialectAndEncodingDialect} dialect The thermal printer dialect.
 		 * @param {ExportThermal_printBelege_belegUuidGetByQrAndWidthAndDialectAndEncodingEncoding} encoding The encoding of the binary data.
 		 * @return {void} A particular `Beleg` in its ESC/POS or STAR representation.
@@ -787,11 +880,15 @@ export namespace MyNS {
 		 * @param {Registrierkassen_registrierkasseUuidBelegeGetByFormatAndOrderAndLimitAndOffsetAndBeforeAndAfterAndGteAndLteFormat} format Determines the format of the `Beleg` collection.
 		 * @param {Registrierkassen_registrierkasseUuidBelegeGetByFormatAndOrderAndLimitAndOffsetAndBeforeAndAfterAndGteAndLteOrder} order Determines the sorting order.
 		 * @param {number} limit Limits the number of returned results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Skips the specified number of results from the result set.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} before Only return results that where saved before the specified date-time string (i.e., anything that `Date.parse()` can parse).
 		 * @param {string} after Only return results that where saved after the specified date-time string (i.e., anything that `Date.parse()` can parse).
 		 * @param {number} gte Only return results that have at least a particular `Belegnummer`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} lte Only return results that have at most a particular `Belegnummer`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Belege} The `Beleg` collection from the "Datenerfassungsprotokoll".
 		 */
 		Registrierkassen_registrierkasseUuidBelegeGetByFormatAndOrderAndLimitAndOffsetAndBeforeAndAfterAndGteAndLte(registrierkasseUuid: string, format: Registrierkassen_registrierkasseUuidBelegeGetByFormatAndOrderAndLimitAndOffsetAndBeforeAndAfterAndGteAndLteFormat, order: Registrierkassen_registrierkasseUuidBelegeGetByFormatAndOrderAndLimitAndOffsetAndBeforeAndAfterAndGteAndLteOrder | null | undefined, limit: number | null | undefined, offset: number | null | undefined, before: string | null | undefined, after: string | null | undefined, gte: number | null | undefined, lte: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Belege> {
@@ -835,6 +932,8 @@ export namespace MyNS {
 		 * Returns a list of `Monatsbelege`.
 		 * Get registrierkassen/{registrierkasseUuid}/monatsbelege
 		 * @param {string} registrierkasseUuid The `_uuid` of the `Registrierkasse`.
+		 * @param {number} year Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} month Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Monatsbeleg>} Information about `Monatsbelege`.
 		 */
 		Registrierkassen_registrierkasseUuidMonatsbelegeGetByYearAndMonth(registrierkasseUuid: string, year: number | null | undefined, month: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Monatsbeleg>> {

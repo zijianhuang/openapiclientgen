@@ -20,10 +20,14 @@ export namespace MyNS {
 	}
 
 	export interface Inline_response_200 {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_code?: number | null;
 		predictions?: Inline_response_200Predictions;
 	}
 	export interface Inline_response_200FormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_code: FormControl<number | null | undefined>,
 	}
 	export function CreateInline_response_200FormGroup() {
@@ -34,63 +38,175 @@ export namespace MyNS {
 	}
 
 	export interface Inline_response_200Predictions {
+
+		/** Type: double */
 		'1girl'?: number | null;
+
+		/** Type: double */
 		abs?: number | null;
+
+		/** Type: double */
 		'artificial-images'?: number | null;
+
+		/** Type: double */
 		bikini?: number | null;
+
+		/** Type: double */
 		'black bikini'?: number | null;
+
+		/** Type: double */
 		'black hair'?: number | null;
+
+		/** Type: double */
 		breasts?: number | null;
+
+		/** Type: double */
 		choker?: number | null;
+
+		/** Type: double */
 		composition_one_female?: number | null;
+
+		/** Type: double */
 		'dark skin'?: number | null;
+
+		/** Type: double */
 		'dark-skinned female'?: number | null;
+
+		/** Type: double */
 		'english commentary'?: number | null;
+
+		/** Type: double */
 		forehead?: number | null;
+
+		/** Type: double */
 		jewelry?: number | null;
+
+		/** Type: double */
 		'large breasts'?: number | null;
+
+		/** Type: double */
 		lips?: number | null;
+
+		/** Type: double */
 		'long hair'?: number | null;
+
+		/** Type: double */
 		'looking at viewer'?: number | null;
+
+		/** Type: double */
 		muscular?: number | null;
+
+		/** Type: double */
 		'muscular female'?: number | null;
+
+		/** Type: double */
 		navel?: number | null;
+
+		/** Type: double */
 		original?: number | null;
+
+		/** Type: double */
 		'patreon username'?: number | null;
+
+		/** Type: double */
 		solo?: number | null;
+
+		/** Type: double */
 		swimsuit?: number | null;
+
+		/** Type: double */
 		thighs?: number | null;
+
+		/** Type: double */
 		toned?: number | null;
+
+		/** Type: double */
 		unsafe?: number | null;
 	}
 	export interface Inline_response_200PredictionsFormProperties {
+
+		/** Type: double */
 		'1girl': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		abs: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'artificial-images': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		bikini: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'black bikini': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'black hair': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		breasts: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		choker: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		composition_one_female: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'dark skin': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'dark-skinned female': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'english commentary': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		forehead: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		jewelry: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'large breasts': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		lips: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'long hair': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'looking at viewer': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		muscular: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'muscular female': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		navel: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		original: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'patreon username': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		solo: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		swimsuit: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		thighs: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		toned: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unsafe: FormControl<number | null | undefined>,
 	}
 	export function CreateInline_response_200PredictionsFormGroup() {

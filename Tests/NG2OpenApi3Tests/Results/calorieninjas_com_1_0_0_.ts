@@ -13,6 +13,7 @@ export namespace MyNS {
 		 * Returns a list of food item nutrition facts extracted from an input string containing food and beverage words.
 		 * Get v1/nutrition
 		 * @param {string} query Input query containing food and/or beverage words.
+		 *     Min length: 0    Max length: 1500
 		 * @return {void} 
 		 */
 		V1NutritionGetByQuery(query: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

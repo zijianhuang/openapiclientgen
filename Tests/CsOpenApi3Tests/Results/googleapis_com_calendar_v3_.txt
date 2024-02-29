@@ -1953,7 +1953,9 @@ namespace MyNS
 		/// Calendar_acl_list calendars/{calendarId}/acl
 		/// </summary>
 		/// <param name="calendarId">Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.</param>
-		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.</param>
+		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="pageToken">Token specifying which result page to return. Optional.</param>
 		/// <param name="showDeleted">Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to "none". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False.</param>
 		/// <param name="syncToken">Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All entries deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
@@ -2036,7 +2038,9 @@ namespace MyNS
 		/// Calendar_acl_watch calendars/{calendarId}/acl/watch
 		/// </summary>
 		/// <param name="calendarId">Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.</param>
-		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.</param>
+		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="pageToken">Token specifying which result page to return. Optional.</param>
 		/// <param name="showDeleted">Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to "none". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False.</param>
 		/// <param name="syncToken">Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All entries deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
@@ -2264,8 +2268,12 @@ namespace MyNS
 		///- "outOfOffice" 
 		///- "workingLocation"This parameter can be repeated multiple times to return events of different types. The default is ["default", "focusTime", "outOfOffice"].</param>
 		/// <param name="iCalUID">Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID.</param>
-		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</param>
-		/// <param name="maxResults">Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.</param>
+		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="maxResults">Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="orderBy">The order of the events returned in the result. Optional. The default is an unspecified, stable order.</param>
 		/// <param name="pageToken">Token specifying which result page to return. Optional.</param>
 		/// <param name="privateExtendedProperty">Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints.</param>
@@ -2357,8 +2365,13 @@ namespace MyNS
 		/// Calendar_events_insert calendars/{calendarId}/events
 		/// </summary>
 		/// <param name="calendarId">Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.</param>
-		/// <param name="conferenceDataVersion">Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.</param>
-		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</param>
+		/// <param name="conferenceDataVersion">Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+		/// Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="sendNotifications">Deprecated. Please use sendUpdates instead.
 		///
 		///Whether to send notifications about the creation of the new event. Note that some emails might still be sent even if you set the value to false. The default is false.</param>
@@ -2405,7 +2418,10 @@ namespace MyNS
 		/// Calendar_events_import calendars/{calendarId}/events/import
 		/// </summary>
 		/// <param name="calendarId">Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.</param>
-		/// <param name="conferenceDataVersion">Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.</param>
+		/// <param name="conferenceDataVersion">Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+		/// Minimum: 0
+		/// Maximum: 1
+		// </param>
 		/// <param name="supportsAttachments">Whether API client performing operation supports event attachments. Optional. The default is False.</param>
 		/// <returns>Successful response</returns>
 		public async Task<Event> Calendar_events_importAsync(string calendarId, int conferenceDataVersion, bool supportsAttachments, Event requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2489,8 +2505,12 @@ namespace MyNS
 		///- "outOfOffice" 
 		///- "workingLocation"This parameter can be repeated multiple times to return events of different types. The default is ["default", "focusTime", "outOfOffice"].</param>
 		/// <param name="iCalUID">Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID.</param>
-		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</param>
-		/// <param name="maxResults">Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.</param>
+		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="maxResults">Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="orderBy">The order of the events returned in the result. Optional. The default is an unspecified, stable order.</param>
 		/// <param name="pageToken">Token specifying which result page to return. Optional.</param>
 		/// <param name="privateExtendedProperty">Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints.</param>
@@ -2625,7 +2645,9 @@ namespace MyNS
 		/// <param name="calendarId">Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.</param>
 		/// <param name="eventId">Event identifier.</param>
 		/// <param name="alwaysIncludeEmail">Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).</param>
-		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</param>
+		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="timeZone">Time zone used in the response. Optional. The default is the time zone of the calendar.</param>
 		/// <returns>Successful response</returns>
 		public async Task<Event> Calendar_events_getAsync(string calendarId, string eventId, bool alwaysIncludeEmail, int maxAttendees, string timeZone, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2663,8 +2685,13 @@ namespace MyNS
 		/// <param name="calendarId">Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.</param>
 		/// <param name="eventId">Event identifier.</param>
 		/// <param name="alwaysIncludeEmail">Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).</param>
-		/// <param name="conferenceDataVersion">Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.</param>
-		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</param>
+		/// <param name="conferenceDataVersion">Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+		/// Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="sendNotifications">Deprecated. Please use sendUpdates instead.
 		///
 		///Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.</param>
@@ -2713,8 +2740,13 @@ namespace MyNS
 		/// <param name="calendarId">Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.</param>
 		/// <param name="eventId">Event identifier.</param>
 		/// <param name="alwaysIncludeEmail">Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).</param>
-		/// <param name="conferenceDataVersion">Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.</param>
-		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</param>
+		/// <param name="conferenceDataVersion">Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+		/// Minimum: 0
+		/// Maximum: 1
+		// </param>
+		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="sendNotifications">Deprecated. Please use sendUpdates instead.
 		///
 		///Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.</param>
@@ -2763,8 +2795,12 @@ namespace MyNS
 		/// <param name="calendarId">Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.</param>
 		/// <param name="eventId">Recurring event identifier.</param>
 		/// <param name="alwaysIncludeEmail">Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).</param>
-		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.</param>
-		/// <param name="maxResults">Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.</param>
+		/// <param name="maxAttendees">The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		/// Minimum: 1
+		// </param>
+		/// <param name="maxResults">Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="originalStart">The original start time of the instance in the result. Optional.</param>
 		/// <param name="pageToken">Token specifying which result page to return. Optional.</param>
 		/// <param name="showDeleted">Whether to include deleted events (with status equals "cancelled") in the result. Cancelled instances of recurring events will still be included if singleEvents is False. Optional. The default is False.</param>
@@ -2946,7 +2982,9 @@ namespace MyNS
 		/// Returns the calendars on the user's calendar list.
 		/// Calendar_calendarList_list users/me/calendarList
 		/// </summary>
-		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.</param>
+		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="minAccessRole">The minimum access role for the user in the returned entries. Optional. The default is no restriction.</param>
 		/// <param name="pageToken">Token specifying which result page to return. Optional.</param>
 		/// <param name="showDeleted">Whether to include deleted calendar list entries in the result. Optional. The default is False.</param>
@@ -3030,7 +3068,9 @@ namespace MyNS
 		/// Watch for changes to CalendarList resources.
 		/// Calendar_calendarList_watch users/me/calendarList/watch
 		/// </summary>
-		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.</param>
+		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="minAccessRole">The minimum access role for the user in the returned entries. Optional. The default is no restriction.</param>
 		/// <param name="pageToken">Token specifying which result page to return. Optional.</param>
 		/// <param name="showDeleted">Whether to include deleted calendar list entries in the result. Optional. The default is False.</param>
@@ -3226,7 +3266,9 @@ namespace MyNS
 		/// Returns all user settings for the authenticated user.
 		/// Calendar_settings_list users/me/settings
 		/// </summary>
-		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.</param>
+		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="pageToken">Token specifying which result page to return. Optional.</param>
 		/// <param name="syncToken">Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then.
 		///If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
@@ -3265,7 +3307,9 @@ namespace MyNS
 		/// Watch for changes to Settings resources.
 		/// Calendar_settings_watch users/me/settings/watch
 		/// </summary>
-		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.</param>
+		/// <param name="maxResults">Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		/// Minimum: 1
+		// </param>
 		/// <param name="pageToken">Token specifying which result page to return. Optional.</param>
 		/// <param name="syncToken">Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then.
 		///If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.

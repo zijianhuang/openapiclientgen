@@ -337,7 +337,10 @@ export namespace MyNS {
 		/** Optional link to previous list of results */
 		previous?: string | null;
 
-		/** Number of records available */
+		/**
+		 * Number of records available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 	export interface PaginationFormProperties {
@@ -354,7 +357,10 @@ export namespace MyNS {
 		/** Optional link to previous list of results */
 		previous: FormControl<string | null | undefined>,
 
-		/** Number of records available */
+		/**
+		 * Number of records available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationFormGroup() {
@@ -383,6 +389,7 @@ export namespace MyNS {
 		 * @param {string} createdStart The earliest abuse ticket creation date to pull abuse tickets for
 		 * @param {string} createdEnd The latest abuse ticket creation date to pull abuse tickets for
 		 * @param {string} limit Number of abuse ticket numbers to return.
+		 *     Maximum: 100
 		 * @param {string} offset The earliest result set record number to pull abuse tickets for
 		 * @return {void} Success
 		 */

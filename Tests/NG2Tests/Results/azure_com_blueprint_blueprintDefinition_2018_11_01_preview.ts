@@ -632,8 +632,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of this resourceGroup. Leave empty if the resource group name will be specified during the blueprint assignment.
-		 * Max length: 90
 		 * Min length: 1
+		 * Max length: 90
 		 */
 		name?: string | null;
 
@@ -652,8 +652,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of this resourceGroup. Leave empty if the resource group name will be specified during the blueprint assignment.
-		 * Max length: 90
 		 * Min length: 1
+		 * Max length: 90
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -702,8 +702,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the resource group.
-		 * Max length: 90
 		 * Min length: 1
+		 * Max length: 90
 		 */
 		name?: string | null;
 	}
@@ -716,8 +716,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the resource group.
-		 * Max length: 90
 		 * Min length: 1
+		 * Max length: 90
 		 */
 		name: FormControl<string | null | undefined>,
 	}

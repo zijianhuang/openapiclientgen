@@ -14,7 +14,10 @@ export namespace MyNS {
 		/** A valid JSON object with information detailing the context of the audit event. */
 		context?: string | null;
 
-		/** When the audit event was created. */
+		/**
+		 * When the audit event was created.
+		 * Type: DateOnly
+		 */
 		created_at?: Date | null;
 
 		/** The type of the audit event. */
@@ -44,7 +47,10 @@ export namespace MyNS {
 		/** Email of the user whose account the audit event is associated with. */
 		user_email?: string | null;
 
-		/** The ID of the user that the audit event is associated with. */
+		/**
+		 * The ID of the user that the audit event is associated with.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id?: number | null;
 	}
 	export interface AuditEventFormProperties {
@@ -55,7 +61,10 @@ export namespace MyNS {
 		/** A valid JSON object with information detailing the context of the audit event. */
 		context: FormControl<string | null | undefined>,
 
-		/** When the audit event was created. */
+		/**
+		 * When the audit event was created.
+		 * Type: DateOnly
+		 */
 		created_at: FormControl<Date | null | undefined>,
 
 		/** The type of the audit event. */
@@ -85,7 +94,10 @@ export namespace MyNS {
 		/** Email of the user whose account the audit event is associated with. */
 		user_email: FormControl<string | null | undefined>,
 
-		/** The ID of the user that the audit event is associated with. */
+		/**
+		 * The ID of the user that the audit event is associated with.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateAuditEventFormGroup() {
@@ -268,7 +280,10 @@ export namespace MyNS {
 	/** Page containing results. */
 	export interface PaginationData {
 
-		/** Which page of the pagination sequence you are looking at. */
+		/**
+		 * Which page of the pagination sequence you are looking at.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/**
@@ -278,17 +293,26 @@ export namespace MyNS {
 		 */
 		size?: number | null;
 
-		/** The total number of items across all pages. */
+		/**
+		 * The total number of items across all pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalElements?: number | null;
 
-		/** The number of pages of data in the response. */
+		/**
+		 * The number of pages of data in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages?: number | null;
 	}
 
 	/** Page containing results. */
 	export interface PaginationDataFormProperties {
 
-		/** Which page of the pagination sequence you are looking at. */
+		/**
+		 * Which page of the pagination sequence you are looking at.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/**
@@ -298,10 +322,16 @@ export namespace MyNS {
 		 */
 		size: FormControl<number | null | undefined>,
 
-		/** The total number of items across all pages. */
+		/**
+		 * The total number of items across all pages.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalElements: FormControl<number | null | undefined>,
 
-		/** The number of pages of data in the response. */
+		/**
+		 * The number of pages of data in the response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPages: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationDataFormGroup() {
@@ -491,7 +521,10 @@ export namespace MyNS {
 		/** A longer description of the error */
 		message?: string | null;
 
-		/** The HTTP Status code of the error */
+		/**
+		 * The HTTP Status code of the error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 	export interface ErrorBadRequestFormProperties {
@@ -502,7 +535,10 @@ export namespace MyNS {
 		/** A longer description of the error */
 		message: FormControl<string | null | undefined>,
 
-		/** The HTTP Status code of the error */
+		/**
+		 * The HTTP Status code of the error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorBadRequestFormGroup() {
@@ -522,7 +558,10 @@ export namespace MyNS {
 		/** A longer description of the error */
 		message?: string | null;
 
-		/** The HTTP Status code of the error */
+		/**
+		 * The HTTP Status code of the error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 	export interface ErrorForbiddenFormProperties {
@@ -533,7 +572,10 @@ export namespace MyNS {
 		/** A longer description of the error */
 		message: FormControl<string | null | undefined>,
 
-		/** The HTTP Status code of the error */
+		/**
+		 * The HTTP Status code of the error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorForbiddenFormGroup() {
@@ -553,7 +595,10 @@ export namespace MyNS {
 		/** A longer description of the error YYY */
 		message?: string | null;
 
-		/** The HTTP Status code of the error */
+		/**
+		 * The HTTP Status code of the error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 	export interface ErrorNotFoundFormProperties {
@@ -564,7 +609,10 @@ export namespace MyNS {
 		/** A longer description of the error YYY */
 		message: FormControl<string | null | undefined>,
 
-		/** The HTTP Status code of the error */
+		/**
+		 * The HTTP Status code of the error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorNotFoundFormGroup() {
@@ -584,7 +632,10 @@ export namespace MyNS {
 		/** A longer description of the error */
 		message?: string | null;
 
-		/** The HTTP Status code of the error */
+		/**
+		 * The HTTP Status code of the error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 	export interface ErrorUnauthorizedFormProperties {
@@ -595,7 +646,10 @@ export namespace MyNS {
 		/** A longer description of the error */
 		message: FormControl<string | null | undefined>,
 
-		/** The HTTP Status code of the error */
+		/**
+		 * The HTTP Status code of the error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorUnauthorizedFormGroup() {
@@ -619,7 +673,10 @@ export namespace MyNS {
 		/** A longer description of the error BBB */
 		message?: string | null;
 
-		/** The HTTP Status code of the error */
+		/**
+		 * The HTTP Status code of the error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 	export interface NoContentFormProperties {
@@ -630,7 +687,10 @@ export namespace MyNS {
 		/** A longer description of the error BBB */
 		message: FormControl<string | null | undefined>,
 
-		/** The HTTP Status code of the error */
+		/**
+		 * The HTTP Status code of the error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateNoContentFormGroup() {
@@ -657,6 +717,7 @@ export namespace MyNS {
 		 * @param {string} search_text Return only audit events where the JSON object contains this search text. Must be legal text for a JSON attribute value, that is quotes and braces must be escaped.
 		 * @param {string} page Page number starting with page 1.
 		 * @param {number} size Number of elements per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {AuditResp} OK
 		 */
 		GetEvents(event_type: AuditEventEvent_type | null | undefined, date_from: string | null | undefined, date_to: string | null | undefined, search_text: string | null | undefined, page: string | null | undefined, size: number | null | undefined): Observable<AuditResp> {

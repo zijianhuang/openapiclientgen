@@ -29,11 +29,15 @@ export namespace MyNS {
 		changedFields?: Array<string>;
 		created?: Date | null;
 		hidden?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isSnapshot?: boolean | null;
 		notes?: string | null;
 		reason?: string | null;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface ArchivedObjectVersionForApiContractFormProperties {
@@ -41,11 +45,15 @@ export namespace MyNS {
 		anythingChanged: FormControl<boolean | null | undefined>,
 		created: FormControl<Date | null | undefined>,
 		hidden: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isSnapshot: FormControl<boolean | null | undefined>,
 		notes: FormControl<string | null | undefined>,
 		reason: FormControl<string | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateArchivedObjectVersionForApiContractFormGroup() {
@@ -67,6 +75,8 @@ export namespace MyNS {
 	export interface UserForApiContract {
 		active?: boolean | null;
 		groupId?: UserForApiContractGroupId | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		knownLanguages?: Array<UserKnownLanguageContract>;
 		mainPicture?: EntryThumbForApiContract;
@@ -78,6 +88,8 @@ export namespace MyNS {
 	export interface UserForApiContractFormProperties {
 		active: FormControl<boolean | null | undefined>,
 		groupId: FormControl<UserForApiContractGroupId | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		memberSince: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -175,6 +187,8 @@ export namespace MyNS {
 		discType?: EntryForApiContractDiscType | null;
 		entryType?: EntryForApiContractEntryType | null;
 		eventCategory?: EntryForApiContractEventCategory | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
 		name?: string | null;
@@ -187,6 +201,8 @@ export namespace MyNS {
 		tagCategoryName?: string | null;
 		tags?: Array<TagUsageForApiContract>;
 		urlSlug?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<ArchivedWebLinkContract>;
 	}
@@ -202,6 +218,8 @@ export namespace MyNS {
 		discType: FormControl<EntryForApiContractDiscType | null | undefined>,
 		entryType: FormControl<EntryForApiContractEntryType | null | undefined>,
 		eventCategory: FormControl<EntryForApiContractEventCategory | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		releaseEventSeriesName: FormControl<string | null | undefined>,
@@ -210,6 +228,8 @@ export namespace MyNS {
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
 		tagCategoryName: FormControl<string | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateEntryForApiContractFormGroup() {
@@ -266,10 +286,16 @@ export namespace MyNS {
 
 	export interface PVContract {
 		author?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdBy?: number | null;
 		disabled?: boolean | null;
 		extendedMetadata?: PVExtendedMetadata;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length?: number | null;
 		name?: string | null;
 		publishDate?: Date | null;
@@ -281,9 +307,15 @@ export namespace MyNS {
 	}
 	export interface PVContractFormProperties {
 		author: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdBy: FormControl<number | null | undefined>,
 		disabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		publishDate: FormControl<Date | null | undefined>,
@@ -333,10 +365,14 @@ export namespace MyNS {
 	export enum EntryForApiContractSongType { Unspecified = 'Unspecified', Original = 'Original', Remaster = 'Remaster', Remix = 'Remix', Cover = 'Cover', Arrangement = 'Arrangement', Instrumental = 'Instrumental', Mashup = 'Mashup', MusicPV = 'MusicPV', DramaPV = 'DramaPV', Live = 'Live', Illustration = 'Illustration', Other = 'Other' }
 
 	export interface TagUsageForApiContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		tag?: TagBaseContract;
 	}
 	export interface TagUsageForApiContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateTagUsageForApiContractFormGroup() {
@@ -349,6 +385,8 @@ export namespace MyNS {
 	export interface TagBaseContract {
 		additionalNames?: string | null;
 		categoryName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		urlSlug?: string | null;
@@ -356,6 +394,8 @@ export namespace MyNS {
 	export interface TagBaseContractFormProperties {
 		additionalNames: FormControl<string | null | undefined>,
 		categoryName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
@@ -398,10 +438,14 @@ export namespace MyNS {
 	export interface ActivityEntryForApiContractPartialFindResult {
 		items?: Array<ActivityEntryForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface ActivityEntryForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityEntryForApiContractPartialFindResultFormGroup() {
@@ -444,13 +488,21 @@ export namespace MyNS {
 		createDate?: Date | null;
 		deleted?: boolean | null;
 		discType?: EntryForApiContractDiscType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
+
+		/** Type: double */
 		ratingAverage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingCount?: number | null;
 		releaseDate?: OptionalDateTimeContract;
 		releaseEvent?: ReleaseEventForApiContract;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface AlbumContractFormProperties {
@@ -460,11 +512,19 @@ export namespace MyNS {
 		createDate: FormControl<Date | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
 		discType: FormControl<EntryForApiContractDiscType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ratingAverage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingCount: FormControl<number | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbumContractFormGroup() {
@@ -486,17 +546,29 @@ export namespace MyNS {
 	}
 
 	export interface OptionalDateTimeContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		day?: number | null;
 		formatted?: string | null;
 		isEmpty?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year?: number | null;
 	}
 	export interface OptionalDateTimeContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		day: FormControl<number | null | undefined>,
 		formatted: FormControl<string | null | undefined>,
 		isEmpty: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateOptionalDateTimeContractFormGroup() {
@@ -517,13 +589,19 @@ export namespace MyNS {
 		date?: Date | null;
 		description?: string | null;
 		endDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
 		name?: string | null;
 		names?: Array<LocalizedStringContract>;
 		pvs?: Array<PVContract>;
 		series?: ReleaseEventSeriesContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seriesId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seriesNumber?: number | null;
 		seriesSuffix?: string | null;
 		songList?: SongListBaseContract;
@@ -532,6 +610,8 @@ export namespace MyNS {
 		urlSlug?: string | null;
 		venue?: VenueForApiContract;
 		venueName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -541,14 +621,22 @@ export namespace MyNS {
 		date: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		endDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seriesId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		seriesNumber: FormControl<number | null | undefined>,
 		seriesSuffix: FormControl<string | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
 		venueName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateReleaseEventForApiContractFormGroup() {
@@ -574,12 +662,16 @@ export namespace MyNS {
 	export interface ArtistForEventContract {
 		artist?: ArtistContract;
 		effectiveRoles?: ArtistForEventContractEffectiveRoles | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		roles?: ArtistForEventContractEffectiveRoles | null;
 	}
 	export interface ArtistForEventContractFormProperties {
 		effectiveRoles: FormControl<ArtistForEventContractEffectiveRoles | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		roles: FormControl<ArtistForEventContractEffectiveRoles | null | undefined>,
@@ -598,22 +690,30 @@ export namespace MyNS {
 		additionalNames?: string | null;
 		artistType?: EntryForApiContractArtistType | null;
 		deleted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		pictureMime?: string | null;
 		releaseDate?: Date | null;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface ArtistContractFormProperties {
 		additionalNames: FormControl<string | null | undefined>,
 		artistType: FormControl<EntryForApiContractArtistType | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		pictureMime: FormControl<string | null | undefined>,
 		releaseDate: FormControl<Date | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateArtistContractFormGroup() {
@@ -638,11 +738,15 @@ export namespace MyNS {
 		category?: EntryForApiContractEventCategory | null;
 		deleted?: boolean | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		pictureMime?: string | null;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
 		urlSlug?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkContract>;
 	}
@@ -651,11 +755,15 @@ export namespace MyNS {
 		category: FormControl<EntryForApiContractEventCategory | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		pictureMime: FormControl<string | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateReleaseEventSeriesContractFormGroup() {
@@ -679,6 +787,8 @@ export namespace MyNS {
 		description?: string | null;
 		descriptionOrUrl?: string | null;
 		disabled?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		url?: string | null;
 	}
@@ -687,6 +797,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		descriptionOrUrl: FormControl<string | null | undefined>,
 		disabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -704,11 +816,15 @@ export namespace MyNS {
 
 	export interface SongListBaseContract {
 		featuredCategory?: EntryForApiContractSongListFeaturedCategory | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 	}
 	export interface SongListBaseContractFormProperties {
 		featuredCategory: FormControl<EntryForApiContractSongListFeaturedCategory | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -729,10 +845,14 @@ export namespace MyNS {
 		deleted?: boolean | null;
 		description?: string | null;
 		events?: Array<ReleaseEventContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		names?: Array<LocalizedStringContract>;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -742,9 +862,13 @@ export namespace MyNS {
 		addressCountryCode: FormControl<string | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateVenueForApiContractFormGroup() {
@@ -765,13 +889,21 @@ export namespace MyNS {
 	export interface OptionalGeoPointContract {
 		formatted?: string | null;
 		hasValue?: boolean | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface OptionalGeoPointContractFormProperties {
 		formatted: FormControl<string | null | undefined>,
 		hasValue: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateOptionalGeoPointContractFormGroup() {
@@ -793,6 +925,8 @@ export namespace MyNS {
 		description?: string | null;
 		endDate?: Date | null;
 		hasVenueOrVenueName?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		inheritedCategory?: EntryForApiContractEventCategory | null;
 		name?: string | null;
@@ -803,6 +937,8 @@ export namespace MyNS {
 		urlSlug?: string | null;
 		venue?: VenueContract;
 		venueName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface ReleaseEventContractFormProperties {
@@ -814,6 +950,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		endDate: FormControl<Date | null | undefined>,
 		hasVenueOrVenueName: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		inheritedCategory: FormControl<EntryForApiContractEventCategory | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -821,6 +959,8 @@ export namespace MyNS {
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
 		venueName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateReleaseEventContractFormGroup() {
@@ -852,9 +992,13 @@ export namespace MyNS {
 		coordinates?: OptionalGeoPointContract;
 		deleted?: boolean | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkContract>;
 	}
@@ -864,9 +1008,13 @@ export namespace MyNS {
 		addressCountryCode: FormControl<string | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateVenueContractFormGroup() {
@@ -889,6 +1037,8 @@ export namespace MyNS {
 		description?: string | null;
 		descriptionOrUrl?: string | null;
 		disabled?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		url?: string | null;
 	}
@@ -897,6 +1047,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		descriptionOrUrl: FormControl<string | null | undefined>,
 		disabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
@@ -913,13 +1065,21 @@ export namespace MyNS {
 	}
 
 	export interface AlbumDiscPropertiesContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		discNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mediaType?: AlbumDiscPropertiesContractMediaType | null;
 		name?: string | null;
 	}
 	export interface AlbumDiscPropertiesContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		discNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		mediaType: FormControl<AlbumDiscPropertiesContractMediaType | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -949,20 +1109,30 @@ export namespace MyNS {
 		description?: string | null;
 		discType?: EntryForApiContractDiscType | null;
 		discs?: Array<AlbumDiscPropertiesContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		identifiers?: Array<AlbumIdentifierContract>;
 		mainPicture?: EntryThumbForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo?: number | null;
 		name?: string | null;
 		names?: Array<LocalizedStringContract>;
 		pvs?: Array<PVContract>;
+
+		/** Type: double */
 		ratingAverage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingCount?: number | null;
 		releaseDate?: OptionalDateTimeContract;
 		releaseEvent?: ReleaseEventForApiContract;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
 		tags?: Array<TagUsageForApiContract>;
 		tracks?: Array<SongInAlbumForApiContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -977,12 +1147,22 @@ export namespace MyNS {
 		deleted: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		discType: FormControl<EntryForApiContractDiscType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ratingAverage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingCount: FormControl<number | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbumForApiContractFormGroup() {
@@ -1052,18 +1232,30 @@ export namespace MyNS {
 	}
 
 	export interface SongInAlbumForApiContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		discNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		name?: string | null;
 		rating?: SongInAlbumForApiContractRating | null;
 		song?: SongForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		trackNumber?: number | null;
 	}
 	export interface SongInAlbumForApiContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		discNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		rating: FormControl<SongInAlbumForApiContractRating | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		trackNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateSongInAlbumForApiContractFormGroup() {
@@ -1088,26 +1280,44 @@ export namespace MyNS {
 		defaultName?: string | null;
 		defaultNameLanguage?: EntryForApiContractDefaultNameLanguage | null;
 		deleted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favoritedTimes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lengthSeconds?: number | null;
 		lyrics?: Array<LyricsForSongContract>;
 		mainPicture?: EntryThumbForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxMilliBpm?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minMilliBpm?: number | null;
 		name?: string | null;
 		names?: Array<LocalizedStringContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		originalVersionId?: number | null;
 		publishDate?: Date | null;
 		pvServices?: SongForApiContractPvServices | null;
 		pvs?: Array<PVContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingScore?: number | null;
 		releaseEvent?: ReleaseEventForApiContract;
 		songType?: EntryForApiContractSongType | null;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
 		tags?: Array<TagUsageForApiContract>;
 		thumbUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -1118,20 +1328,38 @@ export namespace MyNS {
 		defaultName: FormControl<string | null | undefined>,
 		defaultNameLanguage: FormControl<EntryForApiContractDefaultNameLanguage | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favoritedTimes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lengthSeconds: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxMilliBpm: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minMilliBpm: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		originalVersionId: FormControl<number | null | undefined>,
 		publishDate: FormControl<Date | null | undefined>,
 		pvServices: FormControl<SongForApiContractPvServices | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingScore: FormControl<number | null | undefined>,
 		songType: FormControl<EntryForApiContractSongType | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
 		thumbUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateSongForApiContractFormGroup() {
@@ -1165,6 +1393,8 @@ export namespace MyNS {
 		artist?: ArtistContract;
 		categories?: ArtistForAlbumForApiContractCategories | null;
 		effectiveRoles?: ArtistForAlbumForApiContractEffectiveRoles | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isCustomName?: boolean | null;
 		isSupport?: boolean | null;
@@ -1174,6 +1404,8 @@ export namespace MyNS {
 	export interface ArtistForSongContractFormProperties {
 		categories: FormControl<ArtistForAlbumForApiContractCategories | null | undefined>,
 		effectiveRoles: FormControl<ArtistForAlbumForApiContractEffectiveRoles | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isCustomName: FormControl<boolean | null | undefined>,
 		isSupport: FormControl<boolean | null | undefined>,
@@ -1195,6 +1427,8 @@ export namespace MyNS {
 
 	export interface LyricsForSongContract {
 		cultureCode?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		source?: string | null;
 		translationType?: LyricsForSongContractTranslationType | null;
@@ -1203,6 +1437,8 @@ export namespace MyNS {
 	}
 	export interface LyricsForSongContractFormProperties {
 		cultureCode: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		source: FormControl<string | null | undefined>,
 		translationType: FormControl<LyricsForSongContractTranslationType | null | undefined>,
@@ -1228,10 +1464,14 @@ export namespace MyNS {
 	export interface AlbumForApiContractPartialFindResult {
 		items?: Array<AlbumForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface AlbumForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbumForApiContractPartialFindResultFormGroup() {
@@ -1246,12 +1486,16 @@ export namespace MyNS {
 		album?: AlbumForApiContract;
 		mediaType?: AlbumForUserForApiContractMediaType | null;
 		purchaseStatus?: AlbumForUserForApiContractPurchaseStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating?: number | null;
 		user?: UserForApiContract;
 	}
 	export interface AlbumForUserForApiContractFormProperties {
 		mediaType: FormControl<AlbumForUserForApiContractMediaType | null | undefined>,
 		purchaseStatus: FormControl<AlbumForUserForApiContractPurchaseStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rating: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbumForUserForApiContractFormGroup() {
@@ -1270,10 +1514,14 @@ export namespace MyNS {
 	export interface AlbumForUserForApiContractPartialFindResult {
 		items?: Array<AlbumForUserForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface AlbumForUserForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateAlbumForUserForApiContractPartialFindResultFormGroup() {
@@ -1287,8 +1535,12 @@ export namespace MyNS {
 	export enum AlbumOptionalFields { None = 'None', AdditionalNames = 'AdditionalNames', Artists = 'Artists', Description = 'Description', Discs = 'Discs', Identifiers = 'Identifiers', MainPicture = 'MainPicture', Names = 'Names', PVs = 'PVs', ReleaseEvent = 'ReleaseEvent', Tags = 'Tags', Tracks = 'Tracks', WebLinks = 'WebLinks' }
 
 	export interface AlbumReviewContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		albumId?: number | null;
 		date?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		languageCode?: string | null;
 		text?: string | null;
@@ -1296,8 +1548,12 @@ export namespace MyNS {
 		user?: UserForApiContract;
 	}
 	export interface AlbumReviewContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		albumId: FormControl<number | null | undefined>,
 		date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		languageCode: FormControl<string | null | undefined>,
 		text: FormControl<string | null | undefined>,
@@ -1334,8 +1590,12 @@ export namespace MyNS {
 		defaultNameLanguage?: EntryForApiContractDefaultNameLanguage | null;
 		deleted?: boolean | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo?: number | null;
 		name?: string | null;
 		names?: Array<LocalizedStringContract>;
@@ -1344,6 +1604,8 @@ export namespace MyNS {
 		releaseDate?: Date | null;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
 		tags?: Array<TagUsageForApiContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -1355,12 +1617,18 @@ export namespace MyNS {
 		defaultNameLanguage: FormControl<EntryForApiContractDefaultNameLanguage | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		mergedTo: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		pictureMime: FormControl<string | null | undefined>,
 		releaseDate: FormControl<Date | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateArtistForApiContractFormGroup() {
@@ -1417,10 +1685,14 @@ export namespace MyNS {
 	export interface ArtistForApiContractPartialFindResult {
 		items?: Array<ArtistForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface ArtistForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateArtistForApiContractPartialFindResultFormGroup() {
@@ -1433,9 +1705,13 @@ export namespace MyNS {
 
 	export interface ArtistForUserForApiContract {
 		artist?: ArtistForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 	}
 	export interface ArtistForUserForApiContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateArtistForUserForApiContractFormGroup() {
@@ -1448,10 +1724,14 @@ export namespace MyNS {
 	export interface ArtistForUserForApiContractPartialFindResult {
 		items?: Array<ArtistForUserForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface ArtistForUserForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateArtistForUserForApiContractPartialFindResultFormGroup() {
@@ -1479,12 +1759,16 @@ export namespace MyNS {
 		authorName?: string | null;
 		created?: Date | null;
 		entry?: EntryForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		message?: string | null;
 	}
 	export interface CommentForApiContractFormProperties {
 		authorName: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		message: FormControl<string | null | undefined>,
 	}
@@ -1501,10 +1785,14 @@ export namespace MyNS {
 	export interface CommentForApiContractPartialFindResult {
 		items?: Array<CommentForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface CommentForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCommentForApiContractPartialFindResultFormGroup() {
@@ -1547,17 +1835,25 @@ export namespace MyNS {
 
 	export interface DiscussionFolderContract {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		lastTopicAuthor?: UserForApiContract;
 		lastTopicDate?: Date | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topicCount?: number | null;
 	}
 	export interface DiscussionFolderContractFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		lastTopicDate: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		topicCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDiscussionFolderContractFormGroup() {
@@ -1575,21 +1871,33 @@ export namespace MyNS {
 
 	export interface DiscussionTopicContract {
 		author?: UserForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		commentCount?: number | null;
 		comments?: Array<CommentForApiContract>;
 		content?: string | null;
 		created?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		folderId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		lastComment?: CommentForApiContract;
 		locked?: boolean | null;
 		name?: string | null;
 	}
 	export interface DiscussionTopicContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		commentCount: FormControl<number | null | undefined>,
 		content: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		folderId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		locked: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -1610,10 +1918,14 @@ export namespace MyNS {
 	export interface DiscussionTopicContractPartialFindResult {
 		items?: Array<DiscussionTopicContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface DiscussionTopicContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateDiscussionTopicContractPartialFindResultFormGroup() {
@@ -1648,11 +1960,15 @@ export namespace MyNS {
 
 	export interface EntryEditDataContract {
 		time?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		userId?: number | null;
 		userName?: string | null;
 	}
 	export interface EntryEditDataContractFormProperties {
 		time: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		userId: FormControl<number | null | undefined>,
 		userName: FormControl<string | null | undefined>,
 	}
@@ -1670,10 +1986,14 @@ export namespace MyNS {
 	export interface EntryForApiContractPartialFindResult {
 		items?: Array<EntryForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface EntryForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateEntryForApiContractPartialFindResultFormGroup() {
@@ -1701,11 +2021,15 @@ export namespace MyNS {
 	export enum EventSortRule { None = 'None', Name = 'Name', Date = 'Date', AdditionDate = 'AdditionDate', SeriesName = 'SeriesName', VenueName = 'VenueName' }
 
 	export interface LocalizedStringWithIdContract {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		language?: EntryForApiContractDefaultNameLanguage | null;
 		value?: string | null;
 	}
 	export interface LocalizedStringWithIdContractFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		language: FormControl<EntryForApiContractDefaultNameLanguage | null | undefined>,
 		value: FormControl<string | null | undefined>,
@@ -1727,10 +2051,16 @@ export namespace MyNS {
 
 	export interface PVForSongContract {
 		author?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdBy?: number | null;
 		disabled?: boolean | null;
 		extendedMetadata?: PVExtendedMetadata;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length?: number | null;
 		name?: string | null;
 		publishDate?: Date | null;
@@ -1743,9 +2073,15 @@ export namespace MyNS {
 	}
 	export interface PVForSongContractFormProperties {
 		author: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		createdBy: FormControl<number | null | undefined>,
 		disabled: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		length: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		publishDate: FormControl<Date | null | undefined>,
@@ -1778,17 +2114,27 @@ export namespace MyNS {
 		artistString?: string | null;
 		createDate?: Date | null;
 		deleted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favoritedTimes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lengthSeconds?: number | null;
 		name?: string | null;
 		nicoId?: string | null;
 		publishDate?: Date | null;
 		pvServices?: SongForApiContractPvServices | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingScore?: number | null;
 		songType?: EntryForApiContractSongType | null;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
 		thumbUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface SongContractFormProperties {
@@ -1796,17 +2142,27 @@ export namespace MyNS {
 		artistString: FormControl<string | null | undefined>,
 		createDate: FormControl<Date | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favoritedTimes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		lengthSeconds: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		nicoId: FormControl<string | null | undefined>,
 		publishDate: FormControl<Date | null | undefined>,
 		pvServices: FormControl<SongForApiContractPvServices | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ratingScore: FormControl<number | null | undefined>,
 		songType: FormControl<EntryForApiContractSongType | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
 		thumbUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateSongContractFormGroup() {
@@ -1834,10 +2190,14 @@ export namespace MyNS {
 	export interface PVForSongContractPartialFindResult {
 		items?: Array<PVForSongContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface PVForSongContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePVForSongContractPartialFindResultFormGroup() {
@@ -1879,10 +2239,14 @@ export namespace MyNS {
 	export interface RatedSongForUserForApiContractPartialFindResult {
 		items?: Array<RatedSongForUserForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface RatedSongForUserForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateRatedSongForUserForApiContractPartialFindResultFormGroup() {
@@ -1911,10 +2275,14 @@ export namespace MyNS {
 	export interface ReleaseEventForApiContractPartialFindResult {
 		items?: Array<ReleaseEventForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface ReleaseEventForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateReleaseEventForApiContractPartialFindResultFormGroup() {
@@ -1932,12 +2300,16 @@ export namespace MyNS {
 		category?: EntryForApiContractEventCategory | null;
 		description?: string | null;
 		events?: Array<ReleaseEventForApiContract>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
 		name?: string | null;
 		names?: Array<LocalizedStringContract>;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
 		urlSlug?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -1945,10 +2317,14 @@ export namespace MyNS {
 		additionalNames: FormControl<string | null | undefined>,
 		category: FormControl<EntryForApiContractEventCategory | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateReleaseEventSeriesForApiContractFormGroup() {
@@ -1968,10 +2344,14 @@ export namespace MyNS {
 	export interface ReleaseEventSeriesForApiContractPartialFindResult {
 		items?: Array<ReleaseEventSeriesForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface ReleaseEventSeriesForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateReleaseEventSeriesForApiContractPartialFindResultFormGroup() {
@@ -1987,6 +2367,8 @@ export namespace MyNS {
 		defaultNameLanguage?: EntryForApiContractDefaultNameLanguage | null;
 		deleted?: boolean | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
 		name?: string | null;
@@ -1999,6 +2381,8 @@ export namespace MyNS {
 		defaultNameLanguage: FormControl<EntryForApiContractDefaultNameLanguage | null | undefined>,
 		deleted: FormControl<boolean | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
@@ -2021,10 +2405,14 @@ export namespace MyNS {
 	export interface SongForApiContractPartialFindResult {
 		items?: Array<SongForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface SongForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSongForApiContractPartialFindResultFormGroup() {
@@ -2037,13 +2425,21 @@ export namespace MyNS {
 
 	export interface SongInListEditContract {
 		notes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		song?: SongForApiContract;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		songInListId?: number | null;
 	}
 	export interface SongInListEditContractFormProperties {
 		notes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		songInListId: FormControl<number | null | undefined>,
 	}
 	export function CreateSongInListEditContractFormGroup() {
@@ -2057,11 +2453,15 @@ export namespace MyNS {
 
 	export interface SongInListForApiContract {
 		notes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order?: number | null;
 		song?: SongForApiContract;
 	}
 	export interface SongInListForApiContractFormProperties {
 		notes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		order: FormControl<number | null | undefined>,
 	}
 	export function CreateSongInListForApiContractFormGroup() {
@@ -2075,10 +2475,14 @@ export namespace MyNS {
 	export interface SongInListForApiContractPartialFindResult {
 		items?: Array<SongInListForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface SongInListForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSongInListForApiContractPartialFindResultFormGroup() {
@@ -2098,6 +2502,8 @@ export namespace MyNS {
 		eventDate?: Date | null;
 		events?: Array<ReleaseEventForApiContract>;
 		featuredCategory?: EntryForApiContractSongListFeaturedCategory | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		latestComments?: Array<CommentForApiContract>;
 		mainPicture?: EntryThumbForApiContract;
@@ -2110,6 +2516,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		eventDate: FormControl<Date | null | undefined>,
 		featuredCategory: FormControl<EntryForApiContractSongListFeaturedCategory | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
@@ -2130,10 +2538,14 @@ export namespace MyNS {
 	export interface SongListForApiContractPartialFindResult {
 		items?: Array<SongListForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface SongListForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSongListForApiContractPartialFindResultFormGroup() {
@@ -2149,6 +2561,8 @@ export namespace MyNS {
 		description?: string | null;
 		eventDate?: Date | null;
 		featuredCategory?: EntryForApiContractSongListFeaturedCategory | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
 		name?: string | null;
@@ -2161,6 +2575,8 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		eventDate: FormControl<Date | null | undefined>,
 		featuredCategory: FormControl<EntryForApiContractSongListFeaturedCategory | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
@@ -2216,6 +2632,8 @@ export namespace MyNS {
 		createDate?: Date | null;
 		defaultNameLanguage?: EntryForApiContractDefaultNameLanguage | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		mainPicture?: EntryThumbForApiContract;
 		name?: string | null;
@@ -2223,10 +2641,16 @@ export namespace MyNS {
 		parent?: TagBaseContract;
 		relatedTags?: Array<TagBaseContract>;
 		status?: ArchivedObjectVersionForApiContractStatus | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targets?: number | null;
 		translatedDescription?: EnglishTranslatedStringContract;
 		urlSlug?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usageCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 		webLinks?: Array<WebLinkForApiContract>;
 	}
@@ -2236,12 +2660,20 @@ export namespace MyNS {
 		createDate: FormControl<Date | null | undefined>,
 		defaultNameLanguage: FormControl<EntryForApiContractDefaultNameLanguage | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		status: FormControl<ArchivedObjectVersionForApiContractStatus | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		targets: FormControl<number | null | undefined>,
 		urlSlug: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usageCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateTagForApiContractFormGroup() {
@@ -2265,10 +2697,14 @@ export namespace MyNS {
 	export interface TagForApiContractPartialFindResult {
 		items?: Array<TagForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface TagForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateTagForApiContractPartialFindResultFormGroup() {
@@ -2296,10 +2732,14 @@ export namespace MyNS {
 	export interface UserForApiContractPartialFindResult {
 		items?: Array<UserForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface UserForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUserForApiContractPartialFindResultFormGroup() {
@@ -2320,6 +2760,8 @@ export namespace MyNS {
 		body?: string | null;
 		createdFormatted?: string | null;
 		highPriority?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		inbox?: UserInboxType | null;
 		read?: boolean | null;
@@ -2331,6 +2773,8 @@ export namespace MyNS {
 		body: FormControl<string | null | undefined>,
 		createdFormatted: FormControl<string | null | undefined>,
 		highPriority: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		inbox: FormControl<UserInboxType | null | undefined>,
 		read: FormControl<boolean | null | undefined>,
@@ -2352,10 +2796,14 @@ export namespace MyNS {
 	export interface UserMessageContractPartialFindResult {
 		items?: Array<UserMessageContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface UserMessageContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUserMessageContractPartialFindResultFormGroup() {
@@ -2375,10 +2823,14 @@ export namespace MyNS {
 	export interface VenueForApiContractPartialFindResult {
 		items?: Array<VenueForApiContract>;
 		term?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount?: number | null;
 	}
 	export interface VenueForApiContractPartialFindResultFormProperties {
 		term: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateVenueForApiContractPartialFindResultFormGroup() {
@@ -2404,6 +2856,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/activityEntries
+		 * @param {number} userId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ActivityEntryForApiContractPartialFindResult} Success
 		 */
 		ApiActivityEntriesGetByBeforeAndSinceAndUserIdAndEditEventAndEntryTypeAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangAndSortRule(before: Date | null | undefined, since: Date | null | undefined, userId: number | null | undefined, editEvent: ActivityEntryForApiContractEditEvent | null | undefined, entryType: EntryForApiContractEntryType | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, fields: ActivityEntryOptionalFields | null | undefined, entryFields: EntryOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, sortRule: ActivityEntrySortRule | null | undefined, headersHandler?: () => HttpHeaders): Observable<ActivityEntryForApiContractPartialFindResult> {
@@ -2412,6 +2866,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/albums
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AlbumForApiContractPartialFindResult} Success
 		 */
 		ApiAlbumsGetByQueryAndDiscTypesAndTagName_AndTagId_AndChildTagsAndArtistId_AndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndBarcodeAndStatusAndReleaseDateAfterAndReleaseDateBeforeAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndDeletedAndNameMatchModeAndFieldsAndLang(query: string | null | undefined, discTypes: EntryForApiContractDiscType | null | undefined, tagName_: Array<string> | null | undefined, tagId_: Array<number> | null | undefined, childTags: boolean | null | undefined, artistId_: Array<number> | null | undefined, artistParticipationStatus: ArtistAlbumParticipationStatus | null | undefined, childVoicebanks: boolean | null | undefined, includeMembers: boolean | null | undefined, barcode: string | null | undefined, status: ArchivedObjectVersionForApiContractStatus | null | undefined, releaseDateAfter: Date | null | undefined, releaseDateBefore: Date | null | undefined, advancedFilters: Array<AdvancedSearchFilterParams> | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: AlbumSortRule | null | undefined, preferAccurateMatches: boolean | null | undefined, deleted: boolean | null | undefined, nameMatchMode: NameMatchMode | null | undefined, fields: AlbumOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<AlbumForApiContractPartialFindResult> {
@@ -2420,6 +2876,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/albums/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiAlbumsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2428,6 +2885,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/albums/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiAlbumsComments_commentIdPost(commentId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2436,6 +2894,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/albums/names
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Success
 		 */
 		ApiAlbumsNamesGetByQueryAndNameMatchModeAndMaxResults(query: string | null | undefined, nameMatchMode: NameMatchMode | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2460,6 +2919,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/albums/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiAlbums_idDeleteByNotes(id: number, notes: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2468,6 +2928,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/albums/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AlbumForApiContract} Success
 		 */
 		ApiAlbums_idGetByFieldsAndSongFieldsAndLang(id: number, fields: AlbumOptionalFields | null | undefined, songFields: SongOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<AlbumForApiContract> {
@@ -2476,6 +2937,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/albums/{id}/comments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<CommentForApiContract>} Success
 		 */
 		ApiAlbums_idCommentsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<CommentForApiContract>> {
@@ -2484,6 +2946,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/albums/{id}/comments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContract} Success
 		 */
 		ApiAlbums_idCommentsPost(id: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<CommentForApiContract> {
@@ -2492,6 +2955,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/albums/{id}/reviews
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<AlbumReviewContract>} Success
 		 */
 		ApiAlbums_idReviewsGetByLanguageCode(id: number, languageCode: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<AlbumReviewContract>> {
@@ -2500,6 +2964,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/albums/{id}/reviews
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AlbumReviewContract} Success
 		 */
 		ApiAlbums_idReviewsPost(id: number, requestBody: AlbumReviewContract, headersHandler?: () => HttpHeaders): Observable<AlbumReviewContract> {
@@ -2508,6 +2973,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/albums/{id}/reviews/{reviewId}
+		 * @param {number} reviewId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiAlbums_idReviews_reviewIdDelete(reviewId: number, id: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2516,6 +2982,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/albums/{id}/tracks
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<SongInAlbumForApiContract>} Success
 		 */
 		ApiAlbums_idTracksGetByFieldsAndLang(id: number, fields: SongOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<SongInAlbumForApiContract>> {
@@ -2524,6 +2991,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/albums/{id}/tracks/fields
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} discNumber Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Success
 		 */
 		ApiAlbums_idTracksFieldsGetByField_AndDiscNumberAndLang(id: number, field_: Array<string> | null | undefined, discNumber: number | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2532,6 +3001,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/albums/{id}/user-collections
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<AlbumForUserForApiContract>} Success
 		 */
 		ApiAlbums_idUser_collectionsGetByLanguagePreference(id: number, languagePreference: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<AlbumForUserForApiContract>> {
@@ -2540,6 +3010,9 @@ export namespace MyNS {
 
 		/**
 		 * Get api/artists
+		 * @param {number} followedByUserId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ArtistForApiContractPartialFindResult} Success
 		 */
 		ApiArtistsGetByQueryAndArtistTypesAndAllowBaseVoicebanksAndTagName_AndTagId_AndChildTagsAndFollowedByUserIdAndStatusAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndNameMatchModeAndFieldsAndLang(query: string | null | undefined, artistTypes: string | null | undefined, allowBaseVoicebanks: boolean | null | undefined, tagName_: Array<string> | null | undefined, tagId_: Array<number> | null | undefined, childTags: boolean | null | undefined, followedByUserId: number | null | undefined, status: ArchivedObjectVersionForApiContractStatus | null | undefined, advancedFilters: Array<AdvancedSearchFilterParams> | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: ArtistSortRule | null | undefined, preferAccurateMatches: boolean | null | undefined, nameMatchMode: NameMatchMode | null | undefined, fields: ArtistOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<ArtistForApiContractPartialFindResult> {
@@ -2548,6 +3021,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/artists/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiArtistsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2556,6 +3030,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/artists/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiArtistsComments_commentIdPost(commentId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2564,6 +3039,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/artists/names
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Success
 		 */
 		ApiArtistsNamesGetByQueryAndNameMatchModeAndMaxResults(query: string | null | undefined, nameMatchMode: NameMatchMode | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2572,6 +3048,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/artists/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiArtists_idDeleteByNotes(id: number, notes: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2580,6 +3057,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/artists/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ArtistForApiContract} Success
 		 */
 		ApiArtists_idGetByFieldsAndRelationsAndLang(id: number, fields: ArtistOptionalFields | null | undefined, relations: ArtistRelationsFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<ArtistForApiContract> {
@@ -2588,6 +3066,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/artists/{id}/comments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<CommentForApiContract>} Success
 		 */
 		ApiArtists_idCommentsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<CommentForApiContract>> {
@@ -2596,6 +3075,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/artists/{id}/comments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContract} Success
 		 */
 		ApiArtists_idCommentsPost(id: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<CommentForApiContract> {
@@ -2604,6 +3084,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/comments
+		 * @param {number} userId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContractPartialFindResult} Success
 		 */
 		ApiCommentsGetByBeforeAndSinceAndUserIdAndEntryTypeAndMaxResultsAndGetTotalCountAndFieldsAndEntryFieldsAndLangAndSortRule(before: Date | null | undefined, since: Date | null | undefined, userId: number | null | undefined, entryType: EntryForApiContractEntryType | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, fields: CommentOptionalFields | null | undefined, entryFields: EntryOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, sortRule: ActivityEntrySortRule | null | undefined, headersHandler?: () => HttpHeaders): Observable<CommentForApiContractPartialFindResult> {
@@ -2612,6 +3094,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/comments/{entryType}-comments
+		 * @param {number} entryId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContractPartialFindResult} Success
 		 */
 		ApiComments_entryType_commentsGetByEntryId(entryType: EntryForApiContractEntryType, entryId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<CommentForApiContractPartialFindResult> {
@@ -2628,6 +3111,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/comments/{entryType}-comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiComments_entryType_comments_commentIdDelete(entryType: EntryForApiContractEntryType, commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2636,6 +3120,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/comments/{entryType}-comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiComments_entryType_comments_commentIdPost(entryType: EntryForApiContractEntryType, commentId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2644,6 +3129,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/discussions/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiDiscussionsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2652,6 +3138,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/discussions/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiDiscussionsComments_commentIdPost(commentId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2676,6 +3163,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/discussions/folders/{folderId}/topics
+		 * @param {number} folderId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<DiscussionTopicContract>} Success
 		 */
 		ApiDiscussionsFolders_folderIdTopicsGetByFields(folderId: number, fields: DiscussionTopicOptionalFields | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<DiscussionTopicContract>> {
@@ -2684,6 +3172,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/discussions/folders/{folderId}/topics
+		 * @param {number} folderId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DiscussionTopicContract} Success
 		 */
 		ApiDiscussionsFolders_folderIdTopicsPost(folderId: number, requestBody: DiscussionTopicContract, headersHandler?: () => HttpHeaders): Observable<DiscussionTopicContract> {
@@ -2692,6 +3181,9 @@ export namespace MyNS {
 
 		/**
 		 * Get api/discussions/topics
+		 * @param {number} folderId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DiscussionTopicContractPartialFindResult} Success
 		 */
 		ApiDiscussionsTopicsGetByFolderIdAndStartAndMaxResultsAndGetTotalCountAndSortAndFields(folderId: number | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: DiscussionTopicSortRule | null | undefined, fields: DiscussionTopicOptionalFields | null | undefined, headersHandler?: () => HttpHeaders): Observable<DiscussionTopicContractPartialFindResult> {
@@ -2700,6 +3192,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/discussions/topics/{topicId}
+		 * @param {number} topicId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiDiscussionsTopics_topicIdDelete(topicId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2708,6 +3201,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/discussions/topics/{topicId}
+		 * @param {number} topicId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DiscussionTopicContract} Success
 		 */
 		ApiDiscussionsTopics_topicIdGetByFields(topicId: number, fields: DiscussionTopicOptionalFields | null | undefined, headersHandler?: () => HttpHeaders): Observable<DiscussionTopicContract> {
@@ -2716,6 +3210,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/discussions/topics/{topicId}
+		 * @param {number} topicId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiDiscussionsTopics_topicIdPost(topicId: number, requestBody: DiscussionTopicContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2724,6 +3219,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/discussions/topics/{topicId}/comments
+		 * @param {number} topicId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContract} Success
 		 */
 		ApiDiscussionsTopics_topicIdCommentsPost(topicId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<CommentForApiContract> {
@@ -2732,6 +3228,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/entries
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EntryForApiContractPartialFindResult} Success
 		 */
 		ApiEntriesGetByQueryAndTagName_AndTagId_AndChildTagsAndEntryTypesAndStatusAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLang(query: string | null | undefined, tagName_: Array<string> | null | undefined, tagId_: Array<number> | null | undefined, childTags: boolean | null | undefined, entryTypes: EntryTypes | null | undefined, status: ArchivedObjectVersionForApiContractStatus | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: EntrySortRule | null | undefined, nameMatchMode: NameMatchMode | null | undefined, fields: EntryOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<EntryForApiContractPartialFindResult> {
@@ -2740,6 +3238,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/entries/names
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Success
 		 */
 		ApiEntriesNamesGetByQueryAndNameMatchModeAndMaxResults(query: string | null | undefined, nameMatchMode: NameMatchMode | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2756,6 +3255,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/pvs/for-songs
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PVForSongContractPartialFindResult} Success
 		 */
 		ApiPvsFor_songsGetByNameAndAuthorAndServiceAndMaxResultsAndGetTotalCountAndLang(name: string | null | undefined, author: string | null | undefined, service: PVContractService | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<PVForSongContractPartialFindResult> {
@@ -2764,6 +3264,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/releaseEventSeries
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ReleaseEventSeriesForApiContractPartialFindResult} Success
 		 */
 		ApiReleaseEventSeriesGetByQueryAndFieldsAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndLang(query: string | null | undefined, fields: ReleaseEventSeriesOptionalFields | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, nameMatchMode: NameMatchMode | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<ReleaseEventSeriesForApiContractPartialFindResult> {
@@ -2772,6 +3274,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/releaseEventSeries/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiReleaseEventSeries_idDeleteByNotesAndHardDelete(id: number, notes: string | null | undefined, hardDelete: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2780,6 +3283,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/releaseEventSeries/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ReleaseEventSeriesForApiContract} Success
 		 */
 		ApiReleaseEventSeries_idGetByFieldsAndLang(id: number, fields: ReleaseEventSeriesOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<ReleaseEventSeriesForApiContract> {
@@ -2788,6 +3292,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/releaseEventSeries/{id}/for-edit
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ReleaseEventSeriesForEditForApiContract} Success
 		 */
 		ApiReleaseEventSeries_idFor_editGet(id: number, headersHandler?: () => HttpHeaders): Observable<ReleaseEventSeriesForEditForApiContract> {
@@ -2796,6 +3301,10 @@ export namespace MyNS {
 
 		/**
 		 * Get api/releaseEvents
+		 * @param {number} seriesId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} userCollectionId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ReleaseEventForApiContractPartialFindResult} Success
 		 */
 		ApiReleaseEventsGetByQueryAndNameMatchModeAndSeriesIdAndAfterDateAndBeforeDateAndCategoryAndUserCollectionIdAndTagId_AndChildTagsAndArtistId_AndChildVoicebanksAndIncludeMembersAndStatusAndStartAndMaxResultsAndGetTotalCountAndSortAndFieldsAndLangAndSortDirection(query: string | null | undefined, nameMatchMode: NameMatchMode | null | undefined, seriesId: number | null | undefined, afterDate: Date | null | undefined, beforeDate: Date | null | undefined, category: EntryForApiContractEventCategory | null | undefined, userCollectionId: number | null | undefined, tagId_: Array<number> | null | undefined, childTags: boolean | null | undefined, artistId_: Array<number> | null | undefined, childVoicebanks: boolean | null | undefined, includeMembers: boolean | null | undefined, status: ArchivedObjectVersionForApiContractStatus | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: EventSortRule | null | undefined, fields: ReleaseEventOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, sortDirection: SortDirection | null | undefined, headersHandler?: () => HttpHeaders): Observable<ReleaseEventForApiContractPartialFindResult> {
@@ -2804,6 +3313,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/releaseEvents/names
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Success
 		 */
 		ApiReleaseEventsNamesGetByQueryAndMaxResults(query: string | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2812,6 +3322,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/releaseEvents/{eventId}/albums
+		 * @param {number} eventId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<AlbumForApiContract>} Success
 		 */
 		ApiReleaseEvents_eventIdAlbumsGetByFieldsAndLang(eventId: number, fields: AlbumOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<AlbumForApiContract>> {
@@ -2820,6 +3331,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/releaseEvents/{eventId}/published-songs
+		 * @param {number} eventId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<SongForApiContract>} Success
 		 */
 		ApiReleaseEvents_eventIdPublished_songsGetByFieldsAndLang(eventId: number, fields: SongOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<SongForApiContract>> {
@@ -2828,6 +3340,8 @@ export namespace MyNS {
 
 		/**
 		 * Post api/releaseEvents/{eventId}/reports
+		 * @param {number} eventId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} versionNumber Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiReleaseEvents_eventIdReportsPostByReportTypeAndNotesAndVersionNumber(eventId: number, reportType: EventReportType | null | undefined, notes: string | null | undefined, versionNumber: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2836,6 +3350,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/releaseEvents/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiReleaseEvents_idDeleteByNotesAndHardDelete(id: number, notes: string | null | undefined, hardDelete: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2844,6 +3359,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/releaseEvents/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ReleaseEventForApiContract} Success
 		 */
 		ApiReleaseEvents_idGetByFieldsAndLang(id: number, fields: ReleaseEventOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<ReleaseEventForApiContract> {
@@ -2861,6 +3377,7 @@ export namespace MyNS {
 		/**
 		 * Post api/songLists
 		 * @return {number} Success
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ApiSongListsPost(requestBody: SongListForEditForApiContract, headersHandler?: () => HttpHeaders): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/songLists', JSON.stringify(requestBody), { headers: headersHandler ? headersHandler().append('Content-Type', 'application/json;charset=UTF-8') : new HttpHeaders({ 'Content-Type': 'application/json;charset=UTF-8' }) });
@@ -2868,6 +3385,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/songLists/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiSongListsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2876,6 +3394,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/songLists/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiSongListsComments_commentIdPost(commentId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2884,6 +3403,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songLists/featured
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SongListForApiContractPartialFindResult} Success
 		 */
 		ApiSongListsFeaturedGetByQueryAndTagId_AndChildTagsAndNameMatchModeAndFeaturedCategoryAndStartAndMaxResultsAndGetTotalCountAndSortAndFieldsAndLang(query: string | null | undefined, tagId_: Array<number> | null | undefined, childTags: boolean | null | undefined, nameMatchMode: NameMatchMode | null | undefined, featuredCategory: EntryForApiContractSongListFeaturedCategory | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: SongListSortRule | null | undefined, fields: SongListOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<SongListForApiContractPartialFindResult> {
@@ -2892,6 +3413,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songLists/featured/names
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Success
 		 */
 		ApiSongListsFeaturedNamesGetByQueryAndNameMatchModeAndFeaturedCategoryAndMaxResults(query: string | null | undefined, nameMatchMode: NameMatchMode | null | undefined, featuredCategory: EntryForApiContractSongListFeaturedCategory | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2900,6 +3422,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/songLists/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiSongLists_idDeleteByNotesAndHardDelete(id: number, notes: string | null | undefined, hardDelete: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2908,6 +3431,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songLists/{listId}/comments
+		 * @param {number} listId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContractPartialFindResult} Success
 		 */
 		ApiSongLists_listIdCommentsGet(listId: number, headersHandler?: () => HttpHeaders): Observable<CommentForApiContractPartialFindResult> {
@@ -2916,6 +3440,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/songLists/{listId}/comments
+		 * @param {number} listId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContract} Success
 		 */
 		ApiSongLists_listIdCommentsPost(listId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<CommentForApiContract> {
@@ -2924,6 +3449,9 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songLists/{listId}/songs
+		 * @param {number} listId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SongInListForApiContractPartialFindResult} Success
 		 */
 		ApiSongLists_listIdSongsGetByQueryAndSongTypesAndPvServicesAndTagId_AndArtistId_AndChildVoicebanksAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLang(listId: number, query: string | null | undefined, songTypes: string | null | undefined, pvServices: SongForApiContractPvServices | null | undefined, tagId_: Array<number> | null | undefined, artistId_: Array<number> | null | undefined, childVoicebanks: boolean | null | undefined, advancedFilters: Array<AdvancedSearchFilterParams> | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: SongSortRule | null | undefined, nameMatchMode: NameMatchMode | null | undefined, fields: SongOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<SongInListForApiContractPartialFindResult> {
@@ -2932,6 +3460,17 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songs
+		 * @param {number} since Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} minScore Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} userCollectionId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} releaseEventId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} parentSongId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} minMilliBpm Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxMilliBpm Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} minLength Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxLength Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SongForApiContractPartialFindResult} Success
 		 */
 		ApiSongsGetByQueryAndSongTypesAndAfterDateAndBeforeDateAndTagName_AndTagId_AndChildTagsAndUnifyTypesAndTagsAndArtistId_AndArtistParticipationStatusAndChildVoicebanksAndIncludeMembersAndOnlyWithPvsAndPvServicesAndSinceAndMinScoreAndUserCollectionIdAndReleaseEventIdAndParentSongIdAndStatusAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndPreferAccurateMatchesAndNameMatchModeAndFieldsAndLangAndMinMilliBpmAndMaxMilliBpmAndMinLengthAndMaxLength(query: string | null | undefined, songTypes: string | null | undefined, afterDate: Date | null | undefined, beforeDate: Date | null | undefined, tagName_: Array<string> | null | undefined, tagId_: Array<number> | null | undefined, childTags: boolean | null | undefined, unifyTypesAndTags: boolean | null | undefined, artistId_: Array<number> | null | undefined, artistParticipationStatus: ArtistAlbumParticipationStatus | null | undefined, childVoicebanks: boolean | null | undefined, includeMembers: boolean | null | undefined, onlyWithPvs: boolean | null | undefined, pvServices: SongForApiContractPvServices | null | undefined, since: number | null | undefined, minScore: number | null | undefined, userCollectionId: number | null | undefined, releaseEventId: number | null | undefined, parentSongId: number | null | undefined, status: ArchivedObjectVersionForApiContractStatus | null | undefined, advancedFilters: Array<AdvancedSearchFilterParams> | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: SongSortRule | null | undefined, preferAccurateMatches: boolean | null | undefined, nameMatchMode: NameMatchMode | null | undefined, fields: SongOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, minMilliBpm: number | null | undefined, maxMilliBpm: number | null | undefined, minLength: number | null | undefined, maxLength: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<SongForApiContractPartialFindResult> {
@@ -2948,6 +3487,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/songs/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiSongsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2956,6 +3496,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/songs/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiSongsComments_commentIdPost(commentId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2972,6 +3513,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songs/lyrics/{lyricsId}
+		 * @param {number} lyricsId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {LyricsForSongContract} Success
 		 */
 		ApiSongsLyrics_lyricsIdGet(lyricsId: number, headersHandler?: () => HttpHeaders): Observable<LyricsForSongContract> {
@@ -2980,6 +3522,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songs/names
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Success
 		 */
 		ApiSongsNamesGetByQueryAndNameMatchModeAndMaxResults(query: string | null | undefined, nameMatchMode: NameMatchMode | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2988,6 +3531,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songs/top-rated
+		 * @param {number} durationHours Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<SongForApiContract>} Success
 		 */
 		ApiSongsTop_ratedGetByDurationHoursAndStartDateAndFilterByAndVocalistAndMaxResultsAndFieldsAndLanguagePreference(durationHours: number | null | undefined, startDate: Date | null | undefined, filterBy: TopSongsDateFilterType | null | undefined, vocalist: SongVocalistSelection | null | undefined, maxResults: number | null | undefined, fields: SongOptionalFields | null | undefined, languagePreference: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<SongForApiContract>> {
@@ -2996,6 +3541,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/songs/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiSongs_idDeleteByNotes(id: number, notes: string | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3004,6 +3550,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songs/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SongForApiContract} Success
 		 */
 		ApiSongs_idGetByFieldsAndLang(id: number, fields: SongOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<SongForApiContract> {
@@ -3012,6 +3559,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songs/{id}/comments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<CommentForApiContract>} Success
 		 */
 		ApiSongs_idCommentsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<CommentForApiContract>> {
@@ -3020,6 +3568,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/songs/{id}/comments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContract} Success
 		 */
 		ApiSongs_idCommentsPost(id: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<CommentForApiContract> {
@@ -3028,6 +3577,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songs/{id}/derived
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<SongForApiContract>} Success
 		 */
 		ApiSongs_idDerivedGetByFieldsAndLang(id: number, fields: SongOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<SongForApiContract>> {
@@ -3036,6 +3586,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songs/{id}/ratings
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<RatedSongForUserForApiContract>} Success
 		 */
 		ApiSongs_idRatingsGetByUserFieldsAndLang(id: number, userFields: UserOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<RatedSongForUserForApiContract>> {
@@ -3044,6 +3595,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/songs/{id}/ratings
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiSongs_idRatingsPost(id: number, requestBody: SongRatingContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3052,6 +3604,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/songs/{id}/related
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RelatedSongsContract} Success
 		 */
 		ApiSongs_idRelatedGetByFieldsAndLang(id: number, fields: SongOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<RelatedSongsContract> {
@@ -3060,6 +3613,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/tags
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TagForApiContractPartialFindResult} Success
 		 */
 		ApiTagsGetByQueryAndAllowChildrenAndCategoryNameAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndSortAndPreferAccurateMatchesAndFieldsAndLangAndTarget(query: string | null | undefined, allowChildren: boolean | null | undefined, categoryName: string | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, nameMatchMode: NameMatchMode | null | undefined, sort: TagSortRule | null | undefined, preferAccurateMatches: boolean | null | undefined, fields: TagOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, target: TagTargetTypes | null | undefined, headersHandler?: () => HttpHeaders): Observable<TagForApiContractPartialFindResult> {
@@ -3092,6 +3647,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/tags/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiTagsComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3100,6 +3656,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/tags/comments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiTagsComments_commentIdPost(commentId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3108,6 +3665,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/tags/names
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Success
 		 */
 		ApiTagsNamesGetByQueryAndAllowAliasesAndMaxResults(query: string | null | undefined, allowAliases: boolean | null | undefined, maxResults: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -3116,6 +3674,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/tags/top
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TagBaseContract>} Success
 		 */
 		ApiTagsTopGetByCategoryNameAndEntryTypeAndMaxResultsAndLang(categoryName: string | null | undefined, entryType: EntryForApiContractEntryType | null | undefined, maxResults: number | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<TagBaseContract>> {
@@ -3124,6 +3683,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/tags/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiTags_idDeleteByNotesAndHardDelete(id: number, notes: string | null | undefined, hardDelete: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3132,6 +3692,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/tags/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TagForApiContract} Success
 		 */
 		ApiTags_idGetByFieldsAndLang(id: number, fields: TagOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<TagForApiContract> {
@@ -3140,6 +3701,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/tags/{tagId}/children
+		 * @param {number} tagId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TagForApiContract>} Success
 		 */
 		ApiTags_tagIdChildrenGetByFieldsAndLang(tagId: number, fields: TagOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<TagForApiContract>> {
@@ -3148,6 +3710,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/tags/{tagId}/comments
+		 * @param {number} tagId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContractPartialFindResult} Success
 		 */
 		ApiTags_tagIdCommentsGet(tagId: number, headersHandler?: () => HttpHeaders): Observable<CommentForApiContractPartialFindResult> {
@@ -3156,6 +3719,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/tags/{tagId}/comments
+		 * @param {number} tagId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContract} Success
 		 */
 		ApiTags_tagIdCommentsPost(tagId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<CommentForApiContract> {
@@ -3164,6 +3728,8 @@ export namespace MyNS {
 
 		/**
 		 * Post api/tags/{tagId}/reports
+		 * @param {number} tagId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} versionNumber Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiTags_tagIdReportsPostByReportTypeAndNotesAndVersionNumber(tagId: number, reportType: EventReportType | null | undefined, notes: string | null | undefined, versionNumber: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3172,6 +3738,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UserForApiContractPartialFindResult} Success
 		 */
 		ApiUsersGetByQueryAndGroupsAndJoinDateAfterAndJoinDateBeforeAndNameMatchModeAndStartAndMaxResultsAndGetTotalCountAndSortAndIncludeDisabledAndOnlyVerifiedAndKnowsLanguageAndFields(query: string | null | undefined, groups: UserForApiContractGroupId | null | undefined, joinDateAfter: Date | null | undefined, joinDateBefore: Date | null | undefined, nameMatchMode: NameMatchMode | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: UserSortRule | null | undefined, includeDisabled: boolean | null | undefined, onlyVerified: boolean | null | undefined, knowsLanguage: string | null | undefined, fields: UserOptionalFields | null | undefined, headersHandler?: () => HttpHeaders): Observable<UserForApiContractPartialFindResult> {
@@ -3188,6 +3756,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/current/album-collection-statuses/{albumId}
+		 * @param {number} albumId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AlbumForUserForApiContract} Success
 		 */
 		ApiUsersCurrentAlbum_collection_statuses_albumIdGet(albumId: number, headersHandler?: () => HttpHeaders): Observable<AlbumForUserForApiContract> {
@@ -3196,6 +3765,8 @@ export namespace MyNS {
 
 		/**
 		 * Post api/users/current/albums/{albumId}
+		 * @param {number} albumId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} rating Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} Success
 		 */
 		ApiUsersCurrentAlbums_albumIdPostByCollectionStatusAndMediaTypeAndRating(albumId: number, collectionStatus: AlbumForUserForApiContractPurchaseStatus | null | undefined, mediaType: AlbumForUserForApiContractMediaType | null | undefined, rating: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<string> {
@@ -3204,6 +3775,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/current/followedArtists/{artistId}
+		 * @param {number} artistId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ArtistForUserForApiContract} Success
 		 */
 		ApiUsersCurrentFollowedArtists_artistIdGet(artistId: number, headersHandler?: () => HttpHeaders): Observable<ArtistForUserForApiContract> {
@@ -3212,6 +3784,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/users/current/followedTags/{tagId}
+		 * @param {number} tagId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiUsersCurrentFollowedTags_tagIdDelete(tagId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3220,6 +3793,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/users/current/followedTags/{tagId}
+		 * @param {number} tagId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiUsersCurrentFollowedTags_tagIdPost(tagId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3228,6 +3802,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/current/ratedSongs/{songId}
+		 * @param {number} songId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SongInAlbumForApiContractRating} Success
 		 */
 		ApiUsersCurrentRatedSongs_songIdGet(songId: number, headersHandler?: () => HttpHeaders): Observable<SongInAlbumForApiContractRating> {
@@ -3236,6 +3811,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/users/current/refreshEntryEdit
+		 * @param {number} entryId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {EntryEditDataContract} Success
 		 */
 		ApiUsersCurrentRefreshEntryEditPostByEntryTypeAndEntryId(entryType: EntryForApiContractEntryType | null | undefined, entryId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<EntryEditDataContract> {
@@ -3244,6 +3820,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/users/current/songTags/{songId}
+		 * @param {number} songId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiUsersCurrentSongTags_songIdPost(songId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3252,6 +3829,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/messages/{messageId}
+		 * @param {number} messageId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UserMessageContract} Success
 		 */
 		ApiUsersMessages_messageIdGet(messageId: number, headersHandler?: () => HttpHeaders): Observable<UserMessageContract> {
@@ -3260,6 +3838,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/names
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Success
 		 */
 		ApiUsersNamesGetByQueryAndNameMatchModeAndMaxResultsAndIncludeDisabled(query: string | null | undefined, nameMatchMode: NameMatchMode | null | undefined, maxResults: number | null | undefined, includeDisabled: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -3268,6 +3847,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/users/profileComments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiUsersProfileComments_commentIdDelete(commentId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3276,6 +3856,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/users/profileComments/{commentId}
+		 * @param {number} commentId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiUsersProfileComments_commentIdPost(commentId: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3284,6 +3865,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UserForApiContract} Success
 		 */
 		ApiUsers_idGetByFields(id: number, fields: UserOptionalFields | null | undefined, headersHandler?: () => HttpHeaders): Observable<UserForApiContract> {
@@ -3292,6 +3874,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}/album-collection-statuses/{albumId}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} albumId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AlbumForUserForApiContract} Success
 		 */
 		ApiUsers_idAlbum_collection_statuses_albumIdGet(id: number, albumId: number, headersHandler?: () => HttpHeaders): Observable<AlbumForUserForApiContract> {
@@ -3300,6 +3884,12 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}/albums
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} tagId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} artistId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} releaseEventId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AlbumForUserForApiContractPartialFindResult} Success
 		 */
 		ApiUsers_idAlbumsGetByQueryAndTagIdAndTagAndArtistIdAndPurchaseStatusesAndReleaseEventIdAndAlbumTypesAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLangAndMediaType(id: number, query: string | null | undefined, tagId: number | null | undefined, tag: string | null | undefined, artistId: number | null | undefined, purchaseStatuses: PurchaseStatuses | null | undefined, releaseEventId: number | null | undefined, albumTypes: EntryForApiContractDiscType | null | undefined, advancedFilters: Array<AdvancedSearchFilterParams> | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: AlbumSortRule | null | undefined, nameMatchMode: NameMatchMode | null | undefined, fields: AlbumOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, mediaType: AlbumForUserForApiContractMediaType | null | undefined, headersHandler?: () => HttpHeaders): Observable<AlbumForUserForApiContractPartialFindResult> {
@@ -3308,6 +3898,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}/events
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ReleaseEventForApiContract>} Success
 		 */
 		ApiUsers_idEventsGetByRelationshipType(id: number, relationshipType: UserEventRelationshipType | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<ReleaseEventForApiContract>> {
@@ -3316,6 +3907,9 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}/followedArtists
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ArtistForUserForApiContractPartialFindResult} Success
 		 */
 		ApiUsers_idFollowedArtistsGetByQueryAndTagId_AndArtistTypeAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLang(id: number, query: string | null | undefined, tagId_: Array<number> | null | undefined, artistType: EntryForApiContractArtistType | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: ArtistSortRule | null | undefined, nameMatchMode: NameMatchMode | null | undefined, fields: ArtistOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<ArtistForUserForApiContractPartialFindResult> {
@@ -3324,6 +3918,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}/followedArtists/{artistId}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} artistId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ArtistForUserForApiContract} Success
 		 */
 		ApiUsers_idFollowedArtists_artistIdGet(id: number, artistId: number, headersHandler?: () => HttpHeaders): Observable<ArtistForUserForApiContract> {
@@ -3332,6 +3928,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/users/{id}/messages
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiUsers_idMessagesDeleteByMessageId(id: number, messageId: Array<number> | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3340,6 +3937,10 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}/messages
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} anotherUserId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UserMessageContractPartialFindResult} Success
 		 */
 		ApiUsers_idMessagesGetByInboxAndUnreadAndAnotherUserIdAndStartAndMaxResultsAndGetTotalCount(id: number, inbox: UserInboxType | null | undefined, unread: boolean | null | undefined, anotherUserId: number | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<UserMessageContractPartialFindResult> {
@@ -3348,6 +3949,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/users/{id}/messages
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UserMessageContract} Success
 		 */
 		ApiUsers_idMessagesPost(id: number, requestBody: UserMessageContract, headersHandler?: () => HttpHeaders): Observable<UserMessageContract> {
@@ -3356,6 +3958,9 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}/profileComments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContractPartialFindResult} Success
 		 */
 		ApiUsers_idProfileCommentsGetByStartAndMaxResultsAndGetTotalCount(id: number, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<CommentForApiContractPartialFindResult> {
@@ -3364,6 +3969,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/users/{id}/profileComments
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CommentForApiContract} Success
 		 */
 		ApiUsers_idProfileCommentsPost(id: number, requestBody: CommentForApiContract, headersHandler?: () => HttpHeaders): Observable<CommentForApiContract> {
@@ -3372,6 +3978,10 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}/ratedSongs
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} songListId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RatedSongForUserForApiContractPartialFindResult} Success
 		 */
 		ApiUsers_idRatedSongsGetByQueryAndTagNameAndTagId_AndArtistId_AndChildVoicebanksAndArtistGroupingAndRatingAndSongListIdAndGroupByRatingAndPvServicesAndAdvancedFiltersAndStartAndMaxResultsAndGetTotalCountAndSortAndNameMatchModeAndFieldsAndLang(id: number, query: string | null | undefined, tagName: string | null | undefined, tagId_: Array<number> | null | undefined, artistId_: Array<number> | null | undefined, childVoicebanks: boolean | null | undefined, artistGrouping: LogicalGrouping | null | undefined, rating: SongInAlbumForApiContractRating | null | undefined, songListId: number | null | undefined, groupByRating: boolean | null | undefined, pvServices: SongForApiContractPvServices | null | undefined, advancedFilters: Array<AdvancedSearchFilterParams> | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: RatedSongForUserSortRule | null | undefined, nameMatchMode: NameMatchMode | null | undefined, fields: SongOptionalFields | null | undefined, lang: ContentLanguagePreference | null | undefined, headersHandler?: () => HttpHeaders): Observable<RatedSongForUserForApiContractPartialFindResult> {
@@ -3380,6 +3990,8 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}/ratedSongs/{songId}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} songId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SongInAlbumForApiContractRating} Success
 		 */
 		ApiUsers_idRatedSongs_songIdGet(id: number, songId: number, headersHandler?: () => HttpHeaders): Observable<SongInAlbumForApiContractRating> {
@@ -3388,6 +4000,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/users/{id}/reports
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {boolean} Success
 		 */
 		ApiUsers_idReportsPost(id: number, requestBody: CreateReportModel, headersHandler?: () => HttpHeaders): Observable<boolean> {
@@ -3396,6 +4009,7 @@ export namespace MyNS {
 
 		/**
 		 * Post api/users/{id}/settings/{settingName}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiUsers_idSettings_settingNamePost(id: number, settingName: string, requestBody: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3404,6 +4018,9 @@ export namespace MyNS {
 
 		/**
 		 * Get api/users/{id}/songLists
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SongListForApiContractPartialFindResult} Success
 		 */
 		ApiUsers_idSongListsGetByQueryAndTagId_AndChildTagsAndNameMatchModeAndStartAndMaxResultsAndGetTotalCountAndSortAndFields(id: number, query: string | null | undefined, tagId_: Array<number> | null | undefined, childTags: boolean | null | undefined, nameMatchMode: NameMatchMode | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, sort: SongListSortRule | null | undefined, fields: SongListOptionalFields | null | undefined, headersHandler?: () => HttpHeaders): Observable<SongListForApiContractPartialFindResult> {
@@ -3412,6 +4029,11 @@ export namespace MyNS {
 
 		/**
 		 * Get api/venues
+		 * @param {number} start Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} latitude Type: double
+		 * @param {number} longitude Type: double
+		 * @param {number} radius Type: double
 		 * @return {VenueForApiContractPartialFindResult} Success
 		 */
 		ApiVenuesGetByQueryAndFieldsAndStartAndMaxResultsAndGetTotalCountAndNameMatchModeAndLangAndSortRuleAndLatitudeAndLongitudeAndRadiusAndDistanceUnit(query: string | null | undefined, fields: VenueOptionalFields | null | undefined, start: number | null | undefined, maxResults: number | null | undefined, getTotalCount: boolean | null | undefined, nameMatchMode: NameMatchMode | null | undefined, lang: ContentLanguagePreference | null | undefined, sortRule: VenueSortRule | null | undefined, latitude: number | null | undefined, longitude: number | null | undefined, radius: number | null | undefined, distanceUnit: DistanceUnit | null | undefined, headersHandler?: () => HttpHeaders): Observable<VenueForApiContractPartialFindResult> {
@@ -3420,6 +4042,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/venues/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiVenues_idDeleteByNotesAndHardDelete(id: number, notes: string | null | undefined, hardDelete: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3428,6 +4051,8 @@ export namespace MyNS {
 
 		/**
 		 * Post api/venues/{id}/reports
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} versionNumber Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ApiVenues_idReportsPostByReportTypeAndNotesAndVersionNumber(id: number, reportType: EventReportType | null | undefined, notes: string | null | undefined, versionNumber: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

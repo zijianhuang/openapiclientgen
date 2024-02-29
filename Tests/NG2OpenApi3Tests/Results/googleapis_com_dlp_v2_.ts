@@ -521,26 +521,44 @@ export namespace MyNS {
 	/** Represents a color in the RGB color space. */
 	export interface GooglePrivacyDlpV2Color {
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue?: number | null;
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green?: number | null;
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red?: number | null;
 	}
 
 	/** Represents a color in the RGB color space. */
 	export interface GooglePrivacyDlpV2ColorFormProperties {
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue: FormControl<number | null | undefined>,
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green: FormControl<number | null | undefined>,
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2ColorFormGroup() {
@@ -763,7 +781,10 @@ export namespace MyNS {
 		/** day of week */
 		dayOfWeekValue?: GooglePrivacyDlpV2ValueDayOfWeekValue | null;
 
-		/** float */
+		/**
+		 * float
+		 * Type: double
+		 */
 		floatValue?: number | null;
 
 		/** integer */
@@ -788,7 +809,10 @@ export namespace MyNS {
 		/** day of week */
 		dayOfWeekValue: FormControl<GooglePrivacyDlpV2ValueDayOfWeekValue | null | undefined>,
 
-		/** float */
+		/**
+		 * float
+		 * Type: double
+		 */
 		floatValue: FormControl<number | null | undefined>,
 
 		/** integer */
@@ -816,26 +840,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDate {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateFormGroup() {
@@ -853,32 +895,56 @@ export namespace MyNS {
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface GoogleTypeTimeOfDay {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours?: number | null;
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes?: number | null;
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds?: number | null;
 	}
 
 	/** Represents a time of day. The date and time zone are either not significant or are specified elsewhere. An API may choose to allow leap seconds. Related types are google.type.Date and `google.protobuf.Timestamp`. */
 	export interface GoogleTypeTimeOfDayFormProperties {
 
-		/** Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time. */
+		/**
+		 * Hours of day in 24 hour format. Should be from 0 to 23. An API may choose to allow the value "24:00:00" for scenarios like business closing time.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** Minutes of hour of day. Must be from 0 to 59. */
+		/**
+		 * Minutes of hour of day. Must be from 0 to 59.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minutes: FormControl<number | null | undefined>,
 
-		/** Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999. */
+		/**
+		 * Fractions of seconds in nanoseconds. Must be from 0 to 999,999,999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
-		/** Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds. */
+		/**
+		 * Seconds of minutes of the time. Must normally be from 0 to 59. An API may allow the value 60 if it allows leap-seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		seconds: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeTimeOfDayFormGroup() {
@@ -901,7 +967,10 @@ export namespace MyNS {
 		/** Character to use to mask the sensitive values—for example, `*` for an alphabetic string such as a name, or `0` for a numeric string such as ZIP code or credit card number. This string must have a length of 1. If not supplied, this value defaults to `*` for strings, and `0` for digits. */
 		maskingCharacter?: string | null;
 
-		/** Number of characters to mask. If not set, all matching chars will be masked. Skipped characters do not count towards this tally. If `number_to_mask` is negative, this denotes inverse masking. Cloud DLP masks all but a number of characters. For example, suppose you have the following values: - `masking_character` is `*` - `number_to_mask` is `-4` - `reverse_order` is `false` - `CharsToIgnore` includes `-` - Input string is `1234-5678-9012-3456` The resulting de-identified string is `****-****-****-3456`. Cloud DLP masks all but the last four characters. If `reverse_order` is `true`, all but the first four characters are masked as `1234-****-****-****`. */
+		/**
+		 * Number of characters to mask. If not set, all matching chars will be masked. Skipped characters do not count towards this tally. If `number_to_mask` is negative, this denotes inverse masking. Cloud DLP masks all but a number of characters. For example, suppose you have the following values: - `masking_character` is `*` - `number_to_mask` is `-4` - `reverse_order` is `false` - `CharsToIgnore` includes `-` - Input string is `1234-5678-9012-3456` The resulting de-identified string is `****-****-****-3456`. Cloud DLP masks all but the last four characters. If `reverse_order` is `true`, all but the first four characters are masked as `1234-****-****-****`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberToMask?: number | null;
 
 		/** Mask characters in reverse order. For example, if `masking_character` is `0`, `number_to_mask` is `14`, and `reverse_order` is `false`, then the input string `1234-5678-9012-3456` is masked as `00000000000000-3456`. If `masking_character` is `*`, `number_to_mask` is `3`, and `reverse_order` is `true`, then the string `12345` is masked as `12***`. */
@@ -914,7 +983,10 @@ export namespace MyNS {
 		/** Character to use to mask the sensitive values—for example, `*` for an alphabetic string such as a name, or `0` for a numeric string such as ZIP code or credit card number. This string must have a length of 1. If not supplied, this value defaults to `*` for strings, and `0` for digits. */
 		maskingCharacter: FormControl<string | null | undefined>,
 
-		/** Number of characters to mask. If not set, all matching chars will be masked. Skipped characters do not count towards this tally. If `number_to_mask` is negative, this denotes inverse masking. Cloud DLP masks all but a number of characters. For example, suppose you have the following values: - `masking_character` is `*` - `number_to_mask` is `-4` - `reverse_order` is `false` - `CharsToIgnore` includes `-` - Input string is `1234-5678-9012-3456` The resulting de-identified string is `****-****-****-3456`. Cloud DLP masks all but the last four characters. If `reverse_order` is `true`, all but the first four characters are masked as `1234-****-****-****`. */
+		/**
+		 * Number of characters to mask. If not set, all matching chars will be masked. Skipped characters do not count towards this tally. If `number_to_mask` is negative, this denotes inverse masking. Cloud DLP masks all but a number of characters. For example, suppose you have the following values: - `masking_character` is `*` - `number_to_mask` is `-4` - `reverse_order` is `false` - `CharsToIgnore` includes `-` - Input string is `1234-5678-9012-3456` The resulting de-identified string is `****-****-****-3456`. Cloud DLP masks all but the last four characters. If `reverse_order` is `true`, all but the first four characters are masked as `1234-****-****-****`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberToMask: FormControl<number | null | undefined>,
 
 		/** Mask characters in reverse order. For example, if `masking_character` is `0`, `number_to_mask` is `14`, and `reverse_order` is `false`, then the input string `1234-5678-9012-3456` is masked as `00000000000000-3456`. If `masking_character` is `*`, `number_to_mask` is `3`, and `reverse_order` is `true`, then the string `12345` is masked as `12***`. */
@@ -1129,7 +1201,10 @@ export namespace MyNS {
 		/** This is supported by mapping these to the alphanumeric characters that the FFX mode natively supports. This happens before/after encryption/decryption. Each character listed must appear only once. Number of characters must be in the range [2, 95]. This must be encoded as ASCII. The order of characters does not matter. The full list of allowed characters is: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ~`!@#$%^&*()_-+={[}]|\:;"'<,>.?/ */
 		customAlphabet?: string | null;
 
-		/** The native way to select the alphabet. Must be in the range [2, 95]. */
+		/**
+		 * The native way to select the alphabet. Must be in the range [2, 95].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radix?: number | null;
 
 		/** Type of information detected by the API. */
@@ -1145,7 +1220,10 @@ export namespace MyNS {
 		/** This is supported by mapping these to the alphanumeric characters that the FFX mode natively supports. This happens before/after encryption/decryption. Each character listed must appear only once. Number of characters must be in the range [2, 95]. This must be encoded as ASCII. The order of characters does not matter. The full list of allowed characters is: 0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz ~`!@#$%^&*()_-+={[}]|\:;"'<,>.?/ */
 		customAlphabet: FormControl<string | null | undefined>,
 
-		/** The native way to select the alphabet. Must be in the range [2, 95]. */
+		/**
+		 * The native way to select the alphabet. Must be in the range [2, 95].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		radix: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2CryptoReplaceFfxFpeConfigFormGroup() {
@@ -1169,20 +1247,32 @@ export namespace MyNS {
 		/** This is a data encryption key (DEK) (as opposed to a key encryption key (KEK) stored by Cloud Key Management Service (Cloud KMS). When using Cloud KMS to wrap or unwrap a DEK, be sure to set an appropriate IAM policy on the KEK to ensure an attacker cannot unwrap the DEK. */
 		cryptoKey?: GooglePrivacyDlpV2CryptoKey;
 
-		/** Required. For example, -5 means shift date to at most 5 days back in the past. */
+		/**
+		 * Required. For example, -5 means shift date to at most 5 days back in the past.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lowerBoundDays?: number | null;
 
-		/** Required. Range of shift in days. Actual shift will be selected at random within this range (inclusive ends). Negative means shift to earlier in time. Must not be more than 365250 days (1000 years) each direction. For example, 3 means shift date to at most 3 days into the future. */
+		/**
+		 * Required. Range of shift in days. Actual shift will be selected at random within this range (inclusive ends). Negative means shift to earlier in time. Must not be more than 365250 days (1000 years) each direction. For example, 3 means shift date to at most 3 days into the future.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upperBoundDays?: number | null;
 	}
 
 	/** Shifts dates by random number of days, with option to be consistent for the same context. See https://cloud.google.com/dlp/docs/concepts-date-shifting to learn more. */
 	export interface GooglePrivacyDlpV2DateShiftConfigFormProperties {
 
-		/** Required. For example, -5 means shift date to at most 5 days back in the past. */
+		/**
+		 * Required. For example, -5 means shift date to at most 5 days back in the past.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lowerBoundDays: FormControl<number | null | undefined>,
 
-		/** Required. Range of shift in days. Actual shift will be selected at random within this range (inclusive ends). Negative means shift to earlier in time. Must not be more than 365250 days (1000 years) each direction. For example, 3 means shift date to at most 3 days into the future. */
+		/**
+		 * Required. Range of shift in days. Actual shift will be selected at random within this range (inclusive ends). Negative means shift to earlier in time. Must not be more than 365250 days (1000 years) each direction. For example, 3 means shift date to at most 3 days into the future.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upperBoundDays: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2DateShiftConfigFormGroup() {
@@ -1197,7 +1287,10 @@ export namespace MyNS {
 	/** Buckets values based on fixed size ranges. The Bucketing transformation can provide all of this functionality, but requires more configuration. This message is provided as a convenience to the user for simple bucketing strategies. The transformed value will be a hyphenated string of {lower_bound}-{upper_bound}. For example, if lower_bound = 10 and upper_bound = 20, all values that are within this bucket will be replaced with "10-20". This can be used on data of type: double, long. If the bound Value type differs from the type of data being transformed, we will first attempt converting the type of the data to be transformed to match the type of the bound before comparing. See https://cloud.google.com/dlp/docs/concepts-bucketing to learn more. */
 	export interface GooglePrivacyDlpV2FixedSizeBucketingConfig {
 
-		/** Required. Size of each bucket (except for minimum and maximum buckets). So if `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the following buckets would be used: -10, 10-20, 20-30, 30-40, 40-50, 50-60, 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works. */
+		/**
+		 * Required. Size of each bucket (except for minimum and maximum buckets). So if `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the following buckets would be used: -10, 10-20, 20-30, 30-40, 40-50, 50-60, 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works.
+		 * Type: double
+		 */
 		bucketSize?: number | null;
 
 		/** Set of primitive values supported by the system. Note that for the purposes of inspection or transformation, the number of bytes considered to comprise a 'Value' is based on its representation as a UTF-8 encoded string. For example, if 'integer_value' is set to 123456789, the number of bytes would be counted as 9, even though an int64 only holds up to 8 bytes of data. */
@@ -1210,7 +1303,10 @@ export namespace MyNS {
 	/** Buckets values based on fixed size ranges. The Bucketing transformation can provide all of this functionality, but requires more configuration. This message is provided as a convenience to the user for simple bucketing strategies. The transformed value will be a hyphenated string of {lower_bound}-{upper_bound}. For example, if lower_bound = 10 and upper_bound = 20, all values that are within this bucket will be replaced with "10-20". This can be used on data of type: double, long. If the bound Value type differs from the type of data being transformed, we will first attempt converting the type of the data to be transformed to match the type of the bound before comparing. See https://cloud.google.com/dlp/docs/concepts-bucketing to learn more. */
 	export interface GooglePrivacyDlpV2FixedSizeBucketingConfigFormProperties {
 
-		/** Required. Size of each bucket (except for minimum and maximum buckets). So if `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the following buckets would be used: -10, 10-20, 20-30, 30-40, 40-50, 50-60, 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works. */
+		/**
+		 * Required. Size of each bucket (except for minimum and maximum buckets). So if `lower_bound` = 10, `upper_bound` = 89, and `bucket_size` = 10, then the following buckets would be used: -10, 10-20, 20-30, 30-40, 40-50, 50-60, 60-70, 70-80, 80-89, 89+. Precision up to 2 decimals works.
+		 * Type: double
+		 */
 		bucketSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2FixedSizeBucketingConfigFormGroup() {
@@ -1707,10 +1803,16 @@ export namespace MyNS {
 		/** Sample of quasi-identifier tuple values in this bucket. The total number of classes returned per bucket is capped at 20. */
 		bucketValues?: Array<GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues>;
 
-		/** Always greater than or equal to min_probability. */
+		/**
+		 * Always greater than or equal to min_probability.
+		 * Type: double
+		 */
 		maxProbability?: number | null;
 
-		/** Between 0 and 1. */
+		/**
+		 * Between 0 and 1.
+		 * Type: double
+		 */
 		minProbability?: number | null;
 	}
 
@@ -1723,10 +1825,16 @@ export namespace MyNS {
 		/** Total number of distinct quasi-identifier tuple values in this bucket. */
 		bucketValueCount: FormControl<string | null | undefined>,
 
-		/** Always greater than or equal to min_probability. */
+		/**
+		 * Always greater than or equal to min_probability.
+		 * Type: double
+		 */
 		maxProbability: FormControl<number | null | undefined>,
 
-		/** Between 0 and 1. */
+		/**
+		 * Between 0 and 1.
+		 * Type: double
+		 */
 		minProbability: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2DeltaPresenceEstimationHistogramBucketFormGroup() {
@@ -1743,7 +1851,10 @@ export namespace MyNS {
 	/** A tuple of values for the quasi-identifier columns. */
 	export interface GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValues {
 
-		/** The estimated probability that a given individual sharing these quasi-identifier values is in the dataset. This value, typically called δ, is the ratio between the number of records in the dataset with these quasi-identifier values, and the total number of individuals (inside *and* outside the dataset) with these quasi-identifier values. For example, if there are 15 individuals in the dataset who share the same quasi-identifier values, and an estimated 100 people in the entire population with these values, then δ is 0.15. */
+		/**
+		 * The estimated probability that a given individual sharing these quasi-identifier values is in the dataset. This value, typically called δ, is the ratio between the number of records in the dataset with these quasi-identifier values, and the total number of individuals (inside *and* outside the dataset) with these quasi-identifier values. For example, if there are 15 individuals in the dataset who share the same quasi-identifier values, and an estimated 100 people in the entire population with these values, then δ is 0.15.
+		 * Type: double
+		 */
 		estimatedProbability?: number | null;
 
 		/** The quasi-identifier values. */
@@ -1753,7 +1864,10 @@ export namespace MyNS {
 	/** A tuple of values for the quasi-identifier columns. */
 	export interface GooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValuesFormProperties {
 
-		/** The estimated probability that a given individual sharing these quasi-identifier values is in the dataset. This value, typically called δ, is the ratio between the number of records in the dataset with these quasi-identifier values, and the total number of individuals (inside *and* outside the dataset) with these quasi-identifier values. For example, if there are 15 individuals in the dataset who share the same quasi-identifier values, and an estimated 100 people in the entire population with these values, then δ is 0.15. */
+		/**
+		 * The estimated probability that a given individual sharing these quasi-identifier values is in the dataset. This value, typically called δ, is the ratio between the number of records in the dataset with these quasi-identifier values, and the total number of individuals (inside *and* outside the dataset) with these quasi-identifier values. For example, if there are 15 individuals in the dataset who share the same quasi-identifier values, and an estimated 100 people in the entire population with these values, then δ is 0.15.
+		 * Type: double
+		 */
 		estimatedProbability: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2DeltaPresenceEstimationQuasiIdValuesFormGroup() {
@@ -2576,7 +2690,10 @@ export namespace MyNS {
 		/** Minimum age a table must have before Cloud DLP can profile it. Value must be 1 hour or greater. */
 		minAge?: string | null;
 
-		/** Minimum number of rows that should be present before Cloud DLP profiles a table */
+		/**
+		 * Minimum number of rows that should be present before Cloud DLP profiles a table
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minRowCount?: number | null;
 	}
 
@@ -2586,7 +2703,10 @@ export namespace MyNS {
 		/** Minimum age a table must have before Cloud DLP can profile it. Value must be 1 hour or greater. */
 		minAge: FormControl<string | null | undefined>,
 
-		/** Minimum number of rows that should be present before Cloud DLP profiles a table */
+		/**
+		 * Minimum number of rows that should be present before Cloud DLP profiles a table
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minRowCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2OrConditionsFormGroup() {
@@ -2779,7 +2899,10 @@ export namespace MyNS {
 		/** Max number of rows to scan. If the table has more rows than this value, the rest of the rows are omitted. If not set, or if set to 0, all rows will be scanned. Only one of rows_limit and rows_limit_percent can be specified. Cannot be used in conjunction with TimespanConfig. */
 		rowsLimit?: string | null;
 
-		/** Max percentage of rows to scan. The rest are omitted. The number of rows scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of rows_limit and rows_limit_percent can be specified. Cannot be used in conjunction with TimespanConfig. Caution: A [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-sampling) is causing the `rowsLimitPercent` field to behave unexpectedly. We recommend using `rowsLimit` instead. */
+		/**
+		 * Max percentage of rows to scan. The rest are omitted. The number of rows scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of rows_limit and rows_limit_percent can be specified. Cannot be used in conjunction with TimespanConfig. Caution: A [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-sampling) is causing the `rowsLimitPercent` field to behave unexpectedly. We recommend using `rowsLimit` instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowsLimitPercent?: number | null;
 		sampleMethod?: GooglePrivacyDlpV2BigQueryOptionsSampleMethod | null;
 
@@ -2793,7 +2916,10 @@ export namespace MyNS {
 		/** Max number of rows to scan. If the table has more rows than this value, the rest of the rows are omitted. If not set, or if set to 0, all rows will be scanned. Only one of rows_limit and rows_limit_percent can be specified. Cannot be used in conjunction with TimespanConfig. */
 		rowsLimit: FormControl<string | null | undefined>,
 
-		/** Max percentage of rows to scan. The rest are omitted. The number of rows scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of rows_limit and rows_limit_percent can be specified. Cannot be used in conjunction with TimespanConfig. Caution: A [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-sampling) is causing the `rowsLimitPercent` field to behave unexpectedly. We recommend using `rowsLimit` instead. */
+		/**
+		 * Max percentage of rows to scan. The rest are omitted. The number of rows scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of rows_limit and rows_limit_percent can be specified. Cannot be used in conjunction with TimespanConfig. Caution: A [known issue](https://cloud.google.com/dlp/docs/known-issues#bq-sampling) is causing the `rowsLimitPercent` field to behave unexpectedly. We recommend using `rowsLimit` instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowsLimitPercent: FormControl<number | null | undefined>,
 		sampleMethod: FormControl<GooglePrivacyDlpV2BigQueryOptionsSampleMethod | null | undefined>,
 	}
@@ -2812,32 +2938,56 @@ export namespace MyNS {
 	/** Bounding box encompassing detected text within an image. */
 	export interface GooglePrivacyDlpV2BoundingBox {
 
-		/** Height of the bounding box in pixels. */
+		/**
+		 * Height of the bounding box in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** Left coordinate of the bounding box. (0,0) is upper left. */
+		/**
+		 * Left coordinate of the bounding box. (0,0) is upper left.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left?: number | null;
 
-		/** Top coordinate of the bounding box. (0,0) is upper left. */
+		/**
+		 * Top coordinate of the bounding box. (0,0) is upper left.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top?: number | null;
 
-		/** Width of the bounding box in pixels. */
+		/**
+		 * Width of the bounding box in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Bounding box encompassing detected text within an image. */
 	export interface GooglePrivacyDlpV2BoundingBoxFormProperties {
 
-		/** Height of the bounding box in pixels. */
+		/**
+		 * Height of the bounding box in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Left coordinate of the bounding box. (0,0) is upper left. */
+		/**
+		 * Left coordinate of the bounding box. (0,0) is upper left.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** Top coordinate of the bounding box. (0,0) is upper left. */
+		/**
+		 * Top coordinate of the bounding box. (0,0) is upper left.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top: FormControl<number | null | undefined>,
 
-		/** Width of the bounding box in pixels. */
+		/**
+		 * Width of the bounding box in pixels.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2BoundingBoxFormGroup() {
@@ -2922,7 +3072,10 @@ export namespace MyNS {
 		/** Max number of bytes to scan from a file. If a scanned file's size is bigger than this value then the rest of the bytes are omitted. Only one of `bytes_limit_per_file` and `bytes_limit_per_file_percent` can be specified. This field can't be set if de-identification is requested. For certain file types, setting this field has no effect. For more information, see [Limits on bytes scanned per file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file). */
 		bytesLimitPerFile?: string | null;
 
-		/** Max percentage of bytes to scan from a file. The rest are omitted. The number of bytes scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of bytes_limit_per_file and bytes_limit_per_file_percent can be specified. This field can't be set if de-identification is requested. For certain file types, setting this field has no effect. For more information, see [Limits on bytes scanned per file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file). */
+		/**
+		 * Max percentage of bytes to scan from a file. The rest are omitted. The number of bytes scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of bytes_limit_per_file and bytes_limit_per_file_percent can be specified. This field can't be set if de-identification is requested. For certain file types, setting this field has no effect. For more information, see [Limits on bytes scanned per file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytesLimitPerFilePercent?: number | null;
 
 		/** Set of files to scan. */
@@ -2931,7 +3084,10 @@ export namespace MyNS {
 		/** List of file type groups to include in the scan. If empty, all files are scanned and available data format processors are applied. In addition, the binary content of the selected files is always scanned as well. Images are scanned only as binary if the specified region does not support image inspection and no file_types were specified. Image inspection is restricted to 'global', 'us', 'asia', and 'europe'. */
 		fileTypes?: Array<string>;
 
-		/** Limits the number of files to scan to this percentage of the input FileSet. Number of files scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0. */
+		/**
+		 * Limits the number of files to scan to this percentage of the input FileSet. Number of files scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesLimitPercent?: number | null;
 		sampleMethod?: GooglePrivacyDlpV2BigQueryOptionsSampleMethod | null;
 	}
@@ -2942,10 +3098,16 @@ export namespace MyNS {
 		/** Max number of bytes to scan from a file. If a scanned file's size is bigger than this value then the rest of the bytes are omitted. Only one of `bytes_limit_per_file` and `bytes_limit_per_file_percent` can be specified. This field can't be set if de-identification is requested. For certain file types, setting this field has no effect. For more information, see [Limits on bytes scanned per file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file). */
 		bytesLimitPerFile: FormControl<string | null | undefined>,
 
-		/** Max percentage of bytes to scan from a file. The rest are omitted. The number of bytes scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of bytes_limit_per_file and bytes_limit_per_file_percent can be specified. This field can't be set if de-identification is requested. For certain file types, setting this field has no effect. For more information, see [Limits on bytes scanned per file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file). */
+		/**
+		 * Max percentage of bytes to scan from a file. The rest are omitted. The number of bytes scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0. Only one of bytes_limit_per_file and bytes_limit_per_file_percent can be specified. This field can't be set if de-identification is requested. For certain file types, setting this field has no effect. For more information, see [Limits on bytes scanned per file](https://cloud.google.com/dlp/docs/supported-file-types#max-byte-size-per-file).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bytesLimitPerFilePercent: FormControl<number | null | undefined>,
 
-		/** Limits the number of files to scan to this percentage of the input FileSet. Number of files scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0. */
+		/**
+		 * Limits the number of files to scan to this percentage of the input FileSet. Number of files scanned is rounded down. Must be between 0 and 100, inclusively. Both 0 and 100 means no limit. Defaults to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		filesLimitPercent: FormControl<number | null | undefined>,
 		sampleMethod: FormControl<GooglePrivacyDlpV2BigQueryOptionsSampleMethod | null | undefined>,
 	}
@@ -3062,7 +3224,10 @@ export namespace MyNS {
 		/** Approximate uniqueness of the column. */
 		estimatedUniquenessScore?: GooglePrivacyDlpV2ColumnDataProfileEstimatedUniquenessScore | null;
 
-		/** The likelihood that this column contains free-form text. A value close to 1 may indicate the column is likely to contain free-form or natural language text. Range in 0-1. */
+		/**
+		 * The likelihood that this column contains free-form text. A value close to 1 may indicate the column is likely to contain free-form or natural language text. Range in 0-1.
+		 * Type: double
+		 */
 		freeTextScore?: number | null;
 
 		/** The name of the profile. */
@@ -3118,7 +3283,10 @@ export namespace MyNS {
 		/** Approximate uniqueness of the column. */
 		estimatedUniquenessScore: FormControl<GooglePrivacyDlpV2ColumnDataProfileEstimatedUniquenessScore | null | undefined>,
 
-		/** The likelihood that this column contains free-form text. A value close to 1 may indicate the column is likely to contain free-form or natural language text. Range in 0-1. */
+		/**
+		 * The likelihood that this column contains free-form text. A value close to 1 may indicate the column is likely to contain free-form or natural language text. Range in 0-1.
+		 * Type: double
+		 */
 		freeTextScore: FormControl<number | null | undefined>,
 
 		/** The name of the profile. */
@@ -3167,7 +3335,10 @@ export namespace MyNS {
 	/** The infoType details for this column. */
 	export interface GooglePrivacyDlpV2InfoTypeSummary {
 
-		/** Not populated for predicted infotypes. */
+		/**
+		 * Not populated for predicted infotypes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedPrevalence?: number | null;
 
 		/** Type of information detected by the API. */
@@ -3177,7 +3348,10 @@ export namespace MyNS {
 	/** The infoType details for this column. */
 	export interface GooglePrivacyDlpV2InfoTypeSummaryFormProperties {
 
-		/** Not populated for predicted infotypes. */
+		/**
+		 * Not populated for predicted infotypes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedPrevalence: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2InfoTypeSummaryFormGroup() {
@@ -3220,7 +3394,10 @@ export namespace MyNS {
 	/** Infotype details for other infoTypes found within a column. */
 	export interface GooglePrivacyDlpV2OtherInfoTypeSummary {
 
-		/** Approximate percentage of non-null rows that contained data detected by this infotype. */
+		/**
+		 * Approximate percentage of non-null rows that contained data detected by this infotype.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedPrevalence?: number | null;
 
 		/** Whether this infoType was excluded from sensitivity and risk analysis due to factors such as low prevalence (subject to change). */
@@ -3233,7 +3410,10 @@ export namespace MyNS {
 	/** Infotype details for other infoTypes found within a column. */
 	export interface GooglePrivacyDlpV2OtherInfoTypeSummaryFormProperties {
 
-		/** Approximate percentage of non-null rows that contained data detected by this infotype. */
+		/**
+		 * Approximate percentage of non-null rows that contained data detected by this infotype.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		estimatedPrevalence: FormControl<number | null | undefined>,
 
 		/** Whether this infoType was excluded from sensitivity and risk analysis due to factors such as low prevalence (subject to change). */
@@ -3273,7 +3453,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -3286,7 +3469,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -4326,7 +4512,10 @@ export namespace MyNS {
 		/** Set the likelihood of a finding to a fixed value. */
 		fixedLikelihood?: GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood | null;
 
-		/** Increase or decrease the likelihood by the specified number of levels. For example, if a finding would be `POSSIBLE` without the detection rule and `relative_likelihood` is 1, then it is upgraded to `LIKELY`, while a value of -1 would downgrade it to `UNLIKELY`. Likelihood may never drop below `VERY_UNLIKELY` or exceed `VERY_LIKELY`, so applying an adjustment of 1 followed by an adjustment of -1 when base likelihood is `VERY_LIKELY` will result in a final likelihood of `LIKELY`. */
+		/**
+		 * Increase or decrease the likelihood by the specified number of levels. For example, if a finding would be `POSSIBLE` without the detection rule and `relative_likelihood` is 1, then it is upgraded to `LIKELY`, while a value of -1 would downgrade it to `UNLIKELY`. Likelihood may never drop below `VERY_UNLIKELY` or exceed `VERY_LIKELY`, so applying an adjustment of 1 followed by an adjustment of -1 when base likelihood is `VERY_LIKELY` will result in a final likelihood of `LIKELY`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativeLikelihood?: number | null;
 	}
 
@@ -4336,7 +4525,10 @@ export namespace MyNS {
 		/** Set the likelihood of a finding to a fixed value. */
 		fixedLikelihood: FormControl<GooglePrivacyDlpV2LikelihoodAdjustmentFixedLikelihood | null | undefined>,
 
-		/** Increase or decrease the likelihood by the specified number of levels. For example, if a finding would be `POSSIBLE` without the detection rule and `relative_likelihood` is 1, then it is upgraded to `LIKELY`, while a value of -1 would downgrade it to `UNLIKELY`. Likelihood may never drop below `VERY_UNLIKELY` or exceed `VERY_LIKELY`, so applying an adjustment of 1 followed by an adjustment of -1 when base likelihood is `VERY_LIKELY` will result in a final likelihood of `LIKELY`. */
+		/**
+		 * Increase or decrease the likelihood by the specified number of levels. For example, if a finding would be `POSSIBLE` without the detection rule and `relative_likelihood` is 1, then it is upgraded to `LIKELY`, while a value of -1 would downgrade it to `UNLIKELY`. Likelihood may never drop below `VERY_UNLIKELY` or exceed `VERY_LIKELY`, so applying an adjustment of 1 followed by an adjustment of -1 when base likelihood is `VERY_LIKELY` will result in a final likelihood of `LIKELY`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		relativeLikelihood: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2LikelihoodAdjustmentFormGroup() {
@@ -4353,20 +4545,32 @@ export namespace MyNS {
 	/** Message for specifying a window around a finding to apply a detection rule. */
 	export interface GooglePrivacyDlpV2Proximity {
 
-		/** Number of characters after the finding to consider. */
+		/**
+		 * Number of characters after the finding to consider.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		windowAfter?: number | null;
 
-		/** Number of characters before the finding to consider. For tabular data, if you want to modify the likelihood of an entire column of findngs, set this to 1. For more information, see [Hotword example: Set the match likelihood of a table column] (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values). */
+		/**
+		 * Number of characters before the finding to consider. For tabular data, if you want to modify the likelihood of an entire column of findngs, set this to 1. For more information, see [Hotword example: Set the match likelihood of a table column] (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		windowBefore?: number | null;
 	}
 
 	/** Message for specifying a window around a finding to apply a detection rule. */
 	export interface GooglePrivacyDlpV2ProximityFormProperties {
 
-		/** Number of characters after the finding to consider. */
+		/**
+		 * Number of characters after the finding to consider.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		windowAfter: FormControl<number | null | undefined>,
 
-		/** Number of characters before the finding to consider. For tabular data, if you want to modify the likelihood of an entire column of findngs, set this to 1. For more information, see [Hotword example: Set the match likelihood of a table column] (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values). */
+		/**
+		 * Number of characters before the finding to consider. For tabular data, if you want to modify the likelihood of an entire column of findngs, set this to 1. For more information, see [Hotword example: Set the match likelihood of a table column] (https://cloud.google.com/dlp/docs/creating-custom-infotypes-likelihood#match-column-values).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		windowBefore: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2ProximityFormGroup() {
@@ -4448,20 +4652,32 @@ export namespace MyNS {
 		/** Configuration of findings limit given for specified infoTypes. */
 		maxFindingsPerInfoType?: Array<GooglePrivacyDlpV2InfoTypeLimit>;
 
-		/** Max number of findings that are returned for each item scanned. When set within an InspectContentRequest, this field is ignored. This value isn't a hard limit. If the number of findings for an item reaches this limit, the inspection of that item ends gradually, not abruptly. Therefore, the actual number of findings that Cloud DLP returns for the item can be multiple times higher than this value. */
+		/**
+		 * Max number of findings that are returned for each item scanned. When set within an InspectContentRequest, this field is ignored. This value isn't a hard limit. If the number of findings for an item reaches this limit, the inspection of that item ends gradually, not abruptly. Therefore, the actual number of findings that Cloud DLP returns for the item can be multiple times higher than this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFindingsPerItem?: number | null;
 
-		/** Max number of findings that are returned per request or job. If you set this field in an InspectContentRequest, the resulting maximum value is the value that you set or 3,000, whichever is lower. This value isn't a hard limit. If an inspection reaches this limit, the inspection ends gradually, not abruptly. Therefore, the actual number of findings that Cloud DLP returns can be multiple times higher than this value. */
+		/**
+		 * Max number of findings that are returned per request or job. If you set this field in an InspectContentRequest, the resulting maximum value is the value that you set or 3,000, whichever is lower. This value isn't a hard limit. If an inspection reaches this limit, the inspection ends gradually, not abruptly. Therefore, the actual number of findings that Cloud DLP returns can be multiple times higher than this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFindingsPerRequest?: number | null;
 	}
 
 	/** Configuration to control the number of findings returned for inspection. This is not used for de-identification or data profiling. When redacting sensitive data from images, finding limits don't apply. They can cause unexpected or inconsistent results, where only some data is redacted. Don't include finding limits in RedactImage requests. Otherwise, Cloud DLP returns an error. */
 	export interface GooglePrivacyDlpV2FindingLimitsFormProperties {
 
-		/** Max number of findings that are returned for each item scanned. When set within an InspectContentRequest, this field is ignored. This value isn't a hard limit. If the number of findings for an item reaches this limit, the inspection of that item ends gradually, not abruptly. Therefore, the actual number of findings that Cloud DLP returns for the item can be multiple times higher than this value. */
+		/**
+		 * Max number of findings that are returned for each item scanned. When set within an InspectContentRequest, this field is ignored. This value isn't a hard limit. If the number of findings for an item reaches this limit, the inspection of that item ends gradually, not abruptly. Therefore, the actual number of findings that Cloud DLP returns for the item can be multiple times higher than this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFindingsPerItem: FormControl<number | null | undefined>,
 
-		/** Max number of findings that are returned per request or job. If you set this field in an InspectContentRequest, the resulting maximum value is the value that you set or 3,000, whichever is lower. This value isn't a hard limit. If an inspection reaches this limit, the inspection ends gradually, not abruptly. Therefore, the actual number of findings that Cloud DLP returns can be multiple times higher than this value. */
+		/**
+		 * Max number of findings that are returned per request or job. If you set this field in an InspectContentRequest, the resulting maximum value is the value that you set or 3,000, whichever is lower. This value isn't a hard limit. If an inspection reaches this limit, the inspection ends gradually, not abruptly. Therefore, the actual number of findings that Cloud DLP returns can be multiple times higher than this value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFindingsPerRequest: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2FindingLimitsFormGroup() {
@@ -4479,14 +4695,20 @@ export namespace MyNS {
 		/** Type of information detected by the API. */
 		infoType?: GooglePrivacyDlpV2InfoType;
 
-		/** Max findings limit for the given infoType. */
+		/**
+		 * Max findings limit for the given infoType.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFindings?: number | null;
 	}
 
 	/** Max findings configuration per infoType, per content item or long running DlpJob. */
 	export interface GooglePrivacyDlpV2InfoTypeLimitFormProperties {
 
-		/** Max findings limit for the given infoType. */
+		/**
+		 * Max findings limit for the given infoType.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFindings: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2InfoTypeLimitFormGroup() {
@@ -5451,14 +5673,20 @@ export namespace MyNS {
 	/** Time zone of the date time object. */
 	export interface GooglePrivacyDlpV2TimeZone {
 
-		/** Set only if the offset can be determined. Positive for time ahead of UTC. E.g. For "UTC-9", this value is -540. */
+		/**
+		 * Set only if the offset can be determined. Positive for time ahead of UTC. E.g. For "UTC-9", this value is -540.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetMinutes?: number | null;
 	}
 
 	/** Time zone of the date time object. */
 	export interface GooglePrivacyDlpV2TimeZoneFormProperties {
 
-		/** Set only if the offset can be determined. Positive for time ahead of UTC. E.g. For "UTC-9", this value is -540. */
+		/**
+		 * Set only if the offset can be determined. Positive for time ahead of UTC. E.g. For "UTC-9", this value is -540.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offsetMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateGooglePrivacyDlpV2TimeZoneFormGroup() {
@@ -7148,6 +7376,7 @@ export namespace MyNS {
 		 * @param {string} locationId Deprecated. This field has no effect.
 		 * @param {string} orderBy Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case insensitive. The default sorting order is ascending. Redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template's name. - `display_name`: corresponds to the template's display name.
 		 * @param {number} pageSize Size of the page. This value can be limited by the server. If zero server returns a page of max size 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token to continue retrieval. Comes from the previous call to `ListDeidentifyTemplates`.
 		 * @return {GooglePrivacyDlpV2ListDeidentifyTemplatesResponse} Successful response
 		 */
@@ -7171,6 +7400,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent resource name. The format of this value is as follows: `projects/`PROJECT_ID`/locations/`LOCATION_ID The following example `parent` string specifies a parent project with the identifier `example-project`, and specifies the `europe-west3` location for processing data: parent=projects/example-project/locations/europe-west3
 		 * @param {string} orderBy Comma separated list of config fields to order by, followed by `asc` or `desc` postfix. This list is case insensitive. The default sorting order is ascending. Redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `last_run_time`: corresponds to the last time the DiscoveryConfig ran. - `name`: corresponds to the DiscoveryConfig's name. - `status`: corresponds to DiscoveryConfig's status.
 		 * @param {number} pageSize Size of the page. This value can be limited by a server.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token to continue retrieval. Comes from the previous call to ListDiscoveryConfigs. `order_by` field must not change for subsequent calls.
 		 * @return {GooglePrivacyDlpV2ListDiscoveryConfigsResponse} Successful response
 		 */
@@ -7196,6 +7426,7 @@ export namespace MyNS {
 		 * @param {string} locationId Deprecated. This field has no effect.
 		 * @param {string} orderBy Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case insensitive. The default sorting order is ascending. Redundant space characters are insignificant. Example: `name asc, end_time asc, create_time desc` Supported fields are: - `create_time`: corresponds to the time the job was created. - `end_time`: corresponds to the time the job ended. - `name`: corresponds to the job's name. - `state`: corresponds to `state`
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @param {GooglePrivacyDlpV2DlpJobType} type The type of job. Defaults to `DlpJobType.INSPECT`
 		 * @return {GooglePrivacyDlpV2ListDlpJobsResponse} Successful response
@@ -7244,6 +7475,7 @@ export namespace MyNS {
 		 * @param {string} locationId Deprecated. This field has no effect.
 		 * @param {string} orderBy Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case insensitive. The default sorting order is ascending. Redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the template was created. - `update_time`: corresponds to the time the template was last updated. - `name`: corresponds to the template's name. - `display_name`: corresponds to the template's display name.
 		 * @param {number} pageSize Size of the page. This value can be limited by the server. If zero server returns a page of max size 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token to continue retrieval. Comes from the previous call to `ListInspectTemplates`.
 		 * @return {GooglePrivacyDlpV2ListInspectTemplatesResponse} Successful response
 		 */
@@ -7269,6 +7501,7 @@ export namespace MyNS {
 		 * @param {string} locationId Deprecated. This field has no effect.
 		 * @param {string} orderBy Comma separated list of triggeredJob fields to order by, followed by `asc` or `desc` postfix. This list is case insensitive. The default sorting order is ascending. Redundant space characters are insignificant. Example: `name asc,update_time, create_time desc` Supported fields are: - `create_time`: corresponds to the time the JobTrigger was created. - `update_time`: corresponds to the time the JobTrigger was last updated. - `last_run_time`: corresponds to the last time the JobTrigger ran. - `name`: corresponds to the JobTrigger's name. - `display_name`: corresponds to the JobTrigger's display name. - `status`: corresponds to JobTrigger's status.
 		 * @param {number} pageSize Size of the page. This value can be limited by a server.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token to continue retrieval. Comes from the previous call to ListJobTriggers. `order_by` field must not change for subsequent calls.
 		 * @param {GooglePrivacyDlpV2DlpJobType} type The type of jobs. Will use `DlpJobType.INSPECT` if not set.
 		 * @return {GooglePrivacyDlpV2ListJobTriggersResponse} Successful response
@@ -7294,6 +7527,7 @@ export namespace MyNS {
 		 * @param {string} locationId Deprecated. This field has no effect.
 		 * @param {string} orderBy Comma separated list of fields to order by, followed by `asc` or `desc` postfix. This list is case insensitive. The default sorting order is ascending. Redundant space characters are insignificant. Example: `name asc, display_name, create_time desc` Supported fields are: - `create_time`: corresponds to the time the most recent version of the resource was created. - `state`: corresponds to the state of the resource. - `name`: corresponds to resource name. - `display_name`: corresponds to info type's display name.
 		 * @param {number} pageSize Size of the page. This value can be limited by the server. If zero server returns a page of max size 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token to continue retrieval. Comes from the previous call to `ListStoredInfoTypes`.
 		 * @return {GooglePrivacyDlpV2ListStoredInfoTypesResponse} Successful response
 		 */

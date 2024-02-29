@@ -695,8 +695,14 @@ namespace MyNS
 		/// Used to cancel an open change request. Must be sent before the status of the request changes to <code>APPLYING</code>, the final stage of completing your change request. You can describe a change during the 60-day request history retention period for API calls.
 		/// CancelChangeSet CancelChangeSet#catalog&changeSetId
 		/// </summary>
-		/// <param name="catalog">Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.</param>
-		/// <param name="changeSetId">Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.</param>
+		/// <param name="catalog">Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code>.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="changeSetId">Required. The unique identifier of the <code>StartChangeSet</code> request that you want to cancel.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelChangeSetResponse> CancelChangeSetAsync(string catalog, string changeSetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -725,7 +731,10 @@ namespace MyNS
 		/// Deletes a resource-based policy on an Entity that is identified by its resource ARN.
 		/// DeleteResourcePolicy DeleteResourcePolicy#resourceArn
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteResourcePolicyResponse> DeleteResourcePolicyAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -759,8 +768,14 @@ namespace MyNS
 		/// Provides information about a given change set.
 		/// DescribeChangeSet DescribeChangeSet#catalog&changeSetId
 		/// </summary>
-		/// <param name="catalog">Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </param>
-		/// <param name="changeSetId">Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.</param>
+		/// <param name="catalog">Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> 
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="changeSetId">Required. The unique identifier for the <code>StartChangeSet</code> request that you want to describe the details for.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChangeSetResponse> DescribeChangeSetAsync(string catalog, string changeSetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -794,8 +809,14 @@ namespace MyNS
 		/// Returns the metadata and content of the entity.
 		/// DescribeEntity DescribeEntity#catalog&entityId
 		/// </summary>
-		/// <param name="catalog">Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> </param>
-		/// <param name="entityId">Required. The unique ID of the entity to describe.</param>
+		/// <param name="catalog">Required. The catalog related to the request. Fixed value: <code>AWSMarketplace</code> 
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="entityId">Required. The unique ID of the entity to describe.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeEntityResponse> DescribeEntityAsync(string catalog, string entityId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -829,7 +850,10 @@ namespace MyNS
 		/// Gets a resource-based policy of an Entity that is identified by its resource ARN.
 		/// GetResourcePolicy GetResourcePolicy#resourceArn
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the Entity resource that is associated with the resource policy.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetResourcePolicyResponse> GetResourcePolicyAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

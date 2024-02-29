@@ -552,6 +552,7 @@ export namespace MyNS {
 		 * @param {string} path The Data Lake Store path (starting with '/') of the file on which to set or remove the expiration time.
 		 * @param {FileSystem_SetFileExpiryExpiryOption} expiryOption Indicates the type of expiration to use for the file: 1. NeverExpire: ExpireTime is ignored. 2. RelativeToNow: ExpireTime is an integer in milliseconds representing the expiration date relative to when file expiration is updated. 3. RelativeToCreationDate: ExpireTime is an integer in milliseconds representing the expiration date relative to file creation. 4. Absolute: ExpireTime is an integer in milliseconds, as a Unix timestamp relative to 1/1/1970 00:00:00.
 		 * @param {string} expireTime The time that the file will expire, corresponding to the ExpiryOption that was set.
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {FileSystem_SetFileExpiryOp} op The constant value for the operation.
 		 * @param {string} api_version Client Api Version.
 		 * @return {void} Successfully set the expiration time on the specified file.

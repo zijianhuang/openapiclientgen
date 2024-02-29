@@ -394,7 +394,10 @@ export namespace MyNS {
 		/** Active ingredients. */
 		activeIngredients?: string | null;
 
-		/** Alcohol by volume. */
+		/**
+		 * Alcohol by volume.
+		 * Type: double
+		 */
 		alcoholByVolume?: number | null;
 
 		/** Allergens. */
@@ -423,7 +426,10 @@ export namespace MyNS {
 		/** Active ingredients. */
 		activeIngredients: FormControl<string | null | undefined>,
 
-		/** Alcohol by volume. */
+		/**
+		 * Alcohol by volume.
+		 * Type: double
+		 */
 		alcoholByVolume: FormControl<number | null | undefined>,
 
 		/** Allergens. */
@@ -459,25 +465,37 @@ export namespace MyNS {
 		/** Combination of float amount and unit. */
 		addedSugars?: FloatUnit;
 
-		/** Added sugars daily percentage. */
+		/**
+		 * Added sugars daily percentage.
+		 * Type: double
+		 */
 		addedSugarsDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
 		calcium?: FloatUnit;
 
-		/** Calcium daily percentage. */
+		/**
+		 * Calcium daily percentage.
+		 * Type: double
+		 */
 		calciumDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
 		cholesterol?: FloatUnit;
 
-		/** Cholesterol daily percentage. */
+		/**
+		 * Cholesterol daily percentage.
+		 * Type: double
+		 */
 		cholesterolDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
 		dietaryFiber?: FloatUnit;
 
-		/** Dietary fiber daily percentage. */
+		/**
+		 * Dietary fiber daily percentage.
+		 * Type: double
+		 */
 		dietaryFiberDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
@@ -486,19 +504,28 @@ export namespace MyNS {
 		/** Combination of float amount and unit. */
 		energyFromFat?: FloatUnit;
 
-		/** Folate daily percentage. */
+		/**
+		 * Folate daily percentage.
+		 * Type: double
+		 */
 		folateDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
 		folateFolicAcid?: FloatUnit;
 
-		/** Folate mcg DFE. */
+		/**
+		 * Folate mcg DFE.
+		 * Type: double
+		 */
 		folateMcgDfe?: number | null;
 
 		/** Combination of float amount and unit. */
 		iron?: FloatUnit;
 
-		/** Iron daily percentage. */
+		/**
+		 * Iron daily percentage.
+		 * Type: double
+		 */
 		ironDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
@@ -516,7 +543,10 @@ export namespace MyNS {
 		/** Combination of float amount and unit. */
 		potassium?: FloatUnit;
 
-		/** Potassium daily percentage. */
+		/**
+		 * Potassium daily percentage.
+		 * Type: double
+		 */
 		potassiumDailyPercentage?: number | null;
 
 		/** Prepared size description. */
@@ -525,13 +555,19 @@ export namespace MyNS {
 		/** Combination of float amount and unit. */
 		protein?: FloatUnit;
 
-		/** Protein daily percentage. */
+		/**
+		 * Protein daily percentage.
+		 * Type: double
+		 */
 		proteinDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
 		saturatedFat?: FloatUnit;
 
-		/** Saturated fat daily percentage. */
+		/**
+		 * Saturated fat daily percentage.
+		 * Type: double
+		 */
 		saturatedFatDailyPercentage?: number | null;
 
 		/** Food Serving Size. Serving size description. */
@@ -546,7 +582,10 @@ export namespace MyNS {
 		/** Combination of float amount and unit. */
 		sodium?: FloatUnit;
 
-		/** Sodium daily percentage. */
+		/**
+		 * Sodium daily percentage.
+		 * Type: double
+		 */
 		sodiumDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
@@ -555,31 +594,46 @@ export namespace MyNS {
 		/** Combination of float amount and unit. */
 		totalCarbohydrate?: FloatUnit;
 
-		/** Total carbohydrate daily percentage. */
+		/**
+		 * Total carbohydrate daily percentage.
+		 * Type: double
+		 */
 		totalCarbohydrateDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
 		totalFat?: FloatUnit;
 
-		/** Total fat daily percentage. */
+		/**
+		 * Total fat daily percentage.
+		 * Type: double
+		 */
 		totalFatDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
 		totalSugars?: FloatUnit;
 
-		/** Total sugars daily percentage. */
+		/**
+		 * Total sugars daily percentage.
+		 * Type: double
+		 */
 		totalSugarsDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
 		transFat?: FloatUnit;
 
-		/** Trans fat daily percentage. */
+		/**
+		 * Trans fat daily percentage.
+		 * Type: double
+		 */
 		transFatDailyPercentage?: number | null;
 
 		/** Combination of float amount and unit. */
 		vitaminD?: FloatUnit;
 
-		/** Vitamin D daily percentage. */
+		/**
+		 * Vitamin D daily percentage.
+		 * Type: double
+		 */
 		vitaminDDailyPercentage?: number | null;
 
 		/** Voluntary nutrition fact. */
@@ -587,40 +641,70 @@ export namespace MyNS {
 	}
 	export interface NutritionFormProperties {
 
-		/** Added sugars daily percentage. */
+		/**
+		 * Added sugars daily percentage.
+		 * Type: double
+		 */
 		addedSugarsDailyPercentage: FormControl<number | null | undefined>,
 
-		/** Calcium daily percentage. */
+		/**
+		 * Calcium daily percentage.
+		 * Type: double
+		 */
 		calciumDailyPercentage: FormControl<number | null | undefined>,
 
-		/** Cholesterol daily percentage. */
+		/**
+		 * Cholesterol daily percentage.
+		 * Type: double
+		 */
 		cholesterolDailyPercentage: FormControl<number | null | undefined>,
 
-		/** Dietary fiber daily percentage. */
+		/**
+		 * Dietary fiber daily percentage.
+		 * Type: double
+		 */
 		dietaryFiberDailyPercentage: FormControl<number | null | undefined>,
 
-		/** Folate daily percentage. */
+		/**
+		 * Folate daily percentage.
+		 * Type: double
+		 */
 		folateDailyPercentage: FormControl<number | null | undefined>,
 
-		/** Folate mcg DFE. */
+		/**
+		 * Folate mcg DFE.
+		 * Type: double
+		 */
 		folateMcgDfe: FormControl<number | null | undefined>,
 
-		/** Iron daily percentage. */
+		/**
+		 * Iron daily percentage.
+		 * Type: double
+		 */
 		ironDailyPercentage: FormControl<number | null | undefined>,
 
 		/** Nutrition fact measure. */
 		nutritionFactMeasure: FormControl<string | null | undefined>,
 
-		/** Potassium daily percentage. */
+		/**
+		 * Potassium daily percentage.
+		 * Type: double
+		 */
 		potassiumDailyPercentage: FormControl<number | null | undefined>,
 
 		/** Prepared size description. */
 		preparedSizeDescription: FormControl<string | null | undefined>,
 
-		/** Protein daily percentage. */
+		/**
+		 * Protein daily percentage.
+		 * Type: double
+		 */
 		proteinDailyPercentage: FormControl<number | null | undefined>,
 
-		/** Saturated fat daily percentage. */
+		/**
+		 * Saturated fat daily percentage.
+		 * Type: double
+		 */
 		saturatedFatDailyPercentage: FormControl<number | null | undefined>,
 
 		/** Food Serving Size. Serving size description. */
@@ -629,22 +713,40 @@ export namespace MyNS {
 		/** Servings per container. */
 		servingsPerContainer: FormControl<string | null | undefined>,
 
-		/** Sodium daily percentage. */
+		/**
+		 * Sodium daily percentage.
+		 * Type: double
+		 */
 		sodiumDailyPercentage: FormControl<number | null | undefined>,
 
-		/** Total carbohydrate daily percentage. */
+		/**
+		 * Total carbohydrate daily percentage.
+		 * Type: double
+		 */
 		totalCarbohydrateDailyPercentage: FormControl<number | null | undefined>,
 
-		/** Total fat daily percentage. */
+		/**
+		 * Total fat daily percentage.
+		 * Type: double
+		 */
 		totalFatDailyPercentage: FormControl<number | null | undefined>,
 
-		/** Total sugars daily percentage. */
+		/**
+		 * Total sugars daily percentage.
+		 * Type: double
+		 */
 		totalSugarsDailyPercentage: FormControl<number | null | undefined>,
 
-		/** Trans fat daily percentage. */
+		/**
+		 * Trans fat daily percentage.
+		 * Type: double
+		 */
 		transFatDailyPercentage: FormControl<number | null | undefined>,
 
-		/** Vitamin D daily percentage. */
+		/**
+		 * Vitamin D daily percentage.
+		 * Type: double
+		 */
 		vitaminDDailyPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateNutritionFormGroup() {
@@ -677,7 +779,10 @@ export namespace MyNS {
 	/** Combination of float amount and unit. */
 	export interface FloatUnit {
 
-		/** amount. */
+		/**
+		 * amount.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** unit. */
@@ -687,7 +792,10 @@ export namespace MyNS {
 	/** Combination of float amount and unit. */
 	export interface FloatUnitFormProperties {
 
-		/** amount. */
+		/**
+		 * amount.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** unit. */
@@ -705,7 +813,10 @@ export namespace MyNS {
 	/** Voluntary Nutrition Facts. */
 	export interface VoluntaryNutritionFact {
 
-		/** Daily percentage. */
+		/**
+		 * Daily percentage.
+		 * Type: double
+		 */
 		dailyPercentage?: number | null;
 
 		/** Name. */
@@ -718,7 +829,10 @@ export namespace MyNS {
 	/** Voluntary Nutrition Facts. */
 	export interface VoluntaryNutritionFactFormProperties {
 
-		/** Daily percentage. */
+		/**
+		 * Daily percentage.
+		 * Type: double
+		 */
 		dailyPercentage: FormControl<number | null | undefined>,
 
 		/** Name. */
@@ -1175,6 +1289,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/productCertifications
 		 * @param {string} parent Required. The parent, which owns this collection of product certifications. Format: accounts/{account}/languages/{language_code}
 		 * @param {number} pageSize Optional. The maximum number of product certifications to return. The service may return fewer than this value. If unspecified, at most 50 product certifications will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListProductCertifications` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListProductCertifications` must match the call that provided the page token. Required if requesting the second or higher page.
 		 * @return {ListProductCertificationsResponse} Successful response
 		 */
@@ -1188,6 +1303,7 @@ export namespace MyNS {
 		 * @param {string} parent Parent ID in the format `accounts/{account_id}`. `account_id` - The ID of the Manufacturer Center account.
 		 * @param {Array<string>} include The information to be included in the response. Only sections listed here will be returned.
 		 * @param {number} pageSize Maximum number of product statuses to return in the response, used for paging.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {ListProductsResponse} Successful response
 		 */

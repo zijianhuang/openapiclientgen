@@ -716,6 +716,7 @@ export namespace MyNS {
 		 * @param {LanguageCode} LanguageCode  The language identification tag (ISO 639 code for the language name-ISO 3166 country code) for filtering the list of voices returned. If you don't specify this optional parameter, all available voices are returned. 
 		 * @param {boolean} IncludeAdditionalLanguageCodes Boolean value indicating whether to return any bilingual voices that use the specified language as an additional language. For instance, if you request all languages that use US English (es-US), and there is an Italian voice that speaks both Italian (it-IT) and US English, that voice will be included if you specify <code>yes</code> but not if you specify <code>no</code>.
 		 * @param {string} NextToken An opaque pagination token returned from the previous <code>DescribeVoices</code> operation. If present, this indicates where to continue the listing.
+		 *     Min length: 0    Max length: 4096
 		 * @return {DescribeVoicesOutput} Success
 		 */
 		DescribeVoices(Engine: Engine | null | undefined, LanguageCode: LanguageCode | null | undefined, IncludeAdditionalLanguageCodes: boolean | null | undefined, NextToken: string | null | undefined): Observable<DescribeVoicesOutput> {
@@ -736,6 +737,7 @@ export namespace MyNS {
 		 * Returns a list of pronunciation lexicons stored in an Amazon Web Services Region. For more information, see <a href="https://docs.aws.amazon.com/polly/latest/dg/managing-lexicons.html">Managing Lexicons</a>.
 		 * Get v1/lexicons
 		 * @param {string} NextToken An opaque pagination token returned from previous <code>ListLexicons</code> operation. If present, indicates where to continue the list of lexicons.
+		 *     Min length: 0    Max length: 4096
 		 * @return {ListLexiconsOutput} Success
 		 */
 		ListLexicons(NextToken: string | null | undefined): Observable<ListLexiconsOutput> {
@@ -746,7 +748,9 @@ export namespace MyNS {
 		 * Returns a list of SpeechSynthesisTask objects ordered by their creation date. This operation can filter the tasks by their status, for example, allowing users to list only tasks that are completed.
 		 * Get v1/synthesisTasks
 		 * @param {number} MaxResults Maximum number of speech synthesis tasks returned in a List operation.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} NextToken The pagination token to use in the next request to continue the listing of speech synthesis tasks. 
+		 *     Min length: 0    Max length: 4096
 		 * @param {TaskStatus} Status Status of the speech synthesis tasks returned in a List operation
 		 * @return {ListSpeechSynthesisTasksOutput} Success
 		 */

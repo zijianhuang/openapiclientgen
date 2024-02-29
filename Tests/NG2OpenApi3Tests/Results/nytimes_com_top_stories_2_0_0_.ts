@@ -65,20 +65,28 @@ export namespace MyNS {
 		caption?: string | null;
 		copyright?: string | null;
 		format?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		subtype?: string | null;
 		type?: string | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface ArticleMultimediaFormProperties {
 		caption: FormControl<string | null | undefined>,
 		copyright: FormControl<string | null | undefined>,
 		format: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		subtype: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateArticleMultimediaFormGroup() {

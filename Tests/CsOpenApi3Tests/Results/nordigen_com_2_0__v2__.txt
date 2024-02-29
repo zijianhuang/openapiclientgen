@@ -2656,8 +2656,12 @@ namespace MyNS
 		/// API endpoints related to end-user agreements.
 		/// Retrieve_all_EUAs_for_an_end_user_v2 api/v2/agreements/enduser/
 		/// </summary>
-		/// <param name="limit">Number of results to return per page.</param>
-		/// <param name="offset">The initial index from which to return the results.</param>
+		/// <param name="limit">Number of results to return per page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="offset">The initial index from which to return the results.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Retrieve all end user agreements</returns>
 		public async Task<PaginatedEndUserAgreementList> Retrieve_all_EUAs_for_an_end_user_v2Async(int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2894,8 +2898,12 @@ namespace MyNS
 		/// Retrieve all payments belonging to the company
 		/// List_payments api/v2/payments/
 		/// </summary>
-		/// <param name="limit">Number of results to return per page.</param>
-		/// <param name="offset">The initial index from which to return the results.</param>
+		/// <param name="limit">Number of results to return per page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="offset">The initial index from which to return the results.
+		/// Minimum: 1
+		// </param>
 		/// <returns>List payments</returns>
 		public async Task<PaginatedPaymentReadList> List_paymentsAsync(int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2995,8 +3003,12 @@ namespace MyNS
 		/// API endpoints related to creditor accounts.
 		/// Payments_creditors_list api/v2/payments/creditors/
 		/// </summary>
-		/// <param name="limit">Number of results to return per page.</param>
-		/// <param name="offset">The initial index from which to return the results.</param>
+		/// <param name="limit">Number of results to return per page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="offset">The initial index from which to return the results.
+		/// Minimum: 1
+		// </param>
 		public async Task<PaginatedCreditorAccountList> Payments_creditors_listAsync(string account, string address_country, string agent, string currency, int limit, string name, int offset, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "api/v2/payments/creditors/?account=" + (account==null? "" : System.Uri.EscapeDataString(account))+"&address_country=" + (address_country==null? "" : System.Uri.EscapeDataString(address_country))+"&agent=" + (agent==null? "" : System.Uri.EscapeDataString(agent))+"&currency=" + (currency==null? "" : System.Uri.EscapeDataString(currency))+"&limit="+limit+"&name=" + (name==null? "" : System.Uri.EscapeDataString(name))+"&offset="+offset+"&type=" + (type==null? "" : System.Uri.EscapeDataString(type));
@@ -3260,8 +3272,12 @@ namespace MyNS
 		/// Retrieve all requisitions belonging to the company
 		/// Retrieve_all_requisitions api/v2/requisitions/
 		/// </summary>
-		/// <param name="limit">Number of results to return per page.</param>
-		/// <param name="offset">The initial index from which to return the results.</param>
+		/// <param name="limit">Number of results to return per page.
+		/// Minimum: 1
+		// </param>
+		/// <param name="offset">The initial index from which to return the results.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Retrieve all requisitions</returns>
 		public async Task<PaginatedRequisitionList> Retrieve_all_requisitionsAsync(int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

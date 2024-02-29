@@ -2565,8 +2565,11 @@ export namespace MyNS {
 		 * Returns a list of application instances.
 		 * Get application-instances
 		 * @param {string} deviceId The application instances' device ID.
+		 *     Min length: 1    Max length: 255
 		 * @param {number} maxResults The maximum number of application instances to return in one page of results.
+		 *     Minimum: 0    Maximum: 25
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {StatusFilter} statusFilter Only include instances with a specific status.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -2589,8 +2592,11 @@ export namespace MyNS {
 		 * Returns a list of jobs.
 		 * Get jobs
 		 * @param {string} DeviceId Filter results by the job's target device ID.
+		 *     Min length: 1    Max length: 255
 		 * @param {number} MaxResults The maximum number of device jobs to return in one page of results.
+		 *     Minimum: 0    Maximum: 25
 		 * @param {string} NextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 4096
 		 * @return {ListDevicesJobsResponse} Success
 		 */
 		ListDevicesJobs(DeviceId: string | null | undefined, MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListDevicesJobsResponse> {
@@ -2610,7 +2616,9 @@ export namespace MyNS {
 		 * Returns a list of camera stream node jobs.
 		 * Get packages/template-job
 		 * @param {number} MaxResults The maximum number of node from template jobs to return in one page of results.
+		 *     Minimum: 0    Maximum: 25
 		 * @param {string} NextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 4096
 		 * @return {ListNodeFromTemplateJobsResponse} Success
 		 */
 		ListNodeFromTemplateJobs(MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListNodeFromTemplateJobsResponse> {
@@ -2630,7 +2638,9 @@ export namespace MyNS {
 		 * Returns a list of packages.
 		 * Get packages
 		 * @param {number} maxResults The maximum number of packages to return in one page of results.
+		 *     Minimum: 0    Maximum: 25
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPackagesResponse} Success
@@ -2652,7 +2662,9 @@ export namespace MyNS {
 		 * Returns a list of package import jobs.
 		 * Get packages/import-jobs
 		 * @param {number} MaxResults The maximum number of package import jobs to return in one page of results.
+		 *     Minimum: 0    Maximum: 25
 		 * @param {string} NextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 4096
 		 * @return {ListPackageImportJobsResponse} Success
 		 */
 		ListPackageImportJobs(MaxResults: number | null | undefined, NextToken: string | null | undefined): Observable<ListPackageImportJobsResponse> {
@@ -2663,6 +2675,7 @@ export namespace MyNS {
 		 * Deletes a device.
 		 * Delete devices/{DeviceId}
 		 * @param {string} DeviceId The device's ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteDeviceResponse} Success
 		 */
 		DeleteDevice(DeviceId: string): Observable<DeleteDeviceResponse> {
@@ -2673,6 +2686,7 @@ export namespace MyNS {
 		 * Returns information about a device.
 		 * Get devices/{DeviceId}
 		 * @param {string} DeviceId The device's ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeDeviceResponse} Success
 		 */
 		DescribeDevice(DeviceId: string): Observable<DescribeDeviceResponse> {
@@ -2683,6 +2697,7 @@ export namespace MyNS {
 		 * Updates a device's metadata.
 		 * Put devices/{DeviceId}
 		 * @param {string} DeviceId The device's ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateDeviceMetadataResponse} Success
 		 */
 		UpdateDeviceMetadata(DeviceId: string, requestBody: UpdateDeviceMetadataPutBody): Observable<UpdateDeviceMetadataResponse> {
@@ -2694,6 +2709,7 @@ export namespace MyNS {
 		 * Delete packages/{PackageId}
 		 * @param {boolean} ForceDelete Delete the package even if it has artifacts stored in its access point. Deletes the package's artifacts from Amazon S3.
 		 * @param {string} PackageId The package's ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeletePackageResponse} Success
 		 */
 		DeletePackage(ForceDelete: boolean | null | undefined, PackageId: string): Observable<DeletePackageResponse> {
@@ -2704,10 +2720,15 @@ export namespace MyNS {
 		 * Deregisters a package version.
 		 * Delete packages/{PackageId}/versions/{PackageVersion}/patch/{PatchVersion}
 		 * @param {string} OwnerAccount An owner account.
+		 *     Min length: 1    Max length: 12
 		 * @param {string} PackageId A package ID.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} PackageVersion A package version.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} PatchVersion A patch version.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} UpdatedLatestPatchVersion If the version was marked latest, the new version to maker as latest.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeregisterPackageVersionResponse} Success
 		 */
 		DeregisterPackageVersion(OwnerAccount: string | null | undefined, PackageId: string, PackageVersion: string, PatchVersion: string, UpdatedLatestPatchVersion: string | null | undefined): Observable<DeregisterPackageVersionResponse> {
@@ -2718,8 +2739,11 @@ export namespace MyNS {
 		 * Registers a package version.
 		 * Put packages/{PackageId}/versions/{PackageVersion}/patch/{PatchVersion}
 		 * @param {string} PackageId A package ID.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} PackageVersion A package version.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} PatchVersion A patch version.
+		 *     Min length: 1    Max length: 255
 		 * @return {RegisterPackageVersionResponse} Success
 		 */
 		RegisterPackageVersion(PackageId: string, PackageVersion: string, PatchVersion: string, requestBody: RegisterPackageVersionPutBody): Observable<RegisterPackageVersionResponse> {
@@ -2730,6 +2754,7 @@ export namespace MyNS {
 		 * Returns information about an application instance on a device.
 		 * Get application-instances/{ApplicationInstanceId}
 		 * @param {string} ApplicationInstanceId The application instance's ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeApplicationInstanceResponse} Success
 		 */
 		DescribeApplicationInstance(ApplicationInstanceId: string): Observable<DescribeApplicationInstanceResponse> {
@@ -2740,6 +2765,7 @@ export namespace MyNS {
 		 * Removes an application instance.
 		 * Delete application-instances/{ApplicationInstanceId}
 		 * @param {string} ApplicationInstanceId An application instance ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {RemoveApplicationInstanceResponse} Success
 		 */
 		RemoveApplicationInstance(ApplicationInstanceId: string): Observable<RemoveApplicationInstanceResponse> {
@@ -2750,6 +2776,7 @@ export namespace MyNS {
 		 * Returns information about an application instance's configuration manifest.
 		 * Get application-instances/{ApplicationInstanceId}/details
 		 * @param {string} ApplicationInstanceId The application instance's ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeApplicationInstanceDetailsResponse} Success
 		 */
 		DescribeApplicationInstanceDetails(ApplicationInstanceId: string): Observable<DescribeApplicationInstanceDetailsResponse> {
@@ -2760,6 +2787,7 @@ export namespace MyNS {
 		 * Returns information about a device job.
 		 * Get jobs/{JobId}
 		 * @param {string} JobId The job's ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeDeviceJobResponse} Success
 		 */
 		DescribeDeviceJob(JobId: string): Observable<DescribeDeviceJobResponse> {
@@ -2770,7 +2798,9 @@ export namespace MyNS {
 		 * Returns information about a node.
 		 * Get nodes/{NodeId}
 		 * @param {string} NodeId The node's ID.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} OwnerAccount The account ID of the node's owner.
+		 *     Min length: 1    Max length: 12
 		 * @return {DescribeNodeResponse} Success
 		 */
 		DescribeNode(NodeId: string, OwnerAccount: string | null | undefined): Observable<DescribeNodeResponse> {
@@ -2781,6 +2811,7 @@ export namespace MyNS {
 		 * Returns information about a job to create a camera stream node.
 		 * Get packages/template-job/{JobId}
 		 * @param {string} JobId The job's ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribeNodeFromTemplateJobResponse} Success
 		 */
 		DescribeNodeFromTemplateJob(JobId: string): Observable<DescribeNodeFromTemplateJobResponse> {
@@ -2791,6 +2822,7 @@ export namespace MyNS {
 		 * Returns information about a package.
 		 * Get packages/metadata/{PackageId}
 		 * @param {string} PackageId The package's ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribePackageResponse} Success
 		 */
 		DescribePackage(PackageId: string): Observable<DescribePackageResponse> {
@@ -2801,6 +2833,7 @@ export namespace MyNS {
 		 * Returns information about a package import job.
 		 * Get packages/import-jobs/{JobId}
 		 * @param {string} JobId The job's ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribePackageImportJobResponse} Success
 		 */
 		DescribePackageImportJob(JobId: string): Observable<DescribePackageImportJobResponse> {
@@ -2811,9 +2844,13 @@ export namespace MyNS {
 		 * Returns information about a package version.
 		 * Get packages/metadata/{PackageId}/versions/{PackageVersion}
 		 * @param {string} OwnerAccount The version's owner account.
+		 *     Min length: 1    Max length: 12
 		 * @param {string} PackageId The version's ID.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} PackageVersion The version's version.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} PatchVersion The version's patch version.
+		 *     Min length: 1    Max length: 255
 		 * @return {DescribePackageVersionResponse} Success
 		 */
 		DescribePackageVersion(OwnerAccount: string | null | undefined, PackageId: string, PackageVersion: string, PatchVersion: string | null | undefined): Observable<DescribePackageVersionResponse> {
@@ -2824,8 +2861,11 @@ export namespace MyNS {
 		 * Returns a list of application instance dependencies.
 		 * Get application-instances/{ApplicationInstanceId}/package-dependencies
 		 * @param {string} ApplicationInstanceId The application instance's ID.
+		 *     Min length: 1    Max length: 255
 		 * @param {number} maxResults The maximum number of application instance dependencies to return in one page of results.
+		 *     Minimum: 0    Maximum: 25
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApplicationInstanceDependenciesResponse} Success
@@ -2838,8 +2878,11 @@ export namespace MyNS {
 		 * Returns a list of application node instances.
 		 * Get application-instances/{ApplicationInstanceId}/node-instances
 		 * @param {string} ApplicationInstanceId The node instances' application instance ID.
+		 *     Min length: 1    Max length: 255
 		 * @param {number} maxResults The maximum number of node instances to return in one page of results.
+		 *     Minimum: 0    Maximum: 25
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApplicationInstanceNodeInstancesResponse} Success
@@ -2853,8 +2896,10 @@ export namespace MyNS {
 		 * Get devices
 		 * @param {DeviceAggregatedStatus} DeviceAggregatedStatusFilter Filter based on a device's status.
 		 * @param {number} MaxResults The maximum number of devices to return in one page of results.
+		 *     Minimum: 0    Maximum: 25
 		 * @param {string} NameFilter Filter based on device's name. Prefixes supported.
 		 * @param {string} NextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {ListDevicesSortBy} SortBy The target column to be sorted on. Default column sort is CREATED_TIME.
 		 * @param {SortOrder} SortOrder The sorting order for the returned list. SortOrder is DESCENDING by default based on CREATED_TIME. Otherwise, SortOrder is ASCENDING.
 		 * @return {ListDevicesResponse} Success
@@ -2877,11 +2922,17 @@ export namespace MyNS {
 		 * Get nodes
 		 * @param {NodeCategory} category Search for nodes by category.
 		 * @param {number} maxResults The maximum number of nodes to return in one page of results.
+		 *     Minimum: 0    Maximum: 25
 		 * @param {string} nextToken Specify the pagination token from a previous request to retrieve the next page of results.
+		 *     Min length: 1    Max length: 4096
 		 * @param {string} ownerAccount Search for nodes by the account ID of the nodes' owner.
+		 *     Min length: 1    Max length: 12
 		 * @param {string} packageName Search for nodes by name.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} packageVersion Search for nodes by version.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} patchVersion Search for nodes by patch version.
+		 *     Min length: 1    Max length: 255
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNodesResponse} Success
@@ -2894,6 +2945,7 @@ export namespace MyNS {
 		 * Returns a list of tags for a resource.
 		 * Get tags/{ResourceArn}
 		 * @param {string} ResourceArn The resource's ARN.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(ResourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -2904,6 +2956,7 @@ export namespace MyNS {
 		 * Tags a resource.
 		 * Post tags/{ResourceArn}
 		 * @param {string} ResourceArn The resource's ARN.
+		 *     Min length: 1    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(ResourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -2914,6 +2967,7 @@ export namespace MyNS {
 		 * Signal camera nodes to stop or resume.
 		 * Put application-instances/{ApplicationInstanceId}/node-signals
 		 * @param {string} ApplicationInstanceId An application instance ID.
+		 *     Min length: 1    Max length: 255
 		 * @return {SignalApplicationInstanceNodeInstancesResponse} Success
 		 */
 		SignalApplicationInstanceNodeInstances(ApplicationInstanceId: string, requestBody: SignalApplicationInstanceNodeInstancesPutBody): Observable<SignalApplicationInstanceNodeInstancesResponse> {
@@ -2924,7 +2978,9 @@ export namespace MyNS {
 		 * Removes tags from a resource.
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn The resource's ARN.
+		 *     Min length: 1    Max length: 2048
 		 * @param {Array<string>} tagKeys Tag keys to remove.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2936,23 +2992,23 @@ export namespace MyNS {
 
 		/**
 		 * The ID of an application instance to replace with the new instance.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ApplicationInstanceIdToReplace?: string | null;
 
 		/**
 		 * A device's ID.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DefaultRuntimeContextDevice: string;
 
 		/**
 		 * A description for the application instance.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		Description?: string | null;
 
@@ -2967,15 +3023,15 @@ export namespace MyNS {
 
 		/**
 		 * A name for the application instance.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name?: string | null;
 
 		/**
 		 * The ARN of a runtime role for the application instance.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		RuntimeRoleArn?: string | null;
 
@@ -2986,37 +3042,37 @@ export namespace MyNS {
 
 		/**
 		 * The ID of an application instance to replace with the new instance.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ApplicationInstanceIdToReplace: FormControl<string | null | undefined>,
 
 		/**
 		 * A device's ID.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DefaultRuntimeContextDevice: FormControl<string | null | undefined>,
 
 		/**
 		 * A description for the application instance.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * A name for the application instance.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of a runtime role for the application instance.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		RuntimeRoleArn: FormControl<string | null | undefined>,
 
@@ -3113,32 +3169,32 @@ export namespace MyNS {
 
 		/**
 		 * A description for the node.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		NodeDescription?: string | null;
 
 		/**
 		 * A name for the node.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		NodeName: string;
 
 		/**
 		 * An output package name for the node.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		OutputPackageName: string;
 
 		/**
 		 * An output package version for the node.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		OutputPackageVersion: string;
 
@@ -3158,32 +3214,32 @@ export namespace MyNS {
 
 		/**
 		 * A description for the node.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		NodeDescription: FormControl<string | null | undefined>,
 
 		/**
 		 * A name for the node.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		NodeName: FormControl<string | null | undefined>,
 
 		/**
 		 * An output package name for the node.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		OutputPackageName: FormControl<string | null | undefined>,
 
 		/**
 		 * An output package version for the node.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		OutputPackageVersion: FormControl<string | null | undefined>,
 
@@ -3216,8 +3272,8 @@ export namespace MyNS {
 		/**
 		 * A name for the package.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		PackageName: string;
 
@@ -3229,8 +3285,8 @@ export namespace MyNS {
 		/**
 		 * A name for the package.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		PackageName: FormControl<string | null | undefined>,
 
@@ -3250,8 +3306,8 @@ export namespace MyNS {
 		/**
 		 * A client token for the package import job.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: string;
 
@@ -3281,8 +3337,8 @@ export namespace MyNS {
 		/**
 		 * A client token for the package import job.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
@@ -3326,8 +3382,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the device.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		Description?: string | null;
 	}
@@ -3335,8 +3391,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the device.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -3354,8 +3410,8 @@ export namespace MyNS {
 
 		/**
 		 * An owner account.
-		 * Max length: 12
 		 * Min length: 1
+		 * Max length: 12
 		 */
 		OwnerAccount?: string | null;
 	}
@@ -3366,8 +3422,8 @@ export namespace MyNS {
 
 		/**
 		 * An owner account.
-		 * Max length: 12
 		 * Min length: 1
+		 * Max length: 12
 		 */
 		OwnerAccount: FormControl<string | null | undefined>,
 	}
@@ -3383,16 +3439,16 @@ export namespace MyNS {
 
 		/**
 		 * A description for the device.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		Description?: string | null;
 
 		/**
 		 * A name for the device.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: string;
 
@@ -3406,16 +3462,16 @@ export namespace MyNS {
 
 		/**
 		 * A description for the device.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * A name for the device.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Name: FormControl<string | null | undefined>,
 

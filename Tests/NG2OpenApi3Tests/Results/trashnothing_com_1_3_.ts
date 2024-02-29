@@ -69,10 +69,17 @@ export namespace MyNS {
 
 		/** A unique identifier for the group that is used in URLs. */
 		identifier?: string | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 
-		/** The number of members who belong to the group. */
+		/**
+		 * The number of members who belong to the group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		member_count?: number | null;
 
 		/**
@@ -110,10 +117,17 @@ export namespace MyNS {
 
 		/** A unique identifier for the group that is used in URLs. */
 		identifier: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 
-		/** The number of members who belong to the group. */
+		/**
+		 * The number of members who belong to the group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		member_count: FormControl<number | null | undefined>,
 
 		/** The name of the group (not guaranteed to be unique). */
@@ -294,13 +308,21 @@ export namespace MyNS {
 	}
 
 	export interface PhotoImages {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 		url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 	export interface PhotoImagesFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePhotoImagesFormGroup() {
@@ -333,10 +355,16 @@ export namespace MyNS {
 		 */
 		group_id?: string | null;
 
-		/** May be null if a post hasn't been mapped. */
+		/**
+		 * May be null if a post hasn't been mapped.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** May be null if a post hasn't been mapped. */
+		/**
+		 * May be null if a post hasn't been mapped.
+		 * Type: double
+		 */
 		longitude?: number | null;
 
 		/**
@@ -350,6 +378,7 @@ export namespace MyNS {
 
 		/**
 		 * The count of how many times this post has been reposted in the last 90 days. A value of zero is used to indicate that the post is not a repost. The count is specific to the source of the post (eg. the specific group the post is on). If a post is crossposted to multiple groups, the repost_count of the post on each group may be different for each group depending on how many times the post has been posted on that group in the last 90 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		repost_count?: number | null;
 
@@ -394,10 +423,16 @@ export namespace MyNS {
 		 */
 		group_id: FormControl<string | null | undefined>,
 
-		/** May be null if a post hasn't been mapped. */
+		/**
+		 * May be null if a post hasn't been mapped.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** May be null if a post hasn't been mapped. */
+		/**
+		 * May be null if a post hasn't been mapped.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/**
@@ -408,6 +443,7 @@ export namespace MyNS {
 
 		/**
 		 * The count of how many times this post has been reposted in the last 90 days. A value of zero is used to indicate that the post is not a repost. The count is specific to the source of the post (eg. the specific group the post is on). If a post is crossposted to multiple groups, the repost_count of the post on each group may be different for each group depending on how many times the post has been posted on that group in the last 90 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		repost_count: FormControl<number | null | undefined>,
 
@@ -530,6 +566,7 @@ export namespace MyNS {
 
 		/**
 		 * An estimate of how many seconds it takes this user to reply to messages. May be null when there is not enough data to calculate an estimate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reply_time?: number | null;
 		user_id?: string | null;
@@ -567,6 +604,7 @@ export namespace MyNS {
 
 		/**
 		 * An estimate of how many seconds it takes this user to reply to messages. May be null when there is not enough data to calculate an estimate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reply_time: FormControl<number | null | undefined>,
 		user_id: FormControl<string | null | undefined>,
@@ -611,6 +649,7 @@ export namespace MyNS {
 
 		/**
 		 * The feedback score of this user.  Higher scores are better.   Scores are calculated by substracting the total number of negative feedback from the total number of positive feedback that a user has received.  May be null if a user has not received enough feedback to calculate a score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		score?: number | null;
 	}
@@ -634,6 +673,7 @@ export namespace MyNS {
 
 		/**
 		 * The feedback score of this user.  Higher scores are better.   Scores are calculated by substracting the total number of negative feedback from the total number of positive feedback that a user has received.  May be null if a user has not received enough feedback to calculate a score.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		score: FormControl<number | null | undefined>,
 	}
@@ -656,13 +696,18 @@ export namespace MyNS {
 		 * Get groups
 		 * @param {string} name Find groups that have the given text somewhere in their name (case insensitive).
 		 * @param {number} latitude Find groups near the given latitude and longitude.
+		 *     Type: double
 		 * @param {number} longitude Find groups near the given latitude and longitude.
+		 *     Type: double
 		 * @param {number} distance When latitude and longitude are passed, distance can optionally be passed to only return groups within a certain distance (in kilometers) from the point specified by the latitude and longitude.  The distance must be > 0 and <= 150 and will default to 100.
+		 *     Minimum: 0    Maximum: 150
 		 * @param {string} country Find groups in the given country where country is a 2 letter country code for the country (see https://en.wikipedia.org/wiki/ISO_3166-1_alpha-2 ).
 		 * @param {string} region For countries with regions (AU, CA, GB, US), search groups in a specific region as specified by the region abbreviation.  The supported regions and their abbreviations are listed below. <br /><br /> NOTE: The region and postal_code parameters cannot be used at the same time and if both are passed then the postal_code will take priority. <br /><br /> --- <br /><br /> **AU**<br /> - QLD: Queensland<br /> - SA: South Australia<br /> - TAS: Tasmania<br /> - VIC: Victoria<br /> - WA: Western Australia<br /> - NT: Northern Territory<br /> - NSW: New South Wales - ACT<br /> <br /> **CA**<br /> - AB: Alberta<br /> - BC: British Columbia<br /> - MB: Manitoba<br /> - NB: New Brunswick<br /> - NL: Newfoundland and Labrador<br /> - NS: Nova Scotia<br /> - ON: Ontario<br /> - QC: Quebec<br /> - SK: Saskatchewan<br /> - PE: Prince Edward Island<br /> <br /> **GB**<br /> - E: East<br /> - EM: East Midlands<br /> - LDN: London<br /> - NE: North East<br /> - NW: North West<br /> - NI: Northern Ireland<br /> - SC: Scotland<br /> - SE: South East<br /> - SW: South West<br /> - WA: Wales<br /> - WM: West Midlands<br /> - YH: Yorkshire and the Humber<br /> <br /> **US**<br /> All 50 states and the District of Columbia are supported.  For the abbreviations, see: https://github.com/jasonong/List-of-US-States/blob/master/states.csv
 		 * @param {string} postal_code Find groups in the given postal code.  Only a few countries support postal code searches (US, CA, AU, GB).  The country parameter must be passed when the postal_code parameter is set. <br /><br /> NOTE: The region and postal_code parameters cannot be used at the same time and if both are passed then the postal_code will take priority.
 		 * @param {number} page The page of groups to return.
+		 *     Minimum: 1
 		 * @param {number} per_page The number of groups to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @return {Search_groupsReturn} The groups and paging data.
 		 */
 		Search_groups(name: string | null | undefined, latitude: number | null | undefined, longitude: number | null | undefined, distance: number | null | undefined, country: string | null | undefined, region: string | null | undefined, postal_code: string | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<Search_groupsReturn> {
@@ -700,16 +745,23 @@ export namespace MyNS {
 		 * @param {string} sources A comma separated list of the post sources to retrieve posts from. The available sources are: groups, trashnothing, open_archive_groups. The trashnothing source is for public posts that are posted on trash nothing but are not associated with any group. The open_archive_groups source provides a way to easily request posts from groups that have open_archives set to true without having to pass a group_ids parameter.  When passed, it will automatically return posts from open archive groups that are within the area specified by the latitude, longitude and radius parameters (or the current users' location if latitude, longitude and radius aren't passed). <br /><br /> NOTE: For requests using an api key instead of oauth, passing the trashnothing source or the open_archive_groups source makes the latitude, longitude and radius parameters required.
 		 * @param {string} group_ids A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @param {number} latitude The latitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} longitude The longitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} radius The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
+		 *     Minimum: 0    Maximum: 257500
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned.  If unset, defaults to the current date and time minus 90 days.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned.  If unset, defaults to the current date and time.
 		 * @param {string} outcomes A comma separated list of the post outcomes to return.  The available post outcomes are: satisfied, withdrawn <br /><br /> There are also a couple special values that can be passed.  If set to an empty string (the default), only posts that are not satisfied and not withdrawn and not expired are returned. If set to 'all', all posts will be returned no matter what outcome the posts have. If set to 'not-promised', only posts that are not satisfied ant not withdrawn and not expired and not promised are returned.
 		 * @param {string} user_state If user_state is set, only posts matching the state specified will be returned.  Only one state may be passed and it must be one of the following: viewed, replied, bookmarked <br><br> NOTE: This option will only work with oauth requests.
 		 * @param {number} include_reposts If set to 1 (the default), posts that are reposts will be included. If set to 0, reposts will be excluded. See the repost_count field of post objects for details about how reposts are identified.
+		 *     Minimum: 0    Maximum: 1
 		 * @return {Get_postsReturn} The posts and paging data.
 		 */
 		Get_posts(sort_by: string | null | undefined, types: string, sources: string, group_ids: string | null | undefined, per_page: number | null | undefined, page: number | null | undefined, device_pixel_ratio: number | null | undefined, latitude: number | null | undefined, longitude: number | null | undefined, radius: number | null | undefined, date_min: Date | null | undefined, date_max: Date | null | undefined, outcomes: string | null | undefined, user_state: string | null | undefined, include_reposts: number | null | undefined): Observable<Get_postsReturn> {
@@ -724,8 +776,11 @@ export namespace MyNS {
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned. The UTC date and time used must be within a day or less of date_max. And the date and time must be within the last 30 days. And the date and time must be rounded to the nearest second.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned. The UTC date and time used must be within a day or less of date_min. And the date and time must be rounded to the nearest second.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 50).
+		 *     Minimum: 1    Maximum: 50
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @return {Get_all_postsReturn} The posts.
 		 */
 		Get_all_posts(types: string, date_min: Date, date_max: Date, per_page: number | null | undefined, page: number | null | undefined, device_pixel_ratio: number | null | undefined): Observable<Get_all_postsReturn> {
@@ -739,7 +794,9 @@ export namespace MyNS {
 		 * @param {Date} date_min Only changes newer than or equal to this UTC date and time will be returned. The UTC date and time used must be within a day or less of date_max. And the date and time must be within the last 30 days. And the date and time must be rounded to the nearest second.
 		 * @param {Date} date_max Only changes older than this UTC date and time will be returned. The UTC date and time used must be within a day or less of date_min. And the date and time must be rounded to the nearest second.
 		 * @param {number} per_page The number of changes to return per page (must be >= 1 and <= 50).
+		 *     Minimum: 1    Maximum: 50
 		 * @param {number} page The page of changes to return.
+		 *     Minimum: 1
 		 * @return {Get_all_posts_changesReturn} The changes.
 		 */
 		Get_all_posts_changes(date_min: Date, date_max: Date, per_page: number | null | undefined, page: number | null | undefined): Observable<Get_all_posts_changesReturn> {
@@ -767,16 +824,23 @@ export namespace MyNS {
 		 * @param {string} sources A comma separated list of the post sources to retrieve posts from. The available sources are: groups, trashnothing, open_archive_groups. The trashnothing source is for public posts that are posted on trash nothing but are not associated with any group. The open_archive_groups source provides a way to easily request posts from groups that have open_archives set to true without having to pass a group_ids parameter.  When passed, it will automatically return posts from open archive groups that are within the area specified by the latitude, longitude and radius parameters (or the current users' location if latitude, longitude and radius aren't passed). <br /><br /> NOTE: For requests using an api key instead of oauth, passing the trashnothing source or the open_archive_groups source makes the latitude, longitude and radius parameters required.
 		 * @param {string} group_ids A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @param {number} latitude The latitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} longitude The longitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} radius The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
+		 *     Minimum: 0    Maximum: 257500
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned.  If unset, defaults to the current date and time minus 90 days.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned.  If unset, defaults to the current date and time.
 		 * @param {string} outcomes A comma separated list of the post outcomes to return.  The available post outcomes are: satisfied, withdrawn <br /><br /> There are also a couple special values that can be passed.  If set to an empty string (the default), only posts that are not satisfied and not withdrawn and not expired are returned. If set to 'all', all posts will be returned no matter what outcome the posts have. If set to 'not-promised', only posts that are not satisfied ant not withdrawn and not expired and not promised are returned.
 		 * @param {string} user_state If user_state is set, only posts matching the state specified will be returned.  Only one state may be passed and it must be one of the following: viewed, replied, bookmarked <br><br> NOTE: This option will only work with oauth requests.
 		 * @param {number} include_reposts If set to 1 (the default), posts that are reposts will be included. If set to 0, reposts will be excluded. See the repost_count field of post objects for details about how reposts are identified.
+		 *     Minimum: 0    Maximum: 1
 		 * @return {Search_postsReturn} The posts and paging data.
 		 */
 		Search_posts(search: string, sort_by: string | null | undefined, types: string, sources: string, group_ids: string | null | undefined, per_page: number | null | undefined, page: number | null | undefined, device_pixel_ratio: number | null | undefined, latitude: number | null | undefined, longitude: number | null | undefined, radius: number | null | undefined, date_min: Date | null | undefined, date_max: Date | null | undefined, outcomes: string | null | undefined, user_state: string | null | undefined, include_reposts: number | null | undefined): Observable<Search_postsReturn> {
@@ -814,15 +878,22 @@ export namespace MyNS {
 		 * @param {string} sources A comma separated list of the post sources to retrieve posts from. The available sources are: groups, trashnothing, open_archive_groups. The trashnothing source is for public posts that are posted on trash nothing but are not associated with any group. The open_archive_groups source provides a way to easily request posts from groups that have open_archives set to true without having to pass a group_ids parameter.  When passed, it will automatically return posts from open archive groups that are within the area specified by the latitude, longitude and radius parameters (or all the open archive groups the requested user has posted to if latitude, longitude and radius aren't passed). <br /><br /> NOTE: For requests using an api key instead of oauth, passing the trashnothing source or the open_archive_groups source makes the latitude, longitude and radius parameters required.
 		 * @param {string} group_ids A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @param {number} latitude The latitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} longitude The longitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} radius The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
+		 *     Minimum: 0    Maximum: 257500
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned.
 		 * @param {string} outcomes A comma separated list of the post outcomes to return.  The available post outcomes are: satisfied, withdrawn <br /><br /> There are also a couple special values that can be passed.  If set to an empty string (the default), only posts that are not satisfied and not withdrawn and not expired are returned. If set to 'all', all posts will be returned no matter what outcome the posts have. If set to 'not-promised', only posts that are not satisfied ant not withdrawn and not expired and not promised are returned.
 		 * @param {number} include_reposts If set to 1 (the default), posts that are reposts will be included. If set to 0, reposts will be excluded. See the repost_count field of post objects for details about how reposts are identified.
+		 *     Minimum: 0    Maximum: 1
 		 * @return {Get_user_postsReturn} The posts and paging data.
 		 */
 		Get_user_posts(user_id: string, sort_by: string | null | undefined, types: string, sources: string, group_ids: string | null | undefined, per_page: number | null | undefined, page: number | null | undefined, device_pixel_ratio: number | null | undefined, latitude: number | null | undefined, longitude: number | null | undefined, radius: number | null | undefined, date_min: Date | null | undefined, date_max: Date | null | undefined, outcomes: string | null | undefined, include_reposts: number | null | undefined): Observable<Get_user_postsReturn> {
@@ -840,15 +911,22 @@ export namespace MyNS {
 		 * @param {string} sources A comma separated list of the post sources to retrieve posts from. The available sources are: groups, trashnothing, open_archive_groups. The trashnothing source is for public posts that are posted on trash nothing but are not associated with any group. The open_archive_groups source provides a way to easily request posts from groups that have open_archives set to true without having to pass a group_ids parameter.  When passed, it will automatically return posts from open archive groups that are within the area specified by the latitude, longitude and radius parameters (or all the open archive groups the requested user has posted to if latitude, longitude and radius aren't passed). <br /><br /> NOTE: For requests using an api key instead of oauth, passing the trashnothing source or the open_archive_groups source makes the latitude, longitude and radius parameters required.
 		 * @param {string} group_ids A comma separated list of the group IDs to retrieve posts from. This parameter is only used if the 'groups' source is passed in the sources parameter and only groups that the current user is a member of or that are open archives groups will be used (the group IDs of other groups will be silently discarded*). <br /><br /> NOTE: For requests using an api key instead of oauth, this field is required if the 'groups' source is passed. In addition, only posts from groups that have open_archives set to true will be used (the group IDS of other groups will be silently discarded*). <br /><br/> *To determine which group IDs were used and which were discarded, use the group_ids field in the response.
 		 * @param {number} per_page The number of posts to return per page (must be >= 1 and <= 100).
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page The page of posts to return.
+		 *     Minimum: 1
 		 * @param {number} device_pixel_ratio Client device pixel ratio used to determine thumbnail size (default 1.0).
+		 *     Type: double
 		 * @param {number} latitude The latitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} longitude The longitude of a point around which to return posts.
+		 *     Type: double
 		 * @param {number} radius The radius in meters of a circle centered at the point defined by the latitude and longitude parameters. When latitude, longitude and radius are passed, only posts within the circle defined by these parameters will be returned.
+		 *     Minimum: 0    Maximum: 257500
 		 * @param {Date} date_min Only posts newer than or equal to this UTC date and time will be returned.
 		 * @param {Date} date_max Only posts older than this UTC date and time will be returned.
 		 * @param {string} outcomes A comma separated list of the post outcomes to return.  The available post outcomes are: satisfied, withdrawn <br /><br /> There are also a couple special values that can be passed.  If set to an empty string (the default), only posts that are not satisfied and not withdrawn and not expired are returned. If set to 'all', all posts will be returned no matter what outcome the posts have. If set to 'not-promised', only posts that are not satisfied ant not withdrawn and not expired and not promised are returned.
 		 * @param {number} include_reposts If set to 1 (the default), posts that are reposts will be included. If set to 0, reposts will be excluded. See the repost_count field of post objects for details about how reposts are identified.
+		 *     Minimum: 0    Maximum: 1
 		 * @return {Search_user_postsReturn} The posts and paging data.
 		 */
 		Search_user_posts(user_id: string, search: string, sort_by: string | null | undefined, types: string, sources: string, group_ids: string | null | undefined, per_page: number | null | undefined, page: number | null | undefined, device_pixel_ratio: number | null | undefined, latitude: number | null | undefined, longitude: number | null | undefined, radius: number | null | undefined, date_min: Date | null | undefined, date_max: Date | null | undefined, outcomes: string | null | undefined, include_reposts: number | null | undefined): Observable<Search_user_postsReturn> {
@@ -858,43 +936,79 @@ export namespace MyNS {
 
 	export interface Search_groupsReturn {
 
-		/** The index of the last group being returned (an integer between start_index and num_groups). */
+		/**
+		 * The index of the last group being returned (an integer between start_index and num_groups).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 		groups?: Array<Group>;
 
-		/** The total number of groups available. */
+		/**
+		 * The total number of groups available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_groups?: number | null;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The page number of the groups being returned. */
+		/**
+		 * The page number of the groups being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of groups being returned per page. */
+		/**
+		 * The number of groups being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** The index of the first group being returned (an integer between 1 and num_groups). */
+		/**
+		 * The index of the first group being returned (an integer between 1 and num_groups).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Search_groupsReturnFormProperties {
 
-		/** The index of the last group being returned (an integer between start_index and num_groups). */
+		/**
+		 * The index of the last group being returned (an integer between start_index and num_groups).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
-		/** The total number of groups available. */
+		/**
+		 * The total number of groups available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_groups: FormControl<number | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The page number of the groups being returned. */
+		/**
+		 * The page number of the groups being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of groups being returned per page. */
+		/**
+		 * The number of groups being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first group being returned (an integer between 1 and num_groups). */
+		/**
+		 * The index of the first group being returned (an integer between 1 and num_groups).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateSearch_groupsReturnFormGroup() {
@@ -911,7 +1025,10 @@ export namespace MyNS {
 
 	export interface Get_postsReturn {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 
 		/**
@@ -924,25 +1041,43 @@ export namespace MyNS {
 		 */
 		last_listings_view?: Date | null;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts?: number | null;
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 		posts?: Array<Post>;
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Get_postsReturnFormProperties {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
 		/**
@@ -950,19 +1085,34 @@ export namespace MyNS {
 		 */
 		last_listings_view: FormControl<Date | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts: FormControl<number | null | undefined>,
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_postsReturnFormGroup() {
@@ -1050,7 +1200,10 @@ export namespace MyNS {
 
 	export interface Search_postsReturn {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 
 		/**
@@ -1058,40 +1211,73 @@ export namespace MyNS {
 		 */
 		group_ids?: Array<string>;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts?: number | null;
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 		posts?: Array<PostSearchResult>;
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Search_postsReturnFormProperties {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts: FormControl<number | null | undefined>,
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateSearch_postsReturnFormGroup() {
@@ -1109,7 +1295,10 @@ export namespace MyNS {
 	export interface Get_post_and_related_dataReturn {
 		author?: User;
 
-		/** Count of offer posts made by the post author in the last 90 days. */
+		/**
+		 * Count of offer posts made by the post author in the last 90 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		author_offer_count?: number | null;
 
 		/**
@@ -1117,7 +1306,10 @@ export namespace MyNS {
 		 */
 		author_posts?: Array<Post>;
 
-		/** Count of wanted posts made by the post author in the last 90 days. */
+		/**
+		 * Count of wanted posts made by the post author in the last 90 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		author_wanted_count?: number | null;
 
 		/** Whether or not the current user has bookmarked this post.  Will be null for api key requests and for the current users' posts. */
@@ -1145,10 +1337,16 @@ export namespace MyNS {
 	}
 	export interface Get_post_and_related_dataReturnFormProperties {
 
-		/** Count of offer posts made by the post author in the last 90 days. */
+		/**
+		 * Count of offer posts made by the post author in the last 90 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		author_offer_count: FormControl<number | null | undefined>,
 
-		/** Count of wanted posts made by the post author in the last 90 days. */
+		/**
+		 * Count of wanted posts made by the post author in the last 90 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		author_wanted_count: FormControl<number | null | undefined>,
 
 		/** Whether or not the current user has bookmarked this post.  Will be null for api key requests and for the current users' posts. */
@@ -1179,7 +1377,10 @@ export namespace MyNS {
 
 	export interface Get_user_postsReturn {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 
 		/**
@@ -1192,25 +1393,43 @@ export namespace MyNS {
 		 */
 		last_listings_view?: Date | null;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts?: number | null;
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 		posts?: Array<Post>;
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Get_user_postsReturnFormProperties {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
 		/**
@@ -1218,19 +1437,34 @@ export namespace MyNS {
 		 */
 		last_listings_view: FormControl<Date | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts: FormControl<number | null | undefined>,
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateGet_user_postsReturnFormGroup() {
@@ -1248,7 +1482,10 @@ export namespace MyNS {
 
 	export interface Search_user_postsReturn {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index?: number | null;
 
 		/**
@@ -1256,40 +1493,73 @@ export namespace MyNS {
 		 */
 		group_ids?: Array<string>;
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages?: number | null;
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts?: number | null;
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 		posts?: Array<PostSearchResult>;
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index?: number | null;
 	}
 	export interface Search_user_postsReturnFormProperties {
 
-		/** The index of the last post being returned (an integer between start_index and num_posts). */
+		/**
+		 * The index of the last post being returned (an integer between start_index and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end_index: FormControl<number | null | undefined>,
 
-		/** The total number of pages available. */
+		/**
+		 * The total number of pages available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_pages: FormControl<number | null | undefined>,
 
-		/** The total number of posts available. */
+		/**
+		 * The total number of posts available.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_posts: FormControl<number | null | undefined>,
 
-		/** The page number of the posts being returned. */
+		/**
+		 * The page number of the posts being returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of posts being returned per page. */
+		/**
+		 * The number of posts being returned per page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The index of the first post being returned (an integer between 1 and num_posts). */
+		/**
+		 * The index of the first post being returned (an integer between 1 and num_posts).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start_index: FormControl<number | null | undefined>,
 	}
 	export function CreateSearch_user_postsReturnFormGroup() {

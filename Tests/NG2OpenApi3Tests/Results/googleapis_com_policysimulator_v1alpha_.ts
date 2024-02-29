@@ -353,7 +353,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -363,7 +366,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleIamV1PolicyFormGroup() {
@@ -455,13 +461,22 @@ export namespace MyNS {
 	/** Summary statistics about the replayed log entries. */
 	export interface GoogleCloudPolicysimulatorV1ReplayResultsSummary {
 
-		/** The number of replayed log entries with a difference between baseline and simulated policies. */
+		/**
+		 * The number of replayed log entries with a difference between baseline and simulated policies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		differenceCount?: number | null;
 
-		/** The number of log entries that could not be replayed. */
+		/**
+		 * The number of log entries that could not be replayed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCount?: number | null;
 
-		/** The total number of log entries replayed. */
+		/**
+		 * The total number of log entries replayed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logCount?: number | null;
 
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
@@ -470,23 +485,38 @@ export namespace MyNS {
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 		oldestDate?: GoogleTypeDate;
 
-		/** The number of replayed log entries with no difference between baseline and simulated policies. */
+		/**
+		 * The number of replayed log entries with no difference between baseline and simulated policies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unchangedCount?: number | null;
 	}
 
 	/** Summary statistics about the replayed log entries. */
 	export interface GoogleCloudPolicysimulatorV1ReplayResultsSummaryFormProperties {
 
-		/** The number of replayed log entries with a difference between baseline and simulated policies. */
+		/**
+		 * The number of replayed log entries with a difference between baseline and simulated policies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		differenceCount: FormControl<number | null | undefined>,
 
-		/** The number of log entries that could not be replayed. */
+		/**
+		 * The number of log entries that could not be replayed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCount: FormControl<number | null | undefined>,
 
-		/** The total number of log entries replayed. */
+		/**
+		 * The total number of log entries replayed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logCount: FormControl<number | null | undefined>,
 
-		/** The number of replayed log entries with no difference between baseline and simulated policies. */
+		/**
+		 * The number of replayed log entries with no difference between baseline and simulated policies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unchangedCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudPolicysimulatorV1ReplayResultsSummaryFormGroup() {
@@ -503,26 +533,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDate {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateFormGroup() {
@@ -619,7 +667,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -632,7 +683,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -822,13 +876,22 @@ export namespace MyNS {
 		/** Time when the request was received. */
 		requestTime?: string | null;
 
-		/** Total number of resources that need scanning. Should equal resource_scanned + resources_pending */
+		/**
+		 * Total number of resources that need scanning. Should equal resource_scanned + resources_pending
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesFound?: number | null;
 
-		/** Number of resources still to scan. */
+		/**
+		 * Number of resources still to scan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesPending?: number | null;
 
-		/** Number of resources already scanned. */
+		/**
+		 * Number of resources already scanned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesScanned?: number | null;
 
 		/** Time when the request started processing, i.e. when the state was set to RUNNING. */
@@ -844,13 +907,22 @@ export namespace MyNS {
 		/** Time when the request was received. */
 		requestTime: FormControl<string | null | undefined>,
 
-		/** Total number of resources that need scanning. Should equal resource_scanned + resources_pending */
+		/**
+		 * Total number of resources that need scanning. Should equal resource_scanned + resources_pending
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesFound: FormControl<number | null | undefined>,
 
-		/** Number of resources still to scan. */
+		/**
+		 * Number of resources still to scan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesPending: FormControl<number | null | undefined>,
 
-		/** Number of resources already scanned. */
+		/**
+		 * Number of resources already scanned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesScanned: FormControl<number | null | undefined>,
 
 		/** Time when the request started processing, i.e. when the state was set to RUNNING. */
@@ -919,7 +991,10 @@ export namespace MyNS {
 		/** Output only. The state of the `OrgPolicyViolationsPreview`. */
 		state?: GoogleCloudPolicysimulatorV1alphaGenerateOrgPolicyViolationsPreviewOperationMetadataState | null;
 
-		/** Output only. The number of OrgPolicyViolations in this `OrgPolicyViolationsPreview`. This count may differ from `resource_summary.noncompliant_count` because each OrgPolicyViolation is specific to a resource **and** constraint. If there are multiple constraints being evaluated (i.e. multiple policies in the overlay), a single resource may violate multiple constraints. */
+		/**
+		 * Output only. The number of OrgPolicyViolations in this `OrgPolicyViolationsPreview`. This count may differ from `resource_summary.noncompliant_count` because each OrgPolicyViolation is specific to a resource **and** constraint. If there are multiple constraints being evaluated (i.e. multiple policies in the overlay), a single resource may violate multiple constraints.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		violationsCount?: number | null;
 	}
 
@@ -935,7 +1010,10 @@ export namespace MyNS {
 		/** Output only. The state of the `OrgPolicyViolationsPreview`. */
 		state: FormControl<GoogleCloudPolicysimulatorV1alphaGenerateOrgPolicyViolationsPreviewOperationMetadataState | null | undefined>,
 
-		/** Output only. The number of OrgPolicyViolations in this `OrgPolicyViolationsPreview`. This count may differ from `resource_summary.noncompliant_count` because each OrgPolicyViolation is specific to a resource **and** constraint. If there are multiple constraints being evaluated (i.e. multiple policies in the overlay), a single resource may violate multiple constraints. */
+		/**
+		 * Output only. The number of OrgPolicyViolations in this `OrgPolicyViolationsPreview`. This count may differ from `resource_summary.noncompliant_count` because each OrgPolicyViolation is specific to a resource **and** constraint. If there are multiple constraints being evaluated (i.e. multiple policies in the overlay), a single resource may violate multiple constraints.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		violationsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudPolicysimulatorV1alphaOrgPolicyViolationsPreviewFormGroup() {
@@ -1020,38 +1098,68 @@ export namespace MyNS {
 	/** A summary of the state of all resources scanned for compliance with the changed OrgPolicy. */
 	export interface GoogleCloudPolicysimulatorV1alphaOrgPolicyViolationsPreviewResourceCounts {
 
-		/** Number of scanned resources with zero violations. */
+		/**
+		 * Number of scanned resources with zero violations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compliant?: number | null;
 
-		/** Number of resources that returned an error when scanned. */
+		/**
+		 * Number of resources that returned an error when scanned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errors?: number | null;
 
-		/** Number of scanned resources with at least one violation. */
+		/**
+		 * Number of scanned resources with at least one violation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		noncompliant?: number | null;
 
-		/** Number of resources checked for compliance. Must equal: unenforced + noncompliant + compliant + error */
+		/**
+		 * Number of resources checked for compliance. Must equal: unenforced + noncompliant + compliant + error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scanned?: number | null;
 
-		/** Number of resources where the constraint was not enforced, i.e. the Policy set `enforced: false` for that resource. */
+		/**
+		 * Number of resources where the constraint was not enforced, i.e. the Policy set `enforced: false` for that resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unenforced?: number | null;
 	}
 
 	/** A summary of the state of all resources scanned for compliance with the changed OrgPolicy. */
 	export interface GoogleCloudPolicysimulatorV1alphaOrgPolicyViolationsPreviewResourceCountsFormProperties {
 
-		/** Number of scanned resources with zero violations. */
+		/**
+		 * Number of scanned resources with zero violations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compliant: FormControl<number | null | undefined>,
 
-		/** Number of resources that returned an error when scanned. */
+		/**
+		 * Number of resources that returned an error when scanned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errors: FormControl<number | null | undefined>,
 
-		/** Number of scanned resources with at least one violation. */
+		/**
+		 * Number of scanned resources with at least one violation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		noncompliant: FormControl<number | null | undefined>,
 
-		/** Number of resources checked for compliance. Must equal: unenforced + noncompliant + compliant + error */
+		/**
+		 * Number of resources checked for compliance. Must equal: unenforced + noncompliant + compliant + error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scanned: FormControl<number | null | undefined>,
 
-		/** Number of resources where the constraint was not enforced, i.e. the Policy set `enforced: false` for that resource. */
+		/**
+		 * Number of resources where the constraint was not enforced, i.e. the Policy set `enforced: false` for that resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unenforced: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudPolicysimulatorV1alphaOrgPolicyViolationsPreviewResourceCountsFormGroup() {
@@ -1321,13 +1429,22 @@ export namespace MyNS {
 	/** Summary statistics about the replayed log entries. */
 	export interface GoogleCloudPolicysimulatorV1alphaReplayResultsSummary {
 
-		/** The number of replayed log entries with a difference between baseline and simulated policies. */
+		/**
+		 * The number of replayed log entries with a difference between baseline and simulated policies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		differenceCount?: number | null;
 
-		/** The number of log entries that could not be replayed. */
+		/**
+		 * The number of log entries that could not be replayed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCount?: number | null;
 
-		/** The total number of log entries replayed. */
+		/**
+		 * The total number of log entries replayed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logCount?: number | null;
 
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
@@ -1336,23 +1453,38 @@ export namespace MyNS {
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 		oldestDate?: GoogleTypeDate;
 
-		/** The number of replayed log entries with no difference between baseline and simulated policies. */
+		/**
+		 * The number of replayed log entries with no difference between baseline and simulated policies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unchangedCount?: number | null;
 	}
 
 	/** Summary statistics about the replayed log entries. */
 	export interface GoogleCloudPolicysimulatorV1alphaReplayResultsSummaryFormProperties {
 
-		/** The number of replayed log entries with a difference between baseline and simulated policies. */
+		/**
+		 * The number of replayed log entries with a difference between baseline and simulated policies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		differenceCount: FormControl<number | null | undefined>,
 
-		/** The number of log entries that could not be replayed. */
+		/**
+		 * The number of log entries that could not be replayed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCount: FormControl<number | null | undefined>,
 
-		/** The total number of log entries replayed. */
+		/**
+		 * The total number of log entries replayed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		logCount: FormControl<number | null | undefined>,
 
-		/** The number of replayed log entries with no difference between baseline and simulated policies. */
+		/**
+		 * The number of replayed log entries with no difference between baseline and simulated policies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unchangedCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudPolicysimulatorV1alphaReplayResultsSummaryFormGroup() {
@@ -1372,13 +1504,22 @@ export namespace MyNS {
 		/** Time when the request was received. */
 		requestTime?: string | null;
 
-		/** Total number of resources that need scanning. Should equal resource_scanned + resources_pending */
+		/**
+		 * Total number of resources that need scanning. Should equal resource_scanned + resources_pending
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesFound?: number | null;
 
-		/** Number of resources still to scan. */
+		/**
+		 * Number of resources still to scan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesPending?: number | null;
 
-		/** Number of resources already scanned. */
+		/**
+		 * Number of resources already scanned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesScanned?: number | null;
 
 		/** Time when the request started processing, i.e. when the state was set to RUNNING. */
@@ -1394,13 +1535,22 @@ export namespace MyNS {
 		/** Time when the request was received. */
 		requestTime: FormControl<string | null | undefined>,
 
-		/** Total number of resources that need scanning. Should equal resource_scanned + resources_pending */
+		/**
+		 * Total number of resources that need scanning. Should equal resource_scanned + resources_pending
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesFound: FormControl<number | null | undefined>,
 
-		/** Number of resources still to scan. */
+		/**
+		 * Number of resources still to scan.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesPending: FormControl<number | null | undefined>,
 
-		/** Number of resources already scanned. */
+		/**
+		 * Number of resources already scanned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourcesScanned: FormControl<number | null | undefined>,
 
 		/** Time when the request started processing, i.e. when the state was set to RUNNING. */
@@ -1511,7 +1661,10 @@ export namespace MyNS {
 		/** Output only. The state of the `OrgPolicyViolationsPreview`. */
 		state?: GoogleCloudPolicysimulatorV1alphaGenerateOrgPolicyViolationsPreviewOperationMetadataState | null;
 
-		/** Output only. The number of OrgPolicyViolations in this `OrgPolicyViolationsPreview`. This count may differ from `resource_summary.noncompliant_count` because each OrgPolicyViolation is specific to a resource **and** constraint. If there are multiple constraints being evaluated (i.e. multiple policies in the overlay), a single resource may violate multiple constraints. */
+		/**
+		 * Output only. The number of OrgPolicyViolations in this `OrgPolicyViolationsPreview`. This count may differ from `resource_summary.noncompliant_count` because each OrgPolicyViolation is specific to a resource **and** constraint. If there are multiple constraints being evaluated (i.e. multiple policies in the overlay), a single resource may violate multiple constraints.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		violationsCount?: number | null;
 	}
 
@@ -1527,7 +1680,10 @@ export namespace MyNS {
 		/** Output only. The state of the `OrgPolicyViolationsPreview`. */
 		state: FormControl<GoogleCloudPolicysimulatorV1alphaGenerateOrgPolicyViolationsPreviewOperationMetadataState | null | undefined>,
 
-		/** Output only. The number of OrgPolicyViolations in this `OrgPolicyViolationsPreview`. This count may differ from `resource_summary.noncompliant_count` because each OrgPolicyViolation is specific to a resource **and** constraint. If there are multiple constraints being evaluated (i.e. multiple policies in the overlay), a single resource may violate multiple constraints. */
+		/**
+		 * Output only. The number of OrgPolicyViolations in this `OrgPolicyViolationsPreview`. This count may differ from `resource_summary.noncompliant_count` because each OrgPolicyViolation is specific to a resource **and** constraint. If there are multiple constraints being evaluated (i.e. multiple policies in the overlay), a single resource may violate multiple constraints.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		violationsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewFormGroup() {
@@ -1544,38 +1700,68 @@ export namespace MyNS {
 	/** A summary of the state of all resources scanned for compliance with the changed OrgPolicy. */
 	export interface GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCounts {
 
-		/** Number of scanned resources with zero violations. */
+		/**
+		 * Number of scanned resources with zero violations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compliant?: number | null;
 
-		/** Number of resources that returned an error when scanned. */
+		/**
+		 * Number of resources that returned an error when scanned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errors?: number | null;
 
-		/** Number of scanned resources with at least one violation. */
+		/**
+		 * Number of scanned resources with at least one violation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		noncompliant?: number | null;
 
-		/** Number of resources checked for compliance. Must equal: unenforced + noncompliant + compliant + error */
+		/**
+		 * Number of resources checked for compliance. Must equal: unenforced + noncompliant + compliant + error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scanned?: number | null;
 
-		/** Number of resources where the constraint was not enforced, i.e. the Policy set `enforced: false` for that resource. */
+		/**
+		 * Number of resources where the constraint was not enforced, i.e. the Policy set `enforced: false` for that resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unenforced?: number | null;
 	}
 
 	/** A summary of the state of all resources scanned for compliance with the changed OrgPolicy. */
 	export interface GoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCountsFormProperties {
 
-		/** Number of scanned resources with zero violations. */
+		/**
+		 * Number of scanned resources with zero violations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		compliant: FormControl<number | null | undefined>,
 
-		/** Number of resources that returned an error when scanned. */
+		/**
+		 * Number of resources that returned an error when scanned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errors: FormControl<number | null | undefined>,
 
-		/** Number of scanned resources with at least one violation. */
+		/**
+		 * Number of scanned resources with at least one violation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		noncompliant: FormControl<number | null | undefined>,
 
-		/** Number of resources checked for compliance. Must equal: unenforced + noncompliant + compliant + error */
+		/**
+		 * Number of resources checked for compliance. Must equal: unenforced + noncompliant + compliant + error
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		scanned: FormControl<number | null | undefined>,
 
-		/** Number of resources where the constraint was not enforced, i.e. the Policy set `enforced: false` for that resource. */
+		/**
+		 * Number of resources where the constraint was not enforced, i.e. the Policy set `enforced: false` for that resource.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unenforced: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudPolicysimulatorV1betaOrgPolicyViolationsPreviewResourceCountsFormGroup() {
@@ -1669,6 +1855,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -1681,6 +1868,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/orgPolicyViolations
 		 * @param {string} parent Required. The OrgPolicyViolationsPreview to get OrgPolicyViolations from. Format: organizations/{organization}/locations/{location}/orgPolicyViolationsPreviews/{orgPolicyViolationsPreview}
 		 * @param {number} pageSize The maximum number of items to return. The service may return fewer than this value. If unspecified, at most 50 items will be returned. The maximum value is 1000; values above 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous call. Provide this to retrieve the subsequent page. When paginating, all other parameters must match the call that provided the page token.
 		 * @return {GoogleCloudPolicysimulatorV1alphaListOrgPolicyViolationsResponse} Successful response
 		 */
@@ -1693,6 +1881,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/orgPolicyViolationsPreviews
 		 * @param {string} parent Required. The parent the violations are scoped to. Format: `organizations/{organization}/locations/{location}` Example: `organizations/my-example-org/locations/global`
 		 * @param {number} pageSize The maximum number of items to return. The service may return fewer than this value. If unspecified, at most 5 items will be returned. The maximum value is 10; values above 10 will be coerced to 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous call. Provide this to retrieve the subsequent page. When paginating, all other parameters must match the call that provided the page token.
 		 * @return {GoogleCloudPolicysimulatorV1alphaListOrgPolicyViolationsPreviewsResponse} Successful response
 		 */
@@ -1715,6 +1904,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/replays
 		 * @param {string} parent Required. The parent resource, in the following format: `{projects|folders|organizations}/{resource-id}/locations/global`, where `{resource-id}` is the ID of the project, folder, or organization that owns the Replay. Example: `projects/my-example-project/locations/global` Only `Replay` objects that are direct children of the provided parent are listed. In other words, `Replay` objects that are children of a project will not be included when the parent is a folder of that project.
 		 * @param {number} pageSize The maximum number of Replay objects to return. Defaults to 50. The maximum value is 1000; values above 1000 are rounded down to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous Simulator.ListReplays call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to Simulator.ListReplays must match the call that provided the page token.
 		 * @return {GoogleCloudPolicysimulatorV1alphaListReplaysResponse} Successful response
 		 */
@@ -1737,6 +1927,7 @@ export namespace MyNS {
 		 * Get v1alpha/{parent}/results
 		 * @param {string} parent Required. The Replay whose results are listed, in the following format: `{projects|folders|organizations}/{resource-id}/locations/global/replays/{replay-id}` Example: `projects/my-project/locations/global/replays/506a5f7f-38ce-4d7d-8e03-479ce1833c36`
 		 * @param {number} pageSize The maximum number of ReplayResult objects to return. Defaults to 5000. The maximum value is 5000; values above 5000 are rounded down to 5000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous Simulator.ListReplayResults call. Provide this token to retrieve the next page of results. When paginating, all other parameters provided to [Simulator.ListReplayResults[] must match the call that provided the page token.
 		 * @return {GoogleCloudPolicysimulatorV1alphaListReplayResultsResponse} Successful response
 		 */

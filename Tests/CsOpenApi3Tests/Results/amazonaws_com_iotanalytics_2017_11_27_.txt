@@ -2532,7 +2532,10 @@ namespace MyNS
 		/// Cancels the reprocessing of data through the pipeline.
 		/// CancelPipelineReprocessing pipelines/{pipelineName}/reprocessing/{reprocessingId}
 		/// </summary>
-		/// <param name="pipelineName">The name of pipeline for which data reprocessing is canceled.</param>
+		/// <param name="pipelineName">The name of pipeline for which data reprocessing is canceled.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="reprocessingId">The ID of the reprocessing task (returned by <code>StartPipelineReprocessing</code>).</param>
 		/// <returns>Success</returns>
 		public async Task<CancelPipelineReprocessingResponse> CancelPipelineReprocessingAsync(string pipelineName, string reprocessingId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2601,7 +2604,10 @@ namespace MyNS
 		/// ListChannels channels
 		/// </summary>
 		/// <param name="nextToken">The token for the next set of results.</param>
-		/// <param name="maxResults"><p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p></param>
+		/// <param name="maxResults"><p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListChannelsResponse> ListChannelsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2669,7 +2675,10 @@ namespace MyNS
 		/// ListDatasets datasets
 		/// </summary>
 		/// <param name="nextToken">The token for the next set of results.</param>
-		/// <param name="maxResults"><p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p></param>
+		/// <param name="maxResults"><p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDatasetsResponse> ListDatasetsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2703,7 +2712,10 @@ namespace MyNS
 		/// Creates the content of a dataset by applying a <code>queryAction</code> (a SQL query) or a <code>containerAction</code> (executing a containerized application).
 		/// CreateDatasetContent datasets/{datasetName}/content
 		/// </summary>
-		/// <param name="datasetName">The name of the dataset.</param>
+		/// <param name="datasetName">The name of the dataset.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDatasetContentResponse> CreateDatasetContentAsync(string datasetName, CreateDatasetContentPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2744,8 +2756,14 @@ namespace MyNS
 		/// Deletes the content of the specified dataset.
 		/// DeleteDatasetContent datasets/{datasetName}/content
 		/// </summary>
-		/// <param name="datasetName">The name of the dataset whose content is deleted.</param>
-		/// <param name="versionId">The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.</param>
+		/// <param name="datasetName">The name of the dataset whose content is deleted.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="versionId">The version of the dataset whose content is deleted. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to delete the latest or latest successfully completed data set. If not specified, "$LATEST_SUCCEEDED" is the default.
+		/// Max length: 36
+		/// Min length: 7
+		// </param>
 		public async Task DeleteDatasetContentAsync(string datasetName, string versionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datasets/"+ (datasetName==null? "" : System.Uri.EscapeDataString(datasetName))+"/content&versionId=" + (versionId==null? "" : System.Uri.EscapeDataString(versionId));
@@ -2772,8 +2790,14 @@ namespace MyNS
 		/// Retrieves the contents of a dataset as presigned URIs.
 		/// GetDatasetContent datasets/{datasetName}/content
 		/// </summary>
-		/// <param name="datasetName">The name of the dataset whose contents are retrieved.</param>
-		/// <param name="versionId">The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.</param>
+		/// <param name="datasetName">The name of the dataset whose contents are retrieved.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="versionId">The version of the dataset whose contents are retrieved. You can also use the strings "$LATEST" or "$LATEST_SUCCEEDED" to retrieve the contents of the latest or latest successfully completed dataset. If not specified, "$LATEST_SUCCEEDED" is the default.
+		/// Max length: 36
+		/// Min length: 7
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDatasetContentResponse> GetDatasetContentAsync(string datasetName, string versionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2841,7 +2865,10 @@ namespace MyNS
 		/// ListDatastores datastores
 		/// </summary>
 		/// <param name="nextToken">The token for the next set of results.</param>
-		/// <param name="maxResults"><p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p></param>
+		/// <param name="maxResults"><p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDatastoresResponse> ListDatastoresAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2909,7 +2936,10 @@ namespace MyNS
 		/// ListPipelines pipelines
 		/// </summary>
 		/// <param name="nextToken">The token for the next set of results.</param>
-		/// <param name="maxResults"><p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p></param>
+		/// <param name="maxResults"><p>The maximum number of results to return in this request.</p> <p>The default value is 100.</p>
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPipelinesResponse> ListPipelinesAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2943,7 +2973,10 @@ namespace MyNS
 		/// Deletes the specified channel.
 		/// DeleteChannel channels/{channelName}
 		/// </summary>
-		/// <param name="channelName">The name of the channel to delete.</param>
+		/// <param name="channelName">The name of the channel to delete.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteChannelAsync(string channelName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "channels/"+ (channelName==null? "" : System.Uri.EscapeDataString(channelName));
@@ -2970,7 +3003,10 @@ namespace MyNS
 		/// Retrieves information about a channel.
 		/// DescribeChannel channels/{channelName}
 		/// </summary>
-		/// <param name="channelName">The name of the channel whose information is retrieved.</param>
+		/// <param name="channelName">The name of the channel whose information is retrieved.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="includeStatistics">If true, additional statistical information about the channel is included in the response. This feature can't be used with a channel whose S3 storage is customer-managed.</param>
 		/// <returns>Success</returns>
 		public async Task<DescribeChannelResponse> DescribeChannelAsync(string channelName, bool includeStatistics, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3005,7 +3041,10 @@ namespace MyNS
 		/// Used to update the settings of a channel.
 		/// UpdateChannel channels/{channelName}
 		/// </summary>
-		/// <param name="channelName">The name of the channel to be updated.</param>
+		/// <param name="channelName">The name of the channel to be updated.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateChannelAsync(string channelName, UpdateChannelPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3040,7 +3079,10 @@ namespace MyNS
 		/// <p>Deletes the specified dataset.</p> <p>You do not have to delete the content of the dataset before you perform this operation.</p>
 		/// DeleteDataset datasets/{datasetName}
 		/// </summary>
-		/// <param name="datasetName">The name of the dataset to delete.</param>
+		/// <param name="datasetName">The name of the dataset to delete.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteDatasetAsync(string datasetName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datasets/"+ (datasetName==null? "" : System.Uri.EscapeDataString(datasetName));
@@ -3067,7 +3109,10 @@ namespace MyNS
 		/// Retrieves information about a dataset.
 		/// DescribeDataset datasets/{datasetName}
 		/// </summary>
-		/// <param name="datasetName">The name of the dataset whose information is retrieved.</param>
+		/// <param name="datasetName">The name of the dataset whose information is retrieved.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDatasetResponse> DescribeDatasetAsync(string datasetName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3101,7 +3146,10 @@ namespace MyNS
 		/// Updates the settings of a dataset.
 		/// UpdateDataset datasets/{datasetName}
 		/// </summary>
-		/// <param name="datasetName">The name of the dataset to update.</param>
+		/// <param name="datasetName">The name of the dataset to update.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateDatasetAsync(string datasetName, UpdateDatasetPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3136,7 +3184,10 @@ namespace MyNS
 		/// Deletes the specified data store.
 		/// DeleteDatastore datastores/{datastoreName}
 		/// </summary>
-		/// <param name="datastoreName">The name of the data store to delete.</param>
+		/// <param name="datastoreName">The name of the data store to delete.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteDatastoreAsync(string datastoreName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "datastores/"+ (datastoreName==null? "" : System.Uri.EscapeDataString(datastoreName));
@@ -3163,7 +3214,10 @@ namespace MyNS
 		/// Retrieves information about a data store.
 		/// DescribeDatastore datastores/{datastoreName}
 		/// </summary>
-		/// <param name="datastoreName">The name of the data store</param>
+		/// <param name="datastoreName">The name of the data store
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="includeStatistics">If true, additional statistical information about the data store is included in the response. This feature can't be used with a data store whose S3 storage is customer-managed.</param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDatastoreResponse> DescribeDatastoreAsync(string datastoreName, bool includeStatistics, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3198,7 +3252,10 @@ namespace MyNS
 		/// Used to update the settings of a data store.
 		/// UpdateDatastore datastores/{datastoreName}
 		/// </summary>
-		/// <param name="datastoreName">The name of the data store to be updated.</param>
+		/// <param name="datastoreName">The name of the data store to be updated.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdateDatastoreAsync(string datastoreName, UpdateDatastorePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3233,7 +3290,10 @@ namespace MyNS
 		/// Deletes the specified pipeline.
 		/// DeletePipeline pipelines/{pipelineName}
 		/// </summary>
-		/// <param name="pipelineName">The name of the pipeline to delete.</param>
+		/// <param name="pipelineName">The name of the pipeline to delete.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeletePipelineAsync(string pipelineName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "pipelines/"+ (pipelineName==null? "" : System.Uri.EscapeDataString(pipelineName));
@@ -3260,7 +3320,10 @@ namespace MyNS
 		/// Retrieves information about a pipeline.
 		/// DescribePipeline pipelines/{pipelineName}
 		/// </summary>
-		/// <param name="pipelineName">The name of the pipeline whose information is retrieved.</param>
+		/// <param name="pipelineName">The name of the pipeline whose information is retrieved.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePipelineResponse> DescribePipelineAsync(string pipelineName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3294,7 +3357,10 @@ namespace MyNS
 		/// Updates the settings of a pipeline. You must specify both a <code>channel</code> and a <code>datastore</code> activity and, optionally, as many as 23 additional activities in the <code>pipelineActivities</code> array.
 		/// UpdatePipeline pipelines/{pipelineName}
 		/// </summary>
-		/// <param name="pipelineName">The name of the pipeline to update.</param>
+		/// <param name="pipelineName">The name of the pipeline to update.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UpdatePipelineAsync(string pipelineName, UpdatePipelinePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3396,9 +3462,15 @@ namespace MyNS
 		/// Lists information about dataset contents that have been created.
 		/// ListDatasetContents datasets/{datasetName}/contents
 		/// </summary>
-		/// <param name="datasetName">The name of the dataset whose contents information you want to list.</param>
+		/// <param name="datasetName">The name of the dataset whose contents information you want to list.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="nextToken">The token for the next set of results.</param>
-		/// <param name="maxResults">The maximum number of results to return in this request.</param>
+		/// <param name="maxResults">The maximum number of results to return in this request.
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <param name="scheduledOnOrAfter">A filter to limit results to those dataset contents whose creation is scheduled on or after the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</param>
 		/// <param name="scheduledBefore">A filter to limit results to those dataset contents whose creation is scheduled before the given time. See the field <code>triggers.schedule</code> in the <code>CreateDataset</code> request. (timestamp)</param>
 		/// <returns>Success</returns>
@@ -3434,7 +3506,10 @@ namespace MyNS
 		/// Lists the tags (metadata) that you have assigned to the resource.
 		/// ListTagsForResource tags#resourceArn
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource whose tags you want to list.</param>
+		/// <param name="resourceArn">The ARN of the resource whose tags you want to list.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3468,7 +3543,10 @@ namespace MyNS
 		/// Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
 		/// TagResource tags#resourceArn
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource whose tags you want to modify.</param>
+		/// <param name="resourceArn">The ARN of the resource whose tags you want to modify.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags#resourceArn?resourceArn=" + (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn));
@@ -3542,8 +3620,14 @@ namespace MyNS
 		/// Retrieves a sample of messages from the specified channel ingested during the specified timeframe. Up to 10 messages can be retrieved.
 		/// SampleChannelData channels/{channelName}/sample
 		/// </summary>
-		/// <param name="channelName">The name of the channel whose message samples are retrieved.</param>
-		/// <param name="maxMessages">The number of sample messages to be retrieved. The limit is 10. The default is also 10.</param>
+		/// <param name="channelName">The name of the channel whose message samples are retrieved.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="maxMessages">The number of sample messages to be retrieved. The limit is 10. The default is also 10.
+		/// Minimum: 1
+		/// Maximum: 10
+		// </param>
 		/// <param name="startTime">The start of the time window from which sample messages are retrieved.</param>
 		/// <param name="endTime">The end of the time window from which sample messages are retrieved.</param>
 		/// <returns>Success</returns>
@@ -3579,7 +3663,10 @@ namespace MyNS
 		/// Starts the reprocessing of raw message data through the pipeline.
 		/// StartPipelineReprocessing pipelines/{pipelineName}/reprocessing
 		/// </summary>
-		/// <param name="pipelineName">The name of the pipeline on which to start reprocessing.</param>
+		/// <param name="pipelineName">The name of the pipeline on which to start reprocessing.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartPipelineReprocessingResponse> StartPipelineReprocessingAsync(string pipelineName, StartPipelineReprocessingPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3620,8 +3707,14 @@ namespace MyNS
 		/// Removes the given tags (metadata) from the resource.
 		/// UntagResource tags#resourceArn&tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource whose tags you want to remove.</param>
-		/// <param name="tagKeys">The keys of those tags which you want to remove.</param>
+		/// <param name="resourceArn">The ARN of the resource whose tags you want to remove.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
+		/// <param name="tagKeys">The keys of those tags which you want to remove.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		public async Task UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags#resourceArn&tagKeys?resourceArn=" + (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));

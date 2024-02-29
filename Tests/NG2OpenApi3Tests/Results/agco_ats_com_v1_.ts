@@ -191,7 +191,10 @@ export namespace MyNS {
 		/** The value used for securing codes generated. */
 		AuthorizationID?: string | null;
 
-		/** The ID of the user that created this definition. Read only. */
+		/**
+		 * The ID of the user that created this definition. Read only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CreatedByUserID?: number | null;
 
 		/** A timestamp of when this definition was created. Read only. */
@@ -200,7 +203,10 @@ export namespace MyNS {
 		/** The defined fields to include in authorization codes generated from this definition. May not be updated. */
 		DataFields?: Array<AuthorizationCodesSharedModelsDataField>;
 
-		/** The ID of the user that deleted this definition. Read only. */
+		/**
+		 * The ID of the user that deleted this definition. Read only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DeletedByUserID?: number | null;
 
 		/** A timestamp of when this definition was deleted. Read only. */
@@ -209,16 +215,25 @@ export namespace MyNS {
 		/** A description of this definition. May not be updated. */
 		Description?: string | null;
 
-		/** The number of bits used for timestamp verification. Defaults to 5. May not be updated. */
+		/**
+		 * The number of bits used for timestamp verification. Defaults to 5. May not be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DurationAccuracy?: number | null;
 
-		/** The amount of duration for the specified duration unit used to calculate the Authorization Code. Defaults to 1. May not be updated. */
+		/**
+		 * The amount of duration for the specified duration unit used to calculate the Authorization Code. Defaults to 1. May not be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DurationAmount?: number | null;
 
 		/** The units of duration used to calculate the Authorization Code. Defaults to 'Days'. May not be updated. */
 		DurationUnits?: AuthorizationCodesSharedModelsAuthorizationCodeDefinitionDurationUnits | null;
 
-		/** The bit length of the hash data which will be used for the authorization code. Defaults to 20. May not be updated. */
+		/**
+		 * The bit length of the hash data which will be used for the authorization code. Defaults to 20. May not be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HashLength?: number | null;
 
 		/** The ID of the authorization code definition. Read only. */
@@ -233,7 +248,10 @@ export namespace MyNS {
 		 */
 		Name: string;
 
-		/** The bit length of random data which will be included in the authorization code.  This is necessary to allow creation of "identical" authorization codes containing the same timestamp. Defaults to 5. May not be updated. */
+		/**
+		 * The bit length of random data which will be included in the authorization code.  This is necessary to allow creation of "identical" authorization codes containing the same timestamp. Defaults to 5. May not be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RandomLength?: number | null;
 
 		/** The defined fields to verify when reading authorization codes generated from this definition. May not be updated. */
@@ -246,13 +264,19 @@ export namespace MyNS {
 		/** The value used for securing codes generated. */
 		AuthorizationID: FormControl<string | null | undefined>,
 
-		/** The ID of the user that created this definition. Read only. */
+		/**
+		 * The ID of the user that created this definition. Read only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CreatedByUserID: FormControl<number | null | undefined>,
 
 		/** A timestamp of when this definition was created. Read only. */
 		CreatedDate: FormControl<Date | null | undefined>,
 
-		/** The ID of the user that deleted this definition. Read only. */
+		/**
+		 * The ID of the user that deleted this definition. Read only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DeletedByUserID: FormControl<number | null | undefined>,
 
 		/** A timestamp of when this definition was deleted. Read only. */
@@ -261,16 +285,25 @@ export namespace MyNS {
 		/** A description of this definition. May not be updated. */
 		Description: FormControl<string | null | undefined>,
 
-		/** The number of bits used for timestamp verification. Defaults to 5. May not be updated. */
+		/**
+		 * The number of bits used for timestamp verification. Defaults to 5. May not be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DurationAccuracy: FormControl<number | null | undefined>,
 
-		/** The amount of duration for the specified duration unit used to calculate the Authorization Code. Defaults to 1. May not be updated. */
+		/**
+		 * The amount of duration for the specified duration unit used to calculate the Authorization Code. Defaults to 1. May not be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DurationAmount: FormControl<number | null | undefined>,
 
 		/** The units of duration used to calculate the Authorization Code. Defaults to 'Days'. May not be updated. */
 		DurationUnits: FormControl<AuthorizationCodesSharedModelsAuthorizationCodeDefinitionDurationUnits | null | undefined>,
 
-		/** The bit length of the hash data which will be used for the authorization code. Defaults to 20. May not be updated. */
+		/**
+		 * The bit length of the hash data which will be used for the authorization code. Defaults to 20. May not be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		HashLength: FormControl<number | null | undefined>,
 
 		/** The ID of the authorization code definition. Read only. */
@@ -285,7 +318,10 @@ export namespace MyNS {
 		 */
 		Name: FormControl<string | null | undefined>,
 
-		/** The bit length of random data which will be included in the authorization code.  This is necessary to allow creation of "identical" authorization codes containing the same timestamp. Defaults to 5. May not be updated. */
+		/**
+		 * The bit length of random data which will be included in the authorization code.  This is necessary to allow creation of "identical" authorization codes containing the same timestamp. Defaults to 5. May not be updated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RandomLength: FormControl<number | null | undefined>,
 	}
 	export function CreateAuthorizationCodesSharedModelsAuthorizationCodeDefinitionFormGroup() {
@@ -310,19 +346,34 @@ export namespace MyNS {
 
 	export interface AuthorizationCodesSharedModelsDataField {
 
-		/** The number of decimal digits to be used by this data field. Required only by the 'Float' data type. Must be in range 1 - 15. */
+		/**
+		 * The number of decimal digits to be used by this data field. Required only by the 'Float' data type. Must be in range 1 - 15.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DigitsPrecision?: number | null;
 
-		/** The maximum exponent to be used by this data field. Required only by the 'Float' data type. May not be greater than 307. */
+		/**
+		 * The maximum exponent to be used by this data field. Required only by the 'Float' data type. May not be greater than 307.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxExponent?: number | null;
 
-		/** The maximum value that can be represented by this data field. Required only by the 'Decimal' data type. */
+		/**
+		 * The maximum value that can be represented by this data field. Required only by the 'Decimal' data type.
+		 * Type: double
+		 */
 		MaxValue?: number | null;
 
-		/** The minimum exponent to be used by this data field. Required only by the 'Float' data type. May not be less than -292. */
+		/**
+		 * The minimum exponent to be used by this data field. Required only by the 'Float' data type. May not be less than -292.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinExponent?: number | null;
 
-		/** The minimum value that can be represented by this data field. Required only by the 'Decimal' data type. */
+		/**
+		 * The minimum value that can be represented by this data field. Required only by the 'Decimal' data type.
+		 * Type: double
+		 */
 		MinValue?: number | null;
 
 		/**
@@ -331,7 +382,10 @@ export namespace MyNS {
 		 */
 		Name: string;
 
-		/** The resolution of values that can be represented by this data field. The base value is multiplied by this to compute the final value. Required only by the 'Decimal' data type. */
+		/**
+		 * The resolution of values that can be represented by this data field. The base value is multiplied by this to compute the final value. Required only by the 'Decimal' data type.
+		 * Type: double
+		 */
 		ScaleFactor?: number | null;
 
 		/** Indicates whether this value is signed. Required only by the 'Float' data type. */
@@ -345,19 +399,34 @@ export namespace MyNS {
 	}
 	export interface AuthorizationCodesSharedModelsDataFieldFormProperties {
 
-		/** The number of decimal digits to be used by this data field. Required only by the 'Float' data type. Must be in range 1 - 15. */
+		/**
+		 * The number of decimal digits to be used by this data field. Required only by the 'Float' data type. Must be in range 1 - 15.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DigitsPrecision: FormControl<number | null | undefined>,
 
-		/** The maximum exponent to be used by this data field. Required only by the 'Float' data type. May not be greater than 307. */
+		/**
+		 * The maximum exponent to be used by this data field. Required only by the 'Float' data type. May not be greater than 307.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxExponent: FormControl<number | null | undefined>,
 
-		/** The maximum value that can be represented by this data field. Required only by the 'Decimal' data type. */
+		/**
+		 * The maximum value that can be represented by this data field. Required only by the 'Decimal' data type.
+		 * Type: double
+		 */
 		MaxValue: FormControl<number | null | undefined>,
 
-		/** The minimum exponent to be used by this data field. Required only by the 'Float' data type. May not be less than -292. */
+		/**
+		 * The minimum exponent to be used by this data field. Required only by the 'Float' data type. May not be less than -292.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinExponent: FormControl<number | null | undefined>,
 
-		/** The minimum value that can be represented by this data field. Required only by the 'Decimal' data type. */
+		/**
+		 * The minimum value that can be represented by this data field. Required only by the 'Decimal' data type.
+		 * Type: double
+		 */
 		MinValue: FormControl<number | null | undefined>,
 
 		/**
@@ -366,7 +435,10 @@ export namespace MyNS {
 		 */
 		Name: FormControl<string | null | undefined>,
 
-		/** The resolution of values that can be represented by this data field. The base value is multiplied by this to compute the final value. Required only by the 'Decimal' data type. */
+		/**
+		 * The resolution of values that can be represented by this data field. The base value is multiplied by this to compute the final value. Required only by the 'Decimal' data type.
+		 * Type: double
+		 */
 		ScaleFactor: FormControl<number | null | undefined>,
 
 		/** Indicates whether this value is signed. Required only by the 'Float' data type. */
@@ -442,18 +514,21 @@ export namespace MyNS {
 		/**
 		 * The number of entities this paged response is limited to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Limit: number;
 
 		/**
 		 * The number of entities prior to this page of items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Offset: number;
 
 		/**
 		 * The total number of entities matching the request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalCount: number;
 	}
@@ -464,18 +539,21 @@ export namespace MyNS {
 		/**
 		 * The number of entities this paged response is limited to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Limit: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of entities prior to this page of items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Offset: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of entities matching the request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalCount: FormControl<number | null | undefined>,
 	}
@@ -509,7 +587,10 @@ export namespace MyNS {
 		/** The code to enter to unlock a feature. Read only. */
 		Code?: string | null;
 
-		/** The ID of the user that created this authorization code. Read only. */
+		/**
+		 * The ID of the user that created this authorization code. Read only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CreatedByUserID?: number | null;
 
 		/** A timestamp of when this code was created. Read only. */
@@ -521,7 +602,10 @@ export namespace MyNS {
 		/** The id of the definition for this authorization code. May not be updated. */
 		DefinitionID?: string | null;
 
-		/** The ID of the user that deleted this authorization code. Read only. */
+		/**
+		 * The ID of the user that deleted this authorization code. Read only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DeletedByUserID?: number | null;
 
 		/** A timestamp of when this authorization code was deleted. Read only. */
@@ -530,7 +614,10 @@ export namespace MyNS {
 		/** A date at which this code should begin being valid. Optional. Set on create only. */
 		EffectiveDate?: Date | null;
 
-		/** The identifier for the authorization code. Read only. */
+		/**
+		 * The identifier for the authorization code. Read only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID?: number | null;
 
 		/** Indicates whether this code is deleted. */
@@ -546,7 +633,10 @@ export namespace MyNS {
 		/** The code to enter to unlock a feature. Read only. */
 		Code: FormControl<string | null | undefined>,
 
-		/** The ID of the user that created this authorization code. Read only. */
+		/**
+		 * The ID of the user that created this authorization code. Read only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CreatedByUserID: FormControl<number | null | undefined>,
 
 		/** A timestamp of when this code was created. Read only. */
@@ -555,7 +645,10 @@ export namespace MyNS {
 		/** The id of the definition for this authorization code. May not be updated. */
 		DefinitionID: FormControl<string | null | undefined>,
 
-		/** The ID of the user that deleted this authorization code. Read only. */
+		/**
+		 * The ID of the user that deleted this authorization code. Read only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		DeletedByUserID: FormControl<number | null | undefined>,
 
 		/** A timestamp of when this authorization code was deleted. Read only. */
@@ -564,7 +657,10 @@ export namespace MyNS {
 		/** A date at which this code should begin being valid. Optional. Set on create only. */
 		EffectiveDate: FormControl<Date | null | undefined>,
 
-		/** The identifier for the authorization code. Read only. */
+		/**
+		 * The identifier for the authorization code. Read only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID: FormControl<number | null | undefined>,
 
 		/** Indicates whether this code is deleted. */
@@ -644,6 +740,7 @@ export namespace MyNS {
 		/**
 		 * AuthorizationCode ID that the contact information ties into.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AuthorizationCodeID: number;
 
@@ -680,7 +777,10 @@ export namespace MyNS {
 		/** Email of contact. */
 		Email?: string | null;
 
-		/** ID of authorizationContactInformation */
+		/**
+		 * ID of authorizationContactInformation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID?: number | null;
 
 		/** Optional notes used for internal use. */
@@ -697,6 +797,7 @@ export namespace MyNS {
 		/**
 		 * AuthorizationCode ID that the contact information ties into.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AuthorizationCodeID: FormControl<number | null | undefined>,
 
@@ -733,7 +834,10 @@ export namespace MyNS {
 		/** Email of contact. */
 		Email: FormControl<string | null | undefined>,
 
-		/** ID of authorizationContactInformation */
+		/**
+		 * ID of authorizationContactInformation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID: FormControl<number | null | undefined>,
 
 		/** Optional notes used for internal use. */
@@ -827,12 +931,16 @@ export namespace MyNS {
 	export interface AuthorizationCodesSharedModelsAuthorizationCodeUser {
 		Email?: string | null;
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID?: number | null;
 		Username?: string | null;
 	}
 	export interface AuthorizationCodesSharedModelsAuthorizationCodeUserFormProperties {
 		Email: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID: FormControl<number | null | undefined>,
 		Username: FormControl<string | null | undefined>,
 	}
@@ -917,8 +1025,11 @@ export namespace MyNS {
 		 */
 		Path: string;
 
-		/** The size of the file in bytes. Null until assigned by server when marked as 'Available'. Read Only */
-		Size?: number | null;
+		/**
+		 * The size of the file in bytes. Null until assigned by server when marked as 'Available'. Read Only
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
 		/**
 		 * Indicates the state of this file. Must be 'Created' when created.
@@ -969,8 +1080,11 @@ export namespace MyNS {
 		 */
 		Path: FormControl<string | null | undefined>,
 
-		/** The size of the file in bytes. Null until assigned by server when marked as 'Available'. Read Only */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * The size of the file in bytes. Null until assigned by server when marked as 'Available'. Read Only
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
 		/**
 		 * Indicates the state of this file. Must be 'Created' when created.
@@ -987,7 +1101,7 @@ export namespace MyNS {
 			IsPublic: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Path: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<GlobalResourcesSharedModelsFileDownloadState | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1082,6 +1196,7 @@ export namespace MyNS {
 		/**
 		 * The height of the file.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Height: number;
 
@@ -1097,8 +1212,11 @@ export namespace MyNS {
 		/** The Publisher of the file. */
 		Publisher?: string | null;
 
-		/** The size of the file in bytes. Null until assigned by server when marked as 'Available'. Read Only */
-		Size?: number | null;
+		/**
+		 * The size of the file in bytes. Null until assigned by server when marked as 'Available'. Read Only
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
 		/**
 		 * Indicates the state of this file. Must be 'Created' when created. Read Only.
@@ -1112,12 +1230,16 @@ export namespace MyNS {
 		 */
 		ThumbnailCRC: string;
 
-		/** The size of the thumbnail file in bytes. Null until assigned by server when marked as 'Available'. Read Only */
-		ThumbnailSize?: number | null;
+		/**
+		 * The size of the thumbnail file in bytes. Null until assigned by server when marked as 'Available'. Read Only
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ThumbnailSize?: string | null;
 
 		/**
 		 * The width of the file.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Width: number;
 	}
@@ -1143,6 +1265,7 @@ export namespace MyNS {
 		/**
 		 * The height of the file.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Height: FormControl<number | null | undefined>,
 
@@ -1158,8 +1281,11 @@ export namespace MyNS {
 		/** The Publisher of the file. */
 		Publisher: FormControl<string | null | undefined>,
 
-		/** The size of the file in bytes. Null until assigned by server when marked as 'Available'. Read Only */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * The size of the file in bytes. Null until assigned by server when marked as 'Available'. Read Only
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
 		/**
 		 * Indicates the state of this file. Must be 'Created' when created. Read Only.
@@ -1173,12 +1299,16 @@ export namespace MyNS {
 		 */
 		ThumbnailCRC: FormControl<string | null | undefined>,
 
-		/** The size of the thumbnail file in bytes. Null until assigned by server when marked as 'Available'. Read Only */
-		ThumbnailSize: FormControl<number | null | undefined>,
+		/**
+		 * The size of the thumbnail file in bytes. Null until assigned by server when marked as 'Available'. Read Only
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		ThumbnailSize: FormControl<string | null | undefined>,
 
 		/**
 		 * The width of the file.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Width: FormControl<number | null | undefined>,
 	}
@@ -1191,10 +1321,10 @@ export namespace MyNS {
 			Id: new FormControl<string | null | undefined>(undefined),
 			Name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Publisher: new FormControl<string | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			State: new FormControl<GlobalResourcesSharedModelsFileDownloadState | null | undefined>(undefined, [Validators.required]),
 			ThumbnailCRC: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			ThumbnailSize: new FormControl<number | null | undefined>(undefined),
+			ThumbnailSize: new FormControl<string | null | undefined>(undefined),
 			Width: new FormControl<number | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -1230,6 +1360,7 @@ export namespace MyNS {
 		/**
 		 * The Locale Id of the language.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		LocaleId: number;
 	}
@@ -1249,6 +1380,7 @@ export namespace MyNS {
 		/**
 		 * The Locale Id of the language.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		LocaleId: FormControl<number | null | undefined>,
 	}
@@ -1291,7 +1423,10 @@ export namespace MyNS {
 		/** The identifier for the string. Read Only. */
 		Id?: string | null;
 
-		/** The number of parameters expected for the string. */
+		/**
+		 * The number of parameters expected for the string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ParameterCount?: number | null;
 
 		/** A value indicating the last modification of this string. Read Only. */
@@ -1316,7 +1451,10 @@ export namespace MyNS {
 		/** The identifier for the string. Read Only. */
 		Id: FormControl<string | null | undefined>,
 
-		/** The number of parameters expected for the string. */
+		/**
+		 * The number of parameters expected for the string.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ParameterCount: FormControl<number | null | undefined>,
 
 		/** A value indicating the last modification of this string. Read Only. */
@@ -1337,10 +1475,16 @@ export namespace MyNS {
 	/** A translation of a string in a specific language */
 	export interface GlobalResourcesSharedModelsStringTranslation {
 
-		/** The id of the user to last edit thie translation */
+		/**
+		 * The id of the user to last edit thie translation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AuthorId?: number | null;
 
-		/** The id of the language of the translation */
+		/**
+		 * The id of the language of the translation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LanguageId?: number | null;
 
 		/** The state of the translation */
@@ -1362,10 +1506,16 @@ export namespace MyNS {
 	/** A translation of a string in a specific language */
 	export interface GlobalResourcesSharedModelsStringTranslationFormProperties {
 
-		/** The id of the user to last edit thie translation */
+		/**
+		 * The id of the user to last edit thie translation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AuthorId: FormControl<number | null | undefined>,
 
-		/** The id of the language of the translation */
+		/**
+		 * The id of the language of the translation
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LanguageId: FormControl<number | null | undefined>,
 
 		/** The state of the translation */
@@ -1429,7 +1579,10 @@ export namespace MyNS {
 	/** A request to translate specified strings into specified locales */
 	export interface GlobalResourcesSharedModelsTranslationRequest {
 
-		/** The ID of the user from which approval for the request is required */
+		/**
+		 * The ID of the user from which approval for the request is required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ApprovalUserId?: number | null;
 
 		/**
@@ -1450,7 +1603,10 @@ export namespace MyNS {
 		 */
 		Deadline: Date;
 
-		/** The ID of the request */
+		/**
+		 * The ID of the request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/**
@@ -1465,7 +1621,10 @@ export namespace MyNS {
 		 */
 		Notes: string;
 
-		/** The ID of the user to which to address questions regarding the request */
+		/**
+		 * The ID of the user to which to address questions regarding the request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		QuestionsUserId?: number | null;
 
 		/**
@@ -1474,7 +1633,10 @@ export namespace MyNS {
 		 */
 		State: GlobalResourcesSharedModelsTranslationRequestState;
 
-		/** The ID of the User that submitted the request */
+		/**
+		 * The ID of the User that submitted the request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubmittedBy?: number | null;
 
 		/** The email address for the translator */
@@ -1487,7 +1649,10 @@ export namespace MyNS {
 	/** A request to translate specified strings into specified locales */
 	export interface GlobalResourcesSharedModelsTranslationRequestFormProperties {
 
-		/** The ID of the user from which approval for the request is required */
+		/**
+		 * The ID of the user from which approval for the request is required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ApprovalUserId: FormControl<number | null | undefined>,
 
 		/**
@@ -1502,7 +1667,10 @@ export namespace MyNS {
 		 */
 		Deadline: FormControl<Date | null | undefined>,
 
-		/** The ID of the request */
+		/**
+		 * The ID of the request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/**
@@ -1511,7 +1679,10 @@ export namespace MyNS {
 		 */
 		Notes: FormControl<string | null | undefined>,
 
-		/** The ID of the user to which to address questions regarding the request */
+		/**
+		 * The ID of the user to which to address questions regarding the request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		QuestionsUserId: FormControl<number | null | undefined>,
 
 		/**
@@ -1520,7 +1691,10 @@ export namespace MyNS {
 		 */
 		State: FormControl<GlobalResourcesSharedModelsTranslationRequestState | null | undefined>,
 
-		/** The ID of the User that submitted the request */
+		/**
+		 * The ID of the User that submitted the request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		SubmittedBy: FormControl<number | null | undefined>,
 
 		/** The email address for the translator */
@@ -1565,7 +1739,10 @@ export namespace MyNS {
 	/** An attribute of a */
 	export interface GlobalResourcesSharedModelsTranslationSetAttribute {
 
-		/** The ID of this attribute. */
+		/**
+		 * The ID of this attribute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID?: number | null;
 
 		/**
@@ -1574,7 +1751,10 @@ export namespace MyNS {
 		 */
 		Name: string;
 
-		/** The ID of the translation set to which this attribute belongs. */
+		/**
+		 * The ID of the translation set to which this attribute belongs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TranslationSetID?: number | null;
 
 		/** The value of this Attribute */
@@ -1584,7 +1764,10 @@ export namespace MyNS {
 	/** An attribute of a */
 	export interface GlobalResourcesSharedModelsTranslationSetAttributeFormProperties {
 
-		/** The ID of this attribute. */
+		/**
+		 * The ID of this attribute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID: FormControl<number | null | undefined>,
 
 		/**
@@ -1593,7 +1776,10 @@ export namespace MyNS {
 		 */
 		Name: FormControl<string | null | undefined>,
 
-		/** The ID of the translation set to which this attribute belongs. */
+		/**
+		 * The ID of the translation set to which this attribute belongs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TranslationSetID: FormControl<number | null | undefined>,
 
 		/** The value of this Attribute */
@@ -1630,7 +1816,10 @@ export namespace MyNS {
 		/** A description of the string to translate. This should contain context and parameter count. */
 		DescriptionForTranslator?: string | null;
 
-		/** The ID of the language from which to translate the string */
+		/**
+		 * The ID of the language from which to translate the string
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LanguageID?: number | null;
 
 		/** The ID of the string to translate */
@@ -1646,7 +1835,10 @@ export namespace MyNS {
 		/** A description of the string to translate. This should contain context and parameter count. */
 		DescriptionForTranslator: FormControl<string | null | undefined>,
 
-		/** The ID of the language from which to translate the string */
+		/**
+		 * The ID of the language from which to translate the string
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LanguageID: FormControl<number | null | undefined>,
 
 		/** The ID of the string to translate */
@@ -1686,6 +1878,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the language into which to translate the string
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		LanguageID: number;
 
@@ -1701,6 +1894,7 @@ export namespace MyNS {
 		/**
 		 * The id of the TranslationSet
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TranslationSetId: number;
 	}
@@ -1711,6 +1905,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the language into which to translate the string
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		LanguageID: FormControl<number | null | undefined>,
 
@@ -1726,6 +1921,7 @@ export namespace MyNS {
 		/**
 		 * The id of the TranslationSet
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TranslationSetId: FormControl<number | null | undefined>,
 	}
@@ -1766,7 +1962,10 @@ export namespace MyNS {
 		 */
 		FileIDs: Array<string>;
 
-		/** The id of the TranslationSet. */
+		/**
+		 * The id of the TranslationSet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/** Read Only. The date the translation set was returned. */
@@ -1784,14 +1983,20 @@ export namespace MyNS {
 		 */
 		State: GlobalResourcesSharedModelsTranslationSetState;
 
-		/** Read Only. The Id of the TranslationRequest which generated this translation set. */
+		/**
+		 * Read Only. The Id of the TranslationRequest which generated this translation set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TranslationRequestID?: number | null;
 	}
 
 	/** A set of strings submitted for translation */
 	export interface GlobalResourcesSharedModelsTranslationSetFormProperties {
 
-		/** The id of the TranslationSet. */
+		/**
+		 * The id of the TranslationSet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/** Read Only. The date the translation set was returned. */
@@ -1809,7 +2014,10 @@ export namespace MyNS {
 		 */
 		State: FormControl<GlobalResourcesSharedModelsTranslationSetState | null | undefined>,
 
-		/** Read Only. The Id of the TranslationRequest which generated this translation set. */
+		/**
+		 * Read Only. The Id of the TranslationRequest which generated this translation set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TranslationRequestID: FormControl<number | null | undefined>,
 	}
 	export function CreateGlobalResourcesSharedModelsTranslationSetFormGroup() {
@@ -1844,7 +2052,10 @@ export namespace MyNS {
 	/** A translation key to map the relationship of keyNames, usually for ODX, and string Ids */
 	export interface OASSupportSharedModelsTranslationKey {
 
-		/** The identifier for the translationKey. Read Only. */
+		/**
+		 * The identifier for the translationKey. Read Only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID?: number | null;
 
 		/**
@@ -1863,7 +2074,10 @@ export namespace MyNS {
 	/** A translation key to map the relationship of keyNames, usually for ODX, and string Ids */
 	export interface OASSupportSharedModelsTranslationKeyFormProperties {
 
-		/** The identifier for the translationKey. Read Only. */
+		/**
+		 * The identifier for the translationKey. Read Only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID: FormControl<number | null | undefined>,
 
 		/**
@@ -1889,12 +2103,16 @@ export namespace MyNS {
 
 	export interface APIModelsApiError {
 		DeveloperMessage?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ErrorCode?: number | null;
 		MoreInfo?: string | null;
 		UserMessage?: string | null;
 	}
 	export interface APIModelsApiErrorFormProperties {
 		DeveloperMessage: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ErrorCode: FormControl<number | null | undefined>,
 		MoreInfo: FormControl<string | null | undefined>,
 		UserMessage: FormControl<string | null | undefined>,
@@ -1926,7 +2144,10 @@ export namespace MyNS {
 		/** The token to use for API access */
 		Token?: string | null;
 
-		/** The user ID */
+		/**
+		 * The user ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserID?: number | null;
 
 		/** The username used for authentication */
@@ -1949,7 +2170,10 @@ export namespace MyNS {
 		/** The token to use for API access */
 		Token: FormControl<string | null | undefined>,
 
-		/** The user ID */
+		/**
+		 * The user ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserID: FormControl<number | null | undefined>,
 
 		/** The username used for authentication */
@@ -2171,7 +2395,10 @@ export namespace MyNS {
 		DataRequired: APIModelsPermissionDataRequired;
 		Description?: string | null;
 
-		/** The identifier of the permission. */
+		/**
+		 * The identifier of the permission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/**
@@ -2192,7 +2419,10 @@ export namespace MyNS {
 		DataRequired: FormControl<APIModelsPermissionDataRequired | null | undefined>,
 		Description: FormControl<string | null | undefined>,
 
-		/** The identifier of the permission. */
+		/**
+		 * The identifier of the permission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/**
@@ -2224,7 +2454,10 @@ export namespace MyNS {
 		 */
 		Description: string;
 
-		/** The role's identifier. */
+		/**
+		 * The role's identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id?: number | null;
 
 		/**
@@ -2243,7 +2476,10 @@ export namespace MyNS {
 		 */
 		Description: FormControl<string | null | undefined>,
 
-		/** The role's identifier. */
+		/**
+		 * The role's identifier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Id: FormControl<number | null | undefined>,
 
 		/**
@@ -2314,6 +2550,7 @@ export namespace MyNS {
 		/**
 		 * The Id of the User
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Id: number;
 	}
@@ -2328,6 +2565,7 @@ export namespace MyNS {
 		/**
 		 * The Id of the User
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Id: FormControl<number | null | undefined>,
 	}
@@ -2377,7 +2615,10 @@ export namespace MyNS {
 		/** Never Returned.  Required when creating a new user or updating a user.  When changing a user's password this field must contain the current password. */
 		Password?: string | null;
 
-		/** The user ID */
+		/**
+		 * The user ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserID?: number | null;
 
 		/** The username used for authentication */
@@ -2397,7 +2638,10 @@ export namespace MyNS {
 		/** Never Returned.  Required when creating a new user or updating a user.  When changing a user's password this field must contain the current password. */
 		Password: FormControl<string | null | undefined>,
 
-		/** The user ID */
+		/**
+		 * The user ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserID: FormControl<number | null | undefined>,
 
 		/** The username used for authentication */
@@ -2416,13 +2660,21 @@ export namespace MyNS {
 	}
 
 	export interface APIModelsUserEffectivePermission {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PermissionId?: number | null;
 		PermissionName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID?: number | null;
 	}
 	export interface APIModelsUserEffectivePermissionFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PermissionId: FormControl<number | null | undefined>,
 		PermissionName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		UserID: FormControl<number | null | undefined>,
 	}
 	export function CreateAPIModelsUserEffectivePermissionFormGroup() {
@@ -2612,16 +2864,25 @@ export namespace MyNS {
 	/** A DTO for an IActivityRun */
 	export interface BuildSystemSharedDTOActivityRun {
 
-		/** The identifier for the ActivityRun */
+		/**
+		 * The identifier for the ActivityRun
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityRunID?: number | null;
 
 		/** Read Only. The UTC date and time when the activity completed */
 		EndDate?: Date | null;
 
-		/** Read Only. The ID of the Job Activity that defines this activity run */
+		/**
+		 * Read Only. The ID of the Job Activity that defines this activity run
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobActivityID?: number | null;
 
-		/** Read Only. The ID of the JobRun under which this ActivityRun is executing */
+		/**
+		 * Read Only. The ID of the JobRun under which this ActivityRun is executing
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobRunID?: number | null;
 
 		/** The parameters used for this run of the activity.  Parameters cannot be added or removed, but output parameter values may be updated. */
@@ -2643,16 +2904,25 @@ export namespace MyNS {
 	/** A DTO for an IActivityRun */
 	export interface BuildSystemSharedDTOActivityRunFormProperties {
 
-		/** The identifier for the ActivityRun */
+		/**
+		 * The identifier for the ActivityRun
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityRunID: FormControl<number | null | undefined>,
 
 		/** Read Only. The UTC date and time when the activity completed */
 		EndDate: FormControl<Date | null | undefined>,
 
-		/** Read Only. The ID of the Job Activity that defines this activity run */
+		/**
+		 * Read Only. The ID of the Job Activity that defines this activity run
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobActivityID: FormControl<number | null | undefined>,
 
-		/** Read Only. The ID of the JobRun under which this ActivityRun is executing */
+		/**
+		 * Read Only. The ID of the JobRun under which this ActivityRun is executing
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobRunID: FormControl<number | null | undefined>,
 
 		/** Read Only. The UTC date and time when the activity started */
@@ -2710,13 +2980,19 @@ export namespace MyNS {
 	/** A DTO for an IActivityRunStatus */
 	export interface BuildSystemSharedDTOActivityRunStatus {
 
-		/** The activity step currently executing, indicated by numeric order */
+		/**
+		 * The activity step currently executing, indicated by numeric order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrentStep?: number | null;
 
 		/** The status of the ActivityRun */
 		Status?: BuildSystemSharedDTOActivityRunStatusStatus | null;
 
-		/** The percent progress from the currently executing step.  This value shall be null if progress is not available */
+		/**
+		 * The percent progress from the currently executing step.  This value shall be null if progress is not available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StepProgress?: number | null;
 
 		/** The status text from the currently executing step */
@@ -2726,13 +3002,19 @@ export namespace MyNS {
 	/** A DTO for an IActivityRunStatus */
 	export interface BuildSystemSharedDTOActivityRunStatusFormProperties {
 
-		/** The activity step currently executing, indicated by numeric order */
+		/**
+		 * The activity step currently executing, indicated by numeric order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrentStep: FormControl<number | null | undefined>,
 
 		/** The status of the ActivityRun */
 		Status: FormControl<BuildSystemSharedDTOActivityRunStatusStatus | null | undefined>,
 
-		/** The percent progress from the currently executing step.  This value shall be null if progress is not available */
+		/**
+		 * The percent progress from the currently executing step.  This value shall be null if progress is not available
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StepProgress: FormControl<number | null | undefined>,
 
 		/** The status text from the currently executing step */
@@ -2754,10 +3036,16 @@ export namespace MyNS {
 	/** A DTO for an IActivityStep */
 	export interface BuildSystemSharedDTOActivityStep {
 
-		/** The id of the activity this activity step belongs to */
+		/**
+		 * The id of the activity this activity step belongs to
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityID?: number | null;
 
-		/** The id of this activity step */
+		/**
+		 * The id of this activity step
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityStepID?: number | null;
 
 		/** The implementation id which is used to look up the step implementation */
@@ -2766,10 +3054,16 @@ export namespace MyNS {
 		/** The mapping of values from a source to be used for the step parameters */
 		ParameterMappings?: Array<BuildSystemSharedDTOParameterMapping>;
 
-		/** The order of this activity step relative to other activity steps */
+		/**
+		 * The order of this activity step relative to other activity steps
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RunOrder?: number | null;
 
-		/** The id of the step */
+		/**
+		 * The id of the step
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StepID?: number | null;
 
 		/** The name of the step */
@@ -2782,19 +3076,31 @@ export namespace MyNS {
 	/** A DTO for an IActivityStep */
 	export interface BuildSystemSharedDTOActivityStepFormProperties {
 
-		/** The id of the activity this activity step belongs to */
+		/**
+		 * The id of the activity this activity step belongs to
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityID: FormControl<number | null | undefined>,
 
-		/** The id of this activity step */
+		/**
+		 * The id of this activity step
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityStepID: FormControl<number | null | undefined>,
 
 		/** The implementation id which is used to look up the step implementation */
 		ImplementationID: FormControl<string | null | undefined>,
 
-		/** The order of this activity step relative to other activity steps */
+		/**
+		 * The order of this activity step relative to other activity steps
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RunOrder: FormControl<number | null | undefined>,
 
-		/** The id of the step */
+		/**
+		 * The id of the step
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StepID: FormControl<number | null | undefined>,
 
 		/** The name of the step */
@@ -2880,7 +3186,10 @@ export namespace MyNS {
 	/** A DTO for an IActivity */
 	export interface BuildSystemSharedDTOActivity {
 
-		/** The ID of the activity */
+		/**
+		 * The ID of the activity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityID?: number | null;
 		Deleted?: boolean | null;
 
@@ -2897,7 +3206,10 @@ export namespace MyNS {
 	/** A DTO for an IActivity */
 	export interface BuildSystemSharedDTOActivityFormProperties {
 
-		/** The ID of the activity */
+		/**
+		 * The ID of the activity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityID: FormControl<number | null | undefined>,
 		Deleted: FormControl<boolean | null | undefined>,
 
@@ -2977,12 +3289,16 @@ export namespace MyNS {
 	/** A DTO for an IAgent */
 	export interface BuildSystemSharedDTOAgent {
 
-		/** The id of the Agent */
+		/**
+		 * The id of the Agent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AgentID?: number | null;
 
 		/**
 		 * The 'Heartbeat Interval' used by the Build Agent.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		KeepAliveInterval: number;
 
@@ -3004,6 +3320,7 @@ export namespace MyNS {
 		/**
 		 * The UserID of the Agent
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		UserID: number;
 	}
@@ -3011,12 +3328,16 @@ export namespace MyNS {
 	/** A DTO for an IAgent */
 	export interface BuildSystemSharedDTOAgentFormProperties {
 
-		/** The id of the Agent */
+		/**
+		 * The id of the Agent
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AgentID: FormControl<number | null | undefined>,
 
 		/**
 		 * The 'Heartbeat Interval' used by the Build Agent.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		KeepAliveInterval: FormControl<number | null | undefined>,
 
@@ -3029,6 +3350,7 @@ export namespace MyNS {
 		/**
 		 * The UserID of the Agent
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		UserID: FormControl<number | null | undefined>,
 	}
@@ -3139,10 +3461,16 @@ export namespace MyNS {
 		/** The UTC date and time when the job completed */
 		EndDate?: Date | null;
 
-		/** The ID of the job that defines the run */
+		/**
+		 * The ID of the job that defines the run
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobID?: number | null;
 
-		/** The ID of this JobRun */
+		/**
+		 * The ID of this JobRun
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobRunID?: number | null;
 
 		/** The parameters used for this run of the job */
@@ -3161,10 +3489,16 @@ export namespace MyNS {
 		/** The UTC date and time when the job completed */
 		EndDate: FormControl<Date | null | undefined>,
 
-		/** The ID of the job that defines the run */
+		/**
+		 * The ID of the job that defines the run
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobID: FormControl<number | null | undefined>,
 
-		/** The ID of this JobRun */
+		/**
+		 * The ID of this JobRun
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobRunID: FormControl<number | null | undefined>,
 
 		/** The UTC date and time when the job started */
@@ -3217,7 +3551,10 @@ export namespace MyNS {
 		/** Indicates if the job has been deleted. */
 		Deleted?: boolean | null;
 
-		/** The ID of the job */
+		/**
+		 * The ID of the job
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobID?: number | null;
 
 		/** The name of the job */
@@ -3233,7 +3570,10 @@ export namespace MyNS {
 		/** Indicates if the job has been deleted. */
 		Deleted: FormControl<boolean | null | undefined>,
 
-		/** The ID of the job */
+		/**
+		 * The ID of the job
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobID: FormControl<number | null | undefined>,
 
 		/** The name of the job */
@@ -3252,35 +3592,59 @@ export namespace MyNS {
 	/** A DTO for an IJobActivity */
 	export interface BuildSystemSharedDTOJobActivity {
 
-		/** The ID of the activity to be run as part of the job */
+		/**
+		 * The ID of the activity to be run as part of the job
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityID?: number | null;
 
-		/** The ID of this job activity */
+		/**
+		 * The ID of this job activity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobActivityID?: number | null;
 
-		/** The ID of the job this job activity belongs to */
+		/**
+		 * The ID of the job this job activity belongs to
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobID?: number | null;
 
 		/** The mapping of values from a source to be used for the activity parameters */
 		ParameterMappings?: Array<BuildSystemSharedDTOParameterMapping>;
 
-		/** The order of this job activity relative to others in the job */
+		/**
+		 * The order of this job activity relative to others in the job
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RunOrder?: number | null;
 	}
 
 	/** A DTO for an IJobActivity */
 	export interface BuildSystemSharedDTOJobActivityFormProperties {
 
-		/** The ID of the activity to be run as part of the job */
+		/**
+		 * The ID of the activity to be run as part of the job
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityID: FormControl<number | null | undefined>,
 
-		/** The ID of this job activity */
+		/**
+		 * The ID of this job activity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobActivityID: FormControl<number | null | undefined>,
 
-		/** The ID of the job this job activity belongs to */
+		/**
+		 * The ID of the job this job activity belongs to
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobID: FormControl<number | null | undefined>,
 
-		/** The order of this job activity relative to others in the job */
+		/**
+		 * The order of this job activity relative to others in the job
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RunOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateBuildSystemSharedDTOJobActivityFormGroup() {
@@ -3347,7 +3711,10 @@ export namespace MyNS {
 		/** The parameters for this step */
 		Parameters?: Array<BuildSystemSharedDTOParameter>;
 
-		/** The ID of the step */
+		/**
+		 * The ID of the step
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StepID?: number | null;
 	}
 
@@ -3378,7 +3745,10 @@ export namespace MyNS {
 		 */
 		Name: FormControl<string | null | undefined>,
 
-		/** The ID of the step */
+		/**
+		 * The ID of the step
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StepID: FormControl<number | null | undefined>,
 	}
 	export function CreateBuildSystemSharedDTOStepFormGroup() {
@@ -3420,10 +3790,16 @@ export namespace MyNS {
 	/** An attribute of a definition of the content for submission */
 	export interface ContentSubmissionSharedBusinessEntitiesContentDefinitionAttribute {
 
-		/** The ID of the content definition to which this attribute belongs. */
+		/**
+		 * The ID of the content definition to which this attribute belongs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentDefinitionID?: number | null;
 
-		/** The ID of this attribute. */
+		/**
+		 * The ID of this attribute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID?: number | null;
 
 		/**
@@ -3439,10 +3815,16 @@ export namespace MyNS {
 	/** An attribute of a definition of the content for submission */
 	export interface ContentSubmissionSharedBusinessEntitiesContentDefinitionAttributeFormProperties {
 
-		/** The ID of the content definition to which this attribute belongs. */
+		/**
+		 * The ID of the content definition to which this attribute belongs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentDefinitionID: FormControl<number | null | undefined>,
 
-		/** The ID of this attribute. */
+		/**
+		 * The ID of this attribute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID: FormControl<number | null | undefined>,
 
 		/**
@@ -3494,7 +3876,10 @@ export namespace MyNS {
 		/** Attributes of this ContentDefinition */
 		Attributes?: Array<ContentSubmissionSharedBusinessEntitiesContentDefinitionAttribute>;
 
-		/** The ID of this content definition. */
+		/**
+		 * The ID of this content definition.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentDefinitionID?: number | null;
 
 		/**
@@ -3509,14 +3894,20 @@ export namespace MyNS {
 		/** Read Only. The ID of the package type used for this content. */
 		PackageTypeID?: string | null;
 
-		/** The type of content. */
+		/**
+		 * The type of content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TypeID?: number | null;
 	}
 
 	/** The definition of the content for submission */
 	export interface ContentSubmissionSharedBusinessEntitiesContentDefinitionFormProperties {
 
-		/** The ID of this content definition. */
+		/**
+		 * The ID of this content definition.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentDefinitionID: FormControl<number | null | undefined>,
 
 		/**
@@ -3531,7 +3922,10 @@ export namespace MyNS {
 		/** Read Only. The ID of the package type used for this content. */
 		PackageTypeID: FormControl<string | null | undefined>,
 
-		/** The type of content. */
+		/**
+		 * The type of content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TypeID: FormControl<number | null | undefined>,
 	}
 	export function CreateContentSubmissionSharedBusinessEntitiesContentDefinitionFormGroup() {
@@ -3572,19 +3966,31 @@ export namespace MyNS {
 	/** ContentReleaseVersion class */
 	export interface ContentSubmissionSharedBusinessEntitiesContentReleaseVersion {
 
-		/** ContentDefinitionID */
+		/**
+		 * ContentDefinitionID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentDefinitionID?: number | null;
 
-		/** ContentReleaseID */
+		/**
+		 * ContentReleaseID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentReleaseID?: number | null;
 
 		/** deleted flag */
 		Deleted?: boolean | null;
 
-		/** PublisherUser ID */
+		/**
+		 * PublisherUser ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PublisherUserID?: number | null;
 
-		/** rele4ase Id */
+		/**
+		 * rele4ase Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ReleaseID?: number | null;
 
 		/** The URL at which test reports for this content can be found */
@@ -3593,26 +3999,41 @@ export namespace MyNS {
 		/** Updated Date */
 		UpdatedDate?: Date | null;
 
-		/** version */
+		/**
+		 * version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Version?: number | null;
 	}
 
 	/** ContentReleaseVersion class */
 	export interface ContentSubmissionSharedBusinessEntitiesContentReleaseVersionFormProperties {
 
-		/** ContentDefinitionID */
+		/**
+		 * ContentDefinitionID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentDefinitionID: FormControl<number | null | undefined>,
 
-		/** ContentReleaseID */
+		/**
+		 * ContentReleaseID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentReleaseID: FormControl<number | null | undefined>,
 
 		/** deleted flag */
 		Deleted: FormControl<boolean | null | undefined>,
 
-		/** PublisherUser ID */
+		/**
+		 * PublisherUser ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PublisherUserID: FormControl<number | null | undefined>,
 
-		/** rele4ase Id */
+		/**
+		 * rele4ase Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ReleaseID: FormControl<number | null | undefined>,
 
 		/** The URL at which test reports for this content can be found */
@@ -3621,7 +4042,10 @@ export namespace MyNS {
 		/** Updated Date */
 		UpdatedDate: FormControl<Date | null | undefined>,
 
-		/** version */
+		/**
+		 * version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Version: FormControl<number | null | undefined>,
 	}
 	export function CreateContentSubmissionSharedBusinessEntitiesContentReleaseVersionFormGroup() {
@@ -3665,10 +4089,16 @@ export namespace MyNS {
 	/** The definition of the content for submission */
 	export interface ContentSubmissionSharedBusinessEntitiesContentSubmissionAttribute {
 
-		/** The ID of the content submission to which this attribute belongs. */
+		/**
+		 * The ID of the content submission to which this attribute belongs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentSubmissionID?: number | null;
 
-		/** The ID of this attribute. */
+		/**
+		 * The ID of this attribute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID?: number | null;
 
 		/**
@@ -3684,10 +4114,16 @@ export namespace MyNS {
 	/** The definition of the content for submission */
 	export interface ContentSubmissionSharedBusinessEntitiesContentSubmissionAttributeFormProperties {
 
-		/** The ID of the content submission to which this attribute belongs. */
+		/**
+		 * The ID of the content submission to which this attribute belongs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentSubmissionID: FormControl<number | null | undefined>,
 
-		/** The ID of this attribute. */
+		/**
+		 * The ID of this attribute.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID: FormControl<number | null | undefined>,
 
 		/**
@@ -3739,19 +4175,31 @@ export namespace MyNS {
 		/** Attributes of this ContentSubmission */
 		Attributes?: Array<ContentSubmissionSharedBusinessEntitiesContentSubmissionAttribute>;
 
-		/** ReadOnly. The ID of the Azure DevOps Build which will build the content package. */
+		/**
+		 * ReadOnly. The ID of the Azure DevOps Build which will build the content package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BuildID?: number | null;
 
-		/** The ID of the Content Definition. */
+		/**
+		 * The ID of the Content Definition.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentDefinitionID?: number | null;
 
-		/** The ID of this Content Submission. */
+		/**
+		 * The ID of this Content Submission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentSubmissionID?: number | null;
 
 		/** The definition of the content for submission */
 		Definition?: ContentSubmissionSharedBusinessEntitiesContentDefinition;
 
-		/** ReadOnly. The ID of the JobRun which will build the content package. */
+		/**
+		 * ReadOnly. The ID of the JobRun which will build the content package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobRunID?: number | null;
 
 		/** The ID of package generated by this content submission. */
@@ -3763,13 +4211,19 @@ export namespace MyNS {
 		/** The SVN repository used as the source of this content submission */
 		Repository?: string | null;
 
-		/** The SVN revision used as the source of this content submission. */
+		/**
+		 * The SVN revision used as the source of this content submission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision?: number | null;
 
 		/** Read Only. The UTC date and time the content submission was made. */
 		SubmissionDate?: Date | null;
 
-		/** Read Only. The ID of the user who submitted the content */
+		/**
+		 * Read Only. The ID of the user who submitted the content
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserID?: number | null;
 
 		/**
@@ -3777,6 +4231,7 @@ export namespace MyNS {
 		 * If not provided, version shall be 1 if it is the first content submission for the
 		 * ContentDefinitionID otherwise it shall be the highest content submission version for the
 		 * specified ContentDefinitionID incremented by 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Version?: number | null;
 	}
@@ -3784,16 +4239,28 @@ export namespace MyNS {
 	/** A content submission */
 	export interface ContentSubmissionSharedBusinessEntitiesContentSubmissionFormProperties {
 
-		/** ReadOnly. The ID of the Azure DevOps Build which will build the content package. */
+		/**
+		 * ReadOnly. The ID of the Azure DevOps Build which will build the content package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BuildID: FormControl<number | null | undefined>,
 
-		/** The ID of the Content Definition. */
+		/**
+		 * The ID of the Content Definition.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentDefinitionID: FormControl<number | null | undefined>,
 
-		/** The ID of this Content Submission. */
+		/**
+		 * The ID of this Content Submission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentSubmissionID: FormControl<number | null | undefined>,
 
-		/** ReadOnly. The ID of the JobRun which will build the content package. */
+		/**
+		 * ReadOnly. The ID of the JobRun which will build the content package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobRunID: FormControl<number | null | undefined>,
 
 		/** The ID of package generated by this content submission. */
@@ -3805,13 +4272,19 @@ export namespace MyNS {
 		/** The SVN repository used as the source of this content submission */
 		Repository: FormControl<string | null | undefined>,
 
-		/** The SVN revision used as the source of this content submission. */
+		/**
+		 * The SVN revision used as the source of this content submission.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Revision: FormControl<number | null | undefined>,
 
 		/** Read Only. The UTC date and time the content submission was made. */
 		SubmissionDate: FormControl<Date | null | undefined>,
 
-		/** Read Only. The ID of the user who submitted the content */
+		/**
+		 * Read Only. The ID of the user who submitted the content
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserID: FormControl<number | null | undefined>,
 
 		/**
@@ -3819,6 +4292,7 @@ export namespace MyNS {
 		 * If not provided, version shall be 1 if it is the first content submission for the
 		 * ContentDefinitionID otherwise it shall be the highest content submission version for the
 		 * specified ContentDefinitionID incremented by 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Version: FormControl<number | null | undefined>,
 	}
@@ -3875,7 +4349,10 @@ export namespace MyNS {
 		/** Release Date */
 		ReleaseDate?: Date | null;
 
-		/** Release ID */
+		/**
+		 * Release ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ReleaseID?: number | null;
 
 		/** Release Number */
@@ -3894,7 +4371,10 @@ export namespace MyNS {
 		/** Release Date */
 		ReleaseDate: FormControl<Date | null | undefined>,
 
-		/** Release ID */
+		/**
+		 * Release ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ReleaseID: FormControl<number | null | undefined>,
 
 		/** Release Number */
@@ -3941,26 +4421,44 @@ export namespace MyNS {
 	/** Relationship indicating that a User can manage submissions for the Content */
 	export interface ContentSubmissionSharedBusinessEntitiesUserContentDefinition {
 
-		/** The ID of the ContentDefinition. */
+		/**
+		 * The ID of the ContentDefinition.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentDefinitionID?: number | null;
 
-		/** Read Only. The ID of the User to ContentDefinition relationship. */
+		/**
+		 * Read Only. The ID of the User to ContentDefinition relationship.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserContentDefinitionID?: number | null;
 
-		/** The ID of the user. */
+		/**
+		 * The ID of the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserID?: number | null;
 	}
 
 	/** Relationship indicating that a User can manage submissions for the Content */
 	export interface ContentSubmissionSharedBusinessEntitiesUserContentDefinitionFormProperties {
 
-		/** The ID of the ContentDefinition. */
+		/**
+		 * The ID of the ContentDefinition.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ContentDefinitionID: FormControl<number | null | undefined>,
 
-		/** Read Only. The ID of the User to ContentDefinition relationship. */
+		/**
+		 * Read Only. The ID of the User to ContentDefinition relationship.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserContentDefinitionID: FormControl<number | null | undefined>,
 
-		/** The ID of the user. */
+		/**
+		 * The ID of the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UserID: FormControl<number | null | undefined>,
 	}
 	export function CreateContentSubmissionSharedBusinessEntitiesUserContentDefinitionFormGroup() {
@@ -4120,10 +4618,14 @@ export namespace MyNS {
 	}
 
 	export interface DealerDBModelsDealersPerCountry {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count?: number | null;
 		Country?: string | null;
 	}
 	export interface DealerDBModelsDealersPerCountryFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Count: FormControl<number | null | undefined>,
 		Country: FormControl<string | null | undefined>,
 	}
@@ -4281,7 +4783,10 @@ export namespace MyNS {
 		/** The expiration date of the voucher. Required for Temporary Vouchers. */
 		ExpirationDate?: Date | null;
 
-		/** The id of the voucher history item */
+		/**
+		 * The id of the voucher history item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID?: number | null;
 
 		/** Required for Internal Vouchers */
@@ -4326,7 +4831,10 @@ export namespace MyNS {
 		/** The expiration date of the voucher. Required for Temporary Vouchers. */
 		ExpirationDate: FormControl<Date | null | undefined>,
 
-		/** The id of the voucher history item */
+		/**
+		 * The id of the voucher history item
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID: FormControl<number | null | undefined>,
 
 		/** Required for Internal Vouchers */
@@ -4576,7 +5084,10 @@ export namespace MyNS {
 		/** Optional.  The icon to use for the PackageType, in base 64 */
 		Icon?: string | null;
 
-		/** The number of minutes to wait before requesting another inventory.  The default value is 1440 (24 hours). */
+		/**
+		 * The number of minutes to wait before requesting another inventory.  The default value is 1440 (24 hours).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InventoryFrequency?: number | null;
 
 		/** The inventory package used to determine what version of this package type is installed. */
@@ -4588,7 +5099,10 @@ export namespace MyNS {
 		/** Optional. The StringID used to localize the name of the PackageType */
 		LocalizedName?: string | null;
 
-		/** The maximum number of "chained" delta packages to use when updating the client */
+		/**
+		 * The maximum number of "chained" delta packages to use when updating the client
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxDeltaPackages?: number | null;
 
 		/** Read Only. The package type id. */
@@ -4611,7 +5125,10 @@ export namespace MyNS {
 		/** Optional.  The icon to use for the PackageType, in base 64 */
 		Icon: FormControl<string | null | undefined>,
 
-		/** The number of minutes to wait before requesting another inventory.  The default value is 1440 (24 hours). */
+		/**
+		 * The number of minutes to wait before requesting another inventory.  The default value is 1440 (24 hours).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InventoryFrequency: FormControl<number | null | undefined>,
 
 		/** The inventory package used to determine what version of this package type is installed. */
@@ -4623,7 +5140,10 @@ export namespace MyNS {
 		/** Optional. The StringID used to localize the name of the PackageType */
 		LocalizedName: FormControl<string | null | undefined>,
 
-		/** The maximum number of "chained" delta packages to use when updating the client */
+		/**
+		 * The maximum number of "chained" delta packages to use when updating the client
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxDeltaPackages: FormControl<number | null | undefined>,
 
 		/** Read Only. The package type id. */
@@ -4656,7 +5176,10 @@ export namespace MyNS {
 		Description: string;
 		ID?: string | null;
 
-		/** The time in minutes between inventory checks. Default value is 1440 minutes (one day). */
+		/**
+		 * The time in minutes between inventory checks. Default value is 1440 minutes (one day).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InventoryFrequency?: number | null;
 
 		/** The Package ID of the package used for inventory */
@@ -4709,7 +5232,10 @@ export namespace MyNS {
 		Description: FormControl<string | null | undefined>,
 		ID: FormControl<string | null | undefined>,
 
-		/** The time in minutes between inventory checks. Default value is 1440 minutes (one day). */
+		/**
+		 * The time in minutes between inventory checks. Default value is 1440 minutes (one day).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		InventoryFrequency: FormControl<number | null | undefined>,
 
 		/** The Package ID of the package used for inventory */
@@ -4805,6 +5331,7 @@ export namespace MyNS {
 		/**
 		 * The bundle number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		BundleNumber: number;
 
@@ -4831,6 +5358,7 @@ export namespace MyNS {
 		/**
 		 * The bundle number
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		BundleNumber: FormControl<number | null | undefined>,
 
@@ -4885,7 +5413,10 @@ export namespace MyNS {
 		/** The time of the client's last check-in */
 		LastCheckin?: Date | null;
 
-		/** The number of minutes that have passed since the last check-in */
+		/**
+		 * The number of minutes that have passed since the last check-in
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinutesElapsed?: number | null;
 
 		/** The result for the client included in the UpdateGroup's report */
@@ -4908,7 +5439,10 @@ export namespace MyNS {
 		/** The time of the client's last check-in */
 		LastCheckin: FormControl<Date | null | undefined>,
 
-		/** The number of minutes that have passed since the last check-in */
+		/**
+		 * The number of minutes that have passed since the last check-in
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MinutesElapsed: FormControl<number | null | undefined>,
 
 		/** The result for the client included in the UpdateGroup's report */
@@ -4941,12 +5475,14 @@ export namespace MyNS {
 		/**
 		 * The number of entities this paged response is limited to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Limit: number;
 
 		/**
 		 * The number of entities prior to this page of items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Offset: number;
 
@@ -4971,6 +5507,7 @@ export namespace MyNS {
 		/**
 		 * The total number of entities matching the request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalCount: number;
 	}
@@ -4979,12 +5516,14 @@ export namespace MyNS {
 		/**
 		 * The number of entities this paged response is limited to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Limit: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of entities prior to this page of items.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Offset: FormControl<number | null | undefined>,
 
@@ -5009,6 +5548,7 @@ export namespace MyNS {
 		/**
 		 * The total number of entities matching the request.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TotalCount: FormControl<number | null | undefined>,
 	}
@@ -5109,14 +5649,23 @@ export namespace MyNS {
 		/** The average time required to complete the install */
 		AverageInstallTime?: string | null;
 
-		/** The number of clients that have completed the download */
-		Downloaded?: number | null;
+		/**
+		 * The number of clients that have completed the download
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Downloaded?: string | null;
 
-		/** The result of the install */
+		/**
+		 * The result of the install
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Error?: number | null;
 
-		/** The number of clients that have completed the install */
-		Installed?: number | null;
+		/**
+		 * The number of clients that have completed the install
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Installed?: string | null;
 
 		/** The name of the package */
 		Package?: string | null;
@@ -5135,14 +5684,23 @@ export namespace MyNS {
 		/** The average time required to complete the install */
 		AverageInstallTime: FormControl<string | null | undefined>,
 
-		/** The number of clients that have completed the download */
-		Downloaded: FormControl<number | null | undefined>,
+		/**
+		 * The number of clients that have completed the download
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Downloaded: FormControl<string | null | undefined>,
 
-		/** The result of the install */
+		/**
+		 * The result of the install
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Error: FormControl<number | null | undefined>,
 
-		/** The number of clients that have completed the install */
-		Installed: FormControl<number | null | undefined>,
+		/**
+		 * The number of clients that have completed the install
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Installed: FormControl<string | null | undefined>,
 
 		/** The name of the package */
 		Package: FormControl<string | null | undefined>,
@@ -5154,9 +5712,9 @@ export namespace MyNS {
 		return new FormGroup<UpdateSystemModelsPackageStatusSummaryFormProperties>({
 			AverageDownloadTime: new FormControl<string | null | undefined>(undefined),
 			AverageInstallTime: new FormControl<string | null | undefined>(undefined),
-			Downloaded: new FormControl<number | null | undefined>(undefined),
+			Downloaded: new FormControl<string | null | undefined>(undefined),
 			Error: new FormControl<number | null | undefined>(undefined),
-			Installed: new FormControl<number | null | undefined>(undefined),
+			Installed: new FormControl<string | null | undefined>(undefined),
 			Package: new FormControl<string | null | undefined>(undefined),
 			PackageID: new FormControl<string | null | undefined>(undefined),
 		});
@@ -5290,6 +5848,7 @@ export namespace MyNS {
 		/**
 		 * The package version of the package to include
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		PackageVersion: number;
 
@@ -5321,6 +5880,7 @@ export namespace MyNS {
 		/**
 		 * The package version of the package to include
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		PackageVersion: FormControl<number | null | undefined>,
 
@@ -5446,8 +6006,9 @@ export namespace MyNS {
 		/**
 		 * The size of the file at the specified URL.  If a size is not supplied at creation time, the size will be determined by the response from the URL.
 		 * If the size provided does not match the size in the response from the URL an error will be returned.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Size?: number | null;
+		Size?: string | null;
 
 		/** The command line arguments for the package.  Default value is an empty string. */
 		Switches?: string | null;
@@ -5520,8 +6081,9 @@ export namespace MyNS {
 		/**
 		 * The size of the file at the specified URL.  If a size is not supplied at creation time, the size will be determined by the response from the URL.
 		 * If the size provided does not match the size in the response from the URL an error will be returned.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		Size: FormControl<number | null | undefined>,
+		Size: FormControl<string | null | undefined>,
 
 		/** The command line arguments for the package.  Default value is an empty string. */
 		Switches: FormControl<string | null | undefined>,
@@ -5553,7 +6115,7 @@ export namespace MyNS {
 			ReleaseDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			Released: new FormControl<boolean | null | undefined>(undefined),
 			RemoveOnSuccess: new FormControl<boolean | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Switches: new FormControl<string | null | undefined>(undefined),
 			Url: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			Version: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(1), Validators.max(2147483647)]),
@@ -5616,7 +6178,10 @@ export namespace MyNS {
 		/** Read Only. From the package specified by package ID. */
 		PackageTypeID?: string | null;
 
-		/** Read Only. From the package specified by package ID. */
+		/**
+		 * Read Only. From the package specified by package ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PreviousVersion?: number | null;
 
 		/** Read Only. The ID of the priority package. */
@@ -5634,8 +6199,11 @@ export namespace MyNS {
 		/** Read Only. From the package specified by package ID. */
 		RemoveOnSuccess?: boolean | null;
 
-		/** Read Only. From the package specified by package ID. */
-		Size?: number | null;
+		/**
+		 * Read Only. From the package specified by package ID.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size?: string | null;
 
 		/** The command line arguments for the priority package.  Default value is an empty string. */
 		Switches?: string | null;
@@ -5646,7 +6214,10 @@ export namespace MyNS {
 		/** Read Only. From the package specified by package ID. */
 		Url?: string | null;
 
-		/** Read Only. From the package specified by package ID. */
+		/**
+		 * Read Only. From the package specified by package ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Version?: number | null;
 	}
 	export interface UpdateSystemModelsPriorityPackageFormProperties {
@@ -5681,7 +6252,10 @@ export namespace MyNS {
 		/** Read Only. From the package specified by package ID. */
 		PackageTypeID: FormControl<string | null | undefined>,
 
-		/** Read Only. From the package specified by package ID. */
+		/**
+		 * Read Only. From the package specified by package ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		PreviousVersion: FormControl<number | null | undefined>,
 
 		/** Read Only. The ID of the priority package. */
@@ -5699,8 +6273,11 @@ export namespace MyNS {
 		/** Read Only. From the package specified by package ID. */
 		RemoveOnSuccess: FormControl<boolean | null | undefined>,
 
-		/** Read Only. From the package specified by package ID. */
-		Size: FormControl<number | null | undefined>,
+		/**
+		 * Read Only. From the package specified by package ID.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		Size: FormControl<string | null | undefined>,
 
 		/** The command line arguments for the priority package.  Default value is an empty string. */
 		Switches: FormControl<string | null | undefined>,
@@ -5711,7 +6288,10 @@ export namespace MyNS {
 		/** Read Only. From the package specified by package ID. */
 		Url: FormControl<string | null | undefined>,
 
-		/** Read Only. From the package specified by package ID. */
+		/**
+		 * Read Only. From the package specified by package ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Version: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateSystemModelsPriorityPackageFormGroup() {
@@ -5728,7 +6308,7 @@ export namespace MyNS {
 			ReleaseDate: new FormControl<Date | null | undefined>(undefined),
 			Released: new FormControl<boolean | null | undefined>(undefined),
 			RemoveOnSuccess: new FormControl<boolean | null | undefined>(undefined),
-			Size: new FormControl<number | null | undefined>(undefined),
+			Size: new FormControl<string | null | undefined>(undefined),
 			Switches: new FormControl<string | null | undefined>(undefined),
 			TimeStamp: new FormControl<Date | null | undefined>(undefined),
 			Url: new FormControl<string | null | undefined>(undefined),
@@ -5866,7 +6446,10 @@ export namespace MyNS {
 		 */
 		UpdateGroupID: string;
 
-		/** The Update Group Subscription ID.  This ID will be automatically assigned when creating an Update Group Subscription. */
+		/**
+		 * The Update Group Subscription ID.  This ID will be automatically assigned when creating an Update Group Subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UpdateGroupSubscriptionID?: number | null;
 	}
 	export interface UpdateSystemModelsUpdateGroupSubscriptionFormProperties {
@@ -5895,7 +6478,10 @@ export namespace MyNS {
 		 */
 		UpdateGroupID: FormControl<string | null | undefined>,
 
-		/** The Update Group Subscription ID.  This ID will be automatically assigned when creating an Update Group Subscription. */
+		/**
+		 * The Update Group Subscription ID.  This ID will be automatically assigned when creating an Update Group Subscription.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		UpdateGroupSubscriptionID: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateSystemModelsUpdateGroupSubscriptionFormGroup() {
@@ -5952,16 +6538,25 @@ export namespace MyNS {
 	/** IActivityRun */
 	export interface BuildSystemSharedInterfacesIActivityRun {
 
-		/** ActivityRunID */
+		/**
+		 * ActivityRunID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityRunID?: number | null;
 
 		/** EndDate */
 		EndDate?: Date | null;
 
-		/** JobActivityID */
+		/**
+		 * JobActivityID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobActivityID?: number | null;
 
-		/** JobRunID */
+		/**
+		 * JobRunID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobRunID?: number | null;
 
 		/** Parameters */
@@ -5983,16 +6578,25 @@ export namespace MyNS {
 	/** IActivityRun */
 	export interface BuildSystemSharedInterfacesIActivityRunFormProperties {
 
-		/** ActivityRunID */
+		/**
+		 * ActivityRunID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityRunID: FormControl<number | null | undefined>,
 
 		/** EndDate */
 		EndDate: FormControl<Date | null | undefined>,
 
-		/** JobActivityID */
+		/**
+		 * JobActivityID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobActivityID: FormControl<number | null | undefined>,
 
-		/** JobRunID */
+		/**
+		 * JobRunID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobRunID: FormControl<number | null | undefined>,
 
 		/** StartDate */
@@ -6057,13 +6661,19 @@ export namespace MyNS {
 	 */
 	export interface BuildSystemSharedInterfacesIActivityRunStatus {
 
-		/** Gets or sets the number of the step the activity is currently running. */
+		/**
+		 * Gets or sets the number of the step the activity is currently running.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrentStep?: number | null;
 
 		/** Gets or sets the status of the activity run. */
 		Status?: BuildSystemSharedDTOActivityRunStatusStatus | null;
 
-		/** Gets or sets a measurement of the current progress of the current step. */
+		/**
+		 * Gets or sets a measurement of the current progress of the current step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StepProgress?: number | null;
 
 		/**
@@ -6079,13 +6689,19 @@ export namespace MyNS {
 	 */
 	export interface BuildSystemSharedInterfacesIActivityRunStatusFormProperties {
 
-		/** Gets or sets the number of the step the activity is currently running. */
+		/**
+		 * Gets or sets the number of the step the activity is currently running.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		CurrentStep: FormControl<number | null | undefined>,
 
 		/** Gets or sets the status of the activity run. */
 		Status: FormControl<BuildSystemSharedDTOActivityRunStatusStatus | null | undefined>,
 
-		/** Gets or sets a measurement of the current progress of the current step. */
+		/**
+		 * Gets or sets a measurement of the current progress of the current step.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StepProgress: FormControl<number | null | undefined>,
 
 		/**
@@ -6108,10 +6724,16 @@ export namespace MyNS {
 	/** IActivityStep */
 	export interface BuildSystemSharedInterfacesIActivityStep {
 
-		/** ActivityID */
+		/**
+		 * ActivityID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityID?: number | null;
 
-		/** ActivityStepID */
+		/**
+		 * ActivityStepID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityStepID?: number | null;
 
 		/** Implementation ID */
@@ -6120,10 +6742,16 @@ export namespace MyNS {
 		/** ParameterMappings */
 		ParameterMappings?: Array<BuildSystemSharedInterfacesIParameterMapping>;
 
-		/** run order */
+		/**
+		 * run order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RunOrder?: number | null;
 
-		/** step id */
+		/**
+		 * step id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StepID?: number | null;
 
 		/** steo name */
@@ -6136,19 +6764,31 @@ export namespace MyNS {
 	/** IActivityStep */
 	export interface BuildSystemSharedInterfacesIActivityStepFormProperties {
 
-		/** ActivityID */
+		/**
+		 * ActivityID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityID: FormControl<number | null | undefined>,
 
-		/** ActivityStepID */
+		/**
+		 * ActivityStepID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ActivityStepID: FormControl<number | null | undefined>,
 
 		/** Implementation ID */
 		ImplementationID: FormControl<string | null | undefined>,
 
-		/** run order */
+		/**
+		 * run order
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		RunOrder: FormControl<number | null | undefined>,
 
-		/** step id */
+		/**
+		 * step id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StepID: FormControl<number | null | undefined>,
 
 		/** steo name */
@@ -6215,10 +6855,16 @@ export namespace MyNS {
 		/** end date */
 		EndDate?: Date | null;
 
-		/** job id */
+		/**
+		 * job id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobID?: number | null;
 
-		/** JobRunID */
+		/**
+		 * JobRunID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobRunID?: number | null;
 
 		/** Parameters */
@@ -6237,10 +6883,16 @@ export namespace MyNS {
 		/** end date */
 		EndDate: FormControl<Date | null | undefined>,
 
-		/** job id */
+		/**
+		 * job id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobID: FormControl<number | null | undefined>,
 
-		/** JobRunID */
+		/**
+		 * JobRunID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobRunID: FormControl<number | null | undefined>,
 
 		/** Start Date */
@@ -6267,7 +6919,10 @@ export namespace MyNS {
 		/** A template for the Attribute from which to read the version of the package installed. The following placeholders are valid: {ContentDefinitionType}, {ContentDefinitionID}, {ContentDefinitionName} */
 		AttributeTemplate?: string | null;
 
-		/** The ID of the Azure DevOps Build Definition for which to create a Build. Either 'BuildDefinitionID' or 'JobID' is required. */
+		/**
+		 * The ID of the Azure DevOps Build Definition for which to create a Build. Either 'BuildDefinitionID' or 'JobID' is required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BuildDefinitionID?: number | null;
 
 		/** A template for the category from which to read the version of the package installed. The following placeholders are valid: {ContentDefinitionType}, {ContentDefinitionID}, {ContentDefinitionName} */
@@ -6282,13 +6937,19 @@ export namespace MyNS {
 		/** Indicates whether this submission type is available to be used */
 		Enabled?: boolean | null;
 
-		/** The ID of the Content Submission Type */
+		/**
+		 * The ID of the Content Submission Type
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID?: number | null;
 
 		/** The ID of the Inventory Package from which to read the version of the package installed. */
 		InventoryPackageID?: string | null;
 
-		/** The ID of the JobDefinition for which to initiate a Job. A value of '0' will cause a submission to fail. Either 'BuildDefinitionID' or 'JobID' is required. */
+		/**
+		 * The ID of the JobDefinition for which to initiate a Job. A value of '0' will cause a submission to fail. Either 'BuildDefinitionID' or 'JobID' is required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobID?: number | null;
 
 		/**
@@ -6307,7 +6968,10 @@ export namespace MyNS {
 		/** A template for the Attribute from which to read the version of the package installed. The following placeholders are valid: {ContentDefinitionType}, {ContentDefinitionID}, {ContentDefinitionName} */
 		AttributeTemplate: FormControl<string | null | undefined>,
 
-		/** The ID of the Azure DevOps Build Definition for which to create a Build. Either 'BuildDefinitionID' or 'JobID' is required. */
+		/**
+		 * The ID of the Azure DevOps Build Definition for which to create a Build. Either 'BuildDefinitionID' or 'JobID' is required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		BuildDefinitionID: FormControl<number | null | undefined>,
 
 		/** A template for the category from which to read the version of the package installed. The following placeholders are valid: {ContentDefinitionType}, {ContentDefinitionID}, {ContentDefinitionName} */
@@ -6322,13 +6986,19 @@ export namespace MyNS {
 		/** Indicates whether this submission type is available to be used */
 		Enabled: FormControl<boolean | null | undefined>,
 
-		/** The ID of the Content Submission Type */
+		/**
+		 * The ID of the Content Submission Type
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ID: FormControl<number | null | undefined>,
 
 		/** The ID of the Inventory Package from which to read the version of the package installed. */
 		InventoryPackageID: FormControl<string | null | undefined>,
 
-		/** The ID of the JobDefinition for which to initiate a Job. A value of '0' will cause a submission to fail. Either 'BuildDefinitionID' or 'JobID' is required. */
+		/**
+		 * The ID of the JobDefinition for which to initiate a Job. A value of '0' will cause a submission to fail. Either 'BuildDefinitionID' or 'JobID' is required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		JobID: FormControl<number | null | undefined>,
 
 		/**
@@ -6569,14 +7239,20 @@ export namespace MyNS {
 		/** The IDs of languages for which translaions in this translation set have been requested */
 		LanguageIDs?: Array<number>;
 
-		/** The count of unique string definitions contained in this translation set */
+		/**
+		 * The count of unique string definitions contained in this translation set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StringCount?: number | null;
 	}
 
 	/** Statistics for a translation set */
 	export interface GlobalResourcesSharedModelsTranslationSetStatisticsFormProperties {
 
-		/** The count of unique string definitions contained in this translation set */
+		/**
+		 * The count of unique string definitions contained in this translation set
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		StringCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGlobalResourcesSharedModelsTranslationSetStatisticsFormGroup() {
@@ -6742,13 +7418,17 @@ export namespace MyNS {
 		/**
 		 * Sum of clients represented
 		 * Filtered by updateType and lastCheckedInDate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		FilteredClientCount?: number | null;
 
 		/** Generic collection that is of type PackageErrorsRecord */
 		PackageErrors?: Array<UpdateSystemModelsUpdateMetricsDataPackageErrorsRecord>;
 
-		/** Total clients we have ever serviced */
+		/**
+		 * Total clients we have ever serviced
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalClientCount?: number | null;
 	}
 
@@ -6767,10 +7447,14 @@ export namespace MyNS {
 		/**
 		 * Sum of clients represented
 		 * Filtered by updateType and lastCheckedInDate
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		FilteredClientCount: FormControl<number | null | undefined>,
 
-		/** Total clients we have ever serviced */
+		/**
+		 * Total clients we have ever serviced
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TotalClientCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateSystemModelsUpdateMetricsDataFormGroup() {
@@ -6785,12 +7469,20 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSystemModelsUpdateMetricsDataActiveVersionByClientRecord {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BundleNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientCount?: number | null;
 		ReleaseName?: string | null;
 	}
 	export interface UpdateSystemModelsUpdateMetricsDataActiveVersionByClientRecordFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BundleNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientCount: FormControl<number | null | undefined>,
 		ReleaseName: FormControl<string | null | undefined>,
 	}
@@ -6804,10 +7496,14 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSystemModelsUpdateMetricsDataCurrentStateByClientRecord {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientCount?: number | null;
 		State?: string | null;
 	}
 	export interface UpdateSystemModelsUpdateMetricsDataCurrentStateByClientRecordFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientCount: FormControl<number | null | undefined>,
 		State: FormControl<string | null | undefined>,
 	}
@@ -6820,12 +7516,16 @@ export namespace MyNS {
 	}
 
 	export interface UpdateSystemModelsUpdateMetricsDataPackageErrorsRecord {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientCount?: number | null;
 		ErrorCode?: string | null;
 		LongDescription?: string | null;
 		ShortDescription?: string | null;
 	}
 	export interface UpdateSystemModelsUpdateMetricsDataPackageErrorsRecordFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ClientCount: FormControl<number | null | undefined>,
 		ErrorCode: FormControl<string | null | undefined>,
 		LongDescription: FormControl<string | null | undefined>,
@@ -6940,6 +7640,7 @@ export namespace MyNS {
 		 * Manage API tokens.
 		 * No Documentation Found.
 		 * Put api/v2/AuthenticatedUsers/{UserID}/Tokens
+		 * @param {number} UserID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {APIModelsTokenOptions} requestBody The options for token management.
 		 * @return {void} 
 		 */
@@ -6995,8 +7696,11 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/AuthorizationCategories
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} userID Optional. Filter by categories visible to the provided user with the provided userID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} definitionID Optional. Filter by categories containing a definition with the provided ID.
 		 * @return {APIIPagedResponse_AuthorizationCodesSharedModelsCategory_} OK
 		 */
@@ -7020,7 +7724,9 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/AuthorizationCategories/Users
 		 * @param {number} limit Optional. Defaults to 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. Defaults to 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userIDs Optional. Includes only users with IDs on the provided comma-separated list.
 		 * @param {string} categoryIDs Optional. Includes only users with categories with IDs on the provided comma-separated list.
 		 * @param {boolean} includeCategories If true, include full Authorization Category detail. Defaults to false.
@@ -7058,6 +7764,7 @@ export namespace MyNS {
 		 * Deletes a category a user could see.
 		 * No Documentation Found.
 		 * Delete api/v2/AuthorizationCategories/{id}/Users/{userID}
+		 * @param {number} userID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		AuthorizationCategories_RemoveUser(id: string, userID: number): Observable<HttpResponse<string>> {
@@ -7068,6 +7775,7 @@ export namespace MyNS {
 		 * Add a category that a user can see.
 		 * No Documentation Found.
 		 * Post api/v2/AuthorizationCategories/{id}/Users/{userID}
+		 * @param {number} userID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		AuthorizationCategories_AddUser(id: string, userID: number): Observable<HttpResponse<string>> {
@@ -7079,10 +7787,14 @@ export namespace MyNS {
 		 * Additional searches: validationFields[Name]=true and dataFields[Name]=true. These can be used to search for authorization code definitions that have the specified data or validation fields.
 		 * Get api/v2/AuthorizationCodeDefinitions
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Optional. If specified, filters definitions by name. Starting and ending wildcards (*) supported.
 		 * @param {number} createdByUserID Optional. If specified, filters definitions to those created by the given User ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deletedByUserID Optional. If specified, filters definitions to those deleted by the given User ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeDeleted Optional. Whether to include deleted definitions. 'False' by default.
 		 * @param {string} categoryID Optional. If specified, filters definitions with the designated categoryID.
 		 * @return {APIIPagedResponse_AuthorizationCodesSharedModelsAuthorizationCodeDefinition_} OK
@@ -7164,10 +7876,14 @@ export namespace MyNS {
 		 * Get api/v2/AuthorizationCodes
 		 * @param {string} code Optional. If provided, searches for entities with the provided authorization code.
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} definitionID Optional. If specified, filters codes by definition id.
 		 * @param {number} createdByUserID Optional. If specified, filters codes to those created by the given User ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deletedByUserID Optional. If specified, filters codes to those deleted by the given User ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeDeleted Optional. Whether to include deleted codes. 'False' by default.
 		 * @return {APIIPagedResponse_AuthorizationCodesSharedModelsAuthorizationCode_} OK
 		 */
@@ -7181,6 +7897,7 @@ export namespace MyNS {
 		 * Post api/v2/AuthorizationCodes
 		 * @param {AuthorizationCodesSharedModelsAuthorizationCode} requestBody The model from which to generate an authorization code.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AuthorizationCodes_PostAuthorizationCode(requestBody: AuthorizationCodesSharedModelsAuthorizationCode): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/AuthorizationCodes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -7191,6 +7908,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Delete api/v2/AuthorizationCodes/{id}
 		 * @param {number} id The id of the authorization code.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		AuthorizationCodes_DeleteAuthorizationCode(id: number): Observable<HttpResponse<string>> {
@@ -7202,6 +7920,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/AuthorizationCodes/{id}
 		 * @param {number} id The id of the authorization code.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AuthorizationCodesSharedModelsAuthorizationCode} OK
 		 */
 		AuthorizationCodes_GetAuthorizationCode(id: number): Observable<AuthorizationCodesSharedModelsAuthorizationCode> {
@@ -7213,6 +7932,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/AuthorizationCodes/{id}
 		 * @param {number} id The id of the authorization code.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {AuthorizationCodesSharedModelsAuthorizationCode} requestBody The model from which to update an authorization code.
 		 * @return {void} 
 		 */
@@ -7225,6 +7945,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/AuthorizationCodes/{id}/ContactInformation
 		 * @param {number} id The id of the authorization code.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AuthorizationCodesSharedModelsAuthorizationContactInformation} OK
 		 */
 		AuthorizationCodes_GetContactInformation(id: number): Observable<AuthorizationCodesSharedModelsAuthorizationContactInformation> {
@@ -7235,6 +7956,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * No Documentation Found.
 		 * Get api/v2/AuthorizationCodes/{id}/Validate
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AuthorizationCodesSharedModelsCodeValidationModel} OK
 		 */
 		AuthorizationCodes_ValidateAuthorizationCode(id: number): Observable<AuthorizationCodesSharedModelsCodeValidationModel> {
@@ -7246,7 +7968,9 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/AuthorizationContactInformation
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} authorizationCode Optional. Search by authorization code.
 		 * @param {Date} afterDate Optional. Include only data for authorization codes created after a provided date.
 		 * @param {Date} beforeDate Optional. Include only data for authorization codes created before a provided date.
@@ -7263,6 +7987,7 @@ export namespace MyNS {
 		 * Post api/v2/AuthorizationContactInformation
 		 * @param {AuthorizationCodesSharedModelsAuthorizationContactInformation} requestBody A contact information.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AuthorizationContactInformation_Post(requestBody: AuthorizationCodesSharedModelsAuthorizationContactInformation): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/AuthorizationContactInformation', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -7285,8 +8010,11 @@ export namespace MyNS {
 		 * @param {string} UpdateGroupID Optional. Filter by UpdateGroup ID.
 		 * @param {boolean} Active Optional. Filter by active status.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} BundleNumber Optional. If provided, filters by BundleNumber.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsBundle_} OK
 		 */
 		Bundles_GetBundles(UpdateGroupID: string | null | undefined, Active: boolean | null | undefined, limit: number | null | undefined, offset: number | null | undefined, BundleNumber: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsBundle_> {
@@ -7344,7 +8072,9 @@ export namespace MyNS {
 		 * Get api/v2/Clients
 		 * @param {string} Tag Optional. Filter clients by Tag. Wildcards are supported (*).
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsClient_} OK
 		 */
 		Clients_Get(Tag: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsClient_> {
@@ -7428,7 +8158,9 @@ export namespace MyNS {
 		 * @param {string} ID The Client ID
 		 * @param {string} UpdateGroupID Optional. Filter by Update Group.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsAvailableUpdateGroupSubscription_} OK
 		 */
 		Clients_GetAvailableSubscriptions(ID: string, UpdateGroupID: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsAvailableUpdateGroupSubscription_> {
@@ -7442,7 +8174,9 @@ export namespace MyNS {
 		 * @param {string} ID The Client ID
 		 * @param {string} UpdateGroupID Optional. Filter by Update Group.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsUpdateGroupSubscription_} OK
 		 */
 		Clients_GetSubscriptions(ID: string, UpdateGroupID: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsUpdateGroupSubscription_> {
@@ -7464,6 +8198,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Delete api/v2/ContentDefinitionAttributes/{contentDefinitionAttributeID}
 		 * @param {number} contentDefinitionAttributeID The ID of the Attribute to remove.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ContentDefinitions_DeleteContentDefinitionAttribute(contentDefinitionAttributeID: number): Observable<HttpResponse<string>> {
@@ -7475,6 +8210,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/ContentDefinitionAttributes/{contentDefinitionAttributeID}
 		 * @param {number} contentDefinitionAttributeID The ID of the Attribute to update.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentDefinitionAttribute} requestBody The Attribute to update.
 		 * @return {void} 
 		 */
@@ -7488,11 +8224,15 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/ContentDefinitions
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} userID Optional. Filter by UserID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} includeAttributes Names of Attributes to include when retrieving this definition. This should be a comma-separated list. If not provided, Attributes are not included. If '*', all Attributes are included.
 		 * @param {string} name Optional. Filter by Name. Supports beginning and ending wildcard (*).
 		 * @param {number} typeID Optional. Filter by TypeID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} packageTypeID Optional. Filter by PackageTypeID.
 		 * @return {APIPagedResponse_ContentSubmissionSharedBusinessEntitiesContentDefinition_} OK
 		 */
@@ -7508,6 +8248,7 @@ export namespace MyNS {
 		 * Post api/v2/ContentDefinitions
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentDefinition} requestBody The ContentDefinition to create.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ContentDefinitions_PostContentDefinition(requestBody: ContentSubmissionSharedBusinessEntitiesContentDefinition): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/ContentDefinitions', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -7519,6 +8260,7 @@ export namespace MyNS {
 		 * ApiError is returned.
 		 * Delete api/v2/ContentDefinitions/{contentDefinitionID}
 		 * @param {number} contentDefinitionID The ID of the ContentDefinition to delete
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ContentDefinitions_DeleteContentDefinition(contentDefinitionID: number): Observable<HttpResponse<string>> {
@@ -7531,6 +8273,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/ContentDefinitions/{contentDefinitionID}
 		 * @param {number} contentDefinitionID The ID of the ContentDefinition to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} includeAttributes Names of Attributes to include when retrieving this definition. This should be a comma-separated list. If not provided, Attributes are not included. If '*', all Attributes are included.
 		 * @return {ContentSubmissionSharedBusinessEntitiesContentDefinition} OK
 		 */
@@ -7544,6 +8287,7 @@ export namespace MyNS {
 		 * When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned.
 		 * Put api/v2/ContentDefinitions/{contentDefinitionID}
 		 * @param {number} contentDefinitionID The ID of the ContentDefinition to update
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentDefinition} requestBody The updated ContentDefinition
 		 * @return {void} 
 		 */
@@ -7556,8 +8300,11 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/ContentDefinitions/{contentDefinitionID}/Attributes
 		 * @param {number} contentDefinitionID The ID of the ContentDefinition.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Optional. Filter the attributes by Name.
 		 * @return {APIPagedResponse_ContentSubmissionSharedBusinessEntitiesContentDefinitionAttribute_} OK
 		 */
@@ -7570,8 +8317,10 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Post api/v2/ContentDefinitions/{contentDefinitionID}/Attributes
 		 * @param {number} contentDefinitionID The ID of the ContentDefinition
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentDefinitionAttribute} requestBody The Attribute to add.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ContentDefinitions_PostContentDefinitionAttribute(contentDefinitionID: number, requestBody: ContentSubmissionSharedBusinessEntitiesContentDefinitionAttribute): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/ContentDefinitions/' + contentDefinitionID + '/Attributes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -7581,6 +8330,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * No Documentation Found.
 		 * Post api/v2/ContentDefinitions/{contentDefinitionID}/Attributes/Batch
+		 * @param {number} contentDefinitionID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ContentDefinitions_PostContentDefinitionAttributes(contentDefinitionID: number, requestBody: Array<ContentSubmissionSharedBusinessEntitiesContentDefinitionAttribute>): Observable<HttpResponse<string>> {
@@ -7593,12 +8343,18 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/ContentReleases
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} deleted Optional. Filter by deleted.
 		 * @param {number} releaseID Optional. Filter by releaseID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} userId Optional. Filter by UserID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} contentDefinitionID Optional. Filter by ContentDefinitionID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} version Optional. Filter by Version.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_ContentSubmissionSharedBusinessEntitiesContentReleaseVersion_} OK
 		 */
 		ContentRelease_GetContentReleaseVersion(limit: number | null | undefined, offset: number | null | undefined, deleted: boolean | null | undefined, releaseID: number | null | undefined, userId: number | null | undefined, contentDefinitionID: number | null | undefined, version: number | null | undefined): Observable<APIPagedResponse_ContentSubmissionSharedBusinessEntitiesContentReleaseVersion_> {
@@ -7613,6 +8369,7 @@ export namespace MyNS {
 		 * Post api/v2/ContentReleases
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentReleaseVersion} requestBody The ContentReleaseVersion to create.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ContentRelease_PostContentRelease(requestBody: ContentSubmissionSharedBusinessEntitiesContentReleaseVersion): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/ContentReleases', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -7624,6 +8381,7 @@ export namespace MyNS {
 		 * ApiError is returned.
 		 * Delete api/v2/ContentReleases/{ContentReleaseId}
 		 * @param {number} ContentReleaseId The ID of the ContentReleaseVersion to delete
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ContentRelease_DeleteContentReleaseVersionn(ContentReleaseId: number): Observable<HttpResponse<string>> {
@@ -7636,6 +8394,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/ContentReleases/{ContentReleaseId}
 		 * @param {number} ContentReleaseId The ID of the ContentReleaseVersion to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ContentSubmissionSharedBusinessEntitiesContentReleaseVersion} OK
 		 */
 		ContentReleaseGetByContentReleaseId(ContentReleaseId: number): Observable<ContentSubmissionSharedBusinessEntitiesContentReleaseVersion> {
@@ -7648,6 +8407,7 @@ export namespace MyNS {
 		 * When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned.
 		 * Put api/v2/ContentReleases/{ContentReleaseId}
 		 * @param {number} ContentReleaseId The ID of the ContentReleaseVersion to update
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentReleaseVersion} requestBody The updated ContentReleaseVersion
 		 * @return {void} 
 		 */
@@ -7670,6 +8430,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Delete api/v2/ContentSubmissionAttributes/{contentSubmissionAttributeID}
 		 * @param {number} contentSubmissionAttributeID The ID of the Attribute to remove.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ContentSubmissions_DeleteContentSubmissionAttribute(contentSubmissionAttributeID: number): Observable<HttpResponse<string>> {
@@ -7681,6 +8442,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/ContentSubmissionAttributes/{contentSubmissionAttributeID}
 		 * @param {number} contentSubmissionAttributeID The ID of the Attribute to update.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentSubmissionAttribute} requestBody The Attribute to update.
 		 * @return {void} 
 		 */
@@ -7704,6 +8466,7 @@ export namespace MyNS {
 		 * Post api/v2/ContentSubmissionTypes
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentSubmissionType} requestBody The Content Submission Type
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ContentSubmissionTypes_PostContentSubmissionType(requestBody: ContentSubmissionSharedBusinessEntitiesContentSubmissionType): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/ContentSubmissionTypes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -7714,6 +8477,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Delete api/v2/ContentSubmissionTypes/{id}
 		 * @param {number} id The ID of the Content Submission Type
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ContentSubmissionTypes_DeleteContentSubmissionType(id: number): Observable<HttpResponse<string>> {
@@ -7725,6 +8489,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/ContentSubmissionTypes/{id}
 		 * @param {number} id The ID of the Content Submission Type
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ContentSubmissionSharedBusinessEntitiesContentSubmissionType} OK
 		 */
 		ContentSubmissionTypes_GetContentSubmissionType(id: number): Observable<ContentSubmissionSharedBusinessEntitiesContentSubmissionType> {
@@ -7736,6 +8501,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/ContentSubmissionTypes/{id}
 		 * @param {number} id The ID of the Content Submission Type
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentSubmissionType} requestBody The Content Submission Type
 		 * @return {void} 
 		 */
@@ -7749,13 +8515,20 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/ContentSubmissions
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} userID Optional. Filter by UserID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} contentDefinitionID Optional. Filter by ContentDefinitionID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} includeAttributes Names of Attributes to include when retrieving this submission. This should be a comma-separated list. If not provided, Attributes are not included. If '*', all Attributes are included.
 		 * @param {number} releaseID Optional. Filter the submissions by whether they are part of the Release with the specified Release ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} typeID Optional. Filter submissions by their ContentDefinition's Type ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} version Optional. Filter submissions by their Version.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeDefinition Optional. If true, includes the ContentDefinition for each submission.
 		 * @return {APIPagedResponse_ContentSubmissionSharedBusinessEntitiesContentSubmission_} OK
 		 */
@@ -7771,6 +8544,7 @@ export namespace MyNS {
 		 * Post api/v2/ContentSubmissions
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentSubmission} requestBody The ContentSubmission to create.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ContentSubmissions_PostContentSubmission(requestBody: ContentSubmissionSharedBusinessEntitiesContentSubmission): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/ContentSubmissions', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -7782,6 +8556,7 @@ export namespace MyNS {
 		 * ApiError is returned.
 		 * Delete api/v2/ContentSubmissions/{contentSubmissionID}
 		 * @param {number} contentSubmissionID The ID of the ContentSubmission to delete
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ContentSubmissions_DeleteContentSubmission(contentSubmissionID: number): Observable<HttpResponse<string>> {
@@ -7794,6 +8569,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/ContentSubmissions/{contentSubmissionID}
 		 * @param {number} contentSubmissionID The ID of the ContentSubmission to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} includeAttributes Names of Attributes to include when retrieving this submission. This should be a comma-separated list.
 		 * @return {ContentSubmissionSharedBusinessEntitiesContentSubmission} OK
 		 */
@@ -7807,6 +8583,7 @@ export namespace MyNS {
 		 * When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned.
 		 * Put api/v2/ContentSubmissions/{contentSubmissionID}
 		 * @param {number} contentSubmissionID The ID of the ContentSubmission to update
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentSubmission} requestBody The updated ContentSubmission
 		 * @return {void} 
 		 */
@@ -7819,8 +8596,11 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/ContentSubmissions/{contentSubmissionID}/Attributes
 		 * @param {number} contentSubmissionID The ID of the ContentSubmission.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Optional. Filter the attributes by Name.
 		 * @return {APIPagedResponse_ContentSubmissionSharedBusinessEntitiesContentSubmissionAttribute_} OK
 		 */
@@ -7833,8 +8613,10 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Post api/v2/ContentSubmissions/{contentSubmissionID}/Attributes
 		 * @param {number} contentSubmissionID The ID of the ContentSubmission
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ContentSubmissionSharedBusinessEntitiesContentSubmissionAttribute} requestBody The Attribute to add.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ContentSubmissions_PostContentSubmissionAttribute(contentSubmissionID: number, requestBody: ContentSubmissionSharedBusinessEntitiesContentSubmissionAttribute): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/ContentSubmissions/' + contentSubmissionID + '/Attributes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -7844,6 +8626,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * No Documentation Found.
 		 * Post api/v2/ContentSubmissions/{contentSubmissionID}/Attributes/Batch
+		 * @param {number} contentSubmissionID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ContentSubmissions_PostContentSubmissionAttributes(contentSubmissionID: number, requestBody: Array<ContentSubmissionSharedBusinessEntitiesContentSubmissionAttribute>): Observable<HttpResponse<string>> {
@@ -7855,6 +8638,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/ContentSubmissions/{contentSubmissionID}/Status
 		 * @param {number} contentSubmissionID The ID of the ContentSubmission to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeActivityRunDetails True to include all status details if JobRun. Defaults to false
 		 * @return {BuildSystemSharedInterfacesIJobRun} OK
 		 */
@@ -7867,7 +8651,9 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/DealerByCountry
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_DealerDBModelsDealersPerCountry_} OK
 		 */
 		DealerByCountry_GetCountries(limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_DealerDBModelsDealersPerCountry_> {
@@ -7882,7 +8668,9 @@ export namespace MyNS {
 		 * @param {string} ShippingCountry The country to filter by.
 		 * @param {string} DealerName The partial Dealer Name to filter by. Wildcard supported (*).
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_DealerDBModelsDealer_} OK
 		 */
 		Dealers_GetDealers(Brand: string | null | undefined, ShippingCountry: string | null | undefined, DealerName: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_DealerDBModelsDealer_> {
@@ -7906,7 +8694,9 @@ export namespace MyNS {
 		 * Get api/v2/Files
 		 * @param {boolean} includeDeleted Indicates whether to include files marked as removed.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIIPagedResponse_GlobalResourcesSharedModelsFileDownload_} OK
 		 */
 		Files_GetFiles(includeDeleted: boolean | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIIPagedResponse_GlobalResourcesSharedModelsFileDownload_> {
@@ -7987,7 +8777,9 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/GlobalImageCategories
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIIPagedResponse_GlobalResourcesSharedModelsGlobalImageCategory_} OK
 		 */
 		GlobalImageCategories_GetFiles(limit: number | null | undefined, offset: number | null | undefined): Observable<APIIPagedResponse_GlobalResourcesSharedModelsGlobalImageCategory_> {
@@ -8023,7 +8815,9 @@ export namespace MyNS {
 		 * @param {string} search Optional. Searches for matching global images with the matching Category Name, Publisher or Description
 		 * @param {boolean} includeDeleted Indicates whether to include GlobalImages marked as removed.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIIPagedResponse_GlobalResourcesSharedModelsGlobalImage_} OK
 		 */
 		GlobalImages_GetGlobalImages(search: string | null | undefined, categoryId: string | null | undefined, publisher: string | null | undefined, includeDeleted: boolean | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIIPagedResponse_GlobalResourcesSharedModelsGlobalImage_> {
@@ -8110,7 +8904,9 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Languages
 		 * @param {number} limit limit the number of Language objects returned. Optional (defaults to 10).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset the number of Language objects to skip. Optional (defaults to 0).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeDeleted whether to include languages marked as deleted. Defaults to false
 		 * @return {APIIPagedResponse_GlobalResourcesSharedModelsLanguage_} OK
 		 */
@@ -8123,6 +8919,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Post api/v2/Languages
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Languages_CreateLanguage(requestBody: GlobalResourcesSharedModelsLanguage): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/Languages', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -8132,6 +8929,7 @@ export namespace MyNS {
 		 * Remove a Language from those supported for translations. Marks language as deleted.
 		 * No Documentation Found.
 		 * Delete api/v2/Languages/{LocaleID}
+		 * @param {number} LocaleID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Languages_DeleteLanguage(LocaleID: number): Observable<HttpResponse<string>> {
@@ -8142,6 +8940,7 @@ export namespace MyNS {
 		 * Get a language by its id. Returns a Language object
 		 * No Documentation Found.
 		 * Get api/v2/Languages/{LocaleID}
+		 * @param {number} LocaleID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GlobalResourcesSharedModelsLanguage} OK
 		 */
 		Languages_GetLanguage(LocaleID: number): Observable<GlobalResourcesSharedModelsLanguage> {
@@ -8152,6 +8951,7 @@ export namespace MyNS {
 		 * Update a language’s description. Accepts a Language object.
 		 * No Documentation Found.
 		 * Put api/v2/Languages/{LocaleID}
+		 * @param {number} LocaleID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Languages_UpdateLanguage(LocaleID: number, requestBody: GlobalResourcesSharedModelsLanguage): Observable<HttpResponse<string>> {
@@ -8212,7 +9012,9 @@ export namespace MyNS {
 		 * @param {string} DealerCode Optional. Filter by DealerCode
 		 * @param {Licenses_GetStatus} Status Optional. Filter by Status.  By default only active licenses will be returned.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_DealerDBModelsLicense_} OK
 		 */
 		Licenses_Get(VoucherCode: string | null | undefined, DealerCode: string | null | undefined, Status: Licenses_GetStatus | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_DealerDBModelsLicense_> {
@@ -8235,7 +9037,9 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Logs
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_APIModelsLog_} OK
 		 */
 		Logs_GetLogs(limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_APIModelsLog_> {
@@ -8280,8 +9084,11 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/PackageTypes
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} userID Optional. The user ID to sort packageTypes by the user's access
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsPackageType_} OK
 		 */
 		PackageTypes_Get(limit: number | null | undefined, offset: number | null | undefined, userID: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsPackageType_> {
@@ -8339,6 +9146,7 @@ export namespace MyNS {
 		 * Delete api/v2/PackageTypes/{id}/Users/{userID}
 		 * @param {string} id The ID of the Package Type
 		 * @param {number} userID The userID to link to the package type
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		PackageTypes_RemovePackageTypeUser(id: string, userID: number): Observable<HttpResponse<string>> {
@@ -8351,6 +9159,7 @@ export namespace MyNS {
 		 * Post api/v2/PackageTypes/{id}/Users/{userID}
 		 * @param {string} id The ID of the Package Type
 		 * @param {number} userID The userID to link to the package type
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		PackageTypes_AddPackageTypeUser(id: string, userID: number): Observable<HttpResponse<string>> {
@@ -8375,7 +9184,9 @@ export namespace MyNS {
 		 * Get api/v2/PackageTypetoBundles
 		 * @param {string} BundleID Optional. Filter by BundleID.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsPackageTypeIDtoBundle_} OK
 		 */
 		PackageTypetoBundles_Get(BundleID: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsPackageTypeIDtoBundle_> {
@@ -8409,9 +9220,12 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Packages
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} PackageTypeID Optional. If provided, filters by PackageTypeID.
 		 * @param {number} Version Optional. If provided, filters by Version.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} Released Optional. If provided, filters by Released.
 		 * @return {APIPagedResponse_UpdateSystemModelsPackage_} OK
 		 */
@@ -8469,7 +9283,9 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Permissions
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Filter by permission name. Supports ending wildcard (*). Optional.
 		 * @return {APIPagedResponse_APIModelsPermission_} OK
 		 */
@@ -8483,6 +9299,7 @@ export namespace MyNS {
 		 * Post api/v2/Permissions
 		 * @param {APIModelsPermission} requestBody Permission to add
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Permissions_PostPermission(requestBody: APIModelsPermission): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/Permissions', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -8493,6 +9310,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Delete api/v2/Permissions/{id}
 		 * @param {number} id Id of Permission
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Permissions_DeletePermission(id: number): Observable<HttpResponse<string>> {
@@ -8504,6 +9322,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Permissions/{id}
 		 * @param {number} id Id of Permission
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIModelsPermission} OK
 		 */
 		Permissions_GetPermission(id: number): Observable<APIModelsPermission> {
@@ -8515,6 +9334,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/Permissions/{id}
 		 * @param {number} id Id of Permission
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {APIModelsPermission} requestBody The Updated Permission
 		 * @return {void} 
 		 */
@@ -8529,7 +9349,9 @@ export namespace MyNS {
 		 * @param {string} ClientID Optional. Filter priority packages by ClientID.
 		 * @param {PriorityPackages_GetPriorityPackagesStatus} Status Optional. Filter returned packages by status. By default only active packages will be returned.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsPriorityPackage_} OK
 		 */
 		PriorityPackages_GetPriorityPackages(ClientID: string | null | undefined, Status: PriorityPackages_GetPriorityPackagesStatus | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsPriorityPackage_> {
@@ -8575,7 +9397,9 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/Releases
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} visible Optional. Filter by visible.
 		 * @param {string} bundleID Optional. Filter by BundleID.
 		 * @return {APIPagedResponse_ContentSubmissionSharedBusinessEntitiesRelease_} OK
@@ -8592,6 +9416,7 @@ export namespace MyNS {
 		 * Post api/v2/Releases
 		 * @param {ContentSubmissionSharedBusinessEntitiesRelease} requestBody The Release to create.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Release_PostRelease(requestBody: ContentSubmissionSharedBusinessEntitiesRelease): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/Releases', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -8603,6 +9428,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/Releases/{ReleaseId}
 		 * @param {number} ReleaseId The ID of the Release to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ContentSubmissionSharedBusinessEntitiesRelease} OK
 		 */
 		Release_GetRelease(ReleaseId: number): Observable<ContentSubmissionSharedBusinessEntitiesRelease> {
@@ -8614,6 +9440,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Delete api/v2/Releases/{ReleaseId}/Bundle/{BundleId}
 		 * @param {number} ReleaseId The release identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} BundleId The bundle identifier.
 		 * @return {void} 
 		 */
@@ -8626,6 +9453,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Post api/v2/Releases/{ReleaseId}/Bundle/{BundleId}
 		 * @param {number} ReleaseId The release identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} BundleId The bundle identifier.
 		 * @return {void} 
 		 */
@@ -8639,6 +9467,7 @@ export namespace MyNS {
 		 * When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned.
 		 * Put api/v2/Releases/{releaseId}
 		 * @param {number} releaseId The ID of the Release to update
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ContentSubmissionSharedBusinessEntitiesRelease} requestBody The updated Release
 		 * @return {void} 
 		 */
@@ -8652,7 +9481,9 @@ export namespace MyNS {
 		 * Get api/v2/Reporting/BundleStatusSummary
 		 * @param {string} BundleID The BundleID
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsPackageStatusSummary_} OK
 		 */
 		Reporting_BundleStatusSummary(BundleID: string, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsPackageStatusSummary_> {
@@ -8666,7 +9497,9 @@ export namespace MyNS {
 		 * @param {string} ID The UpdateGroupID
 		 * @param {boolean} IncludeInactive Include Inactive Bundles (true|false)
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsBundle_} OK
 		 */
 		Reporting_BundlesInUpdateGroup(ID: string, IncludeInactive: boolean, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsBundle_> {
@@ -8714,7 +9547,9 @@ export namespace MyNS {
 		 * @param {string} ClientID Optional. Filter by Client ID
 		 * @param {string} UpdateGroupID Optional. Filter by Update Group ID
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsUpdateGroupClientRelationship_} OK
 		 */
 		Reporting_GetSubscriptions(ClientID: string | null | undefined, UpdateGroupID: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsUpdateGroupClientRelationship_> {
@@ -8747,7 +9582,9 @@ export namespace MyNS {
 		 * @param {string} OrderBy Optional. Specify the order in which results should be returned. Use this format: [FieldName] [ASC|ASCENDING|DESC|DESCENDING],...   
 		 *             If sort direction is not provided for a field, it will be sorted ascending.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsClientStatus_UpdateSystemModelsPagedClientStatusMetadata_} OK
 		 */
 		Reporting_RegisteredClients(UpdateGroupID: string | null | undefined, ClientID: string | null | undefined, Tag: string | null | undefined, ReportResult: string | null | undefined, ReportResultIsValid: boolean | null | undefined, ReportValue: string | null | undefined, LastCheckInBefore: Date | null | undefined, LastCheckInAfter: Date | null | undefined, OrderBy: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsClientStatus_UpdateSystemModelsPagedClientStatusMetadata_> {
@@ -8759,7 +9596,9 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Reporting/UpdateGroups
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsUpdateGroup_} OK
 		 */
 		Reporting_UpdateGroups(limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsUpdateGroup_> {
@@ -8772,6 +9611,7 @@ export namespace MyNS {
 		 * Get api/v2/Reporting/UpdateMetrics
 		 * @param {string} UpdateGroupID The UpdateType in which clients must be for the report to include them.
 		 * @param {number} bundleNumber Optional. Tells us which chart to show based upon filter.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UpdateSystemModelsUpdateMetricsData} OK
 		 */
 		Reporting_UpdateMetrics(UpdateGroupID: string, bundleNumber: number | null | undefined): Observable<UpdateSystemModelsUpdateMetricsData> {
@@ -8783,8 +9623,11 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Roles
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Optional. Finds a role with the given name.
+		 * @param {number} permissionID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} permissionName Optional. Filters roles by whether they contain the provided permission.
 		 * @return {APIPagedResponse_APIModelsRole_} OK
 		 */
@@ -8798,6 +9641,7 @@ export namespace MyNS {
 		 * Post api/v2/Roles
 		 * @param {APIModelsRole} requestBody Role to add
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Roles_PostRole(requestBody: APIModelsRole): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/Roles', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -8808,6 +9652,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Delete api/v2/Roles/{id}
 		 * @param {number} id The role's id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Roles_DeleteRole(id: number): Observable<HttpResponse<string>> {
@@ -8819,6 +9664,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Roles/{id}
 		 * @param {number} id The role's id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIModelsRole} OK
 		 */
 		Roles_GetRole(id: number): Observable<APIModelsRole> {
@@ -8830,6 +9676,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/Roles/{id}
 		 * @param {number} id The role's id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {APIModelsRole} requestBody The Updated Role
 		 * @return {void} 
 		 */
@@ -8842,9 +9689,12 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Roles/{id}/Permissions
 		 * @param {number} id The id of the Role
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Filter by permission name. Optional.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_APIModelsPermission_} OK
 		 */
 		Roles_GetRolePermissions(id: number, name: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_APIModelsPermission_> {
@@ -8856,6 +9706,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/Roles/{id}/Permissions
 		 * @param {number} id The id of the Role
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<APIModelsRolePermissionChange>} requestBody Permissions Changes for the Role
 		 * @return {void} 
 		 */
@@ -8868,8 +9719,11 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Roles/{id}/Users
 		 * @param {number} id The Role's ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_APIModelsUser_} OK
 		 */
 		UserPermissions_GetUsers(id: number, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_APIModelsUser_> {
@@ -8881,6 +9735,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/Roles/{id}/Users
 		 * @param {number} id The Role's ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<APIModelsRoleUserChange>} requestBody A list of changes to the Role's Users
 		 * @return {void} 
 		 */
@@ -8893,6 +9748,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/StringDefinitions
 		 * @param {number} limit Optional. The page limit. The default page limit is 10. Ignored if 'stringIds' is provided.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} modifiedAfterTimestamp Optional. Return only the StringDefinition objects that have a Timestamp value greater than that provided. This will be an encoded byte array.
 		 * @param {boolean} includeTranslations Optional. Indicates whether to include the StringTranslations for the StringDefinition. Defaults to false.
 		 * @param {string} stringText Optional. The text for which to search in the StringDefinition object’s translations. Only StringDefinition objects for matching StringTranslation objects are returned. Does not filter if no value is provided. Supports beginning and/or ending wildcards. includeTranslations must be true.
@@ -8948,6 +9804,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/StringTranslations
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} modifiedAfterTimestamp Optional. Return only the StringDefinition objects that have a Timestamp value greater than that provided. This will be an encoded byte array.
 		 * @return {APIIPagedResponse_GlobalResourcesSharedModelsStringTranslation_} OK
 		 */
@@ -8969,6 +9826,7 @@ export namespace MyNS {
 		 * Get a single translation based upon stringId and languageId
 		 * No Documentation Found.
 		 * Get api/v2/StringTranslations/{stringId}/{languageId}
+		 * @param {number} languageId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GlobalResourcesSharedModelsStringTranslation} OK
 		 */
 		StringTranslations_GetTranslation(stringId: string, languageId: number): Observable<GlobalResourcesSharedModelsStringTranslation> {
@@ -8979,6 +9837,7 @@ export namespace MyNS {
 		 * Update a string value or a state for a string translation.
 		 * No Documentation Found.
 		 * Put api/v2/StringTranslations/{stringId}/{languageId}
+		 * @param {number} languageId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		StringTranslations_UpdateTranslation(stringId: string, languageId: number, requestBody: GlobalResourcesSharedModelsStringTranslation): Observable<HttpResponse<string>> {
@@ -8988,6 +9847,8 @@ export namespace MyNS {
 		/**
 		 * Get a paged response of TranslationKeys.
 		 * Get api/v2/TranslationKeys
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} keyNames Can filter by keyNames, a comma deliminated list.
 		 * @return {APIIPagedResponse_OASSupportSharedModelsTranslationKey_} OK
 		 */
@@ -9000,6 +9861,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Post api/v2/TranslationKeys
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TranslationKeys_CreateTranslationKey(requestBody: OASSupportSharedModelsTranslationKey): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/TranslationKeys', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -9009,6 +9871,7 @@ export namespace MyNS {
 		 * Get TranslationKey by ID
 		 * No Documentation Found.
 		 * Get api/v2/TranslationKeys/{ID}
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {OASSupportSharedModelsTranslationKey} OK
 		 */
 		TranslationKeys_GetTranslationKey(ID: number): Observable<OASSupportSharedModelsTranslationKey> {
@@ -9019,6 +9882,7 @@ export namespace MyNS {
 		 * Update the StringID of the translationKey object.
 		 * No Documentation Found.
 		 * Put api/v2/TranslationKeys/{ID}
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TranslationKeys_UpdateTranslationKey(ID: number, requestBody: OASSupportSharedModelsTranslationKey): Observable<HttpResponse<string>> {
@@ -9029,6 +9893,8 @@ export namespace MyNS {
 		 * Get all TranslationRequest objects. Returns a PagedResponse of TranslationRequest objects with their language ids and string ids.
 		 * No Documentation Found.
 		 * Get api/v2/TranslationRequests
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIIPagedResponse_GlobalResourcesSharedModelsTranslationRequest_} OK
 		 */
 		TranslationRequests_GetTranslationRequests(limit: number | null | undefined, offset: number | null | undefined): Observable<APIIPagedResponse_GlobalResourcesSharedModelsTranslationRequest_> {
@@ -9040,6 +9906,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Post api/v2/TranslationRequests
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TranslationRequests_CreateTranslationRequest(requestBody: GlobalResourcesSharedModelsTranslationRequest): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/TranslationRequests', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -9049,6 +9916,7 @@ export namespace MyNS {
 		 * Get a TranslationRequest object by id. Returns TranslationRequest object with its language ids and string ids.
 		 * No Documentation Found.
 		 * Get api/v2/TranslationRequests/{Id}
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GlobalResourcesSharedModelsTranslationRequest} OK
 		 */
 		TranslationRequests_GetTranslationRequest(Id: number): Observable<GlobalResourcesSharedModelsTranslationRequest> {
@@ -9059,6 +9927,7 @@ export namespace MyNS {
 		 * Update a TranslationRequest object by id. Accepts a TranslationRequest object.
 		 * No Documentation Found.
 		 * Put api/v2/TranslationRequests/{Id}
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TranslationRequests_UpdateTranslationRequest(Id: number, doResendRequest: boolean | null | undefined, requestBody: GlobalResourcesSharedModelsTranslationRequest): Observable<HttpResponse<string>> {
@@ -9069,6 +9938,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * No Documentation Found.
 		 * Put api/v2/TranslationRequests/{Id}/Strings
+		 * @param {number} Id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TranslationRequests_UpdateTranslationRequestStrings(Id: number, requestBody: Array<string>): Observable<HttpResponse<string>> {
@@ -9089,6 +9959,7 @@ export namespace MyNS {
 		 * Delete a set of TranslationSetAttribute object
 		 * No Documentation Found.
 		 * Delete api/v2/TranslationSetAttributes/{ID}
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TranslationSets_DeleteTranslationSetAttribute(ID: number): Observable<HttpResponse<string>> {
@@ -9099,6 +9970,7 @@ export namespace MyNS {
 		 * Update a TranslationSetAttribute object
 		 * No Documentation Found.
 		 * Put api/v2/TranslationSetAttributes/{ID}
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TranslationSets_UpdateTranslationSetAttribute(ID: number, requestBody: GlobalResourcesSharedModelsTranslationSetAttribute): Observable<HttpResponse<string>> {
@@ -9109,6 +9981,10 @@ export namespace MyNS {
 		 * Get a PagedResponse of TranslationSet objects. Related TranslationSetStrings are NOT returned
 		 * No Documentation Found.
 		 * Get api/v2/TranslationSets
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} translationRequestID Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} languageId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} includeAttributes Names of Attributes to include when retrieving this submission. This should be a comma-separated list. If not provided, Attributes are not included. If '*', all Attributes are included.
 		 * @return {APIIPagedResponse_GlobalResourcesSharedModelsTranslationSet_} OK
 		 */
@@ -9120,6 +9996,7 @@ export namespace MyNS {
 		 * Get a TranslationSet object by its id. Related TranslationSetStrings are NOT returned.
 		 * No Documentation Found.
 		 * Get api/v2/TranslationSets/{ID}
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} includeAttributes Names of Attributes to include when retrieving this Translation set. This should be a comma-separated list. If not provided, Attributes are not included. If '*', all Attributes are included.
 		 * @return {GlobalResourcesSharedModelsTranslationSet} OK
 		 */
@@ -9131,6 +10008,7 @@ export namespace MyNS {
 		 * Update a Translation Set. Accepts a TranslationSet object. Only the state property may be updated.
 		 * No Documentation Found.
 		 * Put api/v2/TranslationSets/{ID}
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TranslationSets_UpdateTranslationSet(ID: number, requestBody: GlobalResourcesSharedModelsTranslationSet): Observable<HttpResponse<string>> {
@@ -9141,6 +10019,9 @@ export namespace MyNS {
 		 * Get a PagedResponse of TranslationSetAttribute objects
 		 * No Documentation Found.
 		 * Get api/v2/TranslationSets/{ID}/Attributes
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIIPagedResponse_GlobalResourcesSharedModelsTranslationSetAttribute_} OK
 		 */
 		TranslationSets_GetTranslationSetAttributes(ID: number, limit: number | null | undefined, offset: number | null | undefined, name: string | null | undefined): Observable<APIIPagedResponse_GlobalResourcesSharedModelsTranslationSetAttribute_> {
@@ -9151,7 +10032,9 @@ export namespace MyNS {
 		 * Create a TranslationSetAttribute object
 		 * No Documentation Found.
 		 * Post api/v2/TranslationSets/{ID}/Attributes
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TranslationSets_PostTranslationSetAttribute(ID: number, requestBody: GlobalResourcesSharedModelsTranslationSetAttribute): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/TranslationSets/' + ID + '/Attributes', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -9161,6 +10044,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * No Documentation Found.
 		 * Post api/v2/TranslationSets/{ID}/Attributes/Batch
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TranslationSets_PostTranslationSetAttributes(ID: number, requestBody: Array<GlobalResourcesSharedModelsTranslationSetAttribute>): Observable<HttpResponse<string>> {
@@ -9171,6 +10055,9 @@ export namespace MyNS {
 		 * Gets the information needed to translate a string in a translation set
 		 * No Documentation Found.
 		 * Get api/v2/TranslationSets/{ID}/SourceStrings
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIIPagedResponse_GlobalResourcesSharedModelsTranslationSetSourceString_} OK
 		 */
 		TranslationSets_GetSourceStrings(ID: number, limit: number | null | undefined, offset: number | null | undefined): Observable<APIIPagedResponse_GlobalResourcesSharedModelsTranslationSetSourceString_> {
@@ -9181,6 +10068,7 @@ export namespace MyNS {
 		 * Gets the statistics for translation sets such as the language ids and count of string definitions.
 		 * No Documentation Found.
 		 * Get api/v2/TranslationSets/{ID}/Statistics
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GlobalResourcesSharedModelsTranslationSetStatistics} OK
 		 */
 		TranslationSets_GetStatistics(ID: number): Observable<GlobalResourcesSharedModelsTranslationSetStatistics> {
@@ -9191,6 +10079,9 @@ export namespace MyNS {
 		 * Get a PagedResponse of TranslationSetString objects
 		 * No Documentation Found.
 		 * Get api/v2/TranslationSets/{ID}/Strings
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIIPagedResponse_GlobalResourcesSharedModelsTranslationSetString_} OK
 		 */
 		TranslationSets_GetTranslationSetStrings(ID: number, limit: number | null | undefined, offset: number | null | undefined): Observable<APIIPagedResponse_GlobalResourcesSharedModelsTranslationSetString_> {
@@ -9201,6 +10092,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * No Documentation Found.
 		 * Put api/v2/TranslationSets/{ID}/Strings
+		 * @param {number} ID Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		TranslationSets_UpdateTranslationSetStrings(ID: number, requestBody: Array<GlobalResourcesSharedModelsTranslationSetString>): Observable<HttpResponse<string>> {
@@ -9214,7 +10106,9 @@ export namespace MyNS {
 		 * @param {string} ClientID Optional. Filter by Client ID
 		 * @param {string} UpdateGroupID Optional. Filter by Update Group ID
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} Active Optional. Filter by Active
 		 * @return {APIPagedResponse_UpdateSystemModelsUpdateGroupClientRelationship_} OK
 		 */
@@ -9277,7 +10171,9 @@ export namespace MyNS {
 		 * @param {string} PackageTypeID Optional. Filter by Package Type ID.
 		 * @param {string} ClientID Optional. Filter by Client ID.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsUpdateGroupSubscription_} OK
 		 */
 		UpdateGroupSubscriptions_GetUpdateGroupSubscriptions(UpdateGroupID: string | null | undefined, PackageTypeID: string | null | undefined, ClientID: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsUpdateGroupSubscription_> {
@@ -9290,6 +10186,7 @@ export namespace MyNS {
 		 * Post api/v2/UpdateGroupSubscriptions
 		 * @param {UpdateSystemModelsUpdateGroupSubscription} requestBody The Update Group Subscription to add
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		UpdateGroupSubscriptions_PostUpdateGroupSubscription(requestBody: UpdateSystemModelsUpdateGroupSubscription): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/UpdateGroupSubscriptions', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -9320,6 +10217,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Delete api/v2/UpdateGroupSubscriptions/{UpdateGroupSubscriptionID}
 		 * @param {number} UpdateGroupSubscriptionID The Update Group Subscription ID to delete
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		UpdateGroupSubscriptions_DeleteUpdateGroupSubscription(UpdateGroupSubscriptionID: number): Observable<HttpResponse<string>> {
@@ -9331,6 +10229,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/UpdateGroupSubscriptions/{UpdateGroupSubscriptionID}
 		 * @param {number} UpdateGroupSubscriptionID The Update Group Subscription ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UpdateSystemModelsUpdateGroupSubscription} OK
 		 */
 		UpdateGroupSubscriptions_GetUpdateGroupSubscription(UpdateGroupSubscriptionID: number): Observable<UpdateSystemModelsUpdateGroupSubscription> {
@@ -9342,6 +10241,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/UpdateGroupSubscriptions/{UpdateGroupSubscriptionID}
 		 * @param {number} UpdateGroupSubscriptionID The Update Group Subscription ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {UpdateSystemModelsUpdateGroupSubscription} requestBody The updated Update Group Subscription
 		 * @return {void} 
 		 */
@@ -9354,8 +10254,11 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/UpdateGroups
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} userID Optional. The user ID to sort update groups by the user's access
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsUpdateGroup_} OK
 		 */
 		UpdateGroups_Get(limit: number | null | undefined, offset: number | null | undefined, userID: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsUpdateGroup_> {
@@ -9413,7 +10316,9 @@ export namespace MyNS {
 		 * @param {string} ID The UpdateGroupID
 		 * @param {boolean} IncludeInactive Include Inactive Bundles (true|false)
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_UpdateSystemModelsBundle_} OK
 		 */
 		UpdateGroups_GetUpdateGroupBundles(ID: string, IncludeInactive: boolean, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_UpdateSystemModelsBundle_> {
@@ -9426,6 +10331,7 @@ export namespace MyNS {
 		 * Delete api/v2/UpdateGroups/{id}/Users/{userID}
 		 * @param {string} id The ID of the update group
 		 * @param {number} userID The userID to link to the update group
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		UpdateGroups_RemoveUpdateGroupUser(id: string, userID: number): Observable<HttpResponse<string>> {
@@ -9438,6 +10344,7 @@ export namespace MyNS {
 		 * Post api/v2/UpdateGroups/{id}/Users/{userID}
 		 * @param {string} id The ID of the update group
 		 * @param {number} userID The userID to link to the update group
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		UpdateGroups_AddUpdateGroupUser(id: string, userID: number): Observable<HttpResponse<string>> {
@@ -9463,9 +10370,13 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/UserContentDefinitions
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} userID Optional. Filter by UserID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} contentDefinitionID Optional. Filter by ContentDefinitionID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_ContentSubmissionSharedBusinessEntitiesUserContentDefinition_} OK
 		 */
 		UserContentDefinitions_GetUserContentDefinitions(limit: number | null | undefined, offset: number | null | undefined, userID: number | null | undefined, contentDefinitionID: number | null | undefined): Observable<APIPagedResponse_ContentSubmissionSharedBusinessEntitiesUserContentDefinition_> {
@@ -9480,6 +10391,7 @@ export namespace MyNS {
 		 * Post api/v2/UserContentDefinitions
 		 * @param {ContentSubmissionSharedBusinessEntitiesUserContentDefinition} requestBody The UserContentDefinition to create.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		UserContentDefinitions_PostUserContentDefinition(requestBody: ContentSubmissionSharedBusinessEntitiesUserContentDefinition): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/UserContentDefinitions', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -9491,6 +10403,7 @@ export namespace MyNS {
 		 * ApiError is returned.
 		 * Delete api/v2/UserContentDefinitions/{userContentDefinitionID}
 		 * @param {number} userContentDefinitionID The ID of the UserContentDefinition to delete
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		UserContentDefinitions_DeleteUserContentDefinition(userContentDefinitionID: number): Observable<HttpResponse<string>> {
@@ -9503,6 +10416,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/UserContentDefinitions/{userContentDefinitionID}
 		 * @param {number} userContentDefinitionID The ID of the UserContentDefinition to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ContentSubmissionSharedBusinessEntitiesUserContentDefinition} OK
 		 */
 		UserContentDefinitions_GetUserContentDefinition(userContentDefinitionID: number): Observable<ContentSubmissionSharedBusinessEntitiesUserContentDefinition> {
@@ -9518,7 +10432,9 @@ export namespace MyNS {
 		 * @param {string} name Optional. Search by name. Supports beginning and ending wildcards (*).
 		 * @param {string} hasRole Optional. Return only users having the provided role name.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_APIModelsUser_} OK
 		 */
 		Users_Get(username: string | null | undefined, email: string | null | undefined, name: string | null | undefined, hasRole: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_APIModelsUser_> {
@@ -9563,7 +10479,9 @@ export namespace MyNS {
 		 * Get api/v2/Users/Current/Permissions
 		 * @param {string} Permission Filter by permission name. Supports ending wildcard (*). Optional.
 		 * @param {number} limit The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_APIModelsUserEffectivePermission_} OK
 		 */
 		UserPermissionsGetByPermissionAndLimitAndOffset(Permission: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_APIModelsUserEffectivePermission_> {
@@ -9576,7 +10494,9 @@ export namespace MyNS {
 		 * Get api/v2/Users/Current/Roles
 		 * @param {string} Role Filter by role name. Supports ending wildcard (*). Optional.
 		 * @param {number} limit The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_APIModelsRole_} OK
 		 */
 		UserPermissions_GetCurrentUserRoles(Role: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_APIModelsRole_> {
@@ -9588,6 +10508,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Delete api/v2/Users/{id}
 		 * @param {number} id The user id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Users_Delete(id: number): Observable<HttpResponse<string>> {
@@ -9599,6 +10520,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Users/{id}
 		 * @param {number} id The user ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIModelsUser} OK
 		 */
 		UsersGetById(id: number): Observable<APIModelsUser> {
@@ -9610,6 +10532,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/Users/{id}
 		 * @param {number} id The user id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {APIModelsUser} requestBody The user
 		 * @return {void} 
 		 */
@@ -9622,9 +10545,12 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Users/{id}/Permissions
 		 * @param {number} id The User's ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Permission Filter by permission name. Supports ending wildcard (*). Optional.
 		 * @param {number} limit The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_APIModelsUserEffectivePermission_} OK
 		 */
 		UserPermissions_GetPermissions(id: number, Permission: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_APIModelsUserEffectivePermission_> {
@@ -9636,9 +10562,12 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Get api/v2/Users/{id}/Roles
 		 * @param {number} id The User's ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} Role Filter by role name. Supports ending wildcard (*). Optional.
 		 * @param {number} limit The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_APIModelsRole_} OK
 		 */
 		UserPermissions_GetRoles(id: number, Role: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_APIModelsRole_> {
@@ -9650,6 +10579,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/Users/{id}/Roles
 		 * @param {number} id The User's ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<APIModelsUserRoleChange>} requestBody A list of changes to the User's Roles
 		 * @return {void} 
 		 */
@@ -9665,7 +10595,9 @@ export namespace MyNS {
 		 * @param {Date} ChangedBefore Optional. Filter history data where changes occured before provided date.
 		 * @param {Date} ChangedAfter Optional. Filter history data where changes occured after provided date.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_DealerDBModelsVoucherHistory_} OK
 		 */
 		VoucherHistory_GetVoucherHistory(VoucherCode: string | null | undefined, ChangedBefore: Date | null | undefined, ChangedAfter: Date | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_DealerDBModelsVoucherHistory_> {
@@ -9692,7 +10624,9 @@ export namespace MyNS {
 		 * @param {Date} ExpirationBefore Optional. Filter vouchers by ExpirationDate
 		 * @param {Vouchers_GetDeleted} Deleted Optional. Filter vouchers by Deleted state. By default only vouchers that are not deleted are returned.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_DealerDBModelsVoucher_} OK
 		 */
 		Vouchers_Get(Type: DealerDBModelsVoucherHistoryType | null | undefined, DealerCode: string | null | undefined, LicenseTo: string | null | undefined, Purpose: string | null | undefined, OrderNumber: string | null | undefined, Email: string | null | undefined, ModifiedBy: string | null | undefined, CreatedAfter: Date | null | undefined, CreatedBefore: Date | null | undefined, PunchedAfter: Date | null | undefined, PunchedBefore: Date | null | undefined, Punched: boolean | null | undefined, ExpirationAfter: Date | null | undefined, ExpirationBefore: Date | null | undefined, Deleted: Vouchers_GetDeleted | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_DealerDBModelsVoucher_> {
@@ -9751,7 +10685,9 @@ export namespace MyNS {
 		 * Get api/v2/Vouchers/{VoucherCode}/VoucherHistory
 		 * @param {string} VoucherCode The voucher code to get history for.
 		 * @param {number} limit Optional. The page limit. The default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset. The default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_DealerDBModelsVoucherHistory_} OK
 		 */
 		Vouchers_GetVoucherHistory(VoucherCode: string, limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_DealerDBModelsVoucherHistory_> {
@@ -9764,7 +10700,9 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/activities
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isIncludeDeleted Does it include deleted activity, or not
 		 * @return {APIPagedResponse_BuildSystemSharedDTOActivity_} OK
 		 */
@@ -9780,6 +10718,7 @@ export namespace MyNS {
 		 * Post api/v2/activities
 		 * @param {BuildSystemSharedDTOActivity} requestBody The activity to create.  The ActivityID will be assigned on creation of the Activity.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Activities_PostActivity(requestBody: BuildSystemSharedDTOActivity): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/activities', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -9791,6 +10730,7 @@ export namespace MyNS {
 		 * ApiError is returned.
 		 * Delete api/v2/activities/{activityID}
 		 * @param {number} activityID The id of the activity to delete
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Activities_DeleteActivity(activityID: number): Observable<HttpResponse<string>> {
@@ -9803,6 +10743,7 @@ export namespace MyNS {
 		 * an appropriate ApiError is returned.
 		 * Get api/v2/activities/{activityID}
 		 * @param {number} activityID The ID of the Activity to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isIncludeDeleted Does it include deleted activity, or not
 		 * @return {BuildSystemSharedDTOActivity} OK
 		 */
@@ -9816,6 +10757,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Put api/v2/activities/{activityID}
 		 * @param {number} activityID The id of the activity to update
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BuildSystemSharedDTOActivity} requestBody The updated activity
 		 * @return {void} 
 		 */
@@ -9829,7 +10771,9 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/activityRuns
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BuildSystemSharedDTOActivityRunStatusStatus} status Optional. Filter activity runs by status.  Value should be a comma separated list of status to include.
 		 *             If not specified, the default status filter is “InProgress”.
 		 * @return {APIPagedResponse_BuildSystemSharedDTOActivityRun_} OK
@@ -9844,6 +10788,7 @@ export namespace MyNS {
 		 * an appropriate ApiError is returned.
 		 * Get api/v2/activityRuns/{activityRunID}
 		 * @param {number} activityRunID The ID of the ActivityRun to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BuildSystemSharedDTOActivityRun} OK
 		 */
 		ActivityRuns_GetActivityRun(activityRunID: number): Observable<BuildSystemSharedDTOActivityRun> {
@@ -9856,6 +10801,7 @@ export namespace MyNS {
 		 * When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned.
 		 * Put api/v2/activityRuns/{activityRunID}
 		 * @param {number} activityRunID The ID of the ActivityRun to update ActivityRunStatus for.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BuildSystemSharedDTOActivityRun} requestBody The updated ActivityRun.
 		 * @return {void} 
 		 */
@@ -9869,6 +10815,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/activityRuns/{activityRunID}/status
 		 * @param {number} activityRunID The ID of the ActivityRun to get ActivityRunStatus for.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BuildSystemSharedDTOActivityRunStatus} OK
 		 */
 		ActivityRuns_GetActivityRunStatus(activityRunID: number): Observable<BuildSystemSharedDTOActivityRunStatus> {
@@ -9881,6 +10828,7 @@ export namespace MyNS {
 		 * When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned.
 		 * Put api/v2/activityRuns/{activityRunID}/status
 		 * @param {number} activityRunID The ID of the ActivityRun to update ActivityRunStatus for.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BuildSystemSharedDTOActivityRunStatus} requestBody The updated ActivityRunStatus.
 		 * @return {void} 
 		 */
@@ -9894,7 +10842,9 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/agents
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {APIPagedResponse_BuildSystemSharedDTOAgent_} OK
 		 */
 		Agents_GetAgents(limit: number | null | undefined, offset: number | null | undefined): Observable<APIPagedResponse_BuildSystemSharedDTOAgent_> {
@@ -9909,6 +10859,7 @@ export namespace MyNS {
 		 * Post api/v2/agents
 		 * @param {BuildSystemSharedDTOAgent} requestBody The Agent to create.  The AgentID will be assigned on creation of the Agent.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Agents_PostAgent(requestBody: BuildSystemSharedDTOAgent): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/agents', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -9942,6 +10893,7 @@ export namespace MyNS {
 		 * ApiError is returned.
 		 * Delete api/v2/agents/{agentID}
 		 * @param {number} agentID The id of the Agent to delete.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Agents_DeleteAgent(agentID: number): Observable<HttpResponse<string>> {
@@ -9954,6 +10906,7 @@ export namespace MyNS {
 		 * an appropriate ApiError is returned.
 		 * Get api/v2/agents/{agentID}
 		 * @param {number} agentID The id of the Agent to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BuildSystemSharedDTOAgent} OK
 		 */
 		Agents_GetAgentAsync(agentID: number): Observable<BuildSystemSharedDTOAgent> {
@@ -9966,6 +10919,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Put api/v2/agents/{agentID}
 		 * @param {number} agentID The id of the Agent to update.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BuildSystemSharedDTOAgent} requestBody The updated Agent
 		 * @return {void} 
 		 */
@@ -9979,6 +10933,7 @@ export namespace MyNS {
 		 * assigned to the Agent.  If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/agents/{agentID}/ActivityRun
 		 * @param {number} agentID The id of the Agent to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {BuildSystemSharedDTOActivityRun} OK
 		 */
 		Agents_GetAgentActivityRun(agentID: number): Observable<BuildSystemSharedDTOActivityRun> {
@@ -9990,6 +10945,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/agents/{agentID}/ActivityRun
 		 * @param {number} agentID The id of the Agent to update.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BuildSystemSharedDTOActivityRun} requestBody The ActivityRun assigned to the agent.  Only the ActivityRunID is used.
 		 * @return {void} 
 		 */
@@ -10003,6 +10959,7 @@ export namespace MyNS {
 		 * the response is empty.If unsuccessful, an appropriate ApiError is returned.
 		 * Put api/v2/agents/{agentID}/Status
 		 * @param {number} agentID The id of the Agent to update.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BuildSystemSharedDTOAgentStatus} requestBody The updated AgentStatus.
 		 * @return {void} 
 		 */
@@ -10016,7 +10973,9 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/jobRuns
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeActivityRunDetails Optional. Indicates whether to include ActivityRun details.  Defaults to false.
 		 * @return {APIPagedResponse_BuildSystemSharedDTOJobRun_} OK
 		 */
@@ -10032,6 +10991,7 @@ export namespace MyNS {
 		 * Post api/v2/jobRuns
 		 * @param {BuildSystemSharedDTOJobRun} requestBody The JobRun to create.  The JobRunID will be assigned on creation of the JobRun.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		JobRuns_PostJobRun(requestBody: BuildSystemSharedDTOJobRun): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/jobRuns', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -10043,6 +11003,7 @@ export namespace MyNS {
 		 * ApiError is returned.
 		 * Delete api/v2/jobRuns/{jobRunID}
 		 * @param {number} jobRunID The id of the JobRun to delete
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		JobRuns_DeleteJobRun(jobRunID: number): Observable<HttpResponse<string>> {
@@ -10055,6 +11016,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/jobRuns/{jobRunID}
 		 * @param {number} jobRunID The ID of the JobRun to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeActivityRunDetails Optional. Indicates whether to include ActivityRun details.  Defaults to false.
 		 * @return {BuildSystemSharedDTOJobRun} OK
 		 */
@@ -10069,6 +11031,7 @@ export namespace MyNS {
 		 * When successful, the response is empty.  If unsuccessful, an appropriate ApiError is returned.
 		 * Put api/v2/jobRuns/{jobRunID}
 		 * @param {number} jobRunID The id of the JobRun to update
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BuildSystemSharedDTOJobRun} requestBody The updated JobRun
 		 * @return {void} 
 		 */
@@ -10083,7 +11046,9 @@ export namespace MyNS {
 		 * ///
 		 * Get api/v2/jobs
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isIncludeDeleted Does it include deleted job, or not
 		 * @return {APIPagedResponse_BuildSystemSharedDTOJob_} OK
 		 */
@@ -10099,6 +11064,7 @@ export namespace MyNS {
 		 * Post api/v2/jobs
 		 * @param {BuildSystemSharedDTOJob} requestBody The job to create.  The JobID will be assigned on creation of the Job.
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Jobs_PostJob(requestBody: BuildSystemSharedDTOJob): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/jobs', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -10110,6 +11076,7 @@ export namespace MyNS {
 		 * ApiError is returned.
 		 * Delete api/v2/jobs/{jobID}
 		 * @param {number} jobID The id of the job to delete
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Jobs_DeleteJob(jobID: number): Observable<HttpResponse<string>> {
@@ -10122,6 +11089,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Get api/v2/jobs/{jobID}
 		 * @param {number} jobID The ID of the Job to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isIncludeDeleted Does it include deleted job, or not
 		 * @return {BuildSystemSharedDTOJob} OK
 		 */
@@ -10135,6 +11103,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.
 		 * Put api/v2/jobs/{jobID}
 		 * @param {number} jobID The id of the job to update
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BuildSystemSharedDTOJob} requestBody The updated job
 		 * @return {void} 
 		 */
@@ -10148,7 +11117,9 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.  Steps.Read permission is required.
 		 * Get api/v2/steps
 		 * @param {number} limit Optional. The page limit.  If not specified, the default page limit is 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Optional. The page offset.  If not specified, the default page offset is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeDeleted Does it include deleted step, or not
 		 * @return {APIPagedResponse_BuildSystemSharedDTOStep_} OK
 		 */
@@ -10162,6 +11133,7 @@ export namespace MyNS {
 		 * Post api/v2/steps
 		 * @param {BuildSystemSharedDTOStep} requestBody The step to create
 		 * @return {number} OK
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Steps_PostStep(requestBody: BuildSystemSharedDTOStep): Observable<number> {
 			return this.http.post<number>(this.baseUri + 'api/v2/steps', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });
@@ -10173,6 +11145,7 @@ export namespace MyNS {
 		 * If unsuccessful, an appropriate ApiError is returned.  Steps.Read permission is required.
 		 * Get api/v2/steps/{stepID}
 		 * @param {number} stepID The ID of the Step to get.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isIncludeDeleted Does it include deleted step, or not
 		 * @return {BuildSystemSharedDTOStep} OK
 		 */
@@ -10185,6 +11158,7 @@ export namespace MyNS {
 		 * No Documentation Found.
 		 * Put api/v2/steps/{stepID}
 		 * @param {number} stepID The step ID of the step to update
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {BuildSystemSharedDTOStep} requestBody The updated step
 		 * @return {void} 
 		 */

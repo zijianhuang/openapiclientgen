@@ -1701,6 +1701,7 @@ export namespace MyNS {
 		 * Create a channel to start receiving content streams. The channel represents the input to MediaPackage for incoming live content from an encoder such as AWS Elemental MediaLive. The channel receives content, and after packaging it, outputs it through an origin endpoint to downstream devices (such as video players or CDNs) that request the content. You can create only one channel with each request. We recommend that you spread out channels between channel groups, such as putting redundant channels in the same AWS Region in different channel groups.
 		 * Post channelGroup/{ChannelGroupName}/channel
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @return {CreateChannelResponse} Success
 		 */
 		CreateChannel(ChannelGroupName: string, requestBody: CreateChannelPostBody): Observable<CreateChannelResponse> {
@@ -1711,7 +1712,9 @@ export namespace MyNS {
 		 * Retrieves all channels in a specific channel group that are configured in AWS Elemental MediaPackage, including the origin endpoints that are associated with it.
 		 * Get channelGroup/{ChannelGroupName}/channel
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {number} maxResults The maximum number of results to return in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The pagination token from the GET list request. Use the token to fetch the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1734,6 +1737,7 @@ export namespace MyNS {
 		 * Retrieves all channel groups that are configured in AWS Elemental MediaPackage, including the channels and origin endpoints that are associated with it.
 		 * Get channelGroup
 		 * @param {number} maxResults The maximum number of results to return in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The pagination token from the GET list request. Use the token to fetch the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1747,7 +1751,9 @@ export namespace MyNS {
 		 * The endpoint is attached to a channel, and represents the output of the live content. You can associate multiple endpoints to a single channel. Each endpoint gives players and downstream CDNs (such as Amazon CloudFront) access to the content for playback. Content can't be served from a channel until it has an endpoint. You can create only one endpoint with each request.
 		 * Post channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @return {CreateOriginEndpointResponse} Success
 		 */
 		CreateOriginEndpoint(ChannelGroupName: string, ChannelName: string, requestBody: CreateOriginEndpointPostBody): Observable<CreateOriginEndpointResponse> {
@@ -1758,8 +1764,11 @@ export namespace MyNS {
 		 * Retrieves all origin endpoints in a specific channel that are configured in AWS Elemental MediaPackage.
 		 * Get channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @param {number} maxResults The maximum number of results to return in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The pagination token from the GET list request. Use the token to fetch the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1773,7 +1782,9 @@ export namespace MyNS {
 		 * Delete a channel to stop AWS Elemental MediaPackage from receiving further content. You must delete the channel's origin endpoints before you can delete the channel.
 		 * Delete channelGroup/{ChannelGroupName}/channel/{ChannelName}/
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.
+		 *     Min length: 1    Max length: 256
 		 * @return {DeleteChannelResponse} Success
 		 */
 		DeleteChannel(ChannelGroupName: string, ChannelName: string): Observable<DeleteChannelResponse> {
@@ -1784,7 +1795,9 @@ export namespace MyNS {
 		 * Retrieves the specified channel that's configured in AWS Elemental MediaPackage, including the origin endpoints that are associated with it.
 		 * Get channelGroup/{ChannelGroupName}/channel/{ChannelName}/
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @return {GetChannelResponse} Success
 		 */
 		GetChannel(ChannelGroupName: string, ChannelName: string): Observable<GetChannelResponse> {
@@ -1795,7 +1808,9 @@ export namespace MyNS {
 		 * <p>Update the specified channel. You can edit if MediaPackage sends ingest or egress access logs to the CloudWatch log group, if content will be encrypted, the description on a channel, and your channel's policy settings. You can't edit the name of the channel or CloudFront distribution details.</p> <p>Any edits you make that impact the video output may not be reflected for a few minutes.</p>
 		 * Put channelGroup/{ChannelGroupName}/channel/{ChannelName}/
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateChannelResponse} Success
 		 */
 		UpdateChannel(ChannelGroupName: string, ChannelName: string, requestBody: UpdateChannelPutBody): Observable<UpdateChannelResponse> {
@@ -1806,6 +1821,7 @@ export namespace MyNS {
 		 * Delete a channel group. You must delete the channel group's channels and origin endpoints before you can delete the channel group. If you delete a channel group, you'll lose access to the egress domain and will have to create a new channel group to replace it.
 		 * Delete channelGroup/{ChannelGroupName}
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @return {DeleteChannelGroupResponse} Success
 		 */
 		DeleteChannelGroup(ChannelGroupName: string): Observable<DeleteChannelGroupResponse> {
@@ -1816,6 +1832,7 @@ export namespace MyNS {
 		 * Retrieves the specified channel group that's configured in AWS Elemental MediaPackage, including the channels and origin endpoints that are associated with it.
 		 * Get channelGroup/{ChannelGroupName}
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @return {GetChannelGroupResponse} Success
 		 */
 		GetChannelGroup(ChannelGroupName: string): Observable<GetChannelGroupResponse> {
@@ -1826,6 +1843,7 @@ export namespace MyNS {
 		 * <p>Update the specified channel group. You can edit the description on a channel group for easier identification later from the AWS Elemental MediaPackage console. You can't edit the name of the channel group.</p> <p>Any edits you make that impact the video output may not be reflected for a few minutes.</p>
 		 * Put channelGroup/{ChannelGroupName}
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateChannelGroupResponse} Success
 		 */
 		UpdateChannelGroup(ChannelGroupName: string, requestBody: UpdateChannelGroupPutBody): Observable<UpdateChannelGroupResponse> {
@@ -1836,7 +1854,9 @@ export namespace MyNS {
 		 * Delete a channel policy.
 		 * Delete channelGroup/{ChannelGroupName}/channel/{ChannelName}/policy
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group.
+		 *     Min length: 1    Max length: 256
 		 * @return {DeleteChannelPolicyResponse} Success
 		 */
 		DeleteChannelPolicy(ChannelGroupName: string, ChannelName: string): Observable<DeleteChannelPolicyResponse> {
@@ -1847,7 +1867,9 @@ export namespace MyNS {
 		 * Retrieves the specified channel policy that's configured in AWS Elemental MediaPackage. With policies, you can specify who has access to AWS resources and what actions they can perform on those resources.
 		 * Get channelGroup/{ChannelGroupName}/channel/{ChannelName}/policy
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @return {GetChannelPolicyResponse} Success
 		 */
 		GetChannelPolicy(ChannelGroupName: string, ChannelName: string): Observable<GetChannelPolicyResponse> {
@@ -1858,7 +1880,9 @@ export namespace MyNS {
 		 * Attaches an IAM policy to the specified channel. With policies, you can specify who has access to AWS resources and what actions they can perform on those resources. You can attach only one policy with each request.
 		 * Put channelGroup/{ChannelGroupName}/channel/{ChannelName}/policy
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @return {PutChannelPolicyResponse} Success
 		 */
 		PutChannelPolicy(ChannelGroupName: string, ChannelName: string, requestBody: PutChannelPolicyPutBody): Observable<PutChannelPolicyResponse> {
@@ -1869,8 +1893,11 @@ export namespace MyNS {
 		 * Origin endpoints can serve content until they're deleted. Delete the endpoint if it should no longer respond to playback requests. You must delete all endpoints from a channel before you can delete the channel.
 		 * Delete channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @param {string} OriginEndpointName The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
+		 *     Min length: 1    Max length: 256
 		 * @return {DeleteOriginEndpointResponse} Success
 		 */
 		DeleteOriginEndpoint(ChannelGroupName: string, ChannelName: string, OriginEndpointName: string): Observable<DeleteOriginEndpointResponse> {
@@ -1881,8 +1908,11 @@ export namespace MyNS {
 		 * Retrieves the specified origin endpoint that's configured in AWS Elemental MediaPackage to obtain its playback URL and to view the packaging settings that it's currently using.
 		 * Get channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @param {string} OriginEndpointName The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
+		 *     Min length: 1    Max length: 256
 		 * @return {GetOriginEndpointResponse} Success
 		 */
 		GetOriginEndpoint(ChannelGroupName: string, ChannelName: string, OriginEndpointName: string): Observable<GetOriginEndpointResponse> {
@@ -1893,8 +1923,11 @@ export namespace MyNS {
 		 * <p>Update the specified origin endpoint. Edit the packaging preferences on an endpoint to optimize the viewing experience. You can't edit the name of the endpoint.</p> <p>Any edits you make that impact the video output may not be reflected for a few minutes.</p>
 		 * Put channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @param {string} OriginEndpointName The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateOriginEndpointResponse} Success
 		 */
 		UpdateOriginEndpoint(ChannelGroupName: string, ChannelName: string, OriginEndpointName: string, requestBody: UpdateOriginEndpointPutBody): Observable<UpdateOriginEndpointResponse> {
@@ -1905,8 +1938,11 @@ export namespace MyNS {
 		 * Delete an origin endpoint policy.
 		 * Delete channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}/policy
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @param {string} OriginEndpointName The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
+		 *     Min length: 1    Max length: 256
 		 * @return {DeleteOriginEndpointPolicyResponse} Success
 		 */
 		DeleteOriginEndpointPolicy(ChannelGroupName: string, ChannelName: string, OriginEndpointName: string): Observable<DeleteOriginEndpointPolicyResponse> {
@@ -1917,8 +1953,11 @@ export namespace MyNS {
 		 * Retrieves the specified origin endpoint policy that's configured in AWS Elemental MediaPackage.
 		 * Get channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}/policy
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @param {string} OriginEndpointName The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
+		 *     Min length: 1    Max length: 256
 		 * @return {GetOriginEndpointPolicyResponse} Success
 		 */
 		GetOriginEndpointPolicy(ChannelGroupName: string, ChannelName: string, OriginEndpointName: string): Observable<GetOriginEndpointPolicyResponse> {
@@ -1929,8 +1968,11 @@ export namespace MyNS {
 		 * Attaches an IAM policy to the specified origin endpoint. You can attach only one policy with each request.
 		 * Post channelGroup/{ChannelGroupName}/channel/{ChannelName}/originEndpoint/{OriginEndpointName}/policy
 		 * @param {string} ChannelGroupName The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} ChannelName The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. 
+		 *     Min length: 1    Max length: 256
 		 * @param {string} OriginEndpointName The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and and must be unique for your account in the AWS Region and channel. 
+		 *     Min length: 1    Max length: 256
 		 * @return {PutOriginEndpointPolicyResponse} Success
 		 */
 		PutOriginEndpointPolicy(ChannelGroupName: string, ChannelName: string, OriginEndpointName: string, requestBody: PutOriginEndpointPolicyPostBody): Observable<PutOriginEndpointPolicyResponse> {
@@ -1974,15 +2016,15 @@ export namespace MyNS {
 		/**
 		 * The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. You can't change the name after you create the channel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ChannelName: string;
 
 		/**
 		 * Enter any descriptive text that helps you to identify the channel.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -1994,15 +2036,15 @@ export namespace MyNS {
 		/**
 		 * The name that describes the channel. The name is the primary identifier for the channel, and must be unique for your account in the AWS Region and channel group. You can't change the name after you create the channel.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ChannelName: FormControl<string | null | undefined>,
 
 		/**
 		 * Enter any descriptive text that helps you to identify the channel.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2023,15 +2065,15 @@ export namespace MyNS {
 		/**
 		 * The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region. You can't use spaces in the name. You can't change the name after you create the channel group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ChannelGroupName: string;
 
 		/**
 		 * Enter any descriptive text that helps you to identify the channel group.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -2043,15 +2085,15 @@ export namespace MyNS {
 		/**
 		 * The name that describes the channel group. The name is the primary identifier for the channel group, and must be unique for your account in the AWS Region. You can't use spaces in the name. You can't change the name after you create the channel group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		ChannelGroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * Enter any descriptive text that helps you to identify the channel group.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2072,8 +2114,8 @@ export namespace MyNS {
 		/**
 		 * The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		OriginEndpointName: string;
 
@@ -2088,8 +2130,8 @@ export namespace MyNS {
 
 		/**
 		 * Enter any descriptive text that helps you to identify the origin endpoint.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -2114,8 +2156,8 @@ export namespace MyNS {
 		/**
 		 * The name that describes the origin endpoint. The name is the primary identifier for the origin endpoint, and must be unique for your account in the AWS Region and channel. You can't use spaces in the name. You can't change the name after you create the endpoint.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		OriginEndpointName: FormControl<string | null | undefined>,
 
@@ -2127,8 +2169,8 @@ export namespace MyNS {
 
 		/**
 		 * Enter any descriptive text that helps you to identify the origin endpoint.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2186,8 +2228,8 @@ export namespace MyNS {
 
 		/**
 		 * Any descriptive information that you want to add to the channel for future identification purposes.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 	}
@@ -2195,8 +2237,8 @@ export namespace MyNS {
 
 		/**
 		 * Any descriptive information that you want to add to the channel for future identification purposes.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -2211,8 +2253,8 @@ export namespace MyNS {
 
 		/**
 		 * Any descriptive information that you want to add to the channel group for future identification purposes.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 	}
@@ -2220,8 +2262,8 @@ export namespace MyNS {
 
 		/**
 		 * Any descriptive information that you want to add to the channel group for future identification purposes.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -2237,8 +2279,8 @@ export namespace MyNS {
 		/**
 		 * The policy to attach to the specified channel.
 		 * Required
-		 * Max length: 6144
 		 * Min length: 0
+		 * Max length: 6144
 		 */
 		Policy: string;
 	}
@@ -2247,8 +2289,8 @@ export namespace MyNS {
 		/**
 		 * The policy to attach to the specified channel.
 		 * Required
-		 * Max length: 6144
 		 * Min length: 0
+		 * Max length: 6144
 		 */
 		Policy: FormControl<string | null | undefined>,
 	}
@@ -2272,8 +2314,8 @@ export namespace MyNS {
 
 		/**
 		 * Any descriptive information that you want to add to the origin endpoint for future identification purposes.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -2300,8 +2342,8 @@ export namespace MyNS {
 
 		/**
 		 * Any descriptive information that you want to add to the origin endpoint for future identification purposes.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2355,8 +2397,8 @@ export namespace MyNS {
 		/**
 		 * The policy to attach to the specified origin endpoint.
 		 * Required
-		 * Max length: 6144
 		 * Min length: 0
+		 * Max length: 6144
 		 */
 		Policy: string;
 	}
@@ -2365,8 +2407,8 @@ export namespace MyNS {
 		/**
 		 * The policy to attach to the specified origin endpoint.
 		 * Required
-		 * Max length: 6144
 		 * Min length: 0
+		 * Max length: 6144
 		 */
 		Policy: FormControl<string | null | undefined>,
 	}

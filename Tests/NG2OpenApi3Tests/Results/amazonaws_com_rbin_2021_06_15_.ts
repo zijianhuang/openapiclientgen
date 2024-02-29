@@ -630,6 +630,7 @@ export namespace MyNS {
 		 * Lists the tags assigned to a retention rule.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the retention rule.
+		 *     Min length: 0    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -640,6 +641,7 @@ export namespace MyNS {
 		 * Assigns tags to the specified retention rule.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the retention rule.
+		 *     Min length: 0    Max length: 1011
 		 * @return {void} 
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -670,7 +672,9 @@ export namespace MyNS {
 		 * Unassigns a tag from a retention rule.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the retention rule.
+		 *     Min length: 0    Max length: 1011
 		 * @param {Array<string>} tagKeys The tag keys of the tags to unassign. All tags that have the specified tag key are unassigned.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {void} 
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {

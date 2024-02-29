@@ -5007,8 +5007,14 @@ namespace MyNS
 		/// Returns a list of the installed vCenter clients.
 		/// DescribeVcenterClients DescribeVcenterClients
 		/// </summary>
-		/// <param name="maxResults">Maximum results to be returned in DescribeVcenterClients.</param>
-		/// <param name="nextToken">Next pagination token to be provided for DescribeVcenterClients.</param>
+		/// <param name="maxResults">Maximum results to be returned in DescribeVcenterClients.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="nextToken">Next pagination token to be provided for DescribeVcenterClients.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeVcenterClientsResponse> DescribeVcenterClientsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5597,7 +5603,10 @@ namespace MyNS
 		/// List all tags for your Application Migration Service resources.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">List tags for resource request by ARN.</param>
+		/// <param name="resourceArn">List tags for resource request by ARN.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5631,7 +5640,10 @@ namespace MyNS
 		/// Adds or overwrites only the specified tags for the specified Application Migration Service resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">Tag resource by ARN.</param>
+		/// <param name="resourceArn">Tag resource by ARN.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6381,7 +6393,10 @@ namespace MyNS
 		/// Deletes the specified set of tags from the specified set of Application Migration Service resources.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">Untag resource by ARN.</param>
+		/// <param name="resourceArn">Untag resource by ARN.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <param name="tagKeys">Untag resource by Keys.</param>
 		/// <returns>Success</returns>
 		public async Task UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

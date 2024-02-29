@@ -3621,6 +3621,7 @@ export namespace MyNS {
 		 * Get phone-number-orders
 		 * @param {string} next_token The token used to retrieve the next page of results.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPhoneNumberOrdersResponse} Success
@@ -3633,6 +3634,7 @@ export namespace MyNS {
 		 * Creates a proxy session for the specified Amazon Chime SDK Voice Connector for the specified participant phone numbers.
 		 * Post voice-connectors/{voiceConnectorId}/proxy-sessions
 		 * @param {string} voiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		CreateProxySession(voiceConnectorId: string, requestBody: CreateProxySessionPostBody): Observable<HttpResponse<string>> {
@@ -3643,9 +3645,12 @@ export namespace MyNS {
 		 * Lists the proxy sessions for the specified Amazon Chime SDK Voice Connector.
 		 * Get voice-connectors/{voiceConnectorId}/proxy-sessions
 		 * @param {string} voiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {ProxySessionStatus} status The proxy session status.
 		 * @param {string} next_token The token used to retrieve the next page of results.
+		 *     Max length: 65535
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListProxySessionsResponse} Success
@@ -3667,7 +3672,9 @@ export namespace MyNS {
 		 * Lists the SIP media applications under the administrator's AWS account.
 		 * Get sip-media-applications
 		 * @param {number} max_results The maximum number of results to return in a single call. Defaults to 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} next_token The token used to return the next page of results.
+		 *     Max length: 65535
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSipMediaApplicationsResponse} Success
@@ -3700,7 +3707,9 @@ export namespace MyNS {
 		 * Get sip-rules
 		 * @param {string} sip_media_application The SIP media application ID.
 		 * @param {number} max_results The maximum number of results to return in a single call. Defaults to 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} next_token The token used to return the next page of results.
+		 *     Max length: 65535
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListSipRulesResponse} Success
@@ -3723,6 +3732,7 @@ export namespace MyNS {
 		 * Get voice-connectors
 		 * @param {string} next_token The token used to return the next page of results.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVoiceConnectorsResponse} Success
@@ -3745,6 +3755,7 @@ export namespace MyNS {
 		 * Get voice-connector-groups
 		 * @param {string} next_token The token used to return the next page of results.
 		 * @param {number} max_results The maximum number of results to return in a single call. 
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVoiceConnectorGroupsResponse} Success
@@ -3776,6 +3787,7 @@ export namespace MyNS {
 		 * Get voice-profile-domains
 		 * @param {string} next_token The token used to return the next page of results.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVoiceProfileDomainsResponse} Success
@@ -3818,7 +3830,9 @@ export namespace MyNS {
 		 * Deletes the specified proxy session from the specified Amazon Chime SDK Voice Connector.
 		 * Delete voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		 * @param {string} voiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} proxySessionId The proxy session ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteProxySession(voiceConnectorId: string, proxySessionId: string): Observable<HttpResponse<string>> {
@@ -3829,7 +3843,9 @@ export namespace MyNS {
 		 * Retrieves the specified proxy session details for the specified Amazon Chime SDK Voice Connector.
 		 * Get voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		 * @param {string} voiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} proxySessionId The proxy session ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetProxySessionResponse} Success
 		 */
 		GetProxySession(voiceConnectorId: string, proxySessionId: string): Observable<GetProxySessionResponse> {
@@ -3840,7 +3856,9 @@ export namespace MyNS {
 		 * Updates the specified proxy session details, such as voice or SMS capabilities.
 		 * Post voice-connectors/{voiceConnectorId}/proxy-sessions/{proxySessionId}
 		 * @param {string} voiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} proxySessionId The proxy session ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		UpdateProxySession(voiceConnectorId: string, proxySessionId: string, requestBody: UpdateProxySessionPostBody): Observable<HttpResponse<string>> {
@@ -4031,6 +4049,7 @@ export namespace MyNS {
 		 * Deletes the proxy configuration from the specified Amazon Chime SDK Voice Connector.
 		 * Delete voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		 * @param {string} voiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		DeleteVoiceConnectorProxy(voiceConnectorId: string): Observable<HttpResponse<string>> {
@@ -4041,6 +4060,7 @@ export namespace MyNS {
 		 * Retrieves the proxy configuration details for the specified Amazon Chime SDK Voice Connector.
 		 * Get voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		 * @param {string} voiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetVoiceConnectorProxyResponse} Success
 		 */
 		GetVoiceConnectorProxy(voiceConnectorId: string): Observable<GetVoiceConnectorProxyResponse> {
@@ -4051,6 +4071,7 @@ export namespace MyNS {
 		 * Puts the specified proxy configuration to the specified Amazon Chime SDK Voice Connector.
 		 * Put voice-connectors/{voiceConnectorId}/programmable-numbers/proxy
 		 * @param {string} voiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {PutVoiceConnectorProxyResponse} Success
 		 */
 		PutVoiceConnectorProxy(voiceConnectorId: string, requestBody: PutVoiceConnectorProxyPutBody): Observable<PutVoiceConnectorProxyResponse> {
@@ -4131,6 +4152,7 @@ export namespace MyNS {
 		 * Deletes a voice profile, including its voice print and enrollment data. WARNING: This action is not reversible.
 		 * Delete voice-profiles/{VoiceProfileId}
 		 * @param {string} VoiceProfileId The voice profile ID.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} 
 		 */
 		DeleteVoiceProfile(VoiceProfileId: string): Observable<HttpResponse<string>> {
@@ -4141,6 +4163,7 @@ export namespace MyNS {
 		 * Retrieves the details of the specified voice profile.
 		 * Get voice-profiles/{VoiceProfileId}
 		 * @param {string} VoiceProfileId The voice profile ID.
+		 *     Min length: 1    Max length: 256
 		 * @return {GetVoiceProfileResponse} Success
 		 */
 		GetVoiceProfile(VoiceProfileId: string): Observable<GetVoiceProfileResponse> {
@@ -4151,6 +4174,7 @@ export namespace MyNS {
 		 * <p>Updates the specified voice profile’s voice print and refreshes its expiration timestamp.</p> <important> <p>As a condition of using this feature, you acknowledge that the collection, use, storage, and retention of your caller’s biometric identifiers and biometric information (“biometric data”) in the form of a digital voiceprint requires the caller’s informed consent via a written release. Such consent is required under various state laws, including biometrics laws in Illinois, Texas, Washington and other state privacy laws.</p> <p>You must provide a written release to each caller through a process that clearly reflects each caller’s informed consent before using Amazon Chime SDK Voice Insights service, as required under the terms of your agreement with AWS governing your use of the service.</p> </important>
 		 * Put voice-profiles/{VoiceProfileId}
 		 * @param {string} VoiceProfileId The profile ID.
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateVoiceProfileResponse} Success
 		 */
 		UpdateVoiceProfile(VoiceProfileId: string, requestBody: UpdateVoiceProfilePutBody): Observable<UpdateVoiceProfileResponse> {
@@ -4161,6 +4185,7 @@ export namespace MyNS {
 		 * Deletes all voice profiles in the domain. WARNING: This action is not reversible.
 		 * Delete voice-profile-domains/{VoiceProfileDomainId}
 		 * @param {string} VoiceProfileDomainId The voice profile domain ID.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} 
 		 */
 		DeleteVoiceProfileDomain(VoiceProfileDomainId: string): Observable<HttpResponse<string>> {
@@ -4171,6 +4196,7 @@ export namespace MyNS {
 		 * Retrieves the details of the specified voice profile domain.
 		 * Get voice-profile-domains/{VoiceProfileDomainId}
 		 * @param {string} VoiceProfileDomainId The voice profile domain ID.
+		 *     Min length: 1    Max length: 256
 		 * @return {GetVoiceProfileDomainResponse} Success
 		 */
 		GetVoiceProfileDomain(VoiceProfileDomainId: string): Observable<GetVoiceProfileDomainResponse> {
@@ -4181,6 +4207,7 @@ export namespace MyNS {
 		 * Updates the settings for the specified voice profile domain.
 		 * Put voice-profile-domains/{VoiceProfileDomainId}
 		 * @param {string} VoiceProfileDomainId The domain ID.
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateVoiceProfileDomainResponse} Success
 		 */
 		UpdateVoiceProfileDomain(VoiceProfileDomainId: string, requestBody: UpdateVoiceProfileDomainPutBody): Observable<UpdateVoiceProfileDomainResponse> {
@@ -4297,7 +4324,9 @@ export namespace MyNS {
 		 * Retrieves the details of the specified speaker search task.
 		 * Get voice-connectors/{VoiceConnectorId}/speaker-search-tasks/{SpeakerSearchTaskId}
 		 * @param {string} VoiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} SpeakerSearchTaskId The ID of the speaker search task.
+		 *     Min length: 1    Max length: 256
 		 * @return {GetSpeakerSearchTaskResponse} Success
 		 */
 		GetSpeakerSearchTask(VoiceConnectorId: string, SpeakerSearchTaskId: string): Observable<GetSpeakerSearchTaskResponse> {
@@ -4338,7 +4367,9 @@ export namespace MyNS {
 		 * Retrieves the details of a voice tone analysis task.
 		 * Get voice-connectors/{VoiceConnectorId}/voice-tone-analysis-tasks/{VoiceToneAnalysisTaskId}#isCaller
 		 * @param {string} VoiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} VoiceToneAnalysisTaskId The ID of the voice tone anlysis task.
+		 *     Min length: 1    Max length: 256
 		 * @param {boolean} isCaller Specifies whether the voice being analyzed is the caller (originator) or the callee (responder).
 		 * @return {GetVoiceToneAnalysisTaskResponse} Success
 		 */
@@ -4363,6 +4394,7 @@ export namespace MyNS {
 		 * @param {PhoneNumberAssociationName} filter_name The filter to limit the number of results.
 		 * @param {string} filter_value The filter value.
 		 * @param {number} max_results The maximum number of results to return in a single call.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} next_token The token used to return the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4386,6 +4418,7 @@ export namespace MyNS {
 		 * Returns a list of the tags in a given resource.
 		 * Get tags#arn
 		 * @param {string} arn The resource ARN.
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(arn: string): Observable<ListTagsForResourceResponse> {
@@ -4406,8 +4439,10 @@ export namespace MyNS {
 		 * Lists the voice profiles in a voice profile domain.
 		 * Get voice-profiles#voice-profile-domain-id
 		 * @param {string} voice_profile_domain_id The ID of the voice profile domain.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} next_token The token used to retrieve the next page of results.
 		 * @param {number} max_results The maximum number of results in the request.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListVoiceProfilesResponse} Success
@@ -4444,8 +4479,10 @@ export namespace MyNS {
 		 * @param {string} country Confines a search to just the phone numbers associated with the specified country.
 		 * @param {string} state Confines a search to just the phone numbers associated with the specified state.
 		 * @param {string} toll_free_prefix Confines a search to just the phone numbers associated with the specified toll-free prefix.
+		 *     Min length: 3    Max length: 3
 		 * @param {PhoneNumberType} phone_number_type Confines a search to just the phone numbers associated with the specified phone number type, either <b>local</b> or <b>toll-free</b>.
 		 * @param {number} max_results The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} next_token The token used to return the next page of results.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4459,6 +4496,7 @@ export namespace MyNS {
 		 * <p>Starts a speaker search task.</p> <important> <p>Before starting any speaker search tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the Amazon Chime SDK.</p> </important>
 		 * Post voice-connectors/{VoiceConnectorId}/speaker-search-tasks
 		 * @param {string} VoiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		StartSpeakerSearchTask(VoiceConnectorId: string, requestBody: StartSpeakerSearchTaskPostBody): Observable<HttpResponse<string>> {
@@ -4469,6 +4507,7 @@ export namespace MyNS {
 		 * <p>Starts a voice tone analysis task. For more information about voice tone analysis, see <a href="https://docs.aws.amazon.com/chime-sdk/latest/dg/pstn-voice-analytics.html">Using Amazon Chime SDK voice analytics</a> in the <i>Amazon Chime SDK Developer Guide</i>.</p> <important> <p>Before starting any voice tone analysis tasks, you must provide all notices and obtain all consents from the speaker as required under applicable privacy and biometrics laws, and as required under the <a href="https://aws.amazon.com/service-terms/">AWS service terms</a> for the Amazon Chime SDK.</p> </important>
 		 * Post voice-connectors/{VoiceConnectorId}/voice-tone-analysis-tasks
 		 * @param {string} VoiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} 
 		 */
 		StartVoiceToneAnalysisTask(VoiceConnectorId: string, requestBody: StartVoiceToneAnalysisTaskPostBody): Observable<HttpResponse<string>> {
@@ -4479,7 +4518,9 @@ export namespace MyNS {
 		 * Stops a speaker search task.
 		 * Post voice-connectors/{VoiceConnectorId}/speaker-search-tasks/{SpeakerSearchTaskId}#operation=stop
 		 * @param {string} VoiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} SpeakerSearchTaskId The speaker search task ID.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} 
 		 */
 		StopSpeakerSearchTask(VoiceConnectorId: string, SpeakerSearchTaskId: string, operation: StopSpeakerSearchTaskOperation): Observable<HttpResponse<string>> {
@@ -4490,7 +4531,9 @@ export namespace MyNS {
 		 * Stops a voice tone analysis task.
 		 * Post voice-connectors/{VoiceConnectorId}/voice-tone-analysis-tasks/{VoiceToneAnalysisTaskId}#operation=stop
 		 * @param {string} VoiceConnectorId The Voice Connector ID.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} VoiceToneAnalysisTaskId The ID of the voice tone analysis task.
+		 *     Min length: 1    Max length: 256
 		 * @return {void} 
 		 */
 		StopVoiceToneAnalysisTask(VoiceConnectorId: string, VoiceToneAnalysisTaskId: string, operation: StopSpeakerSearchTaskOperation): Observable<HttpResponse<string>> {
@@ -4738,8 +4781,8 @@ export namespace MyNS {
 		/**
 		 * The SIP media application's name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -4769,8 +4812,8 @@ export namespace MyNS {
 		/**
 		 * The SIP media application's name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -4837,8 +4880,8 @@ export namespace MyNS {
 		/**
 		 * The name of the SIP rule.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -4869,8 +4912,8 @@ export namespace MyNS {
 		/**
 		 * The name of the SIP rule.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -4904,8 +4947,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Voice Connector.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -4930,8 +4973,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Voice Connector.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -4958,8 +5001,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Voice Connector group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -4971,8 +5014,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Voice Connector group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -4988,8 +5031,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the speaker search task.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		SpeakerSearchTaskId: string;
 	}
@@ -4998,8 +5041,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the speaker search task.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		SpeakerSearchTaskId: FormControl<string | null | undefined>,
 	}
@@ -5015,15 +5058,15 @@ export namespace MyNS {
 		/**
 		 * The name of the voice profile domain.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
 		/**
 		 * A description of the voice profile domain.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 
@@ -5048,15 +5091,15 @@ export namespace MyNS {
 		/**
 		 * The name of the voice profile domain.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the voice profile domain.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -5142,8 +5185,8 @@ export namespace MyNS {
 
 		/**
 		 * The new name for the specified SIP media application.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name?: string | null;
 
@@ -5158,8 +5201,8 @@ export namespace MyNS {
 
 		/**
 		 * The new name for the specified SIP media application.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -5175,8 +5218,8 @@ export namespace MyNS {
 		/**
 		 * The new name for the specified SIP rule.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -5195,8 +5238,8 @@ export namespace MyNS {
 		/**
 		 * The new name for the specified SIP rule.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5216,8 +5259,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Voice Connector.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -5232,8 +5275,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Voice Connector.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5283,8 +5326,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Voice Connector group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: string;
 
@@ -5299,8 +5342,8 @@ export namespace MyNS {
 		/**
 		 * The name of the Voice Connector group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -5346,6 +5389,7 @@ export namespace MyNS {
 		/**
 		 * The default number of minutes allowed for proxy session.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DefaultSessionExpiryMinutes: number;
 
@@ -5368,6 +5412,7 @@ export namespace MyNS {
 		/**
 		 * The default number of minutes allowed for proxy session.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		DefaultSessionExpiryMinutes: FormControl<number | null | undefined>,
 
@@ -5480,8 +5525,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the speaker search task.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		SpeakerSearchTaskId: string;
 	}
@@ -5490,8 +5535,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the speaker search task.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		SpeakerSearchTaskId: FormControl<string | null | undefined>,
 	}
@@ -5506,15 +5551,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the voice profile domain.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name?: string | null;
 
 		/**
 		 * The description of the voice profile domain.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description?: string | null;
 	}
@@ -5522,15 +5567,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the voice profile domain.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the voice profile domain.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -5734,16 +5779,16 @@ export namespace MyNS {
 		/**
 		 * The transaction ID of the call being analyzed.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		TransactionId: string;
 
 		/**
 		 * The ID of the voice profile domain that will store the voice profile.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		VoiceProfileDomainId: string;
 
@@ -5758,16 +5803,16 @@ export namespace MyNS {
 		/**
 		 * The transaction ID of the call being analyzed.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the voice profile domain that will store the voice profile.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		VoiceProfileDomainId: FormControl<string | null | undefined>,
 
@@ -5792,8 +5837,8 @@ export namespace MyNS {
 		/**
 		 * The transaction ID.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		TransactionId: string;
 
@@ -5811,8 +5856,8 @@ export namespace MyNS {
 		/**
 		 * The transaction ID.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 
@@ -5843,8 +5888,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource being tagged.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: string;
 
@@ -5861,8 +5906,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource being tagged.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -5880,8 +5925,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource having its tags removed.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: string;
 
@@ -5898,8 +5943,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the resource having its tags removed.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}

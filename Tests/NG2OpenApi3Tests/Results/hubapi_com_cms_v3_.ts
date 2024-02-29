@@ -9,12 +9,18 @@ export namespace MyNS {
 		/** Required */
 		results: Array<Domain>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: number;
 	}
 	export interface CollectionResponseWithTotalDomainForwardPagingFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateCollectionResponseWithTotalDomainForwardPagingFormGroup() {
@@ -346,6 +352,7 @@ export namespace MyNS {
 		 * @param {Date} updatedBefore Only return domains updated before this date.
 		 * @param {string} after The paging cursor token of the last successfully read resource will be returned as the `paging.next.after` JSON property of a paged response containing more results.
 		 * @param {number} limit Maximum number of results per page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} archived Whether to return only results that have been archived.
 		 * @return {CollectionResponseWithTotalDomainForwardPaging} successful operation
 		 */

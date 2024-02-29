@@ -317,7 +317,10 @@ export namespace MyNS {
 	/** Represents the dimensions of ads, placements, creatives, or creative assets. */
 	export interface Size {
 
-		/** Height of this size. Acceptable values are 0 to 32767, inclusive. */
+		/**
+		 * Height of this size. Acceptable values are 0 to 32767, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** IAB standard size. This is a read-only, auto-generated field. */
@@ -329,14 +332,20 @@ export namespace MyNS {
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#size". */
 		kind?: string | null;
 
-		/** Width of this size. Acceptable values are 0 to 32767, inclusive. */
+		/**
+		 * Width of this size. Acceptable values are 0 to 32767, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** Represents the dimensions of ads, placements, creatives, or creative assets. */
 	export interface SizeFormProperties {
 
-		/** Height of this size. Acceptable values are 0 to 32767, inclusive. */
+		/**
+		 * Height of this size. Acceptable values are 0 to 32767, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** IAB standard size. This is a read-only, auto-generated field. */
@@ -348,7 +357,10 @@ export namespace MyNS {
 		/** Identifies what kind of resource this is. Value: the fixed string "dfareporting#size". */
 		kind: FormControl<string | null | undefined>,
 
-		/** Width of this size. Acceptable values are 0 to 32767, inclusive. */
+		/**
+		 * Width of this size. Acceptable values are 0 to 32767, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateSizeFormGroup() {
@@ -366,20 +378,32 @@ export namespace MyNS {
 	/** Offset Position. */
 	export interface OffsetPosition {
 
-		/** Offset distance from left side of an asset or a window. */
+		/**
+		 * Offset distance from left side of an asset or a window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left?: number | null;
 
-		/** Offset distance from top side of an asset or a window. */
+		/**
+		 * Offset distance from top side of an asset or a window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top?: number | null;
 	}
 
 	/** Offset Position. */
 	export interface OffsetPositionFormProperties {
 
-		/** Offset distance from left side of an asset or a window. */
+		/**
+		 * Offset distance from left side of an asset or a window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** Offset distance from top side of an asset or a window. */
+		/**
+		 * Offset distance from top side of an asset or a window.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		top: FormControl<number | null | undefined>,
 	}
 	export function CreateOffsetPositionFormGroup() {
@@ -465,7 +489,10 @@ export namespace MyNS {
 		/** Set if the http request info is diff encoded. The value of this field is the version number of the base revision. This is corresponding to Apiary's mediaDiffObjectVersion (//depot/google3/java/com/google/api/server/media/variable/DiffObjectVersionVariable.java). See go/esf-scotty-diff-upload for more information. */
 		diffObjectVersion?: string | null;
 
-		/** The existence of the final_status field indicates that this is the last call to the agent for this request_id. http://google3/uploader/agent/scotty_agent.proto?l=737&rcl=347601929 */
+		/**
+		 * The existence of the final_status field indicates that this is the last call to the agent for this request_id. http://google3/uploader/agent/scotty_agent.proto?l=737&rcl=347601929
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		finalStatus?: number | null;
 
 		/** The type of notification received from Scotty. */
@@ -496,7 +523,10 @@ export namespace MyNS {
 		/** Set if the http request info is diff encoded. The value of this field is the version number of the base revision. This is corresponding to Apiary's mediaDiffObjectVersion (//depot/google3/java/com/google/api/server/media/variable/DiffObjectVersionVariable.java). See go/esf-scotty-diff-upload for more information. */
 		diffObjectVersion: FormControl<string | null | undefined>,
 
-		/** The existence of the final_status field indicates that this is the last call to the agent for this request_id. http://google3/uploader/agent/scotty_agent.proto?l=737&rcl=347601929 */
+		/**
+		 * The existence of the final_status field indicates that this is the last call to the agent for this request_id. http://google3/uploader/agent/scotty_agent.proto?l=737&rcl=347601929
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		finalStatus: FormControl<number | null | undefined>,
 
 		/** The type of notification received from Scotty. */

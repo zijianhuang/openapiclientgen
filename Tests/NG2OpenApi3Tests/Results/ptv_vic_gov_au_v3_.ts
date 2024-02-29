@@ -216,30 +216,48 @@ export namespace MyNS {
 
 	export interface V3Direction {
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id?: number | null;
 
 		/** Name of direction of travel */
 		direction_name?: string | null;
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id?: number | null;
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 	}
 	export interface V3DirectionFormProperties {
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id: FormControl<number | null | undefined>,
 
 		/** Name of direction of travel */
 		direction_name: FormControl<string | null | undefined>,
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id: FormControl<number | null | undefined>,
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 	}
 	export function CreateV3DirectionFormGroup() {
@@ -260,8 +278,11 @@ export namespace MyNS {
 		display_on_board?: boolean | null;
 		display_status?: boolean | null;
 
-		/** Disruption information identifier */
-		disruption_id?: number | null;
+		/**
+		 * Disruption information identifier
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		disruption_id?: string | null;
 
 		/** Status of the disruption (e.g. "Planned", "Current") */
 		disruption_status?: string | null;
@@ -301,8 +322,11 @@ export namespace MyNS {
 		display_on_board: FormControl<boolean | null | undefined>,
 		display_status: FormControl<boolean | null | undefined>,
 
-		/** Disruption information identifier */
-		disruption_id: FormControl<number | null | undefined>,
+		/**
+		 * Disruption information identifier
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		disruption_id: FormControl<string | null | undefined>,
 
 		/** Status of the disruption (e.g. "Planned", "Current") */
 		disruption_status: FormControl<string | null | undefined>,
@@ -334,7 +358,7 @@ export namespace MyNS {
 			description: new FormControl<string | null | undefined>(undefined),
 			display_on_board: new FormControl<boolean | null | undefined>(undefined),
 			display_status: new FormControl<boolean | null | undefined>(undefined),
-			disruption_id: new FormControl<number | null | undefined>(undefined),
+			disruption_id: new FormControl<string | null | undefined>(undefined),
 			disruption_status: new FormControl<string | null | undefined>(undefined),
 			disruption_type: new FormControl<string | null | undefined>(undefined),
 			from_date: new FormControl<Date | null | undefined>(undefined),
@@ -353,7 +377,10 @@ export namespace MyNS {
 		/** GTFS Identifer of the route */
 		route_gtfs_id?: string | null;
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id?: number | null;
 
 		/** Name of route */
@@ -362,7 +389,10 @@ export namespace MyNS {
 		/** Route number presented to public (i.e. not route_id) */
 		route_number?: string | null;
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 	}
 	export interface V3DisruptionRouteFormProperties {
@@ -370,7 +400,10 @@ export namespace MyNS {
 		/** GTFS Identifer of the route */
 		route_gtfs_id: FormControl<string | null | undefined>,
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id: FormControl<number | null | undefined>,
 
 		/** Name of route */
@@ -379,7 +412,10 @@ export namespace MyNS {
 		/** Route number presented to public (i.e. not route_id) */
 		route_number: FormControl<string | null | undefined>,
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 	}
 	export function CreateV3DisruptionRouteFormGroup() {
@@ -395,13 +431,19 @@ export namespace MyNS {
 
 	export interface V3DisruptionDirection {
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id?: number | null;
 
 		/** Name of direction of travel */
 		direction_name?: string | null;
 
-		/** Route and direction of travel combination identifier */
+		/**
+		 * Route and direction of travel combination identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_direction_id?: number | null;
 
 		/** Time of service to which disruption applies, in 24 hour clock format (HH:MM:SS) AEDT/AEST; returns null if disruption applies to multiple (or no) services */
@@ -409,13 +451,19 @@ export namespace MyNS {
 	}
 	export interface V3DisruptionDirectionFormProperties {
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id: FormControl<number | null | undefined>,
 
 		/** Name of direction of travel */
 		direction_name: FormControl<string | null | undefined>,
 
-		/** Route and direction of travel combination identifier */
+		/**
+		 * Route and direction of travel combination identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_direction_id: FormControl<number | null | undefined>,
 
 		/** Time of service to which disruption applies, in 24 hour clock format (HH:MM:SS) AEDT/AEST; returns null if disruption applies to multiple (or no) services */
@@ -432,10 +480,14 @@ export namespace MyNS {
 	}
 
 	export interface V3DisruptionStop {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stop_id?: number | null;
 		stop_name?: string | null;
 	}
 	export interface V3DisruptionStopFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stop_id: FormControl<number | null | undefined>,
 		stop_name: FormControl<string | null | undefined>,
 	}
@@ -460,10 +512,16 @@ export namespace MyNS {
 		 */
 		route_direction_status?: V3BulkDeparturesUpdateResponseRoute_direction_status;
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id?: number | null;
 	}
 	export interface V3BulkDeparturesUpdateResponseFormProperties {
@@ -474,10 +532,16 @@ export namespace MyNS {
 		 */
 		route_direction_status: FormControl<V3BulkDeparturesUpdateResponseRoute_direction_status | null | undefined>,
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id: FormControl<number | null | undefined>,
 	}
 	export function CreateV3BulkDeparturesUpdateResponseFormGroup() {
@@ -494,10 +558,16 @@ export namespace MyNS {
 		/** Indicates if the metropolitan train service is at the platform at the time of query; returns false for other modes */
 		at_platform?: boolean | null;
 
-		/** Chronological sequence for the departures in a run. Order ascendingly by this field to get chronological order (earliest first) of departures with the same run_ref. NOTE, this field is not always N+1 or N-1 of the previous or following departure. e.g 100, 200, 250, 300 instead of 1, 2, 3, 4 */
+		/**
+		 * Chronological sequence for the departures in a run. Order ascendingly by this field to get chronological order (earliest first) of departures with the same run_ref. NOTE, this field is not always N+1 or N-1 of the previous or following departure. e.g 100, 200, 250, 300 instead of 1, 2, 3, 4
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		departure_sequence?: number | null;
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id?: number | null;
 
 		/** Disruption information identifier(s) */
@@ -512,10 +582,16 @@ export namespace MyNS {
 		/** Platform number at stop (metropolitan train only; returns null for other modes) */
 		platform_number?: string | null;
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id?: number | null;
 
-		/** Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric */
+		/**
+		 * Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		run_id?: number | null;
 
 		/** Alphanumeric trip/service run identifier */
@@ -524,7 +600,10 @@ export namespace MyNS {
 		/** Scheduled (i.e. timetabled) departure time and date in ISO 8601 UTC format */
 		scheduled_departure_utc?: Date | null;
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id?: number | null;
 	}
 	export interface V3DepartureFormProperties {
@@ -532,10 +611,16 @@ export namespace MyNS {
 		/** Indicates if the metropolitan train service is at the platform at the time of query; returns false for other modes */
 		at_platform: FormControl<boolean | null | undefined>,
 
-		/** Chronological sequence for the departures in a run. Order ascendingly by this field to get chronological order (earliest first) of departures with the same run_ref. NOTE, this field is not always N+1 or N-1 of the previous or following departure. e.g 100, 200, 250, 300 instead of 1, 2, 3, 4 */
+		/**
+		 * Chronological sequence for the departures in a run. Order ascendingly by this field to get chronological order (earliest first) of departures with the same run_ref. NOTE, this field is not always N+1 or N-1 of the previous or following departure. e.g 100, 200, 250, 300 instead of 1, 2, 3, 4
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		departure_sequence: FormControl<number | null | undefined>,
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id: FormControl<number | null | undefined>,
 
 		/** Real-time estimate of departure time and date in ISO 8601 UTC format */
@@ -547,10 +632,16 @@ export namespace MyNS {
 		/** Platform number at stop (metropolitan train only; returns null for other modes) */
 		platform_number: FormControl<string | null | undefined>,
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id: FormControl<number | null | undefined>,
 
-		/** Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric */
+		/**
+		 * Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		run_id: FormControl<number | null | undefined>,
 
 		/** Alphanumeric trip/service run identifier */
@@ -559,7 +650,10 @@ export namespace MyNS {
 		/** Scheduled (i.e. timetabled) departure time and date in ISO 8601 UTC format */
 		scheduled_departure_utc: FormControl<Date | null | undefined>,
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id: FormControl<number | null | undefined>,
 	}
 	export function CreateV3DepartureFormGroup() {
@@ -581,7 +675,10 @@ export namespace MyNS {
 
 	export interface V3BulkDeparturesRouteDirectionResponse {
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id?: number | null;
 
 		/** Name of direction of travel */
@@ -592,7 +689,10 @@ export namespace MyNS {
 	}
 	export interface V3BulkDeparturesRouteDirectionResponseFormProperties {
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id: FormControl<number | null | undefined>,
 
 		/** Name of direction of travel */
@@ -617,31 +717,52 @@ export namespace MyNS {
 		/** Name of destination of run */
 		destination_name?: string | null;
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id?: number | null;
 
-		/** The number of remaining skipped/express stations for the run/service from a stop */
+		/**
+		 * The number of remaining skipped/express stations for the run/service from a stop
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		express_stop_count?: number | null;
 
-		/** stop_id of final stop of run */
+		/**
+		 * stop_id of final stop of run
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		final_stop_id?: number | null;
 
 		/** Geopath of the route */
 		geopath?: Array<V2Object>;
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id?: number | null;
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 
-		/** Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric */
+		/**
+		 * Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		run_id?: number | null;
 
 		/** Alphanumeric trip/service run identifier */
 		run_ref?: string | null;
 
-		/** Chronological sequence of the trip/service run on the route in direction. Order ascendingly by this field to get chronological order (earliest first) of runs with the same route_id and direction_id. */
+		/**
+		 * Chronological sequence of the trip/service run on the route in direction. Order ascendingly by this field to get chronological order (earliest first) of runs with the same route_id and direction_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		run_sequence?: number | null;
 
 		/** Status of metropolitan train run; returns "scheduled" for other modes */
@@ -654,28 +775,49 @@ export namespace MyNS {
 		/** Name of destination of run */
 		destination_name: FormControl<string | null | undefined>,
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id: FormControl<number | null | undefined>,
 
-		/** The number of remaining skipped/express stations for the run/service from a stop */
+		/**
+		 * The number of remaining skipped/express stations for the run/service from a stop
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		express_stop_count: FormControl<number | null | undefined>,
 
-		/** stop_id of final stop of run */
+		/**
+		 * stop_id of final stop of run
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		final_stop_id: FormControl<number | null | undefined>,
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id: FormControl<number | null | undefined>,
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 
-		/** Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric */
+		/**
+		 * Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		run_id: FormControl<number | null | undefined>,
 
 		/** Alphanumeric trip/service run identifier */
 		run_ref: FormControl<string | null | undefined>,
 
-		/** Chronological sequence of the trip/service run on the route in direction. Order ascendingly by this field to get chronological order (earliest first) of runs with the same route_id and direction_id. */
+		/**
+		 * Chronological sequence of the trip/service run on the route in direction. Order ascendingly by this field to get chronological order (earliest first) of runs with the same route_id and direction_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		run_sequence: FormControl<number | null | undefined>,
 
 		/** Status of metropolitan train run; returns "scheduled" for other modes */
@@ -773,6 +915,7 @@ export namespace MyNS {
 		/**
 		 * Compass bearing of the vehicle when known, clockwise from True North, i.e., 0 is North and 90 is East. May be null.
 		 * Only available for some bus runs.
+		 * Type: double
 		 */
 		bearing?: number | null;
 
@@ -782,7 +925,10 @@ export namespace MyNS {
 		/** CIS - Metro Train Vehicle Location Direction */
 		direction?: string | null;
 
-		/** CIS - Metro Train Vehicle Location Easting coordinate */
+		/**
+		 * CIS - Metro Train Vehicle Location Easting coordinate
+		 * Type: double
+		 */
 		easting?: number | null;
 
 		/** CIS - Metro Train Vehicle Location data expiry time */
@@ -791,16 +937,21 @@ export namespace MyNS {
 		/**
 		 * Geographic coordinate of latitude of the vehicle when known. May be null.
 		 * Only available for some bus runs.
+		 * Type: double
 		 */
 		latitude?: number | null;
 
 		/**
 		 * Geographic coordinate of longitude of the vehicle when known.
 		 * Only available for some bus runs.
+		 * Type: double
 		 */
 		longitude?: number | null;
 
-		/** CIS - Metro Train Vehicle Location Northing coordinate */
+		/**
+		 * CIS - Metro Train Vehicle Location Northing coordinate
+		 * Type: double
+		 */
 		northing?: number | null;
 
 		/** Supplier of vehicle position data. */
@@ -811,6 +962,7 @@ export namespace MyNS {
 		/**
 		 * Compass bearing of the vehicle when known, clockwise from True North, i.e., 0 is North and 90 is East. May be null.
 		 * Only available for some bus runs.
+		 * Type: double
 		 */
 		bearing: FormControl<number | null | undefined>,
 
@@ -820,7 +972,10 @@ export namespace MyNS {
 		/** CIS - Metro Train Vehicle Location Direction */
 		direction: FormControl<string | null | undefined>,
 
-		/** CIS - Metro Train Vehicle Location Easting coordinate */
+		/**
+		 * CIS - Metro Train Vehicle Location Easting coordinate
+		 * Type: double
+		 */
 		easting: FormControl<number | null | undefined>,
 
 		/** CIS - Metro Train Vehicle Location data expiry time */
@@ -829,16 +984,21 @@ export namespace MyNS {
 		/**
 		 * Geographic coordinate of latitude of the vehicle when known. May be null.
 		 * Only available for some bus runs.
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Geographic coordinate of longitude of the vehicle when known.
 		 * Only available for some bus runs.
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
-		/** CIS - Metro Train Vehicle Location Northing coordinate */
+		/**
+		 * CIS - Metro Train Vehicle Location Northing coordinate
+		 * Type: double
+		 */
 		northing: FormControl<number | null | undefined>,
 
 		/** Supplier of vehicle position data. */
@@ -887,16 +1047,25 @@ export namespace MyNS {
 
 	export interface V3BulkDeparturesStopResponse {
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id?: number | null;
 
 		/** Landmark in proximity of stop */
 		stop_landmark?: string | null;
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude?: number | null;
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude?: number | null;
 
 		/** Name of stop */
@@ -907,16 +1076,25 @@ export namespace MyNS {
 	}
 	export interface V3BulkDeparturesStopResponseFormProperties {
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id: FormControl<number | null | undefined>,
 
 		/** Landmark in proximity of stop */
 		stop_landmark: FormControl<string | null | undefined>,
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude: FormControl<number | null | undefined>,
 
 		/** Name of stop */
@@ -942,7 +1120,10 @@ export namespace MyNS {
 		/** Filter by the date and time of the request (ISO 8601 UTC format) (default = current date and time) */
 		date_utc?: Date | null;
 
-		/** Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id} */
+		/**
+		 * Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id?: number | null;
 
 		/**
@@ -963,7 +1144,10 @@ export namespace MyNS {
 		/** Indicates if filtering runs (and their departures) to those that arrive at destination before date_utc (default = false). Requires max_results &gt; 0. */
 		look_backwards?: boolean | null;
 
-		/** Maximum number of results returned */
+		/**
+		 * Maximum number of results returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results?: number | null;
 
 		/** Filter by platform number at stop */
@@ -974,7 +1158,10 @@ export namespace MyNS {
 		/** Filter by the date and time of the request (ISO 8601 UTC format) (default = current date and time) */
 		date_utc: FormControl<Date | null | undefined>,
 
-		/** Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id} */
+		/**
+		 * Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id: FormControl<number | null | undefined>,
 
 		/** Indicates that stop_id parameter will accept "GTFS stop_id" data */
@@ -989,7 +1176,10 @@ export namespace MyNS {
 		/** Indicates if filtering runs (and their departures) to those that arrive at destination before date_utc (default = false). Requires max_results &gt; 0. */
 		look_backwards: FormControl<boolean | null | undefined>,
 
-		/** Maximum number of results returned */
+		/**
+		 * Maximum number of results returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results: FormControl<number | null | undefined>,
 	}
 	export function CreateV3DeparturesBroadParametersFormGroup() {
@@ -1056,28 +1246,46 @@ export namespace MyNS {
 
 	export interface V3StopModel {
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 
-		/** Distance of stop from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of stop from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		stop_distance?: number | null;
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id?: number | null;
 
 		/** Landmark in proximity of stop */
 		stop_landmark?: string | null;
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude?: number | null;
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude?: number | null;
 
 		/** Name of stop */
 		stop_name?: string | null;
 
-		/** Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id. */
+		/**
+		 * Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_sequence?: number | null;
 
 		/** suburb of stop */
@@ -1085,28 +1293,46 @@ export namespace MyNS {
 	}
 	export interface V3StopModelFormProperties {
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 
-		/** Distance of stop from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of stop from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		stop_distance: FormControl<number | null | undefined>,
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id: FormControl<number | null | undefined>,
 
 		/** Landmark in proximity of stop */
 		stop_landmark: FormControl<string | null | undefined>,
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude: FormControl<number | null | undefined>,
 
 		/** Name of stop */
 		stop_name: FormControl<string | null | undefined>,
 
-		/** Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id. */
+		/**
+		 * Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_sequence: FormControl<number | null | undefined>,
 
 		/** suburb of stop */
@@ -1132,7 +1358,10 @@ export namespace MyNS {
 		/** Filter by the date and time of the request (ISO 8601 UTC format) (default = current date and time) */
 		date_utc?: Date | null;
 
-		/** Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id} */
+		/**
+		 * Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id?: number | null;
 
 		/**
@@ -1153,7 +1382,10 @@ export namespace MyNS {
 		/** Indicates if filtering runs (and their departures) to those that arrive at destination before date_utc (default = false). Requires max_results &gt; 0. */
 		look_backwards?: boolean | null;
 
-		/** Maximum number of results returned */
+		/**
+		 * Maximum number of results returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results?: number | null;
 	}
 	export interface V3DeparturesSpecificParametersFormProperties {
@@ -1161,7 +1393,10 @@ export namespace MyNS {
 		/** Filter by the date and time of the request (ISO 8601 UTC format) (default = current date and time) */
 		date_utc: FormControl<Date | null | undefined>,
 
-		/** Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id} */
+		/**
+		 * Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id: FormControl<number | null | undefined>,
 
 		/** Indicates that stop_id parameter will accept "GTFS stop_id" data */
@@ -1176,7 +1411,10 @@ export namespace MyNS {
 		/** Indicates if filtering runs (and their departures) to those that arrive at destination before date_utc (default = false). Requires max_results &gt; 0. */
 		look_backwards: FormControl<boolean | null | undefined>,
 
-		/** Maximum number of results returned */
+		/**
+		 * Maximum number of results returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results: FormControl<number | null | undefined>,
 	}
 	export function CreateV3DeparturesSpecificParametersFormGroup() {
@@ -1194,32 +1432,50 @@ export namespace MyNS {
 
 	export interface V3DirectionWithDescription {
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id?: number | null;
 
 		/** Name of direction of travel */
 		direction_name?: string | null;
 		route_direction_description?: string | null;
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id?: number | null;
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 	}
 	export interface V3DirectionWithDescriptionFormProperties {
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id: FormControl<number | null | undefined>,
 
 		/** Name of direction of travel */
 		direction_name: FormControl<string | null | undefined>,
 		route_direction_description: FormControl<string | null | undefined>,
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id: FormControl<number | null | undefined>,
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 	}
 	export function CreateV3DirectionWithDescriptionFormGroup() {
@@ -1249,7 +1505,10 @@ export namespace MyNS {
 
 	export interface V3DisruptionMode {
 
-		/** Disruption mode identifier */
+		/**
+		 * Disruption mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disruption_mode?: number | null;
 
 		/** Name of disruption mode */
@@ -1257,7 +1516,10 @@ export namespace MyNS {
 	}
 	export interface V3DisruptionModeFormProperties {
 
-		/** Disruption mode identifier */
+		/**
+		 * Disruption mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disruption_mode: FormControl<number | null | undefined>,
 
 		/** Name of disruption mode */
@@ -1375,14 +1637,20 @@ export namespace MyNS {
 		/** Diva Mapping Version used to load Parser into DynamoDB */
 		parser_mapping_version?: string | null;
 
-		/** Parser verison */
-		parser_version?: number | null;
+		/**
+		 * Parser verison
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parser_version?: string | null;
 
 		/** Diva Mapping Version used to load PT into DynamoDB */
 		pt_mapping_version?: string | null;
 
-		/** PT version */
-		pt_version?: number | null;
+		/**
+		 * PT version
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pt_version?: string | null;
 
 		/** Name of corresponding table in DynamoDB. */
 		table_name?: string | null;
@@ -1404,14 +1672,20 @@ export namespace MyNS {
 		/** Diva Mapping Version used to load Parser into DynamoDB */
 		parser_mapping_version: FormControl<string | null | undefined>,
 
-		/** Parser verison */
-		parser_version: FormControl<number | null | undefined>,
+		/**
+		 * Parser verison
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		parser_version: FormControl<string | null | undefined>,
 
 		/** Diva Mapping Version used to load PT into DynamoDB */
 		pt_mapping_version: FormControl<string | null | undefined>,
 
-		/** PT version */
-		pt_version: FormControl<number | null | undefined>,
+		/**
+		 * PT version
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		pt_version: FormControl<string | null | undefined>,
 
 		/** Name of corresponding table in DynamoDB. */
 		table_name: FormControl<string | null | undefined>,
@@ -1424,9 +1698,9 @@ export namespace MyNS {
 			applicable_local_date: new FormControl<string | null | undefined>(undefined),
 			exists: new FormControl<boolean | null | undefined>(undefined),
 			parser_mapping_version: new FormControl<string | null | undefined>(undefined),
-			parser_version: new FormControl<number | null | undefined>(undefined),
+			parser_version: new FormControl<string | null | undefined>(undefined),
 			pt_mapping_version: new FormControl<string | null | undefined>(undefined),
-			pt_version: new FormControl<number | null | undefined>(undefined),
+			pt_version: new FormControl<string | null | undefined>(undefined),
 			table_name: new FormControl<string | null | undefined>(undefined),
 			transport_type: new FormControl<V3DynamoDbTimetableTransport_type | null | undefined>(undefined),
 		});
@@ -1519,10 +1793,16 @@ export namespace MyNS {
 		/** The business hours on Wednesday */
 		outlet_business_hour_wed?: string | null;
 
-		/** Geographic coordinate of latitude at outlet */
+		/**
+		 * Geographic coordinate of latitude at outlet
+		 * Type: float
+		 */
 		outlet_latitude?: number | null;
 
-		/** Geographic coordinate of longitude at outlet */
+		/**
+		 * Geographic coordinate of longitude at outlet
+		 * Type: float
+		 */
 		outlet_longitude?: number | null;
 
 		/** The location name of the outlet */
@@ -1531,7 +1811,10 @@ export namespace MyNS {
 		/** Any additional notes for the outlet such as 'Buy pre-loaded myki cards only'. May be null/empty. */
 		outlet_notes?: string | null;
 
-		/** The postcode for the outlet */
+		/**
+		 * The postcode for the outlet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outlet_postcode?: number | null;
 
 		/** The SLID / SPID */
@@ -1566,10 +1849,16 @@ export namespace MyNS {
 		/** The business hours on Wednesday */
 		outlet_business_hour_wed: FormControl<string | null | undefined>,
 
-		/** Geographic coordinate of latitude at outlet */
+		/**
+		 * Geographic coordinate of latitude at outlet
+		 * Type: float
+		 */
 		outlet_latitude: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of longitude at outlet */
+		/**
+		 * Geographic coordinate of longitude at outlet
+		 * Type: float
+		 */
 		outlet_longitude: FormControl<number | null | undefined>,
 
 		/** The location name of the outlet */
@@ -1578,7 +1867,10 @@ export namespace MyNS {
 		/** Any additional notes for the outlet such as 'Buy pre-loaded myki cards only'. May be null/empty. */
 		outlet_notes: FormControl<string | null | undefined>,
 
-		/** The postcode for the outlet */
+		/**
+		 * The postcode for the outlet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outlet_postcode: FormControl<number | null | undefined>,
 
 		/** The SLID / SPID */
@@ -1634,13 +1926,22 @@ export namespace MyNS {
 		/** The business hours on Wednesday */
 		outlet_business_hour_wed?: string | null;
 
-		/** Distance of outlet from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of outlet from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		outlet_distance?: number | null;
 
-		/** Geographic coordinate of latitude at outlet */
+		/**
+		 * Geographic coordinate of latitude at outlet
+		 * Type: float
+		 */
 		outlet_latitude?: number | null;
 
-		/** Geographic coordinate of longitude at outlet */
+		/**
+		 * Geographic coordinate of longitude at outlet
+		 * Type: float
+		 */
 		outlet_longitude?: number | null;
 
 		/** The location name of the outlet */
@@ -1649,7 +1950,10 @@ export namespace MyNS {
 		/** Any additional notes for the outlet such as 'Buy pre-loaded myki cards only'. May be null/empty. */
 		outlet_notes?: string | null;
 
-		/** The postcode for the outlet */
+		/**
+		 * The postcode for the outlet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outlet_postcode?: number | null;
 
 		/** The SLID / SPID */
@@ -1684,13 +1988,22 @@ export namespace MyNS {
 		/** The business hours on Wednesday */
 		outlet_business_hour_wed: FormControl<string | null | undefined>,
 
-		/** Distance of outlet from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of outlet from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		outlet_distance: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of latitude at outlet */
+		/**
+		 * Geographic coordinate of latitude at outlet
+		 * Type: float
+		 */
 		outlet_latitude: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of longitude at outlet */
+		/**
+		 * Geographic coordinate of longitude at outlet
+		 * Type: float
+		 */
 		outlet_longitude: FormControl<number | null | undefined>,
 
 		/** The location name of the outlet */
@@ -1699,7 +2012,10 @@ export namespace MyNS {
 		/** Any additional notes for the outlet such as 'Buy pre-loaded myki cards only'. May be null/empty. */
 		outlet_notes: FormControl<string | null | undefined>,
 
-		/** The postcode for the outlet */
+		/**
+		 * The postcode for the outlet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outlet_postcode: FormControl<number | null | undefined>,
 
 		/** The SLID / SPID */
@@ -1732,18 +2048,30 @@ export namespace MyNS {
 
 	export interface V3OutletGeolocationParameters {
 
-		/** Filter by maximum distance (in metres) from location specified via latitude and longitude parameters (default = 300) */
+		/**
+		 * Filter by maximum distance (in metres) from location specified via latitude and longitude parameters (default = 300)
+		 * Type: double
+		 */
 		max_distance?: number | null;
 
-		/** Maximum number of results returned (default = 30) */
+		/**
+		 * Maximum number of results returned (default = 30)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results?: number | null;
 	}
 	export interface V3OutletGeolocationParametersFormProperties {
 
-		/** Filter by maximum distance (in metres) from location specified via latitude and longitude parameters (default = 300) */
+		/**
+		 * Filter by maximum distance (in metres) from location specified via latitude and longitude parameters (default = 300)
+		 * Type: double
+		 */
 		max_distance: FormControl<number | null | undefined>,
 
-		/** Maximum number of results returned (default = 30) */
+		/**
+		 * Maximum number of results returned (default = 30)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results: FormControl<number | null | undefined>,
 	}
 	export function CreateV3OutletGeolocationParametersFormGroup() {
@@ -1770,12 +2098,18 @@ export namespace MyNS {
 
 	export interface V3OutletParameters {
 
-		/** Maximum number of results returned (default = 30) */
+		/**
+		 * Maximum number of results returned (default = 30)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results?: number | null;
 	}
 	export interface V3OutletParametersFormProperties {
 
-		/** Maximum number of results returned (default = 30) */
+		/**
+		 * Maximum number of results returned (default = 30)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results: FormControl<number | null | undefined>,
 	}
 	export function CreateV3OutletParametersFormGroup() {
@@ -1804,10 +2138,16 @@ export namespace MyNS {
 		/** Indicates if the metropolitan train service is at the platform at the time of query; returns false for other modes */
 		at_platform?: boolean | null;
 
-		/** Chronological sequence for the departures in a run. Order ascendingly by this field to get chronological order (earliest first) of departures with the same run_ref. NOTE, this field is not always N+1 or N-1 of the previous or following departure. e.g 100, 200, 250, 300 instead of 1, 2, 3, 4 */
+		/**
+		 * Chronological sequence for the departures in a run. Order ascendingly by this field to get chronological order (earliest first) of departures with the same run_ref. NOTE, this field is not always N+1 or N-1 of the previous or following departure. e.g 100, 200, 250, 300 instead of 1, 2, 3, 4
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		departure_sequence?: number | null;
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id?: number | null;
 
 		/** Disruption information identifier(s) */
@@ -1822,10 +2162,16 @@ export namespace MyNS {
 		/** Platform number at stop (metropolitan train only; returns null for other modes) */
 		platform_number?: string | null;
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id?: number | null;
 
-		/** Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric */
+		/**
+		 * Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		run_id?: number | null;
 
 		/** Alphanumeric trip/service run identifier */
@@ -1837,7 +2183,10 @@ export namespace MyNS {
 		/** The stops to be skipped following the current departure in order. */
 		skipped_stops?: Array<V3StopModel>;
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id?: number | null;
 	}
 	export interface V3PatternDepartureFormProperties {
@@ -1845,10 +2194,16 @@ export namespace MyNS {
 		/** Indicates if the metropolitan train service is at the platform at the time of query; returns false for other modes */
 		at_platform: FormControl<boolean | null | undefined>,
 
-		/** Chronological sequence for the departures in a run. Order ascendingly by this field to get chronological order (earliest first) of departures with the same run_ref. NOTE, this field is not always N+1 or N-1 of the previous or following departure. e.g 100, 200, 250, 300 instead of 1, 2, 3, 4 */
+		/**
+		 * Chronological sequence for the departures in a run. Order ascendingly by this field to get chronological order (earliest first) of departures with the same run_ref. NOTE, this field is not always N+1 or N-1 of the previous or following departure. e.g 100, 200, 250, 300 instead of 1, 2, 3, 4
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		departure_sequence: FormControl<number | null | undefined>,
 
-		/** Direction of travel identifier */
+		/**
+		 * Direction of travel identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		direction_id: FormControl<number | null | undefined>,
 
 		/** Real-time estimate of departure time and date in ISO 8601 UTC format */
@@ -1860,10 +2215,16 @@ export namespace MyNS {
 		/** Platform number at stop (metropolitan train only; returns null for other modes) */
 		platform_number: FormControl<string | null | undefined>,
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id: FormControl<number | null | undefined>,
 
-		/** Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric */
+		/**
+		 * Numeric trip/service run identifier. Defaults to -1 when run identifier is Alphanumeric
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		run_id: FormControl<number | null | undefined>,
 
 		/** Alphanumeric trip/service run identifier */
@@ -1872,7 +2233,10 @@ export namespace MyNS {
 		/** Scheduled (i.e. timetabled) departure time and date in ISO 8601 UTC format */
 		scheduled_departure_utc: FormControl<Date | null | undefined>,
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id: FormControl<number | null | undefined>,
 	}
 	export function CreateV3PatternDepartureFormGroup() {
@@ -1918,13 +2282,22 @@ export namespace MyNS {
 		/** The business hours on Wednesday */
 		outlet_business_hour_wed?: string | null;
 
-		/** Distance of outlet from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of outlet from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		outlet_distance?: number | null;
 
-		/** Geographic coordinate of latitude at outlet */
+		/**
+		 * Geographic coordinate of latitude at outlet
+		 * Type: float
+		 */
 		outlet_latitude?: number | null;
 
-		/** Geographic coordinate of longitude at outlet */
+		/**
+		 * Geographic coordinate of longitude at outlet
+		 * Type: float
+		 */
 		outlet_longitude?: number | null;
 
 		/** The location name of the outlet */
@@ -1933,7 +2306,10 @@ export namespace MyNS {
 		/** Any additional notes for the outlet such as 'Buy pre-loaded myki cards only'. May be null/empty. */
 		outlet_notes?: string | null;
 
-		/** The postcode for the outlet */
+		/**
+		 * The postcode for the outlet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outlet_postcode?: number | null;
 
 		/** The SLID / SPID */
@@ -1968,13 +2344,22 @@ export namespace MyNS {
 		/** The business hours on Wednesday */
 		outlet_business_hour_wed: FormControl<string | null | undefined>,
 
-		/** Distance of outlet from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of outlet from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		outlet_distance: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of latitude at outlet */
+		/**
+		 * Geographic coordinate of latitude at outlet
+		 * Type: float
+		 */
 		outlet_latitude: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of longitude at outlet */
+		/**
+		 * Geographic coordinate of longitude at outlet
+		 * Type: float
+		 */
 		outlet_longitude: FormControl<number | null | undefined>,
 
 		/** The location name of the outlet */
@@ -1983,7 +2368,10 @@ export namespace MyNS {
 		/** Any additional notes for the outlet such as 'Buy pre-loaded myki cards only'. May be null/empty. */
 		outlet_notes: FormControl<string | null | undefined>,
 
-		/** The postcode for the outlet */
+		/**
+		 * The postcode for the outlet
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outlet_postcode: FormControl<number | null | undefined>,
 
 		/** The SLID / SPID */
@@ -2019,7 +2407,10 @@ export namespace MyNS {
 		/** GTFS Identifer of the route */
 		route_gtfs_id?: string | null;
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id?: number | null;
 
 		/** Name of route */
@@ -2029,7 +2420,10 @@ export namespace MyNS {
 		route_number?: string | null;
 		route_service_status?: V3RouteServiceStatus;
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 	}
 	export interface V3ResultRouteFormProperties {
@@ -2037,7 +2431,10 @@ export namespace MyNS {
 		/** GTFS Identifer of the route */
 		route_gtfs_id: FormControl<string | null | undefined>,
 
-		/** Route identifier */
+		/**
+		 * Route identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_id: FormControl<number | null | undefined>,
 
 		/** Name of route */
@@ -2046,7 +2443,10 @@ export namespace MyNS {
 		/** Route number presented to public (nb. not route_id) */
 		route_number: FormControl<string | null | undefined>,
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 	}
 	export function CreateV3ResultRouteFormGroup() {
@@ -2078,31 +2478,49 @@ export namespace MyNS {
 
 	export interface V3ResultStop {
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 
 		/** List of routes travelling through the stop */
 		routes?: Array<V3ResultRoute>;
 
-		/** Distance of stop from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of stop from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		stop_distance?: number | null;
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id?: number | null;
 
 		/** Landmark in proximity of stop */
 		stop_landmark?: string | null;
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude?: number | null;
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude?: number | null;
 
 		/** Name of stop */
 		stop_name?: string | null;
 
-		/** Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id. */
+		/**
+		 * Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_sequence?: number | null;
 
 		/** suburb of stop */
@@ -2110,28 +2528,46 @@ export namespace MyNS {
 	}
 	export interface V3ResultStopFormProperties {
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 
-		/** Distance of stop from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of stop from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		stop_distance: FormControl<number | null | undefined>,
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id: FormControl<number | null | undefined>,
 
 		/** Landmark in proximity of stop */
 		stop_landmark: FormControl<string | null | undefined>,
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude: FormControl<number | null | undefined>,
 
 		/** Name of stop */
 		stop_name: FormControl<string | null | undefined>,
 
-		/** Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id. */
+		/**
+		 * Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_sequence: FormControl<number | null | undefined>,
 
 		/** suburb of stop */
@@ -2172,7 +2608,10 @@ export namespace MyNS {
 		/** Indicates if filtering runs (and their departures) to those that arrive at destination before date_utc (default = false). Requires max_results &gt; 0. */
 		look_backwards?: boolean | null;
 
-		/** Maximum number of results returned */
+		/**
+		 * Maximum number of results returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results?: number | null;
 
 		/**
@@ -2198,7 +2637,10 @@ export namespace MyNS {
 		/** Indicates if filtering runs (and their departures) to those that arrive at destination before date_utc (default = false). Requires max_results &gt; 0. */
 		look_backwards: FormControl<boolean | null | undefined>,
 
-		/** Maximum number of results returned */
+		/**
+		 * Maximum number of results returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_results: FormControl<number | null | undefined>,
 
 		/**
@@ -2237,7 +2679,10 @@ export namespace MyNS {
 
 	export interface V3RouteType {
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 
 		/** Name of transport mode */
@@ -2245,7 +2690,10 @@ export namespace MyNS {
 	}
 	export interface V3RouteTypeFormProperties {
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 
 		/** Name of transport mode */
@@ -2307,10 +2755,16 @@ export namespace MyNS {
 		/** Indicates if outlets will be returned in response (default = true) */
 		include_outlets?: boolean | null;
 
-		/** Filter by geographic coordinate of latitude */
+		/**
+		 * Filter by geographic coordinate of latitude
+		 * Type: float
+		 */
 		latitude?: number | null;
 
-		/** Filter by geographic coordinate of longitude */
+		/**
+		 * Filter by geographic coordinate of longitude
+		 * Type: float
+		 */
 		longitude?: number | null;
 
 		/** Indicates whether to find routes by suburbs in the search term (default = true) */
@@ -2322,7 +2776,10 @@ export namespace MyNS {
 		/** Indicates whether to find stops by suburbs in the search term (default = true) */
 		match_stop_by_suburb?: boolean | null;
 
-		/** Filter by maximum distance (in metres) from location specified via latitude and longitude parameters */
+		/**
+		 * Filter by maximum distance (in metres) from location specified via latitude and longitude parameters
+		 * Type: float
+		 */
 		max_distance?: number | null;
 
 		/** Filter by route_type; values returned via RouteTypes API (note: stops and routes are ordered by route_types specified) */
@@ -2336,10 +2793,16 @@ export namespace MyNS {
 		/** Indicates if outlets will be returned in response (default = true) */
 		include_outlets: FormControl<boolean | null | undefined>,
 
-		/** Filter by geographic coordinate of latitude */
+		/**
+		 * Filter by geographic coordinate of latitude
+		 * Type: float
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Filter by geographic coordinate of longitude */
+		/**
+		 * Filter by geographic coordinate of longitude
+		 * Type: float
+		 */
 		longitude: FormControl<number | null | undefined>,
 
 		/** Indicates whether to find routes by suburbs in the search term (default = true) */
@@ -2351,7 +2814,10 @@ export namespace MyNS {
 		/** Indicates whether to find stops by suburbs in the search term (default = true) */
 		match_stop_by_suburb: FormControl<boolean | null | undefined>,
 
-		/** Filter by maximum distance (in metres) from location specified via latitude and longitude parameters */
+		/**
+		 * Filter by maximum distance (in metres) from location specified via latitude and longitude parameters
+		 * Type: float
+		 */
 		max_distance: FormControl<number | null | undefined>,
 	}
 	export function CreateV3SearchParametersFormGroup() {
@@ -2418,25 +2884,43 @@ export namespace MyNS {
 	}
 
 	export interface V3SiriReferenceDataDetail {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		direction_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		route_id?: number | null;
 
 		/** Route number */
 		route_number_short?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		route_type?: number | null;
 
-		/** Authority (Upstream SIRI provider) of a route and direction */
+		/**
+		 * Authority (Upstream SIRI provider) of a route and direction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tracking_supplier_id?: number | null;
 	}
 	export interface V3SiriReferenceDataDetailFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		direction_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		route_id: FormControl<number | null | undefined>,
 
 		/** Route number */
 		route_number_short: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		route_type: FormControl<number | null | undefined>,
 
-		/** Authority (Upstream SIRI provider) of a route and direction */
+		/**
+		 * Authority (Upstream SIRI provider) of a route and direction
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tracking_supplier_id: FormControl<number | null | undefined>,
 	}
 	export function CreateV3SiriReferenceDataDetailFormGroup() {
@@ -2766,6 +3250,7 @@ export namespace MyNS {
 		/**
 		 * Siri StopPointRef
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		stop_point_ref: number;
 	}
@@ -2786,6 +3271,7 @@ export namespace MyNS {
 		/**
 		 * Siri StopPointRef
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		stop_point_ref: FormControl<number | null | undefined>,
 	}
@@ -3001,9 +3487,13 @@ export namespace MyNS {
 	}
 
 	export interface V3StopPoint {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stop_id?: number | null;
 	}
 	export interface V3StopPointFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stop_id: FormControl<number | null | undefined>,
 	}
 	export function CreateV3StopPointFormGroup() {
@@ -3066,7 +3556,10 @@ export namespace MyNS {
 		/** Indicates if there is lighting at the stop */
 		lighting?: boolean | null;
 
-		/** Indicates the platform number for xivic information (Platform 0 indicates general stop facilities) */
+		/**
+		 * Indicates the platform number for xivic information (Platform 0 indicates general stop facilities)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platform_number?: number | null;
 
 		/** Indicates if there are stairs available in the stop */
@@ -3099,7 +3592,10 @@ export namespace MyNS {
 		/** Indicates if there is lighting at the stop */
 		lighting: FormControl<boolean | null | undefined>,
 
-		/** Indicates the platform number for xivic information (Platform 0 indicates general stop facilities) */
+		/**
+		 * Indicates the platform number for xivic information (Platform 0 indicates general stop facilities)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		platform_number: FormControl<number | null | undefined>,
 
 		/** Indicates if there are stairs available in the stop */
@@ -3252,10 +3748,14 @@ export namespace MyNS {
 	}
 
 	export interface V3StopBasic {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stop_id?: number | null;
 		stop_name?: string | null;
 	}
 	export interface V3StopBasicFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		stop_id: FormControl<number | null | undefined>,
 		stop_name: FormControl<string | null | undefined>,
 	}
@@ -3272,7 +3772,10 @@ export namespace MyNS {
 		/** Disruption information identifier(s) */
 		disruption_ids?: Array<number>;
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 
 		/** Routes travelling through the stop */
@@ -3286,7 +3789,10 @@ export namespace MyNS {
 		stop_accessibility?: V3StopAccessibility;
 		stop_amenities?: V3StopAmenityDetails;
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id?: number | null;
 
 		/** Landmark in proximity of stop */
@@ -3299,7 +3805,10 @@ export namespace MyNS {
 	}
 	export interface V3StopDetailsFormProperties {
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 
 		/** The definition applicable to the station_type; returns null for V/Line train */
@@ -3308,7 +3817,10 @@ export namespace MyNS {
 		/** Type of metropolitan train station (i.e. "Premium", "Host" or "Unstaffed" station); returns null for V/Line train */
 		station_type: FormControl<string | null | undefined>,
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id: FormControl<number | null | undefined>,
 
 		/** Landmark in proximity of stop */
@@ -3342,18 +3854,30 @@ export namespace MyNS {
 
 	export interface V3StopGps {
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		latitude?: number | null;
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		longitude?: number | null;
 	}
 	export interface V3StopGpsFormProperties {
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateV3StopGpsFormGroup() {
@@ -3596,31 +4120,49 @@ export namespace MyNS {
 		/** Disruption information identifier(s) */
 		disruption_ids?: Array<number>;
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 
 		/** List of routes travelling through the stop */
 		routes?: Array<V2Object>;
 
-		/** Distance of stop from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of stop from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		stop_distance?: number | null;
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id?: number | null;
 
 		/** Landmark in proximity of stop */
 		stop_landmark?: string | null;
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude?: number | null;
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude?: number | null;
 
 		/** Name of stop */
 		stop_name?: string | null;
 
-		/** Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id. */
+		/**
+		 * Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_sequence?: number | null;
 
 		/** suburb of stop */
@@ -3628,28 +4170,46 @@ export namespace MyNS {
 	}
 	export interface V3StopGeosearchFormProperties {
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 
-		/** Distance of stop from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of stop from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		stop_distance: FormControl<number | null | undefined>,
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id: FormControl<number | null | undefined>,
 
 		/** Landmark in proximity of stop */
 		stop_landmark: FormControl<string | null | undefined>,
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude: FormControl<number | null | undefined>,
 
 		/** Name of stop */
 		stop_name: FormControl<string | null | undefined>,
 
-		/** Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id. */
+		/**
+		 * Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_sequence: FormControl<number | null | undefined>,
 
 		/** suburb of stop */
@@ -3675,25 +4235,40 @@ export namespace MyNS {
 		/** Disruption information identifier(s) */
 		disruption_ids?: Array<number>;
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id?: number | null;
 
 		/** Landmark in proximity of stop */
 		stop_landmark?: string | null;
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude?: number | null;
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude?: number | null;
 
 		/** Name of stop */
 		stop_name?: string | null;
 
-		/** Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id. */
+		/**
+		 * Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_sequence?: number | null;
 
 		/** suburb of stop */
@@ -3702,25 +4277,40 @@ export namespace MyNS {
 	}
 	export interface V3StopOnRouteFormProperties {
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id: FormControl<number | null | undefined>,
 
 		/** Landmark in proximity of stop */
 		stop_landmark: FormControl<string | null | undefined>,
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude: FormControl<number | null | undefined>,
 
 		/** Name of stop */
 		stop_name: FormControl<string | null | undefined>,
 
-		/** Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id. */
+		/**
+		 * Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_sequence: FormControl<number | null | undefined>,
 
 		/** suburb of stop */
@@ -3847,28 +4437,46 @@ export namespace MyNS {
 
 	export interface V3StoppingPatternStop {
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type?: number | null;
 
-		/** Distance of stop from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of stop from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		stop_distance?: number | null;
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id?: number | null;
 
 		/** Landmark in proximity of stop */
 		stop_landmark?: string | null;
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude?: number | null;
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude?: number | null;
 
 		/** Name of stop */
 		stop_name?: string | null;
 
-		/** Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id. */
+		/**
+		 * Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_sequence?: number | null;
 
 		/** suburb of stop */
@@ -3877,28 +4485,46 @@ export namespace MyNS {
 	}
 	export interface V3StoppingPatternStopFormProperties {
 
-		/** Transport mode identifier */
+		/**
+		 * Transport mode identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		route_type: FormControl<number | null | undefined>,
 
-		/** Distance of stop from input location (in metres); returns 0 if no location is input */
+		/**
+		 * Distance of stop from input location (in metres); returns 0 if no location is input
+		 * Type: float
+		 */
 		stop_distance: FormControl<number | null | undefined>,
 
-		/** Stop identifier */
+		/**
+		 * Stop identifier
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_id: FormControl<number | null | undefined>,
 
 		/** Landmark in proximity of stop */
 		stop_landmark: FormControl<string | null | undefined>,
 
-		/** Geographic coordinate of latitude at stop */
+		/**
+		 * Geographic coordinate of latitude at stop
+		 * Type: float
+		 */
 		stop_latitude: FormControl<number | null | undefined>,
 
-		/** Geographic coordinate of longitude at stop */
+		/**
+		 * Geographic coordinate of longitude at stop
+		 * Type: float
+		 */
 		stop_longitude: FormControl<number | null | undefined>,
 
 		/** Name of stop */
 		stop_name: FormControl<string | null | undefined>,
 
-		/** Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id. */
+		/**
+		 * Sequence of the stop on the route/run; return 0 when route_id or run_id not specified. Order ascendingly by this field (when non zero) to get physical order (earliest first) of stops on the route_id/run_id.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stop_sequence: FormControl<number | null | undefined>,
 
 		/** suburb of stop */
@@ -3973,12 +4599,16 @@ export namespace MyNS {
 		 * View departures for all routes from a stop
 		 * Get v3/departures/route_type/{route_type}/stop/{stop_id}
 		 * @param {Departures_GetForStopRoute_type} route_type Number identifying transport mode; values returned via RouteTypes API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} stop_id Identifier of stop; values returned by Stops API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<number>} platform_numbers Filter by platform number at stop
 		 * @param {number} direction_id Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} gtfs Indicates that stop_id parameter will accept "GTFS stop_id" data
 		 * @param {Date} date_utc Filter by the date and time of the request (ISO 8601 UTC format) (default = current date and time)
 		 * @param {number} max_results Maximum number of results returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} include_cancelled Indicates if cancelled services (if they exist) are returned (default = false) - metropolitan train only
 		 * @param {boolean} look_backwards Indicates if filtering runs (and their departures) to those that arrive at destination before date_utc (default = false). Requires max_results &gt; 0.
 		 * @param {Array<string>} expand List of objects to be returned in full (i.e. expanded) - options include: All, Stop, Route, Run, Direction, Disruption, VehiclePosition, VehicleDescriptor or None.
@@ -3997,12 +4627,16 @@ export namespace MyNS {
 		 * View departures for a specific route from a stop
 		 * Get v3/departures/route_type/{route_type}/stop/{stop_id}/route/{route_id}
 		 * @param {Departures_GetForStopAndRouteRoute_type} route_type Number identifying transport mode; values returned via RouteTypes API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} stop_id Identifier of stop; values returned by Stops API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} route_id Identifier of route; values returned by Routes API - v3/routes
 		 * @param {number} direction_id Filter by identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} gtfs Indicates that stop_id parameter will accept "GTFS stop_id" data
 		 * @param {Date} date_utc Filter by the date and time of the request (ISO 8601 UTC format) (default = current date and time)
 		 * @param {number} max_results Maximum number of results returned
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} include_cancelled Indicates if cancelled services (if they exist) are returned (default = false) - metropolitan train only
 		 * @param {boolean} look_backwards Indicates if filtering runs (and their departures) to those that arrive at destination before date_utc (default = false). Requires max_results &gt; 0.
 		 * @param {Array<string>} expand List of objects to be returned in full (i.e. expanded) - options include: All, Stop, Route, Run, Direction, Disruption, VehiclePosition, VehicleDescriptor or None.
@@ -4021,6 +4655,7 @@ export namespace MyNS {
 		 * View directions that a route travels in
 		 * Get v3/directions/route/{route_id}
 		 * @param {number} route_id Identifier of route; values returned by Routes API - v3/routes
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Please ignore
 		 * @param {string} devid Your developer id
 		 * @param {string} signature Authentication signature for request
@@ -4034,6 +4669,7 @@ export namespace MyNS {
 		 * View all routes for a direction of travel
 		 * Get v3/directions/{direction_id}
 		 * @param {number} direction_id Identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Please ignore
 		 * @param {string} devid Your developer id
 		 * @param {string} signature Authentication signature for request
@@ -4047,7 +4683,9 @@ export namespace MyNS {
 		 * View all routes of a particular type for a direction of travel
 		 * Get v3/directions/{direction_id}/route_type/{route_type}
 		 * @param {number} direction_id Identifier of direction of travel; values returned by Directions API - /v3/directions/route/{route_id}
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Directions_ForDirectionAndTypeRoute_type} route_type Number identifying transport mode; values returned via RouteTypes API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Please ignore
 		 * @param {string} devid Your developer id
 		 * @param {string} signature Authentication signature for request
@@ -4088,6 +4726,7 @@ export namespace MyNS {
 		 * View all disruptions for a particular route
 		 * Get v3/disruptions/route/{route_id}
 		 * @param {number} route_id Identifier of route; values returned by Routes API - v3/routes
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Disruptions_GetAllDisruptionsDisruption_status} disruption_status Filter by status of disruption
 		 * @param {string} token Please ignore
 		 * @param {string} devid Your developer id
@@ -4102,7 +4741,9 @@ export namespace MyNS {
 		 * View all disruptions for a particular route and stop
 		 * Get v3/disruptions/route/{route_id}/stop/{stop_id}
 		 * @param {number} route_id Identifier of route; values returned by Routes API - v3/routes
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} stop_id Identifier of stop; values returned by Stops API - v3/stops
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Disruptions_GetAllDisruptionsDisruption_status} disruption_status Filter by status of disruption
 		 * @param {string} token Please ignore
 		 * @param {string} devid Your developer id
@@ -4117,6 +4758,7 @@ export namespace MyNS {
 		 * View all disruptions for a particular stop
 		 * Get v3/disruptions/stop/{stop_id}
 		 * @param {number} stop_id Identifier of stop; values returned by Stops API - v3/stops
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Disruptions_GetAllDisruptionsDisruption_status} disruption_status Filter by status of disruption
 		 * @param {string} token Please ignore
 		 * @param {string} devid Your developer id
@@ -4130,13 +4772,14 @@ export namespace MyNS {
 		/**
 		 * View a specific disruption
 		 * Get v3/disruptions/{disruption_id}
-		 * @param {number} disruption_id Identifier of disruption; values returned by Disruptions API - /v3/disruptions OR /v3/disruptions/route/{route_id}
+		 * @param {string} disruption_id Identifier of disruption; values returned by Disruptions API - /v3/disruptions OR /v3/disruptions/route/{route_id}
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} token Please ignore
 		 * @param {string} devid Your developer id
 		 * @param {string} signature Authentication signature for request
 		 * @return {V3DisruptionResponse} Disruption information for the specified disruption ID.
 		 */
-		Disruptions_GetDisruptionById(disruption_id: number, token: string | null | undefined, devid: string | null | undefined, signature: string | null | undefined): Observable<V3DisruptionResponse> {
+		Disruptions_GetDisruptionById(disruption_id: string, token: string | null | undefined, devid: string | null | undefined, signature: string | null | undefined): Observable<V3DisruptionResponse> {
 			return this.http.get<V3DisruptionResponse>(this.baseUri + 'v3/disruptions/' + disruption_id + '?token=' + (token == null ? '' : encodeURIComponent(token)) + '&devid=' + (devid == null ? '' : encodeURIComponent(devid)) + '&signature=' + (signature == null ? '' : encodeURIComponent(signature)), {});
 		}
 
@@ -4144,7 +4787,9 @@ export namespace MyNS {
 		 * Estimate a fare by zone
 		 * Get v3/fare_estimate/min_zone/{minZone}/max_zone/{maxZone}
 		 * @param {number} minZone Minimum Zone travelled through ie. 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxZone Maximum Zone travelled through id. 6
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} journey_touch_on_utc JourneyTouchOnUtc in format yyyy-M-d h:m (e.g 2016-5-31 16:53).
 		 * @param {Date} journey_touch_off_utc JourneyTouchOffUtc in format yyyy-M-d h:m (e.g 2016-5-31 16:53).
 		 * @param {string} token Please ignore
@@ -4160,6 +4805,7 @@ export namespace MyNS {
 		 * List all ticket outlets
 		 * Get v3/outlets
 		 * @param {number} max_results Maximum number of results returned (default = 30)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Please ignore
 		 * @param {string} devid Your developer id
 		 * @param {string} signature Authentication signature for request
@@ -4173,9 +4819,13 @@ export namespace MyNS {
 		 * List ticket outlets near a specific location
 		 * Get v3/outlets/location/{latitude},{longitude}
 		 * @param {number} latitude Geographic coordinate of latitude
+		 *     Type: float
 		 * @param {number} longitude Geographic coordinate of longitude
+		 *     Type: float
 		 * @param {number} max_distance Filter by maximum distance (in metres) from location specified via latitude and longitude parameters (default = 300)
+		 *     Type: double
 		 * @param {number} max_results Maximum number of results returned (default = 30)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} token Please ignore
 		 * @param {string} devid Your developer id
 		 * @param {string} signature Authentication signature for request
@@ -4190,8 +4840,10 @@ export namespace MyNS {
 		 * Get v3/pattern/run/{run_ref}/route_type/{route_type}
 		 * @param {string} run_ref The run_ref is the identifier of a run as returned by the departures/* and runs/* endpoints. WARNING, run_id is deprecated. Use run_ref instead.
 		 * @param {Patterns_GetPatternByRunRoute_type} route_type Number identifying transport mode; values returned via RouteTypes API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} expand List of objects to be returned in full (i.e. expanded) - options include: All, Stop, Route, Run, Direction, Disruption, VehiclePosition, VehicleDescriptor and None. Default is Disruption. Run must be expanded to receive VehiclePosition and VehicleDescriptor information.
 		 * @param {number} stop_id Filter by stop_id; values returned by Stops API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} date_utc Filter by the date and time of the request (ISO 8601 UTC format)
 		 * @param {boolean} include_skipped_stops Include any skipped stops in a stopping pattern. Defaults to false.
 		 * @param {boolean} include_geopath Indicates if geopath data will be returned (default = false)
@@ -4234,6 +4886,7 @@ export namespace MyNS {
 		 * View route name and number for specific route ID
 		 * Get v3/routes/{route_id}
 		 * @param {number} route_id Identifier of route; values returned by Departures, Directions and Disruptions APIs
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} include_geopath Indicates kif geopath data will be returned (default = false)
 		 * @param {Date} geopath_utc Filter geopaths by date (ISO 8601 UTC format) (default = current date)
 		 * @param {string} token Please ignore
@@ -4249,6 +4902,7 @@ export namespace MyNS {
 		 * View all trip/service runs for a specific route ID
 		 * Get v3/runs/route/{route_id}
 		 * @param {number} route_id Identifier of route; values returned by Routes API - v3/routes.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} expand List of objects to be returned in full (i.e. expanded) - options include: All, VehiclePosition, VehicleDescriptor, or None. Default is None.
 		 * @param {Date} date_utc Date of the request. (optional - defaults to now)
 		 * @param {string} token Please ignore
@@ -4264,7 +4918,9 @@ export namespace MyNS {
 		 * View all trip/service runs for a specific route ID and route type
 		 * Get v3/runs/route/{route_id}/route_type/{route_type}
 		 * @param {number} route_id Identifier of route; values returned by Routes API - v3/routes.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Runs_ForRouteAndRouteTypeRoute_type} route_type Number identifying transport mode; values returned via RouteTypes API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} expand List of objects to be returned in full (i.e. expanded) - options include: All, VehiclePosition, VehicleDescriptor, or None. Default is All.
 		 * @param {Date} date_utc Date of the request. (optional - defaults to now)
 		 * @param {string} token Please ignore
@@ -4297,6 +4953,7 @@ export namespace MyNS {
 		 * Get v3/runs/{run_ref}/route_type/{route_type}
 		 * @param {string} run_ref The run_ref is the identifier of a run as returned by the departures/* and runs/* endpoints. WARNING, run_id is deprecated. Use run_ref instead.
 		 * @param {Runs_ForRunAndRouteTypeRoute_type} route_type Number identifying transport mode; values returned via RouteTypes API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} expand List of objects to be returned in full (i.e. expanded) - options include: All, VehiclePosition, VehicleDescriptor, or None. Default is None.
 		 * @param {Date} date_utc Date of the request. (optional - defaults to now)
 		 * @param {boolean} include_geopath Indicates if geopath data will be returned (default = false)
@@ -4315,8 +4972,11 @@ export namespace MyNS {
 		 * @param {string} search_term Search text (note: if search text is numeric and/or less than 3 characters, the API will only return routes)
 		 * @param {Array<V3StopDepartureRequestRoute_type>} route_types Filter by route_type; values returned via RouteTypes API (note: stops and routes are ordered by route_types specified)
 		 * @param {number} latitude Filter by geographic coordinate of latitude
+		 *     Type: float
 		 * @param {number} longitude Filter by geographic coordinate of longitude
+		 *     Type: float
 		 * @param {number} max_distance Filter by maximum distance (in metres) from location specified via latitude and longitude parameters
+		 *     Type: float
 		 * @param {boolean} include_addresses Placeholder for future development; currently unavailable
 		 * @param {boolean} include_outlets Indicates if outlets will be returned in response (default = true)
 		 * @param {boolean} match_stop_by_suburb Indicates whether to find stops by suburbs in the search term (default = true)
@@ -4335,10 +4995,14 @@ export namespace MyNS {
 		 * View all stops near a specific location
 		 * Get v3/stops/location/{latitude},{longitude}
 		 * @param {number} latitude Geographic coordinate of latitude
+		 *     Type: float
 		 * @param {number} longitude Geographic coordinate of longitude
+		 *     Type: float
 		 * @param {Array<V3StopDepartureRequestRoute_type>} route_types Filter by route_type; values returned via RouteTypes API
 		 * @param {number} max_results Maximum number of results returned (default = 30)
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} max_distance Filter by maximum distance (in metres) from location specified via latitude and longitude parameters (default = 300)
+		 *     Type: double
 		 * @param {boolean} stop_disruptions Indicates if stop disruption information will be returned (default = false)
 		 * @param {string} token Please ignore
 		 * @param {string} devid Your developer id
@@ -4353,8 +5017,11 @@ export namespace MyNS {
 		 * View all stops on a specific route
 		 * Get v3/stops/route/{route_id}/route_type/{route_type}
 		 * @param {number} route_id Identifier of route; values returned by Routes API - v3/routes
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Stops_StopsForRouteRoute_type} route_type Number identifying transport mode; values returned via RouteTypes API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} direction_id An optional direction; values returned by Directions API. When this is set, stop sequence information is returned in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} stop_disruptions Indicates if stop disruption information will be returned (default = false)
 		 * @param {boolean} include_geopath Indicates if geopath data will be returned (default = false)
 		 * @param {Date} geopath_utc Filter geopaths by date (ISO 8601 UTC format) (default = current date)
@@ -4371,7 +5038,9 @@ export namespace MyNS {
 		 * View facilities at a specific stop (Metro and V/Line stations only)
 		 * Get v3/stops/{stop_id}/route_type/{route_type}
 		 * @param {number} stop_id Identifier of stop; values returned by Stops API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Stops_StopDetailsRoute_type} route_type Number identifying transport mode; values returned via RouteTypes API
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} stop_location Indicates if stop location information will be returned (default = false)
 		 * @param {boolean} stop_amenities Indicates if stop amenity information will be returned (default = false)
 		 * @param {boolean} stop_accessibility Indicates if stop accessibility information will be returned (default = false)

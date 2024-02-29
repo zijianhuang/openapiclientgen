@@ -4786,7 +4786,9 @@ namespace MyNS
 		/// <param name="samplingLevel">The desired sampling level.</param>
 		/// <param name="segment">An Analytics segment to be applied to data.</param>
 		/// <param name="sort">A comma-separated list of dimensions or metrics that determine the sort order for Analytics data.</param>
-		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<GaData> Analytics_data_ga_getAsync(string ids, string start_date, string end_date, string metrics, string dimensions, string filters, bool include_empty_rows, int max_results, Analytics_data_ga_getOutput output, Analytics_data_ga_getSamplingLevel samplingLevel, string segment, string sort, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4829,7 +4831,9 @@ namespace MyNS
 		/// <param name="max_results">The maximum number of entries to include in this feed.</param>
 		/// <param name="samplingLevel">The desired sampling level.</param>
 		/// <param name="sort">A comma-separated list of dimensions or metrics that determine the sort order for the Analytics data.</param>
-		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<McfData> Analytics_data_mcf_getAsync(string ids, string start_date, string end_date, string metrics, string dimensions, string filters, int max_results, Analytics_data_ga_getSamplingLevel samplingLevel, string sort, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4903,7 +4907,9 @@ namespace MyNS
 		/// Analytics_management_accountSummaries_list management/accountSummaries
 		/// </summary>
 		/// <param name="max_results">The maximum number of account summaries to include in this response, where the largest acceptable value is 1000.</param>
-		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<AccountSummaries> Analytics_management_accountSummaries_listAsync(int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4938,7 +4944,9 @@ namespace MyNS
 		/// Analytics_management_accounts_list management/accounts
 		/// </summary>
 		/// <param name="max_results">The maximum number of accounts to include in this response.</param>
-		/// <param name="start_index">An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first account to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Accounts> Analytics_management_accounts_listAsync(int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4974,7 +4982,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="accountId">Account ID to retrieve the user links for.</param>
 		/// <param name="max_results">The maximum number of account-user links to include in this response.</param>
-		/// <param name="start_index">An index of the first account-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first account-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<EntityUserLinks> Analytics_management_accountUserLinks_listAsync(string accountId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5122,7 +5132,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="accountId">Account ID to retrieve filters for.</param>
 		/// <param name="max_results">The maximum number of filters to include in this response.</param>
-		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Filters> Analytics_management_filters_listAsync(string accountId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5353,7 +5365,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="accountId">Account ID to retrieve web properties for. Can either be a specific account ID or '~all', which refers to all the accounts that user has access to.</param>
 		/// <param name="max_results">The maximum number of web properties to include in this response.</param>
-		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Webproperties> Analytics_management_webproperties_listAsync(string accountId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5549,8 +5563,12 @@ namespace MyNS
 		/// </summary>
 		/// <param name="accountId">Account Id for the custom data sources to retrieve.</param>
 		/// <param name="webPropertyId">Web property Id for the custom data sources to retrieve.</param>
-		/// <param name="max_results">The maximum number of custom data sources to include in this response.</param>
-		/// <param name="start_index">A 1-based index of the first custom data source to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="max_results">The maximum number of custom data sources to include in this response.
+		/// Minimum: 1
+		// </param>
+		/// <param name="start_index">A 1-based index of the first custom data source to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<CustomDataSources> Analytics_management_customDataSources_listAsync(string accountId, string webPropertyId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5624,8 +5642,12 @@ namespace MyNS
 		/// <param name="accountId">Account Id for the uploads to retrieve.</param>
 		/// <param name="webPropertyId">Web property Id for the uploads to retrieve.</param>
 		/// <param name="customDataSourceId">Custom data source Id for uploads to retrieve.</param>
-		/// <param name="max_results">The maximum number of uploads to include in this response.</param>
-		/// <param name="start_index">A 1-based index of the first upload to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="max_results">The maximum number of uploads to include in this response.
+		/// Minimum: 1
+		// </param>
+		/// <param name="start_index">A 1-based index of the first upload to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Uploads> Analytics_management_uploads_listAsync(string accountId, string webPropertyId, string customDataSourceId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5730,7 +5752,9 @@ namespace MyNS
 		/// <param name="accountId">Account ID for the custom dimensions to retrieve.</param>
 		/// <param name="webPropertyId">Web property ID for the custom dimensions to retrieve.</param>
 		/// <param name="max_results">The maximum number of custom dimensions to include in this response.</param>
-		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<CustomDimensions> Analytics_management_customDimensions_listAsync(string accountId, string webPropertyId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5933,7 +5957,9 @@ namespace MyNS
 		/// <param name="accountId">Account ID for the custom metrics to retrieve.</param>
 		/// <param name="webPropertyId">Web property ID for the custom metrics to retrieve.</param>
 		/// <param name="max_results">The maximum number of custom metrics to include in this response.</param>
-		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<CustomMetrics> Analytics_management_customMetrics_listAsync(string accountId, string webPropertyId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6136,7 +6162,9 @@ namespace MyNS
 		/// <param name="accountId">ID of the account which the given web property belongs to.</param>
 		/// <param name="webPropertyId">Web property ID to retrieve the Google Ads links for.</param>
 		/// <param name="max_results">The maximum number of webProperty-Google Ads links to include in this response.</param>
-		/// <param name="start_index">An index of the first webProperty-Google Ads link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first webProperty-Google Ads link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<EntityAdWordsLinks> Analytics_management_webPropertyAdWordsLinks_listAsync(string accountId, string webPropertyId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6367,7 +6395,9 @@ namespace MyNS
 		/// <param name="accountId">Account ID which the given web property belongs to.</param>
 		/// <param name="webPropertyId">Web Property ID for the webProperty-user links to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.</param>
 		/// <param name="max_results">The maximum number of webProperty-user Links to include in this response.</param>
-		/// <param name="start_index">An index of the first webProperty-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first webProperty-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<EntityUserLinks> Analytics_management_webpropertyUserLinks_listAsync(string accountId, string webPropertyId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6519,7 +6549,9 @@ namespace MyNS
 		/// <param name="accountId">Account ID for the view (profiles) to retrieve. Can either be a specific account ID or '~all', which refers to all the accounts to which the user has access.</param>
 		/// <param name="webPropertyId">Web property ID for the views (profiles) to retrieve. Can either be a specific web property ID or '~all', which refers to all the web properties to which the user has access.</param>
 		/// <param name="max_results">The maximum number of views (profiles) to include in this response.</param>
-		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Profiles> Analytics_management_profiles_listAsync(string accountId, string webPropertyId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6751,7 +6783,9 @@ namespace MyNS
 		/// <param name="webPropertyId">Web Property ID which the given view (profile) belongs to. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.</param>
 		/// <param name="profileId">View (Profile) ID to retrieve the profile-user links for. Can either be a specific profile ID or '~all', which refers to all the profiles that user has access to.</param>
 		/// <param name="max_results">The maximum number of profile-user links to include in this response.</param>
-		/// <param name="start_index">An index of the first profile-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first profile-user link to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<EntityUserLinks> Analytics_management_profileUserLinks_listAsync(string accountId, string webPropertyId, string profileId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6907,7 +6941,9 @@ namespace MyNS
 		/// <param name="webPropertyId">Web property ID to retrieve experiments for.</param>
 		/// <param name="profileId">View (Profile) ID to retrieve experiments for.</param>
 		/// <param name="max_results">The maximum number of experiments to include in this response.</param>
-		/// <param name="start_index">An index of the first experiment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first experiment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Experiments> Analytics_management_experiments_listAsync(string accountId, string webPropertyId, string profileId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7144,7 +7180,9 @@ namespace MyNS
 		/// <param name="webPropertyId">Web property ID to retrieve goals for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.</param>
 		/// <param name="profileId">View (Profile) ID to retrieve goals for. Can either be a specific view (profile) ID or '~all', which refers to all the views (profiles) that user has access to.</param>
 		/// <param name="max_results">The maximum number of goals to include in this response.</param>
-		/// <param name="start_index">An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first goal to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Goals> Analytics_management_goals_listAsync(string accountId, string webPropertyId, string profileId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7350,7 +7388,9 @@ namespace MyNS
 		/// <param name="webPropertyId">Web property Id for profile filter links for. Can either be a specific web property ID or '~all', which refers to all the web properties that user has access to.</param>
 		/// <param name="profileId">Profile ID to retrieve filter links for. Can either be a specific profile ID or '~all', which refers to all the profiles that user has access to.</param>
 		/// <param name="max_results">The maximum number of profile filter links to include in this response.</param>
-		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<ProfileFilterLinks> Analytics_management_profileFilterLinks_listAsync(string accountId, string webPropertyId, string profileId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7587,7 +7627,9 @@ namespace MyNS
 		/// <param name="webPropertyId">Web property ID to retrieve unsampled reports for. Must be a specific web property ID, ~all is not supported.</param>
 		/// <param name="profileId">View (Profile) ID to retrieve unsampled reports for. Must be a specific view (profile) ID, ~all is not supported.</param>
 		/// <param name="max_results">The maximum number of unsampled reports to include in this response.</param>
-		/// <param name="start_index">An index of the first unsampled report to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first unsampled report to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<UnsampledReports> Analytics_management_unsampledReports_listAsync(string accountId, string webPropertyId, string profileId, int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7735,7 +7777,9 @@ namespace MyNS
 		/// <param name="accountId">The account ID of the remarketing audiences to retrieve.</param>
 		/// <param name="webPropertyId">The web property ID of the remarketing audiences to retrieve.</param>
 		/// <param name="max_results">The maximum number of remarketing audiences to include in this response.</param>
-		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first entity to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<RemarketingAudiences> Analytics_management_remarketingAudience_listAsync(string accountId, string webPropertyId, int max_results, int start_index, string type, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8004,7 +8048,9 @@ namespace MyNS
 		/// Analytics_management_segments_list management/segments
 		/// </summary>
 		/// <param name="max_results">The maximum number of segments to include in this response.</param>
-		/// <param name="start_index">An index of the first segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.</param>
+		/// <param name="start_index">An index of the first segment to retrieve. Use this parameter as a pagination mechanism along with the max-results parameter.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<Segments> Analytics_management_segments_listAsync(int max_results, int start_index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

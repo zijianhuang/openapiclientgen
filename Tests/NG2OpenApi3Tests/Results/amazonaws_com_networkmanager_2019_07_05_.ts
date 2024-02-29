@@ -4053,6 +4053,7 @@ export namespace MyNS {
 		 * <p>Accepts a core network attachment request. </p> <p>Once the attachment request is accepted by a core network owner, the attachment is created and connected to a core network.</p>
 		 * Post attachments/{attachmentId}/accept
 		 * @param {string} attachmentId The ID of the attachment. 
+		 *     Min length: 0    Max length: 50
 		 * @return {AcceptAttachmentResponse} Success
 		 */
 		AcceptAttachment(attachmentId: string): Observable<AcceptAttachmentResponse> {
@@ -4063,6 +4064,7 @@ export namespace MyNS {
 		 * <p>Associates a core network Connect peer with a device and optionally, with a link. </p> <p>If you specify a link, it must be associated with the specified device. You can only associate core network Connect peers that have been created on a core network Connect attachment on a core network. </p>
 		 * Post global-networks/{globalNetworkId}/connect-peer-associations
 		 * @param {string} globalNetworkId The ID of your global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {AssociateConnectPeerResponse} Success
 		 */
 		AssociateConnectPeer(globalNetworkId: string, requestBody: AssociateConnectPeerPostBody): Observable<AssociateConnectPeerResponse> {
@@ -4073,9 +4075,12 @@ export namespace MyNS {
 		 * Returns information about a core network Connect peer associations.
 		 * Get global-networks/{globalNetworkId}/connect-peer-associations
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {Array<string>} connectPeerIds The IDs of the Connect peers.
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetConnectPeerAssociationsResponse} Success
@@ -4088,6 +4093,7 @@ export namespace MyNS {
 		 * <p>Associates a customer gateway with a device and optionally, with a link. If you specify a link, it must be associated with the specified device. </p> <p>You can only associate customer gateways that are connected to a VPN attachment on a transit gateway or core network registered in your global network. When you register a transit gateway or core network, customer gateways that are connected to the transit gateway are automatically included in the global network. To list customer gateways that are connected to a transit gateway, use the <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_DescribeVpnConnections.html">DescribeVpnConnections</a> EC2 API and filter by <code>transit-gateway-id</code>.</p> <p>You cannot associate a customer gateway with more than one device and link. </p>
 		 * Post global-networks/{globalNetworkId}/customer-gateway-associations
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {AssociateCustomerGatewayResponse} Success
 		 */
 		AssociateCustomerGateway(globalNetworkId: string, requestBody: AssociateCustomerGatewayPostBody): Observable<AssociateCustomerGatewayResponse> {
@@ -4098,9 +4104,12 @@ export namespace MyNS {
 		 * Gets the association information for customer gateways that are associated with devices and links in your global network.
 		 * Get global-networks/{globalNetworkId}/customer-gateway-associations
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {Array<string>} customerGatewayArns One or more customer gateway Amazon Resource Names (ARNs). The maximum is 10.
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCustomerGatewayAssociationsResponse} Success
@@ -4113,6 +4122,7 @@ export namespace MyNS {
 		 * Associates a link to a device. A device can be associated to multiple links and a link can be associated to multiple devices. The device and link must be in the same global network and the same site.
 		 * Post global-networks/{globalNetworkId}/link-associations
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {AssociateLinkResponse} Success
 		 */
 		AssociateLink(globalNetworkId: string, requestBody: AssociateLinkPostBody): Observable<AssociateLinkResponse> {
@@ -4123,10 +4133,15 @@ export namespace MyNS {
 		 * Gets the link associations for a device or a link. Either the device ID or the link ID must be specified.
 		 * Get global-networks/{globalNetworkId}/link-associations
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} deviceId The ID of the device.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} linkId The ID of the link.
+		 *     Min length: 0    Max length: 50
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetLinkAssociationsResponse} Success
@@ -4139,6 +4154,7 @@ export namespace MyNS {
 		 * <p>Associates a transit gateway Connect peer with a device, and optionally, with a link. If you specify a link, it must be associated with the specified device. </p> <p>You can only associate transit gateway Connect peers that have been created on a transit gateway that's registered in your global network.</p> <p>You cannot associate a transit gateway Connect peer with more than one device and link. </p>
 		 * Post global-networks/{globalNetworkId}/transit-gateway-connect-peer-associations
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {AssociateTransitGatewayConnectPeerResponse} Success
 		 */
 		AssociateTransitGatewayConnectPeer(globalNetworkId: string, requestBody: AssociateTransitGatewayConnectPeerPostBody): Observable<AssociateTransitGatewayConnectPeerResponse> {
@@ -4149,9 +4165,12 @@ export namespace MyNS {
 		 * Gets information about one or more of your transit gateway Connect peer associations in a global network.
 		 * Get global-networks/{globalNetworkId}/transit-gateway-connect-peer-associations
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {Array<string>} transitGatewayConnectPeerArns One or more transit gateway Connect peer Amazon Resource Names (ARNs).
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTransitGatewayConnectPeerAssociationsResponse} Success
@@ -4182,9 +4201,13 @@ export namespace MyNS {
 		 * Returns a list of core network Connect peers.
 		 * Get connect-peers
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} connectAttachmentId The ID of the attachment.
+		 *     Min length: 0    Max length: 50
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListConnectPeersResponse} Success
@@ -4197,6 +4220,7 @@ export namespace MyNS {
 		 * Creates a connection between two devices. The devices can be a physical or virtual appliance that connects to a third-party appliance in a VPC, or a physical appliance that connects to another physical appliance in an on-premises network.
 		 * Post global-networks/{globalNetworkId}/connections
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {CreateConnectionResponse} Success
 		 */
 		CreateConnection(globalNetworkId: string, requestBody: CreateConnectionPostBody): Observable<CreateConnectionResponse> {
@@ -4207,10 +4231,14 @@ export namespace MyNS {
 		 * Gets information about one or more of your connections in a global network.
 		 * Get global-networks/{globalNetworkId}/connections
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {Array<string>} connectionIds One or more connection IDs.
 		 * @param {string} deviceId The ID of the device.
+		 *     Min length: 0    Max length: 50
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetConnectionsResponse} Success
@@ -4232,7 +4260,9 @@ export namespace MyNS {
 		 * Returns a list of owned and shared core networks.
 		 * Get core-networks
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCoreNetworksResponse} Success
@@ -4245,6 +4275,7 @@ export namespace MyNS {
 		 * Creates a new device in a global network. If you specify both a site ID and a location, the location of the site is used for visualization in the Network Manager console.
 		 * Post global-networks/{globalNetworkId}/devices
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {CreateDeviceResponse} Success
 		 */
 		CreateDevice(globalNetworkId: string, requestBody: CreateDevicePostBody): Observable<CreateDeviceResponse> {
@@ -4255,10 +4286,14 @@ export namespace MyNS {
 		 * Gets information about one or more of your devices in a global network.
 		 * Get global-networks/{globalNetworkId}/devices
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {Array<string>} deviceIds One or more device IDs. The maximum is 10.
 		 * @param {string} siteId The ID of the site.
+		 *     Min length: 0    Max length: 50
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetDevicesResponse} Success
@@ -4281,7 +4316,9 @@ export namespace MyNS {
 		 * Get global-networks
 		 * @param {Array<string>} globalNetworkIds The IDs of one or more global networks. The maximum is 10.
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {DescribeGlobalNetworksResponse} Success
@@ -4294,6 +4331,7 @@ export namespace MyNS {
 		 * Creates a new link for a specified site.
 		 * Post global-networks/{globalNetworkId}/links
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {CreateLinkResponse} Success
 		 */
 		CreateLink(globalNetworkId: string, requestBody: CreateLinkPostBody): Observable<CreateLinkResponse> {
@@ -4304,12 +4342,18 @@ export namespace MyNS {
 		 * <p>Gets information about one or more links in a specified global network.</p> <p>If you specify the site ID, you cannot specify the type or provider in the same request. You can specify the type and provider in the same request.</p>
 		 * Get global-networks/{globalNetworkId}/links
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {Array<string>} linkIds One or more link IDs. The maximum is 10.
 		 * @param {string} siteId The ID of the site.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} type The link type.
+		 *     Min length: 0    Max length: 256
 		 * @param {string} provider The link provider.
+		 *     Min length: 0    Max length: 256
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetLinksResponse} Success
@@ -4322,6 +4366,7 @@ export namespace MyNS {
 		 * Creates a new site in a global network.
 		 * Post global-networks/{globalNetworkId}/sites
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {CreateSiteResponse} Success
 		 */
 		CreateSite(globalNetworkId: string, requestBody: CreateSitePostBody): Observable<CreateSiteResponse> {
@@ -4332,9 +4377,12 @@ export namespace MyNS {
 		 * Gets information about one or more of your sites in a global network.
 		 * Get global-networks/{globalNetworkId}/sites
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {Array<string>} siteIds One or more site IDs. The maximum is 10.
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetSitesResponse} Success
@@ -4383,6 +4431,7 @@ export namespace MyNS {
 		 * Deletes an attachment. Supports all attachment types.
 		 * Delete attachments/{attachmentId}
 		 * @param {string} attachmentId The ID of the attachment to delete.
+		 *     Min length: 0    Max length: 50
 		 * @return {DeleteAttachmentResponse} Success
 		 */
 		DeleteAttachment(attachmentId: string): Observable<DeleteAttachmentResponse> {
@@ -4393,6 +4442,7 @@ export namespace MyNS {
 		 * Deletes a Connect peer.
 		 * Delete connect-peers/{connectPeerId}
 		 * @param {string} connectPeerId The ID of the deleted Connect peer.
+		 *     Min length: 0    Max length: 50
 		 * @return {DeleteConnectPeerResponse} Success
 		 */
 		DeleteConnectPeer(connectPeerId: string): Observable<DeleteConnectPeerResponse> {
@@ -4403,6 +4453,7 @@ export namespace MyNS {
 		 * Returns information about a core network Connect peer.
 		 * Get connect-peers/{connectPeerId}
 		 * @param {string} connectPeerId The ID of the Connect peer.
+		 *     Min length: 0    Max length: 50
 		 * @return {GetConnectPeerResponse} Success
 		 */
 		GetConnectPeer(connectPeerId: string): Observable<GetConnectPeerResponse> {
@@ -4413,7 +4464,9 @@ export namespace MyNS {
 		 * Deletes the specified connection in your global network.
 		 * Delete global-networks/{globalNetworkId}/connections/{connectionId}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} connectionId The ID of the connection.
+		 *     Min length: 0    Max length: 50
 		 * @return {DeleteConnectionResponse} Success
 		 */
 		DeleteConnection(globalNetworkId: string, connectionId: string): Observable<DeleteConnectionResponse> {
@@ -4424,7 +4477,9 @@ export namespace MyNS {
 		 * Updates the information for an existing connection. To remove information for any of the parameters, specify an empty string.
 		 * Patch global-networks/{globalNetworkId}/connections/{connectionId}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} connectionId The ID of the connection.
+		 *     Min length: 0    Max length: 50
 		 * @return {UpdateConnectionResponse} Success
 		 */
 		UpdateConnection(globalNetworkId: string, connectionId: string, requestBody: UpdateConnectionPatchBody): Observable<UpdateConnectionResponse> {
@@ -4435,6 +4490,7 @@ export namespace MyNS {
 		 * Deletes a core network along with all core network policies. This can only be done if there are no attachments on a core network.
 		 * Delete core-networks/{coreNetworkId}
 		 * @param {string} coreNetworkId The network ID of the deleted core network.
+		 *     Min length: 0    Max length: 50
 		 * @return {DeleteCoreNetworkResponse} Success
 		 */
 		DeleteCoreNetwork(coreNetworkId: string): Observable<DeleteCoreNetworkResponse> {
@@ -4445,6 +4501,7 @@ export namespace MyNS {
 		 * Returns information about the LIVE policy for a core network.
 		 * Get core-networks/{coreNetworkId}
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @return {GetCoreNetworkResponse} Success
 		 */
 		GetCoreNetwork(coreNetworkId: string): Observable<GetCoreNetworkResponse> {
@@ -4455,6 +4512,7 @@ export namespace MyNS {
 		 * Updates the description of a core network.
 		 * Patch core-networks/{coreNetworkId}
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @return {UpdateCoreNetworkResponse} Success
 		 */
 		UpdateCoreNetwork(coreNetworkId: string, requestBody: UpdateCoreNetworkPatchBody): Observable<UpdateCoreNetworkResponse> {
@@ -4465,7 +4523,9 @@ export namespace MyNS {
 		 * Deletes a policy version from a core network. You can't delete the current LIVE policy.
 		 * Delete core-networks/{coreNetworkId}/core-network-policy-versions/{policyVersionId}
 		 * @param {string} coreNetworkId The ID of a core network for the deleted policy.
+		 *     Min length: 0    Max length: 50
 		 * @param {number} policyVersionId The version ID of the deleted policy.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DeleteCoreNetworkPolicyVersionResponse} Success
 		 */
 		DeleteCoreNetworkPolicyVersion(coreNetworkId: string, policyVersionId: number): Observable<DeleteCoreNetworkPolicyVersionResponse> {
@@ -4476,7 +4536,9 @@ export namespace MyNS {
 		 * Deletes an existing device. You must first disassociate the device from any links and customer gateways.
 		 * Delete global-networks/{globalNetworkId}/devices/{deviceId}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} deviceId The ID of the device.
+		 *     Min length: 0    Max length: 50
 		 * @return {DeleteDeviceResponse} Success
 		 */
 		DeleteDevice(globalNetworkId: string, deviceId: string): Observable<DeleteDeviceResponse> {
@@ -4487,7 +4549,9 @@ export namespace MyNS {
 		 * Updates the details for an existing device. To remove information for any of the parameters, specify an empty string.
 		 * Patch global-networks/{globalNetworkId}/devices/{deviceId}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} deviceId The ID of the device.
+		 *     Min length: 0    Max length: 50
 		 * @return {UpdateDeviceResponse} Success
 		 */
 		UpdateDevice(globalNetworkId: string, deviceId: string, requestBody: UpdateDevicePatchBody): Observable<UpdateDeviceResponse> {
@@ -4498,6 +4562,7 @@ export namespace MyNS {
 		 * Deletes an existing global network. You must first delete all global network objects (devices, links, and sites), deregister all transit gateways, and delete any core networks.
 		 * Delete global-networks/{globalNetworkId}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {DeleteGlobalNetworkResponse} Success
 		 */
 		DeleteGlobalNetwork(globalNetworkId: string): Observable<DeleteGlobalNetworkResponse> {
@@ -4508,6 +4573,7 @@ export namespace MyNS {
 		 * Updates an existing global network. To remove information for any of the parameters, specify an empty string.
 		 * Patch global-networks/{globalNetworkId}
 		 * @param {string} globalNetworkId The ID of your global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {UpdateGlobalNetworkResponse} Success
 		 */
 		UpdateGlobalNetwork(globalNetworkId: string, requestBody: UpdateGlobalNetworkPatchBody): Observable<UpdateGlobalNetworkResponse> {
@@ -4518,7 +4584,9 @@ export namespace MyNS {
 		 * Deletes an existing link. You must first disassociate the link from any devices and customer gateways.
 		 * Delete global-networks/{globalNetworkId}/links/{linkId}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} linkId The ID of the link.
+		 *     Min length: 0    Max length: 50
 		 * @return {DeleteLinkResponse} Success
 		 */
 		DeleteLink(globalNetworkId: string, linkId: string): Observable<DeleteLinkResponse> {
@@ -4529,7 +4597,9 @@ export namespace MyNS {
 		 * Updates the details for an existing link. To remove information for any of the parameters, specify an empty string.
 		 * Patch global-networks/{globalNetworkId}/links/{linkId}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} linkId The ID of the link.
+		 *     Min length: 0    Max length: 50
 		 * @return {UpdateLinkResponse} Success
 		 */
 		UpdateLink(globalNetworkId: string, linkId: string, requestBody: UpdateLinkPatchBody): Observable<UpdateLinkResponse> {
@@ -4540,6 +4610,7 @@ export namespace MyNS {
 		 * Deletes an existing peering connection.
 		 * Delete peerings/{peeringId}
 		 * @param {string} peeringId The ID of the peering connection to delete.
+		 *     Min length: 0    Max length: 50
 		 * @return {DeletePeeringResponse} Success
 		 */
 		DeletePeering(peeringId: string): Observable<DeletePeeringResponse> {
@@ -4550,6 +4621,7 @@ export namespace MyNS {
 		 * Deletes a resource policy for the specified resource. This revokes the access of the principals specified in the resource policy.
 		 * Delete resource-policy/{resourceArn}
 		 * @param {string} resourceArn The ARN of the policy to delete.
+		 *     Min length: 0    Max length: 1500
 		 * @return {DeleteResourcePolicyResponse} Success
 		 */
 		DeleteResourcePolicy(resourceArn: string): Observable<DeleteResourcePolicyResponse> {
@@ -4560,6 +4632,7 @@ export namespace MyNS {
 		 * Returns information about a resource policy.
 		 * Get resource-policy/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource.
+		 *     Min length: 0    Max length: 1500
 		 * @return {GetResourcePolicyResponse} Success
 		 */
 		GetResourcePolicy(resourceArn: string): Observable<GetResourcePolicyResponse> {
@@ -4570,6 +4643,7 @@ export namespace MyNS {
 		 * Creates or updates a resource policy.
 		 * Post resource-policy/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource policy. 
+		 *     Min length: 0    Max length: 1500
 		 * @return {PutResourcePolicyResponse} Success
 		 */
 		PutResourcePolicy(resourceArn: string, requestBody: PutResourcePolicyPostBody): Observable<PutResourcePolicyResponse> {
@@ -4580,7 +4654,9 @@ export namespace MyNS {
 		 * Deletes an existing site. The site cannot be associated with any device or link.
 		 * Delete global-networks/{globalNetworkId}/sites/{siteId}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} siteId The ID of the site.
+		 *     Min length: 0    Max length: 50
 		 * @return {DeleteSiteResponse} Success
 		 */
 		DeleteSite(globalNetworkId: string, siteId: string): Observable<DeleteSiteResponse> {
@@ -4591,7 +4667,9 @@ export namespace MyNS {
 		 * Updates the information for an existing site. To remove information for any of the parameters, specify an empty string.
 		 * Patch global-networks/{globalNetworkId}/sites/{siteId}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} siteId The ID of your site.
+		 *     Min length: 0    Max length: 50
 		 * @return {UpdateSiteResponse} Success
 		 */
 		UpdateSite(globalNetworkId: string, siteId: string, requestBody: UpdateSitePatchBody): Observable<UpdateSiteResponse> {
@@ -4602,7 +4680,9 @@ export namespace MyNS {
 		 * Deregisters a transit gateway from your global network. This action does not delete your transit gateway, or modify any of its attachments. This action removes any customer gateway associations.
 		 * Delete global-networks/{globalNetworkId}/transit-gateway-registrations/{transitGatewayArn}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} transitGatewayArn The Amazon Resource Name (ARN) of the transit gateway.
+		 *     Min length: 0    Max length: 500
 		 * @return {DeregisterTransitGatewayResponse} Success
 		 */
 		DeregisterTransitGateway(globalNetworkId: string, transitGatewayArn: string): Observable<DeregisterTransitGatewayResponse> {
@@ -4613,7 +4693,9 @@ export namespace MyNS {
 		 * Disassociates a core network Connect peer from a device and a link.
 		 * Delete global-networks/{globalNetworkId}/connect-peer-associations/{connectPeerId}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} connectPeerId The ID of the Connect peer to disassociate from a device.
+		 *     Min length: 0    Max length: 50
 		 * @return {DisassociateConnectPeerResponse} Success
 		 */
 		DisassociateConnectPeer(globalNetworkId: string, connectPeerId: string): Observable<DisassociateConnectPeerResponse> {
@@ -4624,7 +4706,9 @@ export namespace MyNS {
 		 * Disassociates a customer gateway from a device and a link.
 		 * Delete global-networks/{globalNetworkId}/customer-gateway-associations/{customerGatewayArn}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} customerGatewayArn The Amazon Resource Name (ARN) of the customer gateway.
+		 *     Min length: 0    Max length: 500
 		 * @return {DisassociateCustomerGatewayResponse} Success
 		 */
 		DisassociateCustomerGateway(globalNetworkId: string, customerGatewayArn: string): Observable<DisassociateCustomerGatewayResponse> {
@@ -4635,8 +4719,11 @@ export namespace MyNS {
 		 * Disassociates an existing device from a link. You must first disassociate any customer gateways that are associated with the link.
 		 * Delete global-networks/{globalNetworkId}/link-associations#deviceId&linkId
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} deviceId The ID of the device.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} linkId The ID of the link.
+		 *     Min length: 0    Max length: 50
 		 * @return {DisassociateLinkResponse} Success
 		 */
 		DisassociateLink(globalNetworkId: string, deviceId: string, linkId: string): Observable<DisassociateLinkResponse> {
@@ -4647,7 +4734,9 @@ export namespace MyNS {
 		 * Disassociates a transit gateway Connect peer from a device and link.
 		 * Delete global-networks/{globalNetworkId}/transit-gateway-connect-peer-associations/{transitGatewayConnectPeerArn}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} transitGatewayConnectPeerArn The Amazon Resource Name (ARN) of the transit gateway Connect peer.
+		 *     Min length: 0    Max length: 500
 		 * @return {DisassociateTransitGatewayConnectPeerResponse} Success
 		 */
 		DisassociateTransitGatewayConnectPeer(globalNetworkId: string, transitGatewayConnectPeerArn: string): Observable<DisassociateTransitGatewayConnectPeerResponse> {
@@ -4658,7 +4747,9 @@ export namespace MyNS {
 		 * Executes a change set on your core network. Deploys changes globally based on the policy submitted..
 		 * Post core-networks/{coreNetworkId}/core-network-change-sets/{policyVersionId}/execute
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {number} policyVersionId The ID of the policy version.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ExecuteCoreNetworkChangeSetResponse} Success
 		 */
 		ExecuteCoreNetworkChangeSet(coreNetworkId: string, policyVersionId: number): Observable<ExecuteCoreNetworkChangeSetResponse> {
@@ -4669,6 +4760,7 @@ export namespace MyNS {
 		 * Returns information about a core network Connect attachment.
 		 * Get connect-attachments/{attachmentId}
 		 * @param {string} attachmentId The ID of the attachment.
+		 *     Min length: 0    Max length: 50
 		 * @return {GetConnectAttachmentResponse} Success
 		 */
 		GetConnectAttachment(attachmentId: string): Observable<GetConnectAttachmentResponse> {
@@ -4679,9 +4771,13 @@ export namespace MyNS {
 		 * Returns information about a core network change event.
 		 * Get core-networks/{coreNetworkId}/core-network-change-events/{policyVersionId}
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {number} policyVersionId The ID of the policy version.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCoreNetworkChangeEventsResponse} Success
@@ -4694,9 +4790,13 @@ export namespace MyNS {
 		 * Returns a change set between the LIVE core network policy and a submitted policy.
 		 * Get core-networks/{coreNetworkId}/core-network-change-sets/{policyVersionId}
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {number} policyVersionId The ID of the policy version.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetCoreNetworkChangeSetResponse} Success
@@ -4709,7 +4809,9 @@ export namespace MyNS {
 		 * Returns details about a core network policy. You can get details about your current live policy or any previous policy version.
 		 * Get core-networks/{coreNetworkId}/core-network-policy
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {number} policyVersionId The ID of a core network policy version.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CoreNetworkPolicyAlias} alias The alias of a core network policy 
 		 * @return {GetCoreNetworkPolicyResponse} Success
 		 */
@@ -4721,6 +4823,7 @@ export namespace MyNS {
 		 * Creates a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and the submitted policy.
 		 * Post core-networks/{coreNetworkId}/core-network-policy
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @return {PutCoreNetworkPolicyResponse} Success
 		 */
 		PutCoreNetworkPolicy(coreNetworkId: string, requestBody: PutCoreNetworkPolicyPostBody): Observable<PutCoreNetworkPolicyResponse> {
@@ -4731,9 +4834,13 @@ export namespace MyNS {
 		 * Gets the count of network resources, by resource type, for the specified global network.
 		 * Get global-networks/{globalNetworkId}/network-resource-count
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} resourceType <p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p> <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p> </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p> <code>transit-gateway-attachment</code> </p> </li> <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> <li> <p> <code>transit-gateway-route-table</code> </p> </li> <li> <p> <code>vpn-connection</code> </p> </li> </ul>
+		 *     Min length: 0    Max length: 256
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetNetworkResourceCountsResponse} Success
@@ -4746,14 +4853,23 @@ export namespace MyNS {
 		 * Gets the network resource relationships for the specified global network.
 		 * Get global-networks/{globalNetworkId}/network-resource-relationships
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} registeredGatewayArn The ARN of the registered gateway.
+		 *     Min length: 0    Max length: 1500
 		 * @param {string} awsRegion The Amazon Web Services Region.
+		 *     Min length: 1    Max length: 63
 		 * @param {string} accountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} resourceType <p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p> <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p> </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p> <code>transit-gateway-attachment</code> </p> </li> <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> <li> <p> <code>transit-gateway-route-table</code> </p> </li> <li> <p> <code>vpn-connection</code> </p> </li> </ul>
+		 *     Min length: 0    Max length: 256
 		 * @param {string} resourceArn The ARN of the gateway.
+		 *     Min length: 0    Max length: 1500
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetNetworkResourceRelationshipsResponse} Success
@@ -4766,14 +4882,23 @@ export namespace MyNS {
 		 * <p>Describes the network resources for the specified global network.</p> <p>The results include information from the corresponding Describe call for the resource, minus any sensitive information such as pre-shared keys.</p>
 		 * Get global-networks/{globalNetworkId}/network-resources
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} registeredGatewayArn The ARN of the gateway.
+		 *     Min length: 0    Max length: 1500
 		 * @param {string} awsRegion The Amazon Web Services Region.
+		 *     Min length: 1    Max length: 63
 		 * @param {string} accountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} resourceType <p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_Connection.html">Connection</a>.</p> </li> <li> <p> <code>dx-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_DirectConnectGateway.html">DirectConnectGateway</a>.</p> </li> <li> <p> <code>dx-vif</code> - The definition model is <a href="https://docs.aws.amazon.com/directconnect/latest/APIReference/API_VirtualInterface.html">VirtualInterface</a>.</p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Connection.html">Connection</a>.</p> </li> <li> <p> <code>device</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Device.html">Device</a>.</p> </li> <li> <p> <code>link</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Link.html">Link</a>.</p> </li> <li> <p> <code>site</code> - The definition model is <a href="https://docs.aws.amazon.com/networkmanager/latest/APIReference/API_Site.html">Site</a>.</p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_CustomerGateway.html">CustomerGateway</a>.</p> </li> <li> <p> <code>transit-gateway</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGateway.html">TransitGateway</a>.</p> </li> <li> <p> <code>transit-gateway-attachment</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayAttachment.html">TransitGatewayAttachment</a>.</p> </li> <li> <p> <code>transit-gateway-connect-peer</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayConnectPeer.html">TransitGatewayConnectPeer</a>.</p> </li> <li> <p> <code>transit-gateway-route-table</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_TransitGatewayRouteTable.html">TransitGatewayRouteTable</a>.</p> </li> <li> <p> <code>vpn-connection</code> - The definition model is <a href="https://docs.aws.amazon.com/AWSEC2/latest/APIReference/API_VpnConnection.html">VpnConnection</a>.</p> </li> </ul>
+		 *     Min length: 0    Max length: 256
 		 * @param {string} resourceArn The ARN of the resource.
+		 *     Min length: 0    Max length: 1500
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetNetworkResourcesResponse} Success
@@ -4786,6 +4911,7 @@ export namespace MyNS {
 		 * Gets the network routes of the specified global network.
 		 * Post global-networks/{globalNetworkId}/network-routes
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {GetNetworkRoutesResponse} Success
 		 */
 		GetNetworkRoutes(globalNetworkId: string, requestBody: GetNetworkRoutesPostBody): Observable<GetNetworkRoutesResponse> {
@@ -4796,14 +4922,23 @@ export namespace MyNS {
 		 * Gets the network telemetry of the specified global network.
 		 * Get global-networks/{globalNetworkId}/network-telemetry
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} registeredGatewayArn The ARN of the gateway.
+		 *     Min length: 0    Max length: 1500
 		 * @param {string} awsRegion The Amazon Web Services Region.
+		 *     Min length: 1    Max length: 63
 		 * @param {string} accountId The Amazon Web Services account ID.
+		 *     Min length: 12    Max length: 12
 		 * @param {string} resourceType <p>The resource type.</p> <p>The following are the supported resource types for Direct Connect:</p> <ul> <li> <p> <code>dxcon</code> </p> </li> <li> <p> <code>dx-gateway</code> </p> </li> <li> <p> <code>dx-vif</code> </p> </li> </ul> <p>The following are the supported resource types for Network Manager:</p> <ul> <li> <p> <code>connection</code> </p> </li> <li> <p> <code>device</code> </p> </li> <li> <p> <code>link</code> </p> </li> <li> <p> <code>site</code> </p> </li> </ul> <p>The following are the supported resource types for Amazon VPC:</p> <ul> <li> <p> <code>customer-gateway</code> </p> </li> <li> <p> <code>transit-gateway</code> </p> </li> <li> <p> <code>transit-gateway-attachment</code> </p> </li> <li> <p> <code>transit-gateway-connect-peer</code> </p> </li> <li> <p> <code>transit-gateway-route-table</code> </p> </li> <li> <p> <code>vpn-connection</code> </p> </li> </ul>
+		 *     Min length: 0    Max length: 256
 		 * @param {string} resourceArn The ARN of the resource.
+		 *     Min length: 0    Max length: 1500
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetNetworkTelemetryResponse} Success
@@ -4816,7 +4951,9 @@ export namespace MyNS {
 		 * Gets information about the specified route analysis.
 		 * Get global-networks/{globalNetworkId}/route-analyses/{routeAnalysisId}
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} routeAnalysisId The ID of the route analysis.
+		 *     Min length: 0    Max length: 256
 		 * @return {GetRouteAnalysisResponse} Success
 		 */
 		GetRouteAnalysis(globalNetworkId: string, routeAnalysisId: string): Observable<GetRouteAnalysisResponse> {
@@ -4827,6 +4964,7 @@ export namespace MyNS {
 		 * Returns information about a site-to-site VPN attachment.
 		 * Get site-to-site-vpn-attachments/{attachmentId}
 		 * @param {string} attachmentId The ID of the attachment.
+		 *     Min length: 0    Max length: 50
 		 * @return {GetSiteToSiteVpnAttachmentResponse} Success
 		 */
 		GetSiteToSiteVpnAttachment(attachmentId: string): Observable<GetSiteToSiteVpnAttachmentResponse> {
@@ -4837,6 +4975,7 @@ export namespace MyNS {
 		 * Returns information about a transit gateway peer.
 		 * Get transit-gateway-peerings/{peeringId}
 		 * @param {string} peeringId The ID of the peering request.
+		 *     Min length: 0    Max length: 50
 		 * @return {GetTransitGatewayPeeringResponse} Success
 		 */
 		GetTransitGatewayPeering(peeringId: string): Observable<GetTransitGatewayPeeringResponse> {
@@ -4847,9 +4986,12 @@ export namespace MyNS {
 		 * Gets information about the transit gateway registrations in a specified global network.
 		 * Get global-networks/{globalNetworkId}/transit-gateway-registrations
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {Array<string>} transitGatewayArns The Amazon Resource Names (ARNs) of one or more transit gateways. The maximum is 10.
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {GetTransitGatewayRegistrationsResponse} Success
@@ -4862,6 +5004,7 @@ export namespace MyNS {
 		 * Registers a transit gateway in your global network. Not all Regions support transit gateways for global networks. For a list of the supported Regions, see <a href="https://docs.aws.amazon.com/network-manager/latest/tgwnm/what-are-global-networks.html#nm-available-regions">Region Availability</a> in the <i>Amazon Web Services Transit Gateways for Global Networks User Guide</i>. The transit gateway can be in any of the supported Amazon Web Services Regions, but it must be owned by the same Amazon Web Services account that owns the global network. You cannot register a transit gateway in more than one global network.
 		 * Post global-networks/{globalNetworkId}/transit-gateway-registrations
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {RegisterTransitGatewayResponse} Success
 		 */
 		RegisterTransitGateway(globalNetworkId: string, requestBody: RegisterTransitGatewayPostBody): Observable<RegisterTransitGatewayResponse> {
@@ -4872,6 +5015,7 @@ export namespace MyNS {
 		 * Returns information about a transit gateway route table attachment.
 		 * Get transit-gateway-route-table-attachments/{attachmentId}
 		 * @param {string} attachmentId The ID of the transit gateway route table attachment.
+		 *     Min length: 0    Max length: 50
 		 * @return {GetTransitGatewayRouteTableAttachmentResponse} Success
 		 */
 		GetTransitGatewayRouteTableAttachment(attachmentId: string): Observable<GetTransitGatewayRouteTableAttachmentResponse> {
@@ -4882,6 +5026,7 @@ export namespace MyNS {
 		 * Returns information about a VPC attachment.
 		 * Get vpc-attachments/{attachmentId}
 		 * @param {string} attachmentId The ID of the attachment.
+		 *     Min length: 0    Max length: 50
 		 * @return {GetVpcAttachmentResponse} Success
 		 */
 		GetVpcAttachment(attachmentId: string): Observable<GetVpcAttachmentResponse> {
@@ -4892,6 +5037,7 @@ export namespace MyNS {
 		 * Updates a VPC attachment.
 		 * Patch vpc-attachments/{attachmentId}
 		 * @param {string} attachmentId The ID of the attachment.
+		 *     Min length: 0    Max length: 50
 		 * @return {UpdateVpcAttachmentResponse} Success
 		 */
 		UpdateVpcAttachment(attachmentId: string, requestBody: UpdateVpcAttachmentPatchBody): Observable<UpdateVpcAttachmentResponse> {
@@ -4902,11 +5048,15 @@ export namespace MyNS {
 		 * Returns a list of core network attachments.
 		 * Get attachments
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {AttachmentType} attachmentType The type of attachment.
 		 * @param {string} edgeLocation The Region where the edge is located.
+		 *     Min length: 1    Max length: 63
 		 * @param {AttachmentState} state The state of the attachment.
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListAttachmentsResponse} Success
@@ -4919,8 +5069,11 @@ export namespace MyNS {
 		 * Returns a list of core network policy versions.
 		 * Get core-networks/{coreNetworkId}/core-network-policy-versions
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListCoreNetworkPolicyVersionsResponse} Success
@@ -4933,7 +5086,9 @@ export namespace MyNS {
 		 * Gets the status of the Service Linked Role (SLR) deployment for the accounts in a given Amazon Web Services Organization.
 		 * Get organizations/service-access
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @return {ListOrganizationServiceAccessStatusResponse} Success
 		 */
 		ListOrganizationServiceAccessStatus(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListOrganizationServiceAccessStatusResponse> {
@@ -4953,11 +5108,15 @@ export namespace MyNS {
 		 * Lists the peerings for a core network.
 		 * Get peerings
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {PeeringType} peeringType Returns a list of a peering requests.
 		 * @param {string} edgeLocation Returns a list edge locations for the 
+		 *     Min length: 1    Max length: 63
 		 * @param {ConnectPeerState} state Returns a list of the peering request states.
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 0    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPeeringsResponse} Success
@@ -4970,6 +5129,7 @@ export namespace MyNS {
 		 * Lists the tags for a specified resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 0    Max length: 1500
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -4980,6 +5140,7 @@ export namespace MyNS {
 		 * Tags a specified resource.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 0    Max length: 1500
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -4990,6 +5151,7 @@ export namespace MyNS {
 		 * Rejects a core network attachment request.
 		 * Post attachments/{attachmentId}/reject
 		 * @param {string} attachmentId The ID of the attachment.
+		 *     Min length: 0    Max length: 50
 		 * @return {RejectAttachmentResponse} Success
 		 */
 		RejectAttachment(attachmentId: string): Observable<RejectAttachmentResponse> {
@@ -5000,7 +5162,9 @@ export namespace MyNS {
 		 * Restores a previous policy version as a new, immutable version of a core network policy. A subsequent change set is created showing the differences between the LIVE policy and restored policy.
 		 * Post core-networks/{coreNetworkId}/core-network-policy-versions/{policyVersionId}/restore
 		 * @param {string} coreNetworkId The ID of a core network.
+		 *     Min length: 0    Max length: 50
 		 * @param {number} policyVersionId The ID of the policy version to restore.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {RestoreCoreNetworkPolicyVersionResponse} Success
 		 */
 		RestoreCoreNetworkPolicyVersion(coreNetworkId: string, policyVersionId: number): Observable<RestoreCoreNetworkPolicyVersionResponse> {
@@ -5011,6 +5175,7 @@ export namespace MyNS {
 		 * Starts analyzing the routing path between the specified source and destination. For more information, see <a href="https://docs.aws.amazon.com/vpc/latest/tgw/route-analyzer.html">Route Analyzer</a>.
 		 * Post global-networks/{globalNetworkId}/route-analyses
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @return {StartRouteAnalysisResponse} Success
 		 */
 		StartRouteAnalysis(globalNetworkId: string, requestBody: StartRouteAnalysisPostBody): Observable<StartRouteAnalysisResponse> {
@@ -5021,6 +5186,7 @@ export namespace MyNS {
 		 * Removes tags from a specified resource.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 0    Max length: 1500
 		 * @param {Array<string>} tagKeys The tag keys to remove from the specified resource.
 		 * @return {UntagResourceResponse} Success
 		 */
@@ -5032,7 +5198,9 @@ export namespace MyNS {
 		 * Updates the resource metadata for the specified global network.
 		 * Patch global-networks/{globalNetworkId}/network-resources/{resourceArn}/metadata
 		 * @param {string} globalNetworkId The ID of the global network.
+		 *     Min length: 0    Max length: 50
 		 * @param {string} resourceArn The ARN of the resource.
+		 *     Min length: 0    Max length: 1500
 		 * @return {UpdateNetworkResourceMetadataResponse} Success
 		 */
 		UpdateNetworkResourceMetadata(globalNetworkId: string, resourceArn: string, requestBody: UpdateNetworkResourceMetadataPatchBody): Observable<UpdateNetworkResourceMetadataResponse> {
@@ -5045,23 +5213,23 @@ export namespace MyNS {
 		/**
 		 * The ID of the Connect peer.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		ConnectPeerId: string;
 
 		/**
 		 * The ID of the device.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		DeviceId: string;
 
 		/**
 		 * The ID of the link.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId?: string | null;
 	}
@@ -5070,23 +5238,23 @@ export namespace MyNS {
 		/**
 		 * The ID of the Connect peer.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		ConnectPeerId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the device.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		DeviceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the link.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId: FormControl<string | null | undefined>,
 	}
@@ -5104,23 +5272,23 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the customer gateway.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		CustomerGatewayArn: string;
 
 		/**
 		 * The ID of the device.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		DeviceId: string;
 
 		/**
 		 * The ID of the link.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId?: string | null;
 	}
@@ -5129,23 +5297,23 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the customer gateway.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		CustomerGatewayArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the device.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		DeviceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the link.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId: FormControl<string | null | undefined>,
 	}
@@ -5163,16 +5331,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the device.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		DeviceId: string;
 
 		/**
 		 * The ID of the link.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId: string;
 	}
@@ -5181,16 +5349,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the device.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		DeviceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the link.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId: FormControl<string | null | undefined>,
 	}
@@ -5207,23 +5375,23 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Connect peer.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		TransitGatewayConnectPeerArn: string;
 
 		/**
 		 * The ID of the device.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		DeviceId: string;
 
 		/**
 		 * The ID of the link.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId?: string | null;
 	}
@@ -5232,23 +5400,23 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the Connect peer.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		TransitGatewayConnectPeerArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the device.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		DeviceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the link.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId: FormControl<string | null | undefined>,
 	}
@@ -5266,24 +5434,24 @@ export namespace MyNS {
 		/**
 		 * The ID of a core network where you want to create the attachment.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		CoreNetworkId: string;
 
 		/**
 		 * The Region where the edge is located.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		EdgeLocation: string;
 
 		/**
 		 * The ID of the attachment between the two connections.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		TransportAttachmentId: string;
 
@@ -5298,8 +5466,8 @@ export namespace MyNS {
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken?: string | null;
 	}
@@ -5308,31 +5476,31 @@ export namespace MyNS {
 		/**
 		 * The ID of a core network where you want to create the attachment.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		CoreNetworkId: FormControl<string | null | undefined>,
 
 		/**
 		 * The Region where the edge is located.
 		 * Required
-		 * Max length: 63
 		 * Min length: 1
+		 * Max length: 63
 		 */
 		EdgeLocation: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the attachment between the two connections.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		TransportAttachmentId: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -5364,23 +5532,23 @@ export namespace MyNS {
 		/**
 		 * The ID of the connection attachment.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		ConnectAttachmentId: string;
 
 		/**
 		 * A Connect peer core network address.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		CoreNetworkAddress?: string | null;
 
 		/**
 		 * The Connect peer address.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		PeerAddress: string;
 
@@ -5398,8 +5566,8 @@ export namespace MyNS {
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken?: string | null;
 	}
@@ -5408,30 +5576,30 @@ export namespace MyNS {
 		/**
 		 * The ID of the connection attachment.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		ConnectAttachmentId: FormControl<string | null | undefined>,
 
 		/**
 		 * A Connect peer core network address.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		CoreNetworkAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * The Connect peer address.
 		 * Required
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		PeerAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -5463,37 +5631,37 @@ export namespace MyNS {
 		/**
 		 * The ID of the first device in the connection.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		DeviceId: string;
 
 		/**
 		 * The ID of the second device in the connection.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		ConnectedDeviceId: string;
 
 		/**
 		 * The ID of the link for the first device.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId?: string | null;
 
 		/**
 		 * The ID of the link for the second device.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		ConnectedLinkId?: string | null;
 
 		/**
 		 * <p>A description of the connection.</p> <p>Length Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
@@ -5505,37 +5673,37 @@ export namespace MyNS {
 		/**
 		 * The ID of the first device in the connection.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		DeviceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the second device in the connection.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		ConnectedDeviceId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the link for the first device.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the link for the second device.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		ConnectedLinkId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A description of the connection.</p> <p>Length Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -5555,15 +5723,15 @@ export namespace MyNS {
 		/**
 		 * The ID of the global network that a core network will be a part of.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		GlobalNetworkId: string;
 
 		/**
 		 * The description of a core network.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
@@ -5572,15 +5740,15 @@ export namespace MyNS {
 
 		/**
 		 * The policy document for creating a core network.
-		 * Max length: 10000000
 		 * Min length: 0
+		 * Max length: 10000000
 		 */
 		PolicyDocument?: string | null;
 
 		/**
 		 * The client token associated with a core network request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken?: string | null;
 	}
@@ -5589,29 +5757,29 @@ export namespace MyNS {
 		/**
 		 * The ID of the global network that a core network will be a part of.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		GlobalNetworkId: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of a core network.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The policy document for creating a core network.
-		 * Max length: 10000000
 		 * Min length: 0
+		 * Max length: 10000000
 		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token associated with a core network request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -5632,36 +5800,36 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the device.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
 		/**
 		 * The type of the device.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Type?: string | null;
 
 		/**
 		 * <p>The vendor of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Vendor?: string | null;
 
 		/**
 		 * <p>The model of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Model?: string | null;
 
 		/**
 		 * <p>The serial number of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		SerialNumber?: string | null;
 
@@ -5670,8 +5838,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the site.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		SiteId?: string | null;
 
@@ -5682,43 +5850,43 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the device.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The type of the device.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Type: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The vendor of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Vendor: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The model of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Model: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The serial number of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		SerialNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the site.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		SiteId: FormControl<string | null | undefined>,
 	}
@@ -5773,8 +5941,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the global network.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
@@ -5785,8 +5953,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the global network.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -5801,15 +5969,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the link.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
 		/**
 		 * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Type?: string | null;
 
@@ -5821,16 +5989,16 @@ export namespace MyNS {
 
 		/**
 		 * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Provider?: string | null;
 
 		/**
 		 * The ID of the site.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		SiteId: string;
 
@@ -5841,30 +6009,30 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the link.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Type: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128 characters. Cannot include the following characters: | \ ^</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Provider: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the site.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		SiteId: FormControl<string | null | undefined>,
 	}
@@ -5898,8 +6066,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of your site.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
@@ -5913,8 +6081,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of your site.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -5949,16 +6117,16 @@ export namespace MyNS {
 		/**
 		 * The ID of a core network where you're creating a site-to-site VPN attachment.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		CoreNetworkId: string;
 
 		/**
 		 * The ARN identifying the VPN attachment.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		VpnConnectionArn: string;
 
@@ -5967,8 +6135,8 @@ export namespace MyNS {
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken?: string | null;
 	}
@@ -5977,23 +6145,23 @@ export namespace MyNS {
 		/**
 		 * The ID of a core network where you're creating a site-to-site VPN attachment.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		CoreNetworkId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN identifying the VPN attachment.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		VpnConnectionArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -6011,16 +6179,16 @@ export namespace MyNS {
 		/**
 		 * The ID of a core network.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		CoreNetworkId: string;
 
 		/**
 		 * The ARN of the transit gateway for the peering request.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		TransitGatewayArn: string;
 
@@ -6029,8 +6197,8 @@ export namespace MyNS {
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken?: string | null;
 	}
@@ -6039,23 +6207,23 @@ export namespace MyNS {
 		/**
 		 * The ID of a core network.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		CoreNetworkId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the transit gateway for the peering request.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		TransitGatewayArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -6073,16 +6241,16 @@ export namespace MyNS {
 		/**
 		 * The ID of the peer for the
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		PeeringId: string;
 
 		/**
 		 * The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		TransitGatewayRouteTableArn: string;
 
@@ -6091,8 +6259,8 @@ export namespace MyNS {
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken?: string | null;
 	}
@@ -6101,23 +6269,23 @@ export namespace MyNS {
 		/**
 		 * The ID of the peer for the
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		PeeringId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the transit gateway route table for the attachment request. For example, <code>"TransitGatewayRouteTableArn": "arn:aws:ec2:us-west-2:123456789012:transit-gateway-route-table/tgw-rtb-9876543210123456"</code>.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		TransitGatewayRouteTableArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -6135,16 +6303,16 @@ export namespace MyNS {
 		/**
 		 * The ID of a core network for the VPC attachment.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		CoreNetworkId: string;
 
 		/**
 		 * The ARN of the VPC.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		VpcArn: string;
 
@@ -6162,8 +6330,8 @@ export namespace MyNS {
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken?: string | null;
 	}
@@ -6172,23 +6340,23 @@ export namespace MyNS {
 		/**
 		 * The ID of a core network for the VPC attachment.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		CoreNetworkId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the VPC.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		VpcArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -6221,22 +6389,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the link for the first device in the connection.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId?: string | null;
 
 		/**
 		 * The ID of the link for the second device in the connection.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		ConnectedLinkId?: string | null;
 
 		/**
 		 * <p>A description of the connection.</p> <p>Length Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 	}
@@ -6244,22 +6412,22 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the link for the first device in the connection.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		LinkId: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the link for the second device in the connection.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		ConnectedLinkId: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>A description of the connection.</p> <p>Length Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -6276,8 +6444,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the update.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 	}
@@ -6285,8 +6453,8 @@ export namespace MyNS {
 
 		/**
 		 * The description of the update.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -6304,36 +6472,36 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the device.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
 		/**
 		 * The type of the device.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Type?: string | null;
 
 		/**
 		 * <p>The vendor of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Vendor?: string | null;
 
 		/**
 		 * <p>The model of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Model?: string | null;
 
 		/**
 		 * <p>The serial number of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		SerialNumber?: string | null;
 
@@ -6342,8 +6510,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the site.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		SiteId?: string | null;
 	}
@@ -6351,43 +6519,43 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the device.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The type of the device.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Type: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The vendor of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Vendor: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The model of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Model: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The serial number of the device.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		SerialNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the site.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		SiteId: FormControl<string | null | undefined>,
 	}
@@ -6442,8 +6610,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the global network.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 	}
@@ -6451,8 +6619,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the global network.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -6467,15 +6635,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the link.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
 		/**
 		 * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Type?: string | null;
 
@@ -6484,8 +6652,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Provider?: string | null;
 	}
@@ -6493,22 +6661,22 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of the link.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The type of the link.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Type: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The provider of the link.</p> <p>Constraints: Maximum length of 128 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Provider: FormControl<string | null | undefined>,
 	}
@@ -6542,8 +6710,8 @@ export namespace MyNS {
 		/**
 		 * The JSON resource policy document.
 		 * Required
-		 * Max length: 10000000
 		 * Min length: 0
+		 * Max length: 10000000
 		 */
 		PolicyDocument: string;
 	}
@@ -6552,8 +6720,8 @@ export namespace MyNS {
 		/**
 		 * The JSON resource policy document.
 		 * Required
-		 * Max length: 10000000
 		 * Min length: 0
+		 * Max length: 10000000
 		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 	}
@@ -6568,8 +6736,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of your site.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
@@ -6580,8 +6748,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description of your site.</p> <p>Constraints: Maximum length of 256 characters.</p>
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -6616,25 +6784,28 @@ export namespace MyNS {
 		/**
 		 * The policy document.
 		 * Required
-		 * Max length: 10000000
 		 * Min length: 0
+		 * Max length: 10000000
 		 */
 		PolicyDocument: string;
 
 		/**
 		 * a core network policy description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
-		/** The ID of a core network policy. */
+		/**
+		 * The ID of a core network policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LatestVersionId?: number | null;
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken?: string | null;
 	}
@@ -6643,25 +6814,28 @@ export namespace MyNS {
 		/**
 		 * The policy document.
 		 * Required
-		 * Max length: 10000000
 		 * Min length: 0
+		 * Max length: 10000000
 		 */
 		PolicyDocument: FormControl<string | null | undefined>,
 
 		/**
 		 * a core network policy description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
-		/** The ID of a core network policy. */
+		/**
+		 * The ID of a core network policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		LatestVersionId: FormControl<number | null | undefined>,
 
 		/**
 		 * The client token associated with the request.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 	}
@@ -6738,8 +6912,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the transit gateway.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		TransitGatewayArn: string;
 	}
@@ -6748,8 +6922,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the transit gateway.
 		 * Required
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		TransitGatewayArn: FormControl<string | null | undefined>,
 	}
@@ -6800,8 +6974,8 @@ export namespace MyNS {
 		/**
 		 * The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		Action: string;
 	}
@@ -6810,8 +6984,8 @@ export namespace MyNS {
 		/**
 		 * The action to take for the update request. This can be either <code>ENABLE</code> or <code>DISABLE</code>.
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		Action: FormControl<string | null | undefined>,
 	}

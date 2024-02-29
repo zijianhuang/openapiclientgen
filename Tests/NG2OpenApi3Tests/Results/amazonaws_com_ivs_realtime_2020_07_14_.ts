@@ -978,6 +978,7 @@ export namespace MyNS {
 		 * Gets information about AWS tags for the specified ARN.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource to be retrieved. The ARN must be URL-encoded.
+		 *     Min length: 1    Max length: 128
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -988,6 +989,7 @@ export namespace MyNS {
 		 * Adds or updates tags for the AWS resource with the specified ARN.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource to be tagged. The ARN must be URL-encoded.
+		 *     Min length: 1    Max length: 128
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -998,7 +1000,9 @@ export namespace MyNS {
 		 * Removes tags from the resource with the specified ARN.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The ARN of the resource to be untagged. The ARN must be URL-encoded.
+		 *     Min length: 1    Max length: 128
 		 * @param {Array<string>} tagKeys Array of tags to be removed. Array of maps, each of the form <code>string:string (key:value)</code>. See <a href="https://docs.aws.amazon.com/general/latest/gr/aws_tagging.html">Tagging AWS Resources</a> for details, including restrictions that apply to tags and "Tag naming limits and requirements"; Amazon IVS has no constraints beyond what is documented there.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1037,15 +1041,15 @@ export namespace MyNS {
 		/**
 		 * ARN of the stage to which this token is scoped.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: string;
 
 		/**
 		 * Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i>
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		userId?: string | null;
 	}
@@ -1064,15 +1068,15 @@ export namespace MyNS {
 		/**
 		 * ARN of the stage to which this token is scoped.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Name that can be specified to help identify the token. This can be any UTF-8 encoded text. <i>This field is exposed to all stage participants and should not be used for personally identifying, confidential, or sensitive information.</i>
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		userId: FormControl<string | null | undefined>,
 	}
@@ -1090,8 +1094,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional name that can be specified for the stage being created.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -1109,8 +1113,8 @@ export namespace MyNS {
 
 		/**
 		 * Optional name that can be specified for the stage being created.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1130,8 +1134,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the stage to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: string;
 	}
@@ -1140,8 +1144,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the stage to be deleted.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -1162,16 +1166,16 @@ export namespace MyNS {
 
 		/**
 		 * Description of why this participant is being disconnected.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		reason?: string | null;
 
 		/**
 		 * ARN of the stage to which the participant is attached.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: string;
 	}
@@ -1185,16 +1189,16 @@ export namespace MyNS {
 
 		/**
 		 * Description of why this participant is being disconnected.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		reason: FormControl<string | null | undefined>,
 
 		/**
 		 * ARN of the stage to which the participant is attached.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: FormControl<string | null | undefined>,
 	}
@@ -1218,16 +1222,16 @@ export namespace MyNS {
 		/**
 		 * ID of a session within the stage.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		sessionId: string;
 
 		/**
 		 * Stage ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: string;
 	}
@@ -1242,16 +1246,16 @@ export namespace MyNS {
 		/**
 		 * ID of a session within the stage.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		sessionId: FormControl<string | null | undefined>,
 
 		/**
 		 * Stage ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: FormControl<string | null | undefined>,
 	}
@@ -1269,8 +1273,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the stage for which the information is to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: string;
 	}
@@ -1279,8 +1283,8 @@ export namespace MyNS {
 		/**
 		 * ARN of the stage for which the information is to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 	}
@@ -1296,16 +1300,16 @@ export namespace MyNS {
 		/**
 		 * ID of a session within the stage.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		sessionId: string;
 
 		/**
 		 * ARN of the stage for which the information is to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: string;
 	}
@@ -1314,16 +1318,16 @@ export namespace MyNS {
 		/**
 		 * ID of a session within the stage.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		sessionId: FormControl<string | null | undefined>,
 
 		/**
 		 * ARN of the stage for which the information is to be retrieved.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: FormControl<string | null | undefined>,
 	}
@@ -1346,8 +1350,8 @@ export namespace MyNS {
 
 		/**
 		 * The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 
@@ -1360,16 +1364,16 @@ export namespace MyNS {
 		/**
 		 * ID of a session within the stage.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		sessionId: string;
 
 		/**
 		 * Stage ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: string;
 	}
@@ -1384,8 +1388,8 @@ export namespace MyNS {
 
 		/**
 		 * The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -1398,16 +1402,16 @@ export namespace MyNS {
 		/**
 		 * ID of a session within the stage.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		sessionId: FormControl<string | null | undefined>,
 
 		/**
 		 * Stage ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: FormControl<string | null | undefined>,
 	}
@@ -1432,8 +1436,8 @@ export namespace MyNS {
 
 		/**
 		 * Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		filterByUserId?: string | null;
 
@@ -1446,24 +1450,24 @@ export namespace MyNS {
 
 		/**
 		 * The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 
 		/**
 		 * ID of the session within the stage.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		sessionId: string;
 
 		/**
 		 * Stage ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: string;
 	}
@@ -1477,8 +1481,8 @@ export namespace MyNS {
 
 		/**
 		 * Filters the response list to match the specified user ID. Only one of <code>filterByUserId</code>, <code>filterByPublished</code>, or <code>filterByState</code> can be provided per request. A <code>userId</code> is a customer-assigned name to help identify the token; this can be used to link a participant to a user in the customer’s own systems.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		filterByUserId: FormControl<string | null | undefined>,
 
@@ -1491,24 +1495,24 @@ export namespace MyNS {
 
 		/**
 		 * The first participant to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * ID of the session within the stage.
 		 * Required
-		 * Max length: 16
 		 * Min length: 16
+		 * Max length: 16
 		 */
 		sessionId: FormControl<string | null | undefined>,
 
 		/**
 		 * Stage ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: FormControl<string | null | undefined>,
 	}
@@ -1536,16 +1540,16 @@ export namespace MyNS {
 
 		/**
 		 * The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 
 		/**
 		 * Stage ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: string;
 	}
@@ -1560,16 +1564,16 @@ export namespace MyNS {
 
 		/**
 		 * The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Stage ARN.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		stageArn: FormControl<string | null | undefined>,
 	}
@@ -1593,8 +1597,8 @@ export namespace MyNS {
 
 		/**
 		 * The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken?: string | null;
 	}
@@ -1609,8 +1613,8 @@ export namespace MyNS {
 
 		/**
 		 * The first stage to retrieve. This is used for pagination; see the <code>nextToken</code> response field.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -1650,15 +1654,15 @@ export namespace MyNS {
 		/**
 		 * ARN of the stage to be updated.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: string;
 
 		/**
 		 * Name of the stage to be updated.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 	}
@@ -1667,15 +1671,15 @@ export namespace MyNS {
 		/**
 		 * ARN of the stage to be updated.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		arn: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the stage to be updated.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 	}

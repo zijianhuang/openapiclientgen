@@ -156,8 +156,12 @@ export namespace MyNS {
 
 		/** Required */
 		description: string;
-		duration?: number | null;
-		episode?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		duration?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		episode?: string | null;
 		episodeType?: string | null;
 		explicit?: boolean | null;
 		fileUrl?: string | null;
@@ -167,8 +171,12 @@ export namespace MyNS {
 
 		/** Required */
 		publishDate: Date;
-		season?: number | null;
-		size?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		season?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size?: string | null;
 		subtitle?: string | null;
 
 		/** Required */
@@ -186,8 +194,12 @@ export namespace MyNS {
 
 		/** Required */
 		description: FormControl<string | null | undefined>,
-		duration: FormControl<number | null | undefined>,
-		episode: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		duration: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		episode: FormControl<string | null | undefined>,
 		episodeType: FormControl<string | null | undefined>,
 		explicit: FormControl<boolean | null | undefined>,
 		fileUrl: FormControl<string | null | undefined>,
@@ -197,8 +209,12 @@ export namespace MyNS {
 
 		/** Required */
 		publishDate: FormControl<Date | null | undefined>,
-		season: FormControl<number | null | undefined>,
-		size: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		season: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		size: FormControl<string | null | undefined>,
 		subtitle: FormControl<string | null | undefined>,
 
 		/** Required */
@@ -212,8 +228,8 @@ export namespace MyNS {
 			author: new FormControl<string | null | undefined>(undefined),
 			block: new FormControl<boolean | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			duration: new FormControl<number | null | undefined>(undefined),
-			episode: new FormControl<number | null | undefined>(undefined),
+			duration: new FormControl<string | null | undefined>(undefined),
+			episode: new FormControl<string | null | undefined>(undefined),
 			episodeType: new FormControl<string | null | undefined>(undefined),
 			explicit: new FormControl<boolean | null | undefined>(undefined),
 			fileUrl: new FormControl<string | null | undefined>(undefined),
@@ -221,8 +237,8 @@ export namespace MyNS {
 			key: new FormControl<string | null | undefined>(undefined),
 			link: new FormControl<string | null | undefined>(undefined),
 			publishDate: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			season: new FormControl<number | null | undefined>(undefined),
-			size: new FormControl<number | null | undefined>(undefined),
+			season: new FormControl<string | null | undefined>(undefined),
+			size: new FormControl<string | null | undefined>(undefined),
 			subtitle: new FormControl<string | null | undefined>(undefined),
 			summary: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			title: new FormControl<string | null | undefined>(undefined, [Validators.required]),
@@ -234,16 +250,20 @@ export namespace MyNS {
 	/** List of PodcastEpisode */
 	export interface PodcastEpisodeList {
 		items?: Array<PodcastEpisode>;
-		total?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total?: string | null;
 	}
 
 	/** List of PodcastEpisode */
 	export interface PodcastEpisodeListFormProperties {
-		total: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreatePodcastEpisodeListFormGroup() {
 		return new FormGroup<PodcastEpisodeListFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -314,16 +334,20 @@ export namespace MyNS {
 	/** Podcast search results */
 	export interface PodcastSearchResults {
 		hits?: Array<Podcast>;
-		total?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total?: string | null;
 	}
 
 	/** Podcast search results */
 	export interface PodcastSearchResultsFormProperties {
-		total: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreatePodcastSearchResultsFormGroup() {
 		return new FormGroup<PodcastSearchResultsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -410,16 +434,20 @@ export namespace MyNS {
 	/** List of Station */
 	export interface StationList {
 		items?: Array<Station>;
-		total?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total?: string | null;
 	}
 
 	/** List of Station */
 	export interface StationListFormProperties {
-		total: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateStationListFormGroup() {
 		return new FormGroup<StationListFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -468,16 +496,20 @@ export namespace MyNS {
 	/** Station search results */
 	export interface StationSearchResults {
 		hits?: Array<Station>;
-		total?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total?: string | null;
 	}
 
 	/** Station search results */
 	export interface StationSearchResultsFormProperties {
-		total: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		total: FormControl<string | null | undefined>,
 	}
 	export function CreateStationSearchResultsFormGroup() {
 		return new FormGroup<StationSearchResultsFormProperties>({
-			total: new FormControl<number | null | undefined>(undefined),
+			total: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -544,6 +576,9 @@ export namespace MyNS {
 		/**
 		 * Get podcast episodes
 		 * Get api/v2/podcasts/{podcastKey}/episodes
+		 * @param {string} limit Minimum: 1
+		 *     Maximum: 1000
+		 * @param {string} offset Minimum: 0
 		 * @return {void} OK
 		 */
 		GetPodcastEpisodes(podcastKey: string, limit: string | null | undefined, offset: string | null | undefined): Observable<HttpResponse<string>> {
@@ -598,6 +633,9 @@ export namespace MyNS {
 		/**
 		 * List stations
 		 * Get api/v2/stations/list
+		 * @param {string} page Minimum: 1
+		 * @param {string} hitsPerPage Minimum: 1
+		 *     Maximum: 1000
 		 * @return {void} OK
 		 */
 		GetPartnerAggregatorStations(page: string | null | undefined, hitsPerPage: string | null | undefined): Observable<HttpResponse<string>> {

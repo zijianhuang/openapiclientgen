@@ -75,18 +75,22 @@ export namespace MyNS {
 	export interface ActivityCustomer {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ActivityCustomerFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityCustomerFormGroup() {
 		return new FormGroup<ActivityCustomerFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -109,8 +113,8 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		location?: string | null;
 
@@ -145,8 +149,8 @@ export namespace MyNS {
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 
 		/**
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		location: FormControl<string | null | undefined>,
 
@@ -262,7 +266,9 @@ export namespace MyNS {
 		name?: string | null;
 		projectGuid?: string | null;
 		projectName?: string | null;
-		projectNumber?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		projectNumber?: string | null;
 		projectOwnerGuid?: string | null;
 	}
 	export interface ActivityPhaseFormProperties {
@@ -271,7 +277,9 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		projectGuid: FormControl<string | null | undefined>,
 		projectName: FormControl<string | null | undefined>,
-		projectNumber: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		projectNumber: FormControl<string | null | undefined>,
 		projectOwnerGuid: FormControl<string | null | undefined>,
 	}
 	export function CreateActivityPhaseFormGroup() {
@@ -281,7 +289,7 @@ export namespace MyNS {
 			name: new FormControl<string | null | undefined>(undefined),
 			projectGuid: new FormControl<string | null | undefined>(undefined),
 			projectName: new FormControl<string | null | undefined>(undefined),
-			projectNumber: new FormControl<number | null | undefined>(undefined),
+			projectNumber: new FormControl<string | null | undefined>(undefined),
 			projectOwnerGuid: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -344,10 +352,14 @@ export namespace MyNS {
 
 	export interface DailyModel {
 		everyWeekday?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interval?: number | null;
 	}
 	export interface DailyModelFormProperties {
 		everyWeekday: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interval: FormControl<number | null | undefined>,
 	}
 	export function CreateDailyModelFormGroup() {
@@ -359,15 +371,23 @@ export namespace MyNS {
 	}
 
 	export interface MonthlyModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dayOfMonth?: number | null;
 		dayOrdinal?: MonthlyModelDayOrdinal | null;
 		dayOrdinalOption?: MonthlyModelDayOrdinalOption | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interval?: number | null;
 	}
 	export interface MonthlyModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dayOfMonth: FormControl<number | null | undefined>,
 		dayOrdinal: FormControl<MonthlyModelDayOrdinal | null | undefined>,
 		dayOrdinalOption: FormControl<MonthlyModelDayOrdinalOption | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interval: FormControl<number | null | undefined>,
 	}
 	export function CreateMonthlyModelFormGroup() {
@@ -386,6 +406,8 @@ export namespace MyNS {
 
 	export interface WeeklyModel {
 		friday?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interval?: number | null;
 		monday?: boolean | null;
 		saturday?: boolean | null;
@@ -396,6 +418,8 @@ export namespace MyNS {
 	}
 	export interface WeeklyModelFormProperties {
 		friday: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interval: FormControl<number | null | undefined>,
 		monday: FormControl<boolean | null | undefined>,
 		saturday: FormControl<boolean | null | undefined>,
@@ -419,12 +443,16 @@ export namespace MyNS {
 	}
 
 	export interface YearlyModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dayOfMonth?: number | null;
 		dayOrdinal?: MonthlyModelDayOrdinal | null;
 		dayOrdinalOption?: MonthlyModelDayOrdinalOption | null;
 		month?: YearlyModelMonth | null;
 	}
 	export interface YearlyModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dayOfMonth: FormControl<number | null | undefined>,
 		dayOrdinal: FormControl<MonthlyModelDayOrdinal | null | undefined>,
 		dayOrdinalOption: FormControl<MonthlyModelDayOrdinalOption | null | undefined>,
@@ -443,11 +471,19 @@ export namespace MyNS {
 	export enum YearlyModelMonth { January = 'January', February = 'February', March = 'March', April = 'April', May = 'May', June = 'June', July = 'July', August = 'August', September = 'September', October = 'October', November = 'November', December = 'December' }
 
 	export interface RecurrenceRange {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxOccurrences?: number | null;
+
+		/** Type: DateOnly */
 		recursUntilDate?: Date | null;
 	}
 	export interface RecurrenceRangeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxOccurrences: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		recursUntilDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateRecurrenceRangeFormGroup() {
@@ -604,18 +640,22 @@ export namespace MyNS {
 	export interface AddressCustomer {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface AddressCustomerFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateAddressCustomerFormGroup() {
 		return new FormGroup<AddressCustomerFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -835,8 +875,8 @@ export namespace MyNS {
 		isActive?: boolean | null;
 
 		/**
-		 * Max length: 25
 		 * Min length: 0
+		 * Max length: 25
 		 */
 		kvkNumber?: string | null;
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -862,8 +902,8 @@ export namespace MyNS {
 		isActive: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 25
 		 * Min length: 0
+		 * Max length: 25
 		 */
 		kvkNumber: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
@@ -1079,6 +1119,8 @@ export namespace MyNS {
 		country?: CompanyCountry;
 		currencyCode?: string | null;
 		currencyGuid?: string | null;
+
+		/** Type: double */
 		currencyRate?: number | null;
 		currencySymbol?: string | null;
 		guid?: string | null;
@@ -1088,6 +1130,8 @@ export namespace MyNS {
 	export interface CompanyModelFormProperties {
 		currencyCode: FormControl<string | null | undefined>,
 		currencyGuid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		currencyRate: FormControl<number | null | undefined>,
 		currencySymbol: FormControl<string | null | undefined>,
 		guid: FormControl<string | null | undefined>,
@@ -1184,7 +1228,9 @@ export namespace MyNS {
 		 */
 		guid: string;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ContactCustomerFormProperties {
 
@@ -1194,13 +1240,15 @@ export namespace MyNS {
 		 */
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateContactCustomerFormGroup() {
 		return new FormGroup<ContactCustomerFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1254,6 +1302,8 @@ export namespace MyNS {
 
 		/** Required */
 		customer: ContactCustomer;
+
+		/** Type: DateOnly */
 		dateOfBirth?: Date | null;
 		description?: string | null;
 		emails?: Array<string>;
@@ -1287,6 +1337,8 @@ export namespace MyNS {
 	export interface ContactModelFormProperties {
 		addressGuid: FormControl<string | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		dateOfBirth: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 
@@ -1626,6 +1678,8 @@ export namespace MyNS {
 
 	export interface CreateInvoiceModel {
 		billingCustomerGuid?: string | null;
+
+		/** Type: DateOnly */
 		date?: Date | null;
 		groupProjects?: boolean | null;
 		invoiceStatusGuid?: string | null;
@@ -1635,6 +1689,8 @@ export namespace MyNS {
 	}
 	export interface CreateInvoiceModelFormProperties {
 		billingCustomerGuid: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		date: FormControl<Date | null | undefined>,
 		groupProjects: FormControl<boolean | null | undefined>,
 		invoiceStatusGuid: FormControl<string | null | undefined>,
@@ -1682,6 +1738,8 @@ export namespace MyNS {
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		lastUpdatedDateTime?: Date | null;
 		name?: string | null;
+
+		/** Type: double */
 		rate?: number | null;
 		symbol?: string | null;
 	}
@@ -1693,6 +1751,8 @@ export namespace MyNS {
 		isOrganizationCurrency: FormControl<boolean | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		rate: FormControl<number | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
 	}
@@ -1875,6 +1935,8 @@ export namespace MyNS {
 
 		/** Required */
 		type: CustomPropertyModelType;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usageCount?: number | null;
 	}
 	export interface CustomPropertyModelFormProperties {
@@ -1892,6 +1954,8 @@ export namespace MyNS {
 
 		/** Required */
 		type: FormControl<CustomPropertyModelType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usageCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomPropertyModelFormGroup() {
@@ -2106,10 +2170,14 @@ export namespace MyNS {
 
 	export interface ValueAddedTaxSubModel {
 		guid?: string | null;
+
+		/** Type: double */
 		percentage?: number | null;
 	}
 	export interface ValueAddedTaxSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateValueAddedTaxSubModelFormGroup() {
@@ -2148,11 +2216,15 @@ export namespace MyNS {
 		customerCustomProperty: SimpleInputModel;
 		isActive?: boolean | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface CustomerCustomPropertySelectionItemInputModelFormProperties {
 		isActive: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomerCustomPropertySelectionItemInputModelFormGroup() {
@@ -2178,6 +2250,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface CustomerCustomPropertySelectionItemOutputModelFormProperties {
@@ -2191,6 +2265,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomerCustomPropertySelectionItemOutputModelFormGroup() {
@@ -2263,11 +2339,15 @@ export namespace MyNS {
 	export interface CustomerInvoicingVat {
 		code?: string | null;
 		guid?: string | null;
+
+		/** Type: double */
 		percentage?: number | null;
 	}
 	export interface CustomerInvoicingVatFormProperties {
 		code: FormControl<string | null | undefined>,
 		guid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomerInvoicingVatFormGroup() {
@@ -2345,7 +2425,9 @@ export namespace MyNS {
 	}
 
 	export interface CustomerModel {
-		annualRevenue?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		annualRevenue?: string | null;
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		createdDateTime?: Date | null;
 		currency?: CustomerCurrency;
@@ -2361,8 +2443,8 @@ export namespace MyNS {
 		isInternal?: boolean | null;
 
 		/**
-		 * Max length: 25
 		 * Min length: 0
+		 * Max length: 25
 		 */
 		kvkNumber?: string | null;
 		language?: CustomerLanguage;
@@ -2375,10 +2457,18 @@ export namespace MyNS {
 		 */
 		name: string;
 		notes?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfEmployees?: number | null;
+
+		/** Type: double */
 		overdueInterest?: number | null;
 		owner?: UserWithFirstNameLastNameAndPhotoFileModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentTerm?: number | null;
 		pricelist?: ModelWithName;
 		timezone?: ModelWithName;
@@ -2386,7 +2476,9 @@ export namespace MyNS {
 		website?: string | null;
 	}
 	export interface CustomerModelFormProperties {
-		annualRevenue: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		annualRevenue: FormControl<string | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
 		eInvoiceAddress: FormControl<string | null | undefined>,
 		eInvoiceOperator: FormControl<string | null | undefined>,
@@ -2396,8 +2488,8 @@ export namespace MyNS {
 		isInternal: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 25
 		 * Min length: 0
+		 * Max length: 25
 		 */
 		kvkNumber: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
@@ -2408,16 +2500,24 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 		notes: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		numberOfEmployees: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		overdueInterest: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentTerm: FormControl<number | null | undefined>,
 		vatNumber: FormControl<string | null | undefined>,
 		website: FormControl<string | null | undefined>,
 	}
 	export function CreateCustomerModelFormGroup() {
 		return new FormGroup<CustomerModelFormProperties>({
-			annualRevenue: new FormControl<number | null | undefined>(undefined),
+			annualRevenue: new FormControl<string | null | undefined>(undefined),
 			createdDateTime: new FormControl<Date | null | undefined>(undefined),
 			eInvoiceAddress: new FormControl<string | null | undefined>(undefined),
 			eInvoiceOperator: new FormControl<string | null | undefined>(undefined),
@@ -2429,7 +2529,7 @@ export namespace MyNS {
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			notes: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 			numberOfEmployees: new FormControl<number | null | undefined>(undefined),
 			overdueInterest: new FormControl<number | null | undefined>(undefined),
 			paymentTerm: new FormControl<number | null | undefined>(undefined),
@@ -2528,6 +2628,8 @@ export namespace MyNS {
 		createdDateTime?: Date | null;
 		customer?: ModelBaseReadOnly;
 		deletedDateTime?: Date | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 		guid?: string | null;
 		lastUpdatedBy?: ModelBaseReadOnly;
@@ -2537,17 +2639,23 @@ export namespace MyNS {
 		phase?: ModelBaseReadOnly;
 		product?: ModelBaseReadOnly;
 		project?: ModelBaseReadOnly;
+
+		/** Type: double */
 		quantity?: number | null;
 		user?: ModelBaseReadOnly;
 	}
 	export interface DeletedProjectFeeModelFormProperties {
 		createdDateTime: FormControl<Date | null | undefined>,
 		deletedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		measurementUnit: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateDeletedProjectFeeModelFormGroup() {
@@ -2583,6 +2691,8 @@ export namespace MyNS {
 		customer?: ModelBaseReadOnly;
 		deletedDateTime?: Date | null;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 		guid?: string | null;
 		lastUpdatedBy?: ModelBaseReadOnly;
@@ -2590,6 +2700,8 @@ export namespace MyNS {
 		measurementUnit?: string | null;
 		phase?: ModelBaseReadOnly;
 		project?: ModelBaseReadOnly;
+
+		/** Type: double */
 		quantity?: number | null;
 		travelEndTime?: Date | null;
 		travelExpense?: ModelBaseReadOnly;
@@ -2600,10 +2712,14 @@ export namespace MyNS {
 		createdDateTime: FormControl<Date | null | undefined>,
 		deletedDateTime: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		measurementUnit: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 		travelEndTime: FormControl<Date | null | undefined>,
 		travelStartTime: FormControl<Date | null | undefined>,
@@ -2630,13 +2746,19 @@ export namespace MyNS {
 		customer?: ModelBaseReadOnly;
 		deletedDateTime?: Date | null;
 		endTime?: Date | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 		guid?: string | null;
 		lastUpdatedBy?: ModelBaseReadOnly;
 		lastUpdatedDateTime?: Date | null;
 		phase?: ModelBaseReadOnly;
+
+		/** Type: double */
 		plannedInvoiceQuantity?: number | null;
 		project?: ModelBaseReadOnly;
+
+		/** Type: double */
 		quantity?: number | null;
 		startTime?: Date | null;
 		user?: ModelBaseReadOnly;
@@ -2646,10 +2768,16 @@ export namespace MyNS {
 		createdDateTime: FormControl<Date | null | undefined>,
 		deletedDateTime: FormControl<Date | null | undefined>,
 		endTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		plannedInvoiceQuantity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
 	}
@@ -2672,11 +2800,15 @@ export namespace MyNS {
 
 	export interface ErrorModel {
 		details?: Array<ExceptionDetailModel>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		httpStatusCode?: number | null;
 		stack?: string | null;
 		type?: ErrorModelType | null;
 	}
 	export interface ErrorModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		httpStatusCode: FormControl<number | null | undefined>,
 		stack: FormControl<string | null | undefined>,
 		type: FormControl<ErrorModelType | null | undefined>,
@@ -2805,6 +2937,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: double */
 		size?: number | null;
 	}
 	export interface FileModelFormProperties {
@@ -2821,6 +2955,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateFileModelFormGroup() {
@@ -2843,10 +2979,14 @@ export namespace MyNS {
 
 		/** Required */
 		billingSchedule: BillingScheduleType;
+
+		/** Type: double */
 		includesHours?: number | null;
 
 		/** Required */
 		phase: SimpleInputRequiredModel;
+
+		/** Type: DateOnly */
 		plannedBillingDate?: Date | null;
 		price?: MoneyInputModelWithNullableAmount;
 		pricePerAdditionalHour?: MoneyInputModelWithNullableAmount;
@@ -2856,7 +2996,11 @@ export namespace MyNS {
 
 		/** Required */
 		billingSchedule: FormControl<BillingScheduleType | null | undefined>,
+
+		/** Type: double */
 		includesHours: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		plannedBillingDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateFlatRateInputModelFormGroup() {
@@ -2870,6 +3014,8 @@ export namespace MyNS {
 	}
 
 	export interface MoneyInputModelWithNullableAmount {
+
+		/** Type: double */
 		amount?: number | null;
 
 		/**
@@ -2879,6 +3025,8 @@ export namespace MyNS {
 		currencyCode: string;
 	}
 	export interface MoneyInputModelWithNullableAmountFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 
 		/**
@@ -2899,9 +3047,13 @@ export namespace MyNS {
 		billAdditionalHours?: boolean | null;
 		billingSchedule?: BillingScheduleType | null;
 		guid?: string | null;
+
+		/** Type: double */
 		includesHours?: number | null;
 		invoiceGuid?: string | null;
 		phase?: ModelBaseWithRequiredGuid;
+
+		/** Type: DateOnly */
 		plannedBillingDate?: Date | null;
 		price?: MoneyOutputModel;
 		pricePerAdditionalHour?: MoneyOutputModel;
@@ -2911,8 +3063,12 @@ export namespace MyNS {
 		billAdditionalHours: FormControl<boolean | null | undefined>,
 		billingSchedule: FormControl<BillingScheduleType | null | undefined>,
 		guid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		includesHours: FormControl<number | null | undefined>,
 		invoiceGuid: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		plannedBillingDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateFlatRateOutputModelFormGroup() {
@@ -2928,11 +3084,15 @@ export namespace MyNS {
 	}
 
 	export interface MoneyOutputModel {
+
+		/** Type: double */
 		amount?: number | null;
 		currencyCode?: string | null;
 		multiCurrencyInfo?: Array<MultiCurrencyInfoModel>;
 	}
 	export interface MoneyOutputModelFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		currencyCode: FormControl<string | null | undefined>,
 	}
@@ -2945,11 +3105,15 @@ export namespace MyNS {
 	}
 
 	export interface MultiCurrencyInfoModel {
+
+		/** Type: double */
 		amount?: number | null;
 		currencyCode?: string | null;
 		purpose?: Array<CurrencyPurpose>;
 	}
 	export interface MultiCurrencyInfoModelFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		currencyCode: FormControl<string | null | undefined>,
 	}
@@ -2964,28 +3128,38 @@ export namespace MyNS {
 	export interface FlatrateProjectSubModel {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface FlatrateProjectSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateFlatrateProjectSubModelFormGroup() {
 		return new FormGroup<FlatrateProjectSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface FlextimeAdjustmentInputModel {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		adjustmentDate: Date;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: number;
 		notes?: string | null;
 
@@ -2994,10 +3168,16 @@ export namespace MyNS {
 	}
 	export interface FlextimeAdjustmentInputModelFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		adjustmentDate: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 		notes: FormControl<string | null | undefined>,
 	}
@@ -3011,7 +3191,11 @@ export namespace MyNS {
 	}
 
 	export interface FlextimeAdjustmentOutputModel {
+
+		/** Type: DateOnly */
 		adjustmentDate?: Date | null;
+
+		/** Type: double */
 		amount?: number | null;
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		createdDateTime?: Date | null;
@@ -3022,7 +3206,11 @@ export namespace MyNS {
 		user?: UserWithFirstNameLastNamePhotoFileModelAndRequiredGuid;
 	}
 	export interface FlextimeAdjustmentOutputModelFormProperties {
+
+		/** Type: DateOnly */
 		adjustmentDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
@@ -3077,11 +3265,19 @@ export namespace MyNS {
 	}
 
 	export interface FlextimeModel {
+
+		/** Type: double */
 		monthFlextimeBalance?: number | null;
+
+		/** Type: double */
 		totalFlextimeBalance?: number | null;
 	}
 	export interface FlextimeModelFormProperties {
+
+		/** Type: double */
 		monthFlextimeBalance: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		totalFlextimeBalance: FormControl<number | null | undefined>,
 	}
 	export function CreateFlextimeModelFormGroup() {
@@ -3234,7 +3430,10 @@ export namespace MyNS {
 		 */
 		countryGuid: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		date: Date;
 		guid?: string | null;
 		isActive?: boolean | null;
@@ -3261,7 +3460,10 @@ export namespace MyNS {
 		 */
 		countryGuid: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		date: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
@@ -3337,18 +3539,22 @@ export namespace MyNS {
 	export interface InvoiceCustomerSubModel {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface InvoiceCustomerSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateInvoiceCustomerSubModelFormGroup() {
 		return new FormGroup<InvoiceCustomerSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3371,7 +3577,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: double */
 		size?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface InvoiceFileModelFormProperties {
@@ -3390,7 +3600,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		size: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceFileModelFormGroup() {
@@ -3443,10 +3657,18 @@ export namespace MyNS {
 		creditNoteInvoice?: RelatedInvoiceSubModel;
 		culture?: FormattingCultureSubModel2;
 		currency?: CurrencySubModel;
+
+		/** Type: double */
 		currencyRate?: number | null;
 		customer?: InvoiceCustomerSubModel;
+
+		/** Type: DateOnly */
 		date?: Date | null;
+
+		/** Type: DateOnly */
 		dueDate?: Date | null;
+
+		/** Type: DateOnly */
 		entryDate?: Date | null;
 		flatRatesTotalExcludingTax?: MoneyOutputModel;
 		freeText1?: FreeTextModel2;
@@ -3459,11 +3681,19 @@ export namespace MyNS {
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		lastUpdatedDateTime?: Date | null;
 		notes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 		orderNumber?: string | null;
 		ourReference?: string | null;
+
+		/** Type: double */
 		overdueInterest?: number | null;
+
+		/** Type: DateOnly */
 		paymentDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentTerm?: number | null;
 		projectFeesTotalExcludingTax?: MoneyOutputModel;
 		projectTravelExpensesTotalExcludingTax?: MoneyOutputModel;
@@ -3487,7 +3717,11 @@ export namespace MyNS {
 		totalExcludingTax?: MoneyOutputModel;
 		totalIncludingTax?: MoneyOutputModel;
 		totalTax?: MoneyOutputModel;
+
+		/** Type: double */
 		workHourValueAddedTax?: number | null;
+
+		/** Type: double */
 		workHoursQuantity?: number | null;
 		workHoursTotalExcludingTax?: MoneyOutputModel;
 		yourReference?: string | null;
@@ -3495,20 +3729,36 @@ export namespace MyNS {
 	export interface InvoiceOutputModelFormProperties {
 		canBeDeleted: FormControl<boolean | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		currencyRate: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		date: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		dueDate: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		entryDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		invoiceNumberBusinessUnitGuid: FormControl<string | null | undefined>,
 		isCreditNote: FormControl<boolean | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		notes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 		orderNumber: FormControl<string | null | undefined>,
 		ourReference: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		overdueInterest: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		paymentDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentTerm: FormControl<number | null | undefined>,
 		receiverContactEmail: FormControl<string | null | undefined>,
 		receiverContactGuid: FormControl<string | null | undefined>,
@@ -3522,7 +3772,11 @@ export namespace MyNS {
 		senderKvkNumber: FormControl<string | null | undefined>,
 		senderName: FormControl<string | null | undefined>,
 		senderVatNumber: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		workHourValueAddedTax: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		workHoursQuantity: FormControl<number | null | undefined>,
 		yourReference: FormControl<string | null | undefined>,
 	}
@@ -3566,10 +3820,14 @@ export namespace MyNS {
 
 	export interface RelatedInvoiceSubModel {
 		guid?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 	}
 	export interface RelatedInvoiceSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateRelatedInvoiceSubModelFormGroup() {
@@ -3583,18 +3841,22 @@ export namespace MyNS {
 	export interface InvoiceProjectSubModel {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface InvoiceProjectSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateInvoiceProjectSubModelFormGroup() {
 		return new FormGroup<InvoiceProjectSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -3718,14 +3980,20 @@ export namespace MyNS {
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		lastUpdatedDateTime?: Date | null;
 		measurementUnit?: string | null;
+
+		/** Type: double */
 		quantity?: number | null;
 		recurringSalesAccount?: InvoiceRowAccountingSubModel;
 		rowType?: InvoiceRowOutputModelRowType | null;
 		salesAccount?: InvoiceRowAccountingSubModel;
 		salesReceivableAccount?: InvoiceRowAccountingSubModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 		unitPrice?: MoneyOutputModel;
 		vatAccount?: InvoiceRowAccountingSubModel;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface InvoiceRowOutputModelFormProperties {
@@ -3738,9 +4006,15 @@ export namespace MyNS {
 		invoiceGuid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		measurementUnit: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 		rowType: FormControl<InvoiceRowOutputModelRowType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceRowOutputModelFormGroup() {
@@ -3770,11 +4044,15 @@ export namespace MyNS {
 		categorySortOrder?: string | null;
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		createdDateTime?: Date | null;
+
+		/** Type: DateOnly */
 		entryDate?: Date | null;
 		guid?: string | null;
 		isReverseCharged?: boolean | null;
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		lastUpdatedDateTime?: Date | null;
+
+		/** Type: DateOnly */
 		paymentDate?: Date | null;
 		projectFeeDescriptionFormat?: string | null;
 		projectFeeGrouping?: InvoiceGrouping | null;
@@ -3808,10 +4086,14 @@ export namespace MyNS {
 	export interface InvoiceSettingsOutputModelFormProperties {
 		categorySortOrder: FormControl<string | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		entryDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		isReverseCharged: FormControl<boolean | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		paymentDate: FormControl<Date | null | undefined>,
 		projectFeeDescriptionFormat: FormControl<string | null | undefined>,
 		projectFeeGrouping: FormControl<InvoiceGrouping | null | undefined>,
@@ -3907,6 +4189,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface InvoiceStatusModelFormProperties {
@@ -3927,6 +4211,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceStatusModelFormGroup() {
@@ -3949,13 +4235,21 @@ export namespace MyNS {
 	}
 
 	export interface InvoiceSubModel {
+
+		/** Type: DateOnly */
 		date?: Date | null;
 		guid?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 	}
 	export interface InvoiceSubModelFormProperties {
+
+		/** Type: DateOnly */
 		date: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceSubModelFormGroup() {
@@ -4246,7 +4540,10 @@ export namespace MyNS {
 
 	export interface MoneyInputModel {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: number;
 
 		/**
@@ -4257,7 +4554,10 @@ export namespace MyNS {
 	}
 	export interface MoneyInputModelFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
@@ -4275,6 +4575,8 @@ export namespace MyNS {
 	}
 
 	export interface MoneyInputModelWithNotNegativeAmount {
+
+		/** Type: double */
 		amount?: number | null;
 
 		/**
@@ -4284,6 +4586,8 @@ export namespace MyNS {
 		currencyCode: string;
 	}
 	export interface MoneyInputModelWithNotNegativeAmountFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 
 		/**
@@ -4377,8 +4681,8 @@ export namespace MyNS {
 		isVatRegistered?: boolean | null;
 
 		/**
-		 * Max length: 25
 		 * Min length: 0
+		 * Max length: 25
 		 */
 		kvkNumber?: string | null;
 		language?: OrganizationDetailsLanguageSubModel;
@@ -4401,8 +4705,8 @@ export namespace MyNS {
 		isVatRegistered: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 25
 		 * Min length: 0
+		 * Max length: 25
 		 */
 		kvkNumber: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -4457,6 +4761,8 @@ export namespace MyNS {
 		defaultFooterColumn2?: FreeTextModel;
 		defaultFooterColumn3?: FreeTextModel;
 		displayProjectNumber?: boolean | null;
+
+		/** Type: DateOnly */
 		flextimeCalculationStartDate?: Date | null;
 		isAddingNewKeywordsFromProjectAllowed?: boolean | null;
 		isCustomerSearchAllowed?: boolean | null;
@@ -4464,13 +4770,23 @@ export namespace MyNS {
 		isIdenticalPhaseCodesAllowed?: boolean | null;
 		isTravelExpenseImmediatelyInvoiceable?: boolean | null;
 		isWorkHourDescriptionMandatory?: boolean | null;
-		lastCustomerNumber?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastCustomerNumber?: string | null;
 		lastFlextimeCalculationEndTime?: Date | null;
 		lastFlextimeCalculationUser?: UserWithFirstNameLastNameModel;
-		lastInvoiceNumber?: number | null;
-		lastProjectNumber?: number | null;
-		lastPurchaseOrderNumber?: number | null;
-		lastTravelReimbursementNumber?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastInvoiceNumber?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastProjectNumber?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastPurchaseOrderNumber?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastTravelReimbursementNumber?: string | null;
 
 		/**
 		 * Minimum: 0
@@ -4483,25 +4799,43 @@ export namespace MyNS {
 		 * Maximum: 0
 		 */
 		minFlextimeBalanceLimit?: number | null;
-		nextCustomerNumber?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		nextCustomerNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextInvoiceNumber?: number | null;
-		nextProjectNumber?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		nextProjectNumber?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextPurchaseOrderNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextTravelReimbursementNumber?: number | null;
+
+		/** Type: double */
 		overdueInterest?: number | null;
 		paymentReferenceNumberDisplaySetting?: OrganizationSettingsModelPaymentReferenceNumberDisplaySetting | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentTerm?: number | null;
 		projectNameDisplayFormatSetting?: OrganizationSettingsModelProjectNameDisplayFormatSetting | null;
 		projectNameDisplaySetting?: OrganizationSettingsModelProjectNameDisplaySetting | null;
 
 		/**
-		 * Max length: 20
 		 * Min length: 0
+		 * Max length: 20
 		 */
 		purchaseOrderNumberPrefix?: string | null;
 		quickSearchSetting?: OrganizationSettingsModelQuickSearchSetting | null;
 		setCreditNoteInvoiceNumber?: boolean | null;
+
+		/** Type: DateOnly */
 		travelEntryClosingDate?: Date | null;
+
+		/** Type: DateOnly */
 		travelExpenseReimbursementStartDate?: Date | null;
 		travelReimbursementInstructions?: string | null;
 		uniqueIdentifierForProductsAndWorktypes?: boolean | null;
@@ -4510,11 +4844,15 @@ export namespace MyNS {
 
 		/** Required */
 		workWeek: Array<Workweek>;
+
+		/** Type: DateOnly */
 		worktimeEntryClosingDate?: Date | null;
 	}
 	export interface OrganizationSettingsModelFormProperties {
 		currencyRoundingType: FormControl<OrganizationSettingsModelCurrencyRoundingType | null | undefined>,
 		displayProjectNumber: FormControl<boolean | null | undefined>,
+
+		/** Type: DateOnly */
 		flextimeCalculationStartDate: FormControl<Date | null | undefined>,
 		isAddingNewKeywordsFromProjectAllowed: FormControl<boolean | null | undefined>,
 		isCustomerSearchAllowed: FormControl<boolean | null | undefined>,
@@ -4522,12 +4860,22 @@ export namespace MyNS {
 		isIdenticalPhaseCodesAllowed: FormControl<boolean | null | undefined>,
 		isTravelExpenseImmediatelyInvoiceable: FormControl<boolean | null | undefined>,
 		isWorkHourDescriptionMandatory: FormControl<boolean | null | undefined>,
-		lastCustomerNumber: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastCustomerNumber: FormControl<string | null | undefined>,
 		lastFlextimeCalculationEndTime: FormControl<Date | null | undefined>,
-		lastInvoiceNumber: FormControl<number | null | undefined>,
-		lastProjectNumber: FormControl<number | null | undefined>,
-		lastPurchaseOrderNumber: FormControl<number | null | undefined>,
-		lastTravelReimbursementNumber: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastInvoiceNumber: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastProjectNumber: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastPurchaseOrderNumber: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		lastTravelReimbursementNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * Minimum: 0
@@ -4540,30 +4888,50 @@ export namespace MyNS {
 		 * Maximum: 0
 		 */
 		minFlextimeBalanceLimit: FormControl<number | null | undefined>,
-		nextCustomerNumber: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		nextCustomerNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextInvoiceNumber: FormControl<number | null | undefined>,
-		nextProjectNumber: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		nextProjectNumber: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextPurchaseOrderNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nextTravelReimbursementNumber: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		overdueInterest: FormControl<number | null | undefined>,
 		paymentReferenceNumberDisplaySetting: FormControl<OrganizationSettingsModelPaymentReferenceNumberDisplaySetting | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentTerm: FormControl<number | null | undefined>,
 		projectNameDisplayFormatSetting: FormControl<OrganizationSettingsModelProjectNameDisplayFormatSetting | null | undefined>,
 		projectNameDisplaySetting: FormControl<OrganizationSettingsModelProjectNameDisplaySetting | null | undefined>,
 
 		/**
-		 * Max length: 20
 		 * Min length: 0
+		 * Max length: 20
 		 */
 		purchaseOrderNumberPrefix: FormControl<string | null | undefined>,
 		quickSearchSetting: FormControl<OrganizationSettingsModelQuickSearchSetting | null | undefined>,
 		setCreditNoteInvoiceNumber: FormControl<boolean | null | undefined>,
+
+		/** Type: DateOnly */
 		travelEntryClosingDate: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		travelExpenseReimbursementStartDate: FormControl<Date | null | undefined>,
 		travelReimbursementInstructions: FormControl<string | null | undefined>,
 		uniqueIdentifierForProductsAndWorktypes: FormControl<boolean | null | undefined>,
 		workHourApprovalMode: FormControl<OrganizationSettingsModelWorkHourApprovalMode | null | undefined>,
 		workHourEntryFormat: FormControl<EntryFormat | null | undefined>,
+
+		/** Type: DateOnly */
 		worktimeEntryClosingDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateOrganizationSettingsModelFormGroup() {
@@ -4577,17 +4945,17 @@ export namespace MyNS {
 			isIdenticalPhaseCodesAllowed: new FormControl<boolean | null | undefined>(undefined),
 			isTravelExpenseImmediatelyInvoiceable: new FormControl<boolean | null | undefined>(undefined),
 			isWorkHourDescriptionMandatory: new FormControl<boolean | null | undefined>(undefined),
-			lastCustomerNumber: new FormControl<number | null | undefined>(undefined),
+			lastCustomerNumber: new FormControl<string | null | undefined>(undefined),
 			lastFlextimeCalculationEndTime: new FormControl<Date | null | undefined>(undefined),
-			lastInvoiceNumber: new FormControl<number | null | undefined>(undefined),
-			lastProjectNumber: new FormControl<number | null | undefined>(undefined),
-			lastPurchaseOrderNumber: new FormControl<number | null | undefined>(undefined),
-			lastTravelReimbursementNumber: new FormControl<number | null | undefined>(undefined),
+			lastInvoiceNumber: new FormControl<string | null | undefined>(undefined),
+			lastProjectNumber: new FormControl<string | null | undefined>(undefined),
+			lastPurchaseOrderNumber: new FormControl<string | null | undefined>(undefined),
+			lastTravelReimbursementNumber: new FormControl<string | null | undefined>(undefined),
 			maxFlextimeBalanceLimit: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(1000)]),
 			minFlextimeBalanceLimit: new FormControl<number | null | undefined>(undefined, [Validators.min(-1000), Validators.max(0)]),
-			nextCustomerNumber: new FormControl<number | null | undefined>(undefined),
+			nextCustomerNumber: new FormControl<string | null | undefined>(undefined),
 			nextInvoiceNumber: new FormControl<number | null | undefined>(undefined),
-			nextProjectNumber: new FormControl<number | null | undefined>(undefined),
+			nextProjectNumber: new FormControl<string | null | undefined>(undefined),
 			nextPurchaseOrderNumber: new FormControl<number | null | undefined>(undefined),
 			nextTravelReimbursementNumber: new FormControl<number | null | undefined>(undefined),
 			overdueInterest: new FormControl<number | null | undefined>(undefined),
@@ -4673,6 +5041,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: double */
 		percentage?: number | null;
 	}
 	export interface OvertimeModelFormProperties {
@@ -4694,6 +5064,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateOvertimeModelFormGroup() {
@@ -4718,6 +5090,8 @@ export namespace MyNS {
 		overtime: ModelBaseWithRequiredGuid;
 		priceSource?: OvertimePriceModelPriceSource | null;
 		pricelistVersionGuid?: string | null;
+
+		/** Type: double */
 		pricingMultiplier?: number | null;
 		projectGuid?: string | null;
 	}
@@ -4725,6 +5099,8 @@ export namespace MyNS {
 		guid: FormControl<string | null | undefined>,
 		priceSource: FormControl<OvertimePriceModelPriceSource | null | undefined>,
 		pricelistVersionGuid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		pricingMultiplier: FormControl<number | null | undefined>,
 		projectGuid: FormControl<string | null | undefined>,
 	}
@@ -4814,26 +5190,32 @@ export namespace MyNS {
 		guid?: string | null;
 		isInternal?: boolean | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface PhaseCustomerSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
 		isInternal: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreatePhaseCustomerSubModelFormGroup() {
 		return new FormGroup<PhaseCustomerSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			isInternal: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface PhaseInputModel {
 		code?: string | null;
+
+		/** Type: DateOnly */
 		deadline?: Date | null;
 		defaultWorkType?: ModelWithName;
 		isClosed?: boolean | null;
@@ -4845,20 +5227,34 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: DateOnly */
 		originalDeadline?: Date | null;
+
+		/** Type: DateOnly */
 		originalStartDate?: Date | null;
+
+		/** Type: double */
 		originalWorkHoursEstimate?: number | null;
 
 		/** Required */
 		parentPhase: ModelBaseWithRequiredGuid;
 		phaseStatus?: PhaseStatusInputModel;
 		project?: ModelBaseWithRequiredGuid;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
+
+		/** Type: double */
 		workHoursEstimate?: number | null;
 	}
 	export interface PhaseInputModelFormProperties {
 		code: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		deadline: FormControl<Date | null | undefined>,
 		isClosed: FormControl<boolean | null | undefined>,
 		isCompleted: FormControl<boolean | null | undefined>,
@@ -4869,11 +5265,23 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		originalDeadline: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		originalStartDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		originalWorkHoursEstimate: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		workHoursEstimate: FormControl<number | null | undefined>,
 	}
 	export function CreatePhaseInputModelFormGroup() {
@@ -4925,7 +5333,11 @@ export namespace MyNS {
 		 */
 		phaseGuid: string;
 		user?: UserWithFirstNameLastNameAndPhotoFileModel;
+
+		/** Type: double */
 		workHours?: number | null;
+
+		/** Type: double */
 		workHoursIncludingChildPhases?: number | null;
 	}
 	export interface PhaseMemberModelFormProperties {
@@ -4940,7 +5352,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		phaseGuid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		workHours: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		workHoursIncludingChildPhases: FormControl<number | null | undefined>,
 	}
 	export function CreatePhaseMemberModelFormGroup() {
@@ -5028,6 +5444,8 @@ export namespace MyNS {
 		createdDateTime?: Date | null;
 		currencyCode?: CurrencyBaseModel;
 		customer?: PhaseCustomerSubModel;
+
+		/** Type: DateOnly */
 		deadline?: Date | null;
 		defaultWorkType?: ModelWithName;
 		guid?: string | null;
@@ -5036,6 +5454,8 @@ export namespace MyNS {
 		isLocked?: boolean | null;
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		lastUpdatedDateTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		level?: number | null;
 
 		/**
@@ -5043,25 +5463,41 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: DateOnly */
 		originalDeadline?: Date | null;
+
+		/** Type: DateOnly */
 		originalStartDate?: Date | null;
+
+		/** Type: double */
 		originalWorkHoursEstimate?: number | null;
 		parentPhase?: ModelBaseWithRequiredGuid;
 		phaseStatus?: PhaseStatusOutputModel;
 		project?: PhaseProjectSubModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
+
+		/** Type: double */
 		workHoursEstimate?: number | null;
 	}
 	export interface PhaseModelWithHierarchyInfoFormProperties {
 		code: FormControl<string | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		deadline: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		hasChildren: FormControl<boolean | null | undefined>,
 		isCompleted: FormControl<boolean | null | undefined>,
 		isLocked: FormControl<boolean | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		level: FormControl<number | null | undefined>,
 
 		/**
@@ -5069,11 +5505,23 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		originalDeadline: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		originalStartDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		originalWorkHoursEstimate: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		workHoursEstimate: FormControl<number | null | undefined>,
 	}
 	export function CreatePhaseModelWithHierarchyInfoFormGroup() {
@@ -5127,7 +5575,9 @@ export namespace MyNS {
 		isClosed?: boolean | null;
 		isInternal?: boolean | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface PhaseProjectSubModelFormProperties {
 
@@ -5139,7 +5589,9 @@ export namespace MyNS {
 		isClosed: FormControl<boolean | null | undefined>,
 		isInternal: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreatePhaseProjectSubModelFormGroup() {
 		return new FormGroup<PhaseProjectSubModelFormProperties>({
@@ -5147,7 +5599,7 @@ export namespace MyNS {
 			isClosed: new FormControl<boolean | null | undefined>(undefined),
 			isInternal: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -5157,6 +5609,8 @@ export namespace MyNS {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		createdDateTime?: Date | null;
 		currencyCode?: CurrencyBaseModel;
+
+		/** Type: DateOnly */
 		deadline?: Date | null;
 		defaultWorkType?: ModelWithName;
 		guid?: string | null;
@@ -5170,19 +5624,33 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: DateOnly */
 		originalDeadline?: Date | null;
+
+		/** Type: DateOnly */
 		originalStartDate?: Date | null;
+
+		/** Type: double */
 		originalWorkHoursEstimate?: number | null;
 		parentPhase?: ModelBaseWithRequiredGuid;
 		phaseStatus?: PhaseStatusOutputModel;
 		project?: PhaseProjectSubModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
+
+		/** Type: double */
 		workHoursEstimate?: number | null;
 	}
 	export interface PhaseOutputModelFormProperties {
 		code: FormControl<string | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		deadline: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		isCompleted: FormControl<boolean | null | undefined>,
@@ -5194,11 +5662,23 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		originalDeadline: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		originalStartDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		originalWorkHoursEstimate: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		workHoursEstimate: FormControl<number | null | undefined>,
 	}
 	export function CreatePhaseOutputModelFormGroup() {
@@ -5234,6 +5714,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface PhaseStatusTypeModelFormProperties {
@@ -5247,6 +5729,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreatePhaseStatusTypeModelFormGroup() {
@@ -5262,15 +5746,23 @@ export namespace MyNS {
 	}
 
 	export interface PhaseSubModel {
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 		guid?: string | null;
 		name?: string | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 	}
 	export interface PhaseSubModelFormProperties {
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreatePhaseSubModelFormGroup() {
@@ -5477,6 +5969,8 @@ export namespace MyNS {
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		lastUpdatedDateTime?: Date | null;
 		pricelistGuid?: string | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 	}
 	export interface PricelistVersionOutputModelFormProperties {
@@ -5484,6 +5978,8 @@ export namespace MyNS {
 		guid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		pricelistGuid: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreatePricelistVersionOutputModelFormGroup() {
@@ -5554,12 +6050,16 @@ export namespace MyNS {
 
 		/** Required */
 		product: ModelBaseWithRequiredGuid;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ProductCountrySettingsModelFormProperties {
 		createdDateTime: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateProductCountrySettingsModelFormGroup() {
@@ -5607,6 +6107,8 @@ export namespace MyNS {
 		type?: ProductOutputModelType | null;
 		unitCost?: MoneyOutputModel;
 		unitPrice?: MoneyOutputModel;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ProductOutputModelFormProperties {
@@ -5624,6 +6126,8 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		proposalDescription: FormControl<string | null | undefined>,
 		type: FormControl<ProductOutputModelType | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateProductOutputModelFormGroup() {
@@ -5679,6 +6183,8 @@ export namespace MyNS {
 		type?: ProductOutputModelType | null;
 		unitCost?: MoneyInputModelWithNullableAmount;
 		unitPrice?: MoneyInputModelWithNullableAmount;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ProductInputModelFormProperties {
@@ -5693,6 +6199,8 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		proposalDescription: FormControl<string | null | undefined>,
 		type: FormControl<ProductOutputModelType | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateProductInputModelFormGroup() {
@@ -5714,6 +6222,8 @@ export namespace MyNS {
 		priceSource?: OvertimePriceModelPriceSource | null;
 		pricelistVersionGuid?: string | null;
 		projectGuid?: string | null;
+
+		/** Type: double */
 		quantity?: number | null;
 	}
 	export interface ProductPriceModelFormProperties {
@@ -5721,6 +6231,8 @@ export namespace MyNS {
 		priceSource: FormControl<OvertimePriceModelPriceSource | null | undefined>,
 		pricelistVersionGuid: FormControl<string | null | undefined>,
 		projectGuid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 	}
 	export function CreateProductPriceModelFormGroup() {
@@ -5889,11 +6401,15 @@ export namespace MyNS {
 
 		/** Required */
 		projectCustomProperty: SimpleInputModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface ProjectCustomPropertySelectionItemInputModelFormProperties {
 		isActive: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectCustomPropertySelectionItemInputModelFormGroup() {
@@ -5919,6 +6435,8 @@ export namespace MyNS {
 		 */
 		name: string;
 		projectCustomProperty?: CustomPropertyShortModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface ProjectCustomPropertySelectionItemOutputModelFormProperties {
@@ -5932,6 +6450,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectCustomPropertySelectionItemOutputModelFormGroup() {
@@ -5984,7 +6504,9 @@ export namespace MyNS {
 		 */
 		guid: string;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ProjectCustomerSubModelFormProperties {
 
@@ -5994,13 +6516,15 @@ export namespace MyNS {
 		 */
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectCustomerSubModelFormGroup() {
 		return new FormGroup<ProjectCustomerSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -6010,18 +6534,22 @@ export namespace MyNS {
 	export interface ProjectFeeCustomerSubModel {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ProjectFeeCustomerSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectFeeCustomerSubModelFormGroup() {
 		return new FormGroup<ProjectFeeCustomerSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -6031,10 +6559,16 @@ export namespace MyNS {
 		billingSchedule?: ProjectFeeBillingScheduleType | null;
 		costCenter?: SimpleInputModel;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		displayPeriodStartDate?: Date | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 		hasVolumePricing?: boolean | null;
 		invoice?: SimpleInputModel;
+
+		/** Type: double */
 		invoiceQuantity?: number | null;
 		invoiceRowComment?: string | null;
 		invoiceRowDescription?: string | null;
@@ -6042,34 +6576,52 @@ export namespace MyNS {
 		measurementUnit?: string | null;
 		name?: string | null;
 		phase?: SimpleInputModel;
+
+		/** Type: DateOnly */
 		plannedBillingDate?: Date | null;
 		product?: SimpleInputModel;
 		productType?: ProductOutputModelType | null;
 
 		/** Required */
 		project: SimpleInputRequiredModel;
+
+		/** Type: double */
 		quantity?: number | null;
 		salesAccount?: SimpleInputModel;
 		unitCost?: MoneyInputModelWithNullableAmount;
 		unitPrice?: MoneyInputModelWithNullableAmount;
 		user?: SimpleInputModel;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ProjectFeeInputModelFormProperties {
 		billingSchedule: FormControl<ProjectFeeBillingScheduleType | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		displayPeriodStartDate: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 		hasVolumePricing: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		invoiceQuantity: FormControl<number | null | undefined>,
 		invoiceRowComment: FormControl<string | null | undefined>,
 		invoiceRowDescription: FormControl<string | null | undefined>,
 		isBillable: FormControl<boolean | null | undefined>,
 		measurementUnit: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		plannedBillingDate: FormControl<Date | null | undefined>,
 		productType: FormControl<ProductOutputModelType | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectFeeInputModelFormGroup() {
@@ -6094,13 +6646,21 @@ export namespace MyNS {
 	}
 
 	export interface ProjectFeeInvoiceSubModel {
+
+		/** Type: DateOnly */
 		date?: Date | null;
 		guid?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 	}
 	export interface ProjectFeeInvoiceSubModelFormProperties {
+
+		/** Type: DateOnly */
 		date: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectFeeInvoiceSubModelFormGroup() {
@@ -6120,11 +6680,17 @@ export namespace MyNS {
 		createdDateTime?: Date | null;
 		customer?: ProjectFeeCustomerSubModel;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		displayPeriodStartDate?: Date | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 		guid?: string | null;
 		hasVolumePricing?: boolean | null;
 		invoice?: ProjectFeeInvoiceSubModel;
+
+		/** Type: double */
 		invoiceQuantity?: number | null;
 		invoiceRowComment?: string | null;
 		invoiceRowDescription?: string | null;
@@ -6136,26 +6702,38 @@ export namespace MyNS {
 		measurementUnit?: string | null;
 		name?: string | null;
 		phase?: ModelWithName;
+
+		/** Type: DateOnly */
 		plannedBillingDate?: Date | null;
 		product?: ProjectFeeProductSubModel;
 		productType?: ProductOutputModelType | null;
 		project?: ProjectFeeProjectSubModel;
+
+		/** Type: double */
 		quantity?: number | null;
 		recurrenceRuleGuid?: string | null;
 		salesAccount?: ProjectSalesAccountSubModel;
 		unitCost?: MoneyOutputModel;
 		unitPrice?: MoneyOutputModel;
 		user?: UserSubModel;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ProjectFeeOutputModelFormProperties {
 		billingSchedule: FormControl<ProjectFeeBillingScheduleType | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		displayPeriodStartDate: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		hasVolumePricing: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		invoiceQuantity: FormControl<number | null | undefined>,
 		invoiceRowComment: FormControl<string | null | undefined>,
 		invoiceRowDescription: FormControl<string | null | undefined>,
@@ -6165,10 +6743,16 @@ export namespace MyNS {
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		measurementUnit: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		plannedBillingDate: FormControl<Date | null | undefined>,
 		productType: FormControl<ProductOutputModelType | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 		recurrenceRuleGuid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectFeeOutputModelFormGroup() {
@@ -6330,6 +6914,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		projectGuid: string;
+
+		/** Type: double */
 		size?: number | null;
 		usages?: Array<UsageModel>;
 	}
@@ -6355,6 +6941,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		projectGuid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectFileModelFormGroup() {
@@ -6481,10 +7069,14 @@ export namespace MyNS {
 		laborExpenseForecastNotes?: string | null;
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		lastUpdatedDateTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month?: number | null;
 		project?: ModelBaseWithRequiredGuid;
 		revenueForecast?: MoneyOutputModel;
 		revenueForecastNotes?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year?: number | null;
 	}
 	export interface ProjectForecastOutputModelFormProperties {
@@ -6494,8 +7086,12 @@ export namespace MyNS {
 		guid: FormControl<string | null | undefined>,
 		laborExpenseForecastNotes: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		month: FormControl<number | null | undefined>,
 		revenueForecastNotes: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectForecastOutputModelFormGroup() {
@@ -6516,6 +7112,8 @@ export namespace MyNS {
 	export interface ProjectInputModelBase {
 		billingContact?: SimpleInputModel;
 		businessUnit?: SimpleInputRequiredModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		completionEstimatePercentage?: number | null;
 		costCenter?: SimpleInputModel;
 		currency?: SimpleInputRequiredModel;
@@ -6523,8 +7121,12 @@ export namespace MyNS {
 		/** Required */
 		customer: SimpleInputRequiredModel;
 		customerContact?: SimpleInputModel;
+
+		/** Type: DateOnly */
 		deadline?: Date | null;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		expectedOrderDate?: Date | null;
 		expectedValue?: MoneyInputModelWithNullableAmount;
 		internalName?: string | null;
@@ -6540,10 +7142,16 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 		orderNumber?: string | null;
 		ourReference?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentTerm?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		probability?: number | null;
 
 		/** Required */
@@ -6551,6 +7159,8 @@ export namespace MyNS {
 		projectStatus?: SimpleProjectStatusInputModel;
 		salesPerson?: SimpleInputModel;
 		salesStatus?: SimpleSalesStatusInputModel;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 		useOvertimeMultipliers?: boolean | null;
 		useProductsFromSetting?: boolean | null;
@@ -6558,9 +7168,15 @@ export namespace MyNS {
 		yourReference?: string | null;
 	}
 	export interface ProjectInputModelBaseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		completionEstimatePercentage: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		deadline: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		expectedOrderDate: FormControl<Date | null | undefined>,
 		internalName: FormControl<string | null | undefined>,
 		invoiceNotes: FormControl<string | null | undefined>,
@@ -6573,11 +7189,19 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 		orderNumber: FormControl<string | null | undefined>,
 		ourReference: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentTerm: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		probability: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 		useOvertimeMultipliers: FormControl<boolean | null | undefined>,
 		useProductsFromSetting: FormControl<boolean | null | undefined>,
@@ -6596,7 +7220,7 @@ export namespace MyNS {
 			isInternal: new FormControl<boolean | null | undefined>(undefined),
 			isJoiningAllowed: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 			orderNumber: new FormControl<string | null | undefined>(undefined),
 			ourReference: new FormControl<string | null | undefined>(undefined),
 			paymentTerm: new FormControl<number | null | undefined>(undefined),
@@ -6966,7 +7590,9 @@ export namespace MyNS {
 		 */
 		guid: string;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ProjectMemberCostExceptionProjectCustomerSubModelFormProperties {
 
@@ -6976,13 +7602,15 @@ export namespace MyNS {
 		 */
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectMemberCostExceptionProjectCustomerSubModelFormGroup() {
 		return new FormGroup<ProjectMemberCostExceptionProjectCustomerSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -6996,7 +7624,9 @@ export namespace MyNS {
 		guid: string;
 		isClosed?: boolean | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ProjectMemberCostExceptionProjectSubModelFormProperties {
 
@@ -7007,14 +7637,16 @@ export namespace MyNS {
 		guid: FormControl<string | null | undefined>,
 		isClosed: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectMemberCostExceptionProjectSubModelFormGroup() {
 		return new FormGroup<ProjectMemberCostExceptionProjectSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			isClosed: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -7026,8 +7658,14 @@ export namespace MyNS {
 	export interface ProjectOutputModel {
 		billingContact?: UserWithFirstNameLastNameAndPhotoFileModel;
 		businessUnit?: BusinessUnitSubModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calculatedCompletionPercentage?: number | null;
+
+		/** Type: DateOnly */
 		closedDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		completionEstimatePercentage?: number | null;
 		costCenter?: ProjectCostCenterSubModel;
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -7035,9 +7673,13 @@ export namespace MyNS {
 		currency?: CurrencySubModel2;
 		customer?: ProjectCustomerSubModel;
 		customerContact?: CustomerContactSubModel;
+
+		/** Type: DateOnly */
 		deadline?: Date | null;
 		defaultWorkType?: ModelWithName;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		expectedOrderDate?: Date | null;
 		expectedValue?: MoneyOutputModel;
 		guid?: string | null;
@@ -7060,17 +7702,25 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 		orderNumber?: string | null;
 		ourReference?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentTerm?: number | null;
 		pricelist?: ProjectPricelistSubModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		probability?: number | null;
 		projectOwner?: UserWithFirstNameLastNameAndPhotoFileModel;
 		projectStatus?: ProjectStatusSubModel;
 		rootPhase?: ModelWithName;
 		salesPerson?: UserWithFirstNameLastNameAndPhotoFileModel;
 		salesStatus?: SalesStatusSubModel;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 		useOvertimeMultipliers?: boolean | null;
 		useProductsFromSetting?: boolean | null;
@@ -7078,12 +7728,22 @@ export namespace MyNS {
 		yourReference?: string | null;
 	}
 	export interface ProjectOutputModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		calculatedCompletionPercentage: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		closedDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		completionEstimatePercentage: FormControl<number | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		deadline: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		expectedOrderDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		internalName: FormControl<string | null | undefined>,
@@ -7101,11 +7761,19 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 		orderNumber: FormControl<string | null | undefined>,
 		ourReference: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		paymentTerm: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		probability: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 		useOvertimeMultipliers: FormControl<boolean | null | undefined>,
 		useProductsFromSetting: FormControl<boolean | null | undefined>,
@@ -7132,7 +7800,7 @@ export namespace MyNS {
 			isOtherTravelExpensesBillable: new FormControl<boolean | null | undefined>(undefined),
 			lastUpdatedDateTime: new FormControl<Date | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 			orderNumber: new FormControl<string | null | undefined>(undefined),
 			ourReference: new FormControl<string | null | undefined>(undefined),
 			paymentTerm: new FormControl<number | null | undefined>(undefined),
@@ -7288,18 +7956,22 @@ export namespace MyNS {
 	export interface ProjectSubModel {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ProjectSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectSubModelFormGroup() {
 		return new FormGroup<ProjectSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -7307,9 +7979,14 @@ export namespace MyNS {
 	export interface ProjectRecurringFeeRuleInputModel {
 		costCenter?: SimpleInputModel;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		displayPeriodStartDate?: Date | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency: number;
 		hasVolumePricing?: boolean | null;
 		isActive?: boolean | null;
@@ -7320,33 +7997,58 @@ export namespace MyNS {
 
 		/** Required */
 		project: SimpleInputRequiredModel;
+
+		/** Type: double */
 		quantity?: number | null;
+
+		/** Type: DateOnly */
 		recurrenceEndDate?: Date | null;
 		recurrenceEndType?: ProjectRecurringFeeRuleInputModelRecurrenceEndType | null;
+
+		/** Type: DateOnly */
 		recurrenceStartDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recurrenceTimes?: number | null;
 		recurringSalesAccount?: SimpleInputModel;
 		salesAccount?: SimpleInputModel;
 		unitCost?: MoneyInputModelWithNullableAmount;
 		unitPrice?: MoneyInputModelWithNullableAmount;
 		user?: SimpleInputModel;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ProjectRecurringFeeRuleInputModelFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		displayPeriodStartDate: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency: FormControl<number | null | undefined>,
 		hasVolumePricing: FormControl<boolean | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 		measurementUnit: FormControl<string | null | undefined>,
 		productType: FormControl<ProductOutputModelType | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		recurrenceEndDate: FormControl<Date | null | undefined>,
 		recurrenceEndType: FormControl<ProjectRecurringFeeRuleInputModelRecurrenceEndType | null | undefined>,
+
+		/** Type: DateOnly */
 		recurrenceStartDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recurrenceTimes: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectRecurringFeeRuleInputModelFormGroup() {
@@ -7376,8 +8078,14 @@ export namespace MyNS {
 		createdDateTime?: Date | null;
 		customer?: ProjectFeeCustomerSubModel;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		displayPeriodStartDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		frequency?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		generatedTimes?: number | null;
 		guid?: string | null;
 		hasVolumePricing?: boolean | null;
@@ -7390,23 +8098,39 @@ export namespace MyNS {
 		product?: ProjectFeeProductSubModel;
 		productType?: ProductOutputModelType | null;
 		project?: ProjectFeeProjectSubModel;
+
+		/** Type: double */
 		quantity?: number | null;
+
+		/** Type: DateOnly */
 		recurrenceEndDate?: Date | null;
 		recurrenceEndType?: ProjectRecurringFeeRuleInputModelRecurrenceEndType | null;
+
+		/** Type: DateOnly */
 		recurrenceStartDate?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recurrenceTimes?: number | null;
 		recurringSalesAccount?: ProjectSalesAccountSubModel;
 		salesAccount?: ProjectSalesAccountSubModel;
 		unitCost?: MoneyOutputModel;
 		unitPrice?: MoneyOutputModel;
 		user?: UserSubModel;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ProjectRecurringFeeRuleOutputModelFormProperties {
 		createdDateTime: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		displayPeriodStartDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		frequency: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		generatedTimes: FormControl<number | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		hasVolumePricing: FormControl<boolean | null | undefined>,
@@ -7415,11 +8139,21 @@ export namespace MyNS {
 		measurementUnit: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		productType: FormControl<ProductOutputModelType | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		recurrenceEndDate: FormControl<Date | null | undefined>,
 		recurrenceEndType: FormControl<ProjectRecurringFeeRuleInputModelRecurrenceEndType | null | undefined>,
+
+		/** Type: DateOnly */
 		recurrenceStartDate: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		recurrenceTimes: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectRecurringFeeRuleOutputModelFormGroup() {
@@ -7507,6 +8241,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface ProjectStatusTypeModelFormProperties {
@@ -7520,6 +8256,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectStatusTypeModelFormGroup() {
@@ -7549,6 +8287,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface ProjectTaskStatusModelFormProperties {
@@ -7564,6 +8304,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectTaskStatusModelFormGroup() {
@@ -7599,6 +8341,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: double */
 		size?: number | null;
 		source?: ProjectTravelExpenseFileModelSource | null;
 		travelExpenseGuid?: string | null;
@@ -7618,6 +8362,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		size: FormControl<number | null | undefined>,
 		source: FormControl<ProjectTravelExpenseFileModelSource | null | undefined>,
 		travelExpenseGuid: FormControl<string | null | undefined>,
@@ -7648,8 +8394,12 @@ export namespace MyNS {
 		costAccount?: SimpleInputModel;
 		costCenter?: SimpleInputModel;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 		invoice?: SimpleInputModel;
+
+		/** Type: double */
 		invoiceQuantity?: number | null;
 		invoiceRowComment?: string | null;
 		invoiceRowDescription?: string | null;
@@ -7658,13 +8408,20 @@ export namespace MyNS {
 
 		/** Required */
 		phase: SimpleInputRequiredModel;
+
+		/** Type: DateOnly */
 		plannedBillingDate?: Date | null;
 
 		/** Required */
 		project: SimpleInputRequiredModel;
+
+		/** Type: double */
 		purchaseVatRate?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		quantity: number;
 		salesAccount?: SimpleInputModel;
 		travelEndTime?: Date | null;
@@ -7679,25 +8436,40 @@ export namespace MyNS {
 
 		/** Required */
 		user: SimpleInputRequiredModel;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ProjectTravelExpenseInputModelFormProperties {
 		billingSchedule: FormControl<BillingScheduleType | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		invoiceQuantity: FormControl<number | null | undefined>,
 		invoiceRowComment: FormControl<string | null | undefined>,
 		invoiceRowDescription: FormControl<string | null | undefined>,
 		isBillable: FormControl<boolean | null | undefined>,
 		measurementUnit: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		plannedBillingDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		purchaseVatRate: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
 		travelEndTime: FormControl<Date | null | undefined>,
 		travelReimbursementRequired: FormControl<boolean | null | undefined>,
 		travelStartTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectTravelExpenseInputModelFormGroup() {
@@ -7722,6 +8494,8 @@ export namespace MyNS {
 	}
 
 	export interface ProjectTravelExpenseOutputModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachmentCount?: number | null;
 		billingDependencyPhase?: ModelWithName;
 		billingSchedule?: BillingScheduleType | null;
@@ -7731,9 +8505,13 @@ export namespace MyNS {
 		createdDateTime?: Date | null;
 		customer?: ModelWithName;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 		guid?: string | null;
 		invoice?: InvoiceSubModel;
+
+		/** Type: double */
 		invoiceQuantity?: number | null;
 		invoiceRowComment?: string | null;
 		invoiceRowDescription?: string | null;
@@ -7743,9 +8521,15 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 		measurementUnit?: string | null;
 		phase?: ModelBaseWithRequiredGuid;
+
+		/** Type: DateOnly */
 		plannedBillingDate?: Date | null;
 		project?: ProjectTravelExpenseProjectSubModel;
+
+		/** Type: double */
 		purchaseVatRate?: number | null;
+
+		/** Type: double */
 		quantity?: number | null;
 		salesAccount?: ModelWithName;
 		travelEndTime?: Date | null;
@@ -7757,15 +8541,23 @@ export namespace MyNS {
 		unitCostExcludingPurchaseVat?: MoneyOutputModel;
 		unitPrice?: MoneyOutputModel;
 		user?: UserRequiredSubModel;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ProjectTravelExpenseOutputModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		attachmentCount: FormControl<number | null | undefined>,
 		billingSchedule: FormControl<BillingScheduleType | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		invoiceQuantity: FormControl<number | null | undefined>,
 		invoiceRowComment: FormControl<string | null | undefined>,
 		invoiceRowDescription: FormControl<string | null | undefined>,
@@ -7773,12 +8565,20 @@ export namespace MyNS {
 		isBillable: FormControl<boolean | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		measurementUnit: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		plannedBillingDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		purchaseVatRate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 		travelEndTime: FormControl<Date | null | undefined>,
 		travelReimbursementRequired: FormControl<boolean | null | undefined>,
 		travelStartTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateProjectTravelExpenseOutputModelFormGroup() {
@@ -7817,7 +8617,9 @@ export namespace MyNS {
 		guid: string;
 		isInternal?: boolean | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ProjectTravelExpenseProjectSubModelFormProperties {
 		companyGuid: FormControl<string | null | undefined>,
@@ -7829,7 +8631,9 @@ export namespace MyNS {
 		guid: FormControl<string | null | undefined>,
 		isInternal: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateProjectTravelExpenseProjectSubModelFormGroup() {
 		return new FormGroup<ProjectTravelExpenseProjectSubModelFormProperties>({
@@ -7837,7 +8641,7 @@ export namespace MyNS {
 			guid: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1)]),
 			isInternal: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -8080,18 +8884,22 @@ export namespace MyNS {
 	export interface ProposalCustomerSubModel {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ProposalCustomerSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateProposalCustomerSubModelFormGroup() {
 		return new FormGroup<ProposalCustomerSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -8103,8 +8911,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		name: string;
 		product?: SimpleInputModel;
@@ -8113,12 +8921,19 @@ export namespace MyNS {
 		/** Required */
 		proposal: SimpleInputRequiredModel;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		quantity: number;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 		subtotal?: SimpleInputModel;
 		unitCost?: MoneyInputModel;
 		unitPrice?: MoneyInputModel;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ProposalFeeRowInputModelFormProperties {
@@ -8128,14 +8943,21 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateProposalFeeRowInputModelFormGroup() {
@@ -8160,11 +8982,17 @@ export namespace MyNS {
 		product?: ModelBase;
 		projectFee?: ModelBase;
 		proposal?: ModelBase;
+
+		/** Type: double */
 		quantity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 		subtotal?: ModelBase;
 		unitCost?: MoneyOutputModel;
 		unitPrice?: MoneyOutputModel;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ProposalFeeRowOutputModelFormProperties {
@@ -8173,8 +9001,14 @@ export namespace MyNS {
 		isShownOnProposal: FormControl<boolean | null | undefined>,
 		measurementUnit: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateProposalFeeRowOutputModelFormGroup() {
@@ -8201,13 +9035,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		name: string;
 
 		/** Required */
 		project: SimpleInputRequiredModel;
+
+		/** Type: DateOnly */
 		proposalDate?: Date | null;
 		proposalStatus?: SimpleInputModel;
 	}
@@ -8215,10 +9051,12 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		proposalDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateProposalInputModelFormGroup() {
@@ -8268,6 +9106,8 @@ export namespace MyNS {
 		number?: string | null;
 		pricelist?: ModelWithName;
 		project?: ProposalProjectSubModel;
+
+		/** Type: DateOnly */
 		proposalDate?: Date | null;
 		proposalStatus?: ModelWithName;
 		totalExcludingVat?: MoneyOutputModel;
@@ -8279,6 +9119,8 @@ export namespace MyNS {
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		number: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		proposalDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateProposalOutputModelFormGroup() {
@@ -8296,18 +9138,22 @@ export namespace MyNS {
 	export interface ProposalProjectSubModel {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ProposalProjectSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateProposalProjectSubModelFormGroup() {
 		return new FormGroup<ProposalProjectSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -8392,10 +9238,12 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface ProposalStatusInputModelFormProperties {
@@ -8406,10 +9254,12 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateProposalStatusInputModelFormGroup() {
@@ -8431,6 +9281,8 @@ export namespace MyNS {
 		isLost?: boolean | null;
 		isWon?: boolean | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface ProposalStatusOutputModelFormProperties {
@@ -8440,6 +9292,8 @@ export namespace MyNS {
 		isLost: FormControl<boolean | null | undefined>,
 		isWon: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateProposalStatusOutputModelFormGroup() {
@@ -8461,14 +9315,16 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		name: string;
 		phase?: ModelBase;
 
 		/** Required */
 		proposal: SimpleInputRequiredModel;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface ProposalSubtotalInputModelFormProperties {
@@ -8477,10 +9333,12 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateProposalSubtotalInputModelFormGroup() {
@@ -8501,6 +9359,8 @@ export namespace MyNS {
 		phase?: ModelBase;
 		projectFee?: ModelBase;
 		proposal?: ModelBase;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface ProposalSubtotalOutputModelFormProperties {
@@ -8508,6 +9368,8 @@ export namespace MyNS {
 		guid: FormControl<string | null | undefined>,
 		isShownOnProposal: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateProposalSubtotalOutputModelFormGroup() {
@@ -8527,8 +9389,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		name: string;
 		phase?: SimpleInputModel;
@@ -8536,8 +9398,13 @@ export namespace MyNS {
 		/** Required */
 		proposal: SimpleInputRequiredModel;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		quantity: number;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 		subtotal?: SimpleInputModel;
 
@@ -8550,13 +9417,18 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateProposalWorkhourRowInputModelFormGroup() {
@@ -8578,7 +9450,11 @@ export namespace MyNS {
 		phase?: ModelBase;
 		projectFee?: ModelBase;
 		proposal?: ModelBase;
+
+		/** Type: double */
 		quantity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 		subtotal?: ModelBase;
 		unitCost?: MoneyOutputModel;
@@ -8590,7 +9466,11 @@ export namespace MyNS {
 		guid: FormControl<string | null | undefined>,
 		isShownOnProposal: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateProposalWorkhourRowOutputModelFormGroup() {
@@ -8607,32 +9487,40 @@ export namespace MyNS {
 
 	export interface PublicAuthenticationOutputModel {
 		access_token?: string | null;
-		access_token_expires_in?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		access_token_expires_in?: string | null;
 		access_token_expires_utc?: Date | null;
 		access_token_type?: string | null;
 		refresh_token?: string | null;
-		refresh_token_expires_in?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		refresh_token_expires_in?: string | null;
 		refresh_token_expires_utc?: Date | null;
 		scope?: string | null;
 	}
 	export interface PublicAuthenticationOutputModelFormProperties {
 		access_token: FormControl<string | null | undefined>,
-		access_token_expires_in: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		access_token_expires_in: FormControl<string | null | undefined>,
 		access_token_expires_utc: FormControl<Date | null | undefined>,
 		access_token_type: FormControl<string | null | undefined>,
 		refresh_token: FormControl<string | null | undefined>,
-		refresh_token_expires_in: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		refresh_token_expires_in: FormControl<string | null | undefined>,
 		refresh_token_expires_utc: FormControl<Date | null | undefined>,
 		scope: FormControl<string | null | undefined>,
 	}
 	export function CreatePublicAuthenticationOutputModelFormGroup() {
 		return new FormGroup<PublicAuthenticationOutputModelFormProperties>({
 			access_token: new FormControl<string | null | undefined>(undefined),
-			access_token_expires_in: new FormControl<number | null | undefined>(undefined),
+			access_token_expires_in: new FormControl<string | null | undefined>(undefined),
 			access_token_expires_utc: new FormControl<Date | null | undefined>(undefined),
 			access_token_type: new FormControl<string | null | undefined>(undefined),
 			refresh_token: new FormControl<string | null | undefined>(undefined),
-			refresh_token_expires_in: new FormControl<number | null | undefined>(undefined),
+			refresh_token_expires_in: new FormControl<string | null | undefined>(undefined),
 			refresh_token_expires_utc: new FormControl<Date | null | undefined>(undefined),
 			scope: new FormControl<string | null | undefined>(undefined),
 		});
@@ -8655,9 +9543,13 @@ export namespace MyNS {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		createdDateTime?: Date | null;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 		guid?: string | null;
 		invoiceGuid?: string | null;
+
+		/** Type: double */
 		invoiceQuantity?: number | null;
 		invoiceRowDescription?: string | null;
 		invoiceRowGuid?: string | null;
@@ -8669,18 +9561,26 @@ export namespace MyNS {
 		product?: ModelWithName;
 		productType?: ProductOutputModelType | null;
 		project?: ReimbursedProjectFeeProjectSubModel;
+
+		/** Type: double */
 		quantity?: number | null;
 		unitCost?: MoneyOutputModel;
 		unitPrice?: MoneyOutputModel;
 		user?: ModelWithName;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ReimbursedProjectFeeOutputModelFormProperties {
 		createdDateTime: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		invoiceGuid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		invoiceQuantity: FormControl<number | null | undefined>,
 		invoiceRowDescription: FormControl<string | null | undefined>,
 		invoiceRowGuid: FormControl<string | null | undefined>,
@@ -8688,7 +9588,11 @@ export namespace MyNS {
 		measurementUnit: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		productType: FormControl<ProductOutputModelType | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateReimbursedProjectFeeOutputModelFormGroup() {
@@ -8734,9 +9638,13 @@ export namespace MyNS {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		createdDateTime?: Date | null;
 		description?: string | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 		guid?: string | null;
 		invoiceGuid?: string | null;
+
+		/** Type: double */
 		invoiceQuantity?: number | null;
 		invoiceRowDescription?: string | null;
 		invoiceRowGuid?: string | null;
@@ -8747,29 +9655,41 @@ export namespace MyNS {
 		phase?: ModelWithName;
 		product?: ModelWithName;
 		project?: ReimbursedProjectFeeProjectSubModel;
+
+		/** Type: double */
 		quantity?: number | null;
 		travelEndTime?: Date | null;
 		travelStartTime?: Date | null;
 		unitCost?: MoneyOutputModel;
 		unitPrice?: MoneyOutputModel;
 		user?: ModelWithName;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface ReimbursedProjectTravelExpenseOutputModelFormProperties {
 		createdDateTime: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		invoiceGuid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		invoiceQuantity: FormControl<number | null | undefined>,
 		invoiceRowDescription: FormControl<string | null | undefined>,
 		invoiceRowGuid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		measurementUnit: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 		travelEndTime: FormControl<Date | null | undefined>,
 		travelStartTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateReimbursedProjectTravelExpenseOutputModelFormGroup() {
@@ -8799,9 +9719,13 @@ export namespace MyNS {
 		customer?: ModelWithName;
 		description?: string | null;
 		endTime?: Date | null;
+
+		/** Type: DateOnly */
 		eventDate?: Date | null;
 		guid?: string | null;
 		invoiceGuid?: string | null;
+
+		/** Type: double */
 		invoiceQuantity?: number | null;
 		invoiceRowComment?: string | null;
 		invoiceRowDescription?: string | null;
@@ -8810,8 +9734,12 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 		overtime?: ModelWithName;
 		phase?: ModelWithName;
+
+		/** Type: double */
 		plannedInvoiceQuantity?: number | null;
 		project?: ReimbursedWorkHourProjectSubModel;
+
+		/** Type: double */
 		quantity?: number | null;
 		startTime?: Date | null;
 		unitCost?: MoneyOutputModel;
@@ -8823,15 +9751,23 @@ export namespace MyNS {
 		createdDateTime: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		endTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		eventDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		invoiceGuid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		invoiceQuantity: FormControl<number | null | undefined>,
 		invoiceRowComment: FormControl<string | null | undefined>,
 		invoiceRowDescription: FormControl<string | null | undefined>,
 		invoiceRowGuid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		plannedInvoiceQuantity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
 	}
@@ -8858,18 +9794,22 @@ export namespace MyNS {
 	export interface ReimbursedWorkHourProjectSubModel {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ReimbursedWorkHourProjectSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateReimbursedWorkHourProjectSubModelFormGroup() {
 		return new FormGroup<ReimbursedWorkHourProjectSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -8915,22 +9855,38 @@ export namespace MyNS {
 	export enum SalesProgress { None = 'None', InProgress = 'InProgress', Won = 'Won', Lost = 'Lost' }
 
 	export interface ResourceAllocationInputModel {
+
+		/** Type: double */
 		allocationHours?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allocationPercentage?: number | null;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 		phase?: SimpleInputModel;
 
 		/** Required */
 		project: SimpleInputRequiredModel;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 
 		/** Required */
 		user: SimpleInputRequiredModel;
 	}
 	export interface ResourceAllocationInputModelFormProperties {
+
+		/** Type: double */
 		allocationHours: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allocationPercentage: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateResourceAllocationInputModelFormGroup() {
@@ -8944,14 +9900,26 @@ export namespace MyNS {
 	}
 
 	export interface ResourceAllocationOutputModel {
+
+		/** Type: double */
 		allocationHours?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allocationPercentage?: number | null;
+
+		/** Type: double */
 		calculatedAllocationHours?: number | null;
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		createdDateTime?: Date | null;
 		customer?: ModelWithName;
+
+		/** Type: DateOnly */
 		derivedEndDate?: Date | null;
+
+		/** Type: DateOnly */
 		derivedStartDate?: Date | null;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 		guid?: string | null;
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -8959,20 +9927,36 @@ export namespace MyNS {
 		phase?: ResourceAllocationPhaseSubModel;
 		project?: ResourceAllocationProjectSubModel;
 		projectMemberGuid?: string | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 		user?: UserWithFirstNameLastNameAndPhotoFileModel;
 	}
 	export interface ResourceAllocationOutputModelFormProperties {
+
+		/** Type: double */
 		allocationHours: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		allocationPercentage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		calculatedAllocationHours: FormControl<number | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		derivedEndDate: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		derivedStartDate: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 		projectMemberGuid: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateResourceAllocationOutputModelFormGroup() {
@@ -8993,15 +9977,23 @@ export namespace MyNS {
 	}
 
 	export interface ResourceAllocationPhaseSubModel {
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 		guid?: string | null;
 		name?: string | null;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 	}
 	export interface ResourceAllocationPhaseSubModelFormProperties {
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateResourceAllocationPhaseSubModelFormGroup() {
@@ -9018,28 +10010,37 @@ export namespace MyNS {
 		guid?: string | null;
 		isInternal?: boolean | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface ResourceAllocationProjectSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
 		isInternal: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateResourceAllocationProjectSubModelFormGroup() {
 		return new FormGroup<ResourceAllocationProjectSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			isInternal: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface RoleAllocationInputModel {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		allocationHours: number;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 		phase?: SimpleInputModel;
 
@@ -9048,13 +10049,22 @@ export namespace MyNS {
 
 		/** Required */
 		role: SimpleInputRequiredModel;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 	}
 	export interface RoleAllocationInputModelFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		allocationHours: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateRoleAllocationInputModelFormGroup() {
@@ -9067,10 +10077,14 @@ export namespace MyNS {
 	}
 
 	export interface RoleAllocationOutputModel {
+
+		/** Type: double */
 		allocationHours?: number | null;
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		createdDateTime?: Date | null;
 		customer?: ModelWithName;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
 		guid?: string | null;
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -9078,14 +10092,22 @@ export namespace MyNS {
 		phase?: PhaseSubModel;
 		project?: ModelWithName;
 		role?: ModelWithName;
+
+		/** Type: DateOnly */
 		startDate?: Date | null;
 	}
 	export interface RoleAllocationOutputModelFormProperties {
+
+		/** Type: double */
 		allocationHours: FormControl<number | null | undefined>,
 		createdDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		startDate: FormControl<Date | null | undefined>,
 	}
 	export function CreateRoleAllocationOutputModelFormGroup() {
@@ -9282,6 +10304,8 @@ export namespace MyNS {
 	export enum SalesStatusType { InProgress = 'InProgress', Won = 'Won', Lost = 'Lost' }
 
 	export interface SalesStatusTypeInputModel {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		defaultProbability?: number | null;
 		isActive?: boolean | null;
 		isProposalDefault?: boolean | null;
@@ -9296,6 +10320,8 @@ export namespace MyNS {
 		salesState: SalesStatusType;
 	}
 	export interface SalesStatusTypeInputModelFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		defaultProbability: FormControl<number | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 		isProposalDefault: FormControl<boolean | null | undefined>,
@@ -9323,6 +10349,8 @@ export namespace MyNS {
 	export interface SalesStatusTypeOutputModel {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		createdDateTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		defaultProbability?: number | null;
 		guid?: string | null;
 		isActive?: boolean | null;
@@ -9334,6 +10362,8 @@ export namespace MyNS {
 	}
 	export interface SalesStatusTypeOutputModelFormProperties {
 		createdDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		defaultProbability: FormControl<number | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
@@ -9366,25 +10396,45 @@ export namespace MyNS {
 
 	export interface TeamProductivityOutputModel {
 		adjustedShareOfBilling?: MoneyOutputModel;
+
+		/** Type: double */
 		adjustedShareOfBillingPercentage?: number | null;
+
+		/** Type: double */
 		billableHoursPercentage?: number | null;
 		calculatedShareOfBilling?: MoneyOutputModel;
+
+		/** Type: double */
 		calculatedShareOfBillingPercentage?: number | null;
 		guid?: string | null;
 		projectGuid?: string | null;
 		user?: UserWithNameAndPhotoFileModel;
+
+		/** Type: double */
 		workHours?: number | null;
+
+		/** Type: double */
 		workHoursBillable?: number | null;
 		workHoursCost?: MoneyOutputModel;
 		workHoursValue?: MoneyOutputModel;
 	}
 	export interface TeamProductivityOutputModelFormProperties {
+
+		/** Type: double */
 		adjustedShareOfBillingPercentage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		billableHoursPercentage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		calculatedShareOfBillingPercentage: FormControl<number | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		projectGuid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		workHours: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		workHoursBillable: FormControl<number | null | undefined>,
 	}
 	export function CreateTeamProductivityOutputModelFormGroup() {
@@ -9407,7 +10457,10 @@ export namespace MyNS {
 		description?: string | null;
 		endTime?: Date | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		eventDate: Date;
 		guid?: string | null;
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
@@ -9416,6 +10469,8 @@ export namespace MyNS {
 		/** Required */
 		phase: ModelBaseWithRequiredGuid;
 		project?: TimeEntryProject;
+
+		/** Type: double */
 		quantity?: number | null;
 		startTime?: Date | null;
 
@@ -9430,10 +10485,15 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		eventDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
 	}
@@ -9454,18 +10514,22 @@ export namespace MyNS {
 	export interface TimeEntryProject {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface TimeEntryProjectFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateTimeEntryProjectFormGroup() {
 		return new FormGroup<TimeEntryProjectFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -9565,14 +10629,22 @@ export namespace MyNS {
 
 		/** Required */
 		product: ModelBaseWithRequiredGuid;
+
+		/** Type: double */
 		purchaseVatRate?: number | null;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface TravelExpenseTypeCountrySettingsModelFormProperties {
 		createdDateTime: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		purchaseVatRate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateTravelExpenseTypeCountrySettingsModelFormGroup() {
@@ -9602,11 +10674,15 @@ export namespace MyNS {
 		 */
 		name: string;
 		productCategory?: SimpleInputModel;
+
+		/** Type: double */
 		purchaseVatRate?: number | null;
 		salesAccount?: SimpleInputModel;
 
 		/** Required */
 		unitCost: MoneyInputModelWithNullableAmount;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface TravelExpenseTypeInputModelFormProperties {
@@ -9623,7 +10699,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		purchaseVatRate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateTravelExpenseTypeInputModelFormGroup() {
@@ -9661,9 +10741,13 @@ export namespace MyNS {
 		 */
 		name: string;
 		productCategory?: ModelWithName;
+
+		/** Type: double */
 		purchaseVatRate?: number | null;
 		salesAccount?: ProductSalesAccountSubModel2;
 		unitCost?: MoneyOutputModel;
+
+		/** Type: double */
 		vatRate?: number | null;
 	}
 	export interface TravelExpenseTypeOutputModelFormProperties {
@@ -9683,7 +10767,11 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		purchaseVatRate: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		vatRate: FormControl<number | null | undefined>,
 	}
 	export function CreateTravelExpenseTypeOutputModelFormGroup() {
@@ -9774,6 +10862,8 @@ export namespace MyNS {
 		guid?: string | null;
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		lastUpdatedDateTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 		title?: string | null;
 		total?: MoneyOutputModel;
@@ -9789,6 +10879,8 @@ export namespace MyNS {
 		groupBy: FormControl<GroupByType | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -9823,6 +10915,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 	}
 	export interface TravelReimbursementStatusModelFormProperties {
@@ -9839,6 +10933,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateTravelReimbursementStatusModelFormGroup() {
@@ -9860,10 +10956,14 @@ export namespace MyNS {
 
 	export interface UsageModel2 {
 		context?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 	}
 	export interface UsageModel2FormProperties {
 		context: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 	}
 	export function CreateUsageModel2FormGroup() {
@@ -9971,6 +11071,8 @@ export namespace MyNS {
 		parameters?: string | null;
 		permission?: PermissionLevel | null;
 		type?: CustomPropertyModelType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usageCount?: number | null;
 	}
 	export interface UserCustomPropertyOutputModelFormProperties {
@@ -9982,6 +11084,8 @@ export namespace MyNS {
 		parameters: FormControl<string | null | undefined>,
 		permission: FormControl<PermissionLevel | null | undefined>,
 		type: FormControl<CustomPropertyModelType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		usageCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUserCustomPropertyOutputModelFormGroup() {
@@ -10002,6 +11106,8 @@ export namespace MyNS {
 	export interface UserCustomPropertySelectionItemInputModel {
 		isActive?: boolean | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 
 		/** Required */
@@ -10010,6 +11116,8 @@ export namespace MyNS {
 	export interface UserCustomPropertySelectionItemInputModelFormProperties {
 		isActive: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateUserCustomPropertySelectionItemInputModelFormGroup() {
@@ -10034,6 +11142,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder?: number | null;
 		userCustomProperty?: CustomPropertyShortModel;
 	}
@@ -10048,6 +11158,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		sortOrder: FormControl<number | null | undefined>,
 	}
 	export function CreateUserCustomPropertySelectionItemOutputModelFormGroup() {
@@ -10123,8 +11235,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		firstName: string;
 		isActive?: boolean | null;
@@ -10132,8 +11244,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		lastName: string;
 		notes?: string | null;
@@ -10159,16 +11271,16 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		firstName: FormControl<string | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		lastName: FormControl<string | null | undefined>,
 		notes: FormControl<string | null | undefined>,
@@ -10388,15 +11500,24 @@ export namespace MyNS {
 	}
 
 	export interface UserWorkContractSubModel {
+
+		/** Type: double */
 		dailyHours?: number | null;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
+
+		/** Type: double */
 		flextimeLimitPerDay?: number | null;
 		guid?: string | null;
 		hourCost?: MoneyOutputModel;
 		isFlextimeActive?: boolean | null;
 		isOvertimeAllowed?: boolean | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		startDate: Date;
 
 		/**
@@ -10407,14 +11528,23 @@ export namespace MyNS {
 		workWeek?: Array<Workweek>;
 	}
 	export interface UserWorkContractSubModelFormProperties {
+
+		/** Type: double */
 		dailyHours: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		flextimeLimitPerDay: FormControl<number | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		isFlextimeActive: FormControl<boolean | null | undefined>,
 		isOvertimeAllowed: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		startDate: FormControl<Date | null | undefined>,
 
 		/**
@@ -10469,29 +11599,35 @@ export namespace MyNS {
 	export interface VatRateInputModel {
 
 		/**
-		 * Max length: 10
 		 * Min length: 0
+		 * Max length: 10
 		 */
 		code?: string | null;
 		countryGuid?: string | null;
 		isActive?: boolean | null;
 		isDefault?: boolean | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		percentage: number;
 	}
 	export interface VatRateInputModelFormProperties {
 
 		/**
-		 * Max length: 10
 		 * Min length: 0
+		 * Max length: 10
 		 */
 		code: FormControl<string | null | undefined>,
 		countryGuid: FormControl<string | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 		isDefault: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateVatRateInputModelFormGroup() {
@@ -10508,8 +11644,8 @@ export namespace MyNS {
 	export interface VatRateOutputModel {
 
 		/**
-		 * Max length: 10
 		 * Min length: 0
+		 * Max length: 10
 		 */
 		code?: string | null;
 		countryGuid?: string | null;
@@ -10520,13 +11656,15 @@ export namespace MyNS {
 		isDefault?: boolean | null;
 		lastUpdatedBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		lastUpdatedDateTime?: Date | null;
+
+		/** Type: double */
 		percentage?: number | null;
 	}
 	export interface VatRateOutputModelFormProperties {
 
 		/**
-		 * Max length: 10
 		 * Min length: 0
+		 * Max length: 10
 		 */
 		code: FormControl<string | null | undefined>,
 		countryGuid: FormControl<string | null | undefined>,
@@ -10535,6 +11673,8 @@ export namespace MyNS {
 		isActive: FormControl<boolean | null | undefined>,
 		isDefault: FormControl<boolean | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
 	}
 	export function CreateVatRateOutputModelFormGroup() {
@@ -10552,24 +11692,34 @@ export namespace MyNS {
 	}
 
 	export interface VismaFinancialsCompanyModel {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 	}
 	export interface VismaFinancialsCompanyModelFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateVismaFinancialsCompanyModelFormGroup() {
 		return new FormGroup<VismaFinancialsCompanyModelFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface WorkContractInputModel {
+
+		/** Type: double */
 		dailyHours?: number | null;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
+
+		/** Type: double */
 		flextimeLimitPerDay?: number | null;
 
 		/** Required */
@@ -10578,7 +11728,10 @@ export namespace MyNS {
 		isOvertimeAllowed?: boolean | null;
 		role?: SimpleInputModel;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		startDate: Date;
 
 		/**
@@ -10592,13 +11745,22 @@ export namespace MyNS {
 		workWeek?: Array<Workweek>;
 	}
 	export interface WorkContractInputModelFormProperties {
+
+		/** Type: double */
 		dailyHours: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		flextimeLimitPerDay: FormControl<number | null | undefined>,
 		isFlextimeActive: FormControl<boolean | null | undefined>,
 		isOvertimeAllowed: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		startDate: FormControl<Date | null | undefined>,
 
 		/**
@@ -10623,8 +11785,14 @@ export namespace MyNS {
 	export interface WorkContractOutputModel {
 		createdBy?: UserWithFirstNameLastNameAndPhotoFileModel;
 		createdDateTime?: Date | null;
+
+		/** Type: double */
 		dailyHours?: number | null;
+
+		/** Type: DateOnly */
 		endDate?: Date | null;
+
+		/** Type: double */
 		flextimeLimitPerDay?: number | null;
 		guid?: string | null;
 		hourCost?: MoneyOutputModel;
@@ -10634,7 +11802,10 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 		role?: ModelWithName;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		startDate: Date;
 
 		/**
@@ -10647,15 +11818,24 @@ export namespace MyNS {
 	}
 	export interface WorkContractOutputModelFormProperties {
 		createdDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		dailyHours: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		endDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		flextimeLimitPerDay: FormControl<number | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		isFlextimeActive: FormControl<boolean | null | undefined>,
 		isOvertimeAllowed: FormControl<boolean | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		startDate: FormControl<Date | null | undefined>,
 
 		/**
@@ -10685,18 +11865,22 @@ export namespace MyNS {
 	export interface WorkHourCustomerSubModel {
 		guid?: string | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface WorkHourCustomerSubModelFormProperties {
 		guid: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkHourCustomerSubModelFormGroup() {
 		return new FormGroup<WorkHourCustomerSubModelFormProperties>({
 			guid: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -10705,9 +11889,14 @@ export namespace MyNS {
 		description?: string | null;
 		endTime?: Date | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		eventDate: Date;
 		invoice?: SimpleInputModel;
+
+		/** Type: double */
 		invoiceQuantity?: number | null;
 		invoiceRowComment?: string | null;
 		invoiceRowDescription?: string | null;
@@ -10717,7 +11906,11 @@ export namespace MyNS {
 
 		/** Required */
 		phase: SimpleInputRequiredModel;
+
+		/** Type: double */
 		plannedInvoiceQuantity?: number | null;
+
+		/** Type: double */
 		quantity?: number | null;
 		startTime?: Date | null;
 		unitPrice?: MoneyInputModel;
@@ -10732,14 +11925,23 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		eventDate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		invoiceQuantity: FormControl<number | null | undefined>,
 		invoiceRowComment: FormControl<string | null | undefined>,
 		invoiceRowDescription: FormControl<string | null | undefined>,
 		isApproved: FormControl<boolean | null | undefined>,
 		isBillable: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		plannedInvoiceQuantity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
 	}
@@ -10761,13 +11963,21 @@ export namespace MyNS {
 	}
 
 	export interface WorkHourInvoiceSubModel {
+
+		/** Type: DateOnly */
 		date?: Date | null;
 		guid?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 	}
 	export interface WorkHourInvoiceSubModelFormProperties {
+
+		/** Type: DateOnly */
 		date: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkHourInvoiceSubModelFormGroup() {
@@ -10787,10 +11997,15 @@ export namespace MyNS {
 		description?: string | null;
 		endTime?: Date | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		eventDate: Date;
 		guid?: string | null;
 		invoice?: WorkHourInvoiceSubModel;
+
+		/** Type: double */
 		invoiceQuantity?: number | null;
 		invoiceRowComment?: string | null;
 		invoiceRowDescription?: string | null;
@@ -10803,8 +12018,12 @@ export namespace MyNS {
 		lastUpdatedDateTime?: Date | null;
 		overtime?: ModelWithName;
 		phase?: WorkHourPhaseSubModel;
+
+		/** Type: double */
 		plannedInvoiceQuantity?: number | null;
 		project?: WorkHourProjectSubModel;
+
+		/** Type: double */
 		quantity?: number | null;
 		startTime?: Date | null;
 		unitCost?: MoneyOutputModel;
@@ -10818,9 +12037,14 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		endTime: FormControl<Date | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		eventDate: FormControl<Date | null | undefined>,
 		guid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		invoiceQuantity: FormControl<number | null | undefined>,
 		invoiceRowComment: FormControl<string | null | undefined>,
 		invoiceRowDescription: FormControl<string | null | undefined>,
@@ -10830,7 +12054,11 @@ export namespace MyNS {
 		isModifiable: FormControl<boolean | null | undefined>,
 		isProductive: FormControl<boolean | null | undefined>,
 		lastUpdatedDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		plannedInvoiceQuantity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		quantity: FormControl<number | null | undefined>,
 		startTime: FormControl<Date | null | undefined>,
 	}
@@ -10895,14 +12123,18 @@ export namespace MyNS {
 		guid?: string | null;
 		isClosed?: boolean | null;
 		name?: string | null;
-		number?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number?: string | null;
 	}
 	export interface WorkHourProjectSubModelFormProperties {
 		companyGuid: FormControl<string | null | undefined>,
 		guid: FormControl<string | null | undefined>,
 		isClosed: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
-		number: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		number: FormControl<string | null | undefined>,
 	}
 	export function CreateWorkHourProjectSubModelFormGroup() {
 		return new FormGroup<WorkHourProjectSubModelFormProperties>({
@@ -10910,7 +12142,7 @@ export namespace MyNS {
 			guid: new FormControl<string | null | undefined>(undefined),
 			isClosed: new FormControl<boolean | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
-			number: new FormControl<number | null | undefined>(undefined),
+			number: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -11058,13 +12290,27 @@ export namespace MyNS {
 	}
 
 	export interface WorkdayModel {
+
+		/** Type: double */
 		absenceHours?: number | null;
+
+		/** Type: DateOnly */
 		date?: Date | null;
+
+		/** Type: double */
 		enteredHours?: number | null;
+
+		/** Type: double */
 		enteredTimeEntries?: number | null;
+
+		/** Type: double */
 		expectedHours?: number | null;
+
+		/** Type: double */
 		flextimeLimitPerDay?: number | null;
 		holidayName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		incompleteTimingMinutes?: number | null;
 		isCompleted?: boolean | null;
 		isHoliday?: boolean | null;
@@ -11073,13 +12319,27 @@ export namespace MyNS {
 		userGuid?: string | null;
 	}
 	export interface WorkdayModelFormProperties {
+
+		/** Type: double */
 		absenceHours: FormControl<number | null | undefined>,
+
+		/** Type: DateOnly */
 		date: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		enteredHours: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		enteredTimeEntries: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		expectedHours: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		flextimeLimitPerDay: FormControl<number | null | undefined>,
 		holidayName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		incompleteTimingMinutes: FormControl<number | null | undefined>,
 		isCompleted: FormControl<boolean | null | undefined>,
 		isHoliday: FormControl<boolean | null | undefined>,
@@ -11159,6 +12419,7 @@ export namespace MyNS {
 		 * Get v1/activities
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} closed Optional: Which activities to fetch - open/closed, Default all.
 		 * @param {Array<ActivityCategory>} activityCategories Optional: activity category for the activities to be fetched. Should be one of Personal/Absences/CalendarEntry/SalesEvent/Task. Default all.
 		 * @param {Array<string>} customerGuids Optional: ID of customer. Default all.
@@ -11236,7 +12497,6 @@ export namespace MyNS {
 		 * Get activity by ID
 		 * Get v1/activities/{guid}
 		 * @param {string} guid GUID used to get the activity.
-		 * @return {ActivityModel} 
 		 */
 		Activities_GetActivity(guid: string): Observable<ActivityModel> {
 			return this.http.get<ActivityModel>(this.baseUri + 'v1/activities/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -11302,9 +12562,9 @@ export namespace MyNS {
 		 * @param {boolean} active If not given, return all Activity Types, if given as true return only active Activity Types, if given as false returns only inactive Activity Types
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get activity types that have been added or changed after this date time (greater or equal).
 		 * @param {Array<ActivityCategory>} category Optional: Category or multiple categories of activity types to search for. Default all.
-		 * @return {Array<ActivityTypeModel>} 
 		 */
 		ActivityTypes_GetActivityTypes(active: boolean | null | undefined, pageToken: string | null | undefined, rowCount: number | null | undefined, changedSince: Date | null | undefined, category: Array<ActivityCategory> | null | undefined): Observable<Array<ActivityTypeModel>> {
 			return this.http.get<Array<ActivityTypeModel>>(this.baseUri + 'v1/activitytypes?active=' + active + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&changedSince=' + changedSince?.toISOString() + '&' + category?.map(z => `category=${z}`).join('&'), {});
@@ -11357,10 +12617,11 @@ export namespace MyNS {
 		 * Get the addresses.
 		 * Get v1/addresses
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Date} changedSince Optional: Get addresses that have been added or changed after this date time (greater or equal).
-		 * @return {Array<AddressModel>} 
 		 */
 		Addresses_GetAddresses(firstRow: number | null | undefined, rowCount: number | null | undefined, calculateRowCount: boolean | null | undefined, changedSince: Date | null | undefined): Observable<Array<AddressModel>> {
 			return this.http.get<Array<AddressModel>>(this.baseUri + 'v1/addresses?firstRow=' + firstRow + '&rowCount=' + rowCount + '&calculateRowCount=' + calculateRowCount + '&changedSince=' + changedSince?.toISOString(), {});
@@ -11405,7 +12666,9 @@ export namespace MyNS {
 		 * @param {string} businessUnitGuid Optional: ID of the business unit.
 		 * @param {boolean} active If not given, returns all bank accounts, if given as true returns only active bank accounts, if given as false returns only inactive bank accounts.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from bank account name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=BankName&sortings[0].value=Desc &sortings[1].key=BusinessUnitName&sortings[1].value=Asc".
@@ -11432,7 +12695,9 @@ export namespace MyNS {
 		 * @param {string} companyGuid Optional: ID of the company to which the business units belong.
 		 * @param {string} companyCountryGuid Optional: ID of the country in which the company of business units is located.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from business unit name.
 		 * @param {Date} changedSince Optional: Get business units that have been added or changed after this date time (greater or equal).
 		 * @param {string} code Optional: Code of the business unit.
@@ -11469,7 +12734,9 @@ export namespace MyNS {
 		 * Get v1/communicationtypes
 		 * @param {boolean} active Filter the communication types. If true/false, only the active/inactive ones are returned. If null, all the communication types are returned.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from communication type name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=name&sortings[0].value=Asc".
@@ -11504,7 +12771,6 @@ export namespace MyNS {
 		 * Get communication type by ID.
 		 * Get v1/communicationtypes/{guid}
 		 * @param {string} guid ID used to get the communication type.
-		 * @return {CommunicationTypeModel} 
 		 */
 		CommunicationTypes_GetCommunicationType(guid: string): Observable<CommunicationTypeModel> {
 			return this.http.get<CommunicationTypeModel>(this.baseUri + 'v1/communicationtypes/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -11526,7 +12792,9 @@ export namespace MyNS {
 		 * Get v1/contactcommunications
 		 * @param {boolean} active If not given, return all contact communications, if given as true return only active contact communications, if given as false returns only inactive contact communications.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from contact communication value.
 		 * @param {Date} changedSince Optional: Get contact communications that have been added or changed after this date time (greater or equal).
 		 * @return {Array<ContactCommunicationModel>} All the contact communications.
@@ -11582,7 +12850,9 @@ export namespace MyNS {
 		 * Get v1/contactpersons
 		 * @param {boolean} active If not given, return all Contact persons, if given as true return only active Contact persons, if given as false returns only inactive Contact persons.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from contact person's name or communication method (i.e. phone number or email address).
 		 * @param {Array<KeyValuePairOfStringAndObject>} searchCriterias Optional: Search criterias.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=FirstName&sortings[0].value=Desc &sortings[1].key=LastName&sortings[1].value=Asc".
@@ -11607,7 +12877,6 @@ export namespace MyNS {
 		 * Get contact person's address
 		 * Get v1/contactpersons/{contactGuid}/addresses
 		 * @param {string} contactGuid ID for the contact person
-		 * @return {Array<AddressModel>} 
 		 */
 		Addresses_GetContactAddress(contactGuid: string): Observable<Array<AddressModel>> {
 			return this.http.get<Array<AddressModel>>(this.baseUri + 'v1/contactpersons/' + (contactGuid == null ? '' : encodeURIComponent(contactGuid)) + '/addresses', {});
@@ -11650,7 +12919,9 @@ export namespace MyNS {
 		 * Get v1/contactroles
 		 * @param {boolean} active If not given, return all contact roles, if given as true return only active contact roles, if given as false returns only inactive contact roles.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from contact role name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @return {Array<ContactRoleModel>} All the contact roles.
@@ -11749,7 +13020,9 @@ export namespace MyNS {
 		 * Get v1/costaccounts
 		 * @param {boolean} active If not given, return all cost accounts, if given as true return only active cost accounts, if given as false returns only inactive cost accounts.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from cost account name or identifier.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc &sortings[1].key=Identifier&sortings[1].value=Asc".
@@ -11806,7 +13079,9 @@ export namespace MyNS {
 		 * Get v1/costcenters
 		 * @param {boolean} active If not given, return all cost centers, if given as true return only active cost centers, if given as false returns only inactive cost centers.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from cost center name or identifier.
 		 * @param {Date} changedSince Optional: Get cost centers that have been added or changed after this date time (greater or equal).
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
@@ -11866,7 +13141,9 @@ export namespace MyNS {
 		 * Get v1/currencies
 		 * @param {boolean} active If not given, return all Currencies, if given as true return only active Currencies, if given as false returns only inactive Currencies.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text based search applied to the result. Matches currency name and code.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=name&sortings[0].value=Asc". Using additional sorting fields "CreatedDate" and / or "LastUpdatedDate" as keys sort currencies without a timestamp provided when sorting with other date fields.
@@ -11933,7 +13210,9 @@ export namespace MyNS {
 		 * Get all Customer Market Segments.
 		 * Get v1/customermarketsegments
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from customer market segment name.
 		 * @param {string} parentMarketSegmentGuid Optional: Fetches all children of a parent based on parent market segment guid.
 		 * @param {boolean} includeParentLevel Optional: Returns only child segments when false. Has no effect if parentMarketSegmentGuid parameter is defined. Default = true.
@@ -11978,6 +13257,7 @@ export namespace MyNS {
 		 * Get all the customers
 		 * Get v1/customers
 		 * @param {number} rowCount Optional: How many rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isActive If not given, return all Customers, if given as true return only active Customers, if given as false returns only inactive Customers.
 		 * @param {Array<string>} customerOwnerGuids Optional: List of customer owner ids to search for. Default all.
 		 * @param {boolean} isInternal Optional: When true returns only internal customer
@@ -12005,13 +13285,14 @@ export namespace MyNS {
 		 * Get the customer custom properties.
 		 * Get v1/customers/customproperties
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} active Optional: Get only active or inactive customer properties.
 		 * @param {string} textToSearch Optional: Text to search from custom property name.
 		 * @param {boolean} isInUse Optional: Is the customer property used in any custom property usage.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (sub-model fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc&sortings[1].key=Number&sortings[1].value=Asc".
-		 * @return {Array<CustomPropertyModel>} 
 		 */
 		CustomerCustomProperties_GetCustomerCustomProperties(firstRow: number | null | undefined, rowCount: number | null | undefined, active: boolean | null | undefined, textToSearch: string | null | undefined, isInUse: boolean | null | undefined, calculateRowCount: boolean | null | undefined, sortings: Array<KeyValuePairOfStringAndSortDirection> | null | undefined): Observable<Array<CustomPropertyModel>> {
 			return this.http.get<Array<CustomPropertyModel>>(this.baseUri + 'v1/customers/customproperties?firstRow=' + firstRow + '&rowCount=' + rowCount + '&active=' + active + '&textToSearch=' + (textToSearch == null ? '' : encodeURIComponent(textToSearch)) + '&isInUse=' + isInUse + '&calculateRowCount=' + calculateRowCount + '&' + sortings?.map(z => `sortings=${z}`).join('&'), {});
@@ -12052,7 +13333,6 @@ export namespace MyNS {
 		 * Get customer custom property selection item by ID.
 		 * Get v1/customers/customproperties/customercustompropertyselectionitems/{guid}
 		 * @param {string} guid Id used to get the customer custom property selection item.
-		 * @return {CustomerCustomPropertySelectionItemOutputModel} 
 		 */
 		CustomerCustomPropertySelectionItems_GetCustomerCustomPropertySelectionItem(guid: string): Observable<CustomerCustomPropertySelectionItemOutputModel> {
 			return this.http.get<CustomerCustomPropertySelectionItemOutputModel>(this.baseUri + 'v1/customers/customproperties/customercustompropertyselectionitems/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -12074,10 +13354,10 @@ export namespace MyNS {
 		 * Get v1/customers/customproperties/{customPropertyGuid}/customercustompropertyselectionitems
 		 * @param {string} customPropertyGuid Custom property id used to get the customer custom property selection items.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isActive Optional: Get only active or inactive selection items.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {Date} changedSince Optional: Get custom property selection items that have been added or changed after this date time (greater or equal).
-		 * @return {Array<CustomerCustomPropertySelectionItemOutputModel>} 
 		 */
 		CustomerCustomPropertySelectionItems_GetCustomerCustomPropertySelectionItems(customPropertyGuid: string, rowCount: number | null | undefined, isActive: boolean | null | undefined, pageToken: string | null | undefined, changedSince: Date | null | undefined): Observable<Array<CustomerCustomPropertySelectionItemOutputModel>> {
 			return this.http.get<Array<CustomerCustomPropertySelectionItemOutputModel>>(this.baseUri + 'v1/customers/customproperties/' + (customPropertyGuid == null ? '' : encodeURIComponent(customPropertyGuid)) + '/customercustompropertyselectionitems&rowCount=' + rowCount + '&isActive=' + isActive + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&changedSince=' + changedSince?.toISOString(), {});
@@ -12098,7 +13378,6 @@ export namespace MyNS {
 		 * Get customer custom property by ID.
 		 * Get v1/customers/customproperties/{guid}
 		 * @param {string} guid Id used to get the customer custom property.
-		 * @return {CustomPropertyModel} 
 		 */
 		CustomerCustomProperties_GetCustomerCustomProperty(guid: string): Observable<CustomPropertyModel> {
 			return this.http.get<CustomPropertyModel>(this.baseUri + 'v1/customers/customproperties/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -12140,7 +13419,6 @@ export namespace MyNS {
 		 * Get customer custom value by ID.
 		 * Get v1/customers/customvalues/{guid}
 		 * @param {string} guid Id used to get the customer custom value.
-		 * @return {CustomerCustomValueModel} 
 		 */
 		CustomerCustomValues_GetCustomerCustomValue(guid: string): Observable<CustomerCustomValueModel> {
 			return this.http.get<CustomerCustomValueModel>(this.baseUri + 'v1/customers/customvalues/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -12162,7 +13440,9 @@ export namespace MyNS {
 		 * Get v1/customers/{customerGuid}/addresses
 		 * @param {string} customerGuid ID for the customer.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @return {Array<AddressModel>} Addresses for the customer
 		 */
@@ -12187,7 +13467,9 @@ export namespace MyNS {
 		 * @param {string} customerGuid Customer guid used to get the contact persons.
 		 * @param {boolean} active If not given, return all Contact persons, if given as true return only active Contact persons, if given as false returns only inactive Contact persons.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from contact person's name or communication method (i.e. phone number or email address).
 		 * @return {Array<ContactModel>} List of contacts for a customer.
 		 */
@@ -12210,7 +13492,9 @@ export namespace MyNS {
 		 * Get v1/customers/{customerGuid}/customermarketsegments
 		 * @param {string} customerGuid ID of the customer.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includeMarketSegmentsFromRegistry Optional: Return also the markets segments that are not in use for the customer.
 		 * @return {Array<CustomerMarketSegmentModel>} List of Customer Market Segments.
 		 */
@@ -12224,6 +13508,7 @@ export namespace MyNS {
 		 * @param {string} customerGuid Customer guid used to get the notes.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get sales notes that have been added or changed after this date time (greater or equal).
 		 * @return {Array<CustomerSalesNoteOutputModel>} List of sales notes for a customer.
 		 */
@@ -12236,12 +13521,13 @@ export namespace MyNS {
 		 * Get v1/customers/{customerGuid}/customvalues
 		 * @param {string} customerGuid ID of the customer.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} active Optional: Get only values of active or inactive customer custom properties.
 		 * @param {Array<string>} target List of target for which to get the values.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (sub-model fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc&sortings[1].key=Number&sortings[1].value=Asc".
-		 * @return {Array<CustomerCustomValueModel>} 
 		 */
 		CustomerCustomValues_GetCustomerCustomValues(customerGuid: string, firstRow: number | null | undefined, rowCount: number | null | undefined, active: boolean | null | undefined, target: Array<string> | null | undefined, calculateRowCount: boolean | null | undefined, sortings: Array<KeyValuePairOfStringAndSortDirection> | null | undefined): Observable<Array<CustomerCustomValueModel>> {
 			return this.http.get<Array<CustomerCustomValueModel>>(this.baseUri + 'v1/customers/' + (customerGuid == null ? '' : encodeURIComponent(customerGuid)) + '/customvalues&firstRow=' + firstRow + '&rowCount=' + rowCount + '&active=' + active + '&' + target?.map(z => `target=${encodeURIComponent(z)}`).join('&') + '&calculateRowCount=' + calculateRowCount + '&' + sortings?.map(z => `sortings=${z}`).join('&'), {});
@@ -12252,7 +13538,9 @@ export namespace MyNS {
 		 * Get v1/customers/{customerGuid}/projects
 		 * @param {string} customerGuid Id of the customer.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isBillable Optional: When true fetch projects that have something to bill, when false nothing to bill. Default nothing = all.
+		 * @param {number} minimumBillableAmount Type: double
 		 * @return {Array<ProjectOutputModel>} All the projects for the customer
 		 */
 		Projects_GetCustomerProjects(customerGuid: string, pageToken: string | null | undefined, rowCount: number | null | undefined, isBillable: boolean | null | undefined, currencyGuids: Array<string> | null | undefined, projectGuids: Array<string> | null | undefined, projectKeywordGuids: Array<string> | null | undefined, projectStatusTypeGuids: Array<string> | null | undefined, salesPersonGuids: Array<string> | null | undefined, projectOwnerGuids: Array<string> | null | undefined, businessUnitGuids: Array<string> | null | undefined, minimumBillableAmount: number | null | undefined, customerOwnerGuids: Array<string> | null | undefined, invoiceableDate: Date | null | undefined, marketSegmentationGuids: Array<string> | null | undefined, salesStatusTypeGuids: Array<string> | null | undefined, isClosed: boolean | null | undefined, hasRecurringFees: boolean | null | undefined, companyCurrencyGuids: Array<string> | null | undefined, projectMemberUserGuids: Array<string> | null | undefined, numbers: Array<number> | null | undefined): Observable<Array<ProjectOutputModel>> {
@@ -12265,6 +13553,7 @@ export namespace MyNS {
 		 * @param {string} customerGuid Customer guid used to get the notes.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get sales notes that have been added or changed after this date time (greater or equal).
 		 * @return {Array<SalesNoteOutputModel>} List of sales notes for a customer.
 		 */
@@ -12287,7 +13576,6 @@ export namespace MyNS {
 		 * Get customer by GUID.
 		 * Get v1/customers/{guid}
 		 * @param {string} guid ID used to get the customer.
-		 * @return {CustomerModel} 
 		 */
 		Customers_GetCustomer(guid: string): Observable<CustomerModel> {
 			return this.http.get<CustomerModel>(this.baseUri + 'v1/customers/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -12353,6 +13641,7 @@ export namespace MyNS {
 		 * @param {Date} deletedSince Optional: Get phase members that have been added or changed after this date time (greater or equal).
 		 * @param {string} pageToken Optional: Page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isUserActive Optional: Is the user active. Default nothing = all.
 		 * @return {Array<DeletedPhaseMemberOutputModel>} All the phase members
 		 */
@@ -12364,10 +13653,10 @@ export namespace MyNS {
 		 * Get the deleted project fees.
 		 * Get v1/deletedprojectfees
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} projectGuids Optional: ID of the project for the deleted project fees to be fetched. If not provided, returns for all projects. Default all.
 		 * @param {Array<string>} userGuids Optional: ID of the user. If not provided, returns for all users. Default all.
 		 * @param {Date} deletedSince Optional: Get project fees that have been deleted after this date time (greater or equal).
-		 * @return {Array<DeletedProjectFeeModel>} 
 		 */
 		ProjectFees_GetDeletedProjectFees(pageToken: string | null | undefined, rowCount: number | null | undefined, projectGuids: Array<string> | null | undefined, userGuids: Array<string> | null | undefined, deletedSince: Date | null | undefined): Observable<Array<DeletedProjectFeeModel>> {
 			return this.http.get<Array<DeletedProjectFeeModel>>(this.baseUri + 'v1/deletedprojectfees?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&' + projectGuids?.map(z => `projectGuids=${encodeURIComponent(z)}`).join('&') + '&' + userGuids?.map(z => `userGuids=${encodeURIComponent(z)}`).join('&') + '&deletedSince=' + deletedSince?.toISOString(), {});
@@ -12378,10 +13667,10 @@ export namespace MyNS {
 		 * Get v1/deletedprojecttravelexpenses
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} projectGuid Optional: ID of the project for the deleted project travel expenses to be fetched. If not provided, returns for all projects. Default all.
 		 * @param {Array<string>} userGuid Optional: ID of the user. If not provided, returns for all users. Default all.
 		 * @param {Date} deletedSince Optional: Get project travel expenses that have been deleted after this date time (greater or equal).
-		 * @return {Array<DeletedProjectTravelExpenseModel>} 
 		 */
 		ProjectTravelExpenses_GetDeletedProjectTravelExpenses(pageToken: string | null | undefined, rowCount: number | null | undefined, projectGuid: Array<string> | null | undefined, userGuid: Array<string> | null | undefined, deletedSince: Date | null | undefined): Observable<Array<DeletedProjectTravelExpenseModel>> {
 			return this.http.get<Array<DeletedProjectTravelExpenseModel>>(this.baseUri + 'v1/deletedprojecttravelexpenses?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&' + projectGuid?.map(z => `projectGuid=${encodeURIComponent(z)}`).join('&') + '&' + userGuid?.map(z => `userGuid=${encodeURIComponent(z)}`).join('&') + '&deletedSince=' + deletedSince?.toISOString(), {});
@@ -12392,10 +13681,10 @@ export namespace MyNS {
 		 * Get v1/deletedworkhours
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} projectGuids Optional: ID of the project for the deleted work hours to be fetched. If not provided, returns for all projects. Default all.
 		 * @param {Array<string>} userGuids Optional: ID of the user. If not provided, returns for all users. Default all.
 		 * @param {Date} deletedSince Optional: Get work hours that have been deleted after this date time (greater or equal).
-		 * @return {Array<DeletedWorkHourModel>} 
 		 */
 		WorkHours_GetDeletedWorkHours(pageToken: string | null | undefined, rowCount: number | null | undefined, projectGuids: Array<string> | null | undefined, userGuids: Array<string> | null | undefined, deletedSince: Date | null | undefined): Observable<Array<DeletedWorkHourModel>> {
 			return this.http.get<Array<DeletedWorkHourModel>>(this.baseUri + 'v1/deletedworkhours?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&' + projectGuids?.map(z => `projectGuids=${encodeURIComponent(z)}`).join('&') + '&' + userGuids?.map(z => `userGuids=${encodeURIComponent(z)}`).join('&') + '&deletedSince=' + deletedSince?.toISOString(), {});
@@ -12459,6 +13748,7 @@ export namespace MyNS {
 		 * Get v1/flatrates
 		 * @param {string} pageToken Optional: Page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get flat rates that have been added or changed after this date time (greater or equal).
 		 * @param {string} invoiceGuid Optional: Get flat rates by invoice guid. Default all.
 		 * @return {Array<FlatRateOutputModel>} All the flat rates
@@ -12555,6 +13845,7 @@ export namespace MyNS {
 		 * Get holidays.
 		 * Get v1/holidays
 		 * @param {number} year Optional: Holidays for this year only. Default: all years.
+		 *     Minimum: 1900    Maximum: 2075
 		 * @param {string} countryGuid Optional: Holidays for this country only. Default local.
 		 * @return {Array<HolidayModel>} List of holidays. 
 		 */
@@ -12579,7 +13870,9 @@ export namespace MyNS {
 		 * Get v1/industries
 		 * @param {boolean} active If not given, return all industries, if given as true return only active industries, if given as false returns only inactive industries.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from industry name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @return {Array<IndustryModel>} All the industries.
@@ -12655,8 +13948,8 @@ export namespace MyNS {
 		 * Get v1/invoicerows
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get invoice rows that have been added or changed after this date time (greater or equal).
-		 * @return {Array<InvoiceRowOutputModel>} 
 		 */
 		InvoiceRows_GetInvoiceRows(pageToken: string | null | undefined, rowCount: number | null | undefined, changedSince: Date | null | undefined): Observable<Array<InvoiceRowOutputModel>> {
 			return this.http.get<Array<InvoiceRowOutputModel>>(this.baseUri + 'v1/invoicerows?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&changedSince=' + changedSince?.toISOString(), {});
@@ -12701,6 +13994,7 @@ export namespace MyNS {
 		 * @param {string} invoiceRowGuid ID of the invoice row.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: Number of rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductOutputModelType} productType Optional: ProjectFee's product type. if given, it filters the projectFees by the given type. FixedFees (Own work), Materials (Products), Subcontracting
 		 * @return {Array<ProjectFeeOutputModel>} ProjectFees
 		 */
@@ -12714,6 +14008,7 @@ export namespace MyNS {
 		 * @param {string} invoiceRowGuid ID of the invoice row.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ExpensesClass} expenseClass Optional: Class of the expense. Mileage, DailyAllowance or OtherTravelExpense
 		 * @return {Array<ProjectTravelExpenseOutputModel>} ProjectTravelExpenseOutputModel
 		 */
@@ -12726,6 +14021,7 @@ export namespace MyNS {
 		 * Get v1/invoicerows/{invoiceRowGuid}/reimbursedprojectfees
 		 * @param {string} invoiceRowGuid ID of the invoice row.
 		 * @param {number} rowCount Optional: Number of rows to fetch
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @return {Array<ReimbursedProjectFeeOutputModel>} ReimbursedProjectFee
 		 */
@@ -12738,7 +14034,9 @@ export namespace MyNS {
 		 * Get v1/invoicerows/{invoiceRowGuid}/reimbursedprojecttravelexpenses
 		 * @param {string} invoiceRowGuid ID of the invoice row.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Searched string: part of name or description.
 		 * @param {boolean} calculateRowCount Optional. If true, calculates the total count of project fees. Default false.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (sub-model fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc&sortings[1].key=Number&sortings[1].value=Asc".
@@ -12753,7 +14051,9 @@ export namespace MyNS {
 		 * Get v1/invoicerows/{invoiceRowGuid}/reimbursedworkhours
 		 * @param {string} invoiceRowGuid ID of the invoice row.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from description or invoice description.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (sub-model fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=DueDate&sortings[0].value=Asc&sortings[1].key=TotalIncludingTax&sortings[1].value=Desc".
@@ -12769,6 +14069,7 @@ export namespace MyNS {
 		 * @param {string} invoiceRowGuid ID of the invoice row.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<WorkHourOutputModel>} WorkHours
 		 */
 		WorkHours_GetInvoiceRowWorkHours(invoiceRowGuid: string, pageToken: string | null | undefined, rowCount: number | null | undefined): Observable<Array<WorkHourOutputModel>> {
@@ -12779,6 +14080,7 @@ export namespace MyNS {
 		 * Get Invoices
 		 * Get v1/invoices
 		 * @param {number} rowCount Optional: Number of rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {Date} paymentDateStart Optional: Get only invoices paid at this date or later. Default: Get invoices regardless of payment date.
 		 * @param {Array<string>} invoiceStatusGuids Optional: Get invoices with this status only. Default: all statuses.
@@ -12789,7 +14091,9 @@ export namespace MyNS {
 		 * @param {Date} startDate Optional: starting date from which to get the invoices. Default all.
 		 * @param {Date} endDate Optional: end date from which to get the invoices. Default all.
 		 * @param {number} minimumTotalExcludingTax Optional: specifies minimum value for invoice total in organization currency.
+		 *     Type: double
 		 * @param {number} maximumTotalExcludingTax Optional: specifies maximum value for invoice total in organization currency.
+		 *     Type: double
 		 * @param {Array<string>} referenceNumbers Optional: Invoice reference number. If not provided, returns invoices with any invoice reference number.
 		 * @param {Array<number>} numbers Optional: Invoice number. If not provided, returns invoices with any invoice number.
 		 * @param {Date} changedSince Optional: Get invoices that have been added or changed after this date time (greater or equal).
@@ -12826,7 +14130,6 @@ export namespace MyNS {
 		 * Get invoice by ID
 		 * Get v1/invoices/{guid}
 		 * @param {string} guid GUID of the invoice.
-		 * @return {InvoiceOutputModel} 
 		 */
 		Invoices_GetInvoice(guid: string): Observable<InvoiceOutputModel> {
 			return this.http.get<InvoiceOutputModel>(this.baseUri + 'v1/invoices/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -12871,7 +14174,9 @@ export namespace MyNS {
 		 * Get v1/invoices/{invoiceGuid}/files
 		 * @param {string} invoiceGuid GUID of the invoice used to get the files.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<InvoiceFileModel>} InvoiceFile.
 		 */
 		Files_GetInvoiceFiles(invoiceGuid: string, firstRow: number | null | undefined, rowCount: number | null | undefined): Observable<Array<InvoiceFileModel>> {
@@ -12892,6 +14197,7 @@ export namespace MyNS {
 		 * @param {string} invoiceGuid ID of the invoice.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {InvoiceRowOutputModelRowType} rowType Optional: Type of the row. Either Hours or ProjectFees, Default all.
 		 * @return {Array<InvoiceRowOutputModel>} List of Invoice rows 
 		 */
@@ -12915,6 +14221,7 @@ export namespace MyNS {
 		 * @param {string} invoiceGuid ID of the invoice.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: Number of rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductOutputModelType} productType Optional: ProjectFee's product type. if given, it filters the projectFees by the given type. FixedFees (Own work), Materials (Products), Subcontracting
 		 * @return {Array<ProjectFeeOutputModel>} ProjectFees
 		 */
@@ -12928,6 +14235,7 @@ export namespace MyNS {
 		 * @param {string} invoiceGuid ID of the invoice.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ExpensesClass} expenseClass Optional: Class of the expense. Mileage, DailyAllowance or OtherTravelExpense
 		 * @return {Array<ProjectTravelExpenseOutputModel>} ProjectTravelExpenseOutputModel
 		 */
@@ -12940,6 +14248,7 @@ export namespace MyNS {
 		 * Get v1/invoices/{invoiceGuid}/reimbursedprojectfees
 		 * @param {string} invoiceGuid ID of the invoice.
 		 * @param {number} rowCount Optional: Number of rows to fetch
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @return {Array<ReimbursedProjectFeeOutputModel>} ReimbursedProjectFee
 		 */
@@ -12952,7 +14261,9 @@ export namespace MyNS {
 		 * Get v1/invoices/{invoiceGuid}/reimbursedprojecttravelexpenses
 		 * @param {string} invoiceGuid ID of the invoice.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Searched string: part of name or description.
 		 * @param {boolean} calculateRowCount Optional. If true, calculates the total count of project fees. Default false.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (sub-model fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc&sortings[1].key=Number&sortings[1].value=Asc".
@@ -12967,7 +14278,9 @@ export namespace MyNS {
 		 * Get v1/invoices/{invoiceGuid}/reimbursedworkhours
 		 * @param {string} invoiceGuid ID of the invoice.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from description or invoice description.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (sub-model fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=DueDate&sortings[0].value=Asc&sortings[1].key=TotalIncludingTax&sortings[1].value=Desc".
@@ -12983,6 +14296,7 @@ export namespace MyNS {
 		 * @param {string} invoiceGuid ID of the invoice.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: Number of rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isBillable Optional: Filter the project fees. If true/false, only the billable/non-billable ones are returned. If null, all are returned. Default is null.
 		 * @return {Array<ProjectFeeOutputModel>} ProjectFees
 		 */
@@ -12997,6 +14311,7 @@ export namespace MyNS {
 		 * @param {boolean} isBillable Optional: Filter the travel expenses. If true/false, only the billable/non-billable ones are returned. If null, all are returned. Default is null.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ExpensesClass} expenseClass Optional: Class of the expense. Mileage, DailyAllowance or OtherTravelExpense
 		 * @return {Array<ProjectTravelExpenseOutputModel>} ProjectTravelExpenseOutputModel
 		 */
@@ -13011,6 +14326,7 @@ export namespace MyNS {
 		 * @param {boolean} isBillable Optional: Filter the work hours. If true/false, only the billable/non-billable ones are returned. If null, all are returned. Default is null.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<WorkHourOutputModel>} WorkHours
 		 */
 		WorkHours_GetUninvoicedWorkHoursForInvoice(invoiceGuid: string, isBillable: boolean | null | undefined, pageToken: string | null | undefined, rowCount: number | null | undefined): Observable<Array<WorkHourOutputModel>> {
@@ -13023,6 +14339,7 @@ export namespace MyNS {
 		 * @param {string} invoiceGuid ID of the invoice.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<WorkHourOutputModel>} WorkHours
 		 */
 		WorkHours_GetInvoiceWorkHours(invoiceGuid: string, pageToken: string | null | undefined, rowCount: number | null | undefined): Observable<Array<WorkHourOutputModel>> {
@@ -13045,11 +14362,12 @@ export namespace MyNS {
 		 * Get v1/invoicestatuses
 		 * @param {boolean} active Filter the invoice statuses. If true/false, only the active/inactive ones are returned. If null, all the invoice statuses are returned.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from invoice status name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc".
-		 * @return {Array<InvoiceStatusModel>} 
 		 */
 		InvoiceStatuses_GetInvoiceStatuses(active: boolean | null | undefined, firstRow: number | null | undefined, rowCount: number | null | undefined, textToSearch: string | null | undefined, calculateRowCount: boolean | null | undefined, sortings: Array<KeyValuePairOfStringAndSortDirection> | null | undefined): Observable<Array<InvoiceStatusModel>> {
 			return this.http.get<Array<InvoiceStatusModel>>(this.baseUri + 'v1/invoicestatuses?active=' + active + '&firstRow=' + firstRow + '&rowCount=' + rowCount + '&textToSearch=' + (textToSearch == null ? '' : encodeURIComponent(textToSearch)) + '&calculateRowCount=' + calculateRowCount + '&' + sortings?.map(z => `sortings=${z}`).join('&'), {});
@@ -13108,6 +14426,8 @@ export namespace MyNS {
 		/**
 		 * Get invoice templates.
 		 * Get v1/invoicetemplates
+		 * @param {number} firstRow Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} rowCount Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<InvoiceTemplateModel>} InvoiceTemplatesModel.
 		 */
 		InvoiceTemplates_GetInvoiceTemplates(active: boolean | null | undefined, firstRow: number | null | undefined, rowCount: number | null | undefined, textToSearch: string | null | undefined, calculateRowCount: boolean | null | undefined, sortings: Array<KeyValuePairOfStringAndSortDirection> | null | undefined): Observable<Array<InvoiceTemplateModel>> {
@@ -13130,7 +14450,9 @@ export namespace MyNS {
 		 * @param {ContactKeywordModelCategory} category Optional: category of the keyword.
 		 * @param {boolean} active If not given, return all Keywords, if given as true return only active Keywords, if given as false returns only inactive Keywords.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from keyword.
 		 * @param {Date} changedSince Optional: Get keywords that have been added or changed after this date time (greater or equal).
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
@@ -13191,7 +14513,9 @@ export namespace MyNS {
 		 * @param {KpiFormulaCategory} category Optional: Category of KPI formula (Project, Invoice, User).
 		 * @param {boolean} isActive Optional: return with given active status. Default is to return all.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc".
 		 * @param {boolean} includeDefinition Optional: Include definition to response. Default false.
@@ -13207,7 +14531,9 @@ export namespace MyNS {
 		 * Get v1/leadsources
 		 * @param {boolean} active If not given, return all lead sources, if given as true return only active lead sources, if given as false returns only inactive lead sources.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from lead source name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @return {Array<LeadSourceModel>} List of lead sources.
@@ -13272,6 +14598,7 @@ export namespace MyNS {
 		 * Get a country by ISO Alpha-2 code
 		 * Get v1/localization/countries/{code2}
 		 * @param {string} code2 Optional: ISO Alpha-2 code used to get a country.
+		 *     Min length: 2    Max length: 2
 		 * @return {Array<CountryModel>} Country
 		 */
 		Countries_GetCountryByCode2(code2: string): Observable<Array<CountryModel>> {
@@ -13282,6 +14609,7 @@ export namespace MyNS {
 		 * Get a country by ISO Alpha-3 code
 		 * Get v1/localization/countries/{code3}
 		 * @param {string} code3 Optional: ISO Alpha-3 code used to get a country.
+		 *     Min length: 3    Max length: 3
 		 * @return {Array<CountryModel>} Country
 		 */
 		Countries_GetCountryByCode3(code3: string): Observable<Array<CountryModel>> {
@@ -13415,7 +14743,9 @@ export namespace MyNS {
 		 * Get v1/marketsegments
 		 * @param {boolean} active If not given, return all Market Segments, if given as true return only active Market Segments, if given as false returns only inactive Market Segments.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from market segment name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {boolean} includeChildSegments Optional: Include also child market segments. If false returns only parent segments. Default true.
@@ -13499,7 +14829,6 @@ export namespace MyNS {
 		 * Get overtime price by ID.
 		 * Get v1/overtimeprices/{guid}
 		 * @param {string} guid Id used to get the overtime price.
-		 * @return {OvertimePriceModel} 
 		 */
 		OvertimePrices_GetOvertimePrice(guid: string): Observable<OvertimePriceModel> {
 			return this.http.get<OvertimePriceModel>(this.baseUri + 'v1/overtimeprices/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -13510,7 +14839,9 @@ export namespace MyNS {
 		 * Get v1/overtimes
 		 * @param {boolean} active If not given, return all overtime definitions, if given as true return only active overtime definitions, if given as false returns only inactive overtime definitions.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from overtime name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=name&sortings[0].value=Asc"".
@@ -13567,7 +14898,9 @@ export namespace MyNS {
 		 * Get v1/permissionprofiles
 		 * @param {boolean} active If not given, return all Permission Profiles, if given as true return only active Permission Profiles, if given as false returns only inactive Permission Profiles.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from permission profile name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=name&sortings[0].value=Asc&sortings[1].key=isActive&sortings[1].value=Asc".
@@ -13594,6 +14927,7 @@ export namespace MyNS {
 		 * @param {Date} changedSince Optional: Get phase members that have been added or changed after this date time (greater or equal).
 		 * @param {string} pageToken Optional: Page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isUserActive Optional: Is the user active. Default nothing = all.
 		 * @return {Array<PhaseMemberOutputModel>} All the phase members
 		 */
@@ -13643,10 +14977,10 @@ export namespace MyNS {
 		 * Get v1/phases
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get phases that have been added or changed after this date time (greater or equal).
 		 * @param {string} code Optional: Code of the phase.
 		 * @param {Array<string>} projectGuids Optional: List of project ids.
-		 * @return {Array<PhaseOutputModel>} 
 		 */
 		Phases_GetPhases(pageToken: string | null | undefined, rowCount: number | null | undefined, changedSince: Date | null | undefined, code: string | null | undefined, projectGuids: Array<string> | null | undefined): Observable<Array<PhaseOutputModel>> {
 			return this.http.get<Array<PhaseOutputModel>>(this.baseUri + 'v1/phases?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&changedSince=' + changedSince?.toISOString() + '&code=' + (code == null ? '' : encodeURIComponent(code)) + '&' + projectGuids?.map(z => `projectGuids=${encodeURIComponent(z)}`).join('&'), {});
@@ -13677,7 +15011,6 @@ export namespace MyNS {
 		 * Get phase by ID
 		 * Get v1/phases/{guid}
 		 * @param {string} guid Id used to get the phase.
-		 * @return {PhaseOutputModel} 
 		 */
 		Phases_GetPhase(guid: string): Observable<PhaseOutputModel> {
 			return this.http.get<PhaseOutputModel>(this.baseUri + 'v1/phases/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -13701,6 +15034,7 @@ export namespace MyNS {
 		 * @param {string} phaseGuid GUID of the phase.
 		 * @param {string} pageToken Optional: Page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isActive Optional: Is the member active on the phase. Filters only root phase members. Default nothing = all.
 		 * @param {boolean} isUserActive Optional: Is the user active. Default nothing = all.
 		 * @return {Array<PhaseMemberOutputModel>} All the phase members
@@ -13716,8 +15050,8 @@ export namespace MyNS {
 		 * @param {Date} endDate Get resource allocations with endDate. Using startDate and endDate or changedSince parameters are required to fetch a maximum of 30 days
 		 * @param {Date} changedSince Optional: Get resource allocations that have been added or changed after this date time (greater or equal).
 		 * @param {number} rowCount Optional: Number of rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional: page token to fetch the next page.
-		 * @return {ResourceAllocationOutputModel} 
 		 */
 		ResourceAllocations_GetResourceAllocationsByPhaseGuid(phaseGuid: string, startDate: Date | null | undefined, endDate: Date | null | undefined, changedSince: Date | null | undefined, userLicenseTypes: Array<LicenseUserType> | null | undefined, projectGuid: string | null | undefined, userGuid: string | null | undefined, projectBusinessUnitGuid: string | null | undefined, userBusinessUnitGuid: string | null | undefined, projectManagerUserGuid: string | null | undefined, userTagGuid: string | null | undefined, useSalesProbability: boolean | null | undefined, projectStatusTypeGuid: string | null | undefined, projectTagGuid: string | null | undefined, superiorUserGuid: string | null | undefined, salesStatusTypeGuid: string | null | undefined, resourceAllocationGuid: string | null | undefined, salesProgress: SalesProgress | null | undefined, rowCount: number | null | undefined, pageToken: string | null | undefined): Observable<ResourceAllocationOutputModel> {
 			return this.http.get<ResourceAllocationOutputModel>(this.baseUri + 'v1/phases/' + (phaseGuid == null ? '' : encodeURIComponent(phaseGuid)) + '/resourceallocations/allocations&startDate=' + startDate?.toISOString() + '&endDate=' + endDate?.toISOString() + '&changedSince=' + changedSince?.toISOString() + '&' + userLicenseTypes?.map(z => `userLicenseTypes=${z}`).join('&') + '&projectGuid=' + (projectGuid == null ? '' : encodeURIComponent(projectGuid)) + '&userGuid=' + (userGuid == null ? '' : encodeURIComponent(userGuid)) + '&projectBusinessUnitGuid=' + (projectBusinessUnitGuid == null ? '' : encodeURIComponent(projectBusinessUnitGuid)) + '&userBusinessUnitGuid=' + (userBusinessUnitGuid == null ? '' : encodeURIComponent(userBusinessUnitGuid)) + '&projectManagerUserGuid=' + (projectManagerUserGuid == null ? '' : encodeURIComponent(projectManagerUserGuid)) + '&userTagGuid=' + (userTagGuid == null ? '' : encodeURIComponent(userTagGuid)) + '&useSalesProbability=' + useSalesProbability + '&projectStatusTypeGuid=' + (projectStatusTypeGuid == null ? '' : encodeURIComponent(projectStatusTypeGuid)) + '&projectTagGuid=' + (projectTagGuid == null ? '' : encodeURIComponent(projectTagGuid)) + '&superiorUserGuid=' + (superiorUserGuid == null ? '' : encodeURIComponent(superiorUserGuid)) + '&salesStatusTypeGuid=' + (salesStatusTypeGuid == null ? '' : encodeURIComponent(salesStatusTypeGuid)) + '&resourceAllocationGuid=' + (resourceAllocationGuid == null ? '' : encodeURIComponent(resourceAllocationGuid)) + '&salesProgress=' + salesProgress + '&rowCount=' + rowCount + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), {});
@@ -13730,6 +15064,7 @@ export namespace MyNS {
 		 * @param {string} phaseGuid Id of the phase.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: number of rows to fetch
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userGuid Id of the user for whom the work types are retrieved. Default is current user.
 		 * @return {Array<WorkTypeOutputModel>} All the work types matching search criteria
 		 */
@@ -13742,7 +15077,9 @@ export namespace MyNS {
 		 * Get v1/phasestatustypes
 		 * @param {boolean} active If not given, return all phase status types, if given as true return only active phase status types, if given as false returns only inactive phase status types
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<PhaseStatusTypeModel>} All the phase status types
 		 */
 		PhaseStatusTypes_GetPhaseStatusTypes(active: boolean | null | undefined, firstRow: number | null | undefined, rowCount: number | null | undefined, textToSearch: string | null | undefined, calculateRowCount: boolean | null | undefined, sortings: Array<KeyValuePairOfStringAndSortDirection> | null | undefined): Observable<Array<PhaseStatusTypeModel>> {
@@ -13797,7 +15134,9 @@ export namespace MyNS {
 		 * Get v1/pricelists
 		 * @param {boolean} active If not given, return all price lists, if given as true return only active price lists, if given as false returns only inactive price lists.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from price list name.
 		 * @param {string} currencyGuid Optional: ID of the price list currency.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
@@ -13813,7 +15152,6 @@ export namespace MyNS {
 		 * Get price list by GUID.
 		 * Get v1/pricelists/{guid}
 		 * @param {string} guid ID used to get the price list.
-		 * @return {PriceListModel} 
 		 */
 		PriceLists_GetPriceList(guid: string): Observable<PriceListModel> {
 			return this.http.get<PriceListModel>(this.baseUri + 'v1/pricelists/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -13852,7 +15190,9 @@ export namespace MyNS {
 		 * @param {string} pricelistVersionGuid ID of the price list version.
 		 * @param {boolean} fromPricelistOnly If true return only prices from the price list, if false also returns prices from the products. Default is false.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from Product name.
 		 * @param {boolean} calculateRowCount Optional: Calculate the number of total rows. Default false = total row count is returned as zero.
 		 * @param {string} productCode Optional: Absolute search for products with specified product code.
@@ -13873,7 +15213,9 @@ export namespace MyNS {
 		 * @param {boolean} fromPricelistOnly If true return only prices from the price list, if false also returns prices from the products. Default is false.
 		 * @param {Array<ExpensesClass>} expenseClasses Optional: List of expense classes to search by, defaults to all travel categories.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from Product name.
 		 * @param {boolean} calculateRowCount Optional: Calculate the number of total rows. Default false = total row count is returned as zero.
 		 * @return {Array<TravelPriceOutputModel>} TravelPriceModel.
@@ -13888,6 +15230,7 @@ export namespace MyNS {
 		 * @param {string} pricelistVersionGuid Price list version identifier.
 		 * @param {string} pageToken Optional: page token to fetch the next page..
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get prices that have been added or changed after this date time (greater or equal).
 		 * @return {WorkHourPriceOutputModel} workHourPrices.
 		 */
@@ -13900,7 +15243,9 @@ export namespace MyNS {
 		 * Get v1/productcategories
 		 * @param {boolean} active If not given, return all Product categories, if given as true return only active Product categories, if given as false returns only inactive Product categories.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from product category name or code.
 		 * @param {Date} changedSince Optional: Get product categories that have been added or changed after this date time (greater or equal).
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
@@ -13989,7 +15334,6 @@ export namespace MyNS {
 		 * Get product price by ID.
 		 * Get v1/productprices/{guid}
 		 * @param {string} guid Id used to get the product price.
-		 * @return {ProductPriceOutputModel} 
 		 */
 		ProductPrices_GetProductPrice(guid: string): Observable<ProductPriceOutputModel> {
 			return this.http.get<ProductPriceOutputModel>(this.baseUri + 'v1/productprices/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -13999,6 +15343,7 @@ export namespace MyNS {
 		 * Get all the Products
 		 * Get v1/products
 		 * @param {number} rowCount Optional: Number of rows to fetch
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {ProductOutputModelType} type Product type. if given, it filters the products by the given type.
 		 * @param {boolean} isActive If not given, return all Products, if given as true return only isActive Products, if given as false returns only inactive Products
@@ -14109,6 +15454,7 @@ export namespace MyNS {
 		 * Get v1/projectfees
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: Number of rows to fetch
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get project fees that have been added or changed after this date time (greater or equal).
 		 * @return {Array<ProjectFeeOutputModel>} ProjectFee
 		 */
@@ -14141,7 +15487,6 @@ export namespace MyNS {
 		 * Get projectFee by ID.
 		 * Get v1/projectfees/{guid}
 		 * @param {string} guid Id used to get the projectFee.
-		 * @return {ProjectFeeOutputModel} 
 		 */
 		ProjectFees_GetProjectFee(guid: string): Observable<ProjectFeeOutputModel> {
 			return this.http.get<ProjectFeeOutputModel>(this.baseUri + 'v1/projectfees/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -14329,7 +15674,9 @@ export namespace MyNS {
 		 * Get the recurring fee rules.
 		 * Get v1/projectrecurringfeerules
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductOutputModelType} productType projectRecurringFeeRule's product type. if given, it filters the projectRecurringFeeRules by the given type.
 		 * @param {Date} changedSince Optional: Get recurring fee rules that have been added or changed after this date time (greater or equal).
 		 * @return {Array<ProjectRecurringFeeRuleOutputModel>} List of updated project recurring fee rules
@@ -14385,9 +15732,11 @@ export namespace MyNS {
 		 * Get all the projects
 		 * Get v1/projects
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} currencyGuid Optional: ID of project currency.
 		 * @param {Date} changedSince Optional: Get projects that have been added or changed after this date time (greater or equal).
 		 * @param {boolean} isBillable Optional: When true fetch projects that have something to bill, when false nothing to bill. Default nothing = all.
+		 * @param {number} minimumBillableAmount Type: double
 		 * @param {boolean} internal Optional: Get internal / non-internal projects.
 		 * @return {Array<ProjectOutputModel>} Projects
 		 */
@@ -14410,13 +15759,14 @@ export namespace MyNS {
 		 * Get the project custom properties.
 		 * Get v1/projects/customproperties
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} active Optional: Get only active or inactive project properties.
 		 * @param {string} textToSearch Optional: Text to search from custom property name.
 		 * @param {boolean} isInUse Optional: Is the customer property used in any custom property usage.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (sub-model fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc&sortings[1].key=Number&sortings[1].value=Asc".
-		 * @return {Array<CustomPropertyModel>} 
 		 */
 		ProjectCustomProperties_GetProjectCustomProperties(firstRow: number | null | undefined, rowCount: number | null | undefined, active: boolean | null | undefined, textToSearch: string | null | undefined, isInUse: boolean | null | undefined, calculateRowCount: boolean | null | undefined, sortings: Array<KeyValuePairOfStringAndSortDirection> | null | undefined): Observable<Array<CustomPropertyModel>> {
 			return this.http.get<Array<CustomPropertyModel>>(this.baseUri + 'v1/projects/customproperties?firstRow=' + firstRow + '&rowCount=' + rowCount + '&active=' + active + '&textToSearch=' + (textToSearch == null ? '' : encodeURIComponent(textToSearch)) + '&isInUse=' + isInUse + '&calculateRowCount=' + calculateRowCount + '&' + sortings?.map(z => `sortings=${z}`).join('&'), {});
@@ -14457,7 +15807,6 @@ export namespace MyNS {
 		 * Get project custom property selection item by ID.
 		 * Get v1/projects/customproperties/projectcustompropertyselectionitems/{guid}
 		 * @param {string} guid Id used to get the project custom property selection item.
-		 * @return {ProjectCustomPropertySelectionItemOutputModel} 
 		 */
 		ProjectCustomPropertySelectionItems_GetProjectCustomPropertySelectionItem(guid: string): Observable<ProjectCustomPropertySelectionItemOutputModel> {
 			return this.http.get<ProjectCustomPropertySelectionItemOutputModel>(this.baseUri + 'v1/projects/customproperties/projectcustompropertyselectionitems/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -14479,10 +15828,10 @@ export namespace MyNS {
 		 * Get v1/projects/customproperties/{customPropertyGuid}/projectcustompropertyselectionitems
 		 * @param {string} customPropertyGuid Custom property id used to get the project custom property selection items.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isActive Optional: Get only active or inactive selection items.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {Date} changedSince Optional: Get custom property selection items that have been added or changed after this date time (greater or equal).
-		 * @return {Array<ProjectCustomPropertySelectionItemOutputModel>} 
 		 */
 		ProjectCustomPropertySelectionItems_GetProjectCustomPropertySelectionItems(customPropertyGuid: string, rowCount: number | null | undefined, isActive: boolean | null | undefined, pageToken: string | null | undefined, changedSince: Date | null | undefined): Observable<Array<ProjectCustomPropertySelectionItemOutputModel>> {
 			return this.http.get<Array<ProjectCustomPropertySelectionItemOutputModel>>(this.baseUri + 'v1/projects/customproperties/' + (customPropertyGuid == null ? '' : encodeURIComponent(customPropertyGuid)) + '/projectcustompropertyselectionitems&rowCount=' + rowCount + '&isActive=' + isActive + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&changedSince=' + changedSince?.toISOString(), {});
@@ -14503,7 +15852,6 @@ export namespace MyNS {
 		 * Get project custom property by ID.
 		 * Get v1/projects/customproperties/{guid}
 		 * @param {string} guid Id used to get the project custom property.
-		 * @return {CustomPropertyModel} 
 		 */
 		ProjectCustomProperties_GetProjectCustomProperty(guid: string): Observable<CustomPropertyModel> {
 			return this.http.get<CustomPropertyModel>(this.baseUri + 'v1/projects/customproperties/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -14545,7 +15893,6 @@ export namespace MyNS {
 		 * Get project custom value by ID.
 		 * Get v1/projects/customvalues/{guid}
 		 * @param {string} guid Id used to get the project custom value.
-		 * @return {ProjectCustomValueModel} 
 		 */
 		ProjectCustomValues_GetProjectCustomValue(guid: string): Observable<ProjectCustomValueModel> {
 			return this.http.get<ProjectCustomValueModel>(this.baseUri + 'v1/projects/customvalues/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -14577,7 +15924,6 @@ export namespace MyNS {
 		 * Get project by ID
 		 * Get v1/projects/{guid}
 		 * @param {string} guid Id used to get the project.
-		 * @return {ProjectOutputModel} 
 		 */
 		Projects_GetProject(guid: string): Observable<ProjectOutputModel> {
 			return this.http.get<ProjectOutputModel>(this.baseUri + 'v1/projects/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -14610,12 +15956,13 @@ export namespace MyNS {
 		 * Get v1/projects/{projectGuid}/customvalues
 		 * @param {string} projectGuid ID of the project.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} active Optional: Get only values of active or inactive project custom properties.
 		 * @param {Array<string>} target List of target for which to get the values.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (sub-model fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc&sortings[1].key=Number&sortings[1].value=Asc".
-		 * @return {Array<ProjectCustomValueModel>} 
 		 */
 		ProjectCustomValues_GetProjectCustomValues(projectGuid: string, firstRow: number | null | undefined, rowCount: number | null | undefined, active: boolean | null | undefined, target: Array<string> | null | undefined, calculateRowCount: boolean | null | undefined, sortings: Array<KeyValuePairOfStringAndSortDirection> | null | undefined): Observable<Array<ProjectCustomValueModel>> {
 			return this.http.get<Array<ProjectCustomValueModel>>(this.baseUri + 'v1/projects/' + (projectGuid == null ? '' : encodeURIComponent(projectGuid)) + '/customvalues&firstRow=' + firstRow + '&rowCount=' + rowCount + '&active=' + active + '&' + target?.map(z => `target=${encodeURIComponent(z)}`).join('&') + '&calculateRowCount=' + calculateRowCount + '&' + sortings?.map(z => `sortings=${z}`).join('&'), {});
@@ -14626,7 +15973,9 @@ export namespace MyNS {
 		 * Get v1/projects/{projectGuid}/files
 		 * @param {string} projectGuid GUID of the project used to get the files.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc&sortings[1].key=Number&sortings[1].value=Asc".
 		 * @return {Array<ProjectFileModel>} File.
 		 */
@@ -14705,7 +16054,9 @@ export namespace MyNS {
 		 * @param {string} projectGuid ID of the project.
 		 * @param {boolean} fromPricelistOnly If true return only prices from the price list, if false also returns prices from the products. Default is false.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from Product name.
 		 * @param {boolean} calculateRowCount Optional: Calculate the number of total rows. Default false = total row count is returned as zero.
 		 * @param {boolean} isAvailable Optional: If true, returns only prices that are available for the project, false returns price that are not available. Default all.
@@ -14725,6 +16076,7 @@ export namespace MyNS {
 		 * Get v1/projects/{projectGuid}/productsforproject
 		 * @param {string} projectGuid Id of the project
 		 * @param {number} rowCount Optional: Number of rows to fetch
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {ProductOutputModelType} type Product type. if given, it filters the products by the given type
 		 * @param {boolean} includeProductsFromRegistry Optional: If true returns all the products from registry with project specific prices. If false returns only products specified for the project with project specific prices. Default false.
@@ -14749,6 +16101,7 @@ export namespace MyNS {
 		 * @param {string} projectGuid ID of the project.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: Number of rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductOutputModelType} productType Optional: ProjectFee's product type. if given, it filters the projectFees by the given type. FixedFees (Own work), Materials (Products), Subcontracting
 		 * @param {boolean} isBillable Optional: Filter the project fees. If true/false, only the billable/non-billable ones are returned. If null, all are returned. Default is null.
 		 * @param {boolean} isBilled Optional: Filter the project fees. If true/false, only the ones that are/are not invoiced are returned. If null, all are returned. Default is null.
@@ -14766,7 +16119,9 @@ export namespace MyNS {
 		 * Delete v1/projects/{projectGuid}/projectforecasts
 		 * @param {string} projectGuid Project for the forecasts to delete
 		 * @param {number} year Year where to start deleting the forecasts
+		 *     Minimum: 1900    Maximum: 2075
 		 * @param {number} month Month where to start deleting the forecasts
+		 *     Minimum: 1    Maximum: 12
 		 * @return {void} 
 		 */
 		ProjectForecasts_DeleteForecasts(projectGuid: string, year: number | null | undefined, month: number | null | undefined): Observable<HttpResponse<string>> {
@@ -14801,7 +16156,9 @@ export namespace MyNS {
 		 * @param {string} projectGuid Guid of the project.
 		 * @param {string} userGuid Optional: Guid of the user.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ProjectMemberCostExceptionOutputModel>} All the member cost exceptions for one project.
 		 */
 		ProjectMemberCostExceptions_GetProjectMemberCostExceptionsForProject(projectGuid: string, userGuid: string | null | undefined, firstRow: number | null | undefined, rowCount: number | null | undefined): Observable<Array<ProjectMemberCostExceptionOutputModel>> {
@@ -14827,6 +16184,7 @@ export namespace MyNS {
 		 * @param {boolean} includeProductsFromRegistry Optional: Includes products available from product registry
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} active Fetch only active
 		 * @return {Array<ProjectProductOutputModel>} A list of products for the project.
 		 */
@@ -14840,7 +16198,9 @@ export namespace MyNS {
 		 * @param {string} projectGuid ID of the project to get the recurring fee rules.
 		 * @param {ProductOutputModelType} productType projectRecurringFeeRule's product type. if given, it filters the projectRecurringFeeRules by the given type.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isBillablePeriodInFuture Optional. Filter the project recurring fee rules. If true/false, only the ones that will be billable in the future are returned. If null, all are returned. Default is false.
 		 * @param {BillablePeriod} billableTimePeriod the time period for any uninvoiced recurring rules.
 		 * @return {Array<ProjectRecurringFeeRuleOutputModel>} List of updated project recurring fee rules
@@ -14855,6 +16215,7 @@ export namespace MyNS {
 		 * @param {string} projectGuid Project guid used to get the notes.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get sales notes that have been added or changed after this date time (greater or equal).
 		 * @return {Array<ProjectSalesNoteOutputModel>} List of sales notes for a project.
 		 */
@@ -14871,6 +16232,7 @@ export namespace MyNS {
 		 * @param {Date} invoiceableDate Optional: Filter the project fees. When given, only the ones that are invoiceable before or on the given date are returned. Default is null.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isBillablePeriodInFuture Optional. Filter the project travel expenses. If true/false, only the ones that will be billable in the future are returned. If null, all are returned. Default is false.
 		 * @param {ExpensesClass} expenseClass Optional: Class of the expense. Mileage, DailyAllowance or OtherTravelExpense
 		 * @return {Array<ProjectTravelExpenseOutputModel>} ProjectTravelExpenseOutputModel
@@ -14899,7 +16261,9 @@ export namespace MyNS {
 		 * @param {string} projectGuid GUID of the project.
 		 * @param {boolean} includeWorktypesFromRegistry Include work types also from registry. If false, returns only project specific work types. Default false.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} active If not given, return all work types, if given as true return only active work types, if given as false returns only inactive work types.
 		 * @param {string} textToSearch Optional: Text to search from work type name.
 		 * @param {Date} changedSince Optional: Get project work types that have been added or changed after this date time (greater or equal).
@@ -14915,6 +16279,7 @@ export namespace MyNS {
 		 * @param {string} projectGuid Project id for which to get proposals.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get proposals that have been added or changed after this date time (greater or equal).
 		 * @return {Array<ProposalOutputModel>} Proposal
 		 */
@@ -14929,8 +16294,8 @@ export namespace MyNS {
 		 * @param {Date} endDate Get resource allocations with endDate. Using startDate and endDate or changedSince parameters are required to fetch a maximum of 30 days
 		 * @param {Date} changedSince Optional: Get resource allocations that have been added or changed after this date time (greater or equal).
 		 * @param {number} rowCount Optional: Number of rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional: page token to fetch the next page.
-		 * @return {ResourceAllocationOutputModel} 
 		 */
 		ResourceAllocations_GetResourceAllocationsByProjectGuid(projectGuid: string, startDate: Date | null | undefined, endDate: Date | null | undefined, changedSince: Date | null | undefined, userLicenseTypes: Array<LicenseUserType> | null | undefined, phaseGuid: string | null | undefined, userGuid: string | null | undefined, projectBusinessUnitGuid: string | null | undefined, userBusinessUnitGuid: string | null | undefined, projectManagerUserGuid: string | null | undefined, userTagGuid: string | null | undefined, useSalesProbability: boolean | null | undefined, projectStatusTypeGuid: string | null | undefined, projectTagGuid: string | null | undefined, superiorUserGuid: string | null | undefined, salesStatusTypeGuid: string | null | undefined, resourceAllocationGuid: string | null | undefined, salesProgress: SalesProgress | null | undefined, rowCount: number | null | undefined, pageToken: string | null | undefined): Observable<ResourceAllocationOutputModel> {
 			return this.http.get<ResourceAllocationOutputModel>(this.baseUri + 'v1/projects/' + (projectGuid == null ? '' : encodeURIComponent(projectGuid)) + '/resourceallocations/allocations&startDate=' + startDate?.toISOString() + '&endDate=' + endDate?.toISOString() + '&changedSince=' + changedSince?.toISOString() + '&' + userLicenseTypes?.map(z => `userLicenseTypes=${z}`).join('&') + '&phaseGuid=' + (phaseGuid == null ? '' : encodeURIComponent(phaseGuid)) + '&userGuid=' + (userGuid == null ? '' : encodeURIComponent(userGuid)) + '&projectBusinessUnitGuid=' + (projectBusinessUnitGuid == null ? '' : encodeURIComponent(projectBusinessUnitGuid)) + '&userBusinessUnitGuid=' + (userBusinessUnitGuid == null ? '' : encodeURIComponent(userBusinessUnitGuid)) + '&projectManagerUserGuid=' + (projectManagerUserGuid == null ? '' : encodeURIComponent(projectManagerUserGuid)) + '&userTagGuid=' + (userTagGuid == null ? '' : encodeURIComponent(userTagGuid)) + '&useSalesProbability=' + useSalesProbability + '&projectStatusTypeGuid=' + (projectStatusTypeGuid == null ? '' : encodeURIComponent(projectStatusTypeGuid)) + '&projectTagGuid=' + (projectTagGuid == null ? '' : encodeURIComponent(projectTagGuid)) + '&superiorUserGuid=' + (superiorUserGuid == null ? '' : encodeURIComponent(superiorUserGuid)) + '&salesStatusTypeGuid=' + (salesStatusTypeGuid == null ? '' : encodeURIComponent(salesStatusTypeGuid)) + '&resourceAllocationGuid=' + (resourceAllocationGuid == null ? '' : encodeURIComponent(resourceAllocationGuid)) + '&salesProgress=' + salesProgress + '&rowCount=' + rowCount + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), {});
@@ -14962,7 +16327,9 @@ export namespace MyNS {
 		 * @param {string} projectGuid Id of the project.
 		 * @param {string} textToSearch Searched string: part of name or code.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userGuid Optional: Id of the user to fetch travels for.
 		 * @param {ExpensesClass} expenseClass Optional: Expense class of the travel. Mileage/DailyAllowance/OtherTravelExpense.
 		 * @return {Array<TravelExpenseTypeOutputModel>} All the Travel expense types matching search criteria.
@@ -14978,7 +16345,9 @@ export namespace MyNS {
 		 * @param {boolean} fromPricelistOnly If true return only prices from the price list, if false also returns prices from the settings. Default is false.
 		 * @param {Array<ExpensesClass>} expenseClasses Optional: List of expense classes to search by, defaults to all travel categories.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from Product name.
 		 * @param {boolean} calculateRowCount Optional: Calculate the number of total rows. Default false = total row count is returned as zero.
 		 * @return {Array<TravelPriceOutputModel>} TravelPriceModel.
@@ -14997,6 +16366,7 @@ export namespace MyNS {
 		 * @param {Date} endDate Optional: starting date to which to get the hours. Default all.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<WorkHourOutputModel>} WorkHours
 		 */
 		WorkHours_GetProjectWorkHours(projectGuid: string, isBillable: boolean | null | undefined, isBilled: boolean | null | undefined, startDate: Date | null | undefined, endDate: Date | null | undefined, pageToken: string | null | undefined, rowCount: number | null | undefined): Observable<Array<WorkHourOutputModel>> {
@@ -15008,7 +16378,9 @@ export namespace MyNS {
 		 * Get v1/projects/{projectGuid}/worktypesforproject
 		 * @param {string} projectGuid Id of the case to which proposal is connected.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Searched string: part of name or code.
 		 * @return {Array<WorktypeForProjectOutputModel>} All the work types matching search criteria.
 		 */
@@ -15063,7 +16435,9 @@ export namespace MyNS {
 		 * Get v1/projectstatustypes
 		 * @param {boolean} active If not given, return all ProjectStatusTypes, if given as true return only active ProjectStatusTypes, if given as false returns only inactive ProjectStatusTypes
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from ProjectStatusType name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=name&sortings[0].value=Asc&sortings[1].key=isActive&sortings[1].value=Asc"
@@ -15121,7 +16495,9 @@ export namespace MyNS {
 		 * Get v1/projecttaskstatuses
 		 * @param {boolean} active If not given, return all project task statuses, if given as true return only active project task statuses, if given as false returns only inactive project task statuses.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from activity type name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=name&sortings[0].value=Asc".
@@ -15189,6 +16565,7 @@ export namespace MyNS {
 		 * Get v1/projecttravelexpenses
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get project travel expenses that have been added or changed after this date time (greater or equal).
 		 * @return {Array<ProjectTravelExpenseOutputModel>} ProjectTravelExpenseOutputModel
 		 */
@@ -15243,7 +16620,9 @@ export namespace MyNS {
 		 * Get v1/projecttravelexpenses/{projectTravelExpenseGuid}/files
 		 * @param {string} projectTravelExpenseGuid GUID of the travel expense used to get the files.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ProjectTravelExpenseFileModel>} TravelExpenseFile.
 		 */
 		Files_GetTravelExpenseFiles(projectTravelExpenseGuid: string, firstRow: number | null | undefined, rowCount: number | null | undefined): Observable<Array<ProjectTravelExpenseFileModel>> {
@@ -15275,7 +16654,6 @@ export namespace MyNS {
 		 * Get project work hour price by ID
 		 * Get v1/projectworkhourprices/{guid}
 		 * @param {string} guid Id used to get the work hour price.
-		 * @return {ProjectWorkHourPriceOutputModel} 
 		 */
 		ProjectWorkHourPrices_GetProjectWorkHourPrice(guid: string): Observable<ProjectWorkHourPriceOutputModel> {
 			return this.http.get<ProjectWorkHourPriceOutputModel>(this.baseUri + 'v1/projectworkhourprices/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -15331,6 +16709,7 @@ export namespace MyNS {
 		 * Get v1/proposalfeerows
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get proposal fee rows that have been added or changed after this date time (greater or equal).
 		 * @return {Array<ProposalFeeRowOutputModel>} Proposal fee rows
 		 */
@@ -15385,6 +16764,7 @@ export namespace MyNS {
 		 * Get v1/proposals
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get proposals that have been added or changed after this date time (greater or equal).
 		 * @return {Array<ProposalOutputModel>} Proposal
 		 */
@@ -15461,6 +16841,7 @@ export namespace MyNS {
 		 * @param {string} proposalGuid proposal id for which to get proposal fees rows.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ProposalFeeRowOutputModel>} Proposal fee rows
 		 */
 		ProposalFees_GetProposalFeesForProposal(proposalGuid: string, pageToken: string | null | undefined, rowCount: number | null | undefined): Observable<Array<ProposalFeeRowOutputModel>> {
@@ -15473,6 +16854,7 @@ export namespace MyNS {
 		 * @param {string} proposalGuid proposal id for which to get proposal subtotals.
 		 * @param {string} pageToken Optional: Page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ProposalSubtotalOutputModel>} Proposal
 		 */
 		ProposalSubtotals_GetProposalSubtotalsForProposal(proposalGuid: string, pageToken: string | null | undefined, rowCount: number | null | undefined): Observable<Array<ProposalSubtotalOutputModel>> {
@@ -15485,6 +16867,7 @@ export namespace MyNS {
 		 * @param {string} proposalGuid proposal id for which to get proposal work rows.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ProposalWorkhourRowOutputModel>} Proposal work rows.
 		 */
 		ProposalWorkhours_GetProposalWorkHoursForProposal(proposalGuid: string, pageToken: string | null | undefined, rowCount: number | null | undefined): Observable<Array<ProposalWorkhourRowOutputModel>> {
@@ -15497,6 +16880,7 @@ export namespace MyNS {
 		 * @param {boolean} isActive Optional: If not given, return all proposal statuses, if given as true return only active proposal statuses, if given as false returns only inactive proposal statuses.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} proposalStatusName Optional: Search by proposal status name.
 		 * @return {Array<ProposalStatusOutputModel>} Proposal statuses
 		 */
@@ -15562,8 +16946,8 @@ export namespace MyNS {
 		 * Get v1/proposalsubtotals
 		 * @param {string} pageToken Optional: Page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get proposal subtotals that have been added or changed after this date time (greater or equal).
-		 * @return {Array<ProposalSubtotalOutputModel>} 
 		 */
 		ProposalSubtotals_GetProposalSubtotals(pageToken: string | null | undefined, rowCount: number | null | undefined, changedSince: Date | null | undefined): Observable<Array<ProposalSubtotalOutputModel>> {
 			return this.http.get<Array<ProposalSubtotalOutputModel>>(this.baseUri + 'v1/proposalsubtotals?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&changedSince=' + changedSince?.toISOString(), {});
@@ -15617,8 +17001,8 @@ export namespace MyNS {
 		 * Get v1/proposalworkrows
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get proposal work rows that have been added or changed after this date time (greater or equal).
-		 * @return {Array<ProposalWorkhourRowOutputModel>} 
 		 */
 		ProposalWorkhours_GetProposalWorkHours(pageToken: string | null | undefined, rowCount: number | null | undefined, changedSince: Date | null | undefined): Observable<Array<ProposalWorkhourRowOutputModel>> {
 			return this.http.get<Array<ProposalWorkhourRowOutputModel>>(this.baseUri + 'v1/proposalworkrows?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&changedSince=' + changedSince?.toISOString(), {});
@@ -15680,6 +17064,7 @@ export namespace MyNS {
 		 * Get resource allocations
 		 * Get v1/resourceallocations
 		 * @param {number} rowCount Optional: Number of rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {Date} changedSince Optional: Get resource allocations that have been added or changed after this date time (greater or equal).
 		 * @return {ResourceAllocationOutputModel} ResourceAllocation
@@ -15702,6 +17087,7 @@ export namespace MyNS {
 		 * Get resource allocations (its POST because of being able to accommodate more filters)
 		 * Post v1/resourceallocations/allocations
 		 * @param {number} rowCount Optional: Number of rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {Date} changedSince Optional: Get resource allocations that have been added or changed after this date time (greater or equal).
 		 * @param {ResourceAllocationCriteriaModel} requestBody resourceAllocationCriteriaModel
@@ -15750,6 +17136,7 @@ export namespace MyNS {
 		 * @param {Date} endDate Optional: Ending date to which to get the role allocations. If start date is not specified on the role allocation then it will be compared with phase start date.
 		 * @param {string} pageToken Optional: Page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} useSalesProbability Optional: Calculates the hours based on sales probability set for the project. Default is true.
 		 * @param {Array<string>} roleGuids Optional: Role IDs.
 		 * @param {Array<string>} phaseGuids Optional: Phase IDs.
@@ -15808,6 +17195,7 @@ export namespace MyNS {
 		 * @param {boolean} isActive If not given, return all roles, if given as true return only active roles, if given as false returns only inactive roles.
 		 * @param {string} pageToken Optional: Page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get roles that have been added or changed after this date time (greater or equal).
 		 * @return {Array<RoleOutputModel>} All the roles.
 		 */
@@ -15862,7 +17250,7 @@ export namespace MyNS {
 		 * Get v1/rootphaseswithhierarchy
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
-		 * @return {Array<PhaseOutputModel>} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Phases_GetRootPhases(pageToken: string | null | undefined, rowCount: number | null | undefined, customerGuids: Array<string> | null | undefined, projectGuids: Array<string> | null | undefined, projectKeywordGuids: Array<string> | null | undefined, projectStatusTypeGuids: Array<string> | null | undefined, salesPersonGuids: Array<string> | null | undefined, projectOwnerGuids: Array<string> | null | undefined, businessUnitGuids: Array<string> | null | undefined, customerOwnerGuids: Array<string> | null | undefined, salesStatusTypeGuids: Array<string> | null | undefined, openProjects: boolean | null | undefined, projectMemberUserGuids: Array<string> | null | undefined): Observable<Array<PhaseOutputModel>> {
 			return this.http.get<Array<PhaseOutputModel>>(this.baseUri + 'v1/rootphaseswithhierarchy?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&' + customerGuids?.map(z => `customerGuids=${encodeURIComponent(z)}`).join('&') + '&' + projectGuids?.map(z => `projectGuids=${encodeURIComponent(z)}`).join('&') + '&' + projectKeywordGuids?.map(z => `projectKeywordGuids=${encodeURIComponent(z)}`).join('&') + '&' + projectStatusTypeGuids?.map(z => `projectStatusTypeGuids=${encodeURIComponent(z)}`).join('&') + '&' + salesPersonGuids?.map(z => `salesPersonGuids=${encodeURIComponent(z)}`).join('&') + '&' + projectOwnerGuids?.map(z => `projectOwnerGuids=${encodeURIComponent(z)}`).join('&') + '&' + businessUnitGuids?.map(z => `businessUnitGuids=${encodeURIComponent(z)}`).join('&') + '&' + customerOwnerGuids?.map(z => `customerOwnerGuids=${encodeURIComponent(z)}`).join('&') + '&' + salesStatusTypeGuids?.map(z => `salesStatusTypeGuids=${encodeURIComponent(z)}`).join('&') + '&openProjects=' + openProjects + '&' + projectMemberUserGuids?.map(z => `projectMemberUserGuids=${encodeURIComponent(z)}`).join('&'), {});
@@ -15873,7 +17261,9 @@ export namespace MyNS {
 		 * Get v1/salesaccounts
 		 * @param {boolean} active If not given, return all Sales accounts, if given as true return only active Sales accounts, if given as false returns only inactive Sales accounts.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from cost account name or identifier.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc &sortings[1].key=Identifier&sortings[1].value=Asc".
@@ -15929,6 +17319,8 @@ export namespace MyNS {
 		 * Gets the sales cases (sales status is in progress)
 		 * Get v1/salescases
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} minimumBillableAmount Type: double
 		 * @return {Array<ProjectOutputModel>} Projects
 		 */
 		Projects_GetSalesCases(pageToken: string | null | undefined, rowCount: number | null | undefined, customerGuids: Array<string> | null | undefined, currencyGuids: Array<string> | null | undefined, projectGuids: Array<string> | null | undefined, projectKeywordGuids: Array<string> | null | undefined, projectStatusTypeGuids: Array<string> | null | undefined, salesPersonGuids: Array<string> | null | undefined, projectOwnerGuids: Array<string> | null | undefined, businessUnitGuids: Array<string> | null | undefined, minimumBillableAmount: number | null | undefined, customerOwnerGuids: Array<string> | null | undefined, invoiceableDate: Date | null | undefined, marketSegmentationGuids: Array<string> | null | undefined, salesStatusTypeGuids: Array<string> | null | undefined, isClosed: boolean | null | undefined, hasRecurringFees: boolean | null | undefined, companyCurrencyGuids: Array<string> | null | undefined, projectMemberUserGuids: Array<string> | null | undefined, numbers: Array<number> | null | undefined): Observable<Array<ProjectOutputModel>> {
@@ -15941,7 +17333,9 @@ export namespace MyNS {
 		 * @param {boolean} active If not given, return all sales status types, if given as true return only active sales status types, if given as false returns only inactive sales status types
 		 * @param {SalesStatusType} salesState Optional: Get sales status types of the sales state.
 		 * @param {number} firstRow Optional: First row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from sales status type name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=Name&sortings[0].value=Desc &sortings[1].key=Code&sortings[1].value=Asc"
@@ -16007,11 +17401,12 @@ export namespace MyNS {
 		 * Get the time entries.
 		 * Get v1/timeentries
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} phaseGuid Optional: Filters time entries for given phases.
 		 * @param {Array<string>} timeEntryTypeGuid Optional: Filters time entries for given time entry types.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get time entries that have been added or changed after this date time (greater or equal).
-		 * @return {Array<TimeEntryModel>} 
 		 */
 		TimeEntries_GetTimeEntries(firstRow: number | null | undefined, phaseGuid: Array<string> | null | undefined, timeEntryTypeGuid: Array<string> | null | undefined, rowCount: number | null | undefined, changedSince: Date | null | undefined): Observable<Array<TimeEntryModel>> {
 			return this.http.get<Array<TimeEntryModel>>(this.baseUri + 'v1/timeentries?firstRow=' + firstRow + '&' + phaseGuid?.map(z => `phaseGuid=${encodeURIComponent(z)}`).join('&') + '&' + timeEntryTypeGuid?.map(z => `timeEntryTypeGuid=${encodeURIComponent(z)}`).join('&') + '&rowCount=' + rowCount + '&changedSince=' + changedSince?.toISOString(), {});
@@ -16042,7 +17437,6 @@ export namespace MyNS {
 		 * Get time entry by ID.
 		 * Get v1/timeentries/{guid}
 		 * @param {string} guid Id used to get the time entry.
-		 * @return {TimeEntryModel} 
 		 */
 		TimeEntries_GetTimeEntry(guid: string): Observable<TimeEntryModel> {
 			return this.http.get<TimeEntryModel>(this.baseUri + 'v1/timeentries/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -16064,7 +17458,9 @@ export namespace MyNS {
 		 * Get v1/timeentrytypes
 		 * @param {boolean} active Filter the time entry types. If true/false, only the active/inactive ones are returned. If null, all the time entry types are returned.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from time entry type name.
 		 * @param {boolean} calculateRowCount Optional: Calculates the total row count.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=name&sortings[0].value=Asc".
@@ -16099,7 +17495,6 @@ export namespace MyNS {
 		 * Get time entry type by ID.
 		 * Get v1/timeentrytypes/{guid}
 		 * @param {string} guid ID used to get the time entry type.
-		 * @return {TimeEntryTypeModel} 
 		 */
 		TimeEntryTypes_GetTimeEntryType(guid: string): Observable<TimeEntryTypeModel> {
 			return this.http.get<TimeEntryTypeModel>(this.baseUri + 'v1/timeentrytypes/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -16163,7 +17558,9 @@ export namespace MyNS {
 		 * Get v1/travelexpensetypes
 		 * @param {boolean} active If not given, return all travel expense types, if given as true return only active travel expense types, if given as false returns only inactive travel expense types.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default all.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Searched string: part of name or code.
 		 * @param {string} code Optional: Code of the travel expense type.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
@@ -16229,7 +17626,6 @@ export namespace MyNS {
 		 * Get travel price by ID.
 		 * Get v1/travelprices/{guid}
 		 * @param {string} guid Id used to get the travel price.
-		 * @return {TravelPriceOutputModel} 
 		 */
 		TravelPrices_GetTravelPrice(guid: string): Observable<TravelPriceOutputModel> {
 			return this.http.get<TravelPriceOutputModel>(this.baseUri + 'v1/travelprices/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -16240,9 +17636,9 @@ export namespace MyNS {
 		 * Get v1/travelreimbursements
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get travel reimbursements that have been added or changed after this date time (greater or equal).
 		 * @param {Array<string>} travelReimbursementStatusGuids Optional: List of travel reimbursement status ids.
-		 * @return {Array<TravelReimbursementOutputModel>} 
 		 */
 		TravelReimbursements_GetTravelReimbursements(pageToken: string | null | undefined, rowCount: number | null | undefined, changedSince: Date | null | undefined, travelReimbursementStatusGuids: Array<string> | null | undefined): Observable<Array<TravelReimbursementOutputModel>> {
 			return this.http.get<Array<TravelReimbursementOutputModel>>(this.baseUri + 'v1/travelreimbursements?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&changedSince=' + changedSince?.toISOString() + '&' + travelReimbursementStatusGuids?.map(z => `travelReimbursementStatusGuids=${encodeURIComponent(z)}`).join('&'), {});
@@ -16274,7 +17670,6 @@ export namespace MyNS {
 		 * Get travel reimbursement by ID
 		 * Get v1/travelreimbursements/{guid}
 		 * @param {string} guid ID of travel reimbursement
-		 * @return {TravelReimbursementOutputModel} 
 		 */
 		TravelReimbursements_GetTravelReimbursement(guid: string): Observable<TravelReimbursementOutputModel> {
 			return this.http.get<TravelReimbursementOutputModel>(this.baseUri + 'v1/travelreimbursements/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -16307,6 +17702,7 @@ export namespace MyNS {
 		 * @param {string} travelReimbursementGuid Optional: ID of the travel reimbursement
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ExpensesClass} expenseClass Optional: Class of the expense. Mileage, DailyAllowance or OtherTravelExpense
 		 * @return {Array<ProjectTravelExpenseOutputModel>} ProjectTravelExpenseOutputModel
 		 */
@@ -16319,11 +17715,12 @@ export namespace MyNS {
 		 * Get v1/travelreimbursementstatuses
 		 * @param {boolean} active Optional: Filter the travel reimbursement statuses. If true/false, only the active/inactive ones are returned. If null, all the travel reimbursement statuses are returned.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from travel reimbursement name.
 		 * @param {boolean} calculateRowCount Optional: Calculate total number of rows.
 		 * @param {Array<KeyValuePairOfStringAndSortDirection>} sortings Optional: A list of Key-Value pairs, containing names of fields and directions by which the results should be sorted. Any sortable field name (submodel fields not supported) in the model can be used, while value can be "Desc" or "Asc". Example: "?sortings[0].key=name&sortings[0].value=Asc".
-		 * @return {Array<TravelReimbursementStatusModel>} 
 		 */
 		TravelReimbursementStatus_GetTravelReimbursementStatuses(active: boolean | null | undefined, firstRow: number | null | undefined, rowCount: number | null | undefined, textToSearch: string | null | undefined, calculateRowCount: boolean | null | undefined, sortings: Array<KeyValuePairOfStringAndSortDirection> | null | undefined): Observable<Array<TravelReimbursementStatusModel>> {
 			return this.http.get<Array<TravelReimbursementStatusModel>>(this.baseUri + 'v1/travelreimbursementstatuses?active=' + active + '&firstRow=' + firstRow + '&rowCount=' + rowCount + '&textToSearch=' + (textToSearch == null ? '' : encodeURIComponent(textToSearch)) + '&calculateRowCount=' + calculateRowCount + '&' + sortings?.map(z => `sortings=${z}`).join('&'), {});
@@ -16376,6 +17773,7 @@ export namespace MyNS {
 		 * Get users
 		 * Get v1/users
 		 * @param {number} rowCount Optional: How many rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isActive If not given, return all users, if given as true return only active users, if given as false returns only inactive users
 		 * @param {Array<string>} businessUnitGuids Optional: ID of the business unit of the user. If not provided, returns for all business units. Default all.
 		 * @param {Array<string>} keywordGuids Optional: ID of the keyword of the user. If not provided, returns for all keywords. Default all.
@@ -16405,10 +17803,10 @@ export namespace MyNS {
 		 * Get v1/users/customproperties
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isActive Optional: Get only active or inactive user custom properties.
 		 * @param {boolean} isInUse Optional: Is the customer property used in any custom property usage.
 		 * @param {Date} changedSince Optional: Get custom properties that have been added or changed after this date time (greater or equal).
-		 * @return {Array<UserCustomPropertyOutputModel>} 
 		 */
 		UserCustomProperties_GetUserCustomProperties(pageToken: string | null | undefined, rowCount: number | null | undefined, isActive: boolean | null | undefined, isInUse: boolean | null | undefined, changedSince: Date | null | undefined): Observable<Array<UserCustomPropertyOutputModel>> {
 			return this.http.get<Array<UserCustomPropertyOutputModel>>(this.baseUri + 'v1/users/customproperties?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&isActive=' + isActive + '&isInUse=' + isInUse + '&changedSince=' + changedSince?.toISOString(), {});
@@ -16449,7 +17847,6 @@ export namespace MyNS {
 		 * Get user custom property selection item by ID.
 		 * Get v1/users/customproperties/usercustompropertyselectionitems/{guid}
 		 * @param {string} guid Id used to get the user custom property selection item.
-		 * @return {UserCustomPropertySelectionItemOutputModel} 
 		 */
 		UserCustomPropertySelectionItems_GetUserCustomPropertySelectionItem(guid: string): Observable<UserCustomPropertySelectionItemOutputModel> {
 			return this.http.get<UserCustomPropertySelectionItemOutputModel>(this.baseUri + 'v1/users/customproperties/usercustompropertyselectionitems/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -16471,10 +17868,10 @@ export namespace MyNS {
 		 * Get v1/users/customproperties/{customPropertyGuid}/usercustompropertyselectionitems
 		 * @param {string} customPropertyGuid Custom property id used to get the user custom property selection items.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isActive Optional: Get only active or inactive selection items.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {Date} changedSince Optional: Get custom property selection items that have been added or changed after this date time (greater or equal).
-		 * @return {Array<UserCustomPropertySelectionItemOutputModel>} 
 		 */
 		UserCustomPropertySelectionItems_GetUserCustomPropertySelectionItems(customPropertyGuid: string, rowCount: number | null | undefined, isActive: boolean | null | undefined, pageToken: string | null | undefined, changedSince: Date | null | undefined): Observable<Array<UserCustomPropertySelectionItemOutputModel>> {
 			return this.http.get<Array<UserCustomPropertySelectionItemOutputModel>>(this.baseUri + 'v1/users/customproperties/' + (customPropertyGuid == null ? '' : encodeURIComponent(customPropertyGuid)) + '/usercustompropertyselectionitems&rowCount=' + rowCount + '&isActive=' + isActive + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&changedSince=' + changedSince?.toISOString(), {});
@@ -16495,7 +17892,6 @@ export namespace MyNS {
 		 * Get user custom property by ID.
 		 * Get v1/users/customproperties/{guid}
 		 * @param {string} guid Id used to get the user custom property.
-		 * @return {UserCustomPropertyOutputModel} 
 		 */
 		UserCustomProperties_GetUserCustomProperty(guid: string): Observable<UserCustomPropertyOutputModel> {
 			return this.http.get<UserCustomPropertyOutputModel>(this.baseUri + 'v1/users/customproperties/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -16537,7 +17933,6 @@ export namespace MyNS {
 		 * Get user custom value by ID.
 		 * Get v1/users/customvalues/{guid}
 		 * @param {string} guid Id used to get the user custom value.
-		 * @return {UserCustomValueOutputModel} 
 		 */
 		UserCustomValues_GetUserCustomValue(guid: string): Observable<UserCustomValueOutputModel> {
 			return this.http.get<UserCustomValueOutputModel>(this.baseUri + 'v1/users/customvalues/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -16592,10 +17987,10 @@ export namespace MyNS {
 		 * @param {string} userGuid ID of the user.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} isActive Optional: Get only values of active or inactive user custom properties.
 		 * @param {Array<string>} targets Optional: List of target for which to get the values.
 		 * @param {Date} changedSince Optional: Get user custom values that have been added or changed after this date time (greater or equal).
-		 * @return {Array<UserCustomValueOutputModel>} 
 		 */
 		UserCustomValues_GetUserCustomValues(userGuid: string, pageToken: string | null | undefined, rowCount: number | null | undefined, isActive: boolean | null | undefined, targets: Array<string> | null | undefined, changedSince: Date | null | undefined): Observable<Array<UserCustomValueOutputModel>> {
 			return this.http.get<Array<UserCustomValueOutputModel>>(this.baseUri + 'v1/users/' + (userGuid == null ? '' : encodeURIComponent(userGuid)) + '/customvalues&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&isActive=' + isActive + '&' + targets?.map(z => `targets=${encodeURIComponent(z)}`).join('&') + '&changedSince=' + changedSince?.toISOString(), {});
@@ -16619,6 +18014,7 @@ export namespace MyNS {
 		 * @param {string} userGuid ID of the user for whom to get the adjustments.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<FlextimeAdjustmentOutputModel>} List of Flextime Adjustments.
 		 */
 		FlextimeAdjustments_GetFlextimeAdjustments(userGuid: string, pageToken: string | null | undefined, rowCount: number | null | undefined): Observable<Array<FlextimeAdjustmentOutputModel>> {
@@ -16662,6 +18058,7 @@ export namespace MyNS {
 		 * @param {string} userGuid ID of the user.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: Number of rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ProductOutputModelType} productType Optional: ProjectFee's product type. if given, it filters the projectFees by the given type. FixedFees (Own work), Materials (Products), Subcontracting.
 		 * @param {boolean} isBillable Optional: Filter the project fees. If true/false, only the billable/non-billable ones are returned. If null, all are returned. Default is null.
 		 * @param {boolean} isBilled Optional: Filter the project fees. If true/false, only the ones that are/are not invoiced are returned. If null, all are returned. Default is null.
@@ -16681,7 +18078,9 @@ export namespace MyNS {
 		 * @param {string} userGuid Guid of the user.
 		 * @param {boolean} isProjectClosed Search only for open or closed projects. Default all projects.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<ProjectMemberCostExceptionOutputModel>} All the member cost exceptions for one project.
 		 */
 		ProjectMemberCostExceptions_GetProjectMemberCostExceptionsForUser(userGuid: string, isProjectClosed: boolean | null | undefined, firstRow: number | null | undefined, rowCount: number | null | undefined): Observable<Array<ProjectMemberCostExceptionOutputModel>> {
@@ -16693,9 +18092,12 @@ export namespace MyNS {
 		 * Get v1/users/{userGuid}/projecttravelexpenses
 		 * @param {string} userGuid ID of the user.
 		 * @param {Date} startDate Optional: starting date from which to get the travel expenses. Default all.
+		 *     Type: DateOnly
 		 * @param {Date} endDate Optional: starting date to which to get the travel expenses. Default all.
+		 *     Type: DateOnly
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ExpensesClass} expenseClass Optional: Class of the expense. Mileage, DailyAllowance or OtherTravelExpense
 		 * @param {boolean} isReimbursed Optional. Filter the project travel expenses. If true/false, only the ones that are reimbursed are returned. If null, all are returned. Default is null.
 		 * @param {boolean} isTravelReimbursementRequired Optional: Filter the project travel expenses by whether or not the reimbursement is required. Default all.
@@ -16714,8 +18116,8 @@ export namespace MyNS {
 		 * @param {Date} endDate Get resource allocations with endDate. Using startDate and endDate or changedSince parameters are required to fetch a maximum of 30 days
 		 * @param {Date} changedSince Optional: Get resource allocations that have been added or changed after this date time (greater or equal).
 		 * @param {number} rowCount Optional: Number of rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional: page token to fetch the next page.
-		 * @return {ResourceAllocationOutputModel} 
 		 */
 		ResourceAllocations_GetResourceAllocationsByUserGuid(userGuid: string, startDate: Date | null | undefined, endDate: Date | null | undefined, changedSince: Date | null | undefined, userLicenseTypes: Array<LicenseUserType> | null | undefined, phaseGuid: string | null | undefined, projectGuid: string | null | undefined, projectBusinessUnitGuid: string | null | undefined, userBusinessUnitGuid: string | null | undefined, projectManagerUserGuid: string | null | undefined, userTagGuid: string | null | undefined, useSalesProbability: boolean | null | undefined, projectStatusTypeGuid: string | null | undefined, projectTagGuid: string | null | undefined, superiorUserGuid: string | null | undefined, salesStatusTypeGuid: string | null | undefined, resourceAllocationGuid: string | null | undefined, salesProgress: SalesProgress | null | undefined, rowCount: number | null | undefined, pageToken: string | null | undefined): Observable<ResourceAllocationOutputModel> {
 			return this.http.get<ResourceAllocationOutputModel>(this.baseUri + 'v1/users/' + (userGuid == null ? '' : encodeURIComponent(userGuid)) + '/resourceallocations/allocations&startDate=' + startDate?.toISOString() + '&endDate=' + endDate?.toISOString() + '&changedSince=' + changedSince?.toISOString() + '&' + userLicenseTypes?.map(z => `userLicenseTypes=${z}`).join('&') + '&phaseGuid=' + (phaseGuid == null ? '' : encodeURIComponent(phaseGuid)) + '&projectGuid=' + (projectGuid == null ? '' : encodeURIComponent(projectGuid)) + '&projectBusinessUnitGuid=' + (projectBusinessUnitGuid == null ? '' : encodeURIComponent(projectBusinessUnitGuid)) + '&userBusinessUnitGuid=' + (userBusinessUnitGuid == null ? '' : encodeURIComponent(userBusinessUnitGuid)) + '&projectManagerUserGuid=' + (projectManagerUserGuid == null ? '' : encodeURIComponent(projectManagerUserGuid)) + '&userTagGuid=' + (userTagGuid == null ? '' : encodeURIComponent(userTagGuid)) + '&useSalesProbability=' + useSalesProbability + '&projectStatusTypeGuid=' + (projectStatusTypeGuid == null ? '' : encodeURIComponent(projectStatusTypeGuid)) + '&projectTagGuid=' + (projectTagGuid == null ? '' : encodeURIComponent(projectTagGuid)) + '&superiorUserGuid=' + (superiorUserGuid == null ? '' : encodeURIComponent(superiorUserGuid)) + '&salesStatusTypeGuid=' + (salesStatusTypeGuid == null ? '' : encodeURIComponent(salesStatusTypeGuid)) + '&resourceAllocationGuid=' + (resourceAllocationGuid == null ? '' : encodeURIComponent(resourceAllocationGuid)) + '&salesProgress=' + salesProgress + '&rowCount=' + rowCount + '&pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)), {});
@@ -16730,7 +18132,9 @@ export namespace MyNS {
 		 * @param {Array<string>} phaseGuid Optional: Filters time entries for given phases.
 		 * @param {Array<string>} timeEntryTypeGuid Optional: Filters time entries for given time entry types.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TimeEntryModel>} TimeEntries.
 		 */
 		TimeEntries_GetTimeEntriesForUser(userGuid: string, startDate: Date | null | undefined, endDate: Date | null | undefined, phaseGuid: Array<string> | null | undefined, timeEntryTypeGuid: Array<string> | null | undefined, firstRow: number | null | undefined, rowCount: number | null | undefined): Observable<Array<TimeEntryModel>> {
@@ -16742,7 +18146,9 @@ export namespace MyNS {
 		 * Get v1/users/{userGuid}/travelexpensesfiles
 		 * @param {string} userGuid GUID of the user used to get the files attached to travel expenses.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} startDate Optional: Start date to from which to check travel expenses.
 		 * @param {Date} endDate Optional: End date to check for availability until travel expenses.
 		 * @return {Array<ProjectTravelExpenseFileModel>} TravelExpenseFile.
@@ -16805,6 +18211,7 @@ export namespace MyNS {
 		 * @param {Array<string>} workTypeGuid Optional: ID of the work type. Default all.
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<WorkHourOutputModel>} WorkHours
 		 */
 		WorkHours_GetWorkHoursForUser(userGuid: string, startDate: Date | null | undefined, endDate: Date | null | undefined, phaseGuid: Array<string> | null | undefined, workTypeGuid: Array<string> | null | undefined, pageToken: string | null | undefined, rowCount: number | null | undefined): Observable<Array<WorkHourOutputModel>> {
@@ -16890,7 +18297,6 @@ export namespace MyNS {
 		 * Get work contract by ID.
 		 * Get v1/workcontracts/{guid}
 		 * @param {string} guid Id used to get the work contract.
-		 * @return {WorkContractOutputModel} 
 		 */
 		WorkContracts_GetWorkContract(guid: string): Observable<WorkContractOutputModel> {
 			return this.http.get<WorkContractOutputModel>(this.baseUri + 'v1/workcontracts/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -16911,7 +18317,6 @@ export namespace MyNS {
 		 * Get work hour price by ID.
 		 * Get v1/workhourprices/{guid}
 		 * @param {string} guid Id used to get the work hour price.
-		 * @return {WorkHourPriceOutputModel} 
 		 */
 		WorkHourPrices_GetWorkHourPrice(guid: string): Observable<WorkHourPriceOutputModel> {
 			return this.http.get<WorkHourPriceOutputModel>(this.baseUri + 'v1/workhourprices/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -16922,11 +18327,13 @@ export namespace MyNS {
 		 * Get v1/workhours
 		 * @param {string} pageToken Optional: page token to fetch the next page.
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} changedSince Optional: Get work hours that have been added or changed after this date time (greater or equal).
 		 * @param {BillableStatusType} billableStatus Billable status type
 		 * @param {Date} eventDateStart Optional: Get work hours that have event date after this date time (greater or equal).
+		 *     Type: DateOnly
 		 * @param {Date} eventDateEnd Optional: Get work hours that have event date before this date time (less or equal).
-		 * @return {Array<WorkHourOutputModel>} 
+		 *     Type: DateOnly
 		 */
 		WorkHours_GetWorkHours(pageToken: string | null | undefined, rowCount: number | null | undefined, changedSince: Date | null | undefined, billableStatus: BillableStatusType | null | undefined, eventDateStart: Date | null | undefined, eventDateEnd: Date | null | undefined): Observable<Array<WorkHourOutputModel>> {
 			return this.http.get<Array<WorkHourOutputModel>>(this.baseUri + 'v1/workhours?pageToken=' + (pageToken == null ? '' : encodeURIComponent(pageToken)) + '&rowCount=' + rowCount + '&changedSince=' + changedSince?.toISOString() + '&billableStatus=' + billableStatus + '&eventDateStart=' + eventDateStart?.toISOString() + '&eventDateEnd=' + eventDateEnd?.toISOString(), {});
@@ -16957,7 +18364,6 @@ export namespace MyNS {
 		 * Get work hour by ID
 		 * Get v1/workhours/{guid}
 		 * @param {string} guid Id used to get the work hour.
-		 * @return {WorkHourOutputModel} 
 		 */
 		WorkHours_GetWorkHour(guid: string): Observable<WorkHourOutputModel> {
 			return this.http.get<WorkHourOutputModel>(this.baseUri + 'v1/workhours/' + (guid == null ? '' : encodeURIComponent(guid)), {});
@@ -16980,7 +18386,9 @@ export namespace MyNS {
 		 * @param {boolean} active Filter the work types. If true/false, only the active/inactive ones are returned. If null, all the work types are returned.
 		 * @param {boolean} productive Filter the work types. If true/false, only the productive/non-productive ones are returned. If null, all the work types are returned.
 		 * @param {number} firstRow Optional: first row to fetch. Default 0 = first row.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} rowCount Optional: How many rows to fetch, Default 20, maximum 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} textToSearch Optional: Text to search from work type name or code.
 		 * @param {string} code Optional: Code of the work type.
 		 * @param {Date} changedSince Optional: Get work types that have been added or changed after this date time (greater or equal).
@@ -17018,7 +18426,6 @@ export namespace MyNS {
 		 * Get work type by ID.
 		 * Get v1/worktypes/{guid}
 		 * @param {string} guid Id used to get the work type.
-		 * @return {WorkTypeOutputModel} 
 		 */
 		WorkTypes_GetWorkType(guid: string): Observable<WorkTypeOutputModel> {
 			return this.http.get<WorkTypeOutputModel>(this.baseUri + 'v1/worktypes/' + (guid == null ? '' : encodeURIComponent(guid)), {});

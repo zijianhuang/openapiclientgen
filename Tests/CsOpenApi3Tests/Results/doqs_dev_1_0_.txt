@@ -976,6 +976,10 @@ namespace MyNS
 		/// List Templates
 		/// List_templates_designer_templates_get designer/templates
 		/// </summary>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Minimum: 0</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResponseOk_List_fillrentitiesdesigner_templateDesignerTemplate__> List_templates_designer_templates_getAsync(int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1228,6 +1232,10 @@ namespace MyNS
 		/// List
 		/// List templates
 		/// </summary>
+		/// <param name="limit">Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Minimum: 0</param>
 		/// <returns>Successful Response</returns>
 		public async Task<ResponseOk_List_appsapiroutes_templatesTemplate__> ListAsync(int limit, int offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

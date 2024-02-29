@@ -134,12 +134,16 @@ export namespace MyNS {
 		quantityContext?: OrderLineItemQuantitiesQuantityContext | null;
 		quantityType?: OrderLineItemQuantitiesQuantityType | null;
 		quantityUOM?: OrderLineItemQuantitiesQuantityUOM | null;
+
+		/** Type: double */
 		quantityValue?: number | null;
 	}
 	export interface OrderLineItemQuantitiesFormProperties {
 		quantityContext: FormControl<OrderLineItemQuantitiesQuantityContext | null | undefined>,
 		quantityType: FormControl<OrderLineItemQuantitiesQuantityType | null | undefined>,
 		quantityUOM: FormControl<OrderLineItemQuantitiesQuantityUOM | null | undefined>,
+
+		/** Type: double */
 		quantityValue: FormControl<number | null | undefined>,
 	}
 	export function CreateOrderLineItemQuantitiesFormGroup() {

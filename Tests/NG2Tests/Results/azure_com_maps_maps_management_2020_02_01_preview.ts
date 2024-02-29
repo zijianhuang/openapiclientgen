@@ -434,6 +434,7 @@ export namespace MyNS {
 		 * List operations available for the Maps Resource Provider
 		 * Get providers/Microsoft.Maps/operations
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @return {MapsOperations} The request was successful.
 		 */
 		Maps_ListOperations(api_version: string): Observable<MapsOperations> {
@@ -444,7 +445,9 @@ export namespace MyNS {
 		 * Get all Maps Accounts in a Subscription
 		 * Get subscriptions/{subscriptionId}/providers/Microsoft.Maps/accounts
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {MapsAccounts} The request was successful.
 		 */
 		Accounts_ListBySubscription(api_version: string, subscriptionId: string): Observable<MapsAccounts> {
@@ -455,8 +458,11 @@ export namespace MyNS {
 		 * Get all Maps Accounts in a Resource Group
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @return {MapsAccounts} The request was successful.
 		 */
 		Accounts_ListByResourceGroup(api_version: string, subscriptionId: string, resourceGroupName: string): Observable<MapsAccounts> {
@@ -467,8 +473,11 @@ export namespace MyNS {
 		 * Get a Maps Account.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the Maps Account.
 		 * @return {MapsAccount} The request was successful.
 		 */
@@ -480,8 +489,11 @@ export namespace MyNS {
 		 * Create or update a Maps Account. A Maps Account holds the keys which allow access to the Maps REST APIs.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the Maps Account.
 		 * @param {MapsAccountCreateParameters} requestBody The new or updated parameters for the Maps Account.
 		 * @return {MapsAccount} The Account was successfully updated.
@@ -494,8 +506,11 @@ export namespace MyNS {
 		 * Delete a Maps Account.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the Maps Account.
 		 * @return {void} The Account was deleted successfully.
 		 */
@@ -507,8 +522,11 @@ export namespace MyNS {
 		 * Updates a Maps Account. Only a subset of the parameters may be updated after creation, such as Sku and Tags.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the Maps Account.
 		 * @param {MapsAccountUpdateParameters} requestBody The updated parameters for the Maps Account.
 		 * @return {MapsAccount} The Account was successfully updated.
@@ -521,8 +539,11 @@ export namespace MyNS {
 		 * Get the keys to use with the Maps APIs. A key is used to authenticate and authorize access to the Maps REST APIs. Only one key is needed at a time; two are given to provide seamless key regeneration.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/listKeys
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the Maps Account.
 		 * @return {MapsAccountKeys} The request was successful.
 		 */
@@ -534,8 +555,11 @@ export namespace MyNS {
 		 * Get all Private Atlas instances for an Azure Map Account
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateAtlases
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the Maps Account.
 		 * @return {PrivateAtlasList} The request was successful.
 		 */
@@ -547,8 +571,11 @@ export namespace MyNS {
 		 * Get a Private Atlas resource.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateAtlases/{privateAtlasName}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the Maps Account.
 		 * @param {string} privateAtlasName The name of the Private Atlas instance.
 		 * @return {PrivateAtlas} The request was successful.
@@ -561,8 +588,11 @@ export namespace MyNS {
 		 * Create or update a Private Atlas resource. Private Atlas resource will enable the usage of Azure resources to build a custom set of mapping data. It requires an account to exist before it can be created.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateAtlases/{privateAtlasName}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the Maps Account.
 		 * @param {string} privateAtlasName The name of the Private Atlas instance.
 		 * @param {PrivateAtlasCreateParameters} requestBody The new or updated parameters for the Private Atlas resource.
@@ -576,8 +606,11 @@ export namespace MyNS {
 		 * Delete a Private Atlas resource.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateAtlases/{privateAtlasName}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the Maps Account.
 		 * @param {string} privateAtlasName The name of the Private Atlas instance.
 		 * @return {void} The Private Atlas was deleted successfully.
@@ -590,8 +623,11 @@ export namespace MyNS {
 		 * Updates the Private Atlas resource. Only a subset of the parameters may be updated after creation, such as Tags.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/privateAtlases/{privateAtlasName}
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the Maps Account.
 		 * @param {string} privateAtlasName The name of the Private Atlas instance.
 		 * @param {PrivateAtlasUpdateParameters} requestBody The updated parameters for the Private Atlas.
@@ -605,8 +641,11 @@ export namespace MyNS {
 		 * Regenerate either the primary or secondary key for use with the Maps APIs. The old key will stop working immediately.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Maps/accounts/{accountName}/regenerateKey
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} accountName The name of the Maps Account.
 		 * @param {MapsKeySpecification} requestBody Which key to regenerate:  primary or secondary.
 		 * @return {MapsAccountKeys} The request was successful.

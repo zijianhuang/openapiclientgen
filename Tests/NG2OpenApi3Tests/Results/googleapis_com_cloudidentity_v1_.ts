@@ -203,14 +203,20 @@ export namespace MyNS {
 	/** Information of a DSA public key. */
 	export interface DsaPublicKeyInfo {
 
-		/** Key size in bits (size of parameter P). */
+		/**
+		 * Key size in bits (size of parameter P).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keySize?: number | null;
 	}
 
 	/** Information of a DSA public key. */
 	export interface DsaPublicKeyInfoFormProperties {
 
-		/** Key size in bits (size of parameter P). */
+		/**
+		 * Key size in bits (size of parameter P).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keySize: FormControl<number | null | undefined>,
 	}
 	export function CreateDsaPublicKeyInfoFormGroup() {
@@ -1302,7 +1308,10 @@ export namespace MyNS {
 		/** Represents a boolean value. */
 		boolValue?: boolean | null;
 
-		/** Represents a double value. */
+		/**
+		 * Represents a double value.
+		 * Type: double
+		 */
 		numberValue?: number | null;
 
 		/** Represents a string value. */
@@ -1315,7 +1324,10 @@ export namespace MyNS {
 		/** Represents a boolean value. */
 		boolValue: FormControl<boolean | null | undefined>,
 
-		/** Represents a double value. */
+		/**
+		 * Represents a double value.
+		 * Type: double
+		 */
 		numberValue: FormControl<number | null | undefined>,
 
 		/** Represents a string value. */
@@ -1755,14 +1767,20 @@ export namespace MyNS {
 	/** Information of a RSA public key. */
 	export interface RsaPublicKeyInfo {
 
-		/** Key size in bits (size of the modulus). */
+		/**
+		 * Key size in bits (size of the modulus).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keySize?: number | null;
 	}
 
 	/** Information of a RSA public key. */
 	export interface RsaPublicKeyInfoFormProperties {
 
-		/** Key size in bits (size of the modulus). */
+		/**
+		 * Key size in bits (size of the modulus).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keySize: FormControl<number | null | undefined>,
 	}
 	export function CreateRsaPublicKeyInfoFormGroup() {
@@ -1893,7 +1911,10 @@ export namespace MyNS {
 		/** Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Inbound SSO Assignment. */
 		name?: string | null;
 
-		/** Must be zero (which is the default value so it can be omitted) for assignments with `target_org_unit` set and must be greater-than-or-equal-to one for assignments with `target_group` set. */
+		/**
+		 * Must be zero (which is the default value so it can be omitted) for assignments with `target_org_unit` set and must be greater-than-or-equal-to one for assignments with `target_group` set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rank?: number | null;
 
 		/** Details that are applicable when `sso_mode` == `SAML_SSO`. */
@@ -1921,7 +1942,10 @@ export namespace MyNS {
 		/** Output only. [Resource name](https://cloud.google.com/apis/design/resource_names) of the Inbound SSO Assignment. */
 		name: FormControl<string | null | undefined>,
 
-		/** Must be zero (which is the default value so it can be omitted) for assignments with `target_org_unit` set and must be greater-than-or-equal-to one for assignments with `target_group` set. */
+		/**
+		 * Must be zero (which is the default value so it can be omitted) for assignments with `target_org_unit` set and must be greater-than-or-equal-to one for assignments with `target_group` set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rank: FormControl<number | null | undefined>,
 
 		/** Inbound SSO behavior. */
@@ -2491,7 +2515,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -2504,7 +2531,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2720,6 +2750,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Additional restrictions when fetching list of devices. For a list of search fields, refer to [Mobile device search fields](https://developers.google.com/admin-sdk/directory/v1/search-operators). Multiple search fields are separated by the space character.
 		 * @param {string} orderBy Optional. Order specification for devices in the response. Only one of the following field names may be used to specify the order: `create_time`, `last_sync_time`, `model`, `os_version`, `device_type` and `serial_number`. `desc` may be specified optionally at the end to specify results to be sorted in descending order. Default order is ascending.
 		 * @param {number} pageSize Optional. The maximum number of Devices to return. If unspecified, at most 20 Devices will be returned. The maximum value is 100; values above 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListDevices` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDevices` must match the call that provided the page token.
 		 * @param {Cloudidentity_devices_listView} view Optional. The view to use for the List request.
 		 * @return {GoogleAppsCloudidentityDevicesV1ListDevicesResponse} Successful response
@@ -2742,6 +2773,7 @@ export namespace MyNS {
 		 * Lists the `Group` resources under a customer or namespace.
 		 * Get v1/groups
 		 * @param {number} pageSize The maximum number of results to return. Note that the number of results returned may be less than this value even if there are more available results. To fetch all results, clients must continue calling this method repeatedly until the response no longer contains a `next_page_token`. If unspecified, defaults to 200 for `View.BASIC` and to 50 for `View.FULL`. Must not be greater than 1000 for `View.BASIC` or 500 for `View.FULL`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The `next_page_token` value returned from a previous list request, if any.
 		 * @param {string} parent Required. The parent resource under which to list all `Group` resources. Must be of the form `identitysources/{identity_source}` for external- identity-mapped groups or `customers/{customer_id}` for Google Groups. The `customer_id` must begin with "C" (for example, 'C046psxkn'). [Find your customer ID.] (https://support.google.com/cloudidentity/answer/10070793)
 		 * @param {Cloudidentity_groups_listView} view The level of detail to be returned. If unspecified, defaults to `View.BASIC`.
@@ -2776,6 +2808,7 @@ export namespace MyNS {
 		 * Searches for `Group` resources matching a specified query.
 		 * Get v1/groups:search
 		 * @param {number} pageSize The maximum number of results to return. Note that the number of results returned may be less than this value even if there are more available results. To fetch all results, clients must continue calling this method repeatedly until the response no longer contains a `next_page_token`. If unspecified, defaults to 200 for `GroupView.BASIC` and 50 for `GroupView.FULL`. Must not be greater than 1000 for `GroupView.BASIC` or 500 for `GroupView.FULL`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The `next_page_token` value returned from a previous search request, if any.
 		 * @param {string} query Required. The search query. * Must be specified in [Common Expression Language](https://opensource.google/projects/cel). * Must contain equality operators on the parent, e.g. `parent == 'customers/{customer_id}'`. The `customer_id` must begin with "C" (for example, 'C046psxkn'). [Find your customer ID.] (https://support.google.com/cloudidentity/answer/10070793) * Can contain optional inclusion operators on `labels` such as `'cloudidentity.googleapis.com/groups.discussion_forum' in labels`). * Can contain an optional equality operator on `domain_name`. e.g. `domain_name == 'examplepetstore.com'` * Can contain optional `startsWith/contains/equality` operators on `group_key`, e.g. `group_key.startsWith('dev')`, `group_key.contains('dev'), group_key == 'dev@examplepetstore.com'` * Can contain optional `startsWith/contains/equality` operators on `display_name`, such as `display_name.startsWith('dev')` , `display_name.contains('dev')`, `display_name == 'dev'`
 		 * @param {Cloudidentity_groups_listView} view The level of detail to be returned. If unspecified, defaults to `View.BASIC`.
@@ -2790,6 +2823,7 @@ export namespace MyNS {
 		 * Get v1/inboundSamlSsoProfiles
 		 * @param {string} filter A [Common Expression Language](https://github.com/google/cel-spec) expression to filter the results. The only supported filter is filtering by customer. For example: `customer=="customers/C0123abc"`. Omitting the filter or specifying a filter of `customer=="customers/my_customer"` will return the profiles for the customer that the caller (authenticated user) belongs to.
 		 * @param {number} pageSize The maximum number of InboundSamlSsoProfiles to return. The service may return fewer than this value. If omitted (or defaulted to zero) the server will use a sensible default. This default may change over time. The maximum allowed value is 100. Requests with page_size greater than that will be silently interpreted as having this maximum value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListInboundSamlSsoProfiles` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListInboundSamlSsoProfiles` must match the call that provided the page token.
 		 * @return {ListInboundSamlSsoProfilesResponse} Successful response
 		 */
@@ -2811,6 +2845,7 @@ export namespace MyNS {
 		 * Get v1/inboundSsoAssignments
 		 * @param {string} filter A CEL expression to filter the results. The only supported filter is filtering by customer. For example: `customer==customers/C0123abc`. Omitting the filter or specifying a filter of `customer==customers/my_customer` will return the assignments for the customer that the caller (authenticated user) belongs to.
 		 * @param {number} pageSize The maximum number of assignments to return. The service may return fewer than this value. If omitted (or defaulted to zero) the server will use a sensible default. This default may change over time. The maximum allowed value is 100, though requests with page_size greater than that will be silently interpreted as having this maximum value. This may increase in the futue.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListInboundSsoAssignments` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListInboundSsoAssignments` must match the call that provided the page token.
 		 * @return {ListInboundSsoAssignmentsResponse} Successful response
 		 */
@@ -2962,6 +2997,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Additional restrictions when fetching list of devices. For a list of search fields, refer to [Mobile device search fields](https://developers.google.com/admin-sdk/directory/v1/search-operators). Multiple search fields are separated by the space character.
 		 * @param {string} orderBy Optional. Order specification for devices in the response.
 		 * @param {number} pageSize Optional. The maximum number of DeviceUsers to return. If unspecified, at most 5 DeviceUsers will be returned. The maximum value is 20; values above 20 will be coerced to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListDeviceUsers` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBooks` must match the call that provided the page token.
 		 * @return {GoogleAppsCloudidentityDevicesV1ListDeviceUsersResponse} Successful response
 		 */
@@ -2974,6 +3010,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/idpCredentials
 		 * @param {string} parent Required. The parent, which owns this collection of `IdpCredential`s. Format: `inboundSamlSsoProfiles/{sso_profile_id}`
 		 * @param {number} pageSize The maximum number of `IdpCredential`s to return. The service may return fewer than this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListIdpCredentials` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListIdpCredentials` must match the call that provided the page token.
 		 * @return {ListIdpCredentialsResponse} Successful response
 		 */
@@ -2996,6 +3033,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/memberships
 		 * @param {string} parent Required. The parent `Group` resource under which to lookup the `Membership` name. Must be of the form `groups/{group}`.
 		 * @param {number} pageSize The maximum number of results to return. Note that the number of results returned may be less than this value even if there are more available results. To fetch all results, clients must continue calling this method repeatedly until the response no longer contains a `next_page_token`. If unspecified, defaults to 200 for `GroupView.BASIC` and to 50 for `GroupView.FULL`. Must not be greater than 1000 for `GroupView.BASIC` or 500 for `GroupView.FULL`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The `next_page_token` value returned from a previous search request, if any.
 		 * @param {Cloudidentity_groups_listView} view The level of detail to be returned. If unspecified, defaults to `View.BASIC`.
 		 * @return {ListMembershipsResponse} Successful response
@@ -3054,6 +3092,7 @@ export namespace MyNS {
 		 * @param {string} parent [Resource name](https://cloud.google.com/apis/design/resource_names) of the group to search transitive memberships in. Format: groups/{group_id}, where group_id is always '-' as this API will search across all groups for a given member.
 		 * @param {string} orderBy The ordering of membership relation for the display name or email in the response. The syntax for this field can be found at https://cloud.google.com/apis/design/design_patterns#sorting_order. Example: Sort by the ascending display name: order_by="group_name" or order_by="group_name asc". Sort by the descending display name: order_by="group_name desc". Sort by the ascending group key: order_by="group_key" or order_by="group_key asc". Sort by the descending group key: order_by="group_key desc".
 		 * @param {number} pageSize The default page size is 200 (max 1000).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous list request, if any
 		 * @param {string} query Required. A CEL expression that MUST include member specification AND label(s). Users can search on label attributes of groups. CONTAINS match ('in') is supported on labels. Identity-mapped groups are uniquely identified by both a `member_key_id` and a `member_key_namespace`, which requires an additional query input: `member_key_namespace`. Example query: `member_key_id == 'member_key_id_value' && 'label_value' in labels`
 		 * @return {SearchDirectGroupsResponse} Successful response
@@ -3067,6 +3106,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/memberships:searchTransitiveGroups
 		 * @param {string} parent [Resource name](https://cloud.google.com/apis/design/resource_names) of the group to search transitive memberships in. Format: `groups/{group}`, where `group` is always '-' as this API will search across all groups for a given member.
 		 * @param {number} pageSize The default page size is 200 (max 1000).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous list request, if any.
 		 * @param {string} query Required. A CEL expression that MUST include member specification AND label(s). This is a `required` field. Users can search on label attributes of groups. CONTAINS match ('in') is supported on labels. Identity-mapped groups are uniquely identified by both a `member_key_id` and a `member_key_namespace`, which requires an additional query input: `member_key_namespace`. Example query: `member_key_id == 'member_key_id_value' && in labels` Query may optionally contain equality operators on the parent of the group restricting the search within a particular customer, e.g. `parent == 'customers/{customer_id}'`. The `customer_id` must begin with "C" (for example, 'C046psxkn'). This filtering is only supported for Admins with groups read permissons on the input customer. Example query: `member_key_id == 'member_key_id_value' && in labels && parent == 'customers/C046psxkn'`
 		 * @return {SearchTransitiveGroupsResponse} Successful response
@@ -3080,6 +3120,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/memberships:searchTransitiveMemberships
 		 * @param {string} parent [Resource name](https://cloud.google.com/apis/design/resource_names) of the group to search transitive memberships in. Format: `groups/{group}`, where `group` is the unique ID assigned to the Group.
 		 * @param {number} pageSize The default page size is 200 (max 1000).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous list request, if any.
 		 * @return {SearchTransitiveMembershipsResponse} Successful response
 		 */
@@ -3094,6 +3135,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. A query string for filtering `UserInvitation` results by their current state, in the format: `"state=='invited'"`.
 		 * @param {string} orderBy Optional. The sort order of the list results. You can sort the results in descending order based on either email or last update timestamp but not both, using `order_by="email desc"`. Currently, sorting is supported for `update_time asc`, `update_time desc`, `email asc`, and `email desc`. If not specified, results will be returned based on `email asc` order.
 		 * @param {number} pageSize Optional. The maximum number of UserInvitation resources to return. If unspecified, at most 100 resources will be returned. The maximum value is 200; values above 200 will be set to 200.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListUserInvitations` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListBooks` must match the call that provided the page token.
 		 * @return {ListUserInvitationsResponse} Successful response
 		 */
@@ -3107,6 +3149,7 @@ export namespace MyNS {
 		 * @param {string} parent Must be set to "devices/-/deviceUsers" to search across all DeviceUser belonging to the user.
 		 * @param {string} androidId Android Id returned by [Settings.Secure#ANDROID_ID](https://developer.android.com/reference/android/provider/Settings.Secure.html#ANDROID_ID).
 		 * @param {number} pageSize The maximum number of DeviceUsers to return. If unspecified, at most 20 DeviceUsers will be returned. The maximum value is 20; values above 20 will be coerced to 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `LookupDeviceUsers` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `LookupDeviceUsers` must match the call that provided the page token.
 		 * @param {string} rawResourceId Raw Resource Id used by Google Endpoint Verification. If the user is enrolled into Google Endpoint Verification, this id will be saved as the 'device_resource_id' field in the following platform dependent files. Mac: ~/.secureConnect/context_aware_config.json Windows: C:\Users\%USERPROFILE%\.secureConnect\context_aware_config.json Linux: ~/.secureConnect/context_aware_config.json
 		 * @param {string} userId The user whose DeviceUser's resource name will be fetched. Must be set to 'me' to fetch the DeviceUser's resource name for the calling user.

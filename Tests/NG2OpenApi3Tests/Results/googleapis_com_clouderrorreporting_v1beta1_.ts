@@ -60,7 +60,10 @@ export namespace MyNS {
 		/** The IP address from which the request originated. This can be IPv4, IPv6, or a token which is derived from the IP address, depending on the data that has been provided in the error report. */
 		remoteIp?: string | null;
 
-		/** The HTTP response status code for the request. */
+		/**
+		 * The HTTP response status code for the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode?: number | null;
 
 		/** The URL of the request. */
@@ -82,7 +85,10 @@ export namespace MyNS {
 		/** The IP address from which the request originated. This can be IPv4, IPv6, or a token which is derived from the IP address, depending on the data that has been provided in the error report. */
 		remoteIp: FormControl<string | null | undefined>,
 
-		/** The HTTP response status code for the request. */
+		/**
+		 * The HTTP response status code for the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responseStatusCode: FormControl<number | null | undefined>,
 
 		/** The URL of the request. */
@@ -113,7 +119,10 @@ export namespace MyNS {
 		/** Human-readable name of a function or method. The value can include optional context like the class or package name. For example, `my.package.MyClass.method` in case of Java. */
 		functionName?: string | null;
 
-		/** 1-based. 0 indicates that the line number is unknown. */
+		/**
+		 * 1-based. 0 indicates that the line number is unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber?: number | null;
 	}
 
@@ -126,7 +135,10 @@ export namespace MyNS {
 		/** Human-readable name of a function or method. The value can include optional context like the class or package name. For example, `my.package.MyClass.method` in case of Java. */
 		functionName: FormControl<string | null | undefined>,
 
-		/** 1-based. 0 indicates that the line number is unknown. */
+		/**
+		 * 1-based. 0 indicates that the line number is unknown.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateSourceLocationFormGroup() {
@@ -318,7 +330,10 @@ export namespace MyNS {
 		/** Approximate last occurrence that was ever seen for this group and which matches the given filter criteria, ignoring the time_range that was specified in the request. */
 		lastSeenTime?: string | null;
 
-		/** The total number of services with a non-zero error count for the given filter criteria. */
+		/**
+		 * The total number of services with a non-zero error count for the given filter criteria.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numAffectedServices?: number | null;
 
 		/** An error event which is returned by the Error Reporting system. */
@@ -343,7 +358,10 @@ export namespace MyNS {
 		/** Approximate last occurrence that was ever seen for this group and which matches the given filter criteria, ignoring the time_range that was specified in the request. */
 		lastSeenTime: FormControl<string | null | undefined>,
 
-		/** The total number of services with a non-zero error count for the given filter criteria. */
+		/**
+		 * The total number of services with a non-zero error count for the given filter criteria.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numAffectedServices: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorGroupStatsFormGroup() {
@@ -543,6 +561,7 @@ export namespace MyNS {
 		 * @param {string} projectName Required. The resource name of the Google Cloud Platform project. Written as `projects/{projectID}`, where `{projectID}` is the [Google Cloud Platform project ID](https://support.google.com/cloud/answer/6158840). Example: `projects/my-project-123`.
 		 * @param {string} groupId Required. The group for which events shall be returned. The `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice](https://cloud.google.com/terms/cloud-privacy-notice).
 		 * @param {number} pageSize Optional. The maximum number of results to return per response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A `next_page_token` provided by a previous response.
 		 * @param {string} serviceFilter_resourceType Optional. The exact value to match against [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
 		 * @param {string} serviceFilter_service Optional. The exact value to match against [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).
@@ -573,6 +592,7 @@ export namespace MyNS {
 		 * @param {Array<string>} groupId Optional. List all ErrorGroupStats with these IDs. The `group_id` is a unique identifier for a particular error group. The identifier is derived from key parts of the error-log content and is treated as Service Data. For information about how Service Data is handled, see [Google Cloud Privacy Notice] (https://cloud.google.com/terms/cloud-privacy-notice).
 		 * @param {Clouderrorreporting_projects_groupStats_listOrder} order Optional. The sort order in which the results are returned. Default is `COUNT_DESC`.
 		 * @param {number} pageSize Optional. The maximum number of results to return per response. Default is 20.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A next_page_token provided by a previous response. To view additional results, pass this token along with the identical query parameters as the first request.
 		 * @param {string} serviceFilter_resourceType Optional. The exact value to match against [`ServiceContext.resource_type`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.resource_type).
 		 * @param {string} serviceFilter_service Optional. The exact value to match against [`ServiceContext.service`](/error-reporting/reference/rest/v1beta1/ServiceContext#FIELDS.service).

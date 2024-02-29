@@ -63,6 +63,8 @@ export namespace MyNS {
 		 * 2017-04-05T10:43:07+00:00
 		 */
 		LastAvailableDateTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalPages?: number | null;
 	}
 
@@ -82,6 +84,8 @@ export namespace MyNS {
 		 * 2017-04-05T10:43:07+00:00
 		 */
 		LastAvailableDateTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -94,14 +98,18 @@ export namespace MyNS {
 	}
 
 	export interface Model {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface ModelFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateModelFormGroup() {
 		return new FormGroup<ModelFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -114,8 +122,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -141,15 +149,15 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description?: string | null;
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname?: string | null;
 
@@ -173,8 +181,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -200,15 +208,15 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname: FormControl<string | null | undefined>,
 
@@ -241,16 +249,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -263,8 +271,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -273,16 +281,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -295,8 +303,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -321,8 +329,8 @@ export namespace MyNS {
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: string;
 
@@ -339,8 +347,8 @@ export namespace MyNS {
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -367,8 +375,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -394,15 +402,15 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description?: string | null;
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname?: string | null;
 
@@ -423,8 +431,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -450,15 +458,15 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname: FormControl<string | null | undefined>,
 
@@ -496,8 +504,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -523,15 +531,15 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description?: string | null;
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname?: string | null;
 
@@ -555,8 +563,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -582,15 +590,15 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname: FormControl<string | null | undefined>,
 
@@ -623,16 +631,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -645,8 +653,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -655,16 +663,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -677,8 +685,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -706,8 +714,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -726,8 +734,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description?: string | null;
 
@@ -740,8 +748,8 @@ export namespace MyNS {
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname?: string | null;
 
@@ -781,8 +789,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -801,8 +809,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -815,8 +823,8 @@ export namespace MyNS {
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname: FormControl<string | null | undefined>,
 
@@ -862,16 +870,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -884,8 +892,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -894,16 +902,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -916,8 +924,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -938,8 +946,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -965,8 +973,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description?: string | null;
 
@@ -979,8 +987,8 @@ export namespace MyNS {
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname?: string | null;
 
@@ -1011,8 +1019,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -1038,8 +1046,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -1052,8 +1060,8 @@ export namespace MyNS {
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname: FormControl<string | null | undefined>,
 
@@ -1104,8 +1112,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -1131,8 +1139,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description?: string | null;
 
@@ -1145,8 +1153,8 @@ export namespace MyNS {
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname?: string | null;
 
@@ -1180,8 +1188,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -1207,8 +1215,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -1221,8 +1229,8 @@ export namespace MyNS {
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname: FormControl<string | null | undefined>,
 
@@ -1268,16 +1276,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -1290,8 +1298,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -1300,16 +1308,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -1322,8 +1330,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -1972,8 +1980,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a BCA.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
@@ -2033,8 +2041,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a BCA.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -2075,24 +2083,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -2100,24 +2108,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -2134,24 +2142,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -2159,24 +2167,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -2193,24 +2201,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -2218,24 +2226,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -2265,8 +2273,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the tariff
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		TariffName?: string | null;
 
@@ -2277,8 +2285,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the tariff
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		TariffName: FormControl<string | null | undefined>,
 
@@ -2301,7 +2309,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -2331,7 +2342,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -2358,24 +2372,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -2383,24 +2397,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -2569,7 +2583,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -2599,7 +2616,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -2622,24 +2642,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -2647,24 +2667,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -2683,24 +2703,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -2708,24 +2728,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -2742,24 +2762,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -2767,24 +2787,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -2801,24 +2821,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -2826,24 +2846,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -2860,24 +2880,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -2885,24 +2905,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -2919,16 +2939,16 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
@@ -2941,8 +2961,8 @@ export namespace MyNS {
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -2950,16 +2970,16 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2972,8 +2992,8 @@ export namespace MyNS {
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -2991,24 +3011,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -3016,24 +3036,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -3078,8 +3098,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft product.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
@@ -3118,8 +3138,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft product.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -3174,7 +3194,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances.
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -3204,7 +3227,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances.
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -3227,24 +3253,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -3252,24 +3278,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -3391,24 +3417,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -3416,24 +3442,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -3450,24 +3476,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -3475,24 +3501,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -3509,24 +3535,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -3534,24 +3560,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -3568,24 +3594,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -3593,24 +3619,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -3631,7 +3657,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances.
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -3661,7 +3690,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances.
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -3684,24 +3716,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -3709,24 +3741,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -3741,10 +3773,16 @@ export namespace MyNS {
 
 	export interface OBBCAData1OverdraftOverdraftTierBandSetOverdraftTierBand {
 
-		/** Specifies the maximum length of a band for a fixed overdraft agreement */
+		/**
+		 * Specifies the maximum length of a band for a fixed overdraft agreement
+		 * Type: float
+		 */
 		AgreementLengthMax?: number | null;
 
-		/** Specifies the minimum length of a band for a fixed overdraft agreement */
+		/**
+		 * Specifies the minimum length of a band for a fixed overdraft agreement
+		 * Type: float
+		 */
 		AgreementLengthMin?: number | null;
 
 		/** Specifies the period of a fixed length overdraft agreement */
@@ -3761,8 +3799,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
@@ -3789,10 +3827,16 @@ export namespace MyNS {
 	}
 	export interface OBBCAData1OverdraftOverdraftTierBandSetOverdraftTierBandFormProperties {
 
-		/** Specifies the maximum length of a band for a fixed overdraft agreement */
+		/**
+		 * Specifies the maximum length of a band for a fixed overdraft agreement
+		 * Type: float
+		 */
 		AgreementLengthMax: FormControl<number | null | undefined>,
 
-		/** Specifies the minimum length of a band for a fixed overdraft agreement */
+		/**
+		 * Specifies the minimum length of a band for a fixed overdraft agreement
+		 * Type: float
+		 */
 		AgreementLengthMin: FormControl<number | null | undefined>,
 
 		/** Specifies the period of a fixed length overdraft agreement */
@@ -3809,8 +3853,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -3873,7 +3917,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances.
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -3903,7 +3950,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances.
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -3926,24 +3976,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -3951,24 +4001,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -4088,24 +4138,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -4113,24 +4163,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -4147,24 +4197,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -4172,24 +4222,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -4206,24 +4256,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -4231,24 +4281,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -4265,24 +4315,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -4290,24 +4340,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -4328,7 +4378,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances.
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -4358,7 +4411,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it’s part of a government scheme, or whether the rate may vary dependent on the applicant’s circumstances.
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -4381,24 +4437,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -4406,24 +4462,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -4440,7 +4496,10 @@ export namespace MyNS {
 
 	export interface OBBCAData1ProductDetails {
 
-		/** The length/duration of the fee free period */
+		/**
+		 * The length/duration of the fee free period
+		 * Type: float
+		 */
 		FeeFreeLength?: number | null;
 
 		/** The unit of period (days, weeks, months etc.) of the promotional length */
@@ -4458,7 +4517,10 @@ export namespace MyNS {
 	}
 	export interface OBBCAData1ProductDetailsFormProperties {
 
-		/** The length/duration of the fee free period */
+		/**
+		 * The length/duration of the fee free period
+		 * Type: float
+		 */
 		FeeFreeLength: FormControl<number | null | undefined>,
 
 		/** The unit of period (days, weeks, months etc.) of the promotional length */
@@ -4520,15 +4582,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId?: string | null;
 
 		/**
 		 * A unique and immutable identifier used to identify the beneficiary resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		BeneficiaryId?: string | null;
 
@@ -4548,8 +4610,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -4560,15 +4622,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique and immutable identifier used to identify the beneficiary resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		BeneficiaryId: FormControl<string | null | undefined>,
 
@@ -4579,8 +4641,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -4603,16 +4665,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -4625,8 +4687,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -4637,16 +4699,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -4659,8 +4721,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -4683,15 +4745,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -4710,15 +4772,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -4749,8 +4811,8 @@ export namespace MyNS {
 
 		/**
 		 * Number that identifies the position of a building on a street.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		BuildingNumber?: string | null;
 
@@ -4759,43 +4821,43 @@ export namespace MyNS {
 
 		/**
 		 * Identifies a subdivision of a country such as state, region, county.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		CountrySubDivision?: string | null;
 
 		/**
 		 * Identification of a division of a large organisation or building.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Department?: string | null;
 
 		/**
 		 * Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		PostCode?: string | null;
 
 		/**
 		 * Name of a street or thoroughfare.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		StreetName?: string | null;
 
 		/**
 		 * Identification of a sub-division of a large organisation or building.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		SubDepartment?: string | null;
 
 		/**
 		 * Name of a built-up area, with defined boundaries, and a local government.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		TownName?: string | null;
 	}
@@ -4808,8 +4870,8 @@ export namespace MyNS {
 
 		/**
 		 * Number that identifies the position of a building on a street.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		BuildingNumber: FormControl<string | null | undefined>,
 
@@ -4818,43 +4880,43 @@ export namespace MyNS {
 
 		/**
 		 * Identifies a subdivision of a country such as state, region, county.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		CountrySubDivision: FormControl<string | null | undefined>,
 
 		/**
 		 * Identification of a division of a large organisation or building.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Department: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		PostCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of a street or thoroughfare.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		StreetName: FormControl<string | null | undefined>,
 
 		/**
 		 * Identification of a sub-division of a large organisation or building.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		SubDepartment: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of a built-up area, with defined boundaries, and a local government.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		TownName: FormControl<string | null | undefined>,
 	}
@@ -4891,15 +4953,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId?: string | null;
 
 		/**
 		 * A unique and immutable identifier used to identify the beneficiary resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		BeneficiaryId?: string | null;
 
@@ -4910,8 +4972,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -4922,15 +4984,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique and immutable identifier used to identify the beneficiary resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		BeneficiaryId: FormControl<string | null | undefined>,
 
@@ -4941,8 +5003,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -4960,15 +5022,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId?: string | null;
 
 		/**
 		 * A unique and immutable identifier used to identify the beneficiary resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		BeneficiaryId?: string | null;
 
@@ -4991,8 +5053,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -5003,15 +5065,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique and immutable identifier used to identify the beneficiary resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		BeneficiaryId: FormControl<string | null | undefined>,
 
@@ -5022,8 +5084,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 	}
@@ -5051,8 +5113,8 @@ export namespace MyNS {
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: string;
 
@@ -5072,8 +5134,8 @@ export namespace MyNS {
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -5097,15 +5159,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -5121,15 +5183,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5151,15 +5213,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name?: string | null;
 
@@ -5175,15 +5237,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a financial institution or a branch of a financial institution.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which an agent is known and which is usually used to identify that agent.
-		 * Max length: 140
 		 * Min length: 1
+		 * Max length: 140
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5206,16 +5268,16 @@ export namespace MyNS {
 		/**
 		 * Beneficiary account identification.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -5228,8 +5290,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -5240,16 +5302,16 @@ export namespace MyNS {
 		/**
 		 * Beneficiary account identification.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5262,8 +5324,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -5283,16 +5345,16 @@ export namespace MyNS {
 
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification?: string | null;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -5302,8 +5364,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -5313,16 +5375,16 @@ export namespace MyNS {
 
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5332,8 +5394,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -5353,16 +5415,16 @@ export namespace MyNS {
 
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification?: string | null;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
@@ -5372,8 +5434,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -5383,16 +5445,16 @@ export namespace MyNS {
 
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5402,8 +5464,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number (in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -5441,8 +5503,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identification to unambiguously identify the foreign exchange contract.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		ContractIdentification?: string | null;
 
@@ -5450,6 +5512,7 @@ export namespace MyNS {
 		 * Factor used to convert an amount from one currency into another. This reflects the price at which one currency was bought with another currency.
 		 * Usage: ExchangeRate expresses the ratio between UnitCurrency and QuotedCurrency (ExchangeRate = UnitCurrency/QuotedCurrency).
 		 * Required
+		 * Type: double
 		 */
 		ExchangeRate: number;
 
@@ -5481,8 +5544,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identification to unambiguously identify the foreign exchange contract.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		ContractIdentification: FormControl<string | null | undefined>,
 
@@ -5490,6 +5553,7 @@ export namespace MyNS {
 		 * Factor used to convert an amount from one currency into another. This reflects the price at which one currency was bought with another currency.
 		 * Usage: ExchangeRate expresses the ratio between UnitCurrency and QuotedCurrency (ExchangeRate = UnitCurrency/QuotedCurrency).
 		 * Required
+		 * Type: double
 		 */
 		ExchangeRate: FormControl<number | null | undefined>,
 
@@ -5576,15 +5640,15 @@ export namespace MyNS {
 		 * A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'
 		 * OBIE doesn't standardise this field
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: string;
 
 		/**
 		 * Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Path?: string | null;
 
@@ -5603,15 +5667,15 @@ export namespace MyNS {
 		 * A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'
 		 * OBIE doesn't standardise this field
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: FormControl<string | null | undefined>,
 
 		/**
 		 * Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Path: FormControl<string | null | undefined>,
 
@@ -5635,8 +5699,8 @@ export namespace MyNS {
 		/**
 		 * High level textual error code, to help categorize the errors.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Code: string;
 
@@ -5648,16 +5712,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Id?: string | null;
 
 		/**
 		 * Brief Error message, e.g., 'There is something wrong with the request parameters provided'
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: string;
 	}
@@ -5668,23 +5732,23 @@ export namespace MyNS {
 		/**
 		 * High level textual error code, to help categorize the errors.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Id: FormControl<string | null | undefined>,
 
 		/**
 		 * Brief Error message, e.g., 'There is something wrong with the request parameters provided'
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: FormControl<string | null | undefined>,
 	}
@@ -5731,15 +5795,15 @@ export namespace MyNS {
 
 		/**
 		 * Category code conform to ISO 18245, related to the type of services or goods the merchant provides for the transaction.
-		 * Max length: 4
 		 * Min length: 3
+		 * Max length: 4
 		 */
 		MerchantCategoryCode?: string | null;
 
 		/**
 		 * Name by which the merchant is known.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		MerchantName?: string | null;
 	}
@@ -5749,15 +5813,15 @@ export namespace MyNS {
 
 		/**
 		 * Category code conform to ISO 18245, related to the type of services or goods the merchant provides for the transaction.
-		 * Max length: 4
 		 * Min length: 3
+		 * Max length: 4
 		 */
 		MerchantCategoryCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Name by which the merchant is known.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		MerchantName: FormControl<string | null | undefined>,
 	}
@@ -5900,8 +5964,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a PCA.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
@@ -5961,8 +6025,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a PCA.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -6001,24 +6065,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -6026,24 +6090,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -6060,24 +6124,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -6085,24 +6149,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -6119,24 +6183,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -6144,24 +6208,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -6202,7 +6266,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -6232,7 +6299,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -6257,24 +6327,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -6282,24 +6352,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -6459,7 +6529,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -6489,7 +6562,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -6512,24 +6588,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -6537,24 +6613,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -6573,24 +6649,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -6598,24 +6674,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -6632,24 +6708,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -6657,24 +6733,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -6691,24 +6767,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -6716,24 +6792,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -6750,24 +6826,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -6775,24 +6851,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -6809,16 +6885,16 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
@@ -6831,8 +6907,8 @@ export namespace MyNS {
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -6840,16 +6916,16 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -6862,8 +6938,8 @@ export namespace MyNS {
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -6907,8 +6983,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft product.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
@@ -6947,8 +7023,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft product.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -7003,7 +7079,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -7036,7 +7115,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -7063,24 +7145,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -7088,24 +7170,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -7220,24 +7302,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -7245,24 +7327,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -7279,24 +7361,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -7304,24 +7386,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -7338,24 +7420,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -7363,24 +7445,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -7397,24 +7479,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -7422,24 +7504,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -7460,7 +7542,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -7493,7 +7578,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -7520,24 +7608,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -7545,24 +7633,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -7588,8 +7676,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 
@@ -7627,8 +7715,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -7688,7 +7776,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -7721,7 +7812,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -7748,24 +7842,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -7773,24 +7867,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -7903,24 +7997,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -7928,24 +8022,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -7962,24 +8056,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -7987,24 +8081,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -8021,24 +8115,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -8046,24 +8140,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -8080,24 +8174,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -8105,24 +8199,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -8143,7 +8237,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -8176,7 +8273,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: float
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -8203,24 +8303,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code?: string | null;
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -8228,24 +8328,24 @@ export namespace MyNS {
 
 		/**
 		 * The four letter Mnemonic used within an XML file to identify a code
-		 * Max length: 4
 		 * Min length: 0
+		 * Max length: 4
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -8298,15 +8398,15 @@ export namespace MyNS {
 
 		/**
 		 * Address for electronic mail (e-mail).
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		EmailAddress?: string | null;
 
 		/**
 		 * Specifies a character string with a maximum length of 350 characters.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		FullLegalName?: string | null;
 
@@ -8318,23 +8418,23 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name?: string | null;
 
 		/**
 		 * A unique and immutable identifier used to identify the customer resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		PartyId: string;
 
 		/**
 		 * Number assigned by an agent to identify its customer.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		PartyNumber?: string | null;
 
@@ -8355,15 +8455,15 @@ export namespace MyNS {
 
 		/**
 		 * Address for electronic mail (e-mail).
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		EmailAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * Specifies a character string with a maximum length of 350 characters.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		FullLegalName: FormControl<string | null | undefined>,
 
@@ -8375,23 +8475,23 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique and immutable identifier used to identify the customer resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		PartyId: FormControl<string | null | undefined>,
 
 		/**
 		 * Number assigned by an agent to identify its customer.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		PartyNumber: FormControl<string | null | undefined>,
 
@@ -8431,8 +8531,8 @@ export namespace MyNS {
 
 		/**
 		 * Number that identifies the position of a building on a street.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		BuildingNumber?: string | null;
 
@@ -8444,29 +8544,29 @@ export namespace MyNS {
 
 		/**
 		 * Identifies a subdivision of a country eg, state, region, county.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		CountrySubDivision?: string | null;
 
 		/**
 		 * Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		PostCode?: string | null;
 
 		/**
 		 * Name of a street or thoroughfare.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		StreetName?: string | null;
 
 		/**
 		 * Name of a built-up area, with defined boundaries, and a local government.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		TownName?: string | null;
 	}
@@ -8477,8 +8577,8 @@ export namespace MyNS {
 
 		/**
 		 * Number that identifies the position of a building on a street.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		BuildingNumber: FormControl<string | null | undefined>,
 
@@ -8490,29 +8590,29 @@ export namespace MyNS {
 
 		/**
 		 * Identifies a subdivision of a country eg, state, region, county.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		CountrySubDivision: FormControl<string | null | undefined>,
 
 		/**
 		 * Identifier consisting of a group of letters and/or numbers that is added to a postal address to assist the sorting of mail.
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		PostCode: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of a street or thoroughfare.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		StreetName: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of a built-up area, with defined boundaries, and a local government.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		TownName: FormControl<string | null | undefined>,
 	}
@@ -8551,8 +8651,8 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned by the ASPSP to uniquely identify the related resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Id: string;
 
@@ -8567,8 +8667,8 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned by the ASPSP to uniquely identify the related resource.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Id: FormControl<string | null | undefined>,
 
@@ -8656,8 +8756,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -8694,8 +8794,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -8999,8 +9099,8 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned to identify the account access consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: string;
 
@@ -9061,8 +9161,8 @@ export namespace MyNS {
 		/**
 		 * Unique identification as assigned to identify the account access consent resource.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		ConsentId: FormControl<string | null | undefined>,
 
@@ -9145,8 +9245,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -9181,8 +9281,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the statement resource within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StatementId?: string | null;
 		OBStatement2StatementInterest?: Array<OBStatement2StatementInterest>;
@@ -9190,8 +9290,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique reference for the statement. This reference may be optionally populated if available.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		StatementReference?: string | null;
 		OBStatement2StatementValue?: Array<OBStatement2StatementValue>;
@@ -9209,8 +9309,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -9240,15 +9340,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the statement resource within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StatementId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique reference for the statement. This reference may be optionally populated if available.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		StatementReference: FormControl<string | null | undefined>,
 
@@ -9401,15 +9501,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement fee.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description?: string | null;
 
 		/** How frequently the fee is applied to the Account. */
 		Frequency?: string | null;
 
-		/** Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount) */
+		/**
+		 * Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount)
+		 * Type: double
+		 */
 		Rate?: number | null;
 
 		/** Description that may be available for the statement fee rate type. */
@@ -9432,15 +9535,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement fee.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/** How frequently the fee is applied to the Account. */
 		Frequency: FormControl<string | null | undefined>,
 
-		/** Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount) */
+		/**
+		 * Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount)
+		 * Type: double
+		 */
 		Rate: FormControl<number | null | undefined>,
 
 		/** Description that may be available for the statement fee rate type. */
@@ -9481,15 +9587,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement interest.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description?: string | null;
 
 		/** Specifies the statement fee type requested */
 		Frequency?: string | null;
 
-		/** field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary. */
+		/**
+		 * field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary.
+		 * Type: double
+		 */
 		Rate?: number | null;
 
 		/** Description that may be available for the statement Interest rate type. */
@@ -9512,15 +9621,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement interest.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/** Specifies the statement fee type requested */
 		Frequency: FormControl<string | null | undefined>,
 
-		/** field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary. */
+		/**
+		 * field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary.
+		 * Type: double
+		 */
 		Rate: FormControl<number | null | undefined>,
 
 		/** Description that may be available for the statement Interest rate type. */
@@ -9591,8 +9703,8 @@ export namespace MyNS {
 		/**
 		 * Value associated with the statement value type.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Value: string;
 	}
@@ -9607,8 +9719,8 @@ export namespace MyNS {
 		/**
 		 * Value associated with the statement value type.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
@@ -9638,15 +9750,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
 		/**
 		 * Information that locates and identifies a specific address for a transaction entry, that is presented in free format text.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		AddressLine?: string | null;
 
@@ -9716,16 +9828,16 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the transaction within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionId?: string | null;
 
 		/**
 		 * Further details of the transaction.
 		 * This is the transaction narrative, which is unstructured text.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		TransactionInformation?: string | null;
 
@@ -9734,8 +9846,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique reference for the transaction. This reference is optionally populated, and may as an example be the FPID in the Faster Payments context.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionReference?: string | null;
 
@@ -9755,15 +9867,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * Information that locates and identifies a specific address for a transaction entry, that is presented in free format text.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		AddressLine: FormControl<string | null | undefined>,
 
@@ -9790,16 +9902,16 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the transaction within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 
 		/**
 		 * Further details of the transaction.
 		 * This is the transaction narrative, which is unstructured text.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		TransactionInformation: FormControl<string | null | undefined>,
 
@@ -9808,8 +9920,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique reference for the transaction. This reference is optionally populated, and may as an example be the FPID in the Faster Payments context.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionReference: FormControl<string | null | undefined>,
 
@@ -9937,15 +10049,15 @@ export namespace MyNS {
 
 		/**
 		 * Identification assigned by an institution to identify the card instrument used in the transaction. This identification is known by the account owner, and may be masked.
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		Identification?: string | null;
 
 		/**
 		 * Name of the cardholder using the card instrument.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name?: string | null;
 	}
@@ -9964,15 +10076,15 @@ export namespace MyNS {
 
 		/**
 		 * Identification assigned by an institution to identify the card instrument used in the transaction. This identification is known by the account owner, and may be masked.
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of the cardholder using the card instrument.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -9997,15 +10109,15 @@ export namespace MyNS {
 		/**
 		 * Proprietary bank transaction code to identify the underlying transaction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Code: string;
 
 		/**
 		 * Identification of the issuer of the proprietary bank transaction code.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Issuer?: string | null;
 	}
@@ -10016,15 +10128,15 @@ export namespace MyNS {
 		/**
 		 * Proprietary bank transaction code to identify the underlying transaction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Identification of the issuer of the proprietary bank transaction code.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Issuer: FormControl<string | null | undefined>,
 	}
@@ -10073,15 +10185,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
 		/**
 		 * A unique and immutable identifier used to identify the direct debit resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		DirectDebitId?: string | null;
 
@@ -10094,16 +10206,16 @@ export namespace MyNS {
 		/**
 		 * Direct Debit reference. For AUDDIS service users provide Core Reference. For non AUDDIS service users provide Core reference if possible or last used reference.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		MandateIdentification: string;
 
 		/**
 		 * Name of Service User.
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 
@@ -10122,15 +10234,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique and immutable identifier used to identify the direct debit resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		DirectDebitId: FormControl<string | null | undefined>,
 
@@ -10143,16 +10255,16 @@ export namespace MyNS {
 		/**
 		 * Direct Debit reference. For AUDDIS service users provide Core Reference. For non AUDDIS service users provide Core reference if possible or last used reference.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		MandateIdentification: FormControl<string | null | undefined>,
 
 		/**
 		 * Name of Service User.
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -10211,8 +10323,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -10221,8 +10333,8 @@ export namespace MyNS {
 
 		/**
 		 * Further details of the offer.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Description?: string | null;
 
@@ -10238,8 +10350,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the offer resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		OfferId?: string | null;
 
@@ -10258,19 +10370,22 @@ export namespace MyNS {
 
 		/**
 		 * Further details of the term of the offer.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Term?: string | null;
 
 		/**
 		 * URL (Uniform Resource Locator) where documentation on the offer can be found
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		URL?: string | null;
 
-		/** Value associated with the offer type. */
+		/**
+		 * Value associated with the offer type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Value?: number | null;
 	}
 	export interface OBReadOffer1DataOfferFormProperties {
@@ -10278,15 +10393,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * Further details of the offer.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -10299,8 +10414,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the offer resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		OfferId: FormControl<string | null | undefined>,
 
@@ -10319,19 +10434,22 @@ export namespace MyNS {
 
 		/**
 		 * Further details of the term of the offer.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Term: FormControl<string | null | undefined>,
 
 		/**
 		 * URL (Uniform Resource Locator) where documentation on the offer can be found
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		URL: FormControl<string | null | undefined>,
 
-		/** Value associated with the offer type. */
+		/**
+		 * Value associated with the offer type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Value: FormControl<number | null | undefined>,
 	}
 	export function CreateOBReadOffer1DataOfferFormGroup() {
@@ -10526,16 +10644,16 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 		BCA?: OBBCAData1;
 
 		/**
 		 * Unique and unambiguous identification of a  Product Marketing State.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		MarketingStateId?: string | null;
 
@@ -10545,15 +10663,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID that has been internally assigned by the financial institution to each of the current account banking products they market to their retail and/or small to medium enterprise (SME) customers.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ProductId?: string | null;
 
 		/**
 		 * The name of the Product used for marketing purposes from a customer perspective. I.e. what the customer would recognise.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		ProductName?: string | null;
 
@@ -10565,8 +10683,8 @@ export namespace MyNS {
 
 		/**
 		 * Any secondary Identification which  supports Product Identifier to uniquely identify the current account banking products.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		SecondaryProductId?: string | null;
 	}
@@ -10575,29 +10693,29 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique and unambiguous identification of a  Product Marketing State.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		MarketingStateId: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique ID that has been internally assigned by the financial institution to each of the current account banking products they market to their retail and/or small to medium enterprise (SME) customers.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ProductId: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the Product used for marketing purposes from a customer perspective. I.e. what the customer would recognise.
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		ProductName: FormControl<string | null | undefined>,
 
@@ -10609,8 +10727,8 @@ export namespace MyNS {
 
 		/**
 		 * Any secondary Identification which  supports Product Identifier to uniquely identify the current account banking products.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		SecondaryProductId: FormControl<string | null | undefined>,
 	}
@@ -10634,8 +10752,8 @@ export namespace MyNS {
 		/**
 		 * Description of the Product associated with the account
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
@@ -10645,8 +10763,8 @@ export namespace MyNS {
 		/**
 		 * Long name associated with the product
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: string;
 		OBReadProduct2DataProductOtherProductTypeOtherFeesCharges?: Array<OBReadProduct2DataProductOtherProductTypeOtherFeesCharges>;
@@ -10666,16 +10784,16 @@ export namespace MyNS {
 		/**
 		 * Description of the Product associated with the account
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the product
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -10779,16 +10897,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -10800,16 +10918,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -10857,8 +10975,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for the Product.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 		Notes?: Array<string>;
@@ -10916,8 +11034,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for the Product.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -10964,16 +11082,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -10987,16 +11105,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -11017,16 +11135,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -11038,16 +11156,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -11070,16 +11188,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -11093,16 +11211,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -11142,8 +11260,8 @@ export namespace MyNS {
 
 		/**
 		 * Loan interest tierbandset identification. Used by  loan providers for internal use purpose.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 		OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesCharges?: Array<OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestFeesCharges>;
@@ -11178,8 +11296,8 @@ export namespace MyNS {
 
 		/**
 		 * Loan interest tierbandset identification. Used by  loan providers for internal use purpose.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -11229,7 +11347,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -11254,7 +11375,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -11285,16 +11409,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -11306,16 +11430,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -11430,16 +11554,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -11453,16 +11577,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -11485,16 +11609,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -11508,16 +11632,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -11540,16 +11664,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -11563,16 +11687,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -11595,8 +11719,8 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
@@ -11609,8 +11733,8 @@ export namespace MyNS {
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -11624,8 +11748,8 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -11638,8 +11762,8 @@ export namespace MyNS {
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -11665,8 +11789,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a SME Loan.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 		OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestTierBandLoanInterestFeesCharges?: Array<OBReadProduct2DataProductOtherProductTypeLoanInterestLoanInterestTierBandSetLoanInterestTierBandLoanInterestFeesCharges>;
@@ -11697,7 +11821,10 @@ export namespace MyNS {
 		 */
 		RepAPR: string;
 
-		/** Maximum loan term for which the loan interest tier applies. */
+		/**
+		 * Maximum loan term for which the loan interest tier applies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TierValueMaxTerm?: number | null;
 
 		/** Maximum loan value for which the loan interest tier applies. */
@@ -11706,6 +11833,7 @@ export namespace MyNS {
 		/**
 		 * Minimum loan term for which the loan interest tier applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TierValueMinTerm: number;
 
@@ -11725,8 +11853,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a SME Loan.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -11752,7 +11880,10 @@ export namespace MyNS {
 		 */
 		RepAPR: FormControl<string | null | undefined>,
 
-		/** Maximum loan term for which the loan interest tier applies. */
+		/**
+		 * Maximum loan term for which the loan interest tier applies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		TierValueMaxTerm: FormControl<number | null | undefined>,
 
 		/** Maximum loan value for which the loan interest tier applies. */
@@ -11761,6 +11892,7 @@ export namespace MyNS {
 		/**
 		 * Minimum loan term for which the loan interest tier applies.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		TierValueMinTerm: FormControl<number | null | undefined>,
 
@@ -11812,7 +11944,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -11837,7 +11972,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -11864,16 +12002,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -11885,16 +12023,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12007,16 +12145,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -12028,16 +12166,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12064,8 +12202,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the tariff
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		TariffName?: string | null;
 
@@ -12076,8 +12214,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the tariff
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		TariffName: FormControl<string | null | undefined>,
 
@@ -12100,7 +12238,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -12125,7 +12266,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -12152,16 +12296,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -12173,16 +12317,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12343,7 +12487,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -12368,7 +12515,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -12395,16 +12545,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -12416,16 +12566,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12448,16 +12598,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -12471,16 +12621,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12501,16 +12651,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -12522,16 +12672,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12573,8 +12723,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft product.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 		Notes?: Array<string>;
@@ -12608,8 +12758,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft product.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -12661,7 +12811,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -12686,7 +12839,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -12713,16 +12869,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -12734,16 +12890,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12867,16 +13023,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -12890,16 +13046,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12922,16 +13078,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -12945,16 +13101,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -12975,7 +13131,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -13000,7 +13159,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -13027,16 +13189,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -13048,16 +13210,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -13072,10 +13234,16 @@ export namespace MyNS {
 
 	export interface OBReadProduct2DataProductOtherProductTypeOverdraftOverdraftTierBandSetOverdraftTierBand {
 
-		/** Specifies the maximum length of a band for a fixed overdraft agreement */
+		/**
+		 * Specifies the maximum length of a band for a fixed overdraft agreement
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AgreementLengthMax?: number | null;
 
-		/** Specifies the minimum length of a band for a fixed overdraft agreement */
+		/**
+		 * Specifies the minimum length of a band for a fixed overdraft agreement
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AgreementLengthMin?: number | null;
 
 		/** Specifies the period of a fixed length overdraft agreement */
@@ -13092,8 +13260,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification?: string | null;
 		Notes?: Array<string>;
@@ -13113,10 +13281,16 @@ export namespace MyNS {
 	}
 	export interface OBReadProduct2DataProductOtherProductTypeOverdraftOverdraftTierBandSetOverdraftTierBandFormProperties {
 
-		/** Specifies the maximum length of a band for a fixed overdraft agreement */
+		/**
+		 * Specifies the maximum length of a band for a fixed overdraft agreement
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AgreementLengthMax: FormControl<number | null | undefined>,
 
-		/** Specifies the minimum length of a band for a fixed overdraft agreement */
+		/**
+		 * Specifies the minimum length of a band for a fixed overdraft agreement
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AgreementLengthMin: FormControl<number | null | undefined>,
 
 		/** Specifies the period of a fixed length overdraft agreement */
@@ -13133,8 +13307,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique and unambiguous identification of a  Tier Band for a overdraft.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -13190,7 +13364,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -13215,7 +13392,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -13242,16 +13422,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -13263,16 +13443,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -13392,7 +13572,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount?: string | null;
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -13417,7 +13600,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances. */
+		/**
+		 * Indicates whether the advertised overdraft rate is guaranteed to be offered to a borrower by the bank e.g. if it�s part of a government scheme, or whether the rate may vary dependent on the applicant�s circumstances.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -13444,16 +13630,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -13465,16 +13651,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -13491,7 +13677,10 @@ export namespace MyNS {
 
 	export interface OBReadProduct2DataProductOtherProductTypeProductDetails {
 
-		/** The length/duration of the fee free period */
+		/**
+		 * The length/duration of the fee free period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeFreeLength?: number | null;
 
 		/** The unit of period (days, weeks, months etc.) of the promotional length */
@@ -13505,7 +13694,10 @@ export namespace MyNS {
 	}
 	export interface OBReadProduct2DataProductOtherProductTypeProductDetailsFormProperties {
 
-		/** The length/duration of the fee free period */
+		/**
+		 * The length/duration of the fee free period
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeFreeLength: FormControl<number | null | undefined>,
 
 		/** The unit of period (days, weeks, months etc.) of the promotional length */
@@ -13578,16 +13770,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -13599,16 +13791,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -13629,16 +13821,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -13650,16 +13842,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -13680,16 +13872,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -13701,16 +13893,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -13748,7 +13940,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount?: string | null;
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence?: number | null;
 
 		/**
@@ -13773,7 +13968,10 @@ export namespace MyNS {
 		/** Cap amount charged for a fee/charge (where it is charged in terms of an amount rather than a rate) */
 		FeeCapAmount: FormControl<string | null | undefined>,
 
-		/** fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount */
+		/**
+		 * fee/charges are captured dependent on the number of occurrences rather than capped at a particular amount
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		FeeCapOccurrence: FormControl<number | null | undefined>,
 
 		/**
@@ -13800,16 +13998,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: string;
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: string;
 	}
@@ -13821,16 +14019,16 @@ export namespace MyNS {
 		/**
 		 * Description to describe the purpose of the code
 		 * Required
-		 * Max length: 350
 		 * Min length: 1
+		 * Max length: 350
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * Long name associated with the code
 		 * Required
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -13937,7 +14135,10 @@ export namespace MyNS {
 
 	export interface OBReadProduct2DataProductOtherProductTypeRepaymentRepaymentHoliday {
 
-		/** The maximum length/duration of a Repayment Holiday */
+		/**
+		 * The maximum length/duration of a Repayment Holiday
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxHolidayLength?: number | null;
 
 		/** The unit of period (days, weeks, months etc.) of the repayment holiday */
@@ -13946,7 +14147,10 @@ export namespace MyNS {
 	}
 	export interface OBReadProduct2DataProductOtherProductTypeRepaymentRepaymentHolidayFormProperties {
 
-		/** The maximum length/duration of a Repayment Holiday */
+		/**
+		 * The maximum length/duration of a Repayment Holiday
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		MaxHolidayLength: FormControl<number | null | undefined>,
 
 		/** The unit of period (days, weeks, months etc.) of the repayment holiday */
@@ -13999,8 +14203,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -14015,8 +14219,8 @@ export namespace MyNS {
 
 		/**
 		 * A reference value provided by the PSU to the PISP while setting up the scheduled payment.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		DebtorReference?: string | null;
 
@@ -14031,8 +14235,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -14046,8 +14250,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the scheduled payment resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ScheduledPaymentId?: string | null;
 
@@ -14062,15 +14266,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * A reference value provided by the PSU to the PISP while setting up the scheduled payment.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		DebtorReference: FormControl<string | null | undefined>,
 
@@ -14078,8 +14282,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
@@ -14093,8 +14297,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the scheduled payment resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ScheduledPaymentId: FormControl<string | null | undefined>,
 
@@ -14151,8 +14355,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -14244,8 +14448,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments?: string | null;
 
@@ -14253,15 +14457,15 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * A unique and immutable identifier used to identify the standing order resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StandingOrderId?: string | null;
 
@@ -14276,8 +14480,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -14348,8 +14552,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments: FormControl<string | null | undefined>,
 
@@ -14357,15 +14561,15 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique and immutable identifier used to identify the standing order resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StandingOrderId: FormControl<string | null | undefined>,
 
@@ -14431,15 +14635,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
 		/**
 		 * A reference value provided by the PSU to the PISP while setting up the scheduled payment.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		DebtorReference?: string | null;
 
@@ -14454,8 +14658,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -14469,8 +14673,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the scheduled payment resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ScheduledPaymentId?: string | null;
 
@@ -14485,15 +14689,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * A reference value provided by the PSU to the PISP while setting up the scheduled payment.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		DebtorReference: FormControl<string | null | undefined>,
 
@@ -14501,8 +14705,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
@@ -14516,8 +14720,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the scheduled payment resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ScheduledPaymentId: FormControl<string | null | undefined>,
 
@@ -14544,8 +14748,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -14563,8 +14767,8 @@ export namespace MyNS {
 
 		/**
 		 * A reference value provided by the PSU to the PISP while setting up the scheduled payment.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		DebtorReference?: string | null;
 
@@ -14579,8 +14783,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -14594,8 +14798,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the scheduled payment resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ScheduledPaymentId?: string | null;
 
@@ -14610,15 +14814,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * A reference value provided by the PSU to the PISP while setting up the scheduled payment.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		DebtorReference: FormControl<string | null | undefined>,
 
@@ -14626,8 +14830,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
@@ -14641,8 +14845,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the scheduled payment resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ScheduledPaymentId: FormControl<string | null | undefined>,
 
@@ -14669,8 +14873,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -14753,8 +14957,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments?: string | null;
 
@@ -14762,15 +14966,15 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * A unique and immutable identifier used to identify the standing order resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StandingOrderId?: string | null;
 
@@ -14785,8 +14989,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -14857,8 +15061,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments: FormControl<string | null | undefined>,
 
@@ -14866,15 +15070,15 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique and immutable identifier used to identify the standing order resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StandingOrderId: FormControl<string | null | undefined>,
 
@@ -14902,8 +15106,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -14998,8 +15202,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments?: string | null;
 
@@ -15007,15 +15211,15 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * A unique and immutable identifier used to identify the standing order resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StandingOrderId?: string | null;
 
@@ -15030,8 +15234,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -15102,8 +15306,8 @@ export namespace MyNS {
 
 		/**
 		 * Number of the payments that will be made in completing this frequency sequence including any executed since the sequence start date.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		NumberOfPayments: FormControl<string | null | undefined>,
 
@@ -15111,15 +15315,15 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique and immutable identifier used to identify the standing order resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StandingOrderId: FormControl<string | null | undefined>,
 
@@ -15149,8 +15353,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -15184,8 +15388,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the statement resource within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StatementId?: string | null;
 		OBStatement2BasicStatementInterest?: Array<OBStatement2BasicStatementInterest>;
@@ -15193,8 +15397,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique reference for the statement. This reference may be optionally populated if available.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		StatementReference?: string | null;
 		OBStatement2BasicStatementValue?: Array<OBStatement2BasicStatementValue>;
@@ -15212,8 +15416,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -15243,15 +15447,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the statement resource within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StatementId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique reference for the statement. This reference may be optionally populated if available.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		StatementReference: FormControl<string | null | undefined>,
 
@@ -15360,15 +15564,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement fee.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description?: string | null;
 
 		/** How frequently the fee is applied to the Account. */
 		Frequency?: string | null;
 
-		/** Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount) */
+		/**
+		 * Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount)
+		 * Type: double
+		 */
 		Rate?: number | null;
 
 		/** Description that may be available for the statement fee rate type. */
@@ -15391,15 +15598,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement fee.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/** How frequently the fee is applied to the Account. */
 		Frequency: FormControl<string | null | undefined>,
 
-		/** Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount) */
+		/**
+		 * Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount)
+		 * Type: double
+		 */
 		Rate: FormControl<number | null | undefined>,
 
 		/** Description that may be available for the statement fee rate type. */
@@ -15440,15 +15650,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement interest.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description?: string | null;
 
 		/** Specifies the statement fee type requested */
 		Frequency?: string | null;
 
-		/** field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary. */
+		/**
+		 * field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary.
+		 * Type: double
+		 */
 		Rate?: number | null;
 
 		/** Description that may be available for the statement Interest rate type. */
@@ -15471,15 +15684,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement interest.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/** Specifies the statement fee type requested */
 		Frequency: FormControl<string | null | undefined>,
 
-		/** field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary. */
+		/**
+		 * field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary.
+		 * Type: double
+		 */
 		Rate: FormControl<number | null | undefined>,
 
 		/** Description that may be available for the statement Interest rate type. */
@@ -15550,8 +15766,8 @@ export namespace MyNS {
 		/**
 		 * Value associated with the statement value type.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Value: string;
 	}
@@ -15566,8 +15782,8 @@ export namespace MyNS {
 		/**
 		 * Value associated with the statement value type.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
@@ -15586,8 +15802,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -15622,8 +15838,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the statement resource within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StatementId?: string | null;
 		OBStatement2DetailStatementInterest?: Array<OBStatement2DetailStatementInterest>;
@@ -15631,8 +15847,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique reference for the statement. This reference may be optionally populated if available.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		StatementReference?: string | null;
 		OBStatement2DetailStatementValue?: Array<OBStatement2DetailStatementValue>;
@@ -15650,8 +15866,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -15681,15 +15897,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the statement resource within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StatementId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique reference for the statement. This reference may be optionally populated if available.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		StatementReference: FormControl<string | null | undefined>,
 
@@ -15842,15 +16058,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement fee.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description?: string | null;
 
 		/** How frequently the fee is applied to the Account. */
 		Frequency?: string | null;
 
-		/** Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount) */
+		/**
+		 * Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount)
+		 * Type: double
+		 */
 		Rate?: number | null;
 
 		/** Description that may be available for the statement fee rate type. */
@@ -15873,15 +16092,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement fee.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/** How frequently the fee is applied to the Account. */
 		Frequency: FormControl<string | null | undefined>,
 
-		/** Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount) */
+		/**
+		 * Rate charged for Statement Fee (where it is charged in terms of a rate rather than an amount)
+		 * Type: double
+		 */
 		Rate: FormControl<number | null | undefined>,
 
 		/** Description that may be available for the statement fee rate type. */
@@ -15922,15 +16144,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement interest.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description?: string | null;
 
 		/** Specifies the statement fee type requested */
 		Frequency?: string | null;
 
-		/** field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary. */
+		/**
+		 * field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary.
+		 * Type: double
+		 */
 		Rate?: number | null;
 
 		/** Description that may be available for the statement Interest rate type. */
@@ -15953,15 +16178,18 @@ export namespace MyNS {
 
 		/**
 		 * Description that may be available for the statement interest.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/** Specifies the statement fee type requested */
 		Frequency: FormControl<string | null | undefined>,
 
-		/** field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary. */
+		/**
+		 * field representing a percentage (e.g. 0.05 represents 5% and 0.9525 represents 95.25%). Note the number of decimal places may vary.
+		 * Type: double
+		 */
 		Rate: FormControl<number | null | undefined>,
 
 		/** Description that may be available for the statement Interest rate type. */
@@ -16032,8 +16260,8 @@ export namespace MyNS {
 		/**
 		 * Value associated with the statement value type.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Value: string;
 	}
@@ -16048,8 +16276,8 @@ export namespace MyNS {
 		/**
 		 * Value associated with the statement value type.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Value: FormControl<string | null | undefined>,
 	}
@@ -16068,15 +16296,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
 		/**
 		 * Information that locates and identifies a specific address for a transaction entry, that is presented in free format text.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		AddressLine?: string | null;
 
@@ -16128,8 +16356,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the transaction within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionId?: string | null;
 
@@ -16138,8 +16366,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique reference for the transaction. This reference is optionally populated, and may as an example be the FPID in the Faster Payments context.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionReference?: string | null;
 
@@ -16159,15 +16387,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * Information that locates and identifies a specific address for a transaction entry, that is presented in free format text.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		AddressLine: FormControl<string | null | undefined>,
 
@@ -16194,8 +16422,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the transaction within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 
@@ -16204,8 +16432,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique reference for the transaction. This reference is optionally populated, and may as an example be the FPID in the Faster Payments context.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionReference: FormControl<string | null | undefined>,
 
@@ -16240,15 +16468,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
 		/**
 		 * Information that locates and identifies a specific address for a transaction entry, that is presented in free format text.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		AddressLine?: string | null;
 
@@ -16318,16 +16546,16 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the transaction within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionId?: string | null;
 
 		/**
 		 * Further details of the transaction.
 		 * This is the transaction narrative, which is unstructured text.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		TransactionInformation?: string | null;
 
@@ -16336,8 +16564,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique reference for the transaction. This reference is optionally populated, and may as an example be the FPID in the Faster Payments context.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionReference?: string | null;
 
@@ -16357,15 +16585,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * Information that locates and identifies a specific address for a transaction entry, that is presented in free format text.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		AddressLine: FormControl<string | null | undefined>,
 
@@ -16392,16 +16620,16 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the transaction within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionId: FormControl<string | null | undefined>,
 
 		/**
 		 * Further details of the transaction.
 		 * This is the transaction narrative, which is unstructured text.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		TransactionInformation: FormControl<string | null | undefined>,
 
@@ -16410,8 +16638,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique reference for the transaction. This reference is optionally populated, and may as an example be the FPID in the Faster Payments context.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionReference: FormControl<string | null | undefined>,
 

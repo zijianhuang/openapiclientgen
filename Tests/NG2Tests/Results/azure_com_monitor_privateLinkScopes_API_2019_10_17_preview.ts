@@ -501,7 +501,9 @@ export namespace MyNS {
 		 * Gets a list of all Azure Monitor PrivateLinkScopes within a subscription.
 		 * Get subscriptions/{subscriptionId}/providers/microsoft.insights/privateLinkScopes
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {AzureMonitorPrivateLinkScopeListResult} A list containing 0 or more Azure Monitor PrivateLinkScope definitions.
 		 */
 		PrivateLinkScopes_List(api_version: string, subscriptionId: string): Observable<AzureMonitorPrivateLinkScopeListResult> {
@@ -512,8 +514,11 @@ export namespace MyNS {
 		 * Gets all private endpoint connections on a private link scope.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateEndpointConnections
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} scopeName Name of the Azure Monitor PrivateLinkScope that will contain the datasource
 		 * @return {PrivateEndpointConnectionListResult} Successfully retrieved private endpoint connections.
 		 */
@@ -525,8 +530,11 @@ export namespace MyNS {
 		 * Gets a private endpoint connection.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} scopeName Name of the Azure Monitor PrivateLinkScope that will contain the datasource
 		 * @param {string} privateEndpointConnectionName The name of the private endpoint connection.
 		 * @return {PrivateEndpointConnection} Successfully retrieved a specified private endpoint connection.
@@ -539,8 +547,11 @@ export namespace MyNS {
 		 * Approve or reject a private endpoint connection with a given name.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} scopeName Name of the Azure Monitor PrivateLinkScope that will contain the datasource
 		 * @param {string} privateEndpointConnectionName The name of the private endpoint connection.
 		 * @return {PrivateEndpointConnection} Successfully approved or rejected private endpoint connection.
@@ -553,8 +564,11 @@ export namespace MyNS {
 		 * Deletes a private endpoint connection with a given name.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateEndpointConnections/{privateEndpointConnectionName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} scopeName Name of the Azure Monitor PrivateLinkScope that will contain the datasource
 		 * @param {string} privateEndpointConnectionName The name of the private endpoint connection.
 		 * @return {void} Successfully deleted private endpoint connection.
@@ -567,8 +581,11 @@ export namespace MyNS {
 		 * Gets the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateLinkResources
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} scopeName Name of the Azure Monitor PrivateLinkScope that will contain the datasource
 		 * @return {PrivateLinkResourceListResult} Successfully retrieved private link resources.
 		 */
@@ -580,8 +597,11 @@ export namespace MyNS {
 		 * Gets the private link resources that need to be created for a Azure Monitor PrivateLinkScope.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/privateLinkResources/{groupName}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} scopeName Name of the Azure Monitor PrivateLinkScope that will contain the datasource
 		 * @param {string} groupName The name of the private link resource.
 		 * @return {PrivateLinkResource} Successfully retrieved a specified private link resource.
@@ -594,8 +614,11 @@ export namespace MyNS {
 		 * Gets all private endpoint connections on a private link scope.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/scopedResources
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} scopeName Name of the Azure Monitor PrivateLinkScope that will contain the datasource
 		 * @return {ScopedResourceListResult} Successfully retrieved scoped resources in a private link scope.
 		 */
@@ -607,8 +630,11 @@ export namespace MyNS {
 		 * Gets a scoped resource in a private link scope.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/scopedResources/{name}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} scopeName Name of the Azure Monitor PrivateLinkScope that will contain the datasource
 		 * @param {string} name The name of the scoped resource object.
 		 * @return {ScopedResource} Successfully retrieved a scoped resource in a private link scope.
@@ -621,8 +647,11 @@ export namespace MyNS {
 		 * Approve or reject a private endpoint connection with a given name.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/scopedResources/{name}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} scopeName Name of the Azure Monitor PrivateLinkScope that will contain the datasource
 		 * @param {string} name The name of the scoped resource object.
 		 * @return {ScopedResource} Successfully scoped azure monitor resource in a private link scope.
@@ -635,8 +664,11 @@ export namespace MyNS {
 		 * Deletes a private endpoint connection with a given name.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/privateLinkScopes/{scopeName}/scopedResources/{name}
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} scopeName Name of the Azure Monitor PrivateLinkScope that will contain the datasource
 		 * @param {string} name The name of the scoped resource object.
 		 * @return {void} Successfully deleted scoped resource.
@@ -649,8 +681,11 @@ export namespace MyNS {
 		 * Gets a list of Azure Monitor PrivateLinkScopes within a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @return {AzureMonitorPrivateLinkScopeListResult} A list containing 0 or more Azure Monitor PrivateLinkScope definitions.
 		 */
 		PrivateLinkScopes_ListByResourceGroup(resourceGroupName: string, api_version: string, subscriptionId: string): Observable<AzureMonitorPrivateLinkScopeListResult> {
@@ -661,8 +696,11 @@ export namespace MyNS {
 		 * Returns a Azure Monitor PrivateLinkScope.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} scopeName The name of the Azure Monitor PrivateLinkScope resource.
 		 * @return {AzureMonitorPrivateLinkScope} An Azure Monitor PrivateLinkScope definition.
 		 */
@@ -674,8 +712,11 @@ export namespace MyNS {
 		 * Creates (or updates) a Azure Monitor PrivateLinkScope. Note: You cannot specify a different value for InstrumentationKey nor AppId in the Put operation.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} scopeName The name of the Azure Monitor PrivateLinkScope resource.
 		 * @param {AzureMonitorPrivateLinkScope} requestBody Properties that need to be specified to create or update a Azure Monitor PrivateLinkScope.
 		 * @return {AzureMonitorPrivateLinkScope} Successful request when creating or updating a Azure Monitor PrivateLinkScope. The updated PrivateLinkScope is returned.
@@ -688,8 +729,11 @@ export namespace MyNS {
 		 * Deletes a Azure Monitor PrivateLinkScope.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} scopeName The name of the Azure Monitor PrivateLinkScope resource.
 		 * @return {void} Successful request when deleting a Azure Monitor PrivateLinkScope.
 		 */
@@ -701,8 +745,11 @@ export namespace MyNS {
 		 * Updates an existing PrivateLinkScope's tags. To update other fields use the CreateOrUpdate method.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/microsoft.insights/privateLinkScopes/{scopeName}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} scopeName The name of the Azure Monitor PrivateLinkScope resource.
 		 * @param {TagsResource} requestBody Updated tag information to set into the PrivateLinkScope instance.
 		 * @return {AzureMonitorPrivateLinkScope} Updating the Azure Monitor PrivateLinkScope's tags was successful. PrivateLinkScope tags are updated and returned with the rest of the PrivateLinkScope's object properties.

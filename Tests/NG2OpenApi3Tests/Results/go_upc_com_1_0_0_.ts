@@ -95,7 +95,10 @@ export namespace MyNS {
 		/** A description of the product (if available). */
 		description?: string | null;
 
-		/** The EAN code of the product. */
+		/**
+		 * The EAN code of the product.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ean?: number | null;
 
 		/** The URL for the product image. */
@@ -110,7 +113,10 @@ export namespace MyNS {
 		/** A list of additional item specifications (if available). */
 		specs?: Array<string>;
 
-		/** The UPC code of the product. */
+		/**
+		 * The UPC code of the product.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upc?: number | null;
 	}
 	export interface GetProductInfoReturnProductFormProperties {
@@ -124,7 +130,10 @@ export namespace MyNS {
 		/** A description of the product (if available). */
 		description: FormControl<string | null | undefined>,
 
-		/** The EAN code of the product. */
+		/**
+		 * The EAN code of the product.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ean: FormControl<number | null | undefined>,
 
 		/** The URL for the product image. */
@@ -136,7 +145,10 @@ export namespace MyNS {
 		/** The region of the product. */
 		region: FormControl<string | null | undefined>,
 
-		/** The UPC code of the product. */
+		/**
+		 * The UPC code of the product.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upc: FormControl<number | null | undefined>,
 	}
 	export function CreateGetProductInfoReturnProductFormGroup() {

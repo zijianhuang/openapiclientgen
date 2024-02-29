@@ -409,6 +409,7 @@ export namespace MyNS {
 		/**
 		 * Number of minutes before the start of the event when the reminder should trigger. Valid values are between 0 and 40320 (4 weeks in minutes).
 		 * Required when adding a reminder.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minutes?: number | null;
 	}
@@ -425,6 +426,7 @@ export namespace MyNS {
 		/**
 		 * Number of minutes before the start of the event when the reminder should trigger. Valid values are between 0 and 40320 (4 weeks in minutes).
 		 * Required when adding a reminder.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		minutes: FormControl<number | null | undefined>,
 	}
@@ -1153,7 +1155,10 @@ export namespace MyNS {
 		/** Information about the event's reminders for the authenticated user. */
 		reminders?: EventReminders;
 
-		/** Sequence number as per iCalendar. */
+		/**
+		 * Sequence number as per iCalendar.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequence?: number | null;
 
 		/** Source from which the event was created. For example, a web page, an email message or any document identifiable by an URL with HTTP or HTTPS scheme. Can only be seen or modified by the creator of the event. */
@@ -1275,7 +1280,10 @@ export namespace MyNS {
 		/** For an instance of a recurring event, this is the id of the recurring event to which this instance belongs. Immutable. */
 		recurringEventId: FormControl<string | null | undefined>,
 
-		/** Sequence number as per iCalendar. */
+		/**
+		 * Sequence number as per iCalendar.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sequence: FormControl<number | null | undefined>,
 
 		/**
@@ -1407,7 +1415,10 @@ export namespace MyNS {
 
 	export interface EventAttendee {
 
-		/** Number of additional guests. Optional. The default is 0. */
+		/**
+		 * Number of additional guests. Optional. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		additionalGuests?: number | null;
 
 		/** The attendee's response comment. Optional. */
@@ -1448,7 +1459,10 @@ export namespace MyNS {
 	}
 	export interface EventAttendeeFormProperties {
 
-		/** Number of additional guests. Optional. The default is 0. */
+		/**
+		 * Number of additional guests. Optional. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		additionalGuests: FormControl<number | null | undefined>,
 
 		/** The attendee's response comment. Optional. */
@@ -1543,7 +1557,10 @@ export namespace MyNS {
 
 	export interface EventDateTime {
 
-		/** The date, in the format "yyyy-mm-dd", if this is an all-day event. */
+		/**
+		 * The date, in the format "yyyy-mm-dd", if this is an all-day event.
+		 * Type: DateOnly
+		 */
 		date?: Date | null;
 
 		/** The time, as a combined date-time value (formatted according to RFC3339). A time zone offset is required unless a time zone is explicitly specified in timeZone. */
@@ -1554,7 +1571,10 @@ export namespace MyNS {
 	}
 	export interface EventDateTimeFormProperties {
 
-		/** The date, in the format "yyyy-mm-dd", if this is an all-day event. */
+		/**
+		 * The date, in the format "yyyy-mm-dd", if this is an all-day event.
+		 * Type: DateOnly
+		 */
 		date: FormControl<Date | null | undefined>,
 
 		/** The time, as a combined date-time value (formatted according to RFC3339). A time zone offset is required unless a time zone is explicitly specified in timeZone. */
@@ -1636,7 +1656,10 @@ export namespace MyNS {
 		 */
 		display?: string | null;
 
-		/** The gadget's height in pixels. The height must be an integer greater than 0. Optional. Deprecated. */
+		/**
+		 * The gadget's height in pixels. The height must be an integer greater than 0. Optional. Deprecated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The gadget's icon URL. The URL scheme must be HTTPS. Deprecated. */
@@ -1654,7 +1677,10 @@ export namespace MyNS {
 		/** The gadget's type. Deprecated. */
 		type?: string | null;
 
-		/** The gadget's width in pixels. The width must be an integer greater than 0. Optional. Deprecated. */
+		/**
+		 * The gadget's width in pixels. The width must be an integer greater than 0. Optional. Deprecated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface EventGadgetFormProperties {
@@ -1666,7 +1692,10 @@ export namespace MyNS {
 		 */
 		display: FormControl<string | null | undefined>,
 
-		/** The gadget's height in pixels. The height must be an integer greater than 0. Optional. Deprecated. */
+		/**
+		 * The gadget's height in pixels. The height must be an integer greater than 0. Optional. Deprecated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The gadget's icon URL. The URL scheme must be HTTPS. Deprecated. */
@@ -1684,7 +1713,10 @@ export namespace MyNS {
 		/** The gadget's type. Deprecated. */
 		type: FormControl<string | null | undefined>,
 
-		/** The gadget's width in pixels. The width must be an integer greater than 0. Optional. Deprecated. */
+		/**
+		 * The gadget's width in pixels. The width must be an integer greater than 0. Optional. Deprecated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateEventGadgetFormGroup() {
@@ -2062,10 +2094,16 @@ export namespace MyNS {
 
 	export interface FreeBusyRequest {
 
-		/** Maximal number of calendars for which FreeBusy information is to be provided. Optional. Maximum value is 50. */
+		/**
+		 * Maximal number of calendars for which FreeBusy information is to be provided. Optional. Maximum value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calendarExpansionMax?: number | null;
 
-		/** Maximal number of calendar identifiers to be provided for a single group. Optional. An error is returned for a group with more members than this value. Maximum value is 100. */
+		/**
+		 * Maximal number of calendar identifiers to be provided for a single group. Optional. An error is returned for a group with more members than this value. Maximum value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupExpansionMax?: number | null;
 
 		/** List of calendars and/or groups to query. */
@@ -2082,10 +2120,16 @@ export namespace MyNS {
 	}
 	export interface FreeBusyRequestFormProperties {
 
-		/** Maximal number of calendars for which FreeBusy information is to be provided. Optional. Maximum value is 50. */
+		/**
+		 * Maximal number of calendars for which FreeBusy information is to be provided. Optional. Maximum value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		calendarExpansionMax: FormControl<number | null | undefined>,
 
-		/** Maximal number of calendar identifiers to be provided for a single group. Optional. An error is returned for a group with more members than this value. Maximum value is 100. */
+		/**
+		 * Maximal number of calendar identifiers to be provided for a single group. Optional. An error is returned for a group with more members than this value. Maximum value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		groupExpansionMax: FormControl<number | null | undefined>,
 
 		/** The end of the interval for the query formatted as per RFC3339. */
@@ -2308,6 +2352,7 @@ export namespace MyNS {
 		 * Get calendars/{calendarId}/acl
 		 * @param {string} calendarId Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
 		 * @param {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		 *     Minimum: 1
 		 * @param {string} pageToken Token specifying which result page to return. Optional.
 		 * @param {boolean} showDeleted Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to "none". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False.
 		 * @param {string} syncToken Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All entries deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
@@ -2336,6 +2381,7 @@ export namespace MyNS {
 		 * Post calendars/{calendarId}/acl/watch
 		 * @param {string} calendarId Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
 		 * @param {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		 *     Minimum: 1
 		 * @param {string} pageToken Token specifying which result page to return. Optional.
 		 * @param {boolean} showDeleted Whether to include deleted ACLs in the result. Deleted ACLs are represented by role equal to "none". Deleted ACLs will always be included if syncToken is provided. Optional. The default is False.
 		 * @param {string} syncToken Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then. All entries deleted since the previous list request will always be in the result set and it is not allowed to set showDeleted to False.
@@ -2416,7 +2462,9 @@ export namespace MyNS {
 		 * - "workingLocation"This parameter can be repeated multiple times to return events of different types. The default is ["default", "focusTime", "outOfOffice"].
 		 * @param {string} iCalUID Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID.
 		 * @param {number} maxAttendees The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		 *     Minimum: 1
 		 * @param {number} maxResults Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
+		 *     Minimum: 1
 		 * @param {Calendar_events_listOrderBy} orderBy The order of the events returned in the result. Optional. The default is an unspecified, stable order.
 		 * @param {string} pageToken Token specifying which result page to return. Optional.
 		 * @param {Array<string>} privateExtendedProperty Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints.
@@ -2463,7 +2511,9 @@ export namespace MyNS {
 		 * Post calendars/{calendarId}/events
 		 * @param {string} calendarId Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
 		 * @param {number} conferenceDataVersion Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+		 *     Minimum: 0    Maximum: 1
 		 * @param {number} maxAttendees The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		 *     Minimum: 1
 		 * @param {boolean} sendNotifications Deprecated. Please use sendUpdates instead.
 		 * Whether to send notifications about the creation of the new event. Note that some emails might still be sent even if you set the value to false. The default is false.
 		 * @param {Calendar_events_insertSendUpdates} sendUpdates Whether to send notifications about the creation of the new event. Note that some emails might still be sent. The default is false.
@@ -2479,6 +2529,7 @@ export namespace MyNS {
 		 * Post calendars/{calendarId}/events/import
 		 * @param {string} calendarId Calendar identifier. To retrieve calendar IDs call the calendarList.list method. If you want to access the primary calendar of the currently logged in user, use the "primary" keyword.
 		 * @param {number} conferenceDataVersion Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+		 *     Minimum: 0    Maximum: 1
 		 * @param {boolean} supportsAttachments Whether API client performing operation supports event attachments. Optional. The default is False.
 		 * @return {Event} Successful response
 		 */
@@ -2512,7 +2563,9 @@ export namespace MyNS {
 		 * - "workingLocation"This parameter can be repeated multiple times to return events of different types. The default is ["default", "focusTime", "outOfOffice"].
 		 * @param {string} iCalUID Specifies an event ID in the iCalendar format to be provided in the response. Optional. Use this if you want to search for an event by its iCalendar ID.
 		 * @param {number} maxAttendees The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		 *     Minimum: 1
 		 * @param {number} maxResults Maximum number of events returned on one result page. The number of events in the resulting page may be less than this value, or none at all, even if there are more events matching the query. Incomplete pages can be detected by a non-empty nextPageToken field in the response. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
+		 *     Minimum: 1
 		 * @param {Calendar_events_listOrderBy} orderBy The order of the events returned in the result. Optional. The default is an unspecified, stable order.
 		 * @param {string} pageToken Token specifying which result page to return. Optional.
 		 * @param {Array<string>} privateExtendedProperty Extended properties constraint specified as propertyName=value. Matches only private properties. This parameter might be repeated multiple times to return events that match all given constraints.
@@ -2575,6 +2628,7 @@ export namespace MyNS {
 		 * @param {string} eventId Event identifier.
 		 * @param {boolean} alwaysIncludeEmail Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
 		 * @param {number} maxAttendees The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		 *     Minimum: 1
 		 * @param {string} timeZone Time zone used in the response. Optional. The default is the time zone of the calendar.
 		 * @return {Event} Successful response
 		 */
@@ -2589,7 +2643,9 @@ export namespace MyNS {
 		 * @param {string} eventId Event identifier.
 		 * @param {boolean} alwaysIncludeEmail Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
 		 * @param {number} conferenceDataVersion Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+		 *     Minimum: 0    Maximum: 1
 		 * @param {number} maxAttendees The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		 *     Minimum: 1
 		 * @param {boolean} sendNotifications Deprecated. Please use sendUpdates instead.
 		 * Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.
 		 * @param {Calendar_events_insertSendUpdates} sendUpdates Guests who should receive notifications about the event update (for example, title changes, etc.).
@@ -2607,7 +2663,9 @@ export namespace MyNS {
 		 * @param {string} eventId Event identifier.
 		 * @param {boolean} alwaysIncludeEmail Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
 		 * @param {number} conferenceDataVersion Version number of conference data supported by the API client. Version 0 assumes no conference data support and ignores conference data in the event's body. Version 1 enables support for copying of ConferenceData as well as for creating new conferences using the createRequest field of conferenceData. The default is 0.
+		 *     Minimum: 0    Maximum: 1
 		 * @param {number} maxAttendees The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		 *     Minimum: 1
 		 * @param {boolean} sendNotifications Deprecated. Please use sendUpdates instead.
 		 * Whether to send notifications about the event update (for example, description changes, etc.). Note that some emails might still be sent even if you set the value to false. The default is false.
 		 * @param {Calendar_events_insertSendUpdates} sendUpdates Guests who should receive notifications about the event update (for example, title changes, etc.).
@@ -2625,7 +2683,9 @@ export namespace MyNS {
 		 * @param {string} eventId Recurring event identifier.
 		 * @param {boolean} alwaysIncludeEmail Deprecated and ignored. A value will always be returned in the email field for the organizer, creator and attendees, even if no real email address is available (i.e. a generated, non-working value will be provided).
 		 * @param {number} maxAttendees The maximum number of attendees to include in the response. If there are more than the specified number of attendees, only the participant is returned. Optional.
+		 *     Minimum: 1
 		 * @param {number} maxResults Maximum number of events returned on one result page. By default the value is 250 events. The page size can never be larger than 2500 events. Optional.
+		 *     Minimum: 1
 		 * @param {string} originalStart The original start time of the instance in the result. Optional.
 		 * @param {string} pageToken Token specifying which result page to return. Optional.
 		 * @param {boolean} showDeleted Whether to include deleted events (with status equals "cancelled") in the result. Cancelled instances of recurring events will still be included if singleEvents is False. Optional. The default is False.
@@ -2684,6 +2744,7 @@ export namespace MyNS {
 		 * Returns the calendars on the user's calendar list.
 		 * Get users/me/calendarList
 		 * @param {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		 *     Minimum: 1
 		 * @param {Calendar_calendarList_listMinAccessRole} minAccessRole The minimum access role for the user in the returned entries. Optional. The default is no restriction.
 		 * @param {string} pageToken Token specifying which result page to return. Optional.
 		 * @param {boolean} showDeleted Whether to include deleted calendar list entries in the result. Optional. The default is False.
@@ -2713,6 +2774,7 @@ export namespace MyNS {
 		 * Watch for changes to CalendarList resources.
 		 * Post users/me/calendarList/watch
 		 * @param {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		 *     Minimum: 1
 		 * @param {Calendar_calendarList_listMinAccessRole} minAccessRole The minimum access role for the user in the returned entries. Optional. The default is no restriction.
 		 * @param {string} pageToken Token specifying which result page to return. Optional.
 		 * @param {boolean} showDeleted Whether to include deleted calendar list entries in the result. Optional. The default is False.
@@ -2774,6 +2836,7 @@ export namespace MyNS {
 		 * Returns all user settings for the authenticated user.
 		 * Get users/me/settings
 		 * @param {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		 *     Minimum: 1
 		 * @param {string} pageToken Token specifying which result page to return. Optional.
 		 * @param {string} syncToken Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then.
 		 * If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.
@@ -2789,6 +2852,7 @@ export namespace MyNS {
 		 * Watch for changes to Settings resources.
 		 * Post users/me/settings/watch
 		 * @param {number} maxResults Maximum number of entries returned on one result page. By default the value is 100 entries. The page size can never be larger than 250 entries. Optional.
+		 *     Minimum: 1
 		 * @param {string} pageToken Token specifying which result page to return. Optional.
 		 * @param {string} syncToken Token obtained from the nextSyncToken field returned on the last page of results from the previous list request. It makes the result of this list request contain only entries that have changed since then.
 		 * If the syncToken expires, the server will respond with a 410 GONE response code and the client should clear its storage and perform a full synchronization without any syncToken.

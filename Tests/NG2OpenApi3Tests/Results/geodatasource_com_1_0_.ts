@@ -11,6 +11,8 @@ export namespace MyNS {
 		/**
 		 * Get City name by using latitude and longitude
 		 * Get city
+		 * @param {number} lng Type: double
+		 * @param {number} lat Type: double
 		 * @return {void} Get response from longitude latitude lookup
 		 */
 		CityGetByKeyAndLngAndLatAndFormat(key: string, lng: number, lat: number, format: CityGetByKeyAndLngAndLatAndFormatFormat | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {

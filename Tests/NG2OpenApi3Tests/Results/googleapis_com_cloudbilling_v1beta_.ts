@@ -109,14 +109,20 @@ export namespace MyNS {
 		/** Represents a point in time. */
 		effectiveTime?: EstimationTimePoint;
 
-		/** The usage rate. */
+		/**
+		 * The usage rate.
+		 * Type: double
+		 */
 		usageRate?: number | null;
 	}
 
 	/** A usage rate timeline entry. Each entry specifies a constant usage rate during a time interval. */
 	export interface UsageRateTimelineEntryFormProperties {
 
-		/** The usage rate. */
+		/**
+		 * The usage rate.
+		 * Type: double
+		 */
 		usageRate: FormControl<number | null | undefined>,
 	}
 	export function CreateUsageRateTimelineEntryFormGroup() {
@@ -443,7 +449,10 @@ export namespace MyNS {
 		/** The machine series for CUD. For example: "n1" for general purpose N1 machine type commitments. "n2" for general purpose N2 machine type commitments. "e2" for general purpose E2 machine type commitments. "n2d" for general purpose N2D machine type commitments. "t2d" for general purpose T2D machine type commitments. "c2"/"c2d" for compute-optimized commitments. "m1"/"m2" for the memory-optimized commitments. "a2' for the accelerator-optimized commitments. */
 		machineSeries?: string | null;
 
-		/** Memory size of the VM in GB (2^30 bytes). Must be an increment of 0.25 (256 MB). */
+		/**
+		 * Memory size of the VM in GB (2^30 bytes). Must be an increment of 0.25 (256 MB).
+		 * Type: double
+		 */
 		memorySizeGb?: number | null;
 
 		/** Commitment usage plan. */
@@ -462,7 +471,10 @@ export namespace MyNS {
 		/** The machine series for CUD. For example: "n1" for general purpose N1 machine type commitments. "n2" for general purpose N2 machine type commitments. "e2" for general purpose E2 machine type commitments. "n2d" for general purpose N2D machine type commitments. "t2d" for general purpose T2D machine type commitments. "c2"/"c2d" for compute-optimized commitments. "m1"/"m2" for the memory-optimized commitments. "a2' for the accelerator-optimized commitments. */
 		machineSeries: FormControl<string | null | undefined>,
 
-		/** Memory size of the VM in GB (2^30 bytes). Must be an increment of 0.25 (256 MB). */
+		/**
+		 * Memory size of the VM in GB (2^30 bytes). Must be an increment of 0.25 (256 MB).
+		 * Type: double
+		 */
 		memorySizeGb: FormControl<number | null | undefined>,
 
 		/** Commitment usage plan. */
@@ -603,7 +615,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -616,7 +631,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -641,7 +659,10 @@ export namespace MyNS {
 		/** The resource name for the SKU. Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE" More information about the SKU can be found in the `skus` field of the `CostEstimationResult`. */
 		sku?: string | null;
 
-		/** The amount of usage on this SKU. */
+		/**
+		 * The amount of usage on this SKU.
+		 * Type: double
+		 */
 		usageAmount?: number | null;
 
 		/** The unit for the usage on this SKU. */
@@ -654,7 +675,10 @@ export namespace MyNS {
 		/** The resource name for the SKU. Example: "services/DA34-426B-A397/skus/AA95-CD31-42FE" More information about the SKU can be found in the `skus` field of the `CostEstimationResult`. */
 		sku: FormControl<string | null | undefined>,
 
-		/** The amount of usage on this SKU. */
+		/**
+		 * The amount of usage on this SKU.
+		 * Type: double
+		 */
 		usageAmount: FormControl<number | null | undefined>,
 
 		/** The unit for the usage on this SKU. */
@@ -746,7 +770,10 @@ export namespace MyNS {
 		/** Required. The machine series. Only certain [machine series](https://cloud.google.com/compute/docs/general-purpose-machines#custom_machine_types) support custom configurations. For example: "n1". */
 		machineSeries?: string | null;
 
-		/** Required. Memory size of the VM in GB (2^30 bytes). Must be an increment of 0.25 (256 MB). Each [machine series](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison) has limitations on allowed values for the ratio of memory-to-vCPU count. */
+		/**
+		 * Required. Memory size of the VM in GB (2^30 bytes). Must be an increment of 0.25 (256 MB). Each [machine series](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison) has limitations on allowed values for the ratio of memory-to-vCPU count.
+		 * Type: double
+		 */
 		memorySizeGb?: number | null;
 
 		/** Required. The number of vCPUs. The allowed values depend on the [machine series](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison). */
@@ -759,7 +786,10 @@ export namespace MyNS {
 		/** Required. The machine series. Only certain [machine series](https://cloud.google.com/compute/docs/general-purpose-machines#custom_machine_types) support custom configurations. For example: "n1". */
 		machineSeries: FormControl<string | null | undefined>,
 
-		/** Required. Memory size of the VM in GB (2^30 bytes). Must be an increment of 0.25 (256 MB). Each [machine series](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison) has limitations on allowed values for the ratio of memory-to-vCPU count. */
+		/**
+		 * Required. Memory size of the VM in GB (2^30 bytes). Must be an increment of 0.25 (256 MB). Each [machine series](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison) has limitations on allowed values for the ratio of memory-to-vCPU count.
+		 * Type: double
+		 */
 		memorySizeGb: FormControl<number | null | undefined>,
 
 		/** Required. The number of vCPUs. The allowed values depend on the [machine series](https://cloud.google.com/compute/docs/machine-types#machine_type_comparison). */
@@ -979,7 +1009,10 @@ export namespace MyNS {
 		/** The SKU's pricing unit. For example, if the tier price is $1 per 1000000 Bytes, then this field will show 'By'. The `start_amount` field in each tier will be in this unit. */
 		unit?: string | null;
 
-		/** The SKU's count for the pricing unit. For example, if the tier price is $1 per 1000000 Bytes, then this column will show 1000000. */
+		/**
+		 * The SKU's count for the pricing unit. For example, if the tier price is $1 per 1000000 Bytes, then this column will show 1000000.
+		 * Type: double
+		 */
 		unitCount?: number | null;
 	}
 
@@ -989,7 +1022,10 @@ export namespace MyNS {
 		/** The SKU's pricing unit. For example, if the tier price is $1 per 1000000 Bytes, then this field will show 'By'. The `start_amount` field in each tier will be in this unit. */
 		unit: FormControl<string | null | undefined>,
 
-		/** The SKU's count for the pricing unit. For example, if the tier price is $1 per 1000000 Bytes, then this column will show 1000000. */
+		/**
+		 * The SKU's count for the pricing unit. For example, if the tier price is $1 per 1000000 Bytes, then this column will show 1000000.
+		 * Type: double
+		 */
 		unitCount: FormControl<number | null | undefined>,
 	}
 	export function CreateRateFormGroup() {
@@ -1007,14 +1043,20 @@ export namespace MyNS {
 		/** Represents an amount of money with its currency type. */
 		price?: Money;
 
-		/** The magnitude of usage in which the tier interval begins. Example: "From 100 GiBi the price is $1 per byte" implies `start_amount` = 100 */
+		/**
+		 * The magnitude of usage in which the tier interval begins. Example: "From 100 GiBi the price is $1 per byte" implies `start_amount` = 100
+		 * Type: double
+		 */
 		startAmount?: number | null;
 	}
 
 	/** Pricing details for a service tier. */
 	export interface RateTierFormProperties {
 
-		/** The magnitude of usage in which the tier interval begins. Example: "From 100 GiBi the price is $1 per byte" implies `start_amount` = 100 */
+		/**
+		 * The magnitude of usage in which the tier interval begins. Example: "From 100 GiBi the price is $1 per byte" implies `start_amount` = 100
+		 * Type: double
+		 */
 		startAmount: FormControl<number | null | undefined>,
 	}
 	export function CreateRateTierFormGroup() {
@@ -2663,6 +2705,7 @@ export namespace MyNS {
 		 * Lists all publicly listed SKU groups.
 		 * Get v1beta/skuGroups
 		 * @param {number} pageSize Maximum number of SKU groups to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token received from a previous ListSkuGroups call to retrieve the next page of results. If this field is empty, the first page is returned.
 		 * @return {GoogleCloudBillingSkugroupsV1betaListSkuGroupsResponse} Successful response
 		 */
@@ -2697,6 +2740,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. To list the prices for all SKUs, use `-` as the SKU ID. Format: `skus/-` Specifying a specific SKU ID returns a collection with one Price object for the SKU.
 		 * @param {string} currencyCode Optional. ISO-4217 currency code for the price. If not specified, USD will be used.
 		 * @param {number} pageSize Optional. Maximum number of prices to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. Page token received from a previous ListPrices call to retrieve the next page of results. If this field is empty, the first page is returned.
 		 * @return {GoogleCloudBillingPricesV1betaListPricesResponse} Successful response
 		 */
@@ -2709,6 +2753,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/services
 		 * @param {string} parent Required. The billing account to list billing account service from. Format: billingAccounts/{billing_account}
 		 * @param {number} pageSize Maximum number of billing account service to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token received from a previous ListBillingAccountServices call to retrieve the next page of results. If this field is empty, the first page is returned.
 		 * @return {GoogleCloudBillingBillingaccountservicesV1betaListBillingAccountServicesResponse} Successful response
 		 */
@@ -2721,6 +2766,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/skuGroups
 		 * @param {string} parent Required. The billing account to list billing account SKU groups from. Format: billingAccounts/{billing_account}
 		 * @param {number} pageSize Maximum number of billing account SKU groups to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token received from a previous ListBillingAccountSkuGroups call to retrieve the next page of results. If this field is empty, the first page is returned.
 		 * @return {GoogleCloudBillingBillingaccountskugroupsV1betaListBillingAccountSkuGroupsResponse} Successful response
 		 */
@@ -2733,6 +2779,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/skus
 		 * @param {string} parent Required. The SkuGroup to list SkuGroupSku from. Format: skuGroups/{sku_group}
 		 * @param {number} pageSize Maximum number of SKU group SKUs to return. Results may return fewer than this value. Default value is 50 and maximum value is 5000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token received from a previous ListSkuGroupSkus call to retrieve the next page of results. If this field is empty, the first page is returned.
 		 * @return {GoogleCloudBillingSkugroupskusV1betaListSkuGroupSkusResponse} Successful response
 		 */

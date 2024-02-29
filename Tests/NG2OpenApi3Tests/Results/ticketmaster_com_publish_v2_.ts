@@ -147,8 +147,11 @@ export namespace MyNS {
 		/** URL of a web site detail page of the entity */
 		url?: string | null;
 
-		/** Version of the entity. Version is to avoid updated an entity with an older version */
-		version?: number | null;
+		/**
+		 * Version of the entity. Version is to avoid updated an entity with an older version
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version?: string | null;
 	}
 
 	/** Attraction */
@@ -184,8 +187,11 @@ export namespace MyNS {
 		/** URL of a web site detail page of the entity */
 		url: FormControl<string | null | undefined>,
 
-		/** Version of the entity. Version is to avoid updated an entity with an older version */
-		version: FormControl<number | null | undefined>,
+		/**
+		 * Version of the entity. Version is to avoid updated an entity with an older version
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateAttractionFormGroup() {
 		return new FormGroup<AttractionFormProperties>({
@@ -198,7 +204,7 @@ export namespace MyNS {
 			test: new FormControl<boolean | null | undefined>(undefined),
 			type: new FormControl<AttractionType | null | undefined>(undefined, [Validators.required]),
 			url: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -292,7 +298,10 @@ export namespace MyNS {
 		/** true if the image is not the event's image but a fallbak image */
 		fallback?: boolean | null;
 
-		/** Height of the image */
+		/**
+		 * Height of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Aspect ratio of the image */
@@ -301,7 +310,10 @@ export namespace MyNS {
 		/** Public URL of the image */
 		url?: string | null;
 
-		/** Width of the image */
+		/**
+		 * Width of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -314,7 +326,10 @@ export namespace MyNS {
 		/** true if the image is not the event's image but a fallbak image */
 		fallback: FormControl<boolean | null | undefined>,
 
-		/** Height of the image */
+		/**
+		 * Height of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Aspect ratio of the image */
@@ -323,7 +338,10 @@ export namespace MyNS {
 		/** Public URL of the image */
 		url: FormControl<string | null | undefined>,
 
-		/** Width of the image */
+		/**
+		 * Width of the image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageFormGroup() {
@@ -420,7 +438,10 @@ export namespace MyNS {
 		 */
 		relatedEntityType: AugmentationDataRelatedEntityType;
 
-		/** The confidence (%) level of the accuracy of this augmention data. 100 is the better */
+		/**
+		 * The confidence (%) level of the accuracy of this augmention data. 100 is the better
+		 * Type: float
+		 */
 		score?: number | null;
 
 		/**
@@ -432,8 +453,9 @@ export namespace MyNS {
 		/**
 		 * Vesion of this augmentation data. This field is to avoid updating entity with old data.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		versionNumber: number;
+		versionNumber: string;
 	}
 
 	/** This class defines the Augmentation Data on the Publish API */
@@ -451,7 +473,10 @@ export namespace MyNS {
 		 */
 		relatedEntityType: FormControl<AugmentationDataRelatedEntityType | null | undefined>,
 
-		/** The confidence (%) level of the accuracy of this augmention data. 100 is the better */
+		/**
+		 * The confidence (%) level of the accuracy of this augmention data. 100 is the better
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/**
@@ -463,8 +488,9 @@ export namespace MyNS {
 		/**
 		 * Vesion of this augmentation data. This field is to avoid updating entity with old data.
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		versionNumber: FormControl<number | null | undefined>,
+		versionNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateAugmentationDataFormGroup() {
 		return new FormGroup<AugmentationDataFormProperties>({
@@ -472,7 +498,7 @@ export namespace MyNS {
 			relatedEntityType: new FormControl<AugmentationDataRelatedEntityType | null | undefined>(undefined, [Validators.required]),
 			score: new FormControl<number | null | undefined>(undefined),
 			source: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			versionNumber: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			versionNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -615,7 +641,11 @@ export namespace MyNS {
 		durationField?: DurationField;
 		leapDurationField?: DurationField;
 		lenient?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maximumValue?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimumValue?: number | null;
 		name?: string | null;
 		rangeDurationField?: DurationField;
@@ -624,7 +654,11 @@ export namespace MyNS {
 	}
 	export interface DateTimeFieldFormProperties {
 		lenient: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maximumValue: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minimumValue: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		supported: FormControl<boolean | null | undefined>,
@@ -645,20 +679,24 @@ export namespace MyNS {
 		precise?: boolean | null;
 		supported?: boolean | null;
 		type?: DurationFieldType;
-		unitMillis?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		unitMillis?: string | null;
 	}
 	export interface DurationFieldFormProperties {
 		name: FormControl<string | null | undefined>,
 		precise: FormControl<boolean | null | undefined>,
 		supported: FormControl<boolean | null | undefined>,
-		unitMillis: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		unitMillis: FormControl<string | null | undefined>,
 	}
 	export function CreateDurationFieldFormGroup() {
 		return new FormGroup<DurationFieldFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined),
 			precise: new FormControl<boolean | null | undefined>(undefined),
 			supported: new FormControl<boolean | null | undefined>(undefined),
-			unitMillis: new FormControl<number | null | undefined>(undefined),
+			unitMillis: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -709,14 +747,20 @@ export namespace MyNS {
 	/** DMA (Designated Market Area) */
 	export interface Dma {
 
-		/** DMS's id */
+		/**
+		 * DMS's id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 	}
 
 	/** DMA (Designated Market Area) */
 	export interface DmaFormProperties {
 
-		/** DMS's id */
+		/**
+		 * DMS's id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateDmaFormGroup() {
@@ -759,18 +803,38 @@ export namespace MyNS {
 		chronology?: Chronology;
 		fieldTypes?: Array<DateTimeFieldType>;
 		fields?: Array<DateTimeField>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hourOfDay?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		millisOfDay?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		millisOfSecond?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minuteOfHour?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		secondOfMinute?: number | null;
 		values?: Array<number>;
 	}
 	export interface LocalTimeFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hourOfDay: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		millisOfDay: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		millisOfSecond: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		minuteOfHour: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		secondOfMinute: FormControl<number | null | undefined>,
 	}
 	export function CreateLocalTimeFormGroup() {
@@ -812,8 +876,11 @@ export namespace MyNS {
 		 */
 		source: EntitlementSource;
 
-		/** Version of the entitlements. Version is to prevent to override an entitlements with an older one */
-		versionNumber?: number | null;
+		/**
+		 * Version of the entitlements. Version is to prevent to override an entitlements with an older one
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		versionNumber?: string | null;
 	}
 
 	/** This class defines an entitlement data on the Publish API */
@@ -840,8 +907,11 @@ export namespace MyNS {
 		 */
 		source: FormControl<EntitlementSource | null | undefined>,
 
-		/** Version of the entitlements. Version is to prevent to override an entitlements with an older one */
-		versionNumber: FormControl<number | null | undefined>,
+		/**
+		 * Version of the entitlements. Version is to prevent to override an entitlements with an older one
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		versionNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateEntitlementFormGroup() {
 		return new FormGroup<EntitlementFormProperties>({
@@ -849,7 +919,7 @@ export namespace MyNS {
 			relatedEntityId: new FormControl<string | null | undefined>(undefined),
 			relatedEntityType: new FormControl<AttractionType | null | undefined>(undefined, [Validators.required, Validators.pattern('^event|venue|attraction$')]),
 			source: new FormControl<EntitlementSource | null | undefined>(undefined, [Validators.required]),
-			versionNumber: new FormControl<number | null | undefined>(undefined),
+			versionNumber: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -894,6 +964,8 @@ export namespace MyNS {
 
 		/** True if the entity is dicoverable in discovery API */
 		discoverable?: boolean | null;
+
+		/** Type: double */
 		distance?: number | null;
 
 		/** Images of the entity */
@@ -951,8 +1023,11 @@ export namespace MyNS {
 		/** Venue */
 		venue?: Venue;
 
-		/** Version of the entity. Version is to avoid updated an entity with an older version */
-		version?: number | null;
+		/**
+		 * Version of the entity. Version is to avoid updated an entity with an older version
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version?: string | null;
 	}
 
 	/** Event */
@@ -969,6 +1044,8 @@ export namespace MyNS {
 
 		/** True if the entity is dicoverable in discovery API */
 		discoverable: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		distance: FormControl<number | null | undefined>,
 
 		/** Any information related to the event - multi-lingual fields */
@@ -996,8 +1073,11 @@ export namespace MyNS {
 		/** URL of a web site detail page of the entity */
 		url: FormControl<string | null | undefined>,
 
-		/** Version of the entity. Version is to avoid updated an entity with an older version */
-		version: FormControl<number | null | undefined>,
+		/**
+		 * Version of the entity. Version is to avoid updated an entity with an older version
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateEventFormGroup() {
 		return new FormGroup<EventFormProperties>({
@@ -1014,7 +1094,7 @@ export namespace MyNS {
 			type: new FormControl<AttractionType | null | undefined>(undefined, [Validators.required]),
 			units: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1065,7 +1145,10 @@ export namespace MyNS {
 		/** The event start datetime */
 		dateTime?: Date | null;
 
-		/** The event start date in local date */
+		/**
+		 * The event start date in local date
+		 * Type: DateOnly
+		 */
 		localDate?: Date | null;
 		localTime?: LocalTime;
 
@@ -1088,7 +1171,10 @@ export namespace MyNS {
 		/** The event start datetime */
 		dateTime: FormControl<Date | null | undefined>,
 
-		/** The event start date in local date */
+		/**
+		 * The event start date in local date
+		 * Type: DateOnly
+		 */
 		localDate: FormControl<Date | null | undefined>,
 
 		/** Boolean flag to indicate whether or not the event has no specific time */
@@ -1136,20 +1222,32 @@ export namespace MyNS {
 	/** Location */
 	export interface Location {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 
 	/** Location */
 	export interface LocationFormProperties {
 
-		/** Latitude */
+		/**
+		 * Latitude
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** Longitude */
+		/**
+		 * Longitude
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateLocationFormGroup() {
@@ -1241,10 +1339,16 @@ export namespace MyNS {
 		/** Currency */
 		currency?: string | null;
 
-		/** Maximum price */
+		/**
+		 * Maximum price
+		 * Type: double
+		 */
 		max?: number | null;
 
-		/** Minimum price */
+		/**
+		 * Minimum price
+		 * Type: double
+		 */
 		min?: number | null;
 
 		/** Type of price */
@@ -1257,10 +1361,16 @@ export namespace MyNS {
 		/** Currency */
 		currency: FormControl<string | null | undefined>,
 
-		/** Maximum price */
+		/**
+		 * Maximum price
+		 * Type: double
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** Minimum price */
+		/**
+		 * Minimum price
+		 * Type: double
+		 */
 		min: FormControl<number | null | undefined>,
 
 		/** Type of price */
@@ -1485,6 +1595,8 @@ export namespace MyNS {
 
 		/** True if the entity is dicoverable in discovery API */
 		discoverable?: boolean | null;
+
+		/** Type: double */
 		distance?: number | null;
 
 		/** The list of associated DMAs (Designated Market Areas) of the venue */
@@ -1542,8 +1654,11 @@ export namespace MyNS {
 		/** URL of a web site detail page of the entity */
 		url?: string | null;
 
-		/** Version of the entity. Version is to avoid updated an entity with an older version */
-		version?: number | null;
+		/**
+		 * Version of the entity. Version is to avoid updated an entity with an older version
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version?: string | null;
 	}
 
 	/** Venue */
@@ -1566,6 +1681,8 @@ export namespace MyNS {
 
 		/** True if the entity is dicoverable in discovery API */
 		discoverable: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		distance: FormControl<number | null | undefined>,
 
 		/** Names of the entity - multi-lingual fields */
@@ -1596,8 +1713,11 @@ export namespace MyNS {
 		/** URL of a web site detail page of the entity */
 		url: FormControl<string | null | undefined>,
 
-		/** Version of the entity. Version is to avoid updated an entity with an older version */
-		version: FormControl<number | null | undefined>,
+		/**
+		 * Version of the entity. Version is to avoid updated an entity with an older version
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		version: FormControl<string | null | undefined>,
 	}
 	export function CreateVenueFormGroup() {
 		return new FormGroup<VenueFormProperties>({
@@ -1617,7 +1737,7 @@ export namespace MyNS {
 			type: new FormControl<AttractionType | null | undefined>(undefined, [Validators.required]),
 			units: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
-			version: new FormControl<number | null | undefined>(undefined),
+			version: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1814,8 +1934,11 @@ export namespace MyNS {
 		 */
 		type: string;
 
-		/** Version of the extensions. Version is to prevent to override an extension with an older one */
-		versionNumber?: number | null;
+		/**
+		 * Version of the extensions. Version is to prevent to override an extension with an older one
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		versionNumber?: string | null;
 	}
 
 	/** This class defines an extenstion data on the Publish API */
@@ -1848,8 +1971,11 @@ export namespace MyNS {
 		 */
 		type: FormControl<string | null | undefined>,
 
-		/** Version of the extensions. Version is to prevent to override an extension with an older one */
-		versionNumber: FormControl<number | null | undefined>,
+		/**
+		 * Version of the extensions. Version is to prevent to override an extension with an older one
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		versionNumber: FormControl<string | null | undefined>,
 	}
 	export function CreateExtensionDataFormGroup() {
 		return new FormGroup<ExtensionDataFormProperties>({
@@ -1858,7 +1984,7 @@ export namespace MyNS {
 			relatedEntityType: new FormControl<AttractionType | null | undefined>(undefined, [Validators.required, Validators.pattern('^event|venue|attraction$')]),
 			source: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			versionNumber: new FormControl<number | null | undefined>(undefined),
+			versionNumber: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

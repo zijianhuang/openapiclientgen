@@ -2521,8 +2521,14 @@ namespace MyNS
 		/// ListApplications applications
 		/// </summary>
 		/// <param name="environmentId">The unique identifier of the runtime environment where the applications are deployed.</param>
-		/// <param name="maxResults">The maximum number of applications to return.</param>
-		/// <param name="names">The names of the applications.</param>
+		/// <param name="maxResults">The maximum number of applications to return.
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
+		/// <param name="names">The names of the applications.
+		/// Minimum items: 1
+		/// Maximum items: 10
+		// </param>
 		/// <param name="nextToken">A pagination token to control the number of applications displayed in the list.</param>
 		/// <returns>Success</returns>
 		public async Task<ListApplicationsResponse> ListApplicationsAsync(string environmentId, int maxResults, string[] names, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2640,7 +2646,10 @@ namespace MyNS
 		/// ListDeployments applications/{applicationId}/deployments
 		/// </summary>
 		/// <param name="applicationId">The application identifier.</param>
-		/// <param name="maxResults">The maximum number of objects to return.</param>
+		/// <param name="maxResults">The maximum number of objects to return.
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
 		/// <param name="nextToken">A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</param>
 		/// <returns>Success</returns>
 		public async Task<ListDeploymentsResponse> ListDeploymentsAsync(string applicationId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2716,8 +2725,14 @@ namespace MyNS
 		/// ListEnvironments environments
 		/// </summary>
 		/// <param name="engineType">The engine type for the runtime environment.</param>
-		/// <param name="maxResults">The maximum number of runtime environments to return.</param>
-		/// <param name="names">The names of the runtime environments. Must be unique within the account.</param>
+		/// <param name="maxResults">The maximum number of runtime environments to return.
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
+		/// <param name="names">The names of the runtime environments. Must be unique within the account.
+		/// Minimum items: 1
+		/// Maximum items: 10
+		// </param>
 		/// <param name="nextToken">A pagination token to control the number of runtime environments displayed in the list.</param>
 		/// <returns>Success</returns>
 		public async Task<ListEnvironmentsResponse> ListEnvironmentsAsync(EngineType engineType, int maxResults, string[] names, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3006,7 +3021,9 @@ namespace MyNS
 		/// GetApplicationVersion applications/{applicationId}/versions/{applicationVersion}
 		/// </summary>
 		/// <param name="applicationId">The unique identifier of the application.</param>
-		/// <param name="applicationVersion">The specific version of the application.</param>
+		/// <param name="applicationVersion">The specific version of the application.
+		/// Minimum: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetApplicationVersionResponse> GetApplicationVersionAsync(string applicationId, int applicationVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3214,7 +3231,10 @@ namespace MyNS
 		/// ListApplicationVersions applications/{applicationId}/versions
 		/// </summary>
 		/// <param name="applicationId">The unique identifier of the application.</param>
-		/// <param name="maxResults">The maximum number of application versions to return.</param>
+		/// <param name="maxResults">The maximum number of application versions to return.
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
 		/// <param name="nextToken">A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</param>
 		/// <returns>Success</returns>
 		public async Task<ListApplicationVersionsResponse> ListApplicationVersionsAsync(string applicationId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3250,7 +3270,10 @@ namespace MyNS
 		/// ListBatchJobDefinitions applications/{applicationId}/batch-job-definitions
 		/// </summary>
 		/// <param name="applicationId">The identifier of the application.</param>
-		/// <param name="maxResults">The maximum number of batch job definitions to return.</param>
+		/// <param name="maxResults">The maximum number of batch job definitions to return.
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
 		/// <param name="nextToken">A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</param>
 		/// <param name="prefix">If the batch job definition is a FileBatchJobDefinition, the prefix allows you to search on the file names of FileBatchJobDefinitions.</param>
 		/// <returns>Success</returns>
@@ -3287,9 +3310,15 @@ namespace MyNS
 		/// ListBatchJobExecutions applications/{applicationId}/batch-job-executions
 		/// </summary>
 		/// <param name="applicationId">The unique identifier of the application.</param>
-		/// <param name="executionIds">The unique identifier of each batch job execution.</param>
+		/// <param name="executionIds">The unique identifier of each batch job execution.
+		/// Minimum items: 1
+		/// Maximum items: 10
+		// </param>
 		/// <param name="jobName">The name of each batch job execution.</param>
-		/// <param name="maxResults">The maximum number of batch job executions to return.</param>
+		/// <param name="maxResults">The maximum number of batch job executions to return.
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
 		/// <param name="nextToken">A pagination token to control the number of batch job executions displayed in the list.</param>
 		/// <param name="startedAfter">The time after which the batch job executions started.</param>
 		/// <param name="startedBefore">The time before the batch job executions started.</param>
@@ -3328,7 +3357,10 @@ namespace MyNS
 		/// ListDataSetImportHistory applications/{applicationId}/dataset-import-tasks
 		/// </summary>
 		/// <param name="applicationId">The unique identifier of the application.</param>
-		/// <param name="maxResults">The maximum number of objects to return.</param>
+		/// <param name="maxResults">The maximum number of objects to return.
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
 		/// <param name="nextToken">A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</param>
 		/// <returns>Success</returns>
 		public async Task<ListDataSetImportHistoryResponse> ListDataSetImportHistoryAsync(string applicationId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3364,7 +3396,10 @@ namespace MyNS
 		/// ListDataSets applications/{applicationId}/datasets
 		/// </summary>
 		/// <param name="applicationId">The unique identifier of the application for which you want to list the associated data sets.</param>
-		/// <param name="maxResults">The maximum number of objects to return.</param>
+		/// <param name="maxResults">The maximum number of objects to return.
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
 		/// <param name="nextToken">A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</param>
 		/// <param name="prefix">The prefix of the data set name, which you can use to filter the list of data sets.</param>
 		/// <returns>Success</returns>
@@ -3401,7 +3436,10 @@ namespace MyNS
 		/// ListEngineVersions engine-versions
 		/// </summary>
 		/// <param name="engineType">The type of target platform.</param>
-		/// <param name="maxResults">The maximum number of objects to return.</param>
+		/// <param name="maxResults">The maximum number of objects to return.
+		/// Minimum: 1
+		/// Maximum: 2000
+		// </param>
 		/// <param name="nextToken">A pagination token returned from a previous call to this operation. This specifies the next item to return. To return to the beginning of the list, exclude this parameter.</param>
 		/// <returns>Success</returns>
 		public async Task<ListEngineVersionsResponse> ListEngineVersionsAsync(EngineType engineType, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

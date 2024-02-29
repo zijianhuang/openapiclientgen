@@ -142,7 +142,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -162,7 +165,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -265,7 +271,10 @@ export namespace MyNS {
 		annual_revenue?: string | null;
 		bank_accounts?: Array<BankAccount>;
 
-		/** The date of birth of the person. */
+		/**
+		 * The date of birth of the person.
+		 * Type: DateOnly
+		 */
 		birthday?: Date | null;
 		created_at?: Date | null;
 		created_by?: string | null;
@@ -285,6 +294,8 @@ export namespace MyNS {
 
 		/** Industry */
 		industry?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interaction_count?: number | null;
 		last_activity_at?: Date | null;
 
@@ -338,7 +349,10 @@ export namespace MyNS {
 		/** Annual revenue */
 		annual_revenue: FormControl<string | null | undefined>,
 
-		/** The date of birth of the person. */
+		/**
+		 * The date of birth of the person.
+		 * Type: DateOnly
+		 */
 		birthday: FormControl<Date | null | undefined>,
 		created_at: FormControl<Date | null | undefined>,
 		created_by: FormControl<string | null | undefined>,
@@ -356,6 +370,8 @@ export namespace MyNS {
 
 		/** Industry */
 		industry: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		interaction_count: FormControl<number | null | undefined>,
 		last_activity_at: FormControl<Date | null | undefined>,
 
@@ -615,6 +631,8 @@ export namespace MyNS {
 		company_id?: string | null;
 		company_name?: string | null;
 		created_at?: Date | null;
+
+		/** Type: double */
 		current_balance?: number | null;
 		custom_fields?: Array<CustomField>;
 		department?: string | null;
@@ -663,6 +681,8 @@ export namespace MyNS {
 		company_id: FormControl<string | null | undefined>,
 		company_name: FormControl<string | null | undefined>,
 		created_at: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		current_balance: FormControl<number | null | undefined>,
 		department: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
@@ -772,6 +792,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -804,6 +825,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -972,6 +994,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1004,6 +1027,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1050,6 +1074,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1082,6 +1107,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1134,6 +1160,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -1166,6 +1193,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -1222,14 +1250,20 @@ export namespace MyNS {
 		/** Cursors to navigate to previous or next pages through the API */
 		cursors?: MetaCursors;
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page?: number | null;
 	}
 
 	/** Response metadata */
 	export interface MetaFormProperties {
 
-		/** Number of items returned in the data property of the response */
+		/**
+		 * Number of items returned in the data property of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items_on_page: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -1292,6 +1326,8 @@ export namespace MyNS {
 		language?: string | null;
 		last_name?: string | null;
 		lead_source?: string | null;
+
+		/** Type: double */
 		monetary_amount?: number | null;
 
 		/**
@@ -1328,6 +1364,8 @@ export namespace MyNS {
 		language: FormControl<string | null | undefined>,
 		last_name: FormControl<string | null | undefined>,
 		lead_source: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		monetary_amount: FormControl<number | null | undefined>,
 
 		/**
@@ -1380,7 +1418,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1400,7 +1441,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1432,7 +1476,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1452,7 +1499,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1472,7 +1522,10 @@ export namespace MyNS {
 
 	export interface Opportunity {
 
-		/** The actual closing date for the opportunity. If close_date is null, the opportunity is not closed yet. */
+		/**
+		 * The actual closing date for the opportunity. If close_date is null, the opportunity is not closed yet.
+		 * Type: DateOnly
+		 */
 		close_date?: Date | null;
 
 		/** The unique identifier of the company associated with the opportunity. */
@@ -1512,13 +1565,19 @@ export namespace MyNS {
 		/** A description of the opportunity. */
 		description?: string | null;
 
-		/** The expected revenue from the opportunity */
+		/**
+		 * The expected revenue from the opportunity
+		 * Type: double
+		 */
 		expected_revenue?: number | null;
 
 		/** A unique identifier for the opportunity. */
 		id?: string | null;
 
-		/** The number of interactions with the opportunity. */
+		/**
+		 * The number of interactions with the opportunity.
+		 * Type: double
+		 */
 		interaction_count?: number | null;
 
 		/** The date and time of the last activity associated with the opportunity. */
@@ -1536,7 +1595,10 @@ export namespace MyNS {
 		/** The unique identifier of the reason why the opportunity was lost. */
 		loss_reason_id?: string | null;
 
-		/** The monetary value associated with the opportunity */
+		/**
+		 * The monetary value associated with the opportunity
+		 * Type: double
+		 */
 		monetary_amount?: number | null;
 
 		/** The unique identifier of the user who owns the opportunity. */
@@ -1586,7 +1648,10 @@ export namespace MyNS {
 		/** The unique identifier of the user who last updated the opportunity. */
 		updated_by?: string | null;
 
-		/** The probability of winning the opportunity, expressed as a percentage. */
+		/**
+		 * The probability of winning the opportunity, expressed as a percentage.
+		 * Type: double
+		 */
 		win_probability?: number | null;
 
 		/** The reason why the opportunity was won. */
@@ -1597,7 +1662,10 @@ export namespace MyNS {
 	}
 	export interface OpportunityFormProperties {
 
-		/** The actual closing date for the opportunity. If close_date is null, the opportunity is not closed yet. */
+		/**
+		 * The actual closing date for the opportunity. If close_date is null, the opportunity is not closed yet.
+		 * Type: DateOnly
+		 */
 		close_date: FormControl<Date | null | undefined>,
 
 		/** The unique identifier of the company associated with the opportunity. */
@@ -1633,13 +1701,19 @@ export namespace MyNS {
 		/** A description of the opportunity. */
 		description: FormControl<string | null | undefined>,
 
-		/** The expected revenue from the opportunity */
+		/**
+		 * The expected revenue from the opportunity
+		 * Type: double
+		 */
 		expected_revenue: FormControl<number | null | undefined>,
 
 		/** A unique identifier for the opportunity. */
 		id: FormControl<string | null | undefined>,
 
-		/** The number of interactions with the opportunity. */
+		/**
+		 * The number of interactions with the opportunity.
+		 * Type: double
+		 */
 		interaction_count: FormControl<number | null | undefined>,
 
 		/** The date and time of the last activity associated with the opportunity. */
@@ -1657,7 +1731,10 @@ export namespace MyNS {
 		/** The unique identifier of the reason why the opportunity was lost. */
 		loss_reason_id: FormControl<string | null | undefined>,
 
-		/** The monetary value associated with the opportunity */
+		/**
+		 * The monetary value associated with the opportunity
+		 * Type: double
+		 */
 		monetary_amount: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the user who owns the opportunity. */
@@ -1706,7 +1783,10 @@ export namespace MyNS {
 		/** The unique identifier of the user who last updated the opportunity. */
 		updated_by: FormControl<string | null | undefined>,
 
-		/** The probability of winning the opportunity, expressed as a percentage. */
+		/**
+		 * The probability of winning the opportunity, expressed as a percentage.
+		 * Type: double
+		 */
 		win_probability: FormControl<number | null | undefined>,
 
 		/** The reason why the opportunity was won. */
@@ -1772,7 +1852,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1792,7 +1875,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1822,7 +1908,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1839,7 +1928,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1886,7 +1978,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1906,7 +2001,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1938,7 +2036,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -1958,7 +2059,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -1990,7 +2094,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref?: string | null;
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code?: number | null;
 
 		/** The type of error returned */
@@ -2010,7 +2117,10 @@ export namespace MyNS {
 		/** Link to documentation of error type */
 		ref: FormControl<string | null | undefined>,
 
-		/** HTTP status code */
+		/**
+		 * HTTP status code
+		 * Type: double
+		 */
 		status_code: FormControl<number | null | undefined>,
 
 		/** The type of error returned */
@@ -2060,6 +2170,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: number;
 	}
@@ -2092,6 +2203,7 @@ export namespace MyNS {
 		/**
 		 * HTTP Response Status Code
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		status_code: FormControl<number | null | undefined>,
 	}
@@ -2118,6 +2230,7 @@ export namespace MyNS {
 		 * @param {boolean} raw Include raw response. Mostly used for debugging purposes
 		 * @param {string} cursor Cursor to start from. You can find cursors for next/previous pages in the meta.cursors property of the response.
 		 * @param {number} limit Number of results to return. Minimum 1, Maximum 200, Default 20
+		 *     Minimum: 1    Maximum: 200
 		 * @param {string} fields The 'fields' parameter allows API users to specify the fields they want to include in the API response. If this parameter is not present, the API will return all available fields. If this parameter is present, only the fields specified in the comma-separated string will be included in the response. Nested properties can also be requested by using a dot notation. <br /><br />Example: `fields=name,email,addresses.city`<br /><br />In the example above, the response will only include the fields "name", "email" and "addresses.city". If any other fields are available, they will be excluded.
 		 * @return {GetCustomerSupportCustomersResponse} CustomerSupportCustomers
 		 */

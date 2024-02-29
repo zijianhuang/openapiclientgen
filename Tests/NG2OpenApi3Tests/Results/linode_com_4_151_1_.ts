@@ -23,11 +23,15 @@ export namespace MyNS {
 		 */
 		address_2?: string | null;
 
-		/** This Account's balance, in US dollars. */
+		/**
+		 * This Account's balance, in US dollars.
+		 * Type: double
+		 */
 		balance?: number | null;
 
 		/**
 		 * This Account's current estimated invoice in US dollars. This is not your final invoice balance. Transfer charges are not included in the estimate.
+		 * Type: double
 		 */
 		balance_uninvoiced?: number | null;
 
@@ -130,11 +134,15 @@ export namespace MyNS {
 		 */
 		address_2: FormControl<string | null | undefined>,
 
-		/** This Account's balance, in US dollars. */
+		/**
+		 * This Account's balance, in US dollars.
+		 * Type: double
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/**
 		 * This Account's current estimated invoice in US dollars. This is not your final invoice balance. Transfer charges are not included in the estimate.
+		 * Type: double
 		 */
 		balance_uninvoiced: FormControl<number | null | undefined>,
 
@@ -470,6 +478,7 @@ export namespace MyNS {
 
 		/**
 		 * This authorization's ID, used for revoking access.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -509,6 +518,7 @@ export namespace MyNS {
 
 		/**
 		 * This authorization's ID, used for revoking access.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -573,7 +583,10 @@ export namespace MyNS {
 		/** The date the Backup completed. */
 		finished?: Date | null;
 
-		/** The unique ID of this Backup. */
+		/**
+		 * The unique ID of this Backup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** A label for Backups that are of type `snapshot`. */
@@ -608,7 +621,10 @@ export namespace MyNS {
 		/** The date the Backup completed. */
 		finished: FormControl<Date | null | undefined>,
 
-		/** The unique ID of this Backup. */
+		/**
+		 * The unique ID of this Backup.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** A label for Backups that are of type `snapshot`. */
@@ -642,10 +658,14 @@ export namespace MyNS {
 	export interface BackupDisks {
 		filesystem?: Disk;
 		label?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface BackupDisksFormProperties {
 		label: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateBackupDisksFormGroup() {
@@ -673,17 +693,21 @@ export namespace MyNS {
 
 		/**
 		 * This Disk's ID which must be provided for all operations impacting this Disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
 		/**
 		 * The Disk's label is for display purposes only.
-		 * Max length: 48
 		 * Min length: 1
+		 * Max length: 48
 		 */
 		label?: string | null;
 
-		/** The size of the Disk in MB. */
+		/**
+		 * The size of the Disk in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 
 		/**
@@ -711,17 +735,21 @@ export namespace MyNS {
 
 		/**
 		 * This Disk's ID which must be provided for all operations impacting this Disk.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * The Disk's label is for display purposes only.
-		 * Max length: 48
 		 * Min length: 1
+		 * Max length: 48
 		 */
 		label: FormControl<string | null | undefined>,
 
-		/** The size of the Disk in MB. */
+		/**
+		 * The size of the Disk in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/**
@@ -763,16 +791,16 @@ export namespace MyNS {
 		/**
 		 * Your credit card number. No spaces or dashes allowed.
 		 * Required
-		 * Max length: 24
 		 * Min length: 14
+		 * Max length: 24
 		 */
 		card_number: string;
 
 		/**
 		 * CVV (Card Verification Value) of the credit card, typically found on the back of the card.
 		 * Required
-		 * Max length: 4
 		 * Min length: 3
+		 * Max length: 4
 		 */
 		cvv: string;
 
@@ -795,8 +823,8 @@ export namespace MyNS {
 		 * must result in a month/year combination of the current month or in
 		 * the future. An expiration date set in the past is invalid.
 		 * Required
-		 * Max length: 4
 		 * Min length: 4
+		 * Max length: 4
 		 */
 		expiry_year: number;
 	}
@@ -810,16 +838,16 @@ export namespace MyNS {
 		/**
 		 * Your credit card number. No spaces or dashes allowed.
 		 * Required
-		 * Max length: 24
 		 * Min length: 14
+		 * Max length: 24
 		 */
 		card_number: FormControl<string | null | undefined>,
 
 		/**
 		 * CVV (Card Verification Value) of the credit card, typically found on the back of the card.
 		 * Required
-		 * Max length: 4
 		 * Min length: 3
+		 * Max length: 4
 		 */
 		cvv: FormControl<string | null | undefined>,
 
@@ -842,8 +870,8 @@ export namespace MyNS {
 		 * must result in a month/year combination of the current month or in
 		 * the future. An expiration date set in the past is invalid.
 		 * Required
-		 * Max length: 4
 		 * Min length: 4
+		 * Max length: 4
 		 */
 		expiry_year: FormControl<number | null | undefined>,
 	}
@@ -921,7 +949,10 @@ export namespace MyNS {
 		/** The primary and secondary hosts for the Managed Database. These are assigned after provisioning is complete. */
 		hosts?: DatabaseHosts;
 
-		/** A unique ID that can be used to identify and reference the Managed Database. */
+		/**
+		 * A unique ID that can be used to identify and reference the Managed Database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -931,8 +962,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, user-defined string referring to the Managed Database.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label?: string | null;
 
@@ -973,7 +1004,10 @@ export namespace MyNS {
 		/** The Managed Database engine type. */
 		engine: FormControl<DatabaseEngine | null | undefined>,
 
-		/** A unique ID that can be used to identify and reference the Managed Database. */
+		/**
+		 * A unique ID that can be used to identify and reference the Managed Database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -983,8 +1017,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, user-defined string referring to the Managed Database.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -1149,7 +1183,10 @@ export namespace MyNS {
 		/** A time value given in a combined date and time format that represents when the database backup was created. */
 		created?: string | null;
 
-		/** The ID of the database backup object. */
+		/**
+		 * The ID of the database backup object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -1169,7 +1206,10 @@ export namespace MyNS {
 		/** A time value given in a combined date and time format that represents when the database backup was created. */
 		created: FormControl<string | null | undefined>,
 
-		/** The ID of the database backup object. */
+		/**
+		 * The ID of the database backup object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -1203,8 +1243,8 @@ export namespace MyNS {
 		 * * Must include only ASCII letters or numbers.
 		 * * Must be unique among other backup labels for this Database.
 		 * Required
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		label: string;
 
@@ -1223,8 +1263,8 @@ export namespace MyNS {
 		 * * Must include only ASCII letters or numbers.
 		 * * Must be unique among other backup labels for this Database.
 		 * Required
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -1312,7 +1352,10 @@ export namespace MyNS {
 		 */
 		peers?: Array<string>;
 
-		/** The access port for this Managed Database. */
+		/**
+		 * The access port for this Managed Database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** A general Managed Database instance object containing properties that are identical for all database types. */
@@ -1366,7 +1409,10 @@ export namespace MyNS {
 		/** The Managed Database engine type. */
 		engine: FormControl<string | null | undefined>,
 
-		/** The access port for this Managed Database. */
+		/**
+		 * The access port for this Managed Database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/**
@@ -1534,7 +1580,10 @@ export namespace MyNS {
 		/** A general Managed Database instance object containing properties that are identical for all database types. */
 		label?: Database;
 
-		/** The access port for this Managed Database. */
+		/**
+		 * The access port for this Managed Database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** A general Managed Database instance object containing properties that are identical for all database types. */
@@ -1576,7 +1625,10 @@ export namespace MyNS {
 		/** The Managed Database engine type. */
 		engine: FormControl<string | null | undefined>,
 
-		/** The access port for this Managed Database. */
+		/**
+		 * The access port for this Managed Database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/**
@@ -1697,7 +1749,10 @@ export namespace MyNS {
 		/** A general Managed Database instance object containing properties that are identical for all database types. */
 		label?: Database;
 
-		/** The access port for this Managed Database. */
+		/**
+		 * The access port for this Managed Database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** A general Managed Database instance object containing properties that are identical for all database types. */
@@ -1746,7 +1801,10 @@ export namespace MyNS {
 		/** The Managed Database engine type. */
 		engine: FormControl<string | null | undefined>,
 
-		/** The access port for this Managed Database. */
+		/**
+		 * The access port for this Managed Database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/**
@@ -1913,7 +1971,10 @@ export namespace MyNS {
 		/** Whether this Database plan type has been deprecated and is no longer available. */
 		deprecated?: boolean | null;
 
-		/** The amount of disk space set aside for Databases of this plan type. The value is represented in megabytes. */
+		/**
+		 * The amount of disk space set aside for Databases of this plan type. The value is represented in megabytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disk?: number | null;
 		engines?: DatabaseTypeEngines;
 
@@ -1923,10 +1984,16 @@ export namespace MyNS {
 		/** A human-readable string that describes each plan type. For display purposes only. */
 		label?: string | null;
 
-		/** The amount of RAM allocated to Database created of this plan type. The value is represented in megabytes. */
+		/**
+		 * The amount of RAM allocated to Database created of this plan type. The value is represented in megabytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memory?: number | null;
 
-		/** The integer of number CPUs allocated to databases of this plan type. */
+		/**
+		 * The integer of number CPUs allocated to databases of this plan type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vcpus?: number | null;
 	}
 
@@ -1939,7 +2006,10 @@ export namespace MyNS {
 		/** Whether this Database plan type has been deprecated and is no longer available. */
 		deprecated: FormControl<boolean | null | undefined>,
 
-		/** The amount of disk space set aside for Databases of this plan type. The value is represented in megabytes. */
+		/**
+		 * The amount of disk space set aside for Databases of this plan type. The value is represented in megabytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disk: FormControl<number | null | undefined>,
 
 		/** The ID representing the Managed Database node plan type. */
@@ -1948,10 +2018,16 @@ export namespace MyNS {
 		/** A human-readable string that describes each plan type. For display purposes only. */
 		label: FormControl<string | null | undefined>,
 
-		/** The amount of RAM allocated to Database created of this plan type. The value is represented in megabytes. */
+		/**
+		 * The amount of RAM allocated to Database created of this plan type. The value is represented in megabytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memory: FormControl<number | null | undefined>,
 
-		/** The integer of number CPUs allocated to databases of this plan type. */
+		/**
+		 * The integer of number CPUs allocated to databases of this plan type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vcpus: FormControl<number | null | undefined>,
 	}
 	export function CreateDatabaseTypeFormGroup() {
@@ -2008,18 +2084,30 @@ export namespace MyNS {
 
 	export interface DatabaseTypeEnginePrice {
 
-		/** Cost (in US dollars) per hour for this subscription tier. */
+		/**
+		 * Cost (in US dollars) per hour for this subscription tier.
+		 * Type: double
+		 */
 		hourly?: number | null;
 
-		/** Maximum cost (in US dollars) per month for this subscription tier. */
+		/**
+		 * Maximum cost (in US dollars) per month for this subscription tier.
+		 * Type: double
+		 */
 		monthly?: number | null;
 	}
 	export interface DatabaseTypeEnginePriceFormProperties {
 
-		/** Cost (in US dollars) per hour for this subscription tier. */
+		/**
+		 * Cost (in US dollars) per hour for this subscription tier.
+		 * Type: double
+		 */
 		hourly: FormControl<number | null | undefined>,
 
-		/** Maximum cost (in US dollars) per month for this subscription tier. */
+		/**
+		 * Maximum cost (in US dollars) per month for this subscription tier.
+		 * Type: double
+		 */
 		monthly: FormControl<number | null | undefined>,
 	}
 	export function CreateDatabaseTypeEnginePriceFormGroup() {
@@ -2039,10 +2127,16 @@ export namespace MyNS {
 	 */
 	export interface Device {
 
-		/** The Disk ID, or `null` if a Volume is assigned to this slot. */
+		/**
+		 * The Disk ID, or `null` if a Volume is assigned to this slot.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disk_id?: number | null;
 
-		/** The Volume ID, or `null` if a Disk is assigned to this slot. */
+		/**
+		 * The Volume ID, or `null` if a Disk is assigned to this slot.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volume_id?: number | null;
 	}
 
@@ -2052,10 +2146,16 @@ export namespace MyNS {
 	 */
 	export interface DeviceFormProperties {
 
-		/** The Disk ID, or `null` if a Volume is assigned to this slot. */
+		/**
+		 * The Disk ID, or `null` if a Volume is assigned to this slot.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		disk_id: FormControl<number | null | undefined>,
 
-		/** The Volume ID, or `null` if a Disk is assigned to this slot. */
+		/**
+		 * The Volume ID, or `null` if a Disk is assigned to this slot.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		volume_id: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceFormGroup() {
@@ -2168,14 +2268,15 @@ export namespace MyNS {
 		 * * **Required** when creating a Linode Disk from an Image, including when using a StackScript.
 		 * * Must meet a password strength score requirement that is calculated internally by the API.
 		 * If the strength requirement is not met, you will receive a `Password does not meet strength requirement` error.
-		 * Max length: 128
 		 * Min length: 7
+		 * Max length: 128
 		 */
 		root_pass?: string | null;
 
 		/**
 		 * The size of the Disk in MB.
 		 * Images require a minimum size. Access the Image View ([GET /images/{imageID}](/docs/api/images/#image-view)) endpoint to view its size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size?: number | null;
 
@@ -2193,6 +2294,7 @@ export namespace MyNS {
 		 * StackScript. To get a list of available StackScript and their permitted Images
 		 * see [/stackscripts](/docs/api/stackscripts/#stackscripts-list).
 		 * This field cannot be used when deploying from a Backup or a Private Image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		stackscript_id?: number | null;
 	}
@@ -2215,14 +2317,15 @@ export namespace MyNS {
 		 * * **Required** when creating a Linode Disk from an Image, including when using a StackScript.
 		 * * Must meet a password strength score requirement that is calculated internally by the API.
 		 * If the strength requirement is not met, you will receive a `Password does not meet strength requirement` error.
-		 * Max length: 128
 		 * Min length: 7
+		 * Max length: 128
 		 */
 		root_pass: FormControl<string | null | undefined>,
 
 		/**
 		 * The size of the Disk in MB.
 		 * Images require a minimum size. Access the Image View ([GET /images/{imageID}](/docs/api/images/#image-view)) endpoint to view its size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
@@ -2240,6 +2343,7 @@ export namespace MyNS {
 		 * StackScript. To get a list of available StackScript and their permitted Images
 		 * see [/stackscripts](/docs/api/stackscripts/#stackscripts-list).
 		 * This field cannot be used when deploying from a Backup or a Private Image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		stackscript_id: FormControl<number | null | undefined>,
 	}
@@ -2268,15 +2372,15 @@ export namespace MyNS {
 
 		/**
 		 * A description for this Domain. This is for display purposes only.
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		description?: string | null;
 
 		/**
 		 * The domain this Domain represents. Domain labels cannot be longer than 63 characters and must conform to [RFC1035](https://tools.ietf.org/html/rfc1035). Domains must be unique on Linode's platform, including across different Linode accounts; there cannot be two Domains representing the same domain.
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		domain?: string | null;
 
@@ -2287,17 +2391,21 @@ export namespace MyNS {
 		 * 0, 300, 3600, 7200, 14400, 28800, 57600, 86400, 172800, 345600, 604800, 1209600, and 2419200.
 		 * * Any other value is rounded up to the nearest valid value.
 		 * * A value of 0 is equivalent to the default value of 1209600.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expire_sec?: number | null;
 
 		/**
 		 * The group this Domain belongs to.  This is for display purposes only.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		group?: string | null;
 
-		/** This Domain's unique ID */
+		/**
+		 * This Domain's unique ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -2311,6 +2419,7 @@ export namespace MyNS {
 		 * 0, 300, 3600, 7200, 14400, 28800, 57600, 86400, 172800, 345600, 604800, 1209600, and 2419200.
 		 * * Any other value is rounded up to the nearest valid value.
 		 * * A value of 0 is equivalent to the default value of 14400.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		refresh_sec?: number | null;
 
@@ -2320,6 +2429,7 @@ export namespace MyNS {
 		 * 0, 300, 3600, 7200, 14400, 28800, 57600, 86400, 172800, 345600, 604800, 1209600, and 2419200.
 		 * * Any other value is rounded up to the nearest valid value.
 		 * * A value of 0 is equivalent to the default value of 14400.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retry_sec?: number | null;
 
@@ -2343,6 +2453,7 @@ export namespace MyNS {
 		 * * Valid values are 0, 300, 3600, 7200, 14400, 28800, 57600, 86400, 172800, 345600, 604800, 1209600, and 2419200.
 		 * * Any other value is rounded up to the nearest valid value.
 		 * * A value of 0 is equivalent to the default value of 86400.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl_sec?: number | null;
 
@@ -2359,15 +2470,15 @@ export namespace MyNS {
 
 		/**
 		 * A description for this Domain. This is for display purposes only.
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The domain this Domain represents. Domain labels cannot be longer than 63 characters and must conform to [RFC1035](https://tools.ietf.org/html/rfc1035). Domains must be unique on Linode's platform, including across different Linode accounts; there cannot be two Domains representing the same domain.
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		domain: FormControl<string | null | undefined>,
 
@@ -2378,17 +2489,21 @@ export namespace MyNS {
 		 * 0, 300, 3600, 7200, 14400, 28800, 57600, 86400, 172800, 345600, 604800, 1209600, and 2419200.
 		 * * Any other value is rounded up to the nearest valid value.
 		 * * A value of 0 is equivalent to the default value of 1209600.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expire_sec: FormControl<number | null | undefined>,
 
 		/**
 		 * The group this Domain belongs to.  This is for display purposes only.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		group: FormControl<string | null | undefined>,
 
-		/** This Domain's unique ID */
+		/**
+		 * This Domain's unique ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -2397,6 +2512,7 @@ export namespace MyNS {
 		 * 0, 300, 3600, 7200, 14400, 28800, 57600, 86400, 172800, 345600, 604800, 1209600, and 2419200.
 		 * * Any other value is rounded up to the nearest valid value.
 		 * * A value of 0 is equivalent to the default value of 14400.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		refresh_sec: FormControl<number | null | undefined>,
 
@@ -2406,6 +2522,7 @@ export namespace MyNS {
 		 * 0, 300, 3600, 7200, 14400, 28800, 57600, 86400, 172800, 345600, 604800, 1209600, and 2419200.
 		 * * Any other value is rounded up to the nearest valid value.
 		 * * A value of 0 is equivalent to the default value of 14400.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retry_sec: FormControl<number | null | undefined>,
 
@@ -2424,6 +2541,7 @@ export namespace MyNS {
 		 * * Valid values are 0, 300, 3600, 7200, 14400, 28800, 57600, 86400, 172800, 345600, 604800, 1209600, and 2419200.
 		 * * Any other value is rounded up to the nearest valid value.
 		 * * A value of 0 is equivalent to the default value of 86400.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl_sec: FormControl<number | null | undefined>,
 
@@ -2462,7 +2580,10 @@ export namespace MyNS {
 		/** When this Domain Record was created. */
 		created?: Date | null;
 
-		/** This Record's unique ID. */
+		/**
+		 * This Record's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -2478,8 +2599,8 @@ export namespace MyNS {
 		 * `CAA`: The subdomain. Omit or enter an empty string (`""`) to apply to the entire Domain.
 		 * `PTR`: See our guide on how to [Configure Your Linode for Reverse DNS
 		 * (rDNS)](/docs/guides/configure-rdns/).
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name?: string | null;
 
@@ -2543,6 +2664,7 @@ export namespace MyNS {
 
 		/**
 		 * "Time to Live" - the amount of time in seconds that this Domain's records may be cached by resolvers or other domain servers. Valid values are 300, 3600, 7200, 14400, 28800, 57600, 86400, 172800, 345600, 604800, 1209600, and 2419200 - any other value will be rounded to the nearest valid value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl_sec?: number | null;
 
@@ -2570,7 +2692,10 @@ export namespace MyNS {
 		/** When this Domain Record was created. */
 		created: FormControl<Date | null | undefined>,
 
-		/** This Record's unique ID. */
+		/**
+		 * This Record's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -2586,8 +2711,8 @@ export namespace MyNS {
 		 * `CAA`: The subdomain. Omit or enter an empty string (`""`) to apply to the entire Domain.
 		 * `PTR`: See our guide on how to [Configure Your Linode for Reverse DNS
 		 * (rDNS)](/docs/guides/configure-rdns/).
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2651,6 +2776,7 @@ export namespace MyNS {
 
 		/**
 		 * "Time to Live" - the amount of time in seconds that this Domain's records may be cached by resolvers or other domain servers. Valid values are 300, 3600, 7200, 14400, 28800, 57600, 86400, 172800, 345600, 604800, 1209600, and 2419200 - any other value will be rounded to the nearest valid value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl_sec: FormControl<number | null | undefined>,
 
@@ -2867,6 +2993,7 @@ export namespace MyNS {
 
 		/**
 		 * The total duration in seconds that it takes for the Event to complete.
+		 * Type: double
 		 */
 		duration?: number | null;
 
@@ -2875,7 +3002,10 @@ export namespace MyNS {
 		 */
 		entity?: EventEntity;
 
-		/** The unique ID of this Event. */
+		/**
+		 * The unique ID of this Event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -2886,6 +3016,7 @@ export namespace MyNS {
 		/**
 		 * A percentage estimating the amount of time remaining for an Event.
 		 * Returns `null` for notification events.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		percent_complete?: number | null;
 
@@ -2936,10 +3067,14 @@ export namespace MyNS {
 
 		/**
 		 * The total duration in seconds that it takes for the Event to complete.
+		 * Type: double
 		 */
 		duration: FormControl<number | null | undefined>,
 
-		/** The unique ID of this Event. */
+		/**
+		 * The unique ID of this Event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -2950,6 +3085,7 @@ export namespace MyNS {
 		/**
 		 * A percentage estimating the amount of time remaining for an Event.
 		 * Returns `null` for notification events.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		percent_complete: FormControl<number | null | undefined>,
 
@@ -3012,6 +3148,7 @@ export namespace MyNS {
 		 * * `backups`
 		 * Tag Events use a tag's name for the entity ID field. When filtering by ID
 		 * for tag Events, supply the name of the tag.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -3045,6 +3182,7 @@ export namespace MyNS {
 		 * * `backups`
 		 * Tag Events use a tag's name for the entity ID field. When filtering by ID
 		 * for tag Events, supply the name of the tag.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3144,6 +3282,7 @@ export namespace MyNS {
 
 		/**
 		 * The Firewall's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -3155,8 +3294,8 @@ export namespace MyNS {
 		 * * Cannot have two dashes (`--`), underscores (`__`) or periods (`..`) in a row.
 		 * * Must be between 3 and 32 characters.
 		 * * Must be unique.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label?: string | null;
 
@@ -3197,6 +3336,7 @@ export namespace MyNS {
 
 		/**
 		 * The Firewall's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3208,8 +3348,8 @@ export namespace MyNS {
 		 * * Cannot have two dashes (`--`), underscores (`__`) or periods (`..`) in a row.
 		 * * Must be between 3 and 32 characters.
 		 * * Must be unique.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -3297,15 +3437,15 @@ export namespace MyNS {
 
 		/**
 		 * Used to describe this rule. For display purposes only.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		description?: string | null;
 
 		/**
 		 * Used to identify this rule. For display purposes only.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label?: string | null;
 
@@ -3338,15 +3478,15 @@ export namespace MyNS {
 
 		/**
 		 * Used to describe this rule. For display purposes only.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Used to identify this rule. For display purposes only.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -3417,6 +3557,7 @@ export namespace MyNS {
 
 		/**
 		 * The Device's unique ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -3438,6 +3579,7 @@ export namespace MyNS {
 
 		/**
 		 * The Device's unique ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3457,7 +3599,10 @@ export namespace MyNS {
 
 	export interface FirewallDevicesEntity {
 
-		/** The entity's ID */
+		/**
+		 * The entity's ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The entity's label. */
@@ -3473,7 +3618,10 @@ export namespace MyNS {
 	}
 	export interface FirewallDevicesEntityFormProperties {
 
-		/** The entity's ID */
+		/**
+		 * The entity's ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The entity's label. */
@@ -3542,6 +3690,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the entity this grant applies to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -3563,6 +3712,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the entity this grant applies to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -3766,11 +3916,13 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode this address currently belongs to. For IPv4 addresses, this is by default the Linode that this address was assigned to on creation, and these addresses my be moved using the [/networking/ipv4/assign](/docs/api/networking/#ips-to-linodes-assign) endpoint. For SLAAC and link-local addresses, this value may not be changed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id?: number | null;
 
 		/**
 		 * The number of bits set in the subnet mask.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix?: number | null;
 
@@ -3817,11 +3969,13 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode this address currently belongs to. For IPv4 addresses, this is by default the Linode that this address was assigned to on creation, and these addresses my be moved using the [/networking/ipv4/assign](/docs/api/networking/#ips-to-linodes-assign) endpoint. For SLAAC and link-local addresses, this value may not be changed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of bits set in the subnet mask.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix: FormControl<number | null | undefined>,
 
@@ -3885,11 +4039,13 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode this address currently belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id?: number | null;
 
 		/**
 		 * The number of bits set in the subnet mask.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix?: number | null;
 
@@ -3936,11 +4092,13 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode this address currently belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of bits set in the subnet mask.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix: FormControl<number | null | undefined>,
 
@@ -4002,11 +4160,13 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode this address currently belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id?: number | null;
 
 		/**
 		 * The network prefix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix?: number | null;
 
@@ -4053,11 +4213,13 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode this address currently belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 
 		/**
 		 * The network prefix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix: FormControl<number | null | undefined>,
 
@@ -4119,11 +4281,13 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode this address currently belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id?: number | null;
 
 		/**
 		 * The network prefix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix?: number | null;
 
@@ -4170,11 +4334,13 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode this address currently belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 
 		/**
 		 * The network prefix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix: FormControl<number | null | undefined>,
 
@@ -4264,6 +4430,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode to assign this address to. The IP's previous Linode will lose this address, and must end up with at least one public address and no more than one private address once all assignments have been made.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id?: number | null;
 	}
@@ -4280,6 +4447,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode to assign this address to. The IP's previous Linode will lose this address, and must end up with at least one public address and no more than one private address once all assignments have been made.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 	}
@@ -4308,6 +4476,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the primary Linode that the addresses will be shared with.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: number;
 	}
@@ -4318,6 +4487,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the primary Linode that the addresses will be shared with.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 	}
@@ -4336,6 +4506,7 @@ export namespace MyNS {
 
 		/**
 		 * The prefix length of the address, denoting how many addresses can be assigned from this pool calculated as 2 <sup>128-prefix</sup>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix?: number | null;
 
@@ -4362,6 +4533,7 @@ export namespace MyNS {
 
 		/**
 		 * The prefix length of the address, denoting how many addresses can be assigned from this pool calculated as 2 <sup>128-prefix</sup>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix: FormControl<number | null | undefined>,
 
@@ -4398,6 +4570,7 @@ export namespace MyNS {
 
 		/**
 		 * The prefix length of the address, denoting how many addresses can be assigned from this range calculated as 2 <sup>128-prefix</sup>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix?: number | null;
 
@@ -4424,6 +4597,7 @@ export namespace MyNS {
 
 		/**
 		 * The prefix length of the address, denoting how many addresses can be assigned from this range calculated as 2 <sup>128-prefix</sup>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix: FormControl<number | null | undefined>,
 
@@ -4470,6 +4644,7 @@ export namespace MyNS {
 
 		/**
 		 * The prefix length of the address, denoting how many addresses can be assigned from this range calculated as 2 <sup>128-prefix</sup>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix?: number | null;
 
@@ -4496,6 +4671,7 @@ export namespace MyNS {
 
 		/**
 		 * The prefix length of the address, denoting how many addresses can be assigned from this range calculated as 2 <sup>128-prefix</sup>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		prefix: FormControl<number | null | undefined>,
 
@@ -4538,8 +4714,8 @@ export namespace MyNS {
 
 		/**
 		 * A detailed description of this Image.
-		 * Max length: 65000
 		 * Min length: 1
+		 * Max length: 65000
 		 */
 		description?: string | null;
 
@@ -4566,6 +4742,7 @@ export namespace MyNS {
 
 		/**
 		 * The minimum size this Image needs to deploy. Size is in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size?: number | null;
 
@@ -4610,8 +4787,8 @@ export namespace MyNS {
 
 		/**
 		 * A detailed description of this Image.
-		 * Max length: 65000
 		 * Min length: 1
+		 * Max length: 65000
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -4638,6 +4815,7 @@ export namespace MyNS {
 
 		/**
 		 * The minimum size this Image needs to deploy. Size is in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
@@ -4694,22 +4872,34 @@ export namespace MyNS {
 		/** When this Invoice was generated. */
 		date?: Date | null;
 
-		/** The Invoice's unique ID. */
+		/**
+		 * The Invoice's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The Invoice's display label. */
 		label?: string | null;
 
-		/** The amount of the Invoice before taxes in US Dollars. */
+		/**
+		 * The amount of the Invoice before taxes in US Dollars.
+		 * Type: double
+		 */
 		subtotal?: number | null;
 
-		/** The amount of tax levied on the Invoice in US Dollars. */
+		/**
+		 * The amount of tax levied on the Invoice in US Dollars.
+		 * Type: double
+		 */
 		tax?: number | null;
 
 		/** The amount of tax broken down into subtotals by source. */
 		InvoiceTax_summary?: Array<InvoiceTax_summary>;
 
-		/** The amount of the Invoice after taxes in US Dollars. */
+		/**
+		 * The amount of the Invoice after taxes in US Dollars.
+		 * Type: double
+		 */
 		total?: number | null;
 	}
 
@@ -4719,19 +4909,31 @@ export namespace MyNS {
 		/** When this Invoice was generated. */
 		date: FormControl<Date | null | undefined>,
 
-		/** The Invoice's unique ID. */
+		/**
+		 * The Invoice's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The Invoice's display label. */
 		label: FormControl<string | null | undefined>,
 
-		/** The amount of the Invoice before taxes in US Dollars. */
+		/**
+		 * The amount of the Invoice before taxes in US Dollars.
+		 * Type: double
+		 */
 		subtotal: FormControl<number | null | undefined>,
 
-		/** The amount of tax levied on the Invoice in US Dollars. */
+		/**
+		 * The amount of tax levied on the Invoice in US Dollars.
+		 * Type: double
+		 */
 		tax: FormControl<number | null | undefined>,
 
-		/** The amount of the Invoice after taxes in US Dollars. */
+		/**
+		 * The amount of the Invoice after taxes in US Dollars.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceFormGroup() {
@@ -4751,7 +4953,10 @@ export namespace MyNS {
 		/** The source of this tax subtotal. */
 		name?: string | null;
 
-		/** The amount of tax subtotal attributable to this source. */
+		/**
+		 * The amount of tax subtotal attributable to this source.
+		 * Type: double
+		 */
 		tax?: number | null;
 	}
 	export interface InvoiceTax_summaryFormProperties {
@@ -4759,7 +4964,10 @@ export namespace MyNS {
 		/** The source of this tax subtotal. */
 		name: FormControl<string | null | undefined>,
 
-		/** The amount of tax subtotal attributable to this source. */
+		/**
+		 * The amount of tax subtotal attributable to this source.
+		 * Type: double
+		 */
 		tax: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceTax_summaryFormGroup() {
@@ -4774,7 +4982,10 @@ export namespace MyNS {
 	/** An InvoiceItem object. */
 	export interface InvoiceItem {
 
-		/** The price, in US dollars, of the Invoice Item. Equal to the unit price multiplied by quantity. */
+		/**
+		 * The price, in US dollars, of the Invoice Item. Equal to the unit price multiplied by quantity.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** The date the Invoice Item started, based on month. */
@@ -4783,16 +4994,25 @@ export namespace MyNS {
 		/** The Invoice Item's display label. */
 		label?: string | null;
 
-		/** The quantity of this Item for the specified Invoice. */
+		/**
+		 * The quantity of this Item for the specified Invoice.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** The amount of tax levied on this Item in US Dollars. */
+		/**
+		 * The amount of tax levied on this Item in US Dollars.
+		 * Type: double
+		 */
 		tax?: number | null;
 
 		/** The date the Invoice Item ended, based on month. */
 		to?: Date | null;
 
-		/** The price of this Item after taxes in US Dollars. */
+		/**
+		 * The price of this Item after taxes in US Dollars.
+		 * Type: double
+		 */
 		total?: number | null;
 
 		/** The type of service, ether `hourly` or `misc`. */
@@ -4805,7 +5025,10 @@ export namespace MyNS {
 	/** An InvoiceItem object. */
 	export interface InvoiceItemFormProperties {
 
-		/** The price, in US dollars, of the Invoice Item. Equal to the unit price multiplied by quantity. */
+		/**
+		 * The price, in US dollars, of the Invoice Item. Equal to the unit price multiplied by quantity.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The date the Invoice Item started, based on month. */
@@ -4814,16 +5037,25 @@ export namespace MyNS {
 		/** The Invoice Item's display label. */
 		label: FormControl<string | null | undefined>,
 
-		/** The quantity of this Item for the specified Invoice. */
+		/**
+		 * The quantity of this Item for the specified Invoice.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** The amount of tax levied on this Item in US Dollars. */
+		/**
+		 * The amount of tax levied on this Item in US Dollars.
+		 * Type: double
+		 */
 		tax: FormControl<number | null | undefined>,
 
 		/** The date the Invoice Item ended, based on month. */
 		to: FormControl<Date | null | undefined>,
 
-		/** The price of this Item after taxes in US Dollars. */
+		/**
+		 * The price of this Item after taxes in US Dollars.
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 
 		/** The type of service, ether `hourly` or `misc`. */
@@ -4940,7 +5172,10 @@ export namespace MyNS {
 		/** When this Kubernetes cluster was created. */
 		created?: Date | null;
 
-		/** This Kubernetes cluster's unique ID. */
+		/**
+		 * This Kubernetes cluster's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -4962,8 +5197,8 @@ export namespace MyNS {
 		 * * If the label is entirely composed of UTF-8 characters, the API
 		 * response will return the code points using up to 193 1 byte
 		 * characters.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		label?: string | null;
 
@@ -4985,7 +5220,10 @@ export namespace MyNS {
 		/** When this Kubernetes cluster was created. */
 		created: FormControl<Date | null | undefined>,
 
-		/** This Kubernetes cluster's unique ID. */
+		/**
+		 * This Kubernetes cluster's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -5007,8 +5245,8 @@ export namespace MyNS {
 		 * * If the label is entirely composed of UTF-8 characters, the API
 		 * response will return the code points using up to 193 1 byte
 		 * characters.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -5076,6 +5314,7 @@ export namespace MyNS {
 
 		/**
 		 * This Node Pool's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -5107,6 +5346,7 @@ export namespace MyNS {
 
 		/**
 		 * This Node Pool's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -5174,6 +5414,7 @@ export namespace MyNS {
 		/**
 		 * The size of this custom disk partition in MB.
 		 * * The size of this disk partition must not exceed the capacity of the node's plan type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size?: number | null;
 
@@ -5187,6 +5428,7 @@ export namespace MyNS {
 		/**
 		 * The size of this custom disk partition in MB.
 		 * * The size of this disk partition must not exceed the capacity of the node's plan type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 
@@ -5412,6 +5654,7 @@ export namespace MyNS {
 
 		/**
 		 * This Linode's ID which must be provided for all operations impacting this Linode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 		image?: DiskRequest;
@@ -5438,8 +5681,8 @@ export namespace MyNS {
 		 * * Must begin and end with an alphanumeric character.
 		 * * May only consist of alphanumeric characters, dashes (`-`), underscores (`_`) or periods (`.`).
 		 * * Cannot have two dashes (`--`), underscores (`__`) or periods (`..`) in a row.
-		 * Max length: 64
 		 * Min length: 3
+		 * Max length: 64
 		 */
 		label?: string | null;
 
@@ -5496,6 +5739,7 @@ export namespace MyNS {
 
 		/**
 		 * This Linode's ID which must be provided for all operations impacting this Linode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -5511,8 +5755,8 @@ export namespace MyNS {
 		 * * Must begin and end with an alphanumeric character.
 		 * * May only consist of alphanumeric characters, dashes (`-`), underscores (`_`) or periods (`.`).
 		 * * Cannot have two dashes (`--`), underscores (`__`) or periods (`..`) in a row.
-		 * Max length: 64
 		 * Min length: 3
+		 * Max length: 64
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -5570,26 +5814,31 @@ export namespace MyNS {
 		 * to be alerted at 90% of a two core Linode's CPU capacity, set the alert value to `180`.
 		 * The default value is 90% multiplied by the number of cores.
 		 * If the value is set to `0` (zero), the alert is disabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cpu?: number | null;
 
 		/**
 		 * The amount of disk IO operation per second required to trigger an alert. If the average disk IO over two hours exceeds this value, we'll send you an alert. If set to `0` (zero), this alert is disabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		io?: number | null;
 
 		/**
 		 * The amount of incoming traffic, in Mbit/s, required to trigger an alert. If the average incoming traffic over two hours exceeds this value, we'll send you an alert. If this is set to `0` (zero), the alert is disabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network_in?: number | null;
 
 		/**
 		 * The amount of outbound traffic, in Mbit/s, required to trigger an alert. If the average outbound traffic over two hours exceeds this value, we'll send you an alert. If this is set to `0` (zero), the alert is disabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network_out?: number | null;
 
 		/**
 		 * The percentage of network transfer that may be used before an alert is triggered. When this value is exceeded, we'll alert you. If this is set to `0` (zero), the alert is disabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transfer_quota?: number | null;
 	}
@@ -5604,26 +5853,31 @@ export namespace MyNS {
 		 * to be alerted at 90% of a two core Linode's CPU capacity, set the alert value to `180`.
 		 * The default value is 90% multiplied by the number of cores.
 		 * If the value is set to `0` (zero), the alert is disabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cpu: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount of disk IO operation per second required to trigger an alert. If the average disk IO over two hours exceeds this value, we'll send you an alert. If set to `0` (zero), this alert is disabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		io: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount of incoming traffic, in Mbit/s, required to trigger an alert. If the average incoming traffic over two hours exceeds this value, we'll send you an alert. If this is set to `0` (zero), the alert is disabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network_in: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount of outbound traffic, in Mbit/s, required to trigger an alert. If the average outbound traffic over two hours exceeds this value, we'll send you an alert. If this is set to `0` (zero), the alert is disabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network_out: FormControl<number | null | undefined>,
 
 		/**
 		 * The percentage of network transfer that may be used before an alert is triggered. When this value is exceeded, we'll alert you. If this is set to `0` (zero), the alert is disabled.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transfer_quota: FormControl<number | null | undefined>,
 	}
@@ -5746,25 +6000,32 @@ export namespace MyNS {
 
 		/**
 		 * The amount of storage space, in MB, this Linode has access to. A typical Linode will divide this space between a primary disk with an `image` deployed to it, and a swap disk, usually 512 MB. This is the default configuration created when deploying a Linode with an `image` through [POST /linode/instances](/docs/api/linode-instances/#linode-create). While this configuration is suitable for 99% of use cases, if you need finer control over your Linode's disks, see the [/linode/instances/{linodeId}/disks](/docs/api/linode-instances/#disks-list) endpoints.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		disk?: number | null;
 
 		/**
 		 * The number of gpus this Linode has access to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		gpus?: number | null;
 
 		/**
 		 * The amount of RAM, in MB, this Linode has access to.
 		 * Typically, a Linode boots with all of its available RAM, but this can be configured in a Config profile. See the [/linode/instances/{linodeId}/configs](/docs/api/linode-instances/#configuration-profiles-list) endpoints and the LinodeConfig object for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memory?: number | null;
 
-		/** The amount of network transfer this Linode is allotted each month. */
+		/**
+		 * The amount of network transfer this Linode is allotted each month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transfer?: number | null;
 
 		/**
 		 * The number of vcpus this Linode has access to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vcpus?: number | null;
 	}
@@ -5772,25 +6033,32 @@ export namespace MyNS {
 
 		/**
 		 * The amount of storage space, in MB, this Linode has access to. A typical Linode will divide this space between a primary disk with an `image` deployed to it, and a swap disk, usually 512 MB. This is the default configuration created when deploying a Linode with an `image` through [POST /linode/instances](/docs/api/linode-instances/#linode-create). While this configuration is suitable for 99% of use cases, if you need finer control over your Linode's disks, see the [/linode/instances/{linodeId}/disks](/docs/api/linode-instances/#disks-list) endpoints.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		disk: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of gpus this Linode has access to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		gpus: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount of RAM, in MB, this Linode has access to.
 		 * Typically, a Linode boots with all of its available RAM, but this can be configured in a Config profile. See the [/linode/instances/{linodeId}/configs](/docs/api/linode-instances/#configuration-profiles-list) endpoints and the LinodeConfig object for more information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memory: FormControl<number | null | undefined>,
 
-		/** The amount of network transfer this Linode is allotted each month. */
+		/**
+		 * The amount of network transfer this Linode is allotted each month.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transfer: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of vcpus this Linode has access to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vcpus: FormControl<number | null | undefined>,
 	}
@@ -5822,7 +6090,10 @@ export namespace MyNS {
 		/** Helpers enabled when booting to this Linode Config. */
 		helpers?: LinodeConfigHelpers;
 
-		/** The ID of this Config. */
+		/**
+		 * The ID of this Config.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -5847,13 +6118,14 @@ export namespace MyNS {
 
 		/**
 		 * The Config's label is for display purposes only.
-		 * Max length: 48
 		 * Min length: 1
+		 * Max length: 48
 		 */
 		label?: string | null;
 
 		/**
 		 * Defaults to the total RAM of the Linode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memory_limit?: number | null;
 
@@ -5884,7 +6156,10 @@ export namespace MyNS {
 		/** Optional field for arbitrary User comments on this Config. */
 		comments: FormControl<string | null | undefined>,
 
-		/** The ID of this Config. */
+		/**
+		 * The ID of this Config.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** A Kernel ID to boot a Linode with. Defaults to "linode/latest-64bit". */
@@ -5892,13 +6167,14 @@ export namespace MyNS {
 
 		/**
 		 * The Config's label is for display purposes only.
-		 * Max length: 48
 		 * Min length: 1
+		 * Max length: 48
 		 */
 		label: FormControl<string | null | undefined>,
 
 		/**
 		 * Defaults to the total RAM of the Linode.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memory_limit: FormControl<number | null | undefined>,
 
@@ -6007,8 +6283,8 @@ export namespace MyNS {
 		 * If the VLAN label is new, a VLAN is created. Up to 10 VLANs can be created in each data center region. To view your active VLANs, use the [VLANs List](/docs/api/networking/#vlans-list) endpoint.
 		 * May only consist of ASCII letters, numbers, and dashes (`-`).
 		 * Must be unique among the Linode's interfaces.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		label?: string | null;
 
@@ -6044,8 +6320,8 @@ export namespace MyNS {
 		 * If the VLAN label is new, a VLAN is created. Up to 10 VLANs can be created in each data center region. To view your active VLANs, use the [VLANs List](/docs/api/networking/#vlans-list) endpoint.
 		 * May only consist of ASCII letters, numbers, and dashes (`-`).
 		 * Must be unique among the Linode's interfaces.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -6253,11 +6529,13 @@ export namespace MyNS {
 
 		/**
 		 * The Disk size, in MB, of the Linode Type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		disk?: number | null;
 
 		/**
 		 * The number of GPUs this Linode Type offers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		gpus?: number | null;
 
@@ -6271,11 +6549,13 @@ export namespace MyNS {
 
 		/**
 		 * Amount of RAM included in this Linode Type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memory?: number | null;
 
 		/**
 		 * The Mbits outbound bandwidth allocation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network_out?: number | null;
 
@@ -6291,11 +6571,13 @@ export namespace MyNS {
 
 		/**
 		 * The monthly outbound transfer amount, in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transfer?: number | null;
 
 		/**
 		 * The number of VCPU cores this Linode Type offers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vcpus?: number | null;
 	}
@@ -6327,11 +6609,13 @@ export namespace MyNS {
 
 		/**
 		 * The Disk size, in MB, of the Linode Type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		disk: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of GPUs this Linode Type offers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		gpus: FormControl<number | null | undefined>,
 
@@ -6345,11 +6629,13 @@ export namespace MyNS {
 
 		/**
 		 * Amount of RAM included in this Linode Type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		memory: FormControl<number | null | undefined>,
 
 		/**
 		 * The Mbits outbound bandwidth allocation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		network_out: FormControl<number | null | undefined>,
 
@@ -6360,11 +6646,13 @@ export namespace MyNS {
 
 		/**
 		 * The monthly outbound transfer amount, in MB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		transfer: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of VCPU cores this Linode Type offers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		vcpus: FormControl<number | null | undefined>,
 	}
@@ -6416,11 +6704,13 @@ export namespace MyNS {
 
 		/**
 		 * The cost (in US dollars) per hour to add Backups service.
+		 * Type: double
 		 */
 		hourly?: number | null;
 
 		/**
 		 * The cost (in US dollars) per month to add Backups service.
+		 * Type: double
 		 */
 		monthly?: number | null;
 	}
@@ -6428,11 +6718,13 @@ export namespace MyNS {
 
 		/**
 		 * The cost (in US dollars) per hour to add Backups service.
+		 * Type: double
 		 */
 		hourly: FormControl<number | null | undefined>,
 
 		/**
 		 * The cost (in US dollars) per month to add Backups service.
+		 * Type: double
 		 */
 		monthly: FormControl<number | null | undefined>,
 	}
@@ -6448,18 +6740,30 @@ export namespace MyNS {
 
 	export interface LinodeTypePrice {
 
-		/** Cost (in US dollars) per hour. */
+		/**
+		 * Cost (in US dollars) per hour.
+		 * Type: double
+		 */
 		hourly?: number | null;
 
-		/** Cost (in US dollars) per month. */
+		/**
+		 * Cost (in US dollars) per month.
+		 * Type: double
+		 */
 		monthly?: number | null;
 	}
 	export interface LinodeTypePriceFormProperties {
 
-		/** Cost (in US dollars) per hour. */
+		/**
+		 * Cost (in US dollars) per hour.
+		 * Type: double
+		 */
 		hourly: FormControl<number | null | undefined>,
 
-		/** Cost (in US dollars) per month. */
+		/**
+		 * Cost (in US dollars) per month.
+		 * Type: double
+		 */
 		monthly: FormControl<number | null | undefined>,
 	}
 	export function CreateLinodeTypePriceFormGroup() {
@@ -6483,6 +6787,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID of this login object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -6519,6 +6824,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID of this login object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -6581,6 +6887,7 @@ export namespace MyNS {
 
 		/**
 		 * This Client's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -6593,8 +6900,8 @@ export namespace MyNS {
 
 		/**
 		 * This Client's unique label. This is for display purposes only.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label?: string | null;
 
@@ -6623,6 +6930,7 @@ export namespace MyNS {
 
 		/**
 		 * This Client's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -6635,8 +6943,8 @@ export namespace MyNS {
 
 		/**
 		 * This Client's unique label. This is for display purposes only.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -6741,6 +7049,7 @@ export namespace MyNS {
 
 		/**
 		 * The number of Longview Clients that may be created with this Subscription tier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		clients_included?: number | null;
 
@@ -6767,6 +7076,7 @@ export namespace MyNS {
 
 		/**
 		 * The number of Longview Clients that may be created with this Subscription tier.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		clients_included: FormControl<number | null | undefined>,
 
@@ -6793,11 +7103,13 @@ export namespace MyNS {
 
 		/**
 		 * The hourly price, in US dollars, for this Subscription tier.
+		 * Type: double
 		 */
 		hourly?: number | null;
 
 		/**
 		 * The maximum monthly price in US Dollars for this Subscription tier. You will never be charged more than this amount per month for this subscription.
+		 * Type: double
 		 */
 		monthly?: number | null;
 	}
@@ -6805,11 +7117,13 @@ export namespace MyNS {
 
 		/**
 		 * The hourly price, in US dollars, for this Subscription tier.
+		 * Type: double
 		 */
 		hourly: FormControl<number | null | undefined>,
 
 		/**
 		 * The maximum monthly price in US Dollars for this Subscription tier. You will never be charged more than this amount per month for this subscription.
+		 * Type: double
 		 */
 		monthly: FormControl<number | null | undefined>,
 	}
@@ -6904,6 +7218,7 @@ export namespace MyNS {
 
 		/**
 		 * The id of the entity being affected by maintenance.
+		 * Type: double
 		 */
 		id?: number | null;
 
@@ -6926,6 +7241,7 @@ export namespace MyNS {
 
 		/**
 		 * The id of the entity being affected by maintenance.
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -6971,20 +7287,21 @@ export namespace MyNS {
 
 		/**
 		 * A grouping for this Contact. This is for display purposes only.
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		group?: string | null;
 
 		/**
 		 * This Contact's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
 		/**
 		 * The name of this Contact.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		name?: string | null;
 
@@ -7011,20 +7328,21 @@ export namespace MyNS {
 
 		/**
 		 * A grouping for this Contact. This is for display purposes only.
-		 * Max length: 50
 		 * Min length: 2
+		 * Max length: 50
 		 */
 		group: FormControl<string | null | undefined>,
 
 		/**
 		 * This Contact's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * The name of this Contact.
-		 * Max length: 64
 		 * Min length: 2
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -7084,13 +7402,14 @@ export namespace MyNS {
 
 		/**
 		 * This Credential's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
 		/**
 		 * The unique label for this Credential. This is for display purposes only.
-		 * Max length: 75
 		 * Min length: 2
+		 * Max length: 75
 		 */
 		label?: string | null;
 
@@ -7107,13 +7426,14 @@ export namespace MyNS {
 
 		/**
 		 * This Credential's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * The unique label for this Credential. This is for display purposes only.
-		 * Max length: 75
 		 * Min length: 2
+		 * Max length: 75
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -7149,6 +7469,7 @@ export namespace MyNS {
 
 		/**
 		 * This Issue's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -7170,6 +7491,7 @@ export namespace MyNS {
 
 		/**
 		 * This Issue's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -7185,6 +7507,7 @@ export namespace MyNS {
 
 		/**
 		 * This ticket's ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -7207,6 +7530,7 @@ export namespace MyNS {
 
 		/**
 		 * This ticket's ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -7250,6 +7574,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode these Settings are for.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -7276,6 +7601,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode these Settings are for.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -7320,8 +7646,8 @@ export namespace MyNS {
 		 * The specific user, if any, Linode's special forces should use when accessing this
 		 * Linode to respond to an issue.
 		 * The default `null` value corresponds to the root user.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		user?: string | null;
 	}
@@ -7352,8 +7678,8 @@ export namespace MyNS {
 		 * The specific user, if any, Linode's special forces should use when accessing this
 		 * Linode to respond to an issue.
 		 * The default `null` value corresponds to the root user.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		user: FormControl<string | null | undefined>,
 	}
@@ -7377,22 +7703,22 @@ export namespace MyNS {
 		 * The URL at which this Service is monitored.
 		 * URL parameters such as `?no-cache=1` are preserved.
 		 * URL fragments/anchors such as `#monitor` are **not** preserved.
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		address?: string | null;
 
 		/**
 		 * What to expect to find in the response body for the Service to be considered up.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		body?: string | null;
 
 		/**
 		 * The group of ManagedContacts who should be notified or consulted with when an Issue is detected.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		consultation_group?: string | null;
 
@@ -7406,13 +7732,14 @@ export namespace MyNS {
 
 		/**
 		 * This Service's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
 		/**
 		 * The label for this Service. This is for display purposes only.
-		 * Max length: 64
 		 * Min length: 3
+		 * Max length: 64
 		 */
 		label?: string | null;
 
@@ -7456,22 +7783,22 @@ export namespace MyNS {
 		 * The URL at which this Service is monitored.
 		 * URL parameters such as `?no-cache=1` are preserved.
 		 * URL fragments/anchors such as `#monitor` are **not** preserved.
-		 * Max length: 100
 		 * Min length: 3
+		 * Max length: 100
 		 */
 		address: FormControl<string | null | undefined>,
 
 		/**
 		 * What to expect to find in the response body for the Service to be considered up.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		body: FormControl<string | null | undefined>,
 
 		/**
 		 * The group of ManagedContacts who should be notified or consulted with when an Issue is detected.
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		consultation_group: FormControl<string | null | undefined>,
 
@@ -7480,13 +7807,14 @@ export namespace MyNS {
 
 		/**
 		 * This Service's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * The label for this Service. This is for display purposes only.
-		 * Max length: 64
 		 * Min length: 3
+		 * Max length: 64
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -7567,6 +7895,7 @@ export namespace MyNS {
 
 		/**
 		 * This NodeBalancer's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -7582,8 +7911,8 @@ export namespace MyNS {
 
 		/**
 		 * This NodeBalancer's label. These must be unique on your Account.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label?: string | null;
 
@@ -7632,6 +7961,7 @@ export namespace MyNS {
 
 		/**
 		 * This NodeBalancer's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -7647,8 +7977,8 @@ export namespace MyNS {
 
 		/**
 		 * This NodeBalancer's label. These must be unique on your Account.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -7681,16 +8011,19 @@ export namespace MyNS {
 
 		/**
 		 * The total outbound transfer, in MB, used for this NodeBalancer this month.
+		 * Type: double
 		 */
 		in?: number | null;
 
 		/**
 		 * The total inbound transfer, in MB, used for this NodeBalancer this month.
+		 * Type: double
 		 */
 		out?: number | null;
 
 		/**
 		 * The total transfer, in MB, used by this NodeBalancer this month.
+		 * Type: double
 		 */
 		total?: number | null;
 	}
@@ -7698,16 +8031,19 @@ export namespace MyNS {
 
 		/**
 		 * The total outbound transfer, in MB, used for this NodeBalancer this month.
+		 * Type: double
 		 */
 		in: FormControl<number | null | undefined>,
 
 		/**
 		 * The total inbound transfer, in MB, used for this NodeBalancer this month.
+		 * Type: double
 		 */
 		out: FormControl<number | null | undefined>,
 
 		/**
 		 * The total transfer, in MB, used by this NodeBalancer this month.
+		 * Type: double
 		 */
 		total: FormControl<number | null | undefined>,
 	}
@@ -7756,6 +8092,7 @@ export namespace MyNS {
 		/**
 		 * How often, in seconds, to check that backends are up and serving requests.
 		 * Must be greater than `check_timeout`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		check_interval?: number | null;
 
@@ -7783,11 +8120,15 @@ export namespace MyNS {
 		 */
 		cipher_suite?: NodeBalancerConfigCipher_suite | null;
 
-		/** This config's unique ID */
+		/**
+		 * This config's unique ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
 		 * The ID for the NodeBalancer this config belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodebalancer_id?: number | null;
 
@@ -7902,6 +8243,7 @@ export namespace MyNS {
 		/**
 		 * How often, in seconds, to check that backends are up and serving requests.
 		 * Must be greater than `check_timeout`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		check_interval: FormControl<number | null | undefined>,
 
@@ -7929,11 +8271,15 @@ export namespace MyNS {
 		 */
 		cipher_suite: FormControl<NodeBalancerConfigCipher_suite | null | undefined>,
 
-		/** This config's unique ID */
+		/**
+		 * This config's unique ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * The ID for the NodeBalancer this config belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodebalancer_id: FormControl<number | null | undefined>,
 
@@ -8042,11 +8388,13 @@ export namespace MyNS {
 
 		/**
 		 * The number of backends considered to be "DOWN" and unhealthy.  These are not in rotation, and not serving requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		down?: number | null;
 
 		/**
 		 * The number of backends considered to be "UP" and healthy, and that are serving requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		up?: number | null;
 	}
@@ -8054,11 +8402,13 @@ export namespace MyNS {
 
 		/**
 		 * The number of backends considered to be "DOWN" and unhealthy.  These are not in rotation, and not serving requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		down: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of backends considered to be "UP" and healthy, and that are serving requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		up: FormControl<number | null | undefined>,
 	}
@@ -8089,16 +8439,20 @@ export namespace MyNS {
 
 		/**
 		 * The NodeBalancer Config ID that this Node belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		config_id?: number | null;
 
-		/** This node's unique ID. */
+		/**
+		 * This node's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
 		 * The label for this node.  This is for display purposes only.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label?: string | null;
 
@@ -8115,6 +8469,7 @@ export namespace MyNS {
 
 		/**
 		 * The NodeBalancer ID that this Node belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodebalancer_id?: number | null;
 
@@ -8143,16 +8498,20 @@ export namespace MyNS {
 
 		/**
 		 * The NodeBalancer Config ID that this Node belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		config_id: FormControl<number | null | undefined>,
 
-		/** This node's unique ID. */
+		/**
+		 * This node's unique ID.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * The label for this node.  This is for display purposes only.
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -8169,6 +8528,7 @@ export namespace MyNS {
 
 		/**
 		 * The NodeBalancer ID that this Node belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodebalancer_id: FormControl<number | null | undefined>,
 
@@ -8370,6 +8730,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID of the Notification's entity, based on the entity type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -8390,6 +8751,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID of the Notification's entity, based on the entity type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -8433,8 +8795,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of this application.  This will be presented to users when they are asked to grant it access to their Account.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		label?: string | null;
 
@@ -8476,8 +8838,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of this application.  This will be presented to users when they are asked to grant it access to their Account.
-		 * Max length: 512
 		 * Min length: 1
+		 * Max length: 512
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -8543,10 +8905,14 @@ export namespace MyNS {
 
 		/**
 		 * The number of objects stored in this bucket.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		objects?: number | null;
 
-		/** The size of the bucket in bytes. */
+		/**
+		 * The size of the bucket in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 	}
 
@@ -8571,10 +8937,14 @@ export namespace MyNS {
 
 		/**
 		 * The number of objects stored in this bucket.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		objects: FormControl<number | null | undefined>,
 
-		/** The size of the bucket in bytes. */
+		/**
+		 * The size of the bucket in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateObjectStorageBucketFormGroup() {
@@ -8658,7 +9028,10 @@ export namespace MyNS {
 		 */
 		ObjectStorageKeyBucket_access?: Array<ObjectStorageKeyBucket_access>;
 
-		/** This keypair's unique ID */
+		/**
+		 * This keypair's unique ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The label given to this key. For display purposes only. */
@@ -8677,7 +9050,10 @@ export namespace MyNS {
 		/** This keypair's access key. This is not secret. */
 		access_key: FormControl<string | null | undefined>,
 
-		/** This keypair's unique ID */
+		/**
+		 * This keypair's unique ID
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The label given to this key. For display purposes only. */
@@ -8769,6 +9145,7 @@ export namespace MyNS {
 
 		/**
 		 * The size of this object, in bytes. `null` if this object represents a prefix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size?: number | null;
 	}
@@ -8808,6 +9185,7 @@ export namespace MyNS {
 
 		/**
 		 * The size of this object, in bytes. `null` if this object represents a prefix.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 	}
@@ -8907,13 +9285,22 @@ export namespace MyNS {
 	 */
 	export interface PaginationEnvelope {
 
-		/** The current [page](/docs/api/#pagination). */
+		/**
+		 * The current [page](/docs/api/#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The total number of [pages](/docs/api/#pagination). */
+		/**
+		 * The total number of [pages](/docs/api/#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages?: number | null;
 
-		/** The total number of results. */
+		/**
+		 * The total number of results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		results?: number | null;
 	}
 
@@ -8922,13 +9309,22 @@ export namespace MyNS {
 	 */
 	export interface PaginationEnvelopeFormProperties {
 
-		/** The current [page](/docs/api/#pagination). */
+		/**
+		 * The current [page](/docs/api/#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The total number of [pages](/docs/api/#pagination). */
+		/**
+		 * The total number of [pages](/docs/api/#pagination).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pages: FormControl<number | null | undefined>,
 
-		/** The total number of results. */
+		/**
+		 * The total number of results.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		results: FormControl<number | null | undefined>,
 	}
 	export function CreatePaginationEnvelopeFormGroup() {
@@ -9076,10 +9472,16 @@ export namespace MyNS {
 		/** When the Payment was made. */
 		date?: Date | null;
 
-		/** The unique ID of the Payment. */
+		/**
+		 * The unique ID of the Payment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** The amount, in US dollars, of the Payment. */
+		/**
+		 * The amount, in US dollars, of the Payment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		usd?: number | null;
 	}
 
@@ -9089,10 +9491,16 @@ export namespace MyNS {
 		/** When the Payment was made. */
 		date: FormControl<Date | null | undefined>,
 
-		/** The unique ID of the Payment. */
+		/**
+		 * The unique ID of the Payment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** The amount, in US dollars, of the Payment. */
+		/**
+		 * The amount, in US dollars, of the Payment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		usd: FormControl<number | null | undefined>,
 	}
 	export function CreatePaymentFormGroup() {
@@ -9112,7 +9520,10 @@ export namespace MyNS {
 		created?: Date | null;
 		data?: CreditCardData;
 
-		/** The unique ID of this Payment Method. */
+		/**
+		 * The unique ID of this Payment Method.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -9130,7 +9541,10 @@ export namespace MyNS {
 		/** When the Payment Method was added to the Account. */
 		created: FormControl<Date | null | undefined>,
 
-		/** The unique ID of this Payment Method. */
+		/**
+		 * The unique ID of this Payment Method.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -9164,6 +9578,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Payment Method to apply to the Payment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		payment_method_id?: number | null;
 
@@ -9189,6 +9604,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Payment Method to apply to the Payment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		payment_method_id: FormControl<number | null | undefined>,
 
@@ -9230,13 +9646,14 @@ export namespace MyNS {
 
 		/**
 		 * This token's unique ID, which can be used to revoke it.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
 		/**
 		 * This token's label.  This is for display purposes only, but can be used to more easily track what you're using each token for.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		label?: string | null;
 
@@ -9268,13 +9685,14 @@ export namespace MyNS {
 
 		/**
 		 * This token's unique ID, which can be used to revoke it.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * This token's label.  This is for display purposes only, but can be used to more easily track what you're using each token for.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -9371,6 +9789,7 @@ export namespace MyNS {
 
 		/**
 		 * Your unique ID in our system. This value will never change, and can safely be used to identify your User.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		uid?: number | null;
 
@@ -9445,6 +9864,7 @@ export namespace MyNS {
 
 		/**
 		 * Your unique ID in our system. This value will never change, and can safely be used to identify your User.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		uid: FormControl<number | null | undefined>,
 
@@ -9489,21 +9909,25 @@ export namespace MyNS {
 
 		/**
 		 * The number of completed signups with your referral code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		completed?: number | null;
 
 		/**
 		 * The amount of account credit in US Dollars issued to you through the referral program.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		credit?: number | null;
 
 		/**
 		 * The number of pending signups with your referral code.  You will not receive credit for these signups until they are completed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pending?: number | null;
 
 		/**
 		 * The number of users who have signed up with your referral code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total?: number | null;
 
@@ -9521,21 +9945,25 @@ export namespace MyNS {
 
 		/**
 		 * The number of completed signups with your referral code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		completed: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount of account credit in US Dollars issued to you through the referral program.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		credit: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of pending signups with your referral code.  You will not receive credit for these signups until they are completed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		pending: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of users who have signed up with your referral code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total: FormControl<number | null | undefined>,
 
@@ -9707,13 +10135,14 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier of an SSH Key object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
 		/**
 		 * A label for the SSH Key.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		label?: string | null;
 
@@ -9741,13 +10170,14 @@ export namespace MyNS {
 
 		/**
 		 * The unique identifier of an SSH Key object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * A label for the SSH Key.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -9776,7 +10206,10 @@ export namespace MyNS {
 	/** Single security question and response object. */
 	export interface SecurityQuestion {
 
-		/** The ID representing the security question. */
+		/**
+		 * The ID representing the security question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The security question. */
@@ -9784,8 +10217,8 @@ export namespace MyNS {
 
 		/**
 		 * The security question response.
-		 * Max length: 17
 		 * Min length: 3
+		 * Max length: 17
 		 */
 		response?: string | null;
 	}
@@ -9793,7 +10226,10 @@ export namespace MyNS {
 	/** Single security question and response object. */
 	export interface SecurityQuestionFormProperties {
 
-		/** The ID representing the security question. */
+		/**
+		 * The ID representing the security question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The security question. */
@@ -9801,8 +10237,8 @@ export namespace MyNS {
 
 		/**
 		 * The security question response.
-		 * Max length: 17
 		 * Min length: 3
+		 * Max length: 17
 		 */
 		response: FormControl<string | null | undefined>,
 	}
@@ -10016,11 +10452,13 @@ export namespace MyNS {
 
 		/**
 		 * Count of currently active, deployed Linodes created from this StackScript.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		deployments_active?: number | null;
 
 		/**
 		 * The total number of times this StackScript has been deployed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		deployments_total?: number | null;
 
@@ -10029,7 +10467,10 @@ export namespace MyNS {
 		 */
 		description?: string | null;
 
-		/** The unique ID of this StackScript. */
+		/**
+		 * The unique ID of this StackScript.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -10045,8 +10486,8 @@ export namespace MyNS {
 
 		/**
 		 * The StackScript's label is for display purposes only.
-		 * Max length: 128
 		 * Min length: 3
+		 * Max length: 128
 		 */
 		label?: string | null;
 
@@ -10099,11 +10540,13 @@ export namespace MyNS {
 
 		/**
 		 * Count of currently active, deployed Linodes created from this StackScript.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		deployments_active: FormControl<number | null | undefined>,
 
 		/**
 		 * The total number of times this StackScript has been deployed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		deployments_total: FormControl<number | null | undefined>,
 
@@ -10112,7 +10555,10 @@ export namespace MyNS {
 		 */
 		description: FormControl<string | null | undefined>,
 
-		/** The unique ID of this StackScript. */
+		/**
+		 * The unique ID of this StackScript.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -10122,8 +10568,8 @@ export namespace MyNS {
 
 		/**
 		 * The StackScript's label is for display purposes only.
-		 * Max length: 128
 		 * Min length: 3
+		 * Max length: 128
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -10275,11 +10721,13 @@ export namespace MyNS {
 
 		/**
 		 * A stats graph data point.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		x?: number | null;
 
 		/**
 		 * A stats graph data point.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		y?: number | null;
 	}
@@ -10291,11 +10739,13 @@ export namespace MyNS {
 
 		/**
 		 * A stats graph data point.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		x: FormControl<number | null | undefined>,
 
 		/**
 		 * A stats graph data point.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		y: FormControl<number | null | undefined>,
 	}
@@ -10363,8 +10813,8 @@ export namespace MyNS {
 
 		/**
 		 * The full details of the issue or question.
-		 * Max length: 65000
 		 * Min length: 1
+		 * Max length: 65000
 		 */
 		description?: string | null;
 
@@ -10380,6 +10830,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Support Ticket.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -10398,8 +10849,8 @@ export namespace MyNS {
 
 		/**
 		 * The summary or title for this Ticket.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		summary?: string | null;
 
@@ -10431,8 +10882,8 @@ export namespace MyNS {
 
 		/**
 		 * The full details of the issue or question.
-		 * Max length: 65000
 		 * Min length: 1
+		 * Max length: 65000
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -10443,6 +10894,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Support Ticket.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -10461,8 +10913,8 @@ export namespace MyNS {
 
 		/**
 		 * The summary or title for this Ticket.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		summary: FormControl<string | null | undefined>,
 
@@ -10497,6 +10949,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID for this Ticket's entity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 
@@ -10519,6 +10972,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID for this Ticket's entity.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -10582,6 +11036,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID of this Support Ticket reply.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 	}
@@ -10618,6 +11073,7 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID of this Support Ticket reply.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -10642,39 +11098,45 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Managed Database this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		database_id?: number | null;
 
 		/**
 		 * The full details of the issue or question.
 		 * Required
-		 * Max length: 65000
 		 * Min length: 1
+		 * Max length: 65000
 		 */
 		description: string;
 
 		/**
 		 * The ID of the Domain this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		domain_id?: number | null;
 
 		/**
 		 * The ID of the Firewall this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		firewall_id?: number | null;
 
 		/**
 		 * The ID of the Linode this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id?: number | null;
 
 		/**
 		 * The ID of the Kubernetes cluster this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lkecluster_id?: number | null;
 
 		/**
 		 * The ID of the Longview client this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		longviewclient_id?: number | null;
 
@@ -10687,6 +11149,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the NodeBalancer this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodebalancer_id?: number | null;
 
@@ -10699,8 +11162,8 @@ export namespace MyNS {
 		/**
 		 * The summary or title for this SupportTicket.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		summary: string;
 
@@ -10712,6 +11175,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Volume this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		volume_id?: number | null;
 	}
@@ -10724,39 +11188,45 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Managed Database this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		database_id: FormControl<number | null | undefined>,
 
 		/**
 		 * The full details of the issue or question.
 		 * Required
-		 * Max length: 65000
 		 * Min length: 1
+		 * Max length: 65000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID of the Domain this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		domain_id: FormControl<number | null | undefined>,
 
 		/**
 		 * The ID of the Firewall this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		firewall_id: FormControl<number | null | undefined>,
 
 		/**
 		 * The ID of the Linode this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 
 		/**
 		 * The ID of the Kubernetes cluster this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		lkecluster_id: FormControl<number | null | undefined>,
 
 		/**
 		 * The ID of the Longview client this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		longviewclient_id: FormControl<number | null | undefined>,
 
@@ -10769,6 +11239,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the NodeBalancer this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nodebalancer_id: FormControl<number | null | undefined>,
 
@@ -10781,8 +11252,8 @@ export namespace MyNS {
 		/**
 		 * The summary or title for this SupportTicket.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		summary: FormControl<string | null | undefined>,
 
@@ -10794,6 +11265,7 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Volume this ticket is regarding, if relevant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		volume_id: FormControl<number | null | undefined>,
 	}
@@ -10853,16 +11325,19 @@ export namespace MyNS {
 
 		/**
 		 * The amount of your transfer pool that is billable this billing cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		billable?: number | null;
 
 		/**
 		 * The amount of network usage allowed this billing cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quota?: number | null;
 
 		/**
 		 * The amount of network usage you have used this billing cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		used?: number | null;
 	}
@@ -10874,16 +11349,19 @@ export namespace MyNS {
 
 		/**
 		 * The amount of your transfer pool that is billable this billing cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		billable: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount of network usage allowed this billing cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		quota: FormControl<number | null | undefined>,
 
 		/**
 		 * The amount of network usage you have used this billing cycle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		used: FormControl<number | null | undefined>,
 	}
@@ -10912,7 +11390,10 @@ export namespace MyNS {
 		 */
 		expiry?: Date | null;
 
-		/** The unique ID for this TrustedDevice */
+		/**
+		 * The unique ID for this TrustedDevice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
@@ -10946,7 +11427,10 @@ export namespace MyNS {
 		 */
 		expiry: FormControl<Date | null | undefined>,
 
-		/** The unique ID for this TrustedDevice */
+		/**
+		 * The unique ID for this TrustedDevice
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -11010,8 +11494,8 @@ export namespace MyNS {
 
 		/**
 		 * The User's username. This is used for logging in, and may also be displayed alongside actions the User performs (for example, in Events or public StackScripts).
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		username?: string | null;
 	}
@@ -11038,8 +11522,8 @@ export namespace MyNS {
 
 		/**
 		 * The User's username. This is used for logging in, and may also be displayed alongside actions the User performs (for example, in Events or public StackScripts).
-		 * Max length: 32
 		 * Min length: 3
+		 * Max length: 32
 		 */
 		username: FormControl<string | null | undefined>,
 	}
@@ -11126,18 +11610,22 @@ export namespace MyNS {
 		/** The storage type of this Volume. */
 		hardware_type?: VolumeHardware_type | null;
 
-		/** The unique ID of this Volume. */
+		/**
+		 * The unique ID of this Volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/**
 		 * The Volume's label is for display purposes only.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		label?: string | null;
 
 		/**
 		 * If a Volume is attached to a specific Linode, the ID of that Linode will be displayed here.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id?: number | null;
 
@@ -11190,18 +11678,22 @@ export namespace MyNS {
 		/** The storage type of this Volume. */
 		hardware_type: FormControl<VolumeHardware_type | null | undefined>,
 
-		/** The unique ID of this Volume. */
+		/**
+		 * The unique ID of this Volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
 		 * The Volume's label is for display purposes only.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		label: FormControl<string | null | undefined>,
 
 		/**
 		 * If a Volume is attached to a specific Linode, the ID of that Linode will be displayed here.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 
@@ -11345,7 +11837,9 @@ export namespace MyNS {
 		 * **DEPRECATED**. Please use [Service Transfers List](/docs/api/account/#service-transfers-list).
 		 * Get account/entity-transfers
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {PaginationEnvelope} Returns a paginated list of Entity Transfer objects containing the details of all transfers that have been created and accepted by this account.
 		 */
 		GetEntityTransfers(page: number | null | undefined, page_size: number | null | undefined): Observable<PaginationEnvelope> {
@@ -11398,7 +11892,9 @@ export namespace MyNS {
 		 * Returns a collection of Event objects representing actions taken on your Account from the last 90 days. The Events returned depend on your grants.
 		 * Get account/events
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetEventsReturn} Returns a paginated lists of Event objects from the last 90 days.
 		 */
 		GetEvents(page: number | null | undefined, page_size: number | null | undefined): Observable<GetEventsReturn> {
@@ -11440,7 +11936,9 @@ export namespace MyNS {
 		 * Returns a paginated list of Invoices against your Account.
 		 * Get account/invoices
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetInvoicesReturn} Returns a paginated list of Invoice objects.
 		 */
 		GetInvoices(page: number | null | undefined, page_size: number | null | undefined): Observable<GetInvoicesReturn> {
@@ -11462,7 +11960,9 @@ export namespace MyNS {
 		 * Returns a paginated list of Invoice items.
 		 * Get account/invoices/{invoiceId}/items
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetInvoiceItemsReturn} A paginated list of InvoiceItem objects
 		 */
 		GetInvoiceItems(page: number | null | undefined, page_size: number | null | undefined): Observable<GetInvoiceItemsReturn> {
@@ -11516,7 +12016,9 @@ export namespace MyNS {
 		 * Returns a paginated list of OAuth Clients registered to your Account.  OAuth Clients allow users to log into applications you write or host using their Linode Account, and may allow them to grant some level of access to their Linodes or other entities to your application.
 		 * Get account/oauth-clients
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetClientsReturn} A paginated list of OAuth Clients.
 		 */
 		GetClients(page: number | null | undefined, page_size: number | null | undefined): Observable<GetClientsReturn> {
@@ -11590,7 +12092,9 @@ export namespace MyNS {
 		 * Returns a paginated list of Payment Methods for this Account.
 		 * Get account/payment-methods
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetPaymentMethodsReturn} Returns a paginated list of Payment Method objects.
 		 */
 		GetPaymentMethods(page: number | null | undefined, page_size: number | null | undefined): Observable<GetPaymentMethodsReturn> {
@@ -11655,7 +12159,9 @@ export namespace MyNS {
 		 * Returns a paginated list of Payments made on this Account.
 		 * Get account/payments
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetPaymentsReturn} Returns a paginated list of Payment objects.
 		 */
 		GetPayments(page: number | null | undefined, page_size: number | null | undefined): Observable<GetPaymentsReturn> {
@@ -11730,7 +12236,9 @@ export namespace MyNS {
 		 * This command can only be accessed by the unrestricted users of an account.
 		 * Get account/service-transfers
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetServiceTransfersReturn} Returns a paginated list of Service Transfer objects containing the details of all transfers that have been created and accepted by this account.
 		 */
 		GetServiceTransfers(page: number | null | undefined, page_size: number | null | undefined): Observable<GetServiceTransfersReturn> {
@@ -11877,7 +12385,9 @@ export namespace MyNS {
 		 * Users may access all or part of your Account based on their restricted status and grants.  An unrestricted User may access everything on the account, whereas restricted User may only access entities or perform actions they've been given specific grants to.
 		 * Get account/users
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetUsersReturn} A paginated list of Users.
 		 */
 		GetUsers(page: number | null | undefined, page_size: number | null | undefined): Observable<GetUsersReturn> {
@@ -11974,7 +12484,9 @@ export namespace MyNS {
 		 * Display all available Managed Database engine types and versions. Engine IDs are used when creating new Managed Databases.
 		 * Get databases/engines
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {PaginationEnvelope} Returns a paginated list of all available Managed Database engines and versions.
 		 */
 		GetDatabasesEngines(page: number | null | undefined, page_size: number | null | undefined): Observable<PaginationEnvelope> {
@@ -11986,7 +12498,9 @@ export namespace MyNS {
 		 * Display information for a single Managed Database engine type and version.
 		 * Get databases/engines/{engineId}
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {DatabaseEngine} Returns information for a single Managed Database engine type and version.
 		 */
 		GetDatabasesEngine(page: number | null | undefined, page_size: number | null | undefined): Observable<DatabaseEngine> {
@@ -11999,7 +12513,9 @@ export namespace MyNS {
 		 * For more detailed information on a particular Database instance, make a request to its `instance_uri`.
 		 * Get databases/instances
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {PaginationEnvelope} Returns a paginated list of all accessible Managed Databases on your Account.
 		 */
 		GetDatabasesInstances(page: number | null | undefined, page_size: number | null | undefined): Observable<PaginationEnvelope> {
@@ -12012,7 +12528,9 @@ export namespace MyNS {
 		 * **Note**: New MongoDB Databases cannot currently be created.
 		 * Get databases/mongodb/instances
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {PaginationEnvelope} Returns a paginated list of all accessible Managed MongoDB Databases on your Account.
 		 */
 		GetDatabasesMongoDBInstances(page: number | null | undefined, page_size: number | null | undefined): Observable<PaginationEnvelope> {
@@ -12075,7 +12593,9 @@ export namespace MyNS {
 		 * **Note**: New MongoDB Databases cannot currently be created.
 		 * Get databases/mongodb/instances/{instanceId}/backups
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {PaginationEnvelope} Returns a paginated list of backups for the Managed MongoDB Database.
 		 */
 		GetDatabasesMongoDBInstanceBackups(page: number | null | undefined, page_size: number | null | undefined): Observable<PaginationEnvelope> {
@@ -12198,7 +12718,9 @@ export namespace MyNS {
 		 * Display all accessible Managed MySQL Databases.
 		 * Get databases/mysql/instances
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {PaginationEnvelope} Returns a paginated list of all accessible Managed MySQL Databases on your Account.
 		 */
 		GetDatabasesMySQLInstances(page: number | null | undefined, page_size: number | null | undefined): Observable<PaginationEnvelope> {
@@ -12279,7 +12801,9 @@ export namespace MyNS {
 		 * Database `snapshot` type backups are created by accessing the **Managed MySQL Database Backup Snapshot Create** ([POST /databases/mysql/instances/{instanceId}/backups](/docs/api/databases/#managed-mysql-database-backup-snapshot-create)) command.
 		 * Get databases/mysql/instances/{instanceId}/backups
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {PaginationEnvelope} Returns a paginated list of backups for the Managed MySQL Database.
 		 */
 		GetDatabasesMySQLInstanceBackups(page: number | null | undefined, page_size: number | null | undefined): Observable<PaginationEnvelope> {
@@ -12394,7 +12918,9 @@ export namespace MyNS {
 		 * Display all accessible Managed PostgreSQL Databases.
 		 * Get databases/postgresql/instances
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {PaginationEnvelope} Returns a paginated list of all accessible Managed PostgreSQL Databases on your Account.
 		 */
 		GetDatabasesPostgreSQLInstances(page: number | null | undefined, page_size: number | null | undefined): Observable<PaginationEnvelope> {
@@ -12475,7 +13001,9 @@ export namespace MyNS {
 		 * Database `snapshot` type backups are created by accessing the **Managed PostgreSQL Database Backup Snapshot Create** ([POST /databases/postgresql/instances/{instanceId}/backups](/docs/api/databases/#managed-postgresql-database-backup-snapshot-create)) command.
 		 * Get databases/postgresql/instances/{instanceId}/backups
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {PaginationEnvelope} Returns a paginated list of backups for the Managed PostgreSQL Database.
 		 */
 		GetDatabasesPostgreSQLInstanceBackups(page: number | null | undefined, page_size: number | null | undefined): Observable<PaginationEnvelope> {
@@ -12591,7 +13119,9 @@ export namespace MyNS {
 		 * Each Managed Database can have one node type. In the case of a high availabilty Database, all nodes are provisioned according to the chosen type.
 		 * Get databases/types
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {PaginationEnvelope} Returns a paginated list of all Managed Database types.
 		 */
 		GetDatabasesTypes(page: number | null | undefined, page_size: number | null | undefined): Observable<PaginationEnvelope> {
@@ -12603,7 +13133,9 @@ export namespace MyNS {
 		 * Display the details of a single Managed Database type. The type and number of nodes determine the resources and price of a Managed Database instance.
 		 * Get databases/types/{typeId}
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {DatabaseType} Returns a single Managed Database type.
 		 */
 		GetDatabasesType(page: number | null | undefined, page_size: number | null | undefined): Observable<DatabaseType> {
@@ -12615,7 +13147,9 @@ export namespace MyNS {
 		 * This is a collection of Domains that you have registered in Linode's DNS Manager.  Linode is not a registrar, and in order for these to work you must own the domains and point your registrar at Linode's nameservers.
 		 * Get domains
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetDomainsReturn} A paginated list of Domains you have registered.
 		 */
 		GetDomains(page: number | null | undefined, page_size: number | null | undefined): Observable<GetDomainsReturn> {
@@ -12697,7 +13231,9 @@ export namespace MyNS {
 		 * DNS Manager.
 		 * Get domains/{domainId}/records
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetDomainRecordsReturn} A list of Domain Records.
 		 */
 		GetDomainRecords(page: number | null | undefined, page_size: number | null | undefined): Observable<GetDomainRecordsReturn> {
@@ -12767,7 +13303,9 @@ export namespace MyNS {
 		 * * To view only public Images, call this endpoint with or without authentication. To view private Images as well, call this endpoint with authentication.
 		 * Get images
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetImagesReturn} A paginated list of Images.
 		 */
 		GetImages(page: number | null | undefined, page_size: number | null | undefined): Observable<GetImagesReturn> {
@@ -12854,7 +13392,9 @@ export namespace MyNS {
 		 * Returns a paginated list of Linodes you have permission to view.
 		 * Get linode/instances
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetLinodeInstancesReturn} Returns an array of all Linodes on your Account.
 		 */
 		GetLinodeInstances(page: number | null | undefined, page_size: number | null | undefined): Observable<GetLinodeInstancesReturn> {
@@ -13060,7 +13600,9 @@ export namespace MyNS {
 		 * Lists Configuration profiles associated with a Linode.
 		 * Get linode/instances/{linodeId}/configs
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetLinodeConfigsReturn} Returns an array of Configuration profiles associated with this Linode.
 		 */
 		GetLinodeConfigs(page: number | null | undefined, page_size: number | null | undefined): Observable<GetLinodeConfigsReturn> {
@@ -13115,7 +13657,9 @@ export namespace MyNS {
 		 * View Disk information for Disks associated with this Linode.
 		 * Get linode/instances/{linodeId}/disks
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetLinodeDisksReturn} Returns a paginated list of disks associated with this Linode.
 		 */
 		GetLinodeDisks(page: number | null | undefined, page_size: number | null | undefined): Observable<GetLinodeDisksReturn> {
@@ -13222,7 +13766,9 @@ export namespace MyNS {
 		 * View Firewall information for Firewalls associated with this Linode.
 		 * Get linode/instances/{linodeId}/firewalls
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetLinodeFirewallsReturn} Returns a paginated list of Firewalls associated with this Linode.
 		 */
 		GetLinodeFirewalls(page: number | null | undefined, page_size: number | null | undefined): Observable<GetLinodeFirewallsReturn> {
@@ -13441,7 +13987,9 @@ export namespace MyNS {
 		 * View Block Storage Volumes attached to this Linode.
 		 * Get linode/instances/{linodeId}/volumes
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetLinodeVolumesReturn} Returns an array of Block Storage Volumes attached to this Linode.
 		 */
 		GetLinodeVolumes(page: number | null | undefined, page_size: number | null | undefined): Observable<GetLinodeVolumesReturn> {
@@ -13453,7 +14001,9 @@ export namespace MyNS {
 		 * Lists available Kernels.
 		 * Get linode/kernels
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetKernelsReturn} Returns an array of Kernels.
 		 */
 		GetKernels(page: number | null | undefined, page_size: number | null | undefined): Observable<GetKernelsReturn> {
@@ -13476,7 +14026,9 @@ export namespace MyNS {
 		 * For more information on StackScripts, please read our [StackScripts documentation](/docs/products/tools/stackscripts/).
 		 * Get linode/stackscripts
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetStackScriptsReturn} A list of StackScripts available to the User, including private StackScripts owned by the User if the request is authenticated.
 		 */
 		GetStackScripts(page: number | null | undefined, page_size: number | null | undefined): Observable<GetStackScriptsReturn> {
@@ -13822,7 +14374,9 @@ export namespace MyNS {
 		 * Returns a paginated list of Longview Clients you have access to. Longview Client is used to monitor stats on your Linode with the help of the Longview Client application.
 		 * Get longview/clients
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetLongviewClientsReturn} A paginated list of Longview Clients.
 		 */
 		GetLongviewClients(page: number | null | undefined, page_size: number | null | undefined): Observable<GetLongviewClientsReturn> {
@@ -13907,7 +14461,9 @@ export namespace MyNS {
 		 * Returns a paginated list of available Longview Subscriptions. This is a public endpoint and requires no authentication.
 		 * Get longview/subscriptions
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetLongviewSubscriptionsReturn} A paginated list of Longview Subscriptions.
 		 */
 		GetLongviewSubscriptions(page: number | null | undefined, page_size: number | null | undefined): Observable<GetLongviewSubscriptionsReturn> {
@@ -13930,7 +14486,9 @@ export namespace MyNS {
 		 * This command can only be accessed by the unrestricted users of an account.
 		 * Get managed/contacts
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetManagedContactsReturn} A paginated list of ManagedContacts
 		 */
 		GetManagedContacts(page: number | null | undefined, page_size: number | null | undefined): Observable<GetManagedContactsReturn> {
@@ -13991,7 +14549,9 @@ export namespace MyNS {
 		 * This command can only be accessed by the unrestricted users of an account.
 		 * Get managed/credentials
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetManagedCredentialsReturn} A paginated list of ManagedCredentials
 		 */
 		GetManagedCredentials(page: number | null | undefined, page_size: number | null | undefined): Observable<GetManagedCredentialsReturn> {
@@ -14080,7 +14640,9 @@ export namespace MyNS {
 		 * This command can only be accessed by the unrestricted users of an account.
 		 * Get managed/issues
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetManagedIssuesReturn} A paginated list of open or ongoing Managed Issues.
 		 */
 		GetManagedIssues(page: number | null | undefined, page_size: number | null | undefined): Observable<GetManagedIssuesReturn> {
@@ -14106,7 +14668,9 @@ export namespace MyNS {
 		 * This command can only be accessed by the unrestricted users of an account.
 		 * Get managed/linode-settings
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetManagedLinodeSettingsReturn} A paginated list of Managed settings for your Linodes.
 		 */
 		GetManagedLinodeSettings(page: number | null | undefined, page_size: number | null | undefined): Observable<GetManagedLinodeSettingsReturn> {
@@ -14243,7 +14807,9 @@ export namespace MyNS {
 		 * Returns a paginated list of accessible Firewalls.
 		 * Get networking/firewalls
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetFirewallsReturn} Returns an array of Firewalls.
 		 */
 		GetFirewalls(page: number | null | undefined, page_size: number | null | undefined): Observable<GetFirewallsReturn> {
@@ -14325,7 +14891,9 @@ export namespace MyNS {
 		 * only Devices with an entity of type `linode` are accepted.
 		 * Get networking/firewalls/{firewallId}/devices
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetFirewallDevicesReturn} A paginated list of Firewall Devices
 		 */
 		GetFirewallDevices(page: number | null | undefined, page_size: number | null | undefined): Observable<GetFirewallDevicesReturn> {
@@ -14509,7 +15077,9 @@ export namespace MyNS {
 		 * Displays the IPv6 pools on your Account. A pool of IPv6 addresses are routed to all of your Linodes in a single [Region](/docs/api/regions/#regions-list). Any Linode on your Account may bring up any address in this pool at any time, with no external configuration required.
 		 * Get networking/ipv6/pools
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetIPv6PoolsReturn} The IPv6 pools on your Account.
 		 */
 		GetIPv6Pools(page: number | null | undefined, page_size: number | null | undefined): Observable<GetIPv6PoolsReturn> {
@@ -14524,7 +15094,9 @@ export namespace MyNS {
 		 * * Access the IPv6 Range Create ([POST /networking/ipv6/ranges](/docs/api/networking/#ipv6-range-create)) endpoint to add a `/64` or `/56` block of IPv6 addresses to your account.
 		 * Get networking/ipv6/ranges
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetIPv6RangesReturn} The IPv6 ranges on your Account.
 		 */
 		GetIPv6Ranges(page: number | null | undefined, page_size: number | null | undefined): Observable<GetIPv6RangesReturn> {
@@ -14592,7 +15164,9 @@ export namespace MyNS {
 		 * **Note:** See the [VLANs Overview](/docs/products/networking/vlans/#technical-specifications) to view additional specifications and limitations.
 		 * Get networking/vlans
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetVLANsReturn} The VLANs available on this Account.
 		 */
 		GetVLANs(page: number | null | undefined, page_size: number | null | undefined): Observable<GetVLANsReturn> {
@@ -14604,7 +15178,9 @@ export namespace MyNS {
 		 * Returns a paginated list of NodeBalancers you have access to.
 		 * Get nodebalancers
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetNodeBalancersReturn} A paginated list of NodeBalancers.
 		 */
 		GetNodeBalancers(page: number | null | undefined, page_size: number | null | undefined): Observable<GetNodeBalancersReturn> {
@@ -14663,7 +15239,9 @@ export namespace MyNS {
 		 * For example, if you wanted to accept standard HTTP traffic, you would need a Config listening on port 80.
 		 * Get nodebalancers/{nodeBalancerId}/configs
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetNodeBalancerConfigsReturn} A paginted list of NodeBalancer Configs
 		 */
 		GetNodeBalancerConfigs(page: number | null | undefined, page_size: number | null | undefined): Observable<GetNodeBalancerConfigsReturn> {
@@ -14719,7 +15297,9 @@ export namespace MyNS {
 		 * Returns a paginated list of NodeBalancer nodes associated with this Config. These are the backends that will be sent traffic for this port.
 		 * Get nodebalancers/{nodeBalancerId}/configs/{configId}/nodes
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetNodeBalancerConfigNodesReturn} A paginated list of NodeBalancer nodes.
 		 */
 		GetNodeBalancerConfigNodes(page: number | null | undefined, page_size: number | null | undefined): Observable<GetNodeBalancerConfigNodesReturn> {
@@ -14927,6 +15507,7 @@ export namespace MyNS {
 		 * @param {string} delimiter The delimiter for object names; if given, object names will be returned up to the first occurrence of this character. This is most commonly used with the `/` character to allow bucket transversal in a manner similar to a filesystem, however any delimiter may be used. Use in conjunction with `prefix` to see object names past the first occurrence of the delimiter.
 		 * @param {string} prefix Filters objects returned to only those whose name start with the given prefix. Commonly used in conjunction with `delimiter` to allow transversal of bucket contents in a manner similar to a filesystem.
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {any} One page of the requested bucket's contents.
 		 */
 		GetObjectStorageBucketContent(marker: string | null | undefined, delimiter: string | null | undefined, prefix: string | null | undefined, page_size: number | null | undefined): Observable<HttpResponse<string>> {
@@ -15114,7 +15695,9 @@ export namespace MyNS {
 		 * This is a collection of OAuth apps that you've given access to your Account, and includes the level of access granted.
 		 * Get profile/apps
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetProfileAppsReturn} A paginated list of apps you've authorized.
 		 */
 		GetProfileApps(page: number | null | undefined, page_size: number | null | undefined): Observable<GetProfileAppsReturn> {
@@ -15298,7 +15881,9 @@ export namespace MyNS {
 		 * Returns a collection of SSH Keys you've added to your Profile.
 		 * Get profile/sshkeys
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetSSHKeysReturn} Returns a paginated list of SSH Key objects.
 		 */
 		GetSSHKeys(page: number | null | undefined, page_size: number | null | undefined): Observable<GetSSHKeysReturn> {
@@ -15462,7 +16047,9 @@ export namespace MyNS {
 		 * This collection includes all Support Tickets generated on your Account, with open tickets returned first.
 		 * Get support/tickets
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetTicketsReturn} Returns a paginated list of SupportTicket objects.
 		 */
 		GetTickets(page: number | null | undefined, page_size: number | null | undefined): Observable<GetTicketsReturn> {
@@ -15506,7 +16093,9 @@ export namespace MyNS {
 		 * Returns a collection of replies to a Support Ticket on your Account.
 		 * Get support/tickets/{ticketId}/replies
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetTicketRepliesReturn} Returns a paginated list of SupportTicketReply objects.
 		 */
 		GetTicketReplies(page: number | null | undefined, page_size: number | null | undefined): Observable<GetTicketRepliesReturn> {
@@ -15530,7 +16119,9 @@ export namespace MyNS {
 		 * This endpoint returns a paginated list of Tags on your account.
 		 * Get tags
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetTagsReturn} A paginated list of Tags
 		 */
 		GetTags(page: number | null | undefined, page_size: number | null | undefined): Observable<GetTagsReturn> {
@@ -15565,7 +16156,9 @@ export namespace MyNS {
 		 * Returns a paginated list of all objects you've tagged with the requested Tag. This is a mixed collection of all object types.
 		 * Get tags/{label}
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {any} A paginated list of objects, organized by type, that have been tagged with the requested Tag.
 		 */
 		GetTaggedObjects(page: number | null | undefined, page_size: number | null | undefined): Observable<HttpResponse<string>> {
@@ -15577,7 +16170,9 @@ export namespace MyNS {
 		 * Returns a paginated list of Volumes you have permission to view.
 		 * Get volumes
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {GetVolumesReturn} Returns an array of all Volumes on your Account.
 		 */
 		GetVolumes(page: number | null | undefined, page_size: number | null | undefined): Observable<GetVolumesReturn> {
@@ -15614,7 +16209,9 @@ export namespace MyNS {
 		 * Get information about a single Volume.
 		 * Get volumes/{volumeId}
 		 * @param {number} page The page of a collection to return.
+		 *     Minimum: 1
 		 * @param {number} page_size The number of items to return per page.
+		 *     Minimum: 25    Maximum: 500
 		 * @return {Volume} Returns a single Volume object.
 		 */
 		GetVolume(page: number | null | undefined, page_size: number | null | undefined): Observable<Volume> {
@@ -16025,8 +16622,8 @@ export namespace MyNS {
 		/**
 		 * The Promo Code.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		promo_code: string;
 	}
@@ -16035,8 +16632,8 @@ export namespace MyNS {
 		/**
 		 * The Promo Code.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		promo_code: FormControl<string | null | undefined>,
 	}
@@ -16203,8 +16800,8 @@ export namespace MyNS {
 		/**
 		 * The new domain for the clone. Domain labels cannot be longer than 63 characters and must conform to [RFC1035](https://tools.ietf.org/html/rfc1035). Domains must be unique on Linode's platform, including across different Linode accounts; there cannot be two Domains representing the same domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		domain: string;
 	}
@@ -16213,8 +16810,8 @@ export namespace MyNS {
 		/**
 		 * The new domain for the clone. Domain labels cannot be longer than 63 characters and must conform to [RFC1035](https://tools.ietf.org/html/rfc1035). Domains must be unique on Linode's platform, including across different Linode accounts; there cannot be two Domains representing the same domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		domain: FormControl<string | null | undefined>,
 	}
@@ -16458,8 +17055,8 @@ export namespace MyNS {
 		/**
 		 * The label for the new snapshot.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		label: string;
 	}
@@ -16468,8 +17065,8 @@ export namespace MyNS {
 		/**
 		 * The label for the new snapshot.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		label: FormControl<string | null | undefined>,
 	}
@@ -16485,6 +17082,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the Linode to restore a Backup to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: number;
 
@@ -16502,6 +17100,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the Linode to restore a Backup to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 
@@ -16526,6 +17125,7 @@ export namespace MyNS {
 
 		/**
 		 * The Linode Config ID to boot into.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		config_id?: number | null;
 	}
@@ -16533,6 +17133,7 @@ export namespace MyNS {
 
 		/**
 		 * The Linode Config ID to boot into.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		config_id: FormControl<number | null | undefined>,
 	}
@@ -16580,13 +17181,14 @@ export namespace MyNS {
 		 * The label to assign this Linode when cloning to a new Linode.
 		 * * Can only be provided when cloning to a new Linode.
 		 * * Defaults to "linode".
-		 * Max length: 64
 		 * Min length: 3
+		 * Max length: 64
 		 */
 		label?: string | null;
 
 		/**
 		 * If an existing Linode is the target for the clone, the ID of that Linode. The existing Linode must have enough resources to accept the clone.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id?: number | null;
 
@@ -16635,13 +17237,14 @@ export namespace MyNS {
 		 * The label to assign this Linode when cloning to a new Linode.
 		 * * Can only be provided when cloning to a new Linode.
 		 * * Defaults to "linode".
-		 * Max length: 64
 		 * Min length: 3
+		 * Max length: 64
 		 */
 		label: FormControl<string | null | undefined>,
 
 		/**
 		 * If an existing Linode is the target for the clone, the ID of that Linode. The existing Linode must have enough resources to accept the clone.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 
@@ -17159,6 +17762,7 @@ export namespace MyNS {
 
 		/**
 		 * The Linode's ID. If no Linode is currently provisioned for this Node, this is `null`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		instance_id?: number | null;
 
@@ -17178,6 +17782,7 @@ export namespace MyNS {
 
 		/**
 		 * The Linode's ID. If no Linode is currently provisioned for this Node, this is `null`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		instance_id: FormControl<number | null | undefined>,
 
@@ -18356,8 +18961,8 @@ export namespace MyNS {
 		/**
 		 * The new Tag.
 		 * Required
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		label: string;
 
@@ -18381,8 +18986,8 @@ export namespace MyNS {
 		/**
 		 * The new Tag.
 		 * Required
-		 * Max length: 50
 		 * Min length: 3
+		 * Max length: 50
 		 */
 		label: FormControl<string | null | undefined>,
 	}
@@ -18426,19 +19031,21 @@ export namespace MyNS {
 		 * * to the Linode's only config if it only has one config.
 		 * * to the Linode's last used config, if possible.
 		 * If no config can be selected for attachment, an error will be returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		config_id?: number | null;
 
 		/**
 		 * The Volume's label, which is also used in the `filesystem_path` of the resulting volume.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		label: string;
 
 		/**
 		 * The Linode this volume should be attached to upon creation. If not given, the volume will be created without an attachment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id?: number | null;
 
@@ -18449,6 +19056,7 @@ export namespace MyNS {
 
 		/**
 		 * The initial size of this volume, in GB.  Be aware that volumes may only be resized up after creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size?: number | null;
 
@@ -18464,19 +19072,21 @@ export namespace MyNS {
 		 * * to the Linode's only config if it only has one config.
 		 * * to the Linode's last used config, if possible.
 		 * If no config can be selected for attachment, an error will be returned.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		config_id: FormControl<number | null | undefined>,
 
 		/**
 		 * The Volume's label, which is also used in the `filesystem_path` of the resulting volume.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		label: FormControl<string | null | undefined>,
 
 		/**
 		 * The Linode this volume should be attached to upon creation. If not given, the volume will be created without an attachment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 
@@ -18487,6 +19097,7 @@ export namespace MyNS {
 
 		/**
 		 * The initial size of this volume, in GB.  Be aware that volumes may only be resized up after creation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		size: FormControl<number | null | undefined>,
 	}
@@ -18505,12 +19116,14 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode Config to include this Volume in. Must belong to the Linode referenced by `linode_id`. If not given, the last booted Config will be chosen.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		config_id?: number | null;
 
 		/**
 		 * The ID of the Linode to attach the volume to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: number;
 
@@ -18523,12 +19136,14 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the Linode Config to include this Volume in. Must belong to the Linode referenced by `linode_id`. If not given, the last booted Config will be chosen.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		config_id: FormControl<number | null | undefined>,
 
 		/**
 		 * The ID of the Linode to attach the volume to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		linode_id: FormControl<number | null | undefined>,
 

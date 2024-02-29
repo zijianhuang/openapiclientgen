@@ -117,10 +117,14 @@ export namespace MyNS {
 	}
 
 	export interface TripsTripDetailsReturnResult {
+
+		/** Type: double */
 		Code?: number | null;
 		Track?: TripsTripDetailsReturnResultTrack;
 	}
 	export interface TripsTripDetailsReturnResultFormProperties {
+
+		/** Type: double */
 		Code: FormControl<number | null | undefined>,
 	}
 	export function CreateTripsTripDetailsReturnResultFormGroup() {
@@ -131,41 +135,93 @@ export namespace MyNS {
 	}
 
 	export interface TripsTripDetailsReturnResultTrack {
+
+		/** Type: double */
 		AccelerationCount?: number | null;
 		AddressEnd?: string | null;
 		AddressFinishParts?: TripsTripDetailsReturnResultTrackAddressFinishParts;
 		AddressStart?: string | null;
 		AddressStartParts?: TripsTripDetailsReturnResultTrackAddressStartParts;
+
+		/** Type: double */
 		BeaconId?: number | null;
 		CityFinish?: string | null;
 		CityStart?: string | null;
+
+		/** Type: double */
 		DecelerationCount?: number | null;
+
+		/** Type: double */
 		Distance?: number | null;
 		DrivingTips?: string | null;
+
+		/** Type: double */
 		Duration?: number | null;
+
+		/** Type: double */
 		EcoScore?: number | null;
+
+		/** Type: double */
 		EcoScoreBrakes?: number | null;
+
+		/** Type: double */
 		EcoScoreDepreciation?: number | null;
+
+		/** Type: double */
 		EcoScoreFuel?: number | null;
+
+		/** Type: double */
 		EcoScoreTyres?: number | null;
 		EndDate?: string | null;
+
+		/** Type: double */
 		HighOverSpeedMileage?: number | null;
+
+		/** Type: double */
 		MidOverSpeedMileage?: number | null;
 		OriginChanged?: boolean | null;
+
+		/** Type: double */
 		PhoneUsage?: number | null;
 		TripsTripDetailsReturnResultTrackPoints?: Array<TripsTripDetailsReturnResultTrackPoints>;
+
+		/** Type: double */
 		Rating?: number | null;
+
+		/** Type: double */
 		Rating100?: number | null;
+
+		/** Type: double */
 		RatingAcceleration?: number | null;
+
+		/** Type: double */
 		RatingAcceleration100?: number | null;
+
+		/** Type: double */
 		RatingBraking?: number | null;
+
+		/** Type: double */
 		RatingBraking100?: number | null;
+
+		/** Type: double */
 		RatingCornering?: number | null;
+
+		/** Type: double */
 		RatingCornering100?: number | null;
+
+		/** Type: double */
 		RatingPhoneDistraction100?: number | null;
+
+		/** Type: double */
 		RatingPhoneUsage?: number | null;
+
+		/** Type: double */
 		RatingSpeeding?: number | null;
+
+		/** Type: double */
 		RatingSpeeding100?: number | null;
+
+		/** Type: double */
 		RatingTimeOfDay?: number | null;
 		ShareType?: string | null;
 		StartDate?: string | null;
@@ -173,38 +229,90 @@ export namespace MyNS {
 		TrackOriginCode?: string | null;
 	}
 	export interface TripsTripDetailsReturnResultTrackFormProperties {
+
+		/** Type: double */
 		AccelerationCount: FormControl<number | null | undefined>,
 		AddressEnd: FormControl<string | null | undefined>,
 		AddressStart: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		BeaconId: FormControl<number | null | undefined>,
 		CityFinish: FormControl<string | null | undefined>,
 		CityStart: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DecelerationCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Distance: FormControl<number | null | undefined>,
 		DrivingTips: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Duration: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		EcoScore: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		EcoScoreBrakes: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		EcoScoreDepreciation: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		EcoScoreFuel: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		EcoScoreTyres: FormControl<number | null | undefined>,
 		EndDate: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		HighOverSpeedMileage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MidOverSpeedMileage: FormControl<number | null | undefined>,
 		OriginChanged: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		PhoneUsage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Rating: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Rating100: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RatingAcceleration: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RatingAcceleration100: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RatingBraking: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RatingBraking100: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RatingCornering: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RatingCornering100: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RatingPhoneDistraction100: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RatingPhoneUsage: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RatingSpeeding: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RatingSpeeding100: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RatingTimeOfDay: FormControl<number | null | undefined>,
 		ShareType: FormControl<string | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
@@ -312,42 +420,94 @@ export namespace MyNS {
 
 	export interface TripsTripDetailsReturnResultTrackPoints {
 		AlertType?: string | null;
+
+		/** Type: double */
 		AlertValue?: number | null;
 		Cornering?: boolean | null;
+
+		/** Type: double */
 		Course?: number | null;
+
+		/** Type: double */
 		Height?: number | null;
+
+		/** Type: double */
 		Id?: number | null;
+
+		/** Type: double */
 		Lateral?: number | null;
+
+		/** Type: double */
 		Latitude?: number | null;
+
+		/** Type: double */
 		Longitude?: number | null;
+
+		/** Type: double */
 		MidSpeed?: number | null;
+
+		/** Type: double */
 		Number?: number | null;
 		PhoneUsage?: boolean | null;
 		PointDate?: string | null;
+
+		/** Type: double */
 		Speed?: number | null;
+
+		/** Type: double */
 		SpeedLimit?: number | null;
 		SpeedType?: string | null;
+
+		/** Type: double */
 		TotalMeters?: number | null;
+
+		/** Type: double */
 		Yaw?: number | null;
 	}
 	export interface TripsTripDetailsReturnResultTrackPointsFormProperties {
 		AlertType: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		AlertValue: FormControl<number | null | undefined>,
 		Cornering: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		Course: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Height: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Id: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Lateral: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Longitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MidSpeed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Number: FormControl<number | null | undefined>,
 		PhoneUsage: FormControl<boolean | null | undefined>,
 		PointDate: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Speed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpeedLimit: FormControl<number | null | undefined>,
 		SpeedType: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		TotalMeters: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Yaw: FormControl<number | null | undefined>,
 	}
 	export function CreateTripsTripDetailsReturnResultTrackPointsFormGroup() {
@@ -377,10 +537,14 @@ export namespace MyNS {
 	export interface Slashv1SlashscoringsSlashconsolidatedSlashdailyReturn {
 		Errors?: Array<string>;
 		Slashv1SlashscoringsSlashconsolidatedSlashdailyReturnResult?: Array<Slashv1SlashscoringsSlashconsolidatedSlashdailyReturnResult>;
+
+		/** Type: double */
 		Status?: number | null;
 		Title?: string | null;
 	}
 	export interface Slashv1SlashscoringsSlashconsolidatedSlashdailyReturnFormProperties {
+
+		/** Type: double */
 		Status: FormControl<number | null | undefined>,
 		Title: FormControl<string | null | undefined>,
 	}
@@ -393,29 +557,53 @@ export namespace MyNS {
 	}
 
 	export interface Slashv1SlashscoringsSlashconsolidatedSlashdailyReturnResult {
+
+		/** Type: double */
 		AccelerationScore?: number | null;
 		AppId?: string | null;
+
+		/** Type: double */
 		BrakingScore?: number | null;
 		CompanyId?: string | null;
+
+		/** Type: double */
 		CorneringScore?: number | null;
 		DeviceToken?: string | null;
+
+		/** Type: double */
 		DistractedScore?: number | null;
 		InstanceId?: string | null;
+
+		/** Type: double */
 		OverallScore?: number | null;
 		ReportDate?: string | null;
+
+		/** Type: double */
 		SpeedingScore?: number | null;
 	}
 	export interface Slashv1SlashscoringsSlashconsolidatedSlashdailyReturnResultFormProperties {
+
+		/** Type: double */
 		AccelerationScore: FormControl<number | null | undefined>,
 		AppId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		BrakingScore: FormControl<number | null | undefined>,
 		CompanyId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		CorneringScore: FormControl<number | null | undefined>,
 		DeviceToken: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DistractedScore: FormControl<number | null | undefined>,
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		OverallScore: FormControl<number | null | undefined>,
 		ReportDate: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		SpeedingScore: FormControl<number | null | undefined>,
 	}
 	export function CreateSlashv1SlashscoringsSlashconsolidatedSlashdailyReturnResultFormGroup() {
@@ -438,10 +626,14 @@ export namespace MyNS {
 	export interface UserSafeScoringAccumulatedValueV1SlashscoringsSlashindividualReturn {
 		Errors?: Array<string>;
 		Result?: UserSafeScoringAccumulatedValueV1SlashscoringsSlashindividualReturnResult;
+
+		/** Type: double */
 		Status?: number | null;
 		Title?: string | null;
 	}
 	export interface UserSafeScoringAccumulatedValueV1SlashscoringsSlashindividualReturnFormProperties {
+
+		/** Type: double */
 		Status: FormControl<number | null | undefined>,
 		Title: FormControl<string | null | undefined>,
 	}
@@ -454,27 +646,51 @@ export namespace MyNS {
 	}
 
 	export interface UserSafeScoringAccumulatedValueV1SlashscoringsSlashindividualReturnResult {
+
+		/** Type: double */
 		AccelerationScore?: number | null;
 		AppId?: string | null;
+
+		/** Type: double */
 		BrakingScore?: number | null;
 		CompanyId?: string | null;
+
+		/** Type: double */
 		CorneringScore?: number | null;
 		DeviceToken?: string | null;
+
+		/** Type: double */
 		DistractedScore?: number | null;
 		InstanceId?: string | null;
+
+		/** Type: double */
 		OverallScore?: number | null;
+
+		/** Type: double */
 		SpeedingScore?: number | null;
 	}
 	export interface UserSafeScoringAccumulatedValueV1SlashscoringsSlashindividualReturnResultFormProperties {
+
+		/** Type: double */
 		AccelerationScore: FormControl<number | null | undefined>,
 		AppId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		BrakingScore: FormControl<number | null | undefined>,
 		CompanyId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		CorneringScore: FormControl<number | null | undefined>,
 		DeviceToken: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DistractedScore: FormControl<number | null | undefined>,
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		OverallScore: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpeedingScore: FormControl<number | null | undefined>,
 	}
 	export function CreateUserSafeScoringAccumulatedValueV1SlashscoringsSlashindividualReturnResultFormGroup() {
@@ -496,10 +712,14 @@ export namespace MyNS {
 	export interface UserSafeScoringDailyValueSlashv1SlashscoringsSlashindividualSlashdailyReturn {
 		Errors?: Array<string>;
 		UserSafeScoringDailyValueSlashv1SlashscoringsSlashindividualSlashdailyReturnResult?: Array<UserSafeScoringDailyValueSlashv1SlashscoringsSlashindividualSlashdailyReturnResult>;
+
+		/** Type: double */
 		Status?: number | null;
 		Title?: string | null;
 	}
 	export interface UserSafeScoringDailyValueSlashv1SlashscoringsSlashindividualSlashdailyReturnFormProperties {
+
+		/** Type: double */
 		Status: FormControl<number | null | undefined>,
 		Title: FormControl<string | null | undefined>,
 	}
@@ -512,29 +732,53 @@ export namespace MyNS {
 	}
 
 	export interface UserSafeScoringDailyValueSlashv1SlashscoringsSlashindividualSlashdailyReturnResult {
+
+		/** Type: double */
 		AccelerationScore?: number | null;
 		AppId?: string | null;
+
+		/** Type: double */
 		BrakingScore?: number | null;
 		CalcDate?: string | null;
 		CompanyId?: string | null;
+
+		/** Type: double */
 		CorneringScore?: number | null;
 		DeviceToken?: string | null;
+
+		/** Type: double */
 		DistractedScore?: number | null;
 		InstanceId?: string | null;
+
+		/** Type: double */
 		OverallScore?: number | null;
+
+		/** Type: double */
 		SpeedingScore?: number | null;
 	}
 	export interface UserSafeScoringDailyValueSlashv1SlashscoringsSlashindividualSlashdailyReturnResultFormProperties {
+
+		/** Type: double */
 		AccelerationScore: FormControl<number | null | undefined>,
 		AppId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		BrakingScore: FormControl<number | null | undefined>,
 		CalcDate: FormControl<string | null | undefined>,
 		CompanyId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		CorneringScore: FormControl<number | null | undefined>,
 		DeviceToken: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DistractedScore: FormControl<number | null | undefined>,
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		OverallScore: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SpeedingScore: FormControl<number | null | undefined>,
 	}
 	export function CreateUserSafeScoringDailyValueSlashv1SlashscoringsSlashindividualSlashdailyReturnResultFormGroup() {
@@ -557,10 +801,14 @@ export namespace MyNS {
 	export interface UserStatisticsAccumulatedValueSlashv1SlashstatisticsSlashindividualReturn {
 		Errors?: Array<string>;
 		Result?: UserStatisticsAccumulatedValueSlashv1SlashstatisticsSlashindividualReturnResult;
+
+		/** Type: double */
 		Status?: number | null;
 		Title?: string | null;
 	}
 	export interface UserStatisticsAccumulatedValueSlashv1SlashstatisticsSlashindividualReturnFormProperties {
+
+		/** Type: double */
 		Status: FormControl<number | null | undefined>,
 		Title: FormControl<string | null | undefined>,
 	}
@@ -573,63 +821,159 @@ export namespace MyNS {
 	}
 
 	export interface UserStatisticsAccumulatedValueSlashv1SlashstatisticsSlashindividualReturnResult {
+
+		/** Type: double */
 		AccelerationCount?: number | null;
 		AppId?: string | null;
+
+		/** Type: double */
 		AverageSpeedKmh?: number | null;
+
+		/** Type: double */
 		AverageSpeedMileh?: number | null;
+
+		/** Type: double */
 		BreakingCount?: number | null;
 		CompanyId?: string | null;
+
+		/** Type: double */
 		CorneringCount?: number | null;
+
+		/** Type: double */
 		DayDrivingTime?: number | null;
 		DeviceToken?: string | null;
+
+		/** Type: double */
 		DriverTripsCount?: number | null;
+
+		/** Type: double */
 		DrivingTime?: number | null;
 		InstanceId?: string | null;
+
+		/** Type: double */
 		MaxSpeedKmh?: number | null;
+
+		/** Type: double */
 		MaxSpeedMileh?: number | null;
+
+		/** Type: double */
 		MileageKm?: number | null;
+
+		/** Type: double */
 		MileageMile?: number | null;
+
+		/** Type: double */
 		NightDrivingTime?: number | null;
+
+		/** Type: double */
 		OtherTripsCount?: number | null;
+
+		/** Type: double */
 		PhoneUsageDistanceKm?: number | null;
+
+		/** Type: double */
 		PhoneUsageDistanceMile?: number | null;
+
+		/** Type: double */
 		PhoneUsageDurationMin?: number | null;
+
+		/** Type: double */
 		PhoneUsageOverSpeedDistanceKm?: number | null;
+
+		/** Type: double */
 		PhoneUsageOverSpeedDistanceMile?: number | null;
+
+		/** Type: double */
 		PhoneUsageOverSpeedDurationMin?: number | null;
+
+		/** Type: double */
 		RushHoursDrivingTime?: number | null;
+
+		/** Type: double */
 		TotalSpeedingKm?: number | null;
+
+		/** Type: double */
 		TotalSpeedingMile?: number | null;
+
+		/** Type: double */
 		TripsCount?: number | null;
 	}
 	export interface UserStatisticsAccumulatedValueSlashv1SlashstatisticsSlashindividualReturnResultFormProperties {
+
+		/** Type: double */
 		AccelerationCount: FormControl<number | null | undefined>,
 		AppId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		AverageSpeedKmh: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AverageSpeedMileh: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BreakingCount: FormControl<number | null | undefined>,
 		CompanyId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		CorneringCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DayDrivingTime: FormControl<number | null | undefined>,
 		DeviceToken: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DriverTripsCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DrivingTime: FormControl<number | null | undefined>,
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		MaxSpeedKmh: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MaxSpeedMileh: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MileageKm: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MileageMile: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		NightDrivingTime: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		OtherTripsCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageDistanceKm: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageDistanceMile: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageDurationMin: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageOverSpeedDistanceKm: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageOverSpeedDistanceMile: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageOverSpeedDurationMin: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RushHoursDrivingTime: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalSpeedingKm: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalSpeedingMile: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TripsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUserStatisticsAccumulatedValueSlashv1SlashstatisticsSlashindividualReturnResultFormGroup() {
@@ -669,10 +1013,14 @@ export namespace MyNS {
 	export interface UserStatisticeDailyValueV1SlashstatisticsSlashindividualSlashdailyReturn {
 		Errors?: Array<string>;
 		UserStatisticeDailyValueV1SlashstatisticsSlashindividualSlashdailyReturnResult?: Array<UserStatisticeDailyValueV1SlashstatisticsSlashindividualSlashdailyReturnResult>;
+
+		/** Type: double */
 		Status?: number | null;
 		Title?: string | null;
 	}
 	export interface UserStatisticeDailyValueV1SlashstatisticsSlashindividualSlashdailyReturnFormProperties {
+
+		/** Type: double */
 		Status: FormControl<number | null | undefined>,
 		Title: FormControl<string | null | undefined>,
 	}
@@ -685,65 +1033,161 @@ export namespace MyNS {
 	}
 
 	export interface UserStatisticeDailyValueV1SlashstatisticsSlashindividualSlashdailyReturnResult {
+
+		/** Type: double */
 		AccelerationCount?: number | null;
 		AppId?: string | null;
+
+		/** Type: double */
 		AverageSpeedKmh?: number | null;
+
+		/** Type: double */
 		AverageSpeedMileh?: number | null;
+
+		/** Type: double */
 		BreakingCount?: number | null;
 		CompanyId?: string | null;
+
+		/** Type: double */
 		CorneringCount?: number | null;
+
+		/** Type: double */
 		DayDrivingTime?: number | null;
 		DeviceToken?: string | null;
+
+		/** Type: double */
 		DriverTripsCount?: number | null;
+
+		/** Type: double */
 		DrivingTime?: number | null;
 		InstanceId?: string | null;
+
+		/** Type: double */
 		MaxSpeedKmh?: number | null;
+
+		/** Type: double */
 		MaxSpeedMileh?: number | null;
+
+		/** Type: double */
 		MileageKm?: number | null;
+
+		/** Type: double */
 		MileageMile?: number | null;
+
+		/** Type: double */
 		NightDrivingTime?: number | null;
+
+		/** Type: double */
 		OtherTripsCount?: number | null;
+
+		/** Type: double */
 		PhoneUsageDistanceKm?: number | null;
+
+		/** Type: double */
 		PhoneUsageDistanceMile?: number | null;
+
+		/** Type: double */
 		PhoneUsageDurationMin?: number | null;
+
+		/** Type: double */
 		PhoneUsageOverSpeedDistanceKm?: number | null;
+
+		/** Type: double */
 		PhoneUsageOverSpeedDistanceMile?: number | null;
+
+		/** Type: double */
 		PhoneUsageOverSpeedDurationMin?: number | null;
 		ReportDate?: string | null;
+
+		/** Type: double */
 		RushHoursDrivingTime?: number | null;
+
+		/** Type: double */
 		TotalSpeedingKm?: number | null;
+
+		/** Type: double */
 		TotalSpeedingMile?: number | null;
+
+		/** Type: double */
 		TripsCount?: number | null;
 	}
 	export interface UserStatisticeDailyValueV1SlashstatisticsSlashindividualSlashdailyReturnResultFormProperties {
+
+		/** Type: double */
 		AccelerationCount: FormControl<number | null | undefined>,
 		AppId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		AverageSpeedKmh: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		AverageSpeedMileh: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BreakingCount: FormControl<number | null | undefined>,
 		CompanyId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		CorneringCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DayDrivingTime: FormControl<number | null | undefined>,
 		DeviceToken: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DriverTripsCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DrivingTime: FormControl<number | null | undefined>,
 		InstanceId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		MaxSpeedKmh: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MaxSpeedMileh: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MileageKm: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MileageMile: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		NightDrivingTime: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		OtherTripsCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageDistanceKm: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageDistanceMile: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageDurationMin: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageOverSpeedDistanceKm: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageOverSpeedDistanceMile: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhoneUsageOverSpeedDurationMin: FormControl<number | null | undefined>,
 		ReportDate: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		RushHoursDrivingTime: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalSpeedingKm: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalSpeedingMile: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TripsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUserStatisticeDailyValueV1SlashstatisticsSlashindividualSlashdailyReturnResultFormGroup() {

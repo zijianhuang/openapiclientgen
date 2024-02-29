@@ -480,7 +480,10 @@ export namespace MyNS {
 		/** The address of the API backend. The scheme is used to determine the backend protocol and security. The following schemes are accepted: SCHEME PROTOCOL SECURITY http:// HTTP None https:// HTTP TLS grpc:// gRPC None grpcs:// gRPC TLS It is recommended to explicitly include a scheme. Leaving out the scheme may cause constrasting behaviors across platforms. If the port is unspecified, the default is: - 80 for schemes without TLS - 443 for schemes with TLS For HTTP backends, use protocol to specify the protocol version. */
 		address?: string | null;
 
-		/** The number of seconds to wait for a response from a request. The default varies based on the request protocol and deployment environment. */
+		/**
+		 * The number of seconds to wait for a response from a request. The default varies based on the request protocol and deployment environment.
+		 * Type: double
+		 */
 		deadline?: number | null;
 
 		/** When disable_auth is true, a JWT ID token won't be generated and the original "Authorization" HTTP header will be preserved. If the header is used to carry the original token and is expected by the backend, this field must be set to true to preserve the header. */
@@ -489,10 +492,16 @@ export namespace MyNS {
 		/** The JWT audience is used when generating a JWT ID token for the backend. This ID token will be added in the HTTP "authorization" header, and sent to the backend. */
 		jwtAudience?: string | null;
 
-		/** Deprecated, do not use. */
+		/**
+		 * Deprecated, do not use.
+		 * Type: double
+		 */
 		minDeadline?: number | null;
 
-		/** The number of seconds to wait for the completion of a long running operation. The default is no deadline. */
+		/**
+		 * The number of seconds to wait for the completion of a long running operation. The default is no deadline.
+		 * Type: double
+		 */
 		operationDeadline?: number | null;
 
 		/** The map between request protocol and the backend address. */
@@ -512,7 +521,10 @@ export namespace MyNS {
 		/** The address of the API backend. The scheme is used to determine the backend protocol and security. The following schemes are accepted: SCHEME PROTOCOL SECURITY http:// HTTP None https:// HTTP TLS grpc:// gRPC None grpcs:// gRPC TLS It is recommended to explicitly include a scheme. Leaving out the scheme may cause constrasting behaviors across platforms. If the port is unspecified, the default is: - 80 for schemes without TLS - 443 for schemes with TLS For HTTP backends, use protocol to specify the protocol version. */
 		address: FormControl<string | null | undefined>,
 
-		/** The number of seconds to wait for a response from a request. The default varies based on the request protocol and deployment environment. */
+		/**
+		 * The number of seconds to wait for a response from a request. The default varies based on the request protocol and deployment environment.
+		 * Type: double
+		 */
 		deadline: FormControl<number | null | undefined>,
 
 		/** When disable_auth is true, a JWT ID token won't be generated and the original "Authorization" HTTP header will be preserved. If the header is used to carry the original token and is expected by the backend, this field must be set to true to preserve the header. */
@@ -521,10 +533,16 @@ export namespace MyNS {
 		/** The JWT audience is used when generating a JWT ID token for the backend. This ID token will be added in the HTTP "authorization" header, and sent to the backend. */
 		jwtAudience: FormControl<string | null | undefined>,
 
-		/** Deprecated, do not use. */
+		/**
+		 * Deprecated, do not use.
+		 * Type: double
+		 */
 		minDeadline: FormControl<number | null | undefined>,
 
-		/** The number of seconds to wait for the completion of a long running operation. The default is no deadline. */
+		/**
+		 * The number of seconds to wait for the completion of a long running operation. The default is no deadline.
+		 * Type: double
+		 */
 		operationDeadline: FormControl<number | null | undefined>,
 
 		/** The map between request protocol and the backend address. */
@@ -1556,7 +1574,10 @@ export namespace MyNS {
 		/** Enum value name. */
 		name?: string | null;
 
-		/** Enum value number. */
+		/**
+		 * Enum value number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** Protocol buffer options. */
@@ -1569,7 +1590,10 @@ export namespace MyNS {
 		/** Enum value name. */
 		name: FormControl<string | null | undefined>,
 
-		/** Enum value number. */
+		/**
+		 * Enum value number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateEnumValueFormGroup() {
@@ -1599,10 +1623,16 @@ export namespace MyNS {
 		/** The field name. */
 		name?: string | null;
 
-		/** The field number. */
+		/**
+		 * The field number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
-		/** The index of the field type in `Type.oneofs`, for message or enumeration types. The first type has index 1; zero means the type is not in the list. */
+		/**
+		 * The index of the field type in `Type.oneofs`, for message or enumeration types. The first type has index 1; zero means the type is not in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oneofIndex?: number | null;
 
 		/** The protocol buffer options. */
@@ -1633,10 +1663,16 @@ export namespace MyNS {
 		/** The field name. */
 		name: FormControl<string | null | undefined>,
 
-		/** The field number. */
+		/**
+		 * The field number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
-		/** The index of the field type in `Type.oneofs`, for message or enumeration types. The first type has index 1; zero means the type is not in the list. */
+		/**
+		 * The index of the field type in `Type.oneofs`, for message or enumeration types. The first type has index 1; zero means the type is not in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oneofIndex: FormControl<number | null | undefined>,
 
 		/** Whether to use alternative packed wire representation. */
@@ -1775,14 +1811,20 @@ export namespace MyNS {
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptions {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion?: number | null;
 	}
 
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GetPolicyOptionsFormProperties {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGetPolicyOptionsFormGroup() {
@@ -2002,7 +2044,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -2015,7 +2060,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2069,7 +2117,10 @@ export namespace MyNS {
 		/** Billing related configuration of the service. The following example shows how to configure monitored resources and metrics for billing, `consumer_destinations` is the only supported destination and the monitored resources need at least one label key `cloud.googleapis.com/location` to indicate the location of the billing usage, using different monitored resources between monitoring and billing is recommended so they can be evolved independently: monitored_resources: - type: library.googleapis.com/billing_branch labels: - key: cloud.googleapis.com/location description: | Predefined label to support billing location restriction. - key: city description: | Custom label to define the city where the library branch is located in. - key: name description: Custom label to define the name of the library branch. metrics: - name: library.googleapis.com/book/borrowed_count metric_kind: DELTA value_type: INT64 unit: "1" billing: consumer_destinations: - monitored_resource: library.googleapis.com/billing_branch metrics: - library.googleapis.com/book/borrowed_count */
 		billing?: Billing;
 
-		/** Obsolete. Do not use. This field has no semantic meaning. The service config compiler always sets this field to `3`. */
+		/**
+		 * Obsolete. Do not use. This field has no semantic meaning. The service config compiler always sets this field to `3`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		configVersion?: number | null;
 
 		/** `Context` defines which contexts an API requests. Example: context: rules: - selector: "*" requested: - google.rpc.context.ProjectContext - google.rpc.context.OriginContext The above specifies that all methods in the API request `google.rpc.context.ProjectContext` and `google.rpc.context.OriginContext`. Available context types are defined in package `google.rpc.context`. This also provides mechanism to allowlist any protobuf message extension that can be sent in grpc metadata using “x-goog-ext--bin” and “x-goog-ext--jspb” format. For example, list any service specific protobuf types that can appear in grpc metadata as follows in your yaml file: Example: context: rules: - selector: "google.example.library.v1.LibraryService.CreateBook" allowed_request_extensions: - google.foo.v1.NewExtension allowed_response_extensions: - google.foo.v1.NewExtension You can also specify extension ID instead of fully qualified extension name here. */
@@ -2145,7 +2196,10 @@ export namespace MyNS {
 	/** `Service` is the root object of Google API service configuration (service config). It describes the basic information about a logical service, such as the service name and the user-facing title, and delegates other aspects to sub-sections. Each sub-section is either a proto message or a repeated proto message that configures a specific aspect, such as auth. For more information, see each proto message definition. Example: type: google.api.Service name: calendar.googleapis.com title: Google Calendar API apis: - name: google.calendar.v3.Calendar visibility: rules: - selector: "google.calendar.v3.*" restriction: PREVIEW backend: rules: - selector: "google.calendar.v3.*" address: calendar.example.com authentication: providers: - id: google_calendar_auth jwks_uri: https://www.googleapis.com/oauth2/v1/certs issuer: https://securetoken.google.com rules: - selector: "*" requirements: provider_id: google_calendar_auth */
 	export interface ServiceFormProperties {
 
-		/** Obsolete. Do not use. This field has no semantic meaning. The service config compiler always sets this field to `3`. */
+		/**
+		 * Obsolete. Do not use. This field has no semantic meaning. The service config compiler always sets this field to `3`.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		configVersion: FormControl<number | null | undefined>,
 
 		/** A unique ID for a specific instance of this message, typically assigned by the client for tracking purpose. Must be no longer than 63 characters and only lower case letters, digits, '.', '_' and '-' are allowed. If empty, the server may choose to generate one instead. */
@@ -2583,7 +2637,10 @@ export namespace MyNS {
 		/** Maximum time between two subsequent poll requests. Default value: 45 seconds. */
 		maxPollDelay?: string | null;
 
-		/** Multiplier to gradually increase delay between subsequent polls until it reaches max_poll_delay. Default value: 1.5. */
+		/**
+		 * Multiplier to gradually increase delay between subsequent polls until it reaches max_poll_delay. Default value: 1.5.
+		 * Type: float
+		 */
 		pollDelayMultiplier?: number | null;
 
 		/** Total polling timeout. Default value: 5 minutes. */
@@ -2599,7 +2656,10 @@ export namespace MyNS {
 		/** Maximum time between two subsequent poll requests. Default value: 45 seconds. */
 		maxPollDelay: FormControl<string | null | undefined>,
 
-		/** Multiplier to gradually increase delay between subsequent polls until it reaches max_poll_delay. Default value: 1.5. */
+		/**
+		 * Multiplier to gradually increase delay between subsequent polls until it reaches max_poll_delay. Default value: 1.5.
+		 * Type: float
+		 */
 		pollDelayMultiplier: FormControl<number | null | undefined>,
 
 		/** Total polling timeout. Default value: 5 minutes. */
@@ -3137,7 +3197,10 @@ export namespace MyNS {
 	/** The metadata associated with a long running operation resource. */
 	export interface OperationMetadata {
 
-		/** Percentage of completion of this operation, ranging from 0 to 100. */
+		/**
+		 * Percentage of completion of this operation, ranging from 0 to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercentage?: number | null;
 
 		/** The full name of the resources that this operation is directly associated with. */
@@ -3153,7 +3216,10 @@ export namespace MyNS {
 	/** The metadata associated with a long running operation resource. */
 	export interface OperationMetadataFormProperties {
 
-		/** Percentage of completion of this operation, ranging from 0 to 100. */
+		/**
+		 * Percentage of completion of this operation, ranging from 0 to 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercentage: FormControl<number | null | undefined>,
 
 		/** The start time of the operation. */
@@ -3210,7 +3276,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -3220,7 +3289,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -3386,6 +3458,7 @@ export namespace MyNS {
 		 * @param {string} filter A string for filtering Operations. The following filter fields are supported: * serviceName: Required. Only `=` operator is allowed. * startTime: The time this job was started, in ISO 8601 format. Allowed operators are `>=`, `>`, `<=`, and `<`. * status: Can be `done`, `in_progress`, or `failed`. Allowed operators are `=`, and `!=`. Filter expression supports conjunction (AND) and disjunction (OR) logical operators. However, the serviceName restriction must be at the top-level and can only be combined with other restrictions via the AND logical operator. Examples: * `serviceName={some-service}.googleapis.com` * `serviceName={some-service}.googleapis.com AND startTime>="2017-02-01"` * `serviceName={some-service}.googleapis.com AND status=done` * `serviceName={some-service}.googleapis.com AND (status=done OR startTime>="2017-02-01")`
 		 * @param {string} name Not used.
 		 * @param {number} pageSize The maximum number of operations to return. If unspecified, defaults to 50. The maximum value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -3398,6 +3471,7 @@ export namespace MyNS {
 		 * Get v1/services
 		 * @param {string} consumerId Include services consumed by the specified consumer. The Google Service Management implementation accepts the following forms: - project:
 		 * @param {number} pageSize The max number of items to include in the response list. Page size is 50 if not specified. Maximum value is 500.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token identifying which result to start with; returned by a previous list call.
 		 * @param {string} producerProjectId Include services produced by the specified project.
 		 * @return {ListServicesResponse} Successful response
@@ -3452,6 +3526,7 @@ export namespace MyNS {
 		 * Get v1/services/{serviceName}/configs
 		 * @param {string} serviceName Required. The name of the service. See the [overview](https://cloud.google.com/service-management/overview) for naming requirements. For example: `example.googleapis.com`.
 		 * @param {number} pageSize The max number of items to include in the response list. Page size is 50 if not specified. Maximum value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token of the page to retrieve.
 		 * @return {ListServiceConfigsResponse} Successful response
 		 */
@@ -3497,6 +3572,7 @@ export namespace MyNS {
 		 * @param {string} serviceName Required. The name of the service. See the [overview](https://cloud.google.com/service-management/overview) for naming requirements. For example: `example.googleapis.com`.
 		 * @param {string} filter Required. Use `filter` to return subset of rollouts. The following filters are supported: -- By status. For example, `filter='status=SUCCESS'` -- By strategy. For example, `filter='strategy=TrafficPercentStrategy'`
 		 * @param {number} pageSize The max number of items to include in the response list. Page size is 50 if not specified. Maximum value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token of the page to retrieve.
 		 * @return {ListServiceRolloutsResponse} Successful response
 		 */

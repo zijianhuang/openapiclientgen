@@ -311,13 +311,21 @@ export namespace MyNS {
 	}
 
 	export interface PermissionFrequency {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		repeats?: number | null;
 		unit?: PermissionFrequencyUnit | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value?: number | null;
 	}
 	export interface PermissionFrequencyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		repeats: FormControl<number | null | undefined>,
 		unit: FormControl<PermissionFrequencyUnit | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePermissionFrequencyFormGroup() {

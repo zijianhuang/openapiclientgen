@@ -166,11 +166,15 @@ export namespace MyNS {
 		 * Calculates a set of locations that can be reached from the origin point.
 		 * Get routing/{versionNumber}/calculateReachableRange/{origin}/{contentType}
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmVersionNumber} versionNumber Service version number. The current value is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} origin Point from which the range calculation should start.
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmContentType} contentType The content type of the response structure. If the content type is jsonp, a callback method can be specified in the query parameters.
 		 * @param {number} fuelBudgetInLiters Fuel budget in liters. Determines the maximum vehicle range using the specified Combustion Consumption Model.
+		 *     Minimum: 0
 		 * @param {number} energyBudgetInkWh Electric energy budget in kilowatt hours (kWh). Determines the maximum vehicle range using the specified Electric Consumption Model.
+		 *     Minimum: 0
 		 * @param {number} timeBudgetInSec Time budget in seconds. Determines the maximum vehicle range using the specified driving time. The consumption parameters in the request will only affect eco-routes, and thereby indirectly the driving time.
+		 *     Minimum: 0
 		 * @param {string} callback Specifies the jsonp callback method.
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmReport} report Specifies which data should be reported for diagnosis purposes.
 		 * @param {string} departAt The date and time of departure from the origin point. Departure times apart from <i>now</i> must be specified as a dateTime.
@@ -188,11 +192,17 @@ export namespace MyNS {
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmHilliness} hilliness Degree of hilliness for calculating a thrilling route.
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmHilliness} windingness Amount that a thrilling route should wind.
 		 * @param {number} vehicleMaxSpeed Maximum speed of the vehicle in km/hour.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleWeight Weight of the vehicle in kilograms.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleAxleWeight Weight per axle of the vehicle in kg.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleLength Length of the vehicle in meters.
+		 *     Type: float
 		 * @param {number} vehicleWidth Width of the vehicle in meters.
+		 *     Type: float
 		 * @param {number} vehicleHeight Height of the vehicle in meters.
+		 *     Type: float
 		 * @param {boolean} vehicleCommercial Indicates that the vehicle is used for commercial purposes. This means it may not be allowed on certain roads.
 		 * @param {string} vehicleLoadType Indicates what kinds of hazardous materials the vehicle is carrying (if any). This means it may not be allowed on certain roads.
 		 * Use these for routing in the US:
@@ -212,12 +222,19 @@ export namespace MyNS {
 		 * vehicleLoadType can be specified multiple times. This parameter is currently only considered for <b>travelMode</b>=<i>truck</i>.
 		 * @param {string} constantSpeedConsumptionInLitersPerHundredkm Specifies the speed-dependent component of consumption. Provided as an unordered list of speed/consumption-rate pairs.
 		 * @param {number} currentFuelInLiters Specifies the current supply of fuel in liters.
+		 *     Type: float
 		 * @param {number} auxiliaryPowerInLitersPerHour Specifies the amount of fuel consumed for sustaining auxiliary systems of the vehicle, in liters per hour.
+		 *     Type: float
 		 * @param {number} fuelEnergyDensityInMJoulesPerLiter Specifies the amount of chemical energy stored in one liter of fuel in megajoules (MJ).
+		 *     Type: float
 		 * @param {number} accelerationEfficiency Specifies the efficiency of converting chemical energy stored in fuel to kinetic energy when the vehicle accelerates (i.e. KineticEnergyGained/ChemicalEnergyConsumed).
+		 *     Type: float
 		 * @param {number} decelerationEfficiency Specifies the efficiency of converting kinetic energy to saved (not consumed) fuel when the vehicle decelerates (i.e. ChemicalEnergySaved/KineticEnergyLost).
+		 *     Type: float
 		 * @param {number} uphillEfficiency Specifies the efficiency of converting chemical energy stored in fuel to potential energy when the vehicle gains elevation (i.e. PotentialEnergyGained/ChemicalEnergyConsumed).
+		 *     Type: float
 		 * @param {number} downhillEfficiency Specifies the efficiency of converting potential energy to saved (not consumed) fuel when the vehicle loses elevation (i.e. ChemicalEnergySaved/PotentialEnergyLost).
+		 *     Type: float
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmVehicleEngineType} vehicleEngineType Engine type of the vehicle.
 		 * @param {string} constantSpeedConsumptionInkWhPerHundredkm Specifies the speed-dependent component of consumption. Provided as an unordered list of speed/consumption-rate pairs.
 		 * @return {void} OK: a range was calculated and the body of the response contains the polygon description and further data.
@@ -231,11 +248,15 @@ export namespace MyNS {
 		 * Calculates a set of locations that can be reached from the origin point. POST method handles additionally parameters: <em>supportingPoints</em>, <em>allowVignette</em>, <em>avoidVignette</em>, <em>avoidAreas</em>.
 		 * Post routing/{versionNumber}/calculateReachableRange/{origin}/{contentType}
 		 * @param {RoutingPostByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmVersionNumber} versionNumber Service version number. The current value is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} origin Point from which the range calculation should start.
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmContentType} contentType The content type of the response structure. If the content type is jsonp, a callback method can be specified in the query parameters.
 		 * @param {number} fuelBudgetInLiters Fuel budget in liters. Determines the maximum vehicle range using the specified Combustion Consumption Model.
+		 *     Minimum: 0
 		 * @param {number} energyBudgetInkWh Electric energy budget in kilowatt hours (kWh). Determines the maximum vehicle range using the specified Electric Consumption Model.
+		 *     Minimum: 0
 		 * @param {number} timeBudgetInSec Time budget in seconds. Determines the maximum vehicle range using the specified driving time. The consumption parameters in the request will only affect eco-routes, and thereby indirectly the driving time.
+		 *     Minimum: 0
 		 * @param {string} callback Specifies the jsonp callback method.
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmReport} report Specifies which data should be reported for diagnosis purposes.
 		 * @param {string} departAt The date and time of departure from the origin point. Departure times apart from <i>now</i> must be specified as a dateTime.
@@ -253,11 +274,17 @@ export namespace MyNS {
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmHilliness} hilliness Degree of hilliness for calculating a thrilling route.
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmHilliness} windingness Amount that a thrilling route should wind.
 		 * @param {number} vehicleMaxSpeed Maximum speed of the vehicle in km/hour.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleWeight Weight of the vehicle in kilograms.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleAxleWeight Weight per axle of the vehicle in kg.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleLength Length of the vehicle in meters.
+		 *     Type: float
 		 * @param {number} vehicleWidth Width of the vehicle in meters.
+		 *     Type: float
 		 * @param {number} vehicleHeight Height of the vehicle in meters.
+		 *     Type: float
 		 * @param {boolean} vehicleCommercial Indicates that the vehicle is used for commercial purposes. This means it may not be allowed on certain roads.
 		 * @param {string} vehicleLoadType Indicates what kinds of hazardous materials the vehicle is carrying (if any). This means it may not be allowed on certain roads.
 		 * Use these for routing in the US:
@@ -277,12 +304,19 @@ export namespace MyNS {
 		 * vehicleLoadType can be specified multiple times. This parameter is currently only considered for <b>travelMode</b>=<i>truck</i>.
 		 * @param {string} constantSpeedConsumptionInLitersPerHundredkm Specifies the speed-dependent component of consumption. Provided as an unordered list of speed/consumption-rate pairs.
 		 * @param {number} currentFuelInLiters Specifies the current supply of fuel in liters.
+		 *     Type: float
 		 * @param {number} auxiliaryPowerInLitersPerHour Specifies the amount of fuel consumed for sustaining auxiliary systems of the vehicle, in liters per hour.
+		 *     Type: float
 		 * @param {number} fuelEnergyDensityInMJoulesPerLiter Specifies the amount of chemical energy stored in one liter of fuel in megajoules (MJ).
+		 *     Type: float
 		 * @param {number} accelerationEfficiency Specifies the efficiency of converting chemical energy stored in fuel to kinetic energy when the vehicle accelerates (i.e. KineticEnergyGained/ChemicalEnergyConsumed).
+		 *     Type: float
 		 * @param {number} decelerationEfficiency Specifies the efficiency of converting kinetic energy to saved (not consumed) fuel when the vehicle decelerates (i.e. ChemicalEnergySaved/KineticEnergyLost).
+		 *     Type: float
 		 * @param {number} uphillEfficiency Specifies the efficiency of converting chemical energy stored in fuel to potential energy when the vehicle gains elevation (i.e. PotentialEnergyGained/ChemicalEnergyConsumed).
+		 *     Type: float
 		 * @param {number} downhillEfficiency Specifies the efficiency of converting potential energy to saved (not consumed) fuel when the vehicle loses elevation (i.e. ChemicalEnergySaved/PotentialEnergyLost).
+		 *     Type: float
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmVehicleEngineType} vehicleEngineType Engine type of the vehicle.
 		 * @param {string} constantSpeedConsumptionInkWhPerHundredkm Specifies the speed-dependent component of consumption. Provided as an unordered list of speed/consumption-rate pairs.
 		 * @return {void} OK: a range was calculated and the body of the response contains the polygon description and further data.
@@ -296,18 +330,23 @@ export namespace MyNS {
 		 * Calculates a route between an origin and a destination.
 		 * Get routing/{versionNumber}/calculateRoute/{locations}/{contentType}
 		 * @param {RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmVersionNumber} versionNumber Service version number. The current value is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} locations Locations through which the calculated route must pass.
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmContentType} contentType The content type of the response structure. If the content type is jsonp, a callback method can be specified in the query parameters.
 		 * @param {number} maxAlternatives Number of alternative routes to be calculated.
+		 *     Minimum: 0    Maximum: 5
 		 * @param {RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmAlternativeType} alternativeType Determines whether the alternative routes to be calculated should be better with respect to the planning criteria provided than the reference route.
 		 * @param {number} minDeviationDistance All alternative routes will follow the reference route for the specified minimum number of meters starting from the origin point.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minDeviationTime All alternative routes will follow the reference route for the specified minimum number of seconds starting from the origin point.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmInstructionsType} instructionsType If specified, guidance instructions will be returned (if available).
 		 * @param {string} language The language parameter determines the language of the guidance messages.
 		 * @param {boolean} computeBestOrder Re-order the route waypoints to reduce the route length.
 		 * @param {RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmRouteRepresentation} routeRepresentation Specifies the representation of the set of routes provided as a response.
 		 * @param {RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmComputeTravelTimeFor} computeTravelTimeFor Specifies whether to return additional travel times using different types of traffic information (none, historic, live) as well as the default best-estimate travel time.
 		 * @param {number} vehicleHeading The directional heading of the vehicle in degrees. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.).
+		 *     Minimum: 0    Maximum: 359
 		 * @param {string} sectionType Specifies which section types are explicitly reported in the route response. Can be specified multiple times.
 		 *   - carTrain, ferry, tunnel or motorway
 		 *   - pedestrian
@@ -334,11 +373,17 @@ export namespace MyNS {
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmHilliness} hilliness Degree of hilliness for calculating a thrilling route.
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmHilliness} windingness Amount that a thrilling route should wind.
 		 * @param {number} vehicleMaxSpeed Maximum speed of the vehicle in km/hour.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleWeight Weight of the vehicle in kilograms.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleAxleWeight Weight per axle of the vehicle in kg.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleLength Length of the vehicle in meters.
+		 *     Type: float
 		 * @param {number} vehicleWidth Width of the vehicle in meters.
+		 *     Type: float
 		 * @param {number} vehicleHeight Height of the vehicle in meters.
+		 *     Type: float
 		 * @param {boolean} vehicleCommercial Indicates that the vehicle is used for commercial purposes. This means it may not be allowed on certain roads.
 		 * @param {string} vehicleLoadType Indicates what kinds of hazardous materials the vehicle is carrying (if any). This means it may not be allowed on certain roads.
 		 * Use these for routing in the US:
@@ -359,12 +404,19 @@ export namespace MyNS {
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmVehicleEngineType} vehicleEngineType Engine type of the vehicle.
 		 * @param {string} constantSpeedConsumptionInLitersPerHundredkm Specifies the speed-dependent component of consumption. Provided as an unordered list of speed/consumption-rate pairs.
 		 * @param {number} currentFuelInLiters Specifies the current supply of fuel in liters.
+		 *     Type: float
 		 * @param {number} auxiliaryPowerInLitersPerHour Specifies the amount of fuel consumed for sustaining auxiliary systems of the vehicle, in liters per hour.
+		 *     Type: float
 		 * @param {number} fuelEnergyDensityInMJoulesPerLiter Specifies the amount of chemical energy stored in one liter of fuel in megajoules (MJ).
+		 *     Type: float
 		 * @param {number} accelerationEfficiency Specifies the efficiency of converting chemical energy stored in fuel to kinetic energy when the vehicle accelerates (i.e. KineticEnergyGained/ChemicalEnergyConsumed).
+		 *     Type: float
 		 * @param {number} decelerationEfficiency Specifies the efficiency of converting kinetic energy to saved (not consumed) fuel when the vehicle decelerates (i.e. ChemicalEnergySaved/KineticEnergyLost).
+		 *     Type: float
 		 * @param {number} uphillEfficiency Specifies the efficiency of converting chemical energy stored in fuel to potential energy when the vehicle gains elevation (i.e. PotentialEnergyGained/ChemicalEnergyConsumed).
+		 *     Type: float
 		 * @param {number} downhillEfficiency Specifies the efficiency of converting potential energy to saved (not consumed) fuel when the vehicle loses elevation (i.e. ChemicalEnergySaved/PotentialEnergyLost).
+		 *     Type: float
 		 * @param {string} constantSpeedConsumptionInkWhPerHundredkm Specifies the speed-dependent component of consumption. Provided as an unordered list of speed/consumption-rate pairs.
 		 * @return {void} OK: a route was calculated and the body of the response contains the route description and any other requested data.
 		 */
@@ -377,18 +429,23 @@ export namespace MyNS {
 		 * Calculates a route between an origin and a destination. POST method handles additionally parameters: <em>supportingPoints</em>, <em>allowVignette</em>, <em>avoidVignette</em>, <em>avoidAreas</em>.
 		 * Post routing/{versionNumber}/calculateRoute/{locations}/{contentType}
 		 * @param {RoutingPostByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmVersionNumber} versionNumber Service version number. The current value is 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} locations Locations through which the calculated route must pass.
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmContentType} contentType The content type of the response structure. If the content type is jsonp, a callback method can be specified in the query parameters.
 		 * @param {number} maxAlternatives Number of alternative routes to be calculated.
+		 *     Minimum: 0    Maximum: 5
 		 * @param {RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmAlternativeType} alternativeType Determines whether the alternative routes to be calculated should be better with respect to the planning criteria provided than the reference route.
 		 * @param {number} minDeviationDistance All alternative routes will follow the reference route for the specified minimum number of meters starting from the origin point.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minDeviationTime All alternative routes will follow the reference route for the specified minimum number of seconds starting from the origin point.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmInstructionsType} instructionsType If specified, guidance instructions will be returned (if available).
 		 * @param {string} language The language parameter determines the language of the guidance messages.
 		 * @param {boolean} computeBestOrder Re-order the route waypoints to reduce the route length.
 		 * @param {RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmRouteRepresentation} routeRepresentation Specifies the representation of the set of routes provided as a response.
 		 * @param {RoutingGetByVersionNumberAndLocationsAndContentTypeAndMaxAlternativesAndAlternativeTypeAndMinDeviationDistanceAndMinDeviationTimeAndInstructionsTypeAndLanguageAndComputeBestOrderAndRouteRepresentationAndComputeTravelTimeForAndVehicleHeadingAndSectionTypeAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndVehicleEngineTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndConstantSpeedConsumptionInkWhPerHundredkmComputeTravelTimeFor} computeTravelTimeFor Specifies whether to return additional travel times using different types of traffic information (none, historic, live) as well as the default best-estimate travel time.
 		 * @param {number} vehicleHeading The directional heading of the vehicle in degrees. Entered in degrees, measured clockwise from north (so north is 0, east is 90, etc.).
+		 *     Minimum: 0    Maximum: 359
 		 * @param {string} sectionType Specifies which section types are explicitly reported in the route response. Can be specified multiple times.
 		 *   - carTrain, ferry, tunnel or motorway
 		 *   - pedestrian
@@ -415,11 +472,17 @@ export namespace MyNS {
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmHilliness} hilliness Degree of hilliness for calculating a thrilling route.
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmHilliness} windingness Amount that a thrilling route should wind.
 		 * @param {number} vehicleMaxSpeed Maximum speed of the vehicle in km/hour.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleWeight Weight of the vehicle in kilograms.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleAxleWeight Weight per axle of the vehicle in kg.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} vehicleLength Length of the vehicle in meters.
+		 *     Type: float
 		 * @param {number} vehicleWidth Width of the vehicle in meters.
+		 *     Type: float
 		 * @param {number} vehicleHeight Height of the vehicle in meters.
+		 *     Type: float
 		 * @param {boolean} vehicleCommercial Indicates that the vehicle is used for commercial purposes. This means it may not be allowed on certain roads.
 		 * @param {string} vehicleLoadType Indicates what kinds of hazardous materials the vehicle is carrying (if any). This means it may not be allowed on certain roads.
 		 * Use these for routing in the US:
@@ -440,12 +503,19 @@ export namespace MyNS {
 		 * @param {RoutingGetByVersionNumberAndOriginAndContentTypeAndFuelBudgetInLitersAndEnergyBudgetInkWhAndTimeBudgetInSecAndCallbackAndReportAndDepartAtAndArriveAtAndRouteTypeAndTrafficAndAvoidAndTravelModeAndHillinessAndWindingnessAndVehicleMaxSpeedAndVehicleWeightAndVehicleAxleWeightAndVehicleLengthAndVehicleWidthAndVehicleHeightAndVehicleCommercialAndVehicleLoadTypeAndConstantSpeedConsumptionInLitersPerHundredkmAndCurrentFuelInLitersAndAuxiliaryPowerInLitersPerHourAndFuelEnergyDensityInMJoulesPerLiterAndAccelerationEfficiencyAndDecelerationEfficiencyAndUphillEfficiencyAndDownhillEfficiencyAndVehicleEngineTypeAndConstantSpeedConsumptionInkWhPerHundredkmVehicleEngineType} vehicleEngineType Engine type of the vehicle.
 		 * @param {string} constantSpeedConsumptionInLitersPerHundredkm Specifies the speed-dependent component of consumption. Provided as an unordered list of speed/consumption-rate pairs.
 		 * @param {number} currentFuelInLiters Specifies the current supply of fuel in liters.
+		 *     Type: float
 		 * @param {number} auxiliaryPowerInLitersPerHour Specifies the amount of fuel consumed for sustaining auxiliary systems of the vehicle, in liters per hour.
+		 *     Type: float
 		 * @param {number} fuelEnergyDensityInMJoulesPerLiter Specifies the amount of chemical energy stored in one liter of fuel in megajoules (MJ).
+		 *     Type: float
 		 * @param {number} accelerationEfficiency Specifies the efficiency of converting chemical energy stored in fuel to kinetic energy when the vehicle accelerates (i.e. KineticEnergyGained/ChemicalEnergyConsumed).
+		 *     Type: float
 		 * @param {number} decelerationEfficiency Specifies the efficiency of converting kinetic energy to saved (not consumed) fuel when the vehicle decelerates (i.e. ChemicalEnergySaved/KineticEnergyLost).
+		 *     Type: float
 		 * @param {number} uphillEfficiency Specifies the efficiency of converting chemical energy stored in fuel to potential energy when the vehicle gains elevation (i.e. PotentialEnergyGained/ChemicalEnergyConsumed).
+		 *     Type: float
 		 * @param {number} downhillEfficiency Specifies the efficiency of converting potential energy to saved (not consumed) fuel when the vehicle loses elevation (i.e. ChemicalEnergySaved/PotentialEnergyLost).
+		 *     Type: float
 		 * @param {string} constantSpeedConsumptionInkWhPerHundredkm Specifies the speed-dependent component of consumption. Provided as an unordered list of speed/consumption-rate pairs.
 		 * @return {void} OK: a route was calculated and the body of the response contains the route description and any other requested data.
 		 */

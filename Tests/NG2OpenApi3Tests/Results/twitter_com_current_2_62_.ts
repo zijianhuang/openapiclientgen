@@ -81,6 +81,8 @@ export namespace MyNS {
 	/** An HTTP Problem Details object, as defined in IETF RFC 7807 (https://tools.ietf.org/html/rfc7807). */
 	export interface Problem {
 		detail?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 
 		/** Required */
@@ -93,6 +95,8 @@ export namespace MyNS {
 	/** An HTTP Problem Details object, as defined in IETF RFC 7807 (https://tools.ietf.org/html/rfc7807). */
 	export interface ProblemFormProperties {
 		detail: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -119,7 +123,10 @@ export namespace MyNS {
 		 */
 		next_token?: string | null;
 
-		/** Number of Rules in result set. */
+		/**
+		 * Number of Rules in result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 
 		/** Required */
@@ -134,7 +141,10 @@ export namespace MyNS {
 		 */
 		next_token: FormControl<string | null | undefined>,
 
-		/** Number of Rules in result set. */
+		/**
+		 * Number of Rules in result set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -222,7 +232,10 @@ export namespace MyNS {
 
 	export interface Variant {
 
-		/** The bit rate of the media. */
+		/**
+		 * The bit rate of the media.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bit_rate?: number | null;
 
 		/** The content type of the media. */
@@ -233,7 +246,10 @@ export namespace MyNS {
 	}
 	export interface VariantFormProperties {
 
-		/** The bit rate of the media. */
+		/**
+		 * The bit rate of the media.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bit_rate: FormControl<number | null | undefined>,
 
 		/** The content type of the media. */
@@ -1247,7 +1263,10 @@ export namespace MyNS {
 
 	export interface Error {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: number;
 
 		/** Required */
@@ -1255,7 +1274,10 @@ export namespace MyNS {
 	}
 	export interface ErrorFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1540,20 +1562,22 @@ export namespace MyNS {
 		/**
 		 * The text of a poll choice.
 		 * Required
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		label: string;
 
 		/**
 		 * Position of this choice in the poll.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		position: number;
 
 		/**
 		 * Number of users who voted for this choice.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		votes: number;
 	}
@@ -1564,20 +1588,22 @@ export namespace MyNS {
 		/**
 		 * The text of a poll choice.
 		 * Required
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		label: FormControl<string | null | undefined>,
 
 		/**
 		 * Position of this choice in the poll.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		position: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of users who voted for this choice.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		votes: FormControl<number | null | undefined>,
 	}
@@ -1803,6 +1829,7 @@ export namespace MyNS {
 		/**
 		 * Number of times this Tweet can be edited.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		edits_remaining: number;
 
@@ -1823,6 +1850,7 @@ export namespace MyNS {
 		/**
 		 * Number of times this Tweet can be edited.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		edits_remaining: FormControl<number | null | undefined>,
 
@@ -2081,12 +2109,18 @@ export namespace MyNS {
 
 	export interface TweetNon_public_metrics {
 
-		/** Number of times this Tweet has been viewed. */
+		/**
+		 * Number of times this Tweet has been viewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		impression_count?: number | null;
 	}
 	export interface TweetNon_public_metricsFormProperties {
 
-		/** Number of times this Tweet has been viewed. */
+		/**
+		 * Number of times this Tweet has been viewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		impression_count: FormControl<number | null | undefined>,
 	}
 	export function CreateTweetNon_public_metricsFormGroup() {
@@ -2101,24 +2135,28 @@ export namespace MyNS {
 		/**
 		 * Number of times this Tweet has been viewed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		impression_count: number;
 
 		/**
 		 * Number of times this Tweet has been liked.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		like_count: number;
 
 		/**
 		 * Number of times this Tweet has been replied to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reply_count: number;
 
 		/**
 		 * Number of times this Tweet has been Retweeted.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retweet_count: number;
 	}
@@ -2127,24 +2165,28 @@ export namespace MyNS {
 		/**
 		 * Number of times this Tweet has been viewed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		impression_count: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of times this Tweet has been liked.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		like_count: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of times this Tweet has been replied to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reply_count: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of times this Tweet has been Retweeted.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retweet_count: FormControl<number | null | undefined>,
 	}
@@ -2160,30 +2202,54 @@ export namespace MyNS {
 
 	export interface TweetPromoted_metrics {
 
-		/** Number of times this Tweet has been viewed. */
+		/**
+		 * Number of times this Tweet has been viewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		impression_count?: number | null;
 
-		/** Number of times this Tweet has been liked. */
+		/**
+		 * Number of times this Tweet has been liked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		like_count?: number | null;
 
-		/** Number of times this Tweet has been replied to. */
+		/**
+		 * Number of times this Tweet has been replied to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reply_count?: number | null;
 
-		/** Number of times this Tweet has been Retweeted. */
+		/**
+		 * Number of times this Tweet has been Retweeted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retweet_count?: number | null;
 	}
 	export interface TweetPromoted_metricsFormProperties {
 
-		/** Number of times this Tweet has been viewed. */
+		/**
+		 * Number of times this Tweet has been viewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		impression_count: FormControl<number | null | undefined>,
 
-		/** Number of times this Tweet has been liked. */
+		/**
+		 * Number of times this Tweet has been liked.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		like_count: FormControl<number | null | undefined>,
 
-		/** Number of times this Tweet has been replied to. */
+		/**
+		 * Number of times this Tweet has been replied to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reply_count: FormControl<number | null | undefined>,
 
-		/** Number of times this Tweet has been Retweeted. */
+		/**
+		 * Number of times this Tweet has been Retweeted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		retweet_count: FormControl<number | null | undefined>,
 	}
 	export function CreateTweetPromoted_metricsFormGroup() {
@@ -2201,27 +2267,34 @@ export namespace MyNS {
 		/**
 		 * Number of times this Tweet has been viewed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		impression_count: number;
 
 		/**
 		 * Number of times this Tweet has been liked.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		like_count: number;
 
-		/** Number of times this Tweet has been quoted. */
+		/**
+		 * Number of times this Tweet has been quoted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quote_count?: number | null;
 
 		/**
 		 * Number of times this Tweet has been replied to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reply_count: number;
 
 		/**
 		 * Number of times this Tweet has been Retweeted.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retweet_count: number;
 	}
@@ -2230,27 +2303,34 @@ export namespace MyNS {
 		/**
 		 * Number of times this Tweet has been viewed.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		impression_count: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of times this Tweet has been liked.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		like_count: FormControl<number | null | undefined>,
 
-		/** Number of times this Tweet has been quoted. */
+		/**
+		 * Number of times this Tweet has been quoted.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quote_count: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of times this Tweet has been replied to.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reply_count: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of times this Tweet has been Retweeted.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		retweet_count: FormControl<number | null | undefined>,
 	}
@@ -2499,24 +2579,28 @@ export namespace MyNS {
 		/**
 		 * Number of Users who are following this User.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		followers_count: number;
 
 		/**
 		 * Number of Users this User is following.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		following_count: number;
 
 		/**
 		 * The number of lists that include this User.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listed_count: number;
 
 		/**
 		 * The number of Tweets (including Retweets) posted by this User.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		tweet_count: number;
 	}
@@ -2525,24 +2609,28 @@ export namespace MyNS {
 		/**
 		 * Number of Users who are following this User.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		followers_count: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of Users this User is following.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		following_count: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of lists that include this User.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listed_count: FormControl<number | null | undefined>,
 
 		/**
 		 * The number of Tweets (including Retweets) posted by this User.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		tweet_count: FormControl<number | null | undefined>,
 	}
@@ -2724,12 +2812,18 @@ export namespace MyNS {
 
 	export interface Get2ComplianceJobsResponseMeta {
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2ComplianceJobsResponseMetaFormProperties {
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2ComplianceJobsResponseMetaFormGroup() {
@@ -2771,7 +2865,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2DmConversationsIdDmEventsResponseMetaFormProperties {
@@ -2788,7 +2885,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2DmConversationsIdDmEventsResponseMetaFormGroup() {
@@ -2832,7 +2932,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2DmConversationsWithParticipantIdDmEventsResponseMetaFormProperties {
@@ -2849,7 +2952,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2DmConversationsWithParticipantIdDmEventsResponseMetaFormGroup() {
@@ -2893,7 +2999,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2DmEventsResponseMetaFormProperties {
@@ -2910,7 +3019,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2DmEventsResponseMetaFormGroup() {
@@ -2954,7 +3066,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2ListsIdFollowersResponseMetaFormProperties {
@@ -2971,7 +3086,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2ListsIdFollowersResponseMetaFormGroup() {
@@ -3015,7 +3133,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2ListsIdMembersResponseMetaFormProperties {
@@ -3032,7 +3153,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2ListsIdMembersResponseMetaFormGroup() {
@@ -3066,6 +3190,8 @@ export namespace MyNS {
 	export interface List {
 		created_at?: Date | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		follower_count?: number | null;
 
 		/**
@@ -3073,6 +3199,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		id: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		member_count?: number | null;
 
 		/**
@@ -3090,6 +3218,8 @@ export namespace MyNS {
 	export interface ListFormProperties {
 		created_at: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		follower_count: FormControl<number | null | undefined>,
 
 		/**
@@ -3097,6 +3227,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		member_count: FormControl<number | null | undefined>,
 
 		/**
@@ -3155,7 +3287,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2ListsIdTweetsResponseMetaFormProperties {
@@ -3172,7 +3307,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2ListsIdTweetsResponseMetaFormGroup() {
@@ -3231,7 +3369,10 @@ export namespace MyNS {
 		/** The language of the Space. */
 		lang?: string | null;
 
-		/** The number of participants in a Space. */
+		/**
+		 * The number of participants in a Space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		participant_count?: number | null;
 
 		/** A date time stamp for when a Space is scheduled to begin. */
@@ -3249,7 +3390,10 @@ export namespace MyNS {
 		 */
 		state: SpaceState;
 
-		/** The number of people who have either purchased a ticket or set a reminder for this Space. */
+		/**
+		 * The number of people who have either purchased a ticket or set a reminder for this Space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscriber_count?: number | null;
 
 		/** The title of the Space. */
@@ -3284,7 +3428,10 @@ export namespace MyNS {
 		/** The language of the Space. */
 		lang: FormControl<string | null | undefined>,
 
-		/** The number of participants in a Space. */
+		/**
+		 * The number of participants in a Space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		participant_count: FormControl<number | null | undefined>,
 
 		/** A date time stamp for when a Space is scheduled to begin. */
@@ -3299,7 +3446,10 @@ export namespace MyNS {
 		 */
 		state: FormControl<SpaceState | null | undefined>,
 
-		/** The number of people who have either purchased a ticket or set a reminder for this Space. */
+		/**
+		 * The number of people who have either purchased a ticket or set a reminder for this Space.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		subscriber_count: FormControl<number | null | undefined>,
 
 		/** The title of the Space. */
@@ -3374,12 +3524,18 @@ export namespace MyNS {
 
 	export interface Get2SpacesByCreatorIdsResponseMeta {
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2SpacesByCreatorIdsResponseMetaFormProperties {
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2SpacesByCreatorIdsResponseMetaFormGroup() {
@@ -3421,7 +3577,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2SpacesIdBuyersResponseMetaFormProperties {
@@ -3438,7 +3597,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2SpacesIdBuyersResponseMetaFormGroup() {
@@ -3497,7 +3659,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2SpacesIdTweetsResponseMetaFormProperties {
@@ -3514,7 +3679,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2SpacesIdTweetsResponseMetaFormGroup() {
@@ -3563,12 +3731,18 @@ export namespace MyNS {
 
 	export interface Get2SpacesSearchResponseMeta {
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2SpacesSearchResponseMetaFormProperties {
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2SpacesSearchResponseMetaFormGroup() {
@@ -3614,6 +3788,7 @@ export namespace MyNS {
 		/**
 		 * The count for the bucket.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		tweet_count: number;
 	}
@@ -3636,6 +3811,7 @@ export namespace MyNS {
 		/**
 		 * The count for the bucket.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		tweet_count: FormControl<number | null | undefined>,
 	}
@@ -3662,7 +3838,10 @@ export namespace MyNS {
 		/** The oldest id in this response. */
 		oldest_id?: string | null;
 
-		/** The sum of results returned in this response. */
+		/**
+		 * The sum of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_tweet_count?: number | null;
 	}
 	export interface Get2TweetsCountsAllResponseMetaFormProperties {
@@ -3679,7 +3858,10 @@ export namespace MyNS {
 		/** The oldest id in this response. */
 		oldest_id: FormControl<string | null | undefined>,
 
-		/** The sum of results returned in this response. */
+		/**
+		 * The sum of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_tweet_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2TweetsCountsAllResponseMetaFormGroup() {
@@ -3723,7 +3905,10 @@ export namespace MyNS {
 		/** The oldest id in this response. */
 		oldest_id?: string | null;
 
-		/** The sum of results returned in this response. */
+		/**
+		 * The sum of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_tweet_count?: number | null;
 	}
 	export interface Get2TweetsCountsRecentResponseMetaFormProperties {
@@ -3740,7 +3925,10 @@ export namespace MyNS {
 		/** The oldest id in this response. */
 		oldest_id: FormControl<string | null | undefined>,
 
-		/** The sum of results returned in this response. */
+		/**
+		 * The sum of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_tweet_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2TweetsCountsRecentResponseMetaFormGroup() {
@@ -3800,7 +3988,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2TweetsIdLikingUsersResponseMetaFormProperties {
@@ -3817,7 +4008,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2TweetsIdLikingUsersResponseMetaFormGroup() {
@@ -3855,7 +4049,10 @@ export namespace MyNS {
 		 */
 		next_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2TweetsIdQuoteTweetsResponseMetaFormProperties {
@@ -3866,7 +4063,10 @@ export namespace MyNS {
 		 */
 		next_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2TweetsIdQuoteTweetsResponseMetaFormGroup() {
@@ -3924,7 +4124,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2TweetsIdRetweetedByResponseMetaFormProperties {
@@ -3941,7 +4144,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2TweetsIdRetweetedByResponseMetaFormGroup() {
@@ -4032,7 +4238,10 @@ export namespace MyNS {
 		/** The oldest id in this response. */
 		oldest_id?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2TweetsSearchAllResponseMetaFormProperties {
@@ -4049,7 +4258,10 @@ export namespace MyNS {
 		/** The oldest id in this response. */
 		oldest_id: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2TweetsSearchAllResponseMetaFormGroup() {
@@ -4094,7 +4306,10 @@ export namespace MyNS {
 		/** The oldest id in this response. */
 		oldest_id?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2TweetsSearchRecentResponseMetaFormProperties {
@@ -4111,7 +4326,10 @@ export namespace MyNS {
 		/** The oldest id in this response. */
 		oldest_id: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2TweetsSearchRecentResponseMetaFormGroup() {
@@ -4205,7 +4423,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdBlockingResponseMetaFormProperties {
@@ -4222,7 +4443,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdBlockingResponseMetaFormGroup() {
@@ -4266,7 +4490,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdBookmarksResponseMetaFormProperties {
@@ -4283,7 +4510,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdBookmarksResponseMetaFormGroup() {
@@ -4327,7 +4557,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdFollowedListsResponseMetaFormProperties {
@@ -4344,7 +4577,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdFollowedListsResponseMetaFormGroup() {
@@ -4388,7 +4624,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdFollowersResponseMetaFormProperties {
@@ -4405,7 +4644,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdFollowersResponseMetaFormGroup() {
@@ -4449,7 +4691,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdFollowingResponseMetaFormProperties {
@@ -4466,7 +4711,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdFollowingResponseMetaFormGroup() {
@@ -4510,7 +4758,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdLikedTweetsResponseMetaFormProperties {
@@ -4527,7 +4778,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdLikedTweetsResponseMetaFormGroup() {
@@ -4571,7 +4825,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdListMembershipsResponseMetaFormProperties {
@@ -4588,7 +4845,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdListMembershipsResponseMetaFormGroup() {
@@ -4638,7 +4898,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdMentionsResponseMetaFormProperties {
@@ -4661,7 +4924,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdMentionsResponseMetaFormGroup() {
@@ -4707,7 +4973,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdMutingResponseMetaFormProperties {
@@ -4724,7 +4993,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdMutingResponseMetaFormGroup() {
@@ -4768,7 +5040,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdOwnedListsResponseMetaFormProperties {
@@ -4785,7 +5060,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdOwnedListsResponseMetaFormGroup() {
@@ -4817,12 +5095,18 @@ export namespace MyNS {
 
 	export interface Get2UsersIdPinnedListsResponseMeta {
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdPinnedListsResponseMetaFormProperties {
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdPinnedListsResponseMetaFormGroup() {
@@ -4887,7 +5171,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdTimelinesReverseChronologicalResponseMetaFormProperties {
@@ -4910,7 +5197,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdTimelinesReverseChronologicalResponseMetaFormGroup() {
@@ -4962,7 +5252,10 @@ export namespace MyNS {
 		 */
 		previous_token?: string | null;
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count?: number | null;
 	}
 	export interface Get2UsersIdTweetsResponseMetaFormProperties {
@@ -4985,7 +5278,10 @@ export namespace MyNS {
 		 */
 		previous_token: FormControl<string | null | undefined>,
 
-		/** The number of results returned in this response. */
+		/**
+		 * The number of results returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		result_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGet2UsersIdTweetsResponseMetaFormGroup() {
@@ -5137,15 +5433,15 @@ export namespace MyNS {
 	export interface ListCreateRequest {
 
 		/**
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		description?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		name: string;
 		private?: boolean | null;
@@ -5153,15 +5449,15 @@ export namespace MyNS {
 	export interface ListCreateRequestFormProperties {
 
 		/**
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		name: FormControl<string | null | undefined>,
 		private: FormControl<boolean | null | undefined>,
@@ -5411,14 +5707,14 @@ export namespace MyNS {
 	export interface ListUpdateRequest {
 
 		/**
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		description?: string | null;
 
 		/**
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		name?: string | null;
 		private?: boolean | null;
@@ -5426,14 +5722,14 @@ export namespace MyNS {
 	export interface ListUpdateRequestFormProperties {
 
 		/**
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 25
 		 * Min length: 1
+		 * Max length: 25
 		 */
 		name: FormControl<string | null | undefined>,
 		private: FormControl<boolean | null | undefined>,
@@ -7425,6 +7721,8 @@ export namespace MyNS {
 	}
 
 	export interface Video extends Media {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration_ms?: number | null;
 
 		/** Nonpublic engagement metrics for the Media at the time of the request. */
@@ -7444,6 +7742,8 @@ export namespace MyNS {
 		variants?: Array<Variant>;
 	}
 	export interface VideoFormProperties extends MediaFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		duration_ms: FormControl<number | null | undefined>,
 		preview_image_url: FormControl<string | null | undefined>,
 	}
@@ -7461,36 +7761,66 @@ export namespace MyNS {
 
 	export interface VideoNon_public_metrics {
 
-		/** Number of users who made it through 0% of the video. */
+		/**
+		 * Number of users who made it through 0% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_0_count?: number | null;
 
-		/** Number of users who made it through 100% of the video. */
+		/**
+		 * Number of users who made it through 100% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_100_count?: number | null;
 
-		/** Number of users who made it through 25% of the video. */
+		/**
+		 * Number of users who made it through 25% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_25_count?: number | null;
 
-		/** Number of users who made it through 50% of the video. */
+		/**
+		 * Number of users who made it through 50% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_50_count?: number | null;
 
-		/** Number of users who made it through 75% of the video. */
+		/**
+		 * Number of users who made it through 75% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_75_count?: number | null;
 	}
 	export interface VideoNon_public_metricsFormProperties {
 
-		/** Number of users who made it through 0% of the video. */
+		/**
+		 * Number of users who made it through 0% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_0_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 100% of the video. */
+		/**
+		 * Number of users who made it through 100% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_100_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 25% of the video. */
+		/**
+		 * Number of users who made it through 25% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_25_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 50% of the video. */
+		/**
+		 * Number of users who made it through 50% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_50_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 75% of the video. */
+		/**
+		 * Number of users who made it through 75% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_75_count: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoNon_public_metricsFormGroup() {
@@ -7506,42 +7836,78 @@ export namespace MyNS {
 
 	export interface VideoOrganic_metrics {
 
-		/** Number of users who made it through 0% of the video. */
+		/**
+		 * Number of users who made it through 0% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_0_count?: number | null;
 
-		/** Number of users who made it through 100% of the video. */
+		/**
+		 * Number of users who made it through 100% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_100_count?: number | null;
 
-		/** Number of users who made it through 25% of the video. */
+		/**
+		 * Number of users who made it through 25% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_25_count?: number | null;
 
-		/** Number of users who made it through 50% of the video. */
+		/**
+		 * Number of users who made it through 50% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_50_count?: number | null;
 
-		/** Number of users who made it through 75% of the video. */
+		/**
+		 * Number of users who made it through 75% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_75_count?: number | null;
 
-		/** Number of times this video has been viewed. */
+		/**
+		 * Number of times this video has been viewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		view_count?: number | null;
 	}
 	export interface VideoOrganic_metricsFormProperties {
 
-		/** Number of users who made it through 0% of the video. */
+		/**
+		 * Number of users who made it through 0% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_0_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 100% of the video. */
+		/**
+		 * Number of users who made it through 100% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_100_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 25% of the video. */
+		/**
+		 * Number of users who made it through 25% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_25_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 50% of the video. */
+		/**
+		 * Number of users who made it through 50% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_50_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 75% of the video. */
+		/**
+		 * Number of users who made it through 75% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_75_count: FormControl<number | null | undefined>,
 
-		/** Number of times this video has been viewed. */
+		/**
+		 * Number of times this video has been viewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		view_count: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoOrganic_metricsFormGroup() {
@@ -7558,42 +7924,78 @@ export namespace MyNS {
 
 	export interface VideoPromoted_metrics {
 
-		/** Number of users who made it through 0% of the video. */
+		/**
+		 * Number of users who made it through 0% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_0_count?: number | null;
 
-		/** Number of users who made it through 100% of the video. */
+		/**
+		 * Number of users who made it through 100% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_100_count?: number | null;
 
-		/** Number of users who made it through 25% of the video. */
+		/**
+		 * Number of users who made it through 25% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_25_count?: number | null;
 
-		/** Number of users who made it through 50% of the video. */
+		/**
+		 * Number of users who made it through 50% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_50_count?: number | null;
 
-		/** Number of users who made it through 75% of the video. */
+		/**
+		 * Number of users who made it through 75% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_75_count?: number | null;
 
-		/** Number of times this video has been viewed. */
+		/**
+		 * Number of times this video has been viewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		view_count?: number | null;
 	}
 	export interface VideoPromoted_metricsFormProperties {
 
-		/** Number of users who made it through 0% of the video. */
+		/**
+		 * Number of users who made it through 0% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_0_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 100% of the video. */
+		/**
+		 * Number of users who made it through 100% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_100_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 25% of the video. */
+		/**
+		 * Number of users who made it through 25% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_25_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 50% of the video. */
+		/**
+		 * Number of users who made it through 50% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_50_count: FormControl<number | null | undefined>,
 
-		/** Number of users who made it through 75% of the video. */
+		/**
+		 * Number of users who made it through 75% of the video.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		playback_75_count: FormControl<number | null | undefined>,
 
-		/** Number of times this video has been viewed. */
+		/**
+		 * Number of times this video has been viewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		view_count: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoPromoted_metricsFormGroup() {
@@ -7610,12 +8012,18 @@ export namespace MyNS {
 
 	export interface VideoPublic_metrics {
 
-		/** Number of times this video has been viewed. */
+		/**
+		 * Number of times this video has been viewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		view_count?: number | null;
 	}
 	export interface VideoPublic_metricsFormProperties {
 
-		/** Number of times this video has been viewed. */
+		/**
+		 * Number of times this video has been viewed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		view_count: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoPublic_metricsFormGroup() {
@@ -7637,6 +8045,7 @@ export namespace MyNS {
 		 * @param {ComplianceJobType} type Type of Compliance Job to list.
 		 * @param {ListBatchComplianceJobsStatus} status Status of Compliance Job to list.
 		 * @param {Array<string>} compliance_job_fields A comma separated list of ComplianceJob fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2ComplianceJobsResponse} The request has succeeded.
 		 */
 		ListBatchComplianceJobs(type: ComplianceJobType, status: ListBatchComplianceJobsStatus | null | undefined, compliance_job_fields: Array<string> | null | undefined): Observable<Get2ComplianceJobsResponse> {
@@ -7659,6 +8068,7 @@ export namespace MyNS {
 		 * Get 2/compliance/jobs/{id}
 		 * @param {string} id The ID of the Compliance Job to retrieve.
 		 * @param {Array<string>} compliance_job_fields A comma separated list of ComplianceJob fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2ComplianceJobsIdResponse} The request has succeeded.
 		 */
 		GetBatchComplianceJob(id: string, compliance_job_fields: Array<string> | null | undefined): Observable<Get2ComplianceJobsIdResponse> {
@@ -7681,13 +8091,21 @@ export namespace MyNS {
 		 * Get 2/dm_conversations/with/{participant_id}/dm_events
 		 * @param {string} participant_id The ID of the participant user for the One to One DM conversation.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 16
 		 * @param {Array<string>} event_types The set of event_types to include in the results.
+		 *     Minimum items: 1
 		 * @param {Array<string>} dm_event_fields A comma separated list of DmEvent fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2DmConversationsWithParticipantIdDmEventsResponse} The request has succeeded.
 		 */
 		GetDmConversationsWithParticipantIdDmEvents(participant_id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, event_types: Array<string> | null | undefined, dm_event_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2DmConversationsWithParticipantIdDmEventsResponse> {
@@ -7722,13 +8140,21 @@ export namespace MyNS {
 		 * Get 2/dm_conversations/{id}/dm_events
 		 * @param {string} id The DM Conversation ID.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 16
 		 * @param {Array<string>} event_types The set of event_types to include in the results.
+		 *     Minimum items: 1
 		 * @param {Array<string>} dm_event_fields A comma separated list of DmEvent fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2DmConversationsIdDmEventsResponse} The request has succeeded.
 		 */
 		GetDmConversationsIdDmEvents(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, event_types: Array<string> | null | undefined, dm_event_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2DmConversationsIdDmEventsResponse> {
@@ -7740,13 +8166,21 @@ export namespace MyNS {
 		 * Returns recent DM Events across DM conversations
 		 * Get 2/dm_events
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 16
 		 * @param {Array<string>} event_types The set of event_types to include in the results.
+		 *     Minimum items: 1
 		 * @param {Array<string>} dm_event_fields A comma separated list of DmEvent fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2DmEventsResponse} The request has succeeded.
 		 */
 		GetDmEvents(max_results: number | null | undefined, pagination_token: string | null | undefined, event_types: Array<string> | null | undefined, dm_event_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2DmEventsResponse> {
@@ -7780,8 +8214,11 @@ export namespace MyNS {
 		 * Get 2/lists/{id}
 		 * @param {string} id The ID of the List.
 		 * @param {Array<string>} list_fields A comma separated list of List fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2ListsIdResponse} The request has succeeded.
 		 */
 		ListIdGet(id: string, list_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, user_fields: Array<string> | null | undefined): Observable<Get2ListsIdResponse> {
@@ -7805,10 +8242,15 @@ export namespace MyNS {
 		 * Get 2/lists/{id}/followers
 		 * @param {string} id The ID of the List.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 1    Max length: 19
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2ListsIdFollowersResponse} The request has succeeded.
 		 */
 		ListGetFollowers(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2ListsIdFollowersResponse> {
@@ -7821,10 +8263,15 @@ export namespace MyNS {
 		 * Get 2/lists/{id}/members
 		 * @param {string} id The ID of the List.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 1    Max length: 19
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2ListsIdMembersResponse} The request has succeeded.
 		 */
 		ListGetMembers(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2ListsIdMembersResponse> {
@@ -7860,13 +8307,21 @@ export namespace MyNS {
 		 * Get 2/lists/{id}/tweets
 		 * @param {string} id The ID of the List.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results.
+		 *     Min length: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2ListsIdTweetsResponse} The request has succeeded.
 		 */
 		ListsIdTweets(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2ListsIdTweetsResponse> {
@@ -7888,10 +8343,15 @@ export namespace MyNS {
 		 * Returns a variety of information about the Spaces specified by the requested IDs
 		 * Get 2/spaces
 		 * @param {Array<string>} ids The list of Space IDs to return.
+		 *     Minimum items: 1    Maximum items: 100
 		 * @param {Array<string>} space_fields A comma separated list of Space fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} topic_fields A comma separated list of Topic fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2SpacesResponse} The request has succeeded.
 		 */
 		FindSpacesByIds(ids: Array<string>, space_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, topic_fields: Array<string> | null | undefined): Observable<Get2SpacesResponse> {
@@ -7903,10 +8363,15 @@ export namespace MyNS {
 		 * Returns a variety of information about the Spaces created by the provided User IDs
 		 * Get 2/spaces/by/creator_ids
 		 * @param {Array<string>} user_ids The IDs of Users to search through.
+		 *     Minimum items: 1    Maximum items: 100
 		 * @param {Array<string>} space_fields A comma separated list of Space fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} topic_fields A comma separated list of Topic fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2SpacesByCreatorIdsResponse} The request has succeeded.
 		 */
 		FindSpacesByCreatorIds(user_ids: Array<string>, space_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, topic_fields: Array<string> | null | undefined): Observable<Get2SpacesByCreatorIdsResponse> {
@@ -7918,12 +8383,18 @@ export namespace MyNS {
 		 * Returns Spaces that match the provided query.
 		 * Get 2/spaces/search
 		 * @param {string} query The search query.
+		 *     Min length: 1    Max length: 2048
 		 * @param {SearchSpacesState} state The state of Spaces to search for.
 		 * @param {number} max_results The number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {Array<string>} space_fields A comma separated list of Space fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} topic_fields A comma separated list of Topic fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2SpacesSearchResponse} The request has succeeded.
 		 */
 		SearchSpaces(query: string, state: SearchSpacesState | null | undefined, max_results: number | null | undefined, space_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, topic_fields: Array<string> | null | undefined): Observable<Get2SpacesSearchResponse> {
@@ -7936,9 +8407,13 @@ export namespace MyNS {
 		 * Get 2/spaces/{id}
 		 * @param {string} id The ID of the Space to be retrieved.
 		 * @param {Array<string>} space_fields A comma separated list of Space fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} topic_fields A comma separated list of Topic fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2SpacesIdResponse} The request has succeeded.
 		 */
 		FindSpaceById(id: string, space_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, topic_fields: Array<string> | null | undefined): Observable<Get2SpacesIdResponse> {
@@ -7951,10 +8426,15 @@ export namespace MyNS {
 		 * Get 2/spaces/{id}/buyers
 		 * @param {string} id The ID of the Space to be retrieved.
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 16
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2SpacesIdBuyersResponse} The request has succeeded.
 		 */
 		SpaceBuyers(id: string, pagination_token: string | null | undefined, max_results: number | null | undefined, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2SpacesIdBuyersResponse> {
@@ -7967,12 +8447,19 @@ export namespace MyNS {
 		 * Get 2/spaces/{id}/tweets
 		 * @param {string} id The ID of the Space to be retrieved.
 		 * @param {number} max_results The number of Tweets to fetch from the provided space. If not provided, the value will default to the maximum of 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2SpacesIdTweetsResponse} The request has succeeded.
 		 */
 		SpaceTweets(id: string, max_results: number | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2SpacesIdTweetsResponse> {
@@ -7984,12 +8471,19 @@ export namespace MyNS {
 		 * Returns a variety of information about the Tweet specified by the requested ID.
 		 * Get 2/tweets
 		 * @param {Array<string>} ids A comma separated list of Tweet IDs. Up to 100 are allowed in a single request.
+		 *     Minimum items: 1    Maximum items: 100
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2TweetsResponse} The request has succeeded.
 		 */
 		FindTweetsById(ids: Array<string>, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2TweetsResponse> {
@@ -8011,7 +8505,9 @@ export namespace MyNS {
 		 * Streams 100% of compliance data for Tweets
 		 * Get 2/tweets/compliance/stream
 		 * @param {number} backfill_minutes The number of minutes of backfill requested.
+		 *     Minimum: 0    Maximum: 5
 		 * @param {number} partition The partition number.
+		 *     Minimum: 1    Maximum: 4
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweet Compliance events will be provided.
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweet Compliance events will be provided.
 		 * @return {TweetComplianceStreamResponse} The request has succeeded.
@@ -8025,14 +8521,18 @@ export namespace MyNS {
 		 * Returns Tweet Counts that match a search query.
 		 * Get 2/tweets/counts/all
 		 * @param {string} query One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
+		 *     Min length: 1    Max length: 4096
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp (from most recent 7 days) from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).
 		 * @param {string} since_id Returns results with a Tweet ID greater than (that is, more recent than) the specified ID.
 		 * @param {string} until_id Returns results with a Tweet ID less than (that is, older than) the specified ID.
 		 * @param {string} next_token This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		 *     Min length: 1
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		 *     Min length: 1
 		 * @param {TweetCountsFullArchiveSearchGranularity} granularity The granularity for the search counts results.
 		 * @param {Array<string>} search_count_fields A comma separated list of SearchCount fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2TweetsCountsAllResponse} The request has succeeded.
 		 */
 		TweetCountsFullArchiveSearch(query: string, start_time: Date | null | undefined, end_time: Date | null | undefined, since_id: string | null | undefined, until_id: string | null | undefined, next_token: string | null | undefined, pagination_token: string | null | undefined, granularity: TweetCountsFullArchiveSearchGranularity | null | undefined, search_count_fields: Array<string> | null | undefined): Observable<Get2TweetsCountsAllResponse> {
@@ -8044,14 +8544,18 @@ export namespace MyNS {
 		 * Returns Tweet Counts from the last 7 days that match a search query.
 		 * Get 2/tweets/counts/recent
 		 * @param {string} query One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
+		 *     Min length: 1    Max length: 4096
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp (from most recent 7 days) from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).
 		 * @param {string} since_id Returns results with a Tweet ID greater than (that is, more recent than) the specified ID.
 		 * @param {string} until_id Returns results with a Tweet ID less than (that is, older than) the specified ID.
 		 * @param {string} next_token This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		 *     Min length: 1
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		 *     Min length: 1
 		 * @param {TweetCountsFullArchiveSearchGranularity} granularity The granularity for the search counts results.
 		 * @param {Array<string>} search_count_fields A comma separated list of SearchCount fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2TweetsCountsRecentResponse} The request has succeeded.
 		 */
 		TweetCountsRecentSearch(query: string, start_time: Date | null | undefined, end_time: Date | null | undefined, since_id: string | null | undefined, until_id: string | null | undefined, next_token: string | null | undefined, pagination_token: string | null | undefined, granularity: TweetCountsFullArchiveSearchGranularity | null | undefined, search_count_fields: Array<string> | null | undefined): Observable<Get2TweetsCountsRecentResponse> {
@@ -8063,15 +8567,23 @@ export namespace MyNS {
 		 * Streams 100% of public Tweets.
 		 * Get 2/tweets/firehose/stream
 		 * @param {number} backfill_minutes The number of minutes of backfill requested.
+		 *     Minimum: 0    Maximum: 5
 		 * @param {number} partition The partition number.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Tweets will be provided.
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided.
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {StreamingTweetResponse} The request has succeeded.
 		 */
 		GetTweetsFirehoseStream(backfill_minutes: number | null | undefined, partition: number, start_time: Date | null | undefined, end_time: Date | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<StreamingTweetResponse> {
@@ -8083,6 +8595,7 @@ export namespace MyNS {
 		 * Streams 100% of labeling events applied to Tweets
 		 * Get 2/tweets/label/stream
 		 * @param {number} backfill_minutes The number of minutes of backfill requested.
+		 *     Minimum: 0    Maximum: 5
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweet labels will be provided.
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp from which the Tweet labels will be provided.
 		 * @return {TweetLabelStreamResponse} The request has succeeded.
@@ -8096,12 +8609,19 @@ export namespace MyNS {
 		 * Streams a deterministic 1% of public Tweets.
 		 * Get 2/tweets/sample/stream
 		 * @param {number} backfill_minutes The number of minutes of backfill requested.
+		 *     Minimum: 0    Maximum: 5
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {StreamingTweetResponse} The request has succeeded.
 		 */
 		SampleStream(backfill_minutes: number | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<StreamingTweetResponse> {
@@ -8113,15 +8633,23 @@ export namespace MyNS {
 		 * Streams a deterministic 10% of public Tweets.
 		 * Get 2/tweets/sample10/stream
 		 * @param {number} backfill_minutes The number of minutes of backfill requested.
+		 *     Minimum: 0    Maximum: 5
 		 * @param {number} partition The partition number.
+		 *     Minimum: 1    Maximum: 2
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp to which the Tweets will be provided.
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided.
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2TweetsSample10StreamResponse} The request has succeeded.
 		 */
 		GetTweetsSample10Stream(backfill_minutes: number | null | undefined, partition: number, start_time: Date | null | undefined, end_time: Date | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2TweetsSample10StreamResponse> {
@@ -8133,20 +8661,30 @@ export namespace MyNS {
 		 * Returns Tweets that match a search query.
 		 * Get 2/tweets/search/all
 		 * @param {string} query One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
+		 *     Min length: 1    Max length: 4096
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).
 		 * @param {string} since_id Returns results with a Tweet ID greater than (that is, more recent than) the specified ID.
 		 * @param {string} until_id Returns results with a Tweet ID less than (that is, older than) the specified ID.
 		 * @param {number} max_results The maximum number of search results to be returned by a request.
+		 *     Minimum: 10    Maximum: 500
 		 * @param {string} next_token This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		 *     Min length: 1
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		 *     Min length: 1
 		 * @param {TweetsFullarchiveSearchSort_order} sort_order This order in which to return results.
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2TweetsSearchAllResponse} The request has succeeded.
 		 */
 		TweetsFullarchiveSearch(query: string, start_time: Date | null | undefined, end_time: Date | null | undefined, since_id: string | null | undefined, until_id: string | null | undefined, max_results: number | null | undefined, next_token: string | null | undefined, pagination_token: string | null | undefined, sort_order: TweetsFullarchiveSearchSort_order | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2TweetsSearchAllResponse> {
@@ -8158,20 +8696,30 @@ export namespace MyNS {
 		 * Returns Tweets from the last 7 days that match a search query.
 		 * Get 2/tweets/search/recent
 		 * @param {string} query One query/rule/filter for matching Tweets. Refer to https://t.co/rulelength to identify the max query length.
+		 *     Min length: 1    Max length: 4096
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The oldest UTC timestamp from which the Tweets will be provided. Timestamp is in second granularity and is inclusive (i.e. 12:00:01 includes the first second of the minute).
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The newest, most recent UTC timestamp to which the Tweets will be provided. Timestamp is in second granularity and is exclusive (i.e. 12:00:01 excludes the first second of the minute).
 		 * @param {string} since_id Returns results with a Tweet ID greater than (that is, more recent than) the specified ID.
 		 * @param {string} until_id Returns results with a Tweet ID less than (that is, older than) the specified ID.
 		 * @param {number} max_results The maximum number of search results to be returned by a request.
+		 *     Minimum: 10    Maximum: 100
 		 * @param {string} next_token This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		 *     Min length: 1
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results. The value used with the parameter is pulled directly from the response provided by the API, and should not be modified.
+		 *     Min length: 1
 		 * @param {TweetsFullarchiveSearchSort_order} sort_order This order in which to return results.
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2TweetsSearchRecentResponse} The request has succeeded.
 		 */
 		TweetsRecentSearch(query: string, start_time: Date | null | undefined, end_time: Date | null | undefined, since_id: string | null | undefined, until_id: string | null | undefined, max_results: number | null | undefined, next_token: string | null | undefined, pagination_token: string | null | undefined, sort_order: TweetsFullarchiveSearchSort_order | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2TweetsSearchRecentResponse> {
@@ -8183,14 +8731,21 @@ export namespace MyNS {
 		 * Streams Tweets matching the stream's active rule set.
 		 * Get 2/tweets/search/stream
 		 * @param {number} backfill_minutes The number of minutes of backfill requested.
+		 *     Minimum: 0    Maximum: 5
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweets will be provided.
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided.
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {FilteredStreamingTweetResponse} The request has succeeded.
 		 */
 		SearchStream(backfill_minutes: number | null | undefined, start_time: Date | null | undefined, end_time: Date | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<FilteredStreamingTweetResponse> {
@@ -8203,7 +8758,9 @@ export namespace MyNS {
 		 * Get 2/tweets/search/stream/rules
 		 * @param {Array<string>} ids A comma-separated list of Rule IDs.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pagination_token This value is populated by passing the 'next_token' returned in a request to paginate through results.
+		 *     Min length: 16    Max length: 16
 		 * @return {RulesLookupResponse} The request has succeeded.
 		 */
 		GetRules(ids: Array<string> | null | undefined, max_results: number | null | undefined, pagination_token: string | null | undefined): Observable<RulesLookupResponse> {
@@ -8238,11 +8795,17 @@ export namespace MyNS {
 		 * Get 2/tweets/{id}
 		 * @param {string} id A single Tweet ID.
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2TweetsIdResponse} The request has succeeded.
 		 */
 		FindTweetById(id: string, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2TweetsIdResponse> {
@@ -8255,10 +8818,15 @@ export namespace MyNS {
 		 * Get 2/tweets/{id}/liking_users
 		 * @param {string} id A single Tweet ID.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results.
+		 *     Min length: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2TweetsIdLikingUsersResponse} The request has succeeded.
 		 */
 		TweetsIdLikingUsers(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2TweetsIdLikingUsersResponse> {
@@ -8271,14 +8839,23 @@ export namespace MyNS {
 		 * Get 2/tweets/{id}/quote_tweets
 		 * @param {string} id A single Tweet ID.
 		 * @param {number} max_results The maximum number of results to be returned.
+		 *     Minimum: 10    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 1
 		 * @param {Array<string>} exclude The set of entities to exclude (e.g. 'replies' or 'retweets').
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2TweetsIdQuoteTweetsResponse} The request has succeeded.
 		 */
 		FindTweetsThatQuoteATweet(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, exclude: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2TweetsIdQuoteTweetsResponse> {
@@ -8291,10 +8868,15 @@ export namespace MyNS {
 		 * Get 2/tweets/{id}/retweeted_by
 		 * @param {string} id A single Tweet ID.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results.
+		 *     Min length: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2TweetsIdRetweetedByResponse} The request has succeeded.
 		 */
 		TweetsIdRetweetingUsers(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2TweetsIdRetweetedByResponse> {
@@ -8317,9 +8899,13 @@ export namespace MyNS {
 		 * This endpoint returns information about Users. Specify Users by their ID.
 		 * Get 2/users
 		 * @param {Array<string>} ids A list of User IDs, comma-separated. You can specify up to 100 IDs.
+		 *     Minimum items: 1    Maximum items: 100
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersResponse} The request has succeeded.
 		 */
 		FindUsersById(ids: Array<string>, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2UsersResponse> {
@@ -8331,9 +8917,13 @@ export namespace MyNS {
 		 * This endpoint returns information about Users. Specify Users by their username.
 		 * Get 2/users/by
 		 * @param {Array<string>} usernames A list of usernames, comma-separated.
+		 *     Minimum items: 1    Maximum items: 100
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersByResponse} The request has succeeded.
 		 */
 		FindUsersByUsername(usernames: Array<string>, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2UsersByResponse> {
@@ -8346,8 +8936,11 @@ export namespace MyNS {
 		 * Get 2/users/by/username/{username}
 		 * @param {string} username A username.
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersByUsernameUsernameResponse} The request has succeeded.
 		 */
 		FindUserByUsername(username: string, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2UsersByUsernameUsernameResponse> {
@@ -8359,7 +8952,9 @@ export namespace MyNS {
 		 * Streams 100% of compliance data for Users
 		 * Get 2/users/compliance/stream
 		 * @param {number} backfill_minutes The number of minutes of backfill requested.
+		 *     Minimum: 0    Maximum: 5
 		 * @param {number} partition The partition number.
+		 *     Minimum: 1    Maximum: 4
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the User Compliance events will be provided.
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp from which the User Compliance events will be provided.
 		 * @return {UserComplianceStreamResponse} The request has succeeded.
@@ -8373,8 +8968,11 @@ export namespace MyNS {
 		 * This endpoint returns information about the requesting User.
 		 * Get 2/users/me
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersMeResponse} The request has succeeded.
 		 */
 		FindMyUser(user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2UsersMeResponse> {
@@ -8387,8 +8985,11 @@ export namespace MyNS {
 		 * Get 2/users/{id}
 		 * @param {string} id The ID of the User to lookup.
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdResponse} The request has succeeded.
 		 */
 		FindUserById(id: string, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2UsersIdResponse> {
@@ -8401,10 +9002,15 @@ export namespace MyNS {
 		 * Get 2/users/{id}/blocking
 		 * @param {string} id The ID of the authenticated source User for whom to return results.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 16
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdBlockingResponse} The request has succeeded.
 		 */
 		UsersIdBlocking(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2UsersIdBlockingResponse> {
@@ -8428,13 +9034,21 @@ export namespace MyNS {
 		 * Get 2/users/{id}/bookmarks
 		 * @param {string} id The ID of the authenticated source User for whom to return results.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results.
+		 *     Min length: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdBookmarksResponse} The request has succeeded.
 		 */
 		GetUsersIdBookmarks(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2UsersIdBookmarksResponse> {
@@ -8470,10 +9084,15 @@ export namespace MyNS {
 		 * Get 2/users/{id}/followed_lists
 		 * @param {string} id The ID of the User to lookup.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 1    Max length: 19
 		 * @param {Array<string>} list_fields A comma separated list of List fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdFollowedListsResponse} The request has succeeded.
 		 */
 		UserFollowedLists(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, list_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, user_fields: Array<string> | null | undefined): Observable<Get2UsersIdFollowedListsResponse> {
@@ -8509,10 +9128,15 @@ export namespace MyNS {
 		 * Get 2/users/{id}/followers
 		 * @param {string} id The ID of the User to lookup.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 16
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdFollowersResponse} The request has succeeded.
 		 */
 		UsersIdFollowers(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2UsersIdFollowersResponse> {
@@ -8525,10 +9149,15 @@ export namespace MyNS {
 		 * Get 2/users/{id}/following
 		 * @param {string} id The ID of the User to lookup.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 16
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdFollowingResponse} The request has succeeded.
 		 */
 		UsersIdFollowing(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2UsersIdFollowingResponse> {
@@ -8552,13 +9181,21 @@ export namespace MyNS {
 		 * Get 2/users/{id}/liked_tweets
 		 * @param {string} id The ID of the User to lookup.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 5    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results.
+		 *     Min length: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdLikedTweetsResponse} The request has succeeded.
 		 */
 		UsersIdLikedTweets(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2UsersIdLikedTweetsResponse> {
@@ -8594,10 +9231,15 @@ export namespace MyNS {
 		 * Get 2/users/{id}/list_memberships
 		 * @param {string} id The ID of the User to lookup.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 1    Max length: 19
 		 * @param {Array<string>} list_fields A comma separated list of List fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdListMembershipsResponse} The request has succeeded.
 		 */
 		GetUserListMemberships(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, list_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, user_fields: Array<string> | null | undefined): Observable<Get2UsersIdListMembershipsResponse> {
@@ -8612,15 +9254,23 @@ export namespace MyNS {
 		 * @param {string} since_id The minimum Tweet ID to be included in the result set. This parameter takes precedence over start_time if both are specified.
 		 * @param {string} until_id The maximum Tweet ID to be included in the result set. This parameter takes precedence over end_time if both are specified.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 5    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results.
+		 *     Min length: 1
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweets will be provided. The since_id parameter takes precedence if it is also specified.
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided. The until_id parameter takes precedence if it is also specified.
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdMentionsResponse} The request has succeeded.
 		 */
 		UsersIdMentions(id: string, since_id: string | null | undefined, until_id: string | null | undefined, max_results: number | null | undefined, pagination_token: string | null | undefined, start_time: Date | null | undefined, end_time: Date | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2UsersIdMentionsResponse> {
@@ -8633,10 +9283,15 @@ export namespace MyNS {
 		 * Get 2/users/{id}/muting
 		 * @param {string} id The ID of the authenticated source User for whom to return results.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results.
+		 *     Min length: 1    Max length: 19
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdMutingResponse} The request has succeeded.
 		 */
 		UsersIdMuting(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, user_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, tweet_fields: Array<string> | null | undefined): Observable<Get2UsersIdMutingResponse> {
@@ -8660,10 +9315,15 @@ export namespace MyNS {
 		 * Get 2/users/{id}/owned_lists
 		 * @param {string} id The ID of the User to lookup.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get a specified 'page' of results.
+		 *     Min length: 1    Max length: 19
 		 * @param {Array<string>} list_fields A comma separated list of List fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdOwnedListsResponse} The request has succeeded.
 		 */
 		ListUserOwnedLists(id: string, max_results: number | null | undefined, pagination_token: string | null | undefined, list_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, user_fields: Array<string> | null | undefined): Observable<Get2UsersIdOwnedListsResponse> {
@@ -8676,8 +9336,11 @@ export namespace MyNS {
 		 * Get 2/users/{id}/pinned_lists
 		 * @param {string} id The ID of the authenticated source User for whom to return results.
 		 * @param {Array<string>} list_fields A comma separated list of List fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdPinnedListsResponse} The request has succeeded.
 		 */
 		ListUserPinnedLists(id: string, list_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, user_fields: Array<string> | null | undefined): Observable<Get2UsersIdPinnedListsResponse> {
@@ -8738,16 +9401,24 @@ export namespace MyNS {
 		 * @param {string} since_id The minimum Tweet ID to be included in the result set. This parameter takes precedence over start_time if both are specified.
 		 * @param {string} until_id The maximum Tweet ID to be included in the result set. This parameter takes precedence over end_time if both are specified.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results.
+		 *     Min length: 1
 		 * @param {Array<string>} exclude The set of entities to exclude (e.g. 'replies' or 'retweets').
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweets will be provided. The since_id parameter takes precedence if it is also specified.
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided. The until_id parameter takes precedence if it is also specified.
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdTimelinesReverseChronologicalResponse} The request has succeeded.
 		 */
 		UsersIdTimeline(id: string, since_id: string | null | undefined, until_id: string | null | undefined, max_results: number | null | undefined, pagination_token: string | null | undefined, exclude: Array<string> | null | undefined, start_time: Date | null | undefined, end_time: Date | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2UsersIdTimelinesReverseChronologicalResponse> {
@@ -8762,16 +9433,25 @@ export namespace MyNS {
 		 * @param {string} since_id The minimum Tweet ID to be included in the result set. This parameter takes precedence over start_time if both are specified.
 		 * @param {string} until_id The maximum Tweet ID to be included in the result set. This parameter takes precedence over end_time if both are specified.
 		 * @param {number} max_results The maximum number of results.
+		 *     Minimum: 5    Maximum: 100
 		 * @param {string} pagination_token This parameter is used to get the next 'page' of results.
+		 *     Min length: 1
 		 * @param {Array<string>} exclude The set of entities to exclude (e.g. 'replies' or 'retweets').
+		 *     Minimum items: 1
 		 * @param {Date} start_time YYYY-MM-DDTHH:mm:ssZ. The earliest UTC timestamp from which the Tweets will be provided. The since_id parameter takes precedence if it is also specified.
 		 * @param {Date} end_time YYYY-MM-DDTHH:mm:ssZ. The latest UTC timestamp to which the Tweets will be provided. The until_id parameter takes precedence if it is also specified.
 		 * @param {Array<string>} tweet_fields A comma separated list of Tweet fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} expansions A comma separated list of fields to expand.
+		 *     Minimum items: 1
 		 * @param {Array<string>} media_fields A comma separated list of Media fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} poll_fields A comma separated list of Poll fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} user_fields A comma separated list of User fields to display.
+		 *     Minimum items: 1
 		 * @param {Array<string>} place_fields A comma separated list of Place fields to display.
+		 *     Minimum items: 1
 		 * @return {Get2UsersIdTweetsResponse} The request has succeeded.
 		 */
 		UsersIdTweets(id: string, since_id: string | null | undefined, until_id: string | null | undefined, max_results: number | null | undefined, pagination_token: string | null | undefined, exclude: Array<string> | null | undefined, start_time: Date | null | undefined, end_time: Date | null | undefined, tweet_fields: Array<string> | null | undefined, expansions: Array<string> | null | undefined, media_fields: Array<string> | null | undefined, poll_fields: Array<string> | null | undefined, user_fields: Array<string> | null | undefined, place_fields: Array<string> | null | undefined): Observable<Get2UsersIdTweetsResponse> {

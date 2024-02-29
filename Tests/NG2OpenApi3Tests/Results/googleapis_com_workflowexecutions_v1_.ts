@@ -441,7 +441,10 @@ export namespace MyNS {
 		/** The list of entries. */
 		stepEntries?: Array<StepEntry>;
 
-		/** Indicates the total number of StepEntries that matched the request filter. For running executions, this number shows the number of StepEntries that are executed thus far. */
+		/**
+		 * Indicates the total number of StepEntries that matched the request filter. For running executions, this number shows the number of StepEntries that are executed thus far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -451,7 +454,10 @@ export namespace MyNS {
 		/** A token to retrieve next page of results. Pass this value in the ListStepEntriesRequest.page_token field in the subsequent call to `ListStepEntries` method to retrieve the next page of results. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Indicates the total number of StepEntries that matched the request filter. For running executions, this number shows the number of StepEntries that are executed thus far. */
+		/**
+		 * Indicates the total number of StepEntries that matched the request filter. For running executions, this number shows the number of StepEntries that are executed thus far.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListStepEntriesResponseFormGroup() {
@@ -676,7 +682,10 @@ export namespace MyNS {
 		/** Required. LINT: LEGACY_NAMES The query parameter value for __GCP_CloudEventsMode, set by the Eventarc service when configuring triggers. */
 		GCPCloudEventsMode?: string | null;
 
-		/** The number of attempts that have been made to deliver this message. This is set by Pub/Sub for subscriptions that have the "dead letter" feature enabled, and hence provided here for compatibility, but is ignored by Workflows. */
+		/**
+		 * The number of attempts that have been made to deliver this message. This is set by Pub/Sub for subscriptions that have the "dead letter" feature enabled, and hence provided here for compatibility, but is ignored by Workflows.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deliveryAttempt?: number | null;
 
 		/** A message that is published by publishers and consumed by subscribers. The message must contain either a non-empty data field or at least one attribute. Note that client libraries represent this object differently depending on the language. See the corresponding [client library documentation](https://cloud.google.com/pubsub/docs/reference/libraries) for more information. See [quotas and limits] (https://cloud.google.com/pubsub/quotas) for more information about message limits. */
@@ -692,7 +701,10 @@ export namespace MyNS {
 		/** Required. LINT: LEGACY_NAMES The query parameter value for __GCP_CloudEventsMode, set by the Eventarc service when configuring triggers. */
 		GCPCloudEventsMode: FormControl<string | null | undefined>,
 
-		/** The number of attempts that have been made to deliver this message. This is set by Pub/Sub for subscriptions that have the "dead letter" feature enabled, and hence provided here for compatibility, but is ignored by Workflows. */
+		/**
+		 * The number of attempts that have been made to deliver this message. This is set by Pub/Sub for subscriptions that have the "dead letter" feature enabled, and hence provided here for compatibility, but is ignored by Workflows.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deliveryAttempt: FormControl<number | null | undefined>,
 
 		/** Required. The subscription of the Pub/Sub push notification. Format: projects/{project}/subscriptions/{sub} */
@@ -748,6 +760,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/callbacks
 		 * @param {string} parent Required. Name of the execution for which the callbacks should be listed. Format: projects/{project}/locations/{location}/workflows/{workflow}/executions/{execution}
 		 * @param {number} pageSize Maximum number of callbacks to return per call. The default value is 100 and is also the maximum value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListCallbacks` call. Provide this to retrieve the subsequent page. Note that pagination is applied to dynamic data. The list of callbacks returned can change between page requests if callbacks are created or deleted.
 		 * @return {ListCallbacksResponse} Successful response
 		 */
@@ -762,6 +775,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filters applied to the `[Executions.ListExecutions]` results. The following fields are supported for filtering: `executionId`, `state`, `startTime`, `endTime`, `duration`, `workflowRevisionId`, `stepName`, and `label`. For details, see AIP-160. For example, if you are using the Google APIs Explorer: `state="SUCCEEDED"` or `startTime>"2023-08-01" AND state="FAILED"`
 		 * @param {string} orderBy Optional. Comma-separated list of fields that specify the ordering applied to the `[Executions.ListExecutions]` results. By default the ordering is based on descending `startTime`. The following fields are supported for ordering: `executionId`, `state`, `startTime`, `endTime`, `duration`, and `workflowRevisionId`. For details, see AIP-132.
 		 * @param {number} pageSize Maximum number of executions to return per call. Max supported value depends on the selected Execution view: it's 1000 for BASIC and 100 for FULL. The default value used if the field is not specified is 100, regardless of the selected view. Values greater than the max value will be coerced down to it.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListExecutions` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListExecutions` must match the call that provided the page token. Note that pagination is applied to dynamic data. The list of executions returned can change between page requests.
 		 * @param {Workflowexecutions_projects_locations_workflows_executions_stepEntries_getView} view Optional. A view defining which fields should be filled in the returned executions. The API will default to the BASIC view.
 		 * @return {ListExecutionsResponse} Successful response
@@ -787,8 +801,10 @@ export namespace MyNS {
 		 * @param {string} filter Optional. Filters applied to the `[StepEntries.ListStepEntries]` results. The following fields are supported for filtering: `entryId`, `createTime`, `updateTime`, `routine`, `step`, `stepType`, `state`. For details, see AIP-160. For example, if you are using the Google APIs Explorer: `state="SUCCEEDED"` or `createTime>"2023-08-01" AND state="FAILED"`
 		 * @param {string} orderBy Optional. Comma-separated list of fields that specify the ordering applied to the `[StepEntries.ListStepEntries]` results. By default the ordering is based on ascending `entryId`. The following fields are supported for ordering: `entryId`, `createTime`, `updateTime`, `routine`, `step`, `stepType`, `state`. For details, see AIP-132.
 		 * @param {number} pageSize Optional. Number of step entries to return per call. The default max is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token, received from a previous `ListStepEntries` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListStepEntries` must match the call that provided the page token.
 		 * @param {number} skip Optional. The number of step entries to skip. It can be used with or without a pageToken. If used with a pageToken, then it indicates the number of step entries to skip starting from the requested page.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListStepEntriesResponse} Successful response
 		 */
 		Workflowexecutions_projects_locations_workflows_executions_stepEntries_list(parent: string, filter: string | null | undefined, orderBy: string | null | undefined, pageSize: number | null | undefined, pageToken: string | null | undefined, skip: number | null | undefined): Observable<ListStepEntriesResponse> {

@@ -182,6 +182,7 @@ export namespace MyNS {
 		 * Get v1beta/{parent}/instances
 		 * @param {string} parent Required. The parent project for which to list database instances, in the form: `projects/{project-number}/locations/{location-id}` To list across all locations, use a parent in the form: `projects/{project-number}/locations/-`
 		 * @param {number} pageSize The maximum number of database instances to return in the response. The server may return fewer than this at its discretion. If no value is specified (or too large a value is specified), then the server will impose its own limit.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Token returned from a previous call to `ListDatabaseInstances` indicating where in the set of database instances to resume listing.
 		 * @param {boolean} showDeleted Indicate that DatabaseInstances in the `DELETED` state should also be returned.
 		 * @return {ListDatabaseInstancesResponse} Successful response

@@ -1840,8 +1840,8 @@ export namespace MyNS {
 
 		/**
 		 * The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		OutputKeyPrefix?: string | null;
 
@@ -1864,8 +1864,8 @@ export namespace MyNS {
 
 		/**
 		 * The value, if any, that you want Elastic Transcoder to prepend to the names of all files that this job creates, including output files, thumbnails, and playlists.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		OutputKeyPrefix: FormControl<string | null | undefined>,
 
@@ -1949,8 +1949,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40 characters.</p>
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Name: string;
 
@@ -1971,8 +1971,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		AwsKmsKeyArn?: string | null;
 
@@ -1990,8 +1990,8 @@ export namespace MyNS {
 		/**
 		 * <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40 characters.</p>
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2012,8 +2012,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		AwsKmsKeyArn: FormControl<string | null | undefined>,
 	}
@@ -2089,15 +2089,15 @@ export namespace MyNS {
 		/**
 		 * The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Name: string;
 
 		/**
 		 * A description of the preset.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		Description?: string | null;
 
@@ -2121,15 +2121,15 @@ export namespace MyNS {
 		/**
 		 * The name of the preset. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * A description of the preset.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2263,8 +2263,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40 characters</p>
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Name?: string | null;
 
@@ -2276,8 +2276,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		AwsKmsKeyArn?: string | null;
 
@@ -2294,8 +2294,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the pipeline. We recommend that the name be unique within the AWS account, but uniqueness is not enforced.</p> <p>Constraints: Maximum 40 characters</p>
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2307,8 +2307,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The AWS Key Management Service (AWS KMS) key that you want to use with this pipeline.</p> <p>If you use either <code>s3</code> or <code>s3-aws-kms</code> as your <code>Encryption:Mode</code>, you don't need to provide a key with your job because a default key, known as an AWS-KMS key, is created for you automatically. You need to provide an AWS-KMS key only if you want to use a non-default AWS-KMS key, or if you are using an <code>Encryption:Mode</code> of <code>aes-cbc-pkcs7</code>, <code>aes-ctr</code>, or <code>aes-gcm</code>.</p>
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		AwsKmsKeyArn: FormControl<string | null | undefined>,
 	}

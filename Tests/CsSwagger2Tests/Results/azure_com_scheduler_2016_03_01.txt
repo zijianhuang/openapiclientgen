@@ -1358,7 +1358,10 @@ namespace MyNS
 		/// <param name="resourceGroupName">The resource group name.</param>
 		/// <param name="jobCollectionName">The job collection name.</param>
 		/// <param name="api_version">The API version.</param>
-		/// <param name="top">The number of jobs to request, in the of range of [1..100].</param>
+		/// <param name="top">The number of jobs to request, in the of range of [1..100].
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="skip">The (0-based) index of the job history list from which to begin requesting entries.</param>
 		/// <param name="filter">The filter to apply on the job state.</param>
 		/// <returns>The job has been successfully returned.</returns>
@@ -1536,7 +1539,10 @@ namespace MyNS
 		/// <param name="jobCollectionName">The job collection name.</param>
 		/// <param name="jobName">The job name.</param>
 		/// <param name="api_version">The API version.</param>
-		/// <param name="top">the number of job history to request, in the of range of [1..100].</param>
+		/// <param name="top">the number of job history to request, in the of range of [1..100].
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="skip">The (0-based) index of the job history list from which to begin requesting entries.</param>
 		/// <param name="filter">The filter to apply on the job state.</param>
 		/// <returns>The job histories have been successfully returned.</returns>

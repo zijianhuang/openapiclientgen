@@ -183,7 +183,10 @@ export namespace MyNS {
 		classified_type?: ClassificationInclusionAttributesClassified_type | null;
 		created_at?: Date | null;
 
-		/** The position or order of the linked classification within the classified resource */
+		/**
+		 * The position or order of the linked classification within the classified resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 
 		/**
@@ -214,7 +217,10 @@ export namespace MyNS {
 		classified_type: FormControl<ClassificationInclusionAttributesClassified_type | null | undefined>,
 		created_at: FormControl<Date | null | undefined>,
 
-		/** The position or order of the linked classification within the classified resource */
+		/**
+		 * The position or order of the linked classification within the classified resource
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/**
@@ -319,7 +325,10 @@ export namespace MyNS {
 	export interface CreditAttributes {
 		created_at?: Date | null;
 
-		/** The order of this credit within all credits of the referenced creditable entity */
+		/**
+		 * The order of this credit within all credits of the referenced creditable entity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position?: number | null;
 
 		/** The type of credit the linked person has on the referenced entity */
@@ -329,7 +338,10 @@ export namespace MyNS {
 	export interface CreditAttributesFormProperties {
 		created_at: FormControl<Date | null | undefined>,
 
-		/** The order of this credit within all credits of the referenced creditable entity */
+		/**
+		 * The order of this credit within all credits of the referenced creditable entity
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		position: FormControl<number | null | undefined>,
 
 		/** The type of credit the linked person has on the referenced entity */
@@ -449,6 +461,7 @@ export namespace MyNS {
 		/**
 		 * The number of total downloads all time for this episode.
 		 * Only visible if the credential has the right privilege on the series.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_count?: number | null;
 
@@ -556,6 +569,7 @@ export namespace MyNS {
 		/**
 		 * The number of total downloads all time for this episode.
 		 * Only visible if the credential has the right privilege on the series.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		listen_count: FormControl<number | null | undefined>,
 
@@ -910,30 +924,54 @@ export namespace MyNS {
 
 	export interface ImageAttributesCrop_data {
 
-		/** The height of the crop area */
+		/**
+		 * The height of the crop area
+		 * Type: float
+		 */
 		height?: number | null;
 
-		/** The left coordinate of the crop area */
+		/**
+		 * The left coordinate of the crop area
+		 * Type: float
+		 */
 		left?: number | null;
 
-		/** The top coordinate of the crop area */
+		/**
+		 * The top coordinate of the crop area
+		 * Type: float
+		 */
 		top?: number | null;
 
-		/** The width of the crop area */
+		/**
+		 * The width of the crop area
+		 * Type: float
+		 */
 		width?: number | null;
 	}
 	export interface ImageAttributesCrop_dataFormProperties {
 
-		/** The height of the crop area */
+		/**
+		 * The height of the crop area
+		 * Type: float
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The left coordinate of the crop area */
+		/**
+		 * The left coordinate of the crop area
+		 * Type: float
+		 */
 		left: FormControl<number | null | undefined>,
 
-		/** The top coordinate of the crop area */
+		/**
+		 * The top coordinate of the crop area
+		 * Type: float
+		 */
 		top: FormControl<number | null | undefined>,
 
-		/** The width of the crop area */
+		/**
+		 * The width of the crop area
+		 * Type: float
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageAttributesCrop_dataFormGroup() {
@@ -1062,13 +1100,22 @@ export namespace MyNS {
 		 */
 		file_name?: string | null;
 
-		/** The size in bytes of the media asset */
+		/**
+		 * The size in bytes of the media asset
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_size?: number | null;
 
-		/** The height in pixels of the media asset, if the media asset is an image */
+		/**
+		 * The height in pixels of the media asset, if the media asset is an image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size_height?: number | null;
 
-		/** The width in pixels of the media asset, if the media asset is an image */
+		/**
+		 * The width in pixels of the media asset, if the media asset is an image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size_width?: number | null;
 
 		/**
@@ -1105,13 +1152,22 @@ export namespace MyNS {
 		 */
 		file_name: FormControl<string | null | undefined>,
 
-		/** The size in bytes of the media asset */
+		/**
+		 * The size in bytes of the media asset
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_size: FormControl<number | null | undefined>,
 
-		/** The height in pixels of the media asset, if the media asset is an image */
+		/**
+		 * The height in pixels of the media asset, if the media asset is an image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size_height: FormControl<number | null | undefined>,
 
-		/** The width in pixels of the media asset, if the media asset is an image */
+		/**
+		 * The width in pixels of the media asset, if the media asset is an image
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size_width: FormControl<number | null | undefined>,
 
 		/**
@@ -1404,11 +1460,17 @@ export namespace MyNS {
 		/** The biography of the person without markup. */
 		biography?: string | null;
 
-		/** The birthday of the person */
+		/**
+		 * The birthday of the person
+		 * Type: DateOnly
+		 */
 		born?: Date | null;
 		created_at?: Date | null;
 
-		/** The day of death of the person */
+		/**
+		 * The day of death of the person
+		 * Type: DateOnly
+		 */
 		died?: Date | null;
 
 		/** The first name of the person */
@@ -1442,11 +1504,17 @@ export namespace MyNS {
 		/** The biography of the person without markup. */
 		biography: FormControl<string | null | undefined>,
 
-		/** The birthday of the person */
+		/**
+		 * The birthday of the person
+		 * Type: DateOnly
+		 */
 		born: FormControl<Date | null | undefined>,
 		created_at: FormControl<Date | null | undefined>,
 
-		/** The day of death of the person */
+		/**
+		 * The day of death of the person
+		 * Type: DateOnly
+		 */
 		died: FormControl<Date | null | undefined>,
 
 		/** The first name of the person */
@@ -1596,7 +1664,10 @@ export namespace MyNS {
 		 */
 		last_released_episode_id?: string | null;
 
-		/** The number of the season. This could be `null` as well. */
+		/**
+		 * The number of the season. This could be `null` as well.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		season_number?: number | null;
 
 		/**
@@ -1653,7 +1724,10 @@ export namespace MyNS {
 		 */
 		last_released_episode_id: FormControl<string | null | undefined>,
 
-		/** The number of the season. This could be `null` as well. */
+		/**
+		 * The number of the season. This could be `null` as well.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		season_number: FormControl<number | null | undefined>,
 
 		/**
@@ -2307,7 +2381,9 @@ export namespace MyNS {
 		 * The brackets *MUST* be percent-encoded, per the requirements in
 		 * [RFC 3986 § 3.4](https://tools.ietf.org/html/rfc3986#section-3.4).
 		 * @param {number} page_number Select which page number to receive results for. Pages are numbered starting at 1.
+		 *     Minimum: 1
 		 * @param {number} page_size Indicate how many records to return per page. The maximum is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} classification_id Limit the result to classification inclusions linked to a classification with this ID.
 		 * @param {ClassificationAttributesType} classification_type The type of classification that the classification inclusions are linked to.
 		 * Depending on the permissions of your credential, only a subset of these types are usable.
@@ -2341,7 +2417,9 @@ export namespace MyNS {
 		 * The brackets *MUST* be percent-encoded, per the requirements in
 		 * [RFC 3986 § 3.4](https://tools.ietf.org/html/rfc3986#section-3.4).
 		 * @param {number} page_number Select which page number to receive results for. Pages are numbered starting at 1.
+		 *     Minimum: 1
 		 * @param {number} page_size Indicate how many records to return per page. The maximum is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {ClassificationAttributesType} type Limit the result to classifications of this type. The possible values for types
 		 * depends on the privileges of the provided credential.
 		 * @param {string} q Limit the result to classifications with a value containing the parameter value
@@ -2374,7 +2452,9 @@ export namespace MyNS {
 		 * The brackets *MUST* be percent-encoded, per the requirements in
 		 * [RFC 3986 § 3.4](https://tools.ietf.org/html/rfc3986#section-3.4).
 		 * @param {number} page_number Select which page number to receive results for. Pages are numbered starting at 1.
+		 *     Minimum: 1
 		 * @param {number} page_size Indicate how many records to return per page. The maximum is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} creditable_id Limit the result to credits for the entity with this ID only. If the entity is not
 		 * published, the credential needs to have the right privilege to list the credits for it.
 		 * @param {ClassificationInclusionAttributesClassified_type} creditable_type Limit the result to credits linked to this type of entity only.
@@ -2409,7 +2489,9 @@ export namespace MyNS {
 		 * The brackets *MUST* be percent-encoded, per the requirements in
 		 * [RFC 3986 § 3.4](https://tools.ietf.org/html/rfc3986#section-3.4).
 		 * @param {number} page_number Select which page number to receive results for. Pages are numbered starting at 1.
+		 *     Minimum: 1
 		 * @param {number} page_size Indicate how many records to return per page. The maximum is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} included_in_inventory_calendar Limit the result to episodes usable with an inventory management calendar for the provided AdDeal ID.
 		 * @param {string} month Limit the result to episodes released in this month.
 		 * @param {boolean} published If `true`, limit the result to published episodes only.
@@ -2648,7 +2730,9 @@ export namespace MyNS {
 		 * The brackets *MUST* be percent-encoded, per the requirements in
 		 * [RFC 3986 § 3.4](https://tools.ietf.org/html/rfc3986#section-3.4).
 		 * @param {number} page_number Select which page number to receive results for. Pages are numbered starting at 1.
+		 *     Minimum: 1
 		 * @param {number} page_size Indicate how many records to return per page. The maximum is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} q Limit the result to networks with a name containing this parameter in a case-insensitive way.
 		 * @param {string} ad_rep_account_id Limit the result to networks containing at least one series with an ad deal of this Ad Ops profile.
 		 * @param {Array<string>} ad_deal_status Limit the result to networks containing at least one series with an ad deal matching one of the
@@ -2684,7 +2768,9 @@ export namespace MyNS {
 		 * The brackets *MUST* be percent-encoded, per the requirements in
 		 * [RFC 3986 § 3.4](https://tools.ietf.org/html/rfc3986#section-3.4).
 		 * @param {number} page_number Select which page number to receive results for. Pages are numbered starting at 1.
+		 *     Minimum: 1
 		 * @param {number} page_size Indicate how many records to return per page. The maximum is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} q Limit the result to people with a full name containing this parameter in a case-insensitive way.
 		 * @param {Array<string>} sort Specify how to sort the result. Please refer to either the top section or the
 		 * [JSON:API specification](https://jsonapi.org/format/#fetching-sorting) on how sorting works in general.
@@ -2717,7 +2803,9 @@ export namespace MyNS {
 		 * The brackets *MUST* be percent-encoded, per the requirements in
 		 * [RFC 3986 § 3.4](https://tools.ietf.org/html/rfc3986#section-3.4).
 		 * @param {number} page_number Select which page number to receive results for. Pages are numbered starting at 1.
+		 *     Minimum: 1
 		 * @param {number} page_size Indicate how many records to return per page. The maximum is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} series_id Limit the result to seasons owned by this series.
 		 * @param {string} q Limit the result to seasons with a title containing this parameter in a case-insensitive way.
 		 * @param {Array<string>} sort Specify how to sort the result. Please refer to either the top section or the
@@ -2749,7 +2837,9 @@ export namespace MyNS {
 		 * The brackets *MUST* be percent-encoded, per the requirements in
 		 * [RFC 3986 § 3.4](https://tools.ietf.org/html/rfc3986#section-3.4).
 		 * @param {number} page_number Select which page number to receive results for. Pages are numbered starting at 1.
+		 *     Minimum: 1
 		 * @param {number} page_size Indicate how many records to return per page. The maximum is 100.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} ad_rep_account_id Limit the result to series with an ad deal of this Ad Ops profile.
 		 * @param {string} network_id Limit the result to series owned by this network.
 		 * @param {string} q Limit the result to series with a title or slug containing this parameter in a case-insensitive way.

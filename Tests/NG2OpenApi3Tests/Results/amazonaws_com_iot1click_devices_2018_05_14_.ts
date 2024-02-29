@@ -551,6 +551,7 @@ export namespace MyNS {
 		 *  
 		 * @param {number} maxResults The maximum number of results to return per request. If not set, a default value of
 		 *  100 is used.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @param {Date} toTimeStamp The end date for the device event query, in ISO8061 format. For example,
 		 *  2018-03-28T15:45:12.880Z
@@ -567,6 +568,7 @@ export namespace MyNS {
 		 * @param {string} deviceType The type of the device, such as "button".
 		 * @param {number} maxResults The maximum number of results to return per request. If not set, a default value of
 		 *  100 is used.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @return {ListDevicesResponse} Success
 		 */

@@ -623,7 +623,9 @@ namespace MyNS
 		/// Voice voice
 		/// </summary>
 		/// <param name="to">Determines the receiver. Must be a valid phone number or contact from the address book.</param>
-		/// <param name="text">The text to convert to a voice message. Accepts valid XML too.</param>
+		/// <param name="text">The text to convert to a voice message. Accepts valid XML too.
+		/// Max length: 10000
+		// </param>
 		/// <param name="xml">Decides whether the parameter "text" is plain text or XML. The default value is 0.</param>
 		/// <param name="from">Sets the sender. Must be a verified sender. Use an inbound number of yours or one of ours.</param>
 		/// <returns>OK</returns>

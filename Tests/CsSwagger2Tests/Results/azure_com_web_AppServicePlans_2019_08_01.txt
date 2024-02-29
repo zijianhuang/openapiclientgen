@@ -170,7 +170,10 @@ namespace MyNS
 		/// Description for Get all App Service plans in a resource group.
 		/// AppServicePlans_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
 		/// <returns>OK</returns>
@@ -202,7 +205,10 @@ namespace MyNS
 		/// Description for Get an App Service plan.
 		/// AppServicePlans_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -235,7 +241,10 @@ namespace MyNS
 		/// Description for Creates or updates an App Service Plan.
 		/// AppServicePlans_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -276,7 +285,10 @@ namespace MyNS
 		/// Description for Delete an App Service plan.
 		/// AppServicePlans_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -303,7 +315,10 @@ namespace MyNS
 		/// Description for Creates or updates an App Service Plan.
 		/// AppServicePlans_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -344,7 +359,10 @@ namespace MyNS
 		/// Description for List all capabilities of an App Service plan.
 		/// AppServicePlans_ListCapabilities subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/capabilities
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -377,7 +395,10 @@ namespace MyNS
 		/// Description for Retrieve a Hybrid Connection in use in an App Service plan.
 		/// AppServicePlans_GetHybridConnection subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="namespaceName">Name of the Service Bus namespace.</param>
 		/// <param name="relayName">Name of the Service Bus relay.</param>
@@ -412,7 +433,10 @@ namespace MyNS
 		/// Description for Delete a Hybrid Connection in use in an App Service plan.
 		/// AppServicePlans_DeleteHybridConnection subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="namespaceName">Name of the Service Bus namespace.</param>
 		/// <param name="relayName">Name of the Service Bus relay.</param>
@@ -441,7 +465,10 @@ namespace MyNS
 		/// Description for Get the send key name and value of a Hybrid Connection.
 		/// AppServicePlans_ListHybridConnectionKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}/listKeys
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="namespaceName">The name of the Service Bus namespace.</param>
 		/// <param name="relayName">The name of the Service Bus relay.</param>
@@ -476,7 +503,10 @@ namespace MyNS
 		/// Description for Get all apps that use a Hybrid Connection in an App Service Plan.
 		/// AppServicePlans_ListWebAppsByHybridConnection subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}/sites
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="namespaceName">Name of the Hybrid Connection namespace.</param>
 		/// <param name="relayName">Name of the Hybrid Connection relay.</param>
@@ -511,7 +541,10 @@ namespace MyNS
 		/// Description for Get the maximum number of Hybrid Connections allowed in an App Service plan.
 		/// AppServicePlans_GetHybridConnectionPlanLimit subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionPlanLimits/limit
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -544,7 +577,10 @@ namespace MyNS
 		/// Description for Retrieve all Hybrid Connections in use in an App Service plan.
 		/// AppServicePlans_ListHybridConnections subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/hybridConnectionRelays
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -577,7 +613,10 @@ namespace MyNS
 		/// Description for Restart all apps in an App Service plan.
 		/// AppServicePlans_RestartWebApps subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/restartSites
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="softRestart">Specify <code>true</code> to perform a soft restart, applies the configuration settings and restarts the apps if necessary. The default is <code>false</code>, which always restarts and reprovisions the apps</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -604,7 +643,10 @@ namespace MyNS
 		/// Description for Get all apps associated with an App Service plan.
 		/// AppServicePlans_ListWebApps subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/sites
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="skipToken">Skip to a web app in the list of webapps associated with app service plan. If specified, the resulting list will contain web apps starting from (including) the skipToken. Otherwise, the resulting list contains web apps from the start of the list</param>
 		/// <param name="filter">Supported filter: $filter=state eq running. Returns only web apps that are currently running</param>
@@ -640,7 +682,10 @@ namespace MyNS
 		/// Description for Gets all selectable SKUs for a given App Service Plan
 		/// AppServicePlans_GetServerFarmSkus subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/skus
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of App Service Plan</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -672,7 +717,10 @@ namespace MyNS
 		/// Description for Gets server farm usage information
 		/// AppServicePlans_ListUsages subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/usages
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of App Service Plan</param>
 		/// <param name="filter">Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2').</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -706,7 +754,10 @@ namespace MyNS
 		/// Description for Get all Virtual Networks associated with an App Service plan.
 		/// AppServicePlans_ListVnets subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -739,7 +790,10 @@ namespace MyNS
 		/// Description for Get a Virtual Network associated with an App Service plan.
 		/// AppServicePlans_GetVnetFromServerFarm subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="vnetName">Name of the Virtual Network.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -773,7 +827,10 @@ namespace MyNS
 		/// Description for Get a Virtual Network gateway.
 		/// AppServicePlans_GetVnetGateway subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="vnetName">Name of the Virtual Network.</param>
 		/// <param name="gatewayName">Name of the gateway. Only the 'primary' gateway is supported.</param>
@@ -808,7 +865,10 @@ namespace MyNS
 		/// Description for Update a Virtual Network gateway.
 		/// AppServicePlans_UpdateVnetGateway subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="vnetName">Name of the Virtual Network.</param>
 		/// <param name="gatewayName">Name of the gateway. Only the 'primary' gateway is supported.</param>
@@ -851,7 +911,10 @@ namespace MyNS
 		/// Description for Get all routes that are associated with a Virtual Network in an App Service plan.
 		/// AppServicePlans_ListRoutesForVnet subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/routes
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="vnetName">Name of the Virtual Network.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -885,7 +948,10 @@ namespace MyNS
 		/// Description for Get a Virtual Network route in an App Service plan.
 		/// AppServicePlans_GetRouteForVnet subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="vnetName">Name of the Virtual Network.</param>
 		/// <param name="routeName">Name of the Virtual Network route.</param>
@@ -920,7 +986,10 @@ namespace MyNS
 		/// Description for Create or update a Virtual Network route in an App Service plan.
 		/// AppServicePlans_CreateOrUpdateVnetRoute subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="vnetName">Name of the Virtual Network.</param>
 		/// <param name="routeName">Name of the Virtual Network route.</param>
@@ -963,7 +1032,10 @@ namespace MyNS
 		/// Description for Delete a Virtual Network route in an App Service plan.
 		/// AppServicePlans_DeleteVnetRoute subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="vnetName">Name of the Virtual Network.</param>
 		/// <param name="routeName">Name of the Virtual Network route.</param>
@@ -992,7 +1064,10 @@ namespace MyNS
 		/// Description for Create or update a Virtual Network route in an App Service plan.
 		/// AppServicePlans_UpdateVnetRoute subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/virtualNetworkConnections/{vnetName}/routes/{routeName}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="vnetName">Name of the Virtual Network.</param>
 		/// <param name="routeName">Name of the Virtual Network route.</param>
@@ -1035,7 +1110,10 @@ namespace MyNS
 		/// Description for Reboot a worker machine in an App Service plan.
 		/// AppServicePlans_RebootWorker subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/serverfarms/{name}/workers/{workerName}/reboot
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="name">Name of the App Service plan.</param>
 		/// <param name="workerName">Name of worker machine, which typically starts with RD.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>

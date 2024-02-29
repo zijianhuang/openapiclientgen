@@ -1262,11 +1262,15 @@ export namespace MyNS {
 		data?: Getlastblocknumber4ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getlastblocknumber4ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetlastblocknumber4ReturnFormGroup() {
@@ -1279,9 +1283,13 @@ export namespace MyNS {
 	}
 
 	export interface Getlastblocknumber4ReturnData {
+
+		/** Type: double */
 		blocknumber?: number | null;
 	}
 	export interface Getlastblocknumber4ReturnDataFormProperties {
+
+		/** Type: double */
 		blocknumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetlastblocknumber4ReturnDataFormGroup() {
@@ -1295,11 +1303,15 @@ export namespace MyNS {
 		Getblock4ReturnData?: Array<Getblock4ReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getblock4ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetblock4ReturnFormGroup() {
@@ -1313,11 +1325,15 @@ export namespace MyNS {
 
 	export interface Getblock4ReturnData {
 		error?: any;
+
+		/** Type: double */
 		id?: number | null;
 		result?: Getblock4ReturnDataResult;
 	}
 	export interface Getblock4ReturnDataFormProperties {
 		error: FormControl<any | null | undefined>,
+
+		/** Type: double */
 		id: FormControl<number | null | undefined>,
 	}
 	export function CreateGetblock4ReturnDataFormGroup() {
@@ -1331,42 +1347,86 @@ export namespace MyNS {
 	export interface Getblock4ReturnDataResult {
 		bits?: string | null;
 		chainwork?: string | null;
+
+		/** Type: double */
 		confirmations?: number | null;
+
+		/** Type: double */
 		difficulty?: number | null;
 		hash?: string | null;
+
+		/** Type: double */
 		height?: number | null;
+
+		/** Type: double */
 		mediantime?: number | null;
 		merkleroot?: string | null;
+
+		/** Type: double */
 		nTx?: number | null;
 		nextblockhash?: string | null;
+
+		/** Type: double */
 		nonce?: number | null;
 		previousblockhash?: string | null;
+
+		/** Type: double */
 		size?: number | null;
+
+		/** Type: double */
 		strippedsize?: number | null;
+
+		/** Type: double */
 		time?: number | null;
 		tx?: Array<string>;
+
+		/** Type: double */
 		version?: number | null;
 		versionHex?: string | null;
+
+		/** Type: double */
 		weight?: number | null;
 	}
 	export interface Getblock4ReturnDataResultFormProperties {
 		bits: FormControl<string | null | undefined>,
 		chainwork: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		confirmations: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		difficulty: FormControl<number | null | undefined>,
 		hash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		height: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		mediantime: FormControl<number | null | undefined>,
 		merkleroot: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		nTx: FormControl<number | null | undefined>,
 		nextblockhash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		nonce: FormControl<number | null | undefined>,
 		previousblockhash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		size: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		strippedsize: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		time: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		version: FormControl<number | null | undefined>,
 		versionHex: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateGetblock4ReturnDataResultFormGroup() {
@@ -1397,11 +1457,15 @@ export namespace MyNS {
 		data?: GetfeesReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetfeesReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetfeesReturnFormGroup() {
@@ -1414,10 +1478,14 @@ export namespace MyNS {
 	}
 
 	export interface GetfeesReturnData {
+
+		/** Type: double */
 		blocks?: number | null;
 		feerate?: string | null;
 	}
 	export interface GetfeesReturnDataFormProperties {
+
+		/** Type: double */
 		blocks: FormControl<number | null | undefined>,
 		feerate: FormControl<string | null | undefined>,
 	}
@@ -1433,11 +1501,15 @@ export namespace MyNS {
 		data?: GetblockchaininfoReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetblockchaininfoReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetblockchaininfoReturnFormGroup() {
@@ -1451,31 +1523,59 @@ export namespace MyNS {
 
 	export interface GetblockchaininfoReturnData {
 		bestblockhash?: string | null;
+
+		/** Type: double */
 		blocks?: number | null;
 		chain?: string | null;
 		chainwork?: string | null;
+
+		/** Type: double */
 		difficulty?: number | null;
+
+		/** Type: double */
 		headers?: number | null;
 		initialblockdownload?: boolean | null;
+
+		/** Type: double */
 		mediantime?: number | null;
 		pruned?: boolean | null;
+
+		/** Type: double */
 		size_on_disk?: number | null;
+
+		/** Type: double */
 		time?: number | null;
+
+		/** Type: double */
 		verificationprogress?: number | null;
 		warnings?: string | null;
 	}
 	export interface GetblockchaininfoReturnDataFormProperties {
 		bestblockhash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		blocks: FormControl<number | null | undefined>,
 		chain: FormControl<string | null | undefined>,
 		chainwork: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		difficulty: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		headers: FormControl<number | null | undefined>,
 		initialblockdownload: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		mediantime: FormControl<number | null | undefined>,
 		pruned: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		size_on_disk: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		time: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		verificationprogress: FormControl<number | null | undefined>,
 		warnings: FormControl<string | null | undefined>,
 	}
@@ -1530,11 +1630,15 @@ export namespace MyNS {
 		data?: Gettransaction4ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Gettransaction4ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransaction4ReturnFormGroup() {
@@ -1548,19 +1652,27 @@ export namespace MyNS {
 
 	export interface Gettransaction4ReturnData {
 		blockhash?: string | null;
+
+		/** Type: double */
 		confirmations?: number | null;
 		hash?: string | null;
 		hex?: string | null;
 		Gettransaction4ReturnDataReceivers?: Array<Gettransaction4ReturnDataReceivers>;
 		senders?: Array<string>;
+
+		/** Type: double */
 		time?: number | null;
 		txid?: string | null;
 	}
 	export interface Gettransaction4ReturnDataFormProperties {
 		blockhash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		confirmations: FormControl<number | null | undefined>,
 		hash: FormControl<string | null | undefined>,
 		hex: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		time: FormControl<number | null | undefined>,
 		txid: FormControl<string | null | undefined>,
 	}
@@ -1578,12 +1690,20 @@ export namespace MyNS {
 
 	export interface Gettransaction4ReturnDataReceivers {
 		address?: string | null;
+
+		/** Type: double */
 		n?: number | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface Gettransaction4ReturnDataReceiversFormProperties {
 		address: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		n: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransaction4ReturnDataReceiversFormGroup() {
@@ -1599,11 +1719,15 @@ export namespace MyNS {
 		data?: GetwalletReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetwalletReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetwalletReturnFormGroup() {
@@ -1643,11 +1767,15 @@ export namespace MyNS {
 		data?: CreatewalletReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface CreatewalletReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateCreatewalletReturnFormGroup() {
@@ -1689,11 +1817,15 @@ export namespace MyNS {
 		data?: ExportaddressprivatekeyReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface ExportaddressprivatekeyReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateExportaddressprivatekeyReturnFormGroup() {
@@ -1722,11 +1854,15 @@ export namespace MyNS {
 		data?: Array<string>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetwalletaddressesReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetwalletaddressesReturnFormGroup() {
@@ -1742,11 +1878,15 @@ export namespace MyNS {
 		data?: CreatewalletaddressReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface CreatewalletaddressReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateCreatewalletaddressReturnFormGroup() {
@@ -1775,11 +1915,15 @@ export namespace MyNS {
 		data?: DeletewalletReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface DeletewalletReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateDeletewalletReturnFormGroup() {
@@ -1811,11 +1955,15 @@ export namespace MyNS {
 		data?: Listsubscribedaddresses4ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listsubscribedaddresses4ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListsubscribedaddresses4ReturnFormGroup() {
@@ -1889,11 +2037,15 @@ export namespace MyNS {
 		data?: Subscribeaddress4ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Subscribeaddress4ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscribeaddress4ReturnFormGroup() {
@@ -1982,10 +2134,14 @@ export namespace MyNS {
 	}
 
 	export interface Resendfailedipn4Return {
+
+		/** Type: double */
 		id?: number | null;
 		ok?: boolean | null;
 	}
 	export interface Resendfailedipn4ReturnFormProperties {
+
+		/** Type: double */
 		id: FormControl<number | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
 	}
@@ -2001,11 +2157,15 @@ export namespace MyNS {
 		data?: Unsubscribeaddress4ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Unsubscribeaddress4ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateUnsubscribeaddress4ReturnFormGroup() {
@@ -2034,11 +2194,15 @@ export namespace MyNS {
 		data?: ListaddressReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface ListaddressReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListaddressReturnFormGroup() {
@@ -2078,11 +2242,15 @@ export namespace MyNS {
 		data?: Newaddress2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Newaddress2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateNewaddress2ReturnFormGroup() {
@@ -2124,11 +2292,15 @@ export namespace MyNS {
 		data?: Exportaddress2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Exportaddress2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateExportaddress2ReturnFormGroup() {
@@ -2161,11 +2333,15 @@ export namespace MyNS {
 		address?: string | null;
 		crypto?: Exportaddress2ReturnDataContentCrypto;
 		id?: string | null;
+
+		/** Type: double */
 		version?: number | null;
 	}
 	export interface Exportaddress2ReturnDataContentFormProperties {
 		address: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateExportaddress2ReturnDataContentFormGroup() {
@@ -2215,16 +2391,32 @@ export namespace MyNS {
 	}
 
 	export interface Exportaddress2ReturnDataContentCryptoKdfparams {
+
+		/** Type: double */
 		dklen?: number | null;
+
+		/** Type: double */
 		n?: number | null;
+
+		/** Type: double */
 		p?: number | null;
+
+		/** Type: double */
 		r?: number | null;
 		salt?: string | null;
 	}
 	export interface Exportaddress2ReturnDataContentCryptoKdfparamsFormProperties {
+
+		/** Type: double */
 		dklen: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		n: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		p: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		r: FormControl<number | null | undefined>,
 		salt: FormControl<string | null | undefined>,
 	}
@@ -2260,11 +2452,15 @@ export namespace MyNS {
 		address?: string | null;
 		crypto?: Importaddress2PostBodyContentCrypto;
 		id?: string | null;
+
+		/** Type: double */
 		version?: number | null;
 	}
 	export interface Importaddress2PostBodyContentFormProperties {
 		address: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateImportaddress2PostBodyContentFormGroup() {
@@ -2314,16 +2510,32 @@ export namespace MyNS {
 	}
 
 	export interface Importaddress2PostBodyContentCryptoKdfparams {
+
+		/** Type: double */
 		dklen?: number | null;
+
+		/** Type: double */
 		n?: number | null;
+
+		/** Type: double */
 		p?: number | null;
+
+		/** Type: double */
 		r?: number | null;
 		salt?: string | null;
 	}
 	export interface Importaddress2PostBodyContentCryptoKdfparamsFormProperties {
+
+		/** Type: double */
 		dklen: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		n: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		p: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		r: FormControl<number | null | undefined>,
 		salt: FormControl<string | null | undefined>,
 	}
@@ -2342,11 +2554,15 @@ export namespace MyNS {
 		data?: Importaddress2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Importaddress2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateImportaddress2ReturnFormGroup() {
@@ -2375,11 +2591,15 @@ export namespace MyNS {
 		data?: Deleteaddress2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Deleteaddress2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteaddress2ReturnFormGroup() {
@@ -2411,11 +2631,15 @@ export namespace MyNS {
 		data?: Listtransactionsbyaddress2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listtransactionsbyaddress2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress2ReturnFormGroup() {
@@ -2428,13 +2652,21 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress2ReturnData {
+
+		/** Type: double */
 		current_page?: number | null;
+
+		/** Type: double */
 		max_pages?: number | null;
 		meta?: Listtransactionsbyaddress2ReturnDataMeta;
 		Listtransactionsbyaddress2ReturnDataTransactions?: Array<Listtransactionsbyaddress2ReturnDataTransactions>;
 	}
 	export interface Listtransactionsbyaddress2ReturnDataFormProperties {
+
+		/** Type: double */
 		current_page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		max_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress2ReturnDataFormGroup() {
@@ -2448,30 +2680,62 @@ export namespace MyNS {
 	export interface Listtransactionsbyaddress2ReturnDataMeta {
 		accountedFor?: Listtransactionsbyaddress2ReturnDataMetaAccountedFor;
 		chain?: string | null;
+
+		/** Type: double */
 		client?: number | null;
+
+		/** Type: double */
 		clientId?: number | null;
+
+		/** Type: double */
 		finalized?: number | null;
+
+		/** Type: double */
 		first_block?: number | null;
 		last_block?: string | null;
 		namedFrom?: Array<string>;
 		namedTo?: Listtransactionsbyaddress2ReturnDataMetaNamedTo;
+
+		/** Type: double */
 		networkId?: number | null;
+
+		/** Type: double */
 		ripe?: number | null;
+
+		/** Type: double */
 		staging?: number | null;
 		unNamedFrom?: Listtransactionsbyaddress2ReturnDataMetaUnNamedFrom;
 		unNamedTo?: Listtransactionsbyaddress2ReturnDataMetaUnNamedTo;
+
+		/** Type: double */
 		unripe?: number | null;
 	}
 	export interface Listtransactionsbyaddress2ReturnDataMetaFormProperties {
 		chain: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		client: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		clientId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		finalized: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		first_block: FormControl<number | null | undefined>,
 		last_block: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		networkId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ripe: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		staging: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unripe: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress2ReturnDataMetaFormGroup() {
@@ -2492,6 +2756,8 @@ export namespace MyNS {
 
 	export interface Listtransactionsbyaddress2ReturnDataMetaAccountedFor {
 		address?: string | null;
+
+		/** Type: double */
 		decimals?: number | null;
 		name?: string | null;
 		petname?: string | null;
@@ -2501,6 +2767,8 @@ export namespace MyNS {
 	}
 	export interface Listtransactionsbyaddress2ReturnDataMetaAccountedForFormProperties {
 		address: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		decimals: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		petname: FormControl<string | null | undefined>,
@@ -2533,12 +2801,16 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress2ReturnDataMetaNamedTo_0xa57bd00134b2850b2a1c55860c9e9ea100fdd6cf_ {
+
+		/** Type: double */
 		count?: number | null;
 		isContract?: boolean | null;
 		name?: string | null;
 		tags?: string | null;
 	}
 	export interface Listtransactionsbyaddress2ReturnDataMetaNamedTo_0xa57bd00134b2850b2a1c55860c9e9ea100fdd6cf_FormProperties {
+
+		/** Type: double */
 		count: FormControl<number | null | undefined>,
 		isContract: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -2555,113 +2827,325 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress2ReturnDataMetaUnNamedFrom {
+
+		/** Type: double */
 		'0x0039b625b1d8632c7a0057c964ec58a9f39789d3'?: number | null;
+
+		/** Type: double */
 		'0x005fde5294199d5c3eb5eb7a6e51954123b74b1c'?: number | null;
+
+		/** Type: double */
 		'0x006e920000ec97e58900b61e00800010005aa831'?: number | null;
+
+		/** Type: double */
 		'0x00a2aebc7e233cd2ffe5ab5856f90f0ad2fa3ccd'?: number | null;
+
+		/** Type: double */
 		'0x00dee1f836998bcc736022f314df906588d44808'?: number | null;
+
+		/** Type: double */
 		'0x042523db4f3effc33d2742022b2490258494f8b3'?: number | null;
+
+		/** Type: double */
 		'0x065e3dbafcb2c26a978720f9eb4bce6ad9d644a1'?: number | null;
+
+		/** Type: double */
 		'0x09e0781a47e9fd2b6258be09bd074f42022b9760'?: number | null;
+
+		/** Type: double */
 		'0x0d0b3f21d7c90d0b957aa6acbc993621311208e4'?: number | null;
+
+		/** Type: double */
 		'0x177b8ebe208cb71da818b6b8814c946c027240cd'?: number | null;
+
+		/** Type: double */
 		'0x1c8f6a5f009e051cab9c3851ca2da2c936b2775a'?: number | null;
+
+		/** Type: double */
 		'0x26bce6ecb5b10138e4bf14ac0ffcc8727fef3b2e'?: number | null;
+
+		/** Type: double */
 		'0x26fd09c8b44af53df38a9bad41d5abc55a1786af'?: number | null;
+
+		/** Type: double */
 		'0x30a1b724c9dfe2e12a19ed84878312d199d1519e'?: number | null;
+
+		/** Type: double */
 		'0x33cef21eb6068ebfcf70c7404efb8aaa08cad388'?: number | null;
+
+		/** Type: double */
 		'0x3443006ed920730005d88267c49f77abcde749af'?: number | null;
+
+		/** Type: double */
 		'0x346c802df3404bec2f265603db28b815321251ee'?: number | null;
+
+		/** Type: double */
 		'0x34ec9e3a1ac200ea58744ced891015152130e400'?: number | null;
+
+		/** Type: double */
 		'0x3b25d8e0801df1264a3d3a5f0bb79bbc292a09fb'?: number | null;
+
+		/** Type: double */
 		'0x3fb530b53036b5d8de892ad1eda14a576a22e6d6'?: number | null;
+
+		/** Type: double */
 		'0x3fbaea01b228368e67ca40d8cb195018fd095318'?: number | null;
+
+		/** Type: double */
 		'0x431b5a84acc1297eda88259f300262f1bc3a74f3'?: number | null;
+
+		/** Type: double */
 		'0x479bc00624e58398f4cf59d78884d12fb515790a'?: number | null;
+
+		/** Type: double */
 		'0x50efbf12580138bc263c95757826df4e24eb81c9'?: number | null;
+
+		/** Type: double */
 		'0x5a243879d1a43f48042c33bbc8051c69756f67d4'?: number | null;
+
+		/** Type: double */
 		'0x6046945c5b5ef5933b8e73a98a6ad7bf3e031df7'?: number | null;
+
+		/** Type: double */
 		'0x60b86af869f23aeb552fb7f3cabd11b829f6ab2f'?: number | null;
+
+		/** Type: double */
 		'0x72bb8c608c4ea4a887266985e680a04c056f5b2a'?: number | null;
+
+		/** Type: double */
 		'0x76dd32063b2899a59f6e15dbc474a160cc922751'?: number | null;
+
+		/** Type: double */
 		'0x76e40d0a69fd81826b5eb7d18145626d46eafdef'?: number | null;
+
+		/** Type: double */
 		'0x77eb9084ce8168901bcb11f14f02a7aab36fcd0c'?: number | null;
+
+		/** Type: double */
 		'0x8e2400a8822fe2da5a8c52b7f7b412acb49813c8'?: number | null;
+
+		/** Type: double */
 		'0x8e8f818d3371f797a2db7edb32803607c8b3c6a9'?: number | null;
+
+		/** Type: double */
 		'0x91aae0aafd9d2d730111b395c6871f248d7bd728'?: number | null;
+
+		/** Type: double */
 		'0x92824d144c6543f70a649b2c3e7596612375fd4d'?: number | null;
+
+		/** Type: double */
 		'0x93f635372008b7c5d770aaa6ff313454c8dc498c'?: number | null;
+
+		/** Type: double */
 		'0x9aab3f81604c683a1a0d14019fbfe15bef7aa1ee'?: number | null;
+
+		/** Type: double */
 		'0xa5a13f62ce1113838e0d9b4559b8caf5f76463c0'?: number | null;
+
+		/** Type: double */
 		'0xa6807d794411d9a80bc435dfc4cda0ba0ddde979'?: number | null;
+
+		/** Type: double */
 		'0xa855d1198c67839e596b9a5d7c46f8ea31cfefde'?: number | null;
+
+		/** Type: double */
 		'0xb0804b228c1c1449cdc94dd16fc8910421f45df1'?: number | null;
+
+		/** Type: double */
 		'0xb2088e2ec5e3599554a70cbb17c0ef1aac70dc78'?: number | null;
+
+		/** Type: double */
 		'0xb30b1dabe7451fe6646a15631d7537df64b193ce'?: number | null;
+
+		/** Type: double */
 		'0xba4ff5f9d6508000b7fd0035bd616aaec070384f'?: number | null;
+
+		/** Type: double */
 		'0xbbad96336943a36e3e292d973b3382dd0ba4d1ef'?: number | null;
+
+		/** Type: double */
 		'0xc11099d3cd9686158db0a40e88267e7b1740958c'?: number | null;
+
+		/** Type: double */
 		'0xd03154dbc4ae6beafa79f7ae6d99c12ce58f5b64'?: number | null;
+
+		/** Type: double */
 		'0xe58e5ed4544f58831a84c18178b911a5957ada08'?: number | null;
+
+		/** Type: double */
 		'0xeca2e2d894d19778939bd4dfc34d2a3c45e96456'?: number | null;
+
+		/** Type: double */
 		'0xf0475a1f184f062d1eee88f0d79ec4eb2795d4f0'?: number | null;
+
+		/** Type: double */
 		'0xf5e322fd6fadbef5d14eaf0f45a809c00739d1e7'?: number | null;
+
+		/** Type: double */
 		'0xfb9779477e5b4834bf2bc02dd29b97b344d0f700'?: number | null;
+
+		/** Type: double */
 		'0xff82bf5238637b7e5e345888bab9cd99f5ebe331'?: number | null;
 	}
 	export interface Listtransactionsbyaddress2ReturnDataMetaUnNamedFromFormProperties {
+
+		/** Type: double */
 		'0x0039b625b1d8632c7a0057c964ec58a9f39789d3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x005fde5294199d5c3eb5eb7a6e51954123b74b1c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x006e920000ec97e58900b61e00800010005aa831': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x00a2aebc7e233cd2ffe5ab5856f90f0ad2fa3ccd': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x00dee1f836998bcc736022f314df906588d44808': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x042523db4f3effc33d2742022b2490258494f8b3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x065e3dbafcb2c26a978720f9eb4bce6ad9d644a1': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x09e0781a47e9fd2b6258be09bd074f42022b9760': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0d0b3f21d7c90d0b957aa6acbc993621311208e4': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x177b8ebe208cb71da818b6b8814c946c027240cd': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x1c8f6a5f009e051cab9c3851ca2da2c936b2775a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26bce6ecb5b10138e4bf14ac0ffcc8727fef3b2e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26fd09c8b44af53df38a9bad41d5abc55a1786af': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x30a1b724c9dfe2e12a19ed84878312d199d1519e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x33cef21eb6068ebfcf70c7404efb8aaa08cad388': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3443006ed920730005d88267c49f77abcde749af': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x346c802df3404bec2f265603db28b815321251ee': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x34ec9e3a1ac200ea58744ced891015152130e400': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3b25d8e0801df1264a3d3a5f0bb79bbc292a09fb': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3fb530b53036b5d8de892ad1eda14a576a22e6d6': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3fbaea01b228368e67ca40d8cb195018fd095318': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x431b5a84acc1297eda88259f300262f1bc3a74f3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x479bc00624e58398f4cf59d78884d12fb515790a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x50efbf12580138bc263c95757826df4e24eb81c9': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x5a243879d1a43f48042c33bbc8051c69756f67d4': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x6046945c5b5ef5933b8e73a98a6ad7bf3e031df7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x60b86af869f23aeb552fb7f3cabd11b829f6ab2f': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x72bb8c608c4ea4a887266985e680a04c056f5b2a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x76dd32063b2899a59f6e15dbc474a160cc922751': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x76e40d0a69fd81826b5eb7d18145626d46eafdef': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x77eb9084ce8168901bcb11f14f02a7aab36fcd0c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x8e2400a8822fe2da5a8c52b7f7b412acb49813c8': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x8e8f818d3371f797a2db7edb32803607c8b3c6a9': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x91aae0aafd9d2d730111b395c6871f248d7bd728': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x92824d144c6543f70a649b2c3e7596612375fd4d': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x93f635372008b7c5d770aaa6ff313454c8dc498c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x9aab3f81604c683a1a0d14019fbfe15bef7aa1ee': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa5a13f62ce1113838e0d9b4559b8caf5f76463c0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa6807d794411d9a80bc435dfc4cda0ba0ddde979': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa855d1198c67839e596b9a5d7c46f8ea31cfefde': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb0804b228c1c1449cdc94dd16fc8910421f45df1': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb2088e2ec5e3599554a70cbb17c0ef1aac70dc78': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb30b1dabe7451fe6646a15631d7537df64b193ce': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xba4ff5f9d6508000b7fd0035bd616aaec070384f': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xbbad96336943a36e3e292d973b3382dd0ba4d1ef': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xc11099d3cd9686158db0a40e88267e7b1740958c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xd03154dbc4ae6beafa79f7ae6d99c12ce58f5b64': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xe58e5ed4544f58831a84c18178b911a5957ada08': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeca2e2d894d19778939bd4dfc34d2a3c45e96456': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf0475a1f184f062d1eee88f0d79ec4eb2795d4f0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf5e322fd6fadbef5d14eaf0f45a809c00739d1e7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xfb9779477e5b4834bf2bc02dd29b97b344d0f700': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xff82bf5238637b7e5e345888bab9cd99f5ebe331': FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress2ReturnDataMetaUnNamedFromFormGroup() {
@@ -2724,61 +3208,169 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress2ReturnDataMetaUnNamedTo {
+
+		/** Type: double */
 		'0x0000000000007f150bd6f54c40a34d7c3d5e9f56'?: number | null;
+
+		/** Type: double */
 		'0x000000000035b5e5ad9019092c665357240f594e'?: number | null;
+
+		/** Type: double */
 		'0x0000000000a84d1a9b0063a910315c7ffa9cd248'?: number | null;
+
+		/** Type: double */
 		'0x0077732907bfc6208933cfd2a51afb8f33ca5958'?: number | null;
+
+		/** Type: double */
 		'0x1cedc0f3af8f9841b0a1f5c1a4ddc6e1a1629074'?: number | null;
+
+		/** Type: double */
 		'0x26c541f5e1c8eab0f6f0943bb1c8843ab18c4b0d'?: number | null;
+
+		/** Type: double */
 		'0x388c818ca8b9251b393131c08a736a67ccb19297'?: number | null;
+
+		/** Type: double */
 		'0x3e2766167aa2acb097c311d5a2e9eb17cad38b06'?: number | null;
+
+		/** Type: double */
 		'0x4a137fd5e7a256ef08a7de531a17d0be0cc7b6b6'?: number | null;
+
+		/** Type: double */
 		'0x5050e08626c499411b5d0e0b5af0e83d3fd82edf'?: number | null;
+
+		/** Type: double */
 		'0x535b918f3724001fd6fb52fcc6cbc220592990a3'?: number | null;
+
+		/** Type: double */
 		'0x57c1e0c2adf6eecdb135bcf9ec5f23b319be2c94'?: number | null;
+
+		/** Type: double */
 		'0x665179031a86561ac845f43d6b6341cffbcea040'?: number | null;
+
+		/** Type: double */
 		'0x7d9da47e83b82a52a2b45353cdad735afb43e6f0'?: number | null;
+
+		/** Type: double */
 		'0x81153f0889ab398c4acb42cb58b565a5392bba95'?: number | null;
+
+		/** Type: double */
 		'0x87b3f3c934a13c779e100a5d6e6d7ef577e86671'?: number | null;
+
+		/** Type: double */
 		'0x87d9da48db6e1f925cb67d3b7d2a292846c24cf7'?: number | null;
+
+		/** Type: double */
 		'0x98c3d3183c4b8a650614ad179a1a98be0a8d6b8e'?: number | null;
+
+		/** Type: double */
 		'0xa69babef1ca67a37ffaf7a485dfff3382056e78c'?: number | null;
+
+		/** Type: double */
 		'0xbeefbabeea323f07c59926295205d3b7a17e8638'?: number | null;
+
+		/** Type: double */
 		'0xcfc7e96be27d836b034b37132052549611341108'?: number | null;
+
+		/** Type: double */
 		'0xe94f1fa4f27d9d288ffea234bb62e1fbc086ca0c'?: number | null;
+
+		/** Type: double */
 		'0xeb00c80f00ca1585000000b84f00940000ed40e5'?: number | null;
+
+		/** Type: double */
 		'0xebec795c9c8bbd61ffc14a6662944748f299cacf'?: number | null;
+
+		/** Type: double */
 		'0xeee27662c2b8eba3cd936a23f039f3189633e4c8'?: number | null;
+
+		/** Type: double */
 		'0xf828add1619bfb64712654076490b2609ae6d774'?: number | null;
+
+		/** Type: double */
 		'0xffd22b84fb1d46ef74ed6530b2635be61340f347'?: number | null;
 	}
 	export interface Listtransactionsbyaddress2ReturnDataMetaUnNamedToFormProperties {
+
+		/** Type: double */
 		'0x0000000000007f150bd6f54c40a34d7c3d5e9f56': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x000000000035b5e5ad9019092c665357240f594e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0000000000a84d1a9b0063a910315c7ffa9cd248': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0077732907bfc6208933cfd2a51afb8f33ca5958': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x1cedc0f3af8f9841b0a1f5c1a4ddc6e1a1629074': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26c541f5e1c8eab0f6f0943bb1c8843ab18c4b0d': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x388c818ca8b9251b393131c08a736a67ccb19297': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3e2766167aa2acb097c311d5a2e9eb17cad38b06': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x4a137fd5e7a256ef08a7de531a17d0be0cc7b6b6': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x5050e08626c499411b5d0e0b5af0e83d3fd82edf': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x535b918f3724001fd6fb52fcc6cbc220592990a3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x57c1e0c2adf6eecdb135bcf9ec5f23b319be2c94': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x665179031a86561ac845f43d6b6341cffbcea040': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x7d9da47e83b82a52a2b45353cdad735afb43e6f0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x81153f0889ab398c4acb42cb58b565a5392bba95': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x87b3f3c934a13c779e100a5d6e6d7ef577e86671': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x87d9da48db6e1f925cb67d3b7d2a292846c24cf7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x98c3d3183c4b8a650614ad179a1a98be0a8d6b8e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa69babef1ca67a37ffaf7a485dfff3382056e78c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xbeefbabeea323f07c59926295205d3b7a17e8638': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xcfc7e96be27d836b034b37132052549611341108': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xe94f1fa4f27d9d288ffea234bb62e1fbc086ca0c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeb00c80f00ca1585000000b84f00940000ed40e5': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xebec795c9c8bbd61ffc14a6662944748f299cacf': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeee27662c2b8eba3cd936a23f039f3189633e4c8': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf828add1619bfb64712654076490b2609ae6d774': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xffd22b84fb1d46ef74ed6530b2635be61340f347': FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress2ReturnDataMetaUnNamedToFormGroup() {
@@ -2816,54 +3408,110 @@ export namespace MyNS {
 
 	export interface Listtransactionsbyaddress2ReturnDataTransactions {
 		blockHash?: string | null;
+
+		/** Type: double */
 		blockNumber?: number | null;
 		compressedTx?: string | null;
 		date?: string | null;
 		encoding?: string | null;
+
+		/** Type: double */
 		ether?: number | null;
+
+		/** Type: double */
 		etherGasCost?: number | null;
 		from?: string | null;
 		function?: string | null;
+
+		/** Type: double */
 		gas?: number | null;
+
+		/** Type: double */
 		gasCost?: number | null;
+
+		/** Type: double */
 		gasPrice?: number | null;
+
+		/** Type: double */
 		gasUsed?: number | null;
+
+		/** Type: double */
 		hasToken?: number | null;
 		hash?: string | null;
 		input?: string | null;
+
+		/** Type: double */
 		isError?: number | null;
+
+		/** Type: double */
 		maxFeePerGas?: number | null;
+
+		/** Type: double */
 		maxPriorityFeePerGas?: number | null;
 		receipt?: Listtransactionsbyaddress2ReturnDataTransactionsReceipt;
+
+		/** Type: double */
 		timestamp?: number | null;
 		to?: string | null;
 		traces?: Array<string>;
+
+		/** Type: double */
 		transactionIndex?: number | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface Listtransactionsbyaddress2ReturnDataTransactionsFormProperties {
 		blockHash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		blockNumber: FormControl<number | null | undefined>,
 		compressedTx: FormControl<string | null | undefined>,
 		date: FormControl<string | null | undefined>,
 		encoding: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ether: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		etherGasCost: FormControl<number | null | undefined>,
 		from: FormControl<string | null | undefined>,
 		function: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		gas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasCost: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasUsed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		hasToken: FormControl<number | null | undefined>,
 		hash: FormControl<string | null | undefined>,
 		input: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		isError: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		maxFeePerGas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		maxPriorityFeePerGas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 		to: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		transactionIndex: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress2ReturnDataTransactionsFormGroup() {
@@ -2897,15 +3545,27 @@ export namespace MyNS {
 
 	export interface Listtransactionsbyaddress2ReturnDataTransactionsReceipt {
 		contractAddress?: string | null;
+
+		/** Type: double */
 		effectiveGasPrice?: number | null;
+
+		/** Type: double */
 		gasUsed?: number | null;
 		logs?: Array<string>;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listtransactionsbyaddress2ReturnDataTransactionsReceiptFormProperties {
 		contractAddress: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		effectiveGasPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasUsed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress2ReturnDataTransactionsReceiptFormGroup() {
@@ -2922,11 +3582,15 @@ export namespace MyNS {
 		data?: GetbinancecoinbalanceReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetbinancecoinbalanceReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetbinancecoinbalanceReturnFormGroup() {
@@ -2955,11 +3619,15 @@ export namespace MyNS {
 		data?: Getbep20balanceReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getbep20balanceReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetbep20balanceReturnFormGroup() {
@@ -2988,11 +3656,15 @@ export namespace MyNS {
 		data?: Getbep20ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getbep20ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetbep20ReturnFormGroup() {
@@ -3006,6 +3678,8 @@ export namespace MyNS {
 
 	export interface Getbep20ReturnData {
 		contractaddress?: string | null;
+
+		/** Type: double */
 		decimals?: number | null;
 		name?: string | null;
 		symbol?: string | null;
@@ -3013,6 +3687,8 @@ export namespace MyNS {
 	}
 	export interface Getbep20ReturnDataFormProperties {
 		contractaddress: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		decimals: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
@@ -3033,11 +3709,15 @@ export namespace MyNS {
 		data?: Getlastblocknumber2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getlastblocknumber2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetlastblocknumber2ReturnFormGroup() {
@@ -3050,9 +3730,13 @@ export namespace MyNS {
 	}
 
 	export interface Getlastblocknumber2ReturnData {
+
+		/** Type: double */
 		blocknumber?: number | null;
 	}
 	export interface Getlastblocknumber2ReturnDataFormProperties {
+
+		/** Type: double */
 		blocknumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetlastblocknumber2ReturnDataFormGroup() {
@@ -3066,11 +3750,15 @@ export namespace MyNS {
 		Getblock2ReturnData?: Array<Getblock2ReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getblock2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetblock2ReturnFormGroup() {
@@ -3083,8 +3771,12 @@ export namespace MyNS {
 	}
 
 	export interface Getblock2ReturnData {
+
+		/** Type: double */
 		difficulty?: number | null;
 		extraData?: string | null;
+
+		/** Type: double */
 		gasLimit?: number | null;
 		gasUsed?: string | null;
 		hash?: string | null;
@@ -3092,21 +3784,31 @@ export namespace MyNS {
 		miner?: string | null;
 		mixHash?: string | null;
 		nonce?: string | null;
+
+		/** Type: double */
 		number?: number | null;
 		parentHash?: string | null;
 		receiptsRoot?: string | null;
 		sha3Uncles?: string | null;
+
+		/** Type: double */
 		size?: number | null;
 		stateRoot?: string | null;
 		timestamp?: string | null;
+
+		/** Type: double */
 		totalDifficulty?: number | null;
 		transactions?: Array<string>;
 		transactionsRoot?: string | null;
 		uncles?: Array<string>;
 	}
 	export interface Getblock2ReturnDataFormProperties {
+
+		/** Type: double */
 		difficulty: FormControl<number | null | undefined>,
 		extraData: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		gasLimit: FormControl<number | null | undefined>,
 		gasUsed: FormControl<string | null | undefined>,
 		hash: FormControl<string | null | undefined>,
@@ -3114,13 +3816,19 @@ export namespace MyNS {
 		miner: FormControl<string | null | undefined>,
 		mixHash: FormControl<string | null | undefined>,
 		nonce: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		number: FormControl<number | null | undefined>,
 		parentHash: FormControl<string | null | undefined>,
 		receiptsRoot: FormControl<string | null | undefined>,
 		sha3Uncles: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		size: FormControl<number | null | undefined>,
 		stateRoot: FormControl<string | null | undefined>,
 		timestamp: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		totalDifficulty: FormControl<number | null | undefined>,
 		transactionsRoot: FormControl<string | null | undefined>,
 	}
@@ -3152,11 +3860,15 @@ export namespace MyNS {
 		data?: Getgasprice2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getgasprice2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetgasprice2ReturnFormGroup() {
@@ -3185,11 +3897,15 @@ export namespace MyNS {
 		data?: Getnftowner2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getnftowner2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetnftowner2ReturnFormGroup() {
@@ -3218,11 +3934,15 @@ export namespace MyNS {
 		data?: Getnfturi2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getnfturi2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetnfturi2ReturnFormGroup() {
@@ -3273,6 +3993,8 @@ export namespace MyNS {
 		amount?: string | null;
 		contractaddress?: string | null;
 		from?: string | null;
+
+		/** Type: double */
 		gas?: number | null;
 		password?: string | null;
 		to?: string | null;
@@ -3281,6 +4003,8 @@ export namespace MyNS {
 		amount: FormControl<string | null | undefined>,
 		contractaddress: FormControl<string | null | undefined>,
 		from: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		gas: FormControl<number | null | undefined>,
 		password: FormControl<string | null | undefined>,
 		to: FormControl<string | null | undefined>,
@@ -3302,6 +4026,8 @@ export namespace MyNS {
 		from?: string | null;
 		password?: string | null;
 		to?: string | null;
+
+		/** Type: double */
 		tokenid?: number | null;
 	}
 	export interface Sendbep721PostBodyFormProperties {
@@ -3309,6 +4035,8 @@ export namespace MyNS {
 		from: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
 		to: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tokenid: FormControl<number | null | undefined>,
 	}
 	export function CreateSendbep721PostBodyFormGroup() {
@@ -3339,11 +4067,15 @@ export namespace MyNS {
 		data?: Broadcasttransaction2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Broadcasttransaction2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateBroadcasttransaction2ReturnFormGroup() {
@@ -3372,11 +4104,15 @@ export namespace MyNS {
 		Gettransaction2ReturnData?: Array<Gettransaction2ReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Gettransaction2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransaction2ReturnFormGroup() {
@@ -3447,11 +4183,15 @@ export namespace MyNS {
 		Gettransactionreceipt2ReturnData?: Array<Gettransactionreceipt2ReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Gettransactionreceipt2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransactionreceipt2ReturnFormGroup() {
@@ -3514,11 +4254,15 @@ export namespace MyNS {
 		data?: Listsubscribedaddresses2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listsubscribedaddresses2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListsubscribedaddresses2ReturnFormGroup() {
@@ -3564,11 +4308,15 @@ export namespace MyNS {
 		data?: Subscribeaddress2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Subscribeaddress2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscribeaddress2ReturnFormGroup() {
@@ -3615,11 +4363,15 @@ export namespace MyNS {
 		data?: Listfailedipns2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listfailedipns2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListfailedipns2ReturnFormGroup() {
@@ -3643,10 +4395,14 @@ export namespace MyNS {
 	}
 
 	export interface Resendfailedipn2Return {
+
+		/** Type: double */
 		id?: number | null;
 		ok?: boolean | null;
 	}
 	export interface Resendfailedipn2ReturnFormProperties {
+
+		/** Type: double */
 		id: FormControl<number | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
 	}
@@ -3662,11 +4418,15 @@ export namespace MyNS {
 		data?: Unsubscribeaddress2ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Unsubscribeaddress2ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateUnsubscribeaddress2ReturnFormGroup() {
@@ -3708,11 +4468,15 @@ export namespace MyNS {
 		data?: BroadcasttransactionReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface BroadcasttransactionReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateBroadcasttransactionReturnFormGroup() {
@@ -3741,11 +4505,15 @@ export namespace MyNS {
 		data?: ListaddressesReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface ListaddressesReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListaddressesReturnFormGroup() {
@@ -3785,11 +4553,15 @@ export namespace MyNS {
 		data?: NewaddressReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface NewaddressReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateNewaddressReturnFormGroup() {
@@ -3831,11 +4603,15 @@ export namespace MyNS {
 		data?: ExportaddressReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface ExportaddressReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateExportaddressReturnFormGroup() {
@@ -3868,11 +4644,15 @@ export namespace MyNS {
 		address?: string | null;
 		crypto?: ExportaddressReturnDataContentCrypto;
 		id?: string | null;
+
+		/** Type: double */
 		version?: number | null;
 	}
 	export interface ExportaddressReturnDataContentFormProperties {
 		address: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateExportaddressReturnDataContentFormGroup() {
@@ -3922,16 +4702,32 @@ export namespace MyNS {
 	}
 
 	export interface ExportaddressReturnDataContentCryptoKdfparams {
+
+		/** Type: double */
 		dklen?: number | null;
+
+		/** Type: double */
 		n?: number | null;
+
+		/** Type: double */
 		p?: number | null;
+
+		/** Type: double */
 		r?: number | null;
 		salt?: string | null;
 	}
 	export interface ExportaddressReturnDataContentCryptoKdfparamsFormProperties {
+
+		/** Type: double */
 		dklen: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		n: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		p: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		r: FormControl<number | null | undefined>,
 		salt: FormControl<string | null | undefined>,
 	}
@@ -3967,11 +4763,15 @@ export namespace MyNS {
 		address?: string | null;
 		crypto?: ImportaddressPostBodyContentCrypto;
 		id?: string | null;
+
+		/** Type: double */
 		version?: number | null;
 	}
 	export interface ImportaddressPostBodyContentFormProperties {
 		address: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateImportaddressPostBodyContentFormGroup() {
@@ -4021,16 +4821,32 @@ export namespace MyNS {
 	}
 
 	export interface ImportaddressPostBodyContentCryptoKdfparams {
+
+		/** Type: double */
 		dklen?: number | null;
+
+		/** Type: double */
 		n?: number | null;
+
+		/** Type: double */
 		p?: number | null;
+
+		/** Type: double */
 		r?: number | null;
 		salt?: string | null;
 	}
 	export interface ImportaddressPostBodyContentCryptoKdfparamsFormProperties {
+
+		/** Type: double */
 		dklen: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		n: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		p: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		r: FormControl<number | null | undefined>,
 		salt: FormControl<string | null | undefined>,
 	}
@@ -4049,11 +4865,15 @@ export namespace MyNS {
 		data?: ImportaddressReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface ImportaddressReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateImportaddressReturnFormGroup() {
@@ -4082,11 +4902,15 @@ export namespace MyNS {
 		data?: DeleteaddressReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface DeleteaddressReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteaddressReturnFormGroup() {
@@ -4118,11 +4942,15 @@ export namespace MyNS {
 		data?: ListtransactionsbyaddressReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface ListtransactionsbyaddressReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddressReturnFormGroup() {
@@ -4135,13 +4963,21 @@ export namespace MyNS {
 	}
 
 	export interface ListtransactionsbyaddressReturnData {
+
+		/** Type: double */
 		current_page?: number | null;
+
+		/** Type: double */
 		max_pages?: number | null;
 		meta?: ListtransactionsbyaddressReturnDataMeta;
 		ListtransactionsbyaddressReturnDataTransactions?: Array<ListtransactionsbyaddressReturnDataTransactions>;
 	}
 	export interface ListtransactionsbyaddressReturnDataFormProperties {
+
+		/** Type: double */
 		current_page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		max_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddressReturnDataFormGroup() {
@@ -4155,30 +4991,62 @@ export namespace MyNS {
 	export interface ListtransactionsbyaddressReturnDataMeta {
 		accountedFor?: ListtransactionsbyaddressReturnDataMetaAccountedFor;
 		chain?: string | null;
+
+		/** Type: double */
 		client?: number | null;
+
+		/** Type: double */
 		clientId?: number | null;
+
+		/** Type: double */
 		finalized?: number | null;
+
+		/** Type: double */
 		first_block?: number | null;
 		last_block?: string | null;
 		namedFrom?: Array<string>;
 		namedTo?: ListtransactionsbyaddressReturnDataMetaNamedTo;
+
+		/** Type: double */
 		networkId?: number | null;
+
+		/** Type: double */
 		ripe?: number | null;
+
+		/** Type: double */
 		staging?: number | null;
 		unNamedFrom?: ListtransactionsbyaddressReturnDataMetaUnNamedFrom;
 		unNamedTo?: ListtransactionsbyaddressReturnDataMetaUnNamedTo;
+
+		/** Type: double */
 		unripe?: number | null;
 	}
 	export interface ListtransactionsbyaddressReturnDataMetaFormProperties {
 		chain: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		client: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		clientId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		finalized: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		first_block: FormControl<number | null | undefined>,
 		last_block: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		networkId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ripe: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		staging: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unripe: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddressReturnDataMetaFormGroup() {
@@ -4199,6 +5067,8 @@ export namespace MyNS {
 
 	export interface ListtransactionsbyaddressReturnDataMetaAccountedFor {
 		address?: string | null;
+
+		/** Type: double */
 		decimals?: number | null;
 		name?: string | null;
 		petname?: string | null;
@@ -4208,6 +5078,8 @@ export namespace MyNS {
 	}
 	export interface ListtransactionsbyaddressReturnDataMetaAccountedForFormProperties {
 		address: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		decimals: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		petname: FormControl<string | null | undefined>,
@@ -4240,12 +5112,16 @@ export namespace MyNS {
 	}
 
 	export interface ListtransactionsbyaddressReturnDataMetaNamedTo_0xa57bd00134b2850b2a1c55860c9e9ea100fdd6cf_ {
+
+		/** Type: double */
 		count?: number | null;
 		isContract?: boolean | null;
 		name?: string | null;
 		tags?: string | null;
 	}
 	export interface ListtransactionsbyaddressReturnDataMetaNamedTo_0xa57bd00134b2850b2a1c55860c9e9ea100fdd6cf_FormProperties {
+
+		/** Type: double */
 		count: FormControl<number | null | undefined>,
 		isContract: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -4262,113 +5138,325 @@ export namespace MyNS {
 	}
 
 	export interface ListtransactionsbyaddressReturnDataMetaUnNamedFrom {
+
+		/** Type: double */
 		'0x0039b625b1d8632c7a0057c964ec58a9f39789d3'?: number | null;
+
+		/** Type: double */
 		'0x005fde5294199d5c3eb5eb7a6e51954123b74b1c'?: number | null;
+
+		/** Type: double */
 		'0x006e920000ec97e58900b61e00800010005aa831'?: number | null;
+
+		/** Type: double */
 		'0x00a2aebc7e233cd2ffe5ab5856f90f0ad2fa3ccd'?: number | null;
+
+		/** Type: double */
 		'0x00dee1f836998bcc736022f314df906588d44808'?: number | null;
+
+		/** Type: double */
 		'0x042523db4f3effc33d2742022b2490258494f8b3'?: number | null;
+
+		/** Type: double */
 		'0x065e3dbafcb2c26a978720f9eb4bce6ad9d644a1'?: number | null;
+
+		/** Type: double */
 		'0x09e0781a47e9fd2b6258be09bd074f42022b9760'?: number | null;
+
+		/** Type: double */
 		'0x0d0b3f21d7c90d0b957aa6acbc993621311208e4'?: number | null;
+
+		/** Type: double */
 		'0x177b8ebe208cb71da818b6b8814c946c027240cd'?: number | null;
+
+		/** Type: double */
 		'0x1c8f6a5f009e051cab9c3851ca2da2c936b2775a'?: number | null;
+
+		/** Type: double */
 		'0x26bce6ecb5b10138e4bf14ac0ffcc8727fef3b2e'?: number | null;
+
+		/** Type: double */
 		'0x26fd09c8b44af53df38a9bad41d5abc55a1786af'?: number | null;
+
+		/** Type: double */
 		'0x30a1b724c9dfe2e12a19ed84878312d199d1519e'?: number | null;
+
+		/** Type: double */
 		'0x33cef21eb6068ebfcf70c7404efb8aaa08cad388'?: number | null;
+
+		/** Type: double */
 		'0x3443006ed920730005d88267c49f77abcde749af'?: number | null;
+
+		/** Type: double */
 		'0x346c802df3404bec2f265603db28b815321251ee'?: number | null;
+
+		/** Type: double */
 		'0x34ec9e3a1ac200ea58744ced891015152130e400'?: number | null;
+
+		/** Type: double */
 		'0x3b25d8e0801df1264a3d3a5f0bb79bbc292a09fb'?: number | null;
+
+		/** Type: double */
 		'0x3fb530b53036b5d8de892ad1eda14a576a22e6d6'?: number | null;
+
+		/** Type: double */
 		'0x3fbaea01b228368e67ca40d8cb195018fd095318'?: number | null;
+
+		/** Type: double */
 		'0x431b5a84acc1297eda88259f300262f1bc3a74f3'?: number | null;
+
+		/** Type: double */
 		'0x479bc00624e58398f4cf59d78884d12fb515790a'?: number | null;
+
+		/** Type: double */
 		'0x50efbf12580138bc263c95757826df4e24eb81c9'?: number | null;
+
+		/** Type: double */
 		'0x5a243879d1a43f48042c33bbc8051c69756f67d4'?: number | null;
+
+		/** Type: double */
 		'0x6046945c5b5ef5933b8e73a98a6ad7bf3e031df7'?: number | null;
+
+		/** Type: double */
 		'0x60b86af869f23aeb552fb7f3cabd11b829f6ab2f'?: number | null;
+
+		/** Type: double */
 		'0x72bb8c608c4ea4a887266985e680a04c056f5b2a'?: number | null;
+
+		/** Type: double */
 		'0x76dd32063b2899a59f6e15dbc474a160cc922751'?: number | null;
+
+		/** Type: double */
 		'0x76e40d0a69fd81826b5eb7d18145626d46eafdef'?: number | null;
+
+		/** Type: double */
 		'0x77eb9084ce8168901bcb11f14f02a7aab36fcd0c'?: number | null;
+
+		/** Type: double */
 		'0x8e2400a8822fe2da5a8c52b7f7b412acb49813c8'?: number | null;
+
+		/** Type: double */
 		'0x8e8f818d3371f797a2db7edb32803607c8b3c6a9'?: number | null;
+
+		/** Type: double */
 		'0x91aae0aafd9d2d730111b395c6871f248d7bd728'?: number | null;
+
+		/** Type: double */
 		'0x92824d144c6543f70a649b2c3e7596612375fd4d'?: number | null;
+
+		/** Type: double */
 		'0x93f635372008b7c5d770aaa6ff313454c8dc498c'?: number | null;
+
+		/** Type: double */
 		'0x9aab3f81604c683a1a0d14019fbfe15bef7aa1ee'?: number | null;
+
+		/** Type: double */
 		'0xa5a13f62ce1113838e0d9b4559b8caf5f76463c0'?: number | null;
+
+		/** Type: double */
 		'0xa6807d794411d9a80bc435dfc4cda0ba0ddde979'?: number | null;
+
+		/** Type: double */
 		'0xa855d1198c67839e596b9a5d7c46f8ea31cfefde'?: number | null;
+
+		/** Type: double */
 		'0xb0804b228c1c1449cdc94dd16fc8910421f45df1'?: number | null;
+
+		/** Type: double */
 		'0xb2088e2ec5e3599554a70cbb17c0ef1aac70dc78'?: number | null;
+
+		/** Type: double */
 		'0xb30b1dabe7451fe6646a15631d7537df64b193ce'?: number | null;
+
+		/** Type: double */
 		'0xba4ff5f9d6508000b7fd0035bd616aaec070384f'?: number | null;
+
+		/** Type: double */
 		'0xbbad96336943a36e3e292d973b3382dd0ba4d1ef'?: number | null;
+
+		/** Type: double */
 		'0xc11099d3cd9686158db0a40e88267e7b1740958c'?: number | null;
+
+		/** Type: double */
 		'0xd03154dbc4ae6beafa79f7ae6d99c12ce58f5b64'?: number | null;
+
+		/** Type: double */
 		'0xe58e5ed4544f58831a84c18178b911a5957ada08'?: number | null;
+
+		/** Type: double */
 		'0xeca2e2d894d19778939bd4dfc34d2a3c45e96456'?: number | null;
+
+		/** Type: double */
 		'0xf0475a1f184f062d1eee88f0d79ec4eb2795d4f0'?: number | null;
+
+		/** Type: double */
 		'0xf5e322fd6fadbef5d14eaf0f45a809c00739d1e7'?: number | null;
+
+		/** Type: double */
 		'0xfb9779477e5b4834bf2bc02dd29b97b344d0f700'?: number | null;
+
+		/** Type: double */
 		'0xff82bf5238637b7e5e345888bab9cd99f5ebe331'?: number | null;
 	}
 	export interface ListtransactionsbyaddressReturnDataMetaUnNamedFromFormProperties {
+
+		/** Type: double */
 		'0x0039b625b1d8632c7a0057c964ec58a9f39789d3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x005fde5294199d5c3eb5eb7a6e51954123b74b1c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x006e920000ec97e58900b61e00800010005aa831': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x00a2aebc7e233cd2ffe5ab5856f90f0ad2fa3ccd': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x00dee1f836998bcc736022f314df906588d44808': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x042523db4f3effc33d2742022b2490258494f8b3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x065e3dbafcb2c26a978720f9eb4bce6ad9d644a1': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x09e0781a47e9fd2b6258be09bd074f42022b9760': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0d0b3f21d7c90d0b957aa6acbc993621311208e4': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x177b8ebe208cb71da818b6b8814c946c027240cd': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x1c8f6a5f009e051cab9c3851ca2da2c936b2775a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26bce6ecb5b10138e4bf14ac0ffcc8727fef3b2e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26fd09c8b44af53df38a9bad41d5abc55a1786af': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x30a1b724c9dfe2e12a19ed84878312d199d1519e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x33cef21eb6068ebfcf70c7404efb8aaa08cad388': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3443006ed920730005d88267c49f77abcde749af': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x346c802df3404bec2f265603db28b815321251ee': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x34ec9e3a1ac200ea58744ced891015152130e400': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3b25d8e0801df1264a3d3a5f0bb79bbc292a09fb': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3fb530b53036b5d8de892ad1eda14a576a22e6d6': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3fbaea01b228368e67ca40d8cb195018fd095318': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x431b5a84acc1297eda88259f300262f1bc3a74f3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x479bc00624e58398f4cf59d78884d12fb515790a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x50efbf12580138bc263c95757826df4e24eb81c9': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x5a243879d1a43f48042c33bbc8051c69756f67d4': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x6046945c5b5ef5933b8e73a98a6ad7bf3e031df7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x60b86af869f23aeb552fb7f3cabd11b829f6ab2f': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x72bb8c608c4ea4a887266985e680a04c056f5b2a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x76dd32063b2899a59f6e15dbc474a160cc922751': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x76e40d0a69fd81826b5eb7d18145626d46eafdef': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x77eb9084ce8168901bcb11f14f02a7aab36fcd0c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x8e2400a8822fe2da5a8c52b7f7b412acb49813c8': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x8e8f818d3371f797a2db7edb32803607c8b3c6a9': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x91aae0aafd9d2d730111b395c6871f248d7bd728': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x92824d144c6543f70a649b2c3e7596612375fd4d': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x93f635372008b7c5d770aaa6ff313454c8dc498c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x9aab3f81604c683a1a0d14019fbfe15bef7aa1ee': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa5a13f62ce1113838e0d9b4559b8caf5f76463c0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa6807d794411d9a80bc435dfc4cda0ba0ddde979': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa855d1198c67839e596b9a5d7c46f8ea31cfefde': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb0804b228c1c1449cdc94dd16fc8910421f45df1': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb2088e2ec5e3599554a70cbb17c0ef1aac70dc78': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb30b1dabe7451fe6646a15631d7537df64b193ce': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xba4ff5f9d6508000b7fd0035bd616aaec070384f': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xbbad96336943a36e3e292d973b3382dd0ba4d1ef': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xc11099d3cd9686158db0a40e88267e7b1740958c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xd03154dbc4ae6beafa79f7ae6d99c12ce58f5b64': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xe58e5ed4544f58831a84c18178b911a5957ada08': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeca2e2d894d19778939bd4dfc34d2a3c45e96456': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf0475a1f184f062d1eee88f0d79ec4eb2795d4f0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf5e322fd6fadbef5d14eaf0f45a809c00739d1e7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xfb9779477e5b4834bf2bc02dd29b97b344d0f700': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xff82bf5238637b7e5e345888bab9cd99f5ebe331': FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddressReturnDataMetaUnNamedFromFormGroup() {
@@ -4431,61 +5519,169 @@ export namespace MyNS {
 	}
 
 	export interface ListtransactionsbyaddressReturnDataMetaUnNamedTo {
+
+		/** Type: double */
 		'0x0000000000007f150bd6f54c40a34d7c3d5e9f56'?: number | null;
+
+		/** Type: double */
 		'0x000000000035b5e5ad9019092c665357240f594e'?: number | null;
+
+		/** Type: double */
 		'0x0000000000a84d1a9b0063a910315c7ffa9cd248'?: number | null;
+
+		/** Type: double */
 		'0x0077732907bfc6208933cfd2a51afb8f33ca5958'?: number | null;
+
+		/** Type: double */
 		'0x1cedc0f3af8f9841b0a1f5c1a4ddc6e1a1629074'?: number | null;
+
+		/** Type: double */
 		'0x26c541f5e1c8eab0f6f0943bb1c8843ab18c4b0d'?: number | null;
+
+		/** Type: double */
 		'0x388c818ca8b9251b393131c08a736a67ccb19297'?: number | null;
+
+		/** Type: double */
 		'0x3e2766167aa2acb097c311d5a2e9eb17cad38b06'?: number | null;
+
+		/** Type: double */
 		'0x4a137fd5e7a256ef08a7de531a17d0be0cc7b6b6'?: number | null;
+
+		/** Type: double */
 		'0x5050e08626c499411b5d0e0b5af0e83d3fd82edf'?: number | null;
+
+		/** Type: double */
 		'0x535b918f3724001fd6fb52fcc6cbc220592990a3'?: number | null;
+
+		/** Type: double */
 		'0x57c1e0c2adf6eecdb135bcf9ec5f23b319be2c94'?: number | null;
+
+		/** Type: double */
 		'0x665179031a86561ac845f43d6b6341cffbcea040'?: number | null;
+
+		/** Type: double */
 		'0x7d9da47e83b82a52a2b45353cdad735afb43e6f0'?: number | null;
+
+		/** Type: double */
 		'0x81153f0889ab398c4acb42cb58b565a5392bba95'?: number | null;
+
+		/** Type: double */
 		'0x87b3f3c934a13c779e100a5d6e6d7ef577e86671'?: number | null;
+
+		/** Type: double */
 		'0x87d9da48db6e1f925cb67d3b7d2a292846c24cf7'?: number | null;
+
+		/** Type: double */
 		'0x98c3d3183c4b8a650614ad179a1a98be0a8d6b8e'?: number | null;
+
+		/** Type: double */
 		'0xa69babef1ca67a37ffaf7a485dfff3382056e78c'?: number | null;
+
+		/** Type: double */
 		'0xbeefbabeea323f07c59926295205d3b7a17e8638'?: number | null;
+
+		/** Type: double */
 		'0xcfc7e96be27d836b034b37132052549611341108'?: number | null;
+
+		/** Type: double */
 		'0xe94f1fa4f27d9d288ffea234bb62e1fbc086ca0c'?: number | null;
+
+		/** Type: double */
 		'0xeb00c80f00ca1585000000b84f00940000ed40e5'?: number | null;
+
+		/** Type: double */
 		'0xebec795c9c8bbd61ffc14a6662944748f299cacf'?: number | null;
+
+		/** Type: double */
 		'0xeee27662c2b8eba3cd936a23f039f3189633e4c8'?: number | null;
+
+		/** Type: double */
 		'0xf828add1619bfb64712654076490b2609ae6d774'?: number | null;
+
+		/** Type: double */
 		'0xffd22b84fb1d46ef74ed6530b2635be61340f347'?: number | null;
 	}
 	export interface ListtransactionsbyaddressReturnDataMetaUnNamedToFormProperties {
+
+		/** Type: double */
 		'0x0000000000007f150bd6f54c40a34d7c3d5e9f56': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x000000000035b5e5ad9019092c665357240f594e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0000000000a84d1a9b0063a910315c7ffa9cd248': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0077732907bfc6208933cfd2a51afb8f33ca5958': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x1cedc0f3af8f9841b0a1f5c1a4ddc6e1a1629074': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26c541f5e1c8eab0f6f0943bb1c8843ab18c4b0d': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x388c818ca8b9251b393131c08a736a67ccb19297': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3e2766167aa2acb097c311d5a2e9eb17cad38b06': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x4a137fd5e7a256ef08a7de531a17d0be0cc7b6b6': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x5050e08626c499411b5d0e0b5af0e83d3fd82edf': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x535b918f3724001fd6fb52fcc6cbc220592990a3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x57c1e0c2adf6eecdb135bcf9ec5f23b319be2c94': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x665179031a86561ac845f43d6b6341cffbcea040': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x7d9da47e83b82a52a2b45353cdad735afb43e6f0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x81153f0889ab398c4acb42cb58b565a5392bba95': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x87b3f3c934a13c779e100a5d6e6d7ef577e86671': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x87d9da48db6e1f925cb67d3b7d2a292846c24cf7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x98c3d3183c4b8a650614ad179a1a98be0a8d6b8e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa69babef1ca67a37ffaf7a485dfff3382056e78c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xbeefbabeea323f07c59926295205d3b7a17e8638': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xcfc7e96be27d836b034b37132052549611341108': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xe94f1fa4f27d9d288ffea234bb62e1fbc086ca0c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeb00c80f00ca1585000000b84f00940000ed40e5': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xebec795c9c8bbd61ffc14a6662944748f299cacf': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeee27662c2b8eba3cd936a23f039f3189633e4c8': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf828add1619bfb64712654076490b2609ae6d774': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xffd22b84fb1d46ef74ed6530b2635be61340f347': FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddressReturnDataMetaUnNamedToFormGroup() {
@@ -4523,54 +5719,110 @@ export namespace MyNS {
 
 	export interface ListtransactionsbyaddressReturnDataTransactions {
 		blockHash?: string | null;
+
+		/** Type: double */
 		blockNumber?: number | null;
 		compressedTx?: string | null;
 		date?: string | null;
 		encoding?: string | null;
+
+		/** Type: double */
 		ether?: number | null;
+
+		/** Type: double */
 		etherGasCost?: number | null;
 		from?: string | null;
 		function?: string | null;
+
+		/** Type: double */
 		gas?: number | null;
+
+		/** Type: double */
 		gasCost?: number | null;
+
+		/** Type: double */
 		gasPrice?: number | null;
+
+		/** Type: double */
 		gasUsed?: number | null;
+
+		/** Type: double */
 		hasToken?: number | null;
 		hash?: string | null;
 		input?: string | null;
+
+		/** Type: double */
 		isError?: number | null;
+
+		/** Type: double */
 		maxFeePerGas?: number | null;
+
+		/** Type: double */
 		maxPriorityFeePerGas?: number | null;
 		receipt?: ListtransactionsbyaddressReturnDataTransactionsReceipt;
+
+		/** Type: double */
 		timestamp?: number | null;
 		to?: string | null;
 		traces?: Array<string>;
+
+		/** Type: double */
 		transactionIndex?: number | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface ListtransactionsbyaddressReturnDataTransactionsFormProperties {
 		blockHash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		blockNumber: FormControl<number | null | undefined>,
 		compressedTx: FormControl<string | null | undefined>,
 		date: FormControl<string | null | undefined>,
 		encoding: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ether: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		etherGasCost: FormControl<number | null | undefined>,
 		from: FormControl<string | null | undefined>,
 		function: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		gas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasCost: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasUsed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		hasToken: FormControl<number | null | undefined>,
 		hash: FormControl<string | null | undefined>,
 		input: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		isError: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		maxFeePerGas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		maxPriorityFeePerGas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 		to: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		transactionIndex: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddressReturnDataTransactionsFormGroup() {
@@ -4604,15 +5856,27 @@ export namespace MyNS {
 
 	export interface ListtransactionsbyaddressReturnDataTransactionsReceipt {
 		contractAddress?: string | null;
+
+		/** Type: double */
 		effectiveGasPrice?: number | null;
+
+		/** Type: double */
 		gasUsed?: number | null;
 		logs?: Array<string>;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface ListtransactionsbyaddressReturnDataTransactionsReceiptFormProperties {
 		contractAddress: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		effectiveGasPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasUsed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddressReturnDataTransactionsReceiptFormGroup() {
@@ -4629,11 +5893,15 @@ export namespace MyNS {
 		data?: GetethereumbalanceReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetethereumbalanceReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetethereumbalanceReturnFormGroup() {
@@ -4662,11 +5930,15 @@ export namespace MyNS {
 		data?: Getallerc20balanceReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getallerc20balanceReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetallerc20balanceReturnFormGroup() {
@@ -4695,11 +5967,15 @@ export namespace MyNS {
 		data?: GetlastblocknumberReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetlastblocknumberReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetlastblocknumberReturnFormGroup() {
@@ -4712,9 +5988,13 @@ export namespace MyNS {
 	}
 
 	export interface GetlastblocknumberReturnData {
+
+		/** Type: double */
 		blocknumber?: number | null;
 	}
 	export interface GetlastblocknumberReturnDataFormProperties {
+
+		/** Type: double */
 		blocknumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetlastblocknumberReturnDataFormGroup() {
@@ -4728,11 +6008,15 @@ export namespace MyNS {
 		data?: Array<string>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetblockReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetblockReturnFormGroup() {
@@ -4748,11 +6032,15 @@ export namespace MyNS {
 		data?: Geterc20ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Geterc20ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGeterc20ReturnFormGroup() {
@@ -4766,6 +6054,8 @@ export namespace MyNS {
 
 	export interface Geterc20ReturnData {
 		contractaddress?: string | null;
+
+		/** Type: double */
 		decimals?: number | null;
 		name?: string | null;
 		symbol?: string | null;
@@ -4773,6 +6063,8 @@ export namespace MyNS {
 	}
 	export interface Geterc20ReturnDataFormProperties {
 		contractaddress: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		decimals: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
@@ -4793,11 +6085,15 @@ export namespace MyNS {
 		data?: GetgaspriceReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetgaspriceReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetgaspriceReturnFormGroup() {
@@ -4826,11 +6122,15 @@ export namespace MyNS {
 		data?: GetnftownerReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetnftownerReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetnftownerReturnFormGroup() {
@@ -4859,11 +6159,15 @@ export namespace MyNS {
 		data?: GetnfturiReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetnfturiReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetnfturiReturnFormGroup() {
@@ -4891,6 +6195,8 @@ export namespace MyNS {
 	export interface SendtransactionPostBody {
 		amount?: string | null;
 		from?: string | null;
+
+		/** Type: double */
 		gas?: number | null;
 		password?: string | null;
 		to?: string | null;
@@ -4898,6 +6204,8 @@ export namespace MyNS {
 	export interface SendtransactionPostBodyFormProperties {
 		amount: FormControl<string | null | undefined>,
 		from: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		gas: FormControl<number | null | undefined>,
 		password: FormControl<string | null | undefined>,
 		to: FormControl<string | null | undefined>,
@@ -4914,17 +6222,25 @@ export namespace MyNS {
 	}
 
 	export interface Senderc20PostBody {
+
+		/** Type: double */
 		amount?: number | null;
 		contractaddress?: string | null;
 		from?: string | null;
+
+		/** Type: double */
 		gas?: number | null;
 		password?: string | null;
 		to?: string | null;
 	}
 	export interface Senderc20PostBodyFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		contractaddress: FormControl<string | null | undefined>,
 		from: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		gas: FormControl<number | null | undefined>,
 		password: FormControl<string | null | undefined>,
 		to: FormControl<string | null | undefined>,
@@ -4946,6 +6262,8 @@ export namespace MyNS {
 		from?: string | null;
 		password?: string | null;
 		to?: string | null;
+
+		/** Type: double */
 		tokenid?: number | null;
 	}
 	export interface Senderc721PostBodyFormProperties {
@@ -4953,6 +6271,8 @@ export namespace MyNS {
 		from: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
 		to: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tokenid: FormControl<number | null | undefined>,
 	}
 	export function CreateSenderc721PostBodyFormGroup() {
@@ -4970,11 +6290,15 @@ export namespace MyNS {
 		GettransactionReturnData?: Array<GettransactionReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GettransactionReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransactionReturnFormGroup() {
@@ -5072,11 +6396,15 @@ export namespace MyNS {
 		GettransactionreceiptReturnData?: Array<GettransactionreceiptReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GettransactionreceiptReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransactionreceiptReturnFormGroup() {
@@ -5174,11 +6502,15 @@ export namespace MyNS {
 		data?: ListsubscribedaddressesReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface ListsubscribedaddressesReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListsubscribedaddressesReturnFormGroup() {
@@ -5202,6 +6534,8 @@ export namespace MyNS {
 	}
 
 	export interface ListsubscribedaddressesReturnDataIpns {
+
+		/** Type: double */
 		bbid?: number | null;
 		contractaddress?: string | null;
 		from?: any;
@@ -5212,6 +6546,8 @@ export namespace MyNS {
 		url?: string | null;
 	}
 	export interface ListsubscribedaddressesReturnDataIpnsFormProperties {
+
+		/** Type: double */
 		bbid: FormControl<number | null | undefined>,
 		contractaddress: FormControl<string | null | undefined>,
 		from: FormControl<any | null | undefined>,
@@ -5258,11 +6594,15 @@ export namespace MyNS {
 		data?: SubscribeaddressReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface SubscribeaddressReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscribeaddressReturnFormGroup() {
@@ -5286,6 +6626,8 @@ export namespace MyNS {
 	}
 
 	export interface SubscribeaddressReturnDataIpn {
+
+		/** Type: double */
 		bbid?: number | null;
 		contractaddress?: any;
 		from?: any;
@@ -5296,6 +6638,8 @@ export namespace MyNS {
 		url?: string | null;
 	}
 	export interface SubscribeaddressReturnDataIpnFormProperties {
+
+		/** Type: double */
 		bbid: FormControl<number | null | undefined>,
 		contractaddress: FormControl<any | null | undefined>,
 		from: FormControl<any | null | undefined>,
@@ -5323,11 +6667,15 @@ export namespace MyNS {
 		data?: ResendfailedipnReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface ResendfailedipnReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateResendfailedipnReturnFormGroup() {
@@ -5356,11 +6704,15 @@ export namespace MyNS {
 		data?: UnsubscribeaddressReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface UnsubscribeaddressReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateUnsubscribeaddressReturnFormGroup() {
@@ -5479,11 +6831,15 @@ export namespace MyNS {
 		data?: GetcurrenciesReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetcurrenciesReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetcurrenciesReturnFormGroup() {
@@ -5809,11 +7165,15 @@ export namespace MyNS {
 		data?: GetpricedatabycurrencyReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetpricedatabycurrencyReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetpricedatabycurrencyReturnFormGroup() {
@@ -5837,20 +7197,40 @@ export namespace MyNS {
 	}
 
 	export interface GetpricedatabycurrencyReturnDataBitcoin {
+
+		/** Type: double */
 		currentPrice?: number | null;
+
+		/** Type: double */
 		high24h?: number | null;
+
+		/** Type: double */
 		low24h?: number | null;
 		name?: string | null;
+
+		/** Type: double */
 		priceChange24h?: number | null;
+
+		/** Type: double */
 		priceChangePercentage24h?: number | null;
 		symbol?: string | null;
 	}
 	export interface GetpricedatabycurrencyReturnDataBitcoinFormProperties {
+
+		/** Type: double */
 		currentPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		high24h: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		low24h: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		priceChange24h: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		priceChangePercentage24h: FormControl<number | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
 	}
@@ -5871,11 +7251,15 @@ export namespace MyNS {
 		data?: GetratebycurrencyReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetratebycurrencyReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetratebycurrencyReturnFormGroup() {
@@ -5890,11 +7274,15 @@ export namespace MyNS {
 	export interface GetratebycurrencyReturnData {
 		currency?: string | null;
 		name?: string | null;
+
+		/** Type: double */
 		price?: number | null;
 	}
 	export interface GetratebycurrencyReturnDataFormProperties {
 		currency: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		price: FormControl<number | null | undefined>,
 	}
 	export function CreateGetratebycurrencyReturnDataFormGroup() {
@@ -5910,11 +7298,15 @@ export namespace MyNS {
 		data?: GetalltimelowReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetalltimelowReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetalltimelowReturnFormGroup() {
@@ -5938,13 +7330,21 @@ export namespace MyNS {
 	}
 
 	export interface GetalltimelowReturnDataBitcoin {
+
+		/** Type: double */
 		atl?: number | null;
+
+		/** Type: double */
 		atlPercentage?: number | null;
 		name?: string | null;
 		symbol?: string | null;
 	}
 	export interface GetalltimelowReturnDataBitcoinFormProperties {
+
+		/** Type: double */
 		atl: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		atlPercentage: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
@@ -5963,11 +7363,15 @@ export namespace MyNS {
 		data?: GetalltimehighReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetalltimehighReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetalltimehighReturnFormGroup() {
@@ -5991,14 +7395,22 @@ export namespace MyNS {
 	}
 
 	export interface GetalltimehighReturnDataBitcoin {
+
+		/** Type: double */
 		ath?: number | null;
 		athDate?: GetalltimehighReturnDataBitcoinAthDate;
+
+		/** Type: double */
 		athPercentage?: number | null;
 		name?: string | null;
 		symbol?: string | null;
 	}
 	export interface GetalltimehighReturnDataBitcoinFormProperties {
+
+		/** Type: double */
 		ath: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		athPercentage: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
@@ -6014,12 +7426,20 @@ export namespace MyNS {
 	}
 
 	export interface GetalltimehighReturnDataBitcoinAthDate {
+
+		/** Type: double */
 		offset?: number | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 		timezone?: GetalltimehighReturnDataBitcoinAthDateTimezone;
 	}
 	export interface GetalltimehighReturnDataBitcoinAthDateFormProperties {
+
+		/** Type: double */
 		offset: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGetalltimehighReturnDataBitcoinAthDateFormGroup() {
@@ -6048,13 +7468,21 @@ export namespace MyNS {
 	export interface GetalltimehighReturnDataBitcoinAthDateTimezoneLocation {
 		comments?: string | null;
 		country_code?: string | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface GetalltimehighReturnDataBitcoinAthDateTimezoneLocationFormProperties {
 		comments: FormControl<string | null | undefined>,
 		country_code: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateGetalltimehighReturnDataBitcoinAthDateTimezoneLocationFormGroup() {
@@ -6070,15 +7498,23 @@ export namespace MyNS {
 	export interface GetalltimehighReturnDataBitcoinAthDateTimezoneTransitions {
 		abbr?: string | null;
 		isdst?: boolean | null;
+
+		/** Type: double */
 		offset?: number | null;
 		time?: string | null;
+
+		/** Type: double */
 		ts?: number | null;
 	}
 	export interface GetalltimehighReturnDataBitcoinAthDateTimezoneTransitionsFormProperties {
 		abbr: FormControl<string | null | undefined>,
 		isdst: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		offset: FormControl<number | null | undefined>,
 		time: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ts: FormControl<number | null | undefined>,
 	}
 	export function CreateGetalltimehighReturnDataBitcoinAthDateTimezoneTransitionsFormGroup() {
@@ -6096,11 +7532,15 @@ export namespace MyNS {
 		data?: Listaddresses1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listaddresses1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListaddresses1ReturnFormGroup() {
@@ -6140,11 +7580,15 @@ export namespace MyNS {
 		data?: Newaddress1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Newaddress1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateNewaddress1ReturnFormGroup() {
@@ -6190,11 +7634,15 @@ export namespace MyNS {
 		address?: string | null;
 		crypto?: Importaddress1PostBodyContentCrypto;
 		id?: string | null;
+
+		/** Type: double */
 		version?: number | null;
 	}
 	export interface Importaddress1PostBodyContentFormProperties {
 		address: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateImportaddress1PostBodyContentFormGroup() {
@@ -6244,16 +7692,32 @@ export namespace MyNS {
 	}
 
 	export interface Importaddress1PostBodyContentCryptoKdfparams {
+
+		/** Type: double */
 		dklen?: number | null;
+
+		/** Type: double */
 		n?: number | null;
+
+		/** Type: double */
 		p?: number | null;
+
+		/** Type: double */
 		r?: number | null;
 		salt?: string | null;
 	}
 	export interface Importaddress1PostBodyContentCryptoKdfparamsFormProperties {
+
+		/** Type: double */
 		dklen: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		n: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		p: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		r: FormControl<number | null | undefined>,
 		salt: FormControl<string | null | undefined>,
 	}
@@ -6272,11 +7736,15 @@ export namespace MyNS {
 		data?: Importaddress1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Importaddress1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateImportaddress1ReturnFormGroup() {
@@ -6305,11 +7773,15 @@ export namespace MyNS {
 		data?: Deleteaddress1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Deleteaddress1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteaddress1ReturnFormGroup() {
@@ -6341,11 +7813,15 @@ export namespace MyNS {
 		data?: Listtransactionsbyaddress1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listtransactionsbyaddress1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress1ReturnFormGroup() {
@@ -6358,13 +7834,21 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress1ReturnData {
+
+		/** Type: double */
 		current_page?: number | null;
+
+		/** Type: double */
 		max_pages?: number | null;
 		meta?: Listtransactionsbyaddress1ReturnDataMeta;
 		Listtransactionsbyaddress1ReturnDataTransactions?: Array<Listtransactionsbyaddress1ReturnDataTransactions>;
 	}
 	export interface Listtransactionsbyaddress1ReturnDataFormProperties {
+
+		/** Type: double */
 		current_page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		max_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress1ReturnDataFormGroup() {
@@ -6378,30 +7862,62 @@ export namespace MyNS {
 	export interface Listtransactionsbyaddress1ReturnDataMeta {
 		accountedFor?: Listtransactionsbyaddress1ReturnDataMetaAccountedFor;
 		chain?: string | null;
+
+		/** Type: double */
 		client?: number | null;
+
+		/** Type: double */
 		clientId?: number | null;
+
+		/** Type: double */
 		finalized?: number | null;
+
+		/** Type: double */
 		first_block?: number | null;
 		last_block?: string | null;
 		namedFrom?: Array<string>;
 		namedTo?: Listtransactionsbyaddress1ReturnDataMetaNamedTo;
+
+		/** Type: double */
 		networkId?: number | null;
+
+		/** Type: double */
 		ripe?: number | null;
+
+		/** Type: double */
 		staging?: number | null;
 		unNamedFrom?: Listtransactionsbyaddress1ReturnDataMetaUnNamedFrom;
 		unNamedTo?: Listtransactionsbyaddress1ReturnDataMetaUnNamedTo;
+
+		/** Type: double */
 		unripe?: number | null;
 	}
 	export interface Listtransactionsbyaddress1ReturnDataMetaFormProperties {
 		chain: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		client: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		clientId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		finalized: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		first_block: FormControl<number | null | undefined>,
 		last_block: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		networkId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ripe: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		staging: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unripe: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress1ReturnDataMetaFormGroup() {
@@ -6422,6 +7938,8 @@ export namespace MyNS {
 
 	export interface Listtransactionsbyaddress1ReturnDataMetaAccountedFor {
 		address?: string | null;
+
+		/** Type: double */
 		decimals?: number | null;
 		name?: string | null;
 		petname?: string | null;
@@ -6431,6 +7949,8 @@ export namespace MyNS {
 	}
 	export interface Listtransactionsbyaddress1ReturnDataMetaAccountedForFormProperties {
 		address: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		decimals: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		petname: FormControl<string | null | undefined>,
@@ -6463,12 +7983,16 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress1ReturnDataMetaNamedTo_0xa57bd00134b2850b2a1c55860c9e9ea100fdd6cf_ {
+
+		/** Type: double */
 		count?: number | null;
 		isContract?: boolean | null;
 		name?: string | null;
 		tags?: string | null;
 	}
 	export interface Listtransactionsbyaddress1ReturnDataMetaNamedTo_0xa57bd00134b2850b2a1c55860c9e9ea100fdd6cf_FormProperties {
+
+		/** Type: double */
 		count: FormControl<number | null | undefined>,
 		isContract: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -6485,113 +8009,325 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress1ReturnDataMetaUnNamedFrom {
+
+		/** Type: double */
 		'0x0039b625b1d8632c7a0057c964ec58a9f39789d3'?: number | null;
+
+		/** Type: double */
 		'0x005fde5294199d5c3eb5eb7a6e51954123b74b1c'?: number | null;
+
+		/** Type: double */
 		'0x006e920000ec97e58900b61e00800010005aa831'?: number | null;
+
+		/** Type: double */
 		'0x00a2aebc7e233cd2ffe5ab5856f90f0ad2fa3ccd'?: number | null;
+
+		/** Type: double */
 		'0x00dee1f836998bcc736022f314df906588d44808'?: number | null;
+
+		/** Type: double */
 		'0x042523db4f3effc33d2742022b2490258494f8b3'?: number | null;
+
+		/** Type: double */
 		'0x065e3dbafcb2c26a978720f9eb4bce6ad9d644a1'?: number | null;
+
+		/** Type: double */
 		'0x09e0781a47e9fd2b6258be09bd074f42022b9760'?: number | null;
+
+		/** Type: double */
 		'0x0d0b3f21d7c90d0b957aa6acbc993621311208e4'?: number | null;
+
+		/** Type: double */
 		'0x177b8ebe208cb71da818b6b8814c946c027240cd'?: number | null;
+
+		/** Type: double */
 		'0x1c8f6a5f009e051cab9c3851ca2da2c936b2775a'?: number | null;
+
+		/** Type: double */
 		'0x26bce6ecb5b10138e4bf14ac0ffcc8727fef3b2e'?: number | null;
+
+		/** Type: double */
 		'0x26fd09c8b44af53df38a9bad41d5abc55a1786af'?: number | null;
+
+		/** Type: double */
 		'0x30a1b724c9dfe2e12a19ed84878312d199d1519e'?: number | null;
+
+		/** Type: double */
 		'0x33cef21eb6068ebfcf70c7404efb8aaa08cad388'?: number | null;
+
+		/** Type: double */
 		'0x3443006ed920730005d88267c49f77abcde749af'?: number | null;
+
+		/** Type: double */
 		'0x346c802df3404bec2f265603db28b815321251ee'?: number | null;
+
+		/** Type: double */
 		'0x34ec9e3a1ac200ea58744ced891015152130e400'?: number | null;
+
+		/** Type: double */
 		'0x3b25d8e0801df1264a3d3a5f0bb79bbc292a09fb'?: number | null;
+
+		/** Type: double */
 		'0x3fb530b53036b5d8de892ad1eda14a576a22e6d6'?: number | null;
+
+		/** Type: double */
 		'0x3fbaea01b228368e67ca40d8cb195018fd095318'?: number | null;
+
+		/** Type: double */
 		'0x431b5a84acc1297eda88259f300262f1bc3a74f3'?: number | null;
+
+		/** Type: double */
 		'0x479bc00624e58398f4cf59d78884d12fb515790a'?: number | null;
+
+		/** Type: double */
 		'0x50efbf12580138bc263c95757826df4e24eb81c9'?: number | null;
+
+		/** Type: double */
 		'0x5a243879d1a43f48042c33bbc8051c69756f67d4'?: number | null;
+
+		/** Type: double */
 		'0x6046945c5b5ef5933b8e73a98a6ad7bf3e031df7'?: number | null;
+
+		/** Type: double */
 		'0x60b86af869f23aeb552fb7f3cabd11b829f6ab2f'?: number | null;
+
+		/** Type: double */
 		'0x72bb8c608c4ea4a887266985e680a04c056f5b2a'?: number | null;
+
+		/** Type: double */
 		'0x76dd32063b2899a59f6e15dbc474a160cc922751'?: number | null;
+
+		/** Type: double */
 		'0x76e40d0a69fd81826b5eb7d18145626d46eafdef'?: number | null;
+
+		/** Type: double */
 		'0x77eb9084ce8168901bcb11f14f02a7aab36fcd0c'?: number | null;
+
+		/** Type: double */
 		'0x8e2400a8822fe2da5a8c52b7f7b412acb49813c8'?: number | null;
+
+		/** Type: double */
 		'0x8e8f818d3371f797a2db7edb32803607c8b3c6a9'?: number | null;
+
+		/** Type: double */
 		'0x91aae0aafd9d2d730111b395c6871f248d7bd728'?: number | null;
+
+		/** Type: double */
 		'0x92824d144c6543f70a649b2c3e7596612375fd4d'?: number | null;
+
+		/** Type: double */
 		'0x93f635372008b7c5d770aaa6ff313454c8dc498c'?: number | null;
+
+		/** Type: double */
 		'0x9aab3f81604c683a1a0d14019fbfe15bef7aa1ee'?: number | null;
+
+		/** Type: double */
 		'0xa5a13f62ce1113838e0d9b4559b8caf5f76463c0'?: number | null;
+
+		/** Type: double */
 		'0xa6807d794411d9a80bc435dfc4cda0ba0ddde979'?: number | null;
+
+		/** Type: double */
 		'0xa855d1198c67839e596b9a5d7c46f8ea31cfefde'?: number | null;
+
+		/** Type: double */
 		'0xb0804b228c1c1449cdc94dd16fc8910421f45df1'?: number | null;
+
+		/** Type: double */
 		'0xb2088e2ec5e3599554a70cbb17c0ef1aac70dc78'?: number | null;
+
+		/** Type: double */
 		'0xb30b1dabe7451fe6646a15631d7537df64b193ce'?: number | null;
+
+		/** Type: double */
 		'0xba4ff5f9d6508000b7fd0035bd616aaec070384f'?: number | null;
+
+		/** Type: double */
 		'0xbbad96336943a36e3e292d973b3382dd0ba4d1ef'?: number | null;
+
+		/** Type: double */
 		'0xc11099d3cd9686158db0a40e88267e7b1740958c'?: number | null;
+
+		/** Type: double */
 		'0xd03154dbc4ae6beafa79f7ae6d99c12ce58f5b64'?: number | null;
+
+		/** Type: double */
 		'0xe58e5ed4544f58831a84c18178b911a5957ada08'?: number | null;
+
+		/** Type: double */
 		'0xeca2e2d894d19778939bd4dfc34d2a3c45e96456'?: number | null;
+
+		/** Type: double */
 		'0xf0475a1f184f062d1eee88f0d79ec4eb2795d4f0'?: number | null;
+
+		/** Type: double */
 		'0xf5e322fd6fadbef5d14eaf0f45a809c00739d1e7'?: number | null;
+
+		/** Type: double */
 		'0xfb9779477e5b4834bf2bc02dd29b97b344d0f700'?: number | null;
+
+		/** Type: double */
 		'0xff82bf5238637b7e5e345888bab9cd99f5ebe331'?: number | null;
 	}
 	export interface Listtransactionsbyaddress1ReturnDataMetaUnNamedFromFormProperties {
+
+		/** Type: double */
 		'0x0039b625b1d8632c7a0057c964ec58a9f39789d3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x005fde5294199d5c3eb5eb7a6e51954123b74b1c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x006e920000ec97e58900b61e00800010005aa831': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x00a2aebc7e233cd2ffe5ab5856f90f0ad2fa3ccd': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x00dee1f836998bcc736022f314df906588d44808': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x042523db4f3effc33d2742022b2490258494f8b3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x065e3dbafcb2c26a978720f9eb4bce6ad9d644a1': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x09e0781a47e9fd2b6258be09bd074f42022b9760': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0d0b3f21d7c90d0b957aa6acbc993621311208e4': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x177b8ebe208cb71da818b6b8814c946c027240cd': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x1c8f6a5f009e051cab9c3851ca2da2c936b2775a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26bce6ecb5b10138e4bf14ac0ffcc8727fef3b2e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26fd09c8b44af53df38a9bad41d5abc55a1786af': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x30a1b724c9dfe2e12a19ed84878312d199d1519e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x33cef21eb6068ebfcf70c7404efb8aaa08cad388': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3443006ed920730005d88267c49f77abcde749af': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x346c802df3404bec2f265603db28b815321251ee': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x34ec9e3a1ac200ea58744ced891015152130e400': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3b25d8e0801df1264a3d3a5f0bb79bbc292a09fb': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3fb530b53036b5d8de892ad1eda14a576a22e6d6': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3fbaea01b228368e67ca40d8cb195018fd095318': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x431b5a84acc1297eda88259f300262f1bc3a74f3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x479bc00624e58398f4cf59d78884d12fb515790a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x50efbf12580138bc263c95757826df4e24eb81c9': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x5a243879d1a43f48042c33bbc8051c69756f67d4': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x6046945c5b5ef5933b8e73a98a6ad7bf3e031df7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x60b86af869f23aeb552fb7f3cabd11b829f6ab2f': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x72bb8c608c4ea4a887266985e680a04c056f5b2a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x76dd32063b2899a59f6e15dbc474a160cc922751': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x76e40d0a69fd81826b5eb7d18145626d46eafdef': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x77eb9084ce8168901bcb11f14f02a7aab36fcd0c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x8e2400a8822fe2da5a8c52b7f7b412acb49813c8': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x8e8f818d3371f797a2db7edb32803607c8b3c6a9': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x91aae0aafd9d2d730111b395c6871f248d7bd728': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x92824d144c6543f70a649b2c3e7596612375fd4d': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x93f635372008b7c5d770aaa6ff313454c8dc498c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x9aab3f81604c683a1a0d14019fbfe15bef7aa1ee': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa5a13f62ce1113838e0d9b4559b8caf5f76463c0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa6807d794411d9a80bc435dfc4cda0ba0ddde979': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa855d1198c67839e596b9a5d7c46f8ea31cfefde': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb0804b228c1c1449cdc94dd16fc8910421f45df1': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb2088e2ec5e3599554a70cbb17c0ef1aac70dc78': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb30b1dabe7451fe6646a15631d7537df64b193ce': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xba4ff5f9d6508000b7fd0035bd616aaec070384f': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xbbad96336943a36e3e292d973b3382dd0ba4d1ef': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xc11099d3cd9686158db0a40e88267e7b1740958c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xd03154dbc4ae6beafa79f7ae6d99c12ce58f5b64': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xe58e5ed4544f58831a84c18178b911a5957ada08': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeca2e2d894d19778939bd4dfc34d2a3c45e96456': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf0475a1f184f062d1eee88f0d79ec4eb2795d4f0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf5e322fd6fadbef5d14eaf0f45a809c00739d1e7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xfb9779477e5b4834bf2bc02dd29b97b344d0f700': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xff82bf5238637b7e5e345888bab9cd99f5ebe331': FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress1ReturnDataMetaUnNamedFromFormGroup() {
@@ -6654,61 +8390,169 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress1ReturnDataMetaUnNamedTo {
+
+		/** Type: double */
 		'0x0000000000007f150bd6f54c40a34d7c3d5e9f56'?: number | null;
+
+		/** Type: double */
 		'0x000000000035b5e5ad9019092c665357240f594e'?: number | null;
+
+		/** Type: double */
 		'0x0000000000a84d1a9b0063a910315c7ffa9cd248'?: number | null;
+
+		/** Type: double */
 		'0x0077732907bfc6208933cfd2a51afb8f33ca5958'?: number | null;
+
+		/** Type: double */
 		'0x1cedc0f3af8f9841b0a1f5c1a4ddc6e1a1629074'?: number | null;
+
+		/** Type: double */
 		'0x26c541f5e1c8eab0f6f0943bb1c8843ab18c4b0d'?: number | null;
+
+		/** Type: double */
 		'0x388c818ca8b9251b393131c08a736a67ccb19297'?: number | null;
+
+		/** Type: double */
 		'0x3e2766167aa2acb097c311d5a2e9eb17cad38b06'?: number | null;
+
+		/** Type: double */
 		'0x4a137fd5e7a256ef08a7de531a17d0be0cc7b6b6'?: number | null;
+
+		/** Type: double */
 		'0x5050e08626c499411b5d0e0b5af0e83d3fd82edf'?: number | null;
+
+		/** Type: double */
 		'0x535b918f3724001fd6fb52fcc6cbc220592990a3'?: number | null;
+
+		/** Type: double */
 		'0x57c1e0c2adf6eecdb135bcf9ec5f23b319be2c94'?: number | null;
+
+		/** Type: double */
 		'0x665179031a86561ac845f43d6b6341cffbcea040'?: number | null;
+
+		/** Type: double */
 		'0x7d9da47e83b82a52a2b45353cdad735afb43e6f0'?: number | null;
+
+		/** Type: double */
 		'0x81153f0889ab398c4acb42cb58b565a5392bba95'?: number | null;
+
+		/** Type: double */
 		'0x87b3f3c934a13c779e100a5d6e6d7ef577e86671'?: number | null;
+
+		/** Type: double */
 		'0x87d9da48db6e1f925cb67d3b7d2a292846c24cf7'?: number | null;
+
+		/** Type: double */
 		'0x98c3d3183c4b8a650614ad179a1a98be0a8d6b8e'?: number | null;
+
+		/** Type: double */
 		'0xa69babef1ca67a37ffaf7a485dfff3382056e78c'?: number | null;
+
+		/** Type: double */
 		'0xbeefbabeea323f07c59926295205d3b7a17e8638'?: number | null;
+
+		/** Type: double */
 		'0xcfc7e96be27d836b034b37132052549611341108'?: number | null;
+
+		/** Type: double */
 		'0xe94f1fa4f27d9d288ffea234bb62e1fbc086ca0c'?: number | null;
+
+		/** Type: double */
 		'0xeb00c80f00ca1585000000b84f00940000ed40e5'?: number | null;
+
+		/** Type: double */
 		'0xebec795c9c8bbd61ffc14a6662944748f299cacf'?: number | null;
+
+		/** Type: double */
 		'0xeee27662c2b8eba3cd936a23f039f3189633e4c8'?: number | null;
+
+		/** Type: double */
 		'0xf828add1619bfb64712654076490b2609ae6d774'?: number | null;
+
+		/** Type: double */
 		'0xffd22b84fb1d46ef74ed6530b2635be61340f347'?: number | null;
 	}
 	export interface Listtransactionsbyaddress1ReturnDataMetaUnNamedToFormProperties {
+
+		/** Type: double */
 		'0x0000000000007f150bd6f54c40a34d7c3d5e9f56': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x000000000035b5e5ad9019092c665357240f594e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0000000000a84d1a9b0063a910315c7ffa9cd248': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0077732907bfc6208933cfd2a51afb8f33ca5958': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x1cedc0f3af8f9841b0a1f5c1a4ddc6e1a1629074': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26c541f5e1c8eab0f6f0943bb1c8843ab18c4b0d': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x388c818ca8b9251b393131c08a736a67ccb19297': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3e2766167aa2acb097c311d5a2e9eb17cad38b06': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x4a137fd5e7a256ef08a7de531a17d0be0cc7b6b6': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x5050e08626c499411b5d0e0b5af0e83d3fd82edf': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x535b918f3724001fd6fb52fcc6cbc220592990a3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x57c1e0c2adf6eecdb135bcf9ec5f23b319be2c94': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x665179031a86561ac845f43d6b6341cffbcea040': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x7d9da47e83b82a52a2b45353cdad735afb43e6f0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x81153f0889ab398c4acb42cb58b565a5392bba95': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x87b3f3c934a13c779e100a5d6e6d7ef577e86671': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x87d9da48db6e1f925cb67d3b7d2a292846c24cf7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x98c3d3183c4b8a650614ad179a1a98be0a8d6b8e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa69babef1ca67a37ffaf7a485dfff3382056e78c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xbeefbabeea323f07c59926295205d3b7a17e8638': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xcfc7e96be27d836b034b37132052549611341108': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xe94f1fa4f27d9d288ffea234bb62e1fbc086ca0c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeb00c80f00ca1585000000b84f00940000ed40e5': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xebec795c9c8bbd61ffc14a6662944748f299cacf': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeee27662c2b8eba3cd936a23f039f3189633e4c8': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf828add1619bfb64712654076490b2609ae6d774': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xffd22b84fb1d46ef74ed6530b2635be61340f347': FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress1ReturnDataMetaUnNamedToFormGroup() {
@@ -6746,54 +8590,110 @@ export namespace MyNS {
 
 	export interface Listtransactionsbyaddress1ReturnDataTransactions {
 		blockHash?: string | null;
+
+		/** Type: double */
 		blockNumber?: number | null;
 		compressedTx?: string | null;
 		date?: string | null;
 		encoding?: string | null;
+
+		/** Type: double */
 		ether?: number | null;
+
+		/** Type: double */
 		etherGasCost?: number | null;
 		from?: string | null;
 		function?: string | null;
+
+		/** Type: double */
 		gas?: number | null;
+
+		/** Type: double */
 		gasCost?: number | null;
+
+		/** Type: double */
 		gasPrice?: number | null;
+
+		/** Type: double */
 		gasUsed?: number | null;
+
+		/** Type: double */
 		hasToken?: number | null;
 		hash?: string | null;
 		input?: string | null;
+
+		/** Type: double */
 		isError?: number | null;
+
+		/** Type: double */
 		maxFeePerGas?: number | null;
+
+		/** Type: double */
 		maxPriorityFeePerGas?: number | null;
 		receipt?: Listtransactionsbyaddress1ReturnDataTransactionsReceipt;
+
+		/** Type: double */
 		timestamp?: number | null;
 		to?: string | null;
 		traces?: Array<string>;
+
+		/** Type: double */
 		transactionIndex?: number | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface Listtransactionsbyaddress1ReturnDataTransactionsFormProperties {
 		blockHash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		blockNumber: FormControl<number | null | undefined>,
 		compressedTx: FormControl<string | null | undefined>,
 		date: FormControl<string | null | undefined>,
 		encoding: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ether: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		etherGasCost: FormControl<number | null | undefined>,
 		from: FormControl<string | null | undefined>,
 		function: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		gas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasCost: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasUsed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		hasToken: FormControl<number | null | undefined>,
 		hash: FormControl<string | null | undefined>,
 		input: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		isError: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		maxFeePerGas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		maxPriorityFeePerGas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 		to: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		transactionIndex: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress1ReturnDataTransactionsFormGroup() {
@@ -6827,15 +8727,27 @@ export namespace MyNS {
 
 	export interface Listtransactionsbyaddress1ReturnDataTransactionsReceipt {
 		contractAddress?: string | null;
+
+		/** Type: double */
 		effectiveGasPrice?: number | null;
+
+		/** Type: double */
 		gasUsed?: number | null;
 		logs?: Array<string>;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listtransactionsbyaddress1ReturnDataTransactionsReceiptFormProperties {
 		contractAddress: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		effectiveGasPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasUsed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress1ReturnDataTransactionsReceiptFormGroup() {
@@ -6852,11 +8764,15 @@ export namespace MyNS {
 		data?: GetpolygonbalanceReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetpolygonbalanceReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetpolygonbalanceReturnFormGroup() {
@@ -6885,11 +8801,15 @@ export namespace MyNS {
 		data?: Geterc20balance1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Geterc20balance1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGeterc20balance1ReturnFormGroup() {
@@ -6918,11 +8838,15 @@ export namespace MyNS {
 		data?: Getlastblocknumber1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getlastblocknumber1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetlastblocknumber1ReturnFormGroup() {
@@ -6935,9 +8859,13 @@ export namespace MyNS {
 	}
 
 	export interface Getlastblocknumber1ReturnData {
+
+		/** Type: double */
 		blocknumber?: number | null;
 	}
 	export interface Getlastblocknumber1ReturnDataFormProperties {
+
+		/** Type: double */
 		blocknumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetlastblocknumber1ReturnDataFormGroup() {
@@ -6951,11 +8879,15 @@ export namespace MyNS {
 		data?: Array<string>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getblock1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetblock1ReturnFormGroup() {
@@ -6971,11 +8903,15 @@ export namespace MyNS {
 		data?: Geterc201ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Geterc201ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGeterc201ReturnFormGroup() {
@@ -6989,6 +8925,8 @@ export namespace MyNS {
 
 	export interface Geterc201ReturnData {
 		contractaddress?: string | null;
+
+		/** Type: double */
 		decimals?: number | null;
 		name?: string | null;
 		symbol?: string | null;
@@ -6996,6 +8934,8 @@ export namespace MyNS {
 	}
 	export interface Geterc201ReturnDataFormProperties {
 		contractaddress: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		decimals: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		symbol: FormControl<string | null | undefined>,
@@ -7016,11 +8956,15 @@ export namespace MyNS {
 		data?: Getgasprice1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getgasprice1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetgasprice1ReturnFormGroup() {
@@ -7049,11 +8993,15 @@ export namespace MyNS {
 		data?: Getnftowner1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getnftowner1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetnftowner1ReturnFormGroup() {
@@ -7082,11 +9030,15 @@ export namespace MyNS {
 		data?: Getnfturi1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getnfturi1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetnfturi1ReturnFormGroup() {
@@ -7114,6 +9066,8 @@ export namespace MyNS {
 	export interface Sendtransaction1PostBody {
 		amount?: string | null;
 		from?: string | null;
+
+		/** Type: double */
 		gas?: number | null;
 		password?: string | null;
 		to?: string | null;
@@ -7121,6 +9075,8 @@ export namespace MyNS {
 	export interface Sendtransaction1PostBodyFormProperties {
 		amount: FormControl<string | null | undefined>,
 		from: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		gas: FormControl<number | null | undefined>,
 		password: FormControl<string | null | undefined>,
 		to: FormControl<string | null | undefined>,
@@ -7153,11 +9109,15 @@ export namespace MyNS {
 		data?: Broadcasttransaction1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Broadcasttransaction1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateBroadcasttransaction1ReturnFormGroup() {
@@ -7183,17 +9143,25 @@ export namespace MyNS {
 	}
 
 	export interface Senderc201PostBody {
+
+		/** Type: double */
 		amount?: number | null;
 		contractaddress?: string | null;
 		from?: string | null;
+
+		/** Type: double */
 		gas?: number | null;
 		password?: string | null;
 		to?: string | null;
 	}
 	export interface Senderc201PostBodyFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		contractaddress: FormControl<string | null | undefined>,
 		from: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		gas: FormControl<number | null | undefined>,
 		password: FormControl<string | null | undefined>,
 		to: FormControl<string | null | undefined>,
@@ -7215,6 +9183,8 @@ export namespace MyNS {
 		from?: string | null;
 		password?: string | null;
 		to?: string | null;
+
+		/** Type: double */
 		tokenid?: number | null;
 	}
 	export interface Senderc7211PostBodyFormProperties {
@@ -7222,6 +9192,8 @@ export namespace MyNS {
 		from: FormControl<string | null | undefined>,
 		password: FormControl<string | null | undefined>,
 		to: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tokenid: FormControl<number | null | undefined>,
 	}
 	export function CreateSenderc7211PostBodyFormGroup() {
@@ -7239,11 +9211,15 @@ export namespace MyNS {
 		Gettransaction1ReturnData?: Array<Gettransaction1ReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Gettransaction1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransaction1ReturnFormGroup() {
@@ -7341,11 +9317,15 @@ export namespace MyNS {
 		Gettransactionreceipt1ReturnData?: Array<Gettransactionreceipt1ReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Gettransactionreceipt1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransactionreceipt1ReturnFormGroup() {
@@ -7443,11 +9423,15 @@ export namespace MyNS {
 		data?: Listsubscribedaddresses1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listsubscribedaddresses1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListsubscribedaddresses1ReturnFormGroup() {
@@ -7471,6 +9455,8 @@ export namespace MyNS {
 	}
 
 	export interface Listsubscribedaddresses1ReturnDataIpns {
+
+		/** Type: double */
 		bbid?: number | null;
 		contractaddress?: string | null;
 		from?: any;
@@ -7481,6 +9467,8 @@ export namespace MyNS {
 		url?: string | null;
 	}
 	export interface Listsubscribedaddresses1ReturnDataIpnsFormProperties {
+
+		/** Type: double */
 		bbid: FormControl<number | null | undefined>,
 		contractaddress: FormControl<string | null | undefined>,
 		from: FormControl<any | null | undefined>,
@@ -7527,11 +9515,15 @@ export namespace MyNS {
 		data?: Subscribeaddress1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Subscribeaddress1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscribeaddress1ReturnFormGroup() {
@@ -7555,6 +9547,8 @@ export namespace MyNS {
 	}
 
 	export interface Subscribeaddress1ReturnDataIpn {
+
+		/** Type: double */
 		bbid?: number | null;
 		contractaddress?: any;
 		from?: any;
@@ -7565,6 +9559,8 @@ export namespace MyNS {
 		url?: string | null;
 	}
 	export interface Subscribeaddress1ReturnDataIpnFormProperties {
+
+		/** Type: double */
 		bbid: FormControl<number | null | undefined>,
 		contractaddress: FormControl<any | null | undefined>,
 		from: FormControl<any | null | undefined>,
@@ -7592,11 +9588,15 @@ export namespace MyNS {
 		data?: Resendfailedipn1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Resendfailedipn1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateResendfailedipn1ReturnFormGroup() {
@@ -7625,11 +9625,15 @@ export namespace MyNS {
 		data?: Unsubscribeaddress1ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Unsubscribeaddress1ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateUnsubscribeaddress1ReturnFormGroup() {
@@ -7748,11 +9752,15 @@ export namespace MyNS {
 		GetaccountresourcesReturnData?: Array<GetaccountresourcesReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetaccountresourcesReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetaccountresourcesReturnFormGroup() {
@@ -7765,19 +9773,39 @@ export namespace MyNS {
 	}
 
 	export interface GetaccountresourcesReturnData {
+
+		/** Type: double */
 		TotalEnergyLimit?: number | null;
+
+		/** Type: double */
 		TotalEnergyWeight?: number | null;
+
+		/** Type: double */
 		TotalNetLimit?: number | null;
+
+		/** Type: double */
 		TotalNetWeight?: number | null;
 		GetaccountresourcesReturnDataAssetNetLimit?: Array<GetaccountresourcesReturnDataAssetNetLimit>;
 		GetaccountresourcesReturnDataAssetNetUsed?: Array<GetaccountresourcesReturnDataAssetNetUsed>;
+
+		/** Type: double */
 		freeNetLimit?: number | null;
 	}
 	export interface GetaccountresourcesReturnDataFormProperties {
+
+		/** Type: double */
 		TotalEnergyLimit: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalEnergyWeight: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalNetLimit: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalNetWeight: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		freeNetLimit: FormControl<number | null | undefined>,
 	}
 	export function CreateGetaccountresourcesReturnDataFormGroup() {
@@ -7793,10 +9821,14 @@ export namespace MyNS {
 
 	export interface GetaccountresourcesReturnDataAssetNetLimit {
 		key?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface GetaccountresourcesReturnDataAssetNetLimitFormProperties {
 		key: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGetaccountresourcesReturnDataAssetNetLimitFormGroup() {
@@ -7809,10 +9841,14 @@ export namespace MyNS {
 
 	export interface GetaccountresourcesReturnDataAssetNetUsed {
 		key?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface GetaccountresourcesReturnDataAssetNetUsedFormProperties {
 		key: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGetaccountresourcesReturnDataAssetNetUsedFormGroup() {
@@ -7840,11 +9876,15 @@ export namespace MyNS {
 		data?: Newaddress3ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Newaddress3ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateNewaddress3ReturnFormGroup() {
@@ -7873,11 +9913,15 @@ export namespace MyNS {
 		data?: Listtransactionsbyaddress3ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listtransactionsbyaddress3ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress3ReturnFormGroup() {
@@ -7890,13 +9934,21 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress3ReturnData {
+
+		/** Type: double */
 		current_page?: number | null;
+
+		/** Type: double */
 		max_pages?: number | null;
 		meta?: Listtransactionsbyaddress3ReturnDataMeta;
 		Listtransactionsbyaddress3ReturnDataTransactions?: Array<Listtransactionsbyaddress3ReturnDataTransactions>;
 	}
 	export interface Listtransactionsbyaddress3ReturnDataFormProperties {
+
+		/** Type: double */
 		current_page: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		max_pages: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress3ReturnDataFormGroup() {
@@ -7910,30 +9962,62 @@ export namespace MyNS {
 	export interface Listtransactionsbyaddress3ReturnDataMeta {
 		accountedFor?: Listtransactionsbyaddress3ReturnDataMetaAccountedFor;
 		chain?: string | null;
+
+		/** Type: double */
 		client?: number | null;
+
+		/** Type: double */
 		clientId?: number | null;
+
+		/** Type: double */
 		finalized?: number | null;
+
+		/** Type: double */
 		first_block?: number | null;
 		last_block?: string | null;
 		namedFrom?: Array<string>;
 		namedTo?: Listtransactionsbyaddress3ReturnDataMetaNamedTo;
+
+		/** Type: double */
 		networkId?: number | null;
+
+		/** Type: double */
 		ripe?: number | null;
+
+		/** Type: double */
 		staging?: number | null;
 		unNamedFrom?: Listtransactionsbyaddress3ReturnDataMetaUnNamedFrom;
 		unNamedTo?: Listtransactionsbyaddress3ReturnDataMetaUnNamedTo;
+
+		/** Type: double */
 		unripe?: number | null;
 	}
 	export interface Listtransactionsbyaddress3ReturnDataMetaFormProperties {
 		chain: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		client: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		clientId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		finalized: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		first_block: FormControl<number | null | undefined>,
 		last_block: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		networkId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ripe: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		staging: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		unripe: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress3ReturnDataMetaFormGroup() {
@@ -7954,6 +10038,8 @@ export namespace MyNS {
 
 	export interface Listtransactionsbyaddress3ReturnDataMetaAccountedFor {
 		address?: string | null;
+
+		/** Type: double */
 		decimals?: number | null;
 		name?: string | null;
 		petname?: string | null;
@@ -7963,6 +10049,8 @@ export namespace MyNS {
 	}
 	export interface Listtransactionsbyaddress3ReturnDataMetaAccountedForFormProperties {
 		address: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		decimals: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		petname: FormControl<string | null | undefined>,
@@ -7995,12 +10083,16 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress3ReturnDataMetaNamedTo_0xa57bd00134b2850b2a1c55860c9e9ea100fdd6cf_ {
+
+		/** Type: double */
 		count?: number | null;
 		isContract?: boolean | null;
 		name?: string | null;
 		tags?: string | null;
 	}
 	export interface Listtransactionsbyaddress3ReturnDataMetaNamedTo_0xa57bd00134b2850b2a1c55860c9e9ea100fdd6cf_FormProperties {
+
+		/** Type: double */
 		count: FormControl<number | null | undefined>,
 		isContract: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -8017,113 +10109,325 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress3ReturnDataMetaUnNamedFrom {
+
+		/** Type: double */
 		'0x0039b625b1d8632c7a0057c964ec58a9f39789d3'?: number | null;
+
+		/** Type: double */
 		'0x005fde5294199d5c3eb5eb7a6e51954123b74b1c'?: number | null;
+
+		/** Type: double */
 		'0x006e920000ec97e58900b61e00800010005aa831'?: number | null;
+
+		/** Type: double */
 		'0x00a2aebc7e233cd2ffe5ab5856f90f0ad2fa3ccd'?: number | null;
+
+		/** Type: double */
 		'0x00dee1f836998bcc736022f314df906588d44808'?: number | null;
+
+		/** Type: double */
 		'0x042523db4f3effc33d2742022b2490258494f8b3'?: number | null;
+
+		/** Type: double */
 		'0x065e3dbafcb2c26a978720f9eb4bce6ad9d644a1'?: number | null;
+
+		/** Type: double */
 		'0x09e0781a47e9fd2b6258be09bd074f42022b9760'?: number | null;
+
+		/** Type: double */
 		'0x0d0b3f21d7c90d0b957aa6acbc993621311208e4'?: number | null;
+
+		/** Type: double */
 		'0x177b8ebe208cb71da818b6b8814c946c027240cd'?: number | null;
+
+		/** Type: double */
 		'0x1c8f6a5f009e051cab9c3851ca2da2c936b2775a'?: number | null;
+
+		/** Type: double */
 		'0x26bce6ecb5b10138e4bf14ac0ffcc8727fef3b2e'?: number | null;
+
+		/** Type: double */
 		'0x26fd09c8b44af53df38a9bad41d5abc55a1786af'?: number | null;
+
+		/** Type: double */
 		'0x30a1b724c9dfe2e12a19ed84878312d199d1519e'?: number | null;
+
+		/** Type: double */
 		'0x33cef21eb6068ebfcf70c7404efb8aaa08cad388'?: number | null;
+
+		/** Type: double */
 		'0x3443006ed920730005d88267c49f77abcde749af'?: number | null;
+
+		/** Type: double */
 		'0x346c802df3404bec2f265603db28b815321251ee'?: number | null;
+
+		/** Type: double */
 		'0x34ec9e3a1ac200ea58744ced891015152130e400'?: number | null;
+
+		/** Type: double */
 		'0x3b25d8e0801df1264a3d3a5f0bb79bbc292a09fb'?: number | null;
+
+		/** Type: double */
 		'0x3fb530b53036b5d8de892ad1eda14a576a22e6d6'?: number | null;
+
+		/** Type: double */
 		'0x3fbaea01b228368e67ca40d8cb195018fd095318'?: number | null;
+
+		/** Type: double */
 		'0x431b5a84acc1297eda88259f300262f1bc3a74f3'?: number | null;
+
+		/** Type: double */
 		'0x479bc00624e58398f4cf59d78884d12fb515790a'?: number | null;
+
+		/** Type: double */
 		'0x50efbf12580138bc263c95757826df4e24eb81c9'?: number | null;
+
+		/** Type: double */
 		'0x5a243879d1a43f48042c33bbc8051c69756f67d4'?: number | null;
+
+		/** Type: double */
 		'0x6046945c5b5ef5933b8e73a98a6ad7bf3e031df7'?: number | null;
+
+		/** Type: double */
 		'0x60b86af869f23aeb552fb7f3cabd11b829f6ab2f'?: number | null;
+
+		/** Type: double */
 		'0x72bb8c608c4ea4a887266985e680a04c056f5b2a'?: number | null;
+
+		/** Type: double */
 		'0x76dd32063b2899a59f6e15dbc474a160cc922751'?: number | null;
+
+		/** Type: double */
 		'0x76e40d0a69fd81826b5eb7d18145626d46eafdef'?: number | null;
+
+		/** Type: double */
 		'0x77eb9084ce8168901bcb11f14f02a7aab36fcd0c'?: number | null;
+
+		/** Type: double */
 		'0x8e2400a8822fe2da5a8c52b7f7b412acb49813c8'?: number | null;
+
+		/** Type: double */
 		'0x8e8f818d3371f797a2db7edb32803607c8b3c6a9'?: number | null;
+
+		/** Type: double */
 		'0x91aae0aafd9d2d730111b395c6871f248d7bd728'?: number | null;
+
+		/** Type: double */
 		'0x92824d144c6543f70a649b2c3e7596612375fd4d'?: number | null;
+
+		/** Type: double */
 		'0x93f635372008b7c5d770aaa6ff313454c8dc498c'?: number | null;
+
+		/** Type: double */
 		'0x9aab3f81604c683a1a0d14019fbfe15bef7aa1ee'?: number | null;
+
+		/** Type: double */
 		'0xa5a13f62ce1113838e0d9b4559b8caf5f76463c0'?: number | null;
+
+		/** Type: double */
 		'0xa6807d794411d9a80bc435dfc4cda0ba0ddde979'?: number | null;
+
+		/** Type: double */
 		'0xa855d1198c67839e596b9a5d7c46f8ea31cfefde'?: number | null;
+
+		/** Type: double */
 		'0xb0804b228c1c1449cdc94dd16fc8910421f45df1'?: number | null;
+
+		/** Type: double */
 		'0xb2088e2ec5e3599554a70cbb17c0ef1aac70dc78'?: number | null;
+
+		/** Type: double */
 		'0xb30b1dabe7451fe6646a15631d7537df64b193ce'?: number | null;
+
+		/** Type: double */
 		'0xba4ff5f9d6508000b7fd0035bd616aaec070384f'?: number | null;
+
+		/** Type: double */
 		'0xbbad96336943a36e3e292d973b3382dd0ba4d1ef'?: number | null;
+
+		/** Type: double */
 		'0xc11099d3cd9686158db0a40e88267e7b1740958c'?: number | null;
+
+		/** Type: double */
 		'0xd03154dbc4ae6beafa79f7ae6d99c12ce58f5b64'?: number | null;
+
+		/** Type: double */
 		'0xe58e5ed4544f58831a84c18178b911a5957ada08'?: number | null;
+
+		/** Type: double */
 		'0xeca2e2d894d19778939bd4dfc34d2a3c45e96456'?: number | null;
+
+		/** Type: double */
 		'0xf0475a1f184f062d1eee88f0d79ec4eb2795d4f0'?: number | null;
+
+		/** Type: double */
 		'0xf5e322fd6fadbef5d14eaf0f45a809c00739d1e7'?: number | null;
+
+		/** Type: double */
 		'0xfb9779477e5b4834bf2bc02dd29b97b344d0f700'?: number | null;
+
+		/** Type: double */
 		'0xff82bf5238637b7e5e345888bab9cd99f5ebe331'?: number | null;
 	}
 	export interface Listtransactionsbyaddress3ReturnDataMetaUnNamedFromFormProperties {
+
+		/** Type: double */
 		'0x0039b625b1d8632c7a0057c964ec58a9f39789d3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x005fde5294199d5c3eb5eb7a6e51954123b74b1c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x006e920000ec97e58900b61e00800010005aa831': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x00a2aebc7e233cd2ffe5ab5856f90f0ad2fa3ccd': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x00dee1f836998bcc736022f314df906588d44808': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x042523db4f3effc33d2742022b2490258494f8b3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x065e3dbafcb2c26a978720f9eb4bce6ad9d644a1': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x09e0781a47e9fd2b6258be09bd074f42022b9760': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0d0b3f21d7c90d0b957aa6acbc993621311208e4': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x177b8ebe208cb71da818b6b8814c946c027240cd': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x1c8f6a5f009e051cab9c3851ca2da2c936b2775a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26bce6ecb5b10138e4bf14ac0ffcc8727fef3b2e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26fd09c8b44af53df38a9bad41d5abc55a1786af': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x30a1b724c9dfe2e12a19ed84878312d199d1519e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x33cef21eb6068ebfcf70c7404efb8aaa08cad388': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3443006ed920730005d88267c49f77abcde749af': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x346c802df3404bec2f265603db28b815321251ee': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x34ec9e3a1ac200ea58744ced891015152130e400': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3b25d8e0801df1264a3d3a5f0bb79bbc292a09fb': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3fb530b53036b5d8de892ad1eda14a576a22e6d6': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3fbaea01b228368e67ca40d8cb195018fd095318': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x431b5a84acc1297eda88259f300262f1bc3a74f3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x479bc00624e58398f4cf59d78884d12fb515790a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x50efbf12580138bc263c95757826df4e24eb81c9': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x5a243879d1a43f48042c33bbc8051c69756f67d4': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x6046945c5b5ef5933b8e73a98a6ad7bf3e031df7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x60b86af869f23aeb552fb7f3cabd11b829f6ab2f': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x72bb8c608c4ea4a887266985e680a04c056f5b2a': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x76dd32063b2899a59f6e15dbc474a160cc922751': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x76e40d0a69fd81826b5eb7d18145626d46eafdef': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x77eb9084ce8168901bcb11f14f02a7aab36fcd0c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x8e2400a8822fe2da5a8c52b7f7b412acb49813c8': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x8e8f818d3371f797a2db7edb32803607c8b3c6a9': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x91aae0aafd9d2d730111b395c6871f248d7bd728': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x92824d144c6543f70a649b2c3e7596612375fd4d': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x93f635372008b7c5d770aaa6ff313454c8dc498c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x9aab3f81604c683a1a0d14019fbfe15bef7aa1ee': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa5a13f62ce1113838e0d9b4559b8caf5f76463c0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa6807d794411d9a80bc435dfc4cda0ba0ddde979': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa855d1198c67839e596b9a5d7c46f8ea31cfefde': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb0804b228c1c1449cdc94dd16fc8910421f45df1': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb2088e2ec5e3599554a70cbb17c0ef1aac70dc78': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xb30b1dabe7451fe6646a15631d7537df64b193ce': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xba4ff5f9d6508000b7fd0035bd616aaec070384f': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xbbad96336943a36e3e292d973b3382dd0ba4d1ef': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xc11099d3cd9686158db0a40e88267e7b1740958c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xd03154dbc4ae6beafa79f7ae6d99c12ce58f5b64': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xe58e5ed4544f58831a84c18178b911a5957ada08': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeca2e2d894d19778939bd4dfc34d2a3c45e96456': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf0475a1f184f062d1eee88f0d79ec4eb2795d4f0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf5e322fd6fadbef5d14eaf0f45a809c00739d1e7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xfb9779477e5b4834bf2bc02dd29b97b344d0f700': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xff82bf5238637b7e5e345888bab9cd99f5ebe331': FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress3ReturnDataMetaUnNamedFromFormGroup() {
@@ -8186,61 +10490,169 @@ export namespace MyNS {
 	}
 
 	export interface Listtransactionsbyaddress3ReturnDataMetaUnNamedTo {
+
+		/** Type: double */
 		'0x0000000000007f150bd6f54c40a34d7c3d5e9f56'?: number | null;
+
+		/** Type: double */
 		'0x000000000035b5e5ad9019092c665357240f594e'?: number | null;
+
+		/** Type: double */
 		'0x0000000000a84d1a9b0063a910315c7ffa9cd248'?: number | null;
+
+		/** Type: double */
 		'0x0077732907bfc6208933cfd2a51afb8f33ca5958'?: number | null;
+
+		/** Type: double */
 		'0x1cedc0f3af8f9841b0a1f5c1a4ddc6e1a1629074'?: number | null;
+
+		/** Type: double */
 		'0x26c541f5e1c8eab0f6f0943bb1c8843ab18c4b0d'?: number | null;
+
+		/** Type: double */
 		'0x388c818ca8b9251b393131c08a736a67ccb19297'?: number | null;
+
+		/** Type: double */
 		'0x3e2766167aa2acb097c311d5a2e9eb17cad38b06'?: number | null;
+
+		/** Type: double */
 		'0x4a137fd5e7a256ef08a7de531a17d0be0cc7b6b6'?: number | null;
+
+		/** Type: double */
 		'0x5050e08626c499411b5d0e0b5af0e83d3fd82edf'?: number | null;
+
+		/** Type: double */
 		'0x535b918f3724001fd6fb52fcc6cbc220592990a3'?: number | null;
+
+		/** Type: double */
 		'0x57c1e0c2adf6eecdb135bcf9ec5f23b319be2c94'?: number | null;
+
+		/** Type: double */
 		'0x665179031a86561ac845f43d6b6341cffbcea040'?: number | null;
+
+		/** Type: double */
 		'0x7d9da47e83b82a52a2b45353cdad735afb43e6f0'?: number | null;
+
+		/** Type: double */
 		'0x81153f0889ab398c4acb42cb58b565a5392bba95'?: number | null;
+
+		/** Type: double */
 		'0x87b3f3c934a13c779e100a5d6e6d7ef577e86671'?: number | null;
+
+		/** Type: double */
 		'0x87d9da48db6e1f925cb67d3b7d2a292846c24cf7'?: number | null;
+
+		/** Type: double */
 		'0x98c3d3183c4b8a650614ad179a1a98be0a8d6b8e'?: number | null;
+
+		/** Type: double */
 		'0xa69babef1ca67a37ffaf7a485dfff3382056e78c'?: number | null;
+
+		/** Type: double */
 		'0xbeefbabeea323f07c59926295205d3b7a17e8638'?: number | null;
+
+		/** Type: double */
 		'0xcfc7e96be27d836b034b37132052549611341108'?: number | null;
+
+		/** Type: double */
 		'0xe94f1fa4f27d9d288ffea234bb62e1fbc086ca0c'?: number | null;
+
+		/** Type: double */
 		'0xeb00c80f00ca1585000000b84f00940000ed40e5'?: number | null;
+
+		/** Type: double */
 		'0xebec795c9c8bbd61ffc14a6662944748f299cacf'?: number | null;
+
+		/** Type: double */
 		'0xeee27662c2b8eba3cd936a23f039f3189633e4c8'?: number | null;
+
+		/** Type: double */
 		'0xf828add1619bfb64712654076490b2609ae6d774'?: number | null;
+
+		/** Type: double */
 		'0xffd22b84fb1d46ef74ed6530b2635be61340f347'?: number | null;
 	}
 	export interface Listtransactionsbyaddress3ReturnDataMetaUnNamedToFormProperties {
+
+		/** Type: double */
 		'0x0000000000007f150bd6f54c40a34d7c3d5e9f56': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x000000000035b5e5ad9019092c665357240f594e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0000000000a84d1a9b0063a910315c7ffa9cd248': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x0077732907bfc6208933cfd2a51afb8f33ca5958': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x1cedc0f3af8f9841b0a1f5c1a4ddc6e1a1629074': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x26c541f5e1c8eab0f6f0943bb1c8843ab18c4b0d': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x388c818ca8b9251b393131c08a736a67ccb19297': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x3e2766167aa2acb097c311d5a2e9eb17cad38b06': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x4a137fd5e7a256ef08a7de531a17d0be0cc7b6b6': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x5050e08626c499411b5d0e0b5af0e83d3fd82edf': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x535b918f3724001fd6fb52fcc6cbc220592990a3': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x57c1e0c2adf6eecdb135bcf9ec5f23b319be2c94': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x665179031a86561ac845f43d6b6341cffbcea040': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x7d9da47e83b82a52a2b45353cdad735afb43e6f0': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x81153f0889ab398c4acb42cb58b565a5392bba95': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x87b3f3c934a13c779e100a5d6e6d7ef577e86671': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x87d9da48db6e1f925cb67d3b7d2a292846c24cf7': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0x98c3d3183c4b8a650614ad179a1a98be0a8d6b8e': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xa69babef1ca67a37ffaf7a485dfff3382056e78c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xbeefbabeea323f07c59926295205d3b7a17e8638': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xcfc7e96be27d836b034b37132052549611341108': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xe94f1fa4f27d9d288ffea234bb62e1fbc086ca0c': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeb00c80f00ca1585000000b84f00940000ed40e5': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xebec795c9c8bbd61ffc14a6662944748f299cacf': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xeee27662c2b8eba3cd936a23f039f3189633e4c8': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xf828add1619bfb64712654076490b2609ae6d774': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'0xffd22b84fb1d46ef74ed6530b2635be61340f347': FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress3ReturnDataMetaUnNamedToFormGroup() {
@@ -8278,54 +10690,110 @@ export namespace MyNS {
 
 	export interface Listtransactionsbyaddress3ReturnDataTransactions {
 		blockHash?: string | null;
+
+		/** Type: double */
 		blockNumber?: number | null;
 		compressedTx?: string | null;
 		date?: string | null;
 		encoding?: string | null;
+
+		/** Type: double */
 		ether?: number | null;
+
+		/** Type: double */
 		etherGasCost?: number | null;
 		from?: string | null;
 		function?: string | null;
+
+		/** Type: double */
 		gas?: number | null;
+
+		/** Type: double */
 		gasCost?: number | null;
+
+		/** Type: double */
 		gasPrice?: number | null;
+
+		/** Type: double */
 		gasUsed?: number | null;
+
+		/** Type: double */
 		hasToken?: number | null;
 		hash?: string | null;
 		input?: string | null;
+
+		/** Type: double */
 		isError?: number | null;
+
+		/** Type: double */
 		maxFeePerGas?: number | null;
+
+		/** Type: double */
 		maxPriorityFeePerGas?: number | null;
 		receipt?: Listtransactionsbyaddress3ReturnDataTransactionsReceipt;
+
+		/** Type: double */
 		timestamp?: number | null;
 		to?: string | null;
 		traces?: Array<string>;
+
+		/** Type: double */
 		transactionIndex?: number | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface Listtransactionsbyaddress3ReturnDataTransactionsFormProperties {
 		blockHash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		blockNumber: FormControl<number | null | undefined>,
 		compressedTx: FormControl<string | null | undefined>,
 		date: FormControl<string | null | undefined>,
 		encoding: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ether: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		etherGasCost: FormControl<number | null | undefined>,
 		from: FormControl<string | null | undefined>,
 		function: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		gas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasCost: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasUsed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		hasToken: FormControl<number | null | undefined>,
 		hash: FormControl<string | null | undefined>,
 		input: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		isError: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		maxFeePerGas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		maxPriorityFeePerGas: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 		to: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		transactionIndex: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress3ReturnDataTransactionsFormGroup() {
@@ -8359,15 +10827,27 @@ export namespace MyNS {
 
 	export interface Listtransactionsbyaddress3ReturnDataTransactionsReceipt {
 		contractAddress?: string | null;
+
+		/** Type: double */
 		effectiveGasPrice?: number | null;
+
+		/** Type: double */
 		gasUsed?: number | null;
 		logs?: Array<string>;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listtransactionsbyaddress3ReturnDataTransactionsReceiptFormProperties {
 		contractAddress: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		effectiveGasPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gasUsed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListtransactionsbyaddress3ReturnDataTransactionsReceiptFormGroup() {
@@ -8384,11 +10864,15 @@ export namespace MyNS {
 		data?: Gettrc10balanceReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Gettrc10balanceReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettrc10balanceReturnFormGroup() {
@@ -8402,12 +10886,16 @@ export namespace MyNS {
 
 	export interface Gettrc10balanceReturnData {
 		balance?: string | null;
+
+		/** Type: double */
 		decimals?: number | null;
 		tokenid?: string | null;
 		tronaddress?: string | null;
 	}
 	export interface Gettrc10balanceReturnDataFormProperties {
 		balance: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		decimals: FormControl<number | null | undefined>,
 		tokenid: FormControl<string | null | undefined>,
 		tronaddress: FormControl<string | null | undefined>,
@@ -8426,11 +10914,15 @@ export namespace MyNS {
 		data?: Gettrc20balanceReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Gettrc20balanceReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettrc20balanceReturnFormGroup() {
@@ -8468,11 +10960,15 @@ export namespace MyNS {
 		data?: GettronbalanceReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GettronbalanceReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettronbalanceReturnFormGroup() {
@@ -8501,11 +10997,15 @@ export namespace MyNS {
 		data?: Getlastblocknumber3ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getlastblocknumber3ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetlastblocknumber3ReturnFormGroup() {
@@ -8518,9 +11018,13 @@ export namespace MyNS {
 	}
 
 	export interface Getlastblocknumber3ReturnData {
+
+		/** Type: double */
 		blocknumber?: number | null;
 	}
 	export interface Getlastblocknumber3ReturnDataFormProperties {
+
+		/** Type: double */
 		blocknumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGetlastblocknumber3ReturnDataFormGroup() {
@@ -8534,11 +11038,15 @@ export namespace MyNS {
 		Getblock3ReturnData?: Array<Getblock3ReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Getblock3ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetblock3ReturnFormGroup() {
@@ -8579,15 +11087,23 @@ export namespace MyNS {
 	}
 
 	export interface Getblock3ReturnDataBlock_headerRaw_data {
+
+		/** Type: double */
 		number?: number | null;
 		parentHash?: string | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 		txTrieRoot?: string | null;
 		witness_address?: string | null;
 	}
 	export interface Getblock3ReturnDataBlock_headerRaw_dataFormProperties {
+
+		/** Type: double */
 		number: FormControl<number | null | undefined>,
 		parentHash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 		txTrieRoot: FormControl<string | null | undefined>,
 		witness_address: FormControl<string | null | undefined>,
@@ -8607,11 +11123,15 @@ export namespace MyNS {
 		GetchainparametersReturnData?: Array<GetchainparametersReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface GetchainparametersReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGetchainparametersReturnFormGroup() {
@@ -8636,10 +11156,14 @@ export namespace MyNS {
 
 	export interface GetchainparametersReturnDataChainParameter {
 		key?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface GetchainparametersReturnDataChainParameterFormProperties {
 		key: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGetchainparametersReturnDataChainParameterFormGroup() {
@@ -8673,11 +11197,15 @@ export namespace MyNS {
 		Sendtransaction3ReturnData?: Array<Sendtransaction3ReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Sendtransaction3ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateSendtransaction3ReturnFormGroup() {
@@ -8706,12 +11234,16 @@ export namespace MyNS {
 		amount?: string | null;
 		privatekey?: string | null;
 		to?: string | null;
+
+		/** Type: double */
 		tokenId?: number | null;
 	}
 	export interface Sendtrc10PostBodyFormProperties {
 		amount: FormControl<string | null | undefined>,
 		privatekey: FormControl<string | null | undefined>,
 		to: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		tokenId: FormControl<number | null | undefined>,
 	}
 	export function CreateSendtrc10PostBodyFormGroup() {
@@ -8728,11 +11260,15 @@ export namespace MyNS {
 		Sendtrc10ReturnData?: Array<Sendtrc10ReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Sendtrc10ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateSendtrc10ReturnFormGroup() {
@@ -8786,11 +11322,15 @@ export namespace MyNS {
 		Sendtrc20ReturnData?: Array<Sendtrc20ReturnData>;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Sendtrc20ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateSendtrc20ReturnFormGroup() {
@@ -8819,11 +11359,15 @@ export namespace MyNS {
 		data?: Gettransaction3ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Gettransaction3ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransaction3ReturnFormGroup() {
@@ -8856,15 +11400,23 @@ export namespace MyNS {
 
 	export interface Gettransaction3ReturnDataRaw_data {
 		Gettransaction3ReturnDataRaw_dataContract?: Array<Gettransaction3ReturnDataRaw_dataContract>;
+
+		/** Type: double */
 		expiration?: number | null;
 		ref_block_bytes?: string | null;
 		ref_block_hash?: string | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface Gettransaction3ReturnDataRaw_dataFormProperties {
+
+		/** Type: double */
 		expiration: FormControl<number | null | undefined>,
 		ref_block_bytes: FormControl<string | null | undefined>,
 		ref_block_hash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransaction3ReturnDataRaw_dataFormGroup() {
@@ -8906,12 +11458,16 @@ export namespace MyNS {
 	}
 
 	export interface Gettransaction3ReturnDataRaw_dataContractParameterValue {
+
+		/** Type: double */
 		amount?: number | null;
 		asset_name?: string | null;
 		owner_address?: string | null;
 		to_address?: string | null;
 	}
 	export interface Gettransaction3ReturnDataRaw_dataContractParameterValueFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		asset_name: FormControl<string | null | undefined>,
 		owner_address: FormControl<string | null | undefined>,
@@ -8944,11 +11500,15 @@ export namespace MyNS {
 		data?: Gettransactionreceipt3ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Gettransactionreceipt3ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransactionreceipt3ReturnFormGroup() {
@@ -8981,15 +11541,23 @@ export namespace MyNS {
 
 	export interface Gettransactionreceipt3ReturnDataRaw_data {
 		Gettransactionreceipt3ReturnDataRaw_dataContract?: Array<Gettransactionreceipt3ReturnDataRaw_dataContract>;
+
+		/** Type: double */
 		expiration?: number | null;
 		ref_block_bytes?: string | null;
 		ref_block_hash?: string | null;
+
+		/** Type: double */
 		timestamp?: number | null;
 	}
 	export interface Gettransactionreceipt3ReturnDataRaw_dataFormProperties {
+
+		/** Type: double */
 		expiration: FormControl<number | null | undefined>,
 		ref_block_bytes: FormControl<string | null | undefined>,
 		ref_block_hash: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		timestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateGettransactionreceipt3ReturnDataRaw_dataFormGroup() {
@@ -9031,12 +11599,16 @@ export namespace MyNS {
 	}
 
 	export interface Gettransactionreceipt3ReturnDataRaw_dataContractParameterValue {
+
+		/** Type: double */
 		amount?: number | null;
 		asset_name?: string | null;
 		owner_address?: string | null;
 		to_address?: string | null;
 	}
 	export interface Gettransactionreceipt3ReturnDataRaw_dataContractParameterValueFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 		asset_name: FormControl<string | null | undefined>,
 		owner_address: FormControl<string | null | undefined>,
@@ -9069,11 +11641,15 @@ export namespace MyNS {
 		data?: Listsubscribedaddresses3ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Listsubscribedaddresses3ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateListsubscribedaddresses3ReturnFormGroup() {
@@ -9147,11 +11723,15 @@ export namespace MyNS {
 		data?: Subscribeaddress3ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Subscribeaddress3ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscribeaddress3ReturnFormGroup() {
@@ -9240,10 +11820,14 @@ export namespace MyNS {
 	}
 
 	export interface Resendfailedipn3Return {
+
+		/** Type: double */
 		id?: number | null;
 		ok?: boolean | null;
 	}
 	export interface Resendfailedipn3ReturnFormProperties {
+
+		/** Type: double */
 		id: FormControl<number | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
 	}
@@ -9259,11 +11843,15 @@ export namespace MyNS {
 		data?: Unsubscribeaddress3ReturnData;
 		message?: string | null;
 		ok?: boolean | null;
+
+		/** Type: double */
 		status?: number | null;
 	}
 	export interface Unsubscribeaddress3ReturnFormProperties {
 		message: FormControl<string | null | undefined>,
 		ok: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateUnsubscribeaddress3ReturnFormGroup() {

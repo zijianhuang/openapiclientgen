@@ -64,6 +64,7 @@ export namespace MyNS {
 		 * `1`: regular seller
 		 * `2`: whitelabel seller
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sellerType: number;
 	}
@@ -122,6 +123,7 @@ export namespace MyNS {
 		 * `1`: regular seller
 		 * `2`: whitelabel seller
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sellerType: FormControl<number | null | undefined>,
 	}
@@ -295,6 +297,7 @@ export namespace MyNS {
 		/**
 		 * Sales Channel's ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -315,6 +318,7 @@ export namespace MyNS {
 		/**
 		 * Sales Channel's ID.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -356,12 +360,14 @@ export namespace MyNS {
 		/**
 		 * Percentage of the comission applied to the freight in decimals.
 		 * Required
+		 * Type: double
 		 */
 		freightCommissionPercentage: number;
 
 		/**
 		 * Percentage of the comission applied to the product in decimals.
 		 * Required
+		 * Type: double
 		 */
 		productCommissionPercentage: number;
 	}
@@ -382,12 +388,14 @@ export namespace MyNS {
 		/**
 		 * Percentage of the comission applied to the freight in decimals.
 		 * Required
+		 * Type: double
 		 */
 		freightCommissionPercentage: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of the comission applied to the product in decimals.
 		 * Required
+		 * Type: double
 		 */
 		productCommissionPercentage: FormControl<number | null | undefined>,
 	}
@@ -459,6 +467,7 @@ export namespace MyNS {
 		 * `1`: regular seller
 		 * `2`: whitelabel seller
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sellerType: number;
 	}
@@ -514,6 +523,7 @@ export namespace MyNS {
 		 * `1`: regular seller
 		 * `2`: whitelabel seller
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sellerType: FormControl<number | null | undefined>,
 	}
@@ -731,30 +741,35 @@ export namespace MyNS {
 		/**
 		 * Available SKU stock quantity
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: number;
 
 		/**
 		 * SKU's suggested selling price
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ListPrice: number;
 
 		/**
 		 * SKU's price.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Price: number;
 
 		/**
 		 * SKU's price without discount applied.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		PriceWithoutDiscount: number;
 
 		/**
 		 * The sales channel (or [trade policy](https://help.vtex.com/en/tutorial/como-funciona-uma-politica-comercial--6Xef8PZiFm40kg2STrMkMV#master-data)) of the SKU.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: number;
 	}
@@ -763,30 +778,35 @@ export namespace MyNS {
 		/**
 		 * Available SKU stock quantity
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		AvailableQuantity: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU's suggested selling price
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ListPrice: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU's price.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Price: FormControl<number | null | undefined>,
 
 		/**
 		 * SKU's price without discount applied.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		PriceWithoutDiscount: FormControl<number | null | undefined>,
 
 		/**
 		 * The sales channel (or [trade policy](https://help.vtex.com/en/tutorial/como-funciona-uma-politica-comercial--6Xef8PZiFm40kg2STrMkMV#master-data)) of the SKU.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SaleChannel: FormControl<number | null | undefined>,
 	}
@@ -835,12 +855,14 @@ export namespace MyNS {
 		/**
 		 * Percentage of the comission applied to the freight in decimals.
 		 * Required
+		 * Type: double
 		 */
 		freightCommissionPercentage: number;
 
 		/**
 		 * Percentage of the comission applied to the product in decimals.
 		 * Required
+		 * Type: double
 		 */
 		productCommissionPercentage: number;
 	}
@@ -849,12 +871,14 @@ export namespace MyNS {
 		/**
 		 * Percentage of the comission applied to the freight in decimals.
 		 * Required
+		 * Type: double
 		 */
 		freightCommissionPercentage: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of the comission applied to the product in decimals.
 		 * Required
+		 * Type: double
 		 */
 		productCommissionPercentage: FormControl<number | null | undefined>,
 	}
@@ -978,6 +1002,7 @@ export namespace MyNS {
 		/**
 		 * Marketplace's sales channel that will be associated to the seller's [affiliate](https://help.vtex.com/en/tutorial/configuring-affiliates--tutorials_187).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		marketplaceSalesChannel: number;
 
@@ -992,6 +1017,7 @@ export namespace MyNS {
 		/**
 		 * Marketplace's sales channel that will be associated to the seller's [affiliate](https://help.vtex.com/en/tutorial/configuring-affiliates--tutorials_187).
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		marketplaceSalesChannel: FormControl<number | null | undefined>,
 
@@ -1026,12 +1052,14 @@ export namespace MyNS {
 		/**
 		 * Percentage of the comission applied to the freight in decimals.
 		 * Required
+		 * Type: double
 		 */
 		freightCommissionPercentage: number;
 
 		/**
 		 * Percentage of the comission applied to the product in decimals.
 		 * Required
+		 * Type: double
 		 */
 		productCommissionPercentage: number;
 	}
@@ -1052,12 +1080,14 @@ export namespace MyNS {
 		/**
 		 * Percentage of the comission applied to the freight in decimals.
 		 * Required
+		 * Type: double
 		 */
 		freightCommissionPercentage: FormControl<number | null | undefined>,
 
 		/**
 		 * Percentage of the comission applied to the product in decimals.
 		 * Required
+		 * Type: double
 		 */
 		productCommissionPercentage: FormControl<number | null | undefined>,
 	}
@@ -1199,6 +1229,7 @@ export namespace MyNS {
 		/**
 		 * Score attributed to this seller.
 		 * Required
+		 * Type: double
 		 */
 		score: number;
 
@@ -1216,6 +1247,7 @@ export namespace MyNS {
 		 * `1`: regular seller
 		 * `2`: whitelabel seller
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sellerType: number;
 
@@ -1356,6 +1388,7 @@ export namespace MyNS {
 		/**
 		 * Score attributed to this seller.
 		 * Required
+		 * Type: double
 		 */
 		score: FormControl<number | null | undefined>,
 
@@ -1373,6 +1406,7 @@ export namespace MyNS {
 		 * `1`: regular seller
 		 * `2`: whitelabel seller
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		sellerType: FormControl<number | null | undefined>,
 
@@ -1480,7 +1514,9 @@ export namespace MyNS {
 		 * Ex. sort=name,asc 
 		 * Ex. price,desc
 		 * @param {number} rows Number of rows included in the response. Each row corresponds to a single offer. The default amount of rows in the response is 1, and the maximum amount is 50. To have more than one offer listed in the response, please add the `rows` parameter with a number greater than 1.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} start Number corresponding to the row from which the offer list will begin, used for pagination. Filters the list of offers by retrieving the offers starting from the row defined. The default value is 0, if the param is not included in the call.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} fq This filter query can be used to filter offers by the criteria described below. It should be filled in by following the format: `fq={{criteriaName}}:{{criteriaValue}}`. 
 		 * - **productId:** integer of the product ID 
 		 * - **productName:** string of the product's name 
@@ -1558,7 +1594,9 @@ export namespace MyNS {
 		 * @param {string} accountName Name of the VTEX account that belongs to the marketplace. All data extracted, and changes added will be posted into this account.
 		 * @param {string} environment Environment to use. Used as part of the URL.
 		 * @param {number} offset This field determines the limit used to retrieve the list of sellers. The response includes objects starting `from` the value inputted here.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit This field determines the limit used to retrieve the list of sellers. The response includes objects until the value inputted here.            
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} isConnected Query param that enables results to be filter by whether the seller lead is already connected to the marketplace or not.
 		 * @param {string} search Custom search field, that filters sellers invited by specific marketplace operator's  email.
 		 * @param {string} status Seller Lead's status. Includes `accepted`, `connected` or `invited`.
@@ -1672,7 +1710,9 @@ export namespace MyNS {
 		 * @param {string} accountName Name of the VTEX account that belongs to the marketplace.
 		 * @param {string} environment Environment to use. Used as part of the URL.
 		 * @param {number} from The start number of pagination, being `0` the default value.
+		 *     Type: double
 		 * @param {number} to The end number of pagination, being `100` the default value.
+		 *     Type: double
 		 * @param {string} keyword Search sellers by a keyword in `sellerId` or `sellerName`.
 		 * @param {string} integration Filters sellers by the name of who made the integration, if VTEX or an external hub. The possible values for VTEX integrations are: `vtex-sellerportal`, `vtex-seller` and `vtex-franchise`.
 		 * @param {string} group  Groups are defined by keywords that group sellers into categories defined by the marketplace.
@@ -1681,6 +1721,7 @@ export namespace MyNS {
 		 * @param {boolean} isVtex When set as `true`, the list returned will be of sellers who have a VTEX store configured. When set as `false`, the list will be of sellers who do not have a VTEX store configured.
 		 * @param {string} sc Filters sellers available for the marketplace's sales channel (or [trade policy](https://help.vtex.com/en/tutorial/how-trade-policies-work--6Xef8PZiFm40kg2STrMkMV)) indicated in this field.
 		 * @param {number} sellerType Filters sellers by their type, which can be regular seller (`1`) or whitelabel seller (`2`).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sort Narrow the search filtering by the fields: `id`, `name` or `pendingoffers`. The list retrieved can be organized in an ascending (`asc`) or descending (`desc`) order. The standardized format is `{field}:{order}`, and the default value is `id:asc`.
 		 * @return {void} OK
 		 */
@@ -1832,12 +1873,14 @@ export namespace MyNS {
 		/**
 		 * Offer's brand ID that the product belongs to, configured in the Catalog. It should be the marketplace's brand chosen for the offer to be matched with.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		BrandId: number;
 
 		/**
 		 * Offer's Category ID that the product belongs to, configured in the Catalog. It should be the marketplace's category chosen for the offer to be matched with.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		CategoryId: number;
 
@@ -1870,12 +1913,14 @@ export namespace MyNS {
 		/**
 		 * Offer's brand ID that the product belongs to, configured in the Catalog. It should be the marketplace's brand chosen for the offer to be matched with.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		BrandId: FormControl<number | null | undefined>,
 
 		/**
 		 * Offer's Category ID that the product belongs to, configured in the Catalog. It should be the marketplace's category chosen for the offer to be matched with.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		CategoryId: FormControl<number | null | undefined>,
 

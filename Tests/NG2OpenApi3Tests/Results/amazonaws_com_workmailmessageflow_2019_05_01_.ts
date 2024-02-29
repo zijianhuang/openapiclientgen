@@ -150,6 +150,7 @@ export namespace MyNS {
 		 * Retrieves the raw content of an in-transit email message, in MIME format.
 		 * Get messages/{messageId}
 		 * @param {string} messageId The identifier of the email message to retrieve.
+		 *     Min length: 1    Max length: 120
 		 * @return {GetRawMessageContentResponse} Success
 		 */
 		GetRawMessageContent(messageId: string): Observable<GetRawMessageContentResponse> {
@@ -160,6 +161,7 @@ export namespace MyNS {
 		 * <p>Updates the raw content of an in-transit email message, in MIME format.</p> <p>This example describes how to update in-transit email message. For more information and examples for using this API, see <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/update-with-lambda.html"> Updating message content with AWS Lambda</a>.</p> <note> <p>Updates to an in-transit message only appear when you call <code>PutRawMessageContent</code> from an AWS Lambda function configured with a synchronous <a href="https://docs.aws.amazon.com/workmail/latest/adminguide/lambda.html#synchronous-rules"> Run Lambda</a> rule. If you call <code>PutRawMessageContent</code> on a delivered or sent message, the message remains unchanged, even though <a href="https://docs.aws.amazon.com/workmail/latest/APIReference/API_messageflow_GetRawMessageContent.html">GetRawMessageContent</a> returns an updated message. </p> </note>
 		 * Post messages/{messageId}
 		 * @param {string} messageId The identifier of the email message being updated.
+		 *     Min length: 1    Max length: 120
 		 * @return {PutRawMessageContentResponse} Success
 		 */
 		PutRawMessageContent(messageId: string, requestBody: PutRawMessageContentPostBody): Observable<PutRawMessageContentResponse> {

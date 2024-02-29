@@ -23,6 +23,8 @@ export namespace MyNS {
 
 	export interface CryptoKey {
 		algorithm?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bits?: number | null;
 		file_hash?: string | null;
 		file_name?: string | null;
@@ -30,6 +32,8 @@ export namespace MyNS {
 	}
 	export interface CryptoKeyFormProperties {
 		algorithm: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bits: FormControl<number | null | undefined>,
 		file_hash: FormControl<string | null | undefined>,
 		file_name: FormControl<string | null | undefined>,
@@ -47,21 +51,29 @@ export namespace MyNS {
 	}
 
 	export interface DefaultAccount {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gid?: number | null;
 		hash_algorithm?: string | null;
 		home_dir?: string | null;
 		name?: string | null;
 		pwd_hash?: string | null;
 		shell?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		uid?: number | null;
 	}
 	export interface DefaultAccountFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gid: FormControl<number | null | undefined>,
 		hash_algorithm: FormControl<string | null | undefined>,
 		home_dir: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		pwd_hash: FormControl<string | null | undefined>,
 		shell: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		uid: FormControl<number | null | undefined>,
 	}
 	export function CreateDefaultAccountFormGroup() {
@@ -144,10 +156,14 @@ export namespace MyNS {
 
 	export interface Vulnerability {
 		cve_id?: string | null;
+
+		/** Type: double */
 		cvss?: number | null;
 	}
 	export interface VulnerabilityFormProperties {
 		cve_id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		cvss: FormControl<number | null | undefined>,
 	}
 	export function CreateVulnerabilityFormGroup() {
@@ -214,10 +230,14 @@ export namespace MyNS {
 
 	export interface PublicKey {
 		algorithm?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bits?: number | null;
 	}
 	export interface PublicKeyFormProperties {
 		algorithm: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bits: FormControl<number | null | undefined>,
 	}
 	export function CreatePublicKeyFormGroup() {
@@ -264,6 +284,8 @@ export namespace MyNS {
 
 	export interface VulnerableComponent {
 		category?: string | null;
+
+		/** Type: double */
 		cvss_max?: number | null;
 		name?: string | null;
 		version?: string | null;
@@ -271,6 +293,8 @@ export namespace MyNS {
 	}
 	export interface VulnerableComponentFormProperties {
 		category: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		cvss_max: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		version: FormControl<string | null | undefined>,

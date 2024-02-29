@@ -567,7 +567,10 @@ namespace MyNS
 		/// DeploymentScripts_ListByResourceGroup subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <returns>OK -- Returns a list of deployment scripts.</returns>
 		public async Task<DeploymentScriptListResult> DeploymentScripts_ListByResourceGroupAsync(string subscriptionId, string resourceGroupName, string api_version)
@@ -598,8 +601,14 @@ namespace MyNS
 		/// DeploymentScripts_Get subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="scriptName">Name of the deployment script.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="scriptName">Name of the deployment script.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <returns>OK -- Returns information about the deployment script.</returns>
 		public async Task<DeploymentScript> DeploymentScripts_GetAsync(string subscriptionId, string resourceGroupName, string scriptName, string api_version)
@@ -630,8 +639,14 @@ namespace MyNS
 		/// DeploymentScripts_Create subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="scriptName">Name of the deployment script.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="scriptName">Name of the deployment script.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <param name="requestBody">Deployment script supplied to the operation.</param>
 		/// <returns>OK -- Deployment script is updated.</returns>
@@ -670,8 +685,14 @@ namespace MyNS
 		/// DeploymentScripts_Delete subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="scriptName">Name of the deployment script.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="scriptName">Name of the deployment script.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <returns>OK -- Deployment script deleted.</returns>
 		public async Task DeploymentScripts_DeleteAsync(string subscriptionId, string resourceGroupName, string scriptName, string api_version)
@@ -696,8 +717,14 @@ namespace MyNS
 		/// DeploymentScripts_Update subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="scriptName">Name of the deployment script.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="scriptName">Name of the deployment script.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <param name="requestBody">Deployment script resource with the tags to be updated.</param>
 		/// <returns>OK -- Deployment script tags are updated.</returns>
@@ -736,8 +763,14 @@ namespace MyNS
 		/// DeploymentScripts_GetLogs subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}/logs
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="scriptName">Name of the deployment script.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="scriptName">Name of the deployment script.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <returns>OK -- Returns deployment script logs if available.</returns>
 		public async Task<ScriptLogsList> DeploymentScripts_GetLogsAsync(string subscriptionId, string resourceGroupName, string scriptName, string api_version)
@@ -768,8 +801,14 @@ namespace MyNS
 		/// DeploymentScripts_GetLogsDefault subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/Microsoft.Resources/deploymentScripts/{scriptName}/logs/default
 		/// </summary>
 		/// <param name="subscriptionId">Subscription Id which forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
-		/// <param name="scriptName">Name of the deployment script.</param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="scriptName">Name of the deployment script.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Client Api version.</param>
 		/// <returns>OK -- Returns deployment script logs if available.</returns>
 		public async Task<ScriptLog> DeploymentScripts_GetLogsDefaultAsync(string subscriptionId, string resourceGroupName, string scriptName, string api_version)

@@ -1031,7 +1031,9 @@ export namespace MyNS {
 		 * Associates an attribute group with an application to augment the application's metadata with the group's attributes. This feature enables applications to be described with user-defined details that are machine-readable, such as third-party integrations.
 		 * Put applications/{application}/attribute-groups/{attributeGroup}
 		 * @param {string} application  The name, ID, or ARN of the application. 
+		 *     Min length: 1    Max length: 256
 		 * @param {string} attributeGroup  The name, ID, or ARN of the attribute group that holds the attributes to describe the application. 
+		 *     Min length: 1    Max length: 512
 		 * @return {AssociateAttributeGroupResponse} Success
 		 */
 		AssociateAttributeGroup(application: string, attributeGroup: string): Observable<AssociateAttributeGroupResponse> {
@@ -1042,7 +1044,9 @@ export namespace MyNS {
 		 * Disassociates an attribute group from an application to remove the extra attributes contained in the attribute group from the application's metadata. This operation reverts <code>AssociateAttributeGroup</code>.
 		 * Delete applications/{application}/attribute-groups/{attributeGroup}
 		 * @param {string} application  The name, ID, or ARN of the application. 
+		 *     Min length: 1    Max length: 256
 		 * @param {string} attributeGroup  The name, ID, or ARN of the attribute group that holds the attributes to describe the application. 
+		 *     Min length: 1    Max length: 512
 		 * @return {DisassociateAttributeGroupResponse} Success
 		 */
 		DisassociateAttributeGroup(application: string, attributeGroup: string): Observable<DisassociateAttributeGroupResponse> {
@@ -1053,8 +1057,10 @@ export namespace MyNS {
 		 * Associates a resource with an application. The resource can be specified by its ARN or name. The application can be specified by ARN, ID, or name.
 		 * Put applications/{application}/resources/{resourceType}/{resource}
 		 * @param {string} application  The name, ID, or ARN of the application. 
+		 *     Min length: 1    Max length: 256
 		 * @param {ResourceType} resourceType The type of resource of which the application will be associated.
 		 * @param {string} resource The name or ID of the resource of which the application will be associated.
+		 *     Min length: 1    Max length: 256
 		 * @return {AssociateResourceResponse} Success
 		 */
 		AssociateResource(application: string, resourceType: ResourceType, resource: string): Observable<AssociateResourceResponse> {
@@ -1065,8 +1071,10 @@ export namespace MyNS {
 		 * Disassociates a resource from application. Both the resource and the application can be specified either by ID or name.
 		 * Delete applications/{application}/resources/{resourceType}/{resource}
 		 * @param {string} application The name or ID of the application.
+		 *     Min length: 1    Max length: 256
 		 * @param {ResourceType} resourceType The type of the resource that is being disassociated.
 		 * @param {string} resource The name or ID of the resource.
+		 *     Min length: 1    Max length: 256
 		 * @return {DisassociateResourceResponse} Success
 		 */
 		DisassociateResource(application: string, resourceType: ResourceType, resource: string): Observable<DisassociateResourceResponse> {
@@ -1077,8 +1085,10 @@ export namespace MyNS {
 		 * Gets the resource associated with the application.
 		 * Get applications/{application}/resources/{resourceType}/{resource}
 		 * @param {string} application  The name, ID, or ARN of the application. 
+		 *     Min length: 1    Max length: 256
 		 * @param {ResourceType} resourceType The type of resource associated with the application.
 		 * @param {string} resource The name or ID of the resource associated with the application.
+		 *     Min length: 1    Max length: 256
 		 * @return {GetAssociatedResourceResponse} Success
 		 */
 		GetAssociatedResource(application: string, resourceType: ResourceType, resource: string): Observable<GetAssociatedResourceResponse> {
@@ -1098,7 +1108,9 @@ export namespace MyNS {
 		 * Retrieves a list of all of your applications. Results are paginated.
 		 * Get applications
 		 * @param {string} nextToken The token to use to get the next page of results after a previous API call. 
+		 *     Min length: 1    Max length: 2024
 		 * @param {number} maxResults The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListApplicationsResponse} Success
 		 */
 		ListApplications(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListApplicationsResponse> {
@@ -1118,7 +1130,9 @@ export namespace MyNS {
 		 * Lists all attribute groups which you have access to. Results are paginated.
 		 * Get attribute-groups
 		 * @param {string} nextToken The token to use to get the next page of results after a previous API call. 
+		 *     Min length: 1    Max length: 2024
 		 * @param {number} maxResults The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListAttributeGroupsResponse} Success
 		 */
 		ListAttributeGroups(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAttributeGroupsResponse> {
@@ -1129,6 +1143,7 @@ export namespace MyNS {
 		 * Deletes an application that is specified either by its application ID, name, or ARN. All associated attribute groups and resources must be disassociated from it before deleting an application.
 		 * Delete applications/{application}
 		 * @param {string} application  The name, ID, or ARN of the application. 
+		 *     Min length: 1    Max length: 256
 		 * @return {DeleteApplicationResponse} Success
 		 */
 		DeleteApplication(application: string): Observable<DeleteApplicationResponse> {
@@ -1139,6 +1154,7 @@ export namespace MyNS {
 		 * Retrieves metadata information about one of your applications. The application can be specified by its ARN, ID, or name (which is unique within one account in one region at a given point in time). Specify by ARN or ID in automated workflows if you want to make sure that the exact same application is returned or a <code>ResourceNotFoundException</code> is thrown, avoiding the ABA addressing problem.
 		 * Get applications/{application}
 		 * @param {string} application  The name, ID, or ARN of the application. 
+		 *     Min length: 1    Max length: 256
 		 * @return {GetApplicationResponse} Success
 		 */
 		GetApplication(application: string): Observable<GetApplicationResponse> {
@@ -1149,6 +1165,7 @@ export namespace MyNS {
 		 * Updates an existing application with new attributes.
 		 * Patch applications/{application}
 		 * @param {string} application  The name, ID, or ARN of the application that will be updated. 
+		 *     Min length: 1    Max length: 256
 		 * @return {UpdateApplicationResponse} Success
 		 */
 		UpdateApplication(application: string, requestBody: UpdateApplicationPatchBody): Observable<UpdateApplicationResponse> {
@@ -1159,6 +1176,7 @@ export namespace MyNS {
 		 * Deletes an attribute group, specified either by its attribute group ID, name, or ARN.
 		 * Delete attribute-groups/{attributeGroup}
 		 * @param {string} attributeGroup  The name, ID, or ARN of the attribute group that holds the attributes to describe the application. 
+		 *     Min length: 1    Max length: 512
 		 * @return {DeleteAttributeGroupResponse} Success
 		 */
 		DeleteAttributeGroup(attributeGroup: string): Observable<DeleteAttributeGroupResponse> {
@@ -1169,6 +1187,7 @@ export namespace MyNS {
 		 * Retrieves an attribute group by its ARN, ID, or name. The attribute group can be specified by its ARN, ID, or name.
 		 * Get attribute-groups/{attributeGroup}
 		 * @param {string} attributeGroup  The name, ID, or ARN of the attribute group that holds the attributes to describe the application. 
+		 *     Min length: 1    Max length: 512
 		 * @return {GetAttributeGroupResponse} Success
 		 */
 		GetAttributeGroup(attributeGroup: string): Observable<GetAttributeGroupResponse> {
@@ -1179,6 +1198,7 @@ export namespace MyNS {
 		 * Updates an existing attribute group with new details.
 		 * Patch attribute-groups/{attributeGroup}
 		 * @param {string} attributeGroup  The name, ID, or ARN of the attribute group that holds the attributes to describe the application. 
+		 *     Min length: 1    Max length: 512
 		 * @return {UpdateAttributeGroupResponse} Success
 		 */
 		UpdateAttributeGroup(attributeGroup: string, requestBody: UpdateAttributeGroupPatchBody): Observable<UpdateAttributeGroupResponse> {
@@ -1207,8 +1227,11 @@ export namespace MyNS {
 		 * Lists all attribute groups that are associated with specified application. Results are paginated.
 		 * Get applications/{application}/attribute-groups
 		 * @param {string} application The name or ID of the application.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} nextToken The token to use to get the next page of results after a previous API call. 
+		 *     Min length: 1    Max length: 2024
 		 * @param {number} maxResults The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListAssociatedAttributeGroupsResponse} Success
 		 */
 		ListAssociatedAttributeGroups(application: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssociatedAttributeGroupsResponse> {
@@ -1219,8 +1242,11 @@ export namespace MyNS {
 		 * <p> Lists all of the resources that are associated with the specified application. Results are paginated. </p> <note> <p> If you share an application, and a consumer account associates a tag query to the application, all of the users who can access the application can also view the tag values in all accounts that are associated with it using this API. </p> </note>
 		 * Get applications/{application}/resources
 		 * @param {string} application  The name, ID, or ARN of the application. 
+		 *     Min length: 1    Max length: 256
 		 * @param {string} nextToken The token to use to get the next page of results after a previous API call. 
+		 *     Min length: 1    Max length: 2024
 		 * @param {number} maxResults The upper bound of the number of results to return (cannot exceed 25). If this parameter is omitted, it defaults to 25. This value is optional.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListAssociatedResourcesResponse} Success
 		 */
 		ListAssociatedResources(application: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssociatedResourcesResponse> {
@@ -1231,8 +1257,11 @@ export namespace MyNS {
 		 * Lists the details of all attribute groups associated with a specific application. The results display in pages.
 		 * Get applications/{application}/attribute-group-details
 		 * @param {string} application The name or ID of the application.
+		 *     Min length: 1    Max length: 256
 		 * @param {string} nextToken This token retrieves the next page of results after a previous API call.
+		 *     Min length: 1    Max length: 2024
 		 * @param {number} maxResults The upper bound of the number of results to return. The value cannot exceed 25. If you omit this parameter, it defaults to 25. This value is optional.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListAttributeGroupsForApplicationResponse} Success
 		 */
 		ListAttributeGroupsForApplication(application: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAttributeGroupsForApplicationResponse> {
@@ -1243,6 +1272,7 @@ export namespace MyNS {
 		 * Lists all of the tags on the resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon resource name (ARN) that specifies the resource.
+		 *     Min length: 1    Max length: 1600
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1253,6 +1283,7 @@ export namespace MyNS {
 		 * <p>Assigns one or more tags (key-value pairs) to the specified resource.</p> <p>Each tag consists of a key and an optional value. If a tag with the same key is already associated with the resource, this action updates its value.</p> <p>This operation returns an empty response if the call was successful.</p>
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon resource name (ARN) that specifies the resource.
+		 *     Min length: 1    Max length: 1600
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1264,6 +1295,7 @@ export namespace MyNS {
 		 * Post sync/{resourceType}/{resource}
 		 * @param {ResourceType} resourceType The type of resource of which the application will be associated.
 		 * @param {string} resource An entity you can work with and specify with a name or ID. Examples include an Amazon EC2 instance, an Amazon Web Services CloudFormation stack, or an Amazon S3 bucket.
+		 *     Min length: 1    Max length: 256
 		 * @return {SyncResourceResponse} Success
 		 */
 		SyncResource(resourceType: ResourceType, resource: string): Observable<SyncResourceResponse> {
@@ -1274,7 +1306,9 @@ export namespace MyNS {
 		 * <p>Removes tags from a resource.</p> <p>This operation returns an empty response if the call was successful.</p>
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon resource name (ARN) that specifies the resource.
+		 *     Min length: 1    Max length: 1600
 		 * @param {Array<string>} tagKeys A list of the tag keys to remove from the specified resource.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1287,8 +1321,8 @@ export namespace MyNS {
 		/**
 		 * The name of the application. The name must be unique in the region in which you are creating the application.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: string;
 
@@ -1304,8 +1338,8 @@ export namespace MyNS {
 		/**
 		 * A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: string;
 	}
@@ -1314,8 +1348,8 @@ export namespace MyNS {
 		/**
 		 * The name of the application. The name must be unique in the region in which you are creating the application.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1331,8 +1365,8 @@ export namespace MyNS {
 		/**
 		 * A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -1351,8 +1385,8 @@ export namespace MyNS {
 		/**
 		 * The name of the attribute group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: string;
 
@@ -1365,8 +1399,8 @@ export namespace MyNS {
 		/**
 		 * A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.
 		 * Required
-		 * Max length: 8000
 		 * Min length: 1
+		 * Max length: 8000
 		 */
 		attributes: string;
 
@@ -1376,8 +1410,8 @@ export namespace MyNS {
 		/**
 		 * A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: string;
 	}
@@ -1386,8 +1420,8 @@ export namespace MyNS {
 		/**
 		 * The name of the attribute group.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1400,8 +1434,8 @@ export namespace MyNS {
 		/**
 		 * A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.
 		 * Required
-		 * Max length: 8000
 		 * Min length: 1
+		 * Max length: 8000
 		 */
 		attributes: FormControl<string | null | undefined>,
 
@@ -1411,8 +1445,8 @@ export namespace MyNS {
 		/**
 		 * A unique identifier that you provide to ensure idempotency. If you retry a request that completed successfully using the same client token and the same parameters, the retry succeeds without performing any further actions. If you retry a successful request using the same client token, but one or more of the parameters are different, the retry fails.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -1431,8 +1465,8 @@ export namespace MyNS {
 
 		/**
 		 * Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name?: string | null;
 
@@ -1446,8 +1480,8 @@ export namespace MyNS {
 
 		/**
 		 * Deprecated: The new name of the application. The name must be unique in the region in which you are updating the application. Please do not use this field as we have stopped supporting name updates.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1469,8 +1503,8 @@ export namespace MyNS {
 
 		/**
 		 * Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name?: string | null;
 
@@ -1482,8 +1516,8 @@ export namespace MyNS {
 
 		/**
 		 * A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.
-		 * Max length: 8000
 		 * Min length: 1
+		 * Max length: 8000
 		 */
 		attributes?: string | null;
 	}
@@ -1491,8 +1525,8 @@ export namespace MyNS {
 
 		/**
 		 * Deprecated: The new name of the attribute group. The name must be unique in the region in which you are updating the attribute group. Please do not use this field as we have stopped supporting name updates.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -1504,8 +1538,8 @@ export namespace MyNS {
 
 		/**
 		 * A JSON string in the form of nested key-value pairs that represent the attributes in the group and describes an application and its components.
-		 * Max length: 8000
 		 * Min length: 1
+		 * Max length: 8000
 		 */
 		attributes: FormControl<string | null | undefined>,
 	}

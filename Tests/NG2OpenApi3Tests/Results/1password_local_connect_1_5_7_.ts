@@ -68,11 +68,15 @@ export namespace MyNS {
 
 	export interface APIRequestResource {
 		item?: APIRequestResourceItem;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemVersion?: number | null;
 		type?: APIRequestResourceType | null;
 		vault?: APIRequestResourceVault;
 	}
 	export interface APIRequestResourceFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		itemVersion: FormControl<number | null | undefined>,
 		type: FormControl<APIRequestResourceType | null | undefined>,
 	}
@@ -119,7 +123,10 @@ export namespace MyNS {
 		/** A message detailing the error */
 		message?: string | null;
 
-		/** HTTP Status Code */
+		/**
+		 * HTTP Status Code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status?: number | null;
 	}
 	export interface ErrorResponseFormProperties {
@@ -127,7 +134,10 @@ export namespace MyNS {
 		/** A message detailing the error */
 		message: FormControl<string | null | undefined>,
 
-		/** HTTP Status Code */
+		/**
+		 * HTTP Status Code
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorResponseFormGroup() {
@@ -140,7 +150,10 @@ export namespace MyNS {
 
 	export interface Field {
 
-		/** For fields with a purpose of `PASSWORD` this is the entropy of the value */
+		/**
+		 * For fields with a purpose of `PASSWORD` this is the entropy of the value
+		 * Type: double
+		 */
 		entropy?: number | null;
 
 		/** If value is not present then a new value should be generated for this field */
@@ -163,7 +176,10 @@ export namespace MyNS {
 	}
 	export interface FieldFormProperties {
 
-		/** For fields with a purpose of `PASSWORD` this is the entropy of the value */
+		/**
+		 * For fields with a purpose of `PASSWORD` this is the entropy of the value
+		 * Type: double
+		 */
 		entropy: FormControl<number | null | undefined>,
 
 		/** If value is not present then a new value should be generated for this field */
@@ -269,7 +285,10 @@ export namespace MyNS {
 		/** For files that are in a section, this field describes the section. */
 		section?: FileSection;
 
-		/** Size in bytes of the file */
+		/**
+		 * Size in bytes of the file
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 	}
 	export interface FileFormProperties {
@@ -286,7 +305,10 @@ export namespace MyNS {
 		/** Name of the file */
 		name: FormControl<string | null | undefined>,
 
-		/** Size in bytes of the file */
+		/**
+		 * Size in bytes of the file
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateFileFormGroup() {
@@ -367,6 +389,8 @@ export namespace MyNS {
 
 		/** Required */
 		vault: ItemVault;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version?: number | null;
 	}
 	export interface ItemFormProperties {
@@ -380,6 +404,8 @@ export namespace MyNS {
 		state: FormControl<ItemState | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		updatedAt: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateItemFormGroup() {
@@ -505,16 +531,25 @@ export namespace MyNS {
 
 	export interface Vault {
 
-		/** The vault version */
+		/**
+		 * The vault version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attributeVersion?: number | null;
 
-		/** The version of the vault contents */
+		/**
+		 * The version of the vault contents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contentVersion?: number | null;
 		createdAt?: Date | null;
 		description?: string | null;
 		id?: string | null;
 
-		/** Number of active items in the vault */
+		/**
+		 * Number of active items in the vault
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items?: number | null;
 		name?: string | null;
 		type?: VaultType | null;
@@ -522,16 +557,25 @@ export namespace MyNS {
 	}
 	export interface VaultFormProperties {
 
-		/** The vault version */
+		/**
+		 * The vault version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attributeVersion: FormControl<number | null | undefined>,
 
-		/** The version of the vault contents */
+		/**
+		 * The version of the vault contents
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		contentVersion: FormControl<number | null | undefined>,
 		createdAt: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		id: FormControl<string | null | undefined>,
 
-		/** Number of active items in the vault */
+		/**
+		 * Number of active items in the vault
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		items: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		type: FormControl<VaultType | null | undefined>,
@@ -563,7 +607,9 @@ export namespace MyNS {
 		 * Retrieve a list of API Requests that have been made.
 		 * Get activity
 		 * @param {number} limit How many API Events should be retrieved in a single request.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset How far into the collection of API Events should the response start
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<APIRequest>} OK
 		 */
 		GetApiActivity(limit: number | null | undefined, offset: number | null | undefined): Observable<Array<APIRequest>> {

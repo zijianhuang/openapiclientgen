@@ -597,7 +597,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="top">May be used to limit the number of results in a page for list queries.</param>
+		/// <param name="top">May be used to limit the number of results in a page for list queries.
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
 		/// <param name="skiptoken">Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.</param>
 		/// <returns>Get successful. The operation returns all Managed Network resources under the current subscription in a paginated format.</returns>
 		public async Task<ManagedNetworkListResult> ManagedNetworks_ListBySubscriptionAsync(string api_version, string subscriptionId, int top, string skiptoken)
@@ -630,7 +633,10 @@ namespace MyNS
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
-		/// <param name="top">May be used to limit the number of results in a page for list queries.</param>
+		/// <param name="top">May be used to limit the number of results in a page for list queries.
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
 		/// <param name="skiptoken">Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.</param>
 		/// <returns>Get successful. The operation returns all Managed Network resources under the specified resource group in a paginated format</returns>
 		public async Task<ManagedNetworkListResult> ManagedNetworks_ListByResourceGroupAsync(string api_version, string subscriptionId, string resourceGroupName, int top, string skiptoken)
@@ -802,7 +808,10 @@ namespace MyNS
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="managedNetworkName">The name of the Managed Network.</param>
-		/// <param name="top">May be used to limit the number of results in a page for list queries.</param>
+		/// <param name="top">May be used to limit the number of results in a page for list queries.
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
 		/// <param name="skiptoken">Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.</param>
 		/// <returns>Get successful. The operation returns all Managed Network Group resources under the specified Managed Network in a paginated format.</returns>
 		public async Task<ManagedNetworkGroupListResult> ManagedNetworkGroups_ListByManagedNetworkAsync(string api_version, string subscriptionId, string resourceGroupName, string managedNetworkName, int top, string skiptoken)
@@ -937,7 +946,10 @@ namespace MyNS
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
 		/// <param name="resourceGroupName">The name of the resource group.</param>
 		/// <param name="managedNetworkName">The name of the Managed Network.</param>
-		/// <param name="top">May be used to limit the number of results in a page for list queries.</param>
+		/// <param name="top">May be used to limit the number of results in a page for list queries.
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
 		/// <param name="skiptoken">Skiptoken is only used if a previous operation returned a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skiptoken parameter that specifies a starting point to use for subsequent calls.</param>
 		/// <returns>Get successful. The operation returns all Managed Network Peering Policy resources in the specified Managed Network, in a paginated format</returns>
 		public async Task<ManagedNetworkPeeringPolicyListResult> ManagedNetworkPeeringPolicies_ListByManagedNetworkAsync(string api_version, string subscriptionId, string resourceGroupName, string managedNetworkName, int top, string skiptoken)

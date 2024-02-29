@@ -48,14 +48,20 @@ export namespace MyNS {
 		/** A list of environment variables to use for the commands in this action. */
 		envVariables?: Array<EnvVariable>;
 
-		/** If an action's commands on a particular replica do not finish in the specified timeoutMilliSeconds, the replica is considered to be in a FAILING state. No efforts are made to stop any processes that were spawned or created as the result of running the action's commands. The default is the max allowed value, 1 hour (i.e. 3600000 milliseconds). */
+		/**
+		 * If an action's commands on a particular replica do not finish in the specified timeoutMilliSeconds, the replica is considered to be in a FAILING state. No efforts are made to stop any processes that were spawned or created as the result of running the action's commands. The default is the max allowed value, 1 hour (i.e. 3600000 milliseconds).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutMilliSeconds?: number | null;
 	}
 
 	/** An action that gets executed during initialization of the replicas. */
 	export interface ActionFormProperties {
 
-		/** If an action's commands on a particular replica do not finish in the specified timeoutMilliSeconds, the replica is considered to be in a FAILING state. No efforts are made to stop any processes that were spawned or created as the result of running the action's commands. The default is the max allowed value, 1 hour (i.e. 3600000 milliseconds). */
+		/**
+		 * If an action's commands on a particular replica do not finish in the specified timeoutMilliSeconds, the replica is considered to be in a FAILING state. No efforts are made to stop any processes that were spawned or created as the result of running the action's commands. The default is the max allowed value, 1 hour (i.e. 3600000 milliseconds).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutMilliSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateActionFormGroup() {
@@ -107,7 +113,10 @@ export namespace MyNS {
 		/** The device name of this disk. */
 		deviceName?: string | null;
 
-		/** A zero-based index to assign to this disk, where 0 is reserved for the boot disk. If not specified, this is assigned by the server. */
+		/**
+		 * A zero-based index to assign to this disk, where 0 is reserved for the boot disk. If not specified, this is assigned by the server.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		index?: number | null;
 	}
 
@@ -117,7 +126,10 @@ export namespace MyNS {
 		/** The device name of this disk. */
 		deviceName: FormControl<string | null | undefined>,
 
-		/** A zero-based index to assign to this disk, where 0 is reserved for the boot disk. If not specified, this is assigned by the server. */
+		/**
+		 * A zero-based index to assign to this disk, where 0 is reserved for the boot disk. If not specified, this is assigned by the server.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateDiskAttachmentFormGroup() {
@@ -154,13 +166,19 @@ export namespace MyNS {
 
 	export interface HealthCheck {
 
-		/** How often (in seconds) to make HTTP requests for this healthcheck. The default value is 5 seconds. */
+		/**
+		 * How often (in seconds) to make HTTP requests for this healthcheck. The default value is 5 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		checkIntervalSec?: number | null;
 
 		/** The description for this health check. */
 		description?: string | null;
 
-		/** The number of consecutive health check requests that need to succeed before the replica is considered healthy again. The default value is 2. */
+		/**
+		 * The number of consecutive health check requests that need to succeed before the replica is considered healthy again. The default value is 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		healthyThreshold?: number | null;
 
 		/** The value of the host header in the HTTP health check request. If left empty (default value), the localhost IP 127.0.0.1 will be used. */
@@ -172,24 +190,39 @@ export namespace MyNS {
 		/** The localhost request path to send this health check, in the format /path/to/use. For example, /healthcheck. */
 		path?: string | null;
 
-		/** The TCP port for the health check requests. */
+		/**
+		 * The TCP port for the health check requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
-		/** How long (in seconds) to wait before a timeout failure for this healthcheck. The default value is 5 seconds. */
+		/**
+		 * How long (in seconds) to wait before a timeout failure for this healthcheck. The default value is 5 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSec?: number | null;
 
-		/** The number of consecutive health check requests that need to fail in order to consider the replica unhealthy. The default value is 2. */
+		/**
+		 * The number of consecutive health check requests that need to fail in order to consider the replica unhealthy. The default value is 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unhealthyThreshold?: number | null;
 	}
 	export interface HealthCheckFormProperties {
 
-		/** How often (in seconds) to make HTTP requests for this healthcheck. The default value is 5 seconds. */
+		/**
+		 * How often (in seconds) to make HTTP requests for this healthcheck. The default value is 5 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		checkIntervalSec: FormControl<number | null | undefined>,
 
 		/** The description for this health check. */
 		description: FormControl<string | null | undefined>,
 
-		/** The number of consecutive health check requests that need to succeed before the replica is considered healthy again. The default value is 2. */
+		/**
+		 * The number of consecutive health check requests that need to succeed before the replica is considered healthy again. The default value is 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		healthyThreshold: FormControl<number | null | undefined>,
 
 		/** The value of the host header in the HTTP health check request. If left empty (default value), the localhost IP 127.0.0.1 will be used. */
@@ -201,13 +234,22 @@ export namespace MyNS {
 		/** The localhost request path to send this health check, in the format /path/to/use. For example, /healthcheck. */
 		path: FormControl<string | null | undefined>,
 
-		/** The TCP port for the health check requests. */
+		/**
+		 * The TCP port for the health check requests.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
-		/** How long (in seconds) to wait before a timeout failure for this healthcheck. The default value is 5 seconds. */
+		/**
+		 * How long (in seconds) to wait before a timeout failure for this healthcheck. The default value is 5 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSec: FormControl<number | null | undefined>,
 
-		/** The number of consecutive health check requests that need to fail in order to consider the replica unhealthy. The default value is 2. */
+		/**
+		 * The number of consecutive health check requests that need to fail in order to consider the replica unhealthy. The default value is 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unhealthyThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateHealthCheckFormGroup() {
@@ -422,7 +464,10 @@ export namespace MyNS {
 		 */
 		baseInstanceName?: string | null;
 
-		/** [Output Only] The current number of replicas in the pool. */
+		/**
+		 * [Output Only] The current number of replicas in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentNumReplicas?: number | null;
 
 		/** An optional description of the replica pool. */
@@ -431,7 +476,10 @@ export namespace MyNS {
 		/** Deprecated. Please use template[].healthChecks instead. */
 		healthChecks?: Array<HealthCheck>;
 
-		/** The initial number of replicas this pool should have. You must provide a value greater than or equal to 0. */
+		/**
+		 * The initial number of replicas this pool should have. You must provide a value greater than or equal to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialNumReplicas?: number | null;
 
 		/** A list of labels to attach to this replica pool and all created virtual machines in this replica pool. */
@@ -440,7 +488,10 @@ export namespace MyNS {
 		/** The name of the replica pool. Must follow the regex [a-z]([-a-z0-9]*[a-z0-9])? and be 1-28 characters long. */
 		name?: string | null;
 
-		/** Deprecated! Use initial_num_replicas instead. */
+		/**
+		 * Deprecated! Use initial_num_replicas instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numReplicas?: number | null;
 
 		/** The list of resource views that should be updated with all the replicas that are managed by this pool. */
@@ -472,19 +523,28 @@ export namespace MyNS {
 		 */
 		baseInstanceName: FormControl<string | null | undefined>,
 
-		/** [Output Only] The current number of replicas in the pool. */
+		/**
+		 * [Output Only] The current number of replicas in the pool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentNumReplicas: FormControl<number | null | undefined>,
 
 		/** An optional description of the replica pool. */
 		description: FormControl<string | null | undefined>,
 
-		/** The initial number of replicas this pool should have. You must provide a value greater than or equal to 0. */
+		/**
+		 * The initial number of replicas this pool should have. You must provide a value greater than or equal to 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialNumReplicas: FormControl<number | null | undefined>,
 
 		/** The name of the replica pool. Must follow the regex [a-z]([-a-z0-9]*[a-z0-9])? and be 1-28 characters long. */
 		name: FormControl<string | null | undefined>,
 
-		/** Deprecated! Use initial_num_replicas instead. */
+		/**
+		 * Deprecated! Use initial_num_replicas instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numReplicas: FormControl<number | null | undefined>,
 
 		/** [Output Only] A self-link to the replica pool. */
@@ -802,6 +862,7 @@ export namespace MyNS {
 		 * @param {string} projectName The project ID for this request.
 		 * @param {string} zone The zone for this replica pool.
 		 * @param {number} maxResults Maximum count of results to be returned. Acceptable values are 0 to 100, inclusive. (Default: 50)
+		 *     Minimum: 0    Maximum: 1000
 		 * @param {string} pageToken Set this to the nextPageToken value returned by a previous list request to obtain the next page of results from the previous list request.
 		 * @return {void} Successful response
 		 */
@@ -851,6 +912,7 @@ export namespace MyNS {
 		 * @param {string} zone The zone where the replica pool lives.
 		 * @param {string} poolName The replica pool name for this request.
 		 * @param {number} maxResults Maximum count of results to be returned. Acceptable values are 0 to 100, inclusive. (Default: 50)
+		 *     Minimum: 0    Maximum: 1000
 		 * @param {string} pageToken Set this to the nextPageToken value returned by a previous list request to obtain the next page of results from the previous list request.
 		 * @return {void} Successful response
 		 */
@@ -904,6 +966,7 @@ export namespace MyNS {
 		 * @param {string} zone The zone for this replica pool.
 		 * @param {string} poolName The name of the replica pool for this request.
 		 * @param {number} numReplicas The desired number of replicas to resize to. If this number is larger than the existing number of replicas, new replicas will be added. If the number is smaller, then existing replicas will be deleted.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Replicapool_pools_resize(projectName: string, zone: string, poolName: string, numReplicas: number | null | undefined): Observable<HttpResponse<string>> {

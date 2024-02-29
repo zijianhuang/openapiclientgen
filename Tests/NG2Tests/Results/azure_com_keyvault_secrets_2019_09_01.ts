@@ -238,6 +238,7 @@ export namespace MyNS {
 		 * @param {string} resourceGroupName The name of the Resource Group to which the vault belongs.
 		 * @param {string} vaultName The name of the vault.
 		 * @param {number} top Maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client Api Version.
 		 * @param {string} subscriptionId Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {SecretListResult} Get information about secrets in the specified vault.

@@ -2061,6 +2061,7 @@ export namespace MyNS {
 		 * Retrieve a face list’s faceListId, name, userData, recognitionModel and faces in the face list.
 		 * Get facelists/{faceListId}
 		 * @param {string} faceListId Id referencing a particular face list.
+		 *     Max length: 64
 		 * @param {boolean} returnRecognitionModel A value indicating whether the operation should return 'recognitionModel' in response.
 		 * @return {FaceList} A successful call returns the face list's information.
 		 */
@@ -2079,6 +2080,7 @@ export namespace MyNS {
 		 * * 'recognition_02': Recognition model released in 2019 March. 'recognition_02' is recommended since its overall accuracy is improved compared with 'recognition_01'.
 		 * Put facelists/{faceListId}
 		 * @param {string} faceListId Id referencing a particular face list.
+		 *     Max length: 64
 		 * @param {MetaDataContract} requestBody Request body for creating a face list.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2090,6 +2092,7 @@ export namespace MyNS {
 		 * Delete a specified face list.
 		 * Delete facelists/{faceListId}
 		 * @param {string} faceListId Id referencing a particular face list.
+		 *     Max length: 64
 		 * @return {void} A successful call returns an empty response body.
 		 */
 		FaceList_Delete(faceListId: string): Observable<HttpResponse<string>> {
@@ -2100,6 +2103,7 @@ export namespace MyNS {
 		 * Update information of a face list.
 		 * Patch facelists/{faceListId}
 		 * @param {string} faceListId Id referencing a particular face list.
+		 *     Max length: 64
 		 * @param {NameAndUserDataContract} requestBody Request body for updating a face list.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2124,7 +2128,9 @@ export namespace MyNS {
 		 * | 'detection_02': | Detection model released in 2019 May with improved accuracy especially on small, side and blurry faces. |
 		 * Post facelists/{faceListId}/persistedfaces
 		 * @param {string} faceListId Id referencing a particular face list.
+		 *     Max length: 64
 		 * @param {string} userData User-specified data about the face for any purpose. The maximum length is 1KB.
+		 *     Max length: 1024
 		 * @param {Array<number>} targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
 		 * @param {Face_DetectWithUrlDetectionModel} detectionModel Name of detection model. Detection model is used to detect faces in the submitted image. A detection model name can be provided when performing Face - Detect or (Large)FaceList - Add Face or (Large)PersonGroup - Add Face. The default value is 'detection_01', if another model is needed, please explicitly specify it.
 		 * @param {FaceList_AddFaceFromUrlPostBody} requestBody A JSON document with a URL pointing to the image that is to be analyzed.
@@ -2139,6 +2145,7 @@ export namespace MyNS {
 		 * <br /> Adding/deleting faces to/from a same face list are processed sequentially and to/from different face lists are in parallel.
 		 * Delete facelists/{faceListId}/persistedfaces/{persistedFaceId}
 		 * @param {string} faceListId Id referencing a particular face list.
+		 *     Max length: 64
 		 * @param {string} persistedFaceId Id referencing a particular persistedFaceId of an existing face.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2214,6 +2221,7 @@ export namespace MyNS {
 		 * Retrieve a large face list’s largeFaceListId, name, userData and recognitionModel.
 		 * Get largefacelists/{largeFaceListId}
 		 * @param {string} largeFaceListId Id referencing a particular large face list.
+		 *     Max length: 64
 		 * @param {boolean} returnRecognitionModel A value indicating whether the operation should return 'recognitionModel' in response.
 		 * @return {LargeFaceList} A successful call returns the large face list's information.
 		 */
@@ -2234,6 +2242,7 @@ export namespace MyNS {
 		 * * S0-tier subscription quota: 1,000,000 large face lists.
 		 * Put largefacelists/{largeFaceListId}
 		 * @param {string} largeFaceListId Id referencing a particular large face list.
+		 *     Max length: 64
 		 * @param {MetaDataContract} requestBody Request body for creating a large face list.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2245,6 +2254,7 @@ export namespace MyNS {
 		 * Delete a specified large face list.
 		 * Delete largefacelists/{largeFaceListId}
 		 * @param {string} largeFaceListId Id referencing a particular large face list.
+		 *     Max length: 64
 		 * @return {void} A successful call returns an empty response body.
 		 */
 		LargeFaceList_Delete(largeFaceListId: string): Observable<HttpResponse<string>> {
@@ -2255,6 +2265,7 @@ export namespace MyNS {
 		 * Update information of a large face list.
 		 * Patch largefacelists/{largeFaceListId}
 		 * @param {string} largeFaceListId Id referencing a particular large face list.
+		 *     Max length: 64
 		 * @param {NameAndUserDataContract} requestBody Request body for updating a large face list.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2266,8 +2277,10 @@ export namespace MyNS {
 		 * List all faces in a large face list, and retrieve face information (including userData and persistedFaceIds of registered faces of the face).
 		 * Get largefacelists/{largeFaceListId}/persistedfaces
 		 * @param {string} largeFaceListId Id referencing a particular large face list.
+		 *     Max length: 64
 		 * @param {string} start Starting face id to return (used to list a range of faces).
 		 * @param {number} top Number of faces to return starting with the face id indicated by the 'start' parameter.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<PersistedFace>} A successful call returns an array of face information that belong to the large face list.
 		 */
 		LargeFaceList_ListFaces(largeFaceListId: string, start: string | null | undefined, top: number | null | undefined): Observable<Array<PersistedFace>> {
@@ -2294,7 +2307,9 @@ export namespace MyNS {
 		 * * S0-tier subscription quota: 1,000,000 faces per large face list.
 		 * Post largefacelists/{largeFaceListId}/persistedfaces
 		 * @param {string} largeFaceListId Id referencing a particular large face list.
+		 *     Max length: 64
 		 * @param {string} userData User-specified data about the face for any purpose. The maximum length is 1KB.
+		 *     Max length: 1024
 		 * @param {Array<number>} targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
 		 * @param {Face_DetectWithUrlDetectionModel} detectionModel Name of detection model. Detection model is used to detect faces in the submitted image. A detection model name can be provided when performing Face - Detect or (Large)FaceList - Add Face or (Large)PersonGroup - Add Face. The default value is 'detection_01', if another model is needed, please explicitly specify it.
 		 * @param {LargeFaceList_AddFaceFromUrlPostBody} requestBody A JSON document with a URL pointing to the image that is to be analyzed.
@@ -2308,6 +2323,7 @@ export namespace MyNS {
 		 * Retrieve information about a persisted face (specified by persistedFaceId and its belonging largeFaceListId).
 		 * Get largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}
 		 * @param {string} largeFaceListId Id referencing a particular large face list.
+		 *     Max length: 64
 		 * @param {string} persistedFaceId Id referencing a particular persistedFaceId of an existing face.
 		 * @return {PersistedFace} A successful call returns target persisted face's information (persistedFaceId and userData).
 		 */
@@ -2320,6 +2336,7 @@ export namespace MyNS {
 		 * <br /> Adding/deleting faces to/from a same large face list are processed sequentially and to/from different large face lists are in parallel.
 		 * Delete largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}
 		 * @param {string} largeFaceListId Id referencing a particular large face list.
+		 *     Max length: 64
 		 * @param {string} persistedFaceId Id referencing a particular persistedFaceId of an existing face.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2331,6 +2348,7 @@ export namespace MyNS {
 		 * Update a persisted face's userData field.
 		 * Patch largefacelists/{largeFaceListId}/persistedfaces/{persistedFaceId}
 		 * @param {string} largeFaceListId Id referencing a particular large face list.
+		 *     Max length: 64
 		 * @param {string} persistedFaceId Id referencing a particular persistedFaceId of an existing face.
 		 * @param {UpdateFaceRequest} requestBody Request body for updating persisted face.
 		 * @return {void} A successful call returns an empty response body.
@@ -2343,6 +2361,7 @@ export namespace MyNS {
 		 * Queue a large face list training task, the training task may not be started immediately.
 		 * Post largefacelists/{largeFaceListId}/train
 		 * @param {string} largeFaceListId Id referencing a particular large face list.
+		 *     Max length: 64
 		 * @return {void} 
 		 */
 		LargeFaceList_Train(largeFaceListId: string): Observable<HttpResponse<string>> {
@@ -2353,6 +2372,7 @@ export namespace MyNS {
 		 * Retrieve the training status of a large face list (completed or ongoing).
 		 * Get largefacelists/{largeFaceListId}/training
 		 * @param {string} largeFaceListId Id referencing a particular large face list.
+		 *     Max length: 64
 		 * @return {TrainingStatus} A successful call returns the large face list's training status.
 		 */
 		LargeFaceList_GetTrainingStatus(largeFaceListId: string): Observable<TrainingStatus> {
@@ -2371,7 +2391,9 @@ export namespace MyNS {
 		 * <br /> "start=group2&top=3" will return "group3", "group4", "group5".
 		 * Get largepersongroups
 		 * @param {string} start List large person groups from the least largePersonGroupId greater than the "start".
+		 *     Max length: 64
 		 * @param {number} top The number of large person groups to list.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {boolean} returnRecognitionModel A value indicating whether the operation should return 'recognitionModel' in response.
 		 * @return {Array<LargePersonGroup>} A successful call returns an array of large person groups and their information.
 		 */
@@ -2383,6 +2405,7 @@ export namespace MyNS {
 		 * Retrieve the information of a large person group, including its name, userData and recognitionModel. This API returns large person group information only, use [LargePersonGroup Person - List](/docs/services/563879b61984550e40cbbe8d/operations/599adda06ac60f11b48b5aa1) instead to retrieve person information under the large person group.
 		 * Get largepersongroups/{largePersonGroupId}
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {boolean} returnRecognitionModel A value indicating whether the operation should return 'recognitionModel' in response.
 		 * @return {LargePersonGroup} A successful call returns the large person group's information.
 		 */
@@ -2404,6 +2427,7 @@ export namespace MyNS {
 		 * * S0-tier subscription quota: 1,000,000 large person groups.
 		 * Put largepersongroups/{largePersonGroupId}
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {MetaDataContract} requestBody Request body for creating new large person group.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2415,6 +2439,7 @@ export namespace MyNS {
 		 * Delete an existing large person group. Persisted face features of all people in the large person group will also be deleted.
 		 * Delete largepersongroups/{largePersonGroupId}
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @return {void} A successful call returns an empty response body.
 		 */
 		LargePersonGroup_Delete(largePersonGroupId: string): Observable<HttpResponse<string>> {
@@ -2425,6 +2450,7 @@ export namespace MyNS {
 		 * Update an existing large person group's display name and userData. The properties which does not appear in request body will not be updated.
 		 * Patch largepersongroups/{largePersonGroupId}
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {NameAndUserDataContract} requestBody Request body for updating large person group.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2436,8 +2462,10 @@ export namespace MyNS {
 		 * List all persons in a large person group, and retrieve person information (including personId, name, userData and persistedFaceIds of registered faces of the person).
 		 * Get largepersongroups/{largePersonGroupId}/persons
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {string} start Starting person id to return (used to list a range of persons).
 		 * @param {number} top Number of persons to return starting with the person id indicated by the 'start' parameter.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<Person>} A successful call returns an array of person information that belong to the large person group.
 		 */
 		LargePersonGroupPerson_List(largePersonGroupId: string, start: string | null | undefined, top: number | null | undefined): Observable<Array<Person>> {
@@ -2448,6 +2476,7 @@ export namespace MyNS {
 		 * Create a new person in a specified large person group.
 		 * Post largepersongroups/{largePersonGroupId}/persons
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {NameAndUserDataContract} requestBody Request body for creating new person.
 		 * @return {Person} A successful call returns a new personId created.
 		 */
@@ -2459,6 +2488,7 @@ export namespace MyNS {
 		 * Retrieve a person's name and userData, and the persisted faceIds representing the registered person face feature.
 		 * Get largepersongroups/{largePersonGroupId}/persons/{personId}
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @return {Person} A successful call returns the person's information.
 		 */
@@ -2470,6 +2500,7 @@ export namespace MyNS {
 		 * Delete an existing person from a large person group. The persistedFaceId, userData, person name and face feature in the person entry will all be deleted.
 		 * Delete largepersongroups/{largePersonGroupId}/persons/{personId}
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2481,6 +2512,7 @@ export namespace MyNS {
 		 * Update name or userData of a person.
 		 * Patch largepersongroups/{largePersonGroupId}/persons/{personId}
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @param {NameAndUserDataContract} requestBody Request body for person update operation.
 		 * @return {void} A successful call returns an empty response body.
@@ -2506,8 +2538,10 @@ export namespace MyNS {
 		 * | 'detection_02': | Detection model released in 2019 May with improved accuracy especially on small, side and blurry faces. |
 		 * Post largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @param {string} userData User-specified data about the face for any purpose. The maximum length is 1KB.
+		 *     Max length: 1024
 		 * @param {Array<number>} targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
 		 * @param {Face_DetectWithUrlDetectionModel} detectionModel Name of detection model. Detection model is used to detect faces in the submitted image. A detection model name can be provided when performing Face - Detect or (Large)FaceList - Add Face or (Large)PersonGroup - Add Face. The default value is 'detection_01', if another model is needed, please explicitly specify it.
 		 * @param {LargePersonGroupPerson_AddFaceFromUrlPostBody} requestBody A JSON document with a URL pointing to the image that is to be analyzed.
@@ -2521,6 +2555,7 @@ export namespace MyNS {
 		 * Retrieve information about a persisted face (specified by persistedFaceId, personId and its belonging largePersonGroupId).
 		 * Get largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @param {string} persistedFaceId Id referencing a particular persistedFaceId of an existing face.
 		 * @return {PersistedFace} A successful call returns target persisted face's information (persistedFaceId and userData).
@@ -2534,6 +2569,7 @@ export namespace MyNS {
 		 * <br /> Adding/deleting faces to/from a same person will be processed sequentially. Adding/deleting faces to/from different persons are processed in parallel.
 		 * Delete largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @param {string} persistedFaceId Id referencing a particular persistedFaceId of an existing face.
 		 * @return {void} A successful call returns an empty response body.
@@ -2546,6 +2582,7 @@ export namespace MyNS {
 		 * Update a person persisted face's userData field.
 		 * Patch largepersongroups/{largePersonGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @param {string} persistedFaceId Id referencing a particular persistedFaceId of an existing face.
 		 * @param {UpdateFaceRequest} requestBody Request body for updating persisted face.
@@ -2559,6 +2596,7 @@ export namespace MyNS {
 		 * Queue a large person group training task, the training task may not be started immediately.
 		 * Post largepersongroups/{largePersonGroupId}/train
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @return {void} 
 		 */
 		LargePersonGroup_Train(largePersonGroupId: string): Observable<HttpResponse<string>> {
@@ -2569,6 +2607,7 @@ export namespace MyNS {
 		 * Retrieve the training status of a large person group (completed or ongoing).
 		 * Get largepersongroups/{largePersonGroupId}/training
 		 * @param {string} largePersonGroupId Id referencing a particular large person group.
+		 *     Max length: 64
 		 * @return {TrainingStatus} A successful call returns the large person group's training status.
 		 */
 		LargePersonGroup_GetTrainingStatus(largePersonGroupId: string): Observable<TrainingStatus> {
@@ -2597,7 +2636,9 @@ export namespace MyNS {
 		 * <br /> "start=group2&top=3" will return "group3", "group4", "group5".
 		 * Get persongroups
 		 * @param {string} start List person groups from the least personGroupId greater than the "start".
+		 *     Max length: 64
 		 * @param {number} top The number of person groups to list.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {boolean} returnRecognitionModel A value indicating whether the operation should return 'recognitionModel' in response.
 		 * @return {Array<PersonGroup>} A successful call returns an array of person groups and their information.
 		 */
@@ -2609,6 +2650,7 @@ export namespace MyNS {
 		 * Retrieve person group name, userData and recognitionModel. To get person information under this personGroup, use [PersonGroup Person - List](/docs/services/563879b61984550e40cbbe8d/operations/563879b61984550f30395241).
 		 * Get persongroups/{personGroupId}
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {boolean} returnRecognitionModel A value indicating whether the operation should return 'recognitionModel' in response.
 		 * @return {PersonGroup} A successful call returns the person group's information.
 		 */
@@ -2630,6 +2672,7 @@ export namespace MyNS {
 		 * * to handle larger scale face identification problem, please consider using [LargePersonGroup](/docs/services/563879b61984550e40cbbe8d/operations/599acdee6ac60f11b48b5a9d).
 		 * Put persongroups/{personGroupId}
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {MetaDataContract} requestBody Request body for creating new person group.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2641,6 +2684,7 @@ export namespace MyNS {
 		 * Delete an existing person group. Persisted face features of all people in the person group will also be deleted.
 		 * Delete persongroups/{personGroupId}
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @return {void} A successful call returns an empty response body.
 		 */
 		PersonGroup_Delete(personGroupId: string): Observable<HttpResponse<string>> {
@@ -2651,6 +2695,7 @@ export namespace MyNS {
 		 * Update an existing person group's display name and userData. The properties which does not appear in request body will not be updated.
 		 * Patch persongroups/{personGroupId}
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {NameAndUserDataContract} requestBody Request body for updating person group.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2662,8 +2707,10 @@ export namespace MyNS {
 		 * List all persons in a person group, and retrieve person information (including personId, name, userData and persistedFaceIds of registered faces of the person).
 		 * Get persongroups/{personGroupId}/persons
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {string} start Starting person id to return (used to list a range of persons).
 		 * @param {number} top Number of persons to return starting with the person id indicated by the 'start' parameter.
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {Array<Person>} A successful call returns an array of person information that belong to the person group.
 		 */
 		PersonGroupPerson_List(personGroupId: string, start: string | null | undefined, top: number | null | undefined): Observable<Array<Person>> {
@@ -2674,6 +2721,7 @@ export namespace MyNS {
 		 * Create a new person in a specified person group.
 		 * Post persongroups/{personGroupId}/persons
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {NameAndUserDataContract} requestBody Request body for creating new person.
 		 * @return {Person} A successful call returns a new personId created.
 		 */
@@ -2685,6 +2733,7 @@ export namespace MyNS {
 		 * Retrieve a person's information, including registered persisted faces, name and userData.
 		 * Get persongroups/{personGroupId}/persons/{personId}
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @return {Person} A successful call returns the person's information.
 		 */
@@ -2696,6 +2745,7 @@ export namespace MyNS {
 		 * Delete an existing person from a person group. The persistedFaceId, userData, person name and face feature in the person entry will all be deleted.
 		 * Delete persongroups/{personGroupId}/persons/{personId}
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @return {void} A successful call returns an empty response body.
 		 */
@@ -2707,6 +2757,7 @@ export namespace MyNS {
 		 * Update name or userData of a person.
 		 * Patch persongroups/{personGroupId}/persons/{personId}
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @param {NameAndUserDataContract} requestBody Request body for person update operation.
 		 * @return {void} A successful call returns an empty response body.
@@ -2732,8 +2783,10 @@ export namespace MyNS {
 		 * | 'detection_02': | Detection model released in 2019 May with improved accuracy especially on small, side and blurry faces. |
 		 * Post persongroups/{personGroupId}/persons/{personId}/persistedfaces
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @param {string} userData User-specified data about the face for any purpose. The maximum length is 1KB.
+		 *     Max length: 1024
 		 * @param {Array<number>} targetFace A face rectangle to specify the target face to be added to a person in the format of "targetFace=left,top,width,height". E.g. "targetFace=10,10,100,100". If there is more than one face in the image, targetFace is required to specify which face to add. No targetFace means there is only one face detected in the entire image.
 		 * @param {Face_DetectWithUrlDetectionModel} detectionModel Name of detection model. Detection model is used to detect faces in the submitted image. A detection model name can be provided when performing Face - Detect or (Large)FaceList - Add Face or (Large)PersonGroup - Add Face. The default value is 'detection_01', if another model is needed, please explicitly specify it.
 		 * @param {PersonGroupPerson_AddFaceFromUrlPostBody} requestBody A JSON document with a URL pointing to the image that is to be analyzed.
@@ -2747,6 +2800,7 @@ export namespace MyNS {
 		 * Retrieve information about a persisted face (specified by persistedFaceId, personId and its belonging personGroupId).
 		 * Get persongroups/{personGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @param {string} persistedFaceId Id referencing a particular persistedFaceId of an existing face.
 		 * @return {PersistedFace} A successful call returns target persisted face's information (persistedFaceId and userData).
@@ -2760,6 +2814,7 @@ export namespace MyNS {
 		 * <br /> Adding/deleting faces to/from a same person will be processed sequentially. Adding/deleting faces to/from different persons are processed in parallel.
 		 * Delete persongroups/{personGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @param {string} persistedFaceId Id referencing a particular persistedFaceId of an existing face.
 		 * @return {void} A successful call returns an empty response body.
@@ -2779,6 +2834,7 @@ export namespace MyNS {
 		 * * Adding/deleting faces to/from a same person will be processed sequentially. Adding/deleting faces to/from different persons are processed in parallel.
 		 * Patch persongroups/{personGroupId}/persons/{personId}/persistedfaces/{persistedFaceId}
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @param {string} personId Id referencing a particular person.
 		 * @param {string} persistedFaceId Id referencing a particular persistedFaceId of an existing face.
 		 * @param {UpdateFaceRequest} requestBody Request body for updating persisted face.
@@ -2792,6 +2848,7 @@ export namespace MyNS {
 		 * Queue a person group training task, the training task may not be started immediately.
 		 * Post persongroups/{personGroupId}/train
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @return {void} 
 		 */
 		PersonGroup_Train(personGroupId: string): Observable<HttpResponse<string>> {
@@ -2802,6 +2859,7 @@ export namespace MyNS {
 		 * Retrieve the training status of a person group (completed or ongoing).
 		 * Get persongroups/{personGroupId}/training
 		 * @param {string} personGroupId Id referencing a particular person group.
+		 *     Max length: 64
 		 * @return {TrainingStatus} A successful call returns the person group's training status.
 		 */
 		PersonGroup_GetTrainingStatus(personGroupId: string): Observable<TrainingStatus> {

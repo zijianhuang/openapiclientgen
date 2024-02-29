@@ -278,16 +278,28 @@ export namespace MyNS {
 		 */
 		grade: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marksMax: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marksMaxPractical: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marksMaxTheory: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marksPractical: number;
 
 		/**
@@ -328,16 +340,28 @@ export namespace MyNS {
 		 */
 		grade: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marksMax: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marksMaxPractical: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marksMaxTheory: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		marksPractical: FormControl<number | null | undefined>,
 
 		/**
@@ -1070,7 +1094,10 @@ export namespace MyNS {
 
 	export interface ConsentArtifactSchemaConsentPermissionFrequency {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		repeats: number;
 
 		/**
@@ -1079,12 +1106,18 @@ export namespace MyNS {
 		 */
 		unit: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: number;
 	}
 	export interface ConsentArtifactSchemaConsentPermissionFrequencyFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		repeats: FormControl<number | null | undefined>,
 
 		/**
@@ -1093,7 +1126,10 @@ export namespace MyNS {
 		 */
 		unit: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateConsentArtifactSchemaConsentPermissionFrequencyFormGroup() {

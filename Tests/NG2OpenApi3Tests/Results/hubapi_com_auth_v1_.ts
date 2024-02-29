@@ -5,14 +5,23 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface AccessTokenInfoResponse {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		app_id: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in: number;
 		hub_domain?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hub_id: number;
 
 		/** Required */
@@ -34,19 +43,31 @@ export namespace MyNS {
 		trial_scopes: Array<string>;
 		user?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id: number;
 	}
 	export interface AccessTokenInfoResponseFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		app_id: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in: FormControl<number | null | undefined>,
 		hub_domain: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hub_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -56,7 +77,10 @@ export namespace MyNS {
 		token_type: FormControl<string | null | undefined>,
 		user: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateAccessTokenInfoResponseFormGroup() {
@@ -203,7 +227,10 @@ export namespace MyNS {
 		client_id: string;
 		hub_domain?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hub_id: number;
 
 		/** Required */
@@ -216,7 +243,10 @@ export namespace MyNS {
 		token_type: string;
 		user?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id: number;
 	}
 	export interface RefreshTokenInfoResponseFormProperties {
@@ -225,7 +255,10 @@ export namespace MyNS {
 		client_id: FormControl<string | null | undefined>,
 		hub_domain: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		hub_id: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -235,7 +268,10 @@ export namespace MyNS {
 		token_type: FormControl<string | null | undefined>,
 		user: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateRefreshTokenInfoResponseFormGroup() {
@@ -256,7 +292,10 @@ export namespace MyNS {
 		/** Required */
 		access_token: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in: number;
 		id_token?: string | null;
 
@@ -271,7 +310,10 @@ export namespace MyNS {
 		/** Required */
 		access_token: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in: FormControl<number | null | undefined>,
 		id_token: FormControl<string | null | undefined>,
 

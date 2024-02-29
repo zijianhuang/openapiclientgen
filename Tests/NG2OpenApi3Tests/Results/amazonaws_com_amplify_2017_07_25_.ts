@@ -2409,7 +2409,9 @@ export namespace MyNS {
 		 * Returns a list of the existing Amplify apps.
 		 * Get apps
 		 * @param {string} nextToken  A pagination token. If non-null, the pagination token is returned in a result. Pass its value in another request to retrieve more entries. 
+		 *     Max length: 2000
 		 * @param {number} maxResults  The maximum number of records to list in a single response. 
+		 *     Minimum: 0    Maximum: 100
 		 * @return {ListAppsResult} Success
 		 */
 		ListApps(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAppsResult> {
@@ -2420,6 +2422,7 @@ export namespace MyNS {
 		 * Creates a new backend environment for an Amplify app.
 		 * Post apps/{appId}/backendenvironments
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @return {CreateBackendEnvironmentResult} Success
 		 */
 		CreateBackendEnvironment(appId: string, requestBody: CreateBackendEnvironmentPostBody): Observable<CreateBackendEnvironmentResult> {
@@ -2430,9 +2433,13 @@ export namespace MyNS {
 		 * Lists the backend environments for an Amplify app.
 		 * Get apps/{appId}/backendenvironments
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} environmentName  The name of the backend environment 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} nextToken  A pagination token. Set to null to start listing backend environments from the start. If a non-null pagination token is returned in a result, pass its value in here to list more backend environments. 
+		 *     Max length: 2000
 		 * @param {number} maxResults  The maximum number of records to list in a single response. 
+		 *     Minimum: 0    Maximum: 100
 		 * @return {ListBackendEnvironmentsResult} Success
 		 */
 		ListBackendEnvironments(appId: string, environmentName: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListBackendEnvironmentsResult> {
@@ -2443,6 +2450,7 @@ export namespace MyNS {
 		 * Creates a new branch for an Amplify app.
 		 * Post apps/{appId}/branches
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @return {CreateBranchResult} Success
 		 */
 		CreateBranch(appId: string, requestBody: CreateBranchPostBody): Observable<CreateBranchResult> {
@@ -2453,8 +2461,11 @@ export namespace MyNS {
 		 * Lists the branches of an Amplify app.
 		 * Get apps/{appId}/branches
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} nextToken  A pagination token. Set to null to start listing branches from the start. If a non-null pagination token is returned in a result, pass its value in here to list more branches. 
+		 *     Max length: 2000
 		 * @param {number} maxResults  The maximum number of records to list in a single response. 
+		 *     Minimum: 0    Maximum: 100
 		 * @return {ListBranchesResult} Success
 		 */
 		ListBranches(appId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListBranchesResult> {
@@ -2465,7 +2476,9 @@ export namespace MyNS {
 		 * Creates a deployment for a manually deployed Amplify app. Manually deployed apps are not connected to a repository.
 		 * Post apps/{appId}/branches/{branchName}/deployments
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} branchName  The name for the branch, for the job. 
+		 *     Min length: 1    Max length: 255
 		 * @return {CreateDeploymentResult} Success
 		 */
 		CreateDeployment(appId: string, branchName: string, requestBody: CreateDeploymentPostBody): Observable<CreateDeploymentResult> {
@@ -2476,6 +2489,7 @@ export namespace MyNS {
 		 * Creates a new domain association for an Amplify app. This action associates a custom domain with the Amplify app
 		 * Post apps/{appId}/domains
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @return {CreateDomainAssociationResult} Success
 		 */
 		CreateDomainAssociation(appId: string, requestBody: CreateDomainAssociationPostBody): Observable<CreateDomainAssociationResult> {
@@ -2486,8 +2500,11 @@ export namespace MyNS {
 		 * Returns the domain associations for an Amplify app.
 		 * Get apps/{appId}/domains
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} nextToken  A pagination token. Set to null to start listing apps from the start. If non-null, a pagination token is returned in a result. Pass its value in here to list more projects. 
+		 *     Max length: 2000
 		 * @param {number} maxResults  The maximum number of records to list in a single response. 
+		 *     Minimum: 0    Maximum: 100
 		 * @return {ListDomainAssociationsResult} Success
 		 */
 		ListDomainAssociations(appId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDomainAssociationsResult> {
@@ -2498,6 +2515,7 @@ export namespace MyNS {
 		 * Creates a new webhook on an Amplify app.
 		 * Post apps/{appId}/webhooks
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @return {CreateWebhookResult} Success
 		 */
 		CreateWebhook(appId: string, requestBody: CreateWebhookPostBody): Observable<CreateWebhookResult> {
@@ -2508,8 +2526,11 @@ export namespace MyNS {
 		 * Returns a list of webhooks for an Amplify app.
 		 * Get apps/{appId}/webhooks
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} nextToken  A pagination token. Set to null to start listing webhooks from the start. If non-null,the pagination token is returned in a result. Pass its value in here to list more webhooks. 
+		 *     Max length: 2000
 		 * @param {number} maxResults  The maximum number of records to list in a single response. 
+		 *     Minimum: 0    Maximum: 100
 		 * @return {ListWebhooksResult} Success
 		 */
 		ListWebhooks(appId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListWebhooksResult> {
@@ -2520,6 +2541,7 @@ export namespace MyNS {
 		 * Deletes an existing Amplify app specified by an app ID.
 		 * Delete apps/{appId}
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @return {DeleteAppResult} Success
 		 */
 		DeleteApp(appId: string): Observable<DeleteAppResult> {
@@ -2530,6 +2552,7 @@ export namespace MyNS {
 		 * Returns an existing Amplify app by appID.
 		 * Get apps/{appId}
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @return {GetAppResult} Success
 		 */
 		GetApp(appId: string): Observable<GetAppResult> {
@@ -2540,6 +2563,7 @@ export namespace MyNS {
 		 * Updates an existing Amplify app.
 		 * Post apps/{appId}
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @return {UpdateAppResult} Success
 		 */
 		UpdateApp(appId: string, requestBody: UpdateAppPostBody): Observable<UpdateAppResult> {
@@ -2550,7 +2574,9 @@ export namespace MyNS {
 		 * Deletes a backend environment for an Amplify app.
 		 * Delete apps/{appId}/backendenvironments/{environmentName}
 		 * @param {string} appId  The unique ID of an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} environmentName  The name of a backend environment of an Amplify app. 
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteBackendEnvironmentResult} Success
 		 */
 		DeleteBackendEnvironment(appId: string, environmentName: string): Observable<DeleteBackendEnvironmentResult> {
@@ -2561,7 +2587,9 @@ export namespace MyNS {
 		 * Returns a backend environment for an Amplify app.
 		 * Get apps/{appId}/backendenvironments/{environmentName}
 		 * @param {string} appId  The unique id for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} environmentName  The name for the backend environment. 
+		 *     Min length: 1    Max length: 255
 		 * @return {GetBackendEnvironmentResult} Success
 		 */
 		GetBackendEnvironment(appId: string, environmentName: string): Observable<GetBackendEnvironmentResult> {
@@ -2572,7 +2600,9 @@ export namespace MyNS {
 		 * Deletes a branch for an Amplify app.
 		 * Delete apps/{appId}/branches/{branchName}
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} branchName  The name for the branch. 
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteBranchResult} Success
 		 */
 		DeleteBranch(appId: string, branchName: string): Observable<DeleteBranchResult> {
@@ -2583,7 +2613,9 @@ export namespace MyNS {
 		 * Returns a branch for an Amplify app.
 		 * Get apps/{appId}/branches/{branchName}
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} branchName  The name for the branch. 
+		 *     Min length: 1    Max length: 255
 		 * @return {GetBranchResult} Success
 		 */
 		GetBranch(appId: string, branchName: string): Observable<GetBranchResult> {
@@ -2594,7 +2626,9 @@ export namespace MyNS {
 		 * Updates a branch for an Amplify app.
 		 * Post apps/{appId}/branches/{branchName}
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} branchName  The name for the branch. 
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateBranchResult} Success
 		 */
 		UpdateBranch(appId: string, branchName: string, requestBody: UpdateBranchPostBody): Observable<UpdateBranchResult> {
@@ -2605,7 +2639,9 @@ export namespace MyNS {
 		 * Deletes a domain association for an Amplify app.
 		 * Delete apps/{appId}/domains/{domainName}
 		 * @param {string} appId  The unique id for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} domainName  The name of the domain. 
+		 *     Max length: 64
 		 * @return {DeleteDomainAssociationResult} Success
 		 */
 		DeleteDomainAssociation(appId: string, domainName: string): Observable<DeleteDomainAssociationResult> {
@@ -2616,7 +2652,9 @@ export namespace MyNS {
 		 * Returns the domain information for an Amplify app.
 		 * Get apps/{appId}/domains/{domainName}
 		 * @param {string} appId  The unique id for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} domainName  The name of the domain. 
+		 *     Max length: 64
 		 * @return {GetDomainAssociationResult} Success
 		 */
 		GetDomainAssociation(appId: string, domainName: string): Observable<GetDomainAssociationResult> {
@@ -2627,7 +2665,9 @@ export namespace MyNS {
 		 * Creates a new domain association for an Amplify app.
 		 * Post apps/{appId}/domains/{domainName}
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} domainName  The name of the domain. 
+		 *     Max length: 64
 		 * @return {UpdateDomainAssociationResult} Success
 		 */
 		UpdateDomainAssociation(appId: string, domainName: string, requestBody: UpdateDomainAssociationPostBody): Observable<UpdateDomainAssociationResult> {
@@ -2638,8 +2678,11 @@ export namespace MyNS {
 		 * Deletes a job for a branch of an Amplify app.
 		 * Delete apps/{appId}/branches/{branchName}/jobs/{jobId}
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} branchName  The name for the branch, for the job. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} jobId  The unique ID for the job. 
+		 *     Max length: 255
 		 * @return {DeleteJobResult} Success
 		 */
 		DeleteJob(appId: string, branchName: string, jobId: string): Observable<DeleteJobResult> {
@@ -2650,8 +2693,11 @@ export namespace MyNS {
 		 * Returns a job for a branch of an Amplify app.
 		 * Get apps/{appId}/branches/{branchName}/jobs/{jobId}
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} branchName  The branch name for the job. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} jobId  The unique ID for the job. 
+		 *     Max length: 255
 		 * @return {GetJobResult} Success
 		 */
 		GetJob(appId: string, branchName: string, jobId: string): Observable<GetJobResult> {
@@ -2662,6 +2708,7 @@ export namespace MyNS {
 		 * Deletes a webhook.
 		 * Delete webhooks/{webhookId}
 		 * @param {string} webhookId  The unique ID for a webhook. 
+		 *     Max length: 255
 		 * @return {DeleteWebhookResult} Success
 		 */
 		DeleteWebhook(webhookId: string): Observable<DeleteWebhookResult> {
@@ -2672,6 +2719,7 @@ export namespace MyNS {
 		 * Returns the webhook information that corresponds to a specified webhook ID.
 		 * Get webhooks/{webhookId}
 		 * @param {string} webhookId  The unique ID for a webhook. 
+		 *     Max length: 255
 		 * @return {GetWebhookResult} Success
 		 */
 		GetWebhook(webhookId: string): Observable<GetWebhookResult> {
@@ -2682,6 +2730,7 @@ export namespace MyNS {
 		 * Updates a webhook.
 		 * Post webhooks/{webhookId}
 		 * @param {string} webhookId  The unique ID for a webhook. 
+		 *     Max length: 255
 		 * @return {UpdateWebhookResult} Success
 		 */
 		UpdateWebhook(webhookId: string, requestBody: UpdateWebhookPostBody): Observable<UpdateWebhookResult> {
@@ -2692,6 +2741,7 @@ export namespace MyNS {
 		 * Returns the website access logs for a specific time range using a presigned URL.
 		 * Post apps/{appId}/accesslogs
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @return {GenerateAccessLogsResult} Success
 		 */
 		GenerateAccessLogs(appId: string, requestBody: GenerateAccessLogsPostBody): Observable<GenerateAccessLogsResult> {
@@ -2702,6 +2752,7 @@ export namespace MyNS {
 		 * Returns the artifact info that corresponds to an artifact id.
 		 * Get artifacts/{artifactId}
 		 * @param {string} artifactId  The unique ID for an artifact. 
+		 *     Max length: 255
 		 * @return {GetArtifactUrlResult} Success
 		 */
 		GetArtifactUrl(artifactId: string): Observable<GetArtifactUrlResult> {
@@ -2712,10 +2763,15 @@ export namespace MyNS {
 		 * Returns a list of artifacts for a specified app, branch, and job.
 		 * Get apps/{appId}/branches/{branchName}/jobs/{jobId}/artifacts
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} branchName  The name of a branch that is part of an Amplify app. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} jobId  The unique ID for a job. 
+		 *     Max length: 255
 		 * @param {string} nextToken  A pagination token. Set to null to start listing artifacts from start. If a non-null pagination token is returned in a result, pass its value in here to list more artifacts. 
+		 *     Max length: 2000
 		 * @param {number} maxResults  The maximum number of records to list in a single response. 
+		 *     Minimum: 0    Maximum: 100
 		 * @return {ListArtifactsResult} Success
 		 */
 		ListArtifacts(appId: string, branchName: string, jobId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListArtifactsResult> {
@@ -2726,9 +2782,13 @@ export namespace MyNS {
 		 * Lists the jobs for a branch of an Amplify app.
 		 * Get apps/{appId}/branches/{branchName}/jobs
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} branchName  The name for a branch. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} nextToken  A pagination token. Set to null to start listing steps from the start. If a non-null pagination token is returned in a result, pass its value in here to list more steps. 
+		 *     Max length: 2000
 		 * @param {number} maxResults  The maximum number of records to list in a single response. 
+		 *     Minimum: 0    Maximum: 100
 		 * @return {ListJobsResult} Success
 		 */
 		ListJobs(appId: string, branchName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListJobsResult> {
@@ -2739,7 +2799,9 @@ export namespace MyNS {
 		 * Starts a new job for a branch of an Amplify app.
 		 * Post apps/{appId}/branches/{branchName}/jobs
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} branchName  The branch name for the job. 
+		 *     Min length: 1    Max length: 255
 		 * @return {StartJobResult} Success
 		 */
 		StartJob(appId: string, branchName: string, requestBody: StartJobPostBody): Observable<StartJobResult> {
@@ -2750,6 +2812,7 @@ export namespace MyNS {
 		 * Returns a list of tags for a specified Amazon Resource Name (ARN).
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn  The Amazon Resource Name (ARN) to use to list tags. 
+		 *     Min length: 0    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -2760,6 +2823,7 @@ export namespace MyNS {
 		 * Tags the resource with a tag key and value.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn  The Amazon Resource Name (ARN) to use to tag a resource. 
+		 *     Min length: 0    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -2770,7 +2834,9 @@ export namespace MyNS {
 		 * Starts a deployment for a manually deployed app. Manually deployed apps are not connected to a repository.
 		 * Post apps/{appId}/branches/{branchName}/deployments/start
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} branchName  The name for the branch, for the job. 
+		 *     Min length: 1    Max length: 255
 		 * @return {StartDeploymentResult} Success
 		 */
 		StartDeployment(appId: string, branchName: string, requestBody: StartDeploymentPostBody): Observable<StartDeploymentResult> {
@@ -2781,8 +2847,11 @@ export namespace MyNS {
 		 * Stops a job that is in progress for a branch of an Amplify app.
 		 * Delete apps/{appId}/branches/{branchName}/jobs/{jobId}/stop
 		 * @param {string} appId  The unique ID for an Amplify app. 
+		 *     Min length: 1    Max length: 20
 		 * @param {string} branchName  The name for the branch, for the job. 
+		 *     Min length: 1    Max length: 255
 		 * @param {string} jobId  The unique id for the job. 
+		 *     Max length: 255
 		 * @return {StopJobResult} Success
 		 */
 		StopJob(appId: string, branchName: string, jobId: string): Observable<StopJobResult> {
@@ -2793,7 +2862,9 @@ export namespace MyNS {
 		 * Untags a resource with a specified Amazon Resource Name (ARN).
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn  The Amazon Resource Name (ARN) to use to untag a resource. 
+		 *     Min length: 0    Max length: 2048
 		 * @param {Array<string>} tagKeys  The tag keys to use to untag a resource. 
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2806,8 +2877,8 @@ export namespace MyNS {
 		/**
 		 * The name for an Amplify app.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -2828,8 +2899,8 @@ export namespace MyNS {
 
 		/**
 		 * The AWS Identity and Access Management (IAM) service role for an Amplify app.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		iamServiceRoleArn?: string | null;
 
@@ -2841,8 +2912,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p> <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		accessToken?: string | null;
 
@@ -2872,15 +2943,15 @@ export namespace MyNS {
 
 		/**
 		 * The build specification (build spec) file for an Amplify app build.
-		 * Max length: 25000
 		 * Min length: 1
+		 * Max length: 25000
 		 */
 		buildSpec?: string | null;
 
 		/**
 		 * The custom HTTP headers for an Amplify app.
-		 * Max length: 25000
 		 * Min length: 0
+		 * Max length: 25000
 		 */
 		customHeaders?: string | null;
 
@@ -2898,8 +2969,8 @@ export namespace MyNS {
 		/**
 		 * The name for an Amplify app.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -2920,8 +2991,8 @@ export namespace MyNS {
 
 		/**
 		 * The AWS Identity and Access Management (IAM) service role for an Amplify app.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		iamServiceRoleArn: FormControl<string | null | undefined>,
 
@@ -2933,8 +3004,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you create a new app.</p> <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		accessToken: FormControl<string | null | undefined>,
 
@@ -2961,15 +3032,15 @@ export namespace MyNS {
 
 		/**
 		 * The build specification (build spec) file for an Amplify app build.
-		 * Max length: 25000
 		 * Min length: 1
+		 * Max length: 25000
 		 */
 		buildSpec: FormControl<string | null | undefined>,
 
 		/**
 		 * The custom HTTP headers for an Amplify app.
-		 * Max length: 25000
 		 * Min length: 0
+		 * Max length: 25000
 		 */
 		customHeaders: FormControl<string | null | undefined>,
 
@@ -3041,22 +3112,22 @@ export namespace MyNS {
 		/**
 		 * The name for the backend environment.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		environmentName: string;
 
 		/**
 		 * The AWS CloudFormation stack name of a backend environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		stackName?: string | null;
 
 		/**
 		 * The name of deployment artifacts.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		deploymentArtifacts?: string | null;
 	}
@@ -3065,22 +3136,22 @@ export namespace MyNS {
 		/**
 		 * The name for the backend environment.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		environmentName: FormControl<string | null | undefined>,
 
 		/**
 		 * The AWS CloudFormation stack name of a backend environment.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		stackName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of deployment artifacts.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		deploymentArtifacts: FormControl<string | null | undefined>,
 	}
@@ -3098,8 +3169,8 @@ export namespace MyNS {
 		/**
 		 * The name for the branch.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		branchName: string;
 
@@ -3144,15 +3215,15 @@ export namespace MyNS {
 
 		/**
 		 * The build specification (build spec) file for an Amplify app build.
-		 * Max length: 25000
 		 * Min length: 1
+		 * Max length: 25000
 		 */
 		buildSpec?: string | null;
 
 		/**
 		 * The content Time to Live (TTL) for the website in seconds.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		ttl?: string | null;
 
@@ -3173,8 +3244,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		backendEnvironmentArn?: string | null;
 	}
@@ -3183,8 +3254,8 @@ export namespace MyNS {
 		/**
 		 * The name for the branch.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		branchName: FormControl<string | null | undefined>,
 
@@ -3229,15 +3300,15 @@ export namespace MyNS {
 
 		/**
 		 * The build specification (build spec) file for an Amplify app build.
-		 * Max length: 25000
 		 * Min length: 1
+		 * Max length: 25000
 		 */
 		buildSpec: FormControl<string | null | undefined>,
 
 		/**
 		 * The content Time to Live (TTL) for the website in seconds.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		ttl: FormControl<string | null | undefined>,
 
@@ -3258,8 +3329,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		backendEnvironmentArn: FormControl<string | null | undefined>,
 	}
@@ -3363,8 +3434,8 @@ export namespace MyNS {
 		/**
 		 * The name for a branch that is part of an Amplify app.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		branchName: string;
 
@@ -3379,8 +3450,8 @@ export namespace MyNS {
 		/**
 		 * The name for a branch that is part of an Amplify app.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		branchName: FormControl<string | null | undefined>,
 
@@ -3402,8 +3473,8 @@ export namespace MyNS {
 
 		/**
 		 * The name for an Amplify app.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
@@ -3418,8 +3489,8 @@ export namespace MyNS {
 
 		/**
 		 * The AWS Identity and Access Management (IAM) service role for an Amplify app.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		iamServiceRoleArn?: string | null;
 
@@ -3446,15 +3517,15 @@ export namespace MyNS {
 
 		/**
 		 * The build specification (build spec) file for an Amplify app build.
-		 * Max length: 25000
 		 * Min length: 1
+		 * Max length: 25000
 		 */
 		buildSpec?: string | null;
 
 		/**
 		 * The custom HTTP headers for an Amplify app.
-		 * Max length: 25000
 		 * Min length: 0
+		 * Max length: 25000
 		 */
 		customHeaders?: string | null;
 
@@ -3481,8 +3552,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p> <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		accessToken?: string | null;
 	}
@@ -3490,8 +3561,8 @@ export namespace MyNS {
 
 		/**
 		 * The name for an Amplify app.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3506,8 +3577,8 @@ export namespace MyNS {
 
 		/**
 		 * The AWS Identity and Access Management (IAM) service role for an Amplify app.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		iamServiceRoleArn: FormControl<string | null | undefined>,
 
@@ -3531,15 +3602,15 @@ export namespace MyNS {
 
 		/**
 		 * The build specification (build spec) file for an Amplify app build.
-		 * Max length: 25000
 		 * Min length: 1
+		 * Max length: 25000
 		 */
 		buildSpec: FormControl<string | null | undefined>,
 
 		/**
 		 * The custom HTTP headers for an Amplify app.
-		 * Max length: 25000
 		 * Min length: 0
+		 * Max length: 25000
 		 */
 		customHeaders: FormControl<string | null | undefined>,
 
@@ -3560,8 +3631,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The personal access token for a GitHub repository for an Amplify app. The personal access token is used to authorize access to a GitHub repository using the Amplify GitHub App. The token is not stored.</p> <p>Use <code>accessToken</code> for GitHub repositories only. To authorize access to a repository provider such as Bitbucket or CodeCommit, use <code>oauthToken</code>.</p> <p>You must specify either <code>accessToken</code> or <code>oauthToken</code> when you update an app.</p> <p>Existing Amplify apps deployed from a GitHub repository using OAuth continue to work with CI/CD. However, we strongly recommend that you migrate these apps to use the GitHub App. For more information, see <a href="https://docs.aws.amazon.com/amplify/latest/UserGuide/setting-up-GitHub-access.html#migrating-to-github-app-auth">Migrating an existing OAuth app to the Amplify GitHub App</a> in the <i>Amplify User Guide</i> .</p>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		accessToken: FormControl<string | null | undefined>,
 	}
@@ -3664,15 +3735,15 @@ export namespace MyNS {
 
 		/**
 		 * The build specification (build spec) file for an Amplify app build.
-		 * Max length: 25000
 		 * Min length: 1
+		 * Max length: 25000
 		 */
 		buildSpec?: string | null;
 
 		/**
 		 * The content Time to Live (TTL) for the website in seconds.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		ttl?: string | null;
 
@@ -3693,8 +3764,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		backendEnvironmentArn?: string | null;
 	}
@@ -3738,15 +3809,15 @@ export namespace MyNS {
 
 		/**
 		 * The build specification (build spec) file for an Amplify app build.
-		 * Max length: 25000
 		 * Min length: 1
+		 * Max length: 25000
 		 */
 		buildSpec: FormControl<string | null | undefined>,
 
 		/**
 		 * The content Time to Live (TTL) for the website in seconds.
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		ttl: FormControl<string | null | undefined>,
 
@@ -3767,8 +3838,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) for a backend environment that is part of an Amplify app.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		backendEnvironmentArn: FormControl<string | null | undefined>,
 	}
@@ -3836,8 +3907,8 @@ export namespace MyNS {
 
 		/**
 		 * The name for a branch that is part of an Amplify app.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		branchName?: string | null;
 
@@ -3851,8 +3922,8 @@ export namespace MyNS {
 
 		/**
 		 * The name for a branch that is part of an Amplify app.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		branchName: FormControl<string | null | undefined>,
 

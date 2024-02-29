@@ -5,11 +5,15 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface CreateStatus {
 		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		uri?: string | null;
 	}
 	export interface CreateStatusFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		uri: FormControl<string | null | undefined>,
 	}
@@ -23,9 +27,13 @@ export namespace MyNS {
 	}
 
 	export interface DeleteStatus {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 	}
 	export interface DeleteStatusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateDeleteStatusFormGroup() {
@@ -37,10 +45,14 @@ export namespace MyNS {
 
 	export interface Error {
 		message?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 	}
 	export interface ErrorFormProperties {
 		message: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorFormGroup() {
@@ -53,10 +65,14 @@ export namespace MyNS {
 
 	export interface UpdateStatus {
 		data?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 	}
 	export interface UpdateStatusFormProperties {
 		data: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateStatusFormGroup() {

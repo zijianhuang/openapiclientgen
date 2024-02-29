@@ -4230,7 +4230,10 @@ namespace MyNS
 		/// 
 		/// Accounts_AccountSidAvailablePhoneNumbers_IsoCountryCodeLocal_mediaTypeExtensionGet Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Local{mediaTypeExtension}
 		/// </summary>
-		/// <param name="IsoCountryCode">ISO 3166-1 alpha-2.</param>
+		/// <param name="IsoCountryCode">ISO 3166-1 alpha-2.
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
 		/// <returns>The request was successful and the response body contains the representation
@@ -4262,7 +4265,10 @@ namespace MyNS
 		/// Returns a list of mobile AvailablePhoneNumber resource representations that match the specified filters, each representing a phone number that is currently available for provisioning within your account.
 		/// Accounts_AccountSidAvailablePhoneNumbers_IsoCountryCodeMobile_mediaTypeExtensionGet Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/Mobile{mediaTypeExtension}
 		/// </summary>
-		/// <param name="IsoCountryCode">ISO 3166-1 alpha-2.</param>
+		/// <param name="IsoCountryCode">ISO 3166-1 alpha-2.
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
 		/// <returns>The request was successful and the response body contains the representation
@@ -4298,7 +4304,10 @@ namespace MyNS
 		/// 
 		/// Accounts_AccountSidAvailablePhoneNumbers_IsoCountryCodeTollFree_mediaTypeExtensionGet Accounts/{AccountSid}/AvailablePhoneNumbers/{IsoCountryCode}/TollFree{mediaTypeExtension}
 		/// </summary>
-		/// <param name="IsoCountryCode">ISO 3166-1 alpha-2.</param>
+		/// <param name="IsoCountryCode">ISO 3166-1 alpha-2.
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
 		/// <returns>The request was successful and the response body contains the representation
@@ -7289,7 +7298,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
-		/// <param name="AccountSid">A 34 character string that uniquely identifies this account.</param>
+		/// <param name="AccountSid">A 34 character string that uniquely identifies this account.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>The request was successful and the response body contains the representation
 		///requested.
 		///</returns>
@@ -7321,7 +7333,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
-		/// <param name="AccountSid">A 34 character string that uniquely identifies this account.</param>
+		/// <param name="AccountSid">A 34 character string that uniquely identifies this account.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>The request was successful, we updated the resource and the response
 		///body contains the representation.
 		///</returns>
@@ -7348,7 +7363,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="mediaTypeExtension">By default, Twilio's REST API returns XML. You may obtain CSV, JSON or HTML by appending ".csv", ".json", or ".html".
 		///</param>
-		/// <param name="AccountSid">A 34 character string that uniquely identifies this account.</param>
+		/// <param name="AccountSid">A 34 character string that uniquely identifies this account.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>The request was successful, we updated the resource and the response
 		///body contains the representation.
 		///</returns>

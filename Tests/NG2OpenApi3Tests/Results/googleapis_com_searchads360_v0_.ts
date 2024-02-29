@@ -10,13 +10,19 @@ export namespace MyNS {
 		/** Day of the week the schedule applies to. This field is required for CREATE operations and is prohibited on UPDATE operations. */
 		dayOfWeek?: GoogleAdsSearchads360V0Common__AdScheduleInfoDayOfWeek | null;
 
-		/** Ending hour in 24 hour time; 24 signifies end of the day. This field must be between 0 and 24, inclusive. This field is required for CREATE operations and is prohibited on UPDATE operations. */
+		/**
+		 * Ending hour in 24 hour time; 24 signifies end of the day. This field must be between 0 and 24, inclusive. This field is required for CREATE operations and is prohibited on UPDATE operations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endHour?: number | null;
 
 		/** Minutes after the end hour at which this schedule ends. The schedule is exclusive of the end minute. This field is required for CREATE operations and is prohibited on UPDATE operations. */
 		endMinute?: GoogleAdsSearchads360V0Common__AdScheduleInfoEndMinute | null;
 
-		/** Starting hour in 24 hour time. This field must be between 0 and 23, inclusive. This field is required for CREATE operations and is prohibited on UPDATE operations. */
+		/**
+		 * Starting hour in 24 hour time. This field must be between 0 and 23, inclusive. This field is required for CREATE operations and is prohibited on UPDATE operations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startHour?: number | null;
 
 		/** Minutes after the start hour at which this schedule starts. This field is required for CREATE operations and is prohibited on UPDATE operations. */
@@ -29,13 +35,19 @@ export namespace MyNS {
 		/** Day of the week the schedule applies to. This field is required for CREATE operations and is prohibited on UPDATE operations. */
 		dayOfWeek: FormControl<GoogleAdsSearchads360V0Common__AdScheduleInfoDayOfWeek | null | undefined>,
 
-		/** Ending hour in 24 hour time; 24 signifies end of the day. This field must be between 0 and 24, inclusive. This field is required for CREATE operations and is prohibited on UPDATE operations. */
+		/**
+		 * Ending hour in 24 hour time; 24 signifies end of the day. This field must be between 0 and 24, inclusive. This field is required for CREATE operations and is prohibited on UPDATE operations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endHour: FormControl<number | null | undefined>,
 
 		/** Minutes after the end hour at which this schedule ends. The schedule is exclusive of the end minute. This field is required for CREATE operations and is prohibited on UPDATE operations. */
 		endMinute: FormControl<GoogleAdsSearchads360V0Common__AdScheduleInfoEndMinute | null | undefined>,
 
-		/** Starting hour in 24 hour time. This field must be between 0 and 23, inclusive. This field is required for CREATE operations and is prohibited on UPDATE operations. */
+		/**
+		 * Starting hour in 24 hour time. This field must be between 0 and 23, inclusive. This field is required for CREATE operations and is prohibited on UPDATE operations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startHour: FormControl<number | null | undefined>,
 
 		/** Minutes after the start hour at which this schedule starts. This field is required for CREATE operations and is prohibited on UPDATE operations. */
@@ -596,7 +608,10 @@ export namespace MyNS {
 		/** Minimum bid limit that can be set by the bid strategy. The limit applies to all keywords managed by the strategy. Mutable for portfolio bidding strategies only. */
 		cpcBidFloorMicros?: string | null;
 
-		/** The target return on ad spend (ROAS) option. If set, the bid strategy will maximize revenue while averaging the target return on ad spend. If the target ROAS is high, the bid strategy may not be able to spend the full budget. If the target ROAS is not set, the bid strategy will aim to achieve the highest possible ROAS for the budget. */
+		/**
+		 * The target return on ad spend (ROAS) option. If set, the bid strategy will maximize revenue while averaging the target return on ad spend. If the target ROAS is high, the bid strategy may not be able to spend the full budget. If the target ROAS is not set, the bid strategy will aim to achieve the highest possible ROAS for the budget.
+		 * Type: double
+		 */
 		targetRoas?: number | null;
 	}
 
@@ -609,7 +624,10 @@ export namespace MyNS {
 		/** Minimum bid limit that can be set by the bid strategy. The limit applies to all keywords managed by the strategy. Mutable for portfolio bidding strategies only. */
 		cpcBidFloorMicros: FormControl<string | null | undefined>,
 
-		/** The target return on ad spend (ROAS) option. If set, the bid strategy will maximize revenue while averaging the target return on ad spend. If the target ROAS is high, the bid strategy may not be able to spend the full budget. If the target ROAS is not set, the bid strategy will aim to achieve the highest possible ROAS for the budget. */
+		/**
+		 * The target return on ad spend (ROAS) option. If set, the bid strategy will maximize revenue while averaging the target return on ad spend. If the target ROAS is high, the bid strategy may not be able to spend the full budget. If the target ROAS is not set, the bid strategy will aim to achieve the highest possible ROAS for the budget.
+		 * Type: double
+		 */
 		targetRoas: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAdsSearchads360V0Common__MaximizeConversionValueFormGroup() {
@@ -660,67 +678,127 @@ export namespace MyNS {
 	/** Metrics data. */
 	export interface GoogleAdsSearchads360V0Common__Metrics {
 
-		/** The percent of your ad impressions that are shown as the very first ad above the organic search results. */
+		/**
+		 * The percent of your ad impressions that are shown as the very first ad above the organic search results.
+		 * Type: double
+		 */
 		absoluteTopImpressionPercentage?: number | null;
 
-		/** The total number of conversions. This includes all conversions regardless of the value of include_in_conversions_metric. */
+		/**
+		 * The total number of conversions. This includes all conversions regardless of the value of include_in_conversions_metric.
+		 * Type: double
+		 */
 		allConversions?: number | null;
 
-		/** The total number of conversions. This includes all conversions regardless of the value of include_in_conversions_metric. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611. */
+		/**
+		 * The total number of conversions. This includes all conversions regardless of the value of include_in_conversions_metric. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
+		 * Type: double
+		 */
 		allConversionsByConversionDate?: number | null;
 
-		/** The number of times people clicked the "Call" button to call a store during or after clicking an ad. This number doesn't include whether or not calls were connected, or the duration of any calls. This metric applies to feed items only. */
+		/**
+		 * The number of times people clicked the "Call" button to call a store during or after clicking an ad. This number doesn't include whether or not calls were connected, or the duration of any calls. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromClickToCall?: number | null;
 
-		/** The number of times people clicked a "Get directions" button to navigate to a store after clicking an ad. This metric applies to feed items only. */
+		/**
+		 * The number of times people clicked a "Get directions" button to navigate to a store after clicking an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromDirections?: number | null;
 
-		/** All conversions from interactions (as oppose to view through conversions) divided by the number of ad interactions. */
+		/**
+		 * All conversions from interactions (as oppose to view through conversions) divided by the number of ad interactions.
+		 * Type: double
+		 */
 		allConversionsFromInteractionsRate?: number | null;
 
-		/** The value of all conversions from interactions divided by the total number of interactions. */
+		/**
+		 * The value of all conversions from interactions divided by the total number of interactions.
+		 * Type: double
+		 */
 		allConversionsFromInteractionsValuePerInteraction?: number | null;
 
-		/** The number of times people clicked a link to view a store's menu after clicking an ad. This metric applies to feed items only. */
+		/**
+		 * The number of times people clicked a link to view a store's menu after clicking an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromMenu?: number | null;
 
-		/** The number of times people placed an order at a store after clicking an ad. This metric applies to feed items only. */
+		/**
+		 * The number of times people placed an order at a store after clicking an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromOrder?: number | null;
 
-		/** The number of other conversions (for example, posting a review or saving a location for a store) that occurred after people clicked an ad. This metric applies to feed items only. */
+		/**
+		 * The number of other conversions (for example, posting a review or saving a location for a store) that occurred after people clicked an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromOtherEngagement?: number | null;
 
-		/** Estimated number of times people visited a store after clicking an ad. This metric applies to feed items only. */
+		/**
+		 * Estimated number of times people visited a store after clicking an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromStoreVisit?: number | null;
 
-		/** The number of times that people were taken to a store's URL after clicking an ad. This metric applies to feed items only. */
+		/**
+		 * The number of times that people were taken to a store's URL after clicking an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromStoreWebsite?: number | null;
 
-		/** The value of all conversions. */
+		/**
+		 * The value of all conversions.
+		 * Type: double
+		 */
 		allConversionsValue?: number | null;
 
-		/** The value of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611. */
+		/**
+		 * The value of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
+		 * Type: double
+		 */
 		allConversionsValueByConversionDate?: number | null;
 
-		/** The value of all conversions divided by the total cost of ad interactions (such as clicks for text ads or views for video ads). */
+		/**
+		 * The value of all conversions divided by the total cost of ad interactions (such as clicks for text ads or views for video ads).
+		 * Type: double
+		 */
 		allConversionsValuePerCost?: number | null;
 
-		/** The average amount you pay per interaction. This amount is the total cost of your ads divided by the total number of interactions. */
+		/**
+		 * The average amount you pay per interaction. This amount is the total cost of your ads divided by the total number of interactions.
+		 * Type: double
+		 */
 		averageCost?: number | null;
 
-		/** The total cost of all clicks divided by the total number of clicks received. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
+		/**
+		 * The total cost of all clicks divided by the total number of clicks received. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+		 * Type: double
+		 */
 		averageCpc?: number | null;
 
-		/** Average cost-per-thousand impressions (CPM). This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
+		/**
+		 * Average cost-per-thousand impressions (CPM). This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+		 * Type: double
+		 */
 		averageCpm?: number | null;
 
 		/** The number of clicks. */
 		clicks?: string | null;
 
-		/** The number of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions. */
+		/**
+		 * The number of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+		 * Type: double
+		 */
 		clientAccountConversions?: number | null;
 
-		/** The value of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions. */
+		/**
+		 * The value of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+		 * Type: double
+		 */
 		clientAccountConversionsValue?: number | null;
 
 		/** Client account cross-sell cost of goods sold (COGS) is the total cost of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell cost of goods sold is the total cost of the products sold that weren't advertised. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The cross-sell cost of goods sold for this order is $5. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
@@ -732,7 +810,10 @@ export namespace MyNS {
 		/** Client account cross-sell revenue is the total amount you made from products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell revenue is the total value you made from cross-sell attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The cross-sell revenue of this order is $20. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
 		clientAccountCrossSellRevenueMicros?: string | null;
 
-		/** Client account cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data. */
+		/**
+		 * Client account cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data.
+		 * Type: double
+		 */
 		clientAccountCrossSellUnitsSold?: number | null;
 
 		/** Client account lead cost of goods sold (COGS) is the total cost of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the cost of these goods is counted under lead cost of goods sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The lead cost of goods sold for this order is $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
@@ -744,58 +825,106 @@ export namespace MyNS {
 		/** Client account lead revenue is the total amount you made from products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total value you made from the sales of these products is shown under lead revenue. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The lead revenue of this order is $10. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
 		clientAccountLeadRevenueMicros?: string | null;
 
-		/** Client account lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data. */
+		/**
+		 * Client account lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data.
+		 * Type: double
+		 */
 		clientAccountLeadUnitsSold?: number | null;
 
 		/** The total number of view-through conversions. These happen when a customer sees an image or rich media ad, then later completes a conversion on your site without interacting with (for example, clicking on) another ad. */
 		clientAccountViewThroughConversions?: string | null;
 
-		/** The estimated percent of times that your ad was eligible to show on the Display Network but didn't because your budget was too low. Note: Content budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The estimated percent of times that your ad was eligible to show on the Display Network but didn't because your budget was too low. Note: Content budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		contentBudgetLostImpressionShare?: number | null;
 
-		/** The impressions you've received on the Display Network divided by the estimated number of impressions you were eligible to receive. Note: Content impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The impressions you've received on the Display Network divided by the estimated number of impressions you were eligible to receive. Note: Content impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		contentImpressionShare?: number | null;
 
-		/** The estimated percentage of impressions on the Display Network that your ads didn't receive due to poor Ad Rank. Note: Content rank lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The estimated percentage of impressions on the Display Network that your ads didn't receive due to poor Ad Rank. Note: Content rank lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		contentRankLostImpressionShare?: number | null;
 
-		/** The number of conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions. */
+		/**
+		 * The number of conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+		 * Type: double
+		 */
 		conversions?: number | null;
 
-		/** The sum of conversions by conversion date for biddable conversion types. Can be fractional due to attribution modeling. When this column is selected with date, the values in date column means the conversion date. */
+		/**
+		 * The sum of conversions by conversion date for biddable conversion types. Can be fractional due to attribution modeling. When this column is selected with date, the values in date column means the conversion date.
+		 * Type: double
+		 */
 		conversionsByConversionDate?: number | null;
 
-		/** Average biddable conversions (from interaction) per conversion eligible interaction. Shows how often, on average, an ad interaction leads to a biddable conversion. */
+		/**
+		 * Average biddable conversions (from interaction) per conversion eligible interaction. Shows how often, on average, an ad interaction leads to a biddable conversion.
+		 * Type: double
+		 */
 		conversionsFromInteractionsRate?: number | null;
 
-		/** The value of conversions from interactions divided by the number of ad interactions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions. */
+		/**
+		 * The value of conversions from interactions divided by the number of ad interactions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+		 * Type: double
+		 */
 		conversionsFromInteractionsValuePerInteraction?: number | null;
 
-		/** The sum of conversion values for the conversions included in the "conversions" field. This metric is useful only if you entered a value for your conversion actions. */
+		/**
+		 * The sum of conversion values for the conversions included in the "conversions" field. This metric is useful only if you entered a value for your conversion actions.
+		 * Type: double
+		 */
 		conversionsValue?: number | null;
 
-		/** The sum of biddable conversions value by conversion date. When this column is selected with date, the values in date column means the conversion date. */
+		/**
+		 * The sum of biddable conversions value by conversion date. When this column is selected with date, the values in date column means the conversion date.
+		 * Type: double
+		 */
 		conversionsValueByConversionDate?: number | null;
 
-		/** The value of biddable conversion divided by the total cost of conversion eligible interactions. */
+		/**
+		 * The value of biddable conversion divided by the total cost of conversion eligible interactions.
+		 * Type: double
+		 */
 		conversionsValuePerCost?: number | null;
 
 		/** The sum of your cost-per-click (CPC) and cost-per-thousand impressions (CPM) costs during this period. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
 		costMicros?: string | null;
 
-		/** The cost of ad interactions divided by all conversions. */
+		/**
+		 * The cost of ad interactions divided by all conversions.
+		 * Type: double
+		 */
 		costPerAllConversions?: number | null;
 
-		/** Average conversion eligible cost per biddable conversion. */
+		/**
+		 * Average conversion eligible cost per biddable conversion.
+		 * Type: double
+		 */
 		costPerConversion?: number | null;
 
-		/** The cost of ad interactions divided by current model attributed conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions. */
+		/**
+		 * The cost of ad interactions divided by current model attributed conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+		 * Type: double
+		 */
 		costPerCurrentModelAttributedConversion?: number | null;
 
-		/** Conversions from when a customer clicks on an ad on one device, then converts on a different device or browser. Cross-device conversions are already included in all_conversions. */
+		/**
+		 * Conversions from when a customer clicks on an ad on one device, then converts on a different device or browser. Cross-device conversions are already included in all_conversions.
+		 * Type: double
+		 */
 		crossDeviceConversions?: number | null;
 
-		/** The sum of the value of cross-device conversions. */
+		/**
+		 * The sum of the value of cross-device conversions.
+		 * Type: double
+		 */
 		crossDeviceConversionsValue?: number | null;
 
 		/** Cross-sell cost of goods sold (COGS) is the total cost of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell cost of goods sold is the total cost of the products sold that weren't advertised. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The cross-sell cost of goods sold for this order is $5. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
@@ -807,10 +936,16 @@ export namespace MyNS {
 		/** Cross-sell revenue is the total amount you made from products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell revenue is the total value you made from cross-sell attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The cross-sell revenue of this order is $20. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
 		crossSellRevenueMicros?: string | null;
 
-		/** Cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data. */
+		/**
+		 * Cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data.
+		 * Type: double
+		 */
 		crossSellUnitsSold?: number | null;
 
-		/** The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions). */
+		/**
+		 * The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions).
+		 * Type: double
+		 */
 		ctr?: number | null;
 
 		/** The creative historical quality score. */
@@ -831,13 +966,19 @@ export namespace MyNS {
 		/** The types of payable and free interactions. */
 		interactionEventTypes?: Array<string>;
 
-		/** How often people interact with your ad after it is shown to them. This is the number of interactions divided by the number of times your ad is shown. */
+		/**
+		 * How often people interact with your ad after it is shown to them. This is the number of interactions divided by the number of times your ad is shown.
+		 * Type: double
+		 */
 		interactionRate?: number | null;
 
 		/** The number of interactions. An interaction is the main user action associated with an ad format-clicks for text and shopping ads, views for video ads, and so on. */
 		interactions?: string | null;
 
-		/** The percentage of clicks filtered out of your total number of clicks (filtered + non-filtered clicks) during the reporting period. */
+		/**
+		 * The percentage of clicks filtered out of your total number of clicks (filtered + non-filtered clicks) during the reporting period.
+		 * Type: double
+		 */
 		invalidClickRate?: number | null;
 
 		/** Number of clicks Google considers illegitimate and doesn't charge you for. */
@@ -852,128 +993,245 @@ export namespace MyNS {
 		/** Lead revenue is the total amount you made from products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total value you made from the sales of these products is shown under lead revenue. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The lead revenue of this order is $10. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
 		leadRevenueMicros?: string | null;
 
-		/** Lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data. */
+		/**
+		 * Lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data.
+		 * Type: double
+		 */
 		leadUnitsSold?: number | null;
 
-		/** The percentage of mobile clicks that go to a mobile-friendly page. */
+		/**
+		 * The percentage of mobile clicks that go to a mobile-friendly page.
+		 * Type: double
+		 */
 		mobileFriendlyClicksPercentage?: number | null;
 
-		/** The percentage of the customer's Shopping or Search ad impressions that are shown in the most prominent Shopping position. See https://support.google.com/sa360/answer/9566729 for details. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The percentage of the customer's Shopping or Search ad impressions that are shown in the most prominent Shopping position. See https://support.google.com/sa360/answer/9566729 for details. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		searchAbsoluteTopImpressionShare?: number | null;
 
-		/** The number estimating how often your ad wasn't the very first ad above the organic search results due to a low budget. Note: Search budget lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The number estimating how often your ad wasn't the very first ad above the organic search results due to a low budget. Note: Search budget lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchBudgetLostAbsoluteTopImpressionShare?: number | null;
 
-		/** The estimated percent of times that your ad was eligible to show on the Search Network but didn't because your budget was too low. Note: Search budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The estimated percent of times that your ad was eligible to show on the Search Network but didn't because your budget was too low. Note: Search budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchBudgetLostImpressionShare?: number | null;
 
-		/** The number estimating how often your ad didn't show anywhere above the organic search results due to a low budget. Note: Search budget lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The number estimating how often your ad didn't show anywhere above the organic search results due to a low budget. Note: Search budget lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchBudgetLostTopImpressionShare?: number | null;
 
-		/** The number of clicks you've received on the Search Network divided by the estimated number of clicks you were eligible to receive. Note: Search click share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The number of clicks you've received on the Search Network divided by the estimated number of clicks you were eligible to receive. Note: Search click share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		searchClickShare?: number | null;
 
-		/** The impressions you've received divided by the estimated number of impressions you were eligible to receive on the Search Network for search terms that matched your keywords exactly (or were close variants of your keyword), regardless of your keyword match types. Note: Search exact match impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The impressions you've received divided by the estimated number of impressions you were eligible to receive on the Search Network for search terms that matched your keywords exactly (or were close variants of your keyword), regardless of your keyword match types. Note: Search exact match impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		searchExactMatchImpressionShare?: number | null;
 
-		/** The impressions you've received on the Search Network divided by the estimated number of impressions you were eligible to receive. Note: Search impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The impressions you've received on the Search Network divided by the estimated number of impressions you were eligible to receive. Note: Search impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		searchImpressionShare?: number | null;
 
-		/** The number estimating how often your ad wasn't the very first ad above the organic search results due to poor Ad Rank. Note: Search rank lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The number estimating how often your ad wasn't the very first ad above the organic search results due to poor Ad Rank. Note: Search rank lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchRankLostAbsoluteTopImpressionShare?: number | null;
 
-		/** The estimated percentage of impressions on the Search Network that your ads didn't receive due to poor Ad Rank. Note: Search rank lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The estimated percentage of impressions on the Search Network that your ads didn't receive due to poor Ad Rank. Note: Search rank lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchRankLostImpressionShare?: number | null;
 
-		/** The number estimating how often your ad didn't show anywhere above the organic search results due to poor Ad Rank. Note: Search rank lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The number estimating how often your ad didn't show anywhere above the organic search results due to poor Ad Rank. Note: Search rank lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchRankLostTopImpressionShare?: number | null;
 
-		/** The impressions you've received in the top location (anywhere above the organic search results) compared to the estimated number of impressions you were eligible to receive in the top location. Note: Search top impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The impressions you've received in the top location (anywhere above the organic search results) compared to the estimated number of impressions you were eligible to receive in the top location. Note: Search top impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		searchTopImpressionShare?: number | null;
 
-		/** The percent of your ad impressions that are shown anywhere above the organic search results. */
+		/**
+		 * The percent of your ad impressions that are shown anywhere above the organic search results.
+		 * Type: double
+		 */
 		topImpressionPercentage?: number | null;
 
-		/** The value of all conversions divided by the number of all conversions. */
+		/**
+		 * The value of all conversions divided by the number of all conversions.
+		 * Type: double
+		 */
 		valuePerAllConversions?: number | null;
 
-		/** The value of all conversions divided by the number of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611. */
+		/**
+		 * The value of all conversions divided by the number of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
+		 * Type: double
+		 */
 		valuePerAllConversionsByConversionDate?: number | null;
 
-		/** The value of biddable conversion divided by the number of biddable conversions. Shows how much, on average, each of the biddable conversions is worth. */
+		/**
+		 * The value of biddable conversion divided by the number of biddable conversions. Shows how much, on average, each of the biddable conversions is worth.
+		 * Type: double
+		 */
 		valuePerConversion?: number | null;
 
-		/** Biddable conversions value by conversion date divided by biddable conversions by conversion date. Shows how much, on average, each of the biddable conversions is worth (by conversion date). When this column is selected with date, the values in date column means the conversion date. */
+		/**
+		 * Biddable conversions value by conversion date divided by biddable conversions by conversion date. Shows how much, on average, each of the biddable conversions is worth (by conversion date). When this column is selected with date, the values in date column means the conversion date.
+		 * Type: double
+		 */
 		valuePerConversionsByConversionDate?: number | null;
 
-		/** Clicks that Search Ads 360 has successfully recorded and forwarded to an advertiser's landing page. */
+		/**
+		 * Clicks that Search Ads 360 has successfully recorded and forwarded to an advertiser's landing page.
+		 * Type: double
+		 */
 		visits?: number | null;
 	}
 
 	/** Metrics data. */
 	export interface GoogleAdsSearchads360V0Common__MetricsFormProperties {
 
-		/** The percent of your ad impressions that are shown as the very first ad above the organic search results. */
+		/**
+		 * The percent of your ad impressions that are shown as the very first ad above the organic search results.
+		 * Type: double
+		 */
 		absoluteTopImpressionPercentage: FormControl<number | null | undefined>,
 
-		/** The total number of conversions. This includes all conversions regardless of the value of include_in_conversions_metric. */
+		/**
+		 * The total number of conversions. This includes all conversions regardless of the value of include_in_conversions_metric.
+		 * Type: double
+		 */
 		allConversions: FormControl<number | null | undefined>,
 
-		/** The total number of conversions. This includes all conversions regardless of the value of include_in_conversions_metric. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611. */
+		/**
+		 * The total number of conversions. This includes all conversions regardless of the value of include_in_conversions_metric. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
+		 * Type: double
+		 */
 		allConversionsByConversionDate: FormControl<number | null | undefined>,
 
-		/** The number of times people clicked the "Call" button to call a store during or after clicking an ad. This number doesn't include whether or not calls were connected, or the duration of any calls. This metric applies to feed items only. */
+		/**
+		 * The number of times people clicked the "Call" button to call a store during or after clicking an ad. This number doesn't include whether or not calls were connected, or the duration of any calls. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromClickToCall: FormControl<number | null | undefined>,
 
-		/** The number of times people clicked a "Get directions" button to navigate to a store after clicking an ad. This metric applies to feed items only. */
+		/**
+		 * The number of times people clicked a "Get directions" button to navigate to a store after clicking an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromDirections: FormControl<number | null | undefined>,
 
-		/** All conversions from interactions (as oppose to view through conversions) divided by the number of ad interactions. */
+		/**
+		 * All conversions from interactions (as oppose to view through conversions) divided by the number of ad interactions.
+		 * Type: double
+		 */
 		allConversionsFromInteractionsRate: FormControl<number | null | undefined>,
 
-		/** The value of all conversions from interactions divided by the total number of interactions. */
+		/**
+		 * The value of all conversions from interactions divided by the total number of interactions.
+		 * Type: double
+		 */
 		allConversionsFromInteractionsValuePerInteraction: FormControl<number | null | undefined>,
 
-		/** The number of times people clicked a link to view a store's menu after clicking an ad. This metric applies to feed items only. */
+		/**
+		 * The number of times people clicked a link to view a store's menu after clicking an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromMenu: FormControl<number | null | undefined>,
 
-		/** The number of times people placed an order at a store after clicking an ad. This metric applies to feed items only. */
+		/**
+		 * The number of times people placed an order at a store after clicking an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromOrder: FormControl<number | null | undefined>,
 
-		/** The number of other conversions (for example, posting a review or saving a location for a store) that occurred after people clicked an ad. This metric applies to feed items only. */
+		/**
+		 * The number of other conversions (for example, posting a review or saving a location for a store) that occurred after people clicked an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromOtherEngagement: FormControl<number | null | undefined>,
 
-		/** Estimated number of times people visited a store after clicking an ad. This metric applies to feed items only. */
+		/**
+		 * Estimated number of times people visited a store after clicking an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromStoreVisit: FormControl<number | null | undefined>,
 
-		/** The number of times that people were taken to a store's URL after clicking an ad. This metric applies to feed items only. */
+		/**
+		 * The number of times that people were taken to a store's URL after clicking an ad. This metric applies to feed items only.
+		 * Type: double
+		 */
 		allConversionsFromStoreWebsite: FormControl<number | null | undefined>,
 
-		/** The value of all conversions. */
+		/**
+		 * The value of all conversions.
+		 * Type: double
+		 */
 		allConversionsValue: FormControl<number | null | undefined>,
 
-		/** The value of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611. */
+		/**
+		 * The value of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
+		 * Type: double
+		 */
 		allConversionsValueByConversionDate: FormControl<number | null | undefined>,
 
-		/** The value of all conversions divided by the total cost of ad interactions (such as clicks for text ads or views for video ads). */
+		/**
+		 * The value of all conversions divided by the total cost of ad interactions (such as clicks for text ads or views for video ads).
+		 * Type: double
+		 */
 		allConversionsValuePerCost: FormControl<number | null | undefined>,
 
-		/** The average amount you pay per interaction. This amount is the total cost of your ads divided by the total number of interactions. */
+		/**
+		 * The average amount you pay per interaction. This amount is the total cost of your ads divided by the total number of interactions.
+		 * Type: double
+		 */
 		averageCost: FormControl<number | null | undefined>,
 
-		/** The total cost of all clicks divided by the total number of clicks received. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
+		/**
+		 * The total cost of all clicks divided by the total number of clicks received. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+		 * Type: double
+		 */
 		averageCpc: FormControl<number | null | undefined>,
 
-		/** Average cost-per-thousand impressions (CPM). This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
+		/**
+		 * Average cost-per-thousand impressions (CPM). This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause
+		 * Type: double
+		 */
 		averageCpm: FormControl<number | null | undefined>,
 
 		/** The number of clicks. */
 		clicks: FormControl<string | null | undefined>,
 
-		/** The number of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions. */
+		/**
+		 * The number of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+		 * Type: double
+		 */
 		clientAccountConversions: FormControl<number | null | undefined>,
 
-		/** The value of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions. */
+		/**
+		 * The value of client account conversions. This only includes conversion actions which include_in_client_account_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+		 * Type: double
+		 */
 		clientAccountConversionsValue: FormControl<number | null | undefined>,
 
 		/** Client account cross-sell cost of goods sold (COGS) is the total cost of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell cost of goods sold is the total cost of the products sold that weren't advertised. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The cross-sell cost of goods sold for this order is $5. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
@@ -985,7 +1243,10 @@ export namespace MyNS {
 		/** Client account cross-sell revenue is the total amount you made from products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell revenue is the total value you made from cross-sell attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The cross-sell revenue of this order is $20. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
 		clientAccountCrossSellRevenueMicros: FormControl<string | null | undefined>,
 
-		/** Client account cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data. */
+		/**
+		 * Client account cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data.
+		 * Type: double
+		 */
 		clientAccountCrossSellUnitsSold: FormControl<number | null | undefined>,
 
 		/** Client account lead cost of goods sold (COGS) is the total cost of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the cost of these goods is counted under lead cost of goods sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The lead cost of goods sold for this order is $3. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
@@ -997,58 +1258,106 @@ export namespace MyNS {
 		/** Client account lead revenue is the total amount you made from products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total value you made from the sales of these products is shown under lead revenue. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The lead revenue of this order is $10. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
 		clientAccountLeadRevenueMicros: FormControl<string | null | undefined>,
 
-		/** Client account lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data. */
+		/**
+		 * Client account lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data.
+		 * Type: double
+		 */
 		clientAccountLeadUnitsSold: FormControl<number | null | undefined>,
 
 		/** The total number of view-through conversions. These happen when a customer sees an image or rich media ad, then later completes a conversion on your site without interacting with (for example, clicking on) another ad. */
 		clientAccountViewThroughConversions: FormControl<string | null | undefined>,
 
-		/** The estimated percent of times that your ad was eligible to show on the Display Network but didn't because your budget was too low. Note: Content budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The estimated percent of times that your ad was eligible to show on the Display Network but didn't because your budget was too low. Note: Content budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		contentBudgetLostImpressionShare: FormControl<number | null | undefined>,
 
-		/** The impressions you've received on the Display Network divided by the estimated number of impressions you were eligible to receive. Note: Content impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The impressions you've received on the Display Network divided by the estimated number of impressions you were eligible to receive. Note: Content impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		contentImpressionShare: FormControl<number | null | undefined>,
 
-		/** The estimated percentage of impressions on the Display Network that your ads didn't receive due to poor Ad Rank. Note: Content rank lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The estimated percentage of impressions on the Display Network that your ads didn't receive due to poor Ad Rank. Note: Content rank lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		contentRankLostImpressionShare: FormControl<number | null | undefined>,
 
-		/** The number of conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions. */
+		/**
+		 * The number of conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+		 * Type: double
+		 */
 		conversions: FormControl<number | null | undefined>,
 
-		/** The sum of conversions by conversion date for biddable conversion types. Can be fractional due to attribution modeling. When this column is selected with date, the values in date column means the conversion date. */
+		/**
+		 * The sum of conversions by conversion date for biddable conversion types. Can be fractional due to attribution modeling. When this column is selected with date, the values in date column means the conversion date.
+		 * Type: double
+		 */
 		conversionsByConversionDate: FormControl<number | null | undefined>,
 
-		/** Average biddable conversions (from interaction) per conversion eligible interaction. Shows how often, on average, an ad interaction leads to a biddable conversion. */
+		/**
+		 * Average biddable conversions (from interaction) per conversion eligible interaction. Shows how often, on average, an ad interaction leads to a biddable conversion.
+		 * Type: double
+		 */
 		conversionsFromInteractionsRate: FormControl<number | null | undefined>,
 
-		/** The value of conversions from interactions divided by the number of ad interactions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions. */
+		/**
+		 * The value of conversions from interactions divided by the number of ad interactions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+		 * Type: double
+		 */
 		conversionsFromInteractionsValuePerInteraction: FormControl<number | null | undefined>,
 
-		/** The sum of conversion values for the conversions included in the "conversions" field. This metric is useful only if you entered a value for your conversion actions. */
+		/**
+		 * The sum of conversion values for the conversions included in the "conversions" field. This metric is useful only if you entered a value for your conversion actions.
+		 * Type: double
+		 */
 		conversionsValue: FormControl<number | null | undefined>,
 
-		/** The sum of biddable conversions value by conversion date. When this column is selected with date, the values in date column means the conversion date. */
+		/**
+		 * The sum of biddable conversions value by conversion date. When this column is selected with date, the values in date column means the conversion date.
+		 * Type: double
+		 */
 		conversionsValueByConversionDate: FormControl<number | null | undefined>,
 
-		/** The value of biddable conversion divided by the total cost of conversion eligible interactions. */
+		/**
+		 * The value of biddable conversion divided by the total cost of conversion eligible interactions.
+		 * Type: double
+		 */
 		conversionsValuePerCost: FormControl<number | null | undefined>,
 
 		/** The sum of your cost-per-click (CPC) and cost-per-thousand impressions (CPM) costs during this period. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
 		costMicros: FormControl<string | null | undefined>,
 
-		/** The cost of ad interactions divided by all conversions. */
+		/**
+		 * The cost of ad interactions divided by all conversions.
+		 * Type: double
+		 */
 		costPerAllConversions: FormControl<number | null | undefined>,
 
-		/** Average conversion eligible cost per biddable conversion. */
+		/**
+		 * Average conversion eligible cost per biddable conversion.
+		 * Type: double
+		 */
 		costPerConversion: FormControl<number | null | undefined>,
 
-		/** The cost of ad interactions divided by current model attributed conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions. */
+		/**
+		 * The cost of ad interactions divided by current model attributed conversions. This only includes conversion actions which include_in_conversions_metric attribute is set to true. If you use conversion-based bidding, your bid strategies will optimize for these conversions.
+		 * Type: double
+		 */
 		costPerCurrentModelAttributedConversion: FormControl<number | null | undefined>,
 
-		/** Conversions from when a customer clicks on an ad on one device, then converts on a different device or browser. Cross-device conversions are already included in all_conversions. */
+		/**
+		 * Conversions from when a customer clicks on an ad on one device, then converts on a different device or browser. Cross-device conversions are already included in all_conversions.
+		 * Type: double
+		 */
 		crossDeviceConversions: FormControl<number | null | undefined>,
 
-		/** The sum of the value of cross-device conversions. */
+		/**
+		 * The sum of the value of cross-device conversions.
+		 * Type: double
+		 */
 		crossDeviceConversionsValue: FormControl<number | null | undefined>,
 
 		/** Cross-sell cost of goods sold (COGS) is the total cost of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell cost of goods sold is the total cost of the products sold that weren't advertised. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat has a cost of goods sold value of $3, the shirt has a cost of goods sold value of $5. The cross-sell cost of goods sold for this order is $5. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
@@ -1060,10 +1369,16 @@ export namespace MyNS {
 		/** Cross-sell revenue is the total amount you made from products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell revenue is the total value you made from cross-sell attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The cross-sell revenue of this order is $20. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
 		crossSellRevenueMicros: FormControl<string | null | undefined>,
 
-		/** Cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data. */
+		/**
+		 * Cross-sell units sold is the total number of products sold as a result of advertising a different product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If these products don't match then this is considered cross-sell. Cross-sell units sold is the total number of cross-sold products from all orders attributed to your ads. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The cross-sell units sold in this order is 2. This metric is only available if you report conversions with cart data.
+		 * Type: double
+		 */
 		crossSellUnitsSold: FormControl<number | null | undefined>,
 
-		/** The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions). */
+		/**
+		 * The number of clicks your ad receives (Clicks) divided by the number of times your ad is shown (Impressions).
+		 * Type: double
+		 */
 		ctr: FormControl<number | null | undefined>,
 
 		/** The creative historical quality score. */
@@ -1081,13 +1396,19 @@ export namespace MyNS {
 		/** Count of how often your ad has appeared on a search results page or website on the Google Network. */
 		impressions: FormControl<string | null | undefined>,
 
-		/** How often people interact with your ad after it is shown to them. This is the number of interactions divided by the number of times your ad is shown. */
+		/**
+		 * How often people interact with your ad after it is shown to them. This is the number of interactions divided by the number of times your ad is shown.
+		 * Type: double
+		 */
 		interactionRate: FormControl<number | null | undefined>,
 
 		/** The number of interactions. An interaction is the main user action associated with an ad format-clicks for text and shopping ads, views for video ads, and so on. */
 		interactions: FormControl<string | null | undefined>,
 
-		/** The percentage of clicks filtered out of your total number of clicks (filtered + non-filtered clicks) during the reporting period. */
+		/**
+		 * The percentage of clicks filtered out of your total number of clicks (filtered + non-filtered clicks) during the reporting period.
+		 * Type: double
+		 */
 		invalidClickRate: FormControl<number | null | undefined>,
 
 		/** Number of clicks Google considers illegitimate and doesn't charge you for. */
@@ -1102,61 +1423,118 @@ export namespace MyNS {
 		/** Lead revenue is the total amount you made from products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total value you made from the sales of these products is shown under lead revenue. Example: Someone clicked on a Shopping ad for a hat then bought the same hat and a shirt. The hat is priced $10 and the shirt is priced $20. The lead revenue of this order is $10. This metric is only available if you report conversions with cart data. This metric is a monetary value and returned in the customer's currency by default. See the metrics_currency parameter at https://developers.google.com/search-ads/reporting/query/query-structure#parameters_clause */
 		leadRevenueMicros: FormControl<string | null | undefined>,
 
-		/** Lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data. */
+		/**
+		 * Lead units sold is the total number of products sold as a result of advertising the same product. How it works: You report conversions with cart data for completed purchases on your website. If the ad that was interacted with before the purchase has an associated product (see Shopping Ads) then this product is considered the advertised product. Any product included in the order the customer places is a sold product. If the advertised and sold products match, then the total number of these products sold is shown under lead units sold. Example: Someone clicked on a Shopping ad for a hat then bought the same hat, a shirt and a jacket. The lead units sold in this order is 1. This metric is only available if you report conversions with cart data.
+		 * Type: double
+		 */
 		leadUnitsSold: FormControl<number | null | undefined>,
 
-		/** The percentage of mobile clicks that go to a mobile-friendly page. */
+		/**
+		 * The percentage of mobile clicks that go to a mobile-friendly page.
+		 * Type: double
+		 */
 		mobileFriendlyClicksPercentage: FormControl<number | null | undefined>,
 
-		/** The percentage of the customer's Shopping or Search ad impressions that are shown in the most prominent Shopping position. See https://support.google.com/sa360/answer/9566729 for details. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The percentage of the customer's Shopping or Search ad impressions that are shown in the most prominent Shopping position. See https://support.google.com/sa360/answer/9566729 for details. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		searchAbsoluteTopImpressionShare: FormControl<number | null | undefined>,
 
-		/** The number estimating how often your ad wasn't the very first ad above the organic search results due to a low budget. Note: Search budget lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The number estimating how often your ad wasn't the very first ad above the organic search results due to a low budget. Note: Search budget lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchBudgetLostAbsoluteTopImpressionShare: FormControl<number | null | undefined>,
 
-		/** The estimated percent of times that your ad was eligible to show on the Search Network but didn't because your budget was too low. Note: Search budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The estimated percent of times that your ad was eligible to show on the Search Network but didn't because your budget was too low. Note: Search budget lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchBudgetLostImpressionShare: FormControl<number | null | undefined>,
 
-		/** The number estimating how often your ad didn't show anywhere above the organic search results due to a low budget. Note: Search budget lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The number estimating how often your ad didn't show anywhere above the organic search results due to a low budget. Note: Search budget lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchBudgetLostTopImpressionShare: FormControl<number | null | undefined>,
 
-		/** The number of clicks you've received on the Search Network divided by the estimated number of clicks you were eligible to receive. Note: Search click share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The number of clicks you've received on the Search Network divided by the estimated number of clicks you were eligible to receive. Note: Search click share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		searchClickShare: FormControl<number | null | undefined>,
 
-		/** The impressions you've received divided by the estimated number of impressions you were eligible to receive on the Search Network for search terms that matched your keywords exactly (or were close variants of your keyword), regardless of your keyword match types. Note: Search exact match impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The impressions you've received divided by the estimated number of impressions you were eligible to receive on the Search Network for search terms that matched your keywords exactly (or were close variants of your keyword), regardless of your keyword match types. Note: Search exact match impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		searchExactMatchImpressionShare: FormControl<number | null | undefined>,
 
-		/** The impressions you've received on the Search Network divided by the estimated number of impressions you were eligible to receive. Note: Search impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The impressions you've received on the Search Network divided by the estimated number of impressions you were eligible to receive. Note: Search impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		searchImpressionShare: FormControl<number | null | undefined>,
 
-		/** The number estimating how often your ad wasn't the very first ad above the organic search results due to poor Ad Rank. Note: Search rank lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The number estimating how often your ad wasn't the very first ad above the organic search results due to poor Ad Rank. Note: Search rank lost absolute top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchRankLostAbsoluteTopImpressionShare: FormControl<number | null | undefined>,
 
-		/** The estimated percentage of impressions on the Search Network that your ads didn't receive due to poor Ad Rank. Note: Search rank lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The estimated percentage of impressions on the Search Network that your ads didn't receive due to poor Ad Rank. Note: Search rank lost impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchRankLostImpressionShare: FormControl<number | null | undefined>,
 
-		/** The number estimating how often your ad didn't show anywhere above the organic search results due to poor Ad Rank. Note: Search rank lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001. */
+		/**
+		 * The number estimating how often your ad didn't show anywhere above the organic search results due to poor Ad Rank. Note: Search rank lost top impression share is reported in the range of 0 to 0.9. Any value above 0.9 is reported as 0.9001.
+		 * Type: double
+		 */
 		searchRankLostTopImpressionShare: FormControl<number | null | undefined>,
 
-		/** The impressions you've received in the top location (anywhere above the organic search results) compared to the estimated number of impressions you were eligible to receive in the top location. Note: Search top impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999. */
+		/**
+		 * The impressions you've received in the top location (anywhere above the organic search results) compared to the estimated number of impressions you were eligible to receive in the top location. Note: Search top impression share is reported in the range of 0.1 to 1. Any value below 0.1 is reported as 0.0999.
+		 * Type: double
+		 */
 		searchTopImpressionShare: FormControl<number | null | undefined>,
 
-		/** The percent of your ad impressions that are shown anywhere above the organic search results. */
+		/**
+		 * The percent of your ad impressions that are shown anywhere above the organic search results.
+		 * Type: double
+		 */
 		topImpressionPercentage: FormControl<number | null | undefined>,
 
-		/** The value of all conversions divided by the number of all conversions. */
+		/**
+		 * The value of all conversions divided by the number of all conversions.
+		 * Type: double
+		 */
 		valuePerAllConversions: FormControl<number | null | undefined>,
 
-		/** The value of all conversions divided by the number of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611. */
+		/**
+		 * The value of all conversions divided by the number of all conversions. When this column is selected with date, the values in date column means the conversion date. Details for the by_conversion_date columns are available at https://support.google.com/sa360/answer/9250611.
+		 * Type: double
+		 */
 		valuePerAllConversionsByConversionDate: FormControl<number | null | undefined>,
 
-		/** The value of biddable conversion divided by the number of biddable conversions. Shows how much, on average, each of the biddable conversions is worth. */
+		/**
+		 * The value of biddable conversion divided by the number of biddable conversions. Shows how much, on average, each of the biddable conversions is worth.
+		 * Type: double
+		 */
 		valuePerConversion: FormControl<number | null | undefined>,
 
-		/** Biddable conversions value by conversion date divided by biddable conversions by conversion date. Shows how much, on average, each of the biddable conversions is worth (by conversion date). When this column is selected with date, the values in date column means the conversion date. */
+		/**
+		 * Biddable conversions value by conversion date divided by biddable conversions by conversion date. Shows how much, on average, each of the biddable conversions is worth (by conversion date). When this column is selected with date, the values in date column means the conversion date.
+		 * Type: double
+		 */
 		valuePerConversionsByConversionDate: FormControl<number | null | undefined>,
 
-		/** Clicks that Search Ads 360 has successfully recorded and forwarded to an advertiser's landing page. */
+		/**
+		 * Clicks that Search Ads 360 has successfully recorded and forwarded to an advertiser's landing page.
+		 * Type: double
+		 */
 		visits: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAdsSearchads360V0Common__MetricsFormGroup() {
@@ -1707,7 +2085,10 @@ export namespace MyNS {
 		/** Week as defined as Monday through Sunday, and represented by the date of Monday. Formatted as yyyy-MM-dd. */
 		week?: string | null;
 
-		/** Year, formatted as yyyy. */
+		/**
+		 * Year, formatted as yyyy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
@@ -1873,7 +2254,10 @@ export namespace MyNS {
 		/** Week as defined as Monday through Sunday, and represented by the date of Monday. Formatted as yyyy-MM-dd. */
 		week: FormControl<string | null | undefined>,
 
-		/** Year, formatted as yyyy. */
+		/**
+		 * Year, formatted as yyyy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAdsSearchads360V0Common__SegmentsFormGroup() {
@@ -2093,7 +2477,10 @@ export namespace MyNS {
 		/** Minimum bid limit that can be set by the bid strategy. The limit applies to all keywords managed by the strategy. This should only be set for portfolio bid strategies. */
 		cpcBidFloorMicros?: string | null;
 
-		/** Required. The chosen revenue (based on conversion data) per unit of spend. Value must be between 0.01 and 1000.0, inclusive. */
+		/**
+		 * Required. The chosen revenue (based on conversion data) per unit of spend. Value must be between 0.01 and 1000.0, inclusive.
+		 * Type: double
+		 */
 		targetRoas?: number | null;
 	}
 
@@ -2106,7 +2493,10 @@ export namespace MyNS {
 		/** Minimum bid limit that can be set by the bid strategy. The limit applies to all keywords managed by the strategy. This should only be set for portfolio bid strategies. */
 		cpcBidFloorMicros: FormControl<string | null | undefined>,
 
-		/** Required. The chosen revenue (based on conversion data) per unit of spend. Value must be between 0.01 and 1000.0, inclusive. */
+		/**
+		 * Required. The chosen revenue (based on conversion data) per unit of spend. Value must be between 0.01 and 1000.0, inclusive.
+		 * Type: double
+		 */
 		targetRoas: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAdsSearchads360V0Common__TargetRoasFormGroup() {
@@ -2497,10 +2887,16 @@ export namespace MyNS {
 		/** A boolean. */
 		booleanValue?: boolean | null;
 
-		/** A double. */
+		/**
+		 * A double.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
-		/** A float. */
+		/**
+		 * A float.
+		 * Type: float
+		 */
 		floatValue?: number | null;
 
 		/** An int64. */
@@ -2516,10 +2912,16 @@ export namespace MyNS {
 		/** A boolean. */
 		booleanValue: FormControl<boolean | null | undefined>,
 
-		/** A double. */
+		/**
+		 * A double.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
-		/** A float. */
+		/**
+		 * A float.
+		 * Type: float
+		 */
 		floatValue: FormControl<number | null | undefined>,
 
 		/** An int64. */
@@ -2585,7 +2987,10 @@ export namespace MyNS {
 		/** Conditions, or logical expressions, for webpage targeting. The list of webpage targeting conditions are and-ed together when evaluated for targeting. An empty list of conditions indicates all pages of the campaign's website are targeted. This field is required for CREATE operations and is prohibited on UPDATE operations. */
 		conditions?: Array<GoogleAdsSearchads360V0Common__WebpageConditionInfo>;
 
-		/** Website criteria coverage percentage. This is the computed percentage of website coverage based on the website target, negative website target and negative keywords in the ad group and campaign. For instance, when coverage returns as 1, it indicates it has 100% coverage. This field is read-only. */
+		/**
+		 * Website criteria coverage percentage. This is the computed percentage of website coverage based on the website target, negative website target and negative keywords in the ad group and campaign. For instance, when coverage returns as 1, it indicates it has 100% coverage. This field is read-only.
+		 * Type: double
+		 */
 		coveragePercentage?: number | null;
 
 		/** The name of the criterion that is defined by this parameter. The name value will be used for identifying, sorting and filtering criteria with this type of parameters. This field is required for CREATE operations and is prohibited on UPDATE operations. */
@@ -2595,7 +3000,10 @@ export namespace MyNS {
 	/** Represents a criterion for targeting webpages of an advertiser's website. */
 	export interface GoogleAdsSearchads360V0Common__WebpageInfoFormProperties {
 
-		/** Website criteria coverage percentage. This is the computed percentage of website coverage based on the website target, negative website target and negative keywords in the ad group and campaign. For instance, when coverage returns as 1, it indicates it has 100% coverage. This field is read-only. */
+		/**
+		 * Website criteria coverage percentage. This is the computed percentage of website coverage based on the website target, negative website target and negative keywords in the ad group and campaign. For instance, when coverage returns as 1, it indicates it has 100% coverage. This field is read-only.
+		 * Type: double
+		 */
 		coveragePercentage: FormControl<number | null | undefined>,
 
 		/** The name of the criterion that is defined by this parameter. The name value will be used for identifying, sorting and filtering criteria with this type of parameters. This field is required for CREATE operations and is prohibited on UPDATE operations. */
@@ -2644,7 +3052,10 @@ export namespace MyNS {
 		/** The name of a field or a oneof */
 		fieldName?: string | null;
 
-		/** If field_name is a repeated field, this is the element that failed */
+		/**
+		 * If field_name is a repeated field, this is the element that failed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 	}
 
@@ -2654,7 +3065,10 @@ export namespace MyNS {
 		/** The name of a field or a oneof */
 		fieldName: FormControl<string | null | undefined>,
 
-		/** If field_name is a repeated field, this is the element that failed */
+		/**
+		 * If field_name is a repeated field, this is the element that failed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAdsSearchads360V0Errors_ErrorLocation_FieldPathElementFormGroup() {
@@ -2956,14 +3370,20 @@ export namespace MyNS {
 	/** A container for ad group criterion quality information. */
 	export interface GoogleAdsSearchads360V0Resources_AdGroupCriterion_QualityInfo {
 
-		/** Output only. The quality score. This field may not be populated if Google does not have enough information to determine a value. */
+		/**
+		 * Output only. The quality score. This field may not be populated if Google does not have enough information to determine a value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		qualityScore?: number | null;
 	}
 
 	/** A container for ad group criterion quality information. */
 	export interface GoogleAdsSearchads360V0Resources_AdGroupCriterion_QualityInfoFormProperties {
 
-		/** Output only. The quality score. This field may not be populated if Google does not have enough information to determine a value. */
+		/**
+		 * Output only. The quality score. This field may not be populated if Google does not have enough information to determine a value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		qualityScore: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAdsSearchads360V0Resources_AdGroupCriterion_QualityInfoFormGroup() {
@@ -3120,7 +3540,10 @@ export namespace MyNS {
 	/** The setting for Shopping campaigns. Defines the universe of products that can be advertised by the campaign, and how this campaign interacts with other Shopping campaigns. */
 	export interface GoogleAdsSearchads360V0Resources_Campaign_ShoppingSetting {
 
-		/** Priority of the campaign. Campaigns with numerically higher priorities take precedence over those with lower priorities. This field is required for Shopping campaigns, with values between 0 and 2, inclusive. This field is optional for Smart Shopping campaigns, but must be equal to 3 if set. */
+		/**
+		 * Priority of the campaign. Campaigns with numerically higher priorities take precedence over those with lower priorities. This field is required for Shopping campaigns, with values between 0 and 2, inclusive. This field is optional for Smart Shopping campaigns, but must be equal to 3 if set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		campaignPriority?: number | null;
 
 		/** Whether to include local products. */
@@ -3142,7 +3565,10 @@ export namespace MyNS {
 	/** The setting for Shopping campaigns. Defines the universe of products that can be advertised by the campaign, and how this campaign interacts with other Shopping campaigns. */
 	export interface GoogleAdsSearchads360V0Resources_Campaign_ShoppingSettingFormProperties {
 
-		/** Priority of the campaign. Campaigns with numerically higher priorities take precedence over those with lower priorities. This field is required for Shopping campaigns, with values between 0 and 2, inclusive. This field is optional for Smart Shopping campaigns, but must be equal to 3 if set. */
+		/**
+		 * Priority of the campaign. Campaigns with numerically higher priorities take precedence over those with lower priorities. This field is required for Shopping campaigns, with values between 0 and 2, inclusive. This field is optional for Smart Shopping campaigns, but must be equal to 3 if set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		campaignPriority: FormControl<number | null | undefined>,
 
 		/** Whether to include local products. */
@@ -3270,7 +3696,10 @@ export namespace MyNS {
 		/** The currency code to use when conversion events for this conversion action are sent with an invalid or missing currency code, or when this conversion action is configured to always use the default value. */
 		defaultCurrencyCode?: string | null;
 
-		/** The value to use when conversion events for this conversion action are sent with an invalid, disallowed or missing value, or when this conversion action is configured to always use the default value. */
+		/**
+		 * The value to use when conversion events for this conversion action are sent with an invalid, disallowed or missing value, or when this conversion action is configured to always use the default value.
+		 * Type: double
+		 */
 		defaultValue?: number | null;
 	}
 
@@ -3283,7 +3712,10 @@ export namespace MyNS {
 		/** The currency code to use when conversion events for this conversion action are sent with an invalid or missing currency code, or when this conversion action is configured to always use the default value. */
 		defaultCurrencyCode: FormControl<string | null | undefined>,
 
-		/** The value to use when conversion events for this conversion action are sent with an invalid, disallowed or missing value, or when this conversion action is configured to always use the default value. */
+		/**
+		 * The value to use when conversion events for this conversion action are sent with an invalid, disallowed or missing value, or when this conversion action is configured to always use the default value.
+		 * Type: double
+		 */
 		defaultValue: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleAdsSearchads360V0Resources_ConversionAction_ValueSettingsFormGroup() {
@@ -3876,7 +4308,10 @@ export namespace MyNS {
 	/** Represents an ad group bid modifier. */
 	export interface GoogleAdsSearchads360V0Resources__AdGroupBidModifier {
 
-		/** The modifier for the bid when the criterion matches. The modifier must be in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent. Use 0 to opt out of a Device type. */
+		/**
+		 * The modifier for the bid when the criterion matches. The modifier must be in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent. Use 0 to opt out of a Device type.
+		 * Type: double
+		 */
 		bidModifier?: number | null;
 
 		/** A device criterion. */
@@ -3889,7 +4324,10 @@ export namespace MyNS {
 	/** Represents an ad group bid modifier. */
 	export interface GoogleAdsSearchads360V0Resources__AdGroupBidModifierFormProperties {
 
-		/** The modifier for the bid when the criterion matches. The modifier must be in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent. Use 0 to opt out of a Device type. */
+		/**
+		 * The modifier for the bid when the criterion matches. The modifier must be in the range: 0.1 - 10.0. The range is 1.0 - 6.0 for PreferredContent. Use 0 to opt out of a Device type.
+		 * Type: double
+		 */
 		bidModifier: FormControl<number | null | undefined>,
 
 		/** Immutable. The resource name of the ad group bid modifier. Ad group bid modifier resource names have the form: `customers/{customer_id}/adGroupBidModifiers/{ad_group_id}~{criterion_id}` */
@@ -3913,7 +4351,10 @@ export namespace MyNS {
 		/** An age range criterion. */
 		ageRange?: GoogleAdsSearchads360V0Common__AgeRangeInfo;
 
-		/** The modifier for the bid when the criterion matches. The modifier must be in the range: 0.1 - 10.0. Most targetable criteria types support modifiers. */
+		/**
+		 * The modifier for the bid when the criterion matches. The modifier must be in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
+		 * Type: double
+		 */
 		bidModifier?: number | null;
 
 		/** The CPC (cost-per-click) bid. */
@@ -3992,7 +4433,10 @@ export namespace MyNS {
 		/** Immutable. The ad group to which the criterion belongs. */
 		adGroup: FormControl<string | null | undefined>,
 
-		/** The modifier for the bid when the criterion matches. The modifier must be in the range: 0.1 - 10.0. Most targetable criteria types support modifiers. */
+		/**
+		 * The modifier for the bid when the criterion matches. The modifier must be in the range: 0.1 - 10.0. Most targetable criteria types support modifiers.
+		 * Type: double
+		 */
 		bidModifier: FormControl<number | null | undefined>,
 
 		/** The CPC (cost-per-click) bid. */
@@ -5198,7 +5642,10 @@ export namespace MyNS {
 		/** An age range criterion. */
 		ageRange?: GoogleAdsSearchads360V0Common__AgeRangeInfo;
 
-		/** The modifier for the bids when the criterion matches. The modifier must be in the range: 0.1 - 10.0. Most targetable criteria types support modifiers. Use 0 to opt out of a Device type. */
+		/**
+		 * The modifier for the bids when the criterion matches. The modifier must be in the range: 0.1 - 10.0. Most targetable criteria types support modifiers. Use 0 to opt out of a Device type.
+		 * Type: float
+		 */
 		bidModifier?: number | null;
 
 		/** Output only. The ID of the criterion. This field is ignored during mutate. */
@@ -5250,7 +5697,10 @@ export namespace MyNS {
 	/** A campaign criterion. */
 	export interface GoogleAdsSearchads360V0Resources__CampaignCriterionFormProperties {
 
-		/** The modifier for the bids when the criterion matches. The modifier must be in the range: 0.1 - 10.0. Most targetable criteria types support modifiers. Use 0 to opt out of a Device type. */
+		/**
+		 * The modifier for the bids when the criterion matches. The modifier must be in the range: 0.1 - 10.0. Most targetable criteria types support modifiers. Use 0 to opt out of a Device type.
+		 * Type: float
+		 */
 		bidModifier: FormControl<number | null | undefined>,
 
 		/** Output only. The ID of the criterion. This field is ignored during mutate. */
@@ -7054,7 +7504,10 @@ export namespace MyNS {
 	/** Request message for SearchAds360FieldService.SearchSearchAds360Fields. */
 	export interface GoogleAdsSearchads360V0Services__SearchSearchAds360FieldsRequest {
 
-		/** Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources. */
+		/**
+		 * Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from `next_page_token` in the previous response in order to request the next page of results. */
@@ -7067,7 +7520,10 @@ export namespace MyNS {
 	/** Request message for SearchAds360FieldService.SearchSearchAds360Fields. */
 	export interface GoogleAdsSearchads360V0Services__SearchSearchAds360FieldsRequestFormProperties {
 
-		/** Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources. */
+		/**
+		 * Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from `next_page_token` in the previous response in order to request the next page of results. */
@@ -7120,7 +7576,10 @@ export namespace MyNS {
 	/** Request message for SearchAds360Service.Search. */
 	export interface GoogleAdsSearchads360V0Services__SearchSearchAds360Request {
 
-		/** Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources. */
+		/**
+		 * Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from `next_page_token` in the previous response in order to request the next page of results. */
@@ -7142,7 +7601,10 @@ export namespace MyNS {
 	/** Request message for SearchAds360Service.Search. */
 	export interface GoogleAdsSearchads360V0Services__SearchSearchAds360RequestFormProperties {
 
-		/** Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources. */
+		/**
+		 * Number of elements to retrieve in a single page. When too large a page is requested, the server may decide to further limit the number of returned resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Token of the page to retrieve. If not specified, the first page of results will be returned. Use the value obtained from `next_page_token` in the previous response in order to request the next page of results. */

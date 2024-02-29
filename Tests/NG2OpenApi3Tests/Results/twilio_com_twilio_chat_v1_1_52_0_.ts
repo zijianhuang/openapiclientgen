@@ -9,8 +9,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Credential resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -28,8 +28,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Credential resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		type?: Chatv1credentialType | null;
@@ -41,8 +41,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Credential resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -60,8 +60,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Credential resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		type: FormControl<Chatv1credentialType | null | undefined>,
@@ -89,12 +89,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
-		/** DEPRECATED. The interval in seconds between consumption reports submission batches from client endpoints. */
+		/**
+		 * DEPRECATED. The interval in seconds between consumption reports submission batches from client endpoints.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		consumption_report_interval?: number | null;
 
 		/** The date and time in GMT when the resource was created specified in [RFC 2822](http://www.ietf.org/rfc/rfc2822.txt) format. */
@@ -105,22 +108,22 @@ export namespace MyNS {
 
 		/**
 		 * The channel role assigned to a channel creator when they join a new channel. See the [Roles endpoint](https://www.twilio.com/docs/chat/api/roles) for more details.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_channel_creator_role_sid?: string | null;
 
 		/**
 		 * The channel role assigned to users when they are added to a channel. See the [Roles endpoint](https://www.twilio.com/docs/chat/api/roles) for more details.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_channel_role_sid?: string | null;
 
 		/**
 		 * The service role assigned to users when they are added to the service. See the [Roles endpoint](https://www.twilio.com/docs/chat/api/roles) for more details.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_service_role_sid?: string | null;
 
@@ -150,12 +153,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
-		/** How long in seconds after a `started typing` event until clients should assume that user is no longer typing, even if no `ended typing` message was received.  The default is 5 seconds. */
+		/**
+		 * How long in seconds after a `started typing` event until clients should assume that user is no longer typing, even if no `ended typing` message was received.  The default is 5 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		typing_indicator_timeout?: number | null;
 
 		/** The absolute URL of the Service resource. */
@@ -174,12 +180,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
-		/** DEPRECATED. The interval in seconds between consumption reports submission batches from client endpoints. */
+		/**
+		 * DEPRECATED. The interval in seconds between consumption reports submission batches from client endpoints.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		consumption_report_interval: FormControl<number | null | undefined>,
 
 		/** The date and time in GMT when the resource was created specified in [RFC 2822](http://www.ietf.org/rfc/rfc2822.txt) format. */
@@ -190,22 +199,22 @@ export namespace MyNS {
 
 		/**
 		 * The channel role assigned to a channel creator when they join a new channel. See the [Roles endpoint](https://www.twilio.com/docs/chat/api/roles) for more details.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_channel_creator_role_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The channel role assigned to users when they are added to a channel. See the [Roles endpoint](https://www.twilio.com/docs/chat/api/roles) for more details.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_channel_role_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The service role assigned to users when they are added to the service. See the [Roles endpoint](https://www.twilio.com/docs/chat/api/roles) for more details.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		default_service_role_sid: FormControl<string | null | undefined>,
 
@@ -235,12 +244,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique string that we created to identify the Service resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
-		/** How long in seconds after a `started typing` event until clients should assume that user is no longer typing, even if no `ended typing` message was received.  The default is 5 seconds. */
+		/**
+		 * How long in seconds after a `started typing` event until clients should assume that user is no longer typing, even if no `ended typing` message was received.  The default is 5 seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		typing_indicator_timeout: FormControl<number | null | undefined>,
 
 		/** The absolute URL of the Service resource. */
@@ -282,8 +294,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Channel resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -305,23 +317,29 @@ export namespace MyNS {
 		/** The absolute URLs of the [Members](https://www.twilio.com/docs/chat/api/members), [Messages](https://www.twilio.com/docs/chat/api/messages) , [Invites](https://www.twilio.com/docs/chat/api/invites) and, if it exists, the last [Message](https://www.twilio.com/docs/chat/api/messages) for the Channel. */
 		links?: string | null;
 
-		/** The number of Members in the Channel. */
+		/**
+		 * The number of Members in the Channel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		members_count?: number | null;
 
-		/** The number of Messages in the Channel. */
+		/**
+		 * The number of Messages in the Channel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messages_count?: number | null;
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Channel resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		type?: Channel_enum_channel_type | null;
@@ -336,8 +354,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Channel resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -359,23 +377,29 @@ export namespace MyNS {
 		/** The absolute URLs of the [Members](https://www.twilio.com/docs/chat/api/members), [Messages](https://www.twilio.com/docs/chat/api/messages) , [Invites](https://www.twilio.com/docs/chat/api/invites) and, if it exists, the last [Message](https://www.twilio.com/docs/chat/api/messages) for the Channel. */
 		links: FormControl<string | null | undefined>,
 
-		/** The number of Members in the Channel. */
+		/**
+		 * The number of Members in the Channel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		members_count: FormControl<number | null | undefined>,
 
-		/** The number of Messages in the Channel. */
+		/**
+		 * The number of Messages in the Channel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		messages_count: FormControl<number | null | undefined>,
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Channel resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		type: FormControl<Channel_enum_channel_type | null | undefined>,
@@ -410,15 +434,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Invite resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid?: string | null;
 
@@ -436,22 +460,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) assigned to the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid?: string | null;
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Invite resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -462,15 +486,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Invite resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid: FormControl<string | null | undefined>,
 
@@ -488,22 +512,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) assigned to the resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Invite resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -530,15 +554,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Member resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) for the member.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid?: string | null;
 
@@ -551,7 +575,10 @@ export namespace MyNS {
 		/** The application-defined string that uniquely identifies the resource's [User](https://www.twilio.com/docs/api/chat/rest/users) within the [Service](https://www.twilio.com/docs/api/chat/rest/services). See [access tokens](https://www.twilio.com/docs/api/chat/guides/create-tokens) for more info. */
 		identity?: string | null;
 
-		/** The index of the last [Message](https://www.twilio.com/docs/api/chat/rest/messages) in the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) that the Member has read. */
+		/**
+		 * The index of the last [Message](https://www.twilio.com/docs/api/chat/rest/messages) in the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) that the Member has read.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_consumed_message_index?: number | null;
 
 		/** The ISO 8601 timestamp string that represents the date-time of the last [Message](https://www.twilio.com/docs/api/chat/rest/messages) read event for the Member within the [Channel](https://www.twilio.com/docs/api/chat/rest/channels). */
@@ -559,22 +586,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) assigned to the member.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid?: string | null;
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Member resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -585,15 +612,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Member resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) for the member.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid: FormControl<string | null | undefined>,
 
@@ -606,7 +633,10 @@ export namespace MyNS {
 		/** The application-defined string that uniquely identifies the resource's [User](https://www.twilio.com/docs/api/chat/rest/users) within the [Service](https://www.twilio.com/docs/api/chat/rest/services). See [access tokens](https://www.twilio.com/docs/api/chat/guides/create-tokens) for more info. */
 		identity: FormControl<string | null | undefined>,
 
-		/** The index of the last [Message](https://www.twilio.com/docs/api/chat/rest/messages) in the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) that the Member has read. */
+		/**
+		 * The index of the last [Message](https://www.twilio.com/docs/api/chat/rest/messages) in the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) that the Member has read.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_consumed_message_index: FormControl<number | null | undefined>,
 
 		/** The ISO 8601 timestamp string that represents the date-time of the last [Message](https://www.twilio.com/docs/api/chat/rest/messages) read event for the Member within the [Channel](https://www.twilio.com/docs/api/chat/rest/channels). */
@@ -614,22 +644,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) assigned to the member.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Member resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -657,8 +687,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Message resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -670,8 +700,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the Message resource belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid?: string | null;
 
@@ -684,27 +714,30 @@ export namespace MyNS {
 		/** The [identity](https://www.twilio.com/docs/api/chat/guides/identity) of the message's author. The default value is `system`. */
 		from?: string | null;
 
-		/** The index of the message within the [Channel](https://www.twilio.com/docs/chat/api/channels). */
+		/**
+		 * The index of the message within the [Channel](https://www.twilio.com/docs/chat/api/channels).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Message resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
 		/**
 		 * The SID of the [Channel](https://www.twilio.com/docs/chat/api/channels) that the message was sent to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		to?: string | null;
 
@@ -718,8 +751,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Message resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -731,8 +764,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the Message resource belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid: FormControl<string | null | undefined>,
 
@@ -745,27 +778,30 @@ export namespace MyNS {
 		/** The [identity](https://www.twilio.com/docs/api/chat/guides/identity) of the message's author. The default value is `system`. */
 		from: FormControl<string | null | undefined>,
 
-		/** The index of the message within the [Channel](https://www.twilio.com/docs/chat/api/channels). */
+		/**
+		 * The index of the message within the [Channel](https://www.twilio.com/docs/chat/api/channels).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Message resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Channel](https://www.twilio.com/docs/chat/api/channels) that the message was sent to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		to: FormControl<string | null | undefined>,
 
@@ -798,8 +834,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Role resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -817,15 +853,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the Role resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		type?: Chatv1serviceroleType | null;
@@ -837,8 +873,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the Role resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -853,15 +889,15 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the Role resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		type: FormControl<Chatv1serviceroleType | null | undefined>,
@@ -889,8 +925,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the User resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -915,7 +951,10 @@ export namespace MyNS {
 		/** Whether the User is actively connected to the Service instance and online. This value is only returned by Fetch actions that return a single resource and `null` is always returned by a Read action. This value is `null` if the Service's `reachability_enabled` is `false`, if the User has never been online for the Service instance, even if the Service's `reachability_enabled` is `true`. */
 		is_online?: boolean | null;
 
-		/** The number of Channels this User is a Member of. */
+		/**
+		 * The number of Channels this User is a Member of.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		joined_channels_count?: number | null;
 
 		/** The absolute URLs of the [Channel](https://www.twilio.com/docs/chat/api/channels) and [Binding](https://www.twilio.com/docs/chat/rest/bindings-resource) resources related to the user. */
@@ -923,22 +962,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) assigned to the user.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid?: string | null;
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique string that we created to identify the User resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -949,8 +988,8 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the User resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -975,7 +1014,10 @@ export namespace MyNS {
 		/** Whether the User is actively connected to the Service instance and online. This value is only returned by Fetch actions that return a single resource and `null` is always returned by a Read action. This value is `null` if the Service's `reachability_enabled` is `false`, if the User has never been online for the Service instance, even if the Service's `reachability_enabled` is `true`. */
 		is_online: FormControl<boolean | null | undefined>,
 
-		/** The number of Channels this User is a Member of. */
+		/**
+		 * The number of Channels this User is a Member of.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		joined_channels_count: FormControl<number | null | undefined>,
 
 		/** The absolute URLs of the [Channel](https://www.twilio.com/docs/chat/api/channels) and [Binding](https://www.twilio.com/docs/chat/rest/bindings-resource) resources related to the user. */
@@ -983,22 +1025,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Role](https://www.twilio.com/docs/api/chat/rest/roles) assigned to the user.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		role_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique string that we created to identify the User resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -1029,19 +1071,22 @@ export namespace MyNS {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the User Channel resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
 		/**
 		 * The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid?: string | null;
 
-		/** The index of the last [Message](https://www.twilio.com/docs/api/chat/rest/messages) in the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) that the Member has read. */
+		/**
+		 * The index of the last [Message](https://www.twilio.com/docs/api/chat/rest/messages) in the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) that the Member has read.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_consumed_message_index?: number | null;
 
 		/** The absolute URLs of the [Members](https://www.twilio.com/docs/chat/api/members), [Messages](https://www.twilio.com/docs/chat/api/messages) , [Invites](https://www.twilio.com/docs/chat/api/invites) and, if it exists, the last [Message](https://www.twilio.com/docs/chat/api/messages) for the Channel. */
@@ -1049,39 +1094,45 @@ export namespace MyNS {
 
 		/**
 		 * The SID of a [Member](https://www.twilio.com/docs/api/chat/rest/members) that represents the User on the Channel.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		member_sid?: string | null;
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 		status?: Chatv1serviceuseruser_channelStatus | null;
 
-		/** The number of unread Messages in the Channel for the User. Note that retrieving messages on a client endpoint does not mean that messages are consumed or read. See [Consumption Horizon feature](/docs/api/chat/guides/consumption-horizon) to learn how to mark messages as consumed. */
+		/**
+		 * The number of unread Messages in the Channel for the User. Note that retrieving messages on a client endpoint does not mean that messages are consumed or read. See [Consumption Horizon feature](/docs/api/chat/guides/consumption-horizon) to learn how to mark messages as consumed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unread_messages_count?: number | null;
 	}
 	export interface Chatv1serviceuseruser_channelFormProperties {
 
 		/**
 		 * The SID of the [Account](https://www.twilio.com/docs/api/rest/account) that created the User Channel resource.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		channel_sid: FormControl<string | null | undefined>,
 
-		/** The index of the last [Message](https://www.twilio.com/docs/api/chat/rest/messages) in the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) that the Member has read. */
+		/**
+		 * The index of the last [Message](https://www.twilio.com/docs/api/chat/rest/messages) in the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) that the Member has read.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_consumed_message_index: FormControl<number | null | undefined>,
 
 		/** The absolute URLs of the [Members](https://www.twilio.com/docs/chat/api/members), [Messages](https://www.twilio.com/docs/chat/api/messages) , [Invites](https://www.twilio.com/docs/chat/api/invites) and, if it exists, the last [Message](https://www.twilio.com/docs/chat/api/messages) for the Channel. */
@@ -1089,20 +1140,23 @@ export namespace MyNS {
 
 		/**
 		 * The SID of a [Member](https://www.twilio.com/docs/api/chat/rest/members) that represents the User on the Channel.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		member_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) the resource is associated with.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 		status: FormControl<Chatv1serviceuseruser_channelStatus | null | undefined>,
 
-		/** The number of unread Messages in the Channel for the User. Note that retrieving messages on a client endpoint does not mean that messages are consumed or read. See [Consumption Horizon feature](/docs/api/chat/guides/consumption-horizon) to learn how to mark messages as consumed. */
+		/**
+		 * The number of unread Messages in the Channel for the User. Note that retrieving messages on a client endpoint does not mean that messages are consumed or read. See [Consumption Horizon feature](/docs/api/chat/guides/consumption-horizon) to learn how to mark messages as consumed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		unread_messages_count: FormControl<number | null | undefined>,
 	}
 	export function CreateChatv1serviceuseruser_channelFormGroup() {
@@ -1137,7 +1191,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Credentials
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListCredentialReturn} OK
 		 */
@@ -1148,6 +1204,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Credentials/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Credential resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteCredential(Sid: string): Observable<HttpResponse<string>> {
@@ -1157,6 +1214,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Credentials/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Credential resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Chatv1credential} OK
 		 */
 		FetchCredential(Sid: string): Observable<Chatv1credential> {
@@ -1166,7 +1224,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListServiceReturn} OK
 		 */
@@ -1177,9 +1237,12 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {Array<Channel_enum_channel_type>} Type The visibility of the Channels to read. Can be: `public` or `private` and defaults to `public`.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListChannelReturn} OK
 		 */
@@ -1190,10 +1253,13 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ChannelSid The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resources to read belong to.
 		 * @param {Array<string>} Identity The [User](https://www.twilio.com/docs/api/chat/rest/v1/user)'s `identity` value of the resources to read. See [access tokens](https://www.twilio.com/docs/api/chat/guides/create-tokens) for more details.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListInviteReturn} OK
 		 */
@@ -1204,8 +1270,10 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ChannelSid The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource to delete belongs to.
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Invite resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteInvite(ServiceSid: string, ChannelSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1215,8 +1283,10 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Invites/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ChannelSid The SID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the resource to fetch belongs to.
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Invite resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Chatv1servicechannelinvite} OK
 		 */
 		FetchInvite(ServiceSid: string, ChannelSid: string, Sid: string): Observable<Chatv1servicechannelinvite> {
@@ -1226,10 +1296,13 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ChannelSid The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the members to read belong to. Can be the Channel resource's `sid` or `unique_name` value.
 		 * @param {Array<string>} Identity The [User](https://www.twilio.com/docs/api/chat/rest/v1/user)'s `identity` value of the resources to read. See [access tokens](https://www.twilio.com/docs/api/chat/guides/create-tokens) for more details.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListMemberReturn} OK
 		 */
@@ -1240,8 +1313,10 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ChannelSid The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message belongs to.  Can be the Channel's `sid` or `unique_name`.
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Member resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteMember(ServiceSid: string, ChannelSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1251,8 +1326,10 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Members/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ChannelSid The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the member to fetch belongs to. Can be the Channel resource's `sid` or `unique_name` value.
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Member resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Chatv1servicechannelmember} OK
 		 */
 		FetchMember(ServiceSid: string, ChannelSid: string, Sid: string): Observable<Chatv1servicechannelmember> {
@@ -1262,10 +1339,14 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ChannelSid The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to read belongs to. Can be the Channel's `sid` or `unique_name`.
+		 *     Min length: 34    Max length: 34
 		 * @param {Message_enum_order_type} Order The sort order of the returned messages. Can be: `asc` (ascending) or `desc` (descending) with `asc` as the default.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListMessageReturn} OK
 		 */
@@ -1276,8 +1357,11 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ChannelSid The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to delete belongs to.  Can be the Channel resource's `sid` or `unique_name`.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Message resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteMessage(ServiceSid: string, ChannelSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1287,8 +1371,11 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{ChannelSid}/Messages/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} ChannelSid The unique ID of the [Channel](https://www.twilio.com/docs/api/chat/rest/channels) the message to fetch belongs to. Can be the Channel's `sid` or `unique_name`.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Message resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Chatv1servicechannelmessage} OK
 		 */
 		FetchMessage(ServiceSid: string, ChannelSid: string, Sid: string): Observable<Chatv1servicechannelmessage> {
@@ -1298,6 +1385,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Services/{ServiceSid}/Channels/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Channel resource to delete.
 		 * @return {void} 
 		 */
@@ -1308,6 +1396,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Channels/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Channel resource to fetch.
 		 * @return {Chatv1servicechannel} OK
 		 */
@@ -1318,8 +1407,11 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Roles
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListRoleReturn} OK
 		 */
@@ -1330,7 +1422,9 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Services/{ServiceSid}/Roles/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Role resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteRole(ServiceSid: string, Sid: string): Observable<HttpResponse<string>> {
@@ -1340,7 +1434,9 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Roles/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Role resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Chatv1servicerole} OK
 		 */
 		FetchRole(ServiceSid: string, Sid: string): Observable<Chatv1servicerole> {
@@ -1350,8 +1446,11 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Users
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListUserReturn} OK
 		 */
@@ -1362,6 +1461,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Services/{ServiceSid}/Users/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to delete the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the User resource to delete.
 		 * @return {void} 
 		 */
@@ -1372,6 +1472,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{ServiceSid}/Users/{Sid}
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to fetch the resource from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the User resource to fetch.
 		 * @return {Chatv1serviceuser} OK
 		 */
@@ -1383,9 +1484,12 @@ export namespace MyNS {
 		 * List all Channels for a given User.
 		 * Get v1/Services/{ServiceSid}/Users/{UserSid}/Channels
 		 * @param {string} ServiceSid The SID of the [Service](https://www.twilio.com/docs/api/chat/rest/services) to read the resources from.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} UserSid The SID of the [User](https://www.twilio.com/docs/api/chat/rest/users) to read the User Channel resources from.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListUserChannelReturn} OK
 		 */
@@ -1396,6 +1500,7 @@ export namespace MyNS {
 		/**
 		 * Delete v1/Services/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Service resource to delete.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteService(Sid: string): Observable<HttpResponse<string>> {
@@ -1405,6 +1510,7 @@ export namespace MyNS {
 		/**
 		 * Get v1/Services/{Sid}
 		 * @param {string} Sid The Twilio-provided string that uniquely identifies the Service resource to fetch.
+		 *     Min length: 34    Max length: 34
 		 * @return {Chatv1service} OK
 		 */
 		FetchService(Sid: string): Observable<Chatv1service> {
@@ -1428,7 +1534,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1437,7 +1547,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1471,7 +1585,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1480,7 +1598,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1514,7 +1636,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1523,7 +1649,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1557,7 +1687,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1566,7 +1700,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1600,7 +1738,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1609,7 +1751,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1643,7 +1789,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1652,7 +1802,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1686,7 +1840,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1695,7 +1853,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1729,7 +1891,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1738,7 +1904,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1772,7 +1942,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -1781,7 +1955,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

@@ -398,18 +398,30 @@ export namespace MyNS {
 
 	export interface PlacePosition {
 
-		/** The latitude of this position. */
+		/**
+		 * The latitude of this position.
+		 * Type: double
+		 */
 		latitude?: number | null;
 
-		/** The longitude of this position. */
+		/**
+		 * The longitude of this position.
+		 * Type: double
+		 */
 		longitude?: number | null;
 	}
 	export interface PlacePositionFormProperties {
 
-		/** The latitude of this position. */
+		/**
+		 * The latitude of this position.
+		 * Type: double
+		 */
 		latitude: FormControl<number | null | undefined>,
 
-		/** The longitude of this position. */
+		/**
+		 * The longitude of this position.
+		 * Type: double
+		 */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreatePlacePositionFormGroup() {
@@ -687,7 +699,10 @@ export namespace MyNS {
 
 	export interface ActivityObjectAttachmentsFullImage {
 
-		/** The height, in pixels, of the linked resource. */
+		/**
+		 * The height, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		height?: number | null;
 
 		/** Media type of the link. */
@@ -696,12 +711,18 @@ export namespace MyNS {
 		/** URL of the image. */
 		url?: string | null;
 
-		/** The width, in pixels, of the linked resource. */
+		/**
+		 * The width, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		width?: number | null;
 	}
 	export interface ActivityObjectAttachmentsFullImageFormProperties {
 
-		/** The height, in pixels, of the linked resource. */
+		/**
+		 * The height, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Media type of the link. */
@@ -710,7 +731,10 @@ export namespace MyNS {
 		/** URL of the image. */
 		url: FormControl<string | null | undefined>,
 
-		/** The width, in pixels, of the linked resource. */
+		/**
+		 * The width, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityObjectAttachmentsFullImageFormGroup() {
@@ -725,7 +749,10 @@ export namespace MyNS {
 
 	export interface ActivityObjectAttachmentsImage {
 
-		/** The height, in pixels, of the linked resource. */
+		/**
+		 * The height, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		height?: number | null;
 
 		/** Media type of the link. */
@@ -734,12 +761,18 @@ export namespace MyNS {
 		/** Image URL. */
 		url?: string | null;
 
-		/** The width, in pixels, of the linked resource. */
+		/**
+		 * The width, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		width?: number | null;
 	}
 	export interface ActivityObjectAttachmentsImageFormProperties {
 
-		/** The height, in pixels, of the linked resource. */
+		/**
+		 * The height, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Media type of the link. */
@@ -748,7 +781,10 @@ export namespace MyNS {
 		/** Image URL. */
 		url: FormControl<string | null | undefined>,
 
-		/** The width, in pixels, of the linked resource. */
+		/**
+		 * The width, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityObjectAttachmentsImageFormGroup() {
@@ -790,7 +826,10 @@ export namespace MyNS {
 
 	export interface ActivityObjectAttachmentsThumbnailsImage {
 
-		/** The height, in pixels, of the linked resource. */
+		/**
+		 * The height, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		height?: number | null;
 
 		/** Media type of the link. */
@@ -799,12 +838,18 @@ export namespace MyNS {
 		/** Image url. */
 		url?: string | null;
 
-		/** The width, in pixels, of the linked resource. */
+		/**
+		 * The width, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		width?: number | null;
 	}
 	export interface ActivityObjectAttachmentsThumbnailsImageFormProperties {
 
-		/** The height, in pixels, of the linked resource. */
+		/**
+		 * The height, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Media type of the link. */
@@ -813,7 +858,10 @@ export namespace MyNS {
 		/** Image url. */
 		url: FormControl<string | null | undefined>,
 
-		/** The width, in pixels, of the linked resource. */
+		/**
+		 * The width, in pixels, of the linked resource.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityObjectAttachmentsThumbnailsImageFormGroup() {
@@ -831,7 +879,10 @@ export namespace MyNS {
 		/** The URL for the collection of people who +1'd this activity. */
 		selfLink?: string | null;
 
-		/** Total number of people who +1'd this activity. */
+		/**
+		 * Total number of people who +1'd this activity.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalItems?: number | null;
 	}
 	export interface ActivityObjectPlusonersFormProperties {
@@ -839,7 +890,10 @@ export namespace MyNS {
 		/** The URL for the collection of people who +1'd this activity. */
 		selfLink: FormControl<string | null | undefined>,
 
-		/** Total number of people who +1'd this activity. */
+		/**
+		 * Total number of people who +1'd this activity.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityObjectPlusonersFormGroup() {
@@ -855,7 +909,10 @@ export namespace MyNS {
 		/** The URL for the collection of comments in reply to this activity. */
 		selfLink?: string | null;
 
-		/** Total number of comments on this activity. */
+		/**
+		 * Total number of comments on this activity.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalItems?: number | null;
 	}
 	export interface ActivityObjectRepliesFormProperties {
@@ -863,7 +920,10 @@ export namespace MyNS {
 		/** The URL for the collection of comments in reply to this activity. */
 		selfLink: FormControl<string | null | undefined>,
 
-		/** Total number of comments on this activity. */
+		/**
+		 * Total number of comments on this activity.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityObjectRepliesFormGroup() {
@@ -879,7 +939,10 @@ export namespace MyNS {
 		/** The URL for the collection of resharers. */
 		selfLink?: string | null;
 
-		/** Total number of people who reshared this activity. */
+		/**
+		 * Total number of people who reshared this activity.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalItems?: number | null;
 	}
 	export interface ActivityObjectResharersFormProperties {
@@ -887,7 +950,10 @@ export namespace MyNS {
 		/** The URL for the collection of resharers. */
 		selfLink: FormControl<string | null | undefined>,
 
-		/** Total number of people who reshared this activity. */
+		/**
+		 * Total number of people who reshared this activity.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateActivityObjectResharersFormGroup() {
@@ -1228,12 +1294,18 @@ export namespace MyNS {
 
 	export interface CommentPlusoners {
 
-		/** Total number of people who +1'd this comment. */
+		/**
+		 * Total number of people who +1'd this comment.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalItems?: number | null;
 	}
 	export interface CommentPlusonersFormProperties {
 
-		/** Total number of people who +1'd this comment. */
+		/**
+		 * Total number of people who +1'd this comment.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreateCommentPlusonersFormGroup() {
@@ -1325,7 +1397,10 @@ export namespace MyNS {
 		/** The title of this collection of people. */
 		title?: string | null;
 
-		/** The total number of people available in this list. The number of people in a response might be smaller due to paging. This might not be set for all collections. */
+		/**
+		 * The total number of people available in this list. The number of people in a response might be smaller due to paging. This might not be set for all collections.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems?: number | null;
 	}
 	export interface PeopleFeedFormProperties {
@@ -1345,7 +1420,10 @@ export namespace MyNS {
 		/** The title of this collection of people. */
 		title: FormControl<string | null | undefined>,
 
-		/** The total number of people available in this list. The number of people in a response might be smaller due to paging. This might not be set for all collections. */
+		/**
+		 * The total number of people available in this list. The number of people in a response might be smaller due to paging. This might not be set for all collections.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalItems: FormControl<number | null | undefined>,
 	}
 	export function CreatePeopleFeedFormGroup() {
@@ -1374,7 +1452,10 @@ export namespace MyNS {
 		/** The "bragging rights" line of this person. */
 		braggingRights?: string | null;
 
-		/** For followers who are visible, the number of people who have added this person or page to a circle. */
+		/**
+		 * For followers who are visible, the number of people who have added this person or page to a circle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		circledByCount?: number | null;
 
 		/** The cover photo content. */
@@ -1440,7 +1521,10 @@ export namespace MyNS {
 		/** A list of places where this person has lived. */
 		PersonPlacesLived?: Array<PersonPlacesLived>;
 
-		/** If a Google+ Page, the number of people who have +1'd this page. */
+		/**
+		 * If a Google+ Page, the number of people who have +1'd this page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plusOneCount?: number | null;
 
 		/**
@@ -1483,7 +1567,10 @@ export namespace MyNS {
 		/** The "bragging rights" line of this person. */
 		braggingRights: FormControl<string | null | undefined>,
 
-		/** For followers who are visible, the number of people who have added this person or page to a circle. */
+		/**
+		 * For followers who are visible, the number of people who have added this person or page to a circle.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		circledByCount: FormControl<number | null | undefined>,
 
 		/** (this field is not currently used) */
@@ -1531,7 +1618,10 @@ export namespace MyNS {
 		/** The occupation of this person. */
 		occupation: FormControl<string | null | undefined>,
 
-		/** If a Google+ Page, the number of people who have +1'd this page. */
+		/**
+		 * If a Google+ Page, the number of people who have +1'd this page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		plusOneCount: FormControl<number | null | undefined>,
 
 		/**
@@ -1594,6 +1684,7 @@ export namespace MyNS {
 		 * The age range's upper bound, if any. Possible values include, but are not limited to, the following:
 		 * - "17" - for age 17
 		 * - "20" - for age 20
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		max?: number | null;
 
@@ -1601,6 +1692,7 @@ export namespace MyNS {
 		 * The age range's lower bound, if any. Possible values include, but are not limited to, the following:
 		 * - "21" - for age 21
 		 * - "18" - for age 18
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		min?: number | null;
 	}
@@ -1610,6 +1702,7 @@ export namespace MyNS {
 		 * The age range's upper bound, if any. Possible values include, but are not limited to, the following:
 		 * - "17" - for age 17
 		 * - "20" - for age 20
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		max: FormControl<number | null | undefined>,
 
@@ -1617,6 +1710,7 @@ export namespace MyNS {
 		 * The age range's lower bound, if any. Possible values include, but are not limited to, the following:
 		 * - "21" - for age 21
 		 * - "18" - for age 18
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		min: FormControl<number | null | undefined>,
 	}
@@ -1659,18 +1753,30 @@ export namespace MyNS {
 
 	export interface PersonCoverCoverInfo {
 
-		/** The difference between the left position of the cover image and the actual displayed cover image. Only valid for banner layout. */
+		/**
+		 * The difference between the left position of the cover image and the actual displayed cover image. Only valid for banner layout.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leftImageOffset?: number | null;
 
-		/** The difference between the top position of the cover image and the actual displayed cover image. Only valid for banner layout. */
+		/**
+		 * The difference between the top position of the cover image and the actual displayed cover image. Only valid for banner layout.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topImageOffset?: number | null;
 	}
 	export interface PersonCoverCoverInfoFormProperties {
 
-		/** The difference between the left position of the cover image and the actual displayed cover image. Only valid for banner layout. */
+		/**
+		 * The difference between the left position of the cover image and the actual displayed cover image. Only valid for banner layout.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leftImageOffset: FormControl<number | null | undefined>,
 
-		/** The difference between the top position of the cover image and the actual displayed cover image. Only valid for banner layout. */
+		/**
+		 * The difference between the top position of the cover image and the actual displayed cover image. Only valid for banner layout.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topImageOffset: FormControl<number | null | undefined>,
 	}
 	export function CreatePersonCoverCoverInfoFormGroup() {
@@ -1683,24 +1789,36 @@ export namespace MyNS {
 
 	export interface PersonCoverCoverPhoto {
 
-		/** The height of the image. */
+		/**
+		 * The height of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** The URL of the image. */
 		url?: string | null;
 
-		/** The width of the image. */
+		/**
+		 * The width of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface PersonCoverCoverPhotoFormProperties {
 
-		/** The height of the image. */
+		/**
+		 * The height of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** The URL of the image. */
 		url: FormControl<string | null | undefined>,
 
-		/** The width of the image. */
+		/**
+		 * The width of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePersonCoverCoverPhotoFormGroup() {
@@ -1983,6 +2101,7 @@ export namespace MyNS {
 		 * @param {string} query Full-text search query string.
 		 * @param {string} language Specify the preferred language to search with. See search language codes for available values.
 		 * @param {number} maxResults The maximum number of activities to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.
+		 *     Minimum: 1    Maximum: 20
 		 * @param {Plus_activities_searchOrderBy} orderBy Specifies how to order search results.
 		 * @param {string} pageToken The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response. This token can be of any length.
 		 * @return {ActivityFeed} Successful response
@@ -2006,6 +2125,7 @@ export namespace MyNS {
 		 * Get activities/{activityId}/comments
 		 * @param {string} activityId The ID of the activity to get comments for.
 		 * @param {number} maxResults The maximum number of comments to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.
+		 *     Minimum: 0    Maximum: 500
 		 * @param {string} pageToken The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @param {Plus_comments_listSortOrder} sortOrder The order in which to sort the list of comments.
 		 * @return {CommentFeed} Successful response
@@ -2020,6 +2140,7 @@ export namespace MyNS {
 		 * @param {string} activityId The ID of the activity to get the list of people for.
 		 * @param {Plus_people_listByActivityCollection} collection The collection of people to list.
 		 * @param {number} maxResults The maximum number of people to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pageToken The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {PeopleFeed} Successful response
 		 */
@@ -2043,6 +2164,7 @@ export namespace MyNS {
 		 * @param {string} query Specify a query string for full text search of public text in all profiles.
 		 * @param {string} language Specify the preferred language to search with. See search language codes for available values.
 		 * @param {number} maxResults The maximum number of people to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} pageToken The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response. This token can be of any length.
 		 * @return {PeopleFeed} Successful response
 		 */
@@ -2066,6 +2188,7 @@ export namespace MyNS {
 		 * @param {string} userId The ID of the user to get activities for. The special value "me" can be used to indicate the authenticated user.
 		 * @param {Plus_activities_listCollection} collection The collection of activities to list.
 		 * @param {number} maxResults The maximum number of activities to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} pageToken The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {ActivityFeed} Successful response
 		 */
@@ -2079,6 +2202,7 @@ export namespace MyNS {
 		 * @param {string} userId Get the collection of people for the person identified. Use "me" to indicate the authenticated user.
 		 * @param {Plus_people_listCollection} collection The collection of people to list.
 		 * @param {number} maxResults The maximum number of people to include in the response, which is used for paging. For any response, the actual number returned might be less than the specified maxResults.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {Plus_people_listOrderBy} orderBy The order to return people in.
 		 * @param {string} pageToken The continuation token, which is used to page through large result sets. To get the next page of results, set this parameter to the value of "nextPageToken" from the previous response.
 		 * @return {PeopleFeed} Successful response

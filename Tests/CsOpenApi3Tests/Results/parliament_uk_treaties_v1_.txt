@@ -536,15 +536,24 @@ namespace MyNS
 		/// GetTreaties api/Treaty
 		/// </summary>
 		/// <param name="SearchText">Treaties which contains the search text specified</param>
-		/// <param name="GovernmentOrganisationId">Treaties with the government organisation id specified</param>
+		/// <param name="GovernmentOrganisationId">Treaties with the government organisation id specified
+		/// Minimum: 1
+		/// Maximum: 2147483647
+		// </param>
 		/// <param name="Series">Treaties with the series membership type specified</param>
 		/// <param name="ParliamentaryProcess">Treaties where the parliamentary process is concluded or notconcluded</param>
 		/// <param name="DebateScheduled">Treaties which contain a scheduled debate</param>
 		/// <param name="MotionToNotRatify">Treaties which contain a motion to not ratify</param>
 		/// <param name="RecommendedNotRatify">Treaties which are recommended to not ratify</param>
 		/// <param name="House">Treaties which are laid in the specified house</param>
-		/// <param name="Skip">The number of records to skip from the first, default is 0</param>
-		/// <param name="Take">The number of records to return, default is 20</param>
+		/// <param name="Skip">The number of records to skip from the first, default is 0
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
+		/// <param name="Take">The number of records to return, default is 20
+		/// Minimum: 0
+		/// Maximum: 2147483647
+		// </param>
 		/// <returns>A list of treaties</returns>
 		public async Task<TreatyResourceCollection> GetTreatiesAsync(string SearchText, int GovernmentOrganisationId, SeriesMembershipType Series, ParliamentaryProcess ParliamentaryProcess, bool DebateScheduled, bool MotionToNotRatify, bool RecommendedNotRatify, BusinessItemHouseHouse House, int Skip, int Take, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

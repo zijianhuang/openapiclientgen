@@ -8,7 +8,10 @@ export namespace MyNS {
 		/** Required */
 		Date: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Point: number;
 
 		/** Required */
@@ -19,7 +22,10 @@ export namespace MyNS {
 		/** Required */
 		Date: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Point: FormControl<number | null | undefined>,
 
 		/** Required */

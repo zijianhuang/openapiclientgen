@@ -11,19 +11,31 @@ export namespace MyNS {
 		/** The currency code for the account. */
 		currency_code?: string | null;
 
-		/** The current balance of the account. */
+		/**
+		 * The current balance of the account.
+		 * Type: double
+		 */
 		current_balance?: number | null;
 
 		/** The date of the current balance. */
 		current_balance_date?: string | null;
 
-		/** The exchange rate between the account's currency and the user's base currency, when different. If the currencies are the same, null is returned. */
+		/**
+		 * The exchange rate between the account's currency and the user's base currency, when different. If the currencies are the same, null is returned.
+		 * Type: double
+		 */
 		current_balance_exchange_rate?: number | null;
 
-		/** The current balance of the account in the user's base currency. */
+		/**
+		 * The current balance of the account in the user's base currency.
+		 * Type: double
+		 */
 		current_balance_in_base_currency?: number | null;
 
-		/** The unique identifier of the account. */
+		/**
+		 * The unique identifier of the account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Whether the account is a net worth asset. */
@@ -31,10 +43,16 @@ export namespace MyNS {
 		primary_scenario?: Scenario;
 		primary_transaction_account?: TransactionAccount;
 
-		/** The current safe balance, if safe balance is activated on the account. If safe balance is not activated, then null is returned. */
+		/**
+		 * The current safe balance, if safe balance is activated on the account. If safe balance is not activated, then null is returned.
+		 * Type: double
+		 */
 		safe_balance?: number | null;
 
-		/** The current safe balance in the user's base currency, if safe balance is activated on the account. If safe balance is not activated, then null is returned. */
+		/**
+		 * The current safe balance in the user's base currency, if safe balance is activated on the account. If safe balance is not activated, then null is returned.
+		 * Type: double
+		 */
 		safe_balance_in_base_currency?: number | null;
 
 		/** All scenarios that compose the account, including the primary. */
@@ -60,28 +78,46 @@ export namespace MyNS {
 		/** The currency code for the account. */
 		currency_code: FormControl<string | null | undefined>,
 
-		/** The current balance of the account. */
+		/**
+		 * The current balance of the account.
+		 * Type: double
+		 */
 		current_balance: FormControl<number | null | undefined>,
 
 		/** The date of the current balance. */
 		current_balance_date: FormControl<string | null | undefined>,
 
-		/** The exchange rate between the account's currency and the user's base currency, when different. If the currencies are the same, null is returned. */
+		/**
+		 * The exchange rate between the account's currency and the user's base currency, when different. If the currencies are the same, null is returned.
+		 * Type: double
+		 */
 		current_balance_exchange_rate: FormControl<number | null | undefined>,
 
-		/** The current balance of the account in the user's base currency. */
+		/**
+		 * The current balance of the account in the user's base currency.
+		 * Type: double
+		 */
 		current_balance_in_base_currency: FormControl<number | null | undefined>,
 
-		/** The unique identifier of the account. */
+		/**
+		 * The unique identifier of the account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Whether the account is a net worth asset. */
 		is_net_worth: FormControl<boolean | null | undefined>,
 
-		/** The current safe balance, if safe balance is activated on the account. If safe balance is not activated, then null is returned. */
+		/**
+		 * The current safe balance, if safe balance is activated on the account. If safe balance is not activated, then null is returned.
+		 * Type: double
+		 */
 		safe_balance: FormControl<number | null | undefined>,
 
-		/** The current safe balance in the user's base currency, if safe balance is activated on the account. If safe balance is not activated, then null is returned. */
+		/**
+		 * The current safe balance in the user's base currency, if safe balance is activated on the account. If safe balance is not activated, then null is returned.
+		 * Type: double
+		 */
 		safe_balance_in_base_currency: FormControl<number | null | undefined>,
 
 		/** The title of the account. */
@@ -117,7 +153,10 @@ export namespace MyNS {
 		/** For goals, the date that they should be achieved by. */
 		achieve_date?: string | null;
 
-		/** The closing balance of the scenario. */
+		/**
+		 * The closing balance of the scenario.
+		 * Type: double
+		 */
 		closing_balance?: number | null;
 
 		/** The date of the closing balance. */
@@ -126,39 +165,70 @@ export namespace MyNS {
 		/** When the scenario was created. */
 		created_at?: string | null;
 
-		/** The current balance of the scenario. */
+		/**
+		 * The current balance of the scenario.
+		 * Type: double
+		 */
 		current_balance?: number | null;
 
 		/** The date of the current balance. */
 		current_balance_date?: string | null;
 
-		/** The exchange rate between the scenario's currency and the user's base currency, when different. If the currencies are the same, null is returned. */
+		/**
+		 * The exchange rate between the scenario's currency and the user's base currency, when different. If the currencies are the same, null is returned.
+		 * Type: double
+		 */
 		current_balance_exchange_rate?: number | null;
 
-		/** The current balance of the scenario in the user's base currency. */
+		/**
+		 * The current balance of the scenario in the user's base currency.
+		 * Type: double
+		 */
 		current_balance_in_base_currency?: number | null;
 
 		/** A short description of what the scenario is modelling. */
 		description?: string | null;
 
-		/** The unique identifier of the scenario. */
+		/**
+		 * The unique identifier of the scenario.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
-		/** The amount of interest to apply to the balance. Will apply periodically depending on what `interest_rate_repeat_id` is set to. */
+		/**
+		 * The amount of interest to apply to the balance. Will apply periodically depending on what `interest_rate_repeat_id` is set to.
+		 * Type: double
+		 */
 		interest_rate?: number | null;
 
-		/** A number representing how often the interest should be applied. 0 is used for no interest, 2 is weekly, 3 is fortnightly, 4 is monthly, 5 is yearly and 7 for quarterly. */
+		/**
+		 * A number representing how often the interest should be applied. 0 is used for no interest, 2 is weekly, 3 is fortnightly, 4 is monthly, 5 is yearly and 7 for quarterly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interest_rate_repeat_id?: number | null;
+
+		/** Type: double */
 		'maximum-value'?: number | null;
+
+		/** Type: double */
 		'minimum-value'?: number | null;
 
-		/** The current safe balance in the user's base currency, if safe balance is activated on the account associated with the scenario. If safe balance is not activated, then null is returned. */
+		/**
+		 * The current safe balance in the user's base currency, if safe balance is activated on the account associated with the scenario. If safe balance is not activated, then null is returned.
+		 * Type: double
+		 */
 		safe_balance?: number | null;
 
-		/** The current safe balance in the user's base currency, if safe balance is activated on the account associated with the scenario. If safe balance is not available, then null is returned. */
+		/**
+		 * The current safe balance in the user's base currency, if safe balance is activated on the account associated with the scenario. If safe balance is not available, then null is returned.
+		 * Type: double
+		 */
 		safe_balance_in_base_currency?: number | null;
 
-		/** The starting balance of the scenario. */
+		/**
+		 * The starting balance of the scenario.
+		 * Type: double
+		 */
 		starting_balance?: number | null;
 
 		/** The date of the starting balance. */
@@ -178,7 +248,10 @@ export namespace MyNS {
 		/** For goals, the date that they should be achieved by. */
 		achieve_date: FormControl<string | null | undefined>,
 
-		/** The closing balance of the scenario. */
+		/**
+		 * The closing balance of the scenario.
+		 * Type: double
+		 */
 		closing_balance: FormControl<number | null | undefined>,
 
 		/** The date of the closing balance. */
@@ -187,39 +260,70 @@ export namespace MyNS {
 		/** When the scenario was created. */
 		created_at: FormControl<string | null | undefined>,
 
-		/** The current balance of the scenario. */
+		/**
+		 * The current balance of the scenario.
+		 * Type: double
+		 */
 		current_balance: FormControl<number | null | undefined>,
 
 		/** The date of the current balance. */
 		current_balance_date: FormControl<string | null | undefined>,
 
-		/** The exchange rate between the scenario's currency and the user's base currency, when different. If the currencies are the same, null is returned. */
+		/**
+		 * The exchange rate between the scenario's currency and the user's base currency, when different. If the currencies are the same, null is returned.
+		 * Type: double
+		 */
 		current_balance_exchange_rate: FormControl<number | null | undefined>,
 
-		/** The current balance of the scenario in the user's base currency. */
+		/**
+		 * The current balance of the scenario in the user's base currency.
+		 * Type: double
+		 */
 		current_balance_in_base_currency: FormControl<number | null | undefined>,
 
 		/** A short description of what the scenario is modelling. */
 		description: FormControl<string | null | undefined>,
 
-		/** The unique identifier of the scenario. */
+		/**
+		 * The unique identifier of the scenario.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
-		/** The amount of interest to apply to the balance. Will apply periodically depending on what `interest_rate_repeat_id` is set to. */
+		/**
+		 * The amount of interest to apply to the balance. Will apply periodically depending on what `interest_rate_repeat_id` is set to.
+		 * Type: double
+		 */
 		interest_rate: FormControl<number | null | undefined>,
 
-		/** A number representing how often the interest should be applied. 0 is used for no interest, 2 is weekly, 3 is fortnightly, 4 is monthly, 5 is yearly and 7 for quarterly. */
+		/**
+		 * A number representing how often the interest should be applied. 0 is used for no interest, 2 is weekly, 3 is fortnightly, 4 is monthly, 5 is yearly and 7 for quarterly.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interest_rate_repeat_id: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'maximum-value': FormControl<number | null | undefined>,
+
+		/** Type: double */
 		'minimum-value': FormControl<number | null | undefined>,
 
-		/** The current safe balance in the user's base currency, if safe balance is activated on the account associated with the scenario. If safe balance is not activated, then null is returned. */
+		/**
+		 * The current safe balance in the user's base currency, if safe balance is activated on the account associated with the scenario. If safe balance is not activated, then null is returned.
+		 * Type: double
+		 */
 		safe_balance: FormControl<number | null | undefined>,
 
-		/** The current safe balance in the user's base currency, if safe balance is activated on the account associated with the scenario. If safe balance is not available, then null is returned. */
+		/**
+		 * The current safe balance in the user's base currency, if safe balance is activated on the account associated with the scenario. If safe balance is not available, then null is returned.
+		 * Type: double
+		 */
 		safe_balance_in_base_currency: FormControl<number | null | undefined>,
 
-		/** The starting balance of the scenario. */
+		/**
+		 * The starting balance of the scenario.
+		 * Type: double
+		 */
 		starting_balance: FormControl<number | null | undefined>,
 
 		/** The date of the starting balance. */
@@ -268,24 +372,42 @@ export namespace MyNS {
 
 		/** The currency that the account is in. This is determined by the account that the transaction account belongs to. */
 		currency_code?: string | null;
+
+		/** Type: double */
 		current_balance?: number | null;
 		current_balance_date?: string | null;
 
-		/** The exchange rate between the transaction account's currency and the user's base currency, when different. If the currencies are the same, null is returned. */
+		/**
+		 * The exchange rate between the transaction account's currency and the user's base currency, when different. If the currencies are the same, null is returned.
+		 * Type: double
+		 */
 		current_balance_exchange_rate?: number | null;
 
-		/** The current balance of the transaction account in the user's base currency. */
+		/**
+		 * The current balance of the transaction account in the user's base currency.
+		 * Type: double
+		 */
 		current_balance_in_base_currency?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		institution?: Institution;
 		name?: string | null;
 		number?: string | null;
 
-		/** The current safe balance, if safe balance is activated and available for the transaction account. If safe balance is not available, then null is returned. */
+		/**
+		 * The current safe balance, if safe balance is activated and available for the transaction account. If safe balance is not available, then null is returned.
+		 * Type: double
+		 */
 		safe_balance?: number | null;
 
-		/** The current safe balance in the user's base currency, if safe balance is activated and available for the transaction account. If safe balance is not available, then null is returned. */
+		/**
+		 * The current safe balance in the user's base currency, if safe balance is activated and available for the transaction account. If safe balance is not available, then null is returned.
+		 * Type: double
+		 */
 		safe_balance_in_base_currency?: number | null;
+
+		/** Type: double */
 		starting_balance?: number | null;
 		starting_balance_date?: string | null;
 
@@ -298,23 +420,41 @@ export namespace MyNS {
 
 		/** The currency that the account is in. This is determined by the account that the transaction account belongs to. */
 		currency_code: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		current_balance: FormControl<number | null | undefined>,
 		current_balance_date: FormControl<string | null | undefined>,
 
-		/** The exchange rate between the transaction account's currency and the user's base currency, when different. If the currencies are the same, null is returned. */
+		/**
+		 * The exchange rate between the transaction account's currency and the user's base currency, when different. If the currencies are the same, null is returned.
+		 * Type: double
+		 */
 		current_balance_exchange_rate: FormControl<number | null | undefined>,
 
-		/** The current balance of the transaction account in the user's base currency. */
+		/**
+		 * The current balance of the transaction account in the user's base currency.
+		 * Type: double
+		 */
 		current_balance_in_base_currency: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		number: FormControl<string | null | undefined>,
 
-		/** The current safe balance, if safe balance is activated and available for the transaction account. If safe balance is not available, then null is returned. */
+		/**
+		 * The current safe balance, if safe balance is activated and available for the transaction account. If safe balance is not available, then null is returned.
+		 * Type: double
+		 */
 		safe_balance: FormControl<number | null | undefined>,
 
-		/** The current safe balance in the user's base currency, if safe balance is activated and available for the transaction account. If safe balance is not available, then null is returned. */
+		/**
+		 * The current safe balance in the user's base currency, if safe balance is activated and available for the transaction account. If safe balance is not available, then null is returned.
+		 * Type: double
+		 */
 		safe_balance_in_base_currency: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		starting_balance: FormControl<number | null | undefined>,
 		starting_balance_date: FormControl<string | null | undefined>,
 
@@ -351,7 +491,10 @@ export namespace MyNS {
 		/** The currency code of the institution. */
 		currency_code?: string | null;
 
-		/** The unique identifier of the institution. */
+		/**
+		 * The unique identifier of the institution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The title of the institution. */
@@ -368,7 +511,10 @@ export namespace MyNS {
 		/** The currency code of the institution. */
 		currency_code: FormControl<string | null | undefined>,
 
-		/** The unique identifier of the institution. */
+		/**
+		 * The unique identifier of the institution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The title of the institution. */
@@ -402,7 +548,10 @@ export namespace MyNS {
 		/** The file name of the attachment. */
 		file_name?: string | null;
 
-		/** The unique identifier of the attachment */
+		/**
+		 * The unique identifier of the attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The url of the attachment. */
@@ -429,7 +578,10 @@ export namespace MyNS {
 		/** The file name of the attachment. */
 		file_name: FormControl<string | null | undefined>,
 
-		/** The unique identifier of the attachment */
+		/**
+		 * The unique identifier of the attachment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The url of the attachment. */
@@ -515,10 +667,16 @@ export namespace MyNS {
 
 	export interface BudgetAnalysis {
 
-		/** The average actual (transactions) amount across all periods. */
+		/**
+		 * The average actual (transactions) amount across all periods.
+		 * Type: double
+		 */
 		average_actual_amount?: number | null;
 
-		/** The average budgeted amount across all periods. */
+		/**
+		 * The average budgeted amount across all periods.
+		 * Type: double
+		 */
 		average_forecast_amount?: number | null;
 
 		/** The currency of the budget analysis. */
@@ -533,24 +691,42 @@ export namespace MyNS {
 		/** The start date of the budget analysis. */
 		start_date?: string | null;
 
-		/** The total actual (transactions) amount across all periods. */
+		/**
+		 * The total actual (transactions) amount across all periods.
+		 * Type: double
+		 */
 		total_actual_amount?: number | null;
 
-		/** The total budgeted amount across all periods. */
+		/**
+		 * The total budgeted amount across all periods.
+		 * Type: double
+		 */
 		total_forecast_amount?: number | null;
 
-		/** The total amount the budget was exceeded across all periods. */
+		/**
+		 * The total amount the budget was exceeded across all periods.
+		 * Type: double
+		 */
 		total_over_by?: number | null;
 
-		/** The total amount the budget was under by across all periods. */
+		/**
+		 * The total amount the budget was under by across all periods.
+		 * Type: double
+		 */
 		total_under_by?: number | null;
 	}
 	export interface BudgetAnalysisFormProperties {
 
-		/** The average actual (transactions) amount across all periods. */
+		/**
+		 * The average actual (transactions) amount across all periods.
+		 * Type: double
+		 */
 		average_actual_amount: FormControl<number | null | undefined>,
 
-		/** The average budgeted amount across all periods. */
+		/**
+		 * The average budgeted amount across all periods.
+		 * Type: double
+		 */
 		average_forecast_amount: FormControl<number | null | undefined>,
 
 		/** The currency of the budget analysis. */
@@ -562,16 +738,28 @@ export namespace MyNS {
 		/** The start date of the budget analysis. */
 		start_date: FormControl<string | null | undefined>,
 
-		/** The total actual (transactions) amount across all periods. */
+		/**
+		 * The total actual (transactions) amount across all periods.
+		 * Type: double
+		 */
 		total_actual_amount: FormControl<number | null | undefined>,
 
-		/** The total budgeted amount across all periods. */
+		/**
+		 * The total budgeted amount across all periods.
+		 * Type: double
+		 */
 		total_forecast_amount: FormControl<number | null | undefined>,
 
-		/** The total amount the budget was exceeded across all periods. */
+		/**
+		 * The total amount the budget was exceeded across all periods.
+		 * Type: double
+		 */
 		total_over_by: FormControl<number | null | undefined>,
 
-		/** The total amount the budget was under by across all periods. */
+		/**
+		 * The total amount the budget was under by across all periods.
+		 * Type: double
+		 */
 		total_under_by: FormControl<number | null | undefined>,
 	}
 	export function CreateBudgetAnalysisFormGroup() {
@@ -591,7 +779,10 @@ export namespace MyNS {
 
 	export interface Period {
 
-		/** The sum of all actuals (transactions) in the period. */
+		/**
+		 * The sum of all actuals (transactions) in the period.
+		 * Type: double
+		 */
 		actual_amount?: number | null;
 
 		/** The currency of the period. */
@@ -603,19 +794,31 @@ export namespace MyNS {
 		/** The end date of the period. */
 		end_date?: string | null;
 
-		/** The sum of all forecast sources (budget events) in the period, for comparison against the actual amount. */
+		/**
+		 * The sum of all forecast sources (budget events) in the period, for comparison against the actual amount.
+		 * Type: double
+		 */
 		forecast_amount?: number | null;
 
 		/** Whether the budget has been exceeded in the period. */
 		over_budget?: boolean | null;
 
-		/** How much the budget has been exceeded by in the period. */
+		/**
+		 * How much the budget has been exceeded by in the period.
+		 * Type: double
+		 */
 		over_by?: number | null;
 
-		/** The percentage of the budget that has been used in the period. */
+		/**
+		 * The percentage of the budget that has been used in the period.
+		 * Type: double
+		 */
 		percentage_used?: number | null;
 
-		/** This attribute tracks the amount that has been refunded or deducted to the actual amount. When a category is set to "always expense", any credit transactions are treated as refunds and when set to "always income", any debit transactions are treated as deductions. */
+		/**
+		 * This attribute tracks the amount that has been refunded or deducted to the actual amount. When a category is set to "always expense", any credit transactions are treated as refunds and when set to "always income", any debit transactions are treated as deductions.
+		 * Type: double
+		 */
 		refund_amount?: number | null;
 
 		/** The start date of the period. */
@@ -624,12 +827,18 @@ export namespace MyNS {
 		/** Whether the budget has not been exceeded in the period. */
 		under_budget?: boolean | null;
 
-		/** How much there is left in the budget for the period. */
+		/**
+		 * How much there is left in the budget for the period.
+		 * Type: double
+		 */
 		under_by?: number | null;
 	}
 	export interface PeriodFormProperties {
 
-		/** The sum of all actuals (transactions) in the period. */
+		/**
+		 * The sum of all actuals (transactions) in the period.
+		 * Type: double
+		 */
 		actual_amount: FormControl<number | null | undefined>,
 
 		/** The currency of the period. */
@@ -641,19 +850,31 @@ export namespace MyNS {
 		/** The end date of the period. */
 		end_date: FormControl<string | null | undefined>,
 
-		/** The sum of all forecast sources (budget events) in the period, for comparison against the actual amount. */
+		/**
+		 * The sum of all forecast sources (budget events) in the period, for comparison against the actual amount.
+		 * Type: double
+		 */
 		forecast_amount: FormControl<number | null | undefined>,
 
 		/** Whether the budget has been exceeded in the period. */
 		over_budget: FormControl<boolean | null | undefined>,
 
-		/** How much the budget has been exceeded by in the period. */
+		/**
+		 * How much the budget has been exceeded by in the period.
+		 * Type: double
+		 */
 		over_by: FormControl<number | null | undefined>,
 
-		/** The percentage of the budget that has been used in the period. */
+		/**
+		 * The percentage of the budget that has been used in the period.
+		 * Type: double
+		 */
 		percentage_used: FormControl<number | null | undefined>,
 
-		/** This attribute tracks the amount that has been refunded or deducted to the actual amount. When a category is set to "always expense", any credit transactions are treated as refunds and when set to "always income", any debit transactions are treated as deductions. */
+		/**
+		 * This attribute tracks the amount that has been refunded or deducted to the actual amount. When a category is set to "always expense", any credit transactions are treated as refunds and when set to "always income", any debit transactions are treated as deductions.
+		 * Type: double
+		 */
 		refund_amount: FormControl<number | null | undefined>,
 
 		/** The start date of the period. */
@@ -662,7 +883,10 @@ export namespace MyNS {
 		/** Whether the budget has not been exceeded in the period. */
 		under_budget: FormControl<boolean | null | undefined>,
 
-		/** How much there is left in the budget for the period. */
+		/**
+		 * How much there is left in the budget for the period.
+		 * Type: double
+		 */
 		under_by: FormControl<number | null | undefined>,
 	}
 	export function CreatePeriodFormGroup() {
@@ -714,7 +938,10 @@ export namespace MyNS {
 		/** When the category was created. */
 		created_at?: string | null;
 
-		/** The unique identifier of the category. */
+		/**
+		 * The unique identifier of the category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Whether the category is a bill category. A bill category is when budgeted amounts are normally spent at once, instead of spread across a budgeting period. This category will be included in the bill reminder email when set to true. */
@@ -723,7 +950,10 @@ export namespace MyNS {
 		/** Whether this category has been marked as a transfer category. */
 		is_transfer?: boolean | null;
 
-		/** The unique identifier of the parent category of this category, or null if this category has no parent (i.e. is a top-level category) */
+		/**
+		 * The unique identifier of the parent category of this category, or null if this category has no parent (i.e. is a top-level category)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_id?: number | null;
 
 		/** How the category's refunds or deductions should be reported on. */
@@ -746,7 +976,10 @@ export namespace MyNS {
 		/** When the category was created. */
 		created_at: FormControl<string | null | undefined>,
 
-		/** The unique identifier of the category. */
+		/**
+		 * The unique identifier of the category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Whether the category is a bill category. A bill category is when budgeted amounts are normally spent at once, instead of spread across a budgeting period. This category will be included in the bill reminder email when set to true. */
@@ -755,7 +988,10 @@ export namespace MyNS {
 		/** Whether this category has been marked as a transfer category. */
 		is_transfer: FormControl<boolean | null | undefined>,
 
-		/** The unique identifier of the parent category of this category, or null if this category has no parent (i.e. is a top-level category) */
+		/**
+		 * The unique identifier of the parent category of this category, or null if this category has no parent (i.e. is a top-level category)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_id: FormControl<number | null | undefined>,
 
 		/** How the category's refunds or deductions should be reported on. */
@@ -794,7 +1030,10 @@ export namespace MyNS {
 		/** When the category rule was created. */
 		created_at?: string | null;
 
-		/** The unique identifier of the category rule. */
+		/**
+		 * The unique identifier of the category rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The keyword/s to match the transactions payees. */
@@ -808,7 +1047,10 @@ export namespace MyNS {
 		/** When the category rule was created. */
 		created_at: FormControl<string | null | undefined>,
 
-		/** The unique identifier of the category rule. */
+		/**
+		 * The unique identifier of the category rule.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The keyword/s to match the transactions payees. */
@@ -832,7 +1074,10 @@ export namespace MyNS {
 		/** The ISO 4217 or unofficial currency code. */
 		id?: string | null;
 
-		/** The number of digits after the minor unit separator. */
+		/**
+		 * The number of digits after the minor unit separator.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor_unit?: number | null;
 
 		/** The name of the currency. */
@@ -847,7 +1092,10 @@ export namespace MyNS {
 		/** The ISO 4217 or unofficial currency code. */
 		id: FormControl<string | null | undefined>,
 
-		/** The number of digits after the minor unit separator. */
+		/**
+		 * The number of digits after the minor unit separator.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minor_unit: FormControl<number | null | undefined>,
 
 		/** The name of the currency. */
@@ -909,10 +1157,16 @@ export namespace MyNS {
 
 	export interface Event {
 
-		/** The amount of the event. */
+		/**
+		 * The amount of the event.
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** The amount of the event in the user's base currency. */
+		/**
+		 * The amount of the event in the user's base currency.
+		 * Type: double
+		 */
 		amount_in_base_currency?: number | null;
 		category?: Category;
 
@@ -934,14 +1188,20 @@ export namespace MyNS {
 		/** The note of the event. */
 		note?: string | null;
 
-		/** The repeat interval of how often the event takes place. */
+		/**
+		 * The repeat interval of how often the event takes place.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeat_interval?: number | null;
 
 		/** The repeat type of the event. */
 		repeat_type?: EventRepeat_type | null;
 		scenario?: Scenario;
 
-		/** The unique identifier of the series that the event belongs to. */
+		/**
+		 * The unique identifier of the series that the event belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		series_id?: number | null;
 
 		/** The unique identifier of the series followed by the series's start date. */
@@ -949,10 +1209,16 @@ export namespace MyNS {
 	}
 	export interface EventFormProperties {
 
-		/** The amount of the event. */
+		/**
+		 * The amount of the event.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** The amount of the event in the user's base currency. */
+		/**
+		 * The amount of the event in the user's base currency.
+		 * Type: double
+		 */
 		amount_in_base_currency: FormControl<number | null | undefined>,
 
 		/** The CSS hex-style colour of the event. */
@@ -973,13 +1239,19 @@ export namespace MyNS {
 		/** The note of the event. */
 		note: FormControl<string | null | undefined>,
 
-		/** The repeat interval of how often the event takes place. */
+		/**
+		 * The repeat interval of how often the event takes place.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeat_interval: FormControl<number | null | undefined>,
 
 		/** The repeat type of the event. */
 		repeat_type: FormControl<EventRepeat_type | null | undefined>,
 
-		/** The unique identifier of the series that the event belongs to. */
+		/**
+		 * The unique identifier of the series that the event belongs to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		series_id: FormControl<number | null | undefined>,
 
 		/** The unique identifier of the series followed by the series's start date. */
@@ -1010,7 +1282,10 @@ export namespace MyNS {
 		/** When the saved search was created. */
 		created_at?: string | null;
 
-		/** The unique identifier of the saved search. */
+		/**
+		 * The unique identifier of the saved search.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The title of the saved search. */
@@ -1024,7 +1299,10 @@ export namespace MyNS {
 		/** When the saved search was created. */
 		created_at: FormControl<string | null | undefined>,
 
-		/** The unique identifier of the saved search. */
+		/**
+		 * The unique identifier of the saved search.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The title of the saved search. */
@@ -1060,7 +1338,10 @@ export namespace MyNS {
 		/** The name of the time zone. */
 		name?: string | null;
 
-		/** The time zone's UTC offset in seconds. */
+		/**
+		 * The time zone's UTC offset in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		utc_offset?: number | null;
 	}
 	export interface TimeZoneFormProperties {
@@ -1080,7 +1361,10 @@ export namespace MyNS {
 		/** The name of the time zone. */
 		name: FormControl<string | null | undefined>,
 
-		/** The time zone's UTC offset in seconds. */
+		/**
+		 * The time zone's UTC offset in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		utc_offset: FormControl<number | null | undefined>,
 	}
 	export function CreateTimeZoneFormGroup() {
@@ -1096,14 +1380,22 @@ export namespace MyNS {
 	}
 
 	export interface Transaction {
+
+		/** Type: double */
 		amount?: number | null;
 
-		/** The amount of the transaction in the user's base currency. */
+		/**
+		 * The amount of the transaction in the user's base currency.
+		 * Type: double
+		 */
 		amount_in_base_currency?: number | null;
 		category?: Category;
 		cheque_number?: string | null;
 
-		/** The closing balance of the account at the transaction. */
+		/**
+		 * The closing balance of the account at the transaction.
+		 * Type: double
+		 */
 		closing_balance?: number | null;
 
 		/** When the transaction was created. */
@@ -1112,7 +1404,10 @@ export namespace MyNS {
 		/** The date the transaction took place. */
 		date?: string | null;
 
-		/** The unique identifier of the transaction. */
+		/**
+		 * The unique identifier of the transaction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Whether the transaction is a transfer. */
@@ -1144,13 +1439,21 @@ export namespace MyNS {
 		upload_source?: string | null;
 	}
 	export interface TransactionFormProperties {
+
+		/** Type: double */
 		amount: FormControl<number | null | undefined>,
 
-		/** The amount of the transaction in the user's base currency. */
+		/**
+		 * The amount of the transaction in the user's base currency.
+		 * Type: double
+		 */
 		amount_in_base_currency: FormControl<number | null | undefined>,
 		cheque_number: FormControl<string | null | undefined>,
 
-		/** The closing balance of the account at the transaction. */
+		/**
+		 * The closing balance of the account at the transaction.
+		 * Type: double
+		 */
 		closing_balance: FormControl<number | null | undefined>,
 
 		/** When the transaction was created. */
@@ -1159,7 +1462,10 @@ export namespace MyNS {
 		/** The date the transaction took place. */
 		date: FormControl<string | null | undefined>,
 
-		/** The unique identifier of the transaction. */
+		/**
+		 * The unique identifier of the transaction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Whether the transaction is a transfer. */
@@ -1220,10 +1526,16 @@ export namespace MyNS {
 		/** Whether the user wants to see all accounts in their base currency instead of the native account currency. */
 		always_show_base_currency?: boolean | null;
 
-		/** The user's total number of available accounts. */
+		/**
+		 * The user's total number of available accounts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available_accounts?: number | null;
 
-		/** The user's total number of available budgets. */
+		/**
+		 * The user's total number of available budgets.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available_budgets?: number | null;
 
 		/** The URL to the user's avatar. */
@@ -1259,7 +1571,10 @@ export namespace MyNS {
 		/** The date that the user's forecast starts. */
 		forecast_start_date?: string | null;
 
-		/** The unique identifier of the user. */
+		/**
+		 * The unique identifier of the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Whether the user wants to review new transactions, transfer transactions or categorisation. */
@@ -1286,7 +1601,10 @@ export namespace MyNS {
 		/** Whether the user has multiple currencies in use across their account. */
 		using_multiple_currencies?: boolean | null;
 
-		/** The day of the week the user wishes their calendars to start on. A number between 0 and 6, where 0 is Sunday and 6 is Saturday. */
+		/**
+		 * The day of the week the user wishes their calendars to start on. A number between 0 and 6, where 0 is Sunday and 6 is Saturday.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		week_start_day?: number | null;
 	}
 	export interface UserFormProperties {
@@ -1294,10 +1612,16 @@ export namespace MyNS {
 		/** Whether the user wants to see all accounts in their base currency instead of the native account currency. */
 		always_show_base_currency: FormControl<boolean | null | undefined>,
 
-		/** The user's total number of available accounts. */
+		/**
+		 * The user's total number of available accounts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available_accounts: FormControl<number | null | undefined>,
 
-		/** The user's total number of available budgets. */
+		/**
+		 * The user's total number of available budgets.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		available_budgets: FormControl<number | null | undefined>,
 
 		/** The URL to the user's avatar. */
@@ -1333,7 +1657,10 @@ export namespace MyNS {
 		/** The date that the user's forecast starts. */
 		forecast_start_date: FormControl<string | null | undefined>,
 
-		/** The unique identifier of the user. */
+		/**
+		 * The unique identifier of the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Whether the user wants to review new transactions, transfer transactions or categorisation. */
@@ -1360,7 +1687,10 @@ export namespace MyNS {
 		/** Whether the user has multiple currencies in use across their account. */
 		using_multiple_currencies: FormControl<boolean | null | undefined>,
 
-		/** The day of the week the user wishes their calendars to start on. A number between 0 and 6, where 0 is Sunday and 6 is Saturday. */
+		/**
+		 * The day of the week the user wishes their calendars to start on. A number between 0 and 6, where 0 is Sunday and 6 is Saturday.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		week_start_day: FormControl<number | null | undefined>,
 	}
 	export function CreateUserFormGroup() {
@@ -1403,6 +1733,7 @@ export namespace MyNS {
 		 * Deletes an account and all its data by ID, optionally merge scenarios into another account.
 		 * Delete accounts/{id}
 		 * @param {number} id The unique identifier of the account.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Accounts_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1414,6 +1745,7 @@ export namespace MyNS {
 		 * Gets an account by its ID.
 		 * Get accounts/{id}
 		 * @param {number} id The unique identifier of the account.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Account} Success
 		 */
 		Accounts_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Account> {
@@ -1425,6 +1757,7 @@ export namespace MyNS {
 		 * Updates and returns an account by its ID.
 		 * Put accounts/{id}
 		 * @param {number} id The unique identifier of the account.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Account} Success
 		 */
 		Accounts_idPut(id: number, requestBody: Accounts_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Account> {
@@ -1436,14 +1769,18 @@ export namespace MyNS {
 		 * Lists transactions belonging to an account by its ID.
 		 * Get accounts/{id}/transactions
 		 * @param {number} id The unique identifier of the account.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start_date Limit to transactions on or after this date. Required if end_date is provided. If not provided, defaults to the furtherest date allowed by the user's subscription.
 		 * @param {string} end_date Limit to transactions on or before this date. Required if start_date is provided. If not provided, defaults to today's date.
 		 * @param {string} updated_since Limit to transactions updated since an ISO 8601 timestamp.
 		 * @param {number} uncategorised Limit to uncategorised transactions.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TransactionType} type Limit to transactions of this type.
 		 * @param {number} needs_review Limit to transactions that need to be reviewed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search Limit to transactions matching a keyword search string. The provided string is matched against the transaction amount, account name, payee, category title, note, labels, and the date in ISO 8601 format.
 		 * @param {number} page Choose a particular page of the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Transaction>} Success
 		 */
 		Accounts_idTransactionsGetByStart_dateAndEnd_dateAndUpdated_sinceAndUncategorisedAndTypeAndNeeds_reviewAndSearchAndPage(id: number, start_date: string | null | undefined, end_date: string | null | undefined, updated_since: string | null | undefined, uncategorised: number | null | undefined, type: TransactionType | null | undefined, needs_review: number | null | undefined, search: string | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Transaction>> {
@@ -1455,6 +1792,7 @@ export namespace MyNS {
 		 * Deletes a particular attachment by its ID.
 		 * Delete attachments/{id}
 		 * @param {number} id The unique identifier of the attachment.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Attachments_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1466,6 +1804,7 @@ export namespace MyNS {
 		 * Gets a particular attachment by its ID.
 		 * Get attachments/{id}
 		 * @param {number} id The unique identifier of the attachment.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Attachment} Success
 		 */
 		Attachments_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Attachment> {
@@ -1477,6 +1816,7 @@ export namespace MyNS {
 		 * Updates the title of the attachment.
 		 * Put attachments/{id}
 		 * @param {number} id The unique identifier of the attachment.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Attachment} Success
 		 */
 		Attachments_idPut(id: number, requestBody: Attachments_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Attachment> {
@@ -1488,6 +1828,7 @@ export namespace MyNS {
 		 * Deletes a particular category by its ID. This will delete all budgets within the category, and uncategorize all transactions assigned to the category.
 		 * Delete categories/{id}
 		 * @param {number} id The unique identifier of the category.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Categories_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1499,6 +1840,7 @@ export namespace MyNS {
 		 * Gets a particular category by its ID.
 		 * Get categories/{id}
 		 * @param {number} id The unique identifier of the category.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Category} Success
 		 */
 		Categories_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Category> {
@@ -1510,6 +1852,7 @@ export namespace MyNS {
 		 * Updates a category by its ID.
 		 * Put categories/{id}
 		 * @param {number} id The unique identifier of the category.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Category} Success
 		 */
 		Categories_idPut(id: number, requestBody: Categories_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Category> {
@@ -1521,6 +1864,7 @@ export namespace MyNS {
 		 * Creates a rule to allocate a category to transactions.
 		 * Post categories/{id}/category_rules
 		 * @param {number} id The unique identifier of the category.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CategoryRule} Success
 		 */
 		Categories_idCategory_rulesPost(id: number, requestBody: Categories_idCategory_rulesPostPostBody, headersHandler?: () => HttpHeaders): Observable<CategoryRule> {
@@ -1536,10 +1880,13 @@ export namespace MyNS {
 		 * @param {string} end_date Limit to transactions on or before this date. Required if start_date is provided. If not provided, defaults to today's date.
 		 * @param {string} updated_since Limit to transactions updated since an ISO 8601 timestamp.
 		 * @param {number} uncategorised Limit to uncategorised transactions.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TransactionType} type Limit to transactions of this type.
 		 * @param {number} needs_review Limit to transactions that need to be reviewed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search Limit to transactions matching a keyword search string. The provided string is matched against the transaction amount, account name, payee, category title, note, labels, and the date in ISO 8601 format.
 		 * @param {number} page Choose a particular page of the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Transaction>} Success
 		 */
 		Categories_idTransactionsGetByStart_dateAndEnd_dateAndUpdated_sinceAndUncategorisedAndTypeAndNeeds_reviewAndSearchAndPage(id: string, start_date: string | null | undefined, end_date: string | null | undefined, updated_since: string | null | undefined, uncategorised: number | null | undefined, type: TransactionType | null | undefined, needs_review: number | null | undefined, search: string | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Transaction>> {
@@ -1606,7 +1953,9 @@ export namespace MyNS {
 		 * Deletes an institution and all data within. Alternatively, another institution can be provided to merge the data into to avoid losing it.
 		 * Delete institutions/{id}
 		 * @param {number} id The unique identifier of the institution.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} merge_into_institution_id The unique identifier of the institution to merge into.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Institutions_idDeleteByMerge_into_institution_id(id: number, merge_into_institution_id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1618,6 +1967,7 @@ export namespace MyNS {
 		 * Gets an institution by its ID.
 		 * Get institutions/{id}
 		 * @param {number} id The unique identifier of the institution.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Institution} Success
 		 */
 		Institutions_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Institution> {
@@ -1629,6 +1979,7 @@ export namespace MyNS {
 		 * Updates the title and currency code for an institution.
 		 * Put institutions/{id}
 		 * @param {number} id The unique identifier of the institution.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Institution} Success
 		 */
 		Institutions_idPut(id: number, requestBody: Institutions_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Institution> {
@@ -1640,6 +1991,7 @@ export namespace MyNS {
 		 * Lists accounts belonging to an institution by its ID.
 		 * Get institutions/{id}/accounts
 		 * @param {number} id The unique identifier of the institution.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Account>} Success
 		 */
 		Institutions_idAccountsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Account>> {
@@ -1661,6 +2013,7 @@ export namespace MyNS {
 		 * Lists events belonging to a scenario by their ID.
 		 * Get scenarios/{id}/events
 		 * @param {number} id The unique identifier of the scenario.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start_date Return the events from and including this date.
 		 * @param {string} end_date Return the events until and including this date.
 		 * @return {Array<Event>} Success
@@ -1674,6 +2027,7 @@ export namespace MyNS {
 		 * Creates an event in a scenario by its ID.
 		 * Post scenarios/{id}/events
 		 * @param {number} id The unique identifier of the scenario.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Scenarios_idEventsPost(id: number, requestBody: Scenarios_idEventsPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1695,6 +2049,7 @@ export namespace MyNS {
 		 * Gets a transaction account by its ID.
 		 * Get transaction_accounts/{id}
 		 * @param {number} id The unique identifier of the transaction account.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TransactionAccount} Success
 		 */
 		Transaction_accounts_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<TransactionAccount> {
@@ -1706,6 +2061,7 @@ export namespace MyNS {
 		 * Updates the transaction account by its ID.
 		 * Put transaction_accounts/{id}
 		 * @param {number} id The unique identifier of the transaction account.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TransactionAccount} Success
 		 */
 		Transaction_accounts_idPut(id: number, requestBody: Transaction_accounts_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<TransactionAccount> {
@@ -1717,14 +2073,18 @@ export namespace MyNS {
 		 * Lists transactions belonging to a transaction account by its ID.
 		 * Get transaction_accounts/{id}/transactions
 		 * @param {number} id The unique identifier of the transaction account.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start_date Limit to transactions on or after this date. Required if end_date is provided. If not provided, defaults to the furtherest date allowed by the user's subscription.
 		 * @param {string} end_date Limit to transactions on or before this date. Required if start_date is provided. If not provided, defaults to today's date.
 		 * @param {string} updated_since Limit to transactions updated since an ISO 8601 timestamp.
 		 * @param {number} uncategorised Limit to uncategorised transactions.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TransactionType} type Limit to transactions of this type.
 		 * @param {number} needs_review Limit to transactions that need to be reviewed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search Limit to transactions matching a keyword search string. The provided string is matched against the transaction amount, account name, payee, category title, note, labels, and the date in ISO 8601 format.
 		 * @param {number} page Choose a particular page of the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Transaction>} Success
 		 */
 		Transaction_accounts_idTransactionsGetByStart_dateAndEnd_dateAndUpdated_sinceAndUncategorisedAndTypeAndNeeds_reviewAndSearchAndPage(id: number, start_date: string | null | undefined, end_date: string | null | undefined, updated_since: string | null | undefined, uncategorised: number | null | undefined, type: TransactionType | null | undefined, needs_review: number | null | undefined, search: string | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Transaction>> {
@@ -1736,6 +2096,7 @@ export namespace MyNS {
 		 * Creates a transaction in a transaction account by its ID.
 		 * Post transaction_accounts/{id}/transactions
 		 * @param {number} id The unique identifier of the transaction account.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Transaction_accounts_idTransactionsPost(id: number, requestBody: Transaction_accounts_idTransactionsPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1747,6 +2108,7 @@ export namespace MyNS {
 		 * Deletes a transaction and all its data by ID.
 		 * Delete transactions/{id}
 		 * @param {number} id The unique identifier of the transaction.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Transactions_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1758,6 +2120,7 @@ export namespace MyNS {
 		 * Gets a transaction by its ID.
 		 * Get transactions/{id}
 		 * @param {number} id The unique identifier of the transaction.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Transaction} Success
 		 */
 		Transactions_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<Transaction> {
@@ -1769,6 +2132,7 @@ export namespace MyNS {
 		 * Updates a transaction by its ID.
 		 * Put transactions/{id}
 		 * @param {number} id The unique identifier of the transaction.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Transaction} Success
 		 */
 		Transactions_idPut(id: number, requestBody: Transactions_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<Transaction> {
@@ -1780,6 +2144,7 @@ export namespace MyNS {
 		 * Lists attachments belonging to a transaction by their ID.
 		 * Get transactions/{id}/attachments
 		 * @param {number} id The unique identifier of the transaction.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Attachment>} Success
 		 */
 		Transactions_idAttachmentsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Attachment>> {
@@ -1791,6 +2156,7 @@ export namespace MyNS {
 		 * Assigns an attachment to the transaction by their ID.
 		 * Post transactions/{id}/attachments
 		 * @param {number} id The unique identifier of the transaction.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Transactions_idAttachmentsPost(id: number, requestBody: Transactions_idAttachmentsPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1802,7 +2168,9 @@ export namespace MyNS {
 		 * Unassigns a particular attachment by its ID from the transaction ID. This does not delete the attachment, it only removes its association from the transaction.
 		 * Delete transactions/{transaction_id}/attachments/{attachment_id}
 		 * @param {number} transaction_id The unique identifier of the transaction.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} attachment_id The unique identifier of the attachment.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Transactions_transaction_idAttachments_attachment_idDelete(transaction_id: number, attachment_id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1814,6 +2182,7 @@ export namespace MyNS {
 		 * Gets a user by ID. You must be authorised as the target user in order to make this request.
 		 * Get users/{id}
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {User} Success
 		 */
 		Users_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<User> {
@@ -1825,6 +2194,7 @@ export namespace MyNS {
 		 * Updates the user by their ID. You must be authorised as the target user in order to make this request.
 		 * Put users/{id}
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {User} Success
 		 */
 		Users_idPut(id: number, requestBody: Users_idPutPutBody, headersHandler?: () => HttpHeaders): Observable<User> {
@@ -1836,6 +2206,7 @@ export namespace MyNS {
 		 * Lists all accounts belonging to the user by their ID.
 		 * Get users/{id}/accounts
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Account>} Success
 		 */
 		Users_idAccountsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Account>> {
@@ -1847,6 +2218,7 @@ export namespace MyNS {
 		 * Creates and returns an account belonging to the user by their ID.
 		 * Post users/{id}/accounts
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Users_idAccountsPost(id: number, requestBody: Users_idAccountsPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1858,6 +2230,7 @@ export namespace MyNS {
 		 * Updates the display order of accounts belonging to the user, by accepting an array of accounts in their new display order.
 		 * Put users/{id}/accounts
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Account>} Success
 		 */
 		Users_idAccountsPut(id: number, requestBody: Users_idAccountsPutPutBody, headersHandler?: () => HttpHeaders): Observable<Array<Account>> {
@@ -1869,7 +2242,9 @@ export namespace MyNS {
 		 * Lists attachments belonging to a user by their ID.
 		 * Get users/{id}/attachments
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} unassigned If set, returns unassigned attachments, that are available for assigning to a transaction.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Attachment>} Success
 		 */
 		Users_idAttachmentsGetByUnassigned(id: number, unassigned: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Attachment>> {
@@ -1881,6 +2256,7 @@ export namespace MyNS {
 		 * Creates an attachment belonging to the user by their ID.
 		 * Post users/{id}/attachments
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Attachment} Success
 		 */
 		Users_idAttachmentsPost(id: number, requestBody: Users_idAttachmentsPostPostBody, headersHandler?: () => HttpHeaders): Observable<Attachment> {
@@ -1892,6 +2268,7 @@ export namespace MyNS {
 		 * Lists the user's budget, consisting of one or more budget analysis packages, one per category. Akin to the list on the Budget page in PocketSmith.
 		 * Get users/{id}/budget
 		 * @param {number} id The unique identifier of the account.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} roll_up Whether parent categories should have their children rolled up into them. When used, the children will still appear in the collection on their own, but their actual and forecast figures will be rolled up to the root parent.
 		 * @return {Array<BudgetAnalysisPackage>} Success
 		 */
@@ -1904,8 +2281,10 @@ export namespace MyNS {
 		 * Get the user's budget summary, containing an expense and income analysis for all categories (excluding transfer categories) for the given period and date range. Akin to the overall budget shown on the Budget page in PocketSmith.
 		 * Get users/{id}/budget_summary
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Users_idBudget_summaryGetByPeriodAndIntervalAndStart_dateAndEnd_datePeriod} period The period to analyse in, one of `weeks`, `months` or `years`. Also supported is `event`, although event period analysis is only possible when the budget events gathered align, so in this case where all categories are analysed together, it's highly unlikely that event period analysis will be possible.
 		 * @param {number} interval The period interval, e.g. if the interval is 2 and the period is weeks, the budget will be analysed fortnightly.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start_date The date to start analysing the budget from. This will be bumped out to make full periods as necessary.
 		 * @param {string} end_date The date to stop analysing the budget from. This will be bumped out to make full periods as necessary.
 		 * @return {Array<BudgetAnalysisPackage>} Success
@@ -1919,6 +2298,7 @@ export namespace MyNS {
 		 * Lists all categories belonging to a user by their ID.
 		 * Get users/{id}/categories
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Category>} Success
 		 */
 		Users_idCategoriesGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Category>> {
@@ -1930,6 +2310,7 @@ export namespace MyNS {
 		 * Creates a category belonging to the user by their ID.
 		 * Post users/{id}/categories
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Users_idCategoriesPost(id: number, requestBody: Users_idCategoriesPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1941,6 +2322,7 @@ export namespace MyNS {
 		 * Lists all category rules belonging to a user by their ID.
 		 * Get users/{id}/category_rules
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<CategoryRule>} Success
 		 */
 		Users_idCategory_rulesGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<CategoryRule>> {
@@ -1952,6 +2334,7 @@ export namespace MyNS {
 		 * Lists events belonging to a user by their ID.
 		 * Get users/{id}/events
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start_date Return the events from and including this date.
 		 * @param {string} end_date Return the events until and including this date.
 		 * @return {Array<Event>} Success
@@ -1965,6 +2348,7 @@ export namespace MyNS {
 		 * Delete the user's cached forecast by recalculating the forecast.
 		 * Delete users/{id}/forecast_cache
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Users_idForecast_cacheDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1976,6 +2360,7 @@ export namespace MyNS {
 		 * Lists all the institutions belonging to the user.
 		 * Get users/{id}/institutions
 		 * @param {number} id The unique identifier of the user
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Institution>} Success
 		 */
 		Users_idInstitutionsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<Institution>> {
@@ -1987,6 +2372,7 @@ export namespace MyNS {
 		 * Creates an institution belonging to a user.
 		 * Post users/{id}/institutions
 		 * @param {number} id The unique identifier of the user
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		Users_idInstitutionsPost(id: number, requestBody: Users_idInstitutionsPostPostBody, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1998,6 +2384,7 @@ export namespace MyNS {
 		 * Lists labels belonging to a user by their ID.
 		 * Get users/{id}/labels
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} Success
 		 */
 		Users_idLabelsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<string>> {
@@ -2009,6 +2396,7 @@ export namespace MyNS {
 		 * Lists saved searches belonging to a user by their ID.
 		 * Get users/{id}/saved_searches
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<SavedSearch>} Success
 		 */
 		Users_idSaved_searchesGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<SavedSearch>> {
@@ -2020,6 +2408,7 @@ export namespace MyNS {
 		 * List all transaction accounts belonging to a user.
 		 * Get users/{id}/transaction_accounts
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<TransactionAccount>} Success
 		 */
 		Users_idTransaction_accountsGet(id: number, headersHandler?: () => HttpHeaders): Observable<Array<TransactionAccount>> {
@@ -2031,14 +2420,18 @@ export namespace MyNS {
 		 * Lists transactions belonging to a user by their ID.
 		 * Get users/{id}/transactions
 		 * @param {number} id The unique identifier of the account.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start_date Limit to transactions on or after this date. Required if end_date is provided. If not provided, defaults to the furtherest date allowed by the user's subscription.
 		 * @param {string} end_date Limit to transactions on or before this date. Required if start_date is provided. If not provided, defaults to today's date.
 		 * @param {string} updated_since Limit to transactions updated since an ISO 8601 timestamp.
 		 * @param {number} uncategorised Limit to uncategorised transactions.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {TransactionType} type Limit to transactions of this type.
 		 * @param {number} needs_review Limit to transactions that need to be reviewed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} search Limit to transactions matching a keyword search string. The provided string is matched against the transaction amount, account name, payee, category title, note, labels, and the date in ISO 8601 format.
 		 * @param {number} page Choose a particular page of the results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Transaction>} Success
 		 */
 		Users_idTransactionsGetByStart_dateAndEnd_dateAndUpdated_sinceAndUncategorisedAndTypeAndNeeds_reviewAndSearchAndPage(id: number, start_date: string | null | undefined, end_date: string | null | undefined, updated_since: string | null | undefined, uncategorised: number | null | undefined, type: TransactionType | null | undefined, needs_review: number | null | undefined, search: string | null | undefined, page: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Transaction>> {
@@ -2050,8 +2443,10 @@ export namespace MyNS {
 		 * Get an income and/or expense budget analysis for the given date range and period across any number of categories and scenarios. Akin to the Trends page in PocketSmith.
 		 * Get users/{id}/trend_analysis
 		 * @param {number} id The unique identifier of the user.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Users_idBudget_summaryGetByPeriodAndIntervalAndStart_dateAndEnd_datePeriod} period The period to analyse in, one of `weeks`, `months` or `years`. Also supported is `event`, although event period analysis is only possible when the budget events gathered align, so in this case where all categories are analysed together, it's highly unlikely that event period analysis will be possible.
 		 * @param {number} interval The period interval, e.g. if the interval is 2 and the period is weeks, the budget will be analysed fortnightly.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start_date The date to start analysing the budget from. This will be bumped out to make full periods as necessary.
 		 * @param {string} end_date The date to stop analysing the budget from. This will be bumped out to make full periods as necessary.
 		 * @param {string} categories A comma-separated list of category IDs to analyse.
@@ -2131,7 +2526,10 @@ export namespace MyNS {
 		/** Set the category as a transfer category. */
 		is_transfer?: boolean | null;
 
-		/** The unique identifier of a parent category for the category, making this category a child of that category. */
+		/**
+		 * The unique identifier of a parent category for the category, making this category a child of that category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_id?: number | null;
 
 		/** Set the refund behaviour of the category. */
@@ -2154,7 +2552,10 @@ export namespace MyNS {
 		/** Set the category as a transfer category. */
 		is_transfer: FormControl<boolean | null | undefined>,
 
-		/** The unique identifier of a parent category for the category, making this category a child of that category. */
+		/**
+		 * The unique identifier of a parent category for the category, making this category a child of that category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_id: FormControl<number | null | undefined>,
 
 		/** Set the refund behaviour of the category. */
@@ -2222,7 +2623,10 @@ export namespace MyNS {
 
 	export interface Events_idPutPutBody {
 
-		/** The amount of the event. A positive amount is a credit, and a negative amount is a debit. */
+		/**
+		 * The amount of the event. A positive amount is a credit, and a negative amount is a debit.
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/**
@@ -2234,7 +2638,10 @@ export namespace MyNS {
 		/** A note for the event. */
 		note?: string | null;
 
-		/** The repeat interval of the event. */
+		/**
+		 * The repeat interval of the event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeat_interval?: number | null;
 
 		/** The repeat type of the event. */
@@ -2242,7 +2649,10 @@ export namespace MyNS {
 	}
 	export interface Events_idPutPutBodyFormProperties {
 
-		/** The amount of the event. A positive amount is a credit, and a negative amount is a debit. */
+		/**
+		 * The amount of the event. A positive amount is a credit, and a negative amount is a debit.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
@@ -2254,7 +2664,10 @@ export namespace MyNS {
 		/** A note for the event. */
 		note: FormControl<string | null | undefined>,
 
-		/** The repeat interval of the event. */
+		/**
+		 * The repeat interval of the event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeat_interval: FormControl<number | null | undefined>,
 
 		/** The repeat type of the event. */
@@ -2300,12 +2713,14 @@ export namespace MyNS {
 		/**
 		 * The amount of the event. A positive amount is a credit, and a negative amount is a debit.
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
 		/**
 		 * The unique identifier of the category for the event.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		category_id: number;
 
@@ -2318,7 +2733,10 @@ export namespace MyNS {
 		/** A note for the event. */
 		note?: string | null;
 
-		/** The repeat interval of the event. */
+		/**
+		 * The repeat interval of the event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeat_interval?: number | null;
 
 		/**
@@ -2332,12 +2750,14 @@ export namespace MyNS {
 		/**
 		 * The amount of the event. A positive amount is a credit, and a negative amount is a debit.
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
 		 * The unique identifier of the category for the event.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		category_id: FormControl<number | null | undefined>,
 
@@ -2350,7 +2770,10 @@ export namespace MyNS {
 		/** A note for the event. */
 		note: FormControl<string | null | undefined>,
 
-		/** The repeat interval of the event. */
+		/**
+		 * The repeat interval of the event.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		repeat_interval: FormControl<number | null | undefined>,
 
 		/**
@@ -2373,10 +2796,16 @@ export namespace MyNS {
 
 	export interface Transaction_accounts_idPutPutBody {
 
-		/** The unique identifier of a new institution for the transaction account. */
+		/**
+		 * The unique identifier of a new institution for the transaction account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		institution_id?: number | null;
 
-		/** The starting balance amount of the transaction account. */
+		/**
+		 * The starting balance amount of the transaction account.
+		 * Type: double
+		 */
 		starting_balance?: number | null;
 
 		/** The starting balance date of the transaction account. */
@@ -2384,10 +2813,16 @@ export namespace MyNS {
 	}
 	export interface Transaction_accounts_idPutPutBodyFormProperties {
 
-		/** The unique identifier of a new institution for the transaction account. */
+		/**
+		 * The unique identifier of a new institution for the transaction account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		institution_id: FormControl<number | null | undefined>,
 
-		/** The starting balance amount of the transaction account. */
+		/**
+		 * The starting balance amount of the transaction account.
+		 * Type: double
+		 */
 		starting_balance: FormControl<number | null | undefined>,
 
 		/** The starting balance date of the transaction account. */
@@ -2407,10 +2842,14 @@ export namespace MyNS {
 		/**
 		 * The amount of the transaction. A positive amount is a credit, and a negative amount is a debit.
 		 * Required
+		 * Type: double
 		 */
 		amount: number;
 
-		/** The unique identifier of a category for the transaction. */
+		/**
+		 * The unique identifier of a category for the transaction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		category_id?: number | null;
 
 		/** A cheque number for the transaction. */
@@ -2448,10 +2887,14 @@ export namespace MyNS {
 		/**
 		 * The amount of the transaction. A positive amount is a credit, and a negative amount is a debit.
 		 * Required
+		 * Type: double
 		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** The unique identifier of a category for the transaction. */
+		/**
+		 * The unique identifier of a category for the transaction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		category_id: FormControl<number | null | undefined>,
 
 		/** A cheque number for the transaction. */
@@ -2502,10 +2945,16 @@ export namespace MyNS {
 
 	export interface Transactions_idPutPutBody {
 
-		/** A new amount for the transaction. */
+		/**
+		 * A new amount for the transaction.
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** The unique identifier of a new category for the transaction. */
+		/**
+		 * The unique identifier of a new category for the transaction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		category_id?: number | null;
 
 		/** A new cheque number for the transaction. */
@@ -2534,10 +2983,16 @@ export namespace MyNS {
 	}
 	export interface Transactions_idPutPutBodyFormProperties {
 
-		/** A new amount for the transaction. */
+		/**
+		 * A new amount for the transaction.
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** The unique identifier of a new category for the transaction. */
+		/**
+		 * The unique identifier of a new category for the transaction.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		category_id: FormControl<number | null | undefined>,
 
 		/** A new cheque number for the transaction. */
@@ -2582,12 +3037,18 @@ export namespace MyNS {
 
 	export interface Transactions_idAttachmentsPostPostBody {
 
-		/** The unique identifier of the attachment. */
+		/**
+		 * The unique identifier of the attachment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attachment_id?: number | null;
 	}
 	export interface Transactions_idAttachmentsPostPostBodyFormProperties {
 
-		/** The unique identifier of the attachment. */
+		/**
+		 * The unique identifier of the attachment.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		attachment_id: FormControl<number | null | undefined>,
 	}
 	export function CreateTransactions_idAttachmentsPostPostBodyFormGroup() {
@@ -2617,7 +3078,10 @@ export namespace MyNS {
 		/** A new time zone for the user. */
 		time_zone?: string | null;
 
-		/** The day of the week the user wishes their calendars to start on. A number between 0 and 6, where 0 is Sunday and 6 is Saturday. */
+		/**
+		 * The day of the week the user wishes their calendars to start on. A number between 0 and 6, where 0 is Sunday and 6 is Saturday.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		week_start_day?: number | null;
 	}
 	export interface Users_idPutPutBodyFormProperties {
@@ -2640,7 +3104,10 @@ export namespace MyNS {
 		/** A new time zone for the user. */
 		time_zone: FormControl<string | null | undefined>,
 
-		/** The day of the week the user wishes their calendars to start on. A number between 0 and 6, where 0 is Sunday and 6 is Saturday. */
+		/**
+		 * The day of the week the user wishes their calendars to start on. A number between 0 and 6, where 0 is Sunday and 6 is Saturday.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		week_start_day: FormControl<number | null | undefined>,
 	}
 	export function CreateUsers_idPutPutBodyFormGroup() {
@@ -2667,6 +3134,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the institution to create this account in.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		institution_id: number;
 
@@ -2693,6 +3161,7 @@ export namespace MyNS {
 		/**
 		 * The ID of the institution to create this account in.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		institution_id: FormControl<number | null | undefined>,
 
@@ -2778,7 +3247,10 @@ export namespace MyNS {
 		/** Set the category as a transfer category. */
 		is_transfer?: boolean | null;
 
-		/** The unique identifier of a category to be the parent of this category. */
+		/**
+		 * The unique identifier of a category to be the parent of this category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_id?: number | null;
 
 		/** Set the refund behaviour of the category. */
@@ -2804,7 +3276,10 @@ export namespace MyNS {
 		/** Set the category as a transfer category. */
 		is_transfer: FormControl<boolean | null | undefined>,
 
-		/** The unique identifier of a category to be the parent of this category. */
+		/**
+		 * The unique identifier of a category to be the parent of this category.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parent_id: FormControl<number | null | undefined>,
 
 		/** Set the refund behaviour of the category. */

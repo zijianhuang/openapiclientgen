@@ -17,7 +17,9 @@ export namespace MyNS {
 		 * @param {string} printer_id Printout Printer
 		 * @param {string} printout_id A list of Printout IDs (for example: 123,456,778) from 1 to the limit of 100 Optional. Use of this option overrides all of the filtering parameters
 		 * @param {number} limit Limits the number of results. Optional. Valid values are 0-100. Default value: 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetSlashalmawsSlashv1Slashtask_listsSlashprintoutsReturn} OK - This method returns an object based on rest_printouts.xsd. See [here](/alma/apis/docs/xsd/rest_printouts.xsd)
 		 */
 		GetSlashalmawsSlashv1Slashtask_listsSlashprintouts(letter: string | null | undefined, status: string | null | undefined, printer_id: string | null | undefined, printout_id: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<GetSlashalmawsSlashv1Slashtask_listsSlashprintoutsReturn> {
@@ -75,7 +77,9 @@ export namespace MyNS {
 		 * @param {string} reported Show reported results: Y/N. Optional.
 		 * @param {string} printed Show printed results: Y/N. Optional.
 		 * @param {number} limit Limits the number of results. Optional. Valid values are 0-100. Default value: 10.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Offset of the results returned. Optional. Default value: 0, which means that the first results will be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturn} OK - This method returns an object based on rest_requested_resources.xsd. See [here](/alma/apis/docs/xsd/rest_requested_resources.xsd)
 		 */
 		GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resources(library: string, circ_desk: string, location: string | null | undefined, order_by: string | null | undefined, direction: string | null | undefined, pickup_inst: string | null | undefined, reported: string | null | undefined, printed: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturn> {
@@ -160,12 +164,18 @@ export namespace MyNS {
 		/** printout object. */
 		GetSlashalmawsSlashv1Slashtask_listsSlashprintoutsReturnPrintout?: Array<GetSlashalmawsSlashv1Slashtask_listsSlashprintoutsReturnPrintout>;
 
-		/** The total number of printouts. */
+		/**
+		 * The total number of printouts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_record_count?: number | null;
 	}
 	export interface GetSlashalmawsSlashv1Slashtask_listsSlashprintoutsReturnFormProperties {
 
-		/** The total number of printouts. */
+		/**
+		 * The total number of printouts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_record_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSlashalmawsSlashv1Slashtask_listsSlashprintoutsReturnFormGroup() {
@@ -273,12 +283,18 @@ export namespace MyNS {
 		/** Requested resource object. */
 		GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturnRequested_resource?: Array<GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturnRequested_resource>;
 
-		/** The total number of requested resources. */
+		/**
+		 * The total number of requested resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_record_count?: number | null;
 	}
 	export interface GetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturnFormProperties {
 
-		/** The total number of requested resources. */
+		/**
+		 * The total number of requested resources.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_record_count: FormControl<number | null | undefined>,
 	}
 	export function CreateGetSlashalmawsSlashv1Slashtask_listsSlashrequested_resourcesReturnFormGroup() {
@@ -448,7 +464,10 @@ export namespace MyNS {
 		/** Indication whether the request is reported. */
 		reported?: boolean | null;
 
-		/** Deprecated - use request_time instead. The request date. */
+		/**
+		 * Deprecated - use request_time instead. The request date.
+		 * Type: DateOnly
+		 */
 		request_date?: Date | null;
 
 		/** The sub type of the request. */
@@ -478,7 +497,10 @@ export namespace MyNS {
 		/** Indication whether the request is reported. */
 		reported: FormControl<boolean | null | undefined>,
 
-		/** Deprecated - use request_time instead. The request date. */
+		/**
+		 * Deprecated - use request_time instead. The request date.
+		 * Type: DateOnly
+		 */
 		request_date: FormControl<Date | null | undefined>,
 
 		/** The creation date and exact time of the request. Output parameter. */
@@ -631,20 +653,26 @@ export namespace MyNS {
 
 	export interface GetSlashalmawsSlashv1Slashtask_listsSlashrsSlashlending_requestsReturn {
 
-		/** The total number of resource sharing requests in the given list. */
-		total_record_count?: number | null;
+		/**
+		 * The total number of resource sharing requests in the given list.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total_record_count?: string | null;
 
 		/** UserResourceSharingRequest object. */
 		user_resource_sharing_request?: Array<string>;
 	}
 	export interface GetSlashalmawsSlashv1Slashtask_listsSlashrsSlashlending_requestsReturnFormProperties {
 
-		/** The total number of resource sharing requests in the given list. */
-		total_record_count: FormControl<number | null | undefined>,
+		/**
+		 * The total number of resource sharing requests in the given list.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total_record_count: FormControl<string | null | undefined>,
 	}
 	export function CreateGetSlashalmawsSlashv1Slashtask_listsSlashrsSlashlending_requestsReturnFormGroup() {
 		return new FormGroup<GetSlashalmawsSlashv1Slashtask_listsSlashrsSlashlending_requestsReturnFormProperties>({
-			total_record_count: new FormControl<number | null | undefined>(undefined),
+			total_record_count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}

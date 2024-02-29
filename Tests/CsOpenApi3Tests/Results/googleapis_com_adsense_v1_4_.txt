@@ -1030,7 +1030,10 @@ namespace MyNS
 		/// List all accounts available to this AdSense account.
 		/// Adsense_accounts_list accounts
 		/// </summary>
-		/// <param name="maxResults">The maximum number of accounts to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of accounts to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through accounts. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<Accounts> Adsense_accounts_listAsync(int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1101,7 +1104,10 @@ namespace MyNS
 		/// Adsense_accounts_adclients_list accounts/{accountId}/adclients
 		/// </summary>
 		/// <param name="accountId">Account for which to list ad clients.</param>
-		/// <param name="maxResults">The maximum number of ad clients to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of ad clients to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<AdClients> Adsense_accounts_adclients_listAsync(string accountId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1175,7 +1181,10 @@ namespace MyNS
 		/// <param name="accountId">Account to which the ad client belongs.</param>
 		/// <param name="adClientId">Ad client for which to list ad units.</param>
 		/// <param name="includeInactive">Whether to include inactive ad units. Default: true.</param>
-		/// <param name="maxResults">The maximum number of ad units to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of ad units to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<AdUnits> Adsense_accounts_adunits_listAsync(string accountId, string adClientId, bool includeInactive, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1285,7 +1294,10 @@ namespace MyNS
 		/// <param name="accountId">Account to which the ad client belongs.</param>
 		/// <param name="adClientId">Ad client which contains the ad unit.</param>
 		/// <param name="adUnitId">Ad unit for which to list custom channels.</param>
-		/// <param name="maxResults">The maximum number of custom channels to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of custom channels to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<CustomChannels> Adsense_accounts_adunits_customchannels_listAsync(string accountId, string adClientId, string adUnitId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1322,7 +1334,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="accountId">Account to which the ad client belongs.</param>
 		/// <param name="adClientId">Ad client for which to list custom channels.</param>
-		/// <param name="maxResults">The maximum number of custom channels to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of custom channels to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<CustomChannels> Adsense_accounts_customchannels_listAsync(string accountId, string adClientId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1397,7 +1412,10 @@ namespace MyNS
 		/// <param name="adClientId">Ad client which contains the custom channel.</param>
 		/// <param name="customChannelId">Custom channel for which to list ad units.</param>
 		/// <param name="includeInactive">Whether to include inactive ad units. Default: true.</param>
-		/// <param name="maxResults">The maximum number of ad units to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of ad units to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<AdUnits> Adsense_accounts_customchannels_adunits_listAsync(string accountId, string adClientId, string customChannelId, bool includeInactive, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1434,7 +1452,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="accountId">Account to which the ad client belongs.</param>
 		/// <param name="adClientId">Ad client for which to list URL channels.</param>
-		/// <param name="maxResults">The maximum number of URL channels to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of URL channels to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<UrlChannels> Adsense_accounts_urlchannels_listAsync(string accountId, string adClientId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1574,10 +1595,16 @@ namespace MyNS
 		/// <param name="dimension">Dimensions to base the report on.</param>
 		/// <param name="filter">Filters to be run on the report.</param>
 		/// <param name="locale">Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.</param>
-		/// <param name="maxResults">The maximum number of rows of report data to return.</param>
+		/// <param name="maxResults">The maximum number of rows of report data to return.
+		/// Minimum: 0
+		/// Maximum: 50000
+		// </param>
 		/// <param name="metric">Numeric columns to include in the report.</param>
 		/// <param name="sort">The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.</param>
-		/// <param name="startIndex">Index of the first row of report data to return.</param>
+		/// <param name="startIndex">Index of the first row of report data to return.
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <param name="useTimezoneReporting">Whether the report should be generated in the AdSense account's local timezone. If false default PST/PDT timezone will be used.</param>
 		/// <returns>Successful response</returns>
 		public async Task<AdsenseReportsGenerateResponse> Adsense_accounts_reports_generateAsync(string accountId, string startDate, string endDate, string currency, string[] dimension, string[] filter, string locale, int maxResults, string[] metric, string[] sort, int startIndex, bool useTimezoneReporting, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1613,7 +1640,10 @@ namespace MyNS
 		/// Adsense_accounts_reports_saved_list accounts/{accountId}/reports/saved
 		/// </summary>
 		/// <param name="accountId">Account to which the saved reports belong.</param>
-		/// <param name="maxResults">The maximum number of saved reports to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of saved reports to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through saved reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<SavedReports> Adsense_accounts_reports_saved_listAsync(string accountId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1651,8 +1681,14 @@ namespace MyNS
 		/// <param name="accountId">Account to which the saved reports belong.</param>
 		/// <param name="savedReportId">The saved report to retrieve.</param>
 		/// <param name="locale">Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.</param>
-		/// <param name="maxResults">The maximum number of rows of report data to return.</param>
-		/// <param name="startIndex">Index of the first row of report data to return.</param>
+		/// <param name="maxResults">The maximum number of rows of report data to return.
+		/// Minimum: 0
+		/// Maximum: 50000
+		// </param>
+		/// <param name="startIndex">Index of the first row of report data to return.
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<AdsenseReportsGenerateResponse> Adsense_accounts_reports_saved_generateAsync(string accountId, string savedReportId, string locale, int maxResults, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1687,7 +1723,10 @@ namespace MyNS
 		/// Adsense_accounts_savedadstyles_list accounts/{accountId}/savedadstyles
 		/// </summary>
 		/// <param name="accountId">Account for which to list saved ad styles.</param>
-		/// <param name="maxResults">The maximum number of saved ad styles to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of saved ad styles to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through saved ad styles. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<SavedAdStyles> Adsense_accounts_savedadstyles_listAsync(string accountId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1757,7 +1796,10 @@ namespace MyNS
 		/// List all ad clients in this AdSense account.
 		/// Adsense_adclients_list adclients
 		/// </summary>
-		/// <param name="maxResults">The maximum number of ad clients to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of ad clients to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<AdClients> Adsense_adclients_listAsync(int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1794,7 +1836,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="adClientId">Ad client for which to list ad units.</param>
 		/// <param name="includeInactive">Whether to include inactive ad units. Default: true.</param>
-		/// <param name="maxResults">The maximum number of ad units to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of ad units to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<AdUnits> Adsense_adunits_listAsync(string adClientId, bool includeInactive, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1901,7 +1946,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="adClientId">Ad client which contains the ad unit.</param>
 		/// <param name="adUnitId">Ad unit for which to list custom channels.</param>
-		/// <param name="maxResults">The maximum number of custom channels to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of custom channels to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<CustomChannels> Adsense_adunits_customchannels_listAsync(string adClientId, string adUnitId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1937,7 +1985,10 @@ namespace MyNS
 		/// Adsense_customchannels_list adclients/{adClientId}/customchannels
 		/// </summary>
 		/// <param name="adClientId">Ad client for which to list custom channels.</param>
-		/// <param name="maxResults">The maximum number of custom channels to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of custom channels to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through custom channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<CustomChannels> Adsense_customchannels_listAsync(string adClientId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2010,7 +2061,10 @@ namespace MyNS
 		/// <param name="adClientId">Ad client which contains the custom channel.</param>
 		/// <param name="customChannelId">Custom channel for which to list ad units.</param>
 		/// <param name="includeInactive">Whether to include inactive ad units. Default: true.</param>
-		/// <param name="maxResults">The maximum number of ad units to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of ad units to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through ad units. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<AdUnits> Adsense_customchannels_adunits_listAsync(string adClientId, string customChannelId, bool includeInactive, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2046,7 +2100,10 @@ namespace MyNS
 		/// Adsense_urlchannels_list adclients/{adClientId}/urlchannels
 		/// </summary>
 		/// <param name="adClientId">Ad client for which to list URL channels.</param>
-		/// <param name="maxResults">The maximum number of URL channels to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of URL channels to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through URL channels. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<UrlChannels> Adsense_urlchannels_listAsync(string adClientId, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2249,10 +2306,16 @@ namespace MyNS
 		/// <param name="dimension">Dimensions to base the report on.</param>
 		/// <param name="filter">Filters to be run on the report.</param>
 		/// <param name="locale">Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.</param>
-		/// <param name="maxResults">The maximum number of rows of report data to return.</param>
+		/// <param name="maxResults">The maximum number of rows of report data to return.
+		/// Minimum: 0
+		/// Maximum: 50000
+		// </param>
 		/// <param name="metric">Numeric columns to include in the report.</param>
 		/// <param name="sort">The name of a dimension or metric to sort the resulting report on, optionally prefixed with "+" to sort ascending or "-" to sort descending. If no prefix is specified, the column is sorted ascending.</param>
-		/// <param name="startIndex">Index of the first row of report data to return.</param>
+		/// <param name="startIndex">Index of the first row of report data to return.
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <param name="useTimezoneReporting">Whether the report should be generated in the AdSense account's local timezone. If false default PST/PDT timezone will be used.</param>
 		/// <returns>Successful response</returns>
 		public async Task<AdsenseReportsGenerateResponse> Adsense_reports_generateAsync(string startDate, string endDate, string[] accountId, string currency, string[] dimension, string[] filter, string locale, int maxResults, string[] metric, string[] sort, int startIndex, bool useTimezoneReporting, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2287,7 +2350,10 @@ namespace MyNS
 		/// List all saved reports in this AdSense account.
 		/// Adsense_reports_saved_list reports/saved
 		/// </summary>
-		/// <param name="maxResults">The maximum number of saved reports to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of saved reports to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 100
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through saved reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<SavedReports> Adsense_reports_saved_listAsync(int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2324,8 +2390,14 @@ namespace MyNS
 		/// </summary>
 		/// <param name="savedReportId">The saved report to retrieve.</param>
 		/// <param name="locale">Optional locale to use for translating report output to a local language. Defaults to "en_US" if not specified.</param>
-		/// <param name="maxResults">The maximum number of rows of report data to return.</param>
-		/// <param name="startIndex">Index of the first row of report data to return.</param>
+		/// <param name="maxResults">The maximum number of rows of report data to return.
+		/// Minimum: 0
+		/// Maximum: 50000
+		// </param>
+		/// <param name="startIndex">Index of the first row of report data to return.
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <returns>Successful response</returns>
 		public async Task<AdsenseReportsGenerateResponse> Adsense_reports_saved_generateAsync(string savedReportId, string locale, int maxResults, int startIndex, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2359,7 +2431,10 @@ namespace MyNS
 		/// List all saved ad styles in the user's account.
 		/// Adsense_savedadstyles_list savedadstyles
 		/// </summary>
-		/// <param name="maxResults">The maximum number of saved ad styles to include in the response, used for paging.</param>
+		/// <param name="maxResults">The maximum number of saved ad styles to include in the response, used for paging.
+		/// Minimum: 0
+		/// Maximum: 10000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through saved ad styles. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response.</param>
 		/// <returns>Successful response</returns>
 		public async Task<SavedAdStyles> Adsense_savedadstyles_listAsync(int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

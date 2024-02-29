@@ -5,13 +5,21 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Access_tokensElement {
 		access_token?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		account_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_on_date?: number | null;
 		scope?: Array<string>;
 	}
 	export interface Access_tokensElementFormProperties {
 		access_token: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		account_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		expires_on_date: FormControl<number | null | undefined>,
 	}
 	export function CreateAccess_tokensElementFormGroup() {
@@ -24,13 +32,25 @@ export namespace MyNS {
 	}
 
 	export interface Account_mergeElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		merge_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		new_account_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		old_account_id?: number | null;
 	}
 	export interface Account_mergeElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		merge_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		new_account_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		old_account_id: FormControl<number | null | undefined>,
 	}
 	export function CreateAccount_mergeElementFormGroup() {
@@ -44,54 +64,102 @@ export namespace MyNS {
 
 	export interface AnswersElement {
 		accepted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		awarded_bounty_amount?: number | null;
 		awarded_bounty_users?: Array<string>;
 		body?: string | null;
 		body_markdown?: string | null;
 		can_flag?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_count?: number | null;
 		comments?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		community_owned_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count?: number | null;
 		downvoted?: boolean | null;
 		is_accepted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_activity_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_edit_date?: number | null;
 		last_editor?: AnswersElementLast_editor;
 		link?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		locked_date?: number | null;
 		owner?: AnswersElementOwner;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		share_link?: string | null;
 		tags?: Array<string>;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count?: number | null;
 		upvoted?: boolean | null;
 	}
 	export interface AnswersElementFormProperties {
 		accepted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		awarded_bounty_amount: FormControl<number | null | undefined>,
 		body: FormControl<string | null | undefined>,
 		body_markdown: FormControl<string | null | undefined>,
 		can_flag: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		community_owned_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count: FormControl<number | null | undefined>,
 		downvoted: FormControl<boolean | null | undefined>,
 		is_accepted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_activity_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_edit_date: FormControl<number | null | undefined>,
 		link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		locked_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 		share_link: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count: FormControl<number | null | undefined>,
 		upvoted: FormControl<boolean | null | undefined>,
 	}
@@ -124,21 +192,33 @@ export namespace MyNS {
 	}
 
 	export interface AnswersElementLast_editor {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: AnswersElementLast_editorBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface AnswersElementLast_editorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -156,13 +236,25 @@ export namespace MyNS {
 	}
 
 	export interface AnswersElementLast_editorBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface AnswersElementLast_editorBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateAnswersElementLast_editorBadge_countsFormGroup() {
@@ -175,21 +267,33 @@ export namespace MyNS {
 	}
 
 	export interface AnswersElementOwner {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: AnswersElementOwnerBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface AnswersElementOwnerFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -207,13 +311,25 @@ export namespace MyNS {
 	}
 
 	export interface AnswersElementOwnerBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface AnswersElementOwnerBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateAnswersElementOwnerBadge_countsFormGroup() {
@@ -226,7 +342,11 @@ export namespace MyNS {
 	}
 
 	export interface BadgesElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		award_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		badge_id?: number | null;
 		badge_type?: string | null;
 		description?: string | null;
@@ -236,7 +356,11 @@ export namespace MyNS {
 		user?: BadgesElementUser;
 	}
 	export interface BadgesElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		award_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		badge_id: FormControl<number | null | undefined>,
 		badge_type: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
@@ -258,21 +382,33 @@ export namespace MyNS {
 	}
 
 	export interface BadgesElementUser {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: BadgesElementUserBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface BadgesElementUserFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -290,13 +426,25 @@ export namespace MyNS {
 	}
 
 	export interface BadgesElementUserBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface BadgesElementUserBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateBadgesElementUserBadge_countsFormGroup() {
@@ -312,14 +460,22 @@ export namespace MyNS {
 		body?: string | null;
 		body_markdown?: string | null;
 		can_flag?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
 		edited?: boolean | null;
 		link?: string | null;
 		owner?: CommentsElementOwner;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id?: number | null;
 		post_type?: string | null;
 		reply_to_user?: CommentsElementReply_to_user;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		upvoted?: boolean | null;
 	}
@@ -327,12 +483,20 @@ export namespace MyNS {
 		body: FormControl<string | null | undefined>,
 		body_markdown: FormControl<string | null | undefined>,
 		can_flag: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
 		edited: FormControl<boolean | null | undefined>,
 		link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id: FormControl<number | null | undefined>,
 		post_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 		upvoted: FormControl<boolean | null | undefined>,
 	}
@@ -354,21 +518,33 @@ export namespace MyNS {
 	}
 
 	export interface CommentsElementOwner {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: CommentsElementOwnerBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface CommentsElementOwnerFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -386,13 +562,25 @@ export namespace MyNS {
 	}
 
 	export interface CommentsElementOwnerBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface CommentsElementOwnerBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateCommentsElementOwnerBadge_countsFormGroup() {
@@ -405,21 +593,33 @@ export namespace MyNS {
 	}
 
 	export interface CommentsElementReply_to_user {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: CommentsElementReply_to_userBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface CommentsElementReply_to_userFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -437,13 +637,25 @@ export namespace MyNS {
 	}
 
 	export interface CommentsElementReply_to_userBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface CommentsElementReply_to_userBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateCommentsElementReply_to_userBadge_countsFormGroup() {
@@ -459,14 +671,22 @@ export namespace MyNS {
 		body?: string | null;
 		body_markdown?: string | null;
 		can_flag?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
 		edited?: boolean | null;
 		link?: string | null;
 		owner?: Created_commentOwner;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id?: number | null;
 		post_type?: string | null;
 		reply_to_user?: Created_commentReply_to_user;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		upvoted?: boolean | null;
 	}
@@ -474,12 +694,20 @@ export namespace MyNS {
 		body: FormControl<string | null | undefined>,
 		body_markdown: FormControl<string | null | undefined>,
 		can_flag: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
 		edited: FormControl<boolean | null | undefined>,
 		link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id: FormControl<number | null | undefined>,
 		post_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 		upvoted: FormControl<boolean | null | undefined>,
 	}
@@ -501,21 +729,33 @@ export namespace MyNS {
 	}
 
 	export interface Created_commentOwner {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: Created_commentOwnerBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface Created_commentOwnerFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -533,13 +773,25 @@ export namespace MyNS {
 	}
 
 	export interface Created_commentOwnerBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface Created_commentOwnerBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateCreated_commentOwnerBadge_countsFormGroup() {
@@ -552,21 +804,33 @@ export namespace MyNS {
 	}
 
 	export interface Created_commentReply_to_user {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: Created_commentReply_to_userBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface Created_commentReply_to_userFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -584,13 +848,25 @@ export namespace MyNS {
 	}
 
 	export interface Created_commentReply_to_userBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface Created_commentReply_to_userBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateCreated_commentReply_to_userBadge_countsFormGroup() {
@@ -603,11 +879,15 @@ export namespace MyNS {
 	}
 
 	export interface Error {
+
+		/** Type: double */
 		error_id?: number | null;
 		error_message?: string | null;
 		error_name?: string | null;
 	}
 	export interface ErrorFormProperties {
+
+		/** Type: double */
 		error_id: FormControl<number | null | undefined>,
 		error_message: FormControl<string | null | undefined>,
 		error_name: FormControl<string | null | undefined>,
@@ -623,11 +903,15 @@ export namespace MyNS {
 
 	export interface ErrorsElement {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_id?: number | null;
 		error_name?: string | null;
 	}
 	export interface ErrorsElementFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		error_id: FormControl<number | null | undefined>,
 		error_name: FormControl<string | null | undefined>,
 	}
@@ -641,17 +925,25 @@ export namespace MyNS {
 	}
 
 	export interface EventsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
 		event_type?: string | null;
 		excerpt?: string | null;
 		link?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		'the id of the object (answer, comment, question, or user) the event describes'?: number | null;
 	}
 	export interface EventsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
 		event_type: FormControl<string | null | undefined>,
 		excerpt: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		'the id of the object (answer, comment, question, or user) the event describes': FormControl<number | null | undefined>,
 	}
 	export function CreateEventsElementFormGroup() {
@@ -683,25 +975,41 @@ export namespace MyNS {
 	}
 
 	export interface Inbox_itemsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_id?: number | null;
 		body?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
 		is_unread?: boolean | null;
 		item_type?: string | null;
 		link?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id?: number | null;
 		site?: Inbox_itemsElementSite;
 		title?: string | null;
 	}
 	export interface Inbox_itemsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_id: FormControl<number | null | undefined>,
 		body: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
 		is_unread: FormControl<boolean | null | undefined>,
 		item_type: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -724,14 +1032,20 @@ export namespace MyNS {
 		aliases?: Array<string>;
 		api_site_parameter?: string | null;
 		audience?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date?: number | null;
 		favicon_url?: string | null;
 		high_resolution_icon_url?: string | null;
 		icon_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date?: number | null;
 		logo_url?: string | null;
 		markdown_extensions?: Array<string>;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date?: number | null;
 		related_sites?: Array<string>;
 		site_state?: string | null;
@@ -743,13 +1057,19 @@ export namespace MyNS {
 	export interface Inbox_itemsElementSiteFormProperties {
 		api_site_parameter: FormControl<string | null | undefined>,
 		audience: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date: FormControl<number | null | undefined>,
 		favicon_url: FormControl<string | null | undefined>,
 		high_resolution_icon_url: FormControl<string | null | undefined>,
 		icon_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date: FormControl<number | null | undefined>,
 		logo_url: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date: FormControl<number | null | undefined>,
 		site_state: FormControl<string | null | undefined>,
 		site_type: FormControl<string | null | undefined>,
@@ -796,34 +1116,82 @@ export namespace MyNS {
 	}
 
 	export interface Info_object {
+
+		/** Type: double */
 		answers_per_minute?: number | null;
 		api_revision?: string | null;
+
+		/** Type: double */
 		badges_per_minute?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		new_active_users?: number | null;
+
+		/** Type: double */
 		questions_per_minute?: number | null;
 		site?: Info_objectSite;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_accepted?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_answers?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_badges?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_comments?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_questions?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_unanswered?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_users?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_votes?: number | null;
 	}
 	export interface Info_objectFormProperties {
+
+		/** Type: double */
 		answers_per_minute: FormControl<number | null | undefined>,
 		api_revision: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		badges_per_minute: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		new_active_users: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		questions_per_minute: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_accepted: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_answers: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_badges: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_comments: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_questions: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_unanswered: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_users: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total_votes: FormControl<number | null | undefined>,
 	}
 	export function CreateInfo_objectFormGroup() {
@@ -849,14 +1217,20 @@ export namespace MyNS {
 		aliases?: Array<string>;
 		api_site_parameter?: string | null;
 		audience?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date?: number | null;
 		favicon_url?: string | null;
 		high_resolution_icon_url?: string | null;
 		icon_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date?: number | null;
 		logo_url?: string | null;
 		markdown_extensions?: Array<string>;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date?: number | null;
 		related_sites?: Array<string>;
 		site_state?: string | null;
@@ -868,13 +1242,19 @@ export namespace MyNS {
 	export interface Info_objectSiteFormProperties {
 		api_site_parameter: FormControl<string | null | undefined>,
 		audience: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date: FormControl<number | null | undefined>,
 		favicon_url: FormControl<string | null | undefined>,
 		high_resolution_icon_url: FormControl<string | null | undefined>,
 		icon_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date: FormControl<number | null | undefined>,
 		logo_url: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date: FormControl<number | null | undefined>,
 		site_state: FormControl<string | null | undefined>,
 		site_type: FormControl<string | null | undefined>,
@@ -921,29 +1301,57 @@ export namespace MyNS {
 	}
 
 	export interface Network_usersElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		account_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_count?: number | null;
 		badge_counts?: Network_usersElementBadge_counts;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_access_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
 		site_name?: string | null;
 		site_url?: string | null;
 		top_answers?: Array<string>;
 		top_questions?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface Network_usersElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		account_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_access_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
 		site_name: FormControl<string | null | undefined>,
 		site_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -964,13 +1372,25 @@ export namespace MyNS {
 	}
 
 	export interface Network_usersElementBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface Network_usersElementBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateNetwork_usersElementBadge_countsFormGroup() {
@@ -984,17 +1404,25 @@ export namespace MyNS {
 
 	export interface NotificationsElement {
 		body?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
 		is_unread?: boolean | null;
 		notification_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id?: number | null;
 		site?: NotificationsElementSite;
 	}
 	export interface NotificationsElementFormProperties {
 		body: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
 		is_unread: FormControl<boolean | null | undefined>,
 		notification_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id: FormControl<number | null | undefined>,
 	}
 	export function CreateNotificationsElementFormGroup() {
@@ -1012,14 +1440,20 @@ export namespace MyNS {
 		aliases?: Array<string>;
 		api_site_parameter?: string | null;
 		audience?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date?: number | null;
 		favicon_url?: string | null;
 		high_resolution_icon_url?: string | null;
 		icon_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date?: number | null;
 		logo_url?: string | null;
 		markdown_extensions?: Array<string>;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date?: number | null;
 		related_sites?: Array<string>;
 		site_state?: string | null;
@@ -1031,13 +1465,19 @@ export namespace MyNS {
 	export interface NotificationsElementSiteFormProperties {
 		api_site_parameter: FormControl<string | null | undefined>,
 		audience: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date: FormControl<number | null | undefined>,
 		favicon_url: FormControl<string | null | undefined>,
 		high_resolution_icon_url: FormControl<string | null | undefined>,
 		icon_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date: FormControl<number | null | undefined>,
 		logo_url: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date: FormControl<number | null | undefined>,
 		site_state: FormControl<string | null | undefined>,
 		site_type: FormControl<string | null | undefined>,
@@ -1086,39 +1526,71 @@ export namespace MyNS {
 	export interface PostsElement {
 		body?: string | null;
 		body_markdown?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_count?: number | null;
 		comments?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count?: number | null;
 		downvoted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_activity_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_edit_date?: number | null;
 		last_editor?: PostsElementLast_editor;
 		link?: string | null;
 		owner?: PostsElementOwner;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id?: number | null;
 		post_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		share_link?: string | null;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count?: number | null;
 		upvoted?: boolean | null;
 	}
 	export interface PostsElementFormProperties {
 		body: FormControl<string | null | undefined>,
 		body_markdown: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count: FormControl<number | null | undefined>,
 		downvoted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_activity_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_edit_date: FormControl<number | null | undefined>,
 		link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id: FormControl<number | null | undefined>,
 		post_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 		share_link: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count: FormControl<number | null | undefined>,
 		upvoted: FormControl<boolean | null | undefined>,
 	}
@@ -1145,21 +1617,33 @@ export namespace MyNS {
 	}
 
 	export interface PostsElementLast_editor {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: PostsElementLast_editorBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface PostsElementLast_editorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -1177,13 +1661,25 @@ export namespace MyNS {
 	}
 
 	export interface PostsElementLast_editorBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface PostsElementLast_editorBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreatePostsElementLast_editorBadge_countsFormGroup() {
@@ -1196,21 +1692,33 @@ export namespace MyNS {
 	}
 
 	export interface PostsElementOwner {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: PostsElementOwnerBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface PostsElementOwnerFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -1228,13 +1736,25 @@ export namespace MyNS {
 	}
 
 	export interface PostsElementOwnerBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface PostsElementOwnerBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreatePostsElementOwnerBadge_countsFormGroup() {
@@ -1248,11 +1768,15 @@ export namespace MyNS {
 
 	export interface PrivilegesElement {
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
 		short_description?: string | null;
 	}
 	export interface PrivilegesElementFormProperties {
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
 		short_description: FormControl<string | null | undefined>,
 	}
@@ -1266,25 +1790,49 @@ export namespace MyNS {
 	}
 
 	export interface Question_timeline_eventsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count?: number | null;
 		owner?: Question_timeline_eventsElementOwner;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id?: number | null;
 		revision_guid?: string | null;
 		timeline_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count?: number | null;
 		user?: Question_timeline_eventsElementUser;
 	}
 	export interface Question_timeline_eventsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id: FormControl<number | null | undefined>,
 		revision_guid: FormControl<string | null | undefined>,
 		timeline_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestion_timeline_eventsElementFormGroup() {
@@ -1302,21 +1850,33 @@ export namespace MyNS {
 	}
 
 	export interface Question_timeline_eventsElementOwner {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: Question_timeline_eventsElementOwnerBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface Question_timeline_eventsElementOwnerFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -1334,13 +1894,25 @@ export namespace MyNS {
 	}
 
 	export interface Question_timeline_eventsElementOwnerBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface Question_timeline_eventsElementOwnerBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestion_timeline_eventsElementOwnerBadge_countsFormGroup() {
@@ -1353,21 +1925,33 @@ export namespace MyNS {
 	}
 
 	export interface Question_timeline_eventsElementUser {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: Question_timeline_eventsElementUserBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface Question_timeline_eventsElementUserFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -1385,13 +1969,25 @@ export namespace MyNS {
 	}
 
 	export interface Question_timeline_eventsElementUserBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface Question_timeline_eventsElementUserBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestion_timeline_eventsElementUserBadge_countsFormGroup() {
@@ -1404,83 +2000,167 @@ export namespace MyNS {
 	}
 
 	export interface QuestionsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accepted_answer_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_count?: number | null;
 		answers?: Array<string>;
 		body?: string | null;
 		body_markdown?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bounty_amount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bounty_closes_date?: number | null;
 		bounty_user?: QuestionsElementBounty_user;
 		can_close?: boolean | null;
 		can_flag?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		close_vote_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_date?: number | null;
 		closed_details?: QuestionsElementClosed_details;
 		closed_reason?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_count?: number | null;
 		comments?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		community_owned_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		delete_vote_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count?: number | null;
 		downvoted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favorite_count?: number | null;
 		favorited?: boolean | null;
 		is_answered?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_activity_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_edit_date?: number | null;
 		last_editor?: QuestionsElementLast_editor;
 		link?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		locked_date?: number | null;
 		migrated_from?: QuestionsElementMigrated_from;
 		migrated_to?: QuestionsElementMigrated_to;
 		notice?: QuestionsElementNotice;
 		owner?: QuestionsElementOwner;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		protected_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reopen_vote_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		share_link?: string | null;
 		tags?: Array<string>;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count?: number | null;
 		upvoted?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		view_count?: number | null;
 	}
 	export interface QuestionsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accepted_answer_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_count: FormControl<number | null | undefined>,
 		body: FormControl<string | null | undefined>,
 		body_markdown: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bounty_amount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bounty_closes_date: FormControl<number | null | undefined>,
 		can_close: FormControl<boolean | null | undefined>,
 		can_flag: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		close_vote_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_date: FormControl<number | null | undefined>,
 		closed_reason: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		community_owned_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		delete_vote_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count: FormControl<number | null | undefined>,
 		downvoted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		favorite_count: FormControl<number | null | undefined>,
 		favorited: FormControl<boolean | null | undefined>,
 		is_answered: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_activity_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_edit_date: FormControl<number | null | undefined>,
 		link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		locked_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		protected_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reopen_vote_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 		share_link: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count: FormControl<number | null | undefined>,
 		upvoted: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		view_count: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestionsElementFormGroup() {
@@ -1523,21 +2203,33 @@ export namespace MyNS {
 	}
 
 	export interface QuestionsElementBounty_user {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: QuestionsElementBounty_userBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface QuestionsElementBounty_userFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -1555,13 +2247,25 @@ export namespace MyNS {
 	}
 
 	export interface QuestionsElementBounty_userBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface QuestionsElementBounty_userBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestionsElementBounty_userBadge_countsFormGroup() {
@@ -1595,21 +2299,33 @@ export namespace MyNS {
 	}
 
 	export interface QuestionsElementLast_editor {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: QuestionsElementLast_editorBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface QuestionsElementLast_editorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -1627,13 +2343,25 @@ export namespace MyNS {
 	}
 
 	export interface QuestionsElementLast_editorBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface QuestionsElementLast_editorBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestionsElementLast_editorBadge_countsFormGroup() {
@@ -1646,12 +2374,20 @@ export namespace MyNS {
 	}
 
 	export interface QuestionsElementMigrated_from {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		on_date?: number | null;
 		other_site?: QuestionsElementMigrated_fromOther_site;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id?: number | null;
 	}
 	export interface QuestionsElementMigrated_fromFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		on_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestionsElementMigrated_fromFormGroup() {
@@ -1666,14 +2402,20 @@ export namespace MyNS {
 		aliases?: Array<string>;
 		api_site_parameter?: string | null;
 		audience?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date?: number | null;
 		favicon_url?: string | null;
 		high_resolution_icon_url?: string | null;
 		icon_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date?: number | null;
 		logo_url?: string | null;
 		markdown_extensions?: Array<string>;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date?: number | null;
 		related_sites?: Array<string>;
 		site_state?: string | null;
@@ -1685,13 +2427,19 @@ export namespace MyNS {
 	export interface QuestionsElementMigrated_fromOther_siteFormProperties {
 		api_site_parameter: FormControl<string | null | undefined>,
 		audience: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date: FormControl<number | null | undefined>,
 		favicon_url: FormControl<string | null | undefined>,
 		high_resolution_icon_url: FormControl<string | null | undefined>,
 		icon_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date: FormControl<number | null | undefined>,
 		logo_url: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date: FormControl<number | null | undefined>,
 		site_state: FormControl<string | null | undefined>,
 		site_type: FormControl<string | null | undefined>,
@@ -1738,12 +2486,20 @@ export namespace MyNS {
 	}
 
 	export interface QuestionsElementMigrated_to {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		on_date?: number | null;
 		other_site?: QuestionsElementMigrated_toOther_site;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id?: number | null;
 	}
 	export interface QuestionsElementMigrated_toFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		on_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_id: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestionsElementMigrated_toFormGroup() {
@@ -1758,14 +2514,20 @@ export namespace MyNS {
 		aliases?: Array<string>;
 		api_site_parameter?: string | null;
 		audience?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date?: number | null;
 		favicon_url?: string | null;
 		high_resolution_icon_url?: string | null;
 		icon_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date?: number | null;
 		logo_url?: string | null;
 		markdown_extensions?: Array<string>;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date?: number | null;
 		related_sites?: Array<string>;
 		site_state?: string | null;
@@ -1777,13 +2539,19 @@ export namespace MyNS {
 	export interface QuestionsElementMigrated_toOther_siteFormProperties {
 		api_site_parameter: FormControl<string | null | undefined>,
 		audience: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date: FormControl<number | null | undefined>,
 		favicon_url: FormControl<string | null | undefined>,
 		high_resolution_icon_url: FormControl<string | null | undefined>,
 		icon_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date: FormControl<number | null | undefined>,
 		logo_url: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date: FormControl<number | null | undefined>,
 		site_state: FormControl<string | null | undefined>,
 		site_type: FormControl<string | null | undefined>,
@@ -1831,12 +2599,20 @@ export namespace MyNS {
 
 	export interface QuestionsElementNotice {
 		body?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owner_user_id?: number | null;
 	}
 	export interface QuestionsElementNoticeFormProperties {
 		body: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		owner_user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestionsElementNoticeFormGroup() {
@@ -1849,21 +2625,33 @@ export namespace MyNS {
 	}
 
 	export interface QuestionsElementOwner {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: QuestionsElementOwnerBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface QuestionsElementOwnerFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -1881,13 +2669,25 @@ export namespace MyNS {
 	}
 
 	export interface QuestionsElementOwnerBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface QuestionsElementOwnerBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateQuestionsElementOwnerBadge_countsFormGroup() {
@@ -1901,21 +2701,37 @@ export namespace MyNS {
 
 	export interface Reputation_changesElement {
 		link?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		on_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id?: number | null;
 		post_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change?: number | null;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		vote_type?: string | null;
 	}
 	export interface Reputation_changesElementFormProperties {
 		link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		on_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id: FormControl<number | null | undefined>,
 		post_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		vote_type: FormControl<string | null | undefined>,
 	}
@@ -1934,17 +2750,33 @@ export namespace MyNS {
 	}
 
 	export interface Reputation_historyElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change?: number | null;
 		reputation_history_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 	}
 	export interface Reputation_historyElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change: FormControl<number | null | undefined>,
 		reputation_history_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateReputation_historyElementFormGroup() {
@@ -1960,21 +2792,37 @@ export namespace MyNS {
 
 	export interface Reputation_objectsElement {
 		link?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		on_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id?: number | null;
 		post_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change?: number | null;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		vote_type?: string | null;
 	}
 	export interface Reputation_objectsElementFormProperties {
 		link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		on_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id: FormControl<number | null | undefined>,
 		post_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		vote_type: FormControl<string | null | undefined>,
 	}
@@ -1995,14 +2843,20 @@ export namespace MyNS {
 	export interface RevisionsElement {
 		body?: string | null;
 		comment?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
 		is_rollback?: boolean | null;
 		last_body?: string | null;
 		last_tags?: Array<string>;
 		last_title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id?: number | null;
 		post_type?: string | null;
 		revision_guid?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revision_number?: number | null;
 		revision_type?: string | null;
 		set_community_wiki?: boolean | null;
@@ -2013,13 +2867,19 @@ export namespace MyNS {
 	export interface RevisionsElementFormProperties {
 		body: FormControl<string | null | undefined>,
 		comment: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
 		is_rollback: FormControl<boolean | null | undefined>,
 		last_body: FormControl<string | null | undefined>,
 		last_title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id: FormControl<number | null | undefined>,
 		post_type: FormControl<string | null | undefined>,
 		revision_guid: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		revision_number: FormControl<number | null | undefined>,
 		revision_type: FormControl<string | null | undefined>,
 		set_community_wiki: FormControl<boolean | null | undefined>,
@@ -2045,21 +2905,33 @@ export namespace MyNS {
 	}
 
 	export interface RevisionsElementUser {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: RevisionsElementUserBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface RevisionsElementUserFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -2077,13 +2949,25 @@ export namespace MyNS {
 	}
 
 	export interface RevisionsElementUserBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface RevisionsElementUserBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateRevisionsElementUserBadge_countsFormGroup() {
@@ -2116,14 +3000,20 @@ export namespace MyNS {
 		aliases?: Array<string>;
 		api_site_parameter?: string | null;
 		audience?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date?: number | null;
 		favicon_url?: string | null;
 		high_resolution_icon_url?: string | null;
 		icon_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date?: number | null;
 		logo_url?: string | null;
 		markdown_extensions?: Array<string>;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date?: number | null;
 		related_sites?: Array<string>;
 		site_state?: string | null;
@@ -2135,13 +3025,19 @@ export namespace MyNS {
 	export interface SitesElementFormProperties {
 		api_site_parameter: FormControl<string | null | undefined>,
 		audience: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		closed_beta_date: FormControl<number | null | undefined>,
 		favicon_url: FormControl<string | null | undefined>,
 		high_resolution_icon_url: FormControl<string | null | undefined>,
 		icon_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		launch_date: FormControl<number | null | undefined>,
 		logo_url: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		open_beta_date: FormControl<number | null | undefined>,
 		site_state: FormControl<string | null | undefined>,
 		site_type: FormControl<string | null | undefined>,
@@ -2188,26 +3084,46 @@ export namespace MyNS {
 	}
 
 	export interface Suggested_editsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		approval_date?: number | null;
 		body?: string | null;
 		comment?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id?: number | null;
 		post_type?: string | null;
 		proposing_user?: Suggested_editsElementProposing_user;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rejection_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		suggested_edit_id?: number | null;
 		tags?: Array<string>;
 		title?: string | null;
 	}
 	export interface Suggested_editsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		approval_date: FormControl<number | null | undefined>,
 		body: FormControl<string | null | undefined>,
 		comment: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id: FormControl<number | null | undefined>,
 		post_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rejection_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		suggested_edit_id: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 	}
@@ -2227,21 +3143,33 @@ export namespace MyNS {
 	}
 
 	export interface Suggested_editsElementProposing_user {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: Suggested_editsElementProposing_userBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface Suggested_editsElementProposing_userFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -2259,13 +3187,25 @@ export namespace MyNS {
 	}
 
 	export interface Suggested_editsElementProposing_userBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface Suggested_editsElementProposing_userBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateSuggested_editsElementProposing_userBadge_countsFormGroup() {
@@ -2278,12 +3218,20 @@ export namespace MyNS {
 	}
 
 	export interface Tag_score_objectsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score?: number | null;
 		user?: Tag_score_objectsElementUser;
 	}
 	export interface Tag_score_objectsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateTag_score_objectsElementFormGroup() {
@@ -2295,21 +3243,33 @@ export namespace MyNS {
 	}
 
 	export interface Tag_score_objectsElementUser {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: Tag_score_objectsElementUserBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface Tag_score_objectsElementUserFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -2327,13 +3287,25 @@ export namespace MyNS {
 	}
 
 	export interface Tag_score_objectsElementUserBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface Tag_score_objectsElementUserBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateTag_score_objectsElementUserBadge_countsFormGroup() {
@@ -2346,16 +3318,28 @@ export namespace MyNS {
 	}
 
 	export interface Tag_synonymsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		applied_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
 		from_tag?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_applied_date?: number | null;
 		to_tag?: string | null;
 	}
 	export interface Tag_synonymsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		applied_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
 		from_tag: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_applied_date: FormControl<number | null | undefined>,
 		to_tag: FormControl<string | null | undefined>,
 	}
@@ -2372,8 +3356,12 @@ export namespace MyNS {
 
 	export interface Tag_wikisElement {
 		body?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		body_last_edit_date?: number | null;
 		excerpt?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		excerpt_last_edit_date?: number | null;
 		last_body_editor?: Tag_wikisElementLast_body_editor;
 		last_excerpt_editor?: Tag_wikisElementLast_excerpt_editor;
@@ -2381,8 +3369,12 @@ export namespace MyNS {
 	}
 	export interface Tag_wikisElementFormProperties {
 		body: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		body_last_edit_date: FormControl<number | null | undefined>,
 		excerpt: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		excerpt_last_edit_date: FormControl<number | null | undefined>,
 		tag_name: FormControl<string | null | undefined>,
 	}
@@ -2398,21 +3390,33 @@ export namespace MyNS {
 	}
 
 	export interface Tag_wikisElementLast_body_editor {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: Tag_wikisElementLast_body_editorBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface Tag_wikisElementLast_body_editorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -2430,13 +3434,25 @@ export namespace MyNS {
 	}
 
 	export interface Tag_wikisElementLast_body_editorBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface Tag_wikisElementLast_body_editorBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateTag_wikisElementLast_body_editorBadge_countsFormGroup() {
@@ -2449,21 +3465,33 @@ export namespace MyNS {
 	}
 
 	export interface Tag_wikisElementLast_excerpt_editor {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
 		badge_counts?: Tag_wikisElementLast_excerpt_editorBadge_counts;
 		display_name?: string | null;
 		link?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
 	}
 	export interface Tag_wikisElementLast_excerpt_editorFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
 	}
@@ -2481,13 +3509,25 @@ export namespace MyNS {
 	}
 
 	export interface Tag_wikisElementLast_excerpt_editorBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface Tag_wikisElementLast_excerpt_editorBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateTag_wikisElementLast_excerpt_editorBadge_countsFormGroup() {
@@ -2500,22 +3540,34 @@ export namespace MyNS {
 	}
 
 	export interface TagsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		has_synonyms?: boolean | null;
 		is_moderator_only?: boolean | null;
 		is_required?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_activity_date?: number | null;
 		name?: string | null;
 		synonyms?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 	}
 	export interface TagsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		has_synonyms: FormControl<boolean | null | undefined>,
 		is_moderator_only: FormControl<boolean | null | undefined>,
 		is_required: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_activity_date: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateTagsElementFormGroup() {
@@ -2532,19 +3584,39 @@ export namespace MyNS {
 	}
 
 	export interface Top_tag_objectsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_score?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_score?: number | null;
 		tag_name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 	}
 	export interface Top_tag_objectsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_score: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_score: FormControl<number | null | undefined>,
 		tag_name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateTop_tag_objectsElementFormGroup() {
@@ -2561,60 +3633,136 @@ export namespace MyNS {
 
 	export interface User {
 		about_me?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		account_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		age?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_count?: number | null;
 		badge_counts?: UserBadge_counts;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
 		display_name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count?: number | null;
 		is_employee?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_access_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_modified_date?: number | null;
 		link?: string | null;
 		location?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_day?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_month?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_quarter?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_week?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_year?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timed_penalty_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		view_count?: number | null;
 		website_url?: string | null;
 	}
 	export interface UserFormProperties {
 		about_me: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		account_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		age: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count: FormControl<number | null | undefined>,
 		is_employee: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_access_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_modified_date: FormControl<number | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		location: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_day: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_month: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_quarter: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_week: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_year: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timed_penalty_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		view_count: FormControl<number | null | undefined>,
 		website_url: FormControl<string | null | undefined>,
 	}
@@ -2652,13 +3800,25 @@ export namespace MyNS {
 	}
 
 	export interface UserBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface UserBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateUserBadge_countsFormGroup() {
@@ -2671,29 +3831,53 @@ export namespace MyNS {
 	}
 
 	export interface User_timeline_objectsElement {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		badge_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
 		detail?: string | null;
 		link?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id?: number | null;
 		post_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		suggested_edit_id?: number | null;
 		timeline_type?: string | null;
 		title?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 	}
 	export interface User_timeline_objectsElementFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		badge_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		comment_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
 		detail: FormControl<string | null | undefined>,
 		link: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		post_id: FormControl<number | null | undefined>,
 		post_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		suggested_edit_id: FormControl<number | null | undefined>,
 		timeline_type: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateUser_timeline_objectsElementFormGroup() {
@@ -2715,60 +3899,136 @@ export namespace MyNS {
 
 	export interface UsersElement {
 		about_me?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		account_id?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		age?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_count?: number | null;
 		badge_counts?: UsersElementBadge_counts;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date?: number | null;
 		display_name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count?: number | null;
 		is_employee?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_access_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_modified_date?: number | null;
 		link?: string | null;
 		location?: string | null;
 		profile_image?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_day?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_month?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_quarter?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_week?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_year?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timed_penalty_date?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 		user_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		view_count?: number | null;
 		website_url?: string | null;
 	}
 	export interface UsersElementFormProperties {
 		about_me: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		accept_rate: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		account_id: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		age: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		answer_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		creation_date: FormControl<number | null | undefined>,
 		display_name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		down_vote_count: FormControl<number | null | undefined>,
 		is_employee: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_access_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		last_modified_date: FormControl<number | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		location: FormControl<string | null | undefined>,
 		profile_image: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		question_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_day: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_month: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_quarter: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_week: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		reputation_change_year: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		timed_penalty_date: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		up_vote_count: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 		user_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		view_count: FormControl<number | null | undefined>,
 		website_url: FormControl<string | null | undefined>,
 	}
@@ -2806,13 +4066,25 @@ export namespace MyNS {
 	}
 
 	export interface UsersElementBadge_counts {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver?: number | null;
 	}
 	export interface UsersElementBadge_countsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		bronze: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gold: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		silver: FormControl<number | null | undefined>,
 	}
 	export function CreateUsersElementBadge_countsFormGroup() {
@@ -2828,18 +4100,30 @@ export namespace MyNS {
 		can_add?: boolean | null;
 		can_delete?: boolean | null;
 		can_edit?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_daily_actions?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		min_seconds_between_actions?: number | null;
 		object_type?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id?: number | null;
 	}
 	export interface Write_permissionsElementFormProperties {
 		can_add: FormControl<boolean | null | undefined>,
 		can_delete: FormControl<boolean | null | undefined>,
 		can_edit: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		max_daily_actions: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		min_seconds_between_actions: FormControl<number | null | undefined>,
 		object_type: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		user_id: FormControl<number | null | undefined>,
 	}
 	export function CreateWrite_permissionsElementFormGroup() {
@@ -2866,6 +4150,8 @@ export namespace MyNS {
 		 * This method returns a list of access_tokens.
 		 * Get access-tokens/{accessTokens}
 		 * @param {string} accessTokens String list (semicolon delimited).
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -2896,6 +4182,8 @@ export namespace MyNS {
 		 * This method returns a list of access_tokens.
 		 * Get access-tokens/{accessTokens}/invalidate
 		 * @param {string} accessTokens String list (semicolon delimited).
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -2937,7 +4225,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -2983,7 +4275,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3026,7 +4322,11 @@ export namespace MyNS {
 		 * @param {string} min sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3060,6 +4360,8 @@ export namespace MyNS {
 		 * This method returns a list of access_tokens.
 		 * Get apps/{accessTokens}/de-authenticate
 		 * @param {string} accessTokens String list (semicolon delimited).
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3099,7 +4401,11 @@ export namespace MyNS {
 		 * sort = name => string
 		 * sort = type => string
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3137,7 +4443,11 @@ export namespace MyNS {
 		 * @param {string} min sort = rank => string
 		 * sort = name => string
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3169,7 +4479,11 @@ export namespace MyNS {
 		 * This method returns a list of badges.
 		 * Get badges/recipients
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3206,7 +4520,11 @@ export namespace MyNS {
 		 * @param {string} min sort = rank => string
 		 * sort = name => string
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3250,7 +4568,11 @@ export namespace MyNS {
 		 * sort = name => string
 		 * sort = type => string
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3284,7 +4606,11 @@ export namespace MyNS {
 		 * Get badges/{ids}/recipients
 		 * @param {string} ids Number list (semicolon delimited).
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3326,7 +4652,11 @@ export namespace MyNS {
 		 * @param {string} min sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3369,7 +4699,11 @@ export namespace MyNS {
 		 * @param {string} min sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3400,6 +4734,7 @@ export namespace MyNS {
 		 * Use an access_token with write_access to delete a comment.
 		 * In practice, this method will never return an object.
 		 * Post comments/{id}/delete
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3430,6 +4765,7 @@ export namespace MyNS {
 		 * Use an access_token with write_access to edit an existing comment.
 		 * This method return the created comment.
 		 * Post comments/{id}/edit
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3461,6 +4797,8 @@ export namespace MyNS {
 		 * For testing purposes, look into the /errors/{id} method which simulates errors given a code.
 		 * This method returns a list of errors.
 		 * Get errors
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3490,6 +4828,7 @@ export namespace MyNS {
 		 * This method is only intended for use when testing an application or library. Unlike other methods in the API, its contract is not frozen, and new error codes may be added at any time.
 		 * This method results in an error, which will be expressed with a 400 HTTP status code and setting the error* properties on the wrapper object.
 		 * Get errors/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Errors_idGet(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3508,6 +4847,8 @@ export namespace MyNS {
 		 * It is advised that developers batch events by ids and make as few subsequent requests to other methods as possible.
 		 * This method returns a list of events.
 		 * Get events
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3528,6 +4869,7 @@ export namespace MyNS {
 		 * @param {string} callback All API responses are JSON, we do support JSONP with the callback query parameter.
 		 * @param {string} site Each of these methods operates on a single site at a time, identified by the site parameter. This parameter can be the full domain name (ie. "stackoverflow.com"), or a short form identified by api_site_parameter on the site object.
 		 * @param {number} since Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		EventsGetByPagesizeAndPageAndFilterAndCallbackAndSiteAndSince(pagesize: number | null | undefined, page: number | null | undefined, filter: string | null | undefined, callback: string | null | undefined, site: string, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3568,6 +4910,8 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "read_inbox".
 		 * This method returns a list of inbox items.
 		 * Get inbox
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3597,6 +4941,8 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "read_inbox".
 		 * This method returns a list of inbox items.
 		 * Get inbox/unread
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3616,6 +4962,7 @@ export namespace MyNS {
 		 * For ease of transition from earlier API versions, the filters _b, _ba, _bc, _bca, _a, _ac, and _c are also built in. These are unsafe, and exclude a combination of question and answer body, comments, and answers so as to mimic the body, answers, and comments parameters that have been removed in V2.0. New applications should not use these filters.
 		 * @param {string} callback All API responses are JSON, we do support JSONP with the callback query parameter.
 		 * @param {number} since Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		InboxUnreadGetByPagesizeAndPageAndFilterAndCallbackAndSince(pagesize: number | null | undefined, page: number | null | undefined, filter: string | null | undefined, callback: string | null | undefined, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3648,7 +4995,11 @@ export namespace MyNS {
 		 * sort = name => string
 		 * sort = modified => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3685,7 +5036,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3715,6 +5070,8 @@ export namespace MyNS {
 		 * Returns all of a user's associated accounts, given an access_token for them.
 		 * This method returns a list of network users.
 		 * Get me/associated
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3750,7 +5107,11 @@ export namespace MyNS {
 		 * sort = name => string
 		 * sort = type => string
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3785,7 +5146,11 @@ export namespace MyNS {
 		 * @param {string} min sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3815,12 +5180,17 @@ export namespace MyNS {
 		 * Returns the comments owned by the user associated with the given access_token that are in reply to the user identified by {toId}.
 		 * This method returns a list of comments.
 		 * Get me/comments/{toId}
+		 * @param {number} toId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max sort = creation => date
 		 * sort = votes => number
 		 * @param {string} min sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3859,7 +5229,11 @@ export namespace MyNS {
 		 * sort = votes => number
 		 * sort = added => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3890,6 +5264,8 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "read_inbox".
 		 * This method returns a list of inbox items.
 		 * Get me/inbox
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3920,6 +5296,8 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "read_inbox".
 		 * This method returns a list of inbox items.
 		 * Get me/inbox/unread
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3940,6 +5318,7 @@ export namespace MyNS {
 		 * @param {string} callback All API responses are JSON, we do support JSONP with the callback query parameter.
 		 * @param {string} site Each of these methods operates on a single site at a time, identified by the site parameter. This parameter can be the full domain name (ie. "stackoverflow.com"), or a short form identified by api_site_parameter on the site object.
 		 * @param {number} since Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		MeInboxUnreadGetByPagesizeAndPageAndFilterAndCallbackAndSiteAndSince(pagesize: number | null | undefined, page: number | null | undefined, filter: string | null | undefined, callback: string | null | undefined, site: string, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3955,7 +5334,11 @@ export namespace MyNS {
 		 * @param {string} min sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -3989,6 +5372,8 @@ export namespace MyNS {
 		 * Note that accounts are managed at a network level, users on a site may be merged due to an account level merge but there is no guarantee that a merge has an effect on any particular site.
 		 * This method returns a list of account_merge.
 		 * Get me/merges
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4018,6 +5403,8 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "read_inbox".
 		 * This method returns a list of notifications.
 		 * Get me/notifications
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4048,6 +5435,8 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "read_inbox".
 		 * This method returns a list of notifications.
 		 * Get me/notifications/unread
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4077,6 +5466,8 @@ export namespace MyNS {
 		 * Returns the privileges the user identified by access_token has.
 		 * This method returns a list of privileges.
 		 * Get me/privileges
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4113,7 +5504,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4150,7 +5545,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4187,7 +5586,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4224,7 +5627,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4261,7 +5668,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4320,6 +5731,8 @@ export namespace MyNS {
 		 * Returns user's public reputation history.
 		 * This method returns a list of reputation_history.
 		 * Get me/reputation-history
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4350,6 +5763,8 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "private_info".
 		 * This method returns a list of reputation_history.
 		 * Get me/reputation-history/full
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4386,7 +5801,11 @@ export namespace MyNS {
 		 * sort = approval => date
 		 * sort = rejection => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4423,7 +5842,11 @@ export namespace MyNS {
 		 * sort = activity => date
 		 * sort = name => string
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4461,7 +5884,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4507,7 +5934,11 @@ export namespace MyNS {
 		 * sort = month => none
 		 * sort = relevance => none
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4538,7 +5969,11 @@ export namespace MyNS {
 		 * This method returns a list of user timeline objects.
 		 * Get me/timeline
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4568,6 +6003,8 @@ export namespace MyNS {
 		 * Returns the user identified by access_token's top 30 tags by answer score.
 		 * This method returns a list of top tag objects.
 		 * Get me/top-answer-tags
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4597,6 +6034,8 @@ export namespace MyNS {
 		 * Returns the user identified by access_token's top 30 tags by question score.
 		 * This method returns a list of top tag objects.
 		 * Get me/top-question-tags
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4628,6 +6067,8 @@ export namespace MyNS {
 		 * This method does not consider the user's current quota (ie. if they've already exhausted it for today) nor any additional restrictions on write access, such as editing deleted comments.
 		 * This method returns a list of write_permissions.
 		 * Get me/write-permissions
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4658,6 +6099,8 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "read_inbox".
 		 * This method returns a list of notifications.
 		 * Get notifications
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4687,6 +6130,8 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "read_inbox".
 		 * This method returns a list of notifications.
 		 * Get notifications/unread
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4730,7 +6175,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4776,7 +6225,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4819,7 +6272,11 @@ export namespace MyNS {
 		 * @param {string} min sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4852,7 +6309,11 @@ export namespace MyNS {
 		 * Get posts/{ids}/revisions
 		 * @param {string} ids Number list (semicolon delimited).
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4895,7 +6356,11 @@ export namespace MyNS {
 		 * sort = approval => date
 		 * sort = rejection => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4926,6 +6391,7 @@ export namespace MyNS {
 		 * Use an access_token with write_access to create a new comment on a post.
 		 * This method returns the created comment.
 		 * Post posts/{id}/comments/add
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -4957,6 +6423,8 @@ export namespace MyNS {
 		 * While fairly stable, over time they do change. New ones are introduced with new features, and the reputation requirements change as a site matures.
 		 * This method returns a list of privileges.
 		 * Get privileges
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5013,7 +6481,11 @@ export namespace MyNS {
 		 * sort = month => none
 		 * sort = relevance => none
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5057,7 +6529,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5104,7 +6580,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5152,7 +6632,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5198,7 +6682,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5244,7 +6732,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5287,7 +6779,11 @@ export namespace MyNS {
 		 * @param {string} min sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5337,7 +6833,11 @@ export namespace MyNS {
 		 * sort = votes => number
 		 * sort = rank => none
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5386,7 +6886,11 @@ export namespace MyNS {
 		 * sort = votes => number
 		 * sort = rank => none
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5421,7 +6925,11 @@ export namespace MyNS {
 		 * Get questions/{ids}/timeline
 		 * @param {string} ids Number list (semicolon delimited).
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5454,7 +6962,11 @@ export namespace MyNS {
 		 * Get revisions/{ids}
 		 * @param {string} ids Guid list (semicolon delimited).
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5504,7 +7016,11 @@ export namespace MyNS {
 		 * sort = votes => number
 		 * sort = relevance => none
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5568,7 +7084,11 @@ export namespace MyNS {
 		 * sort = votes => number
 		 * sort = relevance => none
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5588,7 +7108,10 @@ export namespace MyNS {
 		 * For ease of transition from earlier API versions, the filters _b, _ba, _bc, _bca, _a, _ac, and _c are also built in. These are unsafe, and exclude a combination of question and answer body, comments, and answers so as to mimic the body, answers, and comments parameters that have been removed in V2.0. New applications should not use these filters.
 		 * @param {string} callback All API responses are JSON, we do support JSONP with the callback query parameter.
 		 * @param {string} site Each of these methods operates on a single site at a time, identified by the site parameter. This parameter can be the full domain name (ie. "stackoverflow.com"), or a short form identified by api_site_parameter on the site object.
+		 * @param {number} answers Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nottagged String list (semicolon delimited).
+		 * @param {number} user Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} views Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		SearchAdvancedGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndAcceptedAndAnswersAndBodyAndClosedAndMigratedAndNoticeAndNottaggedAndQAndTitleAndUrlAndUserAndViewsAndWiki(tagged: string | null | undefined, order: AnswersGetByOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteOrder | null | undefined, max: string | null | undefined, min: string | null | undefined, sort: SearchGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndIntitleAndNottaggedSort | null | undefined, fromdate: number | null | undefined, todate: number | null | undefined, pagesize: number | null | undefined, page: number | null | undefined, filter: string | null | undefined, callback: string | null | undefined, site: string, accepted: SearchAdvancedGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndAcceptedAndAnswersAndBodyAndClosedAndMigratedAndNoticeAndNottaggedAndQAndTitleAndUrlAndUserAndViewsAndWikiAccepted | null | undefined, answers: number | null | undefined, body: string | null | undefined, closed: SearchAdvancedGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndAcceptedAndAnswersAndBodyAndClosedAndMigratedAndNoticeAndNottaggedAndQAndTitleAndUrlAndUserAndViewsAndWikiAccepted | null | undefined, migrated: SearchAdvancedGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndAcceptedAndAnswersAndBodyAndClosedAndMigratedAndNoticeAndNottaggedAndQAndTitleAndUrlAndUserAndViewsAndWikiAccepted | null | undefined, notice: SearchAdvancedGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndAcceptedAndAnswersAndBodyAndClosedAndMigratedAndNoticeAndNottaggedAndQAndTitleAndUrlAndUserAndViewsAndWikiAccepted | null | undefined, nottagged: string | null | undefined, q: string | null | undefined, title: string | null | undefined, url: string | null | undefined, user: number | null | undefined, views: number | null | undefined, wiki: SearchAdvancedGetByTaggedAndOrderAndMaxAndMinAndSortAndFromdateAndTodateAndPagesizeAndPageAndFilterAndCallbackAndSiteAndAcceptedAndAnswersAndBodyAndClosedAndMigratedAndNoticeAndNottaggedAndQAndTitleAndUrlAndUserAndViewsAndWikiAccepted | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -5620,7 +7143,11 @@ export namespace MyNS {
 		 * sort = votes => number
 		 * sort = relevance => none
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5653,6 +7180,8 @@ export namespace MyNS {
 		 * The pagesize parameter for this method is unbounded, in acknowledgement that for many applications repeatedly fetching from /sites would complicate start-up tasks needlessly.
 		 * This method returns a list of sites.
 		 * Get sites
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5694,7 +7223,11 @@ export namespace MyNS {
 		 * sort = approval => date
 		 * sort = rejection => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5739,7 +7272,11 @@ export namespace MyNS {
 		 * sort = approval => date
 		 * sort = rejection => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5783,7 +7320,11 @@ export namespace MyNS {
 		 * sort = activity => date
 		 * sort = name => string
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5827,7 +7368,11 @@ export namespace MyNS {
 		 * sort = activity => date
 		 * sort = name => string
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5871,7 +7416,11 @@ export namespace MyNS {
 		 * sort = activity => date
 		 * sort = name => string
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5915,7 +7464,11 @@ export namespace MyNS {
 		 * sort = applied => number
 		 * sort = activity => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5948,6 +7501,8 @@ export namespace MyNS {
 		 * This method returns a list of questions.
 		 * Get tags/{tags}/faq
 		 * @param {string} tags String list (semicolon delimited).
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -5992,7 +7547,11 @@ export namespace MyNS {
 		 * sort = activity => date
 		 * sort = name => string
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6026,6 +7585,8 @@ export namespace MyNS {
 		 * This method returns a list of tags.
 		 * Get tags/{tags}/related
 		 * @param {string} tags String list (semicolon delimited).
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6070,7 +7631,11 @@ export namespace MyNS {
 		 * sort = applied => number
 		 * sort = activity => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6103,6 +7668,8 @@ export namespace MyNS {
 		 * This method returns a list of tag wikis.
 		 * Get tags/{tags}/wikis
 		 * @param {string} tags String list (semicolon delimited).
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6133,6 +7700,8 @@ export namespace MyNS {
 		 * This is a view onto the data presented on the tag info page on the sites.
 		 * This method returns a list of tag score objects.
 		 * Get tags/{tag}/top-answerers/{period}
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6163,6 +7732,8 @@ export namespace MyNS {
 		 * This is a view onto the data presented on the tag info page on the sites.
 		 * This method returns a list of tag score objects.
 		 * Get tags/{tag}/top-askers/{period}
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6209,7 +7780,11 @@ export namespace MyNS {
 		 * sort = name => string
 		 * sort = modified => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6256,7 +7831,11 @@ export namespace MyNS {
 		 * sort = name => string
 		 * sort = modified => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6303,7 +7882,11 @@ export namespace MyNS {
 		 * sort = name => string
 		 * sort = modified => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6352,7 +7935,11 @@ export namespace MyNS {
 		 * sort = name => string
 		 * sort = modified => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6397,7 +7984,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6429,6 +8020,8 @@ export namespace MyNS {
 		 * This method returns a list of network_users.
 		 * Get users/{ids}/associated
 		 * @param {string} ids Number list (semicolon delimited).
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6472,7 +8065,11 @@ export namespace MyNS {
 		 * sort = type => string
 		 * sort = awarded => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6514,7 +8111,11 @@ export namespace MyNS {
 		 * @param {string} min sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6552,12 +8153,17 @@ export namespace MyNS {
 		 * This method returns a list of comments.
 		 * Get users/{ids}/comments/{toid}
 		 * @param {string} ids Number list (semicolon delimited).
+		 * @param {number} toid Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} max sort = creation => date
 		 * sort = votes => number
 		 * @param {string} min sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6606,7 +8212,11 @@ export namespace MyNS {
 		 * sort = votes => number
 		 * sort = added => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6648,7 +8258,11 @@ export namespace MyNS {
 		 * @param {string} min sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6683,6 +8297,8 @@ export namespace MyNS {
 		 * This method returns a list of account_merge.
 		 * Get users/{ids}/merges
 		 * @param {string} ids Number list (semicolon delimited).
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6726,7 +8342,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6771,7 +8391,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6817,7 +8441,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6863,7 +8491,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6910,7 +8542,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6944,7 +8580,11 @@ export namespace MyNS {
 		 * Get users/{ids}/reputation
 		 * @param {string} ids Number list (semicolon delimited).
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -6975,6 +8615,8 @@ export namespace MyNS {
 		 * This method returns a list of reputation_history.
 		 * Get users/{ids}/reputation-history
 		 * @param {string} ids Number list (semicolon delimited).
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7019,7 +8661,11 @@ export namespace MyNS {
 		 * sort = approval => date
 		 * sort = rejection => date
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7065,7 +8711,11 @@ export namespace MyNS {
 		 * sort = activity => date
 		 * sort = name => string
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7099,7 +8749,11 @@ export namespace MyNS {
 		 * Get users/{ids}/timeline
 		 * @param {string} ids Number list (semicolon delimited).
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7132,6 +8786,9 @@ export namespace MyNS {
 		 * {id} can contain a single id, to find it programatically look for user_id on user or shallow_user objects.
 		 * This method returns a list of inbox items.
 		 * Get users/{id}/inbox
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7164,6 +8821,9 @@ export namespace MyNS {
 		 * {id} can contain a single id, to find it programatically look for user_id on user or shallow_user objects.
 		 * This method returns a list of inbox items.
 		 * Get users/{id}/inbox/unread
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7184,6 +8844,7 @@ export namespace MyNS {
 		 * @param {string} callback All API responses are JSON, we do support JSONP with the callback query parameter.
 		 * @param {string} site Each of these methods operates on a single site at a time, identified by the site parameter. This parameter can be the full domain name (ie. "stackoverflow.com"), or a short form identified by api_site_parameter on the site object.
 		 * @param {number} since Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		Users_idInboxUnreadGetByPagesizeAndPageAndFilterAndCallbackAndSiteAndSince(id: number, pagesize: number | null | undefined, page: number | null | undefined, filter: string | null | undefined, callback: string | null | undefined, site: string, since: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -7195,6 +8856,9 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "read_inbox".
 		 * This method returns a list of notifications.
 		 * Get users/{id}/notifications
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7225,6 +8889,9 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "read_inbox".
 		 * This method returns a list of notifications.
 		 * Get users/{id}/notifications/unread
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7256,6 +8923,9 @@ export namespace MyNS {
 		 * {id} can contain only a single, to find it programatically look for user_id on user or shallow_user objects.
 		 * This method returns a list of privileges.
 		 * Get users/{id}/privileges
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7286,6 +8956,9 @@ export namespace MyNS {
 		 * This method requires an access_token, with a scope containing "private_info".
 		 * This method returns a list of reputation_history.
 		 * Get users/{id}/reputation-history/full
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7322,6 +8995,7 @@ export namespace MyNS {
 		 * It is possible to create moderately complex queries using sort, min, max, fromdate, and todate.
 		 * This method returns a list of answers.
 		 * Get users/{id}/tags/{tags}/top-answers
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tags String list (semicolon delimited).
 		 * @param {string} max sort = activity => date
 		 * sort = creation => date
@@ -7330,7 +9004,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7367,6 +9045,7 @@ export namespace MyNS {
 		 * It is possible to create moderately complex queries using sort, min, max, fromdate, and todate.
 		 * This method returns a list of questions.
 		 * Get users/{id}/tags/{tags}/top-questions
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} tags String list (semicolon delimited).
 		 * @param {string} max sort = activity => date
 		 * sort = creation => date
@@ -7375,7 +9054,11 @@ export namespace MyNS {
 		 * sort = creation => date
 		 * sort = votes => number
 		 * @param {number} fromdate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} todate Unix date.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7407,6 +9090,9 @@ export namespace MyNS {
 		 * {id} can contain a single id, to find it programatically look for user_id on user or shallow_user objects.
 		 * This method returns a list of top_tag objects.
 		 * Get users/{id}/top-answer-tags
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7438,6 +9124,9 @@ export namespace MyNS {
 		 * {id} can contain a single id, to find it programatically look for user_id on user or shallow_user objects.
 		 * This method returns a list of top_tag objects.
 		 * Get users/{id}/top-question-tags
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.
@@ -7469,6 +9158,9 @@ export namespace MyNS {
 		 * This method does not consider the user's current quota (ie. if they've already exhausted it for today) nor any additional restrictions on write access, such as editing deleted comments.
 		 * This method returns a list of write_permissions.
 		 * Get users/{id}/write-permissions
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} pagesize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} page Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter #Discussion
 		 * The Stack Exchange API allows applications to exclude almost every field returned. For example, if an application did not care about a user's badge counts it could exclude user.badge_counts whenever it calls a method that returns users.
 		 * An application excludes fields by creating a filter (via /filter/create) and passing it to a method in the filter parameter.

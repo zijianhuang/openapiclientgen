@@ -311,8 +311,8 @@ export namespace MyNS {
 
 		/**
 		 * Name for checking availability.
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		name?: string | null;
 
@@ -325,8 +325,8 @@ export namespace MyNS {
 
 		/**
 		 * Name for checking availability.
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -768,6 +768,7 @@ export namespace MyNS {
 		 * Gets all the Analysis Services servers for the given resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers
 		 * @param {string} resourceGroupName The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {AnalysisServicesServers} OK
@@ -780,7 +781,9 @@ export namespace MyNS {
 		 * Gets details about the specified Analysis Services server.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}
 		 * @param {string} resourceGroupName The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the Analysis Services server. It must be a minimum of 3 characters, and a maximum of 63.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {AnalysisServicesServer} OK. The operation was successful.
@@ -793,7 +796,9 @@ export namespace MyNS {
 		 * Provisions the specified Analysis Services server based on the configuration specified in the request.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}
 		 * @param {string} resourceGroupName The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the Analysis Services server. It must be a minimum of 3 characters, and a maximum of 63.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {AnalysisServicesServer} requestBody Contains the information used to provision the Analysis Services server.
@@ -807,7 +812,9 @@ export namespace MyNS {
 		 * Deletes the specified Analysis Services server.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}
 		 * @param {string} resourceGroupName The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} OK.
@@ -820,7 +827,9 @@ export namespace MyNS {
 		 * Updates the current state of the specified Analysis Services server.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}
 		 * @param {string} resourceGroupName The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {AnalysisServicesServerUpdateParameters} requestBody Request object that contains the updated information for the server.
@@ -834,7 +843,9 @@ export namespace MyNS {
 		 * Dissociates a Unified Gateway associated with the server.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/dissociateGateway
 		 * @param {string} resourceGroupName The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} OK.
@@ -847,7 +858,9 @@ export namespace MyNS {
 		 * Return the gateway status of the specified Analysis Services server instance.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/listGatewayStatus
 		 * @param {string} resourceGroupName The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the Analysis Services server.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {GatewayListStatusLive} OK.
@@ -860,7 +873,9 @@ export namespace MyNS {
 		 * Resumes operation of the specified Analysis Services server instance.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/resume
 		 * @param {string} resourceGroupName The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} OK
@@ -873,7 +888,9 @@ export namespace MyNS {
 		 * Lists eligible SKUs for an Analysis Services resource.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/skus
 		 * @param {string} resourceGroupName The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {SkuEnumerationForExistingResourceResult} OK
@@ -886,7 +903,9 @@ export namespace MyNS {
 		 * Suspends operation of the specified Analysis Services server instance.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.AnalysisServices/servers/{serverName}/suspend
 		 * @param {string} resourceGroupName The name of the Azure Resource group of which a given Analysis Services server is part. This name must be at least 1 character in length, and no more than 90.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} serverName The name of the Analysis Services server. It must be at least 3 characters in length, and no more than 63.
+		 *     Min length: 3    Max length: 63
 		 * @param {string} api_version The client API version.
 		 * @param {string} subscriptionId A unique identifier for a Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @return {void} OK.

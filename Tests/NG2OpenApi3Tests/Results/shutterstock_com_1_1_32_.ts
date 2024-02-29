@@ -16,7 +16,10 @@ export namespace MyNS {
 		/** Customer ID that is associated with the user */
 		customer_id?: string | null;
 
-		/** Number of seconds until the access token expires; no expiration if this value is null */
+		/**
+		 * Number of seconds until the access token expires; no expiration if this value is null
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in?: number | null;
 
 		/** Organization ID that is associated with the user */
@@ -47,7 +50,10 @@ export namespace MyNS {
 		/** Customer ID that is associated with the user */
 		customer_id: FormControl<string | null | undefined>,
 
-		/** Number of seconds until the access token expires; no expiration if this value is null */
+		/**
+		 * Number of seconds until the access token expires; no expiration if this value is null
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in: FormControl<number | null | undefined>,
 
 		/** Organization ID that is associated with the user */
@@ -122,10 +128,16 @@ export namespace MyNS {
 	/** An allotment of credits as part of a subscription */
 	export interface Allotment {
 
-		/** Number of credits remaining in the subscription */
+		/**
+		 * Number of credits remaining in the subscription
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloads_left?: number | null;
 
-		/** Total number of credits available to this subscription */
+		/**
+		 * Total number of credits available to this subscription
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloads_limit?: number | null;
 
 		/** Date the subscription ends */
@@ -138,10 +150,16 @@ export namespace MyNS {
 	/** An allotment of credits as part of a subscription */
 	export interface AllotmentFormProperties {
 
-		/** Number of credits remaining in the subscription */
+		/**
+		 * Number of credits remaining in the subscription
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloads_left: FormControl<number | null | undefined>,
 
-		/** Total number of credits available to this subscription */
+		/**
+		 * Total number of credits available to this subscription
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		downloads_limit: FormControl<number | null | undefined>,
 
 		/** Date the subscription ends */
@@ -191,7 +209,10 @@ export namespace MyNS {
 	/** Audio metadata */
 	export interface Audio {
 
-		/** Date this track was added to the Shutterstock library */
+		/**
+		 * Date this track was added to the Shutterstock library
+		 * Type: DateOnly
+		 */
 		added_date?: Date | null;
 
 		/** Affiliate referral link; appears only for registered affiliate partners */
@@ -206,7 +227,10 @@ export namespace MyNS {
 		/** Files that are available as part of an audio asset */
 		assets?: AudioAssets;
 
-		/** BPM (beats per minute) of this track */
+		/**
+		 * BPM (beats per minute) of this track
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bpm?: number | null;
 
 		/**
@@ -219,7 +243,10 @@ export namespace MyNS {
 		/** Description of this track */
 		description?: string | null;
 
-		/** Duration of this track in seconds */
+		/**
+		 * Duration of this track in seconds
+		 * Type: double
+		 */
 		duration?: number | null;
 
 		/** List of all genres for this track */
@@ -291,20 +318,29 @@ export namespace MyNS {
 	/** Audio metadata */
 	export interface AudioFormProperties {
 
-		/** Date this track was added to the Shutterstock library */
+		/**
+		 * Date this track was added to the Shutterstock library
+		 * Type: DateOnly
+		 */
 		added_date: FormControl<Date | null | undefined>,
 
 		/** Affiliate referral link; appears only for registered affiliate partners */
 		affiliate_url: FormControl<string | null | undefined>,
 
-		/** BPM (beats per minute) of this track */
+		/**
+		 * BPM (beats per minute) of this track
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bpm: FormControl<number | null | undefined>,
 		deleted_time: FormControl<Date | null | undefined>,
 
 		/** Description of this track */
 		description: FormControl<string | null | undefined>,
 
-		/** Duration of this track in seconds */
+		/**
+		 * Duration of this track in seconds
+		 * Type: double
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/**
@@ -416,7 +452,10 @@ export namespace MyNS {
 	/** Information about a file that is part of an audio asset */
 	export interface AudioAssetDetails {
 
-		/** File size of the track */
+		/**
+		 * File size of the track
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_size?: number | null;
 
 		/** URL the track is available at */
@@ -426,7 +465,10 @@ export namespace MyNS {
 	/** Information about a file that is part of an audio asset */
 	export interface AudioAssetDetailsFormProperties {
 
-		/** File size of the track */
+		/**
+		 * File size of the track
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_size: FormControl<number | null | undefined>,
 
 		/** URL the track is available at */
@@ -524,13 +566,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -540,13 +591,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateAudioDataListFormGroup() {
@@ -629,7 +689,10 @@ export namespace MyNS {
 		/** The file format preset */
 		preset?: AudioRenderResultPreset | null;
 
-		/** The current progress of the render as a percentage */
+		/**
+		 * The current progress of the render as a percentage
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress_percent?: number | null;
 
 		/**
@@ -663,7 +726,10 @@ export namespace MyNS {
 		/** The file format preset */
 		preset: FormControl<AudioRenderResultPreset | null | undefined>,
 
-		/** The current progress of the render as a percentage */
+		/**
+		 * The current progress of the render as a percentage
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progress_percent: FormControl<number | null | undefined>,
 
 		/**
@@ -694,6 +760,7 @@ export namespace MyNS {
 		/**
 		 * The bit depth of the audio files in bits/sample
 		 * Required
+		 * Type: double
 		 */
 		bits_sample: number;
 
@@ -718,18 +785,21 @@ export namespace MyNS {
 		/**
 		 * The Sample rate of the audio files in Hertz (Hz)
 		 * Required
+		 * Type: double
 		 */
 		frequency_hz: number;
 
 		/**
 		 * The data rate of the audio files in kilobits/second
 		 * Required
+		 * Type: double
 		 */
 		kbits_second: number;
 
 		/**
 		 * Size of the file in bytes
 		 * Required
+		 * Type: double
 		 */
 		size_bytes: number;
 
@@ -746,6 +816,7 @@ export namespace MyNS {
 		/**
 		 * The bit depth of the audio files in bits/sample
 		 * Required
+		 * Type: double
 		 */
 		bits_sample: FormControl<number | null | undefined>,
 
@@ -770,18 +841,21 @@ export namespace MyNS {
 		/**
 		 * The Sample rate of the audio files in Hertz (Hz)
 		 * Required
+		 * Type: double
 		 */
 		frequency_hz: FormControl<number | null | undefined>,
 
 		/**
 		 * The data rate of the audio files in kilobits/second
 		 * Required
+		 * Type: double
 		 */
 		kbits_second: FormControl<number | null | undefined>,
 
 		/**
 		 * Size of the file in bytes
 		 * Required
+		 * Type: double
 		 */
 		size_bytes: FormControl<number | null | undefined>,
 	}
@@ -823,7 +897,10 @@ export namespace MyNS {
 	/** The beginning of a non-overlapping period of absolute time */
 	export interface AudioRenderTimelineSpan {
 
-		/** An identifier which must be unique within the parent span */
+		/**
+		 * An identifier which must be unique within the parent span
+		 * Type: double
+		 */
 		id?: number | null;
 
 		/** An array of instrument_group objects that are used in this span */
@@ -838,7 +915,10 @@ export namespace MyNS {
 		 */
 		span_type: AudioRenderTimelineSpanSpan_type;
 
-		/** The tempo, in beats per minute, at the start of the span; if not provided, the API selects a random tempo */
+		/**
+		 * The tempo, in beats per minute, at the start of the span; if not provided, the API selects a random tempo
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tempo?: number | null;
 
 		/** Two or more inflection points in a tempo curve; the API creates a smoothly changing tempo by using a linear interpolation of the time between each tempo change */
@@ -847,6 +927,7 @@ export namespace MyNS {
 		/**
 		 * The absolute time, in seconds, at which the span starts
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		time: number;
 	}
@@ -854,7 +935,10 @@ export namespace MyNS {
 	/** The beginning of a non-overlapping period of absolute time */
 	export interface AudioRenderTimelineSpanFormProperties {
 
-		/** An identifier which must be unique within the parent span */
+		/**
+		 * An identifier which must be unique within the parent span
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/**
@@ -863,12 +947,16 @@ export namespace MyNS {
 		 */
 		span_type: FormControl<AudioRenderTimelineSpanSpan_type | null | undefined>,
 
-		/** The tempo, in beats per minute, at the start of the span; if not provided, the API selects a random tempo */
+		/**
+		 * The tempo, in beats per minute, at the start of the span; if not provided, the API selects a random tempo
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		tempo: FormControl<number | null | undefined>,
 
 		/**
 		 * The absolute time, in seconds, at which the span starts
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		time: FormControl<number | null | undefined>,
 	}
@@ -919,6 +1007,7 @@ export namespace MyNS {
 		/**
 		 * The beat, relative to the span, at which the status begins
 		 * Required
+		 * Type: double
 		 */
 		beat: number;
 
@@ -935,6 +1024,7 @@ export namespace MyNS {
 		/**
 		 * The beat, relative to the span, at which the status begins
 		 * Required
+		 * Type: double
 		 */
 		beat: FormControl<number | null | undefined>,
 
@@ -961,6 +1051,7 @@ export namespace MyNS {
 		/**
 		 * The beat, relative to the span, at which the region object's music begins
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		beat: number;
 
@@ -976,6 +1067,7 @@ export namespace MyNS {
 		/**
 		 * An identifier which must be unique within the parent span
 		 * Required
+		 * Type: double
 		 */
 		id: number;
 
@@ -995,6 +1087,7 @@ export namespace MyNS {
 		/**
 		 * The beat, relative to the span, at which the region object's music begins
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		beat: FormControl<number | null | undefined>,
 
@@ -1007,6 +1100,7 @@ export namespace MyNS {
 		/**
 		 * An identifier which must be unique within the parent span
 		 * Required
+		 * Type: double
 		 */
 		id: FormControl<number | null | undefined>,
 
@@ -1031,6 +1125,7 @@ export namespace MyNS {
 		/**
 		 * The beat, relative to the start of the active region, at which the end_type begins; in other words, the ending starts on this beat of the region
 		 * Required
+		 * Type: double
 		 */
 		beat: number;
 
@@ -1051,6 +1146,7 @@ export namespace MyNS {
 		/**
 		 * The beat, relative to the start of the active region, at which the end_type begins; in other words, the ending starts on this beat of the region
 		 * Required
+		 * Type: double
 		 */
 		beat: FormControl<number | null | undefined>,
 
@@ -1127,12 +1223,14 @@ export namespace MyNS {
 		/**
 		 * The tempo, in beats per minute, active at this time
 		 * Required
+		 * Type: double
 		 */
 		tempo: number;
 
 		/**
 		 * The time, in seconds, at which the tempo exists
 		 * Required
+		 * Type: double
 		 */
 		time: number;
 	}
@@ -1143,12 +1241,14 @@ export namespace MyNS {
 		/**
 		 * The tempo, in beats per minute, active at this time
 		 * Required
+		 * Type: double
 		 */
 		tempo: FormControl<number | null | undefined>,
 
 		/**
 		 * The time, in seconds, at which the tempo exists
 		 * Required
+		 * Type: double
 		 */
 		time: FormControl<number | null | undefined>,
 	}
@@ -1193,10 +1293,16 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
 		/**
@@ -1208,6 +1314,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results across all pages
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: number;
 	}
@@ -1218,10 +1325,16 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
@@ -1233,6 +1346,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results across all pages
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: FormControl<number | null | undefined>,
 	}
@@ -1313,16 +1427,28 @@ export namespace MyNS {
 	/** Data required to search for an image */
 	export interface SearchImage {
 
-		/** Show images added on the specified date */
+		/**
+		 * Show images added on the specified date
+		 * Type: DateOnly
+		 */
 		added_date?: Date | null;
 
-		/** Show images added before the specified date */
+		/**
+		 * Show images added before the specified date
+		 * Type: DateOnly
+		 */
 		added_date_end?: Date | null;
 
-		/** Show images added on or after the specified date */
+		/**
+		 * Show images added on or after the specified date
+		 * Type: DateOnly
+		 */
 		added_date_start?: Date | null;
 
-		/** Show images with the specified aspect ratio, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image */
+		/**
+		 * Show images with the specified aspect ratio, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		 * Type: double
+		 */
 		aspect_ratio?: number | null;
 
 		/**
@@ -1355,13 +1481,22 @@ export namespace MyNS {
 		/** Fields to display in the response; see the documentation for the fields parameter in the overview section */
 		fields?: string | null;
 
-		/** (Deprecated; use height_from and height_to instead) Show images with the specified height */
+		/**
+		 * (Deprecated; use height_from and height_to instead) Show images with the specified height
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** Show images with the specified height or larger, in pixels */
+		/**
+		 * Show images with the specified height or larger, in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height_from?: number | null;
 
-		/** Show images with the specified height or smaller, in pixels */
+		/**
+		 * Show images with the specified height or smaller, in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height_to?: number | null;
 
 		/** Show images of the specified type */
@@ -1432,29 +1567,50 @@ export namespace MyNS {
 		/** Amount of detail to render in the response */
 		view?: SearchImageView | null;
 
-		/** (Deprecated; use width_from and width_to instead) Show images with the specified width */
+		/**
+		 * (Deprecated; use width_from and width_to instead) Show images with the specified width
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 
-		/** Show images with the specified width or larger, in pixels */
+		/**
+		 * Show images with the specified width or larger, in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width_from?: number | null;
 
-		/** Show images with the specified width or smaller, in pixels */
+		/**
+		 * Show images with the specified width or smaller, in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width_to?: number | null;
 	}
 
 	/** Data required to search for an image */
 	export interface SearchImageFormProperties {
 
-		/** Show images added on the specified date */
+		/**
+		 * Show images added on the specified date
+		 * Type: DateOnly
+		 */
 		added_date: FormControl<Date | null | undefined>,
 
-		/** Show images added before the specified date */
+		/**
+		 * Show images added before the specified date
+		 * Type: DateOnly
+		 */
 		added_date_end: FormControl<Date | null | undefined>,
 
-		/** Show images added on or after the specified date */
+		/**
+		 * Show images added on or after the specified date
+		 * Type: DateOnly
+		 */
 		added_date_start: FormControl<Date | null | undefined>,
 
-		/** Show images with the specified aspect ratio, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image */
+		/**
+		 * Show images with the specified aspect ratio, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		 * Type: double
+		 */
 		aspect_ratio: FormControl<number | null | undefined>,
 
 		/**
@@ -1481,13 +1637,22 @@ export namespace MyNS {
 		/** Fields to display in the response; see the documentation for the fields parameter in the overview section */
 		fields: FormControl<string | null | undefined>,
 
-		/** (Deprecated; use height_from and height_to instead) Show images with the specified height */
+		/**
+		 * (Deprecated; use height_from and height_to instead) Show images with the specified height
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Show images with the specified height or larger, in pixels */
+		/**
+		 * Show images with the specified height or larger, in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height_from: FormControl<number | null | undefined>,
 
-		/** Show images with the specified height or smaller, in pixels */
+		/**
+		 * Show images with the specified height or smaller, in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height_to: FormControl<number | null | undefined>,
 
 		/** Hide results with potentially unsafe keywords */
@@ -1546,13 +1711,22 @@ export namespace MyNS {
 		/** Amount of detail to render in the response */
 		view: FormControl<SearchImageView | null | undefined>,
 
-		/** (Deprecated; use width_from and width_to instead) Show images with the specified width */
+		/**
+		 * (Deprecated; use width_from and width_to instead) Show images with the specified width
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 
-		/** Show images with the specified width or larger, in pixels */
+		/**
+		 * Show images with the specified width or larger, in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width_from: FormControl<number | null | undefined>,
 
-		/** Show images with the specified width or smaller, in pixels */
+		/**
+		 * Show images with the specified width or smaller, in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width_to: FormControl<number | null | undefined>,
 	}
 	export function CreateSearchImageFormGroup() {
@@ -1644,10 +1818,16 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
 		/**
@@ -1662,6 +1842,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results across all pages
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: number;
 	}
@@ -1672,10 +1853,16 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
@@ -1690,6 +1877,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results across all pages
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: FormControl<number | null | undefined>,
 	}
@@ -1709,13 +1897,19 @@ export namespace MyNS {
 	/** Information about an image */
 	export interface Image {
 
-		/** Date that the image was added by the contributor */
+		/**
+		 * Date that the image was added by the contributor
+		 * Type: DateOnly
+		 */
 		added_date?: Date | null;
 
 		/** Affiliate referral link; appears only for registered affiliate partners */
 		affiliate_url?: string | null;
 
-		/** Aspect ratio of the image in decimal format, such as 0.6667 */
+		/**
+		 * Aspect ratio of the image in decimal format, such as 0.6667
+		 * Type: double
+		 */
 		aspect?: number | null;
 
 		/** Information about the assets that are part of an image */
@@ -1785,13 +1979,19 @@ export namespace MyNS {
 	/** Information about an image */
 	export interface ImageFormProperties {
 
-		/** Date that the image was added by the contributor */
+		/**
+		 * Date that the image was added by the contributor
+		 * Type: DateOnly
+		 */
 		added_date: FormControl<Date | null | undefined>,
 
 		/** Affiliate referral link; appears only for registered affiliate partners */
 		affiliate_url: FormControl<string | null | undefined>,
 
-		/** Aspect ratio of the image in decimal format, such as 0.6667 */
+		/**
+		 * Aspect ratio of the image in decimal format, such as 0.6667
+		 * Type: double
+		 */
 		aspect: FormControl<number | null | undefined>,
 
 		/** Detailed description of the image */
@@ -1902,21 +2102,32 @@ export namespace MyNS {
 
 		/** Display name of this image size */
 		display_name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dpi?: number | null;
 
-		/** File size (in bytes) of this image size */
+		/**
+		 * File size (in bytes) of this image size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_size?: number | null;
 
 		/** Format of this image size */
 		format?: string | null;
 
-		/** Height of this image size */
+		/**
+		 * Height of this image size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Whether or not this image can be licensed in this image size */
 		is_licensable?: boolean | null;
 
-		/** Width of this image size */
+		/**
+		 * Width of this image size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -1925,21 +2136,32 @@ export namespace MyNS {
 
 		/** Display name of this image size */
 		display_name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		dpi: FormControl<number | null | undefined>,
 
-		/** File size (in bytes) of this image size */
+		/**
+		 * File size (in bytes) of this image size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_size: FormControl<number | null | undefined>,
 
 		/** Format of this image size */
 		format: FormControl<string | null | undefined>,
 
-		/** Height of this image size */
+		/**
+		 * Height of this image size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Whether or not this image can be licensed in this image size */
 		is_licensable: FormControl<boolean | null | undefined>,
 
-		/** Width of this image size */
+		/**
+		 * Width of this image size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageSizeDetailsFormGroup() {
@@ -1962,6 +2184,7 @@ export namespace MyNS {
 		/**
 		 * Height in pixels of the image thumbnail
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: number;
 
@@ -1974,6 +2197,7 @@ export namespace MyNS {
 		/**
 		 * Width in pixels of the image thumbnail
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: number;
 	}
@@ -1984,6 +2208,7 @@ export namespace MyNS {
 		/**
 		 * Height in pixels of the image thumbnail
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		height: FormControl<number | null | undefined>,
 
@@ -1996,6 +2221,7 @@ export namespace MyNS {
 		/**
 		 * Width in pixels of the image thumbnail
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		width: FormControl<number | null | undefined>,
 	}
@@ -2096,10 +2322,14 @@ export namespace MyNS {
 
 	export interface InsightsLabel_performance {
 		name?: string | null;
+
+		/** Type: double */
 		percentile_performance?: number | null;
 	}
 	export interface InsightsLabel_performanceFormProperties {
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		percentile_performance: FormControl<number | null | undefined>,
 	}
 	export function CreateInsightsLabel_performanceFormGroup() {
@@ -2132,7 +2362,10 @@ export namespace MyNS {
 		 */
 		role_assignments: CatalogCollectionRoleAssignments;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total_item_count: number;
 
 		/** Required */
@@ -2154,7 +2387,10 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total_item_count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2320,26 +2556,44 @@ export namespace MyNS {
 		 */
 		data: Array<CatalogCollection>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		page: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		per_page: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total_count: number;
 	}
 
 	/** List of catalog collections */
 	export interface CatalogCollectionDataListFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateCatalogCollectionDataListFormGroup() {
@@ -2361,26 +2615,44 @@ export namespace MyNS {
 		 */
 		data: Array<CatalogCollectionItem>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		page: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		per_page: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total_count: number;
 	}
 
 	/** List of catalog collection items */
 	export interface CatalogCollectionItemDataListFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateCatalogCollectionItemDataListFormGroup() {
@@ -2405,13 +2677,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** The current page of results */
+		/**
+		 * The current page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of results per page */
+		/**
+		 * The number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** The total number of results across all pages */
+		/**
+		 * The total number of results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -2421,13 +2702,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** The current page of results */
+		/**
+		 * The current page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of results per page */
+		/**
+		 * The number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The total number of results across all pages */
+		/**
+		 * The total number of results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateCategoryDataListFormGroup() {
@@ -2474,6 +2764,7 @@ export namespace MyNS {
 		/**
 		 * The number of items in the collection
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_item_count: number;
 
@@ -2511,6 +2802,7 @@ export namespace MyNS {
 		/**
 		 * The number of items in the collection
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_item_count: FormControl<number | null | undefined>,
 
@@ -2639,13 +2931,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** The current page of results */
+		/**
+		 * The current page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of results per page */
+		/**
+		 * The number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** The total number of results across all pages */
+		/**
+		 * The total number of results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -2655,13 +2956,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** The current page of results */
+		/**
+		 * The current page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of results per page */
+		/**
+		 * The number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The total number of results across all pages */
+		/**
+		 * The total number of results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateCollectionDataListFormGroup() {
@@ -2687,13 +2997,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** The current page of results */
+		/**
+		 * The current page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of results per page */
+		/**
+		 * The number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** The total number of results across all pages */
+		/**
+		 * The total number of results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -2703,13 +3022,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** The current page of results */
+		/**
+		 * The current page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of results per page */
+		/**
+		 * The number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The total number of results across all pages */
+		/**
+		 * The total number of results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateCollectionItemDataListFormGroup() {
@@ -2936,13 +3264,22 @@ export namespace MyNS {
 		/** Error message */
 		message?: string | null;
 
-		/** Page of response */
+		/**
+		 * Page of response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of contributors per page */
+		/**
+		 * Number of contributors per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of contributors for this request */
+		/**
+		 * Total count of contributors for this request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -2952,13 +3289,22 @@ export namespace MyNS {
 		/** Error message */
 		message: FormControl<string | null | undefined>,
 
-		/** Page of response */
+		/**
+		 * Page of response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of contributors per page */
+		/**
+		 * Number of contributors per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of contributors for this request */
+		/**
+		 * Total count of contributors for this request
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateContributorProfileDataListFormGroup() {
@@ -3084,8 +3430,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		name: string;
 		visibility?: CatalogCollectionVisibility | null;
@@ -3094,8 +3440,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		name: FormControl<string | null | undefined>,
 		visibility: FormControl<CatalogCollectionVisibility | null | undefined>,
@@ -3202,7 +3548,10 @@ export namespace MyNS {
 	/** Information about a descriptor */
 	export interface Descriptors {
 
-		/** The average ratio of the length of the music to the time it takes to render; for example, a render speed of 3.0 generates 30 seconds of music in about 10 seconds */
+		/**
+		 * The average ratio of the length of the music to the time it takes to render; for example, a render speed of 3.0 generates 30 seconds of music in about 10 seconds
+		 * Type: double
+		 */
 		average_render_speed?: number | null;
 
 		/** The bands that are available to use this descriptor */
@@ -3214,10 +3563,16 @@ export namespace MyNS {
 		/** The instruments that can play with this descriptor */
 		instruments?: Array<Instruments>;
 
-		/** The maximum beats per minute that the descriptor is intended to be used with */
+		/**
+		 * The maximum beats per minute that the descriptor is intended to be used with
+		 * Type: double
+		 */
 		max_tempo?: number | null;
 
-		/** The minimum beats per minute that the descriptor is intended to be used with */
+		/**
+		 * The minimum beats per minute that the descriptor is intended to be used with
+		 * Type: double
+		 */
 		min_tempo?: number | null;
 
 		/** The name of the descriptor */
@@ -3233,16 +3588,25 @@ export namespace MyNS {
 	/** Information about a descriptor */
 	export interface DescriptorsFormProperties {
 
-		/** The average ratio of the length of the music to the time it takes to render; for example, a render speed of 3.0 generates 30 seconds of music in about 10 seconds */
+		/**
+		 * The average ratio of the length of the music to the time it takes to render; for example, a render speed of 3.0 generates 30 seconds of music in about 10 seconds
+		 * Type: double
+		 */
 		average_render_speed: FormControl<number | null | undefined>,
 
 		/** The ID of the descriptor */
 		id: FormControl<string | null | undefined>,
 
-		/** The maximum beats per minute that the descriptor is intended to be used with */
+		/**
+		 * The maximum beats per minute that the descriptor is intended to be used with
+		 * Type: double
+		 */
 		max_tempo: FormControl<number | null | undefined>,
 
-		/** The minimum beats per minute that the descriptor is intended to be used with */
+		/**
+		 * The minimum beats per minute that the descriptor is intended to be used with
+		 * Type: double
+		 */
 		min_tempo: FormControl<number | null | undefined>,
 
 		/** The name of the descriptor */
@@ -3324,20 +3688,32 @@ export namespace MyNS {
 		/** List of descriptors */
 		data?: Array<Descriptors>;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 	}
 
 	/** List Descriptors results */
 	export interface DescriptorsListResultFormProperties {
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 	}
 	export function CreateDescriptorsListResultFormGroup() {
@@ -3575,13 +3951,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** The current page of results */
+		/**
+		 * The current page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of results per page */
+		/**
+		 * The number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** The total number of results across all pages */
+		/**
+		 * The total number of results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -3591,13 +3976,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** The current page of results */
+		/**
+		 * The current page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of results per page */
+		/**
+		 * The number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The total number of results across all pages */
+		/**
+		 * The total number of results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateDownloadHistoryDataListFormGroup() {
@@ -3682,6 +4076,8 @@ export namespace MyNS {
 
 	/** Metadata about editorial content */
 	export interface EditorialContent {
+
+		/** Type: double */
 		aspect?: number | null;
 
 		/** Asset information, including size and thumbnail URLs */
@@ -3691,6 +4087,8 @@ export namespace MyNS {
 
 		/** List of categories */
 		categories?: Array<EditorialCategory>;
+
+		/** Type: DateOnly */
 		date_taken?: Date | null;
 		description?: string | null;
 
@@ -3703,9 +4101,13 @@ export namespace MyNS {
 
 	/** Metadata about editorial content */
 	export interface EditorialContentFormProperties {
+
+		/** Type: double */
 		aspect: FormControl<number | null | undefined>,
 		byline: FormControl<string | null | undefined>,
 		caption: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		date_taken: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 
@@ -3741,13 +4143,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message?: string | null;
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results */
+		/**
+		 * Total count of all results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -3757,13 +4168,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results */
+		/**
+		 * Total count of all results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateEditorialContentDataListFormGroup() {
@@ -3779,6 +4199,8 @@ export namespace MyNS {
 
 	/** Cover image for editorial livefeed */
 	export interface EditorialCoverItem {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height?: number | null;
 
 		/** Required */
@@ -3786,11 +4208,15 @@ export namespace MyNS {
 
 		/** Required */
 		url: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width?: number | null;
 	}
 
 	/** Cover image for editorial livefeed */
 	export interface EditorialCoverItemFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		height: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3798,6 +4224,8 @@ export namespace MyNS {
 
 		/** Required */
 		url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateEditorialCoverItemFormGroup() {
@@ -3838,13 +4266,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message?: string | null;
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results */
+		/**
+		 * Total count of all results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -3854,13 +4291,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results */
+		/**
+		 * Total count of all results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateEditorialImageContentDataListFormGroup() {
@@ -3898,6 +4344,7 @@ export namespace MyNS {
 		/**
 		 * Total count of items in the livefeed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_item_count: number;
 	}
@@ -3923,6 +4370,7 @@ export namespace MyNS {
 		/**
 		 * Total count of items in the livefeed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_item_count: FormControl<number | null | undefined>,
 	}
@@ -3949,15 +4397,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message?: string | null;
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
 		/**
 		 * Total count of all results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: number;
 	}
@@ -3968,15 +4423,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Total count of all results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: FormControl<number | null | undefined>,
 	}
@@ -4015,6 +4477,7 @@ export namespace MyNS {
 		/**
 		 * Total count of items in the livefeed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_item_count: number;
 	}
@@ -4040,6 +4503,7 @@ export namespace MyNS {
 		/**
 		 * Total count of items in the livefeed
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_item_count: FormControl<number | null | undefined>,
 	}
@@ -4066,15 +4530,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message?: string | null;
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
 		/**
 		 * Total count of all results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: number;
 	}
@@ -4085,15 +4556,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
 		 * Total count of all results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: FormControl<number | null | undefined>,
 	}
@@ -4123,10 +4601,16 @@ export namespace MyNS {
 		/** Cursor value that represents the next page of results */
 		next?: string | null;
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
 		/** Cursor value that represents the previous page of results */
@@ -4138,6 +4622,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: number;
 	}
@@ -4151,10 +4636,16 @@ export namespace MyNS {
 		/** Cursor value that represents the next page of results */
 		next: FormControl<string | null | undefined>,
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/** Cursor value that represents the previous page of results */
@@ -4166,6 +4657,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: FormControl<number | null | undefined>,
 	}
@@ -4185,6 +4677,8 @@ export namespace MyNS {
 
 	/** Metadata about updated editorial content */
 	export interface EditorialUpdatedContent {
+
+		/** Type: double */
 		aspect?: number | null;
 
 		/** Asset information, including size and thumbnail URLs */
@@ -4196,6 +4690,8 @@ export namespace MyNS {
 		categories?: Array<EditorialCategory>;
 		commercial_status?: any;
 		created_time?: Date | null;
+
+		/** Type: DateOnly */
 		date_taken?: Date | null;
 		description?: string | null;
 
@@ -4212,11 +4708,15 @@ export namespace MyNS {
 
 	/** Metadata about updated editorial content */
 	export interface EditorialUpdatedContentFormProperties {
+
+		/** Type: double */
 		aspect: FormControl<number | null | undefined>,
 		byline: FormControl<string | null | undefined>,
 		caption: FormControl<string | null | undefined>,
 		commercial_status: FormControl<any | null | undefined>,
 		created_time: FormControl<Date | null | undefined>,
+
+		/** Type: DateOnly */
 		date_taken: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 
@@ -4274,7 +4774,10 @@ export namespace MyNS {
 		/** Cursor value that represents the next page of results */
 		next?: string | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
 		/** Cursor value that represents the previous page of results */
@@ -4290,7 +4793,10 @@ export namespace MyNS {
 		/** Cursor value that represents the next page of results */
 		next: FormControl<string | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/** Cursor value that represents the previous page of results */
@@ -4339,22 +4845,34 @@ export namespace MyNS {
 		/** Display name of this video size */
 		display_name?: string | null;
 
-		/** File size (in bytes) of this video size */
+		/**
+		 * File size (in bytes) of this video size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_size?: number | null;
 
 		/** Format of this video size */
 		format?: string | null;
 
-		/** Frames per second of this video size */
+		/**
+		 * Frames per second of this video size
+		 * Type: double
+		 */
 		fps?: number | null;
 
-		/** Height of this video size */
+		/**
+		 * Height of this video size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Whether or not videos can be licensed in this video size */
 		is_licensable?: boolean | null;
 
-		/** Width of this video size */
+		/**
+		 * Width of this video size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -4364,22 +4882,34 @@ export namespace MyNS {
 		/** Display name of this video size */
 		display_name: FormControl<string | null | undefined>,
 
-		/** File size (in bytes) of this video size */
+		/**
+		 * File size (in bytes) of this video size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_size: FormControl<number | null | undefined>,
 
 		/** Format of this video size */
 		format: FormControl<string | null | undefined>,
 
-		/** Frames per second of this video size */
+		/**
+		 * Frames per second of this video size
+		 * Type: double
+		 */
 		fps: FormControl<number | null | undefined>,
 
-		/** Height of this video size */
+		/**
+		 * Height of this video size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Whether or not videos can be licensed in this video size */
 		is_licensable: FormControl<boolean | null | undefined>,
 
-		/** Width of this video size */
+		/**
+		 * Width of this video size
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoSizeDetailsFormGroup() {
@@ -4440,6 +4970,8 @@ export namespace MyNS {
 
 	/** Metadata about editorial content */
 	export interface EditorialVideoContent {
+
+		/** Type: double */
 		aspect?: number | null;
 
 		/** Asset information, including size and thumbnail URLs */
@@ -4449,6 +4981,8 @@ export namespace MyNS {
 
 		/** List of categories */
 		categories?: Array<EditorialCategory>;
+
+		/** Type: DateOnly */
 		date_taken?: Date | null;
 		description?: string | null;
 
@@ -4460,9 +4994,13 @@ export namespace MyNS {
 
 	/** Metadata about editorial content */
 	export interface EditorialVideoContentFormProperties {
+
+		/** Type: double */
 		aspect: FormControl<number | null | undefined>,
 		byline: FormControl<string | null | undefined>,
 		caption: FormControl<string | null | undefined>,
+
+		/** Type: DateOnly */
 		date_taken: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 
@@ -4499,10 +5037,16 @@ export namespace MyNS {
 		/** Cursor value that represents the next page of results */
 		next?: string | null;
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
 		/** Cursor value that represents the previous page of results */
@@ -4514,6 +5058,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: number;
 	}
@@ -4527,10 +5072,16 @@ export namespace MyNS {
 		/** Cursor value that represents the next page of results */
 		next: FormControl<string | null | undefined>,
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/** Cursor value that represents the previous page of results */
@@ -4542,6 +5093,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: FormControl<number | null | undefined>,
 	}
@@ -4592,6 +5144,7 @@ export namespace MyNS {
 		/**
 		 * Total number of items in the collection
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_item_count: number;
 
@@ -4626,6 +5179,7 @@ export namespace MyNS {
 		/**
 		 * Total number of items in the collection
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_item_count: FormControl<number | null | undefined>,
 
@@ -4685,13 +5239,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -4701,13 +5264,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateFeaturedCollectionDataListFormGroup() {
@@ -4815,13 +5387,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -4831,13 +5412,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateImageDataListFormGroup() {
@@ -4911,20 +5501,32 @@ export namespace MyNS {
 		/** List of instrumnets */
 		data?: Array<Instrument>;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 	}
 
 	/** Image search results */
 	export interface InstrumentsListResultFormProperties {
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 	}
 	export function CreateInstrumentsListResultFormGroup() {
@@ -5034,7 +5636,10 @@ export namespace MyNS {
 	/** The response to a licensing request for an audio track */
 	export interface LicenseAudioResult {
 
-		/** Number of credits that this licensing event used */
+		/**
+		 * Number of credits that this licensing event used
+		 * Type: double
+		 */
 		allotment_charge?: number | null;
 
 		/**
@@ -5056,7 +5661,10 @@ export namespace MyNS {
 	/** The response to a licensing request for an audio track */
 	export interface LicenseAudioResultFormProperties {
 
-		/** Number of credits that this licensing event used */
+		/**
+		 * Number of credits that this licensing event used
+		 * Type: double
+		 */
 		allotment_charge: FormControl<number | null | undefined>,
 
 		/**
@@ -5094,13 +5702,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -5110,13 +5727,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateLicenseAudioResultDataListFormGroup() {
@@ -5225,7 +5851,10 @@ export namespace MyNS {
 	/** The response to a licensing request for editorial content */
 	export interface LicenseEditorialContentResult {
 
-		/** For pre-paid plans, how many credits were used for the item license */
+		/**
+		 * For pre-paid plans, how many credits were used for the item license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allotment_charge?: number | null;
 
 		/** URL object */
@@ -5242,7 +5871,10 @@ export namespace MyNS {
 	/** The response to a licensing request for editorial content */
 	export interface LicenseEditorialContentResultFormProperties {
 
-		/** For pre-paid plans, how many credits were used for the item license */
+		/**
+		 * For pre-paid plans, how many credits were used for the item license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allotment_charge: FormControl<number | null | undefined>,
 
 		/**
@@ -5301,13 +5933,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message?: string | null;
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results */
+		/**
+		 * Total count of all results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -5317,13 +5958,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page of the response */
+		/**
+		 * Current page of the response
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results */
+		/**
+		 * Total count of all results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateLicenseEditorialContentResultsFormGroup() {
@@ -5429,7 +6079,10 @@ export namespace MyNS {
 		/** Media type of the license */
 		media_type?: LicenseFormatMedia_type | null;
 
-		/** Width of the media, in pixels, allowed by this license */
+		/**
+		 * Width of the media, in pixels, allowed by this license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min_resolution?: number | null;
 
 		/** Keyword that details the size of the media, such as hd or sd for video, huge or vector for images */
@@ -5448,7 +6101,10 @@ export namespace MyNS {
 		/** Media type of the license */
 		media_type: FormControl<LicenseFormatMedia_type | null | undefined>,
 
-		/** Width of the media, in pixels, allowed by this license */
+		/**
+		 * Width of the media, in pixels, allowed by this license
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		min_resolution: FormControl<number | null | undefined>,
 
 		/** Keyword that details the size of the media, such as hd or sd for video, huge or vector for images */
@@ -5492,7 +6148,10 @@ export namespace MyNS {
 		/** Additional information for license requests for enterprise accounts and API subscriptions, 4 fields maximum; which fields are required is set by the account holder */
 		metadata?: LicenseRequestMetadata;
 
-		/** For revenue-sharing transactions, the final cost to the end customer as a floating-point number in the transaction currency, such as 12.34 */
+		/**
+		 * For revenue-sharing transactions, the final cost to the end customer as a floating-point number in the transaction currency, such as 12.34
+		 * Type: double
+		 */
 		price?: number | null;
 
 		/** ID of the search that led to this licensing transaction */
@@ -5526,7 +6185,10 @@ export namespace MyNS {
 		 */
 		image_id: FormControl<string | null | undefined>,
 
-		/** For revenue-sharing transactions, the final cost to the end customer as a floating-point number in the transaction currency, such as 12.34 */
+		/**
+		 * For revenue-sharing transactions, the final cost to the end customer as a floating-point number in the transaction currency, such as 12.34
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** ID of the search that led to this licensing transaction */
@@ -5588,7 +6250,10 @@ export namespace MyNS {
 	/** The response to a licensing request for an image */
 	export interface LicenseImageResult {
 
-		/** Number of credits that this licensing event used */
+		/**
+		 * Number of credits that this licensing event used
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allotment_charge?: number | null;
 
 		/** URL object */
@@ -5613,7 +6278,10 @@ export namespace MyNS {
 	/** The response to a licensing request for an image */
 	export interface LicenseImageResultFormProperties {
 
-		/** Number of credits that this licensing event used */
+		/**
+		 * Number of credits that this licensing event used
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allotment_charge: FormControl<number | null | undefined>,
 
 		/** Error message, appears only if there was an error */
@@ -5642,7 +6310,10 @@ export namespace MyNS {
 	/** Price */
 	export interface Price {
 
-		/** Floating-point amount of the calculated rev-share price in the currency local_currency */
+		/**
+		 * Floating-point amount of the calculated rev-share price in the currency local_currency
+		 * Type: double
+		 */
 		local_amount?: number | null;
 
 		/** Currency of the rev-share price that was calculated */
@@ -5652,7 +6323,10 @@ export namespace MyNS {
 	/** Price */
 	export interface PriceFormProperties {
 
-		/** Floating-point amount of the calculated rev-share price in the currency local_currency */
+		/**
+		 * Floating-point amount of the calculated rev-share price in the currency local_currency
+		 * Type: double
+		 */
 		local_amount: FormControl<number | null | undefined>,
 
 		/** Currency of the rev-share price that was calculated */
@@ -5679,13 +6353,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -5695,13 +6378,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateLicenseImageResultDataListFormGroup() {
@@ -5736,7 +6428,10 @@ export namespace MyNS {
 		/** Additional information for license requests for enterprise accounts and API subscriptions, 4 fields maximum; which fields are required is set by the account holder */
 		metadata?: LicenseRequestMetadata;
 
-		/** For revenue-sharing transactions, the final cost to the end customer as a floating-point number in the transaction currency, such as 12.34 */
+		/**
+		 * For revenue-sharing transactions, the final cost to the end customer as a floating-point number in the transaction currency, such as 12.34
+		 * Type: double
+		 */
 		price?: number | null;
 
 		/** ID of the search that led to this licensing transaction */
@@ -5770,7 +6465,10 @@ export namespace MyNS {
 		 */
 		image_id: FormControl<string | null | undefined>,
 
-		/** For revenue-sharing transactions, the final cost to the end customer as a floating-point number in the transaction currency, such as 12.34 */
+		/**
+		 * For revenue-sharing transactions, the final cost to the end customer as a floating-point number in the transaction currency, such as 12.34
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** ID of the search that led to this licensing transaction */
@@ -5884,7 +6582,10 @@ export namespace MyNS {
 	/** The response to a licensing request for an sound effects */
 	export interface LicenseSFXResult {
 
-		/** Number of credits that this licensing event used */
+		/**
+		 * Number of credits that this licensing event used
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allotment_charge?: number | null;
 
 		/** URL object */
@@ -5906,7 +6607,10 @@ export namespace MyNS {
 	/** The response to a licensing request for an sound effects */
 	export interface LicenseSFXResultFormProperties {
 
-		/** Number of credits that this licensing event used */
+		/**
+		 * Number of credits that this licensing event used
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allotment_charge: FormControl<number | null | undefined>,
 
 		/** Error message, appears only if there was an error */
@@ -5971,7 +6675,10 @@ export namespace MyNS {
 		/** Additional information for license requests for enterprise accounts and API subscriptions, 4 fields maximum; which fields are required is set by the account holder */
 		metadata?: LicenseRequestMetadata;
 
-		/** Retail price amount as a floating-point number in the transaction currency, such as 12.34; only for rev-share partners */
+		/**
+		 * Retail price amount as a floating-point number in the transaction currency, such as 12.34; only for rev-share partners
+		 * Type: double
+		 */
 		price?: number | null;
 
 		/** ID of the search that led to this licensing event */
@@ -5999,7 +6706,10 @@ export namespace MyNS {
 		/** Whether or not this item is editorial content */
 		editorial_acknowledgement: FormControl<boolean | null | undefined>,
 
-		/** Retail price amount as a floating-point number in the transaction currency, such as 12.34; only for rev-share partners */
+		/**
+		 * Retail price amount as a floating-point number in the transaction currency, such as 12.34; only for rev-share partners
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** ID of the search that led to this licensing event */
@@ -6060,7 +6770,10 @@ export namespace MyNS {
 	/** The response to a licensing request for a video */
 	export interface LicenseVideoResult {
 
-		/** Number of credits that this licensing event used */
+		/**
+		 * Number of credits that this licensing event used
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allotment_charge?: number | null;
 
 		/** URL object */
@@ -6085,7 +6798,10 @@ export namespace MyNS {
 	/** The response to a licensing request for a video */
 	export interface LicenseVideoResultFormProperties {
 
-		/** Number of credits that this licensing event used */
+		/**
+		 * Number of credits that this licensing event used
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		allotment_charge: FormControl<number | null | undefined>,
 
 		/** Potential error that occurred during licensing */
@@ -6123,13 +6839,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -6139,13 +6864,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateLicenseVideoResultDataListFormGroup() {
@@ -6188,7 +6922,10 @@ export namespace MyNS {
 		 */
 		access_token: string;
 
-		/** Number of seconds before token expires, only present for expiring tokens */
+		/**
+		 * Number of seconds before token expires, only present for expiring tokens
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in?: number | null;
 
 		/** A refresh token that can be used to renew the access_token when it expires, only present for expiring tokens */
@@ -6213,7 +6950,10 @@ export namespace MyNS {
 		 */
 		access_token: FormControl<string | null | undefined>,
 
-		/** Number of seconds before token expires, only present for expiring tokens */
+		/**
+		 * Number of seconds before token expires, only present for expiring tokens
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expires_in: FormControl<number | null | undefined>,
 
 		/** A refresh token that can be used to renew the access_token when it expires, only present for expiring tokens */
@@ -6279,13 +7019,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -6295,13 +7044,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateRecommendationDataListFormGroup() {
@@ -6430,7 +7188,10 @@ export namespace MyNS {
 	/** SFX metadata */
 	export interface SFX {
 
-		/** Date this sound effect was added to the Shutterstock library */
+		/**
+		 * Date this sound effect was added to the Shutterstock library
+		 * Type: DateOnly
+		 */
 		added_date?: Date | null;
 
 		/** Affiliate referral link; appears only for registered affiliate partners */
@@ -6451,7 +7212,10 @@ export namespace MyNS {
 		/** Description of this sound effect */
 		description?: string | null;
 
-		/** Duration of this sound effect in seconds */
+		/**
+		 * Duration of this sound effect in seconds
+		 * Type: double
+		 */
 		duration?: number | null;
 
 		/**
@@ -6483,7 +7247,10 @@ export namespace MyNS {
 	/** SFX metadata */
 	export interface SFXFormProperties {
 
-		/** Date this sound effect was added to the Shutterstock library */
+		/**
+		 * Date this sound effect was added to the Shutterstock library
+		 * Type: DateOnly
+		 */
 		added_date: FormControl<Date | null | undefined>,
 
 		/** Affiliate referral link; appears only for registered affiliate partners */
@@ -6495,7 +7262,10 @@ export namespace MyNS {
 		/** Description of this sound effect */
 		description: FormControl<string | null | undefined>,
 
-		/** Duration of this sound effect in seconds */
+		/**
+		 * Duration of this sound effect in seconds
+		 * Type: double
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/**
@@ -6557,7 +7327,10 @@ export namespace MyNS {
 	/** Information about a file that is part of an sound effect asset */
 	export interface SFXAssetDetails {
 
-		/** File size of the sound effect */
+		/**
+		 * File size of the sound effect
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_size?: number | null;
 
 		/** URL the sound effect is available at */
@@ -6567,7 +7340,10 @@ export namespace MyNS {
 	/** Information about a file that is part of an sound effect asset */
 	export interface SFXAssetDetailsFormProperties {
 
-		/** File size of the sound effect */
+		/**
+		 * File size of the sound effect
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		file_size: FormControl<number | null | undefined>,
 
 		/** URL the sound effect is available at */
@@ -6611,10 +7387,16 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
 		/**
@@ -6626,6 +7408,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results across all pages
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: number;
 	}
@@ -6636,10 +7419,16 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
@@ -6651,6 +7440,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results across all pages
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: FormControl<number | null | undefined>,
 	}
@@ -6672,8 +7462,8 @@ export namespace MyNS {
 		/**
 		 * Plain text to extract keywords from
 		 * Required
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		text: string;
 	}
@@ -6684,8 +7474,8 @@ export namespace MyNS {
 		/**
 		 * Plain text to extract keywords from
 		 * Required
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		text: FormControl<string | null | undefined>,
 	}
@@ -6834,13 +7624,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message?: string | null;
 
-		/** Current page that is being queried */
+		/**
+		 * Current page that is being queried
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Amount of subscriptions to show per page */
+		/**
+		 * Amount of subscriptions to show per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total number of subscriptions for this user */
+		/**
+		 * Total number of subscriptions for this user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -6850,13 +7649,22 @@ export namespace MyNS {
 		/** Optional error message */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is being queried */
+		/**
+		 * Current page that is being queried
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Amount of subscriptions to show per page */
+		/**
+		 * Amount of subscriptions to show per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total number of subscriptions for this user */
+		/**
+		 * Total number of subscriptions for this user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionDataListFormGroup() {
@@ -6951,6 +7759,7 @@ export namespace MyNS {
 		/**
 		 * Integer ID that was passed in the request
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: number;
 
@@ -6964,6 +7773,7 @@ export namespace MyNS {
 		/**
 		 * Integer ID that was passed in the request
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -6978,8 +7788,8 @@ export namespace MyNS {
 		cover_asset?: UpdateCatalogCollectionCover_asset;
 
 		/**
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		name?: string | null;
 		visibility?: CatalogCollectionVisibility | null;
@@ -6987,8 +7797,8 @@ export namespace MyNS {
 	export interface UpdateCatalogCollectionFormProperties {
 
 		/**
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		name: FormControl<string | null | undefined>,
 		visibility: FormControl<CatalogCollectionVisibility | null | undefined>,
@@ -7077,13 +7887,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -7093,13 +7912,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdatedMediaDataListFormGroup() {
@@ -7251,13 +8079,19 @@ export namespace MyNS {
 	/** Information about a video */
 	export interface Video {
 
-		/** Date this video was added to the Shutterstock library */
+		/**
+		 * Date this video was added to the Shutterstock library
+		 * Type: DateOnly
+		 */
 		added_date?: Date | null;
 
 		/** Affiliate referral link; appears only for registered affiliate partners */
 		affiliate_url?: string | null;
 
-		/** Aspect ratio of this video in decimal format, such as 0.6667 */
+		/**
+		 * Aspect ratio of this video in decimal format, such as 0.6667
+		 * Type: double
+		 */
 		aspect?: number | null;
 
 		/** Aspect ratio of the video as a ratio, such as 16:9 */
@@ -7278,7 +8112,10 @@ export namespace MyNS {
 		/** Description of this video */
 		description?: string | null;
 
-		/** Duration of this video, in seconds */
+		/**
+		 * Duration of this video, in seconds
+		 * Type: double
+		 */
 		duration?: number | null;
 
 		/** Whether or not this video has been released for use by the model appearing in it */
@@ -7318,13 +8155,19 @@ export namespace MyNS {
 	/** Information about a video */
 	export interface VideoFormProperties {
 
-		/** Date this video was added to the Shutterstock library */
+		/**
+		 * Date this video was added to the Shutterstock library
+		 * Type: DateOnly
+		 */
 		added_date: FormControl<Date | null | undefined>,
 
 		/** Affiliate referral link; appears only for registered affiliate partners */
 		affiliate_url: FormControl<string | null | undefined>,
 
-		/** Aspect ratio of this video in decimal format, such as 0.6667 */
+		/**
+		 * Aspect ratio of this video in decimal format, such as 0.6667
+		 * Type: double
+		 */
 		aspect: FormControl<number | null | undefined>,
 
 		/** Aspect ratio of the video as a ratio, such as 16:9 */
@@ -7333,7 +8176,10 @@ export namespace MyNS {
 		/** Description of this video */
 		description: FormControl<string | null | undefined>,
 
-		/** Duration of this video, in seconds */
+		/**
+		 * Duration of this video, in seconds
+		 * Type: double
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** Whether or not this video has been released for use by the model appearing in it */
@@ -7442,13 +8288,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** The current page of results */
+		/**
+		 * The current page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** The number of results per page */
+		/**
+		 * The number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** The total number of results across all pages */
+		/**
+		 * The total number of results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -7458,13 +8313,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** The current page of results */
+		/**
+		 * The current page of results
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** The number of results per page */
+		/**
+		 * The number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** The total number of results across all pages */
+		/**
+		 * The total number of results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoCollectionItemDataListFormGroup() {
@@ -7490,13 +8354,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count?: number | null;
 	}
 
@@ -7506,13 +8379,22 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
-		/** Total count of all results across all pages */
+		/**
+		 * Total count of all results across all pages
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total_count: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoDataListFormGroup() {
@@ -7538,10 +8420,16 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message?: string | null;
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page?: number | null;
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page?: number | null;
 
 		/**
@@ -7553,6 +8441,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results across all pages
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: number;
 	}
@@ -7563,10 +8452,16 @@ export namespace MyNS {
 		/** Server-generated message, if any */
 		message: FormControl<string | null | undefined>,
 
-		/** Current page that is returned */
+		/**
+		 * Current page that is returned
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page: FormControl<number | null | undefined>,
 
-		/** Number of results per page */
+		/**
+		 * Number of results per page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		per_page: FormControl<number | null | undefined>,
 
 		/**
@@ -7578,6 +8473,7 @@ export namespace MyNS {
 		/**
 		 * Total count of all results across all pages
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		total_count: FormControl<number | null | undefined>,
 	}
@@ -7602,16 +8498,23 @@ export namespace MyNS {
 		 * This endpoint lists the descriptors that you can use in the audio regions in an audio render.
 		 * Get v2/ai/audio/descriptors
 		 * @param {number} render_speed_over Show descriptors with an average render speed that is greater than or equal to the specified value
+		 *     Type: double
 		 * @param {string} band_id Show descriptors that contain the specified band (case-sentsitive)
 		 * @param {string} band_name Show descriptors with the specified band name (case-sensitive)
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 100
 		 * @param {Array<string>} id Show descriptors with the specified IDs (case-sensitive)
+		 *     Maximum items: 20
 		 * @param {string} instrument_name Show descriptors with the specified instrument name (case-sensitive)
 		 * @param {string} instrument_id Show descriptors with the specified instrument ID (case-sensitive)
 		 * @param {number} tempo Show descriptors whose tempo range includes the specified tempo in beats per minute
+		 *     Type: double
 		 * @param {number} tempo_to Show descriptors with a tempo that is less than or equal to the specified number
+		 *     Type: double
 		 * @param {number} tempo_from Show descriptors that have a tempo range that includes the specified tempo in beats per minute
+		 *     Type: double
 		 * @param {string} name Show descriptors with the specified name (case-sensitive)
 		 * @param {string} tag Show descriptors with the specified tag, such as Cinematic or Roomy (case-sensitive)
 		 * @return {DescriptorsListResult} OK
@@ -7626,7 +8529,9 @@ export namespace MyNS {
 		 * Get v2/ai/audio/instruments
 		 * @param {Array<string>} id Show instruments with the specified ID
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 100
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {string} name Show instruments with the specified name (case-sensitive)
 		 * @param {string} tag Show instruments with the specified tag, such as Percussion or Strings (case-sensitive)
 		 * @return {InstrumentsListResult} OK
@@ -7662,6 +8567,7 @@ export namespace MyNS {
 		 * This endpoint lists information about one or more audio tracks, including the description and publication date.
 		 * Get v2/audio
 		 * @param {Array<string>} id One or more audio IDs
+		 *     Minimum items: 1    Maximum items: 500
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @param {string} search_id The ID of the search that is related to this request
 		 * @return {AudioDataList} OK
@@ -7675,7 +8581,9 @@ export namespace MyNS {
 		 * This endpoint lists your collections of audio tracks and their basic attributes.
 		 * Get v2/audio/collections
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 150
 		 * @param {Array<string>} embed Which sharing information to include in the response, such as a URL to the collection
 		 * @return {CollectionDataList} OK
 		 */
@@ -7748,7 +8656,9 @@ export namespace MyNS {
 		 * Get v2/audio/collections/{id}/items
 		 * @param {string} id Collection ID
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 150
 		 * @param {string} share_code Code to retrieve the contents of a shared collection
 		 * @param {GetTrackCollectionItemsSort} sort Sort order
 		 * @return {CollectionItemDataList} OK
@@ -7798,7 +8708,9 @@ export namespace MyNS {
 		 * @param {string} audio_id Show licenses for the specified track ID
 		 * @param {string} license Restrict results by license. Prepending a `-` sign will exclude results by license
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 0    Maximum: 200
 		 * @param {GetTrackCollectionItemsSort} sort Sort order
 		 * @param {string} username Filter licenses by username of licensee
 		 * @param {Date} start_date Show licenses created on or after the specified date
@@ -7852,17 +8764,25 @@ export namespace MyNS {
 		 * Get v2/audio/search
 		 * @param {Array<string>} artists Show tracks with one of the specified artist names or IDs
 		 * @param {number} bpm (Deprecated; use bpm_from and bpm_to instead) Show tracks with the specified beats per minute
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} bpm_from Show tracks with the specified beats per minute or faster
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} bpm_to Show tracks with the specified beats per minute or slower
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} duration Show tracks with the specified duration in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} duration_from Show tracks with the specified duration or longer in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} duration_to Show tracks with the specified duration or shorter in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} genre Show tracks with each of the specified genres; to get the list of genres, use `GET /v2/audio/genres`
 		 * @param {boolean} is_instrumental Show instrumental music only
 		 * @param {Array<string>} instruments Show tracks with each of the specified instruments; to get the list of instruments, use `GET /v2/audio/instruments`
 		 * @param {Array<string>} moods Show tracks with each of the specified moods; to get the list of moods, use `GET /v2/audio/moods`
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 0    Maximum: 500
 		 * @param {string} query One or more search terms separated by spaces
 		 * @param {SearchTracksSort} sort Sort by
 		 * @param {SearchTracksSort_order} sort_order Sort order
@@ -7882,6 +8802,7 @@ export namespace MyNS {
 		 * This endpoint shows information about a track, including its genres, instruments, and other attributes.
 		 * Get v2/audio/{id}
 		 * @param {number} id Audio track ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @param {string} search_id The ID of the search that is related to this request
 		 * @return {Audio} OK
@@ -7895,19 +8816,28 @@ export namespace MyNS {
 		 * This endpoint runs up to 5 image searches in a single request and returns up to 20 results per search. You can provide global search parameters in the query parameters and override them for each search in the body parameter. The query and body parameters are the same as in the `GET /v2/images/search` endpoint.
 		 * Post v2/bulk_search/images
 		 * @param {Date} added_date Show images added on the specified date
+		 *     Type: DateOnly
 		 * @param {Date} added_date_start Show images added on or after the specified date
+		 *     Type: DateOnly
 		 * @param {number} aspect_ratio_min Show images with the specified aspect ratio or higher, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		 *     Minimum: 0
 		 * @param {number} aspect_ratio_max Show images with the specified aspect ratio or lower, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		 *     Minimum: 0
 		 * @param {number} aspect_ratio Show images with the specified aspect ratio, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		 *     Minimum: 0
 		 * @param {Date} added_date_end Show images added before the specified date
+		 *     Type: DateOnly
 		 * @param {string} category Show images with the specified Shutterstock-defined category; specify a category name or ID
 		 * @param {string} color Specify either a hexadecimal color in the format '4F21EA' or 'grayscale'; the API returns images that use similar colors
 		 * @param {Array<string>} contributor Show images with the specified contributor names or IDs, allows multiple
 		 * @param {Array<string>} contributor_country Show images from contributors in one or more specified countries, or start with NOT to exclude a country from the search
 		 * @param {string} fields Fields to display in the response; see the documentation for the fields parameter in the overview section
 		 * @param {number} height (Deprecated; use height_from and height_to instead) Show images with the specified height
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height_from Show images with the specified height or larger, in pixels
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height_to Show images with the specified height or smaller, in pixels
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} image_type Show images of the specified type
 		 * @param {boolean} keyword_safe_search Hide results with potentially unsafe keywords
 		 * @param {SearchImageLanguage} language Set query and result language (uses Accept-Language header if not set)
@@ -7915,20 +8845,26 @@ export namespace MyNS {
 		 * @param {Array<string>} model Show image results with the specified model IDs
 		 * @param {SearchImageOrientation} orientation Show image results with horizontal or vertical orientation
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 0    Maximum: 20
 		 * @param {boolean} people_model_released Show images of people with a signed model release
 		 * @param {SearchImagePeople_age} people_age Show images that feature people of the specified age category
 		 * @param {Array<string>} people_ethnicity Show images with people of the specified ethnicities, or start with NOT to show images without those ethnicities
 		 * @param {SearchImagePeople_gender} people_gender Show images with people of the specified gender
 		 * @param {number} people_number Show images with the specified number of people
+		 *     Minimum: 0    Maximum: 4
 		 * @param {string} region Raise or lower search result rankings based on the result's relevance to a specified region; you can provide a country code or an IP address from which the API infers a country
 		 * @param {boolean} safe Enable or disable safe search
 		 * @param {SearchImageSort} sort Sort by
 		 * @param {boolean} spellcheck_query Spellcheck the search query and return results on suggested spellings
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @param {number} width (Deprecated; use width_from and width_to instead) Show images with the specified width
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width_from Show images with the specified width or larger, in pixels
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width_to Show images with the specified width or smaller, in pixels
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<SearchImage>} requestBody List of queries to request results for and filters to apply per query; these values override the defaults in the query parameters
 		 * @return {BulkImageSearchResults} OK
 		 */
@@ -7941,7 +8877,9 @@ export namespace MyNS {
 		 * This endpoint returns a list of catalog collections.
 		 * Get v2/catalog/collections
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 2    Maximum: 50
 		 * @param {GetTrackCollectionItemsSort} sort Sort by
 		 * @param {boolean} shared Set to true to omit collections that you own and return only collections  that are shared with you
 		 * @return {CatalogCollectionDataList} OK
@@ -8013,9 +8951,12 @@ export namespace MyNS {
 		 * Get v2/catalog/search
 		 * @param {GetTrackCollectionItemsSort} sort Sort by
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 0    Maximum: 500
 		 * @param {string} query One or more search terms separated by spaces
 		 * @param {Array<string>} collection_id Filter by collection id
+		 *     Maximum items: 50
 		 * @param {Array<string>} asset_type Filter by asset type
 		 * @return {CatalogCollectionItemDataList} OK
 		 */
@@ -8076,7 +9017,9 @@ export namespace MyNS {
 		 * @param {string} contributor_id Contributor ID
 		 * @param {string} id Collection ID that belongs to the contributor
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 50
 		 * @param {GetTrackCollectionItemsSort} sort Sort order
 		 * @return {CollectionItemDataList} OK
 		 */
@@ -8115,7 +9058,9 @@ export namespace MyNS {
 		 * @param {boolean} safe Enable or disable safe search
 		 * @param {SearchImageLanguage} language Language for the keywords and categories in the response
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 500
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @return {ImageSearchResults} OK
 		 */
@@ -8132,7 +9077,9 @@ export namespace MyNS {
 		 * @param {boolean} safe Enable or disable safe search
 		 * @param {SearchImageLanguage} language Language for the keywords and categories in the response
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 500
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @return {VideoSearchResults} OK
 		 */
@@ -8167,7 +9114,9 @@ export namespace MyNS {
 		 * @param {string} image_id Show licenses for the specified editorial image ID
 		 * @param {string} license Show editorial images that are available with the specified license name
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 0    Maximum: 200
 		 * @param {GetTrackCollectionItemsSort} sort Sort order
 		 * @param {string} username Filter licenses by username of licensee
 		 * @param {Date} start_date Show licenses created on or after the specified date
@@ -8196,7 +9145,9 @@ export namespace MyNS {
 		 * Get v2/editorial/images/livefeeds
 		 * @param {string} country Returns only livefeeds that are available for distribution in a certain country
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 50
 		 * @return {EditorialImageLivefeedList} OK
 		 */
 		GetEditorialImageLivefeedList(country: string, page: number | null | undefined, per_page: number | null | undefined): Observable<EditorialImageLivefeedList> {
@@ -8235,8 +9186,11 @@ export namespace MyNS {
 		 * @param {string} country Show only editorial content that is available for distribution in a certain country
 		 * @param {Array<string>} supplier_code Show only editorial content from certain suppliers
 		 * @param {Date} date_start Show only editorial content generated on or after a specific date
+		 *     Type: DateOnly
 		 * @param {Date} date_end Show only editorial content generated on or before a specific date
+		 *     Type: DateOnly
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} cursor The cursor of the page with which to start fetching results; this cursor is returned from previous requests
 		 * @return {EditorialSearchResults} OK
 		 */
@@ -8252,12 +9206,15 @@ export namespace MyNS {
 		 * @param {Date} date_updated_start Show images images added, edited, or deleted after the specified date. Acceptable range is 1970-01-01T00:00:01 to 2038-01-19T00:00:00.
 		 * @param {Date} date_updated_end Show images images added, edited, or deleted before the specified date. Acceptable range is 1970-01-01T00:00:01 to 2038-01-19T00:00:00.
 		 * @param {Date} date_taken_start Show images that were taken on or after the specified date; use this parameter if you want recently created images from the collection instead of updated older assets
+		 *     Type: DateOnly
 		 * @param {Date} date_taken_end Show images that were taken before the specified date
+		 *     Type: DateOnly
 		 * @param {string} cursor The cursor of the page with which to start fetching results; this cursor is returned from previous requests
 		 * @param {GetTrackCollectionItemsSort} sort Sort by
 		 * @param {Array<string>} supplier_code Show only editorial content from certain suppliers
 		 * @param {string} country Show only editorial content that is available for distribution in a certain country
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 100    Maximum: 500
 		 * @return {EditorialUpdatedResults} OK
 		 */
 		GetUpdatedEditorialImages(type: GetUpdatedEditorialImagesType, date_updated_start: Date, date_updated_end: Date, date_taken_start: Date | null | undefined, date_taken_end: Date | null | undefined, cursor: string | null | undefined, sort: GetTrackCollectionItemsSort | null | undefined, supplier_code: Array<string> | null | undefined, country: string, per_page: number | null | undefined): Observable<EditorialUpdatedResults> {
@@ -8293,7 +9250,9 @@ export namespace MyNS {
 		 * Get v2/editorial/livefeeds
 		 * @param {string} country Returns only livefeeds that are available for distribution in a certain country
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 50
 		 * @return {EditorialLivefeedList} OK
 		 */
 		GetEditorialLivefeedList(country: string, page: number | null | undefined, per_page: number | null | undefined): Observable<EditorialLivefeedList> {
@@ -8334,8 +9293,11 @@ export namespace MyNS {
 		 * @param {string} country Show only editorial content that is available for distribution in a certain country
 		 * @param {Array<string>} supplier_code Show only editorial content from certain suppliers
 		 * @param {Date} date_start Show only editorial content generated on or after a specific date
+		 *     Type: DateOnly
 		 * @param {Date} date_end Show only editorial content generated on or before a specific date
+		 *     Type: DateOnly
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} cursor The cursor of the page with which to start fetching results; this cursor is returned from previous requests
 		 * @return {EditorialSearchResults} OK
 		 */
@@ -8351,12 +9313,15 @@ export namespace MyNS {
 		 * @param {Date} date_updated_start Show images images added, edited, or deleted after the specified date. Acceptable range is 1970-01-01T00:00:01 to 2038-01-19T00:00:00.
 		 * @param {Date} date_updated_end Show images images added, edited, or deleted before the specified date. Acceptable range is 1970-01-01T00:00:01 to 2038-01-19T00:00:00.
 		 * @param {Date} date_taken_start Show images that were taken on or after the specified date; use this parameter if you want recently created images from the collection instead of updated older assets
+		 *     Type: DateOnly
 		 * @param {Date} date_taken_end Show images that were taken before the specified date
+		 *     Type: DateOnly
 		 * @param {string} cursor The cursor of the page with which to start fetching results; this cursor is returned from previous requests
 		 * @param {GetTrackCollectionItemsSort} sort Sort by
 		 * @param {Array<string>} supplier_code Show only editorial content from certain suppliers
 		 * @param {string} country Show only editorial content that is available for distribution in a certain country
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 100    Maximum: 500
 		 * @return {EditorialUpdatedResults} OK
 		 */
 		GetUpdatedEditorialImage(type: GetUpdatedEditorialImagesType, date_updated_start: Date, date_updated_end: Date, date_taken_start: Date | null | undefined, date_taken_end: Date | null | undefined, cursor: string | null | undefined, sort: GetTrackCollectionItemsSort | null | undefined, supplier_code: Array<string> | null | undefined, country: string, per_page: number | null | undefined): Observable<EditorialUpdatedResults> {
@@ -8380,7 +9345,9 @@ export namespace MyNS {
 		 * @param {string} video_id Show licenses for the specified editorial video ID
 		 * @param {string} license Show editorial videos that are available with the specified license name
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 0    Maximum: 200
 		 * @param {GetTrackCollectionItemsSort} sort Sort order
 		 * @param {string} username Filter licenses by username of licensee
 		 * @param {Date} start_date Show licenses created on or after the specified date
@@ -8414,10 +9381,14 @@ export namespace MyNS {
 		 * @param {string} country Show only editorial video content that is available for distribution in a certain country
 		 * @param {Array<string>} supplier_code Show only editorial video content from certain suppliers
 		 * @param {Date} date_start Show only editorial video content generated on or after a specific date
+		 *     Type: DateOnly
 		 * @param {Date} date_end Show only editorial video content generated on or before a specific date
+		 *     Type: DateOnly
 		 * @param {SearchEditorialVideosResolution} resolution Show only editorial video content with specific resolution
 		 * @param {number} fps Show only editorial video content generated with specific frames per second
+		 *     Type: double
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 50
 		 * @param {string} cursor The cursor of the page with which to start fetching results; this cursor is returned from previous requests
 		 * @return {EditorialVideoSearchResults} OK
 		 */
@@ -8456,6 +9427,7 @@ export namespace MyNS {
 		 * This endpoint lists information about one or more images, including the available sizes.
 		 * Get v2/images
 		 * @param {Array<string>} id One or more image IDs
+		 *     Maximum items: 500
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @param {string} search_id The ID of the search that is related to this request
 		 * @return {ImageDataList} OK
@@ -8492,7 +9464,9 @@ export namespace MyNS {
 		 * Get v2/images/collections
 		 * @param {Array<string>} embed Which sharing information to include in the response, such as a URL to the collection
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 150
 		 * @return {CollectionDataList} OK
 		 */
 		GetImageCollectionList(embed: Array<string> | null | undefined, page: number | null | undefined, per_page: number | null | undefined): Observable<CollectionDataList> {
@@ -8542,7 +9516,9 @@ export namespace MyNS {
 		 * Get v2/images/collections/featured/{id}/items
 		 * @param {string} id Collection ID
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 150
 		 * @return {CollectionItemDataList} OK
 		 */
 		GetFeaturedImageCollectionItems(id: string, page: number | null | undefined, per_page: number | null | undefined): Observable<CollectionItemDataList> {
@@ -8603,7 +9579,9 @@ export namespace MyNS {
 		 * Get v2/images/collections/{id}/items
 		 * @param {string} id Collection ID
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 150
 		 * @param {string} share_code Code to retrieve the contents of a shared collection
 		 * @param {GetTrackCollectionItemsSort} sort Sort order
 		 * @return {CollectionItemDataList} OK
@@ -8631,7 +9609,9 @@ export namespace MyNS {
 		 * @param {string} image_id Show licenses for the specified image ID
 		 * @param {string} license Show images that are available with the specified license, such as `standard` or `enhanced`; prepending a `-` sign excludes results from that license
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 200
 		 * @param {GetTrackCollectionItemsSort} sort Sort order
 		 * @param {string} username Filter licenses by username of licensee
 		 * @param {Date} start_date Show licenses created on or after the specified date
@@ -8677,6 +9657,7 @@ export namespace MyNS {
 		 * Get v2/images/recommendations
 		 * @param {Array<string>} id Image IDs
 		 * @param {number} max_items Maximum number of results returned in the response
+		 *     Minimum: 1    Maximum: 500
 		 * @param {boolean} safe Restrict results to safe images
 		 * @return {RecommendationDataList} OK
 		 */
@@ -8689,23 +9670,33 @@ export namespace MyNS {
 		 * This endpoint searches for images. If you specify more than one search parameter, the API uses an AND condition. Array parameters can be specified multiple times; in this case, the API uses an AND or an OR condition with those values, depending on the parameter. You can also filter search terms out in the `query` parameter by prefixing the term with NOT. Free API accounts show results only from a limited library of media, not the full Shutterstock media library. Also, the number of search fields they can use in a request is limited.
 		 * Get v2/images/search
 		 * @param {Date} added_date Show images added on the specified date
+		 *     Type: DateOnly
 		 * @param {Date} added_date_start Show images added on or after the specified date
+		 *     Type: DateOnly
 		 * @param {number} aspect_ratio_min Show images with the specified aspect ratio or higher, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		 *     Minimum: 0
 		 * @param {number} aspect_ratio_max Show images with the specified aspect ratio or lower, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		 *     Minimum: 0
 		 * @param {number} aspect_ratio Show images with the specified aspect ratio, using a positive decimal of the width divided by the height, such as 1.7778 for a 16:9 image
+		 *     Minimum: 0
 		 * @param {boolean} ai_search Set to true and specify the `ai_objective` and `ai_industry` parameters to use AI-powered search; the API returns information about how well images meet the objective for the industry 
 		 * @param {number} ai_labels_limit For AI-powered search, specify the maximum number of labels to return
+		 *     Minimum: 0    Maximum: 500
 		 * @param {SearchImagesAi_industry} ai_industry For AI-powered search, specify the industry to target; requires that the `ai_search` parameter is set to true
 		 * @param {SearchImagesAi_objective} ai_objective For AI-powered search, specify the goal of the media; requires that the `ai_search` parameter is set to true
 		 * @param {Date} added_date_end Show images added before the specified date
+		 *     Type: DateOnly
 		 * @param {string} category Show images with the specified Shutterstock-defined category; specify a category name or ID
 		 * @param {string} color Specify either a hexadecimal color in the format '4F21EA' or 'grayscale'; the API returns images that use similar colors
 		 * @param {Array<string>} contributor Show images with the specified contributor names or IDs, allows multiple
 		 * @param {Array<string>} contributor_country Show images from contributors in one or more specified countries, or start with NOT to exclude a country from the search
 		 * @param {string} fields Fields to display in the response; see the documentation for the fields parameter in the overview section
 		 * @param {number} height (Deprecated; use height_from and height_to instead) Show images with the specified height
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height_from Show images with the specified height or larger, in pixels
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} height_to Show images with the specified height or smaller, in pixels
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} image_type Show images of the specified type
 		 * @param {boolean} keyword_safe_search Hide results with potentially unsafe keywords
 		 * @param {SearchImageLanguage} language Set query and result language (uses Accept-Language header if not set)
@@ -8713,12 +9704,15 @@ export namespace MyNS {
 		 * @param {Array<string>} model Show image results with the specified model IDs
 		 * @param {SearchImageOrientation} orientation Show image results with horizontal or vertical orientation
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 0    Maximum: 500
 		 * @param {boolean} people_model_released Show images of people with a signed model release
 		 * @param {SearchImagePeople_age} people_age Show images that feature people of the specified age category
 		 * @param {Array<string>} people_ethnicity Show images with people of the specified ethnicities, or start with NOT to show images without those ethnicities
 		 * @param {SearchImagePeople_gender} people_gender Show images with people of the specified gender
 		 * @param {number} people_number Show images with the specified number of people
+		 *     Minimum: 0    Maximum: 4
 		 * @param {string} query One or more search terms separated by spaces; you can use NOT to filter out images that match a term
 		 * @param {string} region Raise or lower search result rankings based on the result's relevance to a specified region; you can provide a country code or an IP address from which the API infers a country
 		 * @param {boolean} safe Enable or disable safe search
@@ -8726,8 +9720,11 @@ export namespace MyNS {
 		 * @param {boolean} spellcheck_query Spellcheck the search query and return results on suggested spellings
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @param {number} width (Deprecated; use width_from and width_to instead) Show images with the specified width
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width_from Show images with the specified width or larger, in pixels
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} width_to Show images with the specified width or smaller, in pixels
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ImageSearchResults} OK
 		 */
 		SearchImages(added_date: Date | null | undefined, added_date_start: Date | null | undefined, aspect_ratio_min: number | null | undefined, aspect_ratio_max: number | null | undefined, aspect_ratio: number | null | undefined, ai_search: boolean | null | undefined, ai_labels_limit: number | null | undefined, ai_industry: SearchImagesAi_industry | null | undefined, ai_objective: SearchImagesAi_objective | null | undefined, added_date_end: Date | null | undefined, category: string | null | undefined, color: string | null | undefined, contributor: Array<string> | null | undefined, contributor_country: Array<string> | null | undefined, fields: string | null | undefined, height: number | null | undefined, height_from: number | null | undefined, height_to: number | null | undefined, image_type: Array<string> | null | undefined, keyword_safe_search: boolean | null | undefined, language: SearchImageLanguage | null | undefined, license: Array<string> | null | undefined, model: Array<string> | null | undefined, orientation: SearchImageOrientation | null | undefined, page: number | null | undefined, per_page: number | null | undefined, people_model_released: boolean | null | undefined, people_age: SearchImagePeople_age | null | undefined, people_ethnicity: Array<string> | null | undefined, people_gender: SearchImagePeople_gender | null | undefined, people_number: number | null | undefined, query: string | null | undefined, region: string | null | undefined, safe: boolean | null | undefined, sort: SearchImageSort | null | undefined, spellcheck_query: boolean | null | undefined, view: SearchImageView | null | undefined, width: number | null | undefined, width_from: number | null | undefined, width_to: number | null | undefined): Observable<ImageSearchResults> {
@@ -8740,6 +9737,7 @@ export namespace MyNS {
 		 * Get v2/images/search/suggestions
 		 * @param {string} query Search term for which you want keyword suggestions
 		 * @param {number} limit Limit the number of suggestions
+		 *     Minimum: 1    Maximum: 25
 		 * @return {Suggestions} OK
 		 */
 		GetImageSuggestions(query: string, limit: number | null | undefined): Observable<Suggestions> {
@@ -8763,10 +9761,14 @@ export namespace MyNS {
 		 * Get v2/images/updated
 		 * @param {Array<string>} type Show images that were added, deleted, or edited; by default, the endpoint returns images that were updated in any of these ways
 		 * @param {Date} start_date Show images updated on or after the specified date
+		 *     Type: DateOnly
 		 * @param {Date} end_date Show images updated before the specified date
+		 *     Type: DateOnly
 		 * @param {string} interval Show images updated in the specified time period, where the time period is an interval (like SQL INTERVAL) such as 1 DAY, 6 HOUR, or 30 MINUTE; the default is 1 HOUR, which shows images that were updated in the hour preceding the request
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {GetTrackCollectionItemsSort} sort Sort order
 		 * @return {UpdatedMediaDataList} OK
 		 */
@@ -8795,7 +9797,9 @@ export namespace MyNS {
 		 * @param {string} id Image ID
 		 * @param {SearchImageLanguage} language Language for the keywords and categories in the response
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 500
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @return {ImageSearchResults} OK
 		 */
@@ -8834,6 +9838,7 @@ export namespace MyNS {
 		 * This endpoint shows information about sound effects.
 		 * Get v2/sfx
 		 * @param {Array<string>} id One or more sound effect IDs
+		 *     Maximum items: 500
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @param {SearchImageLanguage} language Language for the keywords and categories in the response
 		 * @param {GetSfxListDetailsLibrary} library Which library to fetch from
@@ -8851,7 +9856,9 @@ export namespace MyNS {
 		 * @param {string} sfx_id Show licenses for the specified sound effects ID
 		 * @param {string} license Show sound effects that are available with the specified license, such as `standard` or `enhanced`; prepending a `-` sign excludes results from that license
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 200
 		 * @param {GetTrackCollectionItemsSort} sort Sort order
 		 * @param {string} username Filter licenses by username of licensee
 		 * @param {Date} start_date Show licenses created on or after the specified date
@@ -8891,13 +9898,21 @@ export namespace MyNS {
 		 * This endpoint searches for sound effects. If you specify more than one search parameter, the API uses an AND condition.
 		 * Get v2/sfx/search
 		 * @param {Date} added_date Show sound effects added on the specified date
+		 *     Type: DateOnly
 		 * @param {Date} added_date_start Show sound effects added on or after the specified date
+		 *     Type: DateOnly
 		 * @param {Date} added_date_end Show sound effects added before the specified date
+		 *     Type: DateOnly
 		 * @param {number} duration Show sound effects with the specified duration in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} duration_from Show sound effects with the specified duration or longer in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} duration_to Show sound effects with the specified duration or shorter in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 500
 		 * @param {string} query One or more search terms separated by spaces
 		 * @param {boolean} safe Enable or disable safe search
 		 * @param {SearchSFXSort} sort Sort by
@@ -8914,6 +9929,7 @@ export namespace MyNS {
 		 * This endpoint shows information about a sound effect.
 		 * Get v2/sfx/{id}
 		 * @param {number} id Audio track ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {SearchImageLanguage} language Language for the keywords and categories in the response
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @param {GetSfxListDetailsLibrary} library Which library to fetch from
@@ -8938,6 +9954,7 @@ export namespace MyNS {
 		 * Validate input
 		 * Get v2/test/validate
 		 * @param {number} id Integer ID
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Array<string>} tag List of tags
 		 * @return {TestValidate} OK
 		 */
@@ -8977,6 +9994,7 @@ export namespace MyNS {
 		 * This endpoint lists information about one or more videos, including the aspect ratio and URLs to previews.
 		 * Get v2/videos
 		 * @param {Array<string>} id One or more video IDs
+		 *     Minimum items: 1    Maximum items: 500
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @param {string} search_id The ID of the search that is related to this request
 		 * @return {VideoDataList} OK
@@ -9001,7 +10019,9 @@ export namespace MyNS {
 		 * This endpoint lists your collections of videos and their basic attributes.
 		 * Get v2/videos/collections
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 150
 		 * @param {Array<string>} embed Which sharing information to include in the response, such as a URL to the collection
 		 * @return {CollectionDataList} OK
 		 */
@@ -9049,7 +10069,9 @@ export namespace MyNS {
 		 * Get v2/videos/collections/featured/{id}/items
 		 * @param {string} id Collection ID
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 150
 		 * @return {VideoCollectionItemDataList} OK
 		 */
 		GetFeaturedVideoCollectionItems(id: string, page: number | null | undefined, per_page: number | null | undefined): Observable<VideoCollectionItemDataList> {
@@ -9110,7 +10132,9 @@ export namespace MyNS {
 		 * Get v2/videos/collections/{id}/items
 		 * @param {string} id Collection ID
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 150
 		 * @param {string} share_code Code to retrieve the contents of a shared collection
 		 * @param {GetTrackCollectionItemsSort} sort Sort order
 		 * @return {CollectionItemDataList} OK
@@ -9138,7 +10162,9 @@ export namespace MyNS {
 		 * @param {string} video_id Show licenses for the specified video ID
 		 * @param {string} license Show videos that are available with the specified license, such as `standard` or `enhanced`; prepending a `-` sign excludes results from that license
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 200
 		 * @param {GetTrackCollectionItemsSort} sort Sort by oldest or newest videos first
 		 * @param {string} username Filter licenses by username of licensee
 		 * @param {Date} start_date Show licenses created on or after the specified date
@@ -9182,28 +10208,40 @@ export namespace MyNS {
 		 * This endpoint searches for videos. If you specify more than one search parameter, the API uses an AND condition. Array parameters can be specified multiple times; in this case, the API uses an AND or an OR condition with those values, depending on the parameter. You can also filter search terms out in the `query` parameter by prefixing the term with NOT.
 		 * Get v2/videos/search
 		 * @param {Date} added_date Show videos added on the specified date
+		 *     Type: DateOnly
 		 * @param {Date} added_date_start Show videos added on or after the specified date
+		 *     Type: DateOnly
 		 * @param {Date} added_date_end Show videos added before the specified date
+		 *     Type: DateOnly
 		 * @param {SearchVideosAspect_ratio} aspect_ratio Show videos with the specified aspect ratio
 		 * @param {string} category Show videos with the specified Shutterstock-defined category; specify a category name or ID
 		 * @param {Array<string>} contributor Show videos with the specified artist names or IDs
 		 * @param {Array<string>} contributor_country Show videos from contributors in one or more specified countries
 		 * @param {number} duration (Deprecated; use duration_from and duration_to instead) Show videos with the specified duration in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} duration_from Show videos with the specified duration or longer in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} duration_to Show videos with the specified duration or shorter in seconds
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} fps (Deprecated; use fps_from and fps_to instead) Show videos with the specified frames per second
+		 *     Type: double
 		 * @param {number} fps_from Show videos with the specified frames per second or more
+		 *     Type: double
 		 * @param {number} fps_to Show videos with the specified frames per second or fewer
+		 *     Type: double
 		 * @param {boolean} keyword_safe_search Hide results with potentially unsafe keywords
 		 * @param {SearchImageLanguage} language Set query and result language (uses Accept-Language header if not set)
 		 * @param {Array<string>} license Show only videos with the specified license or licenses
 		 * @param {Array<string>} model Show videos with each of the specified models
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 0    Maximum: 500
 		 * @param {SearchImagePeople_age} people_age Show videos that feature people of the specified age range
 		 * @param {Array<string>} people_ethnicity Show videos with people of the specified ethnicities
 		 * @param {SearchImagePeople_gender} people_gender Show videos with people with the specified gender
 		 * @param {number} people_number Show videos with the specified number of people
+		 *     Minimum: 0    Maximum: 4
 		 * @param {boolean} people_model_released Show only videos of people with a signed model release
 		 * @param {string} query One or more search terms separated by spaces; you can use NOT to filter out videos that match a term
 		 * @param {SearchVideosResolution} resolution Show videos with the specified resolution
@@ -9222,6 +10260,7 @@ export namespace MyNS {
 		 * Get v2/videos/search/suggestions
 		 * @param {string} query Search term for which you want keyword suggestions
 		 * @param {number} limit Limit the number of the suggestions
+		 *     Minimum: 1    Maximum: 25
 		 * @return {Suggestions} OK
 		 */
 		GetVideoSuggestions(query: string, limit: number | null | undefined): Observable<Suggestions> {
@@ -9233,10 +10272,14 @@ export namespace MyNS {
 		 * This endpoint lists videos that have been updated in the specified time period to update content management systems (CMS) or digital asset management (DAM) systems. In most cases, use the `interval` parameter to show videos that were updated recently, but you can also use the `start_date` and `end_date` parameters to specify a range of no more than three days. Do not use the `interval` parameter with either `start_date` or `end_date`.
 		 * Get v2/videos/updated
 		 * @param {Date} start_date Show videos updated on or after the specified date
+		 *     Type: DateOnly
 		 * @param {Date} end_date Show videos updated before the specified date
+		 *     Type: DateOnly
 		 * @param {string} interval Show videos updated in the specified time period, where the time period is an interval (like SQL INTERVAL) such as 1 DAY, 6 HOUR, or 30 MINUTE; the default is 1 HOUR, which shows videos that were updated in the hour preceding the request
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 2000
 		 * @param {GetTrackCollectionItemsSort} sort Sort by oldest or newest videos first
 		 * @return {UpdatedMediaDataList} OK
 		 */
@@ -9265,7 +10308,9 @@ export namespace MyNS {
 		 * @param {string} id The ID of a video for which similar videos should be returned
 		 * @param {SearchImageLanguage} language Language for the keywords and categories in the response
 		 * @param {number} page Page number
+		 *     Minimum: 1
 		 * @param {number} per_page Number of results per page
+		 *     Minimum: 1    Maximum: 500
 		 * @param {SearchImageView} view Amount of detail to render in the response
 		 * @return {VideoSearchResults} OK
 		 */

@@ -13,6 +13,8 @@ export namespace MyNS {
 		dexId?: Array<number>;
 		energyType?: string | null;
 		evolveFrom?: string | null;
+
+		/** Type: double */
 		hp?: number | null;
 
 		/** Required */
@@ -23,6 +25,8 @@ export namespace MyNS {
 
 		/** Required */
 		legal: CardLegal;
+
+		/** Type: double */
 		level?: number | null;
 
 		/** Required */
@@ -35,6 +39,8 @@ export namespace MyNS {
 		rarity: string;
 		regulationMark?: string | null;
 		resistances?: Array<Array<WeakResElement>>;
+
+		/** Type: double */
 		retreat?: number | null;
 
 		/** Required */
@@ -53,12 +59,16 @@ export namespace MyNS {
 		description: FormControl<string | null | undefined>,
 		energyType: FormControl<string | null | undefined>,
 		evolveFrom: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		hp: FormControl<number | null | undefined>,
 
 		/** Required */
 		id: FormControl<string | null | undefined>,
 		illustrator: FormControl<string | null | undefined>,
 		image: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		level: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -70,6 +80,8 @@ export namespace MyNS {
 		/** Required */
 		rarity: FormControl<string | null | undefined>,
 		regulationMark: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		retreat: FormControl<number | null | undefined>,
 		stage: FormControl<string | null | undefined>,
 		suffix: FormControl<string | null | undefined>,
@@ -119,6 +131,8 @@ export namespace MyNS {
 
 	export interface CardAttacks {
 		cost?: Array<string>;
+
+		/** Type: double */
 		damage?: number | null;
 		effect?: string | null;
 
@@ -126,6 +140,8 @@ export namespace MyNS {
 		name: string;
 	}
 	export interface CardAttacksFormProperties {
+
+		/** Type: double */
 		damage: FormControl<number | null | undefined>,
 		effect: FormControl<string | null | undefined>,
 
@@ -236,18 +252,30 @@ export namespace MyNS {
 
 	export interface SetResumeCardCount {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		official: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total: number;
 	}
 	export interface SetResumeCardCountFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		official: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateSetResumeCardCountFormGroup() {
@@ -431,27 +459,55 @@ export namespace MyNS {
 	}
 
 	export interface SetCardCount {
+
+		/** Type: double */
 		firstEd?: number | null;
+
+		/** Type: double */
 		holo?: number | null;
+
+		/** Type: double */
 		normal?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		official: number;
+
+		/** Type: double */
 		reverse?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total: number;
 	}
 	export interface SetCardCountFormProperties {
+
+		/** Type: double */
 		firstEd: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		holo: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		normal: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		official: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		reverse: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateSetCardCountFormGroup() {
@@ -495,7 +551,6 @@ export namespace MyNS {
 		 * fetch the list of cards
 		 * desc
 		 * Get cards
-		 * @return {Array<CardResume>} 
 		 */
 		CardsGet(headersHandler?: () => HttpHeaders): Observable<Array<CardResume>> {
 			return this.http.get<Array<CardResume>>(this.baseUri + 'cards', { headers: headersHandler ? headersHandler() : undefined });

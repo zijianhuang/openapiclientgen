@@ -2380,6 +2380,7 @@ export namespace MyNS {
 		 * <p>Creates an Amazon EKS add-on.</p> <p>Amazon EKS add-ons help to automate the provisioning and lifecycle management of common operational software for Amazon EKS clusters. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/eks-add-ons.html">Amazon EKS add-ons</a> in the <i>Amazon EKS User Guide</i>.</p>
 		 * Post clusters/{name}/addons
 		 * @param {string} name The name of the cluster to create the add-on for.
+		 *     Min length: 1    Max length: 100
 		 * @return {CreateAddonResponse} Success
 		 */
 		CreateAddon(name: string, requestBody: CreateAddonPostBody): Observable<CreateAddonResponse> {
@@ -2390,7 +2391,9 @@ export namespace MyNS {
 		 * Lists the available add-ons.
 		 * Get clusters/{name}/addons
 		 * @param {string} name The name of the cluster.
+		 *     Min length: 1    Max length: 100
 		 * @param {number} maxResults The maximum number of add-on results returned by <code>ListAddonsRequest</code> in paginated output. When you use this parameter, <code>ListAddonsRequest</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListAddonsRequest</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListAddonsRequest</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListAddonsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
 		 * @return {ListAddonsResponse} Success
 		 */
@@ -2411,6 +2414,7 @@ export namespace MyNS {
 		 * Lists the Amazon EKS clusters in your Amazon Web Services account in the specified Region.
 		 * Get clusters
 		 * @param {number} maxResults The maximum number of cluster results returned by <code>ListClusters</code> in paginated output. When you use this parameter, <code>ListClusters</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListClusters</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListClusters</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>ListClusters</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
 		 * @param {Array<string>} include Indicates whether external clusters are included in the returned list. Use '<code>all</code>' to return connected clusters, or blank to return only Amazon EKS clusters. '<code>all</code>' must be in lowercase otherwise an error occurs.
 		 * @return {ListClustersResponse} Success
@@ -2434,6 +2438,7 @@ export namespace MyNS {
 		 * Get clusters/{name}/fargate-profiles
 		 * @param {string} name The name of the Amazon EKS cluster that you would like to list Fargate profiles in.
 		 * @param {number} maxResults The maximum number of Fargate profile results returned by <code>ListFargateProfiles</code> in paginated output. When you use this parameter, <code>ListFargateProfiles</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListFargateProfiles</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListFargateProfiles</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListFargateProfiles</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @return {ListFargateProfilesResponse} Success
 		 */
@@ -2456,6 +2461,7 @@ export namespace MyNS {
 		 * Get clusters/{name}/node-groups
 		 * @param {string} name The name of the Amazon EKS cluster that you would like to list node groups in.
 		 * @param {number} maxResults The maximum number of node group results returned by <code>ListNodegroups</code> in paginated output. When you use this parameter, <code>ListNodegroups</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListNodegroups</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListNodegroups</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListNodegroups</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @return {ListNodegroupsResponse} Success
 		 */
@@ -2467,6 +2473,7 @@ export namespace MyNS {
 		 * <p>Delete an Amazon EKS add-on.</p> <p>When you remove the add-on, it will also be deleted from the cluster. You can always manually start an add-on on the cluster using the Kubernetes API.</p>
 		 * Delete clusters/{name}/addons/{addonName}
 		 * @param {string} name The name of the cluster to delete the add-on from.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} addonName The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
 		 * @param {boolean} preserve Specifying this option preserves the add-on software on your cluster but Amazon EKS stops managing any settings for the add-on. If an IAM account is associated with the add-on, it isn't removed.
 		 * @return {DeleteAddonResponse} Success
@@ -2479,6 +2486,7 @@ export namespace MyNS {
 		 * Describes an Amazon EKS add-on.
 		 * Get clusters/{name}/addons/{addonName}
 		 * @param {string} name The name of the cluster.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} addonName The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
 		 * @return {DescribeAddonResponse} Success
 		 */
@@ -2576,6 +2584,7 @@ export namespace MyNS {
 		 * Get addons/supported-versions
 		 * @param {string} kubernetesVersion The Kubernetes versions that you can use the add-on with.
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken <p>The <code>nextToken</code> value returned from a previous paginated <code>DescribeAddonVersionsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.</p> <note> <p>This token should be treated as an opaque identifier that is used only to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
 		 * @param {string} addonName The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
 		 * @param {Array<string>} types The type of the add-on. For valid <code>types</code>, don't specify a value for this property.
@@ -2625,6 +2634,7 @@ export namespace MyNS {
 		 * Get clusters/{name}/identity-provider-configs
 		 * @param {string} name The cluster name that you want to list identity provider configurations for.
 		 * @param {number} maxResults The maximum number of identity provider configurations returned by <code>ListIdentityProviderConfigs</code> in paginated output. When you use this parameter, <code>ListIdentityProviderConfigs</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListIdentityProviderConfigs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListIdentityProviderConfigs</code> returns up to 100 results and a <code>nextToken</code> value, if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>IdentityProviderConfigsRequest</code> where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @return {ListIdentityProviderConfigsResponse} Success
 		 */
@@ -2660,6 +2670,7 @@ export namespace MyNS {
 		 * @param {string} addonName The names of the installed add-ons that have available updates.
 		 * @param {string} nextToken The <code>nextToken</code> value returned from a previous paginated <code>ListUpdates</code> request where <code>maxResults</code> was used and the results exceeded the value of that parameter. Pagination continues from the end of the previous results that returned the <code>nextToken</code> value.
 		 * @param {number} maxResults The maximum number of update results returned by <code>ListUpdates</code> in paginated output. When you use this parameter, <code>ListUpdates</code> returns only <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. You can see the remaining results of the initial request by sending another <code>ListUpdates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If you don't use this parameter, <code>ListUpdates</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListUpdatesResponse} Success
 		 */
 		ListUpdates(name: string, nodegroupName: string | null | undefined, addonName: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListUpdatesResponse> {
@@ -2690,6 +2701,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource from which to delete tags. Currently, the supported resources are Amazon EKS clusters and managed node groups.
 		 * @param {Array<string>} tagKeys The keys of the tags to be removed.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -2700,6 +2712,7 @@ export namespace MyNS {
 		 * Updates an Amazon EKS add-on.
 		 * Post clusters/{name}/addons/{addonName}/update
 		 * @param {string} name The name of the cluster.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} addonName The name of the add-on. The name must match one of the names returned by <a href="https://docs.aws.amazon.com/eks/latest/APIReference/API_ListAddons.html"> <code>ListAddons</code> </a>.
 		 * @return {UpdateAddonResponse} Success
 		 */
@@ -2839,8 +2852,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note> <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		serviceAccountRoleArn?: string | null;
 
@@ -2869,8 +2882,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note> <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		serviceAccountRoleArn: FormControl<string | null | undefined>,
 
@@ -2904,8 +2917,8 @@ export namespace MyNS {
 		/**
 		 * The unique name to give to your cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -2950,8 +2963,8 @@ export namespace MyNS {
 		/**
 		 * The unique name to give to your cluster.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3109,7 +3122,10 @@ export namespace MyNS {
 		/** An object representing the scaling configuration details for the Auto Scaling group that is associated with your node group. When creating a node group, you must specify all or none of the properties. When updating a node group, you can specify any or none of the properties. */
 		scalingConfig?: CreateNodegroupPostBodyScalingConfig;
 
-		/** The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>. */
+		/**
+		 * The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSize?: number | null;
 
 		/**
@@ -3168,7 +3184,10 @@ export namespace MyNS {
 		 */
 		nodegroupName: FormControl<string | null | undefined>,
 
-		/** The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>. */
+		/**
+		 * The root device disk size (in GiB) for your node group instances. The default disk size is 20 GiB for Linux and Bottlerocket. The default disk size is 50 GiB for Windows. If you specify <code>launchTemplate</code>, then don't specify <code>diskSize</code>, or the node group deployment will fail. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSize: FormControl<number | null | undefined>,
 
 		/** The AMI type for your node group. If you specify <code>launchTemplate</code>, and your launch template uses a custom AMI, then don't specify <code>amiType</code>, or the node group deployment will fail. If your launch template uses a Windows custom AMI, then add <code>eks:kube-proxy-windows</code> to your Windows nodes <code>rolearn</code> in the <code>aws-auth</code> <code>ConfigMap</code>. For more information about using launch templates with Amazon EKS, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/launch-templates.html">Launch template support</a> in the <i>Amazon EKS User Guide</i>. */
@@ -3411,8 +3430,8 @@ export namespace MyNS {
 		/**
 		 * Define a unique name for this cluster for your Region.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -3433,8 +3452,8 @@ export namespace MyNS {
 		/**
 		 * Define a unique name for this cluster for your Region.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3476,8 +3495,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note> <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		serviceAccountRoleArn?: string | null;
 
@@ -3497,8 +3516,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The Amazon Resource Name (ARN) of an existing IAM role to bind to the add-on's service account. The role must be assigned the IAM permissions required by the add-on. If you don't specify an existing IAM role, then the add-on uses the permissions assigned to the node IAM role. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/create-node-role.html">Amazon EKS node IAM role</a> in the <i>Amazon EKS User Guide</i>.</p> <note> <p>To specify an existing IAM role, you must have an IAM OpenID Connect (OIDC) provider created for your cluster. For more information, see <a href="https://docs.aws.amazon.com/eks/latest/userguide/enable-iam-roles-for-service-accounts.html">Enabling IAM roles for service accounts on your cluster</a> in the <i>Amazon EKS User Guide</i>.</p> </note>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		serviceAccountRoleArn: FormControl<string | null | undefined>,
 

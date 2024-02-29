@@ -205,7 +205,10 @@ export namespace MyNS {
 	/** Each logical interface represents a logical abstraction of the underlying physical interface (for eg. bond, nic) of the instance. Each logical interface can effectively map to multiple network-IP pairs and still be mapped to one underlying physical interface. */
 	export interface GoogleCloudBaremetalsolutionV2LogicalInterface {
 
-		/** The index of the logical interface mapping to the index of the hardware bond or nic on the chosen network template. This field is deprecated. */
+		/**
+		 * The index of the logical interface mapping to the index of the hardware bond or nic on the chosen network template. This field is deprecated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interfaceIndex?: number | null;
 
 		/** List of logical network interfaces within a logical interface. */
@@ -218,7 +221,10 @@ export namespace MyNS {
 	/** Each logical interface represents a logical abstraction of the underlying physical interface (for eg. bond, nic) of the instance. Each logical interface can effectively map to multiple network-IP pairs and still be mapped to one underlying physical interface. */
 	export interface GoogleCloudBaremetalsolutionV2LogicalInterfaceFormProperties {
 
-		/** The index of the logical interface mapping to the index of the hardware bond or nic on the chosen network template. This field is deprecated. */
+		/**
+		 * The index of the logical interface mapping to the index of the hardware bond or nic on the chosen network template. This field is deprecated.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		interfaceIndex: FormControl<number | null | undefined>,
 
 		/** Interface name. This is of syntax or and forms part of the network template name. */
@@ -795,14 +801,20 @@ export namespace MyNS {
 	/** QOS policy parameters. */
 	export interface QosPolicy {
 
-		/** The bandwidth permitted by the QOS policy, in gbps. */
+		/**
+		 * The bandwidth permitted by the QOS policy, in gbps.
+		 * Type: double
+		 */
 		bandwidthGbps?: number | null;
 	}
 
 	/** QOS policy parameters. */
 	export interface QosPolicyFormProperties {
 
-		/** The bandwidth permitted by the QOS policy, in gbps. */
+		/**
+		 * The bandwidth permitted by the QOS policy, in gbps.
+		 * Type: double
+		 */
 		bandwidthGbps: FormControl<number | null | undefined>,
 	}
 	export function CreateQosPolicyFormGroup() {
@@ -1062,13 +1074,19 @@ export namespace MyNS {
 		/** The space on this storage volume reserved for snapshots, shown in GiB. */
 		reservedSpaceGib?: string | null;
 
-		/** Percent of the total Volume size reserved for snapshot copies. Enabling snapshots requires reserving 20% or more of the storage volume space for snapshots. Maximum reserved space for snapshots is 40%. Setting this field will effectively set snapshot_enabled to true. */
+		/**
+		 * Percent of the total Volume size reserved for snapshot copies. Enabling snapshots requires reserving 20% or more of the storage volume space for snapshots. Maximum reserved space for snapshots is 40%. Setting this field will effectively set snapshot_enabled to true.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedSpacePercent?: number | null;
 
 		/** The amount, in GiB, of available space in this storage volume's reserved snapshot space. */
 		reservedSpaceRemainingGib?: string | null;
 
-		/** The percent of snapshot space on this storage volume actually being used by the snapshot copies. This value might be higher than 100% if the snapshot copies have overflowed into the data portion of the storage volume. */
+		/**
+		 * The percent of snapshot space on this storage volume actually being used by the snapshot copies. This value might be higher than 100% if the snapshot copies have overflowed into the data portion of the storage volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedSpaceUsedPercent?: number | null;
 	}
 
@@ -1078,13 +1096,19 @@ export namespace MyNS {
 		/** The space on this storage volume reserved for snapshots, shown in GiB. */
 		reservedSpaceGib: FormControl<string | null | undefined>,
 
-		/** Percent of the total Volume size reserved for snapshot copies. Enabling snapshots requires reserving 20% or more of the storage volume space for snapshots. Maximum reserved space for snapshots is 40%. Setting this field will effectively set snapshot_enabled to true. */
+		/**
+		 * Percent of the total Volume size reserved for snapshot copies. Enabling snapshots requires reserving 20% or more of the storage volume space for snapshots. Maximum reserved space for snapshots is 40%. Setting this field will effectively set snapshot_enabled to true.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedSpacePercent: FormControl<number | null | undefined>,
 
 		/** The amount, in GiB, of available space in this storage volume's reserved snapshot space. */
 		reservedSpaceRemainingGib: FormControl<string | null | undefined>,
 
-		/** The percent of snapshot space on this storage volume actually being used by the snapshot copies. This value might be higher than 100% if the snapshot copies have overflowed into the data portion of the storage volume. */
+		/**
+		 * The percent of snapshot space on this storage volume actually being used by the snapshot copies. This value might be higher than 100% if the snapshot copies have overflowed into the data portion of the storage volume.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reservedSpaceUsedPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateSnapshotReservationDetailFormGroup() {
@@ -1240,7 +1264,10 @@ export namespace MyNS {
 	/** A resource budget. */
 	export interface InstanceQuota {
 
-		/** Number of machines than can be created for the given location and instance_type. */
+		/**
+		 * Number of machines than can be created for the given location and instance_type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableMachineCount?: number | null;
 
 		/** The gcp service of the provisioning quota. */
@@ -1259,7 +1286,10 @@ export namespace MyNS {
 	/** A resource budget. */
 	export interface InstanceQuotaFormProperties {
 
-		/** Number of machines than can be created for the given location and instance_type. */
+		/**
+		 * Number of machines than can be created for the given location and instance_type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableMachineCount: FormControl<number | null | undefined>,
 
 		/** The gcp service of the provisioning quota. */
@@ -1709,7 +1739,10 @@ export namespace MyNS {
 		/** The asset type of this provisioning quota. */
 		assetType?: ProvisioningQuotaAssetType | null;
 
-		/** The available count of the provisioning quota. */
+		/**
+		 * The available count of the provisioning quota.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableCount?: number | null;
 
 		/** The gcp service of the provisioning quota. */
@@ -1740,7 +1773,10 @@ export namespace MyNS {
 		/** The asset type of this provisioning quota. */
 		assetType: FormControl<ProvisioningQuotaAssetType | null | undefined>,
 
-		/** The available count of the provisioning quota. */
+		/**
+		 * The available count of the provisioning quota.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableCount: FormControl<number | null | undefined>,
 
 		/** The gcp service of the provisioning quota. */
@@ -1997,20 +2033,32 @@ export namespace MyNS {
 	/** A LUN(Logical Unit Number) range. */
 	export interface LunRange {
 
-		/** Number of LUNs to create. */
+		/**
+		 * Number of LUNs to create.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** The requested size of each LUN, in GB. */
+		/**
+		 * The requested size of each LUN, in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 	}
 
 	/** A LUN(Logical Unit Number) range. */
 	export interface LunRangeFormProperties {
 
-		/** Number of LUNs to create. */
+		/**
+		 * Number of LUNs to create.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** The requested size of each LUN, in GB. */
+		/**
+		 * The requested size of each LUN, in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 	}
 	export function CreateLunRangeFormGroup() {
@@ -2226,7 +2274,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -2239,7 +2290,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2390,7 +2444,10 @@ export namespace MyNS {
 		/** Volume protocol. */
 		protocol?: VolumeConfigProtocol | null;
 
-		/** The requested size of this volume, in GB. */
+		/**
+		 * The requested size of this volume, in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 
 		/** Whether snapshots should be enabled. */
@@ -2421,7 +2478,10 @@ export namespace MyNS {
 		/** Volume protocol. */
 		protocol: FormControl<VolumeConfigProtocol | null | undefined>,
 
-		/** The requested size of this volume, in GB. */
+		/**
+		 * The requested size of this volume, in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 
 		/** Whether snapshots should be enabled. */
@@ -2785,6 +2845,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -2878,6 +2939,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent value for ListInstancesRequest.
 		 * @param {string} filter List filter.
 		 * @param {number} pageSize Requested page size. Server may return fewer items than requested. If unspecified, the server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results from the server.
 		 * @return {ListInstancesResponse} Successful response
 		 */
@@ -2890,6 +2952,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/luns
 		 * @param {string} parent Required. Parent value for ListLunsRequest.
 		 * @param {number} pageSize Requested page size. The server might return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results from the server.
 		 * @return {ListLunsResponse} Successful response
 		 */
@@ -2903,6 +2966,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent value for ListNetworksRequest.
 		 * @param {string} filter List filter.
 		 * @param {number} pageSize Requested page size. The server might return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results from the server.
 		 * @return {ListNetworksResponse} Successful response
 		 */
@@ -2916,6 +2980,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent value for ListNfsSharesRequest.
 		 * @param {string} filter List filter.
 		 * @param {number} pageSize Requested page size. The server might return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results from the server.
 		 * @return {ListNfsSharesResponse} Successful response
 		 */
@@ -2938,6 +3003,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/osImages
 		 * @param {string} parent Required. Parent value for ListOSImagesRequest.
 		 * @param {number} pageSize Requested page size. The server might return fewer items than requested. If unspecified, server will pick an appropriate default. Notice that page_size field is not supported and won't be respected in the API request for now, will be updated when pagination is supported.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results from the server.
 		 * @return {ListOSImagesResponse} Successful response
 		 */
@@ -2971,6 +3037,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/provisioningQuotas
 		 * @param {string} parent Required. Parent value for ListProvisioningQuotasRequest.
 		 * @param {number} pageSize Requested page size. The server might return fewer items than requested. If unspecified, server will pick an appropriate default. Notice that page_size field is not supported and won't be respected in the API request for now, will be updated when pagination is supported.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results from the server.
 		 * @return {ListProvisioningQuotasResponse} Successful response
 		 */
@@ -2983,6 +3050,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/snapshots
 		 * @param {string} parent Required. Parent value for ListVolumesRequest.
 		 * @param {number} pageSize Requested page size. The server might return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results from the server.
 		 * @return {ListVolumeSnapshotsResponse} Successful response
 		 */
@@ -3005,6 +3073,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/sshKeys
 		 * @param {string} parent Required. The parent containing the SSH keys. Currently, the only valid value for the location is "global".
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListSSHKeysResponse} Successful response
 		 */
@@ -3029,6 +3098,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent value for ListVolumesRequest.
 		 * @param {string} filter List filter.
 		 * @param {number} pageSize Requested page size. The server might return fewer items than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results from the server.
 		 * @return {ListVolumesResponse} Successful response
 		 */

@@ -50,6 +50,7 @@ export namespace MyNS {
 		 * Validate a phone number by calling it once
 		 * Get calls
 		 * @param {number} validate Validate a phone number by calling it for one ring. Note; not 100% proof the number is in service.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} OK
 		 */
 		CallsGetByValidate(validate: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -106,6 +107,7 @@ export namespace MyNS {
 		 * Represents a customer
 		 * Get customers/{account}
 		 * @param {number} account Account ID of customer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Customers_accountGetReturn} Found
 		 */
 		Customers_accountGet(account: number, headersHandler?: () => HttpHeaders): Observable<Customers_accountGetReturn> {
@@ -116,6 +118,7 @@ export namespace MyNS {
 		 * List of announcement audio files
 		 * Get customers/{account}/announcements
 		 * @param {number} account Account ID of customer
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Customers_accountAnnouncementsGetReturn} OK
 		 */
 		Customers_accountAnnouncementsGet(account: number, headersHandler?: () => HttpHeaders): Observable<Customers_accountAnnouncementsGetReturn> {
@@ -377,13 +380,22 @@ export namespace MyNS {
 		/** Change the caller ID shown to the a leg (from) */
 		a_leg_caller_id?: string | null;
 
-		/** Do not ring the "to" number, only the from and show "caller_id" */
+		/**
+		 * Do not ring the "to" number, only the from and show "caller_id"
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		a_leg_only?: number | null;
 
-		/** The phone keypad number to press to hangup the call and not place the second leg of the call. Default 2 */
+		/**
+		 * The phone keypad number to press to hangup the call and not place the second leg of the call. Default 2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cancel_key?: number | null;
 
-		/** The phone keypad number to press in order to place the call to the b leg, i.e. press to confirm. Default 1 */
+		/**
+		 * The phone keypad number to press in order to place the call to the b leg, i.e. press to confirm. Default 1
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connect_key?: number | null;
 		CallsPostPostBodyOptionsPlay_audio?: Array<CallsPostPostBodyOptionsPlay_audio>;
 	}
@@ -392,13 +404,22 @@ export namespace MyNS {
 		/** Change the caller ID shown to the a leg (from) */
 		a_leg_caller_id: FormControl<string | null | undefined>,
 
-		/** Do not ring the "to" number, only the from and show "caller_id" */
+		/**
+		 * Do not ring the "to" number, only the from and show "caller_id"
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		a_leg_only: FormControl<number | null | undefined>,
 
-		/** The phone keypad number to press to hangup the call and not place the second leg of the call. Default 2 */
+		/**
+		 * The phone keypad number to press to hangup the call and not place the second leg of the call. Default 2
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cancel_key: FormControl<number | null | undefined>,
 
-		/** The phone keypad number to press in order to place the call to the b leg, i.e. press to confirm. Default 1 */
+		/**
+		 * The phone keypad number to press in order to place the call to the b leg, i.e. press to confirm. Default 1
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connect_key: FormControl<number | null | undefined>,
 	}
 	export function CreateCallsPostPostBodyOptionsFormGroup() {
@@ -436,6 +457,8 @@ export namespace MyNS {
 
 	export interface Customers_accountGetReturn {
 		address?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		balance?: number | null;
 		city?: string | null;
 		company_name?: string | null;
@@ -449,10 +472,14 @@ export namespace MyNS {
 		phone?: string | null;
 		postcode?: string | null;
 		state?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		username?: number | null;
 	}
 	export interface Customers_accountGetReturnFormProperties {
 		address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		balance: FormControl<number | null | undefined>,
 		city: FormControl<string | null | undefined>,
 		company_name: FormControl<string | null | undefined>,
@@ -466,6 +493,8 @@ export namespace MyNS {
 		phone: FormControl<string | null | undefined>,
 		postcode: FormControl<string | null | undefined>,
 		state: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		username: FormControl<number | null | undefined>,
 	}
 	export function CreateCustomers_accountGetReturnFormGroup() {
@@ -502,23 +531,29 @@ export namespace MyNS {
 
 	export interface NumbersAreacodesGetReturn {
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 
 		/** Required */
 		name: string;
 	}
 	export interface NumbersAreacodesGetReturnFormProperties {
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateNumbersAreacodesGetReturnFormGroup() {
 		return new FormGroup<NumbersAreacodesGetReturnFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 

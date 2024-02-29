@@ -125,7 +125,10 @@ export namespace MyNS {
 
 	export interface PowerInfo {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		batteryLevel: number;
 
 		/** Required */
@@ -133,7 +136,10 @@ export namespace MyNS {
 	}
 	export interface PowerInfoFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		batteryLevel: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -282,7 +288,10 @@ export namespace MyNS {
 	/** Location */
 	export interface Location {
 
-		/** Accuracy */
+		/**
+		 * Accuracy
+		 * Type: double
+		 */
 		accuracy?: number | null;
 
 		/**
@@ -291,13 +300,22 @@ export namespace MyNS {
 		 */
 		address: string;
 
-		/** Altitude */
+		/**
+		 * Altitude
+		 * Type: double
+		 */
 		altitude?: number | null;
 
-		/** Altitude accuracy */
+		/**
+		 * Altitude accuracy
+		 * Type: double
+		 */
 		altitudeAccuracy?: number | null;
 
-		/** Battery level */
+		/**
+		 * Battery level
+		 * Type: double
+		 */
 		battery?: number | null;
 
 		/** Required */
@@ -309,22 +327,30 @@ export namespace MyNS {
 		 */
 		deviceName: string;
 
-		/** Heading */
+		/**
+		 * Heading
+		 * Type: double
+		 */
 		heading?: number | null;
 
 		/**
 		 * Latitude
 		 * Required
+		 * Type: double
 		 */
 		latitude: number;
 
 		/**
 		 * Longitude
 		 * Required
+		 * Type: double
 		 */
 		longitude: number;
 
-		/** Speed */
+		/**
+		 * Speed
+		 * Type: double
+		 */
 		speed?: number | null;
 
 		/**
@@ -337,7 +363,10 @@ export namespace MyNS {
 	/** Location */
 	export interface LocationFormProperties {
 
-		/** Accuracy */
+		/**
+		 * Accuracy
+		 * Type: double
+		 */
 		accuracy: FormControl<number | null | undefined>,
 
 		/**
@@ -346,13 +375,22 @@ export namespace MyNS {
 		 */
 		address: FormControl<string | null | undefined>,
 
-		/** Altitude */
+		/**
+		 * Altitude
+		 * Type: double
+		 */
 		altitude: FormControl<number | null | undefined>,
 
-		/** Altitude accuracy */
+		/**
+		 * Altitude accuracy
+		 * Type: double
+		 */
 		altitudeAccuracy: FormControl<number | null | undefined>,
 
-		/** Battery level */
+		/**
+		 * Battery level
+		 * Type: double
+		 */
 		battery: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -364,22 +402,30 @@ export namespace MyNS {
 		 */
 		deviceName: FormControl<string | null | undefined>,
 
-		/** Heading */
+		/**
+		 * Heading
+		 * Type: double
+		 */
 		heading: FormControl<number | null | undefined>,
 
 		/**
 		 * Latitude
 		 * Required
+		 * Type: double
 		 */
 		latitude: FormControl<number | null | undefined>,
 
 		/**
 		 * Longitude
 		 * Required
+		 * Type: double
 		 */
 		longitude: FormControl<number | null | undefined>,
 
-		/** Speed */
+		/**
+		 * Speed
+		 * Type: double
+		 */
 		speed: FormControl<number | null | undefined>,
 
 		/**
@@ -419,6 +465,7 @@ export namespace MyNS {
 		/**
 		 * The order of the action
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		order: number;
 	}
@@ -435,6 +482,7 @@ export namespace MyNS {
 		/**
 		 * The order of the action
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		order: FormControl<number | null | undefined>,
 	}
@@ -495,6 +543,7 @@ export namespace MyNS {
 		/**
 		 * The order of the contact
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		order: number;
 
@@ -553,6 +602,7 @@ export namespace MyNS {
 		/**
 		 * The order of the contact
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		order: FormControl<number | null | undefined>,
 
@@ -584,6 +634,7 @@ export namespace MyNS {
 		/**
 		 * The order
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		order: number;
 
@@ -600,6 +651,7 @@ export namespace MyNS {
 		/**
 		 * The order
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		order: FormControl<number | null | undefined>,
 
@@ -625,6 +677,8 @@ export namespace MyNS {
 		/** Required */
 		extensions: {[id: string]: any };
 		instance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
@@ -635,6 +689,8 @@ export namespace MyNS {
 		/** Required */
 		extensions: FormControl<{[id: string]: any } | null | undefined>,
 		instance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -909,6 +965,7 @@ export namespace MyNS {
 		/**
 		 * The worker's default report interval
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reportInterval: number;
 
@@ -937,6 +994,7 @@ export namespace MyNS {
 		/**
 		 * The worker's default report interval
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		reportInterval: FormControl<number | null | undefined>,
 	}
@@ -1068,7 +1126,9 @@ export namespace MyNS {
 		 * Post api/v2.1/companies/{companyId}/users/{uniqueUserId}/checkin
 		 * @param {string} uniqueUserId The unique user id
 		 * @param {number} interval The optional check-in interval in minutes
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Api_CheckInDeviceType} deviceType Optional, the device type performing the command.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {User} The updated User
 		 */
 		Api_CheckIn(uniqueUserId: string, interval: number | null | undefined, deviceType: Api_CheckInDeviceType | null | undefined, companyId: string): Observable<User> {
@@ -1080,7 +1140,9 @@ export namespace MyNS {
 		 * This operation checks the worker in for a default time or a custom time if the optional interval is provided, and includes an audio attachment.
 		 * Post api/v2.1/companies/{companyId}/users/{uniqueUserId}/checkin-audio
 		 * @param {number} interval The optional check-in interval in minutes
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Api_CheckInWithAudioDeviceType} deviceType Optional, the device type performing the command.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Audio} requestBody The base 64 encoded audio
 		 * @return {User} The updated User
 		 */
@@ -1094,7 +1156,9 @@ export namespace MyNS {
 		 * Post api/v2.1/companies/{companyId}/users/{uniqueUserId}/checkin-text
 		 * @param {string} uniqueUserId The unique user id
 		 * @param {number} interval The optional check-in interval in minutes
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Api_CheckInWithTextDeviceType} deviceType Optional, the device type performing the command.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestBody The text report
 		 * @return {User} The updated User
 		 */
@@ -1108,6 +1172,7 @@ export namespace MyNS {
 		 * Post api/v2.1/companies/{companyId}/users/{uniqueUserId}/emergency
 		 * @param {string} uniqueUserId The unique user id
 		 * @param {Api_EmergencyDeviceType} deviceType Optional, the device type performing the command.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {User} The updated User
 		 */
 		Api_Emergency(uniqueUserId: string, deviceType: Api_EmergencyDeviceType | null | undefined, companyId: string): Observable<User> {
@@ -1120,6 +1185,7 @@ export namespace MyNS {
 		 * Post api/v2.1/companies/{companyId}/users/{uniqueUserId}/emergency-audio
 		 * @param {string} uniqueUserId The unique user id
 		 * @param {Api_EmergencyWithAudioDeviceType} deviceType Optional, the device type performing the command.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Audio} requestBody The base 64 encoded audio
 		 * @return {User} The updated User
 		 */
@@ -1133,6 +1199,7 @@ export namespace MyNS {
 		 * Post api/v2.1/companies/{companyId}/users/{uniqueUserId}/emergency-text
 		 * @param {string} uniqueUserId The unique user id
 		 * @param {Api_EmergencyWithTextDeviceType} deviceType Optional, the device type performing the command.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestBody The text report
 		 * @return {User} The updated User
 		 */
@@ -1146,6 +1213,7 @@ export namespace MyNS {
 		 * Post api/v2.1/companies/{companyId}/users/{uniqueUserId}/end
 		 * @param {string} uniqueUserId The unique user id
 		 * @param {Api_EndDeviceType} deviceType Optional, the device type performing the command.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {User} The updated User
 		 */
 		Api_End(uniqueUserId: string, deviceType: Api_EndDeviceType | null | undefined, companyId: string): Observable<User> {
@@ -1158,6 +1226,7 @@ export namespace MyNS {
 		 * Post api/v2.1/companies/{companyId}/users/{uniqueUserId}/end-audio
 		 * @param {string} uniqueUserId The unique user id
 		 * @param {Api_EndWithAudioDeviceType} deviceType Optional, the device type performing the command.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Audio} requestBody The base 64 encoded audio
 		 * @return {User} The updatedUser
 		 */
@@ -1171,6 +1240,7 @@ export namespace MyNS {
 		 * Post api/v2.1/companies/{companyId}/users/{uniqueUserId}/end-text
 		 * @param {string} uniqueUserId The unique user id
 		 * @param {Api_EndWithTextDeviceType} deviceType Optional, the device type performing the command.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestBody The text report
 		 * @return {User} The updated User
 		 */
@@ -1196,6 +1266,7 @@ export namespace MyNS {
 		 * Post api/v2.1/companies/{companyId}/users/{uniqueUserId}/location
 		 * @param {string} uniqueUserId The unique user id
 		 * @param {Api_ReportLocationDeviceType} deviceType Optional, the device type performing the command.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {EventLocationData} requestBody The EventLocationData
 		 * @return {User} The updated User
 		 */
@@ -1209,6 +1280,7 @@ export namespace MyNS {
 		 * Post api/v2.1/companies/{companyId}/users/{uniqueUserId}/text
 		 * @param {string} uniqueUserId The unique user id
 		 * @param {Api_ReportTextDeviceType} deviceType Optional, the device type performing the command.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestBody The text to report
 		 * @return {void} 200 for success
 		 */

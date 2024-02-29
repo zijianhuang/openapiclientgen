@@ -933,6 +933,7 @@ export namespace MyNS {
 		 * <p>Initiates a bulk publish of all existing datasets for an Identity Pool to the configured stream. Customers are limited to one successful bulk publish per 24 hours. Bulk publish is an asynchronous request, customers can see the status of the request via the GetBulkPublishDetails operation.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		 * Post identitypools/{IdentityPoolId}/bulkpublish
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @return {BulkPublishResponse} Success
 		 */
 		BulkPublish(IdentityPoolId: string): Observable<BulkPublishResponse> {
@@ -943,8 +944,11 @@ export namespace MyNS {
 		 * <p>Deletes the specific dataset. The dataset will be deleted permanently, and the action can't be undone. Datasets that this dataset was merged with will no longer report the merge. Any subsequent operation on this dataset will result in a ResourceNotFoundException.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>
 		 * Delete identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} IdentityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} DatasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteDatasetResponse} Success
 		 */
 		DeleteDataset(IdentityPoolId: string, IdentityId: string, DatasetName: string): Observable<DeleteDatasetResponse> {
@@ -955,8 +959,11 @@ export namespace MyNS {
 		 * <p>Gets meta data about a dataset by identity and dataset name. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>
 		 * Get identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} IdentityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} DatasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeDatasetResponse} Success
 		 */
 		DescribeDataset(IdentityPoolId: string, IdentityId: string, DatasetName: string): Observable<DescribeDatasetResponse> {
@@ -967,8 +974,11 @@ export namespace MyNS {
 		 * <p>Posts updates to records and adds and deletes records for a dataset and user.</p> <p>The sync count in the record patch is your last known sync count for that record. The server will reject an UpdateRecords request with a ResourceConflictException if you try to patch a record with a new value but a stale sync count.</p><p>For example, if the sync count on the server is 5 for a key called highScore and you try and submit a new highScore with sync count of 4, the request will be rejected. To obtain the current sync count for a record, call ListRecords. On a successful update of the record, the response returns the new sync count for that record. You should present that sync count the next time you try to update that same record. When the record does not exist, specify the sync count as 0.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>
 		 * Post identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} IdentityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} DatasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateRecordsResponse} Success
 		 */
 		UpdateRecords(IdentityPoolId: string, IdentityId: string, DatasetName: string, requestBody: UpdateRecordsPostBody): Observable<UpdateRecordsResponse> {
@@ -979,6 +989,7 @@ export namespace MyNS {
 		 * <p>Gets usage details (for example, data storage) about a particular identity pool.</p> <p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		 * Get identitypools/{IdentityPoolId}
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @return {DescribeIdentityPoolUsageResponse} Success
 		 */
 		DescribeIdentityPoolUsage(IdentityPoolId: string): Observable<DescribeIdentityPoolUsageResponse> {
@@ -989,7 +1000,9 @@ export namespace MyNS {
 		 * <p>Gets usage information for an identity, including number of datasets and data usage.</p> <p>This API can be called with temporary user credentials provided by Cognito Identity or with developer credentials.</p>
 		 * Get identitypools/{IdentityPoolId}/identities/{IdentityId}
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} IdentityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @return {DescribeIdentityUsageResponse} Success
 		 */
 		DescribeIdentityUsage(IdentityPoolId: string, IdentityId: string): Observable<DescribeIdentityUsageResponse> {
@@ -1000,6 +1013,7 @@ export namespace MyNS {
 		 * <p>Get the status of the last BulkPublish operation for an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		 * Post identitypools/{IdentityPoolId}/getBulkPublishDetails
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @return {GetBulkPublishDetailsResponse} Success
 		 */
 		GetBulkPublishDetails(IdentityPoolId: string): Observable<GetBulkPublishDetailsResponse> {
@@ -1010,6 +1024,7 @@ export namespace MyNS {
 		 * <p>Gets the events and the corresponding Lambda functions associated with an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		 * Get identitypools/{IdentityPoolId}/events
 		 * @param {string} IdentityPoolId The Cognito Identity Pool ID for the request
+		 *     Min length: 1    Max length: 55
 		 * @return {GetCognitoEventsResponse} Success
 		 */
 		GetCognitoEvents(IdentityPoolId: string): Observable<GetCognitoEventsResponse> {
@@ -1020,6 +1035,7 @@ export namespace MyNS {
 		 * <p>Sets the AWS Lambda function for a given event type for an identity pool. This request only updates the key/value pair specified. Other key/values pairs are not updated. To remove a key value pair, pass a empty value for the particular key.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		 * Post identitypools/{IdentityPoolId}/events
 		 * @param {string} IdentityPoolId The Cognito Identity Pool to use when configuring Cognito Events
+		 *     Min length: 1    Max length: 55
 		 * @return {void} Success
 		 */
 		SetCognitoEvents(IdentityPoolId: string, requestBody: SetCognitoEventsPostBody): Observable<HttpResponse<string>> {
@@ -1030,6 +1046,7 @@ export namespace MyNS {
 		 * <p>Gets the configuration settings of an identity pool.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		 * Get identitypools/{IdentityPoolId}/configuration
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool for which to return a configuration.
+		 *     Min length: 1    Max length: 55
 		 * @return {GetIdentityPoolConfigurationResponse} Success
 		 */
 		GetIdentityPoolConfiguration(IdentityPoolId: string): Observable<GetIdentityPoolConfigurationResponse> {
@@ -1040,6 +1057,7 @@ export namespace MyNS {
 		 * <p>Sets the necessary configuration for push sync.</p><p>This API can only be called with developer credentials. You cannot call this API with the temporary user credentials provided by Cognito Identity.</p>
 		 * Post identitypools/{IdentityPoolId}/configuration
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. This is the ID of the pool to modify.
+		 *     Min length: 1    Max length: 55
 		 * @return {SetIdentityPoolConfigurationResponse} Success
 		 */
 		SetIdentityPoolConfiguration(IdentityPoolId: string, requestBody: SetIdentityPoolConfigurationPostBody): Observable<SetIdentityPoolConfigurationResponse> {
@@ -1050,9 +1068,12 @@ export namespace MyNS {
 		 * <p>Lists datasets for an identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListDatasets can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use the Cognito Identity credentials to make this API call.</p>
 		 * Get identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} IdentityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} nextToken A pagination token for obtaining the next page of results.
 		 * @param {number} maxResults The maximum number of results to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListDatasetsResponse} Success
 		 */
 		ListDatasets(IdentityPoolId: string, IdentityId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDatasetsResponse> {
@@ -1064,6 +1085,7 @@ export namespace MyNS {
 		 * Get identitypools
 		 * @param {string} nextToken A pagination token for obtaining the next page of results.
 		 * @param {number} maxResults The maximum number of results to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {ListIdentityPoolUsageResponse} Success
 		 */
 		ListIdentityPoolUsage(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListIdentityPoolUsageResponse> {
@@ -1074,11 +1096,16 @@ export namespace MyNS {
 		 * <p>Gets paginated records, optionally changed after a particular sync count for a dataset and identity. With Amazon Cognito Sync, each identity has access only to its own data. Thus, the credentials used to make this API call need to have access to the identity data.</p> <p>ListRecords can be called with temporary user credentials provided by Cognito Identity or with developer credentials. You should use Cognito Identity credentials to make this API call.</p>
 		 * Get identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/records
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} IdentityId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. GUID generation is unique within a region.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} DatasetName A string of up to 128 characters. Allowed characters are a-z, A-Z, 0-9, '_' (underscore), '-' (dash), and '.' (dot).
+		 *     Min length: 1    Max length: 128
 		 * @param {number} lastSyncCount The last server sync count for this record.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken A pagination token for obtaining the next page of results.
 		 * @param {number} maxResults The maximum number of results to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} syncSessionToken A token containing a session ID, identity ID, and expiration.
 		 * @return {ListRecordsResponse} Success
 		 */
@@ -1090,7 +1117,9 @@ export namespace MyNS {
 		 * <p>Registers a device to receive push sync notifications.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>
 		 * Post identitypools/{IdentityPoolId}/identity/{IdentityId}/device
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. Here, the ID of the pool that the identity belongs to.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} IdentityId The unique ID for this identity.
+		 *     Min length: 1    Max length: 55
 		 * @return {RegisterDeviceResponse} Success
 		 */
 		RegisterDevice(IdentityPoolId: string, IdentityId: string, requestBody: RegisterDevicePostBody): Observable<RegisterDeviceResponse> {
@@ -1101,9 +1130,13 @@ export namespace MyNS {
 		 * <p>Subscribes to receive notifications when a dataset is modified by another device.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>
 		 * Post identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which the identity belongs.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} IdentityId Unique ID for this identity.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} DatasetName The name of the dataset to subcribe to.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} DeviceId The unique ID generated for this device by Cognito.
+		 *     Min length: 1    Max length: 256
 		 * @return {SubscribeToDatasetResponse} Success
 		 */
 		SubscribeToDataset(IdentityPoolId: string, IdentityId: string, DatasetName: string, DeviceId: string): Observable<SubscribeToDatasetResponse> {
@@ -1114,9 +1147,13 @@ export namespace MyNS {
 		 * <p>Unsubscribes from receiving notifications when a dataset is modified by another device.</p><p>This API can only be called with temporary credentials provided by Cognito Identity. You cannot call this API with developer credentials.</p>
 		 * Delete identitypools/{IdentityPoolId}/identities/{IdentityId}/datasets/{DatasetName}/subscriptions/{DeviceId}
 		 * @param {string} IdentityPoolId A name-spaced GUID (for example, us-east-1:23EC4050-6AEA-7089-A2DD-08002EXAMPLE) created by Amazon Cognito. The ID of the pool to which this identity belongs.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} IdentityId Unique ID for this identity.
+		 *     Min length: 1    Max length: 55
 		 * @param {string} DatasetName The name of the dataset from which to unsubcribe.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} DeviceId The unique ID generated for this device by Cognito.
+		 *     Min length: 1    Max length: 256
 		 * @return {UnsubscribeFromDatasetResponse} Success
 		 */
 		UnsubscribeFromDataset(IdentityPoolId: string, IdentityId: string, DatasetName: string, DeviceId: string): Observable<UnsubscribeFromDatasetResponse> {
@@ -1128,8 +1165,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID generated for this device by Cognito.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		DeviceId?: string | null;
 
@@ -1146,8 +1183,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique ID generated for this device by Cognito.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		DeviceId: FormControl<string | null | undefined>,
 

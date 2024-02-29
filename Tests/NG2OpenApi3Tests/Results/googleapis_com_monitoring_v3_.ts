@@ -277,20 +277,32 @@ export namespace MyNS {
 	/** Specifies how many time series must fail a predicate to trigger a condition. If not specified, then a {count: 1} trigger is used. */
 	export interface Trigger {
 
-		/** The absolute number of time series that must fail the predicate for the condition to be triggered. */
+		/**
+		 * The absolute number of time series that must fail the predicate for the condition to be triggered.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** The percentage of time series that must fail the predicate for the condition to be triggered. */
+		/**
+		 * The percentage of time series that must fail the predicate for the condition to be triggered.
+		 * Type: double
+		 */
 		percent?: number | null;
 	}
 
 	/** Specifies how many time series must fail a predicate to trigger a condition. If not specified, then a {count: 1} trigger is used. */
 	export interface TriggerFormProperties {
 
-		/** The absolute number of time series that must fail the predicate for the condition to be triggered. */
+		/**
+		 * The absolute number of time series that must fail the predicate for the condition to be triggered.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The percentage of time series that must fail the predicate for the condition to be triggered. */
+		/**
+		 * The percentage of time series that must fail the predicate for the condition to be triggered.
+		 * Type: double
+		 */
 		percent: FormControl<number | null | undefined>,
 	}
 	export function CreateTriggerFormGroup() {
@@ -453,7 +465,10 @@ export namespace MyNS {
 		/** Options used when forecasting the time series and testing the predicted value against the threshold. */
 		forecastOptions?: ForecastOptions;
 
-		/** A value against which to compare the time series. */
+		/**
+		 * A value against which to compare the time series.
+		 * Type: double
+		 */
 		thresholdValue?: number | null;
 
 		/** Specifies how many time series must fail a predicate to trigger a condition. If not specified, then a {count: 1} trigger is used. */
@@ -478,7 +493,10 @@ export namespace MyNS {
 		/** Required. A filter (https://cloud.google.com/monitoring/api/v3/filters) that identifies which time series should be compared with the threshold.The filter is similar to the one that is specified in the ListTimeSeries request (https://cloud.google.com/monitoring/api/ref_v3/rest/v3/projects.timeSeries/list) (that call is useful to verify the time series that will be retrieved / processed). The filter must specify the metric type and the resource type. Optionally, it can specify resource labels and metric labels. This field must not exceed 2048 Unicode characters in length. */
 		filter: FormControl<string | null | undefined>,
 
-		/** A value against which to compare the time series. */
+		/**
+		 * A value against which to compare the time series.
+		 * Type: double
+		 */
 		thresholdValue: FormControl<number | null | undefined>,
 	}
 	export function CreateMetricThresholdFormGroup() {
@@ -585,7 +603,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -598,7 +619,10 @@ export namespace MyNS {
 	/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -797,26 +821,44 @@ export namespace MyNS {
 	/** Specifies an exponential sequence of buckets that have a width that is proportional to the value of the lower bound. Each bucket represents a constant relative uncertainty on a specific value in the bucket.There are num_finite_buckets + 2 (= N) buckets. Bucket i has the following boundaries:Upper bound (0 <= i < N-1): scale * (growth_factor ^ i).Lower bound (1 <= i < N): scale * (growth_factor ^ (i - 1)). */
 	export interface Exponential {
 
-		/** Must be greater than 1. */
+		/**
+		 * Must be greater than 1.
+		 * Type: double
+		 */
 		growthFactor?: number | null;
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets?: number | null;
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: double
+		 */
 		scale?: number | null;
 	}
 
 	/** Specifies an exponential sequence of buckets that have a width that is proportional to the value of the lower bound. Each bucket represents a constant relative uncertainty on a specific value in the bucket.There are num_finite_buckets + 2 (= N) buckets. Bucket i has the following boundaries:Upper bound (0 <= i < N-1): scale * (growth_factor ^ i).Lower bound (1 <= i < N): scale * (growth_factor ^ (i - 1)). */
 	export interface ExponentialFormProperties {
 
-		/** Must be greater than 1. */
+		/**
+		 * Must be greater than 1.
+		 * Type: double
+		 */
 		growthFactor: FormControl<number | null | undefined>,
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets: FormControl<number | null | undefined>,
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: double
+		 */
 		scale: FormControl<number | null | undefined>,
 	}
 	export function CreateExponentialFormGroup() {
@@ -832,26 +874,44 @@ export namespace MyNS {
 	/** Specifies a linear sequence of buckets that all have the same width (except overflow and underflow). Each bucket represents a constant absolute uncertainty on the specific value in the bucket.There are num_finite_buckets + 2 (= N) buckets. Bucket i has the following boundaries:Upper bound (0 <= i < N-1): offset + (width * i).Lower bound (1 <= i < N): offset + (width * (i - 1)). */
 	export interface Linear {
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets?: number | null;
 
-		/** Lower bound of the first bucket. */
+		/**
+		 * Lower bound of the first bucket.
+		 * Type: double
+		 */
 		offset?: number | null;
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: double
+		 */
 		width?: number | null;
 	}
 
 	/** Specifies a linear sequence of buckets that all have the same width (except overflow and underflow). Each bucket represents a constant absolute uncertainty on the specific value in the bucket.There are num_finite_buckets + 2 (= N) buckets. Bucket i has the following boundaries:Upper bound (0 <= i < N-1): offset + (width * i).Lower bound (1 <= i < N): offset + (width * (i - 1)). */
 	export interface LinearFormProperties {
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numFiniteBuckets: FormControl<number | null | undefined>,
 
-		/** Lower bound of the first bucket. */
+		/**
+		 * Lower bound of the first bucket.
+		 * Type: double
+		 */
 		offset: FormControl<number | null | undefined>,
 
-		/** Must be greater than 0. */
+		/**
+		 * Must be greater than 0.
+		 * Type: double
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateLinearFormGroup() {
@@ -1082,7 +1142,10 @@ export namespace MyNS {
 		/** Distribution contains summary statistics for a population of values. It optionally contains a histogram representing the distribution of those values across a set of buckets.The summary statistics are the count, mean, sum of the squared deviation from the mean, the minimum, and the maximum of the set of population of values. The histogram is based on a sequence of buckets and gives a count of values that fall into each bucket. The boundaries of the buckets are given either explicitly or by formulas for buckets of fixed or exponentially increasing widths.Although it is not forbidden, it is generally a bad idea to include non-finite values (infinities or NaNs) in the population of values, as this will render the mean and sum_of_squared_deviation fields meaningless. */
 		distributionValue?: Distribution;
 
-		/** A 64-bit double-precision floating-point number. Its magnitude is approximately ±10±300 and it has 16 significant digits of precision. */
+		/**
+		 * A 64-bit double-precision floating-point number. Its magnitude is approximately ±10±300 and it has 16 significant digits of precision.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** A 64-bit integer. Its range is approximately ±9.2x1018. */
@@ -1098,7 +1161,10 @@ export namespace MyNS {
 		/** A Boolean value: true or false. */
 		boolValue: FormControl<boolean | null | undefined>,
 
-		/** A 64-bit double-precision floating-point number. Its magnitude is approximately ±10±300 and it has 16 significant digits of precision. */
+		/**
+		 * A 64-bit double-precision floating-point number. Its magnitude is approximately ±10±300 and it has 16 significant digits of precision.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** A 64-bit integer. Its range is approximately ±9.2x1018. */
@@ -1133,13 +1199,19 @@ export namespace MyNS {
 		/** Must be in increasing order of value field. */
 		exemplars?: Array<Exemplar>;
 
-		/** The arithmetic mean of the values in the population. If count is zero then this field must be zero. */
+		/**
+		 * The arithmetic mean of the values in the population. If count is zero then this field must be zero.
+		 * Type: double
+		 */
 		mean?: number | null;
 
 		/** The range of the population values. */
 		range?: Range;
 
-		/** The sum of squared deviations from the mean of the values in the population. For values x_i this is: Sum[i=1..n]((x_i - mean)^2) Knuth, "The Art of Computer Programming", Vol. 2, page 232, 3rd edition describes Welford's method for accumulating this sum in one pass.If count is zero then this field must be zero. */
+		/**
+		 * The sum of squared deviations from the mean of the values in the population. For values x_i this is: Sum[i=1..n]((x_i - mean)^2) Knuth, "The Art of Computer Programming", Vol. 2, page 232, 3rd edition describes Welford's method for accumulating this sum in one pass.If count is zero then this field must be zero.
+		 * Type: double
+		 */
 		sumOfSquaredDeviation?: number | null;
 	}
 
@@ -1149,10 +1221,16 @@ export namespace MyNS {
 		/** The number of values in the population. Must be non-negative. This value must equal the sum of the values in bucket_counts if a histogram is provided. */
 		count: FormControl<string | null | undefined>,
 
-		/** The arithmetic mean of the values in the population. If count is zero then this field must be zero. */
+		/**
+		 * The arithmetic mean of the values in the population. If count is zero then this field must be zero.
+		 * Type: double
+		 */
 		mean: FormControl<number | null | undefined>,
 
-		/** The sum of squared deviations from the mean of the values in the population. For values x_i this is: Sum[i=1..n]((x_i - mean)^2) Knuth, "The Art of Computer Programming", Vol. 2, page 232, 3rd edition describes Welford's method for accumulating this sum in one pass.If count is zero then this field must be zero. */
+		/**
+		 * The sum of squared deviations from the mean of the values in the population. For values x_i this is: Sum[i=1..n]((x_i - mean)^2) Knuth, "The Art of Computer Programming", Vol. 2, page 232, 3rd edition describes Welford's method for accumulating this sum in one pass.If count is zero then this field must be zero.
+		 * Type: double
+		 */
 		sumOfSquaredDeviation: FormControl<number | null | undefined>,
 	}
 	export function CreateDistributionFormGroup() {
@@ -1174,7 +1252,10 @@ export namespace MyNS {
 		/** The observation (sampling) time of the above value. */
 		timestamp?: string | null;
 
-		/** Value of the exemplar point. This value determines to which bucket the exemplar belongs. */
+		/**
+		 * Value of the exemplar point. This value determines to which bucket the exemplar belongs.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -1184,7 +1265,10 @@ export namespace MyNS {
 		/** The observation (sampling) time of the above value. */
 		timestamp: FormControl<string | null | undefined>,
 
-		/** Value of the exemplar point. This value determines to which bucket the exemplar belongs. */
+		/**
+		 * Value of the exemplar point. This value determines to which bucket the exemplar belongs.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateExemplarFormGroup() {
@@ -1199,20 +1283,32 @@ export namespace MyNS {
 	/** The range of the population values. */
 	export interface Range {
 
-		/** The maximum of the population values. */
+		/**
+		 * The maximum of the population values.
+		 * Type: double
+		 */
 		max?: number | null;
 
-		/** The minimum of the population values. */
+		/**
+		 * The minimum of the population values.
+		 * Type: double
+		 */
 		min?: number | null;
 	}
 
 	/** The range of the population values. */
 	export interface RangeFormProperties {
 
-		/** The maximum of the population values. */
+		/**
+		 * The maximum of the population values.
+		 * Type: double
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** The minimum of the population values. */
+		/**
+		 * The minimum of the population values.
+		 * Type: double
+		 */
 		min: FormControl<number | null | undefined>,
 	}
 	export function CreateRangeFormGroup() {
@@ -1263,7 +1359,10 @@ export namespace MyNS {
 		/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 		error?: Status;
 
-		/** The zero-based index in CreateCollectdTimeSeriesRequest.collectd_payloads. */
+		/**
+		 * The zero-based index in CreateCollectdTimeSeriesRequest.collectd_payloads.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Records the error status for values that were not written due to an error.Failed payloads for which nothing is written will not include partial value errors. */
@@ -1273,7 +1372,10 @@ export namespace MyNS {
 	/** Describes the error status for payloads that were not written. */
 	export interface CollectdPayloadErrorFormProperties {
 
-		/** The zero-based index in CreateCollectdTimeSeriesRequest.collectd_payloads. */
+		/**
+		 * The zero-based index in CreateCollectdTimeSeriesRequest.collectd_payloads.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateCollectdPayloadErrorFormGroup() {
@@ -1290,14 +1392,20 @@ export namespace MyNS {
 		/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
 		error?: Status;
 
-		/** The zero-based index in CollectdPayload.values within the parent CreateCollectdTimeSeriesRequest.collectd_payloads. */
+		/**
+		 * The zero-based index in CollectdPayload.values within the parent CreateCollectdTimeSeriesRequest.collectd_payloads.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 	}
 
 	/** Describes the error status for values that were not written. */
 	export interface CollectdValueErrorFormProperties {
 
-		/** The zero-based index in CollectdPayload.values within the parent CreateCollectdTimeSeriesRequest.collectd_payloads. */
+		/**
+		 * The zero-based index in CollectdPayload.values within the parent CreateCollectdTimeSeriesRequest.collectd_payloads.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateCollectdValueErrorFormGroup() {
@@ -1424,20 +1532,32 @@ export namespace MyNS {
 		/** The number of points that failed to be written. Order is not guaranteed. */
 		errors?: Array<Error>;
 
-		/** The number of points that were successfully written. */
+		/**
+		 * The number of points that were successfully written.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successPointCount?: number | null;
 
-		/** The number of points in the request. */
+		/**
+		 * The number of points in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPointCount?: number | null;
 	}
 
 	/** Summary of the result of a failed request to write data to a time series. */
 	export interface CreateTimeSeriesSummaryFormProperties {
 
-		/** The number of points that were successfully written. */
+		/**
+		 * The number of points that were successfully written.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successPointCount: FormControl<number | null | undefined>,
 
-		/** The number of points in the request. */
+		/**
+		 * The number of points in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalPointCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateTimeSeriesSummaryFormGroup() {
@@ -1452,7 +1572,10 @@ export namespace MyNS {
 	/** Detailed information about an error category. */
 	export interface Error {
 
-		/** The number of points that couldn't be written because of status. */
+		/**
+		 * The number of points that couldn't be written because of status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pointCount?: number | null;
 
 		/** The Status type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by gRPC (https://github.com/grpc). Each Status message contains three pieces of data: error code, error message, and error details.You can find out more about this error model and how to work with it in the API Design Guide (https://cloud.google.com/apis/design/errors). */
@@ -1462,7 +1585,10 @@ export namespace MyNS {
 	/** Detailed information about an error category. */
 	export interface ErrorFormProperties {
 
-		/** The number of points that couldn't be written because of status. */
+		/**
+		 * The number of points that couldn't be written because of status.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pointCount: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorFormGroup() {
@@ -1703,20 +1829,32 @@ export namespace MyNS {
 	/** Range of numerical values within min and max. */
 	export interface GoogleMonitoringV3Range {
 
-		/** Range maximum. */
+		/**
+		 * Range maximum.
+		 * Type: double
+		 */
 		max?: number | null;
 
-		/** Range minimum. */
+		/**
+		 * Range minimum.
+		 * Type: double
+		 */
 		min?: number | null;
 	}
 
 	/** Range of numerical values within min and max. */
 	export interface GoogleMonitoringV3RangeFormProperties {
 
-		/** Range maximum. */
+		/**
+		 * Range maximum.
+		 * Type: double
+		 */
 		max: FormControl<number | null | undefined>,
 
-		/** Range minimum. */
+		/**
+		 * Range minimum.
+		 * Type: double
+		 */
 		min: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleMonitoringV3RangeFormGroup() {
@@ -1781,10 +1919,16 @@ export namespace MyNS {
 		/** The field name. */
 		name?: string | null;
 
-		/** The field number. */
+		/**
+		 * The field number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
-		/** The index of the field type in Type.oneofs, for message or enumeration types. The first type has index 1; zero means the type is not in the list. */
+		/**
+		 * The index of the field type in Type.oneofs, for message or enumeration types. The first type has index 1; zero means the type is not in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oneofIndex?: number | null;
 
 		/** The protocol buffer options. */
@@ -1815,10 +1959,16 @@ export namespace MyNS {
 		/** The field name. */
 		name: FormControl<string | null | undefined>,
 
-		/** The field number. */
+		/**
+		 * The field number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
-		/** The index of the field type in Type.oneofs, for message or enumeration types. The first type has index 1; zero means the type is not in the list. */
+		/**
+		 * The index of the field type in Type.oneofs, for message or enumeration types. The first type has index 1; zero means the type is not in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		oneofIndex: FormControl<number | null | undefined>,
 
 		/** Whether to use alternative packed wire representation. */
@@ -2150,7 +2300,10 @@ export namespace MyNS {
 		/** Information involved in sending ICMP pings alongside public HTTP/TCP checks. For HTTP, the pings are performed for each part of the redirect chain. */
 		pingConfig?: PingConfig;
 
-		/** Optional (defaults to 80 when use_ssl is false, and 443 when use_ssl is true). The TCP port on the HTTP server against which to run the check. Will be combined with host (specified within the monitored_resource) and path to construct the full URL. */
+		/**
+		 * Optional (defaults to 80 when use_ssl is false, and 443 when use_ssl is true). The TCP port on the HTTP server against which to run the check. Will be combined with host (specified within the monitored_resource) and path to construct the full URL.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** The HTTP request method to use for the check. If set to METHOD_UNSPECIFIED then request_method defaults to GET. */
@@ -2184,7 +2337,10 @@ export namespace MyNS {
 		/** Optional (defaults to "/"). The path to the page against which to run the check. Will be combined with the host (specified within the monitored_resource) and port to construct the full URL. If the provided path does not begin with "/", a "/" will be prepended automatically. */
 		path: FormControl<string | null | undefined>,
 
-		/** Optional (defaults to 80 when use_ssl is false, and 443 when use_ssl is true). The TCP port on the HTTP server against which to run the check. Will be combined with host (specified within the monitored_resource) and path to construct the full URL. */
+		/**
+		 * Optional (defaults to 80 when use_ssl is false, and 443 when use_ssl is true). The TCP port on the HTTP server against which to run the check. Will be combined with host (specified within the monitored_resource) and path to construct the full URL.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** The HTTP request method to use for the check. If set to METHOD_UNSPECIFIED then request_method defaults to GET. */
@@ -2219,7 +2375,10 @@ export namespace MyNS {
 		/** A class of status codes to accept. */
 		statusClass?: ResponseStatusCodeStatusClass | null;
 
-		/** A status code to accept. */
+		/**
+		 * A status code to accept.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusValue?: number | null;
 	}
 
@@ -2229,7 +2388,10 @@ export namespace MyNS {
 		/** A class of status codes to accept. */
 		statusClass: FormControl<ResponseStatusCodeStatusClass | null | undefined>,
 
-		/** A status code to accept. */
+		/**
+		 * A status code to accept.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		statusValue: FormControl<number | null | undefined>,
 	}
 	export function CreateResponseStatusCodeFormGroup() {
@@ -2248,14 +2410,20 @@ export namespace MyNS {
 	/** Information involved in sending ICMP pings alongside public HTTP/TCP checks. For HTTP, the pings are performed for each part of the redirect chain. */
 	export interface PingConfig {
 
-		/** Number of ICMP pings. A maximum of 3 ICMP pings is currently supported. */
+		/**
+		 * Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pingsCount?: number | null;
 	}
 
 	/** Information involved in sending ICMP pings alongside public HTTP/TCP checks. For HTTP, the pings are performed for each part of the redirect chain. */
 	export interface PingConfigFormProperties {
 
-		/** Number of ICMP pings. A maximum of 3 ICMP pings is currently supported. */
+		/**
+		 * Number of ICMP pings. A maximum of 3 ICMP pings is currently supported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pingsCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePingConfigFormGroup() {
@@ -2442,7 +2610,10 @@ export namespace MyNS {
 		/** If there might be more results than were returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
 		nextPageToken?: string | null;
 
-		/** The total number of alert policies in all pages. This number is only an estimate, and may change in subsequent pages. https://aip.dev/158 */
+		/**
+		 * The total number of alert policies in all pages. This number is only an estimate, and may change in subsequent pages. https://aip.dev/158
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -2452,7 +2623,10 @@ export namespace MyNS {
 		/** If there might be more results than were returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of alert policies in all pages. This number is only an estimate, and may change in subsequent pages. https://aip.dev/158 */
+		/**
+		 * The total number of alert policies in all pages. This number is only an estimate, and may change in subsequent pages. https://aip.dev/158
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListAlertPoliciesResponseFormGroup() {
@@ -2473,7 +2647,10 @@ export namespace MyNS {
 		/** If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
 		nextPageToken?: string | null;
 
-		/** The total number of elements matching this request. */
+		/**
+		 * The total number of elements matching this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -2483,7 +2660,10 @@ export namespace MyNS {
 		/** If there are more results than have been returned, then this field is set to a non-empty value. To see the additional results, use that value as page_token in the next call to this method. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of elements matching this request. */
+		/**
+		 * The total number of elements matching this request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListGroupMembersResponseFormGroup() {
@@ -2823,7 +3003,10 @@ export namespace MyNS {
 		/** The notification channels defined for the specified project. */
 		notificationChannels?: Array<NotificationChannel>;
 
-		/** The total number of notification channels in all pages. This number is only an estimate, and may change in subsequent pages. https://aip.dev/158 */
+		/**
+		 * The total number of notification channels in all pages. This number is only an estimate, and may change in subsequent pages. https://aip.dev/158
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -2833,7 +3016,10 @@ export namespace MyNS {
 		/** If not empty, indicates that there may be more results that match the request. Use the value in the page_token field in a subsequent request to fetch the next set of results. If empty, all results have been returned. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of notification channels in all pages. This number is only an estimate, and may change in subsequent pages. https://aip.dev/158 */
+		/**
+		 * The total number of notification channels in all pages. This number is only an estimate, and may change in subsequent pages. https://aip.dev/158
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListNotificationChannelsResponseFormGroup() {
@@ -2956,7 +3142,10 @@ export namespace MyNS {
 		/** Name used for UI elements listing this SLO. */
 		displayName?: string | null;
 
-		/** The fraction of service that must be good in order for this objective to be met. 0 < goal <= 0.999. */
+		/**
+		 * The fraction of service that must be good in order for this objective to be met. 0 < goal <= 0.999.
+		 * Type: double
+		 */
 		goal?: number | null;
 
 		/** Resource name for this ServiceLevelObjective. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] */
@@ -2981,7 +3170,10 @@ export namespace MyNS {
 		/** Name used for UI elements listing this SLO. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** The fraction of service that must be good in order for this objective to be met. 0 < goal <= 0.999. */
+		/**
+		 * The fraction of service that must be good in order for this objective to be met. 0 < goal <= 0.999.
+		 * Type: double
+		 */
 		goal: FormControl<number | null | undefined>,
 
 		/** Resource name for this ServiceLevelObjective. The format is: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID]/serviceLevelObjectives/[SLO_NAME] */
@@ -3132,14 +3324,20 @@ export namespace MyNS {
 		/** Service Level Indicators for which atomic units of service are counted directly. */
 		performance?: RequestBasedSli;
 
-		/** If window performance >= threshold, the window is counted as good. */
+		/**
+		 * If window performance >= threshold, the window is counted as good.
+		 * Type: double
+		 */
 		threshold?: number | null;
 	}
 
 	/** A PerformanceThreshold is used when each window is good when that window has a sufficiently high performance. */
 	export interface PerformanceThresholdFormProperties {
 
-		/** If window performance >= threshold, the window is counted as good. */
+		/**
+		 * If window performance >= threshold, the window is counted as good.
+		 * Type: double
+		 */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreatePerformanceThresholdFormGroup() {
@@ -3423,7 +3621,10 @@ export namespace MyNS {
 		/** This field represents the pagination token to retrieve the next page of results. If the value is empty, it means no further results for the request. To retrieve the next page of results, the value of the next_page_token is passed to the subsequent List method call (in the request message's page_token field). */
 		nextPageToken?: string | null;
 
-		/** The total number of Uptime check configurations for the project, irrespective of any pagination. */
+		/**
+		 * The total number of Uptime check configurations for the project, irrespective of any pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 
 		/** The returned Uptime check configurations. */
@@ -3436,7 +3637,10 @@ export namespace MyNS {
 		/** This field represents the pagination token to retrieve the next page of results. If the value is empty, it means no further results for the request. To retrieve the next page of results, the value of the next_page_token is passed to the subsequent List method call (in the request message's page_token field). */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of Uptime check configurations for the project, irrespective of any pagination. */
+		/**
+		 * The total number of Uptime check configurations for the project, irrespective of any pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListUptimeCheckConfigsResponseFormGroup() {
@@ -3590,14 +3794,20 @@ export namespace MyNS {
 		/** Information involved in sending ICMP pings alongside public HTTP/TCP checks. For HTTP, the pings are performed for each part of the redirect chain. */
 		pingConfig?: PingConfig;
 
-		/** The TCP port on the server against which to run the check. Will be combined with host (specified within the monitored_resource) to construct the full URL. Required. */
+		/**
+		 * The TCP port on the server against which to run the check. Will be combined with host (specified within the monitored_resource) to construct the full URL. Required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 
 	/** Information required for a TCP Uptime check request. */
 	export interface TcpCheckFormProperties {
 
-		/** The TCP port on the server against which to run the check. Will be combined with host (specified within the monitored_resource) to construct the full URL. Required. */
+		/**
+		 * The TCP port on the server against which to run the check. Will be combined with host (specified within the monitored_resource) to construct the full URL. Required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateTcpCheckFormGroup() {
@@ -3729,7 +3939,10 @@ export namespace MyNS {
 	/** The QueryTimeSeries request. */
 	export interface QueryTimeSeriesRequest {
 
-		/** A positive number that is the maximum number of time_series_data to return. */
+		/**
+		 * A positive number that is the maximum number of time_series_data to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call. */
@@ -3742,7 +3955,10 @@ export namespace MyNS {
 	/** The QueryTimeSeries request. */
 	export interface QueryTimeSeriesRequestFormProperties {
 
-		/** A positive number that is the maximum number of time_series_data to return. */
+		/**
+		 * A positive number that is the maximum number of time_series_data to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call. */
@@ -4007,6 +4223,7 @@ export namespace MyNS {
 		 * Returns the list of IP addresses that checkers run from
 		 * Get v3/uptimeCheckIps
 		 * @param {number} pageSize The maximum number of results to return in a single response. The server may further constrain the maximum number of results returned in a single page. If the page_size is <=0, the server will decide the number of results to be returned. NOTE: this field is not yet implemented
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call. NOTE: this field is not yet implemented
 		 * @return {ListUptimeCheckIpsResponse} Successful response
 		 */
@@ -4065,6 +4282,7 @@ export namespace MyNS {
 		 * @param {string} filter If provided, this field specifies the criteria that must be met by alert policies to be included in the response.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
 		 * @param {string} orderBy A comma-separated list of fields by which to sort the result. Supports the same set of field references as the filter field. Entries can be prefixed with a minus sign to sort by the field in descending order.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
 		 * @param {number} pageSize The maximum number of results to return in a single response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call.
 		 * @return {ListAlertPoliciesResponse} Successful response
 		 */
@@ -4100,6 +4318,7 @@ export namespace MyNS {
 		 * @param {string} childrenOfGroup A group name. The format is: projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] Returns groups whose parent_name field contains the group name. If no groups have this parent, the results are empty.
 		 * @param {string} descendantsOfGroup A group name. The format is: projects/[PROJECT_ID_OR_NUMBER]/groups/[GROUP_ID] Returns the descendants of the specified group. This is a superset of the results returned by the children_of_group filter, and includes children-of-children, and so forth.
 		 * @param {number} pageSize A positive number that is the maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If this field is not empty then it must contain the next_page_token value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @return {ListGroupsResponse} Successful response
 		 */
@@ -4126,6 +4345,7 @@ export namespace MyNS {
 		 * @param {string} interval_endTime Required. The end of the time interval.
 		 * @param {string} interval_startTime Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time.
 		 * @param {number} pageSize A positive number that is the maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If this field is not empty then it must contain the next_page_token value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @return {ListGroupMembersResponse} Successful response
 		 */
@@ -4139,6 +4359,7 @@ export namespace MyNS {
 		 * @param {string} name Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
 		 * @param {string} filter If this field is empty, all custom and system-defined metric descriptors are returned. Otherwise, the filter (https://cloud.google.com/monitoring/api/v3/filters) specifies which metric descriptors are to be returned. For example, the following filter matches all custom metrics (https://cloud.google.com/monitoring/custom-metrics): metric.type = starts_with("custom.googleapis.com/") 
 		 * @param {number} pageSize A positive number that is the maximum number of results to return. The default and maximum value is 10,000. If a page_size <= 0 or > 10,000 is submitted, will instead return a maximum of 10,000 results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @return {ListMetricDescriptorsResponse} Successful response
 		 */
@@ -4162,6 +4383,7 @@ export namespace MyNS {
 		 * @param {string} name Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) on which to execute the request. The format is: projects/[PROJECT_ID_OR_NUMBER] 
 		 * @param {string} filter An optional filter (https://cloud.google.com/monitoring/api/v3/filters) describing the descriptors to be returned. The filter can reference the descriptor's type and labels. For example, the following filter returns only Google Compute Engine descriptors that have an id label: resource.type = starts_with("gce_") AND resource.label:id 
 		 * @param {number} pageSize A positive number that is the maximum number of results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @return {ListMonitoredResourceDescriptorsResponse} Successful response
 		 */
@@ -4174,6 +4396,7 @@ export namespace MyNS {
 		 * Get v3/{name}/notificationChannelDescriptors
 		 * @param {string} name Required. The REST resource name of the parent from which to retrieve the notification channel descriptors. The expected syntax is: projects/[PROJECT_ID_OR_NUMBER] Note that this names (https://cloud.google.com/monitoring/api/v3#project_name) the parent container in which to look for the descriptors; to retrieve a single descriptor by name, use the GetNotificationChannelDescriptor operation, instead.
 		 * @param {number} pageSize The maximum number of results to return in a single response. If not set to a positive number, a reasonable value will be chosen by the service.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If non-empty, page_token must contain a value returned as the next_page_token in a previous response to request the next set of results.
 		 * @return {ListNotificationChannelDescriptorsResponse} Successful response
 		 */
@@ -4188,6 +4411,7 @@ export namespace MyNS {
 		 * @param {string} filter If provided, this field specifies the criteria that must be met by notification channels to be included in the response.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
 		 * @param {string} orderBy A comma-separated list of fields by which to sort the result. Supports the same set of fields as in filter. Entries can be prefixed with a minus sign to sort in descending rather than ascending order.For more details, see sorting and filtering (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering).
 		 * @param {number} pageSize The maximum number of results to return in a single response. If not set to a positive number, a reasonable value will be chosen by the service.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If non-empty, page_token must contain a value returned as the next_page_token in a previous response to request the next set of results.
 		 * @return {ListNotificationChannelsResponse} Successful response
 		 */
@@ -4218,6 +4442,7 @@ export namespace MyNS {
 		 * @param {string} interval_startTime Optional. The beginning of the time interval. The default value for the start time is the end time. The start time must not be later than the end time.
 		 * @param {string} orderBy Unsupported: must be left blank. The points in each time series are currently returned in reverse time order (most recent to oldest).
 		 * @param {number} pageSize A positive number that is the maximum number of results to return. If page_size is empty or more than 100,000 results, the effective page_size is 100,000 results. If view is set to FULL, this is the maximum number of Points returned. If view is set to HEADERS, this is the maximum number of TimeSeries returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @param {string} secondaryAggregation_alignmentPeriod The alignment_period specifies a time interval, in seconds, that is used to divide the data in all the time series into consistent blocks of time. This will be done before the per-series aligner can be applied to the data.The value must be at least 60 seconds. If a per-series aligner other than ALIGN_NONE is specified, this field is required or an error is returned. If no per-series aligner is specified, or the aligner ALIGN_NONE is specified, then this field is ignored.The maximum value of the alignment_period is 104 weeks (2 years) for charts, and 90,000 seconds (25 hours) for alerting policies.
 		 * @param {AggregationCrossSeriesReducer} secondaryAggregation_crossSeriesReducer The reduction operation to be used to combine time series into a single time series, where the value of each data point in the resulting series is a function of all the already aligned values in the input time series.Not all reducer operations can be applied to all time series. The valid choices depend on the metric_kind and the value_type of the original time series. Reduction can yield a time series with a different metric_kind or value_type than the input time series.Time series data must first be aligned (see per_series_aligner) in order to perform cross-time series reduction. If cross_series_reducer is specified, then per_series_aligner must be specified, and must not be ALIGN_NONE. An alignment_period must also be specified; otherwise, an error is returned.
@@ -4296,6 +4521,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Resource name of the parent containing the listed SLOs, either a project or a Monitoring Metrics Scope. The formats are: projects/[PROJECT_ID_OR_NUMBER]/services/[SERVICE_ID] workspaces/[HOST_PROJECT_ID_OR_NUMBER]/services/- 
 		 * @param {string} filter A filter specifying what ServiceLevelObjectives to return.
 		 * @param {number} pageSize A non-negative number that is the maximum number of results to return. When 0, use default page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @param {Monitoring_services_serviceLevelObjectives_getView} view View of the ServiceLevelObjectives to return. If DEFAULT, return each ServiceLevelObjective as originally defined. If EXPLICIT and the ServiceLevelObjective is defined in terms of a BasicSli, replace the BasicSli with a RequestBasedSli spelling out how the SLI is computed.
 		 * @return {ListServiceLevelObjectivesResponse} Successful response
@@ -4321,6 +4547,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Resource name of the parent containing the listed services, either a project (https://cloud.google.com/monitoring/api/v3#project_name) or a Monitoring Metrics Scope. The formats are: projects/[PROJECT_ID_OR_NUMBER] workspaces/[HOST_PROJECT_ID_OR_NUMBER] 
 		 * @param {string} filter A filter specifying what Services to return. The filter supports filtering on a particular service-identifier type or one of its attributes.To filter on a particular service-identifier type, the identifier_case refers to which option in the identifier field is populated. For example, the filter identifier_case = "CUSTOM" would match all services with a value for the custom field. Valid options include "CUSTOM", "APP_ENGINE", "MESH_ISTIO", and the other options listed at https://cloud.google.com/monitoring/api/ref_v3/rest/v3/services#ServiceTo filter on an attribute of a service-identifier type, apply the filter name by using the snake case of the service-identifier type and the attribute of that service-identifier type, and join the two with a period. For example, to filter by the meshUid field of the MeshIstio service-identifier type, you must filter on mesh_istio.mesh_uid = "123" to match all services with mesh UID "123". Service-identifier types and their attributes are described at https://cloud.google.com/monitoring/api/ref_v3/rest/v3/services#Service
 		 * @param {number} pageSize A non-negative number that is the maximum number of results to return. When 0, use default page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return additional results from the previous method call.
 		 * @return {ListServicesResponse} Successful response
 		 */
@@ -4345,6 +4572,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose Snoozes should be listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
 		 * @param {string} filter Optional. Optional filter to restrict results to the given criteria. The following fields are supported. interval.start_time interval.end_timeFor example: ``` interval.start_time > "2022-03-11T00:00:00-08:00" AND interval.end_time < "2022-03-12T00:00:00-08:00" ``` 
 		 * @param {number} pageSize Optional. The maximum number of results to return for a single query. The server may further constrain the maximum number of results returned in a single page. The value should be in the range 1, 1000. If the value given is outside this range, the server will decide the number of results to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The next_page_token from a previous call to ListSnoozesRequest to get the next page of results.
 		 * @return {ListSnoozesResponse} Successful response
 		 */
@@ -4368,6 +4596,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The project (https://cloud.google.com/monitoring/api/v3#project_name) whose Uptime check configurations are listed. The format is: projects/[PROJECT_ID_OR_NUMBER] 
 		 * @param {string} filter If provided, this field specifies the criteria that must be met by uptime checks to be included in the response.For more details, see Filtering syntax (https://cloud.google.com/monitoring/api/v3/sorting-and-filtering#filter_syntax).
 		 * @param {number} pageSize The maximum number of results to return in a single response. The server may further constrain the maximum number of results returned in a single page. If the page_size is <=0, the server will decide the number of results to be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken If this field is not empty then it must contain the nextPageToken value returned by a previous call to this method. Using this field causes the method to return more results from the previous method call.
 		 * @return {ListUptimeCheckConfigsResponse} Successful response
 		 */

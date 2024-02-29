@@ -4411,6 +4411,7 @@ export namespace MyNS {
 		 * Lists all tags on a AWS RoboMaker resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The AWS RoboMaker Amazon Resource Name (ARN) with tags to be listed.
+		 *     Min length: 1    Max length: 1224
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -4421,6 +4422,7 @@ export namespace MyNS {
 		 * <p>Adds or edits tags for a AWS RoboMaker resource.</p> <p>Each tag consists of a tag key and a tag value. Tag keys and tag values are both required, but tag values can be empty strings. </p> <p>For information about the rules that apply to tag keys and tag values, see <a href="https://docs.aws.amazon.com/awsaccountbilling/latest/aboutv2/allocation-tag-restrictions.html">User-Defined Tag Restrictions</a> in the <i>AWS Billing and Cost Management User Guide</i>. </p>
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are tagging.
+		 *     Min length: 1    Max length: 1224
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -4511,6 +4513,7 @@ export namespace MyNS {
 		 * <p>Removes the specified tags from the specified AWS RoboMaker resource.</p> <p>To remove a tag, specify the tag key. To change the tag value of an existing tag key, use <a href="https://docs.aws.amazon.com/robomaker/latest/dg/API_TagResource.html"> <code>TagResource</code> </a>. </p>
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the AWS RoboMaker resource you are removing tags.
+		 *     Min length: 1    Max length: 1224
 		 * @param {Array<string>} tagKeys A map that contains tag keys and tag values that will be unattached from the resource.
 		 * @return {UntagResourceResponse} Success
 		 */
@@ -4587,8 +4590,8 @@ export namespace MyNS {
 		/**
 		 * The deployment job ARN to cancel.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: string;
 	}
@@ -4597,8 +4600,8 @@ export namespace MyNS {
 		/**
 		 * The deployment job ARN to cancel.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: FormControl<string | null | undefined>,
 	}
@@ -4614,8 +4617,8 @@ export namespace MyNS {
 		/**
 		 * The simulation job ARN to cancel.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: string;
 	}
@@ -4624,8 +4627,8 @@ export namespace MyNS {
 		/**
 		 * The simulation job ARN to cancel.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: FormControl<string | null | undefined>,
 	}
@@ -4641,8 +4644,8 @@ export namespace MyNS {
 		/**
 		 * The id of the batch to cancel.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		batch: string;
 	}
@@ -4651,8 +4654,8 @@ export namespace MyNS {
 		/**
 		 * The id of the batch to cancel.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		batch: FormControl<string | null | undefined>,
 	}
@@ -4668,8 +4671,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world export job to cancel.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: string;
 	}
@@ -4678,8 +4681,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world export job to cancel.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: FormControl<string | null | undefined>,
 	}
@@ -4695,8 +4698,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world generator job to cancel.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: string;
 	}
@@ -4705,8 +4708,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world generator job to cancel.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: FormControl<string | null | undefined>,
 	}
@@ -4725,16 +4728,16 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet to deploy.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: string;
 
@@ -4754,16 +4757,16 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet to deploy.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: FormControl<string | null | undefined>,
 
@@ -4804,8 +4807,8 @@ export namespace MyNS {
 		/**
 		 * The name of the fleet.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -4817,8 +4820,8 @@ export namespace MyNS {
 		/**
 		 * The name of the fleet.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4838,8 +4841,8 @@ export namespace MyNS {
 		/**
 		 * The name for the robot.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -4852,8 +4855,8 @@ export namespace MyNS {
 		/**
 		 * The Greengrass group id.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		greengrassGroupId: string;
 
@@ -4865,8 +4868,8 @@ export namespace MyNS {
 		/**
 		 * The name for the robot.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4879,8 +4882,8 @@ export namespace MyNS {
 		/**
 		 * The Greengrass group id.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		greengrassGroupId: FormControl<string | null | undefined>,
 
@@ -4902,8 +4905,8 @@ export namespace MyNS {
 		/**
 		 * The name of the robot application.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -4927,8 +4930,8 @@ export namespace MyNS {
 		/**
 		 * The name of the robot application.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4977,15 +4980,15 @@ export namespace MyNS {
 		/**
 		 * The application information for the robot application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: string;
 
 		/**
 		 * The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		currentRevisionId?: string | null;
 
@@ -4994,8 +4997,8 @@ export namespace MyNS {
 
 		/**
 		 * A SHA256 identifier for the Docker image that you use for your robot application.
-		 * Max length: 72
 		 * Min length: 0
+		 * Max length: 72
 		 */
 		imageDigest?: string | null;
 	}
@@ -5004,22 +5007,22 @@ export namespace MyNS {
 		/**
 		 * The application information for the robot application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: FormControl<string | null | undefined>,
 
 		/**
 		 * The current revision id for the robot application. If you provide a value and it matches the latest revision ID, a new version will be created.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		currentRevisionId: FormControl<string | null | undefined>,
 
 		/**
 		 * A SHA256 identifier for the Docker image that you use for your robot application.
-		 * Max length: 72
 		 * Min length: 0
+		 * Max length: 72
 		 */
 		imageDigest: FormControl<string | null | undefined>,
 	}
@@ -5037,8 +5040,8 @@ export namespace MyNS {
 		/**
 		 * The name of the simulation application.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
@@ -5071,8 +5074,8 @@ export namespace MyNS {
 		/**
 		 * The name of the simulation application.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -5153,15 +5156,15 @@ export namespace MyNS {
 		/**
 		 * The application information for the simulation application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: string;
 
 		/**
 		 * The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		currentRevisionId?: string | null;
 
@@ -5170,8 +5173,8 @@ export namespace MyNS {
 
 		/**
 		 * The SHA256 digest used to identify the Docker image URI used to created the simulation application.
-		 * Max length: 72
 		 * Min length: 0
+		 * Max length: 72
 		 */
 		imageDigest?: string | null;
 	}
@@ -5180,22 +5183,22 @@ export namespace MyNS {
 		/**
 		 * The application information for the simulation application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: FormControl<string | null | undefined>,
 
 		/**
 		 * The current revision id for the simulation application. If you provide a value and it matches the latest revision ID, a new version will be created.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		currentRevisionId: FormControl<string | null | undefined>,
 
 		/**
 		 * The SHA256 digest used to identify the Docker image URI used to created the simulation application.
-		 * Max length: 72
 		 * Min length: 0
+		 * Max length: 72
 		 */
 		imageDigest: FormControl<string | null | undefined>,
 	}
@@ -5212,8 +5215,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken?: string | null;
 
@@ -5226,14 +5229,15 @@ export namespace MyNS {
 		/**
 		 * The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxJobDurationInSeconds: number;
 
 		/**
 		 * The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		iamRole: string;
 
@@ -5274,22 +5278,23 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The maximum simulation job duration in seconds (up to 14 days or 1,209,600 seconds. When <code>maxJobDurationInSeconds</code> is reached, the simulation job will status will transition to <code>Completed</code>.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		maxJobDurationInSeconds: FormControl<number | null | undefined>,
 
 		/**
 		 * The IAM role name that allows the simulation instance to call the AWS APIs that are specified in its associated policies on your behalf. This is how credentials are passed in to your simulation job.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		iamRole: FormControl<string | null | undefined>,
 
@@ -5377,8 +5382,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken?: string | null;
 
@@ -5399,8 +5404,8 @@ export namespace MyNS {
 		/**
 		 * The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		iamRole: string;
 
@@ -5411,16 +5416,16 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The IAM role that the world export process uses to access the Amazon S3 bucket and put the export.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		iamRole: FormControl<string | null | undefined>,
 
@@ -5456,16 +5461,16 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (arn) of the world template describing the worlds you want to create.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		template: string;
 
@@ -5485,16 +5490,16 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (arn) of the world template describing the worlds you want to create.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		template: FormControl<string | null | undefined>,
 
@@ -5534,22 +5539,22 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken?: string | null;
 
 		/**
 		 * The name of the world template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name?: string | null;
 
 		/**
 		 * The world template body.
-		 * Max length: 262144
 		 * Min length: 1
+		 * Max length: 262144
 		 */
 		templateBody?: string | null;
 
@@ -5563,22 +5568,22 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the world template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The world template body.
-		 * Max length: 262144
 		 * Min length: 1
+		 * Max length: 262144
 		 */
 		templateBody: FormControl<string | null | undefined>,
 
@@ -5616,8 +5621,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: string;
 	}
@@ -5626,8 +5631,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: FormControl<string | null | undefined>,
 	}
@@ -5643,8 +5648,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the robot.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		robot: string;
 	}
@@ -5653,8 +5658,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the robot.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		robot: FormControl<string | null | undefined>,
 	}
@@ -5670,15 +5675,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the the robot application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: string;
 
 		/**
 		 * The version of the robot application to delete.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		applicationVersion?: string | null;
 	}
@@ -5687,15 +5692,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the the robot application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the robot application to delete.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		applicationVersion: FormControl<string | null | undefined>,
 	}
@@ -5712,15 +5717,15 @@ export namespace MyNS {
 		/**
 		 * The application information for the simulation application to delete.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: string;
 
 		/**
 		 * The version of the simulation application to delete.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		applicationVersion?: string | null;
 	}
@@ -5729,15 +5734,15 @@ export namespace MyNS {
 		/**
 		 * The application information for the simulation application to delete.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the simulation application to delete.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		applicationVersion: FormControl<string | null | undefined>,
 	}
@@ -5754,8 +5759,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world template you want to delete.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		template: string;
 	}
@@ -5764,8 +5769,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world template you want to delete.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		template: FormControl<string | null | undefined>,
 	}
@@ -5781,16 +5786,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the robot.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		robot: string;
 	}
@@ -5799,16 +5804,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the robot.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		robot: FormControl<string | null | undefined>,
 	}
@@ -5825,8 +5830,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the deployment job.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: string;
 	}
@@ -5835,8 +5840,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the deployment job.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: FormControl<string | null | undefined>,
 	}
@@ -5852,8 +5857,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: string;
 	}
@@ -5862,8 +5867,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: FormControl<string | null | undefined>,
 	}
@@ -5879,8 +5884,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the robot to be described.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		robot: string;
 	}
@@ -5889,8 +5894,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the robot to be described.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		robot: FormControl<string | null | undefined>,
 	}
@@ -5906,15 +5911,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the robot application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: string;
 
 		/**
 		 * The version of the robot application to describe.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		applicationVersion?: string | null;
 	}
@@ -5923,15 +5928,15 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the robot application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the robot application to describe.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		applicationVersion: FormControl<string | null | undefined>,
 	}
@@ -5948,15 +5953,15 @@ export namespace MyNS {
 		/**
 		 * The application information for the simulation application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: string;
 
 		/**
 		 * The version of the simulation application to describe.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		applicationVersion?: string | null;
 	}
@@ -5965,15 +5970,15 @@ export namespace MyNS {
 		/**
 		 * The application information for the simulation application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: FormControl<string | null | undefined>,
 
 		/**
 		 * The version of the simulation application to describe.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		applicationVersion: FormControl<string | null | undefined>,
 	}
@@ -5990,8 +5995,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the simulation job to be described.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: string;
 	}
@@ -6000,8 +6005,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the simulation job to be described.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: FormControl<string | null | undefined>,
 	}
@@ -6017,8 +6022,8 @@ export namespace MyNS {
 		/**
 		 * The id of the batch to describe.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		batch: string;
 	}
@@ -6027,8 +6032,8 @@ export namespace MyNS {
 		/**
 		 * The id of the batch to describe.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		batch: FormControl<string | null | undefined>,
 	}
@@ -6044,8 +6049,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world you want to describe.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		world: string;
 	}
@@ -6054,8 +6059,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world you want to describe.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		world: FormControl<string | null | undefined>,
 	}
@@ -6071,8 +6076,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world export job to describe.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: string;
 	}
@@ -6081,8 +6086,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world export job to describe.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: FormControl<string | null | undefined>,
 	}
@@ -6098,8 +6103,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world generation job to describe.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: string;
 	}
@@ -6108,8 +6113,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world generation job to describe.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: FormControl<string | null | undefined>,
 	}
@@ -6125,8 +6130,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world template you want to describe.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		template: string;
 	}
@@ -6135,8 +6140,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world template you want to describe.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		template: FormControl<string | null | undefined>,
 	}
@@ -6151,15 +6156,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (arn) of the world template.
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		template?: string | null;
 
 		/**
 		 * The Amazon Resource Name (arn) of the world generator job.
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		generationJob?: string | null;
 	}
@@ -6167,15 +6172,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (arn) of the world template.
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		template: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (arn) of the world generator job.
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		generationJob: FormControl<string | null | undefined>,
 	}
@@ -6198,24 +6203,30 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
-		/** When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListDeploymentJobsPostBodyFormProperties {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListDeploymentJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
-		/** When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListDeploymentJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListDeploymentJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListDeploymentJobs</code> returns up to 200 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListDeploymentJobsPostBodyFormGroup() {
@@ -6230,12 +6241,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
-		/** When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/**
@@ -6249,12 +6263,15 @@ export namespace MyNS {
 
 		/**
 		 * <p>If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListFleets</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null. </p> <note> <p>This token should be treated as an opaque identifier that is only used to retrieve the next items in a list and not for other programmatic purposes.</p> </note>
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
-		/** When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListFleets</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListFleets</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListFleets</code> returns up to 200 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListFleetsPostBodyFormGroup() {
@@ -6269,19 +6286,22 @@ export namespace MyNS {
 
 		/**
 		 * The version qualifier of the robot application.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		versionQualifier?: string | null;
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
-		/** When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/**
@@ -6295,19 +6315,22 @@ export namespace MyNS {
 
 		/**
 		 * The version qualifier of the robot application.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		versionQualifier: FormControl<string | null | undefined>,
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobotApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
-		/** When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListRobotApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobotApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListRobotApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListRobotApplicationsPostBodyFormGroup() {
@@ -6323,12 +6346,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
-		/** When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/**
@@ -6342,12 +6368,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListRobots</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
-		/** When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListRobots</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListRobots</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 200. If this parameter is not used, then <code>ListRobots</code> returns up to 200 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListRobotsPostBodyFormGroup() {
@@ -6362,19 +6391,22 @@ export namespace MyNS {
 
 		/**
 		 * The version qualifier of the simulation application.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		versionQualifier?: string | null;
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
-		/** When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/**
@@ -6388,19 +6420,22 @@ export namespace MyNS {
 
 		/**
 		 * The version qualifier of the simulation application.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		versionQualifier: FormControl<string | null | undefined>,
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationApplications</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
-		/** When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListSimulationApplications</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationApplications</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListSimulationApplications</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListSimulationApplicationsPostBodyFormGroup() {
@@ -6416,12 +6451,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
-		/** When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. */
+		/**
+		 * When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/**
@@ -6435,12 +6473,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobBatches</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
-		/** When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value. */
+		/**
+		 * When this parameter is used, <code>ListSimulationJobBatches</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobBatches</code> request with the returned <code>nextToken</code> value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListSimulationJobBatchesPostBodyFormGroup() {
@@ -6455,12 +6496,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
-		/** When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/**
@@ -6474,12 +6518,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListSimulationJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
-		/** When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListSimulationJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListSimulationJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 1000. If this parameter is not used, then <code>ListSimulationJobs</code> returns up to 1000 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListSimulationJobsPostBodyFormGroup() {
@@ -6517,12 +6564,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
-		/** When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/**
@@ -6536,12 +6586,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldExportJobs</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
-		/** When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListWorldExportJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldExportJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldExportJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListWorldExportJobsPostBodyFormGroup() {
@@ -6556,12 +6609,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
-		/** When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/**
@@ -6575,12 +6631,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldGenerationJobsRequest</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
-		/** When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListWorldGeneratorJobs</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldGeneratorJobs</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldGeneratorJobs</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListWorldGenerationJobsPostBodyFormGroup() {
@@ -6595,24 +6654,30 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
-		/** When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 	}
 	export interface ListWorldTemplatesPostBodyFormProperties {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorldTemplates</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
-		/** When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListWorldTemplates</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorldTemplates</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorldTemplates</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListWorldTemplatesPostBodyFormGroup() {
@@ -6627,12 +6692,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
-		/** When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults?: number | null;
 
 		/**
@@ -6646,12 +6714,15 @@ export namespace MyNS {
 
 		/**
 		 * If the previous paginated request did not return all of the remaining results, the response object's <code>nextToken</code> parameter value is set to a token. To retrieve the next set of results, call <code>ListWorlds</code> again and assign that token to the request object's <code>nextToken</code> parameter. If there are no remaining results, the previous response object's NextToken parameter is set to null.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
-		/** When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable. */
+		/**
+		 * When this parameter is used, <code>ListWorlds</code> only returns <code>maxResults</code> results in a single page along with a <code>nextToken</code> response element. The remaining results of the initial request can be seen by sending another <code>ListWorlds</code> request with the returned <code>nextToken</code> value. This value can be between 1 and 100. If this parameter is not used, then <code>ListWorlds</code> returns up to 100 results and a <code>nextToken</code> value if applicable.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxResults: FormControl<number | null | undefined>,
 	}
 	export function CreateListWorldsPostBodyFormGroup() {
@@ -6667,16 +6738,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the robot.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		robot: string;
 	}
@@ -6685,16 +6756,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the robot.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		robot: FormControl<string | null | undefined>,
 	}
@@ -6711,8 +6782,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the simulation job.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: string;
 	}
@@ -6721,8 +6792,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the simulation job.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		job: FormControl<string | null | undefined>,
 	}
@@ -6737,8 +6808,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken?: string | null;
 
@@ -6760,8 +6831,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 
@@ -6797,16 +6868,16 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: string;
 
 		/**
 		 * The target fleet for the synchronization.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: string;
 	}
@@ -6815,16 +6886,16 @@ export namespace MyNS {
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The target fleet for the synchronization.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		fleet: FormControl<string | null | undefined>,
 	}
@@ -6841,8 +6912,8 @@ export namespace MyNS {
 		/**
 		 * The application information for the robot application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: string;
 
@@ -6857,8 +6928,8 @@ export namespace MyNS {
 
 		/**
 		 * The revision id for the robot application.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		currentRevisionId?: string | null;
 
@@ -6870,15 +6941,15 @@ export namespace MyNS {
 		/**
 		 * The application information for the robot application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: FormControl<string | null | undefined>,
 
 		/**
 		 * The revision id for the robot application.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		currentRevisionId: FormControl<string | null | undefined>,
 	}
@@ -6924,8 +6995,8 @@ export namespace MyNS {
 		/**
 		 * The application information for the simulation application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: string;
 
@@ -6949,8 +7020,8 @@ export namespace MyNS {
 
 		/**
 		 * The revision id for the robot application.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		currentRevisionId?: string | null;
 
@@ -6962,15 +7033,15 @@ export namespace MyNS {
 		/**
 		 * The application information for the simulation application.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		application: FormControl<string | null | undefined>,
 
 		/**
 		 * The revision id for the robot application.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		currentRevisionId: FormControl<string | null | undefined>,
 	}
@@ -7048,22 +7119,22 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world template to update.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		template: string;
 
 		/**
 		 * The name of the template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name?: string | null;
 
 		/**
 		 * The world template body.
-		 * Max length: 262144
 		 * Min length: 1
+		 * Max length: 262144
 		 */
 		templateBody?: string | null;
 
@@ -7075,22 +7146,22 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (arn) of the world template to update.
 		 * Required
-		 * Max length: 1224
 		 * Min length: 1
+		 * Max length: 1224
 		 */
 		template: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the template.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The world template body.
-		 * Max length: 262144
 		 * Min length: 1
+		 * Max length: 262144
 		 */
 		templateBody: FormControl<string | null | undefined>,
 	}

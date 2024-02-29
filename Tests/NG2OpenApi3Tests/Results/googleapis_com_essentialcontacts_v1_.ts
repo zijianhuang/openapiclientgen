@@ -186,6 +186,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/contacts
 		 * @param {string} parent Required. The parent resource name. Format: organizations/{organization_id}, folders/{folder_id} or projects/{project_id}
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of `next_page_token` in the response indicates that more results might be available. If not specified, the default page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, retrieves the next batch of results from the preceding call to this method. `page_token` must be the value of `next_page_token` from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {GoogleCloudEssentialcontactsV1ListContactsResponse} Successful response
 		 */
@@ -209,6 +210,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the resource to compute contacts for. Format: organizations/{organization_id}, folders/{folder_id} or projects/{project_id}
 		 * @param {Array<GoogleCloudEssentialcontactsV1SendTestMessageRequestNotificationCategory>} notificationCategories The categories of notifications to compute contacts for. If ALL is included in this list, contacts subscribed to any notification category will be returned.
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of `next_page_token` in the response indicates that more results might be available. If not specified, the default page_size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, retrieves the next batch of results from the preceding call to this method. `page_token` must be the value of `next_page_token` from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {GoogleCloudEssentialcontactsV1ComputeContactsResponse} Successful response
 		 */

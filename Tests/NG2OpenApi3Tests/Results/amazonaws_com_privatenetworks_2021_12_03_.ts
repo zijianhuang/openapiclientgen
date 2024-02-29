@@ -1533,6 +1533,7 @@ export namespace MyNS {
 		 * Deletes the specified network. You must delete network sites before you delete the network. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/APIReference/API_DeleteNetworkSite.html">DeleteNetworkSite</a> in the <i>API Reference for Amazon Web Services Private 5G</i>.
 		 * Delete v1/networks/{networkArn}
 		 * @param {string} clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} networkArn The Amazon Resource Name (ARN) of the network.
 		 * @return {DeleteNetworkResponse} Success
 		 */
@@ -1554,6 +1555,7 @@ export namespace MyNS {
 		 * Deletes the specified network site. Return the hardware after you delete the network site. You are responsible for minimum charges. For more information, see <a href="https://docs.aws.amazon.com/private-networks/latest/userguide/hardware-maintenance.html">Hardware returns</a> in the <i>Amazon Web Services Private 5G User Guide</i>.
 		 * Delete v1/network-sites/{networkSiteArn}
 		 * @param {string} clientToken Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} networkSiteArn The Amazon Resource Name (ARN) of the network site.
 		 * @return {DeleteNetworkSiteResponse} Success
 		 */
@@ -1699,6 +1701,7 @@ export namespace MyNS {
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
 		 * @param {Array<string>} tagKeys The tag keys.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1751,8 +1754,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken?: string | null;
 
@@ -1766,8 +1769,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1789,8 +1792,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken?: string | null;
 
@@ -1813,8 +1816,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1901,29 +1904,29 @@ export namespace MyNS {
 
 		/**
 		 * A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		cpiSecretKey?: string | null;
 
 		/**
 		 * The CPI user ID of the CPI user who is certifying the coordinates of the network resource.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		cpiUserId?: string | null;
 
 		/**
 		 * The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		cpiUserPassword?: string | null;
 
 		/**
 		 * The CPI user name of the CPI user who is certifying the coordinates of the radio unit.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		cpiUsername?: string | null;
 
@@ -1940,29 +1943,29 @@ export namespace MyNS {
 
 		/**
 		 * A Base64 encoded string of the CPI certificate associated with the CPI user who is certifying the coordinates of the network resource.
-		 * Max length: 100000
 		 * Min length: 1
+		 * Max length: 100000
 		 */
 		cpiSecretKey: FormControl<string | null | undefined>,
 
 		/**
 		 * The CPI user ID of the CPI user who is certifying the coordinates of the network resource.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		cpiUserId: FormControl<string | null | undefined>,
 
 		/**
 		 * The CPI password associated with the CPI certificate in <code>cpiSecretKey</code>.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		cpiUserPassword: FormControl<string | null | undefined>,
 
 		/**
 		 * The CPI user name of the CPI user who is certifying the coordinates of the radio unit.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		cpiUsername: FormControl<string | null | undefined>,
 	}
@@ -2006,23 +2009,23 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The description of the network.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		description?: string | null;
 
 		/**
 		 * The name of the network. You can't change the name after you create the network.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		networkName: string;
 
@@ -2033,23 +2036,23 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the network.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the network. You can't change the name after you create the network.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		networkName: FormControl<string | null | undefined>,
 
@@ -2076,15 +2079,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The description of the site.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		description?: string | null;
 
@@ -2097,8 +2100,8 @@ export namespace MyNS {
 		/**
 		 * The name of the site. You can't change the name after you create the site.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		networkSiteName: string;
 
@@ -2118,15 +2121,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the site.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -2139,8 +2142,8 @@ export namespace MyNS {
 		/**
 		 * The name of the site. You can't change the name after you create the site.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		networkSiteName: FormControl<string | null | undefined>,
 
@@ -2176,8 +2179,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken?: string | null;
 
@@ -2191,8 +2194,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -2493,8 +2496,8 @@ export namespace MyNS {
 
 		/**
 		 * The reason for the return. Providing a reason for a return is optional.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		returnReason?: string | null;
 
@@ -2517,8 +2520,8 @@ export namespace MyNS {
 
 		/**
 		 * The reason for the return. Providing a reason for a return is optional.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		returnReason: FormControl<string | null | undefined>,
 
@@ -2600,15 +2603,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The description.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		description?: string | null;
 
@@ -2622,15 +2625,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description.
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -2653,8 +2656,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken?: string | null;
 
@@ -2674,8 +2677,8 @@ export namespace MyNS {
 
 		/**
 		 * Unique, case-sensitive identifier that you provide to ensure the idempotency of the request. For more information, see <a href="https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/Run_Instance_Idempotency.html">How to ensure idempotency</a>.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		clientToken: FormControl<string | null | undefined>,
 

@@ -315,8 +315,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the network analyzer configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Name?: string | null;
 	}
@@ -325,8 +325,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the network analyzer configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -1339,15 +1339,15 @@ export namespace MyNS {
 
 		/**
 		 * The S3 URI points to a firmware update image that is to be used with a FUOTA task.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		FirmwareUpdateImage?: string | null;
 
 		/**
 		 * The firmware update role that is to be used with a FUOTA task.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		FirmwareUpdateRole?: string | null;
 
@@ -1404,15 +1404,15 @@ export namespace MyNS {
 
 		/**
 		 * The S3 URI points to a firmware update image that is to be used with a FUOTA task.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		FirmwareUpdateImage: FormControl<string | null | undefined>,
 
 		/**
 		 * The firmware update role that is to be used with a FUOTA task.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		FirmwareUpdateRole: FormControl<string | null | undefined>,
 
@@ -1780,10 +1780,16 @@ export namespace MyNS {
 		 */
 		DlClass?: DlClass | null;
 
-		/** Number of devices that are requested to be associated with the multicast group. */
+		/**
+		 * Number of devices that are requested to be associated with the multicast group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberOfDevicesRequested?: number | null;
 
-		/** Number of devices that are associated to the multicast group. */
+		/**
+		 * Number of devices that are associated to the multicast group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberOfDevicesInGroup?: number | null;
 	}
 
@@ -1799,10 +1805,16 @@ export namespace MyNS {
 		 */
 		DlClass: FormControl<DlClass | null | undefined>,
 
-		/** Number of devices that are requested to be associated with the multicast group. */
+		/**
+		 * Number of devices that are requested to be associated with the multicast group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberOfDevicesRequested: FormControl<number | null | undefined>,
 
-		/** Number of devices that are associated to the multicast group. */
+		/**
+		 * Number of devices that are associated to the multicast group.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		NumberOfDevicesInGroup: FormControl<number | null | undefined>,
 	}
 	export function CreateLoRaWANMulticastGetFormGroup() {
@@ -1913,8 +1925,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the network analyzer configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Name?: string | null;
 		MulticastGroups?: Array<string>;
@@ -1930,8 +1942,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the network analyzer configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -3997,8 +4009,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the network analyzer configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Name?: string | null;
 	}
@@ -4009,8 +4021,8 @@ export namespace MyNS {
 
 		/**
 		 * Name of the network analyzer configuration.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Name: FormControl<string | null | undefined>,
 	}
@@ -5287,8 +5299,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -5298,16 +5310,16 @@ export namespace MyNS {
 		/**
 		 * The S3 URI points to a firmware update image that is to be used with a FUOTA task.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		FirmwareUpdateImage: string;
 
 		/**
 		 * The firmware update role that is to be used with a FUOTA task.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		FirmwareUpdateRole: string;
 
@@ -5353,24 +5365,24 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The S3 URI points to a firmware update image that is to be used with a FUOTA task.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		FirmwareUpdateImage: FormControl<string | null | undefined>,
 
 		/**
 		 * The firmware update role that is to be used with a FUOTA task.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		FirmwareUpdateRole: FormControl<string | null | undefined>,
 
@@ -5488,8 +5500,8 @@ export namespace MyNS {
 		/**
 		 * Name of the network analyzer configuration.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Name: string;
 
@@ -5513,8 +5525,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 		MulticastGroups?: Array<string>;
@@ -5524,8 +5536,8 @@ export namespace MyNS {
 		/**
 		 * Name of the network analyzer configuration.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -5537,8 +5549,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -6835,8 +6847,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 		DeviceName?: string;
@@ -6858,8 +6870,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 		DeviceName: FormControl<string | null | undefined>,
@@ -6880,8 +6892,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -6902,8 +6914,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -7004,15 +7016,15 @@ export namespace MyNS {
 
 		/**
 		 * The S3 URI points to a firmware update image that is to be used with a FUOTA task.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		FirmwareUpdateImage?: string | null;
 
 		/**
 		 * The firmware update role that is to be used with a FUOTA task.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		FirmwareUpdateRole?: string | null;
 
@@ -7051,15 +7063,15 @@ export namespace MyNS {
 
 		/**
 		 * The S3 URI points to a firmware update image that is to be used with a FUOTA task.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		FirmwareUpdateImage: FormControl<string | null | undefined>,
 
 		/**
 		 * The firmware update role that is to be used with a FUOTA task.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		FirmwareUpdateRole: FormControl<string | null | undefined>,
 
@@ -7346,7 +7358,9 @@ export namespace MyNS {
 		 * Lists the partner accounts associated with your AWS account.
 		 * Get partner-accounts
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 0    Maximum: 250
 		 * @return {ListPartnerAccountsResponse} Success
 		 */
 		ListPartnerAccounts(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListPartnerAccountsResponse> {
@@ -7356,6 +7370,7 @@ export namespace MyNS {
 		/**
 		 * Associate a multicast group with a FUOTA task.
 		 * Put fuota-tasks/{Id}/multicast-group
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		AssociateMulticastGroupWithFuotaTask(Id: string, requestBody: AssociateMulticastGroupWithFuotaTaskPutBody): Observable<HttpResponse<string>> {
@@ -7365,6 +7380,7 @@ export namespace MyNS {
 		/**
 		 * Associate a wireless device with a FUOTA task.
 		 * Put fuota-tasks/{Id}/wireless-device
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		AssociateWirelessDeviceWithFuotaTask(Id: string, requestBody: AssociateWirelessDeviceWithFuotaTaskPutBody): Observable<HttpResponse<string>> {
@@ -7374,6 +7390,7 @@ export namespace MyNS {
 		/**
 		 * Associates a wireless device with a multicast group.
 		 * Put multicast-groups/{Id}/wireless-device
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		AssociateWirelessDeviceWithMulticastGroup(Id: string, requestBody: AssociateWirelessDeviceWithMulticastGroupPutBody): Observable<HttpResponse<string>> {
@@ -7384,6 +7401,7 @@ export namespace MyNS {
 		 * Associates a wireless device with a thing.
 		 * Put wireless-devices/{Id}/thing
 		 * @param {string} Id The ID of the resource to update.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		AssociateWirelessDeviceWithThing(Id: string, requestBody: AssociateWirelessDeviceWithThingPutBody): Observable<HttpResponse<string>> {
@@ -7394,6 +7412,7 @@ export namespace MyNS {
 		 * Disassociates a wireless device from its currently associated thing.
 		 * Delete wireless-devices/{Id}/thing
 		 * @param {string} Id The ID of the resource to update.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		DisassociateWirelessDeviceFromThing(Id: string): Observable<HttpResponse<string>> {
@@ -7404,6 +7423,7 @@ export namespace MyNS {
 		 * Associates a wireless gateway with a certificate.
 		 * Put wireless-gateways/{Id}/certificate
 		 * @param {string} Id The ID of the resource to update.
+		 *     Max length: 256
 		 * @return {AssociateWirelessGatewayWithCertificateResponse} Success
 		 */
 		AssociateWirelessGatewayWithCertificate(Id: string, requestBody: AssociateWirelessGatewayWithCertificatePutBody): Observable<AssociateWirelessGatewayWithCertificateResponse> {
@@ -7414,6 +7434,7 @@ export namespace MyNS {
 		 * Disassociates a wireless gateway from its currently associated certificate.
 		 * Delete wireless-gateways/{Id}/certificate
 		 * @param {string} Id The ID of the resource to update.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		DisassociateWirelessGatewayFromCertificate(Id: string): Observable<HttpResponse<string>> {
@@ -7424,6 +7445,7 @@ export namespace MyNS {
 		 * Gets the ID of the certificate that is currently associated with a wireless gateway.
 		 * Get wireless-gateways/{Id}/certificate
 		 * @param {string} Id The ID of the resource to get.
+		 *     Max length: 256
 		 * @return {GetWirelessGatewayCertificateResponse} Success
 		 */
 		GetWirelessGatewayCertificate(Id: string): Observable<GetWirelessGatewayCertificateResponse> {
@@ -7434,6 +7456,7 @@ export namespace MyNS {
 		 * Associates a wireless gateway with a thing.
 		 * Put wireless-gateways/{Id}/thing
 		 * @param {string} Id The ID of the resource to update.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		AssociateWirelessGatewayWithThing(Id: string, requestBody: AssociateWirelessGatewayWithThingPutBody): Observable<HttpResponse<string>> {
@@ -7444,6 +7467,7 @@ export namespace MyNS {
 		 * Disassociates a wireless gateway from its currently associated thing.
 		 * Delete wireless-gateways/{Id}/thing
 		 * @param {string} Id The ID of the resource to update.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		DisassociateWirelessGatewayFromThing(Id: string): Observable<HttpResponse<string>> {
@@ -7453,6 +7477,7 @@ export namespace MyNS {
 		/**
 		 * Cancels an existing multicast group session.
 		 * Delete multicast-groups/{Id}/session
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		CancelMulticastGroupSession(Id: string): Observable<HttpResponse<string>> {
@@ -7462,6 +7487,7 @@ export namespace MyNS {
 		/**
 		 * Gets information about a multicast group session.
 		 * Get multicast-groups/{Id}/session
+		 * @param {string} Id Max length: 256
 		 * @return {GetMulticastGroupSessionResponse} Success
 		 */
 		GetMulticastGroupSession(Id: string): Observable<GetMulticastGroupSessionResponse> {
@@ -7471,6 +7497,7 @@ export namespace MyNS {
 		/**
 		 * Starts a multicast group session.
 		 * Put multicast-groups/{Id}/session
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		StartMulticastGroupSession(Id: string, requestBody: StartMulticastGroupSessionPutBody): Observable<HttpResponse<string>> {
@@ -7490,7 +7517,9 @@ export namespace MyNS {
 		 * Lists the destinations registered to your AWS account.
 		 * Get destinations
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 0    Maximum: 250
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListDestinationsResponse} Success
@@ -7512,7 +7541,9 @@ export namespace MyNS {
 		 * Lists the device profiles registered to your AWS account.
 		 * Get device-profiles
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 0    Maximum: 250
 		 * @param {WirelessDeviceType} deviceProfileType A filter to list only device profiles that use this type, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -7535,6 +7566,9 @@ export namespace MyNS {
 		 * Lists the FUOTA tasks registered to your AWS account.
 		 * Get fuota-tasks
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
+		 * @param {number} maxResults Minimum: 0
+		 *     Maximum: 250
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListFuotaTasksResponse} Success
@@ -7556,6 +7590,9 @@ export namespace MyNS {
 		 * Lists the multicast groups registered to your AWS account.
 		 * Get multicast-groups
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
+		 * @param {number} maxResults Minimum: 0
+		 *     Maximum: 250
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMulticastGroupsResponse} Success
@@ -7576,7 +7613,10 @@ export namespace MyNS {
 		/**
 		 * Lists the network analyzer configurations.
 		 * Get network-analyzer-configurations
+		 * @param {number} maxResults Minimum: 0
+		 *     Maximum: 250
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListNetworkAnalyzerConfigurationsResponse} Success
@@ -7598,7 +7638,9 @@ export namespace MyNS {
 		 * Lists the service profiles registered to your AWS account.
 		 * Get service-profiles
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 0    Maximum: 250
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServiceProfilesResponse} Success
@@ -7620,11 +7662,18 @@ export namespace MyNS {
 		 * Lists the wireless devices registered to your AWS account.
 		 * Get wireless-devices
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 0    Maximum: 250
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
 		 * @param {string} destinationName A filter to list only the wireless devices that use this destination.
+		 *     Max length: 128
 		 * @param {string} deviceProfileId A filter to list only the wireless devices that use this device profile.
+		 *     Max length: 256
 		 * @param {string} serviceProfileId A filter to list only the wireless devices that use this service profile.
+		 *     Max length: 256
 		 * @param {WirelessDeviceType} wirelessDeviceType A filter to list only the wireless devices that use this wireless device type.
+		 * @param {string} fuotaTaskId Max length: 256
+		 * @param {string} multicastGroupId Max length: 256
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWirelessDevicesResponse} Success
@@ -7646,7 +7695,9 @@ export namespace MyNS {
 		 * Lists the wireless gateways registered to your AWS account.
 		 * Get wireless-gateways
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 0    Maximum: 250
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListWirelessGatewaysResponse} Success
@@ -7659,6 +7710,7 @@ export namespace MyNS {
 		 * Creates a task for a wireless gateway.
 		 * Post wireless-gateways/{Id}/tasks
 		 * @param {string} Id The ID of the resource to update.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		CreateWirelessGatewayTask(Id: string, requestBody: CreateWirelessGatewayTaskPostBody): Observable<HttpResponse<string>> {
@@ -7669,6 +7721,7 @@ export namespace MyNS {
 		 * Deletes a wireless gateway task.
 		 * Delete wireless-gateways/{Id}/tasks
 		 * @param {string} Id The ID of the resource to delete.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		DeleteWirelessGatewayTask(Id: string): Observable<HttpResponse<string>> {
@@ -7679,6 +7732,7 @@ export namespace MyNS {
 		 * Gets information about a wireless gateway task.
 		 * Get wireless-gateways/{Id}/tasks
 		 * @param {string} Id The ID of the resource to get.
+		 *     Max length: 256
 		 * @return {GetWirelessGatewayTaskResponse} Success
 		 */
 		GetWirelessGatewayTask(Id: string): Observable<GetWirelessGatewayTaskResponse> {
@@ -7698,7 +7752,9 @@ export namespace MyNS {
 		 * List the wireless gateway tasks definitions registered to your AWS account.
 		 * Get wireless-gateway-task-definitions
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 0    Maximum: 250
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
 		 * @param {WirelessGatewayTaskDefinitionType} taskDefinitionType A filter to list only the wireless gateway task definitions that use this task definition type.
 		 * @return {ListWirelessGatewayTaskDefinitionsResponse} Success
 		 */
@@ -7710,6 +7766,7 @@ export namespace MyNS {
 		 * Deletes a destination.
 		 * Delete destinations/{Name}
 		 * @param {string} Name The name of the resource to delete.
+		 *     Max length: 128
 		 * @return {void} 
 		 */
 		DeleteDestination(Name: string): Observable<HttpResponse<string>> {
@@ -7720,6 +7777,7 @@ export namespace MyNS {
 		 * Gets information about a destination.
 		 * Get destinations/{Name}
 		 * @param {string} Name The name of the resource to get.
+		 *     Max length: 128
 		 * @return {GetDestinationResponse} Success
 		 */
 		GetDestination(Name: string): Observable<GetDestinationResponse> {
@@ -7730,6 +7788,7 @@ export namespace MyNS {
 		 * Updates properties of a destination.
 		 * Patch destinations/{Name}
 		 * @param {string} Name The new name of the resource.
+		 *     Max length: 128
 		 * @return {void} 
 		 */
 		UpdateDestination(Name: string, requestBody: UpdateDestinationPatchBody): Observable<HttpResponse<string>> {
@@ -7740,6 +7799,7 @@ export namespace MyNS {
 		 * Deletes a device profile.
 		 * Delete device-profiles/{Id}
 		 * @param {string} Id The ID of the resource to delete.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		DeleteDeviceProfile(Id: string): Observable<HttpResponse<string>> {
@@ -7750,6 +7810,7 @@ export namespace MyNS {
 		 * Gets information about a device profile.
 		 * Get device-profiles/{Id}
 		 * @param {string} Id The ID of the resource to get.
+		 *     Max length: 256
 		 * @return {GetDeviceProfileResponse} Success
 		 */
 		GetDeviceProfile(Id: string): Observable<GetDeviceProfileResponse> {
@@ -7759,6 +7820,7 @@ export namespace MyNS {
 		/**
 		 * Deletes a FUOTA task.
 		 * Delete fuota-tasks/{Id}
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		DeleteFuotaTask(Id: string): Observable<HttpResponse<string>> {
@@ -7768,6 +7830,7 @@ export namespace MyNS {
 		/**
 		 * Gets information about a FUOTA task.
 		 * Get fuota-tasks/{Id}
+		 * @param {string} Id Max length: 256
 		 * @return {GetFuotaTaskResponse} Success
 		 */
 		GetFuotaTask(Id: string): Observable<GetFuotaTaskResponse> {
@@ -7777,6 +7840,7 @@ export namespace MyNS {
 		/**
 		 * Starts a FUOTA task.
 		 * Put fuota-tasks/{Id}
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		StartFuotaTask(Id: string, requestBody: StartFuotaTaskPutBody): Observable<HttpResponse<string>> {
@@ -7786,6 +7850,7 @@ export namespace MyNS {
 		/**
 		 * Updates properties of a FUOTA task.
 		 * Patch fuota-tasks/{Id}
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		UpdateFuotaTask(Id: string, requestBody: UpdateFuotaTaskPatchBody): Observable<HttpResponse<string>> {
@@ -7795,6 +7860,7 @@ export namespace MyNS {
 		/**
 		 * Deletes a multicast group if it is not in use by a fuota task.
 		 * Delete multicast-groups/{Id}
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		DeleteMulticastGroup(Id: string): Observable<HttpResponse<string>> {
@@ -7804,6 +7870,7 @@ export namespace MyNS {
 		/**
 		 * Gets information about a multicast group.
 		 * Get multicast-groups/{Id}
+		 * @param {string} Id Max length: 256
 		 * @return {GetMulticastGroupResponse} Success
 		 */
 		GetMulticastGroup(Id: string): Observable<GetMulticastGroupResponse> {
@@ -7813,6 +7880,7 @@ export namespace MyNS {
 		/**
 		 * Updates properties of a multicast group session.
 		 * Patch multicast-groups/{Id}
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		UpdateMulticastGroup(Id: string, requestBody: UpdateMulticastGroupPatchBody): Observable<HttpResponse<string>> {
@@ -7822,6 +7890,8 @@ export namespace MyNS {
 		/**
 		 * Deletes a network analyzer configuration.
 		 * Delete network-analyzer-configurations/{ConfigurationName}
+		 * @param {string} ConfigurationName Min length: 1
+		 *     Max length: 1024
 		 * @return {void} 
 		 */
 		DeleteNetworkAnalyzerConfiguration(ConfigurationName: string): Observable<HttpResponse<string>> {
@@ -7831,6 +7901,8 @@ export namespace MyNS {
 		/**
 		 * Get network analyzer configuration.
 		 * Get network-analyzer-configurations/{ConfigurationName}
+		 * @param {string} ConfigurationName Min length: 1
+		 *     Max length: 1024
 		 * @return {GetNetworkAnalyzerConfigurationResponse} Success
 		 */
 		GetNetworkAnalyzerConfiguration(ConfigurationName: string): Observable<GetNetworkAnalyzerConfigurationResponse> {
@@ -7840,6 +7912,8 @@ export namespace MyNS {
 		/**
 		 * Update network analyzer configuration.
 		 * Patch network-analyzer-configurations/{ConfigurationName}
+		 * @param {string} ConfigurationName Min length: 1
+		 *     Max length: 1024
 		 * @return {void} 
 		 */
 		UpdateNetworkAnalyzerConfiguration(ConfigurationName: string, requestBody: UpdateNetworkAnalyzerConfigurationPatchBody): Observable<HttpResponse<string>> {
@@ -7850,6 +7924,7 @@ export namespace MyNS {
 		 * Remove queued messages from the downlink queue.
 		 * Delete wireless-devices/{Id}/data#messageId
 		 * @param {string} Id The ID of a given wireless device for which downlink messages will be deleted.
+		 *     Max length: 256
 		 * @param {string} messageId If message ID is <code>"*"</code>, it cleares the entire downlink queue for a given device, specified by the wireless device ID. Otherwise, the downlink message with the specified message ID will be deleted.
 		 * @param {WirelessDeviceType} WirelessDeviceType The wireless device type, which can be either Sidewalk or LoRaWAN.
 		 * @return {void} 
@@ -7862,6 +7937,7 @@ export namespace MyNS {
 		 * Deletes a service profile.
 		 * Delete service-profiles/{Id}
 		 * @param {string} Id The ID of the resource to delete.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		DeleteServiceProfile(Id: string): Observable<HttpResponse<string>> {
@@ -7872,6 +7948,7 @@ export namespace MyNS {
 		 * Gets information about a service profile.
 		 * Get service-profiles/{Id}
 		 * @param {string} Id The ID of the resource to get.
+		 *     Max length: 256
 		 * @return {GetServiceProfileResponse} Success
 		 */
 		GetServiceProfile(Id: string): Observable<GetServiceProfileResponse> {
@@ -7882,6 +7959,7 @@ export namespace MyNS {
 		 * Deletes a wireless device.
 		 * Delete wireless-devices/{Id}
 		 * @param {string} Id The ID of the resource to delete.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		DeleteWirelessDevice(Id: string): Observable<HttpResponse<string>> {
@@ -7892,6 +7970,7 @@ export namespace MyNS {
 		 * Updates properties of a wireless device.
 		 * Patch wireless-devices/{Id}
 		 * @param {string} Id The ID of the resource to update.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		UpdateWirelessDevice(Id: string, requestBody: UpdateWirelessDevicePatchBody): Observable<HttpResponse<string>> {
@@ -7902,6 +7981,7 @@ export namespace MyNS {
 		 * Delete an import task.
 		 * Delete wireless_device_import_task/{Id}
 		 * @param {string} Id The unique identifier of the import task to be deleted.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		DeleteWirelessDeviceImportTask(Id: string): Observable<HttpResponse<string>> {
@@ -7912,6 +7992,7 @@ export namespace MyNS {
 		 * Get information about an import task and count of device onboarding summary information for the import task.
 		 * Get wireless_device_import_task/{Id}
 		 * @param {string} Id The identifier of the import task for which information is requested.
+		 *     Max length: 256
 		 * @return {GetWirelessDeviceImportTaskResponse} Success
 		 */
 		GetWirelessDeviceImportTask(Id: string): Observable<GetWirelessDeviceImportTaskResponse> {
@@ -7922,6 +8003,7 @@ export namespace MyNS {
 		 * Update an import task to add more devices to the task.
 		 * Patch wireless_device_import_task/{Id}
 		 * @param {string} Id The identifier of the import task to be updated.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		UpdateWirelessDeviceImportTask(Id: string, requestBody: UpdateWirelessDeviceImportTaskPatchBody): Observable<HttpResponse<string>> {
@@ -7932,6 +8014,7 @@ export namespace MyNS {
 		 * Deletes a wireless gateway.
 		 * Delete wireless-gateways/{Id}
 		 * @param {string} Id The ID of the resource to delete.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		DeleteWirelessGateway(Id: string): Observable<HttpResponse<string>> {
@@ -7942,6 +8025,7 @@ export namespace MyNS {
 		 * Updates properties of a wireless gateway.
 		 * Patch wireless-gateways/{Id}
 		 * @param {string} Id The ID of the resource to update.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		UpdateWirelessGateway(Id: string, requestBody: UpdateWirelessGatewayPatchBody): Observable<HttpResponse<string>> {
@@ -7952,6 +8036,7 @@ export namespace MyNS {
 		 * Deletes a wireless gateway task definition. Deleting this task definition does not affect tasks that are currently in progress.
 		 * Delete wireless-gateway-task-definitions/{Id}
 		 * @param {string} Id The ID of the resource to delete.
+		 *     Max length: 36
 		 * @return {void} 
 		 */
 		DeleteWirelessGatewayTaskDefinition(Id: string): Observable<HttpResponse<string>> {
@@ -7962,6 +8047,7 @@ export namespace MyNS {
 		 * Gets information about a wireless gateway task definition.
 		 * Get wireless-gateway-task-definitions/{Id}
 		 * @param {string} Id The ID of the resource to get.
+		 *     Max length: 36
 		 * @return {GetWirelessGatewayTaskDefinitionResponse} Success
 		 */
 		GetWirelessGatewayTaskDefinition(Id: string): Observable<GetWirelessGatewayTaskDefinitionResponse> {
@@ -7972,6 +8058,7 @@ export namespace MyNS {
 		 * Deregister a wireless device from AWS IoT Wireless.
 		 * Patch wireless-devices/{Identifier}/deregister
 		 * @param {string} Identifier The identifier of the wireless device to deregister from AWS IoT Wireless.
+		 *     Max length: 256
 		 * @param {WirelessDeviceType} WirelessDeviceType The type of wireless device to deregister from AWS IoT Wireless, which can be <code>LoRaWAN</code> or <code>Sidewalk</code>.
 		 * @return {DeregisterWirelessDeviceResponse} Success
 		 */
@@ -7983,6 +8070,7 @@ export namespace MyNS {
 		 * Disassociates your AWS account from a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are <code>null</code>, disassociates your AWS account from all partner accounts.
 		 * Delete partner-accounts/{PartnerAccountId}#partnerType
 		 * @param {string} PartnerAccountId The partner account ID to disassociate from the AWS account.
+		 *     Max length: 256
 		 * @param {EventNotificationPartnerType} partnerType The partner type.
 		 * @return {void} 
 		 */
@@ -7994,6 +8082,7 @@ export namespace MyNS {
 		 * Gets information about a partner account. If <code>PartnerAccountId</code> and <code>PartnerType</code> are <code>null</code>, returns all partner accounts.
 		 * Get partner-accounts/{PartnerAccountId}#partnerType
 		 * @param {string} PartnerAccountId The partner account ID to disassociate from the AWS account.
+		 *     Max length: 256
 		 * @param {EventNotificationPartnerType} partnerType The partner type.
 		 * @return {GetPartnerAccountResponse} Success
 		 */
@@ -8005,6 +8094,7 @@ export namespace MyNS {
 		 * Updates properties of a partner account.
 		 * Patch partner-accounts/{PartnerAccountId}#partnerType
 		 * @param {string} PartnerAccountId The ID of the partner account to update.
+		 *     Max length: 256
 		 * @param {EventNotificationPartnerType} partnerType The partner type.
 		 * @return {void} 
 		 */
@@ -8015,6 +8105,8 @@ export namespace MyNS {
 		/**
 		 * Disassociates a multicast group from a fuota task.
 		 * Delete fuota-tasks/{Id}/multicast-groups/{MulticastGroupId}
+		 * @param {string} Id Max length: 256
+		 * @param {string} MulticastGroupId Max length: 256
 		 * @return {void} 
 		 */
 		DisassociateMulticastGroupFromFuotaTask(Id: string, MulticastGroupId: string): Observable<HttpResponse<string>> {
@@ -8024,6 +8116,8 @@ export namespace MyNS {
 		/**
 		 * Disassociates a wireless device from a FUOTA task.
 		 * Delete fuota-tasks/{Id}/wireless-devices/{WirelessDeviceId}
+		 * @param {string} Id Max length: 256
+		 * @param {string} WirelessDeviceId Max length: 256
 		 * @return {void} 
 		 */
 		DisassociateWirelessDeviceFromFuotaTask(Id: string, WirelessDeviceId: string): Observable<HttpResponse<string>> {
@@ -8033,6 +8127,8 @@ export namespace MyNS {
 		/**
 		 * Disassociates a wireless device from a multicast group.
 		 * Delete multicast-groups/{Id}/wireless-devices/{WirelessDeviceId}
+		 * @param {string} Id Max length: 256
+		 * @param {string} WirelessDeviceId Max length: 256
 		 * @return {void} 
 		 */
 		DisassociateWirelessDeviceFromMulticastGroup(Id: string, WirelessDeviceId: string): Observable<HttpResponse<string>> {
@@ -8141,6 +8237,7 @@ export namespace MyNS {
 		 * Get the event configuration for a particular resource identifier.
 		 * Get event-configurations/{Identifier}#identifierType
 		 * @param {string} Identifier Resource identifier to opt in for event messaging.
+		 *     Max length: 256
 		 * @param {IdentifierType} identifierType Identifier type of the particular resource identifier for event configuration.
 		 * @param {EventNotificationPartnerType} partnerType Partner type of the resource if the identifier type is <code>PartnerAccountId</code>.
 		 * @return {GetResourceEventConfigurationResponse} Success
@@ -8153,6 +8250,7 @@ export namespace MyNS {
 		 * Update the event configuration for a particular resource identifier.
 		 * Patch event-configurations/{Identifier}#identifierType
 		 * @param {string} Identifier Resource identifier to opt in for event messaging.
+		 *     Max length: 256
 		 * @param {IdentifierType} identifierType Identifier type of the particular resource identifier for event configuration.
 		 * @param {EventNotificationPartnerType} partnerType Partner type of the resource if the identifier type is <code>PartnerAccountId</code> 
 		 * @return {void} 
@@ -8164,6 +8262,7 @@ export namespace MyNS {
 		/**
 		 * Fetches the log-level override, if any, for a given resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.
 		 * Get log-levels/{ResourceIdentifier}#resourceType
+		 * @param {string} ResourceIdentifier Max length: 256
 		 * @param {string} resourceType The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.
 		 * @return {GetResourceLogLevelResponse} Success
 		 */
@@ -8174,6 +8273,7 @@ export namespace MyNS {
 		/**
 		 * Sets the log-level override for a resource-ID and resource-type. This option can be specified for a wireless gateway or a wireless device. A limit of 200 log level override can be set per account.
 		 * Put log-levels/{ResourceIdentifier}#resourceType
+		 * @param {string} ResourceIdentifier Max length: 256
 		 * @param {string} resourceType The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.
 		 * @return {PutResourceLogLevelResponse} Success
 		 */
@@ -8184,6 +8284,7 @@ export namespace MyNS {
 		/**
 		 * Removes the log-level override, if any, for a specific resource-ID and resource-type. It can be used for a wireless device or a wireless gateway.
 		 * Delete log-levels/{ResourceIdentifier}#resourceType
+		 * @param {string} ResourceIdentifier Max length: 256
 		 * @param {string} resourceType The type of the resource, which can be <code>WirelessDevice</code> or <code>WirelessGateway</code>.
 		 * @return {void} 
 		 */
@@ -8227,6 +8328,7 @@ export namespace MyNS {
 		 * Gets information about a wireless device.
 		 * Get wireless-devices/{Identifier}#identifierType
 		 * @param {string} Identifier The identifier of the wireless device to get.
+		 *     Max length: 256
 		 * @param {WirelessDeviceIdType} identifierType The type of identifier used in <code>identifier</code>.
 		 * @return {GetWirelessDeviceResponse} Success
 		 */
@@ -8238,6 +8340,7 @@ export namespace MyNS {
 		 * Gets operating information about a wireless device.
 		 * Get wireless-devices/{Id}/statistics
 		 * @param {string} Id The ID of the wireless device for which to get the data.
+		 *     Max length: 256
 		 * @return {GetWirelessDeviceStatisticsResponse} Success
 		 */
 		GetWirelessDeviceStatistics(Id: string): Observable<GetWirelessDeviceStatisticsResponse> {
@@ -8248,6 +8351,7 @@ export namespace MyNS {
 		 * Gets information about a wireless gateway.
 		 * Get wireless-gateways/{Identifier}#identifierType
 		 * @param {string} Identifier The identifier of the wireless gateway to get.
+		 *     Max length: 256
 		 * @param {WirelessGatewayIdType} identifierType The type of identifier used in <code>identifier</code>.
 		 * @return {GetWirelessGatewayResponse} Success
 		 */
@@ -8259,6 +8363,7 @@ export namespace MyNS {
 		 * Gets the firmware version and other information about a wireless gateway.
 		 * Get wireless-gateways/{Id}/firmware-information
 		 * @param {string} Id The ID of the resource to get.
+		 *     Max length: 256
 		 * @return {GetWirelessGatewayFirmwareInformationResponse} Success
 		 */
 		GetWirelessGatewayFirmwareInformation(Id: string): Observable<GetWirelessGatewayFirmwareInformationResponse> {
@@ -8269,6 +8374,7 @@ export namespace MyNS {
 		 * Gets operating information about a wireless gateway.
 		 * Get wireless-gateways/{Id}/statistics
 		 * @param {string} Id The ID of the wireless gateway for which to get the data.
+		 *     Max length: 256
 		 * @return {GetWirelessGatewayStatisticsResponse} Success
 		 */
 		GetWirelessGatewayStatistics(Id: string): Observable<GetWirelessGatewayStatisticsResponse> {
@@ -8279,7 +8385,11 @@ export namespace MyNS {
 		 * List the Sidewalk devices in an import task and their onboarding status.
 		 * Get wireless_device_import_task#id
 		 * @param {string} id The identifier of the import task for which wireless devices are listed.
+		 *     Max length: 256
+		 * @param {number} maxResults Minimum: 0
+		 *     Maximum: 250
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.
+		 *     Max length: 4096
 		 * @param {OnboardStatus} status The status of the devices in the import task.
 		 * @return {ListDevicesForWirelessDeviceImportTaskResponse} Success
 		 */
@@ -8291,7 +8401,10 @@ export namespace MyNS {
 		 * List event configurations where at least one event topic has been enabled.
 		 * Get event-configurations#resourceType
 		 * @param {EventNotificationResourceType} resourceType Resource type to filter event configurations.
+		 * @param {number} maxResults Minimum: 0
+		 *     Maximum: 250
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
 		 * @return {ListEventConfigurationsResponse} Success
 		 */
 		ListEventConfigurations(resourceType: EventNotificationResourceType, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListEventConfigurationsResponse> {
@@ -8301,7 +8414,11 @@ export namespace MyNS {
 		/**
 		 * List all multicast groups associated with a fuota task.
 		 * Get fuota-tasks/{Id}/multicast-groups
+		 * @param {string} Id Max length: 256
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
+		 * @param {number} maxResults Minimum: 0
+		 *     Maximum: 250
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListMulticastGroupsByFuotaTaskResponse} Success
@@ -8314,7 +8431,10 @@ export namespace MyNS {
 		 * <p>List position configurations for a given resource, such as positioning solvers.</p> <important> <p>This action is no longer supported. Calls to retrieve position information should use the <a href="https://docs.aws.amazon.com/iot-wireless/2020-11-22/apireference/API_GetResourcePosition.html">GetResourcePosition</a> API operation instead.</p> </important>
 		 * Get position-configurations
 		 * @param {PositionResourceType} resourceType Resource type for which position configurations are listed.
+		 * @param {number} maxResults Minimum: 0
+		 *     Maximum: 250
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListPositionConfigurationsResponse} Success
@@ -8327,8 +8447,11 @@ export namespace MyNS {
 		 * List queued messages in the downlink queue.
 		 * Get wireless-devices/{Id}/data
 		 * @param {string} Id The ID of a given wireless device which the downlink message packets are being sent.
+		 *     Max length: 256
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
+		 *     Max length: 4096
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 0    Maximum: 250
 		 * @param {WirelessDeviceType} WirelessDeviceType The wireless device type, whic can be either Sidewalk or LoRaWAN.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -8342,6 +8465,7 @@ export namespace MyNS {
 		 * Sends a decrypted application data frame to a device.
 		 * Post wireless-devices/{Id}/data
 		 * @param {string} Id The ID of the wireless device to receive the data.
+		 *     Max length: 256
 		 * @return {void} 
 		 */
 		SendDataToWirelessDevice(Id: string, requestBody: SendDataToWirelessDevicePostBody): Observable<HttpResponse<string>> {
@@ -8352,6 +8476,7 @@ export namespace MyNS {
 		 * Lists the tags (metadata) you have assigned to the resource.
 		 * Get tags#resourceArn
 		 * @param {string} resourceArn The ARN of the resource for which you want to list tags.
+		 *     Min length: 1    Max length: 1011
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -8362,6 +8487,7 @@ export namespace MyNS {
 		 * Adds a tag to a resource.
 		 * Post tags#resourceArn
 		 * @param {string} resourceArn The ARN of the resource to add tags to.
+		 *     Min length: 1    Max length: 1011
 		 * @return {void} 
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -8371,7 +8497,10 @@ export namespace MyNS {
 		/**
 		 * List wireless devices that have been added to an import task.
 		 * Get wireless_device_import_tasks
+		 * @param {number} maxResults Minimum: 0
+		 *     Maximum: 250
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.
+		 *     Max length: 4096
 		 * @return {ListWirelessDeviceImportTasksResponse} Success
 		 */
 		ListWirelessDeviceImportTasks(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListWirelessDeviceImportTasksResponse> {
@@ -8381,6 +8510,7 @@ export namespace MyNS {
 		/**
 		 * Sends the specified data to a multicast group.
 		 * Post multicast-groups/{Id}/data
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		SendDataToMulticastGroup(Id: string, requestBody: SendDataToMulticastGroupPostBody): Observable<HttpResponse<string>> {
@@ -8390,6 +8520,7 @@ export namespace MyNS {
 		/**
 		 * Starts a bulk association of all qualifying wireless devices with a multicast group.
 		 * Patch multicast-groups/{Id}/bulk
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		StartBulkAssociateWirelessDeviceWithMulticastGroup(Id: string, requestBody: StartBulkAssociateWirelessDeviceWithMulticastGroupPatchBody): Observable<HttpResponse<string>> {
@@ -8399,6 +8530,7 @@ export namespace MyNS {
 		/**
 		 * Starts a bulk disassociatin of all qualifying wireless devices from a multicast group.
 		 * Post multicast-groups/{Id}/bulk
+		 * @param {string} Id Max length: 256
 		 * @return {void} 
 		 */
 		StartBulkDisassociateWirelessDeviceFromMulticastGroup(Id: string, requestBody: StartBulkDisassociateWirelessDeviceFromMulticastGroupPostBody): Observable<HttpResponse<string>> {
@@ -8427,6 +8559,7 @@ export namespace MyNS {
 		 * Simulates a provisioned device by sending an uplink data payload of <code>Hello</code>.
 		 * Post wireless-devices/{Id}/test
 		 * @param {string} Id The ID of the wireless device to test.
+		 *     Max length: 256
 		 * @return {TestWirelessDeviceResponse} Success
 		 */
 		TestWirelessDevice(Id: string): Observable<TestWirelessDeviceResponse> {
@@ -8437,7 +8570,9 @@ export namespace MyNS {
 		 * Removes one or more tags from a resource.
 		 * Delete tags#resourceArn&tagKeys
 		 * @param {string} resourceArn The ARN of the resource to remove tags from.
+		 *     Min length: 1    Max length: 1011
 		 * @param {Array<string>} tagKeys A list of the keys of the tags to remove from the resource.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {void} 
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -8455,8 +8590,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -8471,8 +8606,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -8602,8 +8737,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the certificate to associate with the wireless gateway.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		IotCertificateId: string;
 	}
@@ -8612,8 +8747,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the certificate to associate with the wireless gateway.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		IotCertificateId: FormControl<string | null | undefined>,
 	}
@@ -8759,8 +8894,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the IAM Role that authorizes the destination.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		RoleArn: string;
 
@@ -8773,8 +8908,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -8809,15 +8944,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the IAM Role that authorizes the destination.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -8853,8 +8988,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -8871,8 +9006,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -8969,8 +9104,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -8980,16 +9115,16 @@ export namespace MyNS {
 		/**
 		 * The S3 URI points to a firmware update image that is to be used with a FUOTA task.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		FirmwareUpdateImage: string;
 
 		/**
 		 * The firmware update role that is to be used with a FUOTA task.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		FirmwareUpdateRole: string;
 
@@ -9035,24 +9170,24 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The S3 URI points to a firmware update image that is to be used with a FUOTA task.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		FirmwareUpdateImage: FormControl<string | null | undefined>,
 
 		/**
 		 * The firmware update role that is to be used with a FUOTA task.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		FirmwareUpdateRole: FormControl<string | null | undefined>,
 
@@ -9122,8 +9257,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -9156,8 +9291,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -9205,8 +9340,8 @@ export namespace MyNS {
 		/**
 		 * Name of the network analyzer configuration.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Name: string;
 
@@ -9238,8 +9373,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -9255,8 +9390,8 @@ export namespace MyNS {
 		/**
 		 * Name of the network analyzer configuration.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -9268,8 +9403,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -9333,8 +9468,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -9348,8 +9483,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -9415,8 +9550,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -9465,8 +9600,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -9553,8 +9688,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 	}
@@ -9574,8 +9709,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -9664,8 +9799,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the new resource.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name?: string | null;
 
@@ -9674,8 +9809,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -9696,15 +9831,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the new resource.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -9753,8 +9888,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the IAM Role that authorizes the destination.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		RoleArn?: string | null;
 	}
@@ -9777,8 +9912,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the IAM Role that authorizes the destination.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		RoleArn: FormControl<string | null | undefined>,
 	}
@@ -9841,15 +9976,15 @@ export namespace MyNS {
 
 		/**
 		 * The S3 URI points to a firmware update image that is to be used with a FUOTA task.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		FirmwareUpdateImage?: string | null;
 
 		/**
 		 * The firmware update role that is to be used with a FUOTA task.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		FirmwareUpdateRole?: string | null;
 
@@ -9888,15 +10023,15 @@ export namespace MyNS {
 
 		/**
 		 * The S3 URI points to a firmware update image that is to be used with a FUOTA task.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		FirmwareUpdateImage: FormControl<string | null | undefined>,
 
 		/**
 		 * The firmware update role that is to be used with a FUOTA task.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		FirmwareUpdateRole: FormControl<string | null | undefined>,
 
@@ -10878,8 +11013,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -10910,8 +11045,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 
@@ -10951,8 +11086,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken?: string | null;
 
@@ -10980,8 +11115,8 @@ export namespace MyNS {
 
 		/**
 		 * Each resource must have a unique client request token. If you try to create a new resource with the same token as a resource that already exists, an exception occurs. If you omit this value, AWS SDKs will automatically generate a unique client request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientRequestToken: FormControl<string | null | undefined>,
 	}

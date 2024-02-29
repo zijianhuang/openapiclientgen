@@ -60,9 +60,13 @@ export namespace MyNS {
 
 	export interface AreaResponse {
 		areas?: Array<Area>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		row_count?: number | null;
 	}
 	export interface AreaResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		row_count: FormControl<number | null | undefined>,
 	}
 	export function CreateAreaResponseFormGroup() {
@@ -74,9 +78,13 @@ export namespace MyNS {
 
 	export interface DailyQualityResponse {
 		Qualities?: Array<Qualities>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		row_count?: number | null;
 	}
 	export interface DailyQualityResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		row_count: FormControl<number | null | undefined>,
 	}
 	export function CreateDailyQualityResponseFormGroup() {
@@ -88,10 +96,14 @@ export namespace MyNS {
 
 	export interface Qualities {
 		Date?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Quality?: number | null;
 	}
 	export interface QualitiesFormProperties {
 		Date: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Quality: FormControl<number | null | undefined>,
 	}
 	export function CreateQualitiesFormGroup() {
@@ -113,15 +125,23 @@ export namespace MyNS {
 	}
 
 	export interface OverallQualityResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		data_quality?: number | null;
 		end_date?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		row_count?: number | null;
 		sites?: string | null;
 		start_date?: string | null;
 	}
 	export interface OverallQualityResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		data_quality: FormControl<number | null | undefined>,
 		end_date: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		row_count: FormControl<number | null | undefined>,
 		sites: FormControl<string | null | undefined>,
 		start_date: FormControl<string | null | undefined>,
@@ -138,10 +158,14 @@ export namespace MyNS {
 	}
 
 	export interface SiteResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		row_count?: number | null;
 		sites?: Array<SiteResult>;
 	}
 	export interface SiteResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		row_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSiteResponseFormGroup() {
@@ -154,7 +178,11 @@ export namespace MyNS {
 	export interface SiteResult {
 		Description?: string | null;
 		Id?: string | null;
+
+		/** Type: double */
 		Latitude?: number | null;
+
+		/** Type: double */
 		Longitude?: number | null;
 		Name?: string | null;
 		Status?: string | null;
@@ -162,7 +190,11 @@ export namespace MyNS {
 	export interface SiteResultFormProperties {
 		Description: FormControl<string | null | undefined>,
 		Id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Longitude: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		Status: FormControl<string | null | undefined>,
@@ -223,10 +255,14 @@ export namespace MyNS {
 	}
 
 	export interface SiteTypeResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		row_count?: number | null;
 		sitetypes?: Array<SiteType>;
 	}
 	export interface SiteTypeResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		row_count: FormControl<number | null | undefined>,
 	}
 	export function CreateSiteTypeResponseFormGroup() {
@@ -244,7 +280,6 @@ export namespace MyNS {
 		/**
 		 * Returns list of areas
 		 * Get v{version}/areas
-		 * @return {AreaResponse} 
 		 */
 		Areas_Get(version: string): Observable<AreaResponse> {
 			return this.http.get<AreaResponse>(this.baseUri + 'v' + (version == null ? '' : encodeURIComponent(version)) + '/areas', {});
@@ -253,7 +288,6 @@ export namespace MyNS {
 		/**
 		 * Returns details of selected area
 		 * Get v{version}/areas/{area_Ids}
-		 * @return {AreaResponse} 
 		 */
 		AreasGetByArea_IdsAndVersion(area_Ids: string, version: string): Observable<AreaResponse> {
 			return this.http.get<AreaResponse>(this.baseUri + 'v' + (version == null ? '' : encodeURIComponent(version)) + '/areas/' + (area_Ids == null ? '' : encodeURIComponent(area_Ids)), {});
@@ -264,7 +298,6 @@ export namespace MyNS {
 		 * Get v{version}/quality/daily
 		 * @param {string} start_date The start date of the report in the format ddmmyyyy (i.e 31012016)
 		 * @param {string} end_date The end date of the report in the format ddmmyyyy (i.e 31012016)
-		 * @return {DailyQualityResponse} 
 		 */
 		Quality_GetDailyDataQualityForSite(siteId: string, start_date: string, end_date: string, version: string): Observable<DailyQualityResponse> {
 			return this.http.get<DailyQualityResponse>(this.baseUri + 'v' + (version == null ? '' : encodeURIComponent(version)) + '/quality/daily?siteId=' + (siteId == null ? '' : encodeURIComponent(siteId)) + '&start_date=' + (start_date == null ? '' : encodeURIComponent(start_date)) + '&end_date=' + (end_date == null ? '' : encodeURIComponent(end_date)), {});
@@ -276,7 +309,6 @@ export namespace MyNS {
 		 * @param {string} sites Get site quality by site id delimited by ,
 		 * @param {string} start_date The start date of the report in the format ddmmyyyy (i.e 31012016)
 		 * @param {string} end_date The end date of the report in the format ddmmyyyy (i.e 31012016)
-		 * @return {OverallQualityResponse} 
 		 */
 		Quality_GetOverallDataQualityForSites(sites: string, start_date: string, end_date: string, version: string): Observable<OverallQualityResponse> {
 			return this.http.get<OverallQualityResponse>(this.baseUri + 'v' + (version == null ? '' : encodeURIComponent(version)) + '/quality/overall?sites=' + (sites == null ? '' : encodeURIComponent(sites)) + '&start_date=' + (start_date == null ? '' : encodeURIComponent(start_date)) + '&end_date=' + (end_date == null ? '' : encodeURIComponent(end_date)), {});
@@ -291,8 +323,10 @@ export namespace MyNS {
 		 * @param {string} start_date The start date of the report in the format ddmmyyyy (i.e 31012016)
 		 * @param {string} end_date The end date of the report in the format ddmmyyyy (i.e 31012016)
 		 * @param {number} page The page offset to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size The number of rows to return.
-		 * @return {Object} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} reportSubTypeId Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Reports_Index(report_type: string, sites: string, start_date: string, end_date: string, page: number, page_size: number, reportSubTypeId: number | null | undefined, version: string): Observable<Object> {
 			return this.http.get<Object>(this.baseUri + 'v' + (version == null ? '' : encodeURIComponent(version)) + '/reports/' + (report_type == null ? '' : encodeURIComponent(report_type)) + '&sites=' + (sites == null ? '' : encodeURIComponent(sites)) + '&start_date=' + (start_date == null ? '' : encodeURIComponent(start_date)) + '&end_date=' + (end_date == null ? '' : encodeURIComponent(end_date)) + '&page=' + page + '&page_size=' + page_size + '&reportSubTypeId=' + reportSubTypeId, {});
@@ -307,8 +341,10 @@ export namespace MyNS {
 		 * @param {string} start_date The start date of the report in the format ddmmyyyy (i.e 31012016)
 		 * @param {string} end_date The end date of the report in the format ddmmyyyy (i.e 31012016)
 		 * @param {number} page The page offset to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size The number of rows to return.
-		 * @return {Object} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} reportSubTypeId Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ReportsGetByReport_typeAndSitesAndStart_dateAndEnd_dateAndPageAndPage_sizeAndReportSubTypeIdAndVersion(report_type: string, sites: string, start_date: string, end_date: string, page: number, page_size: number, reportSubTypeId: number | null | undefined, version: string): Observable<Object> {
 			return this.http.get<Object>(this.baseUri + 'v' + (version == null ? '' : encodeURIComponent(version)) + '/reports/' + (start_date == null ? '' : encodeURIComponent(start_date)) + '/to/' + (end_date == null ? '' : encodeURIComponent(end_date)) + '/' + (report_type == null ? '' : encodeURIComponent(report_type)) + '&sites=' + (sites == null ? '' : encodeURIComponent(sites)) + '&page=' + page + '&page_size=' + page_size + '&reportSubTypeId=' + reportSubTypeId, {});
@@ -317,7 +353,6 @@ export namespace MyNS {
 		/**
 		 * Get a list of sites
 		 * Get v{version}/sites
-		 * @return {SiteResponse} 
 		 */
 		Sites_Index(version: string): Observable<SiteResponse> {
 			return this.http.get<SiteResponse>(this.baseUri + 'v' + (version == null ? '' : encodeURIComponent(version)) + '/sites', {});
@@ -327,7 +362,6 @@ export namespace MyNS {
 		 * Get selected sites
 		 * Get v{version}/sites/{site_Ids}
 		 * @param {string} site_Ids site id
-		 * @return {SiteResponse} 
 		 */
 		SitesGetBySite_IdsAndVersion(site_Ids: string, version: string): Observable<SiteResponse> {
 			return this.http.get<SiteResponse>(this.baseUri + 'v' + (version == null ? '' : encodeURIComponent(version)) + '/sites/' + (site_Ids == null ? '' : encodeURIComponent(site_Ids)), {});
@@ -336,7 +370,6 @@ export namespace MyNS {
 		/**
 		 * Return list of site types
 		 * Get v{version}/sitetypes
-		 * @return {SiteTypeResponse} 
 		 */
 		SiteTypes_Index(version: string): Observable<SiteTypeResponse> {
 			return this.http.get<SiteTypeResponse>(this.baseUri + 'v' + (version == null ? '' : encodeURIComponent(version)) + '/sitetypes', {});
@@ -346,7 +379,7 @@ export namespace MyNS {
 		 * Returns the layer metadata for the LayerId specified.
 		 * Get v{version}/sitetypes/{siteType_Id}/sites
 		 * @param {number} siteType_Id 1 = MIDAS, 2 = TAME, 3 = TMU, 4 = TRADS Legacy
-		 * @return {SiteTypeLayer} 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		SiteTypes_GetSitesForPublicFacingAPI(siteType_Id: number, version: string): Observable<SiteTypeLayer> {
 			return this.http.get<SiteTypeLayer>(this.baseUri + 'v' + (version == null ? '' : encodeURIComponent(version)) + '/sitetypes/' + siteType_Id + '/sites', {});

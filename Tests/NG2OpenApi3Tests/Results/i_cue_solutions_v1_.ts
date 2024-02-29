@@ -60,16 +60,25 @@ export namespace MyNS {
 		/** Required */
 		errorType: PlanningLevelInfoRequestErrorType;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		holdOutPeriod: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		noFcst: number;
 
 		/** Required */
 		outlierDetection: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodicity: number;
 	}
 	export interface PlanningLevelInfoRequestFormProperties {
@@ -80,16 +89,25 @@ export namespace MyNS {
 		/** Required */
 		errorType: FormControl<PlanningLevelInfoRequestErrorType | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		holdOutPeriod: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		noFcst: FormControl<number | null | undefined>,
 
 		/** Required */
 		outlierDetection: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodicity: FormControl<number | null | undefined>,
 	}
 	export function CreatePlanningLevelInfoRequestFormGroup() {
@@ -110,6 +128,8 @@ export namespace MyNS {
 		address?: string | null;
 		dbConnection?: string | null;
 		email?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isActive?: boolean | null;
 		name?: string | null;
@@ -119,6 +139,8 @@ export namespace MyNS {
 		address: FormControl<string | null | undefined>,
 		dbConnection: FormControl<string | null | undefined>,
 		email: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -151,10 +173,14 @@ export namespace MyNS {
 
 	export interface PlanningLevelForecastResultData {
 		date?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface PlanningLevelForecastResultDataFormProperties {
 		date: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreatePlanningLevelForecastResultDataFormGroup() {
@@ -168,15 +194,27 @@ export namespace MyNS {
 	export interface ForecastHyperparameterResponse {
 		discardData?: boolean | null;
 		errorType?: PlanningLevelInfoRequestErrorType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		holdOutPeriod?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		noFcst?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		periodicity?: number | null;
 	}
 	export interface ForecastHyperparameterResponseFormProperties {
 		discardData: FormControl<boolean | null | undefined>,
 		errorType: FormControl<PlanningLevelInfoRequestErrorType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		holdOutPeriod: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		noFcst: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		periodicity: FormControl<number | null | undefined>,
 	}
 	export function CreateForecastHyperparameterResponseFormGroup() {
@@ -191,13 +229,25 @@ export namespace MyNS {
 	}
 
 	export interface ForecastOptimalParametersResponse {
+
+		/** Type: double */
 		alpha?: number | null;
+
+		/** Type: double */
 		beta?: number | null;
+
+		/** Type: double */
 		gamma?: number | null;
 	}
 	export interface ForecastOptimalParametersResponseFormProperties {
+
+		/** Type: double */
 		alpha: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		beta: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		gamma: FormControl<number | null | undefined>,
 	}
 	export function CreateForecastOptimalParametersResponseFormGroup() {
@@ -225,6 +275,8 @@ export namespace MyNS {
 	}
 
 	export interface ForecastPerformanceRequest {
+
+		/** Type: double */
 		costOfError?: number | null;
 		data?: Array<ForecastPerformanceDataRequest>;
 
@@ -235,13 +287,18 @@ export namespace MyNS {
 		/** Required */
 		planningLevelId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewindTimeFrame: number;
 
 		/** Required */
 		startDate: string;
 	}
 	export interface ForecastPerformanceRequestFormProperties {
+
+		/** Type: double */
 		costOfError: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -250,7 +307,10 @@ export namespace MyNS {
 		/** Required */
 		planningLevelId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rewindTimeFrame: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -280,12 +340,16 @@ export namespace MyNS {
 	}
 
 	export interface TimeSeriesForecastResponse {
+
+		/** Type: double */
 		error?: number | null;
 		forecastData?: Array<PlanningLevelForecastResultData>;
 		method?: string | null;
 		timeSeriesId?: string | null;
 	}
 	export interface TimeSeriesForecastResponseFormProperties {
+
+		/** Type: double */
 		error: FormControl<number | null | undefined>,
 		method: FormControl<string | null | undefined>,
 		timeSeriesId: FormControl<string | null | undefined>,
@@ -312,6 +376,8 @@ export namespace MyNS {
 	}
 
 	export interface TimeSeriesFullDetailsResponse {
+
+		/** Type: double */
 		error?: number | null;
 		forecastData?: Array<PlanningLevelForecastResultData>;
 		historyData?: Array<PlanningLevelForecastResultData>;
@@ -321,6 +387,8 @@ export namespace MyNS {
 		timeSeriesId?: string | null;
 	}
 	export interface TimeSeriesFullDetailsResponseFormProperties {
+
+		/** Type: double */
 		error: FormControl<number | null | undefined>,
 		method: FormControl<string | null | undefined>,
 		timeSeriesId: FormControl<string | null | undefined>,
@@ -335,13 +403,21 @@ export namespace MyNS {
 	}
 
 	export interface OutlierResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index?: number | null;
 		type?: OutlierResponseType | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface OutlierResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		index: FormControl<number | null | undefined>,
 		type: FormControl<OutlierResponseType | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateOutlierResponseFormGroup() {
@@ -368,6 +444,8 @@ export namespace MyNS {
 	}
 
 	export interface TimeSeriesHistoryAndForecastResponse {
+
+		/** Type: double */
 		error?: number | null;
 		forecastData?: Array<PlanningLevelForecastResultData>;
 		historyData?: Array<PlanningLevelForecastResultData>;
@@ -375,6 +453,8 @@ export namespace MyNS {
 		timeSeriesId?: string | null;
 	}
 	export interface TimeSeriesHistoryAndForecastResponseFormProperties {
+
+		/** Type: double */
 		error: FormControl<number | null | undefined>,
 		method: FormControl<string | null | undefined>,
 		timeSeriesId: FormControl<string | null | undefined>,
@@ -389,31 +469,67 @@ export namespace MyNS {
 	}
 
 	export interface HyperparameterModel {
+
+		/** Type: double */
 		abcClassificationThresholdA?: number | null;
+
+		/** Type: double */
 		abcClassificationThresholdB?: number | null;
+
+		/** Type: double */
 		abcClassificationThresholdC?: number | null;
 		discardData?: boolean | null;
 		errorType?: PlanningLevelInfoRequestErrorType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		holdOutPeriod?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		noFcst?: number | null;
 		outlierDetection?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		periodicity?: number | null;
+
+		/** Type: double */
 		xyzClassificationThresholdX?: number | null;
+
+		/** Type: double */
 		xyzClassificationThresholdY?: number | null;
+
+		/** Type: double */
 		xyzClassificationThresholdZ?: number | null;
 	}
 	export interface HyperparameterModelFormProperties {
+
+		/** Type: double */
 		abcClassificationThresholdA: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		abcClassificationThresholdB: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		abcClassificationThresholdC: FormControl<number | null | undefined>,
 		discardData: FormControl<boolean | null | undefined>,
 		errorType: FormControl<PlanningLevelInfoRequestErrorType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		holdOutPeriod: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		noFcst: FormControl<number | null | undefined>,
 		outlierDetection: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		periodicity: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		xyzClassificationThresholdX: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		xyzClassificationThresholdY: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		xyzClassificationThresholdZ: FormControl<number | null | undefined>,
 	}
 	export function CreateHyperparameterModelFormGroup() {
@@ -435,9 +551,13 @@ export namespace MyNS {
 	}
 
 	export interface JobResponse {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		jobId?: number | null;
 	}
 	export interface JobResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		jobId: FormControl<number | null | undefined>,
 	}
 	export function CreateJobResponseFormGroup() {
@@ -488,12 +608,16 @@ export namespace MyNS {
 
 		/** Required */
 		planningLevelId: string;
+
+		/** Type: double */
 		ratio?: number | null;
 	}
 	export interface LifecycleOneToOneRequestFormProperties {
 
 		/** Required */
 		planningLevelId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		ratio: FormControl<number | null | undefined>,
 	}
 	export function CreateLifecycleOneToOneRequestFormGroup() {
@@ -668,7 +792,10 @@ export namespace MyNS {
 		method: string;
 		params?: PlanningLevelInfoRequest;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		planningLevelId: number;
 	}
 	export interface PlanningLevelReRunRequestFormProperties {
@@ -676,7 +803,10 @@ export namespace MyNS {
 		/** Required */
 		method: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		planningLevelId: FormControl<number | null | undefined>,
 	}
 	export function CreatePlanningLevelReRunRequestFormGroup() {
@@ -725,26 +855,50 @@ export namespace MyNS {
 
 	export interface PortfolioAbcModel {
 		abc12?: string | null;
+
+		/** Type: double */
 		abc12Value?: number | null;
 		abc6?: string | null;
+
+		/** Type: double */
 		abc6Value?: number | null;
 		abc9?: string | null;
+
+		/** Type: double */
 		abc9Value?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		thresholdA?: number | null;
+
+		/** Type: double */
 		thresholdB?: number | null;
+
+		/** Type: double */
 		thresholdC?: number | null;
 	}
 	export interface PortfolioAbcModelFormProperties {
 		abc12: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		abc12Value: FormControl<number | null | undefined>,
 		abc6: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		abc6Value: FormControl<number | null | undefined>,
 		abc9: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		abc9Value: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		thresholdA: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		thresholdB: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		thresholdC: FormControl<number | null | undefined>,
 	}
 	export function CreatePortfolioAbcModelFormGroup() {
@@ -765,44 +919,92 @@ export namespace MyNS {
 
 	export interface PortfolioModel {
 		abc12?: string | null;
+
+		/** Type: double */
 		abc12Value?: number | null;
 		abc6?: string | null;
+
+		/** Type: double */
 		abc6Value?: number | null;
 		abc9?: string | null;
+
+		/** Type: double */
 		abc9Value?: number | null;
 		id?: string | null;
+
+		/** Type: double */
 		thresholdA?: number | null;
+
+		/** Type: double */
 		thresholdB?: number | null;
+
+		/** Type: double */
 		thresholdC?: number | null;
+
+		/** Type: double */
 		thresholdX?: number | null;
+
+		/** Type: double */
 		thresholdY?: number | null;
+
+		/** Type: double */
 		thresholdZ?: number | null;
 		xyz12?: string | null;
+
+		/** Type: double */
 		xyz12Value?: number | null;
 		xyz6?: string | null;
+
+		/** Type: double */
 		xyz6Value?: number | null;
 		xyz9?: string | null;
+
+		/** Type: double */
 		xyz9Value?: number | null;
 	}
 	export interface PortfolioModelFormProperties {
 		abc12: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		abc12Value: FormControl<number | null | undefined>,
 		abc6: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		abc6Value: FormControl<number | null | undefined>,
 		abc9: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		abc9Value: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		thresholdA: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		thresholdB: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		thresholdC: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		thresholdX: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		thresholdY: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		thresholdZ: FormControl<number | null | undefined>,
 		xyz12: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		xyz12Value: FormControl<number | null | undefined>,
 		xyz6: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		xyz6Value: FormControl<number | null | undefined>,
 		xyz9: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		xyz9Value: FormControl<number | null | undefined>,
 	}
 	export function CreatePortfolioModelFormGroup() {
@@ -857,26 +1059,50 @@ export namespace MyNS {
 
 	export interface PortfolioXyzModel {
 		id?: string | null;
+
+		/** Type: double */
 		thresholdX?: number | null;
+
+		/** Type: double */
 		thresholdY?: number | null;
+
+		/** Type: double */
 		thresholdZ?: number | null;
 		xyz12?: string | null;
+
+		/** Type: double */
 		xyz12Value?: number | null;
 		xyz6?: string | null;
+
+		/** Type: double */
 		xyz6Value?: number | null;
 		xyz9?: string | null;
+
+		/** Type: double */
 		xyz9Value?: number | null;
 	}
 	export interface PortfolioXyzModelFormProperties {
 		id: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		thresholdX: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		thresholdY: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		thresholdZ: FormControl<number | null | undefined>,
 		xyz12: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		xyz12Value: FormControl<number | null | undefined>,
 		xyz6: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		xyz6Value: FormControl<number | null | undefined>,
 		xyz9: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		xyz9Value: FormControl<number | null | undefined>,
 	}
 	export function CreatePortfolioXyzModelFormGroup() {
@@ -896,21 +1122,41 @@ export namespace MyNS {
 	}
 
 	export interface RewindHyperparameterResponse {
+
+		/** Type: double */
 		costOfError?: number | null;
 		discardData?: boolean | null;
 		errorType?: PlanningLevelInfoRequestErrorType | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		holdOutPeriod?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		noFcst?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		periodicity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rewindTimeFrame?: number | null;
 	}
 	export interface RewindHyperparameterResponseFormProperties {
+
+		/** Type: double */
 		costOfError: FormControl<number | null | undefined>,
 		discardData: FormControl<boolean | null | undefined>,
 		errorType: FormControl<PlanningLevelInfoRequestErrorType | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		holdOutPeriod: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		noFcst: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		periodicity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		rewindTimeFrame: FormControl<number | null | undefined>,
 	}
 	export function CreateRewindHyperparameterResponseFormGroup() {
@@ -929,9 +1175,13 @@ export namespace MyNS {
 	export interface RewindResponse {
 		hyperparameters?: RewindHyperparameterResponse;
 		timeSeries?: Array<RewindTimeSeriesResponse>;
+
+		/** Type: double */
 		totalCost?: number | null;
 	}
 	export interface RewindResponseFormProperties {
+
+		/** Type: double */
 		totalCost: FormControl<number | null | undefined>,
 	}
 	export function CreateRewindResponseFormGroup() {
@@ -942,18 +1192,34 @@ export namespace MyNS {
 	}
 
 	export interface RewindTimeSeriesResponse {
+
+		/** Type: double */
 		customerError?: number | null;
+
+		/** Type: double */
 		errorDiff?: number | null;
+
+		/** Type: double */
 		icueError?: number | null;
 		timeSeries?: string | null;
+
+		/** Type: double */
 		totalCost?: number | null;
 		useIcue?: boolean | null;
 	}
 	export interface RewindTimeSeriesResponseFormProperties {
+
+		/** Type: double */
 		customerError: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		errorDiff: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		icueError: FormControl<number | null | undefined>,
 		timeSeries: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		totalCost: FormControl<number | null | undefined>,
 		useIcue: FormControl<boolean | null | undefined>,
 	}
@@ -984,10 +1250,14 @@ export namespace MyNS {
 	}
 
 	export interface ToggleRequest {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isActive?: boolean | null;
 	}
 	export interface ToggleRequestFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 	}
@@ -1000,12 +1270,20 @@ export namespace MyNS {
 	}
 
 	export interface ToggleUserRequest {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		entityId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 		isActive?: boolean | null;
 	}
 	export interface ToggleUserRequestFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		entityId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 		isActive: FormControl<boolean | null | undefined>,
 	}
@@ -1057,6 +1335,7 @@ export namespace MyNS {
 		 * Delete organization
 		 * This is an iCUE only endpoint or Enterprise feature.
 		 * Delete administration/entity/{id}
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		AdministrationEntity_idDelete(id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1087,6 +1366,7 @@ export namespace MyNS {
 		 * Get Models for Organization
 		 * Returns models registered for Organization
 		 * Get administration/model/{entityId}
+		 * @param {number} entityId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<MethodDto>} Success
 		 */
 		AdministrationModel_entityIdGet(entityId: number, headersHandler?: () => HttpHeaders): Observable<Array<MethodDto>> {
@@ -1097,6 +1377,7 @@ export namespace MyNS {
 		 * Register new forecasting model
 		 * Register new forecasting model for single organziation
 		 * Post administration/model/{entityId}
+		 * @param {number} entityId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {MethodDto} Success
 		 */
 		AdministrationModel_entityIdPost(entityId: number, requestBody: NewModelRequest, headersHandler?: () => HttpHeaders): Observable<MethodDto> {
@@ -1117,6 +1398,8 @@ export namespace MyNS {
 		 * Delete planning level
 		 * Delete planning level. This is an Enterprise feature.
 		 * Delete administration/planning-level/{entityId}/{id}
+		 * @param {number} entityId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		AdministrationPlanning_level_entityId_idDelete(entityId: number, id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1167,6 +1450,7 @@ export namespace MyNS {
 		 * Get all users
 		 * Get all users
 		 * Get administration/user/{entityId}
+		 * @param {number} entityId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		AdministrationUser_entityIdGet(entityId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1177,6 +1461,8 @@ export namespace MyNS {
 		 * Delete user
 		 * Delete user
 		 * Delete administration/user/{entityId}/{id}
+		 * @param {number} entityId Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} id Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		AdministrationUser_entityId_idDelete(entityId: number, id: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1277,6 +1563,7 @@ export namespace MyNS {
 		 * Forecast result
 		 * Get result for forecast job
 		 * Get forecast/result/{jobId}
+		 * @param {number} jobId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ForecastResult_jobIdGet(jobId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1287,6 +1574,7 @@ export namespace MyNS {
 		 * Forecast status
 		 * Get status for forecast job
 		 * Get forecast/status/{jobId}
+		 * @param {number} jobId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		ForecastStatus_jobIdGet(jobId: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -1575,6 +1863,7 @@ export namespace MyNS {
 		 * SKU rationalization report
 		 * SKU rationalization report
 		 * Get report/performance/sku-rationalization/{planningLevelId}
+		 * @param {number} planningLevelId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<PortfolioModel>} Success
 		 */
 		ReportPerformanceSku_rationalization_planningLevelIdGet(planningLevelId: number, headersHandler?: () => HttpHeaders): Observable<Array<PortfolioModel>> {

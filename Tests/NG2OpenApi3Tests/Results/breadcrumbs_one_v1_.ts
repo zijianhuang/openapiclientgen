@@ -35,9 +35,13 @@ export namespace MyNS {
 
 	export interface BreadcrumbsAPIModelsAddressExposureResponse {
 		entity_attributes?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hop?: number | null;
 	}
 	export interface BreadcrumbsAPIModelsAddressExposureResponseFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		hop: FormControl<number | null | undefined>,
 	}
 	export function CreateBreadcrumbsAPIModelsAddressExposureResponseFormGroup() {
@@ -211,11 +215,15 @@ export namespace MyNS {
 
 	export interface BreadcrumbsAPIModelsPathfinderPathfinderResponse {
 		path_found?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_hops?: number | null;
 		result_paths?: Array<string>;
 	}
 	export interface BreadcrumbsAPIModelsPathfinderPathfinderResponseFormProperties {
 		path_found: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result_hops: FormControl<number | null | undefined>,
 	}
 	export function CreateBreadcrumbsAPIModelsPathfinderPathfinderResponseFormGroup() {
@@ -298,10 +306,14 @@ export namespace MyNS {
 
 	export interface BreadcrumbsResponseUnauthorizedResponse {
 		error?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 	}
 	export interface BreadcrumbsResponseUnauthorizedResponseFormProperties {
 		error: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateBreadcrumbsResponseUnauthorizedResponseFormGroup() {
@@ -314,10 +326,14 @@ export namespace MyNS {
 
 	export interface BreadcrumbsResponseUnprocessableResponse {
 		error?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 	}
 	export interface BreadcrumbsResponseUnprocessableResponseFormProperties {
 		error: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 	}
 	export function CreateBreadcrumbsResponseUnprocessableResponseFormGroup() {

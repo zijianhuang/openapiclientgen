@@ -1224,6 +1224,7 @@ export namespace MyNS {
 		 * Returns a list of Amazon Managed Grafana workspaces in the account, with some information about each workspace. For more complete information about one workspace, use <a href="https://docs.aws.amazon.com/AAMG/latest/APIReference/API_DescribeWorkspace.html">DescribeWorkspace</a>.
 		 * Get workspaces
 		 * @param {number} maxResults The maximum number of workspaces to include in the results.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of workspaces to return. (You receive this token from a previous <code>ListWorkspaces</code> operation.)
 		 * @return {ListWorkspacesResponse} Success
 		 */
@@ -1275,6 +1276,7 @@ export namespace MyNS {
 		 * Deletes a Grafana API key for the workspace.
 		 * Delete workspaces/{workspaceId}/apikeys/{keyName}
 		 * @param {string} keyName The name of the API key to delete.
+		 *     Min length: 1    Max length: 100
 		 * @param {string} workspaceId The ID of the workspace to delete.
 		 * @return {DeleteWorkspaceApiKeyResponse} Success
 		 */
@@ -1326,9 +1328,12 @@ export namespace MyNS {
 		 * Lists the users and groups who have the Grafana <code>Admin</code> and <code>Editor</code> roles in this workspace. If you use this operation without specifying <code>userId</code> or <code>groupId</code>, the operation returns the roles of all users and groups. If you specify a <code>userId</code> or a <code>groupId</code>, only the roles for that user or group are returned. If you do this, you can specify only one <code>userId</code> or one <code>groupId</code>.
 		 * Get workspaces/{workspaceId}/permissions
 		 * @param {string} groupId (Optional) Limits the results to only the group that matches this ID.
+		 *     Min length: 1    Max length: 47
 		 * @param {number} maxResults The maximum number of results to include in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to use when requesting the next set of results. You received this token from a previous <code>ListPermissions</code> operation.
 		 * @param {string} userId (Optional) Limits the results to only the user that matches this ID.
+		 *     Min length: 1    Max length: 47
 		 * @param {UserType} userType (Optional) If you specify <code>SSO_USER</code>, then only the permissions of IAM Identity Center users are returned. If you specify <code>SSO_GROUP</code>, only the permissions of IAM Identity Center groups are returned.
 		 * @param {string} workspaceId The ID of the workspace to list permissions for. This parameter is required.
 		 * @return {ListPermissionsResponse} Success
@@ -1371,6 +1376,7 @@ export namespace MyNS {
 		 * Lists available versions of Grafana. These are available when calling <code>CreateWorkspace</code>. Optionally, include a workspace to list the versions to which it can be upgraded.
 		 * Get versions
 		 * @param {number} maxResults The maximum number of results to include in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token to use when requesting the next set of results. You receive this token from a previous <code>ListVersions</code> operation.
 		 * @param {string} workspace_id The ID of the workspace to list the available upgrade versions. If not included, lists all versions of Grafana that are supported for <code>CreateWorkspace</code>.
 		 * @return {ListVersionsResponse} Success
@@ -1410,15 +1416,15 @@ export namespace MyNS {
 
 		/**
 		 * The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.
-		 * Max length: 65536
 		 * Min length: 2
+		 * Max length: 65536
 		 */
 		configuration?: string | null;
 
 		/**
 		 * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To get a list of supported version, use the <code>ListVersions</code> operation.</p>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		grafanaVersion?: string | null;
 
@@ -1427,8 +1433,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		organizationRoleName?: string | null;
 
@@ -1452,8 +1458,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description for the workspace. This is used only to help you identify this workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		workspaceDescription?: string | null;
 
@@ -1468,8 +1474,8 @@ export namespace MyNS {
 
 		/**
 		 * Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		workspaceRoleArn?: string | null;
 	}
@@ -1486,22 +1492,22 @@ export namespace MyNS {
 
 		/**
 		 * The configuration string for the workspace that you create. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.
-		 * Max length: 65536
 		 * Min length: 2
+		 * Max length: 65536
 		 */
 		configuration: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>To get a list of supported version, use the <code>ListVersions</code> operation.</p>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		grafanaVersion: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of an IAM role that already exists to use with Organizations to access Amazon Web Services data sources and notification channels in other accounts in an organization.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		organizationRoleName: FormControl<string | null | undefined>,
 
@@ -1519,8 +1525,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A description for the workspace. This is used only to help you identify this workspace.</p> <p>Pattern: <code>^[\\p{L}\\p{Z}\\p{N}\\p{P}]{0,2048}$</code> </p>
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		workspaceDescription: FormControl<string | null | undefined>,
 
@@ -1529,8 +1535,8 @@ export namespace MyNS {
 
 		/**
 		 * Specified the IAM role that grants permissions to the Amazon Web Services resources that the workspace will view data from, including both data sources and notification channels. You are responsible for managing the permissions for this role as new data sources or notification channels are added.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		workspaceRoleArn: FormControl<string | null | undefined>,
 	}
@@ -1580,8 +1586,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the name of the key. Keynames must be unique to the workspace.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		keyName: string;
 
@@ -1604,8 +1610,8 @@ export namespace MyNS {
 		/**
 		 * Specifies the name of the key. Keynames must be unique to the workspace.
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		keyName: FormControl<string | null | undefined>,
 
@@ -1642,8 +1648,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of an IAM role that already exists to use to access resources through Organizations. This can only be used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		organizationRoleName?: string | null;
 
@@ -1667,8 +1673,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the workspace. This is used only to help you identify this workspace.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		workspaceDescription?: string | null;
 
@@ -1683,8 +1689,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such as data sources and notification channels. If this workspace has <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		workspaceRoleArn?: string | null;
 	}
@@ -1695,8 +1701,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of an IAM role that already exists to use to access resources through Organizations. This can only be used with a workspace that has the <code>permissionType</code> set to <code>CUSTOMER_MANAGED</code>.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		organizationRoleName: FormControl<string | null | undefined>,
 
@@ -1714,8 +1720,8 @@ export namespace MyNS {
 
 		/**
 		 * A description for the workspace. This is used only to help you identify this workspace.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		workspaceDescription: FormControl<string | null | undefined>,
 
@@ -1724,8 +1730,8 @@ export namespace MyNS {
 
 		/**
 		 * Specifies an IAM role that grants permissions to Amazon Web Services resources that the workspace accesses, such as data sources and notification channels. If this workspace has <code>permissionType</code> <code>CUSTOMER_MANAGED</code>, then this role is required.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		workspaceRoleArn: FormControl<string | null | undefined>,
 	}
@@ -1809,15 +1815,15 @@ export namespace MyNS {
 		/**
 		 * The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 2
+		 * Max length: 65536
 		 */
 		configuration: string;
 
 		/**
 		 * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p> <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		grafanaVersion?: string | null;
 	}
@@ -1826,15 +1832,15 @@ export namespace MyNS {
 		/**
 		 * The new configuration string for the workspace. For more information about the format and configuration options available, see <a href="https://docs.aws.amazon.com/grafana/latest/userguide/AMG-configure-workspace.html">Working in your Grafana workspace</a>.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 2
+		 * Max length: 65536
 		 */
 		configuration: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>Specifies the version of Grafana to support in the new workspace.</p> <p>Can only be used to upgrade (for example, from 8.4 to 9.4), not downgrade (for example, from 9.4 to 8.4).</p> <p>To know what versions are available to upgrade to for a specific workspace, see the <code>ListVersions</code> operation.</p>
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		grafanaVersion: FormControl<string | null | undefined>,
 	}

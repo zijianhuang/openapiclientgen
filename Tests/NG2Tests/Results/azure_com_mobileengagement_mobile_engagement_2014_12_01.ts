@@ -3110,7 +3110,9 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {Campaigns_ListKind} kind Campaign kind.
 		 * @param {number} skip Control paging of campaigns, start results at the given offset, defaults to 0 (1st page of data).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} top Control paging of campaigns, number of campaigns to return with each call. It returns all campaigns by default. When specifying $top parameter, the response contains a `nextLink` property describing the path to get the next page if there are more results.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} filter Filter can be used to restrict the results to campaigns matching a specific state. The syntax is `$filter=state eq 'draft'`. Valid state values are: draft, scheduled, in-progress, and finished. Only the eq operator and the state property are supported.
 		 * @param {string} orderby Sort results by an expression which looks like `$orderby=id asc` (this example is actually the default behavior). The syntax is orderby={property} {direction} or just orderby={property}. The available sorting properties are id, name, state, activatedDate, and finishedDate. The available directions are asc (for ascending order) and desc (for descending order). When not specified the asc direction is used. Only one property at a time can be used for sorting.
 		 * @param {string} search Restrict results to campaigns matching the optional `search` expression. This currently performs the search based on the name on the campaign only, case insensitive. If the campaign contains the value of the `search` parameter anywhere in the name, it matches.
@@ -3157,6 +3159,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MobileEngagement/appcollections/{appCollection}/apps/{appName}/campaigns/{kind}/{id}
 		 * @param {Campaigns_ListKind} kind Campaign kind.
 		 * @param {number} id Campaign identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CampaignResult} Success, campaign is returned.
 		 */
 		Campaigns_Get(kind: Campaigns_ListKind, id: number): Observable<CampaignResult> {
@@ -3168,6 +3171,7 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MobileEngagement/appcollections/{appCollection}/apps/{appName}/campaigns/{kind}/{id}
 		 * @param {Campaigns_ListKind} kind Campaign kind.
 		 * @param {number} id Campaign identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Campaign} requestBody Parameters supplied to the Update Campaign operation.
 		 * @return {CampaignStateResult} Updated successfully.
 		 */
@@ -3180,6 +3184,7 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MobileEngagement/appcollections/{appCollection}/apps/{appName}/campaigns/{kind}/{id}
 		 * @param {Campaigns_ListKind} kind Campaign kind.
 		 * @param {number} id Campaign identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Deleted successfully.
 		 */
 		Campaigns_Delete(kind: Campaigns_ListKind, id: number): Observable<HttpResponse<string>> {
@@ -3195,6 +3200,7 @@ export namespace MyNS {
 		 * @param {string} appName Application resource name.
 		 * @param {Campaigns_ListKind} kind Campaign kind.
 		 * @param {number} id Campaign identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client Api Version.
 		 * @return {CampaignStateResult} Activated successfully.
 		 */
@@ -3211,6 +3217,7 @@ export namespace MyNS {
 		 * @param {string} appName Application resource name.
 		 * @param {Campaigns_ListKind} kind Campaign kind.
 		 * @param {number} id Campaign identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client Api Version.
 		 * @return {CampaignStateResult} Finished successfully.
 		 */
@@ -3228,6 +3235,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client Api Version.
 		 * @param {Campaigns_ListKind} kind Campaign kind.
 		 * @param {number} id Campaign identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CampaignPushParameters} requestBody Parameters supplied to the Push Campaign operation.
 		 * @return {CampaignPushResult} OK, response body includes rejected devices.
 		 */
@@ -3240,6 +3248,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.MobileEngagement/appcollections/{appCollection}/apps/{appName}/campaigns/{kind}/{id}/statistics
 		 * @param {Campaigns_ListKind} kind Campaign kind.
 		 * @param {number} id Campaign identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {CampaignStatisticsResult} Success, statistics are returned as JSON.
 		 */
 		Campaigns_GetStatistics(kind: Campaigns_ListKind, id: number): Observable<CampaignStatisticsResult> {
@@ -3255,6 +3264,7 @@ export namespace MyNS {
 		 * @param {string} appName Application resource name.
 		 * @param {Campaigns_ListKind} kind Campaign kind.
 		 * @param {number} id Campaign identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client Api Version.
 		 * @return {CampaignStateResult} Suspended successfully.
 		 */
@@ -3271,6 +3281,7 @@ export namespace MyNS {
 		 * @param {string} appName Application resource name.
 		 * @param {Campaigns_ListKind} kind Campaign kind.
 		 * @param {number} id Campaign identifier.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version Client Api Version.
 		 * @param {CampaignTestSavedParameters} requestBody Parameters supplied to the Test Campaign operation.
 		 * @return {CampaignStateResult} Test campaign queued successfully.
@@ -3304,6 +3315,7 @@ export namespace MyNS {
 		 * @param {string} appName Application resource name.
 		 * @param {string} api_version Client Api Version.
 		 * @param {number} top Number of devices to return with each call. Defaults to 100 and cannot return more. Passing a greater value is ignored. The response contains a `nextLink` property describing the URI path to get the next page of results if not all results could be returned at once.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select By default all `meta` and `appInfo` properties are returned, this property is used to restrict the output to the desired properties. It also excludes all devices from the output that have none of the selected properties. In other terms, only devices having at least one of the selected property being set is part of the results. Examples: - `$select=appInfo` : select all devices having at least 1 appInfo, return them all and don’t return any meta property. - `$select=meta` : return only meta properties in the output. - `$select=appInfo,meta/firstSeen,meta/lastSeen` : return all `appInfo`, plus meta object containing only firstSeen and lastSeen properties. The format is thus a comma separated list of properties to select. Use `appInfo` to select all appInfo properties, `meta` to select all meta properties. Use `appInfo/{key}` and `meta/{key}` to select specific appInfo and meta properties.
 		 * @param {string} filter Filter can be used to reduce the number of results. Filter is a boolean expression that can look like the following examples: * `$filter=deviceId gt 'abcdef0123456789abcdef0123456789'` * `$filter=lastModified le 1447284263690L` * `$filter=(deviceId ge 'abcdef0123456789abcdef0123456789') and (deviceId lt 'bacdef0123456789abcdef0123456789') and (lastModified gt 1447284263690L)` The first example is used automatically for paging when returning the `nextLink` property. The filter expression is a combination of checks on some properties that can be compared to their value. The available operators are: * `gt`  : greater than * `ge`  : greater than or equals * `lt`  : less than * `le`  : less than or equals * `and` : to add multiple checks (all checks must pass), optional parentheses can be used. The properties that can be used in the expression are the following: * `deviceId {operator} '{deviceIdValue}'` : a lexicographical comparison is made on the deviceId value, use single quotes for the value. * `lastModified {operator} {number}L` : returns only meta properties or appInfo properties whose last value modification timestamp compared to the specified value is matching (value is milliseconds since January 1st, 1970 UTC). Please note the `L` character after the number of milliseconds, its required when the number of milliseconds exceeds `2^31 - 1` (which is always the case for recent timestamps). Using `lastModified` excludes all devices from the output that have no property matching the timestamp criteria, like `$select`. Please note that the internal value of `lastModified` timestamp for a given property is never part of the results.
 		 * @return {DevicesQueryResult} If successful, the response has a 200 status code and a JSON object describing a collection of devices in the body.
@@ -3321,9 +3333,11 @@ export namespace MyNS {
 		 * @param {string} appName Application resource name.
 		 * @param {string} api_version Client Api Version.
 		 * @param {number} skip Control paging of export tasks, start results at the given offset, defaults to 0 (1st page of data).
+		 *     Minimum: 0
 		 * @param {number} top Control paging of export tasks, number of export tasks to return with each call. By default, it returns all export tasks with a default paging of 20.
 		 * The response contains a `nextLink` property describing the path to get the next page if there are more results.
 		 * The maximum paging limit for $top is 40.
+		 *     Minimum: 1    Maximum: 40
 		 * @param {string} orderby Sort results by an expression which looks like `$orderby=taskId asc` (default when not specified).
 		 * The syntax is orderby={property} {direction} or just orderby={property}.
 		 * Properties that can be specified for sorting: taskId, errorDetails, dateCreated, taskStatus, and dateCreated.
@@ -3500,9 +3514,11 @@ export namespace MyNS {
 		 * @param {string} appName Application resource name.
 		 * @param {string} api_version Client Api Version.
 		 * @param {number} skip Control paging of import jobs, start results at the given offset, defaults to 0 (1st page of data).
+		 *     Minimum: 0
 		 * @param {number} top Control paging of import jobs, number of import jobs to return with each call. By default, it returns all import jobs with a default paging of 20.
 		 * The response contains a `nextLink` property describing the path to get the next page if there are more results.
 		 * The maximum paging limit for $top is 40.
+		 *     Minimum: 1    Maximum: 40
 		 * @param {string} orderby Sort results by an expression which looks like `$orderby=jobId asc` (default when not specified).
 		 * The syntax is orderby={property} {direction} or just orderby={property}.
 		 * Properties that can be specified for sorting: jobId, errorDetails, dateCreated, jobStatus, and dateCreated.

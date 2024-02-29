@@ -28,14 +28,22 @@ export namespace MyNS {
 	}
 
 	export interface Authorized_payment_method {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_of_days?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_of_installments?: number | null;
 
 		/** Required */
 		type: Authorized_payment_methodType;
 	}
 	export interface Authorized_payment_methodFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_of_days: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number_of_installments: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -56,15 +64,15 @@ export namespace MyNS {
 
 		/**
 		 * ‘Attn.’ (if applicable). Only applicable for B2B customers.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		attention?: string | null;
 
 		/**
 		 * Customer’s city.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		city?: string | null;
 
@@ -73,8 +81,8 @@ export namespace MyNS {
 
 		/**
 		 * Customer’s email address.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		email?: string | null;
 
@@ -83,8 +91,8 @@ export namespace MyNS {
 		 * Cannot be only numbers, must be more than 1 character.
 		 * Allowed special characters: -'’.
 		 * More information can be found [in this link](https://docs.klarna.com/klarna-payments/in-depth-knowledge/customer-data-requirements/#details-needed-per-market)
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		family_name?: string | null;
 
@@ -93,37 +101,37 @@ export namespace MyNS {
 		 * Cannot be only numbers, must be more than 1 character.
 		 * Allowed special characters: -'’.
 		 * More information can be found [in this link](https://docs.klarna.com/klarna-payments/in-depth-knowledge/customer-data-requirements/#details-needed-per-market)
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		given_name?: string | null;
 
 		/**
 		 * Organization name (if applicable). Only applicable for B2B customers.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		organization_name?: string | null;
 
 		/**
 		 * Phone number. Preferably a mobile phone number.
-		 * Max length: 99
 		 * Min length: 5
+		 * Max length: 99
 		 */
 		phone?: string | null;
 
 		/**
 		 * Customer’s postal code. Validation according to Universal Postal Union addressing systems.
 		 * E.g. 12345, W1G OPW.
-		 * Max length: 10
 		 * Min length: 0
+		 * Max length: 10
 		 */
 		postal_code?: string | null;
 
 		/**
 		 * Customer’s region or state - Mandatory for US and AU market. Validations according to ISO 3166-2 format, e.g. OH, NJ, etc.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		region?: string | null;
 
@@ -131,15 +139,15 @@ export namespace MyNS {
 		 * Customer’s street address. Regional formatting is required, as follows:
 		 * UK/US/FR: 33 Cavendish Square
 		 * Rest of EU: De Ruijterkade 7
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		street_address?: string | null;
 
 		/**
 		 * Customer’s street address. Second Line.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		street_address2?: string | null;
 
@@ -151,8 +159,8 @@ export namespace MyNS {
 		 * CH: de-CH: "Herr, "Frau" it-CH: "Sig.", "Sig.ra" fr-CH: "M", "Mme"
 		 * BE: "Dhr.", "Mevr."
 		 * NL: "Dhr.", "Mevr."
-		 * Max length: 20
 		 * Min length: 0
+		 * Max length: 20
 		 */
 		title?: string | null;
 	}
@@ -160,15 +168,15 @@ export namespace MyNS {
 
 		/**
 		 * ‘Attn.’ (if applicable). Only applicable for B2B customers.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		attention: FormControl<string | null | undefined>,
 
 		/**
 		 * Customer’s city.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		city: FormControl<string | null | undefined>,
 
@@ -177,8 +185,8 @@ export namespace MyNS {
 
 		/**
 		 * Customer’s email address.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		email: FormControl<string | null | undefined>,
 
@@ -187,8 +195,8 @@ export namespace MyNS {
 		 * Cannot be only numbers, must be more than 1 character.
 		 * Allowed special characters: -'’.
 		 * More information can be found [in this link](https://docs.klarna.com/klarna-payments/in-depth-knowledge/customer-data-requirements/#details-needed-per-market)
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		family_name: FormControl<string | null | undefined>,
 
@@ -197,37 +205,37 @@ export namespace MyNS {
 		 * Cannot be only numbers, must be more than 1 character.
 		 * Allowed special characters: -'’.
 		 * More information can be found [in this link](https://docs.klarna.com/klarna-payments/in-depth-knowledge/customer-data-requirements/#details-needed-per-market)
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		given_name: FormControl<string | null | undefined>,
 
 		/**
 		 * Organization name (if applicable). Only applicable for B2B customers.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		organization_name: FormControl<string | null | undefined>,
 
 		/**
 		 * Phone number. Preferably a mobile phone number.
-		 * Max length: 99
 		 * Min length: 5
+		 * Max length: 99
 		 */
 		phone: FormControl<string | null | undefined>,
 
 		/**
 		 * Customer’s postal code. Validation according to Universal Postal Union addressing systems.
 		 * E.g. 12345, W1G OPW.
-		 * Max length: 10
 		 * Min length: 0
+		 * Max length: 10
 		 */
 		postal_code: FormControl<string | null | undefined>,
 
 		/**
 		 * Customer’s region or state - Mandatory for US and AU market. Validations according to ISO 3166-2 format, e.g. OH, NJ, etc.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		region: FormControl<string | null | undefined>,
 
@@ -235,15 +243,15 @@ export namespace MyNS {
 		 * Customer’s street address. Regional formatting is required, as follows:
 		 * UK/US/FR: 33 Cavendish Square
 		 * Rest of EU: De Ruijterkade 7
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		street_address: FormControl<string | null | undefined>,
 
 		/**
 		 * Customer’s street address. Second Line.
-		 * Max length: 99
 		 * Min length: 0
+		 * Max length: 99
 		 */
 		street_address2: FormControl<string | null | undefined>,
 
@@ -255,8 +263,8 @@ export namespace MyNS {
 		 * CH: de-CH: "Herr, "Frau" it-CH: "Sig.", "Sig.ra" fr-CH: "M", "Mme"
 		 * BE: "Dhr.", "Mevr."
 		 * NL: "Dhr.", "Mevr."
-		 * Max length: 20
 		 * Min length: 0
+		 * Max length: 20
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -374,22 +382,22 @@ export namespace MyNS {
 
 		/**
 		 * Pass through field to send any information about the order to be used later for reference while retrieving the order details (max 6000 characters)
-		 * Max length: 6000
 		 * Min length: 0
+		 * Max length: 6000
 		 */
 		merchant_data?: string | null;
 
 		/**
 		 * Used for storing merchant's internal order number or other reference.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference1?: string | null;
 
 		/**
 		 * Used for storing merchant's internal order number or other reference. The value is available in the settlement files. (max 255 characters).
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference2?: string | null;
 		merchant_urls?: Merchant_urls;
@@ -399,7 +407,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		order_amount: number;
+		order_amount: string;
 
 		/**
 		 * The array containing list of line items that are part of this order. Maximum of 1000 line items could be processed in a single order.
@@ -413,7 +421,7 @@ export namespace MyNS {
 		 * Total tax amount of the order. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_tax_amount?: number | null;
+		order_tax_amount?: string | null;
 
 		/** Available payment method categories */
 		payment_method_categories?: Array<Payment_method_category>;
@@ -464,22 +472,22 @@ export namespace MyNS {
 
 		/**
 		 * Pass through field to send any information about the order to be used later for reference while retrieving the order details (max 6000 characters)
-		 * Max length: 6000
 		 * Min length: 0
+		 * Max length: 6000
 		 */
 		merchant_data: FormControl<string | null | undefined>,
 
 		/**
 		 * Used for storing merchant's internal order number or other reference.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference1: FormControl<string | null | undefined>,
 
 		/**
 		 * Used for storing merchant's internal order number or other reference. The value is available in the settlement files. (max 255 characters).
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference2: FormControl<string | null | undefined>,
 
@@ -488,13 +496,13 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		order_amount: FormControl<number | null | undefined>,
+		order_amount: FormControl<string | null | undefined>,
 
 		/**
 		 * Total tax amount of the order. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_tax_amount: FormControl<number | null | undefined>,
+		order_tax_amount: FormControl<string | null | undefined>,
 
 		/**
 		 * The purchase country of the customer. The billing country always overrides purchase country if the values are different. Formatted according to ISO 3166 alpha-2 standard, e.g. GB, SE, DE, US, etc.
@@ -519,8 +527,8 @@ export namespace MyNS {
 			merchant_data: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(6000)]),
 			merchant_reference1: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 			merchant_reference2: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
-			order_amount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
-			order_tax_amount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			order_amount: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			order_tax_amount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			purchase_country: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[A-Za-z]{2,2}$')]),
 			purchase_currency: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[A-Za-z]{3,3}$')]),
 			status: new FormControl<Create_order_requestStatus | null | undefined>(undefined),
@@ -623,29 +631,29 @@ export namespace MyNS {
 
 		/**
 		 * URL for receiving the authorization token when payment is completed. Used for Authorization Callback.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		authorization?: string | null;
 
 		/**
 		 * URL of the merchant confirmation page. The consumer will be redirected back to the confirmation page if the consumer is sent to the redirect URL after placing the order. Insert {session.id} and/or {order.id} as placeholder to connect either of those IDs to the URL(max 2000 characters).
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		confirmation?: string | null;
 
 		/**
 		 * URL for notifications on pending orders. Insert {session.id} and/or {order.id} as placeholder to connect either of those IDs to the URL (max 2000 characters).
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		notification?: string | null;
 
 		/**
 		 * URL that will be requested when an order is completed. Should be different than checkout and confirmation URLs. Insert {session.id} and/or {order.id} as placeholder to connect either of those IDs to the URL (max 2000 characters).
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		push?: string | null;
 	}
@@ -653,29 +661,29 @@ export namespace MyNS {
 
 		/**
 		 * URL for receiving the authorization token when payment is completed. Used for Authorization Callback.
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		authorization: FormControl<string | null | undefined>,
 
 		/**
 		 * URL of the merchant confirmation page. The consumer will be redirected back to the confirmation page if the consumer is sent to the redirect URL after placing the order. Insert {session.id} and/or {order.id} as placeholder to connect either of those IDs to the URL(max 2000 characters).
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		confirmation: FormControl<string | null | undefined>,
 
 		/**
 		 * URL for notifications on pending orders. Insert {session.id} and/or {order.id} as placeholder to connect either of those IDs to the URL (max 2000 characters).
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		notification: FormControl<string | null | undefined>,
 
 		/**
 		 * URL that will be requested when an order is completed. Should be different than checkout and confirmation URLs. Insert {session.id} and/or {order.id} as placeholder to connect either of those IDs to the URL (max 2000 characters).
-		 * Max length: 2000
 		 * Min length: 0
+		 * Max length: 2000
 		 */
 		push: FormControl<string | null | undefined>,
 	}
@@ -694,31 +702,31 @@ export namespace MyNS {
 		/**
 		 * URL to an image that can be later embedded in communications between Klarna and the customer. (max 1024 characters).
 		 * A minimum of 250x250 px resolution is recommended for the image to look good in the Klarna app, and below 50x50 px won't even show. We recommend using a good sized image (650x650 px or more), however the file size must not exceed 12MB.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		image_url?: string | null;
 
 		/**
 		 * Used for storing merchant's internal order number or other reference. Pass through field. (max 1024 characters)
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		merchant_data?: string | null;
 
 		/**
 		 * Descriptive name of the order line item.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 		product_identifiers?: Product_identifiers;
 
 		/**
 		 * URL to the product in the merchant’s webshop that can be later used in communications between Klarna and the customer. (max 1024 characters)
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		product_url?: string | null;
 
@@ -727,19 +735,19 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		quantity: number;
+		quantity: string;
 
 		/**
 		 * Unit used to describe the quantity, e.g. kg, pcs, etc. If defined the value has to be 1-8 characters.
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		quantity_unit?: string | null;
 
 		/**
 		 * Client facing article number, SKU or similar. Max length is 256 characters.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		reference?: string | null;
 		subscription?: Subscription;
@@ -749,7 +757,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 10000
 		 */
-		tax_rate?: number | null;
+		tax_rate?: string | null;
 
 		/**
 		 * Total amount of the order line. Must be defined as minor units. Includes tax and discount. Eg: 2500=25 euros
@@ -758,16 +766,19 @@ export namespace MyNS {
 		 * Required
 		 * Maximum: 100000000
 		 */
-		total_amount: number;
+		total_amount: string;
 
 		/**
 		 * Non-negative minor units. Includes tax. Eg: 500=5 euros
 		 * Minimum: 0
 		 */
-		total_discount_amount?: number | null;
+		total_discount_amount?: string | null;
 
-		/** Total tax amount of the order line. Must be within ±1 of total_amount - total_amount 10000 / (10000 + tax_rate). Negative when type is discount. */
-		total_tax_amount?: number | null;
+		/**
+		 * Total tax amount of the order line. Must be within ±1 of total_amount - total_amount 10000 / (10000 + tax_rate). Negative when type is discount.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total_tax_amount?: string | null;
 
 		/**
 		 * Type of the order line item. The possible values are:
@@ -787,37 +798,37 @@ export namespace MyNS {
 		 * Required
 		 * Maximum: 100000000
 		 */
-		unit_price: number;
+		unit_price: string;
 	}
 	export interface Order_lineFormProperties {
 
 		/**
 		 * URL to an image that can be later embedded in communications between Klarna and the customer. (max 1024 characters).
 		 * A minimum of 250x250 px resolution is recommended for the image to look good in the Klarna app, and below 50x50 px won't even show. We recommend using a good sized image (650x650 px or more), however the file size must not exceed 12MB.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		image_url: FormControl<string | null | undefined>,
 
 		/**
 		 * Used for storing merchant's internal order number or other reference. Pass through field. (max 1024 characters)
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		merchant_data: FormControl<string | null | undefined>,
 
 		/**
 		 * Descriptive name of the order line item.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * URL to the product in the merchant’s webshop that can be later used in communications between Klarna and the customer. (max 1024 characters)
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		product_url: FormControl<string | null | undefined>,
 
@@ -826,19 +837,19 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		quantity: FormControl<number | null | undefined>,
+		quantity: FormControl<string | null | undefined>,
 
 		/**
 		 * Unit used to describe the quantity, e.g. kg, pcs, etc. If defined the value has to be 1-8 characters.
-		 * Max length: 8
 		 * Min length: 1
+		 * Max length: 8
 		 */
 		quantity_unit: FormControl<string | null | undefined>,
 
 		/**
 		 * Client facing article number, SKU or similar. Max length is 256 characters.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		reference: FormControl<string | null | undefined>,
 
@@ -847,7 +858,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 10000
 		 */
-		tax_rate: FormControl<number | null | undefined>,
+		tax_rate: FormControl<string | null | undefined>,
 
 		/**
 		 * Total amount of the order line. Must be defined as minor units. Includes tax and discount. Eg: 2500=25 euros
@@ -856,16 +867,19 @@ export namespace MyNS {
 		 * Required
 		 * Maximum: 100000000
 		 */
-		total_amount: FormControl<number | null | undefined>,
+		total_amount: FormControl<string | null | undefined>,
 
 		/**
 		 * Non-negative minor units. Includes tax. Eg: 500=5 euros
 		 * Minimum: 0
 		 */
-		total_discount_amount: FormControl<number | null | undefined>,
+		total_discount_amount: FormControl<string | null | undefined>,
 
-		/** Total tax amount of the order line. Must be within ±1 of total_amount - total_amount 10000 / (10000 + tax_rate). Negative when type is discount. */
-		total_tax_amount: FormControl<number | null | undefined>,
+		/**
+		 * Total tax amount of the order line. Must be within ±1 of total_amount - total_amount 10000 / (10000 + tax_rate). Negative when type is discount.
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		total_tax_amount: FormControl<string | null | undefined>,
 
 		/**
 		 * Type of the order line item. The possible values are:
@@ -885,7 +899,7 @@ export namespace MyNS {
 		 * Required
 		 * Maximum: 100000000
 		 */
-		unit_price: FormControl<number | null | undefined>,
+		unit_price: FormControl<string | null | undefined>,
 	}
 	export function CreateOrder_lineFormGroup() {
 		return new FormGroup<Order_lineFormProperties>({
@@ -893,15 +907,15 @@ export namespace MyNS {
 			merchant_data: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.minLength(1), Validators.maxLength(255)]),
 			product_url: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(1024)]),
-			quantity: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			quantity: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			quantity_unit: new FormControl<string | null | undefined>(undefined, [Validators.minLength(1), Validators.maxLength(8)]),
 			reference: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(256)]),
-			tax_rate: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
-			total_amount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.max(100000000)]),
-			total_discount_amount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			total_tax_amount: new FormControl<number | null | undefined>(undefined),
+			tax_rate: new FormControl<string | null | undefined>(undefined, [Validators.min(0), Validators.max(10000)]),
+			total_amount: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.max(100000000)]),
+			total_discount_amount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			total_tax_amount: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
-			unit_price: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.max(100000000)]),
+			unit_price: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.max(100000000)]),
 		});
 
 	}
@@ -910,43 +924,43 @@ export namespace MyNS {
 
 		/**
 		 * The product's brand name as generally recognized by consumers. If no brand is available for a product, do not supply any value.
-		 * Max length: 70
 		 * Min length: 0
+		 * Max length: 70
 		 */
 		brand?: string | null;
 
 		/**
 		 * The product's category path as used in the merchant's webshop. Include the full and most detailed category and separate the segments with ' > '
-		 * Max length: 750
 		 * Min length: 0
+		 * Max length: 750
 		 */
 		category_path?: string | null;
 
 		/**
 		 * Color to be shown to the end customer (max 64 characters).
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		color?: string | null;
 
 		/**
 		 * The product's Global Trade Item Number (GTIN). Common types of GTIN are EAN, ISBN or UPC. Exclude dashes and spaces, where possible
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		global_trade_item_number?: string | null;
 
 		/**
 		 * The product's Manufacturer Part Number (MPN), which - together with the brand - uniquely identifies a product. Only submit MPNs assigned by a manufacturer and use the most specific MPN possible
-		 * Max length: 70
 		 * Min length: 0
+		 * Max length: 70
 		 */
 		manufacturer_part_number?: string | null;
 
 		/**
 		 * Size to be shown to the end customer (max 64 characters).
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		size?: string | null;
 	}
@@ -954,43 +968,43 @@ export namespace MyNS {
 
 		/**
 		 * The product's brand name as generally recognized by consumers. If no brand is available for a product, do not supply any value.
-		 * Max length: 70
 		 * Min length: 0
+		 * Max length: 70
 		 */
 		brand: FormControl<string | null | undefined>,
 
 		/**
 		 * The product's category path as used in the merchant's webshop. Include the full and most detailed category and separate the segments with ' > '
-		 * Max length: 750
 		 * Min length: 0
+		 * Max length: 750
 		 */
 		category_path: FormControl<string | null | undefined>,
 
 		/**
 		 * Color to be shown to the end customer (max 64 characters).
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		color: FormControl<string | null | undefined>,
 
 		/**
 		 * The product's Global Trade Item Number (GTIN). Common types of GTIN are EAN, ISBN or UPC. Exclude dashes and spaces, where possible
-		 * Max length: 50
 		 * Min length: 0
+		 * Max length: 50
 		 */
 		global_trade_item_number: FormControl<string | null | undefined>,
 
 		/**
 		 * The product's Manufacturer Part Number (MPN), which - together with the brand - uniquely identifies a product. Only submit MPNs assigned by a manufacturer and use the most specific MPN possible
-		 * Max length: 70
 		 * Min length: 0
+		 * Max length: 70
 		 */
 		manufacturer_part_number: FormControl<string | null | undefined>,
 
 		/**
 		 * Size to be shown to the end customer (max 64 characters).
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		size: FormControl<string | null | undefined>,
 	}
@@ -1024,8 +1038,8 @@ export namespace MyNS {
 		/**
 		 * The name of the subscription product
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 	}
@@ -1047,8 +1061,8 @@ export namespace MyNS {
 		/**
 		 * The name of the subscription product
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1320,8 +1334,8 @@ export namespace MyNS {
 		/**
 		 * Client token to be passed to the JS client while initializing the JS SDK in the next step.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		client_token: string;
 
@@ -1331,8 +1345,8 @@ export namespace MyNS {
 		/**
 		 * ID of the created session. Please use this ID to share with Klarna for identifying any issues during integration.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		session_id: string;
 	}
@@ -1341,16 +1355,16 @@ export namespace MyNS {
 		/**
 		 * Client token to be passed to the JS client while initializing the JS SDK in the next step.
 		 * Required
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		client_token: FormControl<string | null | undefined>,
 
 		/**
 		 * ID of the created session. Please use this ID to share with Klarna for identifying any issues during integration.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		session_id: FormControl<string | null | undefined>,
 	}
@@ -1457,8 +1471,8 @@ export namespace MyNS {
 
 		/**
 		 * Token to be passed to the JS client
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		client_token?: string | null;
 
@@ -1497,22 +1511,22 @@ export namespace MyNS {
 
 		/**
 		 * Pass through field to send any information about the order to be used later for reference while retrieving the order details (max 6000 characters)
-		 * Max length: 6000
 		 * Min length: 0
+		 * Max length: 6000
 		 */
 		merchant_data?: string | null;
 
 		/**
 		 * Used for storing merchant's internal order number or other reference.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference1?: string | null;
 
 		/**
 		 * Used for storing merchant's internal order number or other reference. The value is available in the settlement files. (max 255 characters).
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference2?: string | null;
 		merchant_urls?: Merchant_urls;
@@ -1522,7 +1536,7 @@ export namespace MyNS {
 		 * Total amount of the order including tax and any available discounts. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_amount?: number | null;
+		order_amount?: string | null;
 
 		/**
 		 * The array containing list of line items that are part of this order. Maximum of 1000 line items could be processed in a single order.
@@ -1535,7 +1549,7 @@ export namespace MyNS {
 		 * Total tax amount of the order. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_tax_amount?: number | null;
+		order_tax_amount?: string | null;
 
 		/** Available payment method categories */
 		payment_method_categories?: Array<Payment_method_category>;
@@ -1560,8 +1574,8 @@ export namespace MyNS {
 
 		/**
 		 * Token to be passed to the JS client
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		client_token: FormControl<string | null | undefined>,
 
@@ -1596,22 +1610,22 @@ export namespace MyNS {
 
 		/**
 		 * Pass through field to send any information about the order to be used later for reference while retrieving the order details (max 6000 characters)
-		 * Max length: 6000
 		 * Min length: 0
+		 * Max length: 6000
 		 */
 		merchant_data: FormControl<string | null | undefined>,
 
 		/**
 		 * Used for storing merchant's internal order number or other reference.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference1: FormControl<string | null | undefined>,
 
 		/**
 		 * Used for storing merchant's internal order number or other reference. The value is available in the settlement files. (max 255 characters).
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference2: FormControl<string | null | undefined>,
 
@@ -1619,13 +1633,13 @@ export namespace MyNS {
 		 * Total amount of the order including tax and any available discounts. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_amount: FormControl<number | null | undefined>,
+		order_amount: FormControl<string | null | undefined>,
 
 		/**
 		 * Total tax amount of the order. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_tax_amount: FormControl<number | null | undefined>,
+		order_tax_amount: FormControl<string | null | undefined>,
 
 		/** The purchase country of the customer. The billing country always overrides purchase country if the values are different. Formatted according to ISO 3166 alpha-2 standard, e.g. GB, SE, DE, US, etc. */
 		purchase_country: FormControl<string | null | undefined>,
@@ -1648,8 +1662,8 @@ export namespace MyNS {
 			merchant_data: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(6000)]),
 			merchant_reference1: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 			merchant_reference2: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
-			order_amount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			order_tax_amount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			order_amount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			order_tax_amount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			purchase_country: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z]{2,2}$')]),
 			purchase_currency: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z]{3,3}$')]),
 			status: new FormControl<Create_order_requestStatus | null | undefined>(undefined),
@@ -1673,8 +1687,8 @@ export namespace MyNS {
 
 		/**
 		 * Token to be passed to the JS client
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		client_token?: string | null;
 
@@ -1713,22 +1727,22 @@ export namespace MyNS {
 
 		/**
 		 * Pass through field to send any information about the order to be used later for reference while retrieving the order details (max 6000 characters)
-		 * Max length: 6000
 		 * Min length: 0
+		 * Max length: 6000
 		 */
 		merchant_data?: string | null;
 
 		/**
 		 * Used for storing merchant's internal order number or other reference.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference1?: string | null;
 
 		/**
 		 * Used for storing merchant's internal order number or other reference. The value is available in the settlement files. (max 255 characters).
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference2?: string | null;
 		merchant_urls?: Merchant_urls;
@@ -1739,7 +1753,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		order_amount: number;
+		order_amount: string;
 
 		/**
 		 * The array containing list of line items that are part of this order. Maximum of 1000 line items could be processed in a single order.
@@ -1753,7 +1767,7 @@ export namespace MyNS {
 		 * Total tax amount of the order. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_tax_amount?: number | null;
+		order_tax_amount?: string | null;
 
 		/** Available payment method categories */
 		payment_method_categories?: Array<Payment_method_category>;
@@ -1784,8 +1798,8 @@ export namespace MyNS {
 
 		/**
 		 * Token to be passed to the JS client
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		client_token: FormControl<string | null | undefined>,
 
@@ -1820,22 +1834,22 @@ export namespace MyNS {
 
 		/**
 		 * Pass through field to send any information about the order to be used later for reference while retrieving the order details (max 6000 characters)
-		 * Max length: 6000
 		 * Min length: 0
+		 * Max length: 6000
 		 */
 		merchant_data: FormControl<string | null | undefined>,
 
 		/**
 		 * Used for storing merchant's internal order number or other reference.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference1: FormControl<string | null | undefined>,
 
 		/**
 		 * Used for storing merchant's internal order number or other reference. The value is available in the settlement files. (max 255 characters).
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference2: FormControl<string | null | undefined>,
 
@@ -1844,13 +1858,13 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		order_amount: FormControl<number | null | undefined>,
+		order_amount: FormControl<string | null | undefined>,
 
 		/**
 		 * Total tax amount of the order. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_tax_amount: FormControl<number | null | undefined>,
+		order_tax_amount: FormControl<string | null | undefined>,
 
 		/**
 		 * The purchase country of the customer. The billing country always overrides purchase country if the values are different. Formatted according to ISO 3166 alpha-2 standard, e.g. GB, SE, DE, US, etc.
@@ -1879,8 +1893,8 @@ export namespace MyNS {
 			merchant_data: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(6000)]),
 			merchant_reference1: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 			merchant_reference2: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
-			order_amount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
-			order_tax_amount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			order_amount: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			order_tax_amount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			purchase_country: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[A-Za-z]{2,2}$')]),
 			purchase_currency: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.pattern('^[A-Za-z]{3,3}$')]),
 			status: new FormControl<Create_order_requestStatus | null | undefined>(undefined),
@@ -1900,8 +1914,8 @@ export namespace MyNS {
 
 		/**
 		 * Token to be passed to the JS client
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		client_token?: string | null;
 
@@ -1940,22 +1954,22 @@ export namespace MyNS {
 
 		/**
 		 * Pass through field to send any information about the order to be used later for reference while retrieving the order details (max 6000 characters)
-		 * Max length: 6000
 		 * Min length: 0
+		 * Max length: 6000
 		 */
 		merchant_data?: string | null;
 
 		/**
 		 * Used for storing merchant's internal order number or other reference.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference1?: string | null;
 
 		/**
 		 * Used for storing merchant's internal order number or other reference. The value is available in the settlement files. (max 255 characters).
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference2?: string | null;
 		merchant_urls?: Merchant_urls;
@@ -1965,7 +1979,7 @@ export namespace MyNS {
 		 * Total amount of the order including tax and any available discounts. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_amount?: number | null;
+		order_amount?: string | null;
 
 		/**
 		 * The array containing list of line items that are part of this order. Maximum of 1000 line items could be processed in a single order.
@@ -1978,7 +1992,7 @@ export namespace MyNS {
 		 * Total tax amount of the order. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_tax_amount?: number | null;
+		order_tax_amount?: string | null;
 
 		/** Available payment method categories */
 		payment_method_categories?: Array<Payment_method_category>;
@@ -2003,8 +2017,8 @@ export namespace MyNS {
 
 		/**
 		 * Token to be passed to the JS client
-		 * Max length: 4096
 		 * Min length: 0
+		 * Max length: 4096
 		 */
 		client_token: FormControl<string | null | undefined>,
 
@@ -2039,22 +2053,22 @@ export namespace MyNS {
 
 		/**
 		 * Pass through field to send any information about the order to be used later for reference while retrieving the order details (max 6000 characters)
-		 * Max length: 6000
 		 * Min length: 0
+		 * Max length: 6000
 		 */
 		merchant_data: FormControl<string | null | undefined>,
 
 		/**
 		 * Used for storing merchant's internal order number or other reference.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference1: FormControl<string | null | undefined>,
 
 		/**
 		 * Used for storing merchant's internal order number or other reference. The value is available in the settlement files. (max 255 characters).
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		merchant_reference2: FormControl<string | null | undefined>,
 
@@ -2062,13 +2076,13 @@ export namespace MyNS {
 		 * Total amount of the order including tax and any available discounts. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_amount: FormControl<number | null | undefined>,
+		order_amount: FormControl<string | null | undefined>,
 
 		/**
 		 * Total tax amount of the order. The value should be in non-negative minor units. Eg: 25 Euros should be 2500.
 		 * Minimum: 0
 		 */
-		order_tax_amount: FormControl<number | null | undefined>,
+		order_tax_amount: FormControl<string | null | undefined>,
 
 		/** The purchase country of the customer. The billing country always overrides purchase country if the values are different. Formatted according to ISO 3166 alpha-2 standard, e.g. GB, SE, DE, US, etc. */
 		purchase_country: FormControl<string | null | undefined>,
@@ -2091,8 +2105,8 @@ export namespace MyNS {
 			merchant_data: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(6000)]),
 			merchant_reference1: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
 			merchant_reference2: new FormControl<string | null | undefined>(undefined, [Validators.minLength(0), Validators.maxLength(255)]),
-			order_amount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
-			order_tax_amount: new FormControl<number | null | undefined>(undefined, [Validators.min(0)]),
+			order_amount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
+			order_tax_amount: new FormControl<string | null | undefined>(undefined, [Validators.min(0)]),
 			purchase_country: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z]{2,2}$')]),
 			purchase_currency: new FormControl<string | null | undefined>(undefined, [Validators.pattern('^[A-Za-z]{3,3}$')]),
 			status: new FormControl<Create_order_requestStatus | null | undefined>(undefined),

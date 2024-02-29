@@ -3313,7 +3313,10 @@ namespace MyNS
 		/// Lists all the Azure Cosmos DB database accounts available under the given resource group.
 		/// DatabaseAccounts_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts
 		/// </summary>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
 		/// <returns>The operation completed successfully.</returns>
@@ -3345,8 +3348,14 @@ namespace MyNS
 		/// DatabaseAccounts_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The database account properties were retrieved successfully.</returns>
 		public async Task<DatabaseAccountGetResults> DatabaseAccounts_GetAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -3377,8 +3386,14 @@ namespace MyNS
 		/// DatabaseAccounts_CreateOrUpdate subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The parameters to provide for the current database account.</param>
 		/// <returns>The database account create or update operation will complete asynchronously.</returns>
@@ -3417,8 +3432,14 @@ namespace MyNS
 		/// DatabaseAccounts_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		public async Task DatabaseAccounts_DeleteAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
 		{
@@ -3442,8 +3463,14 @@ namespace MyNS
 		/// DatabaseAccounts_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The parameters to provide for the current database account.</param>
 		/// <returns>The database account update operation will complete asynchronously.</returns>
@@ -3482,8 +3509,14 @@ namespace MyNS
 		/// CassandraResources_ListCassandraKeyspaces subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The Cassandra keyspace properties were retrieved successfully.</returns>
 		public async Task<CassandraKeyspaceListResult> CassandraResources_ListCassandraKeyspacesAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -3514,8 +3547,14 @@ namespace MyNS
 		/// CassandraResources_GetCassandraKeyspace subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="keyspaceName">Cosmos DB keyspace name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The Cassandra keyspace property was retrieved successfully.</returns>
@@ -3547,8 +3586,14 @@ namespace MyNS
 		/// CassandraResources_CreateUpdateCassandraKeyspace subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="keyspaceName">Cosmos DB keyspace name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The parameters to provide for the current Cassandra keyspace.</param>
@@ -3588,8 +3633,14 @@ namespace MyNS
 		/// CassandraResources_DeleteCassandraKeyspace subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="keyspaceName">Cosmos DB keyspace name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		public async Task CassandraResources_DeleteCassandraKeyspaceAsync(string subscriptionId, string resourceGroupName, string accountName, string keyspaceName, string api_version)
@@ -3614,8 +3665,14 @@ namespace MyNS
 		/// CassandraResources_ListCassandraTables subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="keyspaceName">Cosmos DB keyspace name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The Cassandra table properties were retrieved successfully.</returns>
@@ -3647,8 +3704,14 @@ namespace MyNS
 		/// CassandraResources_GetCassandraTable subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="keyspaceName">Cosmos DB keyspace name.</param>
 		/// <param name="tableName">Cosmos DB table name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -3681,8 +3744,14 @@ namespace MyNS
 		/// CassandraResources_CreateUpdateCassandraTable subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="keyspaceName">Cosmos DB keyspace name.</param>
 		/// <param name="tableName">Cosmos DB table name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -3723,8 +3792,14 @@ namespace MyNS
 		/// CassandraResources_DeleteCassandraTable subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="keyspaceName">Cosmos DB keyspace name.</param>
 		/// <param name="tableName">Cosmos DB table name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -3750,8 +3825,14 @@ namespace MyNS
 		/// CassandraResources_GetCassandraTableThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="keyspaceName">Cosmos DB keyspace name.</param>
 		/// <param name="tableName">Cosmos DB table name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -3784,8 +3865,14 @@ namespace MyNS
 		/// CassandraResources_UpdateCassandraTableThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/tables/{tableName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="keyspaceName">Cosmos DB keyspace name.</param>
 		/// <param name="tableName">Cosmos DB table name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -3826,8 +3913,14 @@ namespace MyNS
 		/// CassandraResources_GetCassandraKeyspaceThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="keyspaceName">Cosmos DB keyspace name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The RUs per second of the Cassandra Keyspace was retrieved successfully.</returns>
@@ -3859,8 +3952,14 @@ namespace MyNS
 		/// CassandraResources_UpdateCassandraKeyspaceThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/cassandraKeyspaces/{keyspaceName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="keyspaceName">Cosmos DB keyspace name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The RUs per second of the parameters to provide for the current Cassandra Keyspace.</param>
@@ -3900,8 +3999,14 @@ namespace MyNS
 		/// Collection_ListMetricDefinitions subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/metricDefinitions
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="collectionRid">Cosmos DB collection rid.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -3934,8 +4039,14 @@ namespace MyNS
 		/// Collection_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="collectionRid">Cosmos DB collection rid.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -3969,8 +4080,14 @@ namespace MyNS
 		/// PartitionKeyRangeId_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/partitionKeyRangeId/{partitionKeyRangeId}/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="collectionRid">Cosmos DB collection rid.</param>
 		/// <param name="partitionKeyRangeId">Partition Key Range Id for which to get data.</param>
@@ -4005,8 +4122,14 @@ namespace MyNS
 		/// CollectionPartition_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/partitions/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="collectionRid">Cosmos DB collection rid.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -4040,8 +4163,14 @@ namespace MyNS
 		/// CollectionPartition_ListUsages subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/partitions/usages
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="collectionRid">Cosmos DB collection rid.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -4075,8 +4204,14 @@ namespace MyNS
 		/// Collection_ListUsages subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/collections/{collectionRid}/usages
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="collectionRid">Cosmos DB collection rid.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -4110,8 +4245,14 @@ namespace MyNS
 		/// Database_ListMetricDefinitions subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/metricDefinitions
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The metric definitions for the database were retrieved successfully.</returns>
@@ -4143,8 +4284,14 @@ namespace MyNS
 		/// Database_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="filter">An OData filter expression that describes a subset of metrics to return. The parameters that can be filtered are name.value (name of the metric, can have an or of multiple names), startTime, endTime, and timeGrain. The supported operator is eq.</param>
@@ -4177,8 +4324,14 @@ namespace MyNS
 		/// Database_ListUsages subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/databases/{databaseRid}/usages
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="filter">An OData filter expression that describes a subset of usages to return. The supported parameter is name.value (name of the metric, can have an or of multiple names).</param>
@@ -4211,8 +4364,14 @@ namespace MyNS
 		/// DatabaseAccounts_FailoverPriorityChange subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/failoverPriorityChange
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The new failover policies for the database account.</param>
 		public async Task DatabaseAccounts_FailoverPriorityChangeAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version, FailoverPolicies requestBody)
@@ -4244,8 +4403,14 @@ namespace MyNS
 		/// GremlinResources_ListGremlinDatabases subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The Gremlin database properties were retrieved successfully.</returns>
 		public async Task<GremlinDatabaseListResult> GremlinResources_ListGremlinDatabasesAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -4276,8 +4441,14 @@ namespace MyNS
 		/// GremlinResources_GetGremlinDatabase subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The Gremlin database property was retrieved successfully.</returns>
@@ -4309,8 +4480,14 @@ namespace MyNS
 		/// GremlinResources_CreateUpdateGremlinDatabase subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The parameters to provide for the current Gremlin database.</param>
@@ -4350,8 +4527,14 @@ namespace MyNS
 		/// GremlinResources_DeleteGremlinDatabase subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		public async Task GremlinResources_DeleteGremlinDatabaseAsync(string subscriptionId, string resourceGroupName, string accountName, string databaseName, string api_version)
@@ -4376,8 +4559,14 @@ namespace MyNS
 		/// GremlinResources_ListGremlinGraphs subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The Gremlin graph properties were retrieved successfully.</returns>
@@ -4409,8 +4598,14 @@ namespace MyNS
 		/// GremlinResources_GetGremlinGraph subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="graphName">Cosmos DB graph name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -4443,8 +4638,14 @@ namespace MyNS
 		/// GremlinResources_CreateUpdateGremlinGraph subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="graphName">Cosmos DB graph name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -4485,8 +4686,14 @@ namespace MyNS
 		/// GremlinResources_DeleteGremlinGraph subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="graphName">Cosmos DB graph name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -4512,8 +4719,14 @@ namespace MyNS
 		/// GremlinResources_GetGremlinGraphThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="graphName">Cosmos DB graph name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -4546,8 +4759,14 @@ namespace MyNS
 		/// GremlinResources_UpdateGremlinGraphThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/graphs/{graphName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="graphName">Cosmos DB graph name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -4588,8 +4807,14 @@ namespace MyNS
 		/// GremlinResources_GetGremlinDatabaseThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The RUs per second of the Gremlin database was retrieved successfully.</returns>
@@ -4621,8 +4846,14 @@ namespace MyNS
 		/// GremlinResources_UpdateGremlinDatabaseThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/gremlinDatabases/{databaseName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The RUs per second of the parameters to provide for the current Gremlin database.</param>
@@ -4662,8 +4893,14 @@ namespace MyNS
 		/// DatabaseAccounts_ListConnectionStrings subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/listConnectionStrings
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The operation completed successfully.</returns>
 		public async Task<DatabaseAccountListConnectionStringsResult> DatabaseAccounts_ListConnectionStringsAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -4694,8 +4931,14 @@ namespace MyNS
 		/// DatabaseAccounts_ListKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/listKeys
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The operation completed successfully.</returns>
 		public async Task<DatabaseAccountListKeysResult> DatabaseAccounts_ListKeysAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -4726,8 +4969,14 @@ namespace MyNS
 		/// DatabaseAccounts_ListMetricDefinitions subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/metricDefinitions
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The metric definitions for the database account were retrieved successfully.</returns>
 		public async Task<MetricDefinitionsListResult> DatabaseAccounts_ListMetricDefinitionsAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -4758,8 +5007,14 @@ namespace MyNS
 		/// DatabaseAccounts_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="filter">An OData filter expression that describes a subset of metrics to return. The parameters that can be filtered are name.value (name of the metric, can have an or of multiple names), startTime, endTime, and timeGrain. The supported operator is eq.</param>
 		/// <returns>The metrics for the database account were retrieved successfully.</returns>
@@ -4791,8 +5046,14 @@ namespace MyNS
 		/// MongoDBResources_ListMongoDBDatabases subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The MongoDB database properties were retrieved successfully.</returns>
 		public async Task<MongoDBDatabaseListResult> MongoDBResources_ListMongoDBDatabasesAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -4823,8 +5084,14 @@ namespace MyNS
 		/// MongoDBResources_GetMongoDBDatabase subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The MongoDB database property was retrieved successfully.</returns>
@@ -4856,8 +5123,14 @@ namespace MyNS
 		/// MongoDBResources_CreateUpdateMongoDBDatabase subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The parameters to provide for the current MongoDB database.</param>
@@ -4897,8 +5170,14 @@ namespace MyNS
 		/// MongoDBResources_DeleteMongoDBDatabase subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		public async Task MongoDBResources_DeleteMongoDBDatabaseAsync(string subscriptionId, string resourceGroupName, string accountName, string databaseName, string api_version)
@@ -4923,8 +5202,14 @@ namespace MyNS
 		/// MongoDBResources_ListMongoDBCollections subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The MongoDB collection properties were retrieved successfully.</returns>
@@ -4956,8 +5241,14 @@ namespace MyNS
 		/// MongoDBResources_GetMongoDBCollection subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="collectionName">Cosmos DB collection name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -4990,8 +5281,14 @@ namespace MyNS
 		/// MongoDBResources_CreateUpdateMongoDBCollection subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="collectionName">Cosmos DB collection name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -5032,8 +5329,14 @@ namespace MyNS
 		/// MongoDBResources_DeleteMongoDBCollection subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="collectionName">Cosmos DB collection name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -5059,8 +5362,14 @@ namespace MyNS
 		/// MongoDBResources_GetMongoDBCollectionThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="collectionName">Cosmos DB collection name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -5093,8 +5402,14 @@ namespace MyNS
 		/// MongoDBResources_UpdateMongoDBCollectionThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/collections/{collectionName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="collectionName">Cosmos DB collection name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -5135,8 +5450,14 @@ namespace MyNS
 		/// MongoDBResources_GetMongoDBDatabaseThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The RUs per second of the MongoDB database was retrieved successfully.</returns>
@@ -5168,8 +5489,14 @@ namespace MyNS
 		/// MongoDBResources_UpdateMongoDBDatabaseThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/mongodbDatabases/{databaseName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The RUs per second of the parameters to provide for the current MongoDB database.</param>
@@ -5209,8 +5536,14 @@ namespace MyNS
 		/// DatabaseAccounts_OfflineRegion subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/offlineRegion
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">Cosmos DB region to offline for the database account.</param>
 		/// <returns>The offline region operation is completed successfully.</returns>
@@ -5243,8 +5576,14 @@ namespace MyNS
 		/// DatabaseAccounts_OnlineRegion subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/onlineRegion
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">Cosmos DB region to online for the database account.</param>
 		/// <returns>The online region operation is completed successfully.</returns>
@@ -5277,8 +5616,14 @@ namespace MyNS
 		/// Percentile_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/percentile/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="filter">An OData filter expression that describes a subset of metrics to return. The parameters that can be filtered are name.value (name of the metric, can have an or of multiple names), startTime, endTime, and timeGrain. The supported operator is eq.</param>
 		/// <returns>The percentile metrics for the account were retrieved successfully.</returns>
@@ -5310,8 +5655,14 @@ namespace MyNS
 		/// DatabaseAccounts_GetReadOnlyKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/readonlykeys
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The operation completed successfully.</returns>
 		public async Task<DatabaseAccountListReadOnlyKeysResult> DatabaseAccounts_GetReadOnlyKeysAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -5342,8 +5693,14 @@ namespace MyNS
 		/// DatabaseAccounts_ListReadOnlyKeys subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/readonlykeys
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The operation completed successfully.</returns>
 		public async Task<DatabaseAccountListReadOnlyKeysResult> DatabaseAccounts_ListReadOnlyKeysAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -5374,8 +5731,14 @@ namespace MyNS
 		/// DatabaseAccounts_RegenerateKey subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/regenerateKey
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The name of the key to regenerate.</param>
 		/// <returns>OK</returns>
@@ -5408,8 +5771,14 @@ namespace MyNS
 		/// CollectionRegion_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/region/{region}/databases/{databaseRid}/collections/{collectionRid}/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="region">Cosmos DB region, with spaces between words and each word capitalized.</param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="collectionRid">Cosmos DB collection rid.</param>
@@ -5444,8 +5813,14 @@ namespace MyNS
 		/// PartitionKeyRangeIdRegion_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/region/{region}/databases/{databaseRid}/collections/{collectionRid}/partitionKeyRangeId/{partitionKeyRangeId}/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="region">Cosmos DB region, with spaces between words and each word capitalized.</param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="collectionRid">Cosmos DB collection rid.</param>
@@ -5481,8 +5856,14 @@ namespace MyNS
 		/// CollectionPartitionRegion_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/region/{region}/databases/{databaseRid}/collections/{collectionRid}/partitions/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="region">Cosmos DB region, with spaces between words and each word capitalized.</param>
 		/// <param name="databaseRid">Cosmos DB database rid.</param>
 		/// <param name="collectionRid">Cosmos DB collection rid.</param>
@@ -5517,8 +5898,14 @@ namespace MyNS
 		/// DatabaseAccountRegion_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/region/{region}/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="region">Cosmos DB region, with spaces between words and each word capitalized.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="filter">An OData filter expression that describes a subset of metrics to return. The parameters that can be filtered are name.value (name of the metric, can have an or of multiple names), startTime, endTime, and timeGrain. The supported operator is eq.</param>
@@ -5551,8 +5938,14 @@ namespace MyNS
 		/// PercentileSourceTarget_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sourceRegion/{sourceRegion}/targetRegion/{targetRegion}/percentile/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="sourceRegion">Source region from which data is written. Cosmos DB region, with spaces between words and each word capitalized.</param>
 		/// <param name="targetRegion">Target region to which data is written. Cosmos DB region, with spaces between words and each word capitalized.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -5586,8 +5979,14 @@ namespace MyNS
 		/// SqlResources_ListSqlDatabases subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The SQL database properties were retrieved successfully.</returns>
 		public async Task<SqlDatabaseListResult> SqlResources_ListSqlDatabasesAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -5618,8 +6017,14 @@ namespace MyNS
 		/// SqlResources_GetSqlDatabase subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The SQL database property was retrieved successfully.</returns>
@@ -5651,8 +6056,14 @@ namespace MyNS
 		/// SqlResources_CreateUpdateSqlDatabase subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The parameters to provide for the current SQL database.</param>
@@ -5692,8 +6103,14 @@ namespace MyNS
 		/// SqlResources_DeleteSqlDatabase subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		public async Task SqlResources_DeleteSqlDatabaseAsync(string subscriptionId, string resourceGroupName, string accountName, string databaseName, string api_version)
@@ -5718,8 +6135,14 @@ namespace MyNS
 		/// SqlResources_ListSqlContainers subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The SQL container properties were retrieved successfully.</returns>
@@ -5751,8 +6174,14 @@ namespace MyNS
 		/// SqlResources_GetSqlContainer subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -5785,8 +6214,14 @@ namespace MyNS
 		/// SqlResources_CreateUpdateSqlContainer subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -5827,8 +6262,14 @@ namespace MyNS
 		/// SqlResources_DeleteSqlContainer subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -5854,8 +6295,14 @@ namespace MyNS
 		/// SqlResources_ListSqlStoredProcedures subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/storedProcedures
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -5888,8 +6335,14 @@ namespace MyNS
 		/// SqlResources_GetSqlStoredProcedure subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/storedProcedures/{storedProcedureName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="storedProcedureName">Cosmos DB storedProcedure name.</param>
@@ -5923,8 +6376,14 @@ namespace MyNS
 		/// SqlResources_CreateUpdateSqlStoredProcedure subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/storedProcedures/{storedProcedureName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="storedProcedureName">Cosmos DB storedProcedure name.</param>
@@ -5966,8 +6425,14 @@ namespace MyNS
 		/// SqlResources_DeleteSqlStoredProcedure subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/storedProcedures/{storedProcedureName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="storedProcedureName">Cosmos DB storedProcedure name.</param>
@@ -5994,8 +6459,14 @@ namespace MyNS
 		/// SqlResources_GetSqlContainerThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -6028,8 +6499,14 @@ namespace MyNS
 		/// SqlResources_UpdateSqlContainerThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -6070,8 +6547,14 @@ namespace MyNS
 		/// SqlResources_ListSqlTriggers subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/triggers
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -6104,8 +6587,14 @@ namespace MyNS
 		/// SqlResources_GetSqlTrigger subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/triggers/{triggerName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="triggerName">Cosmos DB trigger name.</param>
@@ -6139,8 +6628,14 @@ namespace MyNS
 		/// SqlResources_CreateUpdateSqlTrigger subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/triggers/{triggerName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="triggerName">Cosmos DB trigger name.</param>
@@ -6182,8 +6677,14 @@ namespace MyNS
 		/// SqlResources_DeleteSqlTrigger subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/triggers/{triggerName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="triggerName">Cosmos DB trigger name.</param>
@@ -6210,8 +6711,14 @@ namespace MyNS
 		/// SqlResources_ListSqlUserDefinedFunctions subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/userDefinedFunctions
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
@@ -6244,8 +6751,14 @@ namespace MyNS
 		/// SqlResources_GetSqlUserDefinedFunction subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/userDefinedFunctions/{userDefinedFunctionName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="userDefinedFunctionName">Cosmos DB userDefinedFunction name.</param>
@@ -6279,8 +6792,14 @@ namespace MyNS
 		/// SqlResources_CreateUpdateSqlUserDefinedFunction subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/userDefinedFunctions/{userDefinedFunctionName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="userDefinedFunctionName">Cosmos DB userDefinedFunction name.</param>
@@ -6322,8 +6841,14 @@ namespace MyNS
 		/// SqlResources_DeleteSqlUserDefinedFunction subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/containers/{containerName}/userDefinedFunctions/{userDefinedFunctionName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="containerName">Cosmos DB container name.</param>
 		/// <param name="userDefinedFunctionName">Cosmos DB userDefinedFunction name.</param>
@@ -6350,8 +6875,14 @@ namespace MyNS
 		/// SqlResources_GetSqlDatabaseThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The RUs per second of the SQL database was retrieved successfully.</returns>
@@ -6383,8 +6914,14 @@ namespace MyNS
 		/// SqlResources_UpdateSqlDatabaseThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/sqlDatabases/{databaseName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="databaseName">Cosmos DB database name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The parameters to provide for the RUs per second of the current SQL database.</param>
@@ -6424,8 +6961,14 @@ namespace MyNS
 		/// TableResources_ListTables subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The Table properties were retrieved successfully.</returns>
 		public async Task<TableListResult> TableResources_ListTablesAsync(string subscriptionId, string resourceGroupName, string accountName, string api_version)
@@ -6456,8 +6999,14 @@ namespace MyNS
 		/// TableResources_GetTable subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="tableName">Cosmos DB table name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The Table property was retrieved successfully.</returns>
@@ -6489,8 +7038,14 @@ namespace MyNS
 		/// TableResources_CreateUpdateTable subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="tableName">Cosmos DB table name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The parameters to provide for the current Table.</param>
@@ -6530,8 +7085,14 @@ namespace MyNS
 		/// TableResources_DeleteTable subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="tableName">Cosmos DB table name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		public async Task TableResources_DeleteTableAsync(string subscriptionId, string resourceGroupName, string accountName, string tableName, string api_version)
@@ -6556,8 +7117,14 @@ namespace MyNS
 		/// TableResources_GetTableThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="tableName">Cosmos DB table name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <returns>The RUs per second of the Table was retrieved successfully.</returns>
@@ -6589,8 +7156,14 @@ namespace MyNS
 		/// TableResources_UpdateTableThroughput subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/tables/{tableName}/throughputSettings/default
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="tableName">Cosmos DB table name.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="requestBody">The parameters to provide for the RUs per second of the current Table.</param>
@@ -6630,8 +7203,14 @@ namespace MyNS
 		/// PercentileTarget_ListMetrics subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/targetRegion/{targetRegion}/percentile/metrics
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="targetRegion">Target region to which data is written. Cosmos DB region, with spaces between words and each word capitalized.</param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="filter">An OData filter expression that describes a subset of metrics to return. The parameters that can be filtered are name.value (name of the metric, can have an or of multiple names), startTime, endTime, and timeGrain. The supported operator is eq.</param>
@@ -6664,8 +7243,14 @@ namespace MyNS
 		/// DatabaseAccounts_ListUsages subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.DocumentDB/databaseAccounts/{accountName}/usages
 		/// </summary>
 		/// <param name="subscriptionId">Azure subscription ID.</param>
-		/// <param name="resourceGroupName">Name of an Azure resource group.</param>
-		/// <param name="accountName">Cosmos DB database account name.</param>
+		/// <param name="resourceGroupName">Name of an Azure resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
+		/// <param name="accountName">Cosmos DB database account name.
+		/// Max length: 50
+		/// Min length: 3
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request. The current version is 2019-08-01.</param>
 		/// <param name="filter">An OData filter expression that describes a subset of usages to return. The supported parameter is name.value (name of the metric, can have an or of multiple names).</param>
 		/// <returns>The usages for the database account were retrieved successfully.</returns>

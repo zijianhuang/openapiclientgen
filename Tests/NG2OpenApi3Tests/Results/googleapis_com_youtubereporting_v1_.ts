@@ -79,7 +79,10 @@ export namespace MyNS {
 		/** gdata */
 		cosmoBinaryReference?: string | null;
 
-		/** gdata */
+		/**
+		 * gdata
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash?: number | null;
 
 		/** gdata */
@@ -113,7 +116,10 @@ export namespace MyNS {
 		/** gdata */
 		cosmoBinaryReference: FormControl<string | null | undefined>,
 
-		/** gdata */
+		/**
+		 * gdata
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash: FormControl<number | null | undefined>,
 
 		/** gdata */
@@ -428,7 +434,10 @@ export namespace MyNS {
 		/** gdata */
 		cosmoBinaryReference?: string | null;
 
-		/** gdata */
+		/**
+		 * gdata
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash?: number | null;
 
 		/** gdata */
@@ -513,7 +522,10 @@ export namespace MyNS {
 		/** gdata */
 		cosmoBinaryReference: FormControl<string | null | undefined>,
 
-		/** gdata */
+		/**
+		 * gdata
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		crc32cHash: FormControl<number | null | undefined>,
 
 		/** gdata */
@@ -830,6 +842,7 @@ export namespace MyNS {
 		 * @param {boolean} includeSystemManaged If set to true, also system-managed jobs will be returned; otherwise only user-created jobs will be returned. System-managed jobs can neither be modified nor deleted.
 		 * @param {string} onBehalfOfContentOwner The content owner's external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
 		 * @param {number} pageSize Requested page size. Server may return fewer jobs than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the `ListJobs` method.
 		 * @return {ListJobsResponse} Successful response
 		 */
@@ -876,6 +889,7 @@ export namespace MyNS {
 		 * @param {string} createdAfter If set, only reports created after the specified date/time are returned.
 		 * @param {string} onBehalfOfContentOwner The content owner's external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
 		 * @param {number} pageSize Requested page size. Server may return fewer report types than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListReportsResponse.next_page_token returned in response to the previous call to the `ListReports` method.
 		 * @param {string} startTimeAtOrAfter If set, only reports whose start time is greater than or equal the specified date/time are returned.
 		 * @param {string} startTimeBefore If set, only reports whose start time is smaller than the specified date/time are returned.
@@ -913,6 +927,7 @@ export namespace MyNS {
 		 * @param {boolean} includeSystemManaged If set to true, also system-managed report types will be returned; otherwise only the report types that can be used to create new reporting jobs will be returned.
 		 * @param {string} onBehalfOfContentOwner The content owner's external ID on which behalf the user is acting on. If not set, the user is acting for himself (his own channel).
 		 * @param {number} pageSize Requested page size. Server may return fewer report types than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListReportTypesResponse.next_page_token returned in response to the previous call to the `ListReportTypes` method.
 		 * @return {ListReportTypesResponse} Successful response
 		 */

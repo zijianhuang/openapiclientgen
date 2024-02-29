@@ -304,7 +304,10 @@ namespace MyNS
 		/// DescribeJobExecution things/{thingName}/jobs/{jobId}
 		/// </summary>
 		/// <param name="jobId">The unique identifier assigned to this job when it was created.</param>
-		/// <param name="thingName">The thing name associated with the device the job execution is running on.</param>
+		/// <param name="thingName">The thing name associated with the device the job execution is running on.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="includeJobDocument">Optional. When set to true, the response contains the job document. The default is false.</param>
 		/// <param name="executionNumber">Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.</param>
 		/// <returns>Success</returns>
@@ -340,8 +343,14 @@ namespace MyNS
 		/// Updates the status of a job execution.
 		/// UpdateJobExecution things/{thingName}/jobs/{jobId}
 		/// </summary>
-		/// <param name="jobId">The unique identifier assigned to this job when it was created.</param>
-		/// <param name="thingName">The name of the thing associated with the device.</param>
+		/// <param name="jobId">The unique identifier assigned to this job when it was created.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="thingName">The name of the thing associated with the device.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateJobExecutionResponse> UpdateJobExecutionAsync(string jobId, string thingName, UpdateJobExecutionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -382,7 +391,10 @@ namespace MyNS
 		/// Gets the list of all jobs for a thing that are not in a terminal status.
 		/// GetPendingJobExecutions things/{thingName}/jobs
 		/// </summary>
-		/// <param name="thingName">The name of the thing that is executing the job.</param>
+		/// <param name="thingName">The name of the thing that is executing the job.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPendingJobExecutionsResponse> GetPendingJobExecutionsAsync(string thingName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -416,7 +428,10 @@ namespace MyNS
 		/// Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for a thing.
 		/// StartNextPendingJobExecution things/{thingName}/jobs/$next
 		/// </summary>
-		/// <param name="thingName">The name of the thing associated with the device.</param>
+		/// <param name="thingName">The name of the thing associated with the device.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartNextPendingJobExecutionResponse> StartNextPendingJobExecutionAsync(string thingName, StartNextPendingJobExecutionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

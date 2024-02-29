@@ -10,6 +10,8 @@ export namespace MyNS {
 		isModelValidatonError?: boolean | null;
 		referenceDocumentLink?: string | null;
 		referenceErrorCode?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode?: number | null;
 	}
 	export interface ApiExceptionFormProperties extends ExceptionFormProperties {
@@ -18,6 +20,8 @@ export namespace MyNS {
 		isModelValidatonError: FormControl<boolean | null | undefined>,
 		referenceDocumentLink: FormControl<string | null | undefined>,
 		referenceErrorCode: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateApiExceptionFormGroup() {
@@ -56,6 +60,8 @@ export namespace MyNS {
 		message?: string | null;
 		responseException?: any;
 		result?: any;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode?: number | null;
 		version?: string | null;
 	}
@@ -64,6 +70,8 @@ export namespace MyNS {
 		message: FormControl<string | null | undefined>,
 		responseException: FormControl<any | null | undefined>,
 		result: FormControl<any | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode: FormControl<number | null | undefined>,
 		version: FormControl<string | null | undefined>,
 	}
@@ -90,17 +98,22 @@ export namespace MyNS {
 		/** Active Status */
 		activeStatus?: boolean | null;
 		applyForAllGyms?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		articleId?: number | null;
 
 		/** Required */
 		availableGyms: Array<GymDTO>;
 
-		/** Default AvailableQty */
+		/**
+		 * Default AvailableQty
+		 * Type: decimal
+		 */
 		availableQty?: number | null;
 
 		/**
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		barcode?: string | null;
 		createdDate?: Date | null;
@@ -109,12 +122,20 @@ export namespace MyNS {
 		/** Access Schedule CRON Expression */
 		cronExpression?: string | null;
 		description?: string | null;
+
+		/** Type: decimal */
 		discount?: number | null;
 
-		/** Default EmployeeDiscount */
+		/**
+		 * Default EmployeeDiscount
+		 * Type: decimal
+		 */
 		employeeDiscount?: number | null;
 
-		/** Default EmployeePrice */
+		/**
+		 * Default EmployeePrice
+		 * Type: decimal
+		 */
 		employeePrice?: number | null;
 
 		/** Gym Customizations */
@@ -137,27 +158,41 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: decimal
+		 */
 		price: number;
 
-		/** Deafault ReorderLevel */
+		/**
+		 * Deafault ReorderLevel
+		 * Type: decimal
+		 */
 		reorderLevel?: number | null;
 
-		/** Default Revenue account */
+		/**
+		 * Default Revenue account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revenueAccountId?: number | null;
 
-		/** Default SellingPrice */
+		/**
+		 * Default SellingPrice
+		 * Type: decimal
+		 */
 		sellingPrice?: number | null;
 
 		/**
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		tags?: string | null;
 
@@ -166,6 +201,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		type: string;
+
+		/** Type: decimal */
 		vat?: number | null;
 
 		/** VAT Applicable */
@@ -182,14 +219,19 @@ export namespace MyNS {
 		/** Active Status */
 		activeStatus: FormControl<boolean | null | undefined>,
 		applyForAllGyms: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		articleId: FormControl<number | null | undefined>,
 
-		/** Default AvailableQty */
+		/**
+		 * Default AvailableQty
+		 * Type: decimal
+		 */
 		availableQty: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		barcode: FormControl<string | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
@@ -198,12 +240,20 @@ export namespace MyNS {
 		/** Access Schedule CRON Expression */
 		cronExpression: FormControl<string | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: decimal */
 		discount: FormControl<number | null | undefined>,
 
-		/** Default EmployeeDiscount */
+		/**
+		 * Default EmployeeDiscount
+		 * Type: decimal
+		 */
 		employeeDiscount: FormControl<number | null | undefined>,
 
-		/** Default EmployeePrice */
+		/**
+		 * Default EmployeePrice
+		 * Type: decimal
+		 */
 		employeePrice: FormControl<number | null | undefined>,
 		isAddOn: FormControl<boolean | null | undefined>,
 
@@ -223,27 +273,41 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: decimal
+		 */
 		price: FormControl<number | null | undefined>,
 
-		/** Deafault ReorderLevel */
+		/**
+		 * Deafault ReorderLevel
+		 * Type: decimal
+		 */
 		reorderLevel: FormControl<number | null | undefined>,
 
-		/** Default Revenue account */
+		/**
+		 * Default Revenue account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revenueAccountId: FormControl<number | null | undefined>,
 
-		/** Default SellingPrice */
+		/**
+		 * Default SellingPrice
+		 * Type: decimal
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 
 		/**
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		tags: FormControl<string | null | undefined>,
 
@@ -252,6 +316,8 @@ export namespace MyNS {
 		 * Min length: 1
 		 */
 		type: FormControl<string | null | undefined>,
+
+		/** Type: decimal */
 		vat: FormControl<number | null | undefined>,
 
 		/** VAT Applicable */
@@ -298,7 +364,11 @@ export namespace MyNS {
 	 *             
 	 */
 	export interface GymDTO {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		externalGymNumber?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gymId?: number | null;
 		gymName?: string | null;
 		location?: string | null;
@@ -310,7 +380,11 @@ export namespace MyNS {
 	 *             
 	 */
 	export interface GymDTOFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		externalGymNumber: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		gymId: FormControl<number | null | undefined>,
 		gymName: FormControl<string | null | undefined>,
 		location: FormControl<string | null | undefined>,
@@ -332,15 +406,26 @@ export namespace MyNS {
 	 *             
 	 */
 	export interface GymArticleDetailsDTO {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		articleId?: number | null;
+
+		/** Type: decimal */
 		availableQty?: number | null;
 
 		/** Created User */
 		createdUser?: string | null;
+
+		/** Type: decimal */
 		employeeDiscount?: number | null;
+
+		/** Type: decimal */
 		employeePrice?: number | null;
 
-		/** Gym Id where article is related */
+		/**
+		 * Gym Id where article is related
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gymId?: number | null;
 
 		/** GymId - Gym Id string with comma separated GymIds */
@@ -348,6 +433,8 @@ export namespace MyNS {
 
 		/** Gym Name */
 		gymName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id?: number | null;
 
 		/** Set as the default values for the article */
@@ -357,10 +444,17 @@ export namespace MyNS {
 
 		/** Modified user */
 		modifiedUser?: string | null;
+
+		/** Type: decimal */
 		reorderLevel?: number | null;
 
-		/** Revenue account Id */
+		/**
+		 * Revenue account Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revenueAccountId?: number | null;
+
+		/** Type: decimal */
 		sellingPrice?: number | null;
 	}
 
@@ -370,15 +464,26 @@ export namespace MyNS {
 	 *             
 	 */
 	export interface GymArticleDetailsDTOFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		articleId: FormControl<number | null | undefined>,
+
+		/** Type: decimal */
 		availableQty: FormControl<number | null | undefined>,
 
 		/** Created User */
 		createdUser: FormControl<string | null | undefined>,
+
+		/** Type: decimal */
 		employeeDiscount: FormControl<number | null | undefined>,
+
+		/** Type: decimal */
 		employeePrice: FormControl<number | null | undefined>,
 
-		/** Gym Id where article is related */
+		/**
+		 * Gym Id where article is related
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gymId: FormControl<number | null | undefined>,
 
 		/** GymId - Gym Id string with comma separated GymIds */
@@ -386,6 +491,8 @@ export namespace MyNS {
 
 		/** Gym Name */
 		gymName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		id: FormControl<number | null | undefined>,
 
 		/** Set as the default values for the article */
@@ -395,10 +502,17 @@ export namespace MyNS {
 
 		/** Modified user */
 		modifiedUser: FormControl<string | null | undefined>,
+
+		/** Type: decimal */
 		reorderLevel: FormControl<number | null | undefined>,
 
-		/** Revenue account Id */
+		/**
+		 * Revenue account Id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		revenueAccountId: FormControl<number | null | undefined>,
+
+		/** Type: decimal */
 		sellingPrice: FormControl<number | null | undefined>,
 	}
 	export function CreateGymArticleDetailsDTOFormGroup() {
@@ -434,6 +548,8 @@ export namespace MyNS {
 		/** Active Status */
 		activeStatus?: boolean | null;
 		applyForAllGyms?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		articleId?: number | null;
 		createdDate?: Date | null;
 		createdUser?: string | null;
@@ -444,14 +560,24 @@ export namespace MyNS {
 		modifiedDate?: Date | null;
 		modifiedUser?: string | null;
 		name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
+
+		/** Type: decimal */
 		price?: number | null;
 
-		/** Actual Selling price of the article */
+		/**
+		 * Actual Selling price of the article
+		 * Type: decimal
+		 */
 		sellingPrice?: number | null;
 		tags?: string | null;
 
-		/** total number of recode for particular search */
+		/**
+		 * total number of recode for particular search
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 
 		/** article type */
@@ -468,6 +594,8 @@ export namespace MyNS {
 		/** Active Status */
 		activeStatus: FormControl<boolean | null | undefined>,
 		applyForAllGyms: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		articleId: FormControl<number | null | undefined>,
 		createdDate: FormControl<Date | null | undefined>,
 		createdUser: FormControl<string | null | undefined>,
@@ -478,14 +606,24 @@ export namespace MyNS {
 		modifiedDate: FormControl<Date | null | undefined>,
 		modifiedUser: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
+
+		/** Type: decimal */
 		price: FormControl<number | null | undefined>,
 
-		/** Actual Selling price of the article */
+		/**
+		 * Actual Selling price of the article
+		 * Type: decimal
+		 */
 		sellingPrice: FormControl<number | null | undefined>,
 		tags: FormControl<string | null | undefined>,
 
-		/** total number of recode for particular search */
+		/**
+		 * total number of recode for particular search
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/** article type */
@@ -621,6 +759,8 @@ export namespace MyNS {
 		isError?: boolean | null;
 		message?: string | null;
 		responseException?: any;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result?: number | null;
 	}
 
@@ -633,6 +773,8 @@ export namespace MyNS {
 		isError: FormControl<boolean | null | undefined>,
 		message: FormControl<string | null | undefined>,
 		responseException: FormControl<any | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		result: FormControl<number | null | undefined>,
 	}
 	export function CreateDefaultResponseDTOOfIntegerFormGroup() {
@@ -723,6 +865,7 @@ export namespace MyNS {
 		/**
 		 * sum of addon fees.
 		 * incoming values for this filed will ignore.
+		 * Type: decimal
 		 */
 		addonFee?: number | null;
 
@@ -733,6 +876,7 @@ export namespace MyNS {
 
 		/**
 		 * Range of period a member is bound to the contract if he/she choose this package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bindingPeriod?: number | null;
 
@@ -758,6 +902,7 @@ export namespace MyNS {
 
 		/**
 		 * No of months gym member can come without payments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		freeMonths?: number | null;
 
@@ -779,13 +924,21 @@ export namespace MyNS {
 		/**
 		 * Monthly installment fee if package is not fixed visit.
 		 * addition of the servicefee and addon fees divided by binding period.
+		 * Type: decimal
 		 */
 		monthlyFee?: number | null;
 
-		/** No of visits for fixed package */
+		/**
+		 * No of visits for fixed package
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfVisits?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packageId?: number | null;
 		packageName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packageNumber?: number | null;
 
 		/**
@@ -795,11 +948,13 @@ export namespace MyNS {
 
 		/**
 		 * Registartion fee for the package at a gym.
+		 * Type: decimal
 		 */
 		registrationFee?: number | null;
 
 		/**
 		 * total Service charge of the package for entire period.
+		 * Type: decimal
 		 */
 		serviceFee?: number | null;
 
@@ -808,12 +963,16 @@ export namespace MyNS {
 		 */
 		tags?: string | null;
 
-		/** total number of recode for particular search */
+		/**
+		 * total number of recode for particular search
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 
 		/**
 		 * total price for the package including Addon fees, service fee and registration fee.
 		 * incoming values for this field will ignore.
+		 * Type: decimal
 		 */
 		totalPrice?: number | null;
 	}
@@ -831,6 +990,7 @@ export namespace MyNS {
 		/**
 		 * sum of addon fees.
 		 * incoming values for this filed will ignore.
+		 * Type: decimal
 		 */
 		addonFee: FormControl<number | null | undefined>,
 
@@ -841,6 +1001,7 @@ export namespace MyNS {
 
 		/**
 		 * Range of period a member is bound to the contract if he/she choose this package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bindingPeriod: FormControl<number | null | undefined>,
 
@@ -866,6 +1027,7 @@ export namespace MyNS {
 
 		/**
 		 * No of months gym member can come without payments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		freeMonths: FormControl<number | null | undefined>,
 
@@ -887,13 +1049,21 @@ export namespace MyNS {
 		/**
 		 * Monthly installment fee if package is not fixed visit.
 		 * addition of the servicefee and addon fees divided by binding period.
+		 * Type: decimal
 		 */
 		monthlyFee: FormControl<number | null | undefined>,
 
-		/** No of visits for fixed package */
+		/**
+		 * No of visits for fixed package
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numberOfVisits: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packageId: FormControl<number | null | undefined>,
 		packageName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packageNumber: FormControl<number | null | undefined>,
 
 		/**
@@ -903,11 +1073,13 @@ export namespace MyNS {
 
 		/**
 		 * Registartion fee for the package at a gym.
+		 * Type: decimal
 		 */
 		registrationFee: FormControl<number | null | undefined>,
 
 		/**
 		 * total Service charge of the package for entire period.
+		 * Type: decimal
 		 */
 		serviceFee: FormControl<number | null | undefined>,
 
@@ -916,12 +1088,16 @@ export namespace MyNS {
 		 */
 		tags: FormControl<string | null | undefined>,
 
-		/** total number of recode for particular search */
+		/**
+		 * total number of recode for particular search
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 
 		/**
 		 * total price for the package including Addon fees, service fee and registration fee.
 		 * incoming values for this field will ignore.
+		 * Type: decimal
 		 */
 		totalPrice: FormControl<number | null | undefined>,
 	}
@@ -1002,6 +1178,7 @@ export namespace MyNS {
 		/**
 		 * sum of addon fees.
 		 * incoming values for this filed will ignore.
+		 * Type: decimal
 		 */
 		addonFee?: number | null;
 
@@ -1017,6 +1194,7 @@ export namespace MyNS {
 
 		/**
 		 * Range of period a member is bound to the contract if he/she choose this package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bindingPeriod?: number | null;
 
@@ -1043,6 +1221,7 @@ export namespace MyNS {
 
 		/**
 		 * No of months the fixed package is valid for sale
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expireInMonths?: number | null;
 
@@ -1054,6 +1233,7 @@ export namespace MyNS {
 
 		/**
 		 * No of months gym member can come without payments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		freeMonths?: number | null;
 
@@ -1113,6 +1293,7 @@ export namespace MyNS {
 		/**
 		 * If a member join the gym middle of a month via this package,
 		 * what is the maximum amount of price can be neglected from payment from the member.
+		 * Type: decimal
 		 */
 		maximumGiveAwayRestAmount?: number | null;
 
@@ -1146,23 +1327,29 @@ export namespace MyNS {
 		 * Monthly installment fee if package is not fixed visit.
 		 * addition of the servicefee and addon fees divided by binding period.
 		 * read only
+		 * Type: decimal
 		 */
 		monthlyFee?: number | null;
 
 		/**
 		 * Next Package the contract continue after the binding period of this package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nextPackageNumber?: number | null;
 
 		/**
 		 * Maximum Number of installment a member can divide the package price/cost to pay.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfInstallments?: number | null;
 
 		/**
 		 * If package is fixed visit type, then how many visits are available for this package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfVisits?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packageId?: number | null;
 
 		/**
@@ -1181,6 +1368,7 @@ export namespace MyNS {
 
 		/**
 		 * Cost/Price of the single visit to gym.
+		 * Type: decimal
 		 */
 		perVisitPrice?: number | null;
 
@@ -1188,12 +1376,14 @@ export namespace MyNS {
 		 * Registartion fee for the package at a gym.
 		 * read only
 		 * Required
+		 * Type: decimal
 		 */
 		registrationFee: number;
 
 		/**
 		 * total Service charge of the package for entire period.
 		 * Required
+		 * Type: decimal
 		 */
 		serviceFee: number;
 
@@ -1216,6 +1406,7 @@ export namespace MyNS {
 		/**
 		 * total price for the package including Addon fees, service fee and registration fee.
 		 * incoming values for this field will ignore.
+		 * Type: decimal
 		 */
 		totalPrice?: number | null;
 	}
@@ -1230,6 +1421,7 @@ export namespace MyNS {
 		/**
 		 * sum of addon fees.
 		 * incoming values for this filed will ignore.
+		 * Type: decimal
 		 */
 		addonFee: FormControl<number | null | undefined>,
 
@@ -1240,6 +1432,7 @@ export namespace MyNS {
 
 		/**
 		 * Range of period a member is bound to the contract if he/she choose this package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		bindingPeriod: FormControl<number | null | undefined>,
 
@@ -1266,6 +1459,7 @@ export namespace MyNS {
 
 		/**
 		 * No of months the fixed package is valid for sale
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		expireInMonths: FormControl<number | null | undefined>,
 
@@ -1277,6 +1471,7 @@ export namespace MyNS {
 
 		/**
 		 * No of months gym member can come without payments.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		freeMonths: FormControl<number | null | undefined>,
 
@@ -1336,6 +1531,7 @@ export namespace MyNS {
 		/**
 		 * If a member join the gym middle of a month via this package,
 		 * what is the maximum amount of price can be neglected from payment from the member.
+		 * Type: decimal
 		 */
 		maximumGiveAwayRestAmount: FormControl<number | null | undefined>,
 
@@ -1369,23 +1565,29 @@ export namespace MyNS {
 		 * Monthly installment fee if package is not fixed visit.
 		 * addition of the servicefee and addon fees divided by binding period.
 		 * read only
+		 * Type: decimal
 		 */
 		monthlyFee: FormControl<number | null | undefined>,
 
 		/**
 		 * Next Package the contract continue after the binding period of this package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nextPackageNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum Number of installment a member can divide the package price/cost to pay.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfInstallments: FormControl<number | null | undefined>,
 
 		/**
 		 * If package is fixed visit type, then how many visits are available for this package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		numberOfVisits: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		packageId: FormControl<number | null | undefined>,
 
 		/**
@@ -1404,6 +1606,7 @@ export namespace MyNS {
 
 		/**
 		 * Cost/Price of the single visit to gym.
+		 * Type: decimal
 		 */
 		perVisitPrice: FormControl<number | null | undefined>,
 
@@ -1411,12 +1614,14 @@ export namespace MyNS {
 		 * Registartion fee for the package at a gym.
 		 * read only
 		 * Required
+		 * Type: decimal
 		 */
 		registrationFee: FormControl<number | null | undefined>,
 
 		/**
 		 * total Service charge of the package for entire period.
 		 * Required
+		 * Type: decimal
 		 */
 		serviceFee: FormControl<number | null | undefined>,
 
@@ -1439,6 +1644,7 @@ export namespace MyNS {
 		/**
 		 * total price for the package including Addon fees, service fee and registration fee.
 		 * incoming values for this field will ignore.
+		 * Type: decimal
 		 */
 		totalPrice: FormControl<number | null | undefined>,
 	}
@@ -1500,6 +1706,7 @@ export namespace MyNS {
 		/**
 		 * Refer to ArticleId in Article table in DB.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		articleId: number;
 
@@ -1512,17 +1719,20 @@ export namespace MyNS {
 		/**
 		 * Number assigned the article(Addon) in a particular package.
 		 * read only
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		articleNumber?: number | null;
 
 		/**
 		 * Price of the article determined from that package.
 		 * Price of a same article can be varied from package to package.
+		 * Type: decimal
 		 */
 		articlePrice?: number | null;
 
 		/**
 		 * Number of the installment this article is available to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		endOrder?: number | null;
 
@@ -1532,11 +1742,13 @@ export namespace MyNS {
 
 		/**
 		 * How many article(Addon) is available for that package from that type.
+		 * Type: decimal
 		 */
 		numberOfItems?: number | null;
 
 		/**
 		 * Number of the installment this article is available from.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startOrder?: number | null;
 	}
@@ -1551,6 +1763,7 @@ export namespace MyNS {
 		/**
 		 * Refer to ArticleId in Article table in DB.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		articleId: FormControl<number | null | undefined>,
 
@@ -1563,17 +1776,20 @@ export namespace MyNS {
 		/**
 		 * Number assigned the article(Addon) in a particular package.
 		 * read only
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		articleNumber: FormControl<number | null | undefined>,
 
 		/**
 		 * Price of the article determined from that package.
 		 * Price of a same article can be varied from package to package.
+		 * Type: decimal
 		 */
 		articlePrice: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of the installment this article is available to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		endOrder: FormControl<number | null | undefined>,
 
@@ -1583,11 +1799,13 @@ export namespace MyNS {
 
 		/**
 		 * How many article(Addon) is available for that package from that type.
+		 * Type: decimal
 		 */
 		numberOfItems: FormControl<number | null | undefined>,
 
 		/**
 		 * Number of the installment this article is available from.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		startOrder: FormControl<number | null | undefined>,
 	}
@@ -1812,7 +2030,10 @@ export namespace MyNS {
 	/** Mesure unit to represent article mesure unit  */
 	export interface MeasureUnitDTO {
 
-		/** Id of the table */
+		/**
+		 * Id of the table
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Mesure Unit Type */
@@ -1825,7 +2046,10 @@ export namespace MyNS {
 	/** Mesure unit to represent article mesure unit  */
 	export interface MeasureUnitDTOFormProperties {
 
-		/** Id of the table */
+		/**
+		 * Id of the table
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Mesure Unit Type */
@@ -1870,15 +2094,23 @@ export namespace MyNS {
 
 	export interface MessageStatus {
 		messageId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		referenceId?: number | null;
 		source?: any;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusId?: number | null;
 		statusText?: string | null;
 	}
 	export interface MessageStatusFormProperties {
 		messageId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		referenceId: FormControl<number | null | undefined>,
 		source: FormControl<any | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusId: FormControl<number | null | undefined>,
 		statusText: FormControl<string | null | undefined>,
 	}
@@ -1897,6 +2129,8 @@ export namespace MyNS {
 		detail?: string | null;
 		extensions?: {[id: string]: any };
 		instance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
@@ -1905,6 +2139,8 @@ export namespace MyNS {
 		detail: FormControl<string | null | undefined>,
 		extensions: FormControl<{[id: string]: any } | null | undefined>,
 		instance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -1931,6 +2167,7 @@ export namespace MyNS {
 
 		/**
 		 * Id of the Test object
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id?: number | null;
 	}
@@ -1944,6 +2181,7 @@ export namespace MyNS {
 
 		/**
 		 * Id of the Test object
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		id: FormControl<number | null | undefined>,
 	}
@@ -1974,6 +2212,7 @@ export namespace MyNS {
 
 		/**
 		 * Gaurdian of the this user if he/she is under 18 years old.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		guardian?: number | null;
 
@@ -1984,6 +2223,7 @@ export namespace MyNS {
 
 		/**
 		 * If Someone introduced this user to the system, then that user's UserId.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		introduceBy?: number | null;
 
@@ -1999,11 +2239,13 @@ export namespace MyNS {
 
 		/**
 		 * Type of the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		typeId?: number | null;
 
 		/**
 		 * Indentity number(primary key) for user object. Generated in DB table when inserting a record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userId?: number | null;
 	}
@@ -2027,6 +2269,7 @@ export namespace MyNS {
 
 		/**
 		 * Gaurdian of the this user if he/she is under 18 years old.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		guardian: FormControl<number | null | undefined>,
 
@@ -2037,6 +2280,7 @@ export namespace MyNS {
 
 		/**
 		 * If Someone introduced this user to the system, then that user's UserId.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		introduceBy: FormControl<number | null | undefined>,
 
@@ -2052,11 +2296,13 @@ export namespace MyNS {
 
 		/**
 		 * Type of the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		typeId: FormControl<number | null | undefined>,
 
 		/**
 		 * Indentity number(primary key) for user object. Generated in DB table when inserting a record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		userId: FormControl<number | null | undefined>,
 	}
@@ -2084,6 +2330,7 @@ export namespace MyNS {
 		 * Delete article from the system
 		 * Delete api/Article
 		 * @param {number} ArticleId indentity number(primary key) for article object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DefaultResponseDTOOfInteger} operation was success(true) or fail(false) 
 		 */
 		Article_Delete(ArticleId: number | null | undefined): Observable<DefaultResponseDTOOfInteger> {
@@ -2123,7 +2370,8 @@ export namespace MyNS {
 		 * Get api/Article/GetAddons
 		 * @param {string} searchText Search text - will be search by the name
 		 * @param {string} gymIds Comma separated gymIds deafult "-1" for all gyms
-		 * @return {DefaultResponseDTOOfListOfArticleSearchDTO} 
+		 * @param {number} limit Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		Article_GetAddons(searchText: string | null | undefined, gymIds: string | null | undefined, type: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined): Observable<DefaultResponseDTOOfListOfArticleSearchDTO> {
 			return this.http.get<DefaultResponseDTOOfListOfArticleSearchDTO>(this.baseUri + 'api/Article/GetAddons?searchText=' + (searchText == null ? '' : encodeURIComponent(searchText)) + '&gymIds=' + (gymIds == null ? '' : encodeURIComponent(gymIds)) + '&type=' + (type == null ? '' : encodeURIComponent(type)) + '&limit=' + limit + '&offset=' + offset, {});
@@ -2133,7 +2381,9 @@ export namespace MyNS {
 		 * Get Gym specific properties for article
 		 * Get api/Article/GymArticle/{articleId}/{gymId}
 		 * @param {number} articleId indentity number(primary key) for article object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} gymId indentity number(primary key) for gym object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GymArticleDetailsDTO} API Response with Article entity
 		 */
 		Article_GymArticleDetails(articleId: number, gymId: number): Observable<GymArticleDetailsDTO> {
@@ -2175,11 +2425,15 @@ export namespace MyNS {
 		 * Get api/Article/Search
 		 * @param {string} searchText part of article name
 		 * @param {number} gymId -1 for all gyms 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} type filter article type. default is 'all'
 		 * @param {string} orderBy order by column.!-- invalid column will give internal server error
 		 * @param {number} limit number of recode in result and default is 100. use negative numbers to order by desc
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset number of recodes to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} activeStatus Active Status 1 : Active, 2: Inactive, 3: All, Default : 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DefaultResponseDTOOfListOfArticleSearchDTO} API Response with set of a Article entities
 		 */
 		Article_Search(searchText: string | null | undefined, gymId: number | null | undefined, type: string | null | undefined, orderBy: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined, activeStatus: number | null | undefined): Observable<DefaultResponseDTOOfListOfArticleSearchDTO> {
@@ -2189,9 +2443,10 @@ export namespace MyNS {
 		/**
 		 * Deactivate existing article
 		 * Put api/Article/UpdateStatus
+		 * @param {number} ArticleId Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} status 1 : activate , 2 deactivate
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userName Updating user
-		 * @return {DefaultResponseDTOOfInteger} 
 		 */
 		Article_UpdateStatus(ArticleId: number | null | undefined, status: number | null | undefined, userName: string | null | undefined): Observable<DefaultResponseDTOOfInteger> {
 			return this.http.put<DefaultResponseDTOOfInteger>(this.baseUri + 'api/Article/UpdateStatus?ArticleId=' + ArticleId + '&status=' + status + '&userName=' + (userName == null ? '' : encodeURIComponent(userName)), null, {});
@@ -2202,6 +2457,7 @@ export namespace MyNS {
 		 * This will return all properties related to article entity
 		 * Get api/Article/{articleID}
 		 * @param {number} articleID indentity number (primary key) for article object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DefaultResponseDTOOfArticleDTO} API Response with Article entity
 		 */
 		Article_get(articleID: number): Observable<DefaultResponseDTOOfArticleDTO> {
@@ -2223,6 +2479,7 @@ export namespace MyNS {
 		 * This will return all properties related to gym entity
 		 * Get api/Gym/{gymID}
 		 * @param {number} gymID indentity number (primary key) for gym object
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DefaultResponseDTOOfGymDTO} API Response with Gym entity
 		 */
 		Gym_get(gymID: number): Observable<DefaultResponseDTOOfGymDTO> {
@@ -2253,6 +2510,7 @@ export namespace MyNS {
 		 * Delete existing package
 		 * Delete api/Package
 		 * @param {number} PackageId primary key of package entity
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DefaultResponseDTOOfBoolean} status 1  : success, status 404 : package not found, status -2: package already in use 
 		 */
 		Package_Delete(PackageId: number | null | undefined): Observable<DefaultResponseDTOOfBoolean> {
@@ -2263,6 +2521,7 @@ export namespace MyNS {
 		 * Get package details by packageId
 		 * Get api/Package
 		 * @param {number} packageId primary key of package entity
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DefaultResponseDTOOfPackageDTO} all the fields that related to the package
 		 */
 		Package_Get(packageId: number | null | undefined): Observable<DefaultResponseDTOOfPackageDTO> {
@@ -2294,15 +2553,23 @@ export namespace MyNS {
 		 * Get api/Package/Search
 		 * @param {string} searchText part of package name
 		 * @param {number} gymId primary key of TL gym entity
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} type filter package type.!-- default is 'all'
 		 * @param {string} orderBy order by column.!-- invalid column will give internal server error
 		 * @param {number} limit number of recode in result and default is 100. use negative numbers to order by desc
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset number of recodes to skip
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} activeStatus active status active : 1, inactive : 2, all 3, deafult : 1
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} categoryId Packge Category Id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} startpPrice Start price of the price Range
+		 *     Type: decimal
 		 * @param {number} endPrice End Price of the price Range
+		 *     Type: decimal
 		 * @param {number} requestSource 1 : MRM, 2 : Mobile 
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<DefaultResponseDTOOfPackageSearchDTO>} basic information of package entity
 		 */
 		Package_Search(searchText: string | null | undefined, gymId: number | null | undefined, type: string | null | undefined, orderBy: string | null | undefined, limit: number | null | undefined, offset: number | null | undefined, activeStatus: number | null | undefined, categoryId: number | null | undefined, startpPrice: number | null | undefined, endPrice: number | null | undefined, requestSource: number | null | undefined): Observable<Array<DefaultResponseDTOOfPackageSearchDTO>> {
@@ -2313,7 +2580,9 @@ export namespace MyNS {
 		 * Status update of existing package
 		 * Put api/Package/UpdateStatus
 		 * @param {number} packageId package Id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} status status : 1 activate, 2 : deactivate
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} userName Status updated User
 		 * @return {DefaultResponseDTOOfBoolean} status 1 : success, status 404 : package not found, status -2: package already in use 
 		 */
@@ -2355,6 +2624,7 @@ export namespace MyNS {
 		 * Post api/User/registerUser
 		 * @param {number} UserId Indentity number(primary key) for user object. Generated in DB table when inserting a record.
 		 *             
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} AccountNumber Account number of the user.It can be any stakeholder of the application.even can be a gym.
 		 *             
 		 * @param {string} GymNumber If this user is a gym, then the gym number.
@@ -2367,10 +2637,13 @@ export namespace MyNS {
 		 *             
 		 * @param {number} IntroduceBy If Someone introduced this user to the system, then that user's UserId.
 		 *             
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} Guardian Gaurdian of the this user if he/she is under 18 years old.
 		 *             
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} TypeId Type of the user.
 		 *             
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} API Response
 		 */
 		User_registerUser(UserId: number | null | undefined, AccountNumber: string | null | undefined, GymNumber: string | null | undefined, ExternalEntityNumber: string | null | undefined, Name: string | null | undefined, Number: string | null | undefined, IntroduceBy: number | null | undefined, Guardian: number | null | undefined, TypeId: number | null | undefined): Observable<HttpResponse<string>> {
@@ -2382,6 +2655,7 @@ export namespace MyNS {
 		 * Put api/User/updateuser
 		 * @param {number} UserId Indentity number(primary key) for user object. Generated in DB table when inserting a record.
 		 *             
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} AccountNumber Account number of the user.It can be any stakeholder of the application.even can be a gym.
 		 *             
 		 * @param {string} GymNumber If this user is a gym, then the gym number.
@@ -2394,10 +2668,13 @@ export namespace MyNS {
 		 *             
 		 * @param {number} IntroduceBy If Someone introduced this user to the system, then that user's UserId.
 		 *             
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} Guardian Gaurdian of the this user if he/she is under 18 years old.
 		 *             
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} TypeId Type of the user.
 		 *             
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} API Response true or false
 		 */
 		User_updateUser(UserId: number | null | undefined, AccountNumber: string | null | undefined, GymNumber: string | null | undefined, ExternalEntityNumber: string | null | undefined, Name: string | null | undefined, Number: string | null | undefined, IntroduceBy: number | null | undefined, Guardian: number | null | undefined, TypeId: number | null | undefined): Observable<HttpResponse<string>> {

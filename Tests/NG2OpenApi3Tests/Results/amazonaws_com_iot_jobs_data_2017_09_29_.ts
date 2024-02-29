@@ -308,8 +308,10 @@ export namespace MyNS {
 		 * Get things/{thingName}/jobs/{jobId}
 		 * @param {string} jobId The unique identifier assigned to this job when it was created.
 		 * @param {string} thingName The thing name associated with the device the job execution is running on.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} includeJobDocument Optional. When set to true, the response contains the job document. The default is false.
 		 * @param {number} executionNumber Optional. A number that identifies a particular job execution on a particular device. If not specified, the latest job execution is returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DescribeJobExecutionResponse} Success
 		 */
 		DescribeJobExecution(jobId: string, thingName: string, includeJobDocument: boolean | null | undefined, executionNumber: number | null | undefined): Observable<DescribeJobExecutionResponse> {
@@ -320,7 +322,9 @@ export namespace MyNS {
 		 * Updates the status of a job execution.
 		 * Post things/{thingName}/jobs/{jobId}
 		 * @param {string} jobId The unique identifier assigned to this job when it was created.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} thingName The name of the thing associated with the device.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateJobExecutionResponse} Success
 		 */
 		UpdateJobExecution(jobId: string, thingName: string, requestBody: UpdateJobExecutionPostBody): Observable<UpdateJobExecutionResponse> {
@@ -331,6 +335,7 @@ export namespace MyNS {
 		 * Gets the list of all jobs for a thing that are not in a terminal status.
 		 * Get things/{thingName}/jobs
 		 * @param {string} thingName The name of the thing that is executing the job.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetPendingJobExecutionsResponse} Success
 		 */
 		GetPendingJobExecutions(thingName: string): Observable<GetPendingJobExecutionsResponse> {
@@ -341,6 +346,7 @@ export namespace MyNS {
 		 * Gets and starts the next pending (status IN_PROGRESS or QUEUED) job execution for a thing.
 		 * Put things/{thingName}/jobs/$next
 		 * @param {string} thingName The name of the thing associated with the device.
+		 *     Min length: 1    Max length: 128
 		 * @return {StartNextPendingJobExecutionResponse} Success
 		 */
 		StartNextPendingJobExecution(thingName: string, requestBody: StartNextPendingJobExecutionPutBody): Observable<StartNextPendingJobExecutionResponse> {
@@ -359,10 +365,16 @@ export namespace MyNS {
 		/** Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. */
 		statusDetails?: {[id: string]: string };
 
-		/** Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>). */
+		/**
+		 * Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepTimeoutInMinutes?: number | null;
 
-		/** Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.) */
+		/**
+		 * Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion?: number | null;
 
 		/** Optional. When included and set to true, the response contains the JobExecutionState data. The default is false. */
@@ -371,7 +383,10 @@ export namespace MyNS {
 		/** Optional. When set to true, the response contains the job document. The default is false. */
 		includeJobDocument?: boolean | null;
 
-		/** Optional. A number that identifies a particular job execution on a particular device. */
+		/**
+		 * Optional. A number that identifies a particular job execution on a particular device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executionNumber?: number | null;
 	}
 	export interface UpdateJobExecutionPostBodyFormProperties {
@@ -385,10 +400,16 @@ export namespace MyNS {
 		/** Optional. A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. */
 		statusDetails: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>). */
+		/**
+		 * Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by again calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in this field) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting or resetting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepTimeoutInMinutes: FormControl<number | null | undefined>,
 
-		/** Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.) */
+		/**
+		 * Optional. The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion: FormControl<number | null | undefined>,
 
 		/** Optional. When included and set to true, the response contains the JobExecutionState data. The default is false. */
@@ -397,7 +418,10 @@ export namespace MyNS {
 		/** Optional. When set to true, the response contains the job document. The default is false. */
 		includeJobDocument: FormControl<boolean | null | undefined>,
 
-		/** Optional. A number that identifies a particular job execution on a particular device. */
+		/**
+		 * Optional. A number that identifies a particular job execution on a particular device.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		executionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateJobExecutionPostBodyFormGroup() {
@@ -418,7 +442,10 @@ export namespace MyNS {
 		/** A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. */
 		statusDetails?: {[id: string]: string };
 
-		/** Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>). */
+		/**
+		 * Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepTimeoutInMinutes?: number | null;
 	}
 	export interface StartNextPendingJobExecutionPutBodyFormProperties {
@@ -426,7 +453,10 @@ export namespace MyNS {
 		/** A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. */
 		statusDetails: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>). */
+		/**
+		 * Specifies the amount of time this device has to finish execution of this job. If the job execution status is not set to a terminal state before this timer expires, or before the timer is reset (by calling <code>UpdateJobExecution</code>, setting the status to <code>IN_PROGRESS</code> and specifying a new timeout value in field <code>stepTimeoutInMinutes</code>) the job execution status will be automatically set to <code>TIMED_OUT</code>. Note that setting this timeout has no effect on that job execution timeout which may have been specified when the job was created (<code>CreateJob</code> using field <code>timeoutConfig</code>).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepTimeoutInMinutes: FormControl<number | null | undefined>,
 	}
 	export function CreateStartNextPendingJobExecutionPutBodyFormGroup() {

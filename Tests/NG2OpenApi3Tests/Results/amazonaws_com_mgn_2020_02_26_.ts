@@ -4219,7 +4219,9 @@ export namespace MyNS {
 		 * Returns a list of the installed vCenter clients.
 		 * Get DescribeVcenterClients
 		 * @param {number} maxResults Maximum results to be returned in DescribeVcenterClients.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken Next pagination token to be provided for DescribeVcenterClients.
+		 *     Min length: 0    Max length: 2048
 		 * @return {DescribeVcenterClientsResponse} Success
 		 */
 		DescribeVcenterClients(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<DescribeVcenterClientsResponse> {
@@ -4370,6 +4372,7 @@ export namespace MyNS {
 		 * List all tags for your Application Migration Service resources.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn List tags for resource request by ARN.
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -4380,6 +4383,7 @@ export namespace MyNS {
 		 * Adds or overwrites only the specified tags for the specified Application Migration Service resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn Tag resource by ARN.
+		 *     Min length: 20    Max length: 2048
 		 * @return {void} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<HttpResponse<string>> {
@@ -4565,6 +4569,7 @@ export namespace MyNS {
 		 * Deletes the specified set of tags from the specified set of Application Migration Service resources.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn Untag resource by ARN.
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} tagKeys Untag resource by Keys.
 		 * @return {void} Success
 		 */
@@ -4640,16 +4645,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: string;
 	}
@@ -4657,16 +4662,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: FormControl<string | null | undefined>,
 	}
@@ -4682,16 +4687,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: string;
 	}
@@ -4699,16 +4704,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: FormControl<string | null | undefined>,
 	}
@@ -4724,8 +4729,8 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -4740,8 +4745,8 @@ export namespace MyNS {
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: string;
 	}
@@ -4749,16 +4754,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: FormControl<string | null | undefined>,
 	}
@@ -4774,16 +4779,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: string;
 
@@ -4799,16 +4804,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: FormControl<string | null | undefined>,
 	}
@@ -4824,8 +4829,8 @@ export namespace MyNS {
 
 		/**
 		 * The request to change the source server migration account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -4838,8 +4843,8 @@ export namespace MyNS {
 		/**
 		 * The request to change the source server migration lifecycle state by source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -4847,16 +4852,16 @@ export namespace MyNS {
 
 		/**
 		 * The request to change the source server migration account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * The request to change the source server migration lifecycle state by source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -4885,23 +4890,23 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Application description.
-		 * Max length: 600
 		 * Min length: 0
+		 * Max length: 600
 		 */
 		description?: string | null;
 
 		/**
 		 * Application name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: string;
 
@@ -4912,23 +4917,23 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Application description.
-		 * Max length: 600
 		 * Min length: 0
+		 * Max length: 600
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Application name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4973,8 +4978,8 @@ export namespace MyNS {
 
 		/**
 		 * Launch configuration template map auto tagging MPE ID.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		mapAutoTaggingMpeID?: string | null;
 
@@ -5018,8 +5023,8 @@ export namespace MyNS {
 
 		/**
 		 * Launch configuration template map auto tagging MPE ID.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		mapAutoTaggingMpeID: FormControl<string | null | undefined>,
 
@@ -5167,16 +5172,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to configure an EBS encryption key during Replication Settings template creation.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn?: string | null;
 
 		/**
 		 * Request to configure the Replication Server instance type during Replication Settings template creation.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType: string;
 
@@ -5191,8 +5196,8 @@ export namespace MyNS {
 		/**
 		 * Request to configure the Staging Area subnet ID during Replication Settings template creation.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId: string;
 
@@ -5256,24 +5261,24 @@ export namespace MyNS {
 
 		/**
 		 * Request to configure an EBS encryption key during Replication Settings template creation.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Request to configure the Replication Server instance type during Replication Settings template creation.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType: FormControl<string | null | undefined>,
 
 		/**
 		 * Request to configure the Staging Area subnet ID during Replication Settings template creation.
 		 * Required
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId: FormControl<string | null | undefined>,
 
@@ -5318,23 +5323,23 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Wave description.
-		 * Max length: 600
 		 * Min length: 0
+		 * Max length: 600
 		 */
 		description?: string | null;
 
 		/**
 		 * Wave name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: string;
 
@@ -5345,23 +5350,23 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Wave description.
-		 * Max length: 600
 		 * Min length: 0
+		 * Max length: 600
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Wave name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -5382,16 +5387,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: string;
 	}
@@ -5399,16 +5404,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: FormControl<string | null | undefined>,
 	}
@@ -5424,16 +5429,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to delete Job from service by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Request to delete Job from service by Job ID.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		jobID: string;
 	}
@@ -5441,16 +5446,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to delete Job from service by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Request to delete Job from service by Job ID.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		jobID: FormControl<string | null | undefined>,
 	}
@@ -5467,8 +5472,8 @@ export namespace MyNS {
 		/**
 		 * ID of resource to be deleted.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: string;
 	}
@@ -5477,8 +5482,8 @@ export namespace MyNS {
 		/**
 		 * ID of resource to be deleted.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: FormControl<string | null | undefined>,
 	}
@@ -5494,8 +5499,8 @@ export namespace MyNS {
 		/**
 		 * Request to delete Replication Configuration Template from service by Replication Configuration Template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		replicationConfigurationTemplateID: string;
 	}
@@ -5504,8 +5509,8 @@ export namespace MyNS {
 		/**
 		 * Request to delete Replication Configuration Template from service by Replication Configuration Template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		replicationConfigurationTemplateID: FormControl<string | null | undefined>,
 	}
@@ -5520,16 +5525,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to delete Source Server from service by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Request to delete Source Server from service by Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -5537,16 +5542,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to delete Source Server from service by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Request to delete Source Server from service by Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -5563,8 +5568,8 @@ export namespace MyNS {
 		/**
 		 * ID of resource to be deleted.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		vcenterClientID: string;
 	}
@@ -5573,8 +5578,8 @@ export namespace MyNS {
 		/**
 		 * ID of resource to be deleted.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		vcenterClientID: FormControl<string | null | undefined>,
 	}
@@ -5589,16 +5594,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: string;
 	}
@@ -5606,16 +5611,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: FormControl<string | null | undefined>,
 	}
@@ -5631,16 +5636,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to describe Job log Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Request to describe Job log job ID.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		jobID: string;
 
@@ -5653,8 +5658,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to describe Job log next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -5662,16 +5667,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to describe Job log Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Request to describe Job log job ID.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		jobID: FormControl<string | null | undefined>,
 
@@ -5684,8 +5689,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to describe Job log next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -5703,8 +5708,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to describe job log items by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -5720,8 +5725,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to describe job log items by next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -5729,8 +5734,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to describe job log items by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
@@ -5743,8 +5748,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to describe job log items by next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -5792,8 +5797,8 @@ export namespace MyNS {
 
 		/**
 		 * Next pagination token returned from DescribeLaunchConfigurationTemplates.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -5808,8 +5813,8 @@ export namespace MyNS {
 
 		/**
 		 * Next pagination token returned from DescribeLaunchConfigurationTemplates.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -5832,8 +5837,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to describe Replication Configuration template by next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
@@ -5855,8 +5860,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to describe Replication Configuration template by next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -5872,8 +5877,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to filter Source Servers list by Accoun ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -5889,8 +5894,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to filter Source Servers list by next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -5898,8 +5903,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to filter Source Servers list by Accoun ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
@@ -5912,8 +5917,8 @@ export namespace MyNS {
 
 		/**
 		 * Request to filter Source Servers list by next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -5947,8 +5952,8 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -5963,8 +5968,8 @@ export namespace MyNS {
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: string;
 	}
@@ -5972,16 +5977,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: FormControl<string | null | undefined>,
 	}
@@ -5997,16 +6002,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: string;
 
@@ -6022,16 +6027,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: FormControl<string | null | undefined>,
 	}
@@ -6047,16 +6052,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to disconnect Source Server from service by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Request to disconnect Source Server from service by Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -6064,16 +6069,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to disconnect Source Server from service by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Request to disconnect Source Server from service by Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -6089,16 +6094,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to finalize Cutover by Source Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Request to finalize Cutover by Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -6106,16 +6111,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to finalize Cutover by Source Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Request to finalize Cutover by Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -6131,16 +6136,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to get Launch Configuration information by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Request to get Launch Configuration information by Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -6148,16 +6153,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to get Launch Configuration information by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Request to get Launch Configuration information by Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -6173,16 +6178,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to get Replication Configuration by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Request to get Replication Configuration by Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -6190,16 +6195,16 @@ export namespace MyNS {
 
 		/**
 		 * Request to get Replication Configuration by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Request to get Replication Configuration by Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -6215,8 +6220,8 @@ export namespace MyNS {
 
 		/**
 		 * Applications list Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -6232,8 +6237,8 @@ export namespace MyNS {
 
 		/**
 		 * Request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -6241,8 +6246,8 @@ export namespace MyNS {
 
 		/**
 		 * Applications list Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
@@ -6255,8 +6260,8 @@ export namespace MyNS {
 
 		/**
 		 * Request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6289,8 +6294,8 @@ export namespace MyNS {
 		/**
 		 * List export errors request export id.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		exportID: string;
 
@@ -6303,8 +6308,8 @@ export namespace MyNS {
 
 		/**
 		 * List export errors request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -6313,8 +6318,8 @@ export namespace MyNS {
 		/**
 		 * List export errors request export id.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		exportID: FormControl<string | null | undefined>,
 
@@ -6327,8 +6332,8 @@ export namespace MyNS {
 
 		/**
 		 * List export errors request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6355,8 +6360,8 @@ export namespace MyNS {
 
 		/**
 		 * List export request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -6371,8 +6376,8 @@ export namespace MyNS {
 
 		/**
 		 * List export request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6400,8 +6405,8 @@ export namespace MyNS {
 		/**
 		 * List import errors request import id.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		importID: string;
 
@@ -6414,8 +6419,8 @@ export namespace MyNS {
 
 		/**
 		 * List import errors request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -6424,8 +6429,8 @@ export namespace MyNS {
 		/**
 		 * List import errors request import id.
 		 * Required
-		 * Max length: 24
 		 * Min length: 24
+		 * Max length: 24
 		 */
 		importID: FormControl<string | null | undefined>,
 
@@ -6438,8 +6443,8 @@ export namespace MyNS {
 
 		/**
 		 * List import errors request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6466,8 +6471,8 @@ export namespace MyNS {
 
 		/**
 		 * List imports request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -6482,8 +6487,8 @@ export namespace MyNS {
 
 		/**
 		 * List imports request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6517,8 +6522,8 @@ export namespace MyNS {
 
 		/**
 		 * List managed accounts request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -6533,8 +6538,8 @@ export namespace MyNS {
 
 		/**
 		 * List managed accounts request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6550,8 +6555,8 @@ export namespace MyNS {
 
 		/**
 		 * Account ID to return when listing source server post migration custom actions.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -6567,16 +6572,16 @@ export namespace MyNS {
 
 		/**
 		 * Next token to use when listing source server post migration custom actions.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 
 		/**
 		 * Source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -6584,8 +6589,8 @@ export namespace MyNS {
 
 		/**
 		 * Account ID to return when listing source server post migration custom actions.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
@@ -6598,16 +6603,16 @@ export namespace MyNS {
 
 		/**
 		 * Next token to use when listing source server post migration custom actions.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -6663,8 +6668,8 @@ export namespace MyNS {
 		/**
 		 * Launch configuration template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: string;
 
@@ -6677,8 +6682,8 @@ export namespace MyNS {
 
 		/**
 		 * Next token to use when listing template post migration custom actions.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -6687,8 +6692,8 @@ export namespace MyNS {
 		/**
 		 * Launch configuration template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: FormControl<string | null | undefined>,
 
@@ -6701,8 +6706,8 @@ export namespace MyNS {
 
 		/**
 		 * Next token to use when listing template post migration custom actions.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6730,8 +6735,8 @@ export namespace MyNS {
 
 		/**
 		 * Request account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -6747,8 +6752,8 @@ export namespace MyNS {
 
 		/**
 		 * Request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken?: string | null;
 	}
@@ -6756,8 +6761,8 @@ export namespace MyNS {
 
 		/**
 		 * Request account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
@@ -6770,8 +6775,8 @@ export namespace MyNS {
 
 		/**
 		 * Request next token.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		nextToken: FormControl<string | null | undefined>,
 	}
@@ -6802,16 +6807,16 @@ export namespace MyNS {
 
 		/**
 		 * Mark as archived by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Mark as archived by Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -6819,16 +6824,16 @@ export namespace MyNS {
 
 		/**
 		 * Mark as archived by Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Mark as archived by Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -6844,16 +6849,16 @@ export namespace MyNS {
 
 		/**
 		 * Pause Replication Request account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Pause Replication Request source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -6861,16 +6866,16 @@ export namespace MyNS {
 
 		/**
 		 * Pause Replication Request account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Pause Replication Request source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -6886,24 +6891,24 @@ export namespace MyNS {
 
 		/**
 		 * Source server post migration custom account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Source server post migration custom action ID.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		actionID: string;
 
 		/**
 		 * Source server post migration custom action name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		actionName: string;
 
@@ -6915,16 +6920,16 @@ export namespace MyNS {
 
 		/**
 		 * Source server post migration custom action description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description?: string | null;
 
 		/**
 		 * Source server post migration custom action document identifier.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		documentIdentifier: string;
 
@@ -6951,8 +6956,8 @@ export namespace MyNS {
 		/**
 		 * Source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 
@@ -6966,24 +6971,24 @@ export namespace MyNS {
 
 		/**
 		 * Source server post migration custom account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Source server post migration custom action ID.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		actionID: FormControl<string | null | undefined>,
 
 		/**
 		 * Source server post migration custom action name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		actionName: FormControl<string | null | undefined>,
 
@@ -6995,16 +7000,16 @@ export namespace MyNS {
 
 		/**
 		 * Source server post migration custom action description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Source server post migration custom action document identifier.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		documentIdentifier: FormControl<string | null | undefined>,
 
@@ -7031,8 +7036,8 @@ export namespace MyNS {
 		/**
 		 * Source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 
@@ -7067,16 +7072,16 @@ export namespace MyNS {
 		/**
 		 * Template post migration custom action ID.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		actionID: string;
 
 		/**
 		 * Template post migration custom action name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		actionName: string;
 
@@ -7088,16 +7093,16 @@ export namespace MyNS {
 
 		/**
 		 * Template post migration custom action description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description?: string | null;
 
 		/**
 		 * Template post migration custom action document identifier.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		documentIdentifier: string;
 
@@ -7110,8 +7115,8 @@ export namespace MyNS {
 		/**
 		 * Launch configuration template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: string;
 
@@ -7143,16 +7148,16 @@ export namespace MyNS {
 		/**
 		 * Template post migration custom action ID.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		actionID: FormControl<string | null | undefined>,
 
 		/**
 		 * Template post migration custom action name.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		actionName: FormControl<string | null | undefined>,
 
@@ -7164,16 +7169,16 @@ export namespace MyNS {
 
 		/**
 		 * Template post migration custom action description.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Template post migration custom action document identifier.
 		 * Required
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		documentIdentifier: FormControl<string | null | undefined>,
 
@@ -7186,8 +7191,8 @@ export namespace MyNS {
 		/**
 		 * Launch configuration template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: FormControl<string | null | undefined>,
 
@@ -7238,24 +7243,24 @@ export namespace MyNS {
 
 		/**
 		 * Source server post migration account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Source server post migration custom action ID to remove.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		actionID: string;
 
 		/**
 		 * Source server ID of the post migration custom action to remove.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -7263,24 +7268,24 @@ export namespace MyNS {
 
 		/**
 		 * Source server post migration account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Source server post migration custom action ID to remove.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		actionID: FormControl<string | null | undefined>,
 
 		/**
 		 * Source server ID of the post migration custom action to remove.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -7298,16 +7303,16 @@ export namespace MyNS {
 		/**
 		 * Template post migration custom action ID to remove.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		actionID: string;
 
 		/**
 		 * Launch configuration template ID of the post migration custom action to remove.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: string;
 	}
@@ -7316,16 +7321,16 @@ export namespace MyNS {
 		/**
 		 * Template post migration custom action ID to remove.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		actionID: FormControl<string | null | undefined>,
 
 		/**
 		 * Launch configuration template ID of the post migration custom action to remove.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: FormControl<string | null | undefined>,
 	}
@@ -7341,16 +7346,16 @@ export namespace MyNS {
 
 		/**
 		 * Resume Replication Request account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Resume Replication Request source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -7358,16 +7363,16 @@ export namespace MyNS {
 
 		/**
 		 * Resume Replication Request account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Resume Replication Request source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -7383,16 +7388,16 @@ export namespace MyNS {
 
 		/**
 		 * Retry data replication for Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Retry data replication for Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -7400,16 +7405,16 @@ export namespace MyNS {
 
 		/**
 		 * Retry data replication for Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Retry data replication for Source Server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -7425,8 +7430,8 @@ export namespace MyNS {
 
 		/**
 		 * Start Cutover by Account IDs
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -7445,8 +7450,8 @@ export namespace MyNS {
 
 		/**
 		 * Start Cutover by Account IDs
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
@@ -7471,8 +7476,8 @@ export namespace MyNS {
 
 		/**
 		 * Start export request s3 bucket owner.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		s3BucketOwner?: string | null;
 
@@ -7492,8 +7497,8 @@ export namespace MyNS {
 
 		/**
 		 * Start export request s3 bucket owner.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		s3BucketOwner: FormControl<string | null | undefined>,
 
@@ -7516,8 +7521,8 @@ export namespace MyNS {
 
 		/**
 		 * Start import request client token.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -7531,8 +7536,8 @@ export namespace MyNS {
 
 		/**
 		 * Start import request client token.
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -7566,16 +7571,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID on which to start replication.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * ID of source server on which to start replication.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -7583,16 +7588,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID on which to start replication.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * ID of source server on which to start replication.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -7608,8 +7613,8 @@ export namespace MyNS {
 
 		/**
 		 * Start Test for Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -7628,8 +7633,8 @@ export namespace MyNS {
 
 		/**
 		 * Start Test for Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
@@ -7648,16 +7653,16 @@ export namespace MyNS {
 
 		/**
 		 * Stop Replication Request account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Stop Replication Request source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -7665,16 +7670,16 @@ export namespace MyNS {
 
 		/**
 		 * Stop Replication Request account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Stop Replication Request source server ID.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -7690,8 +7695,8 @@ export namespace MyNS {
 
 		/**
 		 * Terminate Target instance by Account ID
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -7710,8 +7715,8 @@ export namespace MyNS {
 
 		/**
 		 * Terminate Target instance by Account ID
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
@@ -7730,16 +7735,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: string;
 	}
@@ -7747,16 +7752,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: FormControl<string | null | undefined>,
 	}
@@ -7772,16 +7777,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: string;
 	}
@@ -7789,16 +7794,16 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: FormControl<string | null | undefined>,
 	}
@@ -7814,30 +7819,30 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: string;
 
 		/**
 		 * Application description.
-		 * Max length: 600
 		 * Min length: 0
+		 * Max length: 600
 		 */
 		description?: string | null;
 
 		/**
 		 * Application name.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name?: string | null;
 	}
@@ -7845,30 +7850,30 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Application ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		applicationID: FormControl<string | null | undefined>,
 
 		/**
 		 * Application description.
-		 * Max length: 600
 		 * Min length: 0
+		 * Max length: 600
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Application name.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -7886,8 +7891,8 @@ export namespace MyNS {
 
 		/**
 		 * Update Launch configuration Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -7911,15 +7916,15 @@ export namespace MyNS {
 
 		/**
 		 * Launch configuration map auto tagging MPE ID.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		mapAutoTaggingMpeID?: string | null;
 
 		/**
 		 * Update Launch configuration name request.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -7929,8 +7934,8 @@ export namespace MyNS {
 		/**
 		 * Update Launch configuration by Source Server ID request.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 
@@ -7941,8 +7946,8 @@ export namespace MyNS {
 
 		/**
 		 * Update Launch configuration Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
@@ -7963,23 +7968,23 @@ export namespace MyNS {
 
 		/**
 		 * Launch configuration map auto tagging MPE ID.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		mapAutoTaggingMpeID: FormControl<string | null | undefined>,
 
 		/**
 		 * Update Launch configuration name request.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Update Launch configuration by Source Server ID request.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 
@@ -8061,8 +8066,8 @@ export namespace MyNS {
 		/**
 		 * Launch Configuration Template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: string;
 
@@ -8074,8 +8079,8 @@ export namespace MyNS {
 
 		/**
 		 * Launch configuration template map auto tagging MPE ID.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		mapAutoTaggingMpeID?: string | null;
 
@@ -8114,8 +8119,8 @@ export namespace MyNS {
 		/**
 		 * Launch Configuration Template ID.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		launchConfigurationTemplateID: FormControl<string | null | undefined>,
 
@@ -8124,8 +8129,8 @@ export namespace MyNS {
 
 		/**
 		 * Launch configuration template map auto tagging MPE ID.
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		mapAutoTaggingMpeID: FormControl<string | null | undefined>,
 
@@ -8232,8 +8237,8 @@ export namespace MyNS {
 
 		/**
 		 * Update replication configuration Account ID request.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -8261,15 +8266,15 @@ export namespace MyNS {
 
 		/**
 		 * Update replication configuration EBS encryption key ARN request.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn?: string | null;
 
 		/**
 		 * Update replication configuration name request.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name?: string | null;
 
@@ -8282,8 +8287,8 @@ export namespace MyNS {
 
 		/**
 		 * Update replication configuration Replication Server instance type request.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType?: string | null;
 
@@ -8297,15 +8302,15 @@ export namespace MyNS {
 		/**
 		 * Update replication configuration Source Server ID request.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 
 		/**
 		 * Update replication configuration Staging Area subnet request.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId?: string | null;
 
@@ -8322,8 +8327,8 @@ export namespace MyNS {
 
 		/**
 		 * Update replication configuration Account ID request.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
@@ -8351,37 +8356,37 @@ export namespace MyNS {
 
 		/**
 		 * Update replication configuration EBS encryption key ARN request.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Update replication configuration name request.
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Update replication configuration Replication Server instance type request.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType: FormControl<string | null | undefined>,
 
 		/**
 		 * Update replication configuration Source Server ID request.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 
 		/**
 		 * Update replication configuration Staging Area subnet request.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId: FormControl<string | null | undefined>,
 
@@ -8419,8 +8424,8 @@ export namespace MyNS {
 
 		/**
 		 * Update replication configuration template ARN request.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		arn?: string | null;
 
@@ -8448,23 +8453,23 @@ export namespace MyNS {
 
 		/**
 		 * Update replication configuration template EBS encryption key ARN request.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn?: string | null;
 
 		/**
 		 * Update replication configuration template template ID request.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		replicationConfigurationTemplateID: string;
 
 		/**
 		 * Update replication configuration template Replication Server instance type request.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType?: string | null;
 
@@ -8477,8 +8482,8 @@ export namespace MyNS {
 
 		/**
 		 * Update replication configuration template Staging Area subnet ID request.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId?: string | null;
 
@@ -8495,8 +8500,8 @@ export namespace MyNS {
 
 		/**
 		 * Update replication configuration template ARN request.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		arn: FormControl<string | null | undefined>,
 
@@ -8524,30 +8529,30 @@ export namespace MyNS {
 
 		/**
 		 * Update replication configuration template EBS encryption key ARN request.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ebsEncryptionKeyArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Update replication configuration template template ID request.
 		 * Required
-		 * Max length: 21
 		 * Min length: 21
+		 * Max length: 21
 		 */
 		replicationConfigurationTemplateID: FormControl<string | null | undefined>,
 
 		/**
 		 * Update replication configuration template Replication Server instance type request.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		replicationServerInstanceType: FormControl<string | null | undefined>,
 
 		/**
 		 * Update replication configuration template Staging Area subnet ID request.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		stagingAreaSubnetId: FormControl<string | null | undefined>,
 
@@ -8584,8 +8589,8 @@ export namespace MyNS {
 
 		/**
 		 * Account ID on which to update replication type.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
@@ -8598,8 +8603,8 @@ export namespace MyNS {
 		/**
 		 * ID of source server on which to update replication type.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: string;
 	}
@@ -8607,8 +8612,8 @@ export namespace MyNS {
 
 		/**
 		 * Account ID on which to update replication type.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
@@ -8621,8 +8626,8 @@ export namespace MyNS {
 		/**
 		 * ID of source server on which to update replication type.
 		 * Required
-		 * Max length: 19
 		 * Min length: 19
+		 * Max length: 19
 		 */
 		sourceServerID: FormControl<string | null | undefined>,
 	}
@@ -8639,30 +8644,30 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID?: string | null;
 
 		/**
 		 * Wave description.
-		 * Max length: 600
 		 * Min length: 0
+		 * Max length: 600
 		 */
 		description?: string | null;
 
 		/**
 		 * Wave name.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name?: string | null;
 
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: string;
 	}
@@ -8670,30 +8675,30 @@ export namespace MyNS {
 
 		/**
 		 * Account ID.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		accountID: FormControl<string | null | undefined>,
 
 		/**
 		 * Wave description.
-		 * Max length: 600
 		 * Min length: 0
+		 * Max length: 600
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Wave name.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Wave ID.
 		 * Required
-		 * Max length: 22
 		 * Min length: 22
+		 * Max length: 22
 		 */
 		waveID: FormControl<string | null | undefined>,
 	}

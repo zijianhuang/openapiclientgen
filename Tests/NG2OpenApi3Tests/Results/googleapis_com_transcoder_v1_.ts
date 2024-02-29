@@ -126,20 +126,32 @@ export namespace MyNS {
 	/** 2D normalized coordinates. Default: `{0.0, 0.0}` */
 	export interface NormalizedCoordinate {
 
-		/** Normalized x coordinate. */
+		/**
+		 * Normalized x coordinate.
+		 * Type: double
+		 */
 		x?: number | null;
 
-		/** Normalized y coordinate. */
+		/**
+		 * Normalized y coordinate.
+		 * Type: double
+		 */
 		y?: number | null;
 	}
 
 	/** 2D normalized coordinates. Default: `{0.0, 0.0}` */
 	export interface NormalizedCoordinateFormProperties {
 
-		/** Normalized x coordinate. */
+		/**
+		 * Normalized x coordinate.
+		 * Type: double
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Normalized y coordinate. */
+		/**
+		 * Normalized y coordinate.
+		 * Type: double
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateNormalizedCoordinateFormGroup() {
@@ -184,7 +196,10 @@ export namespace MyNS {
 		/** Enable boosting low frequency components. The default is `false`. **Note:** This field is not supported. */
 		lowBoost?: boolean | null;
 
-		/** Specify audio loudness normalization in loudness units relative to full scale (LUFS). Enter a value between -24 and 0 (the default), where: * -24 is the Advanced Television Systems Committee (ATSC A/85) standard * -23 is the EU R128 broadcast standard * -19 is the prior standard for online mono audio * -18 is the ReplayGain standard * -16 is the prior standard for stereo audio * -14 is the new online audio standard recommended by Spotify, as well as Amazon Echo * 0 disables normalization */
+		/**
+		 * Specify audio loudness normalization in loudness units relative to full scale (LUFS). Enter a value between -24 and 0 (the default), where: * -24 is the Advanced Television Systems Committee (ATSC A/85) standard * -23 is the EU R128 broadcast standard * -19 is the prior standard for online mono audio * -18 is the ReplayGain standard * -16 is the prior standard for stereo audio * -14 is the new online audio standard recommended by Spotify, as well as Amazon Echo * 0 disables normalization
+		 * Type: double
+		 */
 		lufs?: number | null;
 	}
 
@@ -197,7 +212,10 @@ export namespace MyNS {
 		/** Enable boosting low frequency components. The default is `false`. **Note:** This field is not supported. */
 		lowBoost: FormControl<boolean | null | undefined>,
 
-		/** Specify audio loudness normalization in loudness units relative to full scale (LUFS). Enter a value between -24 and 0 (the default), where: * -24 is the Advanced Television Systems Committee (ATSC A/85) standard * -23 is the EU R128 broadcast standard * -19 is the prior standard for online mono audio * -18 is the ReplayGain standard * -16 is the prior standard for stereo audio * -14 is the new online audio standard recommended by Spotify, as well as Amazon Echo * 0 disables normalization */
+		/**
+		 * Specify audio loudness normalization in loudness units relative to full scale (LUFS). Enter a value between -24 and 0 (the default), where: * -24 is the Advanced Television Systems Committee (ATSC A/85) standard * -23 is the EU R128 broadcast standard * -19 is the prior standard for online mono audio * -18 is the ReplayGain standard * -16 is the prior standard for stereo audio * -14 is the new online audio standard recommended by Spotify, as well as Amazon Echo * 0 disables normalization
+		 * Type: double
+		 */
 		lufs: FormControl<number | null | undefined>,
 	}
 	export function CreateAudioFormGroup() {
@@ -216,19 +234,31 @@ export namespace MyNS {
 		/** Required. The EditAtom.key that references the atom with audio inputs in the JobConfig.edit_list. */
 		atomKey?: string | null;
 
-		/** Audio volume control in dB. Negative values decrease volume, positive values increase. The default is 0. */
+		/**
+		 * Audio volume control in dB. Negative values decrease volume, positive values increase. The default is 0.
+		 * Type: double
+		 */
 		gainDb?: number | null;
 
-		/** Required. The zero-based index of the channel in the input audio stream. */
+		/**
+		 * Required. The zero-based index of the channel in the input audio stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputChannel?: number | null;
 
 		/** Required. The Input.key that identifies the input file. */
 		inputKey?: string | null;
 
-		/** Required. The zero-based index of the track in the input file. */
+		/**
+		 * Required. The zero-based index of the track in the input file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputTrack?: number | null;
 
-		/** Required. The zero-based index of the channel in the output audio stream. */
+		/**
+		 * Required. The zero-based index of the channel in the output audio stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outputChannel?: number | null;
 	}
 
@@ -238,19 +268,31 @@ export namespace MyNS {
 		/** Required. The EditAtom.key that references the atom with audio inputs in the JobConfig.edit_list. */
 		atomKey: FormControl<string | null | undefined>,
 
-		/** Audio volume control in dB. Negative values decrease volume, positive values increase. The default is 0. */
+		/**
+		 * Audio volume control in dB. Negative values decrease volume, positive values increase. The default is 0.
+		 * Type: double
+		 */
 		gainDb: FormControl<number | null | undefined>,
 
-		/** Required. The zero-based index of the channel in the input audio stream. */
+		/**
+		 * Required. The zero-based index of the channel in the input audio stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputChannel: FormControl<number | null | undefined>,
 
 		/** Required. The Input.key that identifies the input file. */
 		inputKey: FormControl<string | null | undefined>,
 
-		/** Required. The zero-based index of the track in the input file. */
+		/**
+		 * Required. The zero-based index of the track in the input file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputTrack: FormControl<number | null | undefined>,
 
-		/** Required. The zero-based index of the channel in the output audio stream. */
+		/**
+		 * Required. The zero-based index of the channel in the output audio stream.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		outputChannel: FormControl<number | null | undefined>,
 	}
 	export function CreateAudioMappingFormGroup() {
@@ -269,10 +311,16 @@ export namespace MyNS {
 	/** Audio stream resource. */
 	export interface AudioStream {
 
-		/** Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000. */
+		/**
+		 * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrateBps?: number | null;
 
-		/** Number of audio channels. Must be between 1 and 6. The default is 2. */
+		/**
+		 * Number of audio channels. Must be between 1 and 6. The default is 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelCount?: number | null;
 
 		/** A list of channel names specifying layout of the audio channels. This only affects the metadata embedded in the container headers, if supported by the specified format. The default is `["fl", "fr"]`. Supported channel names: - `fl` - Front left channel - `fr` - Front right channel - `sl` - Side left channel - `sr` - Side right channel - `fc` - Front center channel - `lfe` - Low frequency */
@@ -290,17 +338,26 @@ export namespace MyNS {
 		/** The mapping for the JobConfig.edit_list atoms with audio EditAtom.inputs. */
 		mapping?: Array<AudioMapping>;
 
-		/** The audio sample rate in Hertz. The default is 48000 Hertz. */
+		/**
+		 * The audio sample rate in Hertz. The default is 48000 Hertz.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz?: number | null;
 	}
 
 	/** Audio stream resource. */
 	export interface AudioStreamFormProperties {
 
-		/** Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000. */
+		/**
+		 * Required. Audio bitrate in bits per second. Must be between 1 and 10,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrateBps: FormControl<number | null | undefined>,
 
-		/** Number of audio channels. Must be between 1 and 6. The default is 2. */
+		/**
+		 * Number of audio channels. Must be between 1 and 6. The default is 2.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		channelCount: FormControl<number | null | undefined>,
 
 		/** The codec for this audio stream. The default is `aac`. Supported audio codecs: - `aac` - `aac-he` - `aac-he-v2` - `mp3` - `ac3` - `eac3` */
@@ -312,7 +369,10 @@ export namespace MyNS {
 		/** The BCP-47 language code, such as `en-US` or `sr-Latn`. For more information, see https://www.unicode.org/reports/tr35/#Unicode_locale_identifier. Not supported in MP4 files. */
 		languageCode: FormControl<string | null | undefined>,
 
-		/** The audio sample rate in Hertz. The default is 48000 Hertz. */
+		/**
+		 * The audio sample rate in Hertz. The default is 48000 Hertz.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sampleRateHertz: FormControl<number | null | undefined>,
 	}
 	export function CreateAudioStreamFormGroup() {
@@ -380,26 +440,44 @@ export namespace MyNS {
 	/** Color preprocessing configuration. **Note:** This configuration is not supported. */
 	export interface Color {
 
-		/** Control brightness of the video. Enter a value between -1 and 1, where -1 is minimum brightness and 1 is maximum brightness. 0 is no change. The default is 0. */
+		/**
+		 * Control brightness of the video. Enter a value between -1 and 1, where -1 is minimum brightness and 1 is maximum brightness. 0 is no change. The default is 0.
+		 * Type: double
+		 */
 		brightness?: number | null;
 
-		/** Control black and white contrast of the video. Enter a value between -1 and 1, where -1 is minimum contrast and 1 is maximum contrast. 0 is no change. The default is 0. */
+		/**
+		 * Control black and white contrast of the video. Enter a value between -1 and 1, where -1 is minimum contrast and 1 is maximum contrast. 0 is no change. The default is 0.
+		 * Type: double
+		 */
 		contrast?: number | null;
 
-		/** Control color saturation of the video. Enter a value between -1 and 1, where -1 is fully desaturated and 1 is maximum saturation. 0 is no change. The default is 0. */
+		/**
+		 * Control color saturation of the video. Enter a value between -1 and 1, where -1 is fully desaturated and 1 is maximum saturation. 0 is no change. The default is 0.
+		 * Type: double
+		 */
 		saturation?: number | null;
 	}
 
 	/** Color preprocessing configuration. **Note:** This configuration is not supported. */
 	export interface ColorFormProperties {
 
-		/** Control brightness of the video. Enter a value between -1 and 1, where -1 is minimum brightness and 1 is maximum brightness. 0 is no change. The default is 0. */
+		/**
+		 * Control brightness of the video. Enter a value between -1 and 1, where -1 is minimum brightness and 1 is maximum brightness. 0 is no change. The default is 0.
+		 * Type: double
+		 */
 		brightness: FormControl<number | null | undefined>,
 
-		/** Control black and white contrast of the video. Enter a value between -1 and 1, where -1 is minimum contrast and 1 is maximum contrast. 0 is no change. The default is 0. */
+		/**
+		 * Control black and white contrast of the video. Enter a value between -1 and 1, where -1 is minimum contrast and 1 is maximum contrast. 0 is no change. The default is 0.
+		 * Type: double
+		 */
 		contrast: FormControl<number | null | undefined>,
 
-		/** Control color saturation of the video. Enter a value between -1 and 1, where -1 is fully desaturated and 1 is maximum saturation. 0 is no change. The default is 0. */
+		/**
+		 * Control color saturation of the video. Enter a value between -1 and 1, where -1 is fully desaturated and 1 is maximum saturation. 0 is no change. The default is 0.
+		 * Type: double
+		 */
 		saturation: FormControl<number | null | undefined>,
 	}
 	export function CreateColorFormGroup() {
@@ -415,32 +493,56 @@ export namespace MyNS {
 	/** Video cropping configuration for the input video. The cropped input video is scaled to match the output resolution. */
 	export interface Crop {
 
-		/** The number of pixels to crop from the bottom. The default is 0. */
+		/**
+		 * The number of pixels to crop from the bottom. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bottomPixels?: number | null;
 
-		/** The number of pixels to crop from the left. The default is 0. */
+		/**
+		 * The number of pixels to crop from the left. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leftPixels?: number | null;
 
-		/** The number of pixels to crop from the right. The default is 0. */
+		/**
+		 * The number of pixels to crop from the right. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rightPixels?: number | null;
 
-		/** The number of pixels to crop from the top. The default is 0. */
+		/**
+		 * The number of pixels to crop from the top. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topPixels?: number | null;
 	}
 
 	/** Video cropping configuration for the input video. The cropped input video is scaled to match the output resolution. */
 	export interface CropFormProperties {
 
-		/** The number of pixels to crop from the bottom. The default is 0. */
+		/**
+		 * The number of pixels to crop from the bottom. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bottomPixels: FormControl<number | null | undefined>,
 
-		/** The number of pixels to crop from the left. The default is 0. */
+		/**
+		 * The number of pixels to crop from the left. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leftPixels: FormControl<number | null | undefined>,
 
-		/** The number of pixels to crop from the right. The default is 0. */
+		/**
+		 * The number of pixels to crop from the right. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rightPixels: FormControl<number | null | undefined>,
 
-		/** The number of pixels to crop from the top. The default is 0. */
+		/**
+		 * The number of pixels to crop from the top. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topPixels: FormControl<number | null | undefined>,
 	}
 	export function CreateCropFormGroup() {
@@ -483,7 +585,10 @@ export namespace MyNS {
 		/** Enable deblocker. The default is `false`. */
 		enabled?: boolean | null;
 
-		/** Set strength of the deblocker. Enter a value between 0 and 1. The higher the value, the stronger the block removal. 0 is no deblocking. The default is 0. */
+		/**
+		 * Set strength of the deblocker. Enter a value between 0 and 1. The higher the value, the stronger the block removal. 0 is no deblocking. The default is 0.
+		 * Type: double
+		 */
 		strength?: number | null;
 	}
 
@@ -493,7 +598,10 @@ export namespace MyNS {
 		/** Enable deblocker. The default is `false`. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Set strength of the deblocker. Enter a value between 0 and 1. The higher the value, the stronger the block removal. 0 is no deblocking. The default is 0. */
+		/**
+		 * Set strength of the deblocker. Enter a value between 0 and 1. The higher the value, the stronger the block removal. 0 is no deblocking. The default is 0.
+		 * Type: double
+		 */
 		strength: FormControl<number | null | undefined>,
 	}
 	export function CreateDeblockFormGroup() {
@@ -570,7 +678,10 @@ export namespace MyNS {
 	/** Denoise preprocessing configuration. **Note:** This configuration is not supported. */
 	export interface Denoise {
 
-		/** Set strength of the denoise. Enter a value between 0 and 1. The higher the value, the smoother the image. 0 is no denoising. The default is 0. */
+		/**
+		 * Set strength of the denoise. Enter a value between 0 and 1. The higher the value, the smoother the image. 0 is no denoising. The default is 0.
+		 * Type: double
+		 */
 		strength?: number | null;
 
 		/** Set the denoiser mode. The default is `standard`. Supported denoiser modes: - `standard` - `grain` */
@@ -580,7 +691,10 @@ export namespace MyNS {
 	/** Denoise preprocessing configuration. **Note:** This configuration is not supported. */
 	export interface DenoiseFormProperties {
 
-		/** Set strength of the denoise. Enter a value between 0 and 1. The higher the value, the smoother the image. 0 is no denoising. The default is 0. */
+		/**
+		 * Set strength of the denoise. Enter a value between 0 and 1. The higher the value, the smoother the image. 0 is no denoising. The default is 0.
+		 * Type: double
+		 */
 		strength: FormControl<number | null | undefined>,
 
 		/** Set the denoiser mode. The default is `standard`. Supported denoiser modes: - `standard` - `grain` */
@@ -778,7 +892,10 @@ export namespace MyNS {
 		/** Required. The Input.key that identifies the input file. */
 		inputKey?: string | null;
 
-		/** Required. The zero-based index of the track in the input file. */
+		/**
+		 * Required. The zero-based index of the track in the input file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputTrack?: number | null;
 	}
 
@@ -791,7 +908,10 @@ export namespace MyNS {
 		/** Required. The Input.key that identifies the input file. */
 		inputKey: FormControl<string | null | undefined>,
 
-		/** Required. The zero-based index of the track in the input file. */
+		/**
+		 * Required. The zero-based index of the track in the input file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		inputTrack: FormControl<number | null | undefined>,
 	}
 	export function CreateTextMappingFormGroup() {
@@ -833,19 +953,31 @@ export namespace MyNS {
 		/** Specifies whether an open Group of Pictures (GOP) structure should be allowed or not. The default is `false`. */
 		allowOpenGop?: boolean | null;
 
-		/** Specify the intensity of the adaptive quantizer (AQ). Must be between 0 and 1, where 0 disables the quantizer and 1 maximizes the quantizer. A higher value equals a lower bitrate but smoother image. The default is 0. */
+		/**
+		 * Specify the intensity of the adaptive quantizer (AQ). Must be between 0 and 1, where 0 disables the quantizer and 1 maximizes the quantizer. A higher value equals a lower bitrate but smoother image. The default is 0.
+		 * Type: double
+		 */
 		aqStrength?: number | null;
 
-		/** The number of consecutive B-frames. Must be greater than or equal to zero. Must be less than H264CodecSettings.gop_frame_count if set. The default is 0. */
+		/**
+		 * The number of consecutive B-frames. Must be greater than or equal to zero. Must be less than H264CodecSettings.gop_frame_count if set. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bFrameCount?: number | null;
 
 		/** Allow B-pyramid for reference frame selection. This may not be supported on all decoders. The default is `false`. */
 		bPyramid?: boolean | null;
 
-		/** Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 800,000,000. */
+		/**
+		 * Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 800,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrateBps?: number | null;
 
-		/** Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21. */
+		/**
+		 * Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crfLevel?: number | null;
 
 		/** Use two-pass encoding strategy to achieve better video quality. H264CodecSettings.rate_control_mode must be `vbr`. The default is `false`. */
@@ -854,16 +986,25 @@ export namespace MyNS {
 		/** The entropy coder to use. The default is `cabac`. Supported entropy coders: - `cavlc` - `cabac` */
 		entropyCoder?: string | null;
 
-		/** Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information. */
+		/**
+		 * Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information.
+		 * Type: double
+		 */
 		frameRate?: number | null;
 
 		/** Select the GOP size based on the specified duration. The default is `3s`. Note that `gopDuration` must be less than or equal to [`segmentDuration`](#SegmentSettings), and [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`. */
 		gopDuration?: string | null;
 
-		/** Select the GOP size based on the specified frame count. Must be greater than zero. */
+		/**
+		 * Select the GOP size based on the specified frame count. Must be greater than zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gopFrameCount?: number | null;
 
-		/** The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPixels?: number | null;
 
 		/** Pixel format to use. The default is `yuv420p`. Supported pixel formats: - `yuv420p` pixel format - `yuv422p` pixel format - `yuv444p` pixel format - `yuv420p10` 10-bit HDR pixel format - `yuv422p10` 10-bit HDR pixel format - `yuv444p10` 10-bit HDR pixel format - `yuv420p12` 12-bit HDR pixel format - `yuv422p12` 12-bit HDR pixel format - `yuv444p12` 12-bit HDR pixel format */
@@ -881,13 +1022,22 @@ export namespace MyNS {
 		/** Enforces the specified codec tune. The available options are [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune). Note that certain values for this field may cause the transcoder to override other fields you set in the `H264CodecSettings` message. */
 		tune?: string | null;
 
-		/** Initial fullness of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to 90% of H264CodecSettings.vbv_size_bits. */
+		/**
+		 * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to 90% of H264CodecSettings.vbv_size_bits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vbvFullnessBits?: number | null;
 
-		/** Size of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to H264CodecSettings.bitrate_bps. */
+		/**
+		 * Size of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to H264CodecSettings.bitrate_bps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vbvSizeBits?: number | null;
 
-		/** The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPixels?: number | null;
 	}
 
@@ -897,19 +1047,31 @@ export namespace MyNS {
 		/** Specifies whether an open Group of Pictures (GOP) structure should be allowed or not. The default is `false`. */
 		allowOpenGop: FormControl<boolean | null | undefined>,
 
-		/** Specify the intensity of the adaptive quantizer (AQ). Must be between 0 and 1, where 0 disables the quantizer and 1 maximizes the quantizer. A higher value equals a lower bitrate but smoother image. The default is 0. */
+		/**
+		 * Specify the intensity of the adaptive quantizer (AQ). Must be between 0 and 1, where 0 disables the quantizer and 1 maximizes the quantizer. A higher value equals a lower bitrate but smoother image. The default is 0.
+		 * Type: double
+		 */
 		aqStrength: FormControl<number | null | undefined>,
 
-		/** The number of consecutive B-frames. Must be greater than or equal to zero. Must be less than H264CodecSettings.gop_frame_count if set. The default is 0. */
+		/**
+		 * The number of consecutive B-frames. Must be greater than or equal to zero. Must be less than H264CodecSettings.gop_frame_count if set. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bFrameCount: FormControl<number | null | undefined>,
 
 		/** Allow B-pyramid for reference frame selection. This may not be supported on all decoders. The default is `false`. */
 		bPyramid: FormControl<boolean | null | undefined>,
 
-		/** Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 800,000,000. */
+		/**
+		 * Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 800,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrateBps: FormControl<number | null | undefined>,
 
-		/** Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21. */
+		/**
+		 * Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crfLevel: FormControl<number | null | undefined>,
 
 		/** Use two-pass encoding strategy to achieve better video quality. H264CodecSettings.rate_control_mode must be `vbr`. The default is `false`. */
@@ -918,16 +1080,25 @@ export namespace MyNS {
 		/** The entropy coder to use. The default is `cabac`. Supported entropy coders: - `cavlc` - `cabac` */
 		entropyCoder: FormControl<string | null | undefined>,
 
-		/** Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information. */
+		/**
+		 * Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information.
+		 * Type: double
+		 */
 		frameRate: FormControl<number | null | undefined>,
 
 		/** Select the GOP size based on the specified duration. The default is `3s`. Note that `gopDuration` must be less than or equal to [`segmentDuration`](#SegmentSettings), and [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`. */
 		gopDuration: FormControl<string | null | undefined>,
 
-		/** Select the GOP size based on the specified frame count. Must be greater than zero. */
+		/**
+		 * Select the GOP size based on the specified frame count. Must be greater than zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gopFrameCount: FormControl<number | null | undefined>,
 
-		/** The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPixels: FormControl<number | null | undefined>,
 
 		/** Pixel format to use. The default is `yuv420p`. Supported pixel formats: - `yuv420p` pixel format - `yuv422p` pixel format - `yuv444p` pixel format - `yuv420p10` 10-bit HDR pixel format - `yuv422p10` 10-bit HDR pixel format - `yuv444p10` 10-bit HDR pixel format - `yuv420p12` 12-bit HDR pixel format - `yuv422p12` 12-bit HDR pixel format - `yuv444p12` 12-bit HDR pixel format */
@@ -945,13 +1116,22 @@ export namespace MyNS {
 		/** Enforces the specified codec tune. The available options are [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.264#Tune). Note that certain values for this field may cause the transcoder to override other fields you set in the `H264CodecSettings` message. */
 		tune: FormControl<string | null | undefined>,
 
-		/** Initial fullness of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to 90% of H264CodecSettings.vbv_size_bits. */
+		/**
+		 * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to 90% of H264CodecSettings.vbv_size_bits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vbvFullnessBits: FormControl<number | null | undefined>,
 
-		/** Size of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to H264CodecSettings.bitrate_bps. */
+		/**
+		 * Size of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to H264CodecSettings.bitrate_bps.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vbvSizeBits: FormControl<number | null | undefined>,
 
-		/** The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPixels: FormControl<number | null | undefined>,
 	}
 	export function CreateH264CodecSettingsFormGroup() {
@@ -987,34 +1167,55 @@ export namespace MyNS {
 		/** Specifies whether an open Group of Pictures (GOP) structure should be allowed or not. The default is `false`. */
 		allowOpenGop?: boolean | null;
 
-		/** Specify the intensity of the adaptive quantizer (AQ). Must be between 0 and 1, where 0 disables the quantizer and 1 maximizes the quantizer. A higher value equals a lower bitrate but smoother image. The default is 0. */
+		/**
+		 * Specify the intensity of the adaptive quantizer (AQ). Must be between 0 and 1, where 0 disables the quantizer and 1 maximizes the quantizer. A higher value equals a lower bitrate but smoother image. The default is 0.
+		 * Type: double
+		 */
 		aqStrength?: number | null;
 
-		/** The number of consecutive B-frames. Must be greater than or equal to zero. Must be less than H265CodecSettings.gop_frame_count if set. The default is 0. */
+		/**
+		 * The number of consecutive B-frames. Must be greater than or equal to zero. Must be less than H265CodecSettings.gop_frame_count if set. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bFrameCount?: number | null;
 
 		/** Allow B-pyramid for reference frame selection. This may not be supported on all decoders. The default is `false`. */
 		bPyramid?: boolean | null;
 
-		/** Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 800,000,000. */
+		/**
+		 * Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 800,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrateBps?: number | null;
 
-		/** Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21. */
+		/**
+		 * Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crfLevel?: number | null;
 
 		/** Use two-pass encoding strategy to achieve better video quality. H265CodecSettings.rate_control_mode must be `vbr`. The default is `false`. */
 		enableTwoPass?: boolean | null;
 
-		/** Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information. */
+		/**
+		 * Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information.
+		 * Type: double
+		 */
 		frameRate?: number | null;
 
 		/** Select the GOP size based on the specified duration. The default is `3s`. Note that `gopDuration` must be less than or equal to [`segmentDuration`](#SegmentSettings), and [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`. */
 		gopDuration?: string | null;
 
-		/** Select the GOP size based on the specified frame count. Must be greater than zero. */
+		/**
+		 * Select the GOP size based on the specified frame count. Must be greater than zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gopFrameCount?: number | null;
 
-		/** The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPixels?: number | null;
 
 		/** Pixel format to use. The default is `yuv420p`. Supported pixel formats: - `yuv420p` pixel format - `yuv422p` pixel format - `yuv444p` pixel format - `yuv420p10` 10-bit HDR pixel format - `yuv422p10` 10-bit HDR pixel format - `yuv444p10` 10-bit HDR pixel format - `yuv420p12` 12-bit HDR pixel format - `yuv422p12` 12-bit HDR pixel format - `yuv444p12` 12-bit HDR pixel format */
@@ -1032,13 +1233,22 @@ export namespace MyNS {
 		/** Enforces the specified codec tune. The available options are [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265). Note that certain values for this field may cause the transcoder to override other fields you set in the `H265CodecSettings` message. */
 		tune?: string | null;
 
-		/** Initial fullness of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to 90% of H265CodecSettings.vbv_size_bits. */
+		/**
+		 * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to 90% of H265CodecSettings.vbv_size_bits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vbvFullnessBits?: number | null;
 
-		/** Size of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to `VideoStream.bitrate_bps`. */
+		/**
+		 * Size of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to `VideoStream.bitrate_bps`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vbvSizeBits?: number | null;
 
-		/** The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPixels?: number | null;
 	}
 
@@ -1048,34 +1258,55 @@ export namespace MyNS {
 		/** Specifies whether an open Group of Pictures (GOP) structure should be allowed or not. The default is `false`. */
 		allowOpenGop: FormControl<boolean | null | undefined>,
 
-		/** Specify the intensity of the adaptive quantizer (AQ). Must be between 0 and 1, where 0 disables the quantizer and 1 maximizes the quantizer. A higher value equals a lower bitrate but smoother image. The default is 0. */
+		/**
+		 * Specify the intensity of the adaptive quantizer (AQ). Must be between 0 and 1, where 0 disables the quantizer and 1 maximizes the quantizer. A higher value equals a lower bitrate but smoother image. The default is 0.
+		 * Type: double
+		 */
 		aqStrength: FormControl<number | null | undefined>,
 
-		/** The number of consecutive B-frames. Must be greater than or equal to zero. Must be less than H265CodecSettings.gop_frame_count if set. The default is 0. */
+		/**
+		 * The number of consecutive B-frames. Must be greater than or equal to zero. Must be less than H265CodecSettings.gop_frame_count if set. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bFrameCount: FormControl<number | null | undefined>,
 
 		/** Allow B-pyramid for reference frame selection. This may not be supported on all decoders. The default is `false`. */
 		bPyramid: FormControl<boolean | null | undefined>,
 
-		/** Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 800,000,000. */
+		/**
+		 * Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 800,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrateBps: FormControl<number | null | undefined>,
 
-		/** Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21. */
+		/**
+		 * Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crfLevel: FormControl<number | null | undefined>,
 
 		/** Use two-pass encoding strategy to achieve better video quality. H265CodecSettings.rate_control_mode must be `vbr`. The default is `false`. */
 		enableTwoPass: FormControl<boolean | null | undefined>,
 
-		/** Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information. */
+		/**
+		 * Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information.
+		 * Type: double
+		 */
 		frameRate: FormControl<number | null | undefined>,
 
 		/** Select the GOP size based on the specified duration. The default is `3s`. Note that `gopDuration` must be less than or equal to [`segmentDuration`](#SegmentSettings), and [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`. */
 		gopDuration: FormControl<string | null | undefined>,
 
-		/** Select the GOP size based on the specified frame count. Must be greater than zero. */
+		/**
+		 * Select the GOP size based on the specified frame count. Must be greater than zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gopFrameCount: FormControl<number | null | undefined>,
 
-		/** The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPixels: FormControl<number | null | undefined>,
 
 		/** Pixel format to use. The default is `yuv420p`. Supported pixel formats: - `yuv420p` pixel format - `yuv422p` pixel format - `yuv444p` pixel format - `yuv420p10` 10-bit HDR pixel format - `yuv422p10` 10-bit HDR pixel format - `yuv444p10` 10-bit HDR pixel format - `yuv420p12` 12-bit HDR pixel format - `yuv422p12` 12-bit HDR pixel format - `yuv444p12` 12-bit HDR pixel format */
@@ -1093,13 +1324,22 @@ export namespace MyNS {
 		/** Enforces the specified codec tune. The available options are [FFmpeg-compatible](https://trac.ffmpeg.org/wiki/Encode/H.265). Note that certain values for this field may cause the transcoder to override other fields you set in the `H265CodecSettings` message. */
 		tune: FormControl<string | null | undefined>,
 
-		/** Initial fullness of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to 90% of H265CodecSettings.vbv_size_bits. */
+		/**
+		 * Initial fullness of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to 90% of H265CodecSettings.vbv_size_bits.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vbvFullnessBits: FormControl<number | null | undefined>,
 
-		/** Size of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to `VideoStream.bitrate_bps`. */
+		/**
+		 * Size of the Video Buffering Verifier (VBV) buffer in bits. Must be greater than zero. The default is equal to `VideoStream.bitrate_bps`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		vbvSizeBits: FormControl<number | null | undefined>,
 
-		/** The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPixels: FormControl<number | null | undefined>,
 	}
 	export function CreateH265CodecSettingsFormGroup() {
@@ -1131,22 +1371,37 @@ export namespace MyNS {
 	/** VP9 codec settings. */
 	export interface Vp9CodecSettings {
 
-		/** Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 480,000,000. */
+		/**
+		 * Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 480,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrateBps?: number | null;
 
-		/** Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21. **Note:** This field is not supported. */
+		/**
+		 * Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21. **Note:** This field is not supported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crfLevel?: number | null;
 
-		/** Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information. */
+		/**
+		 * Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information.
+		 * Type: double
+		 */
 		frameRate?: number | null;
 
 		/** Select the GOP size based on the specified duration. The default is `3s`. Note that `gopDuration` must be less than or equal to [`segmentDuration`](#SegmentSettings), and [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`. */
 		gopDuration?: string | null;
 
-		/** Select the GOP size based on the specified frame count. Must be greater than zero. */
+		/**
+		 * Select the GOP size based on the specified frame count. Must be greater than zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gopFrameCount?: number | null;
 
-		/** The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPixels?: number | null;
 
 		/** Pixel format to use. The default is `yuv420p`. Supported pixel formats: - `yuv420p` pixel format - `yuv422p` pixel format - `yuv444p` pixel format - `yuv420p10` 10-bit HDR pixel format - `yuv422p10` 10-bit HDR pixel format - `yuv444p10` 10-bit HDR pixel format - `yuv420p12` 12-bit HDR pixel format - `yuv422p12` 12-bit HDR pixel format - `yuv444p12` 12-bit HDR pixel format */
@@ -1158,29 +1413,47 @@ export namespace MyNS {
 		/** Specify the mode. The default is `vbr`. Supported rate control modes: - `vbr` - variable bitrate */
 		rateControlMode?: string | null;
 
-		/** The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPixels?: number | null;
 	}
 
 	/** VP9 codec settings. */
 	export interface Vp9CodecSettingsFormProperties {
 
-		/** Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 480,000,000. */
+		/**
+		 * Required. The video bitrate in bits per second. The minimum value is 1,000. The maximum value is 480,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bitrateBps: FormControl<number | null | undefined>,
 
-		/** Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21. **Note:** This field is not supported. */
+		/**
+		 * Target CRF level. Must be between 10 and 36, where 10 is the highest quality and 36 is the most efficient compression. The default is 21. **Note:** This field is not supported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crfLevel: FormControl<number | null | undefined>,
 
-		/** Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information. */
+		/**
+		 * Required. The target video frame rate in frames per second (FPS). Must be less than or equal to 120. Will default to the input frame rate if larger than the input frame rate. The API will generate an output FPS that is divisible by the input FPS, and smaller or equal to the target FPS. See [Calculating frame rate](https://cloud.google.com/transcoder/docs/concepts/frame-rate) for more information.
+		 * Type: double
+		 */
 		frameRate: FormControl<number | null | undefined>,
 
 		/** Select the GOP size based on the specified duration. The default is `3s`. Note that `gopDuration` must be less than or equal to [`segmentDuration`](#SegmentSettings), and [`segmentDuration`](#SegmentSettings) must be divisible by `gopDuration`. */
 		gopDuration: FormControl<string | null | undefined>,
 
-		/** Select the GOP size based on the specified frame count. Must be greater than zero. */
+		/**
+		 * Select the GOP size based on the specified frame count. Must be greater than zero.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gopFrameCount: FormControl<number | null | undefined>,
 
-		/** The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The height of the video in pixels. Must be an even integer. When not specified, the height is adjusted to match the specified width and input aspect ratio. If both are omitted, the input height is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		heightPixels: FormControl<number | null | undefined>,
 
 		/** Pixel format to use. The default is `yuv420p`. Supported pixel formats: - `yuv420p` pixel format - `yuv422p` pixel format - `yuv444p` pixel format - `yuv420p10` 10-bit HDR pixel format - `yuv422p10` 10-bit HDR pixel format - `yuv444p10` 10-bit HDR pixel format - `yuv420p12` 12-bit HDR pixel format - `yuv422p12` 12-bit HDR pixel format - `yuv444p12` 12-bit HDR pixel format */
@@ -1192,7 +1465,10 @@ export namespace MyNS {
 		/** Specify the mode. The default is `vbr`. Supported rate control modes: - `vbr` - variable bitrate */
 		rateControlMode: FormControl<string | null | undefined>,
 
-		/** The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * The width of the video in pixels. Must be an even integer. When not specified, the width is adjusted to match the specified height and input aspect ratio. If both are omitted, the input width is used. For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		widthPixels: FormControl<number | null | undefined>,
 	}
 	export function CreateVp9CodecSettingsFormGroup() {
@@ -1342,7 +1618,10 @@ export namespace MyNS {
 	/** Overlaid image. */
 	export interface Image {
 
-		/** Target image opacity. Valid values are from `1.0` (solid, default) to `0.0` (transparent), exclusive. Set this to a value greater than `0.0`. */
+		/**
+		 * Target image opacity. Valid values are from `1.0` (solid, default) to `0.0` (transparent), exclusive. Set this to a value greater than `0.0`.
+		 * Type: double
+		 */
 		alpha?: number | null;
 
 		/** 2D normalized coordinates. Default: `{0.0, 0.0}` */
@@ -1355,7 +1634,10 @@ export namespace MyNS {
 	/** Overlaid image. */
 	export interface ImageFormProperties {
 
-		/** Target image opacity. Valid values are from `1.0` (solid, default) to `0.0` (transparent), exclusive. Set this to a value greater than `0.0`. */
+		/**
+		 * Target image opacity. Valid values are from `1.0` (solid, default) to `0.0` (transparent), exclusive. Set this to a value greater than `0.0`.
+		 * Type: double
+		 */
 		alpha: FormControl<number | null | undefined>,
 
 		/** Required. URI of the image in Cloud Storage. For example, `gs://bucket/inputs/image.png`. Only PNG and JPEG images are supported. */
@@ -1439,32 +1721,56 @@ export namespace MyNS {
 	/** Pad filter configuration for the input video. The padded input video is scaled after padding with black to match the output resolution. */
 	export interface Pad {
 
-		/** The number of pixels to add to the bottom. The default is 0. */
+		/**
+		 * The number of pixels to add to the bottom. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bottomPixels?: number | null;
 
-		/** The number of pixels to add to the left. The default is 0. */
+		/**
+		 * The number of pixels to add to the left. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leftPixels?: number | null;
 
-		/** The number of pixels to add to the right. The default is 0. */
+		/**
+		 * The number of pixels to add to the right. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rightPixels?: number | null;
 
-		/** The number of pixels to add to the top. The default is 0. */
+		/**
+		 * The number of pixels to add to the top. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topPixels?: number | null;
 	}
 
 	/** Pad filter configuration for the input video. The padded input video is scaled after padding with black to match the output resolution. */
 	export interface PadFormProperties {
 
-		/** The number of pixels to add to the bottom. The default is 0. */
+		/**
+		 * The number of pixels to add to the bottom. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bottomPixels: FormControl<number | null | undefined>,
 
-		/** The number of pixels to add to the left. The default is 0. */
+		/**
+		 * The number of pixels to add to the left. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leftPixels: FormControl<number | null | undefined>,
 
-		/** The number of pixels to add to the right. The default is 0. */
+		/**
+		 * The number of pixels to add to the right. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rightPixels: FormControl<number | null | undefined>,
 
-		/** The number of pixels to add to the top. The default is 0. */
+		/**
+		 * The number of pixels to add to the top. The default is 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topPixels: FormControl<number | null | undefined>,
 	}
 	export function CreatePadFormGroup() {
@@ -1481,7 +1787,10 @@ export namespace MyNS {
 	/** Transcoding job resource. */
 	export interface Job {
 
-		/** The processing priority of a batch job. This field can only be set for batch mode jobs. The default value is 0. This value cannot be negative. Higher values correspond to higher priorities for the job. */
+		/**
+		 * The processing priority of a batch job. This field can only be set for batch mode jobs. The default value is 0. This value cannot be negative. Higher values correspond to higher priorities for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchModePriority?: number | null;
 
 		/** Job configuration */
@@ -1523,14 +1832,20 @@ export namespace MyNS {
 		/** Input only. Specify the `template_id` to use for populating `Job.config`. The default is `preset/web-hd`, which is the only supported preset. User defined JobTemplate: `{job_template_id}` */
 		templateId?: string | null;
 
-		/** Job time to live value in days, which will be effective after job completion. Job should be deleted automatically after the given TTL. Enter a value between 1 and 90. The default is 30. */
+		/**
+		 * Job time to live value in days, which will be effective after job completion. Job should be deleted automatically after the given TTL. Enter a value between 1 and 90. The default is 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttlAfterCompletionDays?: number | null;
 	}
 
 	/** Transcoding job resource. */
 	export interface JobFormProperties {
 
-		/** The processing priority of a batch job. This field can only be set for batch mode jobs. The default value is 0. This value cannot be negative. Higher values correspond to higher priorities for the job. */
+		/**
+		 * The processing priority of a batch job. This field can only be set for batch mode jobs. The default value is 0. This value cannot be negative. Higher values correspond to higher priorities for the job.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchModePriority: FormControl<number | null | undefined>,
 
 		/** Output only. The time the job was created. */
@@ -1566,7 +1881,10 @@ export namespace MyNS {
 		/** Input only. Specify the `template_id` to use for populating `Job.config`. The default is `preset/web-hd`, which is the only supported preset. User defined JobTemplate: `{job_template_id}` */
 		templateId: FormControl<string | null | undefined>,
 
-		/** Job time to live value in days, which will be effective after job completion. Job should be deleted automatically after the given TTL. Enter a value between 1 and 90. The default is 30. */
+		/**
+		 * Job time to live value in days, which will be effective after job completion. Job should be deleted automatically after the given TTL. Enter a value between 1 and 90. The default is 30.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttlAfterCompletionDays: FormControl<number | null | undefined>,
 	}
 	export function CreateJobFormGroup() {
@@ -1816,7 +2134,10 @@ export namespace MyNS {
 	/** Sprite sheet configuration. */
 	export interface SpriteSheet {
 
-		/** The maximum number of sprites per row in a sprite sheet. The default is 0, which indicates no maximum limit. */
+		/**
+		 * The maximum number of sprites per row in a sprite sheet. The default is 0, which indicates no maximum limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnCount?: number | null;
 
 		/** End time in seconds, relative to the output file timeline. When `end_time_offset` is not specified, the sprites are generated until the end of the output file. */
@@ -1831,29 +2152,47 @@ export namespace MyNS {
 		/** Starting from `0s`, create sprites at regular intervals. Specify the interval value in seconds. */
 		interval?: string | null;
 
-		/** The quality of the generated sprite sheet. Enter a value between 1 and 100, where 1 is the lowest quality and 100 is the highest quality. The default is 100. A high quality value corresponds to a low image data compression ratio. */
+		/**
+		 * The quality of the generated sprite sheet. Enter a value between 1 and 100, where 1 is the lowest quality and 100 is the highest quality. The default is 100. A high quality value corresponds to a low image data compression ratio.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quality?: number | null;
 
-		/** The maximum number of rows per sprite sheet. When the sprite sheet is full, a new sprite sheet is created. The default is 0, which indicates no maximum limit. */
+		/**
+		 * The maximum number of rows per sprite sheet. When the sprite sheet is full, a new sprite sheet is created. The default is 0, which indicates no maximum limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount?: number | null;
 
-		/** Required. The height of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_height_pixels field or the SpriteSheet.sprite_width_pixels field, but not both (the API will automatically calculate the missing field). For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * Required. The height of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_height_pixels field or the SpriteSheet.sprite_width_pixels field, but not both (the API will automatically calculate the missing field). For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		spriteHeightPixels?: number | null;
 
-		/** Required. The width of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_width_pixels field or the SpriteSheet.sprite_height_pixels field, but not both (the API will automatically calculate the missing field). For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * Required. The width of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_width_pixels field or the SpriteSheet.sprite_height_pixels field, but not both (the API will automatically calculate the missing field). For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		spriteWidthPixels?: number | null;
 
 		/** Start time in seconds, relative to the output file timeline. Determines the first sprite to pick. The default is `0s`. */
 		startTimeOffset?: string | null;
 
-		/** Total number of sprites. Create the specified number of sprites distributed evenly across the timeline of the output media. The default is 100. */
+		/**
+		 * Total number of sprites. Create the specified number of sprites distributed evenly across the timeline of the output media. The default is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 
 	/** Sprite sheet configuration. */
 	export interface SpriteSheetFormProperties {
 
-		/** The maximum number of sprites per row in a sprite sheet. The default is 0, which indicates no maximum limit. */
+		/**
+		 * The maximum number of sprites per row in a sprite sheet. The default is 0, which indicates no maximum limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnCount: FormControl<number | null | undefined>,
 
 		/** End time in seconds, relative to the output file timeline. When `end_time_offset` is not specified, the sprites are generated until the end of the output file. */
@@ -1868,22 +2207,37 @@ export namespace MyNS {
 		/** Starting from `0s`, create sprites at regular intervals. Specify the interval value in seconds. */
 		interval: FormControl<string | null | undefined>,
 
-		/** The quality of the generated sprite sheet. Enter a value between 1 and 100, where 1 is the lowest quality and 100 is the highest quality. The default is 100. A high quality value corresponds to a low image data compression ratio. */
+		/**
+		 * The quality of the generated sprite sheet. Enter a value between 1 and 100, where 1 is the lowest quality and 100 is the highest quality. The default is 100. A high quality value corresponds to a low image data compression ratio.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quality: FormControl<number | null | undefined>,
 
-		/** The maximum number of rows per sprite sheet. When the sprite sheet is full, a new sprite sheet is created. The default is 0, which indicates no maximum limit. */
+		/**
+		 * The maximum number of rows per sprite sheet. When the sprite sheet is full, a new sprite sheet is created. The default is 0, which indicates no maximum limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowCount: FormControl<number | null | undefined>,
 
-		/** Required. The height of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_height_pixels field or the SpriteSheet.sprite_width_pixels field, but not both (the API will automatically calculate the missing field). For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * Required. The height of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_height_pixels field or the SpriteSheet.sprite_width_pixels field, but not both (the API will automatically calculate the missing field). For portrait videos that contain horizontal ASR and rotation metadata, provide the height, in pixels, per the horizontal ASR. The API calculates the width per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		spriteHeightPixels: FormControl<number | null | undefined>,
 
-		/** Required. The width of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_width_pixels field or the SpriteSheet.sprite_height_pixels field, but not both (the API will automatically calculate the missing field). For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output. */
+		/**
+		 * Required. The width of sprite in pixels. Must be an even integer. To preserve the source aspect ratio, set the SpriteSheet.sprite_width_pixels field or the SpriteSheet.sprite_height_pixels field, but not both (the API will automatically calculate the missing field). For portrait videos that contain horizontal ASR and rotation metadata, provide the width, in pixels, per the horizontal ASR. The API calculates the height per the horizontal ASR. The API detects any rotation metadata and swaps the requested height and width for the output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		spriteWidthPixels: FormControl<number | null | undefined>,
 
 		/** Start time in seconds, relative to the output file timeline. Determines the first sprite to pick. The default is `0s`. */
 		startTimeOffset: FormControl<string | null | undefined>,
 
-		/** Total number of sprites. Create the specified number of sprites distributed evenly across the timeline of the output media. The default is 100. */
+		/**
+		 * Total number of sprites. Create the specified number of sprites distributed evenly across the timeline of the output media. The default is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateSpriteSheetFormGroup() {
@@ -1907,7 +2261,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1920,7 +2277,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2058,6 +2418,7 @@ export namespace MyNS {
 		 * @param {string} filter The filter expression, following the syntax outlined in https://google.aip.dev/160.
 		 * @param {string} orderBy One or more fields to compare and use to sort the output. See https://google.aip.dev/132#ordering.
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The `next_page_token` value returned from a previous List request, if any.
 		 * @return {ListJobTemplatesResponse} Successful response
 		 */
@@ -2083,6 +2444,7 @@ export namespace MyNS {
 		 * @param {string} filter The filter expression, following the syntax outlined in https://google.aip.dev/160.
 		 * @param {string} orderBy One or more fields to compare and use to sort the output. See https://google.aip.dev/132#ordering.
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The `next_page_token` value returned from a previous List request, if any.
 		 * @return {ListJobsResponse} Successful response
 		 */

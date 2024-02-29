@@ -3492,7 +3492,10 @@ namespace MyNS
 		/// <p>Adds permissions to the resource-based policy of a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. Use this action to grant layer usage permission to other accounts. You can grant permission to a single account, all accounts in an organization, or all Amazon Web Services accounts. </p> <p>To revoke permission, call <a>RemoveLayerVersionPermission</a> with the statement ID that you specified when you added it.</p>
 		/// AddLayerVersionPermission 2018-10-31/layers/{LayerName}/versions/{VersionNumber}/policy
 		/// </summary>
-		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.</param>
+		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <param name="VersionNumber">The version number.</param>
 		/// <param name="RevisionId">Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</param>
 		public async Task AddLayerVersionPermissionAsync(string LayerName, int VersionNumber, string RevisionId, AddLayerVersionPermissionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3528,7 +3531,10 @@ namespace MyNS
 		/// Returns the permission policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. For more information, see <a>AddLayerVersionPermission</a>.
 		/// GetLayerVersionPolicy 2018-10-31/layers/{LayerName}/versions/{VersionNumber}/policy
 		/// </summary>
-		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.</param>
+		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <param name="VersionNumber">The version number.</param>
 		/// <returns>Success</returns>
 		public async Task<GetLayerVersionPolicyResponse> GetLayerVersionPolicyAsync(string LayerName, int VersionNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3563,8 +3569,14 @@ namespace MyNS
 		/// <p>Grants an Amazon Web Service, Amazon Web Services account, or Amazon Web Services organization permission to use a function. You can apply the policy at the function level, or specify a qualifier to restrict access to a single version or alias. If you use a qualifier, the invoker must use the full Amazon Resource Name (ARN) of that version or alias to invoke the function. Note: Lambda does not support adding policies to version $LATEST.</p> <p>To grant permission to another account, specify the account ID as the <code>Principal</code>. To grant permission to an organization defined in Organizations, specify the organization ID as the <code>PrincipalOrgID</code>. For Amazon Web Services, the principal is a domain-style identifier that the service defines, such as <code>s3.amazonaws.com</code> or <code>sns.amazonaws.com</code>. For Amazon Web Services, you can also specify the ARN of the associated resource as the <code>SourceArn</code>. If you grant permission to a service principal without specifying the source, other accounts could potentially configure resources in their account to invoke your Lambda function.</p> <p>This operation adds a statement to a resource-based permissions policy for the function. For more information about function policies, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">Using resource-based policies for Lambda</a>.</p>
 		/// AddPermission 2015-03-31/functions/{FunctionName}/policy
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">Specify a version or alias to add permissions to a published version of the function.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">Specify a version or alias to add permissions to a published version of the function.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task AddPermissionAsync(string FunctionName, string Qualifier, AddPermissionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2015-03-31/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/policy&Qualifier=" + (Qualifier==null? "" : System.Uri.EscapeDataString(Qualifier));
@@ -3598,8 +3610,14 @@ namespace MyNS
 		/// Returns the <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html">resource-based IAM policy</a> for a function, version, or alias.
 		/// GetPolicy 2015-03-31/functions/{FunctionName}/policy
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">Specify a version or alias to get the policy for that resource.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 170
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">Specify a version or alias to get the policy for that resource.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPolicyResponse> GetPolicyAsync(string FunctionName, string Qualifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3633,7 +3651,10 @@ namespace MyNS
 		/// <p>Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a> for a Lambda function version. Use aliases to provide clients with a function identifier that you can update to invoke a different version.</p> <p>You can also map an alias to split invocation requests between two versions. Use the <code>RoutingConfig</code> parameter to specify a second version and the percentage of invocation requests that it receives.</p>
 		/// CreateAlias 2015-03-31/functions/{FunctionName}/aliases
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		public async Task CreateAliasAsync(string FunctionName, CreateAliasPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2015-03-31/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/aliases";
@@ -3667,10 +3688,19 @@ namespace MyNS
 		/// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">aliases</a> for a Lambda function.
 		/// ListAliases 2015-03-31/functions/{FunctionName}/aliases
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="FunctionVersion">Specify a function version to only list aliases that invoke that version.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="FunctionVersion">Specify a function version to only list aliases that invoke that version.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
 		/// <param name="Marker">Specify the pagination token that's returned by a previous request to retrieve the next page of results.</param>
-		/// <param name="MaxItems">Limit the number of aliases returned.</param>
+		/// <param name="MaxItems">Limit the number of aliases returned.
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAliasesResponse> ListAliasesAsync(string FunctionName, string FunctionVersion, string Marker, int MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3738,7 +3768,10 @@ namespace MyNS
 		/// ListCodeSigningConfigs 2020-04-22/code-signing-configs/
 		/// </summary>
 		/// <param name="Marker">Specify the pagination token that's returned by a previous request to retrieve the next page of results.</param>
-		/// <param name="MaxItems">Maximum number of items to return.</param>
+		/// <param name="MaxItems">Maximum number of items to return.
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListCodeSigningConfigsResponse> ListCodeSigningConfigsAsync(string Marker, int MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3806,9 +3839,15 @@ namespace MyNS
 		/// ListEventSourceMappings 2015-03-31/event-source-mappings/
 		/// </summary>
 		/// <param name="EventSourceArn"><p>The Amazon Resource Name (ARN) of the event source.</p> <ul> <li> <p> <b>Amazon Kinesis</b> – The ARN of the data stream or a stream consumer.</p> </li> <li> <p> <b>Amazon DynamoDB Streams</b> – The ARN of the stream.</p> </li> <li> <p> <b>Amazon Simple Queue Service</b> – The ARN of the queue.</p> </li> <li> <p> <b>Amazon Managed Streaming for Apache Kafka</b> – The ARN of the cluster.</p> </li> <li> <p> <b>Amazon MQ</b> – The ARN of the broker.</p> </li> <li> <p> <b>Amazon DocumentDB</b> – The ARN of the DocumentDB change stream.</p> </li> </ul></param>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Version or Alias ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction:PROD</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it's limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <param name="Marker">A pagination token returned by a previous call.</param>
-		/// <param name="MaxItems">The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.</param>
+		/// <param name="MaxItems">The maximum number of event source mappings to return. Note that ListEventSourceMappings returns a maximum of 100 items in each response, even if you set the number higher.
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListEventSourceMappingsResponse> ListEventSourceMappingsAsync(string EventSourceArn, string FunctionName, string Marker, int MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3875,8 +3914,14 @@ namespace MyNS
 		/// Creates a Lambda function URL with the specified configuration parameters. A function URL is a dedicated HTTP(S) endpoint that you can use to invoke your function.
 		/// CreateFunctionUrlConfig 2021-10-31/functions/{FunctionName}/url
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">The alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">The alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task CreateFunctionUrlConfigAsync(string FunctionName, string Qualifier, CreateFunctionUrlConfigPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2021-10-31/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/url&Qualifier=" + (Qualifier==null? "" : System.Uri.EscapeDataString(Qualifier));
@@ -3910,8 +3955,14 @@ namespace MyNS
 		/// Deletes a Lambda function URL. When you delete a function URL, you can't recover it. Creating a new function URL results in a different URL address.
 		/// DeleteFunctionUrlConfig 2021-10-31/functions/{FunctionName}/url
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">The alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">The alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteFunctionUrlConfigAsync(string FunctionName, string Qualifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2021-10-31/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/url&Qualifier=" + (Qualifier==null? "" : System.Uri.EscapeDataString(Qualifier));
@@ -3938,8 +3989,14 @@ namespace MyNS
 		/// Returns details about a Lambda function URL.
 		/// GetFunctionUrlConfig 2021-10-31/functions/{FunctionName}/url
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">The alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">The alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFunctionUrlConfigResponse> GetFunctionUrlConfigAsync(string FunctionName, string Qualifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3973,8 +4030,14 @@ namespace MyNS
 		/// Updates the configuration for a Lambda function URL.
 		/// UpdateFunctionUrlConfig 2021-10-31/functions/{FunctionName}/url
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">The alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">The alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateFunctionUrlConfigResponse> UpdateFunctionUrlConfigAsync(string FunctionName, string Qualifier, UpdateFunctionUrlConfigPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4015,8 +4078,14 @@ namespace MyNS
 		/// Deletes a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
 		/// DeleteAlias 2015-03-31/functions/{FunctionName}/aliases/{Name}
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Name">The name of the alias.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Name">The name of the alias.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteAliasAsync(string FunctionName, string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2015-03-31/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/aliases/"+ (Name==null? "" : System.Uri.EscapeDataString(Name));
@@ -4043,8 +4112,14 @@ namespace MyNS
 		/// Returns details about a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
 		/// GetAlias 2015-03-31/functions/{FunctionName}/aliases/{Name}
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Name">The name of the alias.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Name">The name of the alias.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AliasConfiguration> GetAliasAsync(string FunctionName, string Name, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4078,8 +4153,14 @@ namespace MyNS
 		/// Updates the configuration of a Lambda function <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-aliases.html">alias</a>.
 		/// UpdateAlias 2015-03-31/functions/{FunctionName}/aliases/{Name}
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Name">The name of the alias.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Name">The name of the alias.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AliasConfiguration> UpdateAliasAsync(string FunctionName, string Name, UpdateAliasPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4120,7 +4201,9 @@ namespace MyNS
 		/// Deletes the code signing configuration. You can delete the code signing configuration only if no function is using it.
 		/// DeleteCodeSigningConfig 2020-04-22/code-signing-configs/{CodeSigningConfigArn}
 		/// </summary>
-		/// <param name="CodeSigningConfigArn">The The Amazon Resource Name (ARN) of the code signing configuration.</param>
+		/// <param name="CodeSigningConfigArn">The The Amazon Resource Name (ARN) of the code signing configuration.
+		/// Max length: 200
+		// </param>
 		public async Task DeleteCodeSigningConfigAsync(string CodeSigningConfigArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-04-22/code-signing-configs/"+ (CodeSigningConfigArn==null? "" : System.Uri.EscapeDataString(CodeSigningConfigArn));
@@ -4147,7 +4230,9 @@ namespace MyNS
 		/// Returns information about the specified code signing configuration.
 		/// GetCodeSigningConfig 2020-04-22/code-signing-configs/{CodeSigningConfigArn}
 		/// </summary>
-		/// <param name="CodeSigningConfigArn">The The Amazon Resource Name (ARN) of the code signing configuration. </param>
+		/// <param name="CodeSigningConfigArn">The The Amazon Resource Name (ARN) of the code signing configuration. 
+		/// Max length: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetCodeSigningConfigResponse> GetCodeSigningConfigAsync(string CodeSigningConfigArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4181,7 +4266,9 @@ namespace MyNS
 		/// Update the code signing configuration. Changes to the code signing configuration take effect the next time a user tries to deploy a code package to the function.
 		/// UpdateCodeSigningConfig 2020-04-22/code-signing-configs/{CodeSigningConfigArn}
 		/// </summary>
-		/// <param name="CodeSigningConfigArn">The The Amazon Resource Name (ARN) of the code signing configuration.</param>
+		/// <param name="CodeSigningConfigArn">The The Amazon Resource Name (ARN) of the code signing configuration.
+		/// Max length: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateCodeSigningConfigResponse> UpdateCodeSigningConfigAsync(string CodeSigningConfigArn, UpdateCodeSigningConfigPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4317,8 +4404,14 @@ namespace MyNS
 		/// <p>Deletes a Lambda function. To delete a specific function version, use the <code>Qualifier</code> parameter. Otherwise, all versions and aliases are deleted. This doesn't require the user to have explicit permissions for <a>DeleteAlias</a>.</p> <p>To delete Lambda event source mappings that invoke a function, use <a>DeleteEventSourceMapping</a>. For Amazon Web Services and resources that invoke your function directly, delete the trigger in the service where you originally configured it.</p>
 		/// DeleteFunction 2015-03-31/functions/{FunctionName}
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function or version.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">Specify a version to delete. You can't delete a version that an alias references.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function or version.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:1</code> (with version).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">Specify a version to delete. You can't delete a version that an alias references.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteFunctionAsync(string FunctionName, string Qualifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2015-03-31/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"&Qualifier=" + (Qualifier==null? "" : System.Uri.EscapeDataString(Qualifier));
@@ -4345,8 +4438,14 @@ namespace MyNS
 		/// Returns information about the function or function version, with a link to download the deployment package that's valid for 10 minutes. If you specify a function version, only details that are specific to that version are returned.
 		/// GetFunction 2015-03-31/functions/{FunctionName}
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">Specify a version or alias to get details about a published version of the function.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 170
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">Specify a version or alias to get details about a published version of the function.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFunctionResponse> GetFunctionAsync(string FunctionName, string Qualifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4380,7 +4479,10 @@ namespace MyNS
 		/// Removes the code signing configuration from the function.
 		/// DeleteFunctionCodeSigningConfig 2020-06-30/functions/{FunctionName}/code-signing-config
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		public async Task DeleteFunctionCodeSigningConfigAsync(string FunctionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2020-06-30/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/code-signing-config";
@@ -4407,7 +4509,10 @@ namespace MyNS
 		/// Returns the code signing configuration for the specified function.
 		/// GetFunctionCodeSigningConfig 2020-06-30/functions/{FunctionName}/code-signing-config
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFunctionCodeSigningConfigResponse> GetFunctionCodeSigningConfigAsync(string FunctionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4441,7 +4546,10 @@ namespace MyNS
 		/// Update the code signing configuration for the function. Changes to the code signing configuration take effect the next time a user tries to deploy a code package to the function.
 		/// PutFunctionCodeSigningConfig 2020-06-30/functions/{FunctionName}/code-signing-config
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutFunctionCodeSigningConfigResponse> PutFunctionCodeSigningConfigAsync(string FunctionName, PutFunctionCodeSigningConfigPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4482,7 +4590,10 @@ namespace MyNS
 		/// Removes a concurrent execution limit from a function.
 		/// DeleteFunctionConcurrency 2017-10-31/functions/{FunctionName}/concurrency
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		public async Task DeleteFunctionConcurrencyAsync(string FunctionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2017-10-31/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/concurrency";
@@ -4509,7 +4620,10 @@ namespace MyNS
 		/// <p>Sets the maximum number of simultaneous executions for a function, and reserves capacity for that concurrency level.</p> <p>Concurrency settings apply to the function as a whole, including all published versions and the unpublished version. Reserving concurrency both ensures that your function has capacity to process the specified number of events simultaneously, and prevents it from scaling beyond that level. Use <a>GetFunction</a> to see the current setting for a function.</p> <p>Use <a>GetAccountSettings</a> to see your Regional concurrency limit. You can reserve concurrency for as many functions as you like, as long as you leave at least 100 simultaneous executions unreserved for functions that aren't configured with a per-function limit. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-scaling.html">Lambda function scaling</a>.</p>
 		/// PutFunctionConcurrency 2017-10-31/functions/{FunctionName}/concurrency
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<Concurrency> PutFunctionConcurrencyAsync(string FunctionName, PutFunctionConcurrencyPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4550,8 +4664,14 @@ namespace MyNS
 		/// <p>Deletes the configuration for asynchronous invocation for a function, version, or alias.</p> <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
 		/// DeleteFunctionEventInvokeConfig 2019-09-25/functions/{FunctionName}/event-invoke-config
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">A version number or alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">A version number or alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteFunctionEventInvokeConfigAsync(string FunctionName, string Qualifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2019-09-25/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/event-invoke-config&Qualifier=" + (Qualifier==null? "" : System.Uri.EscapeDataString(Qualifier));
@@ -4578,8 +4698,14 @@ namespace MyNS
 		/// <p>Retrieves the configuration for asynchronous invocation for a function, version, or alias.</p> <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
 		/// GetFunctionEventInvokeConfig 2019-09-25/functions/{FunctionName}/event-invoke-config
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">A version number or alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">A version number or alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<FunctionEventInvokeConfig> GetFunctionEventInvokeConfigAsync(string FunctionName, string Qualifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4613,8 +4739,14 @@ namespace MyNS
 		/// <p>Configures options for <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous invocation</a> on a function, version, or alias. If a configuration already exists for a function, version, or alias, this operation overwrites it. If you exclude any settings, they are removed. To set one option without affecting existing settings for other options, use <a>UpdateFunctionEventInvokeConfig</a>.</p> <p>By default, Lambda retries an asynchronous invocation twice if the function returns an error. It retains events in a queue for up to six hours. When an event fails all processing attempts or stays in the asynchronous invocation queue for too long, Lambda discards it. To retain discarded events, configure a dead-letter queue with <a>UpdateFunctionConfiguration</a>.</p> <p>To send an invocation record to a queue, topic, function, or event bus, specify a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-async-destinations">destination</a>. You can configure separate destinations for successful invocations (on-success) and events that fail all processing attempts (on-failure). You can configure destinations in addition to or instead of a dead-letter queue.</p>
 		/// PutFunctionEventInvokeConfig 2019-09-25/functions/{FunctionName}/event-invoke-config
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">A version number or alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">A version number or alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<FunctionEventInvokeConfig> PutFunctionEventInvokeConfigAsync(string FunctionName, string Qualifier, PutFunctionEventInvokeConfigPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4655,8 +4787,14 @@ namespace MyNS
 		/// <p>Updates the configuration for asynchronous invocation for a function, version, or alias.</p> <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
 		/// UpdateFunctionEventInvokeConfig 2019-09-25/functions/{FunctionName}/event-invoke-config
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">A version number or alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">A version number or alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<FunctionEventInvokeConfig> UpdateFunctionEventInvokeConfigAsync(string FunctionName, string Qualifier, UpdateFunctionEventInvokeConfigPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4697,7 +4835,10 @@ namespace MyNS
 		/// Deletes a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. Deleted versions can no longer be viewed or added to functions. To avoid breaking functions, a copy of the version remains in Lambda until no functions refer to it.
 		/// DeleteLayerVersion 2018-10-31/layers/{LayerName}/versions/{VersionNumber}
 		/// </summary>
-		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.</param>
+		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <param name="VersionNumber">The version number.</param>
 		public async Task DeleteLayerVersionAsync(string LayerName, int VersionNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4725,7 +4866,10 @@ namespace MyNS
 		/// Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>, with a link to download the layer archive that's valid for 10 minutes.
 		/// GetLayerVersion 2018-10-31/layers/{LayerName}/versions/{VersionNumber}
 		/// </summary>
-		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.</param>
+		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <param name="VersionNumber">The version number.</param>
 		/// <returns>Success</returns>
 		public async Task<GetLayerVersionResponse> GetLayerVersionAsync(string LayerName, int VersionNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4760,8 +4904,14 @@ namespace MyNS
 		/// Deletes the provisioned concurrency configuration for a function.
 		/// DeleteProvisionedConcurrencyConfig 2019-09-30/functions/{FunctionName}/provisioned-concurrency#Qualifier
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">The version number or alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">The version number or alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteProvisionedConcurrencyConfigAsync(string FunctionName, string Qualifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2019-09-30/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/provisioned-concurrency#Qualifier&Qualifier=" + (Qualifier==null? "" : System.Uri.EscapeDataString(Qualifier));
@@ -4788,8 +4938,14 @@ namespace MyNS
 		/// Retrieves the provisioned concurrency configuration for a function's alias or version.
 		/// GetProvisionedConcurrencyConfig 2019-09-30/functions/{FunctionName}/provisioned-concurrency#Qualifier
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">The version number or alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">The version number or alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProvisionedConcurrencyConfigResponse> GetProvisionedConcurrencyConfigAsync(string FunctionName, string Qualifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4823,8 +4979,14 @@ namespace MyNS
 		/// Adds a provisioned concurrency configuration to a function's alias or version.
 		/// PutProvisionedConcurrencyConfig 2019-09-30/functions/{FunctionName}/provisioned-concurrency#Qualifier
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">The version number or alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">The version number or alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task PutProvisionedConcurrencyConfigAsync(string FunctionName, string Qualifier, PutProvisionedConcurrencyConfigPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2019-09-30/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/provisioned-concurrency#Qualifier&Qualifier=" + (Qualifier==null? "" : System.Uri.EscapeDataString(Qualifier));
@@ -4891,7 +5053,10 @@ namespace MyNS
 		/// Returns details about the reserved concurrency configuration for a function. To set a concurrency limit for a function, use <a>PutFunctionConcurrency</a>.
 		/// GetFunctionConcurrency 2019-09-30/functions/{FunctionName}/concurrency
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetFunctionConcurrencyResponse> GetFunctionConcurrencyAsync(string FunctionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4925,8 +5090,14 @@ namespace MyNS
 		/// <p>Returns the version-specific settings of a Lambda function or version. The output includes only options that can vary between versions of a function. To modify these settings, use <a>UpdateFunctionConfiguration</a>.</p> <p>To get all of a function's details, including function-level settings, use <a>GetFunction</a>.</p>
 		/// GetFunctionConfiguration 2015-03-31/functions/{FunctionName}/configuration
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">Specify a version or alias to get details about a published version of the function.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 170
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">Specify a version or alias to get details about a published version of the function.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<FunctionConfiguration> GetFunctionConfigurationAsync(string FunctionName, string Qualifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4960,7 +5131,10 @@ namespace MyNS
 		/// <p>Modify the version-specific settings of a Lambda function.</p> <p>When you update a function, Lambda provisions an instance of the function and its supporting resources. If your function connects to a VPC, this process can take a minute. During this time, you can't modify the function, but you can still invoke it. The <code>LastUpdateStatus</code>, <code>LastUpdateStatusReason</code>, and <code>LastUpdateStatusReasonCode</code> fields in the response from <a>GetFunctionConfiguration</a> indicate when the update is complete and the function is processing events with the new configuration. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/functions-states.html">Lambda function states</a>.</p> <p>These settings can vary between versions of a function and are locked when you publish a version. You can't modify the configuration of a published version, only the unpublished version.</p> <p>To configure function concurrency, use <a>PutFunctionConcurrency</a>. To grant invoke permissions to an Amazon Web Services account or Amazon Web Service, use <a>AddPermission</a>.</p>
 		/// UpdateFunctionConfiguration 2015-03-31/functions/{FunctionName}/configuration
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<FunctionConfiguration> UpdateFunctionConfigurationAsync(string FunctionName, UpdateFunctionConfigurationPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5001,7 +5175,10 @@ namespace MyNS
 		/// Returns information about a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>, with a link to download the layer archive that's valid for 10 minutes.
 		/// GetLayerVersionByArn 2018-10-31/layers#find=LayerVersion&Arn
 		/// </summary>
-		/// <param name="Arn">The ARN of the layer version.</param>
+		/// <param name="Arn">The ARN of the layer version.
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLayerVersionResponse> GetLayerVersionByArnAsync(string Arn, GetLayerVersionByArnFind find, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5035,8 +5212,14 @@ namespace MyNS
 		/// Retrieves the runtime management configuration for a function's version. If the runtime update mode is <b>Manual</b>, this includes the ARN of the runtime version and the runtime update mode. If the runtime update mode is <b>Auto</b> or <b>Function update</b>, this includes the runtime update mode and <code>null</code> is returned for the ARN. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime updates</a>.
 		/// GetRuntimeManagementConfig 2021-07-20/functions/{FunctionName}/runtime-management-config
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 170
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetRuntimeManagementConfigResponse> GetRuntimeManagementConfigAsync(string FunctionName, string Qualifier, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5070,8 +5253,14 @@ namespace MyNS
 		/// Sets the runtime management configuration for a function's version. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/runtimes-update.html">Runtime updates</a>.
 		/// PutRuntimeManagementConfig 2021-07-20/functions/{FunctionName}/runtime-management-config
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">Specify a version of the function. This can be <code>$LATEST</code> or a published version number. If no value is specified, the configuration for the <code>$LATEST</code> version is returned.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutRuntimeManagementConfigResponse> PutRuntimeManagementConfigAsync(string FunctionName, string Qualifier, PutRuntimeManagementConfigPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5112,8 +5301,14 @@ namespace MyNS
 		/// <p>Invokes a Lambda function. You can invoke a function synchronously (and wait for the response), or asynchronously. To invoke a function asynchronously, set <code>InvocationType</code> to <code>Event</code>.</p> <p>For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-sync.html">synchronous invocation</a>, details about the function response, including errors, are included in the response body and headers. For either invocation type, you can find more information in the <a href="https://docs.aws.amazon.com/lambda/latest/dg/monitoring-functions.html">execution log</a> and <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-x-ray.html">trace</a>.</p> <p>When an error occurs, your function may be invoked multiple times. Retry behavior varies by error type, client, event source, and invocation type. For example, if you invoke a function asynchronously and it returns an error, Lambda executes the function up to two more times. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-retries.html">Error handling and automatic retries in Lambda</a>.</p> <p>For <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html">asynchronous invocation</a>, Lambda adds events to a queue before sending them to your function. If your function does not have enough capacity to keep up with the queue, events may be lost. Occasionally, your function may receive the same event multiple times, even if no error occurs. To retain events that were not processed, configure your function with a <a href="https://docs.aws.amazon.com/lambda/latest/dg/invocation-async.html#invocation-dlq">dead-letter queue</a>.</p> <p>The status code in the API response doesn't reflect function errors. Error codes are reserved for errors that prevent your function from executing, such as permissions errors, <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-limits.html">quota</a> errors, or issues with your function's code and configuration. For example, Lambda returns <code>TooManyRequestsException</code> if running the function would cause you to exceed a concurrency limit at either the account level (<code>ConcurrentInvocationLimitExceeded</code>) or function level (<code>ReservedFunctionConcurrentInvocationLimitExceeded</code>).</p> <p>For functions with a long timeout, your client might disconnect during synchronous invocation while it waits for a response. Configure your HTTP client, SDK, firewall, proxy, or operating system to allow for long connections with timeout or keep-alive settings.</p> <p>This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a> action. For details on how to set up permissions for cross-account invocations, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke">Granting function access to other accounts</a>.</p>
 		/// Invoke 2015-03-31/functions/{FunctionName}/invocations
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">Specify a version or alias to invoke a published version of the function.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 170
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">Specify a version or alias to invoke a published version of the function.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<InvocationResponse> InvokeAsync(string FunctionName, string Qualifier, InvokePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5154,7 +5349,10 @@ namespace MyNS
 		/// <important> <p>For asynchronous function invocation, use <a>Invoke</a>.</p> </important> <p>Invokes a function asynchronously.</p>
 		/// Invoke 2014-11-13/functions/{FunctionName}/invoke-async/
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 170
+		/// Min length: 1
+		// </param>
 		public async Task InvokeAsync(string FunctionName, InvokePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2014-11-13/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/invoke-async/";
@@ -5188,8 +5386,14 @@ namespace MyNS
 		/// <p>Configure your Lambda functions to stream response payloads back to clients. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-response-streaming.html">Configuring a Lambda function to stream responses</a>.</p> <p>This operation requires permission for the <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/list_awslambda.html">lambda:InvokeFunction</a> action. For details on how to set up permissions for cross-account invocations, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/access-control-resource-based.html#permissions-resource-xaccountinvoke">Granting function access to other accounts</a>.</p>
 		/// InvokeWithResponseStream 2021-11-15/functions/{FunctionName}/response-streaming-invocations
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="Qualifier">The alias name.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 170
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">The alias name.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<InvokeWithResponseStreamResponse> InvokeWithResponseStreamAsync(string FunctionName, string Qualifier, InvokeWithResponseStreamPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5230,9 +5434,15 @@ namespace MyNS
 		/// <p>Retrieves a list of configurations for asynchronous invocation for a function.</p> <p>To configure options for asynchronous invocation, use <a>PutFunctionEventInvokeConfig</a>.</p>
 		/// ListFunctionEventInvokeConfigs 2019-09-25/functions/{FunctionName}/event-invoke-config/list
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <param name="Marker">Specify the pagination token that's returned by a previous request to retrieve the next page of results.</param>
-		/// <param name="MaxItems">The maximum number of configurations to return.</param>
+		/// <param name="MaxItems">The maximum number of configurations to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListFunctionEventInvokeConfigsResponse> ListFunctionEventInvokeConfigsAsync(string FunctionName, string Marker, int MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5266,9 +5476,15 @@ namespace MyNS
 		/// Returns a list of Lambda function URLs for the specified function.
 		/// ListFunctionUrlConfigs 2021-10-31/functions/{FunctionName}/urls
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <param name="Marker">Specify the pagination token that's returned by a previous request to retrieve the next page of results.</param>
-		/// <param name="MaxItems">The maximum number of function URLs to return in the response. Note that <code>ListFunctionUrlConfigs</code> returns a maximum of 50 items in each response, even if you set the number higher.</param>
+		/// <param name="MaxItems">The maximum number of function URLs to return in the response. Note that <code>ListFunctionUrlConfigs</code> returns a maximum of 50 items in each response, even if you set the number higher.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListFunctionUrlConfigsResponse> ListFunctionUrlConfigsAsync(string FunctionName, string Marker, int MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5305,7 +5521,10 @@ namespace MyNS
 		/// <param name="MasterRegion">For Lambda@Edge functions, the Amazon Web Services Region of the master function. For example, <code>us-east-1</code> filters the list of functions to include only Lambda@Edge functions replicated from a master function in US East (N. Virginia). If specified, you must set <code>FunctionVersion</code> to <code>ALL</code>.</param>
 		/// <param name="FunctionVersion">Set to <code>ALL</code> to include entries for all published versions of each function.</param>
 		/// <param name="Marker">Specify the pagination token that's returned by a previous request to retrieve the next page of results.</param>
-		/// <param name="MaxItems">The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.</param>
+		/// <param name="MaxItems">The maximum number of functions to return in the response. Note that <code>ListFunctions</code> returns a maximum of 50 items in each response, even if you set the number higher.
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListFunctionsResponse> ListFunctionsAsync(string MasterRegion, FunctionVersion FunctionVersion, string Marker, int MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5339,9 +5558,14 @@ namespace MyNS
 		/// List the functions that use the specified code signing configuration. You can use this method prior to deleting a code signing configuration, to verify that no functions are using it.
 		/// ListFunctionsByCodeSigningConfig 2020-04-22/code-signing-configs/{CodeSigningConfigArn}/functions
 		/// </summary>
-		/// <param name="CodeSigningConfigArn">The The Amazon Resource Name (ARN) of the code signing configuration.</param>
+		/// <param name="CodeSigningConfigArn">The The Amazon Resource Name (ARN) of the code signing configuration.
+		/// Max length: 200
+		// </param>
 		/// <param name="Marker">Specify the pagination token that's returned by a previous request to retrieve the next page of results.</param>
-		/// <param name="MaxItems">Maximum number of items to return.</param>
+		/// <param name="MaxItems">Maximum number of items to return.
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListFunctionsByCodeSigningConfigResponse> ListFunctionsByCodeSigningConfigAsync(string CodeSigningConfigArn, string Marker, int MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5376,9 +5600,15 @@ namespace MyNS
 		/// ListLayerVersions 2018-10-31/layers/{LayerName}/versions
 		/// </summary>
 		/// <param name="CompatibleRuntime"><p>A runtime identifier. For example, <code>go1.x</code>.</p> <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p></param>
-		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.</param>
+		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <param name="Marker">A pagination token returned by a previous call.</param>
-		/// <param name="MaxItems">The maximum number of versions to return.</param>
+		/// <param name="MaxItems">The maximum number of versions to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="CompatibleArchitecture">The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</param>
 		/// <returns>Success</returns>
 		public async Task<ListLayerVersionsResponse> ListLayerVersionsAsync(ListLayerVersionsCompatibleRuntime CompatibleRuntime, string LayerName, string Marker, int MaxItems, Architecture CompatibleArchitecture, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5413,7 +5643,10 @@ namespace MyNS
 		/// <p>Creates an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a> from a ZIP archive. Each time you call <code>PublishLayerVersion</code> with the same layer name, a new version is created.</p> <p>Add layers to your function with <a>CreateFunction</a> or <a>UpdateFunctionConfiguration</a>.</p>
 		/// PublishLayerVersion 2018-10-31/layers/{LayerName}/versions
 		/// </summary>
-		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.</param>
+		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		public async Task PublishLayerVersionAsync(string LayerName, PublishLayerVersionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2018-10-31/layers/"+ (LayerName==null? "" : System.Uri.EscapeDataString(LayerName))+"/versions";
@@ -5449,7 +5682,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="CompatibleRuntime"><p>A runtime identifier. For example, <code>go1.x</code>.</p> <p>The following list includes deprecated runtimes. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-runtimes.html#runtime-support-policy">Runtime deprecation policy</a>.</p></param>
 		/// <param name="Marker">A pagination token returned by a previous call.</param>
-		/// <param name="MaxItems">The maximum number of layers to return.</param>
+		/// <param name="MaxItems">The maximum number of layers to return.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="CompatibleArchitecture">The compatible <a href="https://docs.aws.amazon.com/lambda/latest/dg/foundation-arch.html">instruction set architecture</a>.</param>
 		/// <returns>Success</returns>
 		public async Task<ListLayersResponse> ListLayersAsync(ListLayersCompatibleRuntime CompatibleRuntime, string Marker, int MaxItems, Architecture CompatibleArchitecture, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5484,9 +5720,15 @@ namespace MyNS
 		/// Retrieves a list of provisioned concurrency configurations for a function.
 		/// ListProvisionedConcurrencyConfigs 2019-09-30/functions/{FunctionName}/provisioned-concurrency#List=ALL
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <param name="Marker">Specify the pagination token that's returned by a previous request to retrieve the next page of results.</param>
-		/// <param name="MaxItems">Specify a number to limit the number of configurations returned.</param>
+		/// <param name="MaxItems">Specify a number to limit the number of configurations returned.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListProvisionedConcurrencyConfigsResponse> ListProvisionedConcurrencyConfigsAsync(string FunctionName, string Marker, int MaxItems, FunctionVersion List, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5588,9 +5830,15 @@ namespace MyNS
 		/// Returns a list of <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">versions</a>, with the version-specific configuration of each. Lambda returns up to 50 versions per call.
 		/// ListVersionsByFunction 2015-03-31/functions/{FunctionName}/versions
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 170
+		/// Min length: 1
+		// </param>
 		/// <param name="Marker">Specify the pagination token that's returned by a previous request to retrieve the next page of results.</param>
-		/// <param name="MaxItems">The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.</param>
+		/// <param name="MaxItems">The maximum number of versions to return. Note that <code>ListVersionsByFunction</code> returns a maximum of 50 items in each response, even if you set the number higher.
+		/// Minimum: 1
+		/// Maximum: 10000
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListVersionsByFunctionResponse> ListVersionsByFunctionAsync(string FunctionName, string Marker, int MaxItems, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5624,7 +5872,10 @@ namespace MyNS
 		/// <p>Creates a <a href="https://docs.aws.amazon.com/lambda/latest/dg/versioning-aliases.html">version</a> from the current code and configuration of a function. Use versions to create a snapshot of your function code and configuration that doesn't change.</p> <p>Lambda doesn't publish a version if the function's configuration and code haven't changed since the last version. Use <a>UpdateFunctionCode</a> or <a>UpdateFunctionConfiguration</a> to update the function before publishing a version.</p> <p>Clients can invoke versions directly or with an alias. To create an alias, use <a>CreateAlias</a>.</p>
 		/// PublishVersion 2015-03-31/functions/{FunctionName}/versions
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> - <code>MyFunction</code>.</p> </li> <li> <p> <b>Function ARN</b> - <code>arn:aws:lambda:us-west-2:123456789012:function:MyFunction</code>.</p> </li> <li> <p> <b>Partial ARN</b> - <code>123456789012:function:MyFunction</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		public async Task PublishVersionAsync(string FunctionName, PublishVersionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "2015-03-31/functions/"+ (FunctionName==null? "" : System.Uri.EscapeDataString(FunctionName))+"/versions";
@@ -5658,9 +5909,15 @@ namespace MyNS
 		/// Removes a statement from the permissions policy for a version of an <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-layers.html">Lambda layer</a>. For more information, see <a>AddLayerVersionPermission</a>.
 		/// RemoveLayerVersionPermission 2018-10-31/layers/{LayerName}/versions/{VersionNumber}/policy/{StatementId}
 		/// </summary>
-		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.</param>
+		/// <param name="LayerName">The name or Amazon Resource Name (ARN) of the layer.
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <param name="VersionNumber">The version number.</param>
-		/// <param name="StatementId">The identifier that was specified when the statement was added.</param>
+		/// <param name="StatementId">The identifier that was specified when the statement was added.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <param name="RevisionId">Only update the policy if the revision ID matches the ID specified. Use this option to avoid modifying a policy that has changed since you last read it.</param>
 		public async Task RemoveLayerVersionPermissionAsync(string LayerName, int VersionNumber, string StatementId, string RevisionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5688,9 +5945,18 @@ namespace MyNS
 		/// Revokes function-use permission from an Amazon Web Service or another Amazon Web Services account. You can get the ID of the statement from the output of <a>GetPolicy</a>.
 		/// RemovePermission 2015-03-31/functions/{FunctionName}/policy/{StatementId}
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
-		/// <param name="StatementId">Statement ID of the permission to remove.</param>
-		/// <param name="Qualifier">Specify a version or alias to remove permissions from a published version of the function.</param>
+		/// <param name="FunctionName"><p>The name of the Lambda function, version, or alias.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code> (name-only), <code>my-function:v1</code> (with alias).</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>You can append a version number or alias to any of the formats. The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
+		/// <param name="StatementId">Statement ID of the permission to remove.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="Qualifier">Specify a version or alias to remove permissions from a published version of the function.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="RevisionId">Update the policy only if the revision ID matches the ID that's specified. Use this option to avoid modifying a policy that has changed since you last read it.</param>
 		public async Task RemovePermissionAsync(string FunctionName, string StatementId, string Qualifier, string RevisionId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5746,7 +6012,10 @@ namespace MyNS
 		/// <p>Updates a Lambda function's code. If code signing is enabled for the function, the code package must be signed by a trusted publisher. For more information, see <a href="https://docs.aws.amazon.com/lambda/latest/dg/configuration-codesigning.html">Configuring code signing for Lambda</a>.</p> <p>If the function's package type is <code>Image</code>, then you must specify the code package in <code>ImageUri</code> as the URI of a <a href="https://docs.aws.amazon.com/lambda/latest/dg/lambda-images.html">container image</a> in the Amazon ECR registry.</p> <p>If the function's package type is <code>Zip</code>, then you must specify the deployment package as a <a href="https://docs.aws.amazon.com/lambda/latest/dg/gettingstarted-package.html#gettingstarted-package-zip">.zip file archive</a>. Enter the Amazon S3 bucket and key of the code .zip file location. You can also provide the function code inline using the <code>ZipFile</code> field.</p> <p>The code in the deployment package must be compatible with the target instruction set architecture of the function (<code>x86-64</code> or <code>arm64</code>).</p> <p>The function's code is locked when you publish a version. You can't modify the code of a published version, only the unpublished version.</p> <note> <p>For a function defined as a container image, Lambda resolves the image tag to an image digest. In Amazon ECR, if you update the image tag to a new image, Lambda does not automatically update the function.</p> </note>
 		/// UpdateFunctionCode 2015-03-31/functions/{FunctionName}/code
 		/// </summary>
-		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p></param>
+		/// <param name="FunctionName"><p>The name of the Lambda function.</p> <p class="title"> <b>Name formats</b> </p> <ul> <li> <p> <b>Function name</b> – <code>my-function</code>.</p> </li> <li> <p> <b>Function ARN</b> – <code>arn:aws:lambda:us-west-2:123456789012:function:my-function</code>.</p> </li> <li> <p> <b>Partial ARN</b> – <code>123456789012:function:my-function</code>.</p> </li> </ul> <p>The length constraint applies only to the full ARN. If you specify only the function name, it is limited to 64 characters in length.</p>
+		/// Max length: 140
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<FunctionConfiguration> UpdateFunctionCodeAsync(string FunctionName, UpdateFunctionCodePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

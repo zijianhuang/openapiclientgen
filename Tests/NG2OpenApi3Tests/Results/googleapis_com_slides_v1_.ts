@@ -7,22 +7,40 @@ export namespace MyNS {
 	/** AffineTransform uses a 3x3 matrix with an implied last row of [ 0 0 1 ] to transform source coordinates (x,y) into destination coordinates (x', y') according to: x' x = shear_y scale_y translate_y 1 [ 1 ] After transformation, x' = scale_x * x + shear_x * y + translate_x; y' = scale_y * y + shear_y * x + translate_y; This message is therefore composed of these six matrix elements. */
 	export interface AffineTransform {
 
-		/** The X coordinate scaling element. */
+		/**
+		 * The X coordinate scaling element.
+		 * Type: double
+		 */
 		scaleX?: number | null;
 
-		/** The Y coordinate scaling element. */
+		/**
+		 * The Y coordinate scaling element.
+		 * Type: double
+		 */
 		scaleY?: number | null;
 
-		/** The X coordinate shearing element. */
+		/**
+		 * The X coordinate shearing element.
+		 * Type: double
+		 */
 		shearX?: number | null;
 
-		/** The Y coordinate shearing element. */
+		/**
+		 * The Y coordinate shearing element.
+		 * Type: double
+		 */
 		shearY?: number | null;
 
-		/** The X coordinate translation element. */
+		/**
+		 * The X coordinate translation element.
+		 * Type: double
+		 */
 		translateX?: number | null;
 
-		/** The Y coordinate translation element. */
+		/**
+		 * The Y coordinate translation element.
+		 * Type: double
+		 */
 		translateY?: number | null;
 
 		/** The units for translate elements. */
@@ -32,22 +50,40 @@ export namespace MyNS {
 	/** AffineTransform uses a 3x3 matrix with an implied last row of [ 0 0 1 ] to transform source coordinates (x,y) into destination coordinates (x', y') according to: x' x = shear_y scale_y translate_y 1 [ 1 ] After transformation, x' = scale_x * x + shear_x * y + translate_x; y' = scale_y * y + shear_y * x + translate_y; This message is therefore composed of these six matrix elements. */
 	export interface AffineTransformFormProperties {
 
-		/** The X coordinate scaling element. */
+		/**
+		 * The X coordinate scaling element.
+		 * Type: double
+		 */
 		scaleX: FormControl<number | null | undefined>,
 
-		/** The Y coordinate scaling element. */
+		/**
+		 * The Y coordinate scaling element.
+		 * Type: double
+		 */
 		scaleY: FormControl<number | null | undefined>,
 
-		/** The X coordinate shearing element. */
+		/**
+		 * The X coordinate shearing element.
+		 * Type: double
+		 */
 		shearX: FormControl<number | null | undefined>,
 
-		/** The Y coordinate shearing element. */
+		/**
+		 * The Y coordinate shearing element.
+		 * Type: double
+		 */
 		shearY: FormControl<number | null | undefined>,
 
-		/** The X coordinate translation element. */
+		/**
+		 * The X coordinate translation element.
+		 * Type: double
+		 */
 		translateX: FormControl<number | null | undefined>,
 
-		/** The Y coordinate translation element. */
+		/**
+		 * The Y coordinate translation element.
+		 * Type: double
+		 */
 		translateY: FormControl<number | null | undefined>,
 
 		/** The units for translate elements. */
@@ -222,26 +258,44 @@ export namespace MyNS {
 	/** An RGB color. */
 	export interface RgbColor {
 
-		/** The blue component of the color, from 0.0 to 1.0. */
+		/**
+		 * The blue component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		blue?: number | null;
 
-		/** The green component of the color, from 0.0 to 1.0. */
+		/**
+		 * The green component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		green?: number | null;
 
-		/** The red component of the color, from 0.0 to 1.0. */
+		/**
+		 * The red component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		red?: number | null;
 	}
 
 	/** An RGB color. */
 	export interface RgbColorFormProperties {
 
-		/** The blue component of the color, from 0.0 to 1.0. */
+		/**
+		 * The blue component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		blue: FormControl<number | null | undefined>,
 
-		/** The green component of the color, from 0.0 to 1.0. */
+		/**
+		 * The green component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		green: FormControl<number | null | undefined>,
 
-		/** The red component of the color, from 0.0 to 1.0. */
+		/**
+		 * The red component of the color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		red: FormControl<number | null | undefined>,
 	}
 	export function CreateRgbColorFormGroup() {
@@ -261,7 +315,10 @@ export namespace MyNS {
 	/** A magnitude in a single direction in the specified units. */
 	export interface Dimension {
 
-		/** The magnitude. */
+		/**
+		 * The magnitude.
+		 * Type: double
+		 */
 		magnitude?: number | null;
 
 		/** The units for magnitude. */
@@ -271,7 +328,10 @@ export namespace MyNS {
 	/** A magnitude in a single direction in the specified units. */
 	export interface DimensionFormProperties {
 
-		/** The magnitude. */
+		/**
+		 * The magnitude.
+		 * Type: double
+		 */
 		magnitude: FormControl<number | null | undefined>,
 
 		/** The units for magnitude. */
@@ -295,7 +355,10 @@ export namespace MyNS {
 		/** If set, indicates this is a link to a slide in this presentation, addressed by its position. */
 		relativeLink?: LinkRelativeLink | null;
 
-		/** If set, indicates this is a link to the slide at this zero-based index in the presentation. There may not be a slide at this index. */
+		/**
+		 * If set, indicates this is a link to the slide at this zero-based index in the presentation. There may not be a slide at this index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		slideIndex?: number | null;
 
 		/** If set, indicates this is a link to the external web page at this URL. */
@@ -311,7 +374,10 @@ export namespace MyNS {
 		/** If set, indicates this is a link to a slide in this presentation, addressed by its position. */
 		relativeLink: FormControl<LinkRelativeLink | null | undefined>,
 
-		/** If set, indicates this is a link to the slide at this zero-based index in the presentation. There may not be a slide at this index. */
+		/**
+		 * If set, indicates this is a link to the slide at this zero-based index in the presentation. There may not be a slide at this index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		slideIndex: FormControl<number | null | undefined>,
 
 		/** If set, indicates this is a link to the external web page at this URL. */
@@ -336,7 +402,10 @@ export namespace MyNS {
 		/** The font family of the text. The font family can be any font from the Font menu in Slides or from [Google Fonts] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`. */
 		fontFamily?: string | null;
 
-		/** The rendered weight of the text. This field can have any value that is a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. Weights greater than or equal to `700` are considered bold, and weights less than `700`are not bold. The default value is `400` ("normal"). */
+		/**
+		 * The rendered weight of the text. This field can have any value that is a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. Weights greater than or equal to `700` are considered bold, and weights less than `700`are not bold. The default value is `400` ("normal").
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight?: number | null;
 	}
 
@@ -346,7 +415,10 @@ export namespace MyNS {
 		/** The font family of the text. The font family can be any font from the Font menu in Slides or from [Google Fonts] (https://fonts.google.com/). If the font name is unrecognized, the text is rendered in `Arial`. */
 		fontFamily: FormControl<string | null | undefined>,
 
-		/** The rendered weight of the text. This field can have any value that is a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. Weights greater than or equal to `700` are considered bold, and weights less than `700`are not bold. The default value is `400` ("normal"). */
+		/**
+		 * The rendered weight of the text. This field can have any value that is a multiple of `100` between `100` and `900`, inclusive. This range corresponds to the numerical values described in the CSS 2.1 Specification, [section 15.6](https://www.w3.org/TR/CSS21/fonts.html#font-boldness), with non-numerical values disallowed. Weights greater than or equal to `700` are considered bold, and weights less than `700`are not bold. The default value is `400` ("normal").
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateWeightedFontFamilyFormGroup() {
@@ -366,10 +438,16 @@ export namespace MyNS {
 		/** The autofit type of the shape. If the autofit type is AUTOFIT_TYPE_UNSPECIFIED, the autofit type is inherited from a parent placeholder if it exists. The field is automatically set to NONE if a request is made that might affect text fitting within its bounding text box. In this case the font_scale is applied to the font_size and the line_spacing_reduction is applied to the line_spacing. Both properties are also reset to default values. */
 		autofitType?: AutofitAutofitType | null;
 
-		/** The font scale applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of 1. For TEXT_AUTOFIT, this value multiplied by the font_size gives the font size that is rendered in the editor. This property is read-only. */
+		/**
+		 * The font scale applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of 1. For TEXT_AUTOFIT, this value multiplied by the font_size gives the font size that is rendered in the editor. This property is read-only.
+		 * Type: float
+		 */
 		fontScale?: number | null;
 
-		/** The line spacing reduction applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of 0. For TEXT_AUTOFIT, this value subtracted from the line_spacing gives the line spacing that is rendered in the editor. This property is read-only. */
+		/**
+		 * The line spacing reduction applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of 0. For TEXT_AUTOFIT, this value subtracted from the line_spacing gives the line spacing that is rendered in the editor. This property is read-only.
+		 * Type: float
+		 */
 		lineSpacingReduction?: number | null;
 	}
 
@@ -379,10 +457,16 @@ export namespace MyNS {
 		/** The autofit type of the shape. If the autofit type is AUTOFIT_TYPE_UNSPECIFIED, the autofit type is inherited from a parent placeholder if it exists. The field is automatically set to NONE if a request is made that might affect text fitting within its bounding text box. In this case the font_scale is applied to the font_size and the line_spacing_reduction is applied to the line_spacing. Both properties are also reset to default values. */
 		autofitType: FormControl<AutofitAutofitType | null | undefined>,
 
-		/** The font scale applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of 1. For TEXT_AUTOFIT, this value multiplied by the font_size gives the font size that is rendered in the editor. This property is read-only. */
+		/**
+		 * The font scale applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of 1. For TEXT_AUTOFIT, this value multiplied by the font_size gives the font size that is rendered in the editor. This property is read-only.
+		 * Type: float
+		 */
 		fontScale: FormControl<number | null | undefined>,
 
-		/** The line spacing reduction applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of 0. For TEXT_AUTOFIT, this value subtracted from the line_spacing gives the line spacing that is rendered in the editor. This property is read-only. */
+		/**
+		 * The line spacing reduction applied to the shape. For shapes with autofit_type NONE or SHAPE_AUTOFIT, this value is the default value of 0. For TEXT_AUTOFIT, this value subtracted from the line_spacing gives the line spacing that is rendered in the editor. This property is read-only.
+		 * Type: float
+		 */
 		lineSpacingReduction: FormControl<number | null | undefined>,
 	}
 	export function CreateAutofitFormGroup() {
@@ -722,20 +806,32 @@ export namespace MyNS {
 	/** A location of a single table cell within a table. */
 	export interface TableCellLocation {
 
-		/** The 0-based column index. */
+		/**
+		 * The 0-based column index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnIndex?: number | null;
 
-		/** The 0-based row index. */
+		/**
+		 * The 0-based row index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowIndex?: number | null;
 	}
 
 	/** A location of a single table cell within a table. */
 	export interface TableCellLocationFormProperties {
 
-		/** The 0-based column index. */
+		/**
+		 * The 0-based column index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnIndex: FormControl<number | null | undefined>,
 
-		/** The 0-based row index. */
+		/**
+		 * The 0-based row index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateTableCellLocationFormGroup() {
@@ -750,10 +846,16 @@ export namespace MyNS {
 	/** Specifies a contiguous range of an indexed collection, such as characters in text. */
 	export interface Range {
 
-		/** The optional zero-based index of the end of the collection. Required for `FIXED_RANGE` ranges. */
+		/**
+		 * The optional zero-based index of the end of the collection. Required for `FIXED_RANGE` ranges.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
-		/** The optional zero-based index of the beginning of the collection. Required for `FIXED_RANGE` and `FROM_START_INDEX` ranges. */
+		/**
+		 * The optional zero-based index of the beginning of the collection. Required for `FIXED_RANGE` and `FROM_START_INDEX` ranges.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
 		/** The type of range. */
@@ -763,10 +865,16 @@ export namespace MyNS {
 	/** Specifies a contiguous range of an indexed collection, such as characters in text. */
 	export interface RangeFormProperties {
 
-		/** The optional zero-based index of the end of the collection. Required for `FIXED_RANGE` ranges. */
+		/**
+		 * The optional zero-based index of the end of the collection. Required for `FIXED_RANGE` ranges.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
-		/** The optional zero-based index of the beginning of the collection. Required for `FIXED_RANGE` and `FROM_START_INDEX` ranges. */
+		/**
+		 * The optional zero-based index of the beginning of the collection. Required for `FIXED_RANGE` and `FROM_START_INDEX` ranges.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
 		/** The type of range. */
@@ -820,7 +928,10 @@ export namespace MyNS {
 	/** Creates an embedded Google Sheets chart. NOTE: Chart creation requires at least one of the spreadsheets.readonly, spreadsheets, drive.readonly, drive.file, or drive OAuth scopes. */
 	export interface CreateSheetsChartRequest {
 
-		/** The ID of the specific chart in the Google Sheets spreadsheet. */
+		/**
+		 * The ID of the specific chart in the Google Sheets spreadsheet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId?: number | null;
 
 		/** Common properties for a page element. Note: When you initially create a PageElement, the API may modify the values of both `size` and `transform`, but the visual size will be unchanged. */
@@ -839,7 +950,10 @@ export namespace MyNS {
 	/** Creates an embedded Google Sheets chart. NOTE: Chart creation requires at least one of the spreadsheets.readonly, spreadsheets, drive.readonly, drive.file, or drive OAuth scopes. */
 	export interface CreateSheetsChartRequestFormProperties {
 
-		/** The ID of the specific chart in the Google Sheets spreadsheet. */
+		/**
+		 * The ID of the specific chart in the Google Sheets spreadsheet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId: FormControl<number | null | undefined>,
 
 		/** The mode with which the chart is linked to the source spreadsheet. When not specified, the chart will be an image that is not linked. */
@@ -867,7 +981,10 @@ export namespace MyNS {
 	/** Creates a slide. */
 	export interface CreateSlideRequest {
 
-		/** The optional zero-based index indicating where to insert the slides. If you don't specify an index, the slide is created at the end. */
+		/**
+		 * The optional zero-based index indicating where to insert the slides. If you don't specify an index, the slide is created at the end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		insertionIndex?: number | null;
 
 		/** A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The ID length must be between 5 and 50 characters, inclusive. If you don't specify an ID, a unique one is generated. */
@@ -883,7 +1000,10 @@ export namespace MyNS {
 	/** Creates a slide. */
 	export interface CreateSlideRequestFormProperties {
 
-		/** The optional zero-based index indicating where to insert the slides. If you don't specify an index, the slide is created at the end. */
+		/**
+		 * The optional zero-based index indicating where to insert the slides. If you don't specify an index, the slide is created at the end.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		insertionIndex: FormControl<number | null | undefined>,
 
 		/** A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The ID length must be between 5 and 50 characters, inclusive. If you don't specify an ID, a unique one is generated. */
@@ -932,7 +1052,10 @@ export namespace MyNS {
 	/** The placeholder information that uniquely identifies a placeholder shape. */
 	export interface Placeholder {
 
-		/** The index of the placeholder. If the same placeholder types are present in the same page, they would have different index values. */
+		/**
+		 * The index of the placeholder. If the same placeholder types are present in the same page, they would have different index values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** The object ID of this shape's parent placeholder. If unset, the parent placeholder shape does not exist, so the shape does not inherit properties from any other shape. */
@@ -945,7 +1068,10 @@ export namespace MyNS {
 	/** The placeholder information that uniquely identifies a placeholder shape. */
 	export interface PlaceholderFormProperties {
 
-		/** The index of the placeholder. If the same placeholder types are present in the same page, they would have different index values. */
+		/**
+		 * The index of the placeholder. If the same placeholder types are present in the same page, they would have different index values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
 		/** The object ID of this shape's parent placeholder. If unset, the parent placeholder shape does not exist, so the shape does not inherit properties from any other shape. */
@@ -999,7 +1125,10 @@ export namespace MyNS {
 	/** Creates a new table. */
 	export interface CreateTableRequest {
 
-		/** Number of columns in the table. */
+		/**
+		 * Number of columns in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columns?: number | null;
 
 		/** Common properties for a page element. Note: When you initially create a PageElement, the API may modify the values of both `size` and `transform`, but the visual size will be unchanged. */
@@ -1008,20 +1137,29 @@ export namespace MyNS {
 		/** A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don't specify an ID, a unique one is generated. */
 		objectId?: string | null;
 
-		/** Number of rows in the table. */
+		/**
+		 * Number of rows in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows?: number | null;
 	}
 
 	/** Creates a new table. */
 	export interface CreateTableRequestFormProperties {
 
-		/** Number of columns in the table. */
+		/**
+		 * Number of columns in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columns: FormControl<number | null | undefined>,
 
 		/** A user-supplied object ID. If you specify an ID, it must be unique among all pages and page elements in the presentation. The ID must start with an alphanumeric character or an underscore (matches regex `[a-zA-Z0-9_]`); remaining characters may include those as well as a hyphen or colon (matches regex `[a-zA-Z0-9_-:]`). The length of the ID must not be less than 5 or greater than 50. If you don't specify an ID, a unique one is generated. */
 		objectId: FormControl<string | null | undefined>,
 
-		/** Number of rows in the table. */
+		/**
+		 * Number of rows in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateTableRequestFormGroup() {
@@ -1258,7 +1396,10 @@ export namespace MyNS {
 		/** Whether to insert new columns to the right of the reference cell location. - `True`: insert to the right. - `False`: insert to the left. */
 		insertRight?: boolean | null;
 
-		/** The number of columns to be inserted. Maximum 20 per request. */
+		/**
+		 * The number of columns to be inserted. Maximum 20 per request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The table to insert columns into. */
@@ -1271,7 +1412,10 @@ export namespace MyNS {
 		/** Whether to insert new columns to the right of the reference cell location. - `True`: insert to the right. - `False`: insert to the left. */
 		insertRight: FormControl<boolean | null | undefined>,
 
-		/** The number of columns to be inserted. Maximum 20 per request. */
+		/**
+		 * The number of columns to be inserted. Maximum 20 per request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The table to insert columns into. */
@@ -1296,7 +1440,10 @@ export namespace MyNS {
 		/** Whether to insert new rows below the reference cell location. - `True`: insert below the cell. - `False`: insert above the cell. */
 		insertBelow?: boolean | null;
 
-		/** The number of rows to be inserted. Maximum 20 per request. */
+		/**
+		 * The number of rows to be inserted. Maximum 20 per request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number?: number | null;
 
 		/** The table to insert rows into. */
@@ -1309,7 +1456,10 @@ export namespace MyNS {
 		/** Whether to insert new rows below the reference cell location. - `True`: insert below the cell. - `False`: insert above the cell. */
 		insertBelow: FormControl<boolean | null | undefined>,
 
-		/** The number of rows to be inserted. Maximum 20 per request. */
+		/**
+		 * The number of rows to be inserted. Maximum 20 per request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		number: FormControl<number | null | undefined>,
 
 		/** The table to insert rows into. */
@@ -1331,7 +1481,10 @@ export namespace MyNS {
 		/** A location of a single table cell within a table. */
 		cellLocation?: TableCellLocation;
 
-		/** The index where the text will be inserted, in Unicode code units, based on TextElement indexes. The index is zero-based and is computed from the start of the string. The index may be adjusted to prevent insertions inside Unicode grapheme clusters. In these cases, the text will be inserted immediately after the grapheme cluster. */
+		/**
+		 * The index where the text will be inserted, in Unicode code units, based on TextElement indexes. The index is zero-based and is computed from the start of the string. The index may be adjusted to prevent insertions inside Unicode grapheme clusters. In these cases, the text will be inserted immediately after the grapheme cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		insertionIndex?: number | null;
 
 		/** The object ID of the shape or table where the text will be inserted. */
@@ -1344,7 +1497,10 @@ export namespace MyNS {
 	/** Inserts text into a shape or a table cell. */
 	export interface InsertTextRequestFormProperties {
 
-		/** The index where the text will be inserted, in Unicode code units, based on TextElement indexes. The index is zero-based and is computed from the start of the string. The index may be adjusted to prevent insertions inside Unicode grapheme clusters. In these cases, the text will be inserted immediately after the grapheme cluster. */
+		/**
+		 * The index where the text will be inserted, in Unicode code units, based on TextElement indexes. The index is zero-based and is computed from the start of the string. The index may be adjusted to prevent insertions inside Unicode grapheme clusters. In these cases, the text will be inserted immediately after the grapheme cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		insertionIndex: FormControl<number | null | undefined>,
 
 		/** The object ID of the shape or table where the text will be inserted. */
@@ -1390,23 +1546,35 @@ export namespace MyNS {
 	/** A table range represents a reference to a subset of a table. It's important to note that the cells specified by a table range do not necessarily form a rectangle. For example, let's say we have a 3 x 3 table where all the cells of the last row are merged together. The table looks like this: [ ] A table range with location = (0, 0), row span = 3 and column span = 2 specifies the following cells: x x [ x x x ] */
 	export interface TableRange {
 
-		/** The column span of the table range. */
+		/**
+		 * The column span of the table range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnSpan?: number | null;
 
 		/** A location of a single table cell within a table. */
 		location?: TableCellLocation;
 
-		/** The row span of the table range. */
+		/**
+		 * The row span of the table range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan?: number | null;
 	}
 
 	/** A table range represents a reference to a subset of a table. It's important to note that the cells specified by a table range do not necessarily form a rectangle. For example, let's say we have a 3 x 3 table where all the cells of the last row are merged together. The table looks like this: [ ] A table range with location = (0, 0), row span = 3 and column span = 2 specifies the following cells: x x [ x x x ] */
 	export interface TableRangeFormProperties {
 
-		/** The column span of the table range. */
+		/**
+		 * The column span of the table range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnSpan: FormControl<number | null | undefined>,
 
-		/** The row span of the table range. */
+		/**
+		 * The row span of the table range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan: FormControl<number | null | undefined>,
 	}
 	export function CreateTableRangeFormGroup() {
@@ -1515,7 +1683,10 @@ export namespace MyNS {
 	/** Replaces all shapes that match the given criteria with the provided Google Sheets chart. The chart will be scaled and centered to fit within the bounds of the original shape. NOTE: Replacing shapes with a chart requires at least one of the spreadsheets.readonly, spreadsheets, drive.readonly, or drive OAuth scopes. */
 	export interface ReplaceAllShapesWithSheetsChartRequest {
 
-		/** The ID of the specific chart in the Google Sheets spreadsheet. */
+		/**
+		 * The ID of the specific chart in the Google Sheets spreadsheet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId?: number | null;
 
 		/** A criteria that matches a specific string of text in a shape or table. */
@@ -1534,7 +1705,10 @@ export namespace MyNS {
 	/** Replaces all shapes that match the given criteria with the provided Google Sheets chart. The chart will be scaled and centered to fit within the bounds of the original shape. NOTE: Replacing shapes with a chart requires at least one of the spreadsheets.readonly, spreadsheets, drive.readonly, or drive OAuth scopes. */
 	export interface ReplaceAllShapesWithSheetsChartRequestFormProperties {
 
-		/** The ID of the specific chart in the Google Sheets spreadsheet. */
+		/**
+		 * The ID of the specific chart in the Google Sheets spreadsheet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId: FormControl<number | null | undefined>,
 
 		/** The mode with which the chart is linked to the source spreadsheet. When not specified, the chart will be an image that is not linked. */
@@ -1711,10 +1885,16 @@ export namespace MyNS {
 	/** The properties of the Image. */
 	export interface ImageProperties {
 
-		/** The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only. */
+		/**
+		 * The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only.
+		 * Type: float
+		 */
 		brightness?: number | null;
 
-		/** The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only. */
+		/**
+		 * The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only.
+		 * Type: float
+		 */
 		contrast?: number | null;
 
 		/** The crop properties of an object enclosed in a container. For example, an Image. The crop properties is represented by the offsets of four edges which define a crop rectangle. The offsets are measured in percentage from the corresponding edges of the object's original bounding rectangle towards inside, relative to the object's original dimensions. - If the offset is in the interval (0, 1), the corresponding edge of crop rectangle is positioned inside of the object's original bounding rectangle. - If the offset is negative or greater than 1, the corresponding edge of crop rectangle is positioned outside of the object's original bounding rectangle. - If the left edge of the crop rectangle is on the right side of its right edge, the object will be flipped horizontally. - If the top edge of the crop rectangle is below its bottom edge, the object will be flipped vertically. - If all offsets and rotation angle is 0, the object is not cropped. After cropping, the content in the crop rectangle will be stretched to fit its container. */
@@ -1732,20 +1912,32 @@ export namespace MyNS {
 		/** The shadow properties of a page element. If these fields are unset, they may be inherited from a parent placeholder if it exists. If there is no parent, the fields will default to the value used for new page elements created in the Slides editor, which may depend on the page element kind. */
 		shadow?: Shadow;
 
-		/** The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent. This property is read-only. */
+		/**
+		 * The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent. This property is read-only.
+		 * Type: float
+		 */
 		transparency?: number | null;
 	}
 
 	/** The properties of the Image. */
 	export interface ImagePropertiesFormProperties {
 
-		/** The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only. */
+		/**
+		 * The brightness effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only.
+		 * Type: float
+		 */
 		brightness: FormControl<number | null | undefined>,
 
-		/** The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only. */
+		/**
+		 * The contrast effect of the image. The value should be in the interval [-1.0, 1.0], where 0 means no effect. This property is read-only.
+		 * Type: float
+		 */
 		contrast: FormControl<number | null | undefined>,
 
-		/** The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent. This property is read-only. */
+		/**
+		 * The transparency effect of the image. The value should be in the interval [0.0, 1.0], where 0 means no effect and 1 means completely transparent. This property is read-only.
+		 * Type: float
+		 */
 		transparency: FormControl<number | null | undefined>,
 	}
 	export function CreateImagePropertiesFormGroup() {
@@ -1761,38 +1953,68 @@ export namespace MyNS {
 	/** The crop properties of an object enclosed in a container. For example, an Image. The crop properties is represented by the offsets of four edges which define a crop rectangle. The offsets are measured in percentage from the corresponding edges of the object's original bounding rectangle towards inside, relative to the object's original dimensions. - If the offset is in the interval (0, 1), the corresponding edge of crop rectangle is positioned inside of the object's original bounding rectangle. - If the offset is negative or greater than 1, the corresponding edge of crop rectangle is positioned outside of the object's original bounding rectangle. - If the left edge of the crop rectangle is on the right side of its right edge, the object will be flipped horizontally. - If the top edge of the crop rectangle is below its bottom edge, the object will be flipped vertically. - If all offsets and rotation angle is 0, the object is not cropped. After cropping, the content in the crop rectangle will be stretched to fit its container. */
 	export interface CropProperties {
 
-		/** The rotation angle of the crop window around its center, in radians. Rotation angle is applied after the offset. */
+		/**
+		 * The rotation angle of the crop window around its center, in radians. Rotation angle is applied after the offset.
+		 * Type: float
+		 */
 		angle?: number | null;
 
-		/** The offset specifies the bottom edge of the crop rectangle that is located above the original bounding rectangle bottom edge, relative to the object's original height. */
+		/**
+		 * The offset specifies the bottom edge of the crop rectangle that is located above the original bounding rectangle bottom edge, relative to the object's original height.
+		 * Type: float
+		 */
 		bottomOffset?: number | null;
 
-		/** The offset specifies the left edge of the crop rectangle that is located to the right of the original bounding rectangle left edge, relative to the object's original width. */
+		/**
+		 * The offset specifies the left edge of the crop rectangle that is located to the right of the original bounding rectangle left edge, relative to the object's original width.
+		 * Type: float
+		 */
 		leftOffset?: number | null;
 
-		/** The offset specifies the right edge of the crop rectangle that is located to the left of the original bounding rectangle right edge, relative to the object's original width. */
+		/**
+		 * The offset specifies the right edge of the crop rectangle that is located to the left of the original bounding rectangle right edge, relative to the object's original width.
+		 * Type: float
+		 */
 		rightOffset?: number | null;
 
-		/** The offset specifies the top edge of the crop rectangle that is located below the original bounding rectangle top edge, relative to the object's original height. */
+		/**
+		 * The offset specifies the top edge of the crop rectangle that is located below the original bounding rectangle top edge, relative to the object's original height.
+		 * Type: float
+		 */
 		topOffset?: number | null;
 	}
 
 	/** The crop properties of an object enclosed in a container. For example, an Image. The crop properties is represented by the offsets of four edges which define a crop rectangle. The offsets are measured in percentage from the corresponding edges of the object's original bounding rectangle towards inside, relative to the object's original dimensions. - If the offset is in the interval (0, 1), the corresponding edge of crop rectangle is positioned inside of the object's original bounding rectangle. - If the offset is negative or greater than 1, the corresponding edge of crop rectangle is positioned outside of the object's original bounding rectangle. - If the left edge of the crop rectangle is on the right side of its right edge, the object will be flipped horizontally. - If the top edge of the crop rectangle is below its bottom edge, the object will be flipped vertically. - If all offsets and rotation angle is 0, the object is not cropped. After cropping, the content in the crop rectangle will be stretched to fit its container. */
 	export interface CropPropertiesFormProperties {
 
-		/** The rotation angle of the crop window around its center, in radians. Rotation angle is applied after the offset. */
+		/**
+		 * The rotation angle of the crop window around its center, in radians. Rotation angle is applied after the offset.
+		 * Type: float
+		 */
 		angle: FormControl<number | null | undefined>,
 
-		/** The offset specifies the bottom edge of the crop rectangle that is located above the original bounding rectangle bottom edge, relative to the object's original height. */
+		/**
+		 * The offset specifies the bottom edge of the crop rectangle that is located above the original bounding rectangle bottom edge, relative to the object's original height.
+		 * Type: float
+		 */
 		bottomOffset: FormControl<number | null | undefined>,
 
-		/** The offset specifies the left edge of the crop rectangle that is located to the right of the original bounding rectangle left edge, relative to the object's original width. */
+		/**
+		 * The offset specifies the left edge of the crop rectangle that is located to the right of the original bounding rectangle left edge, relative to the object's original width.
+		 * Type: float
+		 */
 		leftOffset: FormControl<number | null | undefined>,
 
-		/** The offset specifies the right edge of the crop rectangle that is located to the left of the original bounding rectangle right edge, relative to the object's original width. */
+		/**
+		 * The offset specifies the right edge of the crop rectangle that is located to the left of the original bounding rectangle right edge, relative to the object's original width.
+		 * Type: float
+		 */
 		rightOffset: FormControl<number | null | undefined>,
 
-		/** The offset specifies the top edge of the crop rectangle that is located below the original bounding rectangle top edge, relative to the object's original height. */
+		/**
+		 * The offset specifies the top edge of the crop rectangle that is located below the original bounding rectangle top edge, relative to the object's original height.
+		 * Type: float
+		 */
 		topOffset: FormControl<number | null | undefined>,
 	}
 	export function CreateCropPropertiesFormGroup() {
@@ -1863,7 +2085,10 @@ export namespace MyNS {
 	/** A solid color fill. The page or page element is filled entirely with the specified color value. If any field is unset, its value may be inherited from a parent placeholder if it exists. */
 	export interface SolidFill {
 
-		/** The fraction of this `color` that should be applied to the pixel. That is, the final pixel color is defined by the equation: pixel color = alpha * (color) + (1.0 - alpha) * (background color) This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. */
+		/**
+		 * The fraction of this `color` that should be applied to the pixel. That is, the final pixel color is defined by the equation: pixel color = alpha * (color) + (1.0 - alpha) * (background color) This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color.
+		 * Type: float
+		 */
 		alpha?: number | null;
 
 		/** A themeable solid color value. */
@@ -1873,7 +2098,10 @@ export namespace MyNS {
 	/** A solid color fill. The page or page element is filled entirely with the specified color value. If any field is unset, its value may be inherited from a parent placeholder if it exists. */
 	export interface SolidFillFormProperties {
 
-		/** The fraction of this `color` that should be applied to the pixel. That is, the final pixel color is defined by the equation: pixel color = alpha * (color) + (1.0 - alpha) * (background color) This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. */
+		/**
+		 * The fraction of this `color` that should be applied to the pixel. That is, the final pixel color is defined by the equation: pixel color = alpha * (color) + (1.0 - alpha) * (background color) This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color.
+		 * Type: float
+		 */
 		alpha: FormControl<number | null | undefined>,
 	}
 	export function CreateSolidFillFormGroup() {
@@ -1915,23 +2143,35 @@ export namespace MyNS {
 	/** A color and position in a gradient band. */
 	export interface ColorStop {
 
-		/** The alpha value of this color in the gradient band. Defaults to 1.0, fully opaque. */
+		/**
+		 * The alpha value of this color in the gradient band. Defaults to 1.0, fully opaque.
+		 * Type: float
+		 */
 		alpha?: number | null;
 
 		/** A themeable solid color value. */
 		color?: OpaqueColor;
 
-		/** The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval [0.0, 1.0]. */
+		/**
+		 * The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval [0.0, 1.0].
+		 * Type: float
+		 */
 		position?: number | null;
 	}
 
 	/** A color and position in a gradient band. */
 	export interface ColorStopFormProperties {
 
-		/** The alpha value of this color in the gradient band. Defaults to 1.0, fully opaque. */
+		/**
+		 * The alpha value of this color in the gradient band. Defaults to 1.0, fully opaque.
+		 * Type: float
+		 */
 		alpha: FormControl<number | null | undefined>,
 
-		/** The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval [0.0, 1.0]. */
+		/**
+		 * The relative position of the color stop in the gradient band measured in percentage. The value should be in the interval [0.0, 1.0].
+		 * Type: float
+		 */
 		position: FormControl<number | null | undefined>,
 	}
 	export function CreateColorStopFormGroup() {
@@ -1949,7 +2189,10 @@ export namespace MyNS {
 		/** The alignment point of the shadow, that sets the origin for translate, scale and skew of the shadow. This property is read-only. */
 		alignment?: ShadowAlignment | null;
 
-		/** The alpha of the shadow's color, from 0.0 to 1.0. */
+		/**
+		 * The alpha of the shadow's color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		alpha?: number | null;
 
 		/** A magnitude in a single direction in the specified units. */
@@ -1977,7 +2220,10 @@ export namespace MyNS {
 		/** The alignment point of the shadow, that sets the origin for translate, scale and skew of the shadow. This property is read-only. */
 		alignment: FormControl<ShadowAlignment | null | undefined>,
 
-		/** The alpha of the shadow's color, from 0.0 to 1.0. */
+		/**
+		 * The alpha of the shadow's color, from 0.0 to 1.0.
+		 * Type: float
+		 */
 		alpha: FormControl<number | null | undefined>,
 
 		/** The shadow property state. Updating the shadow on a page element will implicitly update this field to `RENDERED`, unless another value is specified in the same request. To have no shadow on a page element, set this field to `NOT_RENDERED`. In this case, any other shadow fields set in the same request will be ignored. */
@@ -2122,7 +2368,10 @@ export namespace MyNS {
 		/** The object ID of the connected page element. Some page elements, such as groups, tables, and lines do not have connection sites and therefore cannot be connected to a connector line. */
 		connectedObjectId?: string | null;
 
-		/** The index of the connection site on the connected page element. In most cases, it corresponds to the predefined connection site index from the ECMA-376 standard. More information on those connection sites can be found in the description of the "cnx" attribute in section 20.1.9.9 and Annex H. "Predefined DrawingML Shape and Text Geometries" of "Office Open XML File Formats-Fundamentals and Markup Language Reference", part 1 of [ECMA-376 5th edition] (http://www.ecma-international.org/publications/standards/Ecma-376.htm). The position of each connection site can also be viewed from Slides editor. */
+		/**
+		 * The index of the connection site on the connected page element. In most cases, it corresponds to the predefined connection site index from the ECMA-376 standard. More information on those connection sites can be found in the description of the "cnx" attribute in section 20.1.9.9 and Annex H. "Predefined DrawingML Shape and Text Geometries" of "Office Open XML File Formats-Fundamentals and Markup Language Reference", part 1 of [ECMA-376 5th edition] (http://www.ecma-international.org/publications/standards/Ecma-376.htm). The position of each connection site can also be viewed from Slides editor.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectionSiteIndex?: number | null;
 	}
 
@@ -2132,7 +2381,10 @@ export namespace MyNS {
 		/** The object ID of the connected page element. Some page elements, such as groups, tables, and lines do not have connection sites and therefore cannot be connected to a connector line. */
 		connectedObjectId: FormControl<string | null | undefined>,
 
-		/** The index of the connection site on the connected page element. In most cases, it corresponds to the predefined connection site index from the ECMA-376 standard. More information on those connection sites can be found in the description of the "cnx" attribute in section 20.1.9.9 and Annex H. "Predefined DrawingML Shape and Text Geometries" of "Office Open XML File Formats-Fundamentals and Markup Language Reference", part 1 of [ECMA-376 5th edition] (http://www.ecma-international.org/publications/standards/Ecma-376.htm). The position of each connection site can also be viewed from Slides editor. */
+		/**
+		 * The index of the connection site on the connected page element. In most cases, it corresponds to the predefined connection site index from the ECMA-376 standard. More information on those connection sites can be found in the description of the "cnx" attribute in section 20.1.9.9 and Annex H. "Predefined DrawingML Shape and Text Geometries" of "Office Open XML File Formats-Fundamentals and Markup Language Reference", part 1 of [ECMA-376 5th edition] (http://www.ecma-international.org/publications/standards/Ecma-376.htm). The position of each connection site can also be viewed from Slides editor.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		connectionSiteIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateLineConnectionFormGroup() {
@@ -2453,7 +2705,10 @@ export namespace MyNS {
 		/** A magnitude in a single direction in the specified units. */
 		indentStart?: Dimension;
 
-		/** The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent. */
+		/**
+		 * The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent.
+		 * Type: float
+		 */
 		lineSpacing?: number | null;
 
 		/** A magnitude in a single direction in the specified units. */
@@ -2475,7 +2730,10 @@ export namespace MyNS {
 		/** The text direction of this paragraph. If unset, the value defaults to LEFT_TO_RIGHT since text direction is not inherited. */
 		direction: FormControl<ParagraphStyleDirection | null | undefined>,
 
-		/** The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent. */
+		/**
+		 * The amount of space between lines, as a percentage of normal, where normal is represented as 100.0. If unset, the value is inherited from the parent.
+		 * Type: float
+		 */
 		lineSpacing: FormControl<number | null | undefined>,
 
 		/** The spacing mode for the paragraph. */
@@ -3044,13 +3302,19 @@ export namespace MyNS {
 		/** A TextElement kind that represents auto text. */
 		autoText?: AutoText;
 
-		/** The zero-based end index of this text element, exclusive, in Unicode code units. */
+		/**
+		 * The zero-based end index of this text element, exclusive, in Unicode code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
 		/** A TextElement kind that represents the beginning of a new paragraph. */
 		paragraphMarker?: ParagraphMarker;
 
-		/** The zero-based start index of this text element, in Unicode code units. */
+		/**
+		 * The zero-based start index of this text element, in Unicode code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
 		/** A TextElement kind that represents a run of text that all has the same styling. */
@@ -3060,10 +3324,16 @@ export namespace MyNS {
 	/** A TextElement describes the content of a range of indices in the text content of a Shape or TableCell. */
 	export interface TextElementFormProperties {
 
-		/** The zero-based end index of this text element, exclusive, in Unicode code units. */
+		/**
+		 * The zero-based end index of this text element, exclusive, in Unicode code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
-		/** The zero-based start index of this text element, in Unicode code units. */
+		/**
+		 * The zero-based start index of this text element, in Unicode code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateTextElementFormGroup() {
@@ -3107,7 +3377,10 @@ export namespace MyNS {
 		/** The ID of the list this paragraph belongs to. */
 		listId?: string | null;
 
-		/** The nesting level of this paragraph in the list. */
+		/**
+		 * The nesting level of this paragraph in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nestingLevel?: number | null;
 	}
 
@@ -3120,7 +3393,10 @@ export namespace MyNS {
 		/** The ID of the list this paragraph belongs to. */
 		listId: FormControl<string | null | undefined>,
 
-		/** The nesting level of this paragraph in the list. */
+		/**
+		 * The nesting level of this paragraph in the list.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nestingLevel: FormControl<number | null | undefined>,
 	}
 	export function CreateBulletFormGroup() {
@@ -3160,7 +3436,10 @@ export namespace MyNS {
 	/** A PageElement kind representing a linked chart embedded from Google Sheets. */
 	export interface SheetsChart {
 
-		/** The ID of the specific chart in the Google Sheets spreadsheet that is embedded. */
+		/**
+		 * The ID of the specific chart in the Google Sheets spreadsheet that is embedded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId?: number | null;
 
 		/** The URL of an image of the embedded chart, with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation's sharing settings change. */
@@ -3176,7 +3455,10 @@ export namespace MyNS {
 	/** A PageElement kind representing a linked chart embedded from Google Sheets. */
 	export interface SheetsChartFormProperties {
 
-		/** The ID of the specific chart in the Google Sheets spreadsheet that is embedded. */
+		/**
+		 * The ID of the specific chart in the Google Sheets spreadsheet that is embedded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		chartId: FormControl<number | null | undefined>,
 
 		/** The URL of an image of the embedded chart, with a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation's sharing settings change. */
@@ -3215,13 +3497,19 @@ export namespace MyNS {
 	/** A PageElement kind representing a table. */
 	export interface Table {
 
-		/** Number of columns in the table. */
+		/**
+		 * Number of columns in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columns?: number | null;
 
 		/** Properties of horizontal cell borders. A table's horizontal cell borders are represented as a grid. The grid has one more row than the number of rows in the table and the same number of columns as the table. For example, if the table is 3 x 3, its horizontal borders will be represented as a grid with 4 rows and 3 columns. */
 		horizontalBorderRows?: Array<TableBorderRow>;
 
-		/** Number of rows in the table. */
+		/**
+		 * Number of rows in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows?: number | null;
 
 		/** Properties of each column. */
@@ -3237,10 +3525,16 @@ export namespace MyNS {
 	/** A PageElement kind representing a table. */
 	export interface TableFormProperties {
 
-		/** Number of columns in the table. */
+		/**
+		 * Number of columns in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columns: FormControl<number | null | undefined>,
 
-		/** Number of rows in the table. */
+		/**
+		 * Number of rows in the table.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rows: FormControl<number | null | undefined>,
 	}
 	export function CreateTableFormGroup() {
@@ -3376,13 +3670,19 @@ export namespace MyNS {
 	/** Properties and contents of each table cell. */
 	export interface TableCell {
 
-		/** Column span of the cell. */
+		/**
+		 * Column span of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnSpan?: number | null;
 
 		/** A location of a single table cell within a table. */
 		location?: TableCellLocation;
 
-		/** Row span of the cell. */
+		/**
+		 * Row span of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan?: number | null;
 
 		/** The properties of the TableCell. */
@@ -3395,10 +3695,16 @@ export namespace MyNS {
 	/** Properties and contents of each table cell. */
 	export interface TableCellFormProperties {
 
-		/** Column span of the cell. */
+		/**
+		 * Column span of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		columnSpan: FormControl<number | null | undefined>,
 
-		/** Row span of the cell. */
+		/**
+		 * Row span of the cell.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rowSpan: FormControl<number | null | undefined>,
 	}
 	export function CreateTableCellFormGroup() {
@@ -3519,7 +3825,10 @@ export namespace MyNS {
 		/** Whether to enable video autoplay when the page is displayed in present mode. Defaults to false. */
 		autoPlay?: boolean | null;
 
-		/** The time at which to end playback, measured in seconds from the beginning of the video. If set, the end time should be after the start time. If not set or if you set this to a value that exceeds the video's length, the video will be played until its end. */
+		/**
+		 * The time at which to end playback, measured in seconds from the beginning of the video. If set, the end time should be after the start time. If not set or if you set this to a value that exceeds the video's length, the video will be played until its end.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		end?: number | null;
 
 		/** Whether to mute the audio during video playback. Defaults to false. */
@@ -3528,7 +3837,10 @@ export namespace MyNS {
 		/** The outline of a PageElement. If these fields are unset, they may be inherited from a parent placeholder if it exists. If there is no parent, the fields will default to the value used for new page elements created in the Slides editor, which may depend on the page element kind. */
 		outline?: Outline;
 
-		/** The time at which to start playback, measured in seconds from the beginning of the video. If set, the start time should be before the end time. If you set this to a value that exceeds the video's length in seconds, the video will be played from the last second. If not set, the video will be played from the beginning. */
+		/**
+		 * The time at which to start playback, measured in seconds from the beginning of the video. If set, the start time should be before the end time. If you set this to a value that exceeds the video's length in seconds, the video will be played from the last second. If not set, the video will be played from the beginning.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		start?: number | null;
 	}
 
@@ -3538,13 +3850,19 @@ export namespace MyNS {
 		/** Whether to enable video autoplay when the page is displayed in present mode. Defaults to false. */
 		autoPlay: FormControl<boolean | null | undefined>,
 
-		/** The time at which to end playback, measured in seconds from the beginning of the video. If set, the end time should be after the start time. If not set or if you set this to a value that exceeds the video's length, the video will be played until its end. */
+		/**
+		 * The time at which to end playback, measured in seconds from the beginning of the video. If set, the end time should be after the start time. If not set or if you set this to a value that exceeds the video's length, the video will be played until its end.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		end: FormControl<number | null | undefined>,
 
 		/** Whether to mute the audio during video playback. Defaults to false. */
 		mute: FormControl<boolean | null | undefined>,
 
-		/** The time at which to start playback, measured in seconds from the beginning of the video. If set, the start time should be before the end time. If you set this to a value that exceeds the video's length in seconds, the video will be played from the last second. If not set, the video will be played from the beginning. */
+		/**
+		 * The time at which to start playback, measured in seconds from the beginning of the video. If set, the start time should be before the end time. If you set this to a value that exceeds the video's length in seconds, the video will be played from the last second. If not set, the video will be played from the beginning.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateVideoPropertiesFormGroup() {
@@ -3584,7 +3902,10 @@ export namespace MyNS {
 	/** Updates the position of slides in the presentation. */
 	export interface UpdateSlidesPositionRequest {
 
-		/** The index where the slides should be inserted, based on the slide arrangement before the move takes place. Must be between zero and the number of slides in the presentation, inclusive. */
+		/**
+		 * The index where the slides should be inserted, based on the slide arrangement before the move takes place. Must be between zero and the number of slides in the presentation, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		insertionIndex?: number | null;
 
 		/** The IDs of the slides in the presentation that should be moved. The slides in this list must be in existing presentation order, without duplicates. */
@@ -3594,7 +3915,10 @@ export namespace MyNS {
 	/** Updates the position of slides in the presentation. */
 	export interface UpdateSlidesPositionRequestFormProperties {
 
-		/** The index where the slides should be inserted, based on the slide arrangement before the move takes place. Must be between zero and the number of slides in the presentation, inclusive. */
+		/**
+		 * The index where the slides should be inserted, based on the slide arrangement before the move takes place. Must be between zero and the number of slides in the presentation, inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		insertionIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateSlidesPositionRequestFormGroup() {
@@ -4108,14 +4432,20 @@ export namespace MyNS {
 	/** The result of replacing shapes with an image. */
 	export interface ReplaceAllShapesWithImageResponse {
 
-		/** The number of shapes replaced with images. */
+		/**
+		 * The number of shapes replaced with images.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrencesChanged?: number | null;
 	}
 
 	/** The result of replacing shapes with an image. */
 	export interface ReplaceAllShapesWithImageResponseFormProperties {
 
-		/** The number of shapes replaced with images. */
+		/**
+		 * The number of shapes replaced with images.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrencesChanged: FormControl<number | null | undefined>,
 	}
 	export function CreateReplaceAllShapesWithImageResponseFormGroup() {
@@ -4129,14 +4459,20 @@ export namespace MyNS {
 	/** The result of replacing shapes with a Google Sheets chart. */
 	export interface ReplaceAllShapesWithSheetsChartResponse {
 
-		/** The number of shapes replaced with charts. */
+		/**
+		 * The number of shapes replaced with charts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrencesChanged?: number | null;
 	}
 
 	/** The result of replacing shapes with a Google Sheets chart. */
 	export interface ReplaceAllShapesWithSheetsChartResponseFormProperties {
 
-		/** The number of shapes replaced with charts. */
+		/**
+		 * The number of shapes replaced with charts.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrencesChanged: FormControl<number | null | undefined>,
 	}
 	export function CreateReplaceAllShapesWithSheetsChartResponseFormGroup() {
@@ -4150,14 +4486,20 @@ export namespace MyNS {
 	/** The result of replacing text. */
 	export interface ReplaceAllTextResponse {
 
-		/** The number of occurrences changed by replacing all text. */
+		/**
+		 * The number of occurrences changed by replacing all text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrencesChanged?: number | null;
 	}
 
 	/** The result of replacing text. */
 	export interface ReplaceAllTextResponseFormProperties {
 
-		/** The number of occurrences changed by replacing all text. */
+		/**
+		 * The number of occurrences changed by replacing all text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		occurrencesChanged: FormControl<number | null | undefined>,
 	}
 	export function CreateReplaceAllTextResponseFormGroup() {
@@ -4231,10 +4573,16 @@ export namespace MyNS {
 		/** The content URL of the thumbnail image. The URL to the image has a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation's sharing settings change. The mime type of the thumbnail image is the same as specified in the `GetPageThumbnailRequest`. */
 		contentUrl?: string | null;
 
-		/** The positive height in pixels of the thumbnail image. */
+		/**
+		 * The positive height in pixels of the thumbnail image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** The positive width in pixels of the thumbnail image. */
+		/**
+		 * The positive width in pixels of the thumbnail image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
@@ -4244,10 +4592,16 @@ export namespace MyNS {
 		/** The content URL of the thumbnail image. The URL to the image has a default lifetime of 30 minutes. This URL is tagged with the account of the requester. Anyone with the URL effectively accesses the image as the original requester. Access to the image may be lost if the presentation's sharing settings change. The mime type of the thumbnail image is the same as specified in the `GetPageThumbnailRequest`. */
 		contentUrl: FormControl<string | null | undefined>,
 
-		/** The positive height in pixels of the thumbnail image. */
+		/**
+		 * The positive height in pixels of the thumbnail image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** The positive width in pixels of the thumbnail image. */
+		/**
+		 * The positive width in pixels of the thumbnail image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateThumbnailFormGroup() {

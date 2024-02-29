@@ -1742,8 +1742,13 @@ namespace MyNS
 		/// Returns a list of the accessors and their properties. Accessor objects are containers that have the information required for token based access to your Ethereum nodes.
 		/// ListAccessors accessors
 		/// </summary>
-		/// <param name="maxResults"> The maximum number of accessors to list.</param>
-		/// <param name="nextToken"> The pagination token that indicates the next set of results to retrieve. </param>
+		/// <param name="maxResults"> The maximum number of accessors to list.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="nextToken"> The pagination token that indicates the next set of results to retrieve. 
+		/// Max length: 128
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1779,7 +1784,10 @@ namespace MyNS
 		/// <p>Creates a member within a Managed Blockchain network.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// CreateMember networks/{networkId}/members
 		/// </summary>
-		/// <param name="networkId">The unique identifier of the network in which the member is created.</param>
+		/// <param name="networkId">The unique identifier of the network in which the member is created.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateMemberOutput> CreateMemberAsync(string networkId, CreateMemberPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1820,12 +1828,20 @@ namespace MyNS
 		/// <p>Returns a list of the members in a network and properties of their configurations.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// ListMembers networks/{networkId}/members
 		/// </summary>
-		/// <param name="networkId">The unique identifier of the network for which to list members.</param>
+		/// <param name="networkId">The unique identifier of the network for which to list members.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="name">The optional name of the member to list.</param>
 		/// <param name="status">An optional status specifier. If provided, only members currently in this status are listed.</param>
 		/// <param name="isOwned">An optional Boolean value. If provided, the request is limited either to members that the current Amazon Web Services account owns (<code>true</code>) or that other Amazon Web Services accountsn own (<code>false</code>). If omitted, all members are listed.</param>
-		/// <param name="maxResults">The maximum number of members to return in the request.</param>
-		/// <param name="nextToken">The pagination token that indicates the next set of results to retrieve.</param>
+		/// <param name="maxResults">The maximum number of members to return in the request.
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
+		/// <param name="nextToken">The pagination token that indicates the next set of results to retrieve.
+		/// Max length: 128
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1904,8 +1920,13 @@ namespace MyNS
 		/// <param name="name">The name of the network.</param>
 		/// <param name="framework">An optional framework specifier. If provided, only networks of this framework type are listed.</param>
 		/// <param name="status"><p>An optional status specifier. If provided, only networks currently in this status are listed.</p> <p>Applies only to Hyperledger Fabric.</p></param>
-		/// <param name="maxResults">The maximum number of networks to list.</param>
-		/// <param name="nextToken">The pagination token that indicates the next set of results to retrieve.</param>
+		/// <param name="maxResults">The maximum number of networks to list.
+		/// Minimum: 1
+		/// Maximum: 10
+		// </param>
+		/// <param name="nextToken">The pagination token that indicates the next set of results to retrieve.
+		/// Max length: 128
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -1941,7 +1962,10 @@ namespace MyNS
 		/// <p>Creates a node on the specified blockchain network.</p> <p>Applies to Hyperledger Fabric and Ethereum.</p>
 		/// CreateNode networks/{networkId}/nodes
 		/// </summary>
-		/// <param name="networkId"><p>The unique identifier of the network for the node.</p> <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p> <code>n-ethereum-mainnet</code> </p> </li> <li> <p> <code>n-ethereum-goerli</code> </p> </li> <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> </ul></param>
+		/// <param name="networkId"><p>The unique identifier of the network for the node.</p> <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p> <code>n-ethereum-mainnet</code> </p> </li> <li> <p> <code>n-ethereum-goerli</code> </p> </li> <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> </ul>
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateNodeOutput> CreateNodeAsync(string networkId, CreateNodePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1982,11 +2006,22 @@ namespace MyNS
 		/// <p>Returns information about the nodes within a network.</p> <p>Applies to Hyperledger Fabric and Ethereum.</p>
 		/// ListNodes networks/{networkId}/nodes
 		/// </summary>
-		/// <param name="networkId">The unique identifier of the network for which to list nodes.</param>
-		/// <param name="memberId"><p>The unique identifier of the member who owns the nodes to list.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p></param>
+		/// <param name="networkId">The unique identifier of the network for which to list nodes.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="memberId"><p>The unique identifier of the member who owns the nodes to list.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <param name="status">An optional status specifier. If provided, only nodes currently in this status are listed.</param>
-		/// <param name="maxResults">The maximum number of nodes to list.</param>
-		/// <param name="nextToken">The pagination token that indicates the next set of results to retrieve.</param>
+		/// <param name="maxResults">The maximum number of nodes to list.
+		/// Minimum: 1
+		/// Maximum: 20
+		// </param>
+		/// <param name="nextToken">The pagination token that indicates the next set of results to retrieve.
+		/// Max length: 128
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2022,7 +2057,10 @@ namespace MyNS
 		/// <p>Creates a proposal for a change to the network that other members of the network can vote on, for example, a proposal to add a new member to the network. Any member can create a proposal.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// CreateProposal networks/{networkId}/proposals
 		/// </summary>
-		/// <param name="networkId"> The unique identifier of the network for which the proposal is made.</param>
+		/// <param name="networkId"> The unique identifier of the network for which the proposal is made.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateProposalOutput> CreateProposalAsync(string networkId, CreateProposalPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2063,9 +2101,17 @@ namespace MyNS
 		/// <p>Returns a list of proposals for the network.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// ListProposals networks/{networkId}/proposals
 		/// </summary>
-		/// <param name="networkId"> The unique identifier of the network. </param>
-		/// <param name="maxResults"> The maximum number of proposals to return. </param>
-		/// <param name="nextToken"> The pagination token that indicates the next set of results to retrieve. </param>
+		/// <param name="networkId"> The unique identifier of the network. 
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> The maximum number of proposals to return. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken"> The pagination token that indicates the next set of results to retrieve. 
+		/// Max length: 128
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2101,7 +2147,10 @@ namespace MyNS
 		/// Deletes an accessor that your Amazon Web Services account owns. An accessor object is a container that has the information required for token based access to your Ethereum nodes including, the <code>BILLING_TOKEN</code>. After an accessor is deleted, the status of the accessor changes from <code>AVAILABLE</code> to <code>PENDING_DELETION</code>. An accessor in the <code>PENDING_DELETION</code> state can’t be used for new WebSocket requests or HTTP requests. However, WebSocket connections that were initiated while the accessor was in the <code>AVAILABLE</code> state remain open until they expire (up to 2 hours).
 		/// DeleteAccessor accessors/{AccessorId}
 		/// </summary>
-		/// <param name="AccessorId">The unique identifier of the accessor.</param>
+		/// <param name="AccessorId">The unique identifier of the accessor.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteAccessorOutput> DeleteAccessorAsync(string AccessorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2135,7 +2184,10 @@ namespace MyNS
 		/// Returns detailed information about an accessor. An accessor object is a container that has the information required for token based access to your Ethereum nodes.
 		/// GetAccessor accessors/{AccessorId}
 		/// </summary>
-		/// <param name="AccessorId">The unique identifier of the accessor.</param>
+		/// <param name="AccessorId">The unique identifier of the accessor.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAccessorOutput> GetAccessorAsync(string AccessorId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2169,8 +2221,14 @@ namespace MyNS
 		/// <p>Deletes a member. Deleting a member removes the member and all associated resources from the network. <code>DeleteMember</code> can only be called for a specified <code>MemberId</code> if the principal performing the action is associated with the Amazon Web Services account that owns the member. In all other cases, the <code>DeleteMember</code> action is carried out as the result of an approved proposal to remove a member. If <code>MemberId</code> is the last member in a network specified by the last Amazon Web Services account, the network is deleted also.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// DeleteMember networks/{networkId}/members/{memberId}
 		/// </summary>
-		/// <param name="networkId">The unique identifier of the network from which the member is removed.</param>
-		/// <param name="memberId">The unique identifier of the member to remove.</param>
+		/// <param name="networkId">The unique identifier of the network from which the member is removed.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="memberId">The unique identifier of the member to remove.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteMemberOutput> DeleteMemberAsync(string networkId, string memberId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2204,8 +2262,14 @@ namespace MyNS
 		/// <p>Returns detailed information about a member.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// GetMember networks/{networkId}/members/{memberId}
 		/// </summary>
-		/// <param name="networkId">The unique identifier of the network to which the member belongs.</param>
-		/// <param name="memberId">The unique identifier of the member.</param>
+		/// <param name="networkId">The unique identifier of the network to which the member belongs.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="memberId">The unique identifier of the member.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMemberOutput> GetMemberAsync(string networkId, string memberId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2239,8 +2303,14 @@ namespace MyNS
 		/// <p>Updates a member configuration with new parameters.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// UpdateMember networks/{networkId}/members/{memberId}
 		/// </summary>
-		/// <param name="networkId">The unique identifier of the Managed Blockchain network to which the member belongs.</param>
-		/// <param name="memberId">The unique identifier of the member.</param>
+		/// <param name="networkId">The unique identifier of the Managed Blockchain network to which the member belongs.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="memberId">The unique identifier of the member.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMemberOutput> UpdateMemberAsync(string networkId, string memberId, UpdateMemberPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2281,9 +2351,18 @@ namespace MyNS
 		/// <p>Deletes a node that your Amazon Web Services account owns. All data on the node is lost and cannot be recovered.</p> <p>Applies to Hyperledger Fabric and Ethereum.</p>
 		/// DeleteNode networks/{networkId}/nodes/{nodeId}
 		/// </summary>
-		/// <param name="networkId"><p>The unique identifier of the network that the node is on.</p> <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p> <code>n-ethereum-mainnet</code> </p> </li> <li> <p> <code>n-ethereum-goerli</code> </p> </li> <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> </ul></param>
-		/// <param name="memberId"><p>The unique identifier of the member that owns this node.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p></param>
-		/// <param name="nodeId">The unique identifier of the node.</param>
+		/// <param name="networkId"><p>The unique identifier of the network that the node is on.</p> <p>Ethereum public networks have the following <code>NetworkId</code>s:</p> <ul> <li> <p> <code>n-ethereum-mainnet</code> </p> </li> <li> <p> <code>n-ethereum-goerli</code> </p> </li> <li> <p> <code>n-ethereum-rinkeby</code> </p> </li> </ul>
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="memberId"><p>The unique identifier of the member that owns this node.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="nodeId">The unique identifier of the node.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteNodeOutput> DeleteNodeAsync(string networkId, string memberId, string nodeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2317,9 +2396,18 @@ namespace MyNS
 		/// <p>Returns detailed information about a node.</p> <p>Applies to Hyperledger Fabric and Ethereum.</p>
 		/// GetNode networks/{networkId}/nodes/{nodeId}
 		/// </summary>
-		/// <param name="networkId">The unique identifier of the network that the node is on.</param>
-		/// <param name="memberId"><p>The unique identifier of the member that owns the node.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p></param>
-		/// <param name="nodeId">The unique identifier of the node.</param>
+		/// <param name="networkId">The unique identifier of the network that the node is on.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="memberId"><p>The unique identifier of the member that owns the node.</p> <p>Applies only to Hyperledger Fabric and is required for Hyperledger Fabric.</p>
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="nodeId">The unique identifier of the node.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetNodeOutput> GetNodeAsync(string networkId, string memberId, string nodeId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2353,8 +2441,14 @@ namespace MyNS
 		/// <p>Updates a node configuration with new parameters.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// UpdateNode networks/{networkId}/nodes/{nodeId}
 		/// </summary>
-		/// <param name="networkId">The unique identifier of the network that the node is on.</param>
-		/// <param name="nodeId">The unique identifier of the node.</param>
+		/// <param name="networkId">The unique identifier of the network that the node is on.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="nodeId">The unique identifier of the node.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateNodeOutput> UpdateNodeAsync(string networkId, string nodeId, UpdateNodePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2395,7 +2489,10 @@ namespace MyNS
 		/// <p>Returns detailed information about a network.</p> <p>Applies to Hyperledger Fabric and Ethereum.</p>
 		/// GetNetwork networks/{networkId}
 		/// </summary>
-		/// <param name="networkId">The unique identifier of the network to get information about.</param>
+		/// <param name="networkId">The unique identifier of the network to get information about.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetNetworkOutput> GetNetworkAsync(string networkId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2429,8 +2526,14 @@ namespace MyNS
 		/// <p>Returns detailed information about a proposal.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// GetProposal networks/{networkId}/proposals/{proposalId}
 		/// </summary>
-		/// <param name="networkId">The unique identifier of the network for which the proposal is made.</param>
-		/// <param name="proposalId">The unique identifier of the proposal.</param>
+		/// <param name="networkId">The unique identifier of the network for which the proposal is made.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="proposalId">The unique identifier of the proposal.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProposalOutput> GetProposalAsync(string networkId, string proposalId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2464,8 +2567,13 @@ namespace MyNS
 		/// <p>Returns a list of all invitations for the current Amazon Web Services account.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// ListInvitations invitations
 		/// </summary>
-		/// <param name="maxResults">The maximum number of invitations to return.</param>
-		/// <param name="nextToken">The pagination token that indicates the next set of results to retrieve.</param>
+		/// <param name="maxResults">The maximum number of invitations to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken">The pagination token that indicates the next set of results to retrieve.
+		/// Max length: 128
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2501,10 +2609,21 @@ namespace MyNS
 		/// <p>Returns the list of votes for a specified proposal, including the value of each vote and the unique identifier of the member that cast the vote.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// ListProposalVotes networks/{networkId}/proposals/{proposalId}/votes
 		/// </summary>
-		/// <param name="networkId"> The unique identifier of the network. </param>
-		/// <param name="proposalId"> The unique identifier of the proposal. </param>
-		/// <param name="maxResults"> The maximum number of votes to return. </param>
-		/// <param name="nextToken"> The pagination token that indicates the next set of results to retrieve. </param>
+		/// <param name="networkId"> The unique identifier of the network. 
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="proposalId"> The unique identifier of the proposal. 
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults"> The maximum number of votes to return. 
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="nextToken"> The pagination token that indicates the next set of results to retrieve. 
+		/// Max length: 128
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -2540,8 +2659,14 @@ namespace MyNS
 		/// <p>Casts a vote for a specified <code>ProposalId</code> on behalf of a member. The member to vote as, specified by <code>VoterMemberId</code>, must be in the same Amazon Web Services account as the principal that calls the action.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// VoteOnProposal networks/{networkId}/proposals/{proposalId}/votes
 		/// </summary>
-		/// <param name="networkId"> The unique identifier of the network. </param>
-		/// <param name="proposalId"> The unique identifier of the proposal. </param>
+		/// <param name="networkId"> The unique identifier of the network. 
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="proposalId"> The unique identifier of the proposal. 
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<VoteOnProposalOutput> VoteOnProposalAsync(string networkId, string proposalId, VoteOnProposalPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2582,7 +2707,10 @@ namespace MyNS
 		/// <p>Returns a list of tags for the specified resource. Each tag consists of a key and optional value.</p> <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2616,7 +2744,10 @@ namespace MyNS
 		/// <p>Adds or overwrites the specified tags for the specified Amazon Managed Blockchain resource. Each tag consists of a key and optional value.</p> <p>When you specify a tag key that already exists, the tag value is overwritten with the new value. Use <code>UntagResource</code> to remove tag keys.</p> <p>A resource can have up to 50 tags. If you try to create more than 50 tags for a resource, your request fails and returns an error.</p> <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2657,7 +2788,10 @@ namespace MyNS
 		/// <p>Rejects an invitation to join a network. This action can be called by a principal in an Amazon Web Services account that has received an invitation to create a member and join a network.</p> <p>Applies only to Hyperledger Fabric.</p>
 		/// RejectInvitation invitations/{invitationId}
 		/// </summary>
-		/// <param name="invitationId">The unique identifier of the invitation to reject.</param>
+		/// <param name="invitationId">The unique identifier of the invitation to reject.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<RejectInvitationOutput> RejectInvitationAsync(string invitationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2691,8 +2825,14 @@ namespace MyNS
 		/// <p>Removes the specified tags from the Amazon Managed Blockchain resource.</p> <p>For more information about tags, see <a href="https://docs.aws.amazon.com/managed-blockchain/latest/ethereum-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Ethereum Developer Guide</i>, or <a href="https://docs.aws.amazon.com/managed-blockchain/latest/hyperledger-fabric-dev/tagging-resources.html">Tagging Resources</a> in the <i>Amazon Managed Blockchain Hyperledger Fabric Developer Guide</i>.</p>
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.</param>
-		/// <param name="tagKeys">The tag keys.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) of the resource. For more information about ARNs and their format, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html">Amazon Resource Names (ARNs)</a> in the <i>Amazon Web Services General Reference</i>.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">The tag keys.
+		/// Minimum items: 0
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

@@ -134,6 +134,7 @@ export namespace MyNS {
 		 * Get v2beta1/{parent}/traceSinks
 		 * @param {string} parent Required. The parent resource whose sinks are to be listed (currently only project parent resources are supported): "projects/[PROJECT_ID]"
 		 * @param {number} pageSize Optional. The maximum number of results to return from this request. Non-positive values are ignored. The presence of `next_page_token` in the response indicates that more results might be available.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. If present, then retrieve the next batch of results from the preceding call to this method. `page_token` must be the value of `next_page_token` from the previous response. The values of other method parameters should be identical to those in the previous call.
 		 * @return {ListTraceSinksResponse} Successful response
 		 */

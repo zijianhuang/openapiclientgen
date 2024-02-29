@@ -79,12 +79,20 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv2trunking_country_instanceOriginating_call_prices {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		number_type?: string | null;
 	}
 	export interface Pricingv2trunking_country_instanceOriginating_call_pricesFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		number_type: FormControl<string | null | undefined>,
 	}
@@ -98,14 +106,22 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv2trunking_country_instanceTerminating_prefix_prices {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		destination_prefixes?: Array<string>;
 		friendly_name?: string | null;
 		origination_prefixes?: Array<string>;
 	}
 	export interface Pricingv2trunking_country_instanceTerminating_prefix_pricesFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		friendly_name: FormControl<string | null | undefined>,
 	}
@@ -175,12 +191,20 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv2trunking_numberOriginating_call_price {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		number_type?: string | null;
 	}
 	export interface Pricingv2trunking_numberOriginating_call_priceFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		number_type: FormControl<string | null | undefined>,
 	}
@@ -194,14 +218,22 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv2trunking_numberTerminating_prefix_prices {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		destination_prefixes?: Array<string>;
 		friendly_name?: string | null;
 		origination_prefixes?: Array<string>;
 	}
 	export interface Pricingv2trunking_numberTerminating_prefix_pricesFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		friendly_name: FormControl<string | null | undefined>,
 	}
@@ -321,12 +353,20 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv2voicevoice_country_instanceInbound_call_prices {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		number_type?: string | null;
 	}
 	export interface Pricingv2voicevoice_country_instanceInbound_call_pricesFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		number_type: FormControl<string | null | undefined>,
 	}
@@ -340,14 +380,22 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv2voicevoice_country_instanceOutbound_prefix_prices {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		destination_prefixes?: Array<string>;
 		friendly_name?: string | null;
 		origination_prefixes?: Array<string>;
 	}
 	export interface Pricingv2voicevoice_country_instanceOutbound_prefix_pricesFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		friendly_name: FormControl<string | null | undefined>,
 	}
@@ -419,12 +467,20 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv2voicevoice_numberInbound_call_price {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		number_type?: string | null;
 	}
 	export interface Pricingv2voicevoice_numberInbound_call_priceFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 		number_type: FormControl<string | null | undefined>,
 	}
@@ -438,12 +494,20 @@ export namespace MyNS {
 	}
 
 	export interface Pricingv2voicevoice_numberOutbound_call_prices {
+
+		/** Type: double */
 		base_price?: number | null;
+
+		/** Type: double */
 		current_price?: number | null;
 		origination_prefixes?: Array<string>;
 	}
 	export interface Pricingv2voicevoice_numberOutbound_call_pricesFormProperties {
+
+		/** Type: double */
 		base_price: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		current_price: FormControl<number | null | undefined>,
 	}
 	export function CreatePricingv2voicevoice_numberOutbound_call_pricesFormGroup() {
@@ -462,7 +526,9 @@ export namespace MyNS {
 		/**
 		 * Get v2/Trunking/Countries
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListTrunkingCountryReturn} OK
 		 */
@@ -494,7 +560,9 @@ export namespace MyNS {
 		/**
 		 * Get v2/Voice/Countries
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListVoiceCountryReturn} OK
 		 */
@@ -540,7 +608,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -549,7 +621,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -583,7 +659,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -592,7 +672,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

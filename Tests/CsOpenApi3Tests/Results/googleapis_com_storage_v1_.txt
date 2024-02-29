@@ -2212,7 +2212,9 @@ namespace MyNS
 		/// Storage_buckets_list b
 		/// </summary>
 		/// <param name="project">A valid API project identifier.</param>
-		/// <param name="maxResults">Maximum number of buckets to return in a single response. The service will use this parameter or 1,000 items, whichever is smaller.</param>
+		/// <param name="maxResults">Maximum number of buckets to return in a single response. The service will use this parameter or 1,000 items, whichever is smaller.
+		/// Minimum: 0
+		// </param>
 		/// <param name="pageToken">A previously-returned page token representing part of the larger set of results to view.</param>
 		/// <param name="prefix">Filter results to buckets whose names begin with this prefix.</param>
 		/// <param name="projection">Set of properties to return. Defaults to noAcl.</param>
@@ -2689,7 +2691,9 @@ namespace MyNS
 		/// Storage_anywhereCaches_list b/{bucket}/anywhereCaches
 		/// </summary>
 		/// <param name="bucket">Name of the parent bucket.</param>
-		/// <param name="pageSize">Maximum number of items to return in a single page of responses. Maximum 1000.</param>
+		/// <param name="pageSize">Maximum number of items to return in a single page of responses. Maximum 1000.
+		/// Minimum: 0
+		// </param>
 		/// <param name="pageToken">A previously-returned page token representing part of the larger set of results to view.</param>
 		/// <returns>Successful response</returns>
 		public async Task<AnywhereCaches> Storage_anywhereCaches_listAsync(string bucket, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3166,7 +3170,9 @@ namespace MyNS
 		/// <param name="bucket">Name of the bucket in which to look for folders.</param>
 		/// <param name="delimiter">Returns results in a directory-like mode. The only supported value is '/'. If set, items will only contain folders that either exactly match the prefix, or are one level below the prefix.</param>
 		/// <param name="endOffset">Filter results to folders whose names are lexicographically before endOffset. If startOffset is also set, the folders listed will have names between startOffset (inclusive) and endOffset (exclusive).</param>
-		/// <param name="pageSize">Maximum number of items to return in a single page of responses.</param>
+		/// <param name="pageSize">Maximum number of items to return in a single page of responses.
+		/// Minimum: 0
+		// </param>
 		/// <param name="pageToken">A previously-returned page token representing part of the larger set of results to view.</param>
 		/// <param name="prefix">Filter results to folders whose paths begin with this prefix. If set, the value must either be an empty string or end with a '/'.</param>
 		/// <param name="startOffset">Filter results to folders whose names are lexicographically equal to or after startOffset. If endOffset is also set, the folders listed will have names between startOffset (inclusive) and endOffset (exclusive).</param>
@@ -3347,7 +3353,9 @@ namespace MyNS
 		/// Storage_buckets_getIamPolicy b/{bucket}/iam
 		/// </summary>
 		/// <param name="bucket">Name of a bucket.</param>
-		/// <param name="optionsRequestedPolicyVersion">The IAM policy format version to be returned. If the optionsRequestedPolicyVersion is for an older version that doesn't support part of the requested IAM policy, the request fails.</param>
+		/// <param name="optionsRequestedPolicyVersion">The IAM policy format version to be returned. If the optionsRequestedPolicyVersion is for an older version that doesn't support part of the requested IAM policy, the request fails.
+		/// Minimum: 1
+		// </param>
 		/// <param name="userProject">The project to be billed for this request. Required for Requester Pays buckets.</param>
 		/// <returns>Successful response</returns>
 		public async Task<Policy> Storage_buckets_getIamPolicyAsync(string bucket, int optionsRequestedPolicyVersion, string userProject, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3492,7 +3500,9 @@ namespace MyNS
 		/// Storage_managedFolders_list b/{bucket}/managedFolders
 		/// </summary>
 		/// <param name="bucket">Name of the bucket containing the managed folder.</param>
-		/// <param name="pageSize">Maximum number of items to return in a single page of responses.</param>
+		/// <param name="pageSize">Maximum number of items to return in a single page of responses.
+		/// Minimum: 0
+		// </param>
 		/// <param name="pageToken">A previously-returned page token representing part of the larger set of results to view.</param>
 		/// <param name="prefix">The managed folder name/path prefix to filter the output list of results.</param>
 		/// <returns>Successful response</returns>
@@ -3639,7 +3649,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="bucket">Name of the bucket containing the managed folder.</param>
 		/// <param name="managedFolder">The managed folder name/path.</param>
-		/// <param name="optionsRequestedPolicyVersion">The IAM policy format version to be returned. If the optionsRequestedPolicyVersion is for an older version that doesn't support part of the requested IAM policy, the request fails.</param>
+		/// <param name="optionsRequestedPolicyVersion">The IAM policy format version to be returned. If the optionsRequestedPolicyVersion is for an older version that doesn't support part of the requested IAM policy, the request fails.
+		/// Minimum: 1
+		// </param>
 		/// <param name="userProject">The project to be billed for this request. Required for Requester Pays buckets.</param>
 		/// <returns>Successful response</returns>
 		public async Task<Policy> Storage_managedFolders_getIamPolicyAsync(string bucket, string managedFolder, int optionsRequestedPolicyVersion, string userProject, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3903,7 +3915,9 @@ namespace MyNS
 		/// <param name="includeFoldersAsPrefixes">Only applicable if delimiter is set to '/'. If true, will also include folders and managed folders (besides objects) in the returned prefixes.</param>
 		/// <param name="includeTrailingDelimiter">If true, objects that end in exactly one instance of delimiter will have their metadata included in items in addition to prefixes.</param>
 		/// <param name="matchGlob">Filter results to objects and prefixes that match this glob pattern.</param>
-		/// <param name="maxResults">Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.</param>
+		/// <param name="maxResults">Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.
+		/// Minimum: 0
+		// </param>
 		/// <param name="pageToken">A previously-returned page token representing part of the larger set of results to view.</param>
 		/// <param name="prefix">Filter results to objects whose names begin with this prefix.</param>
 		/// <param name="projection">Set of properties to return. Defaults to noAcl.</param>
@@ -3989,7 +4003,9 @@ namespace MyNS
 		/// <param name="delimiter">Returns results in a directory-like mode. items will contain only objects whose names, aside from the prefix, do not contain delimiter. Objects whose names, aside from the prefix, contain delimiter will have their name, truncated after the delimiter, returned in prefixes. Duplicate prefixes are omitted.</param>
 		/// <param name="endOffset">Filter results to objects whose names are lexicographically before endOffset. If startOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).</param>
 		/// <param name="includeTrailingDelimiter">If true, objects that end in exactly one instance of delimiter will have their metadata included in items in addition to prefixes.</param>
-		/// <param name="maxResults">Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.</param>
+		/// <param name="maxResults">Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.
+		/// Minimum: 0
+		// </param>
 		/// <param name="pageToken">A previously-returned page token representing part of the larger set of results to view.</param>
 		/// <param name="prefix">Filter results to objects whose names begin with this prefix.</param>
 		/// <param name="projection">Set of properties to return. Defaults to noAcl.</param>
@@ -4628,7 +4644,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="bucket">Name of the bucket in which to look for operations.</param>
 		/// <param name="filter">A filter to narrow down results to a preferred subset. The filtering language is documented in more detail in [AIP-160](https://google.aip.dev/160).</param>
-		/// <param name="pageSize">Maximum number of items to return in a single page of responses. Fewer total results may be returned than requested. The service uses this parameter or 100 items, whichever is smaller.</param>
+		/// <param name="pageSize">Maximum number of items to return in a single page of responses. Fewer total results may be returned than requested. The service uses this parameter or 100 items, whichever is smaller.
+		/// Minimum: 0
+		// </param>
 		/// <param name="pageToken">A previously-returned page token representing part of the larger set of results to view.</param>
 		/// <returns>Successful response</returns>
 		public async Task<GoogleLongrunningListOperationsResponse> Storage_buckets_operations_listAsync(string bucket, string filter, int pageSize, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -4960,7 +4978,9 @@ namespace MyNS
 		/// Storage_projects_hmacKeys_list projects/{projectId}/hmacKeys
 		/// </summary>
 		/// <param name="projectId">Name of the project in which to look for HMAC keys.</param>
-		/// <param name="maxResults">Maximum number of items to return in a single page of responses. The service uses this parameter or 250 items, whichever is smaller. The max number of items per page will also be limited by the number of distinct service accounts in the response. If the number of service accounts in a single response is too high, the page will truncated and a next page token will be returned.</param>
+		/// <param name="maxResults">Maximum number of items to return in a single page of responses. The service uses this parameter or 250 items, whichever is smaller. The max number of items per page will also be limited by the number of distinct service accounts in the response. If the number of service accounts in a single response is too high, the page will truncated and a next page token will be returned.
+		/// Minimum: 0
+		// </param>
 		/// <param name="pageToken">A previously-returned page token representing part of the larger set of results to view.</param>
 		/// <param name="serviceAccountEmail">If present, only keys for the given service account are returned.</param>
 		/// <param name="showDeletedKeys">Whether or not to show keys in the DELETED state.</param>

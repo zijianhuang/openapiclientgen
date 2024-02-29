@@ -163,18 +163,30 @@ export namespace MyNS {
 
 	export interface VoiceSettingsResponseModel {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		similarity_boost: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		stability: number;
 	}
 	export interface VoiceSettingsResponseModelFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		similarity_boost: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		stability: FormControl<number | null | undefined>,
 	}
 	export function CreateVoiceSettingsResponseModelFormGroup() {
@@ -234,22 +246,34 @@ export namespace MyNS {
 		/** Required */
 		can_use_professional_voice_cloning: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_count: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_limit: number;
 
 		/** Required */
 		currency: ExtendedSubscriptionResponseModelCurrency;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		next_character_count_reset_unix: number;
 
 		/** Required */
 		next_invoice: InvoiceResponseModel;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		professional_voice_limit: number;
 
 		/** Required */
@@ -258,7 +282,10 @@ export namespace MyNS {
 		/** Required */
 		tier: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voice_limit: number;
 	}
 	export interface ExtendedSubscriptionResponseModelFormProperties {
@@ -281,19 +308,31 @@ export namespace MyNS {
 		/** Required */
 		can_use_professional_voice_cloning: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_count: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_limit: FormControl<number | null | undefined>,
 
 		/** Required */
 		currency: FormControl<ExtendedSubscriptionResponseModelCurrency | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		next_character_count_reset_unix: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		professional_voice_limit: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -302,7 +341,10 @@ export namespace MyNS {
 		/** Required */
 		tier: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voice_limit: FormControl<number | null | undefined>,
 	}
 	export function CreateExtendedSubscriptionResponseModelFormGroup() {
@@ -380,18 +422,30 @@ export namespace MyNS {
 
 	export interface InvoiceResponseModel {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount_due_cents: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		next_payment_attempt_unix: number;
 	}
 	export interface InvoiceResponseModelFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		amount_due_cents: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		next_payment_attempt_unix: FormControl<number | null | undefined>,
 	}
 	export function CreateInvoiceResponseModelFormGroup() {
@@ -486,7 +540,10 @@ export namespace MyNS {
 		/** Required */
 		verification_attempts: Array<VerificationAttemptResponseModel>;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		verification_attempts_count: number;
 
 		/** Required */
@@ -506,7 +563,10 @@ export namespace MyNS {
 		/** Required */
 		model_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		verification_attempts_count: FormControl<number | null | undefined>,
 	}
 	export function CreateFineTuningResponseModelFormGroup() {
@@ -527,16 +587,25 @@ export namespace MyNS {
 		/** Required */
 		accepted: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		date_unix: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		levenshtein_distance: number;
 
 		/** Required */
 		recording: RecordingResponseModel;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		similarity: number;
 
 		/** Required */
@@ -547,13 +616,22 @@ export namespace MyNS {
 		/** Required */
 		accepted: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		date_unix: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		levenshtein_distance: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		similarity: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -578,13 +656,19 @@ export namespace MyNS {
 		/** Required */
 		recording_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size_bytes: number;
 
 		/** Required */
 		transcription: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upload_date_unix: number;
 	}
 	export interface RecordingResponseModelFormProperties {
@@ -595,13 +679,19 @@ export namespace MyNS {
 		/** Required */
 		recording_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size_bytes: FormControl<number | null | undefined>,
 
 		/** Required */
 		transcription: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		upload_date_unix: FormControl<number | null | undefined>,
 	}
 	export function CreateRecordingResponseModelFormGroup() {
@@ -630,16 +720,25 @@ export namespace MyNS {
 
 	export interface HistoryItemResponseModel {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_count_change_from: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_count_change_to: number;
 
 		/** Required */
 		content_type: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		date_unix: number;
 
 		/** Required */
@@ -668,16 +767,25 @@ export namespace MyNS {
 	}
 	export interface HistoryItemResponseModelFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_count_change_from: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_count_change_to: FormControl<number | null | undefined>,
 
 		/** Required */
 		content_type: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		date_unix: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -811,7 +919,10 @@ export namespace MyNS {
 		/** Required */
 		sample_id: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size_bytes: number;
 	}
 	export interface SampleResponseModelFormProperties {
@@ -828,7 +939,10 @@ export namespace MyNS {
 		/** Required */
 		sample_id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size_bytes: FormControl<number | null | undefined>,
 	}
 	export function CreateSampleResponseModelFormGroup() {
@@ -903,19 +1017,31 @@ export namespace MyNS {
 		/** Required */
 		can_use_professional_voice_cloning: boolean;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_count: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_limit: number;
 
 		/** Required */
 		currency: ExtendedSubscriptionResponseModelCurrency;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		next_character_count_reset_unix: number;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		professional_voice_limit: number;
 
 		/** Required */
@@ -924,7 +1050,10 @@ export namespace MyNS {
 		/** Required */
 		tier: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voice_limit: number;
 	}
 	export interface SubscriptionResponseModelFormProperties {
@@ -947,19 +1076,31 @@ export namespace MyNS {
 		/** Required */
 		can_use_professional_voice_cloning: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_count: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		character_limit: FormControl<number | null | undefined>,
 
 		/** Required */
 		currency: FormControl<ExtendedSubscriptionResponseModelCurrency | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		next_character_count_reset_unix: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		professional_voice_limit: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -968,7 +1109,10 @@ export namespace MyNS {
 		/** Required */
 		tier: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voice_limit: FormControl<number | null | undefined>,
 	}
 	export function CreateSubscriptionResponseModelFormGroup() {

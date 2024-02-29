@@ -1189,6 +1189,7 @@ export namespace MyNS {
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn The ARN of the behavior graph to remove the tags from.
 		 * @param {Array<string>} tagKeys The tag keys of the tags to remove from the behavior graph. You can remove up to 50 tags at a time.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {void} 
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<HttpResponse<string>> {
@@ -1313,8 +1314,8 @@ export namespace MyNS {
 
 		/**
 		 * Customized message text to include in the invitation email message to the invited member accounts.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Message?: string | null;
 
@@ -1339,8 +1340,8 @@ export namespace MyNS {
 
 		/**
 		 * Customized message text to include in the invitation email message to the invited member accounts.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Message: FormControl<string | null | undefined>,
 
@@ -1461,8 +1462,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId: string;
 	}
@@ -1471,8 +1472,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account identifier of the account to designate as the Detective administrator account for the organization.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId: FormControl<string | null | undefined>,
 	}
@@ -1524,8 +1525,8 @@ export namespace MyNS {
 
 		/**
 		 * For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		NextToken?: string | null;
 
@@ -1546,8 +1547,8 @@ export namespace MyNS {
 
 		/**
 		 * For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1571,8 +1572,8 @@ export namespace MyNS {
 
 		/**
 		 * For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		NextToken?: string | null;
 
@@ -1587,8 +1588,8 @@ export namespace MyNS {
 
 		/**
 		 * For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1611,8 +1612,8 @@ export namespace MyNS {
 
 		/**
 		 * For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		NextToken?: string | null;
 
@@ -1627,8 +1628,8 @@ export namespace MyNS {
 
 		/**
 		 * For requests to retrieve the next page of results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1657,8 +1658,8 @@ export namespace MyNS {
 
 		/**
 		 * For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		NextToken?: string | null;
 
@@ -1679,8 +1680,8 @@ export namespace MyNS {
 
 		/**
 		 * For requests to retrieve the next page of member account results, the pagination token that was returned with the previous page of results. The initial request does not include a pagination token.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1704,8 +1705,8 @@ export namespace MyNS {
 
 		/**
 		 * For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		NextToken?: string | null;
 
@@ -1720,8 +1721,8 @@ export namespace MyNS {
 
 		/**
 		 * For requests to get the next page of results, the pagination token that was returned with the previous set of results. The initial request does not include a pagination token.
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -1797,8 +1798,8 @@ export namespace MyNS {
 		/**
 		 * <p>The account ID of the member account to try to enable.</p> <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId: string;
 	}
@@ -1813,8 +1814,8 @@ export namespace MyNS {
 		/**
 		 * <p>The account ID of the member account to try to enable.</p> <p>The account must be an invited member account with a status of <code>ACCEPTED_BUT_DISABLED</code>. </p>
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		AccountId: FormControl<string | null | undefined>,
 	}

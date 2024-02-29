@@ -410,7 +410,10 @@ namespace MyNS
 		/// Deletes the specified report definition in AWS Application Cost Profiler. This stops the report from being generated.
 		/// DeleteReportDefinition reportDefinition/{reportId}
 		/// </summary>
-		/// <param name="reportId">Required. ID of the report to delete.</param>
+		/// <param name="reportId">Required. ID of the report to delete.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteReportDefinitionResult> DeleteReportDefinitionAsync(string reportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -444,7 +447,10 @@ namespace MyNS
 		/// Retrieves the definition of a report already configured in AWS Application Cost Profiler.
 		/// GetReportDefinition reportDefinition/{reportId}
 		/// </summary>
-		/// <param name="reportId">ID of the report to retrieve.</param>
+		/// <param name="reportId">ID of the report to retrieve.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetReportDefinitionResult> GetReportDefinitionAsync(string reportId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -478,7 +484,10 @@ namespace MyNS
 		/// Updates existing report in AWS Application Cost Profiler.
 		/// UpdateReportDefinition reportDefinition/{reportId}
 		/// </summary>
-		/// <param name="reportId">Required. ID of the report to update.</param>
+		/// <param name="reportId">Required. ID of the report to update.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateReportDefinitionResult> UpdateReportDefinitionAsync(string reportId, UpdateReportDefinitionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -559,8 +568,14 @@ namespace MyNS
 		/// <p>Retrieves a list of all reports and their configurations for your AWS account.</p> <p>The maximum number of reports is one.</p>
 		/// ListReportDefinitions reportDefinition
 		/// </summary>
-		/// <param name="nextToken">The token value from a previous call to access the next page of results.</param>
-		/// <param name="maxResults">The maximum number of results to return.</param>
+		/// <param name="nextToken">The token value from a previous call to access the next page of results.
+		/// Max length: 102400
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results to return.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListReportDefinitionsResult> ListReportDefinitionsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

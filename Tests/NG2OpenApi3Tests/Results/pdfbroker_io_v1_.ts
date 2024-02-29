@@ -67,6 +67,8 @@ export namespace MyNS {
 
 		/** If any error occurs the message will be displayed in here */
 		errorMessage?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode?: number | null;
 	}
 	export interface ErrorResponseDtoFormProperties {
@@ -74,6 +76,8 @@ export namespace MyNS {
 
 		/** If any error occurs the message will be displayed in here */
 		errorMessage: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		statusCode: FormControl<number | null | undefined>,
 	}
 	export function CreateErrorResponseDtoFormGroup() {
@@ -253,7 +257,10 @@ export namespace MyNS {
 		/** Gets the name of the font */
 		name?: string | null;
 
-		/** Gets the size of the font */
+		/**
+		 * Gets the size of the font
+		 * Type: float
+		 */
 		size?: number | null;
 
 		/** Font style enum representing Regular, Bold, Italic, BoldItalic */
@@ -266,7 +273,10 @@ export namespace MyNS {
 		/** Gets the name of the font */
 		name: FormControl<string | null | undefined>,
 
-		/** Gets the size of the font */
+		/**
+		 * Gets the size of the font
+		 * Type: float
+		 */
 		size: FormControl<number | null | undefined>,
 
 		/** Font style enum representing Regular, Bold, Italic, BoldItalic */
@@ -360,60 +370,102 @@ export namespace MyNS {
 
 	export interface PdfToImageOptions {
 
-		/** Set the height of the output image, default value is width of source document. To scale height, and keeping proportions, do not set width; */
+		/**
+		 * Set the height of the output image, default value is width of source document. To scale height, and keeping proportions, do not set width;
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
-		/** Set the horizontal resolution, default is 96 dpi; */
+		/**
+		 * Set the horizontal resolution, default is 96 dpi;
+		 * Type: double
+		 */
 		horizontalResolution?: number | null;
 
 		/** Valid options are "image/jpeg", "image/png" or "image/gif". Default is "image/png" */
 		imageFormat?: string | null;
 
-		/** Sets the quality of jpeg images, range 0 to 100, default is 75 */
+		/**
+		 * Sets the quality of jpeg images, range 0 to 100, default is 75
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jpegQuality?: number | null;
 
-		/** Which page of the pdf file to generate image from, default is first page */
+		/**
+		 * Which page of the pdf file to generate image from, default is first page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
-		/** Sets the png compression level, range 1 - 9, default is 6 */
+		/**
+		 * Sets the png compression level, range 1 - 9, default is 6
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pngCompressionLevel?: number | null;
 
 		/** Keep the background of the image transparent. This setting is not available in JPEG-files, since transparency is not supported in the JPEG format. */
 		transparent?: boolean | null;
 
-		/** Set the vertical resolution, default is 96 dpi; */
+		/**
+		 * Set the vertical resolution, default is 96 dpi;
+		 * Type: double
+		 */
 		verticalResolution?: number | null;
 
-		/** Set the width of the output image, default value is width of source document. To scale width, and keeping proportions, do not set height; */
+		/**
+		 * Set the width of the output image, default value is width of source document. To scale width, and keeping proportions, do not set height;
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 	export interface PdfToImageOptionsFormProperties {
 
-		/** Set the height of the output image, default value is width of source document. To scale height, and keeping proportions, do not set width; */
+		/**
+		 * Set the height of the output image, default value is width of source document. To scale height, and keeping proportions, do not set width;
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
-		/** Set the horizontal resolution, default is 96 dpi; */
+		/**
+		 * Set the horizontal resolution, default is 96 dpi;
+		 * Type: double
+		 */
 		horizontalResolution: FormControl<number | null | undefined>,
 
 		/** Valid options are "image/jpeg", "image/png" or "image/gif". Default is "image/png" */
 		imageFormat: FormControl<string | null | undefined>,
 
-		/** Sets the quality of jpeg images, range 0 to 100, default is 75 */
+		/**
+		 * Sets the quality of jpeg images, range 0 to 100, default is 75
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		jpegQuality: FormControl<number | null | undefined>,
 
-		/** Which page of the pdf file to generate image from, default is first page */
+		/**
+		 * Which page of the pdf file to generate image from, default is first page
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
-		/** Sets the png compression level, range 1 - 9, default is 6 */
+		/**
+		 * Sets the png compression level, range 1 - 9, default is 6
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pngCompressionLevel: FormControl<number | null | undefined>,
 
 		/** Keep the background of the image transparent. This setting is not available in JPEG-files, since transparency is not supported in the JPEG format. */
 		transparent: FormControl<boolean | null | undefined>,
 
-		/** Set the vertical resolution, default is 96 dpi; */
+		/**
+		 * Set the vertical resolution, default is 96 dpi;
+		 * Type: double
+		 */
 		verticalResolution: FormControl<number | null | undefined>,
 
-		/** Set the width of the output image, default value is width of source document. To scale width, and keeping proportions, do not set height; */
+		/**
+		 * Set the width of the output image, default value is width of source document. To scale width, and keeping proportions, do not set height;
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreatePdfToImageOptionsFormGroup() {
@@ -456,7 +508,10 @@ export namespace MyNS {
 		/** The Font dto object */
 		font?: FontDto;
 
-		/** Get or set which page in the pdf to write on, default is first page. */
+		/**
+		 * Get or set which page in the pdf to write on, default is first page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber?: number | null;
 
 		/** The text to write in the pdf */
@@ -466,29 +521,44 @@ export namespace MyNS {
 		textColor?: ColorDto;
 		xOrigin?: XOriginPoint;
 
-		/** Get or set the X axis position on where to write string, in reference to XOrigin. */
+		/**
+		 * Get or set the X axis position on where to write string, in reference to XOrigin.
+		 * Type: float
+		 */
 		xPosition?: number | null;
 		yOrigin?: YOriginPoint;
 
-		/** Get or set the Y axis position on where to write string, in reference to YOrigin. */
+		/**
+		 * Get or set the Y axis position on where to write string, in reference to YOrigin.
+		 * Type: float
+		 */
 		yPosition?: number | null;
 	}
 
 	/** Options for writing string in pdf page; */
 	export interface PdfWriteStringOptionsFormProperties {
 
-		/** Get or set which page in the pdf to write on, default is first page. */
+		/**
+		 * Get or set which page in the pdf to write on, default is first page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageNumber: FormControl<number | null | undefined>,
 
 		/** The text to write in the pdf */
 		text: FormControl<string | null | undefined>,
 		xOrigin: FormControl<XOriginPoint | null | undefined>,
 
-		/** Get or set the X axis position on where to write string, in reference to XOrigin. */
+		/**
+		 * Get or set the X axis position on where to write string, in reference to XOrigin.
+		 * Type: float
+		 */
 		xPosition: FormControl<number | null | undefined>,
 		yOrigin: FormControl<YOriginPoint | null | undefined>,
 
-		/** Get or set the Y axis position on where to write string, in reference to YOrigin. */
+		/**
+		 * Get or set the Y axis position on where to write string, in reference to YOrigin.
+		 * Type: float
+		 */
 		yPosition: FormControl<number | null | undefined>,
 	}
 	export function CreatePdfWriteStringOptionsFormGroup() {

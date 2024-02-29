@@ -1842,7 +1842,10 @@ namespace MyNS
 		/// <param name="status">Filter by call status</param>
 		/// <param name="date_start">Return the records that occurred after this point in time</param>
 		/// <param name="date_end">Return the records that occurred before this point in time</param>
-		/// <param name="page_size">Return this amount of records in the response</param>
+		/// <param name="page_size">Return this amount of records in the response
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="record_index">Return calls from this index in the response</param>
 		/// <param name="order">Either ascending or  descending order.</param>
 		/// <param name="conversation_uuid">Return all the records associated with a specific conversation.</param>

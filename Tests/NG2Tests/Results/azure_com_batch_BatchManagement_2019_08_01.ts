@@ -2684,6 +2684,7 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {BatchAccount} The operation was successful. The response contains the Batch account entity.
@@ -2697,6 +2698,7 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName A name for the Batch account which must be unique within the region. Batch account names must be between 3 and 24 characters in length and must use only numbers and lowercase letters. This name is used as part of the DNS name that is used to access the Batch service in the region in which the account is created. For example: http://accountname.region.batch.azure.com/.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {BatchAccountCreateParameters} requestBody Additional parameters for account creation.
@@ -2711,6 +2713,7 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {void} The operation was successful.
@@ -2724,6 +2727,7 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {BatchAccountUpdateParameters} requestBody Additional parameters for account update.
@@ -2738,7 +2742,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {ListApplicationsResult} The operation was successful. The response contains a list of the application entities associated with the specified account.
@@ -2752,7 +2758,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications/{applicationName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} applicationName The name of the application. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {Application} The operation was successful. The response contains the application entity.
@@ -2766,7 +2774,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications/{applicationName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} applicationName The name of the application. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {Application} requestBody The parameters for the request.
@@ -2781,7 +2791,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications/{applicationName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} applicationName The name of the application. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {void} The operation was successful.
@@ -2795,7 +2807,9 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications/{applicationName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} applicationName The name of the application. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {Application} requestBody The parameters for the request.
@@ -2810,8 +2824,11 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications/{applicationName}/versions
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} applicationName The name of the application. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {ListApplicationPackagesResult} The operation was successful. The response contains a list of the application package entities associated with the specified application.
@@ -2825,8 +2842,11 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications/{applicationName}/versions/{versionName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} applicationName The name of the application. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} versionName The version of the application.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {ApplicationPackage} The operation was successful. The response contains the application package entity.
@@ -2840,8 +2860,11 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications/{applicationName}/versions/{versionName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} applicationName The name of the application. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} versionName The version of the application.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {ApplicationPackage} requestBody The parameters for the request.
@@ -2856,8 +2879,11 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications/{applicationName}/versions/{versionName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} applicationName The name of the application. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} versionName The version of the application.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {void} The operation was successful.
@@ -2871,8 +2897,11 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/applications/{applicationName}/versions/{versionName}/activate
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} applicationName The name of the application. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} versionName The version of the application.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {ActivateApplicationPackageParameters} requestBody The parameters for the request.
@@ -2887,7 +2916,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/certificates
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select Comma separated list of properties that should be returned. e.g. "properties/provisioningState". Only top level properties under properties/ are valid for selection.
 		 * @param {string} filter OData filter expression. Valid properties for filtering are "properties/provisioningState", "properties/provisioningStateTransitionTime", "name".
 		 * @param {string} api_version The API version to be used with the HTTP request.
@@ -2903,7 +2934,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/certificates/{certificateName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} certificateName The identifier for the certificate. This must be made up of algorithm and thumbprint separated by a dash, and must match the certificate data in the request. For example SHA1-a3d1c5.
+		 *     Min length: 5    Max length: 45
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {Certificate} The operation was successful. The response contains the certificate entity.
@@ -2917,7 +2950,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/certificates/{certificateName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} certificateName The identifier for the certificate. This must be made up of algorithm and thumbprint separated by a dash, and must match the certificate data in the request. For example SHA1-a3d1c5.
+		 *     Min length: 5    Max length: 45
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {CertificateCreateOrUpdateParameters} requestBody Additional parameters for certificate creation.
@@ -2932,7 +2967,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/certificates/{certificateName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} certificateName The identifier for the certificate. This must be made up of algorithm and thumbprint separated by a dash, and must match the certificate data in the request. For example SHA1-a3d1c5.
+		 *     Min length: 5    Max length: 45
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {void} The operation was successful.
@@ -2946,7 +2983,9 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/certificates/{certificateName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} certificateName The identifier for the certificate. This must be made up of algorithm and thumbprint separated by a dash, and must match the certificate data in the request. For example SHA1-a3d1c5.
+		 *     Min length: 5    Max length: 45
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {CertificateCreateOrUpdateParameters} requestBody Certificate entity to update.
@@ -2962,7 +3001,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/certificates/{certificateName}/cancelDelete
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} certificateName The identifier for the certificate. This must be made up of algorithm and thumbprint separated by a dash, and must match the certificate data in the request. For example SHA1-a3d1c5.
+		 *     Min length: 5    Max length: 45
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {Certificate} The operation was successful. The response contains the certificate entity.
@@ -2977,6 +3018,7 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/listKeys
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {BatchAccountKeys} The operation was successful. The response contains the keys of the Batch account.
@@ -2990,7 +3032,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/pools
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {number} maxresults The maximum number of items to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} select Comma separated list of properties that should be returned. e.g. "properties/provisioningState". Only top level properties under properties/ are valid for selection.
 		 * @param {string} filter OData filter expression. Valid properties for filtering are:
 		 *  name
@@ -3017,7 +3061,9 @@ export namespace MyNS {
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/pools/{poolName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} poolName The pool name. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {Pool} The operation was successful. The response contains the pool entity.
@@ -3031,7 +3077,9 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/pools/{poolName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} poolName The pool name. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {Pool} requestBody Additional parameters for pool creation.
@@ -3046,7 +3094,9 @@ export namespace MyNS {
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/pools/{poolName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} poolName The pool name. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {void} The operation was successful.
@@ -3060,7 +3110,9 @@ export namespace MyNS {
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/pools/{poolName}
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} poolName The pool name. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {Pool} requestBody Pool properties that should be updated. Properties that are supplied will be updated, any property not supplied will be unchanged.
@@ -3075,7 +3127,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/pools/{poolName}/disableAutoScale
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} poolName The pool name. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {Pool} The operation was successful. The response contains the pool entity.
@@ -3090,7 +3144,9 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/pools/{poolName}/stopResize
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} poolName The pool name. This must be unique within the account.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {Pool} The operation was successful. The response contains the pool entity.
@@ -3104,6 +3160,7 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/regenerateKeys
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @param {BatchAccountRegenerateKeyParameters} requestBody The type of key to regenerate.
@@ -3118,6 +3175,7 @@ export namespace MyNS {
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Batch/batchAccounts/{accountName}/syncAutoStorageKeys
 		 * @param {string} resourceGroupName The name of the resource group that contains the Batch account.
 		 * @param {string} accountName The name of the Batch account.
+		 *     Min length: 3    Max length: 24
 		 * @param {string} api_version The API version to be used with the HTTP request.
 		 * @param {string} subscriptionId The Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000)
 		 * @return {void} 

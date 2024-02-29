@@ -1345,7 +1345,10 @@ namespace MyNS
 		/// Returns a collection of MediaPackage VOD Asset resources.
 		/// ListAssets assets
 		/// </summary>
-		/// <param name="maxResults">Upper bound on number of records to return.</param>
+		/// <param name="maxResults">Upper bound on number of records to return.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">A token used to resume pagination from the end of a previous request.</param>
 		/// <param name="packagingGroupId">Returns Assets associated with the specified PackagingGroup.</param>
 		/// <param name="MaxResults">Pagination limit</param>
@@ -1423,7 +1426,10 @@ namespace MyNS
 		/// Returns a collection of MediaPackage VOD PackagingConfiguration resources.
 		/// ListPackagingConfigurations packaging_configurations
 		/// </summary>
-		/// <param name="maxResults">Upper bound on number of records to return.</param>
+		/// <param name="maxResults">Upper bound on number of records to return.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">A token used to resume pagination from the end of a previous request.</param>
 		/// <param name="packagingGroupId">Returns MediaPackage VOD PackagingConfigurations associated with the specified PackagingGroup.</param>
 		/// <param name="MaxResults">Pagination limit</param>
@@ -1501,7 +1507,10 @@ namespace MyNS
 		/// Returns a collection of MediaPackage VOD PackagingGroup resources.
 		/// ListPackagingGroups packaging_groups
 		/// </summary>
-		/// <param name="maxResults">Upper bound on number of records to return.</param>
+		/// <param name="maxResults">Upper bound on number of records to return.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">A token used to resume pagination from the end of a previous request.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>

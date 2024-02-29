@@ -76,7 +76,10 @@ export namespace MyNS {
 	/** An observed value of a metric. */
 	export interface GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetric {
 
-		/** The objective value at this training step. */
+		/**
+		 * The objective value at this training step.
+		 * Type: double
+		 */
 		objectiveValue?: number | null;
 
 		/** The global training step for this metric. */
@@ -86,7 +89,10 @@ export namespace MyNS {
 	/** An observed value of a metric. */
 	export interface GoogleCloudMlV1_HyperparameterOutput_HyperparameterMetricFormProperties {
 
-		/** The objective value at this training step. */
+		/**
+		 * The objective value at this training step.
+		 * Type: double
+		 */
 		objectiveValue: FormControl<number | null | undefined>,
 
 		/** The global training step for this metric. */
@@ -107,7 +113,10 @@ export namespace MyNS {
 		/** Required. Metric name. */
 		metric?: string | null;
 
-		/** Required. The value for this metric. */
+		/**
+		 * Required. The value for this metric.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -117,7 +126,10 @@ export namespace MyNS {
 		/** Required. Metric name. */
 		metric: FormControl<string | null | undefined>,
 
-		/** Required. The value for this metric. */
+		/**
+		 * Required. The value for this metric.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1_Measurement_MetricFormGroup() {
@@ -156,18 +168,30 @@ export namespace MyNS {
 
 	export interface GoogleCloudMlV1_StudyConfigParameterSpec_DoubleValueSpec {
 
-		/** Must be specified if type is `DOUBLE`. Maximum value of the parameter. */
+		/**
+		 * Must be specified if type is `DOUBLE`. Maximum value of the parameter.
+		 * Type: double
+		 */
 		maxValue?: number | null;
 
-		/** Must be specified if type is `DOUBLE`. Minimum value of the parameter. */
+		/**
+		 * Must be specified if type is `DOUBLE`. Minimum value of the parameter.
+		 * Type: double
+		 */
 		minValue?: number | null;
 	}
 	export interface GoogleCloudMlV1_StudyConfigParameterSpec_DoubleValueSpecFormProperties {
 
-		/** Must be specified if type is `DOUBLE`. Maximum value of the parameter. */
+		/**
+		 * Must be specified if type is `DOUBLE`. Maximum value of the parameter.
+		 * Type: double
+		 */
 		maxValue: FormControl<number | null | undefined>,
 
-		/** Must be specified if type is `DOUBLE`. Minimum value of the parameter. */
+		/**
+		 * Must be specified if type is `DOUBLE`. Minimum value of the parameter.
+		 * Type: double
+		 */
 		minValue: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1_StudyConfigParameterSpec_DoubleValueSpecFormGroup() {
@@ -342,7 +366,10 @@ export namespace MyNS {
 	/** A message representing a parameter to be tuned. Contains the name of the parameter and the suggested value to use for this trial. */
 	export interface GoogleCloudMlV1_Trial_Parameter {
 
-		/** Must be set if ParameterType is DOUBLE or DISCRETE. */
+		/**
+		 * Must be set if ParameterType is DOUBLE or DISCRETE.
+		 * Type: double
+		 */
 		floatValue?: number | null;
 
 		/** Must be set if ParameterType is INTEGER */
@@ -358,7 +385,10 @@ export namespace MyNS {
 	/** A message representing a parameter to be tuned. Contains the name of the parameter and the suggested value to use for this trial. */
 	export interface GoogleCloudMlV1_Trial_ParameterFormProperties {
 
-		/** Must be set if ParameterType is DOUBLE or DISCRETE. */
+		/**
+		 * Must be set if ParameterType is DOUBLE or DISCRETE.
+		 * Type: double
+		 */
 		floatValue: FormControl<number | null | undefined>,
 
 		/** Must be set if ParameterType is INTEGER */
@@ -462,23 +492,35 @@ export namespace MyNS {
 	/** Options for automatically scaling a model. */
 	export interface GoogleCloudMlV1__AutoScaling {
 
-		/** The maximum number of nodes to scale this model under load. The actual value will depend on resource quota and availability. */
+		/**
+		 * The maximum number of nodes to scale this model under load. The actual value will depend on resource quota and availability.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodes?: number | null;
 
 		/** MetricSpec contains the specifications to use to calculate the desired nodes count. */
 		metrics?: Array<GoogleCloudMlV1__MetricSpec>;
 
-		/** Optional. The minimum number of nodes to allocate for this model. These nodes are always up, starting from the time the model is deployed. Therefore, the cost of operating this model will be at least `rate` * `min_nodes` * number of hours since last billing cycle, where `rate` is the cost per node-hour as documented in the [pricing guide](/ml-engine/docs/pricing), even if no predictions are performed. There is additional cost for each prediction performed. Unlike manual scaling, if the load gets too heavy for the nodes that are up, the service will automatically add nodes to handle the increased load as well as scale back as traffic drops, always maintaining at least `min_nodes`. You will be charged for the time in which additional nodes are used. If `min_nodes` is not specified and AutoScaling is used with a [legacy (MLS1) machine type](/ml-engine/docs/machine-types-online-prediction), `min_nodes` defaults to 0, in which case, when traffic to a model stops (and after a cool-down period), nodes will be shut down and no charges will be incurred until traffic to the model resumes. If `min_nodes` is not specified and AutoScaling is used with a [Compute Engine (N1) machine type](/ml-engine/docs/machine-types-online-prediction), `min_nodes` defaults to 1. `min_nodes` must be at least 1 for use with a Compute Engine machine type. You can set `min_nodes` when creating the model version, and you can also update `min_nodes` for an existing version: update_body.json: { 'autoScaling': { 'minNodes': 5 } } HTTP request: PATCH https://ml.googleapis.com/v1/{name=projects/models/versions/*}?update_mask=autoScaling.minNodes -d @./update_body.json */
+		/**
+		 * Optional. The minimum number of nodes to allocate for this model. These nodes are always up, starting from the time the model is deployed. Therefore, the cost of operating this model will be at least `rate` * `min_nodes` * number of hours since last billing cycle, where `rate` is the cost per node-hour as documented in the [pricing guide](/ml-engine/docs/pricing), even if no predictions are performed. There is additional cost for each prediction performed. Unlike manual scaling, if the load gets too heavy for the nodes that are up, the service will automatically add nodes to handle the increased load as well as scale back as traffic drops, always maintaining at least `min_nodes`. You will be charged for the time in which additional nodes are used. If `min_nodes` is not specified and AutoScaling is used with a [legacy (MLS1) machine type](/ml-engine/docs/machine-types-online-prediction), `min_nodes` defaults to 0, in which case, when traffic to a model stops (and after a cool-down period), nodes will be shut down and no charges will be incurred until traffic to the model resumes. If `min_nodes` is not specified and AutoScaling is used with a [Compute Engine (N1) machine type](/ml-engine/docs/machine-types-online-prediction), `min_nodes` defaults to 1. `min_nodes` must be at least 1 for use with a Compute Engine machine type. You can set `min_nodes` when creating the model version, and you can also update `min_nodes` for an existing version: update_body.json: { 'autoScaling': { 'minNodes': 5 } } HTTP request: PATCH https://ml.googleapis.com/v1/{name=projects/models/versions/*}?update_mask=autoScaling.minNodes -d @./update_body.json
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodes?: number | null;
 	}
 
 	/** Options for automatically scaling a model. */
 	export interface GoogleCloudMlV1__AutoScalingFormProperties {
 
-		/** The maximum number of nodes to scale this model under load. The actual value will depend on resource quota and availability. */
+		/**
+		 * The maximum number of nodes to scale this model under load. The actual value will depend on resource quota and availability.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodes: FormControl<number | null | undefined>,
 
-		/** Optional. The minimum number of nodes to allocate for this model. These nodes are always up, starting from the time the model is deployed. Therefore, the cost of operating this model will be at least `rate` * `min_nodes` * number of hours since last billing cycle, where `rate` is the cost per node-hour as documented in the [pricing guide](/ml-engine/docs/pricing), even if no predictions are performed. There is additional cost for each prediction performed. Unlike manual scaling, if the load gets too heavy for the nodes that are up, the service will automatically add nodes to handle the increased load as well as scale back as traffic drops, always maintaining at least `min_nodes`. You will be charged for the time in which additional nodes are used. If `min_nodes` is not specified and AutoScaling is used with a [legacy (MLS1) machine type](/ml-engine/docs/machine-types-online-prediction), `min_nodes` defaults to 0, in which case, when traffic to a model stops (and after a cool-down period), nodes will be shut down and no charges will be incurred until traffic to the model resumes. If `min_nodes` is not specified and AutoScaling is used with a [Compute Engine (N1) machine type](/ml-engine/docs/machine-types-online-prediction), `min_nodes` defaults to 1. `min_nodes` must be at least 1 for use with a Compute Engine machine type. You can set `min_nodes` when creating the model version, and you can also update `min_nodes` for an existing version: update_body.json: { 'autoScaling': { 'minNodes': 5 } } HTTP request: PATCH https://ml.googleapis.com/v1/{name=projects/models/versions/*}?update_mask=autoScaling.minNodes -d @./update_body.json */
+		/**
+		 * Optional. The minimum number of nodes to allocate for this model. These nodes are always up, starting from the time the model is deployed. Therefore, the cost of operating this model will be at least `rate` * `min_nodes` * number of hours since last billing cycle, where `rate` is the cost per node-hour as documented in the [pricing guide](/ml-engine/docs/pricing), even if no predictions are performed. There is additional cost for each prediction performed. Unlike manual scaling, if the load gets too heavy for the nodes that are up, the service will automatically add nodes to handle the increased load as well as scale back as traffic drops, always maintaining at least `min_nodes`. You will be charged for the time in which additional nodes are used. If `min_nodes` is not specified and AutoScaling is used with a [legacy (MLS1) machine type](/ml-engine/docs/machine-types-online-prediction), `min_nodes` defaults to 0, in which case, when traffic to a model stops (and after a cool-down period), nodes will be shut down and no charges will be incurred until traffic to the model resumes. If `min_nodes` is not specified and AutoScaling is used with a [Compute Engine (N1) machine type](/ml-engine/docs/machine-types-online-prediction), `min_nodes` defaults to 1. `min_nodes` must be at least 1 for use with a Compute Engine machine type. You can set `min_nodes` when creating the model version, and you can also update `min_nodes` for an existing version: update_body.json: { 'autoScaling': { 'minNodes': 5 } } HTTP request: PATCH https://ml.googleapis.com/v1/{name=projects/models/versions/*}?update_mask=autoScaling.minNodes -d @./update_body.json
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodes: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1__AutoScalingFormGroup() {
@@ -496,7 +538,10 @@ export namespace MyNS {
 		/** metric name. */
 		name?: GoogleCloudMlV1__MetricSpecName | null;
 
-		/** Target specifies the target value for the given metric; once real metric deviates from the threshold by a certain percentage, the node count changes. */
+		/**
+		 * Target specifies the target value for the given metric; once real metric deviates from the threshold by a certain percentage, the node count changes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		target?: number | null;
 	}
 
@@ -506,7 +551,10 @@ export namespace MyNS {
 		/** metric name. */
 		name: FormControl<GoogleCloudMlV1__MetricSpecName | null | undefined>,
 
-		/** Target specifies the target value for the given metric; once real metric deviates from the threshold by a certain percentage, the node count changes. */
+		/**
+		 * Target specifies the target value for the given metric; once real metric deviates from the threshold by a certain percentage, the node count changes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		target: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1__MetricSpecFormGroup() {
@@ -747,14 +795,20 @@ export namespace MyNS {
 	/** Represents a network port in a single container. This message is a subset of the [Kubernetes ContainerPort v1 core specification](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#containerport-v1-core). */
 	export interface GoogleCloudMlV1__ContainerPort {
 
-		/** Number of the port to expose on the container. This must be a valid port number: 0 < PORT_NUMBER < 65536. */
+		/**
+		 * Number of the port to expose on the container. This must be a valid port number: 0 < PORT_NUMBER < 65536.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containerPort?: number | null;
 	}
 
 	/** Represents a network port in a single container. This message is a subset of the [Kubernetes ContainerPort v1 core specification](https://kubernetes.io/docs/reference/generated/kubernetes-api/v1.18/#containerport-v1-core). */
 	export interface GoogleCloudMlV1__ContainerPortFormProperties {
 
-		/** Number of the port to expose on the container. This must be a valid port number: 0 < PORT_NUMBER < 65536. */
+		/**
+		 * Number of the port to expose on the container. This must be a valid port number: 0 < PORT_NUMBER < 65536.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containerPort: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1__ContainerPortFormGroup() {
@@ -829,7 +883,10 @@ export namespace MyNS {
 	/** Represents the config of disk options. */
 	export interface GoogleCloudMlV1__DiskConfig {
 
-		/** Size in GB of the boot disk (default is 100GB). */
+		/**
+		 * Size in GB of the boot disk (default is 100GB).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bootDiskSizeGb?: number | null;
 
 		/** Type of the boot disk (default is "pd-ssd"). Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or "pd-standard" (Persistent Disk Hard Disk Drive). */
@@ -839,7 +896,10 @@ export namespace MyNS {
 	/** Represents the config of disk options. */
 	export interface GoogleCloudMlV1__DiskConfigFormProperties {
 
-		/** Size in GB of the boot disk (default is 100GB). */
+		/**
+		 * Size in GB of the boot disk (default is 100GB).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bootDiskSizeGb: FormControl<number | null | undefined>,
 
 		/** Type of the boot disk (default is "pd-ssd"). Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or "pd-standard" (Persistent Disk Hard Disk Drive). */
@@ -918,14 +978,20 @@ export namespace MyNS {
 	/** Attributes credit by computing the Aumann-Shapley value taking advantage of the model's fully differentiable structure. Refer to this paper for more details: https://arxiv.org/abs/1703.01365 */
 	export interface GoogleCloudMlV1__IntegratedGradientsAttribution {
 
-		/** Number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range. */
+		/**
+		 * Number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numIntegralSteps?: number | null;
 	}
 
 	/** Attributes credit by computing the Aumann-Shapley value taking advantage of the model's fully differentiable structure. Refer to this paper for more details: https://arxiv.org/abs/1703.01365 */
 	export interface GoogleCloudMlV1__IntegratedGradientsAttributionFormProperties {
 
-		/** Number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range. */
+		/**
+		 * Number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numIntegralSteps: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1__IntegratedGradientsAttributionFormGroup() {
@@ -939,14 +1005,20 @@ export namespace MyNS {
 	/** An attribution method that approximates Shapley values for features that contribute to the label being predicted. A sampling strategy is used to approximate the value rather than considering all subsets of features. */
 	export interface GoogleCloudMlV1__SampledShapleyAttribution {
 
-		/** The number of feature permutations to consider when approximating the Shapley values. */
+		/**
+		 * The number of feature permutations to consider when approximating the Shapley values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPaths?: number | null;
 	}
 
 	/** An attribution method that approximates Shapley values for features that contribute to the label being predicted. A sampling strategy is used to approximate the value rather than considering all subsets of features. */
 	export interface GoogleCloudMlV1__SampledShapleyAttributionFormProperties {
 
-		/** The number of feature permutations to consider when approximating the Shapley values. */
+		/**
+		 * The number of feature permutations to consider when approximating the Shapley values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numPaths: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1__SampledShapleyAttributionFormGroup() {
@@ -960,14 +1032,20 @@ export namespace MyNS {
 	/** Attributes credit by computing the XRAI taking advantage of the model's fully differentiable structure. Refer to this paper for more details: https://arxiv.org/abs/1906.02825 Currently only implemented for models with natural image inputs. */
 	export interface GoogleCloudMlV1__XraiAttribution {
 
-		/** Number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range. */
+		/**
+		 * Number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numIntegralSteps?: number | null;
 	}
 
 	/** Attributes credit by computing the XRAI taking advantage of the model's fully differentiable structure. Refer to this paper for more details: https://arxiv.org/abs/1906.02825 Currently only implemented for models with natural image inputs. */
 	export interface GoogleCloudMlV1__XraiAttributionFormProperties {
 
-		/** Number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range. */
+		/**
+		 * Number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numIntegralSteps: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1__XraiAttributionFormGroup() {
@@ -1096,13 +1174,22 @@ export namespace MyNS {
 		/** Optional. The TensorFlow summary tag name to use for optimizing trials. For current versions of TensorFlow, this tag name should exactly match what is shown in TensorBoard, including all scopes. For versions of TensorFlow prior to 0.12, this should be only the tag passed to tf.Summary. By default, "training/hptuning/metric" will be used. */
 		hyperparameterMetricTag?: string | null;
 
-		/** Optional. The number of failed trials that need to be seen before failing the hyperparameter tuning job. You can specify this field to override the default failing criteria for AI Platform hyperparameter tuning jobs. Defaults to zero, which means the service decides when a hyperparameter job should fail. */
+		/**
+		 * Optional. The number of failed trials that need to be seen before failing the hyperparameter tuning job. You can specify this field to override the default failing criteria for AI Platform hyperparameter tuning jobs. Defaults to zero, which means the service decides when a hyperparameter job should fail.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFailedTrials?: number | null;
 
-		/** Optional. The number of training trials to run concurrently. You can reduce the time it takes to perform hyperparameter tuning by adding trials in parallel. However, each trail only benefits from the information gained in completed trials. That means that a trial does not get access to the results of trials running at the same time, which could reduce the quality of the overall optimization. Each trial will use the same scale tier and machine types. Defaults to one. */
+		/**
+		 * Optional. The number of training trials to run concurrently. You can reduce the time it takes to perform hyperparameter tuning by adding trials in parallel. However, each trail only benefits from the information gained in completed trials. That means that a trial does not get access to the results of trials running at the same time, which could reduce the quality of the overall optimization. Each trial will use the same scale tier and machine types. Defaults to one.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxParallelTrials?: number | null;
 
-		/** Optional. How many training trials should be attempted to optimize the specified hyperparameters. Defaults to one. */
+		/**
+		 * Optional. How many training trials should be attempted to optimize the specified hyperparameters. Defaults to one.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTrials?: number | null;
 
 		/** Required. The set of parameters to tune. */
@@ -1127,13 +1214,22 @@ export namespace MyNS {
 		/** Optional. The TensorFlow summary tag name to use for optimizing trials. For current versions of TensorFlow, this tag name should exactly match what is shown in TensorBoard, including all scopes. For versions of TensorFlow prior to 0.12, this should be only the tag passed to tf.Summary. By default, "training/hptuning/metric" will be used. */
 		hyperparameterMetricTag: FormControl<string | null | undefined>,
 
-		/** Optional. The number of failed trials that need to be seen before failing the hyperparameter tuning job. You can specify this field to override the default failing criteria for AI Platform hyperparameter tuning jobs. Defaults to zero, which means the service decides when a hyperparameter job should fail. */
+		/**
+		 * Optional. The number of failed trials that need to be seen before failing the hyperparameter tuning job. You can specify this field to override the default failing criteria for AI Platform hyperparameter tuning jobs. Defaults to zero, which means the service decides when a hyperparameter job should fail.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFailedTrials: FormControl<number | null | undefined>,
 
-		/** Optional. The number of training trials to run concurrently. You can reduce the time it takes to perform hyperparameter tuning by adding trials in parallel. However, each trail only benefits from the information gained in completed trials. That means that a trial does not get access to the results of trials running at the same time, which could reduce the quality of the overall optimization. Each trial will use the same scale tier and machine types. Defaults to one. */
+		/**
+		 * Optional. The number of training trials to run concurrently. You can reduce the time it takes to perform hyperparameter tuning by adding trials in parallel. However, each trail only benefits from the information gained in completed trials. That means that a trial does not get access to the results of trials running at the same time, which could reduce the quality of the overall optimization. Each trial will use the same scale tier and machine types. Defaults to one.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxParallelTrials: FormControl<number | null | undefined>,
 
-		/** Optional. How many training trials should be attempted to optimize the specified hyperparameters. Defaults to one. */
+		/**
+		 * Optional. How many training trials should be attempted to optimize the specified hyperparameters. Defaults to one.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTrials: FormControl<number | null | undefined>,
 
 		/** Optional. The prior hyperparameter tuning job id that users hope to continue with. The job id will be used to find the corresponding vizier study guid and resume the study. */
@@ -1165,10 +1261,16 @@ export namespace MyNS {
 		/** Required if type is `DISCRETE`. A list of feasible points. The list should be in strictly increasing order. For instance, this parameter might have possible settings of 1.5, 2.5, and 4.0. This list should not contain more than 1,000 values. */
 		discreteValues?: Array<number>;
 
-		/** Required if type is `DOUBLE` or `INTEGER`. This field should be unset if type is `CATEGORICAL`. This value should be integers if type is `INTEGER`. */
+		/**
+		 * Required if type is `DOUBLE` or `INTEGER`. This field should be unset if type is `CATEGORICAL`. This value should be integers if type is `INTEGER`.
+		 * Type: double
+		 */
 		maxValue?: number | null;
 
-		/** Required if type is `DOUBLE` or `INTEGER`. This field should be unset if type is `CATEGORICAL`. This value should be integers if type is INTEGER. */
+		/**
+		 * Required if type is `DOUBLE` or `INTEGER`. This field should be unset if type is `CATEGORICAL`. This value should be integers if type is INTEGER.
+		 * Type: double
+		 */
 		minValue?: number | null;
 
 		/** Required. The parameter name must be unique amongst all ParameterConfigs in a HyperparameterSpec message. E.g., "learning_rate". */
@@ -1184,10 +1286,16 @@ export namespace MyNS {
 	/** Represents a single hyperparameter to optimize. */
 	export interface GoogleCloudMlV1__ParameterSpecFormProperties {
 
-		/** Required if type is `DOUBLE` or `INTEGER`. This field should be unset if type is `CATEGORICAL`. This value should be integers if type is `INTEGER`. */
+		/**
+		 * Required if type is `DOUBLE` or `INTEGER`. This field should be unset if type is `CATEGORICAL`. This value should be integers if type is `INTEGER`.
+		 * Type: double
+		 */
 		maxValue: FormControl<number | null | undefined>,
 
-		/** Required if type is `DOUBLE` or `INTEGER`. This field should be unset if type is `CATEGORICAL`. This value should be integers if type is INTEGER. */
+		/**
+		 * Required if type is `DOUBLE` or `INTEGER`. This field should be unset if type is `CATEGORICAL`. This value should be integers if type is INTEGER.
+		 * Type: double
+		 */
 		minValue: FormControl<number | null | undefined>,
 
 		/** Required. The parameter name must be unique amongst all ParameterConfigs in a HyperparameterSpec message. E.g., "learning_rate". */
@@ -1404,7 +1512,10 @@ export namespace MyNS {
 		/** The number of data instances which resulted in errors. */
 		errorCount?: string | null;
 
-		/** Node hours used by the batch prediction job. */
+		/**
+		 * Node hours used by the batch prediction job.
+		 * Type: double
+		 */
 		nodeHours?: number | null;
 
 		/** The output Google Cloud Storage location provided at the job creation time. */
@@ -1420,7 +1531,10 @@ export namespace MyNS {
 		/** The number of data instances which resulted in errors. */
 		errorCount: FormControl<string | null | undefined>,
 
-		/** Node hours used by the batch prediction job. */
+		/**
+		 * Node hours used by the batch prediction job.
+		 * Type: double
+		 */
 		nodeHours: FormControl<number | null | undefined>,
 
 		/** The output Google Cloud Storage location provided at the job creation time. */
@@ -1651,7 +1765,10 @@ export namespace MyNS {
 		/** Optional. The maximum job wait time, expressed in seconds. The field can contain up to nine fractional digits, terminated by `s`. If not specified, there is no limit to the wait time. The minimum for this field is `1800s` (30 minutes). If the training job has not entered the `RUNNING` state after this duration, AI Platform Training cancels it. After the job begins running, it can no longer be cancelled due to the maximum wait time. Therefore the duration limited by this field does not overlap with the duration limited by Scheduling.max_running_time. For example, if the job temporarily stops running and retries due to a [VM restart](/ai-platform/training/docs/overview#restarts), this cannot lead to a maximum wait time cancellation. However, independently of this constraint, AI Platform Training might stop a job if there are too many retries due to exhausted resources in a region. The following example describes how you might use this field: To cancel your job if it doesn't start running within 1 hour, set this field to `3600s` (1 hour * 60 minutes / hour * 60 seconds / minute). If the job is still in the `QUEUED` or `PREPARING` state after an hour of waiting, AI Platform Training cancels the job. If you submit your training job using the `gcloud` tool, you can [specify this field in a `config.yaml` file](/ai-platform/training/docs/training-jobs#formatting_your_configuration_parameters). For example: ```yaml trainingInput: scheduling: maxWaitTime: 3600s ``` */
 		maxWaitTime?: string | null;
 
-		/** Optional. Job scheduling will be based on this priority, which in the range [0, 1000]. The bigger the number, the higher the priority. Default to 0 if not set. If there are multiple jobs requesting same type of accelerators, the high priority job will be scheduled prior to ones with low priority. */
+		/**
+		 * Optional. Job scheduling will be based on this priority, which in the range [0, 1000]. The bigger the number, the higher the priority. Default to 0 if not set. If there are multiple jobs requesting same type of accelerators, the high priority job will be scheduled prior to ones with low priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority?: number | null;
 	}
 
@@ -1664,7 +1781,10 @@ export namespace MyNS {
 		/** Optional. The maximum job wait time, expressed in seconds. The field can contain up to nine fractional digits, terminated by `s`. If not specified, there is no limit to the wait time. The minimum for this field is `1800s` (30 minutes). If the training job has not entered the `RUNNING` state after this duration, AI Platform Training cancels it. After the job begins running, it can no longer be cancelled due to the maximum wait time. Therefore the duration limited by this field does not overlap with the duration limited by Scheduling.max_running_time. For example, if the job temporarily stops running and retries due to a [VM restart](/ai-platform/training/docs/overview#restarts), this cannot lead to a maximum wait time cancellation. However, independently of this constraint, AI Platform Training might stop a job if there are too many retries due to exhausted resources in a region. The following example describes how you might use this field: To cancel your job if it doesn't start running within 1 hour, set this field to `3600s` (1 hour * 60 minutes / hour * 60 seconds / minute). If the job is still in the `QUEUED` or `PREPARING` state after an hour of waiting, AI Platform Training cancels the job. If you submit your training job using the `gcloud` tool, you can [specify this field in a `config.yaml` file](/ai-platform/training/docs/training-jobs#formatting_your_configuration_parameters). For example: ```yaml trainingInput: scheduling: maxWaitTime: 3600s ``` */
 		maxWaitTime: FormControl<string | null | undefined>,
 
-		/** Optional. Job scheduling will be based on this priority, which in the range [0, 1000]. The bigger the number, the higher the priority. Default to 0 if not set. If there are multiple jobs requesting same type of accelerators, the high priority job will be scheduled prior to ones with low priority. */
+		/**
+		 * Optional. Job scheduling will be based on this priority, which in the range [0, 1000]. The bigger the number, the higher the priority. Default to 0 if not set. If there are multiple jobs requesting same type of accelerators, the high priority job will be scheduled prior to ones with low priority.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		priority: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1__SchedulingFormGroup() {
@@ -1686,7 +1806,10 @@ export namespace MyNS {
 		/** The number of hyperparameter tuning trials that completed successfully. Only set for hyperparameter tuning jobs. */
 		completedTrialCount?: string | null;
 
-		/** The amount of ML units consumed by the job. */
+		/**
+		 * The amount of ML units consumed by the job.
+		 * Type: double
+		 */
 		consumedMLUnits?: number | null;
 
 		/** The TensorFlow summary tag name used for optimizing hyperparameter tuning trials. See [`HyperparameterSpec.hyperparameterMetricTag`](#HyperparameterSpec.FIELDS.hyperparameter_metric_tag) for more information. Only set for hyperparameter tuning jobs. */
@@ -1711,7 +1834,10 @@ export namespace MyNS {
 		/** The number of hyperparameter tuning trials that completed successfully. Only set for hyperparameter tuning jobs. */
 		completedTrialCount: FormControl<string | null | undefined>,
 
-		/** The amount of ML units consumed by the job. */
+		/**
+		 * The amount of ML units consumed by the job.
+		 * Type: double
+		 */
 		consumedMLUnits: FormControl<number | null | undefined>,
 
 		/** The TensorFlow summary tag name used for optimizing hyperparameter tuning trials. See [`HyperparameterSpec.hyperparameterMetricTag`](#HyperparameterSpec.FIELDS.hyperparameter_metric_tag) for more information. Only set for hyperparameter tuning jobs. */
@@ -2054,14 +2180,20 @@ export namespace MyNS {
 	/** Options for manually scaling a model. */
 	export interface GoogleCloudMlV1__ManualScaling {
 
-		/** The number of nodes to allocate for this model. These nodes are always up, starting from the time the model is deployed, so the cost of operating this model will be proportional to `nodes` * number of hours since last billing cycle plus the cost for each prediction performed. */
+		/**
+		 * The number of nodes to allocate for this model. These nodes are always up, starting from the time the model is deployed, so the cost of operating this model will be proportional to `nodes` * number of hours since last billing cycle plus the cost for each prediction performed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodes?: number | null;
 	}
 
 	/** Options for manually scaling a model. */
 	export interface GoogleCloudMlV1__ManualScalingFormProperties {
 
-		/** The number of nodes to allocate for this model. These nodes are always up, starting from the time the model is deployed, so the cost of operating this model will be proportional to `nodes` * number of hours since last billing cycle plus the cost for each prediction performed. */
+		/**
+		 * The number of nodes to allocate for this model. These nodes are always up, starting from the time the model is deployed, so the cost of operating this model will be proportional to `nodes` * number of hours since last billing cycle plus the cost for each prediction performed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodes: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1__ManualScalingFormGroup() {
@@ -2078,7 +2210,10 @@ export namespace MyNS {
 		/** Required. Fully qualified BigQuery table name in the following format: " project_id.dataset_name.table_name" The specified table must already exist, and the "Cloud ML Service Agent" for your project must have permission to write to it. The table must have the following [schema](/bigquery/docs/schemas): Field nameType Mode model STRING REQUIRED model_version STRING REQUIRED time TIMESTAMP REQUIRED raw_data STRING REQUIRED raw_prediction STRING NULLABLE groundtruth STRING NULLABLE */
 		bigqueryTableName?: string | null;
 
-		/** Percentage of requests to be logged, expressed as a fraction from 0 to 1. For example, if you want to log 10% of requests, enter `0.1`. The sampling window is the lifetime of the model version. Defaults to 0. */
+		/**
+		 * Percentage of requests to be logged, expressed as a fraction from 0 to 1. For example, if you want to log 10% of requests, enter `0.1`. The sampling window is the lifetime of the model version. Defaults to 0.
+		 * Type: double
+		 */
 		samplingPercentage?: number | null;
 	}
 
@@ -2088,7 +2223,10 @@ export namespace MyNS {
 		/** Required. Fully qualified BigQuery table name in the following format: " project_id.dataset_name.table_name" The specified table must already exist, and the "Cloud ML Service Agent" for your project must have permission to write to it. The table must have the following [schema](/bigquery/docs/schemas): Field nameType Mode model STRING REQUIRED model_version STRING REQUIRED time TIMESTAMP REQUIRED raw_data STRING REQUIRED raw_prediction STRING NULLABLE groundtruth STRING NULLABLE */
 		bigqueryTableName: FormControl<string | null | undefined>,
 
-		/** Percentage of requests to be logged, expressed as a fraction from 0 to 1. For example, if you want to log 10% of requests, enter `0.1`. The sampling window is the lifetime of the model version. Defaults to 0. */
+		/**
+		 * Percentage of requests to be logged, expressed as a fraction from 0 to 1. For example, if you want to log 10% of requests, enter `0.1`. The sampling window is the lifetime of the model version. Defaults to 0.
+		 * Type: double
+		 */
 		samplingPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1__RequestLoggingConfigFormGroup() {
@@ -2496,7 +2634,10 @@ export namespace MyNS {
 		/** The name of the study that the trial belongs to. */
 		study?: string | null;
 
-		/** The number of suggestions requested. */
+		/**
+		 * The number of suggestions requested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suggestionCount?: number | null;
 	}
 
@@ -2512,7 +2653,10 @@ export namespace MyNS {
 		/** The name of the study that the trial belongs to. */
 		study: FormControl<string | null | undefined>,
 
-		/** The number of suggestions requested. */
+		/**
+		 * The number of suggestions requested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suggestionCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1__SuggestTrialsMetadataFormGroup() {
@@ -2532,7 +2676,10 @@ export namespace MyNS {
 		/** Required. The identifier of the client that is requesting the suggestion. If multiple SuggestTrialsRequests have the same `client_id`, the service will return the identical suggested trial if the trial is pending, and provide a new trial if the last suggested trial was completed. */
 		clientId?: string | null;
 
-		/** Required. The number of suggestions requested. */
+		/**
+		 * Required. The number of suggestions requested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suggestionCount?: number | null;
 	}
 
@@ -2542,7 +2689,10 @@ export namespace MyNS {
 		/** Required. The identifier of the client that is requesting the suggestion. If multiple SuggestTrialsRequests have the same `client_id`, the service will return the identical suggested trial if the trial is pending, and provide a new trial if the last suggested trial was completed. */
 		clientId: FormControl<string | null | undefined>,
 
-		/** Required. The number of suggestions requested. */
+		/**
+		 * Required. The number of suggestions requested.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suggestionCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudMlV1__SuggestTrialsRequestFormGroup() {
@@ -2723,7 +2873,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -2733,7 +2886,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleIamV1__PolicyFormGroup() {
@@ -2875,7 +3031,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpc__Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -2888,7 +3047,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpc__StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2958,6 +3120,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunning__ListOperationsResponse} Successful response
 		 */
@@ -3061,6 +3224,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the project for which to list jobs.
 		 * @param {string} filter Optional. Specifies the subset of jobs to retrieve. You can filter on the value of one or more attributes of the job object. For example, retrieve jobs with a job identifier that starts with 'census': gcloud ai-platform jobs list --filter='jobId:census*' List all failed jobs with names that start with 'rnn': gcloud ai-platform jobs list --filter='jobId:rnn* AND state:FAILED' For more examples, see the guide to monitoring jobs.
 		 * @param {number} pageSize Optional. The number of jobs to retrieve per "page" of results. If there are more remaining results than this number, the response message will contain a valid value in the `next_page_token` field. The default value is 20, and the maximum page size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token to request the next page of results. You get the token from the `next_page_token` field of the response from the previous call.
 		 * @return {GoogleCloudMlV1__ListJobsResponse} Successful response
 		 */
@@ -3083,6 +3247,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/locations
 		 * @param {string} parent Required. The name of the project for which available locations are to be listed (since some locations might be whitelisted for specific projects).
 		 * @param {number} pageSize Optional. The number of locations to retrieve per "page" of results. If there are more remaining results than this number, the response message will contain a valid value in the `next_page_token` field. The default value is 20, and the maximum page size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token to request the next page of results. You get the token from the `next_page_token` field of the response from the previous call.
 		 * @return {GoogleCloudMlV1__ListLocationsResponse} Successful response
 		 */
@@ -3096,6 +3261,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the project whose models are to be listed.
 		 * @param {string} filter Optional. Specifies the subset of models to retrieve.
 		 * @param {number} pageSize Optional. The number of models to retrieve per "page" of results. If there are more remaining results than this number, the response message will contain a valid value in the `next_page_token` field. The default value is 20, and the maximum page size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token to request the next page of results. You get the token from the `next_page_token` field of the response from the previous call.
 		 * @return {GoogleCloudMlV1__ListModelsResponse} Successful response
 		 */
@@ -3180,6 +3346,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The name of the model for which to list the version.
 		 * @param {string} filter Optional. Specifies the subset of versions to retrieve.
 		 * @param {number} pageSize Optional. The number of versions to retrieve per "page" of results. If there are more remaining results than this number, the response message will contain a valid value in the `next_page_token` field. The default value is 20, and the maximum page size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token to request the next page of results. You get the token from the `next_page_token` field of the response from the previous call.
 		 * @return {GoogleCloudMlV1__ListVersionsResponse} Successful response
 		 */
@@ -3202,6 +3369,7 @@ export namespace MyNS {
 		 * Get v1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GoogleIamV1__Policy} Successful response
 		 */
 		Ml_projects_models_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<GoogleIamV1__Policy> {

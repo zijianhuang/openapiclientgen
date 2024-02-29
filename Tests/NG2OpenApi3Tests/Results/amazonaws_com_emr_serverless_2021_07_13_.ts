@@ -1388,7 +1388,9 @@ export namespace MyNS {
 		 * Cancels a job run.
 		 * Delete applications/{applicationId}/jobruns/{jobRunId}
 		 * @param {string} applicationId The ID of the application on which the job run will be canceled.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} jobRunId The ID of the job run to cancel.
+		 *     Min length: 1    Max length: 64
 		 * @return {CancelJobRunResponse} Success
 		 */
 		CancelJobRun(applicationId: string, jobRunId: string): Observable<CancelJobRunResponse> {
@@ -1399,7 +1401,9 @@ export namespace MyNS {
 		 * Displays detailed information about a job run.
 		 * Get applications/{applicationId}/jobruns/{jobRunId}
 		 * @param {string} applicationId The ID of the application on which the job run is submitted.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} jobRunId The ID of the job run.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetJobRunResponse} Success
 		 */
 		GetJobRun(applicationId: string, jobRunId: string): Observable<GetJobRunResponse> {
@@ -1419,8 +1423,11 @@ export namespace MyNS {
 		 * Lists applications based on a set of parameters.
 		 * Get applications
 		 * @param {string} nextToken The token for the next set of application results.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} maxResults The maximum number of applications that can be listed.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {Array<ApplicationState>} states An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.
+		 *     Minimum items: 1    Maximum items: 7
 		 * @return {ListApplicationsResponse} Success
 		 */
 		ListApplications(nextToken: string | null | undefined, maxResults: number | null | undefined, states: Array<ApplicationState> | null | undefined): Observable<ListApplicationsResponse> {
@@ -1431,6 +1438,7 @@ export namespace MyNS {
 		 * Deletes an application. An application has to be in a stopped or created state in order to be deleted.
 		 * Delete applications/{applicationId}
 		 * @param {string} applicationId The ID of the application that will be deleted.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteApplicationResponse} Success
 		 */
 		DeleteApplication(applicationId: string): Observable<DeleteApplicationResponse> {
@@ -1441,6 +1449,7 @@ export namespace MyNS {
 		 * Displays detailed information about a specified application.
 		 * Get applications/{applicationId}
 		 * @param {string} applicationId The ID of the application that will be described.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetApplicationResponse} Success
 		 */
 		GetApplication(applicationId: string): Observable<GetApplicationResponse> {
@@ -1451,6 +1460,7 @@ export namespace MyNS {
 		 * Updates a specified application. An application has to be in a stopped or created state in order to be updated.
 		 * Patch applications/{applicationId}
 		 * @param {string} applicationId The ID of the application to update.
+		 *     Min length: 1    Max length: 64
 		 * @return {UpdateApplicationResponse} Success
 		 */
 		UpdateApplication(applicationId: string, requestBody: UpdateApplicationPatchBody): Observable<UpdateApplicationResponse> {
@@ -1461,7 +1471,9 @@ export namespace MyNS {
 		 * <p>Creates and returns a URL that you can use to access the application UIs for a job run.</p> <p>For jobs in a running state, the application UI is a live user interface such as the Spark or Tez web UI. For completed jobs, the application UI is a persistent application user interface such as the Spark History Server or persistent Tez UI.</p> <note> <p>The URL is valid for one hour after you generate it. To access the application UI after that hour elapses, you must invoke the API again to generate a new URL.</p> </note>
 		 * Get applications/{applicationId}/jobruns/{jobRunId}/dashboard
 		 * @param {string} applicationId The ID of the application.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} jobRunId The ID of the job run.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetDashboardForJobRunResponse} Success
 		 */
 		GetDashboardForJobRun(applicationId: string, jobRunId: string): Observable<GetDashboardForJobRunResponse> {
@@ -1472,11 +1484,15 @@ export namespace MyNS {
 		 * Lists job runs based on a set of parameters.
 		 * Get applications/{applicationId}/jobruns
 		 * @param {string} applicationId The ID of the application for which to list the job run.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} nextToken The token for the next set of job run results.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} maxResults The maximum number of job runs that can be listed.
+		 *     Minimum: 1    Maximum: 50
 		 * @param {Date} createdAtAfter The lower bound of the option to filter by creation date and time.
 		 * @param {Date} createdAtBefore The upper bound of the option to filter by creation date and time.
 		 * @param {Array<JobRunState>} states An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.
+		 *     Minimum items: 0    Maximum items: 8
 		 * @return {ListJobRunsResponse} Success
 		 */
 		ListJobRuns(applicationId: string, nextToken: string | null | undefined, maxResults: number | null | undefined, createdAtAfter: Date | null | undefined, createdAtBefore: Date | null | undefined, states: Array<JobRunState> | null | undefined): Observable<ListJobRunsResponse> {
@@ -1487,6 +1503,7 @@ export namespace MyNS {
 		 * Starts a job run.
 		 * Post applications/{applicationId}/jobruns
 		 * @param {string} applicationId The ID of the application on which to run the job.
+		 *     Min length: 1    Max length: 64
 		 * @return {StartJobRunResponse} Success
 		 */
 		StartJobRun(applicationId: string, requestBody: StartJobRunPostBody): Observable<StartJobRunResponse> {
@@ -1497,6 +1514,7 @@ export namespace MyNS {
 		 * Lists the tags assigned to the resources.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
+		 *     Min length: 60    Max length: 1024
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1507,6 +1525,7 @@ export namespace MyNS {
 		 * Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you've assigned to it.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
+		 *     Min length: 60    Max length: 1024
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1517,6 +1536,7 @@ export namespace MyNS {
 		 * Starts a specified application and initializes initial capacity if configured.
 		 * Post applications/{applicationId}/start
 		 * @param {string} applicationId The ID of the application to start.
+		 *     Min length: 1    Max length: 64
 		 * @return {StartApplicationResponse} Success
 		 */
 		StartApplication(applicationId: string): Observable<StartApplicationResponse> {
@@ -1527,6 +1547,7 @@ export namespace MyNS {
 		 * Stops a specified application and releases initial capacity if configured. All scheduled and running jobs must be completed or cancelled before stopping an application.
 		 * Post applications/{applicationId}/stop
 		 * @param {string} applicationId The ID of the application to stop.
+		 *     Min length: 1    Max length: 64
 		 * @return {StopApplicationResponse} Success
 		 */
 		StopApplication(applicationId: string): Observable<StopApplicationResponse> {
@@ -1537,7 +1558,9 @@ export namespace MyNS {
 		 * Removes tags from resources.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
+		 *     Min length: 60    Max length: 1024
 		 * @param {Array<string>} tagKeys The keys of the tags to be removed.
+		 *     Minimum items: 1    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1549,32 +1572,32 @@ export namespace MyNS {
 
 		/**
 		 * The name of the application.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name?: string | null;
 
 		/**
 		 * The Amazon EMR release associated with the application.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		releaseLabel: string;
 
 		/**
 		 * The type of application you want to start, such as Spark or Hive.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		type: string;
 
 		/**
 		 * The client idempotency token of the application to create. Its value must be unique for each request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 
@@ -1609,32 +1632,32 @@ export namespace MyNS {
 
 		/**
 		 * The name of the application.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon EMR release associated with the application.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		releaseLabel: FormControl<string | null | undefined>,
 
 		/**
 		 * The type of application you want to start, such as Spark or Hive.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		type: FormControl<string | null | undefined>,
 
 		/**
 		 * The client idempotency token of the application to create. Its value must be unique for each request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1742,8 +1765,8 @@ export namespace MyNS {
 		/**
 		 * The client idempotency token of the application to update. Its value must be unique for each request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 
@@ -1773,8 +1796,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		releaseLabel?: string | null;
 	}
@@ -1783,8 +1806,8 @@ export namespace MyNS {
 		/**
 		 * The client idempotency token of the application to update. Its value must be unique for each request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1799,8 +1822,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon EMR release label for the application. You can change the release label to use a different release of Amazon EMR.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		releaseLabel: FormControl<string | null | undefined>,
 	}
@@ -1893,16 +1916,16 @@ export namespace MyNS {
 		/**
 		 * The client idempotency token of the job run to start. Its value must be unique for each request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 
 		/**
 		 * The execution role ARN for the job run.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		executionRoleArn: string;
 
@@ -1924,8 +1947,8 @@ export namespace MyNS {
 
 		/**
 		 * The optional job run name. This doesn't have to be unique.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name?: string | null;
 	}
@@ -1934,16 +1957,16 @@ export namespace MyNS {
 		/**
 		 * The client idempotency token of the job run to start. Its value must be unique for each request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The execution role ARN for the job run.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		executionRoleArn: FormControl<string | null | undefined>,
 
@@ -1959,8 +1982,8 @@ export namespace MyNS {
 
 		/**
 		 * The optional job run name. This doesn't have to be unique.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 	}

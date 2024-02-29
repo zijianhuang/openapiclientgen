@@ -149,7 +149,10 @@ export namespace MyNS {
 	/** Configurable parameters for attribute scoring. */
 	export interface AttributeParameters {
 
-		/** Don't return scores for this attribute that are below this threshold. If unset, a default threshold will be applied. A FloatValue wrapper is used to distinguish between 0 vs. default/unset. */
+		/**
+		 * Don't return scores for this attribute that are below this threshold. If unset, a default threshold will be applied. A FloatValue wrapper is used to distinguish between 0 vs. default/unset.
+		 * Type: float
+		 */
 		scoreThreshold?: number | null;
 
 		/** What type of scores to return. If unset, defaults to probability scores. */
@@ -159,7 +162,10 @@ export namespace MyNS {
 	/** Configurable parameters for attribute scoring. */
 	export interface AttributeParametersFormProperties {
 
-		/** Don't return scores for this attribute that are below this threshold. If unset, a default threshold will be applied. A FloatValue wrapper is used to distinguish between 0 vs. default/unset. */
+		/**
+		 * Don't return scores for this attribute that are below this threshold. If unset, a default threshold will be applied. A FloatValue wrapper is used to distinguish between 0 vs. default/unset.
+		 * Type: float
+		 */
 		scoreThreshold: FormControl<number | null | undefined>,
 
 		/** What type of scores to return. If unset, defaults to probability scores. */
@@ -233,8 +239,13 @@ export namespace MyNS {
 	/** This is a single score for a given span of text. */
 	export interface SpanScore {
 
-		/** "begin" and "end" describe the span of the original text that the attribute score applies to. The values are the UTF-16 codepoint range. "end" is exclusive. For example, with the text "Hi there", the begin/end pair (0,2) describes the text "Hi". If "begin" and "end" are unset, the score applies to the full text. */
+		/**
+		 * "begin" and "end" describe the span of the original text that the attribute score applies to. The values are the UTF-16 codepoint range. "end" is exclusive. For example, with the text "Hi there", the begin/end pair (0,2) describes the text "Hi". If "begin" and "end" are unset, the score applies to the full text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		begin?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 
 		/** Analysis scores are described by a value and a ScoreType. */
@@ -244,8 +255,13 @@ export namespace MyNS {
 	/** This is a single score for a given span of text. */
 	export interface SpanScoreFormProperties {
 
-		/** "begin" and "end" describe the span of the original text that the attribute score applies to. The values are the UTF-16 codepoint range. "end" is exclusive. For example, with the text "Hi there", the begin/end pair (0,2) describes the text "Hi". If "begin" and "end" are unset, the score applies to the full text. */
+		/**
+		 * "begin" and "end" describe the span of the original text that the attribute score applies to. The values are the UTF-16 codepoint range. "end" is exclusive. For example, with the text "Hi there", the begin/end pair (0,2) describes the text "Hi". If "begin" and "end" are unset, the score applies to the full text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		begin: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 	}
 	export function CreateSpanScoreFormGroup() {
@@ -263,7 +279,10 @@ export namespace MyNS {
 		/** The type of the above value. */
 		type?: AttributeParametersScoreType | null;
 
-		/** Score value. Semantics described by type below. */
+		/**
+		 * Score value. Semantics described by type below.
+		 * Type: float
+		 */
 		value?: number | null;
 	}
 
@@ -273,7 +292,10 @@ export namespace MyNS {
 		/** The type of the above value. */
 		type: FormControl<AttributeParametersScoreType | null | undefined>,
 
-		/** Score value. Semantics described by type below. */
+		/**
+		 * Score value. Semantics described by type below.
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateScoreFormGroup() {

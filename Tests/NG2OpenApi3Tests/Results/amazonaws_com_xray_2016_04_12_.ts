@@ -2941,8 +2941,8 @@ export namespace MyNS {
 		/**
 		 * The case-sensitive name of the new group. Default is a reserved name and names must be unique.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName: string;
 
@@ -2964,8 +2964,8 @@ export namespace MyNS {
 		/**
 		 * The case-sensitive name of the new group. Default is a reserved name and names must be unique.
 		 * Required
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
@@ -3070,15 +3070,15 @@ export namespace MyNS {
 
 		/**
 		 * The case-sensitive name of the group.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The ARN of the group that was generated on creation.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN?: string | null;
 	}
@@ -3086,15 +3086,15 @@ export namespace MyNS {
 
 		/**
 		 * The case-sensitive name of the group.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the group that was generated on creation.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN: FormControl<string | null | undefined>,
 	}
@@ -3111,8 +3111,8 @@ export namespace MyNS {
 		/**
 		 * The name of the resource policy to delete.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		PolicyName: string;
 
@@ -3124,8 +3124,8 @@ export namespace MyNS {
 		/**
 		 * The name of the resource policy to delete.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		PolicyName: FormControl<string | null | undefined>,
 
@@ -3168,15 +3168,15 @@ export namespace MyNS {
 
 		/**
 		 * The case-sensitive name of the group.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The ARN of the group that was generated on creation.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN?: string | null;
 	}
@@ -3184,15 +3184,15 @@ export namespace MyNS {
 
 		/**
 		 * The case-sensitive name of the group.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the group that was generated on creation.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN: FormControl<string | null | undefined>,
 	}
@@ -3208,8 +3208,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		NextToken?: string | null;
 	}
@@ -3217,8 +3217,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3269,8 +3269,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token returned by a previous request to retrieve the next page of events.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -3291,8 +3291,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token returned by a previous request to retrieve the next page of events.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3327,8 +3327,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token returned by a previous request to retrieve the next page of results.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -3354,8 +3354,8 @@ export namespace MyNS {
 
 		/**
 		 * Specify the pagination token returned by a previous request to retrieve the next page of results.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3380,15 +3380,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN?: string | null;
 
 		/**
 		 * The name of the group. Required if the GroupARN isn't provided.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName?: string | null;
 
@@ -3413,8 +3413,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken?: string | null;
 	}
@@ -3422,15 +3422,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the group. Required if the GroupName isn't provided.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the group. Required if the GroupARN isn't provided.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
@@ -3455,8 +3455,8 @@ export namespace MyNS {
 
 		/**
 		 * Pagination token.
-		 * Max length: 2000
 		 * Min length: 1
+		 * Max length: 2000
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3539,15 +3539,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of a group based on which you want to generate a graph.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN?: string | null;
 
@@ -3570,15 +3570,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of a group based on which you want to generate a graph.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of a group based on which you want to generate a graph.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN: FormControl<string | null | undefined>,
 
@@ -3612,26 +3612,29 @@ export namespace MyNS {
 
 		/**
 		 * The case-sensitive name of the group for which to pull statistics from.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the group for which to pull statistics from.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN?: string | null;
 
 		/**
 		 * A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		EntitySelectorExpression?: string | null;
 
-		/** Aggregation period in seconds. */
+		/**
+		 * Aggregation period in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Period?: number | null;
 
 		/** The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided. */
@@ -3656,26 +3659,29 @@ export namespace MyNS {
 
 		/**
 		 * The case-sensitive name of the group for which to pull statistics from.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the group for which to pull statistics from.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN: FormControl<string | null | undefined>,
 
 		/**
 		 * A filter expression defining entities that will be aggregated for statistics. Supports ID, service, and edge functions. If no selector expression is specified, edge statistics are returned.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		EntitySelectorExpression: FormControl<string | null | undefined>,
 
-		/** Aggregation period in seconds. */
+		/**
+		 * Aggregation period in seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		Period: FormControl<number | null | undefined>,
 
 		/** The forecasted high and low fault count values. Forecast enabled requests require the EntitySelectorExpression ID be provided. */
@@ -3808,8 +3814,8 @@ export namespace MyNS {
 
 		/**
 		 * Not currently supported.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		NextToken?: string | null;
 	}
@@ -3817,8 +3823,8 @@ export namespace MyNS {
 
 		/**
 		 * Not currently supported.
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -3834,8 +3840,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: string;
 
@@ -3847,8 +3853,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 
@@ -3867,8 +3873,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>An Amazon Web Services KMS key in one of the following formats:</p> <ul> <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li> <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li> <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li> </ul> <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		KeyId?: string | null;
 
@@ -3882,8 +3888,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>An Amazon Web Services KMS key in one of the following formats:</p> <ul> <li> <p> <b>Alias</b> - The name of the key. For example, <code>alias/MyKey</code>.</p> </li> <li> <p> <b>Key ID</b> - The KMS key ID of the key. For example, <code>ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Amazon Web Services X-Ray does not support asymmetric KMS keys.</p> </li> <li> <p> <b>ARN</b> - The full Amazon Resource Name of the key ID or alias. For example, <code>arn:aws:kms:us-east-2:123456789012:key/ae4aa6d49-a4d8-9df9-a475-4ff6d7898456</code>. Use this format to specify a key in a different account.</p> </li> </ul> <p>Omit this key if you set <code>Type</code> to <code>NONE</code>.</p>
-		 * Max length: 3000
 		 * Min length: 1
+		 * Max length: 3000
 		 */
 		KeyId: FormControl<string | null | undefined>,
 
@@ -3906,8 +3912,8 @@ export namespace MyNS {
 		/**
 		 * The name of the resource policy. Must be unique within a specific Amazon Web Services account.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		PolicyName: string;
 
@@ -3928,8 +3934,8 @@ export namespace MyNS {
 		/**
 		 * The name of the resource policy. Must be unique within a specific Amazon Web Services account.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		PolicyName: FormControl<string | null | undefined>,
 
@@ -4031,8 +4037,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: string;
 
@@ -4049,8 +4055,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -4066,8 +4072,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: string;
 
@@ -4084,8 +4090,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Number (ARN) of an X-Ray group or sampling rule.
 		 * Required
-		 * Max length: 1011
 		 * Min length: 1
+		 * Max length: 1011
 		 */
 		ResourceARN: FormControl<string | null | undefined>,
 	}
@@ -4100,15 +4106,15 @@ export namespace MyNS {
 
 		/**
 		 * The case-sensitive name of the group.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName?: string | null;
 
 		/**
 		 * The ARN that was generated upon creation.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN?: string | null;
 
@@ -4122,15 +4128,15 @@ export namespace MyNS {
 
 		/**
 		 * The case-sensitive name of the group.
-		 * Max length: 32
 		 * Min length: 1
+		 * Max length: 32
 		 */
 		GroupName: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN that was generated upon creation.
-		 * Max length: 400
 		 * Min length: 1
+		 * Max length: 400
 		 */
 		GroupARN: FormControl<string | null | undefined>,
 

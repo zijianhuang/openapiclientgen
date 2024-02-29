@@ -7,8 +7,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account the Service belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -48,7 +48,10 @@ export namespace MyNS {
 		/** The URL of this resource. */
 		url?: string | null;
 
-		/** The version number of this Service. */
+		/**
+		 * The version number of this Service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 		webhook_http_method?: Intelligencev2serviceWebhook_http_method | null;
 
@@ -59,8 +62,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account the Service belongs to.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -100,7 +103,10 @@ export namespace MyNS {
 		/** The URL of this resource. */
 		url: FormControl<string | null | undefined>,
 
-		/** The version number of this Service. */
+		/**
+		 * The version number of this Service.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 		webhook_http_method: FormControl<Intelligencev2serviceWebhook_http_method | null | undefined>,
 
@@ -134,8 +140,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -155,7 +161,10 @@ export namespace MyNS {
 		/** The date that this Transcript was updated, given in ISO 8601 format. */
 		date_updated?: Date | null;
 
-		/** The duration of this Transcript's source */
+		/**
+		 * The duration of this Transcript's source
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration?: number | null;
 
 		/** The default language code of the audio. */
@@ -170,15 +179,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Service.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * A 34 character string that uniquely identifies this Transcript.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 		status?: Intelligencev2transcriptStatus | null;
@@ -190,8 +199,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -211,7 +220,10 @@ export namespace MyNS {
 		/** The date that this Transcript was updated, given in ISO 8601 format. */
 		date_updated: FormControl<Date | null | undefined>,
 
-		/** The duration of this Transcript's source */
+		/**
+		 * The duration of this Transcript's source
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		duration: FormControl<number | null | undefined>,
 
 		/** The default language code of the audio. */
@@ -226,15 +238,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Service.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * A 34 character string that uniquely identifies this Transcript.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 		status: FormControl<Intelligencev2transcriptStatus | null | undefined>,
@@ -269,8 +281,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid?: string | null;
 
@@ -279,15 +291,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Service.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid?: string | null;
 
 		/**
 		 * The unique SID identifier of the Transcript.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
@@ -298,8 +310,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Account.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		account_sid: FormControl<string | null | undefined>,
 
@@ -308,15 +320,15 @@ export namespace MyNS {
 
 		/**
 		 * The unique SID identifier of the Service.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		service_sid: FormControl<string | null | undefined>,
 
 		/**
 		 * The unique SID identifier of the Transcript.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
@@ -345,7 +357,10 @@ export namespace MyNS {
 		/** The labels probabilities. This might be available on conversation classify model outputs. */
 		label_probabilities?: any;
 
-		/** Percentage of 'matching' class needed to consider a sentence matches */
+		/**
+		 * Percentage of 'matching' class needed to consider a sentence matches
+		 * Type: double
+		 */
 		match_probability?: number | null;
 
 		/** The name of the applied Language Understanding. */
@@ -356,8 +371,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that identifies this Language Understanding operator sid.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		operator_sid?: string | null;
 		operator_type?: Intelligencev2transcriptoperator_resultOperator_type | null;
@@ -365,7 +380,10 @@ export namespace MyNS {
 		/** The 'matching' class. This might be available on conversation classify model outputs. */
 		predicted_label?: string | null;
 
-		/** Percentage of 'matching' class needed to consider a sentence matches. */
+		/**
+		 * Percentage of 'matching' class needed to consider a sentence matches.
+		 * Type: double
+		 */
 		predicted_probability?: number | null;
 
 		/** Output of a text generation operator for example Conversation Sumamary. */
@@ -373,8 +391,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies this Transcript.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		transcript_sid?: string | null;
 
@@ -398,7 +416,10 @@ export namespace MyNS {
 		/** The labels probabilities. This might be available on conversation classify model outputs. */
 		label_probabilities: FormControl<any | null | undefined>,
 
-		/** Percentage of 'matching' class needed to consider a sentence matches */
+		/**
+		 * Percentage of 'matching' class needed to consider a sentence matches
+		 * Type: double
+		 */
 		match_probability: FormControl<number | null | undefined>,
 
 		/** The name of the applied Language Understanding. */
@@ -409,8 +430,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that identifies this Language Understanding operator sid.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		operator_sid: FormControl<string | null | undefined>,
 		operator_type: FormControl<Intelligencev2transcriptoperator_resultOperator_type | null | undefined>,
@@ -418,7 +439,10 @@ export namespace MyNS {
 		/** The 'matching' class. This might be available on conversation classify model outputs. */
 		predicted_label: FormControl<string | null | undefined>,
 
-		/** Percentage of 'matching' class needed to consider a sentence matches. */
+		/**
+		 * Percentage of 'matching' class needed to consider a sentence matches.
+		 * Type: double
+		 */
 		predicted_probability: FormControl<number | null | undefined>,
 
 		/** Output of a text generation operator for example Conversation Sumamary. */
@@ -426,8 +450,8 @@ export namespace MyNS {
 
 		/**
 		 * A 34 character string that uniquely identifies this Transcript.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		transcript_sid: FormControl<string | null | undefined>,
 
@@ -460,50 +484,78 @@ export namespace MyNS {
 	export enum Intelligencev2transcriptoperator_resultOperator_type { conversation_classify = 'conversation_classify', utterance_classify = 'utterance_classify', extract = 'extract', extract_normalize = 'extract_normalize', pii_extract = 'pii_extract' }
 
 	export interface Intelligencev2transcriptsentence {
+
+		/** Type: double */
 		confidence?: number | null;
 
-		/** Offset from the beginning of the transcript when this sentence ends. */
+		/**
+		 * Offset from the beginning of the transcript when this sentence ends.
+		 * Type: double
+		 */
 		end_time?: number | null;
 
-		/** The channel number. */
+		/**
+		 * The channel number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		media_channel?: number | null;
 
-		/** The index of the sentence in the transcript. */
+		/**
+		 * The index of the sentence in the transcript.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentence_index?: number | null;
 
 		/**
 		 * A 34 character string that uniquely identifies this Sentence.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid?: string | null;
 
-		/** Offset from the beginning of the transcript when this sentence starts. */
+		/**
+		 * Offset from the beginning of the transcript when this sentence starts.
+		 * Type: double
+		 */
 		start_time?: number | null;
 
 		/** Transcript text. */
 		transcript?: string | null;
 	}
 	export interface Intelligencev2transcriptsentenceFormProperties {
+
+		/** Type: double */
 		confidence: FormControl<number | null | undefined>,
 
-		/** Offset from the beginning of the transcript when this sentence ends. */
+		/**
+		 * Offset from the beginning of the transcript when this sentence ends.
+		 * Type: double
+		 */
 		end_time: FormControl<number | null | undefined>,
 
-		/** The channel number. */
+		/**
+		 * The channel number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		media_channel: FormControl<number | null | undefined>,
 
-		/** The index of the sentence in the transcript. */
+		/**
+		 * The index of the sentence in the transcript.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentence_index: FormControl<number | null | undefined>,
 
 		/**
 		 * A 34 character string that uniquely identifies this Sentence.
-		 * Max length: 34
 		 * Min length: 34
+		 * Max length: 34
 		 */
 		sid: FormControl<string | null | undefined>,
 
-		/** Offset from the beginning of the transcript when this sentence starts. */
+		/**
+		 * Offset from the beginning of the transcript when this sentence starts.
+		 * Type: double
+		 */
 		start_time: FormControl<number | null | undefined>,
 
 		/** Transcript text. */
@@ -539,7 +591,9 @@ export namespace MyNS {
 		 * Retrieves a list of all Services for an account.
 		 * Get v2/Services
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListServiceReturn} OK
 		 */
@@ -571,6 +625,7 @@ export namespace MyNS {
 		 * Retrieve a list of Transcripts for a given service.
 		 * Get v2/Transcripts
 		 * @param {string} ServiceSid The unique SID identifier of the Service.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} BeforeStartTime Filter by before StartTime.
 		 * @param {string} AfterStartTime Filter by after StartTime.
 		 * @param {string} BeforeDateCreated Filter by before DateCreated.
@@ -579,7 +634,9 @@ export namespace MyNS {
 		 * @param {string} LanguageCode Filter by Language Code.
 		 * @param {string} SourceSid Filter by SourceSid.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListTranscriptReturn} OK
 		 */
@@ -591,6 +648,7 @@ export namespace MyNS {
 		 * Delete a specific Transcript.
 		 * Delete v2/Transcripts/{Sid}
 		 * @param {string} Sid A 34 character string that uniquely identifies this Transcript.
+		 *     Min length: 34    Max length: 34
 		 * @return {void} 
 		 */
 		DeleteTranscript(Sid: string): Observable<HttpResponse<string>> {
@@ -601,6 +659,7 @@ export namespace MyNS {
 		 * Fetch a specific Transcript.
 		 * Get v2/Transcripts/{Sid}
 		 * @param {string} Sid A 34 character string that uniquely identifies this Transcript.
+		 *     Min length: 34    Max length: 34
 		 * @return {Intelligencev2transcript} OK
 		 */
 		FetchTranscript(Sid: string): Observable<Intelligencev2transcript> {
@@ -611,6 +670,7 @@ export namespace MyNS {
 		 * Get download URLs for media if possible
 		 * Get v2/Transcripts/{Sid}/Media
 		 * @param {string} Sid The unique SID identifier of the Transcript.
+		 *     Min length: 34    Max length: 34
 		 * @param {boolean} Redacted Grant access to PII Redacted/Unredacted Media. If redaction is enabled, the default is `true` to access redacted media.
 		 * @return {Intelligencev2transcriptmedia} OK
 		 */
@@ -622,9 +682,12 @@ export namespace MyNS {
 		 * Retrieve a list of Operator Results for the given Transcript.
 		 * Get v2/Transcripts/{TranscriptSid}/OperatorResults
 		 * @param {string} TranscriptSid A 34 character string that uniquely identifies this Transcript.
+		 *     Min length: 34    Max length: 34
 		 * @param {boolean} Redacted Grant access to PII redacted/unredacted Language Understanding operator. If redaction is enabled, the default is True.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListOperatorResultReturn} OK
 		 */
@@ -636,7 +699,9 @@ export namespace MyNS {
 		 * Fetch a specific Operator Result for the given Transcript.
 		 * Get v2/Transcripts/{TranscriptSid}/OperatorResults/{OperatorSid}
 		 * @param {string} TranscriptSid A 34 character string that uniquely identifies this Transcript.
+		 *     Min length: 34    Max length: 34
 		 * @param {string} OperatorSid A 34 character string that identifies this Language Understanding operator sid.
+		 *     Min length: 34    Max length: 34
 		 * @param {boolean} Redacted Grant access to PII redacted/unredacted Language Understanding operator. If redaction is enabled, the default is True.
 		 * @return {Intelligencev2transcriptoperator_result} OK
 		 */
@@ -648,9 +713,12 @@ export namespace MyNS {
 		 * Get all Transcript Sentences by TranscriptSid
 		 * Get v2/Transcripts/{TranscriptSid}/Sentences
 		 * @param {string} TranscriptSid The unique SID identifier of the Transcript.
+		 *     Min length: 34    Max length: 34
 		 * @param {boolean} Redacted Grant access to PII Redacted/Unredacted Sentences. If redaction is enabled, the default is `true` to access redacted sentences.
 		 * @param {number} PageSize How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {number} Page The page index. This value is simply for client state.
+		 *     Minimum: 0
 		 * @param {string} PageToken The page token. This is provided by the API.
 		 * @return {ListSentenceReturn} OK
 		 */
@@ -675,7 +743,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -684,7 +756,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -718,7 +794,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -727,7 +807,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -761,7 +845,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -770,7 +858,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -804,7 +896,11 @@ export namespace MyNS {
 		first_page_url?: string | null;
 		key?: string | null;
 		next_page_url?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size?: number | null;
 		previous_page_url?: string | null;
 		url?: string | null;
@@ -813,7 +909,11 @@ export namespace MyNS {
 		first_page_url: FormControl<string | null | undefined>,
 		key: FormControl<string | null | undefined>,
 		next_page_url: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		page_size: FormControl<number | null | undefined>,
 		previous_page_url: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,

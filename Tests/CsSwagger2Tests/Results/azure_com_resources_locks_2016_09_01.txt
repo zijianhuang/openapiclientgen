@@ -347,7 +347,10 @@ namespace MyNS
 		/// Gets all the management locks for a resource group.
 		/// ManagementLocks_ListAtResourceGroupLevel subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/locks
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group containing the locks to get.</param>
+		/// <param name="resourceGroupName">The name of the resource group containing the locks to get.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="filter">The filter to apply on the operation.</param>
 		/// <param name="api_version">The API version to use for the operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -379,7 +382,10 @@ namespace MyNS
 		/// Gets a management lock at the resource group level.
 		/// ManagementLocks_GetAtResourceGroupLevel subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the locked resource group.</param>
+		/// <param name="resourceGroupName">The name of the locked resource group.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="lockName">The name of the lock to get.</param>
 		/// <param name="api_version">The API version to use for the operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -412,7 +418,10 @@ namespace MyNS
 		/// When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
 		/// ManagementLocks_CreateOrUpdateAtResourceGroupLevel subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group to lock.</param>
+		/// <param name="resourceGroupName">The name of the resource group to lock.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="lockName">The lock name. The lock name can be a maximum of 260 characters. It cannot contain <, > %, &, :, \, ?, /, or any control characters.</param>
 		/// <param name="api_version">The API version to use for the operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -453,7 +462,10 @@ namespace MyNS
 		/// To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
 		/// ManagementLocks_DeleteAtResourceGroupLevel subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group containing the lock.</param>
+		/// <param name="resourceGroupName">The name of the resource group containing the lock.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="lockName">The name of lock to delete.</param>
 		/// <param name="api_version">The API version to use for the operation.</param>
 		/// <param name="subscriptionId">The ID of the target subscription.</param>
@@ -479,7 +491,10 @@ namespace MyNS
 		/// Gets all the management locks for a resource or any level below resource.
 		/// ManagementLocks_ListAtResourceLevel subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/locks
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group containing the locked resource. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group containing the locked resource. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceProviderNamespace">The namespace of the resource provider.</param>
 		/// <param name="parentResourcePath">The parent resource identity.</param>
 		/// <param name="resourceType">The resource type of the locked resource.</param>
@@ -515,7 +530,10 @@ namespace MyNS
 		/// Get the management lock of a resource or any level below resource.
 		/// ManagementLocks_GetAtResourceLevel subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group. </param>
+		/// <param name="resourceGroupName">The name of the resource group. 
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceProviderNamespace">The namespace of the resource provider.</param>
 		/// <param name="parentResourcePath">An extra path parameter needed in some services, like SQL Databases.</param>
 		/// <param name="resourceType">The type of the resource.</param>
@@ -552,7 +570,10 @@ namespace MyNS
 		/// When you apply a lock at a parent scope, all child resources inherit the same lock. To create management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
 		/// ManagementLocks_CreateOrUpdateAtResourceLevel subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group containing the resource to lock. </param>
+		/// <param name="resourceGroupName">The name of the resource group containing the resource to lock. 
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceProviderNamespace">The resource provider namespace of the resource to lock.</param>
 		/// <param name="parentResourcePath">The parent resource identity.</param>
 		/// <param name="resourceType">The resource type of the resource to lock.</param>
@@ -597,7 +618,10 @@ namespace MyNS
 		/// To delete management locks, you must have access to Microsoft.Authorization/* or Microsoft.Authorization/locks/* actions. Of the built-in roles, only Owner and User Access Administrator are granted those actions.
 		/// ManagementLocks_DeleteAtResourceLevel subscriptions/{subscriptionId}/resourcegroups/{resourceGroupName}/providers/{resourceProviderNamespace}/{parentResourcePath}/{resourceType}/{resourceName}/providers/Microsoft.Authorization/locks/{lockName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the resource group containing the resource with the lock to delete. </param>
+		/// <param name="resourceGroupName">The name of the resource group containing the resource with the lock to delete. 
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceProviderNamespace">The resource provider namespace of the resource with the lock to delete.</param>
 		/// <param name="parentResourcePath">The parent resource identity.</param>
 		/// <param name="resourceType">The resource type of the resource with the lock to delete.</param>

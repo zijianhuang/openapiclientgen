@@ -130,6 +130,7 @@ export namespace MyNS {
 		 * Lists shelves. The order is unspecified but deterministic. Newly created shelves will not necessarily be added to the end of this list.
 		 * Get v1/shelves
 		 * @param {number} pageSize Requested page size. Server may return fewer shelves than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListShelvesResponse.next_page_token returned from the previous call to `ListShelves` method.
 		 * @return {GoogleExampleLibraryagentV1ListShelvesResponse} Successful response
 		 */
@@ -172,6 +173,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/books
 		 * @param {string} parent Required. The name of the shelf whose books we'd like to list.
 		 * @param {number} pageSize Requested page size. Server may return fewer books than requested. If unspecified, server will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results the server should return. Typically, this is the value of ListBooksResponse.next_page_token. returned from the previous call to `ListBooks` method.
 		 * @return {GoogleExampleLibraryagentV1ListBooksResponse} Successful response
 		 */

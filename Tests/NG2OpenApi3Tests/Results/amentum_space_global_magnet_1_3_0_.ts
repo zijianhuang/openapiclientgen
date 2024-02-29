@@ -13,9 +13,13 @@ export namespace MyNS {
 		 * at specified conditions.
 		 * Get magnetic_field
 		 * @param {number} altitude Geodetic Altitude 0 km to 600 km.
+		 *     Type: double
 		 * @param {number} latitude Geodetic Latitude. -90 deg (S) to 90 deg (N).
+		 *     Type: double
 		 * @param {number} longitude Geodetic Longitude. -180 deg (W) to 180 deg (E).
+		 *     Type: double
 		 * @param {number} year Year as a decimal in the range 2015-2025 (2017.5 would be half way through 2017).
+		 *     Type: double
 		 * @return {App_api_wmm_endpoints_WMM_magnetic_fieldReturn} Successful magnetic field intensity calculation
 		 */
 		App_api_wmm_endpoints_WMM_magnetic_field(altitude: number, latitude: number, longitude: number, year: number): Observable<App_api_wmm_endpoints_WMM_magnetic_fieldReturn> {
@@ -55,10 +59,14 @@ export namespace MyNS {
 
 	export interface App_api_wmm_endpoints_WMM_magnetic_fieldReturnDeclination {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wmm_endpoints_WMM_magnetic_fieldReturnDeclinationFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wmm_endpoints_WMM_magnetic_fieldReturnDeclinationFormGroup() {
@@ -71,10 +79,14 @@ export namespace MyNS {
 
 	export interface App_api_wmm_endpoints_WMM_magnetic_fieldReturnGrid_variation {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wmm_endpoints_WMM_magnetic_fieldReturnGrid_variationFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wmm_endpoints_WMM_magnetic_fieldReturnGrid_variationFormGroup() {
@@ -87,10 +99,14 @@ export namespace MyNS {
 
 	export interface App_api_wmm_endpoints_WMM_magnetic_fieldReturnInclination {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wmm_endpoints_WMM_magnetic_fieldReturnInclinationFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wmm_endpoints_WMM_magnetic_fieldReturnInclinationFormGroup() {
@@ -103,10 +119,14 @@ export namespace MyNS {
 
 	export interface App_api_wmm_endpoints_WMM_magnetic_fieldReturnTotal_intensity {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wmm_endpoints_WMM_magnetic_fieldReturnTotal_intensityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wmm_endpoints_WMM_magnetic_fieldReturnTotal_intensityFormGroup() {

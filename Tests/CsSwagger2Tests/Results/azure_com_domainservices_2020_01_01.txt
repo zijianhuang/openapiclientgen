@@ -636,7 +636,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <returns>HTTP 200 (OK) if the operation was successful.</returns>
 		public async Task<DomainServiceListResult> DomainServices_ListByResourceGroupAsync(string api_version, string subscriptionId, string resourceGroupName)
 		{
@@ -668,7 +671,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="domainServiceName">The name of the domain service.</param>
 		/// <returns>HTTP 200 (OK) if the operation was successful.</returns>
 		public async Task<DomainService> DomainServices_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string domainServiceName)
@@ -701,7 +707,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="domainServiceName">The name of the domain service.</param>
 		/// <param name="requestBody">Properties supplied to the Create or Update a Domain Service operation.</param>
 		/// <returns>HTTP 200 (OK) if the operation was successful.</returns>
@@ -742,7 +751,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="domainServiceName">The name of the domain service.</param>
 		public async Task DomainServices_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string domainServiceName)
 		{
@@ -768,7 +780,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="domainServiceName">The name of the domain service.</param>
 		/// <param name="requestBody">Properties supplied to the Update a Domain Service operation.</param>
 		/// <returns>HTTP 200 (OK) if the operation was successful.</returns>

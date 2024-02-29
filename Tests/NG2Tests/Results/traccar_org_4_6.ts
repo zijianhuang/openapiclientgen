@@ -1224,8 +1224,11 @@ export namespace MyNS {
 		 * Get attributes/computed
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Attribute>} OK
 		 */
 		AttributesComputedGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Attribute>> {
@@ -1267,6 +1270,7 @@ export namespace MyNS {
 		 * Get calendars
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Calendar>} OK
 		 */
 		CalendarsGetByAllAndUserId(all: boolean | null | undefined, userId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Calendar>> {
@@ -1308,8 +1312,11 @@ export namespace MyNS {
 		 * Get commands
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Command>} OK
 		 */
 		CommandsGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Command>> {
@@ -1330,6 +1337,7 @@ export namespace MyNS {
 		 * Return a list of saved commands linked to Device and its groups, filtered by current Device protocol support
 		 * Get commands/send
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Command>} OK
 		 */
 		CommandsSendGetByDeviceId(deviceId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Command>> {
@@ -1350,6 +1358,7 @@ export namespace MyNS {
 		 * Fetch a list of available Commands for the Device or all possible Commands if Device ommited
 		 * Get commands/types
 		 * @param {number} deviceId Internal device identifier. Only works if device has already reported some locations
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} protocol Protocol name. Can be used instead of device id
 		 * @param {boolean} textChannel When `true` return SMS commands. If not specified or `false` return data commands
 		 * @return {Array<CommandType>} OK
@@ -1384,7 +1393,9 @@ export namespace MyNS {
 		 * Get devices
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} id To fetch one or more devices. Multiple params can be passed like `id=31&id=42`
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} uniqueId To fetch one or more devices. Multiple params can be passed like `uniqueId=333331&uniqieId=44442`
 		 * @return {Array<Device>} OK
 		 */
@@ -1437,8 +1448,11 @@ export namespace MyNS {
 		 * Get drivers
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Driver>} OK
 		 */
 		DriversGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Driver>> {
@@ -1489,8 +1503,11 @@ export namespace MyNS {
 		 * Get geofences
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Geofence>} OK
 		 */
 		GeofencesGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Geofence>> {
@@ -1532,6 +1549,7 @@ export namespace MyNS {
 		 * Get groups
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Group>} OK
 		 */
 		GroupsGetByAllAndUserId(all: boolean | null | undefined, userId: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Group>> {
@@ -1573,8 +1591,11 @@ export namespace MyNS {
 		 * Get maintenance
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Maintenance>} OK
 		 */
 		MaintenanceGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Maintenance>> {
@@ -1616,8 +1637,11 @@ export namespace MyNS {
 		 * Get notifications
 		 * @param {boolean} all Can only be used by admins or managers to fetch all entities
 		 * @param {number} userId Standard users can use this only with their own _userId_
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} deviceId Standard users can use this only with _deviceId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} groupId Standard users can use this only with _groupId_s, they have access to
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Notification>} OK
 		 */
 		NotificationsGetByAllAndUserIdAndDeviceIdAndGroupIdAndRefresh(all: boolean | null | undefined, userId: number | null | undefined, deviceId: number | null | undefined, groupId: number | null | undefined, refresh: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Notification>> {
@@ -1694,9 +1718,11 @@ export namespace MyNS {
 		 * Without any params, it returns a list of last known positions for all the user's Devices. _from_ and _to_ fields are not required with _id_
 		 * Get positions
 		 * @param {number} deviceId _deviceId_ is optional, but requires the _from_ and _to_ parameters when used
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Date} from in IS0 8601 format. eg. `1963-11-22T18:30:00Z`
 		 * @param {Date} to in IS0 8601 format. eg. `1963-11-22T18:30:00Z`
 		 * @param {number} id To fetch one or more positions. Multiple params can be passed like `id=31&id=42`
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Position>} OK
 		 */
 		PositionsGetByDeviceIdAndFromAndToAndId(deviceId: number | null | undefined, from: Date | null | undefined, to: Date | null | undefined, id: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Position>> {

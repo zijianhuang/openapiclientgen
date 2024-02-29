@@ -984,8 +984,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token that indicates the next set of results to retrieve.
-		 * Max length: 131070
 		 * Min length: 0
+		 * Max length: 131070
 		 */
 		nextToken?: string | null;
 
@@ -1000,8 +1000,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token that indicates the next set of results to retrieve.
-		 * Max length: 131070
 		 * Min length: 0
+		 * Max length: 131070
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -1068,8 +1068,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token that indicates the next set of results to retrieve.
-		 * Max length: 131070
 		 * Min length: 0
+		 * Max length: 131070
 		 */
 		nextToken?: string | null;
 
@@ -1096,8 +1096,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token that indicates the next set of results to retrieve.
-		 * Max length: 131070
 		 * Min length: 0
+		 * Max length: 131070
 		 */
 		nextToken: FormControl<string | null | undefined>,
 
@@ -1143,8 +1143,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token that indicates the next set of results to retrieve.
-		 * Max length: 131070
 		 * Min length: 0
+		 * Max length: 131070
 		 */
 		nextToken?: string | null;
 
@@ -1171,8 +1171,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token that indicates the next set of results to retrieve.
-		 * Max length: 131070
 		 * Min length: 0
+		 * Max length: 131070
 		 */
 		nextToken: FormControl<string | null | undefined>,
 

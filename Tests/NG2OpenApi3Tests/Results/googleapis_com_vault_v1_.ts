@@ -171,7 +171,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -184,7 +187,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1845,6 +1851,7 @@ export namespace MyNS {
 		 * Lists matters the requestor has access to.
 		 * Get v1/matters
 		 * @param {number} pageSize The number of matters to return in the response. Default and maximum are 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The pagination token as returned in the response.
 		 * @param {MatterState} state If set, lists only matters with the specified state. The default lists matters of all states.
 		 * @param {Vault_matters_listView} view Specifies how much information about the matter to return in response.
@@ -1899,6 +1906,7 @@ export namespace MyNS {
 		 * Get v1/matters/{matterId}/exports
 		 * @param {string} matterId The matter ID.
 		 * @param {number} pageSize The number of exports to return in the response.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The pagination token as returned in the response.
 		 * @return {ListExportsResponse} Successful response
 		 */
@@ -1943,6 +1951,7 @@ export namespace MyNS {
 		 * Get v1/matters/{matterId}/holds
 		 * @param {string} matterId The matter ID.
 		 * @param {number} pageSize The number of holds to return in the response, between 0 and 100 inclusive. Leaving this empty, or as 0, is the same as **page_size** = 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The pagination token as returned in the response. An empty token means start from the beginning.
 		 * @param {Vault_matters_holds_listView} view The amount of detail to return for a hold.
 		 * @return {ListHoldsResponse} Successful response
@@ -2056,6 +2065,7 @@ export namespace MyNS {
 		 * Get v1/matters/{matterId}/savedQueries
 		 * @param {string} matterId The ID of the matter to get the saved queries for.
 		 * @param {number} pageSize The maximum number of saved queries to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The pagination token as returned in the previous response. An empty token means start from the beginning.
 		 * @return {ListSavedQueriesResponse} Successful response
 		 */
@@ -2171,6 +2181,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */

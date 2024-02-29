@@ -167,8 +167,14 @@ namespace MyNS
 		/// SearchV1OrganicGetByQAndFieldAndSizeAndTotal_onlyAndCallback search/v1/organic
 		/// </summary>
 		/// <param name="q">Lucene-type search query</param>
-		/// <param name="field">Metadata field</param>
-		/// <param name="size">Number of query results to return</param>
+		/// <param name="field">Metadata field
+		/// Max length: 250
+		/// Min length: 1
+		// </param>
+		/// <param name="size">Number of query results to return
+		/// Minimum: 10
+		/// Maximum: 10000
+		// </param>
 		/// <param name="total_only">Request total only; do not return hits</param>
 		/// <param name="callback">Specifies a JavaScript function func, for a JSON-P response. When provided, results are wrapped as `callback(data)`, and the returned MIME type is application/javascript. This causes the caller to automatically run the func with the JSON results as its argument.</param>
 		/// <returns>Organic Search API. Returns results in descending relevance order</returns>
@@ -206,9 +212,18 @@ namespace MyNS
 		/// SearchV1ScrapeGetByQAndFieldAndSortAndSizeAndCursorAndTotal_onlyAndCallback search/v1/scrape
 		/// </summary>
 		/// <param name="q">Lucene-type search query</param>
-		/// <param name="field">Metadata field</param>
-		/// <param name="sort">sort collations</param>
-		/// <param name="size">Number of query results to return</param>
+		/// <param name="field">Metadata field
+		/// Max length: 250
+		/// Min length: 1
+		// </param>
+		/// <param name="sort">sort collations
+		/// Max length: 250
+		/// Min length: 5
+		// </param>
+		/// <param name="size">Number of query results to return
+		/// Minimum: 10
+		/// Maximum: 10000
+		// </param>
 		/// <param name="cursor">Cursor for scrolling (used for subsequent calls)</param>
 		/// <param name="total_only">Request total only; do not return hits</param>
 		/// <param name="callback">Specifies a JavaScript function func, for a JSON-P response. When provided, results are wrapped as `callback(data)`, and the returned MIME type is application/javascript. This causes the caller to automatically run the func with the JSON results as its argument.</param>

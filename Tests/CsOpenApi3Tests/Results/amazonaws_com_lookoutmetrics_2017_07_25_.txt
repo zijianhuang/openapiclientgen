@@ -3389,7 +3389,9 @@ namespace MyNS
 		/// Gets a list of <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> for a detector, dataset, or alert.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The resource's Amazon Resource Name (ARN).</param>
+		/// <param name="resourceArn">The resource's Amazon Resource Name (ARN).
+		/// Max length: 256
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3423,7 +3425,9 @@ namespace MyNS
 		/// Adds <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> to a detector, dataset, or alert.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The resource's Amazon Resource Name (ARN).</param>
+		/// <param name="resourceArn">The resource's Amazon Resource Name (ARN).
+		/// Max length: 256
+		// </param>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn));
@@ -3497,8 +3501,13 @@ namespace MyNS
 		/// Removes <a href="https://docs.aws.amazon.com/lookoutmetrics/latest/dev/detectors-tags.html">tags</a> from a detector, dataset, or alert.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The resource's Amazon Resource Name (ARN).</param>
-		/// <param name="tagKeys">Keys to remove from the resource's tags.</param>
+		/// <param name="resourceArn">The resource's Amazon Resource Name (ARN).
+		/// Max length: 256
+		// </param>
+		/// <param name="tagKeys">Keys to remove from the resource's tags.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		public async Task UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (resourceArn==null? "" : System.Uri.EscapeDataString(resourceArn))+"#tagKeys&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));

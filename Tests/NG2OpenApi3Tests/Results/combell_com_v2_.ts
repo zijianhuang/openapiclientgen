@@ -5,24 +5,36 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Account {
 
-		/** The id of the account */
+		/**
+		 * The id of the account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Identifier for the account */
 		identifier?: string | null;
 
-		/** The servicepack id that defines the account. */
+		/**
+		 * The servicepack id that defines the account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id?: number | null;
 	}
 	export interface AccountFormProperties {
 
-		/** The id of the account */
+		/**
+		 * The id of the account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Identifier for the account */
 		identifier: FormControl<string | null | undefined>,
 
-		/** The servicepack id that defines the account. */
+		/**
+		 * The servicepack id that defines the account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id: FormControl<number | null | undefined>,
 	}
 	export function CreateAccountFormGroup() {
@@ -41,7 +53,10 @@ export namespace MyNS {
 		/** A list of addons applied to the account. */
 		addons?: Array<Addon>;
 
-		/** The id of the account */
+		/**
+		 * The id of the account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Identifier for the account */
@@ -54,7 +69,10 @@ export namespace MyNS {
 	/** A detailed representation of an account. */
 	export interface AccountDetailFormProperties {
 
-		/** The id of the account */
+		/**
+		 * The id of the account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Identifier for the account */
@@ -72,7 +90,10 @@ export namespace MyNS {
 	/** Addon information */
 	export interface Addon {
 
-		/** The id of the addon */
+		/**
+		 * The id of the addon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The name of the addon */
@@ -82,7 +103,10 @@ export namespace MyNS {
 	/** Addon information */
 	export interface AddonFormProperties {
 
-		/** The id of the addon */
+		/**
+		 * The id of the addon
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The name of the addon */
@@ -100,7 +124,10 @@ export namespace MyNS {
 	/** Servicepack information. */
 	export interface Servicepack {
 
-		/** The id of the service pack */
+		/**
+		 * The id of the service pack
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The name of the service pack */
@@ -110,7 +137,10 @@ export namespace MyNS {
 	/** Servicepack information. */
 	export interface ServicepackFormProperties {
 
-		/** The id of the service pack */
+		/**
+		 * The id of the service pack
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The name of the service pack */
@@ -448,7 +478,10 @@ export namespace MyNS {
 		 */
 		identifier?: string | null;
 
-		/** The servicepack id that defines the account. */
+		/**
+		 * The servicepack id that defines the account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id?: number | null;
 	}
 	export interface CreateAccountFormProperties {
@@ -466,7 +499,10 @@ export namespace MyNS {
 		 */
 		identifier: FormControl<string | null | undefined>,
 
-		/** The servicepack id that defines the account. */
+		/**
+		 * The servicepack id that defines the account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateAccountFormGroup() {
@@ -517,7 +553,10 @@ export namespace MyNS {
 
 	export interface CreateMailboxRequest {
 
-		/** Mail zone account id */
+		/**
+		 * Mail zone account id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		account_id?: number | null;
 
 		/** E-mail address */
@@ -531,7 +570,10 @@ export namespace MyNS {
 	}
 	export interface CreateMailboxRequestFormProperties {
 
-		/** Mail zone account id */
+		/**
+		 * Mail zone account id
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		account_id: FormControl<number | null | undefined>,
 
 		/** E-mail address */
@@ -554,7 +596,10 @@ export namespace MyNS {
 
 	export interface CreateMySqlDatabase {
 
-		/** The id of the account on which to create the database. */
+		/**
+		 * The id of the account on which to create the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		account_id?: number | null;
 
 		/**
@@ -571,7 +616,10 @@ export namespace MyNS {
 	}
 	export interface CreateMySqlDatabaseFormProperties {
 
-		/** The id of the account on which to create the database. */
+		/**
+		 * The id of the account on which to create the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		account_id: FormControl<number | null | undefined>,
 
 		/**
@@ -729,6 +777,7 @@ export namespace MyNS {
 		 * The port for SRV records.<br />
 		 * The value MUST be a positive integer.<br />
 		 * Editing the value is not possible. You should add a new SRV record and delete the existing record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port?: number | null;
 
@@ -736,6 +785,7 @@ export namespace MyNS {
 		 * The priority for MX or SRV records.<br />
 		 * A lower value means more preferred.<br />
 		 * The value MUST be a positive integer less or equal to 9999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority?: number | null;
 
@@ -771,6 +821,7 @@ export namespace MyNS {
 		 * Time to live of the record in seconds.<br />
 		 * It defines the time frame that clients can cache the information.<br />
 		 * The value MUST be between 60 and 86400. The default value is 3600 (= 1 hour).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl?: number | null;
 
@@ -780,6 +831,7 @@ export namespace MyNS {
 		/**
 		 * The weight for SRV records with the same priority.<br />
 		 * A higher value means more preferred.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight?: number | null;
 	}
@@ -803,6 +855,7 @@ export namespace MyNS {
 		 * The port for SRV records.<br />
 		 * The value MUST be a positive integer.<br />
 		 * Editing the value is not possible. You should add a new SRV record and delete the existing record.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -810,6 +863,7 @@ export namespace MyNS {
 		 * The priority for MX or SRV records.<br />
 		 * A lower value means more preferred.<br />
 		 * The value MUST be a positive integer less or equal to 9999.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		priority: FormControl<number | null | undefined>,
 
@@ -845,6 +899,7 @@ export namespace MyNS {
 		 * Time to live of the record in seconds.<br />
 		 * It defines the time frame that clients can cache the information.<br />
 		 * The value MUST be between 60 and 86400. The default value is 3600 (= 1 hour).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		ttl: FormControl<number | null | undefined>,
 
@@ -854,6 +909,7 @@ export namespace MyNS {
 		/**
 		 * The weight for SRV records with the same priority.<br />
 		 * A higher value means more preferred.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		weight: FormControl<number | null | undefined>,
 	}
@@ -1275,7 +1331,10 @@ export namespace MyNS {
 		/** Domain name for the Linux hosting account. */
 		domain_name?: string | null;
 
-		/** Id of Linux hosting service package. */
+		/**
+		 * Id of Linux hosting service package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id?: number | null;
 	}
 	export interface LinuxHostingFormProperties {
@@ -1283,7 +1342,10 @@ export namespace MyNS {
 		/** Domain name for the Linux hosting account. */
 		domain_name: FormControl<string | null | undefined>,
 
-		/** Id of Linux hosting service package. */
+		/**
+		 * Id of Linux hosting service package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id: FormControl<number | null | undefined>,
 	}
 	export function CreateLinuxHostingFormGroup() {
@@ -1296,7 +1358,10 @@ export namespace MyNS {
 
 	export interface LinuxHostingDetail {
 
-		/** Used webspace size in MB */
+		/**
+		 * Used webspace size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actual_size?: number | null;
 
 		/** Domain name for the Linux hosting account. */
@@ -1314,12 +1379,16 @@ export namespace MyNS {
 		/** Type of the hosting IP address (dedicated or shared) */
 		ip_type?: LinuxHostingDetailIp_type | null;
 
-		/** Maximum webspace size in MB */
+		/**
+		 * Maximum webspace size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_size?: number | null;
 
 		/**
 		 * Maximum webspace size in MB<br />
 		 * Use max_size instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		max_webspace_size?: number | null;
 
@@ -1332,7 +1401,10 @@ export namespace MyNS {
 		/** The active php version for the hosting account. */
 		php_version?: string | null;
 
-		/** Id of Linux hosting service package. */
+		/**
+		 * Id of Linux hosting service package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id?: number | null;
 
 		/** A list of websites on the hosting account. */
@@ -1347,12 +1419,16 @@ export namespace MyNS {
 		/**
 		 * Used webspace size in MB<br />
 		 * Use actual_size instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		webspace_usage?: number | null;
 	}
 	export interface LinuxHostingDetailFormProperties {
 
-		/** Used webspace size in MB */
+		/**
+		 * Used webspace size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actual_size: FormControl<number | null | undefined>,
 
 		/** Domain name for the Linux hosting account. */
@@ -1370,19 +1446,26 @@ export namespace MyNS {
 		/** Type of the hosting IP address (dedicated or shared) */
 		ip_type: FormControl<LinuxHostingDetailIp_type | null | undefined>,
 
-		/** Maximum webspace size in MB */
+		/**
+		 * Maximum webspace size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_size: FormControl<number | null | undefined>,
 
 		/**
 		 * Maximum webspace size in MB<br />
 		 * Use max_size instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		max_webspace_size: FormControl<number | null | undefined>,
 
 		/** The active php version for the hosting account. */
 		php_version: FormControl<string | null | undefined>,
 
-		/** Id of Linux hosting service package. */
+		/**
+		 * Id of Linux hosting service package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id: FormControl<number | null | undefined>,
 
 		/** Ssh host of the linux hosting account */
@@ -1394,6 +1477,7 @@ export namespace MyNS {
 		/**
 		 * Used webspace size in MB<br />
 		 * Use actual_size instead.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		webspace_usage: FormControl<number | null | undefined>,
 	}
@@ -1510,18 +1594,30 @@ export namespace MyNS {
 
 	export interface MailZoneAccount {
 
-		/** Mail zone account id, use this value to create a mailbox */
+		/**
+		 * Mail zone account id, use this value to create a mailbox
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		account_id?: number | null;
 
-		/** Size of mailbox(es) in MB */
+		/**
+		 * Size of mailbox(es) in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size?: number | null;
 	}
 	export interface MailZoneAccountFormProperties {
 
-		/** Mail zone account id, use this value to create a mailbox */
+		/**
+		 * Mail zone account id, use this value to create a mailbox
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		account_id: FormControl<number | null | undefined>,
 
-		/** Size of mailbox(es) in MB */
+		/**
+		 * Size of mailbox(es) in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateMailZoneAccountFormGroup() {
@@ -1558,19 +1654,31 @@ export namespace MyNS {
 
 	export interface Mailbox {
 
-		/** Used size in MB */
+		/**
+		 * Used size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actual_size?: number | null;
 
-		/** Maximum size in MB */
+		/**
+		 * Maximum size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_size?: number | null;
 		name?: string | null;
 	}
 	export interface MailboxFormProperties {
 
-		/** Used size in MB */
+		/**
+		 * Used size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actual_size: FormControl<number | null | undefined>,
 
-		/** Maximum size in MB */
+		/**
+		 * Maximum size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_size: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -1585,7 +1693,10 @@ export namespace MyNS {
 
 	export interface MailboxDetail {
 
-		/** Used size in MB */
+		/**
+		 * Used size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actual_size?: number | null;
 		auto_forward?: AutoForward;
 		auto_reply?: AutoReply;
@@ -1593,19 +1704,28 @@ export namespace MyNS {
 		/** Login to connect with the mailbox */
 		login?: string | null;
 
-		/** Maximum size in MB */
+		/**
+		 * Maximum size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_size?: number | null;
 		name?: string | null;
 	}
 	export interface MailboxDetailFormProperties {
 
-		/** Used size in MB */
+		/**
+		 * Used size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actual_size: FormControl<number | null | undefined>,
 
 		/** Login to connect with the mailbox */
 		login: FormControl<string | null | undefined>,
 
-		/** Maximum size in MB */
+		/**
+		 * Maximum size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_size: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -1621,42 +1741,66 @@ export namespace MyNS {
 
 	export interface MySqlDatabase {
 
-		/** The account id for the database. */
+		/**
+		 * The account id for the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		account_id?: number | null;
 
-		/** The actual size in MB for the database. */
+		/**
+		 * The actual size in MB for the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actual_size?: number | null;
 
 		/** Hostname */
 		hostname?: string | null;
 
-		/** The maximim size in MB for the database. */
+		/**
+		 * The maximim size in MB for the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_size?: number | null;
 
 		/** Database name */
 		name?: string | null;
 
-		/** The number of users. */
+		/**
+		 * The number of users.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_count?: number | null;
 	}
 	export interface MySqlDatabaseFormProperties {
 
-		/** The account id for the database. */
+		/**
+		 * The account id for the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		account_id: FormControl<number | null | undefined>,
 
-		/** The actual size in MB for the database. */
+		/**
+		 * The actual size in MB for the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actual_size: FormControl<number | null | undefined>,
 
 		/** Hostname */
 		hostname: FormControl<string | null | undefined>,
 
-		/** The maximim size in MB for the database. */
+		/**
+		 * The maximim size in MB for the database.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_size: FormControl<number | null | undefined>,
 
 		/** Database name */
 		name: FormControl<string | null | undefined>,
 
-		/** The number of users. */
+		/**
+		 * The number of users.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		user_count: FormControl<number | null | undefined>,
 	}
 	export function CreateMySqlDatabaseFormGroup() {
@@ -1998,7 +2142,10 @@ export namespace MyNS {
 		/** The IP address of the site binding. */
 		ip_address?: string | null;
 
-		/** The port of the site binding. */
+		/**
+		 * The port of the site binding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** The protocol of the site binding. */
@@ -2020,7 +2167,10 @@ export namespace MyNS {
 		/** The IP address of the site binding. */
 		ip_address: FormControl<string | null | undefined>,
 
-		/** The port of the site binding. */
+		/**
+		 * The port of the site binding.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** The protocol of the site binding. */
@@ -2300,7 +2450,10 @@ export namespace MyNS {
 		/** The common name of the certificate request. */
 		common_name?: string | null;
 
-		/** The id of the certificate request. */
+		/**
+		 * The id of the certificate request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The order code of the certificate request. */
@@ -2326,7 +2479,10 @@ export namespace MyNS {
 		/** The common name of the certificate request. */
 		common_name: FormControl<string | null | undefined>,
 
-		/** The id of the certificate request. */
+		/**
+		 * The id of the certificate request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The order code of the certificate request. */
@@ -2366,7 +2522,10 @@ export namespace MyNS {
 		/** The common name of the certificate request. */
 		common_name?: string | null;
 
-		/** The id of the certificate request. */
+		/**
+		 * The id of the certificate request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** The order code of the certificate request. */
@@ -2398,7 +2557,10 @@ export namespace MyNS {
 		/** The common name of the certificate request. */
 		common_name: FormControl<string | null | undefined>,
 
-		/** The id of the certificate request. */
+		/**
+		 * The id of the certificate request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** The order code of the certificate request. */
@@ -2599,7 +2761,10 @@ export namespace MyNS {
 
 	export interface UpdatePhpAPcuRequest {
 
-		/** The APcu size. */
+		/**
+		 * The APcu size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apcu_size?: number | null;
 
 		/** Enables or disables APC. */
@@ -2607,7 +2772,10 @@ export namespace MyNS {
 	}
 	export interface UpdatePhpAPcuRequestFormProperties {
 
-		/** The APcu size. */
+		/**
+		 * The APcu size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		apcu_size: FormControl<number | null | undefined>,
 
 		/** Enables or disables APC. */
@@ -2623,12 +2791,18 @@ export namespace MyNS {
 
 	export interface UpdatePhpMemoryLimitRequest {
 
-		/** The php memory limit */
+		/**
+		 * The php memory limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memory_limit?: number | null;
 	}
 	export interface UpdatePhpMemoryLimitRequestFormProperties {
 
-		/** The php memory limit */
+		/**
+		 * The php memory limit
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		memory_limit: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdatePhpMemoryLimitRequestFormGroup() {
@@ -2704,7 +2878,10 @@ export namespace MyNS {
 		/** Domain name for the Windows hosting account. */
 		domain_name?: string | null;
 
-		/** Id of Windows hosting service package. */
+		/**
+		 * Id of Windows hosting service package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id?: number | null;
 	}
 	export interface WindowsHostingFormProperties {
@@ -2712,7 +2889,10 @@ export namespace MyNS {
 		/** Domain name for the Windows hosting account. */
 		domain_name: FormControl<string | null | undefined>,
 
-		/** Id of Windows hosting service package. */
+		/**
+		 * Id of Windows hosting service package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id: FormControl<number | null | undefined>,
 	}
 	export function CreateWindowsHostingFormGroup() {
@@ -2725,7 +2905,10 @@ export namespace MyNS {
 
 	export interface WindowsHostingDetail {
 
-		/** Used webspace size in MB */
+		/**
+		 * Used webspace size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actual_size?: number | null;
 
 		/** The application pool for the hosting account. */
@@ -2743,13 +2926,19 @@ export namespace MyNS {
 		/** Type of the hosting IP address (dedicated or shared) */
 		ip_type?: LinuxHostingDetailIp_type | null;
 
-		/** Maximum webspace size in MB */
+		/**
+		 * Maximum webspace size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_size?: number | null;
 
 		/** A list of mssql databases linked to the hosting account.<br /> */
 		mssql_database_names?: Array<string>;
 
-		/** Id of Windows hosting service package. */
+		/**
+		 * Id of Windows hosting service package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id?: number | null;
 
 		/** A list of websites on the hosting account. */
@@ -2757,7 +2946,10 @@ export namespace MyNS {
 	}
 	export interface WindowsHostingDetailFormProperties {
 
-		/** Used webspace size in MB */
+		/**
+		 * Used webspace size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		actual_size: FormControl<number | null | undefined>,
 
 		/** Domain name for the Windows hosting account. */
@@ -2772,10 +2964,16 @@ export namespace MyNS {
 		/** Type of the hosting IP address (dedicated or shared) */
 		ip_type: FormControl<LinuxHostingDetailIp_type | null | undefined>,
 
-		/** Maximum webspace size in MB */
+		/**
+		 * Maximum webspace size in MB
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_size: FormControl<number | null | undefined>,
 
-		/** Id of Windows hosting service package. */
+		/**
+		 * Id of Windows hosting service package.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		servicepack_id: FormControl<number | null | undefined>,
 	}
 	export function CreateWindowsHostingDetailFormGroup() {
@@ -2831,7 +3029,9 @@ export namespace MyNS {
 		 * Overview of accounts
 		 * Get accounts
 		 * @param {number} skip The number of items to skip in the resultset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of items to return in the resultset. The returned count can be equal or less than this number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {AssetType} asset_type Filters the list, returning only accounts containing the specified asset type.
 		 * @param {string} identifier Return only accounts, matching the specified identifier.
 		 * @return {Array<Account>} Success
@@ -2854,6 +3054,7 @@ export namespace MyNS {
 		 * Get a specific account
 		 * Get accounts/{accountId}
 		 * @param {number} account_id The id of the account.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} accountId Automatically added
 		 * @return {AccountDetail} Success
 		 */
@@ -2866,7 +3067,9 @@ export namespace MyNS {
 		 * Get dns/{domainName}/records
 		 * @param {string} domain_name The domain name.
 		 * @param {number} skip The number of items to skip in the resultset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of items to return in the resultset. The returned count can be equal or less than this number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} type Filters records matching the type. Most other filters only apply when this filter is specified.
 		 * @param {string} record_name Filters records matching the record name. This filter only applies to lookups of A, CNAME, TXT, CAA, ALIAS and TLSA records.
 		 * @param {string} service Filters records for the service. This filter only applies to lookups of SRV records.
@@ -2933,7 +3136,9 @@ export namespace MyNS {
 		 * Overviews of domains
 		 * Get domains
 		 * @param {number} skip The number of items to skip in the resultset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of items to return in the resultset. The returned count can be equal or less than this number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Domain>} Success
 		 */
 		GetDomains(skip: number | null | undefined, take: number | null | undefined): Observable<Array<Domain>> {
@@ -3000,7 +3205,9 @@ export namespace MyNS {
 		 * Overview of linux hostings
 		 * Get linuxhostings
 		 * @param {number} skip The number of items to skip in the resultset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of items to return in the resultset. The returned count can be equal or less than this number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<LinuxHosting>} Success
 		 */
 		GetLinuxHostings(skip: number | null | undefined, take: number | null | undefined): Observable<Array<LinuxHosting>> {
@@ -3482,7 +3689,9 @@ export namespace MyNS {
 		 * Overview of mysql databases
 		 * Get mysqldatabases
 		 * @param {number} skip The number of items to skip in the resultset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of items to return in the resultset. The returned count can be equal or less than this number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<MySqlDatabase>} Success
 		 */
 		GetMySqlDatabases(skip: number | null | undefined, take: number | null | undefined): Observable<Array<MySqlDatabase>> {
@@ -3609,7 +3818,9 @@ export namespace MyNS {
 		 * Overview of SSH keys
 		 * Get ssh
 		 * @param {number} skip The number of items to skip in the resultset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of items to return in the resultset. The returned count can be equal or less than this number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<SshKeyDetail>} Success
 		 */
 		GetAllSshKeys(skip: number | null | undefined, take: number | null | undefined): Observable<Array<SshKeyDetail>> {
@@ -3620,7 +3831,9 @@ export namespace MyNS {
 		 * Overview of SSL certificate requests
 		 * Get sslcertificaterequests
 		 * @param {number} skip The number of items to skip in the resultset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of items to return in the resultset. The returned count can be equal or less than this number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<SslCertificateRequest>} Success
 		 */
 		GetSslCertificateRequests(skip: number | null | undefined, take: number | null | undefined): Observable<Array<SslCertificateRequest>> {
@@ -3643,6 +3856,7 @@ export namespace MyNS {
 		 * Detail of a SSL certificate request
 		 * Get sslcertificaterequests/{id}
 		 * @param {number} id The id of the certificate request.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {SslCertificateRequestDetail} Success
 		 */
 		GetSslCertificateRequest(id: number): Observable<SslCertificateRequestDetail> {
@@ -3653,6 +3867,7 @@ export namespace MyNS {
 		 * Verify the SSL certificate request domain validations
 		 * Put sslcertificaterequests/{id}
 		 * @param {number} id The id of the certificate request.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		VerifySslCertificateRequestDomainValidations(id: number): Observable<HttpResponse<string>> {
@@ -3663,7 +3878,9 @@ export namespace MyNS {
 		 * Overview of SSL certificates
 		 * Get sslcertificates
 		 * @param {number} skip The number of items to skip in the resultset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of items to return in the resultset. The returned count can be equal or less than this number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<SslCertificate>} Success
 		 */
 		GetSslCertificates(skip: number | null | undefined, take: number | null | undefined): Observable<Array<SslCertificate>> {
@@ -3700,7 +3917,9 @@ export namespace MyNS {
 		 * Overview of windows hostings
 		 * Get windowshostings
 		 * @param {number} skip The number of items to skip in the resultset.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} take The number of items to return in the resultset. The returned count can be equal or less than this number.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<WindowsHosting>} Success
 		 */
 		GetWindowsHostings(skip: number | null | undefined, take: number | null | undefined): Observable<Array<WindowsHosting>> {

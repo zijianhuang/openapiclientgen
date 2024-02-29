@@ -55,7 +55,10 @@ export namespace MyNS {
 		/** Not required. If populated, must match one of the system coded values available in the Additional Rates Job drop down.<br /> */
 		job?: string | null;
 
-		/** Required. Enter dollar amount that corresponds to the Per selection.<br /> */
+		/**
+		 * Required. Enter dollar amount that corresponds to the Per selection.<br />
+		 * Type: double
+		 */
 		rate?: number | null;
 
 		/** Required. If populated, must match one of the system coded values available in the Additional Rates Rate Code drop down.<br /> */
@@ -95,7 +98,10 @@ export namespace MyNS {
 		/** Not required. If populated, must match one of the system coded values available in the Additional Rates Job drop down.<br /> */
 		job: FormControl<string | null | undefined>,
 
-		/** Required. Enter dollar amount that corresponds to the Per selection.<br /> */
+		/**
+		 * Required. Enter dollar amount that corresponds to the Per selection.<br />
+		 * Type: double
+		 */
 		rate: FormControl<number | null | undefined>,
 
 		/** Required. If populated, must match one of the system coded values available in the Additional Rates Rate Code drop down.<br /> */
@@ -138,7 +144,10 @@ export namespace MyNS {
 		/** Date when Benefit Class takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
 		benefitClassEffectiveDate?: string | null;
 
-		/** Salary used to configure benefits.<br  />Decimal(12,2) */
+		/**
+		 * Salary used to configure benefits.<br  />Decimal(12,2)
+		 * Type: double
+		 */
 		benefitSalary?: number | null;
 
 		/** Date when Benefit Salary takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -160,7 +169,10 @@ export namespace MyNS {
 		/** Date when Benefit Class takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
 		benefitClassEffectiveDate: FormControl<string | null | undefined>,
 
-		/** Salary used to configure benefits.<br  />Decimal(12,2) */
+		/**
+		 * Salary used to configure benefits.<br  />Decimal(12,2)
+		 * Type: double
+		 */
 		benefitSalary: FormControl<number | null | undefined>,
 
 		/** Date when Benefit Salary takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -340,7 +352,10 @@ export namespace MyNS {
 		/** Account type. Valid values are *C* (Checking), *S* (Saving), *P* (Pay Card). <br   />Max length: 1<br /> */
 		accountType?: string | null;
 
-		/** Amount value to be deposited to the account.<br  />Decimal (12,2)<br /> */
+		/**
+		 * Amount value to be deposited to the account.<br  />Decimal (12,2)<br />
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Amount type to indicate the context of the amount. Common values are *F* (FLAT), *F-* (Net Minus), *P* (Percent). <br  /> Max length: 5<br /> */
@@ -369,7 +384,10 @@ export namespace MyNS {
 		/** Account type. Valid values are *C* (Checking), *S* (Saving), *P* (Pay Card). <br   />Max length: 1<br /> */
 		accountType: FormControl<string | null | undefined>,
 
-		/** Amount value to be deposited to the account.<br  />Decimal (12,2)<br /> */
+		/**
+		 * Amount value to be deposited to the account.<br  />Decimal (12,2)<br />
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Amount type to indicate the context of the amount. Common values are *F* (FLAT), *F-* (Net Minus), *P* (Percent). <br  /> Max length: 5<br /> */
@@ -471,10 +489,16 @@ export namespace MyNS {
 		/** Third-party agency associated with earning. Must match Company setup.<br  />Max length: 10 */
 		agency?: string | null;
 
-		/** Value that matches CalculationCode to add to gross wages. For percentage (%), enter whole number (10 = 10%).  <br  />Decimal(12,2) */
+		/**
+		 * Value that matches CalculationCode to add to gross wages. For percentage (%), enter whole number (10 = 10%).  <br  />Decimal(12,2)
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Year to Date dollar amount not to be exceeded for an earning in the calendar year. Used only with company driven maximums. <br  />Decimal(12,2) */
+		/**
+		 * Year to Date dollar amount not to be exceeded for an earning in the calendar year. Used only with company driven maximums. <br  />Decimal(12,2)
+		 * Type: double
+		 */
 		annualMaximum?: number | null;
 
 		/** Defines how earnings are calculated. Common values are *% (percentage of gross), flat (flat dollar amount)*. Defaulted to the Company setup calcCode for earning. <br  />Max length: 20 */
@@ -504,10 +528,16 @@ export namespace MyNS {
 		/** Needed if earning is applied differently from the payroll frequency (one time earning for example).<br  /> Max length: 5 */
 		frequency?: string | null;
 
-		/** Dollar amount. The employee earning will stop when the goal amount is reached.<br  /> Decimal(12,2) */
+		/**
+		 * Dollar amount. The employee earning will stop when the goal amount is reached.<br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		goal?: number | null;
 
-		/** The value is used in conjunction with the Rate field. When entering Group Term Life Insurance (GTL), it should contain the full amount of the group term life insurance policy. <br  /> Decimal(12,2) */
+		/**
+		 * The value is used in conjunction with the Rate field. When entering Group Term Life Insurance (GTL), it should contain the full amount of the group term life insurance policy. <br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		hoursOrUnits?: number | null;
 
 		/** Used for ACA. If not entered, defaulted to Company earning setup. */
@@ -519,16 +549,28 @@ export namespace MyNS {
 		/** Information to print on the check stub if agency is set up for this earning. <br  />Max length: 50 */
 		miscellaneousInfo?: string | null;
 
-		/** Amount already paid to employee toward goal. <br  /> Decimal(12,2) */
+		/**
+		 * Amount already paid to employee toward goal. <br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		paidTowardsGoal?: number | null;
 
-		/** Maximum amount of the earning on a single paycheck. <br  /> Decimal(12,2) */
+		/**
+		 * Maximum amount of the earning on a single paycheck. <br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		payPeriodMaximum?: number | null;
 
-		/** Minimum amount of the earning on a single paycheck. <br  /> Decimal(12,2) */
+		/**
+		 * Minimum amount of the earning on a single paycheck. <br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		payPeriodMinimum?: number | null;
 
-		/** Rate is used in conjunction with the hoursOrUnits field. <br  /> Decimal(12,2) */
+		/**
+		 * Rate is used in conjunction with the hoursOrUnits field. <br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		rate?: number | null;
 
 		/** Rate Code applies to additional pay rates entered for an employee. Must match Company setup. <br  /> Max length: 10 */
@@ -547,10 +589,16 @@ export namespace MyNS {
 		/** Third-party agency associated with earning. Must match Company setup.<br  />Max length: 10 */
 		agency: FormControl<string | null | undefined>,
 
-		/** Value that matches CalculationCode to add to gross wages. For percentage (%), enter whole number (10 = 10%).  <br  />Decimal(12,2) */
+		/**
+		 * Value that matches CalculationCode to add to gross wages. For percentage (%), enter whole number (10 = 10%).  <br  />Decimal(12,2)
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Year to Date dollar amount not to be exceeded for an earning in the calendar year. Used only with company driven maximums. <br  />Decimal(12,2) */
+		/**
+		 * Year to Date dollar amount not to be exceeded for an earning in the calendar year. Used only with company driven maximums. <br  />Decimal(12,2)
+		 * Type: double
+		 */
 		annualMaximum: FormControl<number | null | undefined>,
 
 		/** Defines how earnings are calculated. Common values are *% (percentage of gross), flat (flat dollar amount)*. Defaulted to the Company setup calcCode for earning. <br  />Max length: 20 */
@@ -580,10 +628,16 @@ export namespace MyNS {
 		/** Needed if earning is applied differently from the payroll frequency (one time earning for example).<br  /> Max length: 5 */
 		frequency: FormControl<string | null | undefined>,
 
-		/** Dollar amount. The employee earning will stop when the goal amount is reached.<br  /> Decimal(12,2) */
+		/**
+		 * Dollar amount. The employee earning will stop when the goal amount is reached.<br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		goal: FormControl<number | null | undefined>,
 
-		/** The value is used in conjunction with the Rate field. When entering Group Term Life Insurance (GTL), it should contain the full amount of the group term life insurance policy. <br  /> Decimal(12,2) */
+		/**
+		 * The value is used in conjunction with the Rate field. When entering Group Term Life Insurance (GTL), it should contain the full amount of the group term life insurance policy. <br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		hoursOrUnits: FormControl<number | null | undefined>,
 
 		/** Used for ACA. If not entered, defaulted to Company earning setup. */
@@ -595,16 +649,28 @@ export namespace MyNS {
 		/** Information to print on the check stub if agency is set up for this earning. <br  />Max length: 50 */
 		miscellaneousInfo: FormControl<string | null | undefined>,
 
-		/** Amount already paid to employee toward goal. <br  /> Decimal(12,2) */
+		/**
+		 * Amount already paid to employee toward goal. <br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		paidTowardsGoal: FormControl<number | null | undefined>,
 
-		/** Maximum amount of the earning on a single paycheck. <br  /> Decimal(12,2) */
+		/**
+		 * Maximum amount of the earning on a single paycheck. <br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		payPeriodMaximum: FormControl<number | null | undefined>,
 
-		/** Minimum amount of the earning on a single paycheck. <br  /> Decimal(12,2) */
+		/**
+		 * Minimum amount of the earning on a single paycheck. <br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		payPeriodMinimum: FormControl<number | null | undefined>,
 
-		/** Rate is used in conjunction with the hoursOrUnits field. <br  /> Decimal(12,2) */
+		/**
+		 * Rate is used in conjunction with the hoursOrUnits field. <br  /> Decimal(12,2)
+		 * Type: double
+		 */
 		rate: FormControl<number | null | undefined>,
 
 		/** Rate Code applies to additional pay rates entered for an employee. Must match Company setup. <br  /> Max length: 10 */
@@ -925,7 +991,10 @@ export namespace MyNS {
 		/** Add or update non-primary state tax code, amount type (taxCalculationCode), amount or percentage, filing status, exemptions, supplemental check (specialCheckCalc), and reciprocity code information. */
 		nonPrimaryStateTax?: EmployeeNonPrimaryStateTax;
 
-		/** Percentage of employee's ownership in the company, entered as a whole number. <br  /> Decimal (12,2) */
+		/**
+		 * Percentage of employee's ownership in the company, entered as a whole number. <br  /> Decimal (12,2)
+		 * Type: double
+		 */
 		ownerPercent?: number | null;
 
 		/** Employee preferred display name.<br  /> Max length: 20 */
@@ -1016,7 +1085,10 @@ export namespace MyNS {
 		/** Employee middle name.<br  /> Max length: 20 */
 		middleName: FormControl<string | null | undefined>,
 
-		/** Percentage of employee's ownership in the company, entered as a whole number. <br  /> Decimal (12,2) */
+		/**
+		 * Percentage of employee's ownership in the company, entered as a whole number. <br  /> Decimal (12,2)
+		 * Type: double
+		 */
 		ownerPercent: FormControl<number | null | undefined>,
 
 		/** Employee preferred display name.<br  /> Max length: 20 */
@@ -1073,7 +1145,10 @@ export namespace MyNS {
 		/** Account type. Valid values are *C* (Checking), *S* (Saving), *P* (Pay Card). <br   />Max length: 1<br /> */
 		accountType?: string | null;
 
-		/** Amount value to be deposited to the account.<br  />Decimal (12,2)<br /> */
+		/**
+		 * Amount value to be deposited to the account.<br  />Decimal (12,2)<br />
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Amount type to indicate the context of the amount. Common values are *F* (FLAT), *F-* (Net Minus), *P* (Percent). <br  /> Max length: 5<br /> */
@@ -1102,7 +1177,10 @@ export namespace MyNS {
 		/** Account type. Valid values are *C* (Checking), *S* (Saving), *P* (Pay Card). <br   />Max length: 1<br /> */
 		accountType: FormControl<string | null | undefined>,
 
-		/** Amount value to be deposited to the account.<br  />Decimal (12,2)<br /> */
+		/**
+		 * Amount value to be deposited to the account.<br  />Decimal (12,2)<br />
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Amount type to indicate the context of the amount. Common values are *F* (FLAT), *F-* (Net Minus), *P* (Percent). <br  /> Max length: 5<br /> */
@@ -1161,7 +1239,10 @@ export namespace MyNS {
 		/** Not required. If populated, must match one of the system coded values available in the Additional Rates Job drop down.<br /> */
 		job?: string | null;
 
-		/** Required. Enter dollar amount that corresponds to the Per selection.<br /> */
+		/**
+		 * Required. Enter dollar amount that corresponds to the Per selection.<br />
+		 * Type: double
+		 */
 		rate?: number | null;
 
 		/** Required. If populated, must match one of the system coded values available in the Additional Rates Rate Code drop down.<br /> */
@@ -1199,7 +1280,10 @@ export namespace MyNS {
 		/** Not required. If populated, must match one of the system coded values available in the Additional Rates Job drop down.<br /> */
 		job: FormControl<string | null | undefined>,
 
-		/** Required. Enter dollar amount that corresponds to the Per selection.<br /> */
+		/**
+		 * Required. Enter dollar amount that corresponds to the Per selection.<br />
+		 * Type: double
+		 */
 		rate: FormControl<number | null | undefined>,
 
 		/** Required. If populated, must match one of the system coded values available in the Additional Rates Rate Code drop down.<br /> */
@@ -1240,7 +1324,10 @@ export namespace MyNS {
 		/** Date when Benefit Class takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
 		benefitClassEffectiveDate?: string | null;
 
-		/** Salary used to configure benefits.<br  />Decimal(12,2) */
+		/**
+		 * Salary used to configure benefits.<br  />Decimal(12,2)
+		 * Type: double
+		 */
 		benefitSalary?: number | null;
 
 		/** Date when Benefit Salary takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -1260,7 +1347,10 @@ export namespace MyNS {
 		/** Date when Benefit Class takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
 		benefitClassEffectiveDate: FormControl<string | null | undefined>,
 
-		/** Salary used to configure benefits.<br  />Decimal(12,2) */
+		/**
+		 * Salary used to configure benefits.<br  />Decimal(12,2)
+		 * Type: double
+		 */
 		benefitSalary: FormControl<number | null | undefined>,
 
 		/** Date when Benefit Salary takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -1450,6 +1540,7 @@ export namespace MyNS {
 		/**
 		 * The custom number field value.  Decimal (18,6).
 		 * Required
+		 * Type: double
 		 */
 		value: number;
 	}
@@ -1470,6 +1561,7 @@ export namespace MyNS {
 		/**
 		 * The custom number field value.  Decimal (18,6).
 		 * Required
+		 * Type: double
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -1887,16 +1979,28 @@ export namespace MyNS {
 
 	export interface EmployeeFederalTax {
 
-		/** Tax amount. <br  />Decimal (12,2) */
+		/**
+		 * Tax amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount?: number | null;
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount?: number | null;
 
-		/** Federal tax exemptions value. <br  />Decimal (12,2) */
+		/**
+		 * Federal tax exemptions value. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions?: number | null;
 
 		/** Employee federal filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -1905,30 +2009,51 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate?: boolean | null;
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount?: number | null;
 
-		/** Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** Tax calculation code. Common values are *F* (Flat), *P* (Percentage), *FDFP* (Flat Dollar Amount plus Fixed Percentage). <br  />Max length: 10 */
 		taxCalculationCode?: string | null;
 
-		/** The federal W4 form year <br  />Integer */
+		/**
+		 * The federal W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear?: number | null;
 	}
 	export interface EmployeeFederalTaxFormProperties {
 
-		/** Tax amount. <br  />Decimal (12,2) */
+		/**
+		 * Tax amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount: FormControl<number | null | undefined>,
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount: FormControl<number | null | undefined>,
 
-		/** Federal tax exemptions value. <br  />Decimal (12,2) */
+		/**
+		 * Federal tax exemptions value. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions: FormControl<number | null | undefined>,
 
 		/** Employee federal filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -1937,16 +2062,25 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate: FormControl<boolean | null | undefined>,
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount: FormControl<number | null | undefined>,
 
-		/** Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** Tax calculation code. Common values are *F* (Flat), *P* (Percentage), *FDFP* (Flat Dollar Amount plus Fixed Percentage). <br  />Max length: 10 */
 		taxCalculationCode: FormControl<string | null | undefined>,
 
-		/** The federal W4 form year <br  />Integer */
+		/**
+		 * The federal W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear: FormControl<number | null | undefined>,
 	}
 	export function CreateEmployeeFederalTaxFormGroup() {
@@ -2047,10 +2181,16 @@ export namespace MyNS {
 
 	export interface EmployeeLocalTax {
 
-		/** Local tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions?: number | null;
 
-		/** Local tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2?: number | null;
 
 		/** Employee local tax filing status. Must match specific local tax setup. <br  /> Max length: 50 */
@@ -2067,10 +2207,16 @@ export namespace MyNS {
 	}
 	export interface EmployeeLocalTaxFormProperties {
 
-		/** Local tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions: FormControl<number | null | undefined>,
 
-		/** Local tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2: FormControl<number | null | undefined>,
 
 		/** Employee local tax filing status. Must match specific local tax setup. <br  /> Max length: 50 */
@@ -2158,19 +2304,34 @@ export namespace MyNS {
 
 	export interface EmployeeNonPrimaryStateTax {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount?: number | null;
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount?: number | null;
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions?: number | null;
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2?: number | null;
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -2179,10 +2340,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate?: boolean | null;
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount?: number | null;
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** Non-primary state tax reciprocity code.<br  /> Max length: 50 */
@@ -2197,24 +2364,42 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode?: string | null;
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear?: number | null;
 	}
 	export interface EmployeeNonPrimaryStateTaxFormProperties {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount: FormControl<number | null | undefined>,
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount: FormControl<number | null | undefined>,
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions: FormControl<number | null | undefined>,
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2: FormControl<number | null | undefined>,
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -2223,10 +2408,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate: FormControl<boolean | null | undefined>,
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount: FormControl<number | null | undefined>,
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** Non-primary state tax reciprocity code.<br  /> Max length: 50 */
@@ -2241,7 +2432,10 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode: FormControl<string | null | undefined>,
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear: FormControl<number | null | undefined>,
 	}
 	export function CreateEmployeeNonPrimaryStateTaxFormGroup() {
@@ -2266,10 +2460,16 @@ export namespace MyNS {
 
 	export interface EmployeePrimaryPayRate {
 
-		/** Employee annual salary.<br />Decimal (12,6) */
+		/**
+		 * Employee annual salary.<br />Decimal (12,6)
+		 * Type: double
+		 */
 		annualSalary?: number | null;
 
-		/** Employee base rate, used for Hourly employees. <br  />Decimal (12,6) */
+		/**
+		 * Employee base rate, used for Hourly employees. <br  />Decimal (12,6)
+		 * Type: double
+		 */
 		baseRate?: number | null;
 
 		/** The date of the first check on which the new pay rate will appear. This value is only applicable when updating an existing employee. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -2278,7 +2478,10 @@ export namespace MyNS {
 		/** Pay rate change reason.<br  /> Max length: 30 */
 		changeReason?: string | null;
 
-		/** Employee default hours consistently worked. If autoPayType is set to D, employee will be paid hourly base rate for the defaultHours. <br  />Decimal (12,2) */
+		/**
+		 * Employee default hours consistently worked. If autoPayType is set to D, employee will be paid hourly base rate for the defaultHours. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		defaultHours?: number | null;
 
 		/** The date the employee's pay rate takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -2302,15 +2505,24 @@ export namespace MyNS {
 		/** Employee base rate frequency used with payType Hourly. Common values are *Hour, Week*. Default is Hour. <br  />Max length: 10 */
 		ratePer?: string | null;
 
-		/** Employee gross salary per pay period used with payType Salary.<br  />Decimal (12,6) */
+		/**
+		 * Employee gross salary per pay period used with payType Salary.<br  />Decimal (12,6)
+		 * Type: double
+		 */
 		salary?: number | null;
 	}
 	export interface EmployeePrimaryPayRateFormProperties {
 
-		/** Employee annual salary.<br />Decimal (12,6) */
+		/**
+		 * Employee annual salary.<br />Decimal (12,6)
+		 * Type: double
+		 */
 		annualSalary: FormControl<number | null | undefined>,
 
-		/** Employee base rate, used for Hourly employees. <br  />Decimal (12,6) */
+		/**
+		 * Employee base rate, used for Hourly employees. <br  />Decimal (12,6)
+		 * Type: double
+		 */
 		baseRate: FormControl<number | null | undefined>,
 
 		/** The date of the first check on which the new pay rate will appear. This value is only applicable when updating an existing employee. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -2319,7 +2531,10 @@ export namespace MyNS {
 		/** Pay rate change reason.<br  /> Max length: 30 */
 		changeReason: FormControl<string | null | undefined>,
 
-		/** Employee default hours consistently worked. If autoPayType is set to D, employee will be paid hourly base rate for the defaultHours. <br  />Decimal (12,2) */
+		/**
+		 * Employee default hours consistently worked. If autoPayType is set to D, employee will be paid hourly base rate for the defaultHours. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		defaultHours: FormControl<number | null | undefined>,
 
 		/** The date the employee's pay rate takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -2343,7 +2558,10 @@ export namespace MyNS {
 		/** Employee base rate frequency used with payType Hourly. Common values are *Hour, Week*. Default is Hour. <br  />Max length: 10 */
 		ratePer: FormControl<string | null | undefined>,
 
-		/** Employee gross salary per pay period used with payType Salary.<br  />Decimal (12,6) */
+		/**
+		 * Employee gross salary per pay period used with payType Salary.<br  />Decimal (12,6)
+		 * Type: double
+		 */
 		salary: FormControl<number | null | undefined>,
 	}
 	export function CreateEmployeePrimaryPayRateFormGroup() {
@@ -2367,19 +2585,34 @@ export namespace MyNS {
 
 	export interface EmployeePrimaryStateTax {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount?: number | null;
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount?: number | null;
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions?: number | null;
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2?: number | null;
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -2388,10 +2621,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate?: boolean | null;
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount?: number | null;
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** Supplemental check calculation code. Common values are *Blocked* (Taxes blocked on Supplemental checks), *Supp* (Use supplemental Tax Rate-Code). <br  />Max length: 10 */
@@ -2403,24 +2642,42 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode?: string | null;
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear?: number | null;
 	}
 	export interface EmployeePrimaryStateTaxFormProperties {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount: FormControl<number | null | undefined>,
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount: FormControl<number | null | undefined>,
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions: FormControl<number | null | undefined>,
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2: FormControl<number | null | undefined>,
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -2429,10 +2686,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate: FormControl<boolean | null | undefined>,
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount: FormControl<number | null | undefined>,
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** Supplemental check calculation code. Common values are *Blocked* (Taxes blocked on Supplemental checks), *Supp* (Use supplemental Tax Rate-Code). <br  />Max length: 10 */
@@ -2444,7 +2707,10 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode: FormControl<string | null | undefined>,
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear: FormControl<number | null | undefined>,
 	}
 	export function CreateEmployeePrimaryStateTaxFormGroup() {
@@ -2680,7 +2946,10 @@ export namespace MyNS {
 		/** Badge number usually issued for time and attendance system use. <br  />Max length: 50 */
 		badgeNumber?: string | null;
 
-		/** Rate to be charged to third party for time worked by the employee. It is most commonly referenced in the Cost Center Charge, Cost Center Charge vs. Cost Reports, and the Customer Invoice time and attendance reports. <br  />Decimal (12,2) */
+		/**
+		 * Rate to be charged to third party for time worked by the employee. It is most commonly referenced in the Cost Center Charge, Cost Center Charge vs. Cost Reports, and the Customer Invoice time and attendance reports. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		chargeRate?: number | null;
 
 		/** If set to true, changes to employee data will be reflected in Web Time. */
@@ -2691,7 +2960,10 @@ export namespace MyNS {
 		/** Badge number usually issued for time and attendance system use. <br  />Max length: 50 */
 		badgeNumber: FormControl<string | null | undefined>,
 
-		/** Rate to be charged to third party for time worked by the employee. It is most commonly referenced in the Cost Center Charge, Cost Center Charge vs. Cost Reports, and the Customer Invoice time and attendance reports. <br  />Decimal (12,2) */
+		/**
+		 * Rate to be charged to third party for time worked by the employee. It is most commonly referenced in the Cost Center Charge, Cost Center Charge vs. Cost Reports, and the Customer Invoice time and attendance reports. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		chargeRate: FormControl<number | null | undefined>,
 
 		/** If set to true, changes to employee data will be reflected in Web Time. */
@@ -3044,10 +3316,16 @@ export namespace MyNS {
 	/** The Local Tax model */
 	export interface LocalTax {
 
-		/** Local tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions?: number | null;
 
-		/** Local tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2?: number | null;
 
 		/** Employee local tax filing status. Must match specific local tax setup. <br  /> Max length: 50 */
@@ -3066,10 +3344,16 @@ export namespace MyNS {
 	/** The Local Tax model */
 	export interface LocalTaxFormProperties {
 
-		/** Local tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions: FormControl<number | null | undefined>,
 
-		/** Local tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2: FormControl<number | null | undefined>,
 
 		/** Employee local tax filing status. Must match specific local tax setup. <br  /> Max length: 50 */
@@ -3100,19 +3384,34 @@ export namespace MyNS {
 	/** The Non-Primary State Tax model */
 	export interface NonPrimaryStateTax {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount?: number | null;
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount?: number | null;
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions?: number | null;
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2?: number | null;
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -3121,10 +3420,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate?: boolean | null;
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount?: number | null;
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** Non-primary state tax reciprocity code.<br  /> Max length: 50 */
@@ -3139,26 +3444,44 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode?: string | null;
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear?: number | null;
 	}
 
 	/** The Non-Primary State Tax model */
 	export interface NonPrimaryStateTaxFormProperties {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount: FormControl<number | null | undefined>,
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount: FormControl<number | null | undefined>,
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions: FormControl<number | null | undefined>,
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2: FormControl<number | null | undefined>,
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -3167,10 +3490,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate: FormControl<boolean | null | undefined>,
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount: FormControl<number | null | undefined>,
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** Non-primary state tax reciprocity code.<br  /> Max length: 50 */
@@ -3185,7 +3514,10 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode: FormControl<string | null | undefined>,
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear: FormControl<number | null | undefined>,
 	}
 	export function CreateNonPrimaryStateTaxFormGroup() {
@@ -3212,7 +3544,10 @@ export namespace MyNS {
 	/** The pay statement details model */
 	export interface PayStatementDetails {
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** .<br /> */
@@ -3227,29 +3562,47 @@ export namespace MyNS {
 		/** .<br /> */
 		detType?: string | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		eligibleCompensation?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		hours?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		rate?: number | null;
 
-		/** <br /> */
+		/**
+		 * <br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transactionNumber?: number | null;
 
 		/** .<br /> */
 		transactionType?: string | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** The pay statement details model */
 	export interface PayStatementDetailsFormProperties {
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** .<br /> */
@@ -3264,22 +3617,37 @@ export namespace MyNS {
 		/** .<br /> */
 		detType: FormControl<string | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		eligibleCompensation: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		rate: FormControl<number | null | undefined>,
 
-		/** <br /> */
+		/**
+		 * <br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transactionNumber: FormControl<number | null | undefined>,
 
 		/** .<br /> */
 		transactionType: FormControl<string | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreatePayStatementDetailsFormGroup() {
@@ -3312,52 +3680,94 @@ export namespace MyNS {
 		/** .<br /> */
 		checkDate?: string | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		checkNumber?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		directDepositAmount?: number | null;
 
 		/** .<br /> */
 		endDate?: string | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		grossPay?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		hours?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		netCheck?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		netPay?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		overtimeDollars?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		overtimeHours?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		process?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		regularDollars?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		regularHours?: number | null;
 
-		/** <br /> */
+		/**
+		 * <br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transactionNumber?: number | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voucherNumber?: number | null;
 
 		/** .<br /> */
 		workersCompCode?: string | null;
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
@@ -3373,52 +3783,94 @@ export namespace MyNS {
 		/** .<br /> */
 		checkDate: FormControl<string | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		checkNumber: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		directDepositAmount: FormControl<number | null | undefined>,
 
 		/** .<br /> */
 		endDate: FormControl<string | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		grossPay: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		hours: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		netCheck: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		netPay: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		overtimeDollars: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		overtimeHours: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		process: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		regularDollars: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: double
+		 */
 		regularHours: FormControl<number | null | undefined>,
 
-		/** <br /> */
+		/**
+		 * <br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		transactionNumber: FormControl<number | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		voucherNumber: FormControl<number | null | undefined>,
 
 		/** .<br /> */
 		workersCompCode: FormControl<string | null | undefined>,
 
-		/** .<br /> */
+		/**
+		 * .<br />
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreatePayStatementSummaryFormGroup() {
@@ -3944,7 +4396,10 @@ export namespace MyNS {
 		/** Account type. Valid values are *C* (Checking), *S* (Saving), *P* (Pay Card). <br   />Max length: 1<br /> */
 		accountType?: string | null;
 
-		/** Amount value to be deposited to the account.<br  />Decimal (12,2)<br /> */
+		/**
+		 * Amount value to be deposited to the account.<br  />Decimal (12,2)<br />
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Amount type to indicate the context of the amount. Common values are *F* (FLAT), *F-* (Net Minus), *P* (Percent). <br  /> Max length: 5<br /> */
@@ -3967,7 +4422,10 @@ export namespace MyNS {
 		/** Account type. Valid values are *C* (Checking), *S* (Saving), *P* (Pay Card). <br   />Max length: 1<br /> */
 		accountType: FormControl<string | null | undefined>,
 
-		/** Amount value to be deposited to the account.<br  />Decimal (12,2)<br /> */
+		/**
+		 * Amount value to be deposited to the account.<br  />Decimal (12,2)<br />
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Amount type to indicate the context of the amount. Common values are *F* (FLAT), *F-* (Net Minus), *P* (Percent). <br  /> Max length: 5<br /> */
@@ -4003,7 +4461,10 @@ export namespace MyNS {
 		/** Date when Benefit Class takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
 		benefitClassEffectiveDate?: string | null;
 
-		/** Salary used to configure benefits.<br  />Decimal(12,2) */
+		/**
+		 * Salary used to configure benefits.<br  />Decimal(12,2)
+		 * Type: double
+		 */
 		benefitSalary?: number | null;
 
 		/** Date when Benefit Salary takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -4023,7 +4484,10 @@ export namespace MyNS {
 		/** Date when Benefit Class takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
 		benefitClassEffectiveDate: FormControl<string | null | undefined>,
 
-		/** Salary used to configure benefits.<br  />Decimal(12,2) */
+		/**
+		 * Salary used to configure benefits.<br  />Decimal(12,2)
+		 * Type: double
+		 */
 		benefitSalary: FormControl<number | null | undefined>,
 
 		/** Date when Benefit Salary takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -4211,6 +4675,7 @@ export namespace MyNS {
 		/**
 		 * The custom number field value.  Decimal (18,6).
 		 * Required
+		 * Type: double
 		 */
 		value: number;
 	}
@@ -4231,6 +4696,7 @@ export namespace MyNS {
 		/**
 		 * The custom number field value.  Decimal (18,6).
 		 * Required
+		 * Type: double
 		 */
 		value: FormControl<number | null | undefined>,
 	}
@@ -4472,16 +4938,28 @@ export namespace MyNS {
 
 	export interface StagedEmployeeFederalTax {
 
-		/** Tax amount. <br  />Decimal (12,2) */
+		/**
+		 * Tax amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount?: number | null;
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount?: number | null;
 
-		/** Federal tax exemptions value. <br  />Decimal (12,2) */
+		/**
+		 * Federal tax exemptions value. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions?: number | null;
 
 		/** Employee federal filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -4490,30 +4968,51 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate?: boolean | null;
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount?: number | null;
 
-		/** Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** Tax calculation code. Common values are *F* (Flat), *P* (Percentage), *FDFP* (Flat Dollar Amount plus Fixed Percentage). <br  />Max length: 10 */
 		taxCalculationCode?: string | null;
 
-		/** The federal W4 form year <br  />Integer */
+		/**
+		 * The federal W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear?: number | null;
 	}
 	export interface StagedEmployeeFederalTaxFormProperties {
 
-		/** Tax amount. <br  />Decimal (12,2) */
+		/**
+		 * Tax amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount: FormControl<number | null | undefined>,
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount: FormControl<number | null | undefined>,
 
-		/** Federal tax exemptions value. <br  />Decimal (12,2) */
+		/**
+		 * Federal tax exemptions value. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions: FormControl<number | null | undefined>,
 
 		/** Employee federal filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -4522,16 +5021,25 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate: FormControl<boolean | null | undefined>,
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount: FormControl<number | null | undefined>,
 
-		/** Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** Tax calculation code. Common values are *F* (Flat), *P* (Percentage), *FDFP* (Flat Dollar Amount plus Fixed Percentage). <br  />Max length: 10 */
 		taxCalculationCode: FormControl<string | null | undefined>,
 
-		/** The federal W4 form year <br  />Integer */
+		/**
+		 * The federal W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear: FormControl<number | null | undefined>,
 	}
 	export function CreateStagedEmployeeFederalTaxFormGroup() {
@@ -4632,10 +5140,16 @@ export namespace MyNS {
 
 	export interface StagedEmployeeLocalTax {
 
-		/** Local tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions?: number | null;
 
-		/** Local tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2?: number | null;
 
 		/** Employee local tax filing status. Must match specific local tax setup. <br  /> Max length: 50 */
@@ -4652,10 +5166,16 @@ export namespace MyNS {
 	}
 	export interface StagedEmployeeLocalTaxFormProperties {
 
-		/** Local tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions: FormControl<number | null | undefined>,
 
-		/** Local tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * Local tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2: FormControl<number | null | undefined>,
 
 		/** Employee local tax filing status. Must match specific local tax setup. <br  /> Max length: 50 */
@@ -4729,19 +5249,34 @@ export namespace MyNS {
 
 	export interface StagedEmployeeNonPrimaryStateTax {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount?: number | null;
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount?: number | null;
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions?: number | null;
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2?: number | null;
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -4750,10 +5285,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate?: boolean | null;
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount?: number | null;
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** Non-primary state tax reciprocity code.<br  /> Max length: 50 */
@@ -4768,24 +5309,42 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode?: string | null;
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear?: number | null;
 	}
 	export interface StagedEmployeeNonPrimaryStateTaxFormProperties {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount: FormControl<number | null | undefined>,
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount: FormControl<number | null | undefined>,
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions: FormControl<number | null | undefined>,
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2: FormControl<number | null | undefined>,
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -4794,10 +5353,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate: FormControl<boolean | null | undefined>,
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount: FormControl<number | null | undefined>,
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** Non-primary state tax reciprocity code.<br  /> Max length: 50 */
@@ -4812,7 +5377,10 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode: FormControl<string | null | undefined>,
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear: FormControl<number | null | undefined>,
 	}
 	export function CreateStagedEmployeeNonPrimaryStateTaxFormGroup() {
@@ -4837,13 +5405,19 @@ export namespace MyNS {
 
 	export interface StagedEmployeePrimaryPayRate {
 
-		/** Employee base rate, used for Hourly employees. <br  />Decimal (12,2) */
+		/**
+		 * Employee base rate, used for Hourly employees. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		baseRate?: number | null;
 
 		/** Pay rate change reason.<br  /> Max length: 30 */
 		changeReason?: string | null;
 
-		/** Employee default hours consistently worked. If autoPayType is set to D, employee will be paid hourly base rate for the defaultHours. <br  />Decimal (12,2) */
+		/**
+		 * Employee default hours consistently worked. If autoPayType is set to D, employee will be paid hourly base rate for the defaultHours. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		defaultHours?: number | null;
 
 		/** The date the employee's pay rate takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -4864,18 +5438,27 @@ export namespace MyNS {
 		/** Employee base rate frequency used with payType Hourly. Common values are *Hour, Week*. Default is Hour. <br  />Max length: 10 */
 		ratePer?: string | null;
 
-		/** Employee gross salary per pay period used with payType Salary.<br  />Decimal (12,6) */
+		/**
+		 * Employee gross salary per pay period used with payType Salary.<br  />Decimal (12,6)
+		 * Type: double
+		 */
 		salary?: number | null;
 	}
 	export interface StagedEmployeePrimaryPayRateFormProperties {
 
-		/** Employee base rate, used for Hourly employees. <br  />Decimal (12,2) */
+		/**
+		 * Employee base rate, used for Hourly employees. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		baseRate: FormControl<number | null | undefined>,
 
 		/** Pay rate change reason.<br  /> Max length: 30 */
 		changeReason: FormControl<string | null | undefined>,
 
-		/** Employee default hours consistently worked. If autoPayType is set to D, employee will be paid hourly base rate for the defaultHours. <br  />Decimal (12,2) */
+		/**
+		 * Employee default hours consistently worked. If autoPayType is set to D, employee will be paid hourly base rate for the defaultHours. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		defaultHours: FormControl<number | null | undefined>,
 
 		/** The date the employee's pay rate takes effect. Common formats include *MM-DD-CCYY*, *CCYY-MM-DD*. */
@@ -4896,7 +5479,10 @@ export namespace MyNS {
 		/** Employee base rate frequency used with payType Hourly. Common values are *Hour, Week*. Default is Hour. <br  />Max length: 10 */
 		ratePer: FormControl<string | null | undefined>,
 
-		/** Employee gross salary per pay period used with payType Salary.<br  />Decimal (12,6) */
+		/**
+		 * Employee gross salary per pay period used with payType Salary.<br  />Decimal (12,6)
+		 * Type: double
+		 */
 		salary: FormControl<number | null | undefined>,
 	}
 	export function CreateStagedEmployeePrimaryPayRateFormGroup() {
@@ -4917,19 +5503,34 @@ export namespace MyNS {
 
 	export interface StagedEmployeePrimaryStateTax {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount?: number | null;
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount?: number | null;
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions?: number | null;
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2?: number | null;
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -4938,10 +5539,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate?: boolean | null;
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount?: number | null;
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** Supplemental check calculation code. Common values are *Blocked* (Taxes blocked on Supplemental checks), *Supp* (Use supplemental Tax Rate-Code). <br  />Max length: 10 */
@@ -4953,24 +5560,42 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode?: string | null;
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear?: number | null;
 	}
 	export interface StagedEmployeePrimaryStateTaxFormProperties {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount: FormControl<number | null | undefined>,
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount: FormControl<number | null | undefined>,
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions: FormControl<number | null | undefined>,
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2: FormControl<number | null | undefined>,
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -4979,10 +5604,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate: FormControl<boolean | null | undefined>,
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount: FormControl<number | null | undefined>,
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** Supplemental check calculation code. Common values are *Blocked* (Taxes blocked on Supplemental checks), *Supp* (Use supplemental Tax Rate-Code). <br  />Max length: 10 */
@@ -4994,7 +5625,10 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode: FormControl<string | null | undefined>,
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear: FormControl<number | null | undefined>,
 	}
 	export function CreateStagedEmployeePrimaryStateTaxFormGroup() {
@@ -5073,7 +5707,10 @@ export namespace MyNS {
 		/** Badge number usually issued for time and attendance system use. <br  />Max length: 50 */
 		badgeNumber?: string | null;
 
-		/** Rate to be charged to third party for time worked by the employee. It is most commonly referenced in the Cost Center Charge, Cost Center Charge vs. Cost Reports, and the Customer Invoice time and attendance reports. <br  />Decimal (12,2) */
+		/**
+		 * Rate to be charged to third party for time worked by the employee. It is most commonly referenced in the Cost Center Charge, Cost Center Charge vs. Cost Reports, and the Customer Invoice time and attendance reports. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		chargeRate?: number | null;
 
 		/** If set to true, changes to employee data will be reflected in Web Time. */
@@ -5084,7 +5721,10 @@ export namespace MyNS {
 		/** Badge number usually issued for time and attendance system use. <br  />Max length: 50 */
 		badgeNumber: FormControl<string | null | undefined>,
 
-		/** Rate to be charged to third party for time worked by the employee. It is most commonly referenced in the Cost Center Charge, Cost Center Charge vs. Cost Reports, and the Customer Invoice time and attendance reports. <br  />Decimal (12,2) */
+		/**
+		 * Rate to be charged to third party for time worked by the employee. It is most commonly referenced in the Cost Center Charge, Cost Center Charge vs. Cost Reports, and the Customer Invoice time and attendance reports. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		chargeRate: FormControl<number | null | undefined>,
 
 		/** If set to true, changes to employee data will be reflected in Web Time. */
@@ -5305,19 +5945,34 @@ export namespace MyNS {
 	/** The State Tax model */
 	export interface StateTax {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount?: number | null;
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount?: number | null;
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount?: number | null;
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions?: number | null;
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2?: number | null;
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -5326,10 +5981,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate?: boolean | null;
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount?: number | null;
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage?: number | null;
 
 		/** Supplemental check calculation code. Common values are *Blocked* (Taxes blocked on Supplemental checks), *Supp* (Use supplemental Tax Rate-Code). <br  />Max length: 10 */
@@ -5341,26 +6002,44 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode?: string | null;
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear?: number | null;
 	}
 
 	/** The State Tax model */
 	export interface StateTaxFormProperties {
 
-		/** State tax code.<br  /> Max length: 50 */
+		/**
+		 * State tax code.<br  /> Max length: 50
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
-		/** Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(b) on form W4 (year 2020 or later): Deductions amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		deductionsAmount: FormControl<number | null | undefined>,
 
-		/** Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 3 on form W4 (year 2020 or later): Total dependents amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		dependentsAmount: FormControl<number | null | undefined>,
 
-		/** State tax exemptions value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions: FormControl<number | null | undefined>,
 
-		/** State tax exemptions 2 value.<br  />Decimal (12,2) */
+		/**
+		 * State tax exemptions 2 value.<br  />Decimal (12,2)
+		 * Type: double
+		 */
 		exemptions2: FormControl<number | null | undefined>,
 
 		/** Employee state tax filing status. Common values are *S* (Single), *M* (Married).<br  />Max length: 50 */
@@ -5369,10 +6048,16 @@ export namespace MyNS {
 		/** Box 2(c) on form W4 (year 2020 or later): Multiple Jobs or Spouse Works. <br  />Boolean */
 		higherRate: FormControl<boolean | null | undefined>,
 
-		/** Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2) */
+		/**
+		 * Box 4(a) on form W4 (year 2020 or later): Other income amount. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		otherIncomeAmount: FormControl<number | null | undefined>,
 
-		/** State Tax percentage. <br  />Decimal (12,2) */
+		/**
+		 * State Tax percentage. <br  />Decimal (12,2)
+		 * Type: double
+		 */
 		percentage: FormControl<number | null | undefined>,
 
 		/** Supplemental check calculation code. Common values are *Blocked* (Taxes blocked on Supplemental checks), *Supp* (Use supplemental Tax Rate-Code). <br  />Max length: 10 */
@@ -5384,7 +6069,10 @@ export namespace MyNS {
 		/** State tax code.<br  /> Max length: 50 */
 		taxCode: FormControl<string | null | undefined>,
 
-		/** The state W4 form year <br  />Integer */
+		/**
+		 * The state W4 form year <br  />Integer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		w4FormYear: FormControl<number | null | undefined>,
 	}
 	export function CreateStateTaxFormGroup() {
@@ -5474,7 +6162,9 @@ export namespace MyNS {
 		 * Get v2/companies/{companyId}/employees/
 		 * @param {string} companyId Company Id
 		 * @param {number} pagesize Number of records per page. Default value is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagenumber Page number to retrieve; page numbers are 0-based (so to get the first page of results, pass pagenumber=0). Default value is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includetotalcount Whether to include the total record count in the header's X-Pcty-Total-Count property. Default value is true.
 		 * @return {Array<EmployeeInfo>} Successfully Retrieved
 		 */
@@ -5696,7 +6386,9 @@ export namespace MyNS {
 		 * @param {string} employeeId Employee Id
 		 * @param {string} year The year for which to retrieve pay statement data
 		 * @param {number} pagesize Number of records per page. Default value is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagenumber Page number to retrieve; page numbers are 0-based (so to get the first page of results, pass pagenumber=0). Default value is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includetotalcount Whether to include the total record count in the header's X-Pcty-Total-Count property. Default value is true.
 		 * @param {string} codegroup Retrieve pay statement details related to specific deduction, earning or tax types. Common values include 401k, Memo, Reg, OT, Cash Tips, FED and SITW.
 		 * @return {Array<PayStatementDetails>} Successfully Retrieved
@@ -5714,7 +6406,9 @@ export namespace MyNS {
 		 * @param {string} year The year for which to retrieve pay statement data
 		 * @param {string} checkDate The check date for which to retrieve pay statement data
 		 * @param {number} pagesize Number of records per page. Default value is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagenumber Page number to retrieve; page numbers are 0-based (so to get the first page of results, pass pagenumber=0). Default value is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includetotalcount Whether to include the total record count in the header's X-Pcty-Total-Count property. Default value is true.
 		 * @param {string} codegroup Retrieve pay statement details related to specific deduction, earning or tax types. Common values include 401k, Memo, Reg, OT, Cash Tips, FED and SITW.
 		 * @return {Array<PayStatementDetails>} Successfully Retrieved
@@ -5731,7 +6425,9 @@ export namespace MyNS {
 		 * @param {string} employeeId Employee Id
 		 * @param {string} year The year for which to retrieve pay statement data
 		 * @param {number} pagesize Number of records per page. Default value is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagenumber Page number to retrieve; page numbers are 0-based (so to get the first page of results, pass pagenumber=0). Default value is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includetotalcount Whether to include the total record count in the header's X-Pcty-Total-Count property. Default value is true.
 		 * @param {string} codegroup Retrieve pay statement details related to specific deduction, earning or tax types. Common values include 401k, Memo, Reg, OT, Cash Tips, FED and SITW.
 		 * @return {Array<PayStatementSummary>} Successfully Retrieved
@@ -5749,7 +6445,9 @@ export namespace MyNS {
 		 * @param {string} year The year for which to retrieve pay statement data
 		 * @param {string} checkDate The check date for which to retrieve pay statement data
 		 * @param {number} pagesize Number of records per page. Default value is 25.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} pagenumber Page number to retrieve; page numbers are 0-based (so to get the first page of results, pass pagenumber=0). Default value is 0.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} includetotalcount Whether to include the total record count in the header's X-Pcty-Total-Count property. Default value is true.
 		 * @param {string} codegroup Retrieve pay statement details related to specific deduction, earning or tax types. Common values include 401k, Memo, Reg, OT, Cash Tips, FED and SITW.
 		 * @return {Array<PayStatementSummary>} Successfully Retrieved

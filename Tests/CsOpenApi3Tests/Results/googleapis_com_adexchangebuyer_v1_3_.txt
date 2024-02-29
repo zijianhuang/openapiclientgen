@@ -1460,7 +1460,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="accountId">When specified, only creatives for the given account ids are returned.</param>
 		/// <param name="buyerCreativeId">When specified, only creatives for the given buyer creative ids are returned.</param>
-		/// <param name="maxResults">Maximum number of entries returned on one result page. If not set, the default is 100. Optional.</param>
+		/// <param name="maxResults">Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through ad clients. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.</param>
 		/// <param name="statusFilter">When specified, only creatives having the given status are returned.</param>
 		/// <returns>Successful response</returns>
@@ -1641,7 +1644,10 @@ namespace MyNS
 		/// <param name="accountId">The account id to get the reports.</param>
 		/// <param name="endDateTime">The end time of the report in ISO 8601 timestamp format using UTC.</param>
 		/// <param name="startDateTime">The start time of the report in ISO 8601 timestamp format using UTC.</param>
-		/// <param name="maxResults">Maximum number of entries returned on one result page. If not set, the default is 100. Optional.</param>
+		/// <param name="maxResults">Maximum number of entries returned on one result page. If not set, the default is 100. Optional.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="pageToken">A continuation token, used to page through performance reports. To retrieve the next page, set this parameter to the value of "nextPageToken" from the previous response. Optional.</param>
 		/// <returns>Successful response</returns>
 		public async Task<PerformanceReportList> Adexchangebuyer_performanceReport_listAsync(string accountId, string endDateTime, string startDateTime, int maxResults, string pageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

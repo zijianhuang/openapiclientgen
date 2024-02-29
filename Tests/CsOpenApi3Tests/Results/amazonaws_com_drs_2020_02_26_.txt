@@ -4474,8 +4474,14 @@ namespace MyNS
 		/// Returns an array of staging accounts for existing extended source servers.
 		/// ListStagingAccounts ListStagingAccounts
 		/// </summary>
-		/// <param name="maxResults">The maximum number of staging Accounts to retrieve.</param>
-		/// <param name="nextToken">The token of the next staging Account to retrieve.</param>
+		/// <param name="maxResults">The maximum number of staging Accounts to retrieve.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="nextToken">The token of the next staging Account to retrieve.
+		/// Max length: 2048
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListStagingAccountsResponse> ListStagingAccountsAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4509,7 +4515,10 @@ namespace MyNS
 		/// List all tags for your Elastic Disaster Recovery resources.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource whose tags should be returned.</param>
+		/// <param name="resourceArn">The ARN of the resource whose tags should be returned.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4543,7 +4552,10 @@ namespace MyNS
 		/// Adds or overwrites only the specified tags for the specified Elastic Disaster Recovery resource or resources. When you specify an existing tag key, the value is overwritten with the new value. Each resource can have a maximum of 50 tags. Each tag consists of a key and optional value.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">ARN of the resource for which tags are to be added or updated.</param>
+		/// <param name="resourceArn">ARN of the resource for which tags are to be added or updated.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <returns>Success</returns>
 		public async Task TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4998,7 +5010,10 @@ namespace MyNS
 		/// Deletes the specified set of tags from the specified set of Elastic Disaster Recovery resources.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">ARN of the resource for which tags are to be removed.</param>
+		/// <param name="resourceArn">ARN of the resource for which tags are to be removed.
+		/// Max length: 2048
+		/// Min length: 20
+		// </param>
 		/// <param name="tagKeys">Array of tags to be removed.</param>
 		/// <returns>Success</returns>
 		public async Task UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

@@ -13,6 +13,7 @@ export namespace MyNS {
 		 * @param {string} query Your search query
 		 * @param {TimestagsGetByQueryAndFilterAndMaxFilter} filter If you do not specify a value for filter (see the Optional Parameters), your query will be matched to tags in all four Times dictionaries: subject, geographic location, organization and person. To use more than one, separate with commas.
 		 * @param {number} max Sets the maximum number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<string>} An array of tags
 		 */
 		TimestagsGetByQueryAndFilterAndMax(query: string, filter: TimestagsGetByQueryAndFilterAndMaxFilter | null | undefined, max: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<string>> {

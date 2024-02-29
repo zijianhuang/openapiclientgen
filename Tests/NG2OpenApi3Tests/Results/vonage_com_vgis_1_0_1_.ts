@@ -5,7 +5,10 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 export namespace MyNS {
 	export interface Account {
 
-		/** Unique identifier of the account */
+		/**
+		 * Unique identifier of the account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Name of the account */
@@ -20,7 +23,10 @@ export namespace MyNS {
 	}
 	export interface AccountFormProperties {
 
-		/** Unique identifier of the account */
+		/**
+		 * Unique identifier of the account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Name of the account */
@@ -46,20 +52,24 @@ export namespace MyNS {
 
 	export interface AccountUcis {
 		health?: AccountUcisHealth;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		type?: string | null;
 		ucpAccountId?: string | null;
 		ucpLabel?: string | null;
 	}
 	export interface AccountUcisFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		ucpAccountId: FormControl<string | null | undefined>,
 		ucpLabel: FormControl<string | null | undefined>,
 	}
 	export function CreateAccountUcisFormGroup() {
 		return new FormGroup<AccountUcisFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			ucpAccountId: new FormControl<string | null | undefined>(undefined),
 			ucpLabel: new FormControl<string | null | undefined>(undefined),
@@ -88,10 +98,14 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the account
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		accountId: number;
+		accountId: string;
 
-		/** Time to answer the call */
+		/**
+		 * Time to answer the call
+		 * Type: DateOnly
+		 */
 		answerTime?: Date | null;
 
 		/** Remote caller ID */
@@ -106,10 +120,14 @@ export namespace MyNS {
 		/**
 		 * Duration of the call in milliseconds
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		duration: number;
+		duration: string;
 
-		/** End time of the call */
+		/**
+		 * End time of the call
+		 * Type: DateOnly
+		 */
 		endTime?: Date | null;
 
 		/** External identifier of the call */
@@ -118,8 +136,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the call
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Unique identifier of the account
@@ -130,6 +149,7 @@ export namespace MyNS {
 		/**
 		 * Start time of the call
 		 * Required
+		 * Type: DateOnly
 		 */
 		startTime: Date;
 
@@ -148,24 +168,30 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of communications provider
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		uciId: number;
+		uciId: string;
 
 		/**
 		 * Unique identifier of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: number;
+		userId: string;
 	}
 	export interface CallFormProperties {
 
 		/**
 		 * Unique identifier of the account
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		accountId: FormControl<number | null | undefined>,
+		accountId: FormControl<string | null | undefined>,
 
-		/** Time to answer the call */
+		/**
+		 * Time to answer the call
+		 * Type: DateOnly
+		 */
 		answerTime: FormControl<Date | null | undefined>,
 
 		/** Remote caller ID */
@@ -180,10 +206,14 @@ export namespace MyNS {
 		/**
 		 * Duration of the call in milliseconds
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		duration: FormControl<number | null | undefined>,
+		duration: FormControl<string | null | undefined>,
 
-		/** End time of the call */
+		/**
+		 * End time of the call
+		 * Type: DateOnly
+		 */
 		endTime: FormControl<Date | null | undefined>,
 
 		/** External identifier of the call */
@@ -192,8 +222,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the call
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique identifier of the account
@@ -204,6 +235,7 @@ export namespace MyNS {
 		/**
 		 * Start time of the call
 		 * Required
+		 * Type: DateOnly
 		 */
 		startTime: FormControl<Date | null | undefined>,
 
@@ -222,31 +254,33 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of communications provider
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		uciId: FormControl<number | null | undefined>,
+		uciId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique identifier of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: FormControl<number | null | undefined>,
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateCallFormGroup() {
 		return new FormGroup<CallFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			accountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			answerTime: new FormControl<Date | null | undefined>(undefined),
 			callerId: new FormControl<string | null | undefined>(undefined),
 			direction: new FormControl<CallDirection | null | undefined>(undefined, [Validators.required]),
-			duration: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			duration: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			endTime: new FormControl<Date | null | undefined>(undefined),
 			externalId: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			phoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<CallState | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<CallType | null | undefined>(undefined, [Validators.required]),
-			uciId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			userId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uciId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -341,10 +375,14 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the account
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		accountId: number;
+		accountId: string;
 
-		/** Time to answer the event */
+		/**
+		 * Time to answer the event
+		 * Type: DateOnly
+		 */
 		answerTime?: Date | null;
 
 		/** Remote caller ID */
@@ -356,10 +394,16 @@ export namespace MyNS {
 		 */
 		direction: CallDirection;
 
-		/** Duration of the call in milliseconds */
-		duration?: number | null;
+		/**
+		 * Duration of the call in milliseconds
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration?: string | null;
 
-		/** End time of the event */
+		/**
+		 * End time of the event
+		 * Type: DateOnly
+		 */
 		endTime?: Date | null;
 
 		/** External identifier of the event */
@@ -368,8 +412,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the event
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: number;
+		id: string;
 
 		/**
 		 * Unique identifier of the account
@@ -381,6 +426,7 @@ export namespace MyNS {
 		/**
 		 * Start time of the event
 		 * Required
+		 * Type: DateOnly
 		 */
 		startTime: Date;
 
@@ -399,24 +445,30 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of communications provider
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		uciId: number;
+		uciId: string;
 
 		/**
 		 * Unique identifier of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: number;
+		userId: string;
 	}
 	export interface EventFormProperties {
 
 		/**
 		 * Unique identifier of the account
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		accountId: FormControl<number | null | undefined>,
+		accountId: FormControl<string | null | undefined>,
 
-		/** Time to answer the event */
+		/**
+		 * Time to answer the event
+		 * Type: DateOnly
+		 */
 		answerTime: FormControl<Date | null | undefined>,
 
 		/** Remote caller ID */
@@ -428,10 +480,16 @@ export namespace MyNS {
 		 */
 		direction: FormControl<CallDirection | null | undefined>,
 
-		/** Duration of the call in milliseconds */
-		duration: FormControl<number | null | undefined>,
+		/**
+		 * Duration of the call in milliseconds
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		duration: FormControl<string | null | undefined>,
 
-		/** End time of the event */
+		/**
+		 * End time of the event
+		 * Type: DateOnly
+		 */
 		endTime: FormControl<Date | null | undefined>,
 
 		/** External identifier of the event */
@@ -440,8 +498,9 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of the event
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		id: FormControl<number | null | undefined>,
+		id: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique identifier of the account
@@ -453,6 +512,7 @@ export namespace MyNS {
 		/**
 		 * Start time of the event
 		 * Required
+		 * Type: DateOnly
 		 */
 		startTime: FormControl<Date | null | undefined>,
 
@@ -471,56 +531,67 @@ export namespace MyNS {
 		/**
 		 * Unique identifier of communications provider
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		uciId: FormControl<number | null | undefined>,
+		uciId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique identifier of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		userId: FormControl<number | null | undefined>,
+		userId: FormControl<string | null | undefined>,
 	}
 	export function CreateEventFormGroup() {
 		return new FormGroup<EventFormProperties>({
-			accountId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			accountId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			answerTime: new FormControl<Date | null | undefined>(undefined),
 			callerId: new FormControl<string | null | undefined>(undefined),
 			direction: new FormControl<CallDirection | null | undefined>(undefined, [Validators.required]),
-			duration: new FormControl<number | null | undefined>(undefined),
+			duration: new FormControl<string | null | undefined>(undefined),
 			endTime: new FormControl<Date | null | undefined>(undefined),
 			externalId: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			phoneNumber: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			smsData: new FormControl<string | null | undefined>(undefined),
 			startTime: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<CallState | null | undefined>(undefined, [Validators.required]),
 			type: new FormControl<CallType | null | undefined>(undefined, [Validators.required]),
-			uciId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			userId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			uciId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			userId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
 
 	export interface EventsCount {
 
-		/** Number of events found */
-		count?: number | null;
+		/**
+		 * Number of events found
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count?: string | null;
 	}
 	export interface EventsCountFormProperties {
 
-		/** Number of events found */
-		count: FormControl<number | null | undefined>,
+		/**
+		 * Number of events found
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		count: FormControl<string | null | undefined>,
 	}
 	export function CreateEventsCountFormGroup() {
 		return new FormGroup<EventsCountFormProperties>({
-			count: new FormControl<number | null | undefined>(undefined),
+			count: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface User {
 
-		/** Unique identifier of the user's account */
+		/**
+		 * Unique identifier of the user's account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountId?: number | null;
 
 		/** The name of the user's account */
@@ -535,7 +606,10 @@ export namespace MyNS {
 		/** First name of the user */
 		firstName?: string | null;
 
-		/** Unique identifier of the user */
+		/**
+		 * Unique identifier of the user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id?: number | null;
 
 		/** Last name of the user */
@@ -548,7 +622,10 @@ export namespace MyNS {
 	}
 	export interface UserFormProperties {
 
-		/** Unique identifier of the user's account */
+		/**
+		 * Unique identifier of the user's account
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		accountId: FormControl<number | null | undefined>,
 
 		/** The name of the user's account */
@@ -563,7 +640,10 @@ export namespace MyNS {
 		/** First name of the user */
 		firstName: FormControl<string | null | undefined>,
 
-		/** Unique identifier of the user */
+		/**
+		 * Unique identifier of the user
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Last name of the user */
@@ -612,18 +692,22 @@ export namespace MyNS {
 
 	export interface UserUcis {
 		health?: UserUcisHealth;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		type?: string | null;
 		ucpLabel?: string | null;
 	}
 	export interface UserUcisFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		ucpLabel: FormControl<string | null | undefined>,
 	}
 	export function CreateUserUcisFormGroup() {
 		return new FormGroup<UserUcisFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			ucpLabel: new FormControl<string | null | undefined>(undefined),
 		});
@@ -753,13 +837,22 @@ export namespace MyNS {
 		/** Current delivery status */
 		failed?: boolean | null;
 
-		/** Total delivery attempts */
+		/**
+		 * Total delivery attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalAttempts?: number | null;
 
-		/** Total failed deliveries */
+		/**
+		 * Total failed deliveries
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalFailures?: number | null;
 
-		/** Total successful deliveries */
+		/**
+		 * Total successful deliveries
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSuccesses?: number | null;
 	}
 	export interface WebhookStatisticsFormProperties {
@@ -767,13 +860,22 @@ export namespace MyNS {
 		/** Current delivery status */
 		failed: FormControl<boolean | null | undefined>,
 
-		/** Total delivery attempts */
+		/**
+		 * Total delivery attempts
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalAttempts: FormControl<number | null | undefined>,
 
-		/** Total failed deliveries */
+		/**
+		 * Total failed deliveries
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalFailures: FormControl<number | null | undefined>,
 
-		/** Total successful deliveries */
+		/**
+		 * Total successful deliveries
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSuccesses: FormControl<number | null | undefined>,
 	}
 	export function CreateWebhookStatisticsFormGroup() {
@@ -859,16 +961,20 @@ export namespace MyNS {
 		 * Lists currently active calls
 		 * Get self/calls
 		 * @param {number} fromDate Return calls that occurred after this point in time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate Return calls that occurred before this point in time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CallDirection} direction Filter by call direction. For multiple criteria, seperate values by a comma.
 		 * @param {ListCallsStates} states Filter calls by state. For multiple criteria, seperate values by a comma.
-		 * @param {number} offset Page number of calls to return
+		 * @param {string} offset Page number of calls to return
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} size Return this amount of calls in the response
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ListCallsOrder} order Sort in either ascending or descending order
 		 * @param {string} sort Sort calls by property
 		 * @return {Array<Call>} Successful
 		 */
-		ListCalls(fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: ListCallsStates | null | undefined, offset: number | null | undefined, size: number | null | undefined, order: ListCallsOrder | null | undefined, sort: string | null | undefined): Observable<Array<Call>> {
+		ListCalls(fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: ListCallsStates | null | undefined, offset: string | null | undefined, size: number | null | undefined, order: ListCallsOrder | null | undefined, sort: string | null | undefined): Observable<Array<Call>> {
 			return this.http.get<Array<Call>>(this.baseUri + 'self/calls?fromDate=' + fromDate + '&toDate=' + toDate + '&direction=' + direction + '&states=' + states + '&offset=' + offset + '&size=' + size + '&order=' + order + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 
@@ -886,7 +992,9 @@ export namespace MyNS {
 		 * Get calls count
 		 * Get self/calls/count
 		 * @param {number} fromDate Return calls that occurred after this point in time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate Return calls that occurred before this point in time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CallDirection} direction Filter by call direction. For multiple criteria, seperate values by a comma.
 		 * @param {ListCallsStates} states Filter calls by state. For multiple criteria, seperate values by a comma.
 		 * @return {EventsCount} Successful
@@ -971,16 +1079,20 @@ export namespace MyNS {
 		 * Get self/events
 		 * @param {CallType} types Record type
 		 * @param {number} fromDate Return events that occurred after this point in time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate Return events that occurred before this point in time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CallDirection} direction Filter by event direction
 		 * @param {CallState} states Filter events by state
-		 * @param {number} offset Page number of events to return
+		 * @param {string} offset Page number of events to return
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {number} size Return this amount of events in the response
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {ListCallsOrder} order Sort in either ascending or descending order'
 		 * @param {string} sort Sort events by property
 		 * @return {Array<Event>} Successful
 		 */
-		ListEvents(types: CallType | null | undefined, fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: CallState | null | undefined, offset: number | null | undefined, size: number | null | undefined, order: ListCallsOrder | null | undefined, sort: string | null | undefined): Observable<Array<Event>> {
+		ListEvents(types: CallType | null | undefined, fromDate: number | null | undefined, toDate: number | null | undefined, direction: CallDirection | null | undefined, states: CallState | null | undefined, offset: string | null | undefined, size: number | null | undefined, order: ListCallsOrder | null | undefined, sort: string | null | undefined): Observable<Array<Event>> {
 			return this.http.get<Array<Event>>(this.baseUri + 'self/events?types=' + types + '&fromDate=' + fromDate + '&toDate=' + toDate + '&direction=' + direction + '&states=' + states + '&offset=' + offset + '&size=' + size + '&order=' + order + '&sort=' + (sort == null ? '' : encodeURIComponent(sort)), {});
 		}
 
@@ -988,7 +1100,9 @@ export namespace MyNS {
 		 * Get events count
 		 * Get self/events/count
 		 * @param {number} fromDate Return events that occurred after this point in time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} toDate Return events that occurred before this point in time
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {CallDirection} direction Filter by event direction
 		 * @param {ListCallsStates} states Filter events by state
 		 * @return {EventsCount} Successful

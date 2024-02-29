@@ -4792,7 +4792,10 @@ namespace MyNS
 		/// <param name="EnableIAMDatabaseAuthentication"><p>If set to <code>true</code>, enables Amazon Identity and Access Management (IAM) authentication for the entire DB cluster (this cannot be set at an instance level).</p> <p>Default: <code>false</code>.</p></param>
 		/// <param name="EnableCloudwatchLogsExports">The list of log types that need to be enabled for exporting to CloudWatch Logs.</param>
 		/// <param name="DeletionProtection">A value that indicates whether the DB cluster has deletion protection enabled. The database can't be deleted when deletion protection is enabled. By default, deletion protection is enabled.</param>
-		/// <param name="GlobalClusterIdentifier">The ID of the Neptune global database to which this new DB cluster should be added.</param>
+		/// <param name="GlobalClusterIdentifier">The ID of the Neptune global database to which this new DB cluster should be added.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_CreateDBClusterAsync(
 					string[] AvailabilityZones, 
@@ -5156,7 +5159,10 @@ namespace MyNS
 		/// <p>Creates a Neptune global database spread across multiple Amazon Regions. The global database contains a single primary cluster with read-write capability, and read-only secondary clusters that receive data from the primary cluster through high-speed replication performed by the Neptune storage subsystem.</p> <p>You can create a global database that is initially empty, and then add a primary cluster and secondary clusters to it, or you can specify an existing Neptune cluster during the create operation to become the primary cluster of the global database.</p>
 		/// GET_CreateGlobalCluster #Action=CreateGlobalCluster
 		/// </summary>
-		/// <param name="GlobalClusterIdentifier">The cluster identifier of the new global database cluster.</param>
+		/// <param name="GlobalClusterIdentifier">The cluster identifier of the new global database cluster.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="SourceDBClusterIdentifier">(<i>Optional</i>) The Amazon Resource Name (ARN) of an existing Neptune DB cluster to use as the primary cluster of the new global database.</param>
 		/// <param name="Engine"><p>The name of the database engine to be used in the global database.</p> <p>Valid values: <code>neptune</code> </p></param>
 		/// <param name="EngineVersion"><p>The Neptune engine version to be used by the global database.</p> <p>Valid values: <code>1.2.0.0</code> or above.</p></param>
@@ -5417,7 +5423,10 @@ namespace MyNS
 		/// Deletes a global database. The primary and all secondary clusters must already be detached or deleted first.
 		/// GET_DeleteGlobalCluster #Action=DeleteGlobalCluster
 		/// </summary>
-		/// <param name="GlobalClusterIdentifier">The cluster identifier of the global database cluster being deleted.</param>
+		/// <param name="GlobalClusterIdentifier">The cluster identifier of the global database cluster being deleted.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task GET_DeleteGlobalClusterAsync(string GlobalClusterIdentifier, GET_DeleteGlobalClusterAction Action, GET_DeleteGlobalClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5953,7 +5962,10 @@ namespace MyNS
 		/// Returns information about Neptune global database clusters. This API supports pagination.
 		/// GET_DescribeGlobalClusters #Action=DescribeGlobalClusters
 		/// </summary>
-		/// <param name="GlobalClusterIdentifier"><p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p> <p>Constraints: If supplied, must match an existing DB cluster identifier.</p></param>
+		/// <param name="GlobalClusterIdentifier"><p>The user-supplied DB cluster identifier. If this parameter is specified, only information about the specified DB cluster is returned. This parameter is not case-sensitive.</p> <p>Constraints: If supplied, must match an existing DB cluster identifier.</p>
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxRecords"><p>The maximum number of records to include in the response. If more records exist than the specified <code>MaxRecords</code> value, a pagination marker token is included in the response that you can use to retrieve the remaining results.</p> <p>Default: <code>100</code> </p> <p>Constraints: Minimum 20, maximum 100.</p></param>
 		/// <param name="Marker">(<i>Optional</i>) A pagination token returned by a previous call to <code>DescribeGlobalClusters</code>. If this parameter is specified, the response will only include records beyond the marker, up to the number specified by <code>MaxRecords</code>.</param>
 		/// <returns>Success</returns>
@@ -6106,7 +6118,10 @@ namespace MyNS
 		/// <p>Initiates the failover process for a Neptune global database.</p> <p>A failover for a Neptune global database promotes one of secondary read-only DB clusters to be the primary DB cluster and demotes the primary DB cluster to being a secondary (read-only) DB cluster. In other words, the role of the current primary DB cluster and the selected target secondary DB cluster are switched. The selected secondary DB cluster assumes full read/write capabilities for the Neptune global database.</p> <note> <p>This action applies <b>only</b> to Neptune global databases. This action is only intended for use on healthy Neptune global databases with healthy Neptune DB clusters and no region-wide outages, to test disaster recovery scenarios or to reconfigure the global database topology.</p> </note>
 		/// GET_FailoverGlobalCluster #Action=FailoverGlobalCluster
 		/// </summary>
-		/// <param name="GlobalClusterIdentifier"><p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p> <p>Constraints: Must match the identifier of an existing Neptune global database.</p></param>
+		/// <param name="GlobalClusterIdentifier"><p>Identifier of the Neptune global database that should be failed over. The identifier is the unique key assigned by the user when the Neptune global database was created. In other words, it's the name of the global database that you want to fail over.</p> <p>Constraints: Must match the identifier of an existing Neptune global database.</p>
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="TargetDbClusterIdentifier">The Amazon Resource Name (ARN) of the secondary Neptune DB cluster that you want to promote to primary for the global database.</param>
 		/// <returns>Success</returns>
 		public async Task GET_FailoverGlobalClusterAsync(string GlobalClusterIdentifier, string TargetDbClusterIdentifier, GET_FailoverGlobalClusterAction Action, GET_FailoverGlobalClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6517,8 +6532,14 @@ namespace MyNS
 		/// Modify a setting for an Amazon Neptune global cluster. You can change one or more database configuration parameters by specifying these parameters and their new values in the request.
 		/// GET_ModifyGlobalCluster #Action=ModifyGlobalCluster
 		/// </summary>
-		/// <param name="GlobalClusterIdentifier"><p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p> <p>Constraints: Must match the identifier of an existing global database cluster.</p></param>
-		/// <param name="NewGlobalClusterIdentifier"><p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-cluster2</code> </p></param>
+		/// <param name="GlobalClusterIdentifier"><p>The DB cluster identifier for the global cluster being modified. This parameter is not case-sensitive.</p> <p>Constraints: Must match the identifier of an existing global database cluster.</p>
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
+		/// <param name="NewGlobalClusterIdentifier"><p>A new cluster identifier to assign to the global database. This value is stored as a lowercase string.</p> <p>Constraints:</p> <ul> <li> <p>Must contain from 1 to 63 letters, numbers, or hyphens.</p> </li> <li> <p>The first character must be a letter.</p> </li> <li> <p>Can't end with a hyphen or contain two consecutive hyphens</p> </li> </ul> <p>Example: <code>my-cluster2</code> </p>
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="DeletionProtection">Indicates whether the global database has deletion protection enabled. The global database cannot be deleted when deletion protection is enabled.</param>
 		/// <param name="EngineVersion"><p>The version number of the database engine to which you want to upgrade. Changing this parameter will result in an outage. The change is applied during the next maintenance window unless <code>ApplyImmediately</code> is enabled.</p> <p>To list all of the available Neptune engine versions, use the following command:</p></param>
 		/// <param name="AllowMajorVersionUpgrade"><p>A value that indicates whether major version upgrades are allowed.</p> <p>Constraints: You must allow major version upgrades if you specify a value for the <code>EngineVersion</code> parameter that is a different major version than the DB cluster's current version.</p> <p>If you upgrade the major version of a global database, the cluster and DB instance parameter groups are set to the default parameter groups for the new version, so you will need to apply any custom parameter groups after completing the upgrade.</p></param>
@@ -6606,7 +6627,10 @@ namespace MyNS
 		/// Detaches a Neptune DB cluster from a Neptune global database. A secondary cluster becomes a normal standalone cluster with read-write capability instead of being read-only, and no longer receives data from a the primary cluster.
 		/// GET_RemoveFromGlobalCluster #Action=RemoveFromGlobalCluster
 		/// </summary>
-		/// <param name="GlobalClusterIdentifier">The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.</param>
+		/// <param name="GlobalClusterIdentifier">The identifier of the Neptune global database from which to detach the specified Neptune DB cluster.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <param name="DbClusterIdentifier">The Amazon Resource Name (ARN) identifying the cluster to be detached from the Neptune global database cluster.</param>
 		/// <returns>Success</returns>
 		public async Task GET_RemoveFromGlobalClusterAsync(string GlobalClusterIdentifier, string DbClusterIdentifier, GET_RemoveFromGlobalClusterAction Action, GET_RemoveFromGlobalClusterVersion Version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

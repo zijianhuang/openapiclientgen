@@ -26,8 +26,8 @@ export namespace MyNS {
 		category?: CategoryDTO;
 
 		/**
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description?: string | null;
 		externalReference?: string | null;
@@ -36,8 +36,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: string;
 		online?: OnlineProperties;
@@ -61,16 +61,16 @@ export namespace MyNS {
 	export interface FullProductUpdateRequestFormProperties {
 
 		/**
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 		externalReference: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 		taxCode: FormControl<string | null | undefined>,
@@ -104,8 +104,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: string;
 
@@ -116,8 +116,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 0
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -169,8 +169,8 @@ export namespace MyNS {
 	export interface OnlineProperties {
 
 		/**
-		 * Max length: 3500
 		 * Min length: 0
+		 * Max length: 3500
 		 */
 		description?: string | null;
 		presentation?: Presentation;
@@ -181,16 +181,16 @@ export namespace MyNS {
 		status: OnlinePropertiesStatus;
 
 		/**
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		title?: string | null;
 	}
 	export interface OnlinePropertiesFormProperties {
 
 		/**
-		 * Max length: 3500
 		 * Min length: 0
+		 * Max length: 3500
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -198,8 +198,8 @@ export namespace MyNS {
 		status: FormControl<OnlinePropertiesStatus | null | undefined>,
 
 		/**
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -240,40 +240,40 @@ export namespace MyNS {
 	export interface SearchEngineOptimization {
 
 		/**
-		 * Max length: 320
 		 * Min length: 0
+		 * Max length: 320
 		 */
 		metaDescription?: string | null;
 
 		/**
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		slug?: string | null;
 
 		/**
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		title?: string | null;
 	}
 	export interface SearchEngineOptimizationFormProperties {
 
 		/**
-		 * Max length: 320
 		 * Min length: 0
+		 * Max length: 320
 		 */
 		metaDescription: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		slug: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		title: FormControl<string | null | undefined>,
 	}
@@ -294,7 +294,7 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 2147483647
 		 */
-		weightInGrams?: number | null;
+		weightInGrams?: string | null;
 	}
 	export interface ShippingFormProperties {
 		shippingPricingModel: FormControl<ShippingShippingPricingModel | null | undefined>,
@@ -303,12 +303,12 @@ export namespace MyNS {
 		 * Minimum: 0
 		 * Maximum: 2147483647
 		 */
-		weightInGrams: FormControl<number | null | undefined>,
+		weightInGrams: FormControl<string | null | undefined>,
 	}
 	export function CreateShippingFormGroup() {
 		return new FormGroup<ShippingFormProperties>({
 			shippingPricingModel: new FormControl<ShippingShippingPricingModel | null | undefined>(undefined),
-			weightInGrams: new FormControl<number | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
+			weightInGrams: new FormControl<string | null | undefined>(undefined, [Validators.min(0), Validators.max(2147483647)]),
 		});
 
 	}
@@ -389,8 +389,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		name: string;
 
@@ -405,8 +405,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -420,30 +420,30 @@ export namespace MyNS {
 	export interface VariantOptionProperties {
 
 		/**
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		imageUrl?: string | null;
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		value: string;
 	}
 	export interface VariantOptionPropertiesFormProperties {
 
 		/**
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		imageUrl: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -458,21 +458,21 @@ export namespace MyNS {
 	export interface VariantDTO {
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		barcode?: string | null;
 		costPrice?: Price;
 
 		/**
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
 		/**
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		name?: string | null;
 
@@ -485,8 +485,8 @@ export namespace MyNS {
 		price?: Price;
 
 		/**
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		sku?: string | null;
 
@@ -502,26 +502,26 @@ export namespace MyNS {
 	export interface VariantDTOFormProperties {
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		barcode: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 256
 		 * Min length: 0
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		sku: FormControl<string | null | undefined>,
 
@@ -552,7 +552,7 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		amount: number;
+		amount: string;
 
 		/** Required */
 		currencyId: PriceCurrencyId;
@@ -563,14 +563,14 @@ export namespace MyNS {
 		 * Required
 		 * Minimum: 0
 		 */
-		amount: FormControl<number | null | undefined>,
+		amount: FormControl<string | null | undefined>,
 
 		/** Required */
 		currencyId: FormControl<PriceCurrencyId | null | undefined>,
 	}
 	export function CreatePriceFormGroup() {
 		return new FormGroup<PriceFormProperties>({
-			amount: new FormControl<number | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
+			amount: new FormControl<string | null | undefined>(undefined, [Validators.required, Validators.min(0)]),
 			currencyId: new FormControl<PriceCurrencyId | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -582,15 +582,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		name: string;
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		value: string;
 	}
@@ -598,15 +598,15 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 30
 		 * Min length: 1
+		 * Max length: 30
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -675,8 +675,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		productName: string;
 	}
@@ -684,8 +684,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		productName: FormControl<string | null | undefined>,
 	}
@@ -700,21 +700,21 @@ export namespace MyNS {
 		amount?: Price;
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		description?: string | null;
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		externalReference?: string | null;
 		imageLookupKeys?: Array<string>;
 
 		/**
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name?: string | null;
 
@@ -730,20 +730,20 @@ export namespace MyNS {
 	export interface DiscountRequestFormProperties {
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		externalReference: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 64
 		 * Min length: 0
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -781,6 +781,8 @@ export namespace MyNS {
 
 		/** Required */
 		name: string;
+
+		/** Type: double */
 		percentage?: number | null;
 
 		/** Required */
@@ -802,6 +804,8 @@ export namespace MyNS {
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		percentage: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -847,7 +851,9 @@ export namespace MyNS {
 		created?: Date | null;
 		errorMessage?: string | null;
 		finished?: Date | null;
-		items?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		items?: string | null;
 		state?: ImportResponseState | null;
 		uuid?: string | null;
 	}
@@ -855,7 +861,9 @@ export namespace MyNS {
 		created: FormControl<Date | null | undefined>,
 		errorMessage: FormControl<string | null | undefined>,
 		finished: FormControl<Date | null | undefined>,
-		items: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		items: FormControl<string | null | undefined>,
 		state: FormControl<ImportResponseState | null | undefined>,
 		uuid: FormControl<string | null | undefined>,
 	}
@@ -864,7 +872,7 @@ export namespace MyNS {
 			created: new FormControl<Date | null | undefined>(undefined),
 			errorMessage: new FormControl<string | null | undefined>(undefined),
 			finished: new FormControl<Date | null | undefined>(undefined),
-			items: new FormControl<number | null | undefined>(undefined),
+			items: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<ImportResponseState | null | undefined>(undefined),
 			uuid: new FormControl<string | null | undefined>(undefined),
 		});
@@ -946,6 +954,8 @@ export namespace MyNS {
 		 * Maximum items: 99
 		 */
 		variants: Array<VariantDTO>;
+
+		/** Type: double */
 		vatPercentage?: number | null;
 	}
 	export interface ProductResponseFormProperties {
@@ -970,6 +980,8 @@ export namespace MyNS {
 
 		/** Required */
 		uuid: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		vatPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateProductResponseFormGroup() {
@@ -1006,12 +1018,18 @@ export namespace MyNS {
 
 	export interface ProductCountResponse {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		productCount: number;
 	}
 	export interface ProductCountResponseFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		productCount: FormControl<number | null | undefined>,
 	}
 	export function CreateProductCountResponseFormGroup() {
@@ -1027,14 +1045,14 @@ export namespace MyNS {
 		createWithDefaultTax?: boolean | null;
 
 		/**
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		externalReference?: string | null;
 		imageLookupKeys?: Array<string>;
@@ -1042,8 +1060,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: string;
 		online?: OnlineProperties;
@@ -1053,8 +1071,8 @@ export namespace MyNS {
 		taxRates?: Array<string>;
 
 		/**
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		unitName?: string | null;
 
@@ -1073,29 +1091,29 @@ export namespace MyNS {
 		createWithDefaultTax: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 128
 		 * Min length: 0
+		 * Max length: 128
 		 */
 		externalReference: FormControl<string | null | undefined>,
 
 		/**
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		name: FormControl<string | null | undefined>,
 		taxCode: FormControl<string | null | undefined>,
 		taxExempt: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 32
 		 * Min length: 0
+		 * Max length: 32
 		 */
 		unitName: FormControl<string | null | undefined>,
 
@@ -1127,8 +1145,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: string;
 	}
@@ -1136,8 +1154,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 100
 		 * Min length: 1
+		 * Max length: 100
 		 */
 		name: FormControl<string | null | undefined>,
 	}
@@ -1169,8 +1187,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		label: string;
 
@@ -1185,8 +1203,8 @@ export namespace MyNS {
 
 		/**
 		 * Required
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -1207,10 +1225,14 @@ export namespace MyNS {
 	}
 
 	export interface TaxRateProductCount {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count?: number | null;
 		taxRateUuid?: string | null;
 	}
 	export interface TaxRateProductCountFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		count: FormControl<number | null | undefined>,
 		taxRateUuid: FormControl<string | null | undefined>,
 	}
@@ -1237,8 +1259,8 @@ export namespace MyNS {
 		default?: boolean | null;
 
 		/**
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		label?: string | null;
 
@@ -1249,8 +1271,8 @@ export namespace MyNS {
 		default: FormControl<boolean | null | undefined>,
 
 		/**
-		 * Max length: 512
 		 * Min length: 0
+		 * Max length: 512
 		 */
 		label: FormControl<string | null | undefined>,
 
@@ -1481,6 +1503,8 @@ export namespace MyNS {
 		 * GitHub: https://developer.github.com/guides/traversing-with-pagination/
 		 * If eventLogUuid is provided, the response will only include events affecting the library since that event. Such responses are normally quite small and would be a preferred method for most fat clients after retrieving the initial full library.
 		 * Get organizations/{organizationUuid}/library
+		 * @param {number} limit Minimum: 1
+		 *     Maximum: 500
 		 * @return {LibraryResponse} List of library items
 		 */
 		GetLibrary(organizationUuid: string, eventLogUuid: string | null | undefined, limit: number | null | undefined, offset: string | null | undefined, all: boolean | null | undefined): Observable<LibraryResponse> {

@@ -752,6 +752,7 @@ export namespace MyNS {
 		 * Lists all of the protection policies within a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/FrontDoorWebApplicationFirewallPolicies
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @return {WebApplicationFirewallPolicyList} OK. The request has succeeded.
@@ -764,7 +765,9 @@ export namespace MyNS {
 		 * Retrieve protection policy with specified name within a resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/FrontDoorWebApplicationFirewallPolicies/{policyName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} policyName The name of the Web Application Firewall Policy.
+		 *     Max length: 128
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @return {WebApplicationFirewallPolicy} OK. The request has succeeded.
@@ -777,7 +780,9 @@ export namespace MyNS {
 		 * Create or update policy with specified rule set name within a resource group.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/FrontDoorWebApplicationFirewallPolicies/{policyName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} policyName The name of the Web Application Firewall Policy.
+		 *     Max length: 128
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @param {WebApplicationFirewallPolicy} requestBody Policy to be created.
@@ -791,7 +796,9 @@ export namespace MyNS {
 		 * Deletes Policy
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Network/FrontDoorWebApplicationFirewallPolicies/{policyName}
 		 * @param {string} resourceGroupName Name of the Resource group within the Azure subscription.
+		 *     Min length: 1    Max length: 80
 		 * @param {string} policyName The name of the Web Application Firewall Policy.
+		 *     Max length: 128
 		 * @param {string} subscriptionId The subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.
 		 * @param {string} api_version Client API version.
 		 * @return {void} Delete successful.

@@ -2295,7 +2295,10 @@ namespace MyNS
 		/// ListAlarmModels alarm-models
 		/// </summary>
 		/// <param name="nextToken">The token that you can use to return the next set of results.</param>
-		/// <param name="maxResults">The maximum number of results to be returned per request.</param>
+		/// <param name="maxResults">The maximum number of results to be returned per request.
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAlarmModelsResponse> ListAlarmModelsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2370,7 +2373,10 @@ namespace MyNS
 		/// ListDetectorModels detector-models
 		/// </summary>
 		/// <param name="nextToken">The token that you can use to return the next set of results.</param>
-		/// <param name="maxResults">The maximum number of results to be returned per request.</param>
+		/// <param name="maxResults">The maximum number of results to be returned per request.
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDetectorModelsResponse> ListDetectorModelsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2438,7 +2444,10 @@ namespace MyNS
 		/// ListInputs inputs
 		/// </summary>
 		/// <param name="nextToken">The token that you can use to return the next set of results.</param>
-		/// <param name="maxResults">The maximum number of results to be returned per request.</param>
+		/// <param name="maxResults">The maximum number of results to be returned per request.
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListInputsResponse> ListInputsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2472,7 +2481,10 @@ namespace MyNS
 		/// Deletes an alarm model. Any alarm instances that were created based on this alarm model are also deleted. This action can't be undone.
 		/// DeleteAlarmModel alarm-models/{alarmModelName}
 		/// </summary>
-		/// <param name="alarmModelName">The name of the alarm model.</param>
+		/// <param name="alarmModelName">The name of the alarm model.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteAlarmModelAsync(string alarmModelName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "alarm-models/"+ (alarmModelName==null? "" : System.Uri.EscapeDataString(alarmModelName));
@@ -2499,8 +2511,14 @@ namespace MyNS
 		/// Retrieves information about an alarm model. If you don't specify a value for the <code>alarmModelVersion</code> parameter, the latest version is returned.
 		/// DescribeAlarmModel alarm-models/{alarmModelName}
 		/// </summary>
-		/// <param name="alarmModelName">The name of the alarm model.</param>
-		/// <param name="version">The version of the alarm model.</param>
+		/// <param name="alarmModelName">The name of the alarm model.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="version">The version of the alarm model.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeAlarmModelResponse> DescribeAlarmModelAsync(string alarmModelName, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2534,7 +2552,10 @@ namespace MyNS
 		/// Updates an alarm model. Any alarms that were created based on the previous version are deleted and then created again as new data arrives.
 		/// UpdateAlarmModel alarm-models/{alarmModelName}
 		/// </summary>
-		/// <param name="alarmModelName">The name of the alarm model.</param>
+		/// <param name="alarmModelName">The name of the alarm model.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAlarmModelResponse> UpdateAlarmModelAsync(string alarmModelName, UpdateAlarmModelPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2575,7 +2596,10 @@ namespace MyNS
 		/// Deletes a detector model. Any active instances of the detector model are also deleted.
 		/// DeleteDetectorModel detector-models/{detectorModelName}
 		/// </summary>
-		/// <param name="detectorModelName">The name of the detector model to be deleted.</param>
+		/// <param name="detectorModelName">The name of the detector model to be deleted.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		public async Task DeleteDetectorModelAsync(string detectorModelName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "detector-models/"+ (detectorModelName==null? "" : System.Uri.EscapeDataString(detectorModelName));
@@ -2602,8 +2626,14 @@ namespace MyNS
 		/// Describes a detector model. If the <code>version</code> parameter is not specified, information about the latest version is returned.
 		/// DescribeDetectorModel detector-models/{detectorModelName}
 		/// </summary>
-		/// <param name="detectorModelName">The name of the detector model.</param>
-		/// <param name="version">The version of the detector model.</param>
+		/// <param name="detectorModelName">The name of the detector model.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="version">The version of the detector model.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeDetectorModelResponse> DescribeDetectorModelAsync(string detectorModelName, string version, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2637,7 +2667,10 @@ namespace MyNS
 		/// Updates a detector model. Detectors (instances) spawned by the previous version are deleted and then re-created as new inputs arrive.
 		/// UpdateDetectorModel detector-models/{detectorModelName}
 		/// </summary>
-		/// <param name="detectorModelName">The name of the detector model that is updated.</param>
+		/// <param name="detectorModelName">The name of the detector model that is updated.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDetectorModelResponse> UpdateDetectorModelAsync(string detectorModelName, UpdateDetectorModelPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2678,7 +2711,10 @@ namespace MyNS
 		/// Deletes an input.
 		/// DeleteInput inputs/{inputName}
 		/// </summary>
-		/// <param name="inputName">The name of the input to delete.</param>
+		/// <param name="inputName">The name of the input to delete.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteInputResponse> DeleteInputAsync(string inputName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2712,7 +2748,10 @@ namespace MyNS
 		/// Describes an input.
 		/// DescribeInput inputs/{inputName}
 		/// </summary>
-		/// <param name="inputName">The name of the input.</param>
+		/// <param name="inputName">The name of the input.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeInputResponse> DescribeInputAsync(string inputName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2746,7 +2785,10 @@ namespace MyNS
 		/// Updates an input.
 		/// UpdateInput inputs/{inputName}
 		/// </summary>
-		/// <param name="inputName">The name of the input you want to update.</param>
+		/// <param name="inputName">The name of the input you want to update.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateInputResponse> UpdateInputAsync(string inputName, UpdateInputPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2924,9 +2966,15 @@ namespace MyNS
 		/// Lists all the versions of an alarm model. The operation returns only the metadata associated with each alarm model version.
 		/// ListAlarmModelVersions alarm-models/{alarmModelName}/versions
 		/// </summary>
-		/// <param name="alarmModelName">The name of the alarm model.</param>
+		/// <param name="alarmModelName">The name of the alarm model.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="nextToken">The token that you can use to return the next set of results.</param>
-		/// <param name="maxResults">The maximum number of results to be returned per request.</param>
+		/// <param name="maxResults">The maximum number of results to be returned per request.
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListAlarmModelVersionsResponse> ListAlarmModelVersionsAsync(string alarmModelName, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2960,9 +3008,15 @@ namespace MyNS
 		/// Lists all the versions of a detector model. Only the metadata associated with each detector model version is returned.
 		/// ListDetectorModelVersions detector-models/{detectorModelName}/versions
 		/// </summary>
-		/// <param name="detectorModelName">The name of the detector model whose versions are returned.</param>
+		/// <param name="detectorModelName">The name of the detector model whose versions are returned.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <param name="nextToken">The token that you can use to return the next set of results.</param>
-		/// <param name="maxResults">The maximum number of results to be returned per request.</param>
+		/// <param name="maxResults">The maximum number of results to be returned per request.
+		/// Minimum: 1
+		/// Maximum: 250
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDetectorModelVersionsResponse> ListDetectorModelVersionsAsync(string detectorModelName, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3036,7 +3090,10 @@ namespace MyNS
 		/// Lists the tags (metadata) you have assigned to the resource.
 		/// ListTagsForResource tags#resourceArn
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource.</param>
+		/// <param name="resourceArn">The ARN of the resource.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3070,7 +3127,10 @@ namespace MyNS
 		/// Adds to or modifies the tags of the given resource. Tags are metadata that can be used to manage a resource.
 		/// TagResource tags#resourceArn
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource.</param>
+		/// <param name="resourceArn">The ARN of the resource.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3151,7 +3211,10 @@ namespace MyNS
 		/// Removes the given tags (metadata) from the resource.
 		/// UntagResource tags#resourceArn&tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The ARN of the resource.</param>
+		/// <param name="resourceArn">The ARN of the resource.
+		/// Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <param name="tagKeys">A list of the keys of the tags to be removed from the resource.</param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

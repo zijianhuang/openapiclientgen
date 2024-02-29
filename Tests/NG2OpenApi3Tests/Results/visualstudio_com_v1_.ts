@@ -153,10 +153,14 @@ export namespace MyNS {
 
 	export interface ComputeUsageDetail {
 		sku?: string | null;
+
+		/** Type: double */
 		usage?: number | null;
 	}
 	export interface ComputeUsageDetailFormProperties {
 		sku: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		usage: FormControl<number | null | undefined>,
 	}
 	export function CreateComputeUsageDetailFormGroup() {
@@ -168,21 +172,33 @@ export namespace MyNS {
 	}
 
 	export interface StorageUsageDetail {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
-		sizeInKB?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		sizeInKB?: string | null;
 		sku?: string | null;
+
+		/** Type: double */
 		usage?: number | null;
 	}
 	export interface StorageUsageDetailFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
-		sizeInKB: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		sizeInKB: FormControl<string | null | undefined>,
 		sku: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		usage: FormControl<number | null | undefined>,
 	}
 	export function CreateStorageUsageDetailFormGroup() {
 		return new FormGroup<StorageUsageDetailFormProperties>({
 			size: new FormControl<number | null | undefined>(undefined),
-			sizeInKB: new FormControl<number | null | undefined>(undefined),
+			sizeInKB: new FormControl<string | null | undefined>(undefined),
 			sku: new FormControl<string | null | undefined>(undefined),
 			usage: new FormControl<number | null | undefined>(undefined),
 		});
@@ -307,10 +323,14 @@ export namespace MyNS {
 	}
 
 	export interface ClientUsageData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		activeMinutes?: number | null;
 		lastActivity?: Date | null;
 	}
 	export interface ClientUsageDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		activeMinutes: FormControl<number | null | undefined>,
 		lastActivity: FormControl<Date | null | undefined>,
 	}
@@ -352,6 +372,8 @@ export namespace MyNS {
 	export interface CloudEnvironmentResult {
 		accessToken?: string | null;
 		active?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoShutdownDelayMinutes?: number | null;
 		billableOwnerType?: BillableOwnerType;
 		clientUsage?: ClientUsageSession;
@@ -383,7 +405,9 @@ export namespace MyNS {
 		skuDisplayName?: string | null;
 		skuName?: string | null;
 		state?: string | null;
-		storageUtilizationInKb?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		storageUtilizationInKb?: string | null;
 		subscriptionData?: SubscriptionData;
 		templateStatus?: string | null;
 		type?: string | null;
@@ -392,6 +416,8 @@ export namespace MyNS {
 	export interface CloudEnvironmentResultFormProperties {
 		accessToken: FormControl<string | null | undefined>,
 		active: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoShutdownDelayMinutes: FormControl<number | null | undefined>,
 		billableOwnerType: FormControl<BillableOwnerType | null | undefined>,
 		containerImage: FormControl<string | null | undefined>,
@@ -414,7 +440,9 @@ export namespace MyNS {
 		skuDisplayName: FormControl<string | null | undefined>,
 		skuName: FormControl<string | null | undefined>,
 		state: FormControl<string | null | undefined>,
-		storageUtilizationInKb: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		storageUtilizationInKb: FormControl<string | null | undefined>,
 		templateStatus: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		updated: FormControl<Date | null | undefined>,
@@ -445,7 +473,7 @@ export namespace MyNS {
 			skuDisplayName: new FormControl<string | null | undefined>(undefined),
 			skuName: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<string | null | undefined>(undefined),
-			storageUtilizationInKb: new FormControl<number | null | undefined>(undefined),
+			storageUtilizationInKb: new FormControl<string | null | undefined>(undefined),
 			templateStatus: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			updated: new FormControl<Date | null | undefined>(undefined),
@@ -547,7 +575,11 @@ export namespace MyNS {
 	}
 
 	export interface GitStatus {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ahead?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		behind?: number | null;
 		branch?: string | null;
 		commit?: string | null;
@@ -556,7 +588,11 @@ export namespace MyNS {
 		noGitRepo?: boolean | null;
 	}
 	export interface GitStatusFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ahead: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		behind: FormControl<number | null | undefined>,
 		branch: FormControl<string | null | undefined>,
 		commit: FormControl<string | null | undefined>,
@@ -639,7 +675,9 @@ export namespace MyNS {
 		name?: string | null;
 		owner?: string | null;
 		prebuildHash?: string | null;
-		repoId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		repoId?: string | null;
 		url?: string | null;
 	}
 	export interface RepositoryInfoBodyFormProperties {
@@ -650,7 +688,9 @@ export namespace MyNS {
 		name: FormControl<string | null | undefined>,
 		owner: FormControl<string | null | undefined>,
 		prebuildHash: FormControl<string | null | undefined>,
-		repoId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		repoId: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
 	}
 	export function CreateRepositoryInfoBodyFormGroup() {
@@ -662,20 +702,28 @@ export namespace MyNS {
 			name: new FormControl<string | null | undefined>(undefined),
 			owner: new FormControl<string | null | undefined>(undefined),
 			prebuildHash: new FormControl<string | null | undefined>(undefined),
-			repoId: new FormControl<number | null | undefined>(undefined),
+			repoId: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface SubscriptionData {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		computeQuota?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		computeUsage?: number | null;
 		subscriptionId?: string | null;
 		subscriptionState?: string | null;
 	}
 	export interface SubscriptionDataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		computeQuota: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		computeUsage: FormControl<number | null | undefined>,
 		subscriptionId: FormControl<string | null | undefined>,
 		subscriptionState: FormControl<string | null | undefined>,
@@ -733,6 +781,8 @@ export namespace MyNS {
 
 	export interface CreateCloudEnvironmentBody {
 		analyticsTrackingId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoShutdownDelayMinutes?: number | null;
 		billableOwner?: BillableOwnerBody;
 		connection?: ConnectionInfoBody;
@@ -770,6 +820,8 @@ export namespace MyNS {
 	}
 	export interface CreateCloudEnvironmentBodyFormProperties {
 		analyticsTrackingId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoShutdownDelayMinutes: FormControl<number | null | undefined>,
 		containerImage: FormControl<string | null | undefined>,
 		createAsPrebuild: FormControl<boolean | null | undefined>,
@@ -938,8 +990,8 @@ export namespace MyNS {
 		type?: SecretType;
 
 		/**
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		value?: string | null;
 	}
@@ -948,8 +1000,8 @@ export namespace MyNS {
 		type: FormControl<SecretType | null | undefined>,
 
 		/**
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -1071,9 +1123,13 @@ export namespace MyNS {
 	}
 
 	export interface HotPoolSettings {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size?: number | null;
 	}
 	export interface HotPoolSettingsFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		size: FormControl<number | null | undefined>,
 	}
 	export function CreateHotPoolSettingsFormGroup() {
@@ -1193,12 +1249,16 @@ export namespace MyNS {
 	export interface PrebuildTemplateInfo {
 		container?: ContainerInfo;
 		prebuildConfigurationId?: string | null;
+
+		/** Type: double */
 		templateSizeInGB?: number | null;
 		totalTimeSavingsInSeconds?: string | null;
 		workFlowRunId?: string | null;
 	}
 	export interface PrebuildTemplateInfoFormProperties {
 		prebuildConfigurationId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		templateSizeInGB: FormControl<number | null | undefined>,
 		totalTimeSavingsInSeconds: FormControl<string | null | undefined>,
 		workFlowRunId: FormControl<string | null | undefined>,
@@ -1256,27 +1316,37 @@ export namespace MyNS {
 		/** Required */
 		branchName: string;
 		devContainerPath?: string | null;
-		prebuildConfigurationId?: number | null;
 
-		/** Required */
-		repoId: number;
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		prebuildConfigurationId?: string | null;
+
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		repoId: string;
 	}
 	export interface DeletePrebuildTemplatesBodyFormProperties {
 
 		/** Required */
 		branchName: FormControl<string | null | undefined>,
 		devContainerPath: FormControl<string | null | undefined>,
-		prebuildConfigurationId: FormControl<number | null | undefined>,
 
-		/** Required */
-		repoId: FormControl<number | null | undefined>,
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		prebuildConfigurationId: FormControl<string | null | undefined>,
+
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		repoId: FormControl<string | null | undefined>,
 	}
 	export function CreateDeletePrebuildTemplatesBodyFormGroup() {
 		return new FormGroup<DeletePrebuildTemplatesBodyFormProperties>({
 			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			devContainerPath: new FormControl<string | null | undefined>(undefined),
-			prebuildConfigurationId: new FormControl<number | null | undefined>(undefined),
-			repoId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			prebuildConfigurationId: new FormControl<string | null | undefined>(undefined),
+			repoId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -1692,18 +1762,22 @@ export namespace MyNS {
 	export interface Pool {
 		poolType?: PrebuildMode;
 		skuName?: string | null;
-		targetCount?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		targetCount?: string | null;
 	}
 	export interface PoolFormProperties {
 		poolType: FormControl<PrebuildMode | null | undefined>,
 		skuName: FormControl<string | null | undefined>,
-		targetCount: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		targetCount: FormControl<string | null | undefined>,
 	}
 	export function CreatePoolFormGroup() {
 		return new FormGroup<PoolFormProperties>({
 			poolType: new FormControl<PrebuildMode | null | undefined>(undefined),
 			skuName: new FormControl<string | null | undefined>(undefined),
-			targetCount: new FormControl<number | null | undefined>(undefined),
+			targetCount: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -1756,7 +1830,10 @@ export namespace MyNS {
 		/** Required */
 		subtype: ResourceSubtype;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetCount: number;
 
 		/** Required */
@@ -1776,7 +1853,10 @@ export namespace MyNS {
 		/** Required */
 		subtype: FormControl<ResourceSubtype | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetCount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1847,17 +1927,25 @@ export namespace MyNS {
 	}
 
 	export interface ProvisioningStatusResult {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		completedSteps?: number | null;
 		currentStepDescription?: string | null;
 		isReady?: boolean | null;
 		operationStartedTimeUtc?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalSteps?: number | null;
 	}
 	export interface ProvisioningStatusResultFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		completedSteps: FormControl<number | null | undefined>,
 		currentStepDescription: FormControl<string | null | undefined>,
 		isReady: FormControl<boolean | null | undefined>,
 		operationStartedTimeUtc: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalSteps: FormControl<number | null | undefined>,
 	}
 	export function CreateProvisioningStatusResultFormGroup() {
@@ -1902,9 +1990,17 @@ export namespace MyNS {
 		isEnvironmentPool?: boolean | null;
 		location?: string | null;
 		poolCode?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		readyUnassignedCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		readyUnassignedLatestVersionCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		readyUnassignedNotLatestVersionAndIdleCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		readyUnassignedNotLatestVersionCount?: number | null;
 		resourceType?: string | null;
 		sku?: string | null;
@@ -1914,9 +2010,17 @@ export namespace MyNS {
 		isEnvironmentPool: FormControl<boolean | null | undefined>,
 		location: FormControl<string | null | undefined>,
 		poolCode: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		readyUnassignedCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		readyUnassignedLatestVersionCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		readyUnassignedNotLatestVersionAndIdleCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		readyUnassignedNotLatestVersionCount: FormControl<number | null | undefined>,
 		resourceType: FormControl<string | null | undefined>,
 		sku: FormControl<string | null | undefined>,
@@ -1975,7 +2079,9 @@ export namespace MyNS {
 		logicalSkus?: Array<string>;
 		prebuildConfigurationId?: string | null;
 		prebuildHash?: string | null;
-		repoId?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		repoId?: string | null;
 		templateStatus?: string | null;
 	}
 	export interface PrebuildTemplateInfoResultFormProperties {
@@ -1987,7 +2093,9 @@ export namespace MyNS {
 		lastUsedTime: FormControl<Date | null | undefined>,
 		prebuildConfigurationId: FormControl<string | null | undefined>,
 		prebuildHash: FormControl<string | null | undefined>,
-		repoId: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		repoId: FormControl<string | null | undefined>,
 		templateStatus: FormControl<string | null | undefined>,
 	}
 	export function CreatePrebuildTemplateInfoResultFormGroup() {
@@ -2000,7 +2108,7 @@ export namespace MyNS {
 			lastUsedTime: new FormControl<Date | null | undefined>(undefined),
 			prebuildConfigurationId: new FormControl<string | null | undefined>(undefined),
 			prebuildHash: new FormControl<string | null | undefined>(undefined),
-			repoId: new FormControl<number | null | undefined>(undefined),
+			repoId: new FormControl<string | null | undefined>(undefined),
 			templateStatus: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -2009,6 +2117,8 @@ export namespace MyNS {
 	export interface ProblemDetails {
 		detail?: string | null;
 		instance?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status?: number | null;
 		title?: string | null;
 		type?: string | null;
@@ -2016,6 +2126,8 @@ export namespace MyNS {
 	export interface ProblemDetailsFormProperties {
 		detail: FormControl<string | null | undefined>,
 		instance: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		status: FormControl<number | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
@@ -2187,8 +2299,8 @@ export namespace MyNS {
 		filters?: Array<SecretFilterBody>;
 
 		/**
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		notes?: string | null;
 		scope?: SecretScope;
@@ -2196,16 +2308,16 @@ export namespace MyNS {
 		type?: SecretType;
 
 		/**
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		value?: string | null;
 	}
 	export interface ScopedCreateSecretBodyFormProperties {
 
 		/**
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		notes: FormControl<string | null | undefined>,
 		scope: FormControl<SecretScope | null | undefined>,
@@ -2213,8 +2325,8 @@ export namespace MyNS {
 		type: FormControl<SecretType | null | undefined>,
 
 		/**
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -2233,8 +2345,8 @@ export namespace MyNS {
 		type?: SecretFilterType;
 
 		/**
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		value?: string | null;
 	}
@@ -2242,8 +2354,8 @@ export namespace MyNS {
 		type: FormControl<SecretFilterType | null | undefined>,
 
 		/**
-		 * Max length: 200
 		 * Min length: 1
+		 * Max length: 200
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -2292,32 +2404,32 @@ export namespace MyNS {
 		filters?: Array<SecretFilterBody>;
 
 		/**
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		notes?: string | null;
 		scope?: SecretScope;
 		secretName?: string | null;
 
 		/**
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		value?: string | null;
 	}
 	export interface ScopedUpdateSecretBodyFormProperties {
 
 		/**
-		 * Max length: 200
 		 * Min length: 0
+		 * Max length: 200
 		 */
 		notes: FormControl<string | null | undefined>,
 		scope: FormControl<SecretScope | null | undefined>,
 		secretName: FormControl<string | null | undefined>,
 
 		/**
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		value: FormControl<string | null | undefined>,
 	}
@@ -2426,6 +2538,8 @@ export namespace MyNS {
 	export interface UnfilteredCloudEnvironmentResult {
 		accessToken?: string | null;
 		active?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoShutdownDelayMinutes?: number | null;
 		billableOwnerType?: BillableOwnerType;
 		clientUsage?: ClientUsageSession;
@@ -2457,7 +2571,9 @@ export namespace MyNS {
 		skuDisplayName?: string | null;
 		skuName?: string | null;
 		state?: string | null;
-		storageUtilizationInKb?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		storageUtilizationInKb?: string | null;
 		subscriptionData?: SubscriptionData;
 		templateStatus?: string | null;
 		type?: string | null;
@@ -2466,6 +2582,8 @@ export namespace MyNS {
 	export interface UnfilteredCloudEnvironmentResultFormProperties {
 		accessToken: FormControl<string | null | undefined>,
 		active: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoShutdownDelayMinutes: FormControl<number | null | undefined>,
 		billableOwnerType: FormControl<BillableOwnerType | null | undefined>,
 		containerImage: FormControl<string | null | undefined>,
@@ -2488,7 +2606,9 @@ export namespace MyNS {
 		skuDisplayName: FormControl<string | null | undefined>,
 		skuName: FormControl<string | null | undefined>,
 		state: FormControl<string | null | undefined>,
-		storageUtilizationInKb: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		storageUtilizationInKb: FormControl<string | null | undefined>,
 		templateStatus: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 		updated: FormControl<Date | null | undefined>,
@@ -2519,7 +2639,7 @@ export namespace MyNS {
 			skuDisplayName: new FormControl<string | null | undefined>(undefined),
 			skuName: new FormControl<string | null | undefined>(undefined),
 			state: new FormControl<string | null | undefined>(undefined),
-			storageUtilizationInKb: new FormControl<number | null | undefined>(undefined),
+			storageUtilizationInKb: new FormControl<string | null | undefined>(undefined),
 			templateStatus: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 			updated: new FormControl<Date | null | undefined>(undefined),
@@ -2528,6 +2648,8 @@ export namespace MyNS {
 	}
 
 	export interface UpdateCloudEnvironmentBody {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoShutdownDelayMinutes?: number | null;
 		failoverDetails?: FailoverDetails;
 		friendlyName?: string | null;
@@ -2536,6 +2658,8 @@ export namespace MyNS {
 		skuName?: string | null;
 	}
 	export interface UpdateCloudEnvironmentBodyFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		autoShutdownDelayMinutes: FormControl<number | null | undefined>,
 		friendlyName: FormControl<string | null | undefined>,
 		planAccessToken: FormControl<string | null | undefined>,
@@ -2596,11 +2720,17 @@ export namespace MyNS {
 		branchName: string;
 		devContainerPath?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPrebuildTemplateVersions: number;
 
-		/** Required */
-		repoId: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		repoId: string;
 	}
 	export interface UpdatePrebuildTemplateVersionsBodyFormProperties {
 
@@ -2608,18 +2738,24 @@ export namespace MyNS {
 		branchName: FormControl<string | null | undefined>,
 		devContainerPath: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPrebuildTemplateVersions: FormControl<number | null | undefined>,
 
-		/** Required */
-		repoId: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		repoId: FormControl<string | null | undefined>,
 	}
 	export function CreateUpdatePrebuildTemplateVersionsBodyFormGroup() {
 		return new FormGroup<UpdatePrebuildTemplateVersionsBodyFormProperties>({
 			branchName: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			devContainerPath: new FormControl<string | null | undefined>(undefined),
 			maxPrebuildTemplateVersions: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			repoId: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			repoId: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
 	}
@@ -2841,6 +2977,8 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/v1/Environments/{environmentId}/ports/{port}
+		 * @param {number} port Minimum: 1
+		 *     Maximum: 65535
 		 * @return {void} Success
 		 */
 		ApiV1Environments_environmentIdPorts_portDelete(environmentId: string, port: number, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -2849,6 +2987,8 @@ export namespace MyNS {
 
 		/**
 		 * Put api/v1/Environments/{environmentId}/ports/{port}
+		 * @param {number} port Minimum: 1
+		 *     Maximum: 65535
 		 * @return {void} Success
 		 */
 		ApiV1Environments_environmentIdPorts_portPut(environmentId: string, port: number, requestBody: AddForwardedPortSettings, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3153,6 +3293,7 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/v1/Secrets/{secretId}
+		 * @param {SecretScope} scope Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} 
 		 */
 		ApiV1Secrets_secretIdDeleteByPlanIdAndScope(planId: string | null | undefined, scope: SecretScope | null | undefined, secretId: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
@@ -3233,6 +3374,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/v1/Tunnel/{environmentId}/portInfo
+		 * @param {number} portNumber Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {TunnelPortInfoResult} Success
 		 */
 		ApiV1Tunnel_environmentIdPortInfoGetByPortNumber(environmentId: string, portNumber: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<TunnelPortInfoResult> {
@@ -3793,9 +3935,10 @@ export namespace MyNS {
 
 		/**
 		 * Delete api/v2/prebuilds/repository/{repoId}/branch/{branchName}
+		 * @param {string} repoId Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} Success
 		 */
-		ApiV2PrebuildsRepository_repoIdBranch_branchNameDelete(repoId: number, branchName: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
+		ApiV2PrebuildsRepository_repoIdBranch_branchNameDelete(repoId: string, branchName: string, headersHandler?: () => HttpHeaders): Observable<HttpResponse<string>> {
 			return this.http.delete(this.baseUri + 'api/v2/prebuilds/repository/' + repoId + '/branch/' + (branchName == null ? '' : encodeURIComponent(branchName)), { headers: headersHandler ? headersHandler() : undefined, observe: 'response', responseType: 'text' });
 		}
 
@@ -3809,6 +3952,7 @@ export namespace MyNS {
 
 		/**
 		 * Get api/v2/prebuilds/templates/skus/repo/{repoId}/branch/{branchName}/hash/{prebuildHash}/location/{location}/devcontainerpath/{devContainerPath}
+		 * @param {StorageType} storageType Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {PrebuildReadinessResult} Success
 		 */
 		ApiV2PrebuildsTemplatesSkusRepo_repoIdBranch_branchNameHash_prebuildHashLocation_locationDevcontainerpath_devContainerPathGetByStorageTypeAndFastPathEnabled(repoId: string, branchName: string, prebuildHash: string, location: string, devContainerPath: string, storageType: StorageType | null | undefined, fastPathEnabled: boolean | null | undefined, headersHandler?: () => HttpHeaders): Observable<PrebuildReadinessResult> {

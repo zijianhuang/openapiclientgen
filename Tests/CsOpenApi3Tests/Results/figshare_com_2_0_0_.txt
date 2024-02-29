@@ -4839,10 +4839,22 @@ namespace MyNS
 		/// Get Own Articles
 		/// Private_articles_list account/articles
 		/// </summary>
-		/// <param name="page">Page number. Used for pagination with page_size</param>
-		/// <param name="page_size">The number of results included on a page. Used for pagination with page</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="page">Page number. Used for pagination with page_size
+		/// Minimum: 1
+		/// Maximum: 5000
+		// </param>
+		/// <param name="page_size">The number of results included on a page. Used for pagination with page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <returns>OK. An array of articles belonging to the account</returns>
 		public async Task<Article[]> Private_articles_listAsync(long page, long page_size, long limit, long offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5218,8 +5230,12 @@ namespace MyNS
 		/// De-associate author from article
 		/// Private_article_author_delete account/articles/{article_id}/authors/{author_id}
 		/// </summary>
-		/// <param name="article_id">Article unique identifier</param>
-		/// <param name="author_id">Article Author unique identifier</param>
+		/// <param name="article_id">Article unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="author_id">Article Author unique identifier
+		/// Minimum: 1
+		// </param>
 		public async Task Private_article_author_deleteAsync(long article_id, long author_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/articles/"+article_id+"/authors/"+author_id;
@@ -5349,8 +5365,12 @@ namespace MyNS
 		/// De-associate category from article
 		/// Private_article_category_delete account/articles/{article_id}/categories/{category_id}
 		/// </summary>
-		/// <param name="article_id">Article unique identifier</param>
-		/// <param name="category_id">Category unique identifier</param>
+		/// <param name="article_id">Article unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="category_id">Category unique identifier
+		/// Minimum: 1
+		// </param>
 		public async Task Private_article_category_deleteAsync(long article_id, long category_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/articles/"+article_id+"/categories/"+category_id;
@@ -5850,7 +5870,9 @@ namespace MyNS
 		/// - When an article is published, a new public version will be generated. Any further updates to the article will affect the private article data. In order to make these changes publicly visible, an explicit publish operation is needed.
 		/// Private_article_publish account/articles/{article_id}/publish
 		/// </summary>
-		/// <param name="article_id">Article unique identifier</param>
+		/// <param name="article_id">Article unique identifier
+		/// Minimum: 1
+		// </param>
 		public async Task Private_article_publishAsync(long article_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/articles/"+article_id+"/publish";
@@ -5873,7 +5895,9 @@ namespace MyNS
 		/// Reserve DOI for article
 		/// Private_article_reserve_doi account/articles/{article_id}/reserve_doi
 		/// </summary>
-		/// <param name="article_id">Article unique identifier</param>
+		/// <param name="article_id">Article unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<ArticleDOI> Private_article_reserve_doiAsync(long article_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5903,7 +5927,9 @@ namespace MyNS
 		/// Reserve Handle for article
 		/// Private_article_reserve_handle account/articles/{article_id}/reserve_handle
 		/// </summary>
-		/// <param name="article_id">Article unique identifier</param>
+		/// <param name="article_id">Article unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<ArticleHandle> Private_article_reserve_handleAsync(long article_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5933,7 +5959,9 @@ namespace MyNS
 		/// Edit article resource data.
 		/// Private_article_resource account/articles/{article_id}/resource
 		/// </summary>
-		/// <param name="article_id">Article unique identifier</param>
+		/// <param name="article_id">Article unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <param name="requestBody">Resource data</param>
 		public async Task Private_article_resourceAsync(long article_id, Resource requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5969,8 +5997,12 @@ namespace MyNS
 		/// Updating an article version by passing body parameters; request can also be made with the PATCH method.
 		/// Article_version_update account/articles/{article_id}/versions/{version_id}/
 		/// </summary>
-		/// <param name="article_id">Article unique identifier</param>
-		/// <param name="version_id">Article version identifier</param>
+		/// <param name="article_id">Article unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="version_id">Article version identifier
+		/// Minimum: 1
+		// </param>
 		/// <param name="requestBody">Article description</param>
 		public async Task Article_version_updateAsync(long article_id, long version_id, ArticleUpdate requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6006,8 +6038,12 @@ namespace MyNS
 		/// For a given public article version update the article thumbnail by choosing one of the associated files
 		/// Article_version_update_thumb account/articles/{article_id}/versions/{version_id}/update_thumb
 		/// </summary>
-		/// <param name="article_id">Article unique identifier</param>
-		/// <param name="version_id">Article version identifier</param>
+		/// <param name="article_id">Article unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="version_id">Article version identifier
+		/// Minimum: 1
+		// </param>
 		/// <param name="requestBody">File ID</param>
 		public async Task Article_version_update_thumbAsync(long article_id, long version_id, FileId requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6153,10 +6189,22 @@ namespace MyNS
 		/// List private collections
 		/// Private_collections_list account/collections
 		/// </summary>
-		/// <param name="page">Page number. Used for pagination with page_size</param>
-		/// <param name="page_size">The number of results included on a page. Used for pagination with page</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="page">Page number. Used for pagination with page_size
+		/// Minimum: 1
+		/// Maximum: 5000
+		// </param>
+		/// <param name="page_size">The number of results included on a page. Used for pagination with page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <param name="order">The field by which to order. Default varies by endpoint/resource.</param>
 		/// <returns>OK. An array of collections</returns>
 		public async Task<Collection[]> Private_collections_listAsync(long page, long page_size, long limit, long offset, CollectionSearchOrder order, CommonSearchOrder_direction order_direction, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6365,10 +6413,22 @@ namespace MyNS
 		/// List collection articles
 		/// Private_collection_articles_list account/collections/{collection_id}/articles
 		/// </summary>
-		/// <param name="page">Page number. Used for pagination with page_size</param>
-		/// <param name="page_size">The number of results included on a page. Used for pagination with page</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="page">Page number. Used for pagination with page_size
+		/// Minimum: 1
+		/// Maximum: 5000
+		// </param>
+		/// <param name="page_size">The number of results included on a page. Used for pagination with page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <returns>OK. Articles List</returns>
 		public async Task<Article[]> Private_collection_articles_listAsync(long page, long page_size, long limit, long offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6473,8 +6533,12 @@ namespace MyNS
 		/// De-associate article from collection
 		/// Private_collection_article_delete account/collections/{collection_id}/articles/{article_id}
 		/// </summary>
-		/// <param name="collection_id">Collection unique identifier</param>
-		/// <param name="article_id">Collection article unique identifier</param>
+		/// <param name="collection_id">Collection unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="article_id">Collection article unique identifier
+		/// Minimum: 1
+		// </param>
 		public async Task Private_collection_article_deleteAsync(long collection_id, long article_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/collections/"+collection_id+"/articles/"+article_id;
@@ -6606,8 +6670,12 @@ namespace MyNS
 		/// Delete collection author
 		/// Private_collection_author_delete account/collections/{collection_id}/authors/{author_id}
 		/// </summary>
-		/// <param name="collection_id">Collection unique identifier</param>
-		/// <param name="author_id">Collection Author unique identifier</param>
+		/// <param name="collection_id">Collection unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="author_id">Collection Author unique identifier
+		/// Minimum: 1
+		// </param>
 		public async Task Private_collection_author_deleteAsync(long collection_id, long author_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/collections/"+collection_id+"/authors/"+author_id;
@@ -6739,8 +6807,12 @@ namespace MyNS
 		/// De-associate category from collection
 		/// Private_collection_category_delete account/collections/{collection_id}/categories/{category_id}
 		/// </summary>
-		/// <param name="collection_id">Collection unique identifier</param>
-		/// <param name="category_id">Collection category unique identifier</param>
+		/// <param name="collection_id">Collection unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="category_id">Collection category unique identifier
+		/// Minimum: 1
+		// </param>
 		public async Task Private_collection_category_deleteAsync(long collection_id, long category_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/collections/"+collection_id+"/categories/"+category_id;
@@ -6897,7 +6969,9 @@ namespace MyNS
 		/// When a collection is published, a new public version will be generated. Any further updates to the collection will affect the private collection data. In order to make these changes publicly visible, an explicit publish operation is needed.
 		/// Private_collection_publish account/collections/{collection_id}/publish
 		/// </summary>
-		/// <param name="collection_id">Collection Unique identifier</param>
+		/// <param name="collection_id">Collection Unique identifier
+		/// Minimum: 1
+		// </param>
 		public async Task Private_collection_publishAsync(long collection_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/collections/"+collection_id+"/publish";
@@ -6920,7 +6994,9 @@ namespace MyNS
 		/// Reserve DOI for collection
 		/// Private_collection_reserve_doi account/collections/{collection_id}/reserve_doi
 		/// </summary>
-		/// <param name="collection_id">Collection Unique identifier</param>
+		/// <param name="collection_id">Collection Unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CollectionDOI> Private_collection_reserve_doiAsync(long collection_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6950,7 +7026,9 @@ namespace MyNS
 		/// Reserve Handle for collection
 		/// Private_collection_reserve_handle account/collections/{collection_id}/reserve_handle
 		/// </summary>
-		/// <param name="collection_id">Collection Unique identifier</param>
+		/// <param name="collection_id">Collection Unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<CollectionHandle> Private_collection_reserve_handleAsync(long collection_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6980,7 +7058,9 @@ namespace MyNS
 		/// Edit collection resource data.
 		/// Private_collection_resource account/collections/{collection_id}/resource
 		/// </summary>
-		/// <param name="collection_id">Collection unique identifier</param>
+		/// <param name="collection_id">Collection unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <param name="requestBody">Resource data</param>
 		public async Task Private_collection_resourceAsync(long collection_id, Resource requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7092,15 +7172,34 @@ namespace MyNS
 		/// Returns the accounts for which the account has administrative privileges (assigned and inherited).
 		/// Private_institution_accounts_list account/institution/accounts
 		/// </summary>
-		/// <param name="page">Page number. Used for pagination with page_size</param>
-		/// <param name="page_size">The number of results included on a page. Used for pagination with page</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
-		/// <param name="is_active">Filter by active status</param>
+		/// <param name="page">Page number. Used for pagination with page_size
+		/// Minimum: 1
+		/// Maximum: 5000
+		// </param>
+		/// <param name="page_size">The number of results included on a page. Used for pagination with page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
+		/// <param name="is_active">Filter by active status
+		/// Minimum: 0
+		/// Maximum: 1
+		// </param>
 		/// <param name="institution_user_id">Filter by institution_user_id</param>
 		/// <param name="email">Filter by email</param>
-		/// <param name="id_lte">Retrieve accounts with an ID lower or equal to the specified value</param>
-		/// <param name="id_gte">Retrieve accounts with an ID greater or equal to the specified value</param>
+		/// <param name="id_lte">Retrieve accounts with an ID lower or equal to the specified value
+		/// Minimum: 0
+		// </param>
+		/// <param name="id_gte">Retrieve accounts with an ID greater or equal to the specified value
+		/// Minimum: 0
+		// </param>
 		/// <returns>OK. An array of Accounts</returns>
 		public async Task<ShortAccount[]> Private_institution_accounts_listAsync(long page, long page_size, long limit, long offset, long is_active, string institution_user_id, string email, long id_lte, long id_gte, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7212,7 +7311,9 @@ namespace MyNS
 		/// Update Institution Account
 		/// Private_institution_accounts_update account/institution/accounts/{account_id}
 		/// </summary>
-		/// <param name="account_id">Account identifier the user is associated to</param>
+		/// <param name="account_id">Account identifier the user is associated to
+		/// Minimum: 1
+		// </param>
 		/// <param name="requestBody">Account description</param>
 		public async Task Private_institution_accounts_updateAsync(long account_id, AccountUpdate requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7248,10 +7349,22 @@ namespace MyNS
 		/// Get Articles from own institution. User must be administrator of the institution
 		/// Private_institution_articles account/institution/articles
 		/// </summary>
-		/// <param name="page">Page number. Used for pagination with page_size</param>
-		/// <param name="page_size">The number of results included on a page. Used for pagination with page</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="page">Page number. Used for pagination with page_size
+		/// Minimum: 1
+		/// Maximum: 5000
+		// </param>
+		/// <param name="page_size">The number of results included on a page. Used for pagination with page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <param name="order">The field by which to order. Default varies by endpoint/resource.</param>
 		/// <param name="published_since">Filter by article publishing date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD</param>
 		/// <param name="modified_since">Filter by article modified date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD</param>
@@ -7395,7 +7508,9 @@ namespace MyNS
 		/// Account institution group embargo options details
 		/// Private_group_embargo_options_details account/institution/groups/{group_id}/embargo_options
 		/// </summary>
-		/// <param name="group_id">Group identifier</param>
+		/// <param name="group_id">Group identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. An array of embargo options</returns>
 		public async Task<GroupEmbargoOptions[]> Private_group_embargo_options_detailsAsync(long group_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7464,8 +7579,14 @@ namespace MyNS
 		/// Retrieve a certain curation review's comments.
 		/// Account_institution_curation_comments account/institution/review/{curation_id}/comments
 		/// </summary>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <returns>OK. A curation review's comments.</returns>
 		public async Task<CurationComment> Account_institution_curation_commentsAsync(long limit, long offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7536,11 +7657,21 @@ namespace MyNS
 		/// Retrieve a list of curation reviews for this institution
 		/// Account_institution_curations account/institution/reviews
 		/// </summary>
-		/// <param name="group_id">Filter by the group ID</param>
-		/// <param name="article_id">Retrieve the reviews for this article</param>
+		/// <param name="group_id">Filter by the group ID
+		/// Minimum: 0
+		// </param>
+		/// <param name="article_id">Retrieve the reviews for this article
+		/// Minimum: 0
+		// </param>
 		/// <param name="status">Filter by the status of the review</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <returns>OK. A list of curation reviews.</returns>
 		public async Task<Curation> Account_institution_curationsAsync(long group_id, long article_id, CurationStatus status, long limit, long offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7678,9 +7809,15 @@ namespace MyNS
 		/// Delete Institution Account Group Role
 		/// Private_institution_account_group_role_delete account/institution/roles/{account_id}/{group_id}/{role_id}
 		/// </summary>
-		/// <param name="account_id">Account identifier for which to remove the role</param>
-		/// <param name="group_id">Group identifier for which to remove the role</param>
-		/// <param name="role_id">Role identifier</param>
+		/// <param name="account_id">Account identifier for which to remove the role
+		/// Minimum: 1
+		// </param>
+		/// <param name="group_id">Group identifier for which to remove the role
+		/// Minimum: 1
+		// </param>
+		/// <param name="role_id">Role identifier
+		/// Minimum: 1
+		// </param>
 		public async Task Private_institution_account_group_role_deleteAsync(long account_id, long group_id, long role_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/institution/roles/"+account_id+"/"+group_id+"/"+role_id;
@@ -7708,7 +7845,9 @@ namespace MyNS
 		/// Retrieve institution user information using the account_id
 		/// Private_account_institution_user account/institution/users/{account_id}
 		/// </summary>
-		/// <param name="account_id">Account identifier the user is associated to</param>
+		/// <param name="account_id">Account identifier the user is associated to
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. User representation</returns>
 		public async Task<User> Private_account_institution_userAsync(long account_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7777,10 +7916,22 @@ namespace MyNS
 		/// List private projects
 		/// Private_projects_list account/projects
 		/// </summary>
-		/// <param name="page">Page number. Used for pagination with page_size</param>
-		/// <param name="page_size">The number of results included on a page. Used for pagination with page</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="page">Page number. Used for pagination with page_size
+		/// Minimum: 1
+		/// Maximum: 5000
+		// </param>
+		/// <param name="page_size">The number of results included on a page. Used for pagination with page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <param name="order">The field by which to order.</param>
 		/// <param name="storage">only return collections from this institution</param>
 		/// <param name="roles">Any combination of owner, collaborator, viewer separated by comma. Examples: "owner" or "owner,collaborator".</param>
@@ -8126,8 +8277,12 @@ namespace MyNS
 		/// List article files
 		/// Private_project_article_files account/projects/{project_id}/articles/{article_id}/files
 		/// </summary>
-		/// <param name="project_id">Project unique identifier</param>
-		/// <param name="article_id">Project Article unique identifier</param>
+		/// <param name="project_id">Project unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="article_id">Project Article unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. List of files</returns>
 		public async Task<PrivateFile[]> Private_project_article_filesAsync(long project_id, long article_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8162,9 +8317,15 @@ namespace MyNS
 		/// Project article file details
 		/// Private_project_article_file account/projects/{project_id}/articles/{article_id}/files/{file_id}
 		/// </summary>
-		/// <param name="project_id">Project unique identifier</param>
-		/// <param name="article_id">Project Article unique identifier</param>
-		/// <param name="file_id">File unique identifier</param>
+		/// <param name="project_id">Project unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="article_id">Project Article unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="file_id">File unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. File representation</returns>
 		public async Task<PrivateFile> Private_project_article_fileAsync(long project_id, long article_id, long file_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8268,8 +8429,12 @@ namespace MyNS
 		/// Remove project collaborator
 		/// Private_project_collaborator__Delete account/projects/{project_id}/collaborators/{user_id}
 		/// </summary>
-		/// <param name="project_id">Project unique identifier</param>
-		/// <param name="user_id">User unique identifier</param>
+		/// <param name="project_id">Project unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="user_id">User unique identifier
+		/// Minimum: 1
+		// </param>
 		public async Task Private_project_collaborator__DeleteAsync(long project_id, long user_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/projects/"+project_id+"/collaborators/"+user_id;
@@ -8297,7 +8462,9 @@ namespace MyNS
 		/// Please note: project's owner cannot leave the project.
 		/// Private_project_leave account/projects/{project_id}/leave
 		/// </summary>
-		/// <param name="project_id">Project unique identifier</param>
+		/// <param name="project_id">Project unique identifier
+		/// Minimum: 1
+		// </param>
 		public async Task Private_project_leaveAsync(long project_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "account/projects/"+project_id+"/leave";
@@ -8320,10 +8487,22 @@ namespace MyNS
 		/// List project notes
 		/// Private_project_notes_list account/projects/{project_id}/notes
 		/// </summary>
-		/// <param name="page">Page number. Used for pagination with page_size</param>
-		/// <param name="page_size">The number of results included on a page. Used for pagination with page</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="page">Page number. Used for pagination with page_size
+		/// Minimum: 1
+		/// Maximum: 5000
+		// </param>
+		/// <param name="page_size">The number of results included on a page. Used for pagination with page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <returns>OK. List of project notes</returns>
 		public async Task<ProjectNote[]> Private_project_notes_listAsync(long page, long page_size, long limit, long offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8486,7 +8665,9 @@ namespace MyNS
 		/// Publish a project. Possible after all items inside it are public
 		/// Private_project_publish account/projects/{project_id}/publish
 		/// </summary>
-		/// <param name="project_id">Project unique identifier</param>
+		/// <param name="project_id">Project unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<ResponseMessage> Private_project_publishAsync(long project_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8516,10 +8697,22 @@ namespace MyNS
 		/// Returns a list of public articles
 		/// Articles_list articles
 		/// </summary>
-		/// <param name="page">Page number. Used for pagination with page_size</param>
-		/// <param name="page_size">The number of results included on a page. Used for pagination with page</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="page">Page number. Used for pagination with page_size
+		/// Minimum: 1
+		/// Maximum: 5000
+		// </param>
+		/// <param name="page_size">The number of results included on a page. Used for pagination with page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <param name="order">The field by which to order. Default varies by endpoint/resource.</param>
 		/// <param name="institution">only return articles from this institution</param>
 		/// <param name="published_since">Filter by article publishing date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD</param>
@@ -8605,7 +8798,9 @@ namespace MyNS
 		/// View an article
 		/// Article_details articles/{article_id}
 		/// </summary>
-		/// <param name="article_id">Article Unique identifier</param>
+		/// <param name="article_id">Article Unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. Article representation</returns>
 		public async Task<ArticleComplete> Article_detailsAsync(long article_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8640,7 +8835,9 @@ namespace MyNS
 		/// Files list for article
 		/// Article_files articles/{article_id}/files
 		/// </summary>
-		/// <param name="article_id">Article Unique identifier</param>
+		/// <param name="article_id">Article Unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. List of article files</returns>
 		public async Task<PublicFile[]> Article_filesAsync(long article_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8675,8 +8872,12 @@ namespace MyNS
 		/// File by id
 		/// Article_file_details articles/{article_id}/files/{file_id}
 		/// </summary>
-		/// <param name="article_id">Article Unique identifier</param>
-		/// <param name="file_id">File Unique identifier</param>
+		/// <param name="article_id">Article Unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="file_id">File Unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. File representation</returns>
 		public async Task<PublicFile> Article_file_detailsAsync(long article_id, long file_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8711,7 +8912,9 @@ namespace MyNS
 		/// List public article versions
 		/// Article_versions articles/{article_id}/versions
 		/// </summary>
-		/// <param name="article_id">Article Unique identifier</param>
+		/// <param name="article_id">Article Unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. Article version representations</returns>
 		public async Task<ArticleVersions[]> Article_versionsAsync(long article_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8746,8 +8949,12 @@ namespace MyNS
 		/// Article with specified version
 		/// Article_version_details articles/{article_id}/versions/{v_number}
 		/// </summary>
-		/// <param name="article_id">Article Unique identifier</param>
-		/// <param name="v_number">Article Version Number</param>
+		/// <param name="article_id">Article Unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="v_number">Article Version Number
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. Article representation</returns>
 		public async Task<ArticleComplete> Article_version_detailsAsync(long article_id, long v_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8782,8 +8989,12 @@ namespace MyNS
 		/// Confidentiality for article version. The confidentiality feature is now deprecated. This has been replaced by the new extended embargo functionality and all items that used to be confidential have now been migrated to items with a permanent embargo on files. All API endpoints related to this functionality will remain for backwards compatibility, but will now be attached to the new extended embargo workflows.
 		/// Article_version_confidentiality articles/{article_id}/versions/{v_number}/confidentiality
 		/// </summary>
-		/// <param name="article_id">Article Unique identifier</param>
-		/// <param name="v_number">Version Number</param>
+		/// <param name="article_id">Article Unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="v_number">Version Number
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. Confidentiality representation</returns>
 		public async Task<ArticleConfidentiality> Article_version_confidentialityAsync(long article_id, long v_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8818,8 +9029,12 @@ namespace MyNS
 		/// Embargo for article version
 		/// Article_version_embargo articles/{article_id}/versions/{v_number}/embargo
 		/// </summary>
-		/// <param name="article_id">Article Unique identifier</param>
-		/// <param name="v_number">Version Number</param>
+		/// <param name="article_id">Article Unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="v_number">Version Number
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. Embargo representation</returns>
 		public async Task<ArticleEmbargo> Article_version_embargoAsync(long article_id, long v_number, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -8888,10 +9103,22 @@ namespace MyNS
 		/// Returns a list of public collections
 		/// Collections_list collections
 		/// </summary>
-		/// <param name="page">Page number. Used for pagination with page_size</param>
-		/// <param name="page_size">The number of results included on a page. Used for pagination with page</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="page">Page number. Used for pagination with page_size
+		/// Minimum: 1
+		/// Maximum: 5000
+		// </param>
+		/// <param name="page_size">The number of results included on a page. Used for pagination with page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <param name="order">The field by which to order. Default varies by endpoint/resource.</param>
 		/// <param name="institution">only return collections from this institution</param>
 		/// <param name="published_since">Filter by collection publishing date. Will only return collections published after the date. date(ISO 8601) YYYY-MM-DD</param>
@@ -8976,7 +9203,9 @@ namespace MyNS
 		/// View a collection
 		/// Collection_details collections/{collection_id}
 		/// </summary>
-		/// <param name="collection_id">Collection Unique identifier</param>
+		/// <param name="collection_id">Collection Unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. Collection representation</returns>
 		public async Task<CollectionComplete> Collection_detailsAsync(long collection_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9011,11 +9240,25 @@ namespace MyNS
 		/// Returns a list of public collection articles
 		/// Collection_articles collections/{collection_id}/articles
 		/// </summary>
-		/// <param name="collection_id">Collection Unique identifier</param>
-		/// <param name="page">Page number. Used for pagination with page_size</param>
-		/// <param name="page_size">The number of results included on a page. Used for pagination with page</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="collection_id">Collection Unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="page">Page number. Used for pagination with page_size
+		/// Minimum: 1
+		/// Maximum: 5000
+		// </param>
+		/// <param name="page_size">The number of results included on a page. Used for pagination with page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <returns>OK. An array of articles belonging to the collection</returns>
 		public async Task<Article[]> Collection_articlesAsync(long collection_id, long page, long page_size, long limit, long offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9050,7 +9293,9 @@ namespace MyNS
 		/// Returns a list of public collection Versions
 		/// Collection_versions collections/{collection_id}/versions
 		/// </summary>
-		/// <param name="collection_id">Collection Unique identifier</param>
+		/// <param name="collection_id">Collection Unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. An array of versions</returns>
 		public async Task<CollectionVersions[]> Collection_versionsAsync(long collection_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9085,8 +9330,12 @@ namespace MyNS
 		/// View details for a certain version of a collection
 		/// Collection_version_details collections/{collection_id}/versions/{version_id}
 		/// </summary>
-		/// <param name="collection_id">Collection Unique identifier</param>
-		/// <param name="version_id">Version Number</param>
+		/// <param name="collection_id">Collection Unique identifier
+		/// Minimum: 1
+		// </param>
+		/// <param name="version_id">Version Number
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. Collection for that version</returns>
 		public async Task<CollectionComplete> Collection_version_detailsAsync(long collection_id, long version_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9121,6 +9370,7 @@ namespace MyNS
 		/// Starts the download of a file
 		/// File_download file/download/{file_id}
 		/// </summary>
+		/// <param name="file_id">Minimum: 1</param>
 		/// <returns>OK</returns>
 		public async Task File_downloadAsync(long file_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9183,7 +9433,9 @@ namespace MyNS
 		/// Returns the list of Item Types of the requested group. If no user is authenticated, returns the item types available for Figshare.
 		/// Item_types_list item_types
 		/// </summary>
-		/// <param name="group_id">Identifier of the group for which the item types are requested</param>
+		/// <param name="group_id">Identifier of the group for which the item types are requested
+		/// Minimum: 0
+		// </param>
 		/// <returns>OK. An array of item types</returns>
 		public async Task<ItemType[]> Item_types_listAsync(long group_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9252,10 +9504,22 @@ namespace MyNS
 		/// Returns a list of public projects
 		/// Projects_list projects
 		/// </summary>
-		/// <param name="page">Page number. Used for pagination with page_size</param>
-		/// <param name="page_size">The number of results included on a page. Used for pagination with page</param>
-		/// <param name="limit">Number of results included on a page. Used for pagination with query</param>
-		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit</param>
+		/// <param name="page">Page number. Used for pagination with page_size
+		/// Minimum: 1
+		/// Maximum: 5000
+		// </param>
+		/// <param name="page_size">The number of results included on a page. Used for pagination with page
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="limit">Number of results included on a page. Used for pagination with query
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="offset">Where to start the listing(the offset of the first result). Used for pagination with limit
+		/// Minimum: 0
+		/// Maximum: 5000
+		// </param>
 		/// <param name="order">The field by which to order. Default varies by endpoint/resource.</param>
 		/// <param name="institution">only return collections from this institution</param>
 		/// <param name="published_since">Filter by article publishing date. Will only return articles published after the date. date(ISO 8601) YYYY-MM-DD</param>
@@ -9336,7 +9600,9 @@ namespace MyNS
 		/// View a project
 		/// Project_details projects/{project_id}
 		/// </summary>
-		/// <param name="project_id">Project Unique identifier</param>
+		/// <param name="project_id">Project Unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. Project representation</returns>
 		public async Task<ProjectComplete> Project_detailsAsync(long project_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -9371,7 +9637,9 @@ namespace MyNS
 		/// List articles in project
 		/// Project_articles projects/{project_id}/articles
 		/// </summary>
-		/// <param name="project_id">Project Unique identifier</param>
+		/// <param name="project_id">Project Unique identifier
+		/// Minimum: 1
+		// </param>
 		/// <returns>OK. Project articles list</returns>
 		public async Task<Article[]> Project_articlesAsync(long project_id, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

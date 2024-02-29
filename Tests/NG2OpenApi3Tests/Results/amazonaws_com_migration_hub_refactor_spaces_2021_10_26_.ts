@@ -1694,6 +1694,7 @@ export namespace MyNS {
 		 * <p>Creates an Amazon Web Services Migration Hub Refactor Spaces application. The account that owns the environment also owns the applications created inside the environment, regardless of the account that creates the application. Refactor Spaces provisions an Amazon API Gateway, API Gateway VPC link, and Network Load Balancer for the application proxy inside your account.</p> <p>In environments created with a <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a> of <code>NONE</code> you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html"> VPC to VPC connectivity</a> between your service VPC and the application proxy VPC to route traffic through the application proxy to a service with a private URL endpoint. For more information, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/getting-started-create-application.html"> Create an application</a> in the <i>Refactor Spaces User Guide</i>. </p>
 		 * Post environments/{EnvironmentIdentifier}/applications
 		 * @param {string} EnvironmentIdentifier The unique identifier of the environment.
+		 *     Min length: 14    Max length: 14
 		 * @return {CreateApplicationResponse} Success
 		 */
 		CreateApplication(EnvironmentIdentifier: string, requestBody: CreateApplicationPostBody): Observable<CreateApplicationResponse> {
@@ -1704,8 +1705,11 @@ export namespace MyNS {
 		 * Lists all the Amazon Web Services Migration Hub Refactor Spaces applications within an environment.
 		 * Get environments/{EnvironmentIdentifier}/applications
 		 * @param {string} EnvironmentIdentifier The ID of the environment. 
+		 *     Min length: 14    Max length: 14
 		 * @param {number} maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListApplicationsResponse} Success
@@ -1727,7 +1731,9 @@ export namespace MyNS {
 		 * Lists Amazon Web Services Migration Hub Refactor Spaces environments owned by a caller account or shared with the caller account.
 		 * Get environments
 		 * @param {number} maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEnvironmentsResponse} Success
@@ -1740,7 +1746,9 @@ export namespace MyNS {
 		 * <p>Creates an Amazon Web Services Migration Hub Refactor Spaces route. The account owner of the service resource is always the environment owner, regardless of which account creates the route. Routes target a service in the application. If an application does not have any routes, then the first route must be created as a <code>DEFAULT</code> <code>RouteType</code>.</p> <p>When created, the default route defaults to an active state so state is not a required input. However, like all other state values the state of the default route can be updated after creation, but only when all other routes are also inactive. Conversely, no route can be active without the default route also being active.</p> <p>When you create a route, Refactor Spaces configures the Amazon API Gateway to send traffic to the target service as follows:</p> <ul> <li> <p> <b>URL Endpoints</b> </p> <p>If the service has a URL endpoint, and the endpoint resolves to a private IP address, Refactor Spaces routes traffic using the API Gateway VPC link. If a service endpoint resolves to a public IP address, Refactor Spaces routes traffic over the public internet. Services can have HTTP or HTTPS URL endpoints. For HTTPS URLs, publicly-signed certificates are supported. Private Certificate Authorities (CAs) are permitted only if the CA's domain is also publicly resolvable. </p> <p>Refactor Spaces automatically resolves the public Domain Name System (DNS) names that are set in <code>CreateService:UrlEndpoint </code>when you create a service. The DNS names resolve when the DNS time-to-live (TTL) expires, or every 60 seconds for TTLs less than 60 seconds. This periodic DNS resolution ensures that the route configuration remains up-to-date. </p> <p/> <p> <b>One-time health check</b> </p> <p>A one-time health check is performed on the service when either the route is updated from inactive to active, or when it is created with an active state. If the health check fails, the route transitions the route state to <code>FAILED</code>, an error code of <code>SERVICE_ENDPOINT_HEALTH_CHECK_FAILURE</code> is provided, and no traffic is sent to the service.</p> <p>For private URLs, a target group is created on the Network Load Balancer and the load balancer target group runs default target health checks. By default, the health check is run against the service endpoint URL. Optionally, the health check can be performed against a different protocol, port, and/or path using the <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateService.html#migrationhubrefactorspaces-CreateService-request-UrlEndpoint">CreateService:UrlEndpoint</a> parameter. All other health check settings for the load balancer use the default values described in the <a href="https://docs.aws.amazon.com/elasticloadbalancing/latest/application/target-group-health-checks.html">Health checks for your target groups</a> in the <i>Elastic Load Balancing guide</i>. The health check is considered successful if at least one target within the target group transitions to a healthy state.</p> <p/> </li> <li> <p> <b>Lambda function endpoints</b> </p> <p>If the service has an Lambda function endpoint, then Refactor Spaces configures the Lambda function's resource policy to allow the application's API Gateway to invoke the function.</p> <p>The Lambda function state is checked. If the function is not active, the function configuration is updated so that Lambda resources are provisioned. If the Lambda state is <code>Failed</code>, then the route creation fails. For more information, see the <a href="https://docs.aws.amazon.com/lambda/latest/dg/API_GetFunctionConfiguration.html#SSS-GetFunctionConfiguration-response-State">GetFunctionConfiguration's State response parameter</a> in the <i>Lambda Developer Guide</i>.</p> <p>A check is performed to determine that a Lambda function with the specified ARN exists. If it does not exist, the health check fails. For public URLs, a connection is opened to the public endpoint. If the URL is not reachable, the health check fails. </p> </li> </ul> <p> <b>Environments without a network bridge</b> </p> <p>When you create environments without a network bridge (<a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/APIReference/API_CreateEnvironment.html#migrationhubrefactorspaces-CreateEnvironment-request-NetworkFabricType">CreateEnvironment:NetworkFabricType</a> is <code>NONE)</code> and you use your own networking infrastructure, you need to configure <a href="https://docs.aws.amazon.com/whitepapers/latest/aws-vpc-connectivity-options/amazon-vpc-to-amazon-vpc-connectivity-options.html">VPC to VPC connectivity</a> between your network and the application proxy VPC. Route creation from the application proxy to service endpoints will fail if your network is not configured to connect to the application proxy VPC. For more information, see <a href="https://docs.aws.amazon.com/migrationhub-refactor-spaces/latest/userguide/getting-started-create-role.html"> Create a route</a> in the <i>Refactor Spaces User Guide</i>.</p> <p/>
 		 * Post environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes
 		 * @param {string} ApplicationIdentifier The ID of the application within which the route is being created.
+		 *     Min length: 14    Max length: 14
 		 * @param {string} EnvironmentIdentifier The ID of the environment in which the route is created.
+		 *     Min length: 14    Max length: 14
 		 * @return {CreateRouteResponse} Success
 		 */
 		CreateRoute(ApplicationIdentifier: string, EnvironmentIdentifier: string, requestBody: CreateRoutePostBody): Observable<CreateRouteResponse> {
@@ -1751,9 +1759,13 @@ export namespace MyNS {
 		 * Lists all the Amazon Web Services Migration Hub Refactor Spaces routes within an application.
 		 * Get environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes
 		 * @param {string} ApplicationIdentifier The ID of the application. 
+		 *     Min length: 14    Max length: 14
 		 * @param {string} EnvironmentIdentifier The ID of the environment. 
+		 *     Min length: 14    Max length: 14
 		 * @param {number} maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListRoutesResponse} Success
@@ -1766,7 +1778,9 @@ export namespace MyNS {
 		 * <p>Creates an Amazon Web Services Migration Hub Refactor Spaces service. The account owner of the service is always the environment owner, regardless of which account in the environment creates the service. Services have either a URL endpoint in a virtual private cloud (VPC), or a Lambda function endpoint.</p> <important> <p>If an Amazon Web Services resource is launched in a service VPC, and you want it to be accessible to all of an environment’s services with VPCs and routes, apply the <code>RefactorSpacesSecurityGroup</code> to the resource. Alternatively, to add more cross-account constraints, apply your own security group.</p> </important>
 		 * Post environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services
 		 * @param {string} ApplicationIdentifier The ID of the application which the service is created.
+		 *     Min length: 14    Max length: 14
 		 * @param {string} EnvironmentIdentifier The ID of the environment in which the service is created.
+		 *     Min length: 14    Max length: 14
 		 * @return {CreateServiceResponse} Success
 		 */
 		CreateService(ApplicationIdentifier: string, EnvironmentIdentifier: string, requestBody: CreateServicePostBody): Observable<CreateServiceResponse> {
@@ -1777,9 +1791,13 @@ export namespace MyNS {
 		 * Lists all the Amazon Web Services Migration Hub Refactor Spaces services within an application.
 		 * Get environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services
 		 * @param {string} ApplicationIdentifier The ID of the application. 
+		 *     Min length: 14    Max length: 14
 		 * @param {string} EnvironmentIdentifier The ID of the environment. 
+		 *     Min length: 14    Max length: 14
 		 * @param {number} maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListServicesResponse} Success
@@ -1792,7 +1810,9 @@ export namespace MyNS {
 		 * Deletes an Amazon Web Services Migration Hub Refactor Spaces application. Before you can delete an application, you must first delete any services or routes within the application.
 		 * Delete environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}
 		 * @param {string} ApplicationIdentifier The ID of the application.
+		 *     Min length: 14    Max length: 14
 		 * @param {string} EnvironmentIdentifier The ID of the environment. 
+		 *     Min length: 14    Max length: 14
 		 * @return {DeleteApplicationResponse} Success
 		 */
 		DeleteApplication(ApplicationIdentifier: string, EnvironmentIdentifier: string): Observable<DeleteApplicationResponse> {
@@ -1803,7 +1823,9 @@ export namespace MyNS {
 		 * Gets an Amazon Web Services Migration Hub Refactor Spaces application.
 		 * Get environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}
 		 * @param {string} ApplicationIdentifier The ID of the application.
+		 *     Min length: 14    Max length: 14
 		 * @param {string} EnvironmentIdentifier The ID of the environment. 
+		 *     Min length: 14    Max length: 14
 		 * @return {GetApplicationResponse} Success
 		 */
 		GetApplication(ApplicationIdentifier: string, EnvironmentIdentifier: string): Observable<GetApplicationResponse> {
@@ -1814,6 +1836,7 @@ export namespace MyNS {
 		 * Deletes an Amazon Web Services Migration Hub Refactor Spaces environment. Before you can delete an environment, you must first delete any applications and services within the environment.
 		 * Delete environments/{EnvironmentIdentifier}
 		 * @param {string} EnvironmentIdentifier The ID of the environment. 
+		 *     Min length: 14    Max length: 14
 		 * @return {DeleteEnvironmentResponse} Success
 		 */
 		DeleteEnvironment(EnvironmentIdentifier: string): Observable<DeleteEnvironmentResponse> {
@@ -1824,6 +1847,7 @@ export namespace MyNS {
 		 * Gets an Amazon Web Services Migration Hub Refactor Spaces environment.
 		 * Get environments/{EnvironmentIdentifier}
 		 * @param {string} EnvironmentIdentifier The ID of the environment.
+		 *     Min length: 14    Max length: 14
 		 * @return {GetEnvironmentResponse} Success
 		 */
 		GetEnvironment(EnvironmentIdentifier: string): Observable<GetEnvironmentResponse> {
@@ -1834,6 +1858,7 @@ export namespace MyNS {
 		 * Deletes the resource policy set for the environment.
 		 * Delete resourcepolicy/{Identifier}
 		 * @param {string} Identifier Amazon Resource Name (ARN) of the resource associated with the policy. 
+		 *     Min length: 20    Max length: 2048
 		 * @return {DeleteResourcePolicyResponse} Success
 		 */
 		DeleteResourcePolicy(Identifier: string): Observable<DeleteResourcePolicyResponse> {
@@ -1844,6 +1869,7 @@ export namespace MyNS {
 		 * Gets the resource-based permission policy that is set for the given environment.
 		 * Get resourcepolicy/{Identifier}
 		 * @param {string} Identifier The Amazon Resource Name (ARN) of the resource associated with the policy. 
+		 *     Min length: 20    Max length: 2048
 		 * @return {GetResourcePolicyResponse} Success
 		 */
 		GetResourcePolicy(Identifier: string): Observable<GetResourcePolicyResponse> {
@@ -1854,8 +1880,11 @@ export namespace MyNS {
 		 * Deletes an Amazon Web Services Migration Hub Refactor Spaces route.
 		 * Delete environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}
 		 * @param {string} ApplicationIdentifier The ID of the application to delete the route from.
+		 *     Min length: 14    Max length: 14
 		 * @param {string} EnvironmentIdentifier The ID of the environment to delete the route from.
+		 *     Min length: 14    Max length: 14
 		 * @param {string} RouteIdentifier The ID of the route to delete.
+		 *     Min length: 14    Max length: 14
 		 * @return {DeleteRouteResponse} Success
 		 */
 		DeleteRoute(ApplicationIdentifier: string, EnvironmentIdentifier: string, RouteIdentifier: string): Observable<DeleteRouteResponse> {
@@ -1866,8 +1895,11 @@ export namespace MyNS {
 		 * Gets an Amazon Web Services Migration Hub Refactor Spaces route.
 		 * Get environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}
 		 * @param {string} ApplicationIdentifier The ID of the application. 
+		 *     Min length: 14    Max length: 14
 		 * @param {string} EnvironmentIdentifier The ID of the environment.
+		 *     Min length: 14    Max length: 14
 		 * @param {string} RouteIdentifier The ID of the route.
+		 *     Min length: 14    Max length: 14
 		 * @return {GetRouteResponse} Success
 		 */
 		GetRoute(ApplicationIdentifier: string, EnvironmentIdentifier: string, RouteIdentifier: string): Observable<GetRouteResponse> {
@@ -1878,8 +1910,11 @@ export namespace MyNS {
 		 * Updates an Amazon Web Services Migration Hub Refactor Spaces route.
 		 * Patch environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/routes/{RouteIdentifier}
 		 * @param {string} ApplicationIdentifier  The ID of the application within which the route is being updated. 
+		 *     Min length: 14    Max length: 14
 		 * @param {string} EnvironmentIdentifier  The ID of the environment in which the route is being updated. 
+		 *     Min length: 14    Max length: 14
 		 * @param {string} RouteIdentifier  The unique identifier of the route to update. 
+		 *     Min length: 14    Max length: 14
 		 * @return {UpdateRouteResponse} Success
 		 */
 		UpdateRoute(ApplicationIdentifier: string, EnvironmentIdentifier: string, RouteIdentifier: string, requestBody: UpdateRoutePatchBody): Observable<UpdateRouteResponse> {
@@ -1890,8 +1925,11 @@ export namespace MyNS {
 		 * Deletes an Amazon Web Services Migration Hub Refactor Spaces service.
 		 * Delete environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services/{ServiceIdentifier}
 		 * @param {string} ApplicationIdentifier <p>Deletes a Refactor Spaces service.</p> <note> <p>The <code>RefactorSpacesSecurityGroup</code> security group must be removed from all Amazon Web Services resources in the virtual private cloud (VPC) prior to deleting a service with a URL endpoint in a VPC.</p> </note>
+		 *     Min length: 14    Max length: 14
 		 * @param {string} EnvironmentIdentifier The ID of the environment that the service is in.
+		 *     Min length: 14    Max length: 14
 		 * @param {string} ServiceIdentifier The ID of the service to delete.
+		 *     Min length: 14    Max length: 14
 		 * @return {DeleteServiceResponse} Success
 		 */
 		DeleteService(ApplicationIdentifier: string, EnvironmentIdentifier: string, ServiceIdentifier: string): Observable<DeleteServiceResponse> {
@@ -1902,8 +1940,11 @@ export namespace MyNS {
 		 * Gets an Amazon Web Services Migration Hub Refactor Spaces service.
 		 * Get environments/{EnvironmentIdentifier}/applications/{ApplicationIdentifier}/services/{ServiceIdentifier}
 		 * @param {string} ApplicationIdentifier The ID of the application.
+		 *     Min length: 14    Max length: 14
 		 * @param {string} EnvironmentIdentifier The ID of the environment.
+		 *     Min length: 14    Max length: 14
 		 * @param {string} ServiceIdentifier The ID of the service.
+		 *     Min length: 14    Max length: 14
 		 * @return {GetServiceResponse} Success
 		 */
 		GetService(ApplicationIdentifier: string, EnvironmentIdentifier: string, ServiceIdentifier: string): Observable<GetServiceResponse> {
@@ -1914,8 +1955,11 @@ export namespace MyNS {
 		 * Lists all Amazon Web Services Migration Hub Refactor Spaces service virtual private clouds (VPCs) that are part of the environment.
 		 * Get environments/{EnvironmentIdentifier}/vpcs
 		 * @param {string} EnvironmentIdentifier The ID of the environment. 
+		 *     Min length: 14    Max length: 14
 		 * @param {number} maxResults The maximum number of results to return with a single call. To retrieve the remaining results, make another call with the returned <code>nextToken</code> value.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEnvironmentVpcsResponse} Success
@@ -1972,16 +2016,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The name to use for the application.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		Name: string;
 
@@ -1997,8 +2041,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the virtual private cloud (VPC).
 		 * Required
-		 * Max length: 21
 		 * Min length: 12
+		 * Max length: 21
 		 */
 		VpcId: string;
 	}
@@ -2006,16 +2050,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The name to use for the application.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2031,8 +2075,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the virtual private cloud (VPC).
 		 * Required
-		 * Max length: 21
 		 * Min length: 12
+		 * Max length: 21
 		 */
 		VpcId: FormControl<string | null | undefined>,
 	}
@@ -2067,23 +2111,23 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The description of the environment.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
 		/**
 		 * The name of the environment.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		Name: string;
 
@@ -2100,23 +2144,23 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the environment.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the environment.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2144,8 +2188,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
@@ -2161,8 +2205,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		ServiceIdentifier: string;
 
@@ -2176,8 +2220,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
@@ -2190,8 +2234,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the service in which the route is created. Traffic that matches this route is forwarded to this service.
 		 * Required
-		 * Max length: 14
 		 * Min length: 14
+		 * Max length: 14
 		 */
 		ServiceIdentifier: FormControl<string | null | undefined>,
 
@@ -2248,15 +2292,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken?: string | null;
 
 		/**
 		 * The description of the service.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Description?: string | null;
 
@@ -2272,8 +2316,8 @@ export namespace MyNS {
 		/**
 		 * The name of the service.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		Name: string;
 
@@ -2285,8 +2329,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the VPC.
-		 * Max length: 21
 		 * Min length: 12
+		 * Max length: 21
 		 */
 		VpcId?: string | null;
 	}
@@ -2294,15 +2338,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		ClientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the service.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -2315,8 +2359,8 @@ export namespace MyNS {
 		/**
 		 * The name of the service.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -2325,8 +2369,8 @@ export namespace MyNS {
 
 		/**
 		 * The ID of the VPC.
-		 * Max length: 21
 		 * Min length: 12
+		 * Max length: 21
 		 */
 		VpcId: FormControl<string | null | undefined>,
 	}
@@ -2422,16 +2466,16 @@ export namespace MyNS {
 		/**
 		 * A JSON-formatted string for an Amazon Web Services resource-based policy.
 		 * Required
-		 * Max length: 300000
 		 * Min length: 1
+		 * Max length: 300000
 		 */
 		Policy: string;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ResourceArn: string;
 	}
@@ -2440,16 +2484,16 @@ export namespace MyNS {
 		/**
 		 * A JSON-formatted string for an Amazon Web Services resource-based policy.
 		 * Required
-		 * Max length: 300000
 		 * Min length: 1
+		 * Max length: 300000
 		 */
 		Policy: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the resource to which the policy is being attached.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		ResourceArn: FormControl<string | null | undefined>,
 	}

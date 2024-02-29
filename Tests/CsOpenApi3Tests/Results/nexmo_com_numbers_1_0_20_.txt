@@ -406,6 +406,9 @@ namespace MyNS
 		///to avoid filtering on whether or not the number is assigned to an
 		///Application.
 		///</param>
+		/// <param name="country">Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="pattern">The number pattern you want to search for. Use in conjunction with `search_pattern`.</param>
 		/// <param name="search_pattern">The strategy you want to use for matching:
 		///
@@ -414,7 +417,9 @@ namespace MyNS
 		///* `1` - Search for numbers that contain `pattern`
 		///* `2` - Search for numbers that end with `pattern`
 		///</param>
-		/// <param name="size">Page size</param>
+		/// <param name="size">Page size
+		/// Maximum: 100
+		// </param>
 		/// <param name="index">Page index</param>
 		/// <returns>OK</returns>
 		public async Task<Inbound_numbers> GetOwnedNumbersAsync(string application_id, bool has_application, string country, string pattern, GetOwnedNumbersSearch_pattern search_pattern, int size, int index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -450,7 +455,10 @@ namespace MyNS
 		/// Retrieve inbound numbers that are available for the specified country.
 		/// GetAvailableNumbers number/search
 		/// </summary>
-		/// <param name="country">The two character country code to filter on (in ISO 3166-1 alpha-2 format)</param>
+		/// <param name="country">The two character country code to filter on (in ISO 3166-1 alpha-2 format)
+		/// Max length: 2
+		/// Min length: 2
+		// </param>
 		/// <param name="type">Set this parameter to filter the type of number, such as mobile or landline</param>
 		/// <param name="pattern">The number pattern you want to search for. Use in conjunction with `search_pattern`.</param>
 		/// <param name="search_pattern">The strategy you want to use for matching:
@@ -461,7 +469,9 @@ namespace MyNS
 		///* `2` - Search for numbers that end with `pattern`
 		///</param>
 		/// <param name="features">Available features are `SMS`, `VOICE` and `MMS`. To look for numbers that support multiple features, use a comma-separated value: `SMS,MMS,VOICE`.</param>
-		/// <param name="size">Page size</param>
+		/// <param name="size">Page size
+		/// Maximum: 100
+		// </param>
 		/// <param name="index">Page index</param>
 		/// <returns>OK</returns>
 		public async Task<Available_numbers> GetAvailableNumbersAsync(string country, GetAvailableNumbersType type, string pattern, GetAvailableNumbersSearch_pattern search_pattern, GetAvailableNumbersFeatures features, int size, int index, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

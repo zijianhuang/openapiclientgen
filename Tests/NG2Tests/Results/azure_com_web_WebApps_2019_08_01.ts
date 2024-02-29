@@ -5586,6 +5586,7 @@ export namespace MyNS {
 		 * Description for Gets all web, mobile, and API apps in the specified resource group.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {boolean} includeSlots Specify <strong>true</strong> to include deployment slots in results. The default is false, which only gives you the production slot of all apps.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5600,6 +5601,7 @@ export namespace MyNS {
 		 * Description for Gets the details of a web, mobile, or API app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5614,6 +5616,7 @@ export namespace MyNS {
 		 * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Unique name of the app to create or update. To create or update a deployment slot, use the {slot} parameter.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5629,6 +5632,7 @@ export namespace MyNS {
 		 * Description for Deletes a web, mobile, or API app, or one of the deployment slots.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app to delete.
 		 * @param {boolean} deleteMetrics If true, web app metrics are also deleted.
 		 * @param {boolean} deleteEmptyServerFarm Specify false if you want to keep empty App Service plan. By default, empty App Service plan is deleted.
@@ -5645,6 +5649,7 @@ export namespace MyNS {
 		 * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Unique name of the app to create or update. To create or update a deployment slot, use the {slot} parameter.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5660,6 +5665,7 @@ export namespace MyNS {
 		 * Description for Analyze a custom hostname.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/analyzeCustomHostname
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} hostName Custom hostname.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -5675,6 +5681,7 @@ export namespace MyNS {
 		 * Description for Applies the configuration settings from the target slot onto the current slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/applySlotConfig
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5690,6 +5697,7 @@ export namespace MyNS {
 		 * Description for Creates a backup of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backup
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5705,6 +5713,7 @@ export namespace MyNS {
 		 * Description for Gets existing backups of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5719,6 +5728,7 @@ export namespace MyNS {
 		 * Description for Gets a backup of an app by its ID.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{backupId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} backupId ID of the backup.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -5734,6 +5744,7 @@ export namespace MyNS {
 		 * Description for Deletes a backup of an app by its ID.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{backupId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} backupId ID of the backup.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -5749,6 +5760,7 @@ export namespace MyNS {
 		 * Description for Gets status of a web app backup that may be in progress, including secrets associated with the backup, such as the Azure Storage SAS URL. Also can be used to update the SAS URL for the backup if a new URL is passed in the request body.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{backupId}/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} backupId ID of backup.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -5765,6 +5777,7 @@ export namespace MyNS {
 		 * Description for Restores a specific backup to another app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/backups/{backupId}/restore
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} backupId ID of the backup.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -5781,6 +5794,7 @@ export namespace MyNS {
 		 * Description for List the configurations of an app
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5795,6 +5809,7 @@ export namespace MyNS {
 		 * Description for Replaces the application settings of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/appsettings
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5810,6 +5825,7 @@ export namespace MyNS {
 		 * Description for Gets the application settings of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/appsettings/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5824,6 +5840,7 @@ export namespace MyNS {
 		 * Description for Updates the Authentication / Authorization settings associated with web app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/authsettings
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5839,6 +5856,7 @@ export namespace MyNS {
 		 * Description for Gets the Authentication/Authorization settings of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/authsettings/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5853,6 +5871,7 @@ export namespace MyNS {
 		 * Description for Updates the Azure storage account configurations of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/azurestorageaccounts
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5868,6 +5887,7 @@ export namespace MyNS {
 		 * Description for Gets the Azure storage account configurations of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/azurestorageaccounts/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5882,6 +5902,7 @@ export namespace MyNS {
 		 * Description for Updates the backup configuration of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/backup
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5897,6 +5918,7 @@ export namespace MyNS {
 		 * Description for Deletes the backup configuration of an app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/backup
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5911,6 +5933,7 @@ export namespace MyNS {
 		 * Description for Gets the backup configuration of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/backup/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5925,6 +5948,7 @@ export namespace MyNS {
 		 * Description for Gets the config reference app settings and status of an app
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/configreferences/appsettings
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5939,6 +5963,7 @@ export namespace MyNS {
 		 * Description for Gets the config reference and status of an app
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/configreferences/appsettings/{appSettingKey}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} appSettingKey App Setting key name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -5954,6 +5979,7 @@ export namespace MyNS {
 		 * Description for Replaces the connection strings of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/connectionstrings
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5969,6 +5995,7 @@ export namespace MyNS {
 		 * Description for Gets the connection strings of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/connectionstrings/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5983,6 +6010,7 @@ export namespace MyNS {
 		 * Description for Gets the logging configuration of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/logs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -5997,6 +6025,7 @@ export namespace MyNS {
 		 * Description for Updates the logging configuration of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/logs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6012,6 +6041,7 @@ export namespace MyNS {
 		 * Description for Replaces the metadata of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/metadata
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6027,6 +6057,7 @@ export namespace MyNS {
 		 * Description for Gets the metadata of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/metadata/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6041,6 +6072,7 @@ export namespace MyNS {
 		 * Description for Gets the Git/FTP publishing credentials of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/publishingcredentials/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6055,6 +6087,7 @@ export namespace MyNS {
 		 * Description for Updates the Push settings associated with web app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/pushsettings
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6070,6 +6103,7 @@ export namespace MyNS {
 		 * Description for Gets the Push settings associated with web app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/pushsettings/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6084,6 +6118,7 @@ export namespace MyNS {
 		 * Description for Gets the names of app settings and connection strings that stick to the slot (not swapped).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/slotConfigNames
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6098,6 +6133,7 @@ export namespace MyNS {
 		 * Description for Updates the names of application settings and connection string that remain with the slot during swap operation.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/slotConfigNames
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6113,6 +6149,7 @@ export namespace MyNS {
 		 * Description for Gets the configuration of an app, such as platform version and bitness, default documents, virtual applications, Always On, etc.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6127,6 +6164,7 @@ export namespace MyNS {
 		 * Description for Updates the configuration of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6142,6 +6180,7 @@ export namespace MyNS {
 		 * Description for Updates the configuration of an app.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6157,6 +6196,7 @@ export namespace MyNS {
 		 * Description for Gets a list of web app configuration snapshots identifiers. Each element of the list contains a timestamp and the ID of the snapshot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/web/snapshots
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6171,6 +6211,7 @@ export namespace MyNS {
 		 * Description for Gets a snapshot of the configuration of an app at a previous point in time.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/web/snapshots/{snapshotId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} snapshotId The ID of the snapshot to read.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6186,6 +6227,7 @@ export namespace MyNS {
 		 * Description for Reverts the configuration of an app to a previous snapshot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/config/web/snapshots/{snapshotId}/recover
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} snapshotId The ID of the snapshot to read.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6201,6 +6243,7 @@ export namespace MyNS {
 		 * Description for Gets the last lines of docker logs for the given site
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/containerlogs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6215,6 +6258,7 @@ export namespace MyNS {
 		 * Description for Gets the ZIP archived docker log files for the given site
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/containerlogs/zip/download
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6229,6 +6273,7 @@ export namespace MyNS {
 		 * Description for List continuous web jobs for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/continuouswebjobs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6243,6 +6288,7 @@ export namespace MyNS {
 		 * Description for Gets a continuous web job by its ID for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/continuouswebjobs/{webJobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6258,6 +6304,7 @@ export namespace MyNS {
 		 * Description for Delete a continuous web job by its ID for an app, or a deployment slot.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/continuouswebjobs/{webJobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6273,6 +6320,7 @@ export namespace MyNS {
 		 * Description for Start a continuous web job for an app, or a deployment slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/continuouswebjobs/{webJobName}/start
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6288,6 +6336,7 @@ export namespace MyNS {
 		 * Description for Stop a continuous web job for an app, or a deployment slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/continuouswebjobs/{webJobName}/stop
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6303,6 +6352,7 @@ export namespace MyNS {
 		 * Description for List deployments for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deployments
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6317,6 +6367,7 @@ export namespace MyNS {
 		 * Description for Get a deployment by its ID for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deployments/{id}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} id Deployment ID.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6332,6 +6383,7 @@ export namespace MyNS {
 		 * Description for Create a deployment for an app, or a deployment slot.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deployments/{id}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} id ID of an existing deployment.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6348,6 +6400,7 @@ export namespace MyNS {
 		 * Description for Delete a deployment by its ID for an app, or a deployment slot.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deployments/{id}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} id Deployment ID.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6363,6 +6416,7 @@ export namespace MyNS {
 		 * Description for List deployment log for specific deployment for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/deployments/{id}/log
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} id The ID of a specific deployment. This is the value of the name property in the JSON response from "GET /api/sites/{siteName}/deployments".
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6378,6 +6432,7 @@ export namespace MyNS {
 		 * Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information about the databases stored in a backup.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/discoverbackup
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6393,6 +6448,7 @@ export namespace MyNS {
 		 * Description for Lists ownership identifiers for domain associated with web app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/domainOwnershipIdentifiers
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6407,6 +6463,7 @@ export namespace MyNS {
 		 * Description for Get domain ownership identifier for web app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/domainOwnershipIdentifiers/{domainOwnershipIdentifierName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} domainOwnershipIdentifierName Name of domain ownership identifier.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6422,6 +6479,7 @@ export namespace MyNS {
 		 * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/domainOwnershipIdentifiers/{domainOwnershipIdentifierName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} domainOwnershipIdentifierName Name of domain ownership identifier.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6438,6 +6496,7 @@ export namespace MyNS {
 		 * Description for Deletes a domain ownership identifier for a web app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/domainOwnershipIdentifiers/{domainOwnershipIdentifierName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} domainOwnershipIdentifierName Name of domain ownership identifier.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6453,6 +6512,7 @@ export namespace MyNS {
 		 * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/domainOwnershipIdentifiers/{domainOwnershipIdentifierName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} domainOwnershipIdentifierName Name of domain ownership identifier.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6469,6 +6529,7 @@ export namespace MyNS {
 		 * Description for Get the status of the last MSDeploy operation.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/extensions/MSDeploy
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6483,6 +6544,7 @@ export namespace MyNS {
 		 * Description for Invoke the MSDeploy web app extension.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/extensions/MSDeploy
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6498,6 +6560,7 @@ export namespace MyNS {
 		 * Description for Get the MSDeploy Log for the last MSDeploy operation.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/extensions/MSDeploy/log
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6512,6 +6575,7 @@ export namespace MyNS {
 		 * Description for List the functions for a web site, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/functions
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6526,6 +6590,7 @@ export namespace MyNS {
 		 * Description for Fetch a short lived token that can be exchanged for a master key.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/functions/admin/token
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6540,6 +6605,7 @@ export namespace MyNS {
 		 * Description for Get function information by its ID for web site, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/functions/{functionName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName Function name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6555,6 +6621,7 @@ export namespace MyNS {
 		 * Description for Create function for web site, or a deployment slot.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/functions/{functionName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName Function name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6571,6 +6638,7 @@ export namespace MyNS {
 		 * Description for Delete a function for web site, or a deployment slot.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/functions/{functionName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName Function name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6586,6 +6654,7 @@ export namespace MyNS {
 		 * Description for Add or update a function secret.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/functions/{functionName}/keys/{keyName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName The name of the function.
 		 * @param {string} keyName The name of the key.
@@ -6603,6 +6672,7 @@ export namespace MyNS {
 		 * Description for Delete a function secret.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/functions/{functionName}/keys/{keyName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName The name of the function.
 		 * @param {string} keyName The name of the key.
@@ -6619,6 +6689,7 @@ export namespace MyNS {
 		 * Description for Get function keys for a function in a web site, or a deployment slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/functions/{functionName}/listkeys
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName Function name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6634,6 +6705,7 @@ export namespace MyNS {
 		 * Description for Get function secrets for a function in a web site, or a deployment slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/functions/{functionName}/listsecrets
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName Function name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6649,6 +6721,7 @@ export namespace MyNS {
 		 * Description for Get host secrets for a function app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/listkeys
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6663,6 +6736,7 @@ export namespace MyNS {
 		 * Description for This is to allow calling via powershell and ARM template.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/listsyncstatus
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6677,6 +6751,7 @@ export namespace MyNS {
 		 * Description for Syncs function trigger metadata to the management database
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/sync
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6691,6 +6766,7 @@ export namespace MyNS {
 		 * Description for Add or update a host level secret.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} keyType The type of host key.
 		 * @param {string} keyName The name of the key.
@@ -6708,6 +6784,7 @@ export namespace MyNS {
 		 * Description for Delete a host level secret.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/host/default/{keyType}/{keyName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} keyType The type of host key.
 		 * @param {string} keyName The name of the key.
@@ -6724,6 +6801,7 @@ export namespace MyNS {
 		 * Description for Get hostname bindings for an app or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hostNameBindings
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6738,6 +6816,7 @@ export namespace MyNS {
 		 * Description for Get the named hostname binding for an app (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hostNameBindings/{hostName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} hostName Hostname in the hostname binding.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6753,6 +6832,7 @@ export namespace MyNS {
 		 * Description for Creates a hostname binding for an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hostNameBindings/{hostName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} hostName Hostname in the hostname binding.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6769,6 +6849,7 @@ export namespace MyNS {
 		 * Description for Deletes a hostname binding for an app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hostNameBindings/{hostName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} hostName Hostname in the hostname binding.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6784,6 +6865,7 @@ export namespace MyNS {
 		 * Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} namespaceName The namespace for this hybrid connection.
 		 * @param {string} relayName The relay name for this hybrid connection.
@@ -6800,6 +6882,7 @@ export namespace MyNS {
 		 * Description for Creates a new Hybrid Connection using a Service Bus relay.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} namespaceName The namespace for this hybrid connection.
 		 * @param {string} relayName The relay name for this hybrid connection.
@@ -6817,6 +6900,7 @@ export namespace MyNS {
 		 * Description for Removes a Hybrid Connection from this site.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} namespaceName The namespace for this hybrid connection.
 		 * @param {string} relayName The relay name for this hybrid connection.
@@ -6833,6 +6917,7 @@ export namespace MyNS {
 		 * Description for Creates a new Hybrid Connection using a Service Bus relay.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} namespaceName The namespace for this hybrid connection.
 		 * @param {string} relayName The relay name for this hybrid connection.
@@ -6850,6 +6935,7 @@ export namespace MyNS {
 		 * Description for Retrieves all Service Bus Hybrid Connections used by this Web App.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hybridConnectionRelays
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6864,6 +6950,7 @@ export namespace MyNS {
 		 * Description for Gets hybrid connections configured for an app (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hybridconnection
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6878,6 +6965,7 @@ export namespace MyNS {
 		 * Description for Gets a hybrid connection configuration by its name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hybridconnection/{entityName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} entityName Name of the hybrid connection.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6893,6 +6981,7 @@ export namespace MyNS {
 		 * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hybridconnection/{entityName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} entityName Name of the hybrid connection configuration.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6909,6 +6998,7 @@ export namespace MyNS {
 		 * Description for Deletes a relay service connection by its name.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hybridconnection/{entityName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} entityName Name of the hybrid connection configuration.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6924,6 +7014,7 @@ export namespace MyNS {
 		 * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/hybridconnection/{entityName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} entityName Name of the hybrid connection configuration.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6940,6 +7031,7 @@ export namespace MyNS {
 		 * Description for Gets all scale-out instances of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6954,6 +7046,7 @@ export namespace MyNS {
 		 * Description for Gets all scale-out instances of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -6968,6 +7061,7 @@ export namespace MyNS {
 		 * Description for Get the status of the last MSDeploy operation.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/extensions/MSDeploy
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} instanceId ID of web app instance.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6983,6 +7077,7 @@ export namespace MyNS {
 		 * Description for Invoke the MSDeploy web app extension.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/extensions/MSDeploy
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} instanceId ID of web app instance.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -6999,6 +7094,7 @@ export namespace MyNS {
 		 * Description for Get the MSDeploy Log for the last MSDeploy operation.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/extensions/MSDeploy/log
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} instanceId ID of web app instance.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7014,6 +7110,7 @@ export namespace MyNS {
 		 * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/processes
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} instanceId ID of a specific scaled-out instance. This is the value of the name property in the JSON response from "GET api/sites/{siteName}/instances".
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7029,6 +7126,7 @@ export namespace MyNS {
 		 * Description for Get process information by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/processes/{processId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} instanceId ID of a specific scaled-out instance. This is the value of the name property in the JSON response from "GET api/sites/{siteName}/instances".
@@ -7045,6 +7143,7 @@ export namespace MyNS {
 		 * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web site.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/processes/{processId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} instanceId ID of a specific scaled-out instance. This is the value of the name property in the JSON response from "GET api/sites/{siteName}/instances".
@@ -7061,6 +7160,7 @@ export namespace MyNS {
 		 * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/processes/{processId}/dump
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} instanceId ID of a specific scaled-out instance. This is the value of the name property in the JSON response from "GET api/sites/{siteName}/instances".
@@ -7077,6 +7177,7 @@ export namespace MyNS {
 		 * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/processes/{processId}/modules
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} instanceId ID of a specific scaled-out instance. This is the value of the name property in the JSON response from "GET api/sites/{siteName}/instances".
@@ -7093,6 +7194,7 @@ export namespace MyNS {
 		 * Description for Get process information by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/processes/{processId}/modules/{baseAddress}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} baseAddress Module base address.
@@ -7110,6 +7212,7 @@ export namespace MyNS {
 		 * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/instances/{instanceId}/processes/{processId}/threads
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} instanceId ID of a specific scaled-out instance. This is the value of the name property in the JSON response from "GET api/sites/{siteName}/instances".
@@ -7126,6 +7229,7 @@ export namespace MyNS {
 		 * Description for Shows whether an app can be cloned to another resource group or subscription.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/iscloneable
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7140,6 +7244,7 @@ export namespace MyNS {
 		 * Description for Gets existing backups of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/listbackups
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7154,6 +7259,7 @@ export namespace MyNS {
 		 * Description for This is to allow calling via powershell and ARM template.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/listsyncfunctiontriggerstatus
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7169,6 +7275,7 @@ export namespace MyNS {
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/migrate
 		 * @param {string} subscriptionName Azure subscription.
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7184,6 +7291,7 @@ export namespace MyNS {
 		 * Description for Migrates a local (in-app) MySql database to a remote MySql database.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/migratemysql
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7199,6 +7307,7 @@ export namespace MyNS {
 		 * Description for Returns the status of MySql in app migration, if one is active, and whether or not MySql in app is enabled
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/migratemysql/status
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7213,6 +7322,7 @@ export namespace MyNS {
 		 * Description for Gets a Swift Virtual Network connection.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkConfig/virtualNetwork
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7229,6 +7339,7 @@ export namespace MyNS {
 		 * in use by another App Service Plan other than the one this App is in.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkConfig/virtualNetwork
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7244,6 +7355,7 @@ export namespace MyNS {
 		 * Description for Deletes a Swift Virtual Network connection from an app (or deployment slot).
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkConfig/virtualNetwork
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7260,6 +7372,7 @@ export namespace MyNS {
 		 * in use by another App Service Plan other than the one this App is in.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkConfig/virtualNetwork
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7275,6 +7388,7 @@ export namespace MyNS {
 		 * Description for Gets all network features used by the app (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkFeatures/{view}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} view The type of view. This can either be "summary" or "detailed".
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7290,6 +7404,7 @@ export namespace MyNS {
 		 * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/operationresults/{operationId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} operationId GUID of the operation.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7305,9 +7420,12 @@ export namespace MyNS {
 		 * Description for Start capturing network packets for the site (To be deprecated).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/start
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {number} durationInSeconds The duration to keep capturing in seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxFrameLength The maximum frame length in bytes (Optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sasUrl The Blob URL to store capture file.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7322,9 +7440,12 @@ export namespace MyNS {
 		 * Description for Start capturing network packets for the site.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/startOperation
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {number} durationInSeconds The duration to keep capturing in seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxFrameLength The maximum frame length in bytes (Optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sasUrl The Blob URL to store capture file.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7339,6 +7460,7 @@ export namespace MyNS {
 		 * Description for Stop ongoing capturing network packets for the site.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/stop
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7353,6 +7475,7 @@ export namespace MyNS {
 		 * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTrace/{operationId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} operationId GUID of the operation.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7368,6 +7491,7 @@ export namespace MyNS {
 		 * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTraces/current/operationresults/{operationId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} operationId GUID of the operation.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7383,6 +7507,7 @@ export namespace MyNS {
 		 * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/networkTraces/{operationId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} operationId GUID of the operation.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7398,6 +7523,7 @@ export namespace MyNS {
 		 * Description for Generates a new publishing password for an app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/newpassword
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7412,6 +7538,7 @@ export namespace MyNS {
 		 * Description for Gets perfmon counters for web app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/perfcounters
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7427,6 +7554,7 @@ export namespace MyNS {
 		 * Description for Gets web app's event logs.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/phplogging
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7441,6 +7569,7 @@ export namespace MyNS {
 		 * Description for Gets the premier add-ons of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/premieraddons
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7455,6 +7584,7 @@ export namespace MyNS {
 		 * Description for Gets a named add-on of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/premieraddons/{premierAddOnName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} premierAddOnName Add-on name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7470,6 +7600,7 @@ export namespace MyNS {
 		 * Description for Updates a named add-on of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/premieraddons/{premierAddOnName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} premierAddOnName Add-on name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7486,6 +7617,7 @@ export namespace MyNS {
 		 * Description for Delete a premier add-on from an app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/premieraddons/{premierAddOnName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} premierAddOnName Add-on name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7501,6 +7633,7 @@ export namespace MyNS {
 		 * Description for Updates a named add-on of an app.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/premieraddons/{premierAddOnName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} premierAddOnName Add-on name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7517,6 +7650,7 @@ export namespace MyNS {
 		 * Description for Gets data around private site access enablement and authorized Virtual Networks that can access the site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/privateAccess/virtualNetworks
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7531,6 +7665,7 @@ export namespace MyNS {
 		 * Description for Sets data around private site access enablement and authorized Virtual Networks that can access the site.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/privateAccess/virtualNetworks
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7546,6 +7681,7 @@ export namespace MyNS {
 		 * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/processes
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7560,6 +7696,7 @@ export namespace MyNS {
 		 * Description for Get process information by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/processes/{processId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7575,6 +7712,7 @@ export namespace MyNS {
 		 * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web site.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/processes/{processId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7590,6 +7728,7 @@ export namespace MyNS {
 		 * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/processes/{processId}/dump
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7605,6 +7744,7 @@ export namespace MyNS {
 		 * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/processes/{processId}/modules
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7620,6 +7760,7 @@ export namespace MyNS {
 		 * Description for Get process information by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/processes/{processId}/modules/{baseAddress}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} baseAddress Module base address.
@@ -7636,6 +7777,7 @@ export namespace MyNS {
 		 * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/processes/{processId}/threads
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7651,6 +7793,7 @@ export namespace MyNS {
 		 * Description for Get public certificates for an app or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/publicCertificates
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7665,6 +7808,7 @@ export namespace MyNS {
 		 * Description for Get the named public certificate for an app (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/publicCertificates/{publicCertificateName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} publicCertificateName Public certificate name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7680,6 +7824,7 @@ export namespace MyNS {
 		 * Description for Creates a hostname binding for an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/publicCertificates/{publicCertificateName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} publicCertificateName Public certificate name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7696,6 +7841,7 @@ export namespace MyNS {
 		 * Description for Deletes a hostname binding for an app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/publicCertificates/{publicCertificateName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} publicCertificateName Public certificate name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7711,6 +7857,7 @@ export namespace MyNS {
 		 * Description for Gets the publishing profile for an app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/publishxml
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7726,6 +7873,7 @@ export namespace MyNS {
 		 * Description for Resets the configuration settings of the current slot if they were previously modified by calling the API with POST.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/resetSlotConfig
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7740,6 +7888,7 @@ export namespace MyNS {
 		 * Description for Restarts an app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/restart
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {boolean} softRestart Specify true to apply the configuration settings and restarts the app only if necessary. By default, the API always restarts and reprovisions the app.
 		 * @param {boolean} synchronous Specify true to block until the app is restarted. By default, it is set to false, and the API responds immediately (asynchronous).
@@ -7756,6 +7905,7 @@ export namespace MyNS {
 		 * Description for Restores an app from a backup blob in Azure Storage.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/restoreFromBackupBlob
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7771,6 +7921,7 @@ export namespace MyNS {
 		 * Description for Restores a deleted web app to this web app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/restoreFromDeletedApp
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7786,6 +7937,7 @@ export namespace MyNS {
 		 * Description for Restores a web app from a snapshot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/restoreSnapshot
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7801,6 +7953,7 @@ export namespace MyNS {
 		 * Description for Get list of siteextensions for a web site, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/siteextensions
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7815,6 +7968,7 @@ export namespace MyNS {
 		 * Description for Get site extension information by its ID for a web site, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/siteextensions/{siteExtensionId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} siteExtensionId Site extension name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7830,6 +7984,7 @@ export namespace MyNS {
 		 * Description for Install site extension on a web site, or a deployment slot.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/siteextensions/{siteExtensionId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} siteExtensionId Site extension name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7845,6 +8000,7 @@ export namespace MyNS {
 		 * Description for Remove a site extension from a web site, or a deployment slot.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/siteextensions/{siteExtensionId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} siteExtensionId Site extension name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7860,6 +8016,7 @@ export namespace MyNS {
 		 * Description for Copies a deployment slot to another deployment slot of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slotcopy
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7875,6 +8032,7 @@ export namespace MyNS {
 		 * Description for Gets an app's deployment slots.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -7889,6 +8047,7 @@ export namespace MyNS {
 		 * Description for Gets the details of a web, mobile, or API app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. By default, this API returns the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7904,6 +8063,7 @@ export namespace MyNS {
 		 * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Unique name of the app to create or update. To create or update a deployment slot, use the {slot} parameter.
 		 * @param {string} slot Name of the deployment slot to create or update. By default, this API attempts to create or modify the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7920,6 +8080,7 @@ export namespace MyNS {
 		 * Description for Deletes a web, mobile, or API app, or one of the deployment slots.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app to delete.
 		 * @param {string} slot Name of the deployment slot to delete. By default, the API deletes the production slot.
 		 * @param {boolean} deleteMetrics If true, web app metrics are also deleted.
@@ -7937,6 +8098,7 @@ export namespace MyNS {
 		 * Description for Creates a new web, mobile, or API app in an existing resource group, or updates an existing app.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Unique name of the app to create or update. To create or update a deployment slot, use the {slot} parameter.
 		 * @param {string} slot Name of the deployment slot to create or update. By default, this API attempts to create or modify the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7953,6 +8115,7 @@ export namespace MyNS {
 		 * Description for Analyze a custom hostname.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/analyzeCustomHostname
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} hostName Custom hostname.
@@ -7969,6 +8132,7 @@ export namespace MyNS {
 		 * Description for Applies the configuration settings from the target slot onto the current slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/applySlotConfig
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -7985,6 +8149,7 @@ export namespace MyNS {
 		 * Description for Creates a backup of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/backup
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will create a backup for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8001,6 +8166,7 @@ export namespace MyNS {
 		 * Description for Gets existing backups of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/backups
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get backups of the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8016,6 +8182,7 @@ export namespace MyNS {
 		 * Description for Gets a backup of an app by its ID.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/backups/{backupId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} backupId ID of the backup.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get a backup of the production slot.
@@ -8032,6 +8199,7 @@ export namespace MyNS {
 		 * Description for Deletes a backup of an app by its ID.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/backups/{backupId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} backupId ID of the backup.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete a backup of the production slot.
@@ -8048,6 +8216,7 @@ export namespace MyNS {
 		 * Description for Gets status of a web app backup that may be in progress, including secrets associated with the backup, such as the Azure Storage SAS URL. Also can be used to update the SAS URL for the backup if a new URL is passed in the request body.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/backups/{backupId}/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} backupId ID of backup.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
@@ -8065,6 +8234,7 @@ export namespace MyNS {
 		 * Description for Restores a specific backup to another app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/backups/{backupId}/restore
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} backupId ID of the backup.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the production slot.
@@ -8082,6 +8252,7 @@ export namespace MyNS {
 		 * Description for List the configurations of an app
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will return configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8097,6 +8268,7 @@ export namespace MyNS {
 		 * Description for Replaces the application settings of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/appsettings
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update the application settings for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8113,6 +8285,7 @@ export namespace MyNS {
 		 * Description for Gets the application settings of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/appsettings/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the application settings for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8128,6 +8301,7 @@ export namespace MyNS {
 		 * Description for Updates the Authentication / Authorization settings associated with web app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/authsettings
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8144,6 +8318,7 @@ export namespace MyNS {
 		 * Description for Gets the Authentication/Authorization settings of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/authsettings/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the settings for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8159,6 +8334,7 @@ export namespace MyNS {
 		 * Description for Updates the Azure storage account configurations of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/azurestorageaccounts
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update the Azure storage account configurations for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8175,6 +8351,7 @@ export namespace MyNS {
 		 * Description for Gets the Azure storage account configurations of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/azurestorageaccounts/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update the Azure storage account configurations for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8190,6 +8367,7 @@ export namespace MyNS {
 		 * Description for Updates the backup configuration of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/backup
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update the backup configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8206,6 +8384,7 @@ export namespace MyNS {
 		 * Description for Deletes the backup configuration of an app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/backup
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the backup configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8221,6 +8400,7 @@ export namespace MyNS {
 		 * Description for Gets the backup configuration of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/backup/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the backup configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8236,6 +8416,7 @@ export namespace MyNS {
 		 * Description for Replaces the connection strings of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/connectionstrings
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update the connection settings for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8252,6 +8433,7 @@ export namespace MyNS {
 		 * Description for Gets the connection strings of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/connectionstrings/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the connection settings for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8267,6 +8449,7 @@ export namespace MyNS {
 		 * Description for Gets the logging configuration of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/logs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the logging configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8282,6 +8465,7 @@ export namespace MyNS {
 		 * Description for Updates the logging configuration of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/logs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update the logging configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8298,6 +8482,7 @@ export namespace MyNS {
 		 * Description for Replaces the metadata of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/metadata
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update the metadata for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8314,6 +8499,7 @@ export namespace MyNS {
 		 * Description for Gets the metadata of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/metadata/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the metadata for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8329,6 +8515,7 @@ export namespace MyNS {
 		 * Description for Gets the Git/FTP publishing credentials of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/publishingcredentials/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the publishing credentials for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8344,6 +8531,7 @@ export namespace MyNS {
 		 * Description for Updates the Push settings associated with web app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/pushsettings
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8360,6 +8548,7 @@ export namespace MyNS {
 		 * Description for Gets the Push settings associated with web app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/pushsettings/list
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8375,6 +8564,7 @@ export namespace MyNS {
 		 * Description for Gets the configuration of an app, such as platform version and bitness, default documents, virtual applications, Always On, etc.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will return configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8390,6 +8580,7 @@ export namespace MyNS {
 		 * Description for Updates the configuration of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8406,6 +8597,7 @@ export namespace MyNS {
 		 * Description for Updates the configuration of an app.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8422,6 +8614,7 @@ export namespace MyNS {
 		 * Description for Gets a list of web app configuration snapshots identifiers. Each element of the list contains a timestamp and the ID of the snapshot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/web/snapshots
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will return configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8437,6 +8630,7 @@ export namespace MyNS {
 		 * Description for Gets a snapshot of the configuration of an app at a previous point in time.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/web/snapshots/{snapshotId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} snapshotId The ID of the snapshot to read.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will return configuration for the production slot.
@@ -8453,6 +8647,7 @@ export namespace MyNS {
 		 * Description for Reverts the configuration of an app to a previous snapshot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/config/web/snapshots/{snapshotId}/recover
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} snapshotId The ID of the snapshot to read.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will return configuration for the production slot.
@@ -8469,6 +8664,7 @@ export namespace MyNS {
 		 * Description for Gets the last lines of docker logs for the given site
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/containerlogs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8484,6 +8680,7 @@ export namespace MyNS {
 		 * Description for Gets the ZIP archived docker log files for the given site
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/containerlogs/zip/download
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8499,6 +8696,7 @@ export namespace MyNS {
 		 * Description for List continuous web jobs for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/continuouswebjobs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8514,6 +8712,7 @@ export namespace MyNS {
 		 * Description for Gets a continuous web job by its ID for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/continuouswebjobs/{webJobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
@@ -8530,6 +8729,7 @@ export namespace MyNS {
 		 * Description for Delete a continuous web job by its ID for an app, or a deployment slot.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/continuouswebjobs/{webJobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
@@ -8546,6 +8746,7 @@ export namespace MyNS {
 		 * Description for Start a continuous web job for an app, or a deployment slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/continuouswebjobs/{webJobName}/start
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
@@ -8562,6 +8763,7 @@ export namespace MyNS {
 		 * Description for Stop a continuous web job for an app, or a deployment slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/continuouswebjobs/{webJobName}/stop
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
@@ -8578,6 +8780,7 @@ export namespace MyNS {
 		 * Description for List deployments for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deployments
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8593,6 +8796,7 @@ export namespace MyNS {
 		 * Description for Get a deployment by its ID for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deployments/{id}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} id Deployment ID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API gets a deployment for the production slot.
@@ -8609,6 +8813,7 @@ export namespace MyNS {
 		 * Description for Create a deployment for an app, or a deployment slot.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deployments/{id}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} id ID of an existing deployment.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API creates a deployment for the production slot.
@@ -8626,6 +8831,7 @@ export namespace MyNS {
 		 * Description for Delete a deployment by its ID for an app, or a deployment slot.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deployments/{id}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} id Deployment ID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
@@ -8642,6 +8848,7 @@ export namespace MyNS {
 		 * Description for List deployment log for specific deployment for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/deployments/{id}/log
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} id The ID of a specific deployment. This is the value of the name property in the JSON response from "GET /api/sites/{siteName}/deployments".
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -8658,6 +8865,7 @@ export namespace MyNS {
 		 * Description for Discovers an existing app backup that can be restored from a blob in Azure storage. Use this to get information about the databases stored in a backup.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/discoverbackup
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will perform discovery for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8674,6 +8882,7 @@ export namespace MyNS {
 		 * Description for Lists ownership identifiers for domain associated with web app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/domainOwnershipIdentifiers
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8689,6 +8898,7 @@ export namespace MyNS {
 		 * Description for Get domain ownership identifier for web app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/domainOwnershipIdentifiers/{domainOwnershipIdentifierName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} domainOwnershipIdentifierName Name of domain ownership identifier.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the production slot.
@@ -8705,6 +8915,7 @@ export namespace MyNS {
 		 * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/domainOwnershipIdentifiers/{domainOwnershipIdentifierName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} domainOwnershipIdentifierName Name of domain ownership identifier.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the production slot.
@@ -8722,6 +8933,7 @@ export namespace MyNS {
 		 * Description for Deletes a domain ownership identifier for a web app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/domainOwnershipIdentifiers/{domainOwnershipIdentifierName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} domainOwnershipIdentifierName Name of domain ownership identifier.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the production slot.
@@ -8738,6 +8950,7 @@ export namespace MyNS {
 		 * Description for Creates a domain ownership identifier for web app, or updates an existing ownership identifier.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/domainOwnershipIdentifiers/{domainOwnershipIdentifierName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} domainOwnershipIdentifierName Name of domain ownership identifier.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the production slot.
@@ -8755,6 +8968,7 @@ export namespace MyNS {
 		 * Description for Get the status of the last MSDeploy operation.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/extensions/MSDeploy
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8770,6 +8984,7 @@ export namespace MyNS {
 		 * Description for Invoke the MSDeploy web app extension.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/extensions/MSDeploy
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8786,6 +9001,7 @@ export namespace MyNS {
 		 * Description for Get the MSDeploy Log for the last MSDeploy operation.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/extensions/MSDeploy/log
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8801,6 +9017,7 @@ export namespace MyNS {
 		 * Description for List the functions for a web site, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} slot Name of the deployment slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8816,6 +9033,7 @@ export namespace MyNS {
 		 * Description for Fetch a short lived token that can be exchanged for a master key.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions/admin/token
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8831,6 +9049,7 @@ export namespace MyNS {
 		 * Description for Get function information by its ID for web site, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions/{functionName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName Function name.
 		 * @param {string} slot Name of the deployment slot.
@@ -8847,6 +9066,7 @@ export namespace MyNS {
 		 * Description for Create function for web site, or a deployment slot.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions/{functionName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName Function name.
 		 * @param {string} slot Name of the deployment slot.
@@ -8864,6 +9084,7 @@ export namespace MyNS {
 		 * Description for Delete a function for web site, or a deployment slot.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions/{functionName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName Function name.
 		 * @param {string} slot Name of the deployment slot.
@@ -8880,6 +9101,7 @@ export namespace MyNS {
 		 * Description for Add or update a function secret.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions/{functionName}/keys/{keyName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName The name of the function.
 		 * @param {string} keyName The name of the key.
@@ -8898,6 +9120,7 @@ export namespace MyNS {
 		 * Description for Delete a function secret.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions/{functionName}/keys/{keyName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName The name of the function.
 		 * @param {string} keyName The name of the key.
@@ -8915,6 +9138,7 @@ export namespace MyNS {
 		 * Description for Get function keys for a function in a web site, or a deployment slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions/{functionName}/listkeys
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName Function name.
 		 * @param {string} slot Name of the deployment slot.
@@ -8931,6 +9155,7 @@ export namespace MyNS {
 		 * Description for Get function secrets for a function in a web site, or a deployment slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/functions/{functionName}/listsecrets
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} functionName Function name.
 		 * @param {string} slot Name of the deployment slot.
@@ -8947,6 +9172,7 @@ export namespace MyNS {
 		 * Description for Get host secrets for a function app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/listkeys
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} slot Name of the deployment slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8962,6 +9188,7 @@ export namespace MyNS {
 		 * Description for This is to allow calling via powershell and ARM template.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/listsyncstatus
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8977,6 +9204,7 @@ export namespace MyNS {
 		 * Description for Syncs function trigger metadata to the management database
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/sync
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -8992,6 +9220,7 @@ export namespace MyNS {
 		 * Description for Add or update a host level secret.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} keyType The type of host key.
 		 * @param {string} keyName The name of the key.
@@ -9010,6 +9239,7 @@ export namespace MyNS {
 		 * Description for Delete a host level secret.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/host/default/{keyType}/{keyName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} keyType The type of host key.
 		 * @param {string} keyName The name of the key.
@@ -9027,6 +9257,7 @@ export namespace MyNS {
 		 * Description for Get hostname bindings for an app or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hostNameBindings
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API gets hostname bindings for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9042,6 +9273,7 @@ export namespace MyNS {
 		 * Description for Get the named hostname binding for an app (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hostNameBindings/{hostName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API the named binding for the production slot.
 		 * @param {string} hostName Hostname in the hostname binding.
@@ -9058,6 +9290,7 @@ export namespace MyNS {
 		 * Description for Creates a hostname binding for an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hostNameBindings/{hostName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} hostName Hostname in the hostname binding.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the production slot.
@@ -9075,6 +9308,7 @@ export namespace MyNS {
 		 * Description for Deletes a hostname binding for an app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hostNameBindings/{hostName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the production slot.
 		 * @param {string} hostName Hostname in the hostname binding.
@@ -9091,6 +9325,7 @@ export namespace MyNS {
 		 * Description for Retrieves a specific Service Bus Hybrid Connection used by this Web App.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} namespaceName The namespace for this hybrid connection.
 		 * @param {string} relayName The relay name for this hybrid connection.
@@ -9108,6 +9343,7 @@ export namespace MyNS {
 		 * Description for Creates a new Hybrid Connection using a Service Bus relay.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} namespaceName The namespace for this hybrid connection.
 		 * @param {string} relayName The relay name for this hybrid connection.
@@ -9126,6 +9362,7 @@ export namespace MyNS {
 		 * Description for Removes a Hybrid Connection from this site.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} namespaceName The namespace for this hybrid connection.
 		 * @param {string} relayName The relay name for this hybrid connection.
@@ -9143,6 +9380,7 @@ export namespace MyNS {
 		 * Description for Creates a new Hybrid Connection using a Service Bus relay.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hybridConnectionNamespaces/{namespaceName}/relays/{relayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} namespaceName The namespace for this hybrid connection.
 		 * @param {string} relayName The relay name for this hybrid connection.
@@ -9161,6 +9399,7 @@ export namespace MyNS {
 		 * Description for Retrieves all Service Bus Hybrid Connections used by this Web App.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hybridConnectionRelays
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} slot The name of the slot for the web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9176,6 +9415,7 @@ export namespace MyNS {
 		 * Description for Gets hybrid connections configured for an app (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hybridconnection
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get hybrid connections for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9191,6 +9431,7 @@ export namespace MyNS {
 		 * Description for Gets a hybrid connection configuration by its name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hybridconnection/{entityName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} entityName Name of the hybrid connection.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get a hybrid connection for the production slot.
@@ -9207,6 +9448,7 @@ export namespace MyNS {
 		 * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hybridconnection/{entityName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} entityName Name of the hybrid connection configuration.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid connection for the production slot.
@@ -9224,6 +9466,7 @@ export namespace MyNS {
 		 * Description for Deletes a relay service connection by its name.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hybridconnection/{entityName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} entityName Name of the hybrid connection configuration.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete a hybrid connection for the production slot.
@@ -9240,6 +9483,7 @@ export namespace MyNS {
 		 * Description for Creates a new hybrid connection configuration (PUT), or updates an existing one (PATCH).
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/hybridconnection/{entityName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} entityName Name of the hybrid connection configuration.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will create or update a hybrid connection for the production slot.
@@ -9257,6 +9501,7 @@ export namespace MyNS {
 		 * Description for Gets all scale-out instances of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API gets the production slot instances.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9272,6 +9517,7 @@ export namespace MyNS {
 		 * Description for Gets all scale-out instances of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API gets the production slot instances.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9287,6 +9533,7 @@ export namespace MyNS {
 		 * Description for Get the status of the last MSDeploy operation.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} instanceId ID of web app instance.
@@ -9303,6 +9550,7 @@ export namespace MyNS {
 		 * Description for Invoke the MSDeploy web app extension.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} instanceId ID of web app instance.
@@ -9320,6 +9568,7 @@ export namespace MyNS {
 		 * Description for Get the MSDeploy Log for the last MSDeploy operation.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/extensions/MSDeploy/log
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} instanceId ID of web app instance.
@@ -9336,6 +9585,7 @@ export namespace MyNS {
 		 * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/processes
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
 		 * @param {string} instanceId ID of a specific scaled-out instance. This is the value of the name property in the JSON response from "GET api/sites/{siteName}/instances".
@@ -9352,6 +9602,7 @@ export namespace MyNS {
 		 * Description for Get process information by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/processes/{processId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -9369,6 +9620,7 @@ export namespace MyNS {
 		 * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web site.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/processes/{processId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -9386,6 +9638,7 @@ export namespace MyNS {
 		 * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/processes/{processId}/dump
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -9403,6 +9656,7 @@ export namespace MyNS {
 		 * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/processes/{processId}/modules
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -9420,6 +9674,7 @@ export namespace MyNS {
 		 * Description for Get process information by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/processes/{processId}/modules/{baseAddress}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} baseAddress Module base address.
@@ -9438,6 +9693,7 @@ export namespace MyNS {
 		 * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/instances/{instanceId}/processes/{processId}/threads
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -9455,6 +9711,7 @@ export namespace MyNS {
 		 * Description for Shows whether an app can be cloned to another resource group or subscription.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/iscloneable
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. By default, this API returns information on the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9470,6 +9727,7 @@ export namespace MyNS {
 		 * Description for Gets existing backups of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/listbackups
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get backups of the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9485,6 +9743,7 @@ export namespace MyNS {
 		 * Description for This is to allow calling via powershell and ARM template.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/listsyncfunctiontriggerstatus
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9500,6 +9759,7 @@ export namespace MyNS {
 		 * Description for Returns the status of MySql in app migration, if one is active, and whether or not MySql in app is enabled
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/migratemysql/status
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of the deployment slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9515,6 +9775,7 @@ export namespace MyNS {
 		 * Description for Gets a Swift Virtual Network connection.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkConfig/virtualNetwork
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get a gateway for the production slot's Virtual Network.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9532,6 +9793,7 @@ export namespace MyNS {
 		 * in use by another App Service Plan other than the one this App is in.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkConfig/virtualNetwork
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9548,6 +9810,7 @@ export namespace MyNS {
 		 * Description for Deletes a Swift Virtual Network connection from an app (or deployment slot).
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkConfig/virtualNetwork
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the connection for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9565,6 +9828,7 @@ export namespace MyNS {
 		 * in use by another App Service Plan other than the one this App is in.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkConfig/virtualNetwork
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9581,6 +9845,7 @@ export namespace MyNS {
 		 * Description for Gets all network features used by the app (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkFeatures/{view}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} view The type of view. This can either be "summary" or "detailed".
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get network features for the production slot.
@@ -9597,6 +9862,7 @@ export namespace MyNS {
 		 * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/operationresults/{operationId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} operationId GUID of the operation.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get an operation for the production slot.
@@ -9613,10 +9879,13 @@ export namespace MyNS {
 		 * Description for Start capturing network packets for the site (To be deprecated).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/start
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {number} durationInSeconds The duration to keep capturing in seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} slot The name of the slot for this web app.
 		 * @param {number} maxFrameLength The maximum frame length in bytes (Optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sasUrl The Blob URL to store capture file.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -9631,10 +9900,13 @@ export namespace MyNS {
 		 * Description for Start capturing network packets for the site.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/startOperation
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {number} durationInSeconds The duration to keep capturing in seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} slot The name of the slot for this web app.
 		 * @param {number} maxFrameLength The maximum frame length in bytes (Optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sasUrl The Blob URL to store capture file.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -9649,6 +9921,7 @@ export namespace MyNS {
 		 * Description for Stop ongoing capturing network packets for the site.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/stop
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} slot The name of the slot for this web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9664,6 +9937,7 @@ export namespace MyNS {
 		 * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTrace/{operationId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} operationId GUID of the operation.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get an operation for the production slot.
@@ -9680,6 +9954,7 @@ export namespace MyNS {
 		 * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTraces/current/operationresults/{operationId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} operationId GUID of the operation.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get an operation for the production slot.
@@ -9696,6 +9971,7 @@ export namespace MyNS {
 		 * Description for Gets a named operation for a network trace capturing (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/networkTraces/{operationId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} operationId GUID of the operation.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get an operation for the production slot.
@@ -9712,6 +9988,7 @@ export namespace MyNS {
 		 * Description for Generates a new publishing password for an app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/newpassword
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API generate a new publishing password for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9727,6 +10004,7 @@ export namespace MyNS {
 		 * Description for Gets perfmon counters for web app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/perfcounters
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} filter Return only usages/metrics specified in the filter. Filter conforms to odata syntax. Example: $filter=(startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
@@ -9743,6 +10021,7 @@ export namespace MyNS {
 		 * Description for Gets web app's event logs.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/phplogging
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9758,6 +10037,7 @@ export namespace MyNS {
 		 * Description for Gets the premier add-ons of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the premier add-ons for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9773,6 +10053,7 @@ export namespace MyNS {
 		 * Description for Gets a named add-on of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons/{premierAddOnName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} premierAddOnName Add-on name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the named add-on for the production slot.
@@ -9789,6 +10070,7 @@ export namespace MyNS {
 		 * Description for Updates a named add-on of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons/{premierAddOnName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} premierAddOnName Add-on name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the production slot.
@@ -9806,6 +10088,7 @@ export namespace MyNS {
 		 * Description for Delete a premier add-on from an app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons/{premierAddOnName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} premierAddOnName Add-on name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the named add-on for the production slot.
@@ -9822,6 +10105,7 @@ export namespace MyNS {
 		 * Description for Updates a named add-on of an app.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/premieraddons/{premierAddOnName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} premierAddOnName Add-on name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update the named add-on for the production slot.
@@ -9839,6 +10123,7 @@ export namespace MyNS {
 		 * Description for Gets data around private site access enablement and authorized Virtual Networks that can access the site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/privateAccess/virtualNetworks
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} slot The name of the slot for the web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9854,6 +10139,7 @@ export namespace MyNS {
 		 * Description for Sets data around private site access enablement and authorized Virtual Networks that can access the site.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/privateAccess/virtualNetworks
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} slot The name of the slot for the web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9870,6 +10156,7 @@ export namespace MyNS {
 		 * Description for Get list of processes for a web site, or a deployment slot, or for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/processes
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9885,6 +10172,7 @@ export namespace MyNS {
 		 * Description for Get process information by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/processes/{processId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -9901,6 +10189,7 @@ export namespace MyNS {
 		 * Description for Terminate a process by its ID for a web site, or a deployment slot, or specific scaled-out instance in a web site.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/processes/{processId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -9917,6 +10206,7 @@ export namespace MyNS {
 		 * Description for Get a memory dump of a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/processes/{processId}/dump
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -9933,6 +10223,7 @@ export namespace MyNS {
 		 * Description for List module information for a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/processes/{processId}/modules
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -9949,6 +10240,7 @@ export namespace MyNS {
 		 * Description for Get process information by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/processes/{processId}/modules/{baseAddress}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} baseAddress Module base address.
@@ -9966,6 +10258,7 @@ export namespace MyNS {
 		 * Description for List the threads in a process by its ID for a specific scaled-out instance in a web site.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/processes/{processId}/threads
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} processId PID.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -9982,6 +10275,7 @@ export namespace MyNS {
 		 * Description for Get public certificates for an app or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/publicCertificates
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API gets hostname bindings for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -9997,6 +10291,7 @@ export namespace MyNS {
 		 * Description for Get the named public certificate for an app (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/publicCertificates/{publicCertificateName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API the named binding for the production slot.
 		 * @param {string} publicCertificateName Public certificate name.
@@ -10013,6 +10308,7 @@ export namespace MyNS {
 		 * Description for Creates a hostname binding for an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/publicCertificates/{publicCertificateName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} publicCertificateName Public certificate name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will create a binding for the production slot.
@@ -10030,6 +10326,7 @@ export namespace MyNS {
 		 * Description for Deletes a hostname binding for an app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/publicCertificates/{publicCertificateName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the binding for the production slot.
 		 * @param {string} publicCertificateName Public certificate name.
@@ -10046,6 +10343,7 @@ export namespace MyNS {
 		 * Description for Gets the publishing profile for an app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/publishxml
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the publishing profile for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10062,6 +10360,7 @@ export namespace MyNS {
 		 * Description for Resets the configuration settings of the current slot if they were previously modified by calling the API with POST.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/resetSlotConfig
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API resets configuration settings for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10077,6 +10376,7 @@ export namespace MyNS {
 		 * Description for Restarts an app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/restart
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will restart the production slot.
 		 * @param {boolean} softRestart Specify true to apply the configuration settings and restarts the app only if necessary. By default, the API always restarts and reprovisions the app.
@@ -10094,6 +10394,7 @@ export namespace MyNS {
 		 * Description for Restores an app from a backup blob in Azure Storage.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/restoreFromBackupBlob
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will restore a backup of the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10110,6 +10411,7 @@ export namespace MyNS {
 		 * Description for Restores a deleted web app to this web app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/restoreFromDeletedApp
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10126,6 +10428,7 @@ export namespace MyNS {
 		 * Description for Restores a web app from a snapshot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/restoreSnapshot
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10142,6 +10445,7 @@ export namespace MyNS {
 		 * Description for Get list of siteextensions for a web site, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/siteextensions
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API uses the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10157,6 +10461,7 @@ export namespace MyNS {
 		 * Description for Get site extension information by its ID for a web site, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/siteextensions/{siteExtensionId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} siteExtensionId Site extension name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API uses the production slot.
@@ -10173,6 +10478,7 @@ export namespace MyNS {
 		 * Description for Install site extension on a web site, or a deployment slot.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/siteextensions/{siteExtensionId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} siteExtensionId Site extension name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API uses the production slot.
@@ -10189,6 +10495,7 @@ export namespace MyNS {
 		 * Description for Remove a site extension from a web site, or a deployment slot.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/siteextensions/{siteExtensionId}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} siteExtensionId Site extension name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
@@ -10205,6 +10512,7 @@ export namespace MyNS {
 		 * Description for Copies a deployment slot to another deployment slot of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/slotcopy
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10221,6 +10529,7 @@ export namespace MyNS {
 		 * Description for Get the difference in configuration settings between two web app slots.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/slotsdiffs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10237,6 +10546,7 @@ export namespace MyNS {
 		 * Description for Swaps two deployment slots of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/slotsswap
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the source slot. If a slot is not specified, the production slot is used as the source slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10253,6 +10563,7 @@ export namespace MyNS {
 		 * Description for Returns all Snapshots to the user.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/snapshots
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Website Name.
 		 * @param {string} slot Website Slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10268,6 +10579,7 @@ export namespace MyNS {
 		 * Description for Returns all Snapshots to the user from DRSecondary endpoint.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/snapshotsdr
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Website Name.
 		 * @param {string} slot Website Slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10283,6 +10595,7 @@ export namespace MyNS {
 		 * Description for Gets the source control configuration of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/sourcecontrols/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the source control configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10298,6 +10611,7 @@ export namespace MyNS {
 		 * Description for Updates the source control configuration of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/sourcecontrols/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update the source control configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10314,6 +10628,7 @@ export namespace MyNS {
 		 * Description for Deletes the source control configuration of an app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/sourcecontrols/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the source control configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10329,6 +10644,7 @@ export namespace MyNS {
 		 * Description for Updates the source control configuration of an app.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/sourcecontrols/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will update the source control configuration for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10345,6 +10661,7 @@ export namespace MyNS {
 		 * Description for Starts an app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/start
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will start the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10360,10 +10677,13 @@ export namespace MyNS {
 		 * Description for Start capturing network packets for the site.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/startNetworkTrace
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {number} durationInSeconds The duration to keep capturing in seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} slot The name of the slot for this web app.
 		 * @param {number} maxFrameLength The maximum frame length in bytes (Optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sasUrl The Blob URL to store capture file.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10378,6 +10698,7 @@ export namespace MyNS {
 		 * Description for Stops an app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/stop
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will stop the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10393,6 +10714,7 @@ export namespace MyNS {
 		 * Description for Stop ongoing capturing network packets for the site.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/stopNetworkTrace
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} slot The name of the slot for this web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10408,6 +10730,7 @@ export namespace MyNS {
 		 * Description for Sync web app repository.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/sync
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} slot Name of web app slot. If not specified then will default to production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10423,6 +10746,7 @@ export namespace MyNS {
 		 * Description for Syncs function trigger metadata to the management database
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/syncfunctiontriggers
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10438,6 +10762,7 @@ export namespace MyNS {
 		 * Description for List triggered web jobs for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/triggeredwebjobs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API deletes a deployment for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10453,6 +10778,7 @@ export namespace MyNS {
 		 * Description for Gets a triggered web job by its ID for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/triggeredwebjobs/{webJobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API uses the production slot.
@@ -10469,6 +10795,7 @@ export namespace MyNS {
 		 * Description for Delete a triggered web job by its ID for an app, or a deployment slot.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/triggeredwebjobs/{webJobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API deletes web job for the production slot.
@@ -10485,6 +10812,7 @@ export namespace MyNS {
 		 * Description for List a triggered web job's history for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/triggeredwebjobs/{webJobName}/history
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API uses the production slot.
@@ -10501,6 +10829,7 @@ export namespace MyNS {
 		 * Description for Gets a triggered web job's history by its ID for an app, , or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/triggeredwebjobs/{webJobName}/history/{id}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} id History ID.
@@ -10518,6 +10847,7 @@ export namespace MyNS {
 		 * Description for Run a triggered web job for an app, or a deployment slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/triggeredwebjobs/{webJobName}/run
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API uses the production slot.
@@ -10534,6 +10864,7 @@ export namespace MyNS {
 		 * Description for Gets the quota usage information of an app (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/usages
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get quota information of the production slot.
 		 * @param {string} filter Return only information specified in the filter (using OData syntax). For example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
@@ -10550,6 +10881,7 @@ export namespace MyNS {
 		 * Description for Gets the virtual networks the app (or deployment slot) is connected to.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/virtualNetworkConnections
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get virtual network connections for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10565,6 +10897,7 @@ export namespace MyNS {
 		 * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/virtualNetworkConnections/{vnetName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of the virtual network.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will get the named virtual network for the production slot.
@@ -10581,6 +10914,7 @@ export namespace MyNS {
 		 * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/virtualNetworkConnections/{vnetName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of an existing Virtual Network.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for the production slot.
@@ -10598,6 +10932,7 @@ export namespace MyNS {
 		 * Description for Deletes a connection from an app (or deployment slot to a named virtual network.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/virtualNetworkConnections/{vnetName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of the virtual network.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will delete the connection for the production slot.
@@ -10614,6 +10949,7 @@ export namespace MyNS {
 		 * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/virtualNetworkConnections/{vnetName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of an existing Virtual Network.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API will add or update connections for the production slot.
@@ -10631,6 +10967,7 @@ export namespace MyNS {
 		 * Description for Gets an app's Virtual Network gateway.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of the Virtual Network.
 		 * @param {string} gatewayName Name of the gateway. Currently, the only supported string is "primary".
@@ -10648,6 +10985,7 @@ export namespace MyNS {
 		 * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of the Virtual Network.
 		 * @param {string} gatewayName Name of the gateway. Currently, the only supported string is "primary".
@@ -10666,6 +11004,7 @@ export namespace MyNS {
 		 * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of the Virtual Network.
 		 * @param {string} gatewayName Name of the gateway. Currently, the only supported string is "primary".
@@ -10684,6 +11023,7 @@ export namespace MyNS {
 		 * Description for List webjobs for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/webjobs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10699,6 +11039,7 @@ export namespace MyNS {
 		 * Description for Get webjob information for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slots/{slot}/webjobs/{webJobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of the web job.
 		 * @param {string} slot Name of the deployment slot. If a slot is not specified, the API returns deployments for the production slot.
@@ -10715,6 +11056,7 @@ export namespace MyNS {
 		 * Description for Get the difference in configuration settings between two web app slots.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slotsdiffs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10730,6 +11072,7 @@ export namespace MyNS {
 		 * Description for Swaps two deployment slots of an app.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/slotsswap
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10745,6 +11088,7 @@ export namespace MyNS {
 		 * Description for Returns all Snapshots to the user.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/snapshots
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Website Name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10759,6 +11103,7 @@ export namespace MyNS {
 		 * Description for Returns all Snapshots to the user from DRSecondary endpoint.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/snapshotsdr
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Website Name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10773,6 +11118,7 @@ export namespace MyNS {
 		 * Description for Gets the source control configuration of an app.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/sourcecontrols/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10787,6 +11133,7 @@ export namespace MyNS {
 		 * Description for Updates the source control configuration of an app.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/sourcecontrols/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10802,6 +11149,7 @@ export namespace MyNS {
 		 * Description for Deletes the source control configuration of an app.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/sourcecontrols/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10816,6 +11164,7 @@ export namespace MyNS {
 		 * Description for Updates the source control configuration of an app.
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/sourcecontrols/web
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10831,6 +11180,7 @@ export namespace MyNS {
 		 * Description for Starts an app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/start
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10845,9 +11195,12 @@ export namespace MyNS {
 		 * Description for Start capturing network packets for the site.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/startNetworkTrace
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {number} durationInSeconds The duration to keep capturing in seconds.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} maxFrameLength The maximum frame length in bytes (Optional).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} sasUrl The Blob URL to store capture file.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10862,6 +11215,7 @@ export namespace MyNS {
 		 * Description for Stops an app (or deployment slot, if specified).
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/stop
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10876,6 +11230,7 @@ export namespace MyNS {
 		 * Description for Stop ongoing capturing network packets for the site.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/stopNetworkTrace
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name The name of the web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10890,6 +11245,7 @@ export namespace MyNS {
 		 * Description for Sync web app repository.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/sync
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of web app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10904,6 +11260,7 @@ export namespace MyNS {
 		 * Description for Syncs function trigger metadata to the management database
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/syncfunctiontriggers
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10918,6 +11275,7 @@ export namespace MyNS {
 		 * Description for List triggered web jobs for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/triggeredwebjobs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -10932,6 +11290,7 @@ export namespace MyNS {
 		 * Description for Gets a triggered web job by its ID for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/triggeredwebjobs/{webJobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10947,6 +11306,7 @@ export namespace MyNS {
 		 * Description for Delete a triggered web job by its ID for an app, or a deployment slot.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/triggeredwebjobs/{webJobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10962,6 +11322,7 @@ export namespace MyNS {
 		 * Description for List a triggered web job's history for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/triggeredwebjobs/{webJobName}/history
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -10977,6 +11338,7 @@ export namespace MyNS {
 		 * Description for Gets a triggered web job's history by its ID for an app, , or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/triggeredwebjobs/{webJobName}/history/{id}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} id History ID.
@@ -10993,6 +11355,7 @@ export namespace MyNS {
 		 * Description for Run a triggered web job for an app, or a deployment slot.
 		 * Post subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/triggeredwebjobs/{webJobName}/run
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of Web Job.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -11008,6 +11371,7 @@ export namespace MyNS {
 		 * Description for Gets the quota usage information of an app (or deployment slot, if specified).
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/usages
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} filter Return only information specified in the filter (using OData syntax). For example: $filter=(name.value eq 'Metric1' or name.value eq 'Metric2') and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[Hour|Minute|Day]'.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -11023,6 +11387,7 @@ export namespace MyNS {
 		 * Description for Gets the virtual networks the app (or deployment slot) is connected to.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/virtualNetworkConnections
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -11037,6 +11402,7 @@ export namespace MyNS {
 		 * Description for Gets a virtual network the app (or deployment slot) is connected to by name.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/virtualNetworkConnections/{vnetName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of the virtual network.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -11052,6 +11418,7 @@ export namespace MyNS {
 		 * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/virtualNetworkConnections/{vnetName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of an existing Virtual Network.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -11068,6 +11435,7 @@ export namespace MyNS {
 		 * Description for Deletes a connection from an app (or deployment slot to a named virtual network.
 		 * Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/virtualNetworkConnections/{vnetName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of the virtual network.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -11083,6 +11451,7 @@ export namespace MyNS {
 		 * Description for Adds a Virtual Network connection to an app or slot (PUT) or updates the connection properties (PATCH).
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/virtualNetworkConnections/{vnetName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of an existing Virtual Network.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
@@ -11099,6 +11468,7 @@ export namespace MyNS {
 		 * Description for Gets an app's Virtual Network gateway.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of the Virtual Network.
 		 * @param {string} gatewayName Name of the gateway. Currently, the only supported string is "primary".
@@ -11115,6 +11485,7 @@ export namespace MyNS {
 		 * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of the Virtual Network.
 		 * @param {string} gatewayName Name of the gateway. Currently, the only supported string is "primary".
@@ -11132,6 +11503,7 @@ export namespace MyNS {
 		 * Description for Adds a gateway to a connected Virtual Network (PUT) or updates it (PATCH).
 		 * Patch subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/virtualNetworkConnections/{vnetName}/gateways/{gatewayName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Name of the app.
 		 * @param {string} vnetName Name of the Virtual Network.
 		 * @param {string} gatewayName Name of the gateway. Currently, the only supported string is "primary".
@@ -11149,6 +11521,7 @@ export namespace MyNS {
 		 * Description for List webjobs for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/webjobs
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).
 		 * @param {string} api_version API Version
@@ -11163,6 +11536,7 @@ export namespace MyNS {
 		 * Description for Get webjob information for an app, or a deployment slot.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{name}/webjobs/{webJobName}
 		 * @param {string} resourceGroupName Name of the resource group to which the resource belongs.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} name Site name.
 		 * @param {string} webJobName Name of the web job.
 		 * @param {string} subscriptionId Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).

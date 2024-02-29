@@ -1368,6 +1368,7 @@ export namespace MyNS {
 		 * Lists the cells for an account.
 		 * Get cells
 		 * @param {number} maxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results you want to see.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1390,6 +1391,7 @@ export namespace MyNS {
 		 * Lists the cross-account readiness authorizations that are in place for an account.
 		 * Get crossaccountauthorizations
 		 * @param {number} maxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results you want to see.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1412,6 +1414,7 @@ export namespace MyNS {
 		 * Lists the readiness checks for an account.
 		 * Get readinesschecks
 		 * @param {number} maxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results you want to see.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1434,6 +1437,7 @@ export namespace MyNS {
 		 * Lists the recovery groups in an account.
 		 * Get recoverygroups
 		 * @param {number} maxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results you want to see.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1456,6 +1460,7 @@ export namespace MyNS {
 		 * Lists the resource sets in an account.
 		 * Get resourcesets
 		 * @param {number} maxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results you want to see.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1599,6 +1604,7 @@ export namespace MyNS {
 		 * Gets recommendations about architecture designs for improving resiliency for an application, based on a recovery group.
 		 * Get recoverygroups/{recoveryGroupName}/architectureRecommendations
 		 * @param {number} maxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results you want to see.
 		 * @param {string} recoveryGroupName The name of a recovery group.
 		 * @return {GetArchitectureRecommendationsResponse} Success
@@ -1612,6 +1618,7 @@ export namespace MyNS {
 		 * Get cellreadiness/{cellName}
 		 * @param {string} cellName The name of the cell.
 		 * @param {number} maxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results you want to see.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -1625,6 +1632,7 @@ export namespace MyNS {
 		 * Gets individual readiness status for a readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in the recovery group, use GetRecoveryGroupReadinessSummary.
 		 * Get readinesschecks/{readinessCheckName}/resource/{resourceIdentifier}/status
 		 * @param {number} maxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results you want to see.
 		 * @param {string} readinessCheckName Name of a readiness check.
 		 * @param {string} resourceIdentifier The resource identifier, which is the Amazon Resource Name (ARN) or the identifier generated for the resource by Application Recovery Controller (for example, for a DNS target resource).
@@ -1640,6 +1648,7 @@ export namespace MyNS {
 		 * Gets the readiness status for an individual readiness check. To see the overall readiness status for a recovery group, that considers the readiness status for all the readiness checks in a recovery group, use GetRecoveryGroupReadinessSummary.
 		 * Get readinesschecks/{readinessCheckName}/status
 		 * @param {number} maxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results you want to see.
 		 * @param {string} readinessCheckName Name of a readiness check.
 		 * @param {string} MaxResults Pagination limit
@@ -1654,6 +1663,7 @@ export namespace MyNS {
 		 * Displays a summary of information about a recovery group's readiness status. Includes the readiness checks for resources in the recovery group and the readiness status of each one.
 		 * Get recoverygroupreadiness/{recoveryGroupName}
 		 * @param {number} maxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results you want to see.
 		 * @param {string} recoveryGroupName The name of a recovery group.
 		 * @param {string} MaxResults Pagination limit
@@ -1668,6 +1678,7 @@ export namespace MyNS {
 		 * Lists all readiness rules, or lists the readiness rules for a specific resource type.
 		 * Get rules
 		 * @param {number} maxResults The number of objects that you want to return with this call.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results you want to see.
 		 * @param {string} resourceType The resource type that a readiness rule applies to.
 		 * @param {string} MaxResults Pagination limit

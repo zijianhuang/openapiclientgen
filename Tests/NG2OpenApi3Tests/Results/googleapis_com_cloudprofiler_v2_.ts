@@ -68,7 +68,10 @@ export namespace MyNS {
 		/** List of profiles fetched. */
 		profiles?: Array<Profile>;
 
-		/** Number of profiles that were skipped in the current page since they were not able to be fetched successfully. This should typically be zero. A non-zero value may indicate a transient failure, in which case if the number is too high for your use case, the call may be retried. */
+		/**
+		 * Number of profiles that were skipped in the current page since they were not able to be fetched successfully. This should typically be zero. A non-zero value may indicate a transient failure, in which case if the number is too high for your use case, the call may be retried.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedProfiles?: number | null;
 	}
 
@@ -78,7 +81,10 @@ export namespace MyNS {
 		/** Token to receive the next page of results. This field maybe empty if there are no more profiles to fetch. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** Number of profiles that were skipped in the current page since they were not able to be fetched successfully. This should typically be zero. A non-zero value may indicate a transient failure, in which case if the number is too high for your use case, the call may be retried. */
+		/**
+		 * Number of profiles that were skipped in the current page since they were not able to be fetched successfully. This should typically be zero. A non-zero value may indicate a transient failure, in which case if the number is too high for your use case, the call may be retried.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		skippedProfiles: FormControl<number | null | undefined>,
 	}
 	export function CreateListProfilesResponseFormGroup() {
@@ -164,6 +170,7 @@ export namespace MyNS {
 		 * Get v2/{parent}/profiles
 		 * @param {string} parent Required. The parent, which owns this collection of profiles. Format: projects/{user_project_id}
 		 * @param {number} pageSize The maximum number of items to return. Default page_size is 1000. Max limit is 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token to continue pagination and get profiles from a particular page. When paginating, all other parameters provided to `ListProfiles` must match the call that provided the page token.
 		 * @return {ListProfilesResponse} Successful response
 		 */

@@ -38,7 +38,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -51,7 +54,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -113,7 +119,10 @@ export namespace MyNS {
 		/** Ouptut only. The name of dataset. "projects/datasets/*" */
 		dataset?: string | null;
 
-		/** Output only. Number of examples exported successfully. */
+		/**
+		 * Output only. Number of examples exported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exportCount?: number | null;
 
 		/** Statistics about annotation specs. */
@@ -122,7 +131,10 @@ export namespace MyNS {
 		/** The configuration of output data. */
 		outputConfig?: GoogleCloudDatalabelingV1alpha1OutputConfig;
 
-		/** Output only. Total number of examples requested to export */
+		/**
+		 * Output only. Total number of examples requested to export
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 
@@ -135,10 +147,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of dataset. "projects/datasets/*" */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Number of examples exported successfully. */
+		/**
+		 * Output only. Number of examples exported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exportCount: FormControl<number | null | undefined>,
 
-		/** Output only. Total number of examples requested to export */
+		/**
+		 * Output only. Total number of examples requested to export
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1alpha1ExportDataOperationResponseFormGroup() {
@@ -266,7 +284,10 @@ export namespace MyNS {
 		/** Optional. Maximum duration for contributors to answer a question. Maximum is 3600 seconds. Default is 3600 seconds. */
 		questionDuration?: string | null;
 
-		/** Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5. */
+		/**
+		 * Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount?: number | null;
 
 		/** Email of the user who started the labeling task and should be notified by email. If empty no notification will be sent. */
@@ -294,7 +315,10 @@ export namespace MyNS {
 		/** Optional. Maximum duration for contributors to answer a question. Maximum is 3600 seconds. Default is 3600 seconds. */
 		questionDuration: FormControl<string | null | undefined>,
 
-		/** Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5. */
+		/**
+		 * Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount: FormControl<number | null | undefined>,
 
 		/** Email of the user who started the labeling task and should be notified by email. If empty no notification will be sent. */
@@ -352,10 +376,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of imported dataset. */
 		dataset?: string | null;
 
-		/** Output only. Number of examples imported successfully. */
+		/**
+		 * Output only. Number of examples imported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importCount?: number | null;
 
-		/** Output only. Total number of examples requested to import */
+		/**
+		 * Output only. Total number of examples requested to import
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 
@@ -365,10 +395,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of imported dataset. */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Number of examples imported successfully. */
+		/**
+		 * Output only. Number of examples imported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importCount: FormControl<number | null | undefined>,
 
-		/** Output only. Total number of examples requested to import */
+		/**
+		 * Output only. Total number of examples requested to import
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1alpha1ImportDataOperationResponseFormGroup() {
@@ -516,7 +552,10 @@ export namespace MyNS {
 		/** Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details. */
 		partialFailures?: Array<GoogleRpcStatus>;
 
-		/** Output only. Progress of label operation. Range: [0, 100]. */
+		/**
+		 * Output only. Progress of label operation. Range: [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Details of a LabelTextClassification operation metadata. */
@@ -550,7 +589,10 @@ export namespace MyNS {
 		/** Output only. The name of dataset to be labeled. "projects/datasets/*" */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Progress of label operation. Range: [0, 100]. */
+		/**
+		 * Output only. Progress of label operation. Range: [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1alpha1LabelOperationMetadataFormGroup() {
@@ -851,20 +893,32 @@ export namespace MyNS {
 		/** Required. The list of annotation spec set resource name. Similar to video classification, we support selecting event from multiple AnnotationSpecSet at the same time. */
 		annotationSpecSets?: Array<string>;
 
-		/** Videos will be cut to smaller clips to make it easier for labelers to work on. Users can configure is field in seconds, if not set, default value is 60s. */
+		/**
+		 * Videos will be cut to smaller clips to make it easier for labelers to work on. Users can configure is field in seconds, if not set, default value is 60s.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clipLength?: number | null;
 
-		/** The overlap length between different video clips. Users can configure is field in seconds, if not set, default value is 1s. */
+		/**
+		 * The overlap length between different video clips. Users can configure is field in seconds, if not set, default value is 1s.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		overlapLength?: number | null;
 	}
 
 	/** Config for video event human labeling task. */
 	export interface GoogleCloudDatalabelingV1beta1EventConfigFormProperties {
 
-		/** Videos will be cut to smaller clips to make it easier for labelers to work on. Users can configure is field in seconds, if not set, default value is 60s. */
+		/**
+		 * Videos will be cut to smaller clips to make it easier for labelers to work on. Users can configure is field in seconds, if not set, default value is 60s.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clipLength: FormControl<number | null | undefined>,
 
-		/** The overlap length between different video clips. Users can configure is field in seconds, if not set, default value is 1s. */
+		/**
+		 * The overlap length between different video clips. Users can configure is field in seconds, if not set, default value is 1s.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		overlapLength: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1EventConfigFormGroup() {
@@ -900,7 +954,10 @@ export namespace MyNS {
 		/** Optional. Maximum duration for contributors to answer a question. Maximum is 3600 seconds. Default is 3600 seconds. */
 		questionDuration?: string | null;
 
-		/** Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5. */
+		/**
+		 * Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount?: number | null;
 
 		/** Email of the user who started the labeling task and should be notified by email. If empty no notification will be sent. */
@@ -928,7 +985,10 @@ export namespace MyNS {
 		/** Optional. Maximum duration for contributors to answer a question. Maximum is 3600 seconds. Default is 3600 seconds. */
 		questionDuration: FormControl<string | null | undefined>,
 
-		/** Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5. */
+		/**
+		 * Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount: FormControl<number | null | undefined>,
 
 		/** Email of the user who started the labeling task and should be notified by email. If empty no notification will be sent. */
@@ -992,7 +1052,10 @@ export namespace MyNS {
 		/** Required. Annotation spec set resource name. */
 		annotationSpecSet?: string | null;
 
-		/** Required. Number of frames per second to be extracted from the video. */
+		/**
+		 * Required. Number of frames per second to be extracted from the video.
+		 * Type: double
+		 */
 		extractionFrameRate?: number | null;
 	}
 
@@ -1002,7 +1065,10 @@ export namespace MyNS {
 		/** Required. Annotation spec set resource name. */
 		annotationSpecSet: FormControl<string | null | undefined>,
 
-		/** Required. Number of frames per second to be extracted from the video. */
+		/**
+		 * Required. Number of frames per second to be extracted from the video.
+		 * Type: double
+		 */
 		extractionFrameRate: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1ObjectDetectionConfigFormGroup() {
@@ -1020,10 +1086,16 @@ export namespace MyNS {
 		/** Required. Annotation spec set resource name. */
 		annotationSpecSet?: string | null;
 
-		/** Videos will be cut to smaller clips to make it easier for labelers to work on. Users can configure is field in seconds, if not set, default value is 20s. */
+		/**
+		 * Videos will be cut to smaller clips to make it easier for labelers to work on. Users can configure is field in seconds, if not set, default value is 20s.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clipLength?: number | null;
 
-		/** The overlap length between different video clips. Users can configure is field in seconds, if not set, default value is 0.3s. */
+		/**
+		 * The overlap length between different video clips. Users can configure is field in seconds, if not set, default value is 0.3s.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		overlapLength?: number | null;
 	}
 
@@ -1033,10 +1105,16 @@ export namespace MyNS {
 		/** Required. Annotation spec set resource name. */
 		annotationSpecSet: FormControl<string | null | undefined>,
 
-		/** Videos will be cut to smaller clips to make it easier for labelers to work on. Users can configure is field in seconds, if not set, default value is 20s. */
+		/**
+		 * Videos will be cut to smaller clips to make it easier for labelers to work on. Users can configure is field in seconds, if not set, default value is 20s.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clipLength: FormControl<number | null | undefined>,
 
-		/** The overlap length between different video clips. Users can configure is field in seconds, if not set, default value is 0.3s. */
+		/**
+		 * The overlap length between different video clips. Users can configure is field in seconds, if not set, default value is 0.3s.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		overlapLength: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1ObjectTrackingConfigFormGroup() {
@@ -1294,26 +1372,44 @@ export namespace MyNS {
 		/** Comments from contributors. */
 		comments?: Array<string>;
 
-		/** The total number of contributors that choose this label. */
+		/**
+		 * The total number of contributors that choose this label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		labelVotes?: number | null;
 
-		/** Confidence score corresponding to a label. For examle, if 3 contributors have answered the question and 2 of them agree on the final label, the confidence score will be 0.67 (2/3). */
+		/**
+		 * Confidence score corresponding to a label. For examle, if 3 contributors have answered the question and 2 of them agree on the final label, the confidence score will be 0.67 (2/3).
+		 * Type: float
+		 */
 		score?: number | null;
 
-		/** The total number of contributors that answer this question. */
+		/**
+		 * The total number of contributors that answer this question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalVotes?: number | null;
 	}
 
 	/** General information useful for labels coming from contributors. */
 	export interface GoogleCloudDatalabelingV1beta1OperatorMetadataFormProperties {
 
-		/** The total number of contributors that choose this label. */
+		/**
+		 * The total number of contributors that choose this label.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		labelVotes: FormControl<number | null | undefined>,
 
-		/** Confidence score corresponding to a label. For examle, if 3 contributors have answered the question and 2 of them agree on the final label, the confidence score will be 0.67 (2/3). */
+		/**
+		 * Confidence score corresponding to a label. For examle, if 3 contributors have answered the question and 2 of them agree on the final label, the confidence score will be 0.67 (2/3).
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 
-		/** The total number of contributors that answer this question. */
+		/**
+		 * The total number of contributors that answer this question.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalVotes: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1OperatorMetadataFormGroup() {
@@ -1401,7 +1497,10 @@ export namespace MyNS {
 		/** Required. The display name of the AnnotationSpec. Maximum of 64 characters. */
 		displayName?: string | null;
 
-		/** Output only. This is the integer index of the AnnotationSpec. The index for the whole AnnotationSpecSet is sequential starting from 0. For example, an AnnotationSpecSet with classes `dog` and `cat`, might contain one AnnotationSpec with `{ display_name: "dog", index: 0 }` and one AnnotationSpec with `{ display_name: "cat", index: 1 }`. This is especially useful for model training as it encodes the string labels into numeric values. */
+		/**
+		 * Output only. This is the integer index of the AnnotationSpec. The index for the whole AnnotationSpecSet is sequential starting from 0. For example, an AnnotationSpecSet with classes `dog` and `cat`, might contain one AnnotationSpec with `{ display_name: "dog", index: 0 }` and one AnnotationSpec with `{ display_name: "cat", index: 1 }`. This is especially useful for model training as it encodes the string labels into numeric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 	}
 
@@ -1414,7 +1513,10 @@ export namespace MyNS {
 		/** Required. The display name of the AnnotationSpec. Maximum of 64 characters. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** Output only. This is the integer index of the AnnotationSpec. The index for the whole AnnotationSpecSet is sequential starting from 0. For example, an AnnotationSpecSet with classes `dog` and `cat`, might contain one AnnotationSpec with `{ display_name: "dog", index: 0 }` and one AnnotationSpec with `{ display_name: "cat", index: 1 }`. This is especially useful for model training as it encodes the string labels into numeric values. */
+		/**
+		 * Output only. This is the integer index of the AnnotationSpec. The index for the whole AnnotationSpecSet is sequential starting from 0. For example, an AnnotationSpecSet with classes `dog` and `cat`, might contain one AnnotationSpec with `{ display_name: "dog", index: 0 }` and one AnnotationSpec with `{ display_name: "cat", index: 1 }`. This is especially useful for model training as it encodes the string labels into numeric values.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1AnnotationSpecFormGroup() {
@@ -1447,20 +1549,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudDatalabelingV1beta1Vertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the vertex coordinates are in the same scale as the original image. */
 	export interface GoogleCloudDatalabelingV1beta1VertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1VertexFormGroup() {
@@ -1492,20 +1606,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudDatalabelingV1beta1NormalizedVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudDatalabelingV1beta1NormalizedVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: float
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: float
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1NormalizedVertexFormGroup() {
@@ -1666,20 +1792,32 @@ export namespace MyNS {
 	/** Start and end position in a sequence (e.g. text segment). */
 	export interface GoogleCloudDatalabelingV1beta1SequentialSegment {
 
-		/** End position (exclusive). */
+		/**
+		 * End position (exclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end?: number | null;
 
-		/** Start position (inclusive). */
+		/**
+		 * Start position (inclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start?: number | null;
 	}
 
 	/** Start and end position in a sequence (e.g. text segment). */
 	export interface GoogleCloudDatalabelingV1beta1SequentialSegmentFormProperties {
 
-		/** End position (exclusive). */
+		/**
+		 * End position (exclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		end: FormControl<number | null | undefined>,
 
-		/** Start position (inclusive). */
+		/**
+		 * Start position (inclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1SequentialSegmentFormGroup() {
@@ -1894,14 +2032,20 @@ export namespace MyNS {
 	/** Options regarding evaluation between bounding boxes. */
 	export interface GoogleCloudDatalabelingV1beta1BoundingBoxEvaluationOptions {
 
-		/** Minimum [intersection-over-union (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union) required for 2 bounding boxes to be considered a match. This must be a number between 0 and 1. */
+		/**
+		 * Minimum [intersection-over-union (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union) required for 2 bounding boxes to be considered a match. This must be a number between 0 and 1.
+		 * Type: float
+		 */
 		iouThreshold?: number | null;
 	}
 
 	/** Options regarding evaluation between bounding boxes. */
 	export interface GoogleCloudDatalabelingV1beta1BoundingBoxEvaluationOptionsFormProperties {
 
-		/** Minimum [intersection-over-union (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union) required for 2 bounding boxes to be considered a match. This must be a number between 0 and 1. */
+		/**
+		 * Minimum [intersection-over-union (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union) required for 2 bounding boxes to be considered a match. This must be a number between 0 and 1.
+		 * Type: float
+		 */
 		iouThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1BoundingBoxEvaluationOptionsFormGroup() {
@@ -1990,12 +2134,18 @@ export namespace MyNS {
 		/** Container of information related to one possible annotation that can be used in a labeling task. For example, an image classification task where images are labeled as `dog` or `cat` must reference an AnnotationSpec for `dog` and an AnnotationSpec for `cat`. */
 		annotationSpec?: GoogleCloudDatalabelingV1beta1AnnotationSpec;
 
-		/** Number of items predicted to have this label. (The ground truth label for these items is the `Row.annotationSpec` of this entry's parent.) */
+		/**
+		 * Number of items predicted to have this label. (The ground truth label for these items is the `Row.annotationSpec` of this entry's parent.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemCount?: number | null;
 	}
 	export interface GoogleCloudDatalabelingV1beta1ConfusionMatrixEntryFormProperties {
 
-		/** Number of items predicted to have this label. (The ground truth label for these items is the `Row.annotationSpec` of this entry's parent.) */
+		/**
+		 * Number of items predicted to have this label. (The ground truth label for these items is the `Row.annotationSpec` of this entry's parent.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1ConfusionMatrixEntryFormGroup() {
@@ -2010,21 +2160,33 @@ export namespace MyNS {
 		/** Container of information related to one possible annotation that can be used in a labeling task. For example, an image classification task where images are labeled as `dog` or `cat` must reference an AnnotationSpec for `dog` and an AnnotationSpec for `cat`. */
 		annotationSpec?: GoogleCloudDatalabelingV1beta1AnnotationSpec;
 
-		/** Area under the precision-recall curve. Not to be confused with area under a receiver operating characteristic (ROC) curve. */
+		/**
+		 * Area under the precision-recall curve. Not to be confused with area under a receiver operating characteristic (ROC) curve.
+		 * Type: float
+		 */
 		areaUnderCurve?: number | null;
 
 		/** Entries that make up the precision-recall graph. Each entry is a "point" on the graph drawn for a different `confidence_threshold`. */
 		confidenceMetricsEntries?: Array<GoogleCloudDatalabelingV1beta1ConfidenceMetricsEntry>;
 
-		/** Mean average prcision of this curve. */
+		/**
+		 * Mean average prcision of this curve.
+		 * Type: float
+		 */
 		meanAveragePrecision?: number | null;
 	}
 	export interface GoogleCloudDatalabelingV1beta1PrCurveFormProperties {
 
-		/** Area under the precision-recall curve. Not to be confused with area under a receiver operating characteristic (ROC) curve. */
+		/**
+		 * Area under the precision-recall curve. Not to be confused with area under a receiver operating characteristic (ROC) curve.
+		 * Type: float
+		 */
 		areaUnderCurve: FormControl<number | null | undefined>,
 
-		/** Mean average prcision of this curve. */
+		/**
+		 * Mean average prcision of this curve.
+		 * Type: float
+		 */
 		meanAveragePrecision: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1PrCurveFormGroup() {
@@ -2037,66 +2199,126 @@ export namespace MyNS {
 
 	export interface GoogleCloudDatalabelingV1beta1ConfidenceMetricsEntry {
 
-		/** Threshold used for this entry. For classification tasks, this is a classification threshold: a predicted label is categorized as positive or negative (in the context of this point on the PR curve) based on whether the label's score meets this threshold. For image object detection (bounding box) tasks, this is the [intersection-over-union (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union) threshold for the context of this point on the PR curve. */
+		/**
+		 * Threshold used for this entry. For classification tasks, this is a classification threshold: a predicted label is categorized as positive or negative (in the context of this point on the PR curve) based on whether the label's score meets this threshold. For image object detection (bounding box) tasks, this is the [intersection-over-union (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union) threshold for the context of this point on the PR curve.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** Harmonic mean of recall and precision. */
+		/**
+		 * Harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score?: number | null;
 
-		/** The harmonic mean of recall_at1 and precision_at1. */
+		/**
+		 * The harmonic mean of recall_at1 and precision_at1.
+		 * Type: float
+		 */
 		f1ScoreAt1?: number | null;
 
-		/** The harmonic mean of recall_at5 and precision_at5. */
+		/**
+		 * The harmonic mean of recall_at5 and precision_at5.
+		 * Type: float
+		 */
 		f1ScoreAt5?: number | null;
 
-		/** Precision value. */
+		/**
+		 * Precision value.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Precision value for entries with label that has highest score. */
+		/**
+		 * Precision value for entries with label that has highest score.
+		 * Type: float
+		 */
 		precisionAt1?: number | null;
 
-		/** Precision value for entries with label that has highest 5 scores. */
+		/**
+		 * Precision value for entries with label that has highest 5 scores.
+		 * Type: float
+		 */
 		precisionAt5?: number | null;
 
-		/** Recall value. */
+		/**
+		 * Recall value.
+		 * Type: float
+		 */
 		recall?: number | null;
 
-		/** Recall value for entries with label that has highest score. */
+		/**
+		 * Recall value for entries with label that has highest score.
+		 * Type: float
+		 */
 		recallAt1?: number | null;
 
-		/** Recall value for entries with label that has highest 5 scores. */
+		/**
+		 * Recall value for entries with label that has highest 5 scores.
+		 * Type: float
+		 */
 		recallAt5?: number | null;
 	}
 	export interface GoogleCloudDatalabelingV1beta1ConfidenceMetricsEntryFormProperties {
 
-		/** Threshold used for this entry. For classification tasks, this is a classification threshold: a predicted label is categorized as positive or negative (in the context of this point on the PR curve) based on whether the label's score meets this threshold. For image object detection (bounding box) tasks, this is the [intersection-over-union (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union) threshold for the context of this point on the PR curve. */
+		/**
+		 * Threshold used for this entry. For classification tasks, this is a classification threshold: a predicted label is categorized as positive or negative (in the context of this point on the PR curve) based on whether the label's score meets this threshold. For image object detection (bounding box) tasks, this is the [intersection-over-union (IOU)](/vision/automl/object-detection/docs/evaluate#intersection-over-union) threshold for the context of this point on the PR curve.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** Harmonic mean of recall and precision. */
+		/**
+		 * Harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** The harmonic mean of recall_at1 and precision_at1. */
+		/**
+		 * The harmonic mean of recall_at1 and precision_at1.
+		 * Type: float
+		 */
 		f1ScoreAt1: FormControl<number | null | undefined>,
 
-		/** The harmonic mean of recall_at5 and precision_at5. */
+		/**
+		 * The harmonic mean of recall_at5 and precision_at5.
+		 * Type: float
+		 */
 		f1ScoreAt5: FormControl<number | null | undefined>,
 
-		/** Precision value. */
+		/**
+		 * Precision value.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Precision value for entries with label that has highest score. */
+		/**
+		 * Precision value for entries with label that has highest score.
+		 * Type: float
+		 */
 		precisionAt1: FormControl<number | null | undefined>,
 
-		/** Precision value for entries with label that has highest 5 scores. */
+		/**
+		 * Precision value for entries with label that has highest 5 scores.
+		 * Type: float
+		 */
 		precisionAt5: FormControl<number | null | undefined>,
 
-		/** Recall value. */
+		/**
+		 * Recall value.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 
-		/** Recall value for entries with label that has highest score. */
+		/**
+		 * Recall value for entries with label that has highest score.
+		 * Type: float
+		 */
 		recallAt1: FormControl<number | null | undefined>,
 
-		/** Recall value for entries with label that has highest 5 scores. */
+		/**
+		 * Recall value for entries with label that has highest 5 scores.
+		 * Type: float
+		 */
 		recallAt5: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1ConfidenceMetricsEntryFormGroup() {
@@ -2411,10 +2633,16 @@ export namespace MyNS {
 		/** Provides details for how an evaluation job sends email alerts based on the results of a run. */
 		evaluationJobAlertConfig?: GoogleCloudDatalabelingV1beta1EvaluationJobAlertConfig;
 
-		/** Required. The maximum number of predictions to sample and save to BigQuery during each evaluation interval. This limit overrides `example_sample_percentage`: even if the service has not sampled enough predictions to fulfill `example_sample_perecentage` during an interval, it stops sampling predictions when it meets this limit. */
+		/**
+		 * Required. The maximum number of predictions to sample and save to BigQuery during each evaluation interval. This limit overrides `example_sample_percentage`: even if the service has not sampled enough predictions to fulfill `example_sample_perecentage` during an interval, it stops sampling predictions when it meets this limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exampleCount?: number | null;
 
-		/** Required. Fraction of predictions to sample and save to BigQuery during each evaluation interval. For example, 0.1 means 10% of predictions served by your model version get saved to BigQuery. */
+		/**
+		 * Required. Fraction of predictions to sample and save to BigQuery during each evaluation interval. For example, 0.1 means 10% of predictions served by your model version get saved to BigQuery.
+		 * Type: double
+		 */
 		exampleSamplePercentage?: number | null;
 
 		/** Configuration for how human labeling task should be done. */
@@ -2436,10 +2664,16 @@ export namespace MyNS {
 		/** Required. Prediction keys that tell Data Labeling Service where to find the data for evaluation in your BigQuery table. When the service samples prediction input and output from your model version and saves it to BigQuery, the data gets stored as JSON strings in the BigQuery table. These keys tell Data Labeling Service how to parse the JSON. You can provide the following entries in this field: * `data_json_key`: the data key for prediction input. You must provide either this key or `reference_json_key`. * `reference_json_key`: the data reference key for prediction input. You must provide either this key or `data_json_key`. * `label_json_key`: the label key for prediction output. Required. * `label_score_json_key`: the score key for prediction output. Required. * `bounding_box_json_key`: the bounding box key for prediction output. Required if your model version perform image object detection. Learn [how to configure prediction keys](/ml-engine/docs/continuous-evaluation/create-job#prediction-keys). */
 		bigqueryImportKeys: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Required. The maximum number of predictions to sample and save to BigQuery during each evaluation interval. This limit overrides `example_sample_percentage`: even if the service has not sampled enough predictions to fulfill `example_sample_perecentage` during an interval, it stops sampling predictions when it meets this limit. */
+		/**
+		 * Required. The maximum number of predictions to sample and save to BigQuery during each evaluation interval. This limit overrides `example_sample_percentage`: even if the service has not sampled enough predictions to fulfill `example_sample_perecentage` during an interval, it stops sampling predictions when it meets this limit.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exampleCount: FormControl<number | null | undefined>,
 
-		/** Required. Fraction of predictions to sample and save to BigQuery during each evaluation interval. For example, 0.1 means 10% of predictions served by your model version get saved to BigQuery. */
+		/**
+		 * Required. Fraction of predictions to sample and save to BigQuery during each evaluation interval. For example, 0.1 means 10% of predictions served by your model version get saved to BigQuery.
+		 * Type: double
+		 */
 		exampleSamplePercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1EvaluationJobConfigFormGroup() {
@@ -2475,7 +2709,10 @@ export namespace MyNS {
 		/** Required. An email address to send alerts to. */
 		email?: string | null;
 
-		/** Required. A number between 0 and 1 that describes a minimum mean average precision threshold. When the evaluation job runs, if it calculates that your model version's predictions from the recent interval have meanAveragePrecision below this threshold, then it sends an alert to your specified email. */
+		/**
+		 * Required. A number between 0 and 1 that describes a minimum mean average precision threshold. When the evaluation job runs, if it calculates that your model version's predictions from the recent interval have meanAveragePrecision below this threshold, then it sends an alert to your specified email.
+		 * Type: double
+		 */
 		minAcceptableMeanAveragePrecision?: number | null;
 	}
 
@@ -2485,7 +2722,10 @@ export namespace MyNS {
 		/** Required. An email address to send alerts to. */
 		email: FormControl<string | null | undefined>,
 
-		/** Required. A number between 0 and 1 that describes a minimum mean average precision threshold. When the evaluation job runs, if it calculates that your model version's predictions from the recent interval have meanAveragePrecision below this threshold, then it sends an alert to your specified email. */
+		/**
+		 * Required. A number between 0 and 1 that describes a minimum mean average precision threshold. When the evaluation job runs, if it calculates that your model version's predictions from the recent interval have meanAveragePrecision below this threshold, then it sends an alert to your specified email.
+		 * Type: double
+		 */
 		minAcceptableMeanAveragePrecision: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1EvaluationJobAlertConfigFormGroup() {
@@ -2750,7 +2990,10 @@ export namespace MyNS {
 	/** Container of information of a video. */
 	export interface GoogleCloudDatalabelingV1beta1VideoPayload {
 
-		/** FPS of the video. */
+		/**
+		 * FPS of the video.
+		 * Type: float
+		 */
 		frameRate?: number | null;
 
 		/** Video format. */
@@ -2769,7 +3012,10 @@ export namespace MyNS {
 	/** Container of information of a video. */
 	export interface GoogleCloudDatalabelingV1beta1VideoPayloadFormProperties {
 
-		/** FPS of the video. */
+		/**
+		 * FPS of the video.
+		 * Type: float
+		 */
 		frameRate: FormControl<number | null | undefined>,
 
 		/** Video format. */
@@ -3004,7 +3250,10 @@ export namespace MyNS {
 		/** Ouptut only. The name of dataset. "projects/datasets/*" */
 		dataset?: string | null;
 
-		/** Output only. Number of examples exported successfully. */
+		/**
+		 * Output only. Number of examples exported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exportCount?: number | null;
 
 		/** Statistics about annotation specs. */
@@ -3013,7 +3262,10 @@ export namespace MyNS {
 		/** The configuration of output data. */
 		outputConfig?: GoogleCloudDatalabelingV1beta1OutputConfig;
 
-		/** Output only. Total number of examples requested to export */
+		/**
+		 * Output only. Total number of examples requested to export
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 
@@ -3026,10 +3278,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of dataset. "projects/datasets/*" */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Number of examples exported successfully. */
+		/**
+		 * Output only. Number of examples exported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exportCount: FormControl<number | null | undefined>,
 
-		/** Output only. Total number of examples requested to export */
+		/**
+		 * Output only. Total number of examples requested to export
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1ExportDataOperationResponseFormGroup() {
@@ -3321,10 +3579,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of imported dataset. */
 		dataset?: string | null;
 
-		/** Output only. Number of examples imported successfully. */
+		/**
+		 * Output only. Number of examples imported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importCount?: number | null;
 
-		/** Output only. Total number of examples requested to import */
+		/**
+		 * Output only. Total number of examples requested to import
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 
@@ -3334,10 +3598,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of imported dataset. */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Number of examples imported successfully. */
+		/**
+		 * Output only. Number of examples imported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importCount: FormControl<number | null | undefined>,
 
-		/** Output only. Total number of examples requested to import */
+		/**
+		 * Output only. Total number of examples requested to import
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1ImportDataOperationResponseFormGroup() {
@@ -3547,7 +3817,10 @@ export namespace MyNS {
 		/** Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details. */
 		partialFailures?: Array<GoogleRpcStatus>;
 
-		/** Output only. Progress of label operation. Range: [0, 100]. */
+		/**
+		 * Output only. Progress of label operation. Range: [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Details of a LabelTextClassification operation metadata. */
@@ -3581,7 +3854,10 @@ export namespace MyNS {
 		/** Output only. The name of dataset to be labeled. "projects/datasets/*" */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Progress of label operation. Range: [0, 100]. */
+		/**
+		 * Output only. Progress of label operation. Range: [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1beta1LabelOperationMetadataFormGroup() {
@@ -4038,7 +4314,10 @@ export namespace MyNS {
 	/** Request message of SearchExampleComparisons. */
 	export interface GoogleCloudDatalabelingV1beta1SearchExampleComparisonsRequest {
 
-		/** Optional. Requested page size. Server may return fewer results than requested. Default value is 100. */
+		/**
+		 * Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** Optional. A token identifying a page of results for the server to return. Typically obtained by the nextPageToken of the response to a previous search rquest. If you don't specify this field, the API call requests the first page of the search. */
@@ -4048,7 +4327,10 @@ export namespace MyNS {
 	/** Request message of SearchExampleComparisons. */
 	export interface GoogleCloudDatalabelingV1beta1SearchExampleComparisonsRequestFormProperties {
 
-		/** Optional. Requested page size. Server may return fewer results than requested. Default value is 100. */
+		/**
+		 * Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** Optional. A token identifying a page of results for the server to return. Typically obtained by the nextPageToken of the response to a previous search rquest. If you don't specify this field, the API call requests the first page of the search. */
@@ -4165,7 +4447,10 @@ export namespace MyNS {
 		/** Ouptut only. The name of dataset. "projects/datasets/*" */
 		dataset?: string | null;
 
-		/** Output only. Number of examples exported successfully. */
+		/**
+		 * Output only. Number of examples exported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exportCount?: number | null;
 
 		/** Statistics about annotation specs. */
@@ -4174,7 +4459,10 @@ export namespace MyNS {
 		/** The configuration of output data. */
 		outputConfig?: GoogleCloudDatalabelingV1p1alpha1OutputConfig;
 
-		/** Output only. Total number of examples requested to export */
+		/**
+		 * Output only. Total number of examples requested to export
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 
@@ -4187,10 +4475,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of dataset. "projects/datasets/*" */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Number of examples exported successfully. */
+		/**
+		 * Output only. Number of examples exported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exportCount: FormControl<number | null | undefined>,
 
-		/** Output only. Total number of examples requested to export */
+		/**
+		 * Output only. Total number of examples requested to export
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1p1alpha1ExportDataOperationResponseFormGroup() {
@@ -4346,7 +4640,10 @@ export namespace MyNS {
 		/** Optional. Maximum duration for contributors to answer a question. Maximum is 3600 seconds. Default is 3600 seconds. */
 		questionDuration?: string | null;
 
-		/** Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5. */
+		/**
+		 * Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount?: number | null;
 
 		/** Email of the user who started the labeling task and should be notified by email. If empty no notification will be sent. */
@@ -4374,7 +4671,10 @@ export namespace MyNS {
 		/** Optional. Maximum duration for contributors to answer a question. Maximum is 3600 seconds. Default is 3600 seconds. */
 		questionDuration: FormControl<string | null | undefined>,
 
-		/** Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5. */
+		/**
+		 * Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount: FormControl<number | null | undefined>,
 
 		/** Email of the user who started the labeling task and should be notified by email. If empty no notification will be sent. */
@@ -4432,10 +4732,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of imported dataset. */
 		dataset?: string | null;
 
-		/** Output only. Number of examples imported successfully. */
+		/**
+		 * Output only. Number of examples imported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importCount?: number | null;
 
-		/** Output only. Total number of examples requested to import */
+		/**
+		 * Output only. Total number of examples requested to import
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 
@@ -4445,10 +4751,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of imported dataset. */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Number of examples imported successfully. */
+		/**
+		 * Output only. Number of examples imported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importCount: FormControl<number | null | undefined>,
 
-		/** Output only. Total number of examples requested to import */
+		/**
+		 * Output only. Total number of examples requested to import
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1p1alpha1ImportDataOperationResponseFormGroup() {
@@ -4596,7 +4908,10 @@ export namespace MyNS {
 		/** Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details. */
 		partialFailures?: Array<GoogleRpcStatus>;
 
-		/** Output only. Progress of label operation. Range: [0, 100]. */
+		/**
+		 * Output only. Progress of label operation. Range: [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Details of a LabelTextClassification operation metadata. */
@@ -4630,7 +4945,10 @@ export namespace MyNS {
 		/** Output only. The name of dataset to be labeled. "projects/datasets/*" */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Progress of label operation. Range: [0, 100]. */
+		/**
+		 * Output only. Progress of label operation. Range: [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1p1alpha1LabelOperationMetadataFormGroup() {
@@ -4824,7 +5142,10 @@ export namespace MyNS {
 		/** Ouptut only. The name of dataset. "projects/datasets/*" */
 		dataset?: string | null;
 
-		/** Output only. Number of examples exported successfully. */
+		/**
+		 * Output only. Number of examples exported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exportCount?: number | null;
 
 		/** Statistics about annotation specs. */
@@ -4833,7 +5154,10 @@ export namespace MyNS {
 		/** The configuration of output data. */
 		outputConfig?: GoogleCloudDatalabelingV1p2alpha1OutputConfig;
 
-		/** Output only. Total number of examples requested to export */
+		/**
+		 * Output only. Total number of examples requested to export
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 
@@ -4846,10 +5170,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of dataset. "projects/datasets/*" */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Number of examples exported successfully. */
+		/**
+		 * Output only. Number of examples exported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exportCount: FormControl<number | null | undefined>,
 
-		/** Output only. Total number of examples requested to export */
+		/**
+		 * Output only. Total number of examples requested to export
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1p2alpha1ExportDataOperationResponseFormGroup() {
@@ -4977,7 +5307,10 @@ export namespace MyNS {
 		/** Optional. Maximum duration for contributors to answer a question. Maximum is 3600 seconds. Default is 3600 seconds. */
 		questionDuration?: string | null;
 
-		/** Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5. */
+		/**
+		 * Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount?: number | null;
 
 		/** Email of the user who started the labeling task and should be notified by email. If empty no notification will be sent. */
@@ -5005,7 +5338,10 @@ export namespace MyNS {
 		/** Optional. Maximum duration for contributors to answer a question. Maximum is 3600 seconds. Default is 3600 seconds. */
 		questionDuration: FormControl<string | null | undefined>,
 
-		/** Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5. */
+		/**
+		 * Optional. Replication of questions. Each question will be sent to up to this number of contributors to label. Aggregated answers will be returned. Default is set to 1. For image related labeling, valid values are 1, 3, 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		replicaCount: FormControl<number | null | undefined>,
 
 		/** Email of the user who started the labeling task and should be notified by email. If empty no notification will be sent. */
@@ -5063,10 +5399,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of imported dataset. */
 		dataset?: string | null;
 
-		/** Output only. Number of examples imported successfully. */
+		/**
+		 * Output only. Number of examples imported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importCount?: number | null;
 
-		/** Output only. Total number of examples requested to import */
+		/**
+		 * Output only. Total number of examples requested to import
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount?: number | null;
 	}
 
@@ -5076,10 +5418,16 @@ export namespace MyNS {
 		/** Ouptut only. The name of imported dataset. */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Number of examples imported successfully. */
+		/**
+		 * Output only. Number of examples imported successfully.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importCount: FormControl<number | null | undefined>,
 
-		/** Output only. Total number of examples requested to import */
+		/**
+		 * Output only. Total number of examples requested to import
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1p2alpha1ImportDataOperationResponseFormGroup() {
@@ -5227,7 +5575,10 @@ export namespace MyNS {
 		/** Output only. Partial failures encountered. E.g. single files that couldn't be read. Status details field will contain standard GCP error details. */
 		partialFailures?: Array<GoogleRpcStatus>;
 
-		/** Output only. Progress of label operation. Range: [0, 100]. */
+		/**
+		 * Output only. Progress of label operation. Range: [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent?: number | null;
 
 		/** Details of a LabelTextClassification operation metadata. */
@@ -5261,7 +5612,10 @@ export namespace MyNS {
 		/** Output only. The name of dataset to be labeled. "projects/datasets/*" */
 		dataset: FormControl<string | null | undefined>,
 
-		/** Output only. Progress of label operation. Range: [0, 100]. */
+		/**
+		 * Output only. Progress of label operation. Range: [0, 100].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		progressPercent: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudDatalabelingV1p2alpha1LabelOperationMetadataFormGroup() {
@@ -5502,6 +5856,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -5565,6 +5920,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the dataset to list annotated datasets, format: projects/{project_id}/datasets/{dataset_id}
 		 * @param {string} filter Optional. Filter is not supported at this moment.
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained by ListAnnotatedDatasetsResponse.next_page_token of the previous [DataLabelingService.ListAnnotatedDatasets] call. Return first page if empty.
 		 * @return {GoogleCloudDatalabelingV1beta1ListAnnotatedDatasetsResponse} Successful response
 		 */
@@ -5578,6 +5934,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Parent of AnnotationSpecSet resource, format: projects/{project_id}
 		 * @param {string} filter Optional. Filter is not supported at this moment.
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained by ListAnnotationSpecSetsResponse.next_page_token of the previous [DataLabelingService.ListAnnotationSpecSets] call. Return first page if empty.
 		 * @return {GoogleCloudDatalabelingV1beta1ListAnnotationSpecSetsResponse} Successful response
 		 */
@@ -5601,6 +5958,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of the dataset to list data items, format: projects/{project_id}/datasets/{dataset_id}
 		 * @param {string} filter Optional. Filter is not supported at this moment.
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained by ListDataItemsResponse.next_page_token of the previous [DataLabelingService.ListDataItems] call. Return first page if empty.
 		 * @return {GoogleCloudDatalabelingV1beta1ListDataItemsResponse} Successful response
 		 */
@@ -5614,6 +5972,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Dataset resource parent, format: projects/{project_id}
 		 * @param {string} filter Optional. Filter on dataset is not supported at this moment.
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained by ListDatasetsResponse.next_page_token of the previous [DataLabelingService.ListDatasets] call. Returns the first page if empty.
 		 * @return {GoogleCloudDatalabelingV1beta1ListDatasetsResponse} Successful response
 		 */
@@ -5637,6 +5996,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Evaluation job resource parent. Format: "projects/{project_id}"
 		 * @param {string} filter Optional. You can filter the jobs to list by model_id (also known as model_name, as described in EvaluationJob.modelVersion) or by evaluation job state (as described in EvaluationJob.state). To filter by both criteria, use the `AND` operator or the `OR` operator. For example, you can use the following string for your filter: "evaluation_job.model_id = {model_name} AND evaluation_job.state = {evaluation_job_state}"
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained by the nextPageToken in the response to the previous request. The request returns the first page if this is empty.
 		 * @return {GoogleCloudDatalabelingV1beta1ListEvaluationJobsResponse} Successful response
 		 */
@@ -5660,6 +6020,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Evaluation search parent (project ID). Format: "projects/ {project_id}"
 		 * @param {string} filter Optional. To search evaluations, you can filter by the following: * evaluation_job.evaluation_job_id (the last part of EvaluationJob.name) * evaluation_job.model_id (the {model_name} portion of EvaluationJob.modelVersion) * evaluation_job.evaluation_job_run_time_start (Minimum threshold for the evaluationJobRunTime that created the evaluation) * evaluation_job.evaluation_job_run_time_end (Maximum threshold for the evaluationJobRunTime that created the evaluation) * evaluation_job.job_state (EvaluationJob.state) * annotation_spec.display_name (the Evaluation contains a metric for the annotation spec with this displayName) To filter by multiple critiera, use the `AND` operator or the `OR` operator. The following examples shows a string that filters by several critiera: "evaluation_job.evaluation_job_id = {evaluation_job_id} AND evaluation_job.model_id = {model_name} AND evaluation_job.evaluation_job_run_time_start = {timestamp_1} AND evaluation_job.evaluation_job_run_time_end = {timestamp_2} AND annotation_spec.display_name = {display_name}"
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained by the nextPageToken of the response to a previous search request. If you don't specify this field, the API call requests the first page of the search.
 		 * @return {GoogleCloudDatalabelingV1beta1SearchEvaluationsResponse} Successful response
 		 */
@@ -5683,6 +6044,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Example resource parent.
 		 * @param {string} filter Optional. An expression for filtering Examples. For annotated datasets that have annotation spec set, filter by annotation_spec.display_name is supported. Format "annotation_spec.display_name = {display_name}"
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained by ListExamplesResponse.next_page_token of the previous [DataLabelingService.ListExamples] call. Return first page if empty.
 		 * @return {GoogleCloudDatalabelingV1beta1ListExamplesResponse} Successful response
 		 */
@@ -5695,6 +6057,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/feedbackMessages
 		 * @param {string} parent Required. FeedbackMessage resource parent. Format: "projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}/feedbackThreads/{feedback_thread_id}"
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained by ListFeedbackMessages.next_page_token of the previous [DataLabelingService.ListFeedbackMessages] call. Return first page if empty.
 		 * @return {GoogleCloudDatalabelingV1beta1ListFeedbackMessagesResponse} Successful response
 		 */
@@ -5717,6 +6080,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/feedbackThreads
 		 * @param {string} parent Required. FeedbackThread resource parent. Format: "projects/{project_id}/datasets/{dataset_id}/annotatedDatasets/{annotated_dataset_id}"
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained by ListFeedbackThreads.next_page_token of the previous [DataLabelingService.ListFeedbackThreads] call. Return first page if empty.
 		 * @return {GoogleCloudDatalabelingV1beta1ListFeedbackThreadsResponse} Successful response
 		 */
@@ -5740,6 +6104,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Instruction resource parent, format: projects/{project_id}
 		 * @param {string} filter Optional. Filter is not supported at this moment.
 		 * @param {number} pageSize Optional. Requested page size. Server may return fewer results than requested. Default value is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A token identifying a page of results for the server to return. Typically obtained by ListInstructionsResponse.next_page_token of the previous [DataLabelingService.ListInstructions] call. Return first page if empty.
 		 * @return {GoogleCloudDatalabelingV1beta1ListInstructionsResponse} Successful response
 		 */

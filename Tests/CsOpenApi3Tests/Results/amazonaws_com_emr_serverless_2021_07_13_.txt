@@ -1316,8 +1316,14 @@ namespace MyNS
 		/// Cancels a job run.
 		/// CancelJobRun applications/{applicationId}/jobruns/{jobRunId}
 		/// </summary>
-		/// <param name="applicationId">The ID of the application on which the job run will be canceled.</param>
-		/// <param name="jobRunId">The ID of the job run to cancel.</param>
+		/// <param name="applicationId">The ID of the application on which the job run will be canceled.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="jobRunId">The ID of the job run to cancel.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CancelJobRunResponse> CancelJobRunAsync(string applicationId, string jobRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1351,8 +1357,14 @@ namespace MyNS
 		/// Displays detailed information about a job run.
 		/// GetJobRun applications/{applicationId}/jobruns/{jobRunId}
 		/// </summary>
-		/// <param name="applicationId">The ID of the application on which the job run is submitted.</param>
-		/// <param name="jobRunId">The ID of the job run.</param>
+		/// <param name="applicationId">The ID of the application on which the job run is submitted.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="jobRunId">The ID of the job run.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetJobRunResponse> GetJobRunAsync(string applicationId, string jobRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1426,9 +1438,18 @@ namespace MyNS
 		/// Lists applications based on a set of parameters.
 		/// ListApplications applications
 		/// </summary>
-		/// <param name="nextToken">The token for the next set of application results.</param>
-		/// <param name="maxResults">The maximum number of applications that can be listed.</param>
-		/// <param name="states">An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</param>
+		/// <param name="nextToken">The token for the next set of application results.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of applications that can be listed.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="states">An optional filter for application states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.
+		/// Minimum items: 1
+		/// Maximum items: 7
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListApplicationsResponse> ListApplicationsAsync(string nextToken, int maxResults, ApplicationState[] states, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1462,7 +1483,10 @@ namespace MyNS
 		/// Deletes an application. An application has to be in a stopped or created state in order to be deleted.
 		/// DeleteApplication applications/{applicationId}
 		/// </summary>
-		/// <param name="applicationId">The ID of the application that will be deleted.</param>
+		/// <param name="applicationId">The ID of the application that will be deleted.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteApplicationResponse> DeleteApplicationAsync(string applicationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1496,7 +1520,10 @@ namespace MyNS
 		/// Displays detailed information about a specified application.
 		/// GetApplication applications/{applicationId}
 		/// </summary>
-		/// <param name="applicationId">The ID of the application that will be described.</param>
+		/// <param name="applicationId">The ID of the application that will be described.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetApplicationResponse> GetApplicationAsync(string applicationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1530,7 +1557,10 @@ namespace MyNS
 		/// Updates a specified application. An application has to be in a stopped or created state in order to be updated.
 		/// UpdateApplication applications/{applicationId}
 		/// </summary>
-		/// <param name="applicationId">The ID of the application to update.</param>
+		/// <param name="applicationId">The ID of the application to update.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateApplicationResponse> UpdateApplicationAsync(string applicationId, UpdateApplicationPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1571,8 +1601,14 @@ namespace MyNS
 		/// <p>Creates and returns a URL that you can use to access the application UIs for a job run.</p> <p>For jobs in a running state, the application UI is a live user interface such as the Spark or Tez web UI. For completed jobs, the application UI is a persistent application user interface such as the Spark History Server or persistent Tez UI.</p> <note> <p>The URL is valid for one hour after you generate it. To access the application UI after that hour elapses, you must invoke the API again to generate a new URL.</p> </note>
 		/// GetDashboardForJobRun applications/{applicationId}/jobruns/{jobRunId}/dashboard
 		/// </summary>
-		/// <param name="applicationId">The ID of the application.</param>
-		/// <param name="jobRunId">The ID of the job run.</param>
+		/// <param name="applicationId">The ID of the application.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="jobRunId">The ID of the job run.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDashboardForJobRunResponse> GetDashboardForJobRunAsync(string applicationId, string jobRunId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1606,12 +1642,24 @@ namespace MyNS
 		/// Lists job runs based on a set of parameters.
 		/// ListJobRuns applications/{applicationId}/jobruns
 		/// </summary>
-		/// <param name="applicationId">The ID of the application for which to list the job run.</param>
-		/// <param name="nextToken">The token for the next set of job run results.</param>
-		/// <param name="maxResults">The maximum number of job runs that can be listed.</param>
+		/// <param name="applicationId">The ID of the application for which to list the job run.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="nextToken">The token for the next set of job run results.
+		/// Max length: 1024
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of job runs that can be listed.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="createdAtAfter">The lower bound of the option to filter by creation date and time.</param>
 		/// <param name="createdAtBefore">The upper bound of the option to filter by creation date and time.</param>
-		/// <param name="states">An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.</param>
+		/// <param name="states">An optional filter for job run states. Note that if this filter contains multiple states, the resulting list will be grouped by the state.
+		/// Minimum items: 0
+		/// Maximum items: 8
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListJobRunsResponse> ListJobRunsAsync(string applicationId, string nextToken, int maxResults, System.DateTimeOffset createdAtAfter, System.DateTimeOffset createdAtBefore, JobRunState[] states, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1645,7 +1693,10 @@ namespace MyNS
 		/// Starts a job run.
 		/// StartJobRun applications/{applicationId}/jobruns
 		/// </summary>
-		/// <param name="applicationId">The ID of the application on which to run the job.</param>
+		/// <param name="applicationId">The ID of the application on which to run the job.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartJobRunResponse> StartJobRunAsync(string applicationId, StartJobRunPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1686,7 +1737,10 @@ namespace MyNS
 		/// Lists the tags assigned to the resources.
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
+		/// Max length: 1024
+		/// Min length: 60
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1720,7 +1774,10 @@ namespace MyNS
 		/// Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you've assigned to it.
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
+		/// Max length: 1024
+		/// Min length: 60
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1761,7 +1818,10 @@ namespace MyNS
 		/// Starts a specified application and initializes initial capacity if configured.
 		/// StartApplication applications/{applicationId}/start
 		/// </summary>
-		/// <param name="applicationId">The ID of the application to start.</param>
+		/// <param name="applicationId">The ID of the application to start.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StartApplicationResponse> StartApplicationAsync(string applicationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1790,7 +1850,10 @@ namespace MyNS
 		/// Stops a specified application and releases initial capacity if configured. All scheduled and running jobs must be completed or cancelled before stopping an application.
 		/// StopApplication applications/{applicationId}/stop
 		/// </summary>
-		/// <param name="applicationId">The ID of the application to stop.</param>
+		/// <param name="applicationId">The ID of the application to stop.
+		/// Max length: 64
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<StopApplicationResponse> StopApplicationAsync(string applicationId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1819,8 +1882,14 @@ namespace MyNS
 		/// Removes tags from resources.
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.</param>
-		/// <param name="tagKeys">The keys of the tags to be removed.</param>
+		/// <param name="resourceArn">The Amazon Resource Name (ARN) that identifies the resource to list the tags for. Currently, the supported resources are Amazon EMR Serverless applications and job runs.
+		/// Max length: 1024
+		/// Min length: 60
+		// </param>
+		/// <param name="tagKeys">The keys of the tags to be removed.
+		/// Minimum items: 1
+		/// Maximum items: 200
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

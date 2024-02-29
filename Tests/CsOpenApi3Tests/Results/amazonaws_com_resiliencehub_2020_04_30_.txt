@@ -5285,10 +5285,16 @@ namespace MyNS
 		/// </summary>
 		/// <param name="appArn">Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</param>
 		/// <param name="assessmentName">The name for the assessment.</param>
-		/// <param name="assessmentStatus">The current status of the assessment for the resiliency policy.</param>
+		/// <param name="assessmentStatus">The current status of the assessment for the resiliency policy.
+		/// Minimum items: 1
+		/// Maximum items: 10
+		// </param>
 		/// <param name="complianceStatus">The current status of compliance for the resiliency policy.</param>
 		/// <param name="invoker">Specifies the entity that invoked a specific assessment, either a <code>User</code> or the <code>System</code>.</param>
-		/// <param name="maxResults">Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</param>
+		/// <param name="maxResults">Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">Null, or the token from a previous call to get the next set of results.</param>
 		/// <param name="reverseOrder">The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</param>
 		/// <returns>Success</returns>
@@ -5619,7 +5625,10 @@ namespace MyNS
 		/// ListApps list-apps
 		/// </summary>
 		/// <param name="appArn">Amazon Resource Name (ARN) of the Resilience Hub application. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</param>
-		/// <param name="maxResults">Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</param>
+		/// <param name="maxResults">Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="name">The name for the one of the listed applications.</param>
 		/// <param name="nextToken">Null, or the token from a previous call to get the next set of results.</param>
 		/// <returns>Success</returns>
@@ -5656,12 +5665,18 @@ namespace MyNS
 		/// ListRecommendationTemplates list-recommendation-templates#assessmentArn
 		/// </summary>
 		/// <param name="assessmentArn">Amazon Resource Name (ARN) of the assessment. The format for this ARN is: arn:<code>partition</code>:resiliencehub:<code>region</code>:<code>account</code>:app-assessment/<code>app-id</code>. For more information about ARNs, see <a href="https://docs.aws.amazon.com/general/latest/gr/aws-arns-and-namespaces.html"> Amazon Resource Names (ARNs)</a> in the <i>AWS General Reference</i> guide.</param>
-		/// <param name="maxResults">Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</param>
+		/// <param name="maxResults">Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="name">The name for one of the listed recommendation templates.</param>
 		/// <param name="nextToken">Null, or the token from a previous call to get the next set of results.</param>
 		/// <param name="recommendationTemplateArn">The Amazon Resource Name (ARN) for a recommendation template.</param>
 		/// <param name="reverseOrder">The default is to sort by ascending <b>startTime</b>. To sort by descending <b>startTime</b>, set reverseOrder to <code>true</code>.</param>
-		/// <param name="status">Status of the action.</param>
+		/// <param name="status">Status of the action.
+		/// Minimum items: 1
+		/// Maximum items: 4
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListRecommendationTemplatesResponse> ListRecommendationTemplatesAsync(string assessmentArn, int maxResults, string name, string nextToken, string recommendationTemplateArn, bool reverseOrder, RecommendationTemplateStatus[] status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5695,7 +5710,10 @@ namespace MyNS
 		/// Lists the resiliency policies for the Resilience Hub applications.
 		/// ListResiliencyPolicies list-resiliency-policies
 		/// </summary>
-		/// <param name="maxResults">Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</param>
+		/// <param name="maxResults">Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">Null, or the token from a previous call to get the next set of results.</param>
 		/// <param name="policyName">The name of the policy</param>
 		/// <returns>Success</returns>
@@ -5773,7 +5791,10 @@ namespace MyNS
 		/// Lists the suggested resiliency policies for the Resilience Hub applications.
 		/// ListSuggestedResiliencyPolicies list-suggested-resiliency-policies
 		/// </summary>
-		/// <param name="maxResults">Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.</param>
+		/// <param name="maxResults">Maximum number of results to include in the response. If more results exist than the specified <code>MaxResults</code> value, a token is included in the response so that the remaining results can be retrieved.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">Null, or the token from a previous call to get the next set of results.</param>
 		/// <returns>Success</returns>
 		public async Task<ListSuggestedResiliencyPoliciesResponse> ListSuggestedResiliencyPoliciesAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6168,7 +6189,10 @@ namespace MyNS
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
 		/// <param name="resourceArn">Amazon Resource Name (ARN) of the resource. </param>
-		/// <param name="tagKeys">The keys of the tags you want to remove.</param>
+		/// <param name="tagKeys">The keys of the tags you want to remove.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

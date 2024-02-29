@@ -237,6 +237,7 @@ export namespace MyNS {
 		/**
 		 * The port to use
 		 * Required
+		 * Type: double
 		 */
 		port: number;
 
@@ -265,6 +266,7 @@ export namespace MyNS {
 		/**
 		 * The port to use
 		 * Required
+		 * Type: double
 		 */
 		port: FormControl<number | null | undefined>,
 
@@ -286,7 +288,10 @@ export namespace MyNS {
 
 	export interface Destination {
 
-		/** The number of reports being sent to this destination */
+		/**
+		 * The number of reports being sent to this destination
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemCount?: number | null;
 
 		/** The name of the organization reciving the report */
@@ -303,7 +308,10 @@ export namespace MyNS {
 	}
 	export interface DestinationFormProperties {
 
-		/** The number of reports being sent to this destination */
+		/**
+		 * The number of reports being sent to this destination
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemCount: FormControl<number | null | undefined>,
 
 		/** The name of the organization reciving the report */
@@ -367,7 +375,10 @@ export namespace MyNS {
 		/** The organization and service destinations */
 		destinations?: Array<string>;
 
-		/** the index of the item in the submitted report (0 based) */
+		/**
+		 * the index of the item in the submitted report (0 based)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reportIndex?: number | null;
 
 		/** The tracking id provided by the sender defined in the schema, null otherwise */
@@ -375,7 +386,10 @@ export namespace MyNS {
 	}
 	export interface ItemRoutingFormProperties {
 
-		/** the index of the item in the submitted report (0 based) */
+		/**
+		 * the index of the item in the submitted report (0 based)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reportIndex: FormControl<number | null | undefined>,
 
 		/** The tracking id provided by the sender defined in the schema, null otherwise */
@@ -499,7 +513,10 @@ export namespace MyNS {
 		/** the user who created the particular revision */
 		createdBy?: string | null;
 
-		/** the version number of the object */
+		/**
+		 * the version number of the object
+		 * Type: double
+		 */
 		version?: number | null;
 	}
 
@@ -512,7 +529,10 @@ export namespace MyNS {
 		/** the user who created the particular revision */
 		createdBy: FormControl<string | null | undefined>,
 
-		/** the version number of the object */
+		/**
+		 * the version number of the object
+		 * Type: double
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateSettingMetadataFormGroup() {
@@ -630,7 +650,10 @@ export namespace MyNS {
 
 	export interface ReceiverTiming {
 
-		/** The UTC hour to send a daily batch */
+		/**
+		 * The UTC hour to send a daily batch
+		 * Type: double
+		 */
 		dailyAt?: number | null;
 
 		/**
@@ -641,7 +664,10 @@ export namespace MyNS {
 	}
 	export interface ReceiverTimingFormProperties {
 
-		/** The UTC hour to send a daily batch */
+		/**
+		 * The UTC hour to send a daily batch
+		 * Type: double
+		 */
 		dailyAt: FormControl<number | null | undefined>,
 
 		/**
@@ -706,13 +732,19 @@ export namespace MyNS {
 
 	export interface Report {
 
-		/** total destinations recieving the report(s) */
+		/**
+		 * total destinations recieving the report(s)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationCount?: number | null;
 
 		/** where the report is being sent to */
 		destinations?: Array<Destination>;
 
-		/** total errors found during initial validation.  There may be multiple errors per item. */
+		/**
+		 * total errors found during initial validation.  There may be multiple errors per item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCount?: number | null;
 
 		/** a list of errors in the report */
@@ -724,7 +756,10 @@ export namespace MyNS {
 		 */
 		id: string;
 
-		/** total number of individual reports sent to the Hub (in a csv, the number of data lines sent) */
+		/**
+		 * total number of individual reports sent to the Hub (in a csv, the number of data lines sent)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reportItemCount?: number | null;
 
 		/** The receiver destination names for each item in the report. This is displayed when verbose=true is present on the query string. */
@@ -736,7 +771,10 @@ export namespace MyNS {
 		/** the topic configured for the client organization sender */
 		topic?: string | null;
 
-		/** total warnings found during initial validation.  There may be multiple warnings per item. */
+		/**
+		 * total warnings found during initial validation.  There may be multiple warnings per item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		warningCount?: number | null;
 
 		/** a list of warnings in the report */
@@ -744,10 +782,16 @@ export namespace MyNS {
 	}
 	export interface ReportFormProperties {
 
-		/** total destinations recieving the report(s) */
+		/**
+		 * total destinations recieving the report(s)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		destinationCount: FormControl<number | null | undefined>,
 
-		/** total errors found during initial validation.  There may be multiple errors per item. */
+		/**
+		 * total errors found during initial validation.  There may be multiple errors per item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorCount: FormControl<number | null | undefined>,
 
 		/**
@@ -756,7 +800,10 @@ export namespace MyNS {
 		 */
 		id: FormControl<string | null | undefined>,
 
-		/** total number of individual reports sent to the Hub (in a csv, the number of data lines sent) */
+		/**
+		 * total number of individual reports sent to the Hub (in a csv, the number of data lines sent)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		reportItemCount: FormControl<number | null | undefined>,
 
 		/** the timestamp for this report submission */
@@ -765,7 +812,10 @@ export namespace MyNS {
 		/** the topic configured for the client organization sender */
 		topic: FormControl<string | null | undefined>,
 
-		/** total warnings found during initial validation.  There may be multiple warnings per item. */
+		/**
+		 * total warnings found during initial validation.  There may be multiple warnings per item.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		warningCount: FormControl<number | null | undefined>,
 	}
 	export function CreateReportFormGroup() {

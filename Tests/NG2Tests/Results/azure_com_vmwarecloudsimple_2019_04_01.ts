@@ -2545,6 +2545,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} filter The filter to apply on the list operation
 		 * @param {number} top The maximum number of record sets to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} skipToken to be used by nextLink implementation
 		 * @return {DedicatedCloudNodeListResponse} successful operation
 		 */
@@ -2560,6 +2561,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} filter The filter to apply on the list operation
 		 * @param {number} top The maximum number of record sets to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} skipToken to be used by nextLink implementation
 		 * @return {DedicatedCloudServiceListResponse} successful operation
 		 */
@@ -2763,6 +2765,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} filter The filter to apply on the list operation
 		 * @param {number} top The maximum number of record sets to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} skipToken to be used by nextLink implementation
 		 * @return {VirtualMachineListResponse} successful operation
 		 */
@@ -2779,6 +2782,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} filter The filter to apply on the list operation
 		 * @param {number} top The maximum number of record sets to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} skipToken to be used by nextLink implementation
 		 * @return {DedicatedCloudNodeListResponse} successful operation
 		 */
@@ -2853,6 +2857,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} filter The filter to apply on the list operation
 		 * @param {number} top The maximum number of record sets to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} skipToken to be used by nextLink implementation
 		 * @return {DedicatedCloudServiceListResponse} successful operation
 		 */
@@ -2927,6 +2932,7 @@ export namespace MyNS {
 		 * @param {string} api_version Client API version.
 		 * @param {string} filter The filter to apply on the list operation
 		 * @param {number} top The maximum number of record sets to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} skipToken to be used by nextLink implementation
 		 * @return {VirtualMachineListResponse} successful operation
 		 */

@@ -104,7 +104,10 @@ export namespace MyNS {
 	/** A resource budget. */
 	export interface InstanceQuota {
 
-		/** Number of machines than can be created for the given location and instance_type. */
+		/**
+		 * Number of machines than can be created for the given location and instance_type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableMachineCount?: number | null;
 
 		/** Instance type. */
@@ -117,7 +120,10 @@ export namespace MyNS {
 	/** A resource budget. */
 	export interface InstanceQuotaFormProperties {
 
-		/** Number of machines than can be created for the given location and instance_type. */
+		/**
+		 * Number of machines than can be created for the given location and instance_type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		availableMachineCount: FormControl<number | null | undefined>,
 
 		/** Instance type. */
@@ -180,20 +186,32 @@ export namespace MyNS {
 	/** A LUN range. */
 	export interface LunRange {
 
-		/** Number of LUNs to create. */
+		/**
+		 * Number of LUNs to create.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity?: number | null;
 
-		/** The requested size of each LUN, in GB. */
+		/**
+		 * The requested size of each LUN, in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 	}
 
 	/** A LUN range. */
 	export interface LunRangeFormProperties {
 
-		/** Number of LUNs to create. */
+		/**
+		 * Number of LUNs to create.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		quantity: FormControl<number | null | undefined>,
 
-		/** The requested size of each LUN, in GB. */
+		/**
+		 * The requested size of each LUN, in GB.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 	}
 	export function CreateLunRangeFormGroup() {
@@ -421,7 +439,10 @@ export namespace MyNS {
 		/** Volume protocol. */
 		protocol?: VolumeConfigProtocol | null;
 
-		/** The requested size of this volume, in GB. This will be updated in a later iteration with a generic size field. */
+		/**
+		 * The requested size of this volume, in GB. This will be updated in a later iteration with a generic size field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb?: number | null;
 
 		/** Whether snapshots should be enabled. */
@@ -446,7 +467,10 @@ export namespace MyNS {
 		/** Volume protocol. */
 		protocol: FormControl<VolumeConfigProtocol | null | undefined>,
 
-		/** The requested size of this volume, in GB. This will be updated in a later iteration with a generic size field. */
+		/**
+		 * The requested size of this volume, in GB. This will be updated in a later iteration with a generic size field.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sizeGb: FormControl<number | null | undefined>,
 
 		/** Whether snapshots should be enabled. */
@@ -509,6 +533,7 @@ export namespace MyNS {
 		 * Get v1alpha1/{parent}/provisioningQuotas
 		 * @param {string} parent Required. The parent project containing the provisioning quotas.
 		 * @param {number} pageSize The maximum number of items to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListProvisioningQuotasResponse} Successful response
 		 */

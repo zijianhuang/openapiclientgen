@@ -2914,6 +2914,7 @@ export namespace MyNS {
 		 * @param {string} environmentName The name of the backend environment that is a part of the Amplify app.
 		 * @param {string} nextToken The token to request the next page of results.
 		 * @param {number} maxResults The maximum number of components to retrieve.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListComponentsResponse} Success
 		 */
 		ListComponents(appId: string, environmentName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListComponentsResponse> {
@@ -2939,6 +2940,7 @@ export namespace MyNS {
 		 * @param {string} environmentName The name of the backend environment that is a part of the Amplify app.
 		 * @param {string} nextToken The token to request the next page of results.
 		 * @param {number} maxResults The maximum number of forms to retrieve.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListFormsResponse} Success
 		 */
 		ListForms(appId: string, environmentName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListFormsResponse> {
@@ -2964,6 +2966,7 @@ export namespace MyNS {
 		 * @param {string} environmentName The name of the backend environment that is a part of the Amplify app.
 		 * @param {string} nextToken The token to request the next page of results.
 		 * @param {number} maxResults The maximum number of theme results to return in the response.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListThemesResponse} Success
 		 */
 		ListThemes(appId: string, environmentName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListThemesResponse> {
@@ -3131,6 +3134,7 @@ export namespace MyNS {
 		 * Returns an existing code generation job.
 		 * Get app/{appId}/environment/{environmentName}/codegen-jobs/{id}
 		 * @param {string} appId The unique ID of the Amplify app associated with the code generation job.
+		 *     Min length: 1    Max length: 20
 		 * @param {string} environmentName The name of the backend environment that is a part of the Amplify app associated with the code generation job.
 		 * @param {string} id The unique ID of the code generation job.
 		 * @return {GetCodegenJobResponse} Success
@@ -3154,9 +3158,11 @@ export namespace MyNS {
 		 * Retrieves a list of code generation jobs for a specified Amplify app and backend environment.
 		 * Get app/{appId}/environment/{environmentName}/codegen-jobs
 		 * @param {string} appId The unique ID for the Amplify app.
+		 *     Min length: 1    Max length: 20
 		 * @param {string} environmentName The name of the backend environment that is a part of the Amplify app.
 		 * @param {string} nextToken The token to request the next page of results.
 		 * @param {number} maxResults The maximum number of jobs to retrieve.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListCodegenJobsResponse} Success
 		 */
 		ListCodegenJobs(appId: string, environmentName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListCodegenJobsResponse> {
@@ -3167,6 +3173,7 @@ export namespace MyNS {
 		 * Starts a code generation job for a specified Amplify app and backend environment.
 		 * Post app/{appId}/environment/{environmentName}/codegen-jobs
 		 * @param {string} appId The unique ID for the Amplify app.
+		 *     Min length: 1    Max length: 20
 		 * @param {string} environmentName The name of the backend environment that is a part of the Amplify app.
 		 * @param {string} clientToken The idempotency token used to ensure that the code generation job request completes only once.
 		 * @return {StartCodegenJobResponse} Success

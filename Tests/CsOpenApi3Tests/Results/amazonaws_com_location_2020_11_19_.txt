@@ -3724,7 +3724,10 @@ namespace MyNS
 		/// <p>Creates an association between a geofence collection and a tracker resource. This allows the tracker resource to communicate location data to the linked geofence collection. </p> <p>You can associate up to five geofence collections to each tracker resource.</p> <note> <p>Currently not supported — Cross-account configurations, such as creating associations between a tracker resource in one account and a geofence collection in another account.</p> </note>
 		/// AssociateTrackerConsumer tracking/v0/trackers/{TrackerName}/consumers
 		/// </summary>
-		/// <param name="TrackerName">The name of the tracker resource to be associated with a geofence collection.</param>
+		/// <param name="TrackerName">The name of the tracker resource to be associated with a geofence collection.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateTrackerConsumerResponse> AssociateTrackerConsumerAsync(string TrackerName, AssociateTrackerConsumerPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3765,7 +3768,10 @@ namespace MyNS
 		/// Deletes the position history of one or more devices from a tracker resource.
 		/// BatchDeleteDevicePositionHistory tracking/v0/trackers/{TrackerName}/delete-positions
 		/// </summary>
-		/// <param name="TrackerName">The name of the tracker resource to delete the device position history from.</param>
+		/// <param name="TrackerName">The name of the tracker resource to delete the device position history from.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteDevicePositionHistoryResponse> BatchDeleteDevicePositionHistoryAsync(string TrackerName, BatchDeleteDevicePositionHistoryPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3806,7 +3812,10 @@ namespace MyNS
 		/// <p>Deletes a batch of geofences from a geofence collection.</p> <note> <p>This operation deletes the resource permanently.</p> </note>
 		/// BatchDeleteGeofence geofencing/v0/collections/{CollectionName}/delete-geofences
 		/// </summary>
-		/// <param name="CollectionName">The geofence collection storing the geofences to be deleted.</param>
+		/// <param name="CollectionName">The geofence collection storing the geofences to be deleted.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchDeleteGeofenceResponse> BatchDeleteGeofenceAsync(string CollectionName, BatchDeleteGeofencePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3847,7 +3856,10 @@ namespace MyNS
 		/// <p>Evaluates device positions against the geofence geometries from a given geofence collection.</p> <p>This operation always returns an empty response because geofences are asynchronously evaluated. The evaluation determines if the device has entered or exited a geofenced area, and then publishes one of the following events to Amazon EventBridge:</p> <ul> <li> <p> <code>ENTER</code> if Amazon Location determines that the tracked device has entered a geofenced area.</p> </li> <li> <p> <code>EXIT</code> if Amazon Location determines that the tracked device has exited a geofenced area.</p> </li> </ul> <note> <p>The last geofence that a device was observed within is tracked for 30 days after the most recent device position update.</p> </note> <note> <p>Geofence evaluation uses the given device position. It does not account for the optional <code>Accuracy</code> of a <code>DevicePositionUpdate</code>.</p> </note> <note> <p>The <code>DeviceID</code> is used as a string to represent the device. You do not need to have a <code>Tracker</code> associated with the <code>DeviceID</code>.</p> </note>
 		/// BatchEvaluateGeofences geofencing/v0/collections/{CollectionName}/positions
 		/// </summary>
-		/// <param name="CollectionName">The geofence collection used in evaluating the position of devices against its geofences.</param>
+		/// <param name="CollectionName">The geofence collection used in evaluating the position of devices against its geofences.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchEvaluateGeofencesResponse> BatchEvaluateGeofencesAsync(string CollectionName, BatchEvaluateGeofencesPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3888,7 +3900,9 @@ namespace MyNS
 		/// Lists the latest device positions for requested devices.
 		/// BatchGetDevicePosition tracking/v0/trackers/{TrackerName}/get-positions
 		/// </summary>
-		/// <param name="TrackerName">The tracker resource retrieving the device position.</param>
+		/// <param name="TrackerName">The tracker resource retrieving the device position.
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchGetDevicePositionResponse> BatchGetDevicePositionAsync(string TrackerName, BatchGetDevicePositionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3929,7 +3943,10 @@ namespace MyNS
 		/// A batch request for storing geofence geometries into a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request.
 		/// BatchPutGeofence geofencing/v0/collections/{CollectionName}/put-geofences
 		/// </summary>
-		/// <param name="CollectionName">The geofence collection storing the geofences.</param>
+		/// <param name="CollectionName">The geofence collection storing the geofences.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchPutGeofenceResponse> BatchPutGeofenceAsync(string CollectionName, BatchPutGeofencePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -3970,7 +3987,10 @@ namespace MyNS
 		/// <p>Uploads position update data for one or more devices to a tracker resource (up to 10 devices per batch). Amazon Location uses the data when it reports the last known device position and position history. Amazon Location retains location data for 30 days.</p> <note> <p>Position updates are handled based on the <code>PositionFiltering</code> property of the tracker. When <code>PositionFiltering</code> is set to <code>TimeBased</code>, updates are evaluated against linked geofence collections, and location data is stored at a maximum of one position per 30 second interval. If your update frequency is more often than every 30 seconds, only one update per 30 seconds is stored for each unique device ID.</p> <p>When <code>PositionFiltering</code> is set to <code>DistanceBased</code> filtering, location data is stored and evaluated against linked geofence collections only if the device has moved more than 30 m (98.4 ft).</p> <p>When <code>PositionFiltering</code> is set to <code>AccuracyBased</code> filtering, location data is stored and evaluated against linked geofence collections only if the device has moved more than the measured accuracy. For example, if two consecutive updates from a device have a horizontal accuracy of 5 m and 10 m, the second update is neither stored or evaluated if the device has moved less than 15 m. If <code>PositionFiltering</code> is set to <code>AccuracyBased</code> filtering, Amazon Location uses the default value <code>{ "Horizontal": 0}</code> when accuracy is not provided on a <code>DevicePositionUpdate</code>.</p> </note>
 		/// BatchUpdateDevicePosition tracking/v0/trackers/{TrackerName}/positions
 		/// </summary>
-		/// <param name="TrackerName">The name of the tracker resource to update.</param>
+		/// <param name="TrackerName">The name of the tracker resource to update.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<BatchUpdateDevicePositionResponse> BatchUpdateDevicePositionAsync(string TrackerName, BatchUpdateDevicePositionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4011,8 +4031,14 @@ namespace MyNS
 		/// <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route.html">Calculates a route</a> given the following required parameters: <code>DeparturePosition</code> and <code>DestinationPosition</code>. Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p> <p>By default, a request that doesn't specify a departure time uses the best time of day to travel with the best traffic conditions when calculating the route.</p> <p>Additional options include:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html">Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>. This calculates a route based on predictive traffic data at the given time. </p> <note> <p>You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a single request. Specifying both parameters returns a validation error.</p> </note> </li> <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying a travel mode</a> using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> <note> <p>If you specify <code>walking</code> for the travel mode and your data provider is Esri, the start and destination must be within 40km.</p> </note> </li> </ul>
 		/// CalculateRoute routes/v0/calculators/{CalculatorName}/calculate/route
 		/// </summary>
-		/// <param name="CalculatorName">The name of the route calculator resource that you want to use to calculate the route. </param>
-		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</param>
+		/// <param name="CalculatorName">The name of the route calculator resource that you want to use to calculate the route. 
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CalculateRouteResponse> CalculateRouteAsync(string CalculatorName, string key, CalculateRoutePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4053,8 +4079,14 @@ namespace MyNS
 		/// <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/calculate-route-matrix.html"> Calculates a route matrix</a> given the following required parameters: <code>DeparturePositions</code> and <code>DestinationPositions</code>. <code>CalculateRouteMatrix</code> calculates routes and returns the travel time and travel distance from each departure position to each destination position in the request. For example, given departure positions A and B, and destination positions X and Y, <code>CalculateRouteMatrix</code> will return time and distance for routes from A to X, A to Y, B to X, and B to Y (in that order). The number of results returned (and routes calculated) will be the number of <code>DeparturePositions</code> times the number of <code>DestinationPositions</code>.</p> <note> <p>Your account is charged for each route calculated, not the number of requests.</p> </note> <p>Requires that you first <a href="https://docs.aws.amazon.com/location-routes/latest/APIReference/API_CreateRouteCalculator.html">create a route calculator resource</a>.</p> <p>By default, a request that doesn't specify a departure time uses the best time of day to travel with the best traffic conditions when calculating routes.</p> <p>Additional options include:</p> <ul> <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/departure-time.html"> Specifying a departure time</a> using either <code>DepartureTime</code> or <code>DepartNow</code>. This calculates routes based on predictive traffic data at the given time. </p> <note> <p>You can't specify both <code>DepartureTime</code> and <code>DepartNow</code> in a single request. Specifying both parameters returns a validation error.</p> </note> </li> <li> <p> <a href="https://docs.aws.amazon.com/location/latest/developerguide/travel-mode.html">Specifying a travel mode</a> using TravelMode sets the transportation mode used to calculate the routes. This also lets you specify additional route preferences in <code>CarModeOptions</code> if traveling by <code>Car</code>, or <code>TruckModeOptions</code> if traveling by <code>Truck</code>.</p> </li> </ul>
 		/// CalculateRouteMatrix routes/v0/calculators/{CalculatorName}/calculate/route-matrix
 		/// </summary>
-		/// <param name="CalculatorName">The name of the route calculator resource that you want to use to calculate the route matrix. </param>
-		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</param>
+		/// <param name="CalculatorName">The name of the route calculator resource that you want to use to calculate the route matrix. 
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CalculateRouteMatrixResponse> CalculateRouteMatrixAsync(string CalculatorName, string key, CalculateRouteMatrixPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4335,7 +4367,10 @@ namespace MyNS
 		/// <p>Deletes a geofence collection from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently. If the geofence collection is the target of a tracker resource, the devices will no longer be monitored.</p> </note>
 		/// DeleteGeofenceCollection geofencing/v0/collections/{CollectionName}
 		/// </summary>
-		/// <param name="CollectionName">The name of the geofence collection to be deleted.</param>
+		/// <param name="CollectionName">The name of the geofence collection to be deleted.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteGeofenceCollectionResponse> DeleteGeofenceCollectionAsync(string CollectionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4369,7 +4404,10 @@ namespace MyNS
 		/// Retrieves the geofence collection details.
 		/// DescribeGeofenceCollection geofencing/v0/collections/{CollectionName}
 		/// </summary>
-		/// <param name="CollectionName">The name of the geofence collection.</param>
+		/// <param name="CollectionName">The name of the geofence collection.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeGeofenceCollectionResponse> DescribeGeofenceCollectionAsync(string CollectionName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4403,7 +4441,10 @@ namespace MyNS
 		/// Updates the specified properties of a given geofence collection.
 		/// UpdateGeofenceCollection geofencing/v0/collections/{CollectionName}
 		/// </summary>
-		/// <param name="CollectionName">The name of the geofence collection to update.</param>
+		/// <param name="CollectionName">The name of the geofence collection to update.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateGeofenceCollectionResponse> UpdateGeofenceCollectionAsync(string CollectionName, UpdateGeofenceCollectionPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4444,7 +4485,10 @@ namespace MyNS
 		/// Deletes the specified API key. The API key must have been deactivated more than 90 days previously.
 		/// DeleteKey metadata/v0/keys/{KeyName}
 		/// </summary>
-		/// <param name="KeyName">The name of the API key to delete.</param>
+		/// <param name="KeyName">The name of the API key to delete.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteKeyResponse> DeleteKeyAsync(string KeyName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4478,7 +4522,10 @@ namespace MyNS
 		/// Retrieves the API key resource details.
 		/// DescribeKey metadata/v0/keys/{KeyName}
 		/// </summary>
-		/// <param name="KeyName">The name of the API key resource.</param>
+		/// <param name="KeyName">The name of the API key resource.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeKeyResponse> DescribeKeyAsync(string KeyName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4512,7 +4559,10 @@ namespace MyNS
 		/// Updates the specified properties of a given API key resource.
 		/// UpdateKey metadata/v0/keys/{KeyName}
 		/// </summary>
-		/// <param name="KeyName">The name of the API key resource to update.</param>
+		/// <param name="KeyName">The name of the API key resource to update.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateKeyResponse> UpdateKeyAsync(string KeyName, UpdateKeyPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4553,7 +4603,10 @@ namespace MyNS
 		/// <p>Deletes a map resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently. If the map is being used in an application, the map may not render.</p> </note>
 		/// DeleteMap maps/v0/maps/{MapName}
 		/// </summary>
-		/// <param name="MapName">The name of the map resource to be deleted.</param>
+		/// <param name="MapName">The name of the map resource to be deleted.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteMapResponse> DeleteMapAsync(string MapName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4587,7 +4640,10 @@ namespace MyNS
 		/// Retrieves the map resource details.
 		/// DescribeMap maps/v0/maps/{MapName}
 		/// </summary>
-		/// <param name="MapName">The name of the map resource.</param>
+		/// <param name="MapName">The name of the map resource.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeMapResponse> DescribeMapAsync(string MapName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4621,7 +4677,10 @@ namespace MyNS
 		/// Updates the specified properties of a given map resource.
 		/// UpdateMap maps/v0/maps/{MapName}
 		/// </summary>
-		/// <param name="MapName">The name of the map resource to update.</param>
+		/// <param name="MapName">The name of the map resource to update.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateMapResponse> UpdateMapAsync(string MapName, UpdateMapPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4662,7 +4721,10 @@ namespace MyNS
 		/// <p>Deletes a place index resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently.</p> </note>
 		/// DeletePlaceIndex places/v0/indexes/{IndexName}
 		/// </summary>
-		/// <param name="IndexName">The name of the place index resource to be deleted.</param>
+		/// <param name="IndexName">The name of the place index resource to be deleted.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePlaceIndexResponse> DeletePlaceIndexAsync(string IndexName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4696,7 +4758,10 @@ namespace MyNS
 		/// Retrieves the place index resource details.
 		/// DescribePlaceIndex places/v0/indexes/{IndexName}
 		/// </summary>
-		/// <param name="IndexName">The name of the place index resource.</param>
+		/// <param name="IndexName">The name of the place index resource.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribePlaceIndexResponse> DescribePlaceIndexAsync(string IndexName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4730,7 +4795,10 @@ namespace MyNS
 		/// Updates the specified properties of a given place index resource.
 		/// UpdatePlaceIndex places/v0/indexes/{IndexName}
 		/// </summary>
-		/// <param name="IndexName">The name of the place index resource to update.</param>
+		/// <param name="IndexName">The name of the place index resource to update.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePlaceIndexResponse> UpdatePlaceIndexAsync(string IndexName, UpdatePlaceIndexPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4771,7 +4839,10 @@ namespace MyNS
 		/// <p>Deletes a route calculator resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently.</p> </note>
 		/// DeleteRouteCalculator routes/v0/calculators/{CalculatorName}
 		/// </summary>
-		/// <param name="CalculatorName">The name of the route calculator resource to be deleted.</param>
+		/// <param name="CalculatorName">The name of the route calculator resource to be deleted.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteRouteCalculatorResponse> DeleteRouteCalculatorAsync(string CalculatorName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4805,7 +4876,10 @@ namespace MyNS
 		/// Retrieves the route calculator resource details.
 		/// DescribeRouteCalculator routes/v0/calculators/{CalculatorName}
 		/// </summary>
-		/// <param name="CalculatorName">The name of the route calculator resource.</param>
+		/// <param name="CalculatorName">The name of the route calculator resource.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeRouteCalculatorResponse> DescribeRouteCalculatorAsync(string CalculatorName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4839,7 +4913,10 @@ namespace MyNS
 		/// Updates the specified properties for a given route calculator resource.
 		/// UpdateRouteCalculator routes/v0/calculators/{CalculatorName}
 		/// </summary>
-		/// <param name="CalculatorName">The name of the route calculator resource to update.</param>
+		/// <param name="CalculatorName">The name of the route calculator resource to update.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateRouteCalculatorResponse> UpdateRouteCalculatorAsync(string CalculatorName, UpdateRouteCalculatorPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4880,7 +4957,10 @@ namespace MyNS
 		/// <p>Deletes a tracker resource from your Amazon Web Services account.</p> <note> <p>This operation deletes the resource permanently. If the tracker resource is in use, you may encounter an error. Make sure that the target resource isn't a dependency for your applications.</p> </note>
 		/// DeleteTracker tracking/v0/trackers/{TrackerName}
 		/// </summary>
-		/// <param name="TrackerName">The name of the tracker resource to be deleted.</param>
+		/// <param name="TrackerName">The name of the tracker resource to be deleted.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteTrackerResponse> DeleteTrackerAsync(string TrackerName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4914,7 +4994,10 @@ namespace MyNS
 		/// Retrieves the tracker resource details.
 		/// DescribeTracker tracking/v0/trackers/{TrackerName}
 		/// </summary>
-		/// <param name="TrackerName">The name of the tracker resource.</param>
+		/// <param name="TrackerName">The name of the tracker resource.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DescribeTrackerResponse> DescribeTrackerAsync(string TrackerName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4948,7 +5031,10 @@ namespace MyNS
 		/// Updates the specified properties of a given tracker resource.
 		/// UpdateTracker tracking/v0/trackers/{TrackerName}
 		/// </summary>
-		/// <param name="TrackerName">The name of the tracker resource to update.</param>
+		/// <param name="TrackerName">The name of the tracker resource to update.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateTrackerResponse> UpdateTrackerAsync(string TrackerName, UpdateTrackerPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -4989,8 +5075,14 @@ namespace MyNS
 		/// <p>Removes the association between a tracker resource and a geofence collection.</p> <note> <p>Once you unlink a tracker resource from a geofence collection, the tracker positions will no longer be automatically evaluated against geofences.</p> </note>
 		/// DisassociateTrackerConsumer tracking/v0/trackers/{TrackerName}/consumers/{ConsumerArn}
 		/// </summary>
-		/// <param name="ConsumerArn"><p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all Amazon Web Services. </p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li> </ul></param>
-		/// <param name="TrackerName">The name of the tracker resource to be dissociated from the consumer.</param>
+		/// <param name="ConsumerArn"><p>The Amazon Resource Name (ARN) for the geofence collection to be disassociated from the tracker resource. Used when you need to specify a resource across all Amazon Web Services. </p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:geofence-collection/ExampleGeofenceCollectionConsumer</code> </p> </li> </ul>
+		/// Max length: 1600
+		/// Min length: 0
+		// </param>
+		/// <param name="TrackerName">The name of the tracker resource to be dissociated from the consumer.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateTrackerConsumerResponse> DisassociateTrackerConsumerAsync(string ConsumerArn, string TrackerName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5024,8 +5116,14 @@ namespace MyNS
 		/// <p>Retrieves a device's most recent position according to its sample time.</p> <note> <p>Device positions are deleted after 30 days.</p> </note>
 		/// GetDevicePosition tracking/v0/trackers/{TrackerName}/devices/{DeviceId}/positions/latest
 		/// </summary>
-		/// <param name="DeviceId">The device whose position you want to retrieve.</param>
-		/// <param name="TrackerName">The tracker resource receiving the position update.</param>
+		/// <param name="DeviceId">The device whose position you want to retrieve.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="TrackerName">The tracker resource receiving the position update.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDevicePositionResponse> GetDevicePositionAsync(string DeviceId, string TrackerName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5059,8 +5157,14 @@ namespace MyNS
 		/// <p>Retrieves the device position history from a tracker resource within a specified range of time.</p> <note> <p>Device positions are deleted after 30 days.</p> </note>
 		/// GetDevicePositionHistory tracking/v0/trackers/{TrackerName}/devices/{DeviceId}/list-positions
 		/// </summary>
-		/// <param name="DeviceId">The device whose position history you want to retrieve.</param>
-		/// <param name="TrackerName">The tracker resource receiving the request for the device position history.</param>
+		/// <param name="DeviceId">The device whose position history you want to retrieve.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="TrackerName">The tracker resource receiving the request for the device position history.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5103,8 +5207,14 @@ namespace MyNS
 		/// Retrieves the geofence details from a geofence collection.
 		/// GetGeofence geofencing/v0/collections/{CollectionName}/geofences/{GeofenceId}
 		/// </summary>
-		/// <param name="CollectionName">The geofence collection storing the target geofence.</param>
-		/// <param name="GeofenceId">The geofence you're retrieving details for.</param>
+		/// <param name="CollectionName">The geofence collection storing the target geofence.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="GeofenceId">The geofence you're retrieving details for.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetGeofenceResponse> GetGeofenceAsync(string CollectionName, string GeofenceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5138,8 +5248,14 @@ namespace MyNS
 		/// Stores a geofence geometry in a given geofence collection, or updates the geometry of an existing geofence if a geofence ID is included in the request.
 		/// PutGeofence geofencing/v0/collections/{CollectionName}/geofences/{GeofenceId}
 		/// </summary>
-		/// <param name="CollectionName">The geofence collection to store the geofence in.</param>
-		/// <param name="GeofenceId">An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.</param>
+		/// <param name="CollectionName">The geofence collection to store the geofence in.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="GeofenceId">An identifier for the geofence. For example, <code>ExampleGeofence-1</code>.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<PutGeofenceResponse> PutGeofenceAsync(string CollectionName, string GeofenceId, PutGeofencePutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5182,8 +5298,14 @@ namespace MyNS
 		/// </summary>
 		/// <param name="FontStack"><p>A comma-separated list of fonts to load glyphs from in order of preference. For example, <code>Noto Sans Regular, Arial Unicode</code>.</p> <p>Valid fonts stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/esri.html">Esri</a> styles: </p> <ul> <li> <p>VectorEsriDarkGrayCanvas – <code>Ubuntu Medium Italic</code> | <code>Ubuntu Medium</code> | <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Bold</code> </p> </li> <li> <p>VectorEsriLightGrayCanvas – <code>Ubuntu Italic</code> | <code>Ubuntu Regular</code> | <code>Ubuntu Light</code> | <code>Ubuntu Bold</code> </p> </li> <li> <p>VectorEsriTopographic – <code>Noto Sans Italic</code> | <code>Noto Sans Regular</code> | <code>Noto Sans Bold</code> | <code>Noto Serif Regular</code> | <code>Roboto Condensed Light Italic</code> </p> </li> <li> <p>VectorEsriStreets – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> <li> <p>VectorEsriNavigation – <code>Arial Regular</code> | <code>Arial Italic</code> | <code>Arial Bold</code> </p> </li> </ul> <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/HERE.html">HERE Technologies</a> styles:</p> <ul> <li> <p>VectorHereContrast – <code>Fira GO Regular</code> | <code>Fira GO Bold</code> </p> </li> <li> <p>VectorHereExplore, VectorHereExploreTruck, HybridHereExploreSatellite – <code>Fira GO Italic</code> | <code>Fira GO Map</code> | <code>Fira GO Map Bold</code> | <code>Noto Sans CJK JP Bold</code> | <code>Noto Sans CJK JP Light</code> | <code>Noto Sans CJK JP Regular</code> </p> </li> </ul> <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/grab.html">GrabMaps</a> styles:</p> <ul> <li> <p>VectorGrabStandardLight, VectorGrabStandardDark – <code>Noto Sans Regular</code> | <code>Noto Sans Medium</code> | <code>Noto Sans Bold</code> </p> </li> </ul> <p>Valid font stacks for <a href="https://docs.aws.amazon.com/location/latest/developerguide/open-data.html">Open Data</a> styles:</p> <ul> <li> <p>VectorOpenDataStandardLight, VectorOpenDataStandardDark, VectorOpenDataVisualizationLight, VectorOpenDataVisualizationDark – <code>Amazon Ember Regular,Noto Sans Regular</code> | <code>Amazon Ember Bold,Noto Sans Bold</code> | <code>Amazon Ember Medium,Noto Sans Medium</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold</code> | <code>Amazon Ember Regular,Noto Sans Regular,Noto Sans Arabic Regular</code> | <code>Amazon Ember Condensed RC Bold,Noto Sans Bold,Noto Sans Arabic Condensed Bold</code> | <code>Amazon Ember Bold,Noto Sans Bold,Noto Sans Arabic Bold</code> | <code>Amazon Ember Regular Italic,Noto Sans Italic,Noto Sans Arabic Regular</code> | <code>Amazon Ember Condensed RC Regular,Noto Sans Regular,Noto Sans Arabic Condensed Regular</code> | <code>Amazon Ember Medium,Noto Sans Medium,Noto Sans Arabic Medium</code> </p> </li> </ul> <note> <p>The fonts used by the Open Data map styles are combined fonts that use <code>Amazon Ember</code> for most glyphs but <code>Noto Sans</code> for glyphs unsupported by <code>Amazon Ember</code>.</p> </note></param>
 		/// <param name="FontUnicodeRange">A Unicode range of characters to download glyphs for. Each response will contain 256 characters. For example, 0–255 includes all characters from range <code>U+0000</code> to <code>00FF</code>. Must be aligned to multiples of 256.</param>
-		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</param>
-		/// <param name="MapName">The map resource associated with the glyph ﬁle.</param>
+		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
+		/// <param name="MapName">The map resource associated with the glyph ﬁle.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMapGlyphsResponse> GetMapGlyphsAsync(string FontStack, string FontUnicodeRange, string key, string MapName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5218,8 +5340,14 @@ namespace MyNS
 		/// GetMapSprites maps/v0/maps/{MapName}/sprites/{FileName}
 		/// </summary>
 		/// <param name="FileName"><p>The name of the sprite ﬁle. Use the following ﬁle names for the sprite sheet:</p> <ul> <li> <p> <code>sprites.png</code> </p> </li> <li> <p> <code>sprites@2x.png</code> for high pixel density displays</p> </li> </ul> <p>For the JSON document containing image offsets. Use the following ﬁle names:</p> <ul> <li> <p> <code>sprites.json</code> </p> </li> <li> <p> <code>sprites@2x.json</code> for high pixel density displays</p> </li> </ul></param>
-		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</param>
-		/// <param name="MapName">The map resource associated with the sprite ﬁle.</param>
+		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
+		/// <param name="MapName">The map resource associated with the sprite ﬁle.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMapSpritesResponse> GetMapSpritesAsync(string FileName, string key, string MapName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5253,8 +5381,14 @@ namespace MyNS
 		/// <p>Retrieves the map style descriptor from a map resource. </p> <p>The style descriptor contains speciﬁcations on how features render on a map. For example, what data to display, what order to display the data in, and the style for the data. Style descriptors follow the Mapbox Style Specification.</p>
 		/// GetMapStyleDescriptor maps/v0/maps/{MapName}/style-descriptor
 		/// </summary>
-		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</param>
-		/// <param name="MapName">The map resource to retrieve the style descriptor from.</param>
+		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
+		/// <param name="MapName">The map resource to retrieve the style descriptor from.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMapStyleDescriptorResponse> GetMapStyleDescriptorAsync(string key, string MapName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5288,8 +5422,14 @@ namespace MyNS
 		/// <p>Retrieves a vector data tile from the map resource. Map tiles are used by clients to render a map. they're addressed using a grid arrangement with an X coordinate, Y coordinate, and Z (zoom) level. </p> <p>The origin (0, 0) is the top left of the map. Increasing the zoom level by 1 doubles both the X and Y dimensions, so a tile containing data for the entire world at (0/0/0) will be split into 4 tiles at zoom 1 (1/0/0, 1/0/1, 1/1/0, 1/1/1).</p>
 		/// GetMapTile maps/v0/maps/{MapName}/tiles/{Z}/{X}/{Y}
 		/// </summary>
-		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</param>
-		/// <param name="MapName">The map resource to retrieve the map tiles from.</param>
+		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
+		/// <param name="MapName">The map resource to retrieve the map tiles from.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <param name="X">The X axis value for the map tile.</param>
 		/// <param name="Y">The Y axis value for the map tile. </param>
 		/// <param name="Z">The zoom value for the map tile.</param>
@@ -5326,9 +5466,18 @@ namespace MyNS
 		/// <p>Finds a place by its unique ID. A <code>PlaceId</code> is returned by other search operations.</p> <note> <p>A PlaceId is valid only if all of the following are the same in the original search request and the call to <code>GetPlace</code>.</p> <ul> <li> <p>Customer Amazon Web Services account</p> </li> <li> <p>Amazon Web Services Region</p> </li> <li> <p>Data provider specified in the place index resource</p> </li> </ul> </note>
 		/// GetPlace places/v0/indexes/{IndexName}/places/{PlaceId}
 		/// </summary>
-		/// <param name="IndexName">The name of the place index resource that you want to use for the search.</param>
-		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</param>
-		/// <param name="language"><p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p></param>
+		/// <param name="IndexName">The name of the place index resource that you want to use for the search.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
+		/// <param name="language"><p>The preferred language used to return results. The value must be a valid <a href="https://tools.ietf.org/search/bcp47">BCP 47</a> language tag, for example, <code>en</code> for English.</p> <p>This setting affects the languages used in the results, but not the results themselves. If no language is specified, or not supported for a particular result, the partner automatically chooses a language for the result.</p> <p>For an example, we'll use the Greek language. You search for a location around Athens, Greece, with the <code>language</code> parameter set to <code>en</code>. The <code>city</code> in the results will most likely be returned as <code>Athens</code>.</p> <p>If you set the <code>language</code> parameter to <code>el</code>, for Greek, then the <code>city</code> in the results will more likely be returned as <code>Αθήνα</code>.</p> <p>If the data provider does not have a value for Greek, the result will be in a language that the provider does support.</p>
+		/// Max length: 35
+		/// Min length: 2
+		// </param>
 		/// <param name="PlaceId">The identifier of the place to find.</param>
 		/// <returns>Success</returns>
 		public async Task<GetPlaceResponse> GetPlaceAsync(string IndexName, string key, string language, string PlaceId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5363,7 +5512,10 @@ namespace MyNS
 		/// A batch request to retrieve all device positions.
 		/// ListDevicePositions tracking/v0/trackers/{TrackerName}/list-positions
 		/// </summary>
-		/// <param name="TrackerName">The tracker resource containing the requested devices.</param>
+		/// <param name="TrackerName">The tracker resource containing the requested devices.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5448,7 +5600,10 @@ namespace MyNS
 		/// Lists geofences stored in a given geofence collection.
 		/// ListGeofences geofencing/v0/collections/{CollectionName}/list-geofences
 		/// </summary>
-		/// <param name="CollectionName">The name of the geofence collection storing the list of geofences.</param>
+		/// <param name="CollectionName">The name of the geofence collection storing the list of geofences.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5659,7 +5814,10 @@ namespace MyNS
 		/// Returns a list of tags that are applied to the specified Amazon Location resource.
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn"><p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul></param>
+		/// <param name="ResourceArn"><p>The Amazon Resource Name (ARN) of the resource whose tags you want to retrieve.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul>
+		/// Max length: 1600
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5693,7 +5851,10 @@ namespace MyNS
 		/// <p>Assigns one or more tags (key-value pairs) to the specified Amazon Location Service resource.</p> <p>Tags can help you organize and categorize your resources. You can also use them to scope user permissions, by granting a user permission to access or change only resources with certain tag values.</p> <p>You can use the <code>TagResource</code> operation with an Amazon Location Service resource that already has tags. If you specify a new tag key for the resource, this tag is appended to the tags already associated with the resource. If you specify a tag key that's already associated with the resource, the new tag value that you specify replaces the previous value for that tag. </p> <p>You can associate up to 50 tags with a resource.</p>
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn"><p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul></param>
+		/// <param name="ResourceArn"><p>The Amazon Resource Name (ARN) of the resource whose tags you want to update.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul>
+		/// Max length: 1600
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5734,7 +5895,10 @@ namespace MyNS
 		/// Lists geofence collections currently associated to the given tracker resource.
 		/// ListTrackerConsumers tracking/v0/trackers/{TrackerName}/list-consumers
 		/// </summary>
-		/// <param name="TrackerName">The tracker resource whose associated geofence collections you want to list.</param>
+		/// <param name="TrackerName">The tracker resource whose associated geofence collections you want to list.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -5819,8 +5983,14 @@ namespace MyNS
 		/// Reverse geocodes a given coordinate and returns a legible address. Allows you to search for Places or points of interest near a given position.
 		/// SearchPlaceIndexForPosition places/v0/indexes/{IndexName}/search/position
 		/// </summary>
-		/// <param name="IndexName">The name of the place index resource you want to use for the search.</param>
-		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</param>
+		/// <param name="IndexName">The name of the place index resource you want to use for the search.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchPlaceIndexForPositionResponse> SearchPlaceIndexForPositionAsync(string IndexName, string key, SearchPlaceIndexForPositionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5861,8 +6031,14 @@ namespace MyNS
 		/// <p>Generates suggestions for addresses and points of interest based on partial or misspelled free-form text. This operation is also known as autocomplete, autosuggest, or fuzzy matching.</p> <p>Optional parameters let you narrow your search results by bounding box or country, or bias your search toward a specific position on the globe.</p> <note> <p>You can search for suggested place names near a specified position by using <code>BiasPosition</code>, or filter results within a bounding box by using <code>FilterBBox</code>. These parameters are mutually exclusive; using both <code>BiasPosition</code> and <code>FilterBBox</code> in the same command returns an error.</p> </note>
 		/// SearchPlaceIndexForSuggestions places/v0/indexes/{IndexName}/search/suggestions
 		/// </summary>
-		/// <param name="IndexName">The name of the place index resource you want to use for the search.</param>
-		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</param>
+		/// <param name="IndexName">The name of the place index resource you want to use for the search.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchPlaceIndexForSuggestionsResponse> SearchPlaceIndexForSuggestionsAsync(string IndexName, string key, SearchPlaceIndexForSuggestionsPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5903,8 +6079,14 @@ namespace MyNS
 		/// <p>Geocodes free-form text, such as an address, name, city, or region to allow you to search for Places or points of interest. </p> <p>Optional parameters let you narrow your search results by bounding box or country, or bias your search toward a specific position on the globe.</p> <note> <p>You can search for places near a given position using <code>BiasPosition</code>, or filter results within a bounding box using <code>FilterBBox</code>. Providing both parameters simultaneously returns an error.</p> </note> <p>Search results are returned in order of highest to lowest relevance.</p>
 		/// SearchPlaceIndexForText places/v0/indexes/{IndexName}/search/text
 		/// </summary>
-		/// <param name="IndexName">The name of the place index resource you want to use for the search.</param>
-		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.</param>
+		/// <param name="IndexName">The name of the place index resource you want to use for the search.
+		/// Max length: 100
+		/// Min length: 1
+		// </param>
+		/// <param name="key">The optional <a href="https://docs.aws.amazon.com/location/latest/developerguide/using-apikeys.html">API key</a> to authorize the request.
+		/// Max length: 1000
+		/// Min length: 0
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<SearchPlaceIndexForTextResponse> SearchPlaceIndexForTextAsync(string IndexName, string key, SearchPlaceIndexForTextPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5945,8 +6127,14 @@ namespace MyNS
 		/// Removes one or more tags from the specified Amazon Location resource.
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
-		/// <param name="ResourceArn"><p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul></param>
-		/// <param name="tagKeys">The list of tag keys to remove from the specified resource.</param>
+		/// <param name="ResourceArn"><p>The Amazon Resource Name (ARN) of the resource from which you want to remove tags.</p> <ul> <li> <p>Format example: <code>arn:aws:geo:region:account-id:resourcetype/ExampleResource</code> </p> </li> </ul>
+		/// Max length: 1600
+		/// Min length: 0
+		// </param>
+		/// <param name="tagKeys">The list of tag keys to remove from the specified resource.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string ResourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

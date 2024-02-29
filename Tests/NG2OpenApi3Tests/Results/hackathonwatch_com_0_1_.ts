@@ -12,6 +12,7 @@ export namespace MyNS {
 		 * Return a list of coming hackathons
 		 * Get hackathons/coming.json
 		 * @param {number} page Specify the page of coming hackathons.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GET_hackathons_coming___format_(page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -22,6 +23,7 @@ export namespace MyNS {
 		 * Return the detail of a given hackathon
 		 * Get hackathons/{id}.json
 		 * @param {number} id ID of the hackathon for detail information
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GET_hackathons__id___format_(id: number): Observable<HttpResponse<string>> {

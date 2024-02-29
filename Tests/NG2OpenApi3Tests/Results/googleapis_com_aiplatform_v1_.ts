@@ -33,7 +33,10 @@ export namespace MyNS {
 		/** Input prompt */
 		prompt?: string | null;
 
-		/** Score for category */
+		/**
+		 * Score for category
+		 * Type: double
+		 */
 		score?: number | null;
 	}
 
@@ -49,7 +52,10 @@ export namespace MyNS {
 		/** Input prompt */
 		prompt: FormControl<string | null | undefined>,
 
-		/** Score for category */
+		/**
+		 * Score for category
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateCloudAiLargeModelsVisionFilteredTextFormGroup() {
@@ -73,7 +79,10 @@ export namespace MyNS {
 		/** The generates samples. */
 		generatedSamples?: Array<CloudAiLargeModelsVisionMedia>;
 
-		/** Returns if any videos were filtered due to RAI policies. */
+		/**
+		 * Returns if any videos were filtered due to RAI policies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		raiMediaFilteredCount?: number | null;
 
 		/** Returns rai failure reasons if any. */
@@ -86,7 +95,10 @@ export namespace MyNS {
 	/** Generate video response. */
 	export interface CloudAiLargeModelsVisionGenerateVideoResponseFormProperties {
 
-		/** Returns if any videos were filtered due to RAI policies. */
+		/**
+		 * Returns if any videos were filtered due to RAI policies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		raiMediaFilteredCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCloudAiLargeModelsVisionGenerateVideoResponseFormGroup() {
@@ -160,14 +172,20 @@ export namespace MyNS {
 	/** RAI scores for generated image returned. */
 	export interface CloudAiLargeModelsVisionImageRAIScores {
 
-		/** Agile watermark score for image. */
+		/**
+		 * Agile watermark score for image.
+		 * Type: double
+		 */
 		agileWatermarkDetectionScore?: number | null;
 	}
 
 	/** RAI scores for generated image returned. */
 	export interface CloudAiLargeModelsVisionImageRAIScoresFormProperties {
 
-		/** Agile watermark score for image. */
+		/**
+		 * Agile watermark score for image.
+		 * Type: double
+		 */
 		agileWatermarkDetectionScore: FormControl<number | null | undefined>,
 	}
 	export function CreateCloudAiLargeModelsVisionImageRAIScoresFormGroup() {
@@ -217,15 +235,31 @@ export namespace MyNS {
 		classes?: Array<string>;
 		entities?: Array<string>;
 		scores?: Array<number>;
+
+		/** Type: float */
 		x1?: number | null;
+
+		/** Type: float */
 		x2?: number | null;
+
+		/** Type: float */
 		y1?: number | null;
+
+		/** Type: float */
 		y2?: number | null;
 	}
 	export interface CloudAiLargeModelsVisionNamedBoundingBoxFormProperties {
+
+		/** Type: float */
 		x1: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		x2: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		y1: FormControl<number | null | undefined>,
+
+		/** Type: float */
 		y2: FormControl<number | null | undefined>,
 	}
 	export function CreateCloudAiLargeModelsVisionNamedBoundingBoxFormGroup() {
@@ -316,7 +350,10 @@ export namespace MyNS {
 		/** The reason why the model stopped generating tokens. */
 		finishReason?: CloudAiNlLlmProtoServiceCandidateFinishReason | null;
 
-		/** Index of the candidate. */
+		/**
+		 * Index of the candidate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Safety ratings of the generated content. */
@@ -330,7 +367,10 @@ export namespace MyNS {
 		/** The reason why the model stopped generating tokens. */
 		finishReason: FormControl<CloudAiNlLlmProtoServiceCandidateFinishReason | null | undefined>,
 
-		/** Index of the candidate. */
+		/**
+		 * Index of the candidate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateCloudAiNlLlmProtoServiceCandidateFormGroup() {
@@ -363,7 +403,10 @@ export namespace MyNS {
 	/** Source attributions for content. */
 	export interface CloudAiNlLlmProtoServiceCitation {
 
-		/** End index into the content. */
+		/**
+		 * End index into the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
 		/** License of the attribution. */
@@ -372,7 +415,10 @@ export namespace MyNS {
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 		publicationDate?: GoogleTypeDate;
 
-		/** Start index into the content. */
+		/**
+		 * Start index into the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
 		/** Title of the attribution. */
@@ -385,13 +431,19 @@ export namespace MyNS {
 	/** Source attributions for content. */
 	export interface CloudAiNlLlmProtoServiceCitationFormProperties {
 
-		/** End index into the content. */
+		/**
+		 * End index into the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
 		/** License of the attribution. */
 		license: FormControl<string | null | undefined>,
 
-		/** Start index into the content. */
+		/**
+		 * Start index into the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
 		/** Title of the attribution. */
@@ -415,26 +467,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDate {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface GoogleTypeDateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeDateFormGroup() {
@@ -713,6 +783,8 @@ export namespace MyNS {
 	/** LINT.IfChange This metadata contains additional information required for debugging. */
 	export interface LearningServingLlmMessageMetadata {
 		classifierSummary?: LearningGenaiRootClassifierOutputSummary;
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		currentStreamTextLength?: number | null;
 
 		/** Whether the corresponding message has been deleted. */
@@ -738,7 +810,10 @@ export namespace MyNS {
 		/** The original text generated by LLM. This is the raw output for debugging purposes. */
 		originalText?: string | null;
 
-		/** NOT YET IMPLEMENTED. Applies to streaming only. Number of tokens decoded / emitted by the model as part of this stream. This may be different from token_count, which contains number of tokens returned in this response after any response rewriting / truncation. */
+		/**
+		 * NOT YET IMPLEMENTED. Applies to streaming only. Number of tokens decoded / emitted by the model as part of this stream. This may be different from token_count, which contains number of tokens returned in this response after any response rewriting / truncation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perStreamDecodedTokenCount?: number | null;
 
 		/** Results of running RAI on the query or this response candidate. One output per rai_config. It will be populated regardless of whether the threshold is exceeded or not. */
@@ -747,7 +822,10 @@ export namespace MyNS {
 		/** The recitation result for one input */
 		recitationResult?: LearningGenaiRecitationRecitationResult;
 
-		/** NOT YET IMPLEMENTED. Number of tokens returned as part of this candidate. */
+		/**
+		 * NOT YET IMPLEMENTED. Number of tokens returned as part of this candidate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		returnTokenCount?: number | null;
 
 		/** All the different scores for a message are logged here. */
@@ -756,7 +834,10 @@ export namespace MyNS {
 		/** Whether the response is terminated during streaming return. Only used for streaming requests. */
 		streamTerminated?: boolean | null;
 
-		/** NOT YET IMPLEMENTED. Aggregated number of total tokens decoded so far. For streaming, this is sum of all the tokens decoded so far i.e. aggregated count. */
+		/**
+		 * NOT YET IMPLEMENTED. Aggregated number of total tokens decoded so far. For streaming, this is sum of all the tokens decoded so far i.e. aggregated count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDecodedTokenCount?: number | null;
 
 		/** Translated user-prompt used for RAI post processing. This is for internal processing only. We will translate in pre-processor and pass the translated text to the post processor using this field. It will be empty if non of the signals requested need translation. */
@@ -768,6 +849,8 @@ export namespace MyNS {
 
 	/** LINT.IfChange This metadata contains additional information required for debugging. */
 	export interface LearningServingLlmMessageMetadataFormProperties {
+
+		/** Type: uint, 0 to 4,294,967,295 */
 		currentStreamTextLength: FormControl<number | null | undefined>,
 
 		/** Whether the corresponding message has been deleted. */
@@ -788,16 +871,25 @@ export namespace MyNS {
 		/** The original text generated by LLM. This is the raw output for debugging purposes. */
 		originalText: FormControl<string | null | undefined>,
 
-		/** NOT YET IMPLEMENTED. Applies to streaming only. Number of tokens decoded / emitted by the model as part of this stream. This may be different from token_count, which contains number of tokens returned in this response after any response rewriting / truncation. */
+		/**
+		 * NOT YET IMPLEMENTED. Applies to streaming only. Number of tokens decoded / emitted by the model as part of this stream. This may be different from token_count, which contains number of tokens returned in this response after any response rewriting / truncation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perStreamDecodedTokenCount: FormControl<number | null | undefined>,
 
-		/** NOT YET IMPLEMENTED. Number of tokens returned as part of this candidate. */
+		/**
+		 * NOT YET IMPLEMENTED. Number of tokens returned as part of this candidate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		returnTokenCount: FormControl<number | null | undefined>,
 
 		/** Whether the response is terminated during streaming return. Only used for streaming requests. */
 		streamTerminated: FormControl<boolean | null | undefined>,
 
-		/** NOT YET IMPLEMENTED. Aggregated number of total tokens decoded so far. For streaming, this is sum of all the tokens decoded so far i.e. aggregated count. */
+		/**
+		 * NOT YET IMPLEMENTED. Aggregated number of total tokens decoded so far. For streaming, this is sum of all the tokens decoded so far i.e. aggregated count.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDecodedTokenCount: FormControl<number | null | undefined>,
 	}
 	export function CreateLearningServingLlmMessageMetadataFormGroup() {
@@ -837,6 +929,8 @@ export namespace MyNS {
 
 		/** Name of the metric. */
 		name?: string | null;
+
+		/** Type: double */
 		numericValue?: number | null;
 
 		/** Wire-format for a Status object */
@@ -848,6 +942,8 @@ export namespace MyNS {
 
 		/** Name of the metric. */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		numericValue: FormControl<number | null | undefined>,
 		stringValue: FormControl<string | null | undefined>,
 	}
@@ -865,10 +961,16 @@ export namespace MyNS {
 	/** Wire-format for a Status object */
 	export interface UtilStatusProto {
 
-		/** The canonical error code (see codes.proto) that most closely corresponds to this status. This may be missing, and in the common case of the generic space, it definitely will be. */
+		/**
+		 * The canonical error code (see codes.proto) that most closely corresponds to this status. This may be missing, and in the common case of the generic space, it definitely will be.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		canonicalCode?: number | null;
 
-		/** Numeric code drawn from the space specified below. Often, this is the canonical error space, and code is drawn from google3/util/task/codes.proto */
+		/**
+		 * Numeric code drawn from the space specified below. Often, this is the canonical error space, and code is drawn from google3/util/task/codes.proto
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** Detail message */
@@ -884,10 +986,16 @@ export namespace MyNS {
 	/** Wire-format for a Status object */
 	export interface UtilStatusProtoFormProperties {
 
-		/** The canonical error code (see codes.proto) that most closely corresponds to this status. This may be missing, and in the common case of the generic space, it definitely will be. */
+		/**
+		 * The canonical error code (see codes.proto) that most closely corresponds to this status. This may be missing, and in the common case of the generic space, it definitely will be.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		canonicalCode: FormControl<number | null | undefined>,
 
-		/** Numeric code drawn from the space specified below. Often, this is the canonical error space, and code is drawn from google3/util/task/codes.proto */
+		/**
+		 * Numeric code drawn from the space specified below. Often, this is the canonical error space, and code is drawn from google3/util/task/codes.proto
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** Detail message */
@@ -1081,7 +1189,10 @@ export namespace MyNS {
 		/** Language of the query or response. */
 		detectedLanguage?: string | null;
 
-		/** Probability of the language predicted as returned by LangID. */
+		/**
+		 * Probability of the language predicted as returned by LangID.
+		 * Type: float
+		 */
 		detectedLanguageProbability?: number | null;
 	}
 	export interface LearningServingLlmLanguageFilterResultFormProperties {
@@ -1092,7 +1203,10 @@ export namespace MyNS {
 		/** Language of the query or response. */
 		detectedLanguage: FormControl<string | null | undefined>,
 
-		/** Probability of the language predicted as returned by LangID. */
+		/**
+		 * Probability of the language predicted as returned by LangID.
+		 * Type: float
+		 */
 		detectedLanguageProbability: FormControl<number | null | undefined>,
 	}
 	export function CreateLearningServingLlmLanguageFilterResultFormGroup() {
@@ -1110,6 +1224,8 @@ export namespace MyNS {
 		allowed?: boolean | null;
 		harm?: LearningGenaiRootHarm;
 		name?: string | null;
+
+		/** Type: double */
 		score?: number | null;
 	}
 
@@ -1117,6 +1233,8 @@ export namespace MyNS {
 	export interface LearningGenaiRootRAIOutputFormProperties {
 		allowed: FormControl<boolean | null | undefined>,
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateLearningGenaiRootRAIOutputFormGroup() {
@@ -1149,6 +1267,8 @@ export namespace MyNS {
 		pqc?: boolean | null;
 		safetycat?: LearningGenaiRootHarmSafetyCatCategories;
 		spii?: LearningGenaiRootHarmSpiiFilter;
+
+		/** Type: double */
 		threshold?: number | null;
 		videoFrameCsam?: boolean | null;
 		videoFramePedo?: boolean | null;
@@ -1170,6 +1290,8 @@ export namespace MyNS {
 		imagePorn: FormControl<boolean | null | undefined>,
 		imageViolence: FormControl<boolean | null | undefined>,
 		pqc: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		threshold: FormControl<number | null | undefined>,
 		videoFrameCsam: FormControl<boolean | null | undefined>,
 		videoFramePedo: FormControl<boolean | null | undefined>,
@@ -1352,15 +1474,23 @@ export namespace MyNS {
 		/** The proto defines the attribution information for a document using whatever fields are most applicable for that document's datasource. For example, a Wikipedia article's attribution is in the form of its article title, a website is in the form of a URL, and a Github repo is in the form of a repo name. Next id:28 */
 		docAttribution?: LanguageLabsAidaTrustRecitationProtoDocAttribution;
 
-		/** number of documents that contained this segment */
+		/**
+		 * number of documents that contained this segment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		docOccurrences?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endIndex?: number | null;
 
 		/** The raw text in the given input that is corresponding to the segment. It will be available only when 'return_segment_raw_text' is enabled in the request options. */
 		rawText?: string | null;
 		segmentRecitationAction?: LanguageLabsAidaTrustRecitationProtoSegmentResultSegmentRecitationAction | null;
 
-		/** The segment boundary start (inclusive) and end index (exclusive) in the given text. In the streaming RPC, the indexes always start from the beginning of the first text in the entire stream. The indexes are measured in UTF-16 code units. */
+		/**
+		 * The segment boundary start (inclusive) and end index (exclusive) in the given text. In the streaming RPC, the indexes always start from the beginning of the first text in the entire stream. The indexes are measured in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 	}
 
@@ -1373,15 +1503,23 @@ export namespace MyNS {
 		/** human-friendly string that contains information from doc_attribution which could be shown by clients */
 		displayAttributionMessage: FormControl<string | null | undefined>,
 
-		/** number of documents that contained this segment */
+		/**
+		 * number of documents that contained this segment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		docOccurrences: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endIndex: FormControl<number | null | undefined>,
 
 		/** The raw text in the given input that is corresponding to the segment. It will be available only when 'return_segment_raw_text' is enabled in the request options. */
 		rawText: FormControl<string | null | undefined>,
 		segmentRecitationAction: FormControl<LanguageLabsAidaTrustRecitationProtoSegmentResultSegmentRecitationAction | null | undefined>,
 
-		/** The segment boundary start (inclusive) and end index (exclusive) in the given text. In the streaming RPC, the indexes always start from the beginning of the first text in the entire stream. The indexes are measured in UTF-16 code units. */
+		/**
+		 * The segment boundary start (inclusive) and end index (exclusive) in the given text. In the streaming RPC, the indexes always start from the beginning of the first text in the entire stream. The indexes are measured in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateLanguageLabsAidaTrustRecitationProtoSegmentResultFormGroup() {
@@ -1437,7 +1575,10 @@ export namespace MyNS {
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 		publicationDate?: GoogleTypeDate;
 
-		/** This field is for opt-out experiment only, MUST never be used during actual production/serving. */
+		/**
+		 * This field is for opt-out experiment only, MUST never be used during actual production/serving.
+		 * Type: double
+		 */
 		qualityScoreExperimentOnly?: number | null;
 
 		/** Github repository */
@@ -1485,7 +1626,10 @@ export namespace MyNS {
 		noAttribution: FormControl<boolean | null | undefined>,
 		podcastUtteranceId: FormControl<string | null | undefined>,
 
-		/** This field is for opt-out experiment only, MUST never be used during actual production/serving. */
+		/**
+		 * This field is for opt-out experiment only, MUST never be used during actual production/serving.
+		 * Type: double
+		 */
 		qualityScoreExperimentOnly: FormControl<number | null | undefined>,
 
 		/** Github repository */
@@ -1547,7 +1691,10 @@ export namespace MyNS {
 		/** The RAI category. */
 		raiCategory?: CloudAiNlLlmProtoServiceRaiSignalRaiCategory | null;
 
-		/** The score for the category, in the range [0.0, 1.0]. */
+		/**
+		 * The score for the category, in the range [0.0, 1.0].
+		 * Type: float
+		 */
 		score?: number | null;
 	}
 
@@ -1563,7 +1710,10 @@ export namespace MyNS {
 		/** The RAI category. */
 		raiCategory: FormControl<CloudAiNlLlmProtoServiceRaiSignalRaiCategory | null | undefined>,
 
-		/** The score for the category, in the range [0.0, 1.0]. */
+		/**
+		 * The score for the category, in the range [0.0, 1.0].
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateCloudAiNlLlmProtoServiceRaiSignalFormGroup() {
@@ -1587,7 +1737,10 @@ export namespace MyNS {
 		/** The recitation result against the given dynamic data source. */
 		dynamicSegmentResults?: Array<LanguageLabsAidaTrustRecitationProtoSegmentResult>;
 
-		/** Last index of input text fully checked for recitation in the entire streaming context. Would return `-1` if no Input was checked for recitation. */
+		/**
+		 * Last index of input text fully checked for recitation in the entire streaming context. Would return `-1` if no Input was checked for recitation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fullyCheckedTextIndex?: number | null;
 
 		/** The recitation action for one given input. When its segments contain different actions, the overall action will be returned in the precedence of BLOCK > CITE > NO_ACTION. */
@@ -1600,7 +1753,10 @@ export namespace MyNS {
 	/** The recitation result for one stream input */
 	export interface LanguageLabsAidaTrustRecitationProtoStreamRecitationResultFormProperties {
 
-		/** Last index of input text fully checked for recitation in the entire streaming context. Would return `-1` if no Input was checked for recitation. */
+		/**
+		 * Last index of input text fully checked for recitation in the entire streaming context. Would return `-1` if no Input was checked for recitation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fullyCheckedTextIndex: FormControl<number | null | undefined>,
 
 		/** The recitation action for one given input. When its segments contain different actions, the overall action will be returned in the precedence of BLOCK > CITE > NO_ACTION. */
@@ -1715,11 +1871,15 @@ export namespace MyNS {
 
 		/** Each SimilarityTakedownPhrase treats a logical group of blocked and allowed phrases together along with a corresponding punt If the closest matching response is of the allowed type, we allow the response If the closest matching response is of the blocked type, we block the response. eg: Blocked phrase - "All lives matter" */
 		phrase?: LearningGenaiRootSimilarityTakedownPhrase;
+
+		/** Type: float */
 		similarityScore?: number | null;
 	}
 
 	/** Proto containing the results from the Universal Sentence Encoder / Other models */
 	export interface LearningGenaiRootScoredSimilarityTakedownPhraseFormProperties {
+
+		/** Type: float */
 		similarityScore: FormControl<number | null | undefined>,
 	}
 	export function CreateLearningGenaiRootScoredSimilarityTakedownPhraseFormGroup() {
@@ -1766,6 +1926,8 @@ export namespace MyNS {
 	export interface LearningGenaiRootToxicitySignal {
 		allowed?: boolean | null;
 		label?: LearningGenaiRootToxicitySignalLabel | null;
+
+		/** Type: float */
 		score?: number | null;
 	}
 
@@ -1773,6 +1935,8 @@ export namespace MyNS {
 	export interface LearningGenaiRootToxicitySignalFormProperties {
 		allowed: FormControl<boolean | null | undefined>,
 		label: FormControl<LearningGenaiRootToxicitySignalLabel | null | undefined>,
+
+		/** Type: float */
 		score: FormControl<number | null | undefined>,
 	}
 	export function CreateLearningGenaiRootToxicitySignalFormGroup() {
@@ -1799,9 +1963,13 @@ export namespace MyNS {
 
 		/** Results of RandomSamplingParams::top_k_logprob_per_decoding_step. */
 		tokensAndLogprobPerDecodingStep?: LearningGenaiRootTokensAndLogProbPerDecodingStep;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface LearningGenaiRootScoreFormProperties {
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateLearningGenaiRootScoreFormGroup() {
@@ -1815,12 +1983,16 @@ export namespace MyNS {
 	/** The type used for final weights calculation. */
 	export interface LearningGenaiRootCalculationType {
 		scoreType?: LearningGenaiRootCalculationTypeScoreType | null;
+
+		/** Type: double */
 		weights?: number | null;
 	}
 
 	/** The type used for final weights calculation. */
 	export interface LearningGenaiRootCalculationTypeFormProperties {
 		scoreType: FormControl<LearningGenaiRootCalculationTypeScoreType | null | undefined>,
+
+		/** Type: double */
 		weights: FormControl<number | null | undefined>,
 	}
 	export function CreateLearningGenaiRootCalculationTypeFormGroup() {
@@ -1848,10 +2020,16 @@ export namespace MyNS {
 	/** A token with its own score. */
 	export interface LearningGenaiRootScoredToken {
 
-		/** Each end_token_score is a logprob for how well the completion would end at a particular token. See http://google3/labs/language/aida/config/proto/model_config.proto;l=376;rcl=573039459 */
+		/**
+		 * Each end_token_score is a logprob for how well the completion would end at a particular token. See http://google3/labs/language/aida/config/proto/model_config.proto;l=376;rcl=573039459
+		 * Type: float
+		 */
 		endTokenScore?: number | null;
 
-		/** Each score is the logprob for the token in model response. */
+		/**
+		 * Each score is the logprob for the token in model response.
+		 * Type: float
+		 */
 		score?: number | null;
 		token?: string | null;
 	}
@@ -1859,10 +2037,16 @@ export namespace MyNS {
 	/** A token with its own score. */
 	export interface LearningGenaiRootScoredTokenFormProperties {
 
-		/** Each end_token_score is a logprob for how well the completion would end at a particular token. See http://google3/labs/language/aida/config/proto/model_config.proto;l=376;rcl=573039459 */
+		/**
+		 * Each end_token_score is a logprob for how well the completion would end at a particular token. See http://google3/labs/language/aida/config/proto/model_config.proto;l=376;rcl=573039459
+		 * Type: float
+		 */
 		endTokenScore: FormControl<number | null | undefined>,
 
-		/** Each score is the logprob for the token in model response. */
+		/**
+		 * Each score is the logprob for the token in model response.
+		 * Type: float
+		 */
 		score: FormControl<number | null | undefined>,
 		token: FormControl<string | null | undefined>,
 	}
@@ -1879,12 +2063,16 @@ export namespace MyNS {
 	/** The type of score that bundled with a threshold, and will not be attending the final score calculation. How each score type uses the threshold can be implementation details. */
 	export interface LearningGenaiRootThresholdType {
 		scoreType?: LearningGenaiRootCalculationTypeScoreType | null;
+
+		/** Type: double */
 		threshold?: number | null;
 	}
 
 	/** The type of score that bundled with a threshold, and will not be attending the final score calculation. How each score type uses the threshold can be implementation details. */
 	export interface LearningGenaiRootThresholdTypeFormProperties {
 		scoreType: FormControl<LearningGenaiRootCalculationTypeScoreType | null | undefined>,
+
+		/** Type: double */
 		threshold: FormControl<number | null | undefined>,
 	}
 	export function CreateLearningGenaiRootThresholdTypeFormGroup() {
@@ -1919,7 +2107,10 @@ export namespace MyNS {
 	/** A candidate at a decoding step. */
 	export interface LearningGenaiRootTokensAndLogProbPerDecodingStepCandidate {
 
-		/** The candidate's log probability. */
+		/**
+		 * The candidate's log probability.
+		 * Type: float
+		 */
 		logProbability?: number | null;
 
 		/** The candidate’s token value. */
@@ -1929,7 +2120,10 @@ export namespace MyNS {
 	/** A candidate at a decoding step. */
 	export interface LearningGenaiRootTokensAndLogProbPerDecodingStepCandidateFormProperties {
 
-		/** The candidate's log probability. */
+		/**
+		 * The candidate's log probability.
+		 * Type: float
+		 */
 		logProbability: FormControl<number | null | undefined>,
 
 		/** The candidate’s token value. */
@@ -1988,28 +2182,44 @@ export namespace MyNS {
 	export enum NlpSaftLangIdResultModelVersion { VERSION_UNSPECIFIED = 'VERSION_UNSPECIFIED', INDEXING_20181017 = 'INDEXING_20181017', INDEXING_20191206 = 'INDEXING_20191206', INDEXING_20200313 = 'INDEXING_20200313', INDEXING_20210618 = 'INDEXING_20210618', STANDARD_20220516 = 'STANDARD_20220516' }
 
 	export interface NlpSaftLanguageSpan {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 
 		/** A BCP 47 language code for this span. */
 		languageCode?: string | null;
 		locales?: NlpSaftLangIdLocalesResult;
 
-		/** A probability associated with this prediction. */
+		/**
+		 * A probability associated with this prediction.
+		 * Type: float
+		 */
 		probability?: number | null;
 
-		/** Start and end byte offsets, inclusive, within the given input string. A value of -1 implies that this field is not set. Both fields must either be set with a nonnegative value or both are unset. If both are unset then this LanguageSpan applies to the entire input. */
+		/**
+		 * Start and end byte offsets, inclusive, within the given input string. A value of -1 implies that this field is not set. Both fields must either be set with a nonnegative value or both are unset. If both are unset then this LanguageSpan applies to the entire input.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start?: number | null;
 	}
 	export interface NlpSaftLanguageSpanFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 
 		/** A BCP 47 language code for this span. */
 		languageCode: FormControl<string | null | undefined>,
 
-		/** A probability associated with this prediction. */
+		/**
+		 * A probability associated with this prediction.
+		 * Type: float
+		 */
 		probability: FormControl<number | null | undefined>,
 
-		/** Start and end byte offsets, inclusive, within the given input string. A value of -1 implies that this field is not set. Both fields must either be set with a nonnegative value or both are unset. If both are unset then this LanguageSpan applies to the entire input. */
+		/**
+		 * Start and end byte offsets, inclusive, within the given input string. A value of -1 implies that this field is not set. Both fields must either be set with a nonnegative value or both are unset. If both are unset then this LanguageSpan applies to the entire input.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		start: FormControl<number | null | undefined>,
 	}
 	export function CreateNlpSaftLanguageSpanFormGroup() {
@@ -2057,12 +2267,18 @@ export namespace MyNS {
 		/** A sequence of LanguageSpan objects, each assigning a language to a subspan of the input. */
 		languageSpans?: Array<NlpSaftLanguageSpan>;
 
-		/** The probability of this sequence of LanguageSpans. */
+		/**
+		 * The probability of this sequence of LanguageSpans.
+		 * Type: float
+		 */
 		probability?: number | null;
 	}
 	export interface NlpSaftLanguageSpanSequenceFormProperties {
 
-		/** The probability of this sequence of LanguageSpans. */
+		/**
+		 * The probability of this sequence of LanguageSpans.
+		 * Type: float
+		 */
 		probability: FormControl<number | null | undefined>,
 	}
 	export function CreateNlpSaftLanguageSpanSequenceFormGroup() {
@@ -2108,15 +2324,23 @@ export namespace MyNS {
 		/** The proto defines the attribution information for a document using whatever fields are most applicable for that document's datasource. For example, a Wikipedia article's attribution is in the form of its article title, a website is in the form of a URL, and a Github repo is in the form of a repo name. Next id: 28 */
 		docAttribution?: LearningGenaiRecitationDocAttribution;
 
-		/** number of documents that contained this segment */
+		/**
+		 * number of documents that contained this segment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		docOccurrences?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endIndex?: number | null;
 
 		/** The raw text in the given input that is corresponding to the segment. It will be available only when 'return_segment_raw_text' is enabled in the request options. */
 		rawText?: string | null;
 		segmentRecitationAction?: LanguageLabsAidaTrustRecitationProtoSegmentResultSegmentRecitationAction | null;
 
-		/** The segment boundary start (inclusive) and end index (exclusive) in the given text. In the streaming RPC, the indexes always start from the beginning of the first text in the entire stream. The indexes are measured in UTF-16 code units. */
+		/**
+		 * The segment boundary start (inclusive) and end index (exclusive) in the given text. In the streaming RPC, the indexes always start from the beginning of the first text in the entire stream. The indexes are measured in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 	}
 
@@ -2129,15 +2353,23 @@ export namespace MyNS {
 		/** human-friendly string that contains information from doc_attribution which could be shown by clients */
 		displayAttributionMessage: FormControl<string | null | undefined>,
 
-		/** number of documents that contained this segment */
+		/**
+		 * number of documents that contained this segment
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		docOccurrences: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		endIndex: FormControl<number | null | undefined>,
 
 		/** The raw text in the given input that is corresponding to the segment. It will be available only when 'return_segment_raw_text' is enabled in the request options. */
 		rawText: FormControl<string | null | undefined>,
 		segmentRecitationAction: FormControl<LanguageLabsAidaTrustRecitationProtoSegmentResultSegmentRecitationAction | null | undefined>,
 
-		/** The segment boundary start (inclusive) and end index (exclusive) in the given text. In the streaming RPC, the indexes always start from the beginning of the first text in the entire stream. The indexes are measured in UTF-16 code units. */
+		/**
+		 * The segment boundary start (inclusive) and end index (exclusive) in the given text. In the streaming RPC, the indexes always start from the beginning of the first text in the entire stream. The indexes are measured in UTF-16 code units.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateLearningGenaiRecitationSegmentResultFormGroup() {
@@ -2192,7 +2424,10 @@ export namespace MyNS {
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 		publicationDate?: GoogleTypeDate;
 
-		/** This field is for opt-out experiment only, MUST never be used during actual production/serving. */
+		/**
+		 * This field is for opt-out experiment only, MUST never be used during actual production/serving.
+		 * Type: double
+		 */
 		qualityScoreExperimentOnly?: number | null;
 
 		/** Github repository */
@@ -2241,7 +2476,10 @@ export namespace MyNS {
 		noAttribution: FormControl<boolean | null | undefined>,
 		podcastUtteranceId: FormControl<string | null | undefined>,
 
-		/** This field is for opt-out experiment only, MUST never be used during actual production/serving. */
+		/**
+		 * This field is for opt-out experiment only, MUST never be used during actual production/serving.
+		 * Type: double
+		 */
 		qualityScoreExperimentOnly: FormControl<number | null | undefined>,
 
 		/** Github repository */
@@ -2383,13 +2621,19 @@ export namespace MyNS {
 
 	export interface LearningGenaiRootRoutingDecisionMetadataTokenLengthBasedModelInputTokenMetadata {
 
-		/** The length computed by backends using the formatter & tokenizer specific to the model */
+		/**
+		 * The length computed by backends using the formatter & tokenizer specific to the model
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		computedInputTokenLength?: number | null;
 		modelId?: string | null;
 	}
 	export interface LearningGenaiRootRoutingDecisionMetadataTokenLengthBasedModelInputTokenMetadataFormProperties {
 
-		/** The length computed by backends using the formatter & tokenizer specific to the model */
+		/**
+		 * The length computed by backends using the formatter & tokenizer specific to the model
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		computedInputTokenLength: FormControl<number | null | undefined>,
 		modelId: FormControl<string | null | undefined>,
 	}
@@ -2402,12 +2646,20 @@ export namespace MyNS {
 	}
 
 	export interface LearningGenaiRootRoutingDecisionMetadataTokenLengthBasedModelMaxTokenMetadata {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxNumInputTokens?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxNumOutputTokens?: number | null;
 		modelId?: string | null;
 	}
 	export interface LearningGenaiRootRoutingDecisionMetadataTokenLengthBasedModelMaxTokenMetadataFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxNumInputTokens: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		maxNumOutputTokens: FormControl<number | null | undefined>,
 		modelId: FormControl<string | null | undefined>,
 	}
@@ -2478,7 +2730,10 @@ export namespace MyNS {
 		/** For billing metrics that are using legacy sku's, set the legacy billing metric id here. This will be sent to Chemist as the "cloudbilling.googleapis.com/argentum_metric_id" label. Otherwise leave empty. */
 		argentumMetricId?: string | null;
 
-		/** A double value. */
+		/**
+		 * A double value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** A signed 64-bit integer value. */
@@ -2495,7 +2750,10 @@ export namespace MyNS {
 		/** For billing metrics that are using legacy sku's, set the legacy billing metric id here. This will be sent to Chemist as the "cloudbilling.googleapis.com/argentum_metric_id" label. Otherwise leave empty. */
 		argentumMetricId: FormControl<string | null | undefined>,
 
-		/** A double value. */
+		/**
+		 * A double value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** A signed 64-bit integer value. */
@@ -2542,22 +2800,38 @@ export namespace MyNS {
 	/** Usage metadata about response(s). */
 	export interface CloudAiNlLlmProtoServiceUsageMetadata {
 
-		/** Number of tokens in the response(s). */
+		/**
+		 * Number of tokens in the response(s).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		candidatesTokenCount?: number | null;
 
-		/** Number of tokens in the request. */
+		/**
+		 * Number of tokens in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		promptTokenCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalTokenCount?: number | null;
 	}
 
 	/** Usage metadata about response(s). */
 	export interface CloudAiNlLlmProtoServiceUsageMetadataFormProperties {
 
-		/** Number of tokens in the response(s). */
+		/**
+		 * Number of tokens in the response(s).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		candidatesTokenCount: FormControl<number | null | undefined>,
 
-		/** Number of tokens in the request. */
+		/**
+		 * Number of tokens in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		promptTokenCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalTokenCount: FormControl<number | null | undefined>,
 	}
 	export function CreateCloudAiNlLlmProtoServiceUsageMetadataFormGroup() {
@@ -2676,7 +2950,10 @@ export namespace MyNS {
 		/** Max number of human labeled DataItems. */
 		maxDataItemCount?: string | null;
 
-		/** Max percent of total DataItems for human labeling. */
+		/**
+		 * Max percent of total DataItems for human labeling.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDataItemPercentage?: number | null;
 
 		/** Active learning data sampling config. For every active learning labeling iteration, it will select a batch of data based on the sampling strategy. */
@@ -2692,7 +2969,10 @@ export namespace MyNS {
 		/** Max number of human labeled DataItems. */
 		maxDataItemCount: FormControl<string | null | undefined>,
 
-		/** Max percent of total DataItems for human labeling. */
+		/**
+		 * Max percent of total DataItems for human labeling.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxDataItemPercentage: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ActiveLearningConfigFormGroup() {
@@ -2707,10 +2987,16 @@ export namespace MyNS {
 	/** Active learning data sampling config. For every active learning labeling iteration, it will select a batch of data based on the sampling strategy. */
 	export interface GoogleCloudAiplatformV1SampleConfig {
 
-		/** The percentage of data needed to be labeled in each following batch (except the first batch). */
+		/**
+		 * The percentage of data needed to be labeled in each following batch (except the first batch).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followingBatchSamplePercentage?: number | null;
 
-		/** The percentage of data needed to be labeled in the first batch. */
+		/**
+		 * The percentage of data needed to be labeled in the first batch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialBatchSamplePercentage?: number | null;
 
 		/** Field to choose sampling strategy. Sampling strategy will decide which data should be selected for human labeling in every batch. */
@@ -2720,10 +3006,16 @@ export namespace MyNS {
 	/** Active learning data sampling config. For every active learning labeling iteration, it will select a batch of data based on the sampling strategy. */
 	export interface GoogleCloudAiplatformV1SampleConfigFormProperties {
 
-		/** The percentage of data needed to be labeled in each following batch (except the first batch). */
+		/**
+		 * The percentage of data needed to be labeled in each following batch (except the first batch).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		followingBatchSamplePercentage: FormControl<number | null | undefined>,
 
-		/** The percentage of data needed to be labeled in the first batch. */
+		/**
+		 * The percentage of data needed to be labeled in the first batch.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialBatchSamplePercentage: FormControl<number | null | undefined>,
 
 		/** Field to choose sampling strategy. Sampling strategy will decide which data should be selected for human labeling in every batch. */
@@ -2963,7 +3255,10 @@ export namespace MyNS {
 		/** Output only. The ID of the Metric. The Metric should be defined in StudySpec's Metrics. */
 		metricId?: string | null;
 
-		/** Output only. The value for this metric. */
+		/**
+		 * Output only. The value for this metric.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
@@ -2973,7 +3268,10 @@ export namespace MyNS {
 		/** Output only. The ID of the Metric. The Metric should be defined in StudySpec's Metrics. */
 		metricId: FormControl<string | null | undefined>,
 
-		/** Output only. The value for this metric. */
+		/**
+		 * Output only. The value for this metric.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1MeasurementMetricFormGroup() {
@@ -3293,7 +3591,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -3306,7 +3607,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -3543,16 +3847,25 @@ export namespace MyNS {
 	/** Attribution that explains a particular prediction output. */
 	export interface GoogleCloudAiplatformV1Attribution {
 
-		/** Output only. Error of feature_attributions caused by approximation used in the explanation method. Lower value means more precise attributions. * For Sampled Shapley attribution, increasing path_count might reduce the error. * For Integrated Gradients attribution, increasing step_count might reduce the error. * For XRAI attribution, increasing step_count might reduce the error. See [this introduction](/vertex-ai/docs/explainable-ai/overview) for more information. */
+		/**
+		 * Output only. Error of feature_attributions caused by approximation used in the explanation method. Lower value means more precise attributions. * For Sampled Shapley attribution, increasing path_count might reduce the error. * For Integrated Gradients attribution, increasing step_count might reduce the error. * For XRAI attribution, increasing step_count might reduce the error. See [this introduction](/vertex-ai/docs/explainable-ai/overview) for more information.
+		 * Type: double
+		 */
 		approximationError?: number | null;
 
-		/** Output only. Model predicted output if the input instance is constructed from the baselines of all the features defined in ExplanationMetadata.inputs. The field name of the output is determined by the key in ExplanationMetadata.outputs. If the Model's predicted output has multiple dimensions (rank > 1), this is the value in the output located by output_index. If there are multiple baselines, their output values are averaged. */
+		/**
+		 * Output only. Model predicted output if the input instance is constructed from the baselines of all the features defined in ExplanationMetadata.inputs. The field name of the output is determined by the key in ExplanationMetadata.outputs. If the Model's predicted output has multiple dimensions (rank > 1), this is the value in the output located by output_index. If there are multiple baselines, their output values are averaged.
+		 * Type: double
+		 */
 		baselineOutputValue?: number | null;
 
 		/** Output only. Attributions of each explained feature. Features are extracted from the prediction instances according to explanation metadata for inputs. The value is a struct, whose keys are the name of the feature. The values are how much the feature in the instance contributed to the predicted result. The format of the value is determined by the feature's input format: * If the feature is a scalar value, the attribution value is a floating number. * If the feature is an array of scalar values, the attribution value is an array. * If the feature is a struct, the attribution value is a struct. The keys in the attribution value struct are the same as the keys in the feature struct. The formats of the values in the attribution struct are determined by the formats of the values in the feature struct. The ExplanationMetadata.feature_attributions_schema_uri field, pointed to by the ExplanationSpec field of the Endpoint.deployed_models object, points to the schema file that describes the features and their attribution values (if it is populated). */
 		featureAttributions?: any;
 
-		/** Output only. Model predicted output on the corresponding explanation instance. The field name of the output is determined by the key in ExplanationMetadata.outputs. If the Model predicted output has multiple dimensions, this is the value in the output located by output_index. */
+		/**
+		 * Output only. Model predicted output on the corresponding explanation instance. The field name of the output is determined by the key in ExplanationMetadata.outputs. If the Model predicted output has multiple dimensions, this is the value in the output located by output_index.
+		 * Type: double
+		 */
 		instanceOutputValue?: number | null;
 
 		/** Output only. The display name of the output identified by output_index. For example, the predicted class name by a multi-classification Model. This field is only populated iff the Model predicts display names as a separate field along with the explained output. The predicted display name must has the same shape of the explained output, and can be located using output_index. */
@@ -3568,16 +3881,25 @@ export namespace MyNS {
 	/** Attribution that explains a particular prediction output. */
 	export interface GoogleCloudAiplatformV1AttributionFormProperties {
 
-		/** Output only. Error of feature_attributions caused by approximation used in the explanation method. Lower value means more precise attributions. * For Sampled Shapley attribution, increasing path_count might reduce the error. * For Integrated Gradients attribution, increasing step_count might reduce the error. * For XRAI attribution, increasing step_count might reduce the error. See [this introduction](/vertex-ai/docs/explainable-ai/overview) for more information. */
+		/**
+		 * Output only. Error of feature_attributions caused by approximation used in the explanation method. Lower value means more precise attributions. * For Sampled Shapley attribution, increasing path_count might reduce the error. * For Integrated Gradients attribution, increasing step_count might reduce the error. * For XRAI attribution, increasing step_count might reduce the error. See [this introduction](/vertex-ai/docs/explainable-ai/overview) for more information.
+		 * Type: double
+		 */
 		approximationError: FormControl<number | null | undefined>,
 
-		/** Output only. Model predicted output if the input instance is constructed from the baselines of all the features defined in ExplanationMetadata.inputs. The field name of the output is determined by the key in ExplanationMetadata.outputs. If the Model's predicted output has multiple dimensions (rank > 1), this is the value in the output located by output_index. If there are multiple baselines, their output values are averaged. */
+		/**
+		 * Output only. Model predicted output if the input instance is constructed from the baselines of all the features defined in ExplanationMetadata.inputs. The field name of the output is determined by the key in ExplanationMetadata.outputs. If the Model's predicted output has multiple dimensions (rank > 1), this is the value in the output located by output_index. If there are multiple baselines, their output values are averaged.
+		 * Type: double
+		 */
 		baselineOutputValue: FormControl<number | null | undefined>,
 
 		/** Output only. Attributions of each explained feature. Features are extracted from the prediction instances according to explanation metadata for inputs. The value is a struct, whose keys are the name of the feature. The values are how much the feature in the instance contributed to the predicted result. The format of the value is determined by the feature's input format: * If the feature is a scalar value, the attribution value is a floating number. * If the feature is an array of scalar values, the attribution value is an array. * If the feature is a struct, the attribution value is a struct. The keys in the attribution value struct are the same as the keys in the feature struct. The formats of the values in the attribution struct are determined by the formats of the values in the feature struct. The ExplanationMetadata.feature_attributions_schema_uri field, pointed to by the ExplanationSpec field of the Endpoint.deployed_models object, points to the schema file that describes the features and their attribution values (if it is populated). */
 		featureAttributions: FormControl<any | null | undefined>,
 
-		/** Output only. Model predicted output on the corresponding explanation instance. The field name of the output is determined by the key in ExplanationMetadata.outputs. If the Model predicted output has multiple dimensions, this is the value in the output located by output_index. */
+		/**
+		 * Output only. Model predicted output on the corresponding explanation instance. The field name of the output is determined by the key in ExplanationMetadata.outputs. If the Model predicted output has multiple dimensions, this is the value in the output located by output_index.
+		 * Type: double
+		 */
 		instanceOutputValue: FormControl<number | null | undefined>,
 
 		/** Output only. The display name of the output identified by output_index. For example, the predicted class name by a multi-classification Model. This field is only populated iff the Model predicts display names as a separate field along with the explained output. The predicted display name must has the same shape of the explained output, and can be located using output_index. */
@@ -3602,20 +3924,32 @@ export namespace MyNS {
 	/** A description of resources that to large degree are decided by Vertex AI, and require only a modest additional configuration. Each Model supporting these resources documents its specific guidelines. */
 	export interface GoogleCloudAiplatformV1AutomaticResources {
 
-		/** Immutable. The maximum number of replicas this DeployedModel may be deployed on when the traffic against it increases. If the requested value is too large, the deployment will error, but if deployment succeeds then the ability to scale the model to that many replicas is guaranteed (barring service outages). If traffic against the DeployedModel increases beyond what its replicas at maximum may handle, a portion of the traffic will be dropped. If this value is not provided, a no upper bound for scaling under heavy traffic will be assume, though Vertex AI may be unable to scale beyond certain replica number. */
+		/**
+		 * Immutable. The maximum number of replicas this DeployedModel may be deployed on when the traffic against it increases. If the requested value is too large, the deployment will error, but if deployment succeeds then the ability to scale the model to that many replicas is guaranteed (barring service outages). If traffic against the DeployedModel increases beyond what its replicas at maximum may handle, a portion of the traffic will be dropped. If this value is not provided, a no upper bound for scaling under heavy traffic will be assume, though Vertex AI may be unable to scale beyond certain replica number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxReplicaCount?: number | null;
 
-		/** Immutable. The minimum number of replicas this DeployedModel will be always deployed on. If traffic against it increases, it may dynamically be deployed onto more replicas up to max_replica_count, and as traffic decreases, some of these extra replicas may be freed. If the requested value is too large, the deployment will error. */
+		/**
+		 * Immutable. The minimum number of replicas this DeployedModel will be always deployed on. If traffic against it increases, it may dynamically be deployed onto more replicas up to max_replica_count, and as traffic decreases, some of these extra replicas may be freed. If the requested value is too large, the deployment will error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minReplicaCount?: number | null;
 	}
 
 	/** A description of resources that to large degree are decided by Vertex AI, and require only a modest additional configuration. Each Model supporting these resources documents its specific guidelines. */
 	export interface GoogleCloudAiplatformV1AutomaticResourcesFormProperties {
 
-		/** Immutable. The maximum number of replicas this DeployedModel may be deployed on when the traffic against it increases. If the requested value is too large, the deployment will error, but if deployment succeeds then the ability to scale the model to that many replicas is guaranteed (barring service outages). If traffic against the DeployedModel increases beyond what its replicas at maximum may handle, a portion of the traffic will be dropped. If this value is not provided, a no upper bound for scaling under heavy traffic will be assume, though Vertex AI may be unable to scale beyond certain replica number. */
+		/**
+		 * Immutable. The maximum number of replicas this DeployedModel may be deployed on when the traffic against it increases. If the requested value is too large, the deployment will error, but if deployment succeeds then the ability to scale the model to that many replicas is guaranteed (barring service outages). If traffic against the DeployedModel increases beyond what its replicas at maximum may handle, a portion of the traffic will be dropped. If this value is not provided, a no upper bound for scaling under heavy traffic will be assume, though Vertex AI may be unable to scale beyond certain replica number.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxReplicaCount: FormControl<number | null | undefined>,
 
-		/** Immutable. The minimum number of replicas this DeployedModel will be always deployed on. If traffic against it increases, it may dynamically be deployed onto more replicas up to max_replica_count, and as traffic decreases, some of these extra replicas may be freed. If the requested value is too large, the deployment will error. */
+		/**
+		 * Immutable. The minimum number of replicas this DeployedModel will be always deployed on. If traffic against it increases, it may dynamically be deployed onto more replicas up to max_replica_count, and as traffic decreases, some of these extra replicas may be freed. If the requested value is too large, the deployment will error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minReplicaCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1AutomaticResourcesFormGroup() {
@@ -3633,7 +3967,10 @@ export namespace MyNS {
 		/** Required. The resource metric name. Supported metrics: * For Online Prediction: * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle` * `aiplatform.googleapis.com/prediction/online/cpu/utilization` */
 		metricName?: string | null;
 
-		/** The target resource utilization in percentage (1% - 100%) for the given metric; once the real usage deviates from the target by a certain percentage, the machine replicas change. The default value is 60 (representing 60%) if not provided. */
+		/**
+		 * The target resource utilization in percentage (1% - 100%) for the given metric; once the real usage deviates from the target by a certain percentage, the machine replicas change. The default value is 60 (representing 60%) if not provided.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		target?: number | null;
 	}
 
@@ -3643,7 +3980,10 @@ export namespace MyNS {
 		/** Required. The resource metric name. Supported metrics: * For Online Prediction: * `aiplatform.googleapis.com/prediction/online/accelerator/duty_cycle` * `aiplatform.googleapis.com/prediction/online/cpu/utilization` */
 		metricName: FormControl<string | null | undefined>,
 
-		/** The target resource utilization in percentage (1% - 100%) for the given metric; once the real usage deviates from the target by a certain percentage, the machine replicas change. The default value is 60 (representing 60%) if not provided. */
+		/**
+		 * The target resource utilization in percentage (1% - 100%) for the given metric; once the real usage deviates from the target by a certain percentage, the machine replicas change. The default value is 60 (representing 60%) if not provided.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		target: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1AutoscalingMetricSpecFormGroup() {
@@ -3861,19 +4201,28 @@ export namespace MyNS {
 	/** Stats and Anomaly generated at specific timestamp for specific Feature. The start_time and end_time are used to define the time range of the dataset that current stats belongs to, e.g. prediction traffic is bucketed into prediction datasets by time window. If the Dataset is not defined by time window, start_time = end_time. Timestamp of the stats and anomalies always refers to end_time. Raw stats and anomalies are stored in stats_uri or anomaly_uri in the tensorflow defined protos. Field data_stats contains almost identical information with the raw stats in Vertex AI defined proto, for UI to display. */
 	export interface GoogleCloudAiplatformV1FeatureStatsAnomaly {
 
-		/** This is the threshold used when detecting anomalies. The threshold can be changed by user, so this one might be different from ThresholdConfig.value. */
+		/**
+		 * This is the threshold used when detecting anomalies. The threshold can be changed by user, so this one might be different from ThresholdConfig.value.
+		 * Type: double
+		 */
 		anomalyDetectionThreshold?: number | null;
 
 		/** Path of the anomaly file for current feature values in Cloud Storage bucket. Format: gs:////anomalies. Example: gs://monitoring_bucket/feature_name/anomalies. Stats are stored as binary format with Protobuf message Anoamlies are stored as binary format with Protobuf message [tensorflow.metadata.v0.AnomalyInfo] (https://github.com/tensorflow/metadata/blob/master/tensorflow_metadata/proto/v0/anomalies.proto). */
 		anomalyUri?: string | null;
 
-		/** Deviation from the current stats to baseline stats. 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. */
+		/**
+		 * Deviation from the current stats to baseline stats. 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence.
+		 * Type: double
+		 */
 		distributionDeviation?: number | null;
 
 		/** The end timestamp of window where stats were generated. For objectives where time window doesn't make sense (e.g. Featurestore Snapshot Monitoring), end_time indicates the timestamp of the data used to generate stats (e.g. timestamp we take snapshots for feature values). */
 		endTime?: string | null;
 
-		/** Feature importance score, only populated when cross-feature monitoring is enabled. For now only used to represent feature attribution score within range [0, 1] for ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_SKEW and ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_DRIFT. */
+		/**
+		 * Feature importance score, only populated when cross-feature monitoring is enabled. For now only used to represent feature attribution score within range [0, 1] for ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_SKEW and ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_DRIFT.
+		 * Type: double
+		 */
 		score?: number | null;
 
 		/** The start timestamp of window where stats were generated. For objectives where time window doesn't make sense (e.g. Featurestore Snapshot Monitoring), start_time is only used to indicate the monitoring intervals, so it always equals to (end_time - monitoring_interval). */
@@ -3886,19 +4235,28 @@ export namespace MyNS {
 	/** Stats and Anomaly generated at specific timestamp for specific Feature. The start_time and end_time are used to define the time range of the dataset that current stats belongs to, e.g. prediction traffic is bucketed into prediction datasets by time window. If the Dataset is not defined by time window, start_time = end_time. Timestamp of the stats and anomalies always refers to end_time. Raw stats and anomalies are stored in stats_uri or anomaly_uri in the tensorflow defined protos. Field data_stats contains almost identical information with the raw stats in Vertex AI defined proto, for UI to display. */
 	export interface GoogleCloudAiplatformV1FeatureStatsAnomalyFormProperties {
 
-		/** This is the threshold used when detecting anomalies. The threshold can be changed by user, so this one might be different from ThresholdConfig.value. */
+		/**
+		 * This is the threshold used when detecting anomalies. The threshold can be changed by user, so this one might be different from ThresholdConfig.value.
+		 * Type: double
+		 */
 		anomalyDetectionThreshold: FormControl<number | null | undefined>,
 
 		/** Path of the anomaly file for current feature values in Cloud Storage bucket. Format: gs:////anomalies. Example: gs://monitoring_bucket/feature_name/anomalies. Stats are stored as binary format with Protobuf message Anoamlies are stored as binary format with Protobuf message [tensorflow.metadata.v0.AnomalyInfo] (https://github.com/tensorflow/metadata/blob/master/tensorflow_metadata/proto/v0/anomalies.proto). */
 		anomalyUri: FormControl<string | null | undefined>,
 
-		/** Deviation from the current stats to baseline stats. 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. */
+		/**
+		 * Deviation from the current stats to baseline stats. 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence.
+		 * Type: double
+		 */
 		distributionDeviation: FormControl<number | null | undefined>,
 
 		/** The end timestamp of window where stats were generated. For objectives where time window doesn't make sense (e.g. Featurestore Snapshot Monitoring), end_time indicates the timestamp of the data used to generate stats (e.g. timestamp we take snapshots for feature values). */
 		endTime: FormControl<string | null | undefined>,
 
-		/** Feature importance score, only populated when cross-feature monitoring is enabled. For now only used to represent feature attribution score within range [0, 1] for ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_SKEW and ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_DRIFT. */
+		/**
+		 * Feature importance score, only populated when cross-feature monitoring is enabled. For now only used to represent feature attribution score within range [0, 1] for ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_SKEW and ModelDeploymentMonitoringObjectiveType.FEATURE_ATTRIBUTION_DRIFT.
+		 * Type: double
+		 */
 		score: FormControl<number | null | undefined>,
 
 		/** The start timestamp of window where stats were generated. For objectives where time window doesn't make sense (e.g. Featurestore Snapshot Monitoring), start_time is only used to indicate the monitoring intervals, so it always equals to (end_time - monitoring_interval). */
@@ -4258,20 +4616,32 @@ export namespace MyNS {
 		/** Specification of a single machine. */
 		machineSpec?: GoogleCloudAiplatformV1MachineSpec;
 
-		/** Immutable. The maximum number of machine replicas the batch operation may be scaled to. The default value is 10. */
+		/**
+		 * Immutable. The maximum number of machine replicas the batch operation may be scaled to. The default value is 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxReplicaCount?: number | null;
 
-		/** Immutable. The number of machine replicas used at the start of the batch operation. If not set, Vertex AI decides starting number, not greater than max_replica_count */
+		/**
+		 * Immutable. The number of machine replicas used at the start of the batch operation. If not set, Vertex AI decides starting number, not greater than max_replica_count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startingReplicaCount?: number | null;
 	}
 
 	/** A description of resources that are used for performing batch operations, are dedicated to a Model, and need manual configuration. */
 	export interface GoogleCloudAiplatformV1BatchDedicatedResourcesFormProperties {
 
-		/** Immutable. The maximum number of machine replicas the batch operation may be scaled to. The default value is 10. */
+		/**
+		 * Immutable. The maximum number of machine replicas the batch operation may be scaled to. The default value is 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxReplicaCount: FormControl<number | null | undefined>,
 
-		/** Immutable. The number of machine replicas used at the start of the batch operation. If not set, Vertex AI decides starting number, not greater than max_replica_count */
+		/**
+		 * Immutable. The number of machine replicas used at the start of the batch operation. If not set, Vertex AI decides starting number, not greater than max_replica_count
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startingReplicaCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1BatchDedicatedResourcesFormGroup() {
@@ -4286,7 +4656,10 @@ export namespace MyNS {
 	/** Specification of a single machine. */
 	export interface GoogleCloudAiplatformV1MachineSpec {
 
-		/** The number of accelerators to attach to the machine. */
+		/**
+		 * The number of accelerators to attach to the machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acceleratorCount?: number | null;
 
 		/** Immutable. The type of accelerator(s) that may be attached to the machine as per accelerator_count. */
@@ -4302,7 +4675,10 @@ export namespace MyNS {
 	/** Specification of a single machine. */
 	export interface GoogleCloudAiplatformV1MachineSpecFormProperties {
 
-		/** The number of accelerators to attach to the machine. */
+		/**
+		 * The number of accelerators to attach to the machine.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		acceleratorCount: FormControl<number | null | undefined>,
 
 		/** Immutable. The type of accelerator(s) that may be attached to the machine as per accelerator_count. */
@@ -4397,10 +4773,16 @@ export namespace MyNS {
 		/** Attributed items for a given annotation, typically representing neighbors from the training sets constrained by the query type. */
 		attributedItems?: Array<GoogleCloudAiplatformV1ErrorAnalysisAnnotationAttributedItem>;
 
-		/** The outlier score of this annotated item. Usually defined as the min of all distances from attributed items. */
+		/**
+		 * The outlier score of this annotated item. Usually defined as the min of all distances from attributed items.
+		 * Type: double
+		 */
 		outlierScore?: number | null;
 
-		/** The threshold used to determine if this annotation is an outlier or not. */
+		/**
+		 * The threshold used to determine if this annotation is an outlier or not.
+		 * Type: double
+		 */
 		outlierThreshold?: number | null;
 
 		/** The query type used for finding the attributed items. */
@@ -4410,10 +4792,16 @@ export namespace MyNS {
 	/** Model error analysis for each annotation. */
 	export interface GoogleCloudAiplatformV1ErrorAnalysisAnnotationFormProperties {
 
-		/** The outlier score of this annotated item. Usually defined as the min of all distances from attributed items. */
+		/**
+		 * The outlier score of this annotated item. Usually defined as the min of all distances from attributed items.
+		 * Type: double
+		 */
 		outlierScore: FormControl<number | null | undefined>,
 
-		/** The threshold used to determine if this annotation is an outlier or not. */
+		/**
+		 * The threshold used to determine if this annotation is an outlier or not.
+		 * Type: double
+		 */
 		outlierThreshold: FormControl<number | null | undefined>,
 
 		/** The query type used for finding the attributed items. */
@@ -4435,7 +4823,10 @@ export namespace MyNS {
 		/** The unique ID for each annotation. Used by FE to allocate the annotation in DB. */
 		annotationResourceName?: string | null;
 
-		/** The distance of this item to the annotation. */
+		/**
+		 * The distance of this item to the annotation.
+		 * Type: double
+		 */
 		distance?: number | null;
 	}
 
@@ -4445,7 +4836,10 @@ export namespace MyNS {
 		/** The unique ID for each annotation. Used by FE to allocate the annotation in DB. */
 		annotationResourceName: FormControl<string | null | undefined>,
 
-		/** The distance of this item to the annotation. */
+		/**
+		 * The distance of this item to the annotation.
+		 * Type: double
+		 */
 		distance: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ErrorAnalysisAnnotationAttributedItemFormGroup() {
@@ -4506,7 +4900,10 @@ export namespace MyNS {
 	/** Neighbors for example-based explanations. */
 	export interface GoogleCloudAiplatformV1Neighbor {
 
-		/** Output only. The neighbor distance. */
+		/**
+		 * Output only. The neighbor distance.
+		 * Type: double
+		 */
 		neighborDistance?: number | null;
 
 		/** Output only. The neighbor id. */
@@ -4516,7 +4913,10 @@ export namespace MyNS {
 	/** Neighbors for example-based explanations. */
 	export interface GoogleCloudAiplatformV1NeighborFormProperties {
 
-		/** Output only. The neighbor distance. */
+		/**
+		 * Output only. The neighbor distance.
+		 * Type: double
+		 */
 		neighborDistance: FormControl<number | null | undefined>,
 
 		/** Output only. The neighbor id. */
@@ -4536,14 +4936,20 @@ export namespace MyNS {
 	/** Response message for ModelService.BatchImportEvaluatedAnnotations */
 	export interface GoogleCloudAiplatformV1BatchImportEvaluatedAnnotationsResponse {
 
-		/** Output only. Number of EvaluatedAnnotations imported. */
+		/**
+		 * Output only. Number of EvaluatedAnnotations imported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importedEvaluatedAnnotationsCount?: number | null;
 	}
 
 	/** Response message for ModelService.BatchImportEvaluatedAnnotations */
 	export interface GoogleCloudAiplatformV1BatchImportEvaluatedAnnotationsResponseFormProperties {
 
-		/** Output only. Number of EvaluatedAnnotations imported. */
+		/**
+		 * Output only. Number of EvaluatedAnnotations imported.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		importedEvaluatedAnnotationsCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1BatchImportEvaluatedAnnotationsResponseFormGroup() {
@@ -4718,20 +5124,32 @@ export namespace MyNS {
 	/** A range of values for slice(s). `low` is inclusive, `high` is exclusive. */
 	export interface GoogleCloudAiplatformV1ModelEvaluationSliceSliceSliceSpecRange {
 
-		/** Exclusive high value for the range. */
+		/**
+		 * Exclusive high value for the range.
+		 * Type: float
+		 */
 		high?: number | null;
 
-		/** Inclusive low value for the range. */
+		/**
+		 * Inclusive low value for the range.
+		 * Type: float
+		 */
 		low?: number | null;
 	}
 
 	/** A range of values for slice(s). `low` is inclusive, `high` is exclusive. */
 	export interface GoogleCloudAiplatformV1ModelEvaluationSliceSliceSliceSpecRangeFormProperties {
 
-		/** Exclusive high value for the range. */
+		/**
+		 * Exclusive high value for the range.
+		 * Type: float
+		 */
 		high: FormControl<number | null | undefined>,
 
-		/** Inclusive low value for the range. */
+		/**
+		 * Inclusive low value for the range.
+		 * Type: float
+		 */
 		low: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ModelEvaluationSliceSliceSliceSpecRangeFormGroup() {
@@ -4746,7 +5164,10 @@ export namespace MyNS {
 	/** Single value that supports strings and floats. */
 	export interface GoogleCloudAiplatformV1ModelEvaluationSliceSliceSliceSpecValue {
 
-		/** Float type. */
+		/**
+		 * Float type.
+		 * Type: float
+		 */
 		floatValue?: number | null;
 
 		/** String type. */
@@ -4756,7 +5177,10 @@ export namespace MyNS {
 	/** Single value that supports strings and floats. */
 	export interface GoogleCloudAiplatformV1ModelEvaluationSliceSliceSliceSpecValueFormProperties {
 
-		/** Float type. */
+		/**
+		 * Float type.
+		 * Type: float
+		 */
 		floatValue: FormControl<number | null | undefined>,
 
 		/** String type. */
@@ -5618,32 +6042,56 @@ export namespace MyNS {
 	/** Domain details of the input feature value. Provides numeric information about the feature, such as its range (min, max). If the feature has been pre-processed, for example with z-scoring, then it provides information about how to recover the original feature. For example, if the input feature is an image and it has been pre-processed to obtain 0-mean and stddev = 1 values, then original_mean, and original_stddev refer to the mean and stddev of the original feature (e.g. image tensor) from which input feature (with mean = 0 and stddev = 1) was obtained. */
 	export interface GoogleCloudAiplatformV1ExplanationMetadataInputMetadataFeatureValueDomain {
 
-		/** The maximum permissible value for this feature. */
+		/**
+		 * The maximum permissible value for this feature.
+		 * Type: float
+		 */
 		maxValue?: number | null;
 
-		/** The minimum permissible value for this feature. */
+		/**
+		 * The minimum permissible value for this feature.
+		 * Type: float
+		 */
 		minValue?: number | null;
 
-		/** If this input feature has been normalized to a mean value of 0, the original_mean specifies the mean value of the domain prior to normalization. */
+		/**
+		 * If this input feature has been normalized to a mean value of 0, the original_mean specifies the mean value of the domain prior to normalization.
+		 * Type: float
+		 */
 		originalMean?: number | null;
 
-		/** If this input feature has been normalized to a standard deviation of 1.0, the original_stddev specifies the standard deviation of the domain prior to normalization. */
+		/**
+		 * If this input feature has been normalized to a standard deviation of 1.0, the original_stddev specifies the standard deviation of the domain prior to normalization.
+		 * Type: float
+		 */
 		originalStddev?: number | null;
 	}
 
 	/** Domain details of the input feature value. Provides numeric information about the feature, such as its range (min, max). If the feature has been pre-processed, for example with z-scoring, then it provides information about how to recover the original feature. For example, if the input feature is an image and it has been pre-processed to obtain 0-mean and stddev = 1 values, then original_mean, and original_stddev refer to the mean and stddev of the original feature (e.g. image tensor) from which input feature (with mean = 0 and stddev = 1) was obtained. */
 	export interface GoogleCloudAiplatformV1ExplanationMetadataInputMetadataFeatureValueDomainFormProperties {
 
-		/** The maximum permissible value for this feature. */
+		/**
+		 * The maximum permissible value for this feature.
+		 * Type: float
+		 */
 		maxValue: FormControl<number | null | undefined>,
 
-		/** The minimum permissible value for this feature. */
+		/**
+		 * The minimum permissible value for this feature.
+		 * Type: float
+		 */
 		minValue: FormControl<number | null | undefined>,
 
-		/** If this input feature has been normalized to a mean value of 0, the original_mean specifies the mean value of the domain prior to normalization. */
+		/**
+		 * If this input feature has been normalized to a mean value of 0, the original_mean specifies the mean value of the domain prior to normalization.
+		 * Type: float
+		 */
 		originalMean: FormControl<number | null | undefined>,
 
-		/** If this input feature has been normalized to a standard deviation of 1.0, the original_stddev specifies the standard deviation of the domain prior to normalization. */
+		/**
+		 * If this input feature has been normalized to a standard deviation of 1.0, the original_stddev specifies the standard deviation of the domain prior to normalization.
+		 * Type: float
+		 */
 		originalStddev: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ExplanationMetadataInputMetadataFeatureValueDomainFormGroup() {
@@ -5660,10 +6108,16 @@ export namespace MyNS {
 	/** Visualization configurations for image explanation. */
 	export interface GoogleCloudAiplatformV1ExplanationMetadataInputMetadataVisualization {
 
-		/** Excludes attributions below the specified percentile, from the highlighted areas. Defaults to 62. */
+		/**
+		 * Excludes attributions below the specified percentile, from the highlighted areas. Defaults to 62.
+		 * Type: float
+		 */
 		clipPercentLowerbound?: number | null;
 
-		/** Excludes attributions above the specified percentile from the highlighted areas. Using the clip_percent_upperbound and clip_percent_lowerbound together can be useful for filtering out noise and making it easier to see areas of strong attribution. Defaults to 99.9. */
+		/**
+		 * Excludes attributions above the specified percentile from the highlighted areas. Using the clip_percent_upperbound and clip_percent_lowerbound together can be useful for filtering out noise and making it easier to see areas of strong attribution. Defaults to 99.9.
+		 * Type: float
+		 */
 		clipPercentUpperbound?: number | null;
 
 		/** The color scheme used for the highlighted areas. Defaults to PINK_GREEN for Integrated Gradients attribution, which shows positive attributions in green and negative in pink. Defaults to VIRIDIS for XRAI attribution, which highlights the most influential regions in yellow and the least influential in blue. */
@@ -5682,10 +6136,16 @@ export namespace MyNS {
 	/** Visualization configurations for image explanation. */
 	export interface GoogleCloudAiplatformV1ExplanationMetadataInputMetadataVisualizationFormProperties {
 
-		/** Excludes attributions below the specified percentile, from the highlighted areas. Defaults to 62. */
+		/**
+		 * Excludes attributions below the specified percentile, from the highlighted areas. Defaults to 62.
+		 * Type: float
+		 */
 		clipPercentLowerbound: FormControl<number | null | undefined>,
 
-		/** Excludes attributions above the specified percentile from the highlighted areas. Using the clip_percent_upperbound and clip_percent_lowerbound together can be useful for filtering out noise and making it easier to see areas of strong attribution. Defaults to 99.9. */
+		/**
+		 * Excludes attributions above the specified percentile from the highlighted areas. Using the clip_percent_upperbound and clip_percent_lowerbound together can be useful for filtering out noise and making it easier to see areas of strong attribution. Defaults to 99.9.
+		 * Type: float
+		 */
 		clipPercentUpperbound: FormControl<number | null | undefined>,
 
 		/** The color scheme used for the highlighted areas. Defaults to PINK_GREEN for Integrated Gradients attribution, which shows positive attributions in green and negative in pink. Defaults to VIRIDIS for XRAI attribution, which highlights the most influential regions in yellow and the least influential in blue. */
@@ -5771,7 +6231,10 @@ export namespace MyNS {
 		/** An attribution method that approximates Shapley values for features that contribute to the label being predicted. A sampling strategy is used to approximate the value rather than considering all subsets of features. */
 		sampledShapleyAttribution?: GoogleCloudAiplatformV1SampledShapleyAttribution;
 
-		/** If populated, returns attributions for top K indices of outputs (defaults to 1). Only applies to Models that predicts more than one outputs (e,g, multi-class Models). When set to -1, returns explanations for all outputs. */
+		/**
+		 * If populated, returns attributions for top K indices of outputs (defaults to 1). Only applies to Models that predicts more than one outputs (e,g, multi-class Models). When set to -1, returns explanations for all outputs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topK?: number | null;
 
 		/** An explanation method that redistributes Integrated Gradients attributions to segmented regions, taking advantage of the model's fully differentiable structure. Refer to this paper for more details: https://arxiv.org/abs/1906.02825 Supported only by image Models. */
@@ -5781,7 +6244,10 @@ export namespace MyNS {
 	/** Parameters to configure explaining for Model's predictions. */
 	export interface GoogleCloudAiplatformV1ExplanationParametersFormProperties {
 
-		/** If populated, returns attributions for top K indices of outputs (defaults to 1). Only applies to Models that predicts more than one outputs (e,g, multi-class Models). When set to -1, returns explanations for all outputs. */
+		/**
+		 * If populated, returns attributions for top K indices of outputs (defaults to 1). Only applies to Models that predicts more than one outputs (e,g, multi-class Models). When set to -1, returns explanations for all outputs.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topK: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ExplanationParametersFormGroup() {
@@ -5801,7 +6267,10 @@ export namespace MyNS {
 		/** The full configuration for the generated index, the semantics are the same as metadata and should match [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config). */
 		nearestNeighborSearchConfig?: any;
 
-		/** The number of neighbors to return when querying for examples. */
+		/**
+		 * The number of neighbors to return when querying for examples.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		neighborCount?: number | null;
 
 		/** Preset configuration for example-based explanations */
@@ -5814,7 +6283,10 @@ export namespace MyNS {
 		/** The full configuration for the generated index, the semantics are the same as metadata and should match [NearestNeighborSearchConfig](https://cloud.google.com/vertex-ai/docs/explainable-ai/configuring-explanations-example-based#nearest-neighbor-search-config). */
 		nearestNeighborSearchConfig: FormControl<any | null | undefined>,
 
-		/** The number of neighbors to return when querying for examples. */
+		/**
+		 * The number of neighbors to return when querying for examples.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		neighborCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ExamplesFormGroup() {
@@ -5893,14 +6365,20 @@ export namespace MyNS {
 		/** Config for SmoothGrad approximation of gradients. When enabled, the gradients are approximated by averaging the gradients from noisy samples in the vicinity of the inputs. Adding noise can help improve the computed gradients. Refer to this paper for more details: https://arxiv.org/pdf/1706.03825.pdf */
 		smoothGradConfig?: GoogleCloudAiplatformV1SmoothGradConfig;
 
-		/** Required. The number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is within the desired error range. Valid range of its value is [1, 100], inclusively. */
+		/**
+		 * Required. The number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is within the desired error range. Valid range of its value is [1, 100], inclusively.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepCount?: number | null;
 	}
 
 	/** An attribution method that computes the Aumann-Shapley value taking advantage of the model's fully differentiable structure. Refer to this paper for more details: https://arxiv.org/abs/1703.01365 */
 	export interface GoogleCloudAiplatformV1IntegratedGradientsAttributionFormProperties {
 
-		/** Required. The number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is within the desired error range. Valid range of its value is [1, 100], inclusively. */
+		/**
+		 * Required. The number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is within the desired error range. Valid range of its value is [1, 100], inclusively.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1IntegratedGradientsAttributionFormGroup() {
@@ -5914,14 +6392,20 @@ export namespace MyNS {
 	/** Config for blur baseline. When enabled, a linear path from the maximally blurred image to the input image is created. Using a blurred baseline instead of zero (black image) is motivated by the BlurIG approach explained here: https://arxiv.org/abs/2004.03383 */
 	export interface GoogleCloudAiplatformV1BlurBaselineConfig {
 
-		/** The standard deviation of the blur kernel for the blurred baseline. The same blurring parameter is used for both the height and the width dimension. If not set, the method defaults to the zero (i.e. black for images) baseline. */
+		/**
+		 * The standard deviation of the blur kernel for the blurred baseline. The same blurring parameter is used for both the height and the width dimension. If not set, the method defaults to the zero (i.e. black for images) baseline.
+		 * Type: float
+		 */
 		maxBlurSigma?: number | null;
 	}
 
 	/** Config for blur baseline. When enabled, a linear path from the maximally blurred image to the input image is created. Using a blurred baseline instead of zero (black image) is motivated by the BlurIG approach explained here: https://arxiv.org/abs/2004.03383 */
 	export interface GoogleCloudAiplatformV1BlurBaselineConfigFormProperties {
 
-		/** The standard deviation of the blur kernel for the blurred baseline. The same blurring parameter is used for both the height and the width dimension. If not set, the method defaults to the zero (i.e. black for images) baseline. */
+		/**
+		 * The standard deviation of the blur kernel for the blurred baseline. The same blurring parameter is used for both the height and the width dimension. If not set, the method defaults to the zero (i.e. black for images) baseline.
+		 * Type: float
+		 */
 		maxBlurSigma: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1BlurBaselineConfigFormGroup() {
@@ -5938,20 +6422,32 @@ export namespace MyNS {
 		/** Noise sigma by features. Noise sigma represents the standard deviation of the gaussian kernel that will be used to add noise to interpolated inputs prior to computing gradients. */
 		featureNoiseSigma?: GoogleCloudAiplatformV1FeatureNoiseSigma;
 
-		/** This is a single float value and will be used to add noise to all the features. Use this field when all features are normalized to have the same distribution: scale to range [0, 1], [-1, 1] or z-scoring, where features are normalized to have 0-mean and 1-variance. Learn more about [normalization](https://developers.google.com/machine-learning/data-prep/transform/normalization). For best results the recommended value is about 10% - 20% of the standard deviation of the input feature. Refer to section 3.2 of the SmoothGrad paper: https://arxiv.org/pdf/1706.03825.pdf. Defaults to 0.1. If the distribution is different per feature, set feature_noise_sigma instead for each feature. */
+		/**
+		 * This is a single float value and will be used to add noise to all the features. Use this field when all features are normalized to have the same distribution: scale to range [0, 1], [-1, 1] or z-scoring, where features are normalized to have 0-mean and 1-variance. Learn more about [normalization](https://developers.google.com/machine-learning/data-prep/transform/normalization). For best results the recommended value is about 10% - 20% of the standard deviation of the input feature. Refer to section 3.2 of the SmoothGrad paper: https://arxiv.org/pdf/1706.03825.pdf. Defaults to 0.1. If the distribution is different per feature, set feature_noise_sigma instead for each feature.
+		 * Type: float
+		 */
 		noiseSigma?: number | null;
 
-		/** The number of gradient samples to use for approximation. The higher this number, the more accurate the gradient is, but the runtime complexity increases by this factor as well. Valid range of its value is [1, 50]. Defaults to 3. */
+		/**
+		 * The number of gradient samples to use for approximation. The higher this number, the more accurate the gradient is, but the runtime complexity increases by this factor as well. Valid range of its value is [1, 50]. Defaults to 3.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		noisySampleCount?: number | null;
 	}
 
 	/** Config for SmoothGrad approximation of gradients. When enabled, the gradients are approximated by averaging the gradients from noisy samples in the vicinity of the inputs. Adding noise can help improve the computed gradients. Refer to this paper for more details: https://arxiv.org/pdf/1706.03825.pdf */
 	export interface GoogleCloudAiplatformV1SmoothGradConfigFormProperties {
 
-		/** This is a single float value and will be used to add noise to all the features. Use this field when all features are normalized to have the same distribution: scale to range [0, 1], [-1, 1] or z-scoring, where features are normalized to have 0-mean and 1-variance. Learn more about [normalization](https://developers.google.com/machine-learning/data-prep/transform/normalization). For best results the recommended value is about 10% - 20% of the standard deviation of the input feature. Refer to section 3.2 of the SmoothGrad paper: https://arxiv.org/pdf/1706.03825.pdf. Defaults to 0.1. If the distribution is different per feature, set feature_noise_sigma instead for each feature. */
+		/**
+		 * This is a single float value and will be used to add noise to all the features. Use this field when all features are normalized to have the same distribution: scale to range [0, 1], [-1, 1] or z-scoring, where features are normalized to have 0-mean and 1-variance. Learn more about [normalization](https://developers.google.com/machine-learning/data-prep/transform/normalization). For best results the recommended value is about 10% - 20% of the standard deviation of the input feature. Refer to section 3.2 of the SmoothGrad paper: https://arxiv.org/pdf/1706.03825.pdf. Defaults to 0.1. If the distribution is different per feature, set feature_noise_sigma instead for each feature.
+		 * Type: float
+		 */
 		noiseSigma: FormControl<number | null | undefined>,
 
-		/** The number of gradient samples to use for approximation. The higher this number, the more accurate the gradient is, but the runtime complexity increases by this factor as well. Valid range of its value is [1, 50]. Defaults to 3. */
+		/**
+		 * The number of gradient samples to use for approximation. The higher this number, the more accurate the gradient is, but the runtime complexity increases by this factor as well. Valid range of its value is [1, 50]. Defaults to 3.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		noisySampleCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SmoothGradConfigFormGroup() {
@@ -5986,7 +6482,10 @@ export namespace MyNS {
 		/** The name of the input feature for which noise sigma is provided. The features are defined in explanation metadata inputs. */
 		name?: string | null;
 
-		/** This represents the standard deviation of the Gaussian kernel that will be used to add noise to the feature prior to computing gradients. Similar to noise_sigma but represents the noise added to the current feature. Defaults to 0.1. */
+		/**
+		 * This represents the standard deviation of the Gaussian kernel that will be used to add noise to the feature prior to computing gradients. Similar to noise_sigma but represents the noise added to the current feature. Defaults to 0.1.
+		 * Type: float
+		 */
 		sigma?: number | null;
 	}
 
@@ -5996,7 +6495,10 @@ export namespace MyNS {
 		/** The name of the input feature for which noise sigma is provided. The features are defined in explanation metadata inputs. */
 		name: FormControl<string | null | undefined>,
 
-		/** This represents the standard deviation of the Gaussian kernel that will be used to add noise to the feature prior to computing gradients. Similar to noise_sigma but represents the noise added to the current feature. Defaults to 0.1. */
+		/**
+		 * This represents the standard deviation of the Gaussian kernel that will be used to add noise to the feature prior to computing gradients. Similar to noise_sigma but represents the noise added to the current feature. Defaults to 0.1.
+		 * Type: float
+		 */
 		sigma: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1FeatureNoiseSigmaNoiseSigmaForFeatureFormGroup() {
@@ -6011,14 +6513,20 @@ export namespace MyNS {
 	/** An attribution method that approximates Shapley values for features that contribute to the label being predicted. A sampling strategy is used to approximate the value rather than considering all subsets of features. */
 	export interface GoogleCloudAiplatformV1SampledShapleyAttribution {
 
-		/** Required. The number of feature permutations to consider when approximating the Shapley values. Valid range of its value is [1, 50], inclusively. */
+		/**
+		 * Required. The number of feature permutations to consider when approximating the Shapley values. Valid range of its value is [1, 50], inclusively.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pathCount?: number | null;
 	}
 
 	/** An attribution method that approximates Shapley values for features that contribute to the label being predicted. A sampling strategy is used to approximate the value rather than considering all subsets of features. */
 	export interface GoogleCloudAiplatformV1SampledShapleyAttributionFormProperties {
 
-		/** Required. The number of feature permutations to consider when approximating the Shapley values. Valid range of its value is [1, 50], inclusively. */
+		/**
+		 * Required. The number of feature permutations to consider when approximating the Shapley values. Valid range of its value is [1, 50], inclusively.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pathCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SampledShapleyAttributionFormGroup() {
@@ -6038,14 +6546,20 @@ export namespace MyNS {
 		/** Config for SmoothGrad approximation of gradients. When enabled, the gradients are approximated by averaging the gradients from noisy samples in the vicinity of the inputs. Adding noise can help improve the computed gradients. Refer to this paper for more details: https://arxiv.org/pdf/1706.03825.pdf */
 		smoothGradConfig?: GoogleCloudAiplatformV1SmoothGradConfig;
 
-		/** Required. The number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range. Valid range of its value is [1, 100], inclusively. */
+		/**
+		 * Required. The number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range. Valid range of its value is [1, 100], inclusively.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepCount?: number | null;
 	}
 
 	/** An explanation method that redistributes Integrated Gradients attributions to segmented regions, taking advantage of the model's fully differentiable structure. Refer to this paper for more details: https://arxiv.org/abs/1906.02825 Supported only by image Models. */
 	export interface GoogleCloudAiplatformV1XraiAttributionFormProperties {
 
-		/** Required. The number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range. Valid range of its value is [1, 100], inclusively. */
+		/**
+		 * Required. The number of steps for approximating the path integral. A good value to start is 50 and gradually increase until the sum to diff property is met within the desired error range. Valid range of its value is [1, 100], inclusively.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stepCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1XraiAttributionFormGroup() {
@@ -6141,14 +6655,20 @@ export namespace MyNS {
 	/** Manual batch tuning parameters. */
 	export interface GoogleCloudAiplatformV1ManualBatchTuningParameters {
 
-		/** Immutable. The number of the records (e.g. instances) of the operation given in each batch to a machine replica. Machine type, and size of a single record should be considered when setting this parameter, higher value speeds up the batch operation's execution, but too high value will result in a whole batch not fitting in a machine's memory, and the whole operation will fail. The default value is 64. */
+		/**
+		 * Immutable. The number of the records (e.g. instances) of the operation given in each batch to a machine replica. Machine type, and size of a single record should be considered when setting this parameter, higher value speeds up the batch operation's execution, but too high value will result in a whole batch not fitting in a machine's memory, and the whole operation will fail. The default value is 64.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize?: number | null;
 	}
 
 	/** Manual batch tuning parameters. */
 	export interface GoogleCloudAiplatformV1ManualBatchTuningParametersFormProperties {
 
-		/** Immutable. The number of the records (e.g. instances) of the operation given in each batch to a machine replica. Machine type, and size of a single record should be considered when setting this parameter, higher value speeds up the batch operation's execution, but too high value will result in a whole batch not fitting in a machine's memory, and the whole operation will fail. The default value is 64. */
+		/**
+		 * Immutable. The number of the records (e.g. instances) of the operation given in each batch to a machine replica. Machine type, and size of a single record should be considered when setting this parameter, higher value speeds up the batch operation's execution, but too high value will result in a whole batch not fitting in a machine's memory, and the whole operation will fail. The default value is 64.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		batchSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ManualBatchTuningParametersFormGroup() {
@@ -6266,14 +6786,20 @@ export namespace MyNS {
 	/** Statistics information about resource consumption. */
 	export interface GoogleCloudAiplatformV1ResourcesConsumed {
 
-		/** Output only. The number of replica hours used. Note that many replicas may run in parallel, and additionally any given work may be queued for some time. Therefore this value is not strictly related to wall time. */
+		/**
+		 * Output only. The number of replica hours used. Note that many replicas may run in parallel, and additionally any given work may be queued for some time. Therefore this value is not strictly related to wall time.
+		 * Type: double
+		 */
 		replicaHours?: number | null;
 	}
 
 	/** Statistics information about resource consumption. */
 	export interface GoogleCloudAiplatformV1ResourcesConsumedFormProperties {
 
-		/** Output only. The number of replica hours used. Note that many replicas may run in parallel, and additionally any given work may be queued for some time. Therefore this value is not strictly related to wall time. */
+		/**
+		 * Output only. The number of replica hours used. Note that many replicas may run in parallel, and additionally any given work may be queued for some time. Therefore this value is not strictly related to wall time.
+		 * Type: double
+		 */
 		replicaHours: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ResourcesConsumedFormGroup() {
@@ -6414,14 +6940,20 @@ export namespace MyNS {
 	/** Represents a network port in a container. */
 	export interface GoogleCloudAiplatformV1Port {
 
-		/** The number of the port to expose on the pod's IP address. Must be a valid port number, between 1 and 65535 inclusive. */
+		/**
+		 * The number of the port to expose on the pod's IP address. Must be a valid port number, between 1 and 65535 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containerPort?: number | null;
 	}
 
 	/** Represents a network port in a container. */
 	export interface GoogleCloudAiplatformV1PortFormProperties {
 
-		/** The number of the port to expose on the pod's IP address. Must be a valid port number, between 1 and 65535 inclusive. */
+		/**
+		 * The number of the port to expose on the pod's IP address. Must be a valid port number, between 1 and 65535 inclusive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containerPort: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1PortFormGroup() {
@@ -6438,20 +6970,32 @@ export namespace MyNS {
 		/** ExecAction specifies a command to execute. */
 		exec?: GoogleCloudAiplatformV1ProbeExecAction;
 
-		/** How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Must be less than timeout_seconds. Maps to Kubernetes probe argument 'periodSeconds'. */
+		/**
+		 * How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Must be less than timeout_seconds. Maps to Kubernetes probe argument 'periodSeconds'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSeconds?: number | null;
 
-		/** Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Must be greater or equal to period_seconds. Maps to Kubernetes probe argument 'timeoutSeconds'. */
+		/**
+		 * Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Must be greater or equal to period_seconds. Maps to Kubernetes probe argument 'timeoutSeconds'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds?: number | null;
 	}
 
 	/** Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic. */
 	export interface GoogleCloudAiplatformV1ProbeFormProperties {
 
-		/** How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Must be less than timeout_seconds. Maps to Kubernetes probe argument 'periodSeconds'. */
+		/**
+		 * How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Must be less than timeout_seconds. Maps to Kubernetes probe argument 'periodSeconds'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSeconds: FormControl<number | null | undefined>,
 
-		/** Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Must be greater or equal to period_seconds. Maps to Kubernetes probe argument 'timeoutSeconds'. */
+		/**
+		 * Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Must be greater or equal to period_seconds. Maps to Kubernetes probe argument 'timeoutSeconds'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ProbeFormGroup() {
@@ -6895,14 +7439,20 @@ export namespace MyNS {
 	/** One point viewable on a scalar metric plot. */
 	export interface GoogleCloudAiplatformV1Scalar {
 
-		/** Value of the point at this step / timestamp. */
+		/**
+		 * Value of the point at this step / timestamp.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
 	/** One point viewable on a scalar metric plot. */
 	export interface GoogleCloudAiplatformV1ScalarFormProperties {
 
-		/** Value of the point at this step / timestamp. */
+		/**
+		 * Value of the point at this step / timestamp.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ScalarFormGroup() {
@@ -6919,7 +7469,10 @@ export namespace MyNS {
 		/** Required. Serialized form of https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/tensor.proto */
 		value?: string | null;
 
-		/** Optional. Version number of TensorProto used to serialize value. */
+		/**
+		 * Optional. Version number of TensorProto used to serialize value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionNumber?: number | null;
 	}
 
@@ -6929,7 +7482,10 @@ export namespace MyNS {
 		/** Required. Serialized form of https://github.com/tensorflow/tensorflow/blob/master/tensorflow/core/framework/tensor.proto */
 		value: FormControl<string | null | undefined>,
 
-		/** Optional. Version number of TensorProto used to serialize value. */
+		/**
+		 * Optional. Version number of TensorProto used to serialize value.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1TensorboardTensorFormGroup() {
@@ -7099,7 +7655,10 @@ export namespace MyNS {
 		/** Output only. The reason why the model stopped generating tokens. If empty, the model has not stopped generating the tokens. */
 		finishReason?: GoogleCloudAiplatformV1CandidateFinishReason | null;
 
-		/** Output only. Index of the candidate. */
+		/**
+		 * Output only. Index of the candidate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Output only. List of ratings for the safety of a response candidate. There is at most one rating per category. */
@@ -7115,7 +7674,10 @@ export namespace MyNS {
 		/** Output only. The reason why the model stopped generating tokens. If empty, the model has not stopped generating the tokens. */
 		finishReason: FormControl<GoogleCloudAiplatformV1CandidateFinishReason | null | undefined>,
 
-		/** Output only. Index of the candidate. */
+		/**
+		 * Output only. Index of the candidate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1CandidateFormGroup() {
@@ -7148,7 +7710,10 @@ export namespace MyNS {
 	/** Source attributions for content. */
 	export interface GoogleCloudAiplatformV1Citation {
 
-		/** Output only. End index into the content. */
+		/**
+		 * Output only. End index into the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
 		/** Output only. License of the attribution. */
@@ -7157,7 +7722,10 @@ export namespace MyNS {
 		/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 		publicationDate?: GoogleTypeDate;
 
-		/** Output only. Start index into the content. */
+		/**
+		 * Output only. Start index into the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 
 		/** Output only. Title of the attribution. */
@@ -7170,13 +7738,19 @@ export namespace MyNS {
 	/** Source attributions for content. */
 	export interface GoogleCloudAiplatformV1CitationFormProperties {
 
-		/** Output only. End index into the content. */
+		/**
+		 * Output only. End index into the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
 		/** Output only. License of the attribution. */
 		license: FormControl<string | null | undefined>,
 
-		/** Output only. Start index into the content. */
+		/**
+		 * Output only. Start index into the content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 
 		/** Output only. Title of the attribution. */
@@ -7808,20 +8382,32 @@ export namespace MyNS {
 	/** Response message for PredictionService.CountTokens. */
 	export interface GoogleCloudAiplatformV1CountTokensResponse {
 
-		/** The total number of billable characters counted across all instances from the request. */
+		/**
+		 * The total number of billable characters counted across all instances from the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalBillableCharacters?: number | null;
 
-		/** The total number of tokens counted across all instances from the request. */
+		/**
+		 * The total number of tokens counted across all instances from the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalTokens?: number | null;
 	}
 
 	/** Response message for PredictionService.CountTokens. */
 	export interface GoogleCloudAiplatformV1CountTokensResponseFormProperties {
 
-		/** The total number of billable characters counted across all instances from the request. */
+		/**
+		 * The total number of billable characters counted across all instances from the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalBillableCharacters: FormControl<number | null | undefined>,
 
-		/** The total number of tokens counted across all instances from the request. */
+		/**
+		 * The total number of tokens counted across all instances from the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalTokens: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1CountTokensResponseFormGroup() {
@@ -7948,20 +8534,32 @@ export namespace MyNS {
 		/** Specification of a single machine. */
 		machineSpec?: GoogleCloudAiplatformV1MachineSpec;
 
-		/** Immutable. The maximum number of replicas this DeployedModel may be deployed on when the traffic against it increases. If the requested value is too large, the deployment will error, but if deployment succeeds then the ability to scale the model to that many replicas is guaranteed (barring service outages). If traffic against the DeployedModel increases beyond what its replicas at maximum may handle, a portion of the traffic will be dropped. If this value is not provided, will use min_replica_count as the default value. The value of this field impacts the charge against Vertex CPU and GPU quotas. Specifically, you will be charged for (max_replica_count * number of cores in the selected machine type) and (max_replica_count * number of GPUs per replica in the selected machine type). */
+		/**
+		 * Immutable. The maximum number of replicas this DeployedModel may be deployed on when the traffic against it increases. If the requested value is too large, the deployment will error, but if deployment succeeds then the ability to scale the model to that many replicas is guaranteed (barring service outages). If traffic against the DeployedModel increases beyond what its replicas at maximum may handle, a portion of the traffic will be dropped. If this value is not provided, will use min_replica_count as the default value. The value of this field impacts the charge against Vertex CPU and GPU quotas. Specifically, you will be charged for (max_replica_count * number of cores in the selected machine type) and (max_replica_count * number of GPUs per replica in the selected machine type).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxReplicaCount?: number | null;
 
-		/** Required. Immutable. The minimum number of machine replicas this DeployedModel will be always deployed on. This value must be greater than or equal to 1. If traffic against the DeployedModel increases, it may dynamically be deployed onto more replicas, and as traffic decreases, some of these extra replicas may be freed. */
+		/**
+		 * Required. Immutable. The minimum number of machine replicas this DeployedModel will be always deployed on. This value must be greater than or equal to 1. If traffic against the DeployedModel increases, it may dynamically be deployed onto more replicas, and as traffic decreases, some of these extra replicas may be freed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minReplicaCount?: number | null;
 	}
 
 	/** A description of resources that are dedicated to a DeployedModel, and that need a higher degree of manual configuration. */
 	export interface GoogleCloudAiplatformV1DedicatedResourcesFormProperties {
 
-		/** Immutable. The maximum number of replicas this DeployedModel may be deployed on when the traffic against it increases. If the requested value is too large, the deployment will error, but if deployment succeeds then the ability to scale the model to that many replicas is guaranteed (barring service outages). If traffic against the DeployedModel increases beyond what its replicas at maximum may handle, a portion of the traffic will be dropped. If this value is not provided, will use min_replica_count as the default value. The value of this field impacts the charge against Vertex CPU and GPU quotas. Specifically, you will be charged for (max_replica_count * number of cores in the selected machine type) and (max_replica_count * number of GPUs per replica in the selected machine type). */
+		/**
+		 * Immutable. The maximum number of replicas this DeployedModel may be deployed on when the traffic against it increases. If the requested value is too large, the deployment will error, but if deployment succeeds then the ability to scale the model to that many replicas is guaranteed (barring service outages). If traffic against the DeployedModel increases beyond what its replicas at maximum may handle, a portion of the traffic will be dropped. If this value is not provided, will use min_replica_count as the default value. The value of this field impacts the charge against Vertex CPU and GPU quotas. Specifically, you will be charged for (max_replica_count * number of cores in the selected machine type) and (max_replica_count * number of GPUs per replica in the selected machine type).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxReplicaCount: FormControl<number | null | undefined>,
 
-		/** Required. Immutable. The minimum number of machine replicas this DeployedModel will be always deployed on. This value must be greater than or equal to 1. If traffic against the DeployedModel increases, it may dynamically be deployed onto more replicas, and as traffic decreases, some of these extra replicas may be freed. */
+		/**
+		 * Required. Immutable. The minimum number of machine replicas this DeployedModel will be always deployed on. This value must be greater than or equal to 1. If traffic against the DeployedModel increases, it may dynamically be deployed onto more replicas, and as traffic decreases, some of these extra replicas may be freed.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minReplicaCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1DedicatedResourcesFormGroup() {
@@ -8830,7 +9428,10 @@ export namespace MyNS {
 	/** Value is the value of the field. */
 	export interface GoogleCloudAiplatformV1Value {
 
-		/** A double value. */
+		/**
+		 * A double value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** An integer value. */
@@ -8843,7 +9444,10 @@ export namespace MyNS {
 	/** Value is the value of the field. */
 	export interface GoogleCloudAiplatformV1ValueFormProperties {
 
-		/** A double value. */
+		/**
+		 * A double value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** An integer value. */
@@ -9188,7 +9792,10 @@ export namespace MyNS {
 	/** Represents the spec of disk options. */
 	export interface GoogleCloudAiplatformV1DiskSpec {
 
-		/** Size in GB of the boot disk (default is 100GB). */
+		/**
+		 * Size in GB of the boot disk (default is 100GB).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bootDiskSizeGb?: number | null;
 
 		/** Type of the boot disk (default is "pd-ssd"). Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or "pd-standard" (Persistent Disk Hard Disk Drive). */
@@ -9198,7 +9805,10 @@ export namespace MyNS {
 	/** Represents the spec of disk options. */
 	export interface GoogleCloudAiplatformV1DiskSpecFormProperties {
 
-		/** Size in GB of the boot disk (default is 100GB). */
+		/**
+		 * Size in GB of the boot disk (default is 100GB).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		bootDiskSizeGb: FormControl<number | null | undefined>,
 
 		/** Type of the boot disk (default is "pd-ssd"). Valid values: "pd-ssd" (Persistent Disk Solid State Drive) or "pd-standard" (Persistent Disk Hard Disk Drive). */
@@ -9404,10 +10014,16 @@ export namespace MyNS {
 		/** Required. The Google Cloud Storage location of the instruction pdf. This pdf is shared with labelers, and provides detailed description on how to label DataItems in Datasets. */
 		instructionUri?: string | null;
 
-		/** Required. Number of labelers to work on each DataItem. */
+		/**
+		 * Required. Number of labelers to work on each DataItem.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		labelerCount?: number | null;
 
-		/** Output only. Current labeling job progress percentage scaled in interval [0, 100], indicating the percentage of DataItems that has been finished. */
+		/**
+		 * Output only. Current labeling job progress percentage scaled in interval [0, 100], indicating the percentage of DataItems that has been finished.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		labelingProgress?: number | null;
 
 		/** The labels with user-defined metadata to organize your DataLabelingJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable. Following system labels exist for each DataLabelingJob: * "aiplatform.googleapis.com/schema": output only, its value is the inputs_schema's title. */
@@ -9447,10 +10063,16 @@ export namespace MyNS {
 		/** Required. The Google Cloud Storage location of the instruction pdf. This pdf is shared with labelers, and provides detailed description on how to label DataItems in Datasets. */
 		instructionUri: FormControl<string | null | undefined>,
 
-		/** Required. Number of labelers to work on each DataItem. */
+		/**
+		 * Required. Number of labelers to work on each DataItem.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		labelerCount: FormControl<number | null | undefined>,
 
-		/** Output only. Current labeling job progress percentage scaled in interval [0, 100], indicating the percentage of DataItems that has been finished. */
+		/**
+		 * Output only. Current labeling job progress percentage scaled in interval [0, 100], indicating the percentage of DataItems that has been finished.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		labelingProgress: FormControl<number | null | undefined>,
 
 		/** The labels with user-defined metadata to organize your DataLabelingJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. System reserved label keys are prefixed with "aiplatform.googleapis.com/" and are immutable. Following system labels exist for each DataLabelingJob: * "aiplatform.googleapis.com/schema": output only, its value is the inputs_schema's title. */
@@ -9490,7 +10112,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode?: string | null;
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos?: number | null;
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -9503,7 +10128,10 @@ export namespace MyNS {
 		/** The three-letter currency code defined in ISO 4217. */
 		currencyCode: FormControl<string | null | undefined>,
 
-		/** Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000. */
+		/**
+		 * Number of nano (10^-9) units of the amount. The value must be between -999,999,999 and +999,999,999 inclusive. If `units` is positive, `nanos` must be positive or zero. If `units` is zero, `nanos` can be positive, zero, or negative. If `units` is negative, `nanos` must be negative or zero. For example $-1.75 is represented as `units`=-1 and `nanos`=-750,000,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nanos: FormControl<number | null | undefined>,
 
 		/** The whole units of the amount. For example if `currencyCode` is `"USD"`, then 1 unit is one US dollar. */
@@ -9622,7 +10250,10 @@ export namespace MyNS {
 		/** Output only. Filters on the Annotations in the dataset. */
 		annotationFilter?: string | null;
 
-		/** Output only. Number of AnnotationSpecs in the context of the SavedQuery. */
+		/**
+		 * Output only. Number of AnnotationSpecs in the context of the SavedQuery.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		annotationSpecCount?: number | null;
 
 		/** Output only. Timestamp when this SavedQuery was created. */
@@ -9656,7 +10287,10 @@ export namespace MyNS {
 		/** Output only. Filters on the Annotations in the dataset. */
 		annotationFilter: FormControl<string | null | undefined>,
 
-		/** Output only. Number of AnnotationSpecs in the context of the SavedQuery. */
+		/**
+		 * Output only. Number of AnnotationSpecs in the context of the SavedQuery.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		annotationSpecCount: FormControl<number | null | undefined>,
 
 		/** Output only. Timestamp when this SavedQuery was created. */
@@ -10737,7 +11371,10 @@ export namespace MyNS {
 		/** If logging is enabled or not. */
 		enabled?: boolean | null;
 
-		/** Percentage of requests to be logged, expressed as a fraction in range(0,1]. */
+		/**
+		 * Percentage of requests to be logged, expressed as a fraction in range(0,1].
+		 * Type: double
+		 */
 		samplingRate?: number | null;
 	}
 
@@ -10747,7 +11384,10 @@ export namespace MyNS {
 		/** If logging is enabled or not. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** Percentage of requests to be logged, expressed as a fraction in range(0,1]. */
+		/**
+		 * Percentage of requests to be logged, expressed as a fraction in range(0,1].
+		 * Type: double
+		 */
 		samplingRate: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1PredictRequestResponseLoggingConfigFormGroup() {
@@ -10780,7 +11420,10 @@ export namespace MyNS {
 		/** Immutable. Name of the EntityType. Format: `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}` The last part entity_type is assigned by the client. The entity_type can be up to 64 characters long and can consist only of ASCII Latin letters A-Z and a-z and underscore(_), and ASCII digits 0-9 starting with a letter. The value will be unique given a featurestore. */
 		name?: string | null;
 
-		/** Optional. Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than `offline_storage_ttl_days` since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL. */
+		/**
+		 * Optional. Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than `offline_storage_ttl_days` since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offlineStorageTtlDays?: number | null;
 
 		/** Output only. Timestamp when this EntityType was most recently updated. */
@@ -10805,7 +11448,10 @@ export namespace MyNS {
 		/** Immutable. Name of the EntityType. Format: `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}` The last part entity_type is assigned by the client. The entity_type can be up to 64 characters long and can consist only of ASCII Latin letters A-Z and a-z and underscore(_), and ASCII digits 0-9 starting with a letter. The value will be unique given a featurestore. */
 		name: FormControl<string | null | undefined>,
 
-		/** Optional. Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than `offline_storage_ttl_days` since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL. */
+		/**
+		 * Optional. Config for data retention policy in offline storage. TTL in days for feature values that will be stored in offline storage. The Feature Store offline storage periodically removes obsolete feature values older than `offline_storage_ttl_days` since the feature generation time. If unset (or explicitly set to 0), default to 4000 days TTL.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offlineStorageTtlDays: FormControl<number | null | undefined>,
 
 		/** Output only. Timestamp when this EntityType was most recently updated. */
@@ -10854,14 +11500,20 @@ export namespace MyNS {
 	/** The config for Featurestore Monitoring threshold. */
 	export interface GoogleCloudAiplatformV1FeaturestoreMonitoringConfigThresholdConfig {
 
-		/** Specify a threshold value that can trigger the alert. 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature. */
+		/**
+		 * Specify a threshold value that can trigger the alert. 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
 	/** The config for Featurestore Monitoring threshold. */
 	export interface GoogleCloudAiplatformV1FeaturestoreMonitoringConfigThresholdConfigFormProperties {
 
-		/** Specify a threshold value that can trigger the alert. 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature. */
+		/**
+		 * Specify a threshold value that can trigger the alert. 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1FeaturestoreMonitoringConfigThresholdConfigFormGroup() {
@@ -10910,10 +11562,16 @@ export namespace MyNS {
 		/** The monitoring schedule for snapshot analysis. For EntityType-level config: unset / disabled = true indicates disabled by default for Features under it; otherwise by default enable snapshot analysis monitoring with monitoring_interval for Features under it. Feature-level config: disabled = true indicates disabled regardless of the EntityType-level config; unset monitoring_interval indicates going with EntityType-level config; otherwise run snapshot analysis monitoring with monitoring_interval regardless of the EntityType-level config. Explicitly Disable the snapshot analysis based monitoring. */
 		disabled?: boolean | null;
 
-		/** Configuration of the snapshot analysis based monitoring pipeline running interval. The value indicates number of days. */
+		/**
+		 * Configuration of the snapshot analysis based monitoring pipeline running interval. The value indicates number of days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		monitoringIntervalDays?: number | null;
 
-		/** Customized export features time window for snapshot analysis. Unit is one day. Default value is 3 weeks. Minimum value is 1 day. Maximum value is 4000 days. */
+		/**
+		 * Customized export features time window for snapshot analysis. Unit is one day. Default value is 3 weeks. Minimum value is 1 day. Maximum value is 4000 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stalenessDays?: number | null;
 	}
 
@@ -10923,10 +11581,16 @@ export namespace MyNS {
 		/** The monitoring schedule for snapshot analysis. For EntityType-level config: unset / disabled = true indicates disabled by default for Features under it; otherwise by default enable snapshot analysis monitoring with monitoring_interval for Features under it. Feature-level config: disabled = true indicates disabled regardless of the EntityType-level config; unset monitoring_interval indicates going with EntityType-level config; otherwise run snapshot analysis monitoring with monitoring_interval regardless of the EntityType-level config. Explicitly Disable the snapshot analysis based monitoring. */
 		disabled: FormControl<boolean | null | undefined>,
 
-		/** Configuration of the snapshot analysis based monitoring pipeline running interval. The value indicates number of days. */
+		/**
+		 * Configuration of the snapshot analysis based monitoring pipeline running interval. The value indicates number of days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		monitoringIntervalDays: FormControl<number | null | undefined>,
 
-		/** Customized export features time window for snapshot analysis. Unit is one day. Default value is 3 weeks. Minimum value is 1 day. Maximum value is 4000 days. */
+		/**
+		 * Customized export features time window for snapshot analysis. Unit is one day. Default value is 3 weeks. Minimum value is 1 day. Maximum value is 4000 days.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		stalenessDays: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1FeaturestoreMonitoringConfigSnapshotAnalysisFormGroup() {
@@ -10942,13 +11606,19 @@ export namespace MyNS {
 	/** Overrides for example-based explanations. */
 	export interface GoogleCloudAiplatformV1ExamplesOverride {
 
-		/** The number of neighbors to return that have the same crowding tag. */
+		/**
+		 * The number of neighbors to return that have the same crowding tag.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crowdingCount?: number | null;
 
 		/** The format of the data being provided with each call. */
 		dataFormat?: GoogleCloudAiplatformV1ExamplesOverrideDataFormat | null;
 
-		/** The number of neighbors to return. */
+		/**
+		 * The number of neighbors to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		neighborCount?: number | null;
 
 		/** Restrict the resulting nearest neighbors to respect these constraints. */
@@ -10961,13 +11631,19 @@ export namespace MyNS {
 	/** Overrides for example-based explanations. */
 	export interface GoogleCloudAiplatformV1ExamplesOverrideFormProperties {
 
-		/** The number of neighbors to return that have the same crowding tag. */
+		/**
+		 * The number of neighbors to return that have the same crowding tag.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		crowdingCount: FormControl<number | null | undefined>,
 
 		/** The format of the data being provided with each call. */
 		dataFormat: FormControl<GoogleCloudAiplatformV1ExamplesOverrideDataFormat | null | undefined>,
 
-		/** The number of neighbors to return. */
+		/**
+		 * The number of neighbors to return.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		neighborCount: FormControl<number | null | undefined>,
 
 		/** If true, return the embeddings instead of neighbors. */
@@ -11226,26 +11902,44 @@ export namespace MyNS {
 	/** Assigns the input data to training, validation, and test sets as per the given fractions. Any of `training_fraction`, `validation_fraction` and `test_fraction` may optionally be provided, they must sum to up to 1. If the provided ones sum to less than 1, the remainder is assigned to sets as decided by Vertex AI. If none of the fractions are set, by default roughly 80% of data is used for training, 10% for validation, and 10% for test. */
 	export interface GoogleCloudAiplatformV1ExportFractionSplit {
 
-		/** The fraction of the input data that is to be used to evaluate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to evaluate the Model.
+		 * Type: double
+		 */
 		testFraction?: number | null;
 
-		/** The fraction of the input data that is to be used to train the Model. */
+		/**
+		 * The fraction of the input data that is to be used to train the Model.
+		 * Type: double
+		 */
 		trainingFraction?: number | null;
 
-		/** The fraction of the input data that is to be used to validate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to validate the Model.
+		 * Type: double
+		 */
 		validationFraction?: number | null;
 	}
 
 	/** Assigns the input data to training, validation, and test sets as per the given fractions. Any of `training_fraction`, `validation_fraction` and `test_fraction` may optionally be provided, they must sum to up to 1. If the provided ones sum to less than 1, the remainder is assigned to sets as decided by Vertex AI. If none of the fractions are set, by default roughly 80% of data is used for training, 10% for validation, and 10% for test. */
 	export interface GoogleCloudAiplatformV1ExportFractionSplitFormProperties {
 
-		/** The fraction of the input data that is to be used to evaluate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to evaluate the Model.
+		 * Type: double
+		 */
 		testFraction: FormControl<number | null | undefined>,
 
-		/** The fraction of the input data that is to be used to train the Model. */
+		/**
+		 * The fraction of the input data that is to be used to train the Model.
+		 * Type: double
+		 */
 		trainingFraction: FormControl<number | null | undefined>,
 
-		/** The fraction of the input data that is to be used to validate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to validate the Model.
+		 * Type: double
+		 */
 		validationFraction: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ExportFractionSplitFormGroup() {
@@ -11606,7 +12300,10 @@ export namespace MyNS {
 		/** Field to use to sort the TensorboardTimeSeries' data. By default, TensorboardTimeSeries' data is returned in a pseudo random order. */
 		orderBy?: string | null;
 
-		/** The maximum number of data points to return per page. The default page_size is 1000. Values must be between 1 and 10000. Values above 10000 are coerced to 10000. */
+		/**
+		 * The maximum number of data points to return per page. The default page_size is 1000. Values must be between 1 and 10000. Values above 10000 are coerced to 10000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** A page token, received from a previous ExportTensorboardTimeSeriesData call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ExportTensorboardTimeSeriesData must match the call that provided the page token. */
@@ -11622,7 +12319,10 @@ export namespace MyNS {
 		/** Field to use to sort the TensorboardTimeSeries' data. By default, TensorboardTimeSeries' data is returned in a pseudo random order. */
 		orderBy: FormControl<string | null | undefined>,
 
-		/** The maximum number of data points to return per page. The default page_size is 1000. Values must be between 1 and 10000. Values above 10000 are coerced to 10000. */
+		/**
+		 * The maximum number of data points to return per page. The default page_size is 1000. Values must be between 1 and 10000. Values above 10000 are coerced to 10000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** A page token, received from a previous ExportTensorboardTimeSeriesData call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to ExportTensorboardTimeSeriesData must match the call that provided the page token. */
@@ -11811,24 +12511,42 @@ export namespace MyNS {
 
 	export interface GoogleCloudAiplatformV1FeatureOnlineStoreBigtableAutoScaling {
 
-		/** Optional. A percentage of the cluster's CPU capacity. Can be from 10% to 80%. When a cluster's CPU utilization exceeds the target that you have set, Bigtable immediately adds nodes to the cluster. When CPU utilization is substantially lower than the target, Bigtable removes nodes. If not set will default to 50%. */
+		/**
+		 * Optional. A percentage of the cluster's CPU capacity. Can be from 10% to 80%. When a cluster's CPU utilization exceeds the target that you have set, Bigtable immediately adds nodes to the cluster. When CPU utilization is substantially lower than the target, Bigtable removes nodes. If not set will default to 50%.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuUtilizationTarget?: number | null;
 
-		/** Required. The maximum number of nodes to scale up to. Must be greater than or equal to min_node_count, and less than or equal to 10 times of 'min_node_count'. */
+		/**
+		 * Required. The maximum number of nodes to scale up to. Must be greater than or equal to min_node_count, and less than or equal to 10 times of 'min_node_count'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodeCount?: number | null;
 
-		/** Required. The minimum number of nodes to scale down to. Must be greater than or equal to 1. */
+		/**
+		 * Required. The minimum number of nodes to scale down to. Must be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodeCount?: number | null;
 	}
 	export interface GoogleCloudAiplatformV1FeatureOnlineStoreBigtableAutoScalingFormProperties {
 
-		/** Optional. A percentage of the cluster's CPU capacity. Can be from 10% to 80%. When a cluster's CPU utilization exceeds the target that you have set, Bigtable immediately adds nodes to the cluster. When CPU utilization is substantially lower than the target, Bigtable removes nodes. If not set will default to 50%. */
+		/**
+		 * Optional. A percentage of the cluster's CPU capacity. Can be from 10% to 80%. When a cluster's CPU utilization exceeds the target that you have set, Bigtable immediately adds nodes to the cluster. When CPU utilization is substantially lower than the target, Bigtable removes nodes. If not set will default to 50%.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuUtilizationTarget: FormControl<number | null | undefined>,
 
-		/** Required. The maximum number of nodes to scale up to. Must be greater than or equal to min_node_count, and less than or equal to 10 times of 'min_node_count'. */
+		/**
+		 * Required. The maximum number of nodes to scale up to. Must be greater than or equal to min_node_count, and less than or equal to 10 times of 'min_node_count'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodeCount: FormControl<number | null | undefined>,
 
-		/** Required. The minimum number of nodes to scale down to. Must be greater than or equal to 1. */
+		/**
+		 * Required. The minimum number of nodes to scale down to. Must be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodeCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1FeatureOnlineStoreBigtableAutoScalingFormGroup() {
@@ -11858,7 +12576,10 @@ export namespace MyNS {
 		/** A list of double values. */
 		doubleArrayValue?: GoogleCloudAiplatformV1DoubleArray;
 
-		/** Double type feature value. */
+		/**
+		 * Double type feature value.
+		 * Type: double
+		 */
 		doubleValue?: number | null;
 
 		/** A list of int64 values. */
@@ -11886,7 +12607,10 @@ export namespace MyNS {
 		/** Bytes feature value. */
 		bytesValue: FormControl<string | null | undefined>,
 
-		/** Double type feature value. */
+		/**
+		 * Double type feature value.
+		 * Type: double
+		 */
 		doubleValue: FormControl<number | null | undefined>,
 
 		/** Int64 feature value. */
@@ -12193,7 +12917,10 @@ export namespace MyNS {
 		/** OnlineServingConfig specifies the details for provisioning online serving resources. */
 		onlineServingConfig?: GoogleCloudAiplatformV1FeaturestoreOnlineServingConfig;
 
-		/** Optional. TTL in days for feature values that will be stored in online serving storage. The Feature Store online storage periodically removes obsolete feature values older than `online_storage_ttl_days` since the feature generation time. Note that `online_storage_ttl_days` should be less than or equal to `offline_storage_ttl_days` for each EntityType under a featurestore. If not set, default to 4000 days */
+		/**
+		 * Optional. TTL in days for feature values that will be stored in online serving storage. The Feature Store online storage periodically removes obsolete feature values older than `online_storage_ttl_days` since the feature generation time. Note that `online_storage_ttl_days` should be less than or equal to `offline_storage_ttl_days` for each EntityType under a featurestore. If not set, default to 4000 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onlineStorageTtlDays?: number | null;
 
 		/** Output only. State of the featurestore. */
@@ -12218,7 +12945,10 @@ export namespace MyNS {
 		/** Output only. Name of the Featurestore. Format: `projects/{project}/locations/{location}/featurestores/{featurestore}` */
 		name: FormControl<string | null | undefined>,
 
-		/** Optional. TTL in days for feature values that will be stored in online serving storage. The Feature Store online storage periodically removes obsolete feature values older than `online_storage_ttl_days` since the feature generation time. Note that `online_storage_ttl_days` should be less than or equal to `offline_storage_ttl_days` for each EntityType under a featurestore. If not set, default to 4000 days */
+		/**
+		 * Optional. TTL in days for feature values that will be stored in online serving storage. The Feature Store online storage periodically removes obsolete feature values older than `online_storage_ttl_days` since the feature generation time. Note that `online_storage_ttl_days` should be less than or equal to `offline_storage_ttl_days` for each EntityType under a featurestore. If not set, default to 4000 days
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		onlineStorageTtlDays: FormControl<number | null | undefined>,
 
 		/** Output only. State of the featurestore. */
@@ -12244,7 +12974,10 @@ export namespace MyNS {
 	/** OnlineServingConfig specifies the details for provisioning online serving resources. */
 	export interface GoogleCloudAiplatformV1FeaturestoreOnlineServingConfig {
 
-		/** The number of nodes for the online store. The number of nodes doesn't scale automatically, but you can manually update the number of nodes. If set to 0, the featurestore will not have an online store and cannot be used for online serving. */
+		/**
+		 * The number of nodes for the online store. The number of nodes doesn't scale automatically, but you can manually update the number of nodes. If set to 0, the featurestore will not have an online store and cannot be used for online serving.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedNodeCount?: number | null;
 
 		/** Online serving scaling configuration. If min_node_count and max_node_count are set to the same value, the cluster will be configured with the fixed number of node (no auto-scaling). */
@@ -12254,7 +12987,10 @@ export namespace MyNS {
 	/** OnlineServingConfig specifies the details for provisioning online serving resources. */
 	export interface GoogleCloudAiplatformV1FeaturestoreOnlineServingConfigFormProperties {
 
-		/** The number of nodes for the online store. The number of nodes doesn't scale automatically, but you can manually update the number of nodes. If set to 0, the featurestore will not have an online store and cannot be used for online serving. */
+		/**
+		 * The number of nodes for the online store. The number of nodes doesn't scale automatically, but you can manually update the number of nodes. If set to 0, the featurestore will not have an online store and cannot be used for online serving.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		fixedNodeCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1FeaturestoreOnlineServingConfigFormGroup() {
@@ -12268,26 +13004,44 @@ export namespace MyNS {
 	/** Online serving scaling configuration. If min_node_count and max_node_count are set to the same value, the cluster will be configured with the fixed number of node (no auto-scaling). */
 	export interface GoogleCloudAiplatformV1FeaturestoreOnlineServingConfigScaling {
 
-		/** Optional. The cpu utilization that the Autoscaler should be trying to achieve. This number is on a scale from 0 (no utilization) to 100 (total utilization), and is limited between 10 and 80. When a cluster's CPU utilization exceeds the target that you have set, Bigtable immediately adds nodes to the cluster. When CPU utilization is substantially lower than the target, Bigtable removes nodes. If not set or set to 0, default to 50. */
+		/**
+		 * Optional. The cpu utilization that the Autoscaler should be trying to achieve. This number is on a scale from 0 (no utilization) to 100 (total utilization), and is limited between 10 and 80. When a cluster's CPU utilization exceeds the target that you have set, Bigtable immediately adds nodes to the cluster. When CPU utilization is substantially lower than the target, Bigtable removes nodes. If not set or set to 0, default to 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuUtilizationTarget?: number | null;
 
-		/** The maximum number of nodes to scale up to. Must be greater than min_node_count, and less than or equal to 10 times of 'min_node_count'. */
+		/**
+		 * The maximum number of nodes to scale up to. Must be greater than min_node_count, and less than or equal to 10 times of 'min_node_count'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodeCount?: number | null;
 
-		/** Required. The minimum number of nodes to scale down to. Must be greater than or equal to 1. */
+		/**
+		 * Required. The minimum number of nodes to scale down to. Must be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodeCount?: number | null;
 	}
 
 	/** Online serving scaling configuration. If min_node_count and max_node_count are set to the same value, the cluster will be configured with the fixed number of node (no auto-scaling). */
 	export interface GoogleCloudAiplatformV1FeaturestoreOnlineServingConfigScalingFormProperties {
 
-		/** Optional. The cpu utilization that the Autoscaler should be trying to achieve. This number is on a scale from 0 (no utilization) to 100 (total utilization), and is limited between 10 and 80. When a cluster's CPU utilization exceeds the target that you have set, Bigtable immediately adds nodes to the cluster. When CPU utilization is substantially lower than the target, Bigtable removes nodes. If not set or set to 0, default to 50. */
+		/**
+		 * Optional. The cpu utilization that the Autoscaler should be trying to achieve. This number is on a scale from 0 (no utilization) to 100 (total utilization), and is limited between 10 and 80. When a cluster's CPU utilization exceeds the target that you have set, Bigtable immediately adds nodes to the cluster. When CPU utilization is substantially lower than the target, Bigtable removes nodes. If not set or set to 0, default to 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpuUtilizationTarget: FormControl<number | null | undefined>,
 
-		/** The maximum number of nodes to scale up to. Must be greater than min_node_count, and less than or equal to 10 times of 'min_node_count'. */
+		/**
+		 * The maximum number of nodes to scale up to. Must be greater than min_node_count, and less than or equal to 10 times of 'min_node_count'.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNodeCount: FormControl<number | null | undefined>,
 
-		/** Required. The minimum number of nodes to scale down to. Must be greater than or equal to 1. */
+		/**
+		 * Required. The minimum number of nodes to scale down to. Must be greater than or equal to 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNodeCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1FeaturestoreOnlineServingConfigScalingFormGroup() {
@@ -12460,35 +13214,59 @@ export namespace MyNS {
 	/** A query to find a number of the nearest neighbors (most similar vectors) of a vector. */
 	export interface GoogleCloudAiplatformV1FindNeighborsRequestQuery {
 
-		/** The number of neighbors to find via approximate search before exact reordering is performed. If not set, the default value from scam config is used; if set, this value must be > 0. */
+		/**
+		 * The number of neighbors to find via approximate search before exact reordering is performed. If not set, the default value from scam config is used; if set, this value must be > 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		approximateNeighborCount?: number | null;
 
 		/** A datapoint of Index. */
 		datapoint?: GoogleCloudAiplatformV1IndexDatapoint;
 
-		/** The fraction of the number of leaves to search, set at query time allows user to tune search performance. This value increase result in both search accuracy and latency increase. The value should be between 0.0 and 1.0. If not set or set to 0.0, query uses the default value specified in NearestNeighborSearchConfig.TreeAHConfig.fraction_leaf_nodes_to_search. */
+		/**
+		 * The fraction of the number of leaves to search, set at query time allows user to tune search performance. This value increase result in both search accuracy and latency increase. The value should be between 0.0 and 1.0. If not set or set to 0.0, query uses the default value specified in NearestNeighborSearchConfig.TreeAHConfig.fraction_leaf_nodes_to_search.
+		 * Type: double
+		 */
 		fractionLeafNodesToSearchOverride?: number | null;
 
-		/** The number of nearest neighbors to be retrieved from database for each query. If not set, will use the default from the service configuration (https://cloud.google.com/vertex-ai/docs/matching-engine/configuring-indexes#nearest-neighbor-search-config). */
+		/**
+		 * The number of nearest neighbors to be retrieved from database for each query. If not set, will use the default from the service configuration (https://cloud.google.com/vertex-ai/docs/matching-engine/configuring-indexes#nearest-neighbor-search-config).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		neighborCount?: number | null;
 
-		/** Crowding is a constraint on a neighbor list produced by nearest neighbor search requiring that no more than some value k' of the k neighbors returned have the same value of crowding_attribute. It's used for improving result diversity. This field is the maximum number of matches with the same crowding tag. */
+		/**
+		 * Crowding is a constraint on a neighbor list produced by nearest neighbor search requiring that no more than some value k' of the k neighbors returned have the same value of crowding_attribute. It's used for improving result diversity. This field is the maximum number of matches with the same crowding tag.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perCrowdingAttributeNeighborCount?: number | null;
 	}
 
 	/** A query to find a number of the nearest neighbors (most similar vectors) of a vector. */
 	export interface GoogleCloudAiplatformV1FindNeighborsRequestQueryFormProperties {
 
-		/** The number of neighbors to find via approximate search before exact reordering is performed. If not set, the default value from scam config is used; if set, this value must be > 0. */
+		/**
+		 * The number of neighbors to find via approximate search before exact reordering is performed. If not set, the default value from scam config is used; if set, this value must be > 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		approximateNeighborCount: FormControl<number | null | undefined>,
 
-		/** The fraction of the number of leaves to search, set at query time allows user to tune search performance. This value increase result in both search accuracy and latency increase. The value should be between 0.0 and 1.0. If not set or set to 0.0, query uses the default value specified in NearestNeighborSearchConfig.TreeAHConfig.fraction_leaf_nodes_to_search. */
+		/**
+		 * The fraction of the number of leaves to search, set at query time allows user to tune search performance. This value increase result in both search accuracy and latency increase. The value should be between 0.0 and 1.0. If not set or set to 0.0, query uses the default value specified in NearestNeighborSearchConfig.TreeAHConfig.fraction_leaf_nodes_to_search.
+		 * Type: double
+		 */
 		fractionLeafNodesToSearchOverride: FormControl<number | null | undefined>,
 
-		/** The number of nearest neighbors to be retrieved from database for each query. If not set, will use the default from the service configuration (https://cloud.google.com/vertex-ai/docs/matching-engine/configuring-indexes#nearest-neighbor-search-config). */
+		/**
+		 * The number of nearest neighbors to be retrieved from database for each query. If not set, will use the default from the service configuration (https://cloud.google.com/vertex-ai/docs/matching-engine/configuring-indexes#nearest-neighbor-search-config).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		neighborCount: FormControl<number | null | undefined>,
 
-		/** Crowding is a constraint on a neighbor list produced by nearest neighbor search requiring that no more than some value k' of the k neighbors returned have the same value of crowding_attribute. It's used for improving result diversity. This field is the maximum number of matches with the same crowding tag. */
+		/**
+		 * Crowding is a constraint on a neighbor list produced by nearest neighbor search requiring that no more than some value k' of the k neighbors returned have the same value of crowding_attribute. It's used for improving result diversity. This field is the maximum number of matches with the same crowding tag.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		perCrowdingAttributeNeighborCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1FindNeighborsRequestQueryFormGroup() {
@@ -12565,10 +13343,16 @@ export namespace MyNS {
 		/** This MUST be specified for queries and must NOT be specified for datapoints. */
 		op?: GoogleCloudAiplatformV1IndexDatapointNumericRestrictionOp | null;
 
-		/** Represents 64 bit float. */
+		/**
+		 * Represents 64 bit float.
+		 * Type: double
+		 */
 		valueDouble?: number | null;
 
-		/** Represents 32 bit float. */
+		/**
+		 * Represents 32 bit float.
+		 * Type: float
+		 */
 		valueFloat?: number | null;
 
 		/** Represents 64 bit integer. */
@@ -12584,10 +13368,16 @@ export namespace MyNS {
 		/** This MUST be specified for queries and must NOT be specified for datapoints. */
 		op: FormControl<GoogleCloudAiplatformV1IndexDatapointNumericRestrictionOp | null | undefined>,
 
-		/** Represents 64 bit float. */
+		/**
+		 * Represents 64 bit float.
+		 * Type: double
+		 */
 		valueDouble: FormControl<number | null | undefined>,
 
-		/** Represents 32 bit float. */
+		/**
+		 * Represents 32 bit float.
+		 * Type: float
+		 */
 		valueFloat: FormControl<number | null | undefined>,
 
 		/** Represents 64 bit integer. */
@@ -12681,14 +13471,20 @@ export namespace MyNS {
 		/** A datapoint of Index. */
 		datapoint?: GoogleCloudAiplatformV1IndexDatapoint;
 
-		/** The distance between the neighbor and the query vector. */
+		/**
+		 * The distance between the neighbor and the query vector.
+		 * Type: double
+		 */
 		distance?: number | null;
 	}
 
 	/** A neighbor of the query vector. */
 	export interface GoogleCloudAiplatformV1FindNeighborsResponseNeighborFormProperties {
 
-		/** The distance between the neighbor and the query vector. */
+		/**
+		 * The distance between the neighbor and the query vector.
+		 * Type: double
+		 */
 		distance: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1FindNeighborsResponseNeighborFormGroup() {
@@ -12702,26 +13498,44 @@ export namespace MyNS {
 	/** Assigns the input data to training, validation, and test sets as per the given fractions. Any of `training_fraction`, `validation_fraction` and `test_fraction` may optionally be provided, they must sum to up to 1. If the provided ones sum to less than 1, the remainder is assigned to sets as decided by Vertex AI. If none of the fractions are set, by default roughly 80% of data is used for training, 10% for validation, and 10% for test. */
 	export interface GoogleCloudAiplatformV1FractionSplit {
 
-		/** The fraction of the input data that is to be used to evaluate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to evaluate the Model.
+		 * Type: double
+		 */
 		testFraction?: number | null;
 
-		/** The fraction of the input data that is to be used to train the Model. */
+		/**
+		 * The fraction of the input data that is to be used to train the Model.
+		 * Type: double
+		 */
 		trainingFraction?: number | null;
 
-		/** The fraction of the input data that is to be used to validate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to validate the Model.
+		 * Type: double
+		 */
 		validationFraction?: number | null;
 	}
 
 	/** Assigns the input data to training, validation, and test sets as per the given fractions. Any of `training_fraction`, `validation_fraction` and `test_fraction` may optionally be provided, they must sum to up to 1. If the provided ones sum to less than 1, the remainder is assigned to sets as decided by Vertex AI. If none of the fractions are set, by default roughly 80% of data is used for training, 10% for validation, and 10% for test. */
 	export interface GoogleCloudAiplatformV1FractionSplitFormProperties {
 
-		/** The fraction of the input data that is to be used to evaluate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to evaluate the Model.
+		 * Type: double
+		 */
 		testFraction: FormControl<number | null | undefined>,
 
-		/** The fraction of the input data that is to be used to train the Model. */
+		/**
+		 * The fraction of the input data that is to be used to train the Model.
+		 * Type: double
+		 */
 		trainingFraction: FormControl<number | null | undefined>,
 
-		/** The fraction of the input data that is to be used to validate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to validate the Model.
+		 * Type: double
+		 */
 		validationFraction: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1FractionSplitFormGroup() {
@@ -12861,41 +13675,71 @@ export namespace MyNS {
 	/** Generation config. */
 	export interface GoogleCloudAiplatformV1GenerationConfig {
 
-		/** Optional. Number of candidates to generate. */
+		/**
+		 * Optional. Number of candidates to generate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		candidateCount?: number | null;
 
-		/** Optional. The maximum number of output tokens to generate per message. */
+		/**
+		 * Optional. The maximum number of output tokens to generate per message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOutputTokens?: number | null;
 
 		/** Optional. Stop sequences. */
 		stopSequences?: Array<string>;
 
-		/** Optional. Controls the randomness of predictions. */
+		/**
+		 * Optional. Controls the randomness of predictions.
+		 * Type: float
+		 */
 		temperature?: number | null;
 
-		/** Optional. If specified, top-k sampling will be used. */
+		/**
+		 * Optional. If specified, top-k sampling will be used.
+		 * Type: float
+		 */
 		topK?: number | null;
 
-		/** Optional. If specified, nucleus sampling will be used. */
+		/**
+		 * Optional. If specified, nucleus sampling will be used.
+		 * Type: float
+		 */
 		topP?: number | null;
 	}
 
 	/** Generation config. */
 	export interface GoogleCloudAiplatformV1GenerationConfigFormProperties {
 
-		/** Optional. Number of candidates to generate. */
+		/**
+		 * Optional. Number of candidates to generate.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		candidateCount: FormControl<number | null | undefined>,
 
-		/** Optional. The maximum number of output tokens to generate per message. */
+		/**
+		 * Optional. The maximum number of output tokens to generate per message.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxOutputTokens: FormControl<number | null | undefined>,
 
-		/** Optional. Controls the randomness of predictions. */
+		/**
+		 * Optional. Controls the randomness of predictions.
+		 * Type: float
+		 */
 		temperature: FormControl<number | null | undefined>,
 
-		/** Optional. If specified, top-k sampling will be used. */
+		/**
+		 * Optional. If specified, top-k sampling will be used.
+		 * Type: float
+		 */
 		topK: FormControl<number | null | undefined>,
 
-		/** Optional. If specified, nucleus sampling will be used. */
+		/**
+		 * Optional. If specified, nucleus sampling will be used.
+		 * Type: float
+		 */
 		topP: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1GenerationConfigFormGroup() {
@@ -13014,22 +13858,38 @@ export namespace MyNS {
 	/** Usage metadata about response(s). */
 	export interface GoogleCloudAiplatformV1GenerateContentResponseUsageMetadata {
 
-		/** Number of tokens in the response(s). */
+		/**
+		 * Number of tokens in the response(s).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		candidatesTokenCount?: number | null;
 
-		/** Number of tokens in the request. */
+		/**
+		 * Number of tokens in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		promptTokenCount?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalTokenCount?: number | null;
 	}
 
 	/** Usage metadata about response(s). */
 	export interface GoogleCloudAiplatformV1GenerateContentResponseUsageMetadataFormProperties {
 
-		/** Number of tokens in the response(s). */
+		/**
+		 * Number of tokens in the response(s).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		candidatesTokenCount: FormControl<number | null | undefined>,
 
-		/** Number of tokens in the request. */
+		/**
+		 * Number of tokens in the request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		promptTokenCount: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalTokenCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1GenerateContentResponseUsageMetadataFormGroup() {
@@ -13063,16 +13923,25 @@ export namespace MyNS {
 		/** The labels with user-defined metadata to organize HyperparameterTuningJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. */
 		labels?: {[id: string]: string };
 
-		/** The number of failed Trials that need to be seen before failing the HyperparameterTuningJob. If set to 0, Vertex AI decides how many Trials must fail before the whole job fails. */
+		/**
+		 * The number of failed Trials that need to be seen before failing the HyperparameterTuningJob. If set to 0, Vertex AI decides how many Trials must fail before the whole job fails.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFailedTrialCount?: number | null;
 
-		/** Required. The desired total number of Trials. */
+		/**
+		 * Required. The desired total number of Trials.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTrialCount?: number | null;
 
 		/** Output only. Resource name of the HyperparameterTuningJob. */
 		name?: string | null;
 
-		/** Required. The desired number of Trials to run in parallel. */
+		/**
+		 * Required. The desired number of Trials to run in parallel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parallelTrialCount?: number | null;
 
 		/** Output only. Time when the HyperparameterTuningJob for the first time entered the `JOB_STATE_RUNNING` state. */
@@ -13109,16 +13978,25 @@ export namespace MyNS {
 		/** The labels with user-defined metadata to organize HyperparameterTuningJobs. Label keys and values can be no longer than 64 characters (Unicode codepoints), can only contain lowercase letters, numeric characters, underscores and dashes. International characters are allowed. See https://goo.gl/xmQnxf for more information and examples of labels. */
 		labels: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** The number of failed Trials that need to be seen before failing the HyperparameterTuningJob. If set to 0, Vertex AI decides how many Trials must fail before the whole job fails. */
+		/**
+		 * The number of failed Trials that need to be seen before failing the HyperparameterTuningJob. If set to 0, Vertex AI decides how many Trials must fail before the whole job fails.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFailedTrialCount: FormControl<number | null | undefined>,
 
-		/** Required. The desired total number of Trials. */
+		/**
+		 * Required. The desired total number of Trials.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTrialCount: FormControl<number | null | undefined>,
 
 		/** Output only. Resource name of the HyperparameterTuningJob. */
 		name: FormControl<string | null | undefined>,
 
-		/** Required. The desired number of Trials to run in parallel. */
+		/**
+		 * Required. The desired number of Trials to run in parallel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parallelTrialCount: FormControl<number | null | undefined>,
 
 		/** Output only. Time when the HyperparameterTuningJob for the first time entered the `JOB_STATE_RUNNING` state. */
@@ -13339,20 +14217,32 @@ export namespace MyNS {
 	/** Used in safe optimization to specify threshold levels and risk tolerance. */
 	export interface GoogleCloudAiplatformV1StudySpecMetricSpecSafetyMetricConfig {
 
-		/** Desired minimum fraction of safe trials (over total number of trials) that should be targeted by the algorithm at any time during the study (best effort). This should be between 0.0 and 1.0 and a value of 0.0 means that there is no minimum and an algorithm proceeds without targeting any specific fraction. A value of 1.0 means that the algorithm attempts to only Suggest safe Trials. */
+		/**
+		 * Desired minimum fraction of safe trials (over total number of trials) that should be targeted by the algorithm at any time during the study (best effort). This should be between 0.0 and 1.0 and a value of 0.0 means that there is no minimum and an algorithm proceeds without targeting any specific fraction. A value of 1.0 means that the algorithm attempts to only Suggest safe Trials.
+		 * Type: double
+		 */
 		desiredMinSafeTrialsFraction?: number | null;
 
-		/** Safety threshold (boundary value between safe and unsafe). NOTE that if you leave SafetyMetricConfig unset, a default value of 0 will be used. */
+		/**
+		 * Safety threshold (boundary value between safe and unsafe). NOTE that if you leave SafetyMetricConfig unset, a default value of 0 will be used.
+		 * Type: double
+		 */
 		safetyThreshold?: number | null;
 	}
 
 	/** Used in safe optimization to specify threshold levels and risk tolerance. */
 	export interface GoogleCloudAiplatformV1StudySpecMetricSpecSafetyMetricConfigFormProperties {
 
-		/** Desired minimum fraction of safe trials (over total number of trials) that should be targeted by the algorithm at any time during the study (best effort). This should be between 0.0 and 1.0 and a value of 0.0 means that there is no minimum and an algorithm proceeds without targeting any specific fraction. A value of 1.0 means that the algorithm attempts to only Suggest safe Trials. */
+		/**
+		 * Desired minimum fraction of safe trials (over total number of trials) that should be targeted by the algorithm at any time during the study (best effort). This should be between 0.0 and 1.0 and a value of 0.0 means that there is no minimum and an algorithm proceeds without targeting any specific fraction. A value of 1.0 means that the algorithm attempts to only Suggest safe Trials.
+		 * Type: double
+		 */
 		desiredMinSafeTrialsFraction: FormControl<number | null | undefined>,
 
-		/** Safety threshold (boundary value between safe and unsafe). NOTE that if you leave SafetyMetricConfig unset, a default value of 0 will be used. */
+		/**
+		 * Safety threshold (boundary value between safe and unsafe). NOTE that if you leave SafetyMetricConfig unset, a default value of 0 will be used.
+		 * Type: double
+		 */
 		safetyThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1StudySpecMetricSpecSafetyMetricConfigFormGroup() {
@@ -13513,7 +14403,10 @@ export namespace MyNS {
 	/** Value specification for a parameter in `DISCRETE` type. */
 	export interface GoogleCloudAiplatformV1StudySpecParameterSpecDiscreteValueSpec {
 
-		/** A default value for a `DISCRETE` parameter that is assumed to be a relatively good starting point. Unset value signals that there is no offered starting point. It automatically rounds to the nearest feasible discrete point. Currently only supported by the Vertex AI Vizier service. Not supported by HyperparameterTuningJob or TrainingPipeline. */
+		/**
+		 * A default value for a `DISCRETE` parameter that is assumed to be a relatively good starting point. Unset value signals that there is no offered starting point. It automatically rounds to the nearest feasible discrete point. Currently only supported by the Vertex AI Vizier service. Not supported by HyperparameterTuningJob or TrainingPipeline.
+		 * Type: double
+		 */
 		defaultValue?: number | null;
 
 		/** Required. A list of possible values. The list should be in increasing order and at least 1e-10 apart. For instance, this parameter might have possible settings of 1.5, 2.5, and 4.0. This list should not contain more than 1,000 values. */
@@ -13523,7 +14416,10 @@ export namespace MyNS {
 	/** Value specification for a parameter in `DISCRETE` type. */
 	export interface GoogleCloudAiplatformV1StudySpecParameterSpecDiscreteValueSpecFormProperties {
 
-		/** A default value for a `DISCRETE` parameter that is assumed to be a relatively good starting point. Unset value signals that there is no offered starting point. It automatically rounds to the nearest feasible discrete point. Currently only supported by the Vertex AI Vizier service. Not supported by HyperparameterTuningJob or TrainingPipeline. */
+		/**
+		 * A default value for a `DISCRETE` parameter that is assumed to be a relatively good starting point. Unset value signals that there is no offered starting point. It automatically rounds to the nearest feasible discrete point. Currently only supported by the Vertex AI Vizier service. Not supported by HyperparameterTuningJob or TrainingPipeline.
+		 * Type: double
+		 */
 		defaultValue: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1StudySpecParameterSpecDiscreteValueSpecFormGroup() {
@@ -13537,26 +14433,44 @@ export namespace MyNS {
 	/** Value specification for a parameter in `DOUBLE` type. */
 	export interface GoogleCloudAiplatformV1StudySpecParameterSpecDoubleValueSpec {
 
-		/** A default value for a `DOUBLE` parameter that is assumed to be a relatively good starting point. Unset value signals that there is no offered starting point. Currently only supported by the Vertex AI Vizier service. Not supported by HyperparameterTuningJob or TrainingPipeline. */
+		/**
+		 * A default value for a `DOUBLE` parameter that is assumed to be a relatively good starting point. Unset value signals that there is no offered starting point. Currently only supported by the Vertex AI Vizier service. Not supported by HyperparameterTuningJob or TrainingPipeline.
+		 * Type: double
+		 */
 		defaultValue?: number | null;
 
-		/** Required. Inclusive maximum value of the parameter. */
+		/**
+		 * Required. Inclusive maximum value of the parameter.
+		 * Type: double
+		 */
 		maxValue?: number | null;
 
-		/** Required. Inclusive minimum value of the parameter. */
+		/**
+		 * Required. Inclusive minimum value of the parameter.
+		 * Type: double
+		 */
 		minValue?: number | null;
 	}
 
 	/** Value specification for a parameter in `DOUBLE` type. */
 	export interface GoogleCloudAiplatformV1StudySpecParameterSpecDoubleValueSpecFormProperties {
 
-		/** A default value for a `DOUBLE` parameter that is assumed to be a relatively good starting point. Unset value signals that there is no offered starting point. Currently only supported by the Vertex AI Vizier service. Not supported by HyperparameterTuningJob or TrainingPipeline. */
+		/**
+		 * A default value for a `DOUBLE` parameter that is assumed to be a relatively good starting point. Unset value signals that there is no offered starting point. Currently only supported by the Vertex AI Vizier service. Not supported by HyperparameterTuningJob or TrainingPipeline.
+		 * Type: double
+		 */
 		defaultValue: FormControl<number | null | undefined>,
 
-		/** Required. Inclusive maximum value of the parameter. */
+		/**
+		 * Required. Inclusive maximum value of the parameter.
+		 * Type: double
+		 */
 		maxValue: FormControl<number | null | undefined>,
 
-		/** Required. Inclusive minimum value of the parameter. */
+		/**
+		 * Required. Inclusive minimum value of the parameter.
+		 * Type: double
+		 */
 		minValue: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1StudySpecParameterSpecDoubleValueSpecFormGroup() {
@@ -13612,16 +14526,25 @@ export namespace MyNS {
 		/** If the objective value has not improved for this much time, stop the study. WARNING: Effective only for single-objective studies. */
 		maxDurationNoProgress?: string | null;
 
-		/** If there are more than this many trials, stop the study. */
+		/**
+		 * If there are more than this many trials, stop the study.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumTrials?: number | null;
 
-		/** If the objective value has not improved for this many consecutive trials, stop the study. WARNING: Effective only for single-objective studies. */
+		/**
+		 * If the objective value has not improved for this many consecutive trials, stop the study. WARNING: Effective only for single-objective studies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumTrialsNoProgress?: number | null;
 
 		/** Time-based Constraint for Study */
 		maximumRuntimeConstraint?: GoogleCloudAiplatformV1StudyTimeConstraint;
 
-		/** If there are fewer than this many COMPLETED trials, do not stop the study. */
+		/**
+		 * If there are fewer than this many COMPLETED trials, do not stop the study.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNumTrials?: number | null;
 
 		/** Time-based Constraint for Study */
@@ -13637,13 +14560,22 @@ export namespace MyNS {
 		/** If the objective value has not improved for this much time, stop the study. WARNING: Effective only for single-objective studies. */
 		maxDurationNoProgress: FormControl<string | null | undefined>,
 
-		/** If there are more than this many trials, stop the study. */
+		/**
+		 * If there are more than this many trials, stop the study.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumTrials: FormControl<number | null | undefined>,
 
-		/** If the objective value has not improved for this many consecutive trials, stop the study. WARNING: Effective only for single-objective studies. */
+		/**
+		 * If the objective value has not improved for this many consecutive trials, stop the study. WARNING: Effective only for single-objective studies.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxNumTrialsNoProgress: FormControl<number | null | undefined>,
 
-		/** If there are fewer than this many COMPLETED trials, do not stop the study. */
+		/**
+		 * If there are fewer than this many COMPLETED trials, do not stop the study.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minNumTrials: FormControl<number | null | undefined>,
 
 		/** If true, a Study enters STOPPING_ASAP whenever it would normally enters STOPPING state. The bottom line is: set to true if you want to interrupt on-going evaluations of Trials as soon as the study stopping condition is met. (Please see Study.State documentation for the source of truth). */
@@ -13972,7 +14904,10 @@ export namespace MyNS {
 		/** Source column that holds the Feature timestamp for all Feature values in each entity. */
 		featureTimeField?: string | null;
 
-		/** Specifies the number of workers that are used to write data to the Featurestore. Consider the online serving capacity that you require to achieve the desired import throughput without interfering with online serving. The value must be positive, and less than or equal to 100. If not set, defaults to using 1 worker. The low count ensures minimal impact on online serving performance. */
+		/**
+		 * Specifies the number of workers that are used to write data to the Featurestore. Consider the online serving capacity that you require to achieve the desired import throughput without interfering with online serving. The value must be positive, and less than or equal to 100. If not set, defaults to using 1 worker. The low count ensures minimal impact on online serving performance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount?: number | null;
 	}
 
@@ -13994,7 +14929,10 @@ export namespace MyNS {
 		/** Source column that holds the Feature timestamp for all Feature values in each entity. */
 		featureTimeField: FormControl<string | null | undefined>,
 
-		/** Specifies the number of workers that are used to write data to the Featurestore. Consider the online serving capacity that you require to achieve the desired import throughput without interfering with online serving. The value must be positive, and less than or equal to 100. If not set, defaults to using 1 worker. The low count ensures minimal impact on online serving performance. */
+		/**
+		 * Specifies the number of workers that are used to write data to the Featurestore. Consider the online serving capacity that you require to achieve the desired import throughput without interfering with online serving. The value must be positive, and less than or equal to 100. If not set, defaults to using 1 worker. The low count ensures minimal impact on online serving performance.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		workerCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ImportFeatureValuesRequestFormGroup() {
@@ -14292,7 +15230,10 @@ export namespace MyNS {
 	/** Stats of the Index. */
 	export interface GoogleCloudAiplatformV1IndexStats {
 
-		/** Output only. The number of shards in the Index. */
+		/**
+		 * Output only. The number of shards in the Index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardsCount?: number | null;
 
 		/** Output only. The number of vectors in the Index. */
@@ -14302,7 +15243,10 @@ export namespace MyNS {
 	/** Stats of the Index. */
 	export interface GoogleCloudAiplatformV1IndexStatsFormProperties {
 
-		/** Output only. The number of shards in the Index. */
+		/**
+		 * Output only. The number of shards in the Index.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		shardsCount: FormControl<number | null | undefined>,
 
 		/** Output only. The number of vectors in the Index. */
@@ -14540,13 +15484,22 @@ export namespace MyNS {
 		/** Required. The key is a name of one of the Dataset's data columns. The key provided must be for a categorical column. */
 		key?: string | null;
 
-		/** The fraction of the input data that is to be used to evaluate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to evaluate the Model.
+		 * Type: double
+		 */
 		testFraction?: number | null;
 
-		/** The fraction of the input data that is to be used to train the Model. */
+		/**
+		 * The fraction of the input data that is to be used to train the Model.
+		 * Type: double
+		 */
 		trainingFraction?: number | null;
 
-		/** The fraction of the input data that is to be used to validate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to validate the Model.
+		 * Type: double
+		 */
 		validationFraction?: number | null;
 	}
 
@@ -14556,13 +15509,22 @@ export namespace MyNS {
 		/** Required. The key is a name of one of the Dataset's data columns. The key provided must be for a categorical column. */
 		key: FormControl<string | null | undefined>,
 
-		/** The fraction of the input data that is to be used to evaluate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to evaluate the Model.
+		 * Type: double
+		 */
 		testFraction: FormControl<number | null | undefined>,
 
-		/** The fraction of the input data that is to be used to train the Model. */
+		/**
+		 * The fraction of the input data that is to be used to train the Model.
+		 * Type: double
+		 */
 		trainingFraction: FormControl<number | null | undefined>,
 
-		/** The fraction of the input data that is to be used to validate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to validate the Model.
+		 * Type: double
+		 */
 		validationFraction: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1StratifiedSplitFormGroup() {
@@ -14582,13 +15544,22 @@ export namespace MyNS {
 		/** Required. The key is a name of one of the Dataset's data columns. The values of the key (the values in the column) must be in RFC 3339 `date-time` format, where `time-offset` = `"Z"` (e.g. 1985-04-12T23:20:50.52Z). If for a piece of data the key is not present or has an invalid value, that piece is ignored by the pipeline. */
 		key?: string | null;
 
-		/** The fraction of the input data that is to be used to evaluate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to evaluate the Model.
+		 * Type: double
+		 */
 		testFraction?: number | null;
 
-		/** The fraction of the input data that is to be used to train the Model. */
+		/**
+		 * The fraction of the input data that is to be used to train the Model.
+		 * Type: double
+		 */
 		trainingFraction?: number | null;
 
-		/** The fraction of the input data that is to be used to validate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to validate the Model.
+		 * Type: double
+		 */
 		validationFraction?: number | null;
 	}
 
@@ -14598,13 +15569,22 @@ export namespace MyNS {
 		/** Required. The key is a name of one of the Dataset's data columns. The values of the key (the values in the column) must be in RFC 3339 `date-time` format, where `time-offset` = `"Z"` (e.g. 1985-04-12T23:20:50.52Z). If for a piece of data the key is not present or has an invalid value, that piece is ignored by the pipeline. */
 		key: FormControl<string | null | undefined>,
 
-		/** The fraction of the input data that is to be used to evaluate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to evaluate the Model.
+		 * Type: double
+		 */
 		testFraction: FormControl<number | null | undefined>,
 
-		/** The fraction of the input data that is to be used to train the Model. */
+		/**
+		 * The fraction of the input data that is to be used to train the Model.
+		 * Type: double
+		 */
 		trainingFraction: FormControl<number | null | undefined>,
 
-		/** The fraction of the input data that is to be used to validate the Model. */
+		/**
+		 * The fraction of the input data that is to be used to validate the Model.
+		 * Type: double
+		 */
 		validationFraction: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1TimestampSplitFormGroup() {
@@ -15609,14 +16589,20 @@ export namespace MyNS {
 	/** Requests are randomly selected. */
 	export interface GoogleCloudAiplatformV1SamplingStrategyRandomSampleConfig {
 
-		/** Sample rate (0, 1] */
+		/**
+		 * Sample rate (0, 1]
+		 * Type: double
+		 */
 		sampleRate?: number | null;
 	}
 
 	/** Requests are randomly selected. */
 	export interface GoogleCloudAiplatformV1SamplingStrategyRandomSampleConfigFormProperties {
 
-		/** Sample rate (0, 1] */
+		/**
+		 * Sample rate (0, 1]
+		 * Type: double
+		 */
 		sampleRate: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SamplingStrategyRandomSampleConfigFormGroup() {
@@ -15764,14 +16750,20 @@ export namespace MyNS {
 	/** The config for feature monitoring threshold. */
 	export interface GoogleCloudAiplatformV1ThresholdConfig {
 
-		/** Specify a threshold value that can trigger the alert. If this threshold config is for feature distribution distance: 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature. */
+		/**
+		 * Specify a threshold value that can trigger the alert. If this threshold config is for feature distribution distance: 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature.
+		 * Type: double
+		 */
 		value?: number | null;
 	}
 
 	/** The config for feature monitoring threshold. */
 	export interface GoogleCloudAiplatformV1ThresholdConfigFormProperties {
 
-		/** Specify a threshold value that can trigger the alert. If this threshold config is for feature distribution distance: 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature. */
+		/**
+		 * Specify a threshold value that can trigger the alert. If this threshold config is for feature distribution distance: 1. For categorical feature, the distribution distance is calculated by L-inifinity norm. 2. For numerical feature, the distribution distance is calculated by Jensen–Shannon divergence. Each feature must have a non-zero threshold if they need to be monitored. Otherwise no alert will be triggered for that feature.
+		 * Type: double
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1ThresholdConfigFormGroup() {
@@ -16559,13 +17551,22 @@ export namespace MyNS {
 	/** Represent spec for search trials. */
 	export interface GoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpecSearchTrialSpec {
 
-		/** The number of failed trials that need to be seen before failing the NasJob. If set to 0, Vertex AI decides how many trials must fail before the whole job fails. */
+		/**
+		 * The number of failed trials that need to be seen before failing the NasJob. If set to 0, Vertex AI decides how many trials must fail before the whole job fails.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFailedTrialCount?: number | null;
 
-		/** Required. The maximum number of trials to run in parallel. */
+		/**
+		 * Required. The maximum number of trials to run in parallel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxParallelTrialCount?: number | null;
 
-		/** Required. The maximum number of Neural Architecture Search (NAS) trials to run. */
+		/**
+		 * Required. The maximum number of Neural Architecture Search (NAS) trials to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTrialCount?: number | null;
 
 		/** Represents the spec of a CustomJob. */
@@ -16575,13 +17576,22 @@ export namespace MyNS {
 	/** Represent spec for search trials. */
 	export interface GoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpecSearchTrialSpecFormProperties {
 
-		/** The number of failed trials that need to be seen before failing the NasJob. If set to 0, Vertex AI decides how many trials must fail before the whole job fails. */
+		/**
+		 * The number of failed trials that need to be seen before failing the NasJob. If set to 0, Vertex AI decides how many trials must fail before the whole job fails.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFailedTrialCount: FormControl<number | null | undefined>,
 
-		/** Required. The maximum number of trials to run in parallel. */
+		/**
+		 * Required. The maximum number of trials to run in parallel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxParallelTrialCount: FormControl<number | null | undefined>,
 
-		/** Required. The maximum number of Neural Architecture Search (NAS) trials to run. */
+		/**
+		 * Required. The maximum number of Neural Architecture Search (NAS) trials to run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTrialCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpecSearchTrialSpecFormGroup() {
@@ -16597,10 +17607,16 @@ export namespace MyNS {
 	/** Represent spec for train trials. */
 	export interface GoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpecTrainTrialSpec {
 
-		/** Required. Frequency of search trials to start train stage. Top N [TrainTrialSpec.max_parallel_trial_count] search trials will be trained for every M [TrainTrialSpec.frequency] trials searched. */
+		/**
+		 * Required. Frequency of search trials to start train stage. Top N [TrainTrialSpec.max_parallel_trial_count] search trials will be trained for every M [TrainTrialSpec.frequency] trials searched.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency?: number | null;
 
-		/** Required. The maximum number of trials to run in parallel. */
+		/**
+		 * Required. The maximum number of trials to run in parallel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxParallelTrialCount?: number | null;
 
 		/** Represents the spec of a CustomJob. */
@@ -16610,10 +17626,16 @@ export namespace MyNS {
 	/** Represent spec for train trials. */
 	export interface GoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpecTrainTrialSpecFormProperties {
 
-		/** Required. Frequency of search trials to start train stage. Top N [TrainTrialSpec.max_parallel_trial_count] search trials will be trained for every M [TrainTrialSpec.frequency] trials searched. */
+		/**
+		 * Required. Frequency of search trials to start train stage. Top N [TrainTrialSpec.max_parallel_trial_count] search trials will be trained for every M [TrainTrialSpec.frequency] trials searched.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		frequency: FormControl<number | null | undefined>,
 
-		/** Required. The maximum number of trials to run in parallel. */
+		/**
+		 * Required. The maximum number of trials to run in parallel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxParallelTrialCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1NasJobSpecMultiTrialAlgorithmSpecTrainTrialSpecFormGroup() {
@@ -17283,7 +18305,10 @@ export namespace MyNS {
 		/** The email addresses of the managers in the SpecialistPool. */
 		specialistManagerEmails?: Array<string>;
 
-		/** Output only. The number of managers in this SpecialistPool. */
+		/**
+		 * Output only. The number of managers in this SpecialistPool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		specialistManagersCount?: number | null;
 
 		/** The email addresses of workers in the SpecialistPool. */
@@ -17299,7 +18324,10 @@ export namespace MyNS {
 		/** Required. The resource name of the SpecialistPool. */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. The number of managers in this SpecialistPool. */
+		/**
+		 * Output only. The number of managers in this SpecialistPool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		specialistManagersCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SpecialistPoolFormGroup() {
@@ -17586,7 +18614,10 @@ export namespace MyNS {
 		/** Output only. Name of the Tensorboard. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}` */
 		name?: string | null;
 
-		/** Output only. The number of Runs stored in this Tensorboard. */
+		/**
+		 * Output only. The number of Runs stored in this Tensorboard.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runCount?: number | null;
 
 		/** Output only. Timestamp when this Tensorboard was last updated. */
@@ -17620,7 +18651,10 @@ export namespace MyNS {
 		/** Output only. Name of the Tensorboard. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}` */
 		name: FormControl<string | null | undefined>,
 
-		/** Output only. The number of Runs stored in this Tensorboard. */
+		/**
+		 * Output only. The number of Runs stored in this Tensorboard.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runCount: FormControl<number | null | undefined>,
 
 		/** Output only. Timestamp when this Tensorboard was last updated. */
@@ -17849,7 +18883,10 @@ export namespace MyNS {
 	/** Statistics and anomalies generated by Model Monitoring. */
 	export interface GoogleCloudAiplatformV1ModelMonitoringStatsAnomalies {
 
-		/** Number of anomalies within all stats. */
+		/**
+		 * Number of anomalies within all stats.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		anomalyCount?: number | null;
 
 		/** Deployed Model ID. */
@@ -17865,7 +18902,10 @@ export namespace MyNS {
 	/** Statistics and anomalies generated by Model Monitoring. */
 	export interface GoogleCloudAiplatformV1ModelMonitoringStatsAnomaliesFormProperties {
 
-		/** Number of anomalies within all stats. */
+		/**
+		 * Number of anomalies within all stats.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		anomalyCount: FormControl<number | null | undefined>,
 
 		/** Deployed Model ID. */
@@ -18697,10 +19737,16 @@ export namespace MyNS {
 		/** A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. */
 		nextPageToken?: string | null;
 
-		/** The total number of DeployedModels on this DeploymentResourcePool. */
+		/**
+		 * The total number of DeployedModels on this DeploymentResourcePool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDeployedModelCount?: number | null;
 
-		/** The total number of Endpoints that have DeployedModels on this DeploymentResourcePool. */
+		/**
+		 * The total number of Endpoints that have DeployedModels on this DeploymentResourcePool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalEndpointCount?: number | null;
 	}
 
@@ -18710,10 +19756,16 @@ export namespace MyNS {
 		/** A token, which can be sent as `page_token` to retrieve the next page. If this field is omitted, there are no subsequent pages. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of DeployedModels on this DeploymentResourcePool. */
+		/**
+		 * The total number of DeployedModels on this DeploymentResourcePool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalDeployedModelCount: FormControl<number | null | undefined>,
 
-		/** The total number of Endpoints that have DeployedModels on this DeploymentResourcePool. */
+		/**
+		 * The total number of Endpoints that have DeployedModels on this DeploymentResourcePool.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalEndpointCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1QueryDeployedModelsResponseFormGroup() {
@@ -19186,32 +20238,56 @@ export namespace MyNS {
 	/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 	export interface GoogleTypeColor {
 
-		/** The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0). */
+		/**
+		 * The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).
+		 * Type: float
+		 */
 		alpha?: number | null;
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue?: number | null;
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green?: number | null;
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red?: number | null;
 	}
 
 	/** Represents a color in the RGBA color space. This representation is designed for simplicity of conversion to and from color representations in various languages over compactness. For example, the fields of this representation can be trivially provided to the constructor of `java.awt.Color` in Java; it can also be trivially provided to UIColor's `+colorWithRed:green:blue:alpha` method in iOS; and, with just a little work, it can be easily formatted into a CSS `rgba()` string in JavaScript. This reference page doesn't have information about the absolute color space that should be used to interpret the RGB value—for example, sRGB, Adobe RGB, DCI-P3, and BT.2020. By default, applications should assume the sRGB color space. When color equality needs to be decided, implementations, unless documented otherwise, treat two colors as equal if all their red, green, blue, and alpha values each differ by at most `1e-5`. Example (Java): import com.google.type.Color; // ... public static java.awt.Color fromProto(Color protocolor) { float alpha = protocolor.hasAlpha() ? protocolor.getAlpha().getValue() : 1.0; return new java.awt.Color( protocolor.getRed(), protocolor.getGreen(), protocolor.getBlue(), alpha); } public static Color toProto(java.awt.Color color) { float red = (float) color.getRed(); float green = (float) color.getGreen(); float blue = (float) color.getBlue(); float denominator = 255.0; Color.Builder resultBuilder = Color .newBuilder() .setRed(red / denominator) .setGreen(green / denominator) .setBlue(blue / denominator); int alpha = color.getAlpha(); if (alpha != 255) { result.setAlpha( FloatValue .newBuilder() .setValue(((float) alpha) / denominator) .build()); } return resultBuilder.build(); } // ... Example (iOS / Obj-C): // ... static UIColor* fromProto(Color* protocolor) { float red = [protocolor red]; float green = [protocolor green]; float blue = [protocolor blue]; FloatValue* alpha_wrapper = [protocolor alpha]; float alpha = 1.0; if (alpha_wrapper != nil) { alpha = [alpha_wrapper value]; } return [UIColor colorWithRed:red green:green blue:blue alpha:alpha]; } static Color* toProto(UIColor* color) { CGFloat red, green, blue, alpha; if (![color getRed:&red green:&green blue:&blue alpha:&alpha]) { return nil; } Color* result = [[Color alloc] init]; [result setRed:red]; [result setGreen:green]; [result setBlue:blue]; if (alpha <= 0.9999) { [result setAlpha:floatWrapperWithValue(alpha)]; } [result autorelease]; return result; } // ... Example (JavaScript): // ... var protoToCssColor = function(rgb_color) { var redFrac = rgb_color.red || 0.0; var greenFrac = rgb_color.green || 0.0; var blueFrac = rgb_color.blue || 0.0; var red = Math.floor(redFrac * 255); var green = Math.floor(greenFrac * 255); var blue = Math.floor(blueFrac * 255); if (!('alpha' in rgb_color)) { return rgbToCssColor(red, green, blue); } var alphaFrac = rgb_color.alpha.value || 0.0; var rgbParams = [red, green, blue].join(','); return ['rgba(', rgbParams, ',', alphaFrac, ')'].join(''); }; var rgbToCssColor = function(red, green, blue) { var rgbNumber = new Number((red << 16) | (green << 8) | blue); var hexString = rgbNumber.toString(16); var missingZeros = 6 - hexString.length; var resultBuilder = ['#']; for (var i = 0; i < missingZeros; i++) { resultBuilder.push('0'); } resultBuilder.push(hexString); return resultBuilder.join(''); }; // ... */
 	export interface GoogleTypeColorFormProperties {
 
-		/** The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0). */
+		/**
+		 * The fraction of this color that should be applied to the pixel. That is, the final pixel color is defined by the equation: `pixel color = alpha * (this color) + (1.0 - alpha) * (background color)` This means that a value of 1.0 corresponds to a solid color, whereas a value of 0.0 corresponds to a completely transparent color. This uses a wrapper message rather than a simple float scalar so that it is possible to distinguish between a default value and the value being unset. If omitted, this color object is rendered as a solid color (as if the alpha value had been explicitly given a value of 1.0).
+		 * Type: float
+		 */
 		alpha: FormControl<number | null | undefined>,
 
-		/** The amount of blue in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of blue in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		blue: FormControl<number | null | undefined>,
 
-		/** The amount of green in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of green in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		green: FormControl<number | null | undefined>,
 
-		/** The amount of red in the color as a value in the interval [0, 1]. */
+		/**
+		 * The amount of red in the color as a value in the interval [0, 1].
+		 * Type: float
+		 */
 		red: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleTypeColorFormGroup() {
@@ -19234,16 +20310,28 @@ export namespace MyNS {
 		/** The display name of the AnnotationSpec that this Annotation pertains to. */
 		displayName?: string | null;
 
-		/** The rightmost coordinate of the bounding box. */
+		/**
+		 * The rightmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		xMax?: number | null;
 
-		/** The leftmost coordinate of the bounding box. */
+		/**
+		 * The leftmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		xMin?: number | null;
 
-		/** The bottommost coordinate of the bounding box. */
+		/**
+		 * The bottommost coordinate of the bounding box.
+		 * Type: double
+		 */
 		yMax?: number | null;
 
-		/** The topmost coordinate of the bounding box. */
+		/**
+		 * The topmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		yMin?: number | null;
 	}
 
@@ -19256,16 +20344,28 @@ export namespace MyNS {
 		/** The display name of the AnnotationSpec that this Annotation pertains to. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** The rightmost coordinate of the bounding box. */
+		/**
+		 * The rightmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		xMax: FormControl<number | null | undefined>,
 
-		/** The leftmost coordinate of the bounding box. */
+		/**
+		 * The leftmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		xMin: FormControl<number | null | undefined>,
 
-		/** The bottommost coordinate of the bounding box. */
+		/**
+		 * The bottommost coordinate of the bounding box.
+		 * Type: double
+		 */
 		yMax: FormControl<number | null | undefined>,
 
-		/** The topmost coordinate of the bounding box. */
+		/**
+		 * The topmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		yMin: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaImageBoundingBoxAnnotationFormGroup() {
@@ -19446,20 +20546,32 @@ export namespace MyNS {
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudAiplatformV1SchemaVertex {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: double
+		 */
 		x?: number | null;
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: double
+		 */
 		y?: number | null;
 	}
 
 	/** A vertex represents a 2D point in the image. NOTE: the normalized vertex coordinates are relative to the original image and range from 0 to 1. */
 	export interface GoogleCloudAiplatformV1SchemaVertexFormProperties {
 
-		/** X coordinate. */
+		/**
+		 * X coordinate.
+		 * Type: double
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** Y coordinate. */
+		/**
+		 * Y coordinate.
+		 * Type: double
+		 */
 		y: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaVertexFormGroup() {
@@ -19508,20 +20620,32 @@ export namespace MyNS {
 		/** Metrics for each label-match confidence_threshold from 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99. Precision-recall curve is derived from them. */
 		confidenceMetrics?: Array<GoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetricsConfidenceMetrics>;
 
-		/** The intersection-over-union threshold value used to compute this metrics entry. */
+		/**
+		 * The intersection-over-union threshold value used to compute this metrics entry.
+		 * Type: float
+		 */
 		iouThreshold?: number | null;
 
-		/** The mean average precision, most often close to `auPrc`. */
+		/**
+		 * The mean average precision, most often close to `auPrc`.
+		 * Type: float
+		 */
 		meanAveragePrecision?: number | null;
 	}
 
 	/** Bounding box matching model metrics for a single intersection-over-union threshold and multiple label match confidence thresholds. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetricsFormProperties {
 
-		/** The intersection-over-union threshold value used to compute this metrics entry. */
+		/**
+		 * The intersection-over-union threshold value used to compute this metrics entry.
+		 * Type: float
+		 */
 		iouThreshold: FormControl<number | null | undefined>,
 
-		/** The mean average precision, most often close to `auPrc`. */
+		/**
+		 * The mean average precision, most often close to `auPrc`.
+		 * Type: float
+		 */
 		meanAveragePrecision: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetricsFormGroup() {
@@ -19536,32 +20660,56 @@ export namespace MyNS {
 	/** Metrics for a single confidence threshold. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetricsConfidenceMetrics {
 
-		/** The confidence threshold value used to compute the metrics. */
+		/**
+		 * The confidence threshold value used to compute the metrics.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** The harmonic mean of recall and precision. */
+		/**
+		 * The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score?: number | null;
 
-		/** Precision under the given confidence threshold. */
+		/**
+		 * Precision under the given confidence threshold.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Recall under the given confidence threshold. */
+		/**
+		 * Recall under the given confidence threshold.
+		 * Type: float
+		 */
 		recall?: number | null;
 	}
 
 	/** Metrics for a single confidence threshold. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetricsConfidenceMetricsFormProperties {
 
-		/** The confidence threshold value used to compute the metrics. */
+		/**
+		 * The confidence threshold value used to compute the metrics.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** The harmonic mean of recall and precision. */
+		/**
+		 * The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** Precision under the given confidence threshold. */
+		/**
+		 * Precision under the given confidence threshold.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Recall under the given confidence threshold. */
+		/**
+		 * Recall under the given confidence threshold.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetricsConfidenceMetricsFormGroup() {
@@ -19578,30 +20726,48 @@ export namespace MyNS {
 	/** Metrics for classification evaluation results. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluationMetrics {
 
-		/** The Area Under Precision-Recall Curve metric. Micro-averaged for the overall evaluation. */
+		/**
+		 * The Area Under Precision-Recall Curve metric. Micro-averaged for the overall evaluation.
+		 * Type: float
+		 */
 		auPrc?: number | null;
 
-		/** The Area Under Receiver Operating Characteristic curve metric. Micro-averaged for the overall evaluation. */
+		/**
+		 * The Area Under Receiver Operating Characteristic curve metric. Micro-averaged for the overall evaluation.
+		 * Type: float
+		 */
 		auRoc?: number | null;
 
 		/** Metrics for each `confidenceThreshold` in 0.00,0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and `positionThreshold` = INT32_MAX_VALUE. ROC and precision-recall curves, and other aggregated metrics are derived from them. The confidence metrics entries may also be supplied for additional values of `positionThreshold`, but from these no aggregated metrics are computed. */
 		confidenceMetrics?: Array<GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluationMetricsConfidenceMetrics>;
 		confusionMatrix?: GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix;
 
-		/** The Log Loss metric. */
+		/**
+		 * The Log Loss metric.
+		 * Type: float
+		 */
 		logLoss?: number | null;
 	}
 
 	/** Metrics for classification evaluation results. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluationMetricsFormProperties {
 
-		/** The Area Under Precision-Recall Curve metric. Micro-averaged for the overall evaluation. */
+		/**
+		 * The Area Under Precision-Recall Curve metric. Micro-averaged for the overall evaluation.
+		 * Type: float
+		 */
 		auPrc: FormControl<number | null | undefined>,
 
-		/** The Area Under Receiver Operating Characteristic curve metric. Micro-averaged for the overall evaluation. */
+		/**
+		 * The Area Under Receiver Operating Characteristic curve metric. Micro-averaged for the overall evaluation.
+		 * Type: float
+		 */
 		auRoc: FormControl<number | null | undefined>,
 
-		/** The Log Loss metric. */
+		/**
+		 * The Log Loss metric.
+		 * Type: float
+		 */
 		logLoss: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluationMetricsFormGroup() {
@@ -19615,20 +20781,35 @@ export namespace MyNS {
 
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluationMetricsConfidenceMetrics {
 
-		/** Metrics are computed with an assumption that the Model never returns predictions with score lower than this value. */
+		/**
+		 * Metrics are computed with an assumption that the Model never returns predictions with score lower than this value.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 		confusionMatrix?: GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix;
 
-		/** The harmonic mean of recall and precision. For summary metrics, it computes the micro-averaged F1 score. */
+		/**
+		 * The harmonic mean of recall and precision. For summary metrics, it computes the micro-averaged F1 score.
+		 * Type: float
+		 */
 		f1Score?: number | null;
 
-		/** The harmonic mean of recallAt1 and precisionAt1. */
+		/**
+		 * The harmonic mean of recallAt1 and precisionAt1.
+		 * Type: float
+		 */
 		f1ScoreAt1?: number | null;
 
-		/** Macro-averaged F1 Score. */
+		/**
+		 * Macro-averaged F1 Score.
+		 * Type: float
+		 */
 		f1ScoreMacro?: number | null;
 
-		/** Micro-averaged F1 Score. */
+		/**
+		 * Micro-averaged F1 Score.
+		 * Type: float
+		 */
 		f1ScoreMicro?: number | null;
 
 		/** The number of ground truth labels that are not matched by a Model created label. */
@@ -19637,25 +20818,46 @@ export namespace MyNS {
 		/** The number of Model created labels that do not match a ground truth label. */
 		falsePositiveCount?: string | null;
 
-		/** False Positive Rate for the given confidence threshold. */
+		/**
+		 * False Positive Rate for the given confidence threshold.
+		 * Type: float
+		 */
 		falsePositiveRate?: number | null;
 
-		/** The False Positive Rate when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem. */
+		/**
+		 * The False Positive Rate when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem.
+		 * Type: float
+		 */
 		falsePositiveRateAt1?: number | null;
 
-		/** Metrics are computed with an assumption that the Model always returns at most this many predictions (ordered by their score, descendingly), but they all still need to meet the `confidenceThreshold`. */
+		/**
+		 * Metrics are computed with an assumption that the Model always returns at most this many predictions (ordered by their score, descendingly), but they all still need to meet the `confidenceThreshold`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions?: number | null;
 
-		/** Precision for the given confidence threshold. */
+		/**
+		 * Precision for the given confidence threshold.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** The precision when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem. */
+		/**
+		 * The precision when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem.
+		 * Type: float
+		 */
 		precisionAt1?: number | null;
 
-		/** Recall (True Positive Rate) for the given confidence threshold. */
+		/**
+		 * Recall (True Positive Rate) for the given confidence threshold.
+		 * Type: float
+		 */
 		recall?: number | null;
 
-		/** The Recall (True Positive Rate) when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem. */
+		/**
+		 * The Recall (True Positive Rate) when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem.
+		 * Type: float
+		 */
 		recallAt1?: number | null;
 
 		/** The number of labels that were not created by the Model, but if they would, they would not match a ground truth label. */
@@ -19666,19 +20868,34 @@ export namespace MyNS {
 	}
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsClassificationEvaluationMetricsConfidenceMetricsFormProperties {
 
-		/** Metrics are computed with an assumption that the Model never returns predictions with score lower than this value. */
+		/**
+		 * Metrics are computed with an assumption that the Model never returns predictions with score lower than this value.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** The harmonic mean of recall and precision. For summary metrics, it computes the micro-averaged F1 score. */
+		/**
+		 * The harmonic mean of recall and precision. For summary metrics, it computes the micro-averaged F1 score.
+		 * Type: float
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** The harmonic mean of recallAt1 and precisionAt1. */
+		/**
+		 * The harmonic mean of recallAt1 and precisionAt1.
+		 * Type: float
+		 */
 		f1ScoreAt1: FormControl<number | null | undefined>,
 
-		/** Macro-averaged F1 Score. */
+		/**
+		 * Macro-averaged F1 Score.
+		 * Type: float
+		 */
 		f1ScoreMacro: FormControl<number | null | undefined>,
 
-		/** Micro-averaged F1 Score. */
+		/**
+		 * Micro-averaged F1 Score.
+		 * Type: float
+		 */
 		f1ScoreMicro: FormControl<number | null | undefined>,
 
 		/** The number of ground truth labels that are not matched by a Model created label. */
@@ -19687,25 +20904,46 @@ export namespace MyNS {
 		/** The number of Model created labels that do not match a ground truth label. */
 		falsePositiveCount: FormControl<string | null | undefined>,
 
-		/** False Positive Rate for the given confidence threshold. */
+		/**
+		 * False Positive Rate for the given confidence threshold.
+		 * Type: float
+		 */
 		falsePositiveRate: FormControl<number | null | undefined>,
 
-		/** The False Positive Rate when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem. */
+		/**
+		 * The False Positive Rate when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem.
+		 * Type: float
+		 */
 		falsePositiveRateAt1: FormControl<number | null | undefined>,
 
-		/** Metrics are computed with an assumption that the Model always returns at most this many predictions (ordered by their score, descendingly), but they all still need to meet the `confidenceThreshold`. */
+		/**
+		 * Metrics are computed with an assumption that the Model always returns at most this many predictions (ordered by their score, descendingly), but they all still need to meet the `confidenceThreshold`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions: FormControl<number | null | undefined>,
 
-		/** Precision for the given confidence threshold. */
+		/**
+		 * Precision for the given confidence threshold.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** The precision when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem. */
+		/**
+		 * The precision when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem.
+		 * Type: float
+		 */
 		precisionAt1: FormControl<number | null | undefined>,
 
-		/** Recall (True Positive Rate) for the given confidence threshold. */
+		/**
+		 * Recall (True Positive Rate) for the given confidence threshold.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 
-		/** The Recall (True Positive Rate) when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem. */
+		/**
+		 * The Recall (True Positive Rate) when only considering the label that has the highest prediction score and not below the confidence threshold for each DataItem.
+		 * Type: float
+		 */
 		recallAt1: FormControl<number | null | undefined>,
 
 		/** The number of labels that were not created by the Model, but if they would, they would not match a ground truth label. */
@@ -19780,53 +21018,95 @@ export namespace MyNS {
 	/** Metrics for forecasting evaluation results. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMetrics {
 
-		/** Mean Absolute Error (MAE). */
+		/**
+		 * Mean Absolute Error (MAE).
+		 * Type: float
+		 */
 		meanAbsoluteError?: number | null;
 
-		/** Mean absolute percentage error. Infinity when there are zeros in the ground truth. */
+		/**
+		 * Mean absolute percentage error. Infinity when there are zeros in the ground truth.
+		 * Type: float
+		 */
 		meanAbsolutePercentageError?: number | null;
 
 		/** The quantile metrics entries for each quantile. */
 		quantileMetrics?: Array<GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMetricsQuantileMetricsEntry>;
 
-		/** Coefficient of determination as Pearson correlation coefficient. Undefined when ground truth or predictions are constant or near constant. */
+		/**
+		 * Coefficient of determination as Pearson correlation coefficient. Undefined when ground truth or predictions are constant or near constant.
+		 * Type: float
+		 */
 		rSquared?: number | null;
 
-		/** Root Mean Squared Error (RMSE). */
+		/**
+		 * Root Mean Squared Error (RMSE).
+		 * Type: float
+		 */
 		rootMeanSquaredError?: number | null;
 
-		/** Root mean squared log error. Undefined when there are negative ground truth values or predictions. */
+		/**
+		 * Root mean squared log error. Undefined when there are negative ground truth values or predictions.
+		 * Type: float
+		 */
 		rootMeanSquaredLogError?: number | null;
 
-		/** Root Mean Square Percentage Error. Square root of MSPE. Undefined/imaginary when MSPE is negative. */
+		/**
+		 * Root Mean Square Percentage Error. Square root of MSPE. Undefined/imaginary when MSPE is negative.
+		 * Type: float
+		 */
 		rootMeanSquaredPercentageError?: number | null;
 
-		/** Weighted Absolute Percentage Error. Does not use weights, this is just what the metric is called. Undefined if actual values sum to zero. Will be very large if actual values sum to a very small number. */
+		/**
+		 * Weighted Absolute Percentage Error. Does not use weights, this is just what the metric is called. Undefined if actual values sum to zero. Will be very large if actual values sum to a very small number.
+		 * Type: float
+		 */
 		weightedAbsolutePercentageError?: number | null;
 	}
 
 	/** Metrics for forecasting evaluation results. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMetricsFormProperties {
 
-		/** Mean Absolute Error (MAE). */
+		/**
+		 * Mean Absolute Error (MAE).
+		 * Type: float
+		 */
 		meanAbsoluteError: FormControl<number | null | undefined>,
 
-		/** Mean absolute percentage error. Infinity when there are zeros in the ground truth. */
+		/**
+		 * Mean absolute percentage error. Infinity when there are zeros in the ground truth.
+		 * Type: float
+		 */
 		meanAbsolutePercentageError: FormControl<number | null | undefined>,
 
-		/** Coefficient of determination as Pearson correlation coefficient. Undefined when ground truth or predictions are constant or near constant. */
+		/**
+		 * Coefficient of determination as Pearson correlation coefficient. Undefined when ground truth or predictions are constant or near constant.
+		 * Type: float
+		 */
 		rSquared: FormControl<number | null | undefined>,
 
-		/** Root Mean Squared Error (RMSE). */
+		/**
+		 * Root Mean Squared Error (RMSE).
+		 * Type: float
+		 */
 		rootMeanSquaredError: FormControl<number | null | undefined>,
 
-		/** Root mean squared log error. Undefined when there are negative ground truth values or predictions. */
+		/**
+		 * Root mean squared log error. Undefined when there are negative ground truth values or predictions.
+		 * Type: float
+		 */
 		rootMeanSquaredLogError: FormControl<number | null | undefined>,
 
-		/** Root Mean Square Percentage Error. Square root of MSPE. Undefined/imaginary when MSPE is negative. */
+		/**
+		 * Root Mean Square Percentage Error. Square root of MSPE. Undefined/imaginary when MSPE is negative.
+		 * Type: float
+		 */
 		rootMeanSquaredPercentageError: FormControl<number | null | undefined>,
 
-		/** Weighted Absolute Percentage Error. Does not use weights, this is just what the metric is called. Undefined if actual values sum to zero. Will be very large if actual values sum to a very small number. */
+		/**
+		 * Weighted Absolute Percentage Error. Does not use weights, this is just what the metric is called. Undefined if actual values sum to zero. Will be very large if actual values sum to a very small number.
+		 * Type: float
+		 */
 		weightedAbsolutePercentageError: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMetricsFormGroup() {
@@ -19846,26 +21126,44 @@ export namespace MyNS {
 	/** Entry for the Quantiles loss type optimization objective. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMetricsQuantileMetricsEntry {
 
-		/** This is a custom metric that calculates the percentage of true values that were less than the predicted value for that quantile. Only populated when optimization_objective is minimize-quantile-loss and each entry corresponds to an entry in quantiles The percent value can be used to compare with the quantile value, which is the target value. */
+		/**
+		 * This is a custom metric that calculates the percentage of true values that were less than the predicted value for that quantile. Only populated when optimization_objective is minimize-quantile-loss and each entry corresponds to an entry in quantiles The percent value can be used to compare with the quantile value, which is the target value.
+		 * Type: double
+		 */
 		observedQuantile?: number | null;
 
-		/** The quantile for this entry. */
+		/**
+		 * The quantile for this entry.
+		 * Type: double
+		 */
 		quantile?: number | null;
 
-		/** The scaled pinball loss of this quantile. */
+		/**
+		 * The scaled pinball loss of this quantile.
+		 * Type: float
+		 */
 		scaledPinballLoss?: number | null;
 	}
 
 	/** Entry for the Quantiles loss type optimization objective. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMetricsQuantileMetricsEntryFormProperties {
 
-		/** This is a custom metric that calculates the percentage of true values that were less than the predicted value for that quantile. Only populated when optimization_objective is minimize-quantile-loss and each entry corresponds to an entry in quantiles The percent value can be used to compare with the quantile value, which is the target value. */
+		/**
+		 * This is a custom metric that calculates the percentage of true values that were less than the predicted value for that quantile. Only populated when optimization_objective is minimize-quantile-loss and each entry corresponds to an entry in quantiles The percent value can be used to compare with the quantile value, which is the target value.
+		 * Type: double
+		 */
 		observedQuantile: FormControl<number | null | undefined>,
 
-		/** The quantile for this entry. */
+		/**
+		 * The quantile for this entry.
+		 * Type: double
+		 */
 		quantile: FormControl<number | null | undefined>,
 
-		/** The scaled pinball loss of this quantile. */
+		/**
+		 * The scaled pinball loss of this quantile.
+		 * Type: float
+		 */
 		scaledPinballLoss: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsForecastingEvaluationMetricsQuantileMetricsEntryFormGroup() {
@@ -19879,18 +21177,30 @@ export namespace MyNS {
 
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsGeneralTextGenerationEvaluationMetrics {
 
-		/** BLEU (bilingual evaluation understudy) scores based on sacrebleu implementation. */
+		/**
+		 * BLEU (bilingual evaluation understudy) scores based on sacrebleu implementation.
+		 * Type: float
+		 */
 		bleu?: number | null;
 
-		/** ROUGE-L (Longest Common Subsequence) scoring at summary level. */
+		/**
+		 * ROUGE-L (Longest Common Subsequence) scoring at summary level.
+		 * Type: float
+		 */
 		rougeLSum?: number | null;
 	}
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsGeneralTextGenerationEvaluationMetricsFormProperties {
 
-		/** BLEU (bilingual evaluation understudy) scores based on sacrebleu implementation. */
+		/**
+		 * BLEU (bilingual evaluation understudy) scores based on sacrebleu implementation.
+		 * Type: float
+		 */
 		bleu: FormControl<number | null | undefined>,
 
-		/** ROUGE-L (Longest Common Subsequence) scoring at summary level. */
+		/**
+		 * ROUGE-L (Longest Common Subsequence) scoring at summary level.
+		 * Type: float
+		 */
 		rougeLSum: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsGeneralTextGenerationEvaluationMetricsFormGroup() {
@@ -19905,23 +21215,35 @@ export namespace MyNS {
 	/** Metrics for image object detection evaluation results. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsImageObjectDetectionEvaluationMetrics {
 
-		/** The single metric for bounding boxes evaluation: the `meanAveragePrecision` averaged over all `boundingBoxMetricsEntries`. */
+		/**
+		 * The single metric for bounding boxes evaluation: the `meanAveragePrecision` averaged over all `boundingBoxMetricsEntries`.
+		 * Type: float
+		 */
 		boundingBoxMeanAveragePrecision?: number | null;
 
 		/** The bounding boxes match metrics for each intersection-over-union threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and each label confidence threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 pair. */
 		boundingBoxMetrics?: Array<GoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetrics>;
 
-		/** The total number of bounding boxes (i.e. summed over all images) the ground truth used to create this evaluation had. */
+		/**
+		 * The total number of bounding boxes (i.e. summed over all images) the ground truth used to create this evaluation had.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedBoundingBoxCount?: number | null;
 	}
 
 	/** Metrics for image object detection evaluation results. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsImageObjectDetectionEvaluationMetricsFormProperties {
 
-		/** The single metric for bounding boxes evaluation: the `meanAveragePrecision` averaged over all `boundingBoxMetricsEntries`. */
+		/**
+		 * The single metric for bounding boxes evaluation: the `meanAveragePrecision` averaged over all `boundingBoxMetricsEntries`.
+		 * Type: float
+		 */
 		boundingBoxMeanAveragePrecision: FormControl<number | null | undefined>,
 
-		/** The total number of bounding boxes (i.e. summed over all images) the ground truth used to create this evaluation had. */
+		/**
+		 * The total number of bounding boxes (i.e. summed over all images) the ground truth used to create this evaluation had.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedBoundingBoxCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsImageObjectDetectionEvaluationMetricsFormGroup() {
@@ -19951,37 +21273,67 @@ export namespace MyNS {
 
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsImageSegmentationEvaluationMetricsConfidenceMetricsEntry {
 
-		/** Metrics are computed with an assumption that the model never returns predictions with score lower than this value. */
+		/**
+		 * Metrics are computed with an assumption that the model never returns predictions with score lower than this value.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 		confusionMatrix?: GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix;
 
-		/** DSC or the F1 score, The harmonic mean of recall and precision. */
+		/**
+		 * DSC or the F1 score, The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		diceScoreCoefficient?: number | null;
 
-		/** The intersection-over-union score. The measure of overlap of the annotation's category mask with ground truth category mask on the DataItem. */
+		/**
+		 * The intersection-over-union score. The measure of overlap of the annotation's category mask with ground truth category mask on the DataItem.
+		 * Type: float
+		 */
 		iouScore?: number | null;
 
-		/** Precision for the given confidence threshold. */
+		/**
+		 * Precision for the given confidence threshold.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Recall (True Positive Rate) for the given confidence threshold. */
+		/**
+		 * Recall (True Positive Rate) for the given confidence threshold.
+		 * Type: float
+		 */
 		recall?: number | null;
 	}
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsImageSegmentationEvaluationMetricsConfidenceMetricsEntryFormProperties {
 
-		/** Metrics are computed with an assumption that the model never returns predictions with score lower than this value. */
+		/**
+		 * Metrics are computed with an assumption that the model never returns predictions with score lower than this value.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** DSC or the F1 score, The harmonic mean of recall and precision. */
+		/**
+		 * DSC or the F1 score, The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		diceScoreCoefficient: FormControl<number | null | undefined>,
 
-		/** The intersection-over-union score. The measure of overlap of the annotation's category mask with ground truth category mask on the DataItem. */
+		/**
+		 * The intersection-over-union score. The measure of overlap of the annotation's category mask with ground truth category mask on the DataItem.
+		 * Type: float
+		 */
 		iouScore: FormControl<number | null | undefined>,
 
-		/** Precision for the given confidence threshold. */
+		/**
+		 * Precision for the given confidence threshold.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Recall (True Positive Rate) for the given confidence threshold. */
+		/**
+		 * Recall (True Positive Rate) for the given confidence threshold.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsImageSegmentationEvaluationMetricsConfidenceMetricsEntryFormGroup() {
@@ -19997,12 +21349,18 @@ export namespace MyNS {
 
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsQuestionAnsweringEvaluationMetrics {
 
-		/** The rate at which the input predicted strings exactly match their references. */
+		/**
+		 * The rate at which the input predicted strings exactly match their references.
+		 * Type: float
+		 */
 		exactMatch?: number | null;
 	}
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsQuestionAnsweringEvaluationMetricsFormProperties {
 
-		/** The rate at which the input predicted strings exactly match their references. */
+		/**
+		 * The rate at which the input predicted strings exactly match their references.
+		 * Type: float
+		 */
 		exactMatch: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsQuestionAnsweringEvaluationMetricsFormGroup() {
@@ -20016,38 +21374,68 @@ export namespace MyNS {
 	/** Metrics for regression evaluation results. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsRegressionEvaluationMetrics {
 
-		/** Mean Absolute Error (MAE). */
+		/**
+		 * Mean Absolute Error (MAE).
+		 * Type: float
+		 */
 		meanAbsoluteError?: number | null;
 
-		/** Mean absolute percentage error. Infinity when there are zeros in the ground truth. */
+		/**
+		 * Mean absolute percentage error. Infinity when there are zeros in the ground truth.
+		 * Type: float
+		 */
 		meanAbsolutePercentageError?: number | null;
 
-		/** Coefficient of determination as Pearson correlation coefficient. Undefined when ground truth or predictions are constant or near constant. */
+		/**
+		 * Coefficient of determination as Pearson correlation coefficient. Undefined when ground truth or predictions are constant or near constant.
+		 * Type: float
+		 */
 		rSquared?: number | null;
 
-		/** Root Mean Squared Error (RMSE). */
+		/**
+		 * Root Mean Squared Error (RMSE).
+		 * Type: float
+		 */
 		rootMeanSquaredError?: number | null;
 
-		/** Root mean squared log error. Undefined when there are negative ground truth values or predictions. */
+		/**
+		 * Root mean squared log error. Undefined when there are negative ground truth values or predictions.
+		 * Type: float
+		 */
 		rootMeanSquaredLogError?: number | null;
 	}
 
 	/** Metrics for regression evaluation results. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsRegressionEvaluationMetricsFormProperties {
 
-		/** Mean Absolute Error (MAE). */
+		/**
+		 * Mean Absolute Error (MAE).
+		 * Type: float
+		 */
 		meanAbsoluteError: FormControl<number | null | undefined>,
 
-		/** Mean absolute percentage error. Infinity when there are zeros in the ground truth. */
+		/**
+		 * Mean absolute percentage error. Infinity when there are zeros in the ground truth.
+		 * Type: float
+		 */
 		meanAbsolutePercentageError: FormControl<number | null | undefined>,
 
-		/** Coefficient of determination as Pearson correlation coefficient. Undefined when ground truth or predictions are constant or near constant. */
+		/**
+		 * Coefficient of determination as Pearson correlation coefficient. Undefined when ground truth or predictions are constant or near constant.
+		 * Type: float
+		 */
 		rSquared: FormControl<number | null | undefined>,
 
-		/** Root Mean Squared Error (RMSE). */
+		/**
+		 * Root Mean Squared Error (RMSE).
+		 * Type: float
+		 */
 		rootMeanSquaredError: FormControl<number | null | undefined>,
 
-		/** Root mean squared log error. Undefined when there are negative ground truth values or predictions. */
+		/**
+		 * Root mean squared log error. Undefined when there are negative ground truth values or predictions.
+		 * Type: float
+		 */
 		rootMeanSquaredLogError: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsRegressionEvaluationMetricsFormGroup() {
@@ -20063,12 +21451,18 @@ export namespace MyNS {
 
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsSummarizationEvaluationMetrics {
 
-		/** ROUGE-L (Longest Common Subsequence) scoring at summary level. */
+		/**
+		 * ROUGE-L (Longest Common Subsequence) scoring at summary level.
+		 * Type: float
+		 */
 		rougeLSum?: number | null;
 	}
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsSummarizationEvaluationMetricsFormProperties {
 
-		/** ROUGE-L (Longest Common Subsequence) scoring at summary level. */
+		/**
+		 * ROUGE-L (Longest Common Subsequence) scoring at summary level.
+		 * Type: float
+		 */
 		rougeLSum: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsSummarizationEvaluationMetricsFormGroup() {
@@ -20098,30 +21492,54 @@ export namespace MyNS {
 
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsTextExtractionEvaluationMetricsConfidenceMetrics {
 
-		/** Metrics are computed with an assumption that the Model never returns predictions with score lower than this value. */
+		/**
+		 * Metrics are computed with an assumption that the Model never returns predictions with score lower than this value.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** The harmonic mean of recall and precision. */
+		/**
+		 * The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score?: number | null;
 
-		/** Precision for the given confidence threshold. */
+		/**
+		 * Precision for the given confidence threshold.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Recall (True Positive Rate) for the given confidence threshold. */
+		/**
+		 * Recall (True Positive Rate) for the given confidence threshold.
+		 * Type: float
+		 */
 		recall?: number | null;
 	}
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsTextExtractionEvaluationMetricsConfidenceMetricsFormProperties {
 
-		/** Metrics are computed with an assumption that the Model never returns predictions with score lower than this value. */
+		/**
+		 * Metrics are computed with an assumption that the Model never returns predictions with score lower than this value.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** The harmonic mean of recall and precision. */
+		/**
+		 * The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** Precision for the given confidence threshold. */
+		/**
+		 * Precision for the given confidence threshold.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Recall (True Positive Rate) for the given confidence threshold. */
+		/**
+		 * Recall (True Positive Rate) for the given confidence threshold.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsTextExtractionEvaluationMetricsConfidenceMetricsFormGroup() {
@@ -20139,50 +21557,92 @@ export namespace MyNS {
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsTextSentimentEvaluationMetrics {
 		confusionMatrix?: GoogleCloudAiplatformV1SchemaModelevaluationMetricsConfusionMatrix;
 
-		/** The harmonic mean of recall and precision. */
+		/**
+		 * The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score?: number | null;
 
-		/** Linear weighted kappa. Only set for ModelEvaluations, not for ModelEvaluationSlices. */
+		/**
+		 * Linear weighted kappa. Only set for ModelEvaluations, not for ModelEvaluationSlices.
+		 * Type: float
+		 */
 		linearKappa?: number | null;
 
-		/** Mean absolute error. Only set for ModelEvaluations, not for ModelEvaluationSlices. */
+		/**
+		 * Mean absolute error. Only set for ModelEvaluations, not for ModelEvaluationSlices.
+		 * Type: float
+		 */
 		meanAbsoluteError?: number | null;
 
-		/** Mean squared error. Only set for ModelEvaluations, not for ModelEvaluationSlices. */
+		/**
+		 * Mean squared error. Only set for ModelEvaluations, not for ModelEvaluationSlices.
+		 * Type: float
+		 */
 		meanSquaredError?: number | null;
 
-		/** Precision. */
+		/**
+		 * Precision.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Quadratic weighted kappa. Only set for ModelEvaluations, not for ModelEvaluationSlices. */
+		/**
+		 * Quadratic weighted kappa. Only set for ModelEvaluations, not for ModelEvaluationSlices.
+		 * Type: float
+		 */
 		quadraticKappa?: number | null;
 
-		/** Recall. */
+		/**
+		 * Recall.
+		 * Type: float
+		 */
 		recall?: number | null;
 	}
 
 	/** Model evaluation metrics for text sentiment problems. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsTextSentimentEvaluationMetricsFormProperties {
 
-		/** The harmonic mean of recall and precision. */
+		/**
+		 * The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** Linear weighted kappa. Only set for ModelEvaluations, not for ModelEvaluationSlices. */
+		/**
+		 * Linear weighted kappa. Only set for ModelEvaluations, not for ModelEvaluationSlices.
+		 * Type: float
+		 */
 		linearKappa: FormControl<number | null | undefined>,
 
-		/** Mean absolute error. Only set for ModelEvaluations, not for ModelEvaluationSlices. */
+		/**
+		 * Mean absolute error. Only set for ModelEvaluations, not for ModelEvaluationSlices.
+		 * Type: float
+		 */
 		meanAbsoluteError: FormControl<number | null | undefined>,
 
-		/** Mean squared error. Only set for ModelEvaluations, not for ModelEvaluationSlices. */
+		/**
+		 * Mean squared error. Only set for ModelEvaluations, not for ModelEvaluationSlices.
+		 * Type: float
+		 */
 		meanSquaredError: FormControl<number | null | undefined>,
 
-		/** Precision. */
+		/**
+		 * Precision.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Quadratic weighted kappa. Only set for ModelEvaluations, not for ModelEvaluationSlices. */
+		/**
+		 * Quadratic weighted kappa. Only set for ModelEvaluations, not for ModelEvaluationSlices.
+		 * Type: float
+		 */
 		quadraticKappa: FormControl<number | null | undefined>,
 
-		/** Recall. */
+		/**
+		 * Recall.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsTextSentimentEvaluationMetricsFormGroup() {
@@ -20205,32 +21665,56 @@ export namespace MyNS {
 		/** Metrics for each label-match `confidenceThreshold` from 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99. Precision-recall curve is derived from them. */
 		confidenceMetrics?: Array<GoogleCloudAiplatformV1SchemaModelevaluationMetricsTrackMetricsConfidenceMetrics>;
 
-		/** The intersection-over-union threshold value between bounding boxes across frames used to compute this metric entry. */
+		/**
+		 * The intersection-over-union threshold value between bounding boxes across frames used to compute this metric entry.
+		 * Type: float
+		 */
 		iouThreshold?: number | null;
 
-		/** The mean bounding box iou over all confidence thresholds. */
+		/**
+		 * The mean bounding box iou over all confidence thresholds.
+		 * Type: float
+		 */
 		meanBoundingBoxIou?: number | null;
 
-		/** The mean mismatch rate over all confidence thresholds. */
+		/**
+		 * The mean mismatch rate over all confidence thresholds.
+		 * Type: float
+		 */
 		meanMismatchRate?: number | null;
 
-		/** The mean average precision over all confidence thresholds. */
+		/**
+		 * The mean average precision over all confidence thresholds.
+		 * Type: float
+		 */
 		meanTrackingAveragePrecision?: number | null;
 	}
 
 	/** UNIMPLEMENTED. Track matching model metrics for a single track match threshold and multiple label match confidence thresholds. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsTrackMetricsFormProperties {
 
-		/** The intersection-over-union threshold value between bounding boxes across frames used to compute this metric entry. */
+		/**
+		 * The intersection-over-union threshold value between bounding boxes across frames used to compute this metric entry.
+		 * Type: float
+		 */
 		iouThreshold: FormControl<number | null | undefined>,
 
-		/** The mean bounding box iou over all confidence thresholds. */
+		/**
+		 * The mean bounding box iou over all confidence thresholds.
+		 * Type: float
+		 */
 		meanBoundingBoxIou: FormControl<number | null | undefined>,
 
-		/** The mean mismatch rate over all confidence thresholds. */
+		/**
+		 * The mean mismatch rate over all confidence thresholds.
+		 * Type: float
+		 */
 		meanMismatchRate: FormControl<number | null | undefined>,
 
-		/** The mean average precision over all confidence thresholds. */
+		/**
+		 * The mean average precision over all confidence thresholds.
+		 * Type: float
+		 */
 		meanTrackingAveragePrecision: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsTrackMetricsFormGroup() {
@@ -20247,38 +21731,68 @@ export namespace MyNS {
 	/** Metrics for a single confidence threshold. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsTrackMetricsConfidenceMetrics {
 
-		/** Bounding box intersection-over-union precision. Measures how well the bounding boxes overlap between each other (e.g. complete overlap or just barely above iou_threshold). */
+		/**
+		 * Bounding box intersection-over-union precision. Measures how well the bounding boxes overlap between each other (e.g. complete overlap or just barely above iou_threshold).
+		 * Type: float
+		 */
 		boundingBoxIou?: number | null;
 
-		/** The confidence threshold value used to compute the metrics. */
+		/**
+		 * The confidence threshold value used to compute the metrics.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** Mismatch rate, which measures the tracking consistency, i.e. correctness of instance ID continuity. */
+		/**
+		 * Mismatch rate, which measures the tracking consistency, i.e. correctness of instance ID continuity.
+		 * Type: float
+		 */
 		mismatchRate?: number | null;
 
-		/** Tracking precision. */
+		/**
+		 * Tracking precision.
+		 * Type: float
+		 */
 		trackingPrecision?: number | null;
 
-		/** Tracking recall. */
+		/**
+		 * Tracking recall.
+		 * Type: float
+		 */
 		trackingRecall?: number | null;
 	}
 
 	/** Metrics for a single confidence threshold. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsTrackMetricsConfidenceMetricsFormProperties {
 
-		/** Bounding box intersection-over-union precision. Measures how well the bounding boxes overlap between each other (e.g. complete overlap or just barely above iou_threshold). */
+		/**
+		 * Bounding box intersection-over-union precision. Measures how well the bounding boxes overlap between each other (e.g. complete overlap or just barely above iou_threshold).
+		 * Type: float
+		 */
 		boundingBoxIou: FormControl<number | null | undefined>,
 
-		/** The confidence threshold value used to compute the metrics. */
+		/**
+		 * The confidence threshold value used to compute the metrics.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** Mismatch rate, which measures the tracking consistency, i.e. correctness of instance ID continuity. */
+		/**
+		 * Mismatch rate, which measures the tracking consistency, i.e. correctness of instance ID continuity.
+		 * Type: float
+		 */
 		mismatchRate: FormControl<number | null | undefined>,
 
-		/** Tracking precision. */
+		/**
+		 * Tracking precision.
+		 * Type: float
+		 */
 		trackingPrecision: FormControl<number | null | undefined>,
 
-		/** Tracking recall. */
+		/**
+		 * Tracking recall.
+		 * Type: float
+		 */
 		trackingRecall: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsTrackMetricsConfidenceMetricsFormGroup() {
@@ -20299,7 +21813,10 @@ export namespace MyNS {
 		/** Metrics for each label-match confidence_threshold from 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99. */
 		confidenceMetrics?: Array<GoogleCloudAiplatformV1SchemaModelevaluationMetricsVideoActionMetricsConfidenceMetrics>;
 
-		/** The mean average precision. */
+		/**
+		 * The mean average precision.
+		 * Type: float
+		 */
 		meanAveragePrecision?: number | null;
 
 		/** This VideoActionMetrics is calculated based on this prediction window length. If the predicted action's timestamp is inside the time window whose center is the ground truth action's timestamp with this specific length, the prediction result is treated as a true positive. */
@@ -20309,7 +21826,10 @@ export namespace MyNS {
 	/** The Evaluation metrics given a specific precision_window_length. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsVideoActionMetricsFormProperties {
 
-		/** The mean average precision. */
+		/**
+		 * The mean average precision.
+		 * Type: float
+		 */
 		meanAveragePrecision: FormControl<number | null | undefined>,
 
 		/** This VideoActionMetrics is calculated based on this prediction window length. If the predicted action's timestamp is inside the time window whose center is the ground truth action's timestamp with this specific length, the prediction result is treated as a true positive. */
@@ -20327,32 +21847,56 @@ export namespace MyNS {
 	/** Metrics for a single confidence threshold. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsVideoActionMetricsConfidenceMetrics {
 
-		/** Output only. The confidence threshold value used to compute the metrics. */
+		/**
+		 * Output only. The confidence threshold value used to compute the metrics.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** Output only. The harmonic mean of recall and precision. */
+		/**
+		 * Output only. The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score?: number | null;
 
-		/** Output only. Precision for the given confidence threshold. */
+		/**
+		 * Output only. Precision for the given confidence threshold.
+		 * Type: float
+		 */
 		precision?: number | null;
 
-		/** Output only. Recall for the given confidence threshold. */
+		/**
+		 * Output only. Recall for the given confidence threshold.
+		 * Type: float
+		 */
 		recall?: number | null;
 	}
 
 	/** Metrics for a single confidence threshold. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsVideoActionMetricsConfidenceMetricsFormProperties {
 
-		/** Output only. The confidence threshold value used to compute the metrics. */
+		/**
+		 * Output only. The confidence threshold value used to compute the metrics.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** Output only. The harmonic mean of recall and precision. */
+		/**
+		 * Output only. The harmonic mean of recall and precision.
+		 * Type: float
+		 */
 		f1Score: FormControl<number | null | undefined>,
 
-		/** Output only. Precision for the given confidence threshold. */
+		/**
+		 * Output only. Precision for the given confidence threshold.
+		 * Type: float
+		 */
 		precision: FormControl<number | null | undefined>,
 
-		/** Output only. Recall for the given confidence threshold. */
+		/**
+		 * Output only. Recall for the given confidence threshold.
+		 * Type: float
+		 */
 		recall: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsVideoActionMetricsConfidenceMetricsFormGroup() {
@@ -20369,7 +21913,10 @@ export namespace MyNS {
 	/** Model evaluation metrics for video action recognition. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsVideoActionRecognitionMetrics {
 
-		/** The number of ground truth actions used to create this evaluation. */
+		/**
+		 * The number of ground truth actions used to create this evaluation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedActionCount?: number | null;
 
 		/** The metric entries for precision window lengths: 1s,2s,3s. */
@@ -20379,7 +21926,10 @@ export namespace MyNS {
 	/** Model evaluation metrics for video action recognition. */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsVideoActionRecognitionMetricsFormProperties {
 
-		/** The number of ground truth actions used to create this evaluation. */
+		/**
+		 * The number of ground truth actions used to create this evaluation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedActionCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsVideoActionRecognitionMetricsFormGroup() {
@@ -20393,28 +21943,49 @@ export namespace MyNS {
 	/** Model evaluation metrics for video object tracking problems. Evaluates prediction quality of both labeled bounding boxes and labeled tracks (i.e. series of bounding boxes sharing same label and instance ID). */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsVideoObjectTrackingMetrics {
 
-		/** The single metric for bounding boxes evaluation: the `meanAveragePrecision` averaged over all `boundingBoxMetrics`. */
+		/**
+		 * The single metric for bounding boxes evaluation: the `meanAveragePrecision` averaged over all `boundingBoxMetrics`.
+		 * Type: float
+		 */
 		boundingBoxMeanAveragePrecision?: number | null;
 
 		/** The bounding boxes match metrics for each intersection-over-union threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and each label confidence threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 pair. */
 		boundingBoxMetrics?: Array<GoogleCloudAiplatformV1SchemaModelevaluationMetricsBoundingBoxMetrics>;
 
-		/** UNIMPLEMENTED. The total number of bounding boxes (i.e. summed over all frames) the ground truth used to create this evaluation had. */
+		/**
+		 * UNIMPLEMENTED. The total number of bounding boxes (i.e. summed over all frames) the ground truth used to create this evaluation had.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedBoundingBoxCount?: number | null;
 
-		/** UNIMPLEMENTED. The number of video frames used to create this evaluation. */
+		/**
+		 * UNIMPLEMENTED. The number of video frames used to create this evaluation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedFrameCount?: number | null;
 
-		/** UNIMPLEMENTED. The total number of tracks (i.e. as seen across all frames) the ground truth used to create this evaluation had. */
+		/**
+		 * UNIMPLEMENTED. The total number of tracks (i.e. as seen across all frames) the ground truth used to create this evaluation had.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedTrackCount?: number | null;
 
-		/** UNIMPLEMENTED. The single metric for tracks accuracy evaluation: the `meanAveragePrecision` averaged over all `trackMetrics`. */
+		/**
+		 * UNIMPLEMENTED. The single metric for tracks accuracy evaluation: the `meanAveragePrecision` averaged over all `trackMetrics`.
+		 * Type: float
+		 */
 		trackMeanAveragePrecision?: number | null;
 
-		/** UNIMPLEMENTED. The single metric for tracks bounding box iou evaluation: the `meanBoundingBoxIou` averaged over all `trackMetrics`. */
+		/**
+		 * UNIMPLEMENTED. The single metric for tracks bounding box iou evaluation: the `meanBoundingBoxIou` averaged over all `trackMetrics`.
+		 * Type: float
+		 */
 		trackMeanBoundingBoxIou?: number | null;
 
-		/** UNIMPLEMENTED. The single metric for tracking consistency evaluation: the `meanMismatchRate` averaged over all `trackMetrics`. */
+		/**
+		 * UNIMPLEMENTED. The single metric for tracking consistency evaluation: the `meanMismatchRate` averaged over all `trackMetrics`.
+		 * Type: float
+		 */
 		trackMeanMismatchRate?: number | null;
 
 		/** UNIMPLEMENTED. The tracks match metrics for each intersection-over-union threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 and each label confidence threshold 0.05,0.10,...,0.95,0.96,0.97,0.98,0.99 pair. */
@@ -20424,25 +21995,46 @@ export namespace MyNS {
 	/** Model evaluation metrics for video object tracking problems. Evaluates prediction quality of both labeled bounding boxes and labeled tracks (i.e. series of bounding boxes sharing same label and instance ID). */
 	export interface GoogleCloudAiplatformV1SchemaModelevaluationMetricsVideoObjectTrackingMetricsFormProperties {
 
-		/** The single metric for bounding boxes evaluation: the `meanAveragePrecision` averaged over all `boundingBoxMetrics`. */
+		/**
+		 * The single metric for bounding boxes evaluation: the `meanAveragePrecision` averaged over all `boundingBoxMetrics`.
+		 * Type: float
+		 */
 		boundingBoxMeanAveragePrecision: FormControl<number | null | undefined>,
 
-		/** UNIMPLEMENTED. The total number of bounding boxes (i.e. summed over all frames) the ground truth used to create this evaluation had. */
+		/**
+		 * UNIMPLEMENTED. The total number of bounding boxes (i.e. summed over all frames) the ground truth used to create this evaluation had.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedBoundingBoxCount: FormControl<number | null | undefined>,
 
-		/** UNIMPLEMENTED. The number of video frames used to create this evaluation. */
+		/**
+		 * UNIMPLEMENTED. The number of video frames used to create this evaluation.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedFrameCount: FormControl<number | null | undefined>,
 
-		/** UNIMPLEMENTED. The total number of tracks (i.e. as seen across all frames) the ground truth used to create this evaluation had. */
+		/**
+		 * UNIMPLEMENTED. The total number of tracks (i.e. as seen across all frames) the ground truth used to create this evaluation had.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		evaluatedTrackCount: FormControl<number | null | undefined>,
 
-		/** UNIMPLEMENTED. The single metric for tracks accuracy evaluation: the `meanAveragePrecision` averaged over all `trackMetrics`. */
+		/**
+		 * UNIMPLEMENTED. The single metric for tracks accuracy evaluation: the `meanAveragePrecision` averaged over all `trackMetrics`.
+		 * Type: float
+		 */
 		trackMeanAveragePrecision: FormControl<number | null | undefined>,
 
-		/** UNIMPLEMENTED. The single metric for tracks bounding box iou evaluation: the `meanBoundingBoxIou` averaged over all `trackMetrics`. */
+		/**
+		 * UNIMPLEMENTED. The single metric for tracks bounding box iou evaluation: the `meanBoundingBoxIou` averaged over all `trackMetrics`.
+		 * Type: float
+		 */
 		trackMeanBoundingBoxIou: FormControl<number | null | undefined>,
 
-		/** UNIMPLEMENTED. The single metric for tracking consistency evaluation: the `meanMismatchRate` averaged over all `trackMetrics`. */
+		/**
+		 * UNIMPLEMENTED. The single metric for tracking consistency evaluation: the `meanMismatchRate` averaged over all `trackMetrics`.
+		 * Type: float
+		 */
 		trackMeanMismatchRate: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaModelevaluationMetricsVideoObjectTrackingMetricsFormGroup() {
@@ -20831,20 +22423,32 @@ export namespace MyNS {
 	/** Prediction model parameters for Image Classification. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsImageClassificationPredictionParams {
 
-		/** The Model only returns predictions with at least this confidence score. Default value is 0.0 */
+		/**
+		 * The Model only returns predictions with at least this confidence score. Default value is 0.0
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** The Model only returns up to that many top, by confidence score, predictions per instance. If this number is very high, the Model may return fewer predictions. Default value is 10. */
+		/**
+		 * The Model only returns up to that many top, by confidence score, predictions per instance. If this number is very high, the Model may return fewer predictions. Default value is 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions?: number | null;
 	}
 
 	/** Prediction model parameters for Image Classification. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsImageClassificationPredictionParamsFormProperties {
 
-		/** The Model only returns predictions with at least this confidence score. Default value is 0.0 */
+		/**
+		 * The Model only returns predictions with at least this confidence score. Default value is 0.0
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** The Model only returns up to that many top, by confidence score, predictions per instance. If this number is very high, the Model may return fewer predictions. Default value is 10. */
+		/**
+		 * The Model only returns up to that many top, by confidence score, predictions per instance. If this number is very high, the Model may return fewer predictions. Default value is 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaPredictParamsImageClassificationPredictionParamsFormGroup() {
@@ -20859,20 +22463,32 @@ export namespace MyNS {
 	/** Prediction model parameters for Image Object Detection. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsImageObjectDetectionPredictionParams {
 
-		/** The Model only returns predictions with at least this confidence score. Default value is 0.0 */
+		/**
+		 * The Model only returns predictions with at least this confidence score. Default value is 0.0
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** The Model only returns up to that many top, by confidence score, predictions per instance. Note that number of returned predictions is also limited by metadata's predictionsLimit. Default value is 10. */
+		/**
+		 * The Model only returns up to that many top, by confidence score, predictions per instance. Note that number of returned predictions is also limited by metadata's predictionsLimit. Default value is 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions?: number | null;
 	}
 
 	/** Prediction model parameters for Image Object Detection. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsImageObjectDetectionPredictionParamsFormProperties {
 
-		/** The Model only returns predictions with at least this confidence score. Default value is 0.0 */
+		/**
+		 * The Model only returns predictions with at least this confidence score. Default value is 0.0
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** The Model only returns up to that many top, by confidence score, predictions per instance. Note that number of returned predictions is also limited by metadata's predictionsLimit. Default value is 10. */
+		/**
+		 * The Model only returns up to that many top, by confidence score, predictions per instance. Note that number of returned predictions is also limited by metadata's predictionsLimit. Default value is 10.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaPredictParamsImageObjectDetectionPredictionParamsFormGroup() {
@@ -20887,14 +22503,20 @@ export namespace MyNS {
 	/** Prediction model parameters for Image Segmentation. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsImageSegmentationPredictionParams {
 
-		/** When the model predicts category of pixels of the image, it will only provide predictions for pixels that it is at least this much confident about. All other pixels will be classified as background. Default value is 0.5. */
+		/**
+		 * When the model predicts category of pixels of the image, it will only provide predictions for pixels that it is at least this much confident about. All other pixels will be classified as background. Default value is 0.5.
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 	}
 
 	/** Prediction model parameters for Image Segmentation. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsImageSegmentationPredictionParamsFormProperties {
 
-		/** When the model predicts category of pixels of the image, it will only provide predictions for pixels that it is at least this much confident about. All other pixels will be classified as background. Default value is 0.5. */
+		/**
+		 * When the model predicts category of pixels of the image, it will only provide predictions for pixels that it is at least this much confident about. All other pixels will be classified as background. Default value is 0.5.
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaPredictParamsImageSegmentationPredictionParamsFormGroup() {
@@ -20908,20 +22530,32 @@ export namespace MyNS {
 	/** Prediction model parameters for Video Action Recognition. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsVideoActionRecognitionPredictionParams {
 
-		/** The Model only returns predictions with at least this confidence score. Default value is 0.0 */
+		/**
+		 * The Model only returns predictions with at least this confidence score. Default value is 0.0
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** The model only returns up to that many top, by confidence score, predictions per frame of the video. If this number is very high, the Model may return fewer predictions per frame. Default value is 50. */
+		/**
+		 * The model only returns up to that many top, by confidence score, predictions per frame of the video. If this number is very high, the Model may return fewer predictions per frame. Default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions?: number | null;
 	}
 
 	/** Prediction model parameters for Video Action Recognition. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsVideoActionRecognitionPredictionParamsFormProperties {
 
-		/** The Model only returns predictions with at least this confidence score. Default value is 0.0 */
+		/**
+		 * The Model only returns predictions with at least this confidence score. Default value is 0.0
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** The model only returns up to that many top, by confidence score, predictions per frame of the video. If this number is very high, the Model may return fewer predictions per frame. Default value is 50. */
+		/**
+		 * The model only returns up to that many top, by confidence score, predictions per frame of the video. If this number is very high, the Model may return fewer predictions per frame. Default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaPredictParamsVideoActionRecognitionPredictionParamsFormGroup() {
@@ -20936,10 +22570,16 @@ export namespace MyNS {
 	/** Prediction model parameters for Video Classification. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsVideoClassificationPredictionParams {
 
-		/** The Model only returns predictions with at least this confidence score. Default value is 0.0 */
+		/**
+		 * The Model only returns predictions with at least this confidence score. Default value is 0.0
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** The Model only returns up to that many top, by confidence score, predictions per instance. If this number is very high, the Model may return fewer predictions. Default value is 10,000. */
+		/**
+		 * The Model only returns up to that many top, by confidence score, predictions per instance. If this number is very high, the Model may return fewer predictions. Default value is 10,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions?: number | null;
 
 		/** Set to true to request classification for a video at one-second intervals. Vertex AI returns labels and their confidence scores for each second of the entire time segment of the video that user specified in the input WARNING: Model evaluation is not done for this classification type, the quality of it depends on the training data, but there are no metrics provided to describe that quality. Default value is false */
@@ -20955,10 +22595,16 @@ export namespace MyNS {
 	/** Prediction model parameters for Video Classification. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsVideoClassificationPredictionParamsFormProperties {
 
-		/** The Model only returns predictions with at least this confidence score. Default value is 0.0 */
+		/**
+		 * The Model only returns predictions with at least this confidence score. Default value is 0.0
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** The Model only returns up to that many top, by confidence score, predictions per instance. If this number is very high, the Model may return fewer predictions. Default value is 10,000. */
+		/**
+		 * The Model only returns up to that many top, by confidence score, predictions per instance. If this number is very high, the Model may return fewer predictions. Default value is 10,000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions: FormControl<number | null | undefined>,
 
 		/** Set to true to request classification for a video at one-second intervals. Vertex AI returns labels and their confidence scores for each second of the entire time segment of the video that user specified in the input WARNING: Model evaluation is not done for this classification type, the quality of it depends on the training data, but there are no metrics provided to describe that quality. Default value is false */
@@ -20985,26 +22631,44 @@ export namespace MyNS {
 	/** Prediction model parameters for Video Object Tracking. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsVideoObjectTrackingPredictionParams {
 
-		/** The Model only returns predictions with at least this confidence score. Default value is 0.0 */
+		/**
+		 * The Model only returns predictions with at least this confidence score. Default value is 0.0
+		 * Type: float
+		 */
 		confidenceThreshold?: number | null;
 
-		/** The model only returns up to that many top, by confidence score, predictions per frame of the video. If this number is very high, the Model may return fewer predictions per frame. Default value is 50. */
+		/**
+		 * The model only returns up to that many top, by confidence score, predictions per frame of the video. If this number is very high, the Model may return fewer predictions per frame. Default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions?: number | null;
 
-		/** Only bounding boxes with shortest edge at least that long as a relative value of video frame size are returned. Default value is 0.0. */
+		/**
+		 * Only bounding boxes with shortest edge at least that long as a relative value of video frame size are returned. Default value is 0.0.
+		 * Type: float
+		 */
 		minBoundingBoxSize?: number | null;
 	}
 
 	/** Prediction model parameters for Video Object Tracking. */
 	export interface GoogleCloudAiplatformV1SchemaPredictParamsVideoObjectTrackingPredictionParamsFormProperties {
 
-		/** The Model only returns predictions with at least this confidence score. Default value is 0.0 */
+		/**
+		 * The Model only returns predictions with at least this confidence score. Default value is 0.0
+		 * Type: float
+		 */
 		confidenceThreshold: FormControl<number | null | undefined>,
 
-		/** The model only returns up to that many top, by confidence score, predictions per frame of the video. If this number is very high, the Model may return fewer predictions per frame. Default value is 50. */
+		/**
+		 * The model only returns up to that many top, by confidence score, predictions per frame of the video. If this number is very high, the Model may return fewer predictions per frame. Default value is 50.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPredictions: FormControl<number | null | undefined>,
 
-		/** Only bounding boxes with shortest edge at least that long as a relative value of video frame size are returned. Default value is 0.0. */
+		/**
+		 * Only bounding boxes with shortest edge at least that long as a relative value of video frame size are returned. Default value is 0.0.
+		 * Type: float
+		 */
 		minBoundingBoxSize: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaPredictParamsVideoObjectTrackingPredictionParamsFormGroup() {
@@ -21117,7 +22781,10 @@ export namespace MyNS {
 	/** Prediction output format for Tabular Regression. */
 	export interface GoogleCloudAiplatformV1SchemaPredictPredictionTabularRegressionPredictionResult {
 
-		/** The lower bound of the prediction interval. */
+		/**
+		 * The lower bound of the prediction interval.
+		 * Type: float
+		 */
 		lowerBound?: number | null;
 
 		/** Quantile predictions, in 1-1 correspondence with quantile_values. */
@@ -21126,23 +22793,38 @@ export namespace MyNS {
 		/** Quantile values. */
 		quantileValues?: Array<number>;
 
-		/** The upper bound of the prediction interval. */
+		/**
+		 * The upper bound of the prediction interval.
+		 * Type: float
+		 */
 		upperBound?: number | null;
 
-		/** The regression value. */
+		/**
+		 * The regression value.
+		 * Type: float
+		 */
 		value?: number | null;
 	}
 
 	/** Prediction output format for Tabular Regression. */
 	export interface GoogleCloudAiplatformV1SchemaPredictPredictionTabularRegressionPredictionResultFormProperties {
 
-		/** The lower bound of the prediction interval. */
+		/**
+		 * The lower bound of the prediction interval.
+		 * Type: float
+		 */
 		lowerBound: FormControl<number | null | undefined>,
 
-		/** The upper bound of the prediction interval. */
+		/**
+		 * The upper bound of the prediction interval.
+		 * Type: float
+		 */
 		upperBound: FormControl<number | null | undefined>,
 
-		/** The regression value. */
+		/**
+		 * The regression value.
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaPredictPredictionTabularRegressionPredictionResultFormGroup() {
@@ -21187,14 +22869,20 @@ export namespace MyNS {
 	/** Prediction output format for Text Sentiment */
 	export interface GoogleCloudAiplatformV1SchemaPredictPredictionTextSentimentPredictionResult {
 
-		/** The integer sentiment labels between 0 (inclusive) and sentimentMax label (inclusive), while 0 maps to the least positive sentiment and sentimentMax maps to the most positive one. The higher the score is, the more positive the sentiment in the text snippet is. Note: sentimentMax is an integer value between 1 (inclusive) and 10 (inclusive). */
+		/**
+		 * The integer sentiment labels between 0 (inclusive) and sentimentMax label (inclusive), while 0 maps to the least positive sentiment and sentimentMax maps to the most positive one. The higher the score is, the more positive the sentiment in the text snippet is. Note: sentimentMax is an integer value between 1 (inclusive) and 10 (inclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentiment?: number | null;
 	}
 
 	/** Prediction output format for Text Sentiment */
 	export interface GoogleCloudAiplatformV1SchemaPredictPredictionTextSentimentPredictionResultFormProperties {
 
-		/** The integer sentiment labels between 0 (inclusive) and sentimentMax label (inclusive), while 0 maps to the least positive sentiment and sentimentMax maps to the most positive one. The higher the score is, the more positive the sentiment in the text snippet is. Note: sentimentMax is an integer value between 1 (inclusive) and 10 (inclusive). */
+		/**
+		 * The integer sentiment labels between 0 (inclusive) and sentimentMax label (inclusive), while 0 maps to the least positive sentiment and sentimentMax maps to the most positive one. The higher the score is, the more positive the sentiment in the text snippet is. Note: sentimentMax is an integer value between 1 (inclusive) and 10 (inclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentiment: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaPredictPredictionTextSentimentPredictionResultFormGroup() {
@@ -21233,14 +22921,20 @@ export namespace MyNS {
 		quantileValues?: Array<number>;
 		tftFeatureImportance?: GoogleCloudAiplatformV1SchemaPredictPredictionTftFeatureImportance;
 
-		/** The regression value. */
+		/**
+		 * The regression value.
+		 * Type: float
+		 */
 		value?: number | null;
 	}
 
 	/** Prediction output format for Time Series Forecasting. */
 	export interface GoogleCloudAiplatformV1SchemaPredictPredictionTimeSeriesForecastingPredictionResultFormProperties {
 
-		/** The regression value. */
+		/**
+		 * The regression value.
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaPredictPredictionTimeSeriesForecastingPredictionResultFormGroup() {
@@ -21254,7 +22948,10 @@ export namespace MyNS {
 	/** Prediction output format for Video Action Recognition. */
 	export interface GoogleCloudAiplatformV1SchemaPredictPredictionVideoActionRecognitionPredictionResult {
 
-		/** The Model's confidence in correction of this prediction, higher value means higher confidence. */
+		/**
+		 * The Model's confidence in correction of this prediction, higher value means higher confidence.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The display name of the AnnotationSpec that had been identified. */
@@ -21273,7 +22970,10 @@ export namespace MyNS {
 	/** Prediction output format for Video Action Recognition. */
 	export interface GoogleCloudAiplatformV1SchemaPredictPredictionVideoActionRecognitionPredictionResultFormProperties {
 
-		/** The Model's confidence in correction of this prediction, higher value means higher confidence. */
+		/**
+		 * The Model's confidence in correction of this prediction, higher value means higher confidence.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The display name of the AnnotationSpec that had been identified. */
@@ -21303,7 +23003,10 @@ export namespace MyNS {
 	/** Prediction output format for Video Classification. */
 	export interface GoogleCloudAiplatformV1SchemaPredictPredictionVideoClassificationPredictionResult {
 
-		/** The Model's confidence in correction of this prediction, higher value means higher confidence. */
+		/**
+		 * The Model's confidence in correction of this prediction, higher value means higher confidence.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The display name of the AnnotationSpec that had been identified. */
@@ -21325,7 +23028,10 @@ export namespace MyNS {
 	/** Prediction output format for Video Classification. */
 	export interface GoogleCloudAiplatformV1SchemaPredictPredictionVideoClassificationPredictionResultFormProperties {
 
-		/** The Model's confidence in correction of this prediction, higher value means higher confidence. */
+		/**
+		 * The Model's confidence in correction of this prediction, higher value means higher confidence.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The display name of the AnnotationSpec that had been identified. */
@@ -21359,7 +23065,10 @@ export namespace MyNS {
 	/** Prediction output format for Video Object Tracking. */
 	export interface GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictionResult {
 
-		/** The Model's confidence in correction of this prediction, higher value means higher confidence. */
+		/**
+		 * The Model's confidence in correction of this prediction, higher value means higher confidence.
+		 * Type: float
+		 */
 		confidence?: number | null;
 
 		/** The display name of the AnnotationSpec that had been identified. */
@@ -21381,7 +23090,10 @@ export namespace MyNS {
 	/** Prediction output format for Video Object Tracking. */
 	export interface GoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictionResultFormProperties {
 
-		/** The Model's confidence in correction of this prediction, higher value means higher confidence. */
+		/**
+		 * The Model's confidence in correction of this prediction, higher value means higher confidence.
+		 * Type: float
+		 */
 		confidence: FormControl<number | null | undefined>,
 
 		/** The display name of the AnnotationSpec that had been identified. */
@@ -21414,16 +23126,28 @@ export namespace MyNS {
 		/** A time (frame) of a video in which the object has been detected. Expressed as a number of seconds as measured from the start of the video, with fractions up to a microsecond precision, and with "s" appended at the end. */
 		timeOffset?: string | null;
 
-		/** The rightmost coordinate of the bounding box. */
+		/**
+		 * The rightmost coordinate of the bounding box.
+		 * Type: float
+		 */
 		xMax?: number | null;
 
-		/** The leftmost coordinate of the bounding box. */
+		/**
+		 * The leftmost coordinate of the bounding box.
+		 * Type: float
+		 */
 		xMin?: number | null;
 
-		/** The bottommost coordinate of the bounding box. */
+		/**
+		 * The bottommost coordinate of the bounding box.
+		 * Type: float
+		 */
 		yMax?: number | null;
 
-		/** The topmost coordinate of the bounding box. */
+		/**
+		 * The topmost coordinate of the bounding box.
+		 * Type: float
+		 */
 		yMin?: number | null;
 	}
 
@@ -21433,16 +23157,28 @@ export namespace MyNS {
 		/** A time (frame) of a video in which the object has been detected. Expressed as a number of seconds as measured from the start of the video, with fractions up to a microsecond precision, and with "s" appended at the end. */
 		timeOffset: FormControl<string | null | undefined>,
 
-		/** The rightmost coordinate of the bounding box. */
+		/**
+		 * The rightmost coordinate of the bounding box.
+		 * Type: float
+		 */
 		xMax: FormControl<number | null | undefined>,
 
-		/** The leftmost coordinate of the bounding box. */
+		/**
+		 * The leftmost coordinate of the bounding box.
+		 * Type: float
+		 */
 		xMin: FormControl<number | null | undefined>,
 
-		/** The bottommost coordinate of the bounding box. */
+		/**
+		 * The bottommost coordinate of the bounding box.
+		 * Type: float
+		 */
 		yMax: FormControl<number | null | undefined>,
 
-		/** The topmost coordinate of the bounding box. */
+		/**
+		 * The topmost coordinate of the bounding box.
+		 * Type: float
+		 */
 		yMin: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaPredictPredictionVideoObjectTrackingPredictionResultFrameFormGroup() {
@@ -21749,7 +23485,10 @@ export namespace MyNS {
 		/** Customized stop sequences. */
 		stopSequences?: Array<string>;
 
-		/** Temperature value used for sampling set when the dataset was saved. This value is used to tune the degree of randomness. */
+		/**
+		 * Temperature value used for sampling set when the dataset was saved. This value is used to tune the degree of randomness.
+		 * Type: float
+		 */
 		temperature?: number | null;
 
 		/** The content of the prompt dataset. */
@@ -21758,7 +23497,10 @@ export namespace MyNS {
 		/** Top K value set when the dataset was saved. This value determines how many candidates with highest probability from the vocab would be selected for each decoding step. */
 		topK?: string | null;
 
-		/** Top P value set when the dataset was saved. Given topK tokens for decoding, top candidates will be selected until the sum of their probabilities is topP. */
+		/**
+		 * Top P value set when the dataset was saved. Given topK tokens for decoding, top candidates will be selected until the sum of their probabilities is topP.
+		 * Type: float
+		 */
 		topP?: number | null;
 	}
 
@@ -21780,7 +23522,10 @@ export namespace MyNS {
 		/** Type of the prompt dataset. */
 		promptType: FormControl<string | null | undefined>,
 
-		/** Temperature value used for sampling set when the dataset was saved. This value is used to tune the degree of randomness. */
+		/**
+		 * Temperature value used for sampling set when the dataset was saved. This value is used to tune the degree of randomness.
+		 * Type: float
+		 */
 		temperature: FormControl<number | null | undefined>,
 
 		/** The content of the prompt dataset. */
@@ -21789,7 +23534,10 @@ export namespace MyNS {
 		/** Top K value set when the dataset was saved. This value determines how many candidates with highest probability from the vocab would be selected for each decoding step. */
 		topK: FormControl<string | null | undefined>,
 
-		/** Top P value set when the dataset was saved. Given topK tokens for decoding, top candidates will be selected until the sum of their probabilities is topP. */
+		/**
+		 * Top P value set when the dataset was saved. Given topK tokens for decoding, top candidates will be selected until the sum of their probabilities is topP.
+		 * Type: float
+		 */
 		topP: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaTextPromptDatasetMetadataFormGroup() {
@@ -21817,10 +23565,16 @@ export namespace MyNS {
 		/** The display name of the AnnotationSpec that this Annotation pertains to. */
 		displayName?: string | null;
 
-		/** The sentiment score for text. */
+		/**
+		 * The sentiment score for text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentiment?: number | null;
 
-		/** The sentiment max score for text. */
+		/**
+		 * The sentiment max score for text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentimentMax?: number | null;
 	}
 
@@ -21833,10 +23587,16 @@ export namespace MyNS {
 		/** The display name of the AnnotationSpec that this Annotation pertains to. */
 		displayName: FormControl<string | null | undefined>,
 
-		/** The sentiment score for text. */
+		/**
+		 * The sentiment score for text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentiment: FormControl<number | null | undefined>,
 
-		/** The sentiment max score for text. */
+		/**
+		 * The sentiment max score for text.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentimentMax: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaTextSentimentAnnotationFormGroup() {
@@ -21853,14 +23613,20 @@ export namespace MyNS {
 	/** The metadata of SavedQuery contains TextSentiment Annotations. */
 	export interface GoogleCloudAiplatformV1SchemaTextSentimentSavedQueryMetadata {
 
-		/** The maximum sentiment of sentiment Anntoation in this SavedQuery. */
+		/**
+		 * The maximum sentiment of sentiment Anntoation in this SavedQuery.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentimentMax?: number | null;
 	}
 
 	/** The metadata of SavedQuery contains TextSentiment Annotations. */
 	export interface GoogleCloudAiplatformV1SchemaTextSentimentSavedQueryMetadataFormProperties {
 
-		/** The maximum sentiment of sentiment Anntoation in this SavedQuery. */
+		/**
+		 * The maximum sentiment of sentiment Anntoation in this SavedQuery.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentimentMax: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaTextSentimentSavedQueryMetadataFormGroup() {
@@ -22169,26 +23935,44 @@ export namespace MyNS {
 		/** A list of time series attribute column names that define the time series hierarchy. Only one level of hierarchy is supported, ex. 'region' for a hierarchy of stores or 'department' for a hierarchy of products. If multiple columns are specified, time series will be grouped by their combined values, ex. ('blue', 'large') for 'color' and 'size', up to 5 columns are accepted. If no group columns are specified, all time series are considered to be part of the same group. */
 		groupColumns?: Array<string>;
 
-		/** The weight of the loss for predictions aggregated over both the horizon and time series in the same hierarchy group. */
+		/**
+		 * The weight of the loss for predictions aggregated over both the horizon and time series in the same hierarchy group.
+		 * Type: double
+		 */
 		groupTemporalTotalWeight?: number | null;
 
-		/** The weight of the loss for predictions aggregated over time series in the same group. */
+		/**
+		 * The weight of the loss for predictions aggregated over time series in the same group.
+		 * Type: double
+		 */
 		groupTotalWeight?: number | null;
 
-		/** The weight of the loss for predictions aggregated over the horizon for a single time series. */
+		/**
+		 * The weight of the loss for predictions aggregated over the horizon for a single time series.
+		 * Type: double
+		 */
 		temporalTotalWeight?: number | null;
 	}
 
 	/** Configuration that defines the hierarchical relationship of time series and parameters for hierarchical forecasting strategies. */
 	export interface GoogleCloudAiplatformV1SchemaTrainingjobDefinitionHierarchyConfigFormProperties {
 
-		/** The weight of the loss for predictions aggregated over both the horizon and time series in the same hierarchy group. */
+		/**
+		 * The weight of the loss for predictions aggregated over both the horizon and time series in the same hierarchy group.
+		 * Type: double
+		 */
 		groupTemporalTotalWeight: FormControl<number | null | undefined>,
 
-		/** The weight of the loss for predictions aggregated over time series in the same group. */
+		/**
+		 * The weight of the loss for predictions aggregated over time series in the same group.
+		 * Type: double
+		 */
 		groupTotalWeight: FormControl<number | null | undefined>,
 
-		/** The weight of the loss for predictions aggregated over the horizon for a single time series. */
+		/**
+		 * The weight of the loss for predictions aggregated over the horizon for a single time series.
+		 * Type: double
+		 */
 		temporalTotalWeight: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaTrainingjobDefinitionHierarchyConfigFormGroup() {
@@ -22698,10 +24482,16 @@ export namespace MyNS {
 		/** Objective function the model is optimizing towards. The training process creates a model that maximizes/minimizes the value of the objective function over the validation set. The supported optimization objectives depend on the prediction type. If the field is not set, a default objective function is used. classification (binary): "maximize-au-roc" (default) - Maximize the area under the receiver operating characteristic (ROC) curve. "minimize-log-loss" - Minimize log loss. "maximize-au-prc" - Maximize the area under the precision-recall curve. "maximize-precision-at-recall" - Maximize precision for a specified recall value. "maximize-recall-at-precision" - Maximize recall for a specified precision value. classification (multi-class): "minimize-log-loss" (default) - Minimize log loss. regression: "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE). "minimize-mae" - Minimize mean-absolute error (MAE). "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE). */
 		optimizationObjective?: string | null;
 
-		/** Required when optimization_objective is "maximize-recall-at-precision". Must be between 0 and 1, inclusive. */
+		/**
+		 * Required when optimization_objective is "maximize-recall-at-precision". Must be between 0 and 1, inclusive.
+		 * Type: float
+		 */
 		optimizationObjectivePrecisionValue?: number | null;
 
-		/** Required when optimization_objective is "maximize-precision-at-recall". Must be between 0 and 1, inclusive. */
+		/**
+		 * Required when optimization_objective is "maximize-precision-at-recall". Must be between 0 and 1, inclusive.
+		 * Type: float
+		 */
 		optimizationObjectiveRecallValue?: number | null;
 
 		/** The type of prediction the Model is to produce. "classification" - Predict one out of multiple target values is picked for each row. "regression" - Predict a value based on its relation to other values. This type is available only to columns that contain semantically numeric values, i.e. integers or floating point number, even if stored as e.g. strings. */
@@ -22727,10 +24517,16 @@ export namespace MyNS {
 		/** Objective function the model is optimizing towards. The training process creates a model that maximizes/minimizes the value of the objective function over the validation set. The supported optimization objectives depend on the prediction type. If the field is not set, a default objective function is used. classification (binary): "maximize-au-roc" (default) - Maximize the area under the receiver operating characteristic (ROC) curve. "minimize-log-loss" - Minimize log loss. "maximize-au-prc" - Maximize the area under the precision-recall curve. "maximize-precision-at-recall" - Maximize precision for a specified recall value. "maximize-recall-at-precision" - Maximize recall for a specified precision value. classification (multi-class): "minimize-log-loss" (default) - Minimize log loss. regression: "minimize-rmse" (default) - Minimize root-mean-squared error (RMSE). "minimize-mae" - Minimize mean-absolute error (MAE). "minimize-rmsle" - Minimize root-mean-squared log error (RMSLE). */
 		optimizationObjective: FormControl<string | null | undefined>,
 
-		/** Required when optimization_objective is "maximize-recall-at-precision". Must be between 0 and 1, inclusive. */
+		/**
+		 * Required when optimization_objective is "maximize-recall-at-precision". Must be between 0 and 1, inclusive.
+		 * Type: float
+		 */
 		optimizationObjectivePrecisionValue: FormControl<number | null | undefined>,
 
-		/** Required when optimization_objective is "maximize-precision-at-recall". Must be between 0 and 1, inclusive. */
+		/**
+		 * Required when optimization_objective is "maximize-precision-at-recall". Must be between 0 and 1, inclusive.
+		 * Type: float
+		 */
 		optimizationObjectiveRecallValue: FormControl<number | null | undefined>,
 
 		/** The type of prediction the Model is to produce. "classification" - Predict one out of multiple target values is picked for each row. "regression" - Predict a value based on its relation to other values. This type is available only to columns that contain semantically numeric values, i.e. integers or floating point number, even if stored as e.g. strings. */
@@ -23055,12 +24851,18 @@ export namespace MyNS {
 
 	export interface GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTextSentimentInputs {
 
-		/** A sentiment is expressed as an integer ordinal, where higher value means a more positive sentiment. The range of sentiments that will be used is between 0 and sentimentMax (inclusive on both ends), and all the values in the range must be represented in the dataset before a model can be created. Only the Annotations with this sentimentMax will be used for training. sentimentMax value must be between 1 and 10 (inclusive). */
+		/**
+		 * A sentiment is expressed as an integer ordinal, where higher value means a more positive sentiment. The range of sentiments that will be used is between 0 and sentimentMax (inclusive on both ends), and all the values in the range must be represented in the dataset before a model can be created. Only the Annotations with this sentimentMax will be used for training. sentimentMax value must be between 1 and 10 (inclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentimentMax?: number | null;
 	}
 	export interface GoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTextSentimentInputsFormProperties {
 
-		/** A sentiment is expressed as an integer ordinal, where higher value means a more positive sentiment. The range of sentiments that will be used is between 0 and sentimentMax (inclusive on both ends), and all the values in the range must be represented in the dataset before a model can be created. Only the Annotations with this sentimentMax will be used for training. sentimentMax value must be between 1 and 10 (inclusive). */
+		/**
+		 * A sentiment is expressed as an integer ordinal, where higher value means a more positive sentiment. The range of sentiments that will be used is between 0 and sentimentMax (inclusive on both ends), and all the values in the range must be represented in the dataset before a model can be created. Only the Annotations with this sentimentMax will be used for training. sentimentMax value must be between 1 and 10 (inclusive).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sentimentMax: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaTrainingjobDefinitionAutoMlTextSentimentInputsFormGroup() {
@@ -23221,13 +25023,22 @@ export namespace MyNS {
 
 	export interface GoogleCloudAiplatformV1SchemaTrainingjobDefinitionHyperparameterTuningJobSpec {
 
-		/** The number of failed Trials that need to be seen before failing the HyperparameterTuningJob. If set to 0, Vertex AI decides how many Trials must fail before the whole job fails. */
+		/**
+		 * The number of failed Trials that need to be seen before failing the HyperparameterTuningJob. If set to 0, Vertex AI decides how many Trials must fail before the whole job fails.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFailedTrialCount?: number | null;
 
-		/** The desired total number of Trials. */
+		/**
+		 * The desired total number of Trials.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTrialCount?: number | null;
 
-		/** The desired number of Trials to run in parallel. */
+		/**
+		 * The desired number of Trials to run in parallel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parallelTrialCount?: number | null;
 
 		/** Represents specification of a Study. */
@@ -23238,13 +25049,22 @@ export namespace MyNS {
 	}
 	export interface GoogleCloudAiplatformV1SchemaTrainingjobDefinitionHyperparameterTuningJobSpecFormProperties {
 
-		/** The number of failed Trials that need to be seen before failing the HyperparameterTuningJob. If set to 0, Vertex AI decides how many Trials must fail before the whole job fails. */
+		/**
+		 * The number of failed Trials that need to be seen before failing the HyperparameterTuningJob. If set to 0, Vertex AI decides how many Trials must fail before the whole job fails.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxFailedTrialCount: FormControl<number | null | undefined>,
 
-		/** The desired total number of Trials. */
+		/**
+		 * The desired total number of Trials.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxTrialCount: FormControl<number | null | undefined>,
 
-		/** The desired number of Trials to run in parallel. */
+		/**
+		 * The desired number of Trials to run in parallel.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parallelTrialCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaTrainingjobDefinitionHyperparameterTuningJobSpecFormGroup() {
@@ -24000,16 +25820,28 @@ export namespace MyNS {
 		/** A time (frame) of a video to which this annotation pertains. Represented as the duration since the video's start. */
 		timeOffset?: string | null;
 
-		/** The rightmost coordinate of the bounding box. */
+		/**
+		 * The rightmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		xMax?: number | null;
 
-		/** The leftmost coordinate of the bounding box. */
+		/**
+		 * The leftmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		xMin?: number | null;
 
-		/** The bottommost coordinate of the bounding box. */
+		/**
+		 * The bottommost coordinate of the bounding box.
+		 * Type: double
+		 */
 		yMax?: number | null;
 
-		/** The topmost coordinate of the bounding box. */
+		/**
+		 * The topmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		yMin?: number | null;
 	}
 
@@ -24028,16 +25860,28 @@ export namespace MyNS {
 		/** A time (frame) of a video to which this annotation pertains. Represented as the duration since the video's start. */
 		timeOffset: FormControl<string | null | undefined>,
 
-		/** The rightmost coordinate of the bounding box. */
+		/**
+		 * The rightmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		xMax: FormControl<number | null | undefined>,
 
-		/** The leftmost coordinate of the bounding box. */
+		/**
+		 * The leftmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		xMin: FormControl<number | null | undefined>,
 
-		/** The bottommost coordinate of the bounding box. */
+		/**
+		 * The bottommost coordinate of the bounding box.
+		 * Type: double
+		 */
 		yMax: FormControl<number | null | undefined>,
 
-		/** The topmost coordinate of the bounding box. */
+		/**
+		 * The topmost coordinate of the bounding box.
+		 * Type: double
+		 */
 		yMin: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SchemaVideoObjectTrackingAnnotationFormGroup() {
@@ -24136,7 +25980,10 @@ export namespace MyNS {
 		/** A filter for your search. You can use the following types of filters: * Resource type filters. The following strings filter for a specific type of MigratableResource: * `ml_engine_model_version:*` * `automl_model:*` * `automl_dataset:*` * `data_labeling_dataset:*` * "Migrated or not" filters. The following strings filter for resources that either have or have not already been migrated: * `last_migrate_time:*` filters for migrated resources. * `NOT last_migrate_time:*` filters for not yet migrated resources. */
 		filter?: string | null;
 
-		/** The standard page size. The default and maximum value is 100. */
+		/**
+		 * The standard page size. The default and maximum value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** The standard page token. */
@@ -24149,7 +25996,10 @@ export namespace MyNS {
 		/** A filter for your search. You can use the following types of filters: * Resource type filters. The following strings filter for a specific type of MigratableResource: * `ml_engine_model_version:*` * `automl_model:*` * `automl_dataset:*` * `data_labeling_dataset:*` * "Migrated or not" filters. The following strings filter for resources that either have or have not already been migrated: * `last_migrate_time:*` filters for migrated resources. * `NOT last_migrate_time:*` filters for not yet migrated resources. */
 		filter: FormControl<string | null | undefined>,
 
-		/** The standard page size. The default and maximum value is 100. */
+		/**
+		 * The standard page size. The default and maximum value is 100.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** The standard page token. */
@@ -24204,7 +26054,10 @@ export namespace MyNS {
 		/** Required. Objectives of the stats to retrieve. */
 		objectives?: Array<GoogleCloudAiplatformV1SearchModelDeploymentMonitoringStatsAnomaliesRequestStatsAnomaliesObjective>;
 
-		/** The standard list page size. */
+		/**
+		 * The standard list page size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize?: number | null;
 
 		/** A page token received from a previous JobService.SearchModelDeploymentMonitoringStatsAnomalies call. */
@@ -24226,7 +26079,10 @@ export namespace MyNS {
 		/** The feature display name. If specified, only return the stats belonging to this feature. Format: ModelMonitoringStatsAnomalies.FeatureHistoricStatsAnomalies.feature_display_name, example: "user_destination". */
 		featureDisplayName: FormControl<string | null | undefined>,
 
-		/** The standard list page size. */
+		/**
+		 * The standard list page size.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		pageSize: FormControl<number | null | undefined>,
 
 		/** A page token received from a previous JobService.SearchModelDeploymentMonitoringStatsAnomalies call. */
@@ -24251,7 +26107,10 @@ export namespace MyNS {
 	/** Stats requested for specific objective. */
 	export interface GoogleCloudAiplatformV1SearchModelDeploymentMonitoringStatsAnomaliesRequestStatsAnomaliesObjective {
 
-		/** If set, all attribution scores between SearchModelDeploymentMonitoringStatsAnomaliesRequest.start_time and SearchModelDeploymentMonitoringStatsAnomaliesRequest.end_time are fetched, and page token doesn't take effect in this case. Only used to retrieve attribution score for the top Features which has the highest attribution score in the latest monitoring run. */
+		/**
+		 * If set, all attribution scores between SearchModelDeploymentMonitoringStatsAnomaliesRequest.start_time and SearchModelDeploymentMonitoringStatsAnomaliesRequest.end_time are fetched, and page token doesn't take effect in this case. Only used to retrieve attribution score for the top Features which has the highest attribution score in the latest monitoring run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topFeatureCount?: number | null;
 		type?: GoogleCloudAiplatformV1ModelMonitoringStatsAnomaliesObjective | null;
 	}
@@ -24259,7 +26118,10 @@ export namespace MyNS {
 	/** Stats requested for specific objective. */
 	export interface GoogleCloudAiplatformV1SearchModelDeploymentMonitoringStatsAnomaliesRequestStatsAnomaliesObjectiveFormProperties {
 
-		/** If set, all attribution scores between SearchModelDeploymentMonitoringStatsAnomaliesRequest.start_time and SearchModelDeploymentMonitoringStatsAnomaliesRequest.end_time are fetched, and page token doesn't take effect in this case. Only used to retrieve attribution score for the top Features which has the highest attribution score in the latest monitoring run. */
+		/**
+		 * If set, all attribution scores between SearchModelDeploymentMonitoringStatsAnomaliesRequest.start_time and SearchModelDeploymentMonitoringStatsAnomaliesRequest.end_time are fetched, and page token doesn't take effect in this case. Only used to retrieve attribution score for the top Features which has the highest attribution score in the latest monitoring run.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		topFeatureCount: FormControl<number | null | undefined>,
 		type: FormControl<GoogleCloudAiplatformV1ModelMonitoringStatsAnomaliesObjective | null | undefined>,
 	}
@@ -24441,7 +26303,10 @@ export namespace MyNS {
 		/** Optional. This allows you to specify the "context" for a Trial; a context is a slice (a subspace) of the search space. Typical uses for contexts: 1) You are using Vizier to tune a server for best performance, but there's a strong weekly cycle. The context specifies the day-of-week. This allows Tuesday to generalize from Wednesday without assuming that everything is identical. 2) Imagine you're optimizing some medical treatment for people. As they walk in the door, you know certain facts about them (e.g. sex, weight, height, blood-pressure). Put that information in the context, and Vizier will adapt its suggestions to the patient. 3) You want to do a fair A/B test efficiently. Specify the "A" and "B" conditions as contexts, and Vizier will generalize between "A" and "B" conditions. If they are similar, this will allow Vizier to converge to the optimum faster than if "A" and "B" were separate Studies. NOTE: You can also enter contexts as REQUESTED Trials, e.g. via the CreateTrial() RPC; that's the asynchronous option where you don't need a close association between contexts and suggestions. NOTE: All the Parameters you set in a context MUST be defined in the Study. NOTE: You must supply 0 or $suggestion_count contexts. If you don't supply any contexts, Vizier will make suggestions from the full search space specified in the StudySpec; if you supply a full set of context, each suggestion will match the corresponding context. NOTE: A Context with no features set matches anything, and allows suggestions from the full search space. NOTE: Contexts MUST lie within the search space specified in the StudySpec. It's an error if they don't. NOTE: Contexts preferentially match ACTIVE then REQUESTED trials before new suggestions are generated. NOTE: Generation of suggestions involves a match between a Context and (optionally) a REQUESTED trial; if that match is not fully specified, a suggestion will be geneated in the merged subspace. */
 		contexts?: Array<GoogleCloudAiplatformV1TrialContext>;
 
-		/** Required. The number of suggestions requested. It must be positive. */
+		/**
+		 * Required. The number of suggestions requested. It must be positive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suggestionCount?: number | null;
 	}
 
@@ -24451,7 +26316,10 @@ export namespace MyNS {
 		/** Required. The identifier of the client that is requesting the suggestion. If multiple SuggestTrialsRequests have the same `client_id`, the service will return the identical suggested Trial if the Trial is pending, and provide a new Trial if the last suggested Trial was completed. */
 		clientId: FormControl<string | null | undefined>,
 
-		/** Required. The number of suggestions requested. It must be positive. */
+		/**
+		 * Required. The number of suggestions requested. It must be positive.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		suggestionCount: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleCloudAiplatformV1SuggestTrialsRequestFormGroup() {
@@ -25330,7 +27198,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -25340,7 +27211,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleIamV1PolicyFormGroup() {
@@ -25479,6 +27353,7 @@ export namespace MyNS {
 		 * @param {string} artifact Required. The resource name of the Artifact whose Lineage needs to be retrieved as a LineageSubgraph. Format: `projects/{project}/locations/{location}/metadataStores/{metadatastore}/artifacts/{artifact}` The request may error with FAILED_PRECONDITION if the number of Artifacts, the number of Executions, or the number of Events that would be returned for the Context exceeds 1000.
 		 * @param {string} filter Filter specifying the boolean condition for the Artifacts to satisfy in order to be part of the Lineage Subgraph. The syntax to define filter query is based on https://google.aip.dev/160. The supported set of filters include the following: * **Attribute filtering**: For example: `display_name = "test"` Supported fields include: `name`, `display_name`, `uri`, `state`, `schema_title`, `create_time`, and `update_time`. Time fields, such as `create_time` and `update_time`, require values specified in RFC-3339 format. For example: `create_time = "2020-11-19T11:30:00-04:00"` * **Metadata field**: To filter on metadata fields use traversal operation as follows: `metadata..`. For example: `metadata.field_1.number_value = 10.0` In case the field name contains special characters (such as colon), one can embed it inside double quote. For example: `metadata."field:1".number_value = 10.0` Each of the above supported filter types can be combined together using logical operators (`AND` & `OR`). Maximum nested expression depth allowed is 5. For example: `display_name = "test" AND metadata.field1.bool_value = true`.
 		 * @param {number} maxHops Specifies the size of the lineage graph in terms of number of hops from the specified artifact. Negative Value: INVALID_ARGUMENT error is returned 0: Only input artifact is returned. No value: Transitive closure is performed to return the complete graph.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GoogleCloudAiplatformV1LineageSubgraph} Successful response
 		 */
 		Aiplatform_projects_locations_metadataStores_artifacts_queryArtifactLineageSubgraph(artifact: string, filter: string | null | undefined, maxHops: number | null | undefined): Observable<GoogleCloudAiplatformV1LineageSubgraph> {
@@ -25532,6 +27407,7 @@ export namespace MyNS {
 		 * @param {Array<string>} annotationFilters An expression that specifies what Annotations will be returned per DataItem. Annotations satisfied either of the conditions will be returned. * `annotation_spec_id` - for = or !=. Must specify `saved_query_id=` - saved query id that annotations should belong to.
 		 * @param {string} annotationsFilter An expression for filtering the Annotations that will be returned per DataItem. * `annotation_spec_id` - for = or !=.
 		 * @param {number} annotationsLimit If set, only up to this many of Annotations will be returned per DataItemView. The maximum value is 1000. If not set, the maximum value will be used.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} dataItemFilter An expression for filtering the DataItem that will be returned. * `data_item_id` - for = or !=. * `labeled` - for = or !=. * `has_annotation(ANNOTATION_SPEC_ID)` - true only for DataItem that have at least one annotation with annotation_spec_id = `ANNOTATION_SPEC_ID` in the context of SavedQuery or DataLabelingJob. For example: * `data_item=1` * `has_annotation(5)`
 		 * @param {string} dataLabelingJob The resource name of a DataLabelingJob. Format: `projects/{project}/locations/{location}/dataLabelingJobs/{data_labeling_job}` If this field is set, all of the search will be done in the context of this DataLabelingJob.
 		 * @param {string} fieldMask Mask specifying which fields of DataItemView to read.
@@ -25540,6 +27416,7 @@ export namespace MyNS {
 		 * @param {string} orderByAnnotation_savedQuery Required. Saved query of the Annotation. Only Annotations belong to this saved query will be considered for ordering.
 		 * @param {string} orderByDataItem A comma-separated list of data item fields to order by, sorted in ascending order. Use "desc" after a field name for descending.
 		 * @param {number} pageSize Requested page size. Server may return fewer results than requested. Default and maximum page size is 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A token identifying a page of results for the server to return Typically obtained via SearchDataItemsResponse.next_page_token of the previous DatasetService.SearchDataItems call.
 		 * @param {string} savedQuery The resource name of a SavedQuery(annotation set in UI). Format: `projects/{project}/locations/{location}/datasets/{dataset}/savedQueries/{saved_query}` All of the search will be done in the context of this SavedQuery.
 		 * @return {GoogleCloudAiplatformV1SearchDataItemsResponse} Successful response
@@ -25553,6 +27430,7 @@ export namespace MyNS {
 		 * Get v1/{deploymentResourcePool}:queryDeployedModels
 		 * @param {string} deploymentResourcePool Required. The name of the target DeploymentResourcePool to query. Format: `projects/{project}/locations/{location}/deploymentResourcePools/{deployment_resource_pool}`
 		 * @param {number} pageSize The maximum number of DeployedModels to return. The service may return fewer than this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `QueryDeployedModels` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `QueryDeployedModels` must match the call that provided the page token.
 		 * @return {GoogleCloudAiplatformV1QueryDeployedModelsResponse} Successful response
 		 */
@@ -25855,6 +27733,7 @@ export namespace MyNS {
 		 * Get v1/{location}/featurestores:searchFeatures
 		 * @param {string} location Required. The resource name of the Location to search Features. Format: `projects/{project}/locations/{location}`
 		 * @param {number} pageSize The maximum number of Features to return. The service may return fewer than this value. If unspecified, at most 100 Features will be returned. The maximum value is 100; any value greater than 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous FeaturestoreService.SearchFeatures call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to FeaturestoreService.SearchFeatures, except `page_size`, must match the call that provided the page token.
 		 * @param {string} query Query string that is a conjunction of field-restricted queries and/or field-restricted filters. Field-restricted queries and filters can be combined using `AND` to form a conjunction. A field query is in the form FIELD:QUERY. This implicitly checks if QUERY exists as a substring within Feature's FIELD. The QUERY and the FIELD are converted to a sequence of words (i.e. tokens) for comparison. This is done by: * Removing leading/trailing whitespace and tokenizing the search value. Characters that are not one of alphanumeric `[a-zA-Z0-9]`, underscore `_`, or asterisk `*` are treated as delimiters for tokens. `*` is treated as a wildcard that matches characters within a token. * Ignoring case. * Prepending an asterisk to the first and appending an asterisk to the last token in QUERY. A QUERY must be either a singular token or a phrase. A phrase is one or multiple words enclosed in double quotation marks ("). With phrases, the order of the words is important. Words in the phrase must be matching in order and consecutively. Supported FIELDs for field-restricted queries: * `feature_id` * `description` * `entity_type_id` Examples: * `feature_id: foo` --> Matches a Feature with ID containing the substring `foo` (eg. `foo`, `foofeature`, `barfoo`). * `feature_id: foo*feature` --> Matches a Feature with ID containing the substring `foo*feature` (eg. `foobarfeature`). * `feature_id: foo AND description: bar` --> Matches a Feature with ID containing the substring `foo` and description containing the substring `bar`. Besides field queries, the following exact-match filters are supported. The exact-match filters do not support wildcards. Unlike field-restricted queries, exact-match filters are case-sensitive. * `feature_id`: Supports = comparisons. * `description`: Supports = comparisons. Multi-token filters should be enclosed in quotes. * `entity_type_id`: Supports = comparisons. * `value_type`: Supports = and != comparisons. * `labels`: Supports key-value equality as well as key presence. * `featurestore_id`: Supports = comparisons. Examples: * `description = "foo bar"` --> Any Feature with description exactly equal to `foo bar` * `value_type = DOUBLE` --> Features whose type is DOUBLE. * `labels.active = yes AND labels.env = prod` --> Features having both (active: yes) and (env: prod) labels. * `labels.env: *` --> Any Feature which has a label with `env` as the key.
 		 * @return {GoogleCloudAiplatformV1SearchFeaturesResponse} Successful response
@@ -25933,6 +27812,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {GoogleCloudLocationListLocationsResponse} Successful response
 		 */
@@ -25946,6 +27826,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -26010,6 +27891,7 @@ export namespace MyNS {
 		 * @param {string} filter An expression for filtering the results of the request. For field names both snake_case and camelCase are supported. * `labels` supports general map functions that is: * `labels.key=value` - key:value equality * `labels.key:* or labels:key - key existence * A key including a space must be quoted. `labels."a key"`. Some examples: * `labels.myKey="myValue"`
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `create_time` * `update_time` Example: `update_time asc, create_time desc`.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via next_page_token of the previous ListModelVersions call.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListModelVersionsResponse} Successful response
@@ -26094,6 +27976,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -26119,6 +28002,7 @@ export namespace MyNS {
 		 * @param {string} filter The standard list filter.
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListAnnotationsResponse} Successful response
@@ -26134,6 +28018,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter specifying the boolean condition for the Artifacts to satisfy in order to be part of the result set. The syntax to define filter query is based on https://google.aip.dev/160. The supported set of filters include the following: * **Attribute filtering**: For example: `display_name = "test"`. Supported fields include: `name`, `display_name`, `uri`, `state`, `schema_title`, `create_time`, and `update_time`. Time fields, such as `create_time` and `update_time`, require values specified in RFC-3339 format. For example: `create_time = "2020-11-19T11:30:00-04:00"` * **Metadata field**: To filter on metadata fields use traversal operation as follows: `metadata..`. For example: `metadata.field_1.number_value = 10.0` In case the field name contains special characters (such as colon), one can embed it inside double quote. For example: `metadata."field:1".number_value = 10.0` * **Context based filtering**: To filter Artifacts based on the contexts to which they belong, use the function operator with the full resource name `in_context()`. For example: `in_context("projects//locations//metadataStores//contexts/")` Each of the above supported filter types can be combined together using logical operators (`AND` & `OR`). Maximum nested expression depth allowed is 5. For example: `display_name = "test" AND metadata.field1.bool_value = true`.
 		 * @param {string} orderBy How the list of messages is ordered. Specify the values to order by and an ordering operation. The default sorting order is ascending. To specify descending order for a field, users append a " desc" suffix; for example: "foo desc, bar". Subfields are specified with a `.` character, such as foo.bar. see https://google.aip.dev/132#ordering for more details.
 		 * @param {number} pageSize The maximum number of Artifacts to return. The service may return fewer. Must be in range 1-1000, inclusive. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous MetadataService.ListArtifacts call. Provide this to retrieve the subsequent page. When paginating, all other provided parameters must match the call that provided the page token. (Otherwise the request will fail with INVALID_ARGUMENT error.)
 		 * @return {GoogleCloudAiplatformV1ListArtifactsResponse} Successful response
 		 */
@@ -26168,6 +28053,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the Location to list the BatchPredictionJobs from. Format: `projects/{project}/locations/{location}`
 		 * @param {string} filter The standard list filter. Supported fields: * `display_name` supports `=`, `!=` comparisons, and `:` wildcard. * `model_display_name` supports `=`, `!=` comparisons. * `state` supports `=`, `!=` comparisons. * `create_time` supports `=`, `!=`,`<`, `<=`,`>`, `>=` comparisons. `create_time` must be in RFC 3339 format. * `labels` supports general map functions that is: `labels.key=value` - key:value equality `labels.key:* - key existence Some examples of using the filter are: * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"` * `state!="JOB_STATE_FAILED" OR display_name="my_job"` * `NOT display_name="my_job"` * `create_time>"2021-05-18T00:00:00Z"` * `labels.keyA=valueA` * `labels.keyB:*`
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListBatchPredictionJobsResponse.next_page_token of the previous JobService.ListBatchPredictionJobs call.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListBatchPredictionJobsResponse} Successful response
@@ -26193,6 +28079,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter specifying the boolean condition for the Contexts to satisfy in order to be part of the result set. The syntax to define filter query is based on https://google.aip.dev/160. Following are the supported set of filters: * **Attribute filtering**: For example: `display_name = "test"`. Supported fields include: `name`, `display_name`, `schema_title`, `create_time`, and `update_time`. Time fields, such as `create_time` and `update_time`, require values specified in RFC-3339 format. For example: `create_time = "2020-11-19T11:30:00-04:00"`. * **Metadata field**: To filter on metadata fields use traversal operation as follows: `metadata..`. For example: `metadata.field_1.number_value = 10.0`. In case the field name contains special characters (such as colon), one can embed it inside double quote. For example: `metadata."field:1".number_value = 10.0` * **Parent Child filtering**: To filter Contexts based on parent-child relationship use the HAS operator as follows: ``` parent_contexts: "projects//locations//metadataStores//contexts/" child_contexts: "projects//locations//metadataStores//contexts/" ``` Each of the above supported filters can be combined together using logical operators (`AND` & `OR`). Maximum nested expression depth allowed is 5. For example: `display_name = "test" AND metadata.field1.bool_value = true`.
 		 * @param {string} orderBy How the list of messages is ordered. Specify the values to order by and an ordering operation. The default sorting order is ascending. To specify descending order for a field, users append a " desc" suffix; for example: "foo desc, bar". Subfields are specified with a `.` character, such as foo.bar. see https://google.aip.dev/132#ordering for more details.
 		 * @param {number} pageSize The maximum number of Contexts to return. The service may return fewer. Must be in range 1-1000, inclusive. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous MetadataService.ListContexts call. Provide this to retrieve the subsequent page. When paginating, all other provided parameters must match the call that provided the page token. (Otherwise the request will fail with INVALID_ARGUMENT error.)
 		 * @return {GoogleCloudAiplatformV1ListContextsResponse} Successful response
 		 */
@@ -26227,6 +28114,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the Location to list the CustomJobs from. Format: `projects/{project}/locations/{location}`
 		 * @param {string} filter The standard list filter. Supported fields: * `display_name` supports `=`, `!=` comparisons, and `:` wildcard. * `state` supports `=`, `!=` comparisons. * `create_time` supports `=`, `!=`,`<`, `<=`,`>`, `>=` comparisons. `create_time` must be in RFC 3339 format. * `labels` supports general map functions that is: `labels.key=value` - key:value equality `labels.key:* - key existence Some examples of using the filter are: * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"` * `state!="JOB_STATE_FAILED" OR display_name="my_job"` * `NOT display_name="my_job"` * `create_time>"2021-05-18T00:00:00Z"` * `labels.keyA=valueA` * `labels.keyB:*`
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListCustomJobsResponse.next_page_token of the previous JobService.ListCustomJobs call.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListCustomJobsResponse} Successful response
@@ -26252,6 +28140,7 @@ export namespace MyNS {
 		 * @param {string} filter The standard list filter.
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListDataItemsResponse} Successful response
@@ -26267,6 +28156,7 @@ export namespace MyNS {
 		 * @param {string} filter The standard list filter. Supported fields: * `display_name` supports `=`, `!=` comparisons, and `:` wildcard. * `state` supports `=`, `!=` comparisons. * `create_time` supports `=`, `!=`,`<`, `<=`,`>`, `>=` comparisons. `create_time` must be in RFC 3339 format. * `labels` supports general map functions that is: `labels.key=value` - key:value equality `labels.key:* - key existence Some examples of using the filter are: * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"` * `state!="JOB_STATE_FAILED" OR display_name="my_job"` * `NOT display_name="my_job"` * `create_time>"2021-05-18T00:00:00Z"` * `labels.keyA=valueA` * `labels.keyB:*`
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order by default. Use `desc` after a field name for descending.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @param {string} readMask Mask specifying which fields to read. FieldMask represents a set of symbolic field paths. For example, the mask can be `paths: "name"`. The "name" here is a field in DataLabelingJob. If this field is not set, all fields of the DataLabelingJob are returned.
 		 * @return {GoogleCloudAiplatformV1ListDataLabelingJobsResponse} Successful response
@@ -26292,6 +28182,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. The standard list filter.
 		 * @param {string} orderBy Optional. A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending.
 		 * @param {number} pageSize Optional. The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The standard list page token.
 		 * @param {string} readMask Optional. Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListDatasetVersionsResponse} Successful response
@@ -26317,6 +28208,7 @@ export namespace MyNS {
 		 * @param {string} filter An expression for filtering the results of the request. For field names both snake_case and camelCase are supported. * `display_name`: supports = and != * `metadata_schema_uri`: supports = and != * `labels` supports general map functions that is: * `labels.key=value` - key:value equality * `labels.key:* or labels:key - key existence * A key including a space must be quoted. `labels."a key"`. Some examples: * `displayName="myDisplayName"` * `labels.myKey="myValue"`
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `display_name` * `create_time` * `update_time`
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListDatasetsResponse} Successful response
@@ -26340,6 +28232,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/deploymentResourcePools
 		 * @param {string} parent Required. The parent Location which owns this collection of DeploymentResourcePools. Format: `projects/{project}/locations/{location}`
 		 * @param {number} pageSize The maximum number of DeploymentResourcePools to return. The service may return fewer than this value.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous `ListDeploymentResourcePools` call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to `ListDeploymentResourcePools` must match the call that provided the page token.
 		 * @return {GoogleCloudAiplatformV1ListDeploymentResourcePoolsResponse} Successful response
 		 */
@@ -26364,6 +28257,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. An expression for filtering the results of the request. For field names both snake_case and camelCase are supported. * `endpoint` supports = and !=. `endpoint` represents the Endpoint ID, i.e. the last segment of the Endpoint's resource name. * `display_name` supports = and, != * `labels` supports general map functions that is: * `labels.key=value` - key:value equality * `labels.key:* or labels:key - key existence * A key including a space must be quoted. `labels."a key"`. Some examples: * `endpoint=1` * `displayName="myDisplayName"` * `labels.myKey="myValue"`
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `display_name` * `create_time` * `update_time` Example: `display_name, create_time desc`.
 		 * @param {number} pageSize Optional. The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The standard list page token. Typically obtained via ListEndpointsResponse.next_page_token of the previous EndpointService.ListEndpoints call.
 		 * @param {string} readMask Optional. Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListEndpointsResponse} Successful response
@@ -26390,6 +28284,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the EntityTypes that match the filter expression. The following filters are supported: * `create_time`: Supports `=`, `!=`, `<`, `>`, `>=`, and `<=` comparisons. Values must be in RFC 3339 format. * `update_time`: Supports `=`, `!=`, `<`, `>`, `>=`, and `<=` comparisons. Values must be in RFC 3339 format. * `labels`: Supports key-value equality as well as key presence. Examples: * `create_time > \"2020-01-31T15:30:00.000000Z\" OR update_time > \"2020-01-31T15:30:00.000000Z\"` --> EntityTypes created or updated after 2020-01-31T15:30:00.000000Z. * `labels.active = yes AND labels.env = prod` --> EntityTypes having both (active: yes) and (env: prod) labels. * `labels.env: *` --> Any EntityType which has a label with 'env' as the key.
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `entity_type_id` * `create_time` * `update_time`
 		 * @param {number} pageSize The maximum number of EntityTypes to return. The service may return fewer than this value. If unspecified, at most 1000 EntityTypes will be returned. The maximum value is 1000; any value greater than 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous FeaturestoreService.ListEntityTypes call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to FeaturestoreService.ListEntityTypes must match the call that provided the page token.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListEntityTypesResponse} Successful response
@@ -26415,6 +28310,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the Model to list the ModelEvaluations from. Format: `projects/{project}/locations/{location}/models/{model}`
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListModelEvaluationsResponse.next_page_token of the previous ModelService.ListModelEvaluations call.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListModelEvaluationsResponse} Successful response
@@ -26440,6 +28336,7 @@ export namespace MyNS {
 		 * @param {string} filter Filter specifying the boolean condition for the Executions to satisfy in order to be part of the result set. The syntax to define filter query is based on https://google.aip.dev/160. Following are the supported set of filters: * **Attribute filtering**: For example: `display_name = "test"`. Supported fields include: `name`, `display_name`, `state`, `schema_title`, `create_time`, and `update_time`. Time fields, such as `create_time` and `update_time`, require values specified in RFC-3339 format. For example: `create_time = "2020-11-19T11:30:00-04:00"`. * **Metadata field**: To filter on metadata fields use traversal operation as follows: `metadata..` For example: `metadata.field_1.number_value = 10.0` In case the field name contains special characters (such as colon), one can embed it inside double quote. For example: `metadata."field:1".number_value = 10.0` * **Context based filtering**: To filter Executions based on the contexts to which they belong use the function operator with the full resource name: `in_context()`. For example: `in_context("projects//locations//metadataStores//contexts/")` Each of the above supported filters can be combined together using logical operators (`AND` & `OR`). Maximum nested expression depth allowed is 5. For example: `display_name = "test" AND metadata.field1.bool_value = true`.
 		 * @param {string} orderBy How the list of messages is ordered. Specify the values to order by and an ordering operation. The default sorting order is ascending. To specify descending order for a field, users append a " desc" suffix; for example: "foo desc, bar". Subfields are specified with a `.` character, such as foo.bar. see https://google.aip.dev/132#ordering for more details.
 		 * @param {number} pageSize The maximum number of Executions to return. The service may return fewer. Must be in range 1-1000, inclusive. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous MetadataService.ListExecutions call. Provide this to retrieve the subsequent page. When paginating, all other provided parameters must match the call that provided the page token. (Otherwise the request will fail with an INVALID_ARGUMENT error.)
 		 * @return {GoogleCloudAiplatformV1ListExecutionsResponse} Successful response
 		 */
@@ -26475,6 +28372,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the TensorboardExperiments that match the filter expression.
 		 * @param {string} orderBy Field to use to sort the list.
 		 * @param {number} pageSize The maximum number of TensorboardExperiments to return. The service may return fewer than this value. If unspecified, at most 50 TensorboardExperiments are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous TensorboardService.ListTensorboardExperiments call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to TensorboardService.ListTensorboardExperiments must match the call that provided the page token.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListTensorboardExperimentsResponse} Successful response
@@ -26501,6 +28399,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the FeatureGroups that match the filter expression. The following fields are supported: * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. * `labels`: Supports key-value equality and key presence. Examples: * `create_time > "2020-01-01" OR update_time > "2020-01-01"` FeatureGroups created or updated after 2020-01-01. * `labels.env = "prod"` FeatureGroups with label "env" set to "prod".
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported Fields: * `create_time` * `update_time`
 		 * @param {number} pageSize The maximum number of FeatureGroups to return. The service may return fewer than this value. If unspecified, at most 100 FeatureGroups will be returned. The maximum value is 100; any value greater than 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous FeatureGroupAdminService.ListFeatureGroups call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to FeatureGroupAdminService.ListFeatureGroups must match the call that provided the page token.
 		 * @return {GoogleCloudAiplatformV1ListFeatureGroupsResponse} Successful response
 		 */
@@ -26526,6 +28425,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the FeatureOnlineStores that match the filter expression. The following fields are supported: * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. * `labels`: Supports key-value equality and key presence. Examples: * `create_time > "2020-01-01" OR update_time > "2020-01-01"` FeatureOnlineStores created or updated after 2020-01-01. * `labels.env = "prod"` FeatureOnlineStores with label "env" set to "prod".
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported Fields: * `create_time` * `update_time`
 		 * @param {number} pageSize The maximum number of FeatureOnlineStores to return. The service may return fewer than this value. If unspecified, at most 100 FeatureOnlineStores will be returned. The maximum value is 100; any value greater than 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous FeatureOnlineStoreAdminService.ListFeatureOnlineStores call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to FeatureOnlineStoreAdminService.ListFeatureOnlineStores must match the call that provided the page token.
 		 * @return {GoogleCloudAiplatformV1ListFeatureOnlineStoresResponse} Successful response
 		 */
@@ -26551,6 +28451,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the FeatureViewSyncs that match the filter expression. The following filters are supported: * `create_time`: Supports `=`, `!=`, `<`, `>`, `>=`, and `<=` comparisons. Values must be in RFC 3339 format. Examples: * `create_time > \"2020-01-31T15:30:00.000000Z\"` --> FeatureViewSyncs created after 2020-01-31T15:30:00.000000Z.
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `create_time`
 		 * @param {number} pageSize The maximum number of FeatureViewSyncs to return. The service may return fewer than this value. If unspecified, at most 1000 FeatureViewSyncs will be returned. The maximum value is 1000; any value greater than 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous FeatureOnlineStoreAdminService.ListFeatureViewSyncs call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to FeatureOnlineStoreAdminService.ListFeatureViewSyncs must match the call that provided the page token.
 		 * @return {GoogleCloudAiplatformV1ListFeatureViewSyncsResponse} Successful response
 		 */
@@ -26565,6 +28466,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the FeatureViews that match the filter expression. The following filters are supported: * `create_time`: Supports `=`, `!=`, `<`, `>`, `>=`, and `<=` comparisons. Values must be in RFC 3339 format. * `update_time`: Supports `=`, `!=`, `<`, `>`, `>=`, and `<=` comparisons. Values must be in RFC 3339 format. * `labels`: Supports key-value equality as well as key presence. Examples: * `create_time > \"2020-01-31T15:30:00.000000Z\" OR update_time > \"2020-01-31T15:30:00.000000Z\"` --> FeatureViews created or updated after 2020-01-31T15:30:00.000000Z. * `labels.active = yes AND labels.env = prod` --> FeatureViews having both (active: yes) and (env: prod) labels. * `labels.env: *` --> Any FeatureView which has a label with 'env' as the key.
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `feature_view_id` * `create_time` * `update_time`
 		 * @param {number} pageSize The maximum number of FeatureViews to return. The service may return fewer than this value. If unspecified, at most 1000 FeatureViews will be returned. The maximum value is 1000; any value greater than 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous FeatureOnlineStoreAdminService.ListFeatureViews call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to FeatureOnlineStoreAdminService.ListFeatureViews must match the call that provided the page token.
 		 * @return {GoogleCloudAiplatformV1ListFeatureViewsResponse} Successful response
 		 */
@@ -26590,8 +28492,10 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the Location to list Features. Format for entity_type as parent: `projects/{project}/locations/{location}/featurestores/{featurestore}/entityTypes/{entity_type}` Format for feature_group as parent: `projects/{project}/locations/{location}/featureGroups/{feature_group}`
 		 * @param {string} filter Lists the Features that match the filter expression. The following filters are supported: * `value_type`: Supports = and != comparisons. * `create_time`: Supports =, !=, <, >, >=, and <= comparisons. Values must be in RFC 3339 format. * `update_time`: Supports =, !=, <, >, >=, and <= comparisons. Values must be in RFC 3339 format. * `labels`: Supports key-value equality as well as key presence. Examples: * `value_type = DOUBLE` --> Features whose type is DOUBLE. * `create_time > \"2020-01-31T15:30:00.000000Z\" OR update_time > \"2020-01-31T15:30:00.000000Z\"` --> EntityTypes created or updated after 2020-01-31T15:30:00.000000Z. * `labels.active = yes AND labels.env = prod` --> Features having both (active: yes) and (env: prod) labels. * `labels.env: *` --> Any Feature which has a label with 'env' as the key.
 		 * @param {number} latestStatsCount Only applicable for Vertex AI Feature Store (Legacy). If set, return the most recent ListFeaturesRequest.latest_stats_count of stats for each Feature in response. Valid value is [0, 10]. If number of stats exists < ListFeaturesRequest.latest_stats_count, return all existing stats.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `feature_id` * `value_type` (Not supported for FeatureRegistry Feature) * `create_time` * `update_time`
 		 * @param {number} pageSize The maximum number of Features to return. The service may return fewer than this value. If unspecified, at most 1000 Features will be returned. The maximum value is 1000; any value greater than 1000 will be coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous FeaturestoreService.ListFeatures call or FeatureRegistryService.ListFeatures call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to FeaturestoreService.ListFeatures or FeatureRegistryService.ListFeatures must match the call that provided the page token.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListFeaturesResponse} Successful response
@@ -26628,6 +28532,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the featurestores that match the filter expression. The following fields are supported: * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. * `online_serving_config.fixed_node_count`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. * `labels`: Supports key-value equality and key presence. Examples: * `create_time > "2020-01-01" OR update_time > "2020-01-01"` Featurestores created or updated after 2020-01-01. * `labels.env = "prod"` Featurestores with label "env" set to "prod".
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported Fields: * `create_time` * `update_time` * `online_serving_config.fixed_node_count`
 		 * @param {number} pageSize The maximum number of Featurestores to return. The service may return fewer than this value. If unspecified, at most 100 Featurestores will be returned. The maximum value is 100; any value greater than 100 will be coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous FeaturestoreService.ListFeaturestores call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to FeaturestoreService.ListFeaturestores must match the call that provided the page token.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListFeaturestoresResponse} Successful response
@@ -26653,6 +28558,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the Location to list the HyperparameterTuningJobs from. Format: `projects/{project}/locations/{location}`
 		 * @param {string} filter The standard list filter. Supported fields: * `display_name` supports `=`, `!=` comparisons, and `:` wildcard. * `state` supports `=`, `!=` comparisons. * `create_time` supports `=`, `!=`,`<`, `<=`,`>`, `>=` comparisons. `create_time` must be in RFC 3339 format. * `labels` supports general map functions that is: `labels.key=value` - key:value equality `labels.key:* - key existence Some examples of using the filter are: * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"` * `state!="JOB_STATE_FAILED" OR display_name="my_job"` * `NOT display_name="my_job"` * `create_time>"2021-05-18T00:00:00Z"` * `labels.keyA=valueA` * `labels.keyB:*`
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListHyperparameterTuningJobsResponse.next_page_token of the previous JobService.ListHyperparameterTuningJobs call.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListHyperparameterTuningJobsResponse} Successful response
@@ -26677,6 +28583,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the Location from which to list the IndexEndpoints. Format: `projects/{project}/locations/{location}`
 		 * @param {string} filter Optional. An expression for filtering the results of the request. For field names both snake_case and camelCase are supported. * `index_endpoint` supports = and !=. `index_endpoint` represents the IndexEndpoint ID, ie. the last segment of the IndexEndpoint's resourcename. * `display_name` supports =, != and regex() (uses [re2](https://github.com/google/re2/wiki/Syntax) syntax) * `labels` supports general map functions that is: `labels.key=value` - key:value equality `labels.key:* or labels:key - key existence A key including a space must be quoted. `labels."a key"`. Some examples: * `index_endpoint="1"` * `display_name="myDisplayName"` * `regex(display_name, "^A") -> The display name starts with an A. * `labels.myKey="myValue"`
 		 * @param {number} pageSize Optional. The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The standard list page token. Typically obtained via ListIndexEndpointsResponse.next_page_token of the previous IndexEndpointService.ListIndexEndpoints call.
 		 * @param {string} readMask Optional. Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListIndexEndpointsResponse} Successful response
@@ -26701,6 +28608,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the Location from which to list the Indexes. Format: `projects/{project}/locations/{location}`
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListIndexesResponse.next_page_token of the previous IndexService.ListIndexes call.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListIndexesResponse} Successful response
@@ -26725,6 +28633,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The MetadataStore whose MetadataSchemas should be listed. Format: `projects/{project}/locations/{location}/metadataStores/{metadatastore}`
 		 * @param {string} filter A query to filter available MetadataSchemas for matching results.
 		 * @param {number} pageSize The maximum number of MetadataSchemas to return. The service may return fewer. Must be in range 1-1000, inclusive. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous MetadataService.ListMetadataSchemas call. Provide this to retrieve the next page. When paginating, all other provided parameters must match the call that provided the page token. (Otherwise the request will fail with INVALID_ARGUMENT error.)
 		 * @return {GoogleCloudAiplatformV1ListMetadataSchemasResponse} Successful response
 		 */
@@ -26748,6 +28657,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/metadataStores
 		 * @param {string} parent Required. The Location whose MetadataStores should be listed. Format: `projects/{project}/locations/{location}`
 		 * @param {number} pageSize The maximum number of Metadata Stores to return. The service may return fewer. Must be in range 1-1000, inclusive. Defaults to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous MetadataService.ListMetadataStores call. Provide this to retrieve the subsequent page. When paginating, all other provided parameters must match the call that provided the page token. (Otherwise the request will fail with INVALID_ARGUMENT error.)
 		 * @return {GoogleCloudAiplatformV1ListMetadataStoresResponse} Successful response
 		 */
@@ -26792,6 +28702,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The parent of the ModelDeploymentMonitoringJob. Format: `projects/{project}/locations/{location}`
 		 * @param {string} filter The standard list filter. Supported fields: * `display_name` supports `=`, `!=` comparisons, and `:` wildcard. * `state` supports `=`, `!=` comparisons. * `create_time` supports `=`, `!=`,`<`, `<=`,`>`, `>=` comparisons. `create_time` must be in RFC 3339 format. * `labels` supports general map functions that is: `labels.key=value` - key:value equality `labels.key:* - key existence Some examples of using the filter are: * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"` * `state!="JOB_STATE_FAILED" OR display_name="my_job"` * `NOT display_name="my_job"` * `create_time>"2021-05-18T00:00:00Z"` * `labels.keyA=valueA` * `labels.keyB:*`
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @param {string} readMask Mask specifying which fields to read
 		 * @return {GoogleCloudAiplatformV1ListModelDeploymentMonitoringJobsResponse} Successful response
@@ -26817,6 +28728,7 @@ export namespace MyNS {
 		 * @param {string} filter An expression for filtering the results of the request. For field names both snake_case and camelCase are supported. * `model` supports = and !=. `model` represents the Model ID, i.e. the last segment of the Model's resource name. * `display_name` supports = and != * `labels` supports general map functions that is: * `labels.key=value` - key:value equality * `labels.key:* or labels:key - key existence * A key including a space must be quoted. `labels."a key"`. Some examples: * `model=1234` * `displayName="myDisplayName"` * `labels.myKey="myValue"`
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `display_name` * `create_time` * `update_time` Example: `display_name, create_time desc`.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListModelsResponse.next_page_token of the previous ModelService.ListModels call.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListModelsResponse} Successful response
@@ -26851,6 +28763,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the Location to list the NasJobs from. Format: `projects/{project}/locations/{location}`
 		 * @param {string} filter The standard list filter. Supported fields: * `display_name` supports `=`, `!=` comparisons, and `:` wildcard. * `state` supports `=`, `!=` comparisons. * `create_time` supports `=`, `!=`,`<`, `<=`,`>`, `>=` comparisons. `create_time` must be in RFC 3339 format. * `labels` supports general map functions that is: `labels.key=value` - key:value equality `labels.key:* - key existence Some examples of using the filter are: * `state="JOB_STATE_SUCCEEDED" AND display_name:"my_job_*"` * `state!="JOB_STATE_FAILED" OR display_name="my_job"` * `NOT display_name="my_job"` * `create_time>"2021-05-18T00:00:00Z"` * `labels.keyA=valueA` * `labels.keyB:*`
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListNasJobsResponse.next_page_token of the previous JobService.ListNasJobs call.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListNasJobsResponse} Successful response
@@ -26874,6 +28787,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/nasTrialDetails
 		 * @param {string} parent Required. The name of the NasJob resource. Format: `projects/{project}/locations/{location}/nasJobs/{nas_job}`
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListNasTrialDetailsResponse.next_page_token of the previous JobService.ListNasTrialDetails call.
 		 * @return {GoogleCloudAiplatformV1ListNasTrialDetailsResponse} Successful response
 		 */
@@ -26888,6 +28802,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. An expression for filtering the results of the request. For field names both snake_case and camelCase are supported. * `notebookRuntimeTemplate` supports = and !=. `notebookRuntimeTemplate` represents the NotebookRuntimeTemplate ID, i.e. the last segment of the NotebookRuntimeTemplate's resource name. * `display_name` supports = and != * `labels` supports general map functions that is: * `labels.key=value` - key:value equality * `labels.key:* or labels:key - key existence * A key including a space must be quoted. `labels."a key"`. * `notebookRuntimeType` supports = and !=. notebookRuntimeType enum: [USER_DEFINED, ONE_CLICK]. Some examples: * `notebookRuntimeTemplate=notebookRuntimeTemplate123` * `displayName="myDisplayName"` * `labels.myKey="myValue"` * `notebookRuntimeType=USER_DEFINED`
 		 * @param {string} orderBy Optional. A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `display_name` * `create_time` * `update_time` Example: `display_name, create_time desc`.
 		 * @param {number} pageSize Optional. The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The standard list page token. Typically obtained via ListNotebookRuntimeTemplatesResponse.next_page_token of the previous NotebookService.ListNotebookRuntimeTemplates call.
 		 * @param {string} readMask Optional. Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListNotebookRuntimeTemplatesResponse} Successful response
@@ -26914,6 +28829,7 @@ export namespace MyNS {
 		 * @param {string} filter Optional. An expression for filtering the results of the request. For field names both snake_case and camelCase are supported. * `notebookRuntime` supports = and !=. `notebookRuntime` represents the NotebookRuntime ID, i.e. the last segment of the NotebookRuntime's resource name. * `displayName` supports = and != and regex. * `notebookRuntimeTemplate` supports = and !=. `notebookRuntimeTemplate` represents the NotebookRuntimeTemplate ID, i.e. the last segment of the NotebookRuntimeTemplate's resource name. * `healthState` supports = and !=. healthState enum: [HEALTHY, UNHEALTHY, HEALTH_STATE_UNSPECIFIED]. * `runtimeState` supports = and !=. runtimeState enum: [RUNTIME_STATE_UNSPECIFIED, RUNNING, BEING_STARTED, BEING_STOPPED, STOPPED, BEING_UPGRADED]. * `runtimeUser` supports = and !=. * API version is UI only: `uiState` supports = and !=. uiState enum: [UI_RESOURCE_STATE_UNSPECIFIED, UI_RESOURCE_STATE_BEING_CREATED, UI_RESOURCE_STATE_ACTIVE, UI_RESOURCE_STATE_BEING_DELETED, UI_RESOURCE_STATE_CREATION_FAILED]. * `notebookRuntimeType` supports = and !=. notebookRuntimeType enum: [USER_DEFINED, ONE_CLICK]. Some examples: * `notebookRuntime="notebookRuntime123"` * `displayName="myDisplayName"` and `displayName=~"myDisplayNameRegex"` * `notebookRuntimeTemplate="notebookRuntimeTemplate321"` * `healthState=HEALTHY` * `runtimeState=RUNNING` * `runtimeUser="test@google.com"` * `uiState=UI_RESOURCE_STATE_BEING_DELETED` * `notebookRuntimeType=USER_DEFINED`
 		 * @param {string} orderBy Optional. A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending. Supported fields: * `display_name` * `create_time` * `update_time` Example: `display_name, create_time desc`.
 		 * @param {number} pageSize Optional. The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. The standard list page token. Typically obtained via ListNotebookRuntimesResponse.next_page_token of the previous NotebookService.ListNotebookRuntimes call.
 		 * @param {string} readMask Optional. Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListNotebookRuntimesResponse} Successful response
@@ -26939,6 +28855,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the PipelineJobs that match the filter expression. The following fields are supported: * `pipeline_name`: Supports `=` and `!=` comparisons. * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard. * `pipeline_job_user_id`: Supports `=`, `!=` comparisons, and `:` wildcard. for example, can check if pipeline's display_name contains *step* by doing display_name:\"*step*\" * `state`: Supports `=` and `!=` comparisons. * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. * `update_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. * `end_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. * `labels`: Supports key-value equality and key presence. * `template_uri`: Supports `=`, `!=` comparisons, and `:` wildcard. * `template_metadata.version`: Supports `=`, `!=` comparisons, and `:` wildcard. Filter expressions can be combined together using logical operators (`AND` & `OR`). For example: `pipeline_name="test" AND create_time>"2020-05-18T13:30:00Z"`. The syntax to define filter expression is based on https://google.aip.dev/160. Examples: * `create_time>"2021-05-18T00:00:00Z" OR update_time>"2020-05-18T00:00:00Z"` PipelineJobs created or updated after 2020-05-18 00:00:00 UTC. * `labels.env = "prod"` PipelineJobs with label "env" set to "prod".
 		 * @param {string} orderBy A comma-separated list of fields to order by. The default sort order is in ascending order. Use "desc" after a field name for descending. You can have multiple order_by fields provided e.g. "create_time desc, end_time", "end_time, start_time, update_time" For example, using "create_time desc, end_time" will order results by create time in descending order, and if there are multiple jobs having the same create time, order them by the end time in ascending order. if order_by is not specified, it will order by default order is create time in descending order. Supported fields: * `create_time` * `update_time` * `end_time` * `start_time`
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListPipelineJobsResponse.next_page_token of the previous PipelineService.ListPipelineJobs call.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListPipelineJobsResponse} Successful response
@@ -26965,6 +28882,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the TensorboardRuns that match the filter expression.
 		 * @param {string} orderBy Field to use to sort the list.
 		 * @param {number} pageSize The maximum number of TensorboardRuns to return. The service may return fewer than this value. If unspecified, at most 50 TensorboardRuns are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous TensorboardService.ListTensorboardRuns call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to TensorboardService.ListTensorboardRuns must match the call that provided the page token.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListTensorboardRunsResponse} Successful response
@@ -27001,6 +28919,7 @@ export namespace MyNS {
 		 * @param {string} filter The standard list filter.
 		 * @param {string} orderBy A comma-separated list of fields to order by, sorted in ascending order. Use "desc" after a field name for descending.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListSavedQueriesResponse} Successful response
@@ -27016,6 +28935,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the Schedules that match the filter expression. The following fields are supported: * `display_name`: Supports `=`, `!=` comparisons, and `:` wildcard. * `state`: Supports `=` and `!=` comparisons. * `request`: Supports existence of the check. (e.g. `create_pipeline_job_request:*` --> Schedule has create_pipeline_job_request). * `create_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. * `start_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. * `end_time`: Supports `=`, `!=`, `<`, `>`, `<=`, `>=` comparisons and `:*` existence check. Values must be in RFC 3339 format. * `next_run_time`: Supports `=`, `!=`, `<`, `>`, `<=`, and `>=` comparisons. Values must be in RFC 3339 format. Filter expressions can be combined together using logical operators (`NOT`, `AND` & `OR`). The syntax to define filter expression is based on https://google.aip.dev/160. Examples: * `state="ACTIVE" AND display_name:"my_schedule_*"` * `NOT display_name="my_schedule"` * `create_time>"2021-05-18T00:00:00Z"` * `end_time>"2021-05-18T00:00:00Z" OR NOT end_time:*` * `create_pipeline_job_request:*`
 		 * @param {string} orderBy A comma-separated list of fields to order by. The default sort order is in ascending order. Use "desc" after a field name for descending. You can have multiple order_by fields provided. For example, using "create_time desc, end_time" will order results by create time in descending order, and if there are multiple schedules having the same create time, order them by the end time in ascending order. If order_by is not specified, it will order by default with create_time in descending order. Supported fields: * `create_time` * `start_time` * `end_time` * `next_run_time`
 		 * @param {number} pageSize The standard list page size. Default to 100 if not specified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListSchedulesResponse.next_page_token of the previous ScheduleService.ListSchedules call.
 		 * @return {GoogleCloudAiplatformV1ListSchedulesResponse} Successful response
 		 */
@@ -27039,6 +28959,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the ModelEvaluation to list the ModelEvaluationSlices from. Format: `projects/{project}/locations/{location}/models/{model}/evaluations/{evaluation}`
 		 * @param {string} filter The standard list filter. * `slice.dimension` - for =.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListModelEvaluationSlicesResponse.next_page_token of the previous ModelService.ListModelEvaluationSlices call.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListModelEvaluationSlicesResponse} Successful response
@@ -27052,6 +28973,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/specialistPools
 		 * @param {string} parent Required. The name of the SpecialistPool's parent resource. Format: `projects/{project}/locations/{location}`
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained by ListSpecialistPoolsResponse.next_page_token of the previous SpecialistPoolService.ListSpecialistPools call. Return first page if empty.
 		 * @param {string} readMask Mask specifying which fields to read. FieldMask represents a set of
 		 * @return {GoogleCloudAiplatformV1ListSpecialistPoolsResponse} Successful response
@@ -27075,6 +28997,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/studies
 		 * @param {string} parent Required. The resource name of the Location to list the Study from. Format: `projects/{project}/locations/{location}`
 		 * @param {number} pageSize Optional. The maximum number of studies to return per "page" of results. If unspecified, service will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token to request the next page of results. If unspecified, there are no subsequent pages.
 		 * @return {GoogleCloudAiplatformV1ListStudiesResponse} Successful response
 		 */
@@ -27109,6 +29032,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the Tensorboards that match the filter expression.
 		 * @param {string} orderBy Field to use to sort the list.
 		 * @param {number} pageSize The maximum number of Tensorboards to return. The service may return fewer than this value. If unspecified, at most 100 Tensorboards are returned. The maximum value is 100; values above 100 are coerced to 100.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous TensorboardService.ListTensorboards call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to TensorboardService.ListTensorboards must match the call that provided the page token.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListTensorboardsResponse} Successful response
@@ -27134,6 +29058,7 @@ export namespace MyNS {
 		 * @param {string} filter Lists the TensorboardTimeSeries that match the filter expression.
 		 * @param {string} orderBy Field to use to sort the list.
 		 * @param {number} pageSize The maximum number of TensorboardTimeSeries to return. The service may return fewer than this value. If unspecified, at most 50 TensorboardTimeSeries are returned. The maximum value is 1000; values above 1000 are coerced to 1000.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token, received from a previous TensorboardService.ListTensorboardTimeSeries call. Provide this to retrieve the subsequent page. When paginating, all other parameters provided to TensorboardService.ListTensorboardTimeSeries must match the call that provided the page token.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListTensorboardTimeSeriesResponse} Successful response
@@ -27159,6 +29084,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. The resource name of the Location to list the TrainingPipelines from. Format: `projects/{project}/locations/{location}`
 		 * @param {string} filter The standard list filter. Supported fields: * `display_name` supports `=`, `!=` comparisons, and `:` wildcard. * `state` supports `=`, `!=` comparisons. * `training_task_definition` `=`, `!=` comparisons, and `:` wildcard. * `create_time` supports `=`, `!=`,`<`, `<=`,`>`, `>=` comparisons. `create_time` must be in RFC 3339 format. * `labels` supports general map functions that is: `labels.key=value` - key:value equality `labels.key:* - key existence Some examples of using the filter are: * `state="PIPELINE_STATE_SUCCEEDED" AND display_name:"my_pipeline_*"` * `state!="PIPELINE_STATE_FAILED" OR display_name="my_pipeline"` * `NOT display_name="my_pipeline"` * `create_time>"2021-05-18T00:00:00Z"` * `training_task_definition:"*automl_text_classification*"`
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token. Typically obtained via ListTrainingPipelinesResponse.next_page_token of the previous PipelineService.ListTrainingPipelines call.
 		 * @param {string} readMask Mask specifying which fields to read.
 		 * @return {GoogleCloudAiplatformV1ListTrainingPipelinesResponse} Successful response
@@ -27182,6 +29108,7 @@ export namespace MyNS {
 		 * Get v1/{parent}/trials
 		 * @param {string} parent Required. The resource name of the Study to list the Trial from. Format: `projects/{project}/locations/{location}/studies/{study}`
 		 * @param {number} pageSize Optional. The number of Trials to retrieve per "page" of results. If unspecified, the service will pick an appropriate default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A page token to request the next page of results. If unspecified, there are no subsequent pages.
 		 * @return {GoogleCloudAiplatformV1ListTrialsResponse} Successful response
 		 */
@@ -27244,6 +29171,7 @@ export namespace MyNS {
 		 * Post v1/{resource}:getIamPolicy
 		 * @param {string} resource REQUIRED: The resource for which the policy is being requested. See [Resource names](https://cloud.google.com/apis/design/resource_names) for the appropriate value for this field.
 		 * @param {number} options_requestedPolicyVersion Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GoogleIamV1Policy} Successful response
 		 */
 		Aiplatform_projects_locations_notebookRuntimeTemplates_getIamPolicy(resource: string, options_requestedPolicyVersion: number | null | undefined): Observable<GoogleIamV1Policy> {
@@ -27307,6 +29235,7 @@ export namespace MyNS {
 		 * @param {string} tensorboardTimeSeries Required. The resource name of the TensorboardTimeSeries to read data from. Format: `projects/{project}/locations/{location}/tensorboards/{tensorboard}/experiments/{experiment}/runs/{run}/timeSeries/{time_series}`
 		 * @param {string} filter Reads the TensorboardTimeSeries' data that match the filter expression.
 		 * @param {number} maxDataPoints The maximum number of TensorboardTimeSeries' data to return. This value should be a positive integer. This value can be set to -1 to return all data.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {GoogleCloudAiplatformV1ReadTensorboardTimeSeriesDataResponse} Successful response
 		 */
 		Aiplatform_projects_locations_tensorboards_experiments_runs_timeSeries_read(tensorboardTimeSeries: string, filter: string | null | undefined, maxDataPoints: number | null | undefined): Observable<GoogleCloudAiplatformV1ReadTensorboardTimeSeriesDataResponse> {

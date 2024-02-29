@@ -13574,6 +13574,7 @@ export namespace MyNS {
 		 * <p>Accepts a pending certificate transfer. The default state of the certificate is INACTIVE.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AcceptCertificateTransfer</a> action.</p>
 		 * Patch accept-certificate-transfer/{certificateId}
 		 * @param {string} certificateId The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
+		 *     Min length: 64    Max length: 64
 		 * @param {boolean} setAsActive Specifies whether the certificate is active.
 		 * @return {void} Success
 		 */
@@ -13603,6 +13604,7 @@ export namespace MyNS {
 		 * <p>Associates a group with a continuous job. The following criteria must be met: </p> <ul> <li> <p>The job must have been created with the <code>targetSelection</code> field set to "CONTINUOUS".</p> </li> <li> <p>The job status must currently be "IN_PROGRESS".</p> </li> <li> <p>The total number of targets associated with a job must not exceed 100.</p> </li> </ul> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AssociateTargetsWithJob</a> action.</p>
 		 * Post jobs/{jobId}/targets
 		 * @param {string} jobId The unique identifier you assigned to this job when it was created.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} namespaceId <p>The namespace used to indicate that a job is a customer-managed job.</p> <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> <p>The <code>namespaceId</code> feature is in public preview.</p> </note>
 		 * @return {AssociateTargetsWithJobResponse} Success
 		 */
@@ -13614,6 +13616,7 @@ export namespace MyNS {
 		 * <p>Attaches the specified policy to the specified principal (certificate or other credential).</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPolicy</a> action.</p>
 		 * Put target-policies/{policyName}
 		 * @param {string} policyName The name of the policy to attach.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		AttachPolicy(policyName: string, requestBody: AttachPolicyPutBody): Observable<HttpResponse<string>> {
@@ -13624,6 +13627,7 @@ export namespace MyNS {
 		 * <p>Detaches a policy from the specified target.</p> <note> <p>Because of the distributed nature of Amazon Web Services, it can take up to five minutes after a policy is detached before it's ready to be deleted.</p> </note> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPolicy</a> action.</p>
 		 * Post target-policies/{policyName}
 		 * @param {string} policyName The policy to detach.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		DetachPolicy(policyName: string, requestBody: DetachPolicyPostBody): Observable<HttpResponse<string>> {
@@ -13634,6 +13638,7 @@ export namespace MyNS {
 		 * <p>Attaches the specified policy to the specified principal (certificate or other credential).</p> <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <a>AttachPolicy</a> instead.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachPrincipalPolicy</a> action.</p>
 		 * Put principal-policies/{policyName}#x-amzn-iot-principal
 		 * @param {string} policyName The policy name.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		AttachPrincipalPolicy(policyName: string): Observable<HttpResponse<string>> {
@@ -13644,6 +13649,7 @@ export namespace MyNS {
 		 * <p>Removes the specified policy from the specified certificate.</p> <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <a>DetachPolicy</a> instead.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachPrincipalPolicy</a> action.</p>
 		 * Delete principal-policies/{policyName}#x-amzn-iot-principal
 		 * @param {string} policyName The name of the policy to detach.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		DetachPrincipalPolicy(policyName: string): Observable<HttpResponse<string>> {
@@ -13654,6 +13660,7 @@ export namespace MyNS {
 		 * <p>Associates a Device Defender security profile with a thing group or this account. Each thing group or account can have up to five security profiles associated with it.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachSecurityProfile</a> action.</p>
 		 * Put security-profiles/{securityProfileName}/targets#securityProfileTargetArn
 		 * @param {string} securityProfileName The security profile that is attached.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} securityProfileTargetArn The ARN of the target (thing group) to which the security profile is attached.
 		 * @return {AttachSecurityProfileResponse} Success
 		 */
@@ -13665,6 +13672,7 @@ export namespace MyNS {
 		 * <p>Disassociates a Device Defender security profile from a thing group or from this account.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachSecurityProfile</a> action.</p>
 		 * Delete security-profiles/{securityProfileName}/targets#securityProfileTargetArn
 		 * @param {string} securityProfileName The security profile that is detached.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} securityProfileTargetArn The ARN of the thing group from which the security profile is detached.
 		 * @return {DetachSecurityProfileResponse} Success
 		 */
@@ -13676,6 +13684,7 @@ export namespace MyNS {
 		 * <p>Attaches the specified principal to the specified thing. A principal can be X.509 certificates, Amazon Cognito identities or federated identities.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">AttachThingPrincipal</a> action.</p>
 		 * Put things/{thingName}/principals#x-amzn-principal
 		 * @param {string} thingName The name of the thing.
+		 *     Min length: 1    Max length: 128
 		 * @return {AttachThingPrincipalResponse} Success
 		 */
 		AttachThingPrincipal(thingName: string): Observable<AttachThingPrincipalResponse> {
@@ -13686,6 +13695,7 @@ export namespace MyNS {
 		 * <p>Detaches the specified principal from the specified thing. A principal can be X.509 certificates, IAM users, groups, and roles, Amazon Cognito identities or federated identities.</p> <note> <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> </note> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DetachThingPrincipal</a> action.</p>
 		 * Delete things/{thingName}/principals#x-amzn-principal
 		 * @param {string} thingName The name of the thing.
+		 *     Min length: 1    Max length: 128
 		 * @return {DetachThingPrincipalResponse} Success
 		 */
 		DetachThingPrincipal(thingName: string): Observable<DetachThingPrincipalResponse> {
@@ -13696,6 +13706,7 @@ export namespace MyNS {
 		 * <p>Cancels a mitigation action task that is in progress. If the task is not in progress, an InvalidRequestException occurs.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditMitigationActionsTask</a> action.</p>
 		 * Put audit/mitigationactions/tasks/{taskId}/cancel
 		 * @param {string} taskId The unique identifier for the task that you want to cancel. 
+		 *     Min length: 1    Max length: 128
 		 * @return {CancelAuditMitigationActionsTaskResponse} Success
 		 */
 		CancelAuditMitigationActionsTask(taskId: string): Observable<CancelAuditMitigationActionsTaskResponse> {
@@ -13706,6 +13717,7 @@ export namespace MyNS {
 		 * <p>Cancels an audit that is in progress. The audit can be either scheduled or on demand. If the audit isn't in progress, an "InvalidRequestException" occurs.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelAuditTask</a> action.</p>
 		 * Put audit/tasks/{taskId}/cancel
 		 * @param {string} taskId The ID of the audit you want to cancel. You can only cancel an audit that is "IN_PROGRESS".
+		 *     Min length: 1    Max length: 40
 		 * @return {CancelAuditTaskResponse} Success
 		 */
 		CancelAuditTask(taskId: string): Observable<CancelAuditTaskResponse> {
@@ -13716,6 +13728,7 @@ export namespace MyNS {
 		 * <p>Cancels a pending transfer for the specified certificate.</p> <p> <b>Note</b> Only the transfer source account can use this operation to cancel a transfer. (Transfer destinations can use <a>RejectCertificateTransfer</a> instead.) After transfer, IoT returns the certificate to the source account in the INACTIVE state. After the destination account has accepted the transfer, the transfer cannot be cancelled.</p> <p>After a certificate transfer is cancelled, the status of the certificate changes from PENDING_TRANSFER to INACTIVE.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelCertificateTransfer</a> action.</p>
 		 * Patch cancel-certificate-transfer/{certificateId}
 		 * @param {string} certificateId The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
+		 *     Min length: 64    Max length: 64
 		 * @return {void} Success
 		 */
 		CancelCertificateTransfer(certificateId: string): Observable<HttpResponse<string>> {
@@ -13726,6 +13739,7 @@ export namespace MyNS {
 		 * <p> Cancels a Device Defender ML Detect mitigation action. </p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelDetectMitigationActionsTask</a> action.</p>
 		 * Put detect/mitigationactions/tasks/{taskId}/cancel
 		 * @param {string} taskId  The unique identifier of the task. 
+		 *     Min length: 1    Max length: 128
 		 * @return {CancelDetectMitigationActionsTaskResponse} Success
 		 */
 		CancelDetectMitigationActionsTask(taskId: string): Observable<CancelDetectMitigationActionsTaskResponse> {
@@ -13736,6 +13750,7 @@ export namespace MyNS {
 		 * <p>Cancels a job.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJob</a> action.</p>
 		 * Put jobs/{jobId}/cancel
 		 * @param {string} jobId The unique identifier you assigned to this job when it was created.
+		 *     Min length: 1    Max length: 64
 		 * @param {boolean} force <p>(Optional) If <code>true</code> job executions with status "IN_PROGRESS" and "QUEUED" are canceled, otherwise only job executions with status "QUEUED" are canceled. The default is <code>false</code>.</p> <p>Canceling a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to update the job execution status. Use caution and ensure that each device executing a job which is canceled is able to recover to a valid state.</p>
 		 * @return {CancelJobResponse} Success
 		 */
@@ -13747,7 +13762,9 @@ export namespace MyNS {
 		 * <p>Cancels the execution of a job for a given thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CancelJobExecution</a> action.</p>
 		 * Put things/{thingName}/jobs/{jobId}/cancel
 		 * @param {string} jobId The ID of the job to be canceled.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} thingName The name of the thing whose execution of the job will be canceled.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} force <p>(Optional) If <code>true</code> the job execution will be canceled if it has status IN_PROGRESS or QUEUED, otherwise the job execution will be canceled only if it has status QUEUED. If you attempt to cancel a job execution that is IN_PROGRESS, and you do not set <code>force</code> to <code>true</code>, then an <code>InvalidStateTransitionException</code> will be thrown. The default is <code>false</code>.</p> <p>Canceling a job execution which is "IN_PROGRESS", will cause the device to be unable to update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p>
 		 * @return {void} Success
 		 */
@@ -13786,6 +13803,7 @@ export namespace MyNS {
 		 * <p>Confirms a topic rule destination. When you create a rule requiring a destination, IoT sends a confirmation message to the endpoint or base address you specify. The message includes a token which you pass back when calling <code>ConfirmTopicRuleDestination</code> to confirm that you own or have access to the endpoint.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ConfirmTopicRuleDestination</a> action.</p>
 		 * Get confirmdestination/{confirmationToken}
 		 * @param {string} confirmationToken The token used to confirm ownership or access to the topic rule confirmation URL.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ConfirmTopicRuleDestinationResponse} Success
 		 */
 		ConfirmTopicRuleDestination(confirmationToken: string): Observable<ConfirmTopicRuleDestinationResponse> {
@@ -13805,6 +13823,7 @@ export namespace MyNS {
 		 * <p>Creates an authorizer.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateAuthorizer</a> action.</p>
 		 * Post authorizer/{authorizerName}
 		 * @param {string} authorizerName The authorizer name.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateAuthorizerResponse} Success
 		 */
 		CreateAuthorizer(authorizerName: string, requestBody: CreateAuthorizerPostBody): Observable<CreateAuthorizerResponse> {
@@ -13815,6 +13834,7 @@ export namespace MyNS {
 		 * <p>Deletes an authorizer.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteAuthorizer</a> action.</p>
 		 * Delete authorizer/{authorizerName}
 		 * @param {string} authorizerName The name of the authorizer to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteAuthorizerResponse} Success
 		 */
 		DeleteAuthorizer(authorizerName: string): Observable<DeleteAuthorizerResponse> {
@@ -13825,6 +13845,7 @@ export namespace MyNS {
 		 * <p>Describes an authorizer.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuthorizer</a> action.</p>
 		 * Get authorizer/{authorizerName}
 		 * @param {string} authorizerName The name of the authorizer to describe.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeAuthorizerResponse} Success
 		 */
 		DescribeAuthorizer(authorizerName: string): Observable<DescribeAuthorizerResponse> {
@@ -13835,6 +13856,7 @@ export namespace MyNS {
 		 * <p>Updates an authorizer.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateAuthorizer</a> action.</p>
 		 * Put authorizer/{authorizerName}
 		 * @param {string} authorizerName The authorizer name.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateAuthorizerResponse} Success
 		 */
 		UpdateAuthorizer(authorizerName: string, requestBody: UpdateAuthorizerPutBody): Observable<UpdateAuthorizerResponse> {
@@ -13845,6 +13867,7 @@ export namespace MyNS {
 		 * <p>Creates a billing group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateBillingGroup</a> action.</p>
 		 * Post billing-groups/{billingGroupName}
 		 * @param {string} billingGroupName The name you wish to give to the billing group.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateBillingGroupResponse} Success
 		 */
 		CreateBillingGroup(billingGroupName: string, requestBody: CreateBillingGroupPostBody): Observable<CreateBillingGroupResponse> {
@@ -13855,7 +13878,9 @@ export namespace MyNS {
 		 * <p>Deletes the billing group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteBillingGroup</a> action.</p>
 		 * Delete billing-groups/{billingGroupName}
 		 * @param {string} billingGroupName The name of the billing group.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} expectedVersion The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>DeleteBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DeleteBillingGroupResponse} Success
 		 */
 		DeleteBillingGroup(billingGroupName: string, expectedVersion: number | null | undefined): Observable<DeleteBillingGroupResponse> {
@@ -13866,6 +13891,7 @@ export namespace MyNS {
 		 * <p>Returns information about a billing group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeBillingGroup</a> action.</p>
 		 * Get billing-groups/{billingGroupName}
 		 * @param {string} billingGroupName The name of the billing group.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeBillingGroupResponse} Success
 		 */
 		DescribeBillingGroup(billingGroupName: string): Observable<DescribeBillingGroupResponse> {
@@ -13876,6 +13902,7 @@ export namespace MyNS {
 		 * <p>Updates information about the billing group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateBillingGroup</a> action.</p>
 		 * Patch billing-groups/{billingGroupName}
 		 * @param {string} billingGroupName The name of the billing group.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateBillingGroupResponse} Success
 		 */
 		UpdateBillingGroup(billingGroupName: string, requestBody: UpdateBillingGroupPatchBody): Observable<UpdateBillingGroupResponse> {
@@ -13896,7 +13923,9 @@ export namespace MyNS {
 		 * <p>Lists the certificates registered in your Amazon Web Services account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificates</a> action.</p>
 		 * Get certificates
 		 * @param {number} pageSize The result page size.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} marker The marker for the next set of results.
+		 *     Max length: 1024
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.
 		 * @return {ListCertificatesResponse} Success
 		 */
@@ -13908,6 +13937,7 @@ export namespace MyNS {
 		 * <p> Use this API to define a Custom Metric published by your devices to Device Defender. </p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateCustomMetric</a> action.</p>
 		 * Post custom-metric/{metricName}
 		 * @param {string} metricName  The name of the custom metric. This will be used in the metric report submitted from the device/thing. The name can't begin with <code>aws:</code>. You can't change the name after you define it.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateCustomMetricResponse} Success
 		 */
 		CreateCustomMetric(metricName: string, requestBody: CreateCustomMetricPostBody): Observable<CreateCustomMetricResponse> {
@@ -13918,6 +13948,7 @@ export namespace MyNS {
 		 * <p> Deletes a Device Defender detect custom metric. </p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCustomMetric</a> action.</p> <note> <p>Before you can delete a custom metric, you must first remove the custom metric from all security profiles it's a part of. The security profile associated with the custom metric can be found using the <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_ListSecurityProfiles.html">ListSecurityProfiles</a> API with <code>metricName</code> set to your custom metric name.</p> </note>
 		 * Delete custom-metric/{metricName}
 		 * @param {string} metricName  The name of the custom metric. 
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteCustomMetricResponse} Success
 		 */
 		DeleteCustomMetric(metricName: string): Observable<DeleteCustomMetricResponse> {
@@ -13928,6 +13959,7 @@ export namespace MyNS {
 		 * <p> Gets information about a Device Defender detect custom metric. </p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCustomMetric</a> action.</p>
 		 * Get custom-metric/{metricName}
 		 * @param {string} metricName  The name of the custom metric. 
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeCustomMetricResponse} Success
 		 */
 		DescribeCustomMetric(metricName: string): Observable<DescribeCustomMetricResponse> {
@@ -13938,6 +13970,7 @@ export namespace MyNS {
 		 * <p>Updates a Device Defender detect custom metric. </p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCustomMetric</a> action.</p>
 		 * Patch custom-metric/{metricName}
 		 * @param {string} metricName  The name of the custom metric. Cannot be updated. 
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateCustomMetricResponse} Success
 		 */
 		UpdateCustomMetric(metricName: string, requestBody: UpdateCustomMetricPatchBody): Observable<UpdateCustomMetricResponse> {
@@ -13948,6 +13981,7 @@ export namespace MyNS {
 		 * <p>Create a dimension that you can use to limit the scope of a metric used in a security profile for IoT Device Defender. For example, using a <code>TOPIC_FILTER</code> dimension, you can narrow down the scope of the metric only to MQTT topics whose name match the pattern specified in the dimension.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDimension</a> action.</p>
 		 * Post dimensions/{name}
 		 * @param {string} name A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateDimensionResponse} Success
 		 */
 		CreateDimension(name: string, requestBody: CreateDimensionPostBody): Observable<CreateDimensionResponse> {
@@ -13958,6 +13992,7 @@ export namespace MyNS {
 		 * <p>Removes the specified dimension from your Amazon Web Services accounts.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDimension</a> action.</p>
 		 * Delete dimensions/{name}
 		 * @param {string} name The unique identifier for the dimension that you want to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteDimensionResponse} Success
 		 */
 		DeleteDimension(name: string): Observable<DeleteDimensionResponse> {
@@ -13968,6 +14003,7 @@ export namespace MyNS {
 		 * <p>Provides details about a dimension that is defined in your Amazon Web Services accounts.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDimension</a> action.</p>
 		 * Get dimensions/{name}
 		 * @param {string} name The unique identifier for the dimension.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeDimensionResponse} Success
 		 */
 		DescribeDimension(name: string): Observable<DescribeDimensionResponse> {
@@ -13978,6 +14014,7 @@ export namespace MyNS {
 		 * <p>Updates the definition for a dimension. You cannot change the type of a dimension after it is created (you can delete it and recreate it).</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDimension</a> action.</p>
 		 * Patch dimensions/{name}
 		 * @param {string} name A unique identifier for the dimension. Choose something that describes the type and value to make it easy to remember what it does.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateDimensionResponse} Success
 		 */
 		UpdateDimension(name: string, requestBody: UpdateDimensionPatchBody): Observable<UpdateDimensionResponse> {
@@ -13988,6 +14025,7 @@ export namespace MyNS {
 		 * <p>Creates a domain configuration.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDomainConfiguration</a> action.</p>
 		 * Post domainConfigurations/{domainConfigurationName}
 		 * @param {string} domainConfigurationName The name of the domain configuration. This value must be unique to a region.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateDomainConfigurationResponse} Success
 		 */
 		CreateDomainConfiguration(domainConfigurationName: string, requestBody: CreateDomainConfigurationPostBody): Observable<CreateDomainConfigurationResponse> {
@@ -13998,6 +14036,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified domain configuration.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDomainConfiguration</a> action.</p>
 		 * Delete domainConfigurations/{domainConfigurationName}
 		 * @param {string} domainConfigurationName The name of the domain configuration to be deleted.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteDomainConfigurationResponse} Success
 		 */
 		DeleteDomainConfiguration(domainConfigurationName: string): Observable<DeleteDomainConfigurationResponse> {
@@ -14008,6 +14047,7 @@ export namespace MyNS {
 		 * <p>Gets summary information about a domain configuration.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDomainConfiguration</a> action.</p>
 		 * Get domainConfigurations/{domainConfigurationName}
 		 * @param {string} domainConfigurationName The name of the domain configuration.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeDomainConfigurationResponse} Success
 		 */
 		DescribeDomainConfiguration(domainConfigurationName: string): Observable<DescribeDomainConfigurationResponse> {
@@ -14018,6 +14058,7 @@ export namespace MyNS {
 		 * <p>Updates values stored in the domain configuration. Domain configurations for default endpoints can't be updated.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDomainConfiguration</a> action.</p>
 		 * Put domainConfigurations/{domainConfigurationName}
 		 * @param {string} domainConfigurationName The name of the domain configuration to be updated.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateDomainConfigurationResponse} Success
 		 */
 		UpdateDomainConfiguration(domainConfigurationName: string, requestBody: UpdateDomainConfigurationPutBody): Observable<UpdateDomainConfigurationResponse> {
@@ -14028,6 +14069,7 @@ export namespace MyNS {
 		 * <p>Creates a dynamic thing group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateDynamicThingGroup</a> action.</p>
 		 * Post dynamic-thing-groups/{thingGroupName}
 		 * @param {string} thingGroupName The dynamic thing group name to create.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateDynamicThingGroupResponse} Success
 		 */
 		CreateDynamicThingGroup(thingGroupName: string, requestBody: CreateDynamicThingGroupPostBody): Observable<CreateDynamicThingGroupResponse> {
@@ -14038,7 +14080,9 @@ export namespace MyNS {
 		 * <p>Deletes a dynamic thing group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteDynamicThingGroup</a> action.</p>
 		 * Delete dynamic-thing-groups/{thingGroupName}
 		 * @param {string} thingGroupName The name of the dynamic thing group to delete.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} expectedVersion The expected version of the dynamic thing group to delete.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DeleteDynamicThingGroupResponse} Success
 		 */
 		DeleteDynamicThingGroup(thingGroupName: string, expectedVersion: number | null | undefined): Observable<DeleteDynamicThingGroupResponse> {
@@ -14049,6 +14093,7 @@ export namespace MyNS {
 		 * <p>Updates a dynamic thing group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateDynamicThingGroup</a> action.</p>
 		 * Patch dynamic-thing-groups/{thingGroupName}
 		 * @param {string} thingGroupName The name of the dynamic thing group to update.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateDynamicThingGroupResponse} Success
 		 */
 		UpdateDynamicThingGroup(thingGroupName: string, requestBody: UpdateDynamicThingGroupPatchBody): Observable<UpdateDynamicThingGroupResponse> {
@@ -14059,6 +14104,7 @@ export namespace MyNS {
 		 * <p>Creates a fleet metric.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateFleetMetric</a> action.</p>
 		 * Put fleet-metric/{metricName}
 		 * @param {string} metricName The name of the fleet metric to create.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateFleetMetricResponse} Success
 		 */
 		CreateFleetMetric(metricName: string, requestBody: CreateFleetMetricPutBody): Observable<CreateFleetMetricResponse> {
@@ -14069,7 +14115,9 @@ export namespace MyNS {
 		 * <p>Deletes the specified fleet metric. Returns successfully with no error if the deletion is successful or you specify a fleet metric that doesn't exist.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteFleetMetric</a> action.</p>
 		 * Delete fleet-metric/{metricName}
 		 * @param {string} metricName The name of the fleet metric to delete.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} expectedVersion The expected version of the fleet metric to delete.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		DeleteFleetMetric(metricName: string, expectedVersion: number | null | undefined): Observable<HttpResponse<string>> {
@@ -14080,6 +14128,7 @@ export namespace MyNS {
 		 * <p>Gets information about the specified fleet metric.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeFleetMetric</a> action.</p>
 		 * Get fleet-metric/{metricName}
 		 * @param {string} metricName The name of the fleet metric to describe.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeFleetMetricResponse} Success
 		 */
 		DescribeFleetMetric(metricName: string): Observable<DescribeFleetMetricResponse> {
@@ -14090,6 +14139,7 @@ export namespace MyNS {
 		 * <p>Updates the data for a fleet metric.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateFleetMetric</a> action.</p>
 		 * Patch fleet-metric/{metricName}
 		 * @param {string} metricName The name of the fleet metric to update.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		UpdateFleetMetric(metricName: string, requestBody: UpdateFleetMetricPatchBody): Observable<HttpResponse<string>> {
@@ -14100,6 +14150,7 @@ export namespace MyNS {
 		 * <p>Creates a job.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJob</a> action.</p>
 		 * Put jobs/{jobId}
 		 * @param {string} jobId A job identifier which must be unique for your Amazon Web Services account. We recommend using a UUID. Alpha-numeric characters, "-" and "_" are valid for use here.
+		 *     Min length: 1    Max length: 64
 		 * @return {CreateJobResponse} Success
 		 */
 		CreateJob(jobId: string, requestBody: CreateJobPutBody): Observable<CreateJobResponse> {
@@ -14110,6 +14161,7 @@ export namespace MyNS {
 		 * <p>Deletes a job and its related job executions.</p> <p>Deleting a job may take time, depending on the number of job executions created for the job and various other factors. While the job is being deleted, the status of the job will be shown as "DELETION_IN_PROGRESS". Attempting to delete or cancel a job whose status is already "DELETION_IN_PROGRESS" will result in an error.</p> <p>Only 10 jobs may have status "DELETION_IN_PROGRESS" at the same time, or a LimitExceededException will occur.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJob</a> action.</p>
 		 * Delete jobs/{jobId}
 		 * @param {string} jobId <p>The ID of the job to be deleted.</p> <p>After a job deletion is completed, you may reuse this jobId when you create a new job. However, this is not recommended, and you must ensure that your devices are not using the jobId to refer to the deleted job.</p>
+		 *     Min length: 1    Max length: 64
 		 * @param {boolean} force <p>(Optional) When true, you can delete a job which is "IN_PROGRESS". Otherwise, you can only delete a job which is in a terminal state ("COMPLETED" or "CANCELED") or an exception will occur. The default is false.</p> <note> <p>Deleting a job which is "IN_PROGRESS", will cause a device which is executing the job to be unable to access job information or update the job execution status. Use caution and ensure that each device executing a job which is deleted is able to recover to a valid state.</p> </note>
 		 * @param {string} namespaceId <p>The namespace used to indicate that a job is a customer-managed job.</p> <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> <p>The <code>namespaceId</code> feature is in public preview.</p> </note>
 		 * @return {void} Success
@@ -14122,6 +14174,7 @@ export namespace MyNS {
 		 * <p>Describes a job.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJob</a> action.</p>
 		 * Get jobs/{jobId}
 		 * @param {string} jobId The unique identifier you assigned to this job when it was created.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeJobResponse} Success
 		 */
 		DescribeJob(jobId: string): Observable<DescribeJobResponse> {
@@ -14132,6 +14185,7 @@ export namespace MyNS {
 		 * <p>Updates supported fields of the specified job.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateJob</a> action.</p>
 		 * Patch jobs/{jobId}
 		 * @param {string} jobId The ID of the job to be updated.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} namespaceId <p>The namespace used to indicate that a job is a customer-managed job.</p> <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> <p>The <code>namespaceId</code> feature is in public preview.</p> </note>
 		 * @return {void} Success
 		 */
@@ -14143,6 +14197,7 @@ export namespace MyNS {
 		 * <p>Creates a job template.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateJobTemplate</a> action.</p>
 		 * Put job-templates/{jobTemplateId}
 		 * @param {string} jobTemplateId A unique identifier for the job template. We recommend using a UUID. Alpha-numeric characters, "-", and "_" are valid for use here.
+		 *     Min length: 1    Max length: 64
 		 * @return {CreateJobTemplateResponse} Success
 		 */
 		CreateJobTemplate(jobTemplateId: string, requestBody: CreateJobTemplatePutBody): Observable<CreateJobTemplateResponse> {
@@ -14153,6 +14208,7 @@ export namespace MyNS {
 		 * Deletes the specified job template.
 		 * Delete job-templates/{jobTemplateId}
 		 * @param {string} jobTemplateId The unique identifier of the job template to delete.
+		 *     Min length: 1    Max length: 64
 		 * @return {void} Success
 		 */
 		DeleteJobTemplate(jobTemplateId: string): Observable<HttpResponse<string>> {
@@ -14163,6 +14219,7 @@ export namespace MyNS {
 		 * Returns information about a job template.
 		 * Get job-templates/{jobTemplateId}
 		 * @param {string} jobTemplateId The unique identifier of the job template.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeJobTemplateResponse} Success
 		 */
 		DescribeJobTemplate(jobTemplateId: string): Observable<DescribeJobTemplateResponse> {
@@ -14183,6 +14240,7 @@ export namespace MyNS {
 		 * <p>Defines an action that can be applied to audit findings by using StartAuditMitigationActionsTask. Only certain types of mitigation actions can be applied to specific check names. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/device-defender-mitigation-actions.html">Mitigation actions</a>. Each mitigation action can apply only one type of change.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateMitigationAction</a> action.</p>
 		 * Post mitigationactions/actions/{actionName}
 		 * @param {string} actionName A friendly name for the action. Choose a friendly name that accurately describes the action (for example, <code>EnableLoggingAction</code>).
+		 *     Max length: 128
 		 * @return {CreateMitigationActionResponse} Success
 		 */
 		CreateMitigationAction(actionName: string, requestBody: CreateMitigationActionPostBody): Observable<CreateMitigationActionResponse> {
@@ -14193,6 +14251,7 @@ export namespace MyNS {
 		 * <p>Deletes a defined mitigation action from your Amazon Web Services accounts.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteMitigationAction</a> action.</p>
 		 * Delete mitigationactions/actions/{actionName}
 		 * @param {string} actionName The name of the mitigation action that you want to delete.
+		 *     Max length: 128
 		 * @return {DeleteMitigationActionResponse} Success
 		 */
 		DeleteMitigationAction(actionName: string): Observable<DeleteMitigationActionResponse> {
@@ -14203,6 +14262,7 @@ export namespace MyNS {
 		 * <p>Gets information about a mitigation action.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeMitigationAction</a> action.</p>
 		 * Get mitigationactions/actions/{actionName}
 		 * @param {string} actionName The friendly name that uniquely identifies the mitigation action.
+		 *     Max length: 128
 		 * @return {DescribeMitigationActionResponse} Success
 		 */
 		DescribeMitigationAction(actionName: string): Observable<DescribeMitigationActionResponse> {
@@ -14213,6 +14273,7 @@ export namespace MyNS {
 		 * <p>Updates the definition for the specified mitigation action.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateMitigationAction</a> action.</p>
 		 * Patch mitigationactions/actions/{actionName}
 		 * @param {string} actionName The friendly name for the mitigation action. You cannot change the name by using <code>UpdateMitigationAction</code>. Instead, you must delete and recreate the mitigation action with the new name.
+		 *     Max length: 128
 		 * @return {UpdateMitigationActionResponse} Success
 		 */
 		UpdateMitigationAction(actionName: string, requestBody: UpdateMitigationActionPatchBody): Observable<UpdateMitigationActionResponse> {
@@ -14223,6 +14284,7 @@ export namespace MyNS {
 		 * <p>Creates an IoT OTA update on a target group of things or groups.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateOTAUpdate</a> action.</p>
 		 * Post otaUpdates/{otaUpdateId}
 		 * @param {string} otaUpdateId The ID of the OTA update to be created.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateOTAUpdateResponse} Success
 		 */
 		CreateOTAUpdate(otaUpdateId: string, requestBody: CreateOTAUpdatePostBody): Observable<CreateOTAUpdateResponse> {
@@ -14233,6 +14295,7 @@ export namespace MyNS {
 		 * <p>Delete an OTA update.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteOTAUpdate</a> action.</p>
 		 * Delete otaUpdates/{otaUpdateId}
 		 * @param {string} otaUpdateId The ID of the OTA update to delete.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} deleteStream When true, the stream created by the OTAUpdate process is deleted when the OTA update is deleted. Ignored if the stream specified in the OTAUpdate is supplied by the user.
 		 * @param {boolean} forceDeleteAWSJob When true, deletes the IoT job created by the OTAUpdate process even if it is "IN_PROGRESS". Otherwise, if the job is not in a terminal state ("COMPLETED" or "CANCELED") an exception will occur. The default is false.
 		 * @return {DeleteOTAUpdateResponse} Success
@@ -14245,6 +14308,7 @@ export namespace MyNS {
 		 * <p>Gets an OTA update.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetOTAUpdate</a> action.</p>
 		 * Get otaUpdates/{otaUpdateId}
 		 * @param {string} otaUpdateId The OTA update ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetOTAUpdateResponse} Success
 		 */
 		GetOTAUpdate(otaUpdateId: string): Observable<GetOTAUpdateResponse> {
@@ -14255,7 +14319,9 @@ export namespace MyNS {
 		 * <p>Creates an IoT software package that can be deployed to your fleet.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePackage</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a> actions.</p>
 		 * Put packages/{packageName}
 		 * @param {string} packageName The name of the new package.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {CreatePackageResponse} Success
 		 */
 		CreatePackage(packageName: string, clientToken: string | null | undefined, requestBody: CreatePackagePutBody): Observable<CreatePackageResponse> {
@@ -14266,7 +14332,9 @@ export namespace MyNS {
 		 * <p>Deletes a specific version from a software package.</p> <p> <b>Note:</b> All package versions must be deleted before deleting the software package.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePackageVersion</a> action.</p>
 		 * Delete packages/{packageName}
 		 * @param {string} packageName The name of the target package.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {DeletePackageResponse} Success
 		 */
 		DeletePackage(packageName: string, clientToken: string | null | undefined): Observable<DeletePackageResponse> {
@@ -14277,6 +14345,7 @@ export namespace MyNS {
 		 * <p>Gets information about the specified software package.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackage</a> action.</p>
 		 * Get packages/{packageName}
 		 * @param {string} packageName The name of the target package.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetPackageResponse} Success
 		 */
 		GetPackage(packageName: string): Observable<GetPackageResponse> {
@@ -14287,7 +14356,9 @@ export namespace MyNS {
 		 * <p>Updates the supported fields for a specific package.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackage</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a> actions.</p>
 		 * Patch packages/{packageName}
 		 * @param {string} packageName The name of the target package.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {UpdatePackageResponse} Success
 		 */
 		UpdatePackage(packageName: string, clientToken: string | null | undefined, requestBody: UpdatePackagePatchBody): Observable<UpdatePackageResponse> {
@@ -14298,8 +14369,11 @@ export namespace MyNS {
 		 * <p>Creates a new version for an existing IoT software package.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePackageVersion</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a> actions.</p>
 		 * Put packages/{packageName}/versions/{versionName}
 		 * @param {string} packageName The name of the associated package.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} versionName The name of the new package version.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {CreatePackageVersionResponse} Success
 		 */
 		CreatePackageVersion(packageName: string, versionName: string, clientToken: string | null | undefined, requestBody: CreatePackageVersionPutBody): Observable<CreatePackageVersionResponse> {
@@ -14310,8 +14384,11 @@ export namespace MyNS {
 		 * <p>Deletes a specific version from a software package.</p> <p> <b>Note:</b> If a package version is designated as default, you must remove the designation from the package using the <a>UpdatePackage</a> action.</p>
 		 * Delete packages/{packageName}/versions/{versionName}
 		 * @param {string} packageName The name of the associated package.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} versionName The name of the target package version.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {DeletePackageVersionResponse} Success
 		 */
 		DeletePackageVersion(packageName: string, versionName: string, clientToken: string | null | undefined): Observable<DeletePackageVersionResponse> {
@@ -14322,7 +14399,9 @@ export namespace MyNS {
 		 * <p>Gets information about the specified package version. </p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPackageVersion</a> action.</p>
 		 * Get packages/{packageName}/versions/{versionName}
 		 * @param {string} packageName The name of the associated package.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} versionName The name of the target package version.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetPackageVersionResponse} Success
 		 */
 		GetPackageVersion(packageName: string, versionName: string): Observable<GetPackageVersionResponse> {
@@ -14333,8 +14412,11 @@ export namespace MyNS {
 		 * <p>Updates the supported fields for a specific package version.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackageVersion</a> and <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetIndexingConfiguration</a> actions.</p>
 		 * Patch packages/{packageName}/versions/{versionName}
 		 * @param {string} packageName The name of the associated software package.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} versionName The name of the target package version.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {UpdatePackageVersionResponse} Success
 		 */
 		UpdatePackageVersion(packageName: string, versionName: string, clientToken: string | null | undefined, requestBody: UpdatePackageVersionPatchBody): Observable<UpdatePackageVersionResponse> {
@@ -14345,6 +14427,7 @@ export namespace MyNS {
 		 * <p>Creates an IoT policy.</p> <p>The created policy is the default version for the policy. This operation creates a policy version with a version identifier of <b>1</b> and sets <b>1</b> as the policy's default version.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicy</a> action.</p>
 		 * Post policies/{policyName}
 		 * @param {string} policyName The policy name.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreatePolicyResponse} Success
 		 */
 		CreatePolicy(policyName: string, requestBody: CreatePolicyPostBody): Observable<CreatePolicyResponse> {
@@ -14355,6 +14438,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified policy.</p> <p>A policy cannot be deleted if it has non-default versions or it is attached to any certificate.</p> <p>To delete a policy, use the <a>DeletePolicyVersion</a> action to delete all non-default versions of the policy; use the <a>DetachPolicy</a> action to detach the policy from any certificate; and then use the DeletePolicy action to delete the policy.</p> <p>When a policy is deleted using DeletePolicy, its default version is deleted with it.</p> <note> <p>Because of the distributed nature of Amazon Web Services, it can take up to five minutes after a policy is detached before it's ready to be deleted.</p> </note> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicy</a> action.</p>
 		 * Delete policies/{policyName}
 		 * @param {string} policyName The name of the policy to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		DeletePolicy(policyName: string): Observable<HttpResponse<string>> {
@@ -14365,6 +14449,7 @@ export namespace MyNS {
 		 * <p>Gets information about the specified policy with the policy document of the default version.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicy</a> action.</p>
 		 * Get policies/{policyName}
 		 * @param {string} policyName The name of the policy.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetPolicyResponse} Success
 		 */
 		GetPolicy(policyName: string): Observable<GetPolicyResponse> {
@@ -14375,6 +14460,7 @@ export namespace MyNS {
 		 * <p>Creates a new version of the specified IoT policy. To update a policy, create a new policy version. A managed policy can have up to five versions. If the policy has five versions, you must use <a>DeletePolicyVersion</a> to delete an existing version before you create a new one.</p> <p>Optionally, you can set the new version as the policy's default version. The default version is the operative version (that is, the version that is in effect for the certificates to which the policy is attached).</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreatePolicyVersion</a> action.</p>
 		 * Post policies/{policyName}/version
 		 * @param {string} policyName The policy name.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} setAsDefault Specifies whether the policy version is set as the default. When this parameter is true, the new policy version becomes the operative version (that is, the version that is in effect for the certificates to which the policy is attached).
 		 * @return {CreatePolicyVersionResponse} Success
 		 */
@@ -14386,6 +14472,7 @@ export namespace MyNS {
 		 * <p>Lists the versions of the specified policy and identifies the default version.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyVersions</a> action.</p>
 		 * Get policies/{policyName}/version
 		 * @param {string} policyName The policy name.
+		 *     Min length: 1    Max length: 128
 		 * @return {ListPolicyVersionsResponse} Success
 		 */
 		ListPolicyVersions(policyName: string): Observable<ListPolicyVersionsResponse> {
@@ -14396,6 +14483,7 @@ export namespace MyNS {
 		 * <p>Creates a provisioning claim.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningClaim</a> action.</p>
 		 * Post provisioning-templates/{templateName}/provisioning-claim
 		 * @param {string} templateName The name of the provisioning template to use.
+		 *     Min length: 1    Max length: 36
 		 * @return {CreateProvisioningClaimResponse} Success
 		 */
 		CreateProvisioningClaim(templateName: string): Observable<CreateProvisioningClaimResponse> {
@@ -14415,6 +14503,7 @@ export namespace MyNS {
 		 * <p>Lists the provisioning templates in your Amazon Web Services account.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplates</a> action.</p>
 		 * Get provisioning-templates
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken A token to retrieve the next set of results.
 		 * @return {ListProvisioningTemplatesResponse} Success
 		 */
@@ -14426,6 +14515,7 @@ export namespace MyNS {
 		 * <p>Creates a new version of a provisioning template.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateProvisioningTemplateVersion</a> action.</p>
 		 * Post provisioning-templates/{templateName}/versions
 		 * @param {string} templateName The name of the provisioning template.
+		 *     Min length: 1    Max length: 36
 		 * @param {boolean} setAsDefault Sets a fleet provision template version as the default version.
 		 * @return {CreateProvisioningTemplateVersionResponse} Success
 		 */
@@ -14437,7 +14527,9 @@ export namespace MyNS {
 		 * <p>A list of provisioning template versions.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListProvisioningTemplateVersions</a> action.</p>
 		 * Get provisioning-templates/{templateName}/versions
 		 * @param {string} templateName The name of the provisioning template.
+		 *     Min length: 1    Max length: 36
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken A token to retrieve the next set of results.
 		 * @return {ListProvisioningTemplateVersionsResponse} Success
 		 */
@@ -14449,6 +14541,7 @@ export namespace MyNS {
 		 * <p>Creates a role alias.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateRoleAlias</a> action.</p>
 		 * Post role-aliases/{roleAlias}
 		 * @param {string} roleAlias The role alias that points to a role ARN. This allows you to change the role without having to update the device.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateRoleAliasResponse} Success
 		 */
 		CreateRoleAlias(roleAlias: string, requestBody: CreateRoleAliasPostBody): Observable<CreateRoleAliasResponse> {
@@ -14459,6 +14552,7 @@ export namespace MyNS {
 		 * <p>Deletes a role alias</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteRoleAlias</a> action.</p>
 		 * Delete role-aliases/{roleAlias}
 		 * @param {string} roleAlias The role alias to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteRoleAliasResponse} Success
 		 */
 		DeleteRoleAlias(roleAlias: string): Observable<DeleteRoleAliasResponse> {
@@ -14469,6 +14563,7 @@ export namespace MyNS {
 		 * <p>Describes a role alias.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeRoleAlias</a> action.</p>
 		 * Get role-aliases/{roleAlias}
 		 * @param {string} roleAlias The role alias to describe.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeRoleAliasResponse} Success
 		 */
 		DescribeRoleAlias(roleAlias: string): Observable<DescribeRoleAliasResponse> {
@@ -14479,6 +14574,7 @@ export namespace MyNS {
 		 * <p>Updates a role alias.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateRoleAlias</a> action.</p>
 		 * Put role-aliases/{roleAlias}
 		 * @param {string} roleAlias The role alias to update.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateRoleAliasResponse} Success
 		 */
 		UpdateRoleAlias(roleAlias: string, requestBody: UpdateRoleAliasPutBody): Observable<UpdateRoleAliasResponse> {
@@ -14489,6 +14585,7 @@ export namespace MyNS {
 		 * <p>Creates a scheduled audit that is run at a specified time interval.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateScheduledAudit</a> action.</p>
 		 * Post audit/scheduledaudits/{scheduledAuditName}
 		 * @param {string} scheduledAuditName The name you want to give to the scheduled audit. (Max. 128 chars)
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateScheduledAuditResponse} Success
 		 */
 		CreateScheduledAudit(scheduledAuditName: string, requestBody: CreateScheduledAuditPostBody): Observable<CreateScheduledAuditResponse> {
@@ -14499,6 +14596,7 @@ export namespace MyNS {
 		 * <p>Deletes a scheduled audit.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteScheduledAudit</a> action.</p>
 		 * Delete audit/scheduledaudits/{scheduledAuditName}
 		 * @param {string} scheduledAuditName The name of the scheduled audit you want to delete.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteScheduledAuditResponse} Success
 		 */
 		DeleteScheduledAudit(scheduledAuditName: string): Observable<DeleteScheduledAuditResponse> {
@@ -14509,6 +14607,7 @@ export namespace MyNS {
 		 * <p>Gets information about a scheduled audit.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeScheduledAudit</a> action.</p>
 		 * Get audit/scheduledaudits/{scheduledAuditName}
 		 * @param {string} scheduledAuditName The name of the scheduled audit whose information you want to get.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeScheduledAuditResponse} Success
 		 */
 		DescribeScheduledAudit(scheduledAuditName: string): Observable<DescribeScheduledAuditResponse> {
@@ -14519,6 +14618,7 @@ export namespace MyNS {
 		 * <p>Updates a scheduled audit, including which checks are performed and how often the audit takes place.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateScheduledAudit</a> action.</p>
 		 * Patch audit/scheduledaudits/{scheduledAuditName}
 		 * @param {string} scheduledAuditName The name of the scheduled audit. (Max. 128 chars)
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateScheduledAuditResponse} Success
 		 */
 		UpdateScheduledAudit(scheduledAuditName: string, requestBody: UpdateScheduledAuditPatchBody): Observable<UpdateScheduledAuditResponse> {
@@ -14529,6 +14629,7 @@ export namespace MyNS {
 		 * <p>Creates a Device Defender security profile.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateSecurityProfile</a> action.</p>
 		 * Post security-profiles/{securityProfileName}
 		 * @param {string} securityProfileName The name you are giving to the security profile.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateSecurityProfileResponse} Success
 		 */
 		CreateSecurityProfile(securityProfileName: string, requestBody: CreateSecurityProfilePostBody): Observable<CreateSecurityProfileResponse> {
@@ -14539,7 +14640,9 @@ export namespace MyNS {
 		 * <p>Deletes a Device Defender security profile.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteSecurityProfile</a> action.</p>
 		 * Delete security-profiles/{securityProfileName}
 		 * @param {string} securityProfileName The name of the security profile to be deleted.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} expectedVersion The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DeleteSecurityProfileResponse} Success
 		 */
 		DeleteSecurityProfile(securityProfileName: string, expectedVersion: number | null | undefined): Observable<DeleteSecurityProfileResponse> {
@@ -14550,6 +14653,7 @@ export namespace MyNS {
 		 * <p>Gets information about a Device Defender security profile.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeSecurityProfile</a> action.</p>
 		 * Get security-profiles/{securityProfileName}
 		 * @param {string} securityProfileName The name of the security profile whose information you want to get.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeSecurityProfileResponse} Success
 		 */
 		DescribeSecurityProfile(securityProfileName: string): Observable<DescribeSecurityProfileResponse> {
@@ -14560,7 +14664,9 @@ export namespace MyNS {
 		 * <p>Updates a Device Defender security profile.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateSecurityProfile</a> action.</p>
 		 * Patch security-profiles/{securityProfileName}
 		 * @param {string} securityProfileName The name of the security profile you want to update.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} expectedVersion The expected version of the security profile. A new version is generated whenever the security profile is updated. If you specify a value that is different from the actual version, a <code>VersionConflictException</code> is thrown.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {UpdateSecurityProfileResponse} Success
 		 */
 		UpdateSecurityProfile(securityProfileName: string, expectedVersion: number | null | undefined, requestBody: UpdateSecurityProfilePatchBody): Observable<UpdateSecurityProfileResponse> {
@@ -14571,6 +14677,7 @@ export namespace MyNS {
 		 * <p>Creates a stream for delivering one or more large files in chunks over MQTT. A stream transports data bytes in chunks or blocks packaged as MQTT messages from a source like S3. You can have one or more files associated with a stream.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateStream</a> action.</p>
 		 * Post streams/{streamId}
 		 * @param {string} streamId The stream ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateStreamResponse} Success
 		 */
 		CreateStream(streamId: string, requestBody: CreateStreamPostBody): Observable<CreateStreamResponse> {
@@ -14581,6 +14688,7 @@ export namespace MyNS {
 		 * <p>Deletes a stream.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteStream</a> action.</p>
 		 * Delete streams/{streamId}
 		 * @param {string} streamId The stream ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteStreamResponse} Success
 		 */
 		DeleteStream(streamId: string): Observable<DeleteStreamResponse> {
@@ -14591,6 +14699,7 @@ export namespace MyNS {
 		 * <p>Gets information about a stream.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeStream</a> action.</p>
 		 * Get streams/{streamId}
 		 * @param {string} streamId The stream ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeStreamResponse} Success
 		 */
 		DescribeStream(streamId: string): Observable<DescribeStreamResponse> {
@@ -14601,6 +14710,7 @@ export namespace MyNS {
 		 * <p>Updates an existing stream. The stream version will be incremented by one.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateStream</a> action.</p>
 		 * Put streams/{streamId}
 		 * @param {string} streamId The stream ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateStreamResponse} Success
 		 */
 		UpdateStream(streamId: string, requestBody: UpdateStreamPutBody): Observable<UpdateStreamResponse> {
@@ -14611,6 +14721,7 @@ export namespace MyNS {
 		 * <p>Creates a thing record in the registry. If this call is made multiple times using the same thing name and configuration, the call will succeed. If this call is made with the same thing name but different configuration a <code>ResourceAlreadyExistsException</code> is thrown.</p> <note> <p>This is a control plane operation. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a> for information about authorizing control plane actions.</p> </note> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThing</a> action.</p>
 		 * Post things/{thingName}
 		 * @param {string} thingName <p>The name of the thing to create.</p> <p>You can't change a thing's name after you create it. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateThingResponse} Success
 		 */
 		CreateThing(thingName: string, requestBody: CreateThingPostBody): Observable<CreateThingResponse> {
@@ -14621,7 +14732,9 @@ export namespace MyNS {
 		 * <p>Deletes the specified thing. Returns successfully with no error if the deletion is successful or you specify a thing that doesn't exist.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThing</a> action.</p>
 		 * Delete things/{thingName}
 		 * @param {string} thingName The name of the thing to delete.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} expectedVersion The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>DeleteThing</code> request is rejected with a <code>VersionConflictException</code>.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DeleteThingResponse} Success
 		 */
 		DeleteThing(thingName: string, expectedVersion: number | null | undefined): Observable<DeleteThingResponse> {
@@ -14632,6 +14745,7 @@ export namespace MyNS {
 		 * <p>Gets information about the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThing</a> action.</p>
 		 * Get things/{thingName}
 		 * @param {string} thingName The name of the thing.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeThingResponse} Success
 		 */
 		DescribeThing(thingName: string): Observable<DescribeThingResponse> {
@@ -14642,6 +14756,7 @@ export namespace MyNS {
 		 * <p>Updates the data for a thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThing</a> action.</p>
 		 * Patch things/{thingName}
 		 * @param {string} thingName <p>The name of the thing to update.</p> <p>You can't change a thing's name. To change a thing's name, you must create a new thing, give it the new name, and then delete the old thing.</p>
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateThingResponse} Success
 		 */
 		UpdateThing(thingName: string, requestBody: UpdateThingPatchBody): Observable<UpdateThingResponse> {
@@ -14652,6 +14767,7 @@ export namespace MyNS {
 		 * <p>Create a thing group.</p> <note> <p>This is a control plane operation. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/iot-authorization.html">Authorization</a> for information about authorizing control plane actions.</p> </note> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingGroup</a> action.</p>
 		 * Post thing-groups/{thingGroupName}
 		 * @param {string} thingGroupName The thing group name to create.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateThingGroupResponse} Success
 		 */
 		CreateThingGroup(thingGroupName: string, requestBody: CreateThingGroupPostBody): Observable<CreateThingGroupResponse> {
@@ -14662,7 +14778,9 @@ export namespace MyNS {
 		 * <p>Deletes a thing group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingGroup</a> action.</p>
 		 * Delete thing-groups/{thingGroupName}
 		 * @param {string} thingGroupName The name of the thing group to delete.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} expectedVersion The expected version of the thing group to delete.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DeleteThingGroupResponse} Success
 		 */
 		DeleteThingGroup(thingGroupName: string, expectedVersion: number | null | undefined): Observable<DeleteThingGroupResponse> {
@@ -14673,6 +14791,7 @@ export namespace MyNS {
 		 * <p>Describe a thing group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingGroup</a> action.</p>
 		 * Get thing-groups/{thingGroupName}
 		 * @param {string} thingGroupName The name of the thing group.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeThingGroupResponse} Success
 		 */
 		DescribeThingGroup(thingGroupName: string): Observable<DescribeThingGroupResponse> {
@@ -14683,6 +14802,7 @@ export namespace MyNS {
 		 * <p>Update a thing group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateThingGroup</a> action.</p>
 		 * Patch thing-groups/{thingGroupName}
 		 * @param {string} thingGroupName The thing group to update.
+		 *     Min length: 1    Max length: 128
 		 * @return {UpdateThingGroupResponse} Success
 		 */
 		UpdateThingGroup(thingGroupName: string, requestBody: UpdateThingGroupPatchBody): Observable<UpdateThingGroupResponse> {
@@ -14693,6 +14813,7 @@ export namespace MyNS {
 		 * <p>Creates a new thing type.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateThingType</a> action.</p>
 		 * Post thing-types/{thingTypeName}
 		 * @param {string} thingTypeName The name of the thing type.
+		 *     Min length: 1    Max length: 128
 		 * @return {CreateThingTypeResponse} Success
 		 */
 		CreateThingType(thingTypeName: string, requestBody: CreateThingTypePostBody): Observable<CreateThingTypeResponse> {
@@ -14703,6 +14824,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified thing type. You cannot delete a thing type if it has things associated with it. To delete a thing type, first mark it as deprecated by calling <a>DeprecateThingType</a>, then remove any associated things by calling <a>UpdateThing</a> to change the thing type on any associated thing, and finally use <a>DeleteThingType</a> to delete the thing type.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteThingType</a> action.</p>
 		 * Delete thing-types/{thingTypeName}
 		 * @param {string} thingTypeName The name of the thing type.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeleteThingTypeResponse} Success
 		 */
 		DeleteThingType(thingTypeName: string): Observable<DeleteThingTypeResponse> {
@@ -14713,6 +14835,7 @@ export namespace MyNS {
 		 * <p>Gets information about the specified thing type.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingType</a> action.</p>
 		 * Get thing-types/{thingTypeName}
 		 * @param {string} thingTypeName The name of the thing type.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeThingTypeResponse} Success
 		 */
 		DescribeThingType(thingTypeName: string): Observable<DescribeThingTypeResponse> {
@@ -14723,6 +14846,7 @@ export namespace MyNS {
 		 * <p>Creates a rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">CreateTopicRule</a> action.</p>
 		 * Post rules/{ruleName}
 		 * @param {string} ruleName The name of the rule.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		CreateTopicRule(ruleName: string, requestBody: CreateTopicRulePostBody): Observable<HttpResponse<string>> {
@@ -14733,6 +14857,7 @@ export namespace MyNS {
 		 * <p>Deletes the rule.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteTopicRule</a> action.</p>
 		 * Delete rules/{ruleName}
 		 * @param {string} ruleName The name of the rule.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		DeleteTopicRule(ruleName: string): Observable<HttpResponse<string>> {
@@ -14743,6 +14868,7 @@ export namespace MyNS {
 		 * <p>Gets information about the rule.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetTopicRule</a> action.</p>
 		 * Get rules/{ruleName}
 		 * @param {string} ruleName The name of the rule.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetTopicRuleResponse} Success
 		 */
 		GetTopicRule(ruleName: string): Observable<GetTopicRuleResponse> {
@@ -14753,6 +14879,7 @@ export namespace MyNS {
 		 * <p>Replaces the rule. You must specify all parameters for the new rule. Creating rules is an administrator-level action. Any user who has permission to create rules will be able to access data processed by the rule.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ReplaceTopicRule</a> action.</p>
 		 * Patch rules/{ruleName}
 		 * @param {string} ruleName The name of the rule.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		ReplaceTopicRule(ruleName: string, requestBody: ReplaceTopicRulePatchBody): Observable<HttpResponse<string>> {
@@ -14772,6 +14899,7 @@ export namespace MyNS {
 		 * <p>Lists all the topic rule destinations in your Amazon Web Services account.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTopicRuleDestinations</a> action.</p>
 		 * Get destinations
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @return {ListTopicRuleDestinationsResponse} Success
 		 */
@@ -14829,6 +14957,7 @@ export namespace MyNS {
 		 * <p>Deletes a registered CA certificate.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCACertificate</a> action.</p>
 		 * Delete cacertificate/{caCertificateId}
 		 * @param {string} caCertificateId The ID of the certificate to delete. (The last part of the certificate ARN contains the certificate ID.)
+		 *     Min length: 64    Max length: 64
 		 * @return {DeleteCACertificateResponse} Success
 		 */
 		DeleteCACertificate(caCertificateId: string): Observable<DeleteCACertificateResponse> {
@@ -14839,6 +14968,7 @@ export namespace MyNS {
 		 * <p>Describes a registered CA certificate.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCACertificate</a> action.</p>
 		 * Get cacertificate/{caCertificateId}
 		 * @param {string} caCertificateId The CA certificate identifier.
+		 *     Min length: 64    Max length: 64
 		 * @return {DescribeCACertificateResponse} Success
 		 */
 		DescribeCACertificate(caCertificateId: string): Observable<DescribeCACertificateResponse> {
@@ -14849,6 +14979,7 @@ export namespace MyNS {
 		 * <p>Updates a registered CA certificate.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCACertificate</a> action.</p>
 		 * Put cacertificate/{caCertificateId}
 		 * @param {string} caCertificateId The CA certificate identifier.
+		 *     Min length: 64    Max length: 64
 		 * @param {AuthorizerStatus} newStatus <p>The updated status of the CA certificate.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
 		 * @param {AutoRegistrationStatus} newAutoRegistrationStatus The new value for the auto registration status. Valid values are: "ENABLE" or "DISABLE".
 		 * @return {void} Success
@@ -14861,6 +14992,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified certificate.</p> <p>A certificate cannot be deleted if it has a policy or IoT thing attached to it or if its status is set to ACTIVE. To delete a certificate, first use the <a>DetachPolicy</a> action to detach all policies. Next, use the <a>UpdateCertificate</a> action to set the certificate to the INACTIVE status.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteCertificate</a> action.</p>
 		 * Delete certificates/{certificateId}
 		 * @param {string} certificateId The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
+		 *     Min length: 64    Max length: 64
 		 * @param {boolean} forceDelete Forces the deletion of a certificate if it is inactive and is not attached to an IoT thing.
 		 * @return {void} Success
 		 */
@@ -14872,6 +15004,7 @@ export namespace MyNS {
 		 * <p>Gets information about the specified certificate.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeCertificate</a> action.</p>
 		 * Get certificates/{certificateId}
 		 * @param {string} certificateId The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
+		 *     Min length: 64    Max length: 64
 		 * @return {DescribeCertificateResponse} Success
 		 */
 		DescribeCertificate(certificateId: string): Observable<DescribeCertificateResponse> {
@@ -14882,8 +15015,11 @@ export namespace MyNS {
 		 * <p>Deletes a job execution.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteJobExecution</a> action.</p>
 		 * Delete things/{thingName}/jobs/{jobId}/executionNumber/{executionNumber}
 		 * @param {string} jobId The ID of the job whose execution on a particular device will be deleted.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} thingName The name of the thing whose job execution will be deleted.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} executionNumber <p>The ID of the job execution to be deleted. The <code>executionNumber</code> refers to the execution of a particular job on a particular device.</p> <p>Note that once a job execution is deleted, the <code>executionNumber</code> may be reused by IoT, so be sure you get and use the correct value here.</p>
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} force <p>(Optional) When true, you can delete a job execution which is "IN_PROGRESS". Otherwise, you can only delete a job execution which is in a terminal state ("SUCCEEDED", "FAILED", "REJECTED", "REMOVED" or "CANCELED") or an exception will occur. The default is false.</p> <note> <p>Deleting a job execution which is "IN_PROGRESS", will cause the device to be unable to access job information or update the job execution status. Use caution and ensure that the device is able to recover to a valid state.</p> </note>
 		 * @param {string} namespaceId <p>The namespace used to indicate that a job is a customer-managed job.</p> <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> <p>The <code>namespaceId</code> feature is in public preview.</p> </note>
 		 * @return {void} Success
@@ -14896,6 +15032,7 @@ export namespace MyNS {
 		 * <p>Deletes the specified version of the specified policy. You cannot delete the default version of a policy using this action. To delete the default version of a policy, use <a>DeletePolicy</a>. To find out which version of a policy is marked as the default version, use ListPolicyVersions.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeletePolicyVersion</a> action.</p>
 		 * Delete policies/{policyName}/version/{policyVersionId}
 		 * @param {string} policyName The name of the policy.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} policyVersionId The policy version ID.
 		 * @return {void} Success
 		 */
@@ -14907,6 +15044,7 @@ export namespace MyNS {
 		 * <p>Gets information about the specified policy version.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetPolicyVersion</a> action.</p>
 		 * Get policies/{policyName}/version/{policyVersionId}
 		 * @param {string} policyName The name of the policy.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} policyVersionId The policy version ID.
 		 * @return {GetPolicyVersionResponse} Success
 		 */
@@ -14918,6 +15056,7 @@ export namespace MyNS {
 		 * <p>Sets the specified version of the specified policy as the policy's default (operative) version. This action affects all certificates to which the policy is attached. To list the principals the policy is attached to, use the <a>ListPrincipalPolicies</a> action.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">SetDefaultPolicyVersion</a> action.</p>
 		 * Patch policies/{policyName}/version/{policyVersionId}
 		 * @param {string} policyName The policy name.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} policyVersionId The policy version ID.
 		 * @return {void} Success
 		 */
@@ -14929,6 +15068,7 @@ export namespace MyNS {
 		 * <p>Deletes a provisioning template.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplate</a> action.</p>
 		 * Delete provisioning-templates/{templateName}
 		 * @param {string} templateName The name of the fleet provision template to delete.
+		 *     Min length: 1    Max length: 36
 		 * @return {DeleteProvisioningTemplateResponse} Success
 		 */
 		DeleteProvisioningTemplate(templateName: string): Observable<DeleteProvisioningTemplateResponse> {
@@ -14939,6 +15079,7 @@ export namespace MyNS {
 		 * <p>Returns information about a provisioning template.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplate</a> action.</p>
 		 * Get provisioning-templates/{templateName}
 		 * @param {string} templateName The name of the provisioning template.
+		 *     Min length: 1    Max length: 36
 		 * @return {DescribeProvisioningTemplateResponse} Success
 		 */
 		DescribeProvisioningTemplate(templateName: string): Observable<DescribeProvisioningTemplateResponse> {
@@ -14949,6 +15090,7 @@ export namespace MyNS {
 		 * <p>Updates a provisioning template.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateProvisioningTemplate</a> action.</p>
 		 * Patch provisioning-templates/{templateName}
 		 * @param {string} templateName The name of the provisioning template.
+		 *     Min length: 1    Max length: 36
 		 * @return {UpdateProvisioningTemplateResponse} Success
 		 */
 		UpdateProvisioningTemplate(templateName: string, requestBody: UpdateProvisioningTemplatePatchBody): Observable<UpdateProvisioningTemplateResponse> {
@@ -14959,7 +15101,9 @@ export namespace MyNS {
 		 * <p>Deletes a provisioning template version.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeleteProvisioningTemplateVersion</a> action.</p>
 		 * Delete provisioning-templates/{templateName}/versions/{versionId}
 		 * @param {string} templateName The name of the provisioning template version to delete.
+		 *     Min length: 1    Max length: 36
 		 * @param {number} versionId The provisioning template version ID to delete.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DeleteProvisioningTemplateVersionResponse} Success
 		 */
 		DeleteProvisioningTemplateVersion(templateName: string, versionId: number): Observable<DeleteProvisioningTemplateVersionResponse> {
@@ -14970,7 +15114,9 @@ export namespace MyNS {
 		 * <p>Returns information about a provisioning template version.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeProvisioningTemplateVersion</a> action.</p>
 		 * Get provisioning-templates/{templateName}/versions/{versionId}
 		 * @param {string} templateName The template name.
+		 *     Min length: 1    Max length: 36
 		 * @param {number} versionId The provisioning template version ID.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DescribeProvisioningTemplateVersionResponse} Success
 		 */
 		DescribeProvisioningTemplateVersion(templateName: string, versionId: number): Observable<DescribeProvisioningTemplateVersionResponse> {
@@ -15030,6 +15176,7 @@ export namespace MyNS {
 		 * <p>Deprecates a thing type. You can not associate new things with deprecated thing type.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DeprecateThingType</a> action.</p>
 		 * Post thing-types/{thingTypeName}/deprecate
 		 * @param {string} thingTypeName The name of the thing type to deprecate.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeprecateThingTypeResponse} Success
 		 */
 		DeprecateThingType(thingTypeName: string, requestBody: DeprecateThingTypePostBody): Observable<DeprecateThingTypeResponse> {
@@ -15040,6 +15187,7 @@ export namespace MyNS {
 		 * <p>Gets information about a single audit finding. Properties include the reason for noncompliance, the severity of the issue, and the start time when the audit that returned the finding.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditFinding</a> action.</p>
 		 * Get audit/findings/{findingId}
 		 * @param {string} findingId A unique identifier for a single audit finding. You can use this identifier to apply mitigation actions to the finding.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeAuditFindingResponse} Success
 		 */
 		DescribeAuditFinding(findingId: string): Observable<DescribeAuditFindingResponse> {
@@ -15050,6 +15198,7 @@ export namespace MyNS {
 		 * Gets information about an audit mitigation task that is used to apply mitigation actions to a set of audit findings. Properties include the actions being applied, the audit checks to which they're being applied, the task status, and aggregated task statistics.
 		 * Get audit/mitigationactions/tasks/{taskId}
 		 * @param {string} taskId The unique identifier for the audit mitigation task.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeAuditMitigationActionsTaskResponse} Success
 		 */
 		DescribeAuditMitigationActionsTask(taskId: string): Observable<DescribeAuditMitigationActionsTaskResponse> {
@@ -15060,6 +15209,7 @@ export namespace MyNS {
 		 * <p>Starts a task that applies a set of mitigation actions to the specified target.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartAuditMitigationActionsTask</a> action.</p>
 		 * Post audit/mitigationactions/tasks/{taskId}
 		 * @param {string} taskId A unique identifier for the task. You can use this identifier to check the status of the task or to cancel it.
+		 *     Min length: 1    Max length: 128
 		 * @return {StartAuditMitigationActionsTaskResponse} Success
 		 */
 		StartAuditMitigationActionsTask(taskId: string, requestBody: StartAuditMitigationActionsTaskPostBody): Observable<StartAuditMitigationActionsTaskResponse> {
@@ -15079,6 +15229,7 @@ export namespace MyNS {
 		 * <p>Gets information about a Device Defender audit.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeAuditTask</a> action.</p>
 		 * Get audit/tasks/{taskId}
 		 * @param {string} taskId The ID of the audit whose information you want to get.
+		 *     Min length: 1    Max length: 40
 		 * @return {DescribeAuditTaskResponse} Success
 		 */
 		DescribeAuditTask(taskId: string): Observable<DescribeAuditTaskResponse> {
@@ -15089,6 +15240,7 @@ export namespace MyNS {
 		 * <p> Gets information about a Device Defender ML Detect mitigation action. </p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeDetectMitigationActionsTask</a> action.</p>
 		 * Get detect/mitigationactions/tasks/{taskId}
 		 * @param {string} taskId  The unique identifier of the task. 
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeDetectMitigationActionsTaskResponse} Success
 		 */
 		DescribeDetectMitigationActionsTask(taskId: string): Observable<DescribeDetectMitigationActionsTaskResponse> {
@@ -15099,6 +15251,7 @@ export namespace MyNS {
 		 * <p> Starts a Device Defender ML Detect mitigation actions task. </p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StartDetectMitigationActionsTask</a> action.</p>
 		 * Put detect/mitigationactions/tasks/{taskId}
 		 * @param {string} taskId  The unique identifier of the task. 
+		 *     Min length: 1    Max length: 128
 		 * @return {StartDetectMitigationActionsTaskResponse} Success
 		 */
 		StartDetectMitigationActionsTask(taskId: string, requestBody: StartDetectMitigationActionsTaskPutBody): Observable<StartDetectMitigationActionsTaskResponse> {
@@ -15109,6 +15262,7 @@ export namespace MyNS {
 		 * <p>Returns a unique endpoint specific to the Amazon Web Services account making the call.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeEndpoint</a> action.</p>
 		 * Get endpoint
 		 * @param {string} endpointType <p>The endpoint type. Valid endpoint types include:</p> <ul> <li> <p> <code>iot:Data</code> - Returns a VeriSign signed data endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:Data-ATS</code> - Returns an ATS signed data endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:CredentialProvider</code> - Returns an IoT credentials provider API endpoint.</p> </li> </ul> <ul> <li> <p> <code>iot:Jobs</code> - Returns an IoT device management Jobs API endpoint.</p> </li> </ul> <p>We strongly recommend that customers use the newer <code>iot:Data-ATS</code> endpoint type to avoid issues related to the widespread distrust of Symantec certificate authorities.</p>
+		 *     Max length: 128
 		 * @return {DescribeEndpointResponse} Success
 		 */
 		DescribeEndpoint(endpointType: string | null | undefined): Observable<DescribeEndpointResponse> {
@@ -15137,6 +15291,7 @@ export namespace MyNS {
 		 * <p>Describes a search index.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeIndex</a> action.</p>
 		 * Get indices/{indexName}
 		 * @param {string} indexName The index name.
+		 *     Min length: 1    Max length: 128
 		 * @return {DescribeIndexResponse} Success
 		 */
 		DescribeIndex(indexName: string): Observable<DescribeIndexResponse> {
@@ -15147,8 +15302,11 @@ export namespace MyNS {
 		 * <p>Describes a job execution.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeJobExecution</a> action.</p>
 		 * Get things/{thingName}/jobs/{jobId}
 		 * @param {string} jobId The unique identifier you assigned to this job when it was created.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} thingName The name of the thing on which the job execution is running.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} executionNumber A string (consisting of the digits "0" through "9" which is used to specify a particular job execution on a particular device.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {DescribeJobExecutionResponse} Success
 		 */
 		DescribeJobExecution(jobId: string, thingName: string, executionNumber: number | null | undefined): Observable<DescribeJobExecutionResponse> {
@@ -15159,6 +15317,7 @@ export namespace MyNS {
 		 * View details of a managed job template.
 		 * Get managed-job-templates/{templateName}
 		 * @param {string} templateName The unique name of a managed job template, which is required.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} templateVersion An optional parameter to specify version of a managed template. If not specified, the pre-defined default version is returned.
 		 * @return {DescribeManagedJobTemplateResponse} Success
 		 */
@@ -15170,6 +15329,7 @@ export namespace MyNS {
 		 * <p>Describes a bulk thing provisioning task.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DescribeThingRegistrationTask</a> action.</p>
 		 * Get thing-registration-tasks/{taskId}
 		 * @param {string} taskId The task ID.
+		 *     Max length: 40
 		 * @return {DescribeThingRegistrationTaskResponse} Success
 		 */
 		DescribeThingRegistrationTask(taskId: string): Observable<DescribeThingRegistrationTaskResponse> {
@@ -15180,6 +15340,7 @@ export namespace MyNS {
 		 * <p>Disables the rule.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">DisableTopicRule</a> action.</p>
 		 * Post rules/{ruleName}/disable
 		 * @param {string} ruleName The name of the rule to disable.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		DisableTopicRule(ruleName: string): Observable<HttpResponse<string>> {
@@ -15190,6 +15351,7 @@ export namespace MyNS {
 		 * <p>Enables the rule.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">EnableTopicRule</a> action.</p>
 		 * Post rules/{ruleName}/enable
 		 * @param {string} ruleName The name of the topic rule to enable.
+		 *     Min length: 1    Max length: 128
 		 * @return {void} Success
 		 */
 		EnableTopicRule(ruleName: string): Observable<HttpResponse<string>> {
@@ -15200,7 +15362,9 @@ export namespace MyNS {
 		 * <p> Returns a Device Defender's ML Detect Security Profile training model's status. </p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetBehaviorModelTrainingSummaries</a> action.</p>
 		 * Get behavior-model-training/summaries
 		 * @param {string} securityProfileName  The name of the security profile. 
+		 *     Min length: 1    Max length: 128
 		 * @param {number} maxResults  The maximum number of results to return at one time. The default is 10. 
+		 *     Minimum: 1    Maximum: 10
 		 * @param {string} nextToken  The token for the next set of results. 
 		 * @return {GetBehaviorModelTrainingSummariesResponse} Success
 		 */
@@ -15230,6 +15394,7 @@ export namespace MyNS {
 		 * <p>Gets a list of the policies that have an effect on the authorization behavior of the specified device when it connects to the IoT device gateway.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetEffectivePolicies</a> action.</p>
 		 * Post effective-policies
 		 * @param {string} thingName The thing name.
+		 *     Min length: 1    Max length: 128
 		 * @return {GetEffectivePoliciesResponse} Success
 		 */
 		GetEffectivePolicies(thingName: string | null | undefined, requestBody: GetEffectivePoliciesPostBody): Observable<GetEffectivePoliciesResponse> {
@@ -15258,6 +15423,7 @@ export namespace MyNS {
 		 * <p>Gets a job document.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">GetJobDocument</a> action.</p>
 		 * Get jobs/{jobId}/job-document
 		 * @param {string} jobId The unique identifier you assigned to this job when it was created.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetJobDocumentResponse} Success
 		 */
 		GetJobDocument(jobId: string): Observable<GetJobDocumentResponse> {
@@ -15295,6 +15461,7 @@ export namespace MyNS {
 		 * <p>Updates the package configuration.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdatePackageConfiguration</a> and <a href="https://docs.aws.amazon.com/IAM/latest/UserGuide/id_roles_use_passrole.html">iam:PassRole</a> actions.</p>
 		 * Patch package-configuration
 		 * @param {string} clientToken A unique case-sensitive identifier that you can provide to ensure the idempotency of the request. Don't reuse this client token if a new idempotent request is required.
+		 *     Min length: 36    Max length: 64
 		 * @return {UpdatePackageConfigurationResponse} Success
 		 */
 		UpdatePackageConfiguration(clientToken: string | null | undefined, requestBody: UpdatePackageConfigurationPatchBody): Observable<UpdatePackageConfigurationResponse> {
@@ -15341,12 +15508,15 @@ export namespace MyNS {
 		 * <p>Lists the active violations for a given Device Defender security profile.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListActiveViolations</a> action.</p>
 		 * Get active-violations
 		 * @param {string} thingName The name of the thing whose active violations are listed.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} securityProfileName The name of the Device Defender security profile for which violations are listed.
+		 *     Min length: 1    Max length: 128
 		 * @param {BehaviorCriteriaType} behaviorCriteriaType  The criteria for a behavior. 
 		 * @param {boolean} listSuppressedAlerts  A list of all suppressed alerts. 
 		 * @param {VerificationState} verificationState The verification state of the violation (detect alarm).
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListActiveViolationsResponse} Success
 		 */
 		ListActiveViolations(thingName: string | null | undefined, securityProfileName: string | null | undefined, behaviorCriteriaType: BehaviorCriteriaType | null | undefined, listSuppressedAlerts: boolean | null | undefined, verificationState: VerificationState | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListActiveViolationsResponse> {
@@ -15359,7 +15529,9 @@ export namespace MyNS {
 		 * @param {string} target The group or principal for which the policies will be listed. Valid principals are CertificateArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:cert/<i>certificateId</i>), thingGroupArn (arn:aws:iot:<i>region</i>:<i>accountId</i>:thinggroup/<i>groupName</i>) and CognitoId (<i>region</i>:<i>id</i>).
 		 * @param {boolean} recursive When true, recursively list attached policies.
 		 * @param {string} marker The token to retrieve the next set of results.
+		 *     Max length: 1024
 		 * @param {number} pageSize The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListAttachedPoliciesResponse} Success
 		 */
 		ListAttachedPolicies(target: string, recursive: boolean | null | undefined, marker: string | null | undefined, pageSize: number | null | undefined): Observable<ListAttachedPoliciesResponse> {
@@ -15381,9 +15553,12 @@ export namespace MyNS {
 		 * <p>Gets the status of audit mitigation action tasks that were executed.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsExecutions</a> action.</p>
 		 * Get audit/mitigationactions/executions#taskId&findingId
 		 * @param {string} taskId Specify this filter to limit results to actions for a specific audit mitigation actions task.
+		 *     Min length: 1    Max length: 128
 		 * @param {AuditMitigationActionsExecutionStatus} actionStatus Specify this filter to limit results to those with a specific status.
 		 * @param {string} findingId Specify this filter to limit results to those that were applied to a specific audit finding.
+		 *     Min length: 1    Max length: 128
 		 * @param {number} maxResults The maximum number of results to return at one time. The default is 25.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken The token for the next set of results.
 		 * @return {ListAuditMitigationActionsExecutionsResponse} Success
 		 */
@@ -15395,9 +15570,12 @@ export namespace MyNS {
 		 * <p>Gets a list of audit mitigation action tasks that match the specified filters.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuditMitigationActionsTasks</a> action.</p>
 		 * Get audit/mitigationactions/tasks#startTime&endTime
 		 * @param {string} auditTaskId Specify this filter to limit results to tasks that were applied to results for a specific audit.
+		 *     Min length: 1    Max length: 40
 		 * @param {string} findingId Specify this filter to limit results to tasks that were applied to a specific audit finding.
+		 *     Min length: 1    Max length: 128
 		 * @param {AuditMitigationActionsTaskStatus} taskStatus Specify this filter to limit results to tasks that are in a specific state.
 		 * @param {number} maxResults The maximum number of results to return at one time. The default is 25.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {Date} startTime Specify this filter to limit results to tasks that began on or after a specific date and time.
 		 * @param {Date} endTime Specify this filter to limit results to tasks that were completed or canceled on or before a specific date and time.
@@ -15427,6 +15605,7 @@ export namespace MyNS {
 		 * @param {AuditMitigationActionsTaskStatus} taskStatus A filter to limit the output to audits with the specified completion status: can be one of "IN_PROGRESS", "COMPLETED", "FAILED", or "CANCELED".
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time. The default is 25.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListAuditTasksResponse} Success
 		 */
 		ListAuditTasks(startTime: Date, endTime: Date, taskType: AuditTaskType | null | undefined, taskStatus: AuditMitigationActionsTaskStatus | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAuditTasksResponse> {
@@ -15437,7 +15616,9 @@ export namespace MyNS {
 		 * <p>Lists the authorizers registered in your account.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListAuthorizers</a> action.</p>
 		 * Get authorizers/
 		 * @param {number} pageSize The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} marker A marker used to get the next set of results.
+		 *     Max length: 1024
 		 * @param {boolean} isAscendingOrder Return the list of authorizers in ascending alphabetical order.
 		 * @param {AuthorizerStatus} status The status of the list authorizers request.
 		 * @return {ListAuthorizersResponse} Success
@@ -15451,7 +15632,9 @@ export namespace MyNS {
 		 * Get billing-groups
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} namePrefixFilter Limit the results to billing groups whose names have the given prefix.
+		 *     Min length: 1    Max length: 128
 		 * @return {ListBillingGroupsResponse} Success
 		 */
 		ListBillingGroups(nextToken: string | null | undefined, maxResults: number | null | undefined, namePrefixFilter: string | null | undefined): Observable<ListBillingGroupsResponse> {
@@ -15462,9 +15645,12 @@ export namespace MyNS {
 		 * <p>Lists the CA certificates registered for your Amazon Web Services account.</p> <p>The results are paginated with a default page size of 25. You can use the returned marker to retrieve additional results.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCACertificates</a> action.</p>
 		 * Get cacertificates
 		 * @param {number} pageSize The result page size.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} marker The marker for the next set of results.
+		 *     Max length: 1024
 		 * @param {boolean} isAscendingOrder Determines the order of the results.
 		 * @param {string} templateName The name of the provisioning template.
+		 *     Min length: 1    Max length: 36
 		 * @return {ListCACertificatesResponse} Success
 		 */
 		ListCACertificates(pageSize: number | null | undefined, marker: string | null | undefined, isAscendingOrder: boolean | null | undefined, templateName: string | null | undefined): Observable<ListCACertificatesResponse> {
@@ -15475,8 +15661,11 @@ export namespace MyNS {
 		 * <p>List the device certificates signed by the specified CA certificate.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListCertificatesByCA</a> action.</p>
 		 * Get certificates-by-ca/{caCertificateId}
 		 * @param {string} caCertificateId The ID of the CA certificate. This operation will list all registered device certificate that were signed by this CA certificate.
+		 *     Min length: 64    Max length: 64
 		 * @param {number} pageSize The result page size.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} marker The marker for the next set of results.
+		 *     Max length: 1024
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.
 		 * @return {ListCertificatesByCAResponse} Success
 		 */
@@ -15489,6 +15678,7 @@ export namespace MyNS {
 		 * Get custom-metrics
 		 * @param {string} nextToken  The token for the next set of results. 
 		 * @param {number} maxResults  The maximum number of results to return at one time. The default is 25. 
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListCustomMetricsResponse} Success
 		 */
 		ListCustomMetrics(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListCustomMetricsResponse> {
@@ -15499,11 +15689,15 @@ export namespace MyNS {
 		 * <p> Lists mitigation actions executions for a Device Defender ML Detect Security Profile. </p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsExecutions</a> action.</p>
 		 * Get detect/mitigationactions/executions
 		 * @param {string} taskId  The unique identifier of the task. 
+		 *     Min length: 1    Max length: 128
 		 * @param {string} violationId  The unique identifier of the violation. 
+		 *     Min length: 1    Max length: 128
 		 * @param {string} thingName  The name of the thing whose mitigation actions are listed. 
+		 *     Min length: 1    Max length: 128
 		 * @param {Date} startTime  A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. 
 		 * @param {Date} endTime  The end of the time period for which ML Detect mitigation actions executions are returned. 
 		 * @param {number} maxResults  The maximum number of results to return at one time. The default is 25. 
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken  The token for the next set of results. 
 		 * @return {ListDetectMitigationActionsExecutionsResponse} Success
 		 */
@@ -15515,6 +15709,7 @@ export namespace MyNS {
 		 * <p> List of Device Defender ML Detect mitigation actions tasks. </p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDetectMitigationActionsTasks</a> action.</p>
 		 * Get detect/mitigationactions/tasks#startTime&endTime
 		 * @param {number} maxResults The maximum number of results to return at one time. The default is 25.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken  The token for the next set of results. 
 		 * @param {Date} startTime  A filter to limit results to those found after the specified time. You must specify either the startTime and endTime or the taskId, but not both. 
 		 * @param {Date} endTime  The end of the time period for which ML Detect mitigation actions tasks are returned. 
@@ -15529,6 +15724,7 @@ export namespace MyNS {
 		 * Get dimensions
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults The maximum number of results to retrieve at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListDimensionsResponse} Success
 		 */
 		ListDimensions(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDimensionsResponse> {
@@ -15539,7 +15735,9 @@ export namespace MyNS {
 		 * <p>Gets a list of domain configurations for the user. This list is sorted alphabetically by domain configuration name.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListDomainConfigurations</a> action.</p>
 		 * Get domainConfigurations
 		 * @param {string} marker The marker for the next set of results.
+		 *     Max length: 1024
 		 * @param {number} pageSize The result page size.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {ServiceType} serviceType The type of service delivered by the endpoint.
 		 * @return {ListDomainConfigurationsResponse} Success
 		 */
@@ -15552,6 +15750,7 @@ export namespace MyNS {
 		 * Get fleet-metrics
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <code>null</code> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListFleetMetricsResponse} Success
 		 */
 		ListFleetMetrics(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListFleetMetricsResponse> {
@@ -15563,6 +15762,7 @@ export namespace MyNS {
 		 * Get indices
 		 * @param {string} nextToken The token used to get the next set of results, or <code>null</code> if there are no additional results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 500
 		 * @return {ListIndicesResponse} Success
 		 */
 		ListIndices(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListIndicesResponse> {
@@ -15573,8 +15773,10 @@ export namespace MyNS {
 		 * <p>Lists the job executions for a job.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForJob</a> action.</p>
 		 * Get jobs/{jobId}/things
 		 * @param {string} jobId The unique identifier you assigned to this job when it was created.
+		 *     Min length: 1    Max length: 64
 		 * @param {JobExecutionStatus} status The status of the job.
 		 * @param {number} maxResults The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @return {ListJobExecutionsForJobResponse} Success
 		 */
@@ -15586,11 +15788,14 @@ export namespace MyNS {
 		 * <p>Lists the job executions for the specified thing.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobExecutionsForThing</a> action.</p>
 		 * Get things/{thingName}/jobs
 		 * @param {string} thingName The thing name.
+		 *     Min length: 1    Max length: 128
 		 * @param {JobExecutionStatus} status An optional filter that lets you search for jobs that have the specified status.
 		 * @param {string} namespaceId <p>The namespace used to indicate that a job is a customer-managed job.</p> <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> <p>The <code>namespaceId</code> feature is in public preview.</p> </note>
 		 * @param {number} maxResults The maximum number of results to be returned per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @param {string} jobId The unique identifier you assigned to this job when it was created.
+		 *     Min length: 1    Max length: 64
 		 * @return {ListJobExecutionsForThingResponse} Success
 		 */
 		ListJobExecutionsForThing(thingName: string, status: JobExecutionStatus | null | undefined, namespaceId: string | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined, jobId: string | null | undefined): Observable<ListJobExecutionsForThingResponse> {
@@ -15601,6 +15806,7 @@ export namespace MyNS {
 		 * <p>Returns a list of job templates.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListJobTemplates</a> action.</p>
 		 * Get job-templates
 		 * @param {number} maxResults The maximum number of results to return in the list.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken The token to use to return the next set of results in the list.
 		 * @return {ListJobTemplatesResponse} Success
 		 */
@@ -15614,9 +15820,12 @@ export namespace MyNS {
 		 * @param {JobStatus} status An optional filter that lets you search for jobs that have the specified status.
 		 * @param {TargetSelection} targetSelection <p>Specifies whether the job will continue to run (CONTINUOUS), or will be complete after all those things specified as targets have completed the job (SNAPSHOT). If continuous, the job may also be run on a thing when a change is detected in a target. For example, a job will run on a thing when the thing is added to a target group, even after the job was completed by all things originally in the group. </p> <note> <p>We recommend that you use continuous jobs instead of snapshot jobs for dynamic thing group targets. By using continuous jobs, devices that join the group receive the job execution even after the job has been created.</p> </note>
 		 * @param {number} maxResults The maximum number of results to return per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @param {string} thingGroupName A filter that limits the returned jobs to those for the specified group.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} thingGroupId A filter that limits the returned jobs to those for the specified group.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} namespaceId <p>The namespace used to indicate that a job is a customer-managed job.</p> <p>When you specify a value for this parameter, Amazon Web Services IoT Core sends jobs notifications to MQTT topics that contain the value in the following format.</p> <p> <code>$aws/things/<i>THING_NAME</i>/jobs/<i>JOB_ID</i>/notify-namespace-<i>NAMESPACE_ID</i>/</code> </p> <note> <p>The <code>namespaceId</code> feature is in public preview.</p> </note>
 		 * @return {ListJobsResponse} Success
 		 */
@@ -15628,7 +15837,9 @@ export namespace MyNS {
 		 * Returns a list of managed job templates.
 		 * Get managed-job-templates
 		 * @param {string} templateName An optional parameter for template name. If specified, only the versions of the managed job templates that have the specified template name will be returned.
+		 *     Min length: 1    Max length: 64
 		 * @param {number} maxResults Maximum number of entries that can be returned.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken The token to retrieve the next set of results.
 		 * @return {ListManagedJobTemplatesResponse} Success
 		 */
@@ -15640,12 +15851,15 @@ export namespace MyNS {
 		 * Lists the values reported for an IoT Device Defender metric (device-side metric, cloud-side metric, or custom metric) by the given thing during the specified time period.
 		 * Get metric-values#thingName&metricName&startTime&endTime
 		 * @param {string} thingName The name of the thing for which security profile metric values are returned.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} metricName The name of the security profile metric for which values are returned.
 		 * @param {string} dimensionName The dimension name.
+		 *     Min length: 1    Max length: 128
 		 * @param {DimensionValueOperator} dimensionValueOperator The dimension value operator.
 		 * @param {Date} startTime The start of the time period for which metric values are returned.
 		 * @param {Date} endTime The end of the time period for which metric values are returned.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken The token for the next set of results.
 		 * @return {ListMetricValuesResponse} Success
 		 */
@@ -15658,6 +15872,7 @@ export namespace MyNS {
 		 * Get mitigationactions/actions
 		 * @param {MitigationActionType} actionType Specify a value to limit the result to mitigation actions with a specific action type.
 		 * @param {number} maxResults The maximum number of results to return at one time. The default is 25.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken The token for the next set of results.
 		 * @return {ListMitigationActionsResponse} Success
 		 */
@@ -15669,6 +15884,7 @@ export namespace MyNS {
 		 * <p>Lists OTA updates.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOTAUpdates</a> action.</p>
 		 * Get otaUpdates
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken A token used to retrieve the next set of results.
 		 * @param {OTAUpdateStatus} otaUpdateStatus The OTA update job status.
 		 * @return {ListOTAUpdatesResponse} Success
@@ -15681,7 +15897,9 @@ export namespace MyNS {
 		 * <p>Lists certificates that are being transferred but not yet accepted.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListOutgoingCertificates</a> action.</p>
 		 * Get certificates-out-going
 		 * @param {number} pageSize The result page size.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} marker The marker for the next set of results.
+		 *     Max length: 1024
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If True, the results are returned in ascending order, based on the creation date.
 		 * @return {ListOutgoingCertificatesResponse} Success
 		 */
@@ -15693,8 +15911,10 @@ export namespace MyNS {
 		 * <p>Lists the software package versions associated to the account.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPackageVersions</a> action.</p>
 		 * Get packages/{packageName}/versions
 		 * @param {string} packageName The name of the target package.
+		 *     Min length: 1    Max length: 128
 		 * @param {PackageVersionStatus} status The status of the package version. For more information, see <a href="https://docs.aws.amazon.com/iot/latest/developerguide/preparing-to-use-software-package-catalog.html#package-version-lifecycle">Package version lifecycle</a>.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results.
 		 * @return {ListPackageVersionsResponse} Success
 		 */
@@ -15706,6 +15926,7 @@ export namespace MyNS {
 		 * <p>Lists the software packages associated to the account.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPackages</a> action.</p>
 		 * Get packages
 		 * @param {number} maxResults The maximum number of results returned at one time.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken The token for the next set of results.
 		 * @return {ListPackagesResponse} Success
 		 */
@@ -15717,7 +15938,9 @@ export namespace MyNS {
 		 * <p>Lists your policies.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicies</a> action.</p>
 		 * Get policies
 		 * @param {string} marker The marker for the next set of results.
+		 *     Max length: 1024
 		 * @param {number} pageSize The result page size.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If true, the results are returned in ascending creation order.
 		 * @return {ListPoliciesResponse} Success
 		 */
@@ -15729,7 +15952,9 @@ export namespace MyNS {
 		 * <p>Lists the principals associated with the specified policy.</p> <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <a>ListTargetsForPolicy</a> instead.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPolicyPrincipals</a> action.</p>
 		 * Get policy-principals#x-amzn-iot-policy
 		 * @param {string} marker The marker for the next set of results.
+		 *     Max length: 1024
 		 * @param {number} pageSize The result page size.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If true, the results are returned in ascending creation order.
 		 * @return {ListPolicyPrincipalsResponse} Success
 		 */
@@ -15741,7 +15966,9 @@ export namespace MyNS {
 		 * <p>Lists the policies attached to the specified principal. If you use an Cognito identity, the ID must be in <a href="https://docs.aws.amazon.com/cognitoidentity/latest/APIReference/API_GetCredentialsForIdentity.html#API_GetCredentialsForIdentity_RequestSyntax">AmazonCognito Identity format</a>.</p> <p> <b>Note:</b> This action is deprecated and works as expected for backward compatibility, but we won't add enhancements. Use <a>ListAttachedPolicies</a> instead.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListPrincipalPolicies</a> action.</p>
 		 * Get principal-policies#x-amzn-iot-principal
 		 * @param {string} marker The marker for the next set of results.
+		 *     Max length: 1024
 		 * @param {number} pageSize The result page size.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {boolean} isAscendingOrder Specifies the order for results. If true, results are returned in ascending creation order.
 		 * @return {ListPrincipalPoliciesResponse} Success
 		 */
@@ -15754,6 +15981,7 @@ export namespace MyNS {
 		 * Get principals/things#x-amzn-principal
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListPrincipalThingsResponse} Success
 		 */
 		ListPrincipalThings(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListPrincipalThingsResponse> {
@@ -15764,8 +15992,10 @@ export namespace MyNS {
 		 * <p>The related resources of an Audit finding. The following resources can be returned from calling this API:</p> <ul> <li> <p>DEVICE_CERTIFICATE</p> </li> <li> <p>CA_CERTIFICATE</p> </li> <li> <p>IOT_POLICY</p> </li> <li> <p>COGNITO_IDENTITY_POOL</p> </li> <li> <p>CLIENT_ID</p> </li> <li> <p>ACCOUNT_SETTINGS</p> </li> <li> <p>ROLE_ALIAS</p> </li> <li> <p>IAM_ROLE</p> </li> <li> <p>ISSUER_CERTIFICATE</p> </li> </ul> <note> <p>This API is similar to DescribeAuditFinding's <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">RelatedResources</a> but provides pagination and is not limited to 10 resources. When calling <a href="https://docs.aws.amazon.com/iot/latest/apireference/API_DescribeAuditFinding.html">DescribeAuditFinding</a> for the intermediate CA revoked for active device certificates check, RelatedResources will not be populated. You must use this API, ListRelatedResourcesForAuditFinding, to list the certificates.</p> </note>
 		 * Get audit/relatedResources#findingId
 		 * @param {string} findingId The finding Id.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} nextToken A token that can be used to retrieve the next set of results, or <code>null</code> if there are no additional results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListRelatedResourcesForAuditFindingResponse} Success
 		 */
 		ListRelatedResourcesForAuditFinding(findingId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListRelatedResourcesForAuditFindingResponse> {
@@ -15776,7 +16006,9 @@ export namespace MyNS {
 		 * <p>Lists the role aliases registered in your account.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListRoleAliases</a> action.</p>
 		 * Get role-aliases
 		 * @param {number} pageSize The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} marker A marker used to get the next set of results.
+		 *     Max length: 1024
 		 * @param {boolean} isAscendingOrder Return the list of role aliases in ascending alphabetical order.
 		 * @return {ListRoleAliasesResponse} Success
 		 */
@@ -15789,6 +16021,7 @@ export namespace MyNS {
 		 * Get audit/scheduledaudits
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time. The default is 25.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListScheduledAuditsResponse} Success
 		 */
 		ListScheduledAudits(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListScheduledAuditsResponse> {
@@ -15800,8 +16033,11 @@ export namespace MyNS {
 		 * Get security-profiles
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} dimensionName A filter to limit results to the security profiles that use the defined dimension. Cannot be used with <code>metricName</code> 
+		 *     Min length: 1    Max length: 128
 		 * @param {string} metricName  The name of the custom metric. Cannot be used with <code>dimensionName</code>. 
+		 *     Min length: 1    Max length: 128
 		 * @return {ListSecurityProfilesResponse} Success
 		 */
 		ListSecurityProfiles(nextToken: string | null | undefined, maxResults: number | null | undefined, dimensionName: string | null | undefined, metricName: string | null | undefined): Observable<ListSecurityProfilesResponse> {
@@ -15813,6 +16049,7 @@ export namespace MyNS {
 		 * Get security-profiles-for-target#securityProfileTargetArn
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {boolean} recursive If true, return child groups too.
 		 * @param {string} securityProfileTargetArn The ARN of the target (thing group) whose attached security profiles you want to get.
 		 * @return {ListSecurityProfilesForTargetResponse} Success
@@ -15825,6 +16062,7 @@ export namespace MyNS {
 		 * <p>Lists all of the streams in your Amazon Web Services account.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListStreams</a> action.</p>
 		 * Get streams
 		 * @param {number} maxResults The maximum number of results to return at a time.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} nextToken A token used to get the next set of results.
 		 * @param {boolean} isAscendingOrder Set to true to return the list of streams in ascending order.
 		 * @return {ListStreamsResponse} Success
@@ -15848,8 +16086,11 @@ export namespace MyNS {
 		 * <p>List targets for the specified policy.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForPolicy</a> action.</p>
 		 * Post policy-targets/{policyName}
 		 * @param {string} policyName The policy name.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} marker A marker used to get the next set of results.
+		 *     Max length: 1024
 		 * @param {number} pageSize The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListTargetsForPolicyResponse} Success
 		 */
 		ListTargetsForPolicy(policyName: string, marker: string | null | undefined, pageSize: number | null | undefined): Observable<ListTargetsForPolicyResponse> {
@@ -15860,8 +16101,10 @@ export namespace MyNS {
 		 * <p>Lists the targets (thing groups) associated with a given Device Defender security profile.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListTargetsForSecurityProfile</a> action.</p>
 		 * Get security-profiles/{securityProfileName}/targets
 		 * @param {string} securityProfileName The security profile.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListTargetsForSecurityProfileResponse} Success
 		 */
 		ListTargetsForSecurityProfile(securityProfileName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListTargetsForSecurityProfileResponse> {
@@ -15873,8 +16116,11 @@ export namespace MyNS {
 		 * Get thing-groups
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} parentGroup A filter that limits the results to those with the specified parent group.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} namePrefixFilter A filter that limits the results to those with the specified name prefix.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} recursive If true, return child groups as well.
 		 * @return {ListThingGroupsResponse} Success
 		 */
@@ -15886,8 +16132,10 @@ export namespace MyNS {
 		 * <p>List the thing groups to which the specified thing belongs.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingGroupsForThing</a> action.</p>
 		 * Get things/{thingName}/thing-groups
 		 * @param {string} thingName The thing name.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListThingGroupsForThingResponse} Success
 		 */
 		ListThingGroupsForThing(thingName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListThingGroupsForThingResponse> {
@@ -15899,7 +16147,9 @@ export namespace MyNS {
 		 * Get things/{thingName}/principals
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} thingName The name of the thing.
+		 *     Min length: 1    Max length: 128
 		 * @return {ListThingPrincipalsResponse} Success
 		 */
 		ListThingPrincipals(nextToken: string | null | undefined, maxResults: number | null | undefined, thingName: string): Observable<ListThingPrincipalsResponse> {
@@ -15910,9 +16160,11 @@ export namespace MyNS {
 		 * Information about the thing registration tasks.
 		 * Get thing-registration-tasks/{taskId}/reports#reportType
 		 * @param {string} taskId The id of the task.
+		 *     Max length: 40
 		 * @param {ReportType} reportType The type of task report.
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListThingRegistrationTaskReportsResponse} Success
 		 */
 		ListThingRegistrationTaskReports(taskId: string, reportType: ReportType, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListThingRegistrationTaskReportsResponse> {
@@ -15924,6 +16176,7 @@ export namespace MyNS {
 		 * Get thing-registration-tasks
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {Status} status The status of the bulk thing provisioning task.
 		 * @return {ListThingRegistrationTasksResponse} Success
 		 */
@@ -15945,7 +16198,9 @@ export namespace MyNS {
 		 * Get thing-types
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} thingTypeName The name of the thing type.
+		 *     Min length: 1    Max length: 128
 		 * @return {ListThingTypesResponse} Success
 		 */
 		ListThingTypes(nextToken: string | null | undefined, maxResults: number | null | undefined, thingTypeName: string | null | undefined): Observable<ListThingTypesResponse> {
@@ -15957,9 +16212,13 @@ export namespace MyNS {
 		 * Get things
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return in this operation.
+		 *     Minimum: 1    Maximum: 250
 		 * @param {string} attributeName The attribute name used to search for things.
+		 *     Max length: 128
 		 * @param {string} attributeValue The attribute value used to search for things.
+		 *     Max length: 800
 		 * @param {string} thingTypeName The name of the thing type used to search for things.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} usePrefixAttributeValue <p>When <code>true</code>, the action returns the thing resources with attribute values that start with the <code>attributeValue</code> provided.</p> <p>When <code>false</code>, or not present, the action returns only the thing resources with attribute values that match the entire <code>attributeValue</code> provided. </p>
 		 * @return {ListThingsResponse} Success
 		 */
@@ -15980,8 +16239,10 @@ export namespace MyNS {
 		 * <p>Lists the things you have added to the given billing group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInBillingGroup</a> action.</p>
 		 * Get billing-groups/{billingGroupName}/things
 		 * @param {string} billingGroupName The name of the billing group.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return per request.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListThingsInBillingGroupResponse} Success
 		 */
 		ListThingsInBillingGroup(billingGroupName: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListThingsInBillingGroupResponse> {
@@ -15992,9 +16253,11 @@ export namespace MyNS {
 		 * <p>Lists the things in the specified group.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">ListThingsInThingGroup</a> action.</p>
 		 * Get thing-groups/{thingGroupName}/things
 		 * @param {string} thingGroupName The thing group name.
+		 *     Min length: 1    Max length: 128
 		 * @param {boolean} recursive When true, list things in this thing group and in all child groups as well.
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListThingsInThingGroupResponse} Success
 		 */
 		ListThingsInThingGroup(thingGroupName: string, recursive: boolean | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListThingsInThingGroupResponse> {
@@ -16006,6 +16269,7 @@ export namespace MyNS {
 		 * Get rules
 		 * @param {string} topic The topic.
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 10000
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {boolean} ruleDisabled Specifies whether the rule is disabled.
 		 * @return {ListTopicRulesResponse} Success
@@ -16020,6 +16284,7 @@ export namespace MyNS {
 		 * @param {LogTargetType} targetType The type of resource for which you are configuring logging. Must be <code>THING_Group</code>.
 		 * @param {string} nextToken To retrieve the next set of results, the <code>nextToken</code> value from a previous response; otherwise <b>null</b> to receive the first set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListV2LoggingLevelsResponse} Success
 		 */
 		ListV2LoggingLevels(targetType: LogTargetType | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListV2LoggingLevelsResponse> {
@@ -16041,12 +16306,15 @@ export namespace MyNS {
 		 * @param {Date} startTime The start time for the alerts to be listed.
 		 * @param {Date} endTime The end time for the alerts to be listed.
 		 * @param {string} thingName A filter to limit results to those alerts caused by the specified thing.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} securityProfileName A filter to limit results to those alerts generated by the specified security profile.
+		 *     Min length: 1    Max length: 128
 		 * @param {BehaviorCriteriaType} behaviorCriteriaType  The criteria for a behavior. 
 		 * @param {boolean} listSuppressedAlerts  A list of all suppressed alerts. 
 		 * @param {VerificationState} verificationState The verification state of the violation (detect alarm).
 		 * @param {string} nextToken The token for the next set of results.
 		 * @param {number} maxResults The maximum number of results to return at one time.
+		 *     Minimum: 1    Maximum: 250
 		 * @return {ListViolationEventsResponse} Success
 		 */
 		ListViolationEvents(startTime: Date, endTime: Date, thingName: string | null | undefined, securityProfileName: string | null | undefined, behaviorCriteriaType: BehaviorCriteriaType | null | undefined, listSuppressedAlerts: boolean | null | undefined, verificationState: VerificationState | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListViolationEventsResponse> {
@@ -16057,6 +16325,7 @@ export namespace MyNS {
 		 * Set a verification state and provide a description of that verification state on a violation (detect alarm).
 		 * Post violations/verification-state/{violationId}
 		 * @param {string} violationId The violation ID.
+		 *     Min length: 1    Max length: 128
 		 * @return {PutVerificationStateOnViolationResponse} Success
 		 */
 		PutVerificationStateOnViolation(violationId: string, requestBody: PutVerificationStateOnViolationPostBody): Observable<PutVerificationStateOnViolationResponse> {
@@ -16097,6 +16366,7 @@ export namespace MyNS {
 		 * <p>Rejects a pending certificate transfer. After IoT rejects a certificate transfer, the certificate status changes from <b>PENDING_TRANSFER</b> to <b>INACTIVE</b>.</p> <p>To check for pending certificate transfers, call <a>ListCertificates</a> to enumerate your certificates.</p> <p>This operation can only be called by the transfer destination. After it is called, the certificate will be returned to the source's account in the INACTIVE state.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">RejectCertificateTransfer</a> action.</p>
 		 * Patch reject-certificate-transfer/{certificateId}
 		 * @param {string} certificateId The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
+		 *     Min length: 64    Max length: 64
 		 * @return {void} Success
 		 */
 		RejectCertificateTransfer(certificateId: string, requestBody: RejectCertificateTransferPatchBody): Observable<HttpResponse<string>> {
@@ -16143,6 +16413,7 @@ export namespace MyNS {
 		 * <p>Cancels a bulk thing provisioning task.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">StopThingRegistrationTask</a> action.</p>
 		 * Put thing-registration-tasks/{taskId}/cancel
 		 * @param {string} taskId The bulk thing provisioning task ID.
+		 *     Max length: 40
 		 * @return {StopThingRegistrationTaskResponse} Success
 		 */
 		StopThingRegistrationTask(taskId: string): Observable<StopThingRegistrationTaskResponse> {
@@ -16172,6 +16443,7 @@ export namespace MyNS {
 		 * <p>Tests a custom authorization behavior by invoking a specified custom authorizer. Use this to test and debug the custom authorization behavior of devices that connect to the IoT device gateway.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TestInvokeAuthorizer</a> action.</p>
 		 * Post authorizer/{authorizerName}/test
 		 * @param {string} authorizerName The custom authorizer name.
+		 *     Min length: 1    Max length: 128
 		 * @return {TestInvokeAuthorizerResponse} Success
 		 */
 		TestInvokeAuthorizer(authorizerName: string, requestBody: TestInvokeAuthorizerPostBody): Observable<TestInvokeAuthorizerResponse> {
@@ -16182,7 +16454,9 @@ export namespace MyNS {
 		 * <p>Transfers the specified certificate to the specified Amazon Web Services account.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">TransferCertificate</a> action.</p> <p>You can cancel the transfer until it is acknowledged by the recipient.</p> <p>No notification is sent to the transfer destination's account. It is up to the caller to notify the transfer target.</p> <p>The certificate being transferred must not be in the ACTIVE state. You can use the <a>UpdateCertificate</a> action to deactivate it.</p> <p>The certificate must not have any policies attached to it. You can use the <a>DetachPolicy</a> action to detach them.</p>
 		 * Patch transfer-certificate/{certificateId}#targetAwsAccount
 		 * @param {string} certificateId The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
+		 *     Min length: 64    Max length: 64
 		 * @param {string} targetAwsAccount The Amazon Web Services account.
+		 *     Min length: 12    Max length: 12
 		 * @return {TransferCertificateResponse} Success
 		 */
 		TransferCertificate(certificateId: string, targetAwsAccount: string, requestBody: TransferCertificatePatchBody): Observable<TransferCertificateResponse> {
@@ -16211,6 +16485,7 @@ export namespace MyNS {
 		 * <p>Updates the status of the specified certificate. This operation is idempotent.</p> <p>Requires permission to access the <a href="https://docs.aws.amazon.com/service-authorization/latest/reference/list_awsiot.html#awsiot-actions-as-permissions">UpdateCertificate</a> action.</p> <p>Certificates must be in the ACTIVE state to authenticate devices that use a certificate to connect to IoT.</p> <p>Within a few minutes of updating a certificate from the ACTIVE state to any other state, IoT disconnects all devices that used that certificate to connect. Devices cannot use a certificate that is not in the ACTIVE state to reconnect.</p>
 		 * Put certificates/{certificateId}#newStatus
 		 * @param {string} certificateId The ID of the certificate. (The last part of the certificate ARN contains the certificate ID.)
+		 *     Min length: 64    Max length: 64
 		 * @param {CertificateStatus} newStatus <p>The new status.</p> <p> <b>Note:</b> Setting the status to PENDING_TRANSFER or PENDING_ACTIVATION will result in an exception being thrown. PENDING_TRANSFER and PENDING_ACTIVATION are statuses used internally by IoT. They are not intended for developer use.</p> <p> <b>Note:</b> The status value REGISTER_INACTIVE is deprecated and should not be used.</p>
 		 * @return {void} Success
 		 */
@@ -16241,8 +16516,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the billing group.</p> <note> <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		billingGroupName?: string | null;
 
@@ -16251,8 +16526,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing to be added to the billing group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingName?: string | null;
 
@@ -16263,8 +16538,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The name of the billing group.</p> <note> <p>This call is asynchronous. It might take several seconds for the detachment to propagate.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		billingGroupName: FormControl<string | null | undefined>,
 
@@ -16273,8 +16548,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing to be added to the billing group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingName: FormControl<string | null | undefined>,
 
@@ -16295,8 +16570,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the group to which you are adding a thing.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingGroupName?: string | null;
 
@@ -16305,8 +16580,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing to add to a group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingName?: string | null;
 
@@ -16320,8 +16595,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the group to which you are adding a thing.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingGroupName: FormControl<string | null | undefined>,
 
@@ -16330,8 +16605,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing to add to a group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingName: FormControl<string | null | undefined>,
 
@@ -16466,7 +16741,10 @@ export namespace MyNS {
 
 	export interface CancelJobExecutionPutBody {
 
-		/** (Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.) */
+		/**
+		 * (Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion?: number | null;
 
 		/** A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs. */
@@ -16474,7 +16752,10 @@ export namespace MyNS {
 	}
 	export interface CancelJobExecutionPutBodyFormProperties {
 
-		/** (Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.) */
+		/**
+		 * (Optional) The expected current version of the job execution. Each time you update the job execution, its version is incremented. If the version of the job execution stored in Jobs does not match, the update is rejected with a VersionMismatch error, and an ErrorResponse that contains the current job execution status data is returned. (This makes it unnecessary to perform a separate DescribeJobExecution request in order to obtain the job execution status data.)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion: FormControl<number | null | undefined>,
 
 		/** A collection of name/value pairs that describe the status of the job execution. If not specified, the statusDetails are unchanged. You can specify at most 10 name/value pairs. */
@@ -16493,8 +16774,8 @@ export namespace MyNS {
 		/**
 		 * The authorizer name.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		authorizerName: string;
 	}
@@ -16503,8 +16784,8 @@ export namespace MyNS {
 		/**
 		 * The authorizer name.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		authorizerName: FormControl<string | null | undefined>,
 	}
@@ -16544,8 +16825,8 @@ export namespace MyNS {
 		/**
 		 * Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: string;
 	}
@@ -16572,8 +16853,8 @@ export namespace MyNS {
 		/**
 		 * Each audit supression must have a unique client request token. If you try to create a new audit suppression with the same token as one that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -16635,8 +16916,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the token key used to extract the token from the HTTP headers.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		tokenKeyName?: string | null;
 
@@ -16666,8 +16947,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the token key used to extract the token from the HTTP headers.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		tokenKeyName: FormControl<string | null | undefined>,
 
@@ -16705,8 +16986,8 @@ export namespace MyNS {
 
 		/**
 		 * The key used to extract the token from the HTTP headers.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		tokenKeyName?: string | null;
 
@@ -16729,8 +17010,8 @@ export namespace MyNS {
 
 		/**
 		 * The key used to extract the token from the HTTP headers.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		tokenKeyName: FormControl<string | null | undefined>,
 
@@ -16791,12 +17072,18 @@ export namespace MyNS {
 		 */
 		billingGroupProperties: UpdateBillingGroupPatchBodyBillingGroupProperties;
 
-		/** The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>. */
+		/**
+		 * The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion?: number | null;
 	}
 	export interface UpdateBillingGroupPatchBodyFormProperties {
 
-		/** The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>. */
+		/**
+		 * The expected version of the billing group. If the version of the billing group does not match the expected version specified in the request, the <code>UpdateBillingGroup</code> request is rejected with a <code>VersionConflictException</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateBillingGroupPatchBodyFormGroup() {
@@ -16824,8 +17111,8 @@ export namespace MyNS {
 		/**
 		 * The certificate signing request (CSR).
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		certificateSigningRequest: string;
 	}
@@ -16834,8 +17121,8 @@ export namespace MyNS {
 		/**
 		 * The certificate signing request (CSR).
 		 * Required
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		certificateSigningRequest: FormControl<string | null | undefined>,
 	}
@@ -16866,8 +17153,8 @@ export namespace MyNS {
 		/**
 		 * Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: string;
 	}
@@ -16888,8 +17175,8 @@ export namespace MyNS {
 		/**
 		 * Each custom metric must have a unique client request token. If you try to create a new custom metric that already exists with a different token, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -16949,8 +17236,8 @@ export namespace MyNS {
 		/**
 		 * Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: string;
 	}
@@ -16965,8 +17252,8 @@ export namespace MyNS {
 		/**
 		 * Each dimension must have a unique client request token. If you try to create a new dimension with the same token as a dimension that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -17000,8 +17287,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the domain.
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		domainName?: string | null;
 
@@ -17014,8 +17301,8 @@ export namespace MyNS {
 
 		/**
 		 * The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		validationCertificateArn?: string | null;
 
@@ -17035,15 +17322,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the domain.
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		domainName: FormControl<string | null | undefined>,
 
 		/**
 		 * The certificate used to validate the server certificate and prove domain name ownership. This certificate must be signed by a public certificate authority. This value is not required for Amazon Web Services-managed domains.
-		 * Max length: 2048
 		 * Min length: 1
+		 * Max length: 2048
 		 */
 		validationCertificateArn: FormControl<string | null | undefined>,
 
@@ -17154,8 +17441,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is supported: <code>AWS_Things</code>.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName?: string | null;
 
@@ -17176,8 +17463,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>The dynamic thing group index name.</p> <note> <p>Currently one index is supported: <code>AWS_Things</code>.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName: FormControl<string | null | undefined>,
 
@@ -17222,13 +17509,16 @@ export namespace MyNS {
 		 */
 		thingGroupProperties: UpdateDynamicThingGroupPatchBodyThingGroupProperties;
 
-		/** The expected version of the dynamic thing group to update. */
+		/**
+		 * The expected version of the dynamic thing group to update.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion?: number | null;
 
 		/**
 		 * <p>The dynamic thing group index to update.</p> <note> <p>Currently one index is supported: <code>AWS_Things</code>.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName?: string | null;
 
@@ -17243,13 +17533,16 @@ export namespace MyNS {
 	}
 	export interface UpdateDynamicThingGroupPatchBodyFormProperties {
 
-		/** The expected version of the dynamic thing group to update. */
+		/**
+		 * The expected version of the dynamic thing group to update.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion: FormControl<number | null | undefined>,
 
 		/**
 		 * <p>The dynamic thing group index to update.</p> <note> <p>Currently one index is supported: <code>AWS_Things</code>.</p> </note>
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName: FormControl<string | null | undefined>,
 
@@ -17327,8 +17620,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the index to search.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName?: string | null;
 
@@ -17373,8 +17666,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the index to search.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName: FormControl<string | null | undefined>,
 
@@ -17444,15 +17737,18 @@ export namespace MyNS {
 		/**
 		 * The name of the index to search.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName: string;
 
 		/** Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. */
 		unit?: FleetMetricUnit | null;
 
-		/** The expected version of the fleet metric record in the registry. */
+		/**
+		 * The expected version of the fleet metric record in the registry.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion?: number | null;
 	}
 	export interface UpdateFleetMetricPatchBodyFormProperties {
@@ -17488,15 +17784,18 @@ export namespace MyNS {
 		/**
 		 * The name of the index to search.
 		 * Required
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName: FormControl<string | null | undefined>,
 
 		/** Used to support unit transformation such as milliseconds to seconds. The unit must be supported by <a href="https://docs.aws.amazon.com/AmazonCloudWatch/latest/APIReference/API_MetricDatum.html">CW metric</a>. */
 		unit: FormControl<FleetMetricUnit | null | undefined>,
 
-		/** The expected version of the fleet metric record in the registry. */
+		/**
+		 * The expected version of the fleet metric record in the registry.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateFleetMetricPatchBodyFormGroup() {
@@ -17538,8 +17837,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p> <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
-		 * Max length: 1350
 		 * Min length: 1
+		 * Max length: 1350
 		 */
 		documentSource?: string | null;
 
@@ -17578,8 +17877,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the job template used to create the job.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		jobTemplateArn?: string | null;
 
@@ -17599,8 +17898,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>An S3 link, or S3 object URL, to the job document. The link is an Amazon S3 object URL and is required if you don't specify a value for <code>document</code>.</p> <p>For example, <code>--document-source https://s3.<i>region-code</i>.amazonaws.com/example-firmware/device-firmware.1.0</code> </p> <p>For more information, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/userguide/access-bucket-intro.html">Methods for accessing a bucket</a>.</p>
-		 * Max length: 1350
 		 * Min length: 1
+		 * Max length: 1350
 		 */
 		documentSource: FormControl<string | null | undefined>,
 
@@ -17624,8 +17923,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the job template used to create the job.
-		 * Max length: 1600
 		 * Min length: 1
+		 * Max length: 1600
 		 */
 		jobTemplateArn: FormControl<string | null | undefined>,
 
@@ -17840,8 +18139,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note> <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> <p>The placeholder link is of the following form:</p> <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> </note>
-		 * Max length: 1350
 		 * Min length: 1
+		 * Max length: 1350
 		 */
 		documentSource?: string | null;
 
@@ -17889,8 +18188,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>An S3 link to the job document to use in the template. Required if you don't specify a value for <code>document</code>.</p> <note> <p>If the job document resides in an S3 bucket, you must use a placeholder link when specifying the document.</p> <p>The placeholder link is of the following form:</p> <p> <code>${aws:iot:s3-presigned-url:https://s3.amazonaws.com/<i>bucket</i>/<i>key</i>}</code> </p> <p>where <i>bucket</i> is your bucket name and <i>key</i> is the object in the bucket to which you are linking.</p> </note>
-		 * Max length: 1350
 		 * Min length: 1
+		 * Max length: 1350
 		 */
 		documentSource: FormControl<string | null | undefined>,
 
@@ -17987,8 +18286,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the IAM role that is used to apply the mitigation action.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -18006,8 +18305,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the IAM role that is used to apply the mitigation action.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
@@ -18038,8 +18337,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the IAM role that is used to apply the mitigation action.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn?: string | null;
 
@@ -18050,8 +18349,8 @@ export namespace MyNS {
 
 		/**
 		 * The ARN of the IAM role that is used to apply the mitigation action.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
@@ -18125,8 +18424,8 @@ export namespace MyNS {
 		/**
 		 * The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -18150,8 +18449,8 @@ export namespace MyNS {
 		/**
 		 * The IAM role that grants Amazon Web Services IoT Core access to the Amazon S3, IoT jobs and Amazon Web Services Code Signing resources to create an OTA update job.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -18223,8 +18522,8 @@ export namespace MyNS {
 
 		/**
 		 * A summary of the package being created. This can be used to outline the package's contents or purpose.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -18235,8 +18534,8 @@ export namespace MyNS {
 
 		/**
 		 * A summary of the package being created. This can be used to outline the package's contents or purpose.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -18255,15 +18554,15 @@ export namespace MyNS {
 
 		/**
 		 * The package description.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
 		/**
 		 * <p>The name of the default package version.</p> <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		defaultVersionName?: string | null;
 
@@ -18274,15 +18573,15 @@ export namespace MyNS {
 
 		/**
 		 * The package description.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * <p>The name of the default package version.</p> <p> <b>Note:</b> You cannot name a <code>defaultVersion</code> and set <code>unsetDefaultVersion</code> equal to <code>true</code> at the same time.</p>
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		defaultVersionName: FormControl<string | null | undefined>,
 
@@ -18302,8 +18601,8 @@ export namespace MyNS {
 
 		/**
 		 * A summary of the package version being created. This can be used to outline the package's contents or purpose.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -18317,8 +18616,8 @@ export namespace MyNS {
 
 		/**
 		 * A summary of the package version being created. This can be used to outline the package's contents or purpose.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -18341,8 +18640,8 @@ export namespace MyNS {
 
 		/**
 		 * The package version description.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description?: string | null;
 
@@ -18356,8 +18655,8 @@ export namespace MyNS {
 
 		/**
 		 * The package version description.
-		 * Max length: 1024
 		 * Min length: 0
+		 * Max length: 1024
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -18381,8 +18680,8 @@ export namespace MyNS {
 		/**
 		 * The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.
 		 * Required
-		 * Max length: 404600
 		 * Min length: 0
+		 * Max length: 404600
 		 */
 		policyDocument: string;
 
@@ -18394,8 +18693,8 @@ export namespace MyNS {
 		/**
 		 * The JSON document that describes the policy. <b>policyDocument</b> must have a minimum length of 1, with a maximum length of 2048, excluding whitespace.
 		 * Required
-		 * Max length: 404600
 		 * Min length: 0
+		 * Max length: 404600
 		 */
 		policyDocument: FormControl<string | null | undefined>,
 	}
@@ -18411,8 +18710,8 @@ export namespace MyNS {
 		/**
 		 * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.
 		 * Required
-		 * Max length: 404600
 		 * Min length: 0
+		 * Max length: 404600
 		 */
 		policyDocument: string;
 	}
@@ -18421,8 +18720,8 @@ export namespace MyNS {
 		/**
 		 * The JSON document that describes the policy. Minimum length of 1. Maximum length of 2048, excluding whitespace.
 		 * Required
-		 * Max length: 404600
 		 * Min length: 0
+		 * Max length: 404600
 		 */
 		policyDocument: FormControl<string | null | undefined>,
 	}
@@ -18438,23 +18737,23 @@ export namespace MyNS {
 		/**
 		 * The name of the provisioning template.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		templateName: string;
 
 		/**
 		 * The description of the provisioning template.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
 		/**
 		 * The JSON formatted contents of the provisioning template.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 0
+		 * Max length: 10240
 		 */
 		templateBody: string;
 
@@ -18464,8 +18763,8 @@ export namespace MyNS {
 		/**
 		 * The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		provisioningRoleArn: string;
 
@@ -18483,23 +18782,23 @@ export namespace MyNS {
 		/**
 		 * The name of the provisioning template.
 		 * Required
-		 * Max length: 36
 		 * Min length: 1
+		 * Max length: 36
 		 */
 		templateName: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the provisioning template.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * The JSON formatted contents of the provisioning template.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 0
+		 * Max length: 10240
 		 */
 		templateBody: FormControl<string | null | undefined>,
 
@@ -18509,8 +18808,8 @@ export namespace MyNS {
 		/**
 		 * The role ARN for the role associated with the provisioning template. This IoT role grants permission to provision a device.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		provisioningRoleArn: FormControl<string | null | undefined>,
 
@@ -18550,8 +18849,8 @@ export namespace MyNS {
 		/**
 		 * The JSON formatted contents of the provisioning template.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 0
+		 * Max length: 10240
 		 */
 		templateBody: string;
 	}
@@ -18560,8 +18859,8 @@ export namespace MyNS {
 		/**
 		 * The JSON formatted contents of the provisioning template.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 0
+		 * Max length: 10240
 		 */
 		templateBody: FormControl<string | null | undefined>,
 	}
@@ -18577,8 +18876,8 @@ export namespace MyNS {
 		/**
 		 * The role ARN.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -18597,8 +18896,8 @@ export namespace MyNS {
 		/**
 		 * The role ARN.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -18621,8 +18920,8 @@ export namespace MyNS {
 
 		/**
 		 * The role ARN.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn?: string | null;
 
@@ -18637,8 +18936,8 @@ export namespace MyNS {
 
 		/**
 		 * The role ARN.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -18864,8 +19163,8 @@ export namespace MyNS {
 		/**
 		 * An IAM role that allows the IoT service principal to access your S3 files.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: string;
 
@@ -18883,8 +19182,8 @@ export namespace MyNS {
 		/**
 		 * An IAM role that allows the IoT service principal to access your S3 files.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
@@ -18913,8 +19212,8 @@ export namespace MyNS {
 
 		/**
 		 * An IAM role that allows the IoT service principal assumes to access your S3 files.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn?: string | null;
 	}
@@ -18928,8 +19227,8 @@ export namespace MyNS {
 
 		/**
 		 * An IAM role that allows the IoT service principal assumes to access your S3 files.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
@@ -18945,8 +19244,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing type associated with the new thing.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingTypeName?: string | null;
 
@@ -18955,8 +19254,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the billing group the thing will be added to.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		billingGroupName?: string | null;
 	}
@@ -18964,15 +19263,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing type associated with the new thing.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingTypeName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the billing group the thing will be added to.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		billingGroupName: FormControl<string | null | undefined>,
 	}
@@ -19002,15 +19301,18 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing type.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingTypeName?: string | null;
 
 		/** The attribute payload. */
 		attributePayload?: UpdateThingPatchBodyAttributePayload;
 
-		/** The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>. */
+		/**
+		 * The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion?: number | null;
 
 		/** Remove a thing type association. If <b>true</b>, the association is removed. */
@@ -19020,12 +19322,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing type.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingTypeName: FormControl<string | null | undefined>,
 
-		/** The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>. */
+		/**
+		 * The expected version of the thing record in the registry. If the version of the record in the registry does not match the expected version specified in the request, the <code>UpdateThing</code> request is rejected with a <code>VersionConflictException</code>.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion: FormControl<number | null | undefined>,
 
 		/** Remove a thing type association. If <b>true</b>, the association is removed. */
@@ -19058,8 +19363,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the parent thing group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		parentGroupName?: string | null;
 
@@ -19073,8 +19378,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the parent thing group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		parentGroupName: FormControl<string | null | undefined>,
 	}
@@ -19107,12 +19412,18 @@ export namespace MyNS {
 		 */
 		thingGroupProperties: UpdateThingGroupPatchBodyThingGroupProperties;
 
-		/** The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail. */
+		/**
+		 * The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion?: number | null;
 	}
 	export interface UpdateThingGroupPatchBodyFormProperties {
 
-		/** The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail. */
+		/**
+		 * The expected version of the thing group. If this does not match the version of the thing group being updated, the update will fail.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		expectedVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateUpdateThingGroupPatchBodyFormGroup() {
@@ -19314,8 +19625,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn?: string | null;
 
@@ -19329,8 +19640,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the role that grants permission to IoT to access information about your devices, policies, certificates, and other items as required when performing an audit.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 
@@ -19457,21 +19768,24 @@ export namespace MyNS {
 
 		/**
 		 * The description of the provisioning template.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description?: string | null;
 
 		/** True to enable the provisioning template, otherwise false. */
 		enabled?: boolean | null;
 
-		/** The ID of the default provisioning template version. */
+		/**
+		 * The ID of the default provisioning template version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVersionId?: number | null;
 
 		/**
 		 * The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		provisioningRoleArn?: string | null;
 
@@ -19485,21 +19799,24 @@ export namespace MyNS {
 
 		/**
 		 * The description of the provisioning template.
-		 * Max length: 500
 		 * Min length: 0
+		 * Max length: 500
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/** True to enable the provisioning template, otherwise false. */
 		enabled: FormControl<boolean | null | undefined>,
 
-		/** The ID of the default provisioning template version. */
+		/**
+		 * The ID of the default provisioning template version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultVersionId: FormControl<number | null | undefined>,
 
 		/**
 		 * The ARN of the role associated with the provisioning template. This IoT role grants permission to provision a device.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		provisioningRoleArn: FormControl<string | null | undefined>,
 
@@ -19567,8 +19884,8 @@ export namespace MyNS {
 		/**
 		 * Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: string;
 	}
@@ -19583,8 +19900,8 @@ export namespace MyNS {
 		/**
 		 * Each audit mitigation task must have a unique client request token. If you try to start a new task with the same token as a task that already exists, an exception occurs. If you omit this value, a unique client request token is generated automatically.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -19704,8 +20021,8 @@ export namespace MyNS {
 		/**
 		 * Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: string;
 	}
@@ -19720,8 +20037,8 @@ export namespace MyNS {
 		/**
 		 * Each mitigation action task must have a unique client request token. If you try to create a new task with the same token as a task that already exists, an exception occurs. If you omit this value, Amazon Web Services SDKs will automatically generate a unique client request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientRequestToken: FormControl<string | null | undefined>,
 	}
@@ -19788,8 +20105,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the index to search.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName?: string | null;
 
@@ -19820,8 +20137,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the index to search.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName: FormControl<string | null | undefined>,
 
@@ -19867,8 +20184,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the index to search.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName?: string | null;
 
@@ -19892,8 +20209,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the index to search.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName: FormControl<string | null | undefined>,
 
@@ -20068,8 +20385,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the index to search.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName?: string | null;
 
@@ -20096,8 +20413,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the index to search.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName: FormControl<string | null | undefined>,
 
@@ -20131,8 +20448,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the index to search. The default value is <code>AWS_Things</code>.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName?: string | null;
 
@@ -20156,8 +20473,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the index to search. The default value is <code>AWS_Things</code>.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName: FormControl<string | null | undefined>,
 
@@ -20222,8 +20539,8 @@ export namespace MyNS {
 
 		/**
 		 * A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		taskId?: string | null;
 
@@ -20256,8 +20573,8 @@ export namespace MyNS {
 
 		/**
 		 * A filter to limit results to the audit with the specified ID. You must specify either the taskId or the startTime and endTime, but not both.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		taskId: FormControl<string | null | undefined>,
 
@@ -20422,32 +20739,32 @@ export namespace MyNS {
 		/**
 		 * The provisioning template.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 0
+		 * Max length: 10240
 		 */
 		templateBody: string;
 
 		/**
 		 * The S3 bucket that contains the input file.
 		 * Required
-		 * Max length: 256
 		 * Min length: 3
+		 * Max length: 256
 		 */
 		inputFileBucket: string;
 
 		/**
 		 * The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		inputFileKey: string;
 
 		/**
 		 * The IAM role ARN that grants permission the input file.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: string;
 	}
@@ -20456,32 +20773,32 @@ export namespace MyNS {
 		/**
 		 * The provisioning template.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 0
+		 * Max length: 10240
 		 */
 		templateBody: FormControl<string | null | undefined>,
 
 		/**
 		 * The S3 bucket that contains the input file.
 		 * Required
-		 * Max length: 256
 		 * Min length: 3
+		 * Max length: 256
 		 */
 		inputFileBucket: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of input file within the S3 bucket. This file contains a newline delimited JSON file. Each line contains the parameter values to provision one device (thing).
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		inputFileKey: FormControl<string | null | undefined>,
 
 		/**
 		 * The IAM role ARN that grants permission the input file.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		roleArn: FormControl<string | null | undefined>,
 	}
@@ -20500,8 +20817,8 @@ export namespace MyNS {
 		/**
 		 * The provisioning template. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning Devices That Have Device Certificates</a> for more information.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 0
+		 * Max length: 10240
 		 */
 		templateBody: string;
 
@@ -20513,8 +20830,8 @@ export namespace MyNS {
 		/**
 		 * The provisioning template. See <a href="https://docs.aws.amazon.com/iot/latest/developerguide/provision-w-cert.html">Provisioning Devices That Have Device Certificates</a> for more information.
 		 * Required
-		 * Max length: 10240
 		 * Min length: 0
+		 * Max length: 10240
 		 */
 		templateBody: FormControl<string | null | undefined>,
 
@@ -20615,15 +20932,15 @@ export namespace MyNS {
 		/**
 		 * The PEM of a certificate.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		caCertificate: string;
 
 		/**
 		 * The PEM of a certificate.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		verificationCertificate?: string | null;
 
@@ -20641,15 +20958,15 @@ export namespace MyNS {
 		/**
 		 * The PEM of a certificate.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		caCertificate: FormControl<string | null | undefined>,
 
 		/**
 		 * The PEM of a certificate.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		verificationCertificate: FormControl<string | null | undefined>,
 
@@ -20689,15 +21006,15 @@ export namespace MyNS {
 		/**
 		 * The PEM of a certificate.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		certificatePem: string;
 
 		/**
 		 * The PEM of a certificate.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		caCertificatePem?: string | null;
 
@@ -20709,15 +21026,15 @@ export namespace MyNS {
 		/**
 		 * The PEM of a certificate.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		certificatePem: FormControl<string | null | undefined>,
 
 		/**
 		 * The PEM of a certificate.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		caCertificatePem: FormControl<string | null | undefined>,
 
@@ -20738,8 +21055,8 @@ export namespace MyNS {
 		/**
 		 * The PEM of a certificate.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		certificatePem: string;
 
@@ -20751,8 +21068,8 @@ export namespace MyNS {
 		/**
 		 * The PEM of a certificate.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		certificatePem: FormControl<string | null | undefined>,
 
@@ -20794,8 +21111,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the billing group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		billingGroupName?: string | null;
 
@@ -20804,8 +21121,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing to be removed from the billing group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingName?: string | null;
 
@@ -20816,8 +21133,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the billing group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		billingGroupName: FormControl<string | null | undefined>,
 
@@ -20826,8 +21143,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing to be removed from the billing group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingName: FormControl<string | null | undefined>,
 
@@ -20848,8 +21165,8 @@ export namespace MyNS {
 
 		/**
 		 * The group name.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingGroupName?: string | null;
 
@@ -20858,8 +21175,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing to remove from the group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingName?: string | null;
 
@@ -20870,8 +21187,8 @@ export namespace MyNS {
 
 		/**
 		 * The group name.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingGroupName: FormControl<string | null | undefined>,
 
@@ -20880,8 +21197,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the thing to remove from the group.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingName: FormControl<string | null | undefined>,
 
@@ -20902,8 +21219,8 @@ export namespace MyNS {
 
 		/**
 		 * The search index name.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName?: string | null;
 
@@ -20931,8 +21248,8 @@ export namespace MyNS {
 
 		/**
 		 * The search index name.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		indexName: FormControl<string | null | undefined>,
 
@@ -21054,15 +21371,15 @@ export namespace MyNS {
 
 		/**
 		 * The token returned by your custom authentication service.
-		 * Max length: 6144
 		 * Min length: 1
+		 * Max length: 6144
 		 */
 		token?: string | null;
 
 		/**
 		 * The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.
-		 * Max length: 2560
 		 * Min length: 1
+		 * Max length: 2560
 		 */
 		tokenSignature?: string | null;
 
@@ -21079,15 +21396,15 @@ export namespace MyNS {
 
 		/**
 		 * The token returned by your custom authentication service.
-		 * Max length: 6144
 		 * Min length: 1
+		 * Max length: 6144
 		 */
 		token: FormControl<string | null | undefined>,
 
 		/**
 		 * The signature made with the token and your custom authentication service's private key. This value must be Base-64-encoded.
-		 * Max length: 2560
 		 * Min length: 1
+		 * Max length: 2560
 		 */
 		tokenSignature: FormControl<string | null | undefined>,
 	}
@@ -21293,8 +21610,8 @@ export namespace MyNS {
 
 		/**
 		 * The thing whose group memberships will be updated.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingName?: string | null;
 
@@ -21311,8 +21628,8 @@ export namespace MyNS {
 
 		/**
 		 * The thing whose group memberships will be updated.
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		thingName: FormControl<string | null | undefined>,
 

@@ -265,24 +265,42 @@ export namespace MyNS {
 	export interface ApplicationsBase {
 		_embedded?: ApplicationsBase_embedded;
 
-		/** The number of items associated with your account. */
+		/**
+		 * The number of items associated with your account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** The offset from the first page. */
+		/**
+		 * The offset from the first page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_index?: number | null;
 
-		/** The number of items returned on each call to this endpoint. The default is 10 records. */
+		/**
+		 * The number of items returned on each call to this endpoint. The default is 10 records.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size?: number | null;
 	}
 	export interface ApplicationsBaseFormProperties {
 
-		/** The number of items associated with your account. */
+		/**
+		 * The number of items associated with your account.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The offset from the first page. */
+		/**
+		 * The offset from the first page.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_index: FormControl<number | null | undefined>,
 
-		/** The number of items returned on each call to this endpoint. The default is 10 records. */
+		/**
+		 * The number of items returned on each call to this endpoint. The default is 10 records.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size: FormControl<number | null | undefined>,
 	}
 	export function CreateApplicationsBaseFormGroup() {
@@ -337,7 +355,9 @@ export namespace MyNS {
 		 * @param {string} api_key You can find your API key in your [account overview](https://dashboard.nexmo.com/account-overview)
 		 * @param {string} api_secret You can find your API secret in your [account overview](https://dashboard.nexmo.com/account-overview)
 		 * @param {number} page_size Set the number of items returned on each call to this endpoint. The default is 10 records.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_index Set the offset from the first page. The default value is `0`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Applications} OK
 		 */
 		RetrieveApplications(api_key: string, api_secret: string, page_size: number | null | undefined, page_index: number | null | undefined): Observable<Applications> {

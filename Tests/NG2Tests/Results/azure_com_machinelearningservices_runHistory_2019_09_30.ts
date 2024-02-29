@@ -1656,6 +1656,7 @@ export namespace MyNS {
 		 * @param {Runs_GetChildSortorder} sortorder The sort order of the returned resources. Not used, specify asc or desc after each property name in the OrderBy parameter.
 		 * @param {number} top The maximum number of items in the resource collection to be included in the result.
 		 * If not specified, all items are returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} count Whether to include a count of the matching resources along with the resources returned in the response.
 		 * @return {PaginatedRunList} The details of the child Runs are returned successfully.
 		 */

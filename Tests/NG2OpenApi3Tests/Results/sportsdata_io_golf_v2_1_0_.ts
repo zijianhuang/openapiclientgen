@@ -7,27 +7,39 @@ export namespace MyNS {
 		DfsSlatePlayers?: Array<DfsSlatePlayer>;
 		DfsSlateTournaments?: Array<DfsSlateTournament>;
 		IsMultiDaySlate?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NumberOfTournaments?: number | null;
 		Operator?: string | null;
 		OperatorDay?: string | null;
 		OperatorGameType?: string | null;
 		OperatorName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSlateID?: number | null;
 		OperatorStartTime?: string | null;
 		RemovedByOperator?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID?: number | null;
 		SlateRosterSlots?: Array<string>;
 	}
 	export interface DfsSlateFormProperties {
 		IsMultiDaySlate: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NumberOfTournaments: FormControl<number | null | undefined>,
 		Operator: FormControl<string | null | undefined>,
 		OperatorDay: FormControl<string | null | undefined>,
 		OperatorGameType: FormControl<string | null | undefined>,
 		OperatorName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSlateID: FormControl<number | null | undefined>,
 		OperatorStartTime: FormControl<string | null | undefined>,
 		RemovedByOperator: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID: FormControl<number | null | undefined>,
 	}
 	export function CreateDfsSlateFormGroup() {
@@ -51,26 +63,50 @@ export namespace MyNS {
 		OperatorPlayerName?: string | null;
 		OperatorPosition?: string | null;
 		OperatorRosterSlots?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSalary?: number | null;
 		OperatorSlatePlayerID?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerTournamentProjectionID?: number | null;
 		RemovedByOperator?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlatePlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateTournamentID?: number | null;
 	}
 	export interface DfsSlatePlayerFormProperties {
 		OperatorPlayerID: FormControl<string | null | undefined>,
 		OperatorPlayerName: FormControl<string | null | undefined>,
 		OperatorPosition: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSalary: FormControl<number | null | undefined>,
 		OperatorSlatePlayerID: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerTournamentProjectionID: FormControl<number | null | undefined>,
 		RemovedByOperator: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlatePlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateTournamentID: FormControl<number | null | undefined>,
 	}
 	export function CreateDfsSlatePlayerFormGroup() {
@@ -91,18 +127,34 @@ export namespace MyNS {
 	}
 
 	export interface DfsSlateTournament {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorTournamentID?: number | null;
 		RemovedByOperator?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateTournamentID?: number | null;
 		Tournament?: Tournament;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TournamentID?: number | null;
 	}
 	export interface DfsSlateTournamentFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorTournamentID: FormControl<number | null | undefined>,
 		RemovedByOperator: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateTournamentID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TournamentID: FormControl<number | null | undefined>,
 	}
 	export function CreateDfsSlateTournamentFormGroup() {
@@ -120,8 +172,12 @@ export namespace MyNS {
 		Active?: boolean | null;
 		BodyPart?: string | null;
 		ExpectedReturn?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InjuryID?: number | null;
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
 		StartDate?: string | null;
 		Status?: string | null;
@@ -130,8 +186,12 @@ export namespace MyNS {
 		Active: FormControl<boolean | null | undefined>,
 		BodyPart: FormControl<string | null | undefined>,
 		ExpectedReturn: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		InjuryID: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
 		Status: FormControl<string | null | undefined>,
@@ -163,102 +223,258 @@ export namespace MyNS {
 	}
 
 	export interface PlayerTournament {
+
+		/** Type: double */
 		Birdies?: number | null;
+
+		/** Type: double */
 		BogeyFreeRounds?: number | null;
+
+		/** Type: double */
 		Bogeys?: number | null;
+
+		/** Type: double */
 		BounceBackCount?: number | null;
+
+		/** Type: double */
 		ConsecutiveBirdieOrBetterCount?: number | null;
 		Country?: string | null;
+
+		/** Type: double */
 		DoubleBogeys?: number | null;
+
+		/** Type: double */
 		DoubleEagles?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary?: number | null;
+
+		/** Type: double */
 		Eagles?: number | null;
+
+		/** Type: double */
 		Earnings?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FanDuelSalary?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDraftSalary?: number | null;
+
+		/** Type: double */
 		FantasyPoints?: number | null;
+
+		/** Type: double */
 		FantasyPointsDraftKings?: number | null;
+
+		/** Type: double */
 		FantasyPointsFanDuel?: number | null;
+
+		/** Type: double */
 		FantasyPointsFantasyDraft?: number | null;
+
+		/** Type: double */
 		FantasyPointsYahoo?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FedExPoints?: number | null;
+
+		/** Type: double */
 		HoleInOnes?: number | null;
 		IsAlternate?: boolean | null;
 		IsWithdrawn?: boolean | null;
+
+		/** Type: double */
 		MadeCut?: number | null;
 		MadeCutDidNotFinish?: boolean | null;
 		Name?: string | null;
+
+		/** Type: double */
 		OddsToWin?: number | null;
 		OddsToWinDescription?: string | null;
+
+		/** Type: double */
 		Pars?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerTournamentID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Rank?: number | null;
 		Rounds?: Array<PlayerRound>;
+
+		/** Type: double */
 		RoundsUnderSeventy?: number | null;
+
+		/** Type: double */
 		RoundsWithFiveOrMoreBirdiesOrBetter?: number | null;
+
+		/** Type: double */
 		StreaksOfFiveBirdiesOrBetter?: number | null;
+
+		/** Type: double */
 		StreaksOfFourBirdiesOrBetter?: number | null;
+
+		/** Type: double */
 		StreaksOfSixBirdiesOrBetter?: number | null;
+
+		/** Type: double */
 		StreaksOfThreeBirdiesOrBetter?: number | null;
 		TeeTime?: string | null;
+
+		/** Type: double */
 		TotalScore?: number | null;
+
+		/** Type: double */
 		TotalStrokes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalThrough?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TournamentID?: number | null;
 		TournamentStatus?: string | null;
+
+		/** Type: double */
 		TripleBogeys?: number | null;
+
+		/** Type: double */
 		Win?: number | null;
+
+		/** Type: double */
 		WorseThanDoubleBogey?: number | null;
+
+		/** Type: double */
 		WorseThanTripleBogey?: number | null;
 	}
 	export interface PlayerTournamentFormProperties {
+
+		/** Type: double */
 		Birdies: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BogeyFreeRounds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Bogeys: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BounceBackCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ConsecutiveBirdieOrBetterCount: FormControl<number | null | undefined>,
 		Country: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DoubleBogeys: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DoubleEagles: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Eagles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Earnings: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FanDuelSalary: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDraftSalary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPoints: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsDraftKings: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFanDuel: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFantasyDraft: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsYahoo: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FedExPoints: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		HoleInOnes: FormControl<number | null | undefined>,
 		IsAlternate: FormControl<boolean | null | undefined>,
 		IsWithdrawn: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		MadeCut: FormControl<number | null | undefined>,
 		MadeCutDidNotFinish: FormControl<boolean | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		OddsToWin: FormControl<number | null | undefined>,
 		OddsToWinDescription: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Pars: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerTournamentID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Rank: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RoundsUnderSeventy: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RoundsWithFiveOrMoreBirdiesOrBetter: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StreaksOfFiveBirdiesOrBetter: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StreaksOfFourBirdiesOrBetter: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StreaksOfSixBirdiesOrBetter: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StreaksOfThreeBirdiesOrBetter: FormControl<number | null | undefined>,
 		TeeTime: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		TotalScore: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalStrokes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalThrough: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TournamentID: FormControl<number | null | undefined>,
 		TournamentStatus: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		TripleBogeys: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Win: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		WorseThanDoubleBogey: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		WorseThanTripleBogey: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayerTournamentFormGroup() {
@@ -316,15 +532,31 @@ export namespace MyNS {
 
 	export interface PlayerRound {
 		BackNineStart?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Birdies?: number | null;
 		BogeyFree?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Bogeys?: number | null;
+
+		/** Type: double */
 		BounceBackCount?: number | null;
+
+		/** Type: double */
 		ConsecutiveBirdieOrBetterCount?: number | null;
 		Day?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DoubleBogeys?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DoubleEagles?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Eagles?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HoleInOnes?: number | null;
 		Holes?: Array<PlayerHole>;
 		IncludesFiveOrMoreBirdiesOrBetter?: boolean | null;
@@ -332,45 +564,101 @@ export namespace MyNS {
 		IncludesStreakOfFourBirdiesOrBetter?: boolean | null;
 		IncludesStreakOfSixBirdiesOrBetter?: boolean | null;
 		IncludesStreakOfThreeBirdiesOrBetter?: boolean | null;
+
+		/** Type: double */
 		LongestBirdieOrBetterStreak?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Par?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Pars?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerRoundID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerTournamentID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Score?: number | null;
 		TeeTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TripleBogeys?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorseThanDoubleBogey?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorseThanTripleBogey?: number | null;
 	}
 	export interface PlayerRoundFormProperties {
 		BackNineStart: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Birdies: FormControl<number | null | undefined>,
 		BogeyFree: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Bogeys: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BounceBackCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ConsecutiveBirdieOrBetterCount: FormControl<number | null | undefined>,
 		Day: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DoubleBogeys: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DoubleEagles: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Eagles: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		HoleInOnes: FormControl<number | null | undefined>,
 		IncludesFiveOrMoreBirdiesOrBetter: FormControl<boolean | null | undefined>,
 		IncludesStreakOfFiveBirdiesOrBetter: FormControl<boolean | null | undefined>,
 		IncludesStreakOfFourBirdiesOrBetter: FormControl<boolean | null | undefined>,
 		IncludesStreakOfSixBirdiesOrBetter: FormControl<boolean | null | undefined>,
 		IncludesStreakOfThreeBirdiesOrBetter: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		LongestBirdieOrBetterStreak: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Par: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Pars: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerRoundID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerTournamentID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Score: FormControl<number | null | undefined>,
 		TeeTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TripleBogeys: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorseThanDoubleBogey: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorseThanTripleBogey: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayerRoundFormGroup() {
@@ -414,10 +702,20 @@ export namespace MyNS {
 		Eagle?: boolean | null;
 		HoleInOne?: boolean | null;
 		IsPar?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Par?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerRoundID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Score?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ToPar?: number | null;
 		WorseThanDoubleBogey?: boolean | null;
 	}
@@ -429,10 +727,20 @@ export namespace MyNS {
 		Eagle: FormControl<boolean | null | undefined>,
 		HoleInOne: FormControl<boolean | null | undefined>,
 		IsPar: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Par: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerRoundID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Score: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		ToPar: FormControl<number | null | undefined>,
 		WorseThanDoubleBogey: FormControl<boolean | null | undefined>,
 	}
@@ -459,9 +767,13 @@ export namespace MyNS {
 		Author?: string | null;
 		Categories?: string | null;
 		Content?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NewsID?: number | null;
 		OriginalSource?: string | null;
 		OriginalSourceUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
 		Source?: string | null;
 		TermsOfUse?: string | null;
@@ -473,9 +785,13 @@ export namespace MyNS {
 		Author: FormControl<string | null | undefined>,
 		Categories: FormControl<string | null | undefined>,
 		Content: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NewsID: FormControl<number | null | undefined>,
 		OriginalSource: FormControl<string | null | undefined>,
 		OriginalSourceUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
 		Source: FormControl<string | null | undefined>,
 		TermsOfUse: FormControl<string | null | undefined>,
@@ -508,23 +824,45 @@ export namespace MyNS {
 		College?: string | null;
 		Country?: string | null;
 		DraftKingsName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsPlayerID?: number | null;
 		FanDuelName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FanDuelPlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyAlarmPlayerID?: number | null;
 		FantasyDraftName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDraftPlayerID?: number | null;
 		FirstName?: string | null;
 		LastName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PgaDebut?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PgaTourPlayerID?: number | null;
 		PhotoUrl?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RotoWirePlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RotoworldPlayerID?: number | null;
 		SportRadarPlayerID?: string | null;
 		Swings?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Weight?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		YahooPlayerID?: number | null;
 	}
 	export interface PlayerFormProperties {
@@ -534,23 +872,45 @@ export namespace MyNS {
 		College: FormControl<string | null | undefined>,
 		Country: FormControl<string | null | undefined>,
 		DraftKingsName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsPlayerID: FormControl<number | null | undefined>,
 		FanDuelName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FanDuelPlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyAlarmPlayerID: FormControl<number | null | undefined>,
 		FantasyDraftName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDraftPlayerID: FormControl<number | null | undefined>,
 		FirstName: FormControl<string | null | undefined>,
 		LastName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PgaDebut: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PgaTourPlayerID: FormControl<number | null | undefined>,
 		PhotoUrl: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RotoWirePlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RotoworldPlayerID: FormControl<number | null | undefined>,
 		SportRadarPlayerID: FormControl<string | null | undefined>,
 		Swings: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Weight: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		YahooPlayerID: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayerFormGroup() {
@@ -584,29 +944,69 @@ export namespace MyNS {
 	}
 
 	export interface PlayerSeason {
+
+		/** Type: double */
 		AveragePoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Events?: number | null;
 		Name?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerSeasonID?: number | null;
+
+		/** Type: double */
 		PointsGained?: number | null;
+
+		/** Type: double */
 		PointsLost?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: double */
 		TotalPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorldGolfRank?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorldGolfRankLastWeek?: number | null;
 	}
 	export interface PlayerSeasonFormProperties {
+
+		/** Type: double */
 		AveragePoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Events: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerSeasonID: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PointsGained: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PointsLost: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorldGolfRank: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		WorldGolfRankLastWeek: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayerSeasonFormGroup() {
@@ -627,102 +1027,258 @@ export namespace MyNS {
 	}
 
 	export interface PlayerTournamentProjection {
+
+		/** Type: double */
 		Birdies?: number | null;
+
+		/** Type: double */
 		BogeyFreeRounds?: number | null;
+
+		/** Type: double */
 		Bogeys?: number | null;
+
+		/** Type: double */
 		BounceBackCount?: number | null;
+
+		/** Type: double */
 		ConsecutiveBirdieOrBetterCount?: number | null;
 		Country?: string | null;
+
+		/** Type: double */
 		DoubleBogeys?: number | null;
+
+		/** Type: double */
 		DoubleEagles?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary?: number | null;
+
+		/** Type: double */
 		Eagles?: number | null;
+
+		/** Type: double */
 		Earnings?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FanDuelSalary?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDraftSalary?: number | null;
+
+		/** Type: double */
 		FantasyPoints?: number | null;
+
+		/** Type: double */
 		FantasyPointsDraftKings?: number | null;
+
+		/** Type: double */
 		FantasyPointsFanDuel?: number | null;
+
+		/** Type: double */
 		FantasyPointsFantasyDraft?: number | null;
+
+		/** Type: double */
 		FantasyPointsYahoo?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FedExPoints?: number | null;
+
+		/** Type: double */
 		HoleInOnes?: number | null;
 		IsAlternate?: boolean | null;
 		IsWithdrawn?: boolean | null;
+
+		/** Type: double */
 		MadeCut?: number | null;
 		MadeCutDidNotFinish?: boolean | null;
 		Name?: string | null;
+
+		/** Type: double */
 		OddsToWin?: number | null;
 		OddsToWinDescription?: string | null;
+
+		/** Type: double */
 		Pars?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerTournamentID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Rank?: number | null;
 		Rounds?: Array<PlayerRound>;
+
+		/** Type: double */
 		RoundsUnderSeventy?: number | null;
+
+		/** Type: double */
 		RoundsWithFiveOrMoreBirdiesOrBetter?: number | null;
+
+		/** Type: double */
 		StreaksOfFiveBirdiesOrBetter?: number | null;
+
+		/** Type: double */
 		StreaksOfFourBirdiesOrBetter?: number | null;
+
+		/** Type: double */
 		StreaksOfSixBirdiesOrBetter?: number | null;
+
+		/** Type: double */
 		StreaksOfThreeBirdiesOrBetter?: number | null;
 		TeeTime?: string | null;
+
+		/** Type: double */
 		TotalScore?: number | null;
+
+		/** Type: double */
 		TotalStrokes?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalThrough?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TournamentID?: number | null;
 		TournamentStatus?: string | null;
+
+		/** Type: double */
 		TripleBogeys?: number | null;
+
+		/** Type: double */
 		Win?: number | null;
+
+		/** Type: double */
 		WorseThanDoubleBogey?: number | null;
+
+		/** Type: double */
 		WorseThanTripleBogey?: number | null;
 	}
 	export interface PlayerTournamentProjectionFormProperties {
+
+		/** Type: double */
 		Birdies: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BogeyFreeRounds: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Bogeys: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		BounceBackCount: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ConsecutiveBirdieOrBetterCount: FormControl<number | null | undefined>,
 		Country: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		DoubleBogeys: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DoubleEagles: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DraftKingsSalary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Eagles: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Earnings: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FanDuelSalary: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FantasyDraftSalary: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPoints: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsDraftKings: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFanDuel: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsFantasyDraft: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPointsYahoo: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FedExPoints: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		HoleInOnes: FormControl<number | null | undefined>,
 		IsAlternate: FormControl<boolean | null | undefined>,
 		IsWithdrawn: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		MadeCut: FormControl<number | null | undefined>,
 		MadeCutDidNotFinish: FormControl<boolean | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		OddsToWin: FormControl<number | null | undefined>,
 		OddsToWinDescription: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Pars: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerTournamentID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Rank: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RoundsUnderSeventy: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		RoundsWithFiveOrMoreBirdiesOrBetter: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StreaksOfFiveBirdiesOrBetter: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StreaksOfFourBirdiesOrBetter: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StreaksOfSixBirdiesOrBetter: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		StreaksOfThreeBirdiesOrBetter: FormControl<number | null | undefined>,
 		TeeTime: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		TotalScore: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalStrokes: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalThrough: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TournamentID: FormControl<number | null | undefined>,
 		TournamentStatus: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		TripleBogeys: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Win: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		WorseThanDoubleBogey: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		WorseThanTripleBogey: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayerTournamentProjectionFormGroup() {
@@ -780,14 +1336,26 @@ export namespace MyNS {
 
 	export interface Round {
 		Day?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RoundID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TournamentID?: number | null;
 	}
 	export interface RoundFormProperties {
 		Day: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Number: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RoundID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TournamentID: FormControl<number | null | undefined>,
 	}
 	export function CreateRoundFormGroup() {
@@ -803,12 +1371,16 @@ export namespace MyNS {
 	export interface Season {
 		Description?: string | null;
 		EndDate?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonID?: number | null;
 		StartDate?: string | null;
 	}
 	export interface SeasonFormProperties {
 		Description: FormControl<string | null | undefined>,
 		EndDate: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonID: FormControl<number | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
 	}
@@ -834,7 +1406,11 @@ export namespace MyNS {
 		Location?: string | null;
 		Name?: string | null;
 		OddsCoverage?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Par?: number | null;
+
+		/** Type: double */
 		Purse?: number | null;
 		Rounds?: Array<Round>;
 		SportRadarTournamentID?: string | null;
@@ -842,8 +1418,12 @@ export namespace MyNS {
 		StartDateTime?: string | null;
 		State?: string | null;
 		TimeZone?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TournamentID?: number | null;
 		Venue?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Yards?: number | null;
 		ZipCode?: string | null;
 	}
@@ -859,15 +1439,23 @@ export namespace MyNS {
 		Location: FormControl<string | null | undefined>,
 		Name: FormControl<string | null | undefined>,
 		OddsCoverage: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Par: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Purse: FormControl<number | null | undefined>,
 		SportRadarTournamentID: FormControl<string | null | undefined>,
 		StartDate: FormControl<string | null | undefined>,
 		StartDateTime: FormControl<string | null | undefined>,
 		State: FormControl<string | null | undefined>,
 		TimeZone: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TournamentID: FormControl<number | null | undefined>,
 		Venue: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Yards: FormControl<number | null | undefined>,
 		ZipCode: FormControl<string | null | undefined>,
 	}
@@ -908,7 +1496,6 @@ export namespace MyNS {
 		 * Current Season
 		 * Get {format}/CurrentSeason
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Season} 
 		 */
 		CurrentSeason(format: CurrentSeasonFormat): Observable<Season> {
 			return this.http.get<Season>(this.baseUri + format + '/CurrentSeason', {});
@@ -919,7 +1506,6 @@ export namespace MyNS {
 		 * Get {format}/DfsSlatesByTournament/{tournamentid}
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} tournamentid The TournamentID of a tournament.  TournamentIDs can be found in the Tournaments API.  Valid entries are <code>58</code>, <code>61</code>, etc.
-		 * @return {Array<DfsSlate>} 
 		 */
 		DfsSlates(format: CurrentSeasonFormat, tournamentid: string): Observable<Array<DfsSlate>> {
 			return this.http.get<Array<DfsSlate>>(this.baseUri + format + '/DfsSlatesByTournament/' + (tournamentid == null ? '' : encodeURIComponent(tournamentid)) + '', {});
@@ -929,7 +1515,6 @@ export namespace MyNS {
 		 * Injuries
 		 * Get {format}/Injuries
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Injury>} 
 		 */
 		Injuries(format: CurrentSeasonFormat): Observable<Array<Injury>> {
 			return this.http.get<Array<Injury>>(this.baseUri + format + '/Injuries', {});
@@ -939,7 +1524,6 @@ export namespace MyNS {
 		 * Injuries (Historical)
 		 * Get {format}/InjuriesByHistorical
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Injury>} 
 		 */
 		InjuriesHistorical(format: CurrentSeasonFormat): Observable<Array<Injury>> {
 			return this.http.get<Array<Injury>>(this.baseUri + format + '/InjuriesByHistorical', {});
@@ -950,7 +1534,6 @@ export namespace MyNS {
 		 * Get {format}/Leaderboard/{tournamentid}
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} tournamentid The TournamentID of a tournament.  TournamentIDs can be found in the Tournaments API.  Valid entries are <code>58</code>, <code>61</code>, etc.
-		 * @return {Leaderboard} 
 		 */
 		Leaderboard(format: CurrentSeasonFormat, tournamentid: string): Observable<Leaderboard> {
 			return this.http.get<Leaderboard>(this.baseUri + format + '/Leaderboard/' + (tournamentid == null ? '' : encodeURIComponent(tournamentid)) + '', {});
@@ -960,7 +1543,6 @@ export namespace MyNS {
 		 * News
 		 * Get {format}/News
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<News>} 
 		 */
 		News(format: CurrentSeasonFormat): Observable<Array<News>> {
 			return this.http.get<Array<News>>(this.baseUri + format + '/News', {});
@@ -972,7 +1554,6 @@ export namespace MyNS {
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} date The date of the game(s).
 		 * <br>Examples: <code>2015-JUL-31</code>, <code>2015-SEP-01</code>.
-		 * @return {Array<News>} 
 		 */
 		NewsByDate(format: CurrentSeasonFormat, date: string): Observable<Array<News>> {
 			return this.http.get<Array<News>>(this.baseUri + format + '/NewsByDate/' + (date == null ? '' : encodeURIComponent(date)) + '', {});
@@ -984,7 +1565,6 @@ export namespace MyNS {
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} playerid Unique FantasyData Player ID.
 		 * Example:<code>40000019</code>.
-		 * @return {Array<News>} 
 		 */
 		NewsByPlayer(format: CurrentSeasonFormat, playerid: string): Observable<Array<News>> {
 			return this.http.get<Array<News>>(this.baseUri + format + '/NewsByPlayerID/' + (playerid == null ? '' : encodeURIComponent(playerid)) + '', {});
@@ -996,7 +1576,6 @@ export namespace MyNS {
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} playerid Unique FantasyData Player ID.
 		 * Example:<code>40000019</code>.
-		 * @return {Player} 
 		 */
 		Player(format: CurrentSeasonFormat, playerid: string): Observable<Player> {
 			return this.http.get<Player>(this.baseUri + format + '/Player/' + (playerid == null ? '' : encodeURIComponent(playerid)) + '', {});
@@ -1008,7 +1587,6 @@ export namespace MyNS {
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} season Year of the season.
 		 * <br>Examples: <code>2016</code>, <code>2017</code>.
-		 * @return {Array<PlayerSeason>} 
 		 */
 		PlayerSeasonStatsWWorldGolfRankings(format: CurrentSeasonFormat, season: string): Observable<Array<PlayerSeason>> {
 			return this.http.get<Array<PlayerSeason>>(this.baseUri + format + '/PlayerSeasonStats/' + (season == null ? '' : encodeURIComponent(season)) + '', {});
@@ -1019,7 +1597,6 @@ export namespace MyNS {
 		 * Get {format}/PlayerTournamentProjectionStats/{tournamentid}
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} tournamentid The TournamentID of a tournament.  TournamentIDs can be found in the Tournaments API.  Valid entries are <code>78</code>, <code>79</code>, <code>80</code>, etc.
-		 * @return {Array<PlayerTournamentProjection>} 
 		 */
 		PlayerTournamentProjectedStatsWDraftkingsSalaries(format: CurrentSeasonFormat, tournamentid: string): Observable<Array<PlayerTournamentProjection>> {
 			return this.http.get<Array<PlayerTournamentProjection>>(this.baseUri + format + '/PlayerTournamentProjectionStats/' + (tournamentid == null ? '' : encodeURIComponent(tournamentid)) + '', {});
@@ -1032,7 +1609,6 @@ export namespace MyNS {
 		 * @param {string} tournamentid The TournamentID of a tournament.  TournamentIDs can be found in the Tournaments API.  Valid entries are <code>58</code>, <code>61</code>, etc.
 		 * @param {string} playerid Unique FantasyData Player ID.
 		 * Example:<code>40000019</code>.
-		 * @return {PlayerTournament} 
 		 */
 		PlayerTournamentStatsByPlayer(format: CurrentSeasonFormat, tournamentid: string, playerid: string): Observable<PlayerTournament> {
 			return this.http.get<PlayerTournament>(this.baseUri + format + '/PlayerTournamentStatsByPlayer/' + (tournamentid == null ? '' : encodeURIComponent(tournamentid)) + '/' + (playerid == null ? '' : encodeURIComponent(playerid)) + '', {});
@@ -1042,7 +1618,6 @@ export namespace MyNS {
 		 * Players
 		 * Get {format}/Players
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Player>} 
 		 */
 		Players(format: CurrentSeasonFormat): Observable<Array<Player>> {
 			return this.http.get<Array<Player>>(this.baseUri + format + '/Players', {});
@@ -1052,7 +1627,6 @@ export namespace MyNS {
 		 * Schedule
 		 * Get {format}/Tournaments
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
-		 * @return {Array<Tournament>} 
 		 */
 		Schedule(format: CurrentSeasonFormat): Observable<Array<Tournament>> {
 			return this.http.get<Array<Tournament>>(this.baseUri + format + '/Tournaments', {});
@@ -1064,7 +1638,6 @@ export namespace MyNS {
 		 * @param {CurrentSeasonFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} season Year of the season.
 		 * <br>Examples: <code>2016</code>, <code>2017</code>.
-		 * @return {Array<Tournament>} 
 		 */
 		ScheduleBySeason(format: CurrentSeasonFormat, season: string): Observable<Array<Tournament>> {
 			return this.http.get<Array<Tournament>>(this.baseUri + format + '/Tournaments/' + (season == null ? '' : encodeURIComponent(season)) + '', {});

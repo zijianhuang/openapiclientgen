@@ -126,8 +126,11 @@ export namespace MyNS {
 		 * Gets a list of ProactiveDetection configurations of an Application Insights component.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/ProactiveDetectionConfigs
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the Application Insights component resource.
 		 * @return {Array<ApplicationInsightsComponentProactiveDetectionConfiguration>} A list containing 0 or more ProactiveDetection configurations of an Application Insights component.
 		 */
@@ -139,8 +142,11 @@ export namespace MyNS {
 		 * Get the ProactiveDetection configuration for this configuration id.
 		 * Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/ProactiveDetectionConfigs/{ConfigurationId}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the Application Insights component resource.
 		 * @param {string} ConfigurationId The ProactiveDetection configuration ID. This is unique within a Application Insights component.
 		 * @return {ApplicationInsightsComponentProactiveDetectionConfiguration} The ProactiveDetection configuration for this configuration id.
@@ -153,8 +159,11 @@ export namespace MyNS {
 		 * Update the ProactiveDetection configuration for this configuration id.
 		 * Put subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Insights/components/{resourceName}/ProactiveDetectionConfigs/{ConfigurationId}
 		 * @param {string} resourceGroupName The name of the resource group. The name is case insensitive.
+		 *     Min length: 1    Max length: 90
 		 * @param {string} api_version The API version to use for this operation.
+		 *     Min length: 1
 		 * @param {string} subscriptionId The ID of the target subscription.
+		 *     Min length: 1
 		 * @param {string} resourceName The name of the Application Insights component resource.
 		 * @param {string} ConfigurationId The ProactiveDetection configuration ID. This is unique within a Application Insights component.
 		 * @param {ApplicationInsightsComponentProactiveDetectionConfiguration} requestBody Properties that need to be specified to update the ProactiveDetection configuration.

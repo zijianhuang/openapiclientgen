@@ -285,7 +285,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <returns>HTTP 200 (OK) if the operation was successful.</returns>
 		public async Task<ADCCatalogsListResult> ADCCatalogs_ListtByResourceGroupAsync(string api_version, string subscriptionId, string resourceGroupName)
 		{
@@ -317,7 +320,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="catalogName">The name of the data catalog in the specified subscription and resource group.</param>
 		/// <returns>HTTP 200 (OK) if the operation was successful.</returns>
 		public async Task<ADCCatalog> ADCCatalogs_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string catalogName)
@@ -350,7 +356,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="catalogName">The name of the data catalog in the specified subscription and resource group.</param>
 		/// <param name="requestBody">Properties supplied to the Create or Update a data catalog.</param>
 		/// <returns>HTTP 200 (OK) if the operation was successful.</returns>
@@ -391,7 +400,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="catalogName">The name of the data catalog in the specified subscription and resource group.</param>
 		/// <returns>OK. An existing annotation was updated.</returns>
 		public async Task ADCCatalogs_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string catalogName)
@@ -418,7 +430,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Gets subscription credentials which uniquely identify the Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="catalogName">The name of the data catalog in the specified subscription and resource group.</param>
 		/// <param name="requestBody">Properties supplied to the Update a data catalog.</param>
 		/// <returns>HTTP 200 (OK) if the operation was successful.</returns>

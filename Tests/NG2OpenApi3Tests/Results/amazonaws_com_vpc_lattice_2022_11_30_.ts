@@ -2868,7 +2868,9 @@ export namespace MyNS {
 		 * Updates the listener rules in a batch. You can use this operation to change the priority of listener rules. This can be useful when bulk updating or swapping rule priority.
 		 * Patch services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules
 		 * @param {string} listenerIdentifier The ID or Amazon Resource Name (ARN) of the listener.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {BatchUpdateRuleResponse} Success
 		 */
 		BatchUpdateRule(listenerIdentifier: string, serviceIdentifier: string, requestBody: BatchUpdateRulePatchBody): Observable<BatchUpdateRuleResponse> {
@@ -2879,7 +2881,9 @@ export namespace MyNS {
 		 * Creates a listener rule. Each listener has a default rule for checking connection requests, but you can define additional rules. Each rule consists of a priority, one or more actions, and one or more conditions. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener rules</a> in the <i>Amazon VPC Lattice User Guide</i>.
 		 * Post services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules
 		 * @param {string} listenerIdentifier The ID or Amazon Resource Name (ARN) of the listener.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {void} 
 		 */
 		CreateRule(listenerIdentifier: string, serviceIdentifier: string, requestBody: CreateRulePostBody): Observable<HttpResponse<string>> {
@@ -2890,9 +2894,13 @@ export namespace MyNS {
 		 * Lists the rules for the listener.
 		 * Get services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules
 		 * @param {string} listenerIdentifier The ID or Amazon Resource Name (ARN) of the listener.
+		 *     Min length: 20    Max length: 2048
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {ListRulesResponse} Success
 		 */
 		ListRules(listenerIdentifier: string, maxResults: number | null | undefined, nextToken: string | null | undefined, serviceIdentifier: string): Observable<ListRulesResponse> {
@@ -2912,6 +2920,7 @@ export namespace MyNS {
 		 * Creates a listener for a service. Before you start using your Amazon VPC Lattice service, you must add one or more listeners. A listener is a process that checks for connection requests to your services. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html">Listeners</a> in the <i>Amazon VPC Lattice User Guide</i>.
 		 * Post services/{serviceIdentifier}/listeners
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {void} 
 		 */
 		CreateListener(serviceIdentifier: string, requestBody: CreateListenerPostBody): Observable<HttpResponse<string>> {
@@ -2922,8 +2931,11 @@ export namespace MyNS {
 		 * Lists the listeners for the specified service.
 		 * Get services/{serviceIdentifier}/listeners
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {ListListenersResponse} Success
 		 */
 		ListListeners(maxResults: number | null | undefined, nextToken: string | null | undefined, serviceIdentifier: string): Observable<ListListenersResponse> {
@@ -2943,7 +2955,9 @@ export namespace MyNS {
 		 * Lists the services owned by the caller account or shared with the caller account.
 		 * Get services
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListServicesResponse} Success
 		 */
 		ListServices(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListServicesResponse> {
@@ -2963,7 +2977,9 @@ export namespace MyNS {
 		 * Lists the service networks owned by the caller account or shared with the caller account. Also includes the account ID in the ARN to show which account owns the service network.
 		 * Get servicenetworks
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @return {ListServiceNetworksResponse} Success
 		 */
 		ListServiceNetworks(maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListServiceNetworksResponse> {
@@ -2983,9 +2999,13 @@ export namespace MyNS {
 		 * <p>Lists the associations between the service network and the service. You can filter the list either by service or service network. You must provide either the service network identifier or the service identifier.</p> <p>Every association in Amazon VPC Lattice is given a unique Amazon Resource Name (ARN), such as when a service network is associated with a VPC or when a service is associated with a service network. If the association is for a resource that is shared with another account, the association will include the local account ID as the prefix in the ARN for each account the resource is shared with.</p>
 		 * Get servicenetworkserviceassociations
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @param {string} serviceNetworkIdentifier The ID or Amazon Resource Name (ARN) of the service network.
+		 *     Min length: 3    Max length: 2048
 		 * @return {ListServiceNetworkServiceAssociationsResponse} Success
 		 */
 		ListServiceNetworkServiceAssociations(maxResults: number | null | undefined, nextToken: string | null | undefined, serviceIdentifier: string | null | undefined, serviceNetworkIdentifier: string | null | undefined): Observable<ListServiceNetworkServiceAssociationsResponse> {
@@ -3005,9 +3025,13 @@ export namespace MyNS {
 		 * Lists the service network and VPC associations. You can filter the list either by VPC or service network. You must provide either the service network identifier or the VPC identifier.
 		 * Get servicenetworkvpcassociations
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} serviceNetworkIdentifier The ID or Amazon Resource Name (ARN) of the service network.
+		 *     Min length: 3    Max length: 2048
 		 * @param {string} vpcIdentifier The ID or Amazon Resource Name (ARN) of the VPC.
+		 *     Min length: 5    Max length: 50
 		 * @return {ListServiceNetworkVpcAssociationsResponse} Success
 		 */
 		ListServiceNetworkVpcAssociations(maxResults: number | null | undefined, nextToken: string | null | undefined, serviceNetworkIdentifier: string | null | undefined, vpcIdentifier: string | null | undefined): Observable<ListServiceNetworkVpcAssociationsResponse> {
@@ -3027,9 +3051,12 @@ export namespace MyNS {
 		 * Lists your target groups. You can narrow your search by using the filters below in your request.
 		 * Get targetgroups
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {TargetGroupType} targetGroupType The target group type.
 		 * @param {string} vpcIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 5    Max length: 50
 		 * @return {ListTargetGroupsResponse} Success
 		 */
 		ListTargetGroups(maxResults: number | null | undefined, nextToken: string | null | undefined, targetGroupType: TargetGroupType | null | undefined, vpcIdentifier: string | null | undefined): Observable<ListTargetGroupsResponse> {
@@ -3040,6 +3067,7 @@ export namespace MyNS {
 		 * Deletes the specified access log subscription.
 		 * Delete accesslogsubscriptions/{accessLogSubscriptionIdentifier}
 		 * @param {string} accessLogSubscriptionIdentifier The ID or Amazon Resource Name (ARN) of the access log subscription.
+		 *     Min length: 17    Max length: 2048
 		 * @return {void} 
 		 */
 		DeleteAccessLogSubscription(accessLogSubscriptionIdentifier: string): Observable<HttpResponse<string>> {
@@ -3050,6 +3078,7 @@ export namespace MyNS {
 		 * Retrieves information about the specified access log subscription.
 		 * Get accesslogsubscriptions/{accessLogSubscriptionIdentifier}
 		 * @param {string} accessLogSubscriptionIdentifier The ID or Amazon Resource Name (ARN) of the access log subscription.
+		 *     Min length: 17    Max length: 2048
 		 * @return {GetAccessLogSubscriptionResponse} Success
 		 */
 		GetAccessLogSubscription(accessLogSubscriptionIdentifier: string): Observable<GetAccessLogSubscriptionResponse> {
@@ -3060,6 +3089,7 @@ export namespace MyNS {
 		 * Updates the specified access log subscription.
 		 * Patch accesslogsubscriptions/{accessLogSubscriptionIdentifier}
 		 * @param {string} accessLogSubscriptionIdentifier The ID or Amazon Resource Name (ARN) of the access log subscription.
+		 *     Min length: 17    Max length: 2048
 		 * @return {UpdateAccessLogSubscriptionResponse} Success
 		 */
 		UpdateAccessLogSubscription(accessLogSubscriptionIdentifier: string, requestBody: UpdateAccessLogSubscriptionPatchBody): Observable<UpdateAccessLogSubscriptionResponse> {
@@ -3070,6 +3100,7 @@ export namespace MyNS {
 		 * Deletes the specified auth policy. If an auth is set to <code>AWS_IAM</code> and the auth policy is deleted, all requests will be denied by default. If you are trying to remove the auth policy completely, you must set the auth_type to <code>NONE</code>. If auth is enabled on the resource, but no auth policy is set, all requests will be denied.
 		 * Delete authpolicy/{resourceIdentifier}
 		 * @param {string} resourceIdentifier The ID or Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 17    Max length: 200
 		 * @return {void} 
 		 */
 		DeleteAuthPolicy(resourceIdentifier: string): Observable<HttpResponse<string>> {
@@ -3080,6 +3111,7 @@ export namespace MyNS {
 		 * Retrieves information about the auth policy for the specified service or service network.
 		 * Get authpolicy/{resourceIdentifier}
 		 * @param {string} resourceIdentifier The ID or Amazon Resource Name (ARN) of the service network or service.
+		 *     Min length: 17    Max length: 200
 		 * @return {GetAuthPolicyResponse} Success
 		 */
 		GetAuthPolicy(resourceIdentifier: string): Observable<GetAuthPolicyResponse> {
@@ -3090,6 +3122,7 @@ export namespace MyNS {
 		 * Creates or updates the auth policy. The policy string in JSON must not contain newlines or blank lines.
 		 * Put authpolicy/{resourceIdentifier}
 		 * @param {string} resourceIdentifier The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.
+		 *     Min length: 17    Max length: 200
 		 * @return {PutAuthPolicyResponse} Success
 		 */
 		PutAuthPolicy(resourceIdentifier: string, requestBody: PutAuthPolicyPutBody): Observable<PutAuthPolicyResponse> {
@@ -3100,7 +3133,9 @@ export namespace MyNS {
 		 * Deletes the specified listener.
 		 * Delete services/{serviceIdentifier}/listeners/{listenerIdentifier}
 		 * @param {string} listenerIdentifier The ID or Amazon Resource Name (ARN) of the listener.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {void} 
 		 */
 		DeleteListener(listenerIdentifier: string, serviceIdentifier: string): Observable<HttpResponse<string>> {
@@ -3111,7 +3146,9 @@ export namespace MyNS {
 		 * Retrieves information about the specified listener for the specified service.
 		 * Get services/{serviceIdentifier}/listeners/{listenerIdentifier}
 		 * @param {string} listenerIdentifier The ID or Amazon Resource Name (ARN) of the listener.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {GetListenerResponse} Success
 		 */
 		GetListener(listenerIdentifier: string, serviceIdentifier: string): Observable<GetListenerResponse> {
@@ -3122,7 +3159,9 @@ export namespace MyNS {
 		 * Updates the specified listener for the specified service.
 		 * Patch services/{serviceIdentifier}/listeners/{listenerIdentifier}
 		 * @param {string} listenerIdentifier The ID or Amazon Resource Name (ARN) of the listener.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {UpdateListenerResponse} Success
 		 */
 		UpdateListener(listenerIdentifier: string, serviceIdentifier: string, requestBody: UpdateListenerPatchBody): Observable<UpdateListenerResponse> {
@@ -3133,6 +3172,7 @@ export namespace MyNS {
 		 * Deletes the specified resource policy.
 		 * Delete resourcepolicy/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 20    Max length: 200
 		 * @return {void} 
 		 */
 		DeleteResourcePolicy(resourceArn: string): Observable<HttpResponse<string>> {
@@ -3143,6 +3183,7 @@ export namespace MyNS {
 		 * Retrieves information about the resource policy. The resource policy is an IAM policy created on behalf of the resource owner when they share a resource.
 		 * Get resourcepolicy/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the service network or service.
+		 *     Min length: 20    Max length: 200
 		 * @return {GetResourcePolicyResponse} Success
 		 */
 		GetResourcePolicy(resourceArn: string): Observable<GetResourcePolicyResponse> {
@@ -3153,6 +3194,7 @@ export namespace MyNS {
 		 * Attaches a resource-based permission policy to a service or service network. The policy must contain the same actions and condition statements as the Amazon Web Services Resource Access Manager permission for sharing services and service networks.
 		 * Put resourcepolicy/{resourceArn}
 		 * @param {string} resourceArn The ID or Amazon Resource Name (ARN) of the service network or service for which the policy is created.
+		 *     Min length: 20    Max length: 200
 		 * @return {PutResourcePolicyResponse} Success
 		 */
 		PutResourcePolicy(resourceArn: string, requestBody: PutResourcePolicyPutBody): Observable<PutResourcePolicyResponse> {
@@ -3163,8 +3205,11 @@ export namespace MyNS {
 		 * <p>Deletes a listener rule. Each listener has a default rule for checking connection requests, but you can define additional rules. Each rule consists of a priority, one or more actions, and one or more conditions. You can delete additional listener rules, but you cannot delete the default rule.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener rules</a> in the <i>Amazon VPC Lattice User Guide</i>.</p>
 		 * Delete services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules/{ruleIdentifier}
 		 * @param {string} listenerIdentifier The ID or Amazon Resource Name (ARN) of the listener.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} ruleIdentifier The ID or Amazon Resource Name (ARN) of the rule.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {void} 
 		 */
 		DeleteRule(listenerIdentifier: string, ruleIdentifier: string, serviceIdentifier: string): Observable<HttpResponse<string>> {
@@ -3175,8 +3220,11 @@ export namespace MyNS {
 		 * Retrieves information about listener rules. You can also retrieve information about the default listener rule. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/listeners.html#listener-rules">Listener rules</a> in the <i>Amazon VPC Lattice User Guide</i>.
 		 * Get services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules/{ruleIdentifier}
 		 * @param {string} listenerIdentifier The ID or Amazon Resource Name (ARN) of the listener.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} ruleIdentifier The ID or Amazon Resource Name (ARN) of the listener rule.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {GetRuleResponse} Success
 		 */
 		GetRule(listenerIdentifier: string, ruleIdentifier: string, serviceIdentifier: string): Observable<GetRuleResponse> {
@@ -3187,8 +3235,11 @@ export namespace MyNS {
 		 * Updates a rule for the listener. You can't modify a default listener rule. To modify a default listener rule, use <code>UpdateListener</code>.
 		 * Patch services/{serviceIdentifier}/listeners/{listenerIdentifier}/rules/{ruleIdentifier}
 		 * @param {string} listenerIdentifier The ID or Amazon Resource Name (ARN) of the listener.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} ruleIdentifier The ID or Amazon Resource Name (ARN) of the rule.
+		 *     Min length: 20    Max length: 2048
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {UpdateRuleResponse} Success
 		 */
 		UpdateRule(listenerIdentifier: string, ruleIdentifier: string, serviceIdentifier: string, requestBody: UpdateRulePatchBody): Observable<UpdateRuleResponse> {
@@ -3199,6 +3250,7 @@ export namespace MyNS {
 		 * Deletes a service. A service can't be deleted if it's associated with a service network. If you delete a service, all resources related to the service, such as the resource policy, auth policy, listeners, listener rules, and access log subscriptions, are also deleted. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/services.html#delete-service">Delete a service</a> in the <i>Amazon VPC Lattice User Guide</i>.
 		 * Delete services/{serviceIdentifier}
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {DeleteServiceResponse} Success
 		 */
 		DeleteService(serviceIdentifier: string): Observable<DeleteServiceResponse> {
@@ -3209,6 +3261,7 @@ export namespace MyNS {
 		 * Retrieves information about the specified service.
 		 * Get services/{serviceIdentifier}
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {GetServiceResponse} Success
 		 */
 		GetService(serviceIdentifier: string): Observable<GetServiceResponse> {
@@ -3219,6 +3272,7 @@ export namespace MyNS {
 		 * Updates the specified service.
 		 * Patch services/{serviceIdentifier}
 		 * @param {string} serviceIdentifier The ID or Amazon Resource Name (ARN) of the service.
+		 *     Min length: 17    Max length: 2048
 		 * @return {UpdateServiceResponse} Success
 		 */
 		UpdateService(serviceIdentifier: string, requestBody: UpdateServicePatchBody): Observable<UpdateServiceResponse> {
@@ -3229,6 +3283,7 @@ export namespace MyNS {
 		 * Deletes a service network. You can only delete the service network if there is no service or VPC associated with it. If you delete a service network, all resources related to the service network, such as the resource policy, auth policy, and access log subscriptions, are also deleted. For more information, see <a href="https://docs.aws.amazon.com/vpc-lattice/latest/ug/service-networks.html#delete-service-network">Delete a service network</a> in the <i>Amazon VPC Lattice User Guide</i>.
 		 * Delete servicenetworks/{serviceNetworkIdentifier}
 		 * @param {string} serviceNetworkIdentifier The Amazon Resource Name (ARN) or ID of the service network.
+		 *     Min length: 3    Max length: 2048
 		 * @return {void} 
 		 */
 		DeleteServiceNetwork(serviceNetworkIdentifier: string): Observable<HttpResponse<string>> {
@@ -3239,6 +3294,7 @@ export namespace MyNS {
 		 * Retrieves information about the specified service network.
 		 * Get servicenetworks/{serviceNetworkIdentifier}
 		 * @param {string} serviceNetworkIdentifier The ID or Amazon Resource Name (ARN) of the service network.
+		 *     Min length: 3    Max length: 2048
 		 * @return {GetServiceNetworkResponse} Success
 		 */
 		GetServiceNetwork(serviceNetworkIdentifier: string): Observable<GetServiceNetworkResponse> {
@@ -3249,6 +3305,7 @@ export namespace MyNS {
 		 * Updates the specified service network.
 		 * Patch servicenetworks/{serviceNetworkIdentifier}
 		 * @param {string} serviceNetworkIdentifier The ID or Amazon Resource Name (ARN) of the service network.
+		 *     Min length: 3    Max length: 2048
 		 * @return {UpdateServiceNetworkResponse} Success
 		 */
 		UpdateServiceNetwork(serviceNetworkIdentifier: string, requestBody: UpdateServiceNetworkPatchBody): Observable<UpdateServiceNetworkResponse> {
@@ -3259,6 +3316,7 @@ export namespace MyNS {
 		 * Deletes the association between a specified service and the specific service network. This request will fail if an association is still in progress.
 		 * Delete servicenetworkserviceassociations/{serviceNetworkServiceAssociationIdentifier}
 		 * @param {string} serviceNetworkServiceAssociationIdentifier The ID or Amazon Resource Name (ARN) of the association.
+		 *     Min length: 17    Max length: 2048
 		 * @return {DeleteServiceNetworkServiceAssociationResponse} Success
 		 */
 		DeleteServiceNetworkServiceAssociation(serviceNetworkServiceAssociationIdentifier: string): Observable<DeleteServiceNetworkServiceAssociationResponse> {
@@ -3269,6 +3327,7 @@ export namespace MyNS {
 		 * Retrieves information about the specified association between a service network and a service.
 		 * Get servicenetworkserviceassociations/{serviceNetworkServiceAssociationIdentifier}
 		 * @param {string} serviceNetworkServiceAssociationIdentifier The ID or Amazon Resource Name (ARN) of the association.
+		 *     Min length: 17    Max length: 2048
 		 * @return {GetServiceNetworkServiceAssociationResponse} Success
 		 */
 		GetServiceNetworkServiceAssociation(serviceNetworkServiceAssociationIdentifier: string): Observable<GetServiceNetworkServiceAssociationResponse> {
@@ -3279,6 +3338,7 @@ export namespace MyNS {
 		 * Disassociates the VPC from the service network. You can't disassociate the VPC if there is a create or update association in progress.
 		 * Delete servicenetworkvpcassociations/{serviceNetworkVpcAssociationIdentifier}
 		 * @param {string} serviceNetworkVpcAssociationIdentifier The ID or Amazon Resource Name (ARN) of the association.
+		 *     Min length: 17    Max length: 2048
 		 * @return {DeleteServiceNetworkVpcAssociationResponse} Success
 		 */
 		DeleteServiceNetworkVpcAssociation(serviceNetworkVpcAssociationIdentifier: string): Observable<DeleteServiceNetworkVpcAssociationResponse> {
@@ -3289,6 +3349,7 @@ export namespace MyNS {
 		 * Retrieves information about the association between a service network and a VPC.
 		 * Get servicenetworkvpcassociations/{serviceNetworkVpcAssociationIdentifier}
 		 * @param {string} serviceNetworkVpcAssociationIdentifier The ID or Amazon Resource Name (ARN) of the association.
+		 *     Min length: 17    Max length: 2048
 		 * @return {GetServiceNetworkVpcAssociationResponse} Success
 		 */
 		GetServiceNetworkVpcAssociation(serviceNetworkVpcAssociationIdentifier: string): Observable<GetServiceNetworkVpcAssociationResponse> {
@@ -3299,6 +3360,7 @@ export namespace MyNS {
 		 * Updates the service network and VPC association. If you add a security group to the service network and VPC association, the association must continue to always have at least one security group. You can add or edit security groups at any time. However, to remove all security groups, you must first delete the association and recreate it without security groups.
 		 * Patch servicenetworkvpcassociations/{serviceNetworkVpcAssociationIdentifier}
 		 * @param {string} serviceNetworkVpcAssociationIdentifier The ID or Amazon Resource Name (ARN) of the association.
+		 *     Min length: 17    Max length: 2048
 		 * @return {UpdateServiceNetworkVpcAssociationResponse} Success
 		 */
 		UpdateServiceNetworkVpcAssociation(serviceNetworkVpcAssociationIdentifier: string, requestBody: UpdateServiceNetworkVpcAssociationPatchBody): Observable<UpdateServiceNetworkVpcAssociationResponse> {
@@ -3309,6 +3371,7 @@ export namespace MyNS {
 		 * Deletes a target group. You can't delete a target group if it is used in a listener rule or if the target group creation is in progress.
 		 * Delete targetgroups/{targetGroupIdentifier}
 		 * @param {string} targetGroupIdentifier The ID or Amazon Resource Name (ARN) of the target group.
+		 *     Min length: 17    Max length: 2048
 		 * @return {DeleteTargetGroupResponse} Success
 		 */
 		DeleteTargetGroup(targetGroupIdentifier: string): Observable<DeleteTargetGroupResponse> {
@@ -3319,6 +3382,7 @@ export namespace MyNS {
 		 * Retrieves information about the specified target group.
 		 * Get targetgroups/{targetGroupIdentifier}
 		 * @param {string} targetGroupIdentifier The ID or Amazon Resource Name (ARN) of the target group.
+		 *     Min length: 17    Max length: 2048
 		 * @return {GetTargetGroupResponse} Success
 		 */
 		GetTargetGroup(targetGroupIdentifier: string): Observable<GetTargetGroupResponse> {
@@ -3329,6 +3393,7 @@ export namespace MyNS {
 		 * Updates the specified target group.
 		 * Patch targetgroups/{targetGroupIdentifier}
 		 * @param {string} targetGroupIdentifier The ID or Amazon Resource Name (ARN) of the target group.
+		 *     Min length: 17    Max length: 2048
 		 * @return {UpdateTargetGroupResponse} Success
 		 */
 		UpdateTargetGroup(targetGroupIdentifier: string, requestBody: UpdateTargetGroupPatchBody): Observable<UpdateTargetGroupResponse> {
@@ -3339,6 +3404,7 @@ export namespace MyNS {
 		 * Deregisters the specified targets from the specified target group.
 		 * Post targetgroups/{targetGroupIdentifier}/deregistertargets
 		 * @param {string} targetGroupIdentifier The ID or Amazon Resource Name (ARN) of the target group.
+		 *     Min length: 17    Max length: 2048
 		 * @return {DeregisterTargetsResponse} Success
 		 */
 		DeregisterTargets(targetGroupIdentifier: string, requestBody: DeregisterTargetsPostBody): Observable<DeregisterTargetsResponse> {
@@ -3349,8 +3415,11 @@ export namespace MyNS {
 		 * Lists all access log subscriptions for the specified service network or service.
 		 * Get accesslogsubscriptions#resourceIdentifier
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} resourceIdentifier The ID or Amazon Resource Name (ARN) of the service network or service.
+		 *     Min length: 17    Max length: 200
 		 * @return {ListAccessLogSubscriptionsResponse} Success
 		 */
 		ListAccessLogSubscriptions(maxResults: number | null | undefined, nextToken: string | null | undefined, resourceIdentifier: string): Observable<ListAccessLogSubscriptionsResponse> {
@@ -3361,6 +3430,7 @@ export namespace MyNS {
 		 * Lists the tags for the specified resource.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 0    Max length: 1224
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -3371,6 +3441,7 @@ export namespace MyNS {
 		 * Adds the specified tags to the specified resource.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 0    Max length: 1224
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -3381,8 +3452,11 @@ export namespace MyNS {
 		 * Lists the targets for the target group. By default, all targets are included. You can use this API to check the health status of targets. You can also ﬁlter the results by target.
 		 * Post targetgroups/{targetGroupIdentifier}/listtargets
 		 * @param {number} maxResults The maximum number of results to return.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A pagination token for the next page of results.
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} targetGroupIdentifier The ID or Amazon Resource Name (ARN) of the target group.
+		 *     Min length: 17    Max length: 2048
 		 * @return {ListTargetsResponse} Success
 		 */
 		ListTargets(maxResults: number | null | undefined, nextToken: string | null | undefined, targetGroupIdentifier: string, requestBody: ListTargetsPostBody): Observable<ListTargetsResponse> {
@@ -3393,6 +3467,7 @@ export namespace MyNS {
 		 * Registers the targets with the target group. If it's a Lambda target, you can only have one target in a target group.
 		 * Post targetgroups/{targetGroupIdentifier}/registertargets
 		 * @param {string} targetGroupIdentifier The ID or Amazon Resource Name (ARN) of the target group.
+		 *     Min length: 17    Max length: 2048
 		 * @return {RegisterTargetsResponse} Success
 		 */
 		RegisterTargets(targetGroupIdentifier: string, requestBody: RegisterTargetsPostBody): Observable<RegisterTargetsResponse> {
@@ -3403,7 +3478,9 @@ export namespace MyNS {
 		 * Removes the specified tags from the specified resource.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The Amazon Resource Name (ARN) of the resource.
+		 *     Min length: 0    Max length: 1224
 		 * @param {Array<string>} tagKeys The tag keys of the tags to remove.
+		 *     Minimum items: 0    Maximum items: 200
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -3439,8 +3516,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -3453,8 +3530,8 @@ export namespace MyNS {
 		/**
 		 * The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		name: string;
 
@@ -3473,16 +3550,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the rule. The name must be unique within the listener. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3534,24 +3611,24 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		destinationArn: string;
 
 		/**
 		 * The ID or Amazon Resource Name (ARN) of the service network or service.
 		 * Required
-		 * Max length: 200
 		 * Min length: 17
+		 * Max length: 200
 		 */
 		resourceIdentifier: string;
 
@@ -3562,24 +3639,24 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon Resource Name (ARN) of the destination. The supported destination types are CloudWatch Log groups, Kinesis Data Firehose delivery streams, and Amazon S3 buckets.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		destinationArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID or Amazon Resource Name (ARN) of the service network or service.
 		 * Required
-		 * Max length: 200
 		 * Min length: 17
+		 * Max length: 200
 		 */
 		resourceIdentifier: FormControl<string | null | undefined>,
 
@@ -3600,8 +3677,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -3614,8 +3691,8 @@ export namespace MyNS {
 		/**
 		 * The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		name: string;
 
@@ -3639,16 +3716,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the listener. A listener name must be unique within a service. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3698,30 +3775,30 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the certificate.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		certificateArn?: string | null;
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The custom domain name of the service.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		customDomainName?: string | null;
 
 		/**
 		 * The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		 * Required
-		 * Max length: 40
 		 * Min length: 3
+		 * Max length: 40
 		 */
 		name: string;
 
@@ -3735,30 +3812,30 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the certificate.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		certificateArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The custom domain name of the service.
-		 * Max length: 255
 		 * Min length: 3
+		 * Max length: 255
 		 */
 		customDomainName: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the service. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		 * Required
-		 * Max length: 40
 		 * Min length: 3
+		 * Max length: 40
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3784,16 +3861,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		name: string;
 
@@ -3807,16 +3884,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the service network. The name must be unique to the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		 * Required
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -3837,24 +3914,24 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * The ID or Amazon Resource Name (ARN) of the service.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 17
+		 * Max length: 2048
 		 */
 		serviceIdentifier: string;
 
 		/**
 		 * The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		serviceNetworkIdentifier: string;
 
@@ -3865,24 +3942,24 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID or Amazon Resource Name (ARN) of the service.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 17
+		 * Max length: 2048
 		 */
 		serviceIdentifier: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN if the resources specified in the operation are in different accounts.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		serviceNetworkIdentifier: FormControl<string | null | undefined>,
 
@@ -3903,8 +3980,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -3918,8 +3995,8 @@ export namespace MyNS {
 		/**
 		 * The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		serviceNetworkIdentifier: string;
 
@@ -3929,8 +4006,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the VPC.
 		 * Required
-		 * Max length: 50
 		 * Min length: 5
+		 * Max length: 50
 		 */
 		vpcIdentifier: string;
 	}
@@ -3938,16 +4015,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The ID or Amazon Resource Name (ARN) of the service network. You must use the ARN when the resources specified in the operation are in different accounts.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		serviceNetworkIdentifier: FormControl<string | null | undefined>,
 
@@ -3957,8 +4034,8 @@ export namespace MyNS {
 		/**
 		 * The ID of the VPC.
 		 * Required
-		 * Max length: 50
 		 * Min length: 5
+		 * Max length: 50
 		 */
 		vpcIdentifier: FormControl<string | null | undefined>,
 	}
@@ -3976,8 +4053,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 
@@ -3987,8 +4064,8 @@ export namespace MyNS {
 		/**
 		 * The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		 * Required
-		 * Max length: 128
 		 * Min length: 3
+		 * Max length: 128
 		 */
 		name: string;
 
@@ -4005,16 +4082,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique, case-sensitive identifier that you provide to ensure the idempotency of the request. If you retry a request that completed successfully using the same client token and parameters, the retry succeeds without performing any actions. If the parameters aren't identical, the retry fails.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the target group. The name must be unique within the account. The valid characters are a-z, 0-9, and hyphens (-). You can't use a hyphen as the first or last character, or immediately after another hyphen.
 		 * Required
-		 * Max length: 128
 		 * Min length: 3
+		 * Max length: 128
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4068,8 +4145,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the access log destination.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		destinationArn: string;
 	}
@@ -4078,8 +4155,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the access log destination.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		destinationArn: FormControl<string | null | undefined>,
 	}
@@ -4095,8 +4172,8 @@ export namespace MyNS {
 		/**
 		 * The auth policy. The policy string in JSON must not contain newlines or blank lines.
 		 * Required
-		 * Max length: 10000
 		 * Min length: 0
+		 * Max length: 10000
 		 */
 		policy: string;
 	}
@@ -4105,8 +4182,8 @@ export namespace MyNS {
 		/**
 		 * The auth policy. The policy string in JSON must not contain newlines or blank lines.
 		 * Required
-		 * Max length: 10000
 		 * Min length: 0
+		 * Max length: 10000
 		 */
 		policy: FormControl<string | null | undefined>,
 	}
@@ -4150,8 +4227,8 @@ export namespace MyNS {
 		/**
 		 * An IAM policy. The policy string in JSON must not contain newlines or blank lines.
 		 * Required
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		policy: string;
 	}
@@ -4160,8 +4237,8 @@ export namespace MyNS {
 		/**
 		 * An IAM policy. The policy string in JSON must not contain newlines or blank lines.
 		 * Required
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		policy: FormControl<string | null | undefined>,
 	}
@@ -4233,8 +4310,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the certificate.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		certificateArn?: string | null;
 	}
@@ -4245,8 +4322,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Resource Name (ARN) of the certificate.
-		 * Max length: 2048
 		 * Min length: 0
+		 * Max length: 2048
 		 */
 		certificateArn: FormControl<string | null | undefined>,
 	}

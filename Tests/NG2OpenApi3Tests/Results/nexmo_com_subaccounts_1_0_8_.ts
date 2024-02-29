@@ -69,7 +69,10 @@ export namespace MyNS {
 
 	export interface TransferBalanceResponse {
 
-		/** Balance transfer amount */
+		/**
+		 * Balance transfer amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Unique balance transfer ID */
@@ -89,7 +92,10 @@ export namespace MyNS {
 	}
 	export interface TransferBalanceResponseFormProperties {
 
-		/** Balance transfer amount */
+		/**
+		 * Balance transfer amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Unique balance transfer ID */
@@ -143,7 +149,10 @@ export namespace MyNS {
 
 	export interface TransferCreditResponse {
 
-		/** Credit transfer amount */
+		/**
+		 * Credit transfer amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** The date and time when the credit transfer was executed */
@@ -163,7 +172,10 @@ export namespace MyNS {
 	}
 	export interface TransferCreditResponseFormProperties {
 
-		/** Credit transfer amount */
+		/**
+		 * Credit transfer amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** The date and time when the credit transfer was executed */
@@ -298,13 +310,19 @@ export namespace MyNS {
 		/** Unique subaccount ID. */
 		api_key?: string | null;
 
-		/** Balance of the subAccount. Value is null if balance is shared with primary account. */
+		/**
+		 * Balance of the subAccount. Value is null if balance is shared with primary account.
+		 * Type: double
+		 */
 		balance?: number | null;
 
 		/** Subaccount creation date and time. */
 		created_at?: string | null;
 
-		/** Credit limit of the subAccount. Value is null if balance is shared with primary account. */
+		/**
+		 * Credit limit of the subAccount. Value is null if balance is shared with primary account.
+		 * Type: double
+		 */
 		credit_limit?: number | null;
 
 		/** Name of the subaccount. */
@@ -324,13 +342,19 @@ export namespace MyNS {
 		/** Unique subaccount ID. */
 		api_key: FormControl<string | null | undefined>,
 
-		/** Balance of the subAccount. Value is null if balance is shared with primary account. */
+		/**
+		 * Balance of the subAccount. Value is null if balance is shared with primary account.
+		 * Type: double
+		 */
 		balance: FormControl<number | null | undefined>,
 
 		/** Subaccount creation date and time. */
 		created_at: FormControl<string | null | undefined>,
 
-		/** Credit limit of the subAccount. Value is null if balance is shared with primary account. */
+		/**
+		 * Credit limit of the subAccount. Value is null if balance is shared with primary account.
+		 * Type: double
+		 */
 		credit_limit: FormControl<number | null | undefined>,
 
 		/** Name of the subaccount. */
@@ -384,7 +408,10 @@ export namespace MyNS {
 
 	export interface TransferBalanceOrCreditRequest {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: number;
 
 		/** Required */
@@ -396,7 +423,10 @@ export namespace MyNS {
 	}
 	export interface TransferBalanceOrCreditRequestFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -419,12 +449,16 @@ export namespace MyNS {
 	export interface TransferNumberRequest {
 		country?: string | null;
 		from?: string | null;
+
+		/** Type: double */
 		number?: number | null;
 		to?: string | null;
 	}
 	export interface TransferNumberRequestFormProperties {
 		country: FormControl<string | null | undefined>,
 		from: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		number: FormControl<number | null | undefined>,
 		to: FormControl<string | null | undefined>,
 	}

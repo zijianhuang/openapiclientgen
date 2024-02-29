@@ -503,7 +503,10 @@ export namespace MyNS {
 
 	export interface BucketCors {
 
-		/** The value, in seconds, to return in the  Access-Control-Max-Age header used in preflight responses. */
+		/**
+		 * The value, in seconds, to return in the  Access-Control-Max-Age header used in preflight responses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAgeSeconds?: number | null;
 
 		/** The list of HTTP methods on which to include CORS response headers, (GET, OPTIONS, POST, etc) Note: "*" is permitted in the list of methods, and means "any method". */
@@ -517,7 +520,10 @@ export namespace MyNS {
 	}
 	export interface BucketCorsFormProperties {
 
-		/** The value, in seconds, to return in the  Access-Control-Max-Age header used in preflight responses. */
+		/**
+		 * The value, in seconds, to return in the  Access-Control-Max-Age header used in preflight responses.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAgeSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateBucketCorsFormGroup() {
@@ -851,19 +857,34 @@ export namespace MyNS {
 
 	export interface BucketLifecycleRuleCondition {
 
-		/** Age of an object (in days). This condition is satisfied when an object reaches the specified age. */
+		/**
+		 * Age of an object (in days). This condition is satisfied when an object reaches the specified age.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		age?: number | null;
 
-		/** A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when an object is created before midnight of the specified date in UTC. */
+		/**
+		 * A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when an object is created before midnight of the specified date in UTC.
+		 * Type: DateOnly
+		 */
 		createdBefore?: Date | null;
 
-		/** A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when the custom time on an object is before this date in UTC. */
+		/**
+		 * A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when the custom time on an object is before this date in UTC.
+		 * Type: DateOnly
+		 */
 		customTimeBefore?: Date | null;
 
-		/** Number of days elapsed since the user-specified timestamp set on an object. The condition is satisfied if the days elapsed is at least this number. If no custom timestamp is specified on an object, the condition does not apply. */
+		/**
+		 * Number of days elapsed since the user-specified timestamp set on an object. The condition is satisfied if the days elapsed is at least this number. If no custom timestamp is specified on an object, the condition does not apply.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		daysSinceCustomTime?: number | null;
 
-		/** Number of days elapsed since the noncurrent timestamp of an object. The condition is satisfied if the days elapsed is at least this number. This condition is relevant only for versioned objects. The value of the field must be a nonnegative integer. If it's zero, the object version will become eligible for Lifecycle action as soon as it becomes noncurrent. */
+		/**
+		 * Number of days elapsed since the noncurrent timestamp of an object. The condition is satisfied if the days elapsed is at least this number. This condition is relevant only for versioned objects. The value of the field must be a nonnegative integer. If it's zero, the object version will become eligible for Lifecycle action as soon as it becomes noncurrent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		daysSinceNoncurrentTime?: number | null;
 
 		/** Relevant only for versioned objects. If the value is true, this condition matches live objects; if the value is false, it matches archived objects. */
@@ -881,27 +902,48 @@ export namespace MyNS {
 		/** List of object name suffixes. This condition will be satisfied when at least one of the suffixes exactly matches the end of the object name. */
 		matchesSuffix?: Array<string>;
 
-		/** A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when the noncurrent time on an object is before this date in UTC. This condition is relevant only for versioned objects. */
+		/**
+		 * A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when the noncurrent time on an object is before this date in UTC. This condition is relevant only for versioned objects.
+		 * Type: DateOnly
+		 */
 		noncurrentTimeBefore?: Date | null;
 
-		/** Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object. */
+		/**
+		 * Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numNewerVersions?: number | null;
 	}
 	export interface BucketLifecycleRuleConditionFormProperties {
 
-		/** Age of an object (in days). This condition is satisfied when an object reaches the specified age. */
+		/**
+		 * Age of an object (in days). This condition is satisfied when an object reaches the specified age.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		age: FormControl<number | null | undefined>,
 
-		/** A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when an object is created before midnight of the specified date in UTC. */
+		/**
+		 * A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when an object is created before midnight of the specified date in UTC.
+		 * Type: DateOnly
+		 */
 		createdBefore: FormControl<Date | null | undefined>,
 
-		/** A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when the custom time on an object is before this date in UTC. */
+		/**
+		 * A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when the custom time on an object is before this date in UTC.
+		 * Type: DateOnly
+		 */
 		customTimeBefore: FormControl<Date | null | undefined>,
 
-		/** Number of days elapsed since the user-specified timestamp set on an object. The condition is satisfied if the days elapsed is at least this number. If no custom timestamp is specified on an object, the condition does not apply. */
+		/**
+		 * Number of days elapsed since the user-specified timestamp set on an object. The condition is satisfied if the days elapsed is at least this number. If no custom timestamp is specified on an object, the condition does not apply.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		daysSinceCustomTime: FormControl<number | null | undefined>,
 
-		/** Number of days elapsed since the noncurrent timestamp of an object. The condition is satisfied if the days elapsed is at least this number. This condition is relevant only for versioned objects. The value of the field must be a nonnegative integer. If it's zero, the object version will become eligible for Lifecycle action as soon as it becomes noncurrent. */
+		/**
+		 * Number of days elapsed since the noncurrent timestamp of an object. The condition is satisfied if the days elapsed is at least this number. This condition is relevant only for versioned objects. The value of the field must be a nonnegative integer. If it's zero, the object version will become eligible for Lifecycle action as soon as it becomes noncurrent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		daysSinceNoncurrentTime: FormControl<number | null | undefined>,
 
 		/** Relevant only for versioned objects. If the value is true, this condition matches live objects; if the value is false, it matches archived objects. */
@@ -910,10 +952,16 @@ export namespace MyNS {
 		/** A regular expression that satisfies the RE2 syntax. This condition is satisfied when the name of the object matches the RE2 pattern. Note: This feature is currently in the "Early Access" launch stage and is only available to a whitelisted set of users; that means that this feature may be changed in backward-incompatible ways and that it is not guaranteed to be released. */
 		matchesPattern: FormControl<string | null | undefined>,
 
-		/** A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when the noncurrent time on an object is before this date in UTC. This condition is relevant only for versioned objects. */
+		/**
+		 * A date in RFC 3339 format with only the date part (for instance, "2013-01-15"). This condition is satisfied when the noncurrent time on an object is before this date in UTC. This condition is relevant only for versioned objects.
+		 * Type: DateOnly
+		 */
 		noncurrentTimeBefore: FormControl<Date | null | undefined>,
 
-		/** Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object. */
+		/**
+		 * Relevant only for versioned objects. If the value is N, this condition is satisfied when there are at least N versions (including the live version) newer than this version of the object.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		numNewerVersions: FormControl<number | null | undefined>,
 	}
 	export function CreateBucketLifecycleRuleConditionFormGroup() {
@@ -1316,7 +1364,10 @@ export namespace MyNS {
 		/** Cache-Control directive for the object data. If omitted, and the object is accessible to all anonymous users, the default will be public, max-age=3600. */
 		cacheControl?: string | null;
 
-		/** Number of underlying components that make up this object. Components are accumulated by compose operations. */
+		/**
+		 * Number of underlying components that make up this object. Components are accumulated by compose operations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		componentCount?: number | null;
 
 		/** Content-Disposition of the object data. */
@@ -1422,7 +1473,10 @@ export namespace MyNS {
 		/** Cache-Control directive for the object data. If omitted, and the object is accessible to all anonymous users, the default will be public, max-age=3600. */
 		cacheControl: FormControl<string | null | undefined>,
 
-		/** Number of underlying components that make up this object. Components are accumulated by compose operations. */
+		/**
+		 * Number of underlying components that make up this object. Components are accumulated by compose operations.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		componentCount: FormControl<number | null | undefined>,
 
 		/** Content-Disposition of the object data. */
@@ -1905,7 +1959,10 @@ export namespace MyNS {
 	/** The "Status" type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each "Status" message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1918,7 +1975,10 @@ export namespace MyNS {
 	/** The "Status" type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each "Status" message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. */
@@ -2350,7 +2410,10 @@ export namespace MyNS {
 		/** The ID of the resource to which this policy belongs. Will be of the form projects/_/buckets/bucket for buckets, projects/_/buckets/bucket/objects/object for objects, and projects/_/buckets/bucket/managedFolders/managedFolder. A specific generation may be specified by appending #generationNumber to the end of the object name, e.g. projects/_/buckets/my-bucket/objects/data.txt#17. The current generation can be denoted with #0. This field is ignored on input. */
 		resourceId?: string | null;
 
-		/** The IAM policy format version. */
+		/**
+		 * The IAM policy format version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -2366,7 +2429,10 @@ export namespace MyNS {
 		/** The ID of the resource to which this policy belongs. Will be of the form projects/_/buckets/bucket for buckets, projects/_/buckets/bucket/objects/object for objects, and projects/_/buckets/bucket/managedFolders/managedFolder. A specific generation may be specified by appending #generationNumber to the end of the object name, e.g. projects/_/buckets/my-bucket/objects/data.txt#17. The current generation can be denoted with #0. This field is ignored on input. */
 		resourceId: FormControl<string | null | undefined>,
 
-		/** The IAM policy format version. */
+		/**
+		 * The IAM policy format version.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreatePolicyFormGroup() {
@@ -2573,6 +2639,7 @@ export namespace MyNS {
 		 * Get b
 		 * @param {string} project A valid API project identifier.
 		 * @param {number} maxResults Maximum number of buckets to return in a single response. The service will use this parameter or 1,000 items, whichever is smaller.
+		 *     Minimum: 0
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @param {string} prefix Filter results to buckets whose names begin with this prefix.
 		 * @param {Storage_buckets_listProjection} projection Set of properties to return. Defaults to noAcl.
@@ -2732,6 +2799,7 @@ export namespace MyNS {
 		 * Get b/{bucket}/anywhereCaches
 		 * @param {string} bucket Name of the parent bucket.
 		 * @param {number} pageSize Maximum number of items to return in a single page of responses. Maximum 1000.
+		 *     Minimum: 0
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @return {AnywhereCaches} Successful response
 		 */
@@ -2883,6 +2951,7 @@ export namespace MyNS {
 		 * @param {string} delimiter Returns results in a directory-like mode. The only supported value is '/'. If set, items will only contain folders that either exactly match the prefix, or are one level below the prefix.
 		 * @param {string} endOffset Filter results to folders whose names are lexicographically before endOffset. If startOffset is also set, the folders listed will have names between startOffset (inclusive) and endOffset (exclusive).
 		 * @param {number} pageSize Maximum number of items to return in a single page of responses.
+		 *     Minimum: 0
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @param {string} prefix Filter results to folders whose paths begin with this prefix. If set, the value must either be an empty string or end with a '/'.
 		 * @param {string} startOffset Filter results to folders whose names are lexicographically equal to or after startOffset. If endOffset is also set, the folders listed will have names between startOffset (inclusive) and endOffset (exclusive).
@@ -2948,6 +3017,7 @@ export namespace MyNS {
 		 * Get b/{bucket}/iam
 		 * @param {string} bucket Name of a bucket.
 		 * @param {number} optionsRequestedPolicyVersion The IAM policy format version to be returned. If the optionsRequestedPolicyVersion is for an older version that doesn't support part of the requested IAM policy, the request fails.
+		 *     Minimum: 1
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {Policy} Successful response
 		 */
@@ -2995,6 +3065,7 @@ export namespace MyNS {
 		 * Get b/{bucket}/managedFolders
 		 * @param {string} bucket Name of the bucket containing the managed folder.
 		 * @param {number} pageSize Maximum number of items to return in a single page of responses.
+		 *     Minimum: 0
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @param {string} prefix The managed folder name/path prefix to filter the output list of results.
 		 * @return {ManagedFolders} Successful response
@@ -3045,6 +3116,7 @@ export namespace MyNS {
 		 * @param {string} bucket Name of the bucket containing the managed folder.
 		 * @param {string} managedFolder The managed folder name/path.
 		 * @param {number} optionsRequestedPolicyVersion The IAM policy format version to be returned. If the optionsRequestedPolicyVersion is for an older version that doesn't support part of the requested IAM policy, the request fails.
+		 *     Minimum: 1
 		 * @param {string} userProject The project to be billed for this request. Required for Requester Pays buckets.
 		 * @return {Policy} Successful response
 		 */
@@ -3133,6 +3205,7 @@ export namespace MyNS {
 		 * @param {boolean} includeTrailingDelimiter If true, objects that end in exactly one instance of delimiter will have their metadata included in items in addition to prefixes.
 		 * @param {string} matchGlob Filter results to objects and prefixes that match this glob pattern.
 		 * @param {number} maxResults Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.
+		 *     Minimum: 0
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @param {string} prefix Filter results to objects whose names begin with this prefix.
 		 * @param {Storage_buckets_listProjection} projection Set of properties to return. Defaults to noAcl.
@@ -3164,6 +3237,7 @@ export namespace MyNS {
 		 * @param {string} endOffset Filter results to objects whose names are lexicographically before endOffset. If startOffset is also set, the objects listed will have names between startOffset (inclusive) and endOffset (exclusive).
 		 * @param {boolean} includeTrailingDelimiter If true, objects that end in exactly one instance of delimiter will have their metadata included in items in addition to prefixes.
 		 * @param {number} maxResults Maximum number of items plus prefixes to return in a single page of responses. As duplicate prefixes are omitted, fewer total results may be returned than requested. The service will use this parameter or 1,000 items, whichever is smaller.
+		 *     Minimum: 0
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @param {string} prefix Filter results to objects whose names begin with this prefix.
 		 * @param {Storage_buckets_listProjection} projection Set of properties to return. Defaults to noAcl.
@@ -3399,6 +3473,7 @@ export namespace MyNS {
 		 * @param {string} bucket Name of the bucket in which to look for operations.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize Maximum number of items to return in a single page of responses. Fewer total results may be returned than requested. The service uses this parameter or 100 items, whichever is smaller.
+		 *     Minimum: 0
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @return {GoogleLongrunningListOperationsResponse} Successful response
 		 */
@@ -3512,6 +3587,7 @@ export namespace MyNS {
 		 * Get projects/{projectId}/hmacKeys
 		 * @param {string} projectId Name of the project in which to look for HMAC keys.
 		 * @param {number} maxResults Maximum number of items to return in a single page of responses. The service uses this parameter or 250 items, whichever is smaller. The max number of items per page will also be limited by the number of distinct service accounts in the response. If the number of service accounts in a single response is too high, the page will truncated and a next page token will be returned.
+		 *     Minimum: 0
 		 * @param {string} pageToken A previously-returned page token representing part of the larger set of results to view.
 		 * @param {string} serviceAccountEmail If present, only keys for the given service account are returned.
 		 * @param {boolean} showDeletedKeys Whether or not to show keys in the DELETED state.

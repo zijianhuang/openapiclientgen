@@ -195,9 +195,13 @@ export namespace MyNS {
 		answers?: Array<string>;
 		ImagesReturnImage_results?: Array<ImagesReturnImage_results>;
 		results?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total?: number | null;
 	}
 	export interface ImagesReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreateImagesReturnFormGroup() {
@@ -401,14 +405,22 @@ export namespace MyNS {
 	}
 
 	export interface SerpReturn {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position?: number | null;
 		query?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		searched_results?: number | null;
 		website?: string | null;
 	}
 	export interface SerpReturnFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		position: FormControl<number | null | undefined>,
 		query: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		searched_results: FormControl<number | null | undefined>,
 		website: FormControl<string | null | undefined>,
 	}

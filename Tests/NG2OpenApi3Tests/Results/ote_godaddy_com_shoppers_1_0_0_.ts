@@ -197,6 +197,8 @@ export namespace MyNS {
 
 		/** Required */
 		email: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		externalId?: number | null;
 
 		/** Required */
@@ -218,6 +220,8 @@ export namespace MyNS {
 
 		/** Required */
 		email: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		externalId: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -290,6 +294,8 @@ export namespace MyNS {
 
 	export interface ShopperUpdate {
 		email?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		externalId?: number | null;
 
 		/** Max length: 50 */
@@ -299,6 +305,8 @@ export namespace MyNS {
 	}
 	export interface ShopperUpdateFormProperties {
 		email: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		externalId: FormControl<number | null | undefined>,
 
 		/** Max length: 50 */
@@ -323,6 +331,8 @@ export namespace MyNS {
 
 		/** Required */
 		email: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		externalId?: number | null;
 
 		/** Max length: 50 */
@@ -341,6 +351,8 @@ export namespace MyNS {
 
 		/** Required */
 		email: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		externalId: FormControl<number | null | undefined>,
 
 		/** Max length: 50 */
@@ -387,6 +399,7 @@ export namespace MyNS {
 		 * <strong>Notes:</strong><ul><li>Shopper deletion is not supported in OTE</li><li>**shopperId** is **not the same** as **customerId**.  **shopperId** is a number of max length 10 digits (*ex:* 1234567890) whereas **customerId** is a UUIDv4 (*ex:* 295e3bc3-b3b9-4d95-aae5-ede41a994d13)</li></ul>
 		 * Delete v1/shoppers/{shopperId}
 		 * @param {string} shopperId The ID of the shopper to delete. Must agree with the shopper id on the token or header, if present. *Note*: **shopperId** is **not the same** as **customerId**.  **shopperId** is a number of max length 10 digits (*ex:* 1234567890) whereas **customerId** is a UUIDv4 (*ex:* 295e3bc3-b3b9-4d95-aae5-ede41a994d13)
+		 *     Max length: 10
 		 * @param {string} auditClientIp The client IP of the user who originated the request leading to this call.
 		 * @return {void} 
 		 */
@@ -435,6 +448,7 @@ export namespace MyNS {
 		 * <strong>Notes:</strong><ul><li>**shopperId** is **not the same** as **customerId**. **shopperId** is a number of max length 10 digits (*ex:* 1234567890) whereas **customerId** is a UUIDv4 (*ex:* 295e3bc3-b3b9-4d95-aae5-ede41a994d13)</li></ul>
 		 * Get v1/shoppers/{shopperId}/status
 		 * @param {string} shopperId The ID of the shopper to retrieve. Must agree with the shopper id on the token or header, if present
+		 *     Max length: 10
 		 * @param {string} auditClientIp The client IP of the user who originated the request leading to this call.
 		 * @return {ShopperStatus} Request was successful
 		 */

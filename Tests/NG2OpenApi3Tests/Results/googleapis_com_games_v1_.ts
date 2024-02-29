@@ -40,7 +40,10 @@ export namespace MyNS {
 		/** The image URL for the revealed achievement icon. */
 		revealedIconUrl?: string | null;
 
-		/** The total steps for an incremental achievement. */
+		/**
+		 * The total steps for an incremental achievement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSteps?: number | null;
 
 		/** The image URL for the unlocked achievement icon. */
@@ -83,7 +86,10 @@ export namespace MyNS {
 		/** The image URL for the revealed achievement icon. */
 		revealedIconUrl: FormControl<string | null | undefined>,
 
-		/** The total steps for an incremental achievement. */
+		/**
+		 * The total steps for an incremental achievement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSteps: FormControl<number | null | undefined>,
 
 		/** The image URL for the unlocked achievement icon. */
@@ -147,7 +153,10 @@ export namespace MyNS {
 	/** An achievement increment response */
 	export interface AchievementIncrementResponse {
 
-		/** The current steps recorded for this incremental achievement. */
+		/**
+		 * The current steps recorded for this incremental achievement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentSteps?: number | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#achievementIncrementResponse`. */
@@ -160,7 +169,10 @@ export namespace MyNS {
 	/** An achievement increment response */
 	export interface AchievementIncrementResponseFormProperties {
 
-		/** The current steps recorded for this incremental achievement. */
+		/**
+		 * The current steps recorded for this incremental achievement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentSteps: FormControl<number | null | undefined>,
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#achievementIncrementResponse`. */
@@ -212,7 +224,10 @@ export namespace MyNS {
 	/** An achievement set steps at least response. */
 	export interface AchievementSetStepsAtLeastResponse {
 
-		/** The current steps recorded for this incremental achievement. */
+		/**
+		 * The current steps recorded for this incremental achievement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentSteps?: number | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#achievementSetStepsAtLeastResponse`. */
@@ -225,7 +240,10 @@ export namespace MyNS {
 	/** An achievement set steps at least response. */
 	export interface AchievementSetStepsAtLeastResponseFormProperties {
 
-		/** The current steps recorded for this incremental achievement. */
+		/**
+		 * The current steps recorded for this incremental achievement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentSteps: FormControl<number | null | undefined>,
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#achievementSetStepsAtLeastResponse`. */
@@ -346,7 +364,10 @@ export namespace MyNS {
 		/** The requestId associated with an increment to an achievement. */
 		requestId?: string | null;
 
-		/** The number of steps to be incremented. */
+		/**
+		 * The number of steps to be incremented.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		steps?: number | null;
 	}
 
@@ -359,7 +380,10 @@ export namespace MyNS {
 		/** The requestId associated with an increment to an achievement. */
 		requestId: FormControl<string | null | undefined>,
 
-		/** The number of steps to be incremented. */
+		/**
+		 * The number of steps to be incremented.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		steps: FormControl<number | null | undefined>,
 	}
 	export function CreateGamesAchievementIncrementFormGroup() {
@@ -378,7 +402,10 @@ export namespace MyNS {
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#GamesAchievementSetStepsAtLeast`. */
 		kind?: string | null;
 
-		/** The minimum number of steps for the achievement to be set to. */
+		/**
+		 * The minimum number of steps for the achievement to be set to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		steps?: number | null;
 	}
 
@@ -388,7 +415,10 @@ export namespace MyNS {
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#GamesAchievementSetStepsAtLeast`. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The minimum number of steps for the achievement to be set to. */
+		/**
+		 * The minimum number of steps for the achievement to be set to.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		steps: FormControl<number | null | undefined>,
 	}
 	export function CreateGamesAchievementSetStepsAtLeastFormGroup() {
@@ -435,7 +465,10 @@ export namespace MyNS {
 		/** The current state of the achievement. */
 		currentState?: AchievementDefinitionInitialState | null;
 
-		/** The current steps recorded for this achievement if it is incremental. */
+		/**
+		 * The current steps recorded for this achievement if it is incremental.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentSteps?: number | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#achievementUpdateResponse`. */
@@ -457,7 +490,10 @@ export namespace MyNS {
 		/** The current state of the achievement. */
 		currentState: FormControl<AchievementDefinitionInitialState | null | undefined>,
 
-		/** The current steps recorded for this achievement if it is incremental. */
+		/**
+		 * The current steps recorded for this achievement if it is incremental.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentSteps: FormControl<number | null | undefined>,
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#achievementUpdateResponse`. */
@@ -485,7 +521,10 @@ export namespace MyNS {
 	/** The Application resource. */
 	export interface Application {
 
-		/** The number of achievements visible to the currently authenticated player. */
+		/**
+		 * The number of achievements visible to the currently authenticated player.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		achievement_count?: number | null;
 
 		/** The assets of the application. */
@@ -515,7 +554,10 @@ export namespace MyNS {
 		/** The last updated timestamp of the application. */
 		lastUpdatedTimestamp?: string | null;
 
-		/** The number of leaderboards visible to the currently authenticated player. */
+		/**
+		 * The number of leaderboards visible to the currently authenticated player.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leaderboard_count?: number | null;
 
 		/** The name of the application. */
@@ -528,7 +570,10 @@ export namespace MyNS {
 	/** The Application resource. */
 	export interface ApplicationFormProperties {
 
-		/** The number of achievements visible to the currently authenticated player. */
+		/**
+		 * The number of achievements visible to the currently authenticated player.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		achievement_count: FormControl<number | null | undefined>,
 
 		/** The author of the application. */
@@ -546,7 +591,10 @@ export namespace MyNS {
 		/** The last updated timestamp of the application. */
 		lastUpdatedTimestamp: FormControl<string | null | undefined>,
 
-		/** The number of leaderboards visible to the currently authenticated player. */
+		/**
+		 * The number of leaderboards visible to the currently authenticated player.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		leaderboard_count: FormControl<number | null | undefined>,
 
 		/** The name of the application. */
@@ -574,7 +622,10 @@ export namespace MyNS {
 	/** An image asset object. */
 	export interface ImageAsset {
 
-		/** The height of the asset. */
+		/**
+		 * The height of the asset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#imageAsset`. */
@@ -586,14 +637,20 @@ export namespace MyNS {
 		/** The URL of the asset. */
 		url?: string | null;
 
-		/** The width of the asset. */
+		/**
+		 * The width of the asset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** An image asset object. */
 	export interface ImageAssetFormProperties {
 
-		/** The height of the asset. */
+		/**
+		 * The height of the asset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#imageAsset`. */
@@ -605,7 +662,10 @@ export namespace MyNS {
 		/** The URL of the asset. */
 		url: FormControl<string | null | undefined>,
 
-		/** The width of the asset. */
+		/**
+		 * The width of the asset.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateImageAssetFormGroup() {
@@ -1711,7 +1771,10 @@ export namespace MyNS {
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#playerLevel`. */
 		kind?: string | null;
 
-		/** The level for the user. */
+		/**
+		 * The level for the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level?: number | null;
 
 		/** The maximum experience points for this level. */
@@ -1727,7 +1790,10 @@ export namespace MyNS {
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#playerLevel`. */
 		kind: FormControl<string | null | undefined>,
 
-		/** The level for the user. */
+		/**
+		 * The level for the user.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		level: FormControl<number | null | undefined>,
 
 		/** The maximum experience points for this level. */
@@ -2029,7 +2095,10 @@ export namespace MyNS {
 	/** The metagame config resource */
 	export interface MetagameConfig {
 
-		/** Current version of the metagame configuration data. When this data is updated, the version number will be increased by one. */
+		/**
+		 * Current version of the metagame configuration data. When this data is updated, the version number will be increased by one.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentVersion?: number | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#metagameConfig`. */
@@ -2042,7 +2111,10 @@ export namespace MyNS {
 	/** The metagame config resource */
 	export interface MetagameConfigFormProperties {
 
-		/** Current version of the metagame configuration data. When this data is updated, the version number will be increased by one. */
+		/**
+		 * Current version of the metagame configuration data. When this data is updated, the version number will be increased by one.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentVersion: FormControl<number | null | undefined>,
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#metagameConfig`. */
@@ -2063,7 +2135,10 @@ export namespace MyNS {
 		/** The state of the achievement. */
 		achievementState?: AchievementDefinitionInitialState | null;
 
-		/** The current steps for an incremental achievement. */
+		/**
+		 * The current steps for an incremental achievement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentSteps?: number | null;
 
 		/** Experience points earned for the achievement. This field is absent for achievements that have not yet been unlocked and 0 for achievements that have been unlocked by testers but that are unpublished. */
@@ -2088,7 +2163,10 @@ export namespace MyNS {
 		/** The state of the achievement. */
 		achievementState: FormControl<AchievementDefinitionInitialState | null | undefined>,
 
-		/** The current steps for an incremental achievement. */
+		/**
+		 * The current steps for an incremental achievement.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		currentSteps: FormControl<number | null | undefined>,
 
 		/** Experience points earned for the achievement. This field is absent for achievements that have not yet been unlocked and 0 for achievements that have been unlocked by testers but that are unpublished. */
@@ -2762,7 +2840,10 @@ export namespace MyNS {
 	/** An image of a snapshot. */
 	export interface SnapshotImage {
 
-		/** The height of the image. */
+		/**
+		 * The height of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height?: number | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#snapshotImage`. */
@@ -2774,14 +2855,20 @@ export namespace MyNS {
 		/** The URL of the image. This URL may be invalidated at any time and should not be cached. */
 		url?: string | null;
 
-		/** The width of the image. */
+		/**
+		 * The width of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width?: number | null;
 	}
 
 	/** An image of a snapshot. */
 	export interface SnapshotImageFormProperties {
 
-		/** The height of the image. */
+		/**
+		 * The height of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		height: FormControl<number | null | undefined>,
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#snapshotImage`. */
@@ -2793,7 +2880,10 @@ export namespace MyNS {
 		/** The URL of the image. This URL may be invalidated at any time and should not be cached. */
 		url: FormControl<string | null | undefined>,
 
-		/** The width of the image. */
+		/**
+		 * The width of the image.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		width: FormControl<number | null | undefined>,
 	}
 	export function CreateSnapshotImageFormGroup() {
@@ -2844,74 +2934,134 @@ export namespace MyNS {
 	/** A third party stats resource. */
 	export interface StatsResponse {
 
-		/** Average session length in minutes of the player. E.g., 1, 30, 60, ... . Not populated if there is not enough information. */
+		/**
+		 * Average session length in minutes of the player. E.g., 1, 30, 60, ... . Not populated if there is not enough information.
+		 * Type: float
+		 */
 		avg_session_length_minutes?: number | null;
 
-		/** The probability of the player not returning to play the game in the next day. E.g., 0, 0.1, 0.5, ..., 1.0. Not populated if there is not enough information. */
+		/**
+		 * The probability of the player not returning to play the game in the next day. E.g., 0, 0.1, 0.5, ..., 1.0. Not populated if there is not enough information.
+		 * Type: float
+		 */
 		churn_probability?: number | null;
 
-		/** Number of days since the player last played this game. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information. */
+		/**
+		 * Number of days since the player last played this game. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_since_last_played?: number | null;
 
-		/** The probability of the player going to spend beyond a threshold amount of money. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough information. */
+		/**
+		 * The probability of the player going to spend beyond a threshold amount of money. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough information.
+		 * Type: float
+		 */
 		high_spender_probability?: number | null;
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#statsResponse`. */
 		kind?: string | null;
 
-		/** Number of in-app purchases made by the player in this game. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information. */
+		/**
+		 * Number of in-app purchases made by the player in this game. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_purchases?: number | null;
 
-		/** The approximate number of sessions of the player within the last 28 days, where a session begins when the player is connected to Play Games Services and ends when they are disconnected. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information. */
+		/**
+		 * The approximate number of sessions of the player within the last 28 days, where a session begins when the player is connected to Play Games Services and ends when they are disconnected. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_sessions?: number | null;
 
-		/** The approximation of the sessions percentile of the player within the last 30 days, where a session begins when the player is connected to Play Games Services and ends when they are disconnected. E.g., 0, 0.25, 0.5, 0.75. Not populated if there is not enough information. */
+		/**
+		 * The approximation of the sessions percentile of the player within the last 30 days, where a session begins when the player is connected to Play Games Services and ends when they are disconnected. E.g., 0, 0.25, 0.5, 0.75. Not populated if there is not enough information.
+		 * Type: float
+		 */
 		num_sessions_percentile?: number | null;
 
-		/** The approximate spend percentile of the player in this game. E.g., 0, 0.25, 0.5, 0.75. Not populated if there is not enough information. */
+		/**
+		 * The approximate spend percentile of the player in this game. E.g., 0, 0.25, 0.5, 0.75. Not populated if there is not enough information.
+		 * Type: float
+		 */
 		spend_percentile?: number | null;
 
-		/** The probability of the player going to spend the game in the next seven days. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough information. */
+		/**
+		 * The probability of the player going to spend the game in the next seven days. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough information.
+		 * Type: float
+		 */
 		spend_probability?: number | null;
 
-		/** The predicted amount of money that the player going to spend in the next 28 days. E.g., 1, 30, 60, ... . Not populated if there is not enough information. */
+		/**
+		 * The predicted amount of money that the player going to spend in the next 28 days. E.g., 1, 30, 60, ... . Not populated if there is not enough information.
+		 * Type: float
+		 */
 		total_spend_next_28_days?: number | null;
 	}
 
 	/** A third party stats resource. */
 	export interface StatsResponseFormProperties {
 
-		/** Average session length in minutes of the player. E.g., 1, 30, 60, ... . Not populated if there is not enough information. */
+		/**
+		 * Average session length in minutes of the player. E.g., 1, 30, 60, ... . Not populated if there is not enough information.
+		 * Type: float
+		 */
 		avg_session_length_minutes: FormControl<number | null | undefined>,
 
-		/** The probability of the player not returning to play the game in the next day. E.g., 0, 0.1, 0.5, ..., 1.0. Not populated if there is not enough information. */
+		/**
+		 * The probability of the player not returning to play the game in the next day. E.g., 0, 0.1, 0.5, ..., 1.0. Not populated if there is not enough information.
+		 * Type: float
+		 */
 		churn_probability: FormControl<number | null | undefined>,
 
-		/** Number of days since the player last played this game. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information. */
+		/**
+		 * Number of days since the player last played this game. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		days_since_last_played: FormControl<number | null | undefined>,
 
-		/** The probability of the player going to spend beyond a threshold amount of money. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough information. */
+		/**
+		 * The probability of the player going to spend beyond a threshold amount of money. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough information.
+		 * Type: float
+		 */
 		high_spender_probability: FormControl<number | null | undefined>,
 
 		/** Uniquely identifies the type of this resource. Value is always the fixed string `games#statsResponse`. */
 		kind: FormControl<string | null | undefined>,
 
-		/** Number of in-app purchases made by the player in this game. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information. */
+		/**
+		 * Number of in-app purchases made by the player in this game. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_purchases: FormControl<number | null | undefined>,
 
-		/** The approximate number of sessions of the player within the last 28 days, where a session begins when the player is connected to Play Games Services and ends when they are disconnected. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information. */
+		/**
+		 * The approximate number of sessions of the player within the last 28 days, where a session begins when the player is connected to Play Games Services and ends when they are disconnected. E.g., 0, 1, 5, 10, ... . Not populated if there is not enough information.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		num_sessions: FormControl<number | null | undefined>,
 
-		/** The approximation of the sessions percentile of the player within the last 30 days, where a session begins when the player is connected to Play Games Services and ends when they are disconnected. E.g., 0, 0.25, 0.5, 0.75. Not populated if there is not enough information. */
+		/**
+		 * The approximation of the sessions percentile of the player within the last 30 days, where a session begins when the player is connected to Play Games Services and ends when they are disconnected. E.g., 0, 0.25, 0.5, 0.75. Not populated if there is not enough information.
+		 * Type: float
+		 */
 		num_sessions_percentile: FormControl<number | null | undefined>,
 
-		/** The approximate spend percentile of the player in this game. E.g., 0, 0.25, 0.5, 0.75. Not populated if there is not enough information. */
+		/**
+		 * The approximate spend percentile of the player in this game. E.g., 0, 0.25, 0.5, 0.75. Not populated if there is not enough information.
+		 * Type: float
+		 */
 		spend_percentile: FormControl<number | null | undefined>,
 
-		/** The probability of the player going to spend the game in the next seven days. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough information. */
+		/**
+		 * The probability of the player going to spend the game in the next seven days. E.g., 0, 0.25, 0.50, 0.75. Not populated if there is not enough information.
+		 * Type: float
+		 */
 		spend_probability: FormControl<number | null | undefined>,
 
-		/** The predicted amount of money that the player going to spend in the next 28 days. E.g., 1, 30, 60, ... . Not populated if there is not enough information. */
+		/**
+		 * The predicted amount of money that the player going to spend in the next 28 days. E.g., 1, 30, 60, ... . Not populated if there is not enough information.
+		 * Type: float
+		 */
 		total_spend_next_28_days: FormControl<number | null | undefined>,
 	}
 	export function CreateStatsResponseFormGroup() {
@@ -2997,6 +3147,7 @@ export namespace MyNS {
 		 * Get games/v1/achievements
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @param {number} maxResults The maximum number of achievement resources to return in the response, used for paging. For any response, the actual number of achievement resources returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {AchievementDefinitionsListResponse} Successful response
 		 */
@@ -3018,6 +3169,7 @@ export namespace MyNS {
 		 * Post games/v1/achievements/{achievementId}/increment
 		 * @param {string} achievementId The ID of the achievement used by this method.
 		 * @param {number} stepsToIncrement Required. The number of steps to increment.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} requestId A randomly generated numeric ID for each request specified by the caller. This number is used at the server to ensure that the request is handled correctly across retries.
 		 * @return {AchievementIncrementResponse} Successful response
 		 */
@@ -3040,6 +3192,7 @@ export namespace MyNS {
 		 * Post games/v1/achievements/{achievementId}/setStepsAtLeast
 		 * @param {string} achievementId The ID of the achievement used by this method.
 		 * @param {number} steps Required. The minimum value to set the steps to.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {AchievementSetStepsAtLeastResponse} Successful response
 		 */
 		Games_achievements_setStepsAtLeast(achievementId: string, steps: number): Observable<AchievementSetStepsAtLeastResponse> {
@@ -3103,6 +3256,7 @@ export namespace MyNS {
 		 * Get games/v1/eventDefinitions
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @param {number} maxResults The maximum number of event definitions to return in the response, used for paging. For any response, the actual number of event definitions to return may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {EventDefinitionListResponse} Successful response
 		 */
@@ -3115,6 +3269,7 @@ export namespace MyNS {
 		 * Get games/v1/events
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @param {number} maxResults The maximum number of events to return in the response, used for paging. For any response, the actual number of events to return may be less than the specified maxResults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {PlayerEventListResponse} Successful response
 		 */
@@ -3137,6 +3292,7 @@ export namespace MyNS {
 		 * Get games/v1/leaderboards
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @param {number} maxResults The maximum number of leaderboards to return in the response. For any response, the actual number of leaderboards returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {LeaderboardListResponse} Successful response
 		 */
@@ -3186,6 +3342,7 @@ export namespace MyNS {
 		 * @param {LeaderboardEntryTimeSpan} timeSpan Required. The time span for the scores and ranks you're requesting.
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @param {number} maxResults The maximum number of leaderboard scores to return in the response. For any response, the actual number of leaderboard scores returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {LeaderboardScores} Successful response
 		 */
@@ -3201,8 +3358,10 @@ export namespace MyNS {
 		 * @param {LeaderboardEntryTimeSpan} timeSpan Required. The time span for the scores and ranks you're requesting.
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @param {number} maxResults The maximum number of leaderboard scores to return in the response. For any response, the actual number of leaderboard scores returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @param {number} resultsAbove The preferred number of scores to return above the player's score. More scores may be returned if the player is at the bottom of the leaderboard; fewer may be returned if the player is at the top. Must be less than or equal to maxResults.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {boolean} returnTopIfAbsent True if the top scores should be returned when the player is not in the leaderboard. Defaults to true.
 		 * @return {LeaderboardScores} Successful response
 		 */
@@ -3235,6 +3394,7 @@ export namespace MyNS {
 		 * @param {Games_players_listCollection} collection Collection of players being retrieved
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @param {number} maxResults The maximum number of player resources to return in the response, used for paging. For any response, the actual number of player resources returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {PlayerListResponse} Successful response
 		 */
@@ -3269,6 +3429,7 @@ export namespace MyNS {
 		 * @param {string} playerId A player ID. A value of `me` may be used in place of the authenticated player's ID.
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @param {number} maxResults The maximum number of achievement resources to return in the response, used for paging. For any response, the actual number of achievement resources returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @param {Games_achievements_listState} state Tells the server to return only achievements with the specified state. If this parameter isn't specified, all achievements are returned.
 		 * @return {PlayerAchievementListResponse} Successful response
@@ -3284,6 +3445,7 @@ export namespace MyNS {
 		 * @param {Games_metagame_listCategoriesByPlayerCollection} collection The collection of categories for which data will be returned.
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @param {number} maxResults The maximum number of category resources to return in the response, used for paging. For any response, the actual number of category resources returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {CategoryListResponse} Successful response
 		 */
@@ -3300,6 +3462,7 @@ export namespace MyNS {
 		 * @param {Games_scores_getIncludeRankType} includeRankType The types of ranks to return. If the parameter is omitted, no ranks will be returned.
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @param {number} maxResults The maximum number of leaderboard scores to return in the response. For any response, the actual number of leaderboard scores returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {PlayerLeaderboardScoreListResponse} Successful response
 		 */
@@ -3313,6 +3476,7 @@ export namespace MyNS {
 		 * @param {string} playerId A player ID. A value of `me` may be used in place of the authenticated player's ID.
 		 * @param {string} language The preferred language to use for strings returned by this method.
 		 * @param {number} maxResults The maximum number of snapshot resources to return in the response, used for paging. For any response, the actual number of snapshot resources returned may be less than the specified `maxResults`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The token returned by the previous request.
 		 * @return {SnapshotListResponse} Successful response
 		 */

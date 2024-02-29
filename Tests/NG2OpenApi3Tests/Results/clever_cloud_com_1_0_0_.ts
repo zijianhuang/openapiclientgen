@@ -16,6 +16,7 @@ export namespace MyNS {
 		/**
 		 * The creation timestamp of the addon
 		 * Required
+		 * Type: DateOnly
 		 */
 		creationDate: Date;
 
@@ -53,6 +54,7 @@ export namespace MyNS {
 		/**
 		 * The creation timestamp of the addon
 		 * Required
+		 * Type: DateOnly
 		 */
 		creationDate: FormControl<Date | null | undefined>,
 
@@ -105,7 +107,10 @@ export namespace MyNS {
 		 */
 		name: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: number;
 
 		/** Required */
@@ -125,7 +130,10 @@ export namespace MyNS {
 		 */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		price: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -410,6 +418,8 @@ export namespace MyNS {
 		old_plan?: string | null;
 		old_recipient_hostname?: string | null;
 		old_zone?: string | null;
+
+		/** Type: double */
 		port?: number | null;
 		request_date?: string | null;
 		state?: string | null;
@@ -439,6 +449,8 @@ export namespace MyNS {
 		old_plan: FormControl<string | null | undefined>,
 		old_recipient_hostname: FormControl<string | null | undefined>,
 		old_zone: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		port: FormControl<number | null | undefined>,
 		request_date: FormControl<string | null | undefined>,
 		state: FormControl<string | null | undefined>,
@@ -502,8 +514,12 @@ export namespace MyNS {
 
 	export interface AppInstance {
 		appId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		appPort?: number | null;
 		commit?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deployNumber?: number | null;
 		flavor?: Flavor;
 		id?: string | null;
@@ -512,8 +528,12 @@ export namespace MyNS {
 	}
 	export interface AppInstanceFormProperties {
 		appId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		appPort: FormControl<number | null | undefined>,
 		commit: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		deployNumber: FormControl<number | null | undefined>,
 		id: FormControl<string | null | undefined>,
 		ip: FormControl<string | null | undefined>,
@@ -535,37 +555,63 @@ export namespace MyNS {
 	export interface Flavor {
 		available?: boolean | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpus: number;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		disk?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mem: number;
 		microservice?: boolean | null;
 
 		/** Required */
 		name: string;
+
+		/** Type: double */
 		nice?: number | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		price: number;
 	}
 	export interface FlavorFormProperties {
 		available: FormControl<boolean | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		cpus: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		disk: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mem: FormControl<number | null | undefined>,
 		microservice: FormControl<boolean | null | undefined>,
 
 		/** Required */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		nice: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		price: FormControl<number | null | undefined>,
 	}
 	export function CreateFlavorFormGroup() {
@@ -599,7 +645,10 @@ export namespace MyNS {
 		/** Required */
 		commitId: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		creationDate: Date;
 
 		/** Required */
@@ -623,7 +672,10 @@ export namespace MyNS {
 		/** Required */
 		instance: Instance;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_deploy: number;
 
 		/** Required */
@@ -670,7 +722,10 @@ export namespace MyNS {
 		/** Required */
 		commitId: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		creationDate: FormControl<Date | null | undefined>,
 
 		/** Required */
@@ -688,7 +743,10 @@ export namespace MyNS {
 		/** Required */
 		id: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		last_deploy: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -801,19 +859,28 @@ export namespace MyNS {
 		/** Required */
 		instanceAndVersion: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAllowedInstances: number;
 
 		/** Required */
 		maxFlavor: Flavor;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstances: number;
 
 		/** Required */
 		minFlavor: Flavor;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstances: number;
 		name?: string | null;
 		tags?: Array<string>;
@@ -835,13 +902,22 @@ export namespace MyNS {
 		/** Required */
 		instanceAndVersion: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxAllowedInstances: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstances: FormControl<number | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstances: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 
@@ -1237,7 +1313,10 @@ export namespace MyNS {
 
 	export interface Credits {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		count: number;
 
 		/** Required */
@@ -1248,7 +1327,10 @@ export namespace MyNS {
 	}
 	export interface CreditsFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1267,7 +1349,10 @@ export namespace MyNS {
 		/** Required */
 		currency: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		value: number;
 	}
 	export interface CreditsDropPriceFormProperties {
@@ -1275,7 +1360,10 @@ export namespace MyNS {
 		/** Required */
 		currency: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: float
+		 */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateCreditsDropPriceFormGroup() {
@@ -1309,14 +1397,23 @@ export namespace MyNS {
 		/** Required */
 		commit: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		date: Date;
 
-		/** Required */
-		id: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: string;
 
-		/** Required */
-		instances: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		instances: string;
 
 		/** Required */
 		state: string;
@@ -1335,14 +1432,23 @@ export namespace MyNS {
 		/** Required */
 		commit: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		date: FormControl<Date | null | undefined>,
 
-		/** Required */
-		id: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		id: FormControl<string | null | undefined>,
 
-		/** Required */
-		instances: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		instances: FormControl<string | null | undefined>,
 
 		/** Required */
 		state: FormControl<string | null | undefined>,
@@ -1356,8 +1462,8 @@ export namespace MyNS {
 			cause: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			commit: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			date: new FormControl<Date | null | undefined>(undefined, [Validators.required]),
-			id: new FormControl<number | null | undefined>(undefined, [Validators.required]),
-			instances: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			id: new FormControl<string | null | undefined>(undefined, [Validators.required]),
+			instances: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			state: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			uuid: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
@@ -1458,7 +1564,10 @@ export namespace MyNS {
 
 	export interface Error {
 
-		/** Unique numeric id of this error type. Eg. id = 10 is "Serialization failed". */
+		/**
+		 * Unique numeric id of this error type. Eg. id = 10 is "Serialization failed".
+		 * Type: double
+		 */
 		id?: number | null;
 
 		/** Description of the error. */
@@ -1469,7 +1578,10 @@ export namespace MyNS {
 	}
 	export interface ErrorFormProperties {
 
-		/** Unique numeric id of this error type. Eg. id = 10 is "Serialization failed". */
+		/**
+		 * Unique numeric id of this error type. Eg. id = 10 is "Serialization failed".
+		 * Type: double
+		 */
 		id: FormControl<number | null | undefined>,
 
 		/** Description of the error. */
@@ -1881,7 +1993,10 @@ export namespace MyNS {
 		/** Required */
 		'nav-data': string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		timestamp: Date;
 
 		/** Required */
@@ -1901,7 +2016,10 @@ export namespace MyNS {
 		/** Required */
 		'nav-data': FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: DateOnly
+		 */
 		timestamp: FormControl<Date | null | undefined>,
 
 		/** Required */
@@ -2174,13 +2292,19 @@ export namespace MyNS {
 		/**
 		 * Port of the HV that's redirected to 8080 on VM
 		 * Required
+		 * Type: double
 		 */
 		appPort: number;
 		commitId?: string | null;
 
-		/** Integer unix timestamp */
+		/**
+		 * Integer unix timestamp
+		 * Type: double
+		 */
 		createdAt?: number | null;
 		deployId?: string | null;
+
+		/** Type: double */
 		deployNumber?: number | null;
 
 		/** Generated PokéName. This name is generated from the uuid. */
@@ -2203,6 +2327,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		image: string;
+
+		/** Type: double */
 		instanceNumber?: number | null;
 		internalIP?: string | null;
 
@@ -2221,7 +2347,10 @@ export namespace MyNS {
 		 */
 		source: string;
 
-		/** Port of the HV that's redirected to 22 on VM */
+		/**
+		 * Port of the HV that's redirected to 22 on VM
+		 * Type: double
+		 */
 		sshPort?: number | null;
 		state?: string | null;
 
@@ -2231,6 +2360,7 @@ export namespace MyNS {
 		/**
 		 * Port of the HV that's redirected to 10050 on VM
 		 * Required
+		 * Type: double
 		 */
 		zabbixPort: number;
 		zone?: string | null;
@@ -2243,13 +2373,19 @@ export namespace MyNS {
 		/**
 		 * Port of the HV that's redirected to 8080 on VM
 		 * Required
+		 * Type: double
 		 */
 		appPort: FormControl<number | null | undefined>,
 		commitId: FormControl<string | null | undefined>,
 
-		/** Integer unix timestamp */
+		/**
+		 * Integer unix timestamp
+		 * Type: double
+		 */
 		createdAt: FormControl<number | null | undefined>,
 		deployId: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		deployNumber: FormControl<number | null | undefined>,
 
 		/** Generated PokéName. This name is generated from the uuid. */
@@ -2266,6 +2402,8 @@ export namespace MyNS {
 		 * Required
 		 */
 		image: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		instanceNumber: FormControl<number | null | undefined>,
 		internalIP: FormControl<string | null | undefined>,
 
@@ -2284,7 +2422,10 @@ export namespace MyNS {
 		 */
 		source: FormControl<string | null | undefined>,
 
-		/** Port of the HV that's redirected to 22 on VM */
+		/**
+		 * Port of the HV that's redirected to 22 on VM
+		 * Type: double
+		 */
 		sshPort: FormControl<number | null | undefined>,
 		state: FormControl<string | null | undefined>,
 
@@ -2294,6 +2435,7 @@ export namespace MyNS {
 		/**
 		 * Port of the HV that's redirected to 10050 on VM
 		 * Required
+		 * Type: double
 		 */
 		zabbixPort: FormControl<number | null | undefined>,
 		zone: FormControl<string | null | undefined>,
@@ -2324,19 +2466,31 @@ export namespace MyNS {
 	}
 
 	export interface SupernovaInstanceViewFlavor {
+
+		/** Type: double */
 		cpus?: number | null;
+
+		/** Type: double */
 		mem?: number | null;
 
 		/** Name of flavor. For indication only. */
 		name?: string | null;
+
+		/** Type: double */
 		price?: number | null;
 	}
 	export interface SupernovaInstanceViewFlavorFormProperties {
+
+		/** Type: double */
 		cpus: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		mem: FormControl<number | null | undefined>,
 
 		/** Name of flavor. For indication only. */
 		name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		price: FormControl<number | null | undefined>,
 	}
 	export function CreateSupernovaInstanceViewFlavorFormGroup() {
@@ -2354,7 +2508,10 @@ export namespace MyNS {
 		/** Required */
 		consumer: Consumer;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creationDate: number;
 
 		/** Required */
@@ -2368,7 +2525,10 @@ export namespace MyNS {
 	}
 	export interface TokenFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		creationDate: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -2456,8 +2616,9 @@ export namespace MyNS {
 		/**
 		 * The creation timestamp of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		creationDate: number;
+		creationDate: string;
 
 		/**
 		 * The email of the user
@@ -2552,8 +2713,9 @@ export namespace MyNS {
 		/**
 		 * The creation timestamp of the user
 		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 */
-		creationDate: FormControl<number | null | undefined>,
+		creationDate: FormControl<string | null | undefined>,
 
 		/**
 		 * The email of the user
@@ -2607,7 +2769,7 @@ export namespace MyNS {
 			canPay: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			city: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			country: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			creationDate: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			creationDate: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			email: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			emailValidated: new FormControl<boolean | null | undefined>(undefined, [Validators.required]),
 			hasPassword: new FormControl<boolean | null | undefined>(undefined),
@@ -2664,12 +2826,18 @@ export namespace MyNS {
 
 	export interface WannabeAddonBilling {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		cost: number;
 	}
 	export interface WannabeAddonBillingFormProperties {
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: double
+		 */
 		cost: FormControl<number | null | undefined>,
 	}
 	export function CreateWannabeAddonBillingFormGroup() {
@@ -2777,11 +2945,17 @@ export namespace MyNS {
 		instanceVersion?: string | null;
 		maxFlavor?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstances: number;
 		minFlavor?: string | null;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstances: number;
 
 		/** Required */
@@ -2814,11 +2988,17 @@ export namespace MyNS {
 		instanceVersion: FormControl<string | null | undefined>,
 		maxFlavor: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxInstances: FormControl<number | null | undefined>,
 		minFlavor: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minInstances: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -3106,8 +3286,11 @@ export namespace MyNS {
 		/** Required */
 		name: string;
 
-		/** Required */
-		price: number;
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		price: string;
 
 		/** Required */
 		slug: string;
@@ -3117,8 +3300,11 @@ export namespace MyNS {
 		/** Required */
 		name: FormControl<string | null | undefined>,
 
-		/** Required */
-		price: FormControl<number | null | undefined>,
+		/**
+		 * Required
+		 * Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 */
+		price: FormControl<string | null | undefined>,
 
 		/** Required */
 		slug: FormControl<string | null | undefined>,
@@ -3126,7 +3312,7 @@ export namespace MyNS {
 	export function CreateWannabePlanFormGroup() {
 		return new FormGroup<WannabePlanFormProperties>({
 			name: new FormControl<string | null | undefined>(undefined, [Validators.required]),
-			price: new FormControl<number | null | undefined>(undefined, [Validators.required]),
+			price: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 			slug: new FormControl<string | null | undefined>(undefined, [Validators.required]),
 		});
 
@@ -3542,6 +3728,7 @@ export namespace MyNS {
 		 * Get logs/{appId}
 		 * @param {string} appId Application Id
 		 * @param {number} limit Number of lines to return
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {Logs_appIdGetByLimitAndOrderAndAfterAndBeforeAndFilterAndDeployment_idOrder} order Logs order
 		 * @param {Date} after Lowest bound for logs date, ISO 8601
 		 * @param {Date} before Highest bounds for logs date, ISO 8601
@@ -6058,6 +6245,7 @@ export namespace MyNS {
 
 		/**
 		 * Get vendor/apps
+		 * @param {number} offset Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {Array<Application>} listApps
 		 */
 		VendorAppsGetByOffset(offset: number | null | undefined, headersHandler?: () => HttpHeaders): Observable<Array<Application>> {

@@ -1903,7 +1903,10 @@ namespace MyNS
 		/// Returns a collection of Channels.
 		/// ListChannels channels
 		/// </summary>
-		/// <param name="maxResults">Upper bound on number of records to return.</param>
+		/// <param name="maxResults">Upper bound on number of records to return.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">A token used to resume pagination from the end of a previous request.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -1982,7 +1985,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="includeChannelId">When specified, the request will return only HarvestJobs associated with the given Channel ID.</param>
 		/// <param name="includeStatus">When specified, the request will return only HarvestJobs in the given status.</param>
-		/// <param name="maxResults">The upper bound on the number of records to return.</param>
+		/// <param name="maxResults">The upper bound on the number of records to return.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">A token used to resume pagination from the end of a previous request.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
@@ -2060,7 +2066,10 @@ namespace MyNS
 		/// ListOriginEndpoints origin_endpoints
 		/// </summary>
 		/// <param name="channelId">When specified, the request will return only OriginEndpoints associated with the given Channel ID.</param>
-		/// <param name="maxResults">The upper bound on the number of records to return.</param>
+		/// <param name="maxResults">The upper bound on the number of records to return.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
 		/// <param name="nextToken">A token used to resume pagination from the end of a previous request.</param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>

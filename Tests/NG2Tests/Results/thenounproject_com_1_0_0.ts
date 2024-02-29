@@ -13,6 +13,7 @@ export namespace MyNS {
 		 * Returns a single collection
 		 * Get collection/{id}
 		 * @param {number} id Collection id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetCollectionById(id: number): Observable<HttpResponse<string>> {
@@ -24,9 +25,13 @@ export namespace MyNS {
 		 * Returns a list of icons associated with a collection
 		 * Get collection/{id}/icons
 		 * @param {number} id Collection id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Maximum number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Number of results to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Number of results of limit length to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetCollectionIconsById(id: number, limit: number | null | undefined, offset: number | null | undefined, page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -50,8 +55,11 @@ export namespace MyNS {
 		 * Get collection/{slug}/icons
 		 * @param {string} slug Collection slug
 		 * @param {number} limit Maximum number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Number of results to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Number of results of limit length to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetCollectionIconsBySlug(slug: string, limit: number | null | undefined, offset: number | null | undefined, page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -63,8 +71,11 @@ export namespace MyNS {
 		 * Return's a list of all collections
 		 * Get collections
 		 * @param {number} limit Maximum number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Number of results to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Number of results of limit length to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetAllCollections(limit: number | null | undefined, offset: number | null | undefined, page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -76,6 +87,7 @@ export namespace MyNS {
 		 * Returns a single icon
 		 * Get icon/{id}
 		 * @param {number} id Icon id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetIconById(id: number): Observable<HttpResponse<string>> {
@@ -98,8 +110,11 @@ export namespace MyNS {
 		 * Returns list of most recently uploaded icons
 		 * Get icons/recent_uploads
 		 * @param {number} limit Maximum number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Number of results to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Number of results of limit length to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetRecentIcons(limit: number | null | undefined, offset: number | null | undefined, page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -112,9 +127,13 @@ export namespace MyNS {
 		 * Get icons/{term}
 		 * @param {string} term Icon term
 		 * @param {number} limit_to_public_domain Limit results to public domain icons only
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} limit Maximum number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Number of results to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Number of results of limit length to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetIconsByTerm(term: string, limit_to_public_domain: number | null | undefined, limit: number | null | undefined, offset: number | null | undefined, page: number | null | undefined): Observable<HttpResponse<string>> {
@@ -136,6 +155,7 @@ export namespace MyNS {
 		 * Returns a list of collections associated with a user
 		 * Get user/{user_id}/collections
 		 * @param {number} user_id User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetUserCollections(user_id: number): Observable<HttpResponse<string>> {
@@ -147,6 +167,7 @@ export namespace MyNS {
 		 * Returns a single collection associated with a user
 		 * Get user/{user_id}/collections/{slug}
 		 * @param {number} user_id User id
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} slug Collection slug
 		 * @return {void} No response was specified
 		 */
@@ -160,8 +181,11 @@ export namespace MyNS {
 		 * Get user/{username}/uploads
 		 * @param {string} username Username
 		 * @param {number} limit Maximum number of results
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} offset Number of results to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page Number of results of limit length to displace or skip over
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} No response was specified
 		 */
 		GetUserUploadsWithUser(username: string, limit: number | null | undefined, offset: number | null | undefined, page: number | null | undefined): Observable<HttpResponse<string>> {

@@ -4274,6 +4274,7 @@ export namespace MyNS {
 		 * Get v1/bridges
 		 * @param {string} filterArn Filter the list results to display only the bridges associated with the selected Amazon Resource Name (ARN).
 		 * @param {number} maxResults The maximum number of results to return per API request. For example, you submit a ListBridges request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListBridges request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListBridges request a second time and specify the NextToken value.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4296,6 +4297,7 @@ export namespace MyNS {
 		 * Displays a list of flows that are associated with this account. This request returns a paginated result.
 		 * Get v1/flows
 		 * @param {number} maxResults The maximum number of results to return per API request. For example, you submit a ListFlows request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListFlows request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListFlows request a second time and specify the NextToken value.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4318,6 +4320,7 @@ export namespace MyNS {
 		 * Displays a list of gateways that are associated with this account. This request returns a paginated result.
 		 * Get v1/gateways
 		 * @param {number} maxResults The maximum number of results to return per API request. For example, you submit a ListGateways request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListGateways request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListGateways request a second time and specify the NextToken value.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4482,6 +4485,7 @@ export namespace MyNS {
 		 * Displays a list of all entitlements that have been granted to this account. This request returns 20 results per page.
 		 * Get v1/entitlements
 		 * @param {number} maxResults The maximum number of results to return per API request. For example, you submit a ListEntitlements request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 20 results per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListEntitlements request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListEntitlements request a second time and specify the NextToken value.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4496,6 +4500,7 @@ export namespace MyNS {
 		 * Get v1/gateway-instances
 		 * @param {string} filterArn Filter the list results to display only the instances associated with the selected Gateway Amazon Resource Name (ARN).
 		 * @param {number} maxResults The maximum number of results to return per API request. For example, you submit a ListInstances request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListInstances request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListInstances request a second time and specify the NextToken value.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4509,6 +4514,7 @@ export namespace MyNS {
 		 * Displays a list of all offerings that are available to this account in the current AWS Region. If you have an active reservation (which means you've purchased an offering that has already started and hasn't expired yet), your account isn't eligible for other offerings.
 		 * Get v1/offerings
 		 * @param {number} maxResults The maximum number of results to return per API request. For example, you submit a ListOfferings request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListOfferings request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -4522,6 +4528,7 @@ export namespace MyNS {
 		 * Displays a list of all reservations that have been purchased by this account in the current AWS Region. This list includes all reservations in all states (such as active and expired).
 		 * Get v1/reservations
 		 * @param {number} maxResults The maximum number of results to return per API request. For example, you submit a ListReservations request with MaxResults set at 5. Although 20 items match your request, the service returns no more than the first 5 items. (The service also returns a NextToken value that you can use to fetch the next batch of results.) The service might return fewer results than the MaxResults value. If MaxResults is not included in the request, the service defaults to pagination with a maximum of 10 results per page.
+		 *     Minimum: 1    Maximum: 1000
 		 * @param {string} nextToken The token that identifies which batch of results that you want to see. For example, you submit a ListReservations request with MaxResults set at 5. The service returns the first batch of results (up to 5) and a NextToken value. To see the next batch of results, you can submit the ListOfferings request a second time and specify the NextToken value.
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
@@ -5425,7 +5432,10 @@ export namespace MyNS {
 		/** Attributes that are related to the media stream. */
 		attributes?: UpdateFlowMediaStreamPutBodyAttributes;
 
-		/** The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000. */
+		/**
+		 * The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clockRate?: number | null;
 
 		/** Description */
@@ -5439,7 +5449,10 @@ export namespace MyNS {
 	}
 	export interface UpdateFlowMediaStreamPutBodyFormProperties {
 
-		/** The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000. */
+		/**
+		 * The sample rate (in Hz) for the stream. If the media stream type is video or ancillary data, set this value to 90000. If the media stream type is audio, set this value to either 48000 or 96000.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		clockRate: FormControl<number | null | undefined>,
 
 		/** Description */
@@ -5489,16 +5502,25 @@ export namespace MyNS {
 		/** Information about the encryption of the flow. */
 		encryption?: UpdateFlowOutputPutBodyEncryption;
 
-		/** The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams. */
+		/**
+		 * The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLatency?: number | null;
 
 		/** The media streams that are associated with the output, and the parameters for those associations. */
 		mediaStreamOutputConfigurations?: Array<MediaStreamOutputConfigurationRequest>;
 
-		/** The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency. */
+		/**
+		 * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLatency?: number | null;
 
-		/** The port to use when content is distributed to this output. */
+		/**
+		 * The port to use when content is distributed to this output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** The protocol to use for the output. */
@@ -5507,13 +5529,19 @@ export namespace MyNS {
 		/** The remote ID for the Zixi-pull stream. */
 		remoteId?: string | null;
 
-		/** The port that the flow uses to send outbound requests to initiate connection with the sender. */
+		/**
+		 * The port that the flow uses to send outbound requests to initiate connection with the sender.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		senderControlPort?: number | null;
 
 		/** The IP address that the flow communicates with to initiate connection with the sender. */
 		senderIpAddress?: string | null;
 
-		/** The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams. */
+		/**
+		 * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		smoothingLatency?: number | null;
 
 		/** The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams. */
@@ -5530,13 +5558,22 @@ export namespace MyNS {
 		/** The IP address where you want to send the output. */
 		destination: FormControl<string | null | undefined>,
 
-		/** The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams. */
+		/**
+		 * The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLatency: FormControl<number | null | undefined>,
 
-		/** The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency. */
+		/**
+		 * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLatency: FormControl<number | null | undefined>,
 
-		/** The port to use when content is distributed to this output. */
+		/**
+		 * The port to use when content is distributed to this output.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** The protocol to use for the output. */
@@ -5545,13 +5582,19 @@ export namespace MyNS {
 		/** The remote ID for the Zixi-pull stream. */
 		remoteId: FormControl<string | null | undefined>,
 
-		/** The port that the flow uses to send outbound requests to initiate connection with the sender. */
+		/**
+		 * The port that the flow uses to send outbound requests to initiate connection with the sender.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		senderControlPort: FormControl<number | null | undefined>,
 
 		/** The IP address that the flow communicates with to initiate connection with the sender. */
 		senderIpAddress: FormControl<string | null | undefined>,
 
-		/** The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams. */
+		/**
+		 * The smoothing latency in milliseconds for RIST, RTP, and RTP-FEC streams.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		smoothingLatency: FormControl<number | null | undefined>,
 
 		/** The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams. */
@@ -5635,28 +5678,46 @@ export namespace MyNS {
 		/** The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow. */
 		entitlementArn?: string | null;
 
-		/** The port that the flow will be listening on for incoming content. */
+		/**
+		 * The port that the flow will be listening on for incoming content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ingestPort?: number | null;
 
-		/** The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams. */
+		/**
+		 * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxBitrate?: number | null;
 
-		/** The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams. */
+		/**
+		 * The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLatency?: number | null;
 
-		/** The size of the buffer (in milliseconds) to use to sync incoming source data. */
+		/**
+		 * The size of the buffer (in milliseconds) to use to sync incoming source data.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSyncBuffer?: number | null;
 
 		/** The media streams that are associated with the source, and the parameters for those associations. */
 		mediaStreamSourceConfigurations?: Array<MediaStreamSourceConfigurationRequest>;
 
-		/** The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency. */
+		/**
+		 * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLatency?: number | null;
 
 		/** The protocol that is used by the source. */
 		protocol?: Protocol | null;
 
-		/** The port that the flow uses to send outbound requests to initiate connection with the sender. */
+		/**
+		 * The port that the flow uses to send outbound requests to initiate connection with the sender.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		senderControlPort?: number | null;
 
 		/** The IP address that the flow communicates with to initiate connection with the sender. */
@@ -5665,7 +5726,10 @@ export namespace MyNS {
 		/** Source IP or domain name for SRT-caller protocol. */
 		sourceListenerAddress?: string | null;
 
-		/** Source port for SRT-caller protocol. */
+		/**
+		 * Source port for SRT-caller protocol.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceListenerPort?: number | null;
 
 		/** The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams. */
@@ -5688,25 +5752,43 @@ export namespace MyNS {
 		/** The ARN of the entitlement that allows you to subscribe to this flow. The entitlement is set by the flow originator, and the ARN is generated as part of the originator's flow. */
 		entitlementArn: FormControl<string | null | undefined>,
 
-		/** The port that the flow will be listening on for incoming content. */
+		/**
+		 * The port that the flow will be listening on for incoming content.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ingestPort: FormControl<number | null | undefined>,
 
-		/** The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams. */
+		/**
+		 * The smoothing max bitrate (in bps) for RIST, RTP, and RTP-FEC streams.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxBitrate: FormControl<number | null | undefined>,
 
-		/** The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams. */
+		/**
+		 * The maximum latency in milliseconds. This parameter applies only to RIST-based, Zixi-based, and Fujitsu-based streams.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxLatency: FormControl<number | null | undefined>,
 
-		/** The size of the buffer (in milliseconds) to use to sync incoming source data. */
+		/**
+		 * The size of the buffer (in milliseconds) to use to sync incoming source data.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSyncBuffer: FormControl<number | null | undefined>,
 
-		/** The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency. */
+		/**
+		 * The minimum latency in milliseconds for SRT-based streams. In streams that use the SRT protocol, this value that you set on your MediaConnect source or output represents the minimal potential latency of that connection. The latency of the stream is set to the highest number between the sender’s minimum latency and the receiver’s minimum latency.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minLatency: FormControl<number | null | undefined>,
 
 		/** The protocol that is used by the source. */
 		protocol: FormControl<Protocol | null | undefined>,
 
-		/** The port that the flow uses to send outbound requests to initiate connection with the sender. */
+		/**
+		 * The port that the flow uses to send outbound requests to initiate connection with the sender.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		senderControlPort: FormControl<number | null | undefined>,
 
 		/** The IP address that the flow communicates with to initiate connection with the sender. */
@@ -5715,7 +5797,10 @@ export namespace MyNS {
 		/** Source IP or domain name for SRT-caller protocol. */
 		sourceListenerAddress: FormControl<string | null | undefined>,
 
-		/** Source port for SRT-caller protocol. */
+		/**
+		 * Source port for SRT-caller protocol.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		sourceListenerPort: FormControl<number | null | undefined>,
 
 		/** The stream ID that you want to use for this transport. This parameter applies only to Zixi and SRT caller-based streams. */

@@ -246,7 +246,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="ascLocation">The location where ASC stores the data of the subscription. can be retrieved from Get locations</param>
 		/// <param name="filter">OData filter. Optional.</param>
 		/// <returns>OK</returns>
@@ -279,7 +282,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="ascLocation">The location where ASC stores the data of the subscription. can be retrieved from Get locations</param>
 		/// <param name="taskName">Name of the task object, will be a GUID</param>
 		/// <returns>OK</returns>
@@ -312,7 +318,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">API version for the operation</param>
 		/// <param name="subscriptionId">Azure subscription ID</param>
-		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.</param>
+		/// <param name="resourceGroupName">The name of the resource group within the user's subscription. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="ascLocation">The location where ASC stores the data of the subscription. can be retrieved from Get locations</param>
 		/// <param name="taskName">Name of the task object, will be a GUID</param>
 		/// <param name="taskUpdateActionType">Type of the action to do on the task</param>

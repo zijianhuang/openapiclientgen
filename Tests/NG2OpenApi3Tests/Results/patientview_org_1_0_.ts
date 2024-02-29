@@ -25,7 +25,9 @@ export namespace MyNS {
 	export interface BaseGroup {
 		code?: string | null;
 		groupType?: Lookup;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastImportDate?: Date | null;
 		name?: string | null;
 		parentCodes?: Array<string>;
@@ -35,7 +37,9 @@ export namespace MyNS {
 	}
 	export interface BaseGroupFormProperties {
 		code: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastImportDate: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		shortName: FormControl<string | null | undefined>,
@@ -45,7 +49,7 @@ export namespace MyNS {
 	export function CreateBaseGroupFormGroup() {
 		return new FormGroup<BaseGroupFormProperties>({
 			code: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastImportDate: new FormControl<Date | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 			shortName: new FormControl<string | null | undefined>(undefined),
@@ -59,8 +63,12 @@ export namespace MyNS {
 		created?: Date | null;
 		description?: string | null;
 		descriptionFriendly?: string | null;
-		displayOrder?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		displayOrder?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastUpdate?: Date | null;
 		lookupType?: LookupType;
 		value?: string | null;
@@ -69,8 +77,12 @@ export namespace MyNS {
 		created: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		descriptionFriendly: FormControl<string | null | undefined>,
-		displayOrder: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		displayOrder: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
 		value: FormControl<string | null | undefined>,
 	}
@@ -79,8 +91,8 @@ export namespace MyNS {
 			created: new FormControl<Date | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			descriptionFriendly: new FormControl<string | null | undefined>(undefined),
-			displayOrder: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			displayOrder: new FormControl<string | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastUpdate: new FormControl<Date | null | undefined>(undefined),
 			value: new FormControl<string | null | undefined>(undefined),
 		});
@@ -90,14 +102,18 @@ export namespace MyNS {
 	export interface LookupType {
 		created?: Date | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastUpdate?: Date | null;
 		type?: LookupTypeType | null;
 	}
 	export interface LookupTypeFormProperties {
 		created: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
 		type: FormControl<LookupTypeType | null | undefined>,
 	}
@@ -105,7 +121,7 @@ export namespace MyNS {
 		return new FormGroup<LookupTypeFormProperties>({
 			created: new FormControl<Date | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastUpdate: new FormControl<Date | null | undefined>(undefined),
 			type: new FormControl<LookupTypeType | null | undefined>(undefined),
 		});
@@ -118,14 +134,22 @@ export namespace MyNS {
 		friendlyDescription?: string | null;
 		hidden?: boolean | null;
 		icd10Description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number?: number | null;
 	}
 	export interface CategoryFormProperties {
 		friendlyDescription: FormControl<string | null | undefined>,
 		hidden: FormControl<boolean | null | undefined>,
 		icd10Description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		number: FormControl<number | null | undefined>,
 	}
 	export function CreateCategoryFormGroup() {
@@ -133,7 +157,7 @@ export namespace MyNS {
 			friendlyDescription: new FormControl<string | null | undefined>(undefined),
 			hidden: new FormControl<boolean | null | undefined>(undefined),
 			icd10Description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			number: new FormControl<number | null | undefined>(undefined),
 		});
 
@@ -145,11 +169,15 @@ export namespace MyNS {
 		codeType?: Lookup;
 		created?: Date | null;
 		description?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder?: number | null;
 		externalStandards?: Array<CodeExternalStandard>;
 		fullDescription?: string | null;
 		hideFromPatients?: boolean | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastUpdate?: Date | null;
 		links?: Array<Link>;
 		patientFriendlyName?: string | null;
@@ -161,10 +189,14 @@ export namespace MyNS {
 		code: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder: FormControl<number | null | undefined>,
 		fullDescription: FormControl<string | null | undefined>,
 		hideFromPatients: FormControl<boolean | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
 		patientFriendlyName: FormControl<string | null | undefined>,
 		removedExternally: FormControl<boolean | null | undefined>,
@@ -178,7 +210,7 @@ export namespace MyNS {
 			displayOrder: new FormControl<number | null | undefined>(undefined),
 			fullDescription: new FormControl<string | null | undefined>(undefined),
 			hideFromPatients: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastUpdate: new FormControl<Date | null | undefined>(undefined),
 			patientFriendlyName: new FormControl<string | null | undefined>(undefined),
 			removedExternally: new FormControl<boolean | null | undefined>(undefined),
@@ -189,14 +221,18 @@ export namespace MyNS {
 
 	export interface CodeCategory {
 		category?: Category;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface CodeCategoryFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateCodeCategoryFormGroup() {
 		return new FormGroup<CodeCategoryFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -204,34 +240,42 @@ export namespace MyNS {
 	export interface CodeExternalStandard {
 		codeString?: string | null;
 		externalStandard?: ExternalStandard;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface CodeExternalStandardFormProperties {
 		codeString: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateCodeExternalStandardFormGroup() {
 		return new FormGroup<CodeExternalStandardFormProperties>({
 			codeString: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface ExternalStandard {
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: string | null;
 	}
 	export interface ExternalStandardFormProperties {
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
 	export function CreateExternalStandardFormGroup() {
 		return new FormGroup<ExternalStandardFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
 
@@ -239,8 +283,12 @@ export namespace MyNS {
 
 	export interface Link {
 		created?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastUpdate?: Date | null;
 		link?: string | null;
 		linkType?: Lookup;
@@ -248,8 +296,12 @@ export namespace MyNS {
 	}
 	export interface LinkFormProperties {
 		created: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
 		link: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -258,7 +310,7 @@ export namespace MyNS {
 		return new FormGroup<LinkFormProperties>({
 			created: new FormControl<Date | null | undefined>(undefined),
 			displayOrder: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastUpdate: new FormControl<Date | null | undefined>(undefined),
 			link: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -272,20 +324,24 @@ export namespace MyNS {
 		contactPointType?: ContactPointType;
 		content?: string | null;
 		created?: Date | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastUpdate?: Date | null;
 	}
 	export interface ContactPointFormProperties {
 		content: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
 	}
 	export function CreateContactPointFormGroup() {
 		return new FormGroup<ContactPointFormProperties>({
 			content: new FormControl<string | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastUpdate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -293,19 +349,23 @@ export namespace MyNS {
 
 	export interface ContactPointType {
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lookupType?: LookupType;
 		value?: ContactPointTypeValue | null;
 	}
 	export interface ContactPointTypeFormProperties {
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		value: FormControl<ContactPointTypeValue | null | undefined>,
 	}
 	export function CreateContactPointTypeFormGroup() {
 		return new FormGroup<ContactPointTypeFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			value: new FormControl<ContactPointTypeValue | null | undefined>(undefined),
 		});
 
@@ -361,7 +421,9 @@ export namespace MyNS {
 		comparator?: string | null;
 		diagram?: string | null;
 		group?: Group;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		identifier?: string | null;
 		location?: string | null;
 		name?: string | null;
@@ -375,7 +437,9 @@ export namespace MyNS {
 		comments: FormControl<string | null | undefined>,
 		comparator: FormControl<string | null | undefined>,
 		diagram: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		identifier: FormControl<string | null | undefined>,
 		location: FormControl<string | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -390,7 +454,7 @@ export namespace MyNS {
 			comments: new FormControl<string | null | undefined>(undefined),
 			comparator: new FormControl<string | null | undefined>(undefined),
 			diagram: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			identifier: new FormControl<string | null | undefined>(undefined),
 			location: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -412,7 +476,9 @@ export namespace MyNS {
 		fhirResourceId?: string | null;
 		groupFeatures?: Array<GroupFeature>;
 		groupType?: Lookup;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastImportDate?: Date | null;
 		lastUpdate?: Date | null;
 		links?: Array<Link>;
@@ -432,7 +498,9 @@ export namespace MyNS {
 		code: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
 		fhirResourceId: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastImportDate: FormControl<Date | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -450,7 +518,7 @@ export namespace MyNS {
 			code: new FormControl<string | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
 			fhirResourceId: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastImportDate: new FormControl<Date | null | undefined>(undefined),
 			lastUpdate: new FormControl<Date | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -466,18 +534,22 @@ export namespace MyNS {
 	export interface GroupFeature {
 		created?: Date | null;
 		feature?: Feature;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastUpdate?: Date | null;
 	}
 	export interface GroupFeatureFormProperties {
 		created: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
 	}
 	export function CreateGroupFeatureFormGroup() {
 		return new FormGroup<GroupFeatureFormProperties>({
 			created: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastUpdate: new FormControl<Date | null | undefined>(undefined),
 		});
 
@@ -486,14 +558,18 @@ export namespace MyNS {
 	export interface Feature {
 		created?: Date | null;
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastUpdate?: Date | null;
 		name?: string | null;
 	}
 	export interface FeatureFormProperties {
 		created: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
 	}
@@ -501,7 +577,7 @@ export namespace MyNS {
 		return new FormGroup<FeatureFormProperties>({
 			created: new FormControl<Date | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastUpdate: new FormControl<Date | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
 		});
@@ -512,7 +588,9 @@ export namespace MyNS {
 		address?: string | null;
 		created?: Date | null;
 		email?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		label?: string | null;
 		lastUpdate?: Date | null;
 		name?: string | null;
@@ -523,7 +601,9 @@ export namespace MyNS {
 		address: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
 		email: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		label: FormControl<string | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
 		name: FormControl<string | null | undefined>,
@@ -535,7 +615,7 @@ export namespace MyNS {
 			address: new FormControl<string | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
 			email: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			label: new FormControl<string | null | undefined>(undefined),
 			lastUpdate: new FormControl<Date | null | undefined>(undefined),
 			name: new FormControl<string | null | undefined>(undefined),
@@ -548,7 +628,9 @@ export namespace MyNS {
 	export interface FhirAllergy {
 		confidenceLevel?: string | null;
 		group?: Group;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		identifier?: string | null;
 		infoSource?: string | null;
 		reaction?: string | null;
@@ -559,7 +641,9 @@ export namespace MyNS {
 	}
 	export interface FhirAllergyFormProperties {
 		confidenceLevel: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		identifier: FormControl<string | null | undefined>,
 		infoSource: FormControl<string | null | undefined>,
 		reaction: FormControl<string | null | undefined>,
@@ -571,7 +655,7 @@ export namespace MyNS {
 	export function CreateFhirAllergyFormGroup() {
 		return new FormGroup<FhirAllergyFormProperties>({
 			confidenceLevel: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			identifier: new FormControl<string | null | undefined>(undefined),
 			infoSource: new FormControl<string | null | undefined>(undefined),
 			reaction: new FormControl<string | null | undefined>(undefined),
@@ -591,7 +675,9 @@ export namespace MyNS {
 		description?: string | null;
 		fullDescription?: string | null;
 		group?: Group;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		identifier?: string | null;
 		links?: Array<Link>;
 		notes?: string | null;
@@ -605,7 +691,9 @@ export namespace MyNS {
 		date: FormControl<Date | null | undefined>,
 		description: FormControl<string | null | undefined>,
 		fullDescription: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		identifier: FormControl<string | null | undefined>,
 		notes: FormControl<string | null | undefined>,
 		severity: FormControl<string | null | undefined>,
@@ -619,7 +707,7 @@ export namespace MyNS {
 			date: new FormControl<Date | null | undefined>(undefined),
 			description: new FormControl<string | null | undefined>(undefined),
 			fullDescription: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			identifier: new FormControl<string | null | undefined>(undefined),
 			notes: new FormControl<string | null | undefined>(undefined),
 			severity: new FormControl<string | null | undefined>(undefined),
@@ -629,20 +717,24 @@ export namespace MyNS {
 	}
 
 	export interface FhirContact {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		system?: string | null;
 		use?: string | null;
 		value?: string | null;
 	}
 	export interface FhirContactFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		system: FormControl<string | null | undefined>,
 		use: FormControl<string | null | undefined>,
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateFhirContactFormGroup() {
 		return new FormGroup<FhirContactFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			system: new FormControl<string | null | undefined>(undefined),
 			use: new FormControl<string | null | undefined>(undefined),
 			value: new FormControl<string | null | undefined>(undefined),
@@ -654,7 +746,9 @@ export namespace MyNS {
 		date?: Date | null;
 		encounterType?: string | null;
 		group?: Group;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		identifier?: string | null;
 		links?: Array<Link>;
 		observations?: Array<FhirObservation>;
@@ -664,7 +758,9 @@ export namespace MyNS {
 	export interface FhirEncounterFormProperties {
 		date: FormControl<Date | null | undefined>,
 		encounterType: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		identifier: FormControl<string | null | undefined>,
 		status: FormControl<string | null | undefined>,
 	}
@@ -672,7 +768,7 @@ export namespace MyNS {
 		return new FormGroup<FhirEncounterFormProperties>({
 			date: new FormControl<Date | null | undefined>(undefined),
 			encounterType: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			identifier: new FormControl<string | null | undefined>(undefined),
 			status: new FormControl<string | null | undefined>(undefined),
 		});
@@ -681,36 +777,44 @@ export namespace MyNS {
 
 	export interface FhirProcedure {
 		bodySite?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		type?: string | null;
 	}
 	export interface FhirProcedureFormProperties {
 		bodySite: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		type: FormControl<string | null | undefined>,
 	}
 	export function CreateFhirProcedureFormGroup() {
 		return new FormGroup<FhirProcedureFormProperties>({
 			bodySite: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			type: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface FhirIdentifier {
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		label?: string | null;
 		value?: string | null;
 	}
 	export interface FhirIdentifierFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		label: FormControl<string | null | undefined>,
 		value: FormControl<string | null | undefined>,
 	}
 	export function CreateFhirIdentifierFormGroup() {
 		return new FormGroup<FhirIdentifierFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			label: new FormControl<string | null | undefined>(undefined),
 			value: new FormControl<string | null | undefined>(undefined),
 		});
@@ -719,17 +823,25 @@ export namespace MyNS {
 
 	export interface FhirObservationPage {
 		data?: Array<Entry_long_Map_string_List_FhirObservation_>;
-		totalElements?: number | null;
-		totalPages?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalElements?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalPages?: string | null;
 	}
 	export interface FhirObservationPageFormProperties {
-		totalElements: FormControl<number | null | undefined>,
-		totalPages: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalElements: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		totalPages: FormControl<string | null | undefined>,
 	}
 	export function CreateFhirObservationPageFormGroup() {
 		return new FormGroup<FhirObservationPageFormProperties>({
-			totalElements: new FormControl<number | null | undefined>(undefined),
-			totalPages: new FormControl<number | null | undefined>(undefined),
+			totalElements: new FormControl<string | null | undefined>(undefined),
+			totalPages: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -833,35 +945,43 @@ export namespace MyNS {
 
 	export interface GroupRole {
 		group?: Group;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		role?: Role;
 	}
 	export interface GroupRoleFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreateGroupRoleFormGroup() {
 		return new FormGroup<GroupRoleFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
 
 	export interface Role {
 		description?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		name?: RoleName | null;
 		visible?: boolean | null;
 	}
 	export interface RoleFormProperties {
 		description: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		name: FormControl<RoleName | null | undefined>,
 		visible: FormControl<boolean | null | undefined>,
 	}
 	export function CreateRoleFormGroup() {
 		return new FormGroup<RoleFormProperties>({
 			description: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			name: new FormControl<RoleName | null | undefined>(undefined),
 			visible: new FormControl<boolean | null | undefined>(undefined),
 		});
@@ -873,14 +993,26 @@ export namespace MyNS {
 	export interface ObservationHeading {
 		code?: string | null;
 		created?: Date | null;
-		decimalPlaces?: number | null;
-		defaultPanel?: number | null;
-		defaultPanelOrder?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		decimalPlaces?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		defaultPanel?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		defaultPanelOrder?: string | null;
 		heading?: string | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		infoLink?: string | null;
 		lastUpdate?: Date | null;
+
+		/** Type: double */
 		maxGraph?: number | null;
+
+		/** Type: double */
 		minGraph?: number | null;
 		name?: string | null;
 		normalRange?: string | null;
@@ -890,14 +1022,26 @@ export namespace MyNS {
 	export interface ObservationHeadingFormProperties {
 		code: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
-		decimalPlaces: FormControl<number | null | undefined>,
-		defaultPanel: FormControl<number | null | undefined>,
-		defaultPanelOrder: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		decimalPlaces: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		defaultPanel: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		defaultPanelOrder: FormControl<string | null | undefined>,
 		heading: FormControl<string | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		infoLink: FormControl<string | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
+
+		/** Type: double */
 		maxGraph: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		minGraph: FormControl<number | null | undefined>,
 		name: FormControl<string | null | undefined>,
 		normalRange: FormControl<string | null | undefined>,
@@ -907,11 +1051,11 @@ export namespace MyNS {
 		return new FormGroup<ObservationHeadingFormProperties>({
 			code: new FormControl<string | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
-			decimalPlaces: new FormControl<number | null | undefined>(undefined),
-			defaultPanel: new FormControl<number | null | undefined>(undefined),
-			defaultPanelOrder: new FormControl<number | null | undefined>(undefined),
+			decimalPlaces: new FormControl<string | null | undefined>(undefined),
+			defaultPanel: new FormControl<string | null | undefined>(undefined),
+			defaultPanelOrder: new FormControl<string | null | undefined>(undefined),
 			heading: new FormControl<string | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			infoLink: new FormControl<string | null | undefined>(undefined),
 			lastUpdate: new FormControl<Date | null | undefined>(undefined),
 			maxGraph: new FormControl<number | null | undefined>(undefined),
@@ -926,22 +1070,34 @@ export namespace MyNS {
 	export interface ObservationHeadingGroup {
 		created?: Date | null;
 		group?: Group;
-		id?: number | null;
-		panel?: number | null;
-		panelOrder?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		panel?: string | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		panelOrder?: string | null;
 	}
 	export interface ObservationHeadingGroupFormProperties {
 		created: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
-		panel: FormControl<number | null | undefined>,
-		panelOrder: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		panel: FormControl<string | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		panelOrder: FormControl<string | null | undefined>,
 	}
 	export function CreateObservationHeadingGroupFormGroup() {
 		return new FormGroup<ObservationHeadingGroupFormProperties>({
 			created: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
-			panel: new FormControl<number | null | undefined>(undefined),
-			panelOrder: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
+			panel: new FormControl<string | null | undefined>(undefined),
+			panelOrder: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -955,14 +1111,18 @@ export namespace MyNS {
 		fhirPatient?: FhirPatient;
 		fhirPractitioners?: Array<FhirPractitioner>;
 		group?: Group;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 	}
 	export interface PatientFormProperties {
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 	}
 	export function CreatePatientFormGroup() {
 		return new FormGroup<PatientFormProperties>({
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 		});
 
 	}
@@ -991,8 +1151,12 @@ export namespace MyNS {
 	export interface Route {
 		controller?: string | null;
 		created?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder?: number | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lookup?: Lookup;
 		templateUrl?: string | null;
 		title?: string | null;
@@ -1001,8 +1165,12 @@ export namespace MyNS {
 	export interface RouteFormProperties {
 		controller: FormControl<string | null | undefined>,
 		created: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		displayOrder: FormControl<number | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		templateUrl: FormControl<string | null | undefined>,
 		title: FormControl<string | null | undefined>,
 		url: FormControl<string | null | undefined>,
@@ -1012,7 +1180,7 @@ export namespace MyNS {
 			controller: new FormControl<string | null | undefined>(undefined),
 			created: new FormControl<Date | null | undefined>(undefined),
 			displayOrder: new FormControl<number | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			templateUrl: new FormControl<string | null | undefined>(undefined),
 			title: new FormControl<string | null | undefined>(undefined),
 			url: new FormControl<string | null | undefined>(undefined),
@@ -1046,7 +1214,9 @@ export namespace MyNS {
 		forename?: string | null;
 		groupRoles?: Array<GroupRole>;
 		hideSecretWordNotification?: boolean | null;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		identifiers?: Array<string>;
 		lastLogin?: Date | null;
 		lastLoginIpAddress?: string | null;
@@ -1074,7 +1244,9 @@ export namespace MyNS {
 		emailVerified: FormControl<boolean | null | undefined>,
 		forename: FormControl<string | null | undefined>,
 		hideSecretWordNotification: FormControl<boolean | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastLogin: FormControl<Date | null | undefined>,
 		lastLoginIpAddress: FormControl<string | null | undefined>,
 		latestDataReceivedDate: FormControl<Date | null | undefined>,
@@ -1100,7 +1272,7 @@ export namespace MyNS {
 			emailVerified: new FormControl<boolean | null | undefined>(undefined),
 			forename: new FormControl<string | null | undefined>(undefined),
 			hideSecretWordNotification: new FormControl<boolean | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastLogin: new FormControl<Date | null | undefined>(undefined),
 			lastLoginIpAddress: new FormControl<string | null | undefined>(undefined),
 			latestDataReceivedDate: new FormControl<Date | null | undefined>(undefined),
@@ -1117,7 +1289,9 @@ export namespace MyNS {
 	export interface UserFeature {
 		created?: Date | null;
 		feature?: Feature;
-		id?: number | null;
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id?: string | null;
 		lastUpdate?: Date | null;
 		optInDate?: Date | null;
 		optInHidden?: boolean | null;
@@ -1126,7 +1300,9 @@ export namespace MyNS {
 	}
 	export interface UserFeatureFormProperties {
 		created: FormControl<Date | null | undefined>,
-		id: FormControl<number | null | undefined>,
+
+		/** Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807 */
+		id: FormControl<string | null | undefined>,
 		lastUpdate: FormControl<Date | null | undefined>,
 		optInDate: FormControl<Date | null | undefined>,
 		optInHidden: FormControl<boolean | null | undefined>,
@@ -1136,7 +1312,7 @@ export namespace MyNS {
 	export function CreateUserFeatureFormGroup() {
 		return new FormGroup<UserFeatureFormProperties>({
 			created: new FormControl<Date | null | undefined>(undefined),
-			id: new FormControl<number | null | undefined>(undefined),
+			id: new FormControl<string | null | undefined>(undefined),
 			lastUpdate: new FormControl<Date | null | undefined>(undefined),
 			optInDate: new FormControl<Date | null | undefined>(undefined),
 			optInHidden: new FormControl<boolean | null | undefined>(undefined),
@@ -1245,10 +1421,11 @@ export namespace MyNS {
 		 * Get Basic Patient Information
 		 * Given a User ID, get basic patient information for a user from clinical data stored in FHIR
 		 * Get patient/{userId}/basic
-		 * @param {number} userId userId
+		 * @param {string} userId userId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {void} OK
 		 */
-		GetBasicPatientDetails(userId: number): Observable<HttpResponse<string>> {
+		GetBasicPatientDetails(userId: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'patient/' + userId + '/basic', { observe: 'response', responseType: 'text' });
 		}
 
@@ -1287,12 +1464,15 @@ export namespace MyNS {
 		 * getPatientManagement
 		 * getPatientManagement
 		 * Get patientmanagement/{userId}/group/{groupId}/identifier/{identifierId}
-		 * @param {number} userId userId
-		 * @param {number} groupId groupId
-		 * @param {number} identifierId identifierId
+		 * @param {string} userId userId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} groupId groupId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} identifierId identifierId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {PatientManagement} OK
 		 */
-		GetPatientManagement(userId: number, groupId: number, identifierId: number): Observable<PatientManagement> {
+		GetPatientManagement(userId: string, groupId: string, identifierId: string): Observable<PatientManagement> {
 			return this.http.get<PatientManagement>(this.baseUri + 'patientmanagement/' + userId + '/group/' + groupId + '/identifier/' + identifierId, {});
 		}
 
@@ -1300,13 +1480,16 @@ export namespace MyNS {
 		 * savePatientManagement
 		 * savePatientManagement
 		 * Post patientmanagement/{userId}/group/{groupId}/identifier/{identifierId}
-		 * @param {number} userId userId
-		 * @param {number} groupId groupId
-		 * @param {number} identifierId identifierId
+		 * @param {string} userId userId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} groupId groupId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} identifierId identifierId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {PatientManagement} requestBody patientManagement
 		 * @return {void} Description was not specified
 		 */
-		SavePatientManagement(userId: number, groupId: number, identifierId: number, requestBody: PatientManagement): Observable<HttpResponse<string>> {
+		SavePatientManagement(userId: string, groupId: string, identifierId: string, requestBody: PatientManagement): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'patientmanagement/' + userId + '/group/' + groupId + '/identifier/' + identifierId, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1314,13 +1497,16 @@ export namespace MyNS {
 		 * savePatientManagementSurgeries
 		 * savePatientManagementSurgeries
 		 * Post patientmanagement/{userId}/group/{groupId}/identifier/{identifierId}/surgeries
-		 * @param {number} userId userId
-		 * @param {number} groupId groupId
-		 * @param {number} identifierId identifierId
+		 * @param {string} userId userId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} groupId groupId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} identifierId identifierId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {PatientManagement} requestBody patientManagement
 		 * @return {void} Description was not specified
 		 */
-		SavePatientManagementSurgeries(userId: number, groupId: number, identifierId: number, requestBody: PatientManagement): Observable<HttpResponse<string>> {
+		SavePatientManagementSurgeries(userId: string, groupId: string, identifierId: string, requestBody: PatientManagement): Observable<HttpResponse<string>> {
 			return this.http.post(this.baseUri + 'patientmanagement/' + userId + '/group/' + groupId + '/identifier/' + identifierId + '/surgeries', JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' }, observe: 'response', responseType: 'text' });
 		}
 
@@ -1328,10 +1514,11 @@ export namespace MyNS {
 		 * Get Available Observations Types For a User
 		 * Given a User ID retrieve a list of available observation types for that user (where they have observation data).
 		 * Get user/{userId}/availableobservationheadings
-		 * @param {number} userId userId
+		 * @param {string} userId userId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<ObservationHeading>} OK
 		 */
-		GetAvailableObservationHeadings(userId: number): Observable<Array<ObservationHeading>> {
+		GetAvailableObservationHeadings(userId: string): Observable<Array<ObservationHeading>> {
 			return this.http.get<Array<ObservationHeading>>(this.baseUri + 'user/' + userId + '/availableobservationheadings', {});
 		}
 
@@ -1339,14 +1526,17 @@ export namespace MyNS {
 		 * Get Observations of Multiple Types For a User
 		 * Given a User ID and search parameters, retrieve a page of observations.
 		 * Get user/{userId}/observations
-		 * @param {number} userId userId
+		 * @param {string} userId userId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {Array<string>} code code
-		 * @param {number} limit limit
-		 * @param {number} offset offset
+		 * @param {string} limit limit
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
+		 * @param {string} offset offset
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} orderDirection orderDirection
 		 * @return {void} OK
 		 */
-		GetObservationsByCodes(userId: number, code: Array<string>, limit: number, offset: number, orderDirection: string): Observable<HttpResponse<string>> {
+		GetObservationsByCodes(userId: string, code: Array<string>, limit: string, offset: string, orderDirection: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'user/' + userId + '/observations?' + code.map(z => `code=${encodeURIComponent(z)}`).join('&') + '&limit=' + limit + '&offset=' + offset + '&orderDirection=' + (orderDirection == null ? '' : encodeURIComponent(orderDirection)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1354,11 +1544,12 @@ export namespace MyNS {
 		 * Get Observations of a Certain Type For a User
 		 * Given a User ID and observation code, retrieve all observations.
 		 * Get user/{userId}/observations/{code}
-		 * @param {number} userId userId
+		 * @param {string} userId userId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} code code
 		 * @return {void} OK
 		 */
-		GetObservationsByCode(userId: number, code: string): Observable<HttpResponse<string>> {
+		GetObservationsByCode(userId: string, code: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'user/' + userId + '/observations/' + (code == null ? '' : encodeURIComponent(code)), { observe: 'response', responseType: 'text' });
 		}
 
@@ -1366,11 +1557,12 @@ export namespace MyNS {
 		 * Get patient entered Observations of a Certain Type For a User
 		 * Given a User ID and observation code, retrieve patient entered observations.
 		 * Get user/{userId}/observations/{code}/patiententered
-		 * @param {number} userId userId
+		 * @param {string} userId userId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @param {string} code code
 		 * @return {void} OK
 		 */
-		GetPatientEnteredObservationsByCode(userId: number, code: string): Observable<HttpResponse<string>> {
+		GetPatientEnteredObservationsByCode(userId: string, code: string): Observable<HttpResponse<string>> {
 			return this.http.get(this.baseUri + 'user/' + userId + '/observations/' + (code == null ? '' : encodeURIComponent(code)) + '/patiententered', { observe: 'response', responseType: 'text' });
 		}
 
@@ -1378,10 +1570,11 @@ export namespace MyNS {
 		 * Get Available Patient Entered Observations Types For a User
 		 * Given a User ID retrieve a list of available observation types for that user (where they have patient entered observation data).
 		 * Get user/{userId}/patiententeredobservationheadings
-		 * @param {number} userId userId
+		 * @param {string} userId userId
+		 *     Type: long, -9,223,372,036,854,775,808 to 9,223,372,036,854,775,807
 		 * @return {Array<ObservationHeading>} OK
 		 */
-		GetPatientEnteredObservationHeadings(userId: number): Observable<Array<ObservationHeading>> {
+		GetPatientEnteredObservationHeadings(userId: string): Observable<Array<ObservationHeading>> {
 			return this.http.get<Array<ObservationHeading>>(this.baseUri + 'user/' + userId + '/patiententeredobservationheadings', {});
 		}
 	}

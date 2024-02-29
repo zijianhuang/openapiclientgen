@@ -346,7 +346,9 @@ namespace MyNS
 		/// <param name="target">The brand/company the abuse is targeting. ie: brand name/bank name</param>
 		/// <param name="createdStart">The earliest abuse ticket creation date to pull abuse tickets for</param>
 		/// <param name="createdEnd">The latest abuse ticket creation date to pull abuse tickets for</param>
-		/// <param name="limit">Number of abuse ticket numbers to return.</param>
+		/// <param name="limit">Number of abuse ticket numbers to return.
+		/// Maximum: 100
+		// </param>
 		/// <param name="offset">The earliest result set record number to pull abuse tickets for</param>
 		/// <returns>Success</returns>
 		public async Task GetTicketsAsync(AbuseTicketType type, bool closed, string sourceDomainOrIp, string target, string createdStart, string createdEnd, string limit, string offset, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

@@ -65,7 +65,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain?: string | null;
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId?: number | null;
 
 		/** An array of request elements most closely associated to the error. */
@@ -96,7 +99,10 @@ export namespace MyNS {
 		/** Name for the primary system where the error occurred. This is relevant for application errors. */
 		domain: FormControl<string | null | undefined>,
 
-		/** A unique number to identify the error. */
+		/**
+		 * A unique number to identify the error.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		errorId: FormControl<number | null | undefined>,
 
 		/** A more detailed explanation of the error. */
@@ -216,7 +222,10 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href?: string | null;
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the limit query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the limit query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit?: number | null;
 
 		/** Returns a list of listingRecommendations, where each element in the list offers recommendations for the associated listingId. Which elements are returned depend on how you structure the request. For example, if you request recommendations for all of a sellers listings (by leaving the request payload empty), ad recommendations are returned only for those listings where promoteWithAd is set to RECOMMENDED. */
@@ -225,13 +234,19 @@ export namespace MyNS {
 		/** The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. Max length: 2048 */
 		next?: string | null;
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the offset query parameter. Note: The items in a paginated result set use a zero-based list where the first item in the list has an offset of 0. */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the offset query parameter. Note: The items in a paginated result set use a zero-based list where the first item in the list has an offset of 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset?: number | null;
 
 		/** The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. Max length: 2048 */
 		prev?: string | null;
 
-		/** The total number of items retrieved in the result set. If no items are found, this field is returned with a value of 0. */
+		/**
+		 * The total number of items retrieved in the result set. If no items are found, this field is returned with a value of 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total?: number | null;
 	}
 
@@ -241,19 +256,28 @@ export namespace MyNS {
 		/** The URI of the current page of results from the result set. */
 		href: FormControl<string | null | undefined>,
 
-		/** The number of items returned on a single page from the result set. This value can be set in the request with the limit query parameter. */
+		/**
+		 * The number of items returned on a single page from the result set. This value can be set in the request with the limit query parameter.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		limit: FormControl<number | null | undefined>,
 
 		/** The URI for the following page of results. This value is returned only if there is an additional page of results to display from the result set. Max length: 2048 */
 		next: FormControl<string | null | undefined>,
 
-		/** The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the offset query parameter. Note: The items in a paginated result set use a zero-based list where the first item in the list has an offset of 0. */
+		/**
+		 * The number of results skipped in the result set before listing the first returned result. This value can be set in the request with the offset query parameter. Note: The items in a paginated result set use a zero-based list where the first item in the list has an offset of 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		offset: FormControl<number | null | undefined>,
 
 		/** The URI for the preceding page of results. This value is returned only if there is a previous page of results to display from the result set. Max length: 2048 */
 		prev: FormControl<string | null | undefined>,
 
-		/** The total number of items retrieved in the result set. If no items are found, this field is returned with a value of 0. */
+		/**
+		 * The total number of items retrieved in the result set. If no items are found, this field is returned with a value of 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		total: FormControl<number | null | undefined>,
 	}
 	export function CreatePagedListingRecommendationCollectionFormGroup() {

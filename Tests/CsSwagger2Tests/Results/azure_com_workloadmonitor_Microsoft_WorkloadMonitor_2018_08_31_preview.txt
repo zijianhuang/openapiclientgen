@@ -893,7 +893,9 @@ namespace MyNS
 		/// Get subscription wide details of components.
 		/// ComponentsSummary_List subscriptions/{subscriptionId}/providers/Microsoft.WorkloadMonitor/componentsSummary
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="select">Properties to be returned in the response.</param>
 		/// <param name="filter">Filter to be applied on the operation.</param>
@@ -930,7 +932,9 @@ namespace MyNS
 		/// Get subscription wide health instances.
 		/// MonitorInstancesSummary_List subscriptions/{subscriptionId}/providers/Microsoft.WorkloadMonitor/monitorInstancesSummary
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
 		/// <param name="api_version">The API version to use for this operation.</param>
 		/// <param name="select">Properties to be returned in the response.</param>
 		/// <param name="filter">Filter to be applied on the operation.</param>
@@ -967,8 +971,13 @@ namespace MyNS
 		/// Get list of components for a resource.
 		/// Components_ListByResource subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/components
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>
@@ -1008,8 +1017,13 @@ namespace MyNS
 		/// Get details of a component.
 		/// Components_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/components/{componentId}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>
@@ -1045,8 +1059,13 @@ namespace MyNS
 		/// Get list of monitor instances for a resource.
 		/// MonitorInstances_ListByResource subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitorInstances
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>
@@ -1086,8 +1105,13 @@ namespace MyNS
 		/// Get details of a monitorInstance.
 		/// MonitorInstances_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitorInstances/{monitorInstanceId}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>
@@ -1123,8 +1147,13 @@ namespace MyNS
 		/// Get list of a monitors of a resource.
 		/// Monitors_ListByResource subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitors
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>
@@ -1159,8 +1188,13 @@ namespace MyNS
 		/// Get details of a single monitor.
 		/// Monitors_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitors/{monitorId}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>
@@ -1194,8 +1228,13 @@ namespace MyNS
 		/// Update a Monitor's configuration.
 		/// Monitors_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/monitors/{monitorId}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>
@@ -1237,8 +1276,13 @@ namespace MyNS
 		/// Get list of notification settings for a resource.
 		/// NotificationSettings_ListByResource subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/notificationSettings
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>
@@ -1272,8 +1316,13 @@ namespace MyNS
 		/// Get a of notification setting for a resource.
 		/// NotificationSettings_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/notificationSettings/{notificationSettingName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>
@@ -1307,8 +1356,13 @@ namespace MyNS
 		/// Update notification settings for a resource.
 		/// NotificationSettings_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/{resourceNamespace}/{resourceType}/{resourceName}/providers/Microsoft.WorkloadMonitor/notificationSettings/{notificationSettingName}
 		/// </summary>
-		/// <param name="subscriptionId">The ID of the target subscription.</param>
-		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.</param>
+		/// <param name="subscriptionId">The ID of the target subscription.
+		/// Min length: 1
+		// </param>
+		/// <param name="resourceGroupName">The name of the resource group. The name is case insensitive.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceNamespace">The Namespace of the resource.</param>
 		/// <param name="resourceType">The type of the resource.</param>
 		/// <param name="resourceName">Name of the resource.</param>

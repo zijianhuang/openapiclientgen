@@ -422,15 +422,15 @@ export namespace MyNS {
 		/**
 		 * Your API key
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		api_key: string;
 
 		/**
 		 * Your API secret. Required unless `sig` is provided
-		 * Max length: 32
 		 * Min length: 6
+		 * Max length: 32
 		 */
 		api_secret?: string | null;
 
@@ -458,13 +458,16 @@ export namespace MyNS {
 		/** **Advanced**: The Data Coding Scheme value of the message */
 		'message-class'?: NewMessageMessage_class;
 
-		/** **Advanced**: The value of the [protocol identifier](https://en.wikipedia.org/wiki/GSM_03.40#Protocol_Identifier) to use. Ensure that the value is aligned with `udh`. */
+		/**
+		 * **Advanced**: The value of the [protocol identifier](https://en.wikipedia.org/wiki/GSM_03.40#Protocol_Identifier) to use. Ensure that the value is aligned with `udh`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'protocol-id'?: number | null;
 
 		/**
 		 * The hash of the request parameters in alphabetical order, a timestamp and the signature secret. See [Signing Requests](/concepts/guides/signing-messages) for more details.
-		 * Max length: 60
 		 * Min length: 16
+		 * Max length: 60
 		 */
 		sig?: string | null;
 
@@ -477,8 +480,8 @@ export namespace MyNS {
 		/**
 		 * The number that the message should be sent to. Numbers are specified in E.164 format.
 		 * Required
-		 * Max length: 15
 		 * Min length: 7
+		 * Max length: 15
 		 */
 		to: string;
 
@@ -503,15 +506,15 @@ export namespace MyNS {
 		/**
 		 * Your API key
 		 * Required
-		 * Max length: 8
 		 * Min length: 8
+		 * Max length: 8
 		 */
 		api_key: FormControl<string | null | undefined>,
 
 		/**
 		 * Your API secret. Required unless `sig` is provided
-		 * Max length: 32
 		 * Min length: 6
+		 * Max length: 32
 		 */
 		api_secret: FormControl<string | null | undefined>,
 
@@ -539,13 +542,16 @@ export namespace MyNS {
 		/** **Advanced**: The Data Coding Scheme value of the message */
 		'message-class': FormControl<NewMessageMessage_class | null | undefined>,
 
-		/** **Advanced**: The value of the [protocol identifier](https://en.wikipedia.org/wiki/GSM_03.40#Protocol_Identifier) to use. Ensure that the value is aligned with `udh`. */
+		/**
+		 * **Advanced**: The value of the [protocol identifier](https://en.wikipedia.org/wiki/GSM_03.40#Protocol_Identifier) to use. Ensure that the value is aligned with `udh`.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		'protocol-id': FormControl<number | null | undefined>,
 
 		/**
 		 * The hash of the request parameters in alphabetical order, a timestamp and the signature secret. See [Signing Requests](/concepts/guides/signing-messages) for more details.
-		 * Max length: 60
 		 * Min length: 16
+		 * Max length: 60
 		 */
 		sig: FormControl<string | null | undefined>,
 
@@ -558,8 +564,8 @@ export namespace MyNS {
 		/**
 		 * The number that the message should be sent to. Numbers are specified in E.164 format.
 		 * Required
-		 * Max length: 15
 		 * Min length: 7
+		 * Max length: 15
 		 */
 		to: FormControl<string | null | undefined>,
 

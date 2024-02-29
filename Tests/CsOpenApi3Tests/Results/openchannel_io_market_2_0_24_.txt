@@ -3815,7 +3815,10 @@ namespace MyNS
 		/// <param name="userId">The id of the User that is posting this review</param>
 		/// <param name="userAccountId">The id of the User account that is posting this review</param>
 		/// <param name="headline">The review's headline. Limited to 50 characters.</param>
-		/// <param name="rating">The rating given within this review. The rating is represented as an integer between 0 and 500 (0 - 5 stars)</param>
+		/// <param name="rating">The rating given within this review. The rating is represented as an integer between 0 and 500 (0 - 5 stars)
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="description">The review's description. Limited to 2000 characters.</param>
 		/// <param name="type">The type for this review</param>
 		/// <param name="mustOwnApp">True if a review can be created only by a user that has owned the app. The default is True.</param>
@@ -3907,7 +3910,10 @@ namespace MyNS
 		/// <param name="userId">The id of the User that is updating this review</param>
 		/// <param name="userAccountId">The id of the User account that is posting this review</param>
 		/// <param name="headline">The review's headline. Limited to 50 characters.</param>
-		/// <param name="rating">The rating given within this review. The rating is represented as an integer between 0 and 500 (0 - 5 stars)</param>
+		/// <param name="rating">The rating given within this review. The rating is represented as an integer between 0 and 500 (0 - 5 stars)
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="description">The review's description. Limited to 2000 characters.</param>
 		/// <param name="customData">A custom JSON object that you can create and attach to this record</param>
 		public async Task Reviews_reviewIdPatchByUserIdAndUserAccountIdAndHeadlineAndRatingAndDescriptionAndCustomDataAsync(string reviewId, string userId, string userAccountId, string headline, int rating, string description, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -3938,7 +3944,10 @@ namespace MyNS
 		/// <param name="userId">The id of the User that is updating this review</param>
 		/// <param name="userAccountId">The id of the User account that is posting this review</param>
 		/// <param name="headline">The review's headline. Limited to 50 characters.</param>
-		/// <param name="rating">The rating given within this review. The rating is represented as an integer between 0 and 500 (0 - 5 stars)</param>
+		/// <param name="rating">The rating given within this review. The rating is represented as an integer between 0 and 500 (0 - 5 stars)
+		/// Minimum: 0
+		/// Maximum: 500
+		// </param>
 		/// <param name="description">The review's description. Limited to 2000 characters.</param>
 		/// <param name="customData">A custom JSON object that you can create and attach to this record</param>
 		public async Task Reviews_reviewIdPostByUserIdAndUserAccountIdAndHeadlineAndRatingAndDescriptionAndCustomDataAsync(string reviewId, string userId, string userAccountId, string headline, int rating, string description, string customData, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

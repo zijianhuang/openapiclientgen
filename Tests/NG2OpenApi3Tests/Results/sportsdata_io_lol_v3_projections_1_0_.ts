@@ -7,31 +7,51 @@ export namespace MyNS {
 		DfsSlateGames?: Array<DfsSlateGame>;
 		DfsSlatePlayers?: Array<DfsSlatePlayer>;
 		IsMultiDaySlate?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NumberOfGames?: number | null;
 		Operator?: string | null;
 		OperatorDay?: string | null;
 		OperatorGameType?: string | null;
 		OperatorName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSlateID?: number | null;
 		OperatorStartTime?: string | null;
 		RemovedByOperator?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SalaryCap?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID?: number | null;
 		SlateRosterSlots?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VideoGameId?: number | null;
 	}
 	export interface DfsSlateFormProperties {
 		IsMultiDaySlate: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NumberOfGames: FormControl<number | null | undefined>,
 		Operator: FormControl<string | null | undefined>,
 		OperatorDay: FormControl<string | null | undefined>,
 		OperatorGameType: FormControl<string | null | undefined>,
 		OperatorName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSlateID: FormControl<number | null | undefined>,
 		OperatorStartTime: FormControl<string | null | undefined>,
 		RemovedByOperator: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SalaryCap: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VideoGameId: FormControl<number | null | undefined>,
 	}
 	export function CreateDfsSlateFormGroup() {
@@ -54,17 +74,33 @@ export namespace MyNS {
 
 	export interface DfsSlateGame {
 		Game?: Game;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorGameID?: number | null;
 		RemovedByOperator?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID?: number | null;
 	}
 	export interface DfsSlateGameFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorGameID: FormControl<number | null | undefined>,
 		RemovedByOperator: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID: FormControl<number | null | undefined>,
 	}
 	export function CreateDfsSlateGameFormGroup() {
@@ -83,30 +119,58 @@ export namespace MyNS {
 		OperatorPlayerName?: string | null;
 		OperatorPosition?: string | null;
 		OperatorRosterSlots?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSalary?: number | null;
 		OperatorSlatePlayerID?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerGameProjectionStatID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID?: number | null;
 		RemovedByOperator?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateGameID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlatePlayerID?: number | null;
 		Team?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID?: number | null;
 	}
 	export interface DfsSlatePlayerFormProperties {
 		OperatorPlayerID: FormControl<string | null | undefined>,
 		OperatorPlayerName: FormControl<string | null | undefined>,
 		OperatorPosition: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OperatorSalary: FormControl<number | null | undefined>,
 		OperatorSlatePlayerID: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerGameProjectionStatID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerID: FormControl<number | null | undefined>,
 		RemovedByOperator: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateGameID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlateID: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SlatePlayerID: FormControl<number | null | undefined>,
 		Team: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamID: FormControl<number | null | undefined>,
 	}
 	export function CreateDfsSlatePlayerFormGroup() {
@@ -132,31 +196,63 @@ export namespace MyNS {
 		BestOf?: string | null;
 		DateTime?: string | null;
 		Day?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DrawMoneyLine?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameId?: number | null;
 		Group?: string | null;
 		IsClosed?: boolean | null;
+
+		/** Type: double */
 		PointSpread?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RoundId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType?: number | null;
 		Status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAId?: number | null;
 		TeamAKey?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAMoneyLine?: number | null;
 		TeamAName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAPointSpreadPayout?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAScore?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBId?: number | null;
 		TeamBKey?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBMoneyLine?: number | null;
 		TeamBName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBPointSpreadPayout?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBScore?: number | null;
 		Updated?: string | null;
 		UpdatedUtc?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VenueId?: number | null;
 		VenueType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week?: number | null;
 		Winner?: string | null;
 	}
@@ -164,31 +260,63 @@ export namespace MyNS {
 		BestOf: FormControl<string | null | undefined>,
 		DateTime: FormControl<string | null | undefined>,
 		Day: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DrawMoneyLine: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameId: FormControl<number | null | undefined>,
 		Group: FormControl<string | null | undefined>,
 		IsClosed: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		PointSpread: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		RoundId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Season: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		SeasonType: FormControl<number | null | undefined>,
 		Status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAId: FormControl<number | null | undefined>,
 		TeamAKey: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAMoneyLine: FormControl<number | null | undefined>,
 		TeamAName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAPointSpreadPayout: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamAScore: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBId: FormControl<number | null | undefined>,
 		TeamBKey: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBMoneyLine: FormControl<number | null | undefined>,
 		TeamBName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBPointSpreadPayout: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamBScore: FormControl<number | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
 		UpdatedUtc: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		VenueId: FormControl<number | null | undefined>,
 		VenueType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Week: FormControl<number | null | undefined>,
 		Winner: FormControl<string | null | undefined>,
 	}
@@ -229,127 +357,331 @@ export namespace MyNS {
 	}
 
 	export interface PlayerGameProjection {
+
+		/** Type: double */
 		Assists?: number | null;
+
+		/** Type: double */
 		CombatPlayerScore?: number | null;
 		DateTime?: string | null;
 		Day?: string | null;
+
+		/** Type: double */
 		Deaths?: number | null;
+
+		/** Type: double */
 		DoubleKills?: number | null;
+
+		/** Type: double */
 		FantasyPoints?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameId?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Games?: number | null;
+
+		/** Type: double */
 		GoldEarned?: number | null;
+
+		/** Type: double */
 		GoldSpent?: number | null;
+
+		/** Type: double */
 		InhibitorKills?: number | null;
 		IsClosed?: boolean | null;
+
+		/** Type: double */
 		KillingSpree?: number | null;
+
+		/** Type: double */
 		Kills?: number | null;
+
+		/** Type: double */
 		LargestCriticalStrike?: number | null;
+
+		/** Type: double */
 		LargestKillingSpree?: number | null;
+
+		/** Type: double */
 		LargestMultiKill?: number | null;
+
+		/** Type: double */
 		LongestTimeSpentLiving?: number | null;
+
+		/** Type: double */
 		MagicDamageDealt?: number | null;
+
+		/** Type: double */
 		MagicDamageDealtToChampions?: number | null;
+
+		/** Type: double */
 		MagicDamageTaken?: number | null;
 		MatchName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Matches?: number | null;
 		Name?: string | null;
+
+		/** Type: double */
 		NeutralMinionsKIlled?: number | null;
+
+		/** Type: double */
 		NeutralMinionsKIlledTeamJungle?: number | null;
+
+		/** Type: double */
 		NeutralMinionsKilledEnemyJungle?: number | null;
+
+		/** Type: double */
 		ObjectivePlayerScore?: number | null;
 		Opponent?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentId?: number | null;
+
+		/** Type: double */
 		PentaKills?: number | null;
+
+		/** Type: double */
 		PhysicalDamageDealt?: number | null;
+
+		/** Type: double */
 		PhysicalDamageDealtToChampions?: number | null;
+
+		/** Type: double */
 		PhysicalDamageTaken?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerId?: number | null;
 		Position?: string | null;
+
+		/** Type: double */
 		QuadraKills?: number | null;
+
+		/** Type: double */
 		SightWardsBoughtInGame?: number | null;
 		Team?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId?: number | null;
+
+		/** Type: double */
 		TenKillsOrAssists?: number | null;
+
+		/** Type: double */
 		TotalDamageDealt?: number | null;
+
+		/** Type: double */
 		TotalDamageDealtToChampions?: number | null;
+
+		/** Type: double */
 		TotalDamageTaken?: number | null;
+
+		/** Type: double */
 		TotalHeal?: number | null;
+
+		/** Type: double */
 		TotalMinionsKilled?: number | null;
+
+		/** Type: double */
 		TotalPlayerScore?: number | null;
+
+		/** Type: double */
 		TotalTimeCrowdControlDealt?: number | null;
+
+		/** Type: double */
 		TotalUnitsHealed?: number | null;
+
+		/** Type: double */
 		TripleKills?: number | null;
+
+		/** Type: double */
 		TrueDamageDealt?: number | null;
+
+		/** Type: double */
 		TrueDamageDealtToChampions?: number | null;
+
+		/** Type: double */
 		TrueDamageTaken?: number | null;
+
+		/** Type: double */
 		TurretKills?: number | null;
+
+		/** Type: double */
 		UnrealKills?: number | null;
 		Updated?: string | null;
+
+		/** Type: double */
 		VisionWardsBoughtInGame?: number | null;
+
+		/** Type: double */
 		WardsKilled?: number | null;
+
+		/** Type: double */
 		WardsPlaced?: number | null;
 	}
 	export interface PlayerGameProjectionFormProperties {
+
+		/** Type: double */
 		Assists: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		CombatPlayerScore: FormControl<number | null | undefined>,
 		DateTime: FormControl<string | null | undefined>,
 		Day: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		Deaths: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		DoubleKills: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FantasyPoints: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		GameId: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Games: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		GoldEarned: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		GoldSpent: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		InhibitorKills: FormControl<number | null | undefined>,
 		IsClosed: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		KillingSpree: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		Kills: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		LargestCriticalStrike: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		LargestKillingSpree: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		LargestMultiKill: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		LongestTimeSpentLiving: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MagicDamageDealt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MagicDamageDealtToChampions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		MagicDamageTaken: FormControl<number | null | undefined>,
 		MatchName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Matches: FormControl<number | null | undefined>,
 		Name: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		NeutralMinionsKIlled: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		NeutralMinionsKIlledTeamJungle: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		NeutralMinionsKilledEnemyJungle: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		ObjectivePlayerScore: FormControl<number | null | undefined>,
 		Opponent: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		OpponentId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PentaKills: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhysicalDamageDealt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhysicalDamageDealtToChampions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		PhysicalDamageTaken: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		PlayerId: FormControl<number | null | undefined>,
 		Position: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		QuadraKills: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		SightWardsBoughtInGame: FormControl<number | null | undefined>,
 		Team: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TeamId: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TenKillsOrAssists: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalDamageDealt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalDamageDealtToChampions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalDamageTaken: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalHeal: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalMinionsKilled: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalPlayerScore: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalTimeCrowdControlDealt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TotalUnitsHealed: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TripleKills: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TrueDamageDealt: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TrueDamageDealtToChampions: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TrueDamageTaken: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		TurretKills: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		UnrealKills: FormControl<number | null | undefined>,
 		Updated: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		VisionWardsBoughtInGame: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		WardsKilled: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		WardsPlaced: FormControl<number | null | undefined>,
 	}
 	export function CreatePlayerGameProjectionFormGroup() {
@@ -429,7 +761,6 @@ export namespace MyNS {
 		 * @param {DfsSlatesByDateFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} date The date of the game(s).
 		 * <br>Examples: <code>2017-02-27</code>, <code>2017-09-01</code>.
-		 * @return {Array<DfsSlate>} 
 		 */
 		DfsSlatesByDate(format: DfsSlatesByDateFormat, date: string): Observable<Array<DfsSlate>> {
 			return this.http.get<Array<DfsSlate>>(this.baseUri + format + '/DfsSlatesByDate/' + (date == null ? '' : encodeURIComponent(date)) + '', {});
@@ -442,7 +773,6 @@ export namespace MyNS {
 		 * @param {ProjectedPlayerGameStatsByDateFormat} format Desired response format. Valid entries are <code>XML</code> or <code>JSON</code>.
 		 * @param {string} date The date of the game(s).
 		 * <br>Example: <code>2019-01-20</code>
-		 * @return {Array<PlayerGameProjection>} 
 		 */
 		ProjectedPlayerGameStatsByDate(format: ProjectedPlayerGameStatsByDateFormat, date: string): Observable<Array<PlayerGameProjection>> {
 			return this.http.get<Array<PlayerGameProjection>>(this.baseUri + format + '/PlayerGameProjectionStatsByDate/' + (date == null ? '' : encodeURIComponent(date)) + '', {});
@@ -457,7 +787,6 @@ export namespace MyNS {
 		 * <br>Example: <code>2019-01-20</code>
 		 * @param {string} playerid Unique FantasyData Player ID.
 		 * Example:<code>100001500</code>.
-		 * @return {Array<PlayerGameProjection>} 
 		 */
 		ProjectedPlayerGameStatsByPlayer(format: ProjectedPlayerGameStatsByDateFormat, date: string, playerid: string): Observable<Array<PlayerGameProjection>> {
 			return this.http.get<Array<PlayerGameProjection>>(this.baseUri + format + '/PlayerGameProjectionStatsByPlayer/' + (date == null ? '' : encodeURIComponent(date)) + '/' + (playerid == null ? '' : encodeURIComponent(playerid)) + '', {});

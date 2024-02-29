@@ -1830,7 +1830,9 @@ export namespace MyNS {
 		 * Adds a user account to a permission group to grant permissions for actions a user can perform in FinSpace.
 		 * Post permission-group/{permissionGroupId}/users/{userId}
 		 * @param {string} permissionGroupId The unique identifier for the permission group.
+		 *     Min length: 1    Max length: 26
 		 * @param {string} userId The unique identifier for the user.
+		 *     Min length: 1    Max length: 26
 		 * @return {AssociateUserToPermissionGroupResponse} Success
 		 */
 		AssociateUserToPermissionGroup(permissionGroupId: string, userId: string, requestBody: AssociateUserToPermissionGroupPostBody): Observable<AssociateUserToPermissionGroupResponse> {
@@ -1841,8 +1843,11 @@ export namespace MyNS {
 		 * Removes a user account from a permission group.
 		 * Delete permission-group/{permissionGroupId}/users/{userId}
 		 * @param {string} permissionGroupId The unique identifier for the permission group.
+		 *     Min length: 1    Max length: 26
 		 * @param {string} userId The unique identifier for the user.
+		 *     Min length: 1    Max length: 26
 		 * @param {string} clientToken A token that ensures idempotency. This token expires in 10 minutes.
+		 *     Min length: 1    Max length: 128
 		 * @return {DisassociateUserFromPermissionGroupResponse} Success
 		 */
 		DisassociateUserFromPermissionGroup(permissionGroupId: string, userId: string, clientToken: string | null | undefined): Observable<DisassociateUserFromPermissionGroupResponse> {
@@ -1853,6 +1858,7 @@ export namespace MyNS {
 		 * Creates a new Changeset in a FinSpace Dataset.
 		 * Post datasets/{datasetId}/changesetsv2
 		 * @param {string} datasetId The unique identifier for the FinSpace Dataset where the Changeset will be created. 
+		 *     Min length: 1    Max length: 26
 		 * @return {CreateChangesetResponse} Success
 		 */
 		CreateChangeset(datasetId: string, requestBody: CreateChangesetPostBody): Observable<CreateChangesetResponse> {
@@ -1863,7 +1869,9 @@ export namespace MyNS {
 		 * Lists the FinSpace Changesets for a Dataset.
 		 * Get datasets/{datasetId}/changesetsv2
 		 * @param {string} datasetId The unique identifier for the FinSpace Dataset to which the Changeset belongs.
+		 *     Min length: 1    Max length: 26
 		 * @param {number} maxResults The maximum number of results per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} nextToken A token that indicates where a results page should begin.
 		 * @return {ListChangesetsResponse} Success
 		 */
@@ -1875,6 +1883,7 @@ export namespace MyNS {
 		 * Creates a Dataview for a Dataset.
 		 * Post datasets/{datasetId}/dataviewsv2
 		 * @param {string} datasetId The unique Dataset identifier that is used to create a Dataview.
+		 *     Min length: 1    Max length: 26
 		 * @return {CreateDataViewResponse} Success
 		 */
 		CreateDataView(datasetId: string, requestBody: CreateDataViewPostBody): Observable<CreateDataViewResponse> {
@@ -1885,8 +1894,10 @@ export namespace MyNS {
 		 * Lists all available Dataviews for a Dataset.
 		 * Get datasets/{datasetId}/dataviewsv2
 		 * @param {string} datasetId The unique identifier of the Dataset for which to retrieve Dataviews.
+		 *     Min length: 1    Max length: 26
 		 * @param {string} nextToken A token that indicates where a results page should begin.
 		 * @param {number} maxResults The maximum number of results per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListDataViewsResponse} Success
 		 */
 		ListDataViews(datasetId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDataViewsResponse> {
@@ -1907,6 +1918,7 @@ export namespace MyNS {
 		 * Get datasetsv2
 		 * @param {string} nextToken A token that indicates where a results page should begin.
 		 * @param {number} maxResults The maximum number of results per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListDatasetsResponse} Success
 		 */
 		ListDatasets(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListDatasetsResponse> {
@@ -1935,7 +1947,9 @@ export namespace MyNS {
 		 * Deletes a FinSpace Dataset.
 		 * Delete datasetsv2/{datasetId}
 		 * @param {string} clientToken A token that ensures idempotency. This token expires in 10 minutes.
+		 *     Min length: 1    Max length: 128
 		 * @param {string} datasetId The unique identifier of the Dataset to be deleted.
+		 *     Min length: 1    Max length: 26
 		 * @return {DeleteDatasetResponse} Success
 		 */
 		DeleteDataset(clientToken: string | null | undefined, datasetId: string): Observable<DeleteDatasetResponse> {
@@ -1946,6 +1960,7 @@ export namespace MyNS {
 		 * Returns information about a Dataset.
 		 * Get datasetsv2/{datasetId}
 		 * @param {string} datasetId The unique identifier for a Dataset.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetDatasetResponse} Success
 		 */
 		GetDataset(datasetId: string): Observable<GetDatasetResponse> {
@@ -1956,6 +1971,7 @@ export namespace MyNS {
 		 * Updates a FinSpace Dataset.
 		 * Put datasetsv2/{datasetId}
 		 * @param {string} datasetId The unique identifier for the Dataset to update.
+		 *     Min length: 1    Max length: 26
 		 * @return {UpdateDatasetResponse} Success
 		 */
 		UpdateDataset(datasetId: string, requestBody: UpdateDatasetPutBody): Observable<UpdateDatasetResponse> {
@@ -1966,7 +1982,9 @@ export namespace MyNS {
 		 * Deletes a permission group. This action is irreversible.
 		 * Delete permission-group/{permissionGroupId}
 		 * @param {string} permissionGroupId The unique identifier for the permission group that you want to delete.
+		 *     Min length: 1    Max length: 26
 		 * @param {string} clientToken A token that ensures idempotency. This token expires in 10 minutes.
+		 *     Min length: 1    Max length: 128
 		 * @return {DeletePermissionGroupResponse} Success
 		 */
 		DeletePermissionGroup(permissionGroupId: string, clientToken: string | null | undefined): Observable<DeletePermissionGroupResponse> {
@@ -1977,6 +1995,7 @@ export namespace MyNS {
 		 * Retrieves the details of a specific permission group.
 		 * Get permission-group/{permissionGroupId}
 		 * @param {string} permissionGroupId The unique identifier for the permission group.
+		 *     Min length: 1    Max length: 26
 		 * @return {GetPermissionGroupResponse} Success
 		 */
 		GetPermissionGroup(permissionGroupId: string): Observable<GetPermissionGroupResponse> {
@@ -1987,6 +2006,7 @@ export namespace MyNS {
 		 * Modifies the details of a permission group. You cannot modify a <code>permissionGroupID</code>.
 		 * Put permission-group/{permissionGroupId}
 		 * @param {string} permissionGroupId The unique identifier for the permission group to update.
+		 *     Min length: 1    Max length: 26
 		 * @return {UpdatePermissionGroupResponse} Success
 		 */
 		UpdatePermissionGroup(permissionGroupId: string, requestBody: UpdatePermissionGroupPutBody): Observable<UpdatePermissionGroupResponse> {
@@ -1997,6 +2017,7 @@ export namespace MyNS {
 		 * Denies access to the FinSpace web application and API for the specified user.
 		 * Post user/{userId}/disable
 		 * @param {string} userId The unique identifier for the user account that you want to disable.
+		 *     Min length: 1    Max length: 26
 		 * @return {DisableUserResponse} Success
 		 */
 		DisableUser(userId: string, requestBody: DisableUserPostBody): Observable<DisableUserResponse> {
@@ -2007,6 +2028,7 @@ export namespace MyNS {
 		 * Allows the specified user to access the FinSpace web application and API.
 		 * Post user/{userId}/enable
 		 * @param {string} userId The unique identifier for the user account that you want to enable.
+		 *     Min length: 1    Max length: 26
 		 * @return {EnableUserResponse} Success
 		 */
 		EnableUser(userId: string, requestBody: EnableUserPostBody): Observable<EnableUserResponse> {
@@ -2017,7 +2039,9 @@ export namespace MyNS {
 		 * Get information about a Changeset.
 		 * Get datasets/{datasetId}/changesetsv2/{changesetId}
 		 * @param {string} datasetId The unique identifier for the FinSpace Dataset where the Changeset is created.
+		 *     Min length: 1    Max length: 26
 		 * @param {string} changesetId The unique identifier of the Changeset for which to get data.
+		 *     Min length: 1    Max length: 26
 		 * @return {GetChangesetResponse} Success
 		 */
 		GetChangeset(datasetId: string, changesetId: string): Observable<GetChangesetResponse> {
@@ -2028,7 +2052,9 @@ export namespace MyNS {
 		 * Updates a FinSpace Changeset.
 		 * Put datasets/{datasetId}/changesetsv2/{changesetId}
 		 * @param {string} datasetId The unique identifier for the FinSpace Dataset in which the Changeset is created.
+		 *     Min length: 1    Max length: 26
 		 * @param {string} changesetId The unique identifier for the Changeset to update.
+		 *     Min length: 1    Max length: 26
 		 * @return {UpdateChangesetResponse} Success
 		 */
 		UpdateChangeset(datasetId: string, changesetId: string, requestBody: UpdateChangesetPutBody): Observable<UpdateChangesetResponse> {
@@ -2039,7 +2065,9 @@ export namespace MyNS {
 		 * Gets information about a Dataview.
 		 * Get datasets/{datasetId}/dataviewsv2/{dataviewId}
 		 * @param {string} dataviewId The unique identifier for the Dataview.
+		 *     Min length: 1    Max length: 26
 		 * @param {string} datasetId The unique identifier for the Dataset used in the Dataview.
+		 *     Min length: 1    Max length: 26
 		 * @return {GetDataViewResponse} Success
 		 */
 		GetDataView(dataviewId: string, datasetId: string): Observable<GetDataViewResponse> {
@@ -2050,7 +2078,9 @@ export namespace MyNS {
 		 * <p>Returns the credentials to access the external Dataview from an S3 location. To call this API:</p> <ul> <li> <p>You must retrieve the programmatic credentials.</p> </li> <li> <p>You must be a member of a FinSpace user group, where the dataset that you want to access has <code>Read Dataset Data</code> permissions.</p> </li> </ul>
 		 * Post datasets/{datasetId}/dataviewsv2/{dataviewId}/external-access-details
 		 * @param {string} dataviewId The unique identifier for the Dataview that you want to access.
+		 *     Min length: 1    Max length: 26
 		 * @param {string} datasetId The unique identifier for the Dataset.
+		 *     Min length: 1    Max length: 26
 		 * @return {GetExternalDataViewAccessDetailsResponse} Success
 		 */
 		GetExternalDataViewAccessDetails(dataviewId: string, datasetId: string): Observable<GetExternalDataViewAccessDetailsResponse> {
@@ -2061,7 +2091,9 @@ export namespace MyNS {
 		 * Request programmatic credentials to use with FinSpace SDK.
 		 * Get credentials/programmatic#environmentId
 		 * @param {number} durationInMinutes The time duration in which the credentials remain valid. 
+		 *     Minimum: 60    Maximum: 720
 		 * @param {string} environmentId The FinSpace environment identifier.
+		 *     Min length: 1    Max length: 26
 		 * @return {GetProgrammaticAccessCredentialsResponse} Success
 		 */
 		GetProgrammaticAccessCredentials(durationInMinutes: number | null | undefined, environmentId: string): Observable<GetProgrammaticAccessCredentialsResponse> {
@@ -2072,6 +2104,7 @@ export namespace MyNS {
 		 * Retrieves details for a specific user.
 		 * Get user/{userId}
 		 * @param {string} userId The unique identifier of the user to get data for.
+		 *     Min length: 1    Max length: 26
 		 * @return {GetUserResponse} Success
 		 */
 		GetUser(userId: string): Observable<GetUserResponse> {
@@ -2082,6 +2115,7 @@ export namespace MyNS {
 		 * Modifies the details of the specified user account. You cannot update the <code>userId</code> for a user.
 		 * Put user/{userId}
 		 * @param {string} userId The unique identifier for the user account to update.
+		 *     Min length: 1    Max length: 26
 		 * @return {UpdateUserResponse} Success
 		 */
 		UpdateUser(userId: string, requestBody: UpdateUserPutBody): Observable<UpdateUserResponse> {
@@ -2102,6 +2136,7 @@ export namespace MyNS {
 		 * Get permission-group#maxResults
 		 * @param {string} nextToken A token that indicates where a results page should begin.
 		 * @param {number} maxResults The maximum number of results per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListPermissionGroupsResponse} Success
 		 */
 		ListPermissionGroups(nextToken: string | null | undefined, maxResults: number): Observable<ListPermissionGroupsResponse> {
@@ -2112,8 +2147,10 @@ export namespace MyNS {
 		 * Lists all the permission groups that are associated with a specific user account.
 		 * Get user/{userId}/permission-groups#maxResults
 		 * @param {string} userId The unique identifier for the user.
+		 *     Min length: 1    Max length: 26
 		 * @param {string} nextToken A token that indicates where a results page should begin.
 		 * @param {number} maxResults The maximum number of results per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListPermissionGroupsByUserResponse} Success
 		 */
 		ListPermissionGroupsByUser(userId: string, nextToken: string | null | undefined, maxResults: number): Observable<ListPermissionGroupsByUserResponse> {
@@ -2125,6 +2162,7 @@ export namespace MyNS {
 		 * Get user#maxResults
 		 * @param {string} nextToken A token that indicates where a results page should begin.
 		 * @param {number} maxResults The maximum number of results per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListUsersResponse} Success
 		 */
 		ListUsers(nextToken: string | null | undefined, maxResults: number): Observable<ListUsersResponse> {
@@ -2135,8 +2173,10 @@ export namespace MyNS {
 		 * Lists details of all the users in a specific permission group.
 		 * Get permission-group/{permissionGroupId}/users#maxResults
 		 * @param {string} permissionGroupId The unique identifier for the permission group.
+		 *     Min length: 1    Max length: 26
 		 * @param {string} nextToken A token that indicates where a results page should begin.
 		 * @param {number} maxResults The maximum number of results per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListUsersByPermissionGroupResponse} Success
 		 */
 		ListUsersByPermissionGroup(permissionGroupId: string, nextToken: string | null | undefined, maxResults: number): Observable<ListUsersByPermissionGroupResponse> {
@@ -2147,6 +2187,7 @@ export namespace MyNS {
 		 * Resets the password for a specified user ID and generates a temporary one. Only a superuser can reset password for other users. Resetting the password immediately invalidates the previous password associated with the user.
 		 * Post user/{userId}/password
 		 * @param {string} userId The unique identifier of the user that a temporary password is requested for.
+		 *     Min length: 1    Max length: 26
 		 * @return {ResetUserPasswordResponse} Success
 		 */
 		ResetUserPassword(userId: string, requestBody: ResetUserPasswordPostBody): Observable<ResetUserPasswordResponse> {
@@ -2158,8 +2199,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 	}
@@ -2167,8 +2208,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -2183,8 +2224,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
@@ -2210,8 +2251,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -2247,8 +2288,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
@@ -2261,7 +2302,10 @@ export namespace MyNS {
 		/** DataView Partition Column List */
 		partitionColumns?: Array<string>;
 
-		/** Milliseconds since UTC epoch */
+		/**
+		 * Milliseconds since UTC epoch
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		asOfTimestamp?: number | null;
 
 		/**
@@ -2274,15 +2318,18 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/** Common Boolean data type */
 		autoUpdate: FormControl<boolean | null | undefined>,
 
-		/** Milliseconds since UTC epoch */
+		/**
+		 * Milliseconds since UTC epoch
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		asOfTimestamp: FormControl<number | null | undefined>,
 	}
 	export function CreateCreateDataViewPostBodyFormGroup() {
@@ -2315,16 +2362,16 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Title for a given Dataset
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		datasetTitle: string;
 
@@ -2351,8 +2398,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique resource identifier for a Dataset.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		alias?: string | null;
 
@@ -2363,16 +2410,16 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Title for a given Dataset
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		datasetTitle: FormControl<string | null | undefined>,
 
@@ -2390,8 +2437,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique resource identifier for a Dataset.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		alias: FormControl<string | null | undefined>,
 	}
@@ -2455,15 +2502,15 @@ export namespace MyNS {
 		/**
 		 * The name of the permission group.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: string;
 
 		/**
 		 * A brief description for the permission group.
-		 * Max length: 4000
 		 * Min length: 1
+		 * Max length: 4000
 		 */
 		description?: string | null;
 
@@ -2475,8 +2522,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 	}
@@ -2485,22 +2532,22 @@ export namespace MyNS {
 		/**
 		 * The name of the permission group.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A brief description for the permission group.
-		 * Max length: 4000
 		 * Min length: 1
+		 * Max length: 4000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -2518,8 +2565,8 @@ export namespace MyNS {
 		/**
 		 * The email address of the user that you want to register. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.
 		 * Required
-		 * Max length: 320
 		 * Min length: 4
+		 * Max length: 320
 		 */
 		emailAddress: string;
 
@@ -2531,15 +2578,15 @@ export namespace MyNS {
 
 		/**
 		 * The first name of the user that you want to register.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		firstName?: string | null;
 
 		/**
 		 * The last name of the user that you want to register.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		lastName?: string | null;
 
@@ -2548,15 +2595,15 @@ export namespace MyNS {
 
 		/**
 		 * The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		apiAccessPrincipalArn?: string | null;
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 	}
@@ -2565,8 +2612,8 @@ export namespace MyNS {
 		/**
 		 * The email address of the user that you want to register. The email address serves as a uniquer identifier for each user and cannot be changed after it's created.
 		 * Required
-		 * Max length: 320
 		 * Min length: 4
+		 * Max length: 320
 		 */
 		emailAddress: FormControl<string | null | undefined>,
 
@@ -2578,15 +2625,15 @@ export namespace MyNS {
 
 		/**
 		 * The first name of the user that you want to register.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		firstName: FormControl<string | null | undefined>,
 
 		/**
 		 * The last name of the user that you want to register.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		lastName: FormControl<string | null | undefined>,
 
@@ -2595,15 +2642,15 @@ export namespace MyNS {
 
 		/**
 		 * The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		apiAccessPrincipalArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -2624,16 +2671,16 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
 		/**
 		 * Title for a given Dataset
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		datasetTitle: string;
 
@@ -2651,8 +2698,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique resource identifier for a Dataset.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		alias?: string | null;
 
@@ -2663,16 +2710,16 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * Title for a given Dataset
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		datasetTitle: FormControl<string | null | undefined>,
 
@@ -2690,8 +2737,8 @@ export namespace MyNS {
 
 		/**
 		 * The unique resource identifier for a Dataset.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		alias: FormControl<string | null | undefined>,
 	}
@@ -2721,15 +2768,15 @@ export namespace MyNS {
 
 		/**
 		 * The name of the permission group.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name?: string | null;
 
 		/**
 		 * A brief description for the permission group.
-		 * Max length: 4000
 		 * Min length: 1
+		 * Max length: 4000
 		 */
 		description?: string | null;
 
@@ -2738,8 +2785,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 	}
@@ -2747,22 +2794,22 @@ export namespace MyNS {
 
 		/**
 		 * The name of the permission group.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * A brief description for the permission group.
-		 * Max length: 4000
 		 * Min length: 1
+		 * Max length: 4000
 		 */
 		description: FormControl<string | null | undefined>,
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -2779,8 +2826,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 	}
@@ -2788,8 +2835,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -2804,8 +2851,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 	}
@@ -2813,8 +2860,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -2829,8 +2876,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 
@@ -2850,8 +2897,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -2883,15 +2930,15 @@ export namespace MyNS {
 
 		/**
 		 * The first name of the user.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		firstName?: string | null;
 
 		/**
 		 * The last name of the user.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		lastName?: string | null;
 
@@ -2900,15 +2947,15 @@ export namespace MyNS {
 
 		/**
 		 * The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		apiAccessPrincipalArn?: string | null;
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 	}
@@ -2919,15 +2966,15 @@ export namespace MyNS {
 
 		/**
 		 * The first name of the user.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		firstName: FormControl<string | null | undefined>,
 
 		/**
 		 * The last name of the user.
-		 * Max length: 50
 		 * Min length: 1
+		 * Max length: 50
 		 */
 		lastName: FormControl<string | null | undefined>,
 
@@ -2936,15 +2983,15 @@ export namespace MyNS {
 
 		/**
 		 * The ARN identifier of an AWS user or role that is allowed to call the <code>GetProgrammaticAccessCredentials</code> API to obtain a credentials token for a specific FinSpace user. This must be an IAM role within your FinSpace account.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		apiAccessPrincipalArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -2981,8 +3028,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken?: string | null;
 	}
@@ -2990,8 +3037,8 @@ export namespace MyNS {
 
 		/**
 		 * Idempotence Token for API operations
-		 * Max length: 128
 		 * Min length: 1
+		 * Max length: 128
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}

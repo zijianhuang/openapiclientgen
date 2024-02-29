@@ -156,32 +156,56 @@ export namespace MyNS {
 	/** Configuration for resources used by Airflow DAG processors. */
 	export interface DagProcessorResource {
 
-		/** Optional. The number of DAG processors. If not provided or set to 0, a single DAG processor instance will be created. */
+		/**
+		 * Optional. The number of DAG processors. If not provided or set to 0, a single DAG processor instance will be created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Optional. CPU request and limit for a single Airflow DAG processor replica. */
+		/**
+		 * Optional. CPU request and limit for a single Airflow DAG processor replica.
+		 * Type: float
+		 */
 		cpu?: number | null;
 
-		/** Optional. Memory (GB) request and limit for a single Airflow DAG processor replica. */
+		/**
+		 * Optional. Memory (GB) request and limit for a single Airflow DAG processor replica.
+		 * Type: float
+		 */
 		memoryGb?: number | null;
 
-		/** Optional. Storage (GB) request and limit for a single Airflow DAG processor replica. */
+		/**
+		 * Optional. Storage (GB) request and limit for a single Airflow DAG processor replica.
+		 * Type: float
+		 */
 		storageGb?: number | null;
 	}
 
 	/** Configuration for resources used by Airflow DAG processors. */
 	export interface DagProcessorResourceFormProperties {
 
-		/** Optional. The number of DAG processors. If not provided or set to 0, a single DAG processor instance will be created. */
+		/**
+		 * Optional. The number of DAG processors. If not provided or set to 0, a single DAG processor instance will be created.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Optional. CPU request and limit for a single Airflow DAG processor replica. */
+		/**
+		 * Optional. CPU request and limit for a single Airflow DAG processor replica.
+		 * Type: float
+		 */
 		cpu: FormControl<number | null | undefined>,
 
-		/** Optional. Memory (GB) request and limit for a single Airflow DAG processor replica. */
+		/**
+		 * Optional. Memory (GB) request and limit for a single Airflow DAG processor replica.
+		 * Type: float
+		 */
 		memoryGb: FormControl<number | null | undefined>,
 
-		/** Optional. Storage (GB) request and limit for a single Airflow DAG processor replica. */
+		/**
+		 * Optional. Storage (GB) request and limit for a single Airflow DAG processor replica.
+		 * Type: float
+		 */
 		storageGb: FormControl<number | null | undefined>,
 	}
 	export function CreateDagProcessorResourceFormGroup() {
@@ -294,26 +318,44 @@ export namespace MyNS {
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface Date {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day?: number | null;
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Represents a whole or partial calendar date, such as a birthday. The time of day and time zone are either specified elsewhere or are insignificant. The date is relative to the Gregorian Calendar. This can represent one of the following: * A full date, with non-zero year, month, and day values. * A month and day, with a zero year (for example, an anniversary). * A year on its own, with a zero month and a zero day. * A year and month, with a zero day (for example, a credit card expiration date). Related types: * google.type.TimeOfDay * google.type.DateTime * google.protobuf.Timestamp */
 	export interface DateFormProperties {
 
-		/** Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant. */
+		/**
+		 * Day of a month. Must be from 1 to 31 and valid for the year and month, or 0 to specify a year by itself or a year and month where the day isn't significant.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		day: FormControl<number | null | undefined>,
 
-		/** Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day. */
+		/**
+		 * Month of a year. Must be from 1 to 12, or 0 to specify a year without a month and day.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
-		/** Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year. */
+		/**
+		 * Year of the date. Must be from 1 to 9999, or 0 to specify a date without a year.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateDateFormGroup() {
@@ -466,7 +508,10 @@ export namespace MyNS {
 		/** The configuration information for the Kubernetes Engine nodes running the Apache Airflow software. */
 		nodeConfig?: NodeConfig;
 
-		/** The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. */
+		/**
+		 * The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount?: number | null;
 
 		/** The configuration information for configuring a Private IP Cloud Composer environment. */
@@ -509,7 +554,10 @@ export namespace MyNS {
 		/** Output only. The Kubernetes Engine cluster used to run this environment. */
 		gkeCluster: FormControl<string | null | undefined>,
 
-		/** The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. */
+		/**
+		 * The number of nodes in the Kubernetes Engine cluster that will be used to run this environment. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nodeCount: FormControl<number | null | undefined>,
 
 		/** Optional. Resilience mode of the Cloud Composer Environment. This field is supported for Cloud Composer environments in versions composer-2.2.0-airflow-*.*.* and newer. */
@@ -599,7 +647,10 @@ export namespace MyNS {
 		/** Optional. Network Attachment that Cloud Composer environment is connected to, which provides connectivity with a user's VPC network. Takes precedence over network and subnetwork settings. If not provided, but network and subnetwork are defined during environment, it will be provisioned. If not provided and network and subnetwork are also empty, then connectivity to user's VPC network is disabled. Network attachment must be provided in format projects/{project}/regions/{region}/networkAttachments/{networkAttachment}. This field is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer. */
 		composerNetworkAttachment?: string | null;
 
-		/** Optional. The disk size in GB used for node VMs. Minimum size is 30GB. If unspecified, defaults to 100GB. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. */
+		/**
+		 * Optional. The disk size in GB used for node VMs. Minimum size is 30GB. If unspecified, defaults to 100GB. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb?: number | null;
 
 		/** Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for all destination addresses, except between pods traffic. See: https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent */
@@ -614,7 +665,10 @@ export namespace MyNS {
 		/** Optional. The Compute Engine [machine type](/compute/docs/machine-types) used for cluster instances, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}". The `machineType` must belong to the enclosing environment's project and location. If both this field and `nodeConfig.location` are specified, this `machineType` must belong to the `nodeConfig.location`; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields. If exactly one of this field and `nodeConfig.location` is specified, the location information from the specified field will be propagated to the unspecified field. The `machineTypeId` must not be a [shared-core machine type](/compute/docs/machine-types#sharedcore). If this field is unspecified, the `machineTypeId` defaults to "n1-standard-1". This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. */
 		machineType?: string | null;
 
-		/** Optional. The maximum number of pods per node in the Cloud Composer GKE cluster. The value must be between 8 and 110 and it can be set only if the environment is VPC-native. The default value is 32. Values of this field will be propagated both to the `default-pool` node pool of the newly created GKE cluster, and to the default "Maximum Pods per Node" value which is used for newly created node pools if their value is not explicitly set during node pool creation. For more information, see [Optimizing IP address allocation] (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr). Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. */
+		/**
+		 * Optional. The maximum number of pods per node in the Cloud Composer GKE cluster. The value must be between 8 and 110 and it can be set only if the environment is VPC-native. The default value is 32. Values of this field will be propagated both to the `default-pool` node pool of the newly created GKE cluster, and to the default "Maximum Pods per Node" value which is used for newly created node pools if their value is not explicitly set during node pool creation. For more information, see [Optimizing IP address allocation] (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr). Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPodsPerNode?: number | null;
 
 		/** Optional. The Compute Engine network to be used for machine communications, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: "projects/{projectId}/global/networks/{networkId}". If unspecified, the default network in the environment's project is used. If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets) is provided, `nodeConfig.subnetwork` must also be provided. For [Shared VPC](/vpc/docs/shared-vpc) subnetwork requirements, see `nodeConfig.subnetwork`. */
@@ -642,7 +696,10 @@ export namespace MyNS {
 		/** Optional. Network Attachment that Cloud Composer environment is connected to, which provides connectivity with a user's VPC network. Takes precedence over network and subnetwork settings. If not provided, but network and subnetwork are defined during environment, it will be provisioned. If not provided and network and subnetwork are also empty, then connectivity to user's VPC network is disabled. Network attachment must be provided in format projects/{project}/regions/{region}/networkAttachments/{networkAttachment}. This field is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer. */
 		composerNetworkAttachment: FormControl<string | null | undefined>,
 
-		/** Optional. The disk size in GB used for node VMs. Minimum size is 30GB. If unspecified, defaults to 100GB. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. */
+		/**
+		 * Optional. The disk size in GB used for node VMs. Minimum size is 30GB. If unspecified, defaults to 100GB. Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		diskSizeGb: FormControl<number | null | undefined>,
 
 		/** Optional. Deploys 'ip-masq-agent' daemon set in the GKE cluster and defines nonMasqueradeCIDRs equals to pod IP range so IP masquerading is used for all destination addresses, except between pods traffic. See: https://cloud.google.com/kubernetes-engine/docs/how-to/ip-masquerade-agent */
@@ -654,7 +711,10 @@ export namespace MyNS {
 		/** Optional. The Compute Engine [machine type](/compute/docs/machine-types) used for cluster instances, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: "projects/{projectId}/zones/{zoneId}/machineTypes/{machineTypeId}". The `machineType` must belong to the enclosing environment's project and location. If both this field and `nodeConfig.location` are specified, this `machineType` must belong to the `nodeConfig.location`; if both are unspecified, the service will pick a zone in the Compute Engine region corresponding to the Cloud Composer location, and propagate that choice to both fields. If exactly one of this field and `nodeConfig.location` is specified, the location information from the specified field will be propagated to the unspecified field. The `machineTypeId` must not be a [shared-core machine type](/compute/docs/machine-types#sharedcore). If this field is unspecified, the `machineTypeId` defaults to "n1-standard-1". This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. */
 		machineType: FormControl<string | null | undefined>,
 
-		/** Optional. The maximum number of pods per node in the Cloud Composer GKE cluster. The value must be between 8 and 110 and it can be set only if the environment is VPC-native. The default value is 32. Values of this field will be propagated both to the `default-pool` node pool of the newly created GKE cluster, and to the default "Maximum Pods per Node" value which is used for newly created node pools if their value is not explicitly set during node pool creation. For more information, see [Optimizing IP address allocation] (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr). Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. */
+		/**
+		 * Optional. The maximum number of pods per node in the Cloud Composer GKE cluster. The value must be between 8 and 110 and it can be set only if the environment is VPC-native. The default value is 32. Values of this field will be propagated both to the `default-pool` node pool of the newly created GKE cluster, and to the default "Maximum Pods per Node" value which is used for newly created node pools if their value is not explicitly set during node pool creation. For more information, see [Optimizing IP address allocation] (https://cloud.google.com/kubernetes-engine/docs/how-to/flexible-pod-cidr). Cannot be updated. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxPodsPerNode: FormControl<number | null | undefined>,
 
 		/** Optional. The Compute Engine network to be used for machine communications, specified as a [relative resource name](/apis/design/resource_names#relative_resource_name). For example: "projects/{projectId}/global/networks/{networkId}". If unspecified, the default network in the environment's project is used. If a [Custom Subnet Network](/vpc/docs/vpc#vpc_networks_and_subnets) is provided, `nodeConfig.subnetwork` must also be provided. For [Shared VPC](/vpc/docs/shared-vpc) subnetwork requirements, see `nodeConfig.subnetwork`. */
@@ -955,7 +1015,10 @@ export namespace MyNS {
 		/** Optional. The major version of Python used to run the Apache Airflow scheduler, worker, and webserver processes. Can be set to '2' or '3'. If not specified, the default is '3'. Cannot be updated. This field is only supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. Environments in newer versions always use Python major version 3. */
 		pythonVersion?: string | null;
 
-		/** Optional. The number of schedulers for Airflow. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-2.*.*. */
+		/**
+		 * Optional. The number of schedulers for Airflow. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-2.*.*.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schedulerCount?: number | null;
 
 		/** Optional. Whether or not the web server uses custom plugins. If unspecified, the field defaults to `PLUGINS_ENABLED`. This field is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer. */
@@ -980,7 +1043,10 @@ export namespace MyNS {
 		/** Optional. The major version of Python used to run the Apache Airflow scheduler, worker, and webserver processes. Can be set to '2' or '3'. If not specified, the default is '3'. Cannot be updated. This field is only supported for Cloud Composer environments in versions composer-1.*.*-airflow-*.*.*. Environments in newer versions always use Python major version 3. */
 		pythonVersion: FormControl<string | null | undefined>,
 
-		/** Optional. The number of schedulers for Airflow. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-2.*.*. */
+		/**
+		 * Optional. The number of schedulers for Airflow. This field is supported for Cloud Composer environments in versions composer-1.*.*-airflow-2.*.*.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		schedulerCount: FormControl<number | null | undefined>,
 
 		/** Optional. Whether or not the web server uses custom plugins. If unspecified, the field defaults to `PLUGINS_ENABLED`. This field is supported for Cloud Composer environments in versions composer-3.*.*-airflow-*.*.* and newer. */
@@ -1072,32 +1138,56 @@ export namespace MyNS {
 	/** Configuration for resources used by Airflow schedulers. */
 	export interface SchedulerResource {
 
-		/** Optional. The number of schedulers. */
+		/**
+		 * Optional. The number of schedulers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Optional. CPU request and limit for a single Airflow scheduler replica. */
+		/**
+		 * Optional. CPU request and limit for a single Airflow scheduler replica.
+		 * Type: float
+		 */
 		cpu?: number | null;
 
-		/** Optional. Memory (GB) request and limit for a single Airflow scheduler replica. */
+		/**
+		 * Optional. Memory (GB) request and limit for a single Airflow scheduler replica.
+		 * Type: float
+		 */
 		memoryGb?: number | null;
 
-		/** Optional. Storage (GB) request and limit for a single Airflow scheduler replica. */
+		/**
+		 * Optional. Storage (GB) request and limit for a single Airflow scheduler replica.
+		 * Type: float
+		 */
 		storageGb?: number | null;
 	}
 
 	/** Configuration for resources used by Airflow schedulers. */
 	export interface SchedulerResourceFormProperties {
 
-		/** Optional. The number of schedulers. */
+		/**
+		 * Optional. The number of schedulers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Optional. CPU request and limit for a single Airflow scheduler replica. */
+		/**
+		 * Optional. CPU request and limit for a single Airflow scheduler replica.
+		 * Type: float
+		 */
 		cpu: FormControl<number | null | undefined>,
 
-		/** Optional. Memory (GB) request and limit for a single Airflow scheduler replica. */
+		/**
+		 * Optional. Memory (GB) request and limit for a single Airflow scheduler replica.
+		 * Type: float
+		 */
 		memoryGb: FormControl<number | null | undefined>,
 
-		/** Optional. Storage (GB) request and limit for a single Airflow scheduler replica. */
+		/**
+		 * Optional. Storage (GB) request and limit for a single Airflow scheduler replica.
+		 * Type: float
+		 */
 		storageGb: FormControl<number | null | undefined>,
 	}
 	export function CreateSchedulerResourceFormGroup() {
@@ -1114,26 +1204,44 @@ export namespace MyNS {
 	/** Configuration for resources used by Airflow triggerers. */
 	export interface TriggererResource {
 
-		/** Optional. The number of triggerers. */
+		/**
+		 * Optional. The number of triggerers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** Optional. CPU request and limit for a single Airflow triggerer replica. */
+		/**
+		 * Optional. CPU request and limit for a single Airflow triggerer replica.
+		 * Type: float
+		 */
 		cpu?: number | null;
 
-		/** Optional. Memory (GB) request and limit for a single Airflow triggerer replica. */
+		/**
+		 * Optional. Memory (GB) request and limit for a single Airflow triggerer replica.
+		 * Type: float
+		 */
 		memoryGb?: number | null;
 	}
 
 	/** Configuration for resources used by Airflow triggerers. */
 	export interface TriggererResourceFormProperties {
 
-		/** Optional. The number of triggerers. */
+		/**
+		 * Optional. The number of triggerers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** Optional. CPU request and limit for a single Airflow triggerer replica. */
+		/**
+		 * Optional. CPU request and limit for a single Airflow triggerer replica.
+		 * Type: float
+		 */
 		cpu: FormControl<number | null | undefined>,
 
-		/** Optional. Memory (GB) request and limit for a single Airflow triggerer replica. */
+		/**
+		 * Optional. Memory (GB) request and limit for a single Airflow triggerer replica.
+		 * Type: float
+		 */
 		memoryGb: FormControl<number | null | undefined>,
 	}
 	export function CreateTriggererResourceFormGroup() {
@@ -1149,26 +1257,44 @@ export namespace MyNS {
 	/** Configuration for resources used by Airflow web server. */
 	export interface WebServerResource {
 
-		/** Optional. CPU request and limit for Airflow web server. */
+		/**
+		 * Optional. CPU request and limit for Airflow web server.
+		 * Type: float
+		 */
 		cpu?: number | null;
 
-		/** Optional. Memory (GB) request and limit for Airflow web server. */
+		/**
+		 * Optional. Memory (GB) request and limit for Airflow web server.
+		 * Type: float
+		 */
 		memoryGb?: number | null;
 
-		/** Optional. Storage (GB) request and limit for Airflow web server. */
+		/**
+		 * Optional. Storage (GB) request and limit for Airflow web server.
+		 * Type: float
+		 */
 		storageGb?: number | null;
 	}
 
 	/** Configuration for resources used by Airflow web server. */
 	export interface WebServerResourceFormProperties {
 
-		/** Optional. CPU request and limit for Airflow web server. */
+		/**
+		 * Optional. CPU request and limit for Airflow web server.
+		 * Type: float
+		 */
 		cpu: FormControl<number | null | undefined>,
 
-		/** Optional. Memory (GB) request and limit for Airflow web server. */
+		/**
+		 * Optional. Memory (GB) request and limit for Airflow web server.
+		 * Type: float
+		 */
 		memoryGb: FormControl<number | null | undefined>,
 
-		/** Optional. Storage (GB) request and limit for Airflow web server. */
+		/**
+		 * Optional. Storage (GB) request and limit for Airflow web server.
+		 * Type: float
+		 */
 		storageGb: FormControl<number | null | undefined>,
 	}
 	export function CreateWebServerResourceFormGroup() {
@@ -1184,38 +1310,68 @@ export namespace MyNS {
 	/** Configuration for resources used by Airflow workers. */
 	export interface WorkerResource {
 
-		/** Optional. CPU request and limit for a single Airflow worker replica. */
+		/**
+		 * Optional. CPU request and limit for a single Airflow worker replica.
+		 * Type: float
+		 */
 		cpu?: number | null;
 
-		/** Optional. Maximum number of workers for autoscaling. */
+		/**
+		 * Optional. Maximum number of workers for autoscaling.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxCount?: number | null;
 
-		/** Optional. Memory (GB) request and limit for a single Airflow worker replica. */
+		/**
+		 * Optional. Memory (GB) request and limit for a single Airflow worker replica.
+		 * Type: float
+		 */
 		memoryGb?: number | null;
 
-		/** Optional. Minimum number of workers for autoscaling. */
+		/**
+		 * Optional. Minimum number of workers for autoscaling.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minCount?: number | null;
 
-		/** Optional. Storage (GB) request and limit for a single Airflow worker replica. */
+		/**
+		 * Optional. Storage (GB) request and limit for a single Airflow worker replica.
+		 * Type: float
+		 */
 		storageGb?: number | null;
 	}
 
 	/** Configuration for resources used by Airflow workers. */
 	export interface WorkerResourceFormProperties {
 
-		/** Optional. CPU request and limit for a single Airflow worker replica. */
+		/**
+		 * Optional. CPU request and limit for a single Airflow worker replica.
+		 * Type: float
+		 */
 		cpu: FormControl<number | null | undefined>,
 
-		/** Optional. Maximum number of workers for autoscaling. */
+		/**
+		 * Optional. Maximum number of workers for autoscaling.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxCount: FormControl<number | null | undefined>,
 
-		/** Optional. Memory (GB) request and limit for a single Airflow worker replica. */
+		/**
+		 * Optional. Memory (GB) request and limit for a single Airflow worker replica.
+		 * Type: float
+		 */
 		memoryGb: FormControl<number | null | undefined>,
 
-		/** Optional. Minimum number of workers for autoscaling. */
+		/**
+		 * Optional. Minimum number of workers for autoscaling.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minCount: FormControl<number | null | undefined>,
 
-		/** Optional. Storage (GB) request and limit for a single Airflow worker replica. */
+		/**
+		 * Optional. Storage (GB) request and limit for a single Airflow worker replica.
+		 * Type: float
+		 */
 		storageGb: FormControl<number | null | undefined>,
 	}
 	export function CreateWorkerResourceFormGroup() {
@@ -1332,7 +1488,10 @@ export namespace MyNS {
 		/** Error message. Empty if there was no error. */
 		error?: string | null;
 
-		/** The exit code from the command execution. */
+		/**
+		 * The exit code from the command execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 	}
 
@@ -1342,7 +1501,10 @@ export namespace MyNS {
 		/** Error message. Empty if there was no error. */
 		error: FormControl<string | null | undefined>,
 
-		/** The exit code from the command execution. */
+		/**
+		 * The exit code from the command execution.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 	}
 	export function CreateExitInfoFormGroup() {
@@ -1443,7 +1605,10 @@ export namespace MyNS {
 		/** Text content of the log line. */
 		content?: string | null;
 
-		/** Number of the line. */
+		/**
+		 * Number of the line.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber?: number | null;
 	}
 
@@ -1453,7 +1618,10 @@ export namespace MyNS {
 		/** Text content of the log line. */
 		content: FormControl<string | null | undefined>,
 
-		/** Number of the line. */
+		/**
+		 * Number of the line.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber: FormControl<number | null | undefined>,
 	}
 	export function CreateLineFormGroup() {
@@ -1585,7 +1753,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1598,7 +1769,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -1742,7 +1916,10 @@ export namespace MyNS {
 		/** The unique ID of the command execution. */
 		executionId?: string | null;
 
-		/** Line number from which new logs should be fetched. */
+		/**
+		 * Line number from which new logs should be fetched.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nextLineNumber?: number | null;
 
 		/** The name of the pod where the command is executed. */
@@ -1758,7 +1935,10 @@ export namespace MyNS {
 		/** The unique ID of the command execution. */
 		executionId: FormControl<string | null | undefined>,
 
-		/** Line number from which new logs should be fetched. */
+		/**
+		 * Line number from which new logs should be fetched.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		nextLineNumber: FormControl<number | null | undefined>,
 
 		/** The name of the pod where the command is executed. */
@@ -2048,6 +2228,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -2070,6 +2251,7 @@ export namespace MyNS {
 		 * Get v1beta1/{parent}/environments
 		 * @param {string} parent List environments in the given project and location, in the form: "projects/{projectId}/locations/{locationId}"
 		 * @param {number} pageSize The maximum number of environments to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListEnvironmentsResponse} Successful response
 		 */
@@ -2093,6 +2275,7 @@ export namespace MyNS {
 		 * @param {string} parent List ImageVersions in the given project and location, in the form: "projects/{projectId}/locations/{locationId}"
 		 * @param {boolean} includePastReleases Whether or not image versions from old releases should be included.
 		 * @param {number} pageSize The maximum number of image_versions to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The next_page_token value returned from a previous List request, if any.
 		 * @return {ListImageVersionsResponse} Successful response
 		 */

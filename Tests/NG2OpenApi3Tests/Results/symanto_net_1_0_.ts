@@ -140,6 +140,7 @@ export namespace MyNS {
 		/**
 		 * the probability of the predicted label.
 		 * Required
+		 * Type: double
 		 */
 		probability: number;
 	}
@@ -154,6 +155,7 @@ export namespace MyNS {
 		/**
 		 * the probability of the predicted label.
 		 * Required
+		 * Type: double
 		 */
 		probability: FormControl<number | null | undefined>,
 	}
@@ -167,21 +169,33 @@ export namespace MyNS {
 
 	export interface Sentiment {
 		category?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
 		negationTerm?: string | null;
 		parentCategory?: string | null;
 		positive?: boolean | null;
+
+		/** Type: double */
 		scale?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
 		text?: string | null;
 	}
 	export interface SentimentFormProperties {
 		category: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
 		negationTerm: FormControl<string | null | undefined>,
 		parentCategory: FormControl<string | null | undefined>,
 		positive: FormControl<boolean | null | undefined>,
+
+		/** Type: double */
 		scale: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 	}
@@ -201,16 +215,28 @@ export namespace MyNS {
 
 	export interface Topic {
 		category?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end?: number | null;
+
+		/** Type: double */
 		polarity?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start?: number | null;
 		text?: string | null;
 		topic?: string | null;
 	}
 	export interface TopicFormProperties {
 		category: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		end: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		polarity: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		start: FormControl<number | null | undefined>,
 		text: FormControl<string | null | undefined>,
 		topic: FormControl<string | null | undefined>,
@@ -404,7 +430,6 @@ export namespace MyNS {
 		 * Extracts topics and sentiments and relates them.
 		 * Post topic-sentiment
 		 * @param {Topic_sentimentDomain} domain Provide analysis domain for better extraction (optional)
-		 * @return {Array<TopicSentimentOutput>} 
 		 */
 		Topic_sentiment(domain: Topic_sentimentDomain | null | undefined, requestBody: Array<Post>): Observable<Array<TopicSentimentOutput>> {
 			return this.http.post<Array<TopicSentimentOutput>>(this.baseUri + 'topic-sentiment?domain=' + domain, JSON.stringify(requestBody), { headers: { 'Content-Type': 'application/json;charset=UTF-8' } });

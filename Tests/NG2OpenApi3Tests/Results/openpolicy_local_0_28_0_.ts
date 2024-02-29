@@ -87,24 +87,36 @@ export namespace MyNS {
 
 	export interface _400ErrorsLocation {
 
-		/** The column in the policy module where the error occurred */
+		/**
+		 * The column in the policy module where the error occurred
+		 * Type: double
+		 */
 		col?: number | null;
 
 		/** The policy module name that generated the error */
 		file?: string | null;
 
-		/** The line number in the policy module where the error occurred */
+		/**
+		 * The line number in the policy module where the error occurred
+		 * Type: double
+		 */
 		row?: number | null;
 	}
 	export interface _400ErrorsLocationFormProperties {
 
-		/** The column in the policy module where the error occurred */
+		/**
+		 * The column in the policy module where the error occurred
+		 * Type: double
+		 */
 		col: FormControl<number | null | undefined>,
 
 		/** The policy module name that generated the error */
 		file: FormControl<string | null | undefined>,
 
-		/** The line number in the policy module where the error occurred */
+		/**
+		 * The line number in the policy module where the error occurred
+		 * Type: double
+		 */
 		row: FormControl<number | null | undefined>,
 	}
 	export function Create_400ErrorsLocationFormGroup() {
@@ -289,13 +301,19 @@ export namespace MyNS {
 
 	export interface _200ExplanationsExplanationNode {
 
-		/** Node number */
+		/**
+		 * Node number
+		 * Type: double
+		 */
 		index?: number | null;
 		_200ExplanationsExplanationNodeTerms?: Array<_200ExplanationsExplanationNodeTerms>;
 	}
 	export interface _200ExplanationsExplanationNodeFormProperties {
 
-		/** Node number */
+		/**
+		 * Node number
+		 * Type: double
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function Create_200ExplanationsExplanationNodeFormGroup() {
@@ -338,132 +356,258 @@ export namespace MyNS {
 
 	export interface _200MetricsMetrics {
 
-		/** *Description is forthcoming* */
+		/**
+		 * *Description is forthcoming*
+		 * Type: double
+		 */
 		counter_server_query_cache_hit?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_build_comprehension_index_ns?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_check_safety_ns?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_check_types_ns?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_check_undefined_funcs_ns?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_check_unsafe_builtins_ns?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_resolve_refs_ns?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_comprehension_terms_ns?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_dynamic_terms_ns?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_expr_terms_ns?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_local_vars_ns?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_to_capture_value_ns?: number | null;
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_with_values_ns?: number | null;
 
-		/** Time taken (in nanonseconds) to parse the input */
+		/**
+		 * Time taken (in nanonseconds) to parse the input
+		 * Type: double
+		 */
 		timer_rego_input_parse_ns?: number | null;
 
-		/** Time taken (in nanonseconds) to compile the loaded policy modules */
+		/**
+		 * Time taken (in nanonseconds) to compile the loaded policy modules
+		 * Type: double
+		 */
 		timer_rego_module_compile_ns?: number | null;
 
-		/** Time taken (in nanoseconds) to parse the input policy module */
+		/**
+		 * Time taken (in nanoseconds) to parse the input policy module
+		 * Type: double
+		 */
 		timer_rego_module_parse_ns?: number | null;
 
-		/** Time taken (in nanoseconds) to compile the query */
+		/**
+		 * Time taken (in nanoseconds) to compile the query
+		 * Type: double
+		 */
 		timer_rego_query_compile_ns?: number | null;
 
-		/** Time taken (in nanonseconds) to evaluate the query */
+		/**
+		 * Time taken (in nanonseconds) to evaluate the query
+		 * Type: double
+		 */
 		timer_rego_query_eval_ns?: number | null;
 
-		/** Time taken (in nanoseconds) to parse the query */
+		/**
+		 * Time taken (in nanoseconds) to parse the query
+		 * Type: double
+		 */
 		timer_rego_query_parse_ns?: number | null;
 
-		/** Time taken (in nanoseconds) to handle the API request */
+		/**
+		 * Time taken (in nanoseconds) to handle the API request
+		 * Type: double
+		 */
 		timer_server_handler_ns?: number | null;
 
-		/** *Description is forthcoming* */
+		/**
+		 * *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_server_read_bytes_ns?: number | null;
 	}
 	export interface _200MetricsMetricsFormProperties {
 
-		/** *Description is forthcoming* */
+		/**
+		 * *Description is forthcoming*
+		 * Type: double
+		 */
 		counter_server_query_cache_hit: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_build_comprehension_index_ns: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_check_safety_ns: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_check_types_ns: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_check_undefined_funcs_ns: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_check_unsafe_builtins_ns: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_resolve_refs_ns: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_comprehension_terms_ns: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_dynamic_terms_ns: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_expr_terms_ns: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_local_vars_ns: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_to_capture_value_ns: FormControl<number | null | undefined>,
 
-		/** (Only returned if `instrument` is true.) *Description is forthcoming* */
+		/**
+		 * (Only returned if `instrument` is true.) *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_query_compile_stage_rewrite_with_values_ns: FormControl<number | null | undefined>,
 
-		/** Time taken (in nanonseconds) to parse the input */
+		/**
+		 * Time taken (in nanonseconds) to parse the input
+		 * Type: double
+		 */
 		timer_rego_input_parse_ns: FormControl<number | null | undefined>,
 
-		/** Time taken (in nanonseconds) to compile the loaded policy modules */
+		/**
+		 * Time taken (in nanonseconds) to compile the loaded policy modules
+		 * Type: double
+		 */
 		timer_rego_module_compile_ns: FormControl<number | null | undefined>,
 
-		/** Time taken (in nanoseconds) to parse the input policy module */
+		/**
+		 * Time taken (in nanoseconds) to parse the input policy module
+		 * Type: double
+		 */
 		timer_rego_module_parse_ns: FormControl<number | null | undefined>,
 
-		/** Time taken (in nanoseconds) to compile the query */
+		/**
+		 * Time taken (in nanoseconds) to compile the query
+		 * Type: double
+		 */
 		timer_rego_query_compile_ns: FormControl<number | null | undefined>,
 
-		/** Time taken (in nanonseconds) to evaluate the query */
+		/**
+		 * Time taken (in nanonseconds) to evaluate the query
+		 * Type: double
+		 */
 		timer_rego_query_eval_ns: FormControl<number | null | undefined>,
 
-		/** Time taken (in nanoseconds) to parse the query */
+		/**
+		 * Time taken (in nanoseconds) to parse the query
+		 * Type: double
+		 */
 		timer_rego_query_parse_ns: FormControl<number | null | undefined>,
 
-		/** Time taken (in nanoseconds) to handle the API request */
+		/**
+		 * Time taken (in nanoseconds) to handle the API request
+		 * Type: double
+		 */
 		timer_server_handler_ns: FormControl<number | null | undefined>,
 
-		/** *Description is forthcoming* */
+		/**
+		 * *Description is forthcoming*
+		 * Type: double
+		 */
 		timer_server_read_bytes_ns: FormControl<number | null | undefined>,
 	}
 	export function Create_200MetricsMetricsFormGroup() {
@@ -668,7 +812,10 @@ export namespace MyNS {
 
 	export interface _200ResultResultAstRulesBody {
 
-		/** The location of this term in the list (starts at 0) */
+		/**
+		 * The location of this term in the list (starts at 0)
+		 * Type: double
+		 */
 		index?: number | null;
 
 		/** The type/value pairing for this term */
@@ -676,7 +823,10 @@ export namespace MyNS {
 	}
 	export interface _200ResultResultAstRulesBodyFormProperties {
 
-		/** The location of this term in the list (starts at 0) */
+		/**
+		 * The location of this term in the list (starts at 0)
+		 * Type: double
+		 */
 		index: FormControl<number | null | undefined>,
 	}
 	export function Create_200ResultResultAstRulesBodyFormGroup() {

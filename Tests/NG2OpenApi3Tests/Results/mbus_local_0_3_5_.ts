@@ -75,7 +75,9 @@ export namespace MyNS {
 		 * Post mbus/get/{device}/{baudrate}/{address}
 		 * @param {string} device The serial device to scan - /dev/ is pre-pended to {device} by M-Bus HTTPD before scanning
 		 * @param {Baudrate} baudrate Baudrate to communicate with M-Bus devices
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} address The slave device to get data from
+		 *     Min length: 1    Max length: 16
 		 * @return {void} OK
 		 */
 		Get(device: string, baudrate: Baudrate, address: string): Observable<HttpResponse<string>> {
@@ -87,8 +89,11 @@ export namespace MyNS {
 		 * Post mbus/getMulti/{device}/{baudrate}/{address}/{maxframes}
 		 * @param {string} device The serial device to scan - /dev/ is pre-pended to {device} by M-Bus HTTPD before scanning
 		 * @param {Baudrate} baudrate Baudrate to communicate with M-Bus devices
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} address The slave device to get data from
+		 *     Min length: 1    Max length: 16
 		 * @param {number} maxframes The slave device to get data from
+		 *     Minimum: 1    Maximum: 250
 		 * @return {void} OK
 		 */
 		GetMulti(device: string, baudrate: Baudrate, address: string, maxframes: number): Observable<HttpResponse<string>> {
@@ -127,6 +132,7 @@ export namespace MyNS {
 		 * Post mbus/scan/{device}/{baudrate}
 		 * @param {string} device The serial device to scan - /dev/ is pre-pended to {device} by M-Bus HTTPD before scanning
 		 * @param {Baudrate} baudrate Baudrate to communicate with M-Bus devices
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {string} OK
 		 */
 		Scan(device: string, baudrate: Baudrate): Observable<string> {

@@ -389,7 +389,9 @@ namespace MyNS
 		/// 
 		/// Get_conversations conversations
 		/// </summary>
-		/// <param name="page_size">The number of results returned per page.   The default value is `10`. The maximum value is `100`.</param>
+		/// <param name="page_size">The number of results returned per page.   The default value is `10`. The maximum value is `100`.
+		/// Maximum: 100
+		// </param>
 		/// <param name="order">Show the most (`desc`) / least (`asc`) recently created entries first</param>
 		/// <param name="cursor">The cursor to start returning results from.
 		///
@@ -431,7 +433,9 @@ namespace MyNS
 		/// Get_events conversations/{conversation_id}/events
 		/// </summary>
 		/// <param name="conversation_id">The ID of the conversation</param>
-		/// <param name="page_size">The number of results returned per page.   The default value is `10`. The maximum value is `100`.</param>
+		/// <param name="page_size">The number of results returned per page.   The default value is `10`. The maximum value is `100`.
+		/// Maximum: 100
+		// </param>
 		/// <param name="order">Show the most (`desc`) / least (`asc`) recently created entries first</param>
 		/// <param name="cursor">The cursor to start returning results from.
 		///
@@ -474,7 +478,9 @@ namespace MyNS
 		/// Get_members conversations/{conversation_id}/members
 		/// </summary>
 		/// <param name="conversation_id">The ID of the conversation</param>
-		/// <param name="page_size">The number of results returned per page.   The default value is `10`. The maximum value is `100`.</param>
+		/// <param name="page_size">The number of results returned per page.   The default value is `10`. The maximum value is `100`.
+		/// Maximum: 100
+		// </param>
 		/// <param name="order">Show the most (`desc`) / least (`asc`) recently created entries first</param>
 		/// <param name="cursor">The cursor to start returning results from.
 		///
@@ -513,7 +519,9 @@ namespace MyNS
 		/// List Users
 		/// Get_users users
 		/// </summary>
-		/// <param name="page_size">The number of results returned per page.   The default value is `10`. The maximum value is `100`.</param>
+		/// <param name="page_size">The number of results returned per page.   The default value is `10`. The maximum value is `100`.
+		/// Maximum: 100
+		// </param>
 		/// <param name="order">Show the most (`desc`) / least (`asc`) recently created entries first</param>
 		/// <param name="cursor">The cursor to start returning results from.
 		///

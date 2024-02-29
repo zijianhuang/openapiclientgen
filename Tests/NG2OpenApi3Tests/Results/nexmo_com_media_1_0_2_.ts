@@ -14,10 +14,16 @@ export namespace MyNS {
 		/** A UUID representing the object. */
 		id?: string | null;
 
-		/** The maximum number of times the file may be downloaded. */
+		/**
+		 * The maximum number of times the file may be downloaded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_downloads_allowed?: number | null;
 
-		/** The size of the file in bytes */
+		/**
+		 * The size of the file in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		media_size?: number | null;
 
 		/** A user set string containing metadata about the media file. */
@@ -44,7 +50,10 @@ export namespace MyNS {
 		/** A timestamp for the time that the file was last modified */
 		time_last_updated?: string | null;
 
-		/** The number of times the file has been downloaded. */
+		/**
+		 * The number of times the file has been downloaded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		times_downloaded?: number | null;
 	}
 	export interface MediaFormProperties {
@@ -58,10 +67,16 @@ export namespace MyNS {
 		/** A UUID representing the object. */
 		id: FormControl<string | null | undefined>,
 
-		/** The maximum number of times the file may be downloaded. */
+		/**
+		 * The maximum number of times the file may be downloaded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		max_downloads_allowed: FormControl<number | null | undefined>,
 
-		/** The size of the file in bytes */
+		/**
+		 * The size of the file in bytes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		media_size: FormControl<number | null | undefined>,
 
 		/** A user set string containing metadata about the media file. */
@@ -88,7 +103,10 @@ export namespace MyNS {
 		/** A timestamp for the time that the file was last modified */
 		time_last_updated: FormControl<string | null | undefined>,
 
-		/** The number of times the file has been downloaded. */
+		/**
+		 * The number of times the file has been downloaded.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		times_downloaded: FormControl<number | null | undefined>,
 	}
 	export function CreateMediaFormGroup() {
@@ -122,7 +140,9 @@ export namespace MyNS {
 		 * Get 
 		 * @param {List_and_search_media_itemsOrder} order The order of search results.
 		 * @param {number} page_index Which page to retrieve in pagination
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} page_size How many items at most per page
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} start_time Retrieve results created on or after this timestap.
 		 * @param {string} end_time Retrieve results created on or before this timestamp.
 		 * @return {List_and_search_media_itemsReturn} Successfully retrieved
@@ -160,24 +180,42 @@ export namespace MyNS {
 		_embedded?: List_and_search_media_itemsReturn_embedded;
 		_links?: List_and_search_media_itemsReturn_links;
 
-		/** The total number of records returned by your request. */
+		/**
+		 * The total number of records returned by your request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
-		/** The `page_index` used in your request. */
+		/**
+		 * The `page_index` used in your request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_index?: number | null;
 
-		/** The amount of records returned in this response. */
+		/**
+		 * The amount of records returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size?: number | null;
 	}
 	export interface List_and_search_media_itemsReturnFormProperties {
 
-		/** The total number of records returned by your request. */
+		/**
+		 * The total number of records returned by your request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
-		/** The `page_index` used in your request. */
+		/**
+		 * The `page_index` used in your request.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_index: FormControl<number | null | undefined>,
 
-		/** The amount of records returned in this response. */
+		/**
+		 * The amount of records returned in this response.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		page_size: FormControl<number | null | undefined>,
 	}
 	export function CreateList_and_search_media_itemsReturnFormGroup() {

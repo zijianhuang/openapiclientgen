@@ -371,7 +371,10 @@ namespace MyNS
 		/// Returns all the resources of a particular type belonging to a resource group
 		/// EnterpriseKnowledgeGraph_ListByResourceGroup subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.</param>
+		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <returns>The resource provider should return 200 (OK) to indicate that the operation completed successfully. For other errors (e.g. internal errors) use the appropriate HTTP error code.
@@ -410,8 +413,14 @@ namespace MyNS
 		/// Returns a EnterpriseKnowledgeGraph service specified by the parameters.
 		/// EnterpriseKnowledgeGraph_Get subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.</param>
-		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.</param>
+		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
+		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <returns>The resource provider should return 200 (OK) to indicate that the operation completed successfully. </returns>
@@ -442,8 +451,14 @@ namespace MyNS
 		/// Creates a EnterpriseKnowledgeGraph Service. EnterpriseKnowledgeGraph Service is a resource group wide resource type.
 		/// EnterpriseKnowledgeGraph_Create subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.</param>
-		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.</param>
+		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
+		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="requestBody">The parameters to provide for the created EnterpriseKnowledgeGraph.</param>
@@ -482,8 +497,14 @@ namespace MyNS
 		/// Deletes a EnterpriseKnowledgeGraph Service from the resource group.
 		/// EnterpriseKnowledgeGraph_Delete subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.</param>
-		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.</param>
+		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
+		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <returns>A 200 (OK) should be returned if the object exists and was deleted successfully;</returns>
@@ -508,8 +529,14 @@ namespace MyNS
 		/// Updates a EnterpriseKnowledgeGraph Service
 		/// EnterpriseKnowledgeGraph_Update subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.EnterpriseKnowledgeGraph/services/{resourceName}
 		/// </summary>
-		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.</param>
-		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.</param>
+		/// <param name="resourceGroupName">The name of the EnterpriseKnowledgeGraph resource group in the user subscription.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
+		/// <param name="resourceName">The name of the EnterpriseKnowledgeGraph resource.
+		/// Max length: 64
+		/// Min length: 2
+		// </param>
 		/// <param name="api_version">Version of the API to be used with the client request.</param>
 		/// <param name="subscriptionId">Azure Subscription ID.</param>
 		/// <param name="requestBody">The parameters to provide for the created EnterpriseKnowledgeGraph.</param>

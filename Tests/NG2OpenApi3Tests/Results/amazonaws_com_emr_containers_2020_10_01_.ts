@@ -1382,7 +1382,9 @@ export namespace MyNS {
 		 * Cancels a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 		 * Delete virtualclusters/{virtualClusterId}/jobruns/{jobRunId}
 		 * @param {string} jobRunId The ID of the job run to cancel.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} virtualClusterId The ID of the virtual cluster for which the job run will be canceled.
+		 *     Min length: 1    Max length: 64
 		 * @return {CancelJobRunResponse} Success
 		 */
 		CancelJobRun(jobRunId: string, virtualClusterId: string): Observable<CancelJobRunResponse> {
@@ -1393,7 +1395,9 @@ export namespace MyNS {
 		 * Displays detailed information about a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 		 * Get virtualclusters/{virtualClusterId}/jobruns/{jobRunId}
 		 * @param {string} jobRunId The ID of the job run request. 
+		 *     Min length: 1    Max length: 64
 		 * @param {string} virtualClusterId The ID of the virtual cluster for which the job run is submitted.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeJobRunResponse} Success
 		 */
 		DescribeJobRun(jobRunId: string, virtualClusterId: string): Observable<DescribeJobRunResponse> {
@@ -1415,7 +1419,9 @@ export namespace MyNS {
 		 * @param {Date} createdAfter The date and time after which the job templates were created.
 		 * @param {Date} createdBefore  The date and time before which the job templates were created.
 		 * @param {number} maxResults  The maximum number of job templates that can be listed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken  The token for the next set of job templates to return.
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListJobTemplatesResponse} Success
 		 */
 		ListJobTemplates(createdAfter: Date | null | undefined, createdBefore: Date | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListJobTemplatesResponse> {
@@ -1426,6 +1432,7 @@ export namespace MyNS {
 		 * Creates a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 		 * Post virtualclusters/{virtualClusterId}/endpoints
 		 * @param {string} virtualClusterId The ID of the virtual cluster for which a managed endpoint is created.
+		 *     Min length: 1    Max length: 64
 		 * @return {CreateManagedEndpointResponse} Success
 		 */
 		CreateManagedEndpoint(virtualClusterId: string, requestBody: CreateManagedEndpointPostBody): Observable<CreateManagedEndpointResponse> {
@@ -1436,12 +1443,17 @@ export namespace MyNS {
 		 * Lists managed endpoints based on a set of parameters. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 		 * Get virtualclusters/{virtualClusterId}/endpoints
 		 * @param {string} virtualClusterId The ID of the virtual cluster.
+		 *     Min length: 1    Max length: 64
 		 * @param {Date} createdBefore The date and time before which the endpoints are created.
 		 * @param {Date} createdAfter  The date and time after which the endpoints are created.
 		 * @param {Array<string>} types The types of the managed endpoints.
+		 *     Maximum items: 10
 		 * @param {Array<EndpointState>} states The states of the managed endpoints.
+		 *     Maximum items: 10
 		 * @param {number} maxResults The maximum number of managed endpoints that can be listed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken  The token for the next set of managed endpoints to return. 
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListManagedEndpointsResponse} Success
 		 */
 		ListManagedEndpoints(virtualClusterId: string, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, types: Array<string> | null | undefined, states: Array<EndpointState> | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListManagedEndpointsResponse> {
@@ -1461,12 +1473,16 @@ export namespace MyNS {
 		 * Lists information about the specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
 		 * Get virtualclusters
 		 * @param {string} containerProviderId The container provider ID of the virtual cluster.
+		 *     Min length: 1    Max length: 1024
 		 * @param {ContainerProviderType} containerProviderType The container provider type of the virtual cluster. Amazon EKS is the only supported type as of now.
 		 * @param {Date} createdAfter The date and time after which the virtual clusters are created.
 		 * @param {Date} createdBefore The date and time before which the virtual clusters are created.
 		 * @param {Array<VirtualClusterState>} states The states of the requested virtual clusters.
+		 *     Maximum items: 10
 		 * @param {number} maxResults The maximum number of virtual clusters that can be listed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken The token for the next set of virtual clusters to return. 
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListVirtualClustersResponse} Success
 		 */
 		ListVirtualClusters(containerProviderId: string | null | undefined, containerProviderType: ContainerProviderType | null | undefined, createdAfter: Date | null | undefined, createdBefore: Date | null | undefined, states: Array<VirtualClusterState> | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListVirtualClustersResponse> {
@@ -1477,6 +1493,7 @@ export namespace MyNS {
 		 * Deletes a job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
 		 * Delete jobtemplates/{templateId}
 		 * @param {string} templateId The ID of the job template that will be deleted.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteJobTemplateResponse} Success
 		 */
 		DeleteJobTemplate(templateId: string): Observable<DeleteJobTemplateResponse> {
@@ -1487,6 +1504,7 @@ export namespace MyNS {
 		 * Displays detailed information about a specified job template. Job template stores values of StartJobRun API request in a template and can be used to start a job run. Job template allows two use cases: avoid repeating recurring StartJobRun API request values, enforcing certain values in StartJobRun API request.
 		 * Get jobtemplates/{templateId}
 		 * @param {string} templateId The ID of the job template that will be described.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeJobTemplateResponse} Success
 		 */
 		DescribeJobTemplate(templateId: string): Observable<DescribeJobTemplateResponse> {
@@ -1497,7 +1515,9 @@ export namespace MyNS {
 		 * Deletes a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 		 * Delete virtualclusters/{virtualClusterId}/endpoints/{endpointId}
 		 * @param {string} endpointId The ID of the managed endpoint.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} virtualClusterId The ID of the endpoint's virtual cluster.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteManagedEndpointResponse} Success
 		 */
 		DeleteManagedEndpoint(endpointId: string, virtualClusterId: string): Observable<DeleteManagedEndpointResponse> {
@@ -1508,7 +1528,9 @@ export namespace MyNS {
 		 * Displays detailed information about a managed endpoint. A managed endpoint is a gateway that connects Amazon EMR Studio to Amazon EMR on EKS so that Amazon EMR Studio can communicate with your virtual cluster.
 		 * Get virtualclusters/{virtualClusterId}/endpoints/{endpointId}
 		 * @param {string} endpointId This output displays ID of the managed endpoint.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} virtualClusterId The ID of the endpoint's virtual cluster.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeManagedEndpointResponse} Success
 		 */
 		DescribeManagedEndpoint(endpointId: string, virtualClusterId: string): Observable<DescribeManagedEndpointResponse> {
@@ -1519,6 +1541,7 @@ export namespace MyNS {
 		 * Deletes a virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
 		 * Delete virtualclusters/{virtualClusterId}
 		 * @param {string} virtualClusterId The ID of the virtual cluster that will be deleted.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteVirtualClusterResponse} Success
 		 */
 		DeleteVirtualCluster(virtualClusterId: string): Observable<DeleteVirtualClusterResponse> {
@@ -1529,6 +1552,7 @@ export namespace MyNS {
 		 * Displays detailed information about a specified virtual cluster. Virtual cluster is a managed entity on Amazon EMR on EKS. You can create, describe, list and delete virtual clusters. They do not consume any additional resource in your system. A single virtual cluster maps to a single Kubernetes namespace. Given this relationship, you can model virtual clusters the same way you model Kubernetes namespaces to meet your requirements.
 		 * Get virtualclusters/{virtualClusterId}
 		 * @param {string} virtualClusterId The ID of the virtual cluster that will be described.
+		 *     Min length: 1    Max length: 64
 		 * @return {DescribeVirtualClusterResponse} Success
 		 */
 		DescribeVirtualCluster(virtualClusterId: string): Observable<DescribeVirtualClusterResponse> {
@@ -1539,7 +1563,9 @@ export namespace MyNS {
 		 * Generate a session token to connect to a managed endpoint.
 		 * Post virtualclusters/{virtualClusterId}/endpoints/{endpointId}/credentials
 		 * @param {string} endpointId The ARN of the managed endpoint for which the request is submitted. 
+		 *     Min length: 1    Max length: 2048
 		 * @param {string} virtualClusterId The ARN of the Virtual Cluster which the Managed Endpoint belongs to. 
+		 *     Min length: 1    Max length: 2048
 		 * @return {GetManagedEndpointSessionCredentialsResponse} Success
 		 */
 		GetManagedEndpointSessionCredentials(endpointId: string, virtualClusterId: string, requestBody: GetManagedEndpointSessionCredentialsPostBody): Observable<GetManagedEndpointSessionCredentialsResponse> {
@@ -1550,12 +1576,17 @@ export namespace MyNS {
 		 * Lists job runs based on a set of parameters. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 		 * Get virtualclusters/{virtualClusterId}/jobruns
 		 * @param {string} virtualClusterId The ID of the virtual cluster for which to list the job run. 
+		 *     Min length: 1    Max length: 64
 		 * @param {Date} createdBefore The date and time before which the job runs were submitted.
 		 * @param {Date} createdAfter The date and time after which the job runs were submitted.
 		 * @param {string} name The name of the job run.
+		 *     Min length: 1    Max length: 64
 		 * @param {Array<JobRunState>} states The states of the job run.
+		 *     Maximum items: 10
 		 * @param {number} maxResults The maximum number of job runs that can be listed.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} nextToken The token for the next set of job runs to return.
+		 *     Min length: 1    Max length: 1024
 		 * @return {ListJobRunsResponse} Success
 		 */
 		ListJobRuns(virtualClusterId: string, createdBefore: Date | null | undefined, createdAfter: Date | null | undefined, name: string | null | undefined, states: Array<JobRunState> | null | undefined, maxResults: number | null | undefined, nextToken: string | null | undefined): Observable<ListJobRunsResponse> {
@@ -1566,6 +1597,7 @@ export namespace MyNS {
 		 * Starts a job run. A job run is a unit of work, such as a Spark jar, PySpark script, or SparkSQL query, that you submit to Amazon EMR on EKS.
 		 * Post virtualclusters/{virtualClusterId}/jobruns
 		 * @param {string} virtualClusterId The virtual cluster ID for which the job run request is submitted.
+		 *     Min length: 1    Max length: 64
 		 * @return {StartJobRunResponse} Success
 		 */
 		StartJobRun(virtualClusterId: string, requestBody: StartJobRunPostBody): Observable<StartJobRunResponse> {
@@ -1576,6 +1608,7 @@ export namespace MyNS {
 		 * Lists the tags assigned to the resources.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of tagged resources.
+		 *     Min length: 60    Max length: 500
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1586,6 +1619,7 @@ export namespace MyNS {
 		 * Assigns tags to resources. A tag is a label that you assign to an Amazon Web Services resource. Each tag consists of a key and an optional value, both of which you define. Tags enable you to categorize your Amazon Web Services resources by attributes such as purpose, owner, or environment. When you have many resources of the same type, you can quickly identify a specific resource based on the tags you've assigned to it. For example, you can define a set of tags for your Amazon EMR on EKS clusters to help you track each cluster's owner and stack level. We recommend that you devise a consistent set of tag keys for each resource type. You can then search and filter the resources based on the tags that you add.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of resources.
+		 *     Min length: 60    Max length: 500
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1596,7 +1630,9 @@ export namespace MyNS {
 		 * Removes tags from resources.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The ARN of resources.
+		 *     Min length: 60    Max length: 500
 		 * @param {Array<string>} tagKeys The tag keys of the resources.
+		 *     Minimum items: 0    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1609,16 +1645,16 @@ export namespace MyNS {
 		/**
 		 * The specified name of the job template.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: string;
 
 		/**
 		 * The client token of the job template.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 
@@ -1633,8 +1669,8 @@ export namespace MyNS {
 
 		/**
 		 * The KMS key ARN used to encrypt the job template.
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		kmsKeyArn?: string | null;
 	}
@@ -1643,16 +1679,16 @@ export namespace MyNS {
 		/**
 		 * The specified name of the job template.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token of the job template.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1661,8 +1697,8 @@ export namespace MyNS {
 
 		/**
 		 * The KMS key ARN used to encrypt the job template.
-		 * Max length: 2048
 		 * Min length: 3
+		 * Max length: 2048
 		 */
 		kmsKeyArn: FormControl<string | null | undefined>,
 	}
@@ -1703,39 +1739,39 @@ export namespace MyNS {
 		/**
 		 * The name of the managed endpoint.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: string;
 
 		/**
 		 * The type of the managed endpoint.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		type: string;
 
 		/**
 		 * The Amazon EMR release version.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		releaseLabel: string;
 
 		/**
 		 * The ARN of the execution role.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		executionRoleArn: string;
 
 		/**
 		 * The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.
-		 * Max length: 2048
 		 * Min length: 44
+		 * Max length: 2048
 		 */
 		certificateArn?: string | null;
 
@@ -1745,8 +1781,8 @@ export namespace MyNS {
 		/**
 		 * The client idempotency token for this create call.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 
@@ -1758,47 +1794,47 @@ export namespace MyNS {
 		/**
 		 * The name of the managed endpoint.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The type of the managed endpoint.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		type: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon EMR release version.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		releaseLabel: FormControl<string | null | undefined>,
 
 		/**
 		 * The ARN of the execution role.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		executionRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The certificate ARN provided by users for the managed endpoint. This field is under deprecation and will be removed in future releases.
-		 * Max length: 2048
 		 * Min length: 44
+		 * Max length: 2048
 		 */
 		certificateArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The client idempotency token for this create call.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1835,8 +1871,8 @@ export namespace MyNS {
 		/**
 		 * The specified name of the virtual cluster.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: string;
 
@@ -1849,8 +1885,8 @@ export namespace MyNS {
 		/**
 		 * The client token of the virtual cluster.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 
@@ -1862,16 +1898,16 @@ export namespace MyNS {
 		/**
 		 * The specified name of the virtual cluster.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The client token of the virtual cluster.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
@@ -1909,33 +1945,36 @@ export namespace MyNS {
 		/**
 		 * The IAM Execution Role ARN that will be used by the job run.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		executionRoleArn: string;
 
 		/**
 		 * Type of the token requested. Currently supported and default value of this field is “TOKEN.”
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		credentialType: string;
 
-		/** Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours. */
+		/**
+		 * Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInSeconds?: number | null;
 
 		/**
 		 * String identifier used to separate sections of the execution logs uploaded to S3.
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		logContext?: string | null;
 
 		/**
 		 * The client idempotency token of the job run request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken?: string | null;
 	}
@@ -1944,33 +1983,36 @@ export namespace MyNS {
 		/**
 		 * The IAM Execution Role ARN that will be used by the job run.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		executionRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * Type of the token requested. Currently supported and default value of this field is “TOKEN.”
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		credentialType: FormControl<string | null | undefined>,
 
-		/** Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours. */
+		/**
+		 * Duration in seconds for which the session token is valid. The default duration is 15 minutes and the maximum is 12 hours.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		durationInSeconds: FormControl<number | null | undefined>,
 
 		/**
 		 * String identifier used to separate sections of the execution logs uploaded to S3.
-		 * Max length: 63
 		 * Min length: 3
+		 * Max length: 63
 		 */
 		logContext: FormControl<string | null | undefined>,
 
 		/**
 		 * The client idempotency token of the job run request.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 	}
@@ -1989,30 +2031,30 @@ export namespace MyNS {
 
 		/**
 		 * The name of the job run.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name?: string | null;
 
 		/**
 		 * The client idempotency token of the job run request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: string;
 
 		/**
 		 * The execution role ARN for the job run.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		executionRoleArn?: string | null;
 
 		/**
 		 * The Amazon EMR release version to use for the job run.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		releaseLabel?: string | null;
 
@@ -2027,8 +2069,8 @@ export namespace MyNS {
 
 		/**
 		 * The job template ID to be used to start the job run.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		jobTemplateId?: string | null;
 
@@ -2042,30 +2084,30 @@ export namespace MyNS {
 
 		/**
 		 * The name of the job run.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The client idempotency token of the job run request.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		clientToken: FormControl<string | null | undefined>,
 
 		/**
 		 * The execution role ARN for the job run.
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		executionRoleArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The Amazon EMR release version to use for the job run.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		releaseLabel: FormControl<string | null | undefined>,
 
@@ -2074,8 +2116,8 @@ export namespace MyNS {
 
 		/**
 		 * The job template ID to be used to start the job run.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		jobTemplateId: FormControl<string | null | undefined>,
 

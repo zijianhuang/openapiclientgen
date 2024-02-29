@@ -13,12 +13,19 @@ export namespace MyNS {
 		 * under given conditions.
 		 * Get jb2008
 		 * @param {number} year Year in YYYY format
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} month Month in MM format
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} day Day in DD format
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} altitude Altitude in (km)
+		 *     Type: double
 		 * @param {number} geodetic_latitude GeodeticLatitude (deg) -90 to 90 deg
+		 *     Type: double
 		 * @param {number} geodetic_longitude GeodeticLongitude (deg) 0 to 360 deg
+		 *     Type: double
 		 * @param {number} utc Coordinated Universal Time (hrs)
+		 *     Type: double
 		 * @return {App_api_endpoints_JB2008_sample_atmosphereReturn} Successful atmospheric density calculation
 		 */
 		App_api_endpoints_JB2008_sample_atmosphere(year: number, month: number, day: number, altitude: number, geodetic_latitude: number, geodetic_longitude: number, utc: number): Observable<App_api_endpoints_JB2008_sample_atmosphereReturn> {
@@ -30,15 +37,25 @@ export namespace MyNS {
 		 * at specified conditions.
 		 * Get nrlmsise00
 		 * @param {number} year Year in YYYY format
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} month Month in MM format
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} day Day in DD format
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} altitude Altitude in (km)
+		 *     Type: double
 		 * @param {number} geodetic_latitude GeodeticLatitude (deg) -90 to 90 deg
+		 *     Type: double
 		 * @param {number} geodetic_longitude GeodeticLongitude (deg) 0 to 360 deg
+		 *     Type: double
 		 * @param {number} utc Coordinated Universal Time (hrs)
+		 *     Type: double
 		 * @param {number} f107a (Optional) 81 day average of F10.7 flux (SFU) centered on the specified day. F107 and F107A values correspond to the 10.7 cm radio flux at the actual distance of Earth from Sun rather than radio flux at 1 AU. F107, F107A, AP effects can be neglected below 80 km. If unspecified, values provided by the US National Oceanic and  Atmospheric Administration are retrieved automatically.
+		 *     Type: double
 		 * @param {number} f107 (Optional) Daily F10.7 cm radio flux for previous day (SFU). F107 and F107A values correspond to the 10.7 cm radio flux at the actual distance of Earth from Sun rather than radio flux at 1 AU. F107, F107A, AP effects can be neglected below 80 km. If unspecified, values provided by the US National Oceanic and  Atmospheric Administration are retrieved automatically.
+		 *     Type: double
 		 * @param {number} ap (Optional) The Ap-index provides a daily average level for geomagnetic activity F107, F107A, AP effects can be neglected below 80 km. If unspecified, the average of values in the 24 hours preceding the date-time  are automatically calculated from data provided by GFZ German Research Centre  for Geosciences.
+		 *     Type: double
 		 * @return {App_api_endpoints_NRLMSISE00_sample_atmosphereReturn} Successful atmospheric density calculation
 		 */
 		App_api_endpoints_NRLMSISE00_sample_atmosphere(year: number, month: number, day: number, altitude: number, geodetic_latitude: number, geodetic_longitude: number, utc: number, f107a: number | null | undefined, f107: number | null | undefined, ap: number | null | undefined): Observable<App_api_endpoints_NRLMSISE00_sample_atmosphereReturn> {
@@ -50,13 +67,21 @@ export namespace MyNS {
 		 * at a given position and time on 42-48 hour forecast horizon (10 minute resolution). NOTE: latitudes outside the interval (-90,90) are clipped to the endpoints; longitudes outside (0,360) are wrapped.
 		 * Get wam-ipe
 		 * @param {number} latitude Latitude (deg) -90 to 90 deg
+		 *     Type: double
 		 * @param {number} longitude Longitude (deg) 0 to 360 deg or -180 to 180 deg
+		 *     Type: double
 		 * @param {number} altitude Altitude in (km)
+		 *     Type: double
 		 * @param {number} year Year in YYYY format
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} month Month in MM format
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} day Day in DD format
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} hour UTC Hour of the day in 24 hour format
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {number} minute Minute of the given hour
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {App_api_wfs_endpoints_WFS_get_valuesReturn} Successful wam-ipe calculation
 		 */
 		App_api_wfs_endpoints_WFS_get_values(latitude: number, longitude: number, altitude: number, year: number, month: number, day: number, hour: number, minute: number): Observable<App_api_wfs_endpoints_WFS_get_valuesReturn> {
@@ -79,10 +104,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_JB2008_sample_atmosphereReturnAt_alt_temp {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_JB2008_sample_atmosphereReturnAt_alt_tempFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_JB2008_sample_atmosphereReturnAt_alt_tempFormGroup() {
@@ -95,10 +124,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_JB2008_sample_atmosphereReturnExospheric_temp {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_JB2008_sample_atmosphereReturnExospheric_tempFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_JB2008_sample_atmosphereReturnExospheric_tempFormGroup() {
@@ -111,10 +144,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_JB2008_sample_atmosphereReturnTotal_mass_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_JB2008_sample_atmosphereReturnTotal_mass_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_JB2008_sample_atmosphereReturnTotal_mass_densityFormGroup() {
@@ -151,10 +188,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnAr_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnAr_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnAr_densityFormGroup() {
@@ -167,10 +208,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnH_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnH_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnH_densityFormGroup() {
@@ -183,10 +228,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnHe_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnHe_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnHe_densityFormGroup() {
@@ -199,10 +248,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnN2_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnN2_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnN2_densityFormGroup() {
@@ -215,10 +268,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnN_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnN_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnN_densityFormGroup() {
@@ -231,10 +288,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnO2_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnO2_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnO2_densityFormGroup() {
@@ -247,10 +308,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnO_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnO_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnO_densityFormGroup() {
@@ -263,10 +328,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnAnomalous_O_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnAnomalous_O_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnAnomalous_O_densityFormGroup() {
@@ -278,9 +347,13 @@ export namespace MyNS {
 	}
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnAp {
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnApFormProperties {
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnApFormGroup() {
@@ -292,10 +365,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnAt_alt_temp {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnAt_alt_tempFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnAt_alt_tempFormGroup() {
@@ -308,10 +385,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnExospheric_temp {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnExospheric_tempFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnExospheric_tempFormGroup() {
@@ -324,10 +405,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnF107 {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnF107FormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnF107FormGroup() {
@@ -340,10 +425,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnF107a {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnF107aFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnF107aFormGroup() {
@@ -356,10 +445,14 @@ export namespace MyNS {
 
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnTotal_mass_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_endpoints_NRLMSISE00_sample_atmosphereReturnTotal_mass_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_endpoints_NRLMSISE00_sample_atmosphereReturnTotal_mass_densityFormGroup() {
@@ -425,10 +518,14 @@ export namespace MyNS {
 
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnN2_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnN2_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wfs_endpoints_WFS_get_valuesReturnN2_densityFormGroup() {
@@ -441,10 +538,14 @@ export namespace MyNS {
 
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnO2_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnO2_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wfs_endpoints_WFS_get_valuesReturnO2_densityFormGroup() {
@@ -457,10 +558,14 @@ export namespace MyNS {
 
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnO_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnO_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wfs_endpoints_WFS_get_valuesReturnO_densityFormGroup() {
@@ -473,10 +578,14 @@ export namespace MyNS {
 
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnEastward_wind_neutral {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnEastward_wind_neutralFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wfs_endpoints_WFS_get_valuesReturnEastward_wind_neutralFormGroup() {
@@ -489,10 +598,14 @@ export namespace MyNS {
 
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnNorthward_wind_neutral {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnNorthward_wind_neutralFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wfs_endpoints_WFS_get_valuesReturnNorthward_wind_neutralFormGroup() {
@@ -504,13 +617,25 @@ export namespace MyNS {
 	}
 
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnPoint {
+
+		/** Type: double */
 		altitude?: number | null;
+
+		/** Type: double */
 		latitude?: number | null;
+
+		/** Type: double */
 		longitude?: number | null;
 	}
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnPointFormProperties {
+
+		/** Type: double */
 		altitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		latitude: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		longitude: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wfs_endpoints_WFS_get_valuesReturnPointFormGroup() {
@@ -524,10 +649,14 @@ export namespace MyNS {
 
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnTemp_neutral {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnTemp_neutralFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wfs_endpoints_WFS_get_valuesReturnTemp_neutralFormGroup() {
@@ -540,10 +669,14 @@ export namespace MyNS {
 
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnTotal_mass_density {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnTotal_mass_densityFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wfs_endpoints_WFS_get_valuesReturnTotal_mass_densityFormGroup() {
@@ -556,10 +689,14 @@ export namespace MyNS {
 
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnUpward_wind_neutral {
 		units?: string | null;
+
+		/** Type: double */
 		value?: number | null;
 	}
 	export interface App_api_wfs_endpoints_WFS_get_valuesReturnUpward_wind_neutralFormProperties {
 		units: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		value: FormControl<number | null | undefined>,
 	}
 	export function CreateApp_api_wfs_endpoints_WFS_get_valuesReturnUpward_wind_neutralFormGroup() {

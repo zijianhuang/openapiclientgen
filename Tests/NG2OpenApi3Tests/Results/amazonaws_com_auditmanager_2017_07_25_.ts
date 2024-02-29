@@ -3387,6 +3387,7 @@ export namespace MyNS {
 		 * Associates an evidence folder to an assessment report in an Audit Manager assessment.
 		 * Put assessments/{assessmentId}/associateToAssessmentReport
 		 * @param {string} assessmentId  The identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {AssociateAssessmentReportEvidenceFolderResponse} Success
 		 */
 		AssociateAssessmentReportEvidenceFolder(assessmentId: string, requestBody: AssociateAssessmentReportEvidenceFolderPutBody): Observable<AssociateAssessmentReportEvidenceFolderResponse> {
@@ -3397,6 +3398,7 @@ export namespace MyNS {
 		 * Associates a list of evidence to an assessment report in an Audit Manager assessment.
 		 * Put assessments/{assessmentId}/batchAssociateToAssessmentReport
 		 * @param {string} assessmentId  The identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchAssociateAssessmentReportEvidenceResponse} Success
 		 */
 		BatchAssociateAssessmentReportEvidence(assessmentId: string, requestBody: BatchAssociateAssessmentReportEvidencePutBody): Observable<BatchAssociateAssessmentReportEvidenceResponse> {
@@ -3407,6 +3409,7 @@ export namespace MyNS {
 		 * Creates a batch of delegations for an assessment in Audit Manager.
 		 * Post assessments/{assessmentId}/delegations
 		 * @param {string} assessmentId  The identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchCreateDelegationByAssessmentResponse} Success
 		 */
 		BatchCreateDelegationByAssessment(assessmentId: string, requestBody: BatchCreateDelegationByAssessmentPostBody): Observable<BatchCreateDelegationByAssessmentResponse> {
@@ -3417,6 +3420,7 @@ export namespace MyNS {
 		 * Deletes a batch of delegations for an assessment in Audit Manager.
 		 * Put assessments/{assessmentId}/delegations
 		 * @param {string} assessmentId  The identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchDeleteDelegationByAssessmentResponse} Success
 		 */
 		BatchDeleteDelegationByAssessment(assessmentId: string, requestBody: BatchDeleteDelegationByAssessmentPutBody): Observable<BatchDeleteDelegationByAssessmentResponse> {
@@ -3427,6 +3431,7 @@ export namespace MyNS {
 		 * Disassociates a list of evidence from an assessment report in Audit Manager.
 		 * Put assessments/{assessmentId}/batchDisassociateFromAssessmentReport
 		 * @param {string} assessmentId  The identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchDisassociateAssessmentReportEvidenceResponse} Success
 		 */
 		BatchDisassociateAssessmentReportEvidence(assessmentId: string, requestBody: BatchDisassociateAssessmentReportEvidencePutBody): Observable<BatchDisassociateAssessmentReportEvidenceResponse> {
@@ -3437,8 +3442,11 @@ export namespace MyNS {
 		 * <p>Adds one or more pieces of evidence to a control in an Audit Manager assessment. </p> <p>You can import manual evidence from any S3 bucket by specifying the S3 URI of the object. You can also upload a file from your browser, or enter plain text in response to a risk assessment question. </p> <p>The following restrictions apply to this action:</p> <ul> <li> <p> <code>manualEvidence</code> can be only one of the following: <code>evidenceFileName</code>, <code>s3ResourcePath</code>, or <code>textResponse</code> </p> </li> <li> <p>Maximum size of an individual evidence file: 100 MB</p> </li> <li> <p>Number of daily manual evidence uploads per control: 100</p> </li> <li> <p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i> </p> </li> </ul> <p>For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
 		 * Post assessments/{assessmentId}/controlSets/{controlSetId}/controls/{controlId}/evidence
 		 * @param {string} assessmentId  The identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} controlSetId  The identifier for the control set. 
+		 *     Min length: 1    Max length: 300
 		 * @param {string} controlId  The identifier for the control. 
+		 *     Min length: 36    Max length: 36
 		 * @return {BatchImportEvidenceToAssessmentControlResponse} Success
 		 */
 		BatchImportEvidenceToAssessmentControl(assessmentId: string, controlSetId: string, controlId: string, requestBody: BatchImportEvidenceToAssessmentControlPostBody): Observable<BatchImportEvidenceToAssessmentControlResponse> {
@@ -3459,7 +3467,9 @@ export namespace MyNS {
 		 * Get assessments
 		 * @param {AssessmentStatus} status  The current status of the assessment.
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults  Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListAssessmentsResponse} Success
 		 */
 		ListAssessments(status: AssessmentStatus | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssessmentsResponse> {
@@ -3479,6 +3489,7 @@ export namespace MyNS {
 		 * Creates an assessment report for the specified assessment.
 		 * Post assessments/{assessmentId}/reports
 		 * @param {string} assessmentId  The identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {CreateAssessmentReportResponse} Success
 		 */
 		CreateAssessmentReport(assessmentId: string, requestBody: CreateAssessmentReportPostBody): Observable<CreateAssessmentReportResponse> {
@@ -3498,6 +3509,7 @@ export namespace MyNS {
 		 * Deletes an assessment in Audit Manager.
 		 * Delete assessments/{assessmentId}
 		 * @param {string} assessmentId  The identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {DeleteAssessmentResponse} Success
 		 */
 		DeleteAssessment(assessmentId: string): Observable<DeleteAssessmentResponse> {
@@ -3508,6 +3520,7 @@ export namespace MyNS {
 		 * Gets information about a specified assessment.
 		 * Get assessments/{assessmentId}
 		 * @param {string} assessmentId The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {GetAssessmentResponse} Success
 		 */
 		GetAssessment(assessmentId: string): Observable<GetAssessmentResponse> {
@@ -3518,6 +3531,7 @@ export namespace MyNS {
 		 * Edits an Audit Manager assessment.
 		 * Put assessments/{assessmentId}
 		 * @param {string} assessmentId  The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateAssessmentResponse} Success
 		 */
 		UpdateAssessment(assessmentId: string, requestBody: UpdateAssessmentPutBody): Observable<UpdateAssessmentResponse> {
@@ -3528,6 +3542,7 @@ export namespace MyNS {
 		 * Deletes a custom framework in Audit Manager.
 		 * Delete assessmentFrameworks/{frameworkId}
 		 * @param {string} frameworkId  The identifier for the custom framework. 
+		 *     Min length: 36    Max length: 36
 		 * @return {DeleteAssessmentFrameworkResponse} Success
 		 */
 		DeleteAssessmentFramework(frameworkId: string): Observable<DeleteAssessmentFrameworkResponse> {
@@ -3538,6 +3553,7 @@ export namespace MyNS {
 		 * Gets information about a specified framework.
 		 * Get assessmentFrameworks/{frameworkId}
 		 * @param {string} frameworkId  The identifier for the framework. 
+		 *     Min length: 36    Max length: 36
 		 * @return {GetAssessmentFrameworkResponse} Success
 		 */
 		GetAssessmentFramework(frameworkId: string): Observable<GetAssessmentFrameworkResponse> {
@@ -3548,6 +3564,7 @@ export namespace MyNS {
 		 * Updates a custom framework in Audit Manager.
 		 * Put assessmentFrameworks/{frameworkId}
 		 * @param {string} frameworkId  The unique identifier for the framework. 
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateAssessmentFrameworkResponse} Success
 		 */
 		UpdateAssessmentFramework(frameworkId: string, requestBody: UpdateAssessmentFrameworkPutBody): Observable<UpdateAssessmentFrameworkResponse> {
@@ -3558,6 +3575,7 @@ export namespace MyNS {
 		 * Deletes a share request for a custom framework in Audit Manager.
 		 * Delete assessmentFrameworkShareRequests/{requestId}#requestType
 		 * @param {string} requestId The unique identifier for the share request to be deleted.
+		 *     Min length: 36    Max length: 36
 		 * @param {ShareRequestType} requestType Specifies whether the share request is a sent request or a received request.
 		 * @return {DeleteAssessmentFrameworkShareResponse} Success
 		 */
@@ -3569,7 +3587,9 @@ export namespace MyNS {
 		 * <p>Deletes an assessment report in Audit Manager. </p> <p>When you run the <code>DeleteAssessmentReport</code> operation, Audit Manager attempts to delete the following data:</p> <ol> <li> <p>The specified assessment report that’s stored in your S3 bucket</p> </li> <li> <p>The associated metadata that’s stored in Audit Manager</p> </li> </ol> <p>If Audit Manager can’t access the assessment report in your S3 bucket, the report isn’t deleted. In this event, the <code>DeleteAssessmentReport</code> operation doesn’t fail. Instead, it proceeds to delete the associated metadata only. You must then delete the assessment report from the S3 bucket yourself. </p> <p>This scenario happens when Audit Manager receives a <code>403 (Forbidden)</code> or <code>404 (Not Found)</code> error from Amazon S3. To avoid this, make sure that your S3 bucket is available, and that you configured the correct permissions for Audit Manager to delete resources in your S3 bucket. For an example permissions policy that you can use, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/security_iam_id-based-policy-examples.html#full-administrator-access-assessment-report-destination">Assessment report destination permissions</a> in the <i>Audit Manager User Guide</i>. For information about the issues that could cause a <code>403 (Forbidden)</code> or <code>404 (Not Found</code>) error from Amazon S3, see <a href="https://docs.aws.amazon.com/AmazonS3/latest/API/ErrorResponses.html#ErrorCodeList">List of Error Codes</a> in the <i>Amazon Simple Storage Service API Reference</i>. </p>
 		 * Delete assessments/{assessmentId}/reports/{assessmentReportId}
 		 * @param {string} assessmentId  The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} assessmentReportId  The unique identifier for the assessment report. 
+		 *     Min length: 36    Max length: 36
 		 * @return {DeleteAssessmentReportResponse} Success
 		 */
 		DeleteAssessmentReport(assessmentId: string, assessmentReportId: string): Observable<DeleteAssessmentReportResponse> {
@@ -3580,6 +3600,7 @@ export namespace MyNS {
 		 * <p> Deletes a custom control in Audit Manager. </p> <important> <p>When you invoke this operation, the custom control is deleted from any frameworks or assessments that it’s currently part of. As a result, Audit Manager will stop collecting evidence for that custom control in all of your assessments. This includes assessments that you previously created before you deleted the custom control.</p> </important>
 		 * Delete controls/{controlId}
 		 * @param {string} controlId  The unique identifier for the control. 
+		 *     Min length: 36    Max length: 36
 		 * @return {DeleteControlResponse} Success
 		 */
 		DeleteControl(controlId: string): Observable<DeleteControlResponse> {
@@ -3590,6 +3611,7 @@ export namespace MyNS {
 		 * Gets information about a specified control.
 		 * Get controls/{controlId}
 		 * @param {string} controlId  The identifier for the control. 
+		 *     Min length: 36    Max length: 36
 		 * @return {GetControlResponse} Success
 		 */
 		GetControl(controlId: string): Observable<GetControlResponse> {
@@ -3600,6 +3622,7 @@ export namespace MyNS {
 		 * Updates a custom control in Audit Manager.
 		 * Put controls/{controlId}
 		 * @param {string} controlId  The identifier for the control. 
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateControlResponse} Success
 		 */
 		UpdateControl(controlId: string, requestBody: UpdateControlPutBody): Observable<UpdateControlResponse> {
@@ -3628,6 +3651,7 @@ export namespace MyNS {
 		 * Disassociates an evidence folder from the specified assessment report in Audit Manager.
 		 * Put assessments/{assessmentId}/disassociateFromAssessmentReport
 		 * @param {string} assessmentId  The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {DisassociateAssessmentReportEvidenceFolderResponse} Success
 		 */
 		DisassociateAssessmentReportEvidenceFolder(assessmentId: string, requestBody: DisassociateAssessmentReportEvidenceFolderPutBody): Observable<DisassociateAssessmentReportEvidenceFolderResponse> {
@@ -3647,7 +3671,9 @@ export namespace MyNS {
 		 * Gets the URL of an assessment report in Audit Manager.
 		 * Get assessments/{assessmentId}/reports/{assessmentReportId}/url
 		 * @param {string} assessmentReportId  The unique identifier for the assessment report. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} assessmentId  The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {GetAssessmentReportUrlResponse} Success
 		 */
 		GetAssessmentReportUrl(assessmentReportId: string, assessmentId: string): Observable<GetAssessmentReportUrlResponse> {
@@ -3658,10 +3684,15 @@ export namespace MyNS {
 		 * Gets a list of changelogs from Audit Manager.
 		 * Get assessments/{assessmentId}/changelogs
 		 * @param {string} assessmentId The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} controlSetId  The unique identifier for the control set. 
+		 *     Min length: 1    Max length: 300
 		 * @param {string} controlId  The unique identifier for the control. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {GetChangeLogsResponse} Success
 		 */
 		GetChangeLogs(assessmentId: string, controlSetId: string | null | undefined, controlId: string | null | undefined, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetChangeLogsResponse> {
@@ -3672,7 +3703,9 @@ export namespace MyNS {
 		 * Gets a list of delegations from an audit owner to a delegate.
 		 * Get delegations
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults  Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {GetDelegationsResponse} Success
 		 */
 		GetDelegations(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetDelegationsResponse> {
@@ -3683,9 +3716,13 @@ export namespace MyNS {
 		 * Gets information about a specified evidence item.
 		 * Get assessments/{assessmentId}/controlSets/{controlSetId}/evidenceFolders/{evidenceFolderId}/evidence/{evidenceId}
 		 * @param {string} assessmentId  The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} controlSetId  The unique identifier for the control set. 
+		 *     Min length: 1    Max length: 300
 		 * @param {string} evidenceFolderId  The unique identifier for the folder that the evidence is stored in. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} evidenceId  The unique identifier for the evidence. 
+		 *     Min length: 36    Max length: 36
 		 * @return {GetEvidenceResponse} Success
 		 */
 		GetEvidence(assessmentId: string, controlSetId: string, evidenceFolderId: string, evidenceId: string): Observable<GetEvidenceResponse> {
@@ -3696,10 +3733,15 @@ export namespace MyNS {
 		 * Gets all evidence from a specified evidence folder in Audit Manager.
 		 * Get assessments/{assessmentId}/controlSets/{controlSetId}/evidenceFolders/{evidenceFolderId}/evidence
 		 * @param {string} assessmentId  The identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} controlSetId  The identifier for the control set. 
+		 *     Min length: 1    Max length: 300
 		 * @param {string} evidenceFolderId  The unique identifier for the folder that the evidence is stored in. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults  Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {GetEvidenceByEvidenceFolderResponse} Success
 		 */
 		GetEvidenceByEvidenceFolder(assessmentId: string, controlSetId: string, evidenceFolderId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetEvidenceByEvidenceFolderResponse> {
@@ -3710,6 +3752,7 @@ export namespace MyNS {
 		 * <p>Creates a presigned Amazon S3 URL that can be used to upload a file as manual evidence. For instructions on how to use this operation, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#how-to-upload-manual-evidence-files">Upload a file from your browser </a> in the <i>Audit Manager User Guide</i>.</p> <p>The following restrictions apply to this operation:</p> <ul> <li> <p>Maximum size of an individual evidence file: 100 MB</p> </li> <li> <p>Number of daily manual evidence uploads per control: 100</p> </li> <li> <p>Supported file formats: See <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i> </p> </li> </ul> <p>For more information about Audit Manager service restrictions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/service-quotas.html">Quotas and restrictions for Audit Manager</a>.</p>
 		 * Get evidenceFileUploadUrl#fileName
 		 * @param {string} fileName The file that you want to upload. For a list of supported file formats, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/upload-evidence.html#supported-manual-evidence-files">Supported file types for manual evidence</a> in the <i>Audit Manager User Guide</i>.
+		 *     Min length: 1    Max length: 300
 		 * @return {GetEvidenceFileUploadUrlResponse} Success
 		 */
 		GetEvidenceFileUploadUrl(fileName: string): Observable<GetEvidenceFileUploadUrlResponse> {
@@ -3720,8 +3763,11 @@ export namespace MyNS {
 		 * Gets an evidence folder from a specified assessment in Audit Manager.
 		 * Get assessments/{assessmentId}/controlSets/{controlSetId}/evidenceFolders/{evidenceFolderId}
 		 * @param {string} assessmentId  The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} controlSetId  The unique identifier for the control set. 
+		 *     Min length: 1    Max length: 300
 		 * @param {string} evidenceFolderId  The unique identifier for the folder that the evidence is stored in. 
+		 *     Min length: 36    Max length: 36
 		 * @return {GetEvidenceFolderResponse} Success
 		 */
 		GetEvidenceFolder(assessmentId: string, controlSetId: string, evidenceFolderId: string): Observable<GetEvidenceFolderResponse> {
@@ -3732,8 +3778,11 @@ export namespace MyNS {
 		 * Gets the evidence folders from a specified assessment in Audit Manager.
 		 * Get assessments/{assessmentId}/evidenceFolders
 		 * @param {string} assessmentId  The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults  Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {GetEvidenceFoldersByAssessmentResponse} Success
 		 */
 		GetEvidenceFoldersByAssessment(assessmentId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetEvidenceFoldersByAssessmentResponse> {
@@ -3744,10 +3793,15 @@ export namespace MyNS {
 		 * Gets a list of evidence folders that are associated with a specified control in an Audit Manager assessment.
 		 * Get assessments/{assessmentId}/evidenceFolders-by-assessment-control/{controlSetId}/{controlId}
 		 * @param {string} assessmentId  The identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} controlSetId  The identifier for the control set. 
+		 *     Min length: 1    Max length: 300
 		 * @param {string} controlId  The identifier for the control. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults  Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {GetEvidenceFoldersByAssessmentControlResponse} Success
 		 */
 		GetEvidenceFoldersByAssessmentControl(assessmentId: string, controlSetId: string, controlId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<GetEvidenceFoldersByAssessmentControlResponse> {
@@ -3767,6 +3821,7 @@ export namespace MyNS {
 		 * Gets the latest analytics data for a specific active assessment.
 		 * Get insights/assessments/{assessmentId}
 		 * @param {string} assessmentId The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {GetInsightsByAssessmentResponse} Success
 		 */
 		GetInsightsByAssessment(assessmentId: string): Observable<GetInsightsByAssessmentResponse> {
@@ -3805,9 +3860,13 @@ export namespace MyNS {
 		 * <p>Lists the latest analytics data for controls within a specific control domain and a specific active assessment.</p> <note> <p>Control insights are listed only if the control belongs to the control domain and assessment that was specified. Moreover, the control must have collected evidence on the <code>lastUpdated</code> date of <code>controlInsightsByAssessment</code>. If neither of these conditions are met, no data is listed for that control. </p> </note>
 		 * Get insights/controls-by-assessment#controlDomainId&assessmentId
 		 * @param {string} controlDomainId The unique identifier for the control domain. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} assessmentId The unique identifier for the active assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListAssessmentControlInsightsByControlDomainResponse} Success
 		 */
 		ListAssessmentControlInsightsByControlDomain(controlDomainId: string, assessmentId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssessmentControlInsightsByControlDomainResponse> {
@@ -3819,7 +3878,9 @@ export namespace MyNS {
 		 * Get assessmentFrameworkShareRequests#requestType
 		 * @param {ShareRequestType} requestType  Specifies whether the share request is a sent request or a received request.
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults  Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListAssessmentFrameworkShareRequestsResponse} Success
 		 */
 		ListAssessmentFrameworkShareRequests(requestType: ShareRequestType, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssessmentFrameworkShareRequestsResponse> {
@@ -3831,7 +3892,9 @@ export namespace MyNS {
 		 * Get assessmentFrameworks#frameworkType
 		 * @param {FrameworkType} frameworkType  The type of framework, such as a standard framework or a custom framework. 
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults  Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListAssessmentFrameworksResponse} Success
 		 */
 		ListAssessmentFrameworks(frameworkType: FrameworkType, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssessmentFrameworksResponse> {
@@ -3842,7 +3905,9 @@ export namespace MyNS {
 		 * Returns a list of assessment reports created in Audit Manager.
 		 * Get assessmentReports
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults  Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListAssessmentReportsResponse} Success
 		 */
 		ListAssessmentReports(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListAssessmentReportsResponse> {
@@ -3853,7 +3918,9 @@ export namespace MyNS {
 		 * <p>Lists the latest analytics data for control domains across all of your active assessments. </p> <note> <p>A control domain is listed only if at least one of the controls within that domain collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this condition isn’t met, no data is listed for that control domain.</p> </note>
 		 * Get insights/control-domains
 		 * @param {string} nextToken The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListControlDomainInsightsResponse} Success
 		 */
 		ListControlDomainInsights(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListControlDomainInsightsResponse> {
@@ -3864,8 +3931,11 @@ export namespace MyNS {
 		 * <p>Lists analytics data for control domains within a specified active assessment.</p> <note> <p>A control domain is listed only if at least one of the controls within that domain collected evidence on the <code>lastUpdated</code> date of <code>controlDomainInsights</code>. If this condition isn’t met, no data is listed for that domain.</p> </note>
 		 * Get insights/control-domains-by-assessment#assessmentId
 		 * @param {string} assessmentId The unique identifier for the active assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListControlDomainInsightsByAssessmentResponse} Success
 		 */
 		ListControlDomainInsightsByAssessment(assessmentId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListControlDomainInsightsByAssessmentResponse> {
@@ -3876,8 +3946,11 @@ export namespace MyNS {
 		 * <p>Lists the latest analytics data for controls within a specific control domain across all active assessments.</p> <note> <p>Control insights are listed only if the control belongs to the control domain that was specified and the control collected evidence on the <code>lastUpdated</code> date of <code>controlInsightsMetadata</code>. If neither of these conditions are met, no data is listed for that control. </p> </note>
 		 * Get insights/controls#controlDomainId
 		 * @param {string} controlDomainId The unique identifier for the control domain. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} nextToken The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListControlInsightsByControlDomainResponse} Success
 		 */
 		ListControlInsightsByControlDomain(controlDomainId: string, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListControlInsightsByControlDomainResponse> {
@@ -3889,7 +3962,9 @@ export namespace MyNS {
 		 * Get controls#controlType
 		 * @param {FrameworkType} controlType  The type of control, such as a standard control or a custom control. 
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults  Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListControlsResponse} Success
 		 */
 		ListControls(controlType: FrameworkType, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListControlsResponse> {
@@ -3901,7 +3976,9 @@ export namespace MyNS {
 		 * Get dataSourceKeywords#source
 		 * @param {SourceType} source  The control mapping data source that the keywords apply to. 
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults  Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListKeywordsForDataSourceResponse} Success
 		 */
 		ListKeywordsForDataSource(source: SourceType, nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListKeywordsForDataSourceResponse> {
@@ -3912,7 +3989,9 @@ export namespace MyNS {
 		 * Returns a list of all Audit Manager notifications.
 		 * Get notifications
 		 * @param {string} nextToken  The pagination token that's used to fetch the next set of results. 
+		 *     Min length: 1    Max length: 1000
 		 * @param {number} maxResults  Represents the maximum number of results on a page or for an API request call. 
+		 *     Minimum: 1    Maximum: 1000
 		 * @return {ListNotificationsResponse} Success
 		 */
 		ListNotifications(nextToken: string | null | undefined, maxResults: number | null | undefined): Observable<ListNotificationsResponse> {
@@ -3923,6 +4002,7 @@ export namespace MyNS {
 		 * Returns a list of tags for the specified resource in Audit Manager.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn  The Amazon Resource Name (ARN) of the resource. 
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -3933,6 +4013,7 @@ export namespace MyNS {
 		 * Tags the specified resource in Audit Manager.
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn  The Amazon Resource Name (ARN) of the resource. 
+		 *     Min length: 20    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -3961,6 +4042,7 @@ export namespace MyNS {
 		 * <p> Creates a share request for a custom framework in Audit Manager. </p> <p>The share request specifies a recipient and notifies them that a custom framework is available. Recipients have 120 days to accept or decline the request. If no action is taken, the share request expires.</p> <p>When you create a share request, Audit Manager stores a snapshot of your custom framework in the US East (N. Virginia) Amazon Web Services Region. Audit Manager also stores a backup of the same snapshot in the US West (Oregon) Amazon Web Services Region.</p> <p>Audit Manager deletes the snapshot and the backup snapshot when one of the following events occurs:</p> <ul> <li> <p>The sender revokes the share request.</p> </li> <li> <p>The recipient declines the share request.</p> </li> <li> <p>The recipient encounters an error and doesn't successfully accept the share request.</p> </li> <li> <p>The share request expires before the recipient responds to the request.</p> </li> </ul> <p>When a sender <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/framework-sharing.html#framework-sharing-resend">resends a share request</a>, the snapshot is replaced with an updated version that corresponds with the latest version of the custom framework. </p> <p>When a recipient accepts a share request, the snapshot is replicated into their Amazon Web Services account under the Amazon Web Services Region that was specified in the share request. </p> <important> <p>When you invoke the <code>StartAssessmentFrameworkShare</code> API, you are about to share a custom framework with another Amazon Web Services account. You may not share a custom framework that is derived from a standard framework if the standard framework is designated as not eligible for sharing by Amazon Web Services, unless you have obtained permission to do so from the owner of the standard framework. To learn more about which standard frameworks are eligible for sharing, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/share-custom-framework-concepts-and-terminology.html#eligibility">Framework sharing eligibility</a> in the <i>Audit Manager User Guide</i>.</p> </important>
 		 * Post assessmentFrameworks/{frameworkId}/shareRequests
 		 * @param {string} frameworkId  The unique identifier for the custom framework to be shared. 
+		 *     Min length: 36    Max length: 36
 		 * @return {StartAssessmentFrameworkShareResponse} Success
 		 */
 		StartAssessmentFrameworkShare(frameworkId: string, requestBody: StartAssessmentFrameworkSharePostBody): Observable<StartAssessmentFrameworkShareResponse> {
@@ -3971,7 +4053,9 @@ export namespace MyNS {
 		 * Removes a tag from a resource in Audit Manager.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn  The Amazon Resource Name (ARN) of the specified resource. 
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} tagKeys  The name or key of the tag. 
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -3982,8 +4066,11 @@ export namespace MyNS {
 		 * Updates a control within an assessment in Audit Manager.
 		 * Put assessments/{assessmentId}/controlSets/{controlSetId}/controls/{controlId}
 		 * @param {string} assessmentId  The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} controlSetId  The unique identifier for the control set. 
+		 *     Min length: 1    Max length: 300
 		 * @param {string} controlId  The unique identifier for the control. 
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateAssessmentControlResponse} Success
 		 */
 		UpdateAssessmentControl(assessmentId: string, controlSetId: string, controlId: string, requestBody: UpdateAssessmentControlPutBody): Observable<UpdateAssessmentControlResponse> {
@@ -3994,7 +4081,9 @@ export namespace MyNS {
 		 * Updates the status of a control set in an Audit Manager assessment.
 		 * Put assessments/{assessmentId}/controlSets/{controlSetId}/status
 		 * @param {string} assessmentId  The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @param {string} controlSetId  The unique identifier for the control set. 
+		 *     Min length: 0    Max length: 2048
 		 * @return {UpdateAssessmentControlSetStatusResponse} Success
 		 */
 		UpdateAssessmentControlSetStatus(assessmentId: string, controlSetId: string, requestBody: UpdateAssessmentControlSetStatusPutBody): Observable<UpdateAssessmentControlSetStatusResponse> {
@@ -4005,6 +4094,7 @@ export namespace MyNS {
 		 * Updates a share request for a custom framework in Audit Manager.
 		 * Put assessmentFrameworkShareRequests/{requestId}
 		 * @param {string} requestId  The unique identifier for the share request. 
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateAssessmentFrameworkShareResponse} Success
 		 */
 		UpdateAssessmentFrameworkShare(requestId: string, requestBody: UpdateAssessmentFrameworkSharePutBody): Observable<UpdateAssessmentFrameworkShareResponse> {
@@ -4015,6 +4105,7 @@ export namespace MyNS {
 		 * Updates the status of an assessment in Audit Manager.
 		 * Put assessments/{assessmentId}/status
 		 * @param {string} assessmentId  The unique identifier for the assessment. 
+		 *     Min length: 36    Max length: 36
 		 * @return {UpdateAssessmentStatusResponse} Success
 		 */
 		UpdateAssessmentStatus(assessmentId: string, requestBody: UpdateAssessmentStatusPutBody): Observable<UpdateAssessmentStatusResponse> {
@@ -4045,8 +4136,8 @@ export namespace MyNS {
 		/**
 		 * The identifier for the folder that the evidence is stored in.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		evidenceFolderId: string;
 	}
@@ -4055,8 +4146,8 @@ export namespace MyNS {
 		/**
 		 * The identifier for the folder that the evidence is stored in.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		evidenceFolderId: FormControl<string | null | undefined>,
 	}
@@ -4072,8 +4163,8 @@ export namespace MyNS {
 		/**
 		 * The identifier for the folder that the evidence is stored in.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		evidenceFolderId: string;
 
@@ -4090,8 +4181,8 @@ export namespace MyNS {
 		/**
 		 * The identifier for the folder that the evidence is stored in.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		evidenceFolderId: FormControl<string | null | undefined>,
 	}
@@ -4143,8 +4234,8 @@ export namespace MyNS {
 		/**
 		 * The identifier for the folder that the evidence is stored in.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		evidenceFolderId: string;
 
@@ -4161,8 +4252,8 @@ export namespace MyNS {
 		/**
 		 * The identifier for the folder that the evidence is stored in.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		evidenceFolderId: FormControl<string | null | undefined>,
 	}
@@ -4196,8 +4287,8 @@ export namespace MyNS {
 		/**
 		 * The name of the assessment to be created.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: string;
 
@@ -4228,8 +4319,8 @@ export namespace MyNS {
 		/**
 		 * The identifier for the framework that the assessment will be created from.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		frameworkId: string;
 
@@ -4241,8 +4332,8 @@ export namespace MyNS {
 		/**
 		 * The name of the assessment to be created.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4255,8 +4346,8 @@ export namespace MyNS {
 		/**
 		 * The identifier for the framework that the assessment will be created from.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		frameworkId: FormControl<string | null | undefined>,
 
@@ -4306,15 +4397,15 @@ export namespace MyNS {
 		/**
 		 * The name of the new custom framework.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: string;
 
 		/**
 		 * An optional description for the new custom framework.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		description?: string | null;
 
@@ -4339,15 +4430,15 @@ export namespace MyNS {
 		/**
 		 * The name of the new custom framework.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * An optional description for the new custom framework.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -4375,8 +4466,8 @@ export namespace MyNS {
 		/**
 		 * The name of the new assessment report.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: string;
 
@@ -4388,8 +4479,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A SQL statement that represents an evidence finder query.</p> <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p> <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p> <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		queryStatement?: string | null;
 	}
@@ -4398,8 +4489,8 @@ export namespace MyNS {
 		/**
 		 * The name of the new assessment report.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4411,8 +4502,8 @@ export namespace MyNS {
 
 		/**
 		 * <p>A SQL statement that represents an evidence finder query.</p> <p>Provide this parameter when you want to generate an assessment report from the results of an evidence finder search query. When you use this parameter, Audit Manager generates a one-time report using only the evidence from the query output. This report does not include any assessment evidence that was manually <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/generate-assessment-report.html#generate-assessment-report-include-evidence">added to a report using the console</a>, or <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_BatchAssociateAssessmentReportEvidence.html">associated with a report using the API</a>. </p> <p>To use this parameter, the <a href="https://docs.aws.amazon.com/audit-manager/latest/APIReference/API_EvidenceFinderEnablement.html#auditmanager-Type-EvidenceFinderEnablement-enablementStatus">enablementStatus</a> of evidence finder must be <code>ENABLED</code>. </p> <p> For examples and help resolving <code>queryStatement</code> validation exceptions, see <a href="https://docs.aws.amazon.com/audit-manager/latest/userguide/evidence-finder-issues.html#querystatement-exceptions">Troubleshooting evidence finder issues</a> in the <i>Audit Manager User Guide.</i> </p>
-		 * Max length: 10000
 		 * Min length: 1
+		 * Max length: 10000
 		 */
 		queryStatement: FormControl<string | null | undefined>,
 	}
@@ -4430,8 +4521,8 @@ export namespace MyNS {
 		/**
 		 * The name of the control.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: string;
 
@@ -4474,8 +4565,8 @@ export namespace MyNS {
 		/**
 		 * The name of the control.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4522,8 +4613,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the assessment to be updated.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		assessmentName?: string | null;
 
@@ -4549,8 +4640,8 @@ export namespace MyNS {
 
 		/**
 		 * The name of the assessment to be updated.
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		assessmentName: FormControl<string | null | undefined>,
 
@@ -4601,15 +4692,15 @@ export namespace MyNS {
 		/**
 		 * The name of the framework to be updated.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: string;
 
 		/**
 		 * The description of the updated framework.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		description?: string | null;
 
@@ -4631,15 +4722,15 @@ export namespace MyNS {
 		/**
 		 * The name of the framework to be updated.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the updated framework.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -4663,8 +4754,8 @@ export namespace MyNS {
 		/**
 		 * The name of the updated control.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: string;
 
@@ -4704,8 +4795,8 @@ export namespace MyNS {
 		/**
 		 * The name of the updated control.
 		 * Required
-		 * Max length: 300
 		 * Min length: 1
+		 * Max length: 300
 		 */
 		name: FormControl<string | null | undefined>,
 
@@ -4748,8 +4839,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the administrator account.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		adminAccountId?: string | null;
 	}
@@ -4757,8 +4848,8 @@ export namespace MyNS {
 
 		/**
 		 * The identifier for the administrator account.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		adminAccountId: FormControl<string | null | undefined>,
 	}
@@ -4774,8 +4865,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the folder that the evidence is stored in.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		evidenceFolderId: string;
 	}
@@ -4784,8 +4875,8 @@ export namespace MyNS {
 		/**
 		 * The unique identifier for the folder that the evidence is stored in.
 		 * Required
-		 * Max length: 36
 		 * Min length: 36
+		 * Max length: 36
 		 */
 		evidenceFolderId: FormControl<string | null | undefined>,
 	}
@@ -4823,15 +4914,15 @@ export namespace MyNS {
 
 		/**
 		 * The KMS key details.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		kmsKey?: string | null;
 
 		/**
 		 * The delegated administrator account for Audit Manager.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		delegatedAdminAccount?: string | null;
 	}
@@ -4839,15 +4930,15 @@ export namespace MyNS {
 
 		/**
 		 * The KMS key details.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		kmsKey: FormControl<string | null | undefined>,
 
 		/**
 		 * The delegated administrator account for Audit Manager.
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		delegatedAdminAccount: FormControl<string | null | undefined>,
 	}
@@ -4864,8 +4955,8 @@ export namespace MyNS {
 		/**
 		 * The identifier for the delegated administrator account.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		adminAccountId: string;
 	}
@@ -4874,8 +4965,8 @@ export namespace MyNS {
 		/**
 		 * The identifier for the delegated administrator account.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		adminAccountId: FormControl<string | null | undefined>,
 	}
@@ -4891,8 +4982,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account of the recipient.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		destinationAccount: string;
 
@@ -4913,8 +5004,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Web Services account of the recipient.
 		 * Required
-		 * Max length: 12
 		 * Min length: 12
+		 * Max length: 12
 		 */
 		destinationAccount: FormControl<string | null | undefined>,
 
@@ -5070,8 +5161,8 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to.
-		 * Max length: 2048
 		 * Min length: 4
+		 * Max length: 2048
 		 */
 		snsTopic?: string | null;
 
@@ -5083,8 +5174,8 @@ export namespace MyNS {
 
 		/**
 		 * The KMS key details.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		kmsKey?: string | null;
 
@@ -5101,15 +5192,15 @@ export namespace MyNS {
 
 		/**
 		 * The Amazon Simple Notification Service (Amazon SNS) topic that Audit Manager sends notifications to.
-		 * Max length: 2048
 		 * Min length: 4
+		 * Max length: 2048
 		 */
 		snsTopic: FormControl<string | null | undefined>,
 
 		/**
 		 * The KMS key details.
-		 * Max length: 2048
 		 * Min length: 7
+		 * Max length: 2048
 		 */
 		kmsKey: FormControl<string | null | undefined>,
 
@@ -5175,8 +5266,8 @@ export namespace MyNS {
 		/**
 		 * The relative path of the Amazon S3 bucket that the assessment report is stored in.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		s3RelativePath: string;
 	}
@@ -5185,8 +5276,8 @@ export namespace MyNS {
 		/**
 		 * The relative path of the Amazon S3 bucket that the assessment report is stored in.
 		 * Required
-		 * Max length: 1024
 		 * Min length: 1
+		 * Max length: 1024
 		 */
 		s3RelativePath: FormControl<string | null | undefined>,
 	}

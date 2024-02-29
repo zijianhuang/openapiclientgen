@@ -174,7 +174,10 @@ namespace MyNS
 		/// Description for Get past recommendations for an app, optionally specified by the time range.
 		/// Recommendations_ListHistoryForHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendationHistory
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="hostingEnvironmentName">Name of the hosting environment.</param>
 		/// <param name="expiredOnly">Specify <code>false</code> to return all recommendations. The default is <code>true</code>, which returns only expired recommendations.</param>
 		/// <param name="filter">Filter is specified by using OData syntax. Example: $filter=channel eq 'Api' or channel eq 'Notification' and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[PT1H|PT1M|P1D]</param>
@@ -209,7 +212,10 @@ namespace MyNS
 		/// Description for Get all recommendations for an app.
 		/// Recommendations_ListRecommendedRulesForHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="hostingEnvironmentName">Name of the app.</param>
 		/// <param name="featured">Specify <code>true</code> to return only the most critical recommendations. The default is <code>false</code>, which returns all recommendations.</param>
 		/// <param name="filter">Return only channels specified in the filter. Filter is specified by using OData syntax. Example: $filter=channel eq 'Api' or channel eq 'Notification'</param>
@@ -244,7 +250,10 @@ namespace MyNS
 		/// Description for Disable all recommendations for an app.
 		/// Recommendations_DisableAllForHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/disable
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="environmentName">Name of the app.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -270,7 +279,10 @@ namespace MyNS
 		/// Description for Reset all recommendation opt-out settings for an app.
 		/// Recommendations_ResetAllFiltersForHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/reset
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="environmentName">Name of the app.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -296,7 +308,10 @@ namespace MyNS
 		/// Description for Get a recommendation rule for an app.
 		/// Recommendations_GetRuleDetailsByHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/{name}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="hostingEnvironmentName">Name of the hosting environment.</param>
 		/// <param name="name">Name of the recommendation.</param>
 		/// <param name="updateSeen">Specify <code>true</code> to update the last-seen timestamp of the recommendation object.</param>
@@ -332,7 +347,10 @@ namespace MyNS
 		/// Description for Disables the specific rule for a web site permanently.
 		/// Recommendations_DisableRecommendationForHostingEnvironment subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/hostingEnvironments/{hostingEnvironmentName}/recommendations/{name}/disable
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="environmentName">Site name</param>
 		/// <param name="name">Rule name</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
@@ -360,7 +378,10 @@ namespace MyNS
 		/// Description for Get past recommendations for an app, optionally specified by the time range.
 		/// Recommendations_ListHistoryForWebApp subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendationHistory
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="siteName">Name of the app.</param>
 		/// <param name="expiredOnly">Specify <code>false</code> to return all recommendations. The default is <code>true</code>, which returns only expired recommendations.</param>
 		/// <param name="filter">Filter is specified by using OData syntax. Example: $filter=channel eq 'Api' or channel eq 'Notification' and startTime eq 2014-01-01T00:00:00Z and endTime eq 2014-12-31T23:59:59Z and timeGrain eq duration'[PT1H|PT1M|P1D]</param>
@@ -395,7 +416,10 @@ namespace MyNS
 		/// Description for Get all recommendations for an app.
 		/// Recommendations_ListRecommendedRulesForWebApp subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="siteName">Name of the app.</param>
 		/// <param name="featured">Specify <code>true</code> to return only the most critical recommendations. The default is <code>false</code>, which returns all recommendations.</param>
 		/// <param name="filter">Return only channels specified in the filter. Filter is specified by using OData syntax. Example: $filter=channel eq 'Api' or channel eq 'Notification'</param>
@@ -430,7 +454,10 @@ namespace MyNS
 		/// Description for Disable all recommendations for an app.
 		/// Recommendations_DisableAllForWebApp subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/disable
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="siteName">Name of the app.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -456,7 +483,10 @@ namespace MyNS
 		/// Description for Reset all recommendation opt-out settings for an app.
 		/// Recommendations_ResetAllFiltersForWebApp subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/reset
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="siteName">Name of the app.</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>
 		/// <param name="api_version">API Version</param>
@@ -482,7 +512,10 @@ namespace MyNS
 		/// Description for Get a recommendation rule for an app.
 		/// Recommendations_GetRuleDetailsByWebApp subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/{name}
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="siteName">Name of the app.</param>
 		/// <param name="name">Name of the recommendation.</param>
 		/// <param name="updateSeen">Specify <code>true</code> to update the last-seen timestamp of the recommendation object.</param>
@@ -518,7 +551,10 @@ namespace MyNS
 		/// Description for Disables the specific rule for a web site permanently.
 		/// Recommendations_DisableRecommendationForSite subscriptions/{subscriptionId}/resourceGroups/{resourceGroupName}/providers/Microsoft.Web/sites/{siteName}/recommendations/{name}/disable
 		/// </summary>
-		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.</param>
+		/// <param name="resourceGroupName">Name of the resource group to which the resource belongs.
+		/// Max length: 90
+		/// Min length: 1
+		// </param>
 		/// <param name="siteName">Site name</param>
 		/// <param name="name">Rule name</param>
 		/// <param name="subscriptionId">Your Azure subscription ID. This is a GUID-formatted string (e.g. 00000000-0000-0000-0000-000000000000).</param>

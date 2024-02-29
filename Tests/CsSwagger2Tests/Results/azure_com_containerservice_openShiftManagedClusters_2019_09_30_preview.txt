@@ -707,7 +707,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Min length: 1
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<OpenShiftManagedClusterListResult> OpenShiftManagedClusters_ListByResourceGroupAsync(string api_version, string subscriptionId, string resourceGroupName)
 		{
@@ -739,7 +741,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the OpenShift managed cluster resource.</param>
 		/// <returns>OK</returns>
 		public async Task<OpenShiftManagedCluster> OpenShiftManagedClusters_GetAsync(string api_version, string subscriptionId, string resourceGroupName, string resourceName)
@@ -772,7 +776,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the OpenShift managed cluster resource.</param>
 		/// <param name="requestBody">Parameters supplied to the Create or Update an OpenShift Managed Cluster operation.</param>
 		/// <returns>OK</returns>
@@ -813,7 +819,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the OpenShift managed cluster resource.</param>
 		public async Task OpenShiftManagedClusters_DeleteAsync(string api_version, string subscriptionId, string resourceGroupName, string resourceName)
 		{
@@ -839,7 +847,9 @@ namespace MyNS
 		/// </summary>
 		/// <param name="api_version">Client Api Version.</param>
 		/// <param name="subscriptionId">Subscription credentials which uniquely identify Microsoft Azure subscription. The subscription ID forms part of the URI for every service call.</param>
-		/// <param name="resourceGroupName">The name of the resource group.</param>
+		/// <param name="resourceGroupName">The name of the resource group.
+		/// Min length: 1
+		// </param>
 		/// <param name="resourceName">The name of the OpenShift managed cluster resource.</param>
 		/// <param name="requestBody">Parameters supplied to the Update OpenShift Managed Cluster Tags operation.</param>
 		/// <returns>OK</returns>

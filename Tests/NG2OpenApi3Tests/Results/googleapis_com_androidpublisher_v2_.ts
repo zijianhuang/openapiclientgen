@@ -8,12 +8,18 @@ export namespace MyNS {
 		/** Represents the binary payload of an APK. */
 		binary?: ApkBinary;
 
-		/** The version code of the APK, as specified in the APK's manifest file. */
+		/**
+		 * The version code of the APK, as specified in the APK's manifest file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode?: number | null;
 	}
 	export interface ApkFormProperties {
 
-		/** The version code of the APK, as specified in the APK's manifest file. */
+		/**
+		 * The version code of the APK, as specified in the APK's manifest file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode: FormControl<number | null | undefined>,
 	}
 	export function CreateApkFormGroup() {
@@ -131,10 +137,16 @@ export namespace MyNS {
 		/** The icon image from the APK, as a base64 encoded byte array. */
 		iconBase64?: string | null;
 
-		/** The maximum SDK supported by this APK (optional). */
+		/**
+		 * The maximum SDK supported by this APK (optional).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumSdk?: number | null;
 
-		/** The minimum SDK targeted by this APK. */
+		/**
+		 * The minimum SDK targeted by this APK.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumSdk?: number | null;
 
 		/** The native code environments supported by this APK (optional). */
@@ -149,7 +161,10 @@ export namespace MyNS {
 		/** The permissions requested by this APK. */
 		usesPermissions?: Array<ExternallyHostedApkUsesPermission>;
 
-		/** The version code of this APK. */
+		/**
+		 * The version code of this APK.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode?: number | null;
 
 		/** The version name of this APK. */
@@ -177,16 +192,25 @@ export namespace MyNS {
 		/** The icon image from the APK, as a base64 encoded byte array. */
 		iconBase64: FormControl<string | null | undefined>,
 
-		/** The maximum SDK supported by this APK (optional). */
+		/**
+		 * The maximum SDK supported by this APK (optional).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maximumSdk: FormControl<number | null | undefined>,
 
-		/** The minimum SDK targeted by this APK. */
+		/**
+		 * The minimum SDK targeted by this APK.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		minimumSdk: FormControl<number | null | undefined>,
 
 		/** The package name. */
 		packageName: FormControl<string | null | undefined>,
 
-		/** The version code of this APK. */
+		/**
+		 * The version code of this APK.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode: FormControl<number | null | undefined>,
 
 		/** The version name of this APK. */
@@ -213,7 +237,10 @@ export namespace MyNS {
 	/** A permission used by this APK. */
 	export interface ExternallyHostedApkUsesPermission {
 
-		/** Optionally, the maximum SDK version for which the permission is required. */
+		/**
+		 * Optionally, the maximum SDK version for which the permission is required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSdkVersion?: number | null;
 
 		/** The name of the permission requested. */
@@ -223,7 +250,10 @@ export namespace MyNS {
 	/** A permission used by this APK. */
 	export interface ExternallyHostedApkUsesPermissionFormProperties {
 
-		/** Optionally, the maximum SDK version for which the permission is required. */
+		/**
+		 * Optionally, the maximum SDK version for which the permission is required.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxSdkVersion: FormControl<number | null | undefined>,
 
 		/** The name of the permission requested. */
@@ -342,7 +372,10 @@ export namespace MyNS {
 		/** A sha256 hash of the upload payload, encoded as a hex string and matching the output of the sha256sum command. */
 		sha256?: string | null;
 
-		/** The version code of the Android App Bundle. As specified in the Android App Bundle's base module APK manifest file. */
+		/**
+		 * The version code of the Android App Bundle. As specified in the Android App Bundle's base module APK manifest file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode?: number | null;
 	}
 	export interface BundleFormProperties {
@@ -353,7 +386,10 @@ export namespace MyNS {
 		/** A sha256 hash of the upload payload, encoded as a hex string and matching the output of the sha256sum command. */
 		sha256: FormControl<string | null | undefined>,
 
-		/** The version code of the Android App Bundle. As specified in the Android App Bundle's base module APK manifest file. */
+		/**
+		 * The version code of the Android App Bundle. As specified in the Android App Bundle's base module APK manifest file.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		versionCode: FormControl<number | null | undefined>,
 	}
 	export function CreateBundleFormGroup() {
@@ -414,10 +450,14 @@ export namespace MyNS {
 	}
 
 	export interface Timestamp {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nanos?: number | null;
 		seconds?: string | null;
 	}
 	export interface TimestampFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		nanos: FormControl<number | null | undefined>,
 		seconds: FormControl<string | null | undefined>,
 	}
@@ -431,10 +471,16 @@ export namespace MyNS {
 
 	export interface UserComment {
 
-		/** Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent. */
+		/**
+		 * Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		androidOsVersion?: number | null;
 
-		/** Integer version code of the app as installed at the time the review was written. May be absent. */
+		/**
+		 * Integer version code of the app as installed at the time the review was written. May be absent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		appVersionCode?: number | null;
 
 		/** String version name of the app as installed at the time the review was written. May be absent. */
@@ -451,24 +497,39 @@ export namespace MyNS {
 		/** Language code for the reviewer. This is taken from the device settings so is not guaranteed to match the language the review is written in. May be absent. */
 		reviewerLanguage?: string | null;
 
-		/** The star rating associated with the review, from 1 to 5. */
+		/**
+		 * The star rating associated with the review, from 1 to 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		starRating?: number | null;
 
 		/** The content of the comment, i.e. review body. In some cases users have been able to write a review with separate title and body; in those cases the title and body are concatenated and separated by a tab character. */
 		text?: string | null;
 
-		/** Number of users who have given this review a thumbs down */
+		/**
+		 * Number of users who have given this review a thumbs down
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbsDownCount?: number | null;
 
-		/** Number of users who have given this review a thumbs up */
+		/**
+		 * Number of users who have given this review a thumbs up
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbsUpCount?: number | null;
 	}
 	export interface UserCommentFormProperties {
 
-		/** Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent. */
+		/**
+		 * Integer Android SDK version of the user's device at the time the review was written, e.g. 23 is Marshmallow. May be absent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		androidOsVersion: FormControl<number | null | undefined>,
 
-		/** Integer version code of the app as installed at the time the review was written. May be absent. */
+		/**
+		 * Integer version code of the app as installed at the time the review was written. May be absent.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		appVersionCode: FormControl<number | null | undefined>,
 
 		/** String version name of the app as installed at the time the review was written. May be absent. */
@@ -483,16 +544,25 @@ export namespace MyNS {
 		/** Language code for the reviewer. This is taken from the device settings so is not guaranteed to match the language the review is written in. May be absent. */
 		reviewerLanguage: FormControl<string | null | undefined>,
 
-		/** The star rating associated with the review, from 1 to 5. */
+		/**
+		 * The star rating associated with the review, from 1 to 5.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		starRating: FormControl<number | null | undefined>,
 
 		/** The content of the comment, i.e. review body. In some cases users have been able to write a review with separate title and body; in those cases the title and body are concatenated and separated by a tab character. */
 		text: FormControl<string | null | undefined>,
 
-		/** Number of users who have given this review a thumbs down */
+		/**
+		 * Number of users who have given this review a thumbs down
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbsDownCount: FormControl<number | null | undefined>,
 
-		/** Number of users who have given this review a thumbs up */
+		/**
+		 * Number of users who have given this review a thumbs up
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		thumbsUpCount: FormControl<number | null | undefined>,
 	}
 	export function CreateUserCommentFormGroup() {
@@ -522,7 +592,10 @@ export namespace MyNS {
 		/** Device class (e.g. tablet) */
 		deviceClass?: string | null;
 
-		/** OpenGL version */
+		/**
+		 * OpenGL version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		glEsVersion?: number | null;
 
 		/** Device manufacturer (e.g. Motorola) */
@@ -534,16 +607,28 @@ export namespace MyNS {
 		/** Device model name (e.g. Droid) */
 		productName?: string | null;
 
-		/** Device RAM in Megabytes e.g. "2048" */
+		/**
+		 * Device RAM in Megabytes e.g. "2048"
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ramMb?: number | null;
 
-		/** Screen density in DPI */
+		/**
+		 * Screen density in DPI
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenDensityDpi?: number | null;
 
-		/** Screen height in pixels */
+		/**
+		 * Screen height in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenHeightPx?: number | null;
 
-		/** Screen width in pixels */
+		/**
+		 * Screen width in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenWidthPx?: number | null;
 	}
 	export interface DeviceMetadataFormProperties {
@@ -557,7 +642,10 @@ export namespace MyNS {
 		/** Device class (e.g. tablet) */
 		deviceClass: FormControl<string | null | undefined>,
 
-		/** OpenGL version */
+		/**
+		 * OpenGL version
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		glEsVersion: FormControl<number | null | undefined>,
 
 		/** Device manufacturer (e.g. Motorola) */
@@ -569,16 +657,28 @@ export namespace MyNS {
 		/** Device model name (e.g. Droid) */
 		productName: FormControl<string | null | undefined>,
 
-		/** Device RAM in Megabytes e.g. "2048" */
+		/**
+		 * Device RAM in Megabytes e.g. "2048"
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ramMb: FormControl<number | null | undefined>,
 
-		/** Screen density in DPI */
+		/**
+		 * Screen density in DPI
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenDensityDpi: FormControl<number | null | undefined>,
 
-		/** Screen height in pixels */
+		/**
+		 * Screen height in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenHeightPx: FormControl<number | null | undefined>,
 
-		/** Screen width in pixels */
+		/**
+		 * Screen width in pixels
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		screenWidthPx: FormControl<number | null | undefined>,
 	}
 	export function CreateDeviceMetadataFormGroup() {
@@ -637,7 +737,10 @@ export namespace MyNS {
 		/** If set this field indicates that this APK has an Expansion File uploaded to it: this APK does not reference another APK's Expansion File. The field's value is the size of the uploaded Expansion File in bytes. */
 		fileSize?: string | null;
 
-		/** If set this APK's Expansion File references another APK's Expansion File. The file_size field will not be set. */
+		/**
+		 * If set this APK's Expansion File references another APK's Expansion File. The file_size field will not be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referencesVersion?: number | null;
 	}
 	export interface ExpansionFileFormProperties {
@@ -645,7 +748,10 @@ export namespace MyNS {
 		/** If set this field indicates that this APK has an Expansion File uploaded to it: this APK does not reference another APK's Expansion File. The field's value is the size of the uploaded Expansion File in bytes. */
 		fileSize: FormControl<string | null | undefined>,
 
-		/** If set this APK's Expansion File references another APK's Expansion File. The file_size field will not be set. */
+		/**
+		 * If set this APK's Expansion File references another APK's Expansion File. The file_size field will not be set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		referencesVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateExpansionFileFormGroup() {
@@ -876,13 +982,25 @@ export namespace MyNS {
 	}
 
 	export interface PageInfo {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		resultPerPage?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startIndex?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults?: number | null;
 	}
 	export interface PageInfoFormProperties {
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		resultPerPage: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		startIndex: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		totalResults: FormControl<number | null | undefined>,
 	}
 	export function CreatePageInfoFormGroup() {
@@ -981,6 +1099,7 @@ export namespace MyNS {
 		 * The consumption state of the inapp product. Possible values are:
 		 * - Yet to be consumed
 		 * - Consumed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		consumptionState?: number | null;
 
@@ -998,6 +1117,7 @@ export namespace MyNS {
 		 * - Purchased
 		 * - Canceled
 		 * - Pending
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		purchaseState?: number | null;
 
@@ -1009,6 +1129,7 @@ export namespace MyNS {
 		 * - Test (i.e. purchased from a license testing account)
 		 * - Promo (i.e. purchased using a promo code)
 		 * - Rewarded (i.e. from watching a video ad instead of paying)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		purchaseType?: number | null;
 	}
@@ -1020,6 +1141,7 @@ export namespace MyNS {
 		 * The consumption state of the inapp product. Possible values are:
 		 * - Yet to be consumed
 		 * - Consumed
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		consumptionState: FormControl<number | null | undefined>,
 
@@ -1037,6 +1159,7 @@ export namespace MyNS {
 		 * - Purchased
 		 * - Canceled
 		 * - Pending
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		purchaseState: FormControl<number | null | undefined>,
 
@@ -1048,6 +1171,7 @@ export namespace MyNS {
 		 * - Test (i.e. purchased from a license testing account)
 		 * - Promo (i.e. purchased using a promo code)
 		 * - Rewarded (i.e. from watching a video ad instead of paying)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		purchaseType: FormControl<number | null | undefined>,
 	}
@@ -1161,6 +1285,7 @@ export namespace MyNS {
 		 * - Technical issues
 		 * - Cost-related reasons
 		 * - I found a better app
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cancelSurveyReason?: number | null;
 
@@ -1178,6 +1303,7 @@ export namespace MyNS {
 		 * - Technical issues
 		 * - Cost-related reasons
 		 * - I found a better app
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cancelSurveyReason: FormControl<number | null | undefined>,
 
@@ -1229,6 +1355,7 @@ export namespace MyNS {
 		 * The current state of the price change. Possible values are:
 		 * - Outstanding: State for a pending price change waiting for the user to agree. In this state, you can optionally seek confirmation from the user using the In-App API.
 		 * - Accepted: State for an accepted price change that the subscription will renew with unless it's canceled. The price change takes effect on a future date when the subscription renews. Note that the change might not occur when the subscription is renewed next.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		state?: number | null;
 	}
@@ -1240,6 +1367,7 @@ export namespace MyNS {
 		 * The current state of the price change. Possible values are:
 		 * - Outstanding: State for a pending price change waiting for the user to agree. In this state, you can optionally seek confirmation from the user using the In-App API.
 		 * - Accepted: State for an accepted price change that the subscription will renew with unless it's canceled. The price change takes effect on a future date when the subscription renews. Note that the change might not occur when the subscription is renewed next.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		state: FormControl<number | null | undefined>,
 	}
@@ -1263,6 +1391,7 @@ export namespace MyNS {
 		 * - Subscription was canceled by the system, for example because of a billing problem
 		 * - Subscription was replaced with a new subscription
 		 * - Subscription was canceled by the developer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cancelReason?: number | null;
 
@@ -1306,6 +1435,7 @@ export namespace MyNS {
 		 * - Payment received
 		 * - Free trial
 		 * - Pending deferred upgrade/downgrade
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		paymentState?: number | null;
 
@@ -1328,6 +1458,7 @@ export namespace MyNS {
 		 * The type of purchase of the subscription. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:
 		 * - Test (i.e. purchased from a license testing account)
 		 * - Promo (i.e. purchased using a promo code)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		purchaseType?: number | null;
 
@@ -1350,6 +1481,7 @@ export namespace MyNS {
 		 * - Subscription was canceled by the system, for example because of a billing problem
 		 * - Subscription was replaced with a new subscription
 		 * - Subscription was canceled by the developer
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		cancelReason: FormControl<number | null | undefined>,
 
@@ -1390,6 +1522,7 @@ export namespace MyNS {
 		 * - Payment received
 		 * - Free trial
 		 * - Pending deferred upgrade/downgrade
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		paymentState: FormControl<number | null | undefined>,
 
@@ -1409,6 +1542,7 @@ export namespace MyNS {
 		 * The type of purchase of the subscription. This field is only set if this purchase was not made using the standard in-app billing flow. Possible values are:
 		 * - Test (i.e. purchased from a license testing account)
 		 * - Promo (i.e. purchased using a promo code)
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		purchaseType: FormControl<number | null | undefined>,
 
@@ -1490,6 +1624,8 @@ export namespace MyNS {
 
 		/** Identifier for this track. */
 		track?: string | null;
+
+		/** Type: double */
 		userFraction?: number | null;
 
 		/** Version codes to make active on this track. Note that this list should contain all versions you wish to be active, including those you wish to retain from previous releases. */
@@ -1499,6 +1635,8 @@ export namespace MyNS {
 
 		/** Identifier for this track. */
 		track: FormControl<string | null | undefined>,
+
+		/** Type: double */
 		userFraction: FormControl<number | null | undefined>,
 	}
 	export function CreateTrackFormGroup() {
@@ -1656,6 +1794,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier of the Android app for which the deobfuscation files are being uploaded; for example, "com.spiffygame".
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The version code of the APK whose deobfuscation file is being uploaded.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Androidpublisher_edits_deobfuscationfiles_upload(packageName: string, editId: string, apkVersionCode: number, deobfuscationFileType: Androidpublisher_edits_deobfuscationfiles_uploadDeobfuscationFileType): Observable<HttpResponse<string>> {
@@ -1668,6 +1807,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The version code of the APK whose Expansion File configuration is being read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Androidpublisher_edits_expansionfiles_get(packageName: string, editId: string, apkVersionCode: number, expansionFileType: Androidpublisher_edits_expansionfiles_getExpansionFileType): Observable<HttpResponse<string>> {
@@ -1680,6 +1820,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The version code of the APK whose Expansion File configuration is being read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Androidpublisher_edits_expansionfiles_patch(packageName: string, editId: string, apkVersionCode: number, expansionFileType: Androidpublisher_edits_expansionfiles_getExpansionFileType, requestBody: ExpansionFile): Observable<HttpResponse<string>> {
@@ -1692,6 +1833,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The version code of the APK whose Expansion File configuration is being read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Androidpublisher_edits_expansionfiles_upload(packageName: string, editId: string, apkVersionCode: number, expansionFileType: Androidpublisher_edits_expansionfiles_getExpansionFileType): Observable<HttpResponse<string>> {
@@ -1704,6 +1846,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The version code of the APK whose Expansion File configuration is being read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Androidpublisher_edits_expansionfiles_update(packageName: string, editId: string, apkVersionCode: number, expansionFileType: Androidpublisher_edits_expansionfiles_getExpansionFileType, requestBody: ExpansionFile): Observable<HttpResponse<string>> {
@@ -1716,6 +1859,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Androidpublisher_edits_apklistings_deleteall(packageName: string, editId: string, apkVersionCode: number): Observable<HttpResponse<string>> {
@@ -1728,6 +1872,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Androidpublisher_edits_apklistings_list(packageName: string, editId: string, apkVersionCode: number): Observable<HttpResponse<string>> {
@@ -1740,6 +1885,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} language The language code (a BCP-47 language tag) of the APK-specific localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
 		 * @return {void} Successful response
 		 */
@@ -1753,6 +1899,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} language The language code (a BCP-47 language tag) of the APK-specific localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
 		 * @return {void} Successful response
 		 */
@@ -1766,6 +1913,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} language The language code (a BCP-47 language tag) of the APK-specific localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
 		 * @return {void} Successful response
 		 */
@@ -1779,6 +1927,7 @@ export namespace MyNS {
 		 * @param {string} packageName Unique identifier for the Android app that is being updated; for example, "com.spiffygame".
 		 * @param {string} editId Unique identifier for this edit.
 		 * @param {number} apkVersionCode The APK version code whose APK-specific listings should be read or modified.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} language The language code (a BCP-47 language tag) of the APK-specific localized listing to read or modify. For example, to select Austrian German, pass "de-AT".
 		 * @return {void} Successful response
 		 */
@@ -2066,6 +2215,8 @@ export namespace MyNS {
 		 * List all the in-app products for an Android app, both subscriptions and managed in-app products..
 		 * Get {packageName}/inappproducts
 		 * @param {string} packageName Unique identifier for the Android app with in-app products; for example, "com.spiffygame".
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} startIndex Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Androidpublisher_inappproducts_list(packageName: string, maxResults: number | null | undefined, startIndex: number | null | undefined, token: string | null | undefined): Observable<HttpResponse<string>> {
@@ -2217,6 +2368,8 @@ export namespace MyNS {
 		 * Get {packageName}/purchases/voidedpurchases
 		 * @param {string} packageName The package name of the application for which voided purchases need to be returned (for example, 'com.some.thing').
 		 * @param {string} endTime The time, in milliseconds since the Epoch, of the newest voided purchase that you want to see in the response. The value of this parameter cannot be greater than the current time and is ignored if a pagination token is set. Default value is current time. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} startIndex Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} startTime The time, in milliseconds since the Epoch, of the oldest voided purchase that you want to see in the response. The value of this parameter cannot be older than 30 days and is ignored if a pagination token is set. Default value is current time minus 30 days. Note: This filter is applied on the time at which the record is seen as voided by our systems and not the actual voided time returned in the response.
 		 * @return {void} Successful response
 		 */
@@ -2228,6 +2381,8 @@ export namespace MyNS {
 		 * Returns a list of reviews. Only reviews from last week will be returned.
 		 * Get {packageName}/reviews
 		 * @param {string} packageName Unique identifier for the Android app for which we want reviews; for example, "com.spiffygame".
+		 * @param {number} maxResults Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} startIndex Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Successful response
 		 */
 		Androidpublisher_reviews_list(packageName: string, maxResults: number | null | undefined, startIndex: number | null | undefined, token: string | null | undefined, translationLanguage: string | null | undefined): Observable<HttpResponse<string>> {

@@ -315,14 +315,20 @@ export namespace MyNS {
 	/** This Task Execution field includes detail information for task execution procedures, based on StatusEvent types. */
 	export interface TaskExecution {
 
-		/** When task is completed as the status of FAILED or SUCCEEDED, exit code is for one task execution result, default is 0 as success. */
+		/**
+		 * When task is completed as the status of FAILED or SUCCEEDED, exit code is for one task execution result, default is 0 as success.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 	}
 
 	/** This Task Execution field includes detail information for task execution procedures, based on StatusEvent types. */
 	export interface TaskExecutionFormProperties {
 
-		/** When task is completed as the status of FAILED or SUCCEEDED, exit code is for one task execution result, default is 0 as success. */
+		/**
+		 * When task is completed as the status of FAILED or SUCCEEDED, exit code is for one task execution result, default is 0 as success.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 	}
 	export function CreateTaskExecutionFormGroup() {
@@ -615,7 +621,10 @@ export namespace MyNS {
 		/** Lifecycle management schema when any task in a task group is failed. Currently we only support one lifecycle policy. When the lifecycle policy condition is met, the action in the policy will execute. If task execution result does not meet with the defined lifecycle policy, we consider it as the default policy. Default policy means if the exit code is 0, exit task. If task ends with non-zero exit code, retry the task with max_retry_count. */
 		lifecyclePolicies?: Array<LifecyclePolicy>;
 
-		/** Maximum number of retries on failures. The default, 0, which means never retry. The valid value range is [0, 10]. */
+		/**
+		 * Maximum number of retries on failures. The default, 0, which means never retry. The valid value range is [0, 10].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetryCount?: number | null;
 
 		/** Maximum duration the task should run. The task will be killed and marked as FAILED if over this limit. */
@@ -634,7 +643,10 @@ export namespace MyNS {
 		/** Deprecated: please use environment(non-plural) instead. */
 		environments: FormControl<{[id: string]: string } | null | undefined>,
 
-		/** Maximum number of retries on failures. The default, 0, which means never retry. The valid value range is [0, 10]. */
+		/**
+		 * Maximum number of retries on failures. The default, 0, which means never retry. The valid value range is [0, 10].
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		maxRetryCount: FormControl<number | null | undefined>,
 
 		/** Maximum duration the task should run. The task will be killed and marked as FAILED if over this limit. */
@@ -1926,7 +1938,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface Status {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -1939,7 +1954,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface StatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -2161,6 +2179,7 @@ export namespace MyNS {
 		 * @param {string} name The resource that owns the locations collection, if applicable.
 		 * @param {string} filter A filter to narrow down results to a preferred subset. The filtering language accepts strings like `"displayName=tokyo"`, and is documented in more detail in [AIP-160](https://google.aip.dev/160).
 		 * @param {number} pageSize The maximum number of results to return. If not set, the service selects a default.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken A page token received from the `next_page_token` field in the response. Send that page token to receive the subsequent page.
 		 * @return {ListLocationsResponse} Successful response
 		 */
@@ -2174,6 +2193,7 @@ export namespace MyNS {
 		 * @param {string} name The name of the operation's parent resource.
 		 * @param {string} filter The standard list filter.
 		 * @param {number} pageSize The standard list page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken The standard list page token.
 		 * @return {ListOperationsResponse} Successful response
 		 */
@@ -2198,6 +2218,7 @@ export namespace MyNS {
 		 * @param {string} filter List filter.
 		 * @param {string} orderBy Optional. Sort results. Supported are "name", "name desc", "create_time", and "create_time desc".
 		 * @param {number} pageSize Page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token.
 		 * @return {ListJobsResponse} Successful response
 		 */
@@ -2233,6 +2254,7 @@ export namespace MyNS {
 		 * @param {string} parent Required. Name of a TaskGroup from which Tasks are being requested. Pattern: "projects/{project}/locations/{location}/jobs/{job}/taskGroups/{task_group}"
 		 * @param {string} filter Task filter, null filter matches all Tasks. Filter string should be of the format State=TaskStatus.State e.g. State=RUNNING
 		 * @param {number} pageSize Page size.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Page token.
 		 * @return {ListTasksResponse} Successful response
 		 */

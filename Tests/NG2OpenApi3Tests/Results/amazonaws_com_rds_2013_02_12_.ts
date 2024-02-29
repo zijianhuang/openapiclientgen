@@ -194,8 +194,12 @@ export namespace MyNS {
 		DBInstanceIdentifier?: string | null;
 		SnapshotCreateTime?: Date | null;
 		Engine?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AllocatedStorage?: number | null;
 		Status?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port?: number | null;
 		AvailabilityZone?: string | null;
 		VpcId?: string | null;
@@ -204,6 +208,8 @@ export namespace MyNS {
 		EngineVersion?: string | null;
 		LicenseModel?: string | null;
 		SnapshotType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops?: number | null;
 		OptionGroupName?: string | null;
 	}
@@ -212,8 +218,12 @@ export namespace MyNS {
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		SnapshotCreateTime: FormControl<Date | null | undefined>,
 		Engine: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AllocatedStorage: FormControl<number | null | undefined>,
 		Status: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port: FormControl<number | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
 		VpcId: FormControl<string | null | undefined>,
@@ -222,6 +232,8 @@ export namespace MyNS {
 		EngineVersion: FormControl<string | null | undefined>,
 		LicenseModel: FormControl<string | null | undefined>,
 		SnapshotType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops: FormControl<number | null | undefined>,
 		OptionGroupName: FormControl<string | null | undefined>,
 	}
@@ -296,9 +308,13 @@ export namespace MyNS {
 		MasterUsername?: string | null;
 		DBName?: string | null;
 		Endpoint?: Endpoint;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AllocatedStorage?: number | null;
 		InstanceCreateTime?: Date | null;
 		PreferredBackupWindow?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BackupRetentionPeriod?: number | null;
 		DBSecurityGroups?: Array<string>;
 		VpcSecurityGroups?: Array<string>;
@@ -314,6 +330,8 @@ export namespace MyNS {
 		ReadReplicaSourceDBInstanceIdentifier?: string | null;
 		ReadReplicaDBInstanceIdentifiers?: Array<string>;
 		LicenseModel?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops?: number | null;
 		OptionGroupMemberships?: Array<string>;
 		CharacterSetName?: string | null;
@@ -327,9 +345,13 @@ export namespace MyNS {
 		DBInstanceStatus: FormControl<string | null | undefined>,
 		MasterUsername: FormControl<string | null | undefined>,
 		DBName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AllocatedStorage: FormControl<number | null | undefined>,
 		InstanceCreateTime: FormControl<Date | null | undefined>,
 		PreferredBackupWindow: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BackupRetentionPeriod: FormControl<number | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
 		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
@@ -339,6 +361,8 @@ export namespace MyNS {
 		AutoMinorVersionUpgrade: FormControl<boolean | null | undefined>,
 		ReadReplicaSourceDBInstanceIdentifier: FormControl<string | null | undefined>,
 		LicenseModel: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops: FormControl<number | null | undefined>,
 		CharacterSetName: FormControl<string | null | undefined>,
 		SecondaryAvailabilityZone: FormControl<string | null | undefined>,
@@ -374,10 +398,14 @@ export namespace MyNS {
 
 	export interface Endpoint {
 		Address?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port?: number | null;
 	}
 	export interface EndpointFormProperties {
 		Address: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port: FormControl<number | null | undefined>,
 	}
 	export function CreateEndpointFormGroup() {
@@ -413,23 +441,39 @@ export namespace MyNS {
 
 	export interface PendingModifiedValues {
 		DBInstanceClass?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AllocatedStorage?: number | null;
 		MasterUserPassword?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BackupRetentionPeriod?: number | null;
 		MultiAZ?: boolean | null;
 		EngineVersion?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops?: number | null;
 		DBInstanceIdentifier?: string | null;
 	}
 	export interface PendingModifiedValuesFormProperties {
 		DBInstanceClass: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AllocatedStorage: FormControl<number | null | undefined>,
 		MasterUserPassword: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BackupRetentionPeriod: FormControl<number | null | undefined>,
 		MultiAZ: FormControl<boolean | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops: FormControl<number | null | undefined>,
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 	}
@@ -1368,6 +1412,8 @@ export namespace MyNS {
 
 		/** Required */
 		OptionName: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port?: number | null;
 		DBSecurityGroupMemberships?: Array<string>;
 		VpcSecurityGroupMemberships?: Array<string>;
@@ -1377,6 +1423,8 @@ export namespace MyNS {
 
 		/** Required */
 		OptionName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port: FormControl<number | null | undefined>,
 	}
 	export function CreateOptionConfigurationFormGroup() {
@@ -1414,10 +1462,18 @@ export namespace MyNS {
 		ReservedDBInstancesOfferingId?: string | null;
 		DBInstanceClass?: string | null;
 		StartTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Duration?: number | null;
+
+		/** Type: double */
 		FixedPrice?: number | null;
+
+		/** Type: double */
 		UsagePrice?: number | null;
 		CurrencyCode?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DBInstanceCount?: number | null;
 		ProductDescription?: string | null;
 		OfferingType?: string | null;
@@ -1430,10 +1486,18 @@ export namespace MyNS {
 		ReservedDBInstancesOfferingId: FormControl<string | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Duration: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FixedPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		UsagePrice: FormControl<number | null | undefined>,
 		CurrencyCode: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DBInstanceCount: FormControl<number | null | undefined>,
 		ProductDescription: FormControl<string | null | undefined>,
 		OfferingType: FormControl<string | null | undefined>,
@@ -1701,7 +1765,10 @@ export namespace MyNS {
 		/** Required */
 		DBInstanceIdentifier: string;
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AllocatedStorage: number;
 
 		/** Required */
@@ -1721,13 +1788,19 @@ export namespace MyNS {
 		DBSubnetGroupName?: string | null;
 		PreferredMaintenanceWindow?: string | null;
 		DBParameterGroupName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BackupRetentionPeriod?: number | null;
 		PreferredBackupWindow?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port?: number | null;
 		MultiAZ?: boolean | null;
 		EngineVersion?: string | null;
 		AutoMinorVersionUpgrade?: boolean | null;
 		LicenseModel?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops?: number | null;
 		OptionGroupName?: string | null;
 		CharacterSetName?: string | null;
@@ -1739,7 +1812,10 @@ export namespace MyNS {
 		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 
-		/** Required */
+		/**
+		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		AllocatedStorage: FormControl<number | null | undefined>,
 
 		/** Required */
@@ -1757,13 +1833,19 @@ export namespace MyNS {
 		DBSubnetGroupName: FormControl<string | null | undefined>,
 		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
 		DBParameterGroupName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BackupRetentionPeriod: FormControl<number | null | undefined>,
 		PreferredBackupWindow: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port: FormControl<number | null | undefined>,
 		MultiAZ: FormControl<boolean | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
 		AutoMinorVersionUpgrade: FormControl<boolean | null | undefined>,
 		LicenseModel: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops: FormControl<number | null | undefined>,
 		OptionGroupName: FormControl<string | null | undefined>,
 		CharacterSetName: FormControl<string | null | undefined>,
@@ -1806,8 +1888,12 @@ export namespace MyNS {
 		SourceDBInstanceIdentifier: string;
 		DBInstanceClass?: string | null;
 		AvailabilityZone?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port?: number | null;
 		AutoMinorVersionUpgrade?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops?: number | null;
 		OptionGroupName?: string | null;
 		PubliclyAccessible?: boolean | null;
@@ -1821,8 +1907,12 @@ export namespace MyNS {
 		SourceDBInstanceIdentifier: FormControl<string | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port: FormControl<number | null | undefined>,
 		AutoMinorVersionUpgrade: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops: FormControl<number | null | undefined>,
 		OptionGroupName: FormControl<string | null | undefined>,
 		PubliclyAccessible: FormControl<boolean | null | undefined>,
@@ -2206,6 +2296,8 @@ export namespace MyNS {
 		Engine?: string | null;
 		EngineVersion?: string | null;
 		DBParameterGroupFamily?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 		DefaultOnly?: boolean | null;
@@ -2215,6 +2307,8 @@ export namespace MyNS {
 		Engine: FormControl<string | null | undefined>,
 		EngineVersion: FormControl<string | null | undefined>,
 		DBParameterGroupFamily: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 		DefaultOnly: FormControl<boolean | null | undefined>,
@@ -2235,11 +2329,15 @@ export namespace MyNS {
 
 	export interface DescribeDBInstancesMessage {
 		DBInstanceIdentifier?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
 	export interface DescribeDBInstancesMessageFormProperties {
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2254,12 +2352,20 @@ export namespace MyNS {
 
 	export interface DescribeDBLogFilesDetails {
 		LogFileName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		LastWritten?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Size?: number | null;
 	}
 	export interface DescribeDBLogFilesDetailsFormProperties {
 		LogFileName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		LastWritten: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Size: FormControl<number | null | undefined>,
 	}
 	export function CreateDescribeDBLogFilesDetailsFormGroup() {
@@ -2276,8 +2382,14 @@ export namespace MyNS {
 		/** Required */
 		DBInstanceIdentifier: string;
 		FilenameContains?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FileLastWritten?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FileSize?: number | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
@@ -2286,8 +2398,14 @@ export namespace MyNS {
 		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		FilenameContains: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FileLastWritten: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		FileSize: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2305,11 +2423,15 @@ export namespace MyNS {
 
 	export interface DescribeDBParameterGroupsMessage {
 		DBParameterGroupName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
 	export interface DescribeDBParameterGroupsMessageFormProperties {
 		DBParameterGroupName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2327,6 +2449,8 @@ export namespace MyNS {
 		/** Required */
 		DBParameterGroupName: string;
 		Source?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
@@ -2335,6 +2459,8 @@ export namespace MyNS {
 		/** Required */
 		DBParameterGroupName: FormControl<string | null | undefined>,
 		Source: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2350,11 +2476,15 @@ export namespace MyNS {
 
 	export interface DescribeDBSecurityGroupsMessage {
 		DBSecurityGroupName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
 	export interface DescribeDBSecurityGroupsMessageFormProperties {
 		DBSecurityGroupName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2371,6 +2501,8 @@ export namespace MyNS {
 		DBInstanceIdentifier?: string | null;
 		DBSnapshotIdentifier?: string | null;
 		SnapshotType?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
@@ -2378,6 +2510,8 @@ export namespace MyNS {
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
 		DBSnapshotIdentifier: FormControl<string | null | undefined>,
 		SnapshotType: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2394,11 +2528,15 @@ export namespace MyNS {
 
 	export interface DescribeDBSubnetGroupsMessage {
 		DBSubnetGroupName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
 	export interface DescribeDBSubnetGroupsMessageFormProperties {
 		DBSubnetGroupName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2415,6 +2553,8 @@ export namespace MyNS {
 
 		/** Required */
 		DBParameterGroupFamily: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
@@ -2422,6 +2562,8 @@ export namespace MyNS {
 
 		/** Required */
 		DBParameterGroupFamily: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2449,11 +2591,15 @@ export namespace MyNS {
 
 	export interface DescribeEventSubscriptionsMessage {
 		SubscriptionName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
 	export interface DescribeEventSubscriptionsMessageFormProperties {
 		SubscriptionName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2473,8 +2619,12 @@ export namespace MyNS {
 		SourceType?: SourceType | null;
 		StartTime?: Date | null;
 		EndTime?: Date | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Duration?: number | null;
 		EventCategories?: Array<string>;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
@@ -2483,7 +2633,11 @@ export namespace MyNS {
 		SourceType: FormControl<SourceType | null | undefined>,
 		StartTime: FormControl<Date | null | undefined>,
 		EndTime: FormControl<Date | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Duration: FormControl<number | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2505,6 +2659,8 @@ export namespace MyNS {
 		/** Required */
 		EngineName: string;
 		MajorEngineVersion?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
@@ -2513,6 +2669,8 @@ export namespace MyNS {
 		/** Required */
 		EngineName: FormControl<string | null | undefined>,
 		MajorEngineVersion: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2529,6 +2687,8 @@ export namespace MyNS {
 	export interface DescribeOptionGroupsMessage {
 		OptionGroupName?: string | null;
 		Marker?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		EngineName?: string | null;
 		MajorEngineVersion?: string | null;
@@ -2536,6 +2696,8 @@ export namespace MyNS {
 	export interface DescribeOptionGroupsMessageFormProperties {
 		OptionGroupName: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		EngineName: FormControl<string | null | undefined>,
 		MajorEngineVersion: FormControl<string | null | undefined>,
@@ -2559,6 +2721,8 @@ export namespace MyNS {
 		DBInstanceClass?: string | null;
 		LicenseModel?: string | null;
 		Vpc?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
@@ -2570,6 +2734,8 @@ export namespace MyNS {
 		DBInstanceClass: FormControl<string | null | undefined>,
 		LicenseModel: FormControl<string | null | undefined>,
 		Vpc: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2594,6 +2760,8 @@ export namespace MyNS {
 		ProductDescription?: string | null;
 		OfferingType?: string | null;
 		MultiAZ?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
@@ -2605,6 +2773,8 @@ export namespace MyNS {
 		ProductDescription: FormControl<string | null | undefined>,
 		OfferingType: FormControl<string | null | undefined>,
 		MultiAZ: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2630,6 +2800,8 @@ export namespace MyNS {
 		ProductDescription?: string | null;
 		OfferingType?: string | null;
 		MultiAZ?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords?: number | null;
 		Marker?: string | null;
 	}
@@ -2640,6 +2812,8 @@ export namespace MyNS {
 		ProductDescription: FormControl<string | null | undefined>,
 		OfferingType: FormControl<string | null | undefined>,
 		MultiAZ: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		MaxRecords: FormControl<number | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
 	}
@@ -2665,6 +2839,8 @@ export namespace MyNS {
 		/** Required */
 		LogFileName: string;
 		Marker?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NumberOfLines?: number | null;
 	}
 	export interface DownloadDBLogFilePortionMessageFormProperties {
@@ -2675,6 +2851,8 @@ export namespace MyNS {
 		/** Required */
 		LogFileName: FormControl<string | null | undefined>,
 		Marker: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		NumberOfLines: FormControl<number | null | undefined>,
 	}
 	export function CreateDownloadDBLogFilePortionMessageFormGroup() {
@@ -2783,6 +2961,8 @@ export namespace MyNS {
 
 		/** Required */
 		DBInstanceIdentifier: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AllocatedStorage?: number | null;
 		DBInstanceClass?: string | null;
 		DBSecurityGroups?: Array<string>;
@@ -2790,6 +2970,8 @@ export namespace MyNS {
 		ApplyImmediately?: boolean | null;
 		MasterUserPassword?: string | null;
 		DBParameterGroupName?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BackupRetentionPeriod?: number | null;
 		PreferredBackupWindow?: string | null;
 		PreferredMaintenanceWindow?: string | null;
@@ -2797,6 +2979,8 @@ export namespace MyNS {
 		EngineVersion?: string | null;
 		AllowMajorVersionUpgrade?: boolean | null;
 		AutoMinorVersionUpgrade?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops?: number | null;
 		OptionGroupName?: string | null;
 		NewDBInstanceIdentifier?: string | null;
@@ -2805,11 +2989,15 @@ export namespace MyNS {
 
 		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		AllocatedStorage: FormControl<number | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
 		ApplyImmediately: FormControl<boolean | null | undefined>,
 		MasterUserPassword: FormControl<string | null | undefined>,
 		DBParameterGroupName: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BackupRetentionPeriod: FormControl<number | null | undefined>,
 		PreferredBackupWindow: FormControl<string | null | undefined>,
 		PreferredMaintenanceWindow: FormControl<string | null | undefined>,
@@ -2817,6 +3005,8 @@ export namespace MyNS {
 		EngineVersion: FormControl<string | null | undefined>,
 		AllowMajorVersionUpgrade: FormControl<boolean | null | undefined>,
 		AutoMinorVersionUpgrade: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops: FormControl<number | null | undefined>,
 		OptionGroupName: FormControl<string | null | undefined>,
 		NewDBInstanceIdentifier: FormControl<string | null | undefined>,
@@ -2939,6 +3129,8 @@ export namespace MyNS {
 		OptionName?: string | null;
 		OptionDescription?: string | null;
 		Persistent?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port?: number | null;
 		OptionSettings?: Array<string>;
 		DBSecurityGroupMemberships?: Array<string>;
@@ -2948,6 +3140,8 @@ export namespace MyNS {
 		OptionName: FormControl<string | null | undefined>,
 		OptionDescription: FormControl<string | null | undefined>,
 		Persistent: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port: FormControl<number | null | undefined>,
 	}
 	export function CreateOptionFormGroup() {
@@ -2983,6 +3177,8 @@ export namespace MyNS {
 		MajorEngineVersion?: string | null;
 		MinimumRequiredMinorEngineVersion?: string | null;
 		PortRequired?: boolean | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultPort?: number | null;
 		OptionsDependedOn?: Array<string>;
 		Persistent?: boolean | null;
@@ -2995,6 +3191,8 @@ export namespace MyNS {
 		MajorEngineVersion: FormControl<string | null | undefined>,
 		MinimumRequiredMinorEngineVersion: FormControl<string | null | undefined>,
 		PortRequired: FormControl<boolean | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DefaultPort: FormControl<number | null | undefined>,
 		Persistent: FormControl<boolean | null | undefined>,
 	}
@@ -3113,6 +3311,8 @@ export namespace MyNS {
 
 		/** Required */
 		DBInstanceIdentifier: string;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BackupRetentionPeriod?: number | null;
 		PreferredBackupWindow?: string | null;
 	}
@@ -3120,6 +3320,8 @@ export namespace MyNS {
 
 		/** Required */
 		DBInstanceIdentifier: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		BackupRetentionPeriod: FormControl<number | null | undefined>,
 		PreferredBackupWindow: FormControl<string | null | undefined>,
 	}
@@ -3137,6 +3339,8 @@ export namespace MyNS {
 		/** Required */
 		ReservedDBInstancesOfferingId: string;
 		ReservedDBInstanceId?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DBInstanceCount?: number | null;
 	}
 	export interface PurchaseReservedDBInstancesOfferingMessageFormProperties {
@@ -3144,6 +3348,8 @@ export namespace MyNS {
 		/** Required */
 		ReservedDBInstancesOfferingId: FormControl<string | null | undefined>,
 		ReservedDBInstanceId: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		DBInstanceCount: FormControl<number | null | undefined>,
 	}
 	export function CreatePurchaseReservedDBInstancesOfferingMessageFormGroup() {
@@ -3176,10 +3382,14 @@ export namespace MyNS {
 	}
 
 	export interface RecurringCharge {
+
+		/** Type: double */
 		RecurringChargeAmount?: number | null;
 		RecurringChargeFrequency?: string | null;
 	}
 	export interface RecurringChargeFormProperties {
+
+		/** Type: double */
 		RecurringChargeAmount: FormControl<number | null | undefined>,
 		RecurringChargeFrequency: FormControl<string | null | undefined>,
 	}
@@ -3238,8 +3448,14 @@ export namespace MyNS {
 	export interface ReservedDBInstancesOffering {
 		ReservedDBInstancesOfferingId?: string | null;
 		DBInstanceClass?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Duration?: number | null;
+
+		/** Type: double */
 		FixedPrice?: number | null;
+
+		/** Type: double */
 		UsagePrice?: number | null;
 		CurrencyCode?: string | null;
 		ProductDescription?: string | null;
@@ -3250,8 +3466,14 @@ export namespace MyNS {
 	export interface ReservedDBInstancesOfferingFormProperties {
 		ReservedDBInstancesOfferingId: FormControl<string | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Duration: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		FixedPrice: FormControl<number | null | undefined>,
+
+		/** Type: double */
 		UsagePrice: FormControl<number | null | undefined>,
 		CurrencyCode: FormControl<string | null | undefined>,
 		ProductDescription: FormControl<string | null | undefined>,
@@ -3302,6 +3524,8 @@ export namespace MyNS {
 		/** Required */
 		DBSnapshotIdentifier: string;
 		DBInstanceClass?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port?: number | null;
 		AvailabilityZone?: string | null;
 		DBSubnetGroupName?: string | null;
@@ -3311,6 +3535,8 @@ export namespace MyNS {
 		LicenseModel?: string | null;
 		DBName?: string | null;
 		Engine?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops?: number | null;
 		OptionGroupName?: string | null;
 	}
@@ -3322,6 +3548,8 @@ export namespace MyNS {
 		/** Required */
 		DBSnapshotIdentifier: FormControl<string | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port: FormControl<number | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
 		DBSubnetGroupName: FormControl<string | null | undefined>,
@@ -3331,6 +3559,8 @@ export namespace MyNS {
 		LicenseModel: FormControl<string | null | undefined>,
 		DBName: FormControl<string | null | undefined>,
 		Engine: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops: FormControl<number | null | undefined>,
 		OptionGroupName: FormControl<string | null | undefined>,
 	}
@@ -3364,6 +3594,8 @@ export namespace MyNS {
 		RestoreTime?: Date | null;
 		UseLatestRestorableTime?: boolean | null;
 		DBInstanceClass?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port?: number | null;
 		AvailabilityZone?: string | null;
 		DBSubnetGroupName?: string | null;
@@ -3373,6 +3605,8 @@ export namespace MyNS {
 		LicenseModel?: string | null;
 		DBName?: string | null;
 		Engine?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops?: number | null;
 		OptionGroupName?: string | null;
 	}
@@ -3386,6 +3620,8 @@ export namespace MyNS {
 		RestoreTime: FormControl<Date | null | undefined>,
 		UseLatestRestorableTime: FormControl<boolean | null | undefined>,
 		DBInstanceClass: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Port: FormControl<number | null | undefined>,
 		AvailabilityZone: FormControl<string | null | undefined>,
 		DBSubnetGroupName: FormControl<string | null | undefined>,
@@ -3395,6 +3631,8 @@ export namespace MyNS {
 		LicenseModel: FormControl<string | null | undefined>,
 		DBName: FormControl<string | null | undefined>,
 		Engine: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		Iops: FormControl<number | null | undefined>,
 		OptionGroupName: FormControl<string | null | undefined>,
 	}
@@ -3521,6 +3759,10 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=CreateDBInstance
+		 * @param {number} AllocatedStorage Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} BackupRetentionPeriod Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Port Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Iops Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_CreateDBInstance(DBName: string | null | undefined, DBInstanceIdentifier: string, AllocatedStorage: number, DBInstanceClass: string, Engine: string, MasterUsername: string, MasterUserPassword: string, DBSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, AvailabilityZone: string | null | undefined, DBSubnetGroupName: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, DBParameterGroupName: string | null | undefined, BackupRetentionPeriod: number | null | undefined, PreferredBackupWindow: string | null | undefined, Port: number | null | undefined, MultiAZ: boolean | null | undefined, EngineVersion: string | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, LicenseModel: string | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, CharacterSetName: string | null | undefined, PubliclyAccessible: boolean | null | undefined, Action: GET_CreateDBInstanceAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3529,6 +3771,8 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=CreateDBInstanceReadReplica
+		 * @param {number} Port Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Iops Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_CreateDBInstanceReadReplica(DBInstanceIdentifier: string, SourceDBInstanceIdentifier: string, DBInstanceClass: string | null | undefined, AvailabilityZone: string | null | undefined, Port: number | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, PubliclyAccessible: boolean | null | undefined, Action: GET_CreateDBInstanceReadReplicaAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3641,6 +3885,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeDBEngineVersions
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeDBEngineVersions(Engine: string | null | undefined, EngineVersion: string | null | undefined, DBParameterGroupFamily: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, DefaultOnly: boolean | null | undefined, ListSupportedCharacterSets: boolean | null | undefined, Action: GET_DescribeDBEngineVersionsAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3649,6 +3894,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeDBInstances
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeDBInstances(DBInstanceIdentifier: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBInstancesAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3657,6 +3903,9 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeDBLogFiles
+		 * @param {number} FileLastWritten Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} FileSize Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeDBLogFiles(DBInstanceIdentifier: string, FilenameContains: string | null | undefined, FileLastWritten: number | null | undefined, FileSize: number | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBLogFilesAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3665,6 +3914,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeDBParameterGroups
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeDBParameterGroups(DBParameterGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBParameterGroupsAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3673,6 +3923,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeDBParameters
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeDBParameters(DBParameterGroupName: string, Source: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBParametersAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3681,6 +3932,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeDBSecurityGroups
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeDBSecurityGroups(DBSecurityGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBSecurityGroupsAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3689,6 +3941,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeDBSnapshots
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeDBSnapshots(DBInstanceIdentifier: string | null | undefined, DBSnapshotIdentifier: string | null | undefined, SnapshotType: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBSnapshotsAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3697,6 +3950,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeDBSubnetGroups
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeDBSubnetGroups(DBSubnetGroupName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeDBSubnetGroupsAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3705,6 +3959,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeEngineDefaultParameters
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeEngineDefaultParameters(DBParameterGroupFamily: string, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEngineDefaultParametersAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3721,6 +3976,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeEventSubscriptions
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeEventSubscriptions(SubscriptionName: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEventSubscriptionsAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3729,6 +3985,8 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeEvents
+		 * @param {number} Duration Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeEvents(SourceIdentifier: string | null | undefined, SourceType: SourceType | null | undefined, StartTime: Date | null | undefined, EndTime: Date | null | undefined, Duration: number | null | undefined, EventCategories: Array<string> | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeEventsAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3737,6 +3995,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeOptionGroupOptions
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeOptionGroupOptions(EngineName: string, MajorEngineVersion: string | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeOptionGroupOptionsAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3745,6 +4004,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeOptionGroups
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeOptionGroups(OptionGroupName: string | null | undefined, Marker: string | null | undefined, MaxRecords: number | null | undefined, EngineName: string | null | undefined, MajorEngineVersion: string | null | undefined, Action: GET_DescribeOptionGroupsAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3753,6 +4013,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeOrderableDBInstanceOptions
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeOrderableDBInstanceOptions(Engine: string, EngineVersion: string | null | undefined, DBInstanceClass: string | null | undefined, LicenseModel: string | null | undefined, Vpc: boolean | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeOrderableDBInstanceOptionsAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3761,6 +4022,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeReservedDBInstances
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeReservedDBInstances(ReservedDBInstanceId: string | null | undefined, ReservedDBInstancesOfferingId: string | null | undefined, DBInstanceClass: string | null | undefined, Duration: string | null | undefined, ProductDescription: string | null | undefined, OfferingType: string | null | undefined, MultiAZ: boolean | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReservedDBInstancesAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3769,6 +4031,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DescribeReservedDBInstancesOfferings
+		 * @param {number} MaxRecords Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DescribeReservedDBInstancesOfferings(ReservedDBInstancesOfferingId: string | null | undefined, DBInstanceClass: string | null | undefined, Duration: string | null | undefined, ProductDescription: string | null | undefined, OfferingType: string | null | undefined, MultiAZ: boolean | null | undefined, MaxRecords: number | null | undefined, Marker: string | null | undefined, Action: GET_DescribeReservedDBInstancesOfferingsAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3777,6 +4040,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=DownloadDBLogFilePortion
+		 * @param {number} NumberOfLines Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_DownloadDBLogFilePortion(DBInstanceIdentifier: string, LogFileName: string, Marker: string | null | undefined, NumberOfLines: number | null | undefined, Action: GET_DownloadDBLogFilePortionAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3793,6 +4057,9 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=ModifyDBInstance
+		 * @param {number} AllocatedStorage Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} BackupRetentionPeriod Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Iops Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_ModifyDBInstance(DBInstanceIdentifier: string, AllocatedStorage: number | null | undefined, DBInstanceClass: string | null | undefined, DBSecurityGroups: Array<string> | null | undefined, VpcSecurityGroupIds: Array<string> | null | undefined, ApplyImmediately: boolean | null | undefined, MasterUserPassword: string | null | undefined, DBParameterGroupName: string | null | undefined, BackupRetentionPeriod: number | null | undefined, PreferredBackupWindow: string | null | undefined, PreferredMaintenanceWindow: string | null | undefined, MultiAZ: boolean | null | undefined, EngineVersion: string | null | undefined, AllowMajorVersionUpgrade: boolean | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, NewDBInstanceIdentifier: string | null | undefined, Action: GET_ModifyDBInstanceAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3833,6 +4100,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=PromoteReadReplica
+		 * @param {number} BackupRetentionPeriod Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_PromoteReadReplica(DBInstanceIdentifier: string, BackupRetentionPeriod: number | null | undefined, PreferredBackupWindow: string | null | undefined, Action: GET_PromoteReadReplicaAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3841,6 +4109,7 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=PurchaseReservedDBInstancesOffering
+		 * @param {number} DBInstanceCount Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_PurchaseReservedDBInstancesOffering(ReservedDBInstancesOfferingId: string, ReservedDBInstanceId: string | null | undefined, DBInstanceCount: number | null | undefined, Action: GET_PurchaseReservedDBInstancesOfferingAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3881,6 +4150,8 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=RestoreDBInstanceFromDBSnapshot
+		 * @param {number} Port Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Iops Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_RestoreDBInstanceFromDBSnapshot(DBInstanceIdentifier: string, DBSnapshotIdentifier: string, DBInstanceClass: string | null | undefined, Port: number | null | undefined, AvailabilityZone: string | null | undefined, DBSubnetGroupName: string | null | undefined, MultiAZ: boolean | null | undefined, PubliclyAccessible: boolean | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, LicenseModel: string | null | undefined, DBName: string | null | undefined, Engine: string | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, Action: GET_RestoreDBInstanceFromDBSnapshotAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {
@@ -3889,6 +4160,8 @@ export namespace MyNS {
 
 		/**
 		 * Get #Action=RestoreDBInstanceToPointInTime
+		 * @param {number} Port Type: int, -2,147,483,648 to 2,147,483,647
+		 * @param {number} Iops Type: int, -2,147,483,648 to 2,147,483,647
 		 * @return {void} Success
 		 */
 		GET_RestoreDBInstanceToPointInTime(SourceDBInstanceIdentifier: string, TargetDBInstanceIdentifier: string, RestoreTime: Date | null | undefined, UseLatestRestorableTime: boolean | null | undefined, DBInstanceClass: string | null | undefined, Port: number | null | undefined, AvailabilityZone: string | null | undefined, DBSubnetGroupName: string | null | undefined, MultiAZ: boolean | null | undefined, PubliclyAccessible: boolean | null | undefined, AutoMinorVersionUpgrade: boolean | null | undefined, LicenseModel: string | null | undefined, DBName: string | null | undefined, Engine: string | null | undefined, Iops: number | null | undefined, OptionGroupName: string | null | undefined, Action: GET_RestoreDBInstanceToPointInTimeAction, Version: GET_AddSourceIdentifierToSubscriptionVersion): Observable<HttpResponse<string>> {

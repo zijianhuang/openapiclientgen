@@ -97,7 +97,10 @@ export namespace MyNS {
 	/** Not supported by Cloud Run Adapts a ConfigMap into a volume. The contents of the target ConfigMap's Data field will be presented in a volume as files using the keys in the Data field as the file names, unless the items element is populated with specific mappings of keys to paths. */
 	export interface ConfigMapVolumeSource {
 
-		/** (Optional) Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0644. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * (Optional) Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0644. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMode?: number | null;
 
 		/** (Optional) If unspecified, each key-value pair in the Data field of the referenced Secret will be projected into the volume as a file whose name is the key and content is the value. If specified, the listed keys will be projected into the specified paths, and unlisted keys will not be present. If a key is specified that is not present in the Secret, the volume setup will error unless it is marked optional. */
@@ -113,7 +116,10 @@ export namespace MyNS {
 	/** Not supported by Cloud Run Adapts a ConfigMap into a volume. The contents of the target ConfigMap's Data field will be presented in a volume as files using the keys in the Data field as the file names, unless the items element is populated with specific mappings of keys to paths. */
 	export interface ConfigMapVolumeSourceFormProperties {
 
-		/** (Optional) Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0644. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * (Optional) Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0644. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMode: FormControl<number | null | undefined>,
 
 		/** Name of the config. */
@@ -138,7 +144,10 @@ export namespace MyNS {
 		/** The Cloud Secret Manager secret version. Can be 'latest' for the latest value or an integer for a specific version. The key to project. */
 		key?: string | null;
 
-		/** (Optional) Mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * (Optional) Mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mode?: number | null;
 
 		/** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
@@ -151,7 +160,10 @@ export namespace MyNS {
 		/** The Cloud Secret Manager secret version. Can be 'latest' for the latest value or an integer for a specific version. The key to project. */
 		key: FormControl<string | null | undefined>,
 
-		/** (Optional) Mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * (Optional) Mode bits to use on this file, must be a value between 01 and 0777 (octal). If 0 or not set, the Volume's default mode will be used. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		mode: FormControl<number | null | undefined>,
 
 		/** The relative path of the file to map the key to. May not be an absolute path. May not contain the path element '..'. May not start with the string '..'. */
@@ -407,7 +419,10 @@ export namespace MyNS {
 		/** Not supported by Cloud Run ExecAction describes a "run in container" action. */
 		exec?: ExecAction;
 
-		/** (Optional) Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1. */
+		/**
+		 * (Optional) Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureThreshold?: number | null;
 
 		/** Not supported by Cloud Run GRPCAction describes an action involving a GRPC port. */
@@ -416,38 +431,65 @@ export namespace MyNS {
 		/** Not supported by Cloud Run HTTPGetAction describes an action based on HTTP Get requests. */
 		httpGet?: HTTPGetAction;
 
-		/** (Optional) Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes */
+		/**
+		 * (Optional) Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialDelaySeconds?: number | null;
 
-		/** (Optional) How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds. */
+		/**
+		 * (Optional) How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSeconds?: number | null;
 
-		/** (Optional) Minimum consecutive successes for the probe to be considered successful after having failed. Must be 1 if set. */
+		/**
+		 * (Optional) Minimum consecutive successes for the probe to be considered successful after having failed. Must be 1 if set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successThreshold?: number | null;
 
 		/** Not supported by Cloud Run TCPSocketAction describes an action based on opening a socket */
 		tcpSocket?: TCPSocketAction;
 
-		/** (Optional) Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes */
+		/**
+		 * (Optional) Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds?: number | null;
 	}
 
 	/** Not supported by Cloud Run Probe describes a health check to be performed against a container to determine whether it is alive or ready to receive traffic. */
 	export interface ProbeFormProperties {
 
-		/** (Optional) Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1. */
+		/**
+		 * (Optional) Minimum consecutive failures for the probe to be considered failed after having succeeded. Defaults to 3. Minimum value is 1.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failureThreshold: FormControl<number | null | undefined>,
 
-		/** (Optional) Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes */
+		/**
+		 * (Optional) Number of seconds after the container has started before the probe is initiated. Defaults to 0 seconds. Minimum value is 0. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		initialDelaySeconds: FormControl<number | null | undefined>,
 
-		/** (Optional) How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds. */
+		/**
+		 * (Optional) How often (in seconds) to perform the probe. Default to 10 seconds. Minimum value is 1. Maximum value for liveness probe is 3600. Maximum value for startup probe is 240. Must be greater or equal than timeout_seconds.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		periodSeconds: FormControl<number | null | undefined>,
 
-		/** (Optional) Minimum consecutive successes for the probe to be considered successful after having failed. Must be 1 if set. */
+		/**
+		 * (Optional) Minimum consecutive successes for the probe to be considered successful after having failed. Must be 1 if set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		successThreshold: FormControl<number | null | undefined>,
 
-		/** (Optional) Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes */
+		/**
+		 * (Optional) Number of seconds after which the probe times out. Defaults to 1 second. Minimum value is 1. Maximum value is 3600. Must be smaller than period_seconds. More info: https://kubernetes.io/docs/concepts/workloads/pods/pod-lifecycle#container-probes
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		timeoutSeconds: FormControl<number | null | undefined>,
 	}
 	export function CreateProbeFormGroup() {
@@ -482,7 +524,10 @@ export namespace MyNS {
 	/** Not supported by Cloud Run GRPCAction describes an action involving a GRPC port. */
 	export interface GRPCAction {
 
-		/** Port number of the gRPC service. Number must be in the range 1 to 65535. */
+		/**
+		 * Port number of the gRPC service. Number must be in the range 1 to 65535.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 
 		/** Service is the name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC. */
@@ -492,7 +537,10 @@ export namespace MyNS {
 	/** Not supported by Cloud Run GRPCAction describes an action involving a GRPC port. */
 	export interface GRPCActionFormProperties {
 
-		/** Port number of the gRPC service. Number must be in the range 1 to 65535. */
+		/**
+		 * Port number of the gRPC service. Number must be in the range 1 to 65535.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 
 		/** Service is the name of the service to place in the gRPC HealthCheckRequest (see https://github.com/grpc/grpc/blob/master/doc/health-checking.md). If this is not specified, the default behavior is defined by gRPC. */
@@ -579,7 +627,10 @@ export namespace MyNS {
 		/** (Optional) Optional: Host name to connect to, defaults to the pod IP. */
 		host?: string | null;
 
-		/** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. This field is currently limited to integer types only because of proto's inability to properly support the IntOrString golang type. */
+		/**
+		 * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. This field is currently limited to integer types only because of proto's inability to properly support the IntOrString golang type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port?: number | null;
 	}
 
@@ -589,7 +640,10 @@ export namespace MyNS {
 		/** (Optional) Optional: Host name to connect to, defaults to the pod IP. */
 		host: FormControl<string | null | undefined>,
 
-		/** Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. This field is currently limited to integer types only because of proto's inability to properly support the IntOrString golang type. */
+		/**
+		 * Number or name of the port to access on the container. Number must be in the range 1 to 65535. Name must be an IANA_SVC_NAME. This field is currently limited to integer types only because of proto's inability to properly support the IntOrString golang type.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		port: FormControl<number | null | undefined>,
 	}
 	export function CreateTCPSocketActionFormGroup() {
@@ -604,7 +658,10 @@ export namespace MyNS {
 	/** ContainerPort represents a network port in a single container. */
 	export interface ContainerPort {
 
-		/** (Optional) Port number the container listens on. This must be a valid port number, 0 < x < 65536. */
+		/**
+		 * (Optional) Port number the container listens on. This must be a valid port number, 0 < x < 65536.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containerPort?: number | null;
 
 		/** (Optional) If specified, used to specify which protocol to use. Allowed values are "http1" and "h2c". */
@@ -617,7 +674,10 @@ export namespace MyNS {
 	/** ContainerPort represents a network port in a single container. */
 	export interface ContainerPortFormProperties {
 
-		/** (Optional) Port number the container listens on. This must be a valid port number, 0 < x < 65536. */
+		/**
+		 * (Optional) Port number the container listens on. This must be a valid port number, 0 < x < 65536.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		containerPort: FormControl<number | null | undefined>,
 
 		/** (Optional) If specified, used to specify which protocol to use. Allowed values are "http1" and "h2c". */
@@ -667,14 +727,20 @@ export namespace MyNS {
 	/** Not supported by Cloud Run SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext. When both are set, the values in SecurityContext take precedence. */
 	export interface SecurityContext {
 
-		/** (Optional) The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+		/**
+		 * (Optional) The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runAsUser?: number | null;
 	}
 
 	/** Not supported by Cloud Run SecurityContext holds security configuration that will be applied to a container. Some fields are present in both SecurityContext and PodSecurityContext. When both are set, the values in SecurityContext take precedence. */
 	export interface SecurityContextFormProperties {
 
-		/** (Optional) The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence. */
+		/**
+		 * (Optional) The UID to run the entrypoint of the container process. Defaults to user specified in image metadata if unspecified. May also be set in PodSecurityContext. If set in both SecurityContext and PodSecurityContext, the value specified in SecurityContext takes precedence.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		runAsUser: FormControl<number | null | undefined>,
 	}
 	export function CreateSecurityContextFormGroup() {
@@ -744,7 +810,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatus {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code?: number | null;
 
 		/** A list of messages that carry the error details. There is a common set of message types for APIs to use. */
@@ -757,7 +826,10 @@ export namespace MyNS {
 	/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
 	export interface GoogleRpcStatusFormProperties {
 
-		/** The status code, which should be an enum value of google.rpc.Code. */
+		/**
+		 * The status code, which should be an enum value of google.rpc.Code.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		code: FormControl<number | null | undefined>,
 
 		/** A developer-facing error message, which should be in English. Any user-facing error message should be localized and sent in the google.rpc.Status.details field, or localized by the client. */
@@ -775,7 +847,10 @@ export namespace MyNS {
 	/** Result of an instance attempt. */
 	export interface InstanceAttemptResult {
 
-		/** Optional. The exit code of this attempt. This may be unset if the container was unable to exit cleanly with a code due to some other failure. See status field for possible failure details. */
+		/**
+		 * Optional. The exit code of this attempt. This may be unset if the container was unable to exit cleanly with a code due to some other failure. See status field for possible failure details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode?: number | null;
 
 		/** The `Status` type defines a logical error model that is suitable for different programming environments, including REST APIs and RPC APIs. It is used by [gRPC](https://github.com/grpc). Each `Status` message contains three pieces of data: error code, error message, and error details. You can find out more about this error model and how to work with it in the [API Design Guide](https://cloud.google.com/apis/design/errors). */
@@ -785,7 +860,10 @@ export namespace MyNS {
 	/** Result of an instance attempt. */
 	export interface InstanceAttemptResultFormProperties {
 
-		/** Optional. The exit code of this attempt. This may be unset if the container was unable to exit cleanly with a code due to some other failure. See status field for possible failure details. */
+		/**
+		 * Optional. The exit code of this attempt. This may be unset if the container was unable to exit cleanly with a code due to some other failure. See status field for possible failure details.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		exitCode: FormControl<number | null | undefined>,
 	}
 	export function CreateInstanceAttemptResultFormGroup() {
@@ -874,7 +952,10 @@ export namespace MyNS {
 	/** The secret's value will be presented as the content of a file whose name is defined in the item path. If no items are defined, the name of the file is the secret_name. The contents of the target Secret's Data field will be presented in a volume as files using the keys in the Data field as the file names. */
 	export interface SecretVolumeSource {
 
-		/** Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0444. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0444. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMode?: number | null;
 
 		/** (Optional) If unspecified, the volume will expose a file whose name is the secret_name. If specified, the key will be used as the version to fetch from Cloud Secret Manager and the path will be the name of the file exposed in the volume. When items are defined, they must specify a key and a path. If unspecified, each key-value pair in the Data field of the referenced Secret will be projected into the volume as a file whose name is the key and content is the value. If specified, the listed keys will be projected into the specified paths, and unlisted keys will not be present. If a key is specified that is not present in the Secret, the volume setup will error unless it is marked optional. */
@@ -890,7 +971,10 @@ export namespace MyNS {
 	/** The secret's value will be presented as the content of a file whose name is defined in the item path. If no items are defined, the name of the file is the secret_name. The contents of the target Secret's Data field will be presented in a volume as files using the keys in the Data field as the file names. */
 	export interface SecretVolumeSourceFormProperties {
 
-		/** Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0444. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set. */
+		/**
+		 * Integer representation of mode bits to use on created files by default. Must be a value between 01 and 0777 (octal). If 0 or not set, it will default to 0444. Directories within the path are not affected by this setting. Notes * Internally, a umask of 0222 will be applied to any non-zero value. * This is an integer representation of the mode bits. So, the octal integer value should look exactly as the chmod numeric notation with a leading zero. Some examples: for chmod 777 (a=rwx), set to 0777 (octal) or 511 (base-10). For chmod 640 (u=rw,g=r), set to 0640 (octal) or 416 (base-10). For chmod 755 (u=rwx,g=rx,o=rx), set to 0755 (octal) or 493 (base-10). * This might be in conflict with other options that affect the file mode, like fsGroup, and the result can be other mode bits set.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		defaultMode: FormControl<number | null | undefined>,
 
 		/** (Optional) Specify whether the Secret or its keys must be defined. */
@@ -915,25 +999,40 @@ export namespace MyNS {
 		/** Optional. Represents time when the instance was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional */
 		completionTime?: string | null;
 
-		/** Optional. The number of times this instance exited with code > 0; +optional */
+		/**
+		 * Optional. The number of times this instance exited with code > 0; +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed?: number | null;
 
-		/** Required. Index of the instance, unique per Job, and beginning at 0. */
+		/**
+		 * Required. Index of the instance, unique per Job, and beginning at 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index?: number | null;
 
 		/** Result of an instance attempt. */
 		lastAttemptResult?: InstanceAttemptResult;
 
-		/** Optional. Last exit code seen for this instance. +optional */
+		/**
+		 * Optional. Last exit code seen for this instance. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastExitCode?: number | null;
 
-		/** Optional. The number of times this instance was restarted. Instances are restarted according the restartPolicy configured in the Job template. +optional */
+		/**
+		 * Optional. The number of times this instance was restarted. Instances are restarted according the restartPolicy configured in the Job template. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		restarted?: number | null;
 
 		/** Optional. Represents time when the instance was created by the job controller. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional */
 		startTime?: string | null;
 
-		/** Optional. The number of times this instance exited with code == 0. +optional */
+		/**
+		 * Optional. The number of times this instance exited with code == 0. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		succeeded?: number | null;
 	}
 
@@ -943,22 +1042,37 @@ export namespace MyNS {
 		/** Optional. Represents time when the instance was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional */
 		completionTime: FormControl<string | null | undefined>,
 
-		/** Optional. The number of times this instance exited with code > 0; +optional */
+		/**
+		 * Optional. The number of times this instance exited with code > 0; +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed: FormControl<number | null | undefined>,
 
-		/** Required. Index of the instance, unique per Job, and beginning at 0. */
+		/**
+		 * Required. Index of the instance, unique per Job, and beginning at 0.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		index: FormControl<number | null | undefined>,
 
-		/** Optional. Last exit code seen for this instance. +optional */
+		/**
+		 * Optional. Last exit code seen for this instance. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lastExitCode: FormControl<number | null | undefined>,
 
-		/** Optional. The number of times this instance was restarted. Instances are restarted according the restartPolicy configured in the Job template. +optional */
+		/**
+		 * Optional. The number of times this instance was restarted. Instances are restarted according the restartPolicy configured in the Job template. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		restarted: FormControl<number | null | undefined>,
 
 		/** Optional. Represents time when the instance was created by the job controller. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional */
 		startTime: FormControl<string | null | undefined>,
 
-		/** Optional. The number of times this instance exited with code == 0. +optional */
+		/**
+		 * Optional. The number of times this instance exited with code == 0. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		succeeded: FormControl<number | null | undefined>,
 	}
 	export function CreateInstanceStatusFormGroup() {
@@ -1041,7 +1155,10 @@ export namespace MyNS {
 		/** (Optional) CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC. Populated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata */
 		creationTimestamp?: string | null;
 
-		/** (Optional) Not supported by Cloud Run Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only. */
+		/**
+		 * (Optional) Not supported by Cloud Run Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deletionGracePeriodSeconds?: number | null;
 
 		/** (Optional) Not supported by Cloud Run DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted. This field is set by the server when a graceful deletion is requested by the user, and is not directly settable by a client. The resource is expected to be deleted (no longer visible from resource lists, and not reachable by name) after the time in this field, once the finalizers list is empty. As long as the finalizers list contains items, deletion is blocked. Once the deletionTimestamp is set, this value may not be unset or be set further into the future, although it may be shortened or the resource may be deleted prior to this time. For example, a user may request that a pod is deleted in 30 seconds. The Kubelet will react by sending a graceful termination signal to the containers in the pod. After that 30 seconds, the Kubelet will send a hard termination signal (SIGKILL) to the container and after cleanup, remove the pod from the API. In the presence of network partitions, this object may still exist after this timestamp, until an administrator or automated process can determine the resource is fully terminated. If not set, graceful deletion of the object has not been requested. Populated by the system when a graceful deletion is requested. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata */
@@ -1053,7 +1170,10 @@ export namespace MyNS {
 		/** (Optional) Not supported by Cloud Run GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header). Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#idempotency string generateName = 2; */
 		generateName?: string | null;
 
-		/** (Optional) A sequence number representing a specific generation of the desired state. Populated by the system. Read-only. */
+		/**
+		 * (Optional) A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		generation?: number | null;
 
 		/** (Optional) Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and routes. More info: https://kubernetes.io/docs/user-guide/labels */
@@ -1090,7 +1210,10 @@ export namespace MyNS {
 		/** (Optional) CreationTimestamp is a timestamp representing the server time when this object was created. It is not guaranteed to be set in happens-before order across separate operations. Clients may not set this value. It is represented in RFC3339 form and is in UTC. Populated by the system. Read-only. Null for lists. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata */
 		creationTimestamp: FormControl<string | null | undefined>,
 
-		/** (Optional) Not supported by Cloud Run Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only. */
+		/**
+		 * (Optional) Not supported by Cloud Run Number of seconds allowed for this object to gracefully terminate before it will be removed from the system. Only set when deletionTimestamp is also set. May only be shortened. Read-only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		deletionGracePeriodSeconds: FormControl<number | null | undefined>,
 
 		/** (Optional) Not supported by Cloud Run DeletionTimestamp is RFC 3339 date and time at which this resource will be deleted. This field is set by the server when a graceful deletion is requested by the user, and is not directly settable by a client. The resource is expected to be deleted (no longer visible from resource lists, and not reachable by name) after the time in this field, once the finalizers list is empty. As long as the finalizers list contains items, deletion is blocked. Once the deletionTimestamp is set, this value may not be unset or be set further into the future, although it may be shortened or the resource may be deleted prior to this time. For example, a user may request that a pod is deleted in 30 seconds. The Kubelet will react by sending a graceful termination signal to the containers in the pod. After that 30 seconds, the Kubelet will send a hard termination signal (SIGKILL) to the container and after cleanup, remove the pod from the API. In the presence of network partitions, this object may still exist after this timestamp, until an administrator or automated process can determine the resource is fully terminated. If not set, graceful deletion of the object has not been requested. Populated by the system when a graceful deletion is requested. Read-only. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#metadata */
@@ -1099,7 +1222,10 @@ export namespace MyNS {
 		/** (Optional) Not supported by Cloud Run GenerateName is an optional prefix, used by the server, to generate a unique name ONLY IF the Name field has not been provided. If this field is used, the name returned to the client will be different than the name passed. This value will also be combined with a unique suffix. The provided value has the same validation rules as the Name field, and may be truncated by the length of the suffix required to make the value unique on the server. If this field is specified and the generated name exists, the server will NOT return a 409 - instead, it will either return 201 Created or 500 with Reason ServerTimeout indicating a unique name could not be found in the time allotted, and the client should retry (optionally after the time indicated in the Retry-After header). Applied only if Name is not specified. More info: https://git.k8s.io/community/contributors/devel/api-conventions.md#idempotency string generateName = 2; */
 		generateName: FormControl<string | null | undefined>,
 
-		/** (Optional) A sequence number representing a specific generation of the desired state. Populated by the system. Read-only. */
+		/**
+		 * (Optional) A sequence number representing a specific generation of the desired state. Populated by the system. Read-only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		generation: FormControl<number | null | undefined>,
 
 		/** (Optional) Map of string keys and values that can be used to organize and categorize (scope and select) objects. May match selectors of replication controllers and routes. More info: https://kubernetes.io/docs/user-guide/labels */
@@ -1202,19 +1328,31 @@ export namespace MyNS {
 		/** Optional. Not supported. Specifies the duration in seconds relative to the startTime that the job may be active before the system tries to terminate it. If set to zero, the system will never attempt to terminate the job based on time. Otherwise, the value must be positive integer. +optional */
 		activeDeadlineSeconds?: string | null;
 
-		/** Optional. Specifies the number of retries per instance, before marking this job failed. If set to zero, instances will never retry on failure. +optional */
+		/**
+		 * Optional. Specifies the number of retries per instance, before marking this job failed. If set to zero, instances will never retry on failure. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backoffLimit?: number | null;
 
-		/** Optional. Specifies the desired number of successfully finished instances the job should be run with. Setting to 1 means that parallelism is limited to 1 and the success of that instance signals the success of the job. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional */
+		/**
+		 * Optional. Specifies the desired number of successfully finished instances the job should be run with. Setting to 1 means that parallelism is limited to 1 and the success of that instance signals the success of the job. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completions?: number | null;
 
-		/** Optional. Specifies the maximum desired number of instances the job should run at any given time. Must be <= completions. The actual number of instances running in steady state will be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional */
+		/**
+		 * Optional. Specifies the maximum desired number of instances the job should run at any given time. Must be <= completions. The actual number of instances running in steady state will be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parallelism?: number | null;
 
 		/** InstanceTemplateSpec describes the data an instance should have when created from a template. */
 		template?: InstanceTemplateSpec;
 
-		/** Optional. Not supported. ttlSecondsAfterFinished limits the lifetime of a Job that has finished execution (either Complete or Failed). If this field is set, ttlSecondsAfterFinished after the Job finishes, it is eligible to be automatically deleted. When the Job is being deleted, its lifecycle guarantees (e.g. finalizers) will be honored. If this field is set to zero, the Job won't be automatically deleted. +optional */
+		/**
+		 * Optional. Not supported. ttlSecondsAfterFinished limits the lifetime of a Job that has finished execution (either Complete or Failed). If this field is set, ttlSecondsAfterFinished after the Job finishes, it is eligible to be automatically deleted. When the Job is being deleted, its lifecycle guarantees (e.g. finalizers) will be honored. If this field is set to zero, the Job won't be automatically deleted. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttlSecondsAfterFinished?: number | null;
 	}
 
@@ -1224,16 +1362,28 @@ export namespace MyNS {
 		/** Optional. Not supported. Specifies the duration in seconds relative to the startTime that the job may be active before the system tries to terminate it. If set to zero, the system will never attempt to terminate the job based on time. Otherwise, the value must be positive integer. +optional */
 		activeDeadlineSeconds: FormControl<string | null | undefined>,
 
-		/** Optional. Specifies the number of retries per instance, before marking this job failed. If set to zero, instances will never retry on failure. +optional */
+		/**
+		 * Optional. Specifies the number of retries per instance, before marking this job failed. If set to zero, instances will never retry on failure. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		backoffLimit: FormControl<number | null | undefined>,
 
-		/** Optional. Specifies the desired number of successfully finished instances the job should be run with. Setting to 1 means that parallelism is limited to 1 and the success of that instance signals the success of the job. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional */
+		/**
+		 * Optional. Specifies the desired number of successfully finished instances the job should be run with. Setting to 1 means that parallelism is limited to 1 and the success of that instance signals the success of the job. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		completions: FormControl<number | null | undefined>,
 
-		/** Optional. Specifies the maximum desired number of instances the job should run at any given time. Must be <= completions. The actual number of instances running in steady state will be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional */
+		/**
+		 * Optional. Specifies the maximum desired number of instances the job should run at any given time. Must be <= completions. The actual number of instances running in steady state will be less than this number when ((.spec.completions - .status.successful) < .spec.parallelism), i.e. when the work left to do is less than max parallelism. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		parallelism: FormControl<number | null | undefined>,
 
-		/** Optional. Not supported. ttlSecondsAfterFinished limits the lifetime of a Job that has finished execution (either Complete or Failed). If this field is set, ttlSecondsAfterFinished after the Job finishes, it is eligible to be automatically deleted. When the Job is being deleted, its lifecycle guarantees (e.g. finalizers) will be honored. If this field is set to zero, the Job won't be automatically deleted. +optional */
+		/**
+		 * Optional. Not supported. ttlSecondsAfterFinished limits the lifetime of a Job that has finished execution (either Complete or Failed). If this field is set, ttlSecondsAfterFinished after the Job finishes, it is eligible to be automatically deleted. When the Job is being deleted, its lifecycle guarantees (e.g. finalizers) will be honored. If this field is set to zero, the Job won't be automatically deleted. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttlSecondsAfterFinished: FormControl<number | null | undefined>,
 	}
 	export function CreateJobSpecFormGroup() {
@@ -1251,7 +1401,10 @@ export namespace MyNS {
 	/** JobStatus represents the current state of a Job. */
 	export interface JobStatus {
 
-		/** Optional. The number of actively running instances. +optional */
+		/**
+		 * Optional. The number of actively running instances. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active?: number | null;
 
 		/** Optional. Represents time when the job was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional */
@@ -1260,7 +1413,10 @@ export namespace MyNS {
 		/** Optional. The latest available observations of a job's current state. More info: https://kubernetes.io/docs/concepts/workloads/controllers/jobs-run-to-completion/ +optional */
 		conditions?: Array<JobCondition>;
 
-		/** Optional. The number of instances which reached phase Failed. +optional */
+		/**
+		 * Optional. The number of instances which reached phase Failed. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed?: number | null;
 
 		/** Optional. ImageDigest holds the resolved digest for the image specified within .Spec.Template.Spec.Container.Image. The digest is resolved during the creation of the Job. This field holds the digest value regardless of whether a tag or digest was originally specified in the Container object. */
@@ -1269,38 +1425,56 @@ export namespace MyNS {
 		/** Optional. Status of completed, failed, and running instances. +optional */
 		instances?: Array<InstanceStatus>;
 
-		/** Optional. The 'generation' of the job that was last processed by the controller. */
+		/**
+		 * Optional. The 'generation' of the job that was last processed by the controller.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration?: number | null;
 
 		/** Optional. Represents time when the job was acknowledged by the job controller. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional */
 		startTime?: string | null;
 
-		/** Optional. The number of instances which reached phase Succeeded. +optional */
+		/**
+		 * Optional. The number of instances which reached phase Succeeded. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		succeeded?: number | null;
 	}
 
 	/** JobStatus represents the current state of a Job. */
 	export interface JobStatusFormProperties {
 
-		/** Optional. The number of actively running instances. +optional */
+		/**
+		 * Optional. The number of actively running instances. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		active: FormControl<number | null | undefined>,
 
 		/** Optional. Represents time when the job was completed. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional */
 		completionTime: FormControl<string | null | undefined>,
 
-		/** Optional. The number of instances which reached phase Failed. +optional */
+		/**
+		 * Optional. The number of instances which reached phase Failed. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		failed: FormControl<number | null | undefined>,
 
 		/** Optional. ImageDigest holds the resolved digest for the image specified within .Spec.Template.Spec.Container.Image. The digest is resolved during the creation of the Job. This field holds the digest value regardless of whether a tag or digest was originally specified in the Container object. */
 		imageDigest: FormControl<string | null | undefined>,
 
-		/** Optional. The 'generation' of the job that was last processed by the controller. */
+		/**
+		 * Optional. The 'generation' of the job that was last processed by the controller.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		observedGeneration: FormControl<number | null | undefined>,
 
 		/** Optional. Represents time when the job was acknowledged by the job controller. It is not guaranteed to be set in happens-before order across separate operations. It is represented in RFC3339 form and is in UTC. +optional */
 		startTime: FormControl<string | null | undefined>,
 
-		/** Optional. The number of instances which reached phase Succeeded. +optional */
+		/**
+		 * Optional. The number of instances which reached phase Succeeded. +optional
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		succeeded: FormControl<number | null | undefined>,
 	}
 	export function CreateJobStatusFormGroup() {
@@ -1488,6 +1662,7 @@ export namespace MyNS {
 		 * @param {boolean} includeUninitialized Optional. Not currently used by Cloud Run.
 		 * @param {string} labelSelector Optional. Allows to filter resources based on a label. Supported operations are =, !=, exists, in, and notIn.
 		 * @param {number} limit Optional. The maximum number of records that should be returned.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} resourceVersion Optional. The baseline resource version from which the list or watch operation should start. Not currently used by Cloud Run.
 		 * @param {boolean} watch Optional. Flag that indicates that the client expects to watch this resource as well. Not currently used by Cloud Run.
 		 * @return {ListJobsResponse} Successful response

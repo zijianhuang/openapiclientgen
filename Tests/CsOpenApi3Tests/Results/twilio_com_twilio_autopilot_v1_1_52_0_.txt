@@ -1262,8 +1262,13 @@ namespace MyNS
 		/// <summary>
 		/// ListAssistant v1/Assistants
 		/// </summary>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListAssistantReturn> ListAssistantAsync(int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1365,8 +1370,13 @@ namespace MyNS
 		/// ListFieldType v1/Assistants/{AssistantSid}/FieldTypes
 		/// </summary>
 		/// <param name="AssistantSid">The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListFieldTypeReturn> ListFieldTypeAsync(string AssistantSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1403,8 +1413,13 @@ namespace MyNS
 		/// <param name="AssistantSid">The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the FieldType associated with the resources to read.</param>
 		/// <param name="FieldTypeSid">The SID of the Field Type associated with the Field Value to read.</param>
 		/// <param name="Language">The [ISO language-country](https://docs.oracle.com/cd/E13214_01/wli/docs92/xref/xqisocodes.html) tag that specifies the language of the value. Currently supported tags: `en-US`</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListFieldValueReturn> ListFieldValueAsync(string AssistantSid, string FieldTypeSid, string Language, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1563,8 +1578,13 @@ namespace MyNS
 		/// ListModelBuild v1/Assistants/{AssistantSid}/ModelBuilds
 		/// </summary>
 		/// <param name="AssistantSid">The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListModelBuildReturn> ListModelBuildAsync(string AssistantSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1663,9 +1683,17 @@ namespace MyNS
 		/// <param name="Language">The [ISO language-country](https://docs.oracle.com/cd/E13214_01/wli/docs92/xref/xqisocodes.html) string that specifies the language used by the Query resources to read. For example: `en-US`.</param>
 		/// <param name="ModelBuild">The SID or unique name of the [Model Build](https://www.twilio.com/docs/autopilot/api/model-build) to be queried.</param>
 		/// <param name="Status">The status of the resources to read. Can be: `pending-review`, `reviewed`, or `discarded`</param>
-		/// <param name="DialogueSid">The SID of the [Dialogue](https://www.twilio.com/docs/autopilot/api/dialogue).</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="DialogueSid">The SID of the [Dialogue](https://www.twilio.com/docs/autopilot/api/dialogue).
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListQueryReturn> ListQueryAsync(string AssistantSid, string Language, string ModelBuild, string Status, string DialogueSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1795,8 +1823,13 @@ namespace MyNS
 		/// ListTask v1/Assistants/{AssistantSid}/Tasks
 		/// </summary>
 		/// <param name="AssistantSid">The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListTaskReturn> ListTaskAsync(string AssistantSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1928,8 +1961,13 @@ namespace MyNS
 		/// </summary>
 		/// <param name="AssistantSid">The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resources to read.</param>
 		/// <param name="TaskSid">The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) resource associated with the Field resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListFieldReturn> ListFieldAsync(string AssistantSid, string TaskSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2029,8 +2067,13 @@ namespace MyNS
 		/// <param name="AssistantSid">The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resources to read.</param>
 		/// <param name="TaskSid">The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) associated with the Sample resources to read.</param>
 		/// <param name="Language">The [ISO language-country](https://docs.oracle.com/cd/E13214_01/wli/docs92/xref/xqisocodes.html) string that specifies the language used for the sample. For example: `en-US`.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListSampleReturn> ListSampleAsync(string AssistantSid, string TaskSid, string Language, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -2066,7 +2109,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="AssistantSid">The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resources to delete.</param>
 		/// <param name="TaskSid">The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) associated with the Sample resource to delete.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Sample resource to delete.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Sample resource to delete.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		public async Task DeleteSampleAsync(string AssistantSid, string TaskSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "v1/Assistants/"+ (AssistantSid==null? "" : System.Uri.EscapeDataString(AssistantSid))+"/Tasks/"+ (TaskSid==null? "" : System.Uri.EscapeDataString(TaskSid))+"/Samples/"+ (Sid==null? "" : System.Uri.EscapeDataString(Sid));
@@ -2094,7 +2140,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="AssistantSid">The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the Task associated with the resource to fetch.</param>
 		/// <param name="TaskSid">The SID of the [Task](https://www.twilio.com/docs/autopilot/api/task) associated with the Sample resource to create.</param>
-		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Sample resource to fetch.</param>
+		/// <param name="Sid">The Twilio-provided string that uniquely identifies the Sample resource to fetch.
+		/// Max length: 34
+		/// Min length: 34
+		// </param>
 		/// <returns>OK</returns>
 		public async Task<Autopilotv1assistanttasksample> FetchSampleAsync(string AssistantSid, string TaskSid, string Sid, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2162,8 +2211,13 @@ namespace MyNS
 		/// ListWebhook v1/Assistants/{AssistantSid}/Webhooks
 		/// </summary>
 		/// <param name="AssistantSid">The SID of the [Assistant](https://www.twilio.com/docs/autopilot/api/assistant) that is the parent of the resources to read.</param>
-		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.</param>
-		/// <param name="Page">The page index. This value is simply for client state.</param>
+		/// <param name="PageSize">How many resources to return in each list page. The default is 50, and the maximum is 1000.
+		/// Minimum: 1
+		/// Maximum: 1000
+		// </param>
+		/// <param name="Page">The page index. This value is simply for client state.
+		/// Minimum: 0
+		// </param>
 		/// <param name="PageToken">The page token. This is provided by the API.</param>
 		/// <returns>OK</returns>
 		public async Task<ListWebhookReturn> ListWebhookAsync(string AssistantSid, int PageSize, int Page, string PageToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)

@@ -90,8 +90,8 @@ export namespace MyNS {
 		/**
 		 * A string specifying a versioned base URL that MUST adhere to the rules in section Base URL
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: string;
 
@@ -110,8 +110,8 @@ export namespace MyNS {
 		/**
 		 * A string specifying a versioned base URL that MUST adhere to the rules in section Base URL
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: FormControl<string | null | undefined>,
 
@@ -803,7 +803,10 @@ export namespace MyNS {
 		 */
 		api_version: string;
 
-		/** An integer containing the total number of data resource objects available in the database for the endpoint. */
+		/**
+		 * An integer containing the total number of data resource objects available in the database for the endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		data_available?: number | null;
 
 		/**
@@ -875,7 +878,10 @@ export namespace MyNS {
 		 */
 		api_version: FormControl<string | null | undefined>,
 
-		/** An integer containing the total number of data resource objects available in the database for the endpoint. */
+		/**
+		 * An integer containing the total number of data resource objects available in the database for the endpoint.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		data_available: FormControl<number | null | undefined>,
 
 		/**
@@ -1597,8 +1603,8 @@ export namespace MyNS {
 		/**
 		 * a string containing the link’s URL.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		href: string;
 
@@ -1612,8 +1618,8 @@ export namespace MyNS {
 		/**
 		 * a string containing the link’s URL.
 		 * Required
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		href: FormControl<string | null | undefined>,
 	}
@@ -2136,8 +2142,8 @@ export namespace MyNS {
 
 		/**
 		 * The URL of the reference.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url?: string | null;
 
@@ -2245,8 +2251,8 @@ export namespace MyNS {
 
 		/**
 		 * The URL of the reference.
-		 * Max length: 65536
 		 * Min length: 1
+		 * Max length: 65536
 		 */
 		url: FormControl<string | null | undefined>,
 
@@ -2886,6 +2892,7 @@ export namespace MyNS {
 		 * - A filter that matches structures that have exactly 4 elements: `nelements=4`.
 		 * - A filter that matches structures that have between 2 and 7 elements: `nelements>=2 AND nelements<=7`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nelements: number;
 
@@ -2903,6 +2910,7 @@ export namespace MyNS {
 		 * - Match only structures with exactly 3 periodic dimensions: `nperiodic_dimensions=3`
 		 * - Match all structures with 2 or fewer periodic dimensions: `nperiodic_dimensions<=2`
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nperiodic_dimensions: number;
 
@@ -2918,6 +2926,7 @@ export namespace MyNS {
 		 * - Match only structures with exactly 4 sites: `nsites=4`
 		 * - Match structures that have between 2 and 7 sites: `nsites>=2 AND nsites<=7`
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nsites: number;
 
@@ -3147,6 +3156,7 @@ export namespace MyNS {
 		 * - A filter that matches structures that have exactly 4 elements: `nelements=4`.
 		 * - A filter that matches structures that have between 2 and 7 elements: `nelements>=2 AND nelements<=7`.
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nelements: FormControl<number | null | undefined>,
 
@@ -3164,6 +3174,7 @@ export namespace MyNS {
 		 * - Match only structures with exactly 3 periodic dimensions: `nperiodic_dimensions=3`
 		 * - Match all structures with 2 or fewer periodic dimensions: `nperiodic_dimensions<=2`
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nperiodic_dimensions: FormControl<number | null | undefined>,
 
@@ -3179,6 +3190,7 @@ export namespace MyNS {
 		 * - Match only structures with exactly 4 sites: `nsites=4`
 		 * - Match structures that have between 2 and 7 sites: `nsites>=2 AND nsites<=7`
 		 * Required
+		 * Type: int, -2,147,483,648 to 2,147,483,647
 		 */
 		nsites: FormControl<number | null | undefined>,
 	}
@@ -3321,15 +3333,21 @@ export namespace MyNS {
 		 * The database MAY have a maximum limit and not accept larger numbers (in which case an error code -- 403 Forbidden -- MUST be returned).
 		 * The default limit value is up to the API implementation to decide.
 		 * Example: `http://example.com/optimade/v1/structures?page_limit=100`
+		 *     Minimum: 0
 		 * @param {number} page_offset RECOMMENDED for use with _offset-based_ pagination: using `page_offset` and `page_limit` is RECOMMENDED.
 		 * Example: Skip 50 structures and fetch up to 100: `/structures?page_offset=50&page_limit=100`.
+		 *     Minimum: 0
 		 * @param {number} page_number RECOMMENDED for use with _page-based_ pagination: using `page_number` and `page_limit` is RECOMMENDED.
 		 * It is RECOMMENDED that the first page has number 1, i.e., that `page_number` is 1-based.
 		 * Example: Fetch page 2 of up to 50 structures per page: `/structures?page_number=2&page_limit=50`.
+		 *     Minimum: 0
 		 * @param {number} page_cursor RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.
+		 *     Minimum: 0
 		 * @param {number} page_above RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
 		 * Example: Fetch up to 100 structures above sort-field value 4000 (in this example, server chooses to fetch results sorted by increasing `id`, so `page_above` value refers to an `id` value): `/structures?page_above=4000&page_limit=100`.
+		 *     Minimum: 0
 		 * @param {number} page_below RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
+		 *     Minimum: 0
 		 * @param {string} include A server MAY implement the JSON API concept of returning [compound documents](https://jsonapi.org/format/1.0/#document-compound-documents) by utilizing the `include` query parameter as specified by [JSON API 1.0](https://jsonapi.org/format/1.0/#fetching-includes).
 		 * All related resource objects MUST be returned as part of an array value for the top-level `included` field, see the section JSON Response Schema: Common Fields.
 		 * The value of `include` MUST be a comma-separated list of "relationship paths", as defined in the [JSON API](https://jsonapi.org/format/1.0/#fetching-includes).
@@ -3374,15 +3392,21 @@ export namespace MyNS {
 		 * The database MAY have a maximum limit and not accept larger numbers (in which case an error code -- 403 Forbidden -- MUST be returned).
 		 * The default limit value is up to the API implementation to decide.
 		 * Example: `http://example.com/optimade/v1/structures?page_limit=100`
+		 *     Minimum: 0
 		 * @param {number} page_offset RECOMMENDED for use with _offset-based_ pagination: using `page_offset` and `page_limit` is RECOMMENDED.
 		 * Example: Skip 50 structures and fetch up to 100: `/structures?page_offset=50&page_limit=100`.
+		 *     Minimum: 0
 		 * @param {number} page_number RECOMMENDED for use with _page-based_ pagination: using `page_number` and `page_limit` is RECOMMENDED.
 		 * It is RECOMMENDED that the first page has number 1, i.e., that `page_number` is 1-based.
 		 * Example: Fetch page 2 of up to 50 structures per page: `/structures?page_number=2&page_limit=50`.
+		 *     Minimum: 0
 		 * @param {number} page_cursor RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.
+		 *     Minimum: 0
 		 * @param {number} page_above RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
 		 * Example: Fetch up to 100 structures above sort-field value 4000 (in this example, server chooses to fetch results sorted by increasing `id`, so `page_above` value refers to an `id` value): `/structures?page_above=4000&page_limit=100`.
+		 *     Minimum: 0
 		 * @param {number} page_below RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
+		 *     Minimum: 0
 		 * @param {string} include A server MAY implement the JSON API concept of returning [compound documents](https://jsonapi.org/format/1.0/#document-compound-documents) by utilizing the `include` query parameter as specified by [JSON API 1.0](https://jsonapi.org/format/1.0/#fetching-includes).
 		 * All related resource objects MUST be returned as part of an array value for the top-level `included` field, see the section JSON Response Schema: Common Fields.
 		 * The value of `include` MUST be a comma-separated list of "relationship paths", as defined in the [JSON API](https://jsonapi.org/format/1.0/#fetching-includes).
@@ -3455,15 +3479,21 @@ export namespace MyNS {
 		 * The database MAY have a maximum limit and not accept larger numbers (in which case an error code -- 403 Forbidden -- MUST be returned).
 		 * The default limit value is up to the API implementation to decide.
 		 * Example: `http://example.com/optimade/v1/structures?page_limit=100`
+		 *     Minimum: 0
 		 * @param {number} page_offset RECOMMENDED for use with _offset-based_ pagination: using `page_offset` and `page_limit` is RECOMMENDED.
 		 * Example: Skip 50 structures and fetch up to 100: `/structures?page_offset=50&page_limit=100`.
+		 *     Minimum: 0
 		 * @param {number} page_number RECOMMENDED for use with _page-based_ pagination: using `page_number` and `page_limit` is RECOMMENDED.
 		 * It is RECOMMENDED that the first page has number 1, i.e., that `page_number` is 1-based.
 		 * Example: Fetch page 2 of up to 50 structures per page: `/structures?page_number=2&page_limit=50`.
+		 *     Minimum: 0
 		 * @param {number} page_cursor RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.
+		 *     Minimum: 0
 		 * @param {number} page_above RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
 		 * Example: Fetch up to 100 structures above sort-field value 4000 (in this example, server chooses to fetch results sorted by increasing `id`, so `page_above` value refers to an `id` value): `/structures?page_above=4000&page_limit=100`.
+		 *     Minimum: 0
 		 * @param {number} page_below RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
+		 *     Minimum: 0
 		 * @param {string} include A server MAY implement the JSON API concept of returning [compound documents](https://jsonapi.org/format/1.0/#document-compound-documents) by utilizing the `include` query parameter as specified by [JSON API 1.0](https://jsonapi.org/format/1.0/#fetching-includes).
 		 * All related resource objects MUST be returned as part of an array value for the top-level `included` field, see the section JSON Response Schema: Common Fields.
 		 * The value of `include` MUST be a comma-separated list of "relationship paths", as defined in the [JSON API](https://jsonapi.org/format/1.0/#fetching-includes).

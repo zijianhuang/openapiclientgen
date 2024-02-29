@@ -1824,8 +1824,14 @@ namespace MyNS
 		/// Adds a user account to a permission group to grant permissions for actions a user can perform in FinSpace.
 		/// AssociateUserToPermissionGroup permission-group/{permissionGroupId}/users/{userId}
 		/// </summary>
-		/// <param name="permissionGroupId">The unique identifier for the permission group.</param>
-		/// <param name="userId">The unique identifier for the user.</param>
+		/// <param name="permissionGroupId">The unique identifier for the permission group.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
+		/// <param name="userId">The unique identifier for the user.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<AssociateUserToPermissionGroupResponse> AssociateUserToPermissionGroupAsync(string permissionGroupId, string userId, AssociateUserToPermissionGroupPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1866,9 +1872,18 @@ namespace MyNS
 		/// Removes a user account from a permission group.
 		/// DisassociateUserFromPermissionGroup permission-group/{permissionGroupId}/users/{userId}
 		/// </summary>
-		/// <param name="permissionGroupId">The unique identifier for the permission group.</param>
-		/// <param name="userId">The unique identifier for the user.</param>
-		/// <param name="clientToken">A token that ensures idempotency. This token expires in 10 minutes.</param>
+		/// <param name="permissionGroupId">The unique identifier for the permission group.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
+		/// <param name="userId">The unique identifier for the user.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
+		/// <param name="clientToken">A token that ensures idempotency. This token expires in 10 minutes.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisassociateUserFromPermissionGroupResponse> DisassociateUserFromPermissionGroupAsync(string permissionGroupId, string userId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1902,7 +1917,10 @@ namespace MyNS
 		/// Creates a new Changeset in a FinSpace Dataset.
 		/// CreateChangeset datasets/{datasetId}/changesetsv2
 		/// </summary>
-		/// <param name="datasetId">The unique identifier for the FinSpace Dataset where the Changeset will be created. </param>
+		/// <param name="datasetId">The unique identifier for the FinSpace Dataset where the Changeset will be created. 
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateChangesetResponse> CreateChangesetAsync(string datasetId, CreateChangesetPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1943,8 +1961,14 @@ namespace MyNS
 		/// Lists the FinSpace Changesets for a Dataset.
 		/// ListChangesets datasets/{datasetId}/changesetsv2
 		/// </summary>
-		/// <param name="datasetId">The unique identifier for the FinSpace Dataset to which the Changeset belongs.</param>
-		/// <param name="maxResults">The maximum number of results per page.</param>
+		/// <param name="datasetId">The unique identifier for the FinSpace Dataset to which the Changeset belongs.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
+		/// <param name="maxResults">The maximum number of results per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">A token that indicates where a results page should begin.</param>
 		/// <returns>Success</returns>
 		public async Task<ListChangesetsResponse> ListChangesetsAsync(string datasetId, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1979,7 +2003,10 @@ namespace MyNS
 		/// Creates a Dataview for a Dataset.
 		/// CreateDataView datasets/{datasetId}/dataviewsv2
 		/// </summary>
-		/// <param name="datasetId">The unique Dataset identifier that is used to create a Dataview.</param>
+		/// <param name="datasetId">The unique Dataset identifier that is used to create a Dataview.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateDataViewResponse> CreateDataViewAsync(string datasetId, CreateDataViewPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2020,9 +2047,15 @@ namespace MyNS
 		/// Lists all available Dataviews for a Dataset.
 		/// ListDataViews datasets/{datasetId}/dataviewsv2
 		/// </summary>
-		/// <param name="datasetId">The unique identifier of the Dataset for which to retrieve Dataviews.</param>
+		/// <param name="datasetId">The unique identifier of the Dataset for which to retrieve Dataviews.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <param name="nextToken">A token that indicates where a results page should begin.</param>
-		/// <param name="maxResults">The maximum number of results per page.</param>
+		/// <param name="maxResults">The maximum number of results per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDataViewsResponse> ListDataViewsAsync(string datasetId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2097,7 +2130,10 @@ namespace MyNS
 		/// ListDatasets datasetsv2
 		/// </summary>
 		/// <param name="nextToken">A token that indicates where a results page should begin.</param>
-		/// <param name="maxResults">The maximum number of results per page.</param>
+		/// <param name="maxResults">The maximum number of results per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListDatasetsResponse> ListDatasetsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2211,8 +2247,14 @@ namespace MyNS
 		/// Deletes a FinSpace Dataset.
 		/// DeleteDataset datasetsv2/{datasetId}
 		/// </summary>
-		/// <param name="clientToken">A token that ensures idempotency. This token expires in 10 minutes.</param>
-		/// <param name="datasetId">The unique identifier of the Dataset to be deleted.</param>
+		/// <param name="clientToken">A token that ensures idempotency. This token expires in 10 minutes.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="datasetId">The unique identifier of the Dataset to be deleted.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeleteDatasetResponse> DeleteDatasetAsync(string clientToken, string datasetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2246,7 +2288,10 @@ namespace MyNS
 		/// Returns information about a Dataset.
 		/// GetDataset datasetsv2/{datasetId}
 		/// </summary>
-		/// <param name="datasetId">The unique identifier for a Dataset.</param>
+		/// <param name="datasetId">The unique identifier for a Dataset.
+		/// Max length: 255
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDatasetResponse> GetDatasetAsync(string datasetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2280,7 +2325,10 @@ namespace MyNS
 		/// Updates a FinSpace Dataset.
 		/// UpdateDataset datasetsv2/{datasetId}
 		/// </summary>
-		/// <param name="datasetId">The unique identifier for the Dataset to update.</param>
+		/// <param name="datasetId">The unique identifier for the Dataset to update.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateDatasetResponse> UpdateDatasetAsync(string datasetId, UpdateDatasetPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2321,8 +2369,14 @@ namespace MyNS
 		/// Deletes a permission group. This action is irreversible.
 		/// DeletePermissionGroup permission-group/{permissionGroupId}
 		/// </summary>
-		/// <param name="permissionGroupId">The unique identifier for the permission group that you want to delete.</param>
-		/// <param name="clientToken">A token that ensures idempotency. This token expires in 10 minutes.</param>
+		/// <param name="permissionGroupId">The unique identifier for the permission group that you want to delete.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
+		/// <param name="clientToken">A token that ensures idempotency. This token expires in 10 minutes.
+		/// Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DeletePermissionGroupResponse> DeletePermissionGroupAsync(string permissionGroupId, string clientToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2356,7 +2410,10 @@ namespace MyNS
 		/// Retrieves the details of a specific permission group.
 		/// GetPermissionGroup permission-group/{permissionGroupId}
 		/// </summary>
-		/// <param name="permissionGroupId">The unique identifier for the permission group.</param>
+		/// <param name="permissionGroupId">The unique identifier for the permission group.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetPermissionGroupResponse> GetPermissionGroupAsync(string permissionGroupId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2390,7 +2447,10 @@ namespace MyNS
 		/// Modifies the details of a permission group. You cannot modify a <code>permissionGroupID</code>.
 		/// UpdatePermissionGroup permission-group/{permissionGroupId}
 		/// </summary>
-		/// <param name="permissionGroupId">The unique identifier for the permission group to update.</param>
+		/// <param name="permissionGroupId">The unique identifier for the permission group to update.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdatePermissionGroupResponse> UpdatePermissionGroupAsync(string permissionGroupId, UpdatePermissionGroupPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2431,7 +2491,10 @@ namespace MyNS
 		/// Denies access to the FinSpace web application and API for the specified user.
 		/// DisableUser user/{userId}/disable
 		/// </summary>
-		/// <param name="userId">The unique identifier for the user account that you want to disable.</param>
+		/// <param name="userId">The unique identifier for the user account that you want to disable.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<DisableUserResponse> DisableUserAsync(string userId, DisableUserPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2472,7 +2535,10 @@ namespace MyNS
 		/// Allows the specified user to access the FinSpace web application and API.
 		/// EnableUser user/{userId}/enable
 		/// </summary>
-		/// <param name="userId">The unique identifier for the user account that you want to enable.</param>
+		/// <param name="userId">The unique identifier for the user account that you want to enable.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<EnableUserResponse> EnableUserAsync(string userId, EnableUserPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2513,8 +2579,14 @@ namespace MyNS
 		/// Get information about a Changeset.
 		/// GetChangeset datasets/{datasetId}/changesetsv2/{changesetId}
 		/// </summary>
-		/// <param name="datasetId">The unique identifier for the FinSpace Dataset where the Changeset is created.</param>
-		/// <param name="changesetId">The unique identifier of the Changeset for which to get data.</param>
+		/// <param name="datasetId">The unique identifier for the FinSpace Dataset where the Changeset is created.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
+		/// <param name="changesetId">The unique identifier of the Changeset for which to get data.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetChangesetResponse> GetChangesetAsync(string datasetId, string changesetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2548,8 +2620,14 @@ namespace MyNS
 		/// Updates a FinSpace Changeset.
 		/// UpdateChangeset datasets/{datasetId}/changesetsv2/{changesetId}
 		/// </summary>
-		/// <param name="datasetId">The unique identifier for the FinSpace Dataset in which the Changeset is created.</param>
-		/// <param name="changesetId">The unique identifier for the Changeset to update.</param>
+		/// <param name="datasetId">The unique identifier for the FinSpace Dataset in which the Changeset is created.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
+		/// <param name="changesetId">The unique identifier for the Changeset to update.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateChangesetResponse> UpdateChangesetAsync(string datasetId, string changesetId, UpdateChangesetPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2590,8 +2668,14 @@ namespace MyNS
 		/// Gets information about a Dataview.
 		/// GetDataView datasets/{datasetId}/dataviewsv2/{dataviewId}
 		/// </summary>
-		/// <param name="dataviewId">The unique identifier for the Dataview.</param>
-		/// <param name="datasetId">The unique identifier for the Dataset used in the Dataview.</param>
+		/// <param name="dataviewId">The unique identifier for the Dataview.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
+		/// <param name="datasetId">The unique identifier for the Dataset used in the Dataview.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetDataViewResponse> GetDataViewAsync(string dataviewId, string datasetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2625,8 +2709,14 @@ namespace MyNS
 		/// <p>Returns the credentials to access the external Dataview from an S3 location. To call this API:</p> <ul> <li> <p>You must retrieve the programmatic credentials.</p> </li> <li> <p>You must be a member of a FinSpace user group, where the dataset that you want to access has <code>Read Dataset Data</code> permissions.</p> </li> </ul>
 		/// GetExternalDataViewAccessDetails datasets/{datasetId}/dataviewsv2/{dataviewId}/external-access-details
 		/// </summary>
-		/// <param name="dataviewId">The unique identifier for the Dataview that you want to access.</param>
-		/// <param name="datasetId">The unique identifier for the Dataset.</param>
+		/// <param name="dataviewId">The unique identifier for the Dataview that you want to access.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
+		/// <param name="datasetId">The unique identifier for the Dataset.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetExternalDataViewAccessDetailsResponse> GetExternalDataViewAccessDetailsAsync(string dataviewId, string datasetId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2655,8 +2745,14 @@ namespace MyNS
 		/// Request programmatic credentials to use with FinSpace SDK.
 		/// GetProgrammaticAccessCredentials credentials/programmatic#environmentId
 		/// </summary>
-		/// <param name="durationInMinutes">The time duration in which the credentials remain valid. </param>
-		/// <param name="environmentId">The FinSpace environment identifier.</param>
+		/// <param name="durationInMinutes">The time duration in which the credentials remain valid. 
+		/// Minimum: 60
+		/// Maximum: 720
+		// </param>
+		/// <param name="environmentId">The FinSpace environment identifier.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProgrammaticAccessCredentialsResponse> GetProgrammaticAccessCredentialsAsync(int durationInMinutes, string environmentId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2690,7 +2786,10 @@ namespace MyNS
 		/// Retrieves details for a specific user.
 		/// GetUser user/{userId}
 		/// </summary>
-		/// <param name="userId">The unique identifier of the user to get data for.</param>
+		/// <param name="userId">The unique identifier of the user to get data for.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetUserResponse> GetUserAsync(string userId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2724,7 +2823,10 @@ namespace MyNS
 		/// Modifies the details of the specified user account. You cannot update the <code>userId</code> for a user.
 		/// UpdateUser user/{userId}
 		/// </summary>
-		/// <param name="userId">The unique identifier for the user account to update.</param>
+		/// <param name="userId">The unique identifier for the user account to update.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateUserResponse> UpdateUserAsync(string userId, UpdateUserPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2806,7 +2908,10 @@ namespace MyNS
 		/// ListPermissionGroups permission-group#maxResults
 		/// </summary>
 		/// <param name="nextToken">A token that indicates where a results page should begin.</param>
-		/// <param name="maxResults">The maximum number of results per page.</param>
+		/// <param name="maxResults">The maximum number of results per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPermissionGroupsResponse> ListPermissionGroupsAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2840,9 +2945,15 @@ namespace MyNS
 		/// Lists all the permission groups that are associated with a specific user account.
 		/// ListPermissionGroupsByUser user/{userId}/permission-groups#maxResults
 		/// </summary>
-		/// <param name="userId">The unique identifier for the user.</param>
+		/// <param name="userId">The unique identifier for the user.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <param name="nextToken">A token that indicates where a results page should begin.</param>
-		/// <param name="maxResults">The maximum number of results per page.</param>
+		/// <param name="maxResults">The maximum number of results per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListPermissionGroupsByUserResponse> ListPermissionGroupsByUserAsync(string userId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2877,7 +2988,10 @@ namespace MyNS
 		/// ListUsers user#maxResults
 		/// </summary>
 		/// <param name="nextToken">A token that indicates where a results page should begin.</param>
-		/// <param name="maxResults">The maximum number of results per page.</param>
+		/// <param name="maxResults">The maximum number of results per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListUsersResponse> ListUsersAsync(string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2911,9 +3025,15 @@ namespace MyNS
 		/// Lists details of all the users in a specific permission group.
 		/// ListUsersByPermissionGroup permission-group/{permissionGroupId}/users#maxResults
 		/// </summary>
-		/// <param name="permissionGroupId">The unique identifier for the permission group.</param>
+		/// <param name="permissionGroupId">The unique identifier for the permission group.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <param name="nextToken">A token that indicates where a results page should begin.</param>
-		/// <param name="maxResults">The maximum number of results per page.</param>
+		/// <param name="maxResults">The maximum number of results per page.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListUsersByPermissionGroupResponse> ListUsersByPermissionGroupAsync(string permissionGroupId, string nextToken, int maxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -2947,7 +3067,10 @@ namespace MyNS
 		/// Resets the password for a specified user ID and generates a temporary one. Only a superuser can reset password for other users. Resetting the password immediately invalidates the previous password associated with the user.
 		/// ResetUserPassword user/{userId}/password
 		/// </summary>
-		/// <param name="userId">The unique identifier of the user that a temporary password is requested for.</param>
+		/// <param name="userId">The unique identifier of the user that a temporary password is requested for.
+		/// Max length: 26
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ResetUserPasswordResponse> ResetUserPasswordAsync(string userId, ResetUserPasswordPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

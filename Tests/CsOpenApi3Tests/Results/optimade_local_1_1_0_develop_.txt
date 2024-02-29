@@ -3028,16 +3028,28 @@ namespace MyNS
 		///It MAY return fewer.
 		///The database MAY have a maximum limit and not accept larger numbers (in which case an error code -- 403 Forbidden -- MUST be returned).
 		///The default limit value is up to the API implementation to decide.
-		///Example: `http://example.com/optimade/v1/structures?page_limit=100`</param>
+		///Example: `http://example.com/optimade/v1/structures?page_limit=100`
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_offset">RECOMMENDED for use with _offset-based_ pagination: using `page_offset` and `page_limit` is RECOMMENDED.
-		///Example: Skip 50 structures and fetch up to 100: `/structures?page_offset=50&page_limit=100`.</param>
+		///Example: Skip 50 structures and fetch up to 100: `/structures?page_offset=50&page_limit=100`.
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_number">RECOMMENDED for use with _page-based_ pagination: using `page_number` and `page_limit` is RECOMMENDED.
 		///It is RECOMMENDED that the first page has number 1, i.e., that `page_number` is 1-based.
-		///Example: Fetch page 2 of up to 50 structures per page: `/structures?page_number=2&page_limit=50`.</param>
-		/// <param name="page_cursor">RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.</param>
+		///Example: Fetch page 2 of up to 50 structures per page: `/structures?page_number=2&page_limit=50`.
+		/// Minimum: 0
+		// </param>
+		/// <param name="page_cursor">RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_above">RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
-		///Example: Fetch up to 100 structures above sort-field value 4000 (in this example, server chooses to fetch results sorted by increasing `id`, so `page_above` value refers to an `id` value): `/structures?page_above=4000&page_limit=100`.</param>
-		/// <param name="page_below">RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.</param>
+		///Example: Fetch up to 100 structures above sort-field value 4000 (in this example, server chooses to fetch results sorted by increasing `id`, so `page_above` value refers to an `id` value): `/structures?page_above=4000&page_limit=100`.
+		/// Minimum: 0
+		// </param>
+		/// <param name="page_below">RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
+		/// Minimum: 0
+		// </param>
 		/// <param name="include">A server MAY implement the JSON API concept of returning [compound documents](https://jsonapi.org/format/1.0/#document-compound-documents) by utilizing the `include` query parameter as specified by [JSON API 1.0](https://jsonapi.org/format/1.0/#fetching-includes).
 		///
 		///All related resource objects MUST be returned as part of an array value for the top-level `included` field, see the section JSON Response Schema: Common Fields.
@@ -3111,16 +3123,28 @@ namespace MyNS
 		///It MAY return fewer.
 		///The database MAY have a maximum limit and not accept larger numbers (in which case an error code -- 403 Forbidden -- MUST be returned).
 		///The default limit value is up to the API implementation to decide.
-		///Example: `http://example.com/optimade/v1/structures?page_limit=100`</param>
+		///Example: `http://example.com/optimade/v1/structures?page_limit=100`
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_offset">RECOMMENDED for use with _offset-based_ pagination: using `page_offset` and `page_limit` is RECOMMENDED.
-		///Example: Skip 50 structures and fetch up to 100: `/structures?page_offset=50&page_limit=100`.</param>
+		///Example: Skip 50 structures and fetch up to 100: `/structures?page_offset=50&page_limit=100`.
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_number">RECOMMENDED for use with _page-based_ pagination: using `page_number` and `page_limit` is RECOMMENDED.
 		///It is RECOMMENDED that the first page has number 1, i.e., that `page_number` is 1-based.
-		///Example: Fetch page 2 of up to 50 structures per page: `/structures?page_number=2&page_limit=50`.</param>
-		/// <param name="page_cursor">RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.</param>
+		///Example: Fetch page 2 of up to 50 structures per page: `/structures?page_number=2&page_limit=50`.
+		/// Minimum: 0
+		// </param>
+		/// <param name="page_cursor">RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_above">RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
-		///Example: Fetch up to 100 structures above sort-field value 4000 (in this example, server chooses to fetch results sorted by increasing `id`, so `page_above` value refers to an `id` value): `/structures?page_above=4000&page_limit=100`.</param>
-		/// <param name="page_below">RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.</param>
+		///Example: Fetch up to 100 structures above sort-field value 4000 (in this example, server chooses to fetch results sorted by increasing `id`, so `page_above` value refers to an `id` value): `/structures?page_above=4000&page_limit=100`.
+		/// Minimum: 0
+		// </param>
+		/// <param name="page_below">RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
+		/// Minimum: 0
+		// </param>
 		/// <param name="include">A server MAY implement the JSON API concept of returning [compound documents](https://jsonapi.org/format/1.0/#document-compound-documents) by utilizing the `include` query parameter as specified by [JSON API 1.0](https://jsonapi.org/format/1.0/#fetching-includes).
 		///
 		///All related resource objects MUST be returned as part of an array value for the top-level `included` field, see the section JSON Response Schema: Common Fields.
@@ -3250,16 +3274,28 @@ namespace MyNS
 		///It MAY return fewer.
 		///The database MAY have a maximum limit and not accept larger numbers (in which case an error code -- 403 Forbidden -- MUST be returned).
 		///The default limit value is up to the API implementation to decide.
-		///Example: `http://example.com/optimade/v1/structures?page_limit=100`</param>
+		///Example: `http://example.com/optimade/v1/structures?page_limit=100`
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_offset">RECOMMENDED for use with _offset-based_ pagination: using `page_offset` and `page_limit` is RECOMMENDED.
-		///Example: Skip 50 structures and fetch up to 100: `/structures?page_offset=50&page_limit=100`.</param>
+		///Example: Skip 50 structures and fetch up to 100: `/structures?page_offset=50&page_limit=100`.
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_number">RECOMMENDED for use with _page-based_ pagination: using `page_number` and `page_limit` is RECOMMENDED.
 		///It is RECOMMENDED that the first page has number 1, i.e., that `page_number` is 1-based.
-		///Example: Fetch page 2 of up to 50 structures per page: `/structures?page_number=2&page_limit=50`.</param>
-		/// <param name="page_cursor">RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.</param>
+		///Example: Fetch page 2 of up to 50 structures per page: `/structures?page_number=2&page_limit=50`.
+		/// Minimum: 0
+		// </param>
+		/// <param name="page_cursor">RECOMMENDED for use with _cursor-based_ pagination: using `page_cursor` and `page_limit` is RECOMMENDED.
+		/// Minimum: 0
+		// </param>
 		/// <param name="page_above">RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
-		///Example: Fetch up to 100 structures above sort-field value 4000 (in this example, server chooses to fetch results sorted by increasing `id`, so `page_above` value refers to an `id` value): `/structures?page_above=4000&page_limit=100`.</param>
-		/// <param name="page_below">RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.</param>
+		///Example: Fetch up to 100 structures above sort-field value 4000 (in this example, server chooses to fetch results sorted by increasing `id`, so `page_above` value refers to an `id` value): `/structures?page_above=4000&page_limit=100`.
+		/// Minimum: 0
+		// </param>
+		/// <param name="page_below">RECOMMENDED for use with _value-based_ pagination: using `page_above`/`page_below` and `page_limit` is RECOMMENDED.
+		/// Minimum: 0
+		// </param>
 		/// <param name="include">A server MAY implement the JSON API concept of returning [compound documents](https://jsonapi.org/format/1.0/#document-compound-documents) by utilizing the `include` query parameter as specified by [JSON API 1.0](https://jsonapi.org/format/1.0/#fetching-includes).
 		///
 		///All related resource objects MUST be returned as part of an array value for the top-level `included` field, see the section JSON Response Schema: Common Fields.

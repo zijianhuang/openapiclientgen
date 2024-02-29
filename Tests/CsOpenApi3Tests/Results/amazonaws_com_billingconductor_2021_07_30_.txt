@@ -3050,7 +3050,10 @@ namespace MyNS
 		/// A list the tags for a resource.
 		/// ListTagsForResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn"> The Amazon Resource Name (ARN) that identifies the resource to list the tags. </param>
+		/// <param name="ResourceArn"> The Amazon Resource Name (ARN) that identifies the resource to list the tags. 
+		/// Max length: 100
+		/// Min length: 0
+		// </param>
 		public async Task ListTagsForResourceAsync(string ResourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (ResourceArn==null? "" : System.Uri.EscapeDataString(ResourceArn));
@@ -3077,7 +3080,10 @@ namespace MyNS
 		/// Associates the specified tags to a resource with the specified <code>resourceArn</code>. If existing tags on a resource are not specified in the request parameters, they are not changed.
 		/// TagResource tags/{ResourceArn}
 		/// </summary>
-		/// <param name="ResourceArn"> The Amazon Resource Name (ARN) of the resource to which to add tags. </param>
+		/// <param name="ResourceArn"> The Amazon Resource Name (ARN) of the resource to which to add tags. 
+		/// Max length: 100
+		/// Min length: 0
+		// </param>
 		public async Task TagResourceAsync(string ResourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (ResourceArn==null? "" : System.Uri.EscapeDataString(ResourceArn));
@@ -3111,8 +3117,14 @@ namespace MyNS
 		/// Deletes specified tags from a resource.
 		/// UntagResource tags/{ResourceArn}#tagKeys
 		/// </summary>
-		/// <param name="ResourceArn"> The Amazon Resource Name (ARN) of the resource to which to delete tags. </param>
-		/// <param name="tagKeys"> The tags to delete from the resource as a list of key-value pairs. </param>
+		/// <param name="ResourceArn"> The Amazon Resource Name (ARN) of the resource to which to delete tags. 
+		/// Max length: 100
+		/// Min length: 0
+		// </param>
+		/// <param name="tagKeys"> The tags to delete from the resource as a list of key-value pairs. 
+		/// Minimum items: 1
+		/// Maximum items: 200
+		// </param>
 		public async Task UntagResourceAsync(string ResourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
 			var requestUri = "tags/"+ (ResourceArn==null? "" : System.Uri.EscapeDataString(ResourceArn))+"#tagKeys&"+string.Join("&", tagKeys.Select(z => $"tagKeys={System.Uri.EscapeDataString(z.ToString())}"));

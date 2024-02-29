@@ -1587,6 +1587,7 @@ export namespace MyNS {
 		 * Retrieves a list of tags for the specified resource.
 		 * Get tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the fleet.
+		 *     Min length: 20    Max length: 2048
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(ResourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -1597,6 +1598,7 @@ export namespace MyNS {
 		 * Adds or overwrites one or more tags for the specified resource, such as a fleet. Each tag consists of a key and an optional value. If a resource already has a tag with the same key, this operation updates its value.
 		 * Post tags/{ResourceArn}
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the fleet.
+		 *     Min length: 20    Max length: 2048
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(ResourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -1656,7 +1658,9 @@ export namespace MyNS {
 		 * Removes one or more tags from the specified resource.
 		 * Delete tags/{ResourceArn}#tagKeys
 		 * @param {string} ResourceArn The Amazon Resource Name (ARN) of the fleet.
+		 *     Min length: 20    Max length: 2048
 		 * @param {Array<string>} tagKeys The list of tag keys to remove from the resource.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(ResourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -1723,16 +1727,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The fully qualified domain name (FQDN).
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: string;
 
@@ -1753,16 +1757,16 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The fully qualified domain name (FQDN).
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -1793,8 +1797,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
@@ -1806,8 +1810,8 @@ export namespace MyNS {
 
 		/**
 		 * The domain name of the authorization provider. This applies only to SAML-based authorization providers.
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName?: string | null;
 	}
@@ -1816,8 +1820,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
@@ -1829,8 +1833,8 @@ export namespace MyNS {
 
 		/**
 		 * The domain name of the authorization provider. This applies only to SAML-based authorization providers.
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -1848,16 +1852,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The root certificate of the CA.
 		 * Required
-		 * Max length: 8192
 		 * Min length: 1
+		 * Max length: 8192
 		 */
 		Certificate: string;
 
@@ -1872,16 +1876,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The root certificate of the CA.
 		 * Required
-		 * Max length: 8192
 		 * Min length: 1
+		 * Max length: 8192
 		 */
 		Certificate: FormControl<string | null | undefined>,
 
@@ -1905,8 +1909,8 @@ export namespace MyNS {
 		/**
 		 * A unique name for the fleet.
 		 * Required
-		 * Max length: 48
 		 * Min length: 1
+		 * Max length: 48
 		 */
 		FleetName: string;
 
@@ -1927,8 +1931,8 @@ export namespace MyNS {
 		/**
 		 * A unique name for the fleet.
 		 * Required
-		 * Max length: 48
 		 * Min length: 1
+		 * Max length: 48
 		 */
 		FleetName: FormControl<string | null | undefined>,
 
@@ -1959,8 +1963,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 	}
@@ -1969,8 +1973,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 	}
@@ -1986,8 +1990,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 	}
@@ -1996,8 +2000,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 	}
@@ -2013,8 +2017,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 	}
@@ -2023,8 +2027,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 	}
@@ -2040,16 +2044,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * A unique identifier for a registered user's device.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		DeviceId: string;
 	}
@@ -2058,16 +2062,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique identifier for a registered user's device.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		DeviceId: FormControl<string | null | undefined>,
 	}
@@ -2084,8 +2088,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 	}
@@ -2094,8 +2098,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 	}
@@ -2111,16 +2115,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The name of the domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: string;
 	}
@@ -2129,16 +2133,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -2155,8 +2159,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 	}
@@ -2165,8 +2169,8 @@ export namespace MyNS {
 		/**
 		 * The Amazon Resource Name (ARN) of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 	}
@@ -2182,8 +2186,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 	}
@@ -2192,8 +2196,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 	}
@@ -2209,16 +2213,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * A unique identifier for the certificate authority.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		WebsiteCaId: string;
 	}
@@ -2227,16 +2231,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique identifier for the certificate authority.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		WebsiteCaId: FormControl<string | null | undefined>,
 	}
@@ -2253,16 +2257,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The name of the domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: string;
 	}
@@ -2271,16 +2275,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -2297,16 +2301,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * A unique identifier for the authorization provider.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		AuthorizationProviderId: string;
 	}
@@ -2315,16 +2319,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique identifier for the authorization provider.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		AuthorizationProviderId: FormControl<string | null | undefined>,
 	}
@@ -2341,16 +2345,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * A unique identifier for the CA.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		WebsiteCaId: string;
 	}
@@ -2359,16 +2363,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique identifier for the CA.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		WebsiteCaId: FormControl<string | null | undefined>,
 	}
@@ -2385,15 +2389,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken?: string | null;
 
@@ -2408,15 +2412,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2440,15 +2444,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken?: string | null;
 
@@ -2463,15 +2467,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2494,8 +2498,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken?: string | null;
 
@@ -2509,8 +2513,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2556,15 +2560,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken?: string | null;
 
@@ -2579,15 +2583,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The pagination token to use to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken: FormControl<string | null | undefined>,
 
@@ -2611,8 +2615,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
@@ -2624,8 +2628,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken?: string | null;
 	}
@@ -2634,8 +2638,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
@@ -2647,8 +2651,8 @@ export namespace MyNS {
 
 		/**
 		 * The pagination token used to retrieve the next page of results for this operation. If this value is null, it retrieves the first page.
-		 * Max length: 4096
 		 * Min length: 1
+		 * Max length: 4096
 		 */
 		NextToken: FormControl<string | null | undefined>,
 	}
@@ -2666,16 +2670,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The name of the domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: string;
 	}
@@ -2684,16 +2688,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -2710,16 +2714,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The name of the domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: string;
 	}
@@ -2728,16 +2732,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: FormControl<string | null | undefined>,
 	}
@@ -2754,16 +2758,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The name of the user.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Username: string;
 	}
@@ -2772,16 +2776,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the user.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Username: FormControl<string | null | undefined>,
 	}
@@ -2798,8 +2802,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
@@ -2811,8 +2815,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
@@ -2832,8 +2836,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
@@ -2861,8 +2865,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
@@ -2885,15 +2889,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		DeviceCaCertificate?: string | null;
 	}
@@ -2902,15 +2906,15 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The certificate chain, including intermediate certificates and the root certificate authority certificate used to issue device certificates.
-		 * Max length: 32768
 		 * Min length: 1
+		 * Max length: 32768
 		 */
 		DeviceCaCertificate: FormControl<string | null | undefined>,
 	}
@@ -2927,16 +2931,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
 		/**
 		 * The name of the domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: string;
 
@@ -2951,16 +2955,16 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the domain.
 		 * Required
-		 * Max length: 253
 		 * Min length: 1
+		 * Max length: 253
 		 */
 		DomainName: FormControl<string | null | undefined>,
 
@@ -2984,8 +2988,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
@@ -3003,8 +3007,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
@@ -3031,8 +3035,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: string;
 
@@ -3044,8 +3048,8 @@ export namespace MyNS {
 
 		/**
 		 * The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.
-		 * Max length: 204800
 		 * Min length: 1
+		 * Max length: 204800
 		 */
 		IdentityProviderSamlMetadata?: string | null;
 	}
@@ -3054,8 +3058,8 @@ export namespace MyNS {
 		/**
 		 * The ARN of the fleet.
 		 * Required
-		 * Max length: 2048
 		 * Min length: 20
+		 * Max length: 2048
 		 */
 		FleetArn: FormControl<string | null | undefined>,
 
@@ -3067,8 +3071,8 @@ export namespace MyNS {
 
 		/**
 		 * The SAML metadata document provided by the customer’s identity provider. The existing IdentityProviderSamlMetadata is unset if null is passed.
-		 * Max length: 204800
 		 * Min length: 1
+		 * Max length: 204800
 		 */
 		IdentityProviderSamlMetadata: FormControl<string | null | undefined>,
 	}

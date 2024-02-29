@@ -1000,7 +1000,10 @@ namespace MyNS
 		/// ListClusterSnapshots cluster-snapshots
 		/// </summary>
 		/// <param name="clusterArn">The arn of the Elastic DocumentDB cluster.</param>
-		/// <param name="maxResults">The maximum number of entries to recieve in the response.</param>
+		/// <param name="maxResults">The maximum number of entries to recieve in the response.
+		/// Minimum: 20
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The nextToken which is used the get the next page of data.</param>
 		/// <returns>Success</returns>
 		public async Task<ListClusterSnapshotsOutput> ListClusterSnapshotsAsync(string clusterArn, int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1035,7 +1038,10 @@ namespace MyNS
 		/// Returns information about provisioned Elastic DocumentDB clusters.
 		/// ListClusters clusters
 		/// </summary>
-		/// <param name="maxResults">The maximum number of entries to recieve in the response.</param>
+		/// <param name="maxResults">The maximum number of entries to recieve in the response.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="nextToken">The nextToken which is used the get the next page of data.</param>
 		/// <returns>Success</returns>
 		public async Task<ListClustersOutput> ListClustersAsync(int maxResults, string nextToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -1070,7 +1076,10 @@ namespace MyNS
 		/// Lists all tags on a Elastic DocumentDB resource
 		/// ListTagsForResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The arn of the Elastic DocumentDB resource.</param>
+		/// <param name="resourceArn">The arn of the Elastic DocumentDB resource.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListTagsForResourceResponse> ListTagsForResourceAsync(string resourceArn, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1104,7 +1113,10 @@ namespace MyNS
 		/// Adds metadata tags to a Elastic DocumentDB resource
 		/// TagResource tags/{resourceArn}
 		/// </summary>
-		/// <param name="resourceArn">The arn of the Elastic DocumentDB resource.</param>
+		/// <param name="resourceArn">The arn of the Elastic DocumentDB resource.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<TagResourceResponse> TagResourceAsync(string resourceArn, TagResourcePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -1186,8 +1198,14 @@ namespace MyNS
 		/// Removes metadata tags to a Elastic DocumentDB resource
 		/// UntagResource tags/{resourceArn}#tagKeys
 		/// </summary>
-		/// <param name="resourceArn">The arn of the Elastic DocumentDB resource.</param>
-		/// <param name="tagKeys">The tag keys to be removed from the Elastic DocumentDB resource.</param>
+		/// <param name="resourceArn">The arn of the Elastic DocumentDB resource.
+		/// Max length: 1011
+		/// Min length: 1
+		// </param>
+		/// <param name="tagKeys">The tag keys to be removed from the Elastic DocumentDB resource.
+		/// Minimum items: 0
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceResponse> UntagResourceAsync(string resourceArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

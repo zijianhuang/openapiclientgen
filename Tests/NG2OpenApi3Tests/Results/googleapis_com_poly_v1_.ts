@@ -133,7 +133,10 @@ export namespace MyNS {
 	/** Information on the complexity of this Format. */
 	export interface FormatComplexity {
 
-		/** A non-negative integer that represents the level of detail (LOD) of this format relative to other formats of the same asset with the same format_type. This hint allows you to sort formats from the most-detailed (0) to least-detailed (integers greater than 0). */
+		/**
+		 * A non-negative integer that represents the level of detail (LOD) of this format relative to other formats of the same asset with the same format_type. This hint allows you to sort formats from the most-detailed (0) to least-detailed (integers greater than 0).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lodHint?: number | null;
 
 		/** The estimated number of triangles. */
@@ -143,7 +146,10 @@ export namespace MyNS {
 	/** Information on the complexity of this Format. */
 	export interface FormatComplexityFormProperties {
 
-		/** A non-negative integer that represents the level of detail (LOD) of this format relative to other formats of the same asset with the same format_type. This hint allows you to sort formats from the most-detailed (0) to least-detailed (integers greater than 0). */
+		/**
+		 * A non-negative integer that represents the level of detail (LOD) of this format relative to other formats of the same asset with the same format_type. This hint allows you to sort formats from the most-detailed (0) to least-detailed (integers greater than 0).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lodHint: FormControl<number | null | undefined>,
 
 		/** The estimated number of triangles. */
@@ -231,32 +237,56 @@ export namespace MyNS {
 	/** A [Quaternion](//en.wikipedia.org/wiki/Quaternion). Please note: if in the response you see "w: 1" and nothing else this is the default value of [0, 0, 0, 1] where x,y, and z are 0. */
 	export interface Quaternion {
 
-		/** The scalar component. */
+		/**
+		 * The scalar component.
+		 * Type: double
+		 */
 		w?: number | null;
 
-		/** The x component. */
+		/**
+		 * The x component.
+		 * Type: double
+		 */
 		x?: number | null;
 
-		/** The y component. */
+		/**
+		 * The y component.
+		 * Type: double
+		 */
 		y?: number | null;
 
-		/** The z component. */
+		/**
+		 * The z component.
+		 * Type: double
+		 */
 		z?: number | null;
 	}
 
 	/** A [Quaternion](//en.wikipedia.org/wiki/Quaternion). Please note: if in the response you see "w: 1" and nothing else this is the default value of [0, 0, 0, 1] where x,y, and z are 0. */
 	export interface QuaternionFormProperties {
 
-		/** The scalar component. */
+		/**
+		 * The scalar component.
+		 * Type: double
+		 */
 		w: FormControl<number | null | undefined>,
 
-		/** The x component. */
+		/**
+		 * The x component.
+		 * Type: double
+		 */
 		x: FormControl<number | null | undefined>,
 
-		/** The y component. */
+		/**
+		 * The y component.
+		 * Type: double
+		 */
 		y: FormControl<number | null | undefined>,
 
-		/** The z component. */
+		/**
+		 * The z component.
+		 * Type: double
+		 */
 		z: FormControl<number | null | undefined>,
 	}
 	export function CreateQuaternionFormGroup() {
@@ -361,7 +391,10 @@ export namespace MyNS {
 		/** The type of problem found (required). */
 		code?: ObjParseErrorCode | null;
 
-		/** The ending character index at which the problem was found. */
+		/**
+		 * The ending character index at which the problem was found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex?: number | null;
 
 		/** The file path in which the problem was found. */
@@ -370,10 +403,16 @@ export namespace MyNS {
 		/** The text of the line. Note that this may be truncated if the line was very long. This may not include the error if it occurs after line truncation. */
 		line?: string | null;
 
-		/** Line number at which the problem was found. */
+		/**
+		 * Line number at which the problem was found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber?: number | null;
 
-		/** The starting character index at which the problem was found. */
+		/**
+		 * The starting character index at which the problem was found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex?: number | null;
 	}
 
@@ -383,7 +422,10 @@ export namespace MyNS {
 		/** The type of problem found (required). */
 		code: FormControl<ObjParseErrorCode | null | undefined>,
 
-		/** The ending character index at which the problem was found. */
+		/**
+		 * The ending character index at which the problem was found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		endIndex: FormControl<number | null | undefined>,
 
 		/** The file path in which the problem was found. */
@@ -392,10 +434,16 @@ export namespace MyNS {
 		/** The text of the line. Note that this may be truncated if the line was very long. This may not include the error if it occurs after line truncation. */
 		line: FormControl<string | null | undefined>,
 
-		/** Line number at which the problem was found. */
+		/**
+		 * Line number at which the problem was found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		lineNumber: FormControl<number | null | undefined>,
 
-		/** The starting character index at which the problem was found. */
+		/**
+		 * The starting character index at which the problem was found.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		startIndex: FormControl<number | null | undefined>,
 	}
 	export function CreateObjParseErrorFormGroup() {
@@ -422,7 +470,10 @@ export namespace MyNS {
 		/** The continuation token for retrieving the next page. If empty, indicates that there are no more pages. To get the next page, submit the same request specifying this value as the page_token. */
 		nextPageToken?: string | null;
 
-		/** The total number of assets in the list, without pagination. */
+		/**
+		 * The total number of assets in the list, without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -432,7 +483,10 @@ export namespace MyNS {
 		/** The continuation token for retrieving the next page. If empty, indicates that there are no more pages. To get the next page, submit the same request specifying this value as the page_token. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of assets in the list, without pagination. */
+		/**
+		 * The total number of assets in the list, without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListAssetsResponseFormGroup() {
@@ -453,7 +507,10 @@ export namespace MyNS {
 		/** The continuation token for retrieving the next page. If empty, indicates that there are no more pages. To get the next page, submit the same request specifying this value as the page_token. */
 		nextPageToken?: string | null;
 
-		/** The total number of assets in the list, without pagination. */
+		/**
+		 * The total number of assets in the list, without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 	}
 
@@ -463,7 +520,10 @@ export namespace MyNS {
 		/** The continuation token for retrieving the next page. If empty, indicates that there are no more pages. To get the next page, submit the same request specifying this value as the page_token. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of assets in the list, without pagination. */
+		/**
+		 * The total number of assets in the list, without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListLikedAssetsResponseFormGroup() {
@@ -481,7 +541,10 @@ export namespace MyNS {
 		/** The continuation token for retrieving the next page. If empty, indicates that there are no more pages. To get the next page, submit the same request specifying this value as the page_token. */
 		nextPageToken?: string | null;
 
-		/** The total number of assets in the list, without pagination. */
+		/**
+		 * The total number of assets in the list, without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize?: number | null;
 
 		/** A list of UserAssets matching the request. */
@@ -494,7 +557,10 @@ export namespace MyNS {
 		/** The continuation token for retrieving the next page. If empty, indicates that there are no more pages. To get the next page, submit the same request specifying this value as the page_token. */
 		nextPageToken: FormControl<string | null | undefined>,
 
-		/** The total number of assets in the list, without pagination. */
+		/**
+		 * The total number of assets in the list, without pagination.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalSize: FormControl<number | null | undefined>,
 	}
 	export function CreateListUserAssetsResponseFormGroup() {
@@ -575,6 +641,7 @@ export namespace MyNS {
 		 * @param {Poly_assets_listMaxComplexity} maxComplexity Returns assets that are of the specified complexity or less. Defaults to COMPLEX. For example, a request for MEDIUM assets also includes SIMPLE assets.
 		 * @param {string} orderBy Specifies an ordering for assets. Acceptable values are: `BEST`, `NEWEST`, `OLDEST`. Defaults to `BEST`, which ranks assets based on a combination of popularity and other features.
 		 * @param {number} pageSize The maximum number of assets to be returned. This value must be between `1` and `100`. Defaults to `20`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Specifies a continuation token from a previous search whose results were split into multiple pages. To get the next page, submit the same request specifying the value from next_page_token.
 		 * @return {ListAssetsResponse} Successful response
 		 */
@@ -599,6 +666,7 @@ export namespace MyNS {
 		 * @param {string} format Return only assets with the matching format. Acceptable values are: `BLOCKS`, `FBX`, `GLTF`, `GLTF2`, `OBJ`, and `TILT`.
 		 * @param {string} orderBy Specifies an ordering for assets. Acceptable values are: `BEST`, `NEWEST`, `OLDEST`. Defaults to `BEST`, which ranks assets based on a combination of popularity and other features.
 		 * @param {number} pageSize The maximum number of assets to be returned. This value must be between `1` and `100`. Defaults to `20`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Specifies a continuation token from a previous search whose results were split into multiple pages. To get the next page, submit the same request specifying the value from next_page_token.
 		 * @param {Poly_users_assets_listVisibility} visibility The visibility of the assets to be returned. Defaults to VISIBILITY_UNSPECIFIED which returns all assets.
 		 * @return {ListUserAssetsResponse} Successful response
@@ -614,6 +682,7 @@ export namespace MyNS {
 		 * @param {string} format Return only assets with the matching format. Acceptable values are: `BLOCKS`, `FBX`, `GLTF`, `GLTF2`, `OBJ`, `TILT`.
 		 * @param {string} orderBy Specifies an ordering for assets. Acceptable values are: `BEST`, `NEWEST`, `OLDEST`, 'LIKED_TIME'. Defaults to `LIKED_TIME`, which ranks assets based on how recently they were liked.
 		 * @param {number} pageSize The maximum number of assets to be returned. This value must be between `1` and `100`. Defaults to `20`.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Specifies a continuation token from a previous search whose results were split into multiple pages. To get the next page, submit the same request specifying the value from next_page_token.
 		 * @return {ListLikedAssetsResponse} Successful response
 		 */

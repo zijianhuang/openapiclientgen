@@ -4141,6 +4141,7 @@ export namespace MyNS {
 		 * <p>Associates a new key value with a specific profile, such as a Contact Record ContactId.</p> <p>A profile object can have a single unique key and any number of additional keys that can be used to identify the profile that it belongs to.</p>
 		 * Post domains/{DomainName}/profiles/keys
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {AddProfileKeyResponse} Success
 		 */
 		AddProfileKey(DomainName: string, requestBody: AddProfileKeyPostBody): Observable<AddProfileKeyResponse> {
@@ -4151,7 +4152,9 @@ export namespace MyNS {
 		 * Creates a new calculated attribute definition. After creation, new object data ingested into Customer Profiles will be included in the calculated attribute, which can be retrieved for a profile using the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetCalculatedAttributeForProfile.html">GetCalculatedAttributeForProfile</a> API. Defining a calculated attribute makes it available for all profiles within a domain. Each calculated attribute can only reference one <code>ObjectType</code> and at most, two fields from that <code>ObjectType</code>.
 		 * Post domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} CalculatedAttributeName The unique name of the calculated attribute.
+		 *     Min length: 1    Max length: 255
 		 * @return {CreateCalculatedAttributeDefinitionResponse} Success
 		 */
 		CreateCalculatedAttributeDefinition(DomainName: string, CalculatedAttributeName: string, requestBody: CreateCalculatedAttributeDefinitionPostBody): Observable<CreateCalculatedAttributeDefinitionResponse> {
@@ -4162,7 +4165,9 @@ export namespace MyNS {
 		 * Deletes an existing calculated attribute definition. Note that deleting a default calculated attribute is possible, however once deleted, you will be unable to undo that action and will need to recreate it on your own using the CreateCalculatedAttributeDefinition API if you want it back.
 		 * Delete domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} CalculatedAttributeName The unique name of the calculated attribute.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteCalculatedAttributeDefinitionResponse} Success
 		 */
 		DeleteCalculatedAttributeDefinition(DomainName: string, CalculatedAttributeName: string): Observable<DeleteCalculatedAttributeDefinitionResponse> {
@@ -4173,7 +4178,9 @@ export namespace MyNS {
 		 * Provides more information on a calculated attribute definition for Customer Profiles.
 		 * Get domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} CalculatedAttributeName The unique name of the calculated attribute.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetCalculatedAttributeDefinitionResponse} Success
 		 */
 		GetCalculatedAttributeDefinition(DomainName: string, CalculatedAttributeName: string): Observable<GetCalculatedAttributeDefinitionResponse> {
@@ -4184,7 +4191,9 @@ export namespace MyNS {
 		 * Updates an existing calculated attribute definition. When updating the Conditions, note that increasing the date range of a calculated attribute will not trigger inclusion of historical data greater than the current date range.
 		 * Put domains/{DomainName}/calculated-attributes/{CalculatedAttributeName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} CalculatedAttributeName The unique name of the calculated attribute.
+		 *     Min length: 1    Max length: 255
 		 * @return {UpdateCalculatedAttributeDefinitionResponse} Success
 		 */
 		UpdateCalculatedAttributeDefinition(DomainName: string, CalculatedAttributeName: string, requestBody: UpdateCalculatedAttributeDefinitionPutBody): Observable<UpdateCalculatedAttributeDefinitionResponse> {
@@ -4195,6 +4204,7 @@ export namespace MyNS {
 		 * <p>Creates a domain, which is a container for all customer data, such as customer profile attributes, object types, profile keys, and encryption keys. You can create multiple domains, and each domain can have multiple third-party integrations.</p> <p>Each Amazon Connect instance can be associated with only one domain. Multiple Amazon Connect instances can be associated with one domain.</p> <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity resolution</a>: set <code>Matching</code> to true.</p> <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p>
 		 * Post domains/{DomainName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {CreateDomainResponse} Success
 		 */
 		CreateDomain(DomainName: string, requestBody: CreateDomainPostBody): Observable<CreateDomainResponse> {
@@ -4205,6 +4215,7 @@ export namespace MyNS {
 		 * Deletes a specific domain and all of its customer data, such as customer profile attributes and their related objects.
 		 * Delete domains/{DomainName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteDomainResponse} Success
 		 */
 		DeleteDomain(DomainName: string): Observable<DeleteDomainResponse> {
@@ -4215,6 +4226,7 @@ export namespace MyNS {
 		 * Returns information about a specific domain.
 		 * Get domains/{DomainName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetDomainResponse} Success
 		 */
 		GetDomain(DomainName: string): Observable<GetDomainResponse> {
@@ -4225,6 +4237,7 @@ export namespace MyNS {
 		 * <p>Updates the properties of a domain, including creating or selecting a dead letter queue or an encryption key.</p> <p>After a domain is created, the name can’t be changed.</p> <p>Use this API or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> to enable <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">identity resolution</a>: set <code>Matching</code> to true.</p> <p>To prevent cross-service impersonation when you call this API, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/cross-service-confused-deputy-prevention.html">Cross-service confused deputy prevention</a> for sample policies that you should apply. </p> <p>To add or remove tags on an existing Domain, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html">TagResource</a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
 		 * Put domains/{DomainName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {UpdateDomainResponse} Success
 		 */
 		UpdateDomain(DomainName: string, requestBody: UpdateDomainPutBody): Observable<UpdateDomainResponse> {
@@ -4235,7 +4248,9 @@ export namespace MyNS {
 		 * <p>Creates an event stream, which is a subscription to real-time events, such as when profiles are created and updated through Amazon Connect Customer Profiles.</p> <p>Each event stream can be associated with only one Kinesis Data Stream destination in the same region and Amazon Web Services account as the customer profiles domain</p>
 		 * Post domains/{DomainName}/event-streams/{EventStreamName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} EventStreamName The name of the event stream.
+		 *     Min length: 1    Max length: 64
 		 * @return {CreateEventStreamResponse} Success
 		 */
 		CreateEventStream(DomainName: string, EventStreamName: string, requestBody: CreateEventStreamPostBody): Observable<CreateEventStreamResponse> {
@@ -4246,7 +4261,9 @@ export namespace MyNS {
 		 * Disables and deletes the specified event stream.
 		 * Delete domains/{DomainName}/event-streams/{EventStreamName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} EventStreamName The name of the event stream
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteEventStreamResponse} Success
 		 */
 		DeleteEventStream(DomainName: string, EventStreamName: string): Observable<DeleteEventStreamResponse> {
@@ -4257,7 +4274,9 @@ export namespace MyNS {
 		 * Returns information about the specified event stream in a specific domain.
 		 * Get domains/{DomainName}/event-streams/{EventStreamName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} EventStreamName The name of the event stream provided during create operations.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetEventStreamResponse} Success
 		 */
 		GetEventStream(DomainName: string, EventStreamName: string): Observable<GetEventStreamResponse> {
@@ -4268,6 +4287,7 @@ export namespace MyNS {
 		 * Creates an integration workflow. An integration workflow is an async process which ingests historic data and sets up an integration for ongoing updates. The supported Amazon AppFlow sources are Salesforce, ServiceNow, and Marketo.
 		 * Post domains/{DomainName}/workflows/integrations
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {CreateIntegrationWorkflowResponse} Success
 		 */
 		CreateIntegrationWorkflow(DomainName: string, requestBody: CreateIntegrationWorkflowPostBody): Observable<CreateIntegrationWorkflowResponse> {
@@ -4278,6 +4298,7 @@ export namespace MyNS {
 		 * <p>Creates a standard profile.</p> <p>A standard profile represents the following attributes for a customer profile in a domain.</p>
 		 * Post domains/{DomainName}/profiles
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {CreateProfileResponse} Success
 		 */
 		CreateProfile(DomainName: string, requestBody: CreateProfilePostBody): Observable<CreateProfileResponse> {
@@ -4288,6 +4309,7 @@ export namespace MyNS {
 		 * <p>Updates the properties of a profile. The ProfileId is required for updating a customer profile.</p> <p>When calling the UpdateProfile API, specifying an empty string value means that any existing value will be removed. Not specifying a string value means that any value already there will be kept.</p>
 		 * Put domains/{DomainName}/profiles
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {UpdateProfileResponse} Success
 		 */
 		UpdateProfile(DomainName: string, requestBody: UpdateProfilePutBody): Observable<UpdateProfileResponse> {
@@ -4298,6 +4320,7 @@ export namespace MyNS {
 		 * Removes an integration from a specific domain.
 		 * Post domains/{DomainName}/integrations/delete
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteIntegrationResponse} Success
 		 */
 		DeleteIntegration(DomainName: string, requestBody: DeleteIntegrationPostBody): Observable<DeleteIntegrationResponse> {
@@ -4308,6 +4331,7 @@ export namespace MyNS {
 		 * Deletes the standard customer profile and all data pertaining to the profile.
 		 * Post domains/{DomainName}/profiles/delete
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteProfileResponse} Success
 		 */
 		DeleteProfile(DomainName: string, requestBody: DeleteProfilePostBody): Observable<DeleteProfileResponse> {
@@ -4318,6 +4342,7 @@ export namespace MyNS {
 		 * Removes a searchable key from a customer profile.
 		 * Post domains/{DomainName}/profiles/keys/delete
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteProfileKeyResponse} Success
 		 */
 		DeleteProfileKey(DomainName: string, requestBody: DeleteProfileKeyPostBody): Observable<DeleteProfileKeyResponse> {
@@ -4328,6 +4353,7 @@ export namespace MyNS {
 		 * Removes an object associated with a profile of a given ProfileObjectType.
 		 * Post domains/{DomainName}/profiles/objects/delete
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {DeleteProfileObjectResponse} Success
 		 */
 		DeleteProfileObject(DomainName: string, requestBody: DeleteProfileObjectPostBody): Observable<DeleteProfileObjectResponse> {
@@ -4338,7 +4364,9 @@ export namespace MyNS {
 		 * Removes a ProfileObjectType from a specific domain as well as removes all the ProfileObjects of that type. It also disables integrations from this specific ProfileObjectType. In addition, it scrubs all of the fields of the standard profile that were populated from this ProfileObjectType.
 		 * Delete domains/{DomainName}/object-types/{ObjectTypeName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} ObjectTypeName The name of the profile object type.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteProfileObjectTypeResponse} Success
 		 */
 		DeleteProfileObjectType(DomainName: string, ObjectTypeName: string): Observable<DeleteProfileObjectTypeResponse> {
@@ -4349,7 +4377,9 @@ export namespace MyNS {
 		 * Returns the object types for a specific domain.
 		 * Get domains/{DomainName}/object-types/{ObjectTypeName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} ObjectTypeName The name of the profile object type.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetProfileObjectTypeResponse} Success
 		 */
 		GetProfileObjectType(DomainName: string, ObjectTypeName: string): Observable<GetProfileObjectTypeResponse> {
@@ -4360,7 +4390,9 @@ export namespace MyNS {
 		 * <p>Defines a ProfileObjectType.</p> <p>To add or remove tags on an existing ObjectType, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html"> TagResource</a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html">UntagResource</a>.</p>
 		 * Put domains/{DomainName}/object-types/{ObjectTypeName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} ObjectTypeName The name of the profile object type.
+		 *     Min length: 1    Max length: 255
 		 * @return {PutProfileObjectTypeResponse} Success
 		 */
 		PutProfileObjectType(DomainName: string, ObjectTypeName: string, requestBody: PutProfileObjectTypePutBody): Observable<PutProfileObjectTypeResponse> {
@@ -4371,7 +4403,9 @@ export namespace MyNS {
 		 * Deletes the specified workflow and all its corresponding resources. This is an async process.
 		 * Delete domains/{DomainName}/workflows/{WorkflowId}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} WorkflowId Unique identifier for the workflow.
+		 *     Min length: 1    Max length: 255
 		 * @return {DeleteWorkflowResponse} Success
 		 */
 		DeleteWorkflow(DomainName: string, WorkflowId: string): Observable<DeleteWorkflowResponse> {
@@ -4382,6 +4416,7 @@ export namespace MyNS {
 		 * Get details of specified workflow.
 		 * Get domains/{DomainName}/workflows/{WorkflowId}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} WorkflowId Unique identifier for the workflow.
 		 * @return {GetWorkflowResponse} Success
 		 */
@@ -4393,6 +4428,7 @@ export namespace MyNS {
 		 * <p>Tests the auto-merging settings of your Identity Resolution Job without merging your data. It randomly selects a sample of matching groups from the existing matching results, and applies the automerging settings that you provided. You can then view the number of profiles in the sample, the number of matches, and the number of profiles identified to be merged. This enables you to evaluate the accuracy of the attributes in your matching list. </p> <p>You can't view which profiles are matched and would be merged.</p> <important> <p>We strongly recommend you use this API to do a dry run of the automerging process before running the Identity Resolution Job. Include <b>at least</b> two matching attributes. If your matching list includes too few attributes (such as only <code>FirstName</code> or only <code>LastName</code>), there may be a large number of matches. This increases the chances of erroneous merges.</p> </important>
 		 * Post domains/{DomainName}/identity-resolution-jobs/auto-merging-preview
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetAutoMergingPreviewResponse} Success
 		 */
 		GetAutoMergingPreview(DomainName: string, requestBody: GetAutoMergingPreviewPostBody): Observable<GetAutoMergingPreviewResponse> {
@@ -4403,8 +4439,10 @@ export namespace MyNS {
 		 * Retrieve a calculated attribute for a customer profile.
 		 * Get domains/{DomainName}/profile/{ProfileId}/calculated-attributes/{CalculatedAttributeName}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} ProfileId The unique identifier of a customer profile.
 		 * @param {string} CalculatedAttributeName The unique name of the calculated attribute.
+		 *     Min length: 1    Max length: 255
 		 * @return {GetCalculatedAttributeForProfileResponse} Success
 		 */
 		GetCalculatedAttributeForProfile(DomainName: string, ProfileId: string, CalculatedAttributeName: string): Observable<GetCalculatedAttributeForProfileResponse> {
@@ -4415,6 +4453,7 @@ export namespace MyNS {
 		 * <p>Returns information about an Identity Resolution Job in a specific domain. </p> <p>Identity Resolution Jobs are set up using the Amazon Connect admin console. For more information, see <a href="https://docs.aws.amazon.com/connect/latest/adminguide/use-identity-resolution.html">Use Identity Resolution to consolidate similar profiles</a>.</p>
 		 * Get domains/{DomainName}/identity-resolution-jobs/{JobId}
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} JobId The unique identifier of the Identity Resolution Job.
 		 * @return {GetIdentityResolutionJobResponse} Success
 		 */
@@ -4426,6 +4465,7 @@ export namespace MyNS {
 		 * Returns an integration for a domain.
 		 * Post domains/{DomainName}/integrations
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetIntegrationResponse} Success
 		 */
 		GetIntegration(DomainName: string, requestBody: GetIntegrationPostBody): Observable<GetIntegrationResponse> {
@@ -4436,8 +4476,11 @@ export namespace MyNS {
 		 * Lists all of the integrations in your domain.
 		 * Get domains/{DomainName}/integrations
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} next_token The pagination token from the previous ListIntegrations API call.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of objects returned per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {boolean} include_hidden Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.
 		 * @return {ListIntegrationsResponse} Success
 		 */
@@ -4449,6 +4492,7 @@ export namespace MyNS {
 		 * <p>Adds an integration between the service and a third-party service, which includes Amazon AppFlow and Amazon Connect.</p> <p>An integration can belong to only one domain.</p> <p>To add or remove tags on an existing Integration, see <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_TagResource.html"> TagResource </a>/<a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UntagResource.html"> UntagResource</a>.</p>
 		 * Put domains/{DomainName}/integrations
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {PutIntegrationResponse} Success
 		 */
 		PutIntegration(DomainName: string, requestBody: PutIntegrationPutBody): Observable<PutIntegrationResponse> {
@@ -4459,8 +4503,11 @@ export namespace MyNS {
 		 * <p>Before calling this API, use <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_CreateDomain.html">CreateDomain</a> or <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_UpdateDomain.html">UpdateDomain</a> to enable identity resolution: set <code>Matching</code> to true.</p> <p>GetMatches returns potentially matching profiles, based on the results of the latest run of a machine learning process. </p> <important> <p>The process of matching duplicate profiles. If <code>Matching</code> = <code>true</code>, Amazon Connect Customer Profiles starts a weekly batch process called Identity Resolution Job. If you do not specify a date and time for Identity Resolution Job to run, by default it runs every Saturday at 12AM UTC to detect duplicate profiles in your domains. </p> <p>After the Identity Resolution Job completes, use the <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a> API to return and review the results. Or, if you have configured <code>ExportingConfig</code> in the <code>MatchingRequest</code>, you can download the results from S3.</p> </important> <p>Amazon Connect uses the following profile attributes to identify matches:</p> <ul> <li> <p>PhoneNumber</p> </li> <li> <p>HomePhoneNumber</p> </li> <li> <p>BusinessPhoneNumber</p> </li> <li> <p>MobilePhoneNumber</p> </li> <li> <p>EmailAddress</p> </li> <li> <p>PersonalEmailAddress</p> </li> <li> <p>BusinessEmailAddress</p> </li> <li> <p>FullName</p> </li> </ul> <p>For example, two or more profiles—with spelling mistakes such as <b>John Doe</b> and <b>Jhn Doe</b>, or different casing email addresses such as <b>JOHN_DOE@ANYCOMPANY.COM</b> and <b>johndoe@anycompany.com</b>, or different phone number formats such as <b>555-010-0000</b> and <b>+1-555-010-0000</b>—can be detected as belonging to the same customer <b>John Doe</b> and merged into a unified profile.</p>
 		 * Get domains/{DomainName}/matches
 		 * @param {string} next_token The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetMatchesResponse} Success
 		 */
 		GetMatches(next_token: string | null | undefined, max_results: number | null | undefined, DomainName: string): Observable<GetMatchesResponse> {
@@ -4471,8 +4518,11 @@ export namespace MyNS {
 		 * Returns a set of profiles that belong to the same matching group using the <code>matchId</code> or <code>profileId</code>. You can also specify the type of matching that you want for finding similar profiles using either <code>RULE_BASED_MATCHING</code> or <code>ML_BASED_MATCHING</code>.
 		 * Post domains/{DomainName}/matches
 		 * @param {string} next_token The pagination token from the previous <code>GetSimilarProfiles</code> API call.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of objects returned per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetSimilarProfilesResponse} Success
 		 */
 		GetSimilarProfiles(next_token: string | null | undefined, max_results: number | null | undefined, DomainName: string, requestBody: GetSimilarProfilesPostBody): Observable<GetSimilarProfilesResponse> {
@@ -4483,6 +4533,7 @@ export namespace MyNS {
 		 * <p>Returns the template information for a specific object type.</p> <p>A template is a predefined ProfileObjectType, such as “Salesforce-Account” or “Salesforce-Contact.” When a user sends a ProfileObject, using the PutProfileObject API, with an ObjectTypeName that matches one of the TemplateIds, it uses the mappings from the template.</p>
 		 * Get templates/{TemplateId}
 		 * @param {string} TemplateId A unique identifier for the object template.
+		 *     Min length: 1    Max length: 64
 		 * @return {GetProfileObjectTypeTemplateResponse} Success
 		 */
 		GetProfileObjectTypeTemplate(TemplateId: string): Observable<GetProfileObjectTypeTemplateResponse> {
@@ -4493,9 +4544,12 @@ export namespace MyNS {
 		 * Get granular list of steps in workflow.
 		 * Get domains/{DomainName}/workflows/{WorkflowId}/steps
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} WorkflowId Unique identifier for the workflow.
 		 * @param {string} next_token The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {GetWorkflowStepsResponse} Success
 		 */
 		GetWorkflowSteps(DomainName: string, WorkflowId: string, next_token: string | null | undefined, max_results: number | null | undefined): Observable<GetWorkflowStepsResponse> {
@@ -4506,7 +4560,9 @@ export namespace MyNS {
 		 * Lists all of the integrations associated to a specific URI in the AWS account.
 		 * Post integrations
 		 * @param {string} next_token The pagination token from the previous ListAccountIntegrations API call.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of objects returned per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {boolean} include_hidden Boolean to indicate if hidden integration should be returned. Defaults to <code>False</code>.
 		 * @return {ListAccountIntegrationsResponse} Success
 		 */
@@ -4518,8 +4574,11 @@ export namespace MyNS {
 		 * Lists calculated attribute definitions for Customer Profiles
 		 * Get domains/{DomainName}/calculated-attributes
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} next_token The pagination token from the previous call to ListCalculatedAttributeDefinitions.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of calculated attribute definitions returned per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListCalculatedAttributeDefinitionsResponse} Success
 		 */
 		ListCalculatedAttributeDefinitions(DomainName: string, next_token: string | null | undefined, max_results: number | null | undefined): Observable<ListCalculatedAttributeDefinitionsResponse> {
@@ -4530,8 +4589,11 @@ export namespace MyNS {
 		 * Retrieve a list of calculated attributes for a customer profile.
 		 * Get domains/{DomainName}/profile/{ProfileId}/calculated-attributes
 		 * @param {string} next_token The pagination token from the previous call to ListCalculatedAttributesForProfile.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of calculated attributes returned per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} ProfileId The unique identifier of a customer profile.
 		 * @return {ListCalculatedAttributesForProfileResponse} Success
 		 */
@@ -4543,7 +4605,9 @@ export namespace MyNS {
 		 * Returns a list of all the domains for an AWS account that have been created.
 		 * Get domains
 		 * @param {string} next_token The pagination token from the previous ListDomain API call.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of objects returned per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListDomainsResponse} Success
 		 */
 		ListDomains(next_token: string | null | undefined, max_results: number | null | undefined): Observable<ListDomainsResponse> {
@@ -4554,8 +4618,11 @@ export namespace MyNS {
 		 * Returns a list of all the event streams in a specific domain.
 		 * Get domains/{DomainName}/event-streams
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} next_token Identifies the next page of results to return.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of objects returned per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} MaxResults Pagination limit
 		 * @param {string} NextToken Pagination token
 		 * @return {ListEventStreamsResponse} Success
@@ -4568,8 +4635,11 @@ export namespace MyNS {
 		 * Lists all of the Identity Resolution Jobs in your domain. The response sorts the list by <code>JobStartTime</code>.
 		 * Get domains/{DomainName}/identity-resolution-jobs
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} next_token The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListIdentityResolutionJobsResponse} Success
 		 */
 		ListIdentityResolutionJobs(DomainName: string, next_token: string | null | undefined, max_results: number | null | undefined): Observable<ListIdentityResolutionJobsResponse> {
@@ -4580,7 +4650,9 @@ export namespace MyNS {
 		 * Lists all of the template information for object types.
 		 * Get templates
 		 * @param {string} next_token The pagination token from the previous ListObjectTypeTemplates API call.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of objects returned per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListProfileObjectTypeTemplatesResponse} Success
 		 */
 		ListProfileObjectTypeTemplates(next_token: string | null | undefined, max_results: number | null | undefined): Observable<ListProfileObjectTypeTemplatesResponse> {
@@ -4591,8 +4663,11 @@ export namespace MyNS {
 		 * Lists all of the templates available within the service.
 		 * Get domains/{DomainName}/object-types
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} next_token Identifies the next page of results to return.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of objects returned per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListProfileObjectTypesResponse} Success
 		 */
 		ListProfileObjectTypes(DomainName: string, next_token: string | null | undefined, max_results: number | null | undefined): Observable<ListProfileObjectTypesResponse> {
@@ -4603,8 +4678,11 @@ export namespace MyNS {
 		 * Returns a list of objects associated with a profile of a given ProfileObjectType.
 		 * Post domains/{DomainName}/profiles/objects
 		 * @param {string} next_token The pagination token from the previous call to ListProfileObjects.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of objects returned per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {ListProfileObjectsResponse} Success
 		 */
 		ListProfileObjects(next_token: string | null | undefined, max_results: number | null | undefined, DomainName: string, requestBody: ListProfileObjectsPostBody): Observable<ListProfileObjectsResponse> {
@@ -4615,6 +4693,7 @@ export namespace MyNS {
 		 * <p>Adds additional objects to customer profiles of a given ObjectType.</p> <p>When adding a specific profile object, like a Contact Record, an inferred profile can get created if it is not mapped to an existing profile. The resulting profile will only have a phone number populated in the standard ProfileObject. Any additional Contact Records with the same phone number will be mapped to the same inferred profile.</p> <p>When a ProfileObject is created and if a ProfileObjectType already exists for the ProfileObject, it will provide data to a standard profile depending on the ProfileObjectType definition.</p> <p>PutProfileObject needs an ObjectType, which can be created using PutProfileObjectType.</p>
 		 * Put domains/{DomainName}/profiles/objects
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {PutProfileObjectResponse} Success
 		 */
 		PutProfileObject(DomainName: string, requestBody: PutProfileObjectPutBody): Observable<PutProfileObjectResponse> {
@@ -4625,8 +4704,11 @@ export namespace MyNS {
 		 * Returns a set of <code>MatchIds</code> that belong to the given domain.
 		 * Get domains/{DomainName}/profiles/ruleBasedMatches
 		 * @param {string} next_token The pagination token from the previous <code>ListRuleBasedMatches</code> API call.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of <code>MatchIds</code> returned per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {ListRuleBasedMatchesResponse} Success
 		 */
 		ListRuleBasedMatches(next_token: string | null | undefined, max_results: number | null | undefined, DomainName: string): Observable<ListRuleBasedMatchesResponse> {
@@ -4637,6 +4719,7 @@ export namespace MyNS {
 		 * Displays the tags associated with an Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.
 		 * Get tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource for which you want to view tags.
+		 *     Max length: 256
 		 * @return {ListTagsForResourceResponse} Success
 		 */
 		ListTagsForResource(resourceArn: string): Observable<ListTagsForResourceResponse> {
@@ -4647,6 +4730,7 @@ export namespace MyNS {
 		 * <p>Assigns one or more tags (key-value pairs) to the specified Amazon Connect Customer Profiles resource. Tags can help you organize and categorize your resources. You can also use them to scope user permissions by granting a user permission to access or change only resources with certain tag values. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.</p> <p>Tags don't have any semantic meaning to AWS and are interpreted strictly as strings of characters.</p> <p>You can use the TagResource action with a resource that already has tags. If you specify a new tag key, this tag is appended to the list of tags associated with the resource. If you specify a tag key that is already associated with the resource, the new tag value that you specify replaces the previous value for that tag.</p> <p>You can associate as many as 50 tags with a resource.</p>
 		 * Post tags/{resourceArn}
 		 * @param {string} resourceArn The ARN of the resource that you're adding tags to.
+		 *     Max length: 256
 		 * @return {TagResourceResponse} Success
 		 */
 		TagResource(resourceArn: string, requestBody: TagResourcePostBody): Observable<TagResourceResponse> {
@@ -4657,8 +4741,11 @@ export namespace MyNS {
 		 * Query to list all workflows.
 		 * Post domains/{DomainName}/workflows
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @param {string} next_token The token for the next set of results. Use the value returned in the previous response in the next request to retrieve the next set of results.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results The maximum number of results to return per page.
+		 *     Minimum: 1    Maximum: 100
 		 * @return {ListWorkflowsResponse} Success
 		 */
 		ListWorkflows(DomainName: string, next_token: string | null | undefined, max_results: number | null | undefined, requestBody: ListWorkflowsPostBody): Observable<ListWorkflowsResponse> {
@@ -4669,6 +4756,7 @@ export namespace MyNS {
 		 * <p>Runs an AWS Lambda job that does the following:</p> <ol> <li> <p>All the profileKeys in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>All the objects in the <code>ProfileToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>All the <code>ProfileToBeMerged</code> will be deleted at the end.</p> </li> <li> <p>All the profileKeys in the <code>ProfileIdsToBeMerged</code> will be moved to the main profile.</p> </li> <li> <p>Standard fields are merged as follows:</p> <ol> <li> <p>Fields are always "union"-ed if there are no conflicts in standard fields or attributeKeys.</p> </li> <li> <p>When there are conflicting fields:</p> <ol> <li> <p>If no <code>SourceProfileIds</code> entry is specified, the main Profile value is always taken. </p> </li> <li> <p>If a <code>SourceProfileIds</code> entry is specified, the specified profileId is always taken, even if it is a NULL value.</p> </li> </ol> </li> </ol> </li> </ol> <p>You can use MergeProfiles together with <a href="https://docs.aws.amazon.com/customerprofiles/latest/APIReference/API_GetMatches.html">GetMatches</a>, which returns potentially matching profiles, or use it with the results of another matching system. After profiles have been merged, they cannot be separated (unmerged).</p>
 		 * Post domains/{DomainName}/profiles/objects/merge
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {MergeProfilesResponse} Success
 		 */
 		MergeProfiles(DomainName: string, requestBody: MergeProfilesPostBody): Observable<MergeProfilesResponse> {
@@ -4679,8 +4767,11 @@ export namespace MyNS {
 		 * <p>Searches for profiles within a specific domain using one or more predefined search keys (e.g., _fullName, _phone, _email, _account, etc.) and/or custom-defined search keys. A search key is a data type pair that consists of a <code>KeyName</code> and <code>Values</code> list.</p> <p>This operation supports searching for profiles with a minimum of 1 key-value(s) pair and up to 5 key-value(s) pairs using either <code>AND</code> or <code>OR</code> logic.</p>
 		 * Post domains/{DomainName}/profiles/search
 		 * @param {string} next_token The pagination token from the previous SearchProfiles API call.
+		 *     Min length: 1    Max length: 1024
 		 * @param {number} max_results <p>The maximum number of objects returned per page.</p> <p>The default is 20 if this parameter is not included in the request.</p>
+		 *     Minimum: 1    Maximum: 100
 		 * @param {string} DomainName The unique name of the domain.
+		 *     Min length: 1    Max length: 64
 		 * @return {SearchProfilesResponse} Success
 		 */
 		SearchProfiles(next_token: string | null | undefined, max_results: number | null | undefined, DomainName: string, requestBody: SearchProfilesPostBody): Observable<SearchProfilesResponse> {
@@ -4691,7 +4782,9 @@ export namespace MyNS {
 		 * Removes one or more tags from the specified Amazon Connect Customer Profiles resource. In Connect Customer Profiles, domains, profile object types, and integrations can be tagged.
 		 * Delete tags/{resourceArn}#tagKeys
 		 * @param {string} resourceArn The ARN of the resource from which you are removing tags.
+		 *     Max length: 256
 		 * @param {Array<string>} tagKeys The list of tag keys to remove from the resource.
+		 *     Minimum items: 1    Maximum items: 50
 		 * @return {UntagResourceResponse} Success
 		 */
 		UntagResource(resourceArn: string, tagKeys: Array<string>): Observable<UntagResourceResponse> {
@@ -4710,8 +4803,8 @@ export namespace MyNS {
 		/**
 		 * A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		KeyName: string;
 
@@ -4732,8 +4825,8 @@ export namespace MyNS {
 		/**
 		 * A searchable identifier of a customer profile. The predefined keys you can use include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		KeyName: FormControl<string | null | undefined>,
 	}
@@ -4749,15 +4842,15 @@ export namespace MyNS {
 
 		/**
 		 * The display name of the calculated attribute.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DisplayName?: string | null;
 
 		/**
 		 * The description of the calculated attribute.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -4783,15 +4876,15 @@ export namespace MyNS {
 
 		/**
 		 * The display name of the calculated attribute.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DisplayName: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the calculated attribute.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
@@ -4847,15 +4940,15 @@ export namespace MyNS {
 
 		/**
 		 * The display name of the calculated attribute.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DisplayName?: string | null;
 
 		/**
 		 * The description of the calculated attribute.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description?: string | null;
 
@@ -4866,15 +4959,15 @@ export namespace MyNS {
 
 		/**
 		 * The display name of the calculated attribute.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		DisplayName: FormControl<string | null | undefined>,
 
 		/**
 		 * The description of the calculated attribute.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 	}
@@ -4913,15 +5006,15 @@ export namespace MyNS {
 
 		/**
 		 * The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		DefaultEncryptionKey?: string | null;
 
 		/**
 		 * The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		DeadLetterQueueUrl?: string | null;
 
@@ -4946,15 +5039,15 @@ export namespace MyNS {
 
 		/**
 		 * The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		DefaultEncryptionKey: FormControl<string | null | undefined>,
 
 		/**
 		 * The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		DeadLetterQueueUrl: FormControl<string | null | undefined>,
 
@@ -5025,15 +5118,15 @@ export namespace MyNS {
 
 		/**
 		 * The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		DefaultEncryptionKey?: string | null;
 
 		/**
 		 * The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		DeadLetterQueueUrl?: string | null;
 
@@ -5057,15 +5150,15 @@ export namespace MyNS {
 
 		/**
 		 * The default encryption key, which is an AWS managed key, is used when no specific type of encryption key is specified. It is used to encrypt all data before it is placed in permanent or semi-permanent storage. If specified as an empty string, it will clear any existing value.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		DefaultEncryptionKey: FormControl<string | null | undefined>,
 
 		/**
 		 * The URL of the SQS dead letter queue, which is used for reporting errors associated with ingesting data from third party applications. If specified as an empty string, it will clear any existing value. You must set up a policy on the DeadLetterQueue for the SendMessage operation to enable Amazon Connect Customer Profiles to send messages to the DeadLetterQueue.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		DeadLetterQueueUrl: FormControl<string | null | undefined>,
 
@@ -5130,8 +5223,8 @@ export namespace MyNS {
 		/**
 		 * The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Uri: string;
 
@@ -5143,8 +5236,8 @@ export namespace MyNS {
 		/**
 		 * The StreamARN of the destination to deliver profile events to. For example, arn:aws:kinesis:region:account-id:stream/stream-name
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Uri: FormControl<string | null | undefined>,
 
@@ -5176,8 +5269,8 @@ export namespace MyNS {
 		/**
 		 * The name of the profile object type.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ObjectTypeName: string;
 
@@ -5202,8 +5295,8 @@ export namespace MyNS {
 		/**
 		 * The name of the profile object type.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ObjectTypeName: FormControl<string | null | undefined>,
 
@@ -5242,15 +5335,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique account number that you have given to the customer.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		AccountNumber?: string | null;
 
 		/**
 		 * Any additional information relevant to the customer’s profile.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		AdditionalInformation?: string | null;
 
@@ -5259,36 +5352,36 @@ export namespace MyNS {
 
 		/**
 		 * The name of the customer’s business.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		BusinessName?: string | null;
 
 		/**
 		 * The customer’s first name.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		FirstName?: string | null;
 
 		/**
 		 * The customer’s middle name.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		MiddleName?: string | null;
 
 		/**
 		 * The customer’s last name.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		LastName?: string | null;
 
 		/**
 		 * The customer’s birth date.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		BirthDate?: string | null;
 
@@ -5297,50 +5390,50 @@ export namespace MyNS {
 
 		/**
 		 * The customer’s phone number, which has not been specified as a mobile, home, or business number.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		PhoneNumber?: string | null;
 
 		/**
 		 * The customer’s mobile phone number.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		MobilePhoneNumber?: string | null;
 
 		/**
 		 * The customer’s home phone number.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		HomePhoneNumber?: string | null;
 
 		/**
 		 * The customer’s business phone number.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		BusinessPhoneNumber?: string | null;
 
 		/**
 		 * The customer’s email address, which has not been specified as a personal or business address.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		EmailAddress?: string | null;
 
 		/**
 		 * The customer’s personal email address.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		PersonalEmailAddress?: string | null;
 
 		/**
 		 * The customer’s business email address.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		BusinessEmailAddress?: string | null;
 
@@ -5361,15 +5454,15 @@ export namespace MyNS {
 
 		/**
 		 * An alternative to <code>PartyType</code> which accepts any string as input.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		PartyTypeString?: string | null;
 
 		/**
 		 * An alternative to <code>Gender</code> which accepts any string as input.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		GenderString?: string | null;
 	}
@@ -5377,15 +5470,15 @@ export namespace MyNS {
 
 		/**
 		 * A unique account number that you have given to the customer.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		AccountNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * Any additional information relevant to the customer’s profile.
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		AdditionalInformation: FormControl<string | null | undefined>,
 
@@ -5394,36 +5487,36 @@ export namespace MyNS {
 
 		/**
 		 * The name of the customer’s business.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		BusinessName: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s first name.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		FirstName: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s middle name.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		MiddleName: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s last name.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		LastName: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s birth date.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		BirthDate: FormControl<string | null | undefined>,
 
@@ -5432,50 +5525,50 @@ export namespace MyNS {
 
 		/**
 		 * The customer’s phone number, which has not been specified as a mobile, home, or business number.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		PhoneNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s mobile phone number.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		MobilePhoneNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s home phone number.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		HomePhoneNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s business phone number.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		BusinessPhoneNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s email address, which has not been specified as a personal or business address.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		EmailAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s personal email address.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		PersonalEmailAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s business email address.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		BusinessEmailAddress: FormControl<string | null | undefined>,
 
@@ -5484,15 +5577,15 @@ export namespace MyNS {
 
 		/**
 		 * An alternative to <code>PartyType</code> which accepts any string as input.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		PartyTypeString: FormControl<string | null | undefined>,
 
 		/**
 		 * An alternative to <code>Gender</code> which accepts any string as input.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		GenderString: FormControl<string | null | undefined>,
 	}
@@ -5691,15 +5784,15 @@ export namespace MyNS {
 
 		/**
 		 * Any additional information relevant to the customer’s profile.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		AdditionalInformation?: string | null;
 
 		/**
 		 * A unique account number that you have given to the customer.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		AccountNumber?: string | null;
 
@@ -5708,36 +5801,36 @@ export namespace MyNS {
 
 		/**
 		 * The name of the customer’s business.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		BusinessName?: string | null;
 
 		/**
 		 * The customer’s first name.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		FirstName?: string | null;
 
 		/**
 		 * The customer’s middle name.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		MiddleName?: string | null;
 
 		/**
 		 * The customer’s last name.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		LastName?: string | null;
 
 		/**
 		 * The customer’s birth date.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		BirthDate?: string | null;
 
@@ -5746,50 +5839,50 @@ export namespace MyNS {
 
 		/**
 		 * The customer’s phone number, which has not been specified as a mobile, home, or business number.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		PhoneNumber?: string | null;
 
 		/**
 		 * The customer’s mobile phone number.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		MobilePhoneNumber?: string | null;
 
 		/**
 		 * The customer’s home phone number.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		HomePhoneNumber?: string | null;
 
 		/**
 		 * The customer’s business phone number.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		BusinessPhoneNumber?: string | null;
 
 		/**
 		 * The customer’s email address, which has not been specified as a personal or business address.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		EmailAddress?: string | null;
 
 		/**
 		 * The customer’s personal email address.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		PersonalEmailAddress?: string | null;
 
 		/**
 		 * The customer’s business email address.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		BusinessEmailAddress?: string | null;
 
@@ -5810,15 +5903,15 @@ export namespace MyNS {
 
 		/**
 		 * An alternative to <code>PartyType</code> which accepts any string as input.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		PartyTypeString?: string | null;
 
 		/**
 		 * An alternative to <code>Gender</code> which accepts any string as input.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		GenderString?: string | null;
 	}
@@ -5832,15 +5925,15 @@ export namespace MyNS {
 
 		/**
 		 * Any additional information relevant to the customer’s profile.
-		 * Max length: 1000
 		 * Min length: 0
+		 * Max length: 1000
 		 */
 		AdditionalInformation: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique account number that you have given to the customer.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		AccountNumber: FormControl<string | null | undefined>,
 
@@ -5849,36 +5942,36 @@ export namespace MyNS {
 
 		/**
 		 * The name of the customer’s business.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		BusinessName: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s first name.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		FirstName: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s middle name.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		MiddleName: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s last name.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		LastName: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s birth date.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		BirthDate: FormControl<string | null | undefined>,
 
@@ -5887,50 +5980,50 @@ export namespace MyNS {
 
 		/**
 		 * The customer’s phone number, which has not been specified as a mobile, home, or business number.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		PhoneNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s mobile phone number.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		MobilePhoneNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s home phone number.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		HomePhoneNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s business phone number.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		BusinessPhoneNumber: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s email address, which has not been specified as a personal or business address.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		EmailAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s personal email address.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		PersonalEmailAddress: FormControl<string | null | undefined>,
 
 		/**
 		 * The customer’s business email address.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		BusinessEmailAddress: FormControl<string | null | undefined>,
 
@@ -5939,15 +6032,15 @@ export namespace MyNS {
 
 		/**
 		 * An alternative to <code>PartyType</code> which accepts any string as input.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		PartyTypeString: FormControl<string | null | undefined>,
 
 		/**
 		 * An alternative to <code>Gender</code> which accepts any string as input.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		GenderString: FormControl<string | null | undefined>,
 	}
@@ -6142,8 +6235,8 @@ export namespace MyNS {
 		/**
 		 * The URI of the S3 bucket or any other type of data source.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Uri: string;
 	}
@@ -6152,8 +6245,8 @@ export namespace MyNS {
 		/**
 		 * The URI of the S3 bucket or any other type of data source.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Uri: FormControl<string | null | undefined>,
 	}
@@ -6198,8 +6291,8 @@ export namespace MyNS {
 		/**
 		 * A searchable identifier of a customer profile.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		KeyName: string;
 
@@ -6220,8 +6313,8 @@ export namespace MyNS {
 		/**
 		 * A searchable identifier of a customer profile.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		KeyName: FormControl<string | null | undefined>,
 	}
@@ -6244,16 +6337,16 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the profile object generated by the service.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ProfileObjectUniqueKey: string;
 
 		/**
 		 * The name of the profile object type.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ObjectTypeName: string;
 	}
@@ -6268,16 +6361,16 @@ export namespace MyNS {
 		/**
 		 * The unique identifier of the profile object generated by the service.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ProfileObjectUniqueKey: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the profile object type.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ObjectTypeName: FormControl<string | null | undefined>,
 	}
@@ -6295,15 +6388,15 @@ export namespace MyNS {
 		/**
 		 * Description of the profile object type.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description: string;
 
 		/**
 		 * A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		TemplateId?: string | null;
 
@@ -6316,8 +6409,8 @@ export namespace MyNS {
 
 		/**
 		 * The customer-provided key to encrypt the profile object that will be created in this profile object type.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		EncryptionKey?: string | null;
 
@@ -6326,8 +6419,8 @@ export namespace MyNS {
 
 		/**
 		 * The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SourceLastUpdatedTimestampFormat?: string | null;
 
@@ -6345,15 +6438,15 @@ export namespace MyNS {
 		/**
 		 * Description of the profile object type.
 		 * Required
-		 * Max length: 1000
 		 * Min length: 1
+		 * Max length: 1000
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique identifier for the object template. For some attributes in the request, the service will use the default value from the object template when TemplateId is present. If these attributes are present in the request, the service may return a <code>BadRequestException</code>. These attributes include: AllowProfileCreation, SourceLastUpdatedTimestampFormat, Fields, and Keys. For example, if AllowProfileCreation is set to true when TemplateId is set, the service may return a <code>BadRequestException</code>.
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		TemplateId: FormControl<string | null | undefined>,
 
@@ -6366,8 +6459,8 @@ export namespace MyNS {
 
 		/**
 		 * The customer-provided key to encrypt the profile object that will be created in this profile object type.
-		 * Max length: 255
 		 * Min length: 0
+		 * Max length: 255
 		 */
 		EncryptionKey: FormControl<string | null | undefined>,
 
@@ -6376,8 +6469,8 @@ export namespace MyNS {
 
 		/**
 		 * The format of your <code>sourceLastUpdatedTimestamp</code> that was previously set up.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SourceLastUpdatedTimestampFormat: FormControl<string | null | undefined>,
 
@@ -6474,8 +6567,8 @@ export namespace MyNS {
 		/**
 		 * The URI of the S3 bucket or any other type of data source.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Uri: string;
 	}
@@ -6484,8 +6577,8 @@ export namespace MyNS {
 		/**
 		 * The URI of the S3 bucket or any other type of data source.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Uri: FormControl<string | null | undefined>,
 	}
@@ -6500,15 +6593,15 @@ export namespace MyNS {
 
 		/**
 		 * The URI of the S3 bucket or any other type of data source.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Uri?: string | null;
 
 		/**
 		 * The name of the profile object type.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ObjectTypeName?: string | null;
 
@@ -6525,15 +6618,15 @@ export namespace MyNS {
 
 		/**
 		 * The URI of the S3 bucket or any other type of data source.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Uri: FormControl<string | null | undefined>,
 
 		/**
 		 * The name of the profile object type.
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ObjectTypeName: FormControl<string | null | undefined>,
 
@@ -6586,16 +6679,16 @@ export namespace MyNS {
 		/**
 		 * The string indicating the search key to be used.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SearchKey: string;
 
 		/**
 		 * The string based on <code>SearchKey</code> to be searched for similar profiles.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SearchValue: string;
 	}
@@ -6610,16 +6703,16 @@ export namespace MyNS {
 		/**
 		 * The string indicating the search key to be used.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SearchKey: FormControl<string | null | undefined>,
 
 		/**
 		 * The string based on <code>SearchKey</code> to be searched for similar profiles.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		SearchValue: FormControl<string | null | undefined>,
 	}
@@ -6637,8 +6730,8 @@ export namespace MyNS {
 		/**
 		 * The URI of the S3 bucket or any other type of data source.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Uri: string;
 	}
@@ -6647,8 +6740,8 @@ export namespace MyNS {
 		/**
 		 * The URI of the S3 bucket or any other type of data source.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		Uri: FormControl<string | null | undefined>,
 	}
@@ -6664,8 +6757,8 @@ export namespace MyNS {
 		/**
 		 * The name of the profile object type.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ObjectTypeName: string;
 
@@ -6683,8 +6776,8 @@ export namespace MyNS {
 		/**
 		 * The name of the profile object type.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ObjectTypeName: FormControl<string | null | undefined>,
 
@@ -6721,16 +6814,16 @@ export namespace MyNS {
 		/**
 		 * The name of the profile object type.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ObjectTypeName: string;
 
 		/**
 		 * A string that is serialized from a JSON object.
 		 * Required
-		 * Max length: 256000
 		 * Min length: 1
+		 * Max length: 256000
 		 */
 		Object: string;
 	}
@@ -6739,16 +6832,16 @@ export namespace MyNS {
 		/**
 		 * The name of the profile object type.
 		 * Required
-		 * Max length: 255
 		 * Min length: 1
+		 * Max length: 255
 		 */
 		ObjectTypeName: FormControl<string | null | undefined>,
 
 		/**
 		 * A string that is serialized from a JSON object.
 		 * Required
-		 * Max length: 256000
 		 * Min length: 1
+		 * Max length: 256000
 		 */
 		Object: FormControl<string | null | undefined>,
 	}
@@ -6931,8 +7024,8 @@ export namespace MyNS {
 		/**
 		 * A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		KeyName: string;
 
@@ -6957,8 +7050,8 @@ export namespace MyNS {
 		/**
 		 * A searchable identifier of a customer profile. The predefined keys you can use to search include: _account, _profileId, _assetId, _caseId, _orderId, _fullName, _phone, _email, _ctrContactId, _marketoLeadId, _salesforceAccountId, _salesforceContactId, _salesforceAssetId, _zendeskUserId, _zendeskExternalId, _zendeskTicketId, _serviceNowSystemId, _serviceNowIncidentId, _segmentUserId, _shopifyCustomerId, _shopifyOrderId.
 		 * Required
-		 * Max length: 64
 		 * Min length: 1
+		 * Max length: 64
 		 */
 		KeyName: FormControl<string | null | undefined>,
 

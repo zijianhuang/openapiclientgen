@@ -70,6 +70,8 @@ export namespace MyNS {
 		 * 2017-04-05T10:43:07+00:00
 		 */
 		LastAvailableDateTime?: string | null;
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalPages?: number | null;
 	}
 
@@ -89,6 +91,8 @@ export namespace MyNS {
 		 * 2017-04-05T10:43:07+00:00
 		 */
 		LastAvailableDateTime: FormControl<string | null | undefined>,
+
+		/** Type: int, -2,147,483,648 to 2,147,483,647 */
 		TotalPages: FormControl<number | null | undefined>,
 	}
 	export function CreateMetaFormGroup() {
@@ -110,8 +114,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -129,15 +133,15 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description?: string | null;
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname?: string | null;
 
@@ -152,8 +156,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -171,15 +175,15 @@ export namespace MyNS {
 
 		/**
 		 * Specifies the description of the account type.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Description: FormControl<string | null | undefined>,
 
 		/**
 		 * The nickname of the account, assigned by the account owner in order to provide an additional means of identification of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Nickname: FormControl<string | null | undefined>,
 
@@ -204,16 +208,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: string;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name?: string | null;
 
@@ -226,8 +230,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number(in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification?: string | null;
 	}
@@ -236,16 +240,16 @@ export namespace MyNS {
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
 		 * Required
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -258,8 +262,8 @@ export namespace MyNS {
 		/**
 		 * This is secondary identification of the account, as assigned by the account servicing institution.
 		 * This can be used by building societies to additionally identify accounts with a roll number(in addition to a sort code and account number combination).
-		 * Max length: 34
 		 * Min length: 1
+		 * Max length: 34
 		 */
 		SecondaryIdentification: FormControl<string | null | undefined>,
 	}
@@ -282,8 +286,8 @@ export namespace MyNS {
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: string;
 
@@ -298,8 +302,8 @@ export namespace MyNS {
 		/**
 		 * Unique and unambiguous identification of the servicing institution.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Identification: FormControl<string | null | undefined>,
 
@@ -359,8 +363,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId?: string | null;
 
@@ -372,8 +376,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -400,16 +404,16 @@ export namespace MyNS {
 
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification?: string | null;
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name?: string | null;
 
@@ -422,16 +426,16 @@ export namespace MyNS {
 
 		/**
 		 * Identification assigned by an institution to identify an account. This identification is known by the account owner.
-		 * Max length: 256
 		 * Min length: 1
+		 * Max length: 256
 		 */
 		Identification: FormControl<string | null | undefined>,
 
 		/**
 		 * The account name is the name or names of the account owner(s) represented at an account level, as displayed by the ASPSP's online channels.
 		 * Note, the account name is not the product name or the nickname of the account.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 
@@ -454,8 +458,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -484,8 +488,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -559,15 +563,15 @@ export namespace MyNS {
 		/**
 		 * A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'OBIE doesn't standardise this field
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: string;
 
 		/**
 		 * Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Path?: string | null;
 	}
@@ -582,15 +586,15 @@ export namespace MyNS {
 		/**
 		 * A description of the error that occurred. e.g., 'A mandatory field isn't supplied' or 'RequestedExecutionDateTime must be in future'OBIE doesn't standardise this field
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: FormControl<string | null | undefined>,
 
 		/**
 		 * Recommended but optional reference to the JSON Path of the field with error, e.g., Data.Initiation.InstructedAmount.Currency
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Path: FormControl<string | null | undefined>,
 	}
@@ -610,8 +614,8 @@ export namespace MyNS {
 		/**
 		 * High level textual error code, to help categorize the errors.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Code: string;
 
@@ -623,16 +627,16 @@ export namespace MyNS {
 
 		/**
 		 * A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Id?: string | null;
 
 		/**
 		 * Brief Error message, e.g., 'There is something wrong with the request parameters provided'
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: string;
 	}
@@ -643,23 +647,23 @@ export namespace MyNS {
 		/**
 		 * High level textual error code, to help categorize the errors.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique reference for the error instance, for audit purposes, in case of unknown/unclassified errors.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		Id: FormControl<string | null | undefined>,
 
 		/**
 		 * Brief Error message, e.g., 'There is something wrong with the request parameters provided'
 		 * Required
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		Message: FormControl<string | null | undefined>,
 	}
@@ -696,16 +700,16 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name?: string | null;
 
 		/**
 		 * A unique and immutable identifier used to identify the customer resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		PartyId: string;
 	}
@@ -713,16 +717,16 @@ export namespace MyNS {
 
 		/**
 		 * Name by which a party is known and which is usually used to identify that party.
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		Name: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique and immutable identifier used to identify the customer resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		PartyId: FormControl<string | null | undefined>,
 	}
@@ -1065,16 +1069,16 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 		CreditorAccount?: OBCashAccount5;
 
 		/**
 		 * A reference value provided by the PSU to the PISP while setting up the scheduled payment.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		DebtorReference?: string | null;
 
@@ -1085,8 +1089,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
@@ -1100,8 +1104,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the scheduled payment resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ScheduledPaymentId?: string | null;
 
@@ -1113,15 +1117,15 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
 		/**
 		 * A reference value provided by the PSU to the PISP while setting up the scheduled payment.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		DebtorReference: FormControl<string | null | undefined>,
 
@@ -1129,8 +1133,8 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
@@ -1144,8 +1148,8 @@ export namespace MyNS {
 
 		/**
 		 * A unique and immutable identifier used to identify the scheduled payment resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		ScheduledPaymentId: FormControl<string | null | undefined>,
 
@@ -1180,8 +1184,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 		CreditorAccount?: OBCashAccount5;
@@ -1231,15 +1235,15 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference?: string | null;
 
 		/**
 		 * A unique and immutable identifier used to identify the standing order resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StandingOrderId?: string | null;
 		StandingOrderStatusCode?: OBExternalStandingOrderStatus1Code | null;
@@ -1249,8 +1253,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -1295,15 +1299,15 @@ export namespace MyNS {
 		 * Unique reference, as assigned by the creditor, to unambiguously refer to the payment transaction.
 		 * Usage: If available, the initiating party should provide this reference in the structured remittance information, to enable reconciliation by the creditor upon receipt of the amount of money.
 		 * If the business context requires the use of a creditor reference or a payment remit identification, and only one identifier can be passed through the end-to-end chain, the creditor's reference or payment remittance identification should be quoted in the end-to-end transaction identification.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Reference: FormControl<string | null | undefined>,
 
 		/**
 		 * A unique and immutable identifier used to identify the standing order resource. This identifier has no meaning to the account owner.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StandingOrderId: FormControl<string | null | undefined>,
 		StandingOrderStatusCode: FormControl<OBExternalStandingOrderStatus1Code | null | undefined>,
@@ -1343,8 +1347,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -1374,15 +1378,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the statement resource within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StatementId?: string | null;
 
 		/**
 		 * Unique reference for the statement. This reference may be optionally populated if available.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		StatementReference?: string | null;
 
@@ -1396,8 +1400,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -1427,15 +1431,15 @@ export namespace MyNS {
 
 		/**
 		 * Unique identifier for the statement resource within an servicing institution. This identifier is both unique and immutable.
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		StatementId: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique reference for the statement. This reference may be optionally populated if available.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		StatementReference: FormControl<string | null | undefined>,
 
@@ -1475,8 +1479,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: string;
 
@@ -1513,15 +1517,15 @@ export namespace MyNS {
 		/**
 		 * Further details of the transaction.
 		 * This is the transaction narrative, which is unstructured text.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		TransactionInformation?: string | null;
 
 		/**
 		 * Unique reference for the transaction. This reference is optionally populated, and may as an example be the FPID in the Faster Payments context.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionReference?: string | null;
 
@@ -1541,8 +1545,8 @@ export namespace MyNS {
 		/**
 		 * A unique and immutable identifier used to identify the account resource. This identifier has no meaning to the account owner.
 		 * Required
-		 * Max length: 40
 		 * Min length: 1
+		 * Max length: 40
 		 */
 		AccountId: FormControl<string | null | undefined>,
 
@@ -1564,15 +1568,15 @@ export namespace MyNS {
 		/**
 		 * Further details of the transaction.
 		 * This is the transaction narrative, which is unstructured text.
-		 * Max length: 500
 		 * Min length: 1
+		 * Max length: 500
 		 */
 		TransactionInformation: FormControl<string | null | undefined>,
 
 		/**
 		 * Unique reference for the transaction. This reference is optionally populated, and may as an example be the FPID in the Faster Payments context.
-		 * Max length: 210
 		 * Min length: 1
+		 * Max length: 210
 		 */
 		TransactionReference: FormControl<string | null | undefined>,
 
@@ -1636,15 +1640,15 @@ export namespace MyNS {
 		/**
 		 * Proprietary bank transaction code to identify the underlying transaction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Code: string;
 
 		/**
 		 * Identification of the issuer of the proprietary bank transaction code.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Issuer?: string | null;
 	}
@@ -1655,15 +1659,15 @@ export namespace MyNS {
 		/**
 		 * Proprietary bank transaction code to identify the underlying transaction.
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Code: FormControl<string | null | undefined>,
 
 		/**
 		 * Identification of the issuer of the proprietary bank transaction code.
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		Issuer: FormControl<string | null | undefined>,
 	}
@@ -1923,12 +1927,15 @@ export namespace MyNS {
 
 		/**
 		 * Account's alias
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		alias?: string | null;
 
-		/** Account's available balance */
+		/**
+		 * Account's available balance
+		 * Type: double
+		 */
 		availableBalance?: number | null;
 
 		/**
@@ -1939,8 +1946,8 @@ export namespace MyNS {
 
 		/**
 		 * Account's description
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		description?: string | null;
 
@@ -1950,13 +1957,19 @@ export namespace MyNS {
 		 */
 		iban: string;
 
-		/** Account's ledger balance */
+		/**
+		 * Account's ledger balance
+		 * Type: double
+		 */
 		ledgerBalance?: number | null;
 
 		/** Account's opening date */
 		openingDate?: Date | null;
 
-		/** Account's overdraft limit */
+		/**
+		 * Account's overdraft limit
+		 * Type: double
+		 */
 		overdraftLimit?: number | null;
 	}
 
@@ -1977,12 +1990,15 @@ export namespace MyNS {
 
 		/**
 		 * Account's alias
-		 * Max length: 70
 		 * Min length: 1
+		 * Max length: 70
 		 */
 		alias: FormControl<string | null | undefined>,
 
-		/** Account's available balance */
+		/**
+		 * Account's available balance
+		 * Type: double
+		 */
 		availableBalance: FormControl<number | null | undefined>,
 
 		/**
@@ -1993,8 +2009,8 @@ export namespace MyNS {
 
 		/**
 		 * Account's description
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -2004,13 +2020,19 @@ export namespace MyNS {
 		 */
 		iban: FormControl<string | null | undefined>,
 
-		/** Account's ledger balance */
+		/**
+		 * Account's ledger balance
+		 * Type: double
+		 */
 		ledgerBalance: FormControl<number | null | undefined>,
 
 		/** Account's opening date */
 		openingDate: FormControl<Date | null | undefined>,
 
-		/** Account's overdraft limit */
+		/**
+		 * Account's overdraft limit
+		 * Type: double
+		 */
 		overdraftLimit: FormControl<number | null | undefined>,
 	}
 	export function CreateSandboxBankAccountInfoFormGroup() {
@@ -2061,13 +2083,16 @@ export namespace MyNS {
 	/** Scheduled payment information */
 	export interface SandboxScheduledPayment {
 
-		/** Amount */
+		/**
+		 * Amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/**
 		 * Scheduled payment's short description
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		description?: string | null;
 
@@ -2076,8 +2101,8 @@ export namespace MyNS {
 
 		/**
 		 * Debtor / Sender reference
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		senderReference?: string | null;
 	}
@@ -2085,13 +2110,16 @@ export namespace MyNS {
 	/** Scheduled payment information */
 	export interface SandboxScheduledPaymentFormProperties {
 
-		/** Amount */
+		/**
+		 * Amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/**
 		 * Scheduled payment's short description
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		description: FormControl<string | null | undefined>,
 
@@ -2100,8 +2128,8 @@ export namespace MyNS {
 
 		/**
 		 * Debtor / Sender reference
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		senderReference: FormControl<string | null | undefined>,
 	}
@@ -2119,7 +2147,10 @@ export namespace MyNS {
 	/** Standing order information */
 	export interface SandboxStandingOrder {
 
-		/** Standing order amount */
+		/**
+		 * Standing order amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Standing order short description */
@@ -2134,8 +2165,8 @@ export namespace MyNS {
 		/**
 		 * Standing order frequency
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		frequency: string;
 
@@ -2152,7 +2183,10 @@ export namespace MyNS {
 	/** Standing order information */
 	export interface SandboxStandingOrderFormProperties {
 
-		/** Standing order amount */
+		/**
+		 * Standing order amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Standing order short description */
@@ -2167,8 +2201,8 @@ export namespace MyNS {
 		/**
 		 * Standing order frequency
 		 * Required
-		 * Max length: 35
 		 * Min length: 1
+		 * Max length: 35
 		 */
 		frequency: FormControl<string | null | undefined>,
 
@@ -2199,26 +2233,38 @@ export namespace MyNS {
 	/** Statement information */
 	export interface SandboxStatement {
 
-		/** Statement month */
+		/**
+		 * Statement month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month?: number | null;
 
 		/** Statement number */
 		number?: string | null;
 
-		/** Statement year */
+		/**
+		 * Statement year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year?: number | null;
 	}
 
 	/** Statement information */
 	export interface SandboxStatementFormProperties {
 
-		/** Statement month */
+		/**
+		 * Statement month
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		month: FormControl<number | null | undefined>,
 
 		/** Statement number */
 		number: FormControl<string | null | undefined>,
 
-		/** Statement year */
+		/**
+		 * Statement year
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		year: FormControl<number | null | undefined>,
 	}
 	export function CreateSandboxStatementFormGroup() {
@@ -2234,10 +2280,16 @@ export namespace MyNS {
 	/** Transaction information */
 	export interface SandboxTransaction {
 
-		/** Balance */
+		/**
+		 * Balance
+		 * Type: double
+		 */
 		accountingBalance?: number | null;
 
-		/** Amount */
+		/**
+		 * Amount
+		 * Type: double
+		 */
 		amount?: number | null;
 
 		/** Booking date time */
@@ -2271,10 +2323,16 @@ export namespace MyNS {
 	/** Transaction information */
 	export interface SandboxTransactionFormProperties {
 
-		/** Balance */
+		/**
+		 * Balance
+		 * Type: double
+		 */
 		accountingBalance: FormControl<number | null | undefined>,
 
-		/** Amount */
+		/**
+		 * Amount
+		 * Type: double
+		 */
 		amount: FormControl<number | null | undefined>,
 
 		/** Booking date time */
@@ -2351,10 +2409,16 @@ export namespace MyNS {
 	/** Sandbox card information */
 	export interface SandboxCardInfo {
 
-		/** Available balance */
+		/**
+		 * Available balance
+		 * Type: double
+		 */
 		availableBalance?: number | null;
 
-		/** Credit limit ( applicable to credit cards ) */
+		/**
+		 * Credit limit ( applicable to credit cards )
+		 * Type: double
+		 */
 		creditLimit?: number | null;
 
 		/** Description */
@@ -2363,8 +2427,8 @@ export namespace MyNS {
 		/**
 		 * Expiration date (05/2022)
 		 * Required
-		 * Max length: 7
 		 * Min length: 1
+		 * Max length: 7
 		 */
 		expiration: string;
 
@@ -2374,14 +2438,17 @@ export namespace MyNS {
 		 */
 		holderName: string;
 
-		/** Ledger balance */
+		/**
+		 * Ledger balance
+		 * Type: double
+		 */
 		ledgerBalance?: number | null;
 
 		/**
 		 * Card number
 		 * Required
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		number: string;
 
@@ -2395,10 +2462,16 @@ export namespace MyNS {
 	/** Sandbox card information */
 	export interface SandboxCardInfoFormProperties {
 
-		/** Available balance */
+		/**
+		 * Available balance
+		 * Type: double
+		 */
 		availableBalance: FormControl<number | null | undefined>,
 
-		/** Credit limit ( applicable to credit cards ) */
+		/**
+		 * Credit limit ( applicable to credit cards )
+		 * Type: double
+		 */
 		creditLimit: FormControl<number | null | undefined>,
 
 		/** Description */
@@ -2407,8 +2480,8 @@ export namespace MyNS {
 		/**
 		 * Expiration date (05/2022)
 		 * Required
-		 * Max length: 7
 		 * Min length: 1
+		 * Max length: 7
 		 */
 		expiration: FormControl<string | null | undefined>,
 
@@ -2418,14 +2491,17 @@ export namespace MyNS {
 		 */
 		holderName: FormControl<string | null | undefined>,
 
-		/** Ledger balance */
+		/**
+		 * Ledger balance
+		 * Type: double
+		 */
 		ledgerBalance: FormControl<number | null | undefined>,
 
 		/**
 		 * Card number
 		 * Required
-		 * Max length: 16
 		 * Min length: 1
+		 * Max length: 16
 		 */
 		number: FormControl<string | null | undefined>,
 
@@ -2457,7 +2533,10 @@ export namespace MyNS {
 		/** Cache key */
 		cacheKey?: string | null;
 
-		/** Number of retries ( up to 4 ) */
+		/**
+		 * Number of retries ( up to 4 )
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count?: number | null;
 
 		/** Expiration timestamp of the entry */
@@ -2470,7 +2549,10 @@ export namespace MyNS {
 		/** Cache key */
 		cacheKey: FormControl<string | null | undefined>,
 
-		/** Number of retries ( up to 4 ) */
+		/**
+		 * Number of retries ( up to 4 )
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		count: FormControl<number | null | undefined>,
 
 		/** Expiration timestamp of the entry */

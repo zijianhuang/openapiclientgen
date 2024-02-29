@@ -71,7 +71,10 @@ export namespace MyNS {
 		/** As defined in RFC 4034 (section 3.2). */
 		signatureRrdatas?: Array<string>;
 
-		/** Number of seconds that this ResourceRecordSet can be cached by resolvers. */
+		/**
+		 * Number of seconds that this ResourceRecordSet can be cached by resolvers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl?: number | null;
 
 		/** The identifier of a supported record type. See the list of Supported DNS record types. */
@@ -85,7 +88,10 @@ export namespace MyNS {
 		/** For example, www.example.com. */
 		name: FormControl<string | null | undefined>,
 
-		/** Number of seconds that this ResourceRecordSet can be cached by resolvers. */
+		/**
+		 * Number of seconds that this ResourceRecordSet can be cached by resolvers.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		ttl: FormControl<number | null | undefined>,
 
 		/** The identifier of a supported record type. See the list of Supported DNS record types. */
@@ -299,7 +305,10 @@ export namespace MyNS {
 		/** HealthCheckTargets describes endpoints to health-check when responding to Routing Policy queries. Only the healthy endpoints will be included in the response. Only one of internal_load_balancer and external_endpoints should be set. */
 		primaryTargets?: RRSetRoutingPolicyHealthCheckTargets;
 
-		/** When serving state is PRIMARY, this field provides the option of sending a small percentage of the traffic to the backup targets. */
+		/**
+		 * When serving state is PRIMARY, this field provides the option of sending a small percentage of the traffic to the backup targets.
+		 * Type: double
+		 */
 		trickleTraffic?: number | null;
 	}
 
@@ -307,7 +316,10 @@ export namespace MyNS {
 	export interface RRSetRoutingPolicyPrimaryBackupPolicyFormProperties {
 		kind: FormControl<string | null | undefined>,
 
-		/** When serving state is PRIMARY, this field provides the option of sending a small percentage of the traffic to the backup targets. */
+		/**
+		 * When serving state is PRIMARY, this field provides the option of sending a small percentage of the traffic to the backup targets.
+		 * Type: double
+		 */
 		trickleTraffic: FormControl<number | null | undefined>,
 	}
 	export function CreateRRSetRoutingPolicyPrimaryBackupPolicyFormGroup() {
@@ -348,7 +360,10 @@ export namespace MyNS {
 		/** DNSSEC generated signatures for all the rrdata within this item. Note that if health checked targets are provided for DNSSEC enabled zones, there's a restriction of 1 IP address per item. */
 		signatureRrdatas?: Array<string>;
 
-		/** The weight corresponding to this WrrPolicyItem object. When multiple WrrPolicyItem objects are configured, the probability of returning an WrrPolicyItem object's data is proportional to its weight relative to the sum of weights configured for all items. This weight must be non-negative. */
+		/**
+		 * The weight corresponding to this WrrPolicyItem object. When multiple WrrPolicyItem objects are configured, the probability of returning an WrrPolicyItem object's data is proportional to its weight relative to the sum of weights configured for all items. This weight must be non-negative.
+		 * Type: double
+		 */
 		weight?: number | null;
 	}
 
@@ -356,7 +371,10 @@ export namespace MyNS {
 	export interface RRSetRoutingPolicyWrrPolicyWrrPolicyItemFormProperties {
 		kind: FormControl<string | null | undefined>,
 
-		/** The weight corresponding to this WrrPolicyItem object. When multiple WrrPolicyItem objects are configured, the probability of returning an WrrPolicyItem object's data is proportional to its weight relative to the sum of weights configured for all items. This weight must be non-negative. */
+		/**
+		 * The weight corresponding to this WrrPolicyItem object. When multiple WrrPolicyItem objects are configured, the probability of returning an WrrPolicyItem object's data is proportional to its weight relative to the sum of weights configured for all items. This weight must be non-negative.
+		 * Type: double
+		 */
 		weight: FormControl<number | null | undefined>,
 	}
 	export function CreateRRSetRoutingPolicyWrrPolicyWrrPolicyItemFormGroup() {
@@ -446,10 +464,16 @@ export namespace MyNS {
 		/** Active keys are used to sign subsequent changes to the ManagedZone. Inactive keys are still present as DNSKEY Resource Records for the use of resolvers validating existing signatures. */
 		isActive?: boolean | null;
 
-		/** Length of the key in bits. Specified at creation time, and then immutable. */
+		/**
+		 * Length of the key in bits. Specified at creation time, and then immutable.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		keyLength?: number | null;
 
-		/** The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone's DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B. Output only. */
+		/**
+		 * The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone's DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B. Output only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keyTag?: number | null;
 		kind?: string | null;
 
@@ -478,10 +502,16 @@ export namespace MyNS {
 		/** Active keys are used to sign subsequent changes to the ManagedZone. Inactive keys are still present as DNSKEY Resource Records for the use of resolvers validating existing signatures. */
 		isActive: FormControl<boolean | null | undefined>,
 
-		/** Length of the key in bits. Specified at creation time, and then immutable. */
+		/**
+		 * Length of the key in bits. Specified at creation time, and then immutable.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		keyLength: FormControl<number | null | undefined>,
 
-		/** The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone's DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B. Output only. */
+		/**
+		 * The key tag is a non-cryptographic hash of the a DNSKEY resource record associated with this DnsKey. The key tag can be used to identify a DNSKEY more quickly (but it is not a unique identifier). In particular, the key tag is used in a parent zone's DS record to point at the DNSKEY in this child ManagedZone. The key tag is a number in the range [0, 65535] and the algorithm to calculate it is specified in RFC4034 Appendix B. Output only.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		keyTag: FormControl<number | null | undefined>,
 		kind: FormControl<string | null | undefined>,
 
@@ -544,7 +574,10 @@ export namespace MyNS {
 		/** String mnemonic specifying the DNSSEC algorithm of this key. */
 		algorithm?: DnsKeyAlgorithm | null;
 
-		/** Length of the keys in bits. */
+		/**
+		 * Length of the keys in bits.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		keyLength?: number | null;
 
 		/** Specifies whether this is a key signing key (KSK) or a zone signing key (ZSK). Key signing keys have the Secure Entry Point flag set and, when active, are only used to sign resource record sets of type DNSKEY. Zone signing keys do not have the Secure Entry Point flag set and are used to sign all other types of resource record sets. */
@@ -558,7 +591,10 @@ export namespace MyNS {
 		/** String mnemonic specifying the DNSSEC algorithm of this key. */
 		algorithm: FormControl<DnsKeyAlgorithm | null | undefined>,
 
-		/** Length of the keys in bits. */
+		/**
+		 * Length of the keys in bits.
+		 * Type: uint, 0 to 4,294,967,295
+		 */
 		keyLength: FormControl<number | null | undefined>,
 
 		/** Specifies whether this is a key signing key (KSK) or a zone signing key (ZSK). Key signing keys have the Secure Entry Point flag set and, when active, are only used to sign resource record sets of type DNSKEY. Zone signing keys do not have the Secure Entry Point flag set and are used to sign all other types of resource record sets. */
@@ -749,14 +785,20 @@ export namespace MyNS {
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GoogleIamV1GetPolicyOptions {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion?: number | null;
 	}
 
 	/** Encapsulates settings provided to GetIamPolicy. */
 	export interface GoogleIamV1GetPolicyOptionsFormProperties {
 
-		/** Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Optional. The maximum policy version that will be used to format the policy. Valid values are 0, 1, and 3. Requests specifying an invalid value will be rejected. Requests for policies with any conditional role bindings must specify version 3. Policies with no conditional role bindings may specify any valid value or leave the field unset. The policy in the response might use the policy version that you specified, or it might use a lower policy version. For example, if you specify version 3, but the policy has no conditional role bindings, the response uses version 1. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		requestedPolicyVersion: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleIamV1GetPolicyOptionsFormGroup() {
@@ -779,7 +821,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag?: string | null;
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version?: number | null;
 	}
 
@@ -789,7 +834,10 @@ export namespace MyNS {
 		/** `etag` is used for optimistic concurrency control as a way to help prevent simultaneous updates of a policy from overwriting each other. It is strongly suggested that systems make use of the `etag` in the read-modify-write cycle to perform policy updates in order to avoid race conditions: An `etag` is returned in the response to `getIamPolicy`, and systems are expected to put that etag in the request to `setIamPolicy` to ensure that their change will be applied to the same version of the policy. **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. */
 		etag: FormControl<string | null | undefined>,
 
-		/** Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies). */
+		/**
+		 * Specifies the format of the policy. Valid values are `0`, `1`, and `3`. Requests that specify an invalid value are rejected. Any operation that affects conditional role bindings must specify version `3`. This requirement applies to the following operations: * Getting a policy that includes a conditional role binding * Adding a conditional role binding to a policy * Changing a conditional role binding in a policy * Removing any role binding, with or without a condition, from a policy that includes conditions **Important:** If you use IAM Conditions, you must include the `etag` field whenever you call `setIamPolicy`. If you omit this field, then IAM allows you to overwrite a version `3` policy with a version `1` policy, and all of the conditions in the version `3` policy are lost. If a policy does not include any conditions, operations on that policy may specify any valid version or leave the field unset. To learn which resources support conditions in their IAM policies, see the [IAM documentation](https://cloud.google.com/iam/help/conditions/resource-policies).
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		version: FormControl<number | null | undefined>,
 	}
 	export function CreateGoogleIamV1PolicyFormGroup() {
@@ -1587,71 +1635,137 @@ export namespace MyNS {
 	/** Limits associated with a Project. */
 	export interface Quota {
 
-		/** Maximum allowed number of DnsKeys per ManagedZone. */
+		/**
+		 * Maximum allowed number of DnsKeys per ManagedZone.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dnsKeysPerManagedZone?: number | null;
 
-		/** Maximum allowed number of GKE clusters to which a privately scoped zone can be attached. */
+		/**
+		 * Maximum allowed number of GKE clusters to which a privately scoped zone can be attached.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gkeClustersPerManagedZone?: number | null;
 
-		/** Maximum allowed number of GKE clusters per policy. */
+		/**
+		 * Maximum allowed number of GKE clusters per policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gkeClustersPerPolicy?: number | null;
 
-		/** Maximum allowed number of GKE clusters per response policy. */
+		/**
+		 * Maximum allowed number of GKE clusters per response policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gkeClustersPerResponsePolicy?: number | null;
 
-		/** Maximum allowed number of items per routing policy. */
+		/**
+		 * Maximum allowed number of items per routing policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerRoutingPolicy?: number | null;
 		kind?: string | null;
 
-		/** Maximum allowed number of managed zones in the project. */
+		/**
+		 * Maximum allowed number of managed zones in the project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedZones?: number | null;
 
-		/** Maximum allowed number of managed zones which can be attached to a GKE cluster. */
+		/**
+		 * Maximum allowed number of managed zones which can be attached to a GKE cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedZonesPerGkeCluster?: number | null;
 
-		/** Maximum allowed number of managed zones which can be attached to a network. */
+		/**
+		 * Maximum allowed number of managed zones which can be attached to a network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedZonesPerNetwork?: number | null;
 
-		/** Maximum allowed number of networks to which a privately scoped zone can be attached. */
+		/**
+		 * Maximum allowed number of networks to which a privately scoped zone can be attached.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		networksPerManagedZone?: number | null;
 
-		/** Maximum allowed number of networks per policy. */
+		/**
+		 * Maximum allowed number of networks per policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		networksPerPolicy?: number | null;
 
-		/** Maximum allowed number of networks per response policy. */
+		/**
+		 * Maximum allowed number of networks per response policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		networksPerResponsePolicy?: number | null;
 
-		/** Maximum allowed number of consumer peering zones per target network owned by this producer project */
+		/**
+		 * Maximum allowed number of consumer peering zones per target network owned by this producer project
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		peeringZonesPerTargetNetwork?: number | null;
 
-		/** Maximum allowed number of policies per project. */
+		/**
+		 * Maximum allowed number of policies per project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		policies?: number | null;
 
-		/** Maximum allowed number of ResourceRecords per ResourceRecordSet. */
+		/**
+		 * Maximum allowed number of ResourceRecords per ResourceRecordSet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourceRecordsPerRrset?: number | null;
 
-		/** Maximum allowed number of response policies per project. */
+		/**
+		 * Maximum allowed number of response policies per project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responsePolicies?: number | null;
 
-		/** Maximum allowed number of rules per response policy. */
+		/**
+		 * Maximum allowed number of rules per response policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responsePolicyRulesPerResponsePolicy?: number | null;
 
-		/** Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest. */
+		/**
+		 * Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rrsetAdditionsPerChange?: number | null;
 
-		/** Maximum allowed number of ResourceRecordSets to delete per ChangesCreateRequest. */
+		/**
+		 * Maximum allowed number of ResourceRecordSets to delete per ChangesCreateRequest.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rrsetDeletionsPerChange?: number | null;
 
-		/** Maximum allowed number of ResourceRecordSets per zone in the project. */
+		/**
+		 * Maximum allowed number of ResourceRecordSets per zone in the project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rrsetsPerManagedZone?: number | null;
 
-		/** Maximum allowed number of target name servers per managed forwarding zone. */
+		/**
+		 * Maximum allowed number of target name servers per managed forwarding zone.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetNameServersPerManagedZone?: number | null;
 
-		/** Maximum allowed number of alternative target name servers per policy. */
+		/**
+		 * Maximum allowed number of alternative target name servers per policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetNameServersPerPolicy?: number | null;
 
-		/** Maximum allowed size for total rrdata in one ChangesCreateRequest in bytes. */
+		/**
+		 * Maximum allowed size for total rrdata in one ChangesCreateRequest in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRrdataSizePerChange?: number | null;
 
 		/** DNSSEC algorithm and key length types that can be used for DnsKeys. */
@@ -1661,71 +1775,137 @@ export namespace MyNS {
 	/** Limits associated with a Project. */
 	export interface QuotaFormProperties {
 
-		/** Maximum allowed number of DnsKeys per ManagedZone. */
+		/**
+		 * Maximum allowed number of DnsKeys per ManagedZone.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		dnsKeysPerManagedZone: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of GKE clusters to which a privately scoped zone can be attached. */
+		/**
+		 * Maximum allowed number of GKE clusters to which a privately scoped zone can be attached.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gkeClustersPerManagedZone: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of GKE clusters per policy. */
+		/**
+		 * Maximum allowed number of GKE clusters per policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gkeClustersPerPolicy: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of GKE clusters per response policy. */
+		/**
+		 * Maximum allowed number of GKE clusters per response policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		gkeClustersPerResponsePolicy: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of items per routing policy. */
+		/**
+		 * Maximum allowed number of items per routing policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		itemsPerRoutingPolicy: FormControl<number | null | undefined>,
 		kind: FormControl<string | null | undefined>,
 
-		/** Maximum allowed number of managed zones in the project. */
+		/**
+		 * Maximum allowed number of managed zones in the project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedZones: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of managed zones which can be attached to a GKE cluster. */
+		/**
+		 * Maximum allowed number of managed zones which can be attached to a GKE cluster.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedZonesPerGkeCluster: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of managed zones which can be attached to a network. */
+		/**
+		 * Maximum allowed number of managed zones which can be attached to a network.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		managedZonesPerNetwork: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of networks to which a privately scoped zone can be attached. */
+		/**
+		 * Maximum allowed number of networks to which a privately scoped zone can be attached.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		networksPerManagedZone: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of networks per policy. */
+		/**
+		 * Maximum allowed number of networks per policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		networksPerPolicy: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of networks per response policy. */
+		/**
+		 * Maximum allowed number of networks per response policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		networksPerResponsePolicy: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of consumer peering zones per target network owned by this producer project */
+		/**
+		 * Maximum allowed number of consumer peering zones per target network owned by this producer project
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		peeringZonesPerTargetNetwork: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of policies per project. */
+		/**
+		 * Maximum allowed number of policies per project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		policies: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of ResourceRecords per ResourceRecordSet. */
+		/**
+		 * Maximum allowed number of ResourceRecords per ResourceRecordSet.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		resourceRecordsPerRrset: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of response policies per project. */
+		/**
+		 * Maximum allowed number of response policies per project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responsePolicies: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of rules per response policy. */
+		/**
+		 * Maximum allowed number of rules per response policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		responsePolicyRulesPerResponsePolicy: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest. */
+		/**
+		 * Maximum allowed number of ResourceRecordSets to add per ChangesCreateRequest.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rrsetAdditionsPerChange: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of ResourceRecordSets to delete per ChangesCreateRequest. */
+		/**
+		 * Maximum allowed number of ResourceRecordSets to delete per ChangesCreateRequest.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rrsetDeletionsPerChange: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of ResourceRecordSets per zone in the project. */
+		/**
+		 * Maximum allowed number of ResourceRecordSets per zone in the project.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		rrsetsPerManagedZone: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of target name servers per managed forwarding zone. */
+		/**
+		 * Maximum allowed number of target name servers per managed forwarding zone.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetNameServersPerManagedZone: FormControl<number | null | undefined>,
 
-		/** Maximum allowed number of alternative target name servers per policy. */
+		/**
+		 * Maximum allowed number of alternative target name servers per policy.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		targetNameServersPerPolicy: FormControl<number | null | undefined>,
 
-		/** Maximum allowed size for total rrdata in one ChangesCreateRequest in bytes. */
+		/**
+		 * Maximum allowed size for total rrdata in one ChangesCreateRequest in bytes.
+		 * Type: int, -2,147,483,648 to 2,147,483,647
+		 */
 		totalRrdataSizePerChange: FormControl<number | null | undefined>,
 	}
 	export function CreateQuotaFormGroup() {
@@ -2064,6 +2244,7 @@ export namespace MyNS {
 		 * @param {string} project Identifies the project addressed by this request.
 		 * @param {string} dnsName Restricts the list to return only zones with this domain name.
 		 * @param {number} maxResults Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 		 * @return {ManagedZonesListResponse} Successful response
 		 */
@@ -2136,6 +2317,7 @@ export namespace MyNS {
 		 * @param {string} project Identifies the project addressed by this request.
 		 * @param {string} managedZone Identifies the managed zone addressed by this request. Can be the managed zone name or ID.
 		 * @param {number} maxResults Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 		 * @param {Dns_changes_listSortBy} sortBy Sorting criterion. The only supported value is change sequence.
 		 * @param {string} sortOrder Sorting order direction: 'ascending' or 'descending'.
@@ -2177,6 +2359,7 @@ export namespace MyNS {
 		 * @param {string} managedZone Identifies the managed zone addressed by this request. Can be the managed zone name or ID.
 		 * @param {string} digestType An optional comma-separated list of digest types to compute and display for key signing keys. If omitted, the recommended digest type is computed and displayed.
 		 * @param {number} maxResults Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 		 * @return {DnsKeysListResponse} Successful response
 		 */
@@ -2204,6 +2387,7 @@ export namespace MyNS {
 		 * @param {string} project Identifies the project addressed by this request.
 		 * @param {string} managedZone Identifies the managed zone addressed by this request.
 		 * @param {number} maxResults Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 		 * @param {Dns_managedZoneOperations_listSortBy} sortBy Sorting criterion. The only supported values are START_TIME and ID.
 		 * @return {ManagedZoneOperationsListResponse} Successful response
@@ -2231,6 +2415,7 @@ export namespace MyNS {
 		 * @param {string} project Identifies the project addressed by this request.
 		 * @param {string} managedZone Identifies the managed zone addressed by this request. Can be the managed zone name or ID.
 		 * @param {number} maxResults Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} name Restricts the list to return only records with this fully qualified domain name.
 		 * @param {string} pageToken Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 		 * @param {string} type Restricts the list to return only records of this type. If present, the "name" parameter must also be present.
@@ -2299,6 +2484,7 @@ export namespace MyNS {
 		 * Get dns/v1beta2/projects/{project}/policies
 		 * @param {string} project Identifies the project addressed by this request.
 		 * @param {number} maxResults Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 		 * @return {PoliciesListResponse} Successful response
 		 */
@@ -2370,6 +2556,7 @@ export namespace MyNS {
 		 * Get dns/v1beta2/projects/{project}/responsePolicies
 		 * @param {string} project Identifies the project addressed by this request.
 		 * @param {number} maxResults Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 		 * @return {ResponsePoliciesListResponse} Successful response
 		 */
@@ -2442,6 +2629,7 @@ export namespace MyNS {
 		 * @param {string} project Identifies the project addressed by this request.
 		 * @param {string} responsePolicy User assigned name of the Response Policy to list.
 		 * @param {number} maxResults Optional. Maximum number of results to be returned. If unspecified, the server decides how many results to return.
+		 *     Type: int, -2,147,483,648 to 2,147,483,647
 		 * @param {string} pageToken Optional. A tag returned by a previous list request that was truncated. Use this parameter to continue a previous list request.
 		 * @return {ResponsePolicyRulesListResponse} Successful response
 		 */

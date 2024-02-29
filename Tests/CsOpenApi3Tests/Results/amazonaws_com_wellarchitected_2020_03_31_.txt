@@ -5079,6 +5079,9 @@ namespace MyNS
 		/// <p>Associate a lens to a workload.</p> <p>Up to 10 lenses can be associated with a workload in a single API operation. A maximum of 20 lenses can be associated with a workload.</p> <note> <p> <b>Disclaimer</b> </p> <p>By accessing and/or applying custom lenses created by another Amazon Web Services user or account, you acknowledge that custom lenses created by other users and shared with you are Third Party Content as defined in the Amazon Web Services Customer Agreement. </p> </note>
 		/// AssociateLenses workloads/{WorkloadId}/associateLenses
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <returns>Success</returns>
 		public async Task AssociateLensesAsync(string WorkloadId, AssociateLensesPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5113,6 +5116,9 @@ namespace MyNS
 		/// Associate a profile with a workload.
 		/// AssociateProfiles workloads/{WorkloadId}/associateProfiles
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <returns>Success</returns>
 		public async Task AssociateProfilesAsync(string WorkloadId, AssociateProfilesPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5147,6 +5153,9 @@ namespace MyNS
 		/// <p>Create a lens share.</p> <p>The owner of a lens can share it with other Amazon Web Services accounts, users, an organization, and organizational units (OUs) in the same Amazon Web Services Region. Lenses provided by Amazon Web Services (Amazon Web Services Official Content) cannot be shared.</p> <p> Shared access to a lens is not removed until the lens invitation is deleted.</p> <p>If you share a lens with an organization or OU, all accounts in the organization or OU are granted access to the lens.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-sharing.html">Sharing a custom lens</a> in the <i>Well-Architected Tool User Guide</i>.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
 		/// CreateLensShare lenses/{LensAlias}/shares
 		/// </summary>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateLensShareOutput> CreateLensShareAsync(string LensAlias, CreateLensSharePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5187,8 +5196,16 @@ namespace MyNS
 		/// List the lens shares associated with the lens.
 		/// ListLensShares lenses/{LensAlias}/shares
 		/// </summary>
-		/// <param name="SharedWithPrefix">The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.</param>
-		/// <param name="MaxResults">The maximum number of results to return for this request.</param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="SharedWithPrefix">The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the lens is shared.
+		/// Max length: 100
+		// </param>
+		/// <param name="MaxResults">The maximum number of results to return for this request.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListLensSharesOutput> ListLensSharesAsync(string LensAlias, string SharedWithPrefix, string NextToken, int MaxResults, LensShareSummaryStatus Status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5222,6 +5239,9 @@ namespace MyNS
 		/// <p>Create a new lens version.</p> <p>A lens can have up to 100 versions.</p> <p>Use this operation to publish a new lens version after you have imported a lens. The <code>LensAlias</code> is used to identify the lens to be published. The owner of a lens can share the lens with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Only the owner of a lens can delete it. </p>
 		/// CreateLensVersion lenses/{LensAlias}/versions
 		/// </summary>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateLensVersionOutput> CreateLensVersionAsync(string LensAlias, CreateLensVersionPostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5262,6 +5282,9 @@ namespace MyNS
 		/// Create a milestone for an existing workload.
 		/// CreateMilestone workloads/{WorkloadId}/milestones
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateMilestoneOutput> CreateMilestoneAsync(string WorkloadId, CreateMilestonePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5342,7 +5365,9 @@ namespace MyNS
 		/// Create a profile share.
 		/// CreateProfileShare profiles/{ProfileArn}/shares
 		/// </summary>
-		/// <param name="ProfileArn">The profile ARN.</param>
+		/// <param name="ProfileArn">The profile ARN.
+		/// Max length: 2084
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateProfileShareOutput> CreateProfileShareAsync(string ProfileArn, CreateProfileSharePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5383,9 +5408,16 @@ namespace MyNS
 		/// List profile shares.
 		/// ListProfileShares profiles/{ProfileArn}/shares
 		/// </summary>
-		/// <param name="ProfileArn">The profile ARN.</param>
-		/// <param name="SharedWithPrefix">The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the profile is shared.</param>
-		/// <param name="MaxResults">The maximum number of results to return for this request.</param>
+		/// <param name="ProfileArn">The profile ARN.
+		/// Max length: 2084
+		// </param>
+		/// <param name="SharedWithPrefix">The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the profile is shared.
+		/// Max length: 100
+		// </param>
+		/// <param name="MaxResults">The maximum number of results to return for this request.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListProfileSharesOutput> ListProfileSharesAsync(string ProfileArn, string SharedWithPrefix, string NextToken, int MaxResults, LensShareSummaryStatus Status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5459,6 +5491,9 @@ namespace MyNS
 		/// <p>Create a workload share.</p> <p>The owner of a workload can share it with other Amazon Web Services accounts and users in the same Amazon Web Services Region. Shared access to a workload is not removed until the workload invitation is deleted.</p> <p>If you share a workload with an organization or OU, all accounts in the organization or OU are granted access to the workload.</p> <p>For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/workloads-sharing.html">Sharing a workload</a> in the <i>Well-Architected Tool User Guide</i>.</p>
 		/// CreateWorkloadShare workloads/{WorkloadId}/shares
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<CreateWorkloadShareOutput> CreateWorkloadShareAsync(string WorkloadId, CreateWorkloadSharePostBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5499,8 +5534,16 @@ namespace MyNS
 		/// List the workload shares associated with the workload.
 		/// ListWorkloadShares workloads/{WorkloadId}/shares
 		/// </summary>
-		/// <param name="SharedWithPrefix">The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.</param>
-		/// <param name="MaxResults">The maximum number of results to return for this request.</param>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="SharedWithPrefix">The Amazon Web Services account ID, IAM role, organization ID, or organizational unit (OU) ID with which the workload is shared.
+		/// Max length: 100
+		// </param>
+		/// <param name="MaxResults">The maximum number of results to return for this request.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListWorkloadSharesOutput> ListWorkloadSharesAsync(string WorkloadId, string SharedWithPrefix, string NextToken, int MaxResults, LensShareSummaryStatus Status, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5534,6 +5577,12 @@ namespace MyNS
 		/// <p>Delete an existing lens.</p> <p>Only the owner of a lens can delete it. After the lens is deleted, Amazon Web Services accounts and users that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads. </p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
 		/// DeleteLens lenses/{LensAlias}#ClientRequestToken&LensStatus
 		/// </summary>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="ClientRequestToken">Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <param name="LensStatus">The status of the lens to be deleted.</param>
 		/// <returns>Success</returns>
 		public async Task DeleteLensAsync(string LensAlias, string ClientRequestToken, LensStatusType LensStatus, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -5562,6 +5611,12 @@ namespace MyNS
 		/// <p>Delete a lens share.</p> <p>After the lens share is deleted, Amazon Web Services accounts, users, organizations, and organizational units (OUs) that you shared the lens with can continue to use it, but they will no longer be able to apply it to new workloads.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your custom lenses with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your custom lenses available to those other accounts. Those other accounts may continue to access and use your shared custom lenses even if you delete the custom lenses from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
 		/// DeleteLensShare lenses/{LensAlias}/shares/{ShareId}#ClientRequestToken
 		/// </summary>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="ClientRequestToken">Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteLensShareAsync(string ShareId, string LensAlias, string ClientRequestToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5589,7 +5644,12 @@ namespace MyNS
 		/// <p>Delete a profile.</p> <note> <p> <b>Disclaimer</b> </p> <p>By sharing your profile with other Amazon Web Services accounts, you acknowledge that Amazon Web Services will make your profile available to those other accounts. Those other accounts may continue to access and use your shared profile even if you delete the profile from your own Amazon Web Services account or terminate your Amazon Web Services account.</p> </note>
 		/// DeleteProfile profiles/{ProfileArn}#ClientRequestToken
 		/// </summary>
-		/// <param name="ProfileArn">The profile ARN.</param>
+		/// <param name="ProfileArn">The profile ARN.
+		/// Max length: 2084
+		// </param>
+		/// <param name="ClientRequestToken">Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteProfileAsync(string ProfileArn, string ClientRequestToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5617,7 +5677,12 @@ namespace MyNS
 		/// Delete a profile share.
 		/// DeleteProfileShare profiles/{ProfileArn}/shares/{ShareId}#ClientRequestToken
 		/// </summary>
-		/// <param name="ProfileArn">The profile ARN.</param>
+		/// <param name="ProfileArn">The profile ARN.
+		/// Max length: 2084
+		// </param>
+		/// <param name="ClientRequestToken">Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteProfileShareAsync(string ShareId, string ProfileArn, string ClientRequestToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5645,6 +5710,12 @@ namespace MyNS
 		/// Delete an existing workload.
 		/// DeleteWorkload workloads/{WorkloadId}#ClientRequestToken
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="ClientRequestToken">Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteWorkloadAsync(string WorkloadId, string ClientRequestToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5672,6 +5743,12 @@ namespace MyNS
 		/// Delete a workload share.
 		/// DeleteWorkloadShare workloads/{WorkloadId}/shares/{ShareId}#ClientRequestToken
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="ClientRequestToken">Max length: 2048
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DeleteWorkloadShareAsync(string ShareId, string WorkloadId, string ClientRequestToken, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5699,6 +5776,9 @@ namespace MyNS
 		/// <p>Disassociate a lens from a workload.</p> <p>Up to 10 lenses can be disassociated from a workload in a single API operation.</p> <note> <p>The Amazon Web Services Well-Architected Framework lens (<code>wellarchitected</code>) cannot be removed from a workload.</p> </note>
 		/// DisassociateLenses workloads/{WorkloadId}/disassociateLenses
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DisassociateLensesAsync(string WorkloadId, DisassociateLensesPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5733,6 +5813,9 @@ namespace MyNS
 		/// Disassociate a profile from a workload.
 		/// DisassociateProfiles workloads/{WorkloadId}/disassociateProfiles
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <returns>Success</returns>
 		public async Task DisassociateProfilesAsync(string WorkloadId, DisassociateProfilesPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5767,7 +5850,13 @@ namespace MyNS
 		/// <p>Export an existing lens.</p> <p>Only the owner of a lens can export it. Lenses provided by Amazon Web Services (Amazon Web Services Official Content) cannot be exported.</p> <p>Lenses are defined in JSON. For more information, see <a href="https://docs.aws.amazon.com/wellarchitected/latest/userguide/lenses-format-specification.html">JSON format specification</a> in the <i>Well-Architected Tool User Guide</i>.</p> <note> <p> <b>Disclaimer</b> </p> <p>Do not include or gather personal identifiable information (PII) of end users or other identifiable individuals in or via your custom lenses. If your custom lens or those shared with you and used in your account do include or collect PII you are responsible for: ensuring that the included PII is processed in accordance with applicable law, providing adequate privacy notices, and obtaining necessary consents for processing such data.</p> </note>
 		/// ExportLens lenses/{LensAlias}/export
 		/// </summary>
-		/// <param name="LensVersion">The lens version to be exported.</param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="LensVersion">The lens version to be exported.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ExportLensOutput> ExportLensAsync(string LensAlias, string LensVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5801,6 +5890,18 @@ namespace MyNS
 		/// Get the answer to a specific question in a workload review.
 		/// GetAnswer workloads/{WorkloadId}/lensReviews/{LensAlias}/answers/{QuestionId}
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="QuestionId">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="MilestoneNumber">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetAnswerOutput> GetAnswerAsync(string WorkloadId, string LensAlias, string QuestionId, int MilestoneNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5834,6 +5935,15 @@ namespace MyNS
 		/// Update the answer to a specific question in a workload review.
 		/// UpdateAnswer workloads/{WorkloadId}/lensReviews/{LensAlias}/answers/{QuestionId}
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="QuestionId">Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateAnswerOutput> UpdateAnswerAsync(string WorkloadId, string LensAlias, string QuestionId, UpdateAnswerPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5876,7 +5986,10 @@ namespace MyNS
 		/// </summary>
 		/// <param name="Format"><p>The format of the consolidated report.</p> <p>For <code>PDF</code>, <code>Base64String</code> is returned. For <code>JSON</code>, <code>Metrics</code> is returned.</p></param>
 		/// <param name="IncludeSharedResources">Set to <code>true</code> to have shared resources included in the report.</param>
-		/// <param name="MaxResults">The maximum number of results to return for this request.</param>
+		/// <param name="MaxResults">The maximum number of results to return for this request.
+		/// Minimum: 1
+		/// Maximum: 15
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetConsolidatedReportOutput> GetConsolidatedReportAsync(ReportFormat Format, bool IncludeSharedResources, string NextToken, int MaxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5910,7 +6023,13 @@ namespace MyNS
 		/// Get an existing lens.
 		/// GetLens lenses/{LensAlias}
 		/// </summary>
-		/// <param name="LensVersion">The lens version to be retrieved.</param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="LensVersion">The lens version to be retrieved.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLensOutput> GetLensAsync(string LensAlias, string LensVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5944,6 +6063,15 @@ namespace MyNS
 		/// Get lens review.
 		/// GetLensReview workloads/{WorkloadId}/lensReviews/{LensAlias}
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="MilestoneNumber">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLensReviewOutput> GetLensReviewAsync(string WorkloadId, string LensAlias, int MilestoneNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -5977,6 +6105,12 @@ namespace MyNS
 		/// Update lens review for a particular workload.
 		/// UpdateLensReview workloads/{WorkloadId}/lensReviews/{LensAlias}
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateLensReviewOutput> UpdateLensReviewAsync(string WorkloadId, string LensAlias, UpdateLensReviewPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6017,6 +6151,15 @@ namespace MyNS
 		/// Get lens review report.
 		/// GetLensReviewReport workloads/{WorkloadId}/lensReviews/{LensAlias}/report
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="MilestoneNumber">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLensReviewReportOutput> GetLensReviewReportAsync(string WorkloadId, string LensAlias, int MilestoneNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6050,8 +6193,17 @@ namespace MyNS
 		/// Get lens version differences.
 		/// GetLensVersionDifference lenses/{LensAlias}/versionDifference
 		/// </summary>
-		/// <param name="BaseLensVersion">The base version of the lens.</param>
-		/// <param name="TargetLensVersion">The lens version to target a difference for.</param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="BaseLensVersion">The base version of the lens.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
+		/// <param name="TargetLensVersion">The lens version to target a difference for.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetLensVersionDifferenceOutput> GetLensVersionDifferenceAsync(string LensAlias, string BaseLensVersion, string TargetLensVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6085,6 +6237,12 @@ namespace MyNS
 		/// Get a milestone for an existing workload.
 		/// GetMilestone workloads/{WorkloadId}/milestones/{MilestoneNumber}
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="MilestoneNumber">Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetMilestoneOutput> GetMilestoneAsync(string WorkloadId, int MilestoneNumber, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6118,8 +6276,13 @@ namespace MyNS
 		/// Get profile information.
 		/// GetProfile profiles/{ProfileArn}
 		/// </summary>
-		/// <param name="ProfileArn">The profile ARN.</param>
-		/// <param name="ProfileVersion">The profile version.</param>
+		/// <param name="ProfileArn">The profile ARN.
+		/// Max length: 2084
+		// </param>
+		/// <param name="ProfileVersion">The profile version.
+		/// Max length: 32
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetProfileOutput> GetProfileAsync(string ProfileArn, string ProfileVersion, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6153,7 +6316,9 @@ namespace MyNS
 		/// Update a profile.
 		/// UpdateProfile profiles/{ProfileArn}
 		/// </summary>
-		/// <param name="ProfileArn">The profile ARN.</param>
+		/// <param name="ProfileArn">The profile ARN.
+		/// Max length: 2084
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateProfileOutput> UpdateProfileAsync(string ProfileArn, UpdateProfilePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6227,6 +6392,9 @@ namespace MyNS
 		/// Get an existing workload.
 		/// GetWorkload workloads/{WorkloadId}
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<GetWorkloadOutput> GetWorkloadAsync(string WorkloadId, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6260,6 +6428,9 @@ namespace MyNS
 		/// Update an existing workload.
 		/// UpdateWorkload workloads/{WorkloadId}
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateWorkloadOutput> UpdateWorkloadAsync(string WorkloadId, UpdateWorkloadPatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6340,7 +6511,22 @@ namespace MyNS
 		/// List of answers for a particular workload and lens.
 		/// ListAnswers workloads/{WorkloadId}/lensReviews/{LensAlias}/answers
 		/// </summary>
-		/// <param name="MaxResults">The maximum number of results to return for this request.</param>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="PillarId">Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="MilestoneNumber">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="MaxResults">The maximum number of results to return for this request.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="QuestionPriority">The priority of the question.</param>
 		/// <returns>Success</returns>
 		public async Task<ListAnswersOutput> ListAnswersAsync(string WorkloadId, string LensAlias, string PillarId, int MilestoneNumber, string NextToken, int MaxResults, QuestionPriority QuestionPriority, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6375,6 +6561,9 @@ namespace MyNS
 		/// List of Trusted Advisor check details by account related to the workload.
 		/// ListCheckDetails workloads/{WorkloadId}/checks
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6417,6 +6606,9 @@ namespace MyNS
 		/// List of Trusted Advisor checks summarized for all accounts related to the workload.
 		/// ListCheckSummaries workloads/{WorkloadId}/checkSummaries
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6459,7 +6651,22 @@ namespace MyNS
 		/// List lens review improvements.
 		/// ListLensReviewImprovements workloads/{WorkloadId}/lensReviews/{LensAlias}/improvements
 		/// </summary>
-		/// <param name="MaxResults">The maximum number of results to return for this request.</param>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
+		/// <param name="PillarId">Max length: 64
+		/// Min length: 1
+		// </param>
+		/// <param name="MilestoneNumber">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="MaxResults">The maximum number of results to return for this request.
+		/// Minimum: 1
+		/// Maximum: 100
+		// </param>
 		/// <param name="QuestionPriority">The priority of the question.</param>
 		/// <returns>Success</returns>
 		public async Task<ListLensReviewImprovementsOutput> ListLensReviewImprovementsAsync(string WorkloadId, string LensAlias, string PillarId, int MilestoneNumber, string NextToken, int MaxResults, QuestionPriority QuestionPriority, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
@@ -6494,6 +6701,15 @@ namespace MyNS
 		/// List lens reviews for a particular workload.
 		/// ListLensReviews workloads/{WorkloadId}/lensReviews
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="MilestoneNumber">Minimum: 1
+		/// Maximum: 100
+		// </param>
+		/// <param name="MaxResults">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListLensReviewsOutput> ListLensReviewsAsync(string WorkloadId, int MilestoneNumber, string NextToken, int MaxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6527,8 +6743,14 @@ namespace MyNS
 		/// List the available lenses.
 		/// ListLenses lenses
 		/// </summary>
+		/// <param name="MaxResults">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <param name="LensType">The type of lenses to be returned.</param>
 		/// <param name="LensStatus">The status of lenses to be returned.</param>
+		/// <param name="LensName">Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListLensesOutput> ListLensesAsync(string NextToken, int MaxResults, LensType LensType, LensStatusType LensStatus, string LensName, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6562,6 +6784,9 @@ namespace MyNS
 		/// List all milestones for an existing workload.
 		/// ListMilestones workloads/{WorkloadId}/milestonesSummaries
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <param name="MaxResults">Pagination limit</param>
 		/// <param name="NextToken">Pagination token</param>
 		/// <returns>Success</returns>
@@ -6646,6 +6871,12 @@ namespace MyNS
 		/// List profile notifications.
 		/// ListProfileNotifications profileNotifications/
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="MaxResults">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListProfileNotificationsOutput> ListProfileNotificationsAsync(string WorkloadId, string NextToken, int MaxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6679,8 +6910,13 @@ namespace MyNS
 		/// List profiles.
 		/// ListProfiles profileSummaries
 		/// </summary>
-		/// <param name="ProfileNamePrefix">Prefix for profile name.</param>
+		/// <param name="ProfileNamePrefix">Prefix for profile name.
+		/// Max length: 100
+		// </param>
 		/// <param name="ProfileOwnerType">Profile owner type.</param>
+		/// <param name="MaxResults">Minimum: 1
+		/// Maximum: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListProfilesOutput> ListProfilesAsync(string ProfileNamePrefix, ProfileOwnerType ProfileOwnerType, string NextToken, int MaxResults, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6714,10 +6950,18 @@ namespace MyNS
 		/// List the workload invitations.
 		/// ListShareInvitations shareInvitations
 		/// </summary>
-		/// <param name="LensNamePrefix">An optional string added to the beginning of each lens name returned in the results.</param>
+		/// <param name="WorkloadNamePrefix">Max length: 100</param>
+		/// <param name="LensNamePrefix">An optional string added to the beginning of each lens name returned in the results.
+		/// Max length: 100
+		// </param>
 		/// <param name="ShareResourceType">The type of share invitations to be returned.</param>
-		/// <param name="MaxResults">The maximum number of results to return for this request.</param>
-		/// <param name="ProfileNamePrefix">Profile name prefix.</param>
+		/// <param name="MaxResults">The maximum number of results to return for this request.
+		/// Minimum: 1
+		/// Maximum: 50
+		// </param>
+		/// <param name="ProfileNamePrefix">Profile name prefix.
+		/// Max length: 100
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<ListShareInvitationsOutput> ListShareInvitationsAsync(string WorkloadNamePrefix, string LensNamePrefix, ShareResourceType ShareResourceType, string NextToken, int MaxResults, string ProfileNamePrefix, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6866,7 +7110,10 @@ namespace MyNS
 		/// <p>Deletes specified tags from a resource.</p> <note> <p>The WorkloadArn parameter can be a workload ARN, a custom lens ARN, or a profile ARN.</p> </note> <p>To specify multiple tags, use separate <b>tagKeys</b> parameters, for example:</p> <p> <code>DELETE /tags/WorkloadArn?tagKeys=key1&amp;tagKeys=key2</code> </p>
 		/// UntagResource tags/{WorkloadArn}#tagKeys
 		/// </summary>
-		/// <param name="tagKeys">A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.</param>
+		/// <param name="tagKeys">A list of tag keys. Existing tags of the resource whose keys are members of this list are removed from the resource.
+		/// Minimum items: 1
+		/// Maximum items: 50
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UntagResourceOutput> UntagResourceAsync(string WorkloadArn, string[] tagKeys, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -6975,6 +7222,9 @@ namespace MyNS
 		/// Update a workload share.
 		/// UpdateWorkloadShare workloads/{WorkloadId}/shares/{ShareId}
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
 		/// <returns>Success</returns>
 		public async Task<UpdateWorkloadShareOutput> UpdateWorkloadShareAsync(string ShareId, string WorkloadId, UpdateWorkloadSharePatchBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7015,6 +7265,12 @@ namespace MyNS
 		/// Upgrade lens review for a particular workload.
 		/// UpgradeLensReview workloads/{WorkloadId}/lensReviews/{LensAlias}/upgrade
 		/// </summary>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="LensAlias">Max length: 128
+		/// Min length: 1
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UpgradeLensReviewAsync(string WorkloadId, string LensAlias, UpgradeLensReviewPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{
@@ -7049,7 +7305,12 @@ namespace MyNS
 		/// Upgrade a profile.
 		/// UpgradeProfileVersion workloads/{WorkloadId}/profiles/{ProfileArn}/upgrade
 		/// </summary>
-		/// <param name="ProfileArn">The profile ARN.</param>
+		/// <param name="WorkloadId">Max length: 32
+		/// Min length: 32
+		// </param>
+		/// <param name="ProfileArn">The profile ARN.
+		/// Max length: 2084
+		// </param>
 		/// <returns>Success</returns>
 		public async Task UpgradeProfileVersionAsync(string WorkloadId, string ProfileArn, UpgradeProfileVersionPutBody requestBody, Action<System.Net.Http.Headers.HttpRequestHeaders> handleHeaders = null)
 		{

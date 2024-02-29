@@ -759,6 +759,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
 		 * @param {string} configStoreName The name of the configuration store.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @return {ConfigurationStore} The request was successful; the request was well-formed and received properly.
 		 */
@@ -772,6 +773,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
 		 * @param {string} configStoreName The name of the configuration store.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {ConfigurationStore} requestBody The parameters for creating a configuration store.
 		 * @return {ConfigurationStore} The request was successful; the request was well-formed and received properly.
@@ -786,6 +788,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
 		 * @param {string} configStoreName The name of the configuration store.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @return {void} The request was successful; the request was well-formed and received properly.
 		 */
@@ -799,6 +802,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
 		 * @param {string} configStoreName The name of the configuration store.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {ConfigurationStoreUpdateParameters} requestBody The parameters for updating a configuration store.
 		 * @return {ConfigurationStore} The request was successful; the request was well-formed and received properly.
@@ -813,6 +817,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
 		 * @param {string} configStoreName The name of the configuration store.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {string} skipToken A skip token is used to continue retrieving items after an operation returns a partial result. If a previous response contains a nextLink element, the value of the nextLink element will include a skipToken parameter that specifies a starting point to use for subsequent calls.
 		 * @return {ApiKeyListResult} The request was successful; the request was well-formed and received properly.
@@ -827,6 +832,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
 		 * @param {string} configStoreName The name of the configuration store.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {RegenerateKeyParameters} requestBody The parameters for regenerating an access key.
 		 * @return {ApiKey} The request was successful; the request was well-formed and received properly.
@@ -841,6 +847,7 @@ export namespace MyNS {
 		 * @param {string} subscriptionId The Microsoft Azure subscription ID.
 		 * @param {string} resourceGroupName The name of the resource group to which the container registry belongs.
 		 * @param {string} configStoreName The name of the configuration store.
+		 *     Min length: 5    Max length: 50
 		 * @param {string} api_version The client API version.
 		 * @param {ListKeyValueParameters} requestBody The parameters for retrieving a key-value.
 		 * @return {KeyValue} The request was successful; the request was well-formed and received properly.
